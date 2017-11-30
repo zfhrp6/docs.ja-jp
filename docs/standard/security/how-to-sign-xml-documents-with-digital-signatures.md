@@ -1,44 +1,45 @@
 ---
-title: "方法 : デジタル署名で XML ドキュメントに署名する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "デジタル署名, XML 署名"
-  - "シグネチャ, XML 署名"
-  - "署名 (XML に)"
-  - "System.Security.Cryptography.RSACryptoServiceProvider クラス"
-  - "System.Security.Cryptography.SignedXml クラス"
-  - "XML デジタル署名"
-  - "XML 署名"
+title: "方法 : デジタル署名で XML ドキュメントに署名する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- signatures, XML signing
+- System.Security.Cryptography.SignedXml class
+- digital signatures, XML signing
+- System.Security.Cryptography.RSACryptoServiceProvider class
+- XML digital signatures
+- XML signing
+- signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-caps.latest.revision: 13
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 68d5c4149dfacacfe366ac5b2f49a66f2c986873
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デジタル署名で XML ドキュメントに署名する
-<xref:System.Security.Cryptography.Xml> 名前空間のクラスを使用すると、XML ドキュメントまたは XML ドキュメントの一部にデジタル署名で署名することができます。  XML デジタル署名 \(XMLDSIG\) を使用すると、データが署名後に変更されなかったことを確認できます。  XMLDSIG の基準の詳細については、World Wide Web Consortium \(W3C\) の推奨事項「[XML 署名の構文と処理](http://go.microsoft.com/fwlink/?LinkID=136777)」を参照してください。  
+# <a name="how-to-sign-xml-documents-with-digital-signatures"></a>方法 : デジタル署名で XML ドキュメントに署名する
+<xref:System.Security.Cryptography.Xml> 名前空間のクラスを使用すると、XML ドキュメントまたは XML ドキュメントの一部にデジタル署名で署名することができます。  XML デジタル署名 (XMLDSIG) を使用すると、データが署名後に変更されなかったことを確認できます。  XMLDSIG 標準の詳細については、World Wide Web Consortium (W3C) の推奨事項を参照してください。 [XML 署名の構文と処理](http://go.microsoft.com/fwlink/?LinkID=136777)です。  
   
- この手順のコード例は、XML ドキュメント全体にデジタル署名する方法、および \<`Signature`\> 要素内のドキュメントに署名を付す方法を示しています。  この例では、RSA 署名キーを作成し、キーをセキュリティで保護されたキー コンテナーに追加してから、キーを使用して XML ドキュメントにデジタル署名しています。  キーは、XML デジタル署名を確認するために取得したり、別の XML ドキュメントの署名に使用したりすることができます。  
+ この手順のコード例は、XML ドキュメント全体にデジタル署名する方法、および <`Signature`> 要素内のドキュメントに署名を付す方法を示しています。  この例では、RSA 署名キーを作成し、キーをセキュリティで保護されたキー コンテナーに追加してから、キーを使用して XML ドキュメントにデジタル署名しています。  キーは、XML デジタル署名を確認するために取得したり、別の XML ドキュメントの署名に使用したりすることができます。  
   
- この手順を使用して作成された XML デジタル署名を確認する方法については、「[方法 : XML ドキュメントのデジタル署名を検証する](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)」を参照してください。  
+ この手順を使用して作成された XML デジタル署名を検証する方法については、次を参照してください。[する方法: XML ドキュメントのデジタル署名のことを確認](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)です。  
   
-### XML ドキュメントにデジタル署名するには  
+### <a name="to-digitally-sign-an-xml-document"></a>XML ドキュメントにデジタル署名するには  
   
-1.  <xref:System.Security.Cryptography.CspParameters> オブジェクトを作成し、キー コンテナーの名前を指定します。  
+1.  <xref:System.Security.Cryptography.CspParameters> オブジェクトを作成し、キーのコンテナーの名前を指定します。  
   
      [!code-csharp[HowToSignXMLDocumentRSA#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#2)]
      [!code-vb[HowToSignXMLDocumentRSA#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#2)]  
@@ -83,7 +84,7 @@ caps.handback.revision: 13
      [!code-csharp[HowToSignXMLDocumentRSA#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#10)]
      [!code-vb[HowToSignXMLDocumentRSA#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#10)]  
   
-10. 署名の XML 表記 \(\<`Signature`\> 要素\) を取得して、新しい <xref:System.Xml.XmlElement> オブジェクトに保存します。  
+10. 署名の XML 表記 (<`Signature`> 要素) を取得して、新しい <xref:System.Xml.XmlElement> オブジェクトに保存します。  
   
      [!code-csharp[HowToSignXMLDocumentRSA#11](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#11)]
      [!code-vb[HowToSignXMLDocumentRSA#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#11)]  
@@ -98,10 +99,10 @@ caps.handback.revision: 13
      [!code-csharp[HowToSignXMLDocumentRSA#13](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#13)]
      [!code-vb[HowToSignXMLDocumentRSA#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#13)]  
   
-## 使用例  
+## <a name="example"></a>例  
  この例では、`test.xml` という名前のファイルがコンパイル済みのプログラムと同じディレクトリに存在することを前提としています。  次の XML を `test.xml` というファイルに配置し、この例で使用することができます。  
   
-```  
+```xml  
 <root>  
     <creditcard>  
         <number>19834209</number>  
@@ -113,17 +114,17 @@ caps.handback.revision: 13
  [!code-csharp[HowToSignXMLDocumentRSA#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#1)]
  [!code-vb[HowToSignXMLDocumentRSA#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#1)]  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
   
 -   この例をコンパイルするには、`System.Security.dll` への参照を含める必要があります。  
   
 -   名前空間 <xref:System.Xml>、<xref:System.Security.Cryptography>、および <xref:System.Security.Cryptography.Xml> を含めます。  
   
-## .NET Framework セキュリティ  
- 非対称キー ペアの秘密キーをプレーンテキストで保存または転送しないでください。  対称暗号化キーと非対称暗号化キーの詳細については、「[暗号化と復号化のためのキーの生成](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)」を参照してください。  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 非対称キー ペアの秘密キーをプレーンテキストで保存または転送しないでください。  対称キーと非対称暗号化キーの詳細については、次を参照してください。[暗号化と復号化キーの生成](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)です。  
   
- 秘密キーをソース コードに直接埋め込まないでください。  埋め込まれたキーは、[Ildasm.exe \(IL 逆アセンブラー\)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) を使用するか、メモ帳などのテキスト エディターでアセンブリを開くことで簡単に読み取ることができます。  
+ 秘密キーをソース コードに直接埋め込まないでください。  使用してアセンブリから、埋め込まれたキーを簡単に読み取ることができます、 [Ildasm.exe (IL 逆アセンブラー)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)またはメモ帳などのテキスト エディターで、アセンブリを開くことができます。  
   
-## 参照  
- <xref:System.Security.Cryptography.Xml>   
- [方法 : XML ドキュメントのデジタル署名を検証する](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Security.Cryptography.Xml>  
+ [方法: XML ドキュメントのデジタル署名を検証する](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)

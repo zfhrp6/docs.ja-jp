@@ -1,161 +1,169 @@
 ---
-title: "方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "DataGrid [WPF], フィルター"
-  - "DataGrid [WPF], グループ"
-  - "DataGrid [WPF], 並べ替え"
+title: "方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGrid [WPF], sort
+- DataGrid [WPF], group
+- DataGrid [WPF], filter
 ms.assetid: 03345e85-89e3-4aec-9ed0-3b80759df770
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b3c8afacfafbe14794bf17a4e9a4df7c175a3668
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する
-<xref:System.Windows.Controls.DataGrid> はグループ化、並べ替え、フィルターなどを適用することによって、さまざまな角度からデータを表示することができます。  <xref:System.Windows.Controls.DataGrid> のデータをグループ化、並べ替え、およびフィルター処理するには、これらの機能がサポートされている <xref:System.Windows.Data.CollectionView> に DataGrid をバインドします。  そうすると、<xref:System.Windows.Data.CollectionView> のデータを操作できるようになり、基になるソース データに影響が及ぶことはありません。  コレクション ビューにおける変更は、<xref:System.Windows.Controls.DataGrid> のユーザー インターフェイス \(UI\) に反映されます。  
+# <a name="how-to-group-sort-and-filter-data-in-the-datagrid-control"></a>方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する
+内のデータを表示すると便利です、<xref:System.Windows.Controls.DataGrid>によってグループ化、並べ替え、およびデータのフィルター処理のさまざまな方法でします。 グループ化、並べ替え、およびデータをフィルター処理、<xref:System.Windows.Controls.DataGrid>にバインドする、<xref:System.Windows.Data.CollectionView>これらの関数をサポートします。 内のデータを操作することができますし、<xref:System.Windows.Data.CollectionView>基になるソース データには影響しません。 コレクション ビューの変更に反映されます、<xref:System.Windows.Controls.DataGrid>ユーザー インターフェイス (UI)。  
   
- <xref:System.Windows.Data.CollectionView> クラスには、<xref:System.Collections.IEnumerable> インターフェイスを実装したデータ ソースに対するグループ化および並べ替えの機能があります。  <xref:System.Windows.Data.CollectionViewSource> クラスを使用すると、XAML の <xref:System.Windows.Data.CollectionView> のプロパティを設定できます。  
+ <xref:System.Windows.Data.CollectionView>クラスには、グループ化および並べ替えを実装するデータ ソースの機能が用意されています、<xref:System.Collections.IEnumerable>インターフェイスです。 <xref:System.Windows.Data.CollectionViewSource>クラスでは、プロパティを設定することができます、 <xref:System.Windows.Data.CollectionView> XAML からです。  
   
- この例では、`Task` オブジェクトのコレクションが <xref:System.Windows.Data.CollectionViewSource> オブジェクトにバインドされます。  この <xref:System.Windows.Data.CollectionViewSource> が <xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> として使用されます。  グループ化、並べ替え、およびフィルター処理は <xref:System.Windows.Data.CollectionViewSource> に対して実行され、<xref:System.Windows.Controls.DataGrid> の UI に表示されることになります。  
+ この例では、コレクションで`Task`にオブジェクトがバインドされて、<xref:System.Windows.Data.CollectionViewSource>です。 <xref:System.Windows.Data.CollectionViewSource>として使用される、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.DataGrid>です。 グループ化、並べ替え、およびフィルター処理を実行、<xref:System.Windows.Data.CollectionViewSource>に表示されると、 <xref:System.Windows.Controls.DataGrid> UI。  
   
- ![DataGrid のグループ化されたデータ](../../../../docs/framework/wpf/controls/media/wpf-datagridgroups.png "WPF\_DataGridGroups")  
-DataGrid 内のグループ化されたデータ  
+ ![データ グリッド内のデータをグループ化](../../../../docs/framework/wpf/controls/media/wpf-datagridgroups.png "WPF_DataGridGroups")  
+DataGrid のグループ化されたデータ  
   
-## CollectionViewSource を ItemsSource として使用する  
- <xref:System.Windows.Controls.DataGrid> コントロールのデータをグループ化、並べ替え、およびフィルター処理するには、これらの機能がサポートされている <xref:System.Windows.Data.CollectionView> に <xref:System.Windows.Controls.DataGrid> をバインドします。  この例では、`Task` オブジェクトのコレクションをラップする <xref:System.Windows.Data.CollectionViewSource> に <xref:System.Windows.Controls.DataGrid> をバインドすることによって、このオブジェクトの <xref:System.Collections.Generic.List%601> データをさまざまな角度から表示できるようにします。  
+## <a name="using-a-collectionviewsource-as-an-itemssource"></a>ItemsSource として、CollectionViewSource を使用します。  
+ グループ、並べ替え、およびデータのフィルター処理する、<xref:System.Windows.Controls.DataGrid>コントロールをバインドする、<xref:System.Windows.Controls.DataGrid>を<xref:System.Windows.Data.CollectionView>これらの関数をサポートします。 この例では、<xref:System.Windows.Controls.DataGrid>にバインドされて、<xref:System.Windows.Data.CollectionViewSource>のこれらの関数を提供する、<xref:System.Collections.Generic.List%601>の`Task`オブジェクト。  
   
-#### DataGrid を CollectionViewSource にバインドするには  
+#### <a name="to-bind-a-datagrid-to-a-collectionviewsource"></a>CollectionViewSource に DataGrid をバインドするには  
   
-1.  <xref:System.Collections.IEnumerable> インターフェイスを実装するデータ コレクションを作成します。  
+1.  実装するデータ コレクションを作成、<xref:System.Collections.IEnumerable>インターフェイスです。  
   
-     <xref:System.Collections.Generic.List%601> を使用してコレクションを作成する場合、<xref:System.Collections.Generic.List%601> のインスタンスをインスタンス化する代わりに、<xref:System.Collections.Generic.List%601> を継承する新しいクラスを作成する必要があります。  これにより、XAML のコレクションへのデータ バインドが可能になります。  
+     使用する場合<xref:System.Collections.Generic.List%601>、コレクションを作成するから継承する新しいクラスを作成する必要があります<xref:System.Collections.Generic.List%601>のインスタンスをインスタンス化ではなく<xref:System.Collections.Generic.List%601>です。 XAML 内のコレクションへのデータ バインドにできます。  
   
     > [!NOTE]
-    >  プロパティの変化や編集に対して <xref:System.Windows.Controls.DataGrid> が正しく応答するためには、コレクション内のオブジェクトに <xref:System.ComponentModel.INotifyPropertyChanged> 変更通知インターフェイスおよび <xref:System.ComponentModel.IEditableObject> インターフェイスが実装されている必要があります。  詳細については、「[プロパティの変更通知を実装する](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md)」を参照してください。  
+    >  コレクション内のオブジェクトを実装する必要があります、<xref:System.ComponentModel.INotifyPropertyChanged>変更されたインターフェイスと<xref:System.ComponentModel.IEditableObject>インターフェイスの順序で、<xref:System.Windows.Controls.DataGrid>プロパティの変更と編集に正しく応答します。 詳細については、「[プロパティの変更通知を実装する](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md)」を参照してください。  
   
      [!code-csharp[DataGrid_GroupSortFilter#101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#101)]
      [!code-vb[DataGrid_GroupSortFilter#101](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#101)]  
   
-2.  XAML で、コレクション クラスのインスタンスを作成し、[x:Key ディレクティブ](../../../../docs/framework/xaml-services/x-key-directive.md)を設定します。  
+2.  XAML では、コレクション クラスのインスタンスを作成し、設定、 [X:key ディレクティブ](../../../../docs/framework/xaml-services/x-key-directive.md)です。  
   
-3.  XAML で、<xref:System.Windows.Data.CollectionViewSource> クラスのインスタンスを作成し、[x:Key ディレクティブ](../../../../docs/framework/xaml-services/x-key-directive.md)を設定します。次に、コレクション クラスのインスタンスを <xref:System.Windows.Data.CollectionViewSource.Source%2A> として設定します。  
+3.  XAML では、インスタンスを作成、<xref:System.Windows.Data.CollectionViewSource>クラスは、設定、 [X:key ディレクティブ](../../../../docs/framework/xaml-services/x-key-directive.md)、としてコレクション クラスのインスタンスを設定し、<xref:System.Windows.Data.CollectionViewSource.Source%2A>です。  
   
-     [!code-xml[DataGrid_GroupSortFilter#201](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/WindowSnips1.xaml#201)]  
+     [!code-xaml[DataGrid_GroupSortFilter#201](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/WindowSnips1.xaml#201)]  
   
-4.  <xref:System.Windows.Controls.DataGrid> クラスのインスタンスを作成し、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> プロパティを <xref:System.Windows.Data.CollectionViewSource> に設定します。  
+4.  インスタンスを作成、<xref:System.Windows.Controls.DataGrid>クラス、し、設定、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティを<xref:System.Windows.Data.CollectionViewSource>です。  
   
-     [!code-xml[DataGrid_GroupSortFilter#002](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#002)]  
+     [!code-xaml[DataGrid_GroupSortFilter#002](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#002)]  
   
-5.  コードから <xref:System.Windows.Data.CollectionViewSource> にアクセスするには、<xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A> メソッドを使用して、<xref:System.Windows.Data.CollectionViewSource> の参照を取得します。  
+5.  アクセスする、 <xref:System.Windows.Data.CollectionViewSource> 、コードから使用して、<xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A>への参照を取得するメソッド、<xref:System.Windows.Data.CollectionViewSource>です。  
   
      [!code-csharp[DataGrid_GroupSortFilter#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#102)]
      [!code-vb[DataGrid_GroupSortFilter#102](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#102)]  
   
-## DataGrid 内の項目をグループ化する  
- <xref:System.Windows.Controls.DataGrid> における項目のグループ化方法を指定するには、<xref:System.Windows.Data.PropertyGroupDescription> 型を使用し、ソース ビューで項目をグループ化します。  
+## <a name="grouping-items-in-a-datagrid"></a>データ グリッド内の項目をグループ化  
+ 項目をグループ化する方法を指定する、<xref:System.Windows.Controls.DataGrid>を使用する、<xref:System.Windows.Data.PropertyGroupDescription>ソース ビュー内の項目をグループ化する型。  
   
-#### XAML を使用して DataGrid 内の項目をグループ化するには  
+#### <a name="to-group-items-in-a-datagrid-using-xaml"></a>XAML を使用してデータ グリッド内のアイテムをグループ化  
   
-1.  グループ化に使用するプロパティを指定する <xref:System.Windows.Data.PropertyGroupDescription> を作成します。  プロパティは、XAML またはコードで指定できます。  
+1.  作成、<xref:System.Windows.Data.PropertyGroupDescription>グループ化するプロパティを指定します。 XAML またはコードでは、プロパティを指定できます。  
   
-    1.  XAML では、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A> をグループ化に使用するプロパティの名前に設定します。  
+    1.  XAML では、設定、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>グループ化するプロパティの名前にします。  
   
-    2.  コードでは、グループ化に使用するプロパティの名前をコンストラクターに渡します。  
+    2.  コードでは、コンス トラクターにグループ化するプロパティの名前を渡します。  
   
-2.  <xref:System.Windows.Data.PropertyGroupDescription> を <xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A?displayProperty=fullName> コレクションに追加します。  
+2.  追加、<xref:System.Windows.Data.PropertyGroupDescription>を<xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A?displayProperty=nameWithType>コレクション。  
   
-3.  グループ化のレベルを追加するには、<xref:System.Windows.Data.PropertyGroupDescription> の別のインスタンスを <xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A> コレクションに追加します。  
+3.  追加のインスタンスの追加<xref:System.Windows.Data.PropertyGroupDescription>を<xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A>複数レベルのグループ化を追加するコレクション。  
   
-     [!code-xml[DataGrid_GroupSortFilter#012](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#012)]  
+     [!code-xaml[DataGrid_GroupSortFilter#012](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#012)]  
   
      [!code-csharp[DataGrid_GroupSortFilter#112](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#112)]
      [!code-vb[DataGrid_GroupSortFilter#112](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#112)]  
   
-4.  グループを削除するには、<xref:System.Windows.Data.PropertyGroupDescription> を <xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A> コレクションから削除します。  
+4.  グループを削除するには、削除、<xref:System.Windows.Data.PropertyGroupDescription>から、<xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A>コレクション。  
   
-5.  すべてのグループを削除するには、<xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A> コレクションの <xref:System.Collections.ObjectModel.Collection%601.Clear%2A> メソッドを呼び出します。  
+5.  すべてのグループを削除するには、呼び出し、<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>のメソッド、<xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A>コレクション。  
   
      [!code-csharp[DataGrid_GroupSortFilter#114](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#114)]
      [!code-vb[DataGrid_GroupSortFilter#114](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#114)]  
   
- <xref:System.Windows.Controls.DataGrid> 内の項目をグループ化した場合、各グループの外観を指定する <xref:System.Windows.Controls.GroupStyle> を定義できます。  <xref:System.Windows.Controls.GroupStyle> を適用するには、これを DataGrid の <xref:System.Windows.Controls.ItemsControl.GroupStyle%2A> コレクションに追加します。  グループ化のレベルが複数存在する場合は、グループ レベルごとに異なるスタイルを定義できます。  スタイルはその定義順に適用されます。  たとえば、2 つのスタイルを定義した場合、最上位の行グループには 1 つ目のスタイルが適用されます。  第 2 レベル以下のすべての行グループには、2 つ目のスタイルが適用されます。  <xref:System.Windows.Controls.GroupStyle> の <xref:System.Windows.FrameworkElement.DataContext%2A> は、グループが表す <xref:System.Windows.Data.CollectionViewGroup> です。  
+ 項目をグループ化するときに、 <xref:System.Windows.Controls.DataGrid>、定義することができます、<xref:System.Windows.Controls.GroupStyle>各グループの外観を指定します。 適用する、<xref:System.Windows.Controls.GroupStyle>に追加することによって、 <xref:System.Windows.Controls.ItemsControl.GroupStyle%2A> DataGrid のコレクション。 複数のレベルのグループ化した場合は、グループ レベルごとに異なるスタイルを適用できます。 スタイルは定義されている順序で適用されます。 たとえば、2 つのスタイルを定義する場合、最初は最上位レベルの行グループに適用します。 2 番目のスタイルは、第 2 レベルのすべての行グループに適用されると下限になります。 <xref:System.Windows.FrameworkElement.DataContext%2A>の<xref:System.Windows.Controls.GroupStyle>は、<xref:System.Windows.Data.CollectionViewGroup>グループを表すです。  
   
-#### 行グループ ヘッダーの外観を変更するには  
+#### <a name="to-change-the-appearance-of-row-group-headers"></a>行グループ ヘッダーの外観を変更するには  
   
-1.  行グループの外観を定義する <xref:System.Windows.Controls.GroupStyle> を作成します。  
+1.  作成、<xref:System.Windows.Controls.GroupStyle>行グループの外観を定義します。  
   
-2.  <xref:System.Windows.Controls.GroupStyle> を `<DataGrid.GroupStyle>` タグ内に配置します。  
+2.  Put、<xref:System.Windows.Controls.GroupStyle>内、`<DataGrid.GroupStyle>`タグ。  
   
-     [!code-xml[DataGrid_GroupSortFilter#003](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#003)]  
+     [!code-xaml[DataGrid_GroupSortFilter#003](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#003)]  
   
-## DataGrid 内の項目を並べ替える  
- <xref:System.Windows.Controls.DataGrid> における項目の並べ替え方法を指定するには、<xref:System.ComponentModel.SortDescription> 型を使用し、ソース ビューで項目を並べ替えます。  
+## <a name="sorting-items-in-a-datagrid"></a>DataGrid のアイテムの並べ替え  
+ 項目の並べ替え方法を指定する、<xref:System.Windows.Controls.DataGrid>を使用する、<xref:System.ComponentModel.SortDescription>型をソース ビュー内の項目を並べ替えます。  
   
-#### DataGrid 内の項目を並べ替えるには  
+#### <a name="to-sort-items-in-a-datagrid"></a>DataGrid の項目を並べ替える  
   
-1.  並べ替えに使用するプロパティを指定する <xref:System.ComponentModel.SortDescription> を作成します。  プロパティは、XAML またはコードで指定できます。  
+1.  作成、<xref:System.ComponentModel.SortDescription>で並べ替えを行うプロパティを指定します。 XAML またはコードでは、プロパティを指定できます。  
   
-    1.  XAML では、<xref:System.ComponentModel.SortDescription.PropertyName%2A> を並べ替えに使用するプロパティの名前に設定します。  
+    1.  XAML では、設定、<xref:System.ComponentModel.SortDescription.PropertyName%2A>によって並べ替えするプロパティの名前にします。  
   
-    2.  コードでは、並べ替えに使用するプロパティの名前と <xref:System.ComponentModel.ListSortDirection> をコンストラクターに渡します。  
+    2.  コードでは、並べ替えるプロパティの名前を渡すと、<xref:System.ComponentModel.ListSortDirection>コンス トラクターにします。  
   
-2.  <xref:System.ComponentModel.SortDescription> を <xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A?displayProperty=fullName> コレクションに追加します。  
+2.  追加、<xref:System.ComponentModel.SortDescription>を<xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A?displayProperty=nameWithType>コレクション。  
   
-3.  並べ替えの基準として使用するプロパティを追加するには、<xref:System.ComponentModel.SortDescription> の別のインスタンスを <xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A> コレクションに追加します。  
+3.  追加のインスタンスの追加<xref:System.ComponentModel.SortDescription>を<xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A>コレクションに追加のプロパティを並べ替えます。  
   
-     [!code-xml[DataGrid_GroupSortFilter#011](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#011)]  
+     [!code-xaml[DataGrid_GroupSortFilter#011](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#011)]  
   
      [!code-csharp[DataGrid_GroupSortFilter#211](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/WindowSnips1.xaml.cs#211)]
      [!code-vb[DataGrid_GroupSortFilter#211](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#211)]  
   
-## DataGrid 内の項目をフィルター処理するには  
- <xref:System.Windows.Data.CollectionViewSource> を使用して <xref:System.Windows.Controls.DataGrid> 内の項目をフィルター処理するには、<xref:System.Windows.Data.CollectionViewSource.Filter?displayProperty=fullName> イベントのハンドラーにフィルタリング ロジックを指定します。  
+## <a name="filtering-items-in-a-datagrid"></a>DataGrid の項目をフィルター処理  
+ 項目をフィルター処理で、<xref:System.Windows.Controls.DataGrid>を使用して、<xref:System.Windows.Data.CollectionViewSource>のハンドラーでフィルター処理のロジックを提供する、<xref:System.Windows.Data.CollectionViewSource.Filter?displayProperty=nameWithType>イベント。  
   
-#### DataGrid 内の項目をフィルター処理するには  
+#### <a name="to-filter-items-in-a-datagrid"></a>DataGrid の項目をフィルターするには  
   
-1.  <xref:System.Windows.Data.CollectionViewSource.Filter?displayProperty=fullName> イベントのハンドラーを追加します。  
+1.  ハンドラーを追加、<xref:System.Windows.Data.CollectionViewSource.Filter?displayProperty=nameWithType>イベント。  
   
-2.  <xref:System.Windows.Data.CollectionViewSource.Filter> イベント ハンドラーで、フィルター処理のロジックを定義します。  
+2.  <xref:System.Windows.Data.CollectionViewSource.Filter>イベント ハンドラー、フィルター処理のロジックを定義します。  
   
-     フィルターは、ビューが更新されるたびに適用されます。  
+     ビューが更新されるたびに、フィルターが適用されます。  
   
-     [!code-xml[DataGrid_GroupSortFilter#013](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#013)]  
+     [!code-xaml[DataGrid_GroupSortFilter#013](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#013)]  
   
      [!code-csharp[DataGrid_GroupSortFilter#113](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#113)]
      [!code-vb[DataGrid_GroupSortFilter#113](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#113)]  
   
- また、<xref:System.Windows.Controls.DataGrid> 内の項目をフィルター処理する別の方法として、フィルター処理のロジックを提供するメソッドを作成し、フィルターを適用する <xref:System.Windows.Data.CollectionView.Filter%2A?displayProperty=fullName> プロパティを設定します。  この方法の例については、「[ビュー内のデータをフィルター処理する](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)」を参照してください。  
+ または、内の項目をフィルター処理することができます、<xref:System.Windows.Controls.DataGrid>をフィルター処理のロジックと設定を提供するメソッドを作成することで、<xref:System.Windows.Data.CollectionView.Filter%2A?displayProperty=nameWithType>フィルターを適用するプロパティです。 このメソッドの例を参照してください[のビューのフィルター データ](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)です。  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Data.CollectionViewSource> 内の `Task` データをグループ化、並べ替え、およびフィルター処理し、その結果の `Task` データを <xref:System.Windows.Controls.DataGrid> に表示します。  この <xref:System.Windows.Data.CollectionViewSource> が <xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> として使用されます。  グループ化、並べ替え、およびフィルター処理は <xref:System.Windows.Data.CollectionViewSource> に対して実行され、<xref:System.Windows.Controls.DataGrid> の UI に表示されることになります。  
+## <a name="example"></a>例  
+ 次の例は、グループ化、並べ替え、およびフィルター処理を示しています。`Task`内のデータ、<xref:System.Windows.Data.CollectionViewSource>と表示、並べ替え、フィルターにグループ化、`Task`内のデータ、<xref:System.Windows.Controls.DataGrid>です。 <xref:System.Windows.Data.CollectionViewSource>として使用される、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.DataGrid>です。 グループ化、並べ替え、およびフィルター処理を実行、<xref:System.Windows.Data.CollectionViewSource>に表示されると、 <xref:System.Windows.Controls.DataGrid> UI。  
   
- この例をテストするには、プロジェクト名に合わせて DGGroupSortFilterExample 名を調整する必要があります。  Visual Basic を使用している場合は、<xref:System.Windows.Window> のクラス名を以下の名前に変更する必要があります。  
+ この例をテストするには、プロジェクト名を一致させる DGGroupSortFilterExample 名前を調整する必要があります。 Visual Basic を使用している場合は、クラス名を変更する必要があります。<xref:System.Windows.Window>以下にします。  
   
  `<Window x:Class="MainWindow"`  
   
- [!code-xml[DataGrid_GroupSortFilter#000](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#000)]  
+ [!code-xaml[DataGrid_GroupSortFilter#000](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#000)]  
   
  [!code-csharp[DataGrid_GroupSortFilter#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#100)]
  [!code-vb[DataGrid_GroupSortFilter#100](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#100)]  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
   
-## 信頼性の高いプログラミング  
+-  
   
-## .NET Framework セキュリティ  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
   
-## 参照  
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [ObservableCollection を作成およびバインドする](../../../../docs/framework/wpf/data/how-to-create-and-bind-to-an-observablecollection.md)   
- [ビュー内のデータをフィルター処理する](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)   
- [ビュー内のデータの並べ替え](../../../../docs/framework/wpf/data/how-to-sort-data-in-a-view.md)   
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+  
+## <a name="see-also"></a>関連項目  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [ObservableCollection を作成およびバインドする](../../../../docs/framework/wpf/data/how-to-create-and-bind-to-an-observablecollection.md)  
+ [ビュー内のデータをフィルター処理する](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)  
+ [ビュー内のデータの並べ替え](../../../../docs/framework/wpf/data/how-to-sort-data-in-a-view.md)  
  [XAML でビューを使用してデータの並べ替えおよびグループ化を行う](../../../../docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)

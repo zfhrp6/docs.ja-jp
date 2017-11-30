@@ -1,62 +1,165 @@
 ---
-title: "WPF アプリケーションへのグラス フレームの拡張 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーション, 拡張 (グラス フレームを)"
-  - "拡張 (アプリケーションにグラス フレームを)"
-  - "グラス フレーム, 拡張 (アプリケーションに)"
-  - "グラフィックス, 拡張 (アプリケーションにグラス フレームを)"
+title: "WPF アプリケーションへのグラス フレームの拡張"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- applications [WPF], extending glass frames into
+- graphics [WPF], extending glass frames into applications
+- extending glass frames into applications [WPF]
+- glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d943d0b91d6f740144399d758a5ed80460f0eb6d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WPF アプリケーションへのグラス フレームの拡張
-ここでは、[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] のグラス フレームを [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションのクライアント領域に拡張する方法について説明します。  
+# <a name="extend-glass-frame-into-a-wpf-application"></a>WPF アプリケーションへのグラス フレームの拡張
+このトピックでは、[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] のグラス フレームを [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションのクライアント領域に拡張する方法を示します。  
   
 > [!NOTE]
->  この例は、グラス対応の Desktop Window Manager \(DWM\) を実行している [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] コンピューターでのみ機能します。  [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] Home Basic は、透明なグラス効果をサポートしていません。  その他の [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] で通常は透明なグラス効果でレンダリングされる領域は、不透明にレンダリングされます。  
+>  この例は、グラスが有効なデスクトップ ウィンドウ マネージャー (DWM) を実行している [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] コンピューターでしか動作しません。 [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] Home Basic エディションは、透明グラス効果をサポートしていません。 [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] の他のエディションで通常透明グラス効果がレンダリングされる領域は、不透明でレンダリングされます。  
   
-## 使用例  
- Internet Explorer 7 のアドレス バーに拡張されたグラス フレームを次の図に示します。  
+## <a name="example"></a>例  
+ 次の図は、Internet Explorer 7 のアドレス バーに拡張されたグラス フレームを示しています。  
   
- **アドレス バーの背後にグラス フレームが拡張された Internet Explorer**  
+ **アドレス バーの背後にグラス フレームが拡張された Internet Explorer。**  
   
  ![アドレス バーの背後にグラス フレームが拡張された IE7。](../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")  
   
- グラス フレームを [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションで拡張するには、アンマネージ [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] へのアクセスが必要です。  フレームをクライアント領域に拡張するために必要な 2 つの [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] に対してプラットフォーム呼び出し \(pinvoke\) を実行する方法を次のコード例に示します。  これらの [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] は、それぞれ **NonClientRegionAPI** と呼ばれるクラスで宣言されます。  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションにグラス フレームを拡張するには、アンマネージ [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] へのアクセスが必要です。 次のコード例では、クライアント領域にフレームを拡張するために必要な 2 つの [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] のプラットフォーム呼び出し (pinvoke) を行っています。 これらの各 [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] は、**NonClientRegionAPI** という名前のクラスで宣言されています。  
   
-<!-- TODO: review snippet reference  [!CODE [AvalonClientGlass#DWMExtendFramePInvokeAPI](AvalonClientGlass#DWMExtendFramePInvokeAPI)]  -->  
+```csharp  
+[StructLayout(LayoutKind.Sequential)]  
+public struct MARGINS  
+{  
+    public int cxLeftWidth;      // width of left border that retains its size  
+    public int cxRightWidth;     // width of right border that retains its size  
+    public int cyTopHeight;      // height of top border that retains its size  
+    public int cyBottomHeight;   // height of bottom border that retains its size  
+};  
   
- [DwmExtendFrameIntoClientArea](_udwm_dwmextendframeintoclientarea) [](_udwm_dwmextendframeintoclientarea) は、フレームをクライアント領域に拡張する DWM 関数です。  この関数では、ウィンドウ ハンドルと [MARGINS](inet_MARGINS) 構造体という、2 つのパラメーターを使用します。  [MARGINS](inet_MARGINS) は、フレームをクライアント領域に拡張する追加量を DWM に指示するために使用されます。  
+[DllImport("DwmApi.dll")]  
+public static extern int DwmExtendFrameIntoClientArea(  
+    IntPtr hwnd,  
+    ref MARGINS pMarInset);  
+```  
   
-## 使用例  
- [DwmExtendFrameIntoClientArea](_udwm_dwmextendframeintoclientarea) 関数を使用するには、ウィンドウ ハンドルを取得する必要があります。  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、ウィンドウ ハンドルは <xref:System.Windows.Interop.HwndSource> の <xref:System.Windows.Interop.HwndSource.Handle%2A> プロパティから取得できます。  次の例では、ウィンドウの <xref:System.Windows.FrameworkElement.Loaded> イベントでフレームがクライアント領域に拡張されます。  
+```vb  
+<StructLayout(LayoutKind.Sequential)>  
+        Public Structure MARGINS  
+            Public cxLeftWidth As Integer ' width of left border that retains its size  
+            Public cxRightWidth As Integer ' width of right border that retains its size  
+            Public cyTopHeight As Integer ' height of top border that retains its size  
+            Public cyBottomHeight As Integer ' height of bottom border that retains its size  
+        End Structure  
   
-<!-- TODO: review snippet reference  [!CODE [AvalonClientGlass#AvalonGlassOnLoadedCSharp](AvalonClientGlass#AvalonGlassOnLoadedCSharp)]  -->  
+        <DllImport("DwmApi.dll")>  
+        Public Shared Function DwmExtendFrameIntoClientArea(ByVal hwnd As IntPtr, ByRef pMarInset As MARGINS) As Integer  
+        End Function  
+```  
   
-## 使用例  
- フレームがクライアント領域に拡張される簡単なウィンドウを次の例に示します。  フレームは、2 つの <xref:System.Windows.Controls.TextBox> オブジェクトを含む一番上の境界の背後に拡張されます。  
+ [DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx) は、クライアント領域にフレームを拡張する DWM 関数です。 ウィンドウ ハンドルと [MARGINS](https://msdn.microsoft.com/library/bb773244.aspx) 構造体の 2 つのパラメーターを受け取ります。 [MARGINS](https://msdn.microsoft.com/library/bb773244.aspx) は、フレームがクライアント領域に余分に拡張する量を DWM に通知するために使われます。  
   
-<!-- TODO: review snippet reference  [!CODE [AvalonClientGlass#AvalonGlassFullWindowXAML](AvalonClientGlass#AvalonGlassFullWindowXAML)]  -->  
+## <a name="example"></a>例  
+ [DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx) 関数を使うには、ウィンドウ ハンドルを取得する必要があります。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]から、ウィンドウのハンドルを取得できます、<xref:System.Windows.Interop.HwndSource.Handle%2A>のプロパティ、<xref:System.Windows.Interop.HwndSource>です。 次の例では、クライアント領域に、フレームを拡張で、<xref:System.Windows.FrameworkElement.Loaded>ウィンドウのイベントです。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションに拡張されたグラス フレームを次の図に示します。  
+```csharp  
+void OnLoaded(object sender, RoutedEventArgs e)  
+{  
+   try  
+   {  
+      // Obtain the window handle for WPF application  
+      IntPtr mainWindowPtr = new WindowInteropHelper(this).Handle;  
+      HwndSource mainWindowSrc = HwndSource.FromHwnd(mainWindowPtr);  
+      mainWindowSrc.CompositionTarget.BackgroundColor = Color.FromArgb(0, 0, 0, 0);  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]  **アプリケーション** に**拡張されたグラス フレーム**。  
+      // Get System Dpi  
+      System.Drawing.Graphics desktop = System.Drawing.Graphics.FromHwnd(mainWindowPtr);  
+      float DesktopDpiX = desktop.DpiX;  
+      float DesktopDpiY = desktop.DpiY;  
   
- ![WPF アプリケーションに拡張されたグラス フレーム。](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.png "WPFextendedGlassIntoClient")  
+      // Set Margins  
+      NonClientRegionAPI.MARGINS margins = new NonClientRegionAPI.MARGINS();  
   
-## 参照  
- [Desktop Window Manager Overview](_udwm_overview)   
- [Desktop Window Manager Blur Overview](_udwm_blur_ovw)   
- [DwmExtendFrameIntoClientArea](_udwm_dwmextendframeintoclientarea)
+      // Extend glass frame into client area  
+      // Note that the default desktop Dpi is 96dpi. The  margins are  
+      // adjusted for the system Dpi.  
+      margins.cxLeftWidth = Convert.ToInt32(5 * (DesktopDpiX / 96));  
+      margins.cxRightWidth = Convert.ToInt32(5 * (DesktopDpiX / 96));  
+      margins.cyTopHeight = Convert.ToInt32(((int)topBar.ActualHeight + 5) * (DesktopDpiX / 96));  
+      margins.cyBottomHeight = Convert.ToInt32(5 * (DesktopDpiX / 96));  
+  
+      int hr = NonClientRegionAPI.DwmExtendFrameIntoClientArea(mainWindowSrc.Handle, ref margins);  
+      //  
+      if (hr < 0)  
+      {  
+         //DwmExtendFrameIntoClientArea Failed  
+      }  
+   }  
+   // If not Vista, paint background white.  
+   catch (DllNotFoundException)  
+   {  
+      Application.Current.MainWindow.Background = Brushes.White;  
+   }  
+}  
+```  
+  
+## <a name="example"></a>例  
+ 次の例では、クライアント領域にフレームが拡張される簡単なウィンドウを示します。 フレームは、2 つを含む上罫線の内側に<xref:System.Windows.Controls.TextBox>オブジェクト。  
+  
+```xaml  
+<Window x:Class="SDKSample.Window1"  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+    Title="Extended Glass in WPF" Height="300" Width="400"   
+    Loaded="OnLoaded" Background="Transparent"  
+    >  
+  <Grid ShowGridLines="True">  
+    <DockPanel Name="mainDock">  
+      <!-- The border is used to compute the rendered height with margins.  
+           topBar contents will be displayed on the extended glass frame.-->  
+      <Border Name="topBar" DockPanel.Dock="Top" >  
+        <Grid Name="grid">  
+          <Grid.ColumnDefinitions>  
+            <ColumnDefinition MinWidth="100" Width="*"/>  
+            <ColumnDefinition Width="Auto"/>  
+          </Grid.ColumnDefinitions>  
+          <TextBox Grid.Column="0" MinWidth="100" Margin="0,0,10,5">Path</TextBox>  
+          <TextBox Grid.Column="1" MinWidth="75" Margin="0,0,0,5">Search</TextBox>  
+        </Grid>  
+      </Border>  
+      <Grid DockPanel.Dock="Top" >  
+        <Grid.ColumnDefinitions>  
+          <ColumnDefinition/>  
+        </Grid.ColumnDefinitions>  
+        <TextBox Grid.Column="0" AcceptsReturn="True"/>  
+      </Grid>  
+    </DockPanel>  
+  </Grid>  
+</Window>  
+```  
+  
+ 次の図は、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションに拡張されたグラス フレームを示しています。  
+  
+ ****[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] **アプリケーションに拡張されたグラス フレーム。**  
+  
+ ![WPF アプリケーションに拡張されたグラス フレーム。](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")  
+  
+## <a name="see-also"></a>関連項目  
+ [デスクトップ ウィンドウ マネージャーの概要](https://msdn.microsoft.com/library/aa969540.aspx)  
+ [デスクトップ ウィンドウ マネージャーぼかしの概要](https://msdn.microsoft.com/library/aa969537.aspx)  
+ [DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx)

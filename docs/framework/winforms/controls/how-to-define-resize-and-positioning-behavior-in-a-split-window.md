@@ -1,45 +1,49 @@
 ---
-title: "方法 : 分割ウィンドウでのサイズ変更および位置指定動作を定義する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "分割ウィンドウ, サイズ変更"
-  - "SplitContainer コントロール [Windows フォーム], サイズ変更"
-  - "分割ウィンドウ, サイズ変更"
+title: "方法 : 分割ウィンドウでのサイズ変更および位置指定動作を定義する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- split windows [Windows Forms], resizing
+- splitter windows [Windows Forms], resizing
+- SplitContainer control [Windows Forms], resizing
 ms.assetid: 9bf73f36-ed2d-4a02-b15a-0770eff4fdfa
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: db4a99c7dae7783e8ea51f43ad51fcd2214997e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 分割ウィンドウでのサイズ変更および位置指定動作を定義する
-<xref:System.Windows.Forms.SplitContainer> コントロールのパネルは、ユーザーがサイズ変更や操作を行う場合にたいへん役立ちます。  しかし、分割線を配置する場所や分割線を移動できる程度について、プログラムで分割線を制御する場合もあります。  
+# <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>方法 : 分割ウィンドウでのサイズ変更および位置指定動作を定義する
+パネル、<xref:System.Windows.Forms.SplitContainer>コントロール役立つ中に適切にサイズ変更され、ユーザーが操作されます。 ただしがあるプログラムから分割線を制御する場合は、場所が配置されているしにどの程度まで移動できます。  
   
- <xref:System.Windows.Forms.SplitContainer> コントロールの <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> プロパティなどのプロパティを使用すると、必要に応じてユーザー インターフェイスの動作を正確に制御できます。  これらのプロパティについては次の表に示します。  
+ <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>プロパティおよびその他のプロパティを<xref:System.Windows.Forms.SplitContainer>コントロールは、ニーズに合わせて、ユーザー インターフェイスの動作を正確に制御を提供します。 これらのプロパティは、次の表に一覧表示されます。  
   
-|名前|Description|  
-|--------|-----------------|  
-|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティ|キーボードまたはマウスによって分割線が移動できるかどうかを決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> プロパティ|左端または上端から移動できる分割バーまでの距離 \(ピクセル単位\) を決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> プロパティ|ユーザーが分割線を移動できる最小距離 \(ピクセル単位\) を決定します。|  
+|名前|説明|  
+|----------|-----------------|  
+|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティ|分割線は、キーボードまたはマウスを使用して移動可能なかどうかを判断します。|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> プロパティ|移動可能な分割バーを左端または上端からのピクセル単位で距離を決定します。|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> プロパティ|最小の距離 (ピクセル単位)、スプリッターをユーザーが移動できることを決定します。|  
   
- 次の例では、<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> プロパティを変更して、"分割線のスナップ" 効果を作り出します。ユーザーが分割線をドラッグすると、既定値の 1 ピクセルではなく、10 ピクセル単位で値が増加します。  
+ 次の例を変更、 <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> 「スナップ分割」効果; を作成するプロパティの既定値 1 ではなく、10 のピクセル単位で増加、ユーザーが分割線をドラッグしたとき。  
   
-### SplitContainer コントロールのサイズ変更動作を定義するには  
+### <a name="to-define-splitcontainer-resize-behavior"></a>SplitContainer のサイズ変更動作を定義するには  
   
-1.  プロシージャで、分割線の "スナップ" 動作が得られるように、<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> プロパティに必要な値を設定します。  
+1.  プロシージャでは、設定、<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>プロパティ、希望するサイズを 'スナップ' スプリッターの動作を実現できるようにします。  
   
-     次のコード例では、フォームの <xref:System.Windows.Forms.Form.Load> イベント内で、<xref:System.Windows.Forms.SplitContainer> コントロール内の分割線がドラッグ時に 10 ピクセル単位でジャンプするように設定されています。  
+     フォームの内で、次のコード例で<xref:System.Windows.Forms.Form.Load>イベント、内のスプリッター、<xref:System.Windows.Forms.SplitContainer>コントロールにドラッグすると、10 のピクセルのジャンプに設定します。  
   
     ```vb  
     Private Sub Form1_Load(ByVal sender As System.Object, _  
@@ -49,7 +53,6 @@ caps.handback.revision: 13
         splitSnapper.Dock = DockStyle.Fill  
         splitSnapper.Parent = me  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -62,14 +65,14 @@ caps.handback.revision: 13
     }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]\) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)])、イベント ハンドラーを登録するフォームのコンス トラクターに次のコードを追加します。  
   
     ```csharp  
     this.Load += new System.EventHandler(this.Form1_Load);  
     ```  
   
-     分割線を左右に少しだけ移動しても、目に見える効果はありません。しかし、マウス ポインターをどちらかの方向に 10 ピクセル移動すると、分割線が新しい位置にスナップします。  
+     左または右にスプリッターを若干移動効果はありません難しくします。ただし、マウス ポインターが両方向に 10 ピクセルに出ると、分割が新しい位置にスナップされます。  
   
-## 参照  
- <xref:System.Windows.Forms.SplitContainer>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.SplitContainer>  
  <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>

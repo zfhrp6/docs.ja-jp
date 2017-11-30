@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 2a183664-bfbf-4ff0-96f6-c836284ea916
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 43057a4b0014ac2ea8aec6f298ccc0b2d9103154
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e518d9c4477377e6d0d7e569a29efcf4801101fc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="version-tolerant-serialization-technology-sample"></a>バージョン間の耐性があるシリアル化に対応する技術サンプル
 [サンプルのダウンロード](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/VTS.zip.exe)  
@@ -56,6 +55,5 @@ ms.lasthandoff: 08/21/2017
 >  このサンプルでは、コンソール アプリケーションをビルドします。 出力を表示するには、コマンド プロンプト ウィンドウでこれらを起動し、実行する必要があります。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>   
+ <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
  <xref:System.IO.FileStream>
-

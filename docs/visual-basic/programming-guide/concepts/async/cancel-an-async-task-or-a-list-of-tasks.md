@@ -1,44 +1,36 @@
 ---
-title: "非同期タスクまたはタスク (Visual Basic) の一覧を取り消す |Microsoft ドキュメント"
+title: "非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fe2df73aaf49f1b61dafcad9a6c6e0f3d014f8ec
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 916577107bd65559aed71dc9bb2921969a117e90
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。
 非同期のアプリケーションが終了するまで待機しない場合、それを取り消すために使用できるボタンを設定できます。 このトピックの例に従うと、1 つの Web サイトのコンテンツまたは Web サイトのリストをダウンロードするアプリケーションにキャンセル ボタンを追加できます。  
   
- 例では、UI を使用している[微調整 Your Async アプリケーション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)について説明します。  
+ 例では、UI を使用している[非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)について説明します。  
   
 > [!NOTE]
->  例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 が必要または以降のコンピューターにインストールします。  
+>  この例を実行するには、Visual Studio 2012 以降および .NET Framework 4.5 以降が、コンピューターにインストールされている必要があります。  
   
-##  <a name="BKMK_CancelaTask"></a>タスクをキャンセルします。  
- 最初の使用例、**キャンセル**ボタンを&1; 回のダウンロード タスクとします。 アプリケーションがコンテンツをダウンロード中にボタンをクリックすると、ダウンロードは取り消されます。  
+##  <a name="BKMK_CancelaTask"></a>タスクのキャンセル  
+ 最初の例では、**キャンセル** ボタンを単一のダウンロード タスクと関連付けます。 アプリケーションがコンテンツをダウンロード中にボタンをクリックすると、ダウンロードは取り消されます。  
   
 ### <a name="downloading-the-example"></a>例をダウンロードする  
- 完全な Windows Presentation Foundation (WPF) プロジェクトをダウンロードすることができます[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)し次の手順に従います。  
+ 完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。ダウンロード後、次の手順に従います。  
   
 1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
   
@@ -46,20 +38,20 @@ ms.lasthandoff: 03/13/2017
   
 3.  **プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。  
   
-4.  **ソリューション エクスプ ローラー**、ショートカット メニューを開き、 **CancelATask**プロジェクトを開いて、**スタートアップ プロジェクトとして設定**します。  
+4.  **ソリューション エクスプローラー**で、**CancelATask** プロジェクトのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。  
   
 5.  F5 キーを押してプロジェクトを実行します。  
   
      Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。  
   
- プロジェクトをダウンロードできない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認できます。  
+ プロジェクトをダウンロードしない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認することができます。  
   
 ### <a name="building-the-example"></a>例のビルド  
- 次の変更を追加、**キャンセル**ボタン、web サイトをダウンロードするアプリケーションをクリックします。 この例のダウンロードまたはビルドをしない場合は、このトピックの最後にある「コード例全体」のセクションで最終製品をレビューできます。 アスタリスクはコードの変更点を示しています。  
+ 次の変更は、Web サイトをダウンロードするアプリケーションに**キャンセル** ボタンを追加します。 この例のダウンロードまたはビルドをしない場合は、このトピックの最後にある「コード例全体」のセクションで最終製品をレビューできます。 アスタリスクはコードの変更点を示しています。  
   
- 例をビルドする、自分のステップ バイ ステップ「例をダウンロードする」セクション指示従いますが、選択**StarterCode**として、**スタートアップ プロジェクト**代わりに**CancelATask**します。  
+ この例を自分でビルドするには、「例をダウンロードする」のセクションの詳細な手順の指示に従いますが、**[スタートアップ プロジェクト]** として、**[CancelATask]** の代わりに **[StarterCode]** を選択します。  
   
- そのプロジェクトの MainWindow.xaml.vb ファイルに次の変更点を追加します。  
+ そのプロジェクトの MainWindow.xaml.vb ファイルに次の変更を追加します。  
   
 1.  アクセスするすべてのメソッドのスコープである `CancellationTokenSource` 変数、`cts` を宣言します。  
   
@@ -70,7 +62,7 @@ ms.lasthandoff: 03/13/2017
         Dim cts As CancellationTokenSource  
     ```  
   
-2.  次のイベント ハンドラーを追加、**キャンセル** ボタンをクリックします。 イベント ハンドラーを使用して、<xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName>メソッドへの通知を`cts`ユーザーがキャンセルを要求した場合</xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName>。  
+2.  次のような**キャンセル** ボタンのイベント ハンドラーのコードを追加します。 ユーザーが取り消しを要求すると、イベント ハンドラーは <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> メソッドを使って `cts` に通知します。  
   
     ```vb  
     ' ***Add an event handler for the Cancel button.  
@@ -82,7 +74,7 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
-3.  次の変更、イベント ハンドラーを作成、**開始**ボタン`startButton_Click`します。  
+3.  **開始**ボタン `startButton_Click` のためのイベント ハンドラーに次の変更を行います。  
   
     -   `CancellationTokenSource`、`cts` をインスタンス化します。  
   
@@ -91,7 +83,7 @@ ms.lasthandoff: 03/13/2017
         cts = New CancellationTokenSource()  
         ```  
   
-    -   呼び出しで`AccessTheWebAsync`、指定された web サイトのコンテンツをダウンロード、送信、<xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=fullName>の`cts`を引数として</xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=fullName>。 取り消しが要求されると、`Token` プロパティがメッセージを伝達します。 ユーザーがダウンロード操作の取り消しを選択するとメッセージを表示する catch ブロックを追加します。 次のコードは変更点を示しています。  
+    -   指定された Web サイトのコンテンツをダウンロードする `AccessTheWebAsync` の呼び出しでは、引数として <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> の `cts` プロパティを送ります。 取り消しが要求されると、`Token` プロパティがメッセージを伝達します。 ユーザーがダウンロード操作の取り消しを選択するとメッセージを表示する catch ブロックを追加します。 次のコードは変更点を示しています。  
   
         ```vb  
         Try  
@@ -110,7 +102,7 @@ ms.lasthandoff: 03/13/2017
         End Try  
         ```  
   
-4.  `AccessTheWebAsync`を使用して、<xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=fullName>のオーバー ロード、`GetAsync`メソッドで、 <xref:System.Net.Http.HttpClient>、web サイトのコンテンツをダウンロードする型</xref:System.Net.Http.HttpClient></xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=fullName>。 渡す`ct`、<xref:System.Threading.CancellationToken>のパラメーター `AccessTheWebAsync`、2 番目の引数として</xref:System.Threading.CancellationToken>。 ユーザーが選択した場合、トークンがメッセージを送信、**キャンセル** ボタンをクリックします。  
+4.  `AccessTheWebAsync` では、Web サイトのコンテンツをダウンロードするために <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> 型の `GetAsync` メソッドの <xref:System.Net.Http.HttpClient> オーバーロードを使用します。 2 番目の引数として、`ct` の <xref:System.Threading.CancellationToken> パラメーターである `AccessTheWebAsync` を渡します。 ユーザーが**キャンセル** ボタンをクリックすると、トークンがメッセージを送信します。  
   
      次のコードは、`AccessTheWebAsync` の変更点を示しています。  
   
@@ -145,7 +137,7 @@ ms.lasthandoff: 03/13/2017
     Length of the downloaded string: 158125.  
     ```  
   
-     選択した場合、**キャンセル** ボタンをクリックして、プログラムの前に、コンテンツのダウンロードが完了すると、プログラムは、次の出力を生成します。  
+     プログラムがコンテンツのダウンロードを終了する前に**キャンセル** ボタンをクリックすると、プログラムは次の出力を生成します。  
   
     ```  
     Ready to download.  
@@ -153,10 +145,10 @@ ms.lasthandoff: 03/13/2017
     ```  
   
 ##  <a name="BKMK_CancelaListofTasks"></a>タスクの一覧を取り消す  
- 前の例を拡張すると、同じ `CancellationTokenSource` のインスタンスを各タスクに関連付けることによって、多数のタスクを取り消すことができます。 選択した場合、**キャンセル** ボタンを完了していないすべてのタスクをキャンセルします。  
+ 前の例を拡張すると、同じ `CancellationTokenSource` のインスタンスを各タスクに関連付けることによって、多数のタスクを取り消すことができます。 **キャンセル** ボタンをクリックすると、完了していないすべてのタスクを取り消します。  
   
 ### <a name="downloading-the-example"></a>例をダウンロードする  
- 完全な Windows Presentation Foundation (WPF) プロジェクトをダウンロードすることができます[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)し次の手順に従います。  
+ 完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。ダウンロード後、次の手順に従います。  
   
 1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
   
@@ -164,16 +156,16 @@ ms.lasthandoff: 03/13/2017
   
 3.  **プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。  
   
-4.  **ソリューション エクスプ ローラー**、ショートカット メニューを開き、 **CancelAListOfTasks**プロジェクトを開いて、**スタートアップ プロジェクトとして設定**します。  
+4.  **ソリューション エクスプローラー**で、**CancelAListOfTasks** プロジェクトのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。  
   
 5.  F5 キーを押してプロジェクトを実行します。  
   
      Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。  
   
- プロジェクトをダウンロードできない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認できます。  
+ プロジェクトをダウンロードしない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認することができます。  
   
 ### <a name="building-the-example"></a>例のビルド  
- 例を拡張する、自分のステップ バイ ステップ「例をダウンロードする」セクション指示従いますが、選択**CancelATask**として、**スタートアップ プロジェクト**します。 次の変更点をプロジェクトに追加します。 アスタリスクはプログラムの変更点を示しています。  
+ この例を自分で拡張するには、「例をダウンロードする」のセクションの詳細な手順の指示に従いますが、**[スタートアップ プロジェクト]** として **CancelATask** を選択します。 次の変更点をプロジェクトに追加します。 アスタリスクはプログラムの変更点を示しています。  
   
 1.  Web アドレスのリストを作成するメソッドを追加します。  
   
@@ -220,9 +212,12 @@ ms.lasthandoff: 03/13/2017
     Next  
     ```  
   
-4.  `AccessTheWebAsync` は長さを表示するため、メソッドは何も返す必要はありません。 Return ステートメントを削除および<xref:System.Threading.Tasks.Task><xref:System.Threading.Tasks.Task%601>。</xref:System.Threading.Tasks.Task%601>ではなく</xref:System.Threading.Tasks.Task>にメソッドの戻り値の型を変更します。  
+4.  `AccessTheWebAsync` は長さを表示するため、メソッドは何も返す必要はありません。 return ステートメントを削除し、メソッドの戻り値の型を <xref:System.Threading.Tasks.Task> ではなく <xref:System.Threading.Tasks.Task%601> に変更します。  
   
-<CodeContentPlaceHolder>10</CodeContentPlaceHolder>  
+    ```vb  
+    Async Function AccessTheWebAsync(ct As CancellationToken) As Task  
+    ```  
+  
      式の代わりにステートメントを使って、`startButton_Click` からメソッドを呼び出します。  
   
     ```vb  
@@ -232,7 +227,6 @@ ms.lasthandoff: 03/13/2017
 5.  プログラムの取り消しをしない場合、次の出力を生成します。  
   
     ```  
-  
     Length of the downloaded string: 35939.  
   
     Length of the downloaded string: 237682.  
@@ -248,10 +242,9 @@ ms.lasthandoff: 03/13/2017
     Length of the downloaded string: 145790.  
   
     Downloads complete.  
-  
     ```  
   
-     選択した場合、**キャンセル**ボタン ダウンロードが完了する前に、出力には、取り消しの前に完了したダウンロードの長さが含まれています。  
+     ダウンロードが完了する前に**キャンセル** ボタンをクリックすると、出力には取り消しの前に完了したダウンロードの長さが含まれています。  
   
     ```  
     Length of the downloaded string: 35939.  
@@ -261,16 +254,15 @@ ms.lasthandoff: 03/13/2017
     Length of the downloaded string: 128607.  
   
     Downloads canceled.  
-  
     ```  
   
-##  <a name="BKMK_CompleteExamples"></a>コード例を全体します。  
- 次のセクションには、前の例の各コードが含まれています。 <xref:System.Net.Http>。</xref:System.Net.Http>への参照を追加する必要があることに注意してください。  
+##  <a name="BKMK_CompleteExamples"></a>コード例全体  
+ 次のセクションには、前の例の各コードが含まれています。 <xref:System.Net.Http> の参照を追加する必要があることに注意してください。  
   
- プロジェクトをダウンロードする[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)します。  
+ このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。  
   
 ### <a name="cancel-a-task-example"></a>タスクを取り消す例  
- 次のコードは、たとえば、1 つのタスクをキャンセルする完全な MainWindow.xaml.vb ファイルです。  
+ 次のコードは、完全な MainWindow.xaml.vb ファイルを 1 つのタスクを取り消す例です。  
   
 ```vb  
 ' Add an Imports directive and a reference for System.Net.Http.  
@@ -472,8 +464,8 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Threading.CancellationTokenSource></xref:System.Threading.CancellationTokenSource>   
- <xref:System.Threading.CancellationToken></xref:System.Threading.CancellationToken>   
- [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
- [非同期アプリケーション (Visual Basic) の微調整](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
- [アプリケーションの微調整の非同期のサンプル:](http://go.microsoft.com/fwlink/?LinkId=255046)
+ <xref:System.Threading.CancellationTokenSource>  
+ <xref:System.Threading.CancellationToken>  
+ [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
+ [非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
+ [非同期のサンプル: アプリケーションの微調整](http://go.microsoft.com/fwlink/?LinkId=255046)

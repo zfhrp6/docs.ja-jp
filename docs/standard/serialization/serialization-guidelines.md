@@ -4,22 +4,21 @@ ms.date: 03/30/2017
 ms.prod: .net
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
+- csharp
+- vb
 helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: ff2b5bc2e34a061f577dd839de8b5e834af102b8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: a09db57aab479b5b1a96dca8f4b37bc112e05810
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="serialization-guidelines"></a>シリアル化のガイドライン
 このドキュメントには、シリアル化できるように API をデザインする際に考慮すべきガイドラインを示します。  
@@ -58,28 +57,32 @@ ms.lasthandoff: 08/21/2017
 #### <a name="supporting-data-contract-serialization"></a>データ コントラクトのシリアル化のサポート  
  <xref:System.Runtime.Serialization.DataContractAttribute> を型に適用し、<xref:System.Runtime.Serialization.DataMemberAttribute> をその型のメンバー (フィールドおよびプロパティ) に適用することによって、型でデータ コントラクトのシリアル化をサポートすることができます。  
   
- [!code-csharp[SerializationGuidelines#1](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#1)] [!code-vb[SerializationGuidelines#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#1)]  
+ [!code-csharp[SerializationGuidelines#1](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#1)]
+ [!code-vb[SerializationGuidelines#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#1)]  
   
 1.  型を部分信頼で使用する場合は、型のデータ メンバーをパブリックにすることを検討してください。 完全な信頼では、データ コントラクト シリアライザーでパブリックではない型とメンバーのシリアル化と逆シリアル化を行うことが可能ですが、部分信頼の場合、パブリック メンバーのみをシリアル化および逆シリアル化できます。  
   
 2.  Data-MemberAttribute を持つすべてのプロパティに getter と setter を実装してください。 データ コントラクト シリアライザーでは、この型の getter と setter の両方がシリアル化可能と見なされる必要があります。 型を部分信頼で使用しない場合は、1 つまたは両方のプロパティ アクセサーを非パブリックにできます。  
   
-     [!code-csharp[SerializationGuidelines#2](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#2)]  [!code-vb[SerializationGuidelines#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#2)]  
+     [!code-csharp[SerializationGuidelines#2](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#2)]
+     [!code-vb[SerializationGuidelines#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#2)]  
   
 3.  逆シリアル化されたインスタンスの初期化には、シリアル化コールバックを使用することを検討してください。  
   
      オブジェクトの逆シリアル化時にはコンストラクターは呼び出されません。 このため、通常の構築時に実行されるすべてのロジックは、*シリアル化のコールバック*の 1 つとして実装する必要があります。  
   
-     [!code-csharp[SerializationGuidelines#3](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#3)]  [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
+     [!code-csharp[SerializationGuidelines#3](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#3)]
+     [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
   
      <xref:System.Runtime.Serialization.OnDeserializedAttribute> 属性は最もよく使用されるコールバック属性です。 ファミリの他の属性には、<xref:System.Runtime.Serialization.OnDeserializingAttribute>、    
-    <xref:System.Runtime.Serialization.OnSerializingAttribute>、および <xref:System.Runtime.Serialization.OnSerializedAttribute> があります。 これらを使用して、逆シリアル化前、シリアル化前、およびシリアル化後に実行されるコールバックをマークすることができます。  
+    <xref:System.Runtime.Serialization.OnSerializingAttribute> および <xref:System.Runtime.Serialization.OnSerializedAttribute> これらを使用して、逆シリアル化前、シリアル化前、およびシリアル化後に実行されるコールバックをマークすることができます。  
   
 4.  複雑なオブジェクト グラフを逆シリアル化する場合は、使用する具象型を示す <xref:System.Runtime.Serialization.KnownTypeAttribute> を使用することを検討してください。  
   
      たとえば、逆シリアル化されたデータ メンバーの型を抽象クラスで表す場合、シリアライザーはインスタンス化してメンバーに割り当てる具象型を判断するために、*既知の型*の情報が必要になります。 属性を使用して既知の型を指定しない場合、明示的にシリアライザーに渡す (既知の型をシリアライザーのコンストラクターに渡します) か、構成ファイルで指定する必要があります。  
   
-     [!code-csharp[SerializationGuidelines#4](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#4)]  [!code-vb[SerializationGuidelines#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#4)]  
+     [!code-csharp[SerializationGuidelines#4](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#4)]
+     [!code-vb[SerializationGuidelines#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#4)]  
   
      既知の型のリストが静的にわからない場合 (**Person** クラスをコンパイルした場合)、**KnownTypeAttribute** で実行時に既知の型の一覧を返すメソッドを指すこともできます。  
   
@@ -91,7 +94,8 @@ ms.lasthandoff: 08/21/2017
   
      インターフェイスを使用すると、ラウンドトリッピングの間にデータが失われないようにシリアライザーで確認することができます。 <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> プロパティにより、現在のバージョンでは未知の、将来使用される型の任意のデータが格納されます。 現在のバージョンを後で将来のバージョンにシリアル化または逆シリアル化するときに、**ExtensionData** プロパティ値を通じて、シリアル化されたストリーム内で追加データを使用できます。  
   
-     [!code-csharp[SerializationGuidelines#5](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#5)]  [!code-vb[SerializationGuidelines#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#5)]  
+     [!code-csharp[SerializationGuidelines#5](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#5)]
+     [!code-vb[SerializationGuidelines#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#5)]  
   
      詳細については、「[上位互換性のあるデータ コントラクト](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)」を参照してください。  
   
@@ -102,9 +106,10 @@ ms.lasthandoff: 08/21/2017
   
      言い換えれば、XML シリアル化で使用する型であることがわかっている場合を除き、<xref:System.Runtime.Serialization> 名前空間の属性を新しい型に適用しないでください。 **System.Xml.Serialization** を使用して、作成された XML の形状を制御する方法を次の例に示します。  
   
-     [!code-csharp[SerializationGuidelines#6](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#6)]  [!code-vb[SerializationGuidelines#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#6)]  
+     [!code-csharp[SerializationGuidelines#6](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#6)]
+     [!code-vb[SerializationGuidelines#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#6)]  
   
-2.  XML シリアル化属性を適用することで提供される、シリアル化された XML の形状をより細かく制御する場合は、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装することを検討してください。 2 つのインターフェイスのメソッド、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> と <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> を使用することで、シリアル化された XML ストリームを完全制御できます。 また、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute> 属性を適用することで、その型用に生成される XML スキーマを制御することもできます。  
+2.  XML シリアル化属性を適用することで提供される、シリアル化された XML の形状をより細かく制御する場合は、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装することを検討してください。 2 つのメソッド、インターフェイスの<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A>と<xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>をシリアル化された XML ストリームを完全に制御できるようにします。 また、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute> 属性を適用することで、その型用に生成される XML スキーマを制御することもできます。  
   
 #### <a name="supporting-runtime-serialization"></a>ランタイム シリアル化のサポート  
  *ランタイム シリアル化*は .NET リモート処理で使用されるテクノロジです。 .NET リモート処理を使用して型を変換する場合、ランタイム シリアル化がサポートされていることを確認する必要があります。  
@@ -113,32 +118,36 @@ ms.lasthandoff: 08/21/2017
   
 1.  使用する型で .NET リモート処理を使用する場合は、ランタイムのシリアル化をサポートすることを検討してください。 たとえば、<xref:System.AddIn> 名前空間は .NET リモート処理を使用するため、**System.AddIn** アドイン間で交換されるすべての型でランタイム シリアル化をサポートする必要があります。  
   
-     [!code-csharp[SerializationGuidelines#7](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#7)]  [!code-vb[SerializationGuidelines#7](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#7)]  
+     [!code-csharp[SerializationGuidelines#7](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#7)]
+     [!code-vb[SerializationGuidelines#7](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#7)]  
   
 2.  シリアル化プロセスを完全制御する場合は、*ランタイム シリアル化可能パターン*を実装することを検討してください。 たとえば、シリアル化または逆シリアル化されたデータを変換したいとします。  
   
      パターンは単純です。 必要な作業は、<xref:System.Runtime.Serialization.ISerializable> インターフェイスを実装し、オブジェクトを逆シリアル化するときに使用する特別なコンストラクターを指定するだけです。  
   
-     [!code-csharp[SerializationGuidelines#8](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#8)]  [!code-vb[SerializationGuidelines#8](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#8)]  
+     [!code-csharp[SerializationGuidelines#8](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#8)]
+     [!code-vb[SerializationGuidelines#8](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#8)]  
   
 3.  このサンプルに示すように、シリアル化コンストラクターを保護し、型と名前を指定した 2 つのパラメーターを用意してください。  
   
-     [!code-csharp[SerializationGuidelines#9](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#9)]  [!code-vb[SerializationGuidelines#9](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#9)]  
+     [!code-csharp[SerializationGuidelines#9](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#9)]
+     [!code-vb[SerializationGuidelines#9](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#9)]  
   
 4.  ISerializable メンバーを明示的に実装してください。  
   
-     [!code-csharp[SerializationGuidelines#10](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#10)]  [!code-vb[SerializationGuidelines#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#10)]  
+     [!code-csharp[SerializationGuidelines#10](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#10)]
+     [!code-vb[SerializationGuidelines#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#10)]  
   
 5.  **ISerializable.GetObjectData** の実装にはリンク確認要求を適用してください。 こうすることで、完全に信頼できるコア、およびランタイムのシリアライザーだけがメンバーにアクセスできるようになります。  
   
-     [!code-csharp[SerializationGuidelines#11](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#11)]  [!code-vb[SerializationGuidelines#11](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#11)]  
+     [!code-csharp[SerializationGuidelines#11](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#11)]
+     [!code-vb[SerializationGuidelines#11](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#11)]  
   
 ## <a name="see-also"></a>関連項目  
- [データ コントラクトの使用](../../../docs/framework/wcf/feature-details/using-data-contracts.md)   
- [データ コントラクト シリアライザー](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)   
- [データ コントラクト シリアライザーでサポートされる型](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)   
- [バイナリ シリアル化](binary-serialization.md)   
- [リモート オブジェクト](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)   
- [XML シリアル化および SOAP シリアル化](xml-and-soap-serialization.md)   
+ [データ コントラクトの使用](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [データ コントラクト シリアライザー](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)  
+ [データ コントラクト シリアライザーでサポートされる型](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
+ [バイナリ シリアル化](binary-serialization.md)  
+ [リモート オブジェクト](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)  
+ [XML シリアル化および SOAP シリアル化](xml-and-soap-serialization.md)  
  [セキュリティとシリアル化](../../../docs/framework/misc/security-and-serialization.md)
-

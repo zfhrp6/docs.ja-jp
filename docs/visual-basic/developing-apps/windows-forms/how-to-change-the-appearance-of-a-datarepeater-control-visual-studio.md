@@ -1,59 +1,61 @@
 ---
-title: "How to: Change the Appearance of a DataRepeater Control (Visual Studio) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "DataRepeater, customizing"
-  - "DataRepeater, changing run time appearance"
+title: "方法 : DataRepeater コントロールの外観を変更する (Visual Studio)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataRepeater, customizing
+- DataRepeater, changing run time appearance
 ms.assetid: 2af6dfce-760b-489e-b863-8da967f315c3
-caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 585ff4c942185f3199fe6e9e47a4ebd9f1f0a478
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Change the Appearance of a DataRepeater Control (Visual Studio)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの外観は、デザイン時にプロパティを設定するか、実行時に <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> イベントを処理することで変更できます。  
+# <a name="how-to-change-the-appearance-of-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールの外観を変更する (Visual Studio)
+外観を変更することができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール プロパティの設定によっては、デザイン時または実行時に処理して、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>イベント。  
   
- デザイン時にコントロールの項目テンプレート セクションを選択した状態で設定するプロパティは、実行時に <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> ごとに繰り返されます。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロール自体の外観に関連するプロパティは、実行時にコンテナーの一部が隠されていない状態の場合 \(<xref:System.Windows.Forms.Control.Padding%2A> プロパティが大きい値に設定されている場合など\) に限り、表示されます。  
+ コントロールの項目テンプレートのセクションを選択すると、デザイン時に設定したプロパティはごとに繰り返されます<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>実行時にします。 外観に関連するプロパティ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール自体は明らかになった場合にのみ、コンテナーのパーツが左の実行時に表示されます (たとえば場合、<xref:System.Windows.Forms.Control.Padding%2A>を大きな値に設定されます)。  
   
- 外観に関連するプロパティは、実行時に、条件に基づいて設定できます。  たとえば、スケジュール管理用のアプリケーションでは、項目の背景色を変更して、期限切れの項目を警告できます。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> イベント ハンドラー内で、`If…Then` などの条件付きステートメントでプロパティを設定する場合は、`Else` 句も使用して、条件が満たされない場合の外観を指定する必要があります。  
+ 実行時に、プロパティの外観に関連することができますに基づいて設定条件。 たとえば、スケジューリングのアプリケーションでは、期日の項目がユーザーに警告する項目の背景色を変更する可能性があります。 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>など、条件付きステートメントでプロパティを設定した場合、イベント ハンドラー `If…Then`、使用することも必要があります、`Else`句を条件が満たされないときに、外観を指定します。  
   
-### デザイン時に外観を変更するには  
+### <a name="to-change-the-appearance-at-design-time"></a>デザイン時の外観を変更するには  
   
-1.  Windows フォーム デザイナーで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの項目テンプレート \(上部\) 領域を選択します。  
+1.  Windows フォーム デザイナーで、項目テンプレート (上部) の領域を選択、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。  
   
-2.  \[プロパティ\] ウィンドウで、プロパティを選択して値を変更します。  外観に関連する一般的なプロパティとしては、<xref:System.Windows.Forms.Control.BackColor%2A>、<xref:System.Windows.Forms.Control.BackgroundImage%2A>、<xref:System.Windows.Forms.Panel.BorderStyle%2A>、<xref:System.Windows.Forms.Control.ForeColor%2A> などがあります。  
+2.  [プロパティ] ウィンドウでプロパティを選択し、値を変更します。 外観に影響する共通のプロパティを含める<xref:System.Windows.Forms.Control.BackColor%2A>、 <xref:System.Windows.Forms.Control.BackgroundImage%2A>、 <xref:System.Windows.Forms.Panel.BorderStyle%2A>、および<xref:System.Windows.Forms.Control.ForeColor%2A>です。  
   
-### 実行時に外観を変更するには  
+### <a name="to-change-the-appearance-at-run-time"></a>実行時に外観を変更するには  
   
-1.  コード エディターで、\[イベント\] ボックスの一覧の **\[DrawItem\]** をクリックします。  
+1.  コード エディターで、[イベント] ボックスの一覧の **[DrawItem]**をクリックします。  
   
-2.  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> イベント ハンドラーに、プロパティを設定するコードを追加します。  
+2.  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> 、イベント ハンドラーのプロパティを設定するコードを追加します。  
   
-     [!code-cs[VbPowerPacksDataRepeaterAppearance#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio_1.cs)]
+     [!code-csharp[VbPowerPacksDataRepeaterAppearance#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksDataRepeaterAppearance#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio_1.vb)]  
   
-## 使用例  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの一般的なカスタマイズの例として、行の色を交互にする、条件に基づいてフィールドの色を変更する、などが挙げられます。  このようなカスタマイズを行う方法を次の例に示します。  この例では、Northwind データベースの Products テーブルにバインドされた <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールがあることを前提としています。  
+## <a name="example"></a>例  
+ 一般的なカスタマイズをいくらか、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールには、表示色を交互を条件に基づくフィールドの色を変更することで、行が含まれます。 次の例では、これらのカスタマイズを実行する方法を示します。 この例があるか、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> Northwind データベースの Products テーブルにバインドされているコントロール。  
   
  [!code-vb[VbPowerPacksDataRepeaterAlternateBackColor#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio_2.vb)]
- [!code-cs[VbPowerPacksDataRepeaterAlternateBackColor#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio_2.cs)]  
+ [!code-csharp[VbPowerPacksDataRepeaterAlternateBackColor#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio_2.cs)]  
   
- どちらのカスタマイズを行うときも、条件の一致不一致両方の場合について、プロパティを設定するコードを記述する必要があります。  `Else` 条件を指定しないと、実行時に予期しない結果が発生します。  
+ これらのカスタマイズの両方、条件の両方の側のプロパティを設定するコードを提供する必要がありますに注意してください。 指定しない場合、`Else`条件、実行時に予期しない結果が表示されます。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>   
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>   
- [Introduction to the DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)   
- [Troubleshooting the DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)   
- [How to: Display Bound Data in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)   
- [How to: Display Unbound Controls in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)   
- [How to: Display Item Headers in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-item-headers-in-a-datarepeater-control-visual-studio.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>  
+ [DataRepeater コントロールの概要](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
+ [DataRepeater コントロールのトラブルシューティング](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)  
+ [方法: DataRepeater コントロールに、バインドされたデータを表示する](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)  
+ [方法: DataRepeater コントロールに非バインド コントロールを表示する](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)  
+ [方法: DataRepeater コントロールに項目ヘッダーを表示する](../../../visual-basic/developing-apps/windows-forms/how-to-display-item-headers-in-a-datarepeater-control-visual-studio.md)

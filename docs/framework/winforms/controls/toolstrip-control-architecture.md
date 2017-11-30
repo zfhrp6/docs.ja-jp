@@ -1,39 +1,39 @@
 ---
-title: "ToolStrip コントロールのアーキテクチャ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ToolStrip コントロール [Windows フォーム], アーキテクチャ"
+title: "ToolStrip コントロールのアーキテクチャ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: ToolStrip control [Windows Forms], architecture
 ms.assetid: 71df2d18-862e-4701-9ff9-c1fe606f94f2
-caps.latest.revision: 32
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 32
+caps.latest.revision: "32"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6884598e6b883ab5e6369be5f2f796a194c7f930
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ToolStrip コントロールのアーキテクチャ
-<xref:System.Windows.Forms.ToolStrip> クラスと <xref:System.Windows.Forms.ToolStripItem> クラスには、ツール バー項目、ステータス項目、およびメニュー項目を表示するための柔軟で拡張性のあるシステムが実装されています。  これらのクラスはすべて <xref:System.Windows.Forms> 名前空間に格納されており、通常、名前にはすべて "ToolStrip" プリフィックス \(<xref:System.Windows.Forms.ToolStripOverflow> など\) または "Strip" サフィックス \(<xref:System.Windows.Forms.MenuStrip> など\) が付きます。  
+# <a name="toolstrip-control-architecture"></a>ToolStrip コントロールのアーキテクチャ
+<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.ToolStripItem>クラスは、ツールバー、ステータス、およびメニュー項目を表示するため、柔軟な拡張可能なシステムを提供します。 これらのクラスはすべて、<xref:System.Windows.Forms>名前空間と、通常すべて"ToolStrip"プレフィックスを持つという名前 (など<xref:System.Windows.Forms.ToolStripOverflow>) または「ストリップ」サフィックスを持つ (など<xref:System.Windows.Forms.MenuStrip>)。  
   
-## ToolStrip  
- このトピックでは、<xref:System.Windows.Forms.ToolStrip> およびこのクラスから派生するコントロールについて説明します。  
+## <a name="toolstrip"></a>ToolStrip  
+ 次のトピックについて説明<xref:System.Windows.Forms.ToolStrip>とそれから派生するコントロール。  
   
- <xref:System.Windows.Forms.ToolStrip> は、<xref:System.Windows.Forms.MenuStrip>、<xref:System.Windows.Forms.StatusStrip>、および <xref:System.Windows.Forms.ContextMenuStrip> の抽象基本クラスです。  次のオブジェクト モデルは、<xref:System.Windows.Forms.ToolStrip> 継承階層構造を示しています。  
+ <xref:System.Windows.Forms.ToolStrip>抽象基本クラスは、 <xref:System.Windows.Forms.MenuStrip>、 <xref:System.Windows.Forms.StatusStrip>、および<xref:System.Windows.Forms.ContextMenuStrip>です。 次のオブジェクト モデルの表示、<xref:System.Windows.Forms.ToolStrip>継承階層です。  
   
- ![ToolStrip オブジェクト モデル](../../../../docs/framework/winforms/controls/media/toolstripobjectmodel.png "ToolStripObjectModel")  
+ ![ToolStrip オブジェクト モデル](../../../../docs/framework/winforms/controls/media/toolstripobjectmodel.gif "ToolStripObjectModel")  
 ToolStrip オブジェクト モデル  
   
- <xref:System.Windows.Forms.ToolStrip> に含まれているすべての項目には、<xref:System.Windows.Forms.ToolStrip.Items%2A> コレクションを介してアクセスできます。  <xref:System.Windows.Forms.ToolStripDropDownItem> に含まれているすべての項目には、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A> コレクションを介してアクセスできます。  <xref:System.Windows.Forms.ToolStrip> の派生クラスでは、<xref:System.Windows.Forms.ToolStrip.DisplayedItems%2A> プロパティを使用して、現在表示されている項目のみにアクセスすることもできます。  これらは、現在オーバーフロー メニューにない項目です。  
+ すべての項目にアクセスすることができます、<xref:System.Windows.Forms.ToolStrip>を通じて、<xref:System.Windows.Forms.ToolStrip.Items%2A>コレクション。 すべての項目にアクセスすることができます、<xref:System.Windows.Forms.ToolStripDropDownItem>を通じて、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A>コレクション。 派生したクラスで<xref:System.Windows.Forms.ToolStrip>、使用することも、<xref:System.Windows.Forms.ToolStrip.DisplayedItems%2A>現在表示されている項目のみにアクセスするプロパティです。 これらは、オーバーフロー メニューに現在含まれていない項目です。  
   
- 次の項目は、すべての位置で <xref:System.Windows.Forms.ToolStripSystemRenderer> および <xref:System.Windows.Forms.ToolStripProfessionalRenderer> の両方とシームレスに連動するように特別にデザインされています。  これらは、<xref:System.Windows.Forms.ToolStrip> コントロールのデザイン時に既定で使用できます。  
+ 次の項目を両方とシームレスに動作する目的<xref:System.Windows.Forms.ToolStripSystemRenderer>と<xref:System.Windows.Forms.ToolStripProfessionalRenderer>すべての向きにします。 デザイン時に、既定では、<xref:System.Windows.Forms.ToolStrip>コントロール。  
   
 -   <xref:System.Windows.Forms.ToolStripButton>  
   
@@ -49,10 +49,10 @@ ToolStrip オブジェクト モデル
   
 -   <xref:System.Windows.Forms.ToolStripComboBox>  
   
-### MenuStrip  
- <xref:System.Windows.Forms.MenuStrip> は、<xref:System.Windows.Forms.MainMenu> に代わる最上位のコンテナーです。  これには、キー処理機能とマルチ ドキュメント インターフェイス \(MDI\) 機能も用意されています。  <xref:System.Windows.Forms.ToolStripDropDownItem> および <xref:System.Windows.Forms.ToolStripMenuItem> は <xref:System.Windows.Forms.ToolStripItem> から派生していますが、機能的には、<xref:System.Windows.Forms.MenuStrip> と連動します。  
+### <a name="menustrip"></a>MenuStrip  
+ <xref:System.Windows.Forms.MenuStrip>最上位のコンテナーを置き換える<xref:System.Windows.Forms.MainMenu>です。 これは、キーを処理し、複数のドキュメント インターフェイス (MDI) の機能も提供します。 機能的には、<xref:System.Windows.Forms.ToolStripDropDownItem>と<xref:System.Windows.Forms.ToolStripMenuItem>と共に職場<xref:System.Windows.Forms.MenuStrip>から派生しているが、<xref:System.Windows.Forms.ToolStripItem>です。  
   
- 次の項目は、すべての位置で <xref:System.Windows.Forms.ToolStripSystemRenderer> および <xref:System.Windows.Forms.ToolStripProfessionalRenderer> の両方とシームレスに連動するように特別にデザインされています。  これらは、<xref:System.Windows.Forms.MenuStrip> コントロールのデザイン時に既定で使用できます。  
+ 次の項目を両方とシームレスに動作する目的<xref:System.Windows.Forms.ToolStripSystemRenderer>と<xref:System.Windows.Forms.ToolStripProfessionalRenderer>すべての向きにします。 デザイン時に、既定では、<xref:System.Windows.Forms.MenuStrip>コントロール。  
   
 -   <xref:System.Windows.Forms.ToolStripMenuItem>  
   
@@ -60,10 +60,10 @@ ToolStrip オブジェクト モデル
   
 -   <xref:System.Windows.Forms.ToolStripComboBox>  
   
-### StatusStrip  
- <xref:System.Windows.Forms.StatusStrip> は <xref:System.Windows.Forms.StatusBar> コントロールを置き換えます。  <xref:System.Windows.Forms.StatusStrip> の特別な機能には、カスタムのテーブル レイアウトや、フォームのサイズ変更グリップと移動グリップのサポートがあります。また、使用可能な領域を <xref:System.Windows.Forms.ToolStripStatusLabel> で自動的に設定できる `Spring` プロパティもあります。  
+### <a name="statusstrip"></a>StatusStrip  
+ <xref:System.Windows.Forms.StatusStrip>置換、<xref:System.Windows.Forms.StatusBar>コントロール。 特殊な機能<xref:System.Windows.Forms.StatusStrip>含めるカスタム テーブルのレイアウトは、フォームのサイズ変更や、グリップを移動のサポート、および`Spring`プロパティを<xref:System.Windows.Forms.ToolStripStatusLabel>使用可能な領域を自動的に入力します。  
   
- 次の項目は、すべての位置で <xref:System.Windows.Forms.ToolStripSystemRenderer> および <xref:System.Windows.Forms.ToolStripProfessionalRenderer> の両方とシームレスに連動するように特別にデザインされています。  これらは、<xref:System.Windows.Forms.StatusStrip> コントロールのデザイン時に既定で使用できます。  
+ 次の項目を両方とシームレスに動作する目的<xref:System.Windows.Forms.ToolStripSystemRenderer>と<xref:System.Windows.Forms.ToolStripProfessionalRenderer>すべての向きにします。 デザイン時に、既定では、<xref:System.Windows.Forms.StatusStrip>コントロール。  
   
 -   <xref:System.Windows.Forms.ToolStripStatusLabel>  
   
@@ -73,10 +73,10 @@ ToolStrip オブジェクト モデル
   
 -   <xref:System.Windows.Forms.ToolStripProgressBar>  
   
-### ContextMenuStrip  
- <xref:System.Windows.Forms.ContextMenuStrip> は <xref:System.Windows.Forms.ContextMenu> に代わるものです。  <xref:System.Windows.Forms.ContextMenuStrip> は任意のコントロールに関連付けることができ、関連付けたコントロールでは、マウスの右クリックで自動的にコンテキスト メニュー \(ショートカット メニュー\) が表示されます。  <xref:System.Windows.Forms.ToolStripDropDown.Show%2A> を使用して、<xref:System.Windows.Forms.ContextMenuStrip> をプログラムによって表示できます。  <xref:System.Windows.Forms.ContextMenuStrip> では、キャンセル可能な <xref:System.Windows.Forms.ToolStripDropDown.Opening> イベントと <xref:System.Windows.Forms.ToolStripDropDown.Closing> イベントがサポートされているため、動的な作成や複数クリックのシナリオを処理できます。  <xref:System.Windows.Forms.ContextMenuStrip> イメージ、メニュー項目のチェックの状態、テキスト、アクセス キー、ショートカット、およびカスケード メニューをサポートしています。  
+### <a name="contextmenustrip"></a>ContextMenuStrip  
+ <xref:System.Windows.Forms.ContextMenuStrip>置換<xref:System.Windows.Forms.ContextMenu>です。 関連付けることができます、<xref:System.Windows.Forms.ContextMenuStrip>任意のコントロールとマウスの右クリック自動的に表示されます、コンテキスト メニュー (またはショートカット メニュー)。 表示することができます、<xref:System.Windows.Forms.ContextMenuStrip>を使用してプログラムで、<xref:System.Windows.Forms.ToolStripDropDown.Show%2A>メソッドです。 <xref:System.Windows.Forms.ContextMenuStrip>キャンセル可能なサポート<xref:System.Windows.Forms.ToolStripDropDown.Opening>と<xref:System.Windows.Forms.ToolStripDropDown.Closing>動的母集団と複数クリック シナリオを処理するイベントです。 <xref:System.Windows.Forms.ContextMenuStrip>イメージ、メニュー項目の状態の確認、テキスト、アクセス キー、ショートカット、およびカスケード メニューをサポートしています。  
   
- 次の項目は、すべての位置で <xref:System.Windows.Forms.ToolStripSystemRenderer> および <xref:System.Windows.Forms.ToolStripProfessionalRenderer> の両方とシームレスに連動するように特別にデザインされています。  これらは、<xref:System.Windows.Forms.ContextMenuStrip> コントロールのデザイン時に既定で使用できます。  
+ 次の項目を両方とシームレスに動作する目的<xref:System.Windows.Forms.ToolStripSystemRenderer>と<xref:System.Windows.Forms.ToolStripProfessionalRenderer>すべての向きにします。 デザイン時に、既定では、<xref:System.Windows.Forms.ContextMenuStrip>コントロール。  
   
 -   <xref:System.Windows.Forms.ToolStripMenuItem>  
   
@@ -86,35 +86,35 @@ ToolStrip オブジェクト モデル
   
 -   <xref:System.Windows.Forms.ToolStripComboBox>  
   
-### ToolStrip の汎用機能  
- このトピックでは、<xref:System.Windows.Forms.ToolStrip> と派生コントロールに共通の機能と動作について説明します。  
+### <a name="toolstrip-generic-features"></a>ToolStrip の汎用機能  
+ 次のトピックは、機能とする一般的な動作について説明、<xref:System.Windows.Forms.ToolStrip>およびコントロールを派生します。  
   
-#### 描画  
- <xref:System.Windows.Forms.ToolStrip> コントロールには、カスタム描画を行う方法がいくつかあります。  他の Windows フォーム コントロールと同様に、<xref:System.Windows.Forms.ToolStrip> と <xref:System.Windows.Forms.ToolStripItem> のどちらにも、オーバーライド可能な `OnPaint` メソッドと `Paint` イベントがあります。  通常の描画と同様に、座標系はコントロールのクライアント領域を基準としています。つまり、コントロールの左上角が 0, 0 になります。  <xref:System.Windows.Forms.ToolStripItem> の `Paint` イベントと `OnPaint` メソッドは、他のコントロール描画イベントと同じように動作します。  
+#### <a name="painting"></a>描画  
+ カスタム描画を行うことができます<xref:System.Windows.Forms.ToolStrip>いくつかの方法で制御します。 その他の Windows フォーム コントロールと同様、<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.ToolStripItem>両方がオーバーライドできる`OnPaint`メソッドおよび`Paint`イベント。 コントロールのクライアント領域と相対的座標系は、通常の描画としてつまり、コントロールの左上隅には 0、0 です。 `Paint`イベントと`OnPaint`のメソッド、<xref:System.Windows.Forms.ToolStripItem>他のコントロールの描画イベントと同様に動作します。  
   
- <xref:System.Windows.Forms.ToolStrip> コントロールでは、<xref:System.Windows.Forms.ToolStripRenderer> クラスを使用することにより、項目やコンテナーの描画の細部にアクセスすることもできます。このクラスには、<xref:System.Windows.Forms.ToolStrip> の背景、項目の背景、項目のイメージ、項目の矢印、項目のテキスト、および境界を描画するためのオーバーライド可能なメソッドがあります。  これらのメソッドのイベント引数は、四角形、色、テキスト形式など、目的に応じて調整できるいくつかのプロパティを公開します。  
+ <xref:System.Windows.Forms.ToolStrip>コントロールもアイテムおよびにより、そのコンテナーのレンダリングに細かいアクセスを提供、<xref:System.Windows.Forms.ToolStripRenderer>をバック グラウンド、項目の背景、項目のイメージ、項目 の矢印、項目のテキストの描画のオーバーライド可能なメソッドを持つ、クラスとの枠線と、<xref:System.Windows.Forms.ToolStrip>. これらのメソッドのイベント引数は、四角形、色、および必要に応じて調整できるテキスト形式などのいくつかのプロパティを公開します。  
   
- 項目が描画される方法についてのいくつかの側面を調整するには、通常、<xref:System.Windows.Forms.ToolStripRenderer> をオーバーライドします。  
+ オーバーライドする通常の項目を描画する方法のいくつかの側面を調整する、<xref:System.Windows.Forms.ToolStripRenderer>です。  
   
- 新しい項目を作成していて、描画に関するすべての側面を制御する場合には、`OnPaint` メソッドをオーバーライドします。  `OnPaint` 内から、<xref:System.Windows.Forms.ToolStripRenderer> のメソッドを使用できます。  
+ 新しい項目を作成して、描画のすべての側面を制御する場合は、上書き、`OnPaint`メソッドです。 内から`OnPaint`からメソッドを使用することができます、<xref:System.Windows.Forms.ToolStripRenderer>です。  
   
- 既定では、<xref:System.Windows.Forms.ToolStrip> は <xref:System.Windows.Forms.ControlStyles> 設定を利用してダブル バッファリングを行います。  
+ 既定では、<xref:System.Windows.Forms.ToolStrip>はダブル バッファー内の活用、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>設定します。  
   
-#### ペアレンティング  
- コンテナーの所有権とペアレンティングの概念は、他の Windows フォーム コンテナー コントロールよりも <xref:System.Windows.Forms.ToolStrip> コントロールの方が複雑です。  これは、オーバーフローなどの動的なシナリオをサポートし、複数の <xref:System.Windows.Forms.ToolStrip> 項目でドロップダウン項目を共有する場合や、コントロールからの <xref:System.Windows.Forms.ContextMenuStrip> の生成をサポートする場合に必要です。  
+#### <a name="parenting"></a>親子関係  
+ コンテナーの所有権およびペアレンティングの概念はでより複雑な<xref:System.Windows.Forms.ToolStrip>の他の Windows フォームのコンテナー コントロールよりも制御します。 オーバーフロー、複数のドロップダウン項目の共有などの動的なシナリオをサポートする必要がある<xref:System.Windows.Forms.ToolStrip>、項目の生成をサポートするために、<xref:System.Windows.Forms.ContextMenuStrip>コントロールからです。  
   
- 次の一覧は、ペアレンティングに関連するメンバーとその使用方法を示しています。  
+ 次の一覧は、親子関係に関連するメンバーをについて説明し、それらの使用について説明します。  
   
--   <xref:System.Windows.Forms.ToolStripDropDown.OwnerItem%2A> は、ドロップダウン項目のソースの項目にアクセスします。  これは <xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A> に似ていますが、コントロールを返すのではなく、<xref:System.Windows.Forms.ToolStripItem> を返します。  
+-   <xref:System.Windows.Forms.ToolStripDropDown.OwnerItem%2A>ドロップダウンの項目のソースである項目にアクセスします。 これに似ています<xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A>が返されたコントロールを返す代わりに、<xref:System.Windows.Forms.ToolStripItem>です。  
   
--   <xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A> は、複数のコントロールが同じ <xref:System.Windows.Forms.ContextMenuStrip> を共有している場合に、どのコントロールが <xref:System.Windows.Forms.ContextMenuStrip> のソースであるかを決定します。  
+-   <xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A>どのコントロールが、ソースであることを決定の<xref:System.Windows.Forms.ContextMenuStrip>とき複数のコントロールが同じ<xref:System.Windows.Forms.ContextMenuStrip>です。  
   
--   <xref:System.Windows.Forms.ToolStripItem.GetCurrentParent%2A> は、<xref:System.Windows.Forms.ToolStripItem.Parent%2A> プロパティの読み取り専用アクセサーです。  親は所有者とは異なり、項目が表示される現在の <xref:System.Windows.Forms.ToolStrip> を表します。これはオーバーフロー領域の場合もあります。  
+-   <xref:System.Windows.Forms.ToolStripItem.GetCurrentParent%2A>読み取り専用のアクセサーには、<xref:System.Windows.Forms.ToolStripItem.Parent%2A>プロパティです。 親は、親を表します返される現在の点で、所有者とは異なります。<xref:System.Windows.Forms.ToolStrip>アイテムが表示される、オーバーフロー領域になる場合があります。  
   
--   <xref:System.Windows.Forms.ToolStripItem.Owner%2A> は、項目コレクションに現在の <xref:System.Windows.Forms.ToolStripItem> を含む <xref:System.Windows.Forms.ToolStrip> を返します。  この方法は、オーバーフローを処理する特別なコードを記述せずに、トップレベルの <xref:System.Windows.Forms.ToolStrip> で <xref:System.Windows.Forms.ToolStrip.ImageList%2A> や他のプロパティを参照するのに最適です。  
+-   <xref:System.Windows.Forms.ToolStripItem.Owner%2A>返します、<xref:System.Windows.Forms.ToolStrip>された項目コレクションには、現在が含まれています。<xref:System.Windows.Forms.ToolStripItem>です。 これを参照する最適な方法<xref:System.Windows.Forms.ToolStrip.ImageList%2A>または他のプロパティで、最上位<xref:System.Windows.Forms.ToolStrip>オーバーフローを処理する特別なコードを記述することがなくです。  
   
-#### 継承したコントロールの動作  
- 次のコントロールは、継承で使用されると常にロックされます。  
+#### <a name="behavior-of-inherited-controls"></a>継承されたコントロールの動作  
+ 継承を使用するたびに、次のコントロールがロックされています。  
   
 -   <xref:System.Windows.Forms.ToolStrip>  
   
@@ -124,274 +124,274 @@ ToolStrip オブジェクト モデル
   
 -   <xref:System.Windows.Forms.StatusStrip>  
   
--   <xref:System.Windows.Forms.ToolStripContainer> のパネルなどの <xref:System.Windows.Forms.ToolStripPanel> と個々の <xref:System.Windows.Forms.ToolStripPanel> コントロール  
+-   <xref:System.Windows.Forms.ToolStripPanel>内のパネルが含まれている、<xref:System.Windows.Forms.ToolStripContainer>とも個々<xref:System.Windows.Forms.ToolStripPanel>コントロール。  
   
- たとえば、前の一覧にあるコントロールの 1 つまたは複数を使用して、新しい Windows フォーム アプリケーションを作成します。  1 つ以上のコントロールのアクセス修飾子を `public` または `protected` に設定し、プロジェクトをビルドします。  最初のフォームから継承するフォームを追加し、継承したコントロールを選択します。  このコントロールはロックされた状態で表示され、アクセス修飾子が `private` であるかのように動作します。  
+ たとえば、前の一覧に 1 つ以上のコントロールを使用して、新しい Windows フォーム アプリケーションを作成します。 1 つまたは複数のコントロールのアクセス修飾子を設定`public`または`protected`、し、プロジェクトを作成します。 最初のフォームから継承したフォームを追加し、継承されたコントロールを選択します。 コントロールが表示され、アクセス修飾子が場合と同様の動作にロックされた`private`です。  
   
-#### ToolStripContainer の継承のサポート  
- <xref:System.Windows.Forms.ToolStripContainer> コントロールは、次の例のような限定された継承のシナリオをサポートしています。  
+#### <a name="toolstripcontainer-support-of-inheritance"></a>ToolStripContainer の継承のサポート  
+ <xref:System.Windows.Forms.ToolStripContainer>コントロールは次の例のように、制限付きの継承されたシナリオをサポートします。  
   
-1.  新しい Windows フォームアプリケーションを作成します。  
+1.  新しい Windows フォーム アプリケーションを作成します。  
   
 2.  フォームに <xref:System.Windows.Forms.ToolStripContainer> を追加します。  
   
-3.  <xref:System.Windows.Forms.ToolStripContainer> のアクセス修飾子を `public` または `protected` に設定します。  
+3.  アクセス修飾子を設定、<xref:System.Windows.Forms.ToolStripContainer>に`public`または`protected`です。  
   
-4.  <xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、<xref:System.Windows.Forms.ContextMenuStrip> の各コントロールを任意に組み合わせて、<xref:System.Windows.Forms.ToolStripContainer> の <xref:System.Windows.Forms.ToolStripPanel> 領域に追加します。  
+4.  任意の組み合わせを追加<xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.MenuStrip>、および<xref:System.Windows.Forms.ContextMenuStrip>コントロールを<xref:System.Windows.Forms.ToolStripPanel>の領域、<xref:System.Windows.Forms.ToolStripContainer>です。  
   
 5.  プロジェクトをビルドします。  
   
-6.  最初のフォームから継承するフォームを追加します。  
+6.  最初のフォームから継承したフォームを追加します。  
   
-7.  継承した <xref:System.Windows.Forms.ToolStripContainer> をフォーム上で選択します。  
+7.  継承された選択<xref:System.Windows.Forms.ToolStripContainer>フォームにします。  
   
-#### 子コントロールの継承の動作  
- 前の手順を完了すると、次のような継承の動作が発生します。  
+#### <a name="inherited-behavior-of-child-controls"></a>子コントロールの継承の動作  
+ 前の手順を完了すると、次の継承の動作が発生します。  
   
--   デザイナーには、継承したアイコンと一緒にコントロールが表示されます。  
+-   デザイナーで、コントロールは、継承されたアイコンが表示されます。  
   
--   <xref:System.Windows.Forms.ToolStripPanel> コントロールはロックされます。コンテンツの選択や再配置を行うことはできません。  
+-   <xref:System.Windows.Forms.ToolStripPanel>コントロールがロックされている以外の場合は選択するか、その内容を再配置することはできません。  
   
--   コントロールは、<xref:System.Windows.Forms.ToolStripContentPanel> に追加したり移動したりできます。また、<xref:System.Windows.Forms.ToolStripContentPanel> の子コントロールすることもできます。  
+-   コントロールを追加することができます、 <xref:System.Windows.Forms.ToolStripContentPanel>、コントロールを移動、およびそれらの子コントロールを作成、<xref:System.Windows.Forms.ToolStripContentPanel>です。  
   
--   変更内容はフォームのビルド後も保持されます。  
+-   フォームのビルド後、変更内容が永続化します。  
   
     > [!NOTE]
-    >  削除する必要がある場合は、<xref:System.Windows.Forms.ToolStripContainer> に含まれているすべての <xref:System.Windows.Forms.ToolStripPanel> コントロールから、アクセス修飾子を削除してください。  この場合は、<xref:System.Windows.Forms.ToolStripContainer> のアクセス修飾子によってコントロール全体が制御されます。  
+    >  すべてのアクセス修飾子を削除する<xref:System.Windows.Forms.ToolStripPanel>コントロールの一部である、<xref:System.Windows.Forms.ToolStripContainer>です。 アクセス修飾子、<xref:System.Windows.Forms.ToolStripContainer>コントロール全体を制御します。  
   
-#### 部分信頼  
- 部分的にしか信頼のない状況では、不用意に入力した個人情報が認証されていない個人やサービスから使われることのないように、`ToolStrip` に制限が適用されます。  次のような保護方法があります。  
+#### <a name="partial-trust"></a>部分信頼  
+ 制限事項`ToolStrip`s 部分信頼環境では許可されていない人物またはサービスで使用される個人情報の不慮のエントリを防ぐために設計されています。 保護措置は次のとおりです。  
   
--   `ToolStripDropDown` コントロールで <xref:System.Windows.Forms.ToolStripControlHost> の項目を表示するには、<xref:System.Security.Permissions.UIPermissionWindow> が必要です。  これは、<xref:System.Windows.Forms.ToolStripTextBox>、<xref:System.Windows.Forms.ToolStripComboBox>、<xref:System.Windows.Forms.ToolStripProgressBar> などの組み込みコントロールだけでなく、ユーザーが作成したコントロールにも適用されます。  この要件に適合しない場合、このような項目は表示されません。  例外をスローすることはありません。  
+-   `ToolStripDropDown`コントロールを必要と<xref:System.Security.Permissions.UIPermissionWindow.AllWindows>内の項目を表示する、<xref:System.Windows.Forms.ToolStripControlHost>です。 これに適用されます両方の組み込みコントロールなど<xref:System.Windows.Forms.ToolStripTextBox>、 <xref:System.Windows.Forms.ToolStripComboBox>、および<xref:System.Windows.Forms.ToolStripProgressBar>ユーザーが作成したかも制御します。 この要件が満たされない場合、これらの項目は表示されません。 例外をスローすることはありません。  
   
--   <xref:System.Windows.Forms.ToolStripDropDown.AutoClose%2A> プロパティを `false` に設定することはできません。また、キャンセル可能な <xref:System.Windows.Forms.ToolStripDropDown.Closing> イベント パラメーターは無視されます。  このため、ドロップダウン項目を表示したまま複数のキーストロークを入力することはできなくなります。  この要件に適合しない場合、このような項目は表示されません。  例外をスローすることはありません。  
+-   設定、<xref:System.Windows.Forms.ToolStripDropDown.AutoClose%2A>プロパティを`false`は許可されていませんし、キャンセル可能な<xref:System.Windows.Forms.ToolStripDropDown.Closing>イベント パラメーターは無視されます。 ドロップダウンの項目を表示したまま 2 つ以上のキーストロークを入力できなくなります。 この要件が満たされない場合、このような項目は表示されません。 例外をスローすることはありません。  
   
--   <xref:System.Security.Permissions.UIPermissionWindow> 以外の部分信頼の状況でキーストロークが発生しても、多くのキーストローク処理イベントは生成されません。  
+-   以外の部分信頼のコンテキストで発生した場合、多くのキーストロークをイベントの処理は発生しません<xref:System.Security.Permissions.UIPermissionWindow.AllWindows>です。  
   
--   <xref:System.Security.Permissions.UIPermissionWindow> が付与されていない場合、アクセス キーは処理されません。  
+-   アクセス キーがない場合に処理された<xref:System.Security.Permissions.UIPermissionWindow.AllWindows>が許可されていません。  
   
-#### 使用方法  
- 次の使用パターンは、<xref:System.Windows.Forms.ToolStrip> のレイアウト、キーボードの対話的操作、およびエンド ユーザーの動作に影響します。  
+#### <a name="usage"></a>使用方法  
+ 次の使用パターンに関係がある<xref:System.Windows.Forms.ToolStrip>レイアウト、キーボード操作、およびエンドユーザーの動作。  
   
--   <xref:System.Windows.Forms.ToolStripPanel> への追加  
+-   結合します。<xref:System.Windows.Forms.ToolStripPanel>  
   
-     <xref:System.Windows.Forms.ToolStrip> は、<xref:System.Windows.Forms.ToolStripPanel> 内および <xref:System.Windows.Forms.ToolStripPanel> 間に移動できます。  `Dock` プロパティは無視されます。また、<xref:System.Windows.Forms.ToolStrip.Stretch%2A> プロパティが `false` の場合は、項目が <xref:System.Windows.Forms.ToolStripPanel> に追加されるたびに <xref:System.Windows.Forms.ToolStrip> のサイズが増加します。  通常、<xref:System.Windows.Forms.ToolStrip> はタブ オーダーに含められません。  
+     <xref:System.Windows.Forms.ToolStrip>内で位置を変更できる、<xref:System.Windows.Forms.ToolStripPanel>および間で<xref:System.Windows.Forms.ToolStripPanel>s。 `Dock`プロパティは無視される場合、<xref:System.Windows.Forms.ToolStrip.Stretch%2A>プロパティは`false`では、サイズ、<xref:System.Windows.Forms.ToolStrip>に項目を追加するにつれて、<xref:System.Windows.Forms.ToolStripPanel>です。 通常、<xref:System.Windows.Forms.ToolStrip>タブ オーダーに関与しません。  
   
 -   ドッキング  
   
-     <xref:System.Windows.Forms.ToolStrip> はコンテナーの一辺の固定位置に配置され、サイズがドッキング対象の辺全体に拡張されます。  通常、<xref:System.Windows.Forms.ToolStrip> はタブ オーダーに含められません。  
+     <xref:System.Windows.Forms.ToolStrip>固定位置にあるコンテナーの一方の側に配置し、ドッキングされている全体の端の上のサイズを拡張します。 通常、<xref:System.Windows.Forms.ToolStrip>タブ オーダーに関与しません。  
   
--   絶対配置  
+-   絶対位置  
   
-     他のコントロールと同様に、<xref:System.Windows.Forms.ToolStrip> は <xref:System.Windows.Forms.Control.Location%2A> プロパティによって配置され、サイズが固定され、通常はタブ オーダーに含められます。  
+     <xref:System.Windows.Forms.ToolStrip>他のコントロールと同様に、によって配置されているという点で、<xref:System.Windows.Forms.Control.Location%2A>プロパティがのサイズが固定されてし、通常、タブ オーダーに参加します。  
   
-#### キーボードによる対話操作  
+#### <a name="keyboard-interaction"></a>キーボードの相互作用  
   
-##### アクセス キー  
- Alt キーと同時または Alt キーに続けてアクセス キーを入力する操作は、キーボードを使用してコントロールをアクティブ化する 1 つの方法です。  <xref:System.Windows.Forms.ToolStrip> では、明示的および暗黙的なアクセス キーの両方がサポートされます。  明示的な定義では、文字の前にアンパサンド \(&\) 文字を付けます。  暗黙的な定義では、指定された `Text` プロパティの文字の順序に基づいて、一致する項目を検出するアルゴリズムが使用されます。  
+##### <a name="access-keys"></a>アクセス キー  
+ または、ALT キーと組み合わせることで、アクセス キーは、キーボードを使用してコントロールをアクティブ化する方法の 1 つです。 <xref:System.Windows.Forms.ToolStrip>明示的および暗黙的なアクセス キーの両方をサポートしています。 明示的な定義は、アンパサンド (&) 文字、文字の前に使用します。 暗黙的に定義内の文字の順序に基づいて一致する項目を検索しようとするアルゴリズムを使用して、指定された`Text`プロパティです。  
   
-##### ショートカット キー  
- <xref:System.Windows.Forms.MenuStrip> で使用するショートカット キーは、<xref:System.Windows.Forms.Keys> 列挙値 \(順序が特定されているわけではありません\) の組み合わせを使用して定義します。  また、<xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> プロパティを使用すると、テキストのみを使用してショートカット キーを表示できます。たとえば、"Delete" の代わりに "Del" と表示できます。  
+##### <a name="shortcut-keys"></a>ショートカット キー  
+ 使用されるショートカット キー、<xref:System.Windows.Forms.MenuStrip>の組み合わせを使用して、<xref:System.Windows.Forms.Keys>列挙型 (注文固有ではない) ショートカット キーを定義します。 使用することも、 <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> "Delete"の代わりに"Del"を表示するなどのテキストのみのショートカット キーを表示するプロパティ  
   
-##### Navigation  
- Alt キーは、<xref:System.Windows.Forms.Form.MainMenuStrip%2A> で指定される <xref:System.Windows.Forms.MenuStrip> をアクティブ化します。  この状態で Ctrl \+ Tab キーを使用すると、`ToolStripPanel` 内の <xref:System.Windows.Forms.ToolStrip> コントロール間を移動できます。  Tab キーおよびテンキーの方向キーを使用すると、<xref:System.Windows.Forms.ToolStrip> の項目間を移動できます。  オーバーフロー領域の移動は、特別なアルゴリズムによって処理されます。  Space キーを押すと、<xref:System.Windows.Forms.ToolStripButton>、<xref:System.Windows.Forms.ToolStripDropDownButton>、または <xref:System.Windows.Forms.ToolStripSplitButton> が選択されます。  
+##### <a name="navigation"></a>ナビゲーション  
+ ALT キーをアクティブ化、<xref:System.Windows.Forms.MenuStrip>によって示される<xref:System.Windows.Forms.Form.MainMenuStrip%2A>です。 そこから、ctrl キーを押しながら TAB が移動する間<xref:System.Windows.Forms.ToolStrip>内で制御`ToolStripPanel`s。 内の項目間を移動する、TAB キーと、テンキーの方向キー、<xref:System.Windows.Forms.ToolStrip>です。 特殊なアルゴリズムは、オーバーフロー領域のナビゲーションを処理します。 Space キーを選択、 <xref:System.Windows.Forms.ToolStripButton>、 <xref:System.Windows.Forms.ToolStripDropDownButton>、または<xref:System.Windows.Forms.ToolStripSplitButton>です。  
   
-##### フォーカスと検証  
- Alt キーで <xref:System.Windows.Forms.MenuStrip> または <xref:System.Windows.Forms.ToolStrip> をアクティブ化しても、通常、現在フォーカスがあるコントロールからフォーカスが移動したり削除されたりすることはありません。  <xref:System.Windows.Forms.MenuStrip> 内でホストされているコントロールまたは <xref:System.Windows.Forms.MenuStrip> のドロップダウンがある場合、ユーザーが Tab キーを押すとコントロールはフォーカスを取得します。  一般的に、<xref:System.Windows.Forms.MenuStrip> の <xref:System.Windows.Forms.Control.GotFocus>、<xref:System.Windows.Forms.Control.LostFocus>、<xref:System.Windows.Forms.Control.Enter>、<xref:System.Windows.Forms.Control.Leave> の各イベントは、キーボードでアクティブ化した場合は発生しません。  このような場合は、代わりに <xref:System.Windows.Forms.MenuStrip.MenuActivate> イベントと <xref:System.Windows.Forms.MenuStrip.MenuDeactivate> イベントを使用します。  
+##### <a name="focus-and-validation"></a>フォーカス イベントと検証  
+ によって、ALT キーをアクティブ化されるときに、<xref:System.Windows.Forms.MenuStrip>または<xref:System.Windows.Forms.ToolStrip>をどちらも通常も、現在フォーカスがコントロールからフォーカスを削除します。 内でホストされるコントロールがあるかどうか、<xref:System.Windows.Forms.MenuStrip>またはのドロップダウン リスト、<xref:System.Windows.Forms.MenuStrip>ユーザーが TAB キーを押したときに、コントロールがフォーカスを取得します。 一般に、 <xref:System.Windows.Forms.Control.GotFocus>、 <xref:System.Windows.Forms.Control.LostFocus>、 <xref:System.Windows.Forms.Control.Enter>、および<xref:System.Windows.Forms.Control.Leave>のイベント<xref:System.Windows.Forms.MenuStrip>キーボードによってアクティブ化するときに発生しない可能性がします。 このような場合、使用して、<xref:System.Windows.Forms.MenuStrip.MenuActivate>と<xref:System.Windows.Forms.MenuStrip.MenuDeactivate>イベント代わりにします。  
   
- 既定では、<xref:System.Windows.Forms.ToolStrip.CausesValidation%2A> は `false` に設定されています。  検証を実行するには、フォームで明示的に <xref:System.Windows.Forms.ContainerControl.Validate%2A> を呼び出します。  
+ 既定では、<xref:System.Windows.Forms.ToolStrip.CausesValidation%2A>は`false`します。 呼び出す<xref:System.Windows.Forms.ContainerControl.Validate%2A>検証を実行するフォームに明示的にします。  
   
-#### \[レイアウト\]  
- <xref:System.Windows.Forms.ToolStrip> のレイアウトを制御するには、<xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> プロパティで <xref:System.Windows.Forms.ToolStripLayoutStyle> のメンバーの 1 つを選択します。  
+#### <a name="layout"></a>レイアウト  
+ 制御する<xref:System.Windows.Forms.ToolStrip>のメンバーのいずれかを選択してレイアウト<xref:System.Windows.Forms.ToolStripLayoutStyle>で、<xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A>プロパティです。  
   
-##### スタック レイアウト  
- スタックとは、<xref:System.Windows.Forms.ToolStrip> の両端が互いに密着するように項目を配置することです。  次の一覧に、スタック レイアウトの説明を示します。  
+##### <a name="stack-layouts"></a>スタックのレイアウト  
+ スタックの両端で互いの横にある項目の配置は、<xref:System.Windows.Forms.ToolStrip>です。 次の一覧では、スタックのレイアウトについて説明します。  
   
--   <xref:System.Windows.Forms.ToolStripLayoutStyle> が既定値です。  この設定により、<xref:System.Windows.Forms.ToolStrip> は、<xref:System.Windows.Forms.ToolStrip.Orientation%2A> プロパティに従ってそのレイアウトを自動的に変更し、ドラッグおよびドッキングのシナリオに対応します。  
+-   <xref:System.Windows.Forms.ToolStripLayoutStyle.StackWithOverflow> が既定値です。 この設定により、<xref:System.Windows.Forms.ToolStrip>でに従ってで自動的にそのレイアウトを変更する、<xref:System.Windows.Forms.ToolStrip.Orientation%2A>プロパティをドラッグして、ドッキングのシナリオを処理します。  
   
--   <xref:System.Windows.Forms.ToolStripLayoutStyle> は、<xref:System.Windows.Forms.ToolStrip> の項目を縦方向に並べて描画します。  
+-   <xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow>表示、<xref:System.Windows.Forms.ToolStrip>互いの横にあるアイテムを垂直方向にします。  
   
--   <xref:System.Windows.Forms.ToolStripLayoutStyle> は、<xref:System.Windows.Forms.ToolStrip> の項目を横方向に並べて描画します。  
+-   <xref:System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow>表示、<xref:System.Windows.Forms.ToolStrip>水平方向の横にある他の項目。  
   
-##### スタック レイアウトのその他の機能  
- <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> は、項目が配置される <xref:System.Windows.Forms.ToolStrip> の末尾を決定します。  
+##### <a name="other-features-of-stack-layouts"></a>スタックのレイアウトの他の機能  
+ <xref:System.Windows.Forms.ToolStripItem.Alignment%2A>最後の決定、<xref:System.Windows.Forms.ToolStrip>項目を揃えるためです。  
   
- 項目が <xref:System.Windows.Forms.ToolStrip> 内に収まらない場合は、オーバーフロー ボタンが自動的に表示されます。  <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> プロパティの設定によって、項目を常にオーバーフロー領域に表示する、必要な場合のみ表示する、または表示しないのいずれかに決定します。  
+ ときに項目に収まらない場合、 <xref:System.Windows.Forms.ToolStrip>、オーバーフロー ボタンが自動的に表示されます。 <xref:System.Windows.Forms.ToolStripItem.Overflow%2A>プロパティの設定は、常に、必要に応じて、または never オーバーフロー領域に項目が表示されるかどうかを決定します。  
   
- <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> イベントでは、<xref:System.Windows.Forms.ToolStripItem.Placement%2A> プロパティを調べ、項目がメインの <xref:System.Windows.Forms.ToolStrip> とオーバーフロー状態の <xref:System.Windows.Forms.ToolStrip> のどちらに配置されているか、または現在はまったく表示されていないかを確認できます。  項目が表示されない典型的な理由は、項目がメインの <xref:System.Windows.Forms.ToolStrip> に収まらず、その <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> プロパティが <xref:System.Windows.Forms.ToolStripItemOverflow> に設定されていることです。  
+ <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>イベントを調査できます、<xref:System.Windows.Forms.ToolStripItem.Placement%2A>項目がメイン上に配置するかどうかを決定するプロパティ<xref:System.Windows.Forms.ToolStrip>、オーバーフロー <xref:System.Windows.Forms.ToolStrip>、またはそれが現在表示されていないすべての場合。 項目が表示されない理由、一般的な原因としては、項目が、メインに収まらなかった<xref:System.Windows.Forms.ToolStrip>とその<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>プロパティに設定された<xref:System.Windows.Forms.ToolStripItemOverflow.Never>です。  
   
- <xref:System.Windows.Forms.ToolStrip> を移動できるようにするには、これを <xref:System.Windows.Forms.ToolStripPanel> に配置し、その <xref:System.Windows.Forms.ToolStrip.GripStyle%2A> を <xref:System.Windows.Forms.ToolStripGripStyle> に設定します。  
+ ように、<xref:System.Windows.Forms.ToolStrip>に配置して移動可能な<xref:System.Windows.Forms.ToolStripPanel>と設定、<xref:System.Windows.Forms.ToolStrip.GripStyle%2A>に<xref:System.Windows.Forms.ToolStripGripStyle.Visible>です。  
   
-##### その他のレイアウト オプション  
- その他のレイアウト オプションとして、<xref:System.Windows.Forms.ToolStripLayoutStyle> および <xref:System.Windows.Forms.ToolStripLayoutStyle> があります。  
+##### <a name="other-layout-options"></a>その他のレイアウト オプション  
+ その他のレイアウト オプションは<xref:System.Windows.Forms.ToolStripLayoutStyle.Flow>と<xref:System.Windows.Forms.ToolStripLayoutStyle.Table>です。  
   
-##### フロー レイアウト  
- <xref:System.Windows.Forms.ContextMenuStrip>、<xref:System.Windows.Forms.ToolStripDropDownMenu>、および <xref:System.Windows.Forms.ToolStripOverflow> の場合は、<xref:System.Windows.Forms.ToolStripLayoutStyle> が既定のレイアウトです。  このレイアウトは、<xref:System.Windows.Forms.FlowLayoutPanel> に似ています。  <xref:System.Windows.Forms.ToolStripLayoutStyle> レイアウトの機能は次のとおりです。  
+##### <a name="flow-layout"></a>フロー レイアウト  
+ <xref:System.Windows.Forms.ToolStripLayoutStyle.Flow>レイアウトの既定値は、 <xref:System.Windows.Forms.ContextMenuStrip>、 <xref:System.Windows.Forms.ToolStripDropDownMenu>、および<xref:System.Windows.Forms.ToolStripOverflow>です。 に似ていますが、<xref:System.Windows.Forms.FlowLayoutPanel>です。 機能<xref:System.Windows.Forms.ToolStripLayoutStyle.Flow>レイアウトを次に示します。  
   
--   <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A> プロパティによって、<xref:System.Windows.Forms.FlowLayoutPanel> のすべての機能が公開されています。  <xref:System.Windows.Forms.LayoutSettings> クラスを <xref:System.Windows.Forms.FlowLayoutSettings> クラスにキャストする必要があります。  
+-   すべての機能の<xref:System.Windows.Forms.FlowLayoutPanel>によって公開される、<xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A>プロパティです。 キャストする必要があります、<xref:System.Windows.Forms.LayoutSettings>クラスを<xref:System.Windows.Forms.FlowLayoutSettings>クラスです。  
   
--   コード内で <xref:System.Windows.Forms.ToolStripItem.Dock%2A> プロパティおよび <xref:System.Windows.Forms.ToolStripItem.Anchor%2A> プロパティを使用して、項目を行内に配置できます。  
-  
--   <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティは無視されます。  
-  
--   <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> イベントでは、<xref:System.Windows.Forms.ToolStripItem.Placement%2A> プロパティを調べ、項目がメインの <xref:System.Windows.Forms.ToolStrip> に配置されたか、収まらなかったかを確認できます。  
-  
--   グリップが描画されないため、<xref:System.Windows.Forms.ToolStripPanel> にある <xref:System.Windows.Forms.ToolStripLayoutStyle> レイアウト スタイルの <xref:System.Windows.Forms.ToolStrip> を移動できません。  
-  
--   <xref:System.Windows.Forms.ToolStrip> オーバーフロー ボタンは描画されません。また、<xref:System.Windows.Forms.ToolStripItem.Overflow%2A> は無視されます。  
-  
-##### テーブル レイアウト  
- <xref:System.Windows.Forms.StatusStrip> の場合は、<xref:System.Windows.Forms.ToolStripLayoutStyle> が既定のレイアウトです。  このレイアウトは、<xref:System.Windows.Forms.TableLayoutPanel> に似ています。  <xref:System.Windows.Forms.ToolStripLayoutStyle> レイアウトの機能は次のとおりです。  
-  
--   <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A> プロパティによって、<xref:System.Windows.Forms.TableLayoutPanel> のすべての機能が公開されています。  <xref:System.Windows.Forms.LayoutSettings> クラスを <xref:System.Windows.Forms.TableLayoutSettings> クラスにキャストする必要があります。  
-  
--   コード内で <xref:System.Windows.Forms.ToolStripItem.Dock%2A> プロパティおよび <xref:System.Windows.Forms.ToolStripItem.Anchor%2A> プロパティを使用して、項目をテーブルのセル内に配置できます。  
+-   使用することができます、<xref:System.Windows.Forms.ToolStripItem.Dock%2A>と<xref:System.Windows.Forms.ToolStripItem.Anchor%2A>行内でアイテムを揃えるためのコードでのプロパティです。  
   
 -   <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティは無視されます。  
   
--   <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> イベントでは、<xref:System.Windows.Forms.ToolStripItem.Placement%2A> プロパティを調べ、項目がメインの <xref:System.Windows.Forms.ToolStrip> に配置されたか、収まらなかったかを確認できます。  
+-   <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>イベントを調査できます、<xref:System.Windows.Forms.ToolStripItem.Placement%2A>項目がメイン上に配置するかどうかを決定するプロパティ<xref:System.Windows.Forms.ToolStrip>収まりませんでしたか。  
   
--   グリップが描画されないため、<xref:System.Windows.Forms.ToolStripPanel> の <xref:System.Windows.Forms.ToolStripLayoutStyle> レイアウト スタイルでは <xref:System.Windows.Forms.ToolStrip> を削除できません。  
+-   ハンドルは、表示されませんし、そのため、<xref:System.Windows.Forms.ToolStrip>で<xref:System.Windows.Forms.ToolStripLayoutStyle.Flow>でレイアウト スタイル、<xref:System.Windows.Forms.ToolStripPanel>移動することはできません。  
   
--   <xref:System.Windows.Forms.ToolStrip> オーバーフロー ボタンは描画されません。また、<xref:System.Windows.Forms.ToolStripItem.Overflow%2A> は無視されます。  
+-   <xref:System.Windows.Forms.ToolStrip>オーバーフロー ボタンは表示されず、および<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>は無視されます。  
   
-## ToolStripItem  
- このトピックでは、<xref:System.Windows.Forms.ToolStripItem> およびこのクラスから派生するコントロールについて説明します。  
+##### <a name="table-layout"></a>テーブル レイアウト  
+ <xref:System.Windows.Forms.ToolStripLayoutStyle.Table>レイアウトの既定値は、<xref:System.Windows.Forms.StatusStrip>です。 似ています<xref:System.Windows.Forms.TableLayoutPanel>です。 機能<xref:System.Windows.Forms.ToolStripLayoutStyle.Flow>レイアウトを次に示します。  
   
- <xref:System.Windows.Forms.ToolStripItem> は、<xref:System.Windows.Forms.ToolStrip> に追加されるすべての項目に対する抽象基本クラスです。  次のオブジェクト モデルは、<xref:System.Windows.Forms.ToolStripItem> 継承階層構造を示しています。  
+-   すべての機能の<xref:System.Windows.Forms.TableLayoutPanel>によって公開される、<xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A>プロパティです。 キャストする必要があります、<xref:System.Windows.Forms.LayoutSettings>クラスを<xref:System.Windows.Forms.TableLayoutSettings>クラスです。  
   
- ![ToolStripItem オブジェクト モデル](../../../../docs/framework/winforms/controls/media/toolstripitemobjectmodel.png "ToolStripItemObjectModel")  
+-   使用することができます、<xref:System.Windows.Forms.ToolStripItem.Dock%2A>と<xref:System.Windows.Forms.ToolStripItem.Anchor%2A>テーブル セル内のアイテムを整列するコードでのプロパティです。  
+  
+-   <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティは無視されます。  
+  
+-   <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>イベントを調査できます、<xref:System.Windows.Forms.ToolStripItem.Placement%2A>項目がメイン上に配置するかどうかを決定するプロパティ<xref:System.Windows.Forms.ToolStrip>収まりませんでしたか。  
+  
+-   ハンドルは、表示されませんし、そのため、<xref:System.Windows.Forms.ToolStrip>で<xref:System.Windows.Forms.ToolStripLayoutStyle.Table>でレイアウト スタイル、<xref:System.Windows.Forms.ToolStripPanel>移動することはできません。  
+  
+-   <xref:System.Windows.Forms.ToolStrip>オーバーフロー ボタンは表示されず、および<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>は無視されます。  
+  
+## <a name="toolstripitem"></a>ToolStripItem  
+ 次のトピックについて説明<xref:System.Windows.Forms.ToolStripItem>とそれから派生するコントロール。  
+  
+ <xref:System.Windows.Forms.ToolStripItem>すべての項目の抽象基本クラスには、<xref:System.Windows.Forms.ToolStrip>です。 次のオブジェクト モデルの表示、<xref:System.Windows.Forms.ToolStripItem>継承階層です。  
+  
+ ![ToolStripItem オブジェクト モデル](../../../../docs/framework/winforms/controls/media/toolstripitemobjectmodel.gif "ToolStripItemObjectModel")  
 ToolStripItem オブジェクト モデル  
   
- <xref:System.Windows.Forms.ToolStripItem> クラスは、<xref:System.Windows.Forms.ToolStripItem> から直接継承するか、<xref:System.Windows.Forms.ToolStripControlHost> または <xref:System.Windows.Forms.ToolStripDropDownItem> を介して <xref:System.Windows.Forms.ToolStripItem> から間接的に継承します。  
+ <xref:System.Windows.Forms.ToolStripItem>クラスのいずれかからしか直接継承<xref:System.Windows.Forms.ToolStripItem>、ない直接の継承または<xref:System.Windows.Forms.ToolStripItem>を通じて<xref:System.Windows.Forms.ToolStripControlHost>または<xref:System.Windows.Forms.ToolStripDropDownItem>です。  
   
- <xref:System.Windows.Forms.ToolStripItem> コントロールは、<xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、<xref:System.Windows.Forms.StatusStrip>、または <xref:System.Windows.Forms.ContextMenuStrip> に格納される必要があり、フォームに直接追加できません。  <xref:System.Windows.Forms.ToolStripItem> コントロールの適切なサブセットを含むさまざまなコンテナー クラスが設計されています。  
+ <xref:System.Windows.Forms.ToolStripItem>コントロールに含まれる必要があります、 <xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.MenuStrip>、 <xref:System.Windows.Forms.StatusStrip>、または<xref:System.Windows.Forms.ContextMenuStrip>し、フォームに直接追加することはできません。 さまざまなコンテナー クラスが適切なサブセットを格納するように設計<xref:System.Windows.Forms.ToolStripItem>コントロール。  
   
- <xref:System.Windows.Forms.ToolStripItem> ストック コントロールおよびこれらのコントロールが最適に表示されるコンテナーを次の表に示します。  <xref:System.Windows.Forms.ToolStrip> 項目は <xref:System.Windows.Forms.ToolStrip> の派生コンテナーであればどれでもホストできますが、以下に示すコンテナー内で最適に表示されるように設計されています。  
+ 次の表に、在庫<xref:System.Windows.Forms.ToolStripItem>コントロールと検索最適なコンテナーです。 いずれかが<xref:System.Windows.Forms.ToolStrip>項目は、いずれかでホストできます<xref:System.Windows.Forms.ToolStrip>-コンテナー、派生したこれらの項目が、次のコンテナーで最適に表示するように設計されています。  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.ToolStripDropDown> は、デザイナー ツールボックスには表示されません。  
+>  <xref:System.Windows.Forms.ToolStripDropDown>デザイナーのツールボックスには表示されません。  
   
-|含まれる項目|ToolStrip|MenuStrip|ContextMenuStrip|StatusStrip|ToolStripDropDown|  
-|------------|---------------|---------------|----------------------|-----------------|-----------------------|  
-|<xref:System.Windows.Forms.ToolStripButton>|○|Ｘ|Ｘ|Ｘ|○|  
-|<xref:System.Windows.Forms.ToolStripComboBox>|○|○|○|Ｘ|○|  
-|<xref:System.Windows.Forms.ToolStripSplitButton>|○|Ｘ|Ｘ|○|○|  
-|<xref:System.Windows.Forms.ToolStripLabel>|○|Ｘ|Ｘ|○|○|  
-|<xref:System.Windows.Forms.ToolStripSeparator>|○|○|○|Ｘ|○|  
-|<xref:System.Windows.Forms.ToolStripDropDownButton>|○|Ｘ|Ｘ|○|○|  
-|<xref:System.Windows.Forms.ToolStripTextBox>|○|○|○|Ｘ|○|  
-|<xref:System.Windows.Forms.ToolStripMenuItem>|Ｘ|○|○|Ｘ|Ｘ|  
-|<xref:System.Windows.Forms.ToolStripStatusLabel>|Ｘ|Ｘ|Ｘ|○|Ｘ|  
-|<xref:System.Windows.Forms.ToolStripProgressBar>|○|Ｘ|Ｘ|○|Ｘ|  
-|<xref:System.Windows.Forms.ToolStripControlHost>|○|○|Ｘ|○|○|  
+|含まれるアイテム|ToolStrip|MenuStrip|ContextMenuStrip|StatusStrip|ToolStripDropDown|  
+|--------------------|---------------|---------------|----------------------|-----------------|-----------------------|  
+|<xref:System.Windows.Forms.ToolStripButton>|はい|いいえ|いいえ|いいえ|はい|  
+|<xref:System.Windows.Forms.ToolStripComboBox>|はい|はい|はい|いいえ|はい|  
+|<xref:System.Windows.Forms.ToolStripSplitButton>|はい|いいえ|いいえ|はい|はい|  
+|<xref:System.Windows.Forms.ToolStripLabel>|はい|いいえ|いいえ|はい|はい|  
+|<xref:System.Windows.Forms.ToolStripSeparator>|はい|はい|はい|いいえ|はい|  
+|<xref:System.Windows.Forms.ToolStripDropDownButton>|はい|いいえ|いいえ|はい|はい|  
+|<xref:System.Windows.Forms.ToolStripTextBox>|はい|はい|はい|いいえ|はい|  
+|<xref:System.Windows.Forms.ToolStripMenuItem>|いいえ|はい|はい|いいえ|いいえ|  
+|<xref:System.Windows.Forms.ToolStripStatusLabel>|いいえ|いいえ|いいえ|はい|いいえ|  
+|<xref:System.Windows.Forms.ToolStripProgressBar>|はい|いいえ|いいえ|はい|いいえ|  
+|<xref:System.Windows.Forms.ToolStripControlHost>|はい|はい|いいえ|はい|はい|  
   
-### ToolStripButton  
- <xref:System.Windows.Forms.ToolStripButton> は <xref:System.Windows.Forms.ToolStrip> のボタン項目です。  さまざまな境界線スタイルで表示でき、操作状態を表したりアクティブ化したりするためにも使用できます。  既定でフォーカスが設定されるように定義することもできます。  
+### <a name="toolstripbutton"></a>ToolStripButton  
+ <xref:System.Windows.Forms.ToolStripButton>ボタンの項目は、<xref:System.Windows.Forms.ToolStrip>です。 さまざまな境界線スタイルを表示して、表示および操作状態をアクティブ化を行うこともできます。 既定では、フォーカスがあるにも定義できます。  
   
-### ToolStripLabel  
- <xref:System.Windows.Forms.ToolStripLabel> は、<xref:System.Windows.Forms.ToolStrip> コントロールにラベル機能を提供します。  <xref:System.Windows.Forms.ToolStripLabel> は <xref:System.Windows.Forms.ToolStripButton> と似ており、既定ではフォーカスが設定されず、押下または強調表示された状態として描画されることもありません。  
+### <a name="toolstriplabel"></a>ToolStripLabel  
+ <xref:System.Windows.Forms.ToolStripLabel>ラベル機能を備えています<xref:System.Windows.Forms.ToolStrip>コントロール。 <xref:System.Windows.Forms.ToolStripLabel>に似ています、<xref:System.Windows.Forms.ToolStripButton>既定でフォーカスが移動されるしないと、プッシュまたは強調表示されたとしてレンダリングされません。  
   
- ホストされる項目としての <xref:System.Windows.Forms.ToolStripLabel> では、アクセス キーがサポートされます。  
+ <xref:System.Windows.Forms.ToolStripLabel>ホストされている項目としては、アクセス キーをサポートしています。  
   
- <xref:System.Windows.Forms.ToolStrip> でリンク コントロールをサポートするには、<xref:System.Windows.Forms.ToolStripLabel> の <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>、<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A> の各プロパティを使用します。  
+ 使用して、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>、および<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>プロパティを<xref:System.Windows.Forms.ToolStripLabel>でリンク コントロールをサポートするために、<xref:System.Windows.Forms.ToolStrip>です。  
   
-### ToolStripStatusLabel  
- <xref:System.Windows.Forms.ToolStripStatusLabel> は、<xref:System.Windows.Forms.StatusStrip> で使用するように特別に設計されたバージョンの <xref:System.Windows.Forms.ToolStripLabel> です。  固有の機能として、<xref:System.Windows.Forms.ToolStripStatusLabel.BorderStyle%2A>、<xref:System.Windows.Forms.ToolStripStatusLabel.BorderSides%2A>、および <xref:System.Windows.Forms.ToolStripStatusLabel.Spring%2A> があります。  
+### <a name="toolstripstatuslabel"></a>ToolStripStatusLabel  
+ <xref:System.Windows.Forms.ToolStripStatusLabel>バージョンは、<xref:System.Windows.Forms.ToolStripLabel>内使用専用に設計された<xref:System.Windows.Forms.StatusStrip>です。 特別な機能として<xref:System.Windows.Forms.ToolStripStatusLabel.BorderStyle%2A>、 <xref:System.Windows.Forms.ToolStripStatusLabel.BorderSides%2A>、および<xref:System.Windows.Forms.ToolStripStatusLabel.Spring%2A>です。  
   
-### ToolStripSeparator  
- <xref:System.Windows.Forms.ToolStripSeparator> は、ツール バーまたはメニューの方向に応じて、縦線または横線を追加します。  メニュー項目など、項目間のグループ化や区切りに使用できます。  
+### <a name="toolstripseparator"></a>ToolStripSeparator  
+ <xref:System.Windows.Forms.ToolStripSeparator>ツールバーまたはメニューで、印刷の向きに応じてに垂直または水平方向の線を追加します。 グループ化やメニューなどのアイテムの違いを提供します。  
   
- <xref:System.Windows.Forms.ToolStripSeparator> を追加するには、デザイン時にドロップダウン リストから選択します。  ただし、デザイナーのテンプレート ノードまたは <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> メソッドでハイフン \(\-\) を入力することで、自動的に <xref:System.Windows.Forms.ToolStripSeparator> を作成することもできます。  
+ 追加することができます、<xref:System.Windows.Forms.ToolStripSeparator>ドロップダウン リストから選択してデザイン時にします。 ただし、ことができますも自動的に作成する、<xref:System.Windows.Forms.ToolStripSeparator>デザイナー テンプレート ノードまたはハイフン (-) を入力して、<xref:System.Windows.Forms.ToolStripItemCollection.Add%2A>メソッドです。  
   
-### ToolStripControlHost  
- <xref:System.Windows.Forms.ToolStripControlHost> は、<xref:System.Windows.Forms.ToolStripComboBox>、<xref:System.Windows.Forms.ToolStripTextBox>、および <xref:System.Windows.Forms.ToolStripProgressBar> の抽象基本クラスです。  <xref:System.Windows.Forms.ToolStripControlHost> は、カスタム コントロールを含む他のコントロールを次の 2 つの方法でホストできます。  
+### <a name="toolstripcontrolhost"></a>ToolStripControlHost  
+ <xref:System.Windows.Forms.ToolStripControlHost>抽象基本クラスは、 <xref:System.Windows.Forms.ToolStripComboBox>、 <xref:System.Windows.Forms.ToolStripTextBox>、および<xref:System.Windows.Forms.ToolStripProgressBar>です。 <xref:System.Windows.Forms.ToolStripControlHost>2 つの方法で、カスタム コントロールを含む、他のコントロールをホストできます。  
   
--   <xref:System.Windows.Forms.Control> から派生するクラスを使用して <xref:System.Windows.Forms.ToolStripControlHost> を構築します。  ホストされるコントロールおよびプロパティに完全にアクセスするには、<xref:System.Windows.Forms.ToolStripControlHost.Control%2A> プロパティをキャストして、このプロパティが表す実際のクラスに戻す必要があります。  
+-   構築、<xref:System.Windows.Forms.ToolStripControlHost>から派生するクラスと<xref:System.Windows.Forms.Control>です。 キャストする必要が完全にホストされるコントロールとプロパティにアクセスするには<xref:System.Windows.Forms.ToolStripControlHost.Control%2A>プロパティを実際にクラスを表します。  
   
--   <xref:System.Windows.Forms.ToolStripControlHost> を拡張し、継承クラスの既定のコンストラクター内で、<xref:System.Windows.Forms.Control> から派生したクラスを渡す基本クラス コンストラクターを呼び出します。  このオプションを使用して一般的なコントロール メソッドとプロパティをラップすると、<xref:System.Windows.Forms.ToolStrip> 内でのアクセスが簡単になります。  
+-   拡張<xref:System.Windows.Forms.ToolStripControlHost>、継承されたクラスの既定のコンス トラクターで、基本クラス コンス トラクターの呼び出しから派生するクラスを渡すと<xref:System.Windows.Forms.Control>です。 このオプションで簡単にアクセスの一般的なコントロールのメソッドとプロパティをラップすることができます、<xref:System.Windows.Forms.ToolStrip>です。  
   
-### ToolStripComboBox  
- <xref:System.Windows.Forms.ToolStripComboBox> は、<xref:System.Windows.Forms.ToolStrip> でホストするために最適化された <xref:System.Windows.Forms.ComboBox> です。  ホストされるコントロールのプロパティとイベントのサブセットは <xref:System.Windows.Forms.ToolStripComboBox> レベルで公開されますが、基になる <xref:System.Windows.Forms.ComboBox> コントロールは <xref:System.Windows.Forms.ToolStripComboBox.ComboBox%2A> プロパティを使用して完全にアクセスできます。  
+### <a name="toolstripcombobox"></a>ToolStripComboBox  
+ <xref:System.Windows.Forms.ToolStripComboBox><xref:System.Windows.Forms.ComboBox>でホストするために最適化された、<xref:System.Windows.Forms.ToolStrip>です。 ホストされるコントロールのプロパティとイベントのサブセットが公開されている、<xref:System.Windows.Forms.ToolStripComboBox>レベルが、基になる<xref:System.Windows.Forms.ComboBox>コントロールが完全にを介してアクセスできる、<xref:System.Windows.Forms.ToolStripComboBox.ComboBox%2A>プロパティです。  
   
-### ToolStripTextBox  
- <xref:System.Windows.Forms.ToolStripTextBox> は、<xref:System.Windows.Forms.ToolStrip> でホストするために最適化された <xref:System.Windows.Forms.TextBox> です。  ホストされるコントロールのプロパティとイベントのサブセットは <xref:System.Windows.Forms.ToolStripTextBox> レベルで公開されますが、基になる <xref:System.Windows.Forms.TextBox> コントロールは <xref:System.Windows.Forms.ToolStripTextBox.TextBox%2A> プロパティを使用して完全にアクセスできます。  
+### <a name="toolstriptextbox"></a>ToolStripTextBox  
+ <xref:System.Windows.Forms.ToolStripTextBox><xref:System.Windows.Forms.TextBox>でホストするために最適化された、<xref:System.Windows.Forms.ToolStrip>です。 ホストされるコントロールのプロパティとイベントのサブセットが公開されている、<xref:System.Windows.Forms.ToolStripTextBox>レベルが、基になる<xref:System.Windows.Forms.TextBox>コントロールが完全にを介してアクセスできる、<xref:System.Windows.Forms.ToolStripTextBox.TextBox%2A>プロパティです。  
   
-### ToolStripProgressBar  
- <xref:System.Windows.Forms.ToolStripProgressBar> は、<xref:System.Windows.Forms.ToolStrip> でホストするために最適化された <xref:System.Windows.Forms.ProgressBar> です。  ホストされるコントロールのプロパティとイベントのサブセットは <xref:System.Windows.Forms.ToolStripProgressBar> レベルで公開されますが、基になる <xref:System.Windows.Forms.ProgressBar> コントロールは <xref:System.Windows.Forms.ToolStripProgressBar.ProgressBar%2A> プロパティを使用して完全にアクセスできます。  
+### <a name="toolstripprogressbar"></a>ToolStripProgressBar  
+ <xref:System.Windows.Forms.ToolStripProgressBar><xref:System.Windows.Forms.ProgressBar>でホストするために最適化された、<xref:System.Windows.Forms.ToolStrip>です。 ホストされるコントロールのプロパティとイベントのサブセットが公開されている、<xref:System.Windows.Forms.ToolStripProgressBar>レベルが、基になる<xref:System.Windows.Forms.ProgressBar>コントロールが完全にを介してアクセスできる、<xref:System.Windows.Forms.ToolStripProgressBar.ProgressBar%2A>プロパティです。  
   
-### ToolStripDropDownItem  
- <xref:System.Windows.Forms.ToolStripDropDownItem> は、<xref:System.Windows.Forms.ToolStripMenuItem>、<xref:System.Windows.Forms.ToolStripDropDownButton>、および <xref:System.Windows.Forms.ToolStripSplitButton> の抽象基本クラスです。項目を直接ホストしたり、ドロップダウン コンテナーで追加項目をホストしたりできます。  これを実行するには、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A> プロパティを <xref:System.Windows.Forms.ToolStripDropDown> に設定して、<xref:System.Windows.Forms.ToolStripDropDown> の <xref:System.Windows.Forms.ToolStrip.Items%2A> プロパティを設定します。  これらのドロップダウン項目には、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A> プロパティを使用して直接アクセスできます。  
+### <a name="toolstripdropdownitem"></a>ToolStripDropDownItem  
+ <xref:System.Windows.Forms.ToolStripDropDownItem>抽象基本クラスは、 <xref:System.Windows.Forms.ToolStripMenuItem>、 <xref:System.Windows.Forms.ToolStripDropDownButton>、および<xref:System.Windows.Forms.ToolStripSplitButton>項目を直接またはドロップダウン コンテナーのホスト項目をホストすることができます。 設定して、これを行う、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>プロパティを<xref:System.Windows.Forms.ToolStripDropDown>と設定、<xref:System.Windows.Forms.ToolStrip.Items%2A>のプロパティ、<xref:System.Windows.Forms.ToolStripDropDown>です。 経由で直接これらドロップダウン項目へのアクセス、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A>プロパティです。  
   
-### ToolStripMenuItem  
- <xref:System.Windows.Forms.ToolStripMenuItem> は、<xref:System.Windows.Forms.ToolStripDropDownMenu> や <xref:System.Windows.Forms.ContextMenuStrip> と連携して、メニューの特殊な強調表示、レイアウト、および列の配置を処理する <xref:System.Windows.Forms.ToolStripDropDownItem> です。  
+### <a name="toolstripmenuitem"></a>ToolStripMenuItem  
+ <xref:System.Windows.Forms.ToolStripMenuItem><xref:System.Windows.Forms.ToolStripDropDownItem>と連動する<xref:System.Windows.Forms.ToolStripDropDownMenu>と<xref:System.Windows.Forms.ContextMenuStrip>をメニューの強調表示、レイアウト、および列の特別な構成を処理します。  
   
-### ToolStripDropDownButton  
- <xref:System.Windows.Forms.ToolStripDropDownButton> は <xref:System.Windows.Forms.ToolStripButton> に似ていますが、ユーザーがクリックするとドロップダウン領域が表示される点が異なります。  <xref:System.Windows.Forms.ToolStripDropDownButton.ShowDropDownArrow%2A> プロパティを設定することで、ドロップダウン矢印を表示または非表示にできます。  <xref:System.Windows.Forms.ToolStripDropDownButton> は、<xref:System.Windows.Forms.ToolStrip> をオーバーフローする項目を表示する <xref:System.Windows.Forms.ToolStripOverflowButton> をホストします。  
+### <a name="toolstripdropdownbutton"></a>ToolStripDropDownButton  
+ <xref:System.Windows.Forms.ToolStripDropDownButton>ようになります<xref:System.Windows.Forms.ToolStripButton>が、ユーザーがクリックしたときにドロップダウン領域を表示します。 設定して、ドロップダウン矢印を表示または非表示、<xref:System.Windows.Forms.ToolStripDropDownButton.ShowDropDownArrow%2A>プロパティです。 <xref:System.Windows.Forms.ToolStripDropDownButton>ホスト、<xref:System.Windows.Forms.ToolStripOverflowButton>オーバーフローする項目を表示する、<xref:System.Windows.Forms.ToolStrip>です。  
   
-### ToolStripSplitButton  
- <xref:System.Windows.Forms.ToolStripSplitButton> は、ボタンとドロップダウン ボタンの機能を組み合わせます。  
+### <a name="toolstripsplitbutton"></a>ToolStripSplitButton  
+ <xref:System.Windows.Forms.ToolStripSplitButton>ボタンとドロップダウン ボタンの機能を結合します。  
   
- <xref:System.Windows.Forms.ToolStripSplitButton.DefaultItem%2A> プロパティを使用して、選択されたドロップダウン項目に対応する <xref:System.Windows.Forms.Control.Click> イベントと、ボタンに表示される項目とを同期します。  
+ 使用して、<xref:System.Windows.Forms.ToolStripSplitButton.DefaultItem%2A>同期するためにプロパティ、<xref:System.Windows.Forms.Control.Click>選択されたドロップダウン項目、ボタンに表示される項目のイベントです。  
   
-### ToolStripItem の汎用機能  
- <xref:System.Windows.Forms.ToolStripItem> には、次のように、継承するコントロールに共通の機能とオプションがあります。  
+### <a name="toolstripitem-generic-features"></a>ToolStripItem ジェネリックの機能  
+ <xref:System.Windows.Forms.ToolStripItem>次の一般的な機能とコントロールを継承するオプションを提供します。  
   
 -   コア イベント  
   
--   イメージ処理  
+-   イメージの処理  
   
--   \[配置\]  
+-   アラインメント  
   
 -   テキストとイメージの関係  
   
 -   表示スタイル  
   
-#### コア イベント  
- <xref:System.Windows.Forms.ToolStripItem> では、自身に対するクリック イベント、マウス イベント、および描画イベントを受け取り、なんらかのキーボードの前処理を実行することもできます。  
+#### <a name="core-events"></a>コア イベント  
+ <xref:System.Windows.Forms.ToolStripItem>コントロールは、自分をクリックして、マウス、および描画イベントを受信され、前処理もいくつかのキーボードを実行できます。  
   
-#### イメージ処理  
- <xref:System.Windows.Forms.ToolStripItem.Image%2A>、<xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A>、<xref:System.Windows.Forms.ToolStripItem.ImageIndex%2A>、<xref:System.Windows.Forms.ToolStripItem.ImageKey%2A>、<xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A> の各プロパティは、イメージ処理のさまざまな要素に関連しています。  <xref:System.Windows.Forms.ToolStrip> コントロールでイメージを使用するには、これらのプロパティを手動で設定するか、実行時のみに有効な <xref:System.Windows.Forms.ToolStrip.ImageList%2A> プロパティを設定します。  
+#### <a name="image-handling"></a>イメージの処理  
+ <xref:System.Windows.Forms.ToolStripItem.Image%2A>、 <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A>、 <xref:System.Windows.Forms.ToolStripItem.ImageIndex%2A>、 <xref:System.Windows.Forms.ToolStripItem.ImageKey%2A>、および<xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A>プロパティは、イメージ処理のさまざまな側面に関連します。 内のイメージを使用して<xref:System.Windows.Forms.ToolStrip>コントロール直接これらのプロパティを設定するか、実行時間: 専用に設定して<xref:System.Windows.Forms.ToolStrip.ImageList%2A>プロパティです。  
   
- イメージのスケーリングは、次のように、<xref:System.Windows.Forms.ToolStrip> および <xref:System.Windows.Forms.ToolStripItem> の両方のプロパティの相互作用によって決まります。  
+ イメージのスケーリングは両方のプロパティの相互作用によって決まります<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.ToolStripItem>、次のようにします。  
   
--   <xref:System.Windows.Forms.ToolStrip.ImageScalingSize%2A> は、イメージの <xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A> の設定とコンテナーの <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> の設定の組み合わせによって決まる、最終的なイメージのスケールです。  
+-   <xref:System.Windows.Forms.ToolStrip.ImageScalingSize%2A>イメージの組み合わせによって決定される最終的なイメージの小数点以下桁数<xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A>設定と、コンテナーの<xref:System.Windows.Forms.ToolStrip.AutoSize%2A>設定します。  
   
-    -   <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> が `true` \(既定\) で <xref:System.Windows.Forms.ToolStripItemImageScaling> が <xref:System.Windows.Forms.ToolStripItemImageScaling> の場合、イメージの拡大と縮小は行われず、<xref:System.Windows.Forms.ToolStrip> のサイズは最大の項目と同じサイズまたは定義済みの最小サイズになります。  
+    -   場合<xref:System.Windows.Forms.ToolStrip.AutoSize%2A>は`true`(既定) と<xref:System.Windows.Forms.ToolStripItemImageScaling>は<xref:System.Windows.Forms.ToolStripItemImageScaling.SizeToFit>、イメージのスケーリングは行われません、および<xref:System.Windows.Forms.ToolStrip>サイズが最大のアイテム、または指定された最小サイズのです。  
   
-    -   <xref:System.Windows.Forms.ToolStrip.AutoSize%2A> が `false` で <xref:System.Windows.Forms.ToolStripItemImageScaling> が <xref:System.Windows.Forms.ToolStripItemImageScaling> の場合、イメージや <xref:System.Windows.Forms.ToolStrip> の拡大と縮小は行われません。  
+    -   場合<xref:System.Windows.Forms.ToolStrip.AutoSize%2A>は`false`と<xref:System.Windows.Forms.ToolStripItemImageScaling>は<xref:System.Windows.Forms.ToolStripItemImageScaling.None>、どちらのイメージも<xref:System.Windows.Forms.ToolStrip>スケーリングが発生します。  
   
-#### \[配置\]  
- <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティの値は、項目を表示する <xref:System.Windows.Forms.ToolStrip> の辺を決定します。  <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティが機能するのは、<xref:System.Windows.Forms.ToolStrip> のレイアウト スタイルがスタック オーバーフロー値のいずれかに設定されている場合のみです。  
+#### <a name="alignment"></a>アラインメント  
+ 値、<xref:System.Windows.Forms.ToolStripItem.Alignment%2A>プロパティの末尾を決定する、<xref:System.Windows.Forms.ToolStrip>で項目が表示されます。 <xref:System.Windows.Forms.ToolStripItem.Alignment%2A>プロパティは場合にのみ、機能のレイアウト スタイル、<xref:System.Windows.Forms.ToolStrip>スタック オーバーフローの値のいずれかに設定されています。  
   
- 項目は、項目コレクションに表示される順序で <xref:System.Windows.Forms.ToolStrip> に配置されます。  項目を配置する場所をプログラムで変更するには、<xref:System.Windows.Forms.ToolStripItemCollection.Insert%2A> メソッドを使用してコレクションの項目を移動します。  このメソッドは項目を移動しますが、複製はしません。  
+ 項目を配置している、<xref:System.Windows.Forms.ToolStrip>項目のコレクション内の項目が表示される順序で。 項目のレイアウト位置をプログラムで変更するには、使用、<xref:System.Windows.Forms.ToolStripItemCollection.Insert%2A>コレクション内のアイテムの移動メソッドです。 このメソッドは、項目を移動が、複製はしません。  
   
-#### テキストとイメージの関係  
- <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A> プロパティは、<xref:System.Windows.Forms.ToolStripItem> 上のテキストに対するイメージの相対的位置を定義します。  イメージ、テキスト、またはその両方がない項目は、<xref:System.Windows.Forms.ToolStripItem> で存在しない要素の代わりに空白が表示されないように、特別なケースとして扱われます。  
+#### <a name="text-and-image-relationship"></a>テキストとイメージのリレーションシップ  
+ <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A>プロパティのテキストに対して、画像の相対的な位置を定義する、<xref:System.Windows.Forms.ToolStripItem>です。 イメージ、テキスト、またはその両方が不足しているアイテムの特殊なケースとして扱われますできるように、<xref:System.Windows.Forms.ToolStripItem>不足している要素または要素の空の部分は表示されません。  
   
-#### 表示スタイル  
- <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> を使用すると、項目の Text プロパティと Image プロパティの値を設定して必要なものだけを表示できます。  これは通常、同じ項目を異なるコンテキストで表示するとき、表示スタイルだけを変更するために使用されます。  
+#### <a name="display-style"></a>表示スタイル  
+ <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A>目的のみを表示するときに、アイテムのテキストおよびイメージのプロパティの値を設定できます。 これは通常、表示スタイルのみを変更する、さまざまなコンテキストで同じ項目を表示する場合に使用されます。  
   
-## アクセサリ クラス  
- 次のように、他にもさまざまな機能を実現するクラスがあります。  
+## <a name="accessory-classes"></a>アクセサリ クラス  
+ さまざまな他の機能を提供するクラスは次のとおりです。  
   
--   <xref:System.Windows.Forms.ToolStripManager> は、アプリケーション全体について <xref:System.Windows.Forms.ToolStrip> 関連のタスクをサポートします。たとえば、マージ、設定、レンダラーのオプションなどがあります。  
+-   <xref:System.Windows.Forms.ToolStripManager>サポートしている<xref:System.Windows.Forms.ToolStrip>-全体のアプリケーション、マージ、設定、およびレンダラー オプションなどのタスクに関連します。  
   
--   <xref:System.Windows.Forms.ToolStripRenderer> を使用すると、特定のスタイルやテーマを簡単に <xref:System.Windows.Forms.ToolStrip> に適用できます。  
+-   <xref:System.Windows.Forms.ToolStripRenderer>特定のスタイルやテーマを適用することができます、<xref:System.Windows.Forms.ToolStrip>簡単にします。  
   
--   <xref:System.Windows.Forms.ToolStripProfessionalRenderer> は、置き換えることのできるカラー テーブル \(<xref:System.Windows.Forms.ProfessionalColorTable>\) に基づいてペンとブラシを作成します。  
+-   <xref:System.Windows.Forms.ToolStripProfessionalRenderer>ペンと置き換え可能なカラー テーブルに基づくブラシを作成 (<xref:System.Windows.Forms.ProfessionalColorTable>)。  
   
--   <xref:System.Windows.Forms.ToolStripSystemRenderer> は、システム カラーとフラットな visual スタイルを <xref:System.Windows.Forms.ToolStrip> アプリケーションに適用します。  
+-   <xref:System.Windows.Forms.ToolStripSystemRenderer>システム カラーとフラット visual スタイルを適用<xref:System.Windows.Forms.ToolStrip>アプリケーションです。  
   
--   <xref:System.Windows.Forms.ToolStripContainer> は <xref:System.Windows.Forms.SplitContainer> と似ています。  ドッキング対象の 4 つのサイド パネル \(<xref:System.Windows.Forms.ToolStripPanel> のインスタンス\) と、1 つのセントラル パネル \(<xref:System.Windows.Forms.ToolStripContentPanel> のインスタンス\) を使用して、一般的な配置が作成されます。  サイド パネルは削除できませんが、非表示にすることはできます。  セントラル パネルを削除または非表示にすることはできません。  1 つ以上の <xref:System.Windows.Forms.ToolStrip> コントロール、<xref:System.Windows.Forms.MenuStrip> コントロール、または <xref:System.Windows.Forms.StatusStrip> コントロールをサイド パネルに配置でき、他のコントロールにはセントラル パネルを使用できます。  <xref:System.Windows.Forms.ToolStripContentPanel> には、フォーム本体にレンダラーのサポートを取り入れ、一貫した状態で表示する方法も用意されています。  <xref:System.Windows.Forms.ToolStripContainer> はマルチ ドキュメント インターフェイス \(MDI\) をサポートしていません。  
+-   <xref:System.Windows.Forms.ToolStripContainer>ような<xref:System.Windows.Forms.SplitContainer>します。 4 つの側のドッキングされたパネルを使用して (インスタンスの<xref:System.Windows.Forms.ToolStripPanel>) と 1 つの中央パネル (のインスタンス<xref:System.Windows.Forms.ToolStripContentPanel>) 標準的な並べ替え方法を作成します。 サイド パネルを削除することはできませんが、非表示にすることができます。 削除も、中央のパネルを非表示にします。 1 つまたは複数を配置して<xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.MenuStrip>、または<xref:System.Windows.Forms.StatusStrip>側パネルのコントロールは、その他のコントロールの中央のパネルを使用できます。 <xref:System.Windows.Forms.ToolStripContentPanel>一貫した外観にフォームの本文をサポートするレンダラーを取得する方法も提供します。 <xref:System.Windows.Forms.ToolStripContainer>マルチ ドキュメント インターフェイス (MDI) はサポートされません。  
   
--   <xref:System.Windows.Forms.ToolStripPanel> は、<xref:System.Windows.Forms.ToolStrip> コントロールを移動および配置する領域を作成します。  1 つのパネルだけを使用することもできますが、<xref:System.Windows.Forms.ToolStripPanel> は MDI のシナリオにも適しています。  
+-   <xref:System.Windows.Forms.ToolStripPanel>移動および配置するための領域を提供<xref:System.Windows.Forms.ToolStrip>コントロール。 1 つだけのパネルを使用するには、これを選択した場合と<xref:System.Windows.Forms.ToolStripPanel>は MDI のシナリオに適しています。  
   
-## 参照  
- [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)   
- [ToolStrip テクノロジの概要](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)   
- [ToolStrip コントロール](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)   
- [MenuStrip コントロール](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)   
- [StatusStrip コントロール](../../../../docs/framework/winforms/controls/statusstrip-control.md)   
- [ContextMenuStrip コントロール](../../../../docs/framework/winforms/controls/contextmenustrip-control.md)   
+## <a name="see-also"></a>関連項目  
+ [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
+ [ToolStrip テクノロジの概要](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)  
+ [ToolStrip コントロール](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  
+ [MenuStrip コントロール](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)  
+ [StatusStrip コントロール](../../../../docs/framework/winforms/controls/statusstrip-control.md)  
+ [ContextMenuStrip コントロール](../../../../docs/framework/winforms/controls/contextmenustrip-control.md)  
  [BindingNavigator コントロール](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)

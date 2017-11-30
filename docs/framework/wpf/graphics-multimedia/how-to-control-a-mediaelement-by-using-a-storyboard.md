@@ -1,51 +1,57 @@
 ---
-title: "方法 : ストーリーボードを使用して MediaElement を制御する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "制御 (メディアの再生を), ストーリーボードで"
-  - "メディア, 制御 (ストーリーボードで再生を)"
-  - "マルチメディア, 制御 (ストーリーボードでメディアの再生を)"
-  - "再生 (メディアの), 制御 (ストーリーボードで)"
-  - "ストーリーボード, 制御 (メディアの再生を)"
+title: "方法 : ストーリーボードを使用して MediaElement を制御する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- multimedia [WPF], controlling playback of media with Storyboards
+- controlling playback of media [WPF], with Storyboards
+- Storyboards [WPF], controlling playback of media with
+- media [WPF], controlling playback with Storyboards
+- playback of media [WPF], controlling with Storyboards
 ms.assetid: 6128ca77-b826-4e36-b968-6f237157c543
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2341d2814e5bd42c652865c76d115defcc5b15b2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ストーリーボードを使用して MediaElement を制御する
-この例では、<xref:System.Windows.Media.Animation.Storyboard> 内の <xref:System.Windows.Media.MediaTimeline> を使用して、<xref:System.Windows.Controls.MediaElement> を制御する方法を示します。  
+# <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>方法 : ストーリーボードを使用して MediaElement を制御する
+この例では、制御、<xref:System.Windows.Controls.MediaElement>を使用して、<xref:System.Windows.Media.MediaTimeline>で、<xref:System.Windows.Media.Animation.Storyboard>です。  
   
-## 使用例  
- <xref:System.Windows.Media.Animation.Storyboard> 内の <xref:System.Windows.Media.MediaTimeline> を使用して <xref:System.Windows.Controls.MediaElement> のタイミングを制御する場合、その機能は、アニメーションなど他の <xref:System.Windows.Media.Animation.Timeline> オブジェクトの機能と同じです。  たとえば、<xref:System.Windows.Media.MediaTimeline> は、<xref:System.Windows.Media.Animation.Timeline> プロパティを <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> プロパティのように使用して、<xref:System.Windows.Controls.MediaElement> を開始する \(メディアの再生を開始する\) 時刻を指定します。  また、<xref:System.Windows.Media.Animation.Timeline.Duration%2A> プロパティを使用して、<xref:System.Windows.Controls.MediaElement> をアクティブにする時間 \(メディアの再生時間\) を指定します。  <xref:System.Windows.Media.Animation.Storyboard> で <xref:System.Windows.Media.Animation.Timeline> オブジェクトを使用する方法の詳細については、「[ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)」を参照してください。  
+## <a name="example"></a>例  
+ 使用すると、<xref:System.Windows.Media.MediaTimeline>で、<xref:System.Windows.Media.Animation.Storyboard>のタイミングを制御する、 <xref:System.Windows.Controls.MediaElement>、機能は、他の機能と同じ<xref:System.Windows.Media.Animation.Timeline>アニメーションなどのオブジェクト。 たとえば、<xref:System.Windows.Media.MediaTimeline>使用<xref:System.Windows.Media.Animation.Timeline>などのプロパティ、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>を開始するタイミングを指定するプロパティ、 <xref:System.Windows.Controls.MediaElement> (メディアの再生を開始)。 使用して、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>プロパティを指定する時間、<xref:System.Windows.Controls.MediaElement>がアクティブ (メディアの再生の期間)。 使用しての詳細については<xref:System.Windows.Media.Animation.Timeline>オブジェクトと、<xref:System.Windows.Media.Animation.Storyboard>を参照してください[ストーリー ボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
   
- この例では、<xref:System.Windows.Media.MediaTimeline> を使用して再生を制御する単純なメディア プレーヤーを作成する方法を示します。  このメディア プレーヤーには、再生、一時停止、再開、停止ボタンがあります。  また、進行状況バーとして機能する <xref:System.Windows.Controls.Slider> コントロールもあります。  
+ この例を使用する単純なメディア プレーヤーを作成する方法を示しています、<xref:System.Windows.Media.MediaTimeline>再生を制御します。 メディア プレーヤーには、再生、一時停止、再開、およびボタンを停止します。 また、<xref:System.Windows.Controls.Slider>進行状況バーとして機能するコントロール。  
   
- メディア プレーヤーの[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] を作成する例を次に示します。  
+ 次の例を作成、 [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] media player のです。  
   
- [!code-xml[MediaGallery_snip#MediaTimelineExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml#mediatimelineexamplewholepage)]  
+ [!code-xaml[MediaGallery_snip#MediaTimelineExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml#mediatimelineexamplewholepage)]  
   
- 進行状況バーの機能を作成する例を次に示します。  
+ 次の例では、進行状況バーの機能を作成します。  
   
  [!code-csharp[MediaGallery_snip#CodeBehindMediaTimelineExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snip/CSharp/MediaTimelineExample.xaml.cs#codebehindmediatimelineexamplewholepage)]
  [!code-vb[MediaGallery_snip#CodeBehindMediaTimelineExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml.vb#codebehindmediatimelineexamplewholepage)]  
   
-## 参照  
- <xref:System.Windows.Controls.MediaElement>   
- <xref:System.Windows.Media.MediaTimeline>   
- <xref:System.Windows.Media.Animation.Storyboard>   
- [MediaElement \(再生、一時停止、停止、ボリューム、および速度\) を制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)   
- [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)   
- [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.MediaElement>  
+ <xref:System.Windows.Media.MediaTimeline>  
+ <xref:System.Windows.Media.Animation.Storyboard>  
+ [MediaElement (再生、一時停止、停止、ボリューム、および速度) を制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
+ [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
+ [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
+ [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)  
  [グラフィックスとマルチメディア](../../../../docs/framework/wpf/graphics-multimedia/index.md)

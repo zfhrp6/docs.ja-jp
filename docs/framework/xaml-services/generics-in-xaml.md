@@ -1,55 +1,57 @@
 ---
-title: "Generics in XAML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "generics [XAML Services]"
+title: "XAML のジェネリック"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-caps.latest.revision: 8
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 05eaab4497949231d32ceab0ba696b9f252d67ad
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Generics in XAML
-System.Xaml に実装されている .NET Framework XAML サービスは、汎用的な CLR 型の使用をサポートします。  このサポートには、型引数としてのジェネリックの制約の指定、およびジェネリック コレクションのケースに適した `Add` メソッドを呼び出すことでの制約の適用が含まれます。  このトピックでは、XAML のジェネリック型の使用および参照に関するさまざまな側面を説明します。  
+# <a name="generics-in-xaml"></a>XAML のジェネリック
+System.Xaml に実装されている .NET Framework XAML サービスでは、CLR 型のジェネリック型を使用するためのサポートを提供します。 このサポートには、引数の型としてジェネリックの制約を指定して、適切な呼び出しによって、制約の適用が含まれます。`Add`メソッドのジェネリック コレクションの場合。 このトピックを使用して、XAML でのジェネリック型の参照の側面について説明します。  
   
-## x:TypeArguments  
- `x:TypeArguments` は、XAML 言語によって定義されているディレクティブです。  ジェネリック型によってサポートされる XAML 型のメンバーとして使用された場合、`x:TypeArguments` は、ジェネリックの制約型引数をバッキング コンストラクターに渡します。  構文例を含む、`x:TypeArguments` の .NET Framework XAML サービスでの使用に関する参照構文については、「[x:TypeArguments Directive](../../../docs/framework/xaml-services/x-typearguments-directive.md)」を参照してください。  
+## <a name="xtypearguments"></a>x: TypeArguments  
+ `x:TypeArguments`ディレクティブは、XAML 言語によって定義されます。 ジェネリック型によってバックアップされている XAML 型のメンバーとして使用されているときに`x:TypeArguments`型のバッキング コンス トラクターに、ジェネリック引数を渡すの制約を定義します。 .NET Framework XAML サービスに関連する参照構文の使用`x:TypeArguments`、構文の例を含むを参照してください[X:typearguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)です。  
   
- `x:TypeArguments` は文字列を受け取り、型コンバーターをサポートしているため、通常、XAML の使用方法においては属性として宣言されます。  
+ `x:TypeArguments`文字列を受け取り、型コンバーター バッキングの場合は通常、属性として XAML の使用方法で宣言されています。  
   
- XAML ノード ストリームでは、`x:TypeArguments` によって宣言される情報は、ノード ストリーム内の `StartObject` の位置にある <xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=fullName> から取得できます。  <xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=fullName> の戻り値は、<xref:System.Xaml.XamlType> 値の一覧です。  <xref:System.Xaml.XamlType.IsGeneric%2A?displayProperty=fullName> を呼び出すことで、XAML の型がジェネリック型を表してるかどうかを判断できます。  
+ によって、XAML ノード ストリームで、情報が宣言されている`x:TypeArguments`から取得できる<xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=nameWithType>で、`StartObject`ノード ストリーム内の位置。 戻り値<xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=nameWithType>の一覧を示します<xref:System.Xaml.XamlType>値。 呼び出して、XAML の型がジェネリック型を表すかどうかの決定ができる<xref:System.Xaml.XamlType.IsGeneric%2A?displayProperty=nameWithType>です。  
   
-## XAML におけるジェネリックの規則および構文の表記規則  
- XAML では、ジェネリック型は常に制約されたジェネリック型として表される必要があります。制約のないジェネリック型は、XAML 型システムまたは XAML ノード ストリームには決して現れず、XAML マークアップで表すことはできません。  ジェネリックの入れ子にされた型の制約が `x:TypeArguments` によって参照されている場合、または `x:Type` がジェネリック型の CLR 型参照を指定している場合は、XAML 属性構文内でジェネリックを参照できます。  これは、.NET Framework XAML サービスによって定義された <xref:System.Xaml.Schema.XamlTypeTypeConverter> クラスを通じてサポートされます。  
+## <a name="rules-and-syntax-conventions-for-generics-in-xaml"></a>ルールおよび XAML におけるジェネリックの構文表記規則  
+ XAML では、ジェネリック型表す必要が常にある制約付きジェネリック; として制約のないジェネリックでは、XAML 型システムまたは XAML ノード ストリーム内が存在しないと、XAML マークアップで表されることはできません。 ジェネリック型によって参照されているジェネリック型の入れ子にされた型の制約がある場合に、XAML 属性の構文で参照できます`x:TypeArguments`、場合や、`x:Type`ジェネリック型の CLR 型参照を提供します。 これは、 <xref:System.Xaml.Schema.XamlTypeTypeConverter> .NET Framework XAML サービスによって定義されるクラスです。  
   
- <xref:System.Xaml.Schema.XamlTypeTypeConverter> によって有効化された XAML 属性構文形式では、型の山かっことジェネリックの制約を使用する通常の MSIL\/CLR 構文表記規則が変更され、代わりに制約コンテナー用のかっこが代用されます。  例については、「[x:TypeArguments Directive](../../../docs/framework/xaml-services/x-typearguments-directive.md)」を参照してください。  
+ XAML 属性の構文形式で有効になって<xref:System.Xaml.Schema.XamlTypeTypeConverter>典型的な MSIL を変更/角度を使用する CLR の構文規則の名前の型と、ジェネリックの制約の角かっこを代わりに制約コンテナーのかっこを置き換えます。 例については、次を参照してください。 [X:typearguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)です。  
   
-## ジェネリックと XAML 2009 の機能  
- 一般的な言語プリミティブの XAML 型を取得するために CLR 基本データ型をマッピングする代わりに、XAML 2009 を使用する場合は、[XAML 2009 組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)を `x:TypeArguments` の情報項目として使用できます。  たとえば、次を宣言できます \(プレフィックス マッピングは示されていません。`x` は XAML 2009 の XAML 言語 XAML 名前空間です\)。  
+## <a name="generics-and-xaml-2009-features"></a>ジェネリックと XAML 2009 の機能  
+ XAML 2009 を使用する場合は、CLR のマッピングではなく基本データ型を共通言語プリミティブの XAML 型を取得する、使用することができます[XAML 2009 の組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)情報アイテムとして`x:TypeArguments`です。 たとえば、次を宣言する可能性があります (表示されませんが、マッピングのプレフィックスが`x`は XAML 2009 の XAML 言語の XAML 名前空間)。  
   
-```  
+```xaml  
 <my:BusinessObject x:TypeArguments="x:String,x:Int32"/>  
 ```  
   
-## WPF と他の Framework 3.5 でのジェネリックのサポート  
- 特に WPF を対象として XAML 2006 を使用している場合は、`x:TypeArguments` と同じ要素上に [x:Class](../../../docs/framework/xaml-services/x-class-directive.md) も指定する必要があり、その要素を XAML ドキュメントのルート要素にする必要があります。  ルート要素は最低 1 つの型引数と共にジェネリック型にマッピングする必要があります。  <xref:System.Windows.Navigation.PageFunction%601> はその一例です。  
+## <a name="generics-support-in-wpf-and-other-v35-frameworks"></a>WPF およびその他の v3.5 フレームワークでジェネリックのサポート  
+ 具体的には、WPF を対象とする場合の XAML 2006 の使用状況の[X:class](../../../docs/framework/xaml-services/x-class-directive.md)もと同じ要素に提供される必要があります`x:TypeArguments`、し、その要素は、XAML ドキュメントのルート要素である必要があります。 ルート要素は、少なくとも 1 つの型引数を持つジェネリック型にマップする必要があります。 例としては<xref:System.Windows.Navigation.PageFunction%601>します。  
   
- ジェネリックの使用をサポートするための考えられる代替手段として、ジェネリック型を返すことができるカスタム マークアップ拡張を定義するか、ジェネリック型から派生するが自身のクラス定義内でジェネリック制約を平坦化するラッピング クラス定義を提供します。  
+ ジェネリックの使用をサポートするために、考えられる回避策など、ジェネリック型を返すことができるカスタム マークアップ拡張機能の定義、折り返しを提供するクラス定義があるが、ジェネリック型から派生した独自のクラス定義内でジェネリック制約を平坦化します。  
   
- WPF で、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を対象としている場合は、XAML 2009 の機能を `x:TypeArguments` と共に使用できますが、Loose XAML \(マークアップ コンパイルされていない XAML\) に限定されます。  WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。  
+ 対象とする WPF における[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]、と共に XAML 2009 の機能を使用することができます`x:TypeArguments`、loose XAML (XAML をマークアップ コンパイルされていない) に対してのみです。 WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。  
   
- [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] の [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] におけるカスタム ワークフローでは、ジェネリック XAML の使用をサポートしていません。  
+ カスタム ワークフロー[!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]の[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]汎用的な XAML の使用方法をサポートしていません。  
   
-## 参照  
- [x:TypeArguments Directive](../../../docs/framework/xaml-services/x-typearguments-directive.md)   
- [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md)   
- [Built\-in Types for Common XAML Language Primitives](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)
+## <a name="see-also"></a>関連項目  
+ [x:TypeArguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)  
+ [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
+ [共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)

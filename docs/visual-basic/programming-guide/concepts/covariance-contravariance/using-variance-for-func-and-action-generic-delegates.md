@@ -1,38 +1,27 @@
 ---
-title: "Func および Action 汎用デリゲート (Visual Basic) に対する分散の使用 |Microsoft ドキュメント"
-ms.custom: 
-ms.date: 2015-07-20
+title: "Func および Action 汎用デリゲート (Visual Basic) に対する分散の使用"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 36c3012f-b39c-493b-b90f-079b5912ac1b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 28c3f84d21f9fbc7e57ba079461194acf7612add
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b8f9b2ebf758bc0d67b2b623038a4beeb7149261
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-visual-basic"></a>Func および Action 汎用デリゲート (Visual Basic) に対する分散の使用
-これらの例は、共変性と反変性を使用する方法をデモンストレーション、`Func`と`Action`メソッドの再利用を有効にして、コード内の柔軟性を提供する汎用デリゲート。  
+以下の例では、`Func` 汎用デリゲートと `Action` 汎用デリゲートの共変性と反変性を使用して、メソッドの再利用を可能にし、コードの柔軟性を高める方法を示します。  
   
- ジェネリックの共変性と反変性の詳細については、次を参照してください。[デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)します。  
+ 共変性と反変性の詳細については、次を参照してください。[デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)です。  
   
-## <a name="using-delegates-with-covariant-type-parameters"></a>共変の型パラメーターを持つデリゲートの使用  
- 次の例では、ジェネリックの共分散のサポートの特典`Func`デリゲート。 `FindByTitle`メソッドのパラメーターを受け取る、`String`を入力し、オブジェクトを返します、`Employee`型です。 ただし、このメソッドを割り当てることができます、`Func(Of String, Person)`ので委任`Employee`継承`Person`します。  
+## <a name="using-delegates-with-covariant-type-parameters"></a>デリゲートと共変の型パラメーターの使用  
+ 次の例は、`Func` 汎用デリゲートにおける共変性のサポートの利点を示しています。 `FindByTitle` メソッドは、`String` 型のパラメーターを受け取り、`Employee` 型のオブジェクトを返します。 ただし、このメソッドは `Func(Of String, Person)` デリゲートに割り当てることもできます。これは `Employee` が `Person` を継承するためです。  
   
 ```vb  
 ' Simple hierarchy of classes.  
@@ -69,8 +58,8 @@ Class Finder
 End Class  
 ```  
   
-## <a name="using-delegates-with-contravariant-type-parameters"></a>反変の型パラメーターを持つデリゲートの使用  
- 次の例では、ジェネリックの反変性のサポートの特典`Action`デリゲート。 `AddToContacts`メソッドのパラメーターを受け取る、`Person`型です。 ただし、このメソッドを割り当てることができます、`Action(Of Employee)`ので委任`Employee`継承`Person`します。  
+## <a name="using-delegates-with-contravariant-type-parameters"></a>デリゲートと反変の型パラメーターの使用  
+ 次の例は、`Action` 汎用デリゲートにおける反変性のサポートの利点を示しています。 `AddToContacts` メソッドは、`Person` 型のパラメーターを受け取ります。 ただし、このメソッドは `Action(Of Employee)` デリゲートに割り当てることもできます。これは `Employee` が `Person` を継承するためです。  
   
 ```vb  
 Public Class Person  
@@ -107,5 +96,5 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ジェネリックの共変性と反変性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/covariance-and-contravariance.md)   
- [ジェネリック](https://msdn.microsoft.com/library/ms172192)
+ [共変性と反変性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)  
+ [ジェネリック](~/docs/standard/generics/index.md)

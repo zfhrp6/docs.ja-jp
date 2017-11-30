@@ -1,41 +1,44 @@
 ---
-title: "プレビュー イベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "イベント, プレビュー"
-  - "イベント, 非表示"
-  - "プレビュー イベント"
-  - "非表示イベント"
+title: "プレビュー イベント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Preview events [WPF]
+- suppressing events [WPF]
+- events [WPF], Preview
+- events [WPF], suppressing
 ms.assetid: b5032308-aa9c-4d02-af11-630ecec8df7e
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 04bdf32ea329ff25fd62255b4512d8a9d5703b8f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# プレビュー イベント
-プレビュー イベントはトンネル イベントとも呼ばれ、アプリケーション ルートから、イベントの発生元でありイベント データでソースとして報告される要素へ向かって経路をたどるルーティング イベントです。  すべてのイベント シナリオが、プレビュー イベントをサポートする、または必要とするわけではありません。このトピックでは、プレビュー イベントが存在する状況、アプリケーションまたはコンポーネントによるプレビュー イベントの処理方法、およびカスタム コンポーネントまたはカスタム クラスにプレビュー イベントを作成することが適切な状況について説明します。  
+# <a name="preview-events"></a>プレビュー イベント
+プレビュー イベントは、イベントのトンネリングとも呼ばれるは、イベントを発生し、イベント データのソースとして報告されている要素に対するアプリケーションのルートからのルートの方向の移動、ルーティングされたイベントです。 すべてのイベント シナリオがサポートまたはプレビュー イベント; が必要このトピックでは、プレビュー イベントが存在、アプリケーションやコンポーネントを処理する方法、それらの状況と、カスタム コンポーネントまたはクラスでプレビュー イベントを作成する場合があります適切なケースについて説明します。  
   
-## プレビュー イベントと入力  
- 一般に、Preview イベントを処理する場合、イベント データでイベントを処理済みとしてマークする際に注意が必要です。  Preview イベントを発生元 \(イベント データで発生元として報告される要素\) 以外の要素で処理すると、そのイベントを発生元の要素で処理する機会がなくなります。  このような状態が目的である場合もあります。複合コントロール内の要素間の場合などです。  
+## <a name="preview-events-and-input"></a>プレビュー イベントと入力  
+ イベントは一般には注意してプレビューを処理する場合、イベントをマーク処理イベントのデータ。 以外の任意の要素でプレビュー イベントの処理 (イベント データのソースとして報告されている要素) を発生させた要素は、要素外の発生するイベントを処理する機会が提供されていないのです。 場合によってコントロールの複合内のリレーションシップに問題の要素が存在しない場合に特に目的の結果を示します。  
   
- 特に入力イベントでは、Preview イベントは、イベント データのインスタンスを対のバブル イベントと共有もします。  Preview イベントのクラス ハンドラーを使用して入力イベントを処理済みとしてマークすると、そのバブル入力イベントのクラス ハンドラーは呼び出されません。  また、Preview イベントのインスタンス ハンドラーを使用してイベントを処理済みとしてマークすると、通常、そのバブル イベントのハンドラーは呼び出されません。  イベントが処理済みとしてマークされてもクラス ハンドラーまたはインスタンス ハンドラーが呼び出されるようにこれらを登録またはアタッチするオプションもありますが、この手法は一般には使用されません。  
+ 入力イベントの具体的には、プレビュー イベントもイベント データのインスタンスと共有と同じバブル イベント。 プレビュー イベントのクラスのハンドラーを使用して処理する入力イベントをマークする場合、バブルの入力イベント クラスのハンドラーは呼び出されません。 または、プレビュー イベントのインスタンス ハンドラーを使用してイベントを処理済みのマークする場合、バブルのイベントのハンドラーは通常呼び出されません。 クラス ハンドラーまたはインスタンス ハンドラーを登録またはアタッチする手法は通常使用されませんが、イベントが処理される、マークされている場合でも呼び出されるオプションです。  
   
- クラス処理、およびクラス処理と Preview イベントの関係性の詳細については、「[ルーティング イベントの処理済みとしてのマーキング、およびクラス処理](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)」を参照してください。  
+ クラスの処理とプレビュー イベントに関連する方法の詳細については、次を参照してください。 [Handled、クラス処理とルーティング イベントをマーク](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)です。  
   
-### コントロールによるイベント抑制の回避  
- Preview イベントがよく使用されるシナリオの 1 つは、複合コントロールで入力イベントを処理する場合です。  コントロールの作成者は、特定のイベントがコントロールから生成されるのを抑制し、コンポーネントで定義された別のイベント \(より多くの情報を含むイベントや、より具体的な動作を表すイベント\) に置き換える場合もあります。  たとえば、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Controls.Button> は、<xref:System.Windows.Controls.Button> またはその複合要素によって発生する <xref:System.Windows.UIElement.MouseLeftButtonDown> および <xref:System.Windows.UIElement.MouseLeftButtonDown> バブル イベントを抑制し、マウスをキャプチャすることと、常にその <xref:System.Windows.Controls.Button> 自体で発生する <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを発生させることを優先します。  イベントおよびそのそのデータはルートに沿ったままですが、<xref:System.Windows.Controls.Button> においてイベント データが <xref:System.Windows.RoutedEventArgs.Handled%2A> としてマークされるので、`handledEventsToo` の場合に動作するように指定されているイベントのハンドラーのみが呼び出されます。  アプリケーションのルートに近い方の他の要素で、コントロールで抑制されたイベントをまた処理する必要がある場合、1 つの代替手段は、`handledEventsToo` を `true` として指定して、コードでハンドラーをアタッチすることです。  ただし通常は、ルーティング方向を変更して、入力イベントに対応する Preview になるように処理する方がより簡単です。  たとえば、コントロールで <xref:System.Windows.UIElement.MouseLeftButtonDown> を抑制する場合、代わりに、ハンドラーを <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown> へアタッチしてみてください。  この方法が有効なのは、<xref:System.Windows.UIElement.MouseLeftButtonDown> のような基本要素入力イベントの場合のみです。  これらの入力イベントはトンネル\/バブルのペアを使用し、両方のイベントを発生させ、イベント データを共有します。  
+### <a name="working-around-event-suppression-by-controls"></a>コントロールによるイベント抑制の回避  
+ プレビュー イベントは一般的に使用されている 1 つのシナリオでは、入力イベントの複合コントロールの処理です。 場合によっては、コントロールの作成者は、コンポーネント定義のイベント詳細についてを実行するかより具体的な動作を表すを置換するために、そのコントロールから送信されたから特定のイベントを抑制します。 インスタンス、 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Controls.Button>抑制<xref:System.Windows.UIElement.MouseLeftButtonDown>と<xref:System.Windows.UIElement.MouseLeftButtonDown>によって生成されるバブルのイベント、<xref:System.Windows.Controls.Button>またはその複合要素にマウスをキャプチャして、発生を優先するため、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>によって常に発生するイベントを<xref:System.Windows.Controls.Button>自体です。 イベントとそのデータ、ルートで引き続きするので、 <xref:System.Windows.Controls.Button> 、イベント データをマーク<xref:System.Windows.RoutedEventArgs.Handled%2A>、のみ、イベントのハンドラーを示す具体的で動作する、`handledEventsToo`ケースが呼び出されます。  1 つの代替手段がコードでのハンドラーをアタッチするには、アプリケーションのルートに近い方には、その他の要素も必要がある場合、コントロールで抑制されたイベントを処理する、`handledEventsToo`として指定された`true`です。 入力イベントの プレビューと同等に処理するルーティングの方向を変更する簡単な手法は、多くの場合。 インスタンスの場合は、コントロールを抑制<xref:System.Windows.UIElement.MouseLeftButtonDown>のハンドラーを添付してみてください<xref:System.Windows.UIElement.PreviewMouseLeftButtonDown>代わりにします。 この手法だけが、基本要素の入力イベントなど<xref:System.Windows.UIElement.MouseLeftButtonDown>です。 これらの入力イベントは、トンネル/バブルのペアを使用して、両方のイベントを発生させるし、イベント データを共有します。  
   
- これらの方法には、それぞれ悪影響や制限事項があります。  Preview イベントを処理する場合の悪影響は、その時点でイベントを処理すると、バブル イベントを処理するハンドラーが無効になる可能性がある点です。したがって、通常は、イベント ルートの Preview 部分で処理された時点ではまだ、イベントを処理済みとしてマークしない方がよいという点が制限となります。  `handledEventsToo` 手法の制限は、`handledEventsToo` ハンドラーは [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で属性として指定できない点です。このようなイベント ハンドラーは、アタッチ対象の要素へのオブジェクト参照を取得してからコードを使用して登録する必要があります。  
+ これらの手法のそれぞれは、副作用または制限事項のいずれかにあります。 プレビュー イベントの処理の有効であること、バブルのイベントを処理するハンドラーが無効にその時点でイベントを処理であるため、制限することは通常、Previ のままである間に処理されるイベントをマークすることをお勧めルートの新しい部分。 制限事項、`handledEventsToo`手法は指定できません、`handledEventsToo`ハンドラー[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を属性として登録する必要あります、イベント ハンドラー コードでハンドラーがアタッチするのには、要素へのオブジェクト参照を取得した後にします。  
   
-## 参照  
- [ルーティング イベントの処理済みとしてのマーキング、およびクラス処理](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)   
+## <a name="see-also"></a>関連項目  
+ [ルーティング イベントの処理済みとしてのマーキング、およびクラス処理](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

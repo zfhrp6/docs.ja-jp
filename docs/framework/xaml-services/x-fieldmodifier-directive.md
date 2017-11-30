@@ -1,65 +1,68 @@
 ---
-title: "x:FieldModifier Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "FieldModifier attribute in XAML [XAML Services]"
-  - "x:FieldModifier attribute [XAML Services]"
-  - "XAML [XAML Services], x:FieldModifier attribute"
+title: "x:FieldModifier ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- FieldModifier attribute in XAML [XAML Services]
+- x:FieldModifier attribute [XAML Services]
+- XAML [XAML Services], x:FieldModifier attribute
 ms.assetid: ed427cd4-2f35-4d24-bd2f-0fa7b71ec248
-caps.latest.revision: 15
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "15"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 77745744c0da1e4b4425af6d8e4319faaf524908
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:FieldModifier Directive
-指定されているオブジェクト参照のフィールドが、既定動作の <xref:System.Reflection.TypeAttributes?displayProperty=fullName> ではなく <xref:System.Reflection.TypeAttributes?displayProperty=fullName> アクセスで定義されるように、XAML のコンパイル動作を変更します。  
+# <a name="xfieldmodifier-directive"></a>x:FieldModifier ディレクティブ
+XAML のコンパイルの動作を変更してでの名前付きオブジェクトの参照フィールドが定義されているように<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>の代わりにアクセス、<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>既定の動作です。  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
   
+```xaml  
+<object x:FieldModifier="Public".../>  
 ```  
-<object x:FieldModifier="Public".../>  
-```  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|*Public*|<xref:System.Reflection.TypeAttributes?displayProperty=fullName> か <xref:System.Reflection.TypeAttributes?displayProperty=fullName> かを指定するために渡す正確な文字列は、分離コードで使用されているプログラミング言語によって異なります。  「解説」を参照してください。|  
+|*Public*|正確な指定した文字列を指定する<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>と<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>のために使用される分離コードのプログラミング言語によって異なります。 「解説」を参照してください。|  
   
-## 依存関係  
- XAML 稼動環境が任意の場所で `x:FieldModifier` を使用する場合、XAML 稼動環境のルート要素は [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md) を宣言する必要があります。  
+## <a name="dependencies"></a>依存関係  
+ XAML の運用環境で使用する場合`x:FieldModifier`任意の場所では、その XAML の運用環境のルート要素を宣言する必要があります、 [X:class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)です。  
   
-## 解説  
- `x:FieldModifier` は、クラスまたはそのメンバーの一般的なアクセス レベルの宣言には関連しません。  XAML 稼動環境の一部である特定の XAML オブジェクトが処理されるときの XAML 処理動作にだけ関係し、アプリケーションのオブジェクト グラフ内で潜在的にアクセスできるオブジェクトとなります。  既定では、このようなオブジェクトのフィールド参照は非公開なので、コントロール コンシューマーはオブジェクト グラフを直接変更できません。  代わりに、コントロール コンシューマーは、レイアウト ルートの取得、子要素のコレクションの取得、専用のパブリック プロパティの取得などのプログラミング モデルによって有効になる標準パターンを使用してオブジェクト グラフを変更します。  
+## <a name="remarks"></a>コメント  
+ `x:FieldModifier`無効、クラスまたはそのメンバーの一般的なアクセス レベルを宣言するためです。 XAML 処理の動作にのみ関連する XAML の運用環境の一部である特定の XAML オブジェクトが処理され、アプリケーションのオブジェクト グラフに可能性のあるアクセス可能なオブジェクトになります。 既定では、このようなオブジェクトのフィールド参照は厳重に保管され、コントロールのコンシューマーは、オブジェクト グラフを直接変更できなきます。 代わりに、コントロール コンシューマーでは有効なプログラミング モデルなどのレイアウト ルート、子要素のコレクション、専用のパブリック プロパティを取得することによって標準のパターンを使用して、オブジェクト グラフを変更する必要と。  
   
- `x:FieldModifier` 属性の値はプログラミング言語ごとに異なり、その目的は特定のフレームワークで変わることがあります。  使用する文字列は、各言語の <xref:System.CodeDom.Compiler.CodeDomProvider> の実装方法、その言語が <xref:System.Reflection.TypeAttributes?displayProperty=fullName> と <xref:System.Reflection.TypeAttributes?displayProperty=fullName> の意味を定義するために返す型コンバーター、およびその言語が大文字と小文字を区別するかどうかによって決まります。  
+ 値、`x:FieldModifier`属性は、プログラミング言語によって異なります、特定のフレームワークでの目的が異なります。 使用する文字列は、各言語の実装に依存その<xref:System.CodeDom.Compiler.CodeDomProvider>と返しますの意味を定義する型コンバーター<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>と<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>、その言語は大文字小文字を区別するかどうかとします。  
   
--   [!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)] の場合、<xref:System.Reflection.TypeAttributes?displayProperty=fullName> を指定するために渡す文字列は `public` です。  
+-   [!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)]、指定に渡す文字列<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>は`public`します。  
   
--   [!INCLUDE[TLA2#tla_visualbnet](../../../includes/tla2sharptla-visualbnet-md.md)] の場合、<xref:System.Reflection.TypeAttributes?displayProperty=fullName> を指定するために渡す文字列は `Public` です。  
+-   [!INCLUDE[TLA2#tla_visualbnet](../../../includes/tla2sharptla-visualbnet-md.md)]、指定に渡す文字列<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>は`Public`します。  
   
--   [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)] の場合、XAML のターゲットは現在存在しないため、渡す文字列は定義されていません。  
+-   [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)]XAML のターゲット現在存在しません。 そのため、渡す文字列は未定義です。  
   
- <xref:System.Reflection.TypeAttributes?displayProperty=fullName> \([!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)] では `internal`、[!INCLUDE[TLA2#tla_visualb](../../../includes/tla2sharptla-visualb-md.md)] では `Friend`\) を指定することもできますが、動作としては `NotPublic` が既定となっているため <xref:System.Reflection.TypeAttributes?displayProperty=fullName> を指定するのは一般的ではありません。  
+ 指定することも<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>(`internal`で[!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)]、`Friend`で[!INCLUDE[TLA2#tla_visualb](../../../includes/tla2sharptla-visualb-md.md)]) が指定する<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>はほとんどありませんので`NotPublic`動作は、既に既定値として。  
   
- <xref:System.Reflection.TypeAttributes?displayProperty=fullName> が既定の動作になっているのは、XAML をコンパイルしたアセンブリの外部のコードから XAML で作成された要素にアクセスする必要があまりないためです。  パブリック アクセスを許可するようにユーザーが明確に `x:FieldModifier` を設定しない限り、WPF のセキュリティ アーキテクチャと XAML のコンパイル動作の組み合わせが、要素のインスタンスを格納するフィールドを Public にすることはありません。  
+ <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>XAML をコンパイルされたアセンブリの外側のコードが XAML で作成された要素へのアクセスを必要があることが頻繁ではないために、既定の動作です。 具体的に設定していない場合、XAML のコンパイルの動作と WPF のセキュリティ アーキテクチャは、public として要素のインスタンスを格納するフィールドを宣言しませんが、`x:FieldModifier`パブリック アクセスを許可します。  
   
- `x:FieldModifier` は、[x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md)が指定されている要素に対してのみ関係します。これは、フィールドが Public になると、その名前を使用してフィールドを参照するためです。  
+ `x:FieldModifier`のみを持つ要素の関係、 [X:name ディレクティブ](../../../docs/framework/xaml-services/x-name-directive.md)その名前は public では後にフィールドを参照に使用されるためです。  
   
- ルート要素の部分クラスは既定で Public になっていますが、[x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)を使用して NonPublic にすることができます。  [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)は、ルート要素クラスのインスタンスのアクセス レベルにも影響を与えます。  ルート要素には `x:Name` と `x:FieldModifier` の両方を配置できますが、これはルート要素のパブリック フィールドのコピーを作成するだけであり、実際のルート要素クラスのアクセス レベルは引き続き [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)によって制御されます。  
+ 既定では、ルート要素の部分クラスはパブリックです。ただし、することができます、パブリックでないを使用して、 [X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)です。 [X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)ルート要素クラスのインスタンスのアクセス レベルにも影響します。 両方を配置できる`x:Name`と`x:FieldModifier`ルートに要素が、これだけのパブリック フィールドのコピーを作成は true。 ルート要素クラスのアクセス レベルも、ルート要素によって制御されます[X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)です。  
   
-## 参照  
- [WPF における XAML とカスタム クラス](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
- [WPF における分離コードと XAML](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
- [x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md)   
- [WPF アプリケーション \(WPF\) のビルド](../../../ocs/framework/wpf/app-development/building-a-wpf-application-wpf.md)   
- [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)
+## <a name="see-also"></a>関連項目  
+ [WPF における XAML とカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
+ [WPF における分離コードと XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)  
+ [x:Name ディレクティブ](../../../docs/framework/xaml-services/x-name-directive.md)  
+ [WPF アプリケーション (WPF) のビルド](../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+ [x:ClassModifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)

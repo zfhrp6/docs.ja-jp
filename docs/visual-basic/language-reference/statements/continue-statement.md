@@ -1,54 +1,52 @@
 ---
-title: "Continue Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.continue"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Continue statement [Visual Basic]"
-  - "loops, transferring to next iteration"
+title: "Continue ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.continue
+helpviewer_keywords:
+- Continue statement [Visual Basic]
+- loops, transferring to next iteration
 ms.assetid: 3ad00103-358b-4af3-a3a8-1b9ea0e995d3
-caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4a47819600a6c1d58f09c2f8ed3443632e9dab68
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Continue Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-制御をループの次の反復処理に直ちに移します。  
+# <a name="continue-statement-visual-basic"></a>Continue ステートメント (Visual Basic)
+ループの次のイテレーションにすぐに制御を転送します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-Continue { Do | For | While }  
+Continue { Do | For | While }  
 ```  
   
-## 解説  
- `Do`、`For`、または `While` ループの内側から、そのループの次の反復処理に制御を移すことができます。  制御は直ちにループ条件のテストに移動します。つまり、`For` ステートメントか `While` ステートメント、または `Until` 句か `While` 句を含む `Do` ステートメントか `Loop` ステートメントに移動します。  
+## <a name="remarks"></a>コメント  
+ 転送できます内、 `Do`、 `For`、または`While`ループを使用して、ループの次の反復処理します。 すぐに転送するのにはループの条件のテストにパスを制御、`For`または`While`ステートメント、または、`Do`または`Loop`ステートメントを含む、`Until`または`While`句。  
   
- `Continue` は制御の移動を許可するループの任意の場所に定義できます。  制御の移動を許可する規則は、[GoTo Statement](../../../visual-basic/language-reference/statements/goto-statement.md)の場合と同じです。  
+ 使用することができます`Continue`転送を許可するループ内の任意の場所でします。 同じで、制御の転送を許可する規則は、 [GoTo ステートメント](../../../visual-basic/language-reference/statements/goto-statement.md)です。  
   
- たとえば、ループ全体が `Try` ブロック、`Catch` ブロック、または `Finally` ブロックの内部にある場合は、`Continue` を使用してループの外部に制御を移動できます。  一方、ループ内に `Try`...`End Try` 構造がある場合は、`Continue` を使用して制御を `Finally` ブロックの外部に移動できず、`Try`...`End Try` 構造の外部に制御を完全に移動する場合に限り、`Try` ブロックまたは `Catch` ブロックの外部に移動できます。  
+ たとえば、ループ処理が完全に含まれている場合、`Try`ブロック、`Catch`ブロック、または`Finally`ブロック、使用することができます`Continue`ループの外に転送します。 その一方の場合、`Try`しています.`End Try` 、ループ内に含まれる構造体では使用できません`Continue`out の制御を転送する、`Finally`ブロックして、転送に使用できるの`Try`または`Catch`ブロックするを完全に転送する場合にのみ、`Try`...`End Try`構造体。  
   
- `Do` ループの内部に別の `Do` ループがあるなど、同じ種類のループが入れ子になっている場合、`Continue Do` ステートメントは自分が定義されている内側の `Do` ループの次の反復処理にスキップします。  `Continue` を使用して、同じ種類の外側のループの次の反復処理にスキップすることはできません。  
+ たとえば、同じ型での入れ子になったループがあるかどうか、`Do`別内でループ`Do`ループ、`Continue Do`ステートメントでは、最も内側の次のイテレーションへスキップ`Do`それを含むループ。 使用することはできません`Continue`同じ種類の外側のループの次のイテレーションにスキップします。  
   
- `For` ループの内部に `Do` ループがあるなど、種類の異なるループが入れ子になっている場合、`Continue Do` または `Continue For` を使用することによって、どちらのループの次の反復処理にもスキップできます。  
+ たとえば、さまざまな種類の入れ子になったループがあるかどうか、`Do`内でループ、`For`ループにスキップできますいずれかのループの次のイテレーションを使用して`Continue Do`または`Continue For`です。  
   
-## 使用例  
- 次のコード例は `Continue While` ステートメントを使用して、除数が 0 の場合に配列の次の列にスキップします。  `Continue While` は `For` ループの内部にあります。  制御は `For` ループを含む内側の `While` ループの次の反復処理である `While col < lastcol` ステートメントに移ります。  
+## <a name="example"></a>例  
+ 次のコード例では、`Continue While`除数がゼロの場合は、配列の次の列をスキップするステートメント。 `Continue While`内部にある、`For`ループします。 転送します。、`While col < lastcol`ステートメントでは、最も内側の次のイテレーションである`While`ループを含む、`For`ループします。  
   
  [!code-vb[VbVbalrStatements#14](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/continue-statement_1.vb)]  
   
-## 参照  
- [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   
- [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)   
- [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md)   
- [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+## <a name="see-also"></a>関連項目  
+ [Do...Loop ステートメント](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
+ [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [While...End While ステートメント](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
+ [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

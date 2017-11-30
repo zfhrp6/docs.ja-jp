@@ -1,31 +1,35 @@
 ---
-title: "カスタム コントロールへのメソッドの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "メソッドの実装のユーザー コントロール [Windows フォーム]"
-  - "メソッドのオーバー ロードのカスタム コントロール [Windows フォーム]"
-  - "カスタム コントロール [Windows フォーム] メソッドの実装"
-  - "メソッド [Windows フォーム]"
-  - "カスタム コントロールのメソッド [Windows フォーム]"
+title: "カスタム コントロールへのメソッドの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- user controls [Windows Forms], method implementation
+- custom controls [Windows Forms], overloading methods
+- custom controls [Windows Forms], method implementation
+- methods [Windows Forms]
+- methods [Windows Forms], custom controls
 ms.assetid: 35d14fca-4bb4-4a27-8211-1f7a98ea27de
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3c992197b653fb3999870247a3a4cdb4015612ff
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム コントロールへのメソッドの実装
-コントロールにメソッドを実装する方法は、他のコンポーネントにメソッドが実装する場合と同じです。  
+# <a name="method-implementation-in-custom-controls"></a>カスタム コントロールへのメソッドの実装
+コントロールにメソッドを実装する方法は、他のコンポーネントにメソッドを実装する場合と同じです。  
   
  Visual Basic では、値を返す必要のあるメソッドは `Public Function` として実装されます。 値が返されない場合は、`Public Sub` として実装されます。 メソッドは次の構文で宣言します。  
   
@@ -82,5 +86,5 @@ public void Spin(Widget driver)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [イベント](../../../../docs/standard/events/index.md)   
+ [イベント](../../../../docs/standard/events/index.md)  
  [Windows フォーム コントロールのプロパティ](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)

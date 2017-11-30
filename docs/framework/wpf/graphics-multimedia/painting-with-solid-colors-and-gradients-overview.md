@@ -1,185 +1,188 @@
 ---
-title: "純色およびグラデーションによる塗りつぶしの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ブラシ, 塗りつぶし (グラデーションによる)"
-  - "ブラシ, 塗りつぶし (純色による)"
-  - "グラデーション, 塗りつぶし"
-  - "塗りつぶし (グラデーションによる)"
-  - "塗りつぶし (純色による)"
-  - "純色, 塗りつぶし"
+title: "純色およびグラデーションによる塗りつぶしの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- solid colors [WPF], painting with
+- painting with gradients [WPF]
+- gradients [WPF], painting with
+- brushes [WPF], painting with solid colors
+- brushes [WPF], painting with gradients
+- painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f26ab394ea94b27257b6d0b662f3a78f3e68ca99
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 純色およびグラデーションによる塗りつぶしの概要
-ここでは、<xref:System.Windows.Media.SolidColorBrush>、<xref:System.Windows.Media.LinearGradientBrush>、および <xref:System.Windows.Media.RadialGradientBrush> オブジェクトを使用して、純色、線形グラデーション、および放射状グラデーションで塗りつぶす方法について説明します。  
+# <a name="painting-with-solid-colors-and-gradients-overview"></a>純色およびグラデーションによる塗りつぶしの概要
+このトピックを使用する方法について説明<xref:System.Windows.Media.SolidColorBrush>、 <xref:System.Windows.Media.LinearGradientBrush>、および<xref:System.Windows.Media.RadialGradientBrush>純色の線形グラデーションおよび放射状グラデーションで塗りつぶすオブジェクト。  
   
-   
+
   
 <a name="solidcolor"></a>   
-## 純色による領域の塗りつぶし  
- どのようなプラットフォームでも最も一般的な操作の 1 つが、純色の <xref:System.Windows.Media.Color> で領域を塗りつぶす操作です。  このタスクを実現するために、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は <xref:System.Windows.Media.SolidColorBrush> クラスを提供します。  以下のセクションでは、<xref:System.Windows.Media.SolidColorBrush> で塗りつぶすためのさまざまな方法について説明します。  
+## <a name="painting-an-area-with-a-solid-color"></a>領域を純色で塗りつぶす  
+ 任意のプラットフォームでの最も一般的な操作の 1 つは、純色で領域を塗りつぶす<xref:System.Windows.Media.Color>です。 このタスクを実行する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]提供、<xref:System.Windows.Media.SolidColorBrush>クラスです。 次のセクションで描くにさまざまな方法を説明する、<xref:System.Windows.Media.SolidColorBrush>です。  
   
 <a name="solidcolorinxaml"></a>   
-### "XAML" での SolidColorBrush の使用  
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で純色で領域を塗りつぶすには、次のいずれかの方法を使用します。  
+### <a name="using-a-solidcolorbrush-in-xaml"></a>"XAML" での SolidColorBrush の使用  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で領域を純色で塗りつぶすには、次のオプションのいずれかを使用します。  
   
--   定義済みの純色のブラシを名前によって選択します。  たとえば、ボタンの <xref:System.Windows.Controls.Control.Background%2A> を "Red" または "MediumBlue" に設定できます。  その他の定義済みの純色のブラシの一覧については、<xref:System.Windows.Media.Brushes> クラスの静的プロパティを参照してください。  例を次に示します。  
+-   定義済みの純色のブラシを名前で選択します。  たとえば、ボタンを設定することができます<xref:System.Windows.Controls.Control.Background%2A>"Red"または"MediumBlue"にします。  他の定義済みの純色のブラシの静的プロパティを参照してください、<xref:System.Windows.Media.Brushes>クラスです。 次に例を示します。  
   
-     [!code-xml[BrushOverviewExamples_snip#SolidColorBrushNamedColor1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushnamedcolor1xaml)]  
+     [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushNamedColor1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushnamedcolor1xaml)]  
   
--   赤、緑、および青の量を指定して単一の純色に組み合わせることによって、32 ビットのカラー パレットから色を選択します。  32 ビット パレットから色を指定するための形式は、"*\#rrggbb*" です。ここでは、*rr* は赤の相対的な量を指定する 2 桁の 16 進数であり、*gg* は緑の量を指定し、*bb* は青の量を指定します。  また、色は "\#*aarrggbb*" として指定できます。ここでは、*aa* は色のアルファ値、つまり透明度を指定します。  この方法によって、部分的に透明な色を作成できます。  次の例では、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Control.Background%2A> は、16 進数表記を使用して完全に不透明な赤に設定されます。  
+-   赤、緑、および青の量を指定して単一の純色に結合することで、32 ビット カラー パレットからカラーを選択します。  32 ビット パレットからカラーを指定するための書式は、"*#rrggbb*" です。ここで、*rr* は赤の相対的な量を指定する 2 桁の 16 進数であり、*gg* は緑の量を、*bb*は青の量を指定します。  さらに、カラーは、"#*aarrggbb*" として指定することもできます。ここで、*aa* はカラーの*アルファ*値 (透明度) を指定します。 この方法により、部分的に透明な色を作成することができます。  次の例で、<xref:System.Windows.Controls.Control.Background%2A>の<xref:System.Windows.Controls.Button>は 16 進数表記を使用して完全に不透明な赤に設定します。  
   
-     [!code-xml[BrushOverviewExamples_snip#SolidColorBrushHex1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushhex1xaml)]  
+     [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushHex1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushhex1xaml)]  
   
--   <xref:System.Windows.Media.SolidColorBrush> を記述するには、プロパティ タグ構文を使用します。  この構文は、記述は冗長になりますが、ブラシの不透明度などの追加の設定を指定できます。  次の例では、2 つの <xref:System.Windows.Controls.Button> 要素の <xref:System.Windows.Controls.Control.Background%2A> プロパティが完全に不透明な赤に設定されます。  最初のブラシの色は、定義済みの色の名前を使用して記述されています。  2 番目のブラシの色は、16 進表記を使用して記述されています。  
+-   記述するプロパティ タグの構文を使用して、<xref:System.Windows.Media.SolidColorBrush>です。 この構文は冗長ですが、ブラシの不透明度などの追加設定を指定することができます。 次の例で、 <xref:System.Windows.Controls.Control.Background%2A> 2 つのプロパティ<xref:System.Windows.Controls.Button>要素は完全に不透明な赤に設定します。 最初のブラシの色は、定義済みの色の名前を使用して記述されています。 2 番目のブラシの色は、16 進表記で記述されています。  
   
-     [!code-xml[BrushOverviewExamples_snip#SolidColorBrushPropertyTag1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushpropertytag1xaml)]  
+     [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushPropertyTag1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushpropertytag1xaml)]  
   
 <a name="solidcolorsincode"></a>   
-### コードでの SolidColorBrush による塗りつぶし  
- コードで純色で領域を塗りつぶすには、次のいずれかの方法を使用します。  
+### <a name="painting-with-a-solidcolorbrush-in-code"></a>コードでの SolidColorBrush による塗りつぶし  
+ コードで領域を純色で塗りつぶすには、次のオプションのいずれかを使用します。  
   
--   <xref:System.Windows.Media.Brushes> クラスによって提供されている定義済みブラシのいずれかを使用します。  次の例では、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Control.Background%2A> が <xref:System.Windows.Media.Brushes.Red%2A> に設定されています。  
+-   によって提供される定義済みのブラシのいずれかを使用して、<xref:System.Windows.Media.Brushes>クラスです。 次の例で、<xref:System.Windows.Controls.Control.Background%2A>の<xref:System.Windows.Controls.Button>に設定されている<xref:System.Windows.Media.Brushes.Red%2A>です。  
   
      [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushPredefinedBrush1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushpredefinedbrush1csharp)]  
   
--   <xref:System.Windows.Media.SolidColorBrush> を作成し、その <xref:System.Windows.Media.SolidColorBrush.Color%2A> プロパティを <xref:System.Windows.Media.Color> 構造体を使用して設定します。  <xref:System.Windows.Media.Colors> クラスから定義済みの色を使用するか、静的な <xref:System.Windows.Media.Color.FromArgb%2A> メソッドを使用して <xref:System.Windows.Media.Color> を作成することができます。  
+-   作成、<xref:System.Windows.Media.SolidColorBrush>設定とその<xref:System.Windows.Media.SolidColorBrush.Color%2A>プロパティを使用して、<xref:System.Windows.Media.Color>構造体。 定義済みの色を使用することができます、<xref:System.Windows.Media.Colors>クラスを作成できます、<xref:System.Windows.Media.Color>静的<xref:System.Windows.Media.Color.FromArgb%2A>メソッドです。  
   
-     定義済みの色を使用して <xref:System.Windows.Media.SolidColorBrush> の <xref:System.Windows.Media.SolidColorBrush.Color%2A> プロパティを設定する方法を次の例に示します。  
+     次の例は、設定する方法を示します、<xref:System.Windows.Media.SolidColorBrush.Color%2A>のプロパティ、<xref:System.Windows.Media.SolidColorBrush>定義済みの色を使用します。  
   
      [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushPredefinedColor1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushpredefinedcolor1csharp)]  
   
- 静的な <xref:System.Windows.Media.Color.FromArgb%2A> によって、色の[アルファ](GTMT)、赤、緑、および青の値を指定できます。  これらの各値の一般的な範囲は、0 ～ 255 です。  たとえば、[アルファ](GTMT)値が 0 の場合は色が完全に透明であることを示し、値が 255 の場合は色が完全に不透明であることを示します。  同様に、red 値が 0 である場合は色に赤が含まれないことを示し、値が 255 である場合は使用できる赤の最大量が含まれていることを示します。  以降の例では、ブラシの色はアルファ、赤、緑、および青の値を指定することによって記述されます。  
+ 静的な<xref:System.Windows.Media.Color.FromArgb%2A>色のアルファ、赤、緑、および青の値を指定することができます。 これらの各値の一般的な範囲は、0 ～ 255 です。 たとえば、アルファ値 0 はカラーが完全に透明であることを示し、値 255 はカラーが完全に不透明であることを示します。 同様に、赤値 0 はカラーに赤が全く含まれないことを示し、値 255 は可能な最大量の赤が含まれることを示します。  次の例では、ブラシのカラーは、アルファ、赤、緑、および青の値を指定することで記述されています。  
   
  [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushfromArgbExample1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushfromargbexample1csharp)]  
   
- 色を指定するためのその他の方法については、<xref:System.Windows.Media.Color> のリファレンス トピックを参照してください。  
+ 色を指定するその他の方法を参照してください、<xref:System.Windows.Media.Color>リファレンス トピックを参照します。  
   
 <a name="gradient"></a>   
-## グラデーションによる領域の塗りつぶし  
- グラデーション ブラシは、軸に沿ってブレンドしあう複数の色で領域を塗りつぶします。  これらを使用して、光と影の印象を作成でき、コントロールの外観を 3 次元にできます。  これらを使用して、ガラス、クロム、水、およびその他の滑らかな表面をシミュレートすることもできます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、<xref:System.Windows.Media.LinearGradientBrush> と <xref:System.Windows.Media.RadialGradientBrush> の 2 種類のグラデーション ブラシが用意されています。  
+## <a name="painting-an-area-with-a-gradient"></a>領域をグラデーションで塗りつぶす  
+ グラデーション ブラシは、軸に沿って互いに溶け込む複数の色で領域を塗りつぶします。 これらを使用して、光と影の感じを作り出して、コントロールを立体的に見せることができます。 ガラス、クロム メッキ、水、その他の滑らかな表面をシミュレートするためにも使用できます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]グラデーション ブラシの 2 つの型を提供します。<xref:System.Windows.Media.LinearGradientBrush>と<xref:System.Windows.Media.RadialGradientBrush>です。  
   
 <a name="lineargradientbrush"></a>   
-## 線形グラデーション  
- <xref:System.Windows.Media.LinearGradientBrush> は、グラデーション軸という線に沿って定義されたグラデーションで領域を塗りつぶします。  <xref:System.Windows.Media.GradientStop> オブジェクトを使用して、グラデーションの色、およびそのグラデーション軸に沿った位置を指定します。  グラデーション軸を変更することもでき、これによって、横グラデーションと縦グラデーションの作成、およびグラデーション方向の反転が可能になります。  グラデーション軸については、次のセクションで説明します。  既定では、斜線グラデーションが作成されます。  
+## <a name="linear-gradients"></a>線状グラデーション  
+ A <xref:System.Windows.Media.LinearGradientBrush> 、線に沿って定義されているグラデーションで領域を塗りつぶします、*グラデーション軸*です。  グラデーションの色とグラデーション軸を使用して、上の場所を指定する<xref:System.Windows.Media.GradientStop>オブジェクト。  グラデーション軸を変更することもできます。これにより、水平方向と垂直方向のグラデーションの作成やグラデーションの方向の反転を行うことができます。 グラデーション軸については、次のセクションで説明します。 既定では、対角線方向のグラデーションが作成されます。  
   
- 4 色の線形グラデーションを作成するコードを次の例に示します。  
+ 次の例では、4 津のカラーを使用して線状グラデーションを作成するコードを示します。  
   
- [!code-xml[GradientBrushExamples_snip#DiagonalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#diagonalgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#DiagonalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#diagonalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#DiagonalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#diagonalgradient1csharp)]  
   
  このコードを実行すると、次のグラデーションが生成されます。  
   
- ![対角線方向の線形グラデーション](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diaglgradient-nolabel.png "wcpsdk\_graphicsmm\_diaglgradient\_nolabel")  
+ ![対角線方向の線状グラデーション](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diaglgradient-nolabel.jpg "wcpsdk_graphicsmm_diaglgradient_nolabel")  
   
- **メモ :** このトピックのグラデーションの例では、開始点と終了点の設定に既定の座標系を使用しています。  既定の座標系は境界ボックスに対して相対的です。0 は境界ボックスの 0% を示し、1 は境界ボックスの 100% を示します。  この座標系を変更するには、<xref:System.Windows.Media.GradientBrush.MappingMode%2A> プロパティを <xref:System.Windows.Media.BrushMappingMode> という値に設定します。  絶対座標系は、境界ボックスに対して相対的ではありません。  値は、ローカル空間で直接解釈されます。  
+ **注:** このトピックのグラデーションの例では、始点と終点の設定で既定の座標系を使用しています。 既定の座標系は、境界ボックスに相対する座標系であり、0 は境界ボックスの 0% を示し、1 は境界ボックスの 100% を示します。 この座標系を変更するには設定して、<xref:System.Windows.Media.GradientBrush.MappingMode%2A>プロパティ値を<xref:System.Windows.Media.BrushMappingMode.Absolute>です。 絶対座標系は、境界ボックスに相対しません。 値は、ローカル空間に直接変換されます。  
   
- <xref:System.Windows.Media.GradientStop> はグラデーション ブラシの基本的なビルド ブロックです。  グラデーション終了位置は、グラデーション軸に沿った <xref:System.Windows.Media.GradientStop.Offset%2A> 位置の <xref:System.Windows.Media.GradientStop.Color%2A> を示します。  
+ <xref:System.Windows.Media.GradientStop>グラデーション ブラシの基本的なビルディング ブロックです。  グラデーションの分岐点を指定します、<xref:System.Windows.Media.GradientStop.Color%2A>で、<xref:System.Windows.Media.GradientStop.Offset%2A>グラデーション軸に沿ってです。  
   
--   グラデーション終了位置の <xref:System.Windows.Media.GradientStop.Color%2A> プロパティは、グラデーション終了位置の色を指定します。  色の設定には、<xref:System.Windows.Media.Colors> クラスによる定義済みの色を使用するか、ScRGB 値または ARGB 値を指定することができます。  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、色を記述するために 16 進数表記も使用できます。  詳細については、<xref:System.Windows.Media.Color> 構造体の説明を参照してください。  
+-   グラデーションの分岐点の<xref:System.Windows.Media.GradientStop.Color%2A>プロパティは、グラデーションの分岐点の色を指定します。 定義済みの色を使用して色を設定することがあります (によって提供される、<xref:System.Windows.Media.Colors>クラス) または ScRGB または ARGB 値を指定します。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、16 進表記を使用してカラーを記述することもできます。 詳細については、次を参照してください。、<xref:System.Windows.Media.Color>構造体。  
   
--   グラデーション終了位置の <xref:System.Windows.Media.GradientStop.Offset%2A> プロパティは、グラデーション軸上のグラデーション終了位置の色の位置を指定します。  オフセットは 0 ～ 1 の <xref:System.Double> 値です。  グラデーション終了位置のオフセット値が 0 に近づくにつれて、色はグラデーションの始点に近づきます。  グラデーションのオフセット値が 1 に近づくほど、色はグラデーションの終点に近づきます。  
+-   グラデーションの分岐点の<xref:System.Windows.Media.GradientStop.Offset%2A>プロパティは、グラデーション軸のグラデーションの分岐点の色の位置を指定します。 オフセットは、 <xref:System.Double> ~ 1 の 0 から範囲をします。 グラデーション境界のオフセット値が 0 に近ければ近いほど、カラーはグラデーションの始まりに近づきます。 グラデーションのオフセット値が 1 に近ければ近いほど、カラーはグラデーションの終わりに近づきます。  
   
- グラデーション終了位置の間の各点の色は、2 つの境界グラデーション終了位置によって指定された色の組み合わせとして線形に補間されます。  次の図は、前の例のグラデーション終了位置を示しています。  円はグラデーション終了位置の位置を示し、破線はグラデーション軸を示しています。  
+ グラデーション境界の間の各点のカラーは、2 つのグラデーション境界によって指定されたカラーの混合として線形補間されます。 次の図は、前の例のグラデーション境界を強調しています。 円はグラデーション境界の位置をマークし、破線はグラデーション軸を示しています。  
   
- ![線形グラデーションのグラデーション ストップ](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops.png "wcpsdk\_graphicsmm\_4gradientstops")  
+ ![線状グラデーションでのグラデーション境界](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops.png "wcpsdk_graphicsmm_4gradientstops")  
   
- 最初のグラデーション終了位置は、オフセット位置 `0.0` の色として黄色を指定します。  2 番目のグラデーション終了位置は、オフセット位置 `0.25` の色として赤を指定します。  これらの 2 つの終了位置の間の点は、グラデーション軸に沿って左から右に移動するにつれて黄色から赤に徐々に変化します。  3 番目のグラデーション終了位置は、オフセット位置 `0.75` の色として青を指定します。  2 番目と 3 番目のグラデーション終了位置の間の点は、赤から青に徐々に変化します。  4 番目のグラデーション終了位置は、オフセット位置 `1.0` の色として淡い緑を指定します。  3 番目と 4 番目のグラデーション終了位置の間の点は、青から淡い緑に徐々に変化します。  
+ 最初のグラデーション境界は、オフセット`0.0` に黄色を指定しています。  2 番目のグラデーション境界は、オフセット `0.25` に赤色を指定しています。  これら 2 つの境界の間の点は、グラデーション軸に沿って左から右に移動するにつれて、黄色から徐々に赤色に変化します。  3 番目のグラデーション境界は、オフセット `0.75` に青色を指定しています。  2 番目と 3 番目のグラデーション境界の間の点は、赤から青に徐々に変化します。 4 番目のグラデーション境界は、オフセット `1.0` に緑色を指定しています。 3 番目と 4 番目のグラデーション境界の間の点は、青から緑に徐々に変化します。  
   
 <a name="gradientaxis"></a>   
-### グラデーション軸  
- 前に説明したように、線形グラデーション ブラシのグラデーション終了位置は、グラデーション軸という線に沿って配置されます。  この線の方向とサイズは、ブラシの <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> プロパティおよび <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> プロパティを使用して変更できます。  ブラシの <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> および <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> を操作することによって、横グラデーションおよび縦グラデーションの作成、グラデーション方向の反転、グラデーションの拡散の縮小などを行うことができます。  
+### <a name="the-gradient-axis"></a>グラデーション軸  
+ 前述のように、線状グラデーション ブラシのグラデーション境界は、直線のグラデーション軸に沿って配置されます。 ブラシを使用して行のサイズと向きを変更することがあります<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>プロパティです。 ブラシを操作することによって<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>水平を作成することができます、および垂直グラデーション、グラデーションの方向を反転する、グラデーションのスプレッドなどを縮小します。  
   
- 既定では、線形グラデーションのブラシの <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> および <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> は塗りつぶされている領域に対して相対的なものになります。  点 \(0,0\) は塗りつぶされている領域の左上隅を表し、\(1,1\) は塗りつぶされている領域の右下隅を表します。  <xref:System.Windows.Media.LinearGradientBrush> の既定の <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> は \(0,0\) であり、既定の <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> は \(1,1\) です。これによって、塗りつぶされている領域の左上隅から開始し、右下隅に伸びていく斜線グラデーションが作成されます。  既定の <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> および <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> を持つ線形グラデーション ブラシのグラデーション軸を次の図に示します。  
+ 既定では、線形グラデーション ブラシの<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>は塗りつぶされている領域を基準とします。 点 (0, 0) は塗りつぶされる領域の左上隅を、点 (1, 1) は塗りつぶされる領域の右下隅を表します。 既定値<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>の<xref:System.Windows.Media.LinearGradientBrush>(0, 0) とその既定<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>(1, 1) は、これは、左上隅から開始し、塗りつぶされている領域の右下隅に拡張する対角線のグラデーションを作成します。 次の図は、既定値は線形グラデーション ブラシのグラデーション軸<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>です。  
   
- ![対角線方向の線形グラデーションのグラデーション軸](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "wcpsdk\_graphicsmm\_diagonalgradientaxis")  
+ ![対角線方向の線状グラデーションのグラデーション軸](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "wcpsdk_graphicsmm_diagonalgradientaxis")  
   
- ブラシの <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> および <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> を指定して横グラデーションを作成する方法を次の例に示します。  グラデーション終了位置は前の例と同じであることに注意してください。<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> および <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> を変更しただけで、グラデーションは斜線から横に変更されました。  
+ ブラシを指定することで、次の例がグラデーションにある水平方向を作成する方法を示します<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>です。 グラデーション境界は前の例と同じことに注意してください。変更するだけで、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>、グラデーション斜めから水平方向に変更されました。  
   
- [!code-xml[GradientBrushExamples_snip#HorizontalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#horizontalgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#HorizontalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#horizontalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#HorizontalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#horizontalgradient1csharp)]  
   
- 次の図は、作成されたグラデーションを示しています。  グラデーションの軸は破線、グラデーションの分岐点は円で示されています。  
+ 次の図は、作成されるグラデーションを示しています。 グラデーション軸は破線でマークされ、グラデーション境界は円でマークされています。  
   
- ![水平方向の線形グラデーションのグラデーション軸](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-horizontalgradient.png "wcpsdk\_graphicsmm\_horizontalgradient")  
+ ![水平方向の線状グラデーションのグラデーション軸](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-horizontalgradient.jpg "wcpsdk_graphicsmm_horizontalgradient")  
   
- 縦グラデーションを作成する方法を次の例に示します。  
+ 次の例では、垂直方向のグラデーションを作成する方法を示します。  
   
- [!code-xml[GradientBrushExamples_snip#VerticalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#verticalgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#VerticalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#verticalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#VerticalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#verticalgradient1csharp)]  
   
- 次の図は、作成されたグラデーションを示しています。  グラデーションの軸は破線、グラデーションの分岐点は円で示されています。  
+ 次の図は、作成されるグラデーションを示しています。 グラデーション軸は破線でマークされ、グラデーション境界は円でマークされています。  
   
- ![垂直グラデーションのグラデーション軸](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-verticalgradient.png "wcpsdk\_graphicsmm\_verticalgradient")  
+ ![垂直方向のグラデーションのグラデーション軸](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-verticalgradient.jpg "wcpsdk_graphicsmm_verticalgradient")  
   
 <a name="radialgradients"></a>   
-## 放射状グラデーション  
- <xref:System.Windows.Media.LinearGradientBrush> と同様に、<xref:System.Windows.Media.RadialGradientBrush> は軸に沿ってブレンドしあう複数の色で領域を塗りつぶします。  前の例では、線形グラデーション ブラシの軸がどのような直線であるかを示しました。  放射状グラデーション ブラシの軸は、円によって定義されます。色は原点から外側に向かって "放射" されます。  
+## <a name="radial-gradients"></a>放射状グラデーション  
+ 同様に、 <xref:System.Windows.Media.LinearGradientBrush>、<xref:System.Windows.Media.RadialGradientBrush>軸に沿ったブレンド色で領域を塗りつぶします。 前の例では、線状グラデーション ブラシの軸は直線であることを示しました。 放射状グラデーション ブラシの軸は円によって定義され、そのカラーはその原点から外側に "放射" されます。  
   
- 次の例では、放射状グラデーション ブラシは、四角形の内部を塗りつぶすために使用されます。  
+ 次の例では、放射状グラデーション ブラシを使用して、四角形の内側を塗りつぶします。  
   
- [!code-xml[GradientBrushExamples_snip#RadialGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/RadialGradientBrushExample.xaml#radialgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#RadialGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/RadialGradientBrushExample.xaml#radialgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#RadialGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/RadialGradientBrushExample.cs#radialgradient1csharp)]  
   
- 前の例で作成したグラデーションを次の図に示します。  ブラシのグラデーション終了位置が示されています。  結果は異なりますが、この例のグラデーション終了位置は前の線形グラデーション ブラシの例のグラデーション終了位置と同じであることに注意してください。  
+ 次の図は、前の例で作成されるグラデーションを示しています。 ブラシのグラデーション境界が強調されています。 結果は異なっていますが、この例のグラデーション境界は、前の線状グラデーション ブラシの例のグラデーション境界と同じであることに注目してください。  
   
- ![放射状グラデーションのグラデーション ストップ](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops-rg.png "wcpsdk\_graphicsmm\_4gradientstops\_rg")  
+ ![放射状グラデーションでのグラデーション境界](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops-rg.png "wcpsdk_graphicsmm_4gradientstops_rg")  
   
- <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A> は、放射状グラデーション ブラシのグラデーション軸の始点を指定します。  グラデーション軸は、グラデーションの原点からグラデーションの円に向かって放射します。  ブラシのグラデーションの円は、<xref:System.Windows.Media.RadialGradientBrush.Center%2A>、<xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>、<xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> の各プロパティによって定義されます。  
+ <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A>放射状グラデーション ブラシのグラデーション軸の開始位置を指定します。 グラデーション軸は、グラデーションの原点からグラデーション円に放射状に広がります。 ブラシのグラデーションの円がによって定義されたその<xref:System.Windows.Media.RadialGradientBrush.Center%2A>、 <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>、および<xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A>プロパティです。  
   
- さまざまな <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A>、<xref:System.Windows.Media.RadialGradientBrush.Center%2A>、<xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>、および <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> の設定を持つ複数の放射状グラデーションを次の図に示します。  
+ 次の図に、異なるいくつかの放射状グラデーション<xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A>、 <xref:System.Windows.Media.RadialGradientBrush.Center%2A>、 <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>、および<xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A>設定します。  
   
- ![RadialGradientBrush 設定](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-originscirclesandradii.png "wcpsdk\_graphicsmm\_originscirclesandradii")  
-さまざまな GradientOrigin、Center、RadiusX、および RadiusY の設定を持つ RadialGradientBrushes  
+ ![RadialGradientBrush 設定](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-originscirclesandradii.gif "wcpsdk_graphicsmm_originscirclesandradii")  
+GradientOrigin、Center、RadiusX、および RadiusY の設定が異なる RadialGradientBrushes。  
   
 <a name="specifyinggradientcolors"></a>   
-## 透明または部分的に透明なグラデーション終了位置の指定  
- グラデーション終了位置には不透明度プロパティがないため、マークアップで [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] 16 進数表記を使用して色のアルファ チャネルを指定するか、<xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=fullName> メソッドを使用して、透明または部分的に透明なグラデーション終了位置を作成する必要があります。  以下のセクションでは、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] およびコードで部分的に透明なグラデーション終了位置を作成する方法について説明します。  ブラシ全体の不透明度の設定については、「[ブラシの不透明度の指定](#brushesAndOpacity)」を参照してください。  
+## <a name="specifying-transparent-or-partially-transparent-gradient-stops"></a>透明または部分的に透明なグラデーション境界の指定  
+ グラデーション境界は、不透明度のプロパティを提供しないので、色のアルファ チャネルを使用してを指定する必要があります[!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)]マークアップや使用で 16 進数表記、<xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType>メソッドを透明または部分的にはグラデーション境界を作成します。 以降のセクションで、部分的に透明なグラデーション境界を [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] とコードで作成する方法を説明します。  
   
 <a name="argbsyntax"></a>   
-### "XAML" での色の透過度の指定  
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、[!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] 16 進数表記を使用して、個別の色の透過度を指定します。  [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] の 16 進数表記では次の構文が使用されます。  
+### <a name="specifying-color-opacity-in-xaml"></a>"XAML" でのカラーの不透明度の指定  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、[!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] の 16 進表記を使用して、個々の色の不透明度を指定します。 [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] の 16 進表記では、次の構文を使用します。  
   
- `#`**aa** *rrggbb*  
+ `#` **aa** *rrggbb*  
   
- この構文の *aa* は、色の不透明度を指定する 2 桁の 16 進数の値を表します。  *rr*、*gg*、*bb* はそれぞれ、赤、緑、青の各色の量を指定する 2 桁の 16 進数を表します。  16 進数の各桁には、0 から 9、または A から F の値を指定できます。  0 が最小値で、F が最大値になります。  00 のアルファ値は、完全に透明な色の指定、FF のアルファ値は、完全に不透明な色の指定を表します。  次の例に、16 進数の [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] 表記を使用した 2 種類の色の指定方法を示します。  最初の例は部分的に透明 \(アルファ値が x20\) であり、2 番目の例は完全に不透明です。  
+ 前の行の *aa* は、カラーの不透明度を指定するために使用する 2 桁の 16 進値を表します。 *rr*、*gg*、および *bb* は、それぞれ、カラーの赤、緑、および青の量を指定するために使用される 2 桁の 16 進値を表します。 各 16 進数には、0 ～ 9 または A ～ F の値を指定できます。 0 は最小値であり、F は最大値です。 アルファ値 00 は完全に透明なカラーを指定し、アルファ値 FF は完全に不透明なカラーを指定します。  次の例では、[!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] の 16 進表記を使用して、2 つのカラーを指定しています。 1 つ目は部分的に透明 (アルファ値 x20 ) であり、2 つ目は完全に不透明です。  
   
- [!code-xml[GradientBrushExamples_snip#TransparentGradientStopExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/GradientStopsExample.xaml#transparentgradientstopexample1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#TransparentGradientStopExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/GradientStopsExample.xaml#transparentgradientstopexample1xaml)]  
   
 <a name="fromscrgbsyntax"></a>   
-### コードでの色の不透明度の指定  
- コードを使用する場合は、静的な <xref:System.Windows.Media.Color.FromArgb%2A> メソッドを使用すると、色を作成するときにアルファ値を指定できます。  このメソッドは <xref:System.Byte> 型の 4 つのパラメーターを取ります。  最初のパラメーターは色のアルファ チャネルを指定します。その他の 3 つのパラメーターは色の赤、緑、および青の値を指定します。  各値は、0 ～ 255 のいずれかです。  アルファ値 0 は完全に透明な色を指定し、アルファ値 255 は完全に不透明な色を指定します。  次の例では、<xref:System.Windows.Media.Color.FromArgb%2A> メソッドは 2 つの色を生成するために使用されます。  最初の色は部分的に透明 \(アルファ値が 32\) であり、2 番目の色は完全に不透明です。  
+### <a name="specifying-color-opacity-in-code"></a>コードでのカラーの不透明度の指定  
+ 静的なコードを使用するときに<xref:System.Windows.Media.Color.FromArgb%2A>メソッドでは、色を作成するときは、アルファ値を指定することができます。 このメソッドは型の 4 つのパラメーターを受け取ります<xref:System.Byte>です。 最初のパラメーターはカラーのアルファ チャネルを指定し、その他の 3 つのパラメーターはカラーの赤、緑、および青の値を指定します。 各値は、0 ～ 255 (0 と 255 を含む) の数値にする必要があります。 アルファ値 0 はカラーが完全に透明であることを指定し、アルファ値 255 はカラーが完全に不透明であることを指定します。 次の例で、<xref:System.Windows.Media.Color.FromArgb%2A>メソッドが 2 つの色を生成するために使用します。 1 つ目のカラーは部分的に透明 (アルファ値32) であり、2 つ目のカラーは完全に不透明です。  
   
  [!code-csharp[GradientBrushExamples_snip#TransparentGradientStopExample1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/GradientStopsExample.cs#transparentgradientstopexample1csharp)]  
   
- また、ScRGB 値を使用して色を作成できるようにする <xref:System.Windows.Media.Color.FromScRgb%2A> メソッドを使用できます。  
+ また、使用することがあります、<xref:System.Windows.Media.Color.FromScRgb%2A>メソッドで、ScRGB 値を使用して色を作成することができます。  
   
 <a name="otherbrushes"></a>   
-## イメージ、描画、ビジュアル、およびパターンによる塗りつぶし  
- <xref:System.Windows.Media.ImageBrush>、<xref:System.Windows.Media.DrawingBrush>、<xref:System.Windows.Media.VisualBrush> の各クラスを使用すると、イメージ、描画、またはビジュアルで領域を塗りつぶすことができます。  イメージ、描画、およびパターンによる塗りつぶしについては、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
+## <a name="painting-with-images-drawings-visuals-and-patterns"></a>イメージ、描画、ビジュアル、およびパターンによる塗りつぶし  
+ <xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>クラスを使用すると、画像、図形、またはビジュアルを使用して領域を描画します。 イメージ、描画、およびパターンによる塗りつぶしの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
   
-## 参照  
- <xref:System.Windows.Media.Brush>   
- <xref:System.Windows.Media.SolidColorBrush>   
- <xref:System.Windows.Media.LinearGradientBrush>   
- <xref:System.Windows.Media.RadialGradientBrush>   
- [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)   
- [ブラシの変換の概要](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.Brush>  
+ <xref:System.Windows.Media.SolidColorBrush>  
+ <xref:System.Windows.Media.LinearGradientBrush>  
+ <xref:System.Windows.Media.RadialGradientBrush>  
+ [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
+ [ブラシの変換の概要](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)  
  [グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)

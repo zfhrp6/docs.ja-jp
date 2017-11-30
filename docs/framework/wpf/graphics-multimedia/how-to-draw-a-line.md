@@ -1,39 +1,42 @@
 ---
-title: "方法 : 線を描画する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "描画, 線"
-  - "グラフィックス [WPF], 線"
-  - "線, 描画"
+title: "方法 : 線を描画する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- drawing [WPF], lines
+- graphics [WPF], lines
+- lines [WPF], drawing
 ms.assetid: 0513ee01-6b27-4bb3-85f3-3a3e6710d80e
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4911aea91416fb84e9a18d54c145b494737ef9dd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 線を描画する
-この例では、<xref:System.Windows.Shapes.Line> 要素を使用して線を描画する方法を示します。  
+# <a name="how-to-draw-a-line"></a>方法 : 線を描画する
+この例を使用して線を描画する方法を示します、<xref:System.Windows.Shapes.Line>要素。  
   
- 線を描画するには、<xref:System.Windows.Shapes.Line> 要素を作成します。  その要素の <xref:System.Windows.Shapes.Line.X1%2A> プロパティと <xref:System.Windows.Shapes.Line.Y1%2A> プロパティを使用して線の始点を設定し、<xref:System.Windows.Shapes.Line.X2%2A> プロパティと <xref:System.Windows.Shapes.Line.Y2%2A> プロパティを使用して終点を設定します。  ストロークのない線は表示されないため、最後に <xref:System.Windows.Shapes.Shape.Stroke%2A> と <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> を設定します。  
+ 線を描画するには、作成、<xref:System.Windows.Shapes.Line>要素。 使用してその<xref:System.Windows.Shapes.Line.X1%2A>と<xref:System.Windows.Shapes.Line.Y1%2A>; 始点を設定して使用するプロパティの<xref:System.Windows.Shapes.Line.X2%2A>と<xref:System.Windows.Shapes.Line.Y2%2A>終了点を設定するプロパティです。 最後に、設定、<xref:System.Windows.Shapes.Shape.Stroke%2A>と<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>線なしの行が表示されないためです。  
   
- 線には内部領域がないので、線の <xref:System.Windows.Shapes.Shape.Fill%2A> 要素を設定しても効果はありません。  
+ 設定、<xref:System.Windows.Shapes.Shape.Fill%2A>行の要素も何も起こりません、行には、内部があるないためです。  
   
- <xref:System.Windows.Controls.Canvas> 要素の内側に 3 本の線を描画する例を次に示します。  
+ 次の例は、内の次の 3 つの線を描画する<xref:System.Windows.Controls.Canvas>要素。  
   
-## 使用例  
- [!code-xml[drawingwithshapeelements#LineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
+## <a name="example"></a>例  
+ [!code-xaml[drawingwithshapeelements#LineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
   
- この例は、より大きなサンプルの一部です。サンプル全体については、[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)を参照してください。  
+ この例より大きなサンプルの一部サンプル全体については、次を参照してください。[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)です。  
   
-## 参照  
- <xref:System.Windows.Shapes.Line>   
- [Shape 要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Shapes.Line>  
+ [図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)

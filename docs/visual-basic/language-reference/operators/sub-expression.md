@@ -1,73 +1,72 @@
 ---
-title: "Sub Expression (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-helpviewer_keywords: 
-  - "lambda expressions [Visual Basic], sub expression"
-  - "Sub Expression [Visual Basic]"
-  - "subroutines [Visual Basic], sub expressions"
+title: "部分式 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- lambda expressions [Visual Basic], sub expression
+- Sub Expression [Visual Basic]
+- subroutines [Visual Basic], sub expressions
 ms.assetid: 36b6bfd1-6539-4d8f-a5eb-6541a745ffde
-caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 43e35bd0386bc56478603ec36437981785cc8ffb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Sub Expression (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-サブルーチンとしてのラムダ式を定義するパラメーターおよびコードを宣言します。  
+# <a name="sub-expression-visual-basic"></a>部分式 (Visual Basic)
+パラメーターとサブルーチン ラムダ式を定義するコードを宣言します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-Sub ( [ parameterlist ] ) statement  
+Sub ( [ parameterlist ] ) statement  
 - or -  
-Sub ( [ parameterlist ] )  
-  [ statements ]  
+Sub ( [ parameterlist ] )  
+  [ statements ]  
 End Sub  
-  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`parameterlist`|省略可能です。  プロシージャのパラメータを表すローカル変数名のリストです。  リストが空の場合もパラメーターが必要です。  詳細については、「[Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)」を参照してください。|  
-|`statement`|必ず指定します。  単一のステートメントです。|  
-|`statements`|必ず指定します。  ステートメントのリストです。|  
+|用語|定義|  
+|---|---|  
+|`parameterlist`|省略可能です。 プロシージャのパラメーターを表すローカル変数名の一覧。 かっこは、リストが空の場合にも存在する必要があります。 詳細については、次を参照してください。[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。|  
+|`statement`|必須です。 1 つのステートメント。|  
+|`statements`|必須です。 ステートメントの一覧。|  
   
-## 解説  
- *ラムダ式*とは、名前を持たない、1 つ以上のステートメントを実行するサブルーチンです。  デリゲート型を使用できるすべての場所でラムダ式を使用できますが、`RemoveHandler` の引数としては使用できません。  デリゲートの詳細、およびデリゲートを含むラムダ式の使用については、「[Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md)」および「[Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ A*ラムダ式*名前がないサブルーチンは、1 つまたは複数のステートメントを実行します。 任意の場所、ラムダ式を使用することができますを使える、デリゲート型以外に引数として`RemoveHandler`です。 デリゲート、およびデリゲートでのラムダ式の使用に関する詳細については、次を参照してください。 [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)と[厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)です。  
   
-## ラムダ式の構文  
- ラムダ式の構文は、標準のサブルーチンの構文に似ています。  相違点を次に示します。  
+## <a name="lambda-expression-syntax"></a>ラムダ式の構文  
+ 標準のサブルーチンのラムダ式の構文に似ています。 相違点は次のとおりです。  
   
--   ラムダ式には名前がありません。  
+-   ラムダ式には、名前がありません。  
   
--   ラムダ式では、`Overloads` や `Overrides` などの修飾子を使用できません。  
+-   ラムダ式はなどの修飾子を持つことはできません`Overloads`または`Overrides`です。  
   
--   単一行のラムダ式の本体は、式ではなくステートメントである必要があります。  本体をサブ プロシージャへの呼び出しで構成することはできますが、関数プロシージャへの呼び出しは指定できません。  
+-   単一行のラムダ式の本体は、ステートメント、式ではないをする必要があります。 本文は、sub プロシージャへの呼び出しがない、プロシージャの呼び出しを関数で構成できます。  
   
--   ラムダ式では、すべてのパラメーターは、データ型が指定されているか推論される必要があります。  
+-   ラムダ式では、すべてのパラメーターまたはデータ型を推論する必要がありますすべてパラメーターのどちらかを指定した必要があります。  
   
--   ラムダ式では、Optional パラメーターと `ParamArray` パラメーターは使用できません。  
+-   省略可能なと`ParamArray`パラメーターはラムダ式で許可されていません。  
   
--   ラムダ式では、ジェネリック パラメーターは使用できません。  
+-   ジェネリック パラメーターは、ラムダ式では使用できません。  
   
-## 使用例  
- 以下は、コンソールに値を書き込むラムダ式の例です。  この例では、ラムダ式サブルーチンの単一行と複数行の両方の構文を示しています。  その他の例については、「[Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)」を参照してください。  
+## <a name="example"></a>例  
+ 値をコンソールに出力するラムダ式の例を次に示します。 この例では、単一行および複数行ラムダ式の両方の構文のサブルーチンを示します。 例については、次を参照してください。[ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)です。  
   
  [!code-vb[VbVbalrLambdas#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/sub-expression_1.vb)]  
   
-## 参照  
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)   
- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)   
- [Statements](../../../visual-basic/programming-guide/language-features/statements.md)   
- [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+## <a name="see-also"></a>関連項目  
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [演算子および式](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
+ [ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)  
+ [厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
