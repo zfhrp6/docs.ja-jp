@@ -1,50 +1,49 @@
 ---
-title: "Performing Tasks with My.Application, My.Computer, and My.User (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My.Application object, developing applications"
-  - "rapid application development (RAD), My.Application"
-  - "rapid application development (RAD), My.Computer"
-  - "rapid application development (RAD), My.User"
-  - "My.Computer object, developing applications"
-  - "My.User object, developing applications"
+title: "My.Application、My.Computer、および My.User でのタスクの実行 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- My.Application object [Visual Basic], developing applications
+- rapid application development (RAD), My.Application
+- rapid application development (RAD), My.Computer
+- rapid application development (RAD), My.User
+- My.Computer object [Visual Basic], developing applications
+- My.User object [Visual Basic], developing applications
 ms.assetid: c8af61bd-4dd3-4a0f-9af5-795b594b240b
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d55e0b3a126f2216d005c7bddbcaefb7d8f0a580
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Performing Tasks with My.Application, My.Computer, and My.User (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-情報や一般的に使用される機能へのアクセスを提供する 3 つの中心的な `My` オブジェクトとして、`My.Application` \(<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>\)、`My.Computer` \(<xref:Microsoft.VisualBasic.Devices.Computer>\)、および `My.User` \(<xref:Microsoft.VisualBasic.ApplicationServices.User>\) があります。  これらのオブジェクトを使用すると、現在のアプリケーションに関する情報、アプリケーションがインストールされているコンピューターに関する情報、またはアプリケーションの現在のユーザーに関する情報にそれぞれアクセスできます。  
+# <a name="performing-tasks-with-myapplication-mycomputer-and-myuser-visual-basic"></a>My.Application、My.Computer、および My.User でのタスクの実行 (Visual Basic)
+次の 3 つの中央`My`へのアクセスについてよく使用される機能を提供するオブジェクトは`My.Application`(<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>)、 `My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)、および`My.User`(<xref:Microsoft.VisualBasic.ApplicationServices.User>)。 これらのオブジェクトを使用して、それぞれ、現在のアプリケーション、アプリケーションにインストールされているコンピューターまたはアプリケーションの現在のユーザーに関連する情報にアクセスすることができます。  
   
-## My.Application、My.Computer、My.User  
- 次の例は、`My` を使用して情報を取得する方法を具体的に示しています。  
+## <a name="myapplication-mycomputer-and-myuser"></a>My.Application、My.Computer、および My.User  
+ 次の例では、情報をする方法を示しますを使用して取得`My`です。  
   
  [!code-vb[VbVbcnMy#1](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_1.vb)]  
   
  [!code-vb[VbVbcnMy#2](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_2.vb)]  
   
- 情報を取得できるだけでなく、これらの 3 つのオブジェクトを介して公開されるメンバーは、そのオブジェクトに関連するメソッドを実行することもできます。  たとえば、`My.Computer` を利用すると、ファイルの操作やレジストリの更新を行うさまざまなメソッドにアクセスできます。  
+ 情報を取得するだけでなくこれら 3 つのオブジェクトを介して公開されるメンバーも、そのオブジェクトに関連するメソッドを実行できます。 インスタンスのさまざまなファイルを操作または経由でのレジストリを更新する方法を表示できます`My.Computer`です。  
   
- `My` には、ファイル、ディレクトリ、およびドライブを操作するさまざまなメソッドとプロパティが含まれており、これを使用するとファイル I\/O が大幅に簡単かつ高速になります。  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> オブジェクトを使用すると、区切り記号で区切られたフィールドや固定幅のフィールドを持つ大きな構造化ファイルからデータを読み取ることができます。  この例では、`reader` という `TextFieldParser` を開き、それを使用して `C:\TestFolder1\test1.txt` から読み込みを行います。  
+ ファイル I/O は簡単かつ短時間では大幅に`My`さまざまなファイル、ディレクトリ、およびドライブを操作のメソッドとプロパティが含まれます。 <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>オブジェクトは、大きな構造化されたファイルが区切られたまたは固定幅フィールドから読み取ることができます。 この例を開いて、`TextFieldParser``reader`からの読み取りを使用して`C:\TestFolder1\test1.txt`です。  
   
  [!code-vb[VbVbalrTextFieldParser#23](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_3.vb)]  
   
- `My.Application` を使用すると、アプリケーションのカルチャを変更できます。  次の例は、このメソッドを呼び出す方法を具体的に示しています。  
+ `My.Application`アプリケーションのカルチャを変更できます。 次の例では、このメソッドを呼び出す方法を示します。  
   
  [!code-vb[VbVbcnMy#3](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/performing-tasks-with-my-application-my-computer-and-my-user_4.vb)]  
   
-## 参照  
- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   
- <xref:Microsoft.VisualBasic.Devices.Computer>   
- <xref:Microsoft.VisualBasic.ApplicationServices.User>   
- [How My Depends on Project Type](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
+ <xref:Microsoft.VisualBasic.Devices.Computer>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.User>  
+ [プロジェクトの種類に応じた My の機能](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)

@@ -1,90 +1,92 @@
 ---
-title: "ドキュメントのシリアル化および保存 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ドキュメント, シリアル化"
-  - "ドキュメント, storage"
-  - "シリアル化 (ドキュメントの)"
-  - "保存 (ドキュメントを)"
+title: "ドキュメントのシリアル化および保存"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- 'serialization of documents [WPF], , '
+- documents [WPF], storage
+- documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-caps.latest.revision: 24
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "24"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 34b517366a5f143a86388abff5ae13022bc710c3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ドキュメントのシリアル化および保存
-[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] は、高品質なドキュメントを作成および表示するための強力な環境を提供します。  固定ドキュメントとフロー ドキュメントの両方をサポートする拡張機能、高度な表示コントロール、および 2D や 3D の強力なグラフィックス機能を組み合わせることにより、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] アプリケーションの品質とユーザー エクスペリエンスをさらに向上させることができます。  ドキュメントのメモリ内表現を柔軟に管理するための機能は [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] の重要な機能の 1 つであり、データ ストアからドキュメントを効率的に保存して読み込むための機能はほとんどのアプリケーションで必要になります。  内部のメモリ内表現から外部のデータ ストアにドキュメントを変換するプロセスは、[シリアル化](GTMT)と呼ばれます。  データ ストアを読み込んで元のメモリ内インスタンスを再作成する逆のプロセスは、逆シリアル化と呼ばれます。  
+# <a name="document-serialization-and-storage"></a>ドキュメントのシリアル化および保存
+[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] では、高品質のドキュメントを作成および表示するための強力な環境が提供されています。  固定ドキュメントとフロー ドキュメントの両方および高度な表示コントロールをサポートし、強力な 2D および 3D グラフィックス機能と組み合わされた拡張機能により、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] アプリケーションの品質とユーザー エクスペリエンスは新しいレベルになります。  ドキュメントのメモリ内の表現を柔軟に管理できることは [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] の重要な機能であり、ほぼすべてのアプリケーションではデータ ストアのドキュメントを効率的に保存および読み込むことができる必要があります。  内部のメモリ内表現から外部のデータ ストアにドキュメントを変換するプロセスは、シリアル化と呼ばれます。  データ ストアを読み取って元のメモリ内インスタンスを再作成する逆のプロセスは、逆シリアル化と呼ばれます。  
   
-   
+ 
   
 <a name="AboutSerialization"></a>   
-## ドキュメントのシリアル化について  
- 理想的には、メモリ内のドキュメントを[シリアル化](GTMT)および逆シリアル化してメモリに戻すプロセスは、アプリケーションから透過的に実行されます。  アプリケーションは、シリアライザーの "write" メソッドを呼び出してドキュメントを保存します。一方、デシリアライザーの "read" メソッドは、データ ストアにアクセスして元のインスタンスをメモリ内に再作成します。  シリアル化および逆シリアル化によってドキュメントが元の形式に再作成される限り、通常、データの特定の保存形式はアプリケーションにとって重要ではありません。  
+## <a name="about-document-serialization"></a>ドキュメントのシリアル化について  
+ ドキュメントをメモリからシリアル化し、後で逆シリアル化してメモリに戻すプロセスは、アプリケーションに対して透過的に行われるのが理想的です。  アプリケーションは、シリアライザーの "書き込み" メソッドを呼び出してドキュメントを保存します。デシリアライザーの "読み取り" メソッドは、データ ストアにアクセスし、メモリ内の元のインスタンスを再作成します。  通常、シリアル化と逆シリアル化のプロセスで元の形式のドキュメントが再作成される限り、データが格納される特定の形式はアプリケーションにとって問題ではありません。  
   
- 多くのアプリケーションには複数のシリアル化オプションが用意されています。これは、ドキュメントを異なるメディアや異なる形式に保存できるようにするためです。  たとえば、ディスク ファイル、データベース、または Web サービスにドキュメントを保存するための "名前を付けて保存" オプションがアプリケーションに用意されていることがあります。  同様に、複数のシリアライザーを使用することで、HTML、RTF、XML、XPS などさまざまな形式でドキュメントを保存できます。また、サードパーティの形式に保存することもできます。  シリアル化は、アプリケーションに対し、ストレージ メディアの詳細を各シリアライザーの実装内に分離するインターフェイスを定義します。  [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] <xref:System.Windows.Documents.Serialization> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] には、ストレージ詳細のカプセル化という利点に加えて、いくつかの重要な機能が用意されています。  
+ 多くの場合、アプリケーションでは複数のシリアル化オプションが提供され、ユーザーは異なるメディアまたは異なる形式にドキュメントを保存できます。  たとえば、[名前を付けて保存] オプションでは、ドキュメントをディスク ファイル、データベース、Web サービスなどに保存できる場合があります。  同様に、別のシリアライザーでは、HTML、RTF、XML、XPS、サード パーティ形式などのさまざまな形式でドキュメントを格納できます。  アプリケーションに対して、シリアル化により、実装内のストレージ メディアの詳細を分離するインターフェイスが定義されます。  記憶域の詳細をカプセル化の利点に加え、 [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] <xref:System.Windows.Documents.Serialization> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]他のいくつかの重要な機能を提供します。  
   
-### .NET Framework 3.0 ドキュメント シリアライザーの機能  
+### <a name="features-of-net-framework-30-document-serializers"></a>.NET Framework 3.0 ドキュメント シリアライザーの機能  
   
--   高レベルのドキュメント オブジェクト \([論理ツリー](GTMT)およびビジュアル\) への直接アクセス。この機能により、自動修正されたコンテンツ、2D\/3D 要素、イメージ、メディア、ハイパーリンク、注釈、およびその他のサポート コンテンツを効率的に保存できます。  
+-   上位レベルのドキュメント オブジェクト (論理ツリーとビジュアル) に直接アクセスすることにより、ページ分割されたコンテンツ、2D/3D 要素、イメージ、メディア、ハイパーリンク、注釈、およびその他のサポート コンテンツの効率的な保存が可能になります。  
   
--   [同期](GTMT)操作と[非同期](GTMT)操作。  
+-   同期操作と非同期操作。  
   
--   次の拡張機能を持つプラグイン シリアライザーのサポート。  
+-   拡張機能でのプラグイン シリアライザーのサポート:  
   
-    -   すべての [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] アプリケーションで使用される、システム全体へのアクセス。  
+    -   すべての [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] アプリケーションで使用するためのシステム全体のアクセス。  
   
-    -   アプリケーション プラグインの簡単な検出。  
+    -   簡単なアプリケーション プラグインの検出。  
   
-    -   サードパーティのカスタム プラグインの簡単な配置、インストール、および更新。  
+    -   カスタム サードパーティ プラグインの簡単な展開、インストール、更新。  
   
-    -   ランタイム設定およびオプションをカスタマイズするためのユーザー インターフェイス サポート。  
+    -   カスタム実行時設定とオプションのユーザー インターフェイス サポート。  
   
-### XPS 印刷パス  
- [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] 印刷パスもまた、印刷出力を介してドキュメントを書き込むための拡張性の高い機能を提供します。  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] は、ドキュメントのファイル形式および [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] のネイティブな印刷スプール形式として使用されます。  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] ドキュメントは、[!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] 互換プリンターに直接送信できます。中間形式に変換する必要はありません。  印刷パスの出力オプションおよび機能の詳細については、「[印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)」を参照してください。  
+### <a name="xps-print-path"></a>XPS 印刷パス  
+ [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)][!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] の印刷パスでは、印刷出力によってドキュメントを作成するための拡張機構も提供されます。  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] は、ドキュメント ファイル形式と、[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] のネイティブ印刷スプール形式の両方として機能します。  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] のドキュメントは [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] 互換性のあるプリンターに直接送信でき、中間形式に変換する必要はありません。  印刷パス出力オプションと機能について詳しくは、「[印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)」をご覧ください。  
   
 <a name="PluginSerializers"></a>   
-## プラグイン シリアライザー  
- <xref:System.Windows.Documents.Serialization> API は、プラグイン シリアライザーとリンクされたシリアライザーの両方をサポートします。これらのシリアライザーは、アプリケーションから別々にインストールされ、実行時にバインドされます。これらのシリアライザーにアクセスする際には、<xref:System.Windows.Documents.Serialization.SerializerProvider> の検出機構が使用されます。  プラグイン シリアライザーには、配置およびシステム全体での使用を容易にするための拡張機能が用意されています。  リンクされたシリアライザーは、プラグイン シリアライザーにアクセスできない [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] などの[部分信頼](GTMT)環境にも実装できます。  リンクされたシリアライザーは、<xref:System.Windows.Documents.Serialization.SerializerWriter> クラスの派生実装に基づいており、アプリケーション内に直接コンパイルおよびリンクされます。  プラグイン シリアライザーとリンクされたシリアライザーは、同一のパブリック メソッドおよびイベントを介して動作します。これにより、いずれかまたは両方のシリアライザーを同じアプリケーション内で容易に使用することができます。  
+## <a name="plug-in-serializers"></a>プラグイン シリアライザー  
+ <xref:System.Windows.Documents.Serialization> Api は、プラグイン シリアライザーと、アプリケーションから個別にインストールされているリンクされたシリアライザーの両方のサポートを提供し、実行時に、バインドを使用してアクセス、<xref:System.Windows.Documents.Serialization.SerializerProvider>探索メカニズムです。  プラグイン シリアライザーには、簡単に展開でき、システム全体で使用できるという大きな利点があります。  プラグイン シリアライザーにアクセスできない [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] などの部分信頼環境には、リンクされたシリアライザーを実装することもできます。  派生の実装に基づいているシリアライザーのリンク、<xref:System.Windows.Documents.Serialization.SerializerWriter>クラス、コンパイルされ、アプリケーションに直接リンクされています。  プラグイン シリアライザーとリンクされたシリアライザーはどちらも同じパブリック メソッドとイベントを通じて動作するので、同じアプリケーションでどちらか一方でも両方のシリアライザーでも簡単に使うことができます。  
   
- プラグイン シリアライザーは、新しいストレージ設計およびファイル形式に拡張機能を提供します。これにより、ビルド時に使用される可能性があるすべての形式に対してコードを直接記述する必要がなくなるため、アプリケーション開発者の負担が軽減されます。  また、プラグイン シリアライザーでは、カスタム ファイル形式または専用のファイル形式のためのシステム アクセス可能なプラグインを標準的な方法で配置、インストール、および更新できます。これにより、サードパーティの開発者の負担も軽減されます。  
+ アプリケーション開発者にとっての利点として、プラグイン シリアライザーは新しいストレージ設計およびファイル形式に対する拡張性を備え、ビルド時に可能性のあるすべての形式を直接コーディングする必要はありません。  また、サードパーティの開発者にとっても、プラグイン シリアライザーには、カスタムまたは独自のファイル形式のためのシステムでアクセス可能なプラグインを展開、インストール、更新する標準化された手段が提供されるというメリットがあります。  
   
-### プラグイン シリアライザーの使用  
- プラグイン シリアライザーは簡単に使用できます。  <xref:System.Windows.Documents.Serialization.SerializerProvider> クラスは、システムにインストールされている各プラグインの <xref:System.Windows.Documents.Serialization.SerializerDescriptor> オブジェクトを列挙します。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A> プロパティは、現在の構成に基づいてインストール済みのプラグインをフィルター処理し、アプリケーションによるシリアライザーの読み込みおよび使用が可能であるかどうかを検証します。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor> は、<xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A> や <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A> などその他のプロパティも提供します。アプリケーションは、これらのプロパティを使用して、使用可能な出力形式のシリアライザーの選択をユーザーに求めることができます。  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] の既定のプラグイン シリアライザーは [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] によって提供されます。このシリアライザーは必ず列挙されます。  ユーザーが出力形式を選択したら、<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> メソッドを使用してその形式に対応する <xref:System.Windows.Documents.Serialization.SerializerWriter> を作成します。  次に、<xref:System.Windows.Documents.Serialization.SerializerWriter>.<xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A> メソッドを呼び出して、ドキュメント ストリームをデータ ストアに出力できます。  
+### <a name="using-a-plug-in-serializer"></a>プラグイン シリアライザーの使用  
+ プラグイン シリアライザーは簡単に使うことができます。  <xref:System.Windows.Documents.Serialization.SerializerProvider>クラスを列挙、<xref:System.Windows.Documents.Serialization.SerializerDescriptor>システムにインストールされている各プラグインのオブジェクトします。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A>プロパティは、現在の構成に基づいたインストール済みのプラグインをフィルター処理し、シリアライザーの読み込まれ、アプリケーションで使用されることを確認します。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor>などその他のプロパティの提供も<xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A>と<xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>、使用可能な出力形式のシリアライザーの選択にユーザー入力を求める、アプリケーションが使用できます。  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] 用の既定のプラグイン シリアライザーは [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] で提供され、常に列挙されます。  ユーザーが、出力形式を選択した後、<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A>メソッドの使用を作成、<xref:System.Windows.Documents.Serialization.SerializerWriter>の特定の形式です。  <xref:System.Windows.Documents.Serialization.SerializerWriter>.<xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A>メソッドは、データ ストアにドキュメント ストリームを出力し、呼び出すことができます。  
   
- "PlugInFileFilter" プロパティ内で <xref:System.Windows.Documents.Serialization.SerializerProvider> メソッドを使用するアプリケーションの例を次に示します。  PlugInFileFilter は、インストール済みのプラグインを列挙し、使用可能なファイル オプションを使用してフィルター文字列を作成します。このフィルター文字列は <xref:Microsoft.Win32.SaveFileDialog> で使用されます。  
+ 次の例では、使用するアプリケーションを<xref:System.Windows.Documents.Serialization.SerializerProvider>"PlugInFileFilter"プロパティのメソッドです。  PlugInFileFilter がインストールされているプラグインを列挙しの使用可能なファイルのオプションのフィルター文字列を構築、<xref:Microsoft.Win32.SaveFileDialog>です。  
   
  [!code-csharp[DocumentSerialize#DocSerializeFileFilter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
   
- ユーザーが出力ファイル名を選択した後、<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> メソッドを使用して、指定したドキュメントを指定した形式で保存する例を次に示します。  
+ 出力ファイル名がユーザーによって選択された後、次の例の使用、<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A>指定の形式で、特定のドキュメントを格納する方法です。  
   
  [!code-csharp[DocumentSerialize#DocSerializePlugIn](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
   
 <a name="InstallingPluginSerializers"></a>   
-### プラグイン シリアライザーのインストール  
- <xref:System.Windows.Documents.Serialization.SerializerProvider> クラスは、プラグイン シリアライザーの検出およびアクセスに使用される、上位レベルのアプリケーション インターフェイスを提供します。  <xref:System.Windows.Documents.Serialization.SerializerProvider> は、システムにインストールされているアクセスできるシリアライザーを検索し、その一覧をアプリケーションに提供します。  インストール済みのシリアライザーの詳細は、レジストリ設定で定義されます。  <xref:System.Windows.Documents.Serialization.SerializerProvider.RegisterSerializer%2A> メソッドを使用すると、プラグイン シリアライザーをレジストリに追加することができます。[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がまだインストールされていない場合は、プラグインのインストール スクリプトでレジストリの値を直接設定できます。  <xref:System.Windows.Documents.Serialization.SerializerProvider.UnregisterSerializer%2A> メソッドを使用すると、以前にインストールされたプラグインを削除できます。アンインストール スクリプトでレジストリ設定をリセットすることもできます。  
+### <a name="installing-plug-in-serializers"></a>プラグイン シリアライザーのインストール  
+ <xref:System.Windows.Documents.Serialization.SerializerProvider>クラスは、プラグイン シリアライザー探索およびアクセスの上位レベルのアプリケーション インターフェイスを提供します。  <xref:System.Windows.Documents.Serialization.SerializerProvider>検索し、アプリケーションがインストールされ、システム上でアクセスするシリアライザーの一覧を示します。  インストールされているシリアライザーの詳細は、レジストリ設定によって定義されます。  プラグイン シリアライザーを使用して、レジストリに追加されることができます、<xref:System.Windows.Documents.Serialization.SerializerProvider.RegisterSerializer%2A>メソッド場合[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]がまだないインストールの場合は、一連のレジストリ値自体直接、プラグインのインストール スクリプトになります。  <xref:System.Windows.Documents.Serialization.SerializerProvider.UnregisterSerializer%2A>以前にインストールを削除するメソッドを使用できるプラグイン、レジストリ設定は、アンインストール スクリプトによって同様にリセットすることもできます。  
   
-### プラグイン シリアライザーの作成  
- プラグイン シリアライザーとリンクされたシリアライザーは、公開されている同一のパブリック メソッドおよびイベントを使用します。また、同様の方法で[同期的](GTMT)または[非同期的](GTMT)に動作するように設計できます。  プラグイン シリアライザーを作成する場合、通常は次の 3 つの基本手順に従います。  
+### <a name="creating-a-plug-in-serializer"></a>プラグイン シリアライザーの作成  
+ プラグイン シリアライザーとリンクされたシリアライザーはどちらも、同じ公開されたパブリック メソッドとイベントを使い、同期または非同期で動作するように同じように設計できます。  通常、プラグイン シリアライザーの作成には 3 つの基本的な手順があります。  
   
-1.  まず、リンクされたシリアライザーとしてシリアライザーを実装およびデバッグします。  最初にテスト アプリケーション内でシリアライザーを直接コンパイルおよびリンクして作成すると、ブレークポイントや、テストに役立つその他のデバッグ サービスへの完全なアクセスが提供されます。  
+1.  最初に、シリアライザーをリンクされたシリアライザーとして実装してデバッグします。  コンパイルしてテスト アプリケーションに直接リンクするシリアライザーを最初に作成すると、テストに役立つブレークポイントや他のデバッグ サービスに完全にアクセスできます。  
   
-2.  シリアライザーのテストが完了したら、<xref:System.Windows.Documents.Serialization.ISerializerFactory> インターフェイスを追加してプラグインを作成します。  <xref:System.Windows.Documents.Serialization.ISerializerFactory> インターフェイスにより、論理ツリー、<xref:System.Windows.UIElement> オブジェクト、<xref:System.Windows.Documents.IDocumentPaginatorSource>、<xref:System.Windows.Media.Visual> 要素などすべての [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] オブジェクトへのフル アクセスが可能になります。  さらに、<xref:System.Windows.Documents.Serialization.ISerializerFactory> は、リンクされたシリアライザーによって使用される同一の同期および非同期のメソッドとイベントを提供します。  サイズの大きいドキュメントは出力に時間がかかる場合があるので、ユーザー操作の応答性を維持するために非同期操作を使用するようお勧めします。また、データ ストアに問題が発生した場合に備えて "キャンセル" オプションを用意してください。  
+2.  シリアライザーを完全にテストした後、<xref:System.Windows.Documents.Serialization.ISerializerFactory>プラグインを作成するインターフェイスを追加します。  <xref:System.Windows.Documents.Serialization.ISerializerFactory>インターフェイスによって、すべてへのフル アクセス[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]論理ツリーを含むオブジェクト<xref:System.Windows.UIElement>オブジェクト、 <xref:System.Windows.Documents.IDocumentPaginatorSource>、および<xref:System.Windows.Media.Visual>要素。  さらに<xref:System.Windows.Documents.Serialization.ISerializerFactory>同じ同期および非同期のメソッドとリンクされたシリアライザーで使用されるイベントを提供します。  サイズの大きいドキュメントの出力には時間がかかる場合があるため、ユーザーの操作に応答できる状態を維持し、データ ストアで問題が発生した場合の "キャンセル" オプションを提供できるよう、非同期操作を使うことをお勧めします。  
   
-3.  プラグイン シリアライザーを作成したら、プラグインの配布、インストール、およびアンインストールのためのインストール スクリプトを実装します \(前の「[プラグイン シリアライザーのインストール](#InstallingPluginSerializers)」を参照してください\)。  
+3.  プラグイン シリアライザーを作成した後、プラグインを配布してインストール (およびアンインストール) するためのインストール スクリプトを実装します (前の「[プラグイン シリアライザーのインストール](#InstallingPluginSerializers)」を参照)。  
   
-## 参照  
- <xref:System.Windows.Documents.Serialization>   
- <xref:System.Windows.Xps.XpsDocumentWriter>   
- <xref:System.Windows.Xps.Packaging.XpsDocument>   
- [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Documents.Serialization>  
+ <xref:System.Windows.Xps.XpsDocumentWriter>  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>  
+ [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)  
  [XML Paper Specification: 概要](http://go.microsoft.com/fwlink?LinkID=106246)

@@ -1,65 +1,67 @@
 ---
-title: "方法 : Windows フォーム TreeView コントロールのアイコンを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], TreeView コントロール"
-  - "アイコン, 設定 (TreeView コントロールの)"
-  - "ImageList コンポーネント [Windows フォーム], 追加 (イメージを)"
-  - "ツリー ノード (TreeView コントロールの), アイコン"
-  - "TreeView コントロール [Windows フォーム], ノード アイコン"
+title: "方法 : Windows フォーム TreeView コントロールのアイコンを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- examples [Windows Forms], TreeView control
+- TreeView control [Windows Forms], node icons
+- ImageList component [Windows Forms], adding images
+- icons [Windows Forms], setting for TreeView control
+- tree nodes in TreeView control [Windows Forms], icons
 ms.assetid: c14ddcc0-e5a6-4c21-a2d5-6799fd491781
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5abe07a80e457c4a0254b4c1a734cba2f6ed1766
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム TreeView コントロールのアイコンを設定する
-Windows フォーム <xref:System.Windows.Forms.TreeView> \(ツリー ビュー\) コントロールでは、各ノードの横にアイコンを表示できます。  アイコンは、ノードのテキストのすぐ左に表示されます。  アイコンを表示するには、ツリー ビューに <xref:System.Windows.Forms.ImageList> コントロールを関連付ける必要があります。  イメージ リストの詳細については、「[ImageList コンポーネント](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)」および「[方法 : Windows フォームの ImageList コンポーネントにイメージを追加または削除する](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)」を参照してください。  
+# <a name="how-to-set-icons-for-the-windows-forms-treeview-control"></a>方法 : Windows フォーム TreeView コントロールのアイコンを設定する
+Windows フォーム<xref:System.Windows.Forms.TreeView>コントロールは、各ノードの横にあるアイコンを表示できます。 アイコンは、ノードのテキストのすぐ左側に配置されます。 これらのアイコンを表示するには、ツリー ビューを関連付ける必要があります、<xref:System.Windows.Forms.ImageList>コントロール。 イメージ リストの詳細については、次を参照してください。 [ImageList コンポーネント](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)と[する方法: 追加または削除する Windows フォームの ImageList コンポーネントにイメージを](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)です。  
   
 > [!NOTE]
->  .NET Framework Version 1.1 のバグによって、アプリケーションから <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=fullName> を呼び出すときに、画像が <xref:System.Windows.Forms.TreeView> ノードに表示されません。  このバグに対処するには、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A> の呼び出し直後に `Main` メソッドで <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=fullName> を呼び出します。  このバグは、[!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)] で修正されています。  
+>  Microsoft .NET Framework version 1.1 でのバグを防止イメージ上に表示される<xref:System.Windows.Forms.TreeView>ノード、アプリケーションを呼び出すと<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>です。 このバグを回避する<xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType>で、`Main`メソッドを呼び出した後すぐに<xref:System.Windows.Forms.Application.EnableVisualStyles%2A>です。 このバグは固定で[!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]です。  
   
-### ツリー ビューにイメージを表示するには  
+### <a name="to-display-images-in-a-tree-view"></a>ツリー ビューでイメージを表示するには  
   
-1.  <xref:System.Windows.Forms.TreeView> コントロールの <xref:System.Windows.Forms.TreeView.ImageList%2A> プロパティを使用する既存の <xref:System.Windows.Forms.ImageList> コントロールに設定します。  
+1.  設定、<xref:System.Windows.Forms.TreeView>コントロールの<xref:System.Windows.Forms.TreeView.ImageList%2A>を既存のプロパティ<xref:System.Windows.Forms.ImageList>コントロールを使用する場合します。  
   
-     これらのプロパティは、デザイナーの \[プロパティ\] ウィンドウで設定するか、またはコードで設定できます。  
+     デザイナーの [プロパティ] ウィンドウまたはコードでは、これらのプロパティを設定できます。  
   
     ```vb  
     TreeView1.ImageList = ImageList1  
-  
     ```  
   
     ```csharp  
     treeView1.ImageList = imageList1;  
-  
     ```  
   
     ```cpp  
     treeView1->ImageList = imageList1;  
     ```  
   
-2.  ノードの <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> プロパティと <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> を設定します。  <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> プロパティは、ノードが通常の状態のときや展開された状態のときに表示されるイメージを決定します。<xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> プロパティは、ノードが選択された状態のときに表示されるイメージを決定します。  
+2.  ノードの設定<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>と<xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A>プロパティです。 <xref:System.Windows.Forms.TreeNode.ImageIndex%2A>プロパティは、ノードの通常および展開されている状態の表示されるイメージを決定し、<xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A>プロパティが、そのノードの選択された状態に表示されるイメージを決定します。  
   
-     これらのプロパティは、コードで設定するか、または TreeNode エディターで設定できます。  TreeNode エディターを開くには、\[プロパティ\] ウィンドウの <xref:System.Windows.Forms.TreeView.Nodes%2A> プロパティの横にある省略記号ボタン \(![VisualStudioEllipsesButton スクリーンショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\) をクリックします。  
+     コードでは、または TreeNode エディター内で、これらのプロパティを設定できます。 TreeNode エディターを開くには、省略記号ボタンをクリックして ( ![VisualStudioEllipsesButton スクリーン ショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) の横に、 <xref:System.Windows.Forms.TreeView.Nodes%2A> [プロパティ] ウィンドウのプロパティです。  
   
     ```vb  
     ' (Assumes that ImageList1 contains at least two images and  
     ' the TreeView control contains a selected image.)  
     TreeView1.SelectedNode.ImageIndex = 0  
     TreeView1.SelectedNode.SelectedImageIndex = 1  
-  
     ```  
   
     ```csharp  
@@ -67,7 +69,6 @@ Windows フォーム <xref:System.Windows.Forms.TreeView> \(ツリー ビュー\
     // the TreeView control contains a selected image.)  
     treeView1.SelectedNode.ImageIndex = 0;  
     treeView1.SelectedNode.SelectedImageIndex = 1;  
-  
     ```  
   
     ```cpp  
@@ -77,9 +78,9 @@ Windows フォーム <xref:System.Windows.Forms.TreeView> \(ツリー ビュー\
     treeView1->SelectedNode->SelectedImageIndex = 1;  
     ```  
   
-## 参照  
- [TreeView コントロールの概要](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)   
- [方法 : Windows フォーム TreeView コントロールでノードを追加および削除する](../../../../docs/framework/winforms/controls/how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)   
- [方法 : Windows フォーム TreeView コントロールのすべてのノードを反復処理する](../../../../docs/framework/winforms/controls/how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)   
- [方法 : クリックされた TreeView ノードを判別する](../../../../docs/framework/winforms/controls/how-to-determine-which-treeview-node-was-clicked-windows-forms.md)   
- [方法 : TreeView コントロールまたは ListView コントロール \(Windows フォーム\) にカスタム情報を追加する](../../../../docs/framework/winforms/controls/add-custom-information-to-a-treeview-or-listview-control-wf.md)
+## <a name="see-also"></a>関連項目  
+ [TreeView コントロールの概要](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)  
+ [方法: Windows フォーム TreeView コントロールでノードを追加および削除する](../../../../docs/framework/winforms/controls/how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)  
+ [方法: Windows フォーム TreeView コントロールのすべてのノードを反復処理する](../../../../docs/framework/winforms/controls/how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)  
+ [方法: クリックされた TreeView ノードを判別する](../../../../docs/framework/winforms/controls/how-to-determine-which-treeview-node-was-clicked-windows-forms.md)  
+ [方法: TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加する](../../../../docs/framework/winforms/controls/add-custom-information-to-a-treeview-or-listview-control-wf.md)

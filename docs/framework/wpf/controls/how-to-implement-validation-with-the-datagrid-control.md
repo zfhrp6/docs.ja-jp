@@ -1,102 +1,108 @@
 ---
-title: "方法: DataGrid コントロールを使用して検証を実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "DataGrid [WPF], 検証"
-  - "検証 [WPF], DataGrid"
+title: "方法: DataGrid コントロールを使用して検証を実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGrid [WPF], validation
+- validation [WPF], DataGrid
 ms.assetid: ec6078a8-1e42-4648-b414-f4348e81bda1
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8c611919b5702877db34e9a02e367312678a1b27
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: DataGrid コントロールを使用して検証を実装する
-<xref:System.Windows.Controls.DataGrid> コントロールでは、セル レベルと行レベルの両方で検証を実行できます。  セル レベルの検証では、ユーザーが値を更新したときに、バインドされたデータ オブジェクトの個々のプロパティを検証します。  行レベルの検証では、ユーザーが行に対する変更をコミットしたときに、データ オブジェクト全体を検証します。  検証エラーに対してカスタマイズした視覚的フィードバックを提供したり、<xref:System.Windows.Controls.DataGrid> コントロールで提供される既定の視覚的フィードバックを使用したりすることもできます。  
+# <a name="how-to-implement-validation-with-the-datagrid-control"></a>方法: DataGrid コントロールを使用して検証を実装する
+<xref:System.Windows.Controls.DataGrid>コントロールでは、セルと行の両方のレベルに検証を実行することができます。 セル レベルの検証、ユーザーが値を更新したときに、バインドされたデータ オブジェクトの個々 のプロパティを検証します。 行レベルの検証、ユーザーが行に変更をコミット時に、データ オブジェクト全体を検証します。 検証エラーのカスタマイズされた視覚的なフィードバックを提供したり、既定の視覚的フィードバックを使用する、<xref:System.Windows.Controls.DataGrid>コントロールを提供します。  
   
- 以下の手順では、検証規則を <xref:System.Windows.Controls.DataGrid> バインディングに適用し、視覚的フィードバックをカスタマイズする方法について説明します。  
+ 次の手順の検証ルールを適用する方法について説明<xref:System.Windows.Controls.DataGrid>バインドし、視覚的なフィードバックをカスタマイズします。  
   
-### 個別のセル値を検証するには  
+### <a name="to-validate-individual-cell-values"></a>個々 のセル値を検証するには  
   
--   列で使用されるバインディングに対して 1 つ以上の検証規則を指定します。  これは、「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」に説明されている単純なコントロールのデータの検証に似ています。  
+-   列で使用されるバインディングの 1 つまたは複数の検証規則を指定します。 これがに似ていますが、単純なコントロールのデータの検証」の説明に従って[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。  
   
-     次の例では、ビジネス オブジェクトの別々のプロパティにバインドされた 4 つの列がある <xref:System.Windows.Controls.DataGrid> コントロールを示します。  そのうちの 3 つの列では、<xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> プロパティを `true` に設定して、<xref:System.Windows.Controls.ExceptionValidationRule> を指定しています。  
+     次の例は、<xref:System.Windows.Controls.DataGrid>ビジネス オブジェクトのさまざまなプロパティにバインドされている 4 つの列を持つコントロール。 3 つの列の指定、<xref:System.Windows.Controls.ExceptionValidationRule>を設定して、<xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>プロパティを`true`です。  
   
-     [!code-xml[DataGrid_Validation#BasicXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/window1.xaml#basicxaml)]  
+     [!code-xaml[DataGrid_Validation#BasicXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/window1.xaml#basicxaml)]  
   
-     ユーザーが無効な値 \(Course ID 列の整数以外など\) を入力すると、赤い枠線がセルの周囲に表示されます。  この既定の検証フィードバックは、次の手順に従って変更できます。  
+     (非整数コース ID 列に) などの無効な値を入力すると、セルの周囲に赤い境界線が表示されます。 この既定の検証のフィードバックの次の手順に従ってを変更することができます。  
   
-### セルの検証フィードバックをカスタマイズするには  
+### <a name="to-customize-cell-validation-feedback"></a>セルの検証フィードバックをカスタマイズするには  
   
--   列の <xref:System.Windows.Controls.DataGridBoundColumn.EditingElementStyle%2A> プロパティを、列の編集コントロールに適したスタイルに設定します。  編集コントロールは実行時に作成されるため、単純なコントロールのように <xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=fullName> 添付プロパティを使用することはできません。  
+-   列の設定<xref:System.Windows.Controls.DataGridBoundColumn.EditingElementStyle%2A>スタイル プロパティは、列の編集コントロールに対して適切な。 使用することはできませんの編集コントロールは、実行時に作成される、ため、<xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=nameWithType>添付プロパティの単純なコントロールの場合と同様にします。  
   
-     次の例では、前の例を更新して、検証規則のある 3 つの列で共有されるエラー スタイルを追加します。  ユーザーが無効な値を入力すると、スタイルによってセルの背景色が変更され、ツールヒントが追加されます。  トリガーを使用して検証エラーがあるかどうかを確認していることに注意してください。  現在はセル用のエラー テンプレートがないため、この処理が必要です。  
+     次の例では、検証規則に 3 つの列で共有されるエラーのスタイルを追加することで、前の例を更新します。 無効な値を入力すると、スタイルがセルの背景色が変更され、ツールヒントを追加します。 検証エラーがあるかどうかを判断するトリガーの使用に注意してください。 現在のセルの専用エラー テンプレートがないために必要です。  
   
-     [!code-xml[DataGrid_Validation#CellValidationXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#cellvalidationxaml)]  
+     [!code-xaml[DataGrid_Validation#CellValidationXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#cellvalidationxaml)]  
   
-     列で使用される <xref:System.Windows.Controls.DataGridColumn.CellStyle%2A> を置き換えると、より広範囲なカスタマイズを実装できます。  
+     広範囲にわたるカスタマイズを実装するには置き換えることで、<xref:System.Windows.Controls.DataGridColumn.CellStyle%2A>列で使用します。  
   
-### 単一行の複数の値を検証するには  
+### <a name="to-validate-multiple-values-in-a-single-row"></a>1 つの行に複数の値を検証するには  
   
-1.  バインドされたデータ オブジェクトの複数のプロパティをチェックする <xref:System.Windows.Controls.ValidationRule> サブクラスを実装します。  <xref:System.Windows.Controls.ValidationRule.Validate%2A> メソッドの実装で、`value` パラメーターの値を <xref:System.Windows.Data.BindingGroup> インスタンスにキャストします。  その後、<xref:System.Windows.Data.BindingGroup.Items%2A> プロパティを使用してデータ オブジェクトにアクセスできます。  
+1.  実装する<xref:System.Windows.Controls.ValidationRule>バインドされたデータ オブジェクトの複数のプロパティをチェックするサブクラスです。 <xref:System.Windows.Controls.ValidationRule.Validate%2A>メソッドの実装、キャスト、`value`パラメーター値を<xref:System.Windows.Data.BindingGroup>インスタンス。 データ オブジェクトにアクセスすることができます、<xref:System.Windows.Data.BindingGroup.Items%2A>プロパティです。  
   
-     この処理によって `Course` オブジェクトの `StartDate` プロパティ値が `EndDate` プロパティ値より前かどうかを検証する例を次に示します。  
+     次の例では、このプロセスを検証するかどうか、`StartDate`のプロパティの値、`Course`オブジェクトよりも前か、`EndDate`プロパティの値。  
   
      [!code-csharp[DataGrid_Validation#CourseValidationRule](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml.cs#coursevalidationrule)]
      [!code-vb[DataGrid_Validation#CourseValidationRule](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_validation/vb/mainwindow.xaml.vb#coursevalidationrule)]  
   
-2.  <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=fullName> コレクションに検証規則を追加します。  <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> プロパティは、コントロールで使用されるすべてのバインディングをグループ化する <xref:System.Windows.Data.BindingGroup> インスタンスの <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> プロパティへの直接アクセスを可能にします。  
+2.  検証規則を追加、<xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=nameWithType>コレクション。 <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A>プロパティに直接アクセスを提供する、<xref:System.Windows.Data.BindingGroup.ValidationRules%2A>のプロパティ、<xref:System.Windows.Data.BindingGroup>コントロールによって使用されるすべてのバインディングをグループ化するインスタンス。  
   
-     XAML に <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> プロパティを設定する例を次に示します。  <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A> プロパティが <xref:System.Windows.Controls.ValidationStep> に設定されているため、検証はバインドされたデータ オブジェクトの更新後にのみ行われます。  
+     次の例のセット、 <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> XAML でのプロパティです。 <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>プロパティに設定されている<xref:System.Windows.Controls.ValidationStep.UpdatedValue>バインドされたデータ オブジェクトが更新された後にのみ検証が行われるようにします。  
   
-     [!code-xml[DataGrid_Validation#RowValidationRulesXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationrulesxaml)]  
+     [!code-xaml[DataGrid_Validation#RowValidationRulesXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationrulesxaml)]  
   
-     ユーザーが、開始日より前の終了日を指定すると、赤い感嘆符 \(\!\) が行ヘッダーに表示されます。  この既定の検証フィードバックは、次の手順に従って変更できます。  
+     ユーザーは、開始日より前である終了日を指定する場合、行ヘッダーに赤の感嘆符 (!) が表示されます。 この既定の検証のフィードバックの次の手順に従ってを変更することができます。  
   
-### 行の検証フィードバックをカスタマイズするには  
+### <a name="to-customize-row-validation-feedback"></a>行の検証フィードバックをカスタマイズするには  
   
--   <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=fullName> プロパティを設定します。  このプロパティを使用して、個々の <xref:System.Windows.Controls.DataGrid> コントロールの行の検証フィードバックをカスタマイズできます。  暗黙の行スタイルを使用して <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=fullName> プロパティを設定することにより、複数のコントロールに影響を与えることもできます。  
+-   <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=nameWithType> プロパティを設定します。 このプロパティでは、個々 の行の検証のフィードバックをカスタマイズすることができます<xref:System.Windows.Controls.DataGrid>コントロール。 複数のコントロールを設定する、暗黙の行のスタイルを使用しても影響、<xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=nameWithType>プロパティです。  
   
-     より視覚的なインジケーターで既定の行の検証フィードバックを置き換える例を次に示します。  ユーザーが無効な値を入力すると、赤い円で囲まれた白い感嘆符が行ヘッダーに表示されます。  これは、行とセルのどちらの検証エラーでも発生します。  関連付けられているエラー メッセージがツールヒントに表示されます。  
+     次の例は、既定行の検証のフィードバックをより見やすくインジケーターに置き換えます。 無効な値を入力すると、行ヘッダーに、赤い円と白い感嘆符が表示されます。 これは、行とセルの両方の検証エラーが発生します。 ツールヒントには、関連するエラー メッセージが表示されます。  
   
-     [!code-xml[DataGrid_Validation#RowValidationFeedbackXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationfeedbackxaml)]  
+     [!code-xaml[DataGrid_Validation#RowValidationFeedbackXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationfeedbackxaml)]  
   
-## 使用例  
- 次の例では、セルおよび行の検証の詳細なデモンストレーションを示します。  `Course` クラスは、トランザクションをサポートするために、<xref:System.ComponentModel.IEditableObject> を実装するサンプル データ オブジェクトを提供します。  <xref:System.Windows.Controls.DataGrid> コントロールは、<xref:System.ComponentModel.IEditableObject> とやり取りして、ユーザーが Esc キーを押すことで変更を元に戻せるようにします。  
+## <a name="example"></a>例  
+ 次の例では、セルと行の検証の完了のデモを提供します。 `Course`クラスを実装するサンプル データ オブジェクトを提供する<xref:System.ComponentModel.IEditableObject>トランザクションをサポートします。 <xref:System.Windows.Controls.DataGrid>コントロールが対話<xref:System.ComponentModel.IEditableObject>をユーザーが esc キーを押して変更を元に戻すを有効にします。  
   
 > [!NOTE]
->  Visual Basic を使用している場合は、MainWindow.xaml の最初の行で、`x:Class="DataGridValidation.MainWindow"` を `x:Class="MainWindow"` に置き換えてください。  
+>  Visual Basic で MainWindow.xaml の最初の行を使用している場合は置き換えます`x:Class="DataGridValidation.MainWindow"`で`x:Class="MainWindow"`です。  
   
- 検証をテストするには、次の操作を試します。  
+ 検証をテストするには、次を試してください。  
   
--   Course ID 列に、整数以外の値を入力します。  
+-   コース ID 列で整数以外の値を入力します。  
   
--   End Date 列に、Start Date より前の日付を入力します。  
+-   終了日列で、開始日より前の日付を入力します。  
   
--   Course ID、Start Date、または End Date の値を削除します。  
+-   コース ID、開始日または終了日の値を削除します。  
   
--   無効なセル値を元に戻すには、カーソルをセルに戻し、Esc キーを押します。  
+-   無効なセル値を元に戻すには、セルに戻し、カーソルを置くし、ESC キーを押します。  
   
--   現在のセルが編集モードのときに行全体の変更を元に戻すには、Esc キーを 2 回押します。  
+-   現在のセルが編集モードの場合は、全体の行の変更を元に戻す、ESC キーを 2 回押します。  
   
--   検証エラーが発生した場合は、行ヘッダーのインジケーターの上にマウス ポインターを移動すると、関連するエラー メッセージが表示されます。  
+-   検証エラーが発生したときに、関連するエラー メッセージを表示する行ヘッダーのインジケーターの上にマウス ポインターを移動します。  
   
  [!code-csharp[DataGrid_Validation#FullCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml.cs#fullcode)]
  [!code-vb[DataGrid_Validation#FullCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_validation/vb/mainwindow.xaml.vb#fullcode)]  
   
- [!code-xml[DataGrid_Validation#FullXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#fullxaml)]  
+ [!code-xaml[DataGrid_Validation#FullXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#fullxaml)]  
   
-## 参照  
- <xref:System.Windows.Controls.DataGrid>   
- [DataGrid](../../../../docs/framework/wpf/controls/datagrid.md)   
- [データ バインディング](../../../../docs/framework/wpf/data/data-binding-wpf.md)   
- [バインディングの検証の実装](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.DataGrid>  
+ [DataGrid](../../../../docs/framework/wpf/controls/datagrid.md)  
+ [データ バインディング](../../../../docs/framework/wpf/data/data-binding-wpf.md)  
+ [バインディングの検証の実装](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)  
  [カスタム オブジェクトに検証ロジックを実装する](../../../../docs/framework/wpf/data/how-to-implement-validation-logic-on-custom-objects.md)

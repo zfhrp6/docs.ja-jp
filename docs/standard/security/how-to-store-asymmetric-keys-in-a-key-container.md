@@ -1,55 +1,56 @@
 ---
-title: "方法 : キー コンテナーに非対称キーを格納する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "非対称キー [.NET Framework]"
-  - "暗号化 [.NET Framework], 非対称キー"
-  - "復号化キー"
-  - "暗号化 [.NET Framework], 非対称キー"
-  - "暗号化キー"
-  - "キー, 非対称"
-  - "キー, 格納 (キー コンテナーに)"
-  - "格納 (非対称キーを)"
+title: "方法 : キー コンテナーに非対称キーを格納する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- cryptography [.NET Framework], asymmetric keys
+- storing asymmetric keys
+- keys, asymmetric
+- encryption keys
+- keys, storing in key containers
+- asymmetric keys [.NET Framework]
+- encryption [.NET Framework], asymmetric keys
+- decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-caps.latest.revision: 20
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "20"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 475139230c4b58bc6dcc307bd99eeafdc3e89e53
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : キー コンテナーに非対称キーを格納する
-非対称秘密キーは、ローカル コンピューターにそのまま平文として保存しないでください。  秘密キーを格納する必要がある場合は、キー コンテナーを使用することをお勧めします。  キー コンテナーの詳細については、「[Understanding Machine\-Level and User\-Level RSA Key Containers](../Topic/Understanding%20Machine-Level%20and%20User-Level%20RSA%20Key%20Containers.md)」を参照してください。  
+# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>方法 : キー コンテナーに非対称キーを格納する
+非対称秘密キーは、ローカル コンピューターにそのまま平文として保存しないでください。 秘密キーを格納する必要がある場合は、キー コンテナーを使用することをお勧めします。 キー コンテナーの詳細については、「[コンピューター レベルおよびユーザー レベルの RSA キー コンテナーについて](http://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9)」を参照してください。  
   
-### 非対称キーを作成し、キー コンテナーに格納するには  
+### <a name="to-create-an-asymmetric-key-and-save-it-in-a-key-container"></a>非対称キーを作成し、キー コンテナーに格納するには  
   
-1.  <xref:System.Security.Cryptography.CspParameters> クラスの新しいインスタンスを作成し、キー コンテナーを呼び出すときに使用する名前を <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=fullName> フィールドに渡します。  
+1.  新しいインスタンスを作成、<xref:System.Security.Cryptography.CspParameters>クラスし、キー コンテナーを呼び出したい名前を渡す、<xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType>フィールドです。  
   
-2.  <xref:System.Security.Cryptography.AsymmetricAlgorithm> クラスから派生したクラス \(通常は **RSACryptoServiceProvider** または **DSACryptoServiceProvider**\) の新しいインスタンスを作成し、前に作成した **CspParameters**オブジェクトをそのコンストラクターに渡します。  
+2.  派生したクラスの新しいインスタンスを作成、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラス (通常**RSACryptoServiceProvider**または**DSACryptoServiceProvider**) を渡す前に作成した**CspParameters**オブジェクト コンス トラクターをします。  
   
-### キー コンテナーからキーを削除するには  
+### <a name="to-delete-the-key-from-a-key-container"></a>キー コンテナーからキーを削除するには  
   
 1.  **CspParameters** クラスの新しいインスタンスを作成し、キー コンテナーを呼び出すときに使用する名前を **CspParameters.KeyContainerName** フィールドに渡します。  
   
-2.  **AsymmetricAlgorithm** クラスから派生したクラス \(通常は **RSACryptoServiceProvider** または **DSACryptoServiceProvider**\) の新しいインスタンスを作成し、前に作成した **CspParameters** オブジェクトをそのコンストラクターに渡します。  
+2.  **AsymmetricAlgorithm** クラスから派生したクラス (通常は **RSACryptoServiceProvider** または **DSACryptoServiceProvider**) の新しいインスタンスを作成し、前に作成した **CspParameters** オブジェクトをそのコンストラクターに渡します。  
   
-3.  **AsymmetricAlgorithm** から派生したクラスの **PersistKeyInCSP** プロパティを **false** \(Visual Basic では **False**\) に設定します。  
+3.  **AsymmetricAlgorithm** から派生したクラスの **PersistKeyInCSP** プロパティを **false** (Visual Basic では **False**) に設定します。  
   
-4.  **AsymmetricAlgorithm** から派生したクラスの **Clear** メソッドを呼び出します。  このメソッドは、クラスのすべてのリソースを解放し、キー コンテナーを消去します。  
+4.  **AsymmetricAlgorithm** から派生したクラスの **Clear** メソッドを呼び出します。 このメソッドは、クラスのすべてのリソースを解放し、キー コンテナーを消去します。   
   
-## 使用例  
+## <a name="example"></a>例  
  非対称キーを作成し、それをキー コンテナーへ格納し、後でキーを取得し、最後にキー コンテナーからキーを削除する方法の例を次に示します。  
   
  `GenKey_SaveInContainer` メソッドと `GetKeyFromContainer` メソッドのコードは類似していることに注意してください。  <xref:System.Security.Cryptography.CspParameters> オブジェクトのキー コンテナー名を指定した場合、<xref:System.Security.Cryptography.AsymmetricAlgorithm> プロパティまたは <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> プロパティを true に設定して、指定したキー コンテナーを <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> オブジェクトに渡すと、次のような処理が行われます。  指定した名前のキー コンテナーが存在しない場合、コンテナーが作成されてキーが保持されます。  指定した名前のキー コンテナーが存在する場合、そのコンテナー内のキーが現在の <xref:System.Security.Cryptography.AsymmetricAlgorithm> オブジェクトに自動的に読み込まれます。  つまり、最初に実行される `GenKey_SaveInContainer` メソッドのコードはこのキーを保持し、2 番目に実行される `GetKeyFromContainer` メソッドのコードはこのキーを読み込みます。  
@@ -130,7 +131,6 @@ Public Class StoreKey
         Console.WriteLine("Key deleted.")  
     End Sub  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -220,18 +220,18 @@ public class StoreKey
 ```  
   
 ```Output  
-  
-            Key added to container:  
+Key added to container:  
 <RSAKeyValue> Key Information A</RSAKeyValue>  
 Key retrieved from container :  
 <RSAKeyValue> Key Information A</RSAKeyValue>  
-Key deleted.  Key added to container:  
+Key deleted.  
+Key added to container:  
 <RSAKeyValue> Key Information B</RSAKeyValue>  
-Key deleted.    
+Key deleted.  
 ```  
   
-## 参照  
- [暗号化と復号化のためのキーの生成](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)   
- [データの暗号化](../../../docs/standard/security/encrypting-data.md)   
- [データの復号化](../../../docs/standard/security/decrypting-data.md)   
- [暗号サービス](../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a>関連項目  
+ [暗号化と復号化のためのキーの生成](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)  
+ [データの暗号化](../../../docs/standard/security/encrypting-data.md)  
+ [データの復号化](../../../docs/standard/security/decrypting-data.md)  
+ [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)

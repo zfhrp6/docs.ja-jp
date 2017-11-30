@@ -1,43 +1,44 @@
 ---
-title: "方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "グローバル アセンブリ キャッシュ、[ツールボックス アイテムの選択] ダイアログ ボックス"
-  - "AssemblyFoldersEx、[ツールボックス アイテムの選択] ダイアログ ボックス"
-  - "コントロール、[ツールボックス アイテムの選択] ダイアログ ボックスでの表示"
-  - "アセンブリ フォルダー登録、[ツールボックス アイテムの選択] ダイアログ ボックス"
-  - "[ツールボックス アイテムの選択] ダイアログ ボックス、コントロールの表示"
+title: "方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- global assembly cache [Windows Forms], Choose Toolbox Items dialog box
+- AssemblyFoldersEx [Windows Forms], Choose Toolbox Items dialog box
+- controls [Windows Forms], display in Choose Toolbox Items dialog box
+- assembly folder registration [Windows Forms], Choose Toolbox Items dialog box
+- Choose Toolbox Items dialog box [Windows Forms], display control
 ms.assetid: 01ef6eba-d044-40f0-951d-78eff7ebd9a9
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f7bbb13e8a2b877d0f503e091b5bb8b1e7e89d00
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する
-コントロールを作成して配布するときに、**\[ツールボックス アイテムの選択\]** ダイアログ ボックスにコントロールを表示できます。このダイアログ ボックスは、**ツールボックス**を右クリックし、**\[アイテムの選択\]** をクリックすると表示されます。  このダイアログ ボックスにコントロールを表示できるようにするには、AssemblyFoldersEx 登録プロシージャを使用します。  
+# <a name="how-to-display-a-control-in-the-choose-toolbox-items-dialog-box"></a>方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する
+を作成およびコントロールを配置することがそれらのコントロールに表示される、**ツールボックス アイテムの選択**を右クリックしたときに表示されるダイアログ ボックスで、**ツールボックス**選択**項目を選択して**です。 AssemblyFoldersEx 登録手順を使用してこのダイアログ ボックスに表示するコントロールを有効にすることができます。  
   
-### \[ツールボックス アイテムの選択\] ダイアログ ボックスにコントロールを表示するには  
+### <a name="to-display-your-control-in-the-choose-toolbox-items-dialog-box"></a>ツールボックス アイテムの選択 ダイアログ ボックスで、コントロールを表示するには  
   
--   コントロール アセンブリをグローバル アセンブリ キャッシュにインストールします。  詳細については、「[方法 : グローバル アセンブリ キャッシュにアセンブリをインストールする](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)」を参照してください。  
+-   コントロール アセンブリをグローバル アセンブリ キャッシュにインストールします。 詳細については、次を参照してください[する方法: グローバル アセンブリ キャッシュにアセンブリをインストール。](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
   
      または  
   
--   AssemblyFoldersEx 登録プロシージャを使用して、コントロールとそれに関連付けられているデザイン時アセンブリを登録します。  AssemblyFoldersEx は、サードパーティ ベンダーでサポートされているフレームワークの各バージョンのパスを格納するレジストリの位置です。  このレジストリの位置でデザイン時の解決を調べると、参照アセンブリを確認できます。  レジストリ スクリプトでツールボックスに表示するコントロールを指定できます。  詳細については、「[カスタム コントロールとデザイン時アセンブリの配置](http://msdn.microsoft.com/ja-jp/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)」を参照してください。  
+-   AssemblyFoldersEx 登録手順を使用して、コントロールとその関連付けられたデザイン時アセンブリを登録します。 AssemblyFoldersEx は、サード パーティ ベンダーがサポートされる framework の各バージョンのパスを格納する場所のレジストリの場所です。 デザイン時の解像度は、この参照アセンブリを検索するレジストリの場所で確認できます。 レジストリ スクリプトは、ツールボックスに表示するコントロールを指定できます。 詳細については、次を参照してください。[カスタム コントロールとデザイン時アセンブリ (Visual Studio 2013) の展開](http://msdn.microsoft.com/en-us/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)です。  
   
-## 参照  
- [Choose Toolbox Items Dialog Box \(Visual Studio\)](http://msdn.microsoft.com/ja-jp/bd07835f-18a8-433e-bccc-7141f65263bb)   
- [カスタム コントロールとデザイン時アセンブリの配置](http://msdn.microsoft.com/ja-jp/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)   
- [デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)   
- [方法 : グローバル アセンブリ キャッシュにアセンブリをインストールする](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)   
- [チュートリアル : ツールボックスへのカスタム コンポーネントの自動設定](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+## <a name="see-also"></a>関連項目  
+ [[ツールボックス アイテムの選択] ダイアログ ボックス (Visual Studio)](http://msdn.microsoft.com/en-us/bd07835f-18a8-433e-bccc-7141f65263bb)  
+ [カスタム コントロールとデザイン時アセンブリ (Visual Studio 2013) の展開](http://msdn.microsoft.com/en-us/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)  
+ [デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
+ [方法: グローバル アセンブリ キャッシュにアセンブリをインストールする](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
+ [チュートリアル: ツールボックスへのカスタム コンポーネントの自動設定](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

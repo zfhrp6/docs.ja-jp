@@ -1,30 +1,34 @@
 ---
-title: "Windows フォーム コントロールのイベントの定義 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "カスタム コントロール [Windows フォーム], イベント (コードを使用)"
-  - "イベント [Windows フォーム], 定義 (Windows フォームのカスタム コントロール内で)"
+title: "Windows フォーム コントロールのイベントの定義"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- events [Windows Forms], defining within Windows Forms custom controls
+- custom controls [Windows Forms], events using code
 ms.assetid: d89f1096-8061-42e2-a855-a1f053f1940a
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 592efefecb0428f87e5ac612c8fb162aa2fe85dd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム コントロールのイベントの定義
-カスタム イベントの定義方法の詳細については、「[イベント](../../../../docs/standard/events/index.md)」を参照してください。  関連データがないイベントを定義する場合、イベント データの基本型である <xref:System.EventArgs> を使用し、イベント デリゲートとして <xref:System.EventHandler> を使用します。  イベント メンバーを定義し、イベントを発生させる `On`*EventName* プロテクト メソッドを定義します。その他の操作は特に必要ありません。  
+# <a name="defining-an-event-in-windows-forms-controls"></a>Windows フォーム コントロールのイベントの定義
+カスタム イベントを定義する方法については、次を参照してください。[イベント](../../../../docs/standard/events/index.md)です。 関連データがないイベントを定義する場合、イベント データの基本型である <xref:System.EventArgs> を使用し、イベント デリゲートとして <xref:System.EventHandler> を使用します。 すべてを行うにはイベント メンバーとプロテクト定義`On` *EventName*イベントを発生させる方法です。  
   
- `FlashTrackBar` カスタム コントロールによる `ValueChanged` カスタム イベントの定義方法を示すコードを次に示します。  `FlashTrackBar` の完全なコード例については、「[方法 : 進行状況を示す Windows フォーム コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md)」を参照してください。  
+ `FlashTrackBar` カスタム コントロールによる `ValueChanged` カスタム イベントの定義方法を示すコードを次に示します。 完全なコード、`FlashTrackBar`サンプルを参照してください、[する方法: Windows フォーム コントロールを示しています進行状況を作成する](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md)です。  
   
 ```vb  
 Option Explicit  
@@ -83,7 +87,7 @@ public class FlashTrackBar : Control {
 }  
 ```  
   
-## 参照  
- [Windows フォーム コントロールのイベント](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)   
- [イベント](../../../../docs/standard/events/index.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム コントロールのイベント](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)  
+ [イベント](../../../../docs/standard/events/index.md)  
  [イベント](../../../../docs/standard/events/index.md)

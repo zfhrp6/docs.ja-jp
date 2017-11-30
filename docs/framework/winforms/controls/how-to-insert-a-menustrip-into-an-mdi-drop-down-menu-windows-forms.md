@@ -1,63 +1,67 @@
 ---
-title: "方法 : MDI ドロップダウン メニューに MenuStrip を挿入する (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "MDI, マージ (メニュー項目を)"
-  - "MenuStrip コントロール [Windows フォーム], 挿入"
-  - "MenuStrip コントロール [Windows フォーム], マージ"
+title: "方法: MDI ドロップダウン メニューに MenuStrip を挿入する (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- MenuStrip control [Windows Forms], inserting
+- MenuStrip control [Windows Forms], merging
+- MDI [Windows Forms], merging menu items
 ms.assetid: 0fad444e-26d9-49af-8860-044d9c10d608
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2befec35090cf69c6a12cfe24c3512ae9a9b1bfa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : MDI ドロップダウン メニューに MenuStrip を挿入する (Windows フォーム)
-アプリケーションの中には、マルチ ドキュメント インターフェイス \(MDI\) 子ウィンドウの種類が MDI 親ウィンドウと異なるものもあります。  たとえば、MDI 親がスプレッドシートで、MDI 子がグラフの場合があります。  そのような場合は、異なる種類の MDI 子ウィンドウがアクティブになったときに、MDI 子メニューの内容で MDI 親メニューの内容を更新する必要があります。  
+# <a name="how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms"></a>方法: MDI ドロップダウン メニューに MenuStrip を挿入する (Windows フォーム)
+アプリケーションの中には、マルチ ドキュメント インターフェイス (MDI) 子ウィンドウの種類が MDI 親ウィンドウと異なるものがあります。 たとえば、MDI 親がスプレッドシートで、MDI 子がグラフの場合があります。 そのような場合は、異なる種類の MDI 子ウィンドウがアクティブになったときに、MDI 子メニューの内容で MDI 親メニューの内容を更新する必要があります。  
   
- 次のプロシージャでは、<xref:System.Windows.Forms.Form.IsMdiContainer%2A>、<xref:System.Windows.Forms.ToolStrip.AllowMerge%2A>、<xref:System.Windows.Forms.MergeAction>、および <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> の各プロパティを使用して、MDI 子メニューのメニュー項目のグループを MDI 親メニューのドロップダウン部分に挿入します。  MDI 子ウィンドウを閉じると、挿入したメニュー項目が MDI 親ウィンドウから削除されます。  
+ 次の手順を使用して、 <xref:System.Windows.Forms.Form.IsMdiContainer%2A>、 <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A>、 <xref:System.Windows.Forms.MergeAction>、および<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>MDI 子メニューからメニュー項目のグループを MDI 親メニューのドロップダウン部分に挿入するプロパティです。 MDI 子ウィンドウを閉じると、MDI 親から挿入したメニュー項目が削除されます。  
   
-### MenuStrip を MDI ドロップダウン メニューに挿入するには  
+### <a name="to-insert-a-menustrip-into-an-mdi-drop-down-menu"></a>MDI ドロップダウン メニューに MenuStrip を挿入するには  
   
 1.  フォームを作成し、その <xref:System.Windows.Forms.Form.IsMdiContainer%2A> プロパティを `true` に設定します。  
   
 2.  <xref:System.Windows.Forms.MenuStrip> を `Form1` に追加し、<xref:System.Windows.Forms.MenuStrip> の <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> プロパティを `true` に設定します。  
   
-3.  トップレベル メニュー項目を `Form1` <xref:System.Windows.Forms.MenuStrip> に追加し、その <xref:System.Windows.Forms.Control.Text%2A> プロパティを `&File` に設定します。  
+3.  トップレベル メニュー項目を `Form1` の <xref:System.Windows.Forms.MenuStrip> に追加し、その <xref:System.Windows.Forms.Control.Text%2A> プロパティを「`&File`」に設定しますす。  
   
-4.  3 つのサブメニュー項目を `&File` メニュー項目に追加し、それらの <xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティをそれぞれ `&Open`、`&Import from`、および `E&xit` に設定します。  
+4.  次の 3 つのサブメニュー項目を追加、`&File`メニュー項目とセット、<xref:System.Windows.Forms.ToolStripItem.Text%2A>プロパティ`&Open`、 `&Import from`、および`E&xit`です。  
   
-5.  2 つのサブメニュー項目を `&Import from` サブメニュー項目に追加し、それらの <xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティをそれぞれ `&Word` と `&Excel` に設定します。  
+5.  2 つのサブメニュー項目を追加、`&Import from`サブメニュー項目とその<xref:System.Windows.Forms.ToolStripItem.Text%2A>プロパティを`&Word`と`&Excel`です。  
   
-6.  フォームをプロジェクトに追加し、<xref:System.Windows.Forms.MenuStrip> をフォームに追加して、`Form2` <xref:System.Windows.Forms.MenuStrip> の <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> プロパティを `true` に設定します。  
+6.  プロジェクトにフォームを追加し、フォームに <xref:System.Windows.Forms.MenuStrip> を追加し、`Form2` の <xref:System.Windows.Forms.MenuStrip> の <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> のプロパティを `true` に設定します。  
   
-7.  トップレベル メニュー項目を `Form2` <xref:System.Windows.Forms.MenuStrip> に追加し、その <xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティを `&File` に設定します。  
+7.  トップレベル メニュー項目を `Form2` の <xref:System.Windows.Forms.MenuStrip> に追加し、その <xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティを「`&File`」に設定しますす。  
   
-8.  `Form2` の `&File` メニューにサブメニュー項目を追加します。追加する順番は、<xref:System.Windows.Forms.ToolStripSeparator>、`&Save`、`&Close` `and Save`、およびもう 1 つの <xref:System.Windows.Forms.ToolStripSeparator> となります。  
+8.  サブメニュー項目の追加、`&File`のメニュー`Form2`次の順序で: <xref:System.Windows.Forms.ToolStripSeparator>、 `&Save`、 `&Close``and Save`、および別<xref:System.Windows.Forms.ToolStripSeparator>です。  
   
-9. 次の表に示すように、`Form2` メニュー項目の <xref:System.Windows.Forms.MergeAction> プロパティと <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> プロパティを設定します。  
+9. 設定、<xref:System.Windows.Forms.MergeAction>と<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>のプロパティ、`Form2`メニュー項目を次の表に示すようにします。  
   
     |Form2 メニュー項目|MergeAction 値|MergeIndex 値|  
-    |------------------|-------------------|------------------|  
-    |File|MatchOnly|\-1|  
-    |\[Separator\]|\[挿入\]|2|  
-    |保存|\[挿入\]|3|  
-    |\[保存して閉じる\]|\[挿入\]|4|  
-    |\[Separator\]|\[挿入\]|5|  
+    |---------------------|-----------------------|----------------------|  
+    |ファイル|MatchOnly|-1|  
+    |区切り記号|挿入|2|  
+    |保存|挿入|3|  
+    |保存して閉じる|挿入|4|  
+    |区切り記号|挿入|5|  
   
-10. `&Open` <xref:System.Windows.Forms.ToolStripMenuItem> の <xref:System.Windows.Forms.Control.Click> イベントのイベント ハンドラーを作成します。  
+10. <xref:System.Windows.Forms.ToolStripMenuItem> の `&Open` の <xref:System.Windows.Forms.Control.Click> イベントにイベント ハンドラーを作成します。  
   
-11. このイベント ハンドラー内に次のようなコード例を挿入し、`Form1` の MDI 子フォームとして `Form2` の新しいインスタンスを作成および表示します。  
+11. このイベント ハンドラー内に次のコード例のようなコードを挿入し、`Form2` の新規インスタンスを `Form1` の MDI 子フォームとして作成し、表示します。  
   
     ```vb  
     Private Sub openToolStripMenuItem_Click(ByVal sender As System.Object, _  
@@ -68,7 +72,6 @@ caps.handback.revision: 14
         'Display the new form.  
             NewMDIChild.Show()  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -80,32 +83,29 @@ caps.handback.revision: 14
         // Display the new form.  
             newMDIChild.Show();  
     }  
-  
     ```  
   
-12. 次のようなコードを `&Open` <xref:System.Windows.Forms.ToolStripMenuItem> に配置し、イベント ハンドラーを登録します。  
+12. `&Open`<xref:System.Windows.Forms.ToolStripMenuItem> に次のコード例のようなコードを配置し、イベント ハンドラーを登録します。  
   
     ```vb  
     Private Sub openToolStripMenuItem_Click(sender As Object, e As _  
     EventArgs) Handles openToolStripMenuItem.Click  
-  
     ```  
   
     ```csharp  
     this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);  
-  
     ```  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例で必要な要素は次のとおりです。  
   
 -   `Form1` と `Form2` という名前の 2 つの <xref:System.Windows.Forms.Form> コントロール。  
   
--   `menuStrip1` という名前の `Form1` の <xref:System.Windows.Forms.MenuStrip> コントロール、および `menuStrip2` という名前の `Form2` の <xref:System.Windows.Forms.MenuStrip> コントロール。  
+-   `Form1` 上の `menuStrip1` という名前の <xref:System.Windows.Forms.MenuStrip> コントロールと、`Form2` 上の `menuStrip2` という名前の <xref:System.Windows.Forms.MenuStrip> コントロール。  
   
--   <xref:System?displayProperty=fullName> アセンブリおよび <xref:System.Windows.Forms?displayProperty=fullName> アセンブリへの参照。  
+-   <xref:System?displayProperty=nameWithType> アセンブリおよび <xref:System.Windows.Forms?displayProperty=nameWithType> アセンブリへの参照。  
   
-## 参照  
- [方法 : MDI 親フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)   
- [方法 : MDI 子フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [方法: MDI 親フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ [方法: MDI 子フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
  [MenuStrip コントロールの概要](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)

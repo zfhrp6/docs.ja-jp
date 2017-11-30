@@ -1,47 +1,49 @@
 ---
-title: "RelativeSource のマークアップ拡張機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "RelativeSource"
-helpviewer_keywords: 
-  - "RelativeSource のマークアップ拡張機能"
-  - "XAML, RelativeSource マークアップ拡張機能"
+title: "RelativeSource のマークアップ拡張機能"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: RelativeSource
+helpviewer_keywords:
+- RelativeSource markup extensions [WPF]
+- XAML [WPF], RelativeSource markup extension
 ms.assetid: 26be4721-49b5-4717-a92e-7d54ad0d3a81
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 41978e7b91c50b33649bd88e23d22fce7a272c5b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# RelativeSource のマークアップ拡張機能
-[バインドのマークアップ拡張機能](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)内で使用されるか、または XAML で設定された <xref:System.Windows.Data.Binding> 要素の <xref:System.Windows.Data.Binding.RelativeSource%2A> プロパティの設定時に使用される、<xref:System.Windows.Data.RelativeSource> バインディング ソースのプロパティを指定します。  
+# <a name="relativesource-markupextension"></a>RelativeSource のマークアップ拡張機能
+プロパティを指定します、<xref:System.Windows.Data.RelativeSource>内で使用する、バインド データ ソース、[バインディング マークアップ拡張](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)を設定する場合や、<xref:System.Windows.Data.Binding.RelativeSource%2A>のプロパティ、 <xref:System.Windows.Data.Binding> XAML で確立されている要素です。  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
   
-```  
-<Binding RelativeSource="{RelativeSource modeEnumValue}" .../>  
-```  
-  
-## XAML 属性の使用方法 \(バインディング拡張内で入れ子にした場合\)  
-  
-```  
-<object property="{Binding RelativeSource={RelativeSource modeEnumValue} ...}" .../>  
+```xml  
+<Binding RelativeSource="{RelativeSource modeEnumValue}" .../>  
 ```  
   
-## XAML オブジェクト要素の使用方法  
+## <a name="xaml-attribute-usage-nested-within-binding-extension"></a>XAML 属性の使用方法 (バインディング拡張内で入れ子にした場合)  
   
+```xml  
+<object property="{Binding RelativeSource={RelativeSource modeEnumValue} ...}" .../>  
 ```  
+  
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```xml  
 <Binding>  
   <Binding.RelativeSource>  
-    <RelativeSource Mode="modeEnumValue"/>  
+    <RelativeSource Mode="modeEnumValue"/>  
   </Binding.RelativeSource>  
 </Binding>  
 - or   
@@ -49,42 +51,42 @@ caps.handback.revision: 18
   <Binding.RelativeSource>  
     <RelativeSource  
       Mode="FindAncestor"  
-      AncestorType="{x:Type typeName}"  
+      AncestorType="{x:Type typeName}"  
       AncestorLevel="intLevel"  
     />  
   </Binding.RelativeSource>  
 </Binding>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|`modeEnumValue`|次のいずれかになります。<br /><br /> -   文字列トークン `Self`。<xref:System.Windows.Data.RelativeSource> に対応し、<xref:System.Windows.Data.RelativeSource.Mode%2A> プロパティは <xref:System.Windows.Data.RelativeSourceMode> に設定されます。<br />-   文字列トークン `TemplatedParent`。<xref:System.Windows.Data.RelativeSource> に対応し、<xref:System.Windows.Data.RelativeSource.Mode%2A> プロパティは <xref:System.Windows.Data.RelativeSourceMode> に設定されます。<br />-   文字列トークン `PreviousData`。<xref:System.Windows.Data.RelativeSource> に対応し、<xref:System.Windows.Data.RelativeSource.Mode%2A> プロパティは <xref:System.Windows.Data.RelativeSourceMode> に設定されます。<br />-   `FindAncestor` については、以下を参照してください。|  
-|`FindAncestor`|文字列トークン `FindAncestor`。  このトークンを使用すると、`RelativeSource` によって先祖の型およびオプションで先祖レベルを指定するモードになります。  これは、<xref:System.Windows.Data.RelativeSource.Mode%2A> プロパティが <xref:System.Windows.Data.RelativeSourceMode> に設定された状態で作成された <xref:System.Windows.Data.RelativeSource> に対応します。|  
-|`typeName`|`FindAncestor` モードで必要です。  <xref:System.Windows.Data.RelativeSource.AncestorType%2A> プロパティに指定する型の名前。|  
-|`intLevel`|`FindAncestor` モードのオプションです。  論理ツリー内で親の方向に向けて数えた先祖レベル。|  
+|`modeEnumValue`|次のいずれかになります。<br /><br /> -文字列トークン`Self`; に対応する、<xref:System.Windows.Data.RelativeSource>で作成されると、<xref:System.Windows.Data.RelativeSource.Mode%2A>プロパティに設定<xref:System.Windows.Data.RelativeSourceMode.Self>です。<br />-文字列トークン`TemplatedParent`; に対応する、<xref:System.Windows.Data.RelativeSource>で作成されると、<xref:System.Windows.Data.RelativeSource.Mode%2A>プロパティに設定<xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>です。<br />-文字列トークン`PreviousData`; に対応する、<xref:System.Windows.Data.RelativeSource>で作成されると、<xref:System.Windows.Data.RelativeSource.Mode%2A>プロパティに設定<xref:System.Windows.Data.RelativeSourceMode.PreviousData>です。<br />-は後述情報で`FindAncestor`モード。|  
+|`FindAncestor`|文字列トークン `FindAncestor`。 このトークンを使用すると、`RelativeSource` によって先祖の型およびオプションで先祖レベルを指定するモードになります。 これは、<xref:System.Windows.Data.RelativeSource> プロパティが <xref:System.Windows.Data.RelativeSource.Mode%2A> に設定された状態で作成された <xref:System.Windows.Data.RelativeSourceMode.FindAncestor> に対応します。|  
+|`typeName`|`FindAncestor` モードで必要です。 <xref:System.Windows.Data.RelativeSource.AncestorType%2A> プロパティに指定する型の名前。|  
+|`intLevel`|`FindAncestor` モードのオプションです。 論理ツリー内で親の方向に向けて数えた先祖レベル。|  
   
-## 解説  
- `{RelativeSource TemplatedParent}` バインディングの用法は、コントロールの UI とロジックを分離するという、より大きな構想を解決するための鍵となる手法です。  これによって、テンプレートが適用される親 \(テンプレートが適用されるランタイム オブジェクト インスタンス\) へのバインディングをテンプレート定義内から行うことができます。  この場合、[TemplateBinding のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md) は、実際には、`{Binding RelativeSource={RelativeSource TemplatedParent}}` というバインディング式を略したものです。  `TemplateBinding` と `{RelativeSource TemplatedParent}` の使用法はどちらも、テンプレートを定義する XAML 内でのみ意味を持ちます。  詳細については、「[TemplateBinding のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ `{RelativeSource TemplatedParent}`バインディングでの使用は、コントロールの UI とコントロールのロジックの分離のより大きな概念に対応するキーの手法です。 これによって、テンプレートが適用される親 (テンプレートが適用されるランタイム オブジェクト インスタンス) へのバインディングをテンプレート定義内から行うことができます。 この場合の[TemplateBinding マークアップ拡張機能](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)が実際には、次のバインド式の短縮形:`{Binding RelativeSource={RelativeSource TemplatedParent}}`です。 `TemplateBinding`または`{RelativeSource TemplatedParent}`の使用法が両方のテンプレートを定義する XAML 内でのみ関連します。 詳細については、次を参照してください[TemplateBinding マークアップ拡張機能。](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)  
   
- `{RelativeSource FindAncestor}` の主な用途は、コントロール テンプレート内または予測可能な独立した UI 合成です。特定の先祖の型のビジュアル ツリー内にコントロールが常に存在することがわかっているケースで使用されます。  たとえば、項目コントロールの各項目は `FindAncestor` を使用して、その項目コントロールの親先祖のプロパティにバインドすることができます。  または、テンプレート内のコントロール合成に参加している要素は、同じ合成体系の親要素に対して `FindAncestor` バインディングを使用できます。  
+ `{RelativeSource FindAncestor}`場合、特定の先祖の種類のビジュアル ツリー内にあるコントロールが常に必要な場所でコントロール テンプレートまたは予測可能な自己完結型の UI コンポジション、主に使用されます。 たとえば、項目コントロールの各項目は `FindAncestor` を使用して、その項目コントロールの親先祖のプロパティにバインドすることができます。 または、テンプレート内のコントロール合成に参加している要素は、同じ合成体系の親要素に対して `FindAncestor` バインディングを使用できます。  
   
- XAML 構文のセクションに示した `FindAncestor` モードのオブジェクト要素構文では、2 番目のオブジェクト要素構文は `FindAncestor` モード向けに使用されます。  `FindAncestor` モードでは、<xref:System.Windows.Data.RelativeSource.AncestorType%2A> 値が必要です。  検索する先祖の型への [x:Type マークアップ拡張機能](../../../../docs/framework/xaml-services/x-type-markup-extension.md)参照を使用して、<xref:System.Windows.Data.RelativeSource.AncestorType%2A> を属性として設定する必要があります。  <xref:System.Windows.Data.RelativeSource.AncestorType%2A> 値は、実行時にバインディング要求を処理する際に使用されます。  
+ XAML 構文のセクションに示した `FindAncestor` モードのオブジェクト要素構文では、2 番目のオブジェクト要素構文は `FindAncestor` モード向けに使用されます。 `FindAncestor` モードでは、<xref:System.Windows.Data.RelativeSource.AncestorType%2A> 値が必要です。 設定する必要があります<xref:System.Windows.Data.RelativeSource.AncestorType%2A>を使用して、属性として、 [X:type マークアップ拡張機能](../../../../docs/framework/xaml-services/x-type-markup-extension.md)検索する先祖の型への参照。 <xref:System.Windows.Data.RelativeSource.AncestorType%2A> 値は、実行時にバインディング要求を処理する際に使用されます。  
   
  `FindAncestor` モードでは、オプションの <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> プロパティは、要素ツリー内に型の先祖が複数存在する可能性がある場合に、先祖の検索のあいまいさを解消するのに役立ちます。  
   
  `FindAncestor` モードの使用方法の詳細については、「<xref:System.Windows.Data.RelativeSource>」を参照してください。  
   
- `{RelativeSource Self}` は、特定のインスタンスのプロパティが同じインスタンスの別のプロパティの値に依存しており、その 2 つのプロパティ間に通常の依存関係プロパティの関係 \(強制変換など\) が存在しない状況で活用できます。  まったく同じ値、まったく同じ型を持つ 2 つのプロパティが 1 つのオブジェクトに存在することはまれですが、`{RelativeSource Self}` を持つバインディングに `Converter` パラメーターを適用し、そのコンバーターを使用してソースとターゲットの型変換を行うこともできます。  `{RelativeSource Self}` は、<xref:System.Windows.MultiDataTrigger> の一部として活用することもできます。  
+ `{RelativeSource Self}`シナリオに便利ですが、インスタンスの 1 つのプロパティは必要があります、同じインスタンスと一般的な依存関係プロパティ関係がない (強制型変換) などの別のプロパティの値に依存既にこれら 2 つのプロパティの間が存在します。 リテラルと同じです (と同じように型指定された) の値になるようオブジェクトに対して 2 つのプロパティが存在し、適用することもことはまれですが、`Converter`パラメーターになっているバインディングを`{RelativeSource Self}`ソースの間で変換するコンバーターを使用して、対象の種類。 別のシナリオとして`{RelativeSource Self}`の一部として、<xref:System.Windows.MultiDataTrigger>です。  
   
- たとえば、`<Rectangle Width="200" Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}" .../>` という XAML は、<xref:System.Windows.Shapes.Rectangle> 要素を定義します。<xref:System.Windows.FrameworkElement.Width%2A> にどのような値が入力されても、<xref:System.Windows.Shapes.Rectangle> は常に正方形となります。  
+ たとえば、<xref:System.Windows.Shapes.Rectangle> という XAML は、<xref:System.Windows.FrameworkElement.Width%2A> 要素を定義します。<xref:System.Windows.Shapes.Rectangle> にどのような値が入力されても、`<Rectangle Width="200" Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}" .../>` は常に正方形となります。  
   
- `{RelativeSource PreviousData}` は、データ テンプレートで活用できるほか、バインディングにデータ ソースのコレクションを使用する場合にも役立ちます。  `{RelativeSource PreviousData}` を使用すると、コレクション内の隣接するデータ項目どうしの関係に注目することができます。  これと関連して、データ ソース内の現在の項目と直前の項目との間に <xref:System.Windows.Data.MultiBinding> を確立し、そのバインディング上のコンバーターを使用して、2 つの項目 \(およびそれらのプロパティ\) 間の相違を特定する手法もあります。  
+ `{RelativeSource PreviousData}`データ テンプレート、またはバインディングを使用しているコレクションのデータ ソースとしての場合に便利です。 使用することができます`{RelativeSource PreviousData}`をコレクション内の連続するデータ項目間のリレーションシップを強調表示します。 これと関連して、データ ソース内の現在の項目と直前の項目との間に <xref:System.Windows.Data.MultiBinding> を確立し、そのバインディング上のコンバーターを使用して、2 つの項目 (およびそれらのプロパティ) 間の相違を特定する手法もあります。  
   
- 次の例の項目テンプレートに出現する 1 つ目の <xref:System.Windows.Controls.TextBlock> は、現在の数値を表示します。  2 つ目の <xref:System.Windows.Controls.TextBlock> バインディングは、<xref:System.Windows.Data.MultiBinding> で、通常 2 つの <xref:System.Windows.Data.Binding> 構成要素を持ちます \(現在のレコードと、`{RelativeSource PreviousData}` を使用して直前のデータ レコードを意図的に使用するバインディング\)。  <xref:System.Windows.Data.MultiBinding> 上のコンバーターが、両者の差を計算し、バインディングに返します。  
+ 次の例の項目テンプレートに出現する 1 つ目の <xref:System.Windows.Controls.TextBlock> は、現在の数値を表示します。 2 番目<xref:System.Windows.Controls.TextBlock>バインディングは、<xref:System.Windows.Data.MultiBinding>名目上のある 2 つ<xref:System.Windows.Data.Binding>consistuents: 現在のレコードと前のデータ レコードを使用して、意図的に使用するバインディング`{RelativeSource PreviousData}`です。 <xref:System.Windows.Data.MultiBinding> 上のコンバーターが、両者の差を計算し、バインディングに返します。  
   
-```  
+```xml  
 <ListBox Name="fibolist">  
     <ListBox.ItemTemplate>  
         <DataTemplate>  
@@ -100,21 +102,21 @@ caps.handback.revision: 18
                     </TextBlock.Text>  
                 </TextBlock>  
             </StackPanel>  
-            </DataTemplate>  
+        </DataTemplate>  
     </ListBox.ItemTemplate>  
 ```  
   
- ここで説明されていないデータ バインディングの概念については、「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ ここでは、概念が未カバーとしてデータ バインディングを記述するを参照してください[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML プロセッサ実装では、このマークアップ拡張機能の処理は、<xref:System.Windows.Data.RelativeSource> クラスによって定義されます。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML プロセッサの実装でこのマークアップ拡張機能の処理が定義されている、<xref:System.Windows.Data.RelativeSource>クラスです。  
   
- `RelativeSource` はマークアップ拡張機能です。  一般にマークアップ拡張機能を実装するのは、属性値をリテラル値やハンドラー名以外にエスケープする要件が存在し、その要件の適用範囲がグローバルで、特定の型やプロパティに型コンバーターを適用するだけにとどまらない場合です。  XAML のすべてのマークアップ拡張機能では、それぞれの属性構文で `{` と `}` の 2 つの記号を使用します。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張機能で属性を処理する必要があることを認識します。  詳細については、「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
+ `RelativeSource` はマークアップ拡張機能です。 一般にマークアップ拡張機能を実装するのは、属性値をリテラル値やハンドラー名以外にエスケープする要件が存在し、その要件の適用範囲がグローバルで、特定の型やプロパティに型コンバーターを適用するだけにとどまらない場合です。 XAML の使用中のすべてのマークアップ拡張機能、`{`と`}`マークアップ拡張機能が、属性を処理する必要がありますを XAML プロセッサが認識する規則は、それぞれの属性構文内の文字です。 詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
   
-## 参照  
- <xref:System.Windows.Data.Binding>   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [バインディング宣言の概要](../../../../docs/framework/wpf/data/binding-declarations-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Data.Binding>  
+ [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [バインディング宣言の概要](../../../../docs/framework/wpf/data/binding-declarations-overview.md)  
  [x:Type マークアップ拡張機能](../../../../docs/framework/xaml-services/x-type-markup-extension.md)
