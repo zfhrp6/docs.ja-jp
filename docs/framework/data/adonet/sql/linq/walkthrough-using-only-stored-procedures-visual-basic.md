@@ -1,53 +1,57 @@
 ---
-title: "Walkthrough: Using Only Stored Procedures (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "チュートリアル : ストアド プロシージャのみの使用 (Visual Basic)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 2facb328791f07d6def2d466c799f031fe500d6f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Walkthrough: Using Only Stored Procedures (Visual Basic)
-このチュートリアルでは、ストアド プロシージャのみを使用してデータにアクセスする、基本の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] シナリオ全体を示します。  この方法は、データ ストアへのアクセス方法を制限する目的で、データベース管理者によってよく使用されます。  
+# <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>チュートリアル : ストアド プロシージャのみの使用 (Visual Basic)
+このチュートリアルでは、ストアド プロシージャのみを使用してデータにアクセスする、基本の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] シナリオ全体を示します。 この方法は、データ ストアへのアクセス方法を制限する目的で、データベース管理者によってよく使用されます。  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションでストアド プロシージャを使用して、既定の動作をオーバーライドすることもできます。これは、`Create`、`Update`、および `Delete` の各プロセスで特に役立ちます。  詳細については、「[Customizing Insert, Update, and Delete Operations](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)」を参照してください。  
+>  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションでストアド プロシージャを使用して、既定の動作をオーバーライドすることもできます。これは、`Create`、`Update`、および `Delete` の各プロセスで特に役立ちます。 詳細については、次を参照してください。[のカスタマイズを挿入、更新、および削除を行う](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)です。  
   
- このチュートリアルでは、Northwind サンプル データベース内のストアド プロシージャにマップされた 2 つのメソッド \(CustOrdersDetail および CustOrderHist\) を使用します。  SqlMetal コマンド ライン ツールを実行して [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] ファイルを生成すると、対応付けが発生します。  詳細については、このチュートリアルの「前提条件」を参照してください。  
+ このチュートリアルでは、Northwind サンプル データベース内のストアド プロシージャにマップされた 2 つのメソッド (CustOrdersDetail および CustOrderHist) を使用します。 SqlMetal コマンド ライン ツールを実行して [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] ファイルを生成すると、対応付けが発生します。 詳細については、このチュートリアルの「前提条件」を参照してください。  
   
- このチュートリアルは、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]には依存しません。  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している開発者は、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]を使用して、ストアド プロシージャの機能を実装することもできます。  「[LINQ to Visual Studio での SQL ツール](../Topic/LINQ%20to%20SQL%20Tools%20in%20Visual%20Studio2.md)」を参照してください。  
+ このチュートリアルは、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]には依存しません。 [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している開発者は、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]を使用して、ストアド プロシージャの機能を実装することもできます。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
  このチュートリアルは、Visual Basic 開発設定を使用して記述されています。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルの前提条件は次のとおりです。  
   
--   このチュートリアルでは、専用フォルダー \("c:\\linqtest3"\) を使用してファイルを保持します。  チュートリアルを開始する前に、このフォルダーを作成してください。  
+-   このチュートリアルでは、専用フォルダー ("c:\linqtest3") を使用してファイルを保持します。 チュートリアルを開始する前に、このフォルダーを作成してください。  
   
 -   Northwind サンプル データベース。  
   
-     開発用コンピューターにこのデータベースがない場合は、Microsoft ダウンロード サイトからダウンロードします。  手順については、「[Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)」を参照してください。  データベースをダウンロードしたら、northwnd.mdf ファイルを c:\\linqtest3 フォルダーにコピーします。  
+     開発用コンピューターにこのデータベースがない場合は、Microsoft ダウンロード サイトからダウンロードします。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。 データベースをダウンロードしたら、northwnd.mdf ファイルを c:\linqtest3 フォルダーにコピーします。  
   
 -   Northwind データベースから生成された [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] コード ファイル。  
   
      このチュートリアルは、SqlMetal ツールを使用して次のコマンド ラインで作成されています。  
   
-     **sqlmetal \/code:"c:\\linqtest3\\northwind.vb" \/language:vb "c:\\linqtest3\\northwnd.mdf" \/sprocs \/functions \/pluralize**  
+     **sqlmetal/code:"c:\linqtest3\northwind.vb"/language:vb"c:\linqtest3\northwnd.mdf"さらに、/sprocs/functions/pluralize**  
   
-     詳細については、「[SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」を参照してください。  
+     詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。  
   
-## 概要  
+## <a name="overview"></a>概要  
  このチュートリアルは、主に次の 6 つの手順で構成されています。  
   
 -   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] で [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ソリューションを設定します。  
@@ -62,53 +66,53 @@ caps.handback.revision: 4
   
 -   アプリケーションを実行およびテストします。  
   
-## LINQ to SQL ソリューションを作成する  
+## <a name="creating-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成する  
  最初に、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] プロジェクトをビルドおよび実行するために必要な参照を含む [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ソリューションを作成します。  
   
-#### LINQ to SQL ソリューションを作成するには  
+#### <a name="to-create-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成するには  
   
-1.  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] の **\[ファイル\]** メニューの **\[新しいプロジェクト\]** をクリックします。  
+1.  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] **ファイル** メニューのをクリックして**新しいプロジェクト**です。  
   
-2.  **\[新しいプロジェクト\]** ダイアログ ボックスの **\[プロジェクトの種類\]** ペインで、**\[Visual Basic\]** を展開し、**\[Windows\]** をクリックします。  
+2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、 **[Visual Basic]**を展開し、 **[Windows]**をクリックします。  
   
-3.  **\[テンプレート\]** ペインの **\[Windows フォーム アプリケーション\]** をクリックします。  
+3.  **[テンプレート]** ペインの **[Windows フォーム アプリケーション]**をクリックします。  
   
-4.  **\[名前\]** ボックスに、「SprocOnlyApp」と入力します。  
+4.  **名前**ボックスに、入力**sproconlyapp」と入力**です。  
   
-5.  **\[OK\]** をクリックします。  
+5.  **[OK]** をクリックします。  
   
      Windows フォーム デザイナーが開きます。  
   
-## LINQ to SQL アセンブリ参照を追加する  
- 標準の Windows フォーム アプリケーション テンプレートには、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アセンブリは含まれていません。  次の手順に従って、アセンブリを自分で追加する必要があります。  
+## <a name="adding-the-linq-to-sql-assembly-reference"></a>LINQ to SQL アセンブリ参照を追加する  
+ 標準の Windows フォーム アプリケーション テンプレートには、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アセンブリは含まれていません。 次の手順に従って、アセンブリを自分で追加する必要があります。  
   
-#### System.Data.Linq.dll を追加するには  
+#### <a name="to-add-systemdatalinqdll"></a>System.Data.Linq.dll を追加するには  
   
-1.  **ソリューション エクスプローラー**で、**\[すべてのファイルを表示\]** をクリックします。  
+1.  **ソリューション エクスプ ローラー**をクリックして**すべてのファイル**です。  
   
-2.  **ソリューション エクスプローラー**で、**\[参照設定\]** を右クリックし、**\[参照の追加\]** をクリックします。  
+2.  **ソリューション エクスプ ローラー**を右クリックして**参照**、クリックして**参照の追加**です。  
   
-3.  **\[参照の追加\]** ダイアログ ボックスで、**\[.NET\]** をクリックし、System.Data.Linq アセンブリをクリックします。次に、**\[OK\]** をクリックします。  
+3.  **参照の追加**ダイアログ ボックスで、をクリックして**.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
   
      アセンブリがプロジェクトに追加されます。  
   
-## プロジェクトに Northwind コード ファイルを追加する  
- この手順では、事前に SqlMetal ツールを使用して、Northwind サンプル データベースからコード ファイルを生成していることが前提となります。  詳細については、このチュートリアルの「前提条件」を参照してください。  
+## <a name="adding-the-northwind-code-file-to-the-project"></a>プロジェクトに Northwind コード ファイルを追加する  
+ この手順では、事前に SqlMetal ツールを使用して、Northwind サンプル データベースからコード ファイルを生成していることが前提となります。 詳細については、このチュートリアルの「前提条件」を参照してください。  
   
-#### プロジェクトに Northwind コード ファイルを追加するには  
+#### <a name="to-add-the-northwind-code-file-to-the-project"></a>プロジェクトに Northwind コード ファイルを追加するには  
   
-1.  \[プロジェクト\] メニューの \[既存のアイテムの追加\] をクリックします。  
+1.  **プロジェクト** メニューのをクリックして**既存項目の追加**です。  
   
-2.  **\[既存項目の追加\]** ダイアログ ボックスで c:\\linqtest3\\northwind.vb ファイルに移動し、**\[追加\]** をクリックします。  
+2.  **既存項目の追加**ダイアログ ボックスで c:\linqtest3\northwind.vb に移動し、をクリックして**追加**です。  
   
      プロジェクトに northwind.vb ファイルが追加されます。  
   
-## データベース接続を作成する  
- この手順では、Northwind サンプル データベースへの接続を定義します。  このチュートリアルでは、パスとして "c:\\linqtest3\\northwnd.mdf" を使用します。  
+## <a name="creating-a-database-connection"></a>データベース接続を作成する  
+ この手順では、Northwind サンプル データベースへの接続を定義します。 このチュートリアルでは、パスとして "c:\linqtest3\northwnd.mdf" を使用します。  
   
-#### データベース接続を作成するには  
+#### <a name="to-create-the-database-connection"></a>データベース接続を作成するには  
   
-1.  **ソリューション エクスプローラー**で **\[Form1.vb\]** を右クリックし、**\[コードの表示\]** をクリックします。  
+1.  **ソリューション エクスプ ローラー**を右クリックして**Form1.vb**、クリックして**コードの表示**です。  
   
      コード エディターに `Class Form1` が表示されます。  
   
@@ -116,86 +120,86 @@ caps.handback.revision: 4
   
      [!code-vb[DLinqWalk4VB#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk4VB/vb/Form1.vb#1)]  
   
-## ユーザー インターフェイスを設定する  
- この手順では、ユーザーがストアド プロシージャを実行してデータベース内のデータにアクセスできるように、インターフェイスを作成します。  このチュートリアルで作成するアプリケーションでは、ユーザーはアプリケーションに埋め込まれているストアド プロシージャを使用してのみ、データベース内のデータにアクセスできます。  
+## <a name="setting-up-the-user-interface"></a>ユーザー インターフェイスを設定する  
+ この手順では、ユーザーがストアド プロシージャを実行してデータベース内のデータにアクセスできるように、インターフェイスを作成します。 このチュートリアルで作成するアプリケーションでは、ユーザーはアプリケーションに埋め込まれているストアド プロシージャを使用してのみ、データベース内のデータにアクセスできます。  
   
-#### ユーザー インターフェイスを設定するには  
+#### <a name="to-set-up-the-user-interface"></a>ユーザー インターフェイスを設定するには  
   
-1.  Windows フォーム デザイナーに戻ります \(**\[Form1.vb \[デザイン\]\]**\)。  
+1.  戻り値を Windows フォーム デザイナー (**form1.vb [デザイン]**)。  
   
-2.  **\[表示\]** メニューの **\[ツールボックス\]** をクリックします。  
+2.  **[表示]** メニューの **[ツールボックス]**をクリックします。  
   
      ツールボックスが表示されます。  
   
     > [!NOTE]
-    >  このセクションの残りの手順を実行する間、ツールボックスを開いたままにしておくには、**\[自動的に隠す\]** プッシュピンをクリックします。  
+    >  をクリックして、**自動的に隠す**このセクションの手順を残りの実行中に、ツールボックスを開いたままにします。  
   
-3.  ツールボックスから、2 つのボタン、2 つのテキスト ボックス、および 2 つのラベルを **Form1** にドラッグします。  
+3.  2 つのボタン、2 つのテキスト ボックス、および 2 つのラベルをツールボックスからドラッグ**Form1**です。  
   
-     図のようにコントロールを配置します。  コントロールを簡単に配置できるように、**Form1** のサイズを拡大します。  
+     図のようにコントロールを配置します。 展開**Form1**コントロールを簡単に配置できるようにします。  
   
-4.  **\[Label1\]** を右クリックし、**\[プロパティ\]** をクリックします。  
+4.  右クリック**Label1**、クリックして**プロパティ**です。  
   
-5.  **Text** プロパティを **\[Label1\]** から **\[Enter OrderID:\]** に変更します。  
+5.  変更、**テキスト**プロパティから**Label1**に**Enter OrderID:**です。  
   
-6.  **Label2** についても同様に、**Text** プロパティを **\[Label2\]** から **\[Enter CustomerID:\]** に変更します。  
+6.  に対して同じ方法で**Label2**、変更、**テキスト**プロパティから**Label2**に**Enter CustomerID:**です。  
   
-7.  同様に、**Button1** の **Text** プロパティを **\[Order Details\]** に変更します。  
+7.  同じ方法で変更、**テキスト**プロパティを**Button1**に**Order Details**です。  
   
-8.  **Button2** の **Text** プロパティを **\[Order History\]** に変更します。  
+8.  変更、**テキスト**プロパティ**Button2**に**注文履歴**です。  
   
      すべてのテキストが表示されるように、ボタン コントロールの幅を広げます。  
   
-#### ボタン クリックを処理するには  
+#### <a name="to-handle-button-clicks"></a>ボタン クリックを処理するには  
   
-1.  **\[Form1\]** の **\[Order Details\]** をダブルクリックして `Button1` イベント ハンドラーを作成し、コード エディターを開きます。  
+1.  ダブルクリックして**Order Details**で**Form1**を作成する、`Button1`イベント ハンドラーと、コード エディターを開きます。  
   
 2.  `Button1` のハンドラーに次のコードを入力します。  
   
      [!code-vb[DLinqWalk4VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk4VB/vb/Form1.vb#2)]  
   
-3.  \[Form1\] の **\[Button2\]** をダブルクリックして `Button2` イベント ハンドラーを作成し、コード エディターを開きます。  
+3.  ダブルクリックして**Button2**を作成する Form1 に、`Button2`イベント ハンドラーと、コード エディターを開きます。  
   
 4.  `Button2` のハンドラーに次のコードを入力します。  
   
      [!code-vb[DLinqWalk4VB#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk4VB/vb/Form1.vb#3)]  
   
-## アプリケーションのテスト  
- 次に、アプリケーションをテストします。  データ ストアに対する操作は、2 つのストアド プロシージャで実行できる処理に制限されることに注意してください。  つまり、入力した orderID に含まれている製品を返す処理と、入力した CustomerID の注文製品の履歴を返す処理のみを実行できます。  
+## <a name="testing-the-application"></a>アプリケーションのテスト  
+ 次に、アプリケーションをテストします。 データ ストアに対する操作は、2 つのストアド プロシージャで実行できる処理に制限されることに注意してください。 つまり、入力した orderID に含まれている製品を返す処理と、入力した CustomerID の注文製品の履歴を返す処理のみを実行できます。  
   
-#### アプリケーションをテストするには  
+#### <a name="to-test-the-application"></a>アプリケーションをテストするには  
   
 1.  F5 キーを押してデバッグを開始します。  
   
      Form1 が表示されます。  
   
-2.  **\[Enter OrderID\]** ボックスに「10249」と入力し、**\[Order Details\]** をクリックします。  
+2.  **Enter OrderID**ボックスに、入力**10249**  をクリックし、 **Order Details**です。  
   
      注文 10249 に含まれている製品がメッセージ ボックスに表示されます。  
   
-     **\[OK\]** をクリックしてメッセージ ボックスを閉じます。  
+     をクリックして**OK**メッセージ ボックスを閉じます。  
   
-3.  **\[Enter CustomerID\]** ボックスに「`ALFKI`」と入力し、**\[Order History\]** をクリックします。  
+3.  **Enter CustomerID**ボックスに、入力`ALFKI`、クリックして**注文履歴**です。  
   
      メッセージ ボックスに、顧客 ALFKI の注文履歴が表示されます。  
   
-     **\[OK\]** をクリックしてメッセージ ボックスを閉じます。  
+     をクリックして**OK**メッセージ ボックスを閉じます。  
   
-4.  **\[Enter OrderID\]** ボックスに「`123`」と入力し、**\[Order Details\]** をクリックします。  
+4.  **Enter OrderID**ボックスに、入力`123`、クリックして**Order Details**です。  
   
      メッセージ ボックスに "No results" が表示されます。  
   
-     **\[OK\]** をクリックしてメッセージ ボックスを閉じます。  
+     をクリックして**OK**メッセージ ボックスを閉じます。  
   
-5.  **\[デバッグ\]** メニューの **\[デバッグの停止\]** をクリックします。  
+5.  **デバッグ** メニューのをクリックして**デバッグを停止**です。  
   
      デバッグ セッションが終了します。  
   
-6.  操作が終了したら、**\[ファイル\]** メニューの **\[プロジェクトを閉じる\]** をクリックし、メッセージに従ってプロジェクトを保存します。  
+6.  実験が完了したらをクリックして**プロジェクトを閉じる**上、**ファイル**] メニューの [入力を求められたら、プロジェクトを保存します。  
   
-## 次の手順  
- いくつかの変更を加えることによって、このプロジェクトを強化できます。  たとえば、使用できるストアド プロシージャの一覧をリスト ボックスに表示し、実行するプロシージャをユーザーに選択させることができます。  レポートの出力をテキスト ファイルに送ることもできます。  
+## <a name="next-steps"></a>次の手順  
+ いくつかの変更を加えることによって、このプロジェクトを強化できます。 たとえば、使用できるストアド プロシージャの一覧をリスト ボックスに表示し、実行するプロシージャをユーザーに選択させることができます。 レポートの出力をテキスト ファイルに送ることもできます。  
   
-## 参照  
- [Learning by Walkthroughs](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)   
- [Stored Procedures](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+## <a name="see-also"></a>関連項目  
+ [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)  
+ [ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
