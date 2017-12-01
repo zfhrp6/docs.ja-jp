@@ -1,6 +1,6 @@
 ---
 title: "C# の配列 - C# 言語のツアー"
-description: "配列は、C# 言語において最も基本的なコレクション型です。"
+description: "配列は、c# 言語で最も基本的なコレクション型です。"
 keywords: ".NET、C#、配列、コレクション"
 author: BillWagner
 ms.author: wiwagn
@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
+ms.openlocfilehash: d7d5ae9f99ba1629a6f0aec57bebf74853cab27f
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 82362a3675c431423a99d3d728fb8dd1da58c9c7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/02/2017
 ---
-
 # <a name="arrays"></a>配列
 
 ***配列***はデータ構造で、算出されたインデックスを介してアクセスされる多くの変数を含みます。 配列に含まれる変数は配列の***要素***とも呼ばれ、すべて同じ型であり、この型は配列の***要素型***と呼ばれます。
@@ -54,4 +52,3 @@ new 演算子では、配列要素の初期値を、区切り記号 `{` およ�
 >[!div class="step-by-step"]
 [前へ](structs.md)
 [次へ](interfaces.md)
-

@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
+ms.openlocfilehash: 04fdf26e150e6d489c0641588563f69f24835615
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 1b0379156f44b0a3e765f8d832c7a1ca74ee3598
-ms.openlocfilehash: d9da6ea27293e95e36ff8edc42ef8bafbc86c8ec
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/08/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="prerequisites-for-net-core-on-linux"></a>Linux における .NET Core の前提条件
 
 この記事では、Linux で .NET Core アプリケーションを開発するために必要な依存関係を示します。 後述のサポートされている Linux ディストリビューション/バージョンと依存関係は、Linux で .NET Core アプリを開発する次の 2 つの方法に適用されます。
@@ -64,33 +62,35 @@ ms.lasthandoff: 09/08/2017
 
 ## <a name="linux-distribution-dependencies"></a>Linux ディストリビューションの依存関係
 
+次が意図されて例です。 任意の Linux ディストリビューションで、正確なバージョンと名前が多少異なります可能性があります。
+
 ### <a name="ubuntu"></a>Ubuntu
 
 Ubuntu ディストリビューションには、次のライブラリがインストールされている必要があります。
 
 * libunwind8
-* libunwind8-dev
-* gettext
-* libicu-dev
-* liblttng-ust-dev
-* libcurl4-openssl-dev
-* libssl-dev
-* uuid-dev
-* unzip
+* liblttng ust0
+* libcurl3
+* libssl1.0.0
+* libuuid1
+* libkrb5
+* zlib1g
+* libicu52 (用 14.X)
+* libicu55 (用 16.X)
+* libicu57 (用 17.X)
 
 ### <a name="centos"></a>CentOS
 
 CentOS ディストリビューションには、次のライブラリがインストールされている必要があります。
 
-* deltarpm
-* epel-release
-* unzip
 * libunwind
-* gettext
-* libcurl-devel
-* openssl-devel
+* lttng ust
+* libcurl
+* openssl ライブラリ
+* libuuid
+* krb5 libs
+* libicu
 * zlib
-* libicu-devel
 
 依存関係の詳細については、「[Self-contained Linux applications (自己完結型 Linux アプリケーション)](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md)」をご覧ください。
 
@@ -105,7 +105,7 @@ Linux では、2 つのインストーラー パッケージから選択でき�
 
 ### <a name="scripting-installs-with-the-net-core-installer-script"></a>.NET Core インストーラー スクリプトを使用したスクリプトのインストール
 
-`dotnet-install` スクリプトは、CLI ツールチェーンと共有ランタイムの非管理者インストールを実行するために使用されます。 スクリプトは [CLI GitHub リポジトリ](https://github.com/dotnet/cli/tree/rel/1.0.0/scripts/obtain)からダウンロードできます。
+`dotnet-install` スクリプトは、CLI ツールチェーンと共有ランタイムの非管理者インストールを実行するために使用されます。 スクリプトをダウンロードすることができます: https://dot.net/v1/dotnet-install.sh
 
 インストーラーの bash スクリプトは、自動化シナリオと管理者以外のインストールで使用されます。 このスクリプトは、PowerShell のスイッチも読み取るので、Linux/OS X システムのスクリプトで使うことができます。
 
@@ -633,4 +633,3 @@ openSUSE 用の .NET Core 2.x または openSUSE (64 ビット) 用の .NET Core
 > サポートされている Linux ディストリビューション/バージョンの .NET Core 2.x で問題が発生している場合は、インストールしたディストリビューション/バージョンに対する [2.0 の既知の問題](https://github.com/dotnet/core/tree/master/release-notes/2.0)を参照してください。 
 >
 > サポートされている Linux ディストリビューション/バージョンの .NET Core 1.x で問題が発生している場合は、インストールしたディストリビューション/バージョンに対する [1.0.0 の既知の問題](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md)と [1.0.1 の既知の問題](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md)を参照してください。
-

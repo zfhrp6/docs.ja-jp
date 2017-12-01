@@ -13,14 +13,14 @@ caps.latest.revision: "9"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 3b1a54f1c1529879074d2d0e7172fd52c5386c8f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: a9797330cf983ed67d3bc07a7984d47454adcb49
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="accessing-identity-information-inside-a-workflow-service"></a>ワークフロー サービス内部の ID 情報へのアクセス
-ワークフロー サービス内の ID 情報にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。 <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False & autoUpgrade = True メソッドがアクセスできる、 <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> id 情報にアクセスします。 このトピックでは、この実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> アクティビティに提示するカスタム アクティビティの実装方法を順に説明します。  カスタム アクティビティと同じ動作を実装、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティとその、 <xref:System.ServiceModel.Activities.Receive> 、内部に配置されますが、<xref:System.ServiceModel.Activities.IReceiveMessageCallback>が呼び出され、id 情報が取得されます。  
+ワークフロー サービス内の ID 情報にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。 <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> メソッドで、<xref:System.ServiceModel.OperationContext.ServiceSecurityContext> にアクセスして ID 情報にアクセスできます。 このトピックでは、この実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> アクティビティに提示するカスタム アクティビティの実装方法を順に説明します。  カスタム アクティビティと同じ動作を実装、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティとその、 <xref:System.ServiceModel.Activities.Receive> 、内部に配置されますが、<xref:System.ServiceModel.Activities.IReceiveMessageCallback>が呼び出され、id 情報が取得されます。  
   
 ### <a name="implement-ireceivemessagecallback"></a>IReceiveMessageCallback の実装  
   

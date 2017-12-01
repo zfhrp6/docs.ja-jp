@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - WPF [.NET Framework Client Profile]
 - WCF [.NET Framework Client Profile]
@@ -22,16 +16,15 @@ helpviewer_keywords:
 - profile [.NET Framework Client Profile]
 - .NET Framework Client Profile
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
-caps.latest.revision: 44
+caps.latest.revision: "44"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 0c93019b2024029fd27d78ac191f0f99bc9b0ce9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ae285c931ccabf8d16250f3260a344f1bbbd6467
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
 .NET Client Profile は、.NET Framework のサブセットで、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以前のバージョンに含まれ、クライアント アプリケーション用に最適化されていました。 .NET Framework は、Windows、Windows Phone、および Microsoft Azure 用の開発プラットフォームであり、マネージ アプリの実行環境と .NET Framework クラス ライブラリを提供します。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以前のバージョンでは、2 種類の配置オプション (完全な .NET Framework と Client Profile) が用意されていました。 完全な .NET Framework に比べて、Client Profile では、配置の迅速化とアプリ インストール パッケージの小型化が実現されました。  
@@ -43,8 +36,7 @@ ms.lasthandoff: 07/28/2017
  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] をインストールすると、.NET Framework 4 Client Profile は .NET Framework の完全バージョンに更新されます。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールの詳細については、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [.NET Framework Client Profile (.NET Framework 4)](http://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)   
- [Visual Studio のマルチ ターゲットの概要](http://msdn.microsoft.com/library/b1702c33-0672-4ebc-b779-2b324d6ea880)   
- [.NET Framework を対象とするエラーのトラブルシューティング](http://msdn.microsoft.com/library/830e3e45-9a93-4279-a249-75b84599aefb)   
+ [.NET framework Client Profile (.NET Framework 4)](http://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)  
+ [Visual Studio のマルチ ターゲットの概要](http://msdn.microsoft.com/library/b1702c33-0672-4ebc-b779-2b324d6ea880)  
+ [.NET Framework を対象とするエラーのトラブルシューティング](http://msdn.microsoft.com/library/830e3e45-9a93-4279-a249-75b84599aefb)  
  [方法: .NET Framework のバージョンをターゲットにする](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)
-

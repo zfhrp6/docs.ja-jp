@@ -1,29 +1,35 @@
 ---
-title: "How to: Resolve Conflicts by Overwriting Database Values | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : データベース値を上書きすることで競合を解決する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: fd6db0b8-c29c-48ff-b768-31d28e7a148c
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 1cb128020964955937aae3d9e477a600085d4cdb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# How to: Resolve Conflicts by Overwriting Database Values
-変更を再送信する前に、データベース内の予期した値と実際の値の違いを調整するために、<xref:System.Data.Linq.RefreshMode> を使用してデータベース内の値を上書きできます。  詳細については、「[Optimistic Concurrency: Overview](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)」を参照してください。  
+# <a name="how-to-resolve-conflicts-by-overwriting-database-values"></a>方法 : データベース値を上書きすることで競合を解決する
+変更を再送信する前に、データベース内の予期した値と実際の値の違いを調整するために、<xref:System.Data.Linq.RefreshMode.KeepCurrentValues> を使用してデータベース内の値を上書きできます。 詳細については、次を参照してください。[オプティミスティック同時実行制御: 概要](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)です。  
   
 > [!NOTE]
->  どの場合も、データベースから最新のデータを取得することで、まずクライアントのレコードが更新されます。  この処理によって、次の更新処理が同じ同時実行チェックで失敗することを防止できます。  
+>  どの場合も、データベースから最新のデータを取得することで、まずクライアントのレコードが更新されます。 この処理によって、次の更新処理が同じ同時実行チェックで失敗することを防止できます。  
   
-## 使用例  
- このシナリオでは、ユーザー 1 が変更を送信しようとしたときに <xref:System.Data.Linq.ChangeConflictException> 例外がスローされます。これは、途中でユーザー 2 が Assistant 列と Department 列を変更していたためです。  次の表は、この状況を示しています。  
+## <a name="example"></a>例  
+ このシナリオでは、ユーザー 1 が変更を送信しようとしたときに <xref:System.Data.Linq.ChangeConflictException> 例外がスローされます。これは、途中でユーザー 2 が Assistant 列と Department 列を変更していたためです。 次の表は、この状況を示しています。  
   
 ||Manager|Assistant|Department|  
 |------|-------------|---------------|----------------|  
@@ -33,16 +39,16 @@ caps.handback.revision: 2
   
  ユーザー 1 は、この競合を解決するために、データベース値を現在のクライアント メンバー値で上書きすることに決めます。  
   
- ユーザー 1 が <xref:System.Data.Linq.RefreshMode> を使用して競合を解決すると、データベース内の結果は次の表のようになります。  
+ ユーザー 1 が <xref:System.Data.Linq.RefreshMode.KeepCurrentValues> を使用して競合を解決すると、データベース内の結果は次の表のようになります。  
   
 ||Manager|Assistant|Department|  
 |------|-------------|---------------|----------------|  
-|競合解決後の新しい状態|Alfred<br /><br /> \(ユーザー 1 の値\)|Maria<br /><br /> \(元の値\)|Marketing<br /><br /> \(ユーザー 1 の値\)|  
+|競合解決後の新しい状態|Alfred<br /><br /> (ユーザー 1 の値)|Maria<br /><br /> (元の値)|Marketing<br /><br /> (ユーザー 1 の値)|  
   
- 次のコード例は、データベース値を現在のクライアント メンバー値で上書きする方法を示しています   \(個々のメンバーの競合に対する検査やカスタム ハンドリングは行われません\)。  
+ 次のコード例は、データベース値を現在のクライアント メンバー値で上書きする方法を示しています  (個々のメンバーの競合に対する検査やカスタム ハンドリングは行われません)。  
   
  [!code-csharp[System.Data.Linq.RefreshMode#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/system.data.linq.refreshmode/cs/program.cs#2)]
  [!code-vb[System.Data.Linq.RefreshMode#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.refreshmode/vb/module1.vb#2)]  
   
-## 参照  
- [How to: Manage Change Conflicts](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+## <a name="see-also"></a>関連項目  
+ [方法: 変更の競合の管理](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)

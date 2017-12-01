@@ -1,5 +1,5 @@
 ---
-title: .NET Portability Analyzer - .NET | Microsoft Docs
+title: ".NET 移植性アナライザー - .NET"
 description: ".NET Portability Analyzer ツールを使用して、さまざまな .NET 実装間で、コードの移植性を評価する方法について説明します。"
 keywords: .NET, .NET Core
 author: blackdwarf
@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
+ms.openlocfilehash: c204af75283278d16bf661e76f2ec5ae0f1d0b3e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
-ms.openlocfilehash: adb1971c14c8ff8c147dba378ae0e9a5bc0fb5ad
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="the-net-portability-analyzer"></a>.NET Portability Analyzer
 
 ライブラリをマルチプラットフォーム対応にしたい場合や、 アプリケーションで他の .NET 実装との互換性を確保するのに必要な作業量を知りたい場合は、 [.NET Portability Analyzer](http://go.microsoft.com/fwlink/?LinkID=507467) が役立ちます。このツールを使用すると、アセンブリを分析して、プログラムが .NET 実装全体でどの程度柔軟な構造になっているかについて詳細なレポートを生成することができます。 Portability Analyzer は、Visual Studio 拡張機能のコンソール アプリとして提供されます。
@@ -32,7 +30,7 @@ ms.lasthandoff: 08/21/2017
 
 ## <a name="how-to-use-portability-analyzer"></a>Portability Analyzer の使用方法
 
-.NET Portability Analyzer を使用するには、[Visual Studio ギャラリー](http://go.microsoft.com/fwlink/?LinkID=507467)から拡張機能をダウンロードし、インストールする必要があります。 これは、Visual Studio 2015 と Visual Studio 2017 で機能します。 **[分析]**、**[Portability Analyzer Settings (Portability Analyzer の設定)]** の順に選択して構成し、ターゲット プラットフォームを選択できます。
+.NET Portability Analyzer を使用するには、[Visual Studio ギャラリー](http://go.microsoft.com/fwlink/?LinkID=507467)から拡張機能をダウンロードし、インストールする必要があります。 これは、Visual Studio 2015 と Visual Studio 2017 で機能します。 **[分析]**、 > **[Portability Analyzer Settings (Portability Analyzer の設定)]** の順に選択して構成し、ターゲット プラットフォームを選択できます。
 
 ![Portability のスクリーンショット](./media/portability-analyzer/portability-screenshot.png)
 
@@ -52,4 +50,3 @@ Visual Studio を使用しない場合は、 コマンド プロンプトから 
 .NET 移植性レポートは、Excel ファイル (*.xlsx*) として現在のディレクトリに保存されます。 Excel のブックの **[詳細]** タブに詳細情報が記載されています。
 
 .NET Portability Analyzer の詳細については、[GitHub ドキュメント](https://github.com/Microsoft/dotnet-apiport#documentation)にアクセスし、Channel 9 動画の「[A Brief Look at the .NET Portability Analyzer](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)」 (.NET Portability Analyzer の概要) をご覧ください。
-

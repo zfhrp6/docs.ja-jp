@@ -1,53 +1,54 @@
 ---
-title: "XslTransform クラスを使用した XSLT 変換 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XslTransform クラスを使用した XSLT 変換"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 619e37ab63735ea77d3afb0d94f284b2f310efc2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XslTransform クラスを使用した XSLT 変換
+# <a name="xslt-transformations-with-the-xsltransform-class"></a>XslTransform クラスを使用した XSLT 変換
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。  <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT \(Extensible Stylesheet Language for Transformations\) 変換を実行できます。  詳細については、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」と「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」を参照してください。  
+>  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。 参照してください[XslCompiledTransform クラスを使用して](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)と[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)詳細についてはします。  
   
- XSLT の目的は、たとえば、XML を Web サイトで使われる HTML に変換したり、XML ドキュメントをアプリケーションが必要とするフィールドのみが含まれたドキュメントに変換するなど、ソース XML ドキュメントの内容を形式や構造の異なる別のドキュメントに変換することです。  この変換処理の仕様は、www.w3.org\/TR\/xslt にある W3C \(World Wide Web Consortium\) 勧告『XSLT Version 1.0』で規定されています。  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、<xref:System.Xml.Xsl.XslTransform> 名前空間にある <xref:System.Xml.Xsl> クラスが、この仕様の機能を実装する XSLT プロセッサです。  W3C 勧告『XSLT Version 1.0』から実装された機能の他に、「[XslTransform からの出力](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)」に記載されている機能がいくつかあります。  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の変換アーキテクチャを次の図に示します。  
+ XSLT の目的は、たとえば、XML を Web サイトで使われる HTML に変換したり、XML ドキュメントをアプリケーションが必要とするフィールドのみが含まれたドキュメントに変換するなど、ソース XML ドキュメントの内容を形式や構造の異なる別のドキュメントに変換することです。 この変換処理は、www.w3.org/TR/xslt にある World Wide Web Consortium (W3C) の XSLT version 1.0 』 で規定されてです。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、<xref:System.Xml.Xsl.XslTransform> 名前空間にある <xref:System.Xml.Xsl> クラスが、この仕様の機能を実装する XSLT プロセッサです。 一覧表示、w3c 勧告 『 XSLT 1.0 』 から実装されていない機能の数が少ないがある[XslTransform からの出力](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)です。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の変換アーキテクチャを次の図に示します。  
   
-## 概要  
+## <a name="overview"></a>概要  
  ![XSLT 変換アーキテクチャ](../../../../docs/standard/data/xml/media/xslttransformationswithxsltransformclass.gif "xsltTransformationsWithXslTransformClass")  
 変換アーキテクチャ  
   
- XSLT 勧告では、XPath \(XML Path Language\) を使って XML ドキュメントの一部を選択します。XPath とは、ドキュメント ツリーのノード間を移動するのに使われるクエリ言語です。  図に示すように、XPath の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の実装は、<xref:System.Xml.XmlDocument>、<xref:System.Xml.XmlDataDocument>、<xref:System.Xml.XPath.XPathDocument> など、複数のクラスに格納されている XML の一部を選択するのに使用されます。  <xref:System.Xml.XPath.XPathDocument> は最適化された XSLT データ ストアであり、これを <xref:System.Xml.Xsl.XslTransform> と共に使用することで、パフォーマンスの高い XSLT 変換を実行できます。  
+ XSLT 勧告では、XPath (XML Path Language) を使って XML ドキュメントの一部を選択します。XPath とは、ドキュメント ツリーのノード間を移動するのに使われるクエリ言語です。 図に示すように、XPath の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の実装は、<xref:System.Xml.XmlDocument>、<xref:System.Xml.XmlDataDocument>、<xref:System.Xml.XPath.XPathDocument> など、複数のクラスに格納されている XML の一部を選択するのに使用されます。 <xref:System.Xml.XPath.XPathDocument> は最適化された XSLT データ ストアであり、これを <xref:System.Xml.Xsl.XslTransform> と共に使用することで、パフォーマンスの高い XSLT 変換を実行できます。  
   
  <xref:System.Xml.Xsl.XslTransform> と XPath を使用するときによく使われるクラスと、それぞれの機能を次の表に示します。  
   
 |クラスまたはインターフェイス|関数|  
-|--------------------|--------|  
-|<xref:System.Xml.XPath.XPathNavigator>|ストア内で移動するためのカーソル スタイルのモデルを提供し、XPath クエリをサポートする API です。  元になるストアを編集する機能は提供しません。  編集には <xref:System.Xml.XmlDocument> クラスを使用します。|  
+|------------------------|--------------|  
+|<xref:System.Xml.XPath.XPathNavigator>|ストア内で移動するためのカーソル スタイルのモデルを提供し、XPath クエリをサポートする API です。 元になるストアを編集する機能は提供しません。 編集には <xref:System.Xml.XmlDocument> クラスを使用します。|  
 |<xref:System.Xml.XPath.IXPathNavigable>|`CreateNavigator` に <xref:System.Xml.XPath.XPathNavigator> メソッドを提供するストア用のインターフェイスです。|  
-|<xref:System.Xml.XmlDocument>|対象のドキュメントの編集を有効にします。  このクラスは <xref:System.Xml.XPath.IXPathNavigable> を実装しているため、後で XSLT 変換が必要になるドキュメントの編集が可能です。  詳細については、「[XslTransform への XmlDocument の入力](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)」を参照してください。|  
-|<xref:System.Xml.XmlDataDocument>|これは <xref:System.Xml.XmlDocument> の派生クラスです。  このクラスは、<xref:System.Data.DataSet> を使用してリレーショナル環境と XML 環境との橋渡しをし、<xref:System.Data.DataSet> で指定された対応付けに従って XML ドキュメント内の構造化データのストレージを最適化します。  このクラスは <xref:System.Xml.XPath.IXPathNavigable> を実装しているため、データベースから取得したリレーショナル データに対して XSLT 変換を実行できます。  詳細については、「[XML とリレーショナル データおよび ADO.NET との統合](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)」を参照してください。|  
-|<xref:System.Xml.XPath.XPathDocument>|このクラスは、<xref:System.Xml.Xsl.XslTransform> の処理および XPath クエリ用に最適化されており、パフォーマンスの高い読み取り専用キャッシュを提供します。  このクラスは <xref:System.Xml.XPath.IXPathNavigable> を実装しており、XSLT 変換に使用するストアとして適しています。|  
-|<xref:System.Xml.XPath.XPathNodeIterator>|XPath ノード セット内を移動できるようにします。  <xref:System.Xml.XPath.XPathNavigator> のすべての XPath 選択メソッドは <xref:System.Xml.XPath.XPathNodeIterator> を返します。  同じストアに対して、選択されているノード セットを表す複数の <xref:System.Xml.XPath.XPathNodeIterator> オブジェクトを作成できます。|  
+|<xref:System.Xml.XmlDocument>|対象のドキュメントの編集を有効にします。 このクラスは <xref:System.Xml.XPath.IXPathNavigable> を実装しているため、後で XSLT 変換が必要になるドキュメントの編集が可能です。 詳細については、次を参照してください。 [XslTransform への XmlDocument の入力](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)です。|  
+|<xref:System.Xml.XmlDataDocument>|これは <xref:System.Xml.XmlDocument> の派生クラスです。 このクラスは、<xref:System.Data.DataSet> を使用してリレーショナル環境と XML 環境との橋渡しをし、<xref:System.Data.DataSet> で指定された対応付けに従って XML ドキュメント内の構造化データのストレージを最適化します。 このクラスは <xref:System.Xml.XPath.IXPathNavigable> を実装しているため、データベースから取得したリレーショナル データに対して XSLT 変換を実行できます。 詳細については、次を参照してください。 [XML とリレーショナル データおよび ADO.NET との統合](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)です。|  
+|<xref:System.Xml.XPath.XPathDocument>|このクラスは、<xref:System.Xml.Xsl.XslTransform> の処理および XPath クエリ用に最適化されており、パフォーマンスの高い読み取り専用キャッシュを提供します。 このクラスは <xref:System.Xml.XPath.IXPathNavigable> を実装しており、XSLT 変換に使用するストアとして適しています。|  
+|<xref:System.Xml.XPath.XPathNodeIterator>|XPath ノード セット内を移動できるようにします。 <xref:System.Xml.XPath.XPathNavigator> のすべての XPath 選択メソッドは <xref:System.Xml.XPath.XPathNodeIterator> を返します。 同じストアに対して、選択されているノード セットを表す複数の <xref:System.Xml.XPath.XPathNodeIterator> オブジェクトを作成できます。|  
   
-## MSXML XSLT 拡張機能  
- `msxsl:script` クラスがサポートしている Microsoft XML コア サービス \(MSXML\) XSLT 拡張機能は、`msxsl:node-set` 関数と <xref:System.Xml.Xsl.XslTransform> 関数のみです。  
+## <a name="msxml-xslt-extensions"></a>MSXML XSLT 拡張機能  
+ `msxsl:script` クラスがサポートしている Microsoft XML コア サービス (MSXML) XSLT 拡張機能は、`msxsl:node-set` 関数と <xref:System.Xml.Xsl.XslTransform> 関数のみです。  
   
-## 例  
+## <a name="example"></a>例  
  XSL スタイル シートを読み込み、mydata.xml というファイルを <xref:System.Xml.XPath.XPathDocument> に読み込み、myStyleSheet.xsl という架空のファイルに格納されているデータの変換を実行し、書式設定された出力をコンソールに送信するコード サンプルを次に示します。  
   
 ```vb  
@@ -71,7 +72,6 @@ Public Class Sample
         xslt.Transform(xpathdocument, Nothing, writer, Nothing)  
     End Sub 'Main  
 End Class 'Sample  
-  
 ```  
   
 ```csharp  
@@ -100,12 +100,12 @@ public class Sample
 }  
 ```  
   
-## 参照  
- <xref:System.Xml.Xsl.XslTransform>   
- [XslTransform クラスによる XSLT プロセッサの実装](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)   
- [XslTransform クラスの随意動作の実装](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)   
- [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)   
- [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)   
- [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)   
- [XslTransform への XmlDataDocument の入力](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Xml.Xsl.XslTransform>  
+ [XslTransform クラスによる XSLT プロセッサ](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
+ [XslTransform クラスの随意動作の実装](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)  
+ [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
+ [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
+ [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  
+ [XslTransform への XmlDataDocument の入力](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)  
  [XslTransform への XmlDocument の入力](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)

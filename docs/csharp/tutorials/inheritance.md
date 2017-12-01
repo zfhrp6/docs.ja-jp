@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: ronpet
 ms.date: 08/16/2017
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
+ms.openlocfilehash: ec5ca3132ac68b85ebb517e569241f20080b4f63
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 3e1ec8b24c4debf24a0d52ad2a23897975c41550
-ms.openlocfilehash: 78aff41ae597a3dbe9a57e2342b52b399ea96d66
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/17/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="inheritance-in-c-and-net"></a>C# と .NET での継承
 
@@ -34,7 +32,11 @@ ms.lasthandoff: 08/17/2017
 1. コマンド プロンプトで [dotnet new console](../../core/tools/dotnet-new.md) コマンドを入力し、新しい .NET Core プロジェクトを作成します。
 1. 例にあるコードをコピーして、コード エディターに貼り付けます。
 1. コマンド ラインから [dotnet restore](../../core/tools/dotnet-restore.md) コマンドを入力し、プロジェクトの依存関係を読み込みまたは復元します。
+
+  [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 1. [dotnet run](../../core/tools/dotnet-run.md) コマンドを入力して、例をコンパイルし実行します。
+
 
 ## <a name="background-what-is-inheritance"></a>基礎知識: 継承とは何か
 
@@ -44,7 +46,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 基底クラスのすべてのメンバーが、派生クラスによって継承されるわけではありません。 以下のメンバーは継承されません。
 
-- [静的コンストラクター](../programming-guide/classes-and-structs/static-constructors.md)。クラスの静的データを初期化するもの。
+- [静的コンスラクター](../programming-guide/classes-and-structs/static-constructors.md)。クラスの静的データを初期化するもの。
 
 - [インスタンス コンストラクター](../programming-guide/classes-and-structs/constructors.md)。クラスの新しいインスタンスを作成するために呼び出すもの。 各クラスはそれ自身のコンストラクターを定義する必要があります。
 
@@ -54,15 +56,15 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 - [プライベート](../language-reference/keywords/private.md) メンバーは、基底クラスで入れ子になっている派生クラスでのみ表示されます。 それ以外の場合、派生クラスでは表示されません。 次の例では、`A.B` は `A` から派生した入れ子になったクラスで、`C` は `A` から派生しています。 プライベートの `A.value` フィールドは A.B で表示されます。 しかし、`C.GetValue` メソッドからコメントを削除して例をコンパイルしようとすると、コンパイラ エラー CS0122 "'A.value' is inaccessible due to its protection level." ('A.value' はアクセスできない保護レベルになっています") が生成されます。
 
-  [!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
+  [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
 
 - [プロテクト](../language-reference/keywords/protected.md) メンバーは派生クラスでのみ表示されます。
 
-- [内部](../language-reference/keywords/protected.md)メンバーは、基底クラスと同じアセンブリ内にある派生クラスでのみ表示されます。 基底クラスとは別のアセンブリにある派生クラスでは、表示されません。
+- [内部](../language-reference/keywords/internal.md)メンバーは、基底クラスと同じアセンブリ内にある派生クラスでのみ表示されます。 基底クラスとは別のアセンブリにある派生クラスでは、表示されません。
 
-- [Public] (../language-reference/keywords/protected.md) メンバーは派生クラスで表示され、派生クラスのパブリック インターフェイスの一部です。 パブリックの継承されたメンバーは、派生クラスで定義された場合と同様に呼び出すことができます。 次の例では、クラス `A` が `Method1` という名前のメソッドを定義し、クラス `B` がクラス `A` から継承します。 そこでこの例は、`Method1` を `B` 上のインスタンス メソッドであるかのように呼び出します。
+- [パブリック](../language-reference/keywords/public.md)メンバーが派生クラスの表示にされ、派生クラスのパブリック インターフェイスの一部であります。 パブリックの継承されたメンバーは、派生クラスで定義された場合と同様に呼び出すことができます。 次の例では、クラス `A` が `Method1` という名前のメソッドを定義し、クラス `B` がクラス `A` から継承します。 そこでこの例は、`Method1` を `B` 上のインスタンス メソッドであるかのように呼び出します。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
 派生クラスはまた、代替実装を行うことにより、継承されたメンバーを*オーバーライド*することができます。 メンバーをオーバーライドするためには、基底クラスのメンバーは [virtual](../language-reference/keywords/virtual.md) のキーワードでマークされている必要があります。 既定では基底クラスのメンバーは `virtual` としてマークされていないので、オーバーライドすることはできません。 次の例のように、非仮想メンバーをオーバーライドしようとすると、コンパイラ エラー CS0506 "<member> cannot override inherited member <member> because it is not marked virtual, abstract, or override." ("継承されたメンバー member が virtual、abstract、または override でマークされていないため、member でオーバーライドすることができません") が生成されます。
 
@@ -117,11 +119,11 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 暗黙的な継承とはどのようなものか、新しいクラス `SimpleClass` を定義してみましょう。単純な空のクラス定義です。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#1)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#1)]
 
 次に、リフレクション (型のメタデータを検査してその型の情報を取得できるもの) を使用して、`SimpleClass` 型に属するメンバーの一覧を取得します。 `SimpleClass` クラスにはメンバーをまだ定義していないにもかかわらず、この例の出力は、9 つのメンバーが存在することを示しています。 そのうち 1 つは、パラメーターなしの (既定の) コンストラクターで、C# コンパイラによって `SimpleClass` 型に自動的に提供されるものです。 あとの 8 つは <xref:System.Object> のメンバーで、この型から、.NET 型システムのすべてのクラスとインターフェイスが最終的に暗黙的に継承します。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#2)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#2)]
 
 <xref:System.Object> クラスからの暗黙的な継承により、`SimpleClass` クラスで以下のメソッドが使用可能になります。
 
@@ -139,7 +141,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 暗黙的な継承によって、`SimpleClass` オブジェクトから任意の継承されたメンバーを、`SimpleClass` クラスで定義されたメンバーであるかのように呼び出すことができます。 たとえば、次の例では `SimpleClass.ToString` メソッドを呼び出しますが、これは `SimpleClass` が <xref:System.Object> から継承しています。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
 
 次の表は、C# で作成できる型のカテゴリと、暗黙的に継承する元となる型の一覧です。 各々の基本型によって、暗黙的な派生型への継承を通して、異なるメンバーのセットが利用可能となります。
 
@@ -157,13 +159,13 @@ public struct ValueStructure : ValueType // Generates CS0527.
 > [!NOTE]
 > 1 つのクラスまたは構造体は、1 つまたは複数のインターフェイスを実装できます。 インターフェイスの実装は、単一継承の回避策として、または構造体とともに継承を使用する方法として提示されることが多いですが、継承というよりは、インターフェイスとその実装型の間の別の関係 ("can do" 関係) を表すものとして意図されています。 インターフェイスは、その実装型で使用可能とする機能 (等価性を調べる機能、オブジェクトを比較または並べ替える機能、カルチャに依存した解析および書式設定のサポート機能など) のサブセットを定義します。
 
-なお、"is a" 関係は、型とその型の特定のインスタンス化の間の関係も表します。 次の例では、`Automobile` は一意の読み取り専用プロパティを 3 つ持つクラスです。自動車の製造メーカーである `Make`、車種である `Model`、そして製造年である `Year` の 3 つです。 この `Automobile` クラスはまた、プロパティ値に割り当てられている引数があるコンストラクターを持ち、<xref:System.Object.ToString%2A?displayProperty=fullName> メソッドをオーバーライドして、`Automobile` クラスではなく `Automobile` インスタンスを一意に識別する文字列を生成します。
+なお、"is a" 関係は、型とその型の特定のインスタンス化の間の関係も表します。 次の例では、`Automobile` は一意の読み取り専用プロパティを 3 つ持つクラスです。自動車の製造メーカーである `Make`、車種である `Model`、そして製造年である `Year` の 3 つです。 この `Automobile` クラスはまた、プロパティ値に割り当てられている引数があるコンストラクターを持ち、<xref:System.Object.ToString%2A?displayProperty=nameWithType> メソッドをオーバーライドして、`Automobile` クラスではなく `Automobile` インスタンスを一意に識別する文字列を生成します。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
 
 この場合、特定の自動車メーカーと車種を表すために継承に依存すべきではありません。 たとえば、Packard Motor Car 社によって製造された自動車を表すのに、`Packard` という型を定義する必要はありません。 代わりに、次の例のように、`Automobile` オブジェクトを作成して、そのクラス コンストラクターに適切な値を渡すことによって同社の自動車を表すことができます。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#2)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#2)]
 
 継承に基づいた is-a 関係の適用が最も適しているのは、基底クラスと、基底クラスにメンバーを追加する派生クラス、または基底クラスにない追加機能が必要な派生クラスです。
 
@@ -201,7 +203,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 次の例では、`Publication` のソース コードを、`Publication.PublicationType` プロパティに返される `PublicationType` 列挙型とともに示します。 <xref:System.Object> から継承したメンバーに加え、`Publication` クラスは次の一意のメンバーおよびメンバー オーバーライドを定義します。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#1)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#1)]
 
 - コンストラクター
 
@@ -234,7 +236,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - `ToString` メソッドのオーバーライド
 
-  ある型が <xref:System.Object.ToString%2A?displayProperty=fullName> メソッドをオーバーライドしない場合、その型の完全修飾名を返しますが、これはインスタンスの区別にはほとんど役に立ちません。 `Publication` クラスは <xref:System.Object.ToString%2A?displayProperty=fullName> をオーバーライドして、`Title` プロパティの値を返します。
+  ある型が <xref:System.Object.ToString%2A?displayProperty=nameWithType> メソッドをオーバーライドしない場合、その型の完全修飾名を返しますが、これはインスタンスの区別にはほとんど役に立ちません。 `Publication` クラスは <xref:System.Object.ToString%2A?displayProperty=nameWithType> をオーバーライドして、`Title` プロパティの値を返します。
 
 次の図は、基底の `Publication` クラスとその暗黙的に継承された <xref:System.Object> クラスの関係を表しています。
 
@@ -244,7 +246,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 `Book` クラスは、特定の種類の出版物としての本を表します。 次の例は、`Book` クラスのソース コードを示しています。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#2)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#2)]
 
 `Publication` から継承したメンバーに加え、`Book` クラスは次の一意のメンバーおよびメンバー オーバーライドを定義します。
 
@@ -264,11 +266,11 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - `SetPrice` メソッド。`bookPrice` フィールドおよび `ISOCurrencySymbol` フィールドの値を設定します。 これらは、`Price` プロパティおよび `Currency` プロパティによって返される値です。
 
-- `ToString` メソッド (`Publication` から継承) へのオーバーライドと、<xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> メソッドおよび <xref:System.Object.GetHashCode%2A> メソッド (<xref:System.Object> から継承) へのオーバーライド。
+- `ToString` メソッド (`Publication` から継承) へのオーバーライドと、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> メソッドおよび <xref:System.Object.GetHashCode%2A> メソッド (<xref:System.Object> から継承) へのオーバーライド。
 
-  オーバーライドされない限り、<xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> メソッドは参照の等価性を調べます。 つまり、2 つのオブジェクト変数は同じオブジェクトを参照している場合に等価であると見なされます。 一方、`Book` クラスの場合、2 つの `Book` オブジェクトは同じ ISBN を持つ場合に等価であるはずです。
+  オーバーライドされない限り、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> メソッドは参照の等価性を調べます。 つまり、2 つのオブジェクト変数は同じオブジェクトを参照している場合に等価であると見なされます。 一方、`Book` クラスの場合、2 つの `Book` オブジェクトは同じ ISBN を持つ場合に等価であるはずです。
 
-  <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> メソッドをオーバーライドする場合、<xref:System.Object.GetHashCode%2A> メソッドもオーバーライドする必要があります。このメソッドは、ランタイムで項目をハッシュされたコレクションに格納し効率的に取得するために使用する値を返すものです。 ハッシュ コードは、等価性のテストと一致する値を返します。 <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> をオーバーライドして、2 つの `Book` オブジェクトの ISBN プロパティが等しい場合に `true` を返すようにしたので、`ISBN` プロパティによって返される文字列の <xref:System.String.GetHashCode%2A> メソッドを呼び出すことにより計算されるハッシュ コードを返します。
+  <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> メソッドをオーバーライドする場合、<xref:System.Object.GetHashCode%2A> メソッドもオーバーライドする必要があります。このメソッドは、ランタイムで項目をハッシュされたコレクションに格納し効率的に取得するために使用する値を返すものです。 ハッシュ コードは、等価性のテストと一致する値を返します。 <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> をオーバーライドして、2 つの `Book` オブジェクトの ISBN プロパティが等しい場合に `true` を返すようにしたので、`ISBN` プロパティによって返される文字列の <xref:System.String.GetHashCode%2A> メソッドを呼び出すことにより計算されるハッシュ コードを返します。
 
 次の図は、`Book` クラスとその基底クラスである `Publication` の関係を表しています。
 
@@ -276,7 +278,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 これで、次の例に示すように、`Book` オブジェクトをインスタンス化して、その一意のメンバーと継承されたメンバーの両方を呼び出し、`Publication` 型または `Book` 型のパラメーターを必要とするメソッドに引数として渡すことができるようになりました。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
 
 ## <a name="designing-abstract-base-classes-and-their-derived-classes"></a>抽象基底クラスとその派生クラスの設計
 <a name="abstract"></a>
@@ -285,20 +287,19 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 たとえば、2 次元の閉じた幾何学図形には、2 つのプロパティが含まれます。図形の内部の大きさである面積と、図形の辺に沿った長さである周です。 一方で、これらのプロパティの計算方法は、それぞれの図形によって違います。 たとえば円周の計算式は、三角形の周の計算式とは全く異なります。
 
-次の例では、`Area` と `Perimeter` という 2 つのプロパティを定義する、`Shape` という名前の抽象基底クラスを定義します。 クラスを [abstract](../language-reference/keywords/abstract.md) キーワードでマークするだけでなく、インスタンス メンバーもそれぞれ [abstract](../language-reference/keywords/abstract.md) キーワードでマークしていることに注意してください。 ここで `Shape` は <xref:System.Object.ToString%2A?displayProperty=fullName> メソッドもオーバーライドして、完全修飾名ではなく、その型の名前を返します。 そして `GetArea` と `GetPerimeter` の 2 つの静的メンバーを定義し、呼び出し元で任意の派生クラスのインスタンスの面積と周を簡単に取得できるようにします。 これらのメソッドのいずれかに派生クラスのインスタンスを渡すとき、ランタイムは派生クラスのメソッド オーバーライドを呼び出します。
+次の例では、`Area` と `Perimeter` という 2 つのプロパティを定義する、`Shape` という名前の抽象基底クラスを定義します。 クラスを [abstract](../language-reference/keywords/abstract.md) キーワードでマークするだけでなく、インスタンス メンバーもそれぞれ [abstract](../language-reference/keywords/abstract.md) キーワードでマークしていることに注意してください。 ここで `Shape` は <xref:System.Object.ToString%2A?displayProperty=nameWithType> メソッドもオーバーライドして、完全修飾名ではなく、その型の名前を返します。 そして `GetArea` と `GetPerimeter` の 2 つの静的メンバーを定義し、呼び出し元で任意の派生クラスのインスタンスの面積と周を簡単に取得できるようにします。 これらのメソッドのいずれかに派生クラスのインスタンスを渡すとき、ランタイムは派生クラスのメソッド オーバーライドを呼び出します。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#1)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#1)]
 
 ここで特定の図形を表す `Shape` から、いくつかのクラスを派生させることができます。 次の例では、`Triangle`、`Rectangle`、および `Circle` の 3 つのクラスを定義します。 これらのクラスはそれぞれ、その図形に一意の数式を使用して面積と周を計算します。 一部の派生クラスも、`Rectangle.Diagonal` や `Circle.Diameter` など、その図形に固有のプロパティを定義します。
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
 
 次の例では、`Shape` から派生したオブジェクトを使用しています。 ここでは `Shape` から派生したオブジェクトの配列をインスタンス化して、`Shape` クラスの静的メソッドを呼び出します。これにより、返された `Shape` のプロパティ値がラップされます。 ここで、ランタイムが派生型のオーバーライドされたプロパティから値を取得していることに注意してください。 この例ではまた、配列内の `Shape` オブジェクトをそれぞれの派生型にキャストし、キャストが成功すると、その特定の `Shape` サブクラスのプロパティを取得します。 
 
-[!code-csharp[継承](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
+[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
 ## <a name="see-also"></a>関連項目
 
 [クラスとオブジェクト](../tour-of-csharp/classes-and-objects.md)   
 [継承 (C# プログラミング ガイド)](../programming-guide/classes-and-structs/inheritance.md)
-

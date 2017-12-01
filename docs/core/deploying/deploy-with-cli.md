@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 82ebe16d-5e1c-46cc-91e8-71974296429c
+ms.openlocfilehash: fc7a40667c9b0a623bb0ebdf4ad60783fa58e6c5
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: b647c5dc4e565f9813212d75fab4a2e46c1a47b9
-ms.openlocfilehash: 3d799c6f824bd5cf08c0e939b069a21092395268
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/12/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
-
 # <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>コマンド ライン インターフェイス (CLI) ツールを使用して .NET Core アプリを展開する
 
 .NET Core アプリケーションは、アプリケーション バイナリは含むが対象のシステムに .NET Core バイナリが存在することに依存する*フレームワークに依存する展開*か、アプリケーションと .NET Core のバイナリの両方を含む*自己完結型の配置*のいずれかで展開できます。 概要については、「[.NET Core アプリケーション展開](index.md)」を参照してください。
@@ -28,7 +26,7 @@ ms.lasthandoff: 09/12/2017
 - 自己完結型の展開
 - サードパーティの依存関係を含む、自己完結型の展開
 
-コマンド ラインを使用する場合は、任意のプログラム エディターを使用できます。 プログラム エディターが [Visual Studio Code](https://code.visualstudio.com) の場合、[**表示**] > [**統合ターミナル**] を選択して、Visual Studio Code 環境内にコマンド コンソールを開くことができます。
+コマンド ラインを使用する場合は、任意のプログラム エディターを使用できます。 プログラム エディターが [Visual Studio Code](https://code.visualstudio.com) の場合、**[表示]** > **[統合ターミナル]** を選択して、Visual Studio Code 環境内にコマンド コンソールを開くことができます。
 
 ## <a name="framework-dependent-deployment"></a>フレームワークに依存する展開
 
@@ -46,11 +44,11 @@ ms.lasthandoff: 09/12/2017
 
    エディターで *Program.cs* ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
-   [!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
+   [!code-csharp[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
 
 1. プロジェクトの依存関係とツールを更新します。
  
-   [dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、プロジェクトで指定された依存関係を復元します。
+   実行、 [dotnet 復元](../tools/dotnet-restore.md)([注を参照してください](#dotnet-restore-note))、プロジェクトで指定された依存関係を復元するコマンド。
 
 1. アプリのデバッグ ビルドを作成します。
 
@@ -73,7 +71,7 @@ ms.lasthandoff: 09/12/2017
 
 ## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む、フレームワークに依存する展開
 
-1 つ以上のサードパーティの依存関係を備えたフレームワークに依存する展開を展開するには、それらの依存関係がプロジェクトで使用できる必要があります。 `dotnet restore` コマンドを実行する前に、次の 2 つの追加手順を実行する必要があります。
+1 つ以上のサードパーティの依存関係を備えたフレームワークに依存する展開を展開するには、それらの依存関係がプロジェクトで使用できる必要があります。 実行するには、次の 2 つの追加手順が必要、 `dotnet restore` ([注を参照してください](#dotnet-restore-note)) コマンド。
 
 1. *csproj* ファイルの `<ItemGroup>` セクションに、必要なサードパーティ ライブラリへの参照を追加します。 次の `<ItemGroup>` セクションには、サードパーティ ライブラリとして [Json.NET](http://www.newtonsoft.com/json) への依存関係があります。
 
@@ -83,7 +81,7 @@ ms.lasthandoff: 09/12/2017
       </ItemGroup>
       ```
 
-1. サードパーティの依存関係を含む NuGet パッケージをまだダウンロードしていない場合は、ダウンロードします。 パッケージをダウンロードするには、依存関係を追加した後で `dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
+1. サードパーティの依存関係を含む NuGet パッケージをまだダウンロードしていない場合は、ダウンロードします。 パッケージをダウンロードするには、実行、 `dotnet restore` ([注を参照してください](#dotnet-restore-note))、依存関係の追加後にコマンド。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
 
 サードパーティの依存関係を含む、フレームワークに依存する展開は、サードパーティの依存関係と同じ移植性を持つことに注意してください。 たとえば、サードパーティ ライブラリが macOS のみをサポートする場合、そのアプリを Windows システムに移植することはできません。 この状況は、サードパーティの依存関係自体がネイティブ コードに依存する場合に生じる可能性があります。 このよい例は、[libuv](https://github.com/libuv/libuv) に対してネイティブの依存関係が必要な [Kestrel サーバー](/aspnet/core/fundamentals/servers/kestrel)です。 このようなサードパーティの依存関係を含むアプリケーションに対して FDD が作成されると、発行された出力には、ネイティブの依存関係がサポートする (そして、その NuGet パッケージ内に存在する) 各[ランタイム識別子 (RID)](../rid-catalog.md) のフォルダーが含まれます。
 
@@ -103,7 +101,7 @@ ms.lasthandoff: 09/12/2017
 
    エディターで *Program.cs* ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
-   [!code-cs[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
+   [!code-csharp[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
 
 1. アプリの対象プラットフォームを定義します。
 
@@ -121,7 +119,7 @@ ms.lasthandoff: 09/12/2017
 
 1. プロジェクトの依存関係とツールを更新します。
 
-   [dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、プロジェクトで指定された依存関係を復元します。
+   実行、 [dotnet 復元](../tools/dotnet-restore.md)([注を参照してください](#dotnet-restore-note))、プロジェクトで指定された依存関係を復元するコマンド。
 
 1. アプリのデバッグ ビルドを作成します。
 
@@ -156,7 +154,7 @@ ms.lasthandoff: 09/12/2017
 
 ## <a name="self-contained-deployment-with-third-party-dependencies"></a>サードパーティの依存関係を含む、自己完結型の展開
 
-1 つまたは複数のサードパーティの依存関係を含む自己完結型の展開を展開するプロセスには、依存関係の追加が含まれます。 `dotnet restore` コマンドを実行する前に、次の 2 つの追加手順を実行する必要があります。
+1 つまたは複数のサードパーティの依存関係を含む自己完結型の展開を展開するプロセスには、依存関係の追加が含まれます。 実行するには、次の 2 つの追加手順が必要、 `dotnet restore` ([注を参照してください](#dotnet-restore-note)) コマンド。
 
 1. 任意のサードパーティ ライブラリへの参照を *csproj* ファイルの `<ItemGroup>` セクションに追加します。 次の `<ItemGroup>` セクションは、サードパーティ ライブラリとして Json.NET を使用します。
 
@@ -166,7 +164,7 @@ ms.lasthandoff: 09/12/2017
       </ItemGroup>
     ```
 
-1. サードパーティの依存関係を含む NuGet パッケージをシステムにまだダウンロードしていない場合は、ダウンロードします。 依存関係をアプリで使用できるようにするには、依存関係を追加してから、`dotnet restore` コマンドを実行します。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
+1. サードパーティの依存関係を含む NuGet パッケージをシステムにまだダウンロードしていない場合は、ダウンロードします。 で、依存関係をアプリに使用できるようにするには実行、 `dotnet restore` ([注を参照してください](#dotnet-restore-note))、依存関係の追加後にコマンド。 発行時に依存関係はローカルの NuGet キャッシュからが解決されるので、システムで使用可能になる必要があります。
 
 このプロジェクトの完全な *csproj* ファイルを次に示します。
 
@@ -186,6 +184,9 @@ ms.lasthandoff: 09/12/2017
 アプリケーションを展開すると、アプリで使用されるすべてのサードパーティの依存関係も、アプリケーション ファイルに含まれています。 アプリが実行されているシステムには、サードパーティ ライブラリは必要ありません。
 
 サードパーティ ライブラリを含む自己完結型の展開は、そのライブラリでサポートされるプラットフォームにのみ展開できます。 これは、フレームワークに依存する展開にサード パーティの依存関係とネイティブの依存関係があり、ネイティブの依存関係はアプリがインストールされたプラットフォームと対応している必要がある場合と似ています。
+
+<a name="dotnet-restore-note"></a>
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 # <a name="see-also"></a>関連項目
 

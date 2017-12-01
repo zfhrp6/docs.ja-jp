@@ -1,21 +1,17 @@
 ---
 title: "dotnet publish コマンド - .NET Core CLI"
 description: "dotnet publish コマンドは、.NET Core プロジェクトをディレクトリに発行します。"
-keywords: "dotnet-publish, CLI, CLI コマンド, .NET Core"
-author: blackdwarf
+author: mairaw
 ms.author: mairaw
-ms.date: 08/12/2017
+ms.date: 09/01/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: f2ef275a-7c5e-430a-8c30-65f52af62771
+ms.openlocfilehash: d59ba8cf74a63c7d4a2234989477b5778fa0148f
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: db6e527a6132be0b6362c68945bb68884f5ad619
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -95,10 +91,11 @@ dotnet publish [-h|--help]
 `-o|--output <OUTPUT_DIRECTORY>`
 
 出力ディレクトリのパスを指定します。 指定しないと、既定で、フレームワークに依存する展開の場合は *./bin/[configuration]/[framework]/* に、自己完結型の展開の場合は *./bin/[configuration]/[framework]/[runtime]* に設定されます。
+相対パスを指定する場合、現在の作業ディレクトリが、プロジェクト ファイルの場所を相対生成された出力ディレクトリ パスです。
 
 `--self-contained`
 
-アプリケーションと一緒に .NET Core ランタイムを発行します。これにより、ランタイムをターゲット コンピューターにインストールする必要がなくなります。 ランタイム識別子を指定した場合、その既定値は `true` となります。 さまざまな展開方法の詳細については、[「.NET Core アプリケーションの展開」](../deploying/index.md)を参照してください。
+アプリケーションと一緒に .NET Core ランタイムを発行します。これにより、ランタイムをターゲット コンピューターにインストールする必要がなくなります。 ランタイム識別子を指定した場合、その既定値は `true` となります。 さまざまな展開方法の詳細については、次を参照してください。 [.NET Core アプリケーションの配置](../deploying/index.md)です。
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
@@ -133,6 +130,7 @@ dotnet publish [-h|--help]
 `-o|--output <OUTPUT_DIRECTORY>`
 
 出力ディレクトリのパスを指定します。 指定しないと、既定で、フレームワークに依存する展開の場合は *./bin/[configuration]/[framework]/* に、自己完結型の展開の場合は *./bin/[configuration]/[framework]/[runtime]* に設定されます。
+相対パスを指定する場合、現在の作業ディレクトリが、プロジェクト ファイルの場所を相対生成された出力ディレクトリ パスです。
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
@@ -170,4 +168,3 @@ dotnet publish [-h|--help]
 
 * [ターゲット フレームワーク](../../standard/frameworks.md)
 * [ランタイム識別子 (RID) のカタログ](../rid-catalog.md)
-

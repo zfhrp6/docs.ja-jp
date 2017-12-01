@@ -12,11 +12,11 @@ caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: a65ca3d3d4a787132246312e28213e71defc94ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5efe784f434ff357120343061c1c4b9447cc8cd1
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="workflowapplication-readline-host"></a>WorkflowApplication ReadLine ホスト
 このサンプルは、汎用 ReadLine ホストです。 用意されている `ReadLine` アクティビティ (または文字列を使用して再開されるブックマークからデータを取得する他の同様のアクティビティ) を使用して、任意のワークフローを読み込んで実行することができます。 `WriteLine` アクティビティ、または <xref:System.Activities.Statements.WriteLine.TextWriter%2A> 拡張に書き込みを行うアクティビティからの出力は、ホスト ウィンドウに送られます。 インスタンスがアイドル状態の場合、そのインスタンスの使用可能なブックマークがコンボ ボックスに表示されます。 ブックマークを選択してテキストを入力し、ブックマークを再開するボタンをクリックすると、ワークフローの実行が続行されます。 選択したワークフローを取り消したり、中止または終了することもできます。 既定では永続化が有効になっており、ホストをシャットダウンして再起動しても、データベースに格納されているインスタンスがインスタンスの一覧に読み込まれます。 <xref:System.Activities.WorkflowApplication> レベルのイベントをホストに出力するには、追跡を使用します。オプションで、アクティビティ レベルの詳細な追跡も行うことができます。  
@@ -67,6 +67,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ControllingWorkflowApplications`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ControllingWorkflowApplications`

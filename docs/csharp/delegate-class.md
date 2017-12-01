@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
+ms.openlocfilehash: 09c7da7c780389d3819cf23a533cc425b43ad5ff
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 465326fe520d6a062609e0c4c471135ef88b0dd6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate と `delegate` キーワード
 
 [前へ](delegates-overview.md)
@@ -26,7 +24,7 @@ ms.lasthandoff: 07/28/2017
 
 ## <a name="defining-delegate-types"></a>デリゲート型の定義
 
-最初に、'delegate' キーワードから始めましょう。これは、主に、デリゲートを操作する際に使用するためです。 `delegate` キーワードを使用したときにコンパイラで生成されるコードは、@System.Delegate クラスおよび @System.MulticastDelegate クラスのメンバーを呼び出すメソッド呼び出しにマップされます。 
+最初に、'delegate' キーワードから始めましょう。これは、主に、デリゲートを操作する際に使用するためです。 `delegate` キーワードを使用したときにコンパイラで生成されるコードは、<xref:System.Delegate> クラスおよび <xref:System.MulticastDelegate> クラスのメンバーを呼び出すメソッド呼び出しにマップされます。 
 
 デリゲート型を定義するには、メソッド シグネチャの定義と同様の構文を使用します。 定義に `delegate` キーワードを追加するだけです。
 
@@ -122,7 +120,7 @@ Sort() の例では、通常、デリゲートに 1 つのターゲット メソ
 
 ## <a name="delegate-and-multicastdelegate-classes"></a>Delegate クラスと MulticastDelegate クラス
 
-前述の言語サポートは、デリゲートの操作で一般的に必要となる機能と支援を提供します。 これらの機能は、.NET Core Framework の 2 つのクラスである @System.Delegate と @"System.MulticastDelegate" に基づいています。
+前述の言語サポートは、デリゲートの操作で一般的に必要となる機能と支援を提供します。 これらの機能は、.NET Core framework での 2 つのクラスに組み込まれて:<xref:System.Delegate>と<xref:System.MulticastDelegate>です。
 
 `System.Delegate` クラスと、その直接的なサブクラス `System.MulticastDelegate` は、デリゲートの作成、デリゲート ターゲットとしてのメソッドの登録、デリゲート ターゲットとして登録されているすべてのメソッドの呼び出しについてフレームワークをサポートします。 
 
@@ -143,4 +141,3 @@ Sort() の例では、通常、デリゲートに 1 つのターゲット メソ
 デリゲートをサポートしている言語構文とクラスの説明は以上です。次に、厳密に型指定されたデリゲートの使用、作成、呼び出しの方法を確認しましょう。
 
 [次へ](delegates-strongly-typed.md)
-

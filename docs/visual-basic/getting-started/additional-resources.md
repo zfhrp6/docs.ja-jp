@@ -1,12 +1,9 @@
 ---
 title: "Visual Basic プログラマのための追加リソース"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic, additional resources
 - Help
@@ -19,29 +16,14 @@ helpviewer_keywords:
 - support, Visual Studio sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 4f37aaffa33d618a54ea56252b7183f9bce1ed7b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1ebc788f629e011dff88c1db119ce25a3829e009
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="additional-resources-for-visual-basic-programmers"></a>Visual Basic プログラマのための追加リソース
 次の Web サイトで示すガイダンスは、一般的な問題に対する回答を見つけるのに役立つ場合があります。  
@@ -63,7 +45,7 @@ ms.lasthandoff: 07/28/2017
 |用語|定義|  
 |----------|----------------|  
 |[コード ギャラリー](http://code.msdn.microsoft.com/)|サンプル アプリケーションやその他のリソースをダウンロードしたり、開発者コミュニティと共有できます。|  
-|[CodePlex](http://www.codeplex.com/)|オープン ソースのソフトウェア プロジェクトを提供しています。 CodePlex を使用して、オープン ソース ソフトウェアを検索したり、新しいプロジェクトを作成して世界中の人々と共有することができます。|  
+|[GitHub](http://www.github.com/)|オープン ソースのソフトウェア プロジェクトを提供しています。 GitHub を使用して、オープン ソース ソフトウェアを探すか、世界中で共有する新しいプロジェクトを作成することができます。|  
 |[Visual Basic コード サンプル](http://msdn.microsoft.com/vbasic/ms789074)|Visual Basic のアプリケーション、Web、データのサンプルが用意されています。|  
   
 ### <a name="forums"></a>フォーラム  
@@ -106,6 +88,5 @@ ms.lasthandoff: 07/28/2017
 |[vb.dotnet.technical](http://go.microsoft.com/fwlink/?LinkId=145986)|DevX フォーラムでは [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の新機能を議論するフォーラムが提供されています。|  
   
 ## <a name="see-also"></a>関連項目  
- [はじめに](../../visual-basic/getting-started/index.md)   
+ [はじめに](../../visual-basic/getting-started/index.md)  
  [ご意見](/visualstudio/ide/talk-to-us)
-

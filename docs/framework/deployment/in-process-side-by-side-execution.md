@@ -5,29 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - in-process side-by-side execution
 - side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: fa65be2eee481e20231bacb5d0861fa3d2c03f92
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5ad204e06868b21ac6f37bbdf02d29670a284496
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="in-process-side-by-side-execution"></a>インプロセスの side-by-side 実行
 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、インプロセスの side-by-side ホスティングを使用して、1 つのプロセスで複数のバージョンの共通言語ランタイム (CLR) を実行できます。 既定では、マネージ COM コンポーネントは、プロセスに読み込まれている .NET Framework のバージョンに関係なく、コンポーネントがビルドされた .NET Framework のバージョンで実行されます。  
@@ -47,7 +40,7 @@ ms.lasthandoff: 07/28/2017
   
 -   **アプリケーション開発者**。 Side-by-side ホスティングは、アプリケーション開発者に対する影響はほとんどありません。 既定では、アプリケーションはそれがビルドされた .NET Framework のバージョンで常に実行されます。これは変更されていません。 ただし、開発者はこの動作をオーバーライドし、新しいバージョンの .NET Framework で実行するようアプリケーションに指示できます ([シナリオ 2](#scenarios) をご覧ください)。  
   
--   **ライブラリ開発者とコンシューマー**。 ライブラリ開発者が直面する互換性の問題は、side-by-side ホスティングでは解決されません。 アプリケーションによって (直接参照または <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> の呼び出しにより) 直接読み込まれるライブラリは、それが読み込まれる <xref:System.AppDomain> のランタイムを引き続き使います。 サポートする .NET Framework のすべてのバージョンについて、ライブラリをテストする必要があります。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムを使ってコンパイルされているアプリケーションに、それより前のランタイムを使ってビルドされたライブラリが含まれる場合は、そのライブラリも [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムを使います。 一方、ランタイムを使ってビルドされたアプリケーションに、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使ってビルドされたライブラリが含まれる場合は、アプリケーションも [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使うように強制する必要があります ([シナリオ 3](#scenarios) をご覧ください)。  
+-   **ライブラリ開発者とコンシューマー**。 ライブラリ開発者が直面する互換性の問題は、side-by-side ホスティングでは解決されません。 アプリケーションによって (直接参照または <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> の呼び出しにより) 直接読み込まれるライブラリは、それが読み込まれる <xref:System.AppDomain> のランタイムを引き続き使います。 サポートする .NET Framework のすべてのバージョンについて、ライブラリをテストする必要があります。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムを使ってコンパイルされているアプリケーションに、それより前のランタイムを使ってビルドされたライブラリが含まれる場合は、そのライブラリも [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ランタイムを使います。 一方、ランタイムを使ってビルドされたアプリケーションに、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使ってビルドされたライブラリが含まれる場合は、アプリケーションも [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を使うように強制する必要があります ([シナリオ 3](#scenarios) をご覧ください)。  
   
 -   **マネージ COM コンポーネントの開発者**。 以前は、マネージ COM コンポーネントはコンピューターにインストールされている最新バージョンのランタイムを使って自動的に実行しました。 現在は、ビルドされたバージョンのランタイムに対して COM コンポーネントを実行できるようになりました。  
   
@@ -189,6 +182,5 @@ int _tmain(int argc, _TCHAR* argv[])
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [\<startup> 要素](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)   
+ [\<スタートアップ > 要素](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)  
  [\<<supportedRuntime> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
-

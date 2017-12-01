@@ -1,42 +1,23 @@
 ---
 title: "-bugreport (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /bugreport
-dev_langs:
-- CSharp
+f1_keywords: /bugreport
 helpviewer_keywords:
 - /bugreport compiler option [C#]
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d1341383d48a28966a0873f3124cdc3567ec3f76
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ccfea1aa7e51ad013418f61bc4478034c9a5d830
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="bugreport-c-compiler-options"></a>/bugreport (C# コンパイラ オプション)
 後で分析を実行できるように、デバッグ情報をファイルに出力するよう指定します。  
@@ -77,7 +58,6 @@ ms.lasthandoff: 07/28/2017
  生成されたファイルの内容によってソース コードが公開され、意図しない情報開示につながる場合があることに注意してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [/errorreport (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)   
+ [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
+ [/errorreport (c# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
-

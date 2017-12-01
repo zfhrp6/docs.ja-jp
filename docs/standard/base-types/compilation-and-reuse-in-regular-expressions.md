@@ -1,57 +1,57 @@
 ---
-title: "正規表現におけるコンパイルと再利用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現, コンパイル"
-  - ".NET Framework 正規表現, エンジン"
-  - "コンパイル, 正規表現"
-  - "解析 (正規表現を使用したテキストを), コンパイル"
-  - "パターン一致 (正規表現を使用した), コンパイル"
-  - "正規表現, コンパイル"
-  - "正規表現, エンジン"
-  - "検索 (正規表現を使用した), コンパイル"
+title: "正規表現におけるコンパイルと再利用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- parsing text with regular expressions, compilation
+- searching with regular expressions, compilation
+- .NET Framework regular expressions, engines
+- .NET Framework regular expressions, compilation
+- regular expressions, compilation
+- compilation, regular expressions
+- pattern-matching with regular expressions, compilation
+- regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 76acdf2d0d2f7805ec78ea44136bfc63441b9bc9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 正規表現におけるコンパイルと再利用
-正規表現エンジンが表現をどのようにコンパイルするか、および正規表現がどのようにキャッシュされるかを理解すると、正規表現を多く使用するアプリケーションのパフォーマンスを最適化できます。  このトピックでは、コンパイルとキャッシュの両方について説明します。  
+# <a name="compilation-and-reuse-in-regular-expressions"></a>正規表現におけるコンパイルと再利用
+正規表現エンジンが式をどのようにコンパイルするか、および正規表現がどのようにキャッシュされるかを理解することで、正規表現を幅広く使用するアプリケーションのパフォーマンスを最適化できます。 このトピックでは、コンパイルとキャッシュの両方について説明します。  
   
-## コンパイルされた正規表現  
- 既定では、正規表現エンジンは正規表現をコンパイルして内部命令のシーケンスを生成します。これらは Microsoft Intermediate Language \(MSIL\) とは別の高水準コードです。  エンジンは正規表現を実行するときに、その内部コードを解釈します。  
+## <a name="compiled-regular-expressions"></a>コンパイルされた正規表現  
+ 既定では、正規表現エンジンは、内部命令のシーケンス (Microsoft 中間言語 (MSIL) とは異なる高度なコード) に正規表現をコンパイルします。 エンジンは、正規表現を実行するときに内部コードを解釈します。  
   
- <xref:System.Text.RegularExpressions.Regex> オブジェクトを構築するときに <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> オプションを使用すると、正規表現エンジンは、高水準の正規表現内部命令ではなく、明示的な MSIL コードに正規表現をコンパイルします。  これにより、.NET Framework の JIT \(Just\-In\-Time\) コンパイラは、正規表現をネイティブな機械語コードに変換してパフォーマンスの向上を図ることができます。  
+ 場合、<xref:System.Text.RegularExpressions.Regex>にオブジェクトを構築、<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>オプション、高度な正規表現内部の手順ではなく明示的な MSIL コードを正規表現をコンパイルします。 これにより、.NET の Just-In-Time (JIT) コンパイラは、式をネイティブのマシン コードに変換してパフォーマンスを高めることができます。  
   
- ただし、生成された MSIL はアンロードできません。  コードをアンロードする唯一の方法は、アプリケーション ドメイン全体をアンロードする \(つまり、アプリケーションのコードをすべてアンロードする\) ことです。  実際、<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> オプションを使用して正規表現をコンパイルした場合は、その正規表現を作成した <xref:System.Text.RegularExpressions.Regex> オブジェクト自体がガベージ コレクションで解放されたとしても、コンパイル済みの正規表現によって使用されるリソースを .NET Framework が解放することはありません。  
+ただし、生成された MSIL をアンロードすることはできません。 コードをアンロードする唯一の方法は、アプリケーション ドメイン全体をアンロードする (つまり、アプリケーションのすべてのコードをアンロードする) ことです。 実際には、正規表現をコンパイルした後、<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>オプションで、正規表現が作成した場合でも、コンパイル済みの式で使用したリソースを解放しない、<xref:System.Text.RegularExpressions.Regex>ガベージ コレクションにリリースされた自体であるオブジェクト。  
   
- このため、<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> オプションを使用してコンパイルする正規表現の数を制限することで、リソースの消費が過度にならないように注意する必要があります。  大量または無制限の正規表現をアプリケーションで使用する必要がある場合、**Options.Compiled** オプションを使用したコンパイルを行わないようにします。  ただし、少数の正規表現を繰り返して使用する場合は、パフォーマンスを向上させるために、<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> を使用して正規表現をコンパイルする必要があります。  別の方法として、プリコンパイル済みの正規表現を使用することもできます。  <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A> メソッドを使用すると、再利用できる DLL にすべての表現をコンパイルできます。  これにより、実行時にコンパイルする必要がなくなり、コンパイルされた正規表現の処理速度も維持されます。  
+ コンパイルすると、さまざまな正規表現の数を制限するように注意する必要があります、<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>多くのリソースを消費しないようにするにはオプションです。 アプリケーションで多数または無制限の数の正規表現を使用しなければならない場合は、各式をコンパイルするのではなく、解釈する必要があります。 ただし、正規表現の数が少ないを繰り返し使用する場合、コンパイルは<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>パフォーマンスが向上します。 代わりに、プリコンパイル済みの正規表現の使用を開始します。 すべての dll を再利用可能な表現を使用してコンパイルすることができます、<xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A>メソッドです。 これにより、コンパイルされた正規表現の速度も維持しながら、実行時にコンパイルする必要があります。  
   
-## 正規表現キャッシュ  
- パフォーマンスを向上させるために、正規表現エンジンは、コンパイル済みの正規表現のキャッシュをアプリケーション全体で保持します。  このキャッシュには、静的メソッド呼び出しでのみ使用される正規表現パターンが格納されます \(インスタンス メソッドに渡される正規表現パターンはキャッシュされません\)。これにより、正規表現を使用するたびに解析し直して高水準のバイト コードを生成する必要がなくなります。  
+## <a name="the-regular-expressions-cache"></a>正規表現のキャッシュ  
+ パフォーマンスを高めるために、正規表現エンジンは、コンパイルされた正規表現のアプリケーション全体のキャッシュを保持します。 キャッシュは、静的メソッド呼び出しでのみ使用される正規表現パターンを格納します (インスタンス メソッドに渡される正規表現パターンはキャッシュされません)。これにより、式を使用するたびに高度なバイト コードに再解析する必要がなくなります。  
   
- キャッシュされる正規表現の最大数は、`static` \(Visual Basic では `Shared`\) <xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=fullName> プロパティの値で決まります。  既定では、正規表現エンジンは最大で 15 個のコンパイル済み正規表現をキャッシュします。  コンパイル済み正規表現の数がキャッシュ サイズを超えると、最後に使用されてからの時間が最も長い正規表現が破棄され、新しい正規表現がキャッシュされます。  
+ キャッシュの正規表現の最大数の値によって決まります、 `static` (`Shared` Visual Basic で)<xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=nameWithType>プロパティです。 既定では、正規表現エンジンは最大 15 個のコンパイルされた正規表現をキャッシュします。 コンパイルされた正規表現の数がキャッシュ サイズを超えた場合は、最近の使用頻度が最も低い正規表現が破棄され、新しい正規表現がキャッシュされます。  
   
-> [!IMPORTANT]
->  .NET Framework Version 2.0 での正規表現のキャッシュ方法は、.NET Framework Version 1.0 および 1.1 とは大きく異なります。  .NET Framework 1.0 および 1.1 では、静的メソッド呼び出しとインスタンス メソッド呼び出しの両方で使用されるすべての正規表現がキャッシュされます。  このキャッシュは、新しい正規表現を格納するために自動的に拡張されます。  .NET Framework 2.0 では、静的メソッド呼び出しで使用された正規表現のみがキャッシュされます。  既定では最新の 15 個の正規表現だけがキャッシュされますが、キャッシュのサイズは <xref:System.Text.RegularExpressions.Regex.CacheSize%2A> プロパティの値を設定することで調整できます。  
+ アプリケーションでは、次の 2 つの方法のいずれかでプリコンパイル済みの正規表現を利用できます。  
   
- アプリケーションでは、次の 2 つの方法のいずれかにより、プリコンパイル済みの正規表現を利用できます。  
+-   静的メソッドを使用して、<xref:System.Text.RegularExpressions.Regex>正規表現を定義するオブジェクト。 別の静的メソッド呼び出しで既に定義されている正規表現パターンを使用している場合、正規表現エンジンはこれをキャッシュから取得します。 そうでない場合、エンジンは正規表現をコンパイルしてキャッシュに追加します。  
   
--   <xref:System.Text.RegularExpressions.Regex> オブジェクトの静的メソッドを使用して、正規表現を定義します。  別の静的メソッド呼び出しで既に定義されている正規表現パターンを使用する場合、正規表現エンジンはその表現をキャッシュから取得します。  それ以外の場合、エンジンは正規表現をコンパイルしてキャッシュに追加します。  
+-   既存の再利用して<xref:System.Text.RegularExpressions.Regex>オブジェクトの正規表現パターンが必要な限り、します。  
   
--   正規表現パターンが必要な場合に、既存の <xref:System.Text.RegularExpressions.Regex> オブジェクトを再利用します。  
+ オブジェクトのインスタンス化と作成と破棄迅速に、さまざまな正規表現のコンパイル時のオーバーヘッドが原因<xref:System.Text.RegularExpressions.Regex>オブジェクトは、非常に高価なプロセスです。 多数の異なる正規表現を使用するアプリケーションでは、静的に呼び出しを使用してパフォーマンスを最適化できます`Regex`メソッドおよび可能性のあるによって、正規表現のキャッシュのサイズを大ききます。  
   
- オブジェクトのインスタンス化と正規表現のコンパイルによって生じるオーバーヘッドのため、多数の <xref:System.Text.RegularExpressions.Regex> オブジェクトを作成してすぐに破棄するのは効率が良くありません。  多数の異なる正規表現を使用するアプリケーションでは、静的な `Regex` メソッドの呼び出しを使用することと、必要に応じて正規表現キャッシュのサイズを大きくすることで、パフォーマンスを最適化できます。  
-  
-## 参照  
- [.NET Framework の正規表現](../../../docs/standard/base-types/regular-expressions.md)
+## <a name="see-also"></a>関連項目  
+ [.NET の正規表現](../../../docs/standard/base-types/regular-expressions.md)

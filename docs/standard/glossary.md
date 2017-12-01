@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
+ms.openlocfilehash: a6546818eaeac3c32a6a9ddd7e64b1b0e0ea170f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 33b22ab80f9b4d42975f2c41c880543c615a3e01
-ms.openlocfilehash: c66f1b2b85d377c84712c0ad73682cdeeb7249fd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/31/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-glossary"></a>.NET 用語集
 
 この用語集の主な目的は、.NET のドキュメントで定義なしに頻繁に出現する用語と頭字語の意味を明確にすることです。
@@ -31,15 +29,15 @@ Ahead Of Time コンパイラ。
 
 .NET Framework に付属している ASP.NET の元の実装。
 
-ASP.NET は、ASP.NET Core を含む ASP.NET の両方の実装を指す包括的な用語として使われることがあります。 どちらを意味するかはコンテキストによって決まります。 
+ASP.NET は、ASP.NET Core を含む ASP.NET の両方の実装を指す包括的な用語として使われることがあります。 どちらを意味するかはコンテキストによって決まります。 参照を ASP.NET 4.x を明確にする場合を使用しない ASP.NET を両方の実装を意味します。 
 
-「[ASP.NET](/aspnet/#pivot=aspnet)」をご覧ください。
+参照してください[ASP.NET ドキュメント](/aspnet/#pivot=aspnet)です。
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
 .NET Core 上に構築された ASP.NET のクロスプラットフォームで高パフォーマンスなオープン ソースの実装。
 
-「[ASP.NET Core](/aspnet/#pivot=core)」をご覧ください。
+参照してください[ASP.NET Core ドキュメント](/aspnet/#pivot=core)です。
 
 ## <a name="assembly"></a>アセンブリ
 
@@ -278,5 +276,4 @@ OS は、ランタイム環境の一部ですが、.NET ランタイムの一部
 [.NET Core](../core/index.md)  
 [ASP.NET の概要](/aspnet/index#pivot=aspnet)  
 [ASP.NET Core の概要](/aspnet/index#pivot=core)  
-
 

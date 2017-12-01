@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 727aa0ca3e1673a5bbd29884077ed5aa65d792f2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 39f31e27f1e62d889df5a40a9ecb554c2547db8f
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="sql-generation"></a>SQL 生成
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] のプロバイダーを作成する場合は、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] コマンド ツリーを特定のデータベースが認識できる SQL (たとえば、SQL Server の場合は Transact-SQL、Oracle の場合は PL/SQL) に変換する必要があります。 ここでは、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] プロバイダーの SQL 生成コンポーネント (SELECT クエリ用) の開発方法を説明します。 挿入方法については、更新、および削除クエリを参照してください[変更 SQL 生成](../../../../../docs/framework/data/adonet/ef/modification-sql-generation.md)です。  
@@ -27,7 +27,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="the-role-of-the-sql-generation-module"></a>SQL 生成モジュールの役割  
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] プロバイダーの SQL 生成モジュールは、指定されたクエリ コマンド ツリーを、SQL:1999 準拠のデータベースを対象とする 1 つの SQL SELECT ステートメントに変換します。 生成される SQL 内の入れ子になったクエリは、できるだけ少なくする必要があります。 SQL 生成モジュールによって出力クエリ コマンド ツリーを簡素化する必要はありません。 これは、結合の排除や連続するフィルター ノードの折りたたみなどにより、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] が実行する処理です。  
   
- <!--zz<xref:System.Data.Common.DBProviderServices> --> `System.Data.Common.DBProviderServices`クラスは、コマンド ツリーに変換する、SQL 生成レイヤーにアクセスするための出発点<!--zz<xref:System.Data.Common.DbCommands>-->`System.Data.Common.DbCommands`です。  
+ <xref:System.Data.Common.DbProviderServices> クラスは、SQL 生成レイヤーにアクセスしてコマンド ツリーを <xref:System.Data.Common.DbCommand> に変換するための開始点となります。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [コマンド ツリーの構造](../../../../../docs/framework/data/adonet/ef/the-shape-of-the-command-trees.md)  

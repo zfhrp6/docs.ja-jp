@@ -1,30 +1,21 @@
 ---
 title: "方法: 署名されたフレンド アセンブリを作成する (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 79f5ff0615a572db162906c698c47196c6f045da
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e9d56602eaffe73ff301ade95aaebeabab663be6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>方法: 署名されたフレンド アセンブリを作成する (C#)
 この例では、厳密な名前を持つアセンブリと共にフレンド アセンブリを使用する方法を示します。 両方のアセンブリに厳密な名前が付けられている必要があります。 この例のアセンブリは両方とも同じキーを使用していますが、2 つのアセンブリそれぞれが別々のキーを使用することもできます。  
@@ -106,12 +97,11 @@ ms.lasthandoff: 07/28/2017
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `internal` 型とメンバーの参照可能範囲を制御することです。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)   
- [フレンド アセンブリ (C++)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)   
- [方法: 署名のないフレンド アセンブリを作成する (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)   
- [/keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)   
- [Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)   
- [厳密な名前付きアセンブリの作成と使用](https://msdn.microsoft.com/library/xwb8f617)   
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+ [フレンド アセンブリ (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [方法: 署名のないフレンド アセンブリ (c#) を作成します。](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
+ [/keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)  
+ [Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)  
+ [厳密な名前付きアセンブリの作成と使用](https://msdn.microsoft.com/library/xwb8f617)  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)
-

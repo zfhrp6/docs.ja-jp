@@ -1,30 +1,21 @@
 ---
 title: "LINQ to XML の概要 (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 1c66e87ecc72bf711dfda33cd7c0ea35f126c1e7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e85e61b29b9a97469c84abba4e4149b1967e601f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="linq-to-xml-overview-c"></a>LINQ to XML の概要 (C#)
 XML は、多くのコンテキストでデータを書式設定する方法として広く採用されてきました。 たとえば、Web、構成ファイル、Microsoft Office Word ファイル、データベースで XML が使用されています。  
@@ -81,7 +72,7 @@ select item;
 -   上記の機能を組み合わせて使用した XML ツリーの構造の変換  
   
 ## <a name="creating-xml-trees"></a>XML ツリーの作成  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] でのプログラミングで最も重要な利点の 1 つは、XML ツリーを簡単に作成できるという点です。 たとえば、小さな XML ツリーを作成するには、次のようにコードを記述します。  
+ プログラミングで最も重要な利点の 1 つ[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]は簡単に XML ツリーを作成します。 たとえば、小さな XML ツリーを作成するには、次のようにコードを記述します。  
   
 ```csharp  
 XElement contacts =  
@@ -105,6 +96,5 @@ new XElement("Contacts",
  詳しくは、「[XML ツリーの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq>   
+ <xref:System.Xml.Linq>  
  [はじめに (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
-

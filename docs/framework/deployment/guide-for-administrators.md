@@ -5,29 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: d208867789fc78a82a2e339596a5692280d95ff3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 07b7381ddc94e3bc40a4eb0ed546f9526b57600a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework 配置ガイド (管理者向け)
 この記事では、システム管理者が Microsoft System Center Configuration Manager を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのシステムの依存関係をネットワーク経由で配置する方法を手順に沿って説明します。 ここでは、すべての対象のクライアント コンピューターが .NET Framework の最小要件を満たしていることを前提としています。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールに必要なソフトウェア要件とハードウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
@@ -39,8 +32,8 @@ ms.lasthandoff: 07/28/2017
   
  このトピックは、次のセクションで構成されています。  
   
- [配置プロセス](#the_deployment_process)   
- [.NET Framework の配置](#deploying_in_a_test_environment)   
+ [展開プロセス](#the_deployment_process)  
+ [.NET Framework の配置](#deploying_in_a_test_environment)  
  [コレクションの作成](#creating_a_collection)  
  [パッケージとプログラムの作成](#creating_a_package)  
  [配布ポイントの選択](#select_dist_point)  
@@ -145,8 +138,8 @@ ms.lasthandoff: 07/28/2017
 |**/norestart**|セットアップ プログラムが自動的に再起動しないようにします。 このオプションを使用する場合、Configuration Manager でコンピューターの再起動を処理する必要があります。|  
 |**/chainingpackage** *PackageName*|チェーンを行っているパッケージの名前を指定します。 この情報は、[Microsoft カスタマー エクスペリエンス向上プログラム (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244) に申し込んだ場合のその他のインストール セッション情報と共に報告されます。 パッケージ名にスペースが含まれている場合は、区切り記号として二重引用符を使用します (例: **/chainingpackage "Chaining Product"**)。|  
   
- これらの手順によって、.NET Framework 4.5 という名前のパッケージが作成されます。 プログラムは、.NET Framework 4.5 のサイレント インストールを配置します。 サイレント インストールでは、ユーザーはインストール プロセスと対話しないので、チェーン アプリケーションがリターン コードをキャプチャし、再起動を処理する必要があります。MSDN ライブラリの「[Getting Progress Information from an Installation Package](http://go.microsoft.com/fwlink/?LinkId=179606)」 (インストール パッケージからの進行状況に関する情報の取得) を参照してください。  
-  
+ これらの手順によって、.NET Framework 4.5 という名前のパッケージが作成されます。 プログラムは、.NET Framework 4.5 のサイレント インストールを配置します。 サイレント インストールでは、ユーザーが、インストール プロセスを使って操作しないと、チェーン アプリケーションがリターン コードを取得し、再起動; を処理する必要参照してください[インストール パッケージからの進行状況情報の取得](http://go.microsoft.com/fwlink/?LinkId=179606)です。  
+ 
 <a name="select_dist_point"></a>   
 ### <a name="select-a-distribution-point"></a>配布ポイントの選択  
  サーバーからクライアント コンピューターにパッケージとプログラムを配布するには、まずサイト システムを配布ポイントとして指定し、次にパッケージを配布ポイントに配布する必要があります。  
@@ -236,7 +229,7 @@ ms.lasthandoff: 07/28/2017
 ### <a name="log-file-locations"></a>ログ ファイルの場所  
  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のセットアップ中に次のログ ファイルが作成されます。  
   
- %temp%\Microsoft .NET Framework 4.5*.txt   
+ %temp%\Microsoft .NET Framework 4.5*.txt  
  %temp%\Microsoft .NET Framework 4.5\*.html  
   
  [ログ収集ツール](http://www.microsoft.com/download/details.aspx?id=12493)を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のログ ファイルを収集し、それらのファイルのサイズを縮小した圧縮キャビネット (.cab) ファイルを作成できます。  
@@ -272,6 +265,5 @@ ms.lasthandoff: 07/28/2017
 -   [Windows Update エージェントの結果コード](http://technet.microsoft.com/library/cc720442.aspx)  
   
 ## <a name="see-also"></a>関連項目  
- [配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)   
+ [配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
  [システム要件](../../../docs/framework/get-started/system-requirements.md)
-

@@ -1,43 +1,46 @@
 ---
-title: "MSMQ アクティベーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "MSMQ アクティベーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 99fa5a5b76b90a6c16fa2bbd8ee11e91d77d47a5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# MSMQ アクティベーション
-このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス \(WAS\) でホストする方法を示します。  このサンプルは `netMsmqBinding` を使用しており、「[双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)」のサンプルに基づいています。  この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。  
+# <a name="msmq-activation"></a>MSMQ アクティベーション
+このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス (WAS) でホストする方法を示します。 このサンプルでは、`netMsmqBinding`に基づくと、[双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)サンプルです。 この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 > [!NOTE]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
->  \<InstallDrive\>:\\WF\_WCF\_Samples  
+>  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  Windows Communication Foundation \(WCF\) および Windows Workflow Foundation このディレクトリが存在しない場合は、「[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] 向けの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf](../../../../includes/wf-md.md)] のサンプル」に移動して、すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルおよび [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ハイパーリンク"http://go.microsoft.com/fwlink/?LinkId=150780"\t"_blank"と[!INCLUDE[wf](../../../../includes/wf-md.md)]サンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]すべてダウンロードして[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  \<InstallDrive\>:\\Samples\\WCFWFCardSpace\\WCF\\Basic\\Services\\Hosting\\WASHost\\MsmqActivation  
+>  \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation です。  
   
- Windows プロセス アクティブ化サービス \(WAS\) は [!INCLUDE[lserver](../../../../includes/lserver-md.md)] の新しいプロセス アクティブ化機構です。WAS は、以前は HTTP ベースのアプリケーションでのみ使用できた IIS のような機能を、HTTP 以外のプロトコルを使用するアプリケーションに提供します。  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] はリスナー アダプター インターフェイスを使用し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってサポートされる HTTP 以外のプロトコル \(TCP、名前付きパイプ、MSMQ など\) を介して受信されるアクティブ化要求を伝達します。  HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージ Windows サービスによってホストされます。  
+ Windows プロセス アクティブ化サービス (WAS) は [!INCLUDE[lserver](../../../../includes/lserver-md.md)] の新しいプロセス アクティブ化機構です。WAS は、以前は HTTP ベースのアプリケーションでのみ使用できた IIS のような機能を、HTTP 以外のプロトコルを使用するアプリケーションに提供します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] はリスナー アダプター インターフェイスを使用し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってサポートされる HTTP 以外のプロトコル (TCP、名前付きパイプ、MSMQ など) を介して受信されるアクティブ化要求を伝達します。 HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージ Windows サービスによってホストされます。  
   
- Net.Msmq リスナ アダプタ サービス \(NetMsmqActivator\) は、キュー内のメッセージに基づいてキューに置かれたアプリケーションをアクティブ化します。  
+ Net.Msmq リスナ アダプタ サービス (NetMsmqActivator) は、キュー内のメッセージに基づいてキューに置かれたアプリケーションをアクティブ化します。  
   
- クライアントはトランザクションのスコープ内から発注書をサービスに送信します。  サービスはトランザクション内で注文を受信して、処理します。  その後、サービスは注文ステータスをクライアントに返信します。  双方向通信を使用するには、クライアントとサービスの両方がキューを使用して、発注書や注文ステータスをキューに追加する必要があります。  
+ クライアントはトランザクションのスコープ内から発注書をサービスに送信します。 サービスはトランザクション内で注文を受信して、処理します。 その後、サービスは注文ステータスをクライアントに返信します。 双方向通信を使用するには、クライアントとサービスの両方がキューを使用して、発注書や注文ステータスをキューに追加する必要があります。  
   
- `IOrderProcessor` サービス コントラクトは、キューを使用する一方向サービス操作を定義します。  サービス操作は、注文ステータスをクライアントに送信するために応答エンドポイントを使用します。  応答エンドポイントのアドレスは、注文ステータスをクライアントに返信する際に使用されるキューの URI です。  注文処理アプリケーションは、このコントラクトを実装します。  
+ `IOrderProcessor` サービス コントラクトは、キューを使用する一方向サービス操作を定義します。 サービス操作は、注文ステータスをクライアントに送信するために応答エンドポイントを使用します。 応答エンドポイントのアドレスは、注文ステータスをクライアントに返信する際に使用されるキューの URI です。 注文処理アプリケーションは、このコントラクトを実装します。  
   
 ```csharp  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -47,10 +50,9 @@ public interface IOrderProcessor
     void SubmitPurchaseOrder(PurchaseOrder po,   
                                            string reportOrderStatusTo);  
 }  
-  
 ```  
   
- 注文ステータスを送信する応答コントラクトは、クライアントが指定します。  クライアントは注文ステータス コントラクトを実装します。  サービスは、このコントラクトについて生成されたクライアントを使用して、注文ステータスをクライアントに返信します。  
+ 注文ステータスを送信する応答コントラクトは、クライアントが指定します。 クライアントは注文ステータス コントラクトを実装します。 サービスは、このコントラクトについて生成されたクライアントを使用して、注文ステータスをクライアントに返信します。  
   
 ```csharp  
 [ServiceContract]  
@@ -59,10 +61,9 @@ public interface IOrderStatus
     [OperationContract(IsOneWay = true)]  
     void OrderStatus(string poNumber, string status);  
 }  
-  
 ```  
   
- サービス操作は、送信された発注書を処理します。  <xref:System.ServiceModel.OperationBehaviorAttribute> はサービス操作に適用され、キューからのメッセージの受信に使用されるトランザクション内で登録リストを自動で作成し、サービス操作が完了したときにトランザクションを自動で完了するように指定します。  `Orders` クラスは、注文処理機能をカプセル化します。  この例では、発注書をディクショナリに追加します。  このサービス操作が帰属するしているトランザクションは、`Orders` クラス内の操作で使用できます。  
+ サービス操作は、送信された発注書を処理します。 <xref:System.ServiceModel.OperationBehaviorAttribute> はサービス操作に適用され、キューからのメッセージの受信に使用されるトランザクション内で登録リストを自動で作成し、サービス操作が完了したときにトランザクションを自動で完了するように指定します。 `Orders` クラスは、注文処理機能をカプセル化します。 この例では、発注書をディクショナリに追加します。 このサービス操作が帰属するしているトランザクションは、`Orders` クラス内の操作で使用できます。  
   
  サービス操作は、送信された発注書を処理するだけでなく、注文ステータスをクライアントに戻します。  
   
@@ -86,15 +87,14 @@ public class OrderProcessorService : IOrderProcessor
             scope.Complete();  
         }  
     }  
-  
 ```  
   
  使用するクライアント バインディングの指定には、構成ファイルを使用します。  
   
- MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。  サービスのエンドポイントは、構成ファイルの System.serviceModel セクションで定義されます。  
+ MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。 サービスのエンドポイントは、構成ファイルの System.serviceModel セクションで定義されます。  
   
 > [!NOTE]
->  MSMQ のキュー名とエンドポイント アドレスでは、若干異なるアドレス表記が使用されています。  MSMQ のキュー名では、ドット \(.\) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは net.msmq: スキームを指定します。ローカル コンピューターを表すのに "localhost" を使用し、パスの区切りにはスラッシュを使用します。  リモート コンピューターでホストされているキューからの読み出しを行うには、"." や "localhost" をリモート コンピューター名に置き換えます。  
+>  MSMQ のキュー名とエンドポイント アドレスでは、若干異なるアドレス表記が使用されています。 MSMQ のキュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは net.msmq: スキームを指定します。ローカル コンピューターを表すのに "localhost" を使用し、パスの区切りにはスラッシュを使用します。 リモート コンピューターでホストされているキューからの読み出しを行うには、"." や "localhost" をリモート コンピューター名に置き換えます。  
   
  クラスの名前が付いた .svc ファイルは、WAS でのサービス コードのホストに使用されます。  
   
@@ -102,7 +102,6 @@ public class OrderProcessorService : IOrderProcessor
   
 ```xml  
 <%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>  
-  
 ```  
   
  さらに、Service.svc ファイルには、System.Transactions.dll を読み込むためのアセンブリ ディレクティブも含まれます。  
@@ -111,7 +110,7 @@ public class OrderProcessorService : IOrderProcessor
 <%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>  
 ```  
   
- クライアントはトランザクション スコープを作成します。  サービスとの通信はトランザクションのスコープ内で実行され、すべてのメッセージが成功か失敗かを示すアトミックな単位として扱われます。  トランザクションは、トランザクション スコープで `Complete` を呼び出すことでコミットされます。  
+ クライアントはトランザクション スコープを作成します。 サービスとの通信はトランザクションのスコープ内で実行され、すべてのメッセージが成功か失敗かを示すアトミックな単位として扱われます。 トランザクションは、トランザクション スコープで `Complete` を呼び出すことでコミットされます。  
   
 ```csharp  
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))  
@@ -164,10 +163,9 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))
     // Close the ServiceHostBase to shutdown the service.  
     serviceHost.Close();  
     }  
-  
 ```  
   
- クライアント コードは `IOrderStatus` コントラクトを実装して、サービスからの注文ステータスを受信します。  この場合は、注文ステータスを出力します。  
+ クライアント コードは `IOrderStatus` コントラクトを実装して、サービスからの注文ステータスを受信します。 この場合は、注文ステータスを出力します。  
   
 ```csharp  
 [ServiceBehavior]  
@@ -183,7 +181,7 @@ public class OrderStatusService : IOrderStatus
 }  
 ```  
   
- 注文ステータス キューは `Main` メソッド内で作成します。  クライアント構成には、注文ステータス サービスをホストするための注文ステータス サービス構成が含まれています。次のサンプル構成を参照してください。  
+ 注文ステータス キューは `Main` メソッド内で作成します。 クライアント構成には、注文ステータス サービスをホストするための注文ステータス サービス構成が含まれています。次のサンプル構成を参照してください。  
   
 ```csharp  
 <appSettings>  
@@ -213,60 +211,58 @@ public class OrderStatusService : IOrderStatus
     </client>  
   
   </system.serviceModel>  
-  
 ```  
   
- サンプルを実行すると、クライアントとサービスのアクティビティがサーバーとクライアントの両方のコンソール ウィンドウに表示されます。  サーバーがクライアントから受信したメッセージを表示できます。  どちらかのコンソールで Enter キーを押すと、サーバーとクライアントがどちらもシャットダウンされます。  
+ サンプルを実行すると、クライアントとサービスのアクティビティがサーバーとクライアントの両方のコンソール ウィンドウに表示されます。 サーバーがクライアントから受信したメッセージを表示できます。 どちらかのコンソールで Enter キーを押すと、サーバーとクライアントがどちらもシャットダウンされます。  
   
  クライアントには、サーバーから送信された注文ステータス情報が表示されます。  
   
 ```Output  
-  
-クライアントを終了するには、<Enter> キーを押します。  注文 70cf9d63-3dfa-4e69-81c2-23aa4478ebed のステータス: 保留    
+Press <ENTER> to terminate client.  
+Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending  
 ```  
   
-### サンプルをセットアップ、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
 1.  WAS のアクティブ化に必要な [!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。  
   
-2.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。  
+2.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。 さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。  
   
-    1.  **\[スタート\]** メニューの **\[コントロール パネル\]** をクリックします。  
+    1.  **開始** メニューの 選択**コントロール パネルの **です。  
   
-    2.  **\[プログラムと機能\]** をクリックします。  
+    2.  選択**プログラムと機能**します。  
   
-    3.  **\[Windows 機能の有効化または無効化\]** をクリックします。  
+    3.  をクリックして**Windows の機能のオンまたはオフ**です。  
   
-    4.  **\[機能の概要\]** で、**\[機能の追加\]** をクリックします。  
+    4.  **機能の概要**をクリックして**機能の追加**です。  
   
-    5.  **\[Microsoft .NET Framework 3.0\]** ノードを展開し、**\[Windows Communication Foundation Non\-HTTP Activation\]** 機能をオンにします。  
+    5.  展開して、 **Microsoft .NET Framework 3.0**ノードとチェック、 **Windows Communication Foundation NON-HTTP Activation**機能します。  
   
-3.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+3.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
-4.  コマンド ウィンドウで client.exe を実行することにより、クライアントを実行します。  これによってキューが作成され、メッセージがそのキューに送信されます。  クライアントを実行しながら、メッセージを読み取るサービスの結果を表示します。  
+4.  コマンド ウィンドウで client.exe を実行することにより、クライアントを実行します。 これによってキューが作成され、メッセージがそのキューに送信されます。 クライアントを実行しながら、メッセージを読み取るサービスの結果を表示します。  
   
-5.  MSMQ アクティベーション サービスは、既定では NETWORK SERVICE として動作します。  そのため、アプリケーションのアクティブ化に使用されるキューには、NETWORK SERVICE アカウントによる受信およびピーク権限が必要です。  この権限は、メッセージ キュー MMC を使用して追加できます。  
+5.  MSMQ アクティベーション サービスは、既定では NETWORK SERVICE として動作します。 そのため、アプリケーションのアクティブ化に使用されるキューには、NETWORK SERVICE アカウントによる受信およびピーク権限が必要です。 この権限は、メッセージ キュー MMC を使用して追加できます。  
   
-    1.  **\[スタート\]** メニューから **\[ファイル名を指定して実行\]** をクリックし、「`Compmgmt.msc`」と入力して Enter キーを押します。  
+    1.  **開始** メニューのをクリックして**実行**、入力し、 `Compmgmt.msc` ENTER キーを押します。  
   
-    2.  **\[サービスとアプリケーション\]** で **\[メッセージ キュー\]** を展開します。  
+    2.  **サービスとアプリケーション**、展開**メッセージ キュー**です。  
   
-    3.  **\[プライベート キュー\]** をクリックします。  
+    3.  をクリックして**専用キュー**です。  
   
-    4.  キュー \(servicemodelsamples\/Service.svc\) を右クリックし、**\[プロパティ\]** をクリックします。  
+    4.  キュー (servicemodelsamples/Service.svc) を右クリックして選択**プロパティ**です。  
   
-    5.  **\[セキュリティ\]** タブの **\[追加\]** をクリックし、NETWORK SERVICE にピークと受信のアクセス許可を付与します。  
+    5.  **セキュリティ** タブで、をクリックして**追加**のピークを与えるし、ネットワーク サービスへのアクセス許可を受信します。  
   
-6.  MSMQ アクティブ化をサポートするよう Windows プロセス アクティブ化サービス \(WAS\) を設定します。  
+6.  MSMQ アクティブ化をサポートするよう Windows プロセス アクティブ化サービス (WAS) を設定します。  
   
      便宜上次の 2 つの手順が、サンプル ディレクトリにある AddMsmqSiteBinding.cmd というバッチ ファイルに実装されています。  
   
-    1.  net.msmq アクティベーションをサポートするには、既定の Web サイトをあらかじめ net.msmq プロトコルにバインドしておく必要があります。  これは、[!INCLUDE[iisver](../../../../includes/iisver-md.md)] 管理ツール セットと共にインストールされる appcmd.exe を使用して行います。  権限のレベルが高い \(管理者の\) コマンド プロンプトで、次のコマンドを実行します。  
+    1.  net.msmq アクティベーションをサポートするには、既定の Web サイトをあらかじめ net.msmq プロトコルにバインドしておく必要があります。 これは、[!INCLUDE[iisver](../../../../includes/iisver-md.md)] 管理ツール セットと共にインストールされる appcmd.exe を使用して行います。 権限のレベルが高い (管理者の) コマンド プロンプトで、次のコマンドを実行します。  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
         -+bindings.[protocol='net.msmq',bindingInformation='localhost']  
-  
         ```  
   
         > [!NOTE]
@@ -274,21 +270,20 @@ public class OrderStatusService : IOrderStatus
   
          このコマンドによって、既定の Web サイトに net.msmq サイト バインディングを追加します。  
   
-    2.  サイト内のすべてのアプリケーションが同じ net.msmq バインディングを共有しますが、net.msmq サポートの有効化はアプリケーションごとに指定できます。  \/servicemodelsamples アプリケーションで net.msmq を有効にするには、権限のレベルが高いコマンド プロンプトから、次のコマンドを実行します。  
+    2.  サイト内のすべてのアプリケーションが同じ net.msmq バインディングを共有しますが、net.msmq サポートの有効化はアプリケーションごとに指定できます。 /servicemodelsamples アプリケーションで net.msmq を有効にするには、権限のレベルが高いコマンド プロンプトから、次のコマンドを実行します。  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.msmq  
-  
         ```  
   
         > [!NOTE]
         >  このコマンドはテキスト 1 行です。  
   
-         このコマンドにより、\/servicemodelsamples アプリケーションに http:\/\/localhost\/servicemodelsamples と net.msmq:\/\/localhost\/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
+         このコマンドにより、/servicemodelsamples アプリケーションに http://localhost/servicemodelsamples と net.msmq://localhost/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
   
-7.  まだ確認していない場合は、MSMQ アクティベーション サービスが有効になっていることを確認します。  **\[スタート\]** メニューの **\[ファイル名を指定して実行\]** をクリックし、`「Services.msc」`と入力します。  **Net.Msmq リスナ アダプタ**のサービスのリストを検索します。  右クリックし、**\[プロパティ\]** をクリックします。  **\[スタートアップの種類\]** を **\[自動\]** に設定し、**\[適用\]** をクリックして **\[開始\]** ボタンをクリックします。  この手順は、Net.Msmq リスナー アダプター サービスを初めて使用する前に 1 回だけ実行する必要があります。  
+7.  まだ確認していない場合は、MSMQ アクティベーション サービスが有効になっていることを確認します。 **開始** メニューのをクリックして**実行**、および種類`Services.msc`です。 サービスのリストを検索、 **Net.Msmq リスナ アダプタ**です。 右クリックし **プロパティ**です。 設定、**スタートアップの種類**に**自動**、 をクリックして**適用** をクリックし、**開始**ボタンをクリックします。 この手順は、Net.Msmq リスナー アダプター サービスを初めて使用する前に 1 回だけ実行する必要があります。  
   
-8.  サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  さらに、発注書を送信するときのキューの URI 内のコンピューター名を反映するように、発注書を送信するクライアントのコードを変更します。  次のコードを使用します。  
+8.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。 さらに、発注書を送信するときのキューの URI 内のコンピューター名を反映するように、発注書を送信するクライアントのコードを変更します。 次のコードを使用します。  
   
     ```  
     client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");  
@@ -302,7 +297,6 @@ public class OrderStatusService : IOrderStatus
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http  
-  
         ```  
   
         > [!NOTE]
@@ -312,7 +306,6 @@ public class OrderStatusService : IOrderStatus
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" --bindings.[protocol='net.msmq',bindingInformation='localhost']  
-  
         ```  
   
         > [!NOTE]
@@ -321,9 +314,9 @@ public class OrderStatusService : IOrderStatus
     > [!WARNING]
     >  バッチ ファイルを実行すると、DefaultAppPool がリセットされて .NET Framework Version 2.0 で実行されます。  
   
- `netMsmqBinding` バインディング トランスポートを使用する場合の既定では、セキュリティが有効です。  トランスポート セキュリティの種類は、`MsmqAuthenticationMode` と `MsmqProtectionLevel` の 2 つのプロパティで決まります。  既定の設定では、認証モードは `Windows`、保護レベルは `Sign` です。  MSMQ の認証および署名の機能を利用するには、ドメインに属している必要があります。  このサンプルをドメインに属していないコンピューターで実行すると、"ユーザーの内部メッセージ キュー認証情報は存在しません" というエラーが表示されます。  
+ `netMsmqBinding` バインディング トランスポートを使用する場合の既定では、セキュリティが有効です。 トランスポート セキュリティの種類は、`MsmqAuthenticationMode` と `MsmqProtectionLevel` の 2 つのプロパティで決まります。 既定の設定では、認証モードは `Windows`、保護レベルは `Sign` です。 MSMQ の認証および署名の機能を利用するには、ドメインに属している必要があります。 このサンプルをドメインに属していないコンピューターで実行すると、"ユーザーの内部メッセージ キュー認証情報は存在しません" というエラーが表示されます。  
   
-### ワークグループに参加しているコンピューターでこのサンプルを実行するには  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>ワークグループに参加しているコンピューターでこのサンプルを実行するには  
   
 1.  ドメインに属していないコンピューターを使用する場合は、トランスポート セキュリティをオフにします。オフにするには、認証モードと保護レベルを "none" に設定します。サンプル構成を次に示します。  
   
@@ -335,7 +328,6 @@ public class OrderStatusService : IOrderStatus
             </binding>  
         </netMsmqBinding>  
     </bindings>  
-  
     ```  
   
 2.  サンプルを実行する前に、サーバーとクライアントの両方の構成を変更します。  
@@ -343,29 +335,29 @@ public class OrderStatusService : IOrderStatus
     > [!NOTE]
     >  `security mode` を `None` に設定することは、`MsmqAuthenticationMode`、`MsmqProtectionLevel`、および `Message` のセキュリティを `None` に設定することに相当します。  
   
-3.  ワークグループに参加しているコンピューターでアクティブ化を有効にするには、アクティベーション サービスとワーカー プロセスの両方を特定のユーザー アカウントで実行する必要があります \(どちらも同じアカウントを使用する必要があります\)。さらに、キューはその特定のユーザー アカウントの ACL に設定されている必要があります。  
+3.  ワークグループに参加しているコンピューターでアクティブ化を有効にするには、アクティベーション サービスとワーカー プロセスの両方を特定のユーザー アカウントで実行する必要があります (どちらも同じアカウントを使用する必要があります)。さらに、キューはその特定のユーザー アカウントの ACL に設定されている必要があります。  
   
      ワーカー プロセスが実行される ID を変更するには  
   
     1.  Inetmgr.exe を実行します。  
   
-    2.  **\[アプリケーション プール\]** で、**\[AppPool\]** \(通常は **\[DefaultAppPool\]**\) を右クリックし、**\[アプリケーション プールの既定値の設定...\]** をクリックします。  
+    2.  **アプリケーション プール**を右クリックし、 **AppPool** (通常**DefaultAppPool**) を選択して**アプリケーション プールの既定値を設定しています**.  
   
-    3.  特定のユーザー アカウントを使用するように、\[ID\] プロパティを変更します。  
+    3.  特定のユーザー アカウントを使用するように、[ID] プロパティを変更します。  
   
      アクティブ化サービスが実行される ID を変更するには  
   
     1.  Services.msc を実行します。  
   
-    2.  **\[Net.Msmq リスナ アダプタ\]** を右クリックし、**\[プロパティ\]** をクリックします。  
+    2.  右クリックし、 **net.msmq リスナ アダプタ**を選択して**プロパティ**です。  
   
-4.  **\[ログオン\]** タブでアカウントを変更します。  
+4.  アカウントを変更、**ログオン**タブです。  
   
-5.  ワークグループでは、無制限のトークンを使用してサービスを実行する必要もあります。  この操作を行うには、コマンド ウィンドウから次のコマンドを実行します。  
+5.  ワークグループでは、無制限のトークンを使用してサービスを実行する必要もあります。 この操作を行うには、コマンド ウィンドウから次のコマンドを実行します。  
   
     ```  
     sc sidtype netmsmqactivator unrestricted  
     ```  
   
-## 参照  
- [AppFabric のホストおよび永続化のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>関連項目  
+ [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

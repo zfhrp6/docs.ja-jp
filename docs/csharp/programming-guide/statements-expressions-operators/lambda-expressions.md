@@ -1,12 +1,9 @@
 ---
 title: "ラムダ式 (C# プログラミング ガイド)"
-ms.date: 2017-03-03
+ms.date: 03/03/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - lambda expressions [C#]
 - outer variables [C#]
@@ -14,30 +11,14 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-caps.latest.revision: 64
+caps.latest.revision: "64"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 9127cc5404fb85356f01cac26aa7b03a8ccd70da
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c952c72d9108775fbd0f824f82cacdab5ba91d09
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>ラムダ式 (C# プログラミング ガイド)
 ラムダ式は、 [デリゲート](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) 型または [式ツリー](../../../csharp/programming-guide/delegates/using-delegates.md) 型を作成するために使用できる [匿名関数](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b) です。 ラムダ式を使用すると、引数として渡したり関数呼び出しの結果値として返すことができるローカル関数を記述できます。 ラムダ式は、LINQ クエリ式を記述する場合に特に便利です。  
@@ -74,7 +55,7 @@ namespace ConsoleApplication1
   
  ラムダは、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] のメソッド ベースのクエリ内で標準クエリ演算子のメソッド (<xref:System.Linq.Enumerable.Where%2A> など) の引数として使用されます。  
   
- メソッド ベースの構文を使用して ( <xref:System.Linq.Enumerable.Where%2A> to Objects および <xref:System.Linq.Enumerable> の場合と同様に) [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クラスの [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]メソッドを呼び出すと、パラメーターはデリゲート型 <xref:System.Func%602?displayProperty=fullName>になります。 ラムダ式はデリゲートを作成するための最も便利な方法です。 たとえば (<xref:System.Linq.Queryable?displayProperty=fullName> の場合と同様に) [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] クラスの同じメソッドを呼び出すと、パラメーター型は <xref:System.Linq.Expressions.Expression?displayProperty=fullName><Func\> になります。Func は最大 16 の入力パラメーターを持つ Func デリゲートです。 ラムダ式は、こうした式ツリーを構築するための非常に簡潔な方法でもあります。 ラムダを使用すると `Where` 呼び出しの外観を似たものにできますが、ラムダから実際に作成されるオブジェクトの型は異なります。  
+ メソッド ベースの構文を使用して ( <xref:System.Linq.Enumerable.Where%2A> to Objects および <xref:System.Linq.Enumerable> の場合と同様に) [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クラスの [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]メソッドを呼び出すと、パラメーターはデリゲート型 <xref:System.Func%602?displayProperty=nameWithType>になります。 ラムダ式はデリゲートを作成するための最も便利な方法です。 たとえば (<xref:System.Linq.Queryable?displayProperty=nameWithType> の場合と同様に) [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] クラスの同じメソッドを呼び出すと、パラメーター型は <xref:System.Linq.Expressions.Expression?displayProperty=nameWithType><Func\> になります。Func は最大 16 の入力パラメーターを持つ Func デリゲートです。 ラムダ式は、こうした式ツリーを構築するための非常に簡潔な方法でもあります。 ラムダを使用すると `Where` 呼び出しの外観を似たものにできますが、ラムダから実際に作成されるオブジェクトの型は異なります。  
   
  先ほどの例では、デリゲート シグネチャは暗黙的に型指定される `int`型の入力パラメーターを 1 つ持ち、 `int`を返します。 このラムダ式を同じ型のデリゲートに変換することができます。デリゲートも 1 つの入力パラメーター (`x`) を持ち、コンパイラが暗黙的に `int` 型に変換できる値を返すからです  (型の推論については後のセクションで詳しく説明します)。入力パラメーターとして 5 を使用してデリゲートを呼び出すと、デリゲートは 25 という結果を返します。  
   
@@ -296,11 +277,10 @@ class Test
  『[C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers (C# 3.0 クックブック (第 3 版): C# 3.0 プログラマ向けの 250 以上のソリューション)](http://go.microsoft.com/fwlink/?LinkId=195369)』の「[Delegates, Events, and Lambda Expressions (デリゲート、イベント、およびラムダ式)](http://go.microsoft.com/fwlink/?LinkId=195395)」  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [LINQ (統合言語クエリ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)   
- [匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)   
- [is](../../../csharp/language-reference/keywords/is.md)   
- [Expression Trees](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)   
- [Visual Studio 2008 C# Samples (Visual Studio 2008 の C# サンプル) (LINQ サンプル クエリ ファイルと XQuery プログラムを参照してください)](http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
+ [is](../../../csharp/language-reference/keywords/is.md)  
+ [式ツリー](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
+ [Visual Studio 2008 c# Samples (「LINQ サンプル クエリでファイルと XQuery プログラム)](http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)  
  [Recursive lambda expressions (再帰的なラムダ式)](http://go.microsoft.com/fwlink/?LinkId=112395)
-

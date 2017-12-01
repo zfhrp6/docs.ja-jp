@@ -9,14 +9,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7fff0f61-ac23-42f0-9661-72a7240a4456
+ms.openlocfilehash: ad34faa0c2577bd5e3a0ba339b19a9ad387e015a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6830cc46994aa44d46a9c862efff525142578003
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>.NET Core ツールの変更の概要
 
 このドキュメントでは、*project.json* から MSBuild への移行に関連する変更について、および *csproj* プロジェクト システムについて、.NET Core ツールのレイヤー化と CLI コマンド実装の変更に関する情報と共に説明します。 これらの変更は、2017 年 3 月 7 日の .NET Core SDK 1.0 および Visual Studio 2017 のリリース ([アナウンス](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-net-core-tools-1-0/)をご覧ください) に伴って発生しましたが、.NET Core SDK Preview 3 のリリースで初めて実装されました。
@@ -36,7 +34,7 @@ ms.lasthandoff: 07/28/2017
 
 ![Preview 2 のツールの概要](media/cli-msbuild-architecture/p2-arch.png)
 
-ツールのレイヤーはかなり単純です。 最下層には .NET Core のコマンド ライン ツールが基礎としてあります。 Visual Studio または Visual Studio コードなどのその他のすべての上位レベルのツールは、プロジェクトの構築、依存関係の復元に CLI に依存します。 これは、たとえば Visual Studio が復元操作を行う場合、CLI の `dotnet restore` コマンドが呼び出されることを意味します。 
+ツールのレイヤーはかなり単純です。 最下層には .NET Core のコマンド ライン ツールが基礎としてあります。 Visual Studio または Visual Studio コードなどのその他のすべての上位レベルのツールは、プロジェクトの構築、依存関係の復元に CLI に依存します。 これは、ため、たとえば、Visual Studio は、復元操作を実行する場合に、これを呼び出すことに`dotnet restore`([注を参照してください](#dotnet-restore-note))、CLI コマンド。 
 
 新しいプロジェクト システムに移行すると、前の図は以下のように変わります。 
 
@@ -47,7 +45,7 @@ ms.lasthandoff: 07/28/2017
 > [!NOTE]
 > "ターゲット" とは、MSBuild が呼び出すことのできる名前付きの操作を意味する MSBuild の用語です。 これは、通常ターゲットが行うことを期待されているいくつかのロジックを実行する 1 つ以上のタスクと連結されています。 MSBuild では、`Copy` や `Execute` などの多数の既製ターゲットをサポートしています。また、ユーザーがマネージ コードを使用して、独自のタスクを記述し、それらのタスクをターゲットに実行させるよう定義することも可能です。 詳細については、「[MSBuild タスク](/visualstudio/msbuild/msbuild-tasks)」を参照してください。 
 
-すべてのツールセットは、CLI を含む、共有 SDK コンポーネントとそのターゲットを消費します。 たとえば、Visual Studio の次のバージョンでは .NET Core プロジェクトの依存関係の復元に `dotnet restore` コマンドを呼び出しません。直接 "Restore" ターゲットを使用します。 これらは MSBuild のターゲットであるため、これらの実行に未加工の MSBuild の [dotnet msbuild](dotnet-msbuild.md) コマンドを使用することも可能です。 
+すべてのツールセットは、CLI を含む、共有 SDK コンポーネントとそのターゲットを消費します。 たとえば、次のバージョンの Visual Studio は呼び出しを行わない`dotnet restore`([注を参照してください](#dotnet-restore-note)) .NET Core プロジェクトの依存関係を復元するコマンドを直接「復元中」のターゲットが使用されます。 これらは MSBuild のターゲットであるため、これらの実行に未加工の MSBuild の [dotnet msbuild](dotnet-msbuild.md) コマンドを使用することも可能です。 
 
 ### <a name="cli-commands"></a>CLI コマンド
 共有 SDK コンポーネントとは、大多数の既存の CLI コマンドが MSBuild のタスクやターゲットとして再実装されたものです。 これは CLI コマンドやツールセットの使用にどのような意味があるのでしょうか? 
@@ -74,3 +72,4 @@ ms.lasthandoff: 07/28/2017
 
 `new` と `run` のコマンドは、MSBuild のターゲットとして実装されておらず、このルールの主な例外です。
 
+<a name="dotnet-restore-note"></a>[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

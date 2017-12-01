@@ -1,30 +1,21 @@
 ---
 title: "方法: 署名のないフレンド アセンブリを作成する (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 854df39394ef10bf2404fb3f762586fb102fba7b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 967436204ab0824a510c12dc4c6e288d91d7dfa0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>方法: 署名のないフレンド アセンブリを作成する (C#)
 この例では、署名のないアセンブリと共にフレンド アセンブリを使用する方法を示します。  
@@ -108,9 +99,8 @@ ms.lasthandoff: 07/28/2017
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `internal` 型とメンバーの参照可能範囲を制御することです。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)   
- [フレンド アセンブリ (C++)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)   
- [方法: 署名されたフレンド アセンブリを作成する (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)   
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+ [フレンド アセンブリ (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [方法: 署名されたフレンド アセンブリ (c#) を作成します。](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)
-

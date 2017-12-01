@@ -12,11 +12,11 @@ caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 30aa268fbfa8a6f59491de30dbde6508ccdd7a68
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: affc9d1638148971dd9c57969c75166facfd545c
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="auto-confirm-pattern"></a>自動確認パターン
 このサンプルは、カスタム `AutoConfirmScope` アクティビティを示す 3 つのシナリオで構成されます。 1 つ目のサンプルでは、2 番目と 3 番目の補正可能なアクティビティが `AutoConfirmScope` で入れ子になっている 4 つの補正可能なアクティビティのシーケンスが正常に実行された場合を示します。 2 つ目のサンプルでは、同じシーケンスを示しますが、4 番目の <xref:System.Activities.Statements.CompensableActivity> の実行後に例外が発生します。 3 つ目のシナリオでは、同じシーケンスを示しますが、2 番目の `AutoConfirmScope` の完了後に <xref:System.Activities.Statements.CompensableActivity> で例外が発生します。  
@@ -46,6 +46,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Compensation\AutoConfirm`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Compensation\AutoConfirm`

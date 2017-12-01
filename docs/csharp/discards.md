@@ -1,5 +1,5 @@
 ---
-title: "破棄 - C# のガイド | Microsoft Docs"
+title: "破棄 - C# ガイド"
 description: "C# の破棄のサポートについて説明します。破棄は、未割り当てで破棄可能な変数です。また、破棄の使用例についても説明します。"
 keywords: .NET,.NET Core
 author: rpetrusha
@@ -9,21 +9,20 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
+ms.openlocfilehash: 800a27d2d186c738dceb6838aa669377a0c07b01
+ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
 ms.translationtype: HT
-ms.sourcegitcommit: 6170e096e36f8d054fdfe9cbd8311e6492e32a04
-ms.openlocfilehash: 3f8804f9b7522e385b145a9643dec942cc1aab9f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="discards---c-guide"></a>破棄 - C# ガイド
 
 C# 7 以降、C# は破棄をサポートしています。破棄は、アプリケーション コードで意図的に使用しない一時的なダミー変数です。 破棄は、未割り当ての変数と同等です。つまり、値がありません。 破棄変数は 1 つのみであり、破棄変数には記憶域も割り当てられないため、破棄を使用するとメモリの割り当てを減らすことができます。 また、コードの意図がわかりやすくなるため、読みやすさと保守性が向上します。
 
-変数を破棄と指定するには、変数名にアンダースコア (`_`) を指定します。 たとえば、次のメソッド呼び出しで 3 タプルが返され、1 つ目と 2 つ目の値は破棄です。
+変数を破棄と指定するには、変数名にアンダースコア (`_`) を指定します。 たとえば、次のメソッド呼び出しが 3 組の最初と 2 番目の値が破棄を返しますと*領域*によって返される対応する 3 番目のコンポーネントに設定する前に宣言された変数は、 *GetCityInformation*:
 
 ```csharp
-(var _, _, area) = city.GetCityInformation(cityName);
+(_, _, area) = city.GetCityInformation(cityName);
 ```
 
 C# 7 では、破棄は次のコンテキストの割り当てでサポートされます。
@@ -89,4 +88,3 @@ C# 7 では、破棄は次のコンテキストの割り当てでサポートさ
 [タプルとその他の型の分解](deconstruct.md)   
 [`is` キーワード](language-reference/keywords/is.md)   
 [`switch` キーワード](language-reference/keywords/switch.md)   
-

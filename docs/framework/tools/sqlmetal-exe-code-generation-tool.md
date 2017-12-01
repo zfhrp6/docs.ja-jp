@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - SQLMetal [LINQ to SQL]
 - code generation tool
@@ -22,16 +16,15 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: Erikre
 ms.author: erikre
 manager: erikre
+ms.openlocfilehash: fa4cf7baa3ca3ba19a733438920357034e8de193
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6d0ac9c682c60db8eb9e5188a71916dc5d97de60
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (コード生成ツール)
 SqlMetal コマンド ライン ツールは、 [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] の [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]コンポーネント用のコードとマッピングを生成します。 このトピックで後述するオプションを適用することにより、次のようなアクションを SqlMetal で実行できます。  
@@ -64,7 +57,7 @@ sqlmetal [options] [<input file>]
 |------------|-----------------|  
 |**/server:** *\<name>*|データベース サーバーの名前を指定します。|  
 |**/database:** *\<name>*|サーバー上のデータベース カタログを指定します。|  
-|**/user:** *\<name>*|ログオン ユーザー ID を指定します。 既定値は、Windows 認証を使用します。|  
+|**/user:** *\<name>*|ログオン ユーザー ID を指定します。既定値は、Windows 認証を使用します。|  
 |**/password:** *\<password>*|ログオン パスワードを指定します。 既定値は、Windows 認証を使用します。|  
 |**/conn:** *\<connection string>*|データベース接続文字列を指定します。 **/server**、 **/database**、 **/user**、または **/password** オプションと共に使用することはできません。<br /><br /> 接続文字列にファイル名は含めないでください。 代わりに、コマンド ラインにファイル名を入力ファイルとして追加します。 たとえば、 **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**というコマンド ラインは、入力ファイルとして "c:\northwnd.mdf" を指定します。|  
 |**/timeout:** *\<seconds>*|SqlMetal がデータベースにアクセスする際のタイムアウト値を指定します。 既定値は 0 (時間制限なし) です。|  
@@ -150,7 +143,6 @@ sqlmetal [options] [<input file>]
 >  サンプル データベース Northwind で **/pluralize** オプションを使用する場合には、注意を必要とする動作があります。 SqlMetal がテーブルのために行型の名前を生成するとき、テーブル名は単数形です。 テーブルに関する <xref:System.Data.Linq.DataContext> プロパティを生成するときには、テーブル名は複数形です。 偶然にも、サンプル データベース Northwind 内のテーブルには既に複数形が使われています。 このため、この部分はうまく機能しません。 データベース テーブルの名前は単数形にするのが一般的ですが、.NET では、コレクションの名前を複数形にすることも一般的です。  
   
 ## <a name="see-also"></a>関連項目  
- [方法: Visual Basic または C# でオブジェクト モデルを生成する](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)   
- [LINQ to SQL でのコード生成](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)   
+ [方法: Visual Basic または c# でのオブジェクト モデルの生成](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  
+ [LINQ to SQL でのコード生成](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
  [外部マップ](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
-

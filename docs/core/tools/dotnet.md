@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: bba8d77cda7538bf008dc0f510f9279d3c695c3d
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: fa2e5ecbf41dc2a8cd90aabc6f7291db597e657e
-ms.openlocfilehash: 4c1c0e4ed1b1222abbcd104b2c10a44b1b99be8d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/17/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="dotnet-command"></a>dotnet コマンド
 
@@ -48,7 +47,7 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 `--additionaldeps <PATH>`
 
-追加の *deps.json* ファイルへのパスです。
+その他へのパス*deps.json*ファイル。
 
 `--additionalprobingpath <PATH>`
 
@@ -187,6 +186,8 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 `dotnet restore`
 
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 指定されたディレクトリにプロジェクトとその依存関係をビルドします。
 
 `dotnet build`
@@ -208,4 +209,3 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
 .NET Core ツールの使用に関するデータを収集し、Microsoft に送信するかどうかを指定します。 `true` に設定するとテレメトリ機能が無効になります (指定できる値は `true`、`1`、または `yes` です)。それ以外の場合は `false` に設定します。この場合、テレメトリ機能が有効になります (指定できる値は `false`、`0`、または `no` です)。 設定されていない場合、既定で `false` になり、テレメトリ機能はアクティブになります。
-

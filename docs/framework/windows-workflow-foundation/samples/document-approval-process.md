@@ -12,11 +12,11 @@ caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 52c36870134006eafaaf64824969c5314459d2c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: b3b436d1f01e1ddb2f8f8058acfbbbdc7dcae12f
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="document-approval-process"></a>ドキュメント承認プロセス
 このサンプルでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] と [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のさまざまな機能を一緒に使用して、 ドキュメント承認プロセスのシナリオを実装する方法を示します。 クライアント アプリケーションでは、承認の必要なドキュメントを送信したり、ドキュメントを承認したりすることができます。 クライアント間の通信を促進したり承認プロセスのルールを適用したりするための承認マネージャー アプリケーションも用意されています。 この承認プロセスは、複数の種類の承認を実行できるワークフローで、 単一承認、定足数承認 (承認者全体のパーセンテージ)、および複合承認 (定足数承認と単一承認のシーケンスから成る承認) を得るためのアクティビティが用意されています。  
@@ -155,6 +155,4 @@ ms.lasthandoff: 10/18/2017
   
 ##### <a name="to-clean-up"></a>クリーンアップするには  
   
-1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] コマンド プロンプトで、DocumentApprovalProcess フォルダーに移動して Cleanup.cmd を実行します。  
-  
-## <a name="see-also"></a>関連項目
+1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] コマンド プロンプトで、DocumentApprovalProcess フォルダーに移動して Cleanup.cmd を実行します。

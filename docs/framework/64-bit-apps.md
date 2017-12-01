@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - 64-bit applications [C++]
 - 64-bit programming [C++]
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
-caps.latest.revision: 53
+caps.latest.revision: "53"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 1ee85512cde0ce50e6a5c34cc5f6acc531c24bc0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9930b44e8ab711f319140e43ad0a36d5d78a7ffb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="64-bit-applications"></a>64 ビット アプリケーション
 アプリケーションをコンパイルするときに、Windows 64 ビット オペレーティング システム上で、ネイティブ アプリケーションとして実行するか、WOW64 (Windows 64 ビット上の Windows 32 ビット) の制御下で実行するかを指定できます。 WOW64 は互換環境であり、32 ビット アプリケーションを 64 ビット オペレーティング システム上で実行できるようにします。 WOW64 は、Windows オペレーティング システムのすべての 64 ビット バージョンに含まれています。  
@@ -48,7 +46,7 @@ ms.lasthandoff: 07/28/2017
   
 -   `IntPtr` を `Int32` にキャストするコード  
   
- 32 ビット アプリケーションを 64 ビットの CLR に移行して実行する方法の詳細については、MSDN ライブラリの「[Migrating 32-bit Managed Code to 64-bit (32 ビット マネージ コードを 64 ビットに移行する)](http://go.microsoft.com/fwlink/?LinkId=150542)」を参照してください。  
+ 64 ビット CLR で実行する 32 ビット アプリケーションを移植する方法の詳細については、次を参照してください。[から 64 ビットへ移行する 32 ビット マネージ コード](https://msdn.microsoft.com/library/ms973190.aspx)です。  
   
 ## <a name="general-64-bit-programming-information"></a>一般的な 64 ビット プログラミングについて  
  64 ビット プログラミングの一般的な問題については、次のドキュメントを参照してください。  
@@ -73,5 +71,4 @@ ms.lasthandoff: 07/28/2017
 ## <a name="determining-the-status-of-an-exe-file-or-dll-file"></a>.exe ファイルまたは .dll ファイルのステータスの特定  
  .exe ファイルまたは .dll ファイルが、特定のプラットフォーム上または WOW64 の下でのみ動作するように意図されているかどうかを確認するには、[CorFlags.exe (CorFlags Conversion Tool)](../../docs/framework/tools/corflags-exe-corflags-conversion-tool.md) を使用します (オプションは指定しません)。 また、CorFlags.exe を使用して、.exe ファイルまたは .dll ファイルのプラットフォームのステータスを変更することもできます。 Visual Studio アセンブリの CLR ヘッダーのメジャー ランタイム バージョン番号が 2、マイナー ランタイム バージョン番号が 5 に設定されています。 マイナー ランタイム バージョンが 0 に設定されたアプリケーションは、レガシ アプリケーションとして扱われ、常に WOW64 の下で実行されます。  
   
- プログラムによって .exe または .dll を照会し、それが特定のプラットフォーム上または WOW64 の下でのみ動作するように意図されているかどうかを確認するには、<xref:System.Reflection.Module.GetPEKind%2A?displayProperty=fullName> メソッドを使用します。
-
+ プログラムによって .exe または .dll を照会し、それが特定のプラットフォーム上または WOW64 の下でのみ動作するように意図されているかどうかを確認するには、<xref:System.Reflection.Module.GetPEKind%2A?displayProperty=nameWithType> メソッドを使用します。

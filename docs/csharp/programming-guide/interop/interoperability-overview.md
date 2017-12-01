@@ -1,12 +1,9 @@
 ---
 title: "相互運用性の概要 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - COM interop
 - C# language, interoperability
@@ -14,29 +11,14 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: de7ff105de85392fd4b8b342f26e67e89d0d9b96
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c817dcd9073a5a1d4aeee558bf53d50566bbb472
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>相互運用性の概要 (C# プログラミング ガイド)
 C# マネージ コードとアンマネージ コード間で相互運用を可能にする方法について説明します。  
@@ -81,10 +63,9 @@ C# マネージ コードとアンマネージ コード間で相互運用を可
  詳細については、「[COM への .NET Framework コンポーネントの公開](http://msdn.microsoft.com/library/e42a65f7-1e61-411f-b09a-aca1bbce24c6)」と「[COM クラスの例](../../../csharp/programming-guide/interop/example-com-class.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [相互運用パフォーマンスの向上](http://go.microsoft.com/fwlink/?LinkId=99564)   
- [COM 相互運用の概要](http://go.microsoft.com/fwlink/?LinkId=112406)   
- [マネージ コードとアンマネージ コード間でのマーシャリング](http://go.microsoft.com/fwlink/?LinkId=112398)   
- [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)   
- [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)   
+ [相互運用機能のパフォーマンスを向上させる](http://go.microsoft.com/fwlink/?LinkId=99564)  
+ [COM 相互運用の概要](http://go.microsoft.com/fwlink/?LinkId=112406)  
+ [マネージ コードとアンマネージ コード間でマーシャ リング](http://go.microsoft.com/fwlink/?LinkId=112398)  
+ [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)  
+ [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
-

@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: d2c99df730d90e0a6b69197cf036c62073cf8749
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: 674b19f9fc546e057c7b7fa4b024a0b013eda7e5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="dotnet-migrate"></a>dotnet の移行
 
@@ -39,7 +38,7 @@ ms.lasthandoff: 08/14/2017
 * *solution.sln* ファイル。ソリューションで参照されているプロジェクトを移行します。
 * 特定のディレクトリのすべてのサブディレクトリ (再帰的)。
 
-`dotnet migrate` コマンドは、`backup` ディレクトリ内に移行された *project.json* ファイルを保持します。ディレクトリが存在しない場合は作成されます。 この動作は、`--skip-backup` オプションを使ってオーバーライドされます。
+`dotnet migrate` コマンドは、`backup` ディレクトリ内に移行された *project.json* ファイルを保持します。ディレクトリが存在しない場合は作成されます。 使用してこの動作をオーバーライドします`--skip-backup`オプション。
 
 既定では、移行操作は、標準出力 (STDOUT) に移行プロセスの状態を出力します。 `--report-file <REPORT_FILE>` オプションを使うと、指定したファイルに出力が保存を指定します。 
 

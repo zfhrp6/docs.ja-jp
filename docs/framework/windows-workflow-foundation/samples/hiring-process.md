@@ -12,11 +12,11 @@ caps.latest.revision: "13"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: cc095f5db48fd7545deda5413620d5f41ed6b39a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 1f9f201e14abdcfb98c33e947428137eca3caeaf
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="hiring-process"></a>雇用プロセス
 このサンプルでは、メッセージング アクティビティ、およびワークフロー サービスとしてホストされる 2 つのワークフローを使用して、ビジネス プロセスを実装する方法を示します。 この 2 つのワークフローは、Contoso, Inc という架空の会社の IT インフラストラクチャの一部です。  
@@ -242,6 +242,4 @@ ms.lasthandoff: 10/18/2017
   
 1.  DbSetup フォルダーにある Cleanup.bat を実行して SQL Server インスタンス ストアを削除します。  
   
-2.  ハード ドライブからソース コードを削除します。  
-  
-## <a name="see-also"></a>関連項目
+2.  ハード ドライブからソース コードを削除します。

@@ -1,31 +1,22 @@
 ---
 title: "アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: fcf78ff1-f1ab-4a5d-b6d8-00d2046b6c80
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c5a1a3a651fc7d2b42f8ac55ab6f2d832f258bb0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 8a53a153851973c735a430056520b01c27b1ef59
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-visual-basic"></a>アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)
 アセンブリは、.NET ベースのアプリケーションの配置、バージョン管理、再利用、アクティベーション スコープ、およびセキュリティ権限の基本単位です。 アセンブリは、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (.dll) ファイルの形を取る、.NET Framework の構成要素です。 それらは、型の実装に関して必要な情報を共通言語ランタイムに提供します。 アセンブリは、機能的な論理的な単位を形成し、連携して動作するように構築された、型とリソースのコレクションと考えることができます。  
@@ -51,7 +42,7 @@ ms.lasthandoff: 07/28/2017
   
 -   アセンブリを構成するその他すべてのファイルについて記述するファイル テーブル。.exe または .dll ファイルが依存するアセンブリ、ビットマップ、Readme ファイルなどが含まれます。  
   
--   "*アセンブリ参照リスト*"。これはすべての外部依存関係の一覧であり、アプリケーションが必要とする .dll ファイルやその他のファイルで、他の人物が作成している場合があるファイルです。 アセンブリ参照には、グローバルおよびプライベートの両方のオブジェクトへの参照が含まれます。 グローバル オブジェクトは、System32 ディレクトリのような、他のアプリケーションが使用できるグローバル アセンブリ キャッシュ内に存在します。 <xref:Microsoft.VisualBasic?displayProperty=fullName> 名前空間は、グローバル アセンブリ キャッシュ内のアセンブリの例です。 プライベート オブジェクトは、アプリケーションがインストールされているディレクトリと同じレベルまたはその下のディレクトリ内に存在する必要があります。  
+-   "*アセンブリ参照リスト*"。これはすべての外部依存関係の一覧であり、アプリケーションが必要とする .dll ファイルやその他のファイルで、他の人物が作成している場合があるファイルです。 アセンブリ参照には、グローバルおよびプライベートの両方のオブジェクトへの参照が含まれます。 グローバル オブジェクトは、System32 ディレクトリのような、他のアプリケーションが使用できるグローバル アセンブリ キャッシュ内に存在します。 <xref:Microsoft.VisualBasic?displayProperty=nameWithType> 名前空間は、グローバル アセンブリ キャッシュ内のアセンブリの例です。 プライベート オブジェクトは、アプリケーションがインストールされているディレクトリと同じレベルまたはその下のディレクトリ内に存在する必要があります。  
   
  アセンブリには、コンテンツ、バージョン管理、および依存関係に関する情報が含まれているため、Visual Basic で作成するアプリケーションは、正常に機能するために Windows のレジストリ値に依存するはありません。 アセンブリは、.dll の競合を減らし、アプリケーションの信頼性を高め、配置を容易にします。 多くの場合、 NET ベースのアプリケーションは、対象のコンピュータにそのファイルをコピーするだけでインストールすることができます。  
   
@@ -67,12 +58,11 @@ ms.lasthandoff: 07/28/2017
 >  Visual Studio でアセンブリをビルドするには、**[ビルド]** メニューの **[ビルド]** を選択します。  
   
 ## <a name="see-also"></a>関連項目  
- [共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)   
- [フレンド アセンブリ (Visual Basic)](friend-assemblies.md)   
- [方法: アセンブリを他のアプリケーションと共有する (Visual Basic)](how-to-share-an-assembly-with-other-applications.md)   
- [方法: アセンブリを読み込み、アンロードする (Visual Basic)](how-to-load-and-unload-assemblies.md)   
- [方法: ファイルがアセンブリであるかどうかを確認する (Visual Basic)](how-to-determine-if-a-file-is-an-assembly.md)   
- [方法: コマンド ラインを使用してアセンブリを作成および使用する (Visual Basic)](how-to-create-and-use-assemblies-using-the-command-line.md)   
- [チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (Visual Basic)](walkthrough-embedding-types-from-managed-assemblies-in-vs.md)   
+ [共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)  
+ [フレンド アセンブリ (Visual Basic)](friend-assemblies.md)  
+ [方法: アセンブリ共有する他のアプリケーション (Visual Basic)](how-to-share-an-assembly-with-other-applications.md)  
+ [方法: ロードおよびアンロード アセンブリ (Visual Basic)](how-to-load-and-unload-assemblies.md)  
+ [方法: がかどうか、ファイル アセンブリ (Visual Basic)](how-to-determine-if-a-file-is-an-assembly.md)  
+ [方法: を作成し、コマンドライン (Visual Basic) を使用してアセンブリを使用します。](how-to-create-and-use-assemblies-using-the-command-line.md)  
+ [チュートリアル: Visual Studio (Visual Basic) でのマネージ アセンブリから型の埋め込み](walkthrough-embedding-types-from-managed-assemblies-in-vs.md)  
  [チュートリアル: Visual Studio で Microsoft Office アセンブリからの型情報を埋め込む (Visual Basic)](walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md)
-

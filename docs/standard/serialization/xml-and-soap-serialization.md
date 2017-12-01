@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - SOAP, XML serialization
 - XML serialization, SOAP
@@ -20,16 +15,15 @@ helpviewer_keywords:
 - XML serialization
 - serialization
 ms.assetid: 832ac524-21bc-419a-a27b-ca8bfc45840f
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 412468a03c15cedaa77a5e10be41793565039c4d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 809f1418d7ee0939c7e31124fbda7ef5fd8e2e5e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="xml-and-soap-serialization"></a>XML シリアル化および SOAP シリアル化
 XML シリアル化とは、オブジェクトのパブリック フィールドやパブリック プロパティ、またはメソッドのパラメーターや戻り値を、特定の XML スキーマ定義言語 (XSD: XML Schema Definition Language) ドキュメントに準拠する XML ストリームに変換 (シリアル化) する処理です。 XML シリアル化によって、パブリック プロパティおよびパブリック フィールドを含むクラスの型が厳密に指定され、それらのパブリック メンバーは格納または転送できるようにシリアル形式 (この場合は XML) に変換されます。  
@@ -92,7 +86,7 @@ XML シリアル化とは、オブジェクトのパブリック フィールド
  [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
  <xref:System.Xml.Serialization.XmlSchemaImporter> クラスによって使用される型を含みます。  
   
- \<xmlSchemaImporterExtensions>](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md) の [\<add> 要素  
+ [\<追加 > 要素を\<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
  <xref:System.Xml.Serialization.XmlSchemaImporter> クラスによって使用される型を追加します。  
   
 ## <a name="related-sections"></a>関連項目  
@@ -104,4 +98,3 @@ XML シリアル化とは、オブジェクトのパブリック フィールド
   
 ## <a name="see-also"></a>関連項目  
  [バイナリ シリアル化](../../../docs/standard/serialization/binary-serialization.md)
-

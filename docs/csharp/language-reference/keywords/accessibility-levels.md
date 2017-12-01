@@ -1,39 +1,21 @@
 ---
 title: "アクセシビリティ レベル (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 77124554d7a0b38414e154e024aceddbfffcfbd4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 796802a407c486c1df5332d5b4920467f3a1171b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="accessibility-levels-c-reference"></a>アクセシビリティ レベル (C# リファレンス)
 以下に示したのは、メンバーに適用されるアクセシビリティ レベルの宣言です。[public](../../../csharp/language-reference/keywords/public.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、[private](../../../csharp/language-reference/keywords/private.md) の各アクセス修飾子を使用して指定します。  
@@ -45,8 +27,9 @@ ms.lasthandoff: 09/25/2017
 |`internal`|アクセスは現在のアセンブリに限定されます。|  
 |`protected internal`|現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが限定されます。|  
 |`private`|コンテナーである型にアクセスが限定されます。|  
+|`private protected`|アクセスは、含んでいるクラスまたは現在のアセンブリ内の外側のクラスから派生した型に制限されます。|  
   
- `protected internal` の組み合わせを使う場合を除き、1 つのメンバーまたは 1 つの型に指定できるアクセス修飾子は 1 つだけです。  
+ 1 つだけアクセス修飾子は使用メンバーまたは型、以外を使用するときに、`protected internal`または`private protected`の組み合わせ。  
   
  アクセス修飾子を名前空間に適用することはできません。 名前空間には、アクセス制限がありません。  
   
@@ -59,7 +42,7 @@ ms.lasthandoff: 09/25/2017
 |コンテナー|メンバーの既定のアクセシビリティ|メンバーに対して宣言できるアクセシビリティ|  
 |----------------|----------------------------------|--------------------------------------------------|  
 |`enum`|`public`|なし|  
-|`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal`|  
+|`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal` <br /><br />`private protected`|  
 |`interface`|`public`|なし|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
   
@@ -69,15 +52,14 @@ ms.lasthandoff: 09/25/2017
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
- [アクセシビリティ ドメイン](../../../csharp/language-reference/keywords/accessibility-domain.md)   
- [アクセシビリティ レベルの使用に関する制限事項](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)   
- [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
- [public](../../../csharp/language-reference/keywords/public.md)   
- [private](../../../csharp/language-reference/keywords/private.md)   
- [protected](../../../csharp/language-reference/keywords/protected.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)  
+ [アクセシビリティ ドメイン](../../../csharp/language-reference/keywords/accessibility-domain.md)  
+ [アクセシビリティ レベルの使用に関する制限事項](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)  
+ [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
+ [public](../../../csharp/language-reference/keywords/public.md)  
+ [private](../../../csharp/language-reference/keywords/private.md)  
+ [protected](../../../csharp/language-reference/keywords/protected.md)  
  [internal](../../../csharp/language-reference/keywords/internal.md)
-

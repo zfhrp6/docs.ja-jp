@@ -9,14 +9,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
+ms.openlocfilehash: 0c77c3c3da9983d20cdd86db18f60f83b86b07ea
+ms.sourcegitcommit: 281070dee88db86ec3bb4634d5f558d1a4e159dd
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cf17b68514ff263b784bcb42d2015d27015328d9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/11/2017
 ---
-
 # <a name="pattern-matching"></a>パターン マッチ #
 
 パターンでは、値に特定の "*図形*" を含まれているかどうかをテストし、一致する図形が含まれている場合にその値から情報を "*抽出*" することができます。 パターン マッチングでは、現在既に使用しているアルゴリズムに対してより簡潔な構文を提供します。 パターン マッチング アルゴリズムは、既存の構文を使用して今までも作成しています。 値をテストする `if` ステートメントまたは `switch` ステートメントを記述します。 その後、これらのステートメントで一致する値が見つかると、その値から情報を抽出して使用します。 新しい構文要素は、既に使い慣れているステートメントの拡張機能 `is` と `switch` です。 これらの新しい拡張機能は、値のテストとその情報の抽出を組み合わせたものです。
@@ -33,7 +31,7 @@ ms.lasthandoff: 07/28/2017
 
 抽象的な図形の定義から開始して各種具体的な図形クラスを追加する代わりに、幾何学的図形それぞれの簡単なデータのみの定義から始めます。
 
-[!code-csharp[ShapeDefinitions](../../samples/csharp/PatternMatching/Shapes.cs#01_ShapeDefinitions "図形の定義")]
+[!code-csharp[ShapeDefinitions](../../samples/csharp/PatternMatching/Shapes.cs#01_ShapeDefinitions "Shape definitions")]
 
 これらの構造から、特定の図形の面積を計算するメソッドを記述してみましょう。
 
@@ -41,13 +39,13 @@ ms.lasthandoff: 07/28/2017
 
 C# 7 より前では、一連の `if` ステートメントと `is` ステートメント内のそれぞれの型をテストする必要がありました。
 
-[!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "is を使用した従来の型パターン")]
+[!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
 
 上記のコードは、従来の "*型パターン*" の式です。この場合、変数をテストしてその型を判別し、その型に基づいて別のアクションを実行しています。
 
 このコードは、テストが成功した場合に `is` 式の拡張機能を使用して変数を代入することで、より簡潔になります。
 
-[!code-csharp[IsPatternExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#03_IsPatternExpression "is パターン式")]
+[!code-csharp[IsPatternExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#03_IsPatternExpression "is pattern expression")]
 
 この更新したバージョンでは、変数のテストと適切な型の新しい変数への代入の両方を `is` 式が実行します。 また、このバージョンには `struct` である `Rectangle` 型が含まれていることに注意してください。 新しい `is` 式は、値型と参照型で動作します。
 
@@ -70,12 +68,12 @@ C# 7 より前では、一連の `if` ステートメントと `is` ステート
 従来の `switch` ステートメントはパターン式であり、定数パターンをサポートしていました。
 変数は、`case` ステートメントで使用されている任意の定数と比較することができました。
 
-[!code-csharp[ClassicSwitch](../../samples/csharp/PatternMatching/GeometricUtilities.cs#04_ClassicSwitch "従来の switch ステートメント")]
+[!code-csharp[ClassicSwitch](../../samples/csharp/PatternMatching/GeometricUtilities.cs#04_ClassicSwitch "Classic switch statement")]
 
 `switch` ステートメントでサポートされるパターンは定数パターンのみでした。 さらに、このパターンは、数値型と `string` 型に限定されていました。
 このような制限事項がなくなったため、型パターンを使用して `switch` ステートメントを記述できるようになりました。
 
-[!code-csharp[switch 型パターン](../../samples/csharp/PatternMatching/GeometricUtilities.cs#05_SwitchTypePattern "`switch` 式による計算")]
+[!code-csharp[Switch Type Pattern](../../samples/csharp/PatternMatching/GeometricUtilities.cs#05_SwitchTypePattern "Compute with `switch` expression")]
 
 パターン マッチングの `switch` ステートメントでは、従来の C 形式の `switch` ステートメントを使用してきた開発者にとって使い慣れた構文を使用します。 それぞれの `case` が評価され、入力変数に一致する条件の下にあるコードが実行されます。 コードの実行では、ある case 式から次の case 式に "フォール スルーする" ことはできません。つまり、`case` ステートメントの構文では、それぞれの `case` が `break`、`return`、または `goto` で終わる必要があります。
 
@@ -93,7 +91,7 @@ C# 7 より前では、一連の `if` ステートメントと `is` ステート
 
 `case` ラベルで `when` 句を使用すると、面積が 0 の図形用に特殊なケースを作成できます。 辺の長さが 0 の正方形または半径が 0 の円は、面積が 0 になります。 その条件は、`case` ラベルで `when` 句を使用して指定します。  
 
-[!code-csharp[ComputeDegenerateShapes](../../samples/csharp/PatternMatching/GeometricUtilities.cs#07_ComputeDegenerateShapes "面積が 0 の図形を計算する")]
+[!code-csharp[ComputeDegenerateShapes](../../samples/csharp/PatternMatching/GeometricUtilities.cs#07_ComputeDegenerateShapes "Compute shapes with 0 area")]
 
 この変更には、新しい構文に関するいくつかの重要なポイントが示されています。 最初に、複数の `case` ラベルを 1 つの `switch` セクションに適用できます。 これらのラベルのいずれかが `true` のとき、ステートメント ブロックが実行されます。 この例では、`switch` 式が面積が 0 の円または正方形である場合、このメソッドが定数 0 を返します。
 
@@ -104,15 +102,37 @@ C# 7 より前では、一連の `if` ステートメントと `is` ステート
 
 面積が 0 のこれらの図形を追加した後は、さらに図形の種類 (四角形と三角形) を追加してみましょう。
 
-[!code-csharp[AddRectangleAndTriangle](../../samples/csharp/PatternMatching/GeometricUtilities.cs#09_AddRectangleAndTriangle "四角形と三角形を追加する")]
+[!code-csharp[AddRectangleAndTriangle](../../samples/csharp/PatternMatching/GeometricUtilities.cs#09_AddRectangleAndTriangle "Add rectangle and triangle")]
 
  この一連の変更により、低次元の場合用に `case` ラベル、新しい図形ごとにラベルとブロックが追加されます。 
 
 最後に、`null` ケースを追加して、引数が `null` にならないようにすることができます。
 
-[!code-csharp[NullCase](../../samples/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "null ケースを追加する")]
+[!code-csharp[NullCase](../../samples/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
 
 `null` パターンの特殊な動作に注目します。パターン内の定数 `null` は、型がありませんが、任意の参照型または null 許容型に変換できるためです。 `null` を任意の型に変換するよりも、変数のコンパイル時の型に関係なく、`null` 値が任意の型パターンと一致しないことを言語で定義します。 この動作により、新しい `switch` ベースの型パターンが `is` ステートメントと一貫性を持ちます。`is` ステートメントは、チェックされている値が `null` のとき、常に `false` を返します。 より簡単なのは、型をチェックしたら、追加の null チェックが必要ないことです。 上記のサンプルの case ブロックのいずれにも null チェックがないことからわかるように、型パターンのマッチングにより null 以外の値が保証されるため、これらは必要ありません。
+
+## <a name="var-declarations-in-case-expressions"></a>`var`内の宣言`case`式
+
+導入`var`ようにパターン マッチに新しいルールを導入する一致式のいずれか。
+
+最初の規則は、`var`宣言標準型の推論規則に従います: switch 式の静的な型である型を推論します。 そのルールから、型は常に一致します。
+
+2 番目のルールは、`var`宣言には、その他の型のパターン式を含む null チェックはありません。 つまり、変数が null であるし、null チェックが必要な場合は。
+
+これら 2 つの規則からといって、さまざまな状況で、`var`内の宣言、`case`式と同じ条件に一致する、`default`式。
+既定以外のすべてのケースがより優先するため、`default`場合も、`default`ケースが実行されません。
+
+> [!NOTE]
+> コンパイラはこのような場合に警告を生成しません場所、`default`ケースが書き込まれましたが実行されません。 これは、一貫性のある現在の`switch`ステートメントの動作が可能なすべてのケースが一覧されています。
+
+3 番目のルールに使用が導入されていますここで、`var`ケースが役立つことがあります。 入力が文字列であり、使用されているコマンドの値を検索するパターン マッチを行っていることを想像してください。 ようなものを記述する場合があります。
+
+[!code-csharp[VarCaseExpression](../../samples/csharp/PatternMatching/Program.cs#VarCaseExpression "use a var case expression to filter white space")]
+
+`var`と一致する case `null`、空の文字列、または空白のみを含む任意の文字列。 上記のコードを使用する通知、`?.`演算子には誤ってをスローしないことを確認する、<xref:System.NullReferenceException>です。 `default`の場合は、このコマンドのパーサーで認識されないその他の文字列値を処理します。
+
+これは、1 つの例を検討する可能性があります、`var`別個のものである式の場合、`default`式。
 
 ## <a name="conclusions"></a>まとめ
 
@@ -120,5 +140,4 @@ C# 7 より前では、一連の `if` ステートメントと `is` ステート
 パターン マッチングは、あらゆるデータ型で使用できます。 オブジェクトを調査する式を記述し、それらの条件に基づいて制御フローを決定します。
 
 このサンプルのコードを、抽象的な `Shape` と特定の派生図形のクラス階層を作成し、それぞれに面積を計算するための仮想メソッドが独自に実装されている場合の設計と比較してください。 一般に、パターン マッチング式は、データを扱う際にデータ ストレージの問題と動作の問題を分離したい場合に非常に便利なツールであることがわかります。
-
 

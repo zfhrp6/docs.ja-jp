@@ -1,44 +1,29 @@
 ---
 title: "internal (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - internal_CSharpKeyword
 - internal
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- internal keyword [C#]
+helpviewer_keywords: internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: a3b115022ed2b38dfcfbbfad3c5fc00e0203b255
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5674a78e2c317357c31d9e2661a25ce86cbf4f6a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="internal-c-reference"></a>internal (C# リファレンス)
-`internal` キーワードは、型と型のメンバーを示す[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)です。 internal 型またはメンバーは、次の例のように、同じアセンブリ内のファイルでのみアクセスできます。  
+`internal` キーワードは、型と型のメンバーを示す[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)です。 
+  
+ > このページで対象`internal`アクセスします。 `internal`キーワードはまたの一部、 [ `protected internal` ](./protected-internal.md)アクセス修飾子。
+  
+internal 型またはメンバーは、次の例のように、同じアセンブリ内のファイルでのみアクセスできます。  
   
 ```  
 public class BaseClass   
@@ -47,9 +32,7 @@ public class BaseClass
     internal static int x = 0;  
 }  
 ```  
-  
- `protected internal` アクセス修飾子を持つ型またはメンバーには、現在のアセンブリから、または外側のクラスから派生した型からアクセスできます。  
-  
+
  `internal` とその他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」と「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  アセンブリの詳細については、「[アセンブリとグローバル アセンブリ キャッシュ](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)」を参照してください。  
@@ -111,13 +94,12 @@ public class TestAccess
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
- [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)   
- [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   
- [public](../../../csharp/language-reference/keywords/public.md)   
- [private](../../../csharp/language-reference/keywords/private.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)  
+ [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)  
+ [修飾子](../../../csharp/language-reference/keywords/modifiers.md)  
+ [public](../../../csharp/language-reference/keywords/public.md)  
+ [private](../../../csharp/language-reference/keywords/private.md)  
  [protected](../../../csharp/language-reference/keywords/protected.md)
-

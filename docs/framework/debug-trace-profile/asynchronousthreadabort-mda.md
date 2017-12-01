@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - asynchronous thread aborts
 - AsynchronousThreadAbort MDA
@@ -21,16 +15,15 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - MDAs (managed debugging assistants), asynchronous thread aborts
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9a80b0cdd762a9dc26089aa450cf998b1832dbc1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 6f7bfee4375a14a4456493333e65a953d406c732
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="asynchronousthreadabort-mda"></a>asynchronousThreadAbort MDA
 `asynchronousThreadAbort` マネージ デバッグ アシスタント (MDA) は、スレッドが別のスレッドに非同期の中止処理を適用しようとするとアクティブになります。 同期のスレッド中止では、`asynchronousThreadAbort` MDA はアクティブになりません。
@@ -43,7 +36,7 @@ ms.lasthandoff: 08/21/2017
  問題に伴うランダム性により、症状は大きく異なる場合があります。
 
 ## <a name="cause"></a>原因
- あるスレッドのコードが、対象スレッドで <xref:System.Threading.Thread.Abort%2A?displayProperty=fullName> メソッドを呼び出したため、非同期のスレッド中止が発生しました。 <xref:System.Threading.Thread.Abort%2A> への呼び出しを実行するコードは、中止操作の対象スレッドとは異なるため、スレッド中止は非同期になります。 同期のスレッド中止の場合、<xref:System.Threading.Thread.Abort%2A> を実行するスレッドがこの操作を実行するのは、アプリケーション状態に一貫性がある安全なチェックポイントのみであるため、問題になりません。
+ あるスレッドのコードが、対象スレッドで <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> メソッドを呼び出したため、非同期のスレッド中止が発生しました。 <xref:System.Threading.Thread.Abort%2A> への呼び出しを実行するコードは、中止操作の対象スレッドとは異なるため、スレッド中止は非同期になります。 同期のスレッド中止の場合、<xref:System.Threading.Thread.Abort%2A> を実行するスレッドがこの操作を実行するのは、アプリケーション状態に一貫性がある安全なチェックポイントのみであるため、問題になりません。
 
  非同期のスレッド中止は、対象スレッドの実行中に予期しないポイントで処理されるため、問題になります。 これを回避するには、この方法で中止される可能性のあるスレッドで実行するように作成されたコードでは、ほとんどすべてのコード行で <xref:System.Threading.ThreadAbortException> を処理し、アプリケーション データを一貫性のある状態に戻せるように気を付ける必要があります。 コードがこの問題を考慮して作成されることを想定したり、起こりうるすべての状況に対処するコードを作成したりすることは、現実的ではありません。
 
@@ -51,7 +44,7 @@ ms.lasthandoff: 08/21/2017
 
  問題に伴うランダム性により、原因を特定することが困難な場合があります。
 
-## <a name="resolution"></a>解決策
+## <a name="resolution"></a>解像度
  非同期のスレッド中止を使用する必要があるコード設計を避けます。 <xref:System.Threading.Thread.Abort%2A> の呼び出しを必要としない対象スレッドを中断するのにより適した方法はいくつかあります。 最も安全な方法は、対象スレッドの中断要求をシグナル通知する、共通プロパティなどの機構を導入することです。 対象スレッドは、特定の安全なチェックポイントでシグナルをチェックします。 中断が要求されたことが示されている場合は、適切にシャットダウンできます。
 
 ## <a name="effect-on-the-runtime"></a>ランタイムへの影響
@@ -87,4 +80,3 @@ void FireMda()
 
 ## <a name="see-also"></a>関連項目
  <xref:System.Threading.Thread> [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-

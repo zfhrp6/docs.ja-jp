@@ -10,12 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
+ms.openlocfilehash: 37e04e918ead283f474899a9421aee2140ab7c11
+ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c71aee3dbfb6544973e1527955ca03deb6b569f3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="classes-and-objects"></a>クラスとオブジェクト
 
@@ -25,11 +24,11 @@ ms.lasthandoff: 07/28/2017
 
 `Point` という名前の単純なクラスの宣言を次に示します。
 
-[!code-csharp[Point クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]
+[!code-csharp[PointClass](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]
 
 クラスのインスタンスは `new` 演算子を使用して作成されます。この演算子は新しいインスタンスのメモリを割り当て、コンストラクターを呼び出してインスタンスを初期化し、インスタンスへの参照を返します。 次のステートメントは、2 つの Point オブジェクトを作成し、それらのオブジェクトへの参照を 2 つの変数に格納します。
 
-[!code-csharp[Point の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]
+[!code-csharp[PointExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]
 
 オブジェクトで占有されたメモリは、そのオブジェクトに到達できなくなると自動的に解放されます。 C# では、オブジェクトの割り当てを明示的に解除する必要がなく、また解除することもできません。
 
@@ -74,6 +73,8 @@ ms.lasthandoff: 07/28/2017
     - アクセスは、それを含んでいるクラスまたは含んでいるクラスから派生されたクラスに制限されます。
 * `private`
     - アクセスはこのクラスに制限されます。
+* `private protected`
+    - 同じアセンブリを含む型内から派生したを含むクラスまたはクラスに制限されたアクセス
 
 ## <a name="type-parameters"></a>型パラメーター
 
@@ -84,7 +85,7 @@ ms.lasthandoff: 07/28/2017
 型パラメーターを受け取るために宣言されるクラス型は、"*ジェネリック クラス型*" と呼ばれます。 構造体、インターフェイス、およびデリゲートの型もジェネリックです。
 ジェネリック クラスを使用する場合は、それぞれの型パラメーターの型引数を指定する必要があります。
 
-[!code-csharp[Pair の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]
+[!code-csharp[PairExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]
 
 上記の `Pair<int,string>` のような、型引数が指定されたジェネリック型は "*構築された型*" と呼ばれます。
 
@@ -92,13 +93,13 @@ ms.lasthandoff: 07/28/2017
 
 クラス宣言では、クラス名と型パラメーターの後にコロンと基底クラスの名前を入力することで、基底クラスを指定できます。 基底クラスの指定の省略は、`object` 型からの派生と同じです。 次の例では、`Point3D` の基底クラスは `Point` であり、`Point` の基底クラスは `object` です。
 
-[!code-csharp[Point3D クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
+[!code-csharp[Point3DClass](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
 
 クラスは、その基底クラスのメンバーを継承します。 継承では、インスタンス、静的コンストラクター、および基底クラスのファイナライザーを除く、基底クラスのすべてのメンバーがクラスに暗黙的に含まれています。 派生クラスは、継承するメンバーに新しいメンバーを追加できますが、継承されたメンバーの定義を削除することはできません。 前述の例では、`Point3D` は、`Point` から `x` フィールドと `y` フィールドを継承します。各 `Point3D` インスタンスには、`x`、`y`、`z` の 3 つのフィールドが含まれています。
 
 暗黙的な変換は、クラス型からその基底クラス型のいずれかに存在します。 そのため、クラス型の変数は、そのクラスのインスタンスまたは任意の派生クラスのインスタンスを参照できます。 たとえば、前述のクラス宣言では、`Point` 型の変数が `Point` または `Point3D` を参照できます。
 
-[!code-csharp[Point3D の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]
+[!code-csharp[Point3DExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]
 
 ## <a name="fields"></a>フィールド
 
@@ -110,7 +111,7 @@ static 修飾子なしで宣言されているフィールドは、インスタ�
 
 次の例では、`Color` クラスの各インスタンスに、インスタンス フィールド `r`、`g`、`b` の個別のコピーが含まれていますが、静的フィールド `Black`、`White`、`Red`、`Green`、`Blue` のコピーは 1 つだけです。
 
-[!code-csharp[Color クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]
+[!code-csharp[ColorClass](../../../samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]
 
 前述の例のように、`readonly` 修飾子を使用して "*読み取り専用フィールド*" を宣言できます。 `readonly` フィールドへの割り当ては、フィールドの宣言の一部として、または同じクラスのコンストラクター内でのみ可能です。
 
@@ -134,23 +135,23 @@ static 修飾子なしで宣言されているフィールドは、インスタ�
 
 "*参照パラメーター*" は、参照によって引数を渡すために使われます。 参照パラメーターに渡す引数は確定値を持つ変数である必要があり、メソッドが実行している間、参照パラメーターは引数の変数と同じ格納場所を表します。 参照パラメーターは、`ref` 修飾子で宣言されます。 `ref` パラメーターの使用例を次に示します。
 
-[!code-csharp[swap の例](../../../samples/snippets/csharp/tour/classes-and-objects/RefExample.cs#L3-L18)]
+[!code-csharp[swapExample](../../../samples/snippets/csharp/tour/classes-and-objects/RefExample.cs#L3-L18)]
 
 "*出力パラメーター*" は、参照によって引数を渡すために使われます。 参照パラメーターに似ていますが、呼び出し元が提供する引数に値を明示的に割り当てる必要がない点が異なります。 出力パラメーターは、`out` 修飾子で宣言されます。 次の例では、C# 7 で導入された構文を使っている `out` パラメーターを示します。
 
-[!code-csharp[out の例](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
+[!code-csharp[OutExample](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
 
-"*パラメーター配列*" は、引数の変数の数をメソッドに渡せるようにします。 パラメーター配列は、`params` 修飾子で宣言されます。 パラメーター配列として使用できるのは、メソッドの最後のパラメーターのみです。パラメーター配列の型は、1 次元配列の型である必要があります。 `@System.Console` クラスの Write メソッドと WriteLine メソッドは、パラメーター配列の使用方法を示す良い例です。 これらのメソッドは次のように宣言されます。
+"*パラメーター配列*" は、引数の変数の数をメソッドに渡せるようにします。 パラメーター配列は、`params` 修飾子で宣言されます。 パラメーター配列として使用できるのは、メソッドの最後のパラメーターのみです。パラメーター配列の型は、1 次元配列の型である必要があります。 <xref:System.Console?displayProperty=nameWithType> クラスの Write メソッドと WriteLine メソッドは、パラメーター配列の使用方法を示す良い例です。 これらのメソッドは次のように宣言されます。
 
-[!code-csharp[Console の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
+[!code-csharp[ConsoleExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
 
 パラメーター配列を使用するメソッド内では、パラメーター配列は、配列型の通常のパラメーターとまったく同じように動作します。 ただし、パラメーター配列を使用するメソッドの呼び出しでは、パラメーター配列の型の 1 つの引数またはパラメーター配列の要素型の任意の数の引数を渡すことができます。 後者の場合、配列インスタンスが自動的に作成され、指定した引数を使用して初期化されます。 次のような例があるとします。
 
-[!code-csharp[文字列の形式](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]
+[!code-csharp[StringFormat](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]
 
 これは、次の記述と同じです。
 
-[!code-csharp[文字列の形式 2](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L30-L35)]
+[!code-csharp[StringFormat2](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L30-L35)]
 
 ### <a name="method-body-and-local-variables"></a>メソッドの本体とローカル変数
 
@@ -180,7 +181,7 @@ static 修飾子なしで宣言されているメソッドは "*インスタン�
 
 Entity クラスの使用例を次に示します。
 
-[!code-csharp[Entity の例](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]
+[!code-csharp[EntityExample](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]
 
 静的メソッドである `SetNextSerialNo` と `GetNextSerialNo` はクラスで呼び出されますが、`GetSerialNo` インスタンス メソッドはクラスのインスタンスで呼び出されます。
 
@@ -196,11 +197,11 @@ Entity クラスの使用例を次に示します。
 
 次の例では、式ツリー ノードを表す抽象クラス `Expression`、および定数、変数参照、算術演算の式ツリー ノードを実装する 3 つの派生クラス `Constant`、`VariableReference`、`Operation` を宣言します  (これは式ツリー型に似ていますが、混同しないようにしてください)。
 
-[!code-csharp[Expression クラス](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]
+[!code-csharp[ExpressionClass](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]
 
 前述の 4 つのクラスは、算術式をモデル化するために使用できます。 たとえば、これらのクラスのインスタンスを使用して、式 `x + 3` を次のように表すことができます。
 
-[!code-csharp[Expression の例](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]
+[!code-csharp[ExpressionExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]
 
 `Expression` インスタンスの `Evaluate` メソッドが呼び出され、指定された式を評価して `double` 値を生成します。 このメソッドは、変数の名前 (エントリのキーとして) と値 (エントリの値として) が格納されている `Dictionary` 引数を受け取ります。 `Evaluate` は抽象メソッドなので、`Expression` から派生した非抽象クラスでは、`Evaluate` をオーバーライドする必要があります。
 
@@ -208,13 +209,13 @@ Entity クラスの使用例を次に示します。
 
 次のプログラムでは、`Expression` クラスを使用して、式 `x * (y + 2)` の異なる値の `x` と `y` を評価します。
 
-[!code-csharp[Expression の使用例](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L66-L89)]
+[!code-csharp[ExpressionUsage](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L66-L89)]
 
 ### <a name="method-overloading"></a>メソッドのオーバーロード
 
 メソッドの "*オーバーロード*" では、メソッドのシグネチャが一意であれば、同じクラス内の複数のメソッドに同じ名前を付けることができます。 オーバーロードされたメソッドの呼び出しをコンパイルする場合、コンパイラは "*オーバーロードの解決*" を使用して、呼び出すメソッドを決定します。 オーバーロードの解決では、引数に最も一致する 1 つのメソッドが特定されます。最も一致するメソッドが見つからない場合は、エラーが報告されます。 次の例は、オーバーロードの解決が有効な場合を示しています。 `Main` メソッド内の各呼び出しのコメントは、実際に呼び出されるメソッドを示しています。
 
-[!code-csharp[オーバーロードの使用例](../../../samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]
+[!code-csharp[OverloadUsage](../../../samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]
 
 この例に示すように、パラメーターの厳密な型に引数を明示的にキャストするか、または型引数を明示的に指定することにより、特定のメソッドを常に選択できます。
 
@@ -224,7 +225,7 @@ Entity クラスの使用例を次に示します。
 
 オブジェクトの拡張可能なリストを実装する、List<T> と呼ばれるジェネリック クラスを次に示します。 このクラスには、最も一般的な種類の関数メンバーの例がいくつか含まれています。
 
-[!code-csharp[List クラス](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]
+[!code-csharp[ListClass](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]
 
 ### <a name="constructors"></a>コンストラクター
 
@@ -234,7 +235,7 @@ C# は、インスタンス コンストラクターと静的コンストラク�
 
 インスタンス コンストラクターはオーバーロード可能であり、省略可能なパラメーターを指定できます。 たとえば、`List<T>` クラスは、2 つの (1 つはパラメーターなし、もう 1 つは `int` パラメーターを受け取る) インスタンス コンストラクターを宣言します。 インスタンス コンストラクターは、`new` 演算子を使用して呼び出されます。 次のステートメントは、`List` クラスのコンストラクターを使用して、2 つの `List<string>` インスタンスを割り当てます (省略可能な引数を使用した場合と使用していない場合の両方を示します)。
 
-[!code-csharp[List の例 1](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
+[!code-csharp[ListExample1](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
 
 他のメンバーとは異なり、インスタンス コンストラクターは継承されず、クラスには、そのクラスで実際に宣言された以外のインスタンス コンストラクターがありません。 クラスのインスタンス コンストラクターが指定されていない場合は、パラメーターなしの空のコンストラクターが自動的に指定されます。
 
@@ -250,7 +251,7 @@ set アクセサーは、1 つのパラメーターの名前付きの値を持�
 
 `List<T>` クラスは 2 つのプロパティ (Count と Capacity) を宣言します。これらは、それぞれ読み取り専用プロパティと読み取り/書き込みプロパティです。 これらのプロパティの使用例を次に示します。
 
-[!code-csharp[List の例 2](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]
+[!code-csharp[ListExample2](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]
 
 フィールドおよびメソッドと同様に、C# はインスタンス プロパティと静的プロパティの両方をサポートします。 静的プロパティは static 修飾子で宣言され、インスタンス プロパティは修飾子なしで宣言されます。
 
@@ -262,7 +263,7 @@ set アクセサーは、1 つのパラメーターの名前付きの値を持�
 
 `List` クラスは、`int` パラメーターを受け取る 1 つの読み取り/書き込みインデクサーを宣言します。 インデクサーを使用すると、`int` 値を持つ `List` インスタンスのインデックスを作成できます。 例:
 
-[!code-csharp[List の例 3](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]
+[!code-csharp[ListExample3](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]
 
 インデクサーはオーバーロードできます。つまり、パラメーターの数または型が異なる限り、クラスは複数のインデクサーを宣言できます。
 
@@ -286,7 +287,7 @@ set アクセサーは、1 つのパラメーターの名前付きの値を持�
 
 `List<T>` クラスは 2 つの演算子 (`operator ==` と `operator !=`) を宣言し、`List` インスタンスにこれらの演算子を適用する式に新しい意味を持たせます。 具体的には、Equals メソッドを使用して含まれている各オブジェクトを比較する際に、演算子が 2 つの `List<T>` インスタンスの等価性を定義します。 次の例では、`==` 演算子を使用して 2 つの `List<int>` インスタンスを比較します。
 
-[!code-csharp[演算子の例](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L121-L129)]
+[!code-csharp[OperatorExample](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L121-L129)]
 
 最初の `Console.WriteLine` は `True` を出力します。これは、2 つのリストに、同じ値を持つ同じ数のオブジェクトが同じ順序で含まれているためです。 `List<T>` で `operator ==` が定義されていない場合は、`a` と `b` が異なる `List<int>` インスタンスを参照するため、最初の `Console.WriteLine` は `False` を出力します。
 
@@ -301,4 +302,3 @@ set アクセサーは、1 つのパラメーターの名前付きの値を持�
 >[!div class="step-by-step"]
 [前へ](statements.md)
 [次へ](structs.md)
-

@@ -5,26 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: BillWagner
 ms.author: wiwagn
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5ec275cb904b90b87193e3ed72ef89a127d1fbea
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3cb06be8d7cc4ee6d3b604f6057b5f5274773daf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>規模が大きく、応答性の高い .NET Framework アプリの作成
 この記事では、大規模な .NET Framework アプリや、ファイルやデータベースなど大量のデータを処理するアプリのパフォーマンス改善のヒントを説明します。 説明するヒントは C# および Visual Basic コンパイラを マネージ コードで作成し直した際に得られたものです。この記事では C# コンパイラでの実際の例をいくつか紹介します。  
   
- .NET Framework は、生産性の高いアプリ開発環境です。  強力で安全な言語と豊富なライブラリにより、アプリの開発生産性が高くなります。  ただし、高い生産性には責任が伴います。  .NET Framework のあらゆる機能を使用するのであれば、必要に応じてコードのパフォーマンスを調整できるようにしておく必要があります。  
+ .NET Framework は、生産性の高いアプリ開発環境です。  強力で安全な言語と豊富なライブラリにより、アプリの開発生産性が高くなります。  ただし、高い生産性には責任が伴います。  .NET Framework のあらゆる機能を使用するするのであれば、必要に応じてコードのパフォーマンスを調整できるようにしておく必要があります。  
   
 ## <a name="why-the-new-compiler-performance-applies-to-your-app"></a>新しいコンパイラのパフォーマンスがアプリに適用される理由  
  .NET コンパイラ プラットフォーム ("Roslyn") チームは、コードのモデリングと分析、ツールの開発、そして Visual Studio でのより充実したコード対応エクスペリエンスの実現のための新たな API を提供するため、C# および Visual Basic コンパイラをマネージ コードで再作成しました。  コンパイラの全体的な書き直しと、新しいコンパイラでの Visual Studio 機能の構築を通して、大規模 .NET Framework アプリや、大量データを処理するアプリに適用できる有用なパフォーマンス情報が明らかになりました。  C# コンパイラについてのこのような情報や例を活用するために、コンパイラについて理解しておく必要はありません。  
@@ -33,7 +31,8 @@ ms.lasthandoff: 08/21/2017
   
  エンド ユーザはアプリを操作するときに、アプリが応答するものであると期待します。  入力またはコマンドの処理がブロックされることがあってはなりません。  ヘルプはすぐにポップアップ表示され、またユーザーが入力を続けるときには閉じる必要があります。  処理時間がかかっている UI スレッドがあり、これが原因でアプリの動作が遅くなっていると判断される場合でも、アプリがその UI スレッドをブロックしないようにする必要があります。  
   
- 新しいコンパイラの詳細については、[.NET Compiler Platform ("Roslyn") オープン ソース プロジェクト](http://roslyn.codeplex.com/)を参照してください。  
+ Roslyn コンパイラの詳細については、次を参照してください。、 [dotnet/roslyn](https://github.com/dotnet/roslyn) GitHub のリポジトリ。
+ <!-- TODO: replace with link to Roslyn conceptual docs once that's published -->
   
 ## <a name="just-the-facts"></a>.NET Framework についての事実  
  パフォーマンスを調整し、応答性のある .NET Framework アプリを作成する際には、次に説明する事実を考慮してください。  
@@ -62,7 +61,7 @@ ms.lasthandoff: 08/21/2017
 ### <a name="boxing"></a>ボックス化  
  通常はスタックまたはデータ構造体内にある値型がオブジェクトでラップされると、[ボックス化](~/docs/csharp/programming-guide/types/boxing-and-unboxing.md)が発生します。  つまり、データを保持するオブジェクトを割り当て、そのオブジェクトを指すポインタを返します。  .NET Framework では、メソッドのシグネチャや格納場所の種類が原因で、値がボックス化されることがあります。  オブジェクト内で値型がラップされると、メモリ割り当てが行われます。  多くのボックス化操作を実行すると、アプリへメガバイト単位またはギガバイト単位のメモリが割り当てられ、アプリがさらに多くの GC の原因になります。 .NET Framework と言語コンパイラでは可能な限りボックス化を回避しますが、場合によっては、ほとんど予期していない状況でボックス化が行われることがあります。  
   
- PerfView でボックス化を確認するには、トレースを開き、アプリのプロセス名の下の [GC Heap Alloc Stacks (GC ヒープ割り当てスタック)] を参照します (PerfView はすべてのプロセスについて報告する点に注意してください)。  <xref:System.Int32?displayProperty=fullName> や <xref:System.Char?displayProperty=fullName> のような型が割り当ての下に表示される場合は、値型をボックス化しています。  このような型のいずれか 1 つを選択すると、型がボックス化されているスタックと関数が表示されます。  
+ PerｆView でボックス化を確認するには、トレースを開き、アプリのプロセス名の下の [GC Heap Alloc Stacks (GC ヒープ割り当てスタック)] を参照します (PerfView はすべてのプロセスについて報告する点に注意してください)。  <xref:System.Int32?displayProperty=nameWithType> や <xref:System.Char?displayProperty=nameWithType> のような型が割り当ての下に表示される場合は、値型をボックス化しています。  このような型のいずれか 1 つを選択すると、型がボックス化されているスタックと関数が表示されます。  
   
  **例 1: string メソッドと値型引数**  
   
@@ -135,7 +134,7 @@ public class BoxingExample
 ((int)color).GetHashCode()  
 ```  
   
- 列挙型に対するボックス化のもう 1 つの一般的な原因は、<xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=fullName> メソッドです。  <xref:System.Enum.HasFlag%28System.Enum%29> に渡す引数をボックス化する必要があります。  ほとんどの場合、<xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=fullName> の呼び出しをビット演算テストに置き換える方法のほうが簡単であり、また割り当てが発生しません。  
+ 列挙型に対するボックス化のもう 1 つの一般的な原因は、<xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=nameWithType> メソッドです。  <xref:System.Enum.HasFlag%28System.Enum%29> に渡す引数をボックス化する必要があります。  ほとんどの場合、<xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=nameWithType> の呼び出しをビット演算テストに置き換える方法のほうが簡単であり、また割り当てが発生しません。  
   
  パフォーマンスに関する 1 番目の事実 (不完全な最適化は行わない) に留意し、このような方法でコード全体を作成し直さないでください。    このようなボックス化にかかるコストに注意してください。また、コードの変更は、アプリのプロファイリングとホットスポットの検出の後に行ってください。  
   
@@ -334,7 +333,7 @@ var predicate = new Func<Symbol, bool>(l.Evaluate);
   
  ここでは 2 つの `new` 割り当て (環境クラスに対する割り当てとデリゲートに対する割り当て) が明示的に行われます。  
   
- 次に `FirstOrDefault`. の呼び出しを調べます。 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> 型に対するこの拡張メソッドでも割り当てが発生します。  `FirstOrDefault` が <xref:System.Collections.Generic.IEnumerable%601> オブジェクトを最初の引数として受け取るため、この呼び出しを拡張して次のコードのようにできます (このコードは説明のため単純化されています)。  
+ 次に `FirstOrDefault`. の呼び出しを調べます。 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 型に対するこの拡張メソッドでも割り当てが発生します。  `FirstOrDefault` が <xref:System.Collections.Generic.IEnumerable%601> オブジェクトを最初の引数として受け取るため、この呼び出しを拡張して次のコードのようにできます (このコードは説明のため単純化されています)。  
   
 ```csharp  
 // Expanded return symbols.FirstOrDefault(predicate) ...  
@@ -395,7 +394,7 @@ class Compilation { /*...*/
 }  
 ```  
   
- `GetSyntaxTreeAsync()` を呼び出すと `Parser` がインスタンス化され、コードが解析され、<xref:System.Threading.Tasks.Task> オブジェクトが返されることがわかります。`Task<SyntaxTree>`.  コストがかかる部分は、`Parser` インスタンスの割り当てとコードの解析です。  この関数は <xref:System.Threading.Tasks.Task> を返すので、呼び出し元はユーザー入力に応答するために解析作業を待ち、UI スレッドを解放できます。  
+ `GetSyntaxTreeAsync()` を呼び出すと `Parser` がインスタンス化され、コードが解析され、<xref:System.Threading.Tasks.Task> オブジェクトが返されることがわかります`Task<SyntaxTree>`.  コストがかかる部分は、`Parser` インスタンスの割り当てとコードの解析です。  この関数は <xref:System.Threading.Tasks.Task> を返すので、呼び出し元はユーザー入力に応答するために解析作業を待ち、UI スレッドを解放できます。  
   
  Visual Studio の複数の機能が同じ構文ツリーを取得しようとすることがあるため、解析結果をキャッシュする次のコードを記述すると、時間と割り当てを節約できます。  ただしこのコードでは割り当てが発生します。  
   
@@ -421,7 +420,7 @@ class Compilation { /*...*/
   
  **例 6 の修正**  
   
- 完了した <xref:System.Threading.Tasks.Task> 割り当てを削除するには、完了した結果とともに Task オブジェクトをキャッシュできます。  
+ 完成したを削除する<xref:System.Threading.Tasks.Task>割り当て、完了した結果とともに Task オブジェクトをキャッシュすることができます。  
   
 ```csharp  
 class Compilation { /*...*/  
@@ -471,13 +470,12 @@ class Compilation { /*...*/
 -   すべては割り当てで決まる - コンパイラ プラットフォーム チームは、新しいコンパイラのパフォーマンスの向上のため、この分野に最も多くの時間をかけました。  
   
 ## <a name="see-also"></a>関連項目  
- [このトピックのプレゼンテーション動画](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)   
- [パフォーマンス プロファイリングのビギナーズ ガイド](/visualstudio/profiling/beginners-guide-to-performance-profiling)   
- [パフォーマンス](../../../docs/framework/performance/index.md)   
- [.NET のパフォーマンスに関するヒント](http://msdn.microsoft.com/library/ms973839.aspx)   
- [Windows Phone パフォーマンス分析ツール](http://msdn.microsoft.com/magazine/hh781024.aspx)   
- [Visual Studio プロファイラーでアプリケーションのボトルネックを見つける](http://msdn.microsoft.com/magazine/cc337887.aspx)   
- [Channel 9 PerfView チュートリアル](http://channel9.msdn.com/Series/PerfView-Tutorial)   
- [高レベルのパフォーマンスに関するヒント](http://curah.microsoft.com/4604/improving-your-net-apps-startup-performance)   
- [.NET コンパイラ プラットフォーム ("Roslyn") オープン ソース プロジェクト](http://roslyn.codeplex.com/)
-
+ [このトピックのプレゼンテーションのビデオ](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)  
+ [パフォーマンス プロファイリングのビギナーズ ガイド](/visualstudio/profiling/beginners-guide-to-performance-profiling)  
+ [パフォーマンス](../../../docs/framework/performance/index.md)  
+ [.NET のパフォーマンスのヒント](http://msdn.microsoft.com/library/ms973839.aspx)  
+ [Windows Phone のパフォーマンス分析ツール](http://msdn.microsoft.com/magazine/hh781024.aspx)  
+ [Visual Studio プロファイラーでアプリケーションのボトルネックを見つける](http://msdn.microsoft.com/magazine/cc337887.aspx)  
+ [Channel 9 PerfView のチュートリアル](http://channel9.msdn.com/Series/PerfView-Tutorial)  
+ [高度なパフォーマンスのヒント](http://curah.microsoft.com/4604/improving-your-net-apps-startup-performance)  
+ [GitHub のリポジトリの dotnet/roslyn](https://github.com/dotnet/roslyn)

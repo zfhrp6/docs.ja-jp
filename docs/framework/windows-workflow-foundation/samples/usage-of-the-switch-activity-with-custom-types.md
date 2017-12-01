@@ -12,14 +12,14 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: a8a4418c582d00f1163305ce5d63c63c198dbc30
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 57a6a15f648f83a60f3ac402443c3c5e4aecfcd4
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="usage-of-the-switch-activity-with-custom-types"></a>カスタム型を使用した Switch アクティビティの使用
-このサンプルは、有効にする方法を説明する<!--zz <xref:System.Activities. Statements.Switch`1>--> `xref:System.Activities` Statements.Switch`1?qualifyHint=False&autoUpgrade=True activity to evaluate a user-defined complex type at runtime. In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable. Traditionally, a `スイッチ ' ステートメントは静的に評価される式で動作します。 つまり、たとえば C# では、プリミティブ型 (<xref:System.Boolean>、<xref:System.Int32>、<xref:System.String>、列挙型など) のみがサポートされます。  
+このサンプルでは、<xref:System.Activities.Statements.Switch%601> アクティビティを有効にしてユーザー定義の複合型を実行時に評価する方法について説明します。 従来のほとんどの手続き型プログラミング言語で、[切り替える](http://go.microsoft.com/fwlink/?LinkId=180521)ステートメントが変数の条件の評価に基づいて実行ロジックを選択します。 従来、`switch` ステートメントは、静的に評価できる式を対象としています。 つまり、たとえば C# では、プリミティブ型 (<xref:System.Boolean>、<xref:System.Int32>、<xref:System.String>、列挙型など) のみがサポートされます。  
   
  カスタム クラスで切り替えを有効にするには、カスタム複合型の値を実行時に評価するロジックを実装する必要があります。 このサンプルでは、`Person` という名前のカスタム複合型で切り替えを有効にする方法を示します。  
   

@@ -1,12 +1,9 @@
 ---
 title: "キャストと型変換 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - type conversion [C#]
 - data type conversion [C#]
@@ -15,29 +12,14 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-caps.latest.revision: 52
+caps.latest.revision: "52"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 8729677b0c7bee60f0ebeb07439b1c0e71508aa8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
-ms.openlocfilehash: f5844cab81f194b9301a394117e92305eaa45e62
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>キャストと型変換 (C# プログラミング ガイド)
 C# はコンパイル時 (変数が宣言された後) に静的に型指定されるため、その型が変数の型に変換可能でない限り、再宣言したり、別の型の値を格納するために使用することはできません。 たとえば、整数から任意の文字列に変換することはできません。 そのため、次のコードに示すように、`i` を整数として宣言した後、"Hello" という文字列を割り当てることはできません。  
@@ -60,7 +42,7 @@ i = "Hello"; // Error: "Cannot implicitly convert type 'string' to 'int'"
 ## <a name="implicit-conversions"></a>暗黙の型変換  
  組み込みの数値型の場合、格納される値を切り捨てたり丸めたりしなくても変数に収めることができるのであれば、暗黙的な変換を実行できます。 たとえば、[long](../../../csharp/language-reference/keywords/long.md) 型の変数 (8 バイトの整数) は、 [int](../../../csharp/language-reference/keywords/int.md) (32 ビット コンピューターでは 4 バイト) が格納できる任意の値を格納できます。 次の例の場合、コンパイラは右側の値を `bigNum` に割り当てる前に、値を `long` 型へと暗黙的に変換します。  
   
- [!code-cs[csProgGuideTypes#34](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_1.cs)]  
+ [!code-csharp[csProgGuideTypes#34](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_1.cs)]  
   
  暗黙的な数値変換をすべてまとめた一覧については、「[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)」をご覧ください。  
   
@@ -74,7 +56,7 @@ Base b = d; // Always OK.
 ## <a name="explicit-conversions"></a>明示的変換  
  変換によって情報が失われるリスクがある場合は、コンパイラで明示的な変換を実行する必要があります。これを*キャスト*と呼びます。 キャストとは、変換を行う意図があることと、データ損失が発生する可能性があることを、コンパイラに明示的に知らせるための方法です。 キャストを実行するには、変換する値または変数の前に、キャストする型をかっこで囲んで指定します。 次のプログラでは、[double](../../../csharp/language-reference/keywords/double.md) を [int](../../../csharp/language-reference/keywords/int.md) にキャストしています。このプログラムは、キャストなしではコンパイルされません。  
   
- [!code-cs[csProgGuideTypes#2](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_2.cs)]  
+ [!code-csharp[csProgGuideTypes#2](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_2.cs)]  
   
  許可される明示的数値変換の一覧については、「[明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)」をご覧ください。  
   
@@ -99,7 +81,7 @@ Giraffe g2 = (Giraffe) a;
 ## <a name="type-conversion-exceptions-at-run-time"></a>実行時に発生する型変換の例外  
  一部の参照型変換では、キャストが有効になるかどうかをコンパイラで判断できません。 キャスト操作が正しくコンパイルされても、実行時に失敗する可能性があります。 次の例に示すように、型キャストが実行時に失敗すると、<xref:System.InvalidCastException> がスローされます。  
   
- [!code-cs[csProgGuideTypes#41](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_3.cs)]  
+ [!code-csharp[csProgGuideTypes#41](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_3.cs)]  
   
  C# では、キャストの実行前に互換性をテストできるよう、[is](../../../csharp/language-reference/keywords/is.md) 演算子と [as](../../../csharp/language-reference/keywords/as.md) 演算子が提供されています。 詳しくは、「[方法: as 演算子と is 演算子を使用して安全にキャストする](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)」をご覧ください。  
   
@@ -107,13 +89,12 @@ Giraffe g2 = (Giraffe) a;
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
 
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [型](../../../csharp/programming-guide/types/index.md)   
- [() 演算子](../../../csharp/language-reference/operators/invocation-operator.md)   
- [explicit](../../../csharp/language-reference/keywords/explicit.md)   
- [implicit](../../../csharp/language-reference/keywords/implicit.md)   
- [変換演算子](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)   
- [一般的な型変換](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)   
- [エクスポート時の型の変換](http://msdn.microsoft.com/en-us/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [型](../../../csharp/programming-guide/types/index.md)  
+ [() 演算子](../../../csharp/language-reference/operators/invocation-operator.md)  
+ [explicit](../../../csharp/language-reference/keywords/explicit.md)  
+ [implicit](../../../csharp/language-reference/keywords/implicit.md)  
+ [変換演算子](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)  
+ [一般的な型変換](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)  
+ [エクスポートされた型の変換](http://msdn.microsoft.com/en-us/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)  
  [方法: 文字列を数値に変換する](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)
-

@@ -1,94 +1,97 @@
 ---
-title: "Application Domain Resource Monitoring | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "monitoring managed memory use by application domain"
-  - "application domains, memory use"
-  - "memory use, monitoring"
-  - "application domains, resource monitoring"
+title: "アプリケーション ドメインのリソース監視"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- monitoring managed memory use by application domain
+- application domains, memory use
+- memory use, monitoring
+- application domains, resource monitoring
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 62a514f94857044af5020d36a1cfd6ce06741ac7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Application Domain Resource Monitoring
-アプリケーション ドメインのリソース監視 \(ARM\) を使用すると、ホストでアプリケーション ドメインによる CPU とメモリの使用状況を監視できます。  これは、ASP.NET など、長時間実行されるプロセスで多数のアプリケーション ドメインを使用するホストで役立ちます。  プロセス全体のパフォーマンスに悪影響を及ぼしているアプリケーションのアプリケーション ドメインをホストでアンロードできます。ただし、問題となっているアプリケーションを特定できる場合に限ります。  ARM を使用することで、そのような判断の際に役立つ情報が提供されます。  
+# <a name="application-domain-resource-monitoring"></a>アプリケーション ドメインのリソース監視
+アプリケーション ドメインのリソース監視 (ARM) では、ホスト アプリケーション ドメインによる CPU およびメモリの使用状況を監視できるようにします。 これは、ASP.NET などのホストの実行時間の長いプロセスで多数のアプリケーション ドメインを使用するのに役立ちます。 ホストに悪影響がのみ、プロセス全体のパフォーマンス問題のあるアプリケーションを特定できる場合、アプリケーションのアプリケーション ドメインをアンロードできます。 ARM では、このような意思決定を行う支援するために使用できる情報を提供します。  
   
- たとえば、ホスティング サービスが ASP.NET サーバーで多数のアプリケーションを実行している場合があります。  プロセスの特定のアプリケーションによるメモリ使用量が多くなりすぎたり、プロセッサ時間が長くなりすぎたりした場合、ホスティング サービスで ARM を使用すると、問題の原因になっているアプリケーション ドメインを特定できます。  
+ たとえば、ホスティング サービスには、ASP.NET サーバーで実行されている多くのアプリケーションがあります。 プロセスの 1 つのアプリケーションでは、大量のメモリやプロセッサ時間がかかりすぎる消費を開始、する場合は、ホスティング サービスは、問題の原因となっているアプリケーション ドメインを識別する ARM を使用できます。  
   
- ARM は軽量のため、実行中のアプリケーションで問題なく使用できます。  情報を確認するときは、Windows イベント トレーシング \(ETW\) を使用するか、マネージ API またはネイティブ API から直接アクセスします。  
+ ARM はライブ アプリケーションで使用する十分な軽量です。 For Windows (ETW) またはマネージまたはネイティブの Api を介して直接イベントのトレースを使用して、情報にアクセスすることができます。  
   
-## リソース監視の有効化  
- ARM を有効にする方法は 4 つあります。共通言語ランタイム \(CLR\) の起動時に構成ファイルを指定するか、アンマネージ ホスト API を使用するか、マネージ コードを使用するか、ARM ETW イベントをリッスンします。  
+## <a name="enabling-resource-monitoring"></a>リソースの監視を有効にします。  
+ ARM は、4 つの方法で有効にすることができます: 共通言語ランタイム (CLR) が開始されたときに、構成ファイルを指定すること、によってアンマネージを使用してホスト API、マネージ コードを使用して、または ARM ETW イベントを待機しています。  
   
- ARM を有効にすると、プロセス内のアプリケーション ドメインに関するデータの収集がすぐに開始されます。  ARM を有効にする前にアプリケーション ドメインが作成されていた場合の累積データは、アプリケーション ドメインの作成時点ではなく、ARM を有効にした時点からの累積データです。ARM を有効にすると、後で無効にすることはできません。  
+ ARM が有効になっていると、すぐには、プロセス内のすべてのアプリケーション ドメインでデータの収集を開始します。ARM が有効にする前に、アプリケーション ドメインが作成されている場合、アプリケーション ドメインが作成されたときではなく、ARM が有効にすると、累積的なデータが起動します。有効にすると、ARM を無効にすることはできません。  
   
--   CLR の起動時に [\<appDomainResourceMonitoring\>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) 要素を構成ファイルに追加し、`true`へ `enabled` 属性を設定することで ARM を有効にすることができます。  値が `false` \(既定\) の場合、ARM が起動時には有効にならないだけで、他のアクティブ化方法を使用して後から有効にすることができます。  
+-   追加することによって CLR スタートアップ時 ARM を有効にすることができます、 [ \<appDomainResourceMonitoring >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)構成ファイル、および設定する要素、`enabled`属性を`true`です。 値`false`(既定) のみ ARM が起動時に無効になっている。 つまり、他のライセンス認証メカニズムのいずれかを使用して後でアクティブにできます。  
   
--   ホストで ARM を有効にするには、[ICLRAppDomainResourceMonitor](../../../ocs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) ホスト インターフェイスを要求します。  このインターフェイスが正常に取得されると、ARM が有効になります。  
+-   ホストは、ARM を有効に要求することによって、 [ICLRAppDomainResourceMonitor](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)インターフェイスをホストします。 このインターフェイスは正常に取得した、ARM が有効になります。  
   
--   マネージ コードで ARM を有効にするには、static \(Visual Basic では `Shared`\) の <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=fullName> プロパティを `true` に設定します。  プロパティを設定すると、すぐに ARM が有効になります。  
+-   マネージ コードは、ARM を有効にするには、静的 (`Shared` Visual Basic で)<xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>プロパティを`true`です。 プロパティを設定するとすぐには、ARM は有効です。  
   
--   起動後に ARM を有効にするには、ETW イベントをリッスンします。  `AppDomainResourceManagementKeyword` キーワードを使用してパブリック プロバイダー `Microsoft-Windows-DotNETRuntime` を有効にすると、ARM が有効になり、すべてのアプリケーション ドメインのイベントの生成が開始されます。  データをアプリケーション ドメインおよびスレッドと関連付けるには、さらに `ThreadingKeyword` キーワードを指定して `Microsoft-Windows-DotNETRuntimeRundown` プロバイダーを有効にする必要があります。  
+-   ETW イベントを待機して、起動後に ARM を有効にできます。 ARM が有効であり、パブリック プロバイダーを有効にすると、すべてのアプリケーション ドメイン イベントを発生させる開始`Microsoft-Windows-DotNETRuntime`を使用して、`AppDomainResourceManagementKeyword`キーワード。 アプリケーション ドメインとスレッドとデータを関連付ける、する必要がありますも有効にする、`Microsoft-Windows-DotNETRuntimeRundown`とプロバイダー、`ThreadingKeyword`キーワード。  
   
-## ARM の使用  
- ARM を使用すると、アプリケーション ドメインによって使用されている合計プロセッサ時間と、メモリの使用状況に関する 3 種類の情報が得られます。  
+## <a name="using-arm"></a>ARM の使用  
+ ARM では、アプリケーション ドメイン、およびメモリ使用量に関する情報の 3 つの種類によって使用されるプロセッサの合計時間を示します。  
   
--   **アプリケーション ドメインの合計プロセッサ時間 \(秒\)**: アプリケーション ドメインの有効期間中に実行に時間を費やしたすべてのスレッドについて、オペレーティング システムから報告されたスレッド時間を合計した時間です。  ブロック状態またはスリープ状態のスレッドはプロセッサ時間を消費しません。  ネイティブ コードを呼び出すスレッドの場合、スレッドがネイティブ コードで費やした時間は、呼び出しを行ったアプリケーション ドメインの時間に加算されます。  
+-   **合計プロセッサ時間を秒単位で、アプリケーション ドメインの**: この時間がその有効期間中に、アプリケーション ドメインで実行に費やされたすべてのスレッドのオペレーティング システムにより報告されたスレッドの時間を加算して計算されます。 ブロックされているか、スリープ状態のスレッドがプロセッサ時間を使用しないでください。 スレッドは、ネイティブ コードを呼び出すの呼び出しが行われたアプリケーション ドメインの数に、スレッドがネイティブ コードに費やす時間が含まれます。  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=fullName> プロパティ。  
+    -   マネージ API:<xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType>プロパティです。  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../Topic/ICLRAppDomainResourceMonitor::GetCurrentCpuTime%20Method.md) メソッド。  
+    -   API をホスティング: [iclrappdomainresourcemonitor::getcurrentcputime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md)メソッドです。  
   
-    -   ETW イベント: `ThreadCreated` イベント、`ThreadAppDomainEnter` イベント、および `ThreadTerminated` イベント。  プロバイダーおよびキーワードの詳細については、「[CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)」の「アプリケーション ドメインのリソース監視イベント」を参照してください。  
+    -   ETW イベント: `ThreadCreated`、 `ThreadAppDomainEnter`、および`ThreadTerminated`イベント。 プロバイダーとキーワードについてを参照してください「AppDomain リソース監視イベント」 [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)です。  
   
--   **有効期間中にアプリケーション ドメインによって行われたマネージ割り当ての合計 \(バイト\)**: 割り当てオブジェクトの有効期間が短い場合があるため、アプリケーション ドメインによるすべてのメモリ使用が、割り当ての合計に必ずしも反映されるとは限りません。  ただし、アプリケーションで大量のオブジェクトの割り当てや解放を行う場合、割り当てのコストが問題になる可能性があります。  
+-   **(バイト単位)、その有効期間中にアプリケーション ドメインによって行われたマネージの割り当ての合計**: 割り当ての合計は常に反映されておらず、アプリケーション ドメインによるメモリの使用割り当て済みオブジェクトの有効期間が短い可能性があるためです。 ただし、アプリケーションでは、割り当てし、大量のオブジェクトの解放する場合、割り当てのコストが大幅な可能性があります。  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=fullName> プロパティ。  
+    -   マネージ API:<xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType>プロパティです。  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../Topic/ICLRAppDomainResourceMonitor::GetCurrentAllocated%20Method.md) メソッド。  
+    -   API をホスティング: [iclrappdomainresourcemonitor::getcurrentallocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md)メソッドです。  
   
-    -   ETW イベント: `AppDomainMemAllocated` イベント、`Allocated` フィールド。  
+    -   ETW イベント:`AppDomainMemAllocated`イベント、`Allocated`フィールドです。  
   
--   **アプリケーション ドメインによって参照される、最後のフル ブロッキング コレクションで残ったマネージ メモリ \(バイト\)**: この数値は、フル ブロッキング コレクションの後にしか正確になりません \(対照的なのは同時実行コレクションです。同時実行コレクションはバックグラウンドで実行され、アプリケーションがブロックされません\)。フル ブロッキング コレクションは、たとえば <xref:System.GC.Collect?displayProperty=fullName> メソッド オーバーロードで実行されます。  
+-   **マネージ メモリ、(バイト単位) は、アプリケーション ドメインによって参照されると、最新の完全なブロッキング コレクションで残ったを**: この値は正確な後にのみフル ブロッキング コレクション。 (これは、バック グラウンドで発生して、アプリケーションをブロックしませんが、同時実行のガベージ コレクションとは対照的です。)たとえば、<xref:System.GC.Collect?displayProperty=nameWithType>メソッドのオーバー ロードがフル ブロッキング コレクションが発生します。  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=fullName> プロパティ。  
+    -   マネージ API:<xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType>プロパティです。  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../Topic/ICLRAppDomainResourceMonitor::GetCurrentSurvived%20Method.md) メソッド、`pAppDomainBytesSurvived` パラメーター。  
+    -   API をホスティング: [iclrappdomainresourcemonitor::getcurrentsurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md)メソッド、`pAppDomainBytesSurvived`パラメーター。  
   
-    -   ETW イベント: `AppDomainMemSurvived` イベント、`Survived` フィールド。  
+    -   ETW イベント:`AppDomainMemSurvived`イベント、`Survived`フィールドです。  
   
--   **プロセスよって参照される、最後のフル ブロッキング コレクションで残った合計マネージ メモリ \(バイト\)**: 個々のアプリケーション ドメインで残ったメモリをこの数値と比較できます。  
+-   **マネージ メモリ合計、(バイト単位) は、プロセスによって参照されると、最新の完全なブロッキング コレクションで残ったを**: この番号に個々 のアプリケーション ドメインの残ったメモリを比較することができます。  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=fullName> プロパティ。  
+    -   マネージ API:<xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType>プロパティです。  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../Topic/ICLRAppDomainResourceMonitor::GetCurrentSurvived%20Method.md) メソッド、`pTotalBytesSurvived` パラメーター。  
+    -   API をホスティング: [iclrappdomainresourcemonitor::getcurrentsurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md)メソッド、`pTotalBytesSurvived`パラメーター。  
   
-    -   ETW イベント: `AppDomainMemSurvived` イベント、`ProcessSurvived` フィールド。  
+    -   ETW イベント:`AppDomainMemSurvived`イベント、`ProcessSurvived`フィールドです。  
   
-### フル ブロッキング コレクションがいつ実行されたか確認する  
- 残ったメモリのカウントのうちどの時点のものが正確かを判断するには、フル ブロッキング コレクションがいつ発生したかを確認する必要があります。  そのための方法は、ARM の統計情報を調べるのに使用する API によって異なります。  
+### <a name="determining-when-a-full-blocking-collection-occurs"></a>完全なときに決定する、ブロッキング コレクションが発生しました。  
+ 残ったメモリの数が正確な場合を判断するのにフル ブロッキング コレクションが発生したときを把握する必要があります。 これを行うためのメソッドは、ARM 統計情報を確認するを使用する API に依存します。  
   
-#### マネージ API  
- <xref:System.AppDomain> クラスのプロパティを使用する場合は、<xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=fullName> メソッドを使用してフル コレクションの通知を登録できます。  使用するしきい値は重要ではありません。コレクションが開始されるまでではなく、コレクションが完了するまで待機するからです。  その後、<xref:System.GC.WaitForFullGCComplete%2A?displayProperty=fullName> メソッドを呼び出して、フル コレクションが完了するまでブロックします。  ループでメソッドを呼び出し、メソッドから制御が戻るたびに必要な分析を実行するスレッドを作成できます。  
+#### <a name="managed-api"></a>マネージ API  
+ プロパティを使用する場合、<xref:System.AppDomain>クラスを使用することができます、<xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=nameWithType>すべてのコレクションの通知を登録します。 コレクションのアプローチではなく、コレクションの完了を待機しているために、使用するしきい値は、重要ではありません。 呼び出すことができますし、<xref:System.GC.WaitForFullGCComplete%2A?displayProperty=nameWithType>メソッドで、完全なコレクションが完了するまでブロックします。 ループ内でメソッドを呼び出し、メソッドが返すときに必要な分析がスレッドを作成できます。  
   
- また、<xref:System.GC.CollectionCount%2A?displayProperty=fullName> メソッドを定期的に呼び出して、ジェネレーション 2 のコレクションの数が増加していないかどうかを確認する方法もあります。  ただし、ポーリング間隔によっては、この手法ではフル コレクションの発生を正確に特定できない場合があります。  
+ 代わりに、呼び出すことができます、<xref:System.GC.CollectionCount%2A?displayProperty=nameWithType>メソッドを定期的にジェネレーション 2 のコレクションの数が増えたかどうかを参照してください。 ポーリング頻度に応じてこの手法可能性がありますに渡さないほど正確で完全なコレクションの発生を示す値。  
   
-#### ホスト API  
- アンマネージ ホスト API を使用する場合は、ホストで CLR の [IHostGCManager](../../../ocs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md) インターフェイスの実装を渡す必要があります。  この CLR は、コレクションの実行中に中断されたスレッドの実行を再開すると [IHostGCManager::SuspensionEnding](../Topic/IHostGCManager::SuspensionEnding%20Method.md) メソッドを呼び出します。  完了したコレクションのジェネレーションがメソッドのパラメーターとして CLR から渡されるため、そのコレクションがフル コレクションだったかどうかをホストで確認できます。  残ったメモリを [IHostGCManager::SuspensionEnding](../Topic/IHostGCManager::SuspensionEnding%20Method.md) メソッドの実装で照会すると、カウントが更新された後ですぐ取得できるようになります。  
+#### <a name="hosting-api"></a>ホスト API  
+ ホストは、CLR の実装を渡す必要があります、アンマネージ ホスト API を使用する場合、 [IHostGCManager](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)インターフェイスです。 CLR の呼び出し、 [ihostgcmanager::suspensionending](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md)メソッドのコレクションが発生したときに中断されているスレッドの実行を再開するときにします。 CLR は、ホストは、コレクションが完全または部分的なであるかどうかを特定できるように、メソッドのパラメーターとして完了したコレクションの生成を渡します。 実装、 [ihostgcmanager::suspensionending](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md)カウントが更新されるとすぐに取得ことを確認の残ったメモリ メソッドを照会できます。  
   
-## 参照  
- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=fullName>   
- [ICLRAppDomainResourceMonitor インターフェイス](../../../ocs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)   
- [\<appDomainResourceMonitoring\>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
+ [ICLRAppDomainResourceMonitor インターフェイス](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
+ [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)

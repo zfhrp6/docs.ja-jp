@@ -5,23 +5,20 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- client application services, configuring
+helpviewer_keywords: client application services, configuring
 ms.assetid: 34a8688a-a32c-40d3-94be-c8e610c6a4e8
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
+ms.openlocfilehash: 1f4f518b1676e998cf8a3fd93f893398342cba6f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a1d15e380b6b7e8b226f26b261f4d4540eeef88d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-configure-client-application-services"></a>方法 : クライアント アプリケーション サービスを構成する
 このトピックでは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **プロジェクト デザイナー**を使用して、クライアント アプリケーション サービスを有効にし、構成する方法について説明します。 クライアント アプリケーション サービスを使用してユーザーを検証し、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスからユーザーのロールおよび設定を取得することができます。 構成した後に、「[クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)」に記載されているように、アプリケーション コード内で有効にされているサービスにアクセスできます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスの詳細については、「[ASP.NET アプリケーション サービスの概要](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)」を参照してください。  
@@ -36,14 +33,14 @@ ms.lasthandoff: 07/28/2017
   
      **プロジェクト デザイナー**が表示されます。  
   
-2.  **[サービス]** タブをクリックします。 次の図に示すように、**[サービス]** ページが表示されます。  
+2.  **[サービス]** タブをクリックします。次の図に示すように、**[サービス]** ページが表示されます。  
   
      ![プロジェクト デザイナーの [サービス] タブ](../../../docs/framework/common-client-technologies/media/casdesigner.png "casdesigner")  
   
 3.  **[サービス]** ページで、**[クライアント アプリケーション サービスを有効にする]** を選択します。  
   
     > [!NOTE]
-    >  クライアント アプリケーション サービスには完全版の .NET Framework が必要です。クライアント アプリケーション サービスは、.NET Framework Client Profile ではサポートされません。 [**クライアント アプリケーション サービスを有効にする**] チェック ボックスが無効になっている場合、[**ターゲット フレームワーク**] が .NET Framework 3.5 以降に設定されていることを確認します。 C# で [**ターゲット フレームワーク**] の設定を表示するには、プロジェクト デザイナーを開き、[**アプリケーション**] ページをクリックします。 Visual Basic で [**ターゲット フレームワーク**] の設定を表示するには、プロジェクト デザイナーを開き、[**コンパイル**] ページをクリックして、[**詳細コンパイル オプション**] をクリックします。  
+    >  クライアント アプリケーション サービスには完全版の .NET Framework が必要です。クライアント アプリケーション サービスは、.NET Framework Client Profile ではサポートされません。 **[クライアント アプリケーション サービスを有効にする]** チェック ボックスが無効になっている場合、**[ターゲット フレームワーク]** が .NET Framework 3.5 以降に設定されていることを確認します。 C# で **[ターゲット フレームワーク]** の設定を表示するには、プロジェクト デザイナーを開き、**[アプリケーション]** ページをクリックします。 Visual Basic で **[ターゲット フレームワーク]** の設定を表示するには、プロジェクト デザイナーを開き、**[コンパイル]** ページをクリックして、**[詳細コンパイル オプション]** をクリックします。  
   
 4.  独自のログイン コントロールまたはダイアログ ボックスを提供する場合は **[フォーム認証を使用する]** を選択し、オペレーティング システムによって付与された ID を使用する場合は **[Windows 認証を使用する]** を選択します。 詳細については、「[クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)」を参照してください。  
   
@@ -54,7 +51,7 @@ ms.lasthandoff: 07/28/2017
   
 6.  必要に応じて、**[フォーム認証を使用する]** を選択した場合は、**[資格情報プロバイダー]** ボックスに値を指定することができます。 資格情報プロバイダーは、<xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider> インターフェイスを実装する必要があります。 資格情報プロバイダーを使用すると、他のアプリケーション コードからログイン ユーザー インターフェイスを分離できます。 これにより、複数のアプリケーションで使用する単一のログイン ダイアログ ボックスを作成することができます。 詳細については、「[方法: クライアント アプリケーション サービスでユーザーのログインを実装する](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)」を参照してください。  
   
-     資格情報プロバイダーを指定する場合は、アセンブリ修飾型名としてを指定する必要があります。 詳細については、「<xref:System.Type.AssemblyQualifiedName%2A?displayProperty=fullName>」および「[アセンブリ名](../../../docs/framework/app-domains/assembly-names.md)」を参照してください。 最も単純な形式で、アセンブリ修飾型名は、次のようになります。  
+     資格情報プロバイダーを指定する場合は、アセンブリ修飾型名としてを指定する必要があります。 詳細については、「<xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>」および「[アセンブリ名](../../../docs/framework/app-domains/assembly-names.md)」を参照してください。 最も単純な形式で、アセンブリ修飾型名は、次のようになります。  
   
     ```  
     MyNamespace.MyLoginClass, MyAssembly  
@@ -99,7 +96,7 @@ ms.lasthandoff: 07/28/2017
   
      テキスト ボックスに `Data Source = |SQL/CE|` の既定値が表示されます。  
   
-3.  SQL Server Compact データベースを生成して使用するには、接続文字列の既定値を保持します。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] はデータベース ファイルを生成し、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=fullName> プロパティで指定されるディレクトリにそれを格納します。  
+3.  SQL Server Compact データベースを生成して使用するには、接続文字列の既定値を保持します。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] はデータベース ファイルを生成し、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> プロパティで指定されるディレクトリにそれを格納します。  
   
 4.  暗号化された [!INCLUDE[ssEW](../../../includes/ssew-md.md)] データベースを生成し、使用するには、次の例に示すように、接続文字列に `password` および `encrypt database` 値を追加します。  
   
@@ -124,7 +121,7 @@ ms.lasthandoff: 07/28/2017
     ```  
   
 ## <a name="using-custom-providers"></a>カスタム プロバイダーの使用  
- 既定では、クライアント アプリケーション サービスの機能は、<xref:System.Web.ClientServices.Providers?displayProperty=fullName> 名前空間のプロバイダーを使用します。 **プロジェクト デザイナー**の **[サービス]** ページを使用してアプリケーションを構成すると、これらのプロバイダーへの参照が App.config ファイルに追加されます。 これらの既定のプロバイダーは、サーバー上の対応するプロバイダーにアクセスします。 Web サービスは、多くの場合、<xref:System.Web.Security.SqlMembershipProvider> や <xref:System.Web.Security.SqlRoleProvider> などのプロバイダーからユーザー データにアクセスするように構成されます。  
+ 既定では、クライアント アプリケーション サービスの機能は、<xref:System.Web.ClientServices.Providers?displayProperty=nameWithType> 名前空間のプロバイダーを使用します。 **プロジェクト デザイナー**の **[サービス]** ページを使用してアプリケーションを構成すると、これらのプロバイダーへの参照が App.config ファイルに追加されます。 これらの既定のプロバイダーは、サーバー上の対応するプロバイダーにアクセスします。 Web サービスは、多くの場合、<xref:System.Web.Security.SqlMembershipProvider> や <xref:System.Web.Security.SqlRoleProvider> などのプロバイダーからユーザー データにアクセスするように構成されます。  
   
  カスタム サービス プロバイダーを使用する場合は、通常、サーバーにアクセスするすべてのクライアント アプリケーションに影響を与えるようにサーバー側のプロバイダーを変更します。 ただし、クライアント側で既定以外のプロバイダーを使用することもできます。 次の手順に示すように、プロジェクトの App.config ファイルでカスタム認証またはロール プロバイダーを指定できます。 カスタム認証とロール プロバイダーを作成する方法については、「[メンバーシップ プロバイダーを実装する](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582)」と「[ロール プロバイダーを実装する](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d)」を参照してください。 また、カスタム設定プロバイダーを使用するには、プロジェクトの `Settings` クラス (C# では `Properties.Settings.Default` として、`My.Settings` では [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] としてアクセス) を変更します。 詳細については、「[アプリケーション設定アーキテクチャ](../../../docs/framework/winforms/advanced/application-settings-architecture.md)」を参照してください。  
   
@@ -140,7 +137,7 @@ ms.lasthandoff: 07/28/2017
   
 4.  `<providers>` または `<membership>` 要素内の `<roleManager>` 要素を見つけます。 これらの要素は `<system.web>` 要素の子要素です。 `<membership>` 要素を使用して認証プロバイダーを指定し、`<roleManager>` 要素を使用してロール プロバイダーを指定します。  
   
-5.  `<add>` 要素の子要素として `<providers>` 要素を追加します。 次の例に示すように、`name` および `type` 属性を指定する必要があります。 `type` 属性値はアセンブリ修飾型の名前である必要があります。 詳細については、「<xref:System.Type.AssemblyQualifiedName%2A?displayProperty=fullName>」および「[アセンブリ名](../../../docs/framework/app-domains/assembly-names.md)」を参照してください。  
+5.  `<add>` 要素の子要素として `<providers>` 要素を追加します。 次の例に示すように、`name` および `type` 属性を指定する必要があります。 `type` 属性値はアセンブリ修飾型の名前である必要があります。 詳細については、「<xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>」および「[アセンブリ名](../../../docs/framework/app-domains/assembly-names.md)」を参照してください。  
   
     ```xml  
     <add name="MyCustomRoleProvider" type="MyNamespace.MyRoleProvider, MyAssembly" />  
@@ -153,14 +150,13 @@ ms.lasthandoff: 07/28/2017
     ```  
   
 ## <a name="see-also"></a>関連項目  
- [クライアント アプリケーション サービス](../../../docs/framework/common-client-technologies/client-application-services.md)   
- [クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)   
- [[サービス] ページ (プロジェクト デザイナー)](https://msdn.microsoft.com/library/bb398109)   
- [[サービスの詳細設定] ダイアログ ボックス](/visualstudio/ide/reference/advanced-settings-for-services-dialog-box)   
- [方法: クライアント アプリケーション サービスでユーザーのログインを実装する](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)   
- [チュートリアル: クライアント アプリケーション サービスの使用](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)   
- [メンバシップ プロバイダの実装](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582)   
- [ロール プロバイダの実装](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d)   
- [アプリケーション設定アーキテクチャ](../../../docs/framework/winforms/advanced/application-settings-architecture.md)   
+ [クライアント アプリケーション サービス](../../../docs/framework/common-client-technologies/client-application-services.md)  
+ [クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
+ [[サービス] ページ (プロジェクト デザイナー)](https://msdn.microsoft.com/library/bb398109)  
+ [[サービスの詳細設定] ダイアログ ボックス](/visualstudio/ide/reference/advanced-settings-for-services-dialog-box)  
+ [方法: クライアント アプリケーション サービスでユーザーのログインを実装する](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
+ [チュートリアル : クライアント アプリケーション サービスの使用](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)  
+ [メンバーシップ プロバイダーを実装します。](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582)  
+ [ロール プロバイダーの実装](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d)  
+ [アプリケーション設定アーキテクチャ](../../../docs/framework/winforms/advanced/application-settings-architecture.md)  
  [SQL Server 向けアプリケーション サービス データベースの作成と構成](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)
-

@@ -1,42 +1,23 @@
 ---
 title: "-win32manifest (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /win32manifest
-dev_langs:
-- CSharp
+f1_keywords: /win32manifest
 helpviewer_keywords:
 - /win32manifest compiler option [C#]
 - win32manifest compiler option [C#]
 - -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 40b1fa1f9aa465a56eccaf5fff5cf7bb59144e85
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 938317fdf0c56469b85b1231a47f83e9c2a7d0f2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="win32manifest-c-compiler-options"></a>/win32manifest (C# コンパイラ オプション)
 **/win32manifest** オプションは、プロジェクトのポータブル実行可能 (PE) ファイルに埋め込まれる、ユーザー定義の Win32 アプリケーション マニフェスト ファイルを指定するために使用します。  
@@ -57,7 +38,7 @@ ms.lasthandoff: 07/28/2017
 > [!NOTE]
 >  このオプションと [/win32res (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md) オプションは、相互に排他的です。 同じコマンド行で両方のオプションを使おうすると、ビルド エラーが返されます。  
   
- アプリケーション マニフェストを持たないアプリケーションは、要求実行レベルを指定した場合、Windows Vista のユーザー アカウント制御機能によって、ファイルまたはレジストリの仮想化の対象となります。 仮想化について詳しくは、「[The Windows Vista Developer Story: Windows Vista Application Development Requirements for User Account Control (UAC)](http://go.microsoft.com/fwlink/?LinkId=95452)」(Windows Vista 開発者ストーリー: ユーザー アカウント制御 (UAC) に関する Windows Vista アプリケーション開発要件) をご覧ください。  
+ アプリケーション マニフェストがないアプリケーションでは、要求実行レベルは、Windows のユーザー アカウント制御機能の下にあるファイルまたはレジストリの仮想化されますを指定します。 詳細については、次を参照してください。[ユーザー アカウント制御](/windows/access-protection/user-account-control/user-account-control-overview)です。  
   
  次の条件のいずれかに該当する場合、アプリケーションは仮想化の対象となります。  
   
@@ -90,7 +71,6 @@ ms.lasthandoff: 07/28/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [/nowin32manifest (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md)   
+ [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
+ [/nowin32manifest (c# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
-

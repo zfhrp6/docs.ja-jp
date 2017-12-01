@@ -1,38 +1,36 @@
 ---
-title: "XPathNavigator を使用した XML データの選択、評価、および照合 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XPathNavigator を使用した XML データの選択、評価、および照合"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 46e059f8-4dc8-4185-9236-784be95228ed
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 7a86fb36d367342ea0c5bc4968bdd5744bd0524e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XPathNavigator を使用した XML データの選択、評価、および照合
-<xref:System.Xml.XPath.XPathNavigator> クラスは、XPath クエリによる <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、XPath 式の結果の評価と検査、および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードが指定された XPath 式に一致するかどうかの判定のためのメソッドを提供します。  以下のトピックでは、これらの概念および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、評価、および照合に関連する他の概念について説明します。  
+# <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a>XPathNavigator を使用した XML データの選択、評価、および照合
+<xref:System.Xml.XPath.XPathNavigator> クラスは、XPath クエリによる <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、XPath 式の結果の評価と検査、および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードが指定された XPath 式に一致するかどうかの判定のためのメソッドを提供します。 以下のトピックでは、これらの概念および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、評価、および照合に関連する他の概念について説明します。  
   
-## このセクションの内容  
- [XPathNavigator を使用した XML データの選択](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
- <xref:System.Xml.XPath.XPathDocument> オブジェクトまたは <xref:System.Xml.XmlDocument> オブジェクト内で XPath 式を使用してノード セットを選択するために使用される <xref:System.Xml.XPath.XPathNavigator> クラスの一連のメソッドについて説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [XPathNavigator による XML データを選択します。](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
+ <xref:System.Xml.XPath.XPathNavigator> オブジェクトまたは <xref:System.Xml.XPath.XPathDocument> オブジェクト内で XPath 式を使用してノード セットを選択するために使用される <xref:System.Xml.XmlDocument> クラスの一連のメソッドについて説明します。  
   
- [XPathNavigator による Xpath 式の評価](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
- XPath 式の評価に使用される <xref:System.Xml.XPath.XPathNavigator> クラスの <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> メソッドについて説明します。  
+ [XPathNavigator による XPath 式を評価します。](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
+ XPath 式の評価に使用される <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドについて説明します。  
   
  [XPathNavigator によるノードの一致](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)  
- ノードが XPath 式に一致するかどうかを判定するために使用される <xref:System.Xml.XPath.XPathNavigator> クラスの <xref:System.Xml.XPath.XPathNavigator.Matches%2A> メソッドについて説明します。  
+ ノードが XPath 式に一致するかどうかを判定するために使用される <xref:System.Xml.XPath.XPathNavigator.Matches%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドについて説明します。  
   
  [XPath クエリで認識されるノード型](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)  
  XPath クエリで認識されるノードの型について説明します。  
@@ -43,12 +41,12 @@ caps.handback.revision: 2
  [コンパイルされた XPath 式](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)  
  コンパイル済みの XPath クエリを表す <xref:System.Xml.XPath.XPathExpression> クラスについて説明します。  
   
-## 参照  
- <xref:System.Xml.XmlDocument>   
- <xref:System.Xml.XPath.XPathDocument>   
- <xref:System.Xml.XPath.XPathNavigator>   
- [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)   
- [XPathDocument および XmlDocument を使用した XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)   
- [XPathNavigator による XML データへのアクセス](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)   
- [XPathNavigator による XML データの編集](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)   
- [XPathNavigator を使用したスキーマ検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Xml.XmlDocument>  
+ <xref:System.Xml.XPath.XPathDocument>  
+ <xref:System.Xml.XPath.XPathNavigator>  
+ [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [XPathDocument および XmlDocument を使用して XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
+ [XPathNavigator による XML データにアクセスします。](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+ [XPathNavigator による XML データの編集](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
+ [XPathNavigator を使用するスキーマの検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)

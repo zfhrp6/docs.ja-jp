@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: 9eb5be38549711717c11767332bfc84920ea927a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: 55329bed71be21a787d6e77d8c0ea67d607676b8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -46,7 +45,7 @@ dotnet test [-h|--help]
 
 テスト プロジェクトでは、テスト ランナーを指定する必要もあります。 これは、通常の `<PackageReference>` 要素を使用して指定されます。次のサンプル プロジェクト ファイルのようになります。
 
-[!code-xml[XUnit 基本テンプレート](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
+[!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
 ## <a name="arguments"></a>引数
 
@@ -212,12 +211,11 @@ dotnet test [-h|--help]
 | <code>&#124;</code>      | OR       |
 | `&`      | AND      |
 
-条件演算子を使用する場合は、式をかっこで囲みます (例: `(Name~TestMethod1) | (Name~TestMethod2)`)。
+条件演算子を使用する場合、かっこで式を囲むことができます (たとえば、 `(Name~TestMethod1) | (Name~TestMethod2)`)。
 
 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 
- [フレームワークとターゲット](../../standard/frameworks.md)   
+ [フレームワークとターゲット](../../standard/frameworks.md)  
  [.NET Core のランタイム識別子 (RID) のカタログ](../rid-catalog.md)
-

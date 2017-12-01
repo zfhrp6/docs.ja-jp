@@ -7,26 +7,20 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - system.xml.serialization element
 - XML serialization, configuration
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 68d2b7385ce492c52de41abe50e00b1438fe52b6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: cfc2b38eba68a8c7f9ddab4a6ee941f6faee7c02
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltsystemxmlserializationgt-element"></a>&lt;system.xml.serialization&gt; 要素
 XML シリアル化を制御する最上位の要素です。 構成ファイルの詳細については、「[構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)」を参照してください。  
@@ -78,10 +72,9 @@ XML シリアル化を制御する最上位の要素です。 構成ファイル
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Serialization.XmlSchemaImporter>   
- <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>   
- [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<dateTimeSerialization> 要素](../../../docs/standard/serialization/datetimeserialization-element.md)   
- [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)   
- \<xmlSchemaImporterExtensions>](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md) の [\<add> 要素
-
+ <xref:System.Xml.Serialization.XmlSchemaImporter>  
+ <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
+ [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)  
+ [\<dateTimeSerialization> 要素](../../../docs/standard/serialization/datetimeserialization-element.md)  
+ [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+ [\<追加 > 要素を\<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)

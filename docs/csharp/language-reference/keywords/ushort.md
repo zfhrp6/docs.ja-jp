@@ -1,41 +1,22 @@
 ---
 title: "ushort (C# リファレンス)"
-ms.date: 2017-03-14
+ms.date: 03/14/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - ushort
 - ushort_CSharpKeyword
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- ushort keyword [C#]
+helpviewer_keywords: ushort keyword [C#]
 ms.assetid: 1a7dbaae-b7a0-4111-872a-c88a6d3981ac
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 83fa657303e8392997b04b7d80cdbcdbf39de887
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2b067a2ffd0fbffe06dc5c9f2a9910c9563eec4b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ushort-c-reference"></a>ushort (C# リファレンス)
 
@@ -43,22 +24,26 @@ ms.lasthandoff: 07/28/2017
   
 |型|範囲|サイズ|.NET Framework 型|  
 |----------|-----------|----------|-------------------------|  
-|`ushort`|0 ～ 65,535|符号なし 16 ビット整数|<xref:System.UInt16?displayProperty=fullName>|  
+|`ushort`|0 ～ 65,535|符号なし 16 ビット整数|<xref:System.UInt16?displayProperty=nameWithType>|  
   
 ## <a name="literals"></a>リテラル  
 
-`ushort` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `ushort` の範囲外にある場合 (つまり、<xref:System.UInt16.MinValue?displayProperty=fullName> より小さいか、<xref:System.UInt16.MaxValue?displayProperty=fullName> より大きい場合)、コンパイル エラーが発生します。
+`ushort` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 整数リテラルが `ushort` の範囲外にある場合 (つまり、<xref:System.UInt16.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.UInt16.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。
 
 次の例では、整数 65,034 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、[int](../../../csharp/language-reference/keywords/int.md) から `ushort` 値に暗黙的に変換されています。    
   
-[!code-cs[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShort)]  
+[!code-csharp[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShort)]  
 
 > [!NOTE] 
 > 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。
 
-C# 7 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
+以降で c# 7、いくつかの機能が追加されて読みやすさを強化するためにします。 
+ - C# 7.0 により、アンダー スコア文字の使用法`_`、桁区切り記号として。
+ - により、c# 7.2`_`プレフィックスの後に、バイナリまたは 16 進数リテラルの桁区切り記号として使用します。 10 進数のリテラルはない、先頭にアンダー スコアを持つことができます。
 
-[!code-cs[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShortS)]  
+いくつかの例は、以下に示します。
+
+[!code-csharp[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShortS)]  
  
 ## <a name="compiler-overload-resolution"></a>コンパイラのオーバーロード解決
   
@@ -123,12 +108,11 @@ ushort y = (ushort)3.0;
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.UInt16>   
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
- [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
+ <xref:System.UInt16>  
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)  
+ [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+ [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
-

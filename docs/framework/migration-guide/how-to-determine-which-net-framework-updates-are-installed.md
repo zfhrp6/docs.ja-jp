@@ -1,12 +1,9 @@
 ---
-title: "方法 : インストールされている .NET Framework の更新プログラムを確認する"
-ms.custom: 
-ms.date: 03/30/2017
+title: "方法: どの .NET Framework のセキュリティ更新プログラムと修正プログラムがインストールされている確認"
+description: "どの .NET Framework のセキュリティ更新プログラムと修正プログラムがコンピューターにインストールされているを確認する方法を説明します。"
+ms.date: 11/21/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,69 +12,106 @@ helpviewer_keywords:
 - updates, determining for .NET Framework
 - .NET Framework, determining updates
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
-caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ba734dd3a9585b52b96cb2d27743da6190961126
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c35705470a8e1b553eca2ca0c68d3b8b9b3f6fa6
+ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/27/2017
 ---
-# <a name="how-to-determine-which-net-framework-updates-are-installed"></a>方法 : インストールされている .NET Framework の更新プログラムを確認する
-コンピューターにインストールされている .NET Framework のバージョンごとのインストール済みの更新プログラムは、Windows レジストリに一覧表示されます。 レジストリ エディター (regedit.exe) を使用して、この情報を表示することができます。  
-  
- レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号を検出する方法については、「[方法: インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。 .NET Framework のインストールの詳細については、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
-  
-### <a name="to-find-installed-updates"></a>インストールされている更新プログラムを確認するには  
-  
-1.  プログラム **regedit.exe** を開きます。 Windows 8 以降の場合、スタート画面を開き、名前を入力します。 それより前のバージョンの Windows では、**[スタート]** メニューの **[ファイル名を指定して実行]** を選択し、**[開く]** ボックスに **regedit.exe** と入力します。  
-  
-     regedit.exe を実行するには、管理特権が必要です。  
-  
-2.  レジストリ エディターで、次のサブキーを開きます。  
-  
-     HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates  
-  
-     インストールされている更新プログラムは、適用された .NET Framework バージョンを識別するサブキーの下に一覧表示されています。 各更新プログラムは、サポート技術情報の (KB) 番号で識別されます。  
-  
-## <a name="example"></a>例  
- 次のコードは、プログラミングによってコンピューターにインストールされている .NET Framework の更新プログラムを判断します。 この例を実行するには、管理特権が必要です。  
-  
- [!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)]
- [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]  
-  
- この例では次のような出力が生成されます。  
-  
-```  
-Microsoft .NET Framework 3.5 SP1  
-  KB953595  Hotfix for Microsoft .NET Framework 3.5 SP1 (KB953595)  
-  SP1  
-    KB2657424  Security Update for Microsoft .NET Framework 3.5 SP1 (KB2657424)  
-    KB958484  Hotfix for Microsoft .NET Framework 3.5 SP1 (KB958484)  
-    KB963707  Update for Microsoft .NET Framework 3.5 SP1 (KB963707)  
-Microsoft .NET Framework 4 Client Profile  
-  KB2160841  Security Update for Microsoft .NET Framework 4 Client Profile (KB2160841)  
-  KB2446708  Security Update for Microsoft .NET Framework 4 Client Profile (KB2446708)  
-  KB2468871  Update for Microsoft .NET Framework 4 Client Profile (KB2468871)  
-  KB2478663  Security Update for Microsoft .NET Framework 4 Client Profile (KB2478663)  
-  KB2518870  Security Update for Microsoft .NET Framework 4 Client Profile (KB2518870)  
-  KB2533523  Update for Microsoft .NET Framework 4 Client Profile (KB2533523)  
-  KB2539636  Security Update for Microsoft .NET Framework 4 Client Profile (KB2539636)  
-  KB2572078  Security Update for Microsoft .NET Framework 4 Client Profile (KB2572078)  
-  KB2633870  Security Update for Microsoft .NET Framework 4 Client Profile (KB2633870)  
-  KB2656351  Security Update for Microsoft .NET Framework 4 Client Profile (KB2656351)  
-Microsoft .NET Framework 4 Extended  
-  KB2416472  Security Update for Microsoft .NET Framework 4 Extended (KB2416472)  
-  KB2468871  Update for Microsoft .NET Framework 4 Extended (KB2468871)  
-  KB2487367  Security Update for Microsoft .NET Framework 4 Extended (KB2487367)  
-  KB2533523  Update for Microsoft .NET Framework 4 Extended (KB2533523)  
-  KB2656351  Security Update for Microsoft .NET Framework 4 Extended (KB2656351)  
-```  
-  
+# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>方法: どの .NET Framework のセキュリティ更新プログラムと修正プログラムがインストールされている確認
+
+ここで説明する .NET Framework のセキュリティ更新プログラムを確認する方法と修正プログラムがコンピューターにインストールされています。
+
+> [!NOTE]
+> この記事で示したすべての手法では、管理者特権を持つアカウントが必要です。
+
+## <a name="to-find-installed-updates-using-the-registry"></a>インストールされたレジストリを使用して更新プログラムを検索するには
+
+インストールされているセキュリティ更新プログラムと修正プログラムをコンピューターにインストールされている .NET Framework のバージョンごとには、Windows レジストリに一覧表示されます。 レジストリ エディターを使用することができます (*regedit.exe*) プログラムをこの情報を表示します。
+
+1. プログラム **regedit.exe** を開きます。 Windows 8 およびそれ以降のバージョンを右クリックして**開始** ![Windows ロゴ](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo")選択してから、**実行**です。 **開く**ボックスに、入力**regedit**選択**[ok]**です。
+
+2. レジストリ エディターで、次のサブキーを開きます。
+
+     `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates`
+
+     インストールされている更新プログラムは、適用された .NET Framework バージョンを識別するサブキーの下に一覧表示されています。 各更新プログラムは、サポート技術情報の (KB) 番号で識別されます。
+
+レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号を検出する方法については、次を参照してください。[する方法: .NET Framework バージョンがインストールされている確認](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)です。
+
+## <a name="to-find-installed-updates-by-querying-the-registry-in-code"></a>コードでレジストリを照会することによってインストールされた更新プログラムを検索するには
+
+次の例は、プログラムによって、.NET Framework のセキュリティ更新プログラムと、コンピューターにインストールされている修正プログラムを決定します。
+
+[!code-csharp[ListUpdates](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs)]
+[!code-vb[ListUpdates](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb)]
+
+この例には、次のいずれかのような出力が生成されます。
+
+```console
+Microsoft .NET Framework 4 Client Profile
+  KB2468871
+  KB2468871v2
+  KB2478063
+  KB2533523
+  KB2544514
+  KB2600211
+  KB2600217
+Microsoft .NET Framework 4 Extended
+  KB2468871
+  KB2468871v2
+  KB2478063
+  KB2533523
+  KB2544514
+  KB2600211
+  KB2600217
+```
+
+## <a name="to-find-installed-updates-by-querying-the-registry-in-powershell"></a>PowerShell でレジストリを照会してインストールされた更新プログラムを検索するには
+
+次の例では、.NET Framework のセキュリティ更新プログラムと PowerShell を使用してコンピューターにインストールされている修正プログラムを確認する方法を示します。
+
+```powershell
+ Get-ChildItem "HKLM:SOFTWARE\Wow6432Node\Microsoft\Updates\*" -Recurse | Where-Object {$_.name -like
+ "*.NET Framework*"}
+```
+
+この例には、次のいずれかのような出力が生成されます。
+
+```console
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates\Microsoft .NET Framework 4 Client Profile
+
+
+Name                           Property
+----                           --------
+KB2468871                      ThisVersionInstalled : Y
+KB2468871v2                    ThisVersionInstalled : Y
+KB2478063                      ThisVersionInstalled : Y
+KB2533523                      ThisVersionInstalled : Y
+KB2544514                      ThisVersionInstalled : Y
+KB2600211                      ThisVersionInstalled : Y
+KB2600217                      ThisVersionInstalled : Y
+
+
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates\Microsoft .NET Framework 4 Extended
+
+
+Name                           Property
+----                           --------
+KB2468871                      ThisVersionInstalled : Y
+KB2468871v2                    ThisVersionInstalled : Y
+KB2478063                      ThisVersionInstalled : Y
+KB2533523                      ThisVersionInstalled : Y
+KB2544514                      ThisVersionInstalled : Y
+KB2600211                      ThisVersionInstalled : Y
+KB2600217                      ThisVersionInstalled : Y
+```
+
 ## <a name="see-also"></a>関連項目
 
-[方法 : インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
-[.NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)   
+[方法: .NET Framework バージョンがインストールされている確認](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)  
+[開発者にとっての .NET Framework をインストールします。](../../../docs/framework/install/guide-for-developers.md)  
 [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)

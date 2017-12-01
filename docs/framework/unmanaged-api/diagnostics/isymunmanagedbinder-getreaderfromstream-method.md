@@ -21,14 +21,14 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 96bd12b69b84537415ddf2e0ae992ec179f32493
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: aa6a2e60e34f6c3a78343318ae102883da84e266
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="isymunmanagedbindergetreaderfromstream-method"></a>ISymUnmanagedBinder::GetReaderFromStream メソッド
-メタデータ インターフェイスおよびをシンボル ストアを格納するストリームを指定して、正しい返します <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> デバッグを読み取る構造は、特定のシンボル ストアからシンボルします。  
+メタデータ インターフェイスおよびをシンボル ストアを格納するストリームを指定して、正しい返します[ISymUnmanagedReader](isymunmanagedreader-interface.md)デバッグは読み取りを構造体は、特定のシンボル ストアからシンボルします。  
   
 ## <a name="syntax"></a>構文  
   
@@ -47,7 +47,7 @@ HRESULT GetReaderFromStream(
  [in]シンボル ストアを格納しているストリームへのポインター。  
   
  `pRetVal`  
- [out]設定されているポインターに返された <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> インターフェイスです。  
+ [out]設定されているポインターに返された[ISymUnmanagedReader](isymunmanagedreader-interface.md)インターフェイスです。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。  

@@ -8,6 +8,9 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - language interoperability
 - Common Language Specification
@@ -16,16 +19,15 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-caps.latest.revision: 35
+caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: bc43226a508dfd0286c7667c02bdc2543346be9c
+ms.sourcegitcommit: 9c4b8d457ffb8d134c9d55c6d7682a0f22e2b9a8
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 270a75e0c4e3da5ea87196580ab09dbff24b80c6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/20/2017
 ---
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 .NET Framework は言語に依存しません。 つまり、C++/CLI、Eiffel、F#、IronPython、IronRuby、PowerBuilder、Visual Basic、Visual COBOL、Windows PowerShell など、.NET Framework を対象とする多くの言語の 1 つを開発に使用できます。 .NET Framework 用に開発されたクラス ライブラリの型とメンバーには、最初に記述された言語を知らなくてもアクセスできます。元の言語の規則に従う必要もありません。 コンポーネントを開発しているのであれば、コンポーネントの言語にかかわらず、すべての .NET Framework アプリからそのコンポーネントにアクセスできます。  
@@ -89,11 +91,13 @@ ms.lasthandoff: 08/21/2017
   
  たとえば、<xref:System.Byte> 以外の符号なし整数は CLS に準拠していません。 次の例の `Person` クラスは型 `Age` の <xref:System.UInt16> プロパティを公開するので、次のコードではコンパイラの警告が表示されます。  
   
- [!code-csharp[Conceptual.CLSCompliant#1](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/public1.cs#1)] [!code-vb[Conceptual.CLSCompliant#1](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/public1.vb#1)]  
+ [!code-csharp[Conceptual.CLSCompliant#1](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/public1.cs#1)]
+ [!code-vb[Conceptual.CLSCompliant#1](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/public1.vb#1)]  
   
  `Person` クラスを CLS 準拠にするには、`Age` プロパティの型を <xref:System.UInt16> から、CLS 準拠の 16 ビット符号付き整数である <xref:System.Int16> に変更します。 プライベート `personAge` フィールドの型を変更する必要はありません。  
   
- [!code-csharp[Conceptual.CLSCompliant#2](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/public2.cs#2)] [!code-vb[Conceptual.CLSCompliant#2](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/public2.vb#2)]  
+ [!code-csharp[Conceptual.CLSCompliant#2](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/public2.cs#2)]
+ [!code-vb[Conceptual.CLSCompliant#2](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/public2.vb#2)]  
   
  ライブラリのパブリック インターフェイスは、次の要素で構成されます。  
   
@@ -110,20 +114,20 @@ ms.lasthandoff: 08/21/2017
 |ユーザー補助|[メンバーのアクセシビリティ](#MemberAccess)|継承されたメソッドをオーバーライドする場合、アクセシビリティは変更してはいけない。ただし、別のアセンブリから継承されたメソッドをアクセシビリティ `family-or-assembly` でオーバーライドする場合は除く。 この場合、アクセシビリティは `family` にすること。|10|  
 |ユーザー補助|[メンバーのアクセシビリティ](#MemberAccess)|型およびメンバーの可視性およびアクセシビリティについて、メンバーのシグネチャに指定されている型は、そのメンバーが可視でアクセス可能な場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるパブリックなメソッドには、アセンブリ内部でだけ可視である型が引数として含まれていてはいけない。 メンバーのシグネチャに使用されているジェネリック型のインスタンスを構成する型の可視性およびアクセシビリティは、メンバーが可視でアクセス可能の場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるメンバーのシグネチャに指定されているジェネリック型のインスタンスに、アセンブリ内部でだけ可視である型の汎用引数が含まれていてはいけない。|12|  
 |配列|[配列](#arrays)|配列は、要素が CLS 準拠型で、すべての次元でインデックス番号が 0 から始まらなければならない。 項目が配列の場合、オーバーロードどうしを区別するには配列要素の型を必要とする。 オーバーロードが 2 つ以上の配列型に基づく場合、要素型は名前付きの型でなければいけない。|16|  
-|属性|[属性](#attributes)|属性の型 <xref:System.Attribute?displayProperty=fullName>、またはそれを継承する型である。|41|  
-|属性|[属性](#attributes)|CLS ではカスタム属性のエンコーディングのサブセットのみ使用できる。 これらのエンコーディングに表示される型 (第 4 部を参照) は、<xref:System.Type?displayProperty=fullName>、<xref:System.String?displayProperty=fullName>、<xref:System.Char?displayProperty=fullName>、<xref:System.Boolean?displayProperty=fullName>、<xref:System.Byte?displayProperty=fullName>、<xref:System.Int16?displayProperty=fullName>、<xref:System.Int32?displayProperty=fullName>、<xref:System.Int64?displayProperty=fullName>、<xref:System.Single?displayProperty=fullName>、<xref:System.Double?displayProperty=fullName>、CLS 準拠の基底の整数型に基づく列挙型のみである。|34|  
+|属性|[属性](#attributes)|属性の型 <xref:System.Attribute?displayProperty=nameWithType>、またはそれを継承する型である。|41|  
+|属性|[属性](#attributes)|CLS ではカスタム属性のエンコーディングのサブセットのみ使用できる。 これらのエンコーディングに表示される型 (第 4 部を参照) は、<xref:System.Type?displayProperty=nameWithType>、<xref:System.String?displayProperty=nameWithType>、<xref:System.Char?displayProperty=nameWithType>、<xref:System.Boolean?displayProperty=nameWithType>、<xref:System.Byte?displayProperty=nameWithType>、<xref:System.Int16?displayProperty=nameWithType>、<xref:System.Int32?displayProperty=nameWithType>、<xref:System.Int64?displayProperty=nameWithType>、<xref:System.Single?displayProperty=nameWithType>、<xref:System.Double?displayProperty=nameWithType>、CLS 準拠の基底の整数型に基づく列挙型のみである。|34|  
 |属性|[属性](#attributes)|CLS では、公開参照される必須の修飾子 (`modreq`、第 2 部を参照) は使用できない。ただし、認識しないオプションの修飾子 (`modopt`、第 2 部を参照) は使用できる。|35|  
 |コンストラクター|[コンストラクター](#ctors)|オブジェクト コンストラクターでは、継承しているインスタンス データへのアクセスが発生する前に、基底クラスのインスタンス コンストラクターを呼び出さなければいけない (コンストラクターが不要である値型は除く)。|21|  
 |コンストラクター|[コンストラクター](#ctors)|オブジェクト コンストラクターがオブジェクトの作成時以外で呼び出されてはならず、またオブジェクトが 2 度初期化されてもいけない。|22|  
 |列挙型|[列挙型](#enums)|enum の基になる型は組み込みの CLS 整数型、フィールド名は "value__" であり、そのフィールドには `RTSpecialName` のマークが付けられる。|7|  
-|列挙型|[列挙型](#enums)|enum には 2 種類あり、<xref:System.FlagsAttribute?displayProperty=fullName> カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。 片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。 `enum` の値は、指定した値に限定されない。|9|  
+|列挙型|[列挙型](#enums)|enum には 2 種類あり、<xref:System.FlagsAttribute?displayProperty=nameWithType> カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。 片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。 `enum` の値は、指定した値に限定されない。|9|  
 |列挙型|[列挙型](#enums)|enum のリテラルな静的フィールドの型は、その enum 自体の型である。|9|  
 |イベント|[イベント](#events)|イベントを実装するメソッドは、メタデータ内で `SpecialName` のマークが付けられる。|29|  
 |イベント|[イベント](#events)|イベントとイベントのアクセサーのアクセシビリティは同一である。|30|  
 |イベント|[イベント](#events)|イベントの `add` メソッドおよび `remove` メソッドは、どちらもあってもなくてもよい。|31|  
-|イベント|[イベント](#events)|`add` メソッドおよび `remove` メソッドは、それぞれパラメーターを 1 つ使用する。このパラメーターの型がイベントの型を規定する。また、パラメーターの型は <xref:System.Delegate?displayProperty=fullName> の派生でなければいけない。|32|  
+|イベント|[イベント](#events)|`add` メソッドおよび `remove` メソッドは、それぞれパラメーターを 1 つ使用する。このパラメーターの型がイベントの型を規定する。また、パラメーターの型は <xref:System.Delegate?displayProperty=nameWithType> の派生でなければいけない。|32|  
 |イベント|[イベント](#events)|イベントは、特定の名前付けパターンに従わなくてはいけない。 CLS 規則 29 で触れられている `SpecialName` 属性は、適切な名前比較で無視され、識別子規則に従わなければいけない。|33|  
-|例外|[例外](#exceptions)|スローできるオブジェクト型は、<xref:System.Exception?displayProperty=fullName>、またはそれを継承する型である。 ただし、CLS 準拠のメソッドで他の型の例外のスローをブロックする必要はない。|40|  
+|例外|[例外](#exceptions)|スローできるオブジェクト型は、<xref:System.Exception?displayProperty=nameWithType>、またはそれを継承する型である。 ただし、CLS 準拠のメソッドで他の型の例外のスローをブロックする必要はない。|40|  
 |全般|[CLS 準拠: 規則](#Rules)|CLS 規則は、型の構成部分のうち、その型を定義しているアセンブリの外部からアクセスまたは参照できる部分にのみ適用される。|1|  
 |全般|[CLS 準拠: 規則](#Rules)|CLS 非準拠型のメンバーを CLS 準拠と指定しない。|2|  
 |ジェネリック|[ジェネリック型とメンバー](#Generics)|入れ子になった型は、少なくともその外側の型と同じ数のジェネリック パラメーターを持つ。 入れ子にされた型のジェネリック パラメーターは、それを囲む型のジェネリック パラメーターと、位置によって対応します。|42|  
@@ -143,7 +147,7 @@ ms.lasthandoff: 08/21/2017
 |オーバーロード|[オーバーロード](#overloads)|プロパティおよびメソッドのみオーバーロードできる。|37|  
 |オーバーロード|[オーバーロード](#overloads)|プロパティおよびメソッドは、パラメーターの数値と型にのみ基づいてオーバーロードできる。ただし、戻り値の型に基づいてオーバーロードできる変換演算子の `op_Implicit` と o`op_Explicit` は例外である。|38|  
 |オーバーロード|--|型で宣言された複数の CLS 準拠のメソッドに同じ名前が指定されている場合、特定の一連の型のインスタンス化において、これらのメソッドのパラメーターと戻り値の型は同じである。また、これらの型のインスタンス化で、すべてのメソッドをセマンティクス レベルで等価にする必要がある。|48|  
-|種類|[型および型メンバーのシグネチャ](#Types)|<xref:System.Object?displayProperty=fullName> は CLS 準拠である。 これ以外のあらゆる CLS 準拠クラスは CLS 準拠クラスの継承でなければならない。|23|  
+|種類|[型および型メンバーのシグネチャ](#Types)|<xref:System.Object?displayProperty=nameWithType> は CLS 準拠である。 これ以外のあらゆる CLS 準拠クラスは CLS 準拠クラスの継承でなければならない。|23|  
 |プロパティ|[プロパティ](#properties)|プロパティの getter メソッドおよび setter メソッドを実装するメソッドは、メタデータで `SpecialName` とマークする。|24|  
 |プロパティ|[プロパティ](#properties)|プロパティ アクセサーはすべて静的、すべて仮想、またはすべてインスタンスになる。|26|  
 |プロパティ|[プロパティ](#properties)|プロパティの型は、getter の戻り値の型であり、かつ setter の最後の引数の型でなければいけない。 プロパティのパラメーターの型は、getter へのパラメーターの型であり、かつ setter の最後のパラメーター以外のすべての型でなければいけない。 すべての型は CLS 準拠でなければならない。また、マネージ ポインターであってはいけない。つまり、参照渡しではいけない。|27|  
@@ -157,11 +161,12 @@ ms.lasthandoff: 08/21/2017
   
 <a name="Types"></a>   
 ### <a name="types-and-type-member-signatures"></a>型および型メンバーのシグネチャ  
- <xref:System.Object?displayProperty=fullName> 型は CLS に準拠しており、.NET Framework 型システムのすべてのオブジェクト型の基本型です。 .NET Framework の継承は暗黙的また明示的に行われます。たとえば、<xref:System.String> クラスは <xref:System.Object> クラスから暗黙的に継承します。また、<xref:System.Globalization.CultureNotFoundException> クラスは、<xref:System.ArgumentException> クラスから明示的に継承し、これは <xref:System.SystemException> クラスから明示的に継承します。そして、このクラスは <xref:System.Exception> クラスから明示的に継承します。 派生型を CLS 準拠にするには、その基本型も CLS に準拠している必要があります。  
+ <xref:System.Object?displayProperty=nameWithType> 型は CLS に準拠しており、.NET Framework 型システムのすべてのオブジェクト型の基本型です。 .NET Framework の継承は暗黙的また明示的に行われます。たとえば、<xref:System.String> クラスは <xref:System.Object> クラスから暗黙的に継承します。また、<xref:System.Globalization.CultureNotFoundException> クラスは、<xref:System.ArgumentException> クラスから明示的に継承し、これは <xref:System.SystemException> クラスから明示的に継承します。そして、このクラスは <xref:System.Exception> クラスから明示的に継承します。 派生型を CLS 準拠にするには、その基本型も CLS に準拠している必要があります。  
   
  次の例は、基本型が CLS に準拠していない派生型を示しています。 これは、符号なし 32 ビット整数をカウンターとして使用する `Counter` 基底クラスを定義します。 クラスには、符号なし整数をラップすることでカウンター機能が用意されます。このため、クラスは CLS 非準拠としてマークされます。 結果として、派生クラス `NonZeroCounter` も CLS に準拠しなくなります。  
   
- [!code-csharp[Conceptual.CLSCompliant#12](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/type3.cs#12)] [!code-vb[Conceptual.CLSCompliant#12](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/type3.vb#12)]  
+ [!code-csharp[Conceptual.CLSCompliant#12](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/type3.cs#12)]
+ [!code-vb[Conceptual.CLSCompliant#12](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/type3.vb#12)]  
   
  メソッドの戻り値の型、プロパティ型を含め、メンバー シグネチャに表示されるすべての型が CLS に準拠する必要があります。 さらに、ジェネリック型の場合は、次の要件もあります。  
   
@@ -208,11 +213,13 @@ ms.lasthandoff: 08/21/2017
   
  次の例は、メソッド シグネチャとジェネリック型のインスタンス化で発生する CLS 準拠の問題を示しています。 ここでは、`InvoiceItem` クラスを、型 <xref:System.UInt32> のプロパティ、型 `Nullable(Of UInt32)` のプロパティ、および型 <xref:System.UInt32> と `Nullable(Of UInt32)` のパラメーターが指定されたコンストラクターで定義します。 この例をコンパイルしようとすると、4 つのコンパイラの警告が表示されます。  
   
- [!code-csharp[Conceptual.CLSCompliant#3](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/type1.cs#3)] [!code-vb[Conceptual.CLSCompliant#3](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/type1.vb#3)]  
+ [!code-csharp[Conceptual.CLSCompliant#3](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/type1.cs#3)]
+ [!code-vb[Conceptual.CLSCompliant#3](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/type1.vb#3)]  
   
  コンパイラの警告が表示されないようにするには、`InvoiceItem` パブリック インターフェイスの CLS 非準拠型を準拠型に置き換えます。  
   
- [!code-csharp[Conceptual.CLSCompliant#4](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/type2.cs#4)] [!code-vb[Conceptual.CLSCompliant#4](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/type2.vb#4)]  
+ [!code-csharp[Conceptual.CLSCompliant#4](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/type2.cs#4)]
+ [!code-vb[Conceptual.CLSCompliant#4](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/type2.vb#4)]  
   
  ここで示した特定の型以外にも、CLS に準拠していないカテゴリはいくつかあります。 たとえば、アンマネージ ポインター型やアンマネージ関数ポインター型などです。 次の例では、整数へのポインターを使用して整数の配列を作成するので、コンパイラの警告が生成されます。  
   
@@ -228,13 +235,14 @@ ms.lasthandoff: 08/21/2017
   
  名前空間、型、メンバーの名前など、プログラミング言語の識別子は [Unicode Standard 3.0 の Technical Report 15 の Annex 7](http://www.unicode.org/reports/tr15/tr15-18.html) に準拠する必要があります。 これによって、次のことが起こります。  
   
--   識別子の最初の文字は Unicode の大文字と小文字、大文字と小文字の組み合わせ、修飾子文字、その他の文字、または文字数の番号を指定できます。 Unicode 文字のカテゴリの詳細については、「<xref:System.Globalization.UnicodeCategory?displayProperty=fullName> 列挙体」を参照してください。  
+-   識別子の最初の文字は Unicode の大文字と小文字、大文字と小文字の組み合わせ、修飾子文字、その他の文字、または文字数の番号を指定できます。 Unicode 文字のカテゴリの詳細については、「<xref:System.Globalization.UnicodeCategory?displayProperty=nameWithType> 列挙体」を参照してください。  
   
 -   2 文字目以降には、最初の文字で使用できる文字のほかに、非空白記号、空白結合記号、10 進数、接続符号、書式指定コードを使用できます。  
   
  識別子を比較する場合は、その前に書式設定コードを除外してから、識別子を Unicode 正規形 C に変換する必要があります。これは 1 つの文字を、UTF-16 でエンコードされた複数のコード単位で表すことができるからです。 同じコード単位を Unicode 正規形 C で生成する文字シーケンスは CLS に準拠していません。 次の例では、最初にオングストローム文字 (U+212B) である `Å` という名前のプロパティを定義し、次に、上に丸が付く LATIN の大文字 A (U+00C5) である `Å` という名前のプロパティを定義します。 C# と Visual Basic の両方のコンパイラが、CLS 非準拠としてソース コードにフラグを設定します。  
   
- [!code-csharp[Conceptual.CLSCompliant#17](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/naming1.cs#17)] [!code-vb[Conceptual.CLSCompliant#17](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/naming1.vb#17)]  
+ [!code-csharp[Conceptual.CLSCompliant#17](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/naming1.cs#17)]
+ [!code-vb[Conceptual.CLSCompliant#17](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/naming1.vb#17)]  
   
  特定のスコープ内のメンバー名 (アセンブリ内の名前空間、名前空間内の型、型内のメンバーなど) は一意である必要があります。ただし、オーバーロードによって解決される名前は除きます。 この要件は、共通型システムの要件よりも厳格です。共通型システムでは、スコープ内のメンバーは種類が異なっていれば、たとえば、種類がメソッドのメンバーとフィールドのメンバーは、同じ名前を持つことができます。 特に、型メンバーの場合は次の要件もあります。  
   
@@ -244,7 +252,8 @@ ms.lasthandoff: 08/21/2017
   
  次の例は、メンバー名がスコープ内で一意でなければならない要件を示しています。 ここでは、`Converter` という名前の 4 つのメンバーを含む `Conversion` という名前のクラスを定義します。 3 つがメソッドで、1 つはプロパティです。 <xref:System.Int64> パラメーターを含むメソッドには一意の名前が付けられますが、<xref:System.Int32> パラメーターが指定された 2 つのメソッドには一意の名前は付けられません。これは戻り値がメンバーのシグネチャの一部と見なされないからです。 また、`Conversion` プロパティもこの要件に違反しています。プロパティの名前は、オーバーロードされたメソッドと同じにできないからです。  
   
- [!code-csharp[Conceptual.CLSCompliant#19](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/naming3.cs#19)] [!code-vb[Conceptual.CLSCompliant#19](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/naming3.vb#19)]  
+ [!code-csharp[Conceptual.CLSCompliant#19](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/naming3.cs#19)]
+ [!code-vb[Conceptual.CLSCompliant#19](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/naming3.vb#19)]  
   
  個々の言語に一意のキーワードが含まれるので、共通言語ランタイムを対象にする言語も、キーワードと一致する識別子 (型名など) を参照するための機構を用意する必要があります。 たとえば、`case` は、C# と Visual Basic のキーワードです。 ただし、次の Visual Basic コード例では、左右の中かっこを使用して、`case` キーワードと `case` という名前のクラスを明確に区別できます。 それ以外の場合は、エラー メッセージ "キーワードは、識別子として有効ではありません" が表示され、コンパイルできません。  
   
@@ -266,7 +275,8 @@ ms.lasthandoff: 08/21/2017
   
  次の例では、CLS に準拠する暗黙的な変換と明示的な変換を定義します。 ここでは、符号付き倍精度浮動小数点数を表す `UDouble` クラスを作成します。 暗黙的な変換については、`UDouble` から <xref:System.Double>、明示的な変換については、`UDouble` から <xref:System.Single>、<xref:System.Double> から `UDouble`、および <xref:System.Single> から `UDouble` への例を示しています。 また、暗黙的な変換演算子の代替として `ToDouble` メソッドを、明示的な変換演算子の代替として `ToSingle`、`FromDouble`、`FromSingle` の各メソッドを定義します。  
   
- [!code-csharp[Conceptual.CLSCompliant#15](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/convert1.cs#15)] [!code-vb[Conceptual.CLSCompliant#15](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/convert1.vb#15)]  
+ [!code-csharp[Conceptual.CLSCompliant#15](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/convert1.cs#15)]
+ [!code-vb[Conceptual.CLSCompliant#15](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/convert1.vb#15)]  
   
 <a name="arrays"></a>   
 ### <a name="arrays"></a>配列  
@@ -274,15 +284,18 @@ ms.lasthandoff: 08/21/2017
   
 -   配列の次元の下限値は 0 にする必要があります。 次の例では、下限が 1 の CLS 非準拠の配列を作成します。 <xref:System.CLSCompliantAttribute> 属性の有無に関係なく、コンパイラでは、`Numbers.GetTenPrimes` メソッドによって返される配列が CLS に準拠していないことは検出されません。  
   
-     [!code-csharp[Conceptual.CLSCompliant#8](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/array1.cs#8)]  [!code-vb[Conceptual.CLSCompliant#8](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/array1.vb#8)]  
+     [!code-csharp[Conceptual.CLSCompliant#8](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/array1.cs#8)]
+     [!code-vb[Conceptual.CLSCompliant#8](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/array1.vb#8)]  
   
 -   すべての配列の要素が、CLS 準拠の型で構成されている必要があります。 次の例では、CLS 非準拠の配列を返す 2 つのメソッドを定義します。 最初のメソッドは、<xref:System.UInt32> 値の配列を返します。 2 番目のメソッドは <xref:System.Object> 値と <xref:System.Int32> 値を含む <xref:System.UInt32> 配列を返します。 最初の配列は <xref:System.UInt32> 型であるため、コンパイラによって非準拠として識別されますが、2 番目の配列に CLS 非準拠の要素が含まれていることは認識されません。  
   
-     [!code-csharp[Conceptual.CLSCompliant#9](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/array2.cs#9)]  [!code-vb[Conceptual.CLSCompliant#9](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/array2.vb#9)]  
+     [!code-csharp[Conceptual.CLSCompliant#9](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/array2.cs#9)]
+     [!code-vb[Conceptual.CLSCompliant#9](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/array2.vb#9)]  
   
 -   配列パラメーターを持つメソッドのオーバーロードの解決は、配列であるという事実とその要素型に基づきます。 したがって、次のオーバーロードされた `GetSquares` メソッドの定義は CLS に準拠しています。  
   
-     [!code-csharp[Conceptual.CLSCompliant#10](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/array3.cs#10)]  [!code-vb[Conceptual.CLSCompliant#10](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/array3.vb#10)]  
+     [!code-csharp[Conceptual.CLSCompliant#10](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/array3.cs#10)]
+     [!code-vb[Conceptual.CLSCompliant#10](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/array3.vb#10)]  
   
 <a name="Interfaces"></a>   
 ### <a name="interfaces"></a>インターフェイス  
@@ -294,35 +307,38 @@ ms.lasthandoff: 08/21/2017
   
 -   CLS に準拠していないメソッド。 たとえば、次のインターフェイス定義には、CLS 非準拠とマークされているメソッド、`INumber.GetUnsigned` が含まれています。 この例では、コンパイラの警告が生成されます。  
   
-     [!code-csharp[Conceptual.CLSCompliant#6](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/interface2.cs#6)]  [!code-vb[Conceptual.CLSCompliant#6](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/interface2.vb#6)]  
+     [!code-csharp[Conceptual.CLSCompliant#6](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/interface2.cs#6)]
+     [!code-vb[Conceptual.CLSCompliant#6](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/interface2.vb#6)]  
   
      この規則のため、CLS に準拠している型は、CLS に準拠していないメンバーを実装する必要はありません。 CLS 準拠のフレームワークによって、CLS に非準拠のインターフェイスを実装するクラスが公開されている場合、そのフレームワークには、CLS 非準拠のすべてのメンバーの具象実装も用意する必要があります。  
   
  CLS 準拠の言語コンパイラでは、クラスによって、複数のインターフェイスにある同じ名前およびシグネチャを持つメンバーを個別に実装できるようにすることも必要です。  C# と Visual Basic の両方が[明示的なインターフェイス実装](~/docs/csharp/programming-guide/interfaces/explicit-interface-implementation.md)をサポートしており、同じ名前を持つメソッドを別々に実装できます。 Visual Basic では `Implements` キーワードもサポートされているので、特定のメンバーが実装するインターフェイスおよびメンバーを明示的に指定できます。 次の例は、明示的なインターフェイス実装として `Temperature` インターフェイスおよび `ICelsius` インターフェイスを実装する `IFahrenheit` クラスを定義することで、このシナリオを示しています。  
   
- [!code-csharp[Conceptual.CLSCompliant#24](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/eii1.cs#24)] [!code-vb[Conceptual.CLSCompliant#24](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/eii1.vb#24)]  
+ [!code-csharp[Conceptual.CLSCompliant#24](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/eii1.cs#24)]
+ [!code-vb[Conceptual.CLSCompliant#24](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/eii1.vb#24)]  
   
 <a name="enums"></a>   
-### <a name="enumerations"></a>列挙  
+### <a name="enumerations"></a>列挙体  
  CLS 準拠の列挙型は、次の規則に従う必要があります。  
   
 -   列挙体の基になる型は、組み込みの CLS 準拠の整数 (<xref:System.Byte>、<xref:System.Int16>、<xref:System.Int32>、または <xref:System.Int64>) である必要があります。 たとえば、次のコードでは、基になる型が <xref:System.UInt32> の列挙体を定義しようとしますが、コンパイラの警告が生成されます。  
   
-     [!code-csharp[Conceptual.CLSCompliant#7](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/enum3.cs#7)]  [!code-vb[Conceptual.CLSCompliant#7](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/enum3.vb#7)]  
+     [!code-csharp[Conceptual.CLSCompliant#7](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/enum3.cs#7)]
+     [!code-vb[Conceptual.CLSCompliant#7](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/enum3.vb#7)]  
   
--   列挙型には、`Value__` 属性でマークされた <xref:System.Reflection.FieldAttributes.RTSpecialName?displayProperty=fullName> という名前の単一インスタンス フィールドが必要です。 これにより、フィールド値を暗黙的に参照できます。  
+-   列挙型には、`Value__` 属性でマークされた <xref:System.Reflection.FieldAttributes.RTSpecialName?displayProperty=nameWithType> という名前の単一インスタンス フィールドが必要です。 これにより、フィールド値を暗黙的に参照できます。  
   
 -   列挙体には、その列挙体自体の型と同じ型を持つリテラルな静的フィールドが含まれます。 たとえば、`State` および `State.On` の値を持つ `State.Off` 列挙体を定義すると、`State.On` と `State.Off` は両方ともリテラルな静的フィールドで、その型は `State` です。  
   
 -   列挙体は 2 種類あります。  
   
-    -   同時に指定できない一連の名前付き整数値を表す列挙体。 この列挙体の型は、<xref:System.FlagsAttribute?displayProperty=fullName> カスタム属性が存在しないことによって示されます。  
+    -   同時に指定できない一連の名前付き整数値を表す列挙体。 この列挙体の型は、<xref:System.FlagsAttribute?displayProperty=nameWithType> カスタム属性が存在しないことによって示されます。  
   
-    -   名前のない値を生成するために結合できる一連のビット フラグを表す列挙体。 この列挙体の型は、<xref:System.FlagsAttribute?displayProperty=fullName> カスタム属性が存在することによって示されます。  
+    -   名前のない値を生成するために結合できる一連のビット フラグを表す列挙体。 この列挙体の型は、<xref:System.FlagsAttribute?displayProperty=nameWithType> カスタム属性が存在することによって示されます。  
   
      詳細については、<xref:System.Enum> 構造体のドキュメントを参照してください。  
   
--   列挙体の値は、その列挙体の指定された値に限定されません。 つまり、列挙体の値の範囲は、その列挙体の基になる値の範囲です。 <xref:System.Enum.IsDefined%2A?displayProperty=fullName> メソッドを使用すると、指定された値が列挙体のメンバーかどうかを確認できます。  
+-   列挙体の値は、その列挙体の指定された値に限定されません。 つまり、列挙体の値の範囲は、その列挙体の基になる値の範囲です。 <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> メソッドを使用すると、指定された値が列挙体のメンバーかどうかを確認できます。  
   
 <a name="members"></a>   
 ### <a name="type-members-in-general"></a>一般的な型メンバー  
@@ -336,39 +352,46 @@ ms.lasthandoff: 08/21/2017
   
  次の例は、<xref:System.CLSCompliantAttribute> 属性が `true` で、`Person` の派生クラス `Animal` が、`Species` プロパティのアクセシビリティをパブリックからプライベートに変更しようとするときに発生するエラーを示しています。 アクセシビリティがパブリックに変更されると、コンパイルが正常に行われます。  
   
- [!code-csharp[Conceptual.CLSCompliant#28](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/accessibility1.cs#28)] [!code-vb[Conceptual.CLSCompliant#28](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/accessibility1.vb#28)]  
+ [!code-csharp[Conceptual.CLSCompliant#28](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/accessibility1.cs#28)]
+ [!code-vb[Conceptual.CLSCompliant#28](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/accessibility1.vb#28)]  
   
  メンバーにアクセスできる場合は必ず、そのメンバーのシグネチャの型にアクセスできなければなりません。 たとえば、これは、パブリック メンバーには、型がプライベート、プロテクト、または内部のパラメーターを含められないことを意味します。 次の例は、`StringWrapper` クラス コンストラクターが、文字列値のラップ方法を決定する内部 `StringOperationType` 列挙値を公開した場合に発生するコンパイラ エラーを示しています。  
   
- [!code-csharp[Conceptual.CLSCompliant#27](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/accessibility3.cs#27)] [!code-vb[Conceptual.CLSCompliant#27](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/accessibility3.vb#27)]  
+ [!code-csharp[Conceptual.CLSCompliant#27](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/accessibility3.cs#27)]
+ [!code-vb[Conceptual.CLSCompliant#27](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/accessibility3.vb#27)]  
   
 <a name="Generics"></a>   
 ### <a name="generic-types-and-members"></a>ジェネリック型とメンバー  
  入れ子になった型には、少なくともその外側の型と同じ数のジェネリック パラメーターが必要です。 このジェネリック パラメーターは、外側の型のジェネリック パラメーターに位置によって対応します。 ジェネリック型に新しいジェネリック パラメーターを含めることもできます。  
   
- 外側の型のジェネリック型パラメーターと、その入れ子になった型の関係は、個別の言語構文によって非表示になっていることがあります。 次の例では、入れ子になった 2 つのクラス、`Outer<T>` および `Inner1A` が、ジェネリック型 `Inner1B<U>` に含まれます。 各クラスが `ToString` から継承した <xref:System.Object.ToString%2A?displayProperty=fullName> メソッドへの呼び出しは、入れ子になった各クラスに、その外側のクラスの型パラメーターが含まれていることを示しています。  
+ 外側の型のジェネリック型パラメーターと、その入れ子になった型の関係は、個別の言語構文によって非表示になっていることがあります。 次の例では、入れ子になった 2 つのクラス、`Outer<T>` および `Inner1A` が、ジェネリック型 `Inner1B<U>` に含まれます。 各クラスが `ToString` から継承した <xref:System.Object.ToString%2A?displayProperty=nameWithType> メソッドへの呼び出しは、入れ子になった各クラスに、その外側のクラスの型パラメーターが含まれていることを示しています。  
   
- [!code-csharp[Conceptual.CLSCompliant#29](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/nestedgenerics2.cs#29)] [!code-vb[Conceptual.CLSCompliant#29](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/nestedgenerics2.vb#29)]  
+ [!code-csharp[Conceptual.CLSCompliant#29](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/nestedgenerics2.cs#29)]
+ [!code-vb[Conceptual.CLSCompliant#29](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/nestedgenerics2.vb#29)]  
   
  ジェネリック型の名前は、*name\`n* の形でエンコードされます。ここで、*name* は型の名前、\` は文字リテラル、*n* は型で宣言されたパラメーターの数 (入れ子になったジェネリック型の場合は新しく導入された型パラメーターの数) です。 ジェネリック型の名前のエンコーディングは、主に、リフレクションを使用してライブラリ内の CLS 準拠のジェネリック型にアクセスする開発者が使用します。  
   
  制約がジェネリック型に適用される場合は、制約として使用されるすべての型も CLS に準拠している必要があります。 次の例では、CLS に準拠していない `BaseClass` という名前のクラスと、型パラメーターが `BaseCollection` から派生しなければならない `BaseClass` という名前のジェネリック クラスを定義します。 ただし、`BaseClass` が CLS に準拠していないので、コンパイラによって警告が生成されます。  
   
- [!code-csharp[Conceptual.CLSCompliant#34](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics5.cs#34)] [!code-vb[Conceptual.CLSCompliant#34](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics5.vb#34)]  
+ [!code-csharp[Conceptual.CLSCompliant#34](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics5.cs#34)]
+ [!code-vb[Conceptual.CLSCompliant#34](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics5.vb#34)]  
   
  ジェネリック型がジェネリック基本型から派生している場合、そのジェネリック型は、基本型に対する制約も必ず満たすように制約を再宣言する必要があります。 次の例では、任意の数値型を表すことができる `Number<T>` を定義します。 また、浮動小数点値を表す `FloatingPoint<T>` クラスも定義します。 ただし、ソース コードはコンパイルされません。`Number<T>` (T は値型) の制約は `FloatingPoint<T>` に適用されないからです。  
   
- [!code-csharp[Conceptual.CLSCompliant#30](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics2a.cs#30)] [!code-vb[Conceptual.CLSCompliant#30](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics2a.vb#30)]  
+ [!code-csharp[Conceptual.CLSCompliant#30](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics2a.cs#30)]
+ [!code-vb[Conceptual.CLSCompliant#30](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics2a.vb#30)]  
   
  制約が `FloatingPoint<T>` クラスに追加されると、コンパイルが正常に行われます。  
   
- [!code-csharp[Conceptual.CLSCompliant#31](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics2.cs#31)] [!code-vb[Conceptual.CLSCompliant#31](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics2.vb#31)]  
+ [!code-csharp[Conceptual.CLSCompliant#31](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics2.cs#31)]
+ [!code-vb[Conceptual.CLSCompliant#31](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics2.vb#31)]  
   
  共通言語仕様では、入れ子になった型とプロテクト メンバーに対して従来のインスタンス化ごとのモデルが適用されます。 オープン ジェネリック型では、フィールドまたはメンバーのシグネチャに、入れ子になったプロテクト ジェネリック型の特定のインスタンス化が含まれている場合、これらのフィールドやメンバーは公開できません。 ジェネリックの基底クラスやインターフェイスについて特定のインスタンス化を拡張する非ジェネリック型では、フィールドまたはメンバーのシグネチャに、入れ子になったプロテクト ジェネリック型の別のインスタンス化が含まれている場合、これらのフィールドやメンバーは公開できません。  
   
  次の例では、ジェネリック型 `C1<T>` (Visual Basic の場合は `C1(Of T)`)、およびプロテクト クラス `C1<T>.N` (Visual Basic の場合は `C1(Of T).N`) を定義します。 `C1<T>` には、2 つのメソッド `M1` と `M2` があります。 ただし、`M1` は、`C1<int>.N` (`C1(Of Integer).N`) オブジェクトを C1\<T> (または `C1(Of T)`) から返そうとするので、CLS に準拠していません。 2 番目の `C2` クラスは、`C1<long>` (`C1(Of Long)`) から派生しています。 これには、`M3` と `M4` の 2 つのメソッドがあります。 `M3` は、`C1<int>.N` (`C1(Of Integer).N`) オブジェクトを `C1<long>` のサブクラスから返そうとするので、CLS に準拠していません。 言語コンパイラはさらに制限されている可能性があります。 この例では、Visual Basic で `M4` をコンパイルしようとするとエラーが表示されます。  
   
- [!code-csharp[Conceptual.CLSCompliant#32](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics4.cs#32)] [!code-vb[Conceptual.CLSCompliant#32](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics4.vb#32)]  
+ [!code-csharp[Conceptual.CLSCompliant#32](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/generics4.cs#32)]
+ [!code-vb[Conceptual.CLSCompliant#32](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/generics4.vb#32)]  
   
 <a name="ctors"></a>   
 ### <a name="constructors"></a>コンストラクター  
@@ -378,9 +401,10 @@ ms.lasthandoff: 08/21/2017
   
      次の例に示すように、コンパイラは、通常、CLS 準拠とは別にこの規則を適用します。 これにより、`Doctor` クラスから派生した `Person` クラスが作成されますが、`Doctor` クラスでは、継承されたインスタンス フィールドを初期化するための `Person` クラス コンストラクターは呼び出されません。  
   
-     [!code-csharp[Conceptual.CLSCompliant#11](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/ctor1.cs#11)]  [!code-vb[Conceptual.CLSCompliant#11](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/ctor1.vb#11)]  
+     [!code-csharp[Conceptual.CLSCompliant#11](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/ctor1.cs#11)]
+     [!code-vb[Conceptual.CLSCompliant#11](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/ctor1.vb#11)]  
   
--   オブジェクト作成以外の目的で、オブジェクト コンストラクターを呼び出すことはできません。 また、オブジェクトを 2 度初期化することもできません。 たとえば、これは <xref:System.Object.MemberwiseClone%2A?displayProperty=fullName> メソッド、および <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A?displayProperty=fullName> などの逆シリアル化メソッドでは、コンストラクターを呼び出してはいけないことを意味します。  
+-   オブジェクト作成以外の目的で、オブジェクト コンストラクターを呼び出すことはできません。 また、オブジェクトを 2 度初期化することもできません。 たとえば、これは <xref:System.Object.MemberwiseClone%2A?displayProperty=nameWithType> メソッド、および <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A?displayProperty=nameWithType> などの逆シリアル化メソッドでは、コンストラクターを呼び出してはいけないことを意味します。  
   
 <a name="properties"></a>   
 ### <a name="properties"></a>プロパティ  
@@ -394,11 +418,11 @@ ms.lasthandoff: 08/21/2017
   
 <a name="events"></a>   
 ### <a name="events"></a>イベント  
- イベントは、名前と型によって定義されます。 イベントの型は、イベントの表示に使用されるデリゲートです。 たとえば、<xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> イベントは <xref:System.ResolveEventHandler> 型です。 イベント自体のほか、イベント名に基づく名前の 3 つのメソッドがイベントの実装を提供し、アセンブリのメタデータで `SpecialName` としてマークされています。  
+ イベントは、名前と型によって定義されます。 イベントの型は、イベントの表示に使用されるデリゲートです。 たとえば、<xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントは <xref:System.ResolveEventHandler> 型です。 イベント自体のほか、イベント名に基づく名前の 3 つのメソッドがイベントの実装を提供し、アセンブリのメタデータで `SpecialName` としてマークされています。  
   
--   イベント ハンドラーを追加するメソッド (`add_`*EventName*)。 たとえば、<xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> イベントのイベント サブスクリプション メソッドの名前は `add_AssemblyResolve` です。  
+-   イベント ハンドラーを追加するメソッド (`add_`*EventName*)。 たとえば、<xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントのイベント サブスクリプション メソッドの名前は `add_AssemblyResolve` です。  
   
--   イベント ハンドラーを削除するメソッド (`remove_`*EventName*)。 たとえば、<xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> イベントの削除メソッドの名前は `remove_AssemblyResolve` です。  
+-   イベント ハンドラーを削除するメソッド (`remove_`*EventName*)。 たとえば、<xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントの削除メソッドの名前は `remove_AssemblyResolve` です。  
   
 -   イベントが発生したことを示すメソッド (`raise_`*EventName*)。  
   
@@ -409,7 +433,8 @@ ms.lasthandoff: 08/21/2017
   
  次の例では、2 つのポイントの気温の差がしきい値と等しいか、それを超えた場合に `Temperature` イベントを発生させる、`TemperatureChanged` という名前の CLS 準拠クラスを定義します。 `Temperature` クラスは、イベント ハンドラーを選択的に実行できるように、`raise_TemperatureChanged` メソッドを明示的に定義します。  
   
- [!code-csharp[Conceptual.CLSCompliant#20](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/event1.cs#20)] [!code-vb[Conceptual.CLSCompliant#20](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/event1.vb#20)]  
+ [!code-csharp[Conceptual.CLSCompliant#20](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/event1.cs#20)]
+ [!code-vb[Conceptual.CLSCompliant#20](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/event1.vb#20)]  
   
 <a name="overloads"></a>   
 ### <a name="overloads"></a>Overloads  
@@ -426,21 +451,24 @@ ms.lasthandoff: 08/21/2017
   
 <a name="exceptions"></a>   
 ### <a name="exceptions"></a>例外  
- 例外オブジェクトは <xref:System.Exception?displayProperty=fullName>、または <xref:System.Exception?displayProperty=fullName> の別の派生型から派生する必要があります。 次の例は、`ErrorClass` というカスタム クラスを例外処理に使用したときに発生するコンパイラ エラーを示しています。  
+ 例外オブジェクトは <xref:System.Exception?displayProperty=nameWithType>、または <xref:System.Exception?displayProperty=nameWithType> の別の派生型から派生する必要があります。 次の例は、`ErrorClass` というカスタム クラスを例外処理に使用したときに発生するコンパイラ エラーを示しています。  
   
- [!code-csharp[Conceptual.CLSCompliant#13](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/exceptions1.cs#13)] [!code-vb[Conceptual.CLSCompliant#13](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/exceptions1.vb#13)]  
+ [!code-csharp[Conceptual.CLSCompliant#13](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/exceptions1.cs#13)]
+ [!code-vb[Conceptual.CLSCompliant#13](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/exceptions1.vb#13)]  
   
- このエラーを修正するには、`ErrorClass` から継承するように <xref:System.Exception?displayProperty=fullName> クラスを指定する必要があります。 また、`Message` プロパティはオーバーライドする必要があります。 次の例では、このエラーを修正して CLS 準拠の `ErrorClass` クラスを定義します。  
+ このエラーを修正するには、`ErrorClass` から継承するように <xref:System.Exception?displayProperty=nameWithType> クラスを指定する必要があります。 また、`Message` プロパティはオーバーライドする必要があります。 次の例では、このエラーを修正して CLS 準拠の `ErrorClass` クラスを定義します。  
   
- [!code-csharp[Conceptual.CLSCompliant#14](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/exceptions2.cs#14)] [!code-vb[Conceptual.CLSCompliant#14](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/exceptions2.vb#14)]  
+ [!code-csharp[Conceptual.CLSCompliant#14](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/exceptions2.cs#14)]
+ [!code-vb[Conceptual.CLSCompliant#14](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/exceptions2.vb#14)]  
   
 <a name="attributes"></a>   
 ### <a name="attributes"></a>属性  
- .NET Framework アセンブリでは、カスタム属性に拡張可能機構が用意されており、そのカスタム属性を格納し、アセンブリ、型、メンバー、メソッド パラメーターなどのプログラミング オブジェクトに関するメタデータを取得します。 カスタム属性は <xref:System.Attribute?displayProperty=fullName>、または <xref:System.Attribute?displayProperty=fullName> の派生型から派生する必要があります。  
+ .NET Framework アセンブリでは、カスタム属性に拡張可能機構が用意されており、そのカスタム属性を格納し、アセンブリ、型、メンバー、メソッド パラメーターなどのプログラミング オブジェクトに関するメタデータを取得します。 カスタム属性は <xref:System.Attribute?displayProperty=nameWithType>、または <xref:System.Attribute?displayProperty=nameWithType> の派生型から派生する必要があります。  
   
- 規則に違反する例を次に示します。 この例では、`NumericAttribute` から派生していない <xref:System.Attribute?displayProperty=fullName> クラスを定義します。 コンパイラ エラーは、CLS 非準拠の属性が適用されている場合にのみ発生します。クラスが定義されているときではありません。  
+ 規則に違反する例を次に示します。 この例では、`NumericAttribute` から派生していない <xref:System.Attribute?displayProperty=nameWithType> クラスを定義します。 コンパイラ エラーは、CLS 非準拠の属性が適用されている場合にのみ発生します。クラスが定義されているときではありません。  
   
- [!code-csharp[Conceptual.CLSCompliant#18](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/attribute1.cs#18)] [!code-vb[Conceptual.CLSCompliant#18](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/attribute1.vb#18)]  
+ [!code-csharp[Conceptual.CLSCompliant#18](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/attribute1.cs#18)]
+ [!code-vb[Conceptual.CLSCompliant#18](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/attribute1.vb#18)]  
   
  CLS 準拠の属性のコンストラクターまたはプロパティは、次の型のみを公開できます。  
   
@@ -468,11 +496,12 @@ ms.lasthandoff: 08/21/2017
   
  次の例では、`DescriptionAttribute` から派生する <xref:System.Attribute> クラスを定義します。 クラス コンストラクターには型 `Descriptor` のパラメーターがあるので、クラスは CLS に準拠していません。 C# コンパイラでは警告が出力されますが、コンパイルは正常に行われます。一方、Visual Basic コンパイラでは警告もエラーも出力されません。  
   
- [!code-csharp[Conceptual.CLSCompliant#33](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/attribute2.cs#33)] [!code-vb[Conceptual.CLSCompliant#33](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/attribute2.vb#33)]  
+ [!code-csharp[Conceptual.CLSCompliant#33](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/attribute2.cs#33)]
+ [!code-vb[Conceptual.CLSCompliant#33](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/attribute2.vb#33)]  
   
 <a name="CLSAttribute"></a>   
 ## <a name="the-clscompliantattribute-attribute"></a>CLSCompliantAttribute 属性  
- <xref:System.CLSCompliantAttribute> 属性は、プログラム要素が共通言語仕様でコンパイルされているかどうかを示すために使用されます。 <xref:System.CLSCompliantAttribute.%23ctor%28System.Boolean%29?displayProperty=fullName> コンストラクターには、プログラム要素が CLS に準拠しているかどうかを示す 1 つの必須パラメーター、`isCompliant` が含まれます。  
+ <xref:System.CLSCompliantAttribute> 属性は、プログラム要素が共通言語仕様でコンパイルされているかどうかを示すために使用されます。 <xref:System.CLSCompliantAttribute.%23ctor%28System.Boolean%29?displayProperty=nameWithType> コンストラクターには、プログラム要素が CLS に準拠しているかどうかを示す 1 つの必須パラメーター、`isCompliant` が含まれます。  
   
  コンパイル時に、CLS 準拠が前提とされる非準拠要素が検出され、警告が出力されます。 非準拠として明示的に宣言された型またはメンバーに対しては、警告は出力されません。  
   
@@ -483,9 +512,9 @@ ms.lasthandoff: 08/21/2017
 -   コンポーネント ライブラリのパブリック インターフェイスが CLS に準拠するプログラム要素のみを公開するように保証する。 要素が CLS 非準拠の場合は、通常、警告が表示されます。  
   
 > [!WARNING]
->  言語コンパイラでは、<xref:System.CLSCompliantAttribute> 属性が使用されているかどうかに関係なく、CLS 準拠の規則が適用される場合があります。 たとえば、インターフェイスの静的メンバーを定義すると CLS の規則に違反します。 ただし、インターフェイスで `static` メンバー (C# の場合) または `Shared` メンバー (Visual Basic の場合) を定義すると、C# と Visual Basic の両方のコンパイラでエラー メッセージが表示され、アプリはコンパイルされません。  
+>  言語コンパイラでは、<xref:System.CLSCompliantAttribute> 属性が使用されているかどうかに関係なく、CLS 準拠の規則が適用される場合があります。 たとえば、インターフェイスの静的メンバーを定義すると CLS の規則に違反します。 この関係なく、定義した場合に、 `static` (C# の場合) または`Shared`(Visual Basic) のインターフェイスのメンバーは、両方、c# および Visual Basic コンパイラ エラー メッセージが表示され、アプリのコンパイルに失敗します。  
   
- <xref:System.CLSCompliantAttribute> 属性は、値 <xref:System.AttributeUsageAttribute> が指定された <xref:System.AttributeTargets.All?displayProperty=fullName> 属性でマークされます。 この値を使用すると、<xref:System.CLSCompliantAttribute> 属性を、アセンブリ、モジュール、型 (クラス、構造体、列挙体、インターフェイス、およびデリゲート)、型パラメーター (コンストラクター、メソッド、プロパティ、フィールド、およびイベント)、パラメーター、ジェネリック パラメーター、戻り値など、すべてのプログラム要素に適用できます。 ただし、実際は、アセンブリ、型、および型メンバーだけに属性を適用することをお勧めします。 そうしないと、属性は、コンパイラによってライブラリのパブリック インターフェイスで非準拠パラメーター、ジェネリック パラメーター、または戻り値が検出されたときに必ず無視され、コンパイラ警告が引き続き生成されます。  
+ <xref:System.CLSCompliantAttribute> 属性は、値 <xref:System.AttributeUsageAttribute> が指定された <xref:System.AttributeTargets.All?displayProperty=nameWithType> 属性でマークされます。 この値を使用すると、<xref:System.CLSCompliantAttribute> 属性を、アセンブリ、モジュール、型 (クラス、構造体、列挙体、インターフェイス、およびデリゲート)、型パラメーター (コンストラクター、メソッド、プロパティ、フィールド、およびイベント)、パラメーター、ジェネリック パラメーター、戻り値など、すべてのプログラム要素に適用できます。 ただし、実際は、アセンブリ、型、および型メンバーだけに属性を適用することをお勧めします。 そうしないと、属性は、コンパイラによってライブラリのパブリック インターフェイスで非準拠パラメーター、ジェネリック パラメーター、または戻り値が検出されたときに必ず無視され、コンパイラ警告が引き続き生成されます。  
   
  <xref:System.CLSCompliantAttribute> 属性の値は、内包型プログラム要素によって継承されます。 たとえば、アセンブリが CLS 準拠としてマークされている場合は、その型も CLS に準拠します。 型が CLS 準拠としてマークされている場合は、その入れ子になった型とメンバーも CLS に準拠します。  
   
@@ -507,7 +536,8 @@ ms.lasthandoff: 08/21/2017
   
  次の例では、<xref:System.CLSCompliantAttribute> 属性を使用して、CLS 準拠のアセンブリと、2 つの CLS 非準拠のメンバーを持つ型、`CharacterUtilities` を定義します。 両メンバーとも `CLSCompliant(false)` 属性でタグ付けされているので、警告は生成されません。 また、クラスには、両方のメソッド用の CLS 準拠の代替も用意されています。 通常、CLS 準拠の代替を用意するには、2 つのオーバーロードを `ToUTF16` メソッドに追加するだけです。 ただし、戻り値に基づいてメソッドをオーバーロードできないので、CLS 準拠のメソッドの名前は、非準拠のメソッドの名前とは異なります。  
   
- [!code-csharp[Conceptual.CLSCompliant#35](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/indicator3.cs#35)] [!code-vb[Conceptual.CLSCompliant#35](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/indicator3.vb#35)]  
+ [!code-csharp[Conceptual.CLSCompliant#35](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/indicator3.cs#35)]
+ [!code-vb[Conceptual.CLSCompliant#35](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/indicator3.vb#35)]  
   
  ライブラリではなくアプリを開発している場合 (つまり、他のアプリ開発者が使用できる型またはメンバーを公開しない場合)、アプリが使用するプログラム要素は、そのプログラム要素が使用する言語でサポートされていない場合に CLS に準拠する必要があります。 この場合、CLS 非準拠の要素を使用しようとすると、言語コンパイラによってエラーが生成されます。  
   
@@ -547,7 +577,8 @@ link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll
   
  次の例では、その後 `NumericLib.NearZero` メソッドおよび `StringLib.ToTitleCase` メソッドを呼び出します。 Visual Basic コードと C# コードは、両方のクラスのメソッドにアクセスできることに注意してください。  
   
- [!code-csharp[Conceptual.CrossLanguage#3](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.crosslanguage/cs/useutilities1.cs#3)] [!code-vb[Conceptual.CrossLanguage#3](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.crosslanguage/vb/useutilities1.vb#3)]  
+ [!code-csharp[Conceptual.CrossLanguage#3](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.crosslanguage/cs/useutilities1.cs#3)]
+ [!code-vb[Conceptual.CrossLanguage#3](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.crosslanguage/vb/useutilities1.vb#3)]  
   
  Visual Basic コードをコンパイルするには、次のコマンドを使用します。  
   
@@ -563,4 +594,3 @@ csc example.cs /r:UtilityLib.dll
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.CLSCompliantAttribute>
-

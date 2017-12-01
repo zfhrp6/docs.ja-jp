@@ -1,42 +1,45 @@
 ---
-title: "タスク 2: ワークフロー デザイナーのホスティング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "タスク 2: ワークフロー デザイナーのホスティング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7f3b35bf4150dc05c6bedaaebc65a0a188c5c782
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# タスク 2: ワークフロー デザイナーのホスティング
-このトピックでは、[!INCLUDE[avalon1](../../../includes/avalon1-md.md)] アプリケーションで [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]のインスタンスをホストする手順について説明します。  
+# <a name="task-2-host-the-workflow-designer"></a>タスク 2: ワークフロー デザイナーのホスティング
+このトピックでは、[!INCLUDE[wfd1](../../../includes/wfd1-md.md)] アプリケーションで [!INCLUDE[avalon1](../../../includes/avalon1-md.md)]のインスタンスをホストする手順について説明します。  
   
- この手順では、デザイナーを格納する **Grid** コントロールを構成し、既定の <xref:System.Activities.Statements.Sequence> アクティビティを含む <xref:System.Activities.Presentation.WorkflowDesigner> のインスタンスをプログラムで作成します。さらに、デザイナーのメタデータを登録して、すべてのビルトイン アクティビティにデザイナー サポートを追加し、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)] アプリケーションで[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]をホストします。  
+ プロシージャを構成、**グリッド**、デザイナーが含まれるコントロールのインスタンスをプログラムで作成する、 <xref:System.Activities.Presentation.WorkflowDesigner> 、既定値を格納している<xref:System.Activities.Statements.Sequence>活動が提供するデザイナーのメタデータを登録すべての組み込みのアクティビティとホスト用のデザイナーのサポート、[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]で、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)]アプリケーションです。  
   
-### ワークフロー デザイナーをホストするには  
+### <a name="to-host-the-workflow-designer"></a>ワークフロー デザイナーをホストするには  
   
-1.  「[タスク 1: 新しい Windows Presentation Foundation アプリケーションの作成](../../../docs/framework/windows-workflow-foundation//task-1-create-a-new-wpf-app.md)」で作成した HostingApplication プロジェクトを開きます。  
+1.  開く、HostingApplication プロジェクトので作成した[タスク 1: 新しい Windows Presentation Foundation アプリケーションを作成する](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)です。  
   
-2.  [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] が見やすくなるように、ウィンドウのサイズを調整します。ウィンドウのサイズを調整するには、デザイナーで **\[MainWindow\]** を選択し、F4 キーを押して **\[プロパティ\]** ウィンドウを表示して、**レイアウト** セクションで **\[幅\]** の値を「600」に設定し、**\[高さ\]** の値を「350」に設定します。  
+2.  [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] が見やすくなるように、ウィンドウのサイズを調整します。 これを行うには、次のように選択します**MainWindow**デザイナーで、f4 キーを表示、**プロパティ**ウィンドウ、および、、**レイアウト**ありますセクションで、設定、**幅。** 600 の値を**高さ**350 の値にします。  
   
-3.  デザイナーで **\[グリッド\]** パネルを選択し \(**\[MainWindow\]** 内のボックスをクリックします\)、**\[プロパティ\]** ウィンドウの一番上にある **Name** プロパティを「grid1」に設定して、グリッド名を設定します。  
+3.  選択すると、グリッド名を設定、**グリッド**デザイナーでのパネル (内のボックスをクリックして、 **MainWindow**) と設定、**名前**の上部にあるプロパティ、 **プロパティ**を「grid1」ウィンドウです。  
   
-4.  **\[プロパティ\]** ウィンドウで、`ColumnDefinitions` プロパティの横の省略記号 \(**\[...\]**\) をクリックして **\[コレクション エディター\]** ダイアログ ボックスを開きます。  
+4.  **プロパティ**ウィンドウで、省略記号ボタン (**.**) の横に、`ColumnDefinitions`プロパティを開くには、**コレクション エディター**  ダイアログ ボックス。  
   
-5.  **\[コレクション エディター\]** ダイアログ ボックスの **\[追加\]** ボタンを 3 回クリックして、3 つの列をレイアウトに挿入します。最初の列には **\[ツールボックス\]** が含まれ、2 番目の列は [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] をホストし、3 番目の列はプロパティ インスペクターに使用されます。  
+5.  **コレクション エディター**  ダイアログ ボックスをクリックして、**追加**ボタンを 3 回、レイアウトに 3 つの列を挿入します。 最初の列に格納される、**ツールボックス**、2 番目の列をホストする、 [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]、プロパティ インスペクターの 3 番目の列に使用されます。  
   
-6.  中央の列の `Width` プロパティの値を「4\*」に設定します。  
+6.  設定、`Width`プロパティ値を中央の列の"4 *"です。  
   
-7.  **\[OK\]** をクリックして、変更を保存します。次の XAML が MainWindow.xaml ファイルに追加されます。  
+7.  **[OK]** をクリックして変更を保存します。 次の XAML が MainWindow.xaml ファイルに追加されます。  
   
-    ```  
-  
+    ```xml  
     <Grid Name="grid1">  
         <Grid.ColumnDefinitions>  
             <ColumnDefinition />  
@@ -44,15 +47,13 @@ caps.handback.revision: 19
             <ColumnDefinition />  
         </Grid.ColumnDefinitions>  
     </Grid>  
-  
     ```  
   
-8.  ソリューション エクスプローラーで MainWindow.xaml を右クリックし、**\[コードの表示\]** を選択します。次の手順に従ってコードを修正します。  
+8.  **ソリューション エクスプ ローラー**、MainWindow.xaml を右クリックし **コードの表示**です。 次の手順に従ってコードを修正します。  
   
     1.  次の名前空間を追加します。  
   
         ```csharp  
-  
         using System.Activities;  
         using System.Activities.Core.Presentation;  
         using System.Activities.Presentation;  
@@ -60,13 +61,11 @@ caps.handback.revision: 19
         using System.Activities.Presentation.Toolbox;  
         using System.Activities.Statements;  
         using System.ComponentModel;  
-  
         ```  
   
     2.  <xref:System.Activities.Presentation.WorkflowDesigner> のインスタンスを保持するプライベート メンバー フィールドを宣言するには、次のコードを `MainWindow` クラスに追加します。  
   
         ```csharp  
-  
         public partial class MainWindow : Window  
         {  
             private WorkflowDesigner wd;  
@@ -76,13 +75,11 @@ caps.handback.revision: 19
                 InitializeComponent();  
             }  
         }  
-  
         ```  
   
-    3.  次の `AddDesigner` メソッドを `MainWindow` クラスに追加します。この実装で、<xref:System.Activities.Presentation.WorkflowDesigner> のインスタンスを作成し、これに <xref:System.Activities.Statements.Sequence> アクティビティを追加して、grid1 **グリッド**の中央の列に配置します。  
+    3.  次の `AddDesigner` メソッドを `MainWindow` クラスに追加します。 実装のインスタンスを作成する、 <xref:System.Activities.Presentation.WorkflowDesigner>、追加、 <xref:System.Activities.Statements.Sequence> 、活動して、grid1 の中央の列に配置**グリッド**です。  
   
         ```csharp  
-  
         private void AddDesigner()  
         {  
             //Create an instance of WorkflowDesigner class.  
@@ -97,22 +94,19 @@ caps.handback.revision: 19
             //Add the designer canvas to the grid.  
             grid1.Children.Add(this.wd.View);  
         }  
-  
         ```  
   
-    4.  デザイナーのメタデータを登録して、すべてのビルトイン アクティビティにデザイナー サポートを追加します。こうすることにより、ツールボックスから[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]の元の <xref:System.Activities.Statements.Sequence> アクティビティに、アクティビティをドロップできるようになります。この操作を行うには、`RegisterMetadata` メソッドを `MainWindow` クラスに追加します。  
+    4.  デザイナーのメタデータを登録して、すべてのビルトイン アクティビティにデザイナー サポートを追加します。 こうすることにより、ツールボックスから<xref:System.Activities.Statements.Sequence>の元の [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] アクティビティに、アクティビティをドロップできるようになります。 この操作を行うには、`RegisterMetadata` メソッドを `MainWindow` クラスに追加します。  
   
         ```csharp  
-  
         private void RegisterMetadata()  
         {               
             DesignerMetadata dm = new DesignerMetadata();  
             dm.Register();  
         }  
-  
         ```  
   
-         登録アクティビティ デザイナー[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[方法: カスタム アクティビティ デザイナーを作成する](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-activity-designer.md)」を参照してください。  
+         [!INCLUDE[crabout](../../../includes/crabout-md.md)]アクティビティ デザイナーを登録するを参照してください[する方法: カスタム アクティビティ デザイナーを作成](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)です。  
   
     5.  `MainWindow` クラス コンストラクターで、前に宣言したメソッドへの呼び出しを追加して、デザイナー サポートのメタデータを登録し、<xref:System.Activities.Presentation.WorkflowDesigner> を作成します。  
   
@@ -127,17 +121,16 @@ caps.handback.revision: 19
             // Add the WFF Designer  
             AddDesigner();  
         }  
-  
         ```  
   
         > [!NOTE]
-        >  `RegisterMetadata` メソッドは、<xref:System.Activities.Statements.Sequence> アクティビティを含むビルトイン アクティビティのデザイナーのメタデータを登録します。`AddDesigner` メソッドは <xref:System.Activities.Statements.Sequence> アクティビティを使用するので、`RegisterMetadata` メソッドを先に呼び出す必要があります。  
+        >  `RegisterMetadata` メソッドは、<xref:System.Activities.Statements.Sequence> アクティビティを含むビルトイン アクティビティのデザイナーのメタデータを登録します。 `AddDesigner` メソッドは <xref:System.Activities.Statements.Sequence> アクティビティを使用するので、`RegisterMetadata` メソッドを先に呼び出す必要があります。  
   
 9. F5 キーを押して、ソリューションをビルドおよび実行します。  
   
-10. **\[ツールボックス\]** と **\[PropertyGrid\]** のサポートを、再ホストしたワークフロー デザイナーに追加する方法を学習するには、「[タスク 3: ツールボックス ペインと PropertyGrid ペインの作成](../../../docs/framework/windows-workflow-foundation//task-3-create-the-toolbox-and-propertygrid-panes.md)」を参照してください。  
+10. 参照してください[タスク 3: ツールボックス ペインと PropertyGrid ペインを作成する](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)を追加する方法について**ツールボックス**と**PropertyGrid**再ホストされたワークフロー デザイナーにサポートします。  
   
-## 参照  
- [ワークフロー デザイナーのホスト変更](../../../docs/framework/windows-workflow-foundation//rehosting-the-workflow-designer.md)   
- [タスク 1: 新しい Windows Presentation Foundation アプリケーションの作成](../../../docs/framework/windows-workflow-foundation//task-1-create-a-new-wpf-app.md)   
- [タスク 3: ツールボックス ペインと PropertyGrid ペインの作成](../../../docs/framework/windows-workflow-foundation//task-3-create-the-toolbox-and-propertygrid-panes.md)
+## <a name="see-also"></a>関連項目  
+ [ワークフロー デザイナーのホスト変更](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [タスク 1: 新しい Windows Presentation Foundation アプリケーションの作成](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
+ [タスク 3: ツールボックス ペインと PropertyGrid ペインの作成](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)

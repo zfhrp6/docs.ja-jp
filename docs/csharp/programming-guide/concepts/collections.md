@@ -1,27 +1,18 @@
 ---
 title: "コレクション (C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: get-started-article
-dev_langs:
-- CSharp
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 4955b3d7048b4dfee23fbcf6eeaed995ebf4f1be
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 26a90b57350837bd51f222ff716364cb3bb902d5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="collections-c"></a>コレクション (C#)
 多くのアプリケーションで、関連するオブジェクトのグループの作成および管理が必要になります。 オブジェクトをグループ化するには、オブジェクトの配列を作成する方法と、オブジェクトのコレクションを作成する方法があります。  
@@ -32,7 +23,7 @@ ms.lasthandoff: 07/28/2017
   
  コレクションはクラスであるため、そのコレクションに要素を追加するには、事前にそのクラスのインスタンスを宣言する必要があります。  
   
- 含まれる要素が 1 つのデータ型だけのコレクションの場合は、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
+ 含まれる要素が 1 つのデータ型だけのコレクションの場合は、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
   
 > [!NOTE]
 >  このトピックの例には、`System.Collections.Generic` 名前空間および `System.Linq` 名前空間の [using](../../../csharp/language-reference/keywords/using-directive.md) ディレクティブがあります。  
@@ -195,17 +186,17 @@ public class Galaxy
   
  このセクションでは、次の共通のコレクション クラスをいつくか説明します:  
   
--   @System.Collections.Generic クラス  
+-   <xref:System.Collections.Generic> クラス  
   
--   @System.Collections.Concurrent クラス  
+-   <xref:System.Collections.Concurrent> クラス  
   
--   @System.Collections クラス  
+-   <xref:System.Collections> クラス  
   
 <a name="BKMK_Generic"></a>
 ### <a name="systemcollectionsgeneric-classes"></a>System.Collections.Generic のクラス  
  <xref:System.Collections.Generic> 名前空間の 1 つのクラスを使用すると、ジェネリック コレクションを作成できます。 ジェネリック コレクションは、コレクション内のすべての項目が同じデータ型である場合に便利です。 ジェネリック コレクションには該当するデータ型しか追加できないため、厳密な型指定が適用されます。  
   
- 次のテーブルは <xref:System.Collections.Generic?displayProperty=fullName> 名前空間でよく使用されるクラスの一覧です:  
+ 次のテーブルは <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間でよく使用されるクラスの一覧です:  
 
 |クラス|説明| 
 |---|---|  
@@ -215,21 +206,21 @@ public class Galaxy
 |<xref:System.Collections.Generic.SortedList%602>|関連付けられた <xref:System.Collections.Generic.IComparer%601> 実装に基づいて、キーにより並べ替えられた、キーと値のペアのコレクションを表します。|  
 |<xref:System.Collections.Generic.Stack%601>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
   
- 詳細については、「[一般的に使用されるコレクション型](../../../standard/collections/commonly-used-collection-types.md)」、「[コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)」、「@System.Collections.Generic」を参照してください。  
+ 詳細については、「[一般的に使用されるコレクション型](../../../standard/collections/commonly-used-collection-types.md)」、「[コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)」、「<xref:System.Collections.Generic>」を参照してください。  
   
 <a name="BKMK_Concurrent"></a>
 ### <a name="systemcollectionsconcurrent-classes"></a>System.Collections.Concurrent のクラス  
  .NET Framework 4 以降では、<xref:System.Collections.Concurrent> 名前空間のコレクションによって、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフ操作が可能になります。  
   
- <xref:System.Collections.Concurrent> 名前空間のクラスは、複数のスレッドがコレクションに同時にアクセスするときに、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間および <xref:System.Collections?displayProperty=fullName> 名前空間の対応する型の代わりに使用する必要があります。 詳しくは、「[スレッド セーフなコレクション](../../../standard/collections/thread-safe/index.md)」と「<xref:System.Collections.Concurrent>」を参照してください。  
+ <xref:System.Collections.Concurrent> 名前空間のクラスは、複数のスレッドがコレクションに同時にアクセスするときに、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間および <xref:System.Collections?displayProperty=nameWithType> 名前空間の対応する型の代わりに使用する必要があります。 詳しくは、「[スレッド セーフなコレクション](../../../standard/collections/thread-safe/index.md)」と「<xref:System.Collections.Concurrent>」を参照してください。  
   
  <xref:System.Collections.Concurrent> 名前空間には、<xref:System.Collections.Concurrent.BlockingCollection%601>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、および <xref:System.Collections.Concurrent.ConcurrentStack%601> などのクラスがあります。  
   
 <a name="BKMK_Collections"></a>
 ### <a name="systemcollections-classes"></a>System.Collections のクラス  
- <xref:System.Collections?displayProperty=fullName> 名前空間のクラスでは、要素は、固有の型のオブジェクトとしてではなく `Object` 型のオブジェクトとして格納されます。  
+ <xref:System.Collections?displayProperty=nameWithType> 名前空間のクラスでは、要素は、固有の型のオブジェクトとしてではなく `Object` 型のオブジェクトとして格納されます。  
   
- できる限り、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間の従来の型の代わりに、<xref:System.Collections.Concurrent> 名前空間または `System.Collections` 名前空間のジェネリック コレクションを使用します。  
+ できる限り、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間の従来の型の代わりに、<xref:System.Collections.Concurrent> 名前空間または `System.Collections` 名前空間のジェネリック コレクションを使用します。  
   
  次のテーブルは `System.Collections` 名前空間でよく使用されるクラスの一覧です:  
   
@@ -590,15 +581,14 @@ private static IEnumerable<int> EvenSequence(
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)   
- [プログラミングの概念 (C#)](../../../csharp/programming-guide/concepts/index.md)   
- [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)   
- [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)   
- [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)   
- [コレクションとデータ構造体](../../../standard/collections/index.md)   
- [コレクションの作成と操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)   
- [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)   
- [コレクション内での比較と並べ替え](../../../standard/collections/comparisons-and-sorts-within-collections.md)   
- [ジェネリック コレクションを使用する状況](../../../standard/collections/when-to-use-generic-collections.md)   
+ [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
+ [プログラミングの概念 (C#)](../../../csharp/programming-guide/concepts/index.md)  
+ [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+ [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
+ [コレクションとデータ構造体](../../../standard/collections/index.md)  
+ [作成して、コレクションの操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)  
+ [コレクション内での比較と並べ替え](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
+ [ジェネリック コレクションを使用する状況](../../../standard/collections/when-to-use-generic-collections.md)  
  [方法: foreach を使用してコレクション クラスにアクセスする](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)
-

@@ -16,11 +16,11 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 47009516d4118fec1a075a2dbccfa747f9a63131
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: 47956848079e6094dc000d95ec4066f814a70e35
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="table-valued-parameters"></a>テーブル値パラメーター
 テーブル値パラメーターを使用すると、ラウンド トリップを何度も繰り返したり、サーバー側にデータを処理するための特殊なロジックを組み込んだりすることなく、複数行のデータをクライアント アプリケーションから [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] へと簡単にマーシャリングできます。 テーブル値パラメーターを使用すると、クライアント アプリケーションのデータ行をカプセル化して単一のパラメーター化コマンドでサーバーに送ることができます。 受信データ行はテーブル変数に格納され、[!INCLUDE[tsql](../../../../../includes/tsql-md.md)] によって操作できるようになります。  
@@ -96,7 +96,7 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
 -   ALTER TABLE ステートメントをテーブル値パラメーターの設計変更に使用することはできません。  
   
 ## <a name="configuring-a-sqlparameter-example"></a>SqlParameter の構成例  
- <xref:System.Data.SqlClient>テーブル値パラメーターの設定をサポートしている<xref:System.Data.DataTable>、<xref:System.Data.Common.DbDataReader>または 'system.collections.generic.ienumerable(of\<<xref:Microsoft.SqlServer.Server.SqlDataRecord>> (<xref:System.Collections.Generic.IEnumerable%601>? qualifyHint = False & autoUpgrade = True) オブジェクト。 <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> の <xref:System.Data.SqlClient.SqlParameter> プロパティを使用して、テーブル値パラメーターの型名を指定する必要があります。 `TypeName` は、既にサーバー上に作成されている、互換性のある型の名前と一致していることが必要です。 次のコード フラグメントは、データを挿入するための <xref:System.Data.SqlClient.SqlParameter> の構成方法を示しています。  
+ <xref:System.Data.SqlClient>テーブル値パラメーターの設定をサポートしている<xref:System.Data.DataTable>、<xref:System.Data.Common.DbDataReader>または<xref:System.Collections.Generic.IEnumerable%601>  \  <xref:Microsoft.SqlServer.Server.SqlDataRecord>オブジェクト。 <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> の <xref:System.Data.SqlClient.SqlParameter> プロパティを使用して、テーブル値パラメーターの型名を指定する必要があります。 `TypeName` は、既にサーバー上に作成されている、互換性のある型の名前と一致していることが必要です。 次のコード フラグメントは、データを挿入するための <xref:System.Data.SqlClient.SqlParameter> の構成方法を示しています。  
   
 ```csharp  
 // Configure the command and parameter.  

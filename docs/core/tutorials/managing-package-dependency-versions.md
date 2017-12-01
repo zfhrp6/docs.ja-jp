@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 4424a947-bdf9-4775-8d48-dc350a4e0aee
+ms.openlocfilehash: b0d4082d020da782b334a5b3999905f7de744e64
+ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7f31aeb3c07a75059a4f8cd9392dcea31eb5bf41
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/28/2017
 ---
-
 # <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a>.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法
 
 この記事では、.NET Core ライブラリとアプリのパッケージ バージョンについて知っておくべき事項を説明します。
@@ -51,7 +49,7 @@ ms.lasthandoff: 07/28/2017
 
 ### <a name="why-does-this-matter"></a>なぜこれが重要なのでしょうか?
 
-.NET Core 1.0 と共に配布されるバージョンに依存関係を固定すると、それらのパッケージはすべて確実に連携して動作します。  使用するパッケージがこのように固定されたものではない場合、パッケージの連携は保証されません。
+.NET Core 1.0 と共にどのような船に対する依存関係を修正すると、それらのパッケージはすべて動作まとめて保証されます。 使用するパッケージがこのように固定されたものではない場合、パッケージの連携は保証されません。
 
 ### <a name="scenarios"></a>シナリオ
 
@@ -59,11 +57,11 @@ ms.lasthandoff: 07/28/2017
 
 `NETStandard.Library`**のみに依存しますか** **?**
 
-そのようにする場合は、`NETStandard.Library` パッケージをバージョン `1.6` に固定する必要があります。  これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。
+そのため、問題を修正する場合、`NETStandard.Library`パッケージ バージョンを`1.6`です。  これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。
 
 `Microsoft.NETCore.App`**のみに依存しますか** **?**
 
-そのようにする場合は、`Microsoft.NETCore.App` パッケージをバージョン `1.0.0` に固定する必要があります。  これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。
+そのため、問題を修正する場合、`Microsoft.NETCore.App`パッケージ バージョンを`1.0.0`です。  これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。
 
 **または** `Microsoft.NETCore.App` **メタパッケージ依存関係を** [トリミング](../deploying/reducing-dependencies.md) **する必要がありますか?**`NETStandard.Library`
 
@@ -86,4 +84,3 @@ ms.lasthandoff: 07/28/2017
 [1.0 に対するすべてのランタイム パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt)。
 
 [1.0 に対するすべての NET Core アプリケーション パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/core-setup/release/1.0.0/Latest_Packages.txt)。
-

@@ -3,16 +3,15 @@ title: "dotnet run コマンド - .NET Core CLI"
 description: "dotnet run コマンドは、ソース コードからアプリケーションを実行する便利なオプションを提供します。"
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
+ms.date: 09/24/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: 7670934199d7d4b8a7c5e598142366ef1eb3ef1c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: c98a69ced3c309da0ff035efb5c76e7034d54e79
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-run"></a>dotnet run
 
@@ -74,6 +73,10 @@ dotnet myapp.dll
 
 指定された[フレームワーク](../../standard/frameworks.md)を使用してアプリをビルドし、実行します。 フレームワークはプロジェクト ファイルに指定する必要があります。
 
+`--force`
+
+最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 削除するのと同じ*project.assets.json*です。
+
 `-h|--help`
 
 コマンドの短いヘルプを印刷します。
@@ -85,6 +88,10 @@ dotnet myapp.dll
 `--no-build`
 
 実行前にプロジェクトをビルドしません。
+
+`--no-dependencies`
+
+プロジェクト間 (P2P) 参照を含むプロジェクトを復元する場合は、参照ではなく、ルート プロジェクトを復元します。
 
 `--no-launch-profile`
 
@@ -142,4 +149,3 @@ dotnet myapp.dll
 現在のディレクトリのプロジェクトを実行します (この例では、`--` 引数が使用されているため、`--help` 引数がアプリケーションに渡されます)。
 
 `dotnet run --configuration Release -- --help`
-

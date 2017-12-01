@@ -1,34 +1,35 @@
 ---
-title: "方法 : アセンブリを使用して XSLT 変換を実行する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "方法 : アセンブリを使用して XSLT 変換を実行する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: f236296d604bc465973d17d63883e7b212b7f02d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : アセンブリを使用して XSLT 変換を実行する
-XSLT コンパイラ \(xsltc.exe\) は、XSLT スタイル シートをコンパイルしてアセンブリを生成します。  このアセンブリを <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=fullName> メソッドに直接渡すことができます。  
+# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>方法 : アセンブリを使用して XSLT 変換を実行する
+XSLT コンパイラ (xsltc.exe) は、XSLT スタイル シートをコンパイルしてアセンブリを生成します。 このアセンブリを <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> メソッドに直接渡すことができます。  
   
-### XML ファイルと XSLT ファイルをローカル コンピューターにコピーするには  
+### <a name="to-copy-the-xml-and-xslt-files-to-your-local-computer"></a>XML ファイルと XSLT ファイルをローカル コンピューターにコピーするには  
   
 -   XSLT ファイルをローカル コンピューターにコピーし、Transform.xsl という名前を付けます。  
   
-    ```  
+    ```xml  
     <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
       xmlns:msxsl="urn:schemas-microsoft-com:xslt"  
       xmlns:user="urn:my-scripts">  
@@ -95,7 +96,7 @@ XSLT コンパイラ \(xsltc.exe\) は、XSLT スタイル シートをコンパ
   
 -   XML ファイルをローカル コンピューターにコピーし、`books.xml` という名前を付けます。  
   
-    ```  
+    ```xml  
     <?xml version="1.0"?>  
     <catalog>  
        <book id="bk101">  
@@ -136,9 +137,9 @@ XSLT コンパイラ \(xsltc.exe\) は、XSLT スタイル シートをコンパ
     </catalog>  
     ```  
   
-### スクリプトを有効にしてスタイル シートをコンパイルするには  
+### <a name="to-compile-the-style-sheet-with-the-script-enabled"></a>スクリプトを有効にしてスタイル シートをコンパイルするには  
   
-1.  コマンド ラインで次のコマンドを実行すると、`Transform.dll` および `Transform_Script1.dll` という名前で 2 つのアセンブリが作成されます \(これが既定の動作です。  他に指定しなければ、既定のクラス名とアセンブリ名はメインのスタイル シートの名前になります\)。  
+1.  コマンド ラインで次のコマンドを実行すると、`Transform.dll` および `Transform_Script1.dll` という名前で 2 つのアセンブリが作成されます (これが既定の動作です。 他に指定しなければ、既定のクラス名とアセンブリ名はメインのスタイル シートの名前になります)。  
   
     ```  
     xsltc /settings:script+ Transform.xsl  
@@ -150,11 +151,11 @@ XSLT コンパイラ \(xsltc.exe\) は、XSLT スタイル シートをコンパ
 xsltc /settings:script+ /class:Transform Transform.xsl  
 ```  
   
-### コードをコンパイルするときにコンパイル済みアセンブリを参照として含めるには  
+### <a name="to-include-the-compiled-assembly-as-a-reference-when-you-compile-your-code"></a>コードをコンパイルするときにコンパイル済みアセンブリを参照として含めるには  
   
 1.  ソリューション エクスプローラーまたはコマンド ラインで参照を追加することで、Visual Studio にアセンブリを含めることができます。  
   
-2.  コマンド ラインで C\# を使用する場合、次のように入力します。  
+2.  コマンド ラインで C# を使用する場合、次のように入力します。  
   
     ```  
     csc myCode.cs /r:system.dll;system.xml.dll;Transform.dll  
@@ -166,7 +167,7 @@ xsltc /settings:script+ /class:Transform Transform.xsl
     vbc myCode.vb /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
-### コンパイル済みアセンブリをコードで使用するには  
+### <a name="to-use-the-compiled-assembly-in-your-code"></a>コンパイル済みアセンブリをコードで使用するには  
   
 1.  コンパイルしたスタイル シートを使用して XSLT 変換を実行する方法を次の例に示します。  
   
@@ -185,10 +186,10 @@ xslt.Load(typeof(Transform))
 xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))  
 ```  
   
- に置き換えます。  Assembly.Load メソッドの詳細については、「<xref:System.Reflection.Assembly.Load%2A>」を参照してください。  
+ に置き換えます。 Assembly.Load メソッドの詳細については、「<xref:System.Reflection.Assembly.Load%2A>」を参照してください。  
   
-## 参照  
- <xref:System.Xml.Xsl.XslCompiledTransform>   
- [XSLT コンパイラ \(xsltc.exe\)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)   
- [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)   
- [csc.exe を使用したコマンド ラインからのビルド](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Xml.Xsl.XslCompiledTransform>  
+ [XSLT コンパイラ (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+ [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)  
+ [csc.exe を使用したコマンド ラインからのビルド](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

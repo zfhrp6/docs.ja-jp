@@ -1,57 +1,63 @@
 ---
-title: "How to: Implement a Producer-Consumer Dataflow Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "TPL dataflow library, implementing producer-consumer pattern"
-  - "Task Parallel Library, dataflows"
-  - "producer-consumer patterns, implementing [TPL]"
+title: "方法: プロデューサー/コンシューマーのデータフロー パターンを実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- TPL dataflow library, implementing producer-consumer pattern
+- Task Parallel Library, dataflows
+- producer-consumer patterns, implementing [TPL]
 ms.assetid: 47a1d38c-fe9c-44aa-bd15-937bd5659b0b
-caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: e1aba08e8364d8a21f70ab480d58041115a4849e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# How to: Implement a Producer-Consumer Dataflow Pattern
-このドキュメントでは、プロデューサー\/コンシューマー パターンを実装するために TPL データ フローのライブラリを使用する方法について説明します。  このパターンでは、*プロデューサー*がメッセージをメッセージ ブロックに送信し、*コンシューマー*がそのブロックからメッセージを読み取ります。  
+# <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>方法: プロデューサー/コンシューマーのデータフロー パターンを実装する
+このドキュメントでは、TPL データフロー ライブラリを使用して、プロデューサー/コンシューマー パターンを実装する方法について説明します。 このパターンでは、"*プロデューサー*" がメッセージをメッセージ ブロックに送信し、"*コンシューマー*" がそのブロックからメッセージを読み取ります。  
   
 > [!TIP]
->  TPL データ フローのライブラリ \(<xref:System.Threading.Tasks.Dataflow?displayProperty=fullName> 名前空間\) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。  <xref:System.Threading.Tasks.Dataflow> 名前空間をインストールするには、[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] でプロジェクトを開き、\[プロジェクト\] メニューの **\[NuGet パッケージの管理\]** をクリックし、`Microsoft.Tpl.Dataflow` パッケージをオンラインで検索します。  
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> 名前空間) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
   
-## 使用例  
- 次の例は、データ フローを使用する基本的な生産者コンシューマー モデルです。  `Produce` のメソッドは <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=fullName> オブジェクトにデータの任意のバイトが含まれ、`Consume` のメソッドが <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=fullName> オブジェクトからバイトを読み取る配列を作成します。  、派生型ではなく <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> と <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> インターフェイスの機能によって、さまざまなデータ フロー ブロック型で動作できる再利用可能なコードを記述できます。  この例では <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> クラスを使用します。  <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> クラスは、ソース ブロックとターゲット ブロックとして機能するため、プロデューサーおよびコンシューマーは転送データの共有オブジェクトを使用できます。  
+## <a name="example"></a>例  
+ 次の例では、データフローを使用する基本的なプロデューサー/コンシューマー モデルを示します。 `Produce`メソッドは、データのランダム バイトを含む配列を書き込みます、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=nameWithType>オブジェクトおよび`Consume`メソッドがからバイトを読み取り、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=nameWithType>オブジェクト。 操作を実行して、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>と<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>その派生型ではなく、インターフェイスのさまざまなデータ フロー ブロックの型で動作できる再利用可能なコードを記述できます。 この例では、<xref:System.Threading.Tasks.Dataflow.BufferBlock%601>クラスです。 <xref:System.Threading.Tasks.Dataflow.BufferBlock%601>クラスは、両方のソースとして機能をブロックし、ターゲット ブロック、プロデューサーおよびコンシューマーを使用して、共有されたオブジェクト データを転送します。  
   
- `Produce` のメソッドの呼び出し同期的にターゲット ブロックにデータを書き込むループの <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> のメソッド。  `Produce` のメソッドはターゲット ブロックにすべてのデータを作成したら、ブロックには使用できる追加データがないことを示すために <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> のメソッドを呼び出します。  `Consume` のメソッドは [async](../Topic/async%20\(C%23%20Reference\).md) と [待機します。](../Topic/await%20\(C%23%20Reference\).md) の演算子 \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]の[Async](../Topic/Async%20\(Visual%20Basic\).md) と [待機します。](../Topic/Await%20Operator%20\(Visual%20Basic\).md)\) 非同期的に <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> オブジェクトから受け取ったバイト数の合計を計算します。  ソース ブロックに使用できるデータがある場合に、ソース ブロックには使用できる追加のデータがない場合は、非同期的に機能するには、`Consume` のメソッドの呼び出し通知を受け取る <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A> のメソッド。  
+ `Produce`メソッドの呼び出し、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A>ターゲット ブロックにデータを同期的に記述するループ内のメソッドです。 後に、`Produce`メソッドは呼び出しのターゲット ブロックにすべてのデータを書き込みます、<xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A>を示す、ブロックが使用可能なその他のデータを持つことはありません。 `Consume`メソッドを使用、 [async](~/docs/csharp/language-reference/keywords/async.md)と[await](~/docs/csharp/language-reference/keywords/await.md)演算子 ([Async](~/docs/visual-basic/language-reference/modifiers/async.md)と[Await](~/docs/visual-basic/language-reference/operators/await-operator.md)で[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) に非同期的にから受信されるバイトの合計数を計算、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>オブジェクト。 非同期的に動作する、`Consume`メソッドの呼び出し、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A>メソッド、ソース ブロックがあり、使用可能なデータと、ソース ブロックには使用可能なその他のデータはないときに通知を受信します。  
   
  [!code-csharp[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_producerconsumer/cs/dataflowproducerconsumer.cs#1)]
  [!code-vb[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_producerconsumer/vb/dataflowproducerconsumer.vb#1)]  
   
-## コードのコンパイル  
- プログラム例をコピーし、Visual Studio のプロジェクトに貼り付けるか、`DataflowProducerConsumer.cs` \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]の`DataflowProducerConsumer.vb`\) という、Visual Studio のコマンド プロンプト ウィンドウで次のコマンドを実行してファイルに貼り付けます。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ コード例をコピーし、Visual Studio プロジェクトに貼り付けるか、`DataflowProducerConsumer.cs` ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `DataflowProducerConsumer.vb`) という名前のファイルに貼り付けてから、Visual Studio のコマンド プロンプト ウィンドウで次のコマンドを実行します。  
   
  [!INCLUDE[csprcs](../../../includes/csprcs-md.md)]  
   
- **csc.exe \/r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.cs**  
+ **csc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.cs**  
   
  [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]  
   
- **vbc.exe \/r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.vb**  
+ **vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowProducerConsumer.vb**  
   
-## 信頼性の高いプログラミング  
- この例では、ソース データを処理するために、1 個のコンシューマーを使用します。  アプリケーションで複数のコンシューマーがある場合は、次の例に示すように、ソース ブロックからデータを読み取るために、<xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> のメソッドを使用します。  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
+ この例では、1 つのコンシューマーのみを使用してソース データを処理します。 アプリケーションで複数のコンシューマーがあればを使用して、<xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A>メソッドを次の例で示すように、ソース ブロックからデータを読み取ります。  
   
  [!code-csharp[TPLDataflow_ProducerConsumer#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_producerconsumer/cs/dataflowproducerconsumer.cs#2)]
  [!code-vb[TPLDataflow_ProducerConsumer#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_producerconsumer/vb/dataflowproducerconsumer.vb#2)]  
   
- データを使用できない場合に <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> メソッドの戻り `False`。  複数のときにコンシューマーがデータが <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A>の呼び出し後にまだ利用できるという保証この機能のソース ブロックに同時にアクセスする必要があります。  
+ <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A>メソッドを返します。`False`データが使用できない場合。 このメカニズムでは、データは、呼び出しの後に引き続き使用できます保証複数のコンシューマーは、ソース ブロックを同時にアクセスする必要がある場合、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A>です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

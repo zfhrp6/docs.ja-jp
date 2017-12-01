@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - binding failure
 - binding, failures
@@ -22,22 +16,21 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), binding failures
 - BindingFailure MDA
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4e78cdcc5bcf69902675fceacc9dac245bfec336
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 89c1ce4b39379aeae80240750cdbcd2e61b6ec11
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure MDA
 `bindingFailure` マネージ デバッグ アシスタント (MDA) は、アセンブリの読み込みに失敗したときにアクティブになります。  
   
 ## <a name="symptoms"></a>症状  
- コードは、静的参照またはいずれかのローダー メソッド (<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> や <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> など) を使用して、アセンブリを読み込もうとしました。 アセンブリは読み込まれず、<xref:System.IO.FileNotFoundException> または <xref:System.IO.FileLoadException> 例外がスローされました。  
+ コードは、静的参照またはいずれかのローダー メソッド (<xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> や <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> など) を使用して、アセンブリを読み込もうとしました。 アセンブリは読み込まれず、<xref:System.IO.FileNotFoundException> または <xref:System.IO.FileLoadException> 例外がスローされました。  
   
 ## <a name="cause"></a>原因  
  バインディング エラーは、ランタイムがアセンブリを読み込むことができない場合に発生します。 バインディング エラーは、次のいずれかの状況の結果として発生することもあります。  
@@ -52,7 +45,7 @@ ms.lasthandoff: 08/21/2017
   
 -   ユーザー資格情報には、ファイルを読み取るために必要なアクセス許可が指定されていません。  
   
-## <a name="resolution"></a>解決策  
+## <a name="resolution"></a>解像度  
  最初の手順は、要求されたアセンブリに CLR がバインドできなかった原因を特定することです。 たとえば、「原因」セクションに一覧表示されたシナリオのように、ランタイムが要求されたアセンブリを見つけられなかったり、読み込めなかったりする理由は多数あります。 バインディング エラーの原因を除去するには、次のアクションをお勧めします。  
   
 -   `bindingFailure` MDA によって提供されるデータを使用して、原因を特定します。  
@@ -115,4 +108,3 @@ namespace ConsoleApplication1
   
 ## <a name="see-also"></a>関連項目  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-

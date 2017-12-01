@@ -1,38 +1,29 @@
 ---
 title: ".NET Framework 配置ガイド (開発者向け)"
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-caps.latest.revision: 108
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 287005af09f3f022c368d3c8fab12ad02b30e944
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 043338d73e67ee36d2888b748402d824ee6d5daf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>.NET Framework 配置ガイド (開発者向け)
-このトピックでは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]、4.6.1、4.6.2、または .NET Framework 4.7 を、それぞれのアプリと共にインストールする開発者向けの情報を提供します。
+このトピックの内容をインストールする開発者向けの情報を提供する、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]4.6.1、4.6.2、または .NET Framework 4.7 またはそのアプリを使用して 4.7.1 です。
 
 ダウンロード リンクについては、「[頒布可能パッケージ](#redistributable-packages)」を参照してください。 再頒布可能パッケージと言語パックは、Microsoft ダウンロード センターの次のページからダウンロードすることもできます。
+
+- すべてのオペレーティング システムの .NET framework 4.7.1 ([web インストーラー](http://go.microsoft.com/fwlink/?LinkId=852095)または[オフライン インストーラー](http://go.microsoft.com/fwlink/p/?LinkId=852107))
 
 - すべてのオペレーティング システムの .NET Framework 4.7 ([Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=825299)または[オフライン インストーラー](http://go.microsoft.com/fwlink/p/?LinkId=825303))
 
@@ -51,17 +42,17 @@ ms.lasthandoff: 07/28/2017
  重要なメモ:
 
 > [!NOTE]
-> "[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのポイント リリース" という語句は、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、および 4.7 を指します。
+> 語句"、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]とそのポイント リリース"を指す、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]以降のバージョン。
 
-- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、4.6、4.6.1、4.6.2、および 4.7 は、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインプレース更新です。つまり、同じバージョンのランタイムを使用しますが、アセンブリのバージョンが更新され、新しい型とメンバーが含まれます。
+- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、4.6、4.6.1、4.6.2、4.7、および 4.7.1 はインプレースで更新プログラム、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、同じバージョンのランタイムを使用しますが、アセンブリのバージョンが更新され、新しい型とメンバーが含まれていることを意味します。
 
-- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのポイント リリースは、 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]の上にインクリメンタル方式でビルドされます。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] がインストールされているシステムに [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 をインストールすると、バージョン 4 のアセンブリが新しいバージョンに置き換えられます。
+- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのポイント リリースは、 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]の上にインクリメンタル方式でビルドされます。 インストールするときに、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、またはを搭載したシステムで 4.7.1、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]バージョン 4 のアセンブリはインストールされているを新しいバージョンで置き換えられます。
 
 - アプリで Microsoft [帯域外のパッケージ](http://msdn.microsoft.com/library/dn151288\(v=vs.110\).aspx) を参照している場合、アセンブリはアプリのパッケージに組み込まれます。
 
 - [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのポイント リリースをインストールするには、管理者特権が必要です。
 
-- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は、 [!INCLUDE[win8](../../../includes/win8-md.md)] と [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]に組み込まれているため、これらのオペレーティング システムではアプリと一緒に配置する必要はありません。 同様に、 [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] は [!INCLUDE[win81](../../../includes/win81-md.md)] と Windows Server 2012 R2 に組み込まれています。 .NET Framework 4.5.2 はどのオペレーティング システムにも含まれていません。 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] は Windows 10 に含まれます。 [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] は Windows 10 の 11 月更新版に含まれます。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] は Windows 10 Anniversary Update に含まれます。  .NET Framework 4.7 は Windows 10 Creators Update に含まれています。 ハードウェア要件とソフトウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。
+- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は、 [!INCLUDE[win8](../../../includes/win8-md.md)] と [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]に組み込まれているため、これらのオペレーティング システムではアプリと一緒に配置する必要はありません。 同様に、 [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] は [!INCLUDE[win81](../../../includes/win81-md.md)] と Windows Server 2012 R2 に組み込まれています。 .NET Framework 4.5.2 はどのオペレーティング システムにも含まれていません。 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] は Windows 10 に含まれます。 [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] は Windows 10 の 11 月更新版に含まれます。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] は Windows 10 Anniversary Update に含まれます。  .NET Framework 4.7 は Windows 10 の作成者の更新プログラムに含まれており、.NET Framework 4.7.1 が Windows 10 フォールの作成者の更新プログラムに含まれています。 ハードウェア要件とソフトウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。
 
 - [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]以降では、ユーザーはセットアップ中に、実行している .NET Framework アプリケーションの一覧を表示し、簡単に終了できます。 これにより、.NET Framework のインストールによるシステムの再起動を回避できます。 「 [システム再起動の削減](../../../docs/framework/deployment/reducing-system-restarts.md)」を参照してください。
 
@@ -72,12 +63,12 @@ ms.lasthandoff: 07/28/2017
  システム管理者が .NET Framework とそのシステムの依存関係をネットワーク経由で配置する方法については、[管理者向け配置ガイド](../../../docs/framework/deployment/guide-for-administrators.md)に関するページを参照してください。
 
 ## <a name="deployment-options-for-your-app"></a>アプリケーションの配置オプション
- ユーザーがアプリケーションをインストールできるように Web サーバーまたは他の一元的な場所にアプリケーションを発行する準備ができたら、複数の配置方法から選択できます。 これらの一部は、Visual Studio に装備されています。 次の表に、アプリケーションの配置オプションの一覧と、各オプションをサポートする .NET Framework 再頒布可能パッケージを示します。 これらに加えて、アプリケーション用のカスタム セットアップ プログラムを作成できます。詳細については、「 [アプリケーションのセットアップへの .NET Framework のインストールのチェーン](#chaining)」を参照してください。
+ ユーザーがアプリケーションをインストールできるように Web サーバーまたは他の一元的な場所にアプリケーションを発行する準備ができたら、複数の配置方法から選択できます。 これらの一部は、Visual Studio に装備されています。 次の表は、アプリの展開オプションをリストし、各オプションをサポートする .NET Framework 再頒布可能パッケージを指定します。 これらに加えて、アプリケーション用のカスタム セットアップ プログラムを作成できます。詳細については、「 [アプリケーションのセットアップへの .NET Framework のインストールのチェーン](#chaining)」を参照してください。
 
 |アプリケーションの配置戦略|使用できる配置方法|使用する .NET Framework 再頒布可能パッケージ|
 |--------------------------------------|----------------------------------|-------------------------------------------|
-|Web からのインストール|- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[Web installer](#redistributable-packages)|
-|ディスクからのインストール|- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[Offline installer](#redistributable-packages)|
+|Web からのインストール|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[Web installer](#redistributable-packages)|
+|ディスクからのインストール|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [WiX ツールセット](#wix)<br />- [手動インストール](#installing_manually)|[Offline installer](#redistributable-packages)|
 |ローカル エリア ネットワークからのインストール (エンタープライズ アプリケーションの場合)|- [ClickOnce](#clickonce-deployment)|[Web インストーラー](#redistributable-packages) (制約については「 [ClickOnce](#clickonce-deployment) 」を参照) または [オフライン インストーラー](#redistributable-packages)|
 
 ## <a name="redistributable-packages"></a>頒布可能パッケージ
@@ -85,23 +76,25 @@ ms.lasthandoff: 07/28/2017
 
 ||Web インストーラー|オフライン インストーラー|
 |-|-------------------|-----------------------|
-|ファイルのダウンロード|.NET Framework 4.7: <br />[NDP47-KB3186500-Web.exe](http://go.microsoft.com/fwlink/?LinkId=825298) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462-KB3151802-Web.exe](http://go.microsoft.com/fwlink/?LinkId=780596)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]:<br />[NDP461-KB3102438-Web.exe](http://go.microsoft.com/fwlink/?LinkId=671728)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]:<br />[NDP46-KB3045560-Web.exe](http://go.microsoft.com/fwlink/?LinkId=528222)<br /><br /> .NET Framework 4.5.2: <br />[NDP452-KB2901954-Web.exe](http://go.microsoft.com/fwlink/?LinkId=397707)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451-KB2859818-Web.exe](http://go.microsoft.com/fwlink/?LinkId=322115)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_setup.exe](http://go.microsoft.com/fwlink/?LinkId=225704)|.NET Framework 4.7: <br />[NDP462-KB3186497-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=825302) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462-KB3151800-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=780600)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]: <br />[NDP461-KB3102436-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=671743)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]: <br />[NDP46-KB3045557-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=528232)<br /><br /> .NET Framework 4.5.2: <br />[NDP452-KB2901907-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=397708)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451-KB2858728-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=322116)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702)|
+|ファイルのダウンロード|.NET framework 4.7.1: <br/>[NDP471 KB4033344-Web.exe](http://go.microsoft.com/fwlin/?LinkId=852092)<br/><br/>.NET Framework 4.7: <br />[NDP47-KB3186500-Web.exe](http://go.microsoft.com/fwlink/?LinkId=825298) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462-KB3151802-Web.exe](http://go.microsoft.com/fwlink/?LinkId=780596)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]:<br />[NDP461-KB3102438-Web.exe](http://go.microsoft.com/fwlink/?LinkId=671728)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]:<br />[NDP46-KB3045560-Web.exe](http://go.microsoft.com/fwlink/?LinkId=528222)<br /><br /> .NET Framework 4.5.2: <br />[NDP452-KB2901954-Web.exe](http://go.microsoft.com/fwlink/?LinkId=397707)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451-KB2859818-Web.exe](http://go.microsoft.com/fwlink/?LinkId=322115)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_setup.exe](http://go.microsoft.com/fwlink/?LinkId=225704)|.NET framework 4.7.1: <br />[NDP471-KB4033342-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=852104) <br /><br />.NET Framework 4.7: <br />[NDP47-KB3186497-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=825302) <br /><br />[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]: <br />[NDP462-KB3151800-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=780600)<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]: <br />[NDP461-KB3102436-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=671743)<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]: <br />[NDP46-KB3045557-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=528232)<br /><br /> .NET Framework 4.5.2: <br />[NDP452-KB2901907-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=397708)<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]: <br />[NDP451-KB2858728-x86-x64-AllOS-ENU.exe](http://go.microsoft.com/fwlink/?LinkId=322116)<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]: <br />[dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702)|
 |インターネット接続の必要性|○|Ｘ|
 |ダウンロードのサイズ|小 (ターゲット プラットフォームのインストーラーのみを含む)*|Larger*|
 |言語パック|含む**|すべてのオペレーティング システムを対象とするパッケージを使用しない場合は、 [個別にインストールする](#chain_langpack)必要があります|
-|配置方法|すべてのメソッドをサポート<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows インストーラー XML (WiX)](#wix)<br />- [手動インストール](#installing_manually)<br />- [カスタム セットアップ (チェーン)](#chaining)|すべてのメソッドをサポート<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows インストーラー XML (WiX)](#wix)<br />- [手動インストール](#installing_manually)<br />- [カスタム セットアップ (チェーン)](#chaining)|
-|ClickOnce 配置のダウンロード場所|Microsoft ダウンロード センター:<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825298) <br/> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780596)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671728)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528222)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=397703)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310158)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|独自のサーバーまたは Microsoft ダウンロード センター:<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825302)<br /> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780600)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671743)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528232)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/p/?LinkId=397706)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310159)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|
+|配置方法|すべてのメソッドをサポート<br /><br />- [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows インストーラー XML (WiX)](#wix)<br />- [手動インストール](#installing_manually)<br />- [カスタム セットアップ (チェーン)](#chaining)|すべてのメソッドをサポート<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows インストーラー XML (WiX)](#wix)<br />- [手動インストール](#installing_manually)<br />- [カスタム セットアップ (チェーン)](#chaining)|
+|ClickOnce 配置のダウンロード場所|Microsoft ダウンロード センター:<br /><br /> - [.NET framework 4.7.1](http://go.microsoft.com/fwlink/?LinkId=852092) <br/> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825298) <br/> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780596)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671728)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528222)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=397703)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310158)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|独自のサーバーまたは Microsoft ダウンロード センター:<br /><br /> - [.NET framework 4.7.1](http://go.microsoft.com/fwlink/?LinkId=852104)<br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825302)<br /> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780600)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671743)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528232)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/p/?LinkId=397706)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310159)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|
 
- \* オフライン インストーラーは、すべての対象プラットフォームのコンポーネントを含むため、より大きくなっています。 セットアップの実行が終了すると、Windows オペレーティング システムは使用されたインストーラーのみキャッシュします。 オフライン インストーラーがインストール後に削除されると、使用されるディスク領域は Web インストーラーに使用される領域と同じになります。 アプリのセットアップ プログラムの作成に使用するツール (たとえば、 [InstallShield](#installshield-deployment)) によって、インストール後に削除されるセットアップ ファイル フォルダーが提供される場合は、オフライン インストーラーをそのセットアップ フォルダー内に配置することで自動的に削除できます。
+ \* オフライン インストーラーは、すべての対象プラットフォームのコンポーネントを含むため、より大きくなっています。 セットアップの実行が終了すると、Windows オペレーティング システムは使用されたインストーラーのみキャッシュします。 オフライン インストーラーがインストール後に削除されると、使用されるディスク領域は Web インストーラーに使用される領域と同じになります。 このツールを使用する場合 (たとえば、 [InstallAware](#installaware-deployment)または[InstallShield](#installshield-deployment)) アプリのセットアップ プログラムを作成するには、インストール後に削除されるセットアップ ファイル フォルダーを提供、オフライン インストーラーを指定できますセットアップ フォルダー内に配置することによって自動的に削除します。
 
  ** カスタム設定の Web インストーラーを使用する場合は、ユーザーの複数言語ユーザー インターフェイス (MUI) 設定に基づいて既定の言語設定を使用するか、コマンド ラインで `/LCID` オプションを使用して別の言語パックを指定できます。 例については、「 [既定の .NET Framework の UI を使用したチェーン](#chaining_default) 」を参照してください。
 
 ## <a name="deployment-methods"></a>配置方法
- 3 の配置方法を使用できます。
+ 次の 4 つの展開方法があります。
 
 - .NET Framework の依存関係を設定できます。 これらのメソッドのいずれかを使用して、アプリケーションのインストールで必須コンポーネントとして .NET Framework を指定できます。
 
     - [ClickOnce 配置](#clickonce-deployment) を使用します (Visual Studio で使用可能)
+
+    - 作成、 [InstallAware プロジェクト](#installaware-deployment)(Visual Studio ユーザーに対して使用可能な無償のエディション)
 
     - [InstallShield プロジェクト](#installshield-deployment) を作成します (Visual Studio で使用可能)
 
@@ -118,7 +111,7 @@ ms.lasthandoff: 07/28/2017
  これらの配置方法の詳細については、以降のセクションで説明します。
 
 ## <a name="setting-a-dependency-on-the-net-framework"></a>.NET Framework の依存関係の設定
-アプリケーションの配置に ClickOnce、InstallShield、または WiX を使用した場合、.NET Framework の依存関係を追加して、アプリケーションの一部としてインストールできます。
+アプリの配置に ClickOnce、InstallAware、InstallShield、または WiX を使用する場合、アプリの一部としてインストールすることができますので、.NET Framework で依存関係を追加できます。
 
 ### <a name="clickonce-deployment"></a>ClickOnce 配置
  ClickOnce 配置は、Visual Basic および Visual C# を使用して作成したプロジェクトに使用できますが、Visual C++ には使用できません。
@@ -143,6 +136,10 @@ ms.lasthandoff: 07/28/2017
 
 8.  **[プロパティ ページ]** ダイアログ ボックスの **[OK]**をクリックします。
 
+<a name="installaware"></a> 
+### <a name="installaware-deployment"></a>InstallAware 展開
+InstallAware は、Windows アプリ (APPX)、Windows インストーラー (MSI)、ネイティブ コード (EXE)、および 1 つのソースから (アプリケーションの仮想化)、APP-V パッケージを構築します。 簡単に[任意の .NET Framework のバージョンを含める](https://www.installaware.com/one-click-pre-requisite-installer.htm)、セットアップでインストールを必要に応じてカスタマイズ[既定スクリプトの編集](https://www.installaware.com/msicode.htm)です。 たとえば、InstallAware はあらかじめ .NET Framework 4.7 セットアップは失敗することがなく、Windows 7 で証明書をインストールします。 InstallAware の詳細については、次を参照してください。、 [Windows インストーラーの InstallAware](https://www.installaware.com/) web サイトです。
+
 ### <a name="installshield-deployment"></a>InstallShield 配置
  Visual Studio で InstallShield 配置を選択し、.NET Framework の依存関係を追加するには:
 
@@ -152,14 +149,14 @@ ms.lasthandoff: 07/28/2017
 
 3.  **[名前]** ボックスにプロジェクト名を入力し、 **[OK]**をクリックします。
 
-4.  初めてセットアップと配置プロジェクトを作成している場合、 **[InstallShield に移動]** または **[InstallShield Limited Edition の有効化]** を選択し、ご使用の Microsoft Visual Studio のバージョンの InstallShield Limited Edition をダウンロードします。 Visual Studio を再起動します。
+4.  初めてセットアップと配置プロジェクトを作成している場合は、選択**InstallShield に移動**または**InstallShield Limited Edition**をご使用のバージョンの InstallShield Limited Edition をダウンロードするにはMicrosoft Visual Studio です。 Visual Studio を再起動します。
 
 5.  **プロジェクト アシスタント** ウィザードに移動し、 **[アプリケーション ファイル]** をクリックしてプロジェクト出力を追加します。 このウィザードを使用して、他のプロジェクト属性を設定できます。
 
 6.  **[インストール要件]** に移動し、オペレーティング システムと、インストールする .NET Framework のバージョンを選択します。
 
 7.  セットアップ プロジェクトのショートカット メニューを開き、 **[ビルド]**を選択します。
-
+ 
 <a name="wix"></a> 
 ### <a name="windows-installer-xml-wix-deployment"></a>Windows インストーラー XML (WiX) 配置
  Windows インストーラー XML (WiX) ツールセットは、XML ソース コードから Windows インストール パッケージをビルドします。 WiX は、MSI と MSM セットアップ パッケージのビルド処理に統合できるコマンド ライン環境をサポートします。 WiX を使用すると、 [.NET Framework を必須コンポーネントとして指定](http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/install_dotnet.html)するか、 [チェーン元を作成](http://wixtoolset.org/documentation/manual/v3/xsd/wix/exepackage.html) して、.NET Framework の配置操作を完全制御できます。 WiX について詳しくは、「 [Windows インストーラー XML (WiX) ツールセット](http://wixtoolset.org/) 」の Web サイトをご覧ください。
@@ -251,6 +248,8 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
 
 |Version|Release DWORD の値|
 |-------------|--------------------------------|
+|.NET framework Windows 10 フォールの作成者の更新プログラムにインストールされている 4.7.1|461308|
+|.NET framework の Windows 10 に収まる作成者 Update 以外のすべての OS バージョンにインストールされている 4.7.1|461310|
 |Windows 10 Creators Update にインストールされた .NET Framework 4.7|460798|
 |Windows 10 Creators Update 以外のすべての OS バージョンにインストールされた .NET Framework 4.7|460805|
 |Windows 10 Anniversary Edition にインストールされる[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] |394802|
@@ -275,11 +274,13 @@ Name: Release
 Type: DWORD
 ```
 
- 言語パックの最終リリース バージョンが [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 にインストールされているかどうかを確認するには、前のセクション「[.NET Framework の検出](#detect_net)」で説明した Release キー DWORD の値を確認します。
+ 言語パックの最終リリース バージョンがインストールされているかどうかを決定する、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、または 4.7.1、チェックが、リリースの値はキー DWORD 値が前のセクションで説明されている[.NET の検出Framework](#detect_net)です。
 
 <a name="chain_langpack"></a> 
 ### <a name="chaining-the-language-packs-to-your-app-setup"></a>アプリケーション セットアップへの言語パックのチェーン
  .NET Framework には、特定のカルチャにローカライズされたリソースを含むスタンドアロンの言語パックの実行可能ファイルのセットが用意されています。 言語パックは Microsoft ダウンロード センターから入手できます。
+
+- [.NET framework 4.7.1 言語パック](http://go.microsoft.com/fwlink/p/?LinkId=852090)
 
 - [.NET Framework 4.7 の言語パック](http://go.microsoft.com/fwlink/p/?LinkId=825306)
 
@@ -325,7 +326,7 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 |5100|ユーザーのコンピューターは、システム要件を満たしていません。|
 
 #### <a name="download-error-codes"></a>ダウンロードのエラー コード
- 次の MSDN ライブラリのコンテンツを参照してください。
+ 次の内容を参照してください。
 
 - [Background Intelligent Transfer Service (BITS) のエラー コード](http://go.microsoft.com/fwlink/?LinkId=180946)
 
@@ -334,17 +335,17 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 - [WinHttp エラー コード](http://go.microsoft.com/fwlink/?LinkId=180948)
 
 #### <a name="other-error-codes"></a>その他のエラー コード
- 次の MSDN ライブラリのコンテンツを参照してください。
+ 次の内容を参照してください。
 
 - [Windows インストーラーのエラー コード](http://go.microsoft.com/fwlink/?LinkId=180949)
 
 - [Windows Update エージェントの結果コード](http://go.microsoft.com/fwlink/?LinkId=180951)
 
 ## <a name="uninstalling-the-net-framework"></a>.NET Framework のアンインストール
- [!INCLUDE[win8](../../../includes/win8-md.md)] 以降では、コントロール パネルの **[Windows の機能の有効化または無効化]** を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 をアンインストールできます。 Windows の旧バージョンでは、コントロール パネルの **[プログラムの追加と削除]** を使用して、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、または 4.7 をアンインストールできます。
+ 以降で[!INCLUDE[win8](../../../includes/win8-md.md)]、アンインストールすることができます、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、またはを使用して 4.7.1 **Windows の機能のオンとオフを**コントロール パネルの します。 Windows の旧バージョンでアンインストールすることができます、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、またはを使用して 4.7.1**プログラム追加と削除**コントロール パネルの します。
 
 > [!IMPORTANT]
-> Windows 7 以前のオペレーティング システムでは、[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、4.6、4.6.1、4.6.2、または 4.7 をアンインストールしても [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ファイルは復元されず、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] をアンインストールしても [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ファイルは復元されません。 旧バージョンに戻る場合は、更新プログラムと共に再インストールする必要があります。
+> Windows 7 およびそれ以前のオペレーティング システムをアンインストールする、 [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、4.6、4.6.1、4.6.2、4.7、または 4.7.1 が復元されず[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]ファイル、およびアンインストール、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]復元されず[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]ファイル。 旧バージョンに戻る場合は、更新プログラムと共に再インストールする必要があります。
 
 ## <a name="appendix"></a>付録
 
@@ -399,10 +400,9 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 |3082|スペイン語 (スペイン、モダン ソート)|es|
 
 ## <a name="see-also"></a>関連項目
- [配置ガイド (管理者向け)](../../../docs/framework/deployment/guide-for-administrators.md)   
- [システム要件](../../../docs/framework/get-started/system-requirements.md)   
- [開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)   
- [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)   
- [.NET Framework 4.5 のインストール中のシステム再起動の削減](../../../docs/framework/deployment/reducing-system-restarts.md)   
+ [配置ガイド (管理者向け)](../../../docs/framework/deployment/guide-for-administrators.md)  
+ [システム要件](../../../docs/framework/get-started/system-requirements.md)  
+ [開発者にとっての .NET Framework をインストールします。](../../../docs/framework/install/guide-for-developers.md)  
+ [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
+ [.NET Framework 4.5 のインストール中のシステム再起動の削減](../../../docs/framework/deployment/reducing-system-restarts.md)  
  [方法: .NET Framework 4.5 インストーラーの進行状況を表示する](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
-

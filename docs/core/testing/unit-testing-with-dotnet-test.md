@@ -6,12 +6,11 @@ ms.author: wiwagn
 ms.date: 09/08/2017
 ms.topic: article
 ms.prod: .net-core
+ms.openlocfilehash: 6e986e89d47ba4de9b8563f1a95cb1ae89accc89
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
-ms.openlocfilehash: 89657d766771bc73777a62c14e10cde3b4f6f75f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>dotnet テストと xUnit を使用した .NET Core での単体テスト C#
 
@@ -157,5 +156,6 @@ if (candidate < 2)
 
 他のテスト、理論、コードをメイン ライブラリに追加して、反復を続けます。 [テストの最終版](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs)ができ、[ライブラリの完全な実装](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService/PrimeService.cs)が完了しました。
 
-これで、小さなライブラリとそのライブラリの単体テストのセットが構築されました。 ソリューションを構築したことで、新しいパッケージとテストの追加が最新のワークフローに従うようになりました。 アプリケーションの目標を達成することに時間と労力の多くを割き、集中して取り組みました。
+### <a name="additional-resources"></a>その他の技術情報
 
+[ASP.NET Core でのテスト コント ローラー ロジック](https://docs.microsoft.com/aspnet/core/mvc/controllers/testing)
