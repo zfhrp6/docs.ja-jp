@@ -1,64 +1,67 @@
 ---
-title: "方法: カスタム アクティビティ デザイナーを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: カスタム アクティビティ デザイナーを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-caps.latest.revision: 25
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cdf64dd7aca82fb0d0b3111832aca863a327270b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: カスタム アクティビティ デザイナーを作成する
-カスタム アクティビティ デザイナーは、通常、関連付けられたアクティビティを他のアクティビティと組み合わせることができるように実装されます。他のアクティビティのデザイナーは、アクティビティと一緒にデザイン サーフェイスにドロップできます。この機能を実現するには、任意のアクティビティを配置できる "ドロップ ゾーン" と、結果となるデザイン サーフェイス上の要素のコレクションを管理するための手段を、カスタム アクティビティ デザイナーで提供する必要があります。ここでは、そのようなドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成する方法と、デザイナー要素のコレクションを管理するために必要な編集機能を提供するカスタム アクティビティ デザイナーを作成する方法を説明します。  
+# <a name="how-to-create-a-custom-activity-designer"></a>方法: カスタム アクティビティ デザイナーを作成する
+カスタム アクティビティ デザイナーは、通常、関連付けられたアクティビティを他のアクティビティと組み合わせることができるように実装されます。他のアクティビティのデザイナーは、アクティビティと一緒にデザイン サーフェイスにドロップできます。 この機能は、カスタム アクティビティ デザイナーが、任意のアクティビティを配置できる「ドロップ ゾーン」とも、デザイン画面上の要素の結果のコレクションを管理するための手段を提供することが必要です。 ここでは、そのようなドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成する方法と、デザイナー要素のコレクションを管理するために必要な編集機能を提供するカスタム アクティビティ デザイナーを作成する方法を説明します。  
   
- カスタム アクティビティ デザイナーは、通常、<xref:System.Activities.Presentation.ActivityDesigner> を継承します。これは、特定のデザイナーを持たないアクティビティの既定の基本アクティビティ デザイナー型です。この型には、プロパティ グリッドと対話し、色やアイコンの管理などの基本的な側面を構成するデザイン時の機能があります。  
+ カスタム アクティビティ デザイナーは、通常、<xref:System.Activities.Presentation.ActivityDesigner> を継承します。これは、特定のデザイナーを持たないアクティビティの既定の基本アクティビティ デザイナー型です。 この型には、プロパティ グリッドと対話し、色やアイコンの管理などの基本的な側面を構成するデザイン時の機能があります。  
   
- <xref:System.Activities.Presentation.ActivityDesigner> では、カスタム アクティビティ デザイナーを開発しやすくする 2 つのヘルパー コントロール <xref:System.Activities.Presentation.WorkflowItemPresenter> と <xref:System.Activities.Presentation.WorkflowItemsPresenter> を使用します。これらは、子要素のドラッグ アンド ドロップ、その子要素の削除、選択、追加などの一般的な機能を処理します。<xref:System.Activities.Presentation.WorkflowItemPresenter> には、"ドロップ ゾーン" を提供する 1 つの子 UI 要素を含めることができます。一方、<xref:System.Activities.Presentation.WorkflowItemsPresenter> では複数の UI 要素がサポートされており、子要素の順序変更、移動、削除、追加などの機能を使用できます。  
+ <xref:System.Activities.Presentation.ActivityDesigner> では、カスタム アクティビティ デザイナーを開発しやすくする 2 つのヘルパー コントロール <xref:System.Activities.Presentation.WorkflowItemPresenter> と <xref:System.Activities.Presentation.WorkflowItemsPresenter> を使用します。 これらは、子要素のドラッグ アンド ドロップ、その子要素の削除、選択、追加などの一般的な機能を処理します。 <xref:System.Activities.Presentation.WorkflowItemPresenter> 1 つの子 UI 要素の許可中、「ドロップ ゾーン」を提供する一方、<xref:System.Activities.Presentation.WorkflowItemsPresenter>複数の UI 要素の順序付けなどの機能のサポートを提供することができます、移動、削除、および子要素の追加。  
   
- カスタム アクティビティ デザイナーの実装におけるもう 1 つの重要なポイントは、ビジュアル編集が、デザイナーで編集している対象のメモリ内インスタンスに、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)] データ バインディングを使用してバインドされるしくみに関係しています。これは、モデル アイテム ツリーによって実現されます。モデル アイテム ツリーは、変更通知やイベント \(状態の変化など\) の追跡を実現するためにも使用されます。  
+ カスタム アクティビティ デザイナーの実装におけるもう 1 つの重要なポイントは、ビジュアル編集が、デザイナーで編集している対象のメモリ内インスタンスに、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)] データ バインディングを使用してバインドされるしくみに関係しています。 これは、モデル アイテム ツリーによって実現されます。モデル アイテム ツリーは、変更通知やイベント (状態の変化など) の追跡を実現するためにも使用されます。  
   
  ここでは、次の 2 つの手順の概要を説明します。  
   
-1.  1 つ目の手順では、他のアクティビティを受け取るドロップ ゾーンを提供する <xref:System.Activities.Presentation.WorkflowItemPresenter> を使用してカスタム アクティビティ デザイナーを作成する方法を説明します。この手順は、「[カスタム複合デザイナー \- Workflow Item Presenter](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md)」に基づいています。  
+1.  1 つ目の手順では、他のアクティビティを受け取るドロップ ゾーンを提供する <xref:System.Activities.Presentation.WorkflowItemPresenter> を使用してカスタム アクティビティ デザイナーを作成する方法を説明します。 この手順がに基づいて、[カスタム複合デザイナー - Workflow 項目プレゼンター](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md)サンプルです。  
   
-2.  2 つ目の手順では、含まれている要素のコレクションを編集するために必要な機能を提供する <xref:System.Activities.Presentation.WorkflowItemsPresenter> を使用してカスタム アクティビティ デザイナーを作成する方法を説明します。この手順は、「[カスタム複合デザイナー \- Workflow Items Presenter](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md)」に基づいています。  
+2.  2 つ目の手順では、含まれている要素のコレクションを編集するために必要な機能を提供する <xref:System.Activities.Presentation.WorkflowItemsPresenter> を使用してカスタム アクティビティ デザイナーを作成する方法を説明します。 この手順がに基づいて、[カスタム複合デザイナー - Workflow Items Presenter](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md)サンプルです。  
   
-### WorkflowItemPresenter を使用してドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成するには  
+### <a name="to-create-a-custom-activity-designer-with-a-drop-zone-using-workflowitempresenter"></a>WorkflowItemPresenter を使用してドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成するには  
   
 1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。  
   
-2.  **\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト…\]** をクリックします。  
+2.  **ファイル**] メニューのをポイント**新規**、し、[**プロジェクト.**.  
   
-     **\[新しいプロジェクト\]** ダイアログ ボックスが表示されます。  
+     **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
-3.  **\[インストールされているテンプレート\]** ペインで任意の言語を選択し、**\[Windows\]** を選択します。  
+3.  **インストールされたテンプレート**ペインで、 **Windows**優先する言語のカテゴリからです。  
   
-4.  **\[テンプレート\]** ペインで、**\[WPF アプリケーション\]** を選択します。  
+4.  **テンプレート**ペインで、 **WPF アプリケーション**です。  
   
-5.  **\[名前\]** ボックスに、「`UsingWorkflowItemPresenter`」と入力します。  
+5.  **名前**ボックスに、入力`UsingWorkflowItemPresenter`です。  
   
-6.  **\[場所\]** ボックスにプロジェクトを保存するディレクトリを入力するか、**\[参照\]** をクリックしてディレクトリを選択します。  
+6.  **場所**ボックスで、プロジェクトを保存ディレクトリを入力**参照**まで移動します。  
   
-7.  **\[ソリューション\]** ボックスは既定値のままにしておきます。  
+7.  **ソリューション**ボックスで、既定値をそのまま使用します。  
   
-8.  **\[OK\]** をクリックします。  
+8.  **[OK]** をクリックします。  
   
-9. **\[ソリューション エクスプローラー\]** で MainWindows.xaml ファイルを右クリックし、**\[削除\]** をクリックします。**\[Microsoft Visual Studio\]** のダイアログ ボックスで **\[OK\]** をクリックして削除を確定します。  
+9. MainWindows.xaml ファイルを右クリックして、**ソリューション エクスプ ローラー**[**削除**ことを確認および**[ok]**で、 **Microsoft Visual Studio**] ダイアログ ボックス。  
   
-10. **\[ソリューション エクスプローラー\]** で UsingWorkflowItemPresenter プロジェクトを右クリックし、**\[追加\]**、**\[新しい項目…\]** の順にクリックして、**\[新しい項目の追加\]** ダイアログを表示します。ダイアログの左側にある **\[インストールされているテンプレート\]** セクションで、**\[WPF\]** カテゴリを選択します。  
+10. UsingWorkflowItemPresenter プロジェクトを右クリックして**ソリューション エクスプ ローラー****追加**、し**新しい項目の追加.** 呼び出すこと、**新しい項目の追加**ダイアログし、選択、 **WPF**からカテゴリ、**インストールされたテンプレート**左側のセクションでします。  
   
-11. **\[ウィンドウ \(WPF\)\]** テンプレートを選択し、"`RehostingWFDesigner`" という名前を付けて、**\[追加\]** をクリックします。  
+11. 選択、**ウィンドウ (WPF)**テンプレート、名前を付けます`RehostingWFDesigner`、 をクリック**追加**です。  
   
 12. RehostingWFDesigner.xaml ファイルを開き、次のコードを貼り付けてアプリケーションの UI を定義します。  
   
-    ```  
-  
+    ```xml  
     <Window x:Class=" UsingWorkflowItemPresenter.RehostingWFDesigner"  
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
@@ -107,13 +110,11 @@ caps.handback.revision: 25
             <Border Grid.Column="2" Name="PropertyBorder"/>  
         </Grid>  
     </Window>  
-  
     ```  
   
-13. アクティビティ デザイナーをアクティビティ タイプと関連付けるには、そのアクティビティ デザイナーをメタデータ ストアを使用して登録する必要があります。この操作を行うには、`RegisterMetadata` メソッドを `RehostingWFDesigner` クラスに追加します。`RegisterMetadata` メソッドのスコープで <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder> オブジェクトを作成し、<xref:System.Activities.Presentation.Metadata.AttributeTableBuilder.AddCustomAttributes%2A> メソッドを呼び出して属性を追加します。<xref:System.Activities.Presentation.Metadata.MetadataStore.AddAttributeTable%2A> メソッドを呼び出して <xref:System.Activities.Presentation.Metadata.AttributeTable> をメタデータ ストアに追加します。次のコードには、デザイナーの再ホスト ロジックが含まれています \(メタデータの登録、`SimpleNativeActivity` のツールボックスへの追加、およびワークフローの作成\)。このコードを RehostingWFDesigner.xaml.cs ファイルに追加します。  
+13. アクティビティ デザイナーをアクティビティ タイプと関連付けるには、そのアクティビティ デザイナーをメタデータ ストアを使用して登録する必要があります。 この操作を行うには、`RegisterMetadata` メソッドを `RehostingWFDesigner` クラスに追加します。 `RegisterMetadata` メソッドのスコープで <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder> オブジェクトを作成し、<xref:System.Activities.Presentation.Metadata.AttributeTableBuilder.AddCustomAttributes%2A> メソッドを呼び出して属性を追加します。 <xref:System.Activities.Presentation.Metadata.MetadataStore.AddAttributeTable%2A> メソッドを呼び出して <xref:System.Activities.Presentation.Metadata.AttributeTable> をメタデータ ストアに追加します。 次のコードには、デザイナーの再ホスト ロジックが含まれています  (メタデータの登録、`SimpleNativeActivity` のツールボックスへの追加、およびワークフローの作成)。 このコードを RehostingWFDesigner.xaml.cs ファイルに追加します。  
   
     ```  
-  
     using System;  
     using System.Activities.Core.Presentation;  
     using System.Activities.Presentation;  
@@ -159,12 +160,11 @@ caps.handback.revision: 25
             }  
         }  
     }  
-  
     ```  
   
-14. ソリューション エクスプローラーで \[参照設定\] ディレクトリを右クリックし、**\[参照の追加…\]** をクリックして、**\[参照の追加\]** ダイアログを表示します。  
+14. ソリューション エクスプ ローラーで 参照設定 ディレクトリを右クリックし **の参照を追加しています.** 呼び出すこと、**参照の追加**ダイアログ。  
   
-15. **\[.NET\]** タブをクリックし、**\[System.Activities.Core.Presentation\]** という名前のアセンブリを見つけて選択し、**\[OK\]** をクリックします。  
+15. クリックして、 **.NET**という名前のアセンブリの検索 タブで、 **System.Activities.Core.Presentation**選択して、をクリックして**OK**です。  
   
 16. 同じ手順で次のアセンブリへの参照を追加します。  
   
@@ -174,19 +174,18 @@ caps.handback.revision: 25
   
     3.  System.ServiceModel.Activities.dll  
   
-17. App.xaml ファイルを開き、StartUpUri の値を "RehostingWFDesigner.xaml" に変更します。  
+17. App.xaml ファイルを開き、StartUpUri の値を"RehostingWFDesigner.xaml"に変更します。  
   
-18. **\[ソリューション エクスプローラー\]** で UsingWorkflowItemPresenter プロジェクトを右クリックし、**\[追加\]**、**\[新しい項目…\]** の順にクリックして、**\[新しい項目の追加\]** ダイアログを表示します。ダイアログの左側にある **\[インストールされているテンプレート\]** セクションで、**\[ワークフロー\]** カテゴリを選択します。  
+18. UsingWorkflowItemPresenter プロジェクトを右クリックして**ソリューション エクスプ ローラー****追加**、し**新しい項目の追加.** 呼び出すこと、**新しい項目の追加**ダイアログし、選択、**ワークフロー**カテゴリ フォーム、**インストールされたテンプレート**左側のセクションでします。  
   
-19. **\[アクティビティ デザイナー\]** テンプレートを選択し、"`SimpleNativeDesigner`" という名前を付けて、**\[追加\]** をクリックします。  
+19. 選択、**アクティビティ デザイナー**テンプレート、名前を付けます`SimpleNativeDesigner`、 をクリック**追加**です。  
   
-20. SimpleNativeDesigner.xaml ファイルを開いて次のコードを貼り付けます。このコードは、<xref:System.Activities.Presentation.ActivityDesigner> をルート要素として使用し、子の型を複合アクティビティ デザイナーに表示できるように、バインディングを使用してデザイナーに <xref:System.Activities.Presentation.WorkflowItemPresenter> を統合する方法を示しています。  
+20. SimpleNativeDesigner.xaml ファイルを開いて次のコードを貼り付けます。 このコードは、<xref:System.Activities.Presentation.ActivityDesigner> をルート要素として使用し、子の型を複合アクティビティ デザイナーに表示できるように、バインディングを使用してデザイナーに <xref:System.Activities.Presentation.WorkflowItemPresenter> を統合する方法を示しています。  
   
     > [!NOTE]
     >  <xref:System.Activities.Presentation.ActivityDesigner> のスキーマでは、カスタム アクティビティ デザイナー定義に 1 つの子要素のみを追加できます。ただし、この要素は、`StackPanel`、`Grid` などの複合 UI 要素の可能性があります。  
   
-    ```  
-  
+    ```xml  
     <sap:ActivityDesigner x:Class=" UsingWorkflowItemPresenter.SimpleNativeDesigner"  
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
@@ -218,17 +217,15 @@ caps.handback.revision: 25
             <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}" />  
         </Grid>  
     </sap:ActivityDesigner>  
-  
     ```  
   
-21. **\[ソリューション エクスプローラー\]** で UsingWorkflowItemPresenter プロジェクトを右クリックし、**\[追加\]**、**\[新しい項目…\]** の順にクリックして、**\[新しい項目の追加\]** ダイアログを表示します。ダイアログの左側にある **\[インストールされているテンプレート\]** セクションで、**\[ワークフロー\]** カテゴリを選択します。  
+21. UsingWorkflowItemPresenter プロジェクトを右クリックして**ソリューション エクスプ ローラー****追加**、し**新しい項目の追加.** 呼び出すこと、**新しい項目の追加**ダイアログし、選択、**ワークフロー**カテゴリ フォーム、**インストールされたテンプレート**左側のセクションでします。  
   
-22. **\[コード アクティビティ\]** テンプレートを選択し、"`SimpleNativeActivity`" という名前を付けて、**\[追加\]** をクリックします。  
+22. 選択、**コード アクティビティ**テンプレート、名前を付けます`SimpleNativeActivity`、 をクリック**追加**です。  
   
 23. SimpleNativeActivity.cs ファイルに次のコードを入力して、`SimpleNativeActivity` クラスを実装します。  
   
     ```  
-  
     using System.Activities;  
   
     namespace UsingWorkflowItemPresenter  
@@ -253,20 +250,19 @@ caps.handback.revision: 25
             }  
         }  
     }  
-  
     ```  
   
-24. **\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  
+24. 選択**ソリューションのビルド**から、**ビルド**メニュー。  
   
-25. **\[デバッグ\]** メニューの **\[デバッグなしで開始\]** をクリックして、再ホストされたカスタム デザイン ウィンドウを開きます。  
+25. 選択**デバッグなしで開始**から、**デバッグ**を開くには、再ホストされたカスタム デザイン ウィンドウのメニュー。  
   
-### WorkflowItemsPresenter を使用してカスタム アクティビティ デザイナーを作成するには  
+### <a name="to-create-a-custom-activity-designer-using-workflowitemspresenter"></a>WorkflowItemsPresenter を使用してカスタム アクティビティ デザイナーを作成するには  
   
-1.  2 つ目のカスタム アクティビティ デザイナーの手順は、1 つ目の手順とほとんど同じですが、いくつかの変更点があります。まず、2 つ目のアプリケーションには "`UsingWorkflowItemsPresenter`" という名前を付けます。また、このアプリケーションでは新しいカスタム アクティビティを定義しません。  
+1.  2 番目のカスタム アクティビティ デザイナーの手順は、2 番目のアプリケーションの名前を修正して、いくつか、最初の 1 つは、parallels`UsingWorkflowItemsPresenter`です。 また、このアプリケーションでは新しいカスタム アクティビティを定義しません。  
   
-2.  主な相違点は、CustomParallelDesigner.xaml ファイルと RehostingWFDesigner.xaml.cs ファイルに含まれています。次のコードは、UI を定義する CustomParallelDesigne.xaml ファイルのコードです。  
+2.  主な相違点は、CustomParallelDesigner.xaml ファイルと RehostingWFDesigner.xaml.cs ファイルに含まれています。 次のコードは、UI を定義する CustomParallelDesigne.xaml ファイルのコードです。  
   
-    ```  
+    ```xml  
     <sap:ActivityDesigner x:Class=" UsingWorkflowItemsPresenter.CustomParallelDesigner"  
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
@@ -308,13 +304,11 @@ caps.handback.revision: 25
             <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}"/>  
         </Grid>  
     </sap:ActivityDesigner>  
-  
     ```  
   
 3.  次のコードは、再ホスト ロジックを提供する RehostingWFDesigner.xaml.cs ファイルのコードです。  
   
     ```  
-  
     using System;  
     using System.Activities.Core.Presentation;  
     using System.Activities.Presentation;  
@@ -357,10 +351,10 @@ caps.handback.revision: 25
     }  
     ```  
   
-## 参照  
- <xref:System.Activities.Presentation.ActivityDesigner>   
- <xref:System.Activities.Presentation.WorkflowItemPresenter>   
- <xref:System.Activities.Presentation.WorkflowItemsPresenter>   
- <xref:System.Activities.Presentation.WorkflowViewElement>   
- <xref:System.Activities.Presentation.Model.ModelItem>   
- [ワークフロー デザイン操作のカスタマイズ](../../../docs/framework/windows-workflow-foundation//customizing-the-workflow-design-experience.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Activities.Presentation.ActivityDesigner>  
+ <xref:System.Activities.Presentation.WorkflowItemPresenter>  
+ <xref:System.Activities.Presentation.WorkflowItemsPresenter>  
+ <xref:System.Activities.Presentation.WorkflowViewElement>  
+ <xref:System.Activities.Presentation.Model.ModelItem>  
+ [ワークフロー デザイン操作のカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)
