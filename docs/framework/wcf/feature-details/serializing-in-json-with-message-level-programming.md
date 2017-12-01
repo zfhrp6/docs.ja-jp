@@ -1,45 +1,47 @@
 ---
-title: "メッセージ レベルのプログラミングによる JSON 形式でのシリアル化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ レベルのプログラミングによる JSON 形式でのシリアル化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5f940ba2-57ee-4c49-a779-957c5e7e71fa
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 33337f75032031ccfc81173f188f4ff7695ffd40
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# メッセージ レベルのプログラミングによる JSON 形式でのシリアル化
-WCF は、JSON 形式でのデータのシリアル化をサポートします。このトピックでは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用して型をシリアル化することを WCF に命令する方法について説明します。  
+# <a name="serializing-in-json-with-message-level-programming"></a><span data-ttu-id="ff3a0-102">メッセージ レベルのプログラミングによる JSON 形式でのシリアル化</span><span class="sxs-lookup"><span data-stu-id="ff3a0-102">Serializing in Json with Message Level Programming</span></span>
+<span data-ttu-id="ff3a0-103">WCF は、JSON 形式でのデータのシリアル化をサポートします。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-103">WCF supports serializing data in JSON format.</span></span> <span data-ttu-id="ff3a0-104">このトピックでは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用して型をシリアル化することを WCF に命令する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-104">This topic describes how to tell WCF to serialize your types using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.</span></span>  
   
-## 型指定されたメッセージのプログラミング  
- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> は、<xref:System.ServiceModel.Web.WebGetAttribute> または <xref:System.ServiceModel.Web.WebInvokeAttribute> がサービス操作に適用されるときに使用されます。どちらの属性でも、`RequestFormat` と `ResponseFormat` を指定できます。要求と応答に JSON を使用するには、両方の属性を `WebMessageFormat.Json` に設定します。JSON を使用するには、<xref:System.ServiceModel.WebHttpBinding> を使用する必要があります。これにより、<xref:System.ServiceModel.Description.WebHttpBehavior> が自動的に構成されます。WCF のシリアル化の詳細については、「[シリアル化と逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)」および「[Windows Communication Foundation でのシリアル化](http://msdn.microsoft.com/magazine/cc163569.aspx)」を参照してください。JSON と WCF の詳細については、「[WCF の RESTful サービスの概要](http://msdn.microsoft.com/magazine/dd315413.aspx)」、「[.NET 3.5 での JSON が有効な WCF サービスの作成](http://www.pluralsight-training.net/community/blogs/fritz/archive/2008/01/31/50121.aspx)」、および「[WCF REST の概要](http://msdn.microsoft.com/netframework/dd547388)」を参照してください。  
+## <a name="typed-message-programming"></a><span data-ttu-id="ff3a0-105">型指定されたメッセージのプログラミング</span><span class="sxs-lookup"><span data-stu-id="ff3a0-105">Typed Message Programming</span></span>  
+ <span data-ttu-id="ff3a0-106"><xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> は、<xref:System.ServiceModel.Web.WebGetAttribute> または <xref:System.ServiceModel.Web.WebInvokeAttribute> がサービス操作に適用されるときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-106">The <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> is used when the <xref:System.ServiceModel.Web.WebGetAttribute> or the <xref:System.ServiceModel.Web.WebInvokeAttribute> is applied to a service operation.</span></span> <span data-ttu-id="ff3a0-107">どちらの属性でも、`RequestFormat` と `ResponseFormat` を指定できます。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-107">Both of these attributes allow you to specify the `RequestFormat` and `ResponseFormat`.</span></span> <span data-ttu-id="ff3a0-108">要求と応答に JSON を使用するには、両方の属性を `WebMessageFormat.Json` に設定します。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-108">To use JSON for requests and responses set both of these to `WebMessageFormat.Json`.</span></span>  <span data-ttu-id="ff3a0-109">JSON を使用するには、<xref:System.ServiceModel.WebHttpBinding> を使用する必要があります。これにより、<xref:System.ServiceModel.Description.WebHttpBehavior> が自動的に構成されます。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-109">In order to use JSON you must use the <xref:System.ServiceModel.WebHttpBinding> which automatically configures the <xref:System.ServiceModel.Description.WebHttpBehavior>.</span></span> <span data-ttu-id="ff3a0-110">WCF のシリアル化の詳細についてを参照してください:[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)、 [Windows Communication Foundation でのシリアル化](http://msdn.microsoft.com/magazine/cc163569.aspx)です。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-110">For more information about WCF serialization, see: [Serialization and Deserialization](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md), [Serialization in Windows Communication Foundation](http://msdn.microsoft.com/magazine/cc163569.aspx).</span></span> <span data-ttu-id="ff3a0-111">JSON と WCF の詳細については、次を参照してください[An Introduction to WCF を使用した RESTfull サービス](http://msdn.microsoft.com/magazine/dd315413.aspx)、 [.NET 3.5 で WCF サービスを作成する JSON が有効な](http://www.pluralsight-training.net/community/blogs/fritz/archive/2008/01/31/50121.aspx)、および[WCFでRESTの概要](http://msdn.microsoft.com/netframework/dd547388)。.</span><span class="sxs-lookup"><span data-stu-id="ff3a0-111">For more information about JSON and WCF see [An Introduction to RESTfull Services with WCF](http://msdn.microsoft.com/magazine/dd315413.aspx), [Creating JSON-enabled WCF Services in .NET 3.5](http://www.pluralsight-training.net/community/blogs/fritz/archive/2008/01/31/50121.aspx), and [Overview of REST in WCF](http://msdn.microsoft.com/netframework/dd547388).</span></span>  
   
 > [!IMPORTANT]
->  JSON を使用するには、SOAP 通信をサポートしていない <xref:System.ServiceModel.WebHttpBinding> と <xref:System.ServiceModel.Description.WebHttpBehavior> を使用する必要があります。<xref:System.ServiceModel.WebHttpBinding> と通信を行うサービスは、サービス メタデータの公開をサポートしません。したがって、Visual Studio の "サービス参照の追加" 機能または svcutil コマンド ライン ツールを使用してクライアント側プロキシを生成することはできません。<xref:System.ServiceModel.WebHttpBinding> を使用するサービスをプログラムで呼び出す方法については、「[WCF で REST サービスを使用する方法](http://blogs.msdn.com/b/pedram/archive/2008/04/21/how-to-consume-rest-services-with-wcf.aspx)」を参照してください。  
+>  <span data-ttu-id="ff3a0-112">JSON を使用するには、SOAP 通信をサポートしていない <xref:System.ServiceModel.WebHttpBinding> と <xref:System.ServiceModel.Description.WebHttpBehavior> を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-112">Using JSON requires use of <xref:System.ServiceModel.WebHttpBinding> and <xref:System.ServiceModel.Description.WebHttpBehavior> which do not support SOAP communication.</span></span> <span data-ttu-id="ff3a0-113">サービスと通信する、<xref:System.ServiceModel.WebHttpBinding>サービス メタデータの公開をサポートしないため、クライアント側プロキシを生成する Visual Studio の サービス参照の追加の機能または svcutil コマンド ライン ツールを使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-113">Services that communicate with the <xref:System.ServiceModel.WebHttpBinding> do not support exposing service metadata so you will not be able to use Visual Studio’s Add Service Reference functionality or the svcutil command-line tool to generate a client-side proxy.</span></span> <span data-ttu-id="ff3a0-114">使用するサービス プログラムでの呼び出し方法の詳細<xref:System.ServiceModel.WebHttpBinding>を参照してください[wcf REST サービスを使用する方法](http://blogs.msdn.com/b/pedram/archive/2008/04/21/how-to-consume-rest-services-with-wcf.aspx)です。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-114">For more information how you can programmatically call services that use <xref:System.ServiceModel.WebHttpBinding>, see [How to Consume REST Services with WCF](http://blogs.msdn.com/b/pedram/archive/2008/04/21/how-to-consume-rest-services-with-wcf.aspx).</span></span>  
   
-## 型指定されていないメッセージのプログラミング  
- 型指定されていないメッセージ オブジェクトを直接操作する場合は、型指定されていないメッセージのプロパティを明示的に設定して JSON としてシリアル化する必要があります。これを行う方法を次のコード スニペットに示します。  
+## <a name="untyped-message-programming"></a><span data-ttu-id="ff3a0-115">型指定されていないメッセージのプログラミング</span><span class="sxs-lookup"><span data-stu-id="ff3a0-115">Untyped Message Programming</span></span>  
+ <span data-ttu-id="ff3a0-116">型指定されていないメッセージ オブジェクトを直接操作する場合は、型指定されていないメッセージのプロパティを明示的に設定して JSON としてシリアル化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-116">When working directly with untyped Message objects, you must explicitly set the properties on the untyped message to serialize it as JSON.</span></span> <span data-ttu-id="ff3a0-117">これを行う方法を次のコード スニペットに示します。</span><span class="sxs-lookup"><span data-stu-id="ff3a0-117">The following code snippet shows how to do this.</span></span>  
   
 ```  
- Message response = Message.CreateMessage(  
+ Message response = Message.CreateMessage(  
                   MessageVersion.None,    // No SOAP message version  
-                             "*",                     // SOAP action, ignored since this is JSON  
-                             "Response string: JSON format specified", // Message body  
-                             new DataContractJsonSerializer(typeof(string))); // Specify DataContractJsonSerializer  
+                             "*",                     // SOAP action, ignored since this is JSON  
+                             "Response string: JSON format specified", // Message body  
+                             new DataContractJsonSerializer(typeof(string))); // Specify DataContractJsonSerializer  
       response.Properties.Add( WebBodyFormatMessageProperty.Name,   
-                    new WebBodyFormatMessageProperty(WebContentFormat.Json)); // Use JSON format  
-  
+                    new WebBodyFormatMessageProperty(WebContentFormat.Json)); // Use JSON format  
 ```  
   
-## 参照  
- [AJAX の統合と JSON のサポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)   
- [スタンドアロン JSON のシリアル化](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)   
- [JSON シリアル化](../../../../docs/framework/wcf/samples/json-serialization.md)
+## <a name="see-also"></a><span data-ttu-id="ff3a0-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="ff3a0-118">See Also</span></span>  
+ [<span data-ttu-id="ff3a0-119">AJAX の統合と JSON のサポート</span><span class="sxs-lookup"><span data-stu-id="ff3a0-119">AJAX Integration and JSON Support</span></span>](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
+ [<span data-ttu-id="ff3a0-120">スタンドアロン JSON のシリアル化</span><span class="sxs-lookup"><span data-stu-id="ff3a0-120">Stand-Alone JSON Serialization</span></span>](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)  
+ [<span data-ttu-id="ff3a0-121">JSON のシリアル化</span><span class="sxs-lookup"><span data-stu-id="ff3a0-121">JSON Serialization</span></span>](../../../../docs/framework/wcf/samples/json-serialization.md)
