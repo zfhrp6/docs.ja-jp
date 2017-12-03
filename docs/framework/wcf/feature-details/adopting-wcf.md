@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 49ba71e2-9468-4082-84c5-cf8daf95e34a
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 15fc02882148054fe53534c75905f51cfffe68fe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e27ee5f2e1b2ad042fd8c0104e89b99eb5e4bc96
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="adopting-windows-communication-foundation"></a>Windows Communication Foundation の採用
 ASP.NET を使用して開発した既存のアプリケーションのメンテナンスを続行しながら、新規開発については [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を選択できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、どのようなシナリオにおいても .NET Framework を使用してビルドされたアプリケーションとの通信を容易に行うための最適な選択となるように設計されているため、これまで ASP.NET では実現できなかったような方法でソフトウェア通信における多様な問題を解決するための標準ツールとして使用できます。  

@@ -16,14 +16,14 @@ helpviewer_keywords:
 - WCF Data Services, service operations
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 43f2b4bf7a7617587d76252108ec1ab5fb194a11
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 578f62773fc63ac48977116834bb5cd3238050d3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="service-operations-wcf-data-services"></a>サービス操作 (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスでサービス操作を定義して、サーバーでメソッドを公開できます。 その他のデータ サービス リソースと同様に、サービス操作は URI によってアドレス指定できます。 サービス操作では、データ サービスでビジネス ロジックを公開できます (検証ロジックの実装、ロール ベースのセキュリティの適用、特殊なクエリ機能の公開など)。 サービス操作は、<xref:System.Data.Services.DataService%601> から派生するデータ クラスに追加されるメソッドです。 その他のすべてのデータ サービス リソースと同様に、パラメーターをサービス操作メソッドに指定できます。 たとえば、次のサービス操作の URI (に基づいて、[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)データ サービス) は、値を渡します`London`を`city`パラメーター。  

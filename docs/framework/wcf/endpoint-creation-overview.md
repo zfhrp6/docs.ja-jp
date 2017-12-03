@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: endpoints [WCF], overview
 ms.assetid: f4dce0fb-6f54-47e6-8054-86d7f574b91c
 caps.latest.revision: "40"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6b507f47c7dd4371d297b9ada1cb4610214aecb7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 309d19ee75f506ab781703ebe1068d6d90d9c47c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="endpoint-creation-overview"></a>エンドポイントの作成の概要
 すべての通信、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスが使用して行われる、*エンドポイント*サービス。 エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。 ここでは、エンドポイントの構造を説明し、構成やコード内にエンドポイントを定義する方法を概説します。  

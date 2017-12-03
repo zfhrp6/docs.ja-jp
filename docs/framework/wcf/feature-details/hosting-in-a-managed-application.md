@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 30d531d436937bf5183ac0c28d59425ea71762e8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3e6543f1faec5d3298c9a2b825b3a016eb5e7d09
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="hosting-in-a-managed-application"></a>マネージ アプリケーションのホスト
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスは、任意の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アプリケーションでホストできます。 自己ホスト型サービスは、展開を要するインフラストラクチャが最も少ないので、最も柔軟なホスト オプションです。 ただし、マネージ アプリケーションは、インターネット インフォメーション サービス (IIS) や Windows サービスなど、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の他のホスト オプションが備えている高度なホスト機能と管理機能を提供しないので、堅牢さに最も乏しいホスト オプションでもあります。  

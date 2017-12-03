@@ -16,14 +16,14 @@ helpviewer_keywords:
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 569830c5fbb9ecb837482202a4eb5a096ce21962
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c15ca5efcb23fa6705a4fcfa3eac6d6db09fcbad
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>データ サービス リソースへのアクセス (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]サポートしている、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]は Uri によってアドレス指定できるリソースを含むフィードとしてデータを公開します。 これらのリソースがのエンティティとリレーションシップの規則に従って表現は、 [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)です。 このモデルでは、エンティティはアプリケーション ドメイン内のデータの操作単位 (データ型) を表します (顧客、注文、項目、製品など)。 エンティティ データは、Representational State Transfer (REST) のセマンティクス (特に、標準的な HTTP 動詞である GET、PUT、POST、および DELETE) を使用してアクセスおよび変更できます。  

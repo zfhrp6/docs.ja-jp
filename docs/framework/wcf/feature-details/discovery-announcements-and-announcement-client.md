@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 426c6437-f8d2-4968-b23a-18afd671aa4b
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 36003933a9fb49fe4fe4f0b677ee584066d415ac
-ms.sourcegitcommit: ea1fd4ff4c36169fc722ef263e24884c5cd431a2
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a6da9c2e251a6592bb0af039d552d02e7e4fd3fd
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discovery-announcements-and-announcement-client"></a>探索アナウンスとアナウンス クライアント
 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の探索機能では、コンポーネントがその可用性をアナウンスできます。 そのように構成されている場合、サービスは Hello アナウンスと Bye アナウンスを送信します。 クライアントまたはその他のコンポーネントは、それらのアナウンス メッセージをリッスンして、対応します。 これにより、クライアントは別の手段でサービスを認識します。 アナウンス機能にはいくつかの用途があります。たとえば、サービスがネットワークに頻繁に出入りする場合は、サービスを検索するよりも、アナウンスを利用する方が効果的です。 この方法を使用すると、ネットワーク トラフィックが減少し、クライアントは、アナウンスを受信するとすぐに、そのサービスが存在するかどうかを知ることができます。  

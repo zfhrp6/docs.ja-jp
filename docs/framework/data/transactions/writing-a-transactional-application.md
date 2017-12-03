@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a4d891f2-6fc8-4395-93c6-6819492406e0
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ec8537c4fdf80ffe448bba1376eacf519d67bcbe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c988f5ab5a342ad3282414634ca3bfc21f481ea5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="writing-a-transactional-application"></a>トランザクション アプリケーションの作成
 トランザクション アプリケーションのプログラマは、<xref:System.Transactions> 名前空間に用意されている 2 つのプログラミング モデルを活用して、トランザクションを作成できます。 使用して、明示的なプログラミング モデルを使用することができます、<xref:System.Transactions.Transaction>クラス、または暗黙的なプログラミング モデルがトランザクションは自動的に管理のインフラストラクチャでを使用して、<xref:System.Transactions.TransactionScope>クラスです。 開発のため、暗黙のトランザクション モデルを使用することをお勧めします。 トランザクション スコープを使用する方法の詳細についてを見つけることができます、[トランザクション スコープを使用して、暗黙的なトランザクションを実装する](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)トピックです。  

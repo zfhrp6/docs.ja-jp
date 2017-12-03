@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5fbf45a3447a1dc5fb449628bdd7f741fb3e8324
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 46ddf167a6cbc0ba6c73cfc53020ad33dbf10a2e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>データ サービス クライアント ライブラリの生成 (WCF Data Services)
 実装するデータ サービス、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]によって公開されているデータ モデルを記述したサービス メタデータ ドキュメントを返すことができます、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。 詳細については、次を参照してください。 [OData: サービス メタデータ ドキュメント](http://go.microsoft.com/fwlink/?LinkId=186070)です。 使用することができます、**サービス参照の追加**への参照を追加する Visual Studio でのダイアログ、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのサービスです。 によって返されるメタデータへの参照を追加するこのツールを使用する場合、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]クライアント プロジェクトでのフィードを次の操作を実行します。  

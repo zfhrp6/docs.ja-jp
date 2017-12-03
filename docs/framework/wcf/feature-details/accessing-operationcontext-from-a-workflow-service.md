@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3d18626412c0a6233c8792a4f19d5d05ef083333
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 445a7c5e9b0665fcf57138144c8cf3445f2d15f2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="accessing-operationcontext-from-a-workflow-service"></a>ワークフロー サービスから OperationContext へのアクセス
 ワークフロー サービス内の <xref:System.ServiceModel.OperationContext> にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。 これには、<xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> への参照が渡される <xref:System.ServiceModel.OperationContext> メソッドをオーバーライドします。 このトピックでは、カスタム ヘッダーを取得するためにこの実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> に提示するカスタム アクティビティの実装方法を順に説明します。  カスタム アクティビティと同じ動作を実装、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティとその、 <xref:System.ServiceModel.Activities.Receive> 、内部に配置されますが、<xref:System.ServiceModel.Activities.IReceiveMessageCallback>が呼び出されますと<xref:System.ServiceModel.OperationContext>情報を取得します。  このトピックでは、クライアント側 <xref:System.ServiceModel.OperationContext> にアクセスして、<xref:System.ServiceModel.Activities.ISendMessageCallback> インターフェイス経由で送信ヘッダーを追加する方法も説明します。  

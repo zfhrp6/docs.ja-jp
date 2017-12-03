@@ -18,14 +18,14 @@ helpviewer_keywords:
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e31f14d59bb2ac7caa233ff60c60eb944ee5bbbf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 12820b6b2b864bfd00474abc118fe9b346b51bc5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="feed-customization-wcf-data-services"></a>フィードのカスタマイズ (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]使用して、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]データ フィードとして公開します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]データ フィードを Atom と JavaScript Object Notation (JSON) の両方の形式をサポートします。 Atom フィードを使用すると[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]エンティティとリレーションシップは、HTTP メッセージの本文に含めることができる XML 形式などのデータをシリアル化の標準的な方法を提供します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]エンティティに含まれているデータと Atom 要素間の既定のエンティティ プロパティ マッピングを定義します。 詳細については、次を参照してください。 [OData: Atom 形式](http://go.microsoft.com/fwlink/?LinkID=185794)です。  

@@ -16,14 +16,14 @@ helpviewer_keywords:
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6a11e7e499f705f4aace791320057e04205db58c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7fa76c5672b4117c446aca145b7cf98dae7801d4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>データ サービスのホスティング (WCF Data Services)
 使用して[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]、としてデータを公開するサービスを作成することができます、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 このデータ サービスは、<xref:System.Data.Services.DataService%601> から継承されたクラスとして定義されます。 このクラスは、要求メッセージを処理、データ ソースに対する更新を実行に必要なの応答メッセージの生成に必要な機能を提供[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]です。 ただし、データ サービスにバインドできず着信 HTTP 要求のネットワーク ソケットでリッスンします。 この機能要件のため、データ サービスはホスティング コンポーネントに依存します。  

@@ -13,14 +13,14 @@ helpviewer_keywords:
 - access control [WCF]
 ms.assetid: 9d576122-3f55-4425-9acf-b23d0781e966
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f43de08a81afcf9ff6ab29b862f22c2935eca55f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5cb3afec00fea5432329bd30fc993ac0cafd8b10
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="access-control-mechanisms"></a>アクセス制御機構
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、複数の方法でアクセスを制御できます。 ここでは、正しい機構を選択して使用できるように、さまざまな機構について簡単に説明し、各機構を使用するタイミングに関するヒントを提供します。 ここでは、アクセス テクノロジを単純なものから順に示します。 最も単純なのは <xref:System.Security.Permissions.PrincipalPermissionAttribute> で、最も複雑なのは ID モデルです。  

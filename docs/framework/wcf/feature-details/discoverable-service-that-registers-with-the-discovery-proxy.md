@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e6633491ec3b01a4ca3494639e9537c9f6441da5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ffe4a94328d2728ca936425a58d4d641922356a0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>探索プロキシで登録される探索可能なサービスの実装方法
 これは、探索プロキシの実装方法に関する 4 つのトピックのうちの 2 番目のトピックです。 前のトピックで[する方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)、探索プロキシを実装します。 このトピックでは、アナウンス メッセージ ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] および `Hello`) を探索プロキシに送信する `Bye` サービスを作成します。この送信により、サービスが探索プロキシに登録または登録解除されます。  

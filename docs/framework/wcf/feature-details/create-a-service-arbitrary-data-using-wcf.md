@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9541c46d029aa9f4e27a459ffcb9f32a7718039b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a7f868f02f309401c60737af8a69434d175eee1d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する
 開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではサポートされない形式のデータを、サービス操作から返す必要がある場合です。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルを使用して任意のデータを受信するサービスの作成方法について説明します。  

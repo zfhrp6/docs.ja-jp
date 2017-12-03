@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 77dec85ee12250080fc487d120749892a148ef17
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ee57276efda7edcc464c300e2f1d100b6a7c9109
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>方法 : WCF アクティブ化コンポーネントをインストールして設定する
 ここでは、HTTP ネットワーク プロトコルでは通信しない [!INCLUDE[wv](../../../../includes/wv-md.md)] サービスをホストするように Windows プロセス アクティブ化サービス (WAS: Windows Process Activation Service) を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に構成するために必要な手順について説明します。 以降の各セクションで、この構成に関する手順について概説します。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="to-install-the-wcf-non-http-activation-components"></a>WCF 非 HTTP アクティブ化コンポーネントをインストールするには  
   
-1.  クリックして、**開始**ボタンをクリックし、をクリックして**コントロール パネルの **です。  
+1.  クリックして、**開始**ボタンをクリックし、をクリックして**コントロール パネルの** です。  
   
 2.  をクリックして**プログラム**、クリックして**プログラムと機能**します。  
   

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - WCF, administration
 ms.assetid: 34c81c08-0e0f-4fbc-9ae8-91948640ee43
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2f103570cf7d94a9ac6256f3db991c44767fa7c4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4aa9cacfaa966bbe37618406f4b1413dec433726
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="administration-and-diagnostics"></a>管理と診断
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、アプリケーションのライフサイクルのさまざまな段階を監視できるようにする豊富な機能が用意されています。 たとえば、展開時に構成を使用してサービスとクライアントを設定できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、アプリケーションのパフォーマンス測定に役立つ多数のパフォーマンス カウンターが備わっています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。 アプリケーションにエラーが発生したり、適切に動作しなくなったりした場合は、イベント ログを使用して、何か重大なことが発生していないかを確認できます。 メッセージ ログとトレースを使用して、アプリケーションでどのようなイベントが発生しているのかをエンドツーエンドで確認することもできます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションが正常に動作しなくなった場合、開発者や IT 専門家は、これらの機能を使用してトラブルシューティングを行うことができます。  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0948c7447bcfd32ad666072ce6f74b1f6fd8aed8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 21cbeff554be6da77ce28e87b7f82ffdd58f542d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="message-security-in-wcf"></a>WCF のメッセージのセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、セキュリティを提供する 2 つの主なモード (`Transport` および `Message`) と、この 2 つを組み合わせた 3 番目のモード (`TransportWithMessageCredential`) があります。 ここでは、メッセージ セキュリティとその必要性について説明します。  

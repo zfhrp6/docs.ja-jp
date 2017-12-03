@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2d654ad24f8d23a47d2a3be3b07c42c104bb9b70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 25a6666127d16a8245093bdf11ae7d0e76fc8365
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>.NET Framework クライアント アプリケーションの作成 (WCF Data Services クイック スタート)
 これは、最後のタスク、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クイック スタート。 このタスクが、コンソール アプリケーションをソリューションに追加されたらへの参照を追加、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]この新しいクライアント、アプリケーションにアクセス フィード、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]生成されたクライアント データ サービス クラスおよびクライアントを使用して、クライアント アプリケーションからフィードライブラリ。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  **ソリューション エクスプ ローラー**ソリューションを右クリックしをクリックして**追加**、クリックして**新しいプロジェクト**です。  
   
-2.  **プロジェクトの種類**をクリックして**Windows**、し、[ **WPF アプリケーション**で、**テンプレート**ウィンドウです。  
+2.  **プロジェクトの種類**をクリックして**Windows**、し、 **WPF アプリケーション**で、**テンプレート**ウィンドウです。  
   
 3.  入力`NorthwindClient`プロジェクト名、およびクリック**OK**です。  
   
@@ -52,9 +52,9 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="to-access-data-service-data-in-the-wpf-application"></a>WPF アプリケーションのデータ サービスにアクセスするには  
   
-1.  **ソリューション エクスプ ローラー** [ **NorthwindClient**プロジェクトを右クリックし、クリックして、**参照の追加**です。  
+1.  **ソリューション エクスプ ローラー**  **NorthwindClient**プロジェクトを右クリックし、クリックして、**参照の追加**です。  
   
-2.  [参照の追加] ダイアログ ボックス、 **.NET** ] タブ、System.Data.Services.Client.dll アセンブリを選択し、をクリックして**OK**です。 **ソリューション エクスプ ローラー** [ **NorthwindClient**MainWindow.xaml ファイルのコード ページを開き、次の追加`using`ステートメント (`Imports` Visual Basic で)。  
+2.  参照の追加 ダイアログ ボックス、 **.NET**  タブ、System.Data.Services.Client.dll アセンブリを選択し、をクリックして**OK**です。 **ソリューション エクスプ ローラー**  **NorthwindClient**MainWindow.xaml ファイルのコード ページを開き、次の追加`using`ステートメント (`Imports` Visual Basic で)。  
   
      [!code-csharp[Astoria Quickstart Client#Using](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#using)]
      [!code-vb[Astoria Quickstart Client#Using](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#using)]  

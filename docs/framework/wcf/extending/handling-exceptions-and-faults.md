@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cf621ce53b1e0aa5fd95adbd9de01bdbd97392bb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3a69acb9b640c17e6641efc6c30798e3856ef6e9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="handling-exceptions-and-faults"></a>例外とエラーの処理
 例外は、サービスまたはクライアント実装内でエラーをローカルに伝達するために使用されます。 一方、エラーは、サーバーからクライアントまたはクライアントからサーバーのように、サービス境界を越えてエラーを伝達するために使用されます。 このようなエラーに加え、多くの場合、トランスポート チャネルはトランスポート固有の機構を使用して、トランスポート レベルのエラーを伝達します。 たとえば、HTTP トランスポートは、404 などのステータス コードを使用して、存在しないエンドポイントの URL (エラーを返信するエンドポイントが存在しないこと) を伝達します。 このドキュメントは、カスタム チャネル作成者にガイダンスを示す 3 つのセクションで構成されています。 最初のセクションでは、例外を定義しスローする状況と方法に関するガイダンスを示します。 2 番目のセクションでは、エラーの生成と使用に関するガイダンスを示します。 3 番目のセクションでは、実行中のアプリケーションのトラブルシューティングを行う際に、カスタム チャネルのユーザーにとって役立つトレース情報を提供する方法について説明します。  

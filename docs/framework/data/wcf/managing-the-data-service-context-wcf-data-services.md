@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 15b19d09-7de7-4638-9556-6ef396cc45ec
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 12a0a0b93bfb944a3032cc171f97f411de5d2aab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 50d523fdd0498aef7e662af5f4dc41b2394dcf42
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>データ サービス コンテキストの管理 (WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> クラスは、特定のデータ サービスに対してサポートされている操作をカプセル化します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスはステートレスですが、コンテキストはステートレスではありません。 したがって、使用することができます、<xref:System.Data.Services.Client.DataServiceContext>変更管理などの機能をサポートするために、データ サービスとのやり取りの間でクライアントの状態を維持するクラス。 このクラスは、ID の管理と変更の追跡も行います。  

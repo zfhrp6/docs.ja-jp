@@ -18,14 +18,14 @@ helpviewer_keywords:
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9185e02b812de6db885993cc4d151f0f857b00f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5eb97ea9db0fa7132b1ed4320bf73d124452c201
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="streaming-provider-wcf-data-services"></a>ストリーミング プロバイダー (WCF Data Services)
 データ サービスは、ラージ オブジェクトのバイナリ データを公開できます。 このバイナリ データは、ビデオ ストリームとオーディオ ストリーム、画像、ドキュメント ファイル、またはその他の種類のバイナリのメディアを表すことができます。 データ モデルのエンティティに 1 つ以上のバイナリ プロパティが含まれている場合、データ サービスは、このバイナリ データを応答フィードのエントリ内に Base-64 としてエンコードして返します。 読み込みと、この方法で大きなバイナリ データをシリアル化するには、パフォーマンスに影響するので、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]が所属するエンティティの独立したバイナリ データを取得するためのメカニズムを定義します。 これは、バイナリ データとエンティティを分離して 1 つ以上のデータ ストリームを生成することで実現されます。  

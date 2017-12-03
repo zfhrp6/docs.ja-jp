@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: AJAX integration and JSON support [WCF]
 ms.assetid: 3851a8fc-d861-4ac1-873c-96af0343d3a7
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4889c88dab77759f854da0069bb300d63ebb1a08
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 98efc62a133b86ab71e34671bc6385a5a94897ea
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ajax-integration-and-json-support"></a>AJAX の統合と JSON のサポート
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が ASP.NET AJAX (Asynchronous JavaScript and XML) と JSON (JavaScript Object Notation) データ形式をサポートするため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは AJAX クライアントに操作を公開できます。 AJAX クライアントは、JavaScript コードを実行し、HTTP 要求を使用してこのような [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスにアクセスする Web ページです。 このセクションのトピックでは、このサポートと実装方法について説明します。  

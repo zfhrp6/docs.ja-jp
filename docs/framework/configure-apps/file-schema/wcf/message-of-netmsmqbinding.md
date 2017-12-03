@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6ebf0240-d7be-4493-b0fe-f00fd5989d77
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f3b03fcce02c51563ed006e62a3f77f76bede777
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d91d97a27c06e8e6e3ab624c45c6853b1cc23e8f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltmessagegt-of-ltnetmsmqbindinggt"></a>&lt;netMsmqBinding&gt; の &lt;message&gt;
 この `netMsmqBinding` バインディングでの SOAP メッセージ セキュリティ設定を定義します。  
@@ -50,7 +50,7 @@ ms.lasthandoff: 11/21/2017
 |属性|説明|  
 |---------------|-----------------|  
 |algorithmSuite|MSMQ トランスポートを介して送信されるメッセージにメッセージ ベースのセキュリティを実現するために使用されるメッセージの暗号化およびキー ラップ アルゴリズムを設定します。<br /><br /> 既定値は `Aes256` です。 この属性は <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 型です。|  
-|clientCredentialType|MSMQ トランスポートで送信されるメッセージに対してクライアント認証を実行するときに使用される資格情報の種類を指定します。 以下の値が有効です。<br /><br /> -なし: これにより、匿名クライアントとの対話をサービスします。 サービスとクライアントはいずれも資格情報を要求しません。<br />Windows 資格情報の認証されたコンテキスト下にある SOAP 交換これにより、Windows: です。 これは、常に Kerberos ベースの認証を実行します。<br />-ユーザー名。 これにより、サービスを必要とする UserName 資格情報を使用してクライアントを認証します。 ここでは資格情報を使用して指定する必要があります、`clientCredentials`動作**注意:** [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]はパスワードを送信するには、ダイジェスト認証または派生キーのパスワードを使用して、メッセージ セキュリティのようなキーの使用をサポートしていません。   したがって、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、UserName 資格情報を使用する場合に交換が強制的に保護されるようにします。 このモードは、サービス証明書が、`clientCredential` 動作および `serviceCertificate` を使用してクライアント側で指定されることを要求します。 <br /><br /> 証明書: これにより、サービスを必要とする証明書を使用してクライアントを認証します。 この場合のクライアント資格情報は、`clientCredentials` 動作を使用して指定する必要があります。 この場合のサービス資格情報は、`clientCredentials` を指定して `serviceCertificate` 動作を使用することで、指定する必要があります。<br />-CardSpace: これにより、サービスを必要とする、CardSpace を使用してクライアントを認証します。 `serviceCertiifcate` は、`clientCredential` 動作で提供される必要があります。<br /><br /> 既定値は `Windows` です。 この属性は <xref:System.ServiceModel.MessageCredentialType> 型です。|  
+|clientCredentialType|MSMQ トランスポートで送信されるメッセージに対してクライアント認証を実行するときに使用される資格情報の種類を指定します。 以下の値が有効です。<br /><br /> -なし: これにより、匿名クライアントとの対話をサービスします。 サービスとクライアントはいずれも資格情報を要求しません。<br />Windows 資格情報の認証されたコンテキスト下にある SOAP 交換これにより、Windows: です。 これは、常に Kerberos ベースの認証を実行します。<br />-ユーザー名。 これにより、サービスを必要とする UserName 資格情報を使用してクライアントを認証します。 ここでは資格情報を使用して指定する必要があります、`clientCredentials`動作**注意:** [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]はパスワードを送信するには、ダイジェスト認証または派生キーのパスワードを使用して、メッセージ セキュリティのようなキーの使用をサポートしていません。 したがって、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、UserName 資格情報を使用する場合に交換が強制的に保護されるようにします。 このモードは、サービス証明書が、`clientCredential` 動作および `serviceCertificate` を使用してクライアント側で指定されることを要求します。 <br /><br /> 証明書: これにより、サービスを必要とする証明書を使用してクライアントを認証します。 この場合のクライアント資格情報は、`clientCredentials` 動作を使用して指定する必要があります。 この場合のサービス資格情報は、`clientCredentials` を指定して `serviceCertificate` 動作を使用することで、指定する必要があります。<br />-CardSpace: これにより、サービスを必要とする、CardSpace を使用してクライアントを認証します。 `serviceCertiifcate` は、`clientCredential` 動作で提供される必要があります。<br /><br /> 既定値は `Windows` です。 この属性は <xref:System.ServiceModel.MessageCredentialType> 型です。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  

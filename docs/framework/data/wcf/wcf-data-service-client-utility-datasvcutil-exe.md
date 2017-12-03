@@ -14,14 +14,14 @@ helpviewer_keywords:
 - WCF Data Services, consuming
 ms.assetid: 9d0af606-929b-4c03-b307-3ef5f705afce
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 06c7107fe58647d29146ed5ef4cc31fc9004d2b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 21189ffd5fc8b113cc746fd855bd5c325aad78c6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-data-service-client-utility-datasvcutilexe"></a>WCF Data Service クライアント ユーティリティ (DataSvcUtil.exe)
 DataSvcUtil.exe は、コマンド ライン ツールによって提供される[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を消費する、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードし、.NET Framework クライアント アプリケーションからデータ サービスにアクセスするために必要なクライアント データ サービス クラスが生成されます。 このユーティリティでは、以下のメタデータ ソースを使用してデータ クラスを生成できます。  
@@ -34,7 +34,7 @@ DataSvcUtil.exe は、コマンド ライン ツールによって提供され�
   
  詳細については、次を参照してください。[する方法: 手動で生成クライアント データ サービス クラス](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md)です。  
   
- DataSvcUtil.exe ツールは [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ディレクトリにインストールされます。 多くの場合、C:\Windows\Microsoft.NET\Framework\v4.0 にあります。 64 ビット システムの場合は、C:\Windows\Microsoft.NET\Framework64\v4.0 にあります。 Visual Studio コマンド プロンプトから DataSvcUtil.exe ツールをアクセスすることもできます (をクリックして**開始**、] をポイント**すべてのプログラム**、] をポイント**Microsoft Visual Studio 2010**、をポイント**Visual Studio Tools**、クリックして**Visual Studio 2010 コマンド プロンプト**)。  
+ DataSvcUtil.exe ツールは [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ディレクトリにインストールされます。 多くの場合、C:\Windows\Microsoft.NET\Framework\v4.0 にあります。 64 ビット システムの場合は、C:\Windows\Microsoft.NET\Framework64\v4.0 にあります。 Visual Studio コマンド プロンプトから DataSvcUtil.exe ツールをアクセスすることもできます (をクリックして**開始**、 をポイント**すべてのプログラム**、 をポイント**Microsoft Visual Studio 2010**、をポイント**Visual Studio Tools**、クリックして**Visual Studio 2010 コマンド プロンプト**)。  
   
 ## <a name="syntax"></a>構文  
   
@@ -49,7 +49,7 @@ datasvcutil /out:file [/in:file | /uri:serviceuri] [/dataservicecollection] [/la
 |`/dataservicecollection`|オブジェクトをコントロールにバインドするために必要なコードも生成することを指定します。|  
 |`/help`<br /><br /> または<br /><br /> `/?`|このツールのコマンド構文とオプションを表示します。|  
 |`/in:`*\<ファイル >*|.csdl ファイルまたは .edmx ファイル、またはファイルがあるディレクトリを指定します。|  
-|`/language:`[VB & #124 です。CSharp]|生成されるソース コード ファイルの言語を指定します。 既定の言語は C# です。|  
+|`/language:`[VB &#124;です。CSharp]|生成されるソース コード ファイルの言語を指定します。 既定の言語は C# です。|  
 |`/nologo`|著作権メッセージが表示されないようにします。|  
 |`/out:`*\<ファイル >*|生成されたクライアント データ サービス クラスを含むソース コード ファイルの名前を指定します。|  
 |`/uri:`*\<文字列 >*|URI、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。|  

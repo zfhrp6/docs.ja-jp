@@ -11,20 +11,20 @@ ms.topic: article
 helpviewer_keywords: event logging [WCF]
 ms.assetid: aac0530d-f44c-45a1-bada-e30e0677b41f
 caps.latest.revision: "22"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ccdecb1aae193ffecdd6ec1d4eae4289f6ac7eb9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9a2d856aad069a5e532ba893185b6222ee1db0f0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="event-logging-in-wcf"></a>WCF のイベント ログ
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は、Windows イベント ログで内部イベントをトレースします。  
   
 ## <a name="viewing-event-logs"></a>イベント ログの表示  
- イベント ログは、既定で自動的に有効になります。無効にする方法はありません。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] によってログに記録されるイベントは、イベント ビューアーを使用して表示できます。 このツールを起動する をクリックして**開始**、 をクリックして**コントロール パネルの **をダブルクリックして**管理ツール**、順にダブルクリック**イベント ビューアー**.  
+ イベント ログは、既定で自動的に有効になります。無効にする方法はありません。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] によってログに記録されるイベントは、イベント ビューアーを使用して表示できます。 このツールを起動する をクリックして**開始**、 をクリックして**コントロール パネルの** をダブルクリックして**管理ツール**、順にダブルクリック**イベント ビューアー**.  
   
 ### <a name="application-event-log"></a>アプリケーション イベント ログ  
  **アプリケーション イベント ログ**によって生成されたイベントの大半が含ま[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]です。 このエントリの多くは、アプリケーションに関して特定の機能を起動できなかったことを示しています。 次に例を示します。  

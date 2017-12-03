@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: reference
 ms.assetid: 3c730850-6f8e-4102-acb8-8effb4e09463
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d95c6d3768a26a8db92bf54bb454b350ced03d7b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: df8f990f4a51ea93008d00f785d4763a5537ea2e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltaddgt-of-ltparticipantsgt"></a>&lt;participants&gt; の &lt;add&gt;
 ランタイムから直接出力される追跡レコードをリッスンし、追跡レコードの構成方法に従って処理を行う追跡参加要素を構成します。 これには、特定の出力 (ファイル、コンソール、ETW など) への書き込み、レコードの処理や集計、またはその他の必要な組み合わせが含まれます。  

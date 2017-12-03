@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e3da85c8-57f3-4e32-a4cb-50123f30fea6
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d7cf7a45051c6cd550225ebc29e587bc937b0953
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 20b061418ee2dc6c3adcde5553d29e680d739582
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-stream-upgrades"></a>カスタム ストリームのアップグレード
 TCP、名前付きパイプなど、ストリーム指向のデータ伝送機構 (トランスポート) が扱うのは、クライアントとサーバーの間を流れる、連続的なバイト ストリームです。 このストリームを実際に作り出すのは <xref:System.IO.Stream> オブジェクトです。 ストリーム アップグレードでは、クライアントは、オプションのプロトコル階層をチャネル スタックに追加する場合に、相手側の通信チャネルにも同じことをするよう要求します。 ストリーム アップグレードは、<xref:System.IO.Stream> オブジェクトをアップグレードされたものに置き換える形で実施します。  

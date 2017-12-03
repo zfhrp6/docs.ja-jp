@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 02624403-0d77-41cb-9a86-ab55e98c7966
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: acd2263fddf4b045cd7efc93ca85d1ed1b2e6dd0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e749594d7a37b89d5dbf02013b2f667d923af7ed
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="client-architecture"></a>クライアント アーキテクチャ
 アプリケーションは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント オブジェクトを使用してサービス操作を呼び出します。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクト、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル、およびこれらとその基になるチャネル アーキテクチャのリレーションシップについて説明します。 基本的な概要について[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント オブジェクトを参照してください[WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]チャネル レイヤを参照してください[、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  

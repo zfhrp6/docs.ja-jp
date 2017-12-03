@@ -13,14 +13,14 @@ helpviewer_keywords:
 - WCF Data Services, client library
 ms.assetid: b98cb1d6-956a-4e50-add6-67e4f2587346
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9c95e664d686ed5125ccaa1d4daaa4eb71e76baa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ed668fb7648daa8a3571f407b3243291d3f8bd86
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-manually-generate-client-data-service-classes-wcf-data-services"></a>方法: クライアント データ サービス クラスを手動で生成する (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]使用すると、クライアント データ サービス クラスを自動的に生成するために Visual Studio との統合、**サービス参照の追加**ダイアログ ボックスを Visual Studio プロジェクトにデータ サービスへの参照を追加します。 詳細については、次を参照してください。[する方法: データ サービス参照の追加](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)です。 コード生成ツールの `DataSvcUtil.exe` を使用して、同じクライアント データ サービス クラスを手動で生成することもできます。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] に含まれるこのツールは、データ サービス定義から .NET Framework クラスを生成します。 このツールを使用して、概念モデル (.csdl) ファイル、および Visual Studio プロジェクトの Entity Framework モデルを表す .edmx ファイルからデータ サービス クラスを生成することもできます。  

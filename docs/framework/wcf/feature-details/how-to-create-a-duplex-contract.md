@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: duplex contracts [WCF]
 ms.assetid: 500a75b6-998a-47d5-8e3b-24e3aba2a434
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 537e86b4eb43864e9a27d5a8a485ea5cb752833d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 30fc31055563db75512639bf7fb3b9119be280e6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-duplex-contract"></a>方法 : 双方向コントラクトを作成する
 ここでは、双方向コントラクトを使用するメソッドを作成するための基本手順を示します。 双方向コントラクトでは、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 双方向コントラクトは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに使用できる 3 つのメッセージ パターンのうちの 1 つです。 他の 2 つのメッセージ パターンは、一方向および要求/応答です。 双方向コントラクトは、クライアントとサーバー間の 2 つの一方向コントラクトで構成され、メソッドの呼び出しが相互に関連付けられている必要はありません。 サービスでクライアントに詳細を照会したり、クライアントで明示的にイベントを発生させたりする必要がある場合は、この種のコントラクトを使用します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]双方向コントラクト用のクライアント アプリケーションを作成するを参照してください[する方法: 双方向コントラクトでサービスをアクセス](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)です。 作業用サンプルについては、次を参照してください。、[双方向](../../../../docs/framework/wcf/samples/duplex.md)サンプルです。  

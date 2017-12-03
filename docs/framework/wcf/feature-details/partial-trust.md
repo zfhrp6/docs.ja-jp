@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 489b1587-9909-4d0e-8c1a-5e83c8f8292b
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f3febf1f3703377806493c8067b50c149bce0108
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 893b8bb58c9d78d6880f95f2490c55c7d9e27483
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="partial-trust"></a>部分信頼
 [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] 以降では、部分的に信頼された呼び出し元は、<xref:System.ServiceModel>、<xref:System.Runtime.Serialization>、および <xref:System.ServiceModel.Web> に実装されたパブリック型とパブリック メソッドにアクセスできます。 このセクションでは、部分的に信頼されたアプリケーション内における [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の使用でサポートされるシナリオと、コード アクセス セキュリティ (CAS: Code Access Security) のアクセス許可レベルを下げて実行されるアプリケーションで利用できる、限られた [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 機能について説明します。  

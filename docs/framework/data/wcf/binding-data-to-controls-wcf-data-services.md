@@ -17,14 +17,14 @@ helpviewer_keywords:
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9e0d7ed9fdae7731fd4b023dcad656ebcdcf280f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ca580801e6bb8786071ec705d4a86d367b02f622
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>コントロールへのデータのバインド (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、`ComboBox` や `ListView` などのコントロールを <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスにバインドすることができます。 このコレクションは <xref:System.Collections.ObjectModel.ObservableCollection%601> クラスから継承され、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードのデータが含まれます。 このクラスは、項目が追加または削除されたときに通知を行う動的なデータ コレクションを表します。 インスタンスを使用すると<xref:System.Data.Services.Client.DataServiceCollection%601>、データ バインディングの[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クライアント ライブラリによって追跡されるオブジェクトにこれらのイベントを処理する、<xref:System.Data.Services.Client.DataServiceContext>常にバインドされている UI 要素内のデータを同期します。  

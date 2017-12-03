@@ -1,12 +1,8 @@
 ---
 title: "相互運用のための .NET 型の要件"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - exposing .NET Framework components to COM
@@ -16,24 +12,23 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b6487c151f49f6084977deb600e7f93e5eb7acee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 165536656f0de6b53680565bee93f0bb8d607d48
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="qualifying-net-types-for-interoperation"></a>相互運用のための .NET 型の要件
 COM アプリケーションにアセンブリ内の型を公開する場合は、設計時に COM 相互運用の要件を検討する必要があります。 以下のガイドラインに従うと、マネージ型 (クラス、インターフェイス、構造体、列挙型) は COM の型とシームレスに統合します。  
   
 -   クラスは、インターフェイスを明示的に実装する必要があります。  
   
-     COM 相互運用は、クラスのすべてのメンバーとその基底クラスのメンバーを含むインターフェイスを自動的に生成するメカニズムを備えていますが、明示的なインターフェイスを提供する方がはるかによい方法です。 自動的に生成されるインターフェイスは、クラス インターフェイスと呼ばれます。 ガイドラインについては、「[クラス インターフェイスの概要](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)」を参照してください。  
+     COM 相互運用は、クラスのすべてのメンバーとその基底クラスのメンバーを含むインターフェイスを自動的に生成するメカニズムを備えていますが、明示的なインターフェイスを提供する方がはるかによい方法です。 自動的に生成されるインターフェイスは、クラス インターフェイスと呼ばれます。 ガイドラインについては、次を参照してください。[クラス インターフェイスの概要](com-callable-wrapper.md#introducing-the-class-interface)です。  
   
-     インターフェイス定義言語 (IDL) またはそれと同等のものを使う代わりに、[!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]、C#、C++ を使ってコードにインターフェイス定義を組み込むことができます。 構文の詳細については、言語のドキュメントを参照してください。  
+     Visual Basic、c#、および C++ を使用して、インターフェイス定義言語 (IDL) またはそれと等価なを使用する代わりに、コード内のインターフェイスの定義を組み込むことができます。 構文の詳細については、言語のドキュメントを参照してください。  
   
 -   マネージ型はパブリックにする必要があります。  
   

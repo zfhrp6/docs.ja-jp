@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c07435f3-5214-4791-8961-2c2b61306d71
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 01998d0ac732f63f6771c47bfc76a8207a5531f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 413adbc25e2f92ae2e989290685db6dfeaf58368
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="custom-message-formatters"></a>カスタム メッセージ フォーマッタ
 メッセージの内容は、XML 形式で表されることが多く、この形式は通常、アプリケーションにとって処理しやすい形式ではありません。 アプリケーションでは、オブジェクトのプロパティを取得および設定することによってオブジェクトを操作します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]使用して、*データ コントラクト*に変換する、<xref:System.ServiceModel.Channels.Message>オブジェクトに、オブジェクトをアプリケーションで簡単に処理します。 このプロセスは、シリアル化および逆シリアル化と呼ばれます。 これと同じ用語が、トランスポート層によって行われるメッセージ ワイヤ形式へのシリアル化とその形式からの逆シリアル化を説明するときに使用されますが、これは関連のないプロセスです。  

@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 19dfb8d6a75496cf193831c1d9e6e71ee6bb1a7a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9be7f226c331ad20c58a06b5c7497c7942db013d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="channel-model-overview"></a>チャネル モデルの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] チャネル スタックは、メッセージを処理する 1 つ以上のチャネルから成る階層構造の通信スタックです。 スタックの一番下には、基になるトランスポート (TCP、HTTP、SMTP、およびその他の種類のトランスポート) にチャネル スタックを適応させるためのトランスポート チャネルがあります。 チャネルによって、メッセージを送受信するための低レベルのプログラミング モデルが提供されます。 このプログラミング モデルは、複数のインターフェイスと、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル モデルとして総称されるその他のモデルを利用します。 このトピックでは、チャネル形状、基本的なチャネル リスナーの構築 (サービス側)、およびチャネル ファクトリ (クライアント側) について説明します。  

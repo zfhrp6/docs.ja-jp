@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e43fbe2002c19b8203ff048b4200dcfaad27afe0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1480047f14d9528d4d498b417e5d0b4a0f87a622
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>サービス操作の呼び出し (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] は、データ サービスのサービス操作を定義します。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスのメソッドとしてこのような操作を定義できます。 他のデータ サービス リソースと同様に、これらのサービス操作は URI によってアドレス指定できます。 サービス操作では、エンティティ型のコレクション、1 つのエンティティ型のインスタンス、およびプリミティブ型 (整数、文字列など) を返すことができます。 さらに、サービス操作では、`null` (Visual Basic の場合は `Nothing`) を返すこともできます。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリを使用して、HTTP GET 要求をサポートするサービス操作にアクセスすることができます。 この種のサービス操作は、<xref:System.ServiceModel.Web.WebGetAttribute> が適用されたメソッドとして定義されます。 詳細については、次を参照してください。[サービス操作](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)です。  

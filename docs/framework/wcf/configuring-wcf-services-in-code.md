@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 134de9fce41ccdcd9c26277c6a52d67823199da3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c05cc5947a36bbe8573c5308cdfbbe3f6c990815
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-wcf-services-in-code"></a>コード内での WCF サービスの構成
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、開発者が構成ファイルまたはコードを使用してサービスを構成できます。  構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、コードでサービスを構成することもできます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の以前のバージョン (4.0 以前) では、自己ホスト型のシナリオであれば、コードで簡単にサービスを構成できました。また、<xref:System.ServiceModel.ServiceHost> クラスを使用すると、ServiceHost.Open を呼び出す前にエンドポイントと動作を構成できました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスに直接アクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用すると、自己ホスト型サービスと Web ホスト サービスの両方をコードで簡単に構成できます。  

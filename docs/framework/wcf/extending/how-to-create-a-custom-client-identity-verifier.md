@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 75200cc6aca424befe068a9dd718c6cc76492a91
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 70c94d38a50425c702e382edcd7290cba3d61e91
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>方法 : カスタム クライアント ID 検証機能を作成する
 *Identity*の機能[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クライアントが予想されるサービスの id を事前に指定できるようにします。 サーバーがクライアントに対して自身を認証するたびに、ID がこの予想 ID と照合されます (Id およびそのしくみの詳細については、次を参照してください[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。)。  

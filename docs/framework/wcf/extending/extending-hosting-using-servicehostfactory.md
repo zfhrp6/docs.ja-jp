@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bcc5ae1b-21ce-4e0e-a184-17fad74a441e
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 06859e8f12f96f964054817bac553f6534d5960e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 05cce66a1b03bee91672cd65bae78305c290c410
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="extending-hosting-using-servicehostfactory"></a>ServiceHostFactory を使用したホストの拡張
 <xref:System.ServiceModel.ServiceHost> アーキテクチャを拡張するためのインターフェイスとして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、ホスティング サービスを実装するための標準 API である [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] があります。 ユーザーは、この <xref:System.ServiceModel.ServiceHost> の派生型として独自のホスト クラスを定義できます。通常は、<xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> を使用するために <xref:System.ServiceModel.Description.ServiceDescription> をオーバーライドして、これにより、サービスを開く前に、強制的に既定のエンドポイントを追加したり、動作を変更することができます。  

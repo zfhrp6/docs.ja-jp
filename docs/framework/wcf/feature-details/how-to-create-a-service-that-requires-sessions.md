@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 8a7613ef-0df9-47c3-b8dc-47f42cb1fd8b
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2e238598ccd33d9e6e77a2d09ea3b19fdefcefbb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8f9cff53b598d4e477488bcb5b5e87be62e78bb9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-service-that-requires-sessions"></a>方法 : セッションを必要とするサービスを作成する
 セッションでは、複数のエンドポイント間で共有される状態が作成されます。これにより、クライアントとサービス インスタンス間でのコールバック、マルチホップ セキュリティ、関連付けなどの便利な機能を使用できるようになります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]セッションで[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]アプリケーションを参照してください[セッションを使用した](../../../../docs/framework/wcf/using-sessions.md)です。  

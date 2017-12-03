@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ada33c6b6ea0995d0390040710ed1b2457b9e4af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4c580316415a1186bbdee518e201fb4c88419a72
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>方法 : 企業内のエンドポイントをロックダウンする
 大規模な企業では、多くの場合、企業のセキュリティ ポリシーに準拠してアプリケーションを開発する必要があります。 ここでは、コンピューターにインストールされているすべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを検証できるクライアント エンドポイント検証を開発してインストールする方法を説明します。  

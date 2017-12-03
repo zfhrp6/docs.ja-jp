@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: WCF Data Services, client library
 ms.assetid: 962a49d1-cc11-4b96-bc7d-071dd6607d6c
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e929e9771ba1d47016919f017f3476b17581d8a1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3bcb29fa522f706f5500ab3cb12f956d5e2236b5
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="batching-operations-wcf-data-services"></a>バッチ処理 (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]バッチへの要求の処理をサポートする、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのサービスです。 詳細については、次を参照してください。 [OData: バッチ処理](http://go.microsoft.com/fwlink/?LinkId=186075)です。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]、使用する各操作、<xref:System.Data.Services.Client.DataServiceContext>クエリを実行するなど、別のデータ サービスに送信される要求の結果の変更を保存します。 操作セットの論理スコープを維持するために、操作バッチを明示的に定義する必要があります。 これにより、バッチ内のすべての操作に 1 つの HTTP 要求でデータ サービスに送信し、により、サーバーは、操作をアトミックに、処理をされ、データ サービスへのラウンド トリップの数が減ることです。  

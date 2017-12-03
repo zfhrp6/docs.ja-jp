@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cbee0c387c4519858426a062d927ebffe9513c0c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 072f50a53c8596a09e1a7ee0cdb8585c3778f245
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="message-flow-overview"></a>メッセージ フローの概要
 相互接続されたサービスを持つ分散システムでは、サービス間の因果関係を調べる必要があります。 状態監視、トラブルシューティング、原因分析などの重要なシナリオをサポートするには、要求フローに含まれるさまざまなコンポーネントを理解することが重要です。 .NET Framework 4 では、多様なサービス間でトレースを関連付けることができるように、次の機能のサポートが追加されています。  

@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4fb3957543d6a0fcf3b375f9cb43ae089ac9d600
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 934b5d16cdea7026e0e7874cf04ab53c8fbdf58e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>方法 : IIS で WCF サービスをホストする
 ここでは、インターネット インフォメーション サービス (IIS) でホストされる [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを作成するために必要な基本手順について説明します。 このトピックは、IIS に関する知識があり、IIS 管理ツールを使用して IIS アプリケーションを作成および管理する方法を理解していることを前提としています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]IIS を参照してください[インターネット インフォメーション サービス](http://go.microsoft.com/fwlink/?LinkId=132449)です。 IIS 環境で実行される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、プロセス リサイクル、アイドル シャットダウン、処理状況の監視、メッセージ ベースのアクティブ化などの IIS 機能が最大限に利用されます。 このホスト オプションでは、IIS が正しく構成されている必要がありますが、アプリケーションの一部としてホスト コードを書く必要はありません。 IIS ホストは、HTTP トランスポートでのみ使用できます。  

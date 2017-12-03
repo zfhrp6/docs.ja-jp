@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 05b0549b-882d-4660-b6f0-5678543e5475
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 8a4a458d49e7ec3db3e80202e53e3a1f264d207b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0086dc0c82fefad3cb1e5a73ddd9ced909f05453
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>方法 : カスタム承認ポリシーを作成する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 内の識別モデル インフラストラクチャでは、クレーム ベースの承認モデルがサポートされます。 クレームは、トークンから抽出され、状況に応じてカスタム承認ポリシーによって処理されてから、承認決定を行う際に確認できる <xref:System.IdentityModel.Policy.AuthorizationContext> に格納されます。 カスタム ポリシーを使用して、入力トークンからのクレームを、アプリケーションが要求するクレームに変換することができます。 この方法では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートするトークンの種類から抽出される個々のクレームの詳細から、アプリケーション レイヤーを分離できます。 このトピックでは、カスタム承認ポリシーの実装方法と、サービスで使用するポリシーのコレクションにカスタム承認ポリシーを追加する方法について説明します。  

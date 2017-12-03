@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 60835e9d85412aa07958273daa5d9b7a24cfbfeb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cc7f90ed679abc55a62ca5ab6028af4c86bd52a2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="contracts"></a>コントラクト
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] コントラクトを定義および実装する方法について説明します。 サービス コントラクトでは、エンドポイントが外部と何をやりとりするかが指定されます。 具体的には、要求/応答、一方向、双方向など、基本的なメッセージ交換パターン (MEP) に編成された一連のメッセージに関する記述です。 サービス コントラクトがメッセージ交換の論理的に関連したセットであるとすると、サービス操作は単一のメッセージ交換です。 たとえば、`Hello` という操作では、1 つのメッセージを受け取り、呼び出し元があいさつを通知できるようにする必要があり、メッセージを返すことができます (マナーが悪ければ返さない場合もあり得ます)。  

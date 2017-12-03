@@ -17,14 +17,14 @@ helpviewer_keywords:
 - WCF Data Services, loading data
 ms.assetid: 32f9b588-c832-44c4-a7e0-fcce635df59a
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a43e7fc6ebc4101586b67b0982b16cefbfff2d35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 599b420dee2e1d19c85a078ac358a9249ca055ed
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="loading-deferred-content-wcf-data-services"></a>遅延コンテンツの読み込み (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の既定では、クエリが返すデータの量が制限されます。 その一方で、関連エンティティ、ページングされた応答データ、およびバイナリ データ ストリームを含む追加データをデータ サービスから必要に応じて明示的に読み込むことができます。 このトピックでは、このような遅延コンテンツをアプリケーションに読み込む方法について説明します。  

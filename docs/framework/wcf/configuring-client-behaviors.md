@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: df5b32fa-e73b-4e8e-b66f-357c748e0173
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6f16f32128c7223fa600802ae593d36286847dc8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c63a91683817311b8d644eb4285101e32eaea7f1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-client-behaviors"></a>クライアントの動作の構成
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は 2 とおりの方法で動作を構成します。1 つは動作の構成を参照する方法で、これはクライアント アプリケーションの構成ファイルの `<behavior>` セクションで定義されます。もう 1 つは、呼び出し元アプリケーションでプログラムによって動作を構成する方法です。 このトピックでは、両方の方法について説明します。  

@@ -14,14 +14,14 @@ helpviewer_keywords:
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 228b8d40b14781496b2c71a715008e8bf9caf86b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 545096292f34566b4bb6c3c44bb20ddac426af26
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>データ サービスのバージョン管理 (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]クライアントは、Uri を使用して、データ モデルに基づいたリソースとしてデータをアクセスできるように、データ サービスを作成することができます。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、サービス操作の定義もサポートしています。 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、これらのデータ サービスを変更することが必要になる場合があります。 既存のデータ サービスに変更を加える場合は、新しいバージョンのデータ サービスを定義する必要性や、既存のクライアント アプリケーションへの影響を最小限に抑える最善の方法を検討する必要があります。 ここでは、新しいバージョンのデータ サービスをいつどのように作成するかに関するガイダンスを示します。 さらに、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] が [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルの異なるバージョンをサポートするクライアントとデータ サービスの間の交換どのように処理するかについても説明します。  
