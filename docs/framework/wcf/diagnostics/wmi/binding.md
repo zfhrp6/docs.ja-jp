@@ -10,19 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 09511c6c-5749-4bb0-874e-0f0be36bfe04
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6505fa08ca43e64df224b75500aacbc903783398
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b9e44d161e1229db9145f4ed7e337396bbd98c68
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="binding"></a><span data-ttu-id="ded1d-102">バインド</span><span class="sxs-lookup"><span data-stu-id="ded1d-102">Binding</span></span>
-<span data-ttu-id="ded1d-103">wmi バインディング</span><span class="sxs-lookup"><span data-stu-id="ded1d-103">wmi Binding</span></span>  
+# <a name="binding"></a><span data-ttu-id="372ab-102">バインド</span><span class="sxs-lookup"><span data-stu-id="372ab-102">Binding</span></span>
+<span data-ttu-id="372ab-103">wmi バインディング</span><span class="sxs-lookup"><span data-stu-id="372ab-103">wmi Binding</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ded1d-104">構文</span><span class="sxs-lookup"><span data-stu-id="ded1d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="372ab-104">構文</span><span class="sxs-lookup"><span data-stu-id="372ab-104">Syntax</span></span>  
   
 ```  
 class Binding  
@@ -38,73 +38,73 @@ class Binding
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="ded1d-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="ded1d-105">Methods</span></span>  
- <span data-ttu-id="ded1d-106">Binding クラスは、メソッドを一切定義しません。</span><span class="sxs-lookup"><span data-stu-id="ded1d-106">The Binding class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="372ab-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="372ab-105">Methods</span></span>  
+ <span data-ttu-id="372ab-106">Binding クラスは、メソッドを一切定義しません。</span><span class="sxs-lookup"><span data-stu-id="372ab-106">The Binding class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="ded1d-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="ded1d-107">Properties</span></span>  
- <span data-ttu-id="ded1d-108">Binding クラスには、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="ded1d-108">The Binding class has the following properties.</span></span>  
+## <a name="properties"></a><span data-ttu-id="372ab-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="372ab-107">Properties</span></span>  
+ <span data-ttu-id="372ab-108">Binding クラスには、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="372ab-108">The Binding class has the following properties.</span></span>  
   
-### <a name="bindingelements"></a><span data-ttu-id="ded1d-109">BindingElements</span><span class="sxs-lookup"><span data-stu-id="ded1d-109">BindingElements</span></span>  
- <span data-ttu-id="ded1d-110">データ型 : BindingElement 配列</span><span class="sxs-lookup"><span data-stu-id="ded1d-110">Data type: BindingElement array</span></span>  
+### <a name="bindingelements"></a><span data-ttu-id="372ab-109">BindingElements</span><span class="sxs-lookup"><span data-stu-id="372ab-109">BindingElements</span></span>  
+ <span data-ttu-id="372ab-110">データ型 : BindingElement 配列</span><span class="sxs-lookup"><span data-stu-id="372ab-110">Data type: BindingElement array</span></span>  
   
- <span data-ttu-id="ded1d-111">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-111">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-112">バインディングによって実装されるバインド要素のコレクションです。</span><span class="sxs-lookup"><span data-stu-id="ded1d-112">The collection of binding elements implemented by the binding.</span></span>  
+ <span data-ttu-id="372ab-112">バインディングによって実装されるバインド要素のコレクションです。</span><span class="sxs-lookup"><span data-stu-id="372ab-112">The collection of binding elements implemented by the binding.</span></span>  
   
-### <a name="closetimeout"></a><span data-ttu-id="ded1d-113">CloseTimeout</span><span class="sxs-lookup"><span data-stu-id="ded1d-113">CloseTimeout</span></span>  
- <span data-ttu-id="ded1d-114">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="ded1d-114">Data type: datetime</span></span>  
+### <a name="closetimeout"></a><span data-ttu-id="372ab-113">CloseTimeout</span><span class="sxs-lookup"><span data-stu-id="372ab-113">CloseTimeout</span></span>  
+ <span data-ttu-id="372ab-114">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="372ab-114">Data type: datetime</span></span>  
   
- <span data-ttu-id="ded1d-115">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-115">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-115">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-115">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-116">クローズ操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="ded1d-116">The interval of time provided for a close operation to complete.</span></span>  
+ <span data-ttu-id="372ab-116">クローズ操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="372ab-116">The interval of time provided for a close operation to complete.</span></span>  
   
-### <a name="name"></a><span data-ttu-id="ded1d-117">名前</span><span class="sxs-lookup"><span data-stu-id="ded1d-117">Name</span></span>  
- <span data-ttu-id="ded1d-118">データ型: string</span><span class="sxs-lookup"><span data-stu-id="ded1d-118">Data type: string</span></span>  
+### <a name="name"></a><span data-ttu-id="372ab-117">名前</span><span class="sxs-lookup"><span data-stu-id="372ab-117">Name</span></span>  
+ <span data-ttu-id="372ab-118">データ型: string</span><span class="sxs-lookup"><span data-stu-id="372ab-118">Data type: string</span></span>  
   
- <span data-ttu-id="ded1d-119">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-119">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-119">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-119">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-120">バインディングの名前。</span><span class="sxs-lookup"><span data-stu-id="ded1d-120">The name of the binding.</span></span>  
+ <span data-ttu-id="372ab-120">バインディングの名前。</span><span class="sxs-lookup"><span data-stu-id="372ab-120">The name of the binding.</span></span>  
   
-### <a name="namespace"></a><span data-ttu-id="ded1d-121">名前空間</span><span class="sxs-lookup"><span data-stu-id="ded1d-121">Namespace</span></span>  
- <span data-ttu-id="ded1d-122">データ型: string</span><span class="sxs-lookup"><span data-stu-id="ded1d-122">Data type: string</span></span>  
+### <a name="namespace"></a><span data-ttu-id="372ab-121">名前空間</span><span class="sxs-lookup"><span data-stu-id="372ab-121">Namespace</span></span>  
+ <span data-ttu-id="372ab-122">データ型: string</span><span class="sxs-lookup"><span data-stu-id="372ab-122">Data type: string</span></span>  
   
- <span data-ttu-id="ded1d-123">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-123">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-123">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-123">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-124">バインディングの XML 名前空間。</span><span class="sxs-lookup"><span data-stu-id="ded1d-124">The XML namespace of the binding.</span></span>  
+ <span data-ttu-id="372ab-124">バインディングの XML 名前空間。</span><span class="sxs-lookup"><span data-stu-id="372ab-124">The XML namespace of the binding.</span></span>  
   
-### <a name="opentimeout"></a><span data-ttu-id="ded1d-125">OpenTimeout</span><span class="sxs-lookup"><span data-stu-id="ded1d-125">OpenTimeout</span></span>  
- <span data-ttu-id="ded1d-126">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="ded1d-126">Data type: datetime</span></span>  
+### <a name="opentimeout"></a><span data-ttu-id="372ab-125">OpenTimeout</span><span class="sxs-lookup"><span data-stu-id="372ab-125">OpenTimeout</span></span>  
+ <span data-ttu-id="372ab-126">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="372ab-126">Data type: datetime</span></span>  
   
- <span data-ttu-id="ded1d-127">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-127">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-127">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-127">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-128">オープン操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="ded1d-128">The interval of time provided for an open operation to complete.</span></span>  
+ <span data-ttu-id="372ab-128">オープン操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="372ab-128">The interval of time provided for an open operation to complete.</span></span>  
   
-### <a name="receivetimeout"></a><span data-ttu-id="ded1d-129">ReceiveTimeout</span><span class="sxs-lookup"><span data-stu-id="ded1d-129">ReceiveTimeout</span></span>  
- <span data-ttu-id="ded1d-130">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="ded1d-130">Data type: datetime</span></span>  
+### <a name="receivetimeout"></a><span data-ttu-id="372ab-129">ReceiveTimeout</span><span class="sxs-lookup"><span data-stu-id="372ab-129">ReceiveTimeout</span></span>  
+ <span data-ttu-id="372ab-130">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="372ab-130">Data type: datetime</span></span>  
   
- <span data-ttu-id="ded1d-131">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-131">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-131">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-131">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-132">受信操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="ded1d-132">The interval of time provided for a receive operation to complete.</span></span>  
+ <span data-ttu-id="372ab-132">受信操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="372ab-132">The interval of time provided for a receive operation to complete.</span></span>  
   
-### <a name="scheme"></a><span data-ttu-id="ded1d-133">Scheme</span><span class="sxs-lookup"><span data-stu-id="ded1d-133">Scheme</span></span>  
- <span data-ttu-id="ded1d-134">データ型: string</span><span class="sxs-lookup"><span data-stu-id="ded1d-134">Data type: string</span></span>  
+### <a name="scheme"></a><span data-ttu-id="372ab-133">Scheme</span><span class="sxs-lookup"><span data-stu-id="372ab-133">Scheme</span></span>  
+ <span data-ttu-id="372ab-134">データ型: string</span><span class="sxs-lookup"><span data-stu-id="372ab-134">Data type: string</span></span>  
   
- <span data-ttu-id="ded1d-135">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-135">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-135">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-135">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-136">このバインディングに組み込まれているチャネルおよびリスナー ファクトリによって使用される URI トランスポート スキームです。</span><span class="sxs-lookup"><span data-stu-id="ded1d-136">The URI transport scheme that is used by the channel and listener factories that are built by the binding.</span></span>  
+ <span data-ttu-id="372ab-136">このバインディングに組み込まれているチャネルおよびリスナー ファクトリによって使用される URI トランスポート スキームです。</span><span class="sxs-lookup"><span data-stu-id="372ab-136">The URI transport scheme that is used by the channel and listener factories that are built by the binding.</span></span>  
   
-### <a name="sendtimeout"></a><span data-ttu-id="ded1d-137">SendTimeout</span><span class="sxs-lookup"><span data-stu-id="ded1d-137">SendTimeout</span></span>  
- <span data-ttu-id="ded1d-138">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="ded1d-138">Data type: datetime</span></span>  
+### <a name="sendtimeout"></a><span data-ttu-id="372ab-137">SendTimeout</span><span class="sxs-lookup"><span data-stu-id="372ab-137">SendTimeout</span></span>  
+ <span data-ttu-id="372ab-138">データ型 : datetime</span><span class="sxs-lookup"><span data-stu-id="372ab-138">Data type: datetime</span></span>  
   
- <span data-ttu-id="ded1d-139">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="ded1d-139">Access type: Read-only</span></span>  
+ <span data-ttu-id="372ab-139">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="372ab-139">Access type: Read-only</span></span>  
   
- <span data-ttu-id="ded1d-140">送信操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="ded1d-140">The interval of time provided for a send operation to complete.</span></span>  
+ <span data-ttu-id="372ab-140">送信操作が完了するまで待機する時間です。</span><span class="sxs-lookup"><span data-stu-id="372ab-140">The interval of time provided for a send operation to complete.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ded1d-141">要件</span><span class="sxs-lookup"><span data-stu-id="ded1d-141">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="372ab-141">要件</span><span class="sxs-lookup"><span data-stu-id="372ab-141">Requirements</span></span>  
   
-|<span data-ttu-id="ded1d-142">MOF</span><span class="sxs-lookup"><span data-stu-id="ded1d-142">MOF</span></span>|<span data-ttu-id="ded1d-143">Servicemodel.mof にて宣言済み。</span><span class="sxs-lookup"><span data-stu-id="ded1d-143">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="372ab-142">MOF</span><span class="sxs-lookup"><span data-stu-id="372ab-142">MOF</span></span>|<span data-ttu-id="372ab-143">Servicemodel.mof にて宣言済み。</span><span class="sxs-lookup"><span data-stu-id="372ab-143">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="ded1d-144">Namespace</span><span class="sxs-lookup"><span data-stu-id="ded1d-144">Namespace</span></span>|<span data-ttu-id="ded1d-145">root\ServiceModel で定義</span><span class="sxs-lookup"><span data-stu-id="ded1d-145">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="372ab-144">Namespace</span><span class="sxs-lookup"><span data-stu-id="372ab-144">Namespace</span></span>|<span data-ttu-id="372ab-145">root\ServiceModel で定義</span><span class="sxs-lookup"><span data-stu-id="372ab-145">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="ded1d-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="ded1d-146">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="372ab-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="372ab-146">See Also</span></span>  
  <xref:System.ServiceModel.Channels.Binding>

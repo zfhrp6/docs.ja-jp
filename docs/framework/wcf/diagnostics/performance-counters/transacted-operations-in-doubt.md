@@ -10,17 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 83c7a86d-37de-4c6a-aa09-5d53fc4476b6
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9be788495f69718cf317ea695e76874075e67e28
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1e7e0a8cfda1046087f8ec94f31a873eef552fb8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="transacted-operations-in-doubt"></a><span data-ttu-id="5e189-102">不明なトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="5e189-102">Transacted Operations In Doubt</span></span>
-<span data-ttu-id="5e189-103">カウンター名 : 不明なトランザクション操作。</span><span class="sxs-lookup"><span data-stu-id="5e189-103">Counter Name: Transacted Operations In Doubt.</span></span>  
+# <a name="transacted-operations-in-doubt"></a><span data-ttu-id="d91f5-102">不明なトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="d91f5-102">Transacted Operations In Doubt</span></span>
+<span data-ttu-id="d91f5-103">カウンター名 : 不明なトランザクション操作。</span><span class="sxs-lookup"><span data-stu-id="d91f5-103">Counter Name: Transacted Operations In Doubt.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="5e189-104">説明</span><span class="sxs-lookup"><span data-stu-id="5e189-104">Description</span></span>  
- <span data-ttu-id="5e189-105">このサービスでの結果が不明なトランザクション操作の数です。</span><span class="sxs-lookup"><span data-stu-id="5e189-105">Number of transactional operations with an in-doubt outcome in this service.</span></span>
+## <a name="description"></a><span data-ttu-id="d91f5-104">説明</span><span class="sxs-lookup"><span data-stu-id="d91f5-104">Description</span></span>  
+ <span data-ttu-id="d91f5-105">このサービスでの結果が不明なトランザクション操作の数です。</span><span class="sxs-lookup"><span data-stu-id="d91f5-105">Number of transactional operations with an in-doubt outcome in this service.</span></span>

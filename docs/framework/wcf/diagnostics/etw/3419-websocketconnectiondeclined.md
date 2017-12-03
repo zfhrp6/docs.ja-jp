@@ -10,29 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d1d27f33-7d59-40c7-b464-6cd1f13b7c72
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5450584cd8e88949a9b53360a94a765e64c0ef87
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 576da7a3e8993ceda081cd61e19ebdd483a7d972
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="3419---websocketconnectiondeclined"></a><span data-ttu-id="6efe6-102">3419 - WebSocketConnectionDeclined</span><span class="sxs-lookup"><span data-stu-id="6efe6-102">3419 - WebSocketConnectionDeclined</span></span>
-## <a name="properties"></a><span data-ttu-id="6efe6-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="6efe6-103">Properties</span></span>  
+# <a name="3419---websocketconnectiondeclined"></a><span data-ttu-id="7ecf7-102">3419 - WebSocketConnectionDeclined</span><span class="sxs-lookup"><span data-stu-id="7ecf7-102">3419 - WebSocketConnectionDeclined</span></span>
+## <a name="properties"></a><span data-ttu-id="7ecf7-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="7ecf7-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="6efe6-104">ID</span><span class="sxs-lookup"><span data-stu-id="6efe6-104">ID</span></span>|<span data-ttu-id="6efe6-105">3419</span><span class="sxs-lookup"><span data-stu-id="6efe6-105">3419</span></span>|  
-|<span data-ttu-id="6efe6-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="6efe6-106">Keywords</span></span>|<span data-ttu-id="6efe6-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="6efe6-107">HTTP</span></span>|  
-|<span data-ttu-id="6efe6-108">レベル</span><span class="sxs-lookup"><span data-stu-id="6efe6-108">Level</span></span>|<span data-ttu-id="6efe6-109">Error</span><span class="sxs-lookup"><span data-stu-id="6efe6-109">Error</span></span>|  
-|<span data-ttu-id="6efe6-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="6efe6-110">Channel</span></span>|<span data-ttu-id="6efe6-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="6efe6-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
+|<span data-ttu-id="7ecf7-104">ID</span><span class="sxs-lookup"><span data-stu-id="7ecf7-104">ID</span></span>|<span data-ttu-id="7ecf7-105">3419</span><span class="sxs-lookup"><span data-stu-id="7ecf7-105">3419</span></span>|  
+|<span data-ttu-id="7ecf7-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="7ecf7-106">Keywords</span></span>|<span data-ttu-id="7ecf7-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="7ecf7-107">HTTP</span></span>|  
+|<span data-ttu-id="7ecf7-108">レベル</span><span class="sxs-lookup"><span data-stu-id="7ecf7-108">Level</span></span>|<span data-ttu-id="7ecf7-109">Error</span><span class="sxs-lookup"><span data-stu-id="7ecf7-109">Error</span></span>|  
+|<span data-ttu-id="7ecf7-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="7ecf7-110">Channel</span></span>|<span data-ttu-id="7ecf7-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="7ecf7-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="6efe6-112">説明</span><span class="sxs-lookup"><span data-stu-id="6efe6-112">Description</span></span>  
- <span data-ttu-id="6efe6-113">このイベントは、WebSocket 接続が拒否されたときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="6efe6-113">This event is emitted when WebSocket connection is declined.</span></span>  
+## <a name="description"></a><span data-ttu-id="7ecf7-112">説明</span><span class="sxs-lookup"><span data-stu-id="7ecf7-112">Description</span></span>  
+ <span data-ttu-id="7ecf7-113">このイベントは、WebSocket 接続が拒否されたときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="7ecf7-113">This event is emitted when WebSocket connection is declined.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="6efe6-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="6efe6-114">Message</span></span>  
- <span data-ttu-id="6efe6-115">WebSocket 接続が状態コード '%1' で拒否されました</span><span class="sxs-lookup"><span data-stu-id="6efe6-115">WebSocket connection declined with status code '%1'</span></span>  
+## <a name="message"></a><span data-ttu-id="7ecf7-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="7ecf7-114">Message</span></span>  
+ <span data-ttu-id="7ecf7-115">WebSocket 接続が状態コード '%1' で拒否されました</span><span class="sxs-lookup"><span data-stu-id="7ecf7-115">WebSocket connection declined with status code '%1'</span></span>  
   
-## <a name="details"></a><span data-ttu-id="6efe6-116">詳細</span><span class="sxs-lookup"><span data-stu-id="6efe6-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="7ecf7-116">詳細</span><span class="sxs-lookup"><span data-stu-id="7ecf7-116">Details</span></span>

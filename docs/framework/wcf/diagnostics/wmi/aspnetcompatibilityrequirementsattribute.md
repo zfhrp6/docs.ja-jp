@@ -10,19 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 00908a39-a21b-4029-bbb9-33e5a6ed25a7
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 29ab9cf69ca7ccef82ed21f505d309d6a641ce8a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0a144704268fcade2f54b0d27039dd0b6471b1f9
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="aspnetcompatibilityrequirementsattribute"></a><span data-ttu-id="01bbd-102">AspNetCompatibilityRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="01bbd-102">AspNetCompatibilityRequirementsAttribute</span></span>
-<span data-ttu-id="01bbd-103">AspNetCompatibilityRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="01bbd-103">AspNetCompatibilityRequirementsAttribute</span></span>  
+# <a name="aspnetcompatibilityrequirementsattribute"></a><span data-ttu-id="f32f4-102">AspNetCompatibilityRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="f32f4-102">AspNetCompatibilityRequirementsAttribute</span></span>
+<span data-ttu-id="f32f4-103">AspNetCompatibilityRequirementsAttribute</span><span class="sxs-lookup"><span data-stu-id="f32f4-103">AspNetCompatibilityRequirementsAttribute</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="01bbd-104">構文</span><span class="sxs-lookup"><span data-stu-id="01bbd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f32f4-104">構文</span><span class="sxs-lookup"><span data-stu-id="f32f4-104">Syntax</span></span>  
   
 ```  
 class AspNetCompatibilityRequirementsAttribute : Behavior  
@@ -31,24 +31,24 @@ class AspNetCompatibilityRequirementsAttribute : Behavior
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="01bbd-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="01bbd-105">Methods</span></span>  
- <span data-ttu-id="01bbd-106">AspNetCompatibilityRequirementsAttribute クラスは、メソッドをすべて定義しません。</span><span class="sxs-lookup"><span data-stu-id="01bbd-106">The AspNetCompatibilityRequirementsAttribute class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="f32f4-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="f32f4-105">Methods</span></span>  
+ <span data-ttu-id="f32f4-106">AspNetCompatibilityRequirementsAttribute クラスは、メソッドをすべて定義しません。</span><span class="sxs-lookup"><span data-stu-id="f32f4-106">The AspNetCompatibilityRequirementsAttribute class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="01bbd-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="01bbd-107">Properties</span></span>  
- <span data-ttu-id="01bbd-108">AspNetCompatibilityRequirementsAttribute クラスには、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="01bbd-108">The AspNetCompatibilityRequirementsAttribute class has the following property.</span></span>  
+## <a name="properties"></a><span data-ttu-id="f32f4-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="f32f4-107">Properties</span></span>  
+ <span data-ttu-id="f32f4-108">AspNetCompatibilityRequirementsAttribute クラスには、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="f32f4-108">The AspNetCompatibilityRequirementsAttribute class has the following property.</span></span>  
   
-### <a name="requirementsmode"></a><span data-ttu-id="01bbd-109">RequirementsMode</span><span class="sxs-lookup"><span data-stu-id="01bbd-109">RequirementsMode</span></span>  
- <span data-ttu-id="01bbd-110">データ型: string</span><span class="sxs-lookup"><span data-stu-id="01bbd-110">Data type: string</span></span>  
+### <a name="requirementsmode"></a><span data-ttu-id="f32f4-109">RequirementsMode</span><span class="sxs-lookup"><span data-stu-id="f32f4-109">RequirementsMode</span></span>  
+ <span data-ttu-id="f32f4-110">データ型: string</span><span class="sxs-lookup"><span data-stu-id="f32f4-110">Data type: string</span></span>  
   
- <span data-ttu-id="01bbd-111">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="01bbd-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="f32f4-111">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="f32f4-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="01bbd-112">Asp.Net 互換モードがアクティブであるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="01bbd-112">Indicates if Asp.Net compatibility mode is active.</span></span>  
+ <span data-ttu-id="f32f4-112">Asp.Net 互換モードがアクティブであるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="f32f4-112">Indicates if Asp.Net compatibility mode is active.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="01bbd-113">要件</span><span class="sxs-lookup"><span data-stu-id="01bbd-113">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f32f4-113">要件</span><span class="sxs-lookup"><span data-stu-id="f32f4-113">Requirements</span></span>  
   
-|<span data-ttu-id="01bbd-114">MOF</span><span class="sxs-lookup"><span data-stu-id="01bbd-114">MOF</span></span>|<span data-ttu-id="01bbd-115">Servicemodel.mof にて宣言済み。</span><span class="sxs-lookup"><span data-stu-id="01bbd-115">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="f32f4-114">MOF</span><span class="sxs-lookup"><span data-stu-id="f32f4-114">MOF</span></span>|<span data-ttu-id="f32f4-115">Servicemodel.mof にて宣言済み。</span><span class="sxs-lookup"><span data-stu-id="f32f4-115">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="01bbd-116">Namespace</span><span class="sxs-lookup"><span data-stu-id="01bbd-116">Namespace</span></span>|<span data-ttu-id="01bbd-117">root\ServiceModel で定義</span><span class="sxs-lookup"><span data-stu-id="01bbd-117">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="f32f4-116">Namespace</span><span class="sxs-lookup"><span data-stu-id="f32f4-116">Namespace</span></span>|<span data-ttu-id="f32f4-117">root\ServiceModel で定義</span><span class="sxs-lookup"><span data-stu-id="f32f4-117">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="01bbd-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="01bbd-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="f32f4-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="f32f4-118">See Also</span></span>  
  <xref:System.ServiceModel.ServiceHostingEnvironment.AspNetCompatibilityEnabled%2A>

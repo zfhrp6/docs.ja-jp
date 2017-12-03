@@ -10,29 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8a7ae705-77fd-42ce-a181-814765873d73
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6541a82bd54c544e656c3c2823c2e4cb8125673b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 344ce3e6f457348876b469384c63987c8794d4f6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="4034---routingtablelookupstop"></a><span data-ttu-id="923d4-102">4034 - RoutingTableLookupStop</span><span class="sxs-lookup"><span data-stu-id="923d4-102">4034 - RoutingTableLookupStop</span></span>
-## <a name="properties"></a><span data-ttu-id="923d4-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="923d4-103">Properties</span></span>  
+# <a name="4034---routingtablelookupstop"></a><span data-ttu-id="23a52-102">4034 - RoutingTableLookupStop</span><span class="sxs-lookup"><span data-stu-id="23a52-102">4034 - RoutingTableLookupStop</span></span>
+## <a name="properties"></a><span data-ttu-id="23a52-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="23a52-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="923d4-104">ID</span><span class="sxs-lookup"><span data-stu-id="923d4-104">ID</span></span>|<span data-ttu-id="923d4-105">4034</span><span class="sxs-lookup"><span data-stu-id="923d4-105">4034</span></span>|  
-|<span data-ttu-id="923d4-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="923d4-106">Keywords</span></span>|<span data-ttu-id="923d4-107">ActivationServices</span><span class="sxs-lookup"><span data-stu-id="923d4-107">ActivationServices</span></span>|  
-|<span data-ttu-id="923d4-108">レベル</span><span class="sxs-lookup"><span data-stu-id="923d4-108">Level</span></span>|<span data-ttu-id="923d4-109">詳細</span><span class="sxs-lookup"><span data-stu-id="923d4-109">Verbose</span></span>|  
-|<span data-ttu-id="923d4-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="923d4-110">Channel</span></span>|<span data-ttu-id="923d4-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="923d4-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="23a52-104">ID</span><span class="sxs-lookup"><span data-stu-id="23a52-104">ID</span></span>|<span data-ttu-id="23a52-105">4034</span><span class="sxs-lookup"><span data-stu-id="23a52-105">4034</span></span>|  
+|<span data-ttu-id="23a52-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="23a52-106">Keywords</span></span>|<span data-ttu-id="23a52-107">ActivationServices</span><span class="sxs-lookup"><span data-stu-id="23a52-107">ActivationServices</span></span>|  
+|<span data-ttu-id="23a52-108">レベル</span><span class="sxs-lookup"><span data-stu-id="23a52-108">Level</span></span>|<span data-ttu-id="23a52-109">詳細</span><span class="sxs-lookup"><span data-stu-id="23a52-109">Verbose</span></span>|  
+|<span data-ttu-id="23a52-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="23a52-110">Channel</span></span>|<span data-ttu-id="23a52-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="23a52-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="923d4-112">説明</span><span class="sxs-lookup"><span data-stu-id="923d4-112">Description</span></span>  
- <span data-ttu-id="923d4-113">このイベントはルーティング テーブルの参照が停止したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="923d4-113">This event is emitted when the routing table lookup has stopped.</span></span>  
+## <a name="description"></a><span data-ttu-id="23a52-112">説明</span><span class="sxs-lookup"><span data-stu-id="23a52-112">Description</span></span>  
+ <span data-ttu-id="23a52-113">このイベントはルーティング テーブルの参照が停止したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="23a52-113">This event is emitted when the routing table lookup has stopped.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="923d4-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="923d4-114">Message</span></span>  
- <span data-ttu-id="923d4-115">ルーティング テーブルの参照が完了しました。</span><span class="sxs-lookup"><span data-stu-id="923d4-115">Routing table lookup completed.</span></span>  
+## <a name="message"></a><span data-ttu-id="23a52-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="23a52-114">Message</span></span>  
+ <span data-ttu-id="23a52-115">ルーティング テーブルの参照が完了しました。</span><span class="sxs-lookup"><span data-stu-id="23a52-115">Routing table lookup completed.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="923d4-116">詳細</span><span class="sxs-lookup"><span data-stu-id="923d4-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="23a52-116">詳細</span><span class="sxs-lookup"><span data-stu-id="23a52-116">Details</span></span>

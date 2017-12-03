@@ -10,29 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 52f36a6f-cc3f-441f-a4c2-e8df2e747d52
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c6e89c341c640ff025b854e95cae6f4558663608
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 83dcdb917c0697238d966aee039801f439157a90
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="5600---federationmessageprocessingstarted"></a><span data-ttu-id="a4ed0-102">5600 - FederationMessageProcessingStarted</span><span class="sxs-lookup"><span data-stu-id="a4ed0-102">5600 - FederationMessageProcessingStarted</span></span>
-## <a name="properties"></a><span data-ttu-id="a4ed0-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a4ed0-103">Properties</span></span>  
+# <a name="5600---federationmessageprocessingstarted"></a><span data-ttu-id="402cb-102">5600 - FederationMessageProcessingStarted</span><span class="sxs-lookup"><span data-stu-id="402cb-102">5600 - FederationMessageProcessingStarted</span></span>
+## <a name="properties"></a><span data-ttu-id="402cb-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="402cb-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="a4ed0-104">ID</span><span class="sxs-lookup"><span data-stu-id="a4ed0-104">ID</span></span>|<span data-ttu-id="a4ed0-105">5600</span><span class="sxs-lookup"><span data-stu-id="a4ed0-105">5600</span></span>|  
-|<span data-ttu-id="a4ed0-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="a4ed0-106">Keywords</span></span>|<span data-ttu-id="a4ed0-107">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="a4ed0-107">Security</span></span>|  
-|<span data-ttu-id="a4ed0-108">レベル</span><span class="sxs-lookup"><span data-stu-id="a4ed0-108">Level</span></span>|<span data-ttu-id="a4ed0-109">詳細</span><span class="sxs-lookup"><span data-stu-id="a4ed0-109">Verbose</span></span>|  
-|<span data-ttu-id="a4ed0-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="a4ed0-110">Channel</span></span>|<span data-ttu-id="a4ed0-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="a4ed0-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="402cb-104">ID</span><span class="sxs-lookup"><span data-stu-id="402cb-104">ID</span></span>|<span data-ttu-id="402cb-105">5600</span><span class="sxs-lookup"><span data-stu-id="402cb-105">5600</span></span>|  
+|<span data-ttu-id="402cb-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="402cb-106">Keywords</span></span>|<span data-ttu-id="402cb-107">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="402cb-107">Security</span></span>|  
+|<span data-ttu-id="402cb-108">レベル</span><span class="sxs-lookup"><span data-stu-id="402cb-108">Level</span></span>|<span data-ttu-id="402cb-109">詳細</span><span class="sxs-lookup"><span data-stu-id="402cb-109">Verbose</span></span>|  
+|<span data-ttu-id="402cb-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="402cb-110">Channel</span></span>|<span data-ttu-id="402cb-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="402cb-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="a4ed0-112">説明</span><span class="sxs-lookup"><span data-stu-id="a4ed0-112">Description</span></span>  
- <span data-ttu-id="a4ed0-113">このイベントは、フェデレーション メッセージの処理を開始すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="a4ed0-113">This event is emitted when the federation message processing started.</span></span>  
+## <a name="description"></a><span data-ttu-id="402cb-112">説明</span><span class="sxs-lookup"><span data-stu-id="402cb-112">Description</span></span>  
+ <span data-ttu-id="402cb-113">このイベントは、フェデレーション メッセージの処理を開始すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="402cb-113">This event is emitted when the federation message processing started.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="a4ed0-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="a4ed0-114">Message</span></span>  
- <span data-ttu-id="a4ed0-115">フェデレーション メッセージの処理を開始しました。</span><span class="sxs-lookup"><span data-stu-id="a4ed0-115">Federation message processing started.</span></span>  
+## <a name="message"></a><span data-ttu-id="402cb-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="402cb-114">Message</span></span>  
+ <span data-ttu-id="402cb-115">フェデレーション メッセージの処理を開始しました。</span><span class="sxs-lookup"><span data-stu-id="402cb-115">Federation message processing started.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="a4ed0-116">詳細</span><span class="sxs-lookup"><span data-stu-id="a4ed0-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="402cb-116">詳細</span><span class="sxs-lookup"><span data-stu-id="402cb-116">Details</span></span>

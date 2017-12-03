@@ -10,22 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d2530933-bfba-4b20-aba6-b1f99e97699d
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 64b391b38a94d35a13d22d2fc41d7038831351ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6b09307be0f9ea452598f895e2507d77fca4733a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="systemservicemodelcommunicationobjectfaultreason"></a><span data-ttu-id="1b7f0-102">System.ServiceModel.CommunicationObjectFaultReason</span><span class="sxs-lookup"><span data-stu-id="1b7f0-102">System.ServiceModel.CommunicationObjectFaultReason</span></span>
-<span data-ttu-id="1b7f0-103">System.ServiceModel.CommunicationObjectFaultReason</span><span class="sxs-lookup"><span data-stu-id="1b7f0-103">System.ServiceModel.CommunicationObjectFaultReason</span></span>  
+# <a name="systemservicemodelcommunicationobjectfaultreason"></a><span data-ttu-id="f809c-102">System.ServiceModel.CommunicationObjectFaultReason</span><span class="sxs-lookup"><span data-stu-id="f809c-102">System.ServiceModel.CommunicationObjectFaultReason</span></span>
+<span data-ttu-id="f809c-103">System.ServiceModel.CommunicationObjectFaultReason</span><span class="sxs-lookup"><span data-stu-id="f809c-103">System.ServiceModel.CommunicationObjectFaultReason</span></span>  
   
-## <a name="description"></a><span data-ttu-id="1b7f0-104">説明</span><span class="sxs-lookup"><span data-stu-id="1b7f0-104">Description</span></span>  
- <span data-ttu-id="1b7f0-105">例外により通信オブジェクトでエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="1b7f0-105">A communication object faulted due to exception.</span></span>  
+## <a name="description"></a><span data-ttu-id="f809c-104">説明</span><span class="sxs-lookup"><span data-stu-id="f809c-104">Description</span></span>  
+ <span data-ttu-id="f809c-105">例外により通信オブジェクトでエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="f809c-105">A communication object faulted due to exception.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1b7f0-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="1b7f0-106">See Also</span></span>  
- [<span data-ttu-id="1b7f0-107">トレース</span><span class="sxs-lookup"><span data-stu-id="1b7f0-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="1b7f0-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="1b7f0-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="1b7f0-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="1b7f0-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="f809c-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="f809c-106">See Also</span></span>  
+ [<span data-ttu-id="f809c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="f809c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="f809c-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="f809c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="f809c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="f809c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

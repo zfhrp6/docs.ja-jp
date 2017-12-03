@@ -10,25 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: be762c57-5641-4761-bd74-ce42603d40bc
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 174ae639b7a7e03da33f94cfd9fc86fbef73e06a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ba0feb3cc151db31110b76344019426c460c4bfb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="wasconnectiontimedout"></a><span data-ttu-id="20123-102">WasConnectionTimedout</span><span class="sxs-lookup"><span data-stu-id="20123-102">WasConnectionTimedout</span></span>
-<span data-ttu-id="20123-103">ID : 163</span><span class="sxs-lookup"><span data-stu-id="20123-103">Id: 163</span></span>  
+# <a name="wasconnectiontimedout"></a><span data-ttu-id="0e3dd-102">WasConnectionTimedout</span><span class="sxs-lookup"><span data-stu-id="0e3dd-102">WasConnectionTimedout</span></span>
+<span data-ttu-id="0e3dd-103">ID : 163</span><span class="sxs-lookup"><span data-stu-id="0e3dd-103">Id: 163</span></span>  
   
- <span data-ttu-id="20123-104">重大度 : エラー</span><span class="sxs-lookup"><span data-stu-id="20123-104">Severity: Error</span></span>  
+ <span data-ttu-id="0e3dd-104">重大度 : エラー</span><span class="sxs-lookup"><span data-stu-id="0e3dd-104">Severity: Error</span></span>  
   
- <span data-ttu-id="20123-105">カテゴリ: SMSvcHost</span><span class="sxs-lookup"><span data-stu-id="20123-105">Category: SMSvcHost</span></span>  
+ <span data-ttu-id="0e3dd-105">カテゴリ: SMSvcHost</span><span class="sxs-lookup"><span data-stu-id="0e3dd-105">Category: SMSvcHost</span></span>  
   
-## <a name="description"></a><span data-ttu-id="20123-106">説明</span><span class="sxs-lookup"><span data-stu-id="20123-106">Description</span></span>  
- <span data-ttu-id="20123-107">このイベントは、Windows プロセス アクティブ化サービス (WAS) で必要な接続がタイムアウトになったことを示し、プロセス名とプロセス ID を表示します。</span><span class="sxs-lookup"><span data-stu-id="20123-107">This event indicates A connection that Windows Process Activation Service (WAS) requires timed out, listing the process name and ID.</span></span>  
+## <a name="description"></a><span data-ttu-id="0e3dd-106">説明</span><span class="sxs-lookup"><span data-stu-id="0e3dd-106">Description</span></span>  
+ <span data-ttu-id="0e3dd-107">このイベントは、Windows プロセス アクティブ化サービス (WAS) で必要な接続がタイムアウトになったことを示し、プロセス名とプロセス ID を表示します。</span><span class="sxs-lookup"><span data-stu-id="0e3dd-107">This event indicates A connection that Windows Process Activation Service (WAS) requires timed out, listing the process name and ID.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="20123-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="20123-108">See Also</span></span>  
- [<span data-ttu-id="20123-109">イベントのログ記録</span><span class="sxs-lookup"><span data-stu-id="20123-109">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [<span data-ttu-id="20123-110">イベントの一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="20123-110">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="0e3dd-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="0e3dd-108">See Also</span></span>  
+ [<span data-ttu-id="0e3dd-109">イベントのログ記録</span><span class="sxs-lookup"><span data-stu-id="0e3dd-109">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="0e3dd-110">イベントの一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="0e3dd-110">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
