@@ -10,17 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bcfe5c44-04ef-4a20-96a5-90bfadf39623
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5bdfd491cdc39accb396664500eef7c66142ef9c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 34acc21230650fe5b8da2f81fd176c253c57f69d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="ltextensionsgt"></a><span data-ttu-id="2278a-102">&lt;拡張機能&gt;</span><span class="sxs-lookup"><span data-stu-id="2278a-102">&lt;extensions&gt;</span></span>
-<span data-ttu-id="2278a-103">この構成要素には、標準の探索可能なメタデータと共に発行する必要のあるカスタム メタデータ (EPR、ContractTypeName、BindingName、Scope、ListenURI) を含む XML 要素のコレクションが格納されます。</span><span class="sxs-lookup"><span data-stu-id="2278a-103">This configuration element contains a collection of XML elements that contain custom metadata to be published along with the standard discoverable metadata (EPR, ContractTypeName, BindingName, Scope and ListenURI).</span></span> <span data-ttu-id="2278a-104">この構成要素を使用する場合の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2278a-104">The following is an example of using this configuration element.</span></span>  
+# <a name="ltextensionsgt"></a><span data-ttu-id="2cc2e-102">&lt;拡張機能&gt;</span><span class="sxs-lookup"><span data-stu-id="2cc2e-102">&lt;extensions&gt;</span></span>
+<span data-ttu-id="2cc2e-103">この構成要素には、標準の探索可能なメタデータと共に発行する必要のあるカスタム メタデータ (EPR、ContractTypeName、BindingName、Scope、ListenURI) を含む XML 要素のコレクションが格納されます。</span><span class="sxs-lookup"><span data-stu-id="2cc2e-103">This configuration element contains a collection of XML elements that contain custom metadata to be published along with the standard discoverable metadata (EPR, ContractTypeName, BindingName, Scope and ListenURI).</span></span> <span data-ttu-id="2cc2e-104">この構成要素を使用する場合の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2cc2e-104">The following is an example of using this configuration element.</span></span>  
   
 ```xml  
 <services>  
@@ -55,5 +55,5 @@ ms.lasthandoff: 10/18/2017
 </behaviors>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="2278a-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="2278a-105">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="2cc2e-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="2cc2e-105">See Also</span></span>  
  <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

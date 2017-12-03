@@ -10,26 +10,26 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: bae88c2a929ca7f59139eb3c0aff7822a0c66246
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e1ea5fc60f4dc64fd895469b580b81379da26191
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="lttransportgt-of-ltwshttpbindinggt"></a><span data-ttu-id="b5abc-102">&lt;wsHttpBinding&gt; の &lt;transport&gt;</span><span class="sxs-lookup"><span data-stu-id="b5abc-102">&lt;transport&gt; of &lt;wsHttpBinding&gt;</span></span>
-<span data-ttu-id="b5abc-103">HTTP トランスポートの認証設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-103">Defines authentication settings for the HTTP transport.</span></span>  
+# <a name="lttransportgt-of-ltwshttpbindinggt"></a><span data-ttu-id="42eaf-102">&lt;wsHttpBinding&gt; の &lt;transport&gt;</span><span class="sxs-lookup"><span data-stu-id="42eaf-102">&lt;transport&gt; of &lt;wsHttpBinding&gt;</span></span>
+<span data-ttu-id="42eaf-103">HTTP トランスポートの認証設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-103">Defines authentication settings for the HTTP transport.</span></span>  
   
- <span data-ttu-id="b5abc-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="b5abc-104">\<system.serviceModel></span></span>  
-<span data-ttu-id="b5abc-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="b5abc-105">\<bindings></span></span>  
-<span data-ttu-id="b5abc-106">\<wsHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="b5abc-106">\<wsHttpBinding></span></span>  
-<span data-ttu-id="b5abc-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="b5abc-107">\<binding></span></span>  
-<span data-ttu-id="b5abc-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="b5abc-108">\<security></span></span>  
-<span data-ttu-id="b5abc-109">\<トランスポート ></span><span class="sxs-lookup"><span data-stu-id="b5abc-109">\<transport></span></span>  
+ <span data-ttu-id="42eaf-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="42eaf-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="42eaf-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="42eaf-105">\<bindings></span></span>  
+<span data-ttu-id="42eaf-106">\<wsHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="42eaf-106">\<wsHttpBinding></span></span>  
+<span data-ttu-id="42eaf-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="42eaf-107">\<binding></span></span>  
+<span data-ttu-id="42eaf-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="42eaf-108">\<security></span></span>  
+<span data-ttu-id="42eaf-109">\<トランスポート ></span><span class="sxs-lookup"><span data-stu-id="42eaf-109">\<transport></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b5abc-110">構文</span><span class="sxs-lookup"><span data-stu-id="b5abc-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="42eaf-110">構文</span><span class="sxs-lookup"><span data-stu-id="42eaf-110">Syntax</span></span>  
   
 ```xml  
 <wsHttpBinding>  
@@ -48,59 +48,59 @@ ms.lasthandoff: 11/21/2017
 </wsHttpBinding>  
 ```  
   
-## <a name="type"></a><span data-ttu-id="b5abc-111">型</span><span class="sxs-lookup"><span data-stu-id="b5abc-111">Type</span></span>  
+## <a name="type"></a><span data-ttu-id="42eaf-111">型</span><span class="sxs-lookup"><span data-stu-id="42eaf-111">Type</span></span>  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="b5abc-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="b5abc-112">Attributes and Elements</span></span>  
- <span data-ttu-id="b5abc-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="42eaf-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="42eaf-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="42eaf-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="b5abc-114">属性</span><span class="sxs-lookup"><span data-stu-id="b5abc-114">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="42eaf-114">属性</span><span class="sxs-lookup"><span data-stu-id="42eaf-114">Attributes</span></span>  
   
-|<span data-ttu-id="b5abc-115">属性</span><span class="sxs-lookup"><span data-stu-id="b5abc-115">Attribute</span></span>|<span data-ttu-id="b5abc-116">説明</span><span class="sxs-lookup"><span data-stu-id="b5abc-116">Description</span></span>|  
+|<span data-ttu-id="42eaf-115">属性</span><span class="sxs-lookup"><span data-stu-id="42eaf-115">Attribute</span></span>|<span data-ttu-id="42eaf-116">説明</span><span class="sxs-lookup"><span data-stu-id="42eaf-116">Description</span></span>|  
 |---------------|-----------------|  
-|`clientCredentialType`|<span data-ttu-id="b5abc-117">サービスに対するクライアントの認証に使用される資格情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-117">Specifies the credential used to authenticate the client to the service.</span></span> <span data-ttu-id="b5abc-118">この属性は <xref:System.ServiceModel.HttpClientCredentialType> 型です。</span><span class="sxs-lookup"><span data-stu-id="b5abc-118">This attribute is of type <xref:System.ServiceModel.HttpClientCredentialType>.</span></span>|  
-|`proxyCredentialType`|<span data-ttu-id="b5abc-119">ドメイン プロキシに対するクライアントの認証に使用される資格情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-119">Specifies the credential used to authenticate the client to a domain proxy.</span></span> <span data-ttu-id="b5abc-120">この属性は <xref:System.ServiceModel.HttpProxyCredentialType> 型です。</span><span class="sxs-lookup"><span data-stu-id="b5abc-120">This attribute is of type <xref:System.ServiceModel.HttpProxyCredentialType>.</span></span>|  
-|`realm`|<span data-ttu-id="b5abc-121">ダイジェストまたは基本認証の認証レルムを指定する文字列。</span><span class="sxs-lookup"><span data-stu-id="b5abc-121">A string that specifies the authentication realm for digest or basic authentication.</span></span> <span data-ttu-id="b5abc-122">既定値は空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="b5abc-122">The default is an empty string.</span></span><br /><br /> <span data-ttu-id="b5abc-123">認証レルムでは、少なくとも、認証を実行するホストの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-123">An authentication realm specifies at least the name of the host that performs the authentication.</span></span> <span data-ttu-id="b5abc-124">アクセス権のあるユーザーのコレクションも指定できます。</span><span class="sxs-lookup"><span data-stu-id="b5abc-124">It can also specify a collection of users that has access.</span></span> <span data-ttu-id="b5abc-125">ユーザーは、認証レルムを照会して、複数のユーザー名およびパスワードの候補のうち、どれを使用できるかを確認することができます。</span><span class="sxs-lookup"><span data-stu-id="b5abc-125">A user can query the authentication realm to ascertain which one of the several possible usernames and passwords can be used.</span></span>|  
-|`policyEnforcement`|<span data-ttu-id="b5abc-126">この列挙体は、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> を適用するタイミングを指定します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-126">This enumeration specifies when the <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> should be enforced.</span></span><br /><br /> <span data-ttu-id="b5abc-127">1.Never – ポリシーが適用されることはありません (拡張保護は無効になります)。</span><span class="sxs-lookup"><span data-stu-id="b5abc-127">1.  Never – The policy is never enforced (Extended Protection is disabled).</span></span><br /><span data-ttu-id="b5abc-128">2.WhenSupported – ポリシーが適用されるのは、クライアントが拡張保護をサポートしている場合のみです。</span><span class="sxs-lookup"><span data-stu-id="b5abc-128">2.  WhenSupported – The policy is enforced only if the client supports Extended Protection.</span></span><br /><span data-ttu-id="b5abc-129">3.Always – ポリシーは常に適用されます。</span><span class="sxs-lookup"><span data-stu-id="b5abc-129">3.  Always – The policy is always enforced.</span></span> <span data-ttu-id="b5abc-130">拡張保護をサポートしていないクライアントは認証に失敗します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-130">Clients which don’t support Extended Protection will fail to authenticate.</span></span>|  
+|`clientCredentialType`|<span data-ttu-id="42eaf-117">サービスに対するクライアントの認証に使用される資格情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-117">Specifies the credential used to authenticate the client to the service.</span></span> <span data-ttu-id="42eaf-118">この属性は <xref:System.ServiceModel.HttpClientCredentialType> 型です。</span><span class="sxs-lookup"><span data-stu-id="42eaf-118">This attribute is of type <xref:System.ServiceModel.HttpClientCredentialType>.</span></span>|  
+|`proxyCredentialType`|<span data-ttu-id="42eaf-119">ドメイン プロキシに対するクライアントの認証に使用される資格情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-119">Specifies the credential used to authenticate the client to a domain proxy.</span></span> <span data-ttu-id="42eaf-120">この属性は <xref:System.ServiceModel.HttpProxyCredentialType> 型です。</span><span class="sxs-lookup"><span data-stu-id="42eaf-120">This attribute is of type <xref:System.ServiceModel.HttpProxyCredentialType>.</span></span>|  
+|`realm`|<span data-ttu-id="42eaf-121">ダイジェストまたは基本認証の認証レルムを指定する文字列。</span><span class="sxs-lookup"><span data-stu-id="42eaf-121">A string that specifies the authentication realm for digest or basic authentication.</span></span> <span data-ttu-id="42eaf-122">既定値は空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="42eaf-122">The default is an empty string.</span></span><br /><br /> <span data-ttu-id="42eaf-123">認証レルムでは、少なくとも、認証を実行するホストの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-123">An authentication realm specifies at least the name of the host that performs the authentication.</span></span> <span data-ttu-id="42eaf-124">アクセス権のあるユーザーのコレクションも指定できます。</span><span class="sxs-lookup"><span data-stu-id="42eaf-124">It can also specify a collection of users that has access.</span></span> <span data-ttu-id="42eaf-125">ユーザーは、認証レルムを照会して、複数のユーザー名およびパスワードの候補のうち、どれを使用できるかを確認することができます。</span><span class="sxs-lookup"><span data-stu-id="42eaf-125">A user can query the authentication realm to ascertain which one of the several possible usernames and passwords can be used.</span></span>|  
+|`policyEnforcement`|<span data-ttu-id="42eaf-126">この列挙体は、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> を適用するタイミングを指定します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-126">This enumeration specifies when the <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> should be enforced.</span></span><br /><br /> <span data-ttu-id="42eaf-127">1.Never – ポリシーが適用されることはありません (拡張保護は無効になります)。</span><span class="sxs-lookup"><span data-stu-id="42eaf-127">1.  Never – The policy is never enforced (Extended Protection is disabled).</span></span><br /><span data-ttu-id="42eaf-128">2.WhenSupported – ポリシーが適用されるのは、クライアントが拡張保護をサポートしている場合のみです。</span><span class="sxs-lookup"><span data-stu-id="42eaf-128">2.  WhenSupported – The policy is enforced only if the client supports Extended Protection.</span></span><br /><span data-ttu-id="42eaf-129">3.Always – ポリシーは常に適用されます。</span><span class="sxs-lookup"><span data-stu-id="42eaf-129">3.  Always – The policy is always enforced.</span></span> <span data-ttu-id="42eaf-130">拡張保護をサポートしていないクライアントは認証に失敗します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-130">Clients which don’t support Extended Protection will fail to authenticate.</span></span>|  
   
-## <a name="clientcredentialtype-attribute"></a><span data-ttu-id="b5abc-131">clientCredentialType 属性</span><span class="sxs-lookup"><span data-stu-id="b5abc-131">clientCredentialType Attribute</span></span>  
+## <a name="clientcredentialtype-attribute"></a><span data-ttu-id="42eaf-131">clientCredentialType 属性</span><span class="sxs-lookup"><span data-stu-id="42eaf-131">clientCredentialType Attribute</span></span>  
   
-|<span data-ttu-id="b5abc-132">値</span><span class="sxs-lookup"><span data-stu-id="b5abc-132">Value</span></span>|<span data-ttu-id="b5abc-133">説明</span><span class="sxs-lookup"><span data-stu-id="b5abc-133">Description</span></span>|  
+|<span data-ttu-id="42eaf-132">値</span><span class="sxs-lookup"><span data-stu-id="42eaf-132">Value</span></span>|<span data-ttu-id="42eaf-133">説明</span><span class="sxs-lookup"><span data-stu-id="42eaf-133">Description</span></span>|  
 |-----------|-----------------|  
-|`None`|<span data-ttu-id="b5abc-134">セキュリティを無効にします。</span><span class="sxs-lookup"><span data-stu-id="b5abc-134">Security is disabled.</span></span>|  
-|`Basic`|<span data-ttu-id="b5abc-135">基本認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-135">Uses basic authentication.</span></span>|  
-|`Digest`|<span data-ttu-id="b5abc-136">ダイジェスト認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-136">Uses digest authentication.</span></span>|  
-|`Ntlm`|<span data-ttu-id="b5abc-137">Windows ドメインのフォールバックとして NTLM 認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-137">Uses NTLM authentication as a fallback with a Windows domain.</span></span>|  
-|`Windows`|<span data-ttu-id="b5abc-138">統合 Windows 認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-138">Uses integrated Windows authentication.</span></span>|  
-|`Certificate`|<span data-ttu-id="b5abc-139">X.509 証明書を使用して、クライアントを認証します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-139">Uses X.509 certificates to authenticate the client.</span></span>|  
+|`None`|<span data-ttu-id="42eaf-134">セキュリティを無効にします。</span><span class="sxs-lookup"><span data-stu-id="42eaf-134">Security is disabled.</span></span>|  
+|`Basic`|<span data-ttu-id="42eaf-135">基本認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-135">Uses basic authentication.</span></span>|  
+|`Digest`|<span data-ttu-id="42eaf-136">ダイジェスト認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-136">Uses digest authentication.</span></span>|  
+|`Ntlm`|<span data-ttu-id="42eaf-137">Windows ドメインのフォールバックとして NTLM 認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-137">Uses NTLM authentication as a fallback with a Windows domain.</span></span>|  
+|`Windows`|<span data-ttu-id="42eaf-138">統合 Windows 認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-138">Uses integrated Windows authentication.</span></span>|  
+|`Certificate`|<span data-ttu-id="42eaf-139">X.509 証明書を使用して、クライアントを認証します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-139">Uses X.509 certificates to authenticate the client.</span></span>|  
   
-## <a name="proxycredentialtype-attribute"></a><span data-ttu-id="b5abc-140">proxyCredentialType 属性</span><span class="sxs-lookup"><span data-stu-id="b5abc-140">proxyCredentialType Attribute</span></span>  
+## <a name="proxycredentialtype-attribute"></a><span data-ttu-id="42eaf-140">proxyCredentialType 属性</span><span class="sxs-lookup"><span data-stu-id="42eaf-140">proxyCredentialType Attribute</span></span>  
   
-|<span data-ttu-id="b5abc-141">値</span><span class="sxs-lookup"><span data-stu-id="b5abc-141">Value</span></span>|<span data-ttu-id="b5abc-142">説明</span><span class="sxs-lookup"><span data-stu-id="b5abc-142">Description</span></span>|  
+|<span data-ttu-id="42eaf-141">値</span><span class="sxs-lookup"><span data-stu-id="42eaf-141">Value</span></span>|<span data-ttu-id="42eaf-142">説明</span><span class="sxs-lookup"><span data-stu-id="42eaf-142">Description</span></span>|  
 |-----------|-----------------|  
-|`None`|<span data-ttu-id="b5abc-143">セキュリティを無効にします。</span><span class="sxs-lookup"><span data-stu-id="b5abc-143">Security is disabled.</span></span>|  
-|`Basic`|<span data-ttu-id="b5abc-144">基本認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-144">Uses basic authentication.</span></span>|  
-|`Digest`|<span data-ttu-id="b5abc-145">ダイジェスト認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-145">Uses digest authentication.</span></span>|  
-|`Ntlm`|<span data-ttu-id="b5abc-146">Windows ドメインのフォールバックとして NTLM を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-146">Uses NTLM as a fallback with a Windows domain.</span></span>|  
-|`Windows`|<span data-ttu-id="b5abc-147">統合 Windows 認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-147">Uses integrated Windows authentication.</span></span>|  
-|`Certificate`|<span data-ttu-id="b5abc-148">X.509 証明書を使用して、クライアントを認証します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-148">Uses X.509 certificates to authenticate the client.</span></span>|  
+|`None`|<span data-ttu-id="42eaf-143">セキュリティを無効にします。</span><span class="sxs-lookup"><span data-stu-id="42eaf-143">Security is disabled.</span></span>|  
+|`Basic`|<span data-ttu-id="42eaf-144">基本認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-144">Uses basic authentication.</span></span>|  
+|`Digest`|<span data-ttu-id="42eaf-145">ダイジェスト認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-145">Uses digest authentication.</span></span>|  
+|`Ntlm`|<span data-ttu-id="42eaf-146">Windows ドメインのフォールバックとして NTLM を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-146">Uses NTLM as a fallback with a Windows domain.</span></span>|  
+|`Windows`|<span data-ttu-id="42eaf-147">統合 Windows 認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-147">Uses integrated Windows authentication.</span></span>|  
+|`Certificate`|<span data-ttu-id="42eaf-148">X.509 証明書を使用して、クライアントを認証します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-148">Uses X.509 certificates to authenticate the client.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="b5abc-149">子要素</span><span class="sxs-lookup"><span data-stu-id="b5abc-149">Child Elements</span></span>  
- <span data-ttu-id="b5abc-150">なし。</span><span class="sxs-lookup"><span data-stu-id="b5abc-150">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="42eaf-149">子要素</span><span class="sxs-lookup"><span data-stu-id="42eaf-149">Child Elements</span></span>  
+ <span data-ttu-id="42eaf-150">なし。</span><span class="sxs-lookup"><span data-stu-id="42eaf-150">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="b5abc-151">親要素</span><span class="sxs-lookup"><span data-stu-id="b5abc-151">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="42eaf-151">親要素</span><span class="sxs-lookup"><span data-stu-id="42eaf-151">Parent Elements</span></span>  
   
-|<span data-ttu-id="b5abc-152">要素</span><span class="sxs-lookup"><span data-stu-id="b5abc-152">Element</span></span>|<span data-ttu-id="b5abc-153">説明</span><span class="sxs-lookup"><span data-stu-id="b5abc-153">Description</span></span>|  
+|<span data-ttu-id="42eaf-152">要素</span><span class="sxs-lookup"><span data-stu-id="42eaf-152">Element</span></span>|<span data-ttu-id="42eaf-153">説明</span><span class="sxs-lookup"><span data-stu-id="42eaf-153">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="b5abc-154">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="b5abc-154">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|<span data-ttu-id="b5abc-155">セキュリティ機能を表す、 [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5abc-155">Represents the security capabilities of the [\<wsHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>|  
+|[<span data-ttu-id="42eaf-154">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="42eaf-154">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|<span data-ttu-id="42eaf-155">セキュリティ機能を表す、 [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="42eaf-155">Represents the security capabilities of the [\<wsHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="b5abc-156">関連項目</span><span class="sxs-lookup"><span data-stu-id="b5abc-156">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="42eaf-156">関連項目</span><span class="sxs-lookup"><span data-stu-id="42eaf-156">See Also</span></span>  
  <xref:System.ServiceModel.HttpTransportSecurity>  
  <xref:System.ServiceModel.WSHttpSecurity.Transport%2A>  
  <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Transport%2A>  
  <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>  
- [<span data-ttu-id="b5abc-157">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="b5abc-157">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [<span data-ttu-id="b5abc-158">バインディング</span><span class="sxs-lookup"><span data-stu-id="b5abc-158">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
- [<span data-ttu-id="b5abc-159">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="b5abc-159">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [<span data-ttu-id="b5abc-160">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="b5abc-160">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [<span data-ttu-id="b5abc-161">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="b5abc-161">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)
+ [<span data-ttu-id="42eaf-157">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="42eaf-157">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="42eaf-158">バインディング</span><span class="sxs-lookup"><span data-stu-id="42eaf-158">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="42eaf-159">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="42eaf-159">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="42eaf-160">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="42eaf-160">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="42eaf-161">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="42eaf-161">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

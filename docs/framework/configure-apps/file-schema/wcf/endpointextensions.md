@@ -10,19 +10,19 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 33396e0a-1fae-4616-b822-923584eebfd1
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3c0d9dd167dbef4a641566e3d89abcdaf7c0302a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6b85ca7aaff3524eb34ad07d38913f8a846060f6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="ltendpointextensionsgt"></a><span data-ttu-id="68d20-102">&lt;endpointExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="68d20-102">&lt;endpointExtensions&gt;</span></span>
-<span data-ttu-id="68d20-103">このセクションは、コンピューターまたはアプリケーションの構成ファイルの拡張セクションに新たな標準エンドポイントを登録します。</span><span class="sxs-lookup"><span data-stu-id="68d20-103">This section registers a new standard endpoint in the extensions section in a machine or application configuration file.</span></span> <span data-ttu-id="68d20-104">このコレクションに標準エンドポイントを追加するには、`add` キーワードを使用し、要素の `type` 属性をエンドポイントの種類に設定して、`name` 属性を標準エンドポイントの名前に設定します。</span><span class="sxs-lookup"><span data-stu-id="68d20-104">You can add a standard endpoint to this collection by using the `add` keyword, and setting the `type` attribute of the element to the endpoint type, as well as the `name` attribute to the name of the standard endpoint.</span></span>  
+# <a name="ltendpointextensionsgt"></a><span data-ttu-id="ba37e-102">&lt;endpointExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="ba37e-102">&lt;endpointExtensions&gt;</span></span>
+<span data-ttu-id="ba37e-103">このセクションは、コンピューターまたはアプリケーションの構成ファイルの拡張セクションに新たな標準エンドポイントを登録します。</span><span class="sxs-lookup"><span data-stu-id="ba37e-103">This section registers a new standard endpoint in the extensions section in a machine or application configuration file.</span></span> <span data-ttu-id="ba37e-104">このコレクションに標準エンドポイントを追加するには、`add` キーワードを使用し、要素の `type` 属性をエンドポイントの種類に設定して、`name` 属性を標準エンドポイントの名前に設定します。</span><span class="sxs-lookup"><span data-stu-id="ba37e-104">You can add a standard endpoint to this collection by using the `add` keyword, and setting the `type` attribute of the element to the endpoint type, as well as the `name` attribute to the name of the standard endpoint.</span></span>  
   
- <span data-ttu-id="68d20-105">次の例は、`add` 要素と `name` 属性を使用して、構成ファイルの `<endpointExtensions>` セクションに標準エンドポイントを追加します。</span><span class="sxs-lookup"><span data-stu-id="68d20-105">The following example uses the `add` element, as well as the `name` attribute to add a standard endpoint to the `<endpointExtensions>` section of the configuration file.</span></span>  
+ <span data-ttu-id="ba37e-105">次の例は、`add` 要素と `name` 属性を使用して、構成ファイルの `<endpointExtensions>` セクションに標準エンドポイントを追加します。</span><span class="sxs-lookup"><span data-stu-id="ba37e-105">The following example uses the `add` element, as well as the `name` attribute to add a standard endpoint to the `<endpointExtensions>` section of the configuration file.</span></span>  
   
 ```xml  
 <system.serviceModel>  
@@ -35,7 +35,7 @@ ms.lasthandoff: 10/18/2017
 </system.serviceModel>  
 ```  
   
- <span data-ttu-id="68d20-106">標準エンドポイントを追加すると、次の例に示すように、このエンドポイントを使用できます。</span><span class="sxs-lookup"><span data-stu-id="68d20-106">After the standard endpoint has been registered, you can use it as shown in the following example.</span></span> <span data-ttu-id="68d20-107">[\<エンドポイント >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)要素、`kind`属性で登録されている標準エンドポイントの種類を指定する、`<endpointExtensions>`セクションです。</span><span class="sxs-lookup"><span data-stu-id="68d20-107">In the [\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) element, the `kind` attribute specifies the standard endpoint type that has been registered in the `<endpointExtensions>` section.</span></span> <span data-ttu-id="68d20-108">`endpointConfiguration`属性は同じになります、`name`にある標準エンドポイントの構成要素の属性、`<standardEndpoints>`セクションです。</span><span class="sxs-lookup"><span data-stu-id="68d20-108">The `endpointConfiguration` attribute will be identical to the `name` attribute of the configuration element of the standard endpoint in the `<standardEndpoints>` section.</span></span>  
+ <span data-ttu-id="ba37e-106">標準エンドポイントを追加すると、次の例に示すように、このエンドポイントを使用できます。</span><span class="sxs-lookup"><span data-stu-id="ba37e-106">After the standard endpoint has been registered, you can use it as shown in the following example.</span></span> <span data-ttu-id="ba37e-107">[\<エンドポイント >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)要素、`kind`属性で登録されている標準エンドポイントの種類を指定する、`<endpointExtensions>`セクションです。</span><span class="sxs-lookup"><span data-stu-id="ba37e-107">In the [\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) element, the `kind` attribute specifies the standard endpoint type that has been registered in the `<endpointExtensions>` section.</span></span> <span data-ttu-id="ba37e-108">`endpointConfiguration`属性は同じになります、`name`にある標準エンドポイントの構成要素の属性、`<standardEndpoints>`セクションです。</span><span class="sxs-lookup"><span data-stu-id="ba37e-108">The `endpointConfiguration` attribute will be identical to the `name` attribute of the configuration element of the standard endpoint in the `<standardEndpoints>` section.</span></span>  
   
 ```xml  
 <system.serviceModel>  
