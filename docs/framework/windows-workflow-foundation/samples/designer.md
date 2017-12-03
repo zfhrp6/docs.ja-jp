@@ -9,27 +9,27 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bf28aae3-ddfb-4a86-b55d-1957f08c4e10
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0beafcb1c67cfddc8dceac16a965e39e0b3adb76
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6f544a92aa0e8df154ba5e165ce9a940b6120950
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="designer"></a><span data-ttu-id="d35a3-102">Designer</span><span class="sxs-lookup"><span data-stu-id="d35a3-102">Designer</span></span>
-<span data-ttu-id="d35a3-103">このセクションには、[!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]を使用する方法を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d35a3-103">This section contains samples that demonstrate how to use [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].</span></span>  
+# <a name="designer"></a><span data-ttu-id="fef1d-102">Designer</span><span class="sxs-lookup"><span data-stu-id="fef1d-102">Designer</span></span>
+<span data-ttu-id="fef1d-103">このセクションには、[!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]を使用する方法を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="fef1d-103">This section contains samples that demonstrate how to use [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="d35a3-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d35a3-104">In This Section</span></span>  
- [<span data-ttu-id="d35a3-105">XAML ファイルを追加、デザイナーのビューステートを削除します。</span><span class="sxs-lookup"><span data-stu-id="d35a3-105">Removing the View State the Designer Adds to an XAML File</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md)  
- <span data-ttu-id="d35a3-106"><xref:System.Windows.Markup.XamlWriter> から派生し、XAML ファイルからビューステートを削除するクラスを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d35a3-106">Demonstrates how to create a class that derives from <xref:System.Windows.Markup.XamlWriter> and removes view state from a XAML file.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="fef1d-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="fef1d-104">In This Section</span></span>  
+ [<span data-ttu-id="fef1d-105">XAML ファイルを追加、デザイナーのビューステートを削除します。</span><span class="sxs-lookup"><span data-stu-id="fef1d-105">Removing the View State the Designer Adds to an XAML File</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md)  
+ <span data-ttu-id="fef1d-106"><xref:System.Windows.Markup.XamlWriter> から派生し、XAML ファイルからビューステートを削除するクラスを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fef1d-106">Demonstrates how to create a class that derives from <xref:System.Windows.Markup.XamlWriter> and removes view state from a XAML file.</span></span>  
   
- [<span data-ttu-id="d35a3-107">モデル アイテム ツリーのプログラミング</span><span class="sxs-lookup"><span data-stu-id="d35a3-107">Programming Model Item Tree</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/programming-model-item-tree.md)  
- <span data-ttu-id="d35a3-108"><xref:System.Activities.Presentation.Model.ModelItem> ツリー ビューの宣言型データ バインディングを使用して [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] ツリーを操作する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d35a3-108">Demonstrates how to navigate the <xref:System.Activities.Presentation.Model.ModelItem> tree using declarative data binding from the [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] Tree View.</span></span>  
+ [<span data-ttu-id="fef1d-107">モデル アイテム ツリーのプログラミング</span><span class="sxs-lookup"><span data-stu-id="fef1d-107">Programming Model Item Tree</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/programming-model-item-tree.md)  
+ <span data-ttu-id="fef1d-108"><xref:System.Activities.Presentation.Model.ModelItem> ツリー ビューの宣言型データ バインディングを使用して [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] ツリーを操作する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fef1d-108">Demonstrates how to navigate the <xref:System.Activities.Presentation.Model.ModelItem> tree using declarative data binding from the [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] Tree View.</span></span>  
   
- [<span data-ttu-id="d35a3-109">プロパティ グリッドの拡張</span><span class="sxs-lookup"><span data-stu-id="d35a3-109">Property Grid Extensibliity</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/property-grid-extensibliity.md)  
- <span data-ttu-id="d35a3-110">デザイナー内で特定のアクティビティを選択したときに表示されるプロパティ グリッドをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d35a3-110">Demonstrates how to customize the property grid that is displayed when a given activity is selected within the designer.</span></span>  
+ [<span data-ttu-id="fef1d-109">プロパティ グリッドの拡張</span><span class="sxs-lookup"><span data-stu-id="fef1d-109">Property Grid Extensibliity</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/property-grid-extensibliity.md)  
+ <span data-ttu-id="fef1d-110">デザイナー内で特定のアクティビティを選択したときに表示されるプロパティ グリッドをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fef1d-110">Demonstrates how to customize the property grid that is displayed when a given activity is selected within the designer.</span></span>  
   
- [<span data-ttu-id="d35a3-111">ツールボックス サービス</span><span class="sxs-lookup"><span data-stu-id="d35a3-111">Toolbox Service</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/toolbox-service.md)  
- <span data-ttu-id="d35a3-112">ワークフローのコンテキストに基づいて [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] ツールボックス アクティビティを更新する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d35a3-112">Demonstrates how to update the [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] Toolbox activities based on the context of the workflow.</span></span>
+ [<span data-ttu-id="fef1d-111">ツールボックス サービス</span><span class="sxs-lookup"><span data-stu-id="fef1d-111">Toolbox Service</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/toolbox-service.md)  
+ <span data-ttu-id="fef1d-112">ワークフローのコンテキストに基づいて [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] ツールボックス アクティビティを更新する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fef1d-112">Demonstrates how to update the [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] Toolbox activities based on the context of the workflow.</span></span>

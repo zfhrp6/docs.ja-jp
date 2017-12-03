@@ -9,33 +9,33 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4c29c9c0151c253ec1e981413aea2d6d2a0672ac
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 265a81d8af566a54172fa73230ac388b8f0b848e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="how-to-deserialize-instance-data-properties"></a><span data-ttu-id="f5362-102">方法: インスタンス データ プロパティを逆シリアル化する</span><span class="sxs-lookup"><span data-stu-id="f5362-102">How to: Deserialize Instance Data Properties</span></span>
-<span data-ttu-id="f5362-103">ユーザーまたはワークフロー管理者は、永続化されたワークフロー インスタンスの状態を手動で調べることが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="f5362-103">There may be situations when a user or workflow administrator may want to manually inspect the state of a persisted workflow instance.</span></span> <span data-ttu-id="f5362-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は、次の 4 列を公開するインスタンス テーブルに関するビューを提供します。</span><span class="sxs-lookup"><span data-stu-id="f5362-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> provides a view on the Instances table that exposes the following four columns:</span></span>  
+# <a name="how-to-deserialize-instance-data-properties"></a><span data-ttu-id="568f9-102">方法: インスタンス データ プロパティを逆シリアル化する</span><span class="sxs-lookup"><span data-stu-id="568f9-102">How to: Deserialize Instance Data Properties</span></span>
+<span data-ttu-id="568f9-103">ユーザーまたはワークフロー管理者は、永続化されたワークフロー インスタンスの状態を手動で調べることが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="568f9-103">There may be situations when a user or workflow administrator may want to manually inspect the state of a persisted workflow instance.</span></span> <span data-ttu-id="568f9-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は、次の 4 列を公開するインスタンス テーブルに関するビューを提供します。</span><span class="sxs-lookup"><span data-stu-id="568f9-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> provides a view on the Instances table that exposes the following four columns:</span></span>  
   
--   <span data-ttu-id="f5362-105">ReadWritePrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="f5362-105">ReadWritePrimitiveDataProperties</span></span>  
+-   <span data-ttu-id="568f9-105">ReadWritePrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="568f9-105">ReadWritePrimitiveDataProperties</span></span>  
   
--   <span data-ttu-id="f5362-106">WriteOnlyPrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="f5362-106">WriteOnlyPrimitiveDataProperties</span></span>  
+-   <span data-ttu-id="568f9-106">WriteOnlyPrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="568f9-106">WriteOnlyPrimitiveDataProperties</span></span>  
   
--   <span data-ttu-id="f5362-107">ReadWriteComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="f5362-107">ReadWriteComplexDataProperties</span></span>  
+-   <span data-ttu-id="568f9-107">ReadWriteComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="568f9-107">ReadWriteComplexDataProperties</span></span>  
   
--   <span data-ttu-id="f5362-108">WriteOnlyComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="f5362-108">WriteOnlyComplexDataProperties</span></span>  
+-   <span data-ttu-id="568f9-108">WriteOnlyComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="568f9-108">WriteOnlyComplexDataProperties</span></span>  
   
- <span data-ttu-id="f5362-109">プリミティブ データ プロパティは、.NET Framework 型を持つと見なされます (たとえば、Int32 や String など)、"common"複合データ プロパティは、他のすべての型を参照中にプロパティを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f5362-109">Primitive data properties refer to properties whose .NET Framework types are considered to be "common" (for example, Int32 and String), while complex data properties refer to all other types.</span></span> <span data-ttu-id="f5362-110">プリミティブ型の正確な列挙については、後で示すコード例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f5362-110">An exact enumeration of primitive types is found later in this code example.</span></span>  
+ <span data-ttu-id="568f9-109">プリミティブ データ プロパティは、.NET Framework 型を持つと見なされます (たとえば、Int32 や String など)、"common"複合データ プロパティは、他のすべての型を参照中にプロパティを参照してください。</span><span class="sxs-lookup"><span data-stu-id="568f9-109">Primitive data properties refer to properties whose .NET Framework types are considered to be "common" (for example, Int32 and String), while complex data properties refer to all other types.</span></span> <span data-ttu-id="568f9-110">プリミティブ型の正確な列挙については、後で示すコード例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="568f9-110">An exact enumeration of primitive types is found later in this code example.</span></span>  
   
- <span data-ttu-id="f5362-111">Read/write プロパティは、インスタンスが読み込まれるときにワークフロー ランタイムに戻されるプロパティを表します。</span><span class="sxs-lookup"><span data-stu-id="f5362-111">Read/write properties refer to properties that are returned back to the Workflow Runtime when an instance is loaded.</span></span> <span data-ttu-id="f5362-112">WriteOnly プロパティは、データベースに書き込まれた後に再度読み取られることはありません。</span><span class="sxs-lookup"><span data-stu-id="f5362-112">WriteOnly properties are written to the database and then never read again.</span></span>  
+ <span data-ttu-id="568f9-111">Read/write プロパティは、インスタンスが読み込まれるときにワークフロー ランタイムに戻されるプロパティを表します。</span><span class="sxs-lookup"><span data-stu-id="568f9-111">Read/write properties refer to properties that are returned back to the Workflow Runtime when an instance is loaded.</span></span> <span data-ttu-id="568f9-112">WriteOnly プロパティは、データベースに書き込まれた後に再度読み取られることはありません。</span><span class="sxs-lookup"><span data-stu-id="568f9-112">WriteOnly properties are written to the database and then never read again.</span></span>  
   
- <span data-ttu-id="f5362-113">この例では、プリミティブ データ プロパティを逆シリアル化できるコードを示します。</span><span class="sxs-lookup"><span data-stu-id="f5362-113">This example provides code that enables a user to deserialize primitive data properties.</span></span> <span data-ttu-id="f5362-114">ReadWritePrimitiveDataProperties または WriteOnlyPrimitiveDataProperties 列からの読み取りバイト配列を指定して、このコードはバイナリ ラージ オブジェクト (BLOB) に変換する<xref:System.Collections.Generic.Dictionary%602>型の\<XName、オブジェクト > を各キー値プロパティ名と対応する値のペアを表します。</span><span class="sxs-lookup"><span data-stu-id="f5362-114">Given a byte array read from either the ReadWritePrimitiveDataProperties or WriteOnlyPrimitiveDataProperties column, this code will convert the binary large object (BLOB) into a <xref:System.Collections.Generic.Dictionary%602> of type \<XName, object> where each key value pair represents a property name and its corresponding value.</span></span>  
+ <span data-ttu-id="568f9-113">この例では、プリミティブ データ プロパティを逆シリアル化できるコードを示します。</span><span class="sxs-lookup"><span data-stu-id="568f9-113">This example provides code that enables a user to deserialize primitive data properties.</span></span> <span data-ttu-id="568f9-114">ReadWritePrimitiveDataProperties または WriteOnlyPrimitiveDataProperties 列からの読み取りバイト配列を指定して、このコードはバイナリ ラージ オブジェクト (BLOB) に変換する<xref:System.Collections.Generic.Dictionary%602>型の\<XName、オブジェクト > を各キー値プロパティ名と対応する値のペアを表します。</span><span class="sxs-lookup"><span data-stu-id="568f9-114">Given a byte array read from either the ReadWritePrimitiveDataProperties or WriteOnlyPrimitiveDataProperties column, this code will convert the binary large object (BLOB) into a <xref:System.Collections.Generic.Dictionary%602> of type \<XName, object> where each key value pair represents a property name and its corresponding value.</span></span>  
   
- <span data-ttu-id="f5362-115">複合データ プロパティを逆シリアル化する操作は現在サポートされていないので、この例ではその方法は示しません。</span><span class="sxs-lookup"><span data-stu-id="f5362-115">This example does not demonstrate how to deserialize complex data properties because this is currently not a supported operation.</span></span>  
+ <span data-ttu-id="568f9-115">複合データ プロパティを逆シリアル化する操作は現在サポートされていないので、この例ではその方法は示しません。</span><span class="sxs-lookup"><span data-stu-id="568f9-115">This example does not demonstrate how to deserialize complex data properties because this is currently not a supported operation.</span></span>  
   
 ```  
 using System;  

@@ -12,50 +12,50 @@ helpviewer_keywords:
 - <add> element for <xmlSchemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 766d04dd792534f0da33116ed959d81ff376e026
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fd73d6dfe6659cd973054a14d0d4e5e73d3cd8d7
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="ltaddgt-element-for-ltxmlschemaimporterextensionsgt"></a><span data-ttu-id="54513-102">&lt;xmlSchemaImporterExtensions&gt; の &lt;add&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="54513-102">&lt;add&gt; Element for &lt;xmlSchemaImporterExtensions&gt;</span></span>
-<span data-ttu-id="54513-103">XSD 型を .NET Framework 型に対応付けるために、<xref:System.Xml.Serialization.XmlSchemaImporter> によって使用される型を追加します。</span><span class="sxs-lookup"><span data-stu-id="54513-103">Adds types used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping XSD types to .NET Framework types.</span></span> <span data-ttu-id="54513-104">構成ファイルの詳細については、「[構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="54513-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
+# <a name="ltaddgt-element-for-ltxmlschemaimporterextensionsgt"></a><span data-ttu-id="c3901-102">&lt;xmlSchemaImporterExtensions&gt; の &lt;add&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="c3901-102">&lt;add&gt; Element for &lt;xmlSchemaImporterExtensions&gt;</span></span>
+<span data-ttu-id="c3901-103">XSD 型を .NET Framework 型に対応付けるために、<xref:System.Xml.Serialization.XmlSchemaImporter> によって使用される型を追加します。</span><span class="sxs-lookup"><span data-stu-id="c3901-103">Adds types used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping XSD types to .NET Framework types.</span></span> <span data-ttu-id="c3901-104">構成ファイルの詳細については、「[構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c3901-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
   
- <span data-ttu-id="54513-105">\<configuration></span><span class="sxs-lookup"><span data-stu-id="54513-105">\<configuration></span></span>  
-<span data-ttu-id="54513-106">\<system.xml.serialization></span><span class="sxs-lookup"><span data-stu-id="54513-106">\<system.xml.serialization></span></span>  
-<span data-ttu-id="54513-107">\<XmlSchemaImporterExtensions></span><span class="sxs-lookup"><span data-stu-id="54513-107">\<XmlSchemaImporterExtensions></span></span>  
-<span data-ttu-id="54513-108">\<add></span><span class="sxs-lookup"><span data-stu-id="54513-108">\<add></span></span>  
+ <span data-ttu-id="c3901-105">\<configuration></span><span class="sxs-lookup"><span data-stu-id="c3901-105">\<configuration></span></span>  
+<span data-ttu-id="c3901-106">\<system.xml.serialization></span><span class="sxs-lookup"><span data-stu-id="c3901-106">\<system.xml.serialization></span></span>  
+<span data-ttu-id="c3901-107">\<XmlSchemaImporterExtensions></span><span class="sxs-lookup"><span data-stu-id="c3901-107">\<XmlSchemaImporterExtensions></span></span>  
+<span data-ttu-id="c3901-108">\<add></span><span class="sxs-lookup"><span data-stu-id="c3901-108">\<add></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="54513-109">構文</span><span class="sxs-lookup"><span data-stu-id="54513-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c3901-109">構文</span><span class="sxs-lookup"><span data-stu-id="c3901-109">Syntax</span></span>  
   
 ```xml  
 <add name = "typeName" type="fully qualified type [,Version=version number] [,Culture=culture] [,PublicKeyToken= token]"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="54513-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="54513-110">Attributes and Elements</span></span>  
- <span data-ttu-id="54513-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="54513-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="c3901-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="c3901-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="c3901-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="c3901-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="54513-112">属性</span><span class="sxs-lookup"><span data-stu-id="54513-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="c3901-112">属性</span><span class="sxs-lookup"><span data-stu-id="c3901-112">Attributes</span></span>  
   
-|<span data-ttu-id="54513-113">属性</span><span class="sxs-lookup"><span data-stu-id="54513-113">Attribute</span></span>|<span data-ttu-id="54513-114">説明</span><span class="sxs-lookup"><span data-stu-id="54513-114">Description</span></span>|  
+|<span data-ttu-id="c3901-113">属性</span><span class="sxs-lookup"><span data-stu-id="c3901-113">Attribute</span></span>|<span data-ttu-id="c3901-114">説明</span><span class="sxs-lookup"><span data-stu-id="c3901-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="54513-115">**name**</span><span class="sxs-lookup"><span data-stu-id="54513-115">**name**</span></span>|<span data-ttu-id="54513-116">インスタンスの検索に使用される簡易名。</span><span class="sxs-lookup"><span data-stu-id="54513-116">A simple name that is used to find the instance.</span></span>|  
-|<span data-ttu-id="54513-117">**type**</span><span class="sxs-lookup"><span data-stu-id="54513-117">**type**</span></span>|<span data-ttu-id="54513-118">必須です。</span><span class="sxs-lookup"><span data-stu-id="54513-118">Required.</span></span> <span data-ttu-id="54513-119">追加するスキーマ拡張クラスを指定します。</span><span class="sxs-lookup"><span data-stu-id="54513-119">Specifies the schema  extension class to add.</span></span> <span data-ttu-id="54513-120">**type** 属性の値は 1 行で指定し、完全修飾型名を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="54513-120">The **type** attribute value must be on one line, and include the fully qualified type name.</span></span> <span data-ttu-id="54513-121">アセンブリをグローバル アセンブリ キャッシュ (GAC: Global Assembly Cache) に配置する場合は、バージョン、カルチャ、およびアセンブリの署名に使用した公開キーのトークンも含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="54513-121">When the assembly is placed in the Global Assembly Cache (GAC), it must also include the version, culture, and public key token of the signed assembly.</span></span>|  
+|<span data-ttu-id="c3901-115">**name**</span><span class="sxs-lookup"><span data-stu-id="c3901-115">**name**</span></span>|<span data-ttu-id="c3901-116">インスタンスの検索に使用される簡易名。</span><span class="sxs-lookup"><span data-stu-id="c3901-116">A simple name that is used to find the instance.</span></span>|  
+|<span data-ttu-id="c3901-117">**type**</span><span class="sxs-lookup"><span data-stu-id="c3901-117">**type**</span></span>|<span data-ttu-id="c3901-118">必須です。</span><span class="sxs-lookup"><span data-stu-id="c3901-118">Required.</span></span> <span data-ttu-id="c3901-119">追加するスキーマ拡張クラスを指定します。</span><span class="sxs-lookup"><span data-stu-id="c3901-119">Specifies the schema  extension class to add.</span></span> <span data-ttu-id="c3901-120">**type** 属性の値は 1 行で指定し、完全修飾型名を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c3901-120">The **type** attribute value must be on one line, and include the fully qualified type name.</span></span> <span data-ttu-id="c3901-121">アセンブリをグローバル アセンブリ キャッシュ (GAC: Global Assembly Cache) に配置する場合は、バージョン、カルチャ、およびアセンブリの署名に使用した公開キーのトークンも含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c3901-121">When the assembly is placed in the Global Assembly Cache (GAC), it must also include the version, culture, and public key token of the signed assembly.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="54513-122">子要素</span><span class="sxs-lookup"><span data-stu-id="54513-122">Child Elements</span></span>  
- <span data-ttu-id="54513-123">なし。</span><span class="sxs-lookup"><span data-stu-id="54513-123">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="c3901-122">子要素</span><span class="sxs-lookup"><span data-stu-id="c3901-122">Child Elements</span></span>  
+ <span data-ttu-id="c3901-123">なし。</span><span class="sxs-lookup"><span data-stu-id="c3901-123">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="54513-124">親要素</span><span class="sxs-lookup"><span data-stu-id="54513-124">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="c3901-124">親要素</span><span class="sxs-lookup"><span data-stu-id="c3901-124">Parent Elements</span></span>  
   
-|<span data-ttu-id="54513-125">要素</span><span class="sxs-lookup"><span data-stu-id="54513-125">Element</span></span>|<span data-ttu-id="54513-126">説明</span><span class="sxs-lookup"><span data-stu-id="54513-126">Description</span></span>|  
+|<span data-ttu-id="c3901-125">要素</span><span class="sxs-lookup"><span data-stu-id="c3901-125">Element</span></span>|<span data-ttu-id="c3901-126">説明</span><span class="sxs-lookup"><span data-stu-id="c3901-126">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="54513-127">\<xmlSchemaImporterExtensions></span><span class="sxs-lookup"><span data-stu-id="54513-127">\<xmlSchemaImporterExtensions></span></span>|<span data-ttu-id="54513-128"><xref:System.Xml.Serialization.XmlSchemaImporter> によって使用される型が含まれます。</span><span class="sxs-lookup"><span data-stu-id="54513-128">Contains the types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter>.</span></span>|  
+|<span data-ttu-id="c3901-127">\<xmlSchemaImporterExtensions></span><span class="sxs-lookup"><span data-stu-id="c3901-127">\<xmlSchemaImporterExtensions></span></span>|<span data-ttu-id="c3901-128"><xref:System.Xml.Serialization.XmlSchemaImporter> によって使用される型が含まれます。</span><span class="sxs-lookup"><span data-stu-id="c3901-128">Contains the types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter>.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="54513-129">例</span><span class="sxs-lookup"><span data-stu-id="54513-129">Example</span></span>  
- <span data-ttu-id="54513-130">型を対応付けるときに XmlSchemaImporter が使用できる拡張の型を追加するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="54513-130">The following code example adds an extension type that the XmlSchemaImporter can use when mapping types.</span></span>  
+## <a name="example"></a><span data-ttu-id="c3901-129">例</span><span class="sxs-lookup"><span data-stu-id="c3901-129">Example</span></span>  
+ <span data-ttu-id="c3901-130">型を対応付けるときに XmlSchemaImporter が使用できる拡張の型を追加するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c3901-130">The following code example adds an extension type that the XmlSchemaImporter can use when mapping types.</span></span>  
   
 ```xml  
 <configuration>  
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="54513-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="54513-131">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="c3901-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="c3901-131">See Also</span></span>  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
- [<span data-ttu-id="54513-132">\<system.xml.serialization> 要素</span><span class="sxs-lookup"><span data-stu-id="54513-132">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)  
- [<span data-ttu-id="54513-133">\<schemaImporterExtensions> 要素</span><span class="sxs-lookup"><span data-stu-id="54513-133">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+ [<span data-ttu-id="c3901-132">\<system.xml.serialization> 要素</span><span class="sxs-lookup"><span data-stu-id="c3901-132">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)  
+ [<span data-ttu-id="c3901-133">\<schemaImporterExtensions> 要素</span><span class="sxs-lookup"><span data-stu-id="c3901-133">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)

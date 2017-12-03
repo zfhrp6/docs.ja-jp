@@ -13,17 +13,17 @@ dev_langs:
 - vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
 caps.latest.revision: "18"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9e6af3dc911cdf67e7290d339122821c00fe6bc6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 00c5b310fbda189cfffe74767c9d77ac86481afe
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a><span data-ttu-id="333b9-102">WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法</span><span class="sxs-lookup"><span data-stu-id="333b9-102">How the WCF Syndication Object Model Maps to Atom and RSS</span></span>
-<span data-ttu-id="333b9-103">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 配信サービスを開発する場合、次のクラスを使用するフィードや項目を作成します。</span><span class="sxs-lookup"><span data-stu-id="333b9-103">When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndication service, you create feeds and items using the following classes:</span></span>  
+# <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a><span data-ttu-id="c65f9-102">WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法</span><span class="sxs-lookup"><span data-stu-id="c65f9-102">How the WCF Syndication Object Model Maps to Atom and RSS</span></span>
+<span data-ttu-id="c65f9-103">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 配信サービスを開発する場合、次のクラスを使用するフィードや項目を作成します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-103">When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndication service, you create feeds and items using the following classes:</span></span>  
   
 -   <xref:System.ServiceModel.Syndication.SyndicationFeed>  
   
@@ -41,29 +41,29 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.ServiceModel.Syndication.XmlSyndicationContent>  
   
- <span data-ttu-id="333b9-104"><xref:System.ServiceModel.Syndication.SyndicationFeed> はフォーマッタが定義されている任意の配信フォーマットにシリアル化できます。</span><span class="sxs-lookup"><span data-stu-id="333b9-104">A <xref:System.ServiceModel.Syndication.SyndicationFeed> can be serialized into any syndication format for which a formatter is defined.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="333b9-105"> には、<xref:System.ServiceModel.Syndication.Atom10FeedFormatter> および <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> の 2 つのフォーマッタが付属しています。</span><span class="sxs-lookup"><span data-stu-id="333b9-105"> ships with two formatters: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> and <xref:System.ServiceModel.Syndication.Rss20FeedFormatter>.</span></span>  
+ <span data-ttu-id="c65f9-104"><xref:System.ServiceModel.Syndication.SyndicationFeed> はフォーマッタが定義されている任意の配信フォーマットにシリアル化できます。</span><span class="sxs-lookup"><span data-stu-id="c65f9-104">A <xref:System.ServiceModel.Syndication.SyndicationFeed> can be serialized into any syndication format for which a formatter is defined.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="c65f9-105"> には、<xref:System.ServiceModel.Syndication.Atom10FeedFormatter> および <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> の 2 つのフォーマッタが付属しています。</span><span class="sxs-lookup"><span data-stu-id="c65f9-105"> ships with two formatters: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> and <xref:System.ServiceModel.Syndication.Rss20FeedFormatter>.</span></span>  
   
- <span data-ttu-id="333b9-106">RSS 2.0 仕様より Atom 1.0 仕様の方が、<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> 周辺のオブジェクト モデルをより細かく調整しています。</span><span class="sxs-lookup"><span data-stu-id="333b9-106">The object model around <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> is aligned more closely with the Atom 1.0 specification than the RSS 2.0 specification.</span></span> <span data-ttu-id="333b9-107">これは、Atom 1.0 が、あいまいな要素または RSS 2.0 仕様から省略された要素を定義する、より基本的な仕様であるためです。</span><span class="sxs-lookup"><span data-stu-id="333b9-107">This is because Atom 1.0 is a more substantial specification that defines elements that are ambiguous or omitted from the RSS 2.0 specification.</span></span> <span data-ttu-id="333b9-108">このため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 配信オブジェクト モデルにある多くの項目には、RSS 2.0 仕様の直接表現がありません。</span><span class="sxs-lookup"><span data-stu-id="333b9-108">Because of this, many items in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] syndication object model have no direct representation in the RSS 2.0 specification.</span></span> <span data-ttu-id="333b9-109"><xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> オブジェクトを RSS 2.0 にシリアル化する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により、Atom 固有のデータ要素を、Atom 仕様に準拠する名前空間で修飾された拡張要素にシリアル化できます。</span><span class="sxs-lookup"><span data-stu-id="333b9-109">When serializing <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> objects into RSS 2.0, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] allows you to serialize Atom-specific data elements as namespace-qualified extension elements that conform to the Atom specification.</span></span> <span data-ttu-id="333b9-110">これは、<xref:System.ServiceModel.Syndication.Rss20FeedFormatter> コンストラクターに渡すパラメーターで制御できます。</span><span class="sxs-lookup"><span data-stu-id="333b9-110">You can control this with a parameter passed to the <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> constructor.</span></span>  
+ <span data-ttu-id="c65f9-106">RSS 2.0 仕様より Atom 1.0 仕様の方が、<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> 周辺のオブジェクト モデルをより細かく調整しています。</span><span class="sxs-lookup"><span data-stu-id="c65f9-106">The object model around <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> is aligned more closely with the Atom 1.0 specification than the RSS 2.0 specification.</span></span> <span data-ttu-id="c65f9-107">これは、Atom 1.0 が、あいまいな要素または RSS 2.0 仕様から省略された要素を定義する、より基本的な仕様であるためです。</span><span class="sxs-lookup"><span data-stu-id="c65f9-107">This is because Atom 1.0 is a more substantial specification that defines elements that are ambiguous or omitted from the RSS 2.0 specification.</span></span> <span data-ttu-id="c65f9-108">このため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 配信オブジェクト モデルにある多くの項目には、RSS 2.0 仕様の直接表現がありません。</span><span class="sxs-lookup"><span data-stu-id="c65f9-108">Because of this, many items in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] syndication object model have no direct representation in the RSS 2.0 specification.</span></span> <span data-ttu-id="c65f9-109"><xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> オブジェクトを RSS 2.0 にシリアル化する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により、Atom 固有のデータ要素を、Atom 仕様に準拠する名前空間で修飾された拡張要素にシリアル化できます。</span><span class="sxs-lookup"><span data-stu-id="c65f9-109">When serializing <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> objects into RSS 2.0, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] allows you to serialize Atom-specific data elements as namespace-qualified extension elements that conform to the Atom specification.</span></span> <span data-ttu-id="c65f9-110">これは、<xref:System.ServiceModel.Syndication.Rss20FeedFormatter> コンストラクターに渡すパラメーターで制御できます。</span><span class="sxs-lookup"><span data-stu-id="c65f9-110">You can control this with a parameter passed to the <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> constructor.</span></span>  
   
- <span data-ttu-id="333b9-111">このトピックのコード例では、ここで定義される 2 つのメソッドのいずれかを使い、実際のシリアル化を行っています。</span><span class="sxs-lookup"><span data-stu-id="333b9-111">The code samples in this topic use one of two methods defined here to do the actual serialization.</span></span>  
+ <span data-ttu-id="c65f9-111">このトピックのコード例では、ここで定義される 2 つのメソッドのいずれかを使い、実際のシリアル化を行っています。</span><span class="sxs-lookup"><span data-stu-id="c65f9-111">The code samples in this topic use one of two methods defined here to do the actual serialization.</span></span>  
   
- <span data-ttu-id="333b9-112">`SerializeFeed` は、配信フィードをシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="333b9-112">`SerializeFeed` serializes a syndication feed.</span></span>  
+ <span data-ttu-id="c65f9-112">`SerializeFeed` は、配信フィードをシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-112">`SerializeFeed` serializes a syndication feed.</span></span>  
   
  [!code-csharp[SyndicationMapping#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#10)]
  [!code-vb[SyndicationMapping#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#10)]  
   
- <span data-ttu-id="333b9-113">`SerializeItem` は、配信項目をシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="333b9-113">`SerializeItem` serializes a syndication item.</span></span>  
+ <span data-ttu-id="c65f9-113">`SerializeItem` は、配信項目をシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-113">`SerializeItem` serializes a syndication item.</span></span>  
   
  [!code-csharp[SyndicationMapping#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#11)]
  [!code-vb[SyndicationMapping#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#11)]  
   
-## <a name="syndicationfeed"></a><span data-ttu-id="333b9-114">SyndicationFeed</span><span class="sxs-lookup"><span data-stu-id="333b9-114">SyndicationFeed</span></span>  
- <span data-ttu-id="333b9-115"><xref:System.ServiceModel.Syndication.SyndicationFeed> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-115">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationFeed> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationfeed"></a><span data-ttu-id="c65f9-114">SyndicationFeed</span><span class="sxs-lookup"><span data-stu-id="c65f9-114">SyndicationFeed</span></span>  
+ <span data-ttu-id="c65f9-115"><xref:System.ServiceModel.Syndication.SyndicationFeed> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-115">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationFeed> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#0)]
  [!code-vb[SyndicationMapping#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#0)]  
   
- <span data-ttu-id="333b9-116"><xref:System.ServiceModel.Syndication.SyndicationFeed> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-116">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-116"><xref:System.ServiceModel.Syndication.SyndicationFeed> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-116">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to Atom 1.0.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -112,7 +112,7 @@ ms.lasthandoff: 11/21/2017
 </feed>  
 ```  
   
- <span data-ttu-id="333b9-117"><xref:System.ServiceModel.Syndication.SyndicationFeed> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-117">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-117"><xref:System.ServiceModel.Syndication.SyndicationFeed> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-117">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to RSS 2.0.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -154,13 +154,13 @@ ms.lasthandoff: 11/21/2017
 </rss>  
 ```  
   
-## <a name="syndicationitem"></a><span data-ttu-id="333b9-118">SyndicationItem</span><span class="sxs-lookup"><span data-stu-id="333b9-118">SyndicationItem</span></span>  
- <span data-ttu-id="333b9-119"><xref:System.ServiceModel.Syndication.SyndicationItem> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-119">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationItem> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationitem"></a><span data-ttu-id="c65f9-118">SyndicationItem</span><span class="sxs-lookup"><span data-stu-id="c65f9-118">SyndicationItem</span></span>  
+ <span data-ttu-id="c65f9-119"><xref:System.ServiceModel.Syndication.SyndicationItem> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-119">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationItem> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#1)]
  [!code-vb[SyndicationMapping#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#1)]  
   
- <span data-ttu-id="333b9-120"><xref:System.ServiceModel.Syndication.SyndicationItem> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-120">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-120"><xref:System.ServiceModel.Syndication.SyndicationItem> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-120">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to Atom 1.0.</span></span>  
   
 ```xml  
 <entry xmlns="http://www.w3.org/2005/Atom">  
@@ -202,7 +202,7 @@ ms.lasthandoff: 11/21/2017
 </entry>  
 ```  
   
- <span data-ttu-id="333b9-121"><xref:System.ServiceModel.Syndication.SyndicationItem> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-121">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-121"><xref:System.ServiceModel.Syndication.SyndicationItem> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-121">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to RSS 2.0.</span></span>  
   
 ```xml  
 <item>  
@@ -240,13 +240,13 @@ ms.lasthandoff: 11/21/2017
 </item>  
 ```  
   
-## <a name="syndicationperson"></a><span data-ttu-id="333b9-122">SyndicationPerson</span><span class="sxs-lookup"><span data-stu-id="333b9-122">SyndicationPerson</span></span>  
- <span data-ttu-id="333b9-123"><xref:System.ServiceModel.Syndication.SyndicationPerson> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-123">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationPerson> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationperson"></a><span data-ttu-id="c65f9-122">SyndicationPerson</span><span class="sxs-lookup"><span data-stu-id="c65f9-122">SyndicationPerson</span></span>  
+ <span data-ttu-id="c65f9-123"><xref:System.ServiceModel.Syndication.SyndicationPerson> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-123">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationPerson> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#2)]
  [!code-vb[SyndicationMapping#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#2)]  
   
- <span data-ttu-id="333b9-124"><xref:System.ServiceModel.Syndication.SyndicationPerson> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-124">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-124"><xref:System.ServiceModel.Syndication.SyndicationPerson> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-124">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> is serialized to Atom 1.0.</span></span>  
   
 ```xml  
   <author>  
@@ -261,7 +261,7 @@ ms.lasthandoff: 11/21/2017
   </contributor>  
 ```  
   
- <span data-ttu-id="333b9-125"><xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションまたは <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションに、それぞれ `Authors` が 1 つのみ存在する場合に、`Contributors` クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-125">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if only one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
+ <span data-ttu-id="c65f9-125"><xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションまたは <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションに、それぞれ `Authors` が 1 つのみ存在する場合に、`Contributors` クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-125">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if only one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
   
 ```xml  
 <author>Jesper.Aaberg@contoso.com</author>  
@@ -272,7 +272,7 @@ ms.lasthandoff: 11/21/2017
 </a10:contributor>  
 ```  
   
- <span data-ttu-id="333b9-126"><xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションまたは <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションに、それぞれ `Authors` が複数存在する場合に、`Contributors` クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-126">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if more than one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
+ <span data-ttu-id="c65f9-126"><xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションまたは <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションに、それぞれ `Authors` が複数存在する場合に、`Contributors` クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-126">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if more than one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.</span></span>  
   
 ```xml  
 <a10:author>  
@@ -297,67 +297,67 @@ ms.lasthandoff: 11/21/2017
 </a10:contributor>  
 ```  
   
-## <a name="syndicationlink"></a><span data-ttu-id="333b9-127">SyndicationLink</span><span class="sxs-lookup"><span data-stu-id="333b9-127">SyndicationLink</span></span>  
- <span data-ttu-id="333b9-128"><xref:System.ServiceModel.Syndication.SyndicationLink> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-128">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationLink> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationlink"></a><span data-ttu-id="c65f9-127">SyndicationLink</span><span class="sxs-lookup"><span data-stu-id="c65f9-127">SyndicationLink</span></span>  
+ <span data-ttu-id="c65f9-128"><xref:System.ServiceModel.Syndication.SyndicationLink> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-128">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationLink> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#3)]
  [!code-vb[SyndicationMapping#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#3)]  
   
- <span data-ttu-id="333b9-129"><xref:System.ServiceModel.Syndication.SyndicationLink> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-129">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-129"><xref:System.ServiceModel.Syndication.SyndicationLink> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-129">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to Atom 1.0.</span></span>  
   
  `<link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
- <span data-ttu-id="333b9-130"><xref:System.ServiceModel.Syndication.SyndicationLink> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-130">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-130"><xref:System.ServiceModel.Syndication.SyndicationLink> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-130">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationLink> is serialized to RSS 2.0.</span></span>  
   
  `<a10:link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
-## <a name="syndicationcategory"></a><span data-ttu-id="333b9-131">SyndicationCategory</span><span class="sxs-lookup"><span data-stu-id="333b9-131">SyndicationCategory</span></span>  
- <span data-ttu-id="333b9-132"><xref:System.ServiceModel.Syndication.SyndicationCategory> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-132">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationCategory> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="syndicationcategory"></a><span data-ttu-id="c65f9-131">SyndicationCategory</span><span class="sxs-lookup"><span data-stu-id="c65f9-131">SyndicationCategory</span></span>  
+ <span data-ttu-id="c65f9-132"><xref:System.ServiceModel.Syndication.SyndicationCategory> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-132">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.SyndicationCategory> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#4)]
  [!code-vb[SyndicationMapping#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#4)]  
   
- <span data-ttu-id="333b9-133"><xref:System.ServiceModel.Syndication.SyndicationCategory> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-133">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-133"><xref:System.ServiceModel.Syndication.SyndicationCategory> を Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-133">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to Atom 1.0.</span></span>  
   
  `<category term="categoryName" label="categoryLabel" scheme="categoryScheme" />`  
   
- <span data-ttu-id="333b9-134"><xref:System.ServiceModel.Syndication.SyndicationCategory> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-134">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-134"><xref:System.ServiceModel.Syndication.SyndicationCategory> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-134">The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationCategory> is serialized to RSS 2.0.</span></span>  
   
  `<category domain="categoryScheme">categoryName</category>`  
   
-## <a name="textsyndicationcontent"></a><span data-ttu-id="333b9-135">TextSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="333b9-135">TextSyndicationContent</span></span>  
- <span data-ttu-id="333b9-136"><xref:System.ServiceModel.Syndication.TextSyndicationContent> が HTML コンテンツと共に作成される場合に <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-136">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with HTML content.</span></span>  
+## <a name="textsyndicationcontent"></a><span data-ttu-id="c65f9-135">TextSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="c65f9-135">TextSyndicationContent</span></span>  
+ <span data-ttu-id="c65f9-136"><xref:System.ServiceModel.Syndication.TextSyndicationContent> が HTML コンテンツと共に作成される場合に <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-136">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with HTML content.</span></span>  
   
  [!code-csharp[SyndicationMapping#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#5)]
  [!code-vb[SyndicationMapping#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#5)]  
   
- <span data-ttu-id="333b9-137">HTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-137">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-137">HTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-137">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to Atom 1.0.</span></span>  
   
  `<content type="html"><html> some html </html></content>`  
   
- <span data-ttu-id="333b9-138">HTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-138">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-138">HTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-138">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with HTML content is serialized to RSS 2.0.</span></span>  
   
  `<description><html> some html </html></description>`  
   
- <span data-ttu-id="333b9-139"><xref:System.ServiceModel.Syndication.TextSyndicationContent> がプレーンテキスト コンテンツと共に作成される場合に、<xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-139">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with plain text content.</span></span>  
+ <span data-ttu-id="c65f9-139"><xref:System.ServiceModel.Syndication.TextSyndicationContent> がプレーンテキスト コンテンツと共に作成される場合に、<xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-139">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with plain text content.</span></span>  
   
  [!code-csharp[SyndicationMapping#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#6)]
  [!code-vb[SyndicationMapping#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#6)]  
   
- <span data-ttu-id="333b9-140">プレーンテキスト コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-140">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-140">プレーンテキスト コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-140">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to Atom 1.0.</span></span>  
   
  `<content type="text">Some Plain Text</content>`  
   
- <span data-ttu-id="333b9-141">プレーンテキスト コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-141">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-141">プレーンテキスト コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-141">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with plain text content is serialized to RSS 2.0.</span></span>  
   
  `<description>Some Plain Text</description>`  
   
- <span data-ttu-id="333b9-142"><xref:System.ServiceModel.Syndication.TextSyndicationContent> が XHTML コンテンツと共に作成される場合に、<xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-142">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with XHTML content.</span></span>  
+ <span data-ttu-id="c65f9-142"><xref:System.ServiceModel.Syndication.TextSyndicationContent> が XHTML コンテンツと共に作成される場合に、<xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-142">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class to Atom 1.0 and RSS 2.0 when <xref:System.ServiceModel.Syndication.TextSyndicationContent> is created with XHTML content.</span></span>  
   
  [!code-csharp[SyndicationMapping#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#7)]
  [!code-vb[SyndicationMapping#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#7)]  
   
- <span data-ttu-id="333b9-143">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-143">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-143">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-143">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to Atom 1.0.</span></span>  
   
  `<content type="xhtml">`  
   
@@ -365,33 +365,33 @@ ms.lasthandoff: 11/21/2017
   
  `</content>`  
   
- <span data-ttu-id="333b9-144">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-144">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-144">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-144">The following XML shows how the <xref:System.ServiceModel.Syndication.TextSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
   
  `<description><html> some xhtml </html></description>`  
   
-## <a name="urlsyndicationcontent"></a><span data-ttu-id="333b9-145">UrlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="333b9-145">UrlSyndicationContent</span></span>  
- <span data-ttu-id="333b9-146"><xref:System.ServiceModel.Syndication.UrlSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-146">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="urlsyndicationcontent"></a><span data-ttu-id="c65f9-145">UrlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="c65f9-145">UrlSyndicationContent</span></span>  
+ <span data-ttu-id="c65f9-146"><xref:System.ServiceModel.Syndication.UrlSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-146">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#8)]
  [!code-vb[SyndicationMapping#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#8)]  
   
- <span data-ttu-id="333b9-147"><xref:System.ServiceModel.Syndication.UrlSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-147">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-147"><xref:System.ServiceModel.Syndication.UrlSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-147">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
   
  `<content type="audio" src="http://someurl/" />`  
   
- <span data-ttu-id="333b9-148">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.UrlSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-148">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-148">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.UrlSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-148">The following XML shows how the <xref:System.ServiceModel.Syndication.UrlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
   
  `<description />`  
   
  `<content type="audio" src="http://Contoso/someurl/" xmlns="http://www.w3.org/2005/Atom" />`  
   
-## <a name="xmlsyndicationcontent"></a><span data-ttu-id="333b9-149">XmlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="333b9-149">XmlSyndicationContent</span></span>  
- <span data-ttu-id="333b9-150"><xref:System.ServiceModel.Syndication.XmlSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-150">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
+## <a name="xmlsyndicationcontent"></a><span data-ttu-id="c65f9-149">XmlSyndicationContent</span><span class="sxs-lookup"><span data-stu-id="c65f9-149">XmlSyndicationContent</span></span>  
+ <span data-ttu-id="c65f9-150"><xref:System.ServiceModel.Syndication.XmlSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-150">The following code example shows how to serialize the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class to Atom 1.0 and RSS 2.0.</span></span>  
   
  [!code-csharp[SyndicationMapping#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#9)]
  [!code-vb[SyndicationMapping#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#9)]  
   
- <span data-ttu-id="333b9-151"><xref:System.ServiceModel.Syndication.XmlSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-151">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
+ <span data-ttu-id="c65f9-151"><xref:System.ServiceModel.Syndication.XmlSyndicationContent> クラスを Atom 1.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-151">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class is serialized to Atom 1.0.</span></span>  
   
  `<content type="mytype">`  
   
@@ -399,7 +399,7 @@ ms.lasthandoff: 11/21/2017
   
  `</content>`  
   
- <span data-ttu-id="333b9-152">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.XmlSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="333b9-152">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
+ <span data-ttu-id="c65f9-152">XHTML コンテンツ付きの <xref:System.ServiceModel.Syndication.XmlSyndicationContent> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-152">The following XML shows how the <xref:System.ServiceModel.Syndication.XmlSyndicationContent> class with XHTML content is serialized to RSS 2.0.</span></span>  
   
  `<content type="mytype" xmlns="http://www.w3.org/2005/Atom">`  
   
@@ -407,9 +407,9 @@ ms.lasthandoff: 11/21/2017
   
  `</content>`  
   
-## <a name="see-also"></a><span data-ttu-id="333b9-153">関連項目</span><span class="sxs-lookup"><span data-stu-id="333b9-153">See Also</span></span>  
- [<span data-ttu-id="333b9-154">WCF 配信の概要</span><span class="sxs-lookup"><span data-stu-id="333b9-154">WCF Syndication Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
- [<span data-ttu-id="333b9-155">配信のアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="333b9-155">Architecture of Syndication</span></span>](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
- [<span data-ttu-id="333b9-156">方法: 基本的な RSS フィードを作成します。</span><span class="sxs-lookup"><span data-stu-id="333b9-156">How to: Create a Basic RSS Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
- [<span data-ttu-id="333b9-157">方法: 基本的な Atom フィードの作成</span><span class="sxs-lookup"><span data-stu-id="333b9-157">How to: Create a Basic Atom Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
- [<span data-ttu-id="333b9-158">方法: として両方 Atom フィードを公開し、RSS</span><span class="sxs-lookup"><span data-stu-id="333b9-158">How to: Expose a Feed as Both Atom and RSS</span></span>](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+## <a name="see-also"></a><span data-ttu-id="c65f9-153">関連項目</span><span class="sxs-lookup"><span data-stu-id="c65f9-153">See Also</span></span>  
+ [<span data-ttu-id="c65f9-154">WCF 配信の概要</span><span class="sxs-lookup"><span data-stu-id="c65f9-154">WCF Syndication Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
+ [<span data-ttu-id="c65f9-155">配信のアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="c65f9-155">Architecture of Syndication</span></span>](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
+ [<span data-ttu-id="c65f9-156">方法: 基本的な RSS フィードを作成します。</span><span class="sxs-lookup"><span data-stu-id="c65f9-156">How to: Create a Basic RSS Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
+ [<span data-ttu-id="c65f9-157">方法: 基本的な Atom フィードの作成</span><span class="sxs-lookup"><span data-stu-id="c65f9-157">How to: Create a Basic Atom Feed</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
+ [<span data-ttu-id="c65f9-158">方法: として両方 Atom フィードを公開し、RSS</span><span class="sxs-lookup"><span data-stu-id="c65f9-158">How to: Expose a Feed as Both Atom and RSS</span></span>](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
