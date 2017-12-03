@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
 caps.latest.revision: "32"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 91999180c6d1b828630b9fff6f2199cbeaf3501c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 92cc99a80c718811d0184a557efd38dd93fcc949
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="what39s-new-in-windows-workflow-foundation-in-net-45"></a>どのような &#39; .NET 4.5 での Windows Workflow Foundation の新機能として s
 [!INCLUDE[wf](../../../includes/wf-md.md)] の [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、新しいアクティビティ、デザイナー機能、ワークフロー開発モデルなどの多くの新機能が導入されました。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入された新しいワークフロー機能の多くは、ホストを変更したワークフロー デザイナーでサポートされています (ただし、すべての機能がサポートされているわけではありません)。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]サポートされている新機能を参照してください[、再ホストされたワークフロー デザイナーで新しい Workflow Foundation 4.5 機能のサポート](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)].NET 3.0 を移行して、最新バージョンを使用する .NET 3.5 ワークフロー アプリケーションを参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。 ここでは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入された新しいワークフロー機能の概要について説明します。  

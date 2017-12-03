@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: af6d4c39-e5e8-4099-aee6-5261feff9107
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 629ec17ea01ec29480f15f5921d09e7497e9f8c8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4f1595cbb1d225e3dd4e73a354028745d4cd0428
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-syndication-overview"></a>WCF 配信の概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスから配信フィードを公開することができます。 配信は、サーバーがフィードと呼ばれる相互運用可能な形式でアプリケーション データの一部を公開するためのアプリケーション統合の機構です。 フィードはアプリケーション データのコレクションであり、フィード レベルのメタデータ (タイトル、作成者、URL、およびその他のメタデータ) と一連のフィード アイテムから構成されます。 フィード内で、フィード アイテムは通常、発生の逆順に並べられます。 フィード アイテムは、アイテム レベルのメタデータの標準セット (タイトル、URL、作成日時、カテゴリ、およびその他のアイテム レベルのメタデータ) と任意の大きさのアプリケーション固有のデータから構成されます。 最も一般的な配信フィードは、RSS (Really Simple Syndication) 2.0 と Atom 1.0 であり、どちらも [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされています。  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 73b7fd7564fea065167978deaad21bb533dbef0c
-ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 679a6a30e72e18547a04007c58c82d5f121893d0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="service-versioning"></a>サービスのバージョン管理
 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、サービス (およびサービスが公開するエンドポイント) を変更することが必要になる場合があります。 変更が発生するたびに、新しいバージョンのサービスが導入されます。 ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] でのバージョン管理の考え方について説明します。  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3fcb4225-addc-44f2-935d-30e4943a8812
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 755669b1305060efeb6af592867844b571b67020
-ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 869861ce1e2ba4456c8e8fbd06f9ff590fb3576a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="standard-endpoints"></a>標準エンドポイント
 エンドポイントは、アドレス、バインディング、およびコントラクトを指定して定義します。 エンドポイントに設定できるその他のパラメーターには、動作構成、ヘッダー、リッスン URI などがあります。  特定の種類のエンドポイントでは、これらの値が変化しません。 たとえば、メタデータ交換エンドポイントでは、常に <xref:System.ServiceModel.Description.IMetadataExchange> コントラクトを使用します。 <xref:System.ServiceModel.Description.WebHttpEndpoint> などのその他のエンドポイントでは、指定されたエンドポイント動作が必要です。 一般的に使用されるエンドポイント プロパティの既定の値を設定することによって、エンドポイントの操作性を向上させることができます。 開発者は、標準エンドポイントを使用して、既定値を持つエンドポイント、またはエンドポイントの 1 つ以上のプロパティが変化しないエンドポイントを定義できます。  これらのエンドポイントによって、静的な性質の情報を指定する必要がないエンドポイントの使用が可能になります。 標準エンドポイントは、インフラストラクチャ エンドポイントおよびアプリケーション エンドポイントに使用できます。  

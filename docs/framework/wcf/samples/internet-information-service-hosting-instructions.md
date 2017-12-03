@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 959a21c8-9d9d-4757-b255-4e57793ae9d6
 caps.latest.revision: "30"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3c815ffe88918502f7d040bdeb1ff1b201cec832
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7dd9d70a3b93faf721b5ac3bbd5f1114bf5c1461
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="internet-information-service-hosting-instructions"></a>インターネット インフォメーション サービスのホスティング手順
 インターネット インフォメーション サービス (IIS) によってホストされているこのサンプルを実行するには、IIS が適切にインストールされて実行されていることを確認する必要があります。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 10/18/2017
   
 ### <a name="to-install-iis-version-75-on-windows-7"></a>Windows 7 に IIS バージョン 7.5 をインストールするには  
   
-1.  をクリックして**開始**、順にクリック**コントロール パネルの **です。  
+1.  をクリックして**開始**、順にクリック**コントロール パネルの** です。  
   
 2.  開く、**プログラム**グループ。  
   

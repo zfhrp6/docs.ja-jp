@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ed6ce9b87a5e2d8945a57110c02cce8024439f14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 31720b0639f9be68a2124b4ff844a2837787ef81
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>方法 : Metadata Exchange コントラクトと共にサービス モニカーを使用する
 新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをいくつか開発した後に、そのサービスをスクリプトまたは Visual Basic 6.0 アプリケーションから呼び出せるようにする必要が生じる場合があります。 この方法の 1 つに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アセンブリを作成し、そのアセンブリを COM を使用して登録して GAC にインストールし、Visual Basic コードで COM 型を参照する方法があります。 アプリケーションを配布するときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アセンブリも配信する必要があります。 次にユーザーは COM を使用して WCF クライアント アセンブリを登録し、それを GAC に配置する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] COM Interop でも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アセンブリに依存しない同じサービス呼び出しを作成できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] モニカーを使用すれば、サービスに関する型情報を抽出するためにサービス モニカーで使用されるメタデータ交換 (Mex) エンドポイント URI を指定することにより、必要な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを任意の COM 互換言語 (Visual Basic、VBScript、Visual Basic for Applications (VBA) など) から呼び出すことができます。 ここでは、Mex エンドポイントを指定する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] モニカーを使用して、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の入門サンプルを呼び出す方法を説明します。  

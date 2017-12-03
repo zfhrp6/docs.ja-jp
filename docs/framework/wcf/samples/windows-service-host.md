@@ -13,17 +13,17 @@ helpviewer_keywords:
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
 caps.latest.revision: "40"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 93f54c42637a2f4748b7835f527c9b0571d0883b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e3dd2b4880ea61f5c3236a3e15ba1c939dbc2952
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-service-host"></a>Windows サービス ホスト
-このサンプルでは、マネージ Windows サービスでホストされる [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを示します。 サービス アプレットを使用して Windows サービスが制御される**コントロール パネルの **システムの再起動後に自動的に開始するように構成できます。 このサンプルは、クライアント プログラムと Windows サービス プログラムで構成されています。 サービスは .exe プログラムとして実装され、独自のホスティング コードが指定されます。 Windows プロセス アクティブ化サービス (WAS) やインターネット インフォメーション サービス (IIS) などの他のホスト環境では、ホスティング コードを記述する必要はありません。  
+このサンプルでは、マネージ Windows サービスでホストされる [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを示します。 サービス アプレットを使用して Windows サービスが制御される**コントロール パネルの** システムの再起動後に自動的に開始するように構成できます。 このサンプルは、クライアント プログラムと Windows サービス プログラムで構成されています。 サービスは .exe プログラムとして実装され、独自のホスティング コードが指定されます。 Windows プロセス アクティブ化サービス (WAS) やインターネット インフォメーション サービス (IIS) などの他のホスト環境では、ホスティング コードを記述する必要はありません。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 10/18/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WindowsService`  
   
- このサービスをビルドしたら、他の Windows サービスと同様、Installutil.exe ユーティリティを使用してインストールする必要があります。 サービスを変更する場合は、`installutil /u` を使用して、まずそのサービスをアンインストールする必要があります。 このサンプルに含まれている Setup.bat ファイルは Windows Service をインストールして起動するコマンド ファイルです。同様にこのサンプルに含まれている Cleanup.bat ファイルは、Windows サービスをシャットダウンしてアンインストールするコマンド ファイルです。 Windows サービスが実行されている場合、クライアントに応答できるサービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのみです。 サービス アプレットを使用して、Windows サービスを停止するかどうかは**コントロール パネルの ** 、クライアントを実行し、<xref:System.ServiceModel.EndpointNotFoundException>クライアントがサービスにアクセスしようとしたときに例外が発生します。 Windows サービスを再起動してクライアントを再実行した場合は、通信が正常に行われます。  
+ このサービスをビルドしたら、他の Windows サービスと同様、Installutil.exe ユーティリティを使用してインストールする必要があります。 サービスを変更する場合は、`installutil /u` を使用して、まずそのサービスをアンインストールする必要があります。 このサンプルに含まれている Setup.bat ファイルは Windows Service をインストールして起動するコマンド ファイルです。同様にこのサンプルに含まれている Cleanup.bat ファイルは、Windows サービスをシャットダウンしてアンインストールするコマンド ファイルです。 Windows サービスが実行されている場合、クライアントに応答できるサービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのみです。 サービス アプレットを使用して、Windows サービスを停止するかどうかは**コントロール パネルの**  、クライアントを実行し、<xref:System.ServiceModel.EndpointNotFoundException>クライアントがサービスにアクセスしようとしたときに例外が発生します。 Windows サービスを再起動してクライアントを再実行した場合は、通信が正常に行われます。  
   
  サービス コードにはインストーラー クラス、ICalculator コントラクトを実装する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス実装クラス、およびランタイム ホストとして機能する Windows サービス クラスが含まれています。 インストーラー クラスは <xref:System.Configuration.Install.Installer> を継承します。このクラスを使用すると、Installutil.exe ツールにより、プログラムを NT サービスとしてインストールできます。 サービス実装クラス `WcfCalculatorService` は、基本的なサービス コントラクトを実装する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスです。 この [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、`WindowsCalculatorService` と呼ばれる Windows サービス クラス内でホストされます。 Windows サービスとして限定するため、このクラスは <xref:System.ServiceProcess.ServiceBase> を継承し、<xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> メソッドと <xref:System.ServiceProcess.ServiceBase.OnStop> メソッドを実装しています。 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> では、<xref:System.ServiceModel.ServiceHost> 型の `WcfCalculatorService` オブジェクトが作成され、開かれます。 <xref:System.ServiceProcess.ServiceBase.OnStop> では、<xref:System.ServiceModel.Channels.CommunicationObject.Close%28System.TimeSpan%29> オブジェクトの <xref:System.ServiceModel.ServiceHost> メソッドが呼び出されて ServiceHost が閉じられます。 使用して、ホストのベース アドレスを構成、 [\<追加 >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-baseaddresses.md)子である要素の[ \<baseAddresses >](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md)の子である、 [ \<ホスト >](../../../../docs/framework/configure-apps/file-schema/wcf/host.md)子である要素の[\<サービス >](../../../../docs/framework/configure-apps/file-schema/wcf/service.md)要素。  
   

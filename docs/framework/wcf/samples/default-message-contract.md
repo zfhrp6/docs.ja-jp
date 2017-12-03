@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
 caps.latest.revision: "35"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 765e531530342af5cf0fccfb759626341103114a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 407fa758c6564c3b7a5a8573acef1b6e181399d2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="default-message-contract"></a>既定のメッセージ コントラクト
 既定のメッセージ コントラクトのサンプルでは、ユーザー定義のカスタム メッセージをサービス操作に渡したり、サービス操作から渡されたりするサービスを示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)に型指定されたサービスとしての電卓インターフェイスを実装します。 加算、減算、乗算、および除算に使用するための個々 のサービス操作ではなく、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)、このサンプルには、オペランドと演算子の両方を格納して返すカスタム メッセージが渡されます。算術演算の結果の結果。  

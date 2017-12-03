@@ -13,14 +13,14 @@ helpviewer_keywords:
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: cc0736b0c13f286b999fc0e098a45364141945da
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c54ce56cccffa350479d0dd4dcec130ddd004764
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="nettcp-port-sharing"></a>Net.TCP ポート共有
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、高パフォーマンス通信用の新しい TCP ベースのネットワーク プロトコル (net.tcp://) が提供されます。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、net.tcp ポートを複数のユーザー プロセスで共有できる新しいシステム コンポーネントとして Net.TCP ポート共有サービスが導入されています。  

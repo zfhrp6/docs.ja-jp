@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 521cdb66-98cb-4ad1-b706-370788a43485
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9334739ccf917979e69eea426ea3c901120837c1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b2cee42de74609cbfc793822471655d88b32d9ce
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="services"></a>サービス
 このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] のサービス機能を示すサンプルへのリンクが含まれています。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 10/18/2017
  <xref:System.ServiceModel.Activities.SendReply> および <xref:System.ServiceModel.Activities.ReceiveReply> メッセージング アクティビティを使用して、予期したエラーと予期しないエラーを送受信する方法を示します。  
   
  [SendParameters および ReceiveParameters アクティビティの基本的な使用法](../../../../docs/framework/windows-workflow-foundation/samples/basic-usage-of-sendparameters-and-receiveparameters-activities.md)  
- 使用例を示します<!--zz <xref:System.ServiceModel.Activities.SendParameters> -->`System.ServiceModel.Activities.SendParameters`と<!--zz <xref:System.ServiceModel.Activities.ReceiveParameters> -->`System.ServiceModel.Activities.ReceiveParameters`アクティビティ。  
+ 使用例を示します<!--zz <xref:System.ServiceModel.Activities.SendParameters> -->`System.ServiceModel.Activities.SendParameters`と<!--zz <xref:System.ServiceModel.Activities.ReceiveParameters> -->`System.ServiceModel.Activities.ReceiveParameters`アクティビティ。
   
  [基本的な XAML 専用サービス](../../../../docs/framework/windows-workflow-foundation/samples/basic-xaml-only-service.md)  
  XAML 専用サービスを作成する方法を示します。  

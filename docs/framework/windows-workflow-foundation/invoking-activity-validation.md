@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 22bef766-c505-4fd4-ac0f-7b363b238969
 caps.latest.revision: "15"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 752137d5e917e22d5c24e78b45714db1fa06b2a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f089abdf4c534a5016185e5a6f52067f46693604
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="invoking-activity-validation"></a>アクティビティ検証の呼び出し
 アクティビティの検証は、アクティビティを実行する前にアクティビティの構成エラーを特定および報告する手段です。 検証が発生するのは、ワークフローがワークフロー デザイナーで修正され、検証エラーまたは警告がワークフロー デザイナーに表示されたときです。 ワーク フローの呼び出し時に検証も行われます。検証エラーが発生すると、既定の検証ロジックによって <xref:System.Activities.InvalidWorkflowException> がスローされます。 [!INCLUDE[wf](../../../includes/wf-md.md)] には、アクティビティを明示的に検証するためにワークフロー アプリケーションやツールの開発者が使用できる <xref:System.Activities.Validation.ActivityValidationServices> クラスが用意されています。 このトピックでは、<xref:System.Activities.Validation.ActivityValidationServices> を使用してアクティビティの検証を実行する方法を説明します。  

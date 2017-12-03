@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9bc54b4f2a29f9fd082bafd7cf6007441365c35c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c5395797dd2ebba467448b90be139d750bbcc6b6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>データ コントラクトの XML および ADO.NET の種類
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ コントラクト モデルでは、XML を直接表す特定の型がサポートされています。 シリアライザーは、これらの型を XML にシリアル化するとき、型の XML コンテンツを書き出しますが、それ以上の処理は行いません。 サポートされている型は、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlNode> の配列 (`XmlNode` 型自体はサポートされていません)、および <xref:System.Xml.Serialization.IXmlSerializable> を実装した型です。 データベース プログラミングでは、<xref:System.Data.DataSet> 型、<xref:System.Data.DataTable> 型、および型指定されたデータセットが一般的に使用されます。 これらの型は `IXmlSerializable` インターフェイスを実装するので、データ コントラクト モデルでシリアル化可能です。 この型に関する考慮事項について、このトピックの最後に説明します。  

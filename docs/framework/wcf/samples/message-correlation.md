@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 54b7b7d9ba247f329fbf3c9040c641e3194d3bfb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ef105626d2427f0ea6dd49f696b78ffac4834f92
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="message-correlation"></a>メッセージ相関
 このサンプルでは、メッセージ キュー (MSMQ) アプリケーションで MSMQ メッセージを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに送信する方法と、要求または応答のシナリオで、メッセージを送信側のアプリケーションと受信側のアプリケーション間で相互に関連付ける方法を示します。 このサンプルでは、msmqIntegrationBinding バインディングを使用します。 この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。 k  

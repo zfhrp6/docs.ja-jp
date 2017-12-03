@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d068332d5dc51e6e0e5a713b29c4eb45c4e51598
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 699a770e1ff1ec8cebf904a72338f400236b737a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="load-balancing"></a>負荷分散
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの処理能力を増加する方法の 1 つは、アプリケーションを負荷分散されたサーバー ファームに配置することでスケール アウトすることです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションは、ハードウェア ベースの負荷分散アプリケーションのほか、Windows Network Load Balancing のようなソフトウェアによる負荷分散も含む、標準的な負荷分散手法を使用して負荷分散できます。  

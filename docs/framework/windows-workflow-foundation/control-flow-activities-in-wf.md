@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6892885b-f7c5-4aea-8f5e-28863fb4ae75
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 825f2487a89805365d3376986af0b0d098c20bca
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d5312012a74f5e11b02c0191dc00fa23fb25a73a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="control-flow-activities-in-wf"></a>WF 内の制御フロー アクティビティ
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、ワークフロー内の実行フローを制御するアクティビティがいくつか用意されています。 このようなアクティビティの一部 (`Switch` や `If`) は、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)] など、プログラミング環境のアクティビティと似たフロー制御構造を実装しています。一方、その他は新しいプログラミング構造をモデル化しています (`Pick` など)。  

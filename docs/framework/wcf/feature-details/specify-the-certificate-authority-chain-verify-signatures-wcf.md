@@ -13,14 +13,14 @@ helpviewer_keywords:
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ce846d5637c6d49b4a3b1c6f28ae533e4900f696
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6cba37a82174ab255cb6814e296154485fbdd54c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>方法 : 署名の検証に使用する証明機関の証明書チェーンを指定する (WCF)
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、X.509 証明書を使用して署名された SOAP メッセージを受信すると、その X.509 証明書が信頼された証明機関によって発行されたものかどうかを既定で検証します。 これは、証明書ストアを検索し、その証明機関の証明書が信頼された証明書として指定されているかどうかを確認することによって行われます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこれを確認するには、証明機関証明書チェーンを適切な証明書ストアにインストールする必要があります。  

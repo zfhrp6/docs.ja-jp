@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: COM [WCF], integration overview
 ms.assetid: 02c5697f-6e2e-47d6-b715-f3a28aebfbd5
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4e995fc66a925cb0ebe272c9dceca1ba63b9459d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6ae704ad9542c162b1c37f3eb9edf31f864cd42e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="integrating-with-com-applications-overview"></a>COM アプリケーションとの統合の概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、マネージ コード開発者は、接続されたアプリケーションを作成するための多彩な環境を使用できます。 ただし、COM ベースのアンマネージ コードにかなりの投資を行っており移行を望まない場合でも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス モニカーを使用することで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web サービスを既存のコードに直接統合できます。 サービス モニカーは Office VBA、Visual Basic 6.0、または Visual C++ 6.0 などの幅広い COM ベースの開発環境で使用可能です。  

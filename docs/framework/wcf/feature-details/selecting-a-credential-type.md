@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
 caps.latest.revision: "25"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0c913896611ea4b336f7626b21f9fe959ef4fd09
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 455dec4adefc479433945f9f9b02708c23437991
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="selecting-a-credential-type"></a>資格情報の種類の選択
 *資格情報*データ[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クレームされた id または機能のいずれかを確立するために使用します。 たとえば、パスポートは、政府によって発行される、国籍または地域籍を証明するための資格情報です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名トークンや X.509 証明書など多数の形式を資格情報に使用できます。 ここでは、資格情報について説明し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で資格情報を使用する方法およびアプリケーションに適切な資格情報を選択する方法についても説明します。  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
 caps.latest.revision: "30"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f33920dbad701d803b9cb062cdd2b11aa1346df4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: df3f52ef7b3620b67a00cf4f5eb731a4d0b98208
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-services-overview"></a>ワークフロー サービスの概要
 ワークフロー サービスは、ワークフローを使用して実装される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ベースのサービスです。 ワーク フロー サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージを送受信するメッセージ アクティビティを使用するワークフローです。 .NET Framework 4.5 では、ワークフロー内からメッセージを送受信できるようにする多数のメッセージ アクティビティが導入されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]メッセージング アクティビティ、およびそれらを使用して異なるメッセージ交換パターンを実装する方法を参照してください。[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。  

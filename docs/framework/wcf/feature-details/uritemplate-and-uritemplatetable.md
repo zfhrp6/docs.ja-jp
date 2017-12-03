@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
 caps.latest.revision: "24"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7ef3f2a71280595d58291863a1852cc4c590008c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b9d08fa0e0ec556779d246af5ec11fcbeb54dedc
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate と UriTemplateTable
 Web 開発者は、サービスの応答先となる URI の形状とレイアウトを記述できる必要があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、開発者が URI を制御するための 2 つの新しいクラスが追加されています。 <xref:System.UriTemplate> と <xref:System.UriTemplateTable> は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] における URI ベースのディスパッチ エンジンの基盤となります。 これらのクラスは単独で使用することもできるため、開発者は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを実装せずにテンプレートと URI マッピング機構を利用できます。  

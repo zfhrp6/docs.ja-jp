@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7d8fea550d0def93cf1d86b9d4a7d6b09afaf90d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2e9d851d083f0b3a1bd00bafe5b0805a55635158
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="simplified-configuration"></a>簡略化された構成
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスの構成は複雑な作業になることがあります。 さまざまなオプションがあり、どの設定が必要であるかをいつでも簡単に判断できるとは限りません。 構成ファイルを使用することで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの柔軟性は高まりますが、構成ファイルは、発見しにくい問題の多くの根源でもあります。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] では、このような問題に対応し、サービス構成の規模と複雑さを軽減する手段を提供しています。  

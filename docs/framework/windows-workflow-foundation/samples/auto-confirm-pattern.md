@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 668aec65-78d3-4636-9c7b-deed643a18f9
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: affc9d1638148971dd9c57969c75166facfd545c
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: aaf4d72396438178d807f28ba8cb0ac5c5cb368e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="auto-confirm-pattern"></a>自動確認パターン
 このサンプルは、カスタム `AutoConfirmScope` アクティビティを示す 3 つのシナリオで構成されます。 1 つ目のサンプルでは、2 番目と 3 番目の補正可能なアクティビティが `AutoConfirmScope` で入れ子になっている 4 つの補正可能なアクティビティのシーケンスが正常に実行された場合を示します。 2 つ目のサンプルでは、同じシーケンスを示しますが、4 番目の <xref:System.Activities.Statements.CompensableActivity> の実行後に例外が発生します。 3 つ目のシナリオでは、同じシーケンスを示しますが、2 番目の `AutoConfirmScope` の完了後に <xref:System.Activities.Statements.CompensableActivity> で例外が発生します。  

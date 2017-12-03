@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4332b93175f4cb751ba88c7d2b05e4b462de7748
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7cc400c2925d1a4a1810780528bad6da3ad492eb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-tracing"></a>ワークフロー トレース
 ワークフロー トレースでは、.NET Framework のトレース リスナーを使用して診断情報を取得できます。 トレースは、アプリケーションで問題が検出された場合に有効にし、その問題が解決されたら、再度無効にすることが可能です。 ワークフローのデバッグ トレースを有効にする方法は 2 つあります。 また、イベント トレース ビューアーを使用してトレースを構成したり、<xref:System.Diagnostics> を使用してトレース イベントをファイルに送信したりすることができます。  
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  イベント ビューアーで分析ログおよびデバッグ ログのノードに移動します。  
   
-2.  イベント ビューアーのツリー ビューに移動**イベント ビューアー] の [アプリケーションとサービス ログ] の [Microsoft]-> [Windows アプリケーション サーバー-アプリケーション]-> [**です。 右クリック**アプリケーション サーバー-アプリケーション**選択**ビューでは、分析およびデバッグ ログ-> **です。 右クリック**デバッグ**選択**ログの有効化**です。  
+2.  イベント ビューアーのツリー ビューに移動**イベント ビューアー] の [アプリケーションとサービス ログ] の [Microsoft]-> [Windows アプリケーション サーバー-アプリケーション]-> [**です。 右クリック**アプリケーション サーバー-アプリケーション**選択**ビューでは、分析およびデバッグ ログ->** です。 右クリック**デバッグ**選択**ログの有効化**です。  
   
 3.  ワークフローがデバッグを実行し、トレースが ETW デバッグ チャネルに出力されると、トレースをイベント ビューアーで参照できます。 移動**イベント ビューアー] の [アプリケーションとサービス ログ] の [Microsoft]-> [Windows アプリケーション サーバー-アプリケーション]-> [**です。 右クリック**デバッグ**選択**更新**です。  
   

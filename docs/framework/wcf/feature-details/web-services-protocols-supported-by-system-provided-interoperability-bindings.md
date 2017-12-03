@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
 caps.latest.revision: "39"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 92da011b6bd3fda342e827536b698c6ae6f4c6f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d1cc61b1b777de7149b8f12c0b2f6030b305a73c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、Web サービス仕様と呼ばれる一連の仕様をサポートする Web サービスと相互運用できるように構築されています。 サービス構成を簡略化して相互運用性のベスト プラクティスを実現するために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、<xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>、<xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>、および <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType> の 3 つの相互運用可能なシステム指定のバインディングが導入されています。 OASIS (Organization for the Advancement of Structured Information Standards) 標準との相互運用性を実現するために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType> という相互運用可能なシステム指定のバインディングがあります。 メタデータの公開の[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]2 つの相互運用可能なシステム指定のバインディングが含まれています: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md)と[ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)です。 このトピックでは、システム指定の相互運用可能なバインディングがサポートする仕様を示します。  

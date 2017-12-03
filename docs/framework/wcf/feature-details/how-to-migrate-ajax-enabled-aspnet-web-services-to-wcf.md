@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 91b611af6c8de5c2bc0119838eb12950d3207177
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fe09e2c91df0c25f070e06a39ce5e94a54062a20
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>方法 : AJAX 対応 ASP.NET Web サービスを WCF に移行する
 ここでは、基本的な ASP.NET AJAX サービスを同等の AJAX 対応 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに移行する手順の概要を説明します。 ここでは、ASP.NET AJAX サービスの、機能的に同等の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バージョンを作成する方法を示します。 この 2 つのサービスを並行して使用することも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを ASP.NET AJAX サービスと置き換えて使用することもできます。  

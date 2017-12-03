@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c0e2dbd255a1fbadbd5dd4cd7e676b75e659fe2a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3fd8b59cd69807928b1a441d1bfb57f82d072288
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="operation-formatter-and-operation-selector"></a>操作フォーマッタと操作セレクター
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 拡張ポイントを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で想定されている形式と異なる形式のメッセージ データを許可する方法を示します。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]フォーマッタの下に含まれるメソッドのパラメーターを想定して、`soap:body`要素。 このサンプルでは、代わりに HTTP GET クエリ文字列のパラメータ データを解析するカスタム操作フォーマッタを実装し、そのデータを使用してメソッドを呼び出す方法を示します。  

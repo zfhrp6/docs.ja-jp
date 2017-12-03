@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f362562c-767d-401b-8257-916616568fd4
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 892875fb8340220dc152f91ab2239257c7b96fb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0abc1ac1cea6c9799c3d6bb349869b77f1d0b7c3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-non-service-workflow-in-iis"></a>方法 : IIS でサービス以外のワークフローをホストする
 ワークフロー サービスではないワークフローは IIS/WAS でホストできます。 これは他の人が作成したワークフローをホストする必要がある場合に役に立ちます。 たとえば、ワークフロー デザイナーを再ホストして、ユーザーが独自のワークフローを作成できるようにする場合がその例です。  IIS でサービス以外のワークフローをホストすると、プロセス リサイクル、アイドル シャットダウン、処理状況の監視、メッセージ ベースのアクティブ化などの機能をサポートできます。 IIS でホストされるワークフロー サービスには <xref:System.ServiceModel.Activities.Receive> アクティビティが含まれ、IIS がメッセージを受け取るとアクティブ化されます。 サービス以外のワークフローにはメッセージング アクティビティは含まれないので、既定ではメッセージを送信することによってアクティブ化できません。  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> からクラスを派生させ、そのワークフローのインスタンスを作成する操作を含むサービス コントラクトを定義する必要があります。 このトピックでは、手順、単純なワークフローを作成、クライアントが、ワークフローをアクティブ化に使用できるサービス コントラクトを定義およびからクラスを派生する<xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>ワークフロー作成のリクエストをリッスンするように、サービス コントラクトを使用します。  

@@ -17,17 +17,17 @@ ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
 caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7ee4d12659dd6da8c5290134c48d280692a496f4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 35a40d6dfb6c66183afb0f3a2980a3b7863353fa
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="keywords-visual-basic"></a>キーワード (Visual Basic)
 次の表は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のすべてのキーワードの一覧です。  
   
 ## <a name="reserved-keywords"></a>予約済みのキーワード  
- 次のキーワードは*予約済み*であり、プログラミングの要素 (変数やプロシージャなど) の名前として使用できません。 ただし、名前を角かっこ (`[``]`) で囲むと、この制約を回避できます。 詳細については、「[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」の「エスケープされた名前」を参照してください。  
+ 次のキーワードは*予約済み*であり、プログラミングの要素 (変数やプロシージャなど) の名前として使用できません。 ただし、名前を角かっこ (`[]`) で囲むと、この制約を回避できます。 詳細については、「[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」の「エスケープされた名前」を参照してください。  
   
 > [!NOTE]
 >  エスケープされた名前を使用すると、コードの可読性が低下し、検出しにくい微妙なエラーの原因となる可能性があるため、使用を避けてください。  

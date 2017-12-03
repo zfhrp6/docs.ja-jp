@@ -14,14 +14,14 @@ helpviewer_keywords:
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
 caps.latest.revision: "51"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 81e149292757b320d4c29975de1abb69eb1f8b9a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3a24f1bd921de848cb75a2c9f35fa3dd279bc741
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="what-is-windows-communication-foundation"></a>Windows Communication Foundation とは
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、サービス指向アプリケーションを構築するためのフレームワークです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を使用すると、1 つのサービス エンドポイントから別のサービス エンドポイントに非同期メッセージとしてデータを送信できます。 サービス エンドポイントには、IIS でホストされている、継続的に使用可能なサービスの一部を使用したり、アプリケーションでホストされているサービスを使用できます。 エンドポイントには、サービス エンドポイントからデータを要求するサービスのクライアントを使用できます。 メッセージは XML として送信された 1 文字または 1 語の簡単なものでも、バイナリ データのストリームのような複雑なものでも構いません。 サンプル シナリオをいくつか挙げます。  

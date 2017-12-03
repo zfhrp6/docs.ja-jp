@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6334a5b866d239dc5f961ce4f1c89eac5b6ed3b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2cf83f7c9af667a9efed59ff7a1f86ace6d8821d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="serialization-and-deserialization"></a>シリアル化と逆シリアル化
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には新しいシリアル化エンジン、 <xref:System.Runtime.Serialization.DataContractSerializer>が含まれます。 <xref:System.Runtime.Serialization.DataContractSerializer> は、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 ここでは、シリアライザーのしくみについて説明します。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/21/2017
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、コンパニオン シリアライザーである <xref:System.Runtime.Serialization.NetDataContractSerializer>も含まれます。 <xref:System.Runtime.Serialization.NetDataContractSerializer> は、シリアル化されたデータの一部として <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 型名を出力するため、 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> シリアライザーや [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] シリアライザーに似ています。 このシリアライザーは、シリアル化と逆シリアル化の終了時に、同じ型を共有する場合に使用します。 <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer> は、共通の基本クラスである <xref:System.Runtime.Serialization.XmlObjectSerializer>から派生します。  
   
 > [!WARNING]
->  <xref:System.Runtime.Serialization.DataContractSerializer> は、20 未満の 16 進数値と制御文字を含む文字列を XML エンティティとしてシリアル化します。 このため、WCF サービスにそのようなデータを送信する際に WCF 以外のクライアントに問題が発生することがあります。  
+>  <xref:System.Runtime.Serialization.DataContractSerializer> は、20 未満の 16 進数値と制御文字を含む文字列を XML エンティティとしてシリアル化します。 このようなデータを WCF サービスに送信するときに、WCF 以外のクライアントに問題があります。  
   
 ## <a name="creating-a-datacontractserializer-instance"></a>DataContractSerializer インスタンスの作成  
  <xref:System.Runtime.Serialization.DataContractSerializer> のインスタンスの作成は重要な手順です。 インスタンスの作成後に、設定を変更することはできません。  

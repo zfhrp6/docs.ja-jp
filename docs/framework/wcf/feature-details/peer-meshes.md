@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d93e312e-ac04-40f8-baea-5da1cacb546e
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1ca3d934564447018f44a423c36f26454588db4e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d747b2916f544294bb69f01aadc1321370878689
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="peer-meshes"></a>ピア メッシュ
 A*メッシュ*は互いに通信する、一意のメッシュ ID により識別されるピア ノードの名前付きコレクション (相関グラフ) 各ノードは複数の別のノードに接続されています。 接続状況が良好なメッシュでは、2 つのノード間にパスが存在します。メッシュの一番端のノード間には比較的少数のホップがあります。メッシュは、一部のノードまたは接続が落ちた場合でも、接続されたままになります。メッシュ内のアクティブ ノードは、エンドポイント情報と対応するメッシュ ID を公開して他のピアが検索できるようにします。  

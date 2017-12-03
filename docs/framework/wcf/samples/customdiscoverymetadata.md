@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c42455fd-3652-4b7e-b698-ab3a2bb52e48
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5b3272b642a04821d8343cae776e48f90d266cfe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4b4a68204d8ae5d2a338d60498522810a557e575
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="customdiscoverymetadata"></a>CustomDiscoveryMetadata
 このサンプルでは、サービスによって公開される探索可能なエンドポイントの探索メタデータにカスタム XML メタデータを挿入する方法を説明します。 次に、クライアントがサービスを検索してこのカスタム データを抽出する方法を示します。 このサンプルは、2 つのプロジェクト (サービスとクライアント) で構成されます。  

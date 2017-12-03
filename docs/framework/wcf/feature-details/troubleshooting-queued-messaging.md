@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1c12f02bc40764c1e4acc70906c6145988103d9b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a23dd402cdc12cd20ce7273a96df056aeda71ceb
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="troubleshooting-queued-messaging"></a>キューに置かれたメッセージングのトラブルシューティング
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でのキューの使用に関する一般的な質問とトラブルシューティング ヘルプについて説明します。  
@@ -161,7 +161,7 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
   
  **Q:**既定のバインディングでメッセージを送信するときに (トランスポート セキュリティが有効)「内部証明書が見つかりません」メッセージが表示されるキューを Active Directory でします。 これを修復する方法を教えてください。  
   
- **A:**つまり、送信者の Active Directory で証明書を更新する必要があります。 これを行うには、開く**コントロール パネルの **、**管理ツール**、**コンピューターの管理**を右クリックして**MSMQ**を選択し、**プロパティ**です。 選択、**ユーザー証明書** タブでをクリックし、**書き換え**ボタンをクリックします。  
+ **A:**つまり、送信者の Active Directory で証明書を更新する必要があります。 これを行うには、開く**コントロール パネルの** 、**管理ツール**、**コンピューターの管理**を右クリックして**MSMQ**を選択し、**プロパティ**です。 選択、**ユーザー証明書** タブでをクリックし、**書き換え**ボタンをクリックします。  
   
  **Q:**を使用して、メッセージ送信時に<xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>使用する証明書を指定して、「無効な証明書」メッセージが表示されます。 これを修復する方法を教えてください。  
   

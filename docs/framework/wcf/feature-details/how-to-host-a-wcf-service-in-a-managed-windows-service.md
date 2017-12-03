@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 01f6ce27a05c11ddf4662609bf98730df5ddfda3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3e8572541e0bf9ddcfb93939c177b5cb8c440b41
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>方法 : マネージ Windows サービスで WCF サービスをホストする
 ここでは、Windows サービスでホストされる [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを作成するために必要な基本手順について説明します。 このシナリオは、マネージ Windows サービスのホスト オプションによって有効になります。このサービスは、メッセージがアクティブ化されていない、セキュリティ保護された環境において、インターネット インフォメーション サービス (IIS) の外部でホストされ、長時間実行される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスです。 サービスの有効期限は代わりにオペレーティング システムによって制御されます。 このホスト オプションは Windows のすべてのバージョンで使用できます。  

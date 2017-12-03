@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 33fc62a5-5d59-461c-a37a-0e1b51ac763d
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2ffd220babe99661d8b6aaf271a566d415af5eb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f70283e15bbfaf111c8e677641682538a2361942
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="out-of-order-message-processing"></a>順番を無視したメッセージの処理
 ワークフロー サービスは、特定の順序で送信されるメッセージに依存する場合があります。 ワークフロー サービスには 1 つ以上の <xref:System.ServiceModel.Activities.Receive> アクティビティが含まれ、それぞれの <xref:System.ServiceModel.Activities.Receive> アクティビティは特定のメッセージに対応しています。 特定のトランスポート配信保証がないと、クライアントから送信されるメッセージに遅延が生じ、それによって、ワークフロー サービスが予期しない順序でメッセージが配信されることがあります。 特定の順序でメッセージが送信されることを必要としないワークフローは、通常、Parallel アクティビティを使用して実装されます。 アプリケーション プロトコルがより複雑な場合は、ワークフローがすぐに複雑になります。  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のメッセージ処理機能では、順番が無視されるため、入れ子になった複雑な Parallel アクティビティを含まないワークフローを作成できます。 順番を無視したメッセージ処理は、<xref:System.ServiceModel.Channels.ReceiveContext> MSMQ バインディングなど、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に対応するチャネルでのみサポートされます。  

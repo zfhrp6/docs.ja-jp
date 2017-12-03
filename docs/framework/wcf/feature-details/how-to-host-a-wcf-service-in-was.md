@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
 caps.latest.revision: "25"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 3069dfbde9fedc0a0c89d8f55ba1adcc852d5c24
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 33387a9b155a471209039e5977bc7134b1439ff3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>方法 : WAS で WCF サービスをホストする
 ここでは、Windows プロセス アクティブ化サービス (WAS) でホストされる [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを作成するために必要な基本手順について説明します。 WAS は、HTTP 以外のトランスポート プロトコルで動作するインターネット インフォメーション サービス (IIS) 機能を一般化した新しいプロセス アクティブ化サービスです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、リスナー アダプター インターフェイスを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされる HTTP 以外のプロトコル (TCP、名前付きパイプ、メッセージ キューなど) を介して受信されるアクティブ化要求を伝達します。  

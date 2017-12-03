@@ -12,14 +12,14 @@ helpviewer_keywords:
 - Windows Workflow Foundation [WF], getting started
 ms.assetid: c2d3585f-6b1a-4d4f-9865-bd7cd31c5d42
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9947833a11fa0b7227a11e65f3b42a91d8fe91d0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3bc2f081411577094ea1b95c25478822a6c1747c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="getting-started-tutorial"></a>チュートリアル入門
 このセクションには、[!INCLUDE[wf](../../../includes/wf-md.md)] アプリケーションのプログラミングの概要を説明する一連のチュートリアル トピックが掲載されています。 これらのトピックの手順に従って、数値推測ゲーム アプリケーションを構築します。 チュートリアルの最初のトピックでは、ワークフローに必要なカスタム アクティビティを作成する手順について説明します。 2 番目のトピックでは、カスタム アクティビティをビルトイン ワークフロー アクティビティと共にフローチャート ワークフローにアセンブルします。 3 番目のトピックでは、ホスト アプリケーションを構成してワークフローを実行します。最後のトピックでは永続化の概要について説明します。 このプロセスの各手順はその前の手順に基づいているため、順番に完了することをお勧めします。  

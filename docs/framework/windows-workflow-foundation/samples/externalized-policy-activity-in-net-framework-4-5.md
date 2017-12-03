@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 9c2aa6bd10d95abefd37fb53f88916d90cfe2344
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 468d0ca5f4afa4e84b69f58887672ffcf1a14fa6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>.NET Framework 4.5 の外部化されたポリシー アクティビティ
 このサンプルでは、ExternalizedPolicy4 アクティビティが既存を実行できるようにする方法を示します[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] [!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 3.5)<xref:System.Workflow.Activities.Rules.RuleSet>オブジェクト[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] [!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 4.5) WF 3.5 に付属しているルール エンジンを使用して直接です。 このアクティビティを使用すると、既存の WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> を開いて実行できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WF 3.5 ルール エンジンの Windows Workflow Foundation の一部として含まれるをお読みください[Windows Workflow Foundation ルール エンジンの概要](http://go.microsoft.com/fwlink/?LinkId=166079)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]規則を移行する[!INCLUDE[wf1](../../../../includes/wf1-md.md)]で[!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]での移行ガイドをお読みください[移行のガイダンス](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  

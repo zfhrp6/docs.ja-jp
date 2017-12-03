@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7f1feb09c67051c1e99ac199adc20fe6ca4d6e4e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f9d044ab9b95eb4144770a90367028b5b513a69c
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="collection-activities-in-wf"></a>WF 内のコレクション アクティビティ
 コレクション アクティビティはワークフローのコレクション オブジェクトの作業に使用します。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、コレクション内の項目の追加および削除、コレクション内の項目の存在を確認するテスト、およびコレクションの消去を行うシステム標準アクティビティがあります。 `ExistsInCollection`および`RemoveFromCollection`が、<xref:System.Activities.OutArgument%601>型の<xref:System.Boolean>結果を示します。  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: eae1a7971c50372b999678b79be6503885d71f1e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 45f57fd90eb787099e37b012eb528a2072f175c3
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="known-types"></a>既知の型
 このサンプルでは、データ コントラクト内の派生型に関する情報を指定する方法を示します。 データ コントラクトを使用すると、サービスと構造化データをやり取りできます。 オブジェクト指向プログラミングでは、別の型から継承される型を元の型の代わりに使用できます。 サービス指向プログラミングでは、型ではなくスキーマが伝達されるので、型と型との関係は保持されません。 <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性を使用すると、派生型に関する情報をデータ コントラクトに含めることができます。 この機構を使用しない場合は、基本型が予期される箇所では派生型を送受信できません。  

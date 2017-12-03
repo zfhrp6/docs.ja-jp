@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c0e8f7bb-cb13-49ec-852f-b85d7c23972f
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 36ecde17986425436e17e6b7a4043fc74a6e583e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 29e4fb590733392ebae10fe1ad18781653c0d202
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-service-host-extensibility"></a>ワークフロー サービス ホストの拡張機能
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] には、ワークフロー サービスをホストするための <xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスがあります。 このクラスは、マネージ アプリケーションまたは Windows サービスで、ワークフロー サービスを自己ホストするときに使用します。 また、このクラスは、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) を使用してワークフロー サービスをホストするときにも使用します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスは、カスタムの拡張機能の追加、アイドル動作の変更、およびサービス以外のワークフロー (メッセージング アクティビティを使用しないワークフロー) のホストを可能にする拡張ポイントを提供します。  

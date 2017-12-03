@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: metadata [WCF], exporting and importing
 ms.assetid: 614a75bb-e0b0-4c95-b6d8-02cb5e5ddb38
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6231d6e4b6562aafbb5b6bd88b65b66f44469023
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 91b03e29c2841434d4222f59ae62028bf2431a84
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="exporting-and-importing-metadata"></a>メタデータのエクスポートとインポート
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、メタデータのエクスポートは、サービス エンドポイントを説明したり、クライアントがサービスの使用方法を理解するために使用できる、対応した標準的な表現にメタデータを移し替えたりするプロセスです。 サービス メタデータのインポートは <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンス、またはサービス メタデータの一部を生成するプロセスです。  

@@ -24,14 +24,14 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c8ec820d631532b782b738f0fefcffce3e4b93d6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0f174ef3ada619e20d375035bee82b0ed9bbc145
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>XML Web サービスを使用した XML シリアル化
 XML シリアル化は、XML Web サービス アーキテクチャで使用される基礎的なトランスポート機構であり、<xref:System.Xml.Serialization.XmlSerializer> クラスによって実行されます。 XML Web サービスによって生成される XML を制御するには、「[XML シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)」および「[エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)」の一覧に示されている属性を、XML Web サービスの作成に使用するファイル (.asmx) のクラス、戻り値、パラメーター、およびフィールドに適用します。 XML Web サービスの作成の詳細については、「[ASP.NET を使用した XML Web サービスの構築](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c)」を参照してください。  

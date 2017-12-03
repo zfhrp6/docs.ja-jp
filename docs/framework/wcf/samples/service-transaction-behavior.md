@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: Service Transaction Behavior Sample [Windows Communication Foundation]
 ms.assetid: 1a9842a3-e84d-427c-b6ac-6999cbbc2612
 caps.latest.revision: "28"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6d881e7727c002cc9cc5322881a67dcb9a780efa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4777136c80f7dba368c85fac7d7dd1db9c945c5b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="service-transaction-behavior"></a>サービス トランザクションの動作
 このサンプルでは、クライアント調整トランザクションの使用方法と、サービス トランザクションの動作を制御する ServiceBehaviorAttribute と OperationBehaviorAttribute の設定方法について説明します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装しますが、データベース テーブルと、電卓操作の合計を実行しているステートフルで実行される操作のサーバー ログを維持するために拡張されています。 サーバー ログ テーブルへの書き込みを保存するかどうかは、クライアント調整トランザクションの結果によって異なります。クライアント トランザクションが完了しない場合は、Web サービス トランザクションにより、データベースへの更新はコミットされません。  
@@ -227,7 +227,7 @@ Creating new service instance...
   
 1.  サービス コンピューターで、受信ネットワーク トランザクションを許可するように MSDTC を構成します。  
   
-    1.  **開始** メニューの "éˆú"**コントロール パネルの **、し**管理ツール**、し、**コンポーネント サービス**です。  
+    1.  **開始** メニューの "éˆú"**コントロール パネルの** 、し**管理ツール**、し、**コンポーネント サービス**です。  
   
     2.  右クリック**マイ コンピューター**選択**プロパティ**です。  
   
@@ -253,7 +253,7 @@ Creating new service instance...
   
 3.  クライアント コンピューターで、送信ネットワーク トランザクションを許可するよう MSDTC を構成します。  
   
-    1.  **開始** メニューの "éˆú"**コントロール パネルの **、し**管理ツール**、し、**コンポーネント サービス**です。  
+    1.  **開始** メニューの "éˆú"**コントロール パネルの** 、し**管理ツール**、し、**コンポーネント サービス**です。  
   
     2.  右クリック**マイ コンピューター**選択**プロパティ**です。  
   

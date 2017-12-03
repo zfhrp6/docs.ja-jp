@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f84d2d5d-1c1b-4f19-be45-65b552d3e9e3
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a19099ea928e8867dd8206b8add0f1146496d052
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bc2a6da9a43e29091c4ff9d086e9259594a01718
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="persistence-participants"></a>永続参加要素
 永続参加要素は、アプリケーション ホストによってトリガーされる永続化操作 (保存または読み込み) に参加できます。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] 2 つの抽象クラスに付属して**PersistenceParticipant**と**PersistenceIOParticipant**、永続参加要素を作成に使用できます。 永続参加要素はこれらのクラスの 1 つから派生し、目的のメソッドを実装して、このクラスのインスタンスを <xref:System.ServiceModel.Activities.WorkflowServiceHost.WorkflowExtensions%2A> の <xref:System.ServiceModel.Activities.WorkflowServiceHost> コレクションに追加します。 アプリケーション ホストは、ワークフロー インスタンスを永続化するときにこのようなワークフロー拡張機能を必要とする場合があり、適切なときに永続参加要素の適切なメソッドを呼び出します。  

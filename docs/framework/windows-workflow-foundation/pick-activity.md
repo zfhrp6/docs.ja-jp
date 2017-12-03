@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b3e49b7f-0285-4720-8c09-11ae18f0d53e
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a76b666dde6674740790c161753570193912afd9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: edc9e285faab064b8552263bd48e6d2ad43d5ec2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="pick-activity"></a>Pick アクティビティ
 <xref:System.Activities.Statements.Pick> アクティビティを使用すると、イベント トリガー セットとそれに続く対応するハンドラーのモデル化が単純になります。  <xref:System.Activities.Statements.Pick> アクティビティには、<xref:System.Activities.Statements.PickBranch> アクティビティのコレクションが含まれます。各 <xref:System.Activities.Statements.PickBranch> は <xref:System.Activities.Statements.PickBranch.Trigger%2A> アクティビティと <xref:System.Activities.Statements.PickBranch.Action%2A> アクティビティの組み合わせです。  実行時に、すべての分岐のトリガーが並行して実行されます。  1 つのトリガーが完了すると、対応するアクションが実行され、その他すべてのトリガーが取り消されます。  [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] の <xref:System.Activities.Statements.Pick> アクティビティの動作は [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] の <xref:System.Workflow.Activities.ListenActivity> アクティビティに似ています。  

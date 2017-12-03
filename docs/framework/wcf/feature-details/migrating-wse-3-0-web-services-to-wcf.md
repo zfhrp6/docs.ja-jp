@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7bc5fff7-a2b2-4dbc-86cc-ecf73653dcdc
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ea8bbbcb6241e632075e8ebeb29bbdd3d681dae0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c97279b553a615feda1dd3a195ad033744d82983
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>WSE 3.0 Web サービスの WCF への移行
 WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に移行する利点には、パフォーマンスの向上と、追加のトランスポート、追加のセキュリティ シナリオ、および WS-* 仕様のサポートなどがあります。 WSE 3.0 から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行した Web サービスでは、パフォーマンスが最大 200% から 400% 向上する可能性があります。 サポートされているトランスポートの詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。 によってサポートされるシナリオの一覧については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)です。 サポートされている仕様の一覧については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[Web サービス プロトコルの相互運用性ガイド](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)です。  

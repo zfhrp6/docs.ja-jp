@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
 caps.latest.revision: "26"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4c38a697cc5f4693977e11ff71142322533e9ded
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 63f9d22c571a007653fc794dc7638c8221a676aa
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="working-with-certificates"></a>証明書の使用
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティをプログラミングする場合、一般に X.509 デジタル証明書を使用して、クライアントとサーバーの認証、暗号化、およびメッセージのデジタル署名を行います。 ここでは、X.509 デジタル証明書の機能および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でのそれらの機能の使用方法について簡単に説明します。また、これらの概念の詳細を説明するトピックや、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と証明書を使用した一般的なタスクの実行方法が記載されたトピックへのリンクも示します。  

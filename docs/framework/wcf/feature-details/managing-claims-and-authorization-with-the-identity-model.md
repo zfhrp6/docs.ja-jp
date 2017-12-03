@@ -16,14 +16,14 @@ helpviewer_keywords:
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a5734065a82c6b45b837c9cb5a74ba6e46207fb7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b69c17b9fcb14bbd70b60c32965fb1163c22e765
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>ID モデルを使用したクレームと承認の管理
 承認は、コンピューター リソースを変更または表示したり、コンピューター リソースにアクセスしたりする権限を持つエンティティを特定するプロセスです。 たとえば、ある業務で、管理者だけが従業員のファイルへのアクセスを許可される場合があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、承認処理を実行するための 2 つの機構をサポートしています。 1 つ目の機構では、既存の共通言語ランタイム (CLR: Common Language Runtime) 構造を使用して承認を制御できます。 2 つ目は、クレームに基づくモデルと呼ばれる、 *Id モデル*です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ID モデルを使用して受信メッセージからクレームを作成します。ID モデル クラスを拡張することで、カスタム承認方式に対応する新しいクレームの種類をサポートできます。 このトピックでは、ID モデル機能のプログラミングの主要概念について概説し、この機能で使用する最も重要なクラスの一覧を示します。  

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c0c6d4917cc34021381e30d45b50b225b6aa4d18
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7a65f2c1daaac7e0e795412d666bb7d15e639361
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="schema-import-and-export"></a>スキーマのインポートとエクスポート
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には新しいシリアル化エンジン、 <xref:System.Runtime.Serialization.DataContractSerializer>が含まれます。 `DataContractSerializer` は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 このシリアライザー自体の他に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、関連するスキーマ インポート機構とスキーマ エクスポート機構が用意されています。 *スキーマ*シリアライザーが生成するか、デシリアライザーがアクセスできる、または XML の形状の正式かつ正確であり、コンピューターが判読できる説明を示します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、多数のサードパーティ プラットフォームとの広範な相互運用性を持つ W3C (World Wide Web Consortium) XML スキーマ定義言語 (XSD: XML Schema Definition Language) をスキーマ表現として使用します。  

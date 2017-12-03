@@ -13,14 +13,14 @@ helpviewer_keywords:
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
 caps.latest.revision: "29"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d1c4488421f4162d70fc47f8dd4d04c9374f25fc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 04de29891bcf5d8cdbac32ffc85d64a4003e3184
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="integrating-with-com-applications-overview"></a>COM+ アプリケーションとの統合の概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は分散アプリケーションを作成するための有用な環境を提供します。 COM+ でホストされるコンポーネント ベースのアプリケーション ロジックを既に使用している場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用すると、既存のロジックを修正することなく拡張することができます。 既存の COM+ サービスまたはエンタープライズ サービスの業務ロジックを、Web サービスを介して公開する場合に役立ちます。  
