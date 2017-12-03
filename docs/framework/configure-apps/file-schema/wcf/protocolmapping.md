@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 5076644b-1f33-4f26-9488-87de9fcda04c
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 769ca7b96c3671fdd1b154c99516778f7cbd542e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 88eb76a5657bd4a83bebb32ce30f73d32693be9b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltprotocolmappinggt"></a>&lt;protocolMapping&gt;
 トランスポート プロトコル スキーム (など、http、net.tcp、net.pipe など) と WCF バインディング間の既定のプロトコル マッピングのセットを定義する構成セクションを表します。 実行時に既定のエンドポイントを作成するときに、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は構成されたマッピングを確認し、特定のベース アドレスに使用するバインディングを決定します。  

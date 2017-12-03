@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ac359c65-c22d-42d2-97de-db53b77cebdb
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 883ae318e32493013f009f3580ef102e4d39b3e0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 27bcccab90c4627f2c9a1d241af3b1833ae13a18
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="ltcertificatereferencegt-for-ltidentitygt"></a>&lt;identity&gt; の &lt;certificateReference&gt;
 X.509 証明書検証の設定を指定します。 この ID を持つエンドポイントに接続するセキュリティで保護された [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] クライアントは、サーバーによって提示されるクレームに、この ID を構築するために使用された ID クレームが含まれていることを検証します。  
