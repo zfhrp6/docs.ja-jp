@@ -80,5 +80,5 @@ ms.lasthandoff: 11/21/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [プロパティの使用](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
  [インデクサー](../../../csharp/programming-guide/indexers/index.md)  
- [et キーワード](../../../csharp/language-reference/keywords/get.md)    
+ [get キーワード](../../../csharp/language-reference/keywords/get.md)    
  [set キーワード](../../../csharp/language-reference/keywords/set.md)    
