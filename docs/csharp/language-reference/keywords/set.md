@@ -1,5 +1,5 @@
 ---
-title: "設定 (C# リファレンス)"
+title: "set (C# リファレンス)"
 ms.date: 03/10/2017
 ms.prod: .net
 ms.technology: devlang-csharp
