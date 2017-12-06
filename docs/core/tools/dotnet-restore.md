@@ -4,15 +4,15 @@ description: "dotnet restore コマンドを使用して、依存関係とプロ
 keywords: "dotnet-restore, CLI, CLI コマンド, .NET Core"
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
+ms.date: 11/30/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 82a78dcb0cc85e2ba087b6df5ee029cbfb687358
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 887f562803226d99901a6ee13175c1a43956b0cd
+ms.sourcegitcommit: f416ac259c1a771e4e6c72728d8c11a77082f11c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -53,6 +53,21 @@ dotnet restore [-h|--help]
 プロジェクト固有のツールについては、`dotnet restore` はまず、ツールがパックされているパッケージを復元し、プロジェクト ファイルに指定されているツールの依存関係の復元に進みます。
 
 *Nuget.Config* がある場合、`dotnet restore` コマンドの動作はその設定の一部に影響を受けます。 たとえば、*NuGet.Config* に `globalPackagesFolder` を設定すると、指定されたフォルダーに NuGet パッケージが復元されます。 これは `dotnet restore` コマンドで `--packages` オプションを指定する操作の代替方法です。 詳細については、「[NuGet.Config reference](/nuget/schema/nuget-config-file)」(NuGet.Config リファレンス) を参照してください。
+
+## <a name="implicit-dotnet-restore"></a>暗黙的 `dotnet restore`
+
+.NET Core 2.0 より、次のコマンドの発行時に必要な場合、`dotnet restore` が暗黙的に実行されます。
+
+- [`dotnet new`](dotnet-new.md)
+- [`dotnet build`](dotnet-build.md)
+- [`dotnet run`](dotnet-run.md)
+- [`dotnet test`](dotnet-test.md)
+- [`dotnet publish`](dotnet-publish.md)
+- [`dotnet pack`](dotnet-pack.md)
+
+ほとんどの場合、`dotnet restore` コマンドを明示的に使用する必要がなくなりました。 
+
+`dotnet restore` は暗黙的な実行が不便な場合もあります。 たとえば、ビルド システムなど、一部の自動化されているシステムでは、ネットワーク使用状況を制御できるように、`dotnet restore` を明示的に呼び出し、復元のタイミングを制御する必要があります。 `dotnet restore` の暗黙的実行を防ぐために、`--no-restore` と共にこれらのコマンドのいずれかを使用し、暗黙的復元を無効にできます。
 
 ## <a name="arguments"></a>引数
 

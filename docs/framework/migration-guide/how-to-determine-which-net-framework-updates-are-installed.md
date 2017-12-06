@@ -1,7 +1,7 @@
 ---
-title: "方法: どの .NET Framework のセキュリティ更新プログラムと修正プログラムがインストールされている確認"
-description: "どの .NET Framework のセキュリティ更新プログラムと修正プログラムがコンピューターにインストールされているを確認する方法を説明します。"
-ms.date: 11/21/2017
+title: "方法: インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する"
+description: "コンピューターにインストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する方法について説明します。"
+ms.date: 11/27/2017
 ms.prod: .net-framework
 ms.technology: dotnet-clr
 ms.topic: article
@@ -15,24 +15,24 @@ ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c35705470a8e1b553eca2ca0c68d3b8b9b3f6fa6
-ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
+ms.openlocfilehash: 9ff10928b87834f9b8e74e269082919f49497023
+ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2017
+ms.lasthandoff: 11/30/2017
 ---
-# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>方法: どの .NET Framework のセキュリティ更新プログラムと修正プログラムがインストールされている確認
+# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>方法: インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する
 
-ここで説明する .NET Framework のセキュリティ更新プログラムを確認する方法と修正プログラムがコンピューターにインストールされています。
+この記事では、コンピューターにインストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する方法について説明します。
 
 > [!NOTE]
-> この記事で示したすべての手法では、管理者特権を持つアカウントが必要です。
+> この記事で紹介する手法にはすべて、管理特権が与えられたアカウントが必要になります。
 
-## <a name="to-find-installed-updates-using-the-registry"></a>インストールされたレジストリを使用して更新プログラムを検索するには
+## <a name="to-find-installed-updates-using-the-registry"></a>レジストリを利用し、インストールされている更新プログラムを見つける
 
-インストールされているセキュリティ更新プログラムと修正プログラムをコンピューターにインストールされている .NET Framework のバージョンごとには、Windows レジストリに一覧表示されます。 レジストリ エディターを使用することができます (*regedit.exe*) プログラムをこの情報を表示します。
+コンピューターにインストールされている .NET Framework のバージョンごとのインストール済みのセキュリティ更新プログラムおよび修正プログラムは、Windows レジストリに一覧表示されます。 レジストリ エディター (*regedit.exe*) プログラムを使用して、この情報を表示することができます。
 
-1. プログラム **regedit.exe** を開きます。 Windows 8 およびそれ以降のバージョンを右クリックして**開始** ![Windows ロゴ](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo")選択してから、**実行**です。 **開く**ボックスに、入力**regedit**選択**[ok]**です。
+1. プログラム **regedit.exe** を開きます。 Windows 8 以降のバージョンでは、**[スタート]** ![Windows ロゴ](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo")を右クリックし、**[ファイル名を指定して実行]** を選択します。 **[開く]** ボックスに「**regedit**」と入力し、**[OK]** を選択します。
 
 2. レジストリ エディターで、次のサブキーを開きます。
 
@@ -40,16 +40,16 @@ ms.lasthandoff: 11/27/2017
 
      インストールされている更新プログラムは、適用された .NET Framework バージョンを識別するサブキーの下に一覧表示されています。 各更新プログラムは、サポート技術情報の (KB) 番号で識別されます。
 
-レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号を検出する方法については、次を参照してください。[する方法: .NET Framework バージョンがインストールされている確認](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)です。
+レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号を検出する方法については、「[方法: インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。
 
-## <a name="to-find-installed-updates-by-querying-the-registry-in-code"></a>コードでレジストリを照会することによってインストールされた更新プログラムを検索するには
+## <a name="to-find-installed-updates-by-querying-the-registry-in-code"></a>コードでレジストリにクエリを実行し、インストールされている更新プログラムを見つける
 
-次の例は、プログラムによって、.NET Framework のセキュリティ更新プログラムと、コンピューターにインストールされている修正プログラムを決定します。
+次の例では、コンピューターにインストールされている .NET Framework セキュリティ更新プログラムおよび修正プログラムをプログラミングによって判断します。
 
 [!code-csharp[ListUpdates](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs)]
 [!code-vb[ListUpdates](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb)]
 
-この例には、次のいずれかのような出力が生成されます。
+この例では次のような出力が生成されます。
 
 ```console
 Microsoft .NET Framework 4 Client Profile
@@ -70,48 +70,47 @@ Microsoft .NET Framework 4 Extended
   KB2600217
 ```
 
-## <a name="to-find-installed-updates-by-querying-the-registry-in-powershell"></a>PowerShell でレジストリを照会してインストールされた更新プログラムを検索するには
+## <a name="to-find-installed-updates-by-querying-the-registry-in-powershell"></a>PowerShell でレジストリにクエリを実行し、インストールされている更新プログラムを見つける
 
-次の例では、.NET Framework のセキュリティ更新プログラムと PowerShell を使用してコンピューターにインストールされている修正プログラムを確認する方法を示します。
+次の例では、PowerShell を利用し、コンピューターにインストールされている .NET Framework セキュリティ更新プログラムおよび修正プログラムを判断する方法を示します。
 
 ```powershell
- Get-ChildItem "HKLM:SOFTWARE\Wow6432Node\Microsoft\Updates\*" -Recurse | Where-Object {$_.name -like
+$DotNetVersions = Get-ChildItem HKLM:\SOFTWARE\WOW6432Node\Microsoft\Updates | Where-Object {$_.name -like
  "*.NET Framework*"}
+
+ForEach($Version in $DotNetVersions){
+    
+   $Updates = Get-ChildItem $Version.PSPath
+    $Version.PSChildName
+    ForEach ($Update in $Updates){
+       $Update.PSChildName
+       }
+}
 ```
 
-この例には、次のいずれかのような出力が生成されます。
+この例では次のような出力が生成されます。
 
 ```console
-    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates\Microsoft .NET Framework 4 Client Profile
-
-
-Name                           Property
-----                           --------
-KB2468871                      ThisVersionInstalled : Y
-KB2468871v2                    ThisVersionInstalled : Y
-KB2478063                      ThisVersionInstalled : Y
-KB2533523                      ThisVersionInstalled : Y
-KB2544514                      ThisVersionInstalled : Y
-KB2600211                      ThisVersionInstalled : Y
-KB2600217                      ThisVersionInstalled : Y
-
-
-    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates\Microsoft .NET Framework 4 Extended
-
-
-Name                           Property
-----                           --------
-KB2468871                      ThisVersionInstalled : Y
-KB2468871v2                    ThisVersionInstalled : Y
-KB2478063                      ThisVersionInstalled : Y
-KB2533523                      ThisVersionInstalled : Y
-KB2544514                      ThisVersionInstalled : Y
-KB2600211                      ThisVersionInstalled : Y
-KB2600217                      ThisVersionInstalled : Y
+Microsoft .NET Framework 4 Client Profile
+KB2468871
+KB2468871v2
+KB2478063
+KB2533523
+KB2544514
+KB2600211
+KB2600217
+Microsoft .NET Framework 4 Extended
+KB2468871
+KB2468871v2
+KB2478063
+KB2533523
+KB2544514
+KB2600211
+KB2600217
 ```
 
 ## <a name="see-also"></a>関連項目
 
-[方法: .NET Framework バージョンがインストールされている確認](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)  
-[開発者にとっての .NET Framework をインストールします。](../../../docs/framework/install/guide-for-developers.md)  
+[方法: インストールされている .NET Framework バージョンを確認する](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)  
+[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)  
 [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)

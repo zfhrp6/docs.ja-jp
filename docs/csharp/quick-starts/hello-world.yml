@@ -2,7 +2,7 @@ documentType: Tutorial
 title: Hello C#
 metadata:
   title: "Hello C#。 C# 言語の最初の導入です。"
-  description: "このクイック スタートでは、ブラウザーを使用して、対話的に c# について学習します。 C# コードを記述し、ブラウザーで直接コードをコンパイルして、実行した結果を確認します。"
+  description: "このクイック スタートでは、ブラウザーを使用して C# を対話形式で学習できます。 C# コードを記述し、ブラウザーで直接コードをコンパイルして、実行した結果を確認します。"
   audience: Developer
   level: Beginner
   nextTutorialHref: numbers-in-csharp
@@ -12,18 +12,18 @@ metadata:
   ms.custom: mvc
 items:
 - durationInMinutes: 1
-  content: "このクイック スタートを説明 c# 対話形式で、お使いのブラウザーを使用して c# を記述しをコンパイルして、コードの実行の結果を表示します。 このチュートリアルには、\"Hello World\" プログラムを開始する一連のレッスンが含まれています。 これらのレッスンでは、C# 言語の基本を説明します。\n"
-  ms.openlocfilehash: 2089af6dbf418c87dfd28e1a2a8cf2814b40df6c
-  ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+  content: "このクイック スタートでは C# を対話形式で学習できます。ブラウザーを使用して C# を記述し、コードをコンパイルして実行した結果を確認します。 このチュートリアルには、\"Hello World\" プログラムを開始する一連のレッスンが含まれています。 これらのレッスンでは、C# 言語の基本を説明します。\n"
+  ms.openlocfilehash: ce1791bd7949c89269b1051d15765f5efd273e7c
+  ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/22/2017
+  ms.lasthandoff: 12/01/2017
 - title: "最初の C# プログラムの実行"
   durationInMinutes: 2
   content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し、**[実行]** をクリックします。\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nおめでとうございます!  最初の C# プログラムを実行しました。 これは \"Hello World!\" というメッセージを出力する単純なプログラムです。 <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドを使用してこのメッセージを出力しました。 `Console` は、コンソール ウィンドウを表す型です。 `WriteLine` は、そのテキスト コンソールに 1 行のテキストを出力する `Console` 型の 1 つのメソッドです。\n\n次に進んで、さらに詳しく見てみましょう。 このレッスンの残りの部分では、C# においてテキストを表す `string` 型の機能を確認します。 `Console` 型と同じように、`string` 型にもメソッドがあります。 `string` メソッドはテキストを処理します。 \n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
 - title: "変数の宣言と使用"
   durationInMinutes: 3
-  content: "最初のプログラムでは、`string` の \"Hello World!\" を 画面に出力しました。 \n\n> [!TIP]\n> C# (または何らかのプログラミング言語) について詳しく学習するに従い、コードを記述する際にミスをすることもあるでしょう。 **コンパイラ**は、そうしたエラーを発見して報告します。 エラー メッセージが出力された場合は、例のコードをよく確認して、対話型ウィンドウで修正すべきコードを見つけます。\n> こうした実習が C# コードの構造を理解するのに役立ちます。 \n\n最初のプログラムは、1 つのメッセージしか出力できません。 **変数**を使用すると、もっと役立つプログラムを記述できます。 **変数**は、同じコードを別の値で実行するのに使用できる記号です。 試してみましょう。 対話型ウィンドウで記述したコードを次のコードに置き換えます。\n\n```csharp\nstring aFriend = \"Bill\";\nConsole.WriteLine(aFriend);\n```\n\n最初の行で変数 `aFriend` を宣言し、その変数に \"Bill\" という値を代入しています。 2 番目の行でその名前を出力しています。\n\n宣言した変数に別の値を代入できます。 この名前を友人の名前に変更できます。 対話型ウィンドウで、先ほど追加したコードのあとに次の 2 行を追加します。\n\n```csharp\naFriend = \"Maria\";\nConsole.WriteLine(aFriend);\n```\n\n`aFriend` 変数に格納された値に基づいて、コードの同じ行に 2 つの異なるメッセージが表示されていることに注目してください。\n\nお気付きかと思いますが、最後の 2 つのメッセージから \"Hello\" という言葉がなくなっています。 修正しましょう。  メッセージを出力する行を次のように変更します。\n\n```csharp\nConsole.WriteLine(\"Hello \" + aFriend);\n```\n\nもう一度 **[実行]** をクリックして結果を確認します。\n\n使用して印刷文字列の作成は進行につれて`+`は複雑になります。 文字列の補間を使用すると、簡潔で読みやすい方法で文字列を構成します。\n\n追加する場合、 `$` 、文字列の開始引用符の前と同様に、文字列式を含めることができますし、`aFriend`中かっこ内の文字列内の変数です。\n\n\n```csharp\nConsole.WriteLine($\"Hello {aFriend}\");\n```\n\nもう一度 **[実行]** をクリックして結果を確認します。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: "最初のプログラムでは、`string` の \"Hello World!\" を 画面に出力しました。 \n\n> [!TIP]\n> C# (または何らかのプログラミング言語) について詳しく学習するに従い、コードを記述する際にミスをすることもあるでしょう。 **コンパイラ**は、そうしたエラーを発見して報告します。 エラー メッセージが出力された場合は、例のコードをよく確認して、対話型ウィンドウで修正すべきコードを見つけます。\n> こうした実習が C# コードの構造を理解するのに役立ちます。 \n\n最初のプログラムは、1 つのメッセージしか出力できません。 **変数**を使用すると、もっと役立つプログラムを記述できます。 **変数**は、同じコードを別の値で実行するのに使用できる記号です。 試してみましょう。 対話型ウィンドウで記述したコードを次のコードに置き換えます。\n\n```csharp\nstring aFriend = \"Bill\";\nConsole.WriteLine(aFriend);\n```\n\n最初の行で変数 `aFriend` を宣言し、その変数に \"Bill\" という値を代入しています。 2 番目の行でその名前を出力しています。\n\n宣言した変数に別の値を代入できます。 この名前を友人の名前に変更できます。 対話型ウィンドウで、先ほど追加したコードのあとに次の 2 行を追加します。\n\n```csharp\naFriend = \"Maria\";\nConsole.WriteLine(aFriend);\n```\n\n`aFriend` 変数に格納された値に基づいて、コードの同じ行に 2 つの異なるメッセージが表示されていることに注目してください。\n\nお気付きかと思いますが、最後の 2 つのメッセージから \"Hello\" という言葉がなくなっています。 修正しましょう。  メッセージを出力する行を次のように変更します。\n\n```csharp\nConsole.WriteLine(\"Hello \" + aFriend);\n```\n\nもう一度 **[実行]** をクリックして結果を確認します。\n\nさらに進めると、`+` を利用して出力する文字列の作成が難しくなります。 文字列補間を利用すれば、より簡潔で読みやすい方法で文字列をつなぎ合わせることができます。\n\n文字列の開始引用符の前に `$` を追加する場合、中かっこの文字列の内部に、`aFriend` 変数など、文字列式を含めることができます。\n\n\n```csharp\nConsole.WriteLine($\"Hello {aFriend}\");\n```\n\nもう一度 **[実行]** をクリックして結果を確認します。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
 - title: "文字列の処理"
   durationInMinutes: 5
   content: "先ほどの編集を通して、文字列を使って何ができるかを初めて確認しました。 さらに詳しく見てみましょう。\n\n`+` は C# において演算子と呼ばれるものの 1 つです。 `firstString + secondString` のように文字列に適用すると、1 つ目のテキストに 2 つ目のテキストが続く新しいテキストが作成されます。 これを*文字列の連結*と言います。 文字列変数も含めて、文字列をいくつでも連結できます。  これを試してみます。\n\n```csharp\nstring firstFriend = \"Maria\";\nstring secondFriend = \"Sage\";\nConsole.WriteLine($\"My friends are {firstFriend} and {secondFriend}\");\n```\n\n文字列についてさらに詳しく見ていきます。`Length` を使用して文字列の長さを知ることができます。 `Length` は文字列の**プロパティ**であり、その文字列の文字数を返します。 対話型ウィンドウの下部に次のコードを追加します。\n\n```csharp\nConsole.WriteLine($\"The name {firstFriend} has {firstFriend.Length} letters.\");\nConsole.WriteLine($\"The name {secondFriend} has {secondFriend.Length} letters.\");\n```\n\n> [!TIP]\n> このあたりで、自分で試してみるといいでしょう。 `Console.WriteLine()` を使用して画面にテキストを出力できることを学習しました。 変数を宣言して文字列同士を連結する方法についても学習しました。 対話型ウィンドウで実際に確認してみてください。 自分でより多くのメッセージを記述してみるとよいでしょう。 `+` 演算子を使用して文字列を作成してください。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
@@ -36,4 +36,4 @@ items:
 - title: "課題完了"
   durationInMinutes: 3
   content: "コードは次のようになりましたか?\n\n```csharp\nstring message = \"You say goodbye, and I say hello\";\nConsole.WriteLine(message.StartsWith(\"You\"));\nConsole.WriteLine(message.StartsWith(\"goodbye\"));\n\nConsole.WriteLine(message.EndsWith(\"hello\"));\nConsole.WriteLine(message.EndsWith(\"goodbye\"));\n```\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- content: "\"こんにちは c#\"クイック スタートが完了しました。\n\n独自の開発環境でこれらのクイック スタートを続行することができます。 .NET トピック[10 分後に開始](https://www.microsoft.com/net/core)ローカル開発環境の設定の説明が記載されています。 終了したら後で継続[(C#) 番号](numbers-in-chsarp-local.md)ローカル環境でします。\n\n`string` 型の機能の詳細については、「[C# プログラミング ガイド](../programming-guide/index.md)」の[文字列](../programming-guide/strings/index.md)に関するトピックで学習できます。\0"
+- content: "\"Hello C#\" クイック スタートはこれで終了です。\n\nこれまでのクイック スタートを、ご自身の開発環境でも行ってください。 ローカルの開発環境の設定手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 設定が完了したら、ローカルの開発環境で [C# の数値](numbers-in-csharp-local.md)を進めてください。\n\n`string` 型の機能の詳細については、「[C# プログラミング ガイド](../programming-guide/index.md)」の[文字列](../programming-guide/strings/index.md)に関するトピックで学習できます。\0"

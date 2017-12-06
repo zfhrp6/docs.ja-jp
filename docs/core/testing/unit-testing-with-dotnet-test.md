@@ -3,14 +3,14 @@ title: "dotnet テストと xUnit を使用した .NET Core での単体テス�
 description: "dotnet テストおよび xUnit を使用したサンプル ソリューションを段階的に構築していく対話型エクスペリエンスを通じて、C# および .NET Core の単体テストの概念について説明します。"
 author: ardalis
 ms.author: wiwagn
-ms.date: 09/08/2017
+ms.date: 11/29/2017
 ms.topic: article
 ms.prod: .net-core
-ms.openlocfilehash: 6e986e89d47ba4de9b8563f1a95cb1ae89accc89
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a9e64fe37f05b7bbe05b1c5878e4b31084a1c8b6
+ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>dotnet テストと xUnit を使用した .NET Core での単体テスト C#
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="creating-the-source-project"></a>ソース プロジェクトの作成
 
 シェル ウィンドウを開きます。 ソリューションを保持するための *unit-testing-using-dotnet-test* というディレクトリを作成します。
-この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、ソリューションを新たに作成します。 こうすることで、クラス ライブラリと単体テスト プロジェクトの両方を管理しやすくなります。
+この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、ソリューションを新たに作成します。 ソリューションを用意すると、クラス ライブラリと単体テスト プロジェクトの両方を管理しやすくなります。
 ソリューションのディレクトリ内で、*PrimeService* ディレクトリを作成します。 現時点のディレクトリとファイルの構造は次のようになっています。
 
 ```
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/18/2017
     /PrimeService
 ```
 
-*PrimeService* を現在のディレクトリにし、[`dotnet new classlib`](../tools/dotnet-new.md) を実行してソース プロジェクトを作成します。 *Class1.cs* の名前を *PrimeService.cs* に変更します。 テスト駆動開発 (TDD) を使用するため、`PrimeService` クラスのエラーが発生する実装を作成します。
+*PrimeService* を現在のディレクトリにし、[`dotnet new classlib`](../tools/dotnet-new.md) を実行してソース プロジェクトを作成します。 *Class1.cs* の名前を *PrimeService.cs* に変更します。 テスト駆動開発 (TDD) を行うには、`PrimeService` クラスのエラーが発生する実装を最初に作成します。
 
 ```csharp
 using System;
@@ -37,15 +37,21 @@ namespace Prime.Services
 {
     public class PrimeService
     {
-        public bool IsPrime(int candidate) 
+        public bool IsPrime(int candidate)
         {
             throw new NotImplementedException("Please create a test first");
-        } 
+        }
     }
 }
 ```
 
-*unit-testing-using-dotnet-test* ディレクトリに戻ります。 [`dotnet sln add .\PrimeService\PrimeService.csproj`](../tools/dotnet-sln.md) を実行して、クラス ライブラリ プロジェクトをソリューションに追加します。
+*unit-testing-using-dotnet-test* ディレクトリに戻ります。
+
+[dotnet sln](../tools/dotnet-sln.md) コマンドを実行して、クラス ライブラリ プロジェクトをソリューションに追加します。
+
+```
+dotnet sln add .\PrimeService\PrimeService.csproj
+```
 
 ## <a name="creating-the-test-project"></a>テスト プロジェクトの作成
 
@@ -60,11 +66,11 @@ namespace Prime.Services
     /PrimeService.Tests
 ```
 
-*PrimeService.Tests* ディレクトリを現在のディレクトリにし、[`dotnet new xunit`](../tools/dotnet-new.md) を使用して新しいプロジェクトを作成します。 これで、テスト ライブラリとして xUnit を使用するテスト プロジェクトが作成されます。 生成されたテンプレートで、*PrimeServiceTests.csproj* のテスト ランナーが構成されます。
+*PrimeService.Tests* ディレクトリを現在のディレクトリにし、[`dotnet new xunit`](../tools/dotnet-new.md) を使用して新しいプロジェクトを作成します。 このコマンドによって、テスト ライブラリとして xUnit を使用するテスト プロジェクトが作成されます。 生成されたテンプレートで、*PrimeServiceTests.csproj* ファイルのテスト ランナーが構成されます。次のようなコードです。
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
+  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
   <PackageReference Include="xunit" Version="2.2.0" />
   <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
 </ItemGroup>
@@ -91,7 +97,11 @@ dotnet add reference ../PrimeService/PrimeService.csproj
         PrimeServiceTests.csproj
 ```
 
-*unit-testing-using-dotnet-test* ディレクトリで [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj`](../tools/dotnet-sln.md) を実行します。 
+テスト プロジェクトをソリューションに追加するには、*unit-testing-using-dotnet-test* ディレクトリで [dotnet sln](../tools/dotnet-sln.md) コマンドを実行します。
+
+```
+dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj
+```
 
 ## <a name="creating-the-first-test"></a>最初のテストの作成
 
@@ -123,9 +133,9 @@ namespace Prime.UnitTests.Services
 }
 ```
 
-`[Fact]` 属性は、テスト ランナーによって実行されるテスト メソッドを表します。 *unit-testing-using-dotnet-test* で [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 xUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
+`[Fact]` 属性は、テスト ランナーによって実行されるテスト メソッドを表します。 *PrimeService.Tests* フォルダーから、[`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 xUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
 
-テストが失敗します。 実装はまだ作成していません。 最も単純な動作のコードを `PrimeService` クラスに記述して、このテストを作成します。
+テストが失敗します。 実装はまだ作成していません。 最も単純な動作のコードを `PrimeService` クラスに記述して、このテストを作成します。 既存の `IsPrime` メソッド実装を次のコードに置き換えます。
 
 ```csharp
 public bool IsPrime(int candidate)
@@ -138,17 +148,21 @@ public bool IsPrime(int candidate)
 }
 ```
 
-*unit-testing-using-dotnet-test* ディレクトリで、もう一度 `dotnet test` を実行します。 `dotnet test` コマンドは `PrimeService` プロジェクトのビルドを実行してから、`PrimeService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
+*PrimeService.Tests* ディレクトリで、`dotnet test` をもう一度実行します。 `dotnet test` コマンドは `PrimeService` プロジェクトのビルドを実行してから、`PrimeService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
 
 ## <a name="adding-more-features"></a>他の機能の追加
 
-テストが成功したので、他のテストも記述してみましょう。 素数に関する、いくつかの単純なケースが他にもあります (0、-1)。 `[Fact]` 属性を使用すると、これらの例を新しいテストとして追加できますが、すぐに煩雑になります。 一連の類似のテストを記述できるようになる、他の xUnit 属性があります。  `[Theory]` 属性は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。 `[InlineData]` 属性を使用して、そのような入力の値を指定することができます。
+テストが成功したので、他のテストも記述してみましょう。 素数に関する、いくつかの単純なケースが他にもあります (0、-1)。 `[Fact]` 属性を使用すると、これらの例を新しいテストとして追加できますが、すぐに煩雑になります。 一連の類似のテストを記述できるようになる、他の xUnit 属性があります。
 
-新しいテストを作成するのではなく、この 2 つの属性を適用することで 1 つの理論を作成できます。 その理論とは、複数の 2 未満の値を調べて、もっとも小さい素数を特定するという手法です。
+- `[Theory]` は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。
+
+- `[InlineData]` 属性は、これらの入力の値を指定します。
+
+新しいテストを作成するのではなく、この 2 つの属性、`[Theory]` と `[InlineData]` を適用することで *PrimeService_IsPrimeShould.cs* ファイルに 1 つの理論を作成できます。 その理論とは、複数の 2 未満の値を調べて、もっとも小さい素数を特定するという手法です。
 
 [!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
-`dotnet test` を実行して、これらの 2 つのテストが失敗したとします。 すべてのテストを成功させるために、メソッドの先頭にある `if` 句を変更します。
+`dotnet test` をもう一度実行します。これらのテストのうち、2 つが失敗するはずです。 すべてのテストを成功させるために、*PrimeService.cs* ファイルで `IsPrime` メソッドの先頭にある `if` 句を変更します。
 
 ```csharp
 if (candidate < 2)
@@ -158,4 +172,4 @@ if (candidate < 2)
 
 ### <a name="additional-resources"></a>その他の技術情報
 
-[ASP.NET Core でのテスト コント ローラー ロジック](https://docs.microsoft.com/aspnet/core/mvc/controllers/testing)
+[ASP.NET Core のコントローラー ロジックをテストする](/aspnet/core/mvc/controllers/testing)
