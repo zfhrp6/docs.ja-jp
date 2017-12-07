@@ -14,7 +14,7 @@ ms.author: erikre
 manager: erikre
 ms.openlocfilehash: cdf64dd7aca82fb0d0b3111832aca863a327270b
 ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
@@ -35,9 +35,9 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="to-create-a-custom-activity-designer-with-a-drop-zone-using-workflowitempresenter"></a>WorkflowItemPresenter を使用してドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成するには  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。  
+1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)]を起動します。  
   
-2.  **ファイル**] メニューのをポイント**新規**、し、[**プロジェクト.**.  
+2.  **ファイル**] メニューのをポイント**新規**、し、[**プロジェクト...**.  
   
      **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
@@ -357,4 +357,4 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Activities.Presentation.WorkflowItemsPresenter>  
  <xref:System.Activities.Presentation.WorkflowViewElement>  
  <xref:System.Activities.Presentation.Model.ModelItem>  
- [ワークフロー デザイン操作のカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)
+ [ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)

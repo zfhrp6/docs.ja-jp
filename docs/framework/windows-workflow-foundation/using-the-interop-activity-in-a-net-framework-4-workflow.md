@@ -14,7 +14,7 @@ ms.author: erikre
 manager: erikre
 ms.openlocfilehash: c485a1c2c69169812e69c3bc1ea9969d12467d53
 ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
@@ -84,7 +84,7 @@ ms.lasthandoff: 10/18/2017
     > [!TIP]
     >  場合、**プロパティ**ウィンドウが表示されていない、選択**プロパティ ウィンドウ**から、**ビュー**メニュー。  
   
-3.  選択**新規 をクリックしています.**.  
+3.  選択**新規 をクリックしています...**.  
   
 4.  をクリックして**規則の追加**です。  
   
@@ -161,7 +161,7 @@ Rule3: IF this.DiscountPercent > 0
   
 #### <a name="to-create-the-host-application"></a>ホスト アプリケーションを作成するには  
   
-1.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**、し**新しいプロジェクト.**.  
+1.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**、し**新しいプロジェクト...**.  
   
 2.  いることを確認**.NET Framework 4.5** .NET Framework のバージョンのドロップダウン リストで選択され、選択**ワークフロー コンソール アプリケーション**から、 **Visual c# アイテム** ボックスの一覧です。  
   
@@ -171,11 +171,11 @@ Rule3: IF this.DiscountPercent > 0
   
 5.  **ターゲット フレームワーク**ドロップダウン ボックスの一覧で選択を変更するから**.NET Framework 4 Client Profile**に**.NET Framework 4.5**です。 をクリックして**はい**ことを確認します。  
   
-6.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加.**.  
+6.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加...**.  
   
 7.  選択**PolicyActivityLibrary**から、**プロジェクト** タブでをクリックし、 **OK**です。  
   
-8.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加.**.  
+8.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加...**.  
   
 9. 選択**System.Workflow.Activities**、 **System.Workflow.ComponentModel**、し**System.Workflow.Runtime**から、 **.NET** タブでをクリックし、 **OK**です。  
   
@@ -274,7 +274,7 @@ Rule3: IF this.DiscountPercent > 0
   
 1.  右クリック**Workflow1.xaml**で**ソリューション エクスプ ローラー**選択**削除**です。 **[OK]** をクリックして確定します。  
   
-2.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加.**.  
+2.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加...**.  
   
 3.  展開して、 **Visual c# アイテム**ノード**ワークフロー**です。 選択**アクティビティ**から、 **Visual c# アイテム** ボックスの一覧です。  
   
@@ -375,4 +375,4 @@ Rule3: IF this.DiscountPercent > 0
 |ルール内コレクションの処理|[ルール内コレクションの処理](http://go.microsoft.com/fwlink/?LinkId=178520)|  
 |PolicyActivity の使用|[PolicyActivity アクティビティの使用](http://go.microsoft.com/fwlink/?LinkId=178521)と<xref:System.Workflow.Activities.PolicyActivity>|  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] で作成したワークフローでは、たとえば宣言的アクティビティ条件や条件付きアクティビティ ([!INCLUDE[wf1](../../../includes/wf1-md.md)]、<xref:System.Workflow.Activities.ConditionedActivityGroup> など) など、<xref:System.Workflow.Activities.ReplicatorActivity> に用意されているルール機能のすべてを使用するわけではありません。 必要に応じて、この機能は [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] および [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したワークフローに使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] で作成したワークフローでは、たとえば宣言的アクティビティ条件や条件付きアクティビティ ([!INCLUDE[wf1](../../../includes/wf1-md.md)]、<xref:System.Workflow.Activities.ConditionedActivityGroup> など) など、<xref:System.Workflow.Activities.ReplicatorActivity> に用意されているルール機能のすべてを使用するわけではありません。 必要に応じて、この機能は [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] および [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したワークフローに使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。
