@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b311dc5b328a09bd301cc1d012ca4d13cfb70f9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: 932db4ef12666d20ba497cc8f6d78b43c7670373
+ms.sourcegitcommit: 5126483ef09c487296801bbac368dd8a55a6b709
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF と ASP.NET Web API
 WCF は、サービス指向のアプリケーションを構築するための Microsoft の統一プログラミング モデルです。 これを使用して開発者は、プラットフォーム間を統合し、既存のコンポーネントと相互運用する、セキュリティで保護された信頼性の高いトランザクション型のソリューションを構築できます。 [ASP.NET Web API](http://www.asp.net/web-api)フレームワーク クライアント、ブラウザーやモバイル デバイスなどの広範な範囲に到達する HTTP サービスを構築するが容易です。 ASP.NET Web API は、.NET Framework に基づいて RESTful アプリケーションを構築するのに最適なプラットフォームです。 このトピックでは、ニーズに最適なテクノロジを決定するのに役立つガイドラインを示します。  
@@ -29,7 +29,7 @@ WCF は、サービス指向のアプリケーションを構築するための 
 |---------|---------------------|  
 |複数のトランスポート プロトコル (HTTP、TCP、UDP、およびカスタム トランスポート) をサポートするサービスを構築し、構築したサービスを切り替えることができます。|HTTP のみ。 HTTP のファースト クラスのプログラミング モデル。 さまざまなブラウザーでは、ワイド到達などを有効にするモバイル デバイスからのアクセスに適しています。|  
 |メッセージの種類が同じ複数のエンコーディング (テキスト、MTOM、およびバイナリ) をサポートするサービスを構築し、構築したサービスを切り替えることができます。|XML や JSON などのさまざまなメディアの種類をサポートする Web API を構築できます。|  
-|Reliable Messaging、Transactions、Message Security などの WS-* 標準を使用してサービスを構築できます。|HTTP、WebSocket、SSL、JQuery、JSON、XML など、基本的なプロトコルと形式を使用します。 Reliable Messaging や Transactions などの高レベルのプロトコルはサポートされません。|  
+|Reliable Messaging、Transactions、Message Security などの WS-* 標準を使用してサービスを構築できます。|基本的なプロトコルを使用して、HTTP、Websocket、SSL、JSON、XML など形式します。 Reliable Messaging や Transactions などの高レベルのプロトコルはサポートされません。|  
 |要求/応答、一方向、および双方向の各メッセージ交換パターンをサポートしています。|HTTP 要求/応答は、追加のパターンをサポートできる[SignalR](https://github.com/SignalR/SignalR)と Websocket 統合します。|  
 |WCF SOAP サービスは WSDL で記述でき、スキーマが複雑なサービスの場合でも自動化ツールを使用してクライアント プロキシを生成できます。|スニペットを記述する自動生成された HTML ヘルプ ページから OData で統合された API 用に構造化されたメタデータまで、Web API を記述するためのさまざまな方法があります。|  
 |.NET Framework に付属しています。|.NET Framework に付属していますが、オープン ソースであるため、個別のダウンロードとして帯域外でも使用できます。|  
