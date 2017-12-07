@@ -1,18 +1,19 @@
 ---
 layout: HubPage
-hide_bc: true
+hide_bc: True
 title: ".NET ドキュメント"
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 9e0f22f00ea2ef0e3919768a36410a5025300f6d
-ms.lasthandoff: 04/08/2017
-
+description: ".NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。"
+ms.openlocfilehash: e2e5e0d63464cdfad3432daa2d99da08fefedb5f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 <div id="main" class="v2">
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="https://www.microsoft.com/net/tutorials/csharp/getting-started">
+                <a href="/dotnet/csharp/quick-starts">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -30,7 +31,7 @@ ms.lasthandoff: 04/08/2017
                 </a>
             </li>
             <li>
-                <a href="/dotnet/api/?view=netcore-1.1">
+                <a href="/dotnet/api/?view=netcore-2.0">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -86,8 +87,8 @@ ms.lasthandoff: 04/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3><a href="/dotnet/welcome">.NET とは</a></h3>
-                                                <p><a href="/dotnet/standard/getting-started">開始するには</a></p>
+                                                <h3><a href="/dotnet/standard/">.NET のガイド</a></h3>
+                                                <p><a href="/dotnet/standard/get-started">開始するには</a></p>
                                                 <p><a href="/dotnet/standard/tour">.NET のツアー</a></p>
                                                 <p><a href="/dotnet/standard/components">.NET アーキテクチャの概念</a></p>
                                             </div>
@@ -106,10 +107,11 @@ ms.lasthandoff: 04/08/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/core">.NET Core のガイド</a></h3>
-                                                <p><a href="/dotnet/core/getting-started">開始するには</a></p>
+                                                <p><a href="/dotnet/core/get-started">開始するには</a></p>
                                                 <p><a href="/dotnet/core/tutorials">チュートリアル</a></p>
                                                 <p><a href="/dotnet/core/porting">.NET Framework からの移植</a></p>
                                                 <p><a href="/aspnet/core/getting-started">ASP.NET Core</a></p>
+                                                <p><a href="/ef/core/index">EF Core</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -127,7 +129,7 @@ ms.lasthandoff: 04/08/2017
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/framework/">.NET Framework ガイド</a></h3>
                                                 <p><a href="/dotnet/framework/get-started/">開始するには</a></p>
-                                                <p><a href="/dotnet/framework/development-guide">チュートリアル</a></p>
+                                                <p><a href="/dotnet/framework/development-guide">開発ガイド</a></p>
                                                 <p><a href="/dotnet/framework/develop-client-apps">クライアント開発</a></p>
                                                 <p><a href="/aspnet/#pivot=aspnet">ASP.NET</a></p>
                                             </div>
@@ -166,6 +168,7 @@ ms.lasthandoff: 04/08/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/csharp">C# のガイド</a></h3>
+                                                <p><a href="/dotnet/csharp/quick-starts">クイック スタート</a></p>
                                                 <p><a href="/dotnet/csharp/getting-started">開始するには</a></p>
                                                 <p><a href="/dotnet/csharp/tour-of-csharp">C# のツアー</a></p>
                                                 <p><a href="/dotnet/csharp/language-reference">C# 言語リファレンス</a></p>
@@ -215,7 +218,7 @@ ms.lasthandoff: 04/08/2017
                             <li class="fullSpan">
                                 <div class="container footer">
                                     <p><a href="https://github.com/dotnet/Docs/blob/master/CONTRIBUTING.md">.NET ドキュメントやサンプルへの投稿</a></p>
-                                    <p><a href="https://docs.microsoft.com/en-us/dotnet/project-json">Visual Studio 2015/project.json バージョンのドキュメントの検索</a></p>
+                                    <p><a href="/dotnet/project-json">Visual Studio 2015/project.json バージョンのドキュメントの検索</a></p>
                                 </div>
                             </li>
                         </ul>
@@ -273,7 +276,7 @@ ms.lasthandoff: 04/08/2017
                                             <div class="cardText">
                                                 <a href="https://www.asp.net/learn">
                                                     <h3>ASP.NET とは何ですか?</h3>
-                                                    <p>ASP.NET Web プラットフォームについて説明します。</p>
+                                                    <p>ASP.NET Web アプリケーションを構築する方法を説明します。</p>
                                                 </a>
                                             </div>
                                         </div>
@@ -329,7 +332,7 @@ ms.lasthandoff: 04/08/2017
                                             </div>
                                             <div class="cardText">
                                                 <a href="/aspnet/core/tutorials/your-first-mac-aspnet">
-                                                    <h3>macOS と VS Code での ASP.NET</h3>
+                                                    <h3>macOS 上の ASP.NET と Visual Studio Code</h3>
                                                     <p>Visual Studio Code を使用して、macOS 上で ASP.NET Core アプリをセットアップ、ビルド、デプロイする方法を説明します。</p>
                                                 </a>
                                             </div>
@@ -371,7 +374,7 @@ ms.lasthandoff: 04/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started">
+                                                <a href="/azure/cloud-services/cloud-services-dotnet-get-started">
                                                     <h3>Azure Cloud Services と ASP.NET</h3>
                                                     <p>Azure でのクラウド サービスの構成、監視、およびスケールについて説明します。</p>
                                                 </a>
@@ -409,7 +412,7 @@ ms.lasthandoff: 04/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://azure.microsoft.com/documentation/services/storage/">
+                                                <a href="https://docs.microsoft.com/azure/storage/">
                                                     <h3>Azure Storage</h3>
                                                     <p>Azure Storage と、Azure BLOB、テーブル、キュー、ファイルを使用したアプリケーションの作成方法を説明します。</p>
                                                 </a>
@@ -652,4 +655,3 @@ ms.lasthandoff: 04/08/2017
         </ul>
     </div>
 </div>
-
