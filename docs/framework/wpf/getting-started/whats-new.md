@@ -23,7 +23,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/11/2017
 ---
 # <a name="what39s-new-in-wpf-version-45"></a><span data-ttu-id="4cf85-102">WPF Version 4.5 の新機能</span><span class="sxs-lookup"><span data-stu-id="4cf85-102">What&#39;s New in WPF Version 4.5</span></span>
-<span data-ttu-id="4cf85-103"><a name="introduction"></a>このトピックには、新機能および強化機能に関する情報が含まれています。[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]バージョン 4.5。</span><span class="sxs-lookup"><span data-stu-id="4cf85-103"><a name="introduction"></a> This topic contains information about new and enhanced features in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] version 4.5.</span></span>  
+<a name="introduction"></a><span data-ttu-id="4cf85-103">このトピックには、新機能および強化機能に関する情報が含まれています。[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]バージョン 4.5。</span><span class="sxs-lookup"><span data-stu-id="4cf85-103">This topic contains information about new and enhanced features in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] version 4.5.</span></span>  
   
  <span data-ttu-id="4cf85-104">このトピックは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="4cf85-104">This topic contains the following sections:</span></span>  
   

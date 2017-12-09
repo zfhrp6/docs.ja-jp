@@ -37,7 +37,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [<span data-ttu-id="952b0-116">ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="952b0-116">To build and run the application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_BuildAndRun)  
   
-###  <span data-ttu-id="952b0-117"><a name="BKMK_CustomTrackingParticipant"></a>カスタム追跡参加要素を作成するには</span><span class="sxs-lookup"><span data-stu-id="952b0-117"><a name="BKMK_CustomTrackingParticipant"></a> To create the custom tracking participant</span></span>  
+###  <a name="BKMK_CustomTrackingParticipant"></a><span data-ttu-id="952b0-117">カスタム追跡参加要素を作成するには</span><span class="sxs-lookup"><span data-stu-id="952b0-117">To create the custom tracking participant</span></span>  
   
 1.  <span data-ttu-id="952b0-118">右クリック**NumberGuessWorkflowHost**で**ソリューション エクスプ ローラー**選択**追加**、**クラス**です。</span><span class="sxs-lookup"><span data-stu-id="952b0-118">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Class**.</span></span> <span data-ttu-id="952b0-119">型`StatusTrackingParticipant`に、**名前**ボックスし、をクリックして**追加**です。</span><span class="sxs-lookup"><span data-stu-id="952b0-119">Type `StatusTrackingParticipant` into the **Name** box, and click **Add**.</span></span>  
   
@@ -113,7 +113,7 @@ ms.lasthandoff: 12/02/2017
   
      <span data-ttu-id="952b0-127">追跡プロファイルを指定しない場合は、既定の追跡プロファイルが使用されます。</span><span class="sxs-lookup"><span data-stu-id="952b0-127">When no tracking profile is specified, the default tracking profile is used.</span></span> <span data-ttu-id="952b0-128">既定の追跡プロファイルを使用する場合は、すべての `ActivityStates` に関する追跡レコードが出力されます。</span><span class="sxs-lookup"><span data-stu-id="952b0-128">When the default tracking profile is used, tracking records are emitted for all `ActivityStates`.</span></span> <span data-ttu-id="952b0-129">ここでは、`WriteLine` アクティビティのライフサイクル中に 1 回だけテキストをキャプチャする必要があるため、`ActivityStates.Executing` 状態からテキストを抽出するだけです。</span><span class="sxs-lookup"><span data-stu-id="952b0-129">Because we only need to capture the text one time during the lifecycle of the `WriteLine` activity, we only extract the text from the `ActivityStates.Executing` state.</span></span> <span data-ttu-id="952b0-130">[追跡プロファイルを作成して、追跡参加要素を登録する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile)、だけを指定する追跡プロファイルが作成された`WriteLine``ActivityStates.Executing`追跡レコードが生成されます。</span><span class="sxs-lookup"><span data-stu-id="952b0-130">In [To create the tracking profile and register the tracking participant](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), a tracking profile is created that specifies that only `WriteLine` `ActivityStates.Executing` tracking records are emitted.</span></span>  
   
-###  <span data-ttu-id="952b0-131"><a name="BKMK_TrackingProfile"></a>追跡プロファイルを作成して、追跡参加要素を登録するには</span><span class="sxs-lookup"><span data-stu-id="952b0-131"><a name="BKMK_TrackingProfile"></a> To create the tracking profile and register the tracking participant</span></span>  
+###  <a name="BKMK_TrackingProfile"></a><span data-ttu-id="952b0-131">追跡プロファイルを作成して、追跡参加要素を登録するには</span><span class="sxs-lookup"><span data-stu-id="952b0-131">To create the tracking profile and register the tracking participant</span></span>  
   
 1.  <span data-ttu-id="952b0-132">右クリック**WorkflowHostForm**で**ソリューション エクスプ ローラー**選択**コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="952b0-132">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
@@ -234,7 +234,7 @@ ms.lasthandoff: 12/02/2017
         // Workflow lifecycle handlers...  
     ```  
   
-###  <span data-ttu-id="952b0-137"><a name="BKMK_DisplayTracking"></a>追跡情報を表示するには</span><span class="sxs-lookup"><span data-stu-id="952b0-137"><a name="BKMK_DisplayTracking"></a> To display the tracking information</span></span>  
+###  <a name="BKMK_DisplayTracking"></a><span data-ttu-id="952b0-137">追跡情報を表示するには</span><span class="sxs-lookup"><span data-stu-id="952b0-137">To display the tracking information</span></span>  
   
 1.  <span data-ttu-id="952b0-138">右クリック**WorkflowHostForm**で**ソリューション エクスプ ローラー**選択**コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="952b0-138">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
@@ -329,7 +329,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="952b0-142"><a name="BKMK_BuildAndRun"></a>ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="952b0-142"><a name="BKMK_BuildAndRun"></a> To build and run the application</span></span>  
+###  <a name="BKMK_BuildAndRun"></a><span data-ttu-id="952b0-142">ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="952b0-142">To build and run the application</span></span>  
   
 1.  <span data-ttu-id="952b0-143">Ctrl キーと Shift キーを押しながら B キーを押してアプリケーションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="952b0-143">Press Ctrl+Shift+B to build the application.</span></span>  
   

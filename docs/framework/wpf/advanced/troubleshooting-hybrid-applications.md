@@ -27,7 +27,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="troubleshooting-hybrid-applications"></a><span data-ttu-id="ec751-102">ハイブリッド アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="ec751-102">Troubleshooting Hybrid Applications</span></span>
-<span data-ttu-id="ec751-103"><a name="introduction"></a>このトピックは、両方を使用するハイブリッド アプリケーションを作成するときに発生する可能性がある一般的な問題を一覧表示[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]テクノロジです。</span><span class="sxs-lookup"><span data-stu-id="ec751-103"><a name="introduction"></a> This topic lists some common problems that can occur when authoring hybrid applications, which use both [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] and [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologies.</span></span>  
+<a name="introduction"></a><span data-ttu-id="ec751-103">このトピックは、両方を使用するハイブリッド アプリケーションを作成するときに発生する可能性がある一般的な問題を一覧表示[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]テクノロジです。</span><span class="sxs-lookup"><span data-stu-id="ec751-103">This topic lists some common problems that can occur when authoring hybrid applications, which use both [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] and [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologies.</span></span>  
   
 
   

@@ -117,7 +117,7 @@ ms.lasthandoff: 12/02/2017
     go  
     ```  
   
-##  <span data-ttu-id="32172-119"><a name="InstancePromotedProperties"></a>[System.Activities.DurableInstancing.InstancePromotedProperties] ビュー</span><span class="sxs-lookup"><span data-stu-id="32172-119"><a name="InstancePromotedProperties"></a> [System.Activities.DurableInstancing.InstancePromotedProperties] view</span></span>  
+##  <a name="InstancePromotedProperties"></a><span data-ttu-id="32172-119">[System.Activities.DurableInstancing.InstancePromotedProperties] ビュー</span><span class="sxs-lookup"><span data-stu-id="32172-119">[System.Activities.DurableInstancing.InstancePromotedProperties] view</span></span>  
   
 |<span data-ttu-id="32172-120">列名</span><span class="sxs-lookup"><span data-stu-id="32172-120">Column Name</span></span>|<span data-ttu-id="32172-121">列の型</span><span class="sxs-lookup"><span data-stu-id="32172-121">Column Type</span></span>|<span data-ttu-id="32172-122">説明</span><span class="sxs-lookup"><span data-stu-id="32172-122">Description</span></span>|  
 |-----------------|-----------------|-----------------|  

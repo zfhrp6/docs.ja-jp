@@ -50,7 +50,7 @@ ms.lasthandoff: 12/02/2017
 > [!NOTE]
 >  <span data-ttu-id="45bfe-119">チュートリアル入門の各手順は、その前の手順に応じて異なります。</span><span class="sxs-lookup"><span data-stu-id="45bfe-119">Each step in the Getting Started tutorial depends on the previous steps.</span></span> <span data-ttu-id="45bfe-120">」からチュートリアルの完成版をダウンロードすることができます、前の手順を完了しなかった場合[Windows Workflow Foundation (WF45) - チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)です。</span><span class="sxs-lookup"><span data-stu-id="45bfe-120">If you did not complete the previous steps you can download a completed version of the tutorial from [Windows Workflow Foundation (WF45) - Getting Started Tutorial](http://go.microsoft.com/fwlink/?LinkID=248976).</span></span>  
   
-###  <span data-ttu-id="45bfe-121"><a name="BKMK_BackupCopy"></a>NumberGuessWorkflowActivities プロジェクトのコピーを作成するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-121"><a name="BKMK_BackupCopy"></a> To make a copy of the NumberGuessWorkflowActivities project</span></span>  
+###  <a name="BKMK_BackupCopy"></a><span data-ttu-id="45bfe-121">NumberGuessWorkflowActivities プロジェクトのコピーを作成するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-121">To make a copy of the NumberGuessWorkflowActivities project</span></span>  
   
 1.  <span data-ttu-id="45bfe-122">開く、 **WF45GettingStartedTutorial**でソリューション[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]が開いていない場合。</span><span class="sxs-lookup"><span data-stu-id="45bfe-122">Open the **WF45GettingStartedTutorial** solution in [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] if it is not open.</span></span>  
   
@@ -73,10 +73,10 @@ ms.lasthandoff: 12/02/2017
   
 9. <span data-ttu-id="45bfe-135">開き直す、 **WF45GettingStartedTutorial**でソリューション[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="45bfe-135">Re-open the **WF45GettingStartedTutorial** solution in [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span></span>  
   
-###  <span data-ttu-id="45bfe-136"><a name="BKMK_UpdateWorkflows"></a>ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-136"><a name="BKMK_UpdateWorkflows"></a> To update the workflows</span></span>  
+###  <a name="BKMK_UpdateWorkflows"></a><span data-ttu-id="45bfe-136">ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-136">To update the workflows</span></span>  
  <span data-ttu-id="45bfe-137">ここでは、ワークフロー定義が更新されます。</span><span class="sxs-lookup"><span data-stu-id="45bfe-137">In this section, the workflow definitions are updated.</span></span> <span data-ttu-id="45bfe-138">ユーザーの推定値についてフィードバックを返す 2 つの `WriteLine` アクティビティが更新され、新しい `WriteLine` アクティビティが追加されます。新しいアクティビティは、数値が推定されるとゲームに関する追加情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="45bfe-138">The two `WriteLine` activities that give feedback on the user's guess are updated, and a new `WriteLine` activity is added that provides additional information about the game once the number is guessed.</span></span>  
   
-####  <span data-ttu-id="45bfe-139"><a name="BKMK_UpdateStateMachine"></a>StateMachine ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-139"><a name="BKMK_UpdateStateMachine"></a> To update the StateMachine workflow</span></span>  
+####  <a name="BKMK_UpdateStateMachine"></a><span data-ttu-id="45bfe-139">StateMachine ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-139">To update the StateMachine workflow</span></span>  
   
 1.  <span data-ttu-id="45bfe-140">**ソリューション エクスプ ローラー**下で、 **NumberGuessWorkflowActivities**プロジェクトをダブルクリックして**StateMachineNumberGuessWorkflow.xaml**です。</span><span class="sxs-lookup"><span data-stu-id="45bfe-140">In **Solution Explorer**, under the **NumberGuessWorkflowActivities** project, double-click **StateMachineNumberGuessWorkflow.xaml**.</span></span>  
   
@@ -118,7 +118,7 @@ ms.lasthandoff: 12/02/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-####  <span data-ttu-id="45bfe-148"><a name="BKMK_UpdateFlowchart"></a>フローチャート ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-148"><a name="BKMK_UpdateFlowchart"></a> To update the Flowchart workflow</span></span>  
+####  <a name="BKMK_UpdateFlowchart"></a><span data-ttu-id="45bfe-148">フローチャート ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-148">To update the Flowchart workflow</span></span>  
   
 1.  <span data-ttu-id="45bfe-149">**ソリューション エクスプ ローラー**下で、 **NumberGuessWorkflowActivities**プロジェクトをダブルクリックして**FlowchartNumberGuessWorkflow.xaml**です。</span><span class="sxs-lookup"><span data-stu-id="45bfe-149">In **Solution Explorer**, under the **NumberGuessWorkflowActivities** project, double-click **FlowchartNumberGuessWorkflow.xaml**.</span></span>  
   
@@ -154,7 +154,7 @@ ms.lasthandoff: 12/02/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-####  <span data-ttu-id="45bfe-155"><a name="BKMK_UpdateSequential"></a>シーケンシャル ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-155"><a name="BKMK_UpdateSequential"></a> To update the Sequential workflow</span></span>  
+####  <a name="BKMK_UpdateSequential"></a><span data-ttu-id="45bfe-155">シーケンシャル ワークフローを更新するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-155">To update the Sequential workflow</span></span>  
   
 1.  <span data-ttu-id="45bfe-156">**ソリューション エクスプ ローラー**下で、 **NumberGuessWorkflowActivities**プロジェクトをダブルクリックして**SequentialNumberGuessWorkflow.xaml**です。</span><span class="sxs-lookup"><span data-stu-id="45bfe-156">In **Solution Explorer**, under the **NumberGuessWorkflowActivities** project, double-click **SequentialNumberGuessWorkflow.xaml**.</span></span>  
   
@@ -190,7 +190,7 @@ ms.lasthandoff: 12/02/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-###  <span data-ttu-id="45bfe-161"><a name="BKMK_UpdateWorkflowVersionMap"></a>ワークフローの以前のバージョンを含める WorkflowVersionMap を更新します。</span><span class="sxs-lookup"><span data-stu-id="45bfe-161"><a name="BKMK_UpdateWorkflowVersionMap"></a> To update WorkflowVersionMap to include the previous workflow versions</span></span>  
+###  <a name="BKMK_UpdateWorkflowVersionMap"></a><span data-ttu-id="45bfe-161">ワークフローの以前のバージョンを含める WorkflowVersionMap を更新します。</span><span class="sxs-lookup"><span data-stu-id="45bfe-161">To update WorkflowVersionMap to include the previous workflow versions</span></span>  
   
 1.  <span data-ttu-id="45bfe-162">ダブルクリックして**WorkflowVersionMap.cs** (または**WorkflowVersionMap.vb**) 下にある、 **NumberGuessWorkflowHost**プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="45bfe-162">Double-click **WorkflowVersionMap.cs** (or **WorkflowVersionMap.vb**) under the **NumberGuessWorkflowHost** project to open it.</span></span>  
   
@@ -558,7 +558,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="45bfe-172"><a name="BKMK_BuildAndRun"></a>ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-172"><a name="BKMK_BuildAndRun"></a> To build and run the application</span></span>  
+###  <a name="BKMK_BuildAndRun"></a><span data-ttu-id="45bfe-172">ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="45bfe-172">To build and run the application</span></span>  
   
 1.  <span data-ttu-id="45bfe-173">Ctrl キーと Shift キーを押しながら B キーを押してアプリケーションをビルドし、Ctrl キーを押しながら F5 キーを押して起動します。</span><span class="sxs-lookup"><span data-stu-id="45bfe-173">Press CTRL+SHIFT+B to build the application, and then CTRL+F5 to start.</span></span>  
   

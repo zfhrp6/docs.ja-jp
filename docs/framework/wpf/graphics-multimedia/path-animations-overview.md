@@ -26,7 +26,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="path-animations-overview"></a><span data-ttu-id="075f4-102">パス アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="075f4-102">Path Animations Overview</span></span>
-<span data-ttu-id="075f4-103"><a name="introduction"></a>このトピックでは、ジオメトリック パスを使用して出力値を生成できるパス アニメーションの概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="075f4-103"><a name="introduction"></a> This topic introduces path animations, which enable you to use a geometric path to generate output values.</span></span> <span data-ttu-id="075f4-104">パス アニメーションは、複雑なパスに沿ってオブジェクトを移動および回転させるときに便利です。</span><span class="sxs-lookup"><span data-stu-id="075f4-104">Path animations are useful for moving and rotating objects along complex paths.</span></span>  
+<a name="introduction"></a><span data-ttu-id="075f4-103">このトピックでは、ジオメトリック パスを使用して出力値を生成できるパス アニメーションの概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="075f4-103">This topic introduces path animations, which enable you to use a geometric path to generate output values.</span></span> <span data-ttu-id="075f4-104">パス アニメーションは、複雑なパスに沿ってオブジェクトを移動および回転させるときに便利です。</span><span class="sxs-lookup"><span data-stu-id="075f4-104">Path animations are useful for moving and rotating objects along complex paths.</span></span>  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a><span data-ttu-id="075f4-105">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="075f4-105">Prerequisites</span></span>  

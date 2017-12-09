@@ -29,7 +29,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="optimizing-performance-other-recommendations"></a><span data-ttu-id="0e223-102">パフォーマンスの最適化 : その他の推奨事項</span><span class="sxs-lookup"><span data-stu-id="0e223-102">Optimizing Performance: Other Recommendations</span></span>
-<span data-ttu-id="0e223-103"><a name="introduction"></a> このトピックでは、「[WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)」セクションのトピックで説明されている推奨事項を補足するパフォーマンスに関する推奨事項について取り上げます。</span><span class="sxs-lookup"><span data-stu-id="0e223-103"><a name="introduction"></a> This topic provides performance recommendations in addition to the ones covered by the topics in the [Optimizing WPF Application Performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) section.</span></span>  
+<a name="introduction"></a> <span data-ttu-id="0e223-103">このトピックでは、「[WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)」セクションのトピックで説明されている推奨事項を補足するパフォーマンスに関する推奨事項について取り上げます。</span><span class="sxs-lookup"><span data-stu-id="0e223-103">This topic provides performance recommendations in addition to the ones covered by the topics in the [Optimizing WPF Application Performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) section.</span></span>  
   
  <span data-ttu-id="0e223-104">このトピックは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="0e223-104">This topic contains the following sections:</span></span>  
   

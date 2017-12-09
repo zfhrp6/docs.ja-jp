@@ -52,7 +52,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [<span data-ttu-id="8a5f5-121">ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-121">To build and run the application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_BuildAndRun)  
   
-###  <span data-ttu-id="8a5f5-122"><a name="BKMK_CreatePersistenceDatabase"></a>永続性データベースを作成するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-122"><a name="BKMK_CreatePersistenceDatabase"></a> To create the persistence database</span></span>  
+###  <a name="BKMK_CreatePersistenceDatabase"></a><span data-ttu-id="8a5f5-122">永続性データベースを作成するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-122">To create the persistence database</span></span>  
   
 1.  <span data-ttu-id="8a5f5-123">SQL Server Management Studio を開き、たとえば、ローカル サーバーに接続**. \SQLEXPRESS**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-123">Open SQL Server Management Studio and connect to the local server, for example **.\SQLEXPRESS**.</span></span> <span data-ttu-id="8a5f5-124">右クリックし、**データベース**ノードをクリックし、ローカル サーバーは、**新しいデータベース**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-124">Right-click the **Databases** node on the local server, and select **New Database**.</span></span> <span data-ttu-id="8a5f5-125">新しいデータベースの名前を付けます**WF45GettingStartedTutorial**は、その他のすべての値を使用し、選択**OK**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-125">Name the new database **WF45GettingStartedTutorial**, accept all other values, and select **OK**.</span></span>  
   
@@ -74,7 +74,7 @@ ms.lasthandoff: 12/02/2017
     > [!WARNING]
     >  <span data-ttu-id="8a5f5-136">前の 2 つの手順を正しい順序で実行することが重要です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-136">It is important to perform the previous two steps in the correct order.</span></span> <span data-ttu-id="8a5f5-137">クエリが正しい順序で実行されないと、エラーが発生し、永続性データベースは正しく構成されません。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-137">If the queries are executed out of order, errors occur and the persistence database is not configured correctly.</span></span>  
   
-###  <span data-ttu-id="8a5f5-138"><a name="BKMK_AddReference"></a>DurableInstancing アセンブリへの参照を追加するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-138"><a name="BKMK_AddReference"></a> To add the reference to the DurableInstancing assemblies</span></span>  
+###  <a name="BKMK_AddReference"></a><span data-ttu-id="8a5f5-138">DurableInstancing アセンブリへの参照を追加するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-138">To add the reference to the DurableInstancing assemblies</span></span>  
   
 1.  <span data-ttu-id="8a5f5-139">右クリック**NumberGuessWorkflowHost**で**ソリューション エクスプ ローラー**選択**参照の追加**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-139">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and select **Add Reference**.</span></span>  
   
@@ -82,7 +82,7 @@ ms.lasthandoff: 12/02/2017
   
 3.  <span data-ttu-id="8a5f5-142">横にあるチェック ボックスをオン**お**と**System.Runtime.DurableInstancing**から、**検索結果**一覧、およびをクリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-142">Check the checkbox beside **System.Activities.DurableInstancing** and **System.Runtime.DurableInstancing** from the **Search Results** list, and click **OK**.</span></span>  
   
-###  <span data-ttu-id="8a5f5-143"><a name="BKMK_CreateForm"></a>ワークフロー ホスト フォームを作成するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-143"><a name="BKMK_CreateForm"></a> To create the workflow host form</span></span>  
+###  <a name="BKMK_CreateForm"></a><span data-ttu-id="8a5f5-143">ワークフロー ホスト フォームを作成するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-143">To create the workflow host form</span></span>  
   
 > [!NOTE]
 >  <span data-ttu-id="8a5f5-144">この手順では、フォームを手動で追加して構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-144">The steps in this procedure describe how to add and configure the form manually.</span></span> <span data-ttu-id="8a5f5-145">必要に応じて、チュートリアルのソリューション ファイルをダウンロードし、完成したフォームをプロジェクトに追加できます。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-145">If desired, you can download the solution files for the tutorial and add the completed form to the project.</span></span> <span data-ttu-id="8a5f5-146">チュートリアル ファイルをダウンロードするを参照してください。 [Windows Workflow Foundation (WF45) - チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-146">To download the tutorial files, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](http://go.microsoft.com/fwlink/?LinkID=248976).</span></span> <span data-ttu-id="8a5f5-147">右クリックし、ファイルがダウンロードされると、 **NumberGuessWorkflowHost**選択**参照の追加**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-147">Once the files are downloaded, right-click **NumberGuessWorkflowHost** and choose **Add Reference**.</span></span> <span data-ttu-id="8a5f5-148">参照を追加**System.Windows.Forms**と**System.Drawing**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-148">Add a reference to **System.Windows.Forms** and **System.Drawing**.</span></span> <span data-ttu-id="8a5f5-149">新しいフォームを追加する場合、これらの参照が自動的に追加されます、**追加**、**新しい項目の** メニューがフォームをインポートするときに手動で追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-149">These references are added automatically if you add a new form from the **Add**, **New Item** menu, but must be added manually when importing a form.</span></span> <span data-ttu-id="8a5f5-150">参照が追加されるを右クリックし**NumberGuessWorkflowHost**で**ソリューション エクスプ ローラー**選択**追加**、**既存項目の**します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-150">Once the references are added, right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Existing Item**.</span></span> <span data-ttu-id="8a5f5-151">参照、 `Form` select、プロジェクト ファイル内のフォルダー **WorkflowHostForm.cs** (または**WorkflowHostForm.vb**)、をクリックして**追加**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-151">Browse to the `Form` folder in the project files, select **WorkflowHostForm.cs** (or **WorkflowHostForm.vb**), and click **Add**.</span></span> <span data-ttu-id="8a5f5-152">フォームをインポートするかどうかは、次のセクションでは、下を省略できます[プロパティと、フォームのヘルパー メソッドを追加する](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods)です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-152">If you choose to import the form, then you can skip down to the next section, [To add the properties and helper methods of the form](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods).</span></span>  
@@ -130,7 +130,7 @@ ms.lasthandoff: 12/02/2017
   
  <span data-ttu-id="8a5f5-235">![WF45 チュートリアル ワークフロー ホスト フォームを概要](../../../docs/framework/windows-workflow-foundation/media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")</span><span class="sxs-lookup"><span data-stu-id="8a5f5-235">![WF45 Getting Started Tutorial Workflow Host Form](../../../docs/framework/windows-workflow-foundation/media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")</span></span>  
   
-###  <span data-ttu-id="8a5f5-236"><a name="BKMK_AddHelperMethods"></a>プロパティと、フォームのヘルパー メソッドを追加するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-236"><a name="BKMK_AddHelperMethods"></a> To add the properties and helper methods of the form</span></span>  
+###  <a name="BKMK_AddHelperMethods"></a><span data-ttu-id="8a5f5-236">プロパティと、フォームのヘルパー メソッドを追加するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-236">To add the properties and helper methods of the form</span></span>  
  <span data-ttu-id="8a5f5-237">このセクションの手順では、フォーム クラスに、数値推測ワークフローの実行と再開をサポートするようフォームの UI を構成するプロパティとヘルパー メソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-237">The steps in this section add properties and helper methods to the form class that configure the UI of the form to support running and resuming number guess workflows.</span></span>  
   
 1.  <span data-ttu-id="8a5f5-238">右クリック**WorkflowHostForm**で**ソリューション エクスプ ローラー**選択**コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-238">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
@@ -431,7 +431,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="8a5f5-258"><a name="BKMK_ConfigureWorkflowApplication"></a>インスタンス ストア、ワークフロー ライフ サイクル ハンドラー、および拡張機能を構成するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-258"><a name="BKMK_ConfigureWorkflowApplication"></a> To configure the instance store, workflow lifecycle handlers, and extensions</span></span>  
+###  <a name="BKMK_ConfigureWorkflowApplication"></a><span data-ttu-id="8a5f5-258">インスタンス ストア、ワークフロー ライフ サイクル ハンドラー、および拡張機能を構成するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-258">To configure the instance store, workflow lifecycle handlers, and extensions</span></span>  
   
 1.  <span data-ttu-id="8a5f5-259">フォーム クラスに `ConfigureWorkflowApplication` メソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-259">Add a `ConfigureWorkflowApplication` method to the form class.</span></span>  
   
@@ -700,7 +700,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="8a5f5-277"><a name="BKMK_WorkflowVersionMap"></a>開始して、複数のワークフロー型の再開を有効にするには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-277"><a name="BKMK_WorkflowVersionMap"></a> To enable starting and resuming multiple workflow types</span></span>  
+###  <a name="BKMK_WorkflowVersionMap"></a><span data-ttu-id="8a5f5-277">開始して、複数のワークフロー型の再開を有効にするには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-277">To enable starting and resuming multiple workflow types</span></span>  
  <span data-ttu-id="8a5f5-278">ワークフロー インスタンスを再開するには、ホストはワークフロー定義を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-278">In order to resume a workflow instance, the host has to provide the workflow definition.</span></span> <span data-ttu-id="8a5f5-279">このチュートリアルには 3 種類のワークフローがあり、以降の手順では、これらの種類の複数のバージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-279">In this tutorial there are three workflow types, and subsequent tutorial steps introduce multiple versions of these types.</span></span> <span data-ttu-id="8a5f5-280">`WorkflowIdentity` を使用すると、ホスト アプリケーションは、識別情報を永続化されたワークフロー インスタンスに関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-280">`WorkflowIdentity` provides a way for a host application to associate identifying information with a persisted workflow instance.</span></span> <span data-ttu-id="8a5f5-281">このセクションの手順では、永続化されたワークフロー インスタンスから対応するワークフロー定義へのワークフロー ID のマッピングに役立つユーティリティ クラスの作成方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-281">The steps in this section demonstrate how to create a utility class to assist with mapping the workflow identity from a persisted workflow instance to the corresponding workflow definition.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="8a5f5-282">`WorkflowIdentity`とバージョン管理を参照してください[を使用して WorkflowIdentity と Versioning](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md)です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-282"> `WorkflowIdentity` and versioning, see [Using WorkflowIdentity and Versioning](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).</span></span>  
   
 1.  <span data-ttu-id="8a5f5-283">右クリック**NumberGuessWorkflowHost**で**ソリューション エクスプ ローラー**選択**追加**、**クラス**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-283">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Class**.</span></span> <span data-ttu-id="8a5f5-284">型`WorkflowVersionMap`に、**名前**ボックスし、をクリックして**追加**です。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-284">Type `WorkflowVersionMap` into the **Name** box and click **Add**.</span></span>  
@@ -817,7 +817,7 @@ ms.lasthandoff: 12/02/2017
   
      <span data-ttu-id="8a5f5-287">`WorkflowVersionMap` は、このチュートリアルの 3 つのワークフロー定義にマップされる 3 つのワークフロー ID を格納しており、以降のセクションでワークフローが開始および再開されるときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-287">`WorkflowVersionMap` contains three workflow identities that map to the three workflow definitions from this tutorial and is used in the following sections when workflows are started and resumed.</span></span>  
   
-###  <span data-ttu-id="8a5f5-288"><a name="BKMK_StartWorkflow"></a>新しいワークフローを開始するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-288"><a name="BKMK_StartWorkflow"></a> To start a new workflow</span></span>  
+###  <a name="BKMK_StartWorkflow"></a><span data-ttu-id="8a5f5-288">新しいワークフローを開始するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-288">To start a new workflow</span></span>  
   
 1.  <span data-ttu-id="8a5f5-289">`Click` の `NewGame` ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-289">Add a `Click` handler for `NewGame`.</span></span> <span data-ttu-id="8a5f5-290">切り替えて、ハンドラーを追加する**デザイン ビュー**をダブルクリックして、フォームの`NewGame`します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-290">To add the handler, switch to **Design View** for the form, and double-click `NewGame`.</span></span> <span data-ttu-id="8a5f5-291">`NewGame_Click` ハンドラーが追加され、ビューがフォームのコード ビューに切り替わります。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-291">A `NewGame_Click` handler is added and the view switches to code view for the form.</span></span> <span data-ttu-id="8a5f5-292">ユーザーがこのボタンをクリックするたびに、新しいワークフローが開始されます。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-292">Whenever the user clicks this button a new workflow is started.</span></span>  
   
@@ -1012,7 +1012,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="8a5f5-303"><a name="BKMK_ResumeWorkflow"></a>ワークフローを再開するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-303"><a name="BKMK_ResumeWorkflow"></a> To resume a workflow</span></span>  
+###  <a name="BKMK_ResumeWorkflow"></a><span data-ttu-id="8a5f5-303">ワークフローを再開するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-303">To resume a workflow</span></span>  
   
 1.  <span data-ttu-id="8a5f5-304">`Click` の `EnterGuess` ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-304">Add a `Click` handler for `EnterGuess`.</span></span> <span data-ttu-id="8a5f5-305">切り替えて、ハンドラーを追加する**デザイン ビュー**をダブルクリックして、フォームの`EnterGuess`します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-305">To add the handler, switch to **Design View** for the form, and double-click `EnterGuess`.</span></span> <span data-ttu-id="8a5f5-306">ユーザーがこのボタンをクリックするたびに、ワークフローが再開されます。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-306">Whenever the user clicks this button a workflow is resumed.</span></span>  
   
@@ -1228,7 +1228,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="8a5f5-318"><a name="BKMK_TerminateWorkflow"></a>ワークフローを中断する</span><span class="sxs-lookup"><span data-stu-id="8a5f5-318"><a name="BKMK_TerminateWorkflow"></a> To terminate a workflow</span></span>  
+###  <a name="BKMK_TerminateWorkflow"></a><span data-ttu-id="8a5f5-318">ワークフローを中断する</span><span class="sxs-lookup"><span data-stu-id="8a5f5-318">To terminate a workflow</span></span>  
   
 1.  <span data-ttu-id="8a5f5-319">`Click` の `QuitGame` ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-319">Add a `Click` handler for `QuitGame`.</span></span> <span data-ttu-id="8a5f5-320">切り替えて、ハンドラーを追加する**デザイン ビュー**をダブルクリックして、フォームの`QuitGame`します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-320">To add the handler, switch to **Design View** for the form, and double-click `QuitGame`.</span></span> <span data-ttu-id="8a5f5-321">ユーザーがこのボタンをクリックするたびに、現在選択されているワークフローが終了します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-321">Whenever the user clicks this button the currently selected workflow is terminated.</span></span>  
   
@@ -1302,7 +1302,7 @@ ms.lasthandoff: 12/02/2017
     wfApp.Terminate("User resigns.");  
     ```  
   
-###  <span data-ttu-id="8a5f5-327"><a name="BKMK_BuildAndRun"></a>ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-327"><a name="BKMK_BuildAndRun"></a> To build and run the application</span></span>  
+###  <a name="BKMK_BuildAndRun"></a><span data-ttu-id="8a5f5-327">ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="8a5f5-327">To build and run the application</span></span>  
   
 1.  <span data-ttu-id="8a5f5-328">ダブルクリックして**Program.cs** (または**Module1.vb**) で**ソリューション エクスプ ローラー**コードを表示します。</span><span class="sxs-lookup"><span data-stu-id="8a5f5-328">Double-click **Program.cs** (or **Module1.vb**) in **Solution Explorer** to display the code.</span></span>  
   

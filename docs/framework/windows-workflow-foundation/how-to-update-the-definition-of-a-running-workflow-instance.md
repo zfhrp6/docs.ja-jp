@@ -49,7 +49,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [<span data-ttu-id="4f8fc-117">ワークフローの以前のバージョンを開始できるようにするには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-117">To enable starting previous versions of the workflows</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StartPreviousVersions)  
   
-###  <span data-ttu-id="4f8fc-118"><a name="BKMK_CreateProject"></a>CreateUpdateMaps プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-118"><a name="BKMK_CreateProject"></a> To create the CreateUpdateMaps project</span></span>  
+###  <a name="BKMK_CreateProject"></a><span data-ttu-id="4f8fc-118">CreateUpdateMaps プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-118">To create the CreateUpdateMaps project</span></span>  
   
 1.  <span data-ttu-id="4f8fc-119">右クリック**WF45GettingStartedTutorial**で**ソリューション エクスプ ローラー**選択**追加**、**新しいプロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-119">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>  
   
@@ -233,7 +233,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="4f8fc-143"><a name="BKMK_StateMachine"></a>StateMachineNumberGuessWorkflow を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-143"><a name="BKMK_StateMachine"></a> To update StateMachineNumberGuessWorkflow</span></span>  
+###  <a name="BKMK_StateMachine"></a><span data-ttu-id="4f8fc-143">StateMachineNumberGuessWorkflow を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-143">To update StateMachineNumberGuessWorkflow</span></span>  
   
 1.  <span data-ttu-id="4f8fc-144">`CreateStateMachineUpdateMap` クラス (または `Program`) に `Module1` を追加します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-144">Add a `CreateStateMachineUpdateMap` to the `Program` class (or `Module1`).</span></span>  
   
@@ -426,7 +426,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="4f8fc-151"><a name="BKMK_Flowchart"></a>FlowchartNumberGuessWorkflow を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-151"><a name="BKMK_Flowchart"></a> To update FlowchartNumberGuessWorkflow</span></span>  
+###  <a name="BKMK_Flowchart"></a><span data-ttu-id="4f8fc-151">FlowchartNumberGuessWorkflow を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-151">To update FlowchartNumberGuessWorkflow</span></span>  
   
 1.  <span data-ttu-id="4f8fc-152">`CreateFlowchartUpdateMethod` クラス (または `Program`) に次の `Module1` を追加します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-152">Add the following `CreateFlowchartUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="4f8fc-153">このメソッドは `CreateStateMachineUpdateMap` に似ています。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-153">This method is similar to `CreateStateMachineUpdateMap`.</span></span> <span data-ttu-id="4f8fc-154">最初に `StartUpdate` を呼び出し、フローチャート ワークフロー定義を更新して、最後に更新マップおよび更新されたワークフロー定義を保存します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-154">It starts with a call to `StartUpdate`, updates the flowchart workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>  
   
@@ -540,7 +540,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="4f8fc-155"><a name="BKMK_Sequential"></a>SequentialNumberGuessWorkflow を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-155"><a name="BKMK_Sequential"></a> To update SequentialNumberGuessWorkflow</span></span>  
+###  <a name="BKMK_Sequential"></a><span data-ttu-id="4f8fc-155">SequentialNumberGuessWorkflow を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-155">To update SequentialNumberGuessWorkflow</span></span>  
   
 1.  <span data-ttu-id="4f8fc-156">`CreateSequentialUpdateMethod` クラス (または `Program`) に次の `Module1` を追加します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-156">Add the following `CreateSequentialUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="4f8fc-157">このメソッドは、他の 2 つのメソッドに似ています。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-157">This method is similar to the other two methods.</span></span> <span data-ttu-id="4f8fc-158">最初に `StartUpdate` を呼び出し、シーケンシャル ワークフロー定義を更新して、最後に更新マップおよび更新されたワークフロー定義を保存します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-158">It starts with a call to `StartUpdate`, updates the sequential workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>  
   
@@ -620,7 +620,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="4f8fc-159"><a name="BKMK_CreateUpdateMaps"></a>CreateUpdateMaps アプリケーションをビルドして、実行</span><span class="sxs-lookup"><span data-stu-id="4f8fc-159"><a name="BKMK_CreateUpdateMaps"></a> To build and run the CreateUpdateMaps application</span></span>  
+###  <a name="BKMK_CreateUpdateMaps"></a><span data-ttu-id="4f8fc-159">CreateUpdateMaps アプリケーションをビルドして、実行</span><span class="sxs-lookup"><span data-stu-id="4f8fc-159">To build and run the CreateUpdateMaps application</span></span>  
   
 1.  <span data-ttu-id="4f8fc-160">`Main` メソッドを更新し、次の 3 つのメソッド呼び出しを追加します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-160">Update the `Main` method and add the following three method calls.</span></span> <span data-ttu-id="4f8fc-161">これらのメソッドは次のセクションで追加されます。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-161">These methods are added in the following sections.</span></span> <span data-ttu-id="4f8fc-162">各メソッドは、対応する数値推測ワークフローを更新し、更新内容を示す `DynamicUpdateMap` を作成します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-162">Each method updates the corresponding number guess workflow and creates a `DynamicUpdateMap` that describes the updates.</span></span>  
   
@@ -654,7 +654,7 @@ ms.lasthandoff: 12/02/2017
   
      <span data-ttu-id="4f8fc-166">更新マップが作成され、ワークフロー定義が更新されたら、次に、更新された定義を含む更新されたワークフロー アセンブリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-166">Once the update maps are created and the workflow definitions updated, the next step is to build an updated workflow assembly containing the updated definitions.</span></span>  
   
-###  <span data-ttu-id="4f8fc-167"><a name="BKMK_BuildAssembly"></a>更新されたワークフロー アセンブリをビルドするには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-167"><a name="BKMK_BuildAssembly"></a> To build the updated workflow assembly</span></span>  
+###  <a name="BKMK_BuildAssembly"></a><span data-ttu-id="4f8fc-167">更新されたワークフロー アセンブリをビルドするには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-167">To build the updated workflow assembly</span></span>  
   
 1.  <span data-ttu-id="4f8fc-168">[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] の別のインスタンスを開きます。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-168">Open a second instance of [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span></span>  
   
@@ -685,7 +685,7 @@ ms.lasthandoff: 12/02/2017
   
 12. <span data-ttu-id="4f8fc-185">名前を変更**NumberGuessWorkflowActivities.dll**に**NumberGuessWorkflowActivities_v15.dll**にコピーし、 **PreviousVersions** で作成したフォルダー[する方法: ホストの複数のバージョン、ワークフロー サイド バイ サイドの](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md)します。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-185">Rename **NumberGuessWorkflowActivities.dll** to **NumberGuessWorkflowActivities_v15.dll**, and copy it to the **PreviousVersions** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>  
   
-###  <span data-ttu-id="4f8fc-186"><a name="BKMK_UpdateWorkflowVersionMap"></a>新しいバージョンで WorkflowVersionMap を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-186"><a name="BKMK_UpdateWorkflowVersionMap"></a> To update WorkflowVersionMap with the new versions</span></span>  
+###  <a name="BKMK_UpdateWorkflowVersionMap"></a><span data-ttu-id="4f8fc-186">新しいバージョンで WorkflowVersionMap を更新するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-186">To update WorkflowVersionMap with the new versions</span></span>  
   
 1.  <span data-ttu-id="4f8fc-187">[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] の最初のインスタンスに戻ります。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-187">Switch back to the initial instance of [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span></span>  
   
@@ -1072,7 +1072,7 @@ ms.lasthandoff: 12/02/2017
   
 5.  <span data-ttu-id="4f8fc-195">Ctrl キーと Shift キーを押しながら B キーを押して、プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-195">Press CTRL+SHIFT+B to build the project.</span></span>  
   
-###  <span data-ttu-id="4f8fc-196"><a name="BKMK_ApplyUpdate"></a>動的更新を適用するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-196"><a name="BKMK_ApplyUpdate"></a> To apply the dynamic updates</span></span>  
+###  <a name="BKMK_ApplyUpdate"></a><span data-ttu-id="4f8fc-196">動的更新を適用するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-196">To apply the dynamic updates</span></span>  
   
 1.  <span data-ttu-id="4f8fc-197">右クリック**WF45GettingStartedTutorial**で**ソリューション エクスプ ローラー**選択**追加**、**新しいプロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-197">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>  
   
@@ -1447,7 +1447,7 @@ ms.lasthandoff: 12/02/2017
 <span data-ttu-id="4f8fc-261">**SequentialNumberGuessWorkflow の検査: です。バージョン 2.0.0.0 を =** </span><span class="sxs-lookup"><span data-stu-id="4f8fc-261">**Inspecting: SequentialNumberGuessWorkflow; Version=2.0.0.0** </span></span>  
 <span data-ttu-id="4f8fc-262">**任意のキーを押して続行してください.**</span><span class="sxs-lookup"><span data-stu-id="4f8fc-262">**Press any key to continue . . .**</span></span>  
   
-###  <span data-ttu-id="4f8fc-263"><a name="BKMK_BuildAndRun"></a>更新されたワークフローを含むアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-263"><a name="BKMK_BuildAndRun"></a> To run the application with the updated workflows</span></span>  
+###  <a name="BKMK_BuildAndRun"></a><span data-ttu-id="4f8fc-263">更新されたワークフローを含むアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-263">To run the application with the updated workflows</span></span>  
   
 1.  <span data-ttu-id="4f8fc-264">右クリック**NumberGuessWorkflowHost**で**ソリューション エクスプ ローラー**選択**スタートアップ プロジェクトとして設定**です。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-264">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>  
   
@@ -1482,7 +1482,7 @@ ms.lasthandoff: 12/02/2017
 <span data-ttu-id="4f8fc-291">**1 ~ 10 の間の数値を入力してください。** </span><span class="sxs-lookup"><span data-stu-id="4f8fc-291">**Please enter a number between 1 and 10** </span></span>  
 <span data-ttu-id="4f8fc-292">**6 は正しいです。4 のターンのようにします。**</span><span class="sxs-lookup"><span data-stu-id="4f8fc-292">**6 is correct. You guessed it in 4 turns.**</span></span>  
   
-###  <span data-ttu-id="4f8fc-293"><a name="BKMK_StartPreviousVersions"></a>ワークフローの以前のバージョンを開始できるようにするには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-293"><a name="BKMK_StartPreviousVersions"></a> To enable starting previous versions of the workflows</span></span>  
+###  <a name="BKMK_StartPreviousVersions"></a><span data-ttu-id="4f8fc-293">ワークフローの以前のバージョンを開始できるようにするには</span><span class="sxs-lookup"><span data-stu-id="4f8fc-293">To enable starting previous versions of the workflows</span></span>  
  <span data-ttu-id="4f8fc-294">更新するワークフローがなくなったら、ワークフローの以前のバージョンを開始できるように `NumberGuessWorkflowHost` アプリケーションを変更できます。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-294">If you run out of workflows to update, you can modify the `NumberGuessWorkflowHost` application to enable starting previous versions of the workflows.</span></span>  
   
 1.  <span data-ttu-id="4f8fc-295">ダブルクリックして**WorkflowHostForm**で**ソリューション エクスプ ローラー**を選択し、 **WorkflowType**コンボ ボックス。</span><span class="sxs-lookup"><span data-stu-id="4f8fc-295">Double-click **WorkflowHostForm** in **Solution Explorer**, and select the **WorkflowType** combo box.</span></span>  

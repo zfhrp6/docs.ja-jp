@@ -23,9 +23,8 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/22/2017
 ---
 # <a name="application-development"></a><span data-ttu-id="31b41-102">アプリケーション開発</span><span class="sxs-lookup"><span data-stu-id="31b41-102">Application Development</span></span>
-<span data-ttu-id="31b41-103"><a name="introduction"></a>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]次の種類のアプリケーションを開発するために使用するプレゼンテーション フレームワークを示します。</span><span class="sxs-lookup"><span data-stu-id="31b41-103"><a name="introduction"></a>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] is a presentation framework that can be used to develop the following types of applications:</span></span>  
+<a name="introduction"></a>
+<span data-ttu-id="31b41-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]次の種類のアプリケーションを開発するために使用するプレゼンテーション フレームワークを示します。</span><span class="sxs-lookup"><span data-stu-id="31b41-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] is a presentation framework that can be used to develop the following types of applications:</span></span>  
   
 -   <span data-ttu-id="31b41-104">スタンドアロン アプリケーション (クライアント コンピューターにインストールし、そこから実行できる実行可能アセンブリとしてビルドされた従来スタイルの [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] アプリケーション)。</span><span class="sxs-lookup"><span data-stu-id="31b41-104">Standalone Applications (traditional style [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] applications built as executable assemblies that are installed to and run from the client computer).</span></span>  
   
