@@ -30,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <span data-ttu-id="581ff-111">.NET Framework 4 以上および別のバージョンの Excel がインストールされた 2 台目のコンピューター。</span><span class="sxs-lookup"><span data-stu-id="581ff-111">A second computer on which the .NET Framework 4 or higher and a different version of Excel are installed.</span></span>  
   
-##  <span data-ttu-id="581ff-112"><a name="BKMK_createapp"></a> 複数のバージョンの Microsoft Office と連携するアプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="581ff-112"><a name="BKMK_createapp"></a> To create an application that works with multiple versions of Microsoft Office</span></span>  
+##  <a name="BKMK_createapp"></a> <span data-ttu-id="581ff-112">複数のバージョンの Microsoft Office と連携するアプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="581ff-112">To create an application that works with multiple versions of Microsoft Office</span></span>  
   
 1.  <span data-ttu-id="581ff-113">Excel がインストールされているコンピューターで Visual Studio を起動します。</span><span class="sxs-lookup"><span data-stu-id="581ff-113">Start Visual Studio on a computer on which Excel is installed.</span></span>  
   
@@ -106,7 +106,7 @@ ms.lasthandoff: 11/21/2017
   
 9. <span data-ttu-id="581ff-131">Ctrl キーを押しながら F5 キーを押して、プロジェクトをビルドおよび実行します。</span><span class="sxs-lookup"><span data-stu-id="581ff-131">Press CTRL+F5 to build and run the project.</span></span> <span data-ttu-id="581ff-132">プログラム例で指定した場所 (C:\SampleFolder\SampleWorkbook.xls) に Excel ブックが作成されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="581ff-132">Verify that an Excel workbook has been created at the location specified in the example code: C:\SampleFolder\SampleWorkbook.xls.</span></span>  
   
-##  <span data-ttu-id="581ff-133"><a name="BKMK_publishapp"></a> 別のバージョンの Microsoft Office がインストールされているコンピューターにアプリケーションを発行するには</span><span class="sxs-lookup"><span data-stu-id="581ff-133"><a name="BKMK_publishapp"></a> To publish the application to a computer on which a different version of Microsoft Office is installed</span></span>  
+##  <a name="BKMK_publishapp"></a> <span data-ttu-id="581ff-133">別のバージョンの Microsoft Office がインストールされているコンピューターにアプリケーションを発行するには</span><span class="sxs-lookup"><span data-stu-id="581ff-133">To publish the application to a computer on which a different version of Microsoft Office is installed</span></span>  
   
 1.  <span data-ttu-id="581ff-134">Visual Studio で、このチュートリアルで作成したプロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="581ff-134">Open the project created by this walkthrough in Visual Studio.</span></span>  
   

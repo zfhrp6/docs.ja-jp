@@ -71,7 +71,7 @@ End Function
 > [!NOTE]
 >  <span data-ttu-id="b30c9-127">トピックの「単純反復子の使用例を除くすべての例については、含める[Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)のステートメント、`System.Collections`と`System.Collections.Generic`名前空間。</span><span class="sxs-lookup"><span data-stu-id="b30c9-127">For all examples in the topic except the Simple Iterator example, include [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) statements for the `System.Collections` and `System.Collections.Generic` namespaces.</span></span>  
   
-##  <span data-ttu-id="b30c9-128"><a name="BKMK_SimpleIterator"></a> 単純な反復子</span><span class="sxs-lookup"><span data-stu-id="b30c9-128"><a name="BKMK_SimpleIterator"></a> Simple Iterator</span></span>  
+##  <a name="BKMK_SimpleIterator"></a> <span data-ttu-id="b30c9-128">単純な反復子</span><span class="sxs-lookup"><span data-stu-id="b30c9-128">Simple Iterator</span></span>  
  <span data-ttu-id="b30c9-129">次の例は、1 つ`Yield`内にあるステートメント、[をしています.[次へ]](../../../visual-basic/language-reference/statements/for-next-statement.md)ループします。</span><span class="sxs-lookup"><span data-stu-id="b30c9-129">The following example has a single `Yield` statement that is inside a [For…Next](../../../visual-basic/language-reference/statements/for-next-statement.md) loop.</span></span> <span data-ttu-id="b30c9-130">`Main` では、`For Each` ステートメント本文の各イテレーションで iterator 関数が呼び出され、これが次の `Yield` ステートメントに続行されます。</span><span class="sxs-lookup"><span data-stu-id="b30c9-130">In `Main`, each iteration of the `For Each` statement body creates a call to the iterator function, which proceeds to the next `Yield` statement.</span></span>  
   
 ```vb  
@@ -96,7 +96,7 @@ As System.Collections.Generic.IEnumerable(Of Integer)
 End Function  
 ```  
   
-##  <span data-ttu-id="b30c9-131"><a name="BKMK_CollectionClass"></a> コレクション クラスを作成する</span><span class="sxs-lookup"><span data-stu-id="b30c9-131"><a name="BKMK_CollectionClass"></a> Creating a Collection Class</span></span>  
+##  <a name="BKMK_CollectionClass"></a> <span data-ttu-id="b30c9-131">コレクション クラスを作成する</span><span class="sxs-lookup"><span data-stu-id="b30c9-131">Creating a Collection Class</span></span>  
  <span data-ttu-id="b30c9-132">次の例の `DaysOfTheWeek` クラスは、<xref:System.Collections.IEnumerable.GetEnumerator%2A> メソッドを必要とする <xref:System.Collections.IEnumerable> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-132">In the following example, the `DaysOfTheWeek` class implements the <xref:System.Collections.IEnumerable> interface, which requires a <xref:System.Collections.IEnumerable.GetEnumerator%2A> method.</span></span> <span data-ttu-id="b30c9-133">コンパイラは、<xref:System.Collections.IEnumerator> を返す `GetEnumerator` メソッドを暗黙的に呼び出します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-133">The compiler implicitly calls the `GetEnumerator` method, which returns an <xref:System.Collections.IEnumerator>.</span></span>  
   
  <span data-ttu-id="b30c9-134">`GetEnumerator`メソッドでは、一度にいずれかの各文字列を返しますを使用して、`Yield`ステートメントでは、および`Iterator`関数の宣言では、修飾子です。</span><span class="sxs-lookup"><span data-stu-id="b30c9-134">The `GetEnumerator` method returns each string one at a time by using the `Yield` statement, and  an `Iterator` modifier is in the function declaration.</span></span>  
@@ -221,7 +221,7 @@ Public Class Zoo
 End Class  
 ```  
   
-##  <span data-ttu-id="b30c9-138"><a name="BKMK_TryBlocks"></a>Try ブロック</span><span class="sxs-lookup"><span data-stu-id="b30c9-138"><a name="BKMK_TryBlocks"></a> Try Blocks</span></span>  
+##  <a name="BKMK_TryBlocks"></a><span data-ttu-id="b30c9-138">Try ブロック</span><span class="sxs-lookup"><span data-stu-id="b30c9-138">Try Blocks</span></span>  
  <span data-ttu-id="b30c9-139">Visual Basic できるは、`Yield`内のステートメント、`Try`のブロック、[を再試行してください.キャッチしてください.Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="b30c9-139">Visual Basic allows a `Yield` statement in the `Try` block of a [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).</span></span> <span data-ttu-id="b30c9-140">A`Try`を持つブロック、`Yield`ステートメントが持つことができます`Catch`をブロックしてができます、`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="b30c9-140">A `Try` block that has a `Yield` statement can have `Catch` blocks, and can have a `Finally` block.</span></span>  
   
  <span data-ttu-id="b30c9-141">次の例が含まれます`Try`、 `Catch`、および`Finally`iterator 関数内のブロックです。</span><span class="sxs-lookup"><span data-stu-id="b30c9-141">The following example includes `Try`, `Catch`, and `Finally` blocks in an iterator function.</span></span> <span data-ttu-id="b30c9-142">`Finally` Iterator 関数内のブロックを実行する前に、`For Each`イテレーションが終了します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-142">The `Finally` block in the iterator function executes before the `For Each` iteration finishes.</span></span>  
@@ -261,7 +261,7 @@ End Function
   
  <span data-ttu-id="b30c9-144">場合、`For Each`本体 (iterator メソッド) ではなく、例外がスロー、 `Catch` iterator 関数内のブロックが実行されていないが、 `Finally` iterator 関数内のブロックを実行します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-144">If the `For Each` body (instead of the iterator method) throws an exception, a `Catch` block in the iterator function is not executed, but a `Finally` block in the iterator function is executed.</span></span> <span data-ttu-id="b30c9-145">A`Catch`反復子関数の内側のブロックは、iterator 関数内で発生する例外のみをキャッチします。</span><span class="sxs-lookup"><span data-stu-id="b30c9-145">A `Catch` block inside an iterator function catches only exceptions that occur inside the iterator function.</span></span>  
   
-##  <span data-ttu-id="b30c9-146"><a name="BKMK_AnonymousMethods"></a>匿名メソッド</span><span class="sxs-lookup"><span data-stu-id="b30c9-146"><a name="BKMK_AnonymousMethods"></a> Anonymous Methods</span></span>  
+##  <a name="BKMK_AnonymousMethods"></a><span data-ttu-id="b30c9-146">匿名メソッド</span><span class="sxs-lookup"><span data-stu-id="b30c9-146">Anonymous Methods</span></span>  
  <span data-ttu-id="b30c9-147">Visual basic では、iterator 関数が匿名関数にできます。</span><span class="sxs-lookup"><span data-stu-id="b30c9-147">In Visual Basic, an anonymous function can be an iterator function.</span></span> <span data-ttu-id="b30c9-148">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-148">The following example illustrates this.</span></span>  
   
 ```vb  
@@ -311,7 +311,7 @@ End Function
   
  <span data-ttu-id="b30c9-151">最初のイテレーションの開始まで、検証を実行できない場合は検証が iterator 関数内に代わりに、`For Each`本文。</span><span class="sxs-lookup"><span data-stu-id="b30c9-151">If validation is instead inside the iterator function, the validation cannot be performed until the start of the first iteration of the `For Each` body.</span></span>  
   
-##  <span data-ttu-id="b30c9-152"><a name="BKMK_GenericList"></a> ジェネリック リストと共に反復子を使用する</span><span class="sxs-lookup"><span data-stu-id="b30c9-152"><a name="BKMK_GenericList"></a> Using Iterators with a Generic List</span></span>  
+##  <a name="BKMK_GenericList"></a> <span data-ttu-id="b30c9-152">ジェネリック リストと共に反復子を使用する</span><span class="sxs-lookup"><span data-stu-id="b30c9-152">Using Iterators with a Generic List</span></span>  
  <span data-ttu-id="b30c9-153">次の例の `Stack(Of T)` ジェネリック クラスは、<xref:System.Collections.Generic.IEnumerable%601> ジェネリック インターフェイスを実装しています。</span><span class="sxs-lookup"><span data-stu-id="b30c9-153">In the following example, the `Stack(Of T)` generic class implements the <xref:System.Collections.Generic.IEnumerable%601> generic interface.</span></span> <span data-ttu-id="b30c9-154">`Push` メソッドでは、`T` 型の配列に値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="b30c9-154">The `Push` method assigns values to an array of type `T`.</span></span> <span data-ttu-id="b30c9-155"><xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> メソッドは、`Yield` ステートメントを使って配列値を返します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-155">The <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> method returns the array values by using the `Yield` statement.</span></span>  
   
  <span data-ttu-id="b30c9-156">ジェネリック メソッド <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> だけでなく、非ジェネリック メソッド <xref:System.Collections.IEnumerable.GetEnumerator%2A> も実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b30c9-156">In addition to the generic <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> method, the non-generic <xref:System.Collections.IEnumerable.GetEnumerator%2A> method must also be implemented.</span></span> <span data-ttu-id="b30c9-157">これは、<xref:System.Collections.Generic.IEnumerable%601> が <xref:System.Collections.IEnumerable> から継承するためです。</span><span class="sxs-lookup"><span data-stu-id="b30c9-157">This is because <xref:System.Collections.Generic.IEnumerable%601> inherits from <xref:System.Collections.IEnumerable>.</span></span> <span data-ttu-id="b30c9-158">非ジェネリック実装は、ジェネリック実装に従います。</span><span class="sxs-lookup"><span data-stu-id="b30c9-158">The non-generic implementation defers to the generic implementation.</span></span>  
@@ -421,7 +421,7 @@ Public Class Stack(Of T)
 End Class  
 ```  
   
-##  <span data-ttu-id="b30c9-162"><a name="BKMK_SyntaxInformation"></a> 構文情報</span><span class="sxs-lookup"><span data-stu-id="b30c9-162"><a name="BKMK_SyntaxInformation"></a> Syntax Information</span></span>  
+##  <a name="BKMK_SyntaxInformation"></a> <span data-ttu-id="b30c9-162">構文情報</span><span class="sxs-lookup"><span data-stu-id="b30c9-162">Syntax Information</span></span>  
  <span data-ttu-id="b30c9-163">反復子は、メソッドまたは `get` アクセサーとして指定できます。</span><span class="sxs-lookup"><span data-stu-id="b30c9-163">An iterator can occur as a method or `get` accessor.</span></span> <span data-ttu-id="b30c9-164">反復子を、イベント、インスタンス コンストラクター、静的コンストラクター、静的デストラクターで指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="b30c9-164">An iterator cannot occur in an event, instance constructor, static constructor, or static destructor.</span></span>  
   
  <span data-ttu-id="b30c9-165">`Yield` ステートメント内の式の型から反復子の戻り値の型への暗黙的な変換が存在する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b30c9-165">An implicit conversion must exist from the expression type in the `Yield` statement to the return type of the iterator.</span></span>  
@@ -430,7 +430,7 @@ End Class
   
  <span data-ttu-id="b30c9-167">Visual basic で「生成」予約語ではない、特別な意味で使用されている場合にのみ、`Iterator`メソッドまたは`get`アクセサー。</span><span class="sxs-lookup"><span data-stu-id="b30c9-167">In Visual Basic, "Yield" is not a reserved word and has special meaning only when it is used in an `Iterator` method or `get` accessor.</span></span>  
   
-##  <span data-ttu-id="b30c9-168"><a name="BKMK_Technical"></a> 技術的な実装</span><span class="sxs-lookup"><span data-stu-id="b30c9-168"><a name="BKMK_Technical"></a> Technical Implementation</span></span>  
+##  <a name="BKMK_Technical"></a> <span data-ttu-id="b30c9-168">技術的な実装</span><span class="sxs-lookup"><span data-stu-id="b30c9-168">Technical Implementation</span></span>  
  <span data-ttu-id="b30c9-169">メソッドとして反復子を記述しても、コンパイラが入れ子のクラス (つまり、事実上、ステート マシン) に変換します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-169">Although you write an iterator as a method, the compiler translates it into a nested class that is, in effect, a state machine.</span></span> <span data-ttu-id="b30c9-170">このクラスは、クライアント コードで `For Each...Next` ループが続く限り、反復子の位置を追跡します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-170">This class keeps track of the position of the iterator as long the `For Each...Next` loop in the client code continues.</span></span>  
   
  <span data-ttu-id="b30c9-171">コンパイラの動作を確認するには、Ildasm.exe ツールを使用して、iterator メソッドに対して生成される Microsoft 中間言語コードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b30c9-171">To see what the compiler does, you can use the Ildasm.exe tool to view the Microsoft intermediate language code that is generated for an iterator method.</span></span>  
@@ -443,7 +443,7 @@ End Class
   
  <span data-ttu-id="b30c9-178">詳細については、次を参照してください。、 [Visual Basic 言語仕様](../../../visual-basic/reference/language-specification/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="b30c9-178">For additional information, see the [Visual Basic Language Specification](../../../visual-basic/reference/language-specification/index.md).</span></span>  
   
-##  <span data-ttu-id="b30c9-179"><a name="BKMK_UseOfIterators"></a> 反復子の使用</span><span class="sxs-lookup"><span data-stu-id="b30c9-179"><a name="BKMK_UseOfIterators"></a> Use of Iterators</span></span>  
+##  <a name="BKMK_UseOfIterators"></a> <span data-ttu-id="b30c9-179">反復子の使用</span><span class="sxs-lookup"><span data-stu-id="b30c9-179">Use of Iterators</span></span>  
  <span data-ttu-id="b30c9-180">反復子を使用すると、複雑なコードを使用して一覧シーケンスを設定する必要がある場合に、`For Each` ループの単純さを維持することができます。</span><span class="sxs-lookup"><span data-stu-id="b30c9-180">Iterators enable you to maintain the simplicity of a `For Each` loop when you need to use complex code to populate a list sequence.</span></span> <span data-ttu-id="b30c9-181">これは次のような場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="b30c9-181">This can be useful when you want to do the following:</span></span>  
   
 -   <span data-ttu-id="b30c9-182">最初の `For Each` ループ イテレーションの後に一覧シーケンスを変更する。</span><span class="sxs-lookup"><span data-stu-id="b30c9-182">Modify the list sequence after the first `For Each` loop iteration.</span></span>  

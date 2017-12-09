@@ -278,7 +278,7 @@ Dim sampleObject = New SampleClass With
 
 - [<span data-ttu-id="e18d3-215">オブジェクト初期化子 : 名前付きの型と匿名型</span><span class="sxs-lookup"><span data-stu-id="e18d3-215">Object Initializers: Named and Anonymous Types</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 
-###  <span data-ttu-id="e18d3-216"><a name="Static"></a>共有クラスとメンバー</span><span class="sxs-lookup"><span data-stu-id="e18d3-216"><a name="Static"></a> Shared Classes and Members</span></span>  
+###  <a name="Static"></a><span data-ttu-id="e18d3-216">共有クラスとメンバー</span><span class="sxs-lookup"><span data-stu-id="e18d3-216">Shared Classes and Members</span></span>  
  <span data-ttu-id="e18d3-217">クラスの共有メンバーは、プロパティ、プロシージャ、またはクラスのすべてのインスタンスによって共有されているフィールドです。</span><span class="sxs-lookup"><span data-stu-id="e18d3-217">A shared member of the class is a property, procedure, or field that is shared by all instances of a class.</span></span>  
   
  <span data-ttu-id="e18d3-218">共有メンバーを定義します。</span><span class="sxs-lookup"><span data-stu-id="e18d3-218">To define a shared member:</span></span>  

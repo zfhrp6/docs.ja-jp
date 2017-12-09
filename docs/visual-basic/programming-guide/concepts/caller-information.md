@@ -63,7 +63,7 @@ End Sub
   
  <span data-ttu-id="5c82e-126">省略可能な引数を明示的に指定して、呼び出し元情報を制御したり、非表示にしたりできます。</span><span class="sxs-lookup"><span data-stu-id="5c82e-126">You can explicitly supply the optional arguments to control the caller information or to hide caller information.</span></span>  
   
-###  <span data-ttu-id="5c82e-127"><a name="MEMBERNAMES"></a>メンバー名</span><span class="sxs-lookup"><span data-stu-id="5c82e-127"><a name="MEMBERNAMES"></a> Member Names</span></span>  
+###  <a name="MEMBERNAMES"></a><span data-ttu-id="5c82e-127">メンバー名</span><span class="sxs-lookup"><span data-stu-id="5c82e-127">Member Names</span></span>  
  <span data-ttu-id="5c82e-128">`CallerMemberName` 属性を使用して、呼び出されたメソッドにメンバー名を `String` 引数として指定することを回避できます。</span><span class="sxs-lookup"><span data-stu-id="5c82e-128">You can use the `CallerMemberName` attribute to avoid specifying the member name as a `String` argument to the called method.</span></span> <span data-ttu-id="5c82e-129">この方法を使用すると、**リファクタリングの名前の変更**で `String` 値が変更されないという問題が発生しなくなります。</span><span class="sxs-lookup"><span data-stu-id="5c82e-129">By using this technique, you avoid the problem that **Rename Refactoring** doesn't change the `String` values.</span></span> <span data-ttu-id="5c82e-130">この利点は、次のタスクで役立ちます。</span><span class="sxs-lookup"><span data-stu-id="5c82e-130">This benefit is especially useful for the following tasks:</span></span>  
   
 -   <span data-ttu-id="5c82e-131">トレース ルーチンと診断ルーチンの使用。</span><span class="sxs-lookup"><span data-stu-id="5c82e-131">Using tracing and diagnostic routines.</span></span>  
