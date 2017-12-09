@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="garbage-collection-etw-events"></a><span data-ttu-id="90f2d-102">ガベージ コレクション ETW イベント</span><span class="sxs-lookup"><span data-stu-id="90f2d-102">Garbage Collection ETW Events</span></span>
-<span data-ttu-id="90f2d-103"><a name="top"></a> これらのイベントは、ガベージ コレクションに関連する情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="90f2d-103"><a name="top"></a> These events collect information pertaining to garbage collection.</span></span> <span data-ttu-id="90f2d-104">ガベージ コレクションが実行された回数、ガベージ コレクションの間に解放されたメモリの量など、診断やデバッグに役立つ情報を入手できます。</span><span class="sxs-lookup"><span data-stu-id="90f2d-104">They help in diagnostics and debugging, including determining how many times garbage collection was performed, how much memory was freed during garbage collection, and so on.</span></span>  
+<a name="top"></a> <span data-ttu-id="90f2d-103">これらのイベントは、ガベージ コレクションに関連する情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="90f2d-103">These events collect information pertaining to garbage collection.</span></span> <span data-ttu-id="90f2d-104">ガベージ コレクションが実行された回数、ガベージ コレクションの間に解放されたメモリの量など、診断やデバッグに役立つ情報を入手できます。</span><span class="sxs-lookup"><span data-stu-id="90f2d-104">They help in diagnostics and debugging, including determining how many times garbage collection was performed, how much memory was freed during garbage collection, and so on.</span></span>  
   
  <span data-ttu-id="90f2d-105">このカテゴリは、次のイベントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="90f2d-105">This category consists of the following events:</span></span>  
   

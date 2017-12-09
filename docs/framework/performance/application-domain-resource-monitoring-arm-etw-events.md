@@ -23,7 +23,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="application-domain-resource-monitoring-arm-etw-events"></a><span data-ttu-id="2e05e-102">アプリケーション ドメインのリソース監視 (ARM) ETW イベント</span><span class="sxs-lookup"><span data-stu-id="2e05e-102">Application Domain Resource Monitoring (ARM) ETW Events</span></span>
-<span data-ttu-id="2e05e-103"><a name="top"></a> これらのイベントは、アプリケーション ドメインの状態に関する詳細な診断の情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="2e05e-103"><a name="top"></a> These events provide detailed diagnostic information about the state of an application domain.</span></span> <span data-ttu-id="2e05e-104">これらのイベントを使用することもできますが、アプリケーション ドメインのリソース監視 (ARM) の機能を使用しても同じ情報を得られます。</span><span class="sxs-lookup"><span data-stu-id="2e05e-104">You can use these events or use the application domain resource monitoring (ARM) feature to obtain the same information.</span></span>  
+<a name="top"></a> <span data-ttu-id="2e05e-103">これらのイベントは、アプリケーション ドメインの状態に関する詳細な診断の情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="2e05e-103">These events provide detailed diagnostic information about the state of an application domain.</span></span> <span data-ttu-id="2e05e-104">これらのイベントを使用することもできますが、アプリケーション ドメインのリソース監視 (ARM) の機能を使用しても同じ情報を得られます。</span><span class="sxs-lookup"><span data-stu-id="2e05e-104">You can use these events or use the application domain resource monitoring (ARM) feature to obtain the same information.</span></span>  
   
  <span data-ttu-id="2e05e-105">このカテゴリは、次のイベントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="2e05e-105">This category consists of the following events:</span></span>  
   

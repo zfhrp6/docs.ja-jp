@@ -23,7 +23,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="security-etw-events"></a><span data-ttu-id="8afa3-102">セキュリティ ETW イベント</span><span class="sxs-lookup"><span data-stu-id="8afa3-102">Security ETW Events</span></span>
-<span data-ttu-id="8afa3-103"><a name="top"></a> セキュリティ イベントは、厳密な名前の検証時と Authenticode の検証時に発生します。</span><span class="sxs-lookup"><span data-stu-id="8afa3-103"><a name="top"></a> Security events are raised during strong name verification and Authenticode verification.</span></span>  
+<a name="top"></a> <span data-ttu-id="8afa3-103">セキュリティ イベントは、厳密な名前の検証時と Authenticode の検証時に発生します。</span><span class="sxs-lookup"><span data-stu-id="8afa3-103">Security events are raised during strong name verification and Authenticode verification.</span></span>  
   
  <span data-ttu-id="8afa3-104">このカテゴリは、次のイベントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="8afa3-104">This category consists of the following events:</span></span>  
   

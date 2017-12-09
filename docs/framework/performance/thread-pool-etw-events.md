@@ -23,7 +23,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="thread-pool-etw-events"></a><span data-ttu-id="e464a-102">スレッド プール ETW イベント</span><span class="sxs-lookup"><span data-stu-id="e464a-102">Thread Pool ETW Events</span></span>
-<span data-ttu-id="e464a-103"><a name="top"></a> これらのイベントは、ワーカー スレッドと I/O スレッドに関する情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="e464a-103"><a name="top"></a> These events collect information about worker and I/O threads.</span></span>  
+<a name="top"></a> <span data-ttu-id="e464a-103">これらのイベントは、ワーカー スレッドと I/O スレッドに関する情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="e464a-103">These events collect information about worker and I/O threads.</span></span>  
   
  <span data-ttu-id="e464a-104">スレッド プール イベントには 2 つのグループがあります。</span><span class="sxs-lookup"><span data-stu-id="e464a-104">There are two groups of thread pool events:</span></span>  
   

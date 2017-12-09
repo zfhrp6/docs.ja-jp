@@ -23,7 +23,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="loader-etw-events"></a><span data-ttu-id="6e627-102">ローダー ETW イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-102">Loader ETW Events</span></span>
-<span data-ttu-id="6e627-103"><a name="top"></a> これらのイベントは、アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="6e627-103"><a name="top"></a> These events collect information relating to loading and unloading application domains, assemblies, and modules.</span></span>  
+<a name="top"></a> <span data-ttu-id="6e627-103">これらのイベントは、アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="6e627-103">These events collect information relating to loading and unloading application domains, assemblies, and modules.</span></span>  
   
  <span data-ttu-id="6e627-104">すべてのローダー イベントは、 `LoaderKeyword` (0x8) キーワードで発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-104">All loader events are raised under the `LoaderKeyword` (0x8) keyword.</span></span> <span data-ttu-id="6e627-105">`DCStart` および `DCEnd` のイベントは、`StartRundown`/`EndRundown` が有効になっている `LoaderRundownKeyword` (0x8) で発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-105">The `DCStart` and the `DCEnd` events are raised under `LoaderRundownKeyword` (0x8) with `StartRundown`/`EndRundown` enabled.</span></span> <span data-ttu-id="6e627-106">(詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="6e627-106">(For more information, see [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)</span></span>  
   
