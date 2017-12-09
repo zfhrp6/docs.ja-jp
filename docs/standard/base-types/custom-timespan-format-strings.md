@@ -47,7 +47,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.TimeSpan.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customparseexample1.cs#2)]
  [!code-vb[Conceptual.TimeSpan.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customparseexample1.vb#2)]  
   
-<span data-ttu-id="bbae5-117"><a name="table"></a>次の表は、カスタム日時書式指定子について説明します。</span><span class="sxs-lookup"><span data-stu-id="bbae5-117"><a name="table"></a> The following table describes the custom date and time format specifiers.</span></span>  
+<a name="table"></a><span data-ttu-id="bbae5-117">次の表は、カスタム日時書式指定子について説明します。</span><span class="sxs-lookup"><span data-stu-id="bbae5-117">The following table describes the custom date and time format specifiers.</span></span>  
   
 |<span data-ttu-id="bbae5-118">書式指定子</span><span class="sxs-lookup"><span data-stu-id="bbae5-118">Format specifier</span></span>|<span data-ttu-id="bbae5-119">説明</span><span class="sxs-lookup"><span data-stu-id="bbae5-119">Description</span></span>|<span data-ttu-id="bbae5-120">例</span><span class="sxs-lookup"><span data-stu-id="bbae5-120">Example</span></span>|  
 |----------------------|-----------------|-------------|  

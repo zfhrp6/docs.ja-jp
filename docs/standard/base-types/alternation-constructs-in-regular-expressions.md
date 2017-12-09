@@ -31,7 +31,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a><span data-ttu-id="afd7c-102">正規表現での代替構成体</span><span class="sxs-lookup"><span data-stu-id="afd7c-102">Alternation Constructs in Regular Expressions</span></span>
-<span data-ttu-id="afd7c-103"><a name="top"></a> 代替構成体は、択一条件または条件一致を有効にするように正規表現を変更します。</span><span class="sxs-lookup"><span data-stu-id="afd7c-103"><a name="top"></a> Alternation constructs modify a regular expression to enable either/or or conditional matching.</span></span> <span data-ttu-id="afd7c-104">.NET では、次の 3 つの代替構成体がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="afd7c-104">.NET supports three alternation constructs:</span></span>  
+<a name="top"></a> <span data-ttu-id="afd7c-103">代替構成体は、択一条件または条件一致を有効にするように正規表現を変更します。</span><span class="sxs-lookup"><span data-stu-id="afd7c-103">Alternation constructs modify a regular expression to enable either/or or conditional matching.</span></span> <span data-ttu-id="afd7c-104">.NET では、次の 3 つの代替構成体がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="afd7c-104">.NET supports three alternation constructs:</span></span>  
   
 -   [<span data-ttu-id="afd7c-105">&#124; を使用したパターン マッチング</span><span class="sxs-lookup"><span data-stu-id="afd7c-105">Pattern matching with &#124;</span></span>](#Either_Or)  
   

@@ -27,7 +27,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="fundamentals-of-garbage-collection"></a><span data-ttu-id="02d3a-102">ガベージ コレクションの基礎</span><span class="sxs-lookup"><span data-stu-id="02d3a-102">Fundamentals of Garbage Collection</span></span>
-<span data-ttu-id="02d3a-103"><a name="top"></a> 共通言語ランタイム (CLR) では、自動メモリ マネージャーとしてガベージ コレクターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-103"><a name="top"></a> In the common language runtime (CLR), the garbage collector serves as an automatic memory manager.</span></span> <span data-ttu-id="02d3a-104">次のような利点があります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-104">It provides the following benefits:</span></span>  
+<a name="top"></a> <span data-ttu-id="02d3a-103">共通言語ランタイム (CLR) では、自動メモリ マネージャーとしてガベージ コレクターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-103">In the common language runtime (CLR), the garbage collector serves as an automatic memory manager.</span></span> <span data-ttu-id="02d3a-104">次のような利点があります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-104">It provides the following benefits:</span></span>  
   
 -   <span data-ttu-id="02d3a-105">アプリケーションを開発するときにメモリを解放する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-105">Enables you to develop your application without having to free memory.</span></span>  
   

@@ -132,7 +132,7 @@ Next [ counter ]
   
  <span data-ttu-id="68243-193">既定値の`step`は 1 です。</span><span class="sxs-lookup"><span data-stu-id="68243-193">The default value of `step` is 1.</span></span>  
   
-###  <span data-ttu-id="68243-194"><a name="BKMK_Counter"></a>カウンターの引数</span><span class="sxs-lookup"><span data-stu-id="68243-194"><a name="BKMK_Counter"></a> Counter Argument</span></span>  
+###  <a name="BKMK_Counter"></a><span data-ttu-id="68243-194">カウンターの引数</span><span class="sxs-lookup"><span data-stu-id="68243-194">Counter Argument</span></span>  
  <span data-ttu-id="68243-195">次の表に示すかどうか`counter`全体を対象とする新しいローカル変数を定義`For…Next`ループします。</span><span class="sxs-lookup"><span data-stu-id="68243-195">The following table indicates whether `counter` defines a new local variable that’s scoped to the entire `For…Next` loop.</span></span> <span data-ttu-id="68243-196">この決定によって異なるかどうか`datatype`が存在かどうかおよび`counter`は既に定義されています。</span><span class="sxs-lookup"><span data-stu-id="68243-196">This determination depends on whether `datatype` is present and whether `counter` is already defined.</span></span>  
   
 |<span data-ttu-id="68243-197">`datatype`存在しますか?</span><span class="sxs-lookup"><span data-stu-id="68243-197">Is `datatype` present?</span></span>|<span data-ttu-id="68243-198">`counter`既に定義されていますか。</span><span class="sxs-lookup"><span data-stu-id="68243-198">Is `counter` already defined?</span></span>|<span data-ttu-id="68243-199">結果 (かどうか`counter`全体を対象とする新しいローカル変数を定義`For...Next`ループ)</span><span class="sxs-lookup"><span data-stu-id="68243-199">Result (whether `counter` defines a new local variable that’s scoped to the entire `For...Next` loop)</span></span>|  

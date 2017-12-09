@@ -52,7 +52,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="the-regular-expression-object-model"></a><span data-ttu-id="bab47-102">正規表現のオブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="bab47-102">The Regular Expression Object Model</span></span>
-<span data-ttu-id="bab47-103"><a name="introduction"></a>このトピックでは、.NET の正規表現を操作するために使用されるオブジェクト モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="bab47-103"><a name="introduction"></a> This topic describes the object model used in working with .NET regular expressions.</span></span> <span data-ttu-id="bab47-104">このチュートリアルは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-104">It contains the following sections:</span></span>  
+<a name="introduction"></a><span data-ttu-id="bab47-103">このトピックでは、.NET の正規表現を操作するために使用されるオブジェクト モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="bab47-103">This topic describes the object model used in working with .NET regular expressions.</span></span> <span data-ttu-id="bab47-104">このチュートリアルは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-104">It contains the following sections:</span></span>  
   
 -   [<span data-ttu-id="bab47-105">正規表現エンジン</span><span class="sxs-lookup"><span data-stu-id="bab47-105">The Regular Expression Engine</span></span>](#Engine)  
   

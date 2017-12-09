@@ -27,7 +27,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="managed-execution-process"></a><span data-ttu-id="d7e6a-102">マネージ実行プロセス</span><span class="sxs-lookup"><span data-stu-id="d7e6a-102">Managed Execution Process</span></span>
-<span data-ttu-id="d7e6a-103"><a name="introduction"></a> マネージ実行プロセスで実行される主な手順を次に示します。詳細については、後で説明します。</span><span class="sxs-lookup"><span data-stu-id="d7e6a-103"><a name="introduction"></a> The managed execution process includes the following steps, which are discussed in detail later in this topic:</span></span>  
+<a name="introduction"></a> <span data-ttu-id="d7e6a-103">マネージ実行プロセスで実行される主な手順を次に示します。詳細については、後で説明します。</span><span class="sxs-lookup"><span data-stu-id="d7e6a-103">The managed execution process includes the following steps, which are discussed in detail later in this topic:</span></span>  
   
 1.  <span data-ttu-id="d7e6a-104">[コンパイラを選択します](#choosing_a_compiler)。</span><span class="sxs-lookup"><span data-stu-id="d7e6a-104">[Choosing a compiler](#choosing_a_compiler).</span></span>  
   
