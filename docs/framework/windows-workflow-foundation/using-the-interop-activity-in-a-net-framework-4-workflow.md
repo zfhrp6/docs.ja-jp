@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9bb747f0-eb33-4f70-84cd-317382372dcd
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c485a1c2c69169812e69c3bc1ea9969d12467d53
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: aa8bb873ed42d5ba717359f420855b605cbe423d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>.NET Framework 4 ワークフローでの相互運用アクティビティの使用
 [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] または [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したアクティビティは、[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] アクティビティを使うことにより <xref:System.Activities.Statements.Interop> ワークフローで使用できます。 ここでは、<xref:System.Activities.Statements.Interop> アクティビティの概要について説明します。  
@@ -38,7 +38,7 @@ ms.lasthandoff: 10/18/2017
   
 3.  選択**空のソリューション**から、 **Visual Studio ソリューション** ボックスの一覧です。 型`PolicyInteropDemo`で、**名前**ボックスし、をクリックして**OK**です。  
   
-4.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**し**新しいプロジェクト**.  
+4.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**し**新しいプロジェクト...**.  
   
     > [!TIP]
     >  場合、**ソリューション エクスプ ローラー**ウィンドウが表示されている、select**ソリューション エクスプ ローラー**から、**ビュー**メニュー。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 10/18/2017
   
 #### <a name="to-create-the-discountcalculator-activity"></a>DiscountCalculator アクティビティを作成するには  
   
-1.  右クリック**PolicyActivityLibrary**で**ソリューション エクスプ ローラー**選択**追加**し**アクティビティ**.  
+1.  右クリック**PolicyActivityLibrary**で**ソリューション エクスプ ローラー**選択**追加**し**アクティビティ...**.  
   
 2.  選択**アクティビティ (コード分離付き)**から、 **Visual c# アイテム** ボックスの一覧です。 型`DiscountCalculator`で、**名前**ボックスし、をクリックして**OK**です。  
   
@@ -375,4 +375,4 @@ Rule3: IF this.DiscountPercent > 0
 |ルール内コレクションの処理|[ルール内コレクションの処理](http://go.microsoft.com/fwlink/?LinkId=178520)|  
 |PolicyActivity の使用|[PolicyActivity アクティビティの使用](http://go.microsoft.com/fwlink/?LinkId=178521)と<xref:System.Workflow.Activities.PolicyActivity>|  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] で作成したワークフローでは、たとえば宣言的アクティビティ条件や条件付きアクティビティ ([!INCLUDE[wf1](../../../includes/wf1-md.md)]、<xref:System.Workflow.Activities.ConditionedActivityGroup> など) など、<xref:System.Workflow.Activities.ReplicatorActivity> に用意されているルール機能のすべてを使用するわけではありません。 必要に応じて、この機能は [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] および [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したワークフローに使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] で作成したワークフローでは、たとえば宣言的アクティビティ条件や条件付きアクティビティ ([!INCLUDE[wf1](../../../includes/wf1-md.md)]、<xref:System.Workflow.Activities.ConditionedActivityGroup> など) など、<xref:System.Workflow.Activities.ReplicatorActivity> に用意されているルール機能のすべてを使用するわけではありません。 必要に応じて、この機能は [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] および [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したワークフローに使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。

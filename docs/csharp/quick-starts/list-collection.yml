@@ -1,3 +1,4 @@
+### YamlMime:YamlDocument
 documentType: Tutorial
 title: "C# のコレクション"
 metadata:
@@ -8,14 +9,14 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-items:
-- durationInMinutes: 1
-  content: "このクイック スタートで説明する C# の場合、対話的にブラウザーを使用して、c# コードを記述し、コンパイルして、コードの実行の結果を表示します。 このチュートリアルには、コレクションと配列を作成、変更、確認する一連のレッスンが含まれています。\n"
   ms.openlocfilehash: e00cf6badcbd39cc1e9320095169d86efb9cad8f
   ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 11/22/2017
+items:
+- durationInMinutes: 1
+  content: "このクイック スタートで説明する C# の場合、対話的にブラウザーを使用して、c# コードを記述し、コンパイルして、コードの実行の結果を表示します。 このチュートリアルには、コレクションと配列を作成、変更、確認する一連のレッスンが含まれています。\n"
 - title: "リストを作成する"
   durationInMinutes: 2
   content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し (\"<name>\" を自分の名前に置き換えて)、**[実行]** をクリックします。\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\n文字列のリストを作成し、そのリストに 3 つの名前を追加し、それらの名前をすべて大文字で出力しました。 先のクイック スタートで学習した概念を使用して、リストをループしています。\n\n名前を表示するコードは、**補間文字列**を使用します。  `string` の前に文字 `$` を配置すると、文字列宣言に C# コードを埋め込むことができます。 実際の文字列は、生成する値でその C# コードを置き換えます。 この例では、<xref:System.String.ToUpper%2A> メソッドを呼び出したため、文字列は `{name.ToUpper()}` をそれぞれの名前に置き換え、文字を大文字に変換しています。\n\n続けて確認していきましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"

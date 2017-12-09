@@ -13,11 +13,11 @@ ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 37f40312f1218b8e666eae7cb2de6c768ee32108
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1e17622256ca6a0344797ba16e007ba6feb8f873
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="codepage-c-compiler-options"></a>/codepage (C# コンパイラ オプション)
 このオプションでは、必要とするページが、システムで使用されている現在の既定のコードページでない場合に、コンパイル時に使用するコード ページを指定します。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/21/2017
   
  ソース コード ファイルが、コンピューターで有効なコード ページと同じものを使って作成された場合、または UNICODE か UTF-8 で作成された場合、**/codepage** を使う必要はありません。  
   
- 使用しているシステムでサポートされているコード ページを確認する方法については、[GetCPInfo](http://go.microsoft.com/fwlink/?LinkId=148371) に関するページをご覧ください。  
+ 使用しているシステムでサポートされているコード ページを確認する方法については、[GetCPInfo](https://msdn.microsoft.com/library/dd318078(VS.85).aspx) に関するページをご覧ください。  
   
  このコンパイラ オプションは Visual Studio では使用できず、プログラムで変更することはできません。  
   
