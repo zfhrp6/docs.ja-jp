@@ -25,7 +25,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  <span data-ttu-id="9db95-106">この例を実行するには、Visual Studio 2012 以降および .NET Framework 4.5 以降が、コンピューターにインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db95-106">To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.</span></span>  
   
-##  <span data-ttu-id="9db95-107"><a name="BKMK_CancelaTask"></a>タスクのキャンセル</span><span class="sxs-lookup"><span data-stu-id="9db95-107"><a name="BKMK_CancelaTask"></a> Cancel a Task</span></span>  
+##  <a name="BKMK_CancelaTask"></a><span data-ttu-id="9db95-107">タスクのキャンセル</span><span class="sxs-lookup"><span data-stu-id="9db95-107">Cancel a Task</span></span>  
  <span data-ttu-id="9db95-108">最初の例では、**キャンセル** ボタンを単一のダウンロード タスクと関連付けます。</span><span class="sxs-lookup"><span data-stu-id="9db95-108">The first example associates the **Cancel** button with a single download task.</span></span> <span data-ttu-id="9db95-109">アプリケーションがコンテンツをダウンロード中にボタンをクリックすると、ダウンロードは取り消されます。</span><span class="sxs-lookup"><span data-stu-id="9db95-109">If you choose the button while the application is downloading content, the download is canceled.</span></span>  
   
 ### <a name="downloading-the-example"></a><span data-ttu-id="9db95-110">例をダウンロードする</span><span class="sxs-lookup"><span data-stu-id="9db95-110">Downloading the Example</span></span>  
@@ -146,7 +146,7 @@ ms.lasthandoff: 11/21/2017
     Download canceled.  
     ```  
   
-##  <span data-ttu-id="9db95-140"><a name="BKMK_CancelaListofTasks"></a>タスクの一覧を取り消す</span><span class="sxs-lookup"><span data-stu-id="9db95-140"><a name="BKMK_CancelaListofTasks"></a> Cancel a List of Tasks</span></span>  
+##  <a name="BKMK_CancelaListofTasks"></a><span data-ttu-id="9db95-140">タスクの一覧を取り消す</span><span class="sxs-lookup"><span data-stu-id="9db95-140">Cancel a List of Tasks</span></span>  
  <span data-ttu-id="9db95-141">前の例を拡張すると、同じ `CancellationTokenSource` のインスタンスを各タスクに関連付けることによって、多数のタスクを取り消すことができます。</span><span class="sxs-lookup"><span data-stu-id="9db95-141">You can extend the previous example to cancel many tasks by associating the same `CancellationTokenSource` instance with each task.</span></span> <span data-ttu-id="9db95-142">**キャンセル** ボタンをクリックすると、完了していないすべてのタスクを取り消します。</span><span class="sxs-lookup"><span data-stu-id="9db95-142">If you choose the **Cancel** button, you cancel all tasks that aren’t yet complete.</span></span>  
   
 ### <a name="downloading-the-example"></a><span data-ttu-id="9db95-143">例をダウンロードする</span><span class="sxs-lookup"><span data-stu-id="9db95-143">Downloading the Example</span></span>  
@@ -259,7 +259,7 @@ ms.lasthandoff: 11/21/2017
     Downloads canceled.  
     ```  
   
-##  <span data-ttu-id="9db95-164"><a name="BKMK_CompleteExamples"></a>コード例全体</span><span class="sxs-lookup"><span data-stu-id="9db95-164"><a name="BKMK_CompleteExamples"></a> Complete Examples</span></span>  
+##  <a name="BKMK_CompleteExamples"></a><span data-ttu-id="9db95-164">コード例全体</span><span class="sxs-lookup"><span data-stu-id="9db95-164">Complete Examples</span></span>  
  <span data-ttu-id="9db95-165">次のセクションには、前の例の各コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9db95-165">The following sections contain the code for each of the previous examples.</span></span> <span data-ttu-id="9db95-166"><xref:System.Net.Http> の参照を追加する必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="9db95-166">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>  
   
  <span data-ttu-id="9db95-167">このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="9db95-167">You can download the projects from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046).</span></span>  

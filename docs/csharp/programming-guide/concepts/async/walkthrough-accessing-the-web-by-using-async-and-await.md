@@ -55,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="prerequisites"></a><span data-ttu-id="c1417-122">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="c1417-122">Prerequisites</span></span>  
  <span data-ttu-id="c1417-123">お使いのコンピューターに、Visual Studio 2012 以降がインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c1417-123">Visual Studio 2012 or later must be installed on your computer.</span></span> <span data-ttu-id="c1417-124">詳しくは、[Microsoft Web サイト](http://go.microsoft.com/fwlink/?LinkId=235233)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c1417-124">For more information, see the [Microsoft website](http://go.microsoft.com/fwlink/?LinkId=235233).</span></span>  
   
-###  <span data-ttu-id="c1417-125"><a name="CreateWPFApp"></a> WPF アプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="c1417-125"><a name="CreateWPFApp"></a> To create a WPF application</span></span>  
+###  <a name="CreateWPFApp"></a> <span data-ttu-id="c1417-125">WPF アプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="c1417-125">To create a WPF application</span></span>  
   
 1.  <span data-ttu-id="c1417-126">Visual Studio を起動します。</span><span class="sxs-lookup"><span data-stu-id="c1417-126">Start Visual Studio.</span></span>  
   
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="c1417-131">**ソリューション エクスプローラー**に新しいプロジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c1417-131">The new project appears in **Solution Explorer**.</span></span>  
   
 ##  <a name="BKMK_DesignWPFMainWin"></a>   
-###  <span data-ttu-id="c1417-132"><a name="MainWindow"></a> 単純な WPF MainWindow をデザインするには</span><span class="sxs-lookup"><span data-stu-id="c1417-132"><a name="MainWindow"></a> To design a simple WPF MainWindow</span></span>  
+###  <a name="MainWindow"></a> <span data-ttu-id="c1417-132">単純な WPF MainWindow をデザインするには</span><span class="sxs-lookup"><span data-stu-id="c1417-132">To design a simple WPF MainWindow</span></span>  
   
 1.  <span data-ttu-id="c1417-133">Visual Studio コード エディターで、 **[MainWindow.xaml]** タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="c1417-133">In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.</span></span>  
   
@@ -99,7 +99,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="c1417-145">WPF XAML デザイナーについて詳しくは、「[XAML デザイナーを使用した UI の作成](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c1417-145">For more information about the WPF XAML Designer, see [Creating a UI by using XAML Designer](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio).</span></span>  
   
 ##  <a name="BKMK_AddReference"></a>   
-###  <span data-ttu-id="c1417-146"><a name="AddRef"></a> 参照を追加するには</span><span class="sxs-lookup"><span data-stu-id="c1417-146"><a name="AddRef"></a> To add a reference</span></span>  
+###  <a name="AddRef"></a> <span data-ttu-id="c1417-146">参照を追加するには</span><span class="sxs-lookup"><span data-stu-id="c1417-146">To add a reference</span></span>  
   
 1.  <span data-ttu-id="c1417-147">**ソリューション エクスプローラー**で、プロジェクトの名前を強調表示します。</span><span class="sxs-lookup"><span data-stu-id="c1417-147">In **Solution Explorer**, highlight your project's name.</span></span>  
   
@@ -116,7 +116,7 @@ ms.lasthandoff: 11/21/2017
 6.  <span data-ttu-id="c1417-153">**[OK]** をクリックしてダイアログ ボックスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="c1417-153">Choose the **OK** button to close the dialog box.</span></span>  
   
 ##  <a name="BKMK_AddStatesandDirs"></a>   
-###  <span data-ttu-id="c1417-154"><a name="usingDir"></a> ディレクティブを使用して必要なものを追加するには</span><span class="sxs-lookup"><span data-stu-id="c1417-154"><a name="usingDir"></a> To add necessary using directives</span></span>  
+###  <a name="usingDir"></a> <span data-ttu-id="c1417-154">ディレクティブを使用して必要なものを追加するには</span><span class="sxs-lookup"><span data-stu-id="c1417-154">To add necessary using directives</span></span>  
   
 1.  <span data-ttu-id="c1417-155">**ソリューション エクスプローラー**で MainWindow.xaml.cs のショートカット メニューを開き、**[コードの表示]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="c1417-155">In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.cs, and then choose **View Code**.</span></span>  
   
@@ -129,7 +129,7 @@ ms.lasthandoff: 11/21/2017
     ```  
   
 ##  <a name="BKMK_CreatSynchApp"></a>   
-###  <span data-ttu-id="c1417-157"><a name="synchronous"></a> 同期アプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="c1417-157"><a name="synchronous"></a> To create a synchronous application</span></span>  
+###  <a name="synchronous"></a> <span data-ttu-id="c1417-157">同期アプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="c1417-157">To create a synchronous application</span></span>  
   
 1.  <span data-ttu-id="c1417-158">デザイン ウィンドウの MainWindow.xaml で、**[Start]** ボタンをダブルクリックして、MainWindow.xaml.cs に `startButton_Click` イベント ハンドラーを作成します。</span><span class="sxs-lookup"><span data-stu-id="c1417-158">In the design window, MainWindow.xaml, double-click the **Start** button to create the `startButton_Click` event handler in MainWindow.xaml.cs.</span></span>  
   
@@ -234,7 +234,7 @@ ms.lasthandoff: 11/21/2017
     ```  
   
 ##  <a name="BKMK_TestSynchSol"></a>   
-###  <span data-ttu-id="c1417-167"><a name="testSynch"></a> 同期ソリューションをテストするには</span><span class="sxs-lookup"><span data-stu-id="c1417-167"><a name="testSynch"></a> To test the synchronous solution</span></span>  
+###  <a name="testSynch"></a> <span data-ttu-id="c1417-167">同期ソリューションをテストするには</span><span class="sxs-lookup"><span data-stu-id="c1417-167">To test the synchronous solution</span></span>  
   
 1.  <span data-ttu-id="c1417-168">F5 キーを押してプログラムを実行し、 **[Start]** を複数回クリックします。</span><span class="sxs-lookup"><span data-stu-id="c1417-168">Choose the F5 key to run the program, and then choose the **Start** button.</span></span>  
   
@@ -260,7 +260,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="c1417-170">カウントの表示には数秒かかる点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="c1417-170">Notice that it takes a few seconds to display the counts.</span></span> <span data-ttu-id="c1417-171">その間、要求されたリソースのダウンロードが完了するまで UI スレッドがブロックされます。</span><span class="sxs-lookup"><span data-stu-id="c1417-171">During that time, the UI thread is blocked while it waits for requested resources to download.</span></span> <span data-ttu-id="c1417-172">このため、**[Start]** ボタンのクリック後は、表示ウィンドウの移動、最大化、最小化のほか、閉じることさえできなくなります。</span><span class="sxs-lookup"><span data-stu-id="c1417-172">As a result, you can't move, maximize, minimize, or even close the display window after you choose the  **Start** button.</span></span> <span data-ttu-id="c1417-173">バイト カウントの表示が開始するまでは、これらの操作を実行しても失敗します。</span><span class="sxs-lookup"><span data-stu-id="c1417-173">These efforts fail until the byte counts start to appear.</span></span> <span data-ttu-id="c1417-174">Web サイトが応答していない場合、どのサイトに問題があるのかを示す情報は表示されません。</span><span class="sxs-lookup"><span data-stu-id="c1417-174">If a website isn’t responding, you have no indication of which site failed.</span></span> <span data-ttu-id="c1417-175">待つのをやめて、プログラムを閉じることさえ難しい状態になります。</span><span class="sxs-lookup"><span data-stu-id="c1417-175">It is difficult even to stop waiting and close the program.</span></span>  
   
 ##  <a name="BKMK_ConvertGtBtArr"></a>   
-###  <span data-ttu-id="c1417-176"><a name="GetURLContents"></a> GetURLContents を非同期メソッドに変換するには</span><span class="sxs-lookup"><span data-stu-id="c1417-176"><a name="GetURLContents"></a> To convert GetURLContents to an asynchronous method</span></span>  
+###  <a name="GetURLContents"></a> <span data-ttu-id="c1417-176">GetURLContents を非同期メソッドに変換するには</span><span class="sxs-lookup"><span data-stu-id="c1417-176">To convert GetURLContents to an asynchronous method</span></span>  
   
 1.  <span data-ttu-id="c1417-177">同期ソリューションを非同期ソリューションに変換する際に、最初に取りかかるのに最適な場所は、`GetURLContents` 内です。その理由は、<xref:System.Net.HttpWebRequest> の <xref:System.Net.HttpWebRequest.GetResponse%2A> メソッドおよび <xref:System.IO.Stream> の <xref:System.IO.Stream.CopyTo%2A> メソッドへの呼び出しで、アプリケーションが Web にアクセスするためです。</span><span class="sxs-lookup"><span data-stu-id="c1417-177">To convert the synchronous solution to an asynchronous solution, the best place to start is in `GetURLContents` because the calls to the <xref:System.Net.HttpWebRequest> method <xref:System.Net.HttpWebRequest.GetResponse%2A> and to the <xref:System.IO.Stream> method <xref:System.IO.Stream.CopyTo%2A> are where the application accesses the web.</span></span> <span data-ttu-id="c1417-178">.NET Framework には両方のメソッドの非同期バージョンが用意されているため、変換は簡単です。</span><span class="sxs-lookup"><span data-stu-id="c1417-178">The .NET Framework makes the conversion easy by supplying asynchronous versions of both methods.</span></span>  
   
@@ -342,7 +342,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="c1417-220">このいくつかの変更によって、`GetURLContents` の非同期メソッドへの変換が完了しました。</span><span class="sxs-lookup"><span data-stu-id="c1417-220">With those few changes, the conversion of `GetURLContents` to an asynchronous method is complete.</span></span>  
   
 ##  <a name="BKMK_ConvertSumPagSzs"></a>   
-###  <span data-ttu-id="c1417-221"><a name="SumPageSizes"></a> SumPageSizes を非同期メソッドに変換するには</span><span class="sxs-lookup"><span data-stu-id="c1417-221"><a name="SumPageSizes"></a> To convert SumPageSizes to an asynchronous method</span></span>  
+###  <a name="SumPageSizes"></a> <span data-ttu-id="c1417-221">SumPageSizes を非同期メソッドに変換するには</span><span class="sxs-lookup"><span data-stu-id="c1417-221">To convert SumPageSizes to an asynchronous method</span></span>  
   
 1.  <span data-ttu-id="c1417-222">`SumPageSizes` に対して、前述した手順を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="c1417-222">Repeat the steps from the previous procedure for `SumPageSizes`.</span></span> <span data-ttu-id="c1417-223">まずは、`GetURLContents` への呼び出しを非同期呼び出しに変更します。</span><span class="sxs-lookup"><span data-stu-id="c1417-223">First, change the call to `GetURLContents` to an asynchronous call.</span></span>  
   
@@ -382,7 +382,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="c1417-234">`SumPageSizes` から `SumPageSizesAsync` への変換が完了しました。</span><span class="sxs-lookup"><span data-stu-id="c1417-234">The conversion of `SumPageSizes` to `SumPageSizesAsync` is complete.</span></span>  
   
 ##  <a name="BKMK_Cnvrtbttn1"></a>   
-###  <span data-ttu-id="c1417-235"><a name="startButton"></a> startButton_Click を非同期メソッドに変換するには</span><span class="sxs-lookup"><span data-stu-id="c1417-235"><a name="startButton"></a> To convert startButton_Click to an asynchronous method</span></span>  
+###  <a name="startButton"></a> <span data-ttu-id="c1417-235">startButton_Click を非同期メソッドに変換するには</span><span class="sxs-lookup"><span data-stu-id="c1417-235">To convert startButton_Click to an asynchronous method</span></span>  
   
 1.  <span data-ttu-id="c1417-236">イベント ハンドラーで、呼び出されるメソッドの名前を `SumPageSizes` から `SumPageSizesAsync` に変更します (まだ変更していない場合)。</span><span class="sxs-lookup"><span data-stu-id="c1417-236">In the event handler, change the name of the called method from `SumPageSizes` to `SumPageSizesAsync`, if you haven’t already done so.</span></span>  
   
@@ -428,7 +428,7 @@ ms.lasthandoff: 11/21/2017
      <span data-ttu-id="c1417-248">同期処理から非同期処理へのプロジェクトの変換が完了しました。</span><span class="sxs-lookup"><span data-stu-id="c1417-248">The conversion of the project from synchronous to asynchronous processing is complete.</span></span>  
   
 ##  <a name="BKMK_testAsynchSolution"></a>   
-###  <span data-ttu-id="c1417-249"><a name="testAsynch"></a> 非同期ソリューションをテストするには</span><span class="sxs-lookup"><span data-stu-id="c1417-249"><a name="testAsynch"></a> To test the asynchronous solution</span></span>  
+###  <a name="testAsynch"></a> <span data-ttu-id="c1417-249">非同期ソリューションをテストするには</span><span class="sxs-lookup"><span data-stu-id="c1417-249">To test the asynchronous solution</span></span>  
   
 1.  <span data-ttu-id="c1417-250">F5 キーを押してプログラムを実行し、 **[Start]** を複数回クリックします。</span><span class="sxs-lookup"><span data-stu-id="c1417-250">Choose the F5 key to run the program, and then choose the **Start** button.</span></span>  
   
@@ -439,7 +439,7 @@ ms.lasthandoff: 11/21/2017
     -   <span data-ttu-id="c1417-258">最も重要な点は、ダウンロード中に UI スレッドがブロックされないことです。</span><span class="sxs-lookup"><span data-stu-id="c1417-258">Most importantly, the UI thread isn’t blocked during the downloads.</span></span> <span data-ttu-id="c1417-259">Web リソースをダウンロード、カウント、および表示している間に、ウィンドウの移動やサイズ変更を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="c1417-259">You can move or resize the window while the web resources are being downloaded, counted, and displayed.</span></span> <span data-ttu-id="c1417-260">いずれかの Web サイトの処理が遅い、または応答しない場合、**閉じる**ボタン (右上隅の赤色のフィールドにある [x]) をクリックすることで、操作を取り消すことができます。</span><span class="sxs-lookup"><span data-stu-id="c1417-260">If one of the websites is slow or not responding, you can cancel the operation by choosing the **Close** button (the x in the red field in the upper-right corner).</span></span>  
   
 ##  <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
-###  <span data-ttu-id="c1417-261"><a name="GetURLContentsAsync"></a> GetURLContentsAsync メソッドを .NET Framework メソッドに置き換えるには</span><span class="sxs-lookup"><span data-stu-id="c1417-261"><a name="GetURLContentsAsync"></a> To replace method GetURLContentsAsync with a .NET Framework method</span></span>  
+###  <a name="GetURLContentsAsync"></a> <span data-ttu-id="c1417-261">GetURLContentsAsync メソッドを .NET Framework メソッドに置き換えるには</span><span class="sxs-lookup"><span data-stu-id="c1417-261">To replace method GetURLContentsAsync with a .NET Framework method</span></span>  
   
 1.  <span data-ttu-id="c1417-262">.NET Framework 4.5 では、使用できる非同期メソッドが数多く用意されています。</span><span class="sxs-lookup"><span data-stu-id="c1417-262">The .NET Framework 4.5 provides many async methods that you can use.</span></span> <span data-ttu-id="c1417-263">その 1 つである、<xref:System.Net.Http.HttpClient> の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29> メソッドは、このチュートリアルに必要な処理だけを実行します。</span><span class="sxs-lookup"><span data-stu-id="c1417-263">One of them, the <xref:System.Net.Http.HttpClient> method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>, does just what you need for this walkthrough.</span></span> <span data-ttu-id="c1417-264">これを、前述の手順で作成した `GetURLContentsAsync` メソッドの代わりに使用できます。</span><span class="sxs-lookup"><span data-stu-id="c1417-264">You can use it instead of the `GetURLContentsAsync` method that you created in an earlier procedure.</span></span>  
   
@@ -464,7 +464,7 @@ ms.lasthandoff: 11/21/2017
   
      <span data-ttu-id="c1417-270">このバージョンのプロジェクトの動作は、「非同期ソリューションをテストするには」の手順で説明している動作と同じですが、さらに少ない手間で作成できます。</span><span class="sxs-lookup"><span data-stu-id="c1417-270">The behavior of this version of the project should match the behavior that the "To test the asynchronous solution" procedure describes but with even less effort from you.</span></span>  
   
-##  <span data-ttu-id="c1417-271"><a name="BKMK_CompleteCodeExamples"></a> 例</span><span class="sxs-lookup"><span data-stu-id="c1417-271"><a name="BKMK_CompleteCodeExamples"></a> Example</span></span>  
+##  <a name="BKMK_CompleteCodeExamples"></a> <span data-ttu-id="c1417-271">例</span><span class="sxs-lookup"><span data-stu-id="c1417-271">Example</span></span>  
  <span data-ttu-id="c1417-272">次のコードには、記述した非同期 `GetURLContentsAsync` メソッドを使用する、同期ソリューションから非同期ソリューションへの変換例のすべてが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c1417-272">The following code contains the full example of the conversion from a synchronous to an asynchronous solution by using the asynchronous `GetURLContentsAsync` method that you wrote.</span></span> <span data-ttu-id="c1417-273">この例は、元の同期ソリューションと非常によく似ています。</span><span class="sxs-lookup"><span data-stu-id="c1417-273">Notice that it strongly resembles the original, synchronous solution.</span></span>  
   
 ```csharp  

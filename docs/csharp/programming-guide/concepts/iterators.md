@@ -65,7 +65,7 @@ public static System.Collections.IEnumerable SomeNumbers()
 > [!NOTE]
 >  <span data-ttu-id="68b41-124">このトピックの単純な反復子の例を除くすべての例には、`System.Collections` および `System.Collections.Generic` 名前空間の [using](../../../csharp/language-reference/keywords/using-directive.md) ディレクティブが含まれています。</span><span class="sxs-lookup"><span data-stu-id="68b41-124">For all examples in this topic except the Simple Iterator example, include [using](../../../csharp/language-reference/keywords/using-directive.md) directives for the `System.Collections` and `System.Collections.Generic` namespaces.</span></span>  
   
-##  <span data-ttu-id="68b41-125"><a name="BKMK_SimpleIterator"></a> 単純な反復子</span><span class="sxs-lookup"><span data-stu-id="68b41-125"><a name="BKMK_SimpleIterator"></a> Simple Iterator</span></span>  
+##  <a name="BKMK_SimpleIterator"></a> <span data-ttu-id="68b41-125">単純な反復子</span><span class="sxs-lookup"><span data-stu-id="68b41-125">Simple Iterator</span></span>  
  <span data-ttu-id="68b41-126">次の例では、[for](../../../csharp/language-reference/keywords/for.md) ループ内に 1 つの `yield return` ステートメントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="68b41-126">The following example has a single `yield return` statement that is inside a [for](../../../csharp/language-reference/keywords/for.md) loop.</span></span> <span data-ttu-id="68b41-127">`Main` では、`foreach` ステートメント本文の各イテレーションで iterator 関数が呼び出され、これが次の `yield return` ステートメントに続行されます。</span><span class="sxs-lookup"><span data-stu-id="68b41-127">In `Main`, each iteration of the `foreach` statement body creates a call to the iterator function, which proceeds to the next `yield return` statement.</span></span>  
   
 ```csharp  
@@ -93,7 +93,7 @@ public static System.Collections.Generic.IEnumerable<int>
 }  
 ```  
   
-##  <span data-ttu-id="68b41-128"><a name="BKMK_CollectionClass"></a> コレクション クラスを作成する</span><span class="sxs-lookup"><span data-stu-id="68b41-128"><a name="BKMK_CollectionClass"></a> Creating a Collection Class</span></span>  
+##  <a name="BKMK_CollectionClass"></a> <span data-ttu-id="68b41-128">コレクション クラスを作成する</span><span class="sxs-lookup"><span data-stu-id="68b41-128">Creating a Collection Class</span></span>  
  <span data-ttu-id="68b41-129">次の例の `DaysOfTheWeek` クラスは、<xref:System.Collections.IEnumerable.GetEnumerator%2A> メソッドを必要とする <xref:System.Collections.IEnumerable> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="68b41-129">In the following example, the `DaysOfTheWeek` class implements the <xref:System.Collections.IEnumerable> interface, which requires a <xref:System.Collections.IEnumerable.GetEnumerator%2A> method.</span></span> <span data-ttu-id="68b41-130">コンパイラは、<xref:System.Collections.IEnumerator> を返す `GetEnumerator` メソッドを暗黙的に呼び出します。</span><span class="sxs-lookup"><span data-stu-id="68b41-130">The compiler implicitly calls the `GetEnumerator` method, which returns an <xref:System.Collections.IEnumerator>.</span></span>  
   
  <span data-ttu-id="68b41-131">`GetEnumerator` メソッドは、`yield return` ステートメントを使用して、各文字列を一度に 1 つ返します。</span><span class="sxs-lookup"><span data-stu-id="68b41-131">The `GetEnumerator` method returns each string one at a time by using the `yield return` statement.</span></span>  
@@ -222,7 +222,7 @@ public class Zoo : IEnumerable
 }  
 ```  
   
-##  <span data-ttu-id="68b41-135"><a name="BKMK_GenericList"></a> ジェネリック リストと共に反復子を使用する</span><span class="sxs-lookup"><span data-stu-id="68b41-135"><a name="BKMK_GenericList"></a> Using Iterators with a Generic List</span></span>  
+##  <a name="BKMK_GenericList"></a> <span data-ttu-id="68b41-135">ジェネリック リストと共に反復子を使用する</span><span class="sxs-lookup"><span data-stu-id="68b41-135">Using Iterators with a Generic List</span></span>  
  <span data-ttu-id="68b41-136">次の例の `Stack(Of T)` ジェネリック クラスは、<xref:System.Collections.Generic.IEnumerable%601> ジェネリック インターフェイスを実装しています。</span><span class="sxs-lookup"><span data-stu-id="68b41-136">In the following example, the `Stack(Of T)` generic class implements the <xref:System.Collections.Generic.IEnumerable%601> generic interface.</span></span> <span data-ttu-id="68b41-137">`Push` メソッドでは、`T` 型の配列に値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="68b41-137">The `Push` method assigns values to an array of type `T`.</span></span> <span data-ttu-id="68b41-138"><xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> メソッドは、`yield return` ステートメントを使って配列値を返します。</span><span class="sxs-lookup"><span data-stu-id="68b41-138">The <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> method returns the array values by using the `yield return` statement.</span></span>  
   
  <span data-ttu-id="68b41-139">ジェネリック メソッド <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> だけでなく、非ジェネリック メソッド <xref:System.Collections.IEnumerable.GetEnumerator%2A> も実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68b41-139">In addition to the generic <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> method, the non-generic <xref:System.Collections.IEnumerable.GetEnumerator%2A> method must also be implemented.</span></span> <span data-ttu-id="68b41-140">これは、<xref:System.Collections.Generic.IEnumerable%601> が <xref:System.Collections.IEnumerable> から継承するためです。</span><span class="sxs-lookup"><span data-stu-id="68b41-140">This is because <xref:System.Collections.Generic.IEnumerable%601> inherits from <xref:System.Collections.IEnumerable>.</span></span> <span data-ttu-id="68b41-141">非ジェネリック実装は、ジェネリック実装に従います。</span><span class="sxs-lookup"><span data-stu-id="68b41-141">The non-generic implementation defers to the generic implementation.</span></span>  
@@ -339,7 +339,7 @@ public class Stack<T> : IEnumerable<T>
 }  
 ```  
   
-##  <span data-ttu-id="68b41-145"><a name="BKMK_SyntaxInformation"></a> 構文情報</span><span class="sxs-lookup"><span data-stu-id="68b41-145"><a name="BKMK_SyntaxInformation"></a> Syntax Information</span></span>  
+##  <a name="BKMK_SyntaxInformation"></a> <span data-ttu-id="68b41-145">構文情報</span><span class="sxs-lookup"><span data-stu-id="68b41-145">Syntax Information</span></span>  
  <span data-ttu-id="68b41-146">反復子は、メソッドまたは `get` アクセサーとして指定できます。</span><span class="sxs-lookup"><span data-stu-id="68b41-146">An iterator can occur as a method or `get` accessor.</span></span> <span data-ttu-id="68b41-147">反復子を、イベント、インスタンス コンストラクター、静的コンストラクター、静的ファイナライザーで指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="68b41-147">An iterator cannot occur in an event, instance constructor, static constructor, or static finalizer.</span></span>  
   
  <span data-ttu-id="68b41-148">`yield return` ステートメント内の式の型から反復子の戻り値の型への暗黙的な変換が存在する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68b41-148">An implicit conversion must exist from the expression type in the `yield return` statement to the return type of the iterator.</span></span>  
@@ -348,7 +348,7 @@ public class Stack<T> : IEnumerable<T>
   
  <span data-ttu-id="68b41-150">C# の場合、"yield" は予約語ではなく、`return` または `break` キーワードの前に使用される場合にのみ、特別な意味を持ちます。</span><span class="sxs-lookup"><span data-stu-id="68b41-150">In C#, "yield" is not a reserved word and has special meaning only when it is used before a `return` or `break` keyword.</span></span>  
   
-##  <span data-ttu-id="68b41-151"><a name="BKMK_Technical"></a> 技術的な実装</span><span class="sxs-lookup"><span data-stu-id="68b41-151"><a name="BKMK_Technical"></a> Technical Implementation</span></span>  
+##  <a name="BKMK_Technical"></a> <span data-ttu-id="68b41-151">技術的な実装</span><span class="sxs-lookup"><span data-stu-id="68b41-151">Technical Implementation</span></span>  
  <span data-ttu-id="68b41-152">メソッドとして反復子を記述しても、コンパイラが入れ子のクラス (つまり、事実上、ステート マシン) に変換します。</span><span class="sxs-lookup"><span data-stu-id="68b41-152">Although you write an iterator as a method, the compiler translates it into a nested class that is, in effect, a state machine.</span></span> <span data-ttu-id="68b41-153">このクラスは、クライアント コードで `foreach` ループが続く限り、反復子の位置を追跡します。</span><span class="sxs-lookup"><span data-stu-id="68b41-153">This class keeps track of the position of the iterator as long the `foreach` loop in the client code continues.</span></span>  
   
  <span data-ttu-id="68b41-154">コンパイラの動作を確認するには、Ildasm.exe ツールを使用して、iterator メソッドに対して生成される Microsoft 中間言語コードを表示します。</span><span class="sxs-lookup"><span data-stu-id="68b41-154">To see what the compiler does, you can use the Ildasm.exe tool to view the Microsoft intermediate language code that is generated for an iterator method.</span></span>  
@@ -361,7 +361,7 @@ public class Stack<T> : IEnumerable<T>
   
  <span data-ttu-id="68b41-161">詳細については、「[C# 言語の仕様](../../../csharp/language-reference/language-specification/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="68b41-161">For additional information, see the [C# Language Specification](../../../csharp/language-reference/language-specification/index.md).</span></span>  
   
-##  <span data-ttu-id="68b41-162"><a name="BKMK_UseOfIterators"></a> 反復子の使用</span><span class="sxs-lookup"><span data-stu-id="68b41-162"><a name="BKMK_UseOfIterators"></a> Use of Iterators</span></span>  
+##  <a name="BKMK_UseOfIterators"></a> <span data-ttu-id="68b41-162">反復子の使用</span><span class="sxs-lookup"><span data-stu-id="68b41-162">Use of Iterators</span></span>  
  <span data-ttu-id="68b41-163">反復子を使用すると、複雑なコードを使用して一覧シーケンスを設定する必要がある場合に、`foreach` ループの単純さを維持することができます。</span><span class="sxs-lookup"><span data-stu-id="68b41-163">Iterators enable you to maintain the simplicity of a `foreach` loop when you need to use complex code to populate a list sequence.</span></span> <span data-ttu-id="68b41-164">これは次のような場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="68b41-164">This can be useful when you want to do the following:</span></span>  
   
 -   <span data-ttu-id="68b41-165">最初の `foreach` ループ イテレーションの後に一覧シーケンスを変更する。</span><span class="sxs-lookup"><span data-stu-id="68b41-165">Modify the list sequence after the first `foreach` loop iteration.</span></span>  

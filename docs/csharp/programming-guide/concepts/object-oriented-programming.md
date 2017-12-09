@@ -59,7 +59,7 @@ ms.lasthandoff: 11/08/2017
   
 -   [<span data-ttu-id="b2485-124">デリゲート</span><span class="sxs-lookup"><span data-stu-id="b2485-124">Delegates</span></span>](#Delegates)  
   
-##  <span data-ttu-id="b2485-125"><a name="Classes"></a> クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="b2485-125"><a name="Classes"></a> Classes and Objects</span></span>  
+##  <a name="Classes"></a> <span data-ttu-id="b2485-125">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="b2485-125">Classes and Objects</span></span>  
  <span data-ttu-id="b2485-126">"*クラス*" という用語と "*オブジェクト*" という用語は同じ意味で使われる場合がありますが、実際には、クラスはオブジェクトの "*型*" を表すのに対し、オブジェクトはクラスの使用可能な "*インスタンス*" です。</span><span class="sxs-lookup"><span data-stu-id="b2485-126">The terms *class* and *object* are sometimes used interchangeably, but in fact, classes describe the *type* of objects, while objects are usable *instances* of classes.</span></span> <span data-ttu-id="b2485-127">そのため、オブジェクトを作成する操作は "*インスタンス化*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="b2485-127">So, the act of creating an object is called *instantiation*.</span></span> <span data-ttu-id="b2485-128">設計図との対比を使って説明すると、クラスは設計図であり、オブジェクトはその設計図を基にした建築物です。</span><span class="sxs-lookup"><span data-stu-id="b2485-128">Using the blueprint analogy, a class is a blueprint, and an object is a building made from that blueprint.</span></span>  
   
  <span data-ttu-id="b2485-129">クラスを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-129">To define a class:</span></span>  
@@ -86,10 +86,10 @@ struct SampleStruct
   
 -   [<span data-ttu-id="b2485-134">struct</span><span class="sxs-lookup"><span data-stu-id="b2485-134">struct</span></span>](../../../csharp/language-reference/keywords/struct.md)  
   
-###  <span data-ttu-id="b2485-135"><a name="Members"></a> クラス メンバー</span><span class="sxs-lookup"><span data-stu-id="b2485-135"><a name="Members"></a> Class Members</span></span>  
+###  <a name="Members"></a> <span data-ttu-id="b2485-135">クラス メンバー</span><span class="sxs-lookup"><span data-stu-id="b2485-135">Class Members</span></span>  
  <span data-ttu-id="b2485-136">各クラスには、さまざまな "*クラス メンバー*" を含めることができます。クラス メンバーには、クラスのデータを記述するプロパティ、クラスの動作を定義するメソッド、異なるクラスやオブジェクト間で通信するためのイベントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b2485-136">Each class can have different *class members* that include properties that describe class data, methods that define class behavior, and events that provide communication between different classes and objects.</span></span>  
   
-####  <span data-ttu-id="b2485-137"><a name="Properties"></a> プロパティとフィールド</span><span class="sxs-lookup"><span data-stu-id="b2485-137"><a name="Properties"></a> Properties and Fields</span></span>  
+####  <a name="Properties"></a> <span data-ttu-id="b2485-137">プロパティとフィールド</span><span class="sxs-lookup"><span data-stu-id="b2485-137">Properties and Fields</span></span>  
  <span data-ttu-id="b2485-138">フィールドとプロパティは、オブジェクトに格納されている情報を表します。</span><span class="sxs-lookup"><span data-stu-id="b2485-138">Fields and properties represent information that an object contains.</span></span> <span data-ttu-id="b2485-139">フィールドは、直接読み取ったり設定したりできるので変数と似ています。</span><span class="sxs-lookup"><span data-stu-id="b2485-139">Fields are like variables because they can be read or set directly.</span></span>  
   
  <span data-ttu-id="b2485-140">フィールドを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-140">To define a field:</span></span>  
@@ -138,7 +138,7 @@ class SampleClass
   
 -   [<span data-ttu-id="b2485-151">set</span><span class="sxs-lookup"><span data-stu-id="b2485-151">set</span></span>](../../../csharp/language-reference/keywords/set.md)  
   
-####  <span data-ttu-id="b2485-152"><a name="Methods"></a> メソッド</span><span class="sxs-lookup"><span data-stu-id="b2485-152"><a name="Methods"></a> Methods</span></span>  
+####  <a name="Methods"></a> <span data-ttu-id="b2485-152">メソッド</span><span class="sxs-lookup"><span data-stu-id="b2485-152">Methods</span></span>  
  <span data-ttu-id="b2485-153">"*メソッド*" は、オブジェクトが実行できる処理です。</span><span class="sxs-lookup"><span data-stu-id="b2485-153">A *method* is an action that an object can perform.</span></span>  
   
  <span data-ttu-id="b2485-154">クラスのメソッドを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-154">To define a method of a class:</span></span>  
@@ -170,7 +170,7 @@ public int sampleMethod(int sampleParam) {}
   
 -   [<span data-ttu-id="b2485-161">拡張メソッド</span><span class="sxs-lookup"><span data-stu-id="b2485-161">Extension Methods</span></span>](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
   
-####  <span data-ttu-id="b2485-162"><a name="Constructors"></a> コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b2485-162"><a name="Constructors"></a> Constructors</span></span>  
+####  <a name="Constructors"></a> <span data-ttu-id="b2485-162">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b2485-162">Constructors</span></span>  
  <span data-ttu-id="b2485-163">コンストラクターは、特定の型のオブジェクトを作成するときに自動的に実行されるクラス メソッドです。</span><span class="sxs-lookup"><span data-stu-id="b2485-163">Constructors are class methods that are executed automatically when an object of a given type is created.</span></span> <span data-ttu-id="b2485-164">コンストラクターは、通常、新しいオブジェクトのデータ メンバーを初期化します。</span><span class="sxs-lookup"><span data-stu-id="b2485-164">Constructors usually initialize the data members of the new object.</span></span> <span data-ttu-id="b2485-165">コンストラクターは、クラスの作成時に 1 回だけ実行できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-165">A constructor can run only once when a class is created.</span></span> <span data-ttu-id="b2485-166">また、コンストラクター内のコードは常に、クラス内の他のすべてのコードより先に実行されます。</span><span class="sxs-lookup"><span data-stu-id="b2485-166">Furthermore, the code in the constructor always runs before any other code in a class.</span></span> <span data-ttu-id="b2485-167">他のメソッドと同じように、コンストラクターにも複数のオーバーロードを作成できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-167">However, you can create multiple constructor overloads in the same way as for any other method.</span></span>  
   
  <span data-ttu-id="b2485-168">クラスのコンストラクターを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-168">To define a constructor for a class:</span></span>  
@@ -189,12 +189,12 @@ public class SampleClass
   
  <span data-ttu-id="b2485-170">「[コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)」。</span><span class="sxs-lookup"><span data-stu-id="b2485-170">[Constructors](../../../csharp/programming-guide/classes-and-structs/constructors.md).</span></span>  
   
-####  <span data-ttu-id="b2485-171"><a name="Finalizers"></a> ファイナライザー</span><span class="sxs-lookup"><span data-stu-id="b2485-171"><a name="Finalizers"></a> Finalizers</span></span>  
+####  <a name="Finalizers"></a> <span data-ttu-id="b2485-171">ファイナライザー</span><span class="sxs-lookup"><span data-stu-id="b2485-171">Finalizers</span></span>  
  <span data-ttu-id="b2485-172">ファイナライザーは、クラスのインスタンスを破棄するために使います。</span><span class="sxs-lookup"><span data-stu-id="b2485-172">Finalizers are used to destruct instances of classes.</span></span> <span data-ttu-id="b2485-173">.NET Framework では、アプリケーション内のマネージ オブジェクトのメモリの割り当てと解放は、ガベージ コレクターによって自動的に管理されます。</span><span class="sxs-lookup"><span data-stu-id="b2485-173">In the .NET Framework, the garbage collector automatically manages the allocation and release of memory for the managed objects in your application.</span></span> <span data-ttu-id="b2485-174">ただし、アプリケーションで作成されるアンマネージ リソースを適切にクリーンアップするために、ファイナライザーも必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="b2485-174">However, you may still need finalizers to clean up any unmanaged resources that your application creates.</span></span> <span data-ttu-id="b2485-175">1 つのクラスに定義できるファイナライザーは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="b2485-175">There can be only one finalizers for a class.</span></span>  
   
  <span data-ttu-id="b2485-176">.NET Framework のファイナライザーおよびガベージ コレクションについて詳しくは、「[ガベージ コレクション](../../../standard/garbage-collection/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b2485-176">For more information about finalizers and garbage collection in the .NET Framework, see [Garbage Collection](../../../standard/garbage-collection/index.md).</span></span>  
   
-####  <span data-ttu-id="b2485-177"><a name="Events"></a> イベント</span><span class="sxs-lookup"><span data-stu-id="b2485-177"><a name="Events"></a> Events</span></span>  
+####  <a name="Events"></a> <span data-ttu-id="b2485-177">イベント</span><span class="sxs-lookup"><span data-stu-id="b2485-177">Events</span></span>  
  <span data-ttu-id="b2485-178">クラスやオブジェクトは、何か重要なことが起こった場合に、イベントを使用して他のクラスまたはオブジェクトに通知を送ります。</span><span class="sxs-lookup"><span data-stu-id="b2485-178">Events enable a class or object to notify other classes or objects when something of interest occurs.</span></span> <span data-ttu-id="b2485-179">イベントを送信する (発生させる) クラスは "*パブリッシャー*" と呼ばれ、イベントを受信する (処理する) クラスは "*サブスクライバー*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="b2485-179">The class that sends (or raises) the event is called the *publisher* and the classes that receive (or handle) the event are called *subscribers*.</span></span> <span data-ttu-id="b2485-180">イベント、およびイベントの発生と処理の詳細については、「[イベント](../../../standard/events/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b2485-180">For more information about events, how they are raised and handled, see [Events](../../../standard/events/index.md).</span></span>  
   
 -   <span data-ttu-id="b2485-181">クラスでイベントを宣言するには、[event](../../../csharp/language-reference/keywords/event.md) キーワードを使います。</span><span class="sxs-lookup"><span data-stu-id="b2485-181">To declare an event in a class, use the [event](../../../csharp/language-reference/keywords/event.md) keyword.</span></span>  
@@ -203,7 +203,7 @@ public class SampleClass
   
 -   <span data-ttu-id="b2485-183">イベントをサブスクライブするには、`+=` 演算子を使用します。イベント サブスクリプションを解除するには、`-=` 演算子を使用します。</span><span class="sxs-lookup"><span data-stu-id="b2485-183">To subscribe to an event, use the `+=` operator; to unsubscribe from an event, use the `-=` operator.</span></span>  
   
-####  <span data-ttu-id="b2485-184"><a name="NestedClasses"></a> 入れ子になったクラス</span><span class="sxs-lookup"><span data-stu-id="b2485-184"><a name="NestedClasses"></a> Nested Classes</span></span>  
+####  <a name="NestedClasses"></a> <span data-ttu-id="b2485-184">入れ子になったクラス</span><span class="sxs-lookup"><span data-stu-id="b2485-184">Nested Classes</span></span>  
  <span data-ttu-id="b2485-185">別のクラス内で定義されているクラスを "*入れ子になったクラス*" と呼びます。</span><span class="sxs-lookup"><span data-stu-id="b2485-185">A class defined within another class is called *nested*.</span></span> <span data-ttu-id="b2485-186">既定では、入れ子になったクラスはプライベートです。</span><span class="sxs-lookup"><span data-stu-id="b2485-186">By default, the nested class is private.</span></span>  
   
 ```csharp  
@@ -222,7 +222,7 @@ class Container
 Container.Nested nestedInstance = new Container.Nested()  
 ```  
   
-###  <span data-ttu-id="b2485-188"><a name="AccessModifiers"></a> アクセス修飾子とアクセス レベル</span><span class="sxs-lookup"><span data-stu-id="b2485-188"><a name="AccessModifiers"></a> Access Modifiers and Access Levels</span></span>  
+###  <a name="AccessModifiers"></a> <span data-ttu-id="b2485-188">アクセス修飾子とアクセス レベル</span><span class="sxs-lookup"><span data-stu-id="b2485-188">Access Modifiers and Access Levels</span></span>  
  <span data-ttu-id="b2485-189">すべてのクラスおよびクラス メンバーでは、"*アクセス修飾子*" を使って、他のクラスに提供するアクセス レベルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-189">All classes and class members can specify what access level they provide to other classes by using *access modifiers*.</span></span>  
   
  <span data-ttu-id="b2485-190">次のアクセス修飾子を使用できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-190">The following access modifiers are available:</span></span>  
@@ -238,7 +238,7 @@ Container.Nested nestedInstance = new Container.Nested()
   
  <span data-ttu-id="b2485-205">詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b2485-205">For more information, see [Access Modifiers](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).</span></span>  
   
-###  <span data-ttu-id="b2485-206"><a name="InstantiatingClasses"></a> クラスのインスタンス化</span><span class="sxs-lookup"><span data-stu-id="b2485-206"><a name="InstantiatingClasses"></a> Instantiating Classes</span></span>  
+###  <a name="InstantiatingClasses"></a> <span data-ttu-id="b2485-206">クラスのインスタンス化</span><span class="sxs-lookup"><span data-stu-id="b2485-206">Instantiating Classes</span></span>  
  <span data-ttu-id="b2485-207">オブジェクトを作成するには、クラスをインスタンス化する (クラスのインスタンスを作成する) 必要があります。</span><span class="sxs-lookup"><span data-stu-id="b2485-207">To create an object, you need to instantiate a class, or create a class instance.</span></span>  
   
 ```csharp  
@@ -268,7 +268,7 @@ SampleClass sampleObject = new SampleClass
   
 -   [<span data-ttu-id="b2485-212">オブジェクト初期化子とコレクション初期化子</span><span class="sxs-lookup"><span data-stu-id="b2485-212">Object and Collection Initializers</span></span>](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
   
-###  <span data-ttu-id="b2485-213"><a name="Static"></a> 静的クラスとメンバー</span><span class="sxs-lookup"><span data-stu-id="b2485-213"><a name="Static"></a> Static Classes and Members</span></span>  
+###  <a name="Static"></a> <span data-ttu-id="b2485-213">静的クラスとメンバー</span><span class="sxs-lookup"><span data-stu-id="b2485-213">Static Classes and Members</span></span>  
  <span data-ttu-id="b2485-214">クラスの静的メンバーは、クラスのすべてのインスタンスで共有されるプロパティ、プロシージャ、またはフィールドです。</span><span class="sxs-lookup"><span data-stu-id="b2485-214">A static member of the class is a property, procedure, or field that is shared by all instances of a class.</span></span>  
   
  <span data-ttu-id="b2485-215">静的メンバーを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-215">To define a static member:</span></span>  
@@ -290,7 +290,7 @@ Console.WriteLine(SampleClass.SampleString);
   
  <span data-ttu-id="b2485-219">詳しくは、「[static](../../../csharp/language-reference/keywords/static.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b2485-219">For more information, see: [static](../../../csharp/language-reference/keywords/static.md).</span></span>  
   
-###  <span data-ttu-id="b2485-220"><a name="AnonymousTypes"></a> 匿名型</span><span class="sxs-lookup"><span data-stu-id="b2485-220"><a name="AnonymousTypes"></a> Anonymous Types</span></span>  
+###  <a name="AnonymousTypes"></a> <span data-ttu-id="b2485-220">匿名型</span><span class="sxs-lookup"><span data-stu-id="b2485-220">Anonymous Types</span></span>  
  <span data-ttu-id="b2485-221">匿名型を使用すると、データ型のクラス定義を記述せずにオブジェクトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-221">Anonymous types enable you to create objects without writing a class definition for the data type.</span></span> <span data-ttu-id="b2485-222">クラスは、コンパイラによって生成されます。</span><span class="sxs-lookup"><span data-stu-id="b2485-222">Instead, the compiler generates a class for you.</span></span> <span data-ttu-id="b2485-223">このクラスには使用可能な名前がなく、オブジェクトの宣言時に指定したプロパティが格納されます。</span><span class="sxs-lookup"><span data-stu-id="b2485-223">The class has no usable name and contains the properties you specify in declaring the object.</span></span>  
   
  <span data-ttu-id="b2485-224">匿名型のインスタンスを作成するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-224">To create an instance of an anonymous type:</span></span>  
@@ -303,7 +303,7 @@ var sampleObject =
   
  <span data-ttu-id="b2485-225">詳しくは、「[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b2485-225">For more information, see: [Anonymous Types](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).</span></span>  
   
-##  <span data-ttu-id="b2485-226"><a name="Inheritance"></a> 継承</span><span class="sxs-lookup"><span data-stu-id="b2485-226"><a name="Inheritance"></a> Inheritance</span></span>  
+##  <a name="Inheritance"></a> <span data-ttu-id="b2485-226">継承</span><span class="sxs-lookup"><span data-stu-id="b2485-226">Inheritance</span></span>  
  <span data-ttu-id="b2485-227">継承を使用すると、他のクラスで定義されている動作を再利用、拡張、および変更する新しいクラスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-227">Inheritance enables you to create a new class that reuses, extends, and modifies the behavior that is defined in another class.</span></span> <span data-ttu-id="b2485-228">メンバーが継承される側のクラスを "*基底クラス*" と呼び、メンバーを継承する側のクラスを "*派生クラス*" と呼びます。</span><span class="sxs-lookup"><span data-stu-id="b2485-228">The class whose members are inherited is called the *base class*, and the class that inherits those members is called the *derived class*.</span></span> <span data-ttu-id="b2485-229">ただし、C# のすべてのクラスは、.NET のクラス階層構造をサポートしてすべてのクラスに下位レベルのサービスを提供する <xref:System.Object> クラスを暗黙的に継承します。</span><span class="sxs-lookup"><span data-stu-id="b2485-229">However, all classes in C# implicitly inherit from the <xref:System.Object> class that supports .NET class hierarchy and provides low-level services to all classes.</span></span>  
   
 > [!NOTE]
@@ -335,7 +335,7 @@ public abstract class B { }
   
 -   [<span data-ttu-id="b2485-239">abstract</span><span class="sxs-lookup"><span data-stu-id="b2485-239">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)  
   
-###  <span data-ttu-id="b2485-240"><a name="Overriding"></a> メンバーのオーバーライド</span><span class="sxs-lookup"><span data-stu-id="b2485-240"><a name="Overriding"></a> Overriding Members</span></span>  
+###  <a name="Overriding"></a> <span data-ttu-id="b2485-240">メンバーのオーバーライド</span><span class="sxs-lookup"><span data-stu-id="b2485-240">Overriding Members</span></span>  
  <span data-ttu-id="b2485-241">既定では、派生クラスは基底クラスのすべてのメンバーを継承します。</span><span class="sxs-lookup"><span data-stu-id="b2485-241">By default, a derived class inherits all members from its base class.</span></span> <span data-ttu-id="b2485-242">継承したメンバーの動作を変更する場合は、そのメンバーをオーバーライドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b2485-242">If you want to change the behavior of the inherited member, you need to override it.</span></span> <span data-ttu-id="b2485-243">つまり、派生クラスに、メソッド、プロパティ、またはイベントの新しい実装を定義できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-243">That is, you can define a new implementation of the method, property or event in the derived class.</span></span>  
   
  <span data-ttu-id="b2485-244">プロパティやメソッドのオーバーライド方法を制御するには、次の修飾子を使用します。</span><span class="sxs-lookup"><span data-stu-id="b2485-244">The following modifiers are used to control how properties and methods are overridden:</span></span>  
@@ -347,7 +347,7 @@ public abstract class B { }
 |[<span data-ttu-id="b2485-251">abstract</span><span class="sxs-lookup"><span data-stu-id="b2485-251">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)|<span data-ttu-id="b2485-252">派生クラスでのクラス メンバーのオーバーライドを必須にします。</span><span class="sxs-lookup"><span data-stu-id="b2485-252">Requires that a class member to be overridden in the derived class.</span></span>|  
 |[<span data-ttu-id="b2485-253">new 修飾子</span><span class="sxs-lookup"><span data-stu-id="b2485-253">new Modifier</span></span>](../../../csharp/language-reference/keywords/new-modifier.md)|<span data-ttu-id="b2485-254">基底クラスから継承されたメンバーを隠ぺいします。</span><span class="sxs-lookup"><span data-stu-id="b2485-254">Hides a member inherited from a base class</span></span>|  
   
-##  <span data-ttu-id="b2485-255"><a name="Interfaces"></a> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b2485-255"><a name="Interfaces"></a> Interfaces</span></span>  
+##  <a name="Interfaces"></a> <span data-ttu-id="b2485-255">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b2485-255">Interfaces</span></span>  
  <span data-ttu-id="b2485-256">インターフェイスは、クラスと同様にプロパティ、メソッド、およびイベントのセットを定義します。</span><span class="sxs-lookup"><span data-stu-id="b2485-256">Interfaces, like classes, define a set of properties, methods, and events.</span></span> <span data-ttu-id="b2485-257">ただし、クラスとは異なり、インターフェイスは実装を提供しません。</span><span class="sxs-lookup"><span data-stu-id="b2485-257">But unlike classes, interfaces do not provide implementation.</span></span> <span data-ttu-id="b2485-258">インターフェイスはクラスによって実装され、クラスとは別のエンティティとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="b2485-258">They are implemented by classes, and defined as separate entities from classes.</span></span> <span data-ttu-id="b2485-259">インターフェイスを実装するクラスは、そのインターフェイスのあらゆる機能を定義に従って厳密に実装する必要があります。この点で、インターフェイスはコントラクトを表しています。</span><span class="sxs-lookup"><span data-stu-id="b2485-259">An interface represents a contract, in that a class that implements an interface must implement every aspect of that interface exactly as it is defined.</span></span>  
   
  <span data-ttu-id="b2485-260">インターフェイスを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-260">To define an interface:</span></span>  
@@ -377,7 +377,7 @@ class SampleClass : ISampleInterface
   
  [<span data-ttu-id="b2485-264">interface</span><span class="sxs-lookup"><span data-stu-id="b2485-264">interface</span></span>](../../../csharp/language-reference/keywords/interface.md)  
   
-##  <span data-ttu-id="b2485-265"><a name="Generics"></a> ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b2485-265"><a name="Generics"></a> Generics</span></span>  
+##  <a name="Generics"></a> <span data-ttu-id="b2485-265">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b2485-265">Generics</span></span>  
  <span data-ttu-id="b2485-266">.NET Framework のクラス、構造体、インターフェイス、およびメソッドは、格納または使用できるオブジェクトの型を定義する "*型パラメーター*" を含むことができます。</span><span class="sxs-lookup"><span data-stu-id="b2485-266">Classes, structures, interfaces and methods in the .NET Framework can include *type parameters* that define types of objects that they can store or use.</span></span> <span data-ttu-id="b2485-267">ジェネリックの最も一般的な例として、コレクションがあります。コレクションには、その中に格納されるオブジェクトの型を指定できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-267">The most common example of generics is a collection, where you can specify the type of objects to be stored in a collection.</span></span>  
   
  <span data-ttu-id="b2485-268">ジェネリック クラスを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b2485-268">To define a generic class:</span></span>  
@@ -402,7 +402,7 @@ sampleObject.Field = "Sample string";
   
 -   [<span data-ttu-id="b2485-272">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b2485-272">Generics</span></span>](../../../csharp/programming-guide/generics/index.md)  
   
-##  <span data-ttu-id="b2485-273"><a name="Delegates"></a> デリゲート</span><span class="sxs-lookup"><span data-stu-id="b2485-273"><a name="Delegates"></a> Delegates</span></span>  
+##  <a name="Delegates"></a> <span data-ttu-id="b2485-273">デリゲート</span><span class="sxs-lookup"><span data-stu-id="b2485-273">Delegates</span></span>  
  <span data-ttu-id="b2485-274">"*デリゲート*" は、メソッド シグネチャを定義する型であり、互換性のあるシグネチャを持つ任意のメソッドへの参照を提供できます。</span><span class="sxs-lookup"><span data-stu-id="b2485-274">A *delegate* is a type that defines a method signature, and can provide a reference to any method with a compatible signature.</span></span> <span data-ttu-id="b2485-275">メソッドは、デリゲートを使用して起動する (呼び出す) ことができます。</span><span class="sxs-lookup"><span data-stu-id="b2485-275">You can invoke (or call) the method through the delegate.</span></span> <span data-ttu-id="b2485-276">デリゲートは、他のメソッドへの引数としてメソッドを渡すために使用されます。</span><span class="sxs-lookup"><span data-stu-id="b2485-276">Delegates are used to pass methods as arguments to other methods.</span></span>  
   
 > [!NOTE]

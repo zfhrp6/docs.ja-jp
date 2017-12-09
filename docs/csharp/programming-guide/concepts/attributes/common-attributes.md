@@ -28,7 +28,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [<span data-ttu-id="f6aa7-107">呼び出し元情報属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-107">Caller Info Attributes</span></span>](#CallerInfo)  
   
-##  <span data-ttu-id="f6aa7-108"><a name="Global"></a> グローバル属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-108"><a name="Global"></a> Global Attributes</span></span>  
+##  <a name="Global"></a> <span data-ttu-id="f6aa7-108">グローバル属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-108">Global Attributes</span></span>  
  <span data-ttu-id="f6aa7-109">ほとんどの属性は、クラスやメソッドなど、特定の言語要素に適用されます。ただし、属性の中にはグローバルなものがあり、アセンブリまたはモジュール全体に適用されます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-109">Most attributes are applied to specific language elements such as classes or methods; however, some attributes are global—they apply to an entire assembly or module.</span></span> <span data-ttu-id="f6aa7-110">たとえば、<xref:System.Reflection.AssemblyVersionAttribute> 属性は、次のように、バージョン情報をアセンブリに埋め込むときに使用できます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-110">For example, the <xref:System.Reflection.AssemblyVersionAttribute> attribute can be used to embed version information into an assembly, like this:</span></span>  
   
 ```csharp  
@@ -80,7 +80,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|<span data-ttu-id="f6aa7-152">アセンブリ マニフェストのアセンブリの構成 (製品版やデバッグなど) を指定するカスタム属性を定義します。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-152">Defines a custom attribute that specifies an assembly configuration (such as retail or debug) for an assembly manifest.</span></span>|  
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|<span data-ttu-id="f6aa7-153">アセンブリ マニフェストのわかりやすい既定の別名を定義します。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-153">Defines a friendly default alias for an assembly manifest</span></span>|  
   
-##  <span data-ttu-id="f6aa7-154"><a name="Obsolete"></a> Obsolete 属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-154"><a name="Obsolete"></a> Obsolete Attribute</span></span>  
+##  <a name="Obsolete"></a> <span data-ttu-id="f6aa7-154">Obsolete 属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-154">Obsolete Attribute</span></span>  
  <span data-ttu-id="f6aa7-155">`Obsolete` 属性は、使用が推奨されなくなったプログラム エンティティをマークします。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-155">The `Obsolete` attribute marks a program entity as one that is no longer recommended for use.</span></span> <span data-ttu-id="f6aa7-156">その後、非推奨の印が付いたエンティティが使用されるたびに、この属性の構成に従って警告かエラーが生成されます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-156">Each use of an entity marked obsolete will subsequently generate a warning or an error, depending on how the attribute is configured.</span></span> <span data-ttu-id="f6aa7-157">例:</span><span class="sxs-lookup"><span data-stu-id="f6aa7-157">For example:</span></span>  
   
 ```csharp  
@@ -119,7 +119,7 @@ b.NewMethod();
   
  <span data-ttu-id="f6aa7-165">`Obsolete` 属性は、1 回だけ使用できる属性であり、属性を使用できる任意のエンティティに適用できます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-165">The `Obsolete` attribute is a single-use attribute and can be applied to any entity that allows attributes.</span></span> <span data-ttu-id="f6aa7-166">`Obsolete` は <xref:System.ObsoleteAttribute> の別名です。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-166">`Obsolete` is an alias for <xref:System.ObsoleteAttribute>.</span></span>  
   
-##  <span data-ttu-id="f6aa7-167"><a name="Conditional"></a> Conditional 属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-167"><a name="Conditional"></a> Conditional Attribute</span></span>  
+##  <a name="Conditional"></a> <span data-ttu-id="f6aa7-167">Conditional 属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-167">Conditional Attribute</span></span>  
  <span data-ttu-id="f6aa7-168">`Conditional` 属性を使用すると、プリプロセス識別子に依存したメソッドの実行を指定できます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-168">The `Conditional` attribute makes the execution of a method dependent on a preprocessing identifier.</span></span> <span data-ttu-id="f6aa7-169">`Conditional` 属性は <xref:System.Diagnostics.ConditionalAttribute> の別名であり、メソッドまたは属性クラスに適用できます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-169">The `Conditional` attribute is an alias for <xref:System.Diagnostics.ConditionalAttribute>, and can be applied to a method or an attribute class.</span></span>  
   
  <span data-ttu-id="f6aa7-170">この例では、`Conditional` は、プログラム固有の診断情報の表示を有効または無効にするメソッドに適用されています。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-170">In this example, `Conditional` is applied to a method to enable or disable the display of program-specific diagnostic information:</span></span>  
@@ -224,7 +224,7 @@ class SampleClass
 }  
 ```  
   
-##  <span data-ttu-id="f6aa7-185"><a name="CallerInfo"></a> 呼び出し元情報属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-185"><a name="CallerInfo"></a> Caller Info Attributes</span></span>  
+##  <a name="CallerInfo"></a> <span data-ttu-id="f6aa7-185">呼び出し元情報属性</span><span class="sxs-lookup"><span data-stu-id="f6aa7-185">Caller Info Attributes</span></span>  
  <span data-ttu-id="f6aa7-186">呼び出し元情報の属性を使用すると、メソッドへの呼び出し元に関する情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-186">By using Caller Info attributes, you can obtain information about the caller to a method.</span></span> <span data-ttu-id="f6aa7-187">ソース コードのファイル パス、ソース コードの行番号、呼び出し元のメンバー名を取得できます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-187">You can obtain the file path of the source code, the line number in the source code, and the member name of the caller.</span></span>  
   
  <span data-ttu-id="f6aa7-188">メンバー呼び出し元情報を取得するには、省略可能なパラメーターに適用される属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-188">To obtain member caller information, you use attributes that are applied to optional parameters.</span></span> <span data-ttu-id="f6aa7-189">省略可能な各パラメーターでは既定値が指定されます。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-189">Each optional parameter specifies a default value.</span></span> <span data-ttu-id="f6aa7-190">次の表は、<xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 名前空間で定義されている呼び出し元情報の属性の一覧です。</span><span class="sxs-lookup"><span data-stu-id="f6aa7-190">The following table lists the Caller Info attributes that are defined in the <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> namespace:</span></span>  
