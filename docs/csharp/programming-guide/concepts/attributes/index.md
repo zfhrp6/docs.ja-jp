@@ -11,11 +11,11 @@ ms.assetid: f148f13f-a0d5-4f22-9c87-4b73d5dde270
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2993ef3f424aa6487681e194f21e0f82193342ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f9fc23cf7afbd28f0c9ae438cbce298cbf362fbd
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="attributes-c"></a>属性 (C#)
 属性は、メタデータまたは宣言型の情報を、コード (アセンブリ、型、メソッド、プロパティなど) に関連付けるための優れた方法です。 属性をプログラム要素に関連付けると、*リフレクション*と呼ばれる手法を使用して、実行時にその属性を照会することができます。 詳細については、「[リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)」を参照してください。  
@@ -182,4 +182,4 @@ int Method3() { return 0; }
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
  [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
- [属性](https://msdn.microsoft.com/library/5x6cd29c)
+ [属性](../../../../../docs/standard/attributes/index.md)
