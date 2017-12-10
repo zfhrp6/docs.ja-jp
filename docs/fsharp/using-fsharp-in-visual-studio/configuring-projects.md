@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 8b2ed206-34e4-4256-a6ce-0c2499561165
-ms.openlocfilehash: d2a92f725c40443c8dc6af593d28deccd3ee88de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f56fed1e16b4de1d97766f37cb1c72297d5502d5
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="configuring-projects-in-visual-studio"></a>Visual Studio でプロジェクトを構成します。
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/21/2017
 |`Build`|[ビルド ページ、プロジェクト デザイナー &#40;です。C# 35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|使用すると、コードをコンパイルする方法を制御できます。|
 |`Build Events`|[ビルド イベント ページ、プロジェクト デザイナー &#40;です。C# 35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|使用すると、コンパイル時の前後に実行するコマンドを指定できます。|
 |`Debug`|[[デバッグ] ページ (プロジェクト デザイナー)](https://msdn.microsoft.com/library/2wcdezs5.aspx)|デバッグ中にアプリケーションを実行する方法を制御できます。 新機能が含まれます、アプリケーションの開始ディレクトリを使用するコマンドラインと特殊なデバッグ モードをネイティブ コードと SQL など、有効にします。|
-|`Reference Paths`|[プロジェクト内の参照の管理](https://msdn.microsoft.com/library/ez524kew.aspx)|使用すると、コードが依存しているアセンブリを検索する場所を指定します。|
+|`Reference Paths`|[プロジェクト内の参照の管理](/visualstudio/ide/managing-references-in-a-project)|使用すると、コードが依存しているアセンブリを検索する場所を指定します。|
 
 ## <a name="f-specific-settings"></a>F# の特定の設定
 次の表は、f# に固有の設定をまとめます。

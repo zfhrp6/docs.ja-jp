@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 6fbb6ccc-248f-4226-95e9-f6f99541dbe4
-ms.openlocfilehash: 50e0a2bb6378c82b5c6425589da8a982b5fc496a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a919c2acb2b5b8c2ce93124f2f541bd092d15c35
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="walkthrough-generating-f-types-from-a-dbml-file"></a>チュートリアル : DBML ファイルからの F# 型の生成
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 10/18/2017
 > [!NOTE]
 API リファレンス リンクで msdn を実行します。  docs.microsoft.com API リファレンスは完全ではありません。
 
-F# 3.0 に関するこのチュートリアルでは、スキーマ情報を格納する .dbml ファイルにエンコードがある場合、データベースからデータの型を作成する方法について説明します。 LINQ to SQL では、このファイル形式を使用して、データベース スキーマを表します。 オブジェクト リレーショナル (O/R) のデザイナーを使用して Visual Studio での LINQ to SQL スキーマ ファイルを生成できます。 詳細については、次を参照してください。 [O/r デザイナーの概要](https://msdn.microsoft.com/library/bb384511.aspx)と[LINQ to SQL でのコード生成](https://msdn.microsoft.com/library/bb386976)です。
+F# 3.0 に関するこのチュートリアルでは、スキーマ情報を格納する .dbml ファイルにエンコードがある場合、データベースからデータの型を作成する方法について説明します。 LINQ to SQL では、このファイル形式を使用して、データベース スキーマを表します。 オブジェクト リレーショナル (O/R) のデザイナーを使用して Visual Studio での LINQ to SQL スキーマ ファイルを生成できます。 詳細については、次を参照してください。 [O/r デザイナーの概要](https://msdn.microsoft.com/library/bb384511.aspx)と[LINQ to SQL でのコード生成](../../../../docs/framework/data/adonet/sql/linq/index.md)です。
 
 データベース マークアップ言語 (DBML) 型プロバイダーでは、コンパイル時に静的な接続文字列を指定する必要がなく、データベース スキーマに基づいた型を使用するコードを記述することができます。 最終のアプリケーションが別のデータベース、別の資格情報、またはよりも、アプリケーションの開発に使用する 1 つの異なる接続文字列に使用することを許可する必要がある場合に便利にすることができます。 コンパイル時に使用できるデータベースに直接接続があり、これは、同じデータベースと資格情報を最終的にビルドされたアプリケーションで使用する場合も、SQLDataConnection 型プロバイダーを使用することができます。 詳細については、次を参照してください。[チュートリアル: 型プロバイダーを使用して SQL データベースへのアクセス](accessing-a-sql-database.md)です。
 

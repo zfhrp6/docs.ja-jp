@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: a1d6315c2546de12e85efdd06cf2520605cb6e91
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.openlocfilehash: 58003c88baf0f8aeea1a511334b99bd0295f8bf1
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="tutorial-creating-a-type-provider"></a>チュートリアル: 型プロバイダーを作成します。
 
@@ -169,7 +169,7 @@ devenv.exe /debugexe fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 
 代わりに、Visual Studio を開き、[デバッグ] メニューを開き、選択`Debug/Attach to process…`、別にアタッチして`devenv`スクリプトを編集しているプロセスです。 この方法を使用すると、2 番目のインスタンス (IntelliSense およびその他の機能をすべて備えている) に式を対話形式で入力できるので、型プロバイダー内の特定のロジックを簡単に対象とすることができます。
 
-生成されたコード内のエラーを特定しやすくするために、マイ コードのみのデバッグを無効にできます。 有効またはこの機能を無効にする方法については、次を参照してください。[デバッガーでのコードを移動する](https://msdn.microsoft.com/library/y740d9d3.aspx)です。 また、設定することも開くことによってキャッチ初回例外、`Debug`メニュー選択して`Exceptions`を開くには、Ctrl + Alt + E キーを選択して、 `Exceptions`  ダイアログ ボックス。 そのダイアログ ボックスで `Common Language Runtime Exceptions`を選択、`Thrown`チェック ボックスをオンします。
+生成されたコード内のエラーを特定しやすくするために、マイ コードのみのデバッグを無効にできます。 有効またはこの機能を無効にする方法については、次を参照してください。[デバッガーでのコードを移動する](/visualstudio/debugger/navigating-through-code-with-the-debugger)です。 また、設定することも開くことによってキャッチ初回例外、`Debug`メニュー選択して`Exceptions`を開くには、Ctrl + Alt + E キーを選択して、 `Exceptions`  ダイアログ ボックス。 そのダイアログ ボックスで `Common Language Runtime Exceptions`を選択、`Thrown`チェック ボックスをオンします。
 
 
 ### <a name="implementation-of-the-type-provider"></a>型プロバイダーの実装

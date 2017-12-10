@@ -14,11 +14,11 @@ ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4d52ade26bc249625a77720fe05ad9c1ab58b04f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4177b9da15bb89f37a7b3cbb27937e09d1c12635
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="platform-visual-basic"></a>/platform (Visual Basic)
 出力ファイルをどのプラットフォーム用の共通言語ランタイム (CLR) で実行するかを指定します。  
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/21/2017
   
 -   `/platform:anycpu32bitpreferred` でコンパイルされた実行可能ファイルは、32 ビット CLR で実行されます。  
   
- 64 ビット バージョンの Windows で実行するアプリケーションを開発する方法の詳細については、次を参照してください。 [64 ビット アプリケーション](https://msdn.microsoft.com/library/ms241064)です。  
+ 64 ビット バージョンの Windows で実行するアプリケーションを開発する方法の詳細については、次を参照してください。 [64 ビット アプリケーション](../../../../docs/framework/64-bit-apps.md)です。  
   
 ### <a name="to-set-platform-in-the-visual-studio-ide"></a>Visual Studio IDE で /platform を設定するには  
   

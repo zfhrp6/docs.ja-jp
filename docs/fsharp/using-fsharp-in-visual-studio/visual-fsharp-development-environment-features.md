@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 809e9a34-b271-4c87-8356-2426b44f4721
-ms.openlocfilehash: bcba1e5d1cae1c610525c51bdbdd54088359e79a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 05727bf11eccfd64f823dd280b1a19210815ca5a
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="visual-f-development-environment-features"></a>Visual F# の開発環境の機能
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 11/21/2017
 |セキュリティ (信頼レベルの変更)|いいえ||
 
 ## <a name="code-and-text-editor-features"></a>コードとテキスト エディターの機能
-Visual Studiocode とテキスト エディターの次の機能は、f# でサポートされます。 Visual Studio、およびテキスト エディターの機能のコードの編集の詳細については、次を参照してください。[コード エディターとテキスト エディターでコードを記述](https://msdn.microsoft.com/library/efc4xwkb.aspx)です。
+Visual Studiocode とテキスト エディターの次の機能は、f# でサポートされます。 Visual Studio、およびテキスト エディターの機能のコードの編集の詳細については、次を参照してください。[コード エディターとテキスト エディターでコードを記述](/visualstudio/ide/writing-code-in-the-code-and-text-editor)です。
 
 |特性|説明|F# でサポートされているか。|
 |-------|-----------|----------------|
@@ -58,18 +58,18 @@ Visual Studiocode とテキスト エディターの次の機能は、f# でサ�
 |自動的に書式設定します。|標準のインデントとスタイルでコードを再フォーマットします。|いいえ|
 |ブックマーク|エディターでの場所を保存できます。|はい|
 |インデントを変更します。|インデントを設定または選択した行のインデントを設定解除します。|はい|
-|[テキストの検索と置換](https://msdn.microsoft.com/library/139eef4h.aspx)|使用すると、ファイル、プロジェクト、またはソリューションで検索し、可能性のあるテキストを変更できます。|はい|
+|[テキストの検索と置換](/visualstudio/ide/finding-and-replacing-text)|使用すると、ファイル、プロジェクト、またはソリューションで検索し、可能性のあるテキストを変更できます。|はい|
 |.NET Framework API の定義へ移動します。|.NET Framework API のカーソルの位置が、.NET Framework メタデータから生成されたコードを示します。|いいえ|
 |ユーザー定義の API の定義へ移動します。|エンティティが定義されているコード内の場所にカーソルを移動、定義したプログラム エンティティにカーソルがあるときです。|はい|
 |[指定行へのジャンプ]|行番号を指定してファイルの特定の行に移動できます。|はい|
 |ファイルの上部にあるナビゲーション バー|ジャンプするコードでは、場所、たとえば、関数名を有効にします。|はい|
-|アウトライン 参照してください[アウトライン](https://msdn.microsoft.com/library/td6a5x4s.aspx)です。|使用するよりコンパクトなビューを作成するコードのセクションを折りたたんだりできます。|はい|
+|アウトライン 参照してください[アウトライン](/visualstudio/ide/outlining)です。|使用するよりコンパクトなビューを作成するコードのセクションを折りたたんだりできます。|はい|
 |タブを設定します。|スペースをタブに変換します。|はい|
 |型の色づけ|表示は、特別な色で型の名前を定義します。|はい|
 |クイック検索します。 クイック検索 検索し、置換 ウィンドウを参照してください。|ファイルまたはプロジェクトで検索できます。|はい|
 
 ## <a name="intellisense-features"></a>IntelliSense 機能
-次の表は、IntelliSense の機能サポートし、f# でサポートされていません。 IntelliSense の詳細については、次を参照してください。 [IntelliSense の使用](https://msdn.microsoft.com/library/hcw1s69b.aspx)です。
+次の表は、IntelliSense の機能サポートし、f# でサポートされていません。 IntelliSense の詳細については、次を参照してください。 [IntelliSense の使用](/visualstudio/ide/using-intellisense)です。
 
 |特性|説明|F# でサポートされているか。|
 |-------|-----------|----------------|
@@ -108,10 +108,10 @@ Visual Studio 2012 で f# コードのリファクタリングはサポートさ
 |呼び出し階層|コードで関数の入れ子になった構造体の呼び出しを表示します。|いいえ|
 |コード メトリックス|行の数など、コードに関する情報を収集します。|いいえ|
 |クラス ビュー|プロジェクト内のコードの種類ベースのビューを提供します。|いいえ|
-|[[エラー一覧] ウィンドウ](https://msdn.microsoft.com/library/33df3b7a.aspx)|コードでは、エラーの一覧を示します。|はい|
+|[[エラー一覧] ウィンドウ](/visualstudio/ide/reference/error-list-window)|コードでは、エラーの一覧を示します。|はい|
 |[F# Interactive](../tutorials/fsharp-interactive/index.md)|入力 (またはコピーして貼り付ける) f# コードおよびプロジェクトのビルドとは無関係に、すぐに実行できるようにします。 F# Interactive ウィンドウは、読み取り、Evaluate、Print ループ (REPL) です。|はい|
 |オブジェクト ブラウザー|使用すると、アセンブリ内の型を表示できます。|F# の型コンパイル済みアセンブリに表示されるとおりに表示されない正確にそれらを作成します。 F# の型のコンパイル済み表現を参照することができますが、F# から表示される種類を表示することはできません。|
-|[[出力] ウィンドウ](https://msdn.microsoft.com/library/3hk6fby3.aspx)|ビルド出力を表示します。|はい|
+|[[出力] ウィンドウ](/visualstudio/ide/reference/output-window)|ビルド出力を表示します。|はい|
 |パフォーマンスの分析|コードのパフォーマンスを測定するためのツールを提供します。|はい|
 |プロパティ ウィンドウ|表示し、フォーカスのある開発環境でオブジェクトのプロパティの編集を有効にします。|はい|
 |[サーバー エクスプ ローラー](https://msdn.microsoft.com/library/x603htbk.aspx)|さまざまなサーバー リソースと対話する方法を提供します。|はい|

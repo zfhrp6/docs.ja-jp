@@ -14,11 +14,11 @@ ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
 caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 33c9bdf3cf055ea005542f8b2471963b16c16122
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b7f41b659399ae5a12663d4e359c02606bb6f952
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="keyfile"></a>T:System.Reflection.AssemblyKeyFileAttribute
 アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。  
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
  キー ファイルには公開キーだけが含まれる場合があることに注意してください。  
   
- 参照してください[作成と使用](https://msdn.microsoft.com/library/xwb8f617)アセンブリに署名する方法についてです。  
+ 参照してください[作成と使用](../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)アセンブリに署名する方法についてです。  
   
 > [!NOTE]
 >  `/keyfile`オプションは内から使用できません、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]開発環境は、コマンドラインからコンパイルするときにのみ使用します。  

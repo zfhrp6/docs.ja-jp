@@ -21,11 +21,11 @@ ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
 caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 64e01fdfc4951dc23cd7ce92941a367882b3b6bb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a7882614b9663d1c38f137f7a69054d5bbd50b19
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Visual Basic における LINQ の概要
 統合言語クエリ (LINQ: Language-Integrated Query) は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] にクエリ機能を追加します。この単純かつ強力な機能を使用して、あらゆる種類のデータを操作できます。 処理の対象であるデータベースにクエリを送信したり、検索するデータの種類ごとに異なるクエリ構文を使用したりする代わりに、LINQ では、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語の一部としてのクエリを採用しています。 LINQ では、データの型に関係なく、統一された構文を使用します。  
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/21/2017
 |プロバイダー|説明|  
 |---|---|  
 |LINQ to Objects|LINQ to Objects プロバイダーは、インメモリ コレクションとインメモリ配列のクエリを可能にします。 オブジェクトが <xref:System.Collections.IEnumerable> インターフェイスまたは <xref:System.Collections.Generic.IEnumerable%601> インターフェイスをサポートしている場合、LINQ to Objects プロバイダーを使用してクエリを実行できます。<br /><br /> LINQ to Objects プロバイダーは、<xref:System.Linq> 名前空間をインポートすることで有効にできます。この名前空間は、すべての [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プロジェクトに対して既定でインポートされます。<br /><br /> LINQ to Objects プロバイダーの詳細については、次を参照してください。 [LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)です。|  
-|LINQ to SQL|LINQ to SQL プロバイダーは、SQL Server データベース内のデータのクエリと変更を可能にします。 これにより、アプリケーションのオブジェクト モデルを、データベース内のテーブルとオブジェクトに簡単に対応付けることができます。<br /><br /> [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、オブジェクト リレーショナル デザイナー (O/R デザイナー) を用意することで、LINQ to SQL の操作を容易にしています。 このデザイナーを使用して、データベース内のオブジェクトに対応付けられるアプリケーション内のオブジェクト モデルを作成します。 O/R デザイナーもストアド プロシージャにマップする機能を提供し、関数、<xref:System.Data.Linq.DataContext>データベースとの通信を管理およびオプティミスティック同時実行チェックの状態を格納するオブジェクト。<br /><br /> LINQ to SQL プロバイダーの詳細については、次を参照してください。 [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)です。 オブジェクト リレーショナル デザイナーの詳細については、次を参照してください。 [LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。|  
+|LINQ to SQL|LINQ to SQL プロバイダーは、SQL Server データベース内のデータのクエリと変更を可能にします。 これにより、アプリケーションのオブジェクト モデルを、データベース内のテーブルとオブジェクトに簡単に対応付けることができます。<br /><br /> [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、オブジェクト リレーショナル デザイナー (O/R デザイナー) を用意することで、LINQ to SQL の操作を容易にしています。 このデザイナーを使用して、データベース内のオブジェクトに対応付けられるアプリケーション内のオブジェクト モデルを作成します。 O/R デザイナーもストアド プロシージャにマップする機能を提供し、関数、<xref:System.Data.Linq.DataContext>データベースとの通信を管理およびオプティミスティック同時実行チェックの状態を格納するオブジェクト。<br /><br /> LINQ to SQL プロバイダーの詳細については、次を参照してください。 [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)です。 オブジェクト リレーショナル デザイナーの詳細については、次を参照してください。 [LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。|  
 |LINQ to XML|LINQ to XML プロバイダーは、XML のクエリと変更を可能にします。 インメモリ XML を変更することや、XML をファイルから読み込んだりファイルに保存したりすることができます。<br /><br /> さらに、LINQ to XML プロバイダーでは、XML リテラルと XML 軸プロパティを使用して、XML を [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コード内に直接記述できます。 詳細については、次を参照してください。 [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)です。|  
 |LINQ to DataSet|LINQ to DataSet プロバイダーを使用するとクエリおよび更新データを[!INCLUDE[vstecado](~/includes/vstecado-md.md)]データセット。 データセットを使用するアプリケーションに LINQ を追加することで、データセット内のデータのクエリ、集計、および更新などの機能を単純化すると同時に拡張できます。<br /><br /> 詳細については、「[LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)」を参照してください。|  
   
@@ -82,7 +82,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrIntroToLINQ#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_3.vb)]  
   
- この例はそのままでも有効なクエリですが、結果を絞り込むクエリ句を追加すると、はるかに強力なクエリになります。 たとえば、`Where` 句を追加して、結果を 1 つ以上の値でフィルター処理できます。 クエリ式は、1 行のコードです。追加のクエリ句は、クエリの末尾に単純に追加できます。 クエリを読みやすくするために、行連結文字のアンダースコア (_) を使用して、複数のテキスト行に分割できます。 次のコード例は、`Where` 句を含むクエリの例を示しています。  
+ この例はそのままでも有効なクエリですが、結果を絞り込むクエリ句を追加すると、はるかに強力なクエリになります。 たとえば、`Where` 句を追加して、結果を 1 つ以上の値でフィルター処理できます。 クエリ式は、1 行のコードです。追加のクエリ句は、クエリの末尾に単純に追加できます。 クエリを分割するには、アンダー スコアを使用して、読みやすさを向上させるためにテキストの複数の行 (\_) 行連結文字です。 次のコード例は、`Where` 句を含むクエリの例を示しています。  
   
  [!code-vb[VbVbalrIntroToLINQ#3](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/introduction-to-linq_4.vb)]  
   
@@ -173,7 +173,7 @@ ms.lasthandoff: 11/21/2017
 |[XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] における XML の機能について説明します。これらの機能を使用して照会を行い、XML を最初のクラスのデータ オブジェクトとして [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コード内に記述できます。|  
 |[クエリ](../../../../visual-basic/language-reference/queries/queries.md)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で使用できるクエリ句のリファレンス情報を示します。|  
 |[統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)|LINQ の概要、プログラミング ガイド、およびサンプルを示します。|  
-|[LINQ to SQL](https://msdn.microsoft.com/library/bb386976)|LINQ to SQL の概要、プログラミング ガイド、およびサンプルを示します。|  
+|[LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)|LINQ to SQL の概要、プログラミング ガイド、およびサンプルを示します。|  
 |[LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)|LINQ to Objects の概要、プログラミング ガイド、およびサンプルを示します。|  
 |[LINQ to ADO.NET (ポータル ページ)](http://msdn.microsoft.com/library/dd7d3c6a-ff98-47e9-a1a7-2d4cfc42d150)|LINQ to [!INCLUDE[vstecado](~/includes/vstecado-md.md)] の概要、プログラミング ガイド、およびサンプルへのリンクを示します。|  
 |[LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)|LINQ to XML の概要、プログラミング ガイド、およびサンプルを示します。|  
@@ -204,6 +204,6 @@ ms.lasthandoff: 11/21/2017
  [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
  [Visual Basic における LINQ to XML の概要](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
  [LINQ to DataSet の概要](../../../../framework/data/adonet/linq-to-dataset-overview.md)  
- [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)  
+ [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
  [Visual Studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
  [DataContext メソッド (O/R デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

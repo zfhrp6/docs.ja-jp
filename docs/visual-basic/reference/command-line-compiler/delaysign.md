@@ -14,11 +14,11 @@ ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6c42e351808281d90eafdb6e61a3f1736ef15c9d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: dc457a1a32048441f82976488158f223e7e3e087
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="delaysign"></a>T:System.Reflection.AssemblyDelaySignAttribute
 アセンブリに完全に署名するか、部分的に署名するかを指定します。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/21/2017
   
  たとえばを使用して`/delaysign+`組織内の開発者は、テスト担当者がグローバル アセンブリ キャッシュに登録して使用するアセンブリのバージョンの符号なしのテストを配布できます。 アセンブリでの作業が完了したら、組織の秘密キーの責任者は、アセンブリを完全署名できます。 この区分は、すべての開発者が、アセンブリに作業しながら、情報の漏えいから組織の秘密キーを保護します。  
   
- 参照してください[作成と使用](https://msdn.microsoft.com/library/xwb8f617)アセンブリに署名する方法についてです。  
+ 参照してください[作成と使用](../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)アセンブリに署名する方法についてです。  
   
 ### <a name="to-set-delaysign-in-the-visual-studio-integrated-development-environment"></a>Visual Studio で/delaysign を設定するには、統合開発環境  
   

@@ -15,11 +15,11 @@ ms.assetid: f5a72143-c268-4dff-a019-974ad940e17d
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d9347f7771e0e86f9a19cbec94ef59dcf1bdb250
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 28ec54dc062d4fdea4836b0ecc8699982dace623
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>.NET Framework アプリケーションにおける COM 相互運用性 (Visual Basic)
 同じアプリケーションの COM オブジェクトと .NET Framework オブジェクトを使用する場合は、オブジェクトがメモリ内に存在する方法の違いに対処する必要があります。 .NET Framework オブジェクトは、マネージ メモリにある: 共通言語ランタイムによって制御されるメモリ:、必要に応じて、ランタイムによって移動することがあります。 COM オブジェクトでは、アンマネージ メモリ内にあるし、別のメモリ位置に移動するものではありません。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]および[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]これらの相互作用を制御するためのツールがマネージし、アンマネージ コンポーネントを提供します。 マネージ コードの詳細については、次を参照してください。[共通言語ランタイム](../../../standard/clr.md)です。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 10/22/2017
  [COM 相互運用ラッパー エラー](/cpp/misc/com-interop-wrapper-error)  
  プロジェクト システムは、特定のコンポーネントの COM 相互運用ラッパーを作成できない場合の結果とオプションについて説明します。  
   
- [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)  
+ [アンマネージ コードとの相互運用](../../../../docs/framework/interop/index.md)  
  簡単な説明、マネージとアンマネージ コード間の相互作用の問題の一部と、さらに調査へのリンクを示します。  
   
  [COM ラッパー](../../../framework/interop/com-wrappers.md)  

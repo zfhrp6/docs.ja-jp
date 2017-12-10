@@ -11,14 +11,14 @@ ms.assetid: d991bc0f-d16a-4ac5-9351-70e5c5b9891b
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b7b94e25d2ca9563cd50f454c94092f18e295863
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8c2ae87eae971129059a7e84b36971c13a5fe71b
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="reflection-visual-basic"></a>リフレクション (Visual Basic)
-リフレクションは、アセンブリ、モジュール、および型を記述する (<xref:System.Type> 型の) オブジェクトを提供します。 リフレクションを使用すると、動的に型のインスタンスを作成したり、作成したインスタンスを既存のオブジェクトにバインドしたり、さらに既存のオブジェクトから型を取得してそのオブジェクトのメソッドを呼び出したり、フィールドやプロパティにアクセスしたりできます。 コードで属性を使用している場合は、リフレクションを使用してそれらにアクセスできます。 詳細については、「[属性](https://msdn.microsoft.com/library/5x6cd29c)」を参照してください。  
+リフレクションは、アセンブリ、モジュール、および型を記述する (<xref:System.Type> 型の) オブジェクトを提供します。 リフレクションを使用すると、動的に型のインスタンスを作成したり、作成したインスタンスを既存のオブジェクトにバインドしたり、さらに既存のオブジェクトから型を取得してそのオブジェクトのメソッドを呼び出したり、フィールドやプロパティにアクセスしたりできます。 コードで属性を使用している場合は、リフレクションを使用してそれらにアクセスできます。 詳細については、「[属性](../../../../docs/standard/attributes/index.md)」を参照してください。  
   
  次の例は、`GetType` メソッドを使用して変数の型を取得する簡単なリフレクションを示しています。このメソッドは、`Object` 基底クラスからすべての型に継承される静的メソッドです。  
   
@@ -71,4 +71,4 @@ System.Console.WriteLine(info)
   
 ## <a name="see-also"></a>関連項目  
  [Visual Basic プログラミング ガイド](../../../visual-basic/programming-guide/index.md)  
- [共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)
+ [共通言語ランタイムのアセンブリ](../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

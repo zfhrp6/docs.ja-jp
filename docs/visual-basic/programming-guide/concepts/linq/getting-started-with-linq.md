@@ -18,11 +18,11 @@ ms.assetid: 53c66373-ff43-431f-b4bb-f98362830279
 caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 02672e88709dbe01aedcc31c76819728ca30dfb9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 53087db3225ffd66be39a496057758cfc80d27b6
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="getting-started-with-linq-in-visual-basic"></a>Visual Basic の LINQ の概要
 このセクションには、概要、例、および Visual Basic および統合言語クエリ (LINQ) を使用する際に役立つ背景情報が含まれています。  
@@ -53,7 +53,7 @@ ms.lasthandoff: 10/18/2017
  [LINQ to DataSet の概要](../../../../framework/data/adonet/linq-to-dataset-overview.md)  
  データセットには、LINQ の概要を提供します。  
   
- [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)  
+ [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
  SQL テクノロジに、LINQ をについて説明し、LINQ to SQL を使用するのに役立つトピックへのリンクを提供します。  
   
  [Visual Studio IDE およびツールの LINQ のサポート (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md)  

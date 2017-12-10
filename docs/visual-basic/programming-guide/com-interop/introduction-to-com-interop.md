@@ -14,11 +14,11 @@ ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 81a9d0fc7036ff1b821c46687541311f26113212
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 13df7dc6b325b97411b910c0fc8e05e65a332dc5
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>COM 相互運用の概要 (Visual Basic)
 コンポーネント オブジェクト モデル (COM) は、他のコンポーネントおよびホスト アプリケーションには、その機能を公開するオブジェクトを付与します。 COM オブジェクトは、Windows 長年にわたってプログラミングの基本されていますが、共通言語ランタイム (CLR) 用に設計されたアプリケーションでは、多くの利点が提供しています。  
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="see-also"></a>関連項目  
  [COM 相互運用](../../../visual-basic/programming-guide/com-interop/index.md)  
  [チュートリアル : COM オブジェクトによる継承の実装](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)  
+ [アンマネージ コードとの相互運用](../../../../docs/framework/interop/index.md)  
  [相互運用性のトラブルシューティング](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
  [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
  [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  

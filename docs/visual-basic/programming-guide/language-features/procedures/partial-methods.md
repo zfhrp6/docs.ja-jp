@@ -20,11 +20,11 @@ ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
 caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8ebedd6f8173e3c349240d24ddaf16e4841f67a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 975a86e33eb5744f94cd58efb227bf52eb07c1e8
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="partial-methods-visual-basic"></a>部分メソッド (Visual Basic)
 部分メソッドでは、開発者はカスタム ロジックをコードに挿入を有効にします。 通常、コードは、デザイナーで生成されたクラスの一部です。 部分メソッドはコード ジェネレーターによって作成される部分クラスで定義され、何かが変更されたことを通知によく使用されます。 開発者は、変更に応じて、カスタム動作を指定できます。  
@@ -83,5 +83,5 @@ End Sub
  [Sub プロシージャ](./sub-procedures.md)  
  [省略可能なパラメーター](./optional-parameters.md)  
  [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)  
- [LINQ to SQL でのコード生成](https://msdn.microsoft.com/library/bb399400)  
- [部分メソッドを使用してビジネス ロジックを追加します。](https://msdn.microsoft.com/library/bb546176)
+ [LINQ to SQL でのコード生成](../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [部分メソッドを使用してビジネス ロジックを追加します。](../../../../../docs/framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)

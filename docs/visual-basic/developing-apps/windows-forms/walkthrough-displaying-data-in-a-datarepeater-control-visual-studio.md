@@ -13,11 +13,11 @@ ms.assetid: 65dcdb95-6c3e-47cc-987d-190000f71653
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 39c3b56404c981e674766354463e23aa349994cf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6f0cf690b816d57dc4a2646eb82d649727d033a9
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="walkthrough-displaying-data-in-a-datarepeater-control-visual-studio"></a>チュートリアル : DataRepeater コントロールでのデータの表示 (Visual Studio)
 このチュートリアルでは、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールにバインドされたデータを表示する基本的なシナリオ全体を示します。  
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="prerequisite"></a>必須コンポーネント  
  このチュートリアルには、Northwind サンプル データベースが必要です。  
   
- 開発用コンピューターにこのデータベースがない場合は、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088)からダウンロードできます。 手順については、次を参照してください。[サンプル データベースのダウンロード](https://msdn.microsoft.com/library/bb399411)です。  
+ 開発用コンピューターにこのデータベースがない場合は、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088)からダウンロードできます。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
 ## <a name="overview"></a>概要  
  このチュートリアルの前半部分は、次の 4 つの主要なタスクについて説明します。  
