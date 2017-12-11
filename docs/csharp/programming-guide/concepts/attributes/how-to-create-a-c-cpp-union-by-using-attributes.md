@@ -11,11 +11,11 @@ ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 450fb922079ca6737b8db7754f25435b9c3b884b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e9274b585c2fecf53b94d94f9bdfdaf4a47f1041
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>方法: 属性を使用して C/C++ の共用体を作成する (C#)
 属性を使用すると、構造体のメモリ内での配置をカスタマイズできます。 たとえば、`StructLayout(LayoutKind.Explicit)` 属性と `FieldOffset` 属性を使用すると、C/C++ の共用体と呼ばれるものを作成できます。  
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Reflection>  
  <xref:System.Attribute>  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
- [属性](https://msdn.microsoft.com/library/5x6cd29c)  
+ [属性](../../../../../docs/standard/attributes/index.md)  
  [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [属性 (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
  [カスタム属性の作成 (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  

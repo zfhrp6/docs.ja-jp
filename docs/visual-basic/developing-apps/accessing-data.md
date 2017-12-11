@@ -11,11 +11,11 @@ ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
 caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: da2fb9171a6b09ad94cea62877445bcb77c521ee
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fd4dbc66f37325afa64b7bf9720cad23e08c6bfb
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Visual Basic アプリケーションにおけるデータ アクセス
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  
@@ -30,11 +30,11 @@ ms.lasthandoff: 10/18/2017
  [LINQ](../../visual-basic/programming-guide/language-features/linq/index.md)  
  Visual Basic での LINQ の使用方法について説明するトピックへのリンクを示します。  
   
- [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)  
+ [LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/index.md)  
  [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] に関する情報を提供します。 プログラミング例もあります。  
   
  [Visual Studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
- アプリケーションで [LINQ to SQL](https://msdn.microsoft.com/library/bb386976) オブジェクト モデルを作成する方法に関するトピックへのリンクを示します。  
+ アプリケーションで [LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/index.md) オブジェクト モデルを作成する方法に関するトピックへのリンクを示します。  
   
  [n 層アプリケーションでのデータセットの操作](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications)  
  複数層データ アプリケーションを作成する方法に関するトピックへのリンクを示します。  

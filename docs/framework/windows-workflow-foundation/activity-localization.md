@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8ee7bc16-e609-469a-a3e8-8062952e2676
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f7746e2ffc61db6d7863e243396f6d1bba315150
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 18856fe11d95d5b54bc580b83eae35badb4d86e6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="activity-localization"></a>アクティビティのローカライズ
 ワークフロー アプリケーションとコンポーネントが他のカルチャおよび言語にローカライズされる可能性がある場合は、再コンパイルせずにローカライズできるようにリソース文字列を使用する必要があります。  
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/18/2017
   
 #### <a name="using-resource-files-for-localized-strings"></a>ローカライズ文字列へのリソース ファイルの使用  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)]でプロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加しています.**、**新しい項目の追加**.  
+1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)]でプロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加しています.**、**新しい項目の追加.**.  
   
 2.  選択**リソース ファイル**ErrorResources.resx というファイル名を入力します。 **[追加]**をクリックします。  
   

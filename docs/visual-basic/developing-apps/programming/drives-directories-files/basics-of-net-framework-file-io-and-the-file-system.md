@@ -18,11 +18,11 @@ ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
 caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4a148aa9b7dad357aeaa6f88ec11098418005719
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 53bd56647d04c40c44a240edcd084f0719c3d4aa
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)
 <xref:System.IO> 名前空間のクラスは、ドライブ、ファイル、ディレクトリの操作に使用されます。  
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
 -   **シーク**。 ストリーム内の現在の位置をクエリおよび変更できます。  
   
- 詳細については、「 [Composing Streams](https://msdn.microsoft.com/library/e4y2dch9)」を参照してください。  
+ 詳細については、「 [Composing Streams](../../../../../docs/standard/io/composing-streams.md)」を参照してください。  
   
 ## <a name="types-of-streams"></a>ストリームの種類  
  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] では、ストリームは <xref:System.IO.Stream> クラスで表されます。これは、その他のすべてのストリームのための抽象クラスです。 <xref:System.IO.Stream> クラスのインスタンスを直接作成することはできません。これを実装するいずれかのクラスを使用する必要があります。  
@@ -65,13 +65,13 @@ ms.lasthandoff: 11/21/2017
   
 |目的|参照トピック|
 |---|---|   
-|データ ファイルに対する読み取りと書き込み|[方法: 新しく作成されたデータ ファイルに対して読み書きする](https://msdn.microsoft.com/library/36b93480.aspx)|  
-|ファイルのテキストの読み取り|[方法: ファイルからテキストを読み取る](https://msdn.microsoft.com/library/db5x7c0d.aspx)|  
-|テキストのファイルへの書き込み|[方法: ファイルにテキストを書き込む](https://msdn.microsoft.com/library/6ka1wd3w.aspx)|  
-|文字列からの文字の読み取り|[方法: 文字列から文字を読み取る](https://msdn.microsoft.com/library/9yyz8a6c.aspx)|  
-|文字列への文字の書き込み|[方法: 文字列に文字を書き込む](https://msdn.microsoft.com/library/z4kzt0dd.aspx)|  
-|データの暗号化|[データの暗号化](https://msdn.microsoft.com/library/as0w18af.aspx)|  
-|データの復号化|[データの復号化](https://msdn.microsoft.com/library/te15te69.aspx)|  
+|データ ファイルに対する読み取りと書き込み|[方法: 新しく作成されたデータ ファイルに対して読み書きする](../../../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|ファイルのテキストの読み取り|[方法: ファイルからテキストを読み取る](../../../../../docs/standard/io/how-to-read-text-from-a-file.md)|  
+|テキストのファイルへの書き込み|[方法: ファイルにテキストを書き込む](../../../../../docs/standard/io/how-to-write-text-to-a-file.md)|  
+|文字列からの文字の読み取り|[方法: 文字列から文字を読み取る](../../../../../docs/standard/io/how-to-read-characters-from-a-string.md)|  
+|文字列への文字の書き込み|[方法: 文字列に文字を書き込む](../../../../../docs/standard/io/how-to-write-characters-to-a-string.md)|  
+|データの暗号化|[データの暗号化](../../../../../docs/standard/security/encrypting-data.md)|  
+|データの復号化|[データの復号化](../../../../../docs/standard/security/decrypting-data.md)|  
   
 ## <a name="file-access-and-attributes"></a>ファイル アクセスと属性  
  ファイルの作成、オープン、および共有の方法は、<xref:System.IO.FileAccess>、<xref:System.IO.FileMode>、および <xref:System.IO.FileShare> の各列挙体で制御できます。これらの列挙体には、<xref:System.IO.FileStream> クラスのコンストラクターで使用するフラグが含まれています。 たとえば、<xref:System.IO.FileStream> を開くかまたは新規作成するときに、ファイルを追加書き込み用に開くかどうか、指定のファイルが存在しない場合にファイルを新規作成するかどうか、ファイルを上書きするかどうか、などを <xref:System.IO.FileMode> 列挙体で指定できます。  
@@ -82,7 +82,7 @@ ms.lasthandoff: 11/21/2017
   
 |目的|参照トピック|  
 |---|---|
-|ログ ファイルのオープンとテキストの追加|[方法: ログ ファイルを開いて情報を追加する](https://msdn.microsoft.com/library/3zc0w663.aspx)|  
+|ログ ファイルのオープンとテキストの追加|[方法: ログ ファイルを開いて情報を追加する](../../../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)|  
 |ファイルの属性の判断|<xref:System.IO.FileAttributes>|  
   
 ## <a name="file-permissions"></a>ファイルのアクセス許可  
@@ -95,19 +95,19 @@ ms.lasthandoff: 11/21/2017
   
 |目的|参照トピック|
 |---|---|  
-|分離ストアの作成|[方法: 分離ストレージでストアを取得する](https://msdn.microsoft.com/library/k48a6h13.aspx)|  
-|分離ストアの列挙|[方法: 分離ストレージでストアを列挙する](https://msdn.microsoft.com/library/c3dy613a.aspx)|  
-|分離ストアの削除|[方法: 分離ストレージでストアを削除する](https://msdn.microsoft.com/library/5w71t104.aspx)|  
-|分離ストレージのファイルまたはディレクトリの作成|[方法: 分離ストレージでファイルおよびディレクトリを作成する](https://msdn.microsoft.com/library/6h2ws3ft.aspx)|  
-|分離ストレージのファイルの検索|[方法: 分離ストレージ内でファイルおよびディレクトリを検索する](https://msdn.microsoft.com/library/zd5e2z84.aspx)|  
-|分離ストレージのファイルに対する読み取りと書き込み|[方法: 分離ストレージ内でファイルの読み取りと書き込みを行う](https://msdn.microsoft.com/library/xf96a1wz.aspx)|  
-|分離ストレージのファイルまたはディレクトリの削除|[方法: 分離ストレージでファイルおよびディレクトリを削除する](https://msdn.microsoft.com/library/kx3852wf.aspx)|  
+|分離ストアの作成|[方法: 分離ストレージでストアを取得する](../../../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|  
+|分離ストアの列挙|[方法: 分離ストレージでストアを列挙する](../../../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|  
+|分離ストアの削除|[方法: 分離ストレージでストアを削除する](../../../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|  
+|分離ストレージのファイルまたはディレクトリの作成|[方法: 分離ストレージでファイルおよびディレクトリを作成する](../../../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|  
+|分離ストレージのファイルの検索|[方法: 分離ストレージ内でファイルおよびディレクトリを検索する](../../../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|  
+|分離ストレージのファイルに対する読み取りと書き込み|[方法: 分離ストレージ内でファイルの読み取りと書き込みを行う](../../../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|  
+|分離ストレージのファイルまたはディレクトリの削除|[方法: 分離ストレージでファイルおよびディレクトリを削除する](../../../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|  
   
 ## <a name="file-events"></a>ファイルのイベント  
  <xref:System.IO.FileSystemWatcher> コンポーネントを使用すると、自システム上のファイルとディレクトリ、またはネットワークでアクセスできる任意のコンピューター上のファイルとディレクトリの変更を監視できます。 たとえば、ファイルが変更されたときに、その旨をユーザーに警告することが必要な場合があります。 変更が行われると、1 つまたは複数のイベントが発生し、バッファーに格納され、<xref:System.IO.FileSystemWatcher> コンポーネントに渡されて処理されます。  
   
 ## <a name="see-also"></a>関連項目  
- [ストリームの構成](https://msdn.microsoft.com/library/e4y2dch9)  
+ [ストリームの構成](../../../../../docs/standard/io/composing-streams.md)  
  [ファイルおよびストリーム入出力](https://msdn.microsoft.com/library/k3352a4t)  
  [非同期ファイル I/O](https://msdn.microsoft.com/library/kztecsys)  
  [.NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)

@@ -36,7 +36,7 @@ ms.lasthandoff: 11/21/2017
   
 -   作成、<xref:System.Windows.Media.Animation.AnimationClock>から、<xref:System.Windows.Media.Animation.AnimationTimeline>し、プロパティに適用します。  
   
- <xref:System.Windows.Media.Animation.Storyboard>オブジェクトおよび<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドに直接作成および時計を配布することがなくプロパティをアニメーション化することが有効にする (例については、次を参照してください[ストーリー ボードを使用してプロパティをアニメーション化](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)と[プロパティなしをアニメーション化します。。ストーリー ボードを使って](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)) です。クロックが作成され、自動的に配布します。  
+ <xref:System.Windows.Media.Animation.Storyboard>オブジェクトおよび<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドに直接作成および時計を配布することがなくプロパティをアニメーション化することが有効にする (例については、次を参照してください[ストーリー ボードを使用してプロパティをアニメーション化](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)と[プロパティなしをアニメーション化します。ストーリー ボードを使って](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)) です。クロックが作成され、自動的に配布します。  
   
 ## <a name="example"></a>例  
  次の例を作成する方法を示しています、<xref:System.Windows.Media.Animation.AnimationClock>し、同様の 2 つのプロパティに適用します。  

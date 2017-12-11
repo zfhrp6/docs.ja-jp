@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: defining service contracts [WCF]
 ms.assetid: 036fae20-7c55-4002-b71d-ac4466e167a3
 caps.latest.revision: "37"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ee2564b59ba0c0377c93c22787974ac0a980e64b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3429a9145695a957089941d8c814d441da498c93
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="designing-and-implementing-services"></a>サービスの設計と実装
 このセクションでは、定義および実装する方法を示します[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]コントラクト。 サービス コントラクトでは、エンドポイントが外部と何をやりとりするかが指定されます。 具体的には、要求/応答、一方向、双方向など、基本的なメッセージ交換パターン (MEP) に編成された一連のメッセージに関する記述です。 サービス コントラクトがメッセージ交換の論理的に関連したセットであるとすると、サービス操作は単一のメッセージ交換です。 たとえば、`Hello` という操作では、1 つのメッセージを受け取り、呼び出し元があいさつを通知できるようにする必要があり、メッセージを返すことができます (マナーが悪ければ返さない場合もあり得ます)。  
@@ -66,7 +66,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="messages-up-front-and-center"></a>重要なメッセージ  
  リモート プロシージャ コール (RPC) スタイルのメソッド シグネチャを使用する場合、マネージ インターフェイス、マネージ クラス、およびマネージ メソッドを使用してサービス操作をモデル化することは簡単です。メソッドにパラメーターを渡し、戻り値を受け取る方法は、オブジェクトや他の種類のコードから機能を要求する通常の形式です。 たとえば、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] や C++ COM のようなマネージ言語を使用するプログラマは、(オブジェクトとインターフェイスのどちらを使用するかに関係なく) RPC スタイルの手法に関する知識を、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス コントラクトの作成に応用できます。この場合、RPC スタイルの分散オブジェクト システムに固有の問題は発生しません。 サービス指向では、RPC プログラミングの容易さと知識を保持しながら、疎結合のメッセージ指向プログラミングの利点を得ることができます。  
   
- プログラマの多くは、メッセージ キュー (Microsoft MSMQ、.NET Framework の <xref:System.Messaging> 名前空間、HTTP 要求における構造化されていない XML の送信など) のようなメッセージ指向のアプリケーション プログラミング インターフェイスの方が使いやすいと考えています。 メッセージ レベルでのプログラミングの詳細については、次を参照してください[メッセージ コントラクトを使用して](../../../docs/framework/wcf/feature-details/using-message-contracts.md)、[サービス チャネル レベルのプログラミング](../../../docs/framework/wcf/extending/service-channel-level-programming.md)、および[POX アプリケーションとの相互運用](../../../docs/framework/wcf/feature-details/interoperability-with-pox-applications.md).  
+ プログラマの多くは、メッセージ キュー (Microsoft MSMQ、.NET Framework の <xref:System.Messaging> 名前空間、HTTP 要求における構造化されていない XML の送信など) のようなメッセージ指向のアプリケーション プログラミング インターフェイスの方が使いやすいと考えています。 メッセージ レベルでのプログラミングの詳細については、次を参照してください[メッセージ コントラクトを使用して](../../../docs/framework/wcf/feature-details/using-message-contracts.md)、[サービス チャネル レベルのプログラミング](../../../docs/framework/wcf/extending/service-channel-level-programming.md)、および[POX アプリケーションとの相互運用。](../../../docs/framework/wcf/feature-details/interoperability-with-pox-applications.md).  
   
 ### <a name="understanding-the-hierarchy-of-requirements"></a>要件の階層の理解  
  サービス コントラクトは、操作をグループ化し、メッセージ交換パターン、メッセージの種類、およびメッセージに格納されているデータ型を指定します。さらに、実装でコントラクトをサポートするために必要な実行時の動作のカテゴリ (メッセージの暗号化と署名を要求するなど) を示します。 サービス コントラクト自体は、これらの要件を満たす方法を正確に指定するわけではなく、これらの要件が必要であることを示すだけです。 暗号化の種類やメッセージに署名する方法は、準拠サービスの実装と構成によって決まります。  

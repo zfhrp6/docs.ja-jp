@@ -9,11 +9,11 @@ ms.assetid: 2d20556a-0aad-46fc-845e-f85d86ea617a
 caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 548409d3f632213f3ff1de0a27a70b9f42b18332
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c9da65958ce827fab642f4a6310d0c68dfb951a6
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>方法 : 派生クラスから基本クラス イベントを発生させる (C# プログラミング ガイド)
 ここでは単純な例を使用し、派生クラスからも発生させることができるように基底クラスでイベントを宣言する標準的な方法について説明します。 このパターンは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリの Windows フォーム クラスで広く使用されています。  
@@ -31,4 +31,4 @@ ms.lasthandoff: 11/21/2017
  [イベント](../../../csharp/programming-guide/events/index.md)  
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)  
  [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
- [Windows フォーム内でのイベント ハンドラーの作成](https://msdn.microsoft.com/library/dacysss4.aspx)
+ [Windows フォーム内でのイベント ハンドラーの作成](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)

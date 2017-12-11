@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
 caps.latest.revision: "22"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1dd63ca472ef5ee9211a8a9a1fd19d983694b43f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 526544118432eb263cc856931d9f4943b9918d93
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-service-publishing"></a>WCF サービス発行
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントで構成される初期の開発環境から、テストの目的でアプリケーションを実際に実稼働環境に配置する場合に役立ちます。 最終的な配置計画を確定する前に、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行を使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスが正しく動作し、発行の準備ができていることを確認できます。 また、テスト用のさまざまなターゲットの場所に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを配置することもできます。  
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  サービス プロジェクトを開き、選択**ビルド**->**発行\<プロジェクト名 >** メイン メニュー でプロジェクトを右クリックしてまたは**ソリューション エクスプ ローラー** をクリック**発行**です。  
   
-3.  **発行**ウィンドウが表示されます。 クリックして、**しています**. サービスの配置先にするターゲットの場所を指定します。 ローカルの IIS、ファイル システム、または FTP サイトにアプリケーションを配置するを選択することができます。 ローカル IIS にアプリケーションを配置する場合、web サイトを選択してクリックして、その下にある web アプリケーションを作成、、**新しい Web アプリケーションの作成**右上隅にあるアイコン。  
+3.  **発行**ウィンドウが表示されます。 クリックして、**しています.**. サービスの配置先にするターゲットの場所を指定します。 ローカルの IIS、ファイル システム、または FTP サイトにアプリケーションを配置するを選択することができます。 ローカル IIS にアプリケーションを配置する場合、web サイトを選択してクリックして、その下にある web アプリケーションを作成、、**新しい Web アプリケーションの作成**右上隅にあるアイコン。  
   
 4.  クリックした後**発行**メイン ウィンドウで、Visual Studio が、指定したターゲットの場所にアプリケーションが配置され、Web.config、.svc、およびアセンブリ ファイルをコピー先のディレクトリにコピーします。 。 .Svc ファイルの名前は"projectname.servicename.svc"です。 サービスが正常にパブリッシュされた後、Visual Studio の出力 ウィンドウで、「ハイパーリンク"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName... に接続する」のようなホットリンクが表示されます。 Ctrl キーを押しながらリンクをクリックすると、Visual Studio の内側にブラウザー ページが開き、サービス ディレクトリ構造が表示されます。  
   

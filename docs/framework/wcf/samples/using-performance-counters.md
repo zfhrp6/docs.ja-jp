@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
 caps.latest.revision: "31"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 84cbbf83c240ae11099e2c9646150c810a437e71
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5963a1b2600066020562c1d17b0d2d2eb6eb67c8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-performance-counters"></a>パフォーマンス カウンターの使用
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] パフォーマンス カウンタにアクセスする方法と、ユーザー定義のパフォーマンス カウンタを作成する方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
@@ -67,7 +67,7 @@ ms.lasthandoff: 10/18/2017
   
 1.  SvcConfigEditor.exe のインスタンスを開きます。  
   
-2.  ファイル メニューをクリックして**開く** をクリックし、 **Config ファイル**.  
+2.  ファイル メニューをクリックして**開く** をクリックし、 **Config ファイル.**.  
   
 3.  サンプル アプリケーションの service フォルダーに移動し、Web.config ファイルを開きます。  
   

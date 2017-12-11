@@ -62,7 +62,7 @@ internal sealed class SqlBuilder : ISqlFragment {
 ```  
   
 #### <a name="sqlselectstatement"></a>SqlSelectStatement  
- SqlSelectStatement は、"SELECT... の図形の正規 SQL SELECT ステートメント 差出人。。 どこ。。。 グループ化してください. ORDER BY"です。  
+ SqlSelectStatement は、"SELECT... の図形の正規 SQL SELECT ステートメント 差出人。 どこ。 グループ化してください. ORDER BY"です。  
   
  各 SQL 句は StringBuilder によって表されます。 また、Distinct が指定されているかどうか、およびステートメントが最上位かどうかを追跡します。 ステートメントが最上位ではなく、ステートメントに TOP 句も含まれていない場合は、ORDER BY 句は省略されます。  
   

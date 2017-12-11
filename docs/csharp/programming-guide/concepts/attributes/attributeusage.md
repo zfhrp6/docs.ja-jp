@@ -11,11 +11,11 @@ ms.assetid: 22c45568-9a6a-4c2f-8480-f38c1caa0a99
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 81e7440279a2d7dfa801394ee0e9af6181da3c13
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e9351ee10b523145ace1249bf17388da0cdba277
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="attributeusage-c"></a>AttributeUsage (C#)
 カスタム属性クラスの使用方法を決定します。 `AttributeUsage` は、カスタム属性の定義に適用して新しい属性の適用方法を制御できる属性です。 明示的に適用するときの既定の設定は次のようになります。  
@@ -148,7 +148,7 @@ A2
  <xref:System.Attribute>  
  <xref:System.Reflection>  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
- [属性](https://msdn.microsoft.com/library/5x6cd29c)  
+ [属性](../../../../../docs/standard/attributes/index.md)  
  [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [属性](../../../../csharp/programming-guide/concepts/attributes/index.md)  
  [カスタム属性の作成 (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  

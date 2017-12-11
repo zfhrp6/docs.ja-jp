@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
 caps.latest.revision: "22"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 60d703336aeac3471e4b554f65998621b5cc8ef8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6b1139fe82bc0a02eafb274f13bfb7b39eeec609
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>インターネット インフォメーション サービス ホスティングのベスト プラクティス
 このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスのホスティングに関するベスト プラクティスについて概説します。  
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/21/2017
  これで、user2 は、(c:\tempForUser1 の下にある) /Application2 のコード生成フォルダーを変更できなくなります。  
   
 ## <a name="enabling-asynchronous-processing"></a>非同期処理の有効化  
- 既定では、IIS 6.0 以前でホストされている [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス宛てのメッセージは同期的に処理されます。 ASP.NET は、独自のスレッド (ASP.NET のワーカー スレッド) で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を呼び出し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は別のスレッドを使用してその要求を処理します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、その処理が完了するまで ASP.NET のワーカー スレッドに保持されます。 このため、要求は同期的に処理されます。 要求を非同期で処理すると、要求の処理に必要なスレッド数が減るため、優れたスケーラビリティが得られます。つまり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、要求の処理中に ASP.NET のスレッドで保持されません。 入力方向の要求をサーバー上で開くことを調整する方法がないために、IIS 6.0 を実行しているマシンの非同期動作の使用は推奨されません*Denial Of Service* (DOS) 攻撃です。 IIS 7.0 以降では、同時要求スロットルが導入されています: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\2.0.50727.0]"MaxConcurrentRequestsPerCpu`。 この新しいスロットルにより、非同期処理を安全に使用することができます。  IIS 7.0 の既定では、非同期のハンドラーとモジュールが登録されます。 この機能が無効になっている場合は、アプリケーションの Web.config ファイルで要求の非同期処理を手動で有効にすることができます。 使用する設定は、`aspNetCompatibilityEnabled` 設定によって異なります。 `aspNetCompatibilityEnabled` を `false` に設定している場合は、次の構成スニペットに示すように、`System.ServiceModel.Activation.ServiceHttpModule` を構成します。  
+ 既定では、IIS 6.0 以前でホストされている [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス宛てのメッセージは同期的に処理されます。 ASP.NET は、独自のスレッド (ASP.NET のワーカー スレッド) で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を呼び出し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は別のスレッドを使用してその要求を処理します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、その処理が完了するまで ASP.NET のワーカー スレッドに保持されます。 このため、要求は同期的に処理されます。 要求を非同期で処理すると、要求の処理に必要なスレッド数が減るため、優れたスケーラビリティが得られます。つまり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、要求の処理中に ASP.NET のスレッドで保持されません。 入力方向の要求をサーバー上で開くことを調整する方法がないために、IIS 6.0 を実行しているマシンの非同期動作の使用は推奨されません*Denial Of Service* (DOS) 攻撃です。 IIS 7.0 以降では、同時要求スロットルが導入されています。`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\2.0.50727.0]"MaxConcurrentRequestsPerCpu`。 この新しいスロットルにより、非同期処理を安全に使用することができます。  IIS 7.0 の既定では、非同期のハンドラーとモジュールが登録されます。 この機能が無効になっている場合は、アプリケーションの Web.config ファイルで要求の非同期処理を手動で有効にすることができます。 使用する設定は、`aspNetCompatibilityEnabled` 設定によって異なります。 `aspNetCompatibilityEnabled` を `false` に設定している場合は、次の構成スニペットに示すように、`System.ServiceModel.Activation.ServiceHttpModule` を構成します。  
   
 ```xml  
 <system.serviceModel>  
