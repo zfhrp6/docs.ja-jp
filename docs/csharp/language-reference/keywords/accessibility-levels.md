@@ -1,6 +1,6 @@
 ---
 title: "アクセシビリティ レベル (C# リファレンス)"
-ms.date: 07/20/2015
+ms.date: 12/06/2017
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.topic: article
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 77124554d7a0b38414e154e024aceddbfffcfbd4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 816ee0fab3fae21bff2ffbfcbfe39d04dcf95025
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="accessibility-levels-c-reference"></a>アクセシビリティ レベル (C# リファレンス)
+
 以下に示したのは、メンバーに適用されるアクセシビリティ レベルの宣言です。[public](../../../csharp/language-reference/keywords/public.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、[private](../../../csharp/language-reference/keywords/private.md) の各アクセス修飾子を使用して指定します。  
   
 |アクセシビリティの宣言|説明|  
@@ -27,9 +27,9 @@ ms.lasthandoff: 11/21/2017
 |`internal`|アクセスは現在のアセンブリに限定されます。|  
 |`protected internal`|現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが限定されます。|  
 |`private`|コンテナーである型にアクセスが限定されます。|  
-|`private protected`|アクセスは、含んでいるクラスまたは現在のアセンブリ内の外側のクラスから派生した型に制限されます。|  
+|`private protected`|現在のアセンブリ内の、コンテナーであるクラス、またはコンテナーであるクラスから派生した型にアクセスが制限されます。 C# 7.2 以降で使用可能です。 |  
   
- 1 つだけアクセス修飾子は使用メンバーまたは型、以外を使用するときに、`protected internal`または`private protected`の組み合わせ。  
+ `protected internal` または `private protected` の組み合わせを使う場合を除き、1 つのメンバーまたは 1 つの型に指定できるアクセス修飾子は 1 つだけです。  
   
  アクセス修飾子を名前空間に適用することはできません。 名前空間には、アクセス制限がありません。  
   

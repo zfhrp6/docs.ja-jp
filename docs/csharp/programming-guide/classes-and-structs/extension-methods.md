@@ -12,11 +12,11 @@ ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
 caps.latest.revision: "35"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 30058a461dddb872e76bef574273c62910e8b2c8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 34a80e4bf129c6104d50a8a0877271136c0c4198
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="extension-methods-c-programming-guide"></a>拡張メソッド (C# プログラミング ガイド)
 拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。 拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。 C#、F#、および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。  
@@ -84,14 +84,14 @@ using System.Linq;
   
 -   拡張メソッドは名前空間レベルでスコープ内に取り込まれます。 たとえば、`Extensions` という名前の単一の名前空間に、拡張メソッドを含む複数の静的クラスがある場合、`using Extensions;` ディレクティブによって、それらのすべての拡張メソッドがスコープ内に取り込まれます。  
   
- 実装したクラス ライブラリでは、アセンブリのバージョン番号のインクリメントを避けるために、拡張メソッドは使用しないでください。 ソース コードを所有するライブラリに重要な機能を追加する場合は、アセンブリのバージョン管理について標準の .NET Framework ガイドラインに従う必要があります。 詳細については、「[アセンブリのバージョン管理](https://msdn.microsoft.com/library/51ket42z)」を参照してください。  
+ 実装したクラス ライブラリでは、アセンブリのバージョン番号のインクリメントを避けるために、拡張メソッドは使用しないでください。 ソース コードを所有するライブラリに重要な機能を追加する場合は、アセンブリのバージョン管理について標準の .NET Framework ガイドラインに従う必要があります。 詳細については、「[アセンブリのバージョン管理](../../../../docs/framework/app-domains/assembly-versioning.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [並列プログラミング サンプルがこれらには、多くの拡張メソッドの例)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
+ [並列プログラミングのサンプル (拡張メソッドの例が多数掲載されています)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
  [ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
  [標準クエリ演算子の概要](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
- [変換規則のパラメーターとその影響のインスタンス](http://go.microsoft.com/fwlink/?LinkId=112385)  
- [言語間の相互運用性の拡張メソッド](http://go.microsoft.com/fwlink/?LinkId=112386)  
- [拡張メソッドとデリゲートのカリー化](http://go.microsoft.com/fwlink/?LinkId=112387)  
+ [インスタンス パラメーターの変換規則とその影響](http://go.microsoft.com/fwlink/?LinkId=112385)  
+ [拡張メソッドの言語間での相互運用性](http://go.microsoft.com/fwlink/?LinkId=112386)  
+ [拡張メソッドとカリー化デリゲート](http://go.microsoft.com/fwlink/?LinkId=112387)  
  [バインディングとエラー報告に関する拡張メソッド](http://go.microsoft.com/fwlink/?LinkId=112388)
