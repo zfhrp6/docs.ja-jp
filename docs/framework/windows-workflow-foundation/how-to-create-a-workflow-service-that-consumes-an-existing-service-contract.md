@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 11d11b59-acc4-48bf-8e4b-e97b516aa0a9
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a811609f601e844d55d4173eb94df24701fcc7d8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: eb58664b57261eb09886ec0e8f97fcdbe45cdd4f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-create-a-workflow-service-that-consumes-an-existing-service-contract"></a>既存のサービス コントラクトを使用するワークフロー サービスを作成する方法
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、コントラクト優先ワークフローの開発という形で、Web サービスとワークフローの統合が向上しています。 コントラクト優先ワークフローの開発ツールでは、コードのコントラクトを先に設計できます。 その後、ツールボックス内に、コントラクト内の操作用のアクティビティ テンプレートが自動的に生成されます。  
@@ -26,13 +26,13 @@ ms.lasthandoff: 10/18/2017
   
 ### <a name="creating-the-workflow-project"></a>ワークフロー プロジェクトの作成  
   
-1.  [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)]**ファイル**、**新しいプロジェクト**です。 選択、 **WCF**ノードの下、 **c#**内のノード、**テンプレート**ツリー、および選択、 **WCF ワークフロー サービス アプリケーション**テンプレート。  
+1.  [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] で、**[ファイル]**、**[新しいプロジェクト]** を順に選択します。 選択、 **WCF**ノードの下、 **c#**内のノード、**テンプレート**ツリー、および選択、 **WCF ワークフロー サービス アプリケーション**テンプレート。  
   
 2.  新しいプロジェクトの名前`ContractFirst` をクリック**Ok**です。  
   
 ### <a name="creating-the-service-contract"></a>サービス コントラクトの作成  
   
-1.  プロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加**. 選択、**コード**、左側のノードと**クラス**右側のテンプレートです。 新しいクラスの名前を`IBookService` をクリック**Ok**です。  
+1.  プロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加...**. 選択、**コード**、左側のノードと**クラス**右側のテンプレートです。 新しいクラスの名前を`IBookService` をクリック**Ok**です。  
   
 2.  表示されるコード ウィンドウの上部で、`System.Servicemodel` に対する Using ステートメントを追加します。  
   

@@ -13,14 +13,14 @@ dev_langs:
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 37d32d938f49d0767594e0f141d5a463ad5fc95f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 22fc561d7df9bbd81bf19d351af2d07bc6b51237
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="creating-the-data-service"></a>データ サービスの作成
 このタスクを使用するサンプル データ サービスを作成する[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を公開する、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Northwind サンプル データベースに基づいているフィード。 このタスクに必要な基本手順は次のとおりです。  
@@ -88,7 +88,7 @@ ms.lasthandoff: 10/18/2017
   
 3.  サービスの名前を入力`Northwind`です。  
   
-     [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]Visual Studio で新しいサービスの XML マークアップおよびコード ファイルが作成されます。 既定では、コード エディターのウィンドウが開きます。 **ソリューション エクスプローラー**では、このサービスに Northwind という名前が付き、拡張子は .svc.cs または .svc.vb になります。  
+     [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]Visual Studio で新しいサービスの XML マークアップおよびコード ファイルが作成されます。 既定では、コード エディターのウィンドウが開きます。 **ソリューション エクスプ ローラー**サービスの名前は、Northwind、拡張子を持つ。 svc.cs または.svc.vb になります。  
   
 4.  データ サービスのコードで、データ サービスを定義するクラスの定義にあるコメント `/* TODO: put your data source class name here */` をデータ モデルのエンティティ コンテナーである型 (この場合は `NorthwindEntities`) で置き換えます。 クラス定義は次のようになります。  
   

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
 caps.latest.revision: "27"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 709e73b0fe665d836dfa50a630de35d955e110eb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 39d59e23b407a01e91f68022a1b67e590858235e
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>WCF サービス ホスト (WcfSvcHost.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス ホスト (WcfSvcHost.exe) を使用すると、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] デバッガーを起動して (F5 キーを押します)、実装しているサービスを自動的にホストおよびテストすることができます。 その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアント (WcfTestClient.exe) または独自のクライアントを使用してサービスをテストし、潜在的なエラーを見つけて修正できます。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 10/18/2017
  `/client:WcfTestClient.exe`  
   
 #### <a name="using-a-custom-client"></a>カスタム クライアントの使用  
- プロジェクトを右クリックし、カスタムのクライアントを使用するのに**ソリューション エクスプ ローラー**で[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)][**プロパティ**クリックし、**デバッグ**] タブ。をクリックして**スタート プロジェクト**および編集、`/client`内のパラメーター、**コマンドライン引数**ダイアログ ボックスを次の例に示すように、カスタムのクライアント をポイントします。  
+ プロジェクトを右クリックし、カスタムのクライアントを使用するのに**ソリューション エクスプ ローラー**で[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]、**プロパティ**クリックし、**デバッグ** タブ。をクリックして**スタート プロジェクト**および編集、`/client`内のパラメーター、**コマンドライン引数**ダイアログ ボックスを次の例に示すように、カスタムのクライアント をポイントします。  
   
  `/client:"path/CustomClient.exe"`  
   

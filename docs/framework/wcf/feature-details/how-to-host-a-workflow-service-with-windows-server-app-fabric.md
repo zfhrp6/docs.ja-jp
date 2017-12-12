@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 83b62cce-5fc2-4c6d-b27c-5742ba3bac73
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 69911b2baf0e184957158ac536fa2271524cb2ba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d8a2f0883a2d83ad5b3c1a2a3dd6c7e016583af7
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a>方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする
 AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングに似ています。 唯一の違いは、ワークフロー サービスの投入、監視、および管理のために AppFabric に用意されているツールです。 このトピックで作成したワークフロー サービスを使用して、[実行時間の長いワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)です。 ワークフロー サービスの作成方法はそちらのトピックで説明されています。 このトピックでは、AppFabric を使用したワークフロー サービスのホスティング方法を説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric を参照してください[Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)です。 下の手順を完了する前に、Windows Server AppFabric がインストールされていることを確認してください。  インターネット インフォメーション サービス (inetmgr.exe) を開いてでサーバー名をクリックして、**接続**サイトをクリックし、をクリックして**既定の Web サイト**です。 画面の右側にある必要がありますと呼ばれるセクションを参照して**App Fabric**です。 (右側のペインの一番上に表示される) このセクションが表示されない場合は、AppFabric がインストールされていません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric のインストールを参照してください[をインストールする Windows Server Appfabric](http://go.microsoft.com/fwlink/?LinkId=193136)です。  
@@ -40,11 +40,11 @@ AppFabric でのワークフロー サービスのホスティングは IIS/WAS 
   
 2.  OrderService 仮想ディレクトリに移動し、**接続**ウィンドウです。  
   
-3.  [Orderservice] を右クリックし、選択**管理の WCF と WF サービス**、**構成しています**. **WCF と WF アプリケーションの構成** ダイアログ ボックスが表示されます。  
+3.  [Orderservice] を右クリックし、選択**管理の WCF と WF サービス**、**構成しています...**. **WCF と WF アプリケーションの構成** ダイアログ ボックスが表示されます。  
   
 4.  選択、**全般**の次のスクリーン ショットに示すように、アプリケーションに関する一般情報を表示するタブです。  
   
-     ![App Fabric の構成 ダイアログ ボックスの [全般] タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration-全般")  
+     ![App Fabric の構成ダイアログ ボックスの [全般] タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration-全般")  
   
 5.  選択、**監視**タブです。次のスクリーン ショットに示すような各種の監視設定が表示されます。  
   
