@@ -7,25 +7,25 @@ ms.date: 09/01/2017
 ms.topic: article
 dev_langs: vb
 ms.prod: .net-core
-ms.openlocfilehash: b656ae4746691f2e72eaa666542e98d4abc91069
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b5078a78ea7dae3465680797531e0ff81b9b5845
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-mstest"></a>dotnet テストと MStest を使用した .NET Core ライブラリでの単体テスト Visual Basic
 
-このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-mstest/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-vb-mstest/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ## <a name="creating-the-source-project"></a>ソース プロジェクトの作成
 
-シェル ウィンドウを開きます。 ソリューションを保持するための *unit-testing-using-dotnet-test* というディレクトリを作成します。
+シェル ウィンドウを開きます。 ソリューションを保存するための *unit-testing-vb-mstest* というディレクトリを作成します。
 この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、ソリューションを新たに作成します。 こうすることで、クラス ライブラリと単体テスト プロジェクトの両方を管理しやすくなります。
 ソリューションのディレクトリ内で、*PrimeService* ディレクトリを作成します。 現時点のディレクトリとファイルの構造は次のようになっています。
 
 ```
-/unit-testing-vb-using-mstest
-    unit-testing-using-mstest.sln
+/unit-testing-vb-mstest
+    unit-testing-vb-mstest.sln
     /PrimeService
 ```
 
@@ -50,21 +50,21 @@ End Namespace
 次に、*PrimeService.Tests* ディレクトリを作成します。 次の一覧はディレクトリ構造を示したものです。
 
 ```
-/unit-testing-vb-using-mstest
-    unit-testing-using-mstest.sln
+/unit-testing-vb-mstest
+    unit-testing-vb-mstest.sln
     /PrimeService
         Source Files
         PrimeService.vbproj
     /PrimeService.Tests
 ```
 
-*PrimeService.Tests* ディレクトリを現在のディレクトリにし、[`dotnet new mstest -lang VB`](../tools/dotnet-new.md) を使用して新しいプロジェクトを作成します。 このコマンドによって、テスト ライブラリとして xUnit を使用するテスト プロジェクトが作成されます。 生成されたテンプレートで、*PrimeServiceTests.vbproj* のテスト ランナーが構成されます。
+*PrimeService.Tests* ディレクトリを現在のディレクトリにし、[`dotnet new mstest -lang VB`](../tools/dotnet-new.md) を使用して新しいプロジェクトを作成します。 このコマンドによって、テスト ライブラリとして MSTest を使用するテスト プロジェクトが作成されます。 生成されたテンプレートで、*PrimeServiceTests.vbproj* のテスト ランナーが構成されます。
 
 ```xml
 <ItemGroup>
-<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
-<PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
-<PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+  <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
+  <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
 </ItemGroup>
 ```
 
@@ -74,13 +74,13 @@ End Namespace
 dotnet add reference ../PrimeService/PrimeService.vbproj
 ```
 
-全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-vb-using-mstest/PrimeService.Tests/PrimeService.Tests.vbproj)で確認できます。
+全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-vb-mstest/PrimeService.Tests/PrimeService.Tests.vbproj)で確認できます。
 
 ソリューションの最終的なレイアウトは次のようになります。
 
 ```
-/unit-testing-vb-using-mstest
-    unit-testing-vb-using-mstest.sln
+/unit-testing-vb-mstest
+    unit-testing-vb-mstest.sln
     /PrimeService
         Source Files
         PrimeService.vbproj
@@ -89,7 +89,7 @@ dotnet add reference ../PrimeService/PrimeService.vbproj
         PrimeServiceTests.vbproj
 ```
 
-*unit-testing-vb-using-mstest* ディレクトリで [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) を実行します。 
+*unit-testing-vb-mstest* ディレクトリで [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) を実行します。
 
 ## <a name="creating-the-first-test"></a>最初のテストの作成
 
@@ -114,7 +114,7 @@ Namespace PrimeService.Tests
 End Namespace
 ```
 
-`<TestClass>` 属性は、テストを含むクラスを表します。 `<TestMethod>` 属性は、テスト ランナーによって実行されるメソッドを表します。 *unit-testing-vb-using-mstest* で [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 xUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
+`<TestClass>` 属性は、テストを含むクラスを表します。 `<TestMethod>` 属性は、テスト ランナーによって実行されるメソッドを表します。 *unit-testing-vb-mstest* で [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 MSTest テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
 
 テストが失敗します。 実装はまだ作成していません。 最も単純な動作のコードを `PrimeService` クラスに記述して、このテストを作成します。
 
@@ -127,11 +127,11 @@ Public Function IsPrime(candidate As Integer) As Boolean
 End Function
 ```
 
-*unit-testing-vb-using-mstest* ディレクトリで、もう一度 `dotnet test` を実行します。 `dotnet test` コマンドは `PrimeService` プロジェクトのビルドを実行してから、`PrimeService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
+*unit-testing-vb-mstest* ディレクトリで、もう一度 `dotnet test` を実行します。 `dotnet test` コマンドは `PrimeService` プロジェクトのビルドを実行してから、`PrimeService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
 
 ## <a name="adding-more-features"></a>他の機能の追加
 
-テストが成功したので、他のテストも記述してみましょう。 素数に関する、いくつかの単純なケースが他にもあります (0、-1)。 `<TestMethod>` 属性を使用すると、これらの例を新しいテストとして追加できますが、すぐに煩雑になります。 一連の類似のテストを記述できるようになる、他の xUnit 属性があります。  `<DataTestMethod>` 属性は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。 `<DataRow>` 属性を使用して、そのような入力の値を指定することができます。
+テストが成功したので、他のテストも記述してみましょう。 素数に関する、いくつかの単純なケースが他にもあります (0、-1)。 `<TestMethod>` 属性を使用すると、これらの例を新しいテストとして追加できますが、すぐに煩雑になります。 一連の類似のテストを記述できるようになる、他の MSTest 属性があります。  `<DataTestMethod>` 属性は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。 `<DataRow>` 属性を使用して、そのような入力の値を指定することができます。
 
 新しいテストを作成するのではなく、この 2 つの属性を適用することで 1 つの理論を作成できます。 その理論とは、複数の 2 未満の値を調べて、もっとも小さい素数を特定するという手法です。
 
@@ -143,6 +143,6 @@ End Function
 if candidate < 2
 ```
 
-他のテスト、理論、コードをメイン ライブラリに追加して、反復を続けます。 [テストの最終版](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-vb-using-mstest/PrimeService.Tests/PrimeService_IsPrimeShould.vb)ができ、[ライブラリの完全な実装](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-vb-using-mstest/PrimeService/PrimeService.vb)が完了しました。
+他のテスト、理論、コードをメイン ライブラリに追加して、反復を続けます。 [テストの最終版](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-vb-mstest/PrimeService.Tests/PrimeService_IsPrimeShould.vb)ができ、[ライブラリの完全な実装](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-vb-mstest/PrimeService/PrimeService.vb)が完了しました。
 
 これで、小さなライブラリとそのライブラリの単体テストのセットが構築されました。 ソリューションを構築したことで、新しいパッケージとテストの追加が通常のワークフローに組み込まれました。 アプリケーションの目標を達成することに時間と労力の多くを割き、集中して取り組みました。

@@ -13,14 +13,14 @@ ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
 caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7cd3269754f783ab8b26683f5215aa81825673e6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f8cc5e19565a0e5044626c4fb8eb9d684fbe0a73
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="baseaddress-c-compiler-options"></a>/baseaddress (C# コンパイラ オプション)
-**/baseaddress** オプションを使用すると、DLL を読み込む位置に推奨されるベース アドレスを指定できます。 このオプションを使用する場合と理由の詳細については、次を参照してください。 [Larry Osterman ブログ](http://go.microsoft.com/fwlink/?LinkId=107044)です。  
+**/baseaddress** オプションを使用すると、DLL を読み込む位置に推奨されるベース アドレスを指定できます。 このオプションを使用するタイミングと理由の詳細については、[Larry Osterman のブログ](https://blogs.msdn.microsoft.com/larryosterman/2004/07/06/why-should-i-even-bother-to-use-dlls-in-my-system/)を参照してください。  
   
 ## <a name="syntax"></a>構文  
   

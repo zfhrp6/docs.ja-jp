@@ -13,17 +13,17 @@ ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
 caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1a49d36b8580812c08e9ee080a9602d9fc2027ba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6c2372380d8162d3e7760bba4a43cdb1c568bf5b
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="-operator-c-reference"></a>?? 演算子 (C# リファレンス)
 `??` 演算子は、null 合体演算子と呼ばれます。  左側のオペランドが null 値でない場合には左側のオペランドを返し、null 値である場合には右側のオペランドを返します。  
   
 ## <a name="remarks"></a>コメント  
- null 許容型は、型のドメインの値を表すことができ、値は未定義でもかまいません (その場合、値は null になります)。 使用することができます、`??`適切な値 (右側のオペランド) を返す演算子の構文上の表現力左のオペランドが null 許容型の値が null が場合にします。 `??` 演算子を使用せずに、null 非許容値型に対して null 許容値型を割り当てると、コンパイル時にエラーが発生します。 null 許容値型が定義されていない場合にキャストを使用すると、`InvalidOperationException` 例外がスローされます。  
+ null 許容型は、型のドメインの値を表すことができ、値は未定義でもかまいません (その場合、値は null になります)。 `??` 演算子の構文を使用して、左側のオペランドが null 許容型でその値が null である場合に、適切な値 (右側のオペランド) を返すことができます。 `??` 演算子を使用せずに、null 非許容値型に対して null 許容値型を割り当てると、コンパイル時にエラーが発生します。 null 許容値型が定義されていない場合にキャストを使用すると、`InvalidOperationException` 例外がスローされます。  
   
  詳細については、「[ull 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。  
   
@@ -37,4 +37,4 @@ ms.lasthandoff: 11/21/2017
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# 演算子](../../../csharp/language-reference/operators/index.md)  
  [Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)  
- ['Lifted' の正確な意味](http://go.microsoft.com/fwlink/?LinkID=112382)
+ ['Lifted' の正確な意味](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)

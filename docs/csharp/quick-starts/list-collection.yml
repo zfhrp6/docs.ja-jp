@@ -10,13 +10,13 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.openlocfilehash: e00cf6badcbd39cc1e9320095169d86efb9cad8f
-  ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+  ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/22/2017
+  ms.lasthandoff: 12/07/2017
 items:
 - durationInMinutes: 1
-  content: "このクイック スタートで説明する C# の場合、対話的にブラウザーを使用して、c# コードを記述し、コンパイルして、コードの実行の結果を表示します。 このチュートリアルには、コレクションと配列を作成、変更、確認する一連のレッスンが含まれています。\n"
+  content: "このクイック スタートでは C# を対話形式で学習できます。ブラウザーを使用して C# コードを記述し、コードをコンパイルして実行した結果を確認します。 このチュートリアルには、コレクションと配列を作成、変更、確認する一連のレッスンが含まれています。\n"
 - title: "リストを作成する"
   durationInMinutes: 2
   content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し (\"<name>\" を自分の名前に置き換えて)、**[実行]** をクリックします。\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\n文字列のリストを作成し、そのリストに 3 つの名前を追加し、それらの名前をすべて大文字で出力しました。 先のクイック スタートで学習した概念を使用して、リストをループしています。\n\n名前を表示するコードは、**補間文字列**を使用します。  `string` の前に文字 `$` を配置すると、文字列宣言に C# コードを埋め込むことができます。 実際の文字列は、生成する値でその C# コードを置き換えます。 この例では、<xref:System.String.ToUpper%2A> メソッドを呼び出したため、文字列は `{name.ToUpper()}` をそれぞれの名前に置き換え、文字を大文字に変換しています。\n\n続けて確認していきましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
@@ -35,4 +35,4 @@ items:
 - title: "課題完了"
   durationInMinutes: 3
   content: "コードは次のようになりましたか? \n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n\nwhile (fibonacciNumbers.Count < 20)\n{\n    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\n    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n    \n    fibonacciNumbers.Add(previous + previous2);\n}\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nループの繰り返しごとに、リストの最後の 2 つの整数を取得して合計し、その値をリストに追加しています。 このループは、20 個の項目がリストに追加されるまで繰り返されます。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- content: "一覧のクイック スタートが完了しました。 このクイック スタートでは、最終的な対話型のクイック スタートがします。 独自の開発環境では、これらのクイック スタートを続行できます。 .NET トピック[10 分後に開始](https://www.microsoft.com/net/core)ローカル開発環境の設定の説明が記載されています。 終了したら後で継続[クラスの概要](introduction-to-classes.md)ローカル環境でします。\n\n`List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。\0"
+- content: "リストのクイック スタートはこれで終了です。 このクイック スタートは、最後の対話型クイック スタートです。 これまでのクイック スタートを、ご自身の開発環境でも使い続けることができます。 ローカルの開発環境の設定手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 設定が完了したら、ローカルの開発環境で「[Introduction to classes](introduction-to-classes.md)」(クラスの概要) を進めてください。\n\n`List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。\0"
