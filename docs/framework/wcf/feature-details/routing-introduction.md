@@ -13,11 +13,11 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 2b1347ff4e04a638ed5973f20ae64ef0058dc025
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f0205f4bc468d4a38a50fd2be36d05583ad87906
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="routing-introduction"></a>ルーティングの概要
 ルーティング サービスは、メッセージの内容を基にメッセージをルーティングできる、プラグ可能な汎用の SOAP 中継局を提供します。 ルーティング サービスを使用すると、サービスの集計、サービスのバージョン管理、優先度ルーティング、マルチキャスト ルーティングなどのシナリオを実装できる複雑なルーティング ロジックを作成できます。 また、ルーティング サービスは、バックアップ エンドポイントのリストを設定できるエラー処理機能も提供します。バックアップ エンドポイントは、プライマリ送信先エンドポイントへの送信時に障害が発生した場合に、メッセージの送信先になります。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/21/2017
  以下に、プログラムによる方法と構成ファイルを使用する方法の両方で、ルーティング サービスが使用するサービスおよびクライアント エンドポイントを定義する例を示します。  
   
 ```xml  
-<services>  
+    <services>  
       <!--ROUTING SERVICE -->  
       <service behaviorConfiguration="routingData"  
                name="System.ServiceModel.Routing.RoutingService">  
@@ -61,7 +61,8 @@ ms.lasthandoff: 11/21/2017
         <endpoint address=""  
                   binding="wsHttpBinding"  
                   name="reqReplyEndpoint"  
-                  contract="System.ServiceModel.Routing.IRequestReplyRouter" />      </service>  
+                  contract="System.ServiceModel.Routing.IRequestReplyRouter" />      
+      </service>  
     </services>  
     <behaviors>  
       <serviceBehaviors>  
