@@ -1,0 +1,6 @@
+# [はじめに](index.md)
+## [既存のアプリの Azure IaaS のリフト アンド シフト](lift-and-shift-existing-apps-azure-iaas.md)
+## [リレーショナル データベースの Azure への移行](migrate-your-relational-databases-to-azure.md)
+## [既存のアプリの DevOps のリフト アンド シフト](lift-and-shift-existing-apps-devops/)
+## [チュートリアルと技術的な概要](walkthroughs-technical-get-started-overview.md)
+## [まとめ](conclusions.md)
