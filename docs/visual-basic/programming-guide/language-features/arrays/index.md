@@ -1,10 +1,8 @@
 ---
 title: "Visual Basic における配列"
 ms.custom: 
-ms.date: 07/20/2015
+ms.date: 12/06/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords: vb.Array
@@ -12,262 +10,311 @@ helpviewer_keywords:
 - arrays [Visual Basic]
 - Visual Basic, arrays
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
-caps.latest.revision: "47"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 04deeccd19fd4edb3f2c88310d660eedf5c707d5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: rpetrusha
+ms.author: ronpet
+ms.manager: wpickett
+ms.openlocfilehash: d223ca8b0ff59a13c31fa777e5cb6a97918421c6
+ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/13/2017
 ---
 # <a name="arrays-in-visual-basic"></a>Visual Basic における配列
-配列は、学校の各学年の生徒の数など、互いに論理的に関連する一連の値です。  Visual Basic for Applications (VBA) の配列についてのヘルプが必要な場合は、 [言語リファレンス](https://msdn.microsoft.com/library/office/gg264383\(v=office.14\).aspx)を参照してください。  
-  
- 配列を使うと、これらの関連する値を同じ名前で参照できます。配列の各要素を区別するには、インデックスまたは添字と呼ばれる番号を使います。 個々の値は、配列の要素と呼ばれます。 これは、インデックス 0 から最も大きいインデックス値まで連続しています。  
-  
- 配列とは対照的に、単一の値が含まれている変数は *スカラー* 変数と呼ばれます。  
+配列と呼ばれるものの値のセットとは、*要素*、互いに論理的に関連します。 たとえば、配列で構成されます; 学校の各学年の生徒の数配列の各要素は、1 つ学年の生徒の数です。 同様に、配列が、クラスの学生の成績のあります。配列の各要素は、1 つのレベルです。    
+
+各データ項目を格納するそれぞれの変数は可能です。 たとえば、アプリケーションは、学生の成績を分析し場合、お個別の変数付け、学生の成績のなど、使用できる`englishGrade1`、 `englishGrade2`, などです。この方法では、次の 3 つの主要な制限があります。
+- 成績の数だけを処理する必要はデザイン時に把握お必要があります。
+- 多数の成績をすばやく処理は、扱いにくくなります。 これは、結果、アプリケーションが深刻なバグが存在する可能性が高くなります。
+- 維持するために困難です。 新しい各学年を追加するには、こと、アプリケーションを変更が再コンパイルして再展開が必要です。  
+ 
+ 配列を使用すると、これらの関連する値を同じ名前で参照およびと呼ばれる番号を使用して、*インデックス*または*添字*を配列内の位置に基づいて、個々 の要素を識別します。 配列内の要素の合計数より 1 小さい値に 0 の配列範囲のインデックス。 配列のサイズを定義する Visual Basic 構文を使用する場合は、最高のインデックス、配列内の要素の合計数されませんを指定します。 単位として配列を使用することができ、その要素を反復処理する機能を正確にデザイン時に含まれている数の要素を把握しておかなくてから解放します。
   
  説明する前に、簡単な例をいくつか紹介します。  
   
 ```vb  
-'Declare a single-dimension array of 5 values  
+' Declare a single-dimension array of 5 numbers.  
 Dim numbers(4) As Integer   
   
-'Declare a single-dimension array and set array element values  
+'Declare a single-dimension array and set its 4 values.  
 Dim numbers = New Integer() {1, 2, 4, 8}  
   
-'Redefine the size of an existing array retaining the current values  
-ReDim Preserve numbers(15)  
+' Change the size of an existing array to 16 elements and retain the current values.
+ReDim Preserve numbers(15)
   
-'Redefine the size of an existing array, resetting the values  
+' Redefine the size of an existing array and reset the values.
 ReDim numbers(15)  
   
-'Declare a multi-dimensional array  
+' Declare a 6 x 6 multidimensional array.
 Dim matrix(5, 5) As Double  
   
-'Declare a multi-dimensional array and set array element values  
-Dim matrix = New Integer(4, 4) {{1, 2}, {3, 4}, {5, 6}, {7, 8}}  
+' Declare a 4 x 3 multidimensional array and set array element values.  
+Dim matrix = New Integer(3, 2) {{1, 2, 3}, {2, 3, 4}, {3, 4, 5}, {4, 5, 6}}  
   
-'Declare a jagged array  
+' Declare a jagged array  
 Dim sales()() As Double = New Double(11)() {}  
 ```  
   
- **このトピックの内容**  
+ ## <a name="in-this-article"></a>この記事の内容
   
--   [単純な配列の配列要素](#BKMK_ArrayElements)  
+- [単純な配列の配列要素](#array-elements-in-a-simple-array)  
   
--   [配列の作成](#BKMK_CreatingAnArray)  
+- [配列の作成](#creating-an-array)  
   
--   [配列への値の格納](#BKMK_StoringValues)  
+- [配列内の値を格納します。](#storing-values-in-an-array)  
   
--   [配列への初期値の取り込み](#BKMK_Populating)  
+- [配列リテラルを含む配列を設定します。](#populating-an-array-with-array-literals)  
   
-    -   [入れ子になった配列リテラル](#BKMK_NestedArrayLiterals)  
+- [配列を反復処理します。](#iterating-through-an-array)  
   
--   [配列の反復処理](#BKMK_Iterating)  
+- [配列のサイズ](#BKMK_ArraySize)  
+
+- [配列の型](#the-array-type)  
   
--   [戻り値およびパラメーターとしての配列](#BKMK_ReturnValues)  
+- [戻り値およびパラメーターとしての配列](#arrays-as-return-values-and-parameters)  
+- [ジャグ配列](#jagged-arrays)  
   
--   [ジャグ配列](#BKMK_JaggedArrays)  
+- [長さ 0 の配列](#zero-length-arrays)  
+
+- [配列の分割](#splitting-an-array)
   
--   [長さ 0 の配列](#BKMK_ZeroLength)  
+- [配列の代わりとしてのコレクション](#collections-as-an-alternative-to-arrays)  
   
--   [配列のサイズ](#BKMK_ArraySize)  
+##  <a name="array-elements-in-a-simple-array"></a>単純な配列の配列要素  
+
+という名前の配列を作成しましょう`students`学校の各学年の生徒の数を格納します。 要素のインデックスの範囲は 0 から 6 までです。 この配列を使用することは、7 つの変数を宣言するよりも簡単です。
+
+次の図は、`students`配列。 配列の各要素は、次のとおりです。  
   
--   [配列の型および他の型](#BKMK_ArrayTypes)  
+-   要素のインデックスは、学年を表します (インデックス 0 は幼稚園を表します)。
   
--   [配列の代わりとしてのコレクション](#BKMK_Collections)  
-  
-##  <a name="BKMK_ArrayElements"></a> 単純な配列の配列要素  
- 次の例では、学校の各学年の生徒の数を保持するために、配列変数を宣言しています。  
-  
- [!code-vb[VbVbalrArrays#2](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#2)]  
-  
- 上の例の `students` 配列には、7 つの要素が含まれています。 要素のインデックスの範囲は 0 から 6 までです。 7 つの変数を宣言するよりも、この配列の方が簡単です。  
-  
- `students`配列を次の図に示します。 配列の各要素は、次のとおりです。  
-  
--   要素のインデックスは、学年を表します (インデックス 0 は幼稚園を表します)。  
-  
--   要素に含まれている値は、その学年の生徒の数を表します。  
+-   要素に含まれている値は、その学年の生徒の数を表します。
   
  ![生徒数を示す配列の図](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexampleschool.gif "ArrayExampleSchool")  
 "生徒" 配列の要素  
+ 
+次の例には、作成し、配列を使用している Visual Basic コードが含まれています。
+
+ [!code-vb[simple-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/simple-array.vb)]  
+
+この例では、次の 3 つをは。
+
+- 宣言して、 `students` 7 つの要素を持つ配列です。 数`6`配列では、宣言は、配列内の最後のインデックスをことを示します。 これは 1 つの配列内の要素数よりも小さいです。
+- 配列内の各要素に値を割り当てます。 配列要素にはかっこで囲まれた個々 の要素のインデックスを含むを配列の名前を使用してアクセスします。
+- これには、配列の各値が表示されます。 この例では、 [ `For` ](../../../language-reference/statements/for-next-statement.md)インデックス番号で、配列の各要素にアクセスするステートメント。
   
- 次の例は、 `students`配列の先頭の要素、2 番目の要素、および最後の要素を参照する方法を示します。  
+ `students` 1 つのインデックスを使用しているために、前の例での配列は 1 次元配列。 1 つ以上のインデックスまたは添字を使用する配列と呼びます*多次元*です。 詳細については、この記事の残りを表示および[Visual Basic における配列の次元](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md)です。  
   
- [!code-vb[VbVbalrArrays#3](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#3)]  
+##  <a name="creating-an-array"></a>配列の作成  
+ 
+いくつかの方法では、配列のサイズを定義できます。 
+
+- 配列が宣言されている場合は、サイズを指定できます。
   
- インデックスを持たない配列変数名だけを使用して、配列全体を参照できます。  
+    [!code-vb[creating1](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#1)]  
   
- 前の例の `students` 配列では、1 つのインデックスが使用されており、これを 1 次元と言います。 複数のインデックスまたは添字が使用されている配列は、多次元と呼ばれます。 詳細については、このトピックの残りの部分と「 [Array Dimensions in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md)」を参照してください。  
+ - 使用することができます、`New`句を作成するときに、配列のサイズを指定します。  
   
-##  <a name="BKMK_CreatingAnArray"></a> 配列の作成  
- 配列のサイズは、さまざまな方法で定義できます。 次の例に示すように、配列を宣言するときにサイズを指定することができます。  
+    [!code-vb[creating2](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#2)]  
   
- [!code-vb[VbVbalrArrays#12](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#12)]  
+ 使用してサイズを再定義できる既存の配列があれば、 [ `Redim` ](../../../../visual-basic/language-reference/statements/redim-statement.md)ステートメントです。 指定することができます、`Redim`ステートメントは、配列内に値を保持または空の配列を作成するを指定することができます。 次に、 `Redim` ステートメントを使用して既存の配列のサイズを変更する例をいくつか示します。  
   
- また、次の例に示すように、 `New` 句を使用して配列を作成するときにサイズを指定することもできます。  
+ [!code-vb[redimensioning](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#3)]  
   
- [!code-vb[VbVbalrArrays#11](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#11)]  
+ 詳細については、次を参照してください。、 [ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md)です。  
   
- 既存の配列がある場合は、 `Redim` ステートメントを使用してサイズを再定義できます。 `Redim` ステートメントでは、配列に格納されている値を保持するように指定することも、空の配列を作成するように指定することもできます。 次に、 `Redim` ステートメントを使用して既存の配列のサイズを変更する例をいくつか示します。  
+##  <a name="storing-values-in-an-array"></a>配列への値の格納
+ 
+ 配列のそれぞれの位置には、 `Integer`型のインデックスを使用してアクセスできます。 かっこで囲まれたインデックスを使用して配列のそれぞれの位置を参照することで、配列の値を格納および取得することができます。 多次元配列のインデックスは、コンマ (,) で区切られます。 配列の次元ごとに 1 つのインデックスが必要です。 
+
+次の例では、格納および配列の値を取得するステートメントを示します。
   
- [!code-vb[VbVbalrArrays#13](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#13)]  
+ [!code-vb[store-and-retrieve](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/store-and-retrieve.vb)]  
   
- 詳細については、「[ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md)」を参照してください。  
+## <a name="populating-an-array-with-array-literals"></a>配列リテラルを含む配列を設定します。
+ 配列リテラルを使用すると、同時に作成すること、初期値のセットを含む配列を設定できます。 配列リテラルは、中かっこ (`{}`) で囲んだ値のコンマ区切りの一覧で構成されます。  
   
-##  <a name="BKMK_StoringValues"></a> 配列への値の格納  
- 配列のそれぞれの位置には、 `Integer`型のインデックスを使用してアクセスできます。 かっこで囲まれたインデックスを使用して配列のそれぞれの位置を参照することで、配列の値を格納および取得することができます。 多次元配列のインデックスはコンマ (,) で区切ります。 配列の次元ごとに 1 つのインデックスが必要です。 配列に値を格納するステートメントの例を示します。  
+ 配列リテラルを使用して配列を作成する場合、配列の型を指定するか、型の推定を使用して配列の型を決定することができます。 次の例では、両方のオプションを示します。  
   
- [!code-vb[VbVbalrArrays#5](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#5)]  
+ [!code-vb[create-with-literals](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#4)]  
   
- 配列から値を取得するステートメントの例を示します。  
+ 型推論を使用する場合、配列の型はによって決まります、*基準となる型*リテラル値の一覧にします。 主要な型を配列内の他のすべての型から拡大変換できる型です。 この一意の型を特定できない場合、最も優先度の高い型は、配列内の他のすべての型から縮小変換できる一意の型になります。 これらの一意の型をどちらも特定できない場合は、 `Object`が最も優先度の高い型になります。 たとえば、配列リテラルに指定された値の一覧に `Integer`型、 `Long`型、および `Double`型の値が含まれている場合、結果の配列の型は `Double`です。 `Integer`と`Long`にのみ拡大変換`Double`、`Double`は、主要な型です。 詳細については、「 [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。 
+ 
+> [!NOTE] 
+> 型のメンバーのローカル変数として定義されている配列に対してのみ型の推定を使用することができます。 クラス レベルの配列リテラルで定義されている配列は型の場合は、明示的な型定義がない場合、`Object[]`です。 詳細については、次を参照してください。[ローカル型推論](../variables/local-type-inference.md)です。 
+
+前の例を定義する注`values`型の配列として`Double`場合でも、すべての配列リテラルが型`Integer`です。 この配列を作成するには、配列リテラル内の値に拡大変換することができますので`Double`値。 
   
- [!code-vb[VbVbalrArrays#6](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#6)]  
+ 作成しを使用して多次元配列を設定できます*配列リテラルを入れ子になった*です。 入れ子になった配列リテラルには、次元数が、結果の配列と一致する必要があります。 次の例では、入れ子になった配列リテラルを使用して整数の 2 次元配列を作成します。  
   
-##  <a name="BKMK_Populating"></a> 配列への初期値の取り込み  
- 配列リテラルを使用すると、初期値のセットを含む配列を作成できます。 配列リテラルは、中かっこ (`{}`) で囲んだ値のコンマ区切りの一覧で構成されます。  
+ [!code-vb[nested-array-literals](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#5)]  
   
- 配列リテラルを使用して配列を作成する場合、配列の型を指定するか、型の推定を使用して配列の型を決定することができます。 この 2 つの方法を次のコードに示します。  
+配列を作成し、入れ子になった配列リテラルを使用している場合は、入れ子になった配列リテラル内の要素の数が一致しない場合にエラーが発生します。 エラーは、明示的により、配列リテラルのディメンションの数が異なるを持つ配列変数を宣言する場合にも発生します。 
   
- [!code-vb[VbVbalrCollectionInitializers#3](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#3)]  
+1 次元配列にすることができますと同様、入れ子になった配列リテラルに多次元配列を作成するときに型の推定に依存することができます。 推論された型は、主要な型のすべての入れ子レベルのすべての配列リテラル内のすべての値です。 次の例では、型の 2 次元配列`Double[,]`は型の値から`Integer`と`Double`です。  
   
- 型の推定を使用する場合、配列の型は、配列リテラルに指定された値の一覧の中で最も優先度の高い型によって決まります。 最も優先度の高い型は、配列リテラル内の他のすべての型から拡大変換できる一意の型です。 この一意の型を特定できない場合、最も優先度の高い型は、配列内の他のすべての型から縮小変換できる一意の型になります。 これらの一意の型をどちらも特定できない場合は、 `Object`が最も優先度の高い型になります。 たとえば、配列リテラルに指定された値の一覧に `Integer`型、 `Long`型、および `Double`型の値が含まれている場合、結果の配列の型は `Double`です。 `Integer` と `Long` は `Double`にのみ拡大変換されます。 そのため、 `Double` が最も優先度の高い型になります。 詳細については、「 [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。 これらの推定規則は、クラス メンバーで定義されたローカル変数である配列についての型の推定に適用されます。 クラス レベルの変数を作成するときに配列リテラルを使用することはできますが、クラス レベルで型の推定を使用することはできません。 そのため、クラス レベルで指定された配列リテラルでは、配列リテラルに指定された値の型は `Object`型であると推論されます。  
-  
- 配列リテラルを使用して作成した配列の要素の型を明示的に指定することができます。 この場合、配列リテラル内の値を配列の要素の型に拡大変換する必要があります。 整数の一覧から `Double` 型の配列を作成するコード例を次に示します。  
-  
- [!code-vb[VbVbalrCollectionInitializers#4](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#4)]  
-  
-###  <a name="BKMK_NestedArrayLiterals"></a> 入れ子になった配列リテラル  
- 入れ子になった配列リテラルを使用すると、多次元配列を作成できます。 入れ子になった配列リテラルに含める次元および次元数 (ランク) は、結果の配列と一致する必要があります。 配列リテラルを使用して整数の 2 次元配列を作成するコード例を次に示します。  
-  
- [!code-vb[VbVbalrCollectionInitializers#7](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#7)]  
-  
- 上記の例では、入れ子になった配列リテラル内の要素の数が一致しないとエラーが発生します。 また、2 次元以外の配列変数が明示的に宣言された場合もエラーが発生します。  
-  
-> [!NOTE]
->  入れ子になった配列リテラルで異なる次元を指定することによるエラーを回避するには、内側の配列をかっこで囲みます。 次のコードに示すようにかっこで囲むと、配列リテラル式の評価が実行され、そこで得られた値が外側の配列リテラルで使用されます。  
-  
- [!code-vb[VbVbalrCollectionInitializers#11](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#11)]  
-  
- 入れ子になった配列リテラルを使用して多次元配列を作成する場合、型の推定を使用できます。 型の推定を使用すると、推定される型は、入れ子レベルのすべての配列リテラルに含まれるすべての値の中で最も優先度の高い型になります。 `Double` 型と `Integer` 型の値から `Double`型の 2 次元配列を作成するコード例を次に示します。  
-  
- [!code-vb[VbVbalrCollectionInitializers#8](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#8)]  
+ [!code-vb[nested-type-inference](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#6)]  
   
  他の例については、「[方法: Visual Basic で配列変数を初期化する](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)」を参照してください。  
   
-##  <a name="BKMK_Iterating"></a> 配列の反復処理  
- 配列を反復処理するときには、配列の各要素に、最もインデックスが小さいものから順番にアクセスします。  
+##  <a name="iterating-through-an-array"></a>配列を反復処理します。  
+ 配列内の各要素にアクセスするまたは最高の値から最高の値を最小のインデックスから配列を反復処理するときに、最下位までです。 通常、使用をいずれも使用、[をしています.次のステートメントの](../../../../visual-basic/language-reference/statements/for-next-statement.md)または[ごとにしています.次のステートメントの](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)配列の要素を反復処理します。 配列の上限がわからない場合は、呼び出すことができます、<xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType>インデックスの最高値を取得します。 一番低いインデックス値がほとんど常に 0 を呼び出すことができます、<xref:System.Array.GetLowerBound%2A?displayProperty=nameWithType>インデックスの最小値を取得します。   
   
- 次の例では、[For...Next ステートメント](../../../../visual-basic/language-reference/statements/for-next-statement.md)を使用して 1 次元配列を反復処理します。 <xref:System.Array.GetUpperBound%2A> メソッドでは、インデックスが保持できる一番高い値が返されます。 一番低いインデックス値は常に 0 です。  
+ 次の例を使用して、1 次元配列を反復処理、 [ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md)ステートメントです。 
   
- [!code-vb[VbVbalrArrays#41](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#41)]  
+ [!code-vb[iterate-one-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate1d.vb)]  
   
- 次の例では、 `For...Next` ステートメントを使用して多次元配列を反復処理します。 <xref:System.Array.GetUpperBound%2A> メソッドには、次元を指定するパラメーターがあります。 `GetUpperBound(0)` は最初の次元の最も大きいインデックス値を返し、 `GetUpperBound(1)` は 2 番目の次元の最も大きいインデックス値を返します。  
+ 次の例を使用して、多次元配列を反復処理する[ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md)ステートメントです。 <xref:System.Array.GetUpperBound%2A> メソッドには、次元を指定するパラメーターがあります。 `GetUpperBound(0)`最初の次元のインデックスの最大値を返しますと`GetUpperBound(1)`2 番目の次元のインデックスの最大値を返します。
   
- [!code-vb[VbVbalrArrays#42](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#42)]  
+ [!code-vb[iterate-two-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate2d.vb)]  
   
- 次の例では、[For Each...Next ステートメント](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)を使用して 1 次元配列を反復処理します。  
+ 次の例では、[ごとにしています.次のステートメントの](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)1 次元配列と、2 次元の配列を反復処理します。  
   
- [!code-vb[VbVbalrArrays#43](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#43)]  
+ [!code-vb[iterate-for-each-next](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate-for-each-next.vb)]  
   
- 次の例では、 `For Each...Next` ステートメントを使用して多次元配列を反復処理します。 ただし、 `For…Next` ステートメントを使用するより、前の例のように、入れ子になった `For Each…Next` ステートメントを使用した方が、多次元配列の要素をより細かく制御できます。  
+## <a name="array-size"></a>配列のサイズ  
+
+ 配列のサイズは、そのすべての次元の長さの積です。 これは、現在配列に含まれている要素の総数を表します。  たとえば、次の例では、各ディメンション内の 4 つの要素を持つ 2 次元配列を宣言します。 例の出力を示しています、配列のサイズは 16 (または (3 + 1) * (3 + 1)。
+
+ [!code-vb[array-size](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-size.vb)]  
+
+> [!NOTE] 
+> 配列のサイズには、この説明は、ジャグ配列には適用されません。 ジャグ配列およびジャグ配列のサイズを決定については、次を参照してください。、[ジャグ配列](#jagged-arrays)セクションです。
   
- [!code-vb[VbVbalrArrays#44](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#44)]  
+  配列のサイズは、<xref:System.Array.Length%2A?displayProperty=nameWithType> プロパティを使用して確認できます。 使用して多次元配列の各次元の長さを見つけることができます、<xref:System.Array.GetLength%2A?displayProperty=nameWithType>メソッドです。  
   
-##  <a name="BKMK_ReturnValues"></a> 戻り値およびパラメーターとしての配列  
- `Function` プロシージャから配列を返すには、[Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)の戻り値の型として配列のデータ型と次元数を指定します。 関数内で、同じデータ型と次元数を持つローカルの配列変数を宣言します。 [Return ステートメント](../../../../visual-basic/language-reference/statements/return-statement.md)には、かっこを使用せずにローカルの配列変数を含めます。  
-  
- 配列を `Sub` プロシージャまたは `Function` プロシージャのパラメーターとして指定するには、パラメーターを配列として定義して、データ型と次元数を指定します。 プロシージャの呼び出しで、データ型と次元数が同じ配列変数を渡します。  
-  
- 次の例では、 `GetNumbers` 関数が `Integer()`を返します。 この配列型は、 `Integer`型の 1 次元配列です。 `ShowNumbers` プロシージャは、 `Integer()` の引数を受け取ります。  
-  
- [!code-vb[VbVbalrArrays#51](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#51)]  
-  
- 次の例では、 `GetNumbersMultiDim` 関数が `Integer(,)`を返します。 この配列型は、 `Integer`型の 2 次元配列です。  `ShowNumbersMultiDim` プロシージャは、 `Integer(,)` の引数を受け取ります。  
-  
- [!code-vb[VbVbalrArrays#52](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#52)]  
-  
-##  <a name="BKMK_JaggedArrays"></a> ジャグ配列  
- 他の配列を要素として保持する配列を、配列の配列またはジャグ配列と呼びます。 ジャグ配列と、ジャグ配列の各要素は、1 次元でも多次元でもかまいません。 アプリケーションのデータ構造は、2 次元の配列であっても四角形の 2 次元配列ではない場合があります。  
-  
- 次の例には、各要素が日の配列である月の配列が含まれています。 月によって日数が異なるため、月要素は四角形の 2 次元配列を形成しません。 そのため、多次元配列の代わりにジャグ配列が使用されています。  
-  
- [!code-vb[VbVbalrArrays#21](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#21)]  
-  
-##  <a name="BKMK_ZeroLength"></a> 長さ 0 の配列  
- 要素を持たない配列は、長さ 0 の配列と呼ばれます。 長さ 0 の配列を保持する変数の値は、 `Nothing`ではありません。 要素を持たない配列を作成するには、次の例のように配列の次元のいずれかを -1 と宣言します。  
-  
- [!code-vb[VbVbalrArrays#14](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#14)]  
-  
- 次のような場合に、長さ 0 の配列を作成する必要があります。  
-  
--   <xref:System.NullReferenceException> 例外を発生させずにコードで <xref:System.Array> クラスのメンバー ( <xref:System.Array.Length%2A> 、 <xref:System.Array.Rank%2A>など) にアクセスしたり [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 関数 ( <xref:Microsoft.VisualBasic.Information.UBound%2A>など) を呼び出したりする必要がある場合。  
-  
--   特別なケースとして、 `Nothing` をチェックする必要性をなくすことによって利用側のコードを簡素化する場合。  
-  
--   コードで、長さ 0 の配列を 1 つ以上のプロシージャに渡す必要があるアプリケーション プログラミング インターフェイス (API: Application Programming Interface) とやり取りする場合、または API の 1 つ以上のプロシージャから長さ 0 の配列が返される場合。  
-  
-##  <a name="BKMK_ArraySize"></a> 配列のサイズ  
- 配列のサイズは、そのすべての次元の長さの積です。 これは、現在配列に含まれている要素の総数を表します。  
-  
- 次の例では 3 次元配列を宣言しています。  
-  
-```vb
-Dim prices(3, 4, 5) As Long  
-```  
-  
- 変数 `prices` の配列の全体のサイズは、(3 + 1) x (4 + 1) x (5 + 1) = 120 です。  
-  
- 配列のサイズは、<xref:System.Array.Length%2A> プロパティを使用して確認できます。 多次元配列の各次元の長さは、 <xref:System.Array.GetLength%2A> メソッドを使用して確認できます。  
-  
- 配列変数のサイズを変更するには、新しい配列オブジェクトを割り当てるか、 `ReDim` ステートメントを使用します。  
+ 新しい配列オブジェクトを割り当てるかを使用して配列変数のサイズ変更できます、 [ `ReDim`ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md)ステートメントです。 次の例では、 `ReDim` 51 要素を配列に 100 要素を含む配列を変更するステートメント。
+
+ [!code-vb[resize-an-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-size2.vb)]  
   
  配列のサイズを扱う際に考慮する必要がある点がいくつかあります。  
   
 |||  
 |---|---|  
-|次元の長さ|各次元のインデックスは 0 ベースであり、範囲は 0 から上限です。 したがって、次元の長さは、その次元に対する宣言された上限よりも 1 だけ大きくなります。|  
-|長さの制限|配列のすべての次元の長さは、`Integer` データ型の最大値に制限されます。最大値は (2 ^ 31) - 1 です。 しかし、配列のサイズの総数も、システムで利用できるメモリによって制限されます。 利用できる RAM の容量を超える配列を初期化しようとすると、共通言語ランタイムは <xref:System.OutOfMemoryException> 例外をスローします。|  
-|サイズおよび要素のサイズ|配列のサイズは、その要素のデータ型には依存しません。 サイズは常に、使用するストレージのバイト数ではなく、要素の合計数を表します。|  
+|次元の長さ|各次元のインデックスには、上限を範囲は 0 からつまり、0 から始まります。 したがって、指定した次元の長さは、そのディメンションの宣言された上限より小さい値のいずれかです。|  
+|長さの制限|配列のすべての次元の長さの最大値に制限されて、`Integer`はこのデータ型は<xref:System.Int32.MaxValue?displayProperty=nameWithType>または (2 ^31) - 1。 しかし、配列のサイズの総数も、システムで利用できるメモリによって制限されます。 使用可能なメモリの容量を超える配列を初期化しようとする場合、ランタイムは、スロー、<xref:System.OutOfMemoryException>です。|  
+|サイズおよび要素のサイズ|配列のサイズは、その要素のデータ型には依存しません。 サイズは、常にメモリ内に消費するバイト数ではなく、要素の合計数を表します。|  
 |メモリの使用量|配列がどのようにメモリに格納されるかに関して、前提を置くことは安全ではありません。 ストレージは、プラットフォームのデータ幅が異なると変わります。したがって、同じ配列でも、32 ビットのシステムよりも 64 ビットのシステムの方が多くのメモリを使用します。 配列を初期化すると、システム構成に応じて、要素をできるだけ近くに集めるように、またはすべてがハードウェア自体の境界に合致するように、共通言語ランタイム (CLR: Common Language Runtime) によってストレージが割り当てられます。 また、配列は制御情報のためにストレージのオーバーヘッドを必要とします。このオーバーヘッドは、次元が追加されるごとに増加します。|  
+
+## <a name="the-array-type"></a>配列の型 
+ すべての配列には、その要素のデータ型と異なるデータ型があります。 すべての配列を包括する 1 つのデータ型はありません。 代わりに、配列のデータ型は、配列の次元数 ( *ランク*) と配列の要素のデータ型によって決まります。 2 つの配列変数は、同じランクである、ときにのみを入力し、その要素が同じデータ型を持つは、同じデータです。 配列の次元の長さは、配列のデータ型には影響しません。  
   
-##  <a name="BKMK_ArrayTypes"></a> 配列の型および他の型  
- すべての配列にデータ型がありますが、要素のデータ型とは異なります。 すべての配列を包括する 1 つのデータ型はありません。 代わりに、配列のデータ型は、配列の次元数 ( *ランク*) と配列の要素のデータ型によって決まります。 ランクと要素のデータ型が一致しない限り、2 つの配列変数が同じデータ型を持つと見なされることはありません。 配列の各次元の長さは、配列のデータ型には影響しません。  
+ すべての配列は、<xref:System.Array?displayProperty=nameWithType> クラスから継承しています。また、`Array` 型として変数を宣言できますが、`Array` 型の配列は作成できません。 たとえば、次のコードを宣言していますが、`arr`型の変数`Array`を呼び出すと、 <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> object[] をこと、配列、配列の型のインスタンスを作成する方法がわかったです。
+
+ [!code-vb[array-class](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-class.vb)] 
+
+また、[ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md) は、`Array` 型として宣言された変数上では使用できません。 これらの理由やタイプ セーフでは、特定の型としてすべての配列を宣言することをお勧めします。  
   
- すべての配列は、<xref:System.Array?displayProperty=nameWithType> クラスから継承しています。また、`Array` 型として変数を宣言できますが、`Array` 型の配列は作成できません。 また、[ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md) は、`Array` 型として宣言された変数上では使用できません。 これらの理由やタイプ セーフを考慮して、すべての配列を、前の例の `Integer` などの特定の型として宣言することをお勧めします。  
+ いくつかの方法で、配列またはその要素のいずれかのデータ型を知ることができます。 
   
- いくつかの方法で、配列またはその要素のいずれかのデータ型を知ることができます。  
+-   呼び出すことができます、<xref:System.Object.GetType%2A>メソッドを取得する変数を<xref:System.Type>変数の実行時の型を表すオブジェクト。 <xref:System.Type> オブジェクトでは、プロパティおよびメソッドに詳細情報が保持されます。  
   
--   変数の <xref:System.Object.GetType%2A?displayProperty=nameWithType> メソッドを呼び出して、実行時型の変数の <xref:System.Type> オブジェクトを取得できます。 <xref:System.Type> オブジェクトでは、プロパティおよびメソッドに詳細情報が保持されます。  
+-   変数を渡すことができます、<xref:Microsoft.VisualBasic.Information.TypeName%2A>を取得する関数、`String`実行時の型の名前に置き換えます。  
   
--   変数を <xref:Microsoft.VisualBasic.Information.TypeName%2A> 関数に渡して、実行時型の名前が含まれる `String` を取得できます。  
+ 次の例では、どちらも、`GetType`メソッドおよび`TypeName`配列の型を判断する関数。 配列の型は`Byte(,)`します。 なお、<xref:System.Type.BaseType%2A?displayProperty=nameWithType>もプロパティでは、バイト配列の基本の種類があることを示します、<xref:System.Array>クラスです。  
   
--   変数を <xref:Microsoft.VisualBasic.Information.VarType%2A> 関数に渡して、変数の型の分類を表す `VariantType` 値を受け取ることができます。  
+ [!code-vb[array-type](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-type.vb)]  
   
- `TypeName` 関数を呼び出して配列の型と配列の要素の型を確認する例を次に示します。 配列の型は `Integer(,)` で、配列の要素の型は `Integer`です。  
+##  <a name="arrays-as-return-values-and-parameters"></a>戻り値およびパラメーターとしての配列  
+ `Function` プロシージャから配列を返すには、[Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)の戻り値の型として配列のデータ型と次元数を指定します。 関数内で、同じデータ型と次元数を持つローカルの配列変数を宣言します。 [Return ステートメント](../../../../visual-basic/language-reference/statements/return-statement.md)には、かっこを使用せずにローカルの配列変数を含めます。  
   
- [!code-vb[VbVbalrArrays#15](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#15)]  
+ 配列を `Sub` プロシージャまたは `Function` プロシージャのパラメーターとして指定するには、パラメーターを配列として定義して、データ型と次元数を指定します。 プロシージャの呼び出しでは、同じデータ型と次元数で配列変数を渡します。  
   
-##  <a name="BKMK_Collections"></a> 配列の代わりとしてのコレクション  
- 配列は、数が固定されている厳密に型指定されたオブジェクトの作成および処理に最も適しています。 コレクションは、オブジェクトのグループをより柔軟に処理できます。 配列の場合とは違って、コレクションで扱うオブジェクトのグループは、アプリケーションのニーズの変化に応じて動的に拡大および縮小できます。  
+ 次の例で、`GetNumbers`関数が返される、 `Integer()`、型の 1 次元配列`Integer`です。 `ShowNumbers` プロシージャは、 `Integer()` の引数を受け取ります。 
   
- 配列のサイズを変更する必要がある場合は、[ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md)を使用する必要があります。 これを行うと、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] により新しい配列が作成され、前の配列が解放されて廃棄されます。 これには、実行時間がかかります。 したがって、操作を行う項目の数が頻繁に変更される場合、または必要な項目の最大数を予測できない場合、コレクションを使用するとパフォーマンスが向上します。  
+ [!code-vb[return-value-and-params](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/return-values-and-params.vb)]  
+  
+ 次の例で、`GetNumbersMultiDim`関数が返される、 `Integer(,)`、型の 2 次元配列`Integer`です。  `ShowNumbersMultiDim` プロシージャは、 `Integer(,)` の引数を受け取ります。  
+  
+ [!code-vb[multidimensional-return-value](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/return-values-and-params-2d.vb)]  
+  
+## <a name="jagged-arrays"></a>ジャグ配列  
+ 
+アプリケーションのデータ構造は、2 次元の配列であっても四角形の 2 次元配列ではない場合があります。 たとえば、月の日の最高気温に関するデータを格納するのに配列を使用する場合があります。 配列の最初の次元が、月を表すが、2 番目の次元数日間を表し、1 か月の日数が固定されていません。 A*ジャグ配列*もと呼ばれる、*配列の配列*、このようなシナリオに適しています。 ジャグ配列とは、配列要素も配列です。 ジャグ配列と、ジャグ配列の各要素は、1 次元でも多次元でもかまいません。  
+  
+ 次の例では、数か月の各要素が日の配列の配列を使用します。 異なる月の日数の数が異なるため、ジャグ配列を使用します。  この例では、ジャグ配列を作成し、値を割り当てる、取得、およびその値を表示する方法を示します。
+  
+ [!code-vb[jagged-arrays](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged.vb)]  
+
+前の例では、要素単位ごとにジャグ配列に値を割り当てますを使用して、`For...Next`ループします。 入れ子になった配列リテラルを使用してジャグ配列の要素に値を割り当てることもできます。 ただし、使用しようとすると、入れ子になった配列リテラル (たとえば、 ```Dim valuesjagged = {{1, 2}, {2, 3, 4}}```) コンパイラ エラーが発生[BC30568](../../../,,/../misc/bc30568.md)です。 エラーを修正するには、内部の配列リテラルをかっこで囲みます。 かっこは、強制的に、配列リテラルに評価される式、され、次の例のように、外側の配列リテラルで結果の値が使用されます。  
+  
+ [!code-vb[jagged-array-initialization](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-assign.vb)] 
+
+ジャグ配列とは、1 次元配列の配列の要素を格納します。 したがって、<xref:System.Array.Length%2A?displayProperty=nameWithType>プロパティおよび`Array.GetLength(0)`メソッドは、1 次元の配列要素の数を返すと`Array.GetLength(1)`をスロー、<xref:System.IndexOutOfRangeException>ジャグ配列が多次元ではないためです。 各サブ配列の値を取得することによって各サブ配列の要素の数を決定する<xref:System.Array.Length%2A?displayProperty=nameWithType>プロパティです。 次の例では、ジャグ配列の要素の数を決定する方法を示します。
+
+[!code-vb[jagged-array-size](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-length.vb)] 
+
+## <a name="zero-length-arrays"></a>長さ 0 の配列  
+Visual Basic が初期化されていない配列間で区別 (値が配列`Nothing`) および*長さ 0 の配列*または空の配列 (配列要素が存在しないことです)。初期化されていない配列である多次元化されていないか、任意の値がそれに割り当てられます。 例:
+
+```vb
+Dim arr() As String
+```
+長さ 0 の配列は、-1 のディメンションと宣言されます。 例:
+
+```vb
+Dim arrZ(-1) As String
+```
+次のような場合に、長さ 0 の配列を作成する必要があります。  
+  
+-   危険にさらす、<xref:System.NullReferenceException>例外、コードのメンバーにアクセスする必要があります、<xref:System.Array>クラスなど<xref:System.Array.Length%2A>または<xref:System.Array.Rank%2A>、または Visual Basic の関数を呼び出すなど<xref:Microsoft.VisualBasic.Information.UBound%2A>です。  
+  
+-   保持する、コードを確認する必要がない単純な`Nothing`特殊なケースとして。  
+  
+-   コードで、長さ 0 の配列を 1 つ以上のプロシージャに渡す必要があるアプリケーション プログラミング インターフェイス (API: Application Programming Interface) とやり取りする場合、または API の 1 つ以上のプロシージャから長さ 0 の配列が返される場合。
+
+## <a name="splitting-an-array"></a>配列の分割
+
+場合によっては、1 つの配列を複数の配列に分割する必要があります。 これには、配列を分割するにはポイントを特定し、2 つ以上の独立した配列に配列を送信が含まれます。 
+
+> [!NOTE] 
+> このセクションでは、1 つの文字列を分割していくつかの区切り記号に基づいて文字列配列には説明しません。 文字列の分割方法の詳細については、次を参照してください。、<xref:System.String.Split%2A?displayProperty=nameWithType>メソッドです。
+
+分割して配列の最も一般的な条件は次のとおりです。
+
+- 配列の要素数。 たとえば、約と同等の部分の数の指定した要素数を超える配列に分割することができます。 このため、いずれかによって返される値を使用することができます、<xref:System.Array.Length%2A?displayProperty=nameWithType>または<xref:System.Array.GetLength%2A?displayProperty=nameWithType>メソッドです。
+
+- 配列の位置を示す区切り記号として機能する要素の値を分割する必要があります。 呼び出して、特定の値を検索することができます、<xref:System.Array.FindIndex%2A?displayProperty=nameWithType>と<xref:System.Array.FindLastIndex%2A?displayProperty=nameWithType>メソッドです。
+ 
+呼び出して個々 の配列を作成できますし、インデックスまたはインデックスの配列に分割する必要がありますを特定した後、<xref:System.Array.Copy%2A?displayProperty=nameWithType>メソッドです。 
+
+次の例では、ほぼ等しいサイズの 2 つの配列に配列を分割します。 (配列の要素の合計数が奇数の場合は、最初の配列が 2 番目の要素が 1 つです。) 
+
+[!code-vb[splitting-an-array-by-length](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/split1.vb)] 
+
+次の例では、文字列の配列をその値は"zzz"配列の区切り記号として機能する要素の有無に基づいて 2 つの配列に分割します。 新しい配列には、区切り記号を格納する要素を含めないでください。
+
+[!code-vb[splitting-an-array-by-delimiter](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/split2.vb)] 
+
+## <a name="joining-arrays"></a>配列への参加
+
+単一の大きな配列に配列の番号を組み合わせることもできます。 これを行うには、使用することも、<xref:System.Array.Copy%2A?displayProperty=nameWithType>メソッドです。 
+
+> [!NOTE] 
+> このセクションでは、1 つの文字列に文字列の配列を結合するには説明しません。 文字列の配列を結合する方法については、次を参照してください。、<xref:System.String.Join%2A?displayProperty=nameWithType>メソッドです。
+
+新しい配列に各配列の要素をコピーする前にまず accompodate 新しい配列に十分な大きさがよう、配列を初期化することを確認する必要があります。 2 つの方法のいずれかでこれを行うことができます。
+
+- 使用して、 [ `ReDim Preserve` ](../../../../visual-basic/language-reference/statements/redim-statement.md)ステートメントを動的に新しい要素を追加する前に、配列を展開します。 これは、最も簡単な手法が大きな配列をコピーするときにパフォーマンスが低下したり大量のメモリ消費量になります。
+- 新しいの大きな配列の必要な要素の合計数を計算し、各ソース配列の要素を追加します。
+
+次の例では、2 番目の方法を使用して、1 つの配列に 10 個の要素を持つ 4 つの配列を追加します。  
+
+[!code-vb[joining-an-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/join.vb)] 
+
+ソース配列が小さすべてここでは、以降おも動的に拡大する可能性が配列に各新しい配列の要素を追加しました。 次の例でこれを確認できます。
+
+[!code-vb[joining-an-array-dynamically](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/join2.vb)] 
+
+##  <a name="collections-as-an-alternative-to-arrays"></a>配列の代わりとしてのコレクション  
+ 配列は、数が固定されている厳密に型指定されたオブジェクトの作成および処理に最も適しています。 コレクションは、オブジェクトのグループをより柔軟に処理できます。 配列とは異なりを必要とする格納された配列のサイズを明示的に変更すること、 [ `ReDim`ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md)コレクションの拡大し、アプリケーションの変更の必要に応じて動的に縮小します。  
+  
+ 使用すると`ReDim`配列の次元を変更する Visual Basic が新しい配列を作成し、前の 1 つを解放します。 これには、実行時間がかかります。 そのため、頻繁に変更するかを使用するアイテムの数は、必要な項目の最大数を予測できない場合、するを通常パフォーマンスを向上コレクションを使用しています。  
   
  コレクションによっては、コレクションに含まれるオブジェクトのキーを割り当てると、そのキーを使用してオブジェクトを迅速に取り出すことができます。  
   
- 含まれる要素が 1 つのデータ型だけのコレクションの場合は、 <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
+ 含まれる要素が 1 つのデータ型だけのコレクションの場合は、 <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。  
   
- コレクションの詳細については、「[コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)」を参照してください。  
-  
-### <a name="example"></a>例  
- [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のジェネリック クラス <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> を使用して、`Customer` オブジェクトの一覧コレクションを作成する例を次に示します。  
-  
- [!code-vb[VbVbalrArrays#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#1)]  
-  
- `CustomerFile` コレクションの宣言により、 `Customer`型だけの要素を含むことができることを指定します。 また、200 要素分の初期容量も用意されています。 `AddNewCustomer` プロシージャにより、新しい要素の有効性がチェックされ、コレクションに追加されます。 `PrintCustomers` プロシージャでは、コレクションを走査し、その要素を表示するために、 `For Each` ループが使用されます。  
+ コレクションの詳細については、「[コレクション](../../concepts/collections.md)」を参照してください。
   
 ## <a name="related-topics"></a>関連トピック  
   
@@ -280,6 +327,6 @@ Dim prices(3, 4, 5) As Long
 |[配列のトラブルシューティング](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)|配列を使用しているときに発生する一般的な問題について説明します。|  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Array>  
+ <xref:System.Array?displayProperty=nameWithType>  
  [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)  
  [ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md)

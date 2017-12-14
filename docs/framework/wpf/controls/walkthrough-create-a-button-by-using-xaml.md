@@ -14,11 +14,11 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b6d24356841e8b385bef47bcba0e5694b48240
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 543e6496c826c864dc77e50fd096fc4cb43f600e
+ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/13/2017
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>チュートリアル : XAML を使用したボタンの作成
 このチュートリアルの目的で使用するためのアニメーションのボタンを作成する方法については、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]アプリケーションです。 このチュートリアルでは、スタイルとテンプレートを使用して、コードの再利用やボタン宣言からボタン ロジックを分離するカスタマイズされたボタンのリソースを作成します。 このチュートリアルが完全に書き込まれる[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/21/2017
     </Application>  
     ```  
   
-     リソースのスコープは、定義したリソースによって決まります。 内のリソースを定義する`Application.Resoureses`app.xaml では、ファイルは、アプリケーションで任意の場所から使用するリソースをことができます。 リソースのスコープの定義の詳細については、次を参照してください。 [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)です。  
+     リソースのスコープは、定義したリソースによって決まります。 内のリソースを定義する`Application.Resources`app.xaml では、ファイルは、アプリケーションで任意の場所から使用するリソースをことができます。 リソースのスコープの定義の詳細については、次を参照してください。 [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)です。  
   
 2.  **スタイルを作成し、それに基本的なプロパティ値を定義します。**に次のマークアップを追加、`Application.Resources`ブロックします。 このマークアップを作成、<xref:System.Windows.Style>設定、アプリケーションのすべてのボタンに適用される、<xref:System.Windows.FrameworkElement.Width%2A>を 90 にボタンのおよび<xref:System.Windows.FrameworkElement.Margin%2A>10。  
   
@@ -328,7 +328,7 @@ ms.lasthandoff: 11/21/2017
   
      F5 キーを押してアプリケーションを実行し、ボタンのいずれかをクリックします。 フォーカスがあるために、クリックした後、ボタンが強調表示されたままことに注意してください。 別のボタンをクリックした場合は、新しいボタンにフォーカスが最後の 1 つでは、それが失われます。  
   
-4.  **アニメーションの追加**<xref:System.Windows.UIElement.MouseEnter> **と** <xref:System.Windows.UIElement.MouseLeave> **:**次にいくつかのアニメーションのトリガーに追加します。   任意の場所内の次のマークアップを追加、`ControlTemplate.Triggers`ブロックします。  
+4.  **アニメーションの追加**<xref:System.Windows.UIElement.MouseEnter> **と** <xref:System.Windows.UIElement.MouseLeave> **:**次にいくつかのアニメーションのトリガーに追加します。 任意の場所内の次のマークアップを追加、`ControlTemplate.Triggers`ブロックします。  
   
     ```  
     <!-- Animations that start when mouse enters and leaves button. -->  
