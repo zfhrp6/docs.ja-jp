@@ -4,16 +4,15 @@ description: ".NET マイクロサービス: コンテナー化された .NET �
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 10/18/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
+ms.openlocfilehash: 97dfa3261c8ddc7a869b0991673b7a8d298972dd
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: f4c241f463ff1270037c7d66ba39409ca5d9e728
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="development-process-for-docker-based-applications"></a>Docker ベースのアプリケーションの開発プロセス
 
@@ -25,16 +24,18 @@ ms.lasthandoff: 09/05/2017
 
 完全で強力な IDE または軽量でアジャイルなエディターのどちらを選んでも、Microsoft では Docker アプリケーションの開発に使用できるツールが用意されています。
 
-**Visual Studio と Tools for Docker**。 Visual Studio 2015 を使用している場合は、[Visual Studio Tools for Docker](https://marketplace.visualstudio.com/items?itemName=MicrosoftCloudExplorer.VisualStudioToolsforDocker-Preview) アドインをインストールできます。 Visual Studio 2017 を使用している場合は、Tools for Docker が既に組み込まれています。 いずれの場合も、Tools for Docker を使用して、ターゲットの Docker 環境で直接アプリケーションの開発、実行、および検証ができます。 F5 キーを押すと、Docker ホスト内で直接アプリケーション (1 つのコンテナー、または複数のコンテナー) を実行してデバックできます。または、CTRL キーを押しながら F5 キーを押すと、コンテナーを再構築しなくても、アプリケーションを編集して更新できます。 これは、Linux または Windows の Docker コンテナーをターゲットとする Windows 開発者にとって最も簡単で最も強力な選択肢です。
+**Visual Studio (Windows 版)**。 Docker ベースのアプリケーションを開発するには、Docker 用のツールが既に組み込まれている Visual Studio 2017 以降のバージョンを使用します。 Tools for Docker を使用して、ターゲットの Docker 環境で直接アプリケーションの開発、実行、および検証ができます。 F5 キーを押すと、Docker ホスト内で直接アプリケーション (1 つのコンテナー、または複数のコンテナー) を実行してデバックできます。または、CTRL キーを押しながら F5 キーを押すと、コンテナーを再構築しなくても、アプリケーションを編集して更新できます。 これは、Docker ベース アプリを開発する場合の最も強力な選択肢です。
+
+**Visual Studio for Mac**。 これは、macOS 上で実行する、Docker ベースのアプリケーションの開発をサポートする Xamarin Studio の進化版の IDE です。 これは、強力な IDE を使用したい Mac コンピューターで作業する開発者にとって好ましい選択肢です。
 
 **Visual Studio Code と Docker CLI**。 任意の開発言語をサポートする軽量なクロスプラット フォーム エディターを選択すると、Microsoft Visual Studio Code (VS Code) と Docker CLI を使用することができます。 これは、Mac、Linux、および Windows のクロスプラット フォーム開発アプローチです。
 
-これらの製品は、開発者のワークフローを効率化する、単純ながらも信頼性の高いエクスペリエンスを提供します。 [Docker Community Edition (CE)](https://www.docker.com/community-edition) ツールをインストールすることで、1 つの Docker CLI を使用して Windows と Linux の両方のアプリを構築することができます。 さらに、Visual Studio Code は、Dockerfiles の IntelliSense などの Docker の拡張機能や、エディターから Docker コマンドを実行するショートカット タスクをサポートします。
+[Docker Community Edition (CE)](https://www.docker.com/community-edition) ツールをインストールすることで、1 つの Docker CLI を使用して Windows と Linux の両方のアプリを構築することができます。 さらに、Visual Studio Code は、Dockerfiles の IntelliSense などの Docker の拡張機能や、エディターから Docker コマンドを実行するショートカット タスクをサポートします。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
 -   **Visual Studio Tools for Docker**
-    [*https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4*](https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4)
+    [*https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker*](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
 
 -   **Visual Studio Code**。 公式サイト。
     [*https://code.visualstudio.com/download*](https://code.visualstudio.com/download)
@@ -49,4 +50,3 @@ ms.lasthandoff: 09/05/2017
 
 >[!div class="step-by-step"]
 [前へ] (../architect-microservice-container-applications/using-azure-service-fabric.md) [次へ] (docker-app-development-workflow.md)
-

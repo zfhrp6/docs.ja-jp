@@ -7,13 +7,11 @@ ms.author: ronpet
 ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
-ms.devlang: dotnet
+ms.openlocfilehash: e54cabe67558300b5c5fb9552d78397850d4c782
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: b47d4c74a01b99d743b69328c201096bc8d89794
-ms.openlocfilehash: e43f72ebd26c34636c239d8ac9f749d52d3f60a0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="whats-new-in-net-core"></a>.NET Core の新機能
 
@@ -24,19 +22,21 @@ ms.lasthandoff: 08/14/2017
 - [プラットフォームの機能強化](#platform-improvements)
 - [API の変更](#api-changes-and-library-support)
 - [Visual Studio の統合](#visual-studio-integration)
-- [ドキュメントの改善](#documentation-improvements) 
+- [ドキュメントの改善](#documentation-improvements)
 
 ## <a name="tooling"></a>ツール
 
 ### <a name="dotnet-restore-runs-implicitly"></a>dotnet restore の暗黙的な実行
 
-以前のバージョンの .NET Core では、[dotnet new](../tools/dotnet-new.md) コマンドで新しいプロジェクトを作成した直後に、またはプロジェクトに新しい依存関係を追加したときに、[dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、依存関係をダウンロードする必要がありました。 .NET Core 2.0 では、`dotnet new` コマンドを実行したときに暗黙的に `dotnet restore` が実行されます。 `run`、`build`、`publish` など他のコマンドを実行したときにも、依存関係の更新が必要であれば暗黙的に実行されます。
+以前のバージョンの .NET Core では、[dotnet new](../tools/dotnet-new.md) コマンドで新しいプロジェクトを作成した直後に、またはプロジェクトに新しい依存関係を追加したときに、[dotnet restore](../tools/dotnet-restore.md) コマンドを実行して、依存関係をダウンロードする必要がありました。
+
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 この `dotnet restore` の自動実行は、`--no-restore` スイッチを `new`、`run`、`build`、`publish`、`pack`、`test` コマンドに渡すことで、無効にすることもできます。 
 
 ### <a name="retargeting-to-net-core-20"></a>.NET Core 2.0 への再ターゲット
 
-.NET Core 2.0 SDK がインストールされていれば、.NET Core 1.x をターゲットしているプロジェクトを .NET Core 2.0 に再ターゲットすることができます。 
+.NET Core 2.0 SDK がインストールされていれば、.NET Core 1.x をターゲットしているプロジェクトを .NET Core 2.0 に再ターゲットすることができます。
 
 .NET Core 2.0 に再ターゲットするには、プロジェクト ファイルを編集して `<TargetFramework>` 要素 (または、プロジェクト ファイルに複数のターゲットがある場合は `<TargetFrameworks>` 要素) の値を 1.x から 2.0 に変更します。
 
@@ -68,7 +68,7 @@ ms.lasthandoff: 08/14/2017
 - .NET Core クラス ライブラリ
 - .NET Standard クラス ライブラリ
 - .NET Core 単体テスト プロジェクト
-- .NET Core xUnit テスト プロジェクト 
+- .NET Core xUnit テスト プロジェクト
 
 たとえば、Visual Basic で "Hello World" アプリケーションを作成するには、コマンドラインから次の手順を実行します。
 
@@ -77,7 +77,7 @@ ms.lasthandoff: 08/14/2017
 1. `dotnet new console -lang vb` コマンドを入力します。
 
    このコマンドにより、*Program.vb* というファイル名の Visual Basic ソース コードとともに、ファイル拡張子が `.vbproj` のプロジェクト ファイルが作成されます。 このファイル内に、"Hello World!" という文字列を コンソール ウィンドウに表示するためのソース コードが含まれています。
-  
+
 1.  `dotnet run` コマンドを入力します。 [.NET Core CLI ツール](../tools/index.md)によりアプリケーションが自動的にコンパイルされて実行され、"Hello World!" メッセージが表示されます。 コンソール ウィンドウに表示します。
 
 ### <a name="support-for-c-71"></a>C# 7.1 のサポート
@@ -98,11 +98,11 @@ ms.lasthandoff: 08/14/2017
 
 .NET core 2.0 では、複数の Linux ディストリビューションで動作する単一の Linux 実装を提供します。 .NET core 1.x では、ディストリビューション固有の Linux 実装をダウンロードする必要がありました。
 
-単一のオペレーティング システムとしての Linux をターゲットするアプリを開発することもできます。 .NET Core 1.x では、ディストリビューションごとに別の Linux をターゲットする必要がありました。 
+単一のオペレーティング システムとしての Linux をターゲットするアプリを開発することもできます。 .NET Core 1.x では、ディストリビューションごとに別の Linux をターゲットする必要がありました。
 
 ### <a name="support-for-the-apple-cryptographic-libraries"></a>Apple 暗号化ライブラリのサポート
 
-macOS の .NET Core 1.x では、OpenSSL ツールキットの暗号化ライブラリが必要でした。 .NET Core 2.0 では、Apple 暗号化ライブラリを使用し、OpenSSL を必要としないため、OpenSSL をインストールする必要がありません。 
+macOS の .NET Core 1.x では、OpenSSL ツールキットの暗号化ライブラリが必要でした。 .NET Core 2.0 では、Apple 暗号化ライブラリを使用し、OpenSSL を必要としないため、OpenSSL をインストールする必要がありません。
 
 ## <a name="api-changes-and-library-support"></a>API の変更とライブラリのサポート
 
@@ -118,7 +118,9 @@ macOS の .NET Core 1.x では、OpenSSL ツールキットの暗号化ライブ
 
 ### <a name="expanded-surface-area"></a>拡張されたアクセス領域
 
-.NET Core 2.0 で使用できる API の数は、.NET Core 1.1 の 2 倍以上です。 
+.NET Core 2.0 で使用できる API の数は、.NET Core 1.1 の 2 倍以上です。
+
+また、[Windows 互換機能パック](../porting/windows-compat-pack.md)により、.NET Framework からの移植がより簡単になりました。
 
 ### <a name="support-for-net-framework-libraries"></a>.NET Framework ライブラリのサポート
 
@@ -130,13 +132,13 @@ Visual Studio 2017 バージョン 15.3 (場合によって Visual Studio for Ma
 
 ### <a name="retargeting-net-core-apps-and-net-standard-libraries"></a>.NET Core アプリと .NET Standard ライブラリの再ターゲット
 
-.NET Core 2.0 SDK がインストールされていれば、.NET Core 1.x プロジェクトを .NET Core 2.0 に、.NET Standard 1.x ライブラリを .NET Standard 2.0 に再ターゲットすることができます。 
+.NET Core 2.0 SDK がインストールされていれば、.NET Core 1.x プロジェクトを .NET Core 2.0 に、.NET Standard 1.x ライブラリを .NET Standard 2.0 に再ターゲットすることができます。
 
 Visual Studio のプロジェクトを再ターゲットするには、そのプロジェクトのプロパティ ダイアログの **[アプリケーション]** タブを開き、**[ターゲット フレームワーク]** の値を「**.NET Core 2.0**」または「**.NET Standard 2.0**」に変更します。 プロジェクトを右クリックして**編集\*.csproj ファイル** オプションを選択することで、変更することもできます。 詳細については、前述の「[ツール](#tooling)」セクションをご覧ください。
 
 ### <a name="live-unit-testing-support-for-net-core"></a>.NET Core のライブ単体テスト対応
 
-コードを変更すると常に、Live Unit Testing は影響を受ける単体テストをバックグラウンドで自動的に実行して、テスト結果とコード カバレッジをライブで Visual Studio 環境に表示します。 .NET core 2.0 では現在、Live Unit Testing がサポートされています。 以前は、.NET Framework アプリケーションでのみ Live Unit Testing が使用できました。 
+コードを変更すると常に、Live Unit Testing は影響を受ける単体テストをバックグラウンドで自動的に実行して、テスト結果とコード カバレッジをライブで Visual Studio 環境に表示します。 .NET core 2.0 では現在、Live Unit Testing がサポートされています。 以前は、.NET Framework アプリケーションでのみ Live Unit Testing が使用できました。
 
 詳細については、「[Visual Studio 2017 での Live Unit Testing](/visualstudio/test/live-unit-testing)」と「[Live Unit Testing についてよく寄せられる質問](/visualstudio/test/live-unit-testing-faq)」をご覧ください。
 
@@ -144,7 +146,7 @@ Visual Studio のプロジェクトを再ターゲットするには、そのプ
 
 複数のターゲット フレームワークのプロジェクトをビルドする場合は、トップレベルのメニューからターゲット プラットフォームを選択できます。 次の図では、SCD1 という名前のプロジェクトが 64 ビット Mac OS X 10.11 (`osx.10.11-x64`) と 64 ビット Windows 10/Windows Server 2016 (`win10-x64`) をターゲットしています。 プロジェクト ボタンを選択する前にターゲット フレームワークを選択できます。今回はデバッグ ビルドを実行するために選択します。
 
-![プロジェクト作成時のターゲット フレームワークの選択](media/multitarget.png) 
+![プロジェクト作成時のターゲット フレームワークの選択](media/multitarget.png)
 
 ### <a name="side-by-side-support-for-net-core-sdks"></a>.NET Core SDK の side-by-side サポート
 
@@ -163,4 +165,3 @@ Visual Studio のプロジェクトを再ターゲットするには、そのプ
 
 ## <a name="see-also"></a>関連項目
  [ASP.NET Core 2.0 の新機能](/aspnet/core/aspnetcore-2.0)
-

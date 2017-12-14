@@ -12,12 +12,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
+ms.openlocfilehash: 002c0e35bc8dfb54fc081fcb70000c9c61eb5fcc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: c2e2408b2d7a02a1a75965f32888d240bafae0f0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="get-started-with-c"></a>C# の使用を開始する #
 
@@ -72,5 +71,4 @@ ms.lasthandoff: 09/02/2017
     C# を使用するプログラミングのチュートリアルと、各チュートリアルに関する簡単な説明へのリンクを示します。
 
 ## <a name="see-also"></a>関連項目
- [Visual Studio を使用した Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)[初級開発者向けラーニング センター](http://go.microsoft.com/fwlink/?LinkId=123826)
-
+ [Visual Studio を使用した Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)

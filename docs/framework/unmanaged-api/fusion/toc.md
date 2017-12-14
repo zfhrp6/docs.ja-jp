@@ -53,7 +53,7 @@
 ### [IsFrameworkAssembly 関数](isframeworkassembly-function.md)
 ### [NukeDownloadedCache 関数](nukedownloadedcache-function.md)
 ### [PreBindAssemblyEx 関数](prebindassemblyex-function.md)
-## [Fusion 列挙体](fusion-enumerations.md)
+## [Fusion 列挙型](fusion-enumerations.md)
 ### [ASM_CACHE_FLAGS 列挙型](asm-cache-flags-enumeration.md)
 ### [ASM_CMP_FLAGS 列挙型](asm-cmp-flags-enumeration.md)
 ### [ASM_DISPLAY_FLAGS 列挙型](asm-display-flags-enumeration.md)

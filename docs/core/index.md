@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f2b312cb-f80c-4b0d-9101-93908f06a6fa
+ms.openlocfilehash: 54540b8a1fc0ceaf68dfb3fcbb04fefae2296695
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9f2128080d34e78733cec926e59ee5dbe9b98a0d
-ms.openlocfilehash: 14e72dad71b8d99cea947e14f2ac77aedcfb5672
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/07/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-core-guide"></a>.NET Core のガイド
 
 > 「[Getting Started](get-started.md)」 (概要) では、単純な .NET Core アプリケーションを作成する方法を学習できます。 最初のアプリを、ほんの数分で起動および実行できます。
@@ -43,9 +41,9 @@ ms.lasthandoff: 08/07/2017
 
 ### <a name="languages"></a>言語
 
-.NET Core のアプリケーションとライブラリを記述するには、C# および F# 言語を使用できます (Visual Basic も間もなく使用可能になります)。 コンパイラは .NET Core 上で実行され、任意の実行場所で .NET Core 用の開発を可能にします。 一般的に、コンパイラは直接使用せず、SDK ツールを使用して間接的に使用します。
+.NET Core のアプリケーションとライブラリを記述するには、C#、Visual Basic および F# 言語を使用できます。 コンパイラは .NET Core 上で実行され、任意の実行場所で .NET Core 用の開発を可能にします。 一般的に、コンパイラは直接使用せず、SDK ツールを使用して間接的に使用します。
 
-C# および F# コンパイラと .NET Core ツールは、 Visual Studio、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)、Sublime Text、Vim などの複数のテキスト エディターおよび IDE に統合されているか、または統合することができます。これにより、任意のコーディング環境および OS で .NET Core 開発を行うことができます。 この統合は、1 つには [OmniSharp プロジェクト](http://www.omnisharp.net/)の優れた要員によって提供されます。
+C#、Visual Basic および F# コンパイラと .NET Core ツールは、Visual Studio、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)、Sublime Text、Vim などの複数のテキスト エディターおよび IDE に統合されているか、または統合することができます。これにより、任意のコーディング環境および OS で .NET Core 開発を行うことができます。 この統合は、1 つには [OmniSharp プロジェクト](http://www.omnisharp.net/)の優れた要員によって提供されます。
 
 ### <a name="net-apis-and-compatibility"></a>.NET API と互換性
 
@@ -153,4 +151,3 @@ Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Mic
 - **プラットフォーム** -- Mono は、さまざまなプラットフォームおよび CPU をサポートしています。
 - **オープン ソース** --Mono と .NET Core は両方とも MIT ライセンスを使用しており、.NET Foundation プロジェクトです。
 - **フォーカス** -- 近年、Mono はモバイル プラットフォームに重点を置いており、.NET Core はクラウド ワークロードを重視しています。
-

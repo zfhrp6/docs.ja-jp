@@ -2,13 +2,10 @@
 title: "クラスと構造体 (C# プログラミング ガイド)"
 description: "C# でのクラスと構造体の使用について説明します。"
 keywords: "クラス (C#), 構造体 (C#), 構造体 (構造体) (C#), 参照型 (C#), 値型 (C#)"
-ms.date: 2016-01-17
+ms.date: 01/17/2016
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - structs [C#], about structs
 - classes [C#], overview
@@ -17,29 +14,14 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-caps.latest.revision: 48
+caps.latest.revision: "48"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 8c4cbbdd0384c0c0e97d6a7c655e798d0562d9a8
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2076de96c58fb89813495cb59adacb8a0082d93c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>クラスと構造体 (C# プログラミング ガイド)
 クラスと構造体は、.NET Framework の共通型システムの 2 つの基本構成です。 クラスと構造体は、どちらも基本的にはデータと動作のセットを 1 つの論理単位としてカプセル化するデータ構造です。 データと動作はクラスまたは構造体の "*メンバー*" です。このトピックで後述するように、メソッド、プロパティ、イベントなどが含まれます。  
@@ -57,7 +39,7 @@ ms.lasthandoff: 09/25/2017
 ## <a name="example"></a>例  
  次の例では、`ProgrammingGuide` 名前空間の `CustomClass` に 3 つのメンバー (インスタンス コンストラクター、`Number` という名前のプロパティ、`Multiply` という名前のメソッド) があります。 `Program` クラスの `Main` メソッドによって `CustomClass` のインスタンス (オブジェクト) が作成され、オブジェクトのメソッドとプロパティにはドット表記を使用してアクセスします。
   
- [!code-cs[csProgGuideObjects#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/class1.cs#1)]  
+ [!code-csharp[csProgGuideObjects#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/class1.cs#1)]  
   
 ## <a name="encapsulation"></a>カプセル化  
  "*カプセル化*" は、オブジェクト指向プログラミングの原理と言われることもあります。 カプセル化の原理に基づくと、クラスまたは構造体は、クラスや構造体の外部のコードに対してメンバーがアクセスする方法を指定できます。 クラスやアセンブリの外部からの使用を意図されていないメソッドや変数は非表示にして、コーディング エラーや悪意のある攻略が生じる潜在性を軽減できます。  
@@ -88,7 +70,7 @@ ms.lasthandoff: 09/25/2017
 -   [入れ子にされた型](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
   
 ### <a name="accessibility"></a>ユーザー補助  
- メソッドやプロパティの中には、クラスまたは構造体の外部にあるコード ("*クライアント コード*" と呼ばれます) から呼び出されたりアクセスされたりするように用意されているものがあります。 その他のメソッドやプロパティは、クラスまたは構造体それ自体でのみ使用されるようになっています。 意図したクライアント コードだけがアクセスできるように、コードのアクセシビリティを制限することが重要です。 型やメンバーがクライアント コードにアクセスする方法を指定するには、アクセス修飾子 [public](../../../csharp/language-reference/keywords/public.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、`protected internal`、および [private](../../../csharp/language-reference/keywords/private.md) を使用します。 既定のアクセシビリティは `private` です。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ メソッドやプロパティの中には、クラスまたは構造体の外部にあるコード ("*クライアント コード*" と呼ばれます) から呼び出されたりアクセスされたりするように用意されているものがあります。 その他のメソッドやプロパティは、クラスまたは構造体それ自体でのみ使用されるようになっています。 意図したクライアント コードだけがアクセスできるように、コードのアクセシビリティを制限することが重要です。 型やメンバーがクライアント コードにアクセスする方法を指定するには、アクセス修飾子 [public](../../../csharp/language-reference/keywords/public.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、[protected internal](../../../csharp/language-reference/keywords/protected-internal.md)、[private](../../../csharp/language-reference/keywords/private.md)、および [private protected](../../../csharp/language-reference/keywords/private-protected.md) を使用します。 既定のアクセシビリティは `private` です。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
 ### <a name="inheritance"></a>継承  
  クラスでは、継承の概念がサポートされます (構造体ではサポートされません)。 他のクラス (*基底クラス*) から派生するクラスには、コンストラクターとファイナライザーを除く基底クラスのすべてのパブリック メンバー、プロテクト メンバー、および内部メンバーが自動的に含まれます。 詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」および「[ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)」を参照してください。  
@@ -127,4 +109,3 @@ ms.lasthandoff: 09/25/2017
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
-

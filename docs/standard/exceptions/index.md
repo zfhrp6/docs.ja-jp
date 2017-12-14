@@ -17,16 +17,15 @@ helpviewer_keywords:
 - exceptions [.NET Framework]
 - common language runtime, exceptions
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: b064dc39f5807b154a1529eebe17493ae84981cf
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5d44996042d167c029291f2b454dc1a22cfbcfb4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>.NET での例外の処理とスロー
 
@@ -36,7 +35,7 @@ ms.lasthandoff: 09/05/2017
 
 例外とは、プログラムを実行することによって発生するエラー状態または予期しない動作のことです。 例外がスローされる原因として、コードまたは呼び出したコード (たとえば共有ライブラリ) 内に障害がある、オペレーティング システム リソースを使用できない、予期しない状態 (たとえば検証できないコード) をランタイムが検出したなどがあります。 アプリケーションは、他の状態からではなく、これらの状態のうちのいくつかから回復できます。 ほとんどのアプリケーション例外から回復できますが、ほとんどのランタイム例外からは回復できません。
 
-.NET では、例外は [System.Exception](xref:System.Exception) クラスから継承されるオブジェクトです。 例外は問題が発生したコード領域からスローされます。 例外は、アプリケーションが処理するかプログラムが終了するまで、スタックに渡されます。
+.NET では、例外は、<xref:System.Exception?displayProperty=nameWithType> クラスから継承されるオブジェクトです。 例外は問題が発生したコード領域からスローされます。 例外は、アプリケーションが処理するかプログラムが終了するまで、スタックに渡されます。
 
 ## <a name="exceptions-vs-traditional-error-handling-methods"></a>例外:従来のエラー処理メソッド
 
@@ -58,13 +57,13 @@ ms.lasthandoff: 09/05/2017
 
 | 例外の種類 | 基本型 | 説明 | 例 |
 | -------------- | --------- | ----------- | ------- |
-| @System.Exception | @System.Object | すべての例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
-| @System.IndexOutOfRangeException | @System.Exception | 配列のインデックスが誤っている場合にのみ、ランタイムによってスローされます。 | 次のように、配列に対して配列の有効範囲外のインデックスを付けた場合。`arr[arr.Length+1]` |
-| @System.NullReferenceException | @System.Exception | null オブジェクトが参照された場合にのみ、ランタイムによってスローされます。 | `object o = null; o.ToString();` |
-| @System.InvalidOperationException | @System.Exception | 無効な状態の場合にメソッドによってスローされます。 | 基になるコレクションからアイテムを削除した後での、`Enumerator.GetNext()` の呼び出しです。 |
-| @System.ArgumentException | @System.Exception | すべての引数の例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
-| @System.ArgumentNullException | @System.Exception | null の引数を許可しないメソッドによってスローされます。 | `String s = null; "Calculate".IndexOf (s);` |
-| @System.ArgumentOutOfRangeException | @System.Exception | 引数が特定の範囲内にあることを検査するメソッドによってスローされます。 | `String s = "string"; s.Substring(s.Length+1);` |
+| <xref:System.Exception> | <xref:System.Object> | すべての例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
+| <xref:System.IndexOutOfRangeException> | <xref:System.Exception> | 配列のインデックスが誤っている場合にのみ、ランタイムによってスローされます。 | 次のように、配列に対して配列の有効範囲外のインデックスを付けた場合。`arr[arr.Length+1]` |
+| <xref:System.NullReferenceException> | <xref:System.Exception> | null オブジェクトが参照された場合にのみ、ランタイムによってスローされます。 | `object o = null; o.ToString();` |
+| <xref:System.InvalidOperationException> | <xref:System.Exception> | 無効な状態の場合にメソッドによってスローされます。 | 基になるコレクションからアイテムを削除した後での、`Enumerator.GetNext()` の呼び出しです。 |
+| <xref:System.ArgumentException> | <xref:System.Exception> | すべての引数の例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
+| <xref:System.ArgumentNullException> | <xref:System.Exception> | null の引数を許可しないメソッドによってスローされます。 | `String s = null; "Calculate".IndexOf (s);` |
+| <xref:System.ArgumentOutOfRangeException> | <xref:System.Exception> | 引数が特定の範囲内にあることを検査するメソッドによってスローされます。 | `String s = "string"; s.Substring(s.Length+1);` |
 
 ## <a name="see-also"></a>関連項目
 
@@ -79,4 +78,3 @@ ms.lasthandoff: 09/05/2017
 * [例外の推奨事項](best-practices-for-exceptions.md)
 
 .NET での例外の動作の詳細については、「[What Every Dev needs to Know About Exceptions in the Runtime](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md)」(ランタイム時の例外についてすべての開発者が知っておくべきこと) を参照してください。
-

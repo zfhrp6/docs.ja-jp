@@ -1,30 +1,21 @@
 ---
 title: "式ツリー (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 250da307d024b1011e1fb04cd84eb25e41af3fa8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: be37183163a3747f861cbda7fd7867640ba382a2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="expression-trees-c"></a>式ツリー (C#)
 式ツリーでは、コードがツリー状のデータ構造で表示されます。各ノードは 1 つの式に対応しています。たとえば、メソッドの呼び出しや `x < y` のような二項演算などです。  
@@ -165,10 +156,9 @@ Console.WriteLine(expr.Compile()(4));
  詳細については、「[方法: 式ツリーを実行する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Linq.Expressions>   
- [方法 : 式ツリーを実行する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)   
- [方法: 式ツリーを変更する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)   
- [ラムダ式](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)   
- [動的言語ランタイムの概要](https://msdn.microsoft.com/library/dd233052)   
+ <xref:System.Linq.Expressions>  
+ [方法 : 式ツリーを実行する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
+ [方法: 式ツリーを変更する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)  
+ [ラムダ式](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+ [動的言語ランタイムの概要](https://msdn.microsoft.com/library/dd233052)  
  [プログラミングの概念 (C#)](../../../../csharp/programming-guide/concepts/index.md)
-

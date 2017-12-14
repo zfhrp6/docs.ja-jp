@@ -1,30 +1,23 @@
 ---
 title: ".NET Framework の概要"
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 66e581e04aa0c3d33fb1ef9a7f4163d131f625bf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
-ms.openlocfilehash: 327aad36a560a772e9ddb4d8d721c2545f800151
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
 
 .NET Framework は、.NET Framework を対象としたアプリを管理するランタイム実行環境です。 これは、メモリ管理やその他のシステム サービスを提供する共通言語ランタイムと、プログラマがアプリ開発のすべての主要領域で堅牢性と信頼性の高いコードを利用できるようにするための広範なクラス ライブラリから構成されています。
@@ -46,7 +39,7 @@ ms.lasthandoff: 08/05/2017
 
 - バージョンの互換性。 まれなケースを除き、特定のバージョンの .NET Framework を使用して開発されたアプリは、後続バージョンでも変更の必要なく実行されます。
 
-- side-by-side 実行。 .NET Framework では、同じコンピューターに複数バージョンの共通言語ランタイムが共存でき、バージョン競合の解決に役立ちます。 これは、複数バージョンのアプリも共存でき、アプリがビルドされた .NET Framework のバージョンでアプリを実行できることを意味します。 side-by-side 実行は、.NET Framework の 1.0/1.1、2.0/3.0/3.5、および 4/4.5.x/4.6.x/4.7 のバージョン グループに適用されます。
+- side-by-side 実行。 .NET Framework では、同じコンピューターに複数バージョンの共通言語ランタイムが共存でき、バージョン競合の解決に役立ちます。 これは、複数バージョンのアプリも共存でき、アプリがビルドされた .NET Framework のバージョンでアプリを実行できることを意味します。 side-by-side 実行は、.NET Framework の 1.0/1.1、2.0/3.0/3.5、および 4/4.5.x/4.6.x/4.7.x のバージョン グループに適用されます。
 
 - 複数バージョン対応。 開発者は、[.NET Standard](~/docs/standard/net-standard.md) を対象にすることで、Windows 7、Windows 8、Windows 8.1、Windows 10、Windows Phone、Xbox 360 などの複数の .NET Framework プラットフォームで機能するアセンブリを作成できます。
 
@@ -61,9 +54,9 @@ Windows オペレーティング システムを使用している場合は、.N
 
 - 使用するアプリが特定のバージョンの .NET Framework に依存している場合、そのバージョンが削除されるとアプリの互換性に影響する可能性があります。
 
-- .NET Framework のバージョンの中には、前のバージョンのインプレース更新であるものがあります。 たとえば、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] はバージョン 2.0 のインプレース更新で、.NET Framework 4.7 はバージョン 4、4.5、4.5.1、4.5.2、4.6、4.6.1、および 4.6.2 のインプレース更新です。 詳細については、「[.NET Framework のバージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。
+- .NET Framework のバージョンの中には、前のバージョンのインプレース更新であるものがあります。 たとえば、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] はバージョン 2.0 のインプレース更新で、.NET Framework 4.7.1 はバージョン 4、4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、および 4.7 のインプレース更新です。 詳細については、「[.NET Framework のバージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。
 
-.NET Framework を削除する場合は、必ずコントロール パネルの [**プログラムと機能**] を使用してアンインストールしてください。 .NET Framework のバージョンを手動で削除しないでください。
+.NET Framework を削除する場合は、必ずコントロール パネルの **[プログラムと機能]** を使用してアンインストールしてください。 .NET Framework のバージョンを手動で削除しないでください。
 
 1 台のコンピューターで複数バージョンの .NET Framework が同時に共存できることに注意してください。 これは、後続バージョンをインストールするために前のバージョンをアンインストールする必要がないことを意味します。
 
@@ -74,7 +67,7 @@ Windows オペレーティング システムを使用している場合は、.N
 
 .NET Framework アプリまたはコンポーネントを開発するには、次の操作を行います。
 
-1. オペレーティング システムにプレインストールされていない場合は、アプリが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンである .NET Framework 4.7 は Windows 10 Creators Update にプレインストールされていますが、以前のバージョンの Windows オペレーティング システムでも使用できます。 .NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 .NET Framework の追加パッケージは、アウト オブ バンドでリリースされます。これは、通常のリリース サイクルや定期的なリリース サイクルではなく、ローリング方式でリリースされるということを意味します。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。
+1. オペレーティング システムにプレインストールされていない場合は、アプリが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンである .NET Framework 4.7.1 は Windows 10 Fall Creators Update にプレインストールされていますが、以前のバージョンの Windows オペレーティング システムでも使用できます。 .NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 .NET Framework の追加パッケージは、アウト オブ バンドでリリースされます。これは、通常のリリース サイクルや定期的なリリース サイクルではなく、ローリング方式でリリースされるということを意味します。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。
 
 2. .NET Framework でサポートされている、アプリ開発に使用する言語を選択します。 Microsoft の Visual Basic、C#、Visual F#、および C++/CLI を含む多くの言語から選択できます  (.NET Framework のアプリを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](http://go.microsoft.com/fwlink/?LinkId=199862)に準拠します)。
 
@@ -99,4 +92,3 @@ Windows オペレーティング システムを使用している場合は、.N
 [新機能](../../../docs/framework/whats-new/index.md)   
 [.NET API ブラウザー](/dotnet/api/)   
 [開発ガイド](../../../docs/framework/development-guide.md)
-

@@ -1,44 +1,26 @@
 ---
 title: "ジェネリック (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, generics
 - generics [C#]
 ms.assetid: 75ea8509-a4ea-4e7a-a2b3-cf72482e9282
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 0804ca0fcefcc53e06352accf9a2db19edb31037
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 1e548df4de2c07934313311a7ffcfae82be76000
-ms.openlocfilehash: de81058173b0985577474e8601aa84d4e83336a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="generics-c-programming-guide"></a>ジェネリック (C# プログラミング ガイド)
 ジェネリックは、バージョン 2.0 の C# 言語と共通言語ランタイム (CLR) に追加されたものです。 ジェネリックは、.NET Framework に型パラメーターという概念を導入します。型パラメーターを使用すると、クラスやメソッドがクライアント コードで宣言され、インスタンス化されるまで、1 つ以上の型の指定を遅延させるクラスとメソッドを設計できます。 たとえば、ジェネリック型パラメーター T を使用すると、次に示すようにランタイムのキャストやボックス化操作のコストやリスクを負わずに他のクライアント コードで使用できる単一のクラスを記述できます。  
   
- [!code-cs[csProgGuideGenerics#1](../../../csharp/programming-guide/generics/codesnippet/CSharp/index_1.cs)]  
+ [!code-csharp[csProgGuideGenerics#1](../../../csharp/programming-guide/generics/codesnippet/CSharp/index_1.cs)]  
   
 ## <a name="generics-overview"></a>ジェネリックの概要  
   
@@ -85,9 +67,8 @@ ms.lasthandoff: 08/28/2017
  詳細については、「[C# 言語の仕様](../../../csharp/language-reference/language-specification/index.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Collections.Generic>   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [型](../../../csharp/programming-guide/types/index.md)   
- [\<typeparam>](../../../csharp/programming-guide/xmldoc/typeparam.md)   
+ <xref:System.Collections.Generic>  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [型](../../../csharp/programming-guide/types/index.md)  
+ [\<typeparam>](../../../csharp/programming-guide/xmldoc/typeparam.md)  
  [\<typeparamref>](../../../csharp/programming-guide/xmldoc/typeparamref.md)
-

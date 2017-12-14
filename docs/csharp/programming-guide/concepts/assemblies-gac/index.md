@@ -1,30 +1,21 @@
 ---
 title: "アセンブリとグローバル アセンブリ キャッシュ (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 3743c07f1de1d39f07d559aa161e4547422a6e52
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2b98bd872bfdcbebb34fff3d878b92f39e27bbe0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-c"></a>アセンブリとグローバル アセンブリ キャッシュ (C#)
 アセンブリは、.NET ベースのアプリケーションの配置、バージョン管理、再利用、アクティベーション スコープ、およびセキュリティ権限の基本単位です。 アセンブリは、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (.dll) ファイルの形を取る、.NET Framework の構成要素です。 それらは、型の実装に関して必要な情報を共通言語ランタイムに提供します。 アセンブリは、機能的な論理的な単位を形成し、連携して動作するように構築された、型とリソースのコレクションと考えることができます。  
@@ -68,13 +59,12 @@ ms.lasthandoff: 07/28/2017
 >  Visual Studio でアセンブリをビルドするには、**[ビルド]** メニューの **[ビルド]** を選択します。  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)   
- [共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)   
- [フレンド アセンブリ (C++)](friend-assemblies.md)   
- [方法 : アセンブリを他のアプリケーションと共有する (C#)](how-to-share-an-assembly-with-other-applications.md)   
- [方法: アセンブリを読み込み、アンロードする (C#)](how-to-load-and-unload-assemblies.md)   
- [方法: ファイルがアセンブリであるかどうかを確認する (C#)](how-to-determine-if-a-file-is-an-assembly.md)   
- [方法: コマンド ラインを使用してアセンブリを作成および使用する (C#)](how-to-create-and-use-assemblies-using-the-command-line.md)   
- [チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)   
+ [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
+ [共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)  
+ [フレンド アセンブリ (C#)](friend-assemblies.md)  
+ [方法 : アセンブリを他のアプリケーションと共有する (C#)](how-to-share-an-assembly-with-other-applications.md)  
+ [方法: アセンブリを読み込み、アンロードする (C#)](how-to-load-and-unload-assemblies.md)  
+ [方法: ファイルがアセンブリであるかどうかを確認する (C#)](how-to-determine-if-a-file-is-an-assembly.md)  
+ [方法: コマンド ラインを使用してアセンブリを作成および使用する (C#)](how-to-create-and-use-assemblies-using-the-command-line.md)  
+ [チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
  [チュートリアル: Visual Studio で Microsoft Office アセンブリからの型情報を埋め込む (C#)](walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
-

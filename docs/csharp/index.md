@@ -15,20 +15,18 @@ helpviewer_keywords:
 - C# language
 - Visual C#
 ms.author: wiwagn
+ms.openlocfilehash: 5ecc77970dbd32ca743bcd09fc63d49299a164a5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 5cb79aa1fd89e080e8dc67c379a0a927102a6419
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-
 # <a name="c-guide"></a>C# のガイド
 
 C# のガイドでは、C# 言語に関するさまざまな情報を提供しています。 このガイドは、さまざまなレベルのユーザーにご利用いただけます。 プログラミングの経験、または C# 言語や .NET の使用経験に応じて必要なセクションをお読みください。
 
 * 開発初心者:
-    - 「[チュートリアル](tutorials/index.md)」セクションから始めましょう。 チュートリアルでは、C# プログラムを 1 から作成する方法が説明されており、 段階を追ってプログラムを作成できるようになっています。 C# 言語の概念と、自分で C# プログラムを作成する方法を学べます。 最初に概要を読みたい場合は、「[C# 言語のツアー](tour-of-csharp/index.md)」から始めてください。 ここでは C# 言語の概念を学べます。 ツアーを読み終えたら、C# 言語の基本的な知識を基に、チュートリアルを試したり、自分でプログラムを作成したりできるようになります。
+    - [クイック スタート](quick-starts/index.md) セクションから開始してください。 これでは、ブラウザーで対話的に C# 言語を調べることができます。 ここから、[チュートリアル](tutorials/index.md) セクションに移動できます。 チュートリアルでは、C# プログラムを 1 から作成する方法が説明されており、 段階を追ってプログラムを作成できるようになっています。 C# 言語の概念と、自分で C# プログラムを作成する方法を学べます。 最初に概要を読みたい場合は、「[C# 言語のツアー](tour-of-csharp/index.md)」から始めてください。 ここでは C# 言語の概念を学べます。 ツアーを読み終えたら、C# 言語の基本的な知識を基に、チュートリアルを試したり、自分でプログラムを作成したりできるようになります。
 
 * C# を初めて使用する開発者: 
     - 開発経験はあるものの、C# は初めてという場合は、「[C# 言語のツアー](tour-of-csharp/index.md)」をお読みください。 C# 言語の基本的な構文と構造について学び、使用経験のある他の言語と比較することができます。 「[チュートリアル](tutorials/index.md)」を参照し、基本的な C# プログラムを試してみるのもよいでしょう。
@@ -77,6 +75,5 @@ C# ガイドにはいくつかのセクションがあります。 順番に読�
     - Microsoft Word 形式で作成された最新バージョンの C# 仕様へのリンクを紹介します。  
   
 ## <a name="see-also"></a>関連項目  
- [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
+ [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)  
  [.NET 開発](https://msdn.microsoft.com/library/ff361664)
-

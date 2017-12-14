@@ -1,14 +1,10 @@
 ---
 title: "C# 演算子"
-ms.date: 2017-03-09
+ms.date: 03/09/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- cs.operators
-dev_langs:
-- CSharp
+f1_keywords: cs.operators
 helpviewer_keywords:
 - boolean operators [C#]
 - expressions [C#], operators
@@ -24,29 +20,14 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 0ac5c6bfb129f0367c2d62ebf139e44b8eb60379
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: eb8c4f11e540aa2685989ef11b2515a32d8d1fd6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="c-operators"></a>C# 演算子
 C# には、多くの演算子が用意されています。演算子とは、式で実行する演算 (数値演算、インデックス作成、関数呼び出しなど) を指定する記号のことです。  多くの演算子は、ユーザー定義型に適用する際に[オーバーロード](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)して、その意味を変更できます。  
@@ -221,7 +202,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
 ## <a name="arithmetic-overflow"></a>算術オーバーフロー  
  算術演算子 ([+](../../../csharp/language-reference/operators/addition-operator.md)、[-](../../../csharp/language-reference/operators/subtraction-operator.md)、[*](../../../csharp/language-reference/operators/multiplication-operator.md)、[/](../../../csharp/language-reference/operators/division-operator.md)) を実行すると、結果が数値型の有効な値の範囲を超えることがあります。 詳細については、各演算子に関するセクションを参照してください。概要は、以下のとおりです。  
   
-- 整数の算術オーバーフローでは、<xref:System.OverflowException> がスローされるか、または結果の最上位ビットが破棄されます。 0 による整数除算では、常に @System.DivideByZeroException がスローされます。  
+- 整数の算術オーバーフローでは、<xref:System.OverflowException> がスローされるか、または結果の最上位ビットが破棄されます。 0 による整数除算では、常に <xref:System.DivideByZeroException> がスローされます。  
 
    整数のオーバーフローが発生したときの対処方法は、実行コンテキスト ([checked または unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)) によって異なります。 checked コンテキストの場合は、<xref:System.OverflowException> がスローされます。 unchecked コンテキストの場合は、結果の最上位ビットが破棄され、実行が続行されます。 このように、C# ではオーバーフローを処理するのか、それとも無視するのかをユーザーが選択できます。 既定では、算術演算は *unchecked* コンテキストで発生します。 
 
@@ -233,8 +214,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
   
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C#](../../../csharp/index.md) [オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C#](../../../csharp/index.md) [オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
-

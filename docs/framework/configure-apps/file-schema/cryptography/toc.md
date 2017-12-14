@@ -3,7 +3,7 @@
 ## [<cryptoClass> 要素](cryptoclass-element.md)
 ## [<cryptographySettings> 要素](cryptographysettings-element.md)
 ## [<cryptoNameMapping> 要素](cryptonamemapping-element.md)
-## [<mscorlib>暗号化設定の要素](mscorlib-element-for-cryptography-settings.md)
+## [暗号設定の <mscorlib> 要素](mscorlib-element-for-cryptography-settings.md)
 ## [<nameEntry> 要素](nameentry-element.md)
 ## [<oidEntry> 要素](oidentry-element.md)
 ## [<oidMap> 要素](oidmap-element.md)

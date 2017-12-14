@@ -8,12 +8,11 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
+ms.openlocfilehash: 246605b301f6bcea4cced2cb7d1c494e9f66aa4a
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 360b4745e768a751154f3f1445ffb0bf5b62c825
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="architecting-container--and-microservice-based-applications"></a>コンテナーとマイクロサービス ベースのアプリケーションの設計
 
@@ -29,11 +28,10 @@ ms.lasthandoff: 09/05/2017
 
 コンテナー イメージをデザインするときには、[ENTRYPOINT](https://docs.docker.com/engine/reference/builder/) 定義が Dockerfile に表示されます。 これで定義するプロセスの有効期間が、コンテナーの有効期間を制御します。 プロセスが完了すると、コンテナーのライフサイクルが終了します。 コンテナーは、Web サーバーなどの実行時間の長いプロセスを表す場合がありますが、以前は Azure の [WebJobs](https://docs.microsoft.com/azure/app-service-web/websites-webjobs-resources) として実装される場合があったバッチ ジョブなどの有効期間が短いプロセスも表すことができます。
 
-プロセスが失敗した場合、コンテナーが終了し、Orchestrator が引き継ぎます。 Orchestrator が 5 つのインスタンスの実行を維持するように構成され、1 つが失敗した場合、Orchestrator は、失敗したプロセスを置換する別のコンテナー インスタンスを作成します。 バッチ ジョブで、プロセスはパラメーターを指定して開始されます。 プロセスが完了すると、作業が完了します。
+プロセスが失敗した場合、コンテナーが終了し、Orchestrator が引き継ぎます。 Orchestrator が 5 つのインスタンスの実行を維持するように構成され、1 つが失敗した場合、Orchestrator は、失敗したプロセスを置換する別のコンテナー インスタンスを作成します。 バッチ ジョブで、プロセスはパラメーターを指定して開始されます。 プロセスが完了すると、作業が完了します。 このガイダンスでは、後でオーケストレーターについてドリル ダウンします。
 
 1 つのコンテナーで複数のプロセスが実行されているシナリオが見られる場合があります。 このシナリオでは、コンテナーごとに 1 つのエントリ ポイントのみが存在できるため、必要な数のプログラムを起動するスクリプトをコンテナー内で実行できます。 たとえば、[スーパーバイザー](http://supervisord.org/)または同様のツールを使用して、1 つのコンテナー内で複数のプロセスの起動を処理できます。 ただし、コンテナーごとに複数のプロセスを保持するアーキテクチャが見られる場合でも、その方法はあまり一般的ではありません。
 
 
 >[!div class="step-by-step"]
 [Previous] (../net-core-net-framework-containers/official-net-docker-images.md) [Next] (containerize-monolithic-applications.md)
-
