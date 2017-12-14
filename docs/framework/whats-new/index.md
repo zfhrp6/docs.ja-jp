@@ -1,32 +1,28 @@
 ---
 title: ".NET Framework の新機能"
-ms.custom: 
+ms.custom: updateeachrelease
 ms.date: 05/02/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
-helpviewer_keywords:
-- what's new [.NET Framework]
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-caps.latest.revision: 292
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 53205ca9fd304d1dd1c76c5d6952d78634c5b231
+ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: 8d0818b770d94511736baf5d51abeba74a90c848
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/23/2017
 ---
-
 # <a name="whats-new-in-the-net-framework"></a>.NET Framework の新機能
 <a name="introduction"></a> この記事では、.NET Framework の次のバージョンにおける主な新機能と機能強化の概要を示します。  
  
+[.NET Framework 4.7.1](#v471)    
 [.NET Framework 4.7](#v47)   
 [.NET Framework 4.6.2](#v462)   
 [.NET Framework 4.6.1](#v461)   
@@ -40,23 +36,107 @@ ms.lasthandoff: 09/19/2017
 > [!NOTE]
 > また .NET Framework チームは、NuGet により OOB 機能をリリースすることによって、プラットフォーム サポートを拡張し、新しい機能 (変更できないコレクションや SIMD 対応ベクター型など) を提供しています。 詳細については、「[その他のクラス ライブラリと API](../additional-apis/index.md)」および[.NET Framework と OOB リリース](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)に関するページを参照してください。 .NET Framework 用の [NuGet パッケージの完全な一覧](https://blogs.msdn.microsoft.com/dotnet/p/nugetpackages/)をご確認いただくか、[Microsoft のフィード](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/)をサブスクライブしてください。
 
-<a name="v47"></a> 
-## <a name="introducing-the-net-framework-47"></a>.NET Framework 4.7 の概要
+<a name="v471"></a> 
+## <a name="introducing-the-net-framework-471"></a>.NET Framework 4.7.1 の概要
 
-.NET Framework 4.7 は、.NET Framework 4.6、4.6.1、4.6.2 を基に、多数の新しい修正といくつかの新機能を追加したものであり、これまでと同様に非常に安定した製品です。
+.NET Framework 4.7.1 は、.NET Framework 4.6、4.6.1、4.6.2、4.7 を基に、多数の新しい修正といくつかの新機能を追加したものであり、これまでと同様に非常に安定した製品です。
 
-### <a name="downloading-and-installing-the-net-framework-47"></a>.NET Framework 4.7 のダウンロードとインストール
+### <a name="downloading-and-installing-the-net-framework-471"></a>.NET Framework 4.7.1 のダウンロードとインストール
  
-.NET Framework 4.7 は、次の場所からダウンロードできます。
+.NET Framework 4.7.1 は、次の場所からダウンロードできます。
 
-- [.NET Framework 4.7 の Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=825299)
+- [.NET Framework 4.7.1 の Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=852095)
 
-- [.NET Framework 4.7 のオフライン インストーラー](http://go.microsoft.com/fwlink/?LinkId=825303)
+- [.NET Framework 4.7.1 のオフライン インストーラー](http://go.microsoft.com/fwlink/?LinkId=852107)
 
-.NET Framework 4.7 は、Windows 10、Windows 8.1、Windows 7、および Windows Server 2008 R2 SP1 以降に相当するサーバー プラットフォームにインストールできます。 .NET Framework 4.7 は、Web インストーラーまたはオフライン インストーラーを使用してインストールできます。 ほとんどのユーザーにお勧めする方法は、Web インストーラーの使用です。
+.NET Framework 4.7.1 は、Windows 10、Windows 8.1、Windows 7 SP1、および Windows Server 2008 R2 SP1 以降に相当するサーバー プラットフォームにインストールできます。 .NET Framework 4.7.1 は、Web インストーラーまたはオフライン インストーラーを使用してインストールできます。 ほとんどのユーザーにお勧めする方法は、Web インストーラーの使用です。
 
-[.NET Framework 4.7 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=825319) をインストールすれば、Visual Studio 2012 以降で、.NET Framework 4.7 をインストール対象に設定できます。
+[.NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105) をインストールすれば、Visual Studio 2012 以降で、.NET Framework 4.7.1 をインストール対象に設定できます。 
 
+### <a name="whats-new-in-the-net-framework-471"></a>.NET Framework 4.7.1 の新機能
+
+.NET Framework 4.7.1 には、次の領域における新機能が含まれています。
+ 
+- [コア](#core471)
+- [共通言語ランタイム (CLR)](#clr)
+- [ネットワーク](#net471)
+- [ASP.NET](#asp-net471) 
+
+さらに、.NET Framework 4.7.1 ではアクセシビリティ機能が向上し、支援技術のユーザーに適切なエクスペリエンスを提供できます。 .NET Framework 4.7.1 のアクセシビリティ機能の改善の詳細については、「[What's new in accessibility in the .NET Framework](whats-new-in-accessibility.md)」 (.NET Framework のアクセシビリティの新機能) を参照してください。 
+
+<a name="core471" />
+#### <a name="core"></a>コア
+
+**.NET Standard 2.0 のサポート**
+
+[.NET Standard](~/docs/standard/net-standard.md) は、そのバージョンの標準をサポートする各 .NET 実装で使用する必要がある API のセットを定義します。 .NET Framework 4.7.1 は、.NET Standard 2.0 を完全にサポートし、.NET Standard 2.0 で定義され、.NET Framework 4.6.1、4.6.2、および 4.7 にはなかった[約 200 の API](https://github.com/dotnet/standard/blob/master/netstandard/src/ApiCompatBaseline.net461.txt) を追加します  (これらのバージョンの .NET Framework は、追加の .NET Standard サポート ファイルもターゲット システムにも展開されている場合にのみ .NET Standard 2.0 をサポートします)。詳細については、「[.NET Framework 4.7.1 Runtime and Compiler Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features)」(.NET Framework 4.7.1 ランタイムとコンパイラの機能) ブログ投稿の「BCL - .NET Standard 2.0 Support」(BCL - .NET Standard 2.0 のサポート) を参照してください。
+
+**構成ビルダーのサポート**
+
+構成ビルダーを使用して、開発者が、実行時にアプリケーションの構成設定を動的に注入およびビルドすることができます。 カスタム構成ビルダーを使用して、構成セクションの既存のデータを変更したり、最初から完全に構成セクション全体をビルドしたりすることができます。 構成ビルダーを使用しない場合は、構成ファイルは静的であり、それらの設定はアプリケーションが起動されるしばらく前に定義されます。
+
+カスタム構成ビルダーを作成するには、抽象 <xref:System.Configuration.ConfigurationBuilder> クラスからビルダーを派生させ、その <xref:System.Configuration.ConfigurationBuilder.ProcessConfigurationSection%2A?displayProperty=nameWithType> と <xref:System.Configuration.ConfigurationBuilder.ProcessRawXml%2A?displayProperty=nameWithType> をオーバーライドします。 また、.config ファイルでもビルダーを定義します。 詳細については、「[.NET Framework 4.7.1 ASP.NET and Configuration Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/13/net-framework-4-7-1-asp-net-and-configuration-features) 」(.NET Framework 4.7.1 ASP.NET と構成機能) ブログ投稿の「Configuration Builders」(構成ビルダー) セクションを参照してください。 
+
+**実行時の機能の検出**
+
+<xref:System.Runtime.CompilerServices.RuntimeFeature?displayProperty=fullName> クラスは、コンパイル時または実行時に特定の .NET の実装上で事前に定義された機能がサポートされているかどうかを判断するためのメカニズムを提供します。 コンパイラは、コンパイル時に、指定されたフィールドが存在するかどうかを確認し、その機能がサポートされているかどうかを判断します。サポートされている場合は、その機能を利用するコードを生成できます。 実行時に、アプリケーションは、コードを生成する前に <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported%2A?displayProperty=nameWithType> メソッドを呼び出すことができます。 詳細については、「[Add helper method to describe features supported by the runtime](https://github.com/dotnet/corefx/issues/17116)」(ランタイムでサポートされる機能を記述するヘルパー メソッドを追加する) を参照してください。
+
+**値のタプル型はシリアル化できる**
+
+.NET Framework 4.7.1 以降、<xref:System.ValueTuple?displayProperty=fullName> および関連するジェネリック型は、[Serializable](xref:System.SerializableAttribute) としてマークされ、バイナリのシリアル化ができるようになりました。 これにより、<xref:System.Tuple%603> や <xref:System.Tuple%604> などのタプル型を簡単に値のタプル型に移行できます。 詳細については、「[.NET Framework 4.7.1 Runtime and Compiler Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features)」(.NET Framework 4.7.1 ランタイムとコンパイラの機能) ブログ投稿の「Compiler -- ValueTuple is Serializable」(コンパイラ -- 値タプルはシリアル化できる) を参照してください。
+
+**読み取り専用の参照のサポート**
+
+.NET Framework 4.7.1 では、<xref:System.Runtime.CompilerServices.IsReadOnlyAttribute?displayProperty=fullName> が追加されました。 この属性は、読み取り専用の ref 戻り値型またはパラメーターを持つメンバーをマークする言語コンパイラで使用します。 詳細については、「[.NET Framework 4.7.1 Runtime and Compiler Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features)」(.NET Framework 4.7.1 ランタイムとコンパイラの機能) ブログ投稿の「Compiler - Support for ReadOnlyReferences」(コンパイラ - ReadOnlyReferences のサポート) を参照してください。 Ref 戻り値の詳細については、「[Ref return values and ref locals (C# Guide)](~/docs/csharp/programming-guide/classes-and-structs/ref-returns.md)」(Ref 戻り値と ref ローカル変数 (c# ガイド)) および「[Ref return values (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/ref-return-values.md)」(Ref 戻り値 (Visual Basic)) を参照してください。
+
+<a name="clr" />
+#### <a name="common-language-runtime-clr"></a>共通言語ランタイム (CLR)
+
+**ガベージ コレクションのパフォーマンス改善**
+
+.NET Framework 4.7.1 のガベージ コレクション (GC) への変更は、特に大きなオブジェクト ヒープ (LOH) の割り当ての場合の全体的なパフォーマンスを向上させます。 .NET Framework 4.7.1 では、小さなオブジェクト ヒープ (SOH) と LOH の割り当てに個別のロックを使用します。これにより、バックグラウンドの GC (BGC) が SOH をスイープするときに LOH の割り当てが許可されます。 その結果、多数の LOH の割り当てを行うアプリケーションでは、割り当てのロックの競合が減少し、パフォーマンスが向上します。 詳細については、「[.NET Framework 4.7.1 Runtime and Compiler Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features/)」(.NET Framework 4.7.1 ランタイムとコンパイラの機能) ブログ投稿の「Runtime -- GC Performance Improvements」(ランタイム - GC のパフォーマンスの向上) セクションを参照してください。 
+
+**移植可能 PDB のサポート**
+
+バージョン 4.7.1 以降の .NET Framework は、移植可能な PDB をサポートしています。 標準の PDB ファイルは Windows のみですが、移植可能な PDB ファイルはすべてのプラットフォームで作成および読み取り可能です。 ほとんどの場合は、ファイル形式は、特定の .NET 実装で実行されているアプリケーションに対して透過的です。 例外は、実行時にアセンブリを動的に生成するアプリケーションです。この場合、移植可能な PDB を生成する機能は、パフォーマンスを向上させ、アプリケーションのメモリ使用量を削減できます。 
+
+アセンブリを生成する前に文字列 "PortablePdb" を <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported(System.String)?displayProperty=nameWithType> メソッドに渡すことによって、移植可能な PDB が現在の .NET の実装でサポートされているかどうかを判断することができます。  
+ 
+<a name="net471"/>
+#### <a name="networking"></a>ネットワーク
+
+**Message.HashAlgorithm 用の SHA-2 のサポート**
+
+.NET Framework 4.7 およびそれ以前のバージョンでは、<xref:System.Messaging.Message.HashAlgorithm%2A?displayProperty=nameWithType> プロパティは値 <xref:System.Messaging.HashAlgorithm.Md5?displayProperty=nameWithType> および <xref:System.Messaging.HashAlgorithm.Sha?displayProperty=nameWithType> のみをサポートしていました。 .NET Framework 4.7.1 以降では、<xref:System.Messaging.HashAlgorithm.Sha256?displayProperty=nameWithType>、<xref:System.Messaging.HashAlgorithm.Sha384?displayProperty=nameWithType>、<xref:System.Messaging.HashAlgorithm.Sha512?displayProperty=nameWithType> もサポートされます。 <xref:System.Messaging.Message> インスタンス自体は、ハッシュは行わず、MSMQ に値を渡すだけですなので、この値が実際に使用されるかどうかは MSMQ によって異なります。 詳細については、「[.NET Framework 4.7.1 ASP.NET and Configuration Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/13/net-framework-4-7-1-asp-net-and-configuration-features/) 」(.NET Framework 4.7.1 ASP.NET と構成機能) ブログ投稿の「SHA-2 support for Message.HashAlgorithm」(Message.HashAlgorithm 用の SHA-2 のサポート) セクションを参照してください。
+
+<a name="asp-net471" />
+#### <a name="aspnet"></a>ASP.NET
+
+**ASP.NET アプリケーションの実行ステップ**
+
+ASP.NET は、23 のイベントを含む定義済みのパイプラインで要求を処理します。 ASP.NET は、実行ステップとして、各イベント ハンドラーを実行します。 バージョンの .NET Framework 4.7 までの ASP.NET のバージョンでは、ASP.NET は、ネイティブ スレッドとマネージ スレッドの切り替えのために、実行コンテキストをフローすることはできません。 代わりに、ASP.NET は、<xref:System.Web.HttpContext> のみを選択的にフローします。 .NET Framework 4.7.1 以降、<xref:System.Web.HttpApplication.OnExecuteRequestStep(System.Action{System.Web.HttpContextBase,System.Action})?displayProperty=nameWithType> メソッドでは、モジュールがアンビエント データを復元することもできます。 この機能は、アプリケーションの実行フローを考慮する、トレース、プロファイリング、診断、トランザクションなどに関連するライブラリを対象とします。 詳細については、「[.NET Framework 4.7.1 ASP.NET and Configuration Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/13/net-framework-4-7-1-asp-net-and-configuration-features) 」(.NET Framework 4.7.1 ASP.NET と構成機能) ブログ投稿の「ASP.NET Execution Step Feature」(ASP.NET 実行ステップの機能) を参照してください。 
+
+**ASP.NET HttpCookie 解析**
+
+.NET Framework 4.7.1 には、新しいメソッド <xref:System.Web.HttpCookie.TryParse%2A?displayProperty=nameWithType> が含まれています。これは、文字列から <xref:System.Web.HttpCookie> オブジェクトを作成し、有効期限日やパスなどの cookie の値を正確に割り当てるための標準化された方法を提供します。 詳細については、「[.NET Framework 4.7.1 ASP.NET and Configuration Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/13/net-framework-4-7-1-asp-net-and-configuration-features) 」(.NET Framework 4.7.1 ASP.NET と構成機能) ブログ投稿の「ASP.NET HttpCookie parsing」(ASP.NET HttpCookie の解析) を参照してください。 
+
+**ASP.NET フォーム認証資格情報の SHA-2 ハッシュ オプション**
+
+.NET Framework 4.7 およびそれ以前のバージョンでは、ASP.NET を使用して開発者が、MD5 または SHA1 を使用し、構成ファイルにハッシュされたパスワードを含むユーザーの資格情報を格納することができました。 .NET Framework 4.7.1 以降では、ASP.NET はまた、SHA256、SHA384、SHA512 などの新しい安全な SHA-2 ハッシュ オプションもサポートします。 SHA1 は既定のまま残り、Web 構成ファイルで既定以外のハッシュ アルゴリズムを定義することができます。 例:
+
+```xml
+<system.web>
+    <authentication mode="Forms">
+        <forms loginUrl="~/login.aspx">
+          <credentials passwordFormat="SHA512">
+            <user name="jdoe" password="6D003E98EA1C7F04ABF8FCB375388907B7F3EE06F278DB966BE960E7CBBD103DF30CA6D61F7E7FD981B2E4E3A64D43C836A4BEDCA165C33B163E6BCDC538A664" />
+          </credentials>
+        </forms>
+    </authentication>
+</system.web>
+```
+
+<a name="v47"></a> 
 ### <a name="whats-new-in-the-net-framework-47"></a>.NET Framework 4.7 の新機能
 
 .NET Framework 4.7 には、次の領域における新機能が含まれています。
@@ -68,7 +148,7 @@ ms.lasthandoff: 09/19/2017
 - [Windows フォーム](#wf47)
 - [Windows Presentation Foundation (WPF)](#WPF47)
 
-.NET Framework 4.7 に追加された新しい API の一覧については、GitHub で [.NET Framework 4.7 API の変更点](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-api-changes.md)に関するページをご覧ください。 .NET Framework 4.7 における機能の改善とバグ修正の一覧については、GitHub で [.NET Framework 4.7 の変更点](http://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-changes.md)に関するページをご覧ください。  詳しくは、.NET Blog の「[Announcing the .NET Framework 4.7 (.NET Framework 4.7 の発表)](https://blogs.msdn.microsoft.com/dotnet/2017/04/05/announcing-the-net-framework-4-7/)」をご覧ください。
+.NET Framework 4.7 に追加された新しい API の一覧については、GitHub で [.NET Framework 4.7 API の変更点](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-api-changes.md)に関するページをご覧ください。 .NET Framework 4.7 における機能の改善とバグ修正の一覧については、GitHub で [.NET Framework 4.7 の変更点](http://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-changes.md)に関するページをご覧ください。  詳細については、.NET Blog の「[Announcing the .NET Framework 4.7 (.NET Framework 4.7 の発表)](https://blogs.msdn.microsoft.com/dotnet/2017/04/05/announcing-the-net-framework-4-7/)」をご覧ください。
 
 <a name="Core47" />
 #### <a name="core"></a>コア
@@ -94,7 +174,7 @@ GitHub で [.NET Framework 4.7 の暗号化の向上の例](https://gist.github.
 
 **TLS プロトコルの既定のオペレーティング システム サポート***
 
-<xref:System.Net.Security.SslStream?displayProperty=fullName> および HTTP、FTP、SMTP などの上位スタック コンポーネントによって使われる TLS スタックにより、開発者はオペレーティング システムによってサポートされる既定の TLS プロトコルを使うことができます。 TLS バージョンをハード コーディングする必要はなくなりました。
+<xref:System.Net.Security.SslStream?displayProperty=nameWithType> および HTTP、FTP、SMTP などの上位スタック コンポーネントによって使われる TLS スタックにより、開発者はオペレーティング システムによってサポートされる既定の TLS プロトコルを使うことができます。 TLS バージョンをハード コーディングする必要はなくなりました。
 
 <a name="ASP-NET47" />
 #### <a name="aspnet"></a>ASP.NET
@@ -107,9 +187,9 @@ GitHub で [.NET Framework 4.7 の暗号化の向上の例](https://gist.github.
 
 - **オブジェクト キャッシュ ストア**。 新しいキャッシュ プロバイダー構成セクションを使うことで、開発者は、新しい **ICacheStoreProvider** インターフェイスを使って、ASP.NET アプリケーション用のオブジェクト キャッシュの新しい実装をプラグインできます。
  
-- **メモリ監視**。 ASP.NET の既定のメモリ モニターは、アプリケーションがプロセスに構成されているプライベート バイト制限に近づくと、またはコンピューターの使用可能な合計物理 RAM が低下すると、アプリケーションに通知します。 これらの制限に近づくと、通知が発生します。 一部のアプリケーションでは、通知の発生が構成されている制限に近すぎるため、有効な対応を取れません。 開発者は、<xref:System.Web.Hosting.ApplicationMonitors.MemoryMonitor%2A?displayProperty=fullName> プロパティを使用して既定値を置き換える独自のメモリ モニターを作成できるようになりました。
+- **メモリ監視**。 ASP.NET の既定のメモリ モニターは、アプリケーションがプロセスに構成されているプライベート バイト制限に近づくと、またはコンピューターの使用可能な合計物理 RAM が低下すると、アプリケーションに通知します。 これらの制限に近づくと、通知が発生します。 一部のアプリケーションでは、通知の発生が構成されている制限に近すぎるため、有効な対応を取れません。 開発者は、<xref:System.Web.Hosting.ApplicationMonitors.MemoryMonitor%2A?displayProperty=nameWithType> プロパティを使用して既定値を置き換える独自のメモリ モニターを作成できるようになりました。
 
-- **メモリ制限への対応**。 既定では、プライベート バイト プロセス制限が近づくと、ASP.NET はオブジェクト キャッシュの削減を試み、<xref:System.GC.Collect%2A?displayProperty=fullName> を定期的に呼び出します。 アプリケーションによっては、<xref:System.GC.Collect%2A?displayProperty=fullName> の呼び出し頻度またはトリミングされるキャッシュ量が非効率になります。 開発者は、アプリケーションのメモリ モニターに **IObserver** の実装をサブスクライブすることにより、既定の動作を置換または補完できます。
+- **メモリ制限への対応**。 既定では、プライベート バイト プロセス制限が近づくと、ASP.NET はオブジェクト キャッシュの削減を試み、<xref:System.GC.Collect%2A?displayProperty=nameWithType> を定期的に呼び出します。 アプリケーションによっては、<xref:System.GC.Collect%2A?displayProperty=nameWithType> の呼び出し頻度またはトリミングされるキャッシュ量が非効率になります。 開発者は、アプリケーションのメモリ モニターに **IObserver** の実装をサブスクライブすることにより、既定の動作を置換または補完できます。
 
 <a name="wcf47" />
 #### <a name="windows-communication-foundation-wcf"></a>Windows Communication Foundation (WCF)
@@ -132,7 +212,7 @@ WCF に競合状態を除去する複数のコード変更が追加され、シ�
 
 - **SocketConnection.BeginRead** および **SocketConnection.Read** の呼び出しでの非同期コードと同期コードの併用のサポートの向上。
 - **SharedConnectionListener** および **DuplexChannelBinder** で接続を中止するときの信頼性の向上。
-- <xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%28System.Type%29?displayProperty=fullName> メソッドの呼び出し時のシリアル化操作の信頼性を向上しました。
+- <xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%28System.Type%29?displayProperty=nameWithType> メソッドの呼び出し時のシリアル化操作の信頼性を向上しました。
 - **ChannelSynchronizer.RemoveWaiter** メソッドを呼び出して待機を削除するときの信頼性の向上。
 
 <a name="wf47" />
@@ -157,7 +237,7 @@ Windows Ink Services Platform (WISP) の代わりに [WM_POINTER メッセージ
 
 **WPF 印刷 API の新しい実装**
 
-<xref:System.Printing.PrintQueue?displayProperty=fullName> クラスの WPF 印刷 API は、非推奨になった [XPS 印刷 API](https://msdn.microsoft.com/library/windows/desktop/ff686814(v=vs.85).aspx) ではなく Windows [ドキュメント印刷パッケージ API](https://msdn.microsoft.com/library/windows/desktop/hh448418(v=vs.85).aspx) を呼び出します。 アプリケーションの互換性に対するこの変更の影響については、「[.NET Framework 4.7 における再ターゲットの変更点](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md)」をご覧ください。 
+<xref:System.Printing.PrintQueue?displayProperty=nameWithType> クラスの WPF 印刷 API は、非推奨になった [XPS 印刷 API](https://msdn.microsoft.com/library/windows/desktop/ff686814(v=vs.85).aspx) ではなく Windows [ドキュメント印刷パッケージ API](https://msdn.microsoft.com/library/windows/desktop/hh448418(v=vs.85).aspx) を呼び出します。 アプリケーションの互換性に対するこの変更の影響については、「[.NET Framework 4.7 における再ターゲットの変更点](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md)」をご覧ください。 
 
 <a name="v462"></a> 
 ## <a name="whats-new-in-the-net-framework-462"></a>.NET Framework 4.6.2 の新機能
@@ -184,21 +264,21 @@ Windows Ink Services Platform (WISP) の代わりに [WM_POINTER メッセージ
 
 - [デバッグの機能強化](#Debug462)
 
-.NET Framework 4.6.2 に追加された新しい API の一覧については、GitHub で [.NET Framework 4.6.2 API の変更点](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-api-changes.md)に関するページを参照してください。 .NET Framework 4.6.2 における機能の改善とバグ修正の一覧については、GitHub で「[.NET Framework 4.6.2 List of Changes (.NET Framework 4.6.2 API の変更点の一覧)](http://go.microsoft.com/fwlink/?LinkId=708778)」を参照してください。  詳しくは、.NET Blog の「[Announcing .NET Framework 4.6.2](https://blogs.msdn.microsoft.com/dotnet/2016/08/02/announcing-net-framework-4-6-2/)」(.NET Framework 4.6.2 の発表) を参照してください。
+.NET Framework 4.6.2 に追加された新しい API の一覧については、GitHub で [.NET Framework 4.6.2 API の変更点](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-api-changes.md)に関するページを参照してください。 .NET Framework 4.6.2 における機能の改善とバグ修正の一覧については、GitHub で「[.NET Framework 4.6.2 List of Changes (.NET Framework 4.6.2 API の変更点の一覧)](http://go.microsoft.com/fwlink/?LinkId=708778)」を参照してください。  詳細については、.NET Blog の「[Announcing .NET Framework 4.6.2](https://blogs.msdn.microsoft.com/dotnet/2016/08/02/announcing-net-framework-4-6-2/)」(.NET Framework 4.6.2 の発表) を参照してください。
 
 <a name="ASPNET462"></a> 
 ### <a name="aspnet"></a>ASP.NET
  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] では、ASP.NET の機能が次のように強化されています。
 
- **データ注釈検証コントロールのローカライズされたエラー メッセージのサポート強化** データ注釈検証コントロールを使用して、1 つ以上の属性をクラス プロパティに追加して検証を行うことができます。 属性の <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=fullName> 要素は、検証が失敗した場合にエラー メッセージのテキストを定義します。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降では、ASP.NET でエラー メッセージを簡単にローカライズできます。 エラー メッセージは次のような場合にローカライズされます。
+ **データ注釈検証コントロールのローカライズされたエラー メッセージのサポート強化** データ注釈検証コントロールを使用して、1 つ以上の属性をクラス プロパティに追加して検証を行うことができます。 属性の <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> 要素は、検証が失敗した場合にエラー メッセージのテキストを定義します。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降では、ASP.NET でエラー メッセージを簡単にローカライズできます。 エラー メッセージは次のような場合にローカライズされます。
 
-1.  <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=fullName> が検証属性で指定されている。
+1.  <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> が検証属性で指定されている。
 
 2.  リソース ファイルが App_LocalResources フォルダーに格納されている。
 
 3.  ローカライズされたリソース ファイル名の形式が `DataAnnotation.Localization.{`*名前*`}.resx` (この*名前*は、*languageCode*`-`*country/regionCode* または *languageCode* 形式のカルチャ名) である。
 
-4.  リソースのキー名が <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=fullName> 属性に割り当てられている文字列で、その値がローカライズされたエラー メッセージである。
+4.  リソースのキー名が <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> 属性に割り当てられている文字列で、その値がローカライズされたエラー メッセージである。
 
  たとえば、次のデータ注釈属性では、無効な評価の場合に表示する、既定のカルチャのエラー メッセージを定義します。
 
@@ -229,7 +309,7 @@ End Class
 
  また、データ注釈ローカリゼーションを拡張することができます。 開発者は、<xref:System.Web.Globalization.IStringLocalizerProvider> インターフェイスを実装してリソース ファイル以外の場所にローカリゼーション文字列を格納することで、独自の文字列ローカライザー プロバイダーにプラグインできます。
 
- **セッション状態ストア プロバイダーでの非同期サポート** ASP.NET では、セッション状態ストア プロバイダーでタスクを返すメソッドを使用できるようになりました。これにより、ASP.NET アプリで非同期のスケーラビリティのメリットが得られます。 セッション状態ストア プロバイダーでの非同期操作をサポートするために、ASP.NET には新しいインターフェイスである <xref:System.Web.SessionState.ISessionStateModule?displayProperty=fullName> が含まれています。これは <xref:System.Web.IHttpModule> から継承され、開発者はこれを使用して独自のセッション状態モジュールと非同期セッション ストア プロバイダーを実装することができます。 このインターフェイスは次のように定義されます。
+ **セッション状態ストア プロバイダーでの非同期サポート** ASP.NET では、セッション状態ストア プロバイダーでタスクを返すメソッドを使用できるようになりました。これにより、ASP.NET アプリで非同期のスケーラビリティのメリットが得られます。 セッション状態ストア プロバイダーでの非同期操作をサポートするために、ASP.NET には新しいインターフェイスである <xref:System.Web.SessionState.ISessionStateModule?displayProperty=nameWithType> が含まれています。これは <xref:System.Web.IHttpModule> から継承され、開発者はこれを使用して独自のセッション状態モジュールと非同期セッション ストア プロバイダーを実装することができます。 このインターフェイスは次のように定義されます。
 
 ```csharp
 public interface ISessionStateModule : IHttpModule {
@@ -244,19 +324,19 @@ public interface ISessionStateModule : IHttpModule {
 
  非同期出力キャッシュ プロバイダーをサポートするために、次の API が追加されました。
 
-- <xref:System.Web.Caching.OutputCacheProvider?displayProperty=fullName> から継承される <xref:System.Web.Caching.OutputCacheProviderAsync?displayProperty=fullName> クラス。これにより、開発者は非同期出力キャッシュ プロバイダーを実装できます。
+- <xref:System.Web.Caching.OutputCacheProvider?displayProperty=nameWithType> から継承される <xref:System.Web.Caching.OutputCacheProviderAsync?displayProperty=nameWithType> クラス。これにより、開発者は非同期出力キャッシュ プロバイダーを実装できます。
 
 - <xref:System.Web.Caching.OutputCacheUtility> クラス。出力キャッシュを構成するためのヘルパー メソッドを提供します。
 
-- <xref:System.Web.HttpCachePolicy?displayProperty=fullName> クラスの新しい 18 個のメソッド。 これらのメソッドには、<xref:System.Web.HttpCachePolicy.GetCacheability%2A>、<xref:System.Web.HttpCachePolicy.GetCacheExtensions%2A>、<xref:System.Web.HttpCachePolicy.GetETag%2A>、<xref:System.Web.HttpCachePolicy.GetETagFromFileDependencies%2A>、<xref:System.Web.HttpCachePolicy.GetMaxAge%2A>、<xref:System.Web.HttpCachePolicy.GetMaxAge%2A>、<xref:System.Web.HttpCachePolicy.GetNoStore%2A>、<xref:System.Web.HttpCachePolicy.GetNoTransforms%2A>、<xref:System.Web.HttpCachePolicy.GetOmitVaryStar%2A>、<xref:System.Web.HttpCachePolicy.GetProxyMaxAge%2A>、<xref:System.Web.HttpCachePolicy.GetRevalidation%2A>、<xref:System.Web.HttpCachePolicy.GetUtcLastModified%2A>、<xref:System.Web.HttpCachePolicy.GetVaryByCustom%2A>、<xref:System.Web.HttpCachePolicy.HasSlidingExpiration%2A>、および <xref:System.Web.HttpCachePolicy.IsValidUntilExpires%2A> が含まれます。
+- <xref:System.Web.HttpCachePolicy?displayProperty=nameWithType> クラスの新しい 18 個のメソッド。 これらのメソッドには、<xref:System.Web.HttpCachePolicy.GetCacheability%2A>、<xref:System.Web.HttpCachePolicy.GetCacheExtensions%2A>、<xref:System.Web.HttpCachePolicy.GetETag%2A>、<xref:System.Web.HttpCachePolicy.GetETagFromFileDependencies%2A>、<xref:System.Web.HttpCachePolicy.GetMaxAge%2A>、<xref:System.Web.HttpCachePolicy.GetMaxAge%2A>、<xref:System.Web.HttpCachePolicy.GetNoStore%2A>、<xref:System.Web.HttpCachePolicy.GetNoTransforms%2A>、<xref:System.Web.HttpCachePolicy.GetOmitVaryStar%2A>、<xref:System.Web.HttpCachePolicy.GetProxyMaxAge%2A>、<xref:System.Web.HttpCachePolicy.GetRevalidation%2A>、<xref:System.Web.HttpCachePolicy.GetUtcLastModified%2A>、<xref:System.Web.HttpCachePolicy.GetVaryByCustom%2A>、<xref:System.Web.HttpCachePolicy.HasSlidingExpiration%2A>、および <xref:System.Web.HttpCachePolicy.IsValidUntilExpires%2A> が含まれます。
 
-- <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=fullName> クラスの新しい 2 つのメソッド (<xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> と <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A>)。
+- <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=nameWithType> クラスの新しい 2 つのメソッド (<xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> と <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A>)。
 
-- <xref:System.Web.HttpCacheVaryByHeaders?displayProperty=fullName> クラスの新しい 2 つのメソッド (<xref:System.Web.HttpCacheVaryByHeaders.GetHeaders%2A> と <xref:System.Web.HttpCacheVaryByHeaders.SetHeaders%2A>)。
+- <xref:System.Web.HttpCacheVaryByHeaders?displayProperty=nameWithType> クラスの新しい 2 つのメソッド (<xref:System.Web.HttpCacheVaryByHeaders.GetHeaders%2A> と <xref:System.Web.HttpCacheVaryByHeaders.SetHeaders%2A>)。
 
-- <xref:System.Web.HttpCacheVaryByParams?displayProperty=fullName> クラスの新しい 2 つのメソッド (<xref:System.Web.HttpCacheVaryByParams.GetParams%2A> と <xref:System.Web.HttpCacheVaryByParams.SetParams%2A>)。
+- <xref:System.Web.HttpCacheVaryByParams?displayProperty=nameWithType> クラスの新しい 2 つのメソッド (<xref:System.Web.HttpCacheVaryByParams.GetParams%2A> と <xref:System.Web.HttpCacheVaryByParams.SetParams%2A>)。
 
-- <xref:System.Web.Caching.AggregateCacheDependency?displayProperty=fullName> クラスの <xref:System.Web.Caching.AggregateCacheDependency.GetFileDependencies%2A> メソッド。
+- <xref:System.Web.Caching.AggregateCacheDependency?displayProperty=nameWithType> クラスの <xref:System.Web.Caching.AggregateCacheDependency.GetFileDependencies%2A> メソッド。
 
 - <xref:System.Web.Caching.CacheDependency> の <xref:System.Web.Caching.CacheDependency.GetFileDependencies%2A> メソッド。
 
@@ -264,7 +344,7 @@ public interface ISessionStateModule : IHttpModule {
 ### <a name="character-categories"></a>文字カテゴリ
  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] の文字は [Unicode Standard バージョン 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/) に基づいて分類されます。 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] と [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] では、文字は Unicode 6.3 文字のカテゴリに基づいて分類されました。
 
- Unicode 8.0 のサポートは、<xref:System.Globalization.CharUnicodeInfo> クラスによる文字列の分類およびそれに依存する型とメソッドに限定されます。 これらには、<xref:System.Globalization.StringInfo> クラス、オーバーロードされた <xref:System.Char.GetUnicodeCategory%2A?displayProperty=fullName> メソッド、および .NET Framework の正規表現エンジンによって認識される[文字クラス](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)が含まれます。  文字や文字列の比較と並べ替えは、この変更の影響を受けることなく、引き続き基となるオペレーティング システムに依存します (Windows 7 システムの場合は、.NET Framework で提供される文字データに依存)。
+ Unicode 8.0 のサポートは、<xref:System.Globalization.CharUnicodeInfo> クラスによる文字列の分類およびそれに依存する型とメソッドに限定されます。 これらには、<xref:System.Globalization.StringInfo> クラス、オーバーロードされた <xref:System.Char.GetUnicodeCategory%2A?displayProperty=nameWithType> メソッド、および .NET Framework の正規表現エンジンによって認識される[文字クラス](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)が含まれます。  文字や文字列の比較と並べ替えは、この変更の影響を受けることなく、引き続き基となるオペレーティング システムに依存します (Windows 7 システムの場合は、.NET Framework で提供される文字データに依存)。
 
  Unicode 6.0 から Unicode 7.0 への文字カテゴリの変更については、Unicode Consortium Web サイトの [Unicode Standard バージョン 7.0.0](http://www.unicode.org/versions/Unicode7.0.0/) に関する記述を参照してください。 Unicode 7.0 から Unicode 8.0 への変更については、Unicode Consortium の Web サイトの [Unicode Standard バージョン 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/) に関する記述を参照してください。
 
@@ -272,9 +352,9 @@ public interface ISessionStateModule : IHttpModule {
 ### <a name="cryptography"></a>暗号
  **FIPS 186-3 DSA を含む X509 証明書のサポート** [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] には、FIPS 186-2 の 1024 ビットという制限を超えるキーを持つ、DSA (Digital Signature Algorithm) X509 証明書のサポートが追加されています。
 
- より大きな FIPS 186-3 のキー サイズのサポートに加えて、[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] では、SHA-2 ファミリのハッシュ アルゴリズム (SHA256、SHA384、SHA512) によるシグネチャ計算も可能です。 FIPS 186-3 のサポートは新しい <xref:System.Security.Cryptography.DSACng?displayProperty=fullName> クラスで提供されます。
+ より大きな FIPS 186-3 のキー サイズのサポートに加えて、[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] では、SHA-2 ファミリのハッシュ アルゴリズム (SHA256、SHA384、SHA512) によるシグネチャ計算も可能です。 FIPS 186-3 のサポートは新しい <xref:System.Security.Cryptography.DSACng?displayProperty=nameWithType> クラスで提供されます。
 
- .NET Framework 4.6 の <xref:System.Security.Cryptography.RSA> クラスと .NET Framework 4.6.1 の <xref:System.Security.Cryptography.ECDsa> クラスの最近の変更に合わせて、[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] の <xref:System.Security.Cryptography.DSA> 抽象基本クラスにメソッドが追加されました。呼び出し元はこの機能をキャストせずに使用することができます。 データに署名する場合は、以下の例のように、<xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPrivateKey%2A?displayProperty=fullName> 拡張メソッドを呼び出すことができます。
+ .NET Framework 4.6 の <xref:System.Security.Cryptography.RSA> クラスと .NET Framework 4.6.1 の <xref:System.Security.Cryptography.ECDsa> クラスの最近の変更に合わせて、[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] の <xref:System.Security.Cryptography.DSA> 抽象基本クラスにメソッドが追加されました。呼び出し元はこの機能をキャストせずに使用することができます。 データに署名する場合は、以下の例のように、<xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPrivateKey%2A?displayProperty=nameWithType> 拡張メソッドを呼び出すことができます。
 
 ```csharp
 public static byte[] SignDataDsaSha384(byte[] data, X509Certificate2 cert)
@@ -294,7 +374,7 @@ Public Shared Function SignDataDsaSha384(data As Byte(), cert As X509Certificate
 End Function
 ```
 
- 署名データを検証する場合は、以下の例のように、<xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPublicKey%2A?displayProperty=fullName> 拡張メソッドを呼び出すことができます。
+ 署名データを検証する場合は、以下の例のように、<xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPublicKey%2A?displayProperty=nameWithType> 拡張メソッドを呼び出すことができます。
 
 ```csharp
 public static bool VerifyDataDsaSha384(byte[] data, byte[] signature, X509Certificate2 cert)
@@ -382,7 +462,7 @@ End Function
 
 <a name="SQLClient"></a> 
 ### <a name="sqlclient"></a>SqlClient
- [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] では、.NET Framework SQL Server 用データ プロバイダー (<xref:System.Data.SqlClient?displayProperty=fullName>) に次の新機能が含まれています。
+ [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] では、.NET Framework SQL Server 用データ プロバイダー (<xref:System.Data.SqlClient?displayProperty=nameWithType>) に次の新機能が含まれています。
 
  **Azure SQL Database への接続プールとタイムアウト** 接続プールが有効な状態で、タイムアウトまたは他のログイン エラーが発生した場合は、例外がキャッシュされ、キャッシュされた例外は次の 5 秒から 1 分の間の後続の接続試行時にすべてスローされます。  詳細については、「[SQL Server の接続プール (ADO.NET)](../../../docs/framework/data/adonet/sql-server-connection-pooling.md)」を参照してください。
 
@@ -406,9 +486,9 @@ End Function
 
  **Always Encrypted の強化** SQLClient では、Always Encrypted の以下の 2 つの機能が強化されました。
 
-- 暗号化されたデータベースの列に対するパラメーター クエリのパフォーマンスを向上させるために、クエリ パラメーターの暗号化メタデータがキャッシュされるようになりました。 <xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionQueryMetadataCacheEnabled%2A?displayProperty=fullName> プロパティが `true` (既定値) に設定されている状態で、同じクエリが複数回呼び出された場合、クライアントはサーバーからパラメーターのメタデータを 1 回だけ取得します。
+- 暗号化されたデータベースの列に対するパラメーター クエリのパフォーマンスを向上させるために、クエリ パラメーターの暗号化メタデータがキャッシュされるようになりました。 <xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionQueryMetadataCacheEnabled%2A?displayProperty=nameWithType> プロパティが `true` (既定値) に設定されている状態で、同じクエリが複数回呼び出された場合、クライアントはサーバーからパラメーターのメタデータを 1 回だけ取得します。
 
-- キー キャッシュ内の列暗号化キー エントリは、<xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionKeyCacheTtl%2A?displayProperty=fullName> プロパティを使用して設定された構成可能な時間間隔後に削除されるようになりました。
+- キー キャッシュ内の列暗号化キー エントリは、<xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionKeyCacheTtl%2A?displayProperty=nameWithType> プロパティを使用して設定された構成可能な時間間隔後に削除されるようになりました。
 
 <a name="WCF"></a> 
 ### <a name="windows-communication-foundation"></a>Windows Communication Foundation
@@ -490,11 +570,11 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 </configuration>
 ```
 
- **SSL 3.0 が既定のプロトコルではなくなった** トランスポート セキュリティで NetTcp を使用し、証明書の資格情報の種類を使用する場合、SSL 3.0 は、安全な接続のネゴシエーションに使用される既定のプロトコルではなくなりました。 TLS 1.0 が NetTcp のプロトコル一覧に含まれているため、ほとんどの場合、既存のアプリには影響はないと考えられます。 既存のすべてのクライアントは TLS 1.0 以降を使用して接続をネゴシエートできるようになりました。      Ssl3 が必要な場合は、以下の構成メカニズムのいずれかを使用して、ネゴシエートされたプロトコルの一覧に追加します。
+ **SSL 3.0 が既定のプロトコルではなくなった** トランスポート セキュリティで NetTcp を使用し、証明書の資格情報の種類を使用する場合、SSL 3.0 は、安全な接続のネゴシエーションに使用される既定のプロトコルではなくなりました。 TLS 1.0 が NetTcp のプロトコル一覧に含まれているため、ほとんどの場合、既存のアプリには影響はないと考えられます。 既存のすべてのクライアントは TLS 1.0 以降を使用して接続をネゴシエートできるようになりました。 Ssl3 が必要な場合は、以下の構成メカニズムのいずれかを使用して、ネゴシエートされたプロトコルの一覧に追加します。
 
-- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols%2A?displayProperty=fullName> プロパティ
+- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols%2A?displayProperty=nameWithType> プロパティ
 
-- <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=fullName> プロパティ
+- <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> プロパティ
 
 - [\<netTcpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md) セクションの [\<transport>](../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) セクション
 
@@ -506,7 +586,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
  **グループの並べ替え** <xref:System.Windows.Data.CollectionView> オブジェクトを使用してデータをグループ化するアプリケーションは、グループを並べ替える方法を明示的に宣言できるようになりました。 明示的な並べ替えにより、アプリがグループを動的に追加または削除する場合や、グループ化に関連する項目のプロパティの値を変更する場合に発生する非直感的な順序付けの問題が解決されます。 また、グループ化プロパティの比較がコレクション全体の並べ替えからグループの並べ替えに変更されるため、グループ作成プロセスのパフォーマンスを向上させることができます。
 
- グループの並べ替えをサポートするために、新しい <xref:System.ComponentModel.GroupDescription.SortDescriptions%2A?displayProperty=fullName> および <xref:System.ComponentModel.GroupDescription.CustomSort%2A?displayProperty=fullName> プロパティで、<xref:System.ComponentModel.GroupDescription> オブジェクトによって生成されるグループのコレクションを並べ替える方法が示されます。 これは、同じ名前の <xref:System.Windows.Data.ListCollectionView> プロパティでデータ項目を並べ替える方法を示すのと同様です。
+ グループの並べ替えをサポートするために、新しい <xref:System.ComponentModel.GroupDescription.SortDescriptions%2A?displayProperty=nameWithType> および <xref:System.ComponentModel.GroupDescription.CustomSort%2A?displayProperty=nameWithType> プロパティで、<xref:System.ComponentModel.GroupDescription> オブジェクトによって生成されるグループのコレクションを並べ替える方法が示されます。 これは、同じ名前の <xref:System.Windows.Data.ListCollectionView> プロパティでデータ項目を並べ替える方法を示すのと同様です。
 
  <xref:System.Windows.Data.PropertyGroupDescription> クラスの新しい 2 つの静的プロパティである <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A> と <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A> は、最も一般的なケースで使用できます。
 
@@ -558,9 +638,9 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
  このシナリオが有効でない場合、アプリケーションを実行すると、引き続き例外が生成され、"この実装は Windows プラットフォーム FIPS 検証暗号化アルゴリズムの一部ではありません" というメッセージが表示されます。
 
- **Visual Studio ワークフロー デザイナーで動的更新を使用する場合のワークフローの改善** ワークフロー デザイナー、フローチャート アクティビティ デザイナー、およびその他のワークフロー アクティビティ デザイナーで、<xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=fullName> メソッドを呼び出した後に保存されたワークフローが正常に読み込まれ、表示されるようになりました。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] より前のバージョンの .NET Framework では、<xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=fullName> を呼び出した後に保存されたワークフローの XAML ファイルを Visual Studio で読み込むと、以下の問題が発生する場合がありました。
+ **Visual Studio ワークフロー デザイナーで動的更新を使用する場合のワークフローの改善** ワークフロー デザイナー、フローチャート アクティビティ デザイナー、およびその他のワークフロー アクティビティ デザイナーで、<xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType> メソッドを呼び出した後に保存されたワークフローが正常に読み込まれ、表示されるようになりました。 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] より前のバージョンの .NET Framework では、<xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType> を呼び出した後に保存されたワークフローの XAML ファイルを Visual Studio で読み込むと、以下の問題が発生する場合がありました。
 
-- ワークフロー デザイナーで XAML ファイルが正しく読み込めない (行の末尾に <xref:System.Activities.Presentation.ViewState.ViewStateData.Id%2A?displayProperty=fullName> がある場合)。
+- ワークフロー デザイナーで XAML ファイルが正しく読み込めない (行の末尾に <xref:System.Activities.Presentation.ViewState.ViewStateData.Id%2A?displayProperty=nameWithType> がある場合)。
 
 - フローチャート アクティビティ デザイナーまたは他のワークフロー アクティビティ デザイナーで、アタッチされるプロパティの値ではなく既定の場所にすべてのオブジェクトが表示される場合がある。
 
@@ -671,19 +751,19 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 <a name="WWF461"></a> 
 ### <a name="windows-workflow-foundation-transactions"></a>Windows Workflow Foundation: トランザクション
- <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=fullName> メソッドで、MSDTC 以外の分散トランザクション マネージャーを使用して、トランザクションをプロモート (昇格) できるようになりました。 このプロモートは、新しい <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=fullName> オーバーロードに GUID のトランザクション プロモーター識別子を指定することによって行います。 この操作が成功すると、そのトランザクションの機能に制限が加えられます。 MSDTC 以外のトランザクション プロモーターが登録される (参加する) と、次の各メソッドで MSDTC へのプロモートが必要になるため、これらのメソッドで <xref:System.Transactions.TransactionPromotionException> がスローされます。
+ <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> メソッドで、MSDTC 以外の分散トランザクション マネージャーを使用して、トランザクションをプロモート (昇格) できるようになりました。 このプロモートは、新しい <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType> オーバーロードに GUID のトランザクション プロモーター識別子を指定することによって行います。 この操作が成功すると、そのトランザクションの機能に制限が加えられます。 MSDTC 以外のトランザクション プロモーターが登録される (参加する) と、次の各メソッドで MSDTC へのプロモートが必要になるため、これらのメソッドで <xref:System.Transactions.TransactionPromotionException> がスローされます。
 
-- <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=fullName>
+- <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType>
 
-- <xref:System.Transactions.TransactionInterop.GetDtcTransaction%2A?displayProperty=fullName>
+- <xref:System.Transactions.TransactionInterop.GetDtcTransaction%2A?displayProperty=nameWithType>
 
-- <xref:System.Transactions.TransactionInterop.GetExportCookie%2A?displayProperty=fullName>
+- <xref:System.Transactions.TransactionInterop.GetExportCookie%2A?displayProperty=nameWithType>
 
-- <xref:System.Transactions.TransactionInterop.GetTransmitterPropagationToken%2A?displayProperty=fullName>
+- <xref:System.Transactions.TransactionInterop.GetTransmitterPropagationToken%2A?displayProperty=nameWithType>
 
  MSDTC 以外のトランザクション プロモーターが登録されると、そのプロモーターで定義するプロトコルを使用することで、そのプロモーターをその後の永続参加リストに使用する必要があります。 トランザクション プロモーターの <xref:System.Guid> は、<xref:System.Transactions.Transaction.PromoterType%2A> プロパティを使用して取得できます。 トランザクションがプロモートする際、トランザクション プロモーターによって、プロモート済みトークンを表す <xref:System.Byte> 配列が提供されます。 アプリケーションで、MSDTC 以外のプロモート済みトランザクションのプロモート済みトークンを <xref:System.Transactions.Transaction.GetPromotedToken%2A> メソッドを使用して取得できます。
 
- 新しい <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=fullName> オーバーロードのユーザーは、プロモーション操作が正常に完了するように、特定の呼び出しシーケンスに従う必要があります。 これらの規則は、メソッドのドキュメントに記載されています。
+ 新しい <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType> オーバーロードのユーザーは、プロモーション操作が正常に完了するように、特定の呼び出しシーケンスに従う必要があります。 これらの規則は、メソッドのドキュメントに記載されています。
 
 <a name="Profile461"></a> 
 ### <a name="profiling"></a>プロファイル
@@ -715,7 +795,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
     - **非同期応答フラッシュ用のタスク ベース API**
 
-         ASP.NET で、非同期応答フラッシュ用の単純なタスク ベース API である <xref:System.Web.HttpResponse.FlushAsync%2A?displayProperty=fullName> が提供されるようになりました。これにより、言語の `async/await` サポートを使用して非同期的に応答をフラッシュできます。
+         ASP.NET で、非同期応答フラッシュ用の単純なタスク ベース API である <xref:System.Web.HttpResponse.FlushAsync%2A?displayProperty=nameWithType> が提供されるようになりました。これにより、言語の `async/await` サポートを使用して非同期的に応答をフラッシュできます。
 
     - `Model binding supports task-returning methods`
 
@@ -735,7 +815,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          [HTTP/2](http://www.wikipedia.org/wiki/HTTP/2) は HTTP プロトコルの新しいバージョンで、接続の使用状況が (クライアントとサーバー間のラウンド トリップ数の減少により) 大幅に改善されて、ユーザーが Web ページを読み込むときの遅延が軽減されています。  このプロトコルは単一のエクスペリエンスの一部として要求さる複数の成果物のために最適化されているので、HTTP/2 が最も役立つのは (サービスではなく) web ページです。 .NET Framework 4.6 では、HTTP/2 のサポートが ASP.NET に追加されました。 ネットワーク機能は複数のレイヤーで存在するので、HTTP/2 を有効にするために、Windows、IIS、および ASP.NET で新機能が必要とされていました。 ASP.NET で HTTP/2 を使用するには、Windows 10 を実行している必要があります。
 
-         HTTP/2 は、<xref:System.Net.Http.HttpClient?displayProperty=fullName> API を使用する Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリでもサポートされ、既定で有効になります。
+         HTTP/2 は、<xref:System.Net.Http.HttpClient?displayProperty=nameWithType> API を使用する Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリでもサポートされ、既定で有効になります。
 
          ASP.NET アプリケーションで [PUSH_PROMISE](http://http2.github.io/http2-spec/#PUSH_PROMISE) 機能を使用する手段を提供するために、<xref:System.Web.HttpResponse.PushPromise%28System.String%29> と <xref:System.Web.HttpResponse.PushPromise%28System.String%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29> の 2 つのオーバーロードを持つ新しいメソッドが <xref:System.Web.HttpResponse> クラスに追加されました。
 
@@ -786,13 +866,13 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
     - **CultureInfo.CurrentCulture と CultureInfo.CurrentUICulture**
 
-         <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> プロパティと <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> プロパティが読み取り専用ではなく、読み取り/書き込み可能になりました。 新しい <xref:System.Globalization.CultureInfo> オブジェクトをこれらのプロパティに割り当てると、`Thread.CurrentThread.CurrentCulture` プロパティで現在定義されているスレッド カルチャと、`Thread.CurrentThread.CurrentUICulture` プロパティで現在定義されている UI スレッド カルチャも変更されます。
+         <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> プロパティと <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> プロパティが読み取り専用ではなく、読み取り/書き込み可能になりました。 新しい <xref:System.Globalization.CultureInfo> オブジェクトをこれらのプロパティに割り当てると、`Thread.CurrentThread.CurrentCulture` プロパティで現在定義されているスレッド カルチャと、`Thread.CurrentThread.CurrentUICulture` プロパティで現在定義されている UI スレッド カルチャも変更されます。
 
     - **ガベージ コレクション (GC) の機能強化**
 
          <xref:System.GC> クラスに <xref:System.GC.TryStartNoGCRegion%2A> メソッドと <xref:System.GC.EndNoGCRegion%2A> メソッドが含まれるようになりました。これらのメソッドを使用するとクリティカル パスの実行中にガベージ コレクションを不許可にできます。
 
-         <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29?displayProperty=fullName> メソッドの新しいオーバーロードを使用して、小さなオブジェクト ヒープと大きなオブジェクト ヒープの両方に関して、スイープして圧縮するのか、スイープのみを行うのかを制御できます。
+         <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29?displayProperty=nameWithType> メソッドの新しいオーバーロードを使用して、小さなオブジェクト ヒープと大きなオブジェクト ヒープの両方に関して、スイープして圧縮するのか、スイープのみを行うのかを制御できます。
 
     - **SIMD が有効な型**
 
@@ -802,13 +882,13 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
     - **暗号の更新**
 
-         <xref:System.Security.Cryptography?displayProperty=fullName> API は、[Windows CNG 暗号化 API](https://msdn.microsoft.com/library/windows/desktop/aa376214.aspx) をサポートするために更新中です。 以前のバージョンの .NET Framework は、<xref:System.Security.Cryptography?displayProperty=fullName> の実装の基礎として、[それより前のバージョンの Windows 暗号化 API](https://msdn.microsoft.com/library/windows/desktop/aa380255.aspx) に完全に依存していました。 CNG API は特定のカテゴリのアプリにとって重要な[最新の暗号アルゴリズム](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx#suite_b_support)をサポートするものであるため、CNG API をサポートしてほしいというリクエストが寄せられていました。
+         <xref:System.Security.Cryptography?displayProperty=nameWithType> API は、[Windows CNG 暗号化 API](https://msdn.microsoft.com/library/windows/desktop/aa376214.aspx) をサポートするために更新中です。 以前のバージョンの .NET Framework は、<xref:System.Security.Cryptography?displayProperty=nameWithType> の実装の基礎として、[それより前のバージョンの Windows 暗号化 API](https://msdn.microsoft.com/library/windows/desktop/aa380255.aspx) に完全に依存していました。 CNG API は特定のカテゴリのアプリにとって重要な[最新の暗号アルゴリズム](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx#suite_b_support)をサポートするものであるため、CNG API をサポートしてほしいというリクエストが寄せられていました。
 
          .NET Framework 4.6 には、Windows CNG 暗号化 API をサポートするために、次の新しい機能強化が含まれています。
 
         - 可能な場合に CAPI ベースの実装ではなく CNG ベースの実装を返す X509 証明書用の一連の拡張メソッド `System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey(System.Security.Cryptography.X509Certificates.X509Certificate2)` および `System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)`  (一部のスマート カードなどでは現在も CAPI が必要であり、API がフォールバックを処理します)。
 
-        - RSA アルゴリズムの CNG 実装を提供する <xref:System.Security.Cryptography.RSACng?displayProperty=fullName> クラス。
+        - RSA アルゴリズムの CNG 実装を提供する <xref:System.Security.Cryptography.RSACng?displayProperty=nameWithType> クラス。
 
         - 一般的な操作でキャストを不要にする RSA API の機能強化。 たとえば、以前のバージョンの .NET Framework で <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> オブジェクトを使用してデータを暗号化するには、次のようなコードが必要です。
 
@@ -824,13 +904,13 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          日付値および時間値と UNIX 時間の変換をサポートするため、次の新しいメソッドが <xref:System.DateTimeOffset> 構造体に追加されました。
 
-        - <xref:System.DateTimeOffset.FromUnixTimeSeconds%2A?displayProperty=fullName>
+        - <xref:System.DateTimeOffset.FromUnixTimeSeconds%2A?displayProperty=nameWithType>
 
-        - <xref:System.DateTimeOffset.FromUnixTimeMilliseconds%2A?displayProperty=fullName>
+        - <xref:System.DateTimeOffset.FromUnixTimeMilliseconds%2A?displayProperty=nameWithType>
 
-        - <xref:System.DateTimeOffset.ToUnixTimeSeconds%2A?displayProperty=fullName>
+        - <xref:System.DateTimeOffset.ToUnixTimeSeconds%2A?displayProperty=nameWithType>
 
-        - <xref:System.DateTimeOffset.ToUnixTimeMilliseconds%2A?displayProperty=fullName>
+        - <xref:System.DateTimeOffset.ToUnixTimeMilliseconds%2A?displayProperty=nameWithType>
 
     - **互換性スイッチ**
 
@@ -876,9 +956,9 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] をターゲットとするアプリの場合、<xref:System.Threading.Tasks.Task> オブジェクトと <xref:System.Threading.Tasks.Task%601> オブジェクトは、呼び出し元のスレッドのカルチャと UI カルチャを継承します。 以前のバージョンの .NET Framework をターゲットするとアプリまたは特定のバージョンの .NET Framework をターゲットとしないアプリの動作には影響を及ぼしません。 詳細については、<xref:System.Globalization.CultureInfo> クラスのトピックの「カルチャとタスク ベースの非同期の操作」セクションをご覧ください。
 
-         <xref:System.Threading.AsyncLocal%601?displayProperty=fullName> クラスを使用すると、`async` メソッドなど、特定の非同期制御フローに対してローカルなアンビエント データを表すことができます。 これは、スレッド間でデータを保持するために使用できます。 <xref:System.Threading.AsyncLocal%601.Value%2A?displayProperty=fullName> プロパティの明示的な変更やスレッドでのコンテキスト変換の発生などによってアンビエント データが変更されるたびに通知されるコールバック メソッドを定義することもできます。
+         <xref:System.Threading.AsyncLocal%601?displayProperty=nameWithType> クラスを使用すると、`async` メソッドなど、特定の非同期制御フローに対してローカルなアンビエント データを表すことができます。 これは、スレッド間でデータを保持するために使用できます。 <xref:System.Threading.AsyncLocal%601.Value%2A?displayProperty=nameWithType> プロパティの明示的な変更やスレッドでのコンテキスト変換の発生などによってアンビエント データが変更されるたびに通知されるコールバック メソッドを定義することもできます。
 
-         タスク ベースの非同期パターン (TAP) に、特定の状態で完了したタスクを返す 3 つの便利なメソッド <xref:System.Threading.Tasks.Task.CompletedTask%2A?displayProperty=fullName>、<xref:System.Threading.Tasks.Task.FromCanceled%2A?displayProperty=fullName>、および <xref:System.Threading.Tasks.Task.FromException%2A?displayProperty=fullName> が追加されました。
+         タスク ベースの非同期パターン (TAP) に、特定の状態で完了したタスクを返す 3 つの便利なメソッド <xref:System.Threading.Tasks.Task.CompletedTask%2A?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Task.FromCanceled%2A?displayProperty=nameWithType>、および <xref:System.Threading.Tasks.Task.FromException%2A?displayProperty=nameWithType> が追加されました。
 
          <xref:System.IO.Pipes.NamedPipeClientStream> クラスで、新しい <xref:System.IO.Pipes.NamedPipeClientStream.ConnectAsync%2A> メソッドによる非同期通信がサポートされるようになりました。 メソッドをオーバーライドします。
 
@@ -920,7 +1000,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
         <add key="EnableMultiMonitorDisplayClipping" value="true"/>
         ```
 
-         DPI 設定に基づいて自動的に正しいカーソルを読み込む機能のサポートが <xref:System.Windows.Input.Cursor?displayProperty=fullName> に追加されました。
+         DPI 設定に基づいて自動的に正しいカーソルを読み込む機能のサポートが <xref:System.Windows.Input.Cursor?displayProperty=nameWithType> に追加されました。
 
     - **タッチの改善**
 
@@ -928,7 +1008,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
     - **透過的な子ウィンドウのサポート**
 
-         [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] の WPF では、Windows 8.1 以降の透過的な子ウィンドウがサポートされます。 これにより、最上位レベルのウィンドウ内に四角形でない透過的な子ウィンドウを作成できます。 この機能を有効にするには、<xref:System.Windows.Interop.HwndSourceParameters.UsesPerPixelTransparency%2A?displayProperty=fullName> プロパティを `true` に設定します。
+         [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] の WPF では、Windows 8.1 以降の透過的な子ウィンドウがサポートされます。 これにより、最上位レベルのウィンドウ内に四角形でない透過的な子ウィンドウを作成できます。 この機能を有効にするには、<xref:System.Windows.Interop.HwndSourceParameters.UsesPerPixelTransparency%2A?displayProperty=nameWithType> プロパティを `true` に設定します。
 
 - **Windows Communication Foundation (WCF)**
 
@@ -955,7 +1035,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
         - **接続グループ名プレフィックスの使用**
 
-             ユーザーは、WCF で接続グループ名のプレフィックスとして使用される文字列を指定できます。 異なるプレフィックスを持つ 2 つのメッセージは、別の基になる HTTP 接続を使用して送信されます。 プレフィックスを設定するには、メッセージの <xref:System.ServiceModel.Channels.Message.Properties%2A?displayProperty=fullName> プロパティにキー/値のペアを追加します。 キーは "HttpTransportConnectionGroupNamePrefix" で、値は使用するプレフィックスです。
+             ユーザーは、WCF で接続グループ名のプレフィックスとして使用される文字列を指定できます。 異なるプレフィックスを持つ 2 つのメッセージは、別の基になる HTTP 接続を使用して送信されます。 プレフィックスを設定するには、メッセージの <xref:System.ServiceModel.Channels.Message.Properties%2A?displayProperty=nameWithType> プロパティにキー/値のペアを追加します。 キーは "HttpTransportConnectionGroupNamePrefix" で、値は使用するプレフィックスです。
 
         - **異なるチャネル ファクトリの使用**
 
@@ -1003,13 +1083,13 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
          [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] では、ポートの再利用を有効にする次の 2 つの新しい API が追加され、同時接続に対する 64K の制限が実質的になくなりました。
 
-        - <xref:System.Net.Sockets.SocketOptionName?displayProperty=fullName> 列挙型値。
+        - <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType> 列挙型値。
 
-        - <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=fullName> プロパティ。
+        - <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> プロパティ。
 
-         既定では、`HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319` レジストリ キーの `HWRPortReuseOnSocketBind` の値が 0x1 に設定されないかぎり、<xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=fullName> プロパティは `false` になります。 HTTP 接続でのローカル ポートの再利用を有効にするには、<xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=fullName> プロパティを `true` に設定します。 これにより、<xref:System.Net.Http.HttpClient> および <xref:System.Net.HttpWebRequest> からの外向きのすべての TCP ソケット接続で Windows 10 の新しいソケット オプション [SO_REUSE_UNICASTPORT](https://msdn.microsoft.com/library/windows/desktop/ms740532.aspx) が使用されるようになるため、ローカル ポートの再利用が可能になります。
+         既定では、`HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319` レジストリ キーの `HWRPortReuseOnSocketBind` の値が 0x1 に設定されないかぎり、<xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> プロパティは `false` になります。 HTTP 接続でのローカル ポートの再利用を有効にするには、<xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> プロパティを `true` に設定します。 これにより、<xref:System.Net.Http.HttpClient> および <xref:System.Net.HttpWebRequest> からの外向きのすべての TCP ソケット接続で Windows 10 の新しいソケット オプション [SO_REUSE_UNICASTPORT](https://msdn.microsoft.com/library/windows/desktop/ms740532.aspx) が使用されるようになるため、ローカル ポートの再利用が可能になります。
 
-         ソケット専用のアプリケーションを作成する開発者は、<xref:System.Net.Sockets.Socket.SetSocketOption%2A?displayProperty=fullName> などのメソッドを呼び出すときに <xref:System.Net.Sockets.SocketOptionName?displayProperty=fullName> オプションを指定することにより、送信ソケットでバインド中にローカル ポートを再利用できるようになります。
+         ソケット専用のアプリケーションを作成する開発者は、<xref:System.Net.Sockets.Socket.SetSocketOption%2A?displayProperty=nameWithType> などのメソッドを呼び出すときに <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType> オプションを指定することにより、送信ソケットでバインド中にローカル ポートを再利用できるようになります。
 
     - **国際ドメイン名と PunyCode のサポート**
 
@@ -1029,7 +1109,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - **コード ページのエンコーディングのサポート**
 
-     [!INCLUDE[net_core](../../../includes/net-core-md.md)] は、本来 Unicode エンコードをサポートし、既定ではコード ページ エンコーディングに関するサポートは限定的です。 <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=fullName> メソッドを使用してコード ページ エンコーディングを登録することで、.NET Framework では利用できるものの [!INCLUDE[net_core](../../../includes/net-core-md.md)] ではサポートされていないコード ページ エンコーディングのサポートを追加できます。 詳細については、「<xref:System.Text.CodePagesEncodingProvider?displayProperty=fullName>」を参照してください。
+      [!INCLUDE[net_core](../../../includes/net-core-md.md)] primarily supports the Unicode encodings and by default provides limited support for code page encodings. You can add support for code page encodings available in the .NET Framework but unsupported in [!INCLUDE[net_core](../../../includes/net-core-md.md)] by registering code page encodings with the <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> method. For more information, see <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
 - **.NET ネイティブ**
 
@@ -1041,18 +1121,18 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - **オープン ソースの .NET Framework パッケージ**
 
-     [!INCLUDE[net_core](../../../includes/net-core-md.md)] のパッケージ (変更できないコレクションなど)、[SIMD API](http://go.microsoft.com/fwlink/?LinkID=518639)、およびネットワーク API (<xref:System.Net.Http> 名前空間に含まれるものなど) は、[GitHub](https://github.com/) でオープン ソース パッケージとして入手できるようになりました。 このコードにアクセスするには、[GitHub で NetFx](http://go.microsoft.com/fwlink/?LinkID=518634) を参照してください。 これらのパッケージの詳細、および投稿方法については、「[.NET Core とオープン ソース](../../../docs/framework/get-started/net-core-and-open-source.md)」および [GitHub の .NET ホーム ページ](http://go.microsoft.com/fwlink/?LinkID=518635)を参照してください。
+      [!INCLUDE[net_core](../../../includes/net-core-md.md)] packages such as the immutable collections, [SIMD APIs](http://go.microsoft.com/fwlink/?LinkID=518639), and networking APIs such as those found in the <xref:System.Net.Http> namespace are now available as open source packages on [GitHub](https://github.com/). To access the code, see [NetFx on GitHub](http://go.microsoft.com/fwlink/?LinkID=518634). For more information and how to contribute to these packages, see [.NET Core and Open-Source](../../../docs/framework/get-started/net-core-and-open-source.md), [.NET Home Page on GitHub](http://go.microsoft.com/fwlink/?LinkID=518635).
 
  [ページのトップへ](#introduction)
 
 <a name="v452"></a> 
 ## <a name="whats-new-in-the-net-framework-452"></a>.NET Framework 4.5.2 の新機能
 
-- **ASP.NET アプリ用の新しい API。** 新しい <xref:System.Web.HttpResponse.AddOnSendingHeaders%2A?displayProperty=fullName> メソッドと <xref:System.Web.HttpResponseBase.AddOnSendingHeaders%2A?displayProperty=fullName> メソッドにより、応答がクライアント アプリにフラッシュされる際の、応答ヘッダーと状態コードを確認および変更できます。 <xref:System.Web.HttpApplication.PreSendRequestHeaders> イベントや <xref:System.Web.HttpApplication.PreSendRequestContent> イベントの代わりに、より効率的で信頼性の高いこれらのメソッドの使用を検討してください。
+- **ASP.NET アプリ用の新しい API。** 新しい <xref:System.Web.HttpResponse.AddOnSendingHeaders%2A?displayProperty=nameWithType> メソッドと <xref:System.Web.HttpResponseBase.AddOnSendingHeaders%2A?displayProperty=nameWithType> メソッドにより、応答がクライアント アプリにフラッシュされる際の、応答ヘッダーと状態コードを確認および変更できます。 <xref:System.Web.HttpApplication.PreSendRequestHeaders> イベントや <xref:System.Web.HttpApplication.PreSendRequestContent> イベントの代わりに、より効率的で信頼性の高いこれらのメソッドの使用を検討してください。
 
-     <xref:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem%2A?displayProperty=fullName> メソッドにより、小さなバックグラウンド作業項目をスケジュールできます。 ASP.NET はこれらの項目を追跡し、すべてのバックグラウンド作業項目が完了するまで IIS が突然ワーカー プロセスを終了しないようにします。 このメソッドは、ASP.NET マネージ アプリ ドメインの外部で呼び出すことはできません。
+     <xref:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem%2A?displayProperty=nameWithType> メソッドにより、小さなバックグラウンド作業項目をスケジュールできます。 ASP.NET はこれらの項目を追跡し、すべてのバックグラウンド作業項目が完了するまで IIS が突然ワーカー プロセスを終了しないようにします。 このメソッドは、ASP.NET マネージ アプリ ドメインの外部で呼び出すことはできません。
 
-     新しい <xref:System.Web.HttpResponse.HeadersWritten?displayProperty=fullName> プロパティと <xref:System.Web.HttpResponseBase.HeadersWritten?displayProperty=fullName> プロパティは、応答ヘッダーが書き込まれたかどうかを示すブール値を返します。 これらのプロパティを使用して、<xref:System.Web.HttpResponse.StatusCode%2A?displayProperty=fullName> (ヘッダーが書き込まれた場合に例外をスローする) などの API への呼び出しが成功することを確認できます。
+     新しい <xref:System.Web.HttpResponse.HeadersWritten?displayProperty=nameWithType> プロパティと <xref:System.Web.HttpResponseBase.HeadersWritten?displayProperty=nameWithType> プロパティは、応答ヘッダーが書き込まれたかどうかを示すブール値を返します。 これらのプロパティを使用して、<xref:System.Web.HttpResponse.StatusCode%2A?displayProperty=nameWithType> (ヘッダーが書き込まれた場合に例外をスローする) などの API への呼び出しが成功することを確認できます。
 
 - **Windows フォーム コントロールでのサイズ変更** この機能が拡張されました。 これにより、システム DPI 設定を使用して、次の追加コントロールのコンポーネント (例: コンボ ボックスのドロップダウン矢印) をサイズ変更できます。
 
@@ -1066,13 +1146,13 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
     </appSettings>
     ```
 
-- **新しいワークフロー機能。** <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> メソッドを使用している (および、結果として <xref:System.Transactions.IPromotableSinglePhaseNotification> インターフェイスを実装している) リソース マネージャーは、新しい <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=fullName> メソッドを使用して、次の事柄を要求できます。
+- **新しいワークフロー機能。** <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> メソッドを使用している (および、結果として <xref:System.Transactions.IPromotableSinglePhaseNotification> インターフェイスを実装している) リソース マネージャーは、新しい <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> メソッドを使用して、次の事柄を要求できます。
 
     - トランザクションを Microsoft 分散トランザクション コーディネーター (MSDTC) トランザクションに昇格する。
 
     - <xref:System.Transactions.IPromotableSinglePhaseNotification> を <xref:System.Transactions.ISinglePhaseNotification> (単一フェーズのコミットをサポートする永続的登録リスト) に置き換えます。
 
-     これは同じアプリ ドメイン内で実行でき、MSDTC とやり取りして昇格を実行するためにアンマネージ コードを追加する必要はありません。 <xref:System.Transactions?displayProperty=fullName> から昇格可能な登録リストにより実装された <xref:System.Transactions.IPromotableSinglePhaseNotification>`Promote` メソッドへの未処理の呼び出しがある場合のみ、この新しいメソッドを呼び出すことができます。
+     これは同じアプリ ドメイン内で実行でき、MSDTC とやり取りして昇格を実行するためにアンマネージ コードを追加する必要はありません。 <xref:System.Transactions?displayProperty=nameWithType> から昇格可能な登録リストにより実装された <xref:System.Transactions.IPromotableSinglePhaseNotification>`Promote` メソッドへの未処理の呼び出しがある場合のみ、この新しいメソッドを呼び出すことができます。
 
 - **プロファイリングの機能強化。** 次の新しいアンマネージ プロファイリング API により、さらに信頼性の高いプロファイリングを提供します。
 
@@ -1088,7 +1168,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - **トランザクションの昇格と永続参加リストへの変換**
 
-     <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=fullName> は、.NET Framework 4.5.2 および 4.6 に追加された新しい API です。
+     <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> は、.NET Framework 4.5.2 および 4.6 に追加された新しい API です。
 
     ```csharp
     [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust")]
@@ -1098,7 +1178,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
                                               EnlistmentOptions enlistmentOptions)
     ```
 
-     このメソッドは、以前に <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=fullName> メソッドへの応答として <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=fullName> によって作成された参加リストで使用できます。 これは、`System.Transactions` に対して、トランザクションを MSDTC トランザクションに昇格させ、昇格可能参加リストを永続参加リストに "変換" するように要求します。 このメソッドが正常に完了すると、<xref:System.Transactions.IPromotableSinglePhaseNotification> インターフェイスが `System.Transactions` から参照されなくなり、その後の通知は指定された <xref:System.Transactions.ISinglePhaseNotification> インターフェイスに到着します。 問題の参加リストは、永続参加リストとして機能し、トランザクションのログ記録と復旧をサポートする必要があります。 詳細については、<xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=fullName> を参照してください。 さらに、この参加リストは <xref:System.Transactions.ISinglePhaseNotification> もサポートする必要があります。  このメソッドは、<xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=fullName> の呼び出しの処理中に*のみ*呼び出すことができます。 そうでない場合は、<xref:System.Transactions.TransactionException> 例外がスローされます。
+     このメソッドは、以前に <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType> メソッドへの応答として <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> によって作成された参加リストで使用できます。 これは、`System.Transactions` に対して、トランザクションを MSDTC トランザクションに昇格させ、昇格可能参加リストを永続参加リストに "変換" するように要求します。 このメソッドが正常に完了すると、<xref:System.Transactions.IPromotableSinglePhaseNotification> インターフェイスが `System.Transactions` から参照されなくなり、その後の通知は指定された <xref:System.Transactions.ISinglePhaseNotification> インターフェイスに到着します。 問題の参加リストは、永続参加リストとして機能し、トランザクションのログ記録と復旧をサポートする必要があります。 詳細については、<xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType> を参照してください。 さらに、この参加リストは <xref:System.Transactions.ISinglePhaseNotification> もサポートする必要があります。  このメソッドは、<xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType> の呼び出しの処理中に*のみ*呼び出すことができます。 そうでない場合は、<xref:System.Transactions.TransactionException> 例外がスローされます。
 
  [ページのトップへ](#introduction)
 
@@ -1128,7 +1208,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - 開発者がサーバーおよびクラウド アプリケーションのパフォーマンスを向上するために役立つ診断情報を収集する機能。 詳細については、<xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> クラスの <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> メソッドと <xref:System.Diagnostics.Tracing.EventSource> メソッドを参照してください。
 
-- ガベージ コレクション中に大きなオブジェクト ヒープ (LOH) を圧縮する機能。 詳細については、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=fullName> プロパティを参照してください。
+- ガベージ コレクション中に大きなオブジェクト ヒープ (LOH) を圧縮する機能。 詳細については、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> プロパティを参照してください。
 
 - その他のパフォーマンス向上 (ASP.NET アプリの中断、マルチコア JIT の改良、.NET Framework 更新後のアプリ起動時間の短縮など)。 詳細については、ブログ記事「[.NET Framework 4.5.1 announcement](https://blogs.msdn.microsoft.com/dotnet/2013/06/26/announcing-the-net-framework-4-5-1-preview/)」(.NET Framework 4.5.1 についてのお知らせ) および「[ASP.NET app suspend](https://blogs.msdn.microsoft.com/dotnet/2013/10/09/asp-net-app-suspend-responsive-shared-net-web-hosting/)」 (ASP.NET アプリケーションの中断) を参照してください。
 
@@ -1175,7 +1255,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - マルチコア プロセッサでオプションで使用できるバックグラウンドの Just-in-time (JIT) コンパイルを使用すると、アプリケーションのパフォーマンスが向上します。 「<xref:System.Runtime.ProfileOptimization>」を参照してください。
 
-- 正規表現エンジンがタイムアウトする前に、正規表現の解決を試みる時間に制限を設ける機能。<xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=fullName> プロパティを参照してください。
+- 正規表現エンジンがタイムアウトする前に、正規表現の解決を試みる時間に制限を設ける機能。<xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType> プロパティを参照してください。
 
 - アプリケーション ドメインの既定のカルチャを定義する機能。 詳細については、<xref:System.Globalization.CultureInfo> クラスのトピックを参照してください。
 
@@ -1185,11 +1265,11 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - リソースを取得するときのパフォーマンスを改善します。 「[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」を参照してください。
 
-- Zip 圧縮の機能強化により、圧縮ファイルのサイズが小さくなりました。 <xref:System.IO.Compression?displayProperty=fullName> 名前空間を参照してください。
+- Zip 圧縮の機能強化により、圧縮ファイルのサイズが小さくなりました。 <xref:System.IO.Compression?displayProperty=nameWithType> 名前空間を参照してください。
 
 - <xref:System.Reflection.Context.CustomReflectionContext> クラスを使用して、既定のリフレクションの動作をオーバーライドするリフレクション コンテキストをカスタマイズできる機能。
 
-- <xref:System.Globalization.IdnMapping?displayProperty=fullName> クラスを [!INCLUDE[win8](../../../includes/win8-md.md)] で使用した場合の IDNA (Internationalized Domain Names in Applications) 規格の 2008 バージョンのサポート。
+- <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> クラスを [!INCLUDE[win8](../../../includes/win8-md.md)] で使用した場合の IDNA (Internationalized Domain Names in Applications) 規格の 2008 バージョンのサポート。
 
 - オペレーティング システムへの文字列比較の処理代行。.NET Framework を [!INCLUDE[win8](../../../includes/win8-md.md)] で使用したときに、Unicode 6.0 が実装されます。 他のプラットフォームで実行されている場合、.NET Framework には、Unicode 5.x. を実装する独自の文字列比較データが含まれています。 <xref:System.String> クラスおよび <xref:System.Globalization.SortVersion> クラスの「コメント」セクションを参照してください。
 
@@ -1233,7 +1313,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 <a name="networking"></a> 
 ### <a name="networking"></a>ネットワーク
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は、HTTP アプリケーションに新しいプログラミング インターフェイスを提供します。 詳細については、新しい <xref:System.Net.Http?displayProperty=fullName> 名前空間と <xref:System.Net.Http.Headers?displayProperty=fullName> 名前空間を参照してください。
+ [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は、HTTP アプリケーションに新しいプログラミング インターフェイスを提供します。 詳細については、新しい <xref:System.Net.Http?displayProperty=nameWithType> 名前空間と <xref:System.Net.Http.Headers?displayProperty=nameWithType> 名前空間を参照してください。
 
  既存の <xref:System.Net.HttpListener> と関連クラスを使用して WebSocket 接続を受け入れ、やり取りするための新しいプログラミング インターフェイスのサポートも含まれています。 詳細については、新しい <xref:System.Net.WebSockets> 名前空間と <xref:System.Net.HttpListener> クラスを参照してください。
 
@@ -1373,7 +1453,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 ## <a name="see-also"></a>関連項目
  [.NET Framework および OOB リリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)   
+ [.NET Framework のアクセシビリティの新機能](whats-new-in-accessibility.md)   
  [Visual Studio 2017 の新機能 ](/visualstudio/ide/whats-new-in-visual-studio)   
  [ASP.NET](/aspnet)   
  [Visual C++ の新機能](/cpp/what-s-new-for-visual-cpp-in-visual-studio) 
-
