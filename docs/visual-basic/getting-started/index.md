@@ -1,40 +1,21 @@
 ---
 title: "Visual Basic 入門"
-ms.date: 2017-08-10
+ms.date: 08/10/2017
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-caps.latest.revision: 36
+caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 1593475bf5b4a34f854bc3e89be84d7720cd497b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 4e3c1a1e6728d4a5e256b81b0f8a8b29851dc625
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入門
 このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。  
@@ -66,7 +47,7 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  [Visual Basic の取得](https://www.visualstudio.com/downloads/)  
  Visual Basic のサポートを含む Visual Studio のバージョン (無料版など) のダウンロード リンクを提供します。  
 
- [超初心者向けの Visual Basic の基本](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)   
+ [超初心者向けの Visual Basic の基本](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)  
  Visual Basic プログラミングの基礎について説明する Microsoft Virtual Academy コース。
 
  [オブジェクト指向プログラミング](../programming-guide/concepts/object-oriented-programming.md)  
@@ -94,4 +75,3 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
   
  [Office および SharePoint 開発](https://msdn.microsoft.com/library/d2tx7z6d)  
  Microsoft Office と [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] をビジネス アプリケーションの一部として使用する方法について説明します。
-

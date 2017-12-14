@@ -8,21 +8,23 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - delegate model for events
 - application development [.NET Framework], events
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: d5b5c8db7dc264185a5f58438ead83d4a65ec492
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ae0776501bffc23ae07cc88c7f0d1729ed01b6f7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="handling-and-raising-events"></a>イベントの処理と発生
 .NET Framework でのイベントは、デリゲート モデルに基づいています。 デリゲート モデルはオブザーバー デザイン パターンに従って、サブスクライバーがプロバイダーに登録して通知を受信できるようにします。 イベントの送信元がイベント発生の通知をプッシュしたら、イベント レシーバーはその通知を受信して、通知に対する応答を定義します。 ここでは、デリゲート モデルの主要コンポーネント、アプリケーションでイベントを利用する方法、およびコードでイベントを実装する方法について説明します。  
@@ -38,7 +40,8 @@ ms.lasthandoff: 09/05/2017
   
  次の例は、`ThresholdReached` という名前のイベントを宣言する方法を示しています。 イベントは <xref:System.EventHandler> デリゲートに関連付けられ、`OnThresholdReached` という名前のメソッドで発生します。  
   
- [!code-csharp[EventsOverview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#1)] [!code-vb[EventsOverview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#1)]  
+ [!code-csharp[EventsOverview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#1)]
+ [!code-vb[EventsOverview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#1)]  
   
 ## <a name="delegates"></a>デリゲート  
  デリゲートは、メソッドへの参照を保持する型です。 デリゲートは、自身が参照するメソッドの戻り値とパラメーターを表示するシグネチャで宣言され、このシグネチャに一致するメソッドへの参照だけを保持できます。 これにより、デリゲートはタイプ セーフな関数ポインターやコールバックと同等の機能を持つことができます。 デリゲート クラスは、宣言すると、定義は不要です。  
@@ -51,25 +54,28 @@ ms.lasthandoff: 09/05/2017
   
  <xref:System.EventHandler> デリゲートおよび <xref:System.EventHandler%601> デリゲートが動作しないシナリオについては、デリゲートを定義できます。 デリゲートの定義が必要なシナリオは非常にまれで、たとえば、ジェネリックを認識しないコードを使用する必要がある場合などです。 デリゲートには、宣言内で `delegate` キーワード (C# の場合) および `Delegate` キーワード (Visual Basic の場合) を使用してマークします。 次の例は、`ThresholdReachedEventHandler` という名前のデリゲートを宣言する方法を示しています。  
   
- [!code-csharp[EventsOverview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)] [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
+ [!code-csharp[EventsOverview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
+ [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
   
 ## <a name="event-data"></a>イベント データ  
- イベントに関連付けられたデータは、イベント データ クラスを使用して提供できます。 .NET Framework には、アプリケーションで使用できるイベント データ クラスが多数用意されています。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスは、<xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=fullName> イベントのイベント データ クラスです。 .NET Framework の名前付けパターンでは、すべてのイベント データ クラス名の末尾に `EventArgs` が付きます。 イベントに関連付けられているイベント データ クラスは、そのイベントのデリゲートを見ればわかります。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventHandler> デリゲートには、パラメーターの 1 つとして <xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスが含まれます。  
+ イベントに関連付けられたデータは、イベント データ クラスを使用して提供できます。 .NET Framework には、アプリケーションで使用できるイベント データ クラスが多数用意されています。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスは、<xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=nameWithType> イベントのイベント データ クラスです。 .NET Framework の名前付けパターンでは、すべてのイベント データ クラス名の末尾に `EventArgs` が付きます。 イベントに関連付けられているイベント データ クラスは、そのイベントのデリゲートを見ればわかります。 たとえば、<xref:System.IO.Ports.SerialDataReceivedEventHandler> デリゲートには、パラメーターの 1 つとして <xref:System.IO.Ports.SerialDataReceivedEventArgs> クラスが含まれます。  
   
- <xref:System.EventArgs> は、すべてのイベント データ クラスの基本型です。 また、<xref:System.EventArgs> は、イベントにデータが関連付けられていないときに使用するクラスでもあります。 何かが発生したことを他のクラスに通知することのみが目的のイベント、つまり、データの受け渡しを必要としないイベントを作成する場合は、デリゲートの 2 番目のパラメーターとして <xref:System.EventArgs> クラスを追加します。 データが指定されていない場合は、<xref:System.EventArgs.Empty?displayProperty=fullName> 値を渡すことができます。 <xref:System.EventHandler> デリゲートには、パラメーターとして <xref:System.EventArgs> クラスが含まれます。  
+ <xref:System.EventArgs> は、すべてのイベント データ クラスの基本型です。 また、<xref:System.EventArgs> は、イベントにデータが関連付けられていないときに使用するクラスでもあります。 何かが発生したことを他のクラスに通知することのみが目的のイベント、つまり、データの受け渡しを必要としないイベントを作成する場合は、デリゲートの 2 番目のパラメーターとして <xref:System.EventArgs> クラスを追加します。 データが指定されていない場合は、<xref:System.EventArgs.Empty?displayProperty=nameWithType> 値を渡すことができます。 <xref:System.EventHandler> デリゲートには、パラメーターとして <xref:System.EventArgs> クラスが含まれます。  
   
  カスタマイズされたイベント データ クラスを作成する場合は、<xref:System.EventArgs>から派生したクラスを作成し、イベントに関連するデータを渡すのに必要なメンバーを指定します。 通常は、.NET Framework と同じ名前付けパターンを使用する必要があり、イベント データ クラス名の末尾には `EventArgs` が付きます。  
   
  次の例は、`ThresholdReachedEventArgs` という名前のイベント データを示しています。 これには、発生したイベントに応じた特定のプロパティが含まれます。  
   
- [!code-csharp[EventsOverview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#3)] [!code-vb[EventsOverview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#3)]  
+ [!code-csharp[EventsOverview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#3)]
+ [!code-vb[EventsOverview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#3)]  
   
 ## <a name="event-handlers"></a>イベント ハンドラー  
  イベントに応答するには、イベント レシーバーのイベント ハンドラー メソッドを定義します。 このメソッドは、処理するイベントのデリゲートのシグネチャと一致する必要があります。 イベント ハンドラーでは、ユーザーがボタンをクリックしたときにユーザー入力を収集するなど、イベントが発生したときに必要なアクションを実行します。 イベントが発生したときに通知を受け取るには、イベント ハンドラー メソッドがイベントをサブスクライブする必要があります。  
   
  次の例は、`c_ThresholdReached` デリゲートのシグネチャと一致する、<xref:System.EventHandler> という名前のイベント ハンドラー メソッドを示しています。 メソッドは、`ThresholdReached` イベントをサブスクライブします。  
   
- [!code-csharp[EventsOverview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#2)] [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
+ [!code-csharp[EventsOverview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#2)]
+ [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## <a name="static-and-dynamic-event-handlers"></a>静的イベント ハンドラーと動的イベント ハンドラー  
  .NET Framework を使用すると、静的または動的にイベント通知のためのサブスクライバーを登録できます。 静的なイベント ハンドラーは、処理対象のイベントのクラスの有効期間にわたって有効になります。 動的なイベント ハンドラーは、プログラムの実行中、通常は条件付きのプログラム ロジックに応答する形で、明示的にアクティブ化または非アクティブ化されます。 たとえば、特定の条件下でのみイベント通知が必要な場合や、複数のイベント ハンドラーを持つアプリケーションで、実行時の条件に応じて適切なハンドラーを決定する場合などに使用できます。 前のセクションの例は、イベント ハンドラーを動的に追加する方法を示しています。 詳細については、「[イベント](../../visual-basic/programming-guide/language-features/events/index.md)」および「[イベント](../../csharp/programming-guide/events/index.md)」を参照してください。  
@@ -89,11 +95,10 @@ ms.lasthandoff: 09/05/2017
 |[方法 : Web フォーム アプリケーションでイベントを利用する](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Web フォーム コントロールによって発生したイベントを処理する方法を示します。|  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.EventHandler>   
- <xref:System.EventHandler%601>   
- <xref:System.EventArgs>   
- <xref:System.Delegate>   
- [イベントとルーティング イベントの概要 (Windows ストア アプリ)](http://go.microsoft.com/fwlink/?LinkId=261485)   
- [イベント (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)   
+ <xref:System.EventHandler>  
+ <xref:System.EventHandler%601>  
+ <xref:System.EventArgs>  
+ <xref:System.Delegate>  
+ [イベントとルーティング イベントの概要 (Windows ストア アプリ)](http://go.microsoft.com/fwlink/?LinkId=261485)  
+ [イベント (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
  [イベント (C# プログラミング ガイド)](../../csharp/programming-guide/events/index.md)
-

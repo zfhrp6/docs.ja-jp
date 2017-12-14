@@ -8,14 +8,12 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
+ms.openlocfilehash: f869656be4c211c9b028f8ac574eb3bf2de139e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 4307c21f32e914118c03393be7ed7a632c7a7f0b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-
 ![](./media/cover.png)
 
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>.NET マイクロサービス。 コンテナー化された .NET アプリケーションのアーキテクチャ
@@ -130,7 +128,7 @@ Docker は、コンテナー業界では事実上の標準になりつつあり�
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な電子ブック) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+-   **Microsoft のプラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な電子ブック) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
 ## <a name="who-should-use-this-guide"></a>対象読者
 
@@ -158,4 +156,3 @@ eShopOnContainers アプリケーションは、.NET Core および Docker コ�
 
 >[!div class="step-by-step"]
 [次へ] (container-docker-introduction/index.md)
-
