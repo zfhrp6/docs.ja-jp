@@ -9,6 +9,7 @@
 ### [バージョン トレラントなシリアル化](version-tolerant-serialization.md)
 ### [シリアル化のガイドライン](serialization-guidelines.md)
 ### [方法 : シリアル化されたデータをチャンクする](how-to-chunk-serialized-data.md)
+### [方法: .NET 標準オブジェクトがシリアル化可能なかどうか判断する](how-to-determine-if-netstandard-object-is-serializable.md)
 ## [XML シリアル化および SOAP シリアル化](xml-and-soap-serialization.md)
 ### [方法 : 派生クラスのシリアル化を制御する](how-to-control-serialization-of-derived-classes.md)
 ### [XML シリアル化の概要](introducing-xml-serialization.md)

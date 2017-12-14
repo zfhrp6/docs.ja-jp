@@ -1,53 +1,46 @@
 ---
 title: ".NET Framework 4.7、4.6、4.5 移行ガイド "
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, migrating applications to
 - migration, .NET Framework
 ms.assetid: 02d55147-9b3a-4557-a45f-fa936fadae3b
-caps.latest.revision: 56
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 0c1f9ffd1df3861c2e9b000faccae381b04295dd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 820d1966172a93c06c6451c51bc7f360496f46b8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="migration-guide-to-the-net-framework-47-46-and-45"></a>.NET Framework 4.7、4.6、4.5 移行ガイド 
-旧バージョンの .NET Framework を使用してアプリを作成した場合、通常は .NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、.NET Framework 4.6 とそのポイント リリース (4.6.1 と 4.6.2)、または .NET Framework 4.7 へ簡単にアップグレードできます。 Visual Studio でプロジェクトを開きます。 プロジェクトが旧バージョンで作成されている場合は、**[Project Compatibility]** (プロジェクト互換性) ダイアログ ボックスが自動的に開きます。 Visual Studio におけるプロジェクトのアップグレードの詳細については、「[Visual Studio プロジェクトのポート、移行、アップグレード](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)」と「[Visual Studio 2017 の対象プラットフォームと互換性](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs)」を参照してください。  
+# <a name="migration-guide-to-the-net-framework-47-46-and-45"></a><span data-ttu-id="17a02-102">.NET Framework 4.7、4.6、4.5 移行ガイド</span><span class="sxs-lookup"><span data-stu-id="17a02-102">Migration Guide to the .NET Framework 4.7, 4.6, and 4.5</span></span> 
+<span data-ttu-id="17a02-103">旧バージョンの .NET Framework を使用してアプリを作成した場合、通常は .NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、.NET Framework 4.6 とそのポイント リリース (4.6.1 と 4.6.2)、または .NET Framework 4.7 とそのポイント リリース、.NET Framework 4.7.1 へ簡単にアップグレードできます。</span><span class="sxs-lookup"><span data-stu-id="17a02-103">If you created your app using an earlier version of the .NET Framework, you can generally upgrade it to the .NET Framework 4.5 and its point releases (4.5.1 and 4.5.2), the .NET Framework 4.6 and its point releases (4.6.1 and 4.6.2), or the .NET Framework 4.7 and its point release, the .NET Framework 4.7.1, easily.</span></span> <span data-ttu-id="17a02-104">Visual Studio でプロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="17a02-104">Open your project in Visual Studio.</span></span> <span data-ttu-id="17a02-105">プロジェクトが旧バージョンの Visual Studio で作成されている場合は、**[Project Compatibility]\(プロジェクト互換性\)** ダイアログ ボックスが自動的に開きます。</span><span class="sxs-lookup"><span data-stu-id="17a02-105">If your project was created in an earlier version of Visual Studio, the **Project Compatibility** dialog box automatically opens.</span></span> <span data-ttu-id="17a02-106">Visual Studio におけるプロジェクトのアップグレードの詳細については、「[Visual Studio プロジェクトのポート、移行、アップグレード](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)」と「[Visual Studio 2017 の対象プラットフォームと互換性](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="17a02-106">For more information about upgrading a project in Visual Studio, see [Port, Migrate, and Upgrade Visual Studio Projects](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects) and [Visual Studio 2017 Platform Targeting and Compatibility](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).</span></span>  
   
- ただし、.NET Framework で行われたいくつかの変更により、コードを変更する必要があります。 .NET Framework 4.5 とそのポイント リリース、.NET Framework 4.6 とそのポイント リリース、または .NET Framework 4.7 の新しい機能を利用することもできます。 .NET Framework の新しいバージョンに対応するためのアプリに対するこの種の変更は、一般に*移行*と呼ばれます。 アプリを移行する必要がない場合、アプリは再コンパイルなしで .NET Framework 4.5 またはそれ以降のバージョンで実行できます。  
+ <span data-ttu-id="17a02-107">ただし、.NET Framework で行われたいくつかの変更により、コードを変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="17a02-107">However, some changes in the .NET Framework require changes to your code.</span></span> <span data-ttu-id="17a02-108">.NET Framework 4.5 とそのポイント リリース、.NET Framework 4.6 とそのポイント リリース、または .NET Framework 4.7 とそのポイント リリース、.NET Framework 4.7.1 の新しい機能を利用することもできます。</span><span class="sxs-lookup"><span data-stu-id="17a02-108">You may also want to take advantage of functionality that is new in the .NET Framework 4.5 and its point releases, in the .NET Framework 4.6 and its point releases, or in the .NET Framework 4.7 and its point release, the .NET Framework 4.7.1.</span></span> <span data-ttu-id="17a02-109">.NET Framework の新しいバージョンに対応するためのアプリに対するこの種の変更は、一般に*移行*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="17a02-109">Making these types of changes to your app for a new version of the .NET Framework is typically referred to as *migration*.</span></span> <span data-ttu-id="17a02-110">アプリを移行する必要がない場合、アプリは再コンパイルなしで .NET Framework 4.5 またはそれ以降のバージョンで実行できます。</span><span class="sxs-lookup"><span data-stu-id="17a02-110">If your app doesn't have to be migrated, you can run it in the .NET Framework 4.5 or a later version without recompiling it.</span></span>  
   
-## <a name="migration-resources"></a>移行のためのリソース  
- アプリを .NET Framework の旧バージョンからバージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7 に移行する前に、次のドキュメントを確認してください。  
+## <a name="migration-resources"></a><span data-ttu-id="17a02-111">移行のためのリソース</span><span class="sxs-lookup"><span data-stu-id="17a02-111">Migration resources</span></span>  
+ <span data-ttu-id="17a02-112">アプリを .NET Framework の旧バージョンからバージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1 に移行する前に、次のドキュメントを確認してください。</span><span class="sxs-lookup"><span data-stu-id="17a02-112">Review the following documents before you migrate your app from earlier versions of the .NET Framework to version 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, or 4.7.1:</span></span>  
   
--   [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)に関するページで、.NET Framework の各バージョンの基になる CLR バージョンの詳細と、アプリを正しくターゲットするためのガイドラインを確認してください。  
+-   <span data-ttu-id="17a02-113">[バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)に関するページで、.NET Framework の各バージョンの基になる CLR バージョンの詳細と、アプリを正しくターゲットするためのガイドラインを確認してください。</span><span class="sxs-lookup"><span data-stu-id="17a02-113">See [Versions and Dependencies](../../../docs/framework/migration-guide/versions-and-dependencies.md) to understand the CLR version underlying each version of the .NET Framework and to review guidelines for targeting your apps successfully.</span></span>  
   
--   [アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)に関するページで、アプリに影響を与える可能性のあるランタイムの変更と再ターゲットの変更、およびそれらの処理方法について確認してください。  
+-   <span data-ttu-id="17a02-114">[アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)に関するページで、アプリに影響を与える可能性のあるランタイムの変更と再ターゲットの変更、およびそれらの処理方法について確認してください。</span><span class="sxs-lookup"><span data-stu-id="17a02-114">Review [Application Compatibility](../../../docs/framework/migration-guide/application-compatibility.md) to find out about runtime and retargeting changes that might affect your app and how to handle them.</span></span>  
   
--   [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)に関するページで、コード内の互換性のために残されている型またはメンバーと、推奨される代替の型またはメンバーを確認してください。  
+-   <span data-ttu-id="17a02-115">[クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)に関するページで、コード内の互換性のために残されている型またはメンバーと、推奨される代替の型またはメンバーを確認してください。</span><span class="sxs-lookup"><span data-stu-id="17a02-115">Review [What's Obsolete in the Class Library](../../../docs/framework/whats-new/whats-obsolete.md) to determine any types or members in your code that have been made obsolete, and the recommended alternatives.</span></span>  
   
--   [新機能](../../../docs/framework/whats-new/index.md)に関するページで、アプリに追加できる可能性のある新機能の説明を確認してください。  
+-   <span data-ttu-id="17a02-116">[新機能](../../../docs/framework/whats-new/index.md)に関するページで、アプリに追加できる可能性のある新機能の説明を確認してください。</span><span class="sxs-lookup"><span data-stu-id="17a02-116">See [What's New](../../../docs/framework/whats-new/index.md) for descriptions of new features that you may want to add to your app.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)   
- [.NET Framework 1.1 からの移行](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)   
- [バージョンの互換性](../../../docs/framework/migration-guide/version-compatibility.md)   
- [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)   
- [方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)   
- [新機能](../../../docs/framework/whats-new/index.md)   
- [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)   
- [.NET Framework のバージョンとアセンブリ情報](http://go.microsoft.com/fwlink/?LinkId=201701)   
- [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607) [.NET framework 4 の移行に関する問題](net-framework-4-migration-issues.md)
-
+## <a name="see-also"></a><span data-ttu-id="17a02-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="17a02-117">See Also</span></span>  
+ [<span data-ttu-id="17a02-118">アプリケーションの互換性</span><span class="sxs-lookup"><span data-stu-id="17a02-118">Application Compatibility</span></span>](../../../docs/framework/migration-guide/application-compatibility.md)  
+ [<span data-ttu-id="17a02-119">.NET Framework 1.1 からの移行</span><span class="sxs-lookup"><span data-stu-id="17a02-119">Migrating from the .NET Framework 1.1</span></span>](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)  
+ [<span data-ttu-id="17a02-120">バージョンの互換性</span><span class="sxs-lookup"><span data-stu-id="17a02-120">Version Compatibility</span></span>](../../../docs/framework/migration-guide/version-compatibility.md)  
+ [<span data-ttu-id="17a02-121">バージョンおよび依存関係</span><span class="sxs-lookup"><span data-stu-id="17a02-121">Versions and Dependencies</span></span>](../../../docs/framework/migration-guide/versions-and-dependencies.md)  
+ [<span data-ttu-id="17a02-122">方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する</span><span class="sxs-lookup"><span data-stu-id="17a02-122">How to: Configure an App to Support .NET Framework 4 or 4.5</span></span>](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)  
+ [<span data-ttu-id="17a02-123">新機能</span><span class="sxs-lookup"><span data-stu-id="17a02-123">What's New</span></span>](../../../docs/framework/whats-new/index.md)  
+ [<span data-ttu-id="17a02-124">クラス ライブラリの互換性のために残されている機能</span><span class="sxs-lookup"><span data-stu-id="17a02-124">What's Obsolete in the Class Library</span></span>](../../../docs/framework/whats-new/whats-obsolete.md)  
+ [<span data-ttu-id="17a02-125">.NET Framework のバージョンとアセンブリ情報</span><span class="sxs-lookup"><span data-stu-id="17a02-125">.NET Framework Version and Assembly Information</span></span>](http://go.microsoft.com/fwlink/?LinkId=201701)  
+ <span data-ttu-id="17a02-126">[Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607) [.NET framework 4 の移行に関する問題](net-framework-4-migration-issues.md)</span><span class="sxs-lookup"><span data-stu-id="17a02-126">[Microsoft .NET Framework Support Lifecycle Policy](http://go.microsoft.com/fwlink/?LinkId=196607) [.NET Framework 4 migration issues](net-framework-4-migration-issues.md)</span></span>

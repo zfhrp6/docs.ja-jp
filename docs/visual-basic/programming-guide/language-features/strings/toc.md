@@ -4,6 +4,7 @@
 ### [文字列操作メソッドの種類](types-of-string-manipulation-methods.md)
 ### [テキストと文字列](nothing-and-strings.md)
 ### [カルチャが文字列に与える影響](how-culture-affects-strings.md)
+### [補間文字列](interpolated-strings.md)
 ### [文字列アクセスのインデックス番号](zero-based-vs-one-based-string-access.md)
 ## [方法 : StringBuilder を使用して文字列を作成する](how-to-create-strings-using-a-stringbuilder.md)
 ## [方法: 文字列内を検索する](how-to-search-within-a-string.md)

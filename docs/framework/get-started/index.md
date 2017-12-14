@@ -1,102 +1,94 @@
 ---
 title: ".NET Framework の概要"
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 66e581e04aa0c3d33fb1ef9a7f4163d131f625bf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
-ms.openlocfilehash: 327aad36a560a772e9ddb4d8d721c2545f800151
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="get-started-with-the-net-framework"></a><span data-ttu-id="75981-102">.NET Framework の概要</span><span class="sxs-lookup"><span data-stu-id="75981-102">Get started with the .NET Framework</span></span>
 
-# <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
-
-.NET Framework は、.NET Framework を対象としたアプリを管理するランタイム実行環境です。 これは、メモリ管理やその他のシステム サービスを提供する共通言語ランタイムと、プログラマがアプリ開発のすべての主要領域で堅牢性と信頼性の高いコードを利用できるようにするための広範なクラス ライブラリから構成されています。
+<span data-ttu-id="75981-103">.NET Framework は、.NET Framework を対象としたアプリを管理するランタイム実行環境です。</span><span class="sxs-lookup"><span data-stu-id="75981-103">The .NET Framework is a runtime execution environment that manages apps that target the .NET Framework.</span></span> <span data-ttu-id="75981-104">これは、メモリ管理やその他のシステム サービスを提供する共通言語ランタイムと、プログラマがアプリ開発のすべての主要領域で堅牢性と信頼性の高いコードを利用できるようにするための広範なクラス ライブラリから構成されています。</span><span class="sxs-lookup"><span data-stu-id="75981-104">It consists of the common language runtime, which provides memory management and other system services, and an extensive class library, which enables programmers to take advantage of robust, reliable code for all major areas of app development.</span></span>
 
 <a name="Introducing"></a>
-## <a name="what-is-the-net-framework"></a>.NET Framework とは
+## <a name="what-is-the-net-framework"></a><span data-ttu-id="75981-105">.NET Framework とは</span><span class="sxs-lookup"><span data-stu-id="75981-105">What is the .NET Framework?</span></span>
 
-.NET Framework は、実行中のアプリにさまざまなサービスを提供するマネージ実行環境です。 これは、実行中のアプリを処理する実行エンジンである共通言語ランタイム (CLR) と、開発者が独自のアプリから呼び出すことができる検証済みの再利用可能なコード ライブラリである .NET Framework クラス ライブラリから構成されています。 .NET Framework は実行中のアプリに次のようなサービスを提供します。
+<span data-ttu-id="75981-106">.NET Framework は、実行中のアプリにさまざまなサービスを提供するマネージ実行環境です。</span><span class="sxs-lookup"><span data-stu-id="75981-106">The .NET Framework is a managed execution environment that provides a variety of services to its running apps.</span></span> <span data-ttu-id="75981-107">これは、実行中のアプリを処理する実行エンジンである共通言語ランタイム (CLR) と、開発者が独自のアプリから呼び出すことができる検証済みの再利用可能なコード ライブラリである .NET Framework クラス ライブラリから構成されています。</span><span class="sxs-lookup"><span data-stu-id="75981-107">It consists of two major components: the common language runtime (CLR), which is the execution engine that handles running apps, and the .NET Framework Class Library, which provides a library of tested, reusable code that developers can call from their own apps.</span></span> <span data-ttu-id="75981-108">.NET Framework は実行中のアプリに次のようなサービスを提供します。</span><span class="sxs-lookup"><span data-stu-id="75981-108">The services that the .NET Framework provides to running apps include the following:</span></span>
 
-- メモリ管理 多くのプログラミング言語では、プログラマがメモリの割り当てと解放およびオブジェクトの有効期間の処理を行う必要があります。 .NET Framework アプリでは、CLR がアプリに代わってこのサービスを提供します。
+- <span data-ttu-id="75981-109">メモリ管理</span><span class="sxs-lookup"><span data-stu-id="75981-109">Memory management.</span></span> <span data-ttu-id="75981-110">多くのプログラミング言語では、プログラマがメモリの割り当てと解放およびオブジェクトの有効期間の処理を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="75981-110">In many programming languages, programmers are responsible for allocating and releasing memory and for handling object lifetimes.</span></span> <span data-ttu-id="75981-111">.NET Framework アプリでは、CLR がアプリに代わってこのサービスを提供します。</span><span class="sxs-lookup"><span data-stu-id="75981-111">In .NET Framework apps, the CLR provides these services on behalf of the app.</span></span>
 
-- 共通型システム。 従来のプログラミング言語では、コンパイラによって基本型が定義されており、このために言語間の相互運用性が複雑になります。 .NET Framework では、基本型は .NET Framework の型システムによって定義され、.NET Framework を対象とするすべての言語に共通です。
+- <span data-ttu-id="75981-112">共通型システム。</span><span class="sxs-lookup"><span data-stu-id="75981-112">A common type system.</span></span> <span data-ttu-id="75981-113">従来のプログラミング言語では、コンパイラによって基本型が定義されており、このために言語間の相互運用性が複雑になります。</span><span class="sxs-lookup"><span data-stu-id="75981-113">In traditional programming languages, basic types are defined by the compiler, which complicates cross-language interoperability.</span></span> <span data-ttu-id="75981-114">.NET Framework では、基本型は .NET Framework の型システムによって定義され、.NET Framework を対象とするすべての言語に共通です。</span><span class="sxs-lookup"><span data-stu-id="75981-114">In the .NET Framework, basic types are defined by the .NET Framework type system and are common to all languages that target the .NET Framework.</span></span>
 
-- 広範なクラス ライブラリ。 プログラマは、低レベルの共通プログラミング操作を処理するためのコードを大量に記述する代わりに、簡単にアクセスできる .NET Framework クラス ライブラリの型とメンバーのライブラリを使用します。
+- <span data-ttu-id="75981-115">広範なクラス ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="75981-115">An extensive class library.</span></span> <span data-ttu-id="75981-116">プログラマは、低レベルの共通プログラミング操作を処理するためのコードを大量に記述する代わりに、簡単にアクセスできる .NET Framework クラス ライブラリの型とメンバーのライブラリを使用します。</span><span class="sxs-lookup"><span data-stu-id="75981-116">Instead of having to write vast amounts of code to handle common low-level programming operations, programmers use a readily accessible library of types and their members from the .NET Framework Class Library.</span></span>
 
-- 開発フレームワークとテクノロジ。 .NET Framework には、Web アプリ向けの ASP.NET、データ アクセス向けの ADO.NET、サービス指向アプリ向けの Windows Communication Foundation などの特定領域のアプリ開発のためのライブラリが用意されています。
+- <span data-ttu-id="75981-117">開発フレームワークとテクノロジ。</span><span class="sxs-lookup"><span data-stu-id="75981-117">Development frameworks and technologies.</span></span> <span data-ttu-id="75981-118">.NET Framework には、Web アプリ向けの ASP.NET、データ アクセス向けの ADO.NET、サービス指向アプリ向けの Windows Communication Foundation などの特定領域のアプリ開発のためのライブラリが用意されています。</span><span class="sxs-lookup"><span data-stu-id="75981-118">The .NET Framework includes libraries for specific areas of app development, such as ASP.NET for web apps, ADO.NET for data access, and Windows Communication Foundation for service-oriented apps.</span></span>
 
-- 言語の相互運用性。 .NET Framework を対象とする言語コンパイラは、共通中間言語 (CIL) と呼ばれる中間コードを生成し、このコードが共通言語ランタイムによって実行時にコンパイルされます。 この機能を使用すると、1 つの言語で記述されたルーチンが他の言語でもアクセスでき、プログラマは優先言語でのアプリの作成に集中できます。
+- <span data-ttu-id="75981-119">言語の相互運用性。</span><span class="sxs-lookup"><span data-stu-id="75981-119">Language interoperability.</span></span> <span data-ttu-id="75981-120">.NET Framework を対象とする言語コンパイラは、共通中間言語 (CIL) と呼ばれる中間コードを生成し、このコードが共通言語ランタイムによって実行時にコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="75981-120">Language compilers that target the .NET Framework emit an intermediate code named Common Intermediate Language (CIL), which, in turn, is compiled at runtime by the common language runtime.</span></span> <span data-ttu-id="75981-121">この機能を使用すると、1 つの言語で記述されたルーチンが他の言語でもアクセスでき、プログラマは優先言語でのアプリの作成に集中できます。</span><span class="sxs-lookup"><span data-stu-id="75981-121">With this feature, routines written in one language are accessible to other languages, and programmers focus on creating apps in their preferred languages.</span></span>
 
-- バージョンの互換性。 まれなケースを除き、特定のバージョンの .NET Framework を使用して開発されたアプリは、後続バージョンでも変更の必要なく実行されます。
+- <span data-ttu-id="75981-122">バージョンの互換性。</span><span class="sxs-lookup"><span data-stu-id="75981-122">Version compatibility.</span></span> <span data-ttu-id="75981-123">まれなケースを除き、特定のバージョンの .NET Framework を使用して開発されたアプリは、後続バージョンでも変更の必要なく実行されます。</span><span class="sxs-lookup"><span data-stu-id="75981-123">With rare exceptions, apps that are developed by using a particular version of the .NET Framework run without modification on a later version.</span></span>
 
-- side-by-side 実行。 .NET Framework では、同じコンピューターに複数バージョンの共通言語ランタイムが共存でき、バージョン競合の解決に役立ちます。 これは、複数バージョンのアプリも共存でき、アプリがビルドされた .NET Framework のバージョンでアプリを実行できることを意味します。 side-by-side 実行は、.NET Framework の 1.0/1.1、2.0/3.0/3.5、および 4/4.5.x/4.6.x/4.7 のバージョン グループに適用されます。
+- <span data-ttu-id="75981-124">side-by-side 実行。</span><span class="sxs-lookup"><span data-stu-id="75981-124">Side-by-side execution.</span></span> <span data-ttu-id="75981-125">.NET Framework では、同じコンピューターに複数バージョンの共通言語ランタイムが共存でき、バージョン競合の解決に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="75981-125">The .NET Framework helps resolve version conflicts by allowing multiple versions of the common language runtime to exist on the same computer.</span></span> <span data-ttu-id="75981-126">これは、複数バージョンのアプリも共存でき、アプリがビルドされた .NET Framework のバージョンでアプリを実行できることを意味します。</span><span class="sxs-lookup"><span data-stu-id="75981-126">This means that multiple versions of apps can coexist and that an app can run on the version of the .NET Framework with which it was built.</span></span> <span data-ttu-id="75981-127">side-by-side 実行は、.NET Framework の 1.0/1.1、2.0/3.0/3.5、および 4/4.5.x/4.6.x/4.7.x のバージョン グループに適用されます。</span><span class="sxs-lookup"><span data-stu-id="75981-127">Side-by-side execution applies to the .NET Framework version groups 1.0/1.1, 2.0/3.0/3.5, and 4/4.5.x/4.6.x/4.7.x.</span></span>
 
-- 複数バージョン対応。 開発者は、[.NET Standard](~/docs/standard/net-standard.md) を対象にすることで、Windows 7、Windows 8、Windows 8.1、Windows 10、Windows Phone、Xbox 360 などの複数の .NET Framework プラットフォームで機能するアセンブリを作成できます。
+- <span data-ttu-id="75981-128">複数バージョン対応。</span><span class="sxs-lookup"><span data-stu-id="75981-128">Multitargeting.</span></span> <span data-ttu-id="75981-129">開発者は、[.NET Standard](~/docs/standard/net-standard.md) を対象にすることで、Windows 7、Windows 8、Windows 8.1、Windows 10、Windows Phone、Xbox 360 などの複数の .NET Framework プラットフォームで機能するアセンブリを作成できます。</span><span class="sxs-lookup"><span data-stu-id="75981-129">By targeting [.NET Standard](~/docs/standard/net-standard.md), developers create assemblies that work on multiple .NET Framework platforms, such as Windows 7, Windows 8, Windows 8.1, Windows 10, Windows Phone, and Xbox 360.</span></span>
 
 <a name="ForUsers"></a>
-## <a name="the-net-framework-for-users"></a>ユーザーにとっての .NET Framework
+## <a name="the-net-framework-for-users"></a><span data-ttu-id="75981-130">ユーザーにとっての .NET Framework</span><span class="sxs-lookup"><span data-stu-id="75981-130">The .NET Framework for users</span></span>
 
-.NET Framework アプリを開発しなくても、使用するユーザーは、.NET Framework やその操作に関する知識を持つ必要はありません。 ほとんどの場合、.NET Framework は、ユーザーにとって完全に透過的に機能します。
+<span data-ttu-id="75981-131">.NET Framework アプリを開発しなくても、使用するユーザーは、.NET Framework やその操作に関する知識を持つ必要はありません。</span><span class="sxs-lookup"><span data-stu-id="75981-131">If you don't develop .NET Framework apps, but you use them, you aren't required to have specific knowledge about the .NET Framework or its operation.</span></span> <span data-ttu-id="75981-132">ほとんどの場合、.NET Framework は、ユーザーにとって完全に透過的に機能します。</span><span class="sxs-lookup"><span data-stu-id="75981-132">For the most part, the .NET Framework is completely transparent to users.</span></span>
 
-Windows オペレーティング システムを使用している場合は、.NET Framework がコンピューターに既にインストールされている場合があります。 また、.NET Framework を必要とするアプリをインストールすると、アプリのセットアップ プログラムにより、コンピューターに特定バージョンの .NET Framework がインストールされることがあります。 場合によっては、.NET Framework のインストールを求めるダイアログ ボックスが表示されることがあります。 アプリを実行しようとしたときにこのダイアログ ボックスが表示される場合や、コンピューターからインターネットにアクセスできる場合は、必要なバージョンの .NET Framework をインストールするための Web ページにアクセスすることができます。
+<span data-ttu-id="75981-133">Windows オペレーティング システムを使用している場合は、.NET Framework がコンピューターに既にインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="75981-133">If you're using the Windows operating system, the .NET Framework may already be installed on your computer.</span></span> <span data-ttu-id="75981-134">また、.NET Framework を必要とするアプリをインストールすると、アプリのセットアップ プログラムにより、コンピューターに特定バージョンの .NET Framework がインストールされることがあります。</span><span class="sxs-lookup"><span data-stu-id="75981-134">In addition, if you install an app that requires the .NET Framework, the app's setup program might install a specific version of the .NET Framework on your computer.</span></span> <span data-ttu-id="75981-135">場合によっては、.NET Framework のインストールを求めるダイアログ ボックスが表示されることがあります。</span><span class="sxs-lookup"><span data-stu-id="75981-135">In some cases, you may see a dialog box that asks you to install the .NET Framework.</span></span> <span data-ttu-id="75981-136">アプリを実行しようとしたときにこのダイアログ ボックスが表示される場合や、コンピューターからインターネットにアクセスできる場合は、必要なバージョンの .NET Framework をインストールするための Web ページにアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="75981-136">If you've just tried to run an app when this dialog box appears and if your computer has Internet access, you can go to a webpage that lets you install the missing version of the .NET Framework.</span></span>
 
-通常は、コンピューターにインストールされている .NET Framework のバージョンはアンインストールしないでください。 これには、次の 2 つの理由があります。
+<span data-ttu-id="75981-137">通常は、コンピューターにインストールされている .NET Framework のバージョンはアンインストールしないでください。</span><span class="sxs-lookup"><span data-stu-id="75981-137">In general, you shouldn't uninstall versions of the .NET Framework that are installed on your computer.</span></span> <span data-ttu-id="75981-138">これには、次の 2 つの理由があります。</span><span class="sxs-lookup"><span data-stu-id="75981-138">There are two reasons for this:</span></span>
 
-- 使用するアプリが特定のバージョンの .NET Framework に依存している場合、そのバージョンが削除されるとアプリの互換性に影響する可能性があります。
+- <span data-ttu-id="75981-139">使用するアプリが特定のバージョンの .NET Framework に依存している場合、そのバージョンが削除されるとアプリの互換性に影響する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="75981-139">If an app that you use depends on a specific version of the .NET Framework, that app may break if that version is removed.</span></span>
 
-- .NET Framework のバージョンの中には、前のバージョンのインプレース更新であるものがあります。 たとえば、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] はバージョン 2.0 のインプレース更新で、.NET Framework 4.7 はバージョン 4、4.5、4.5.1、4.5.2、4.6、4.6.1、および 4.6.2 のインプレース更新です。 詳細については、「[.NET Framework のバージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。
+- <span data-ttu-id="75981-140">.NET Framework のバージョンの中には、前のバージョンのインプレース更新であるものがあります。</span><span class="sxs-lookup"><span data-stu-id="75981-140">Some versions of the .NET Framework are in-place updates to earlier versions.</span></span> <span data-ttu-id="75981-141">たとえば、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] はバージョン 2.0 のインプレース更新で、.NET Framework 4.7.1 はバージョン 4、4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、および 4.7 のインプレース更新です。</span><span class="sxs-lookup"><span data-stu-id="75981-141">For example, the [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] is an in-place update to version 2.0, and the .NET Framework 4.7.1 is an in-place update to versions 4, 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, and 4.7.</span></span> <span data-ttu-id="75981-142">詳細については、「[.NET Framework のバージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="75981-142">For more information, see [.NET Framework Versions and Dependencies](../../../docs/framework/migration-guide/versions-and-dependencies.md).</span></span>
 
-.NET Framework を削除する場合は、必ずコントロール パネルの [**プログラムと機能**] を使用してアンインストールしてください。 .NET Framework のバージョンを手動で削除しないでください。
+<span data-ttu-id="75981-143">.NET Framework を削除する場合は、必ずコントロール パネルの **[プログラムと機能]** を使用してアンインストールしてください。</span><span class="sxs-lookup"><span data-stu-id="75981-143">If you do choose to remove the .NET Framework, always use **Programs and Features** from Control Panel to uninstall it.</span></span> <span data-ttu-id="75981-144">.NET Framework のバージョンを手動で削除しないでください。</span><span class="sxs-lookup"><span data-stu-id="75981-144">Never remove a version of the .NET Framework manually.</span></span>
 
-1 台のコンピューターで複数バージョンの .NET Framework が同時に共存できることに注意してください。 これは、後続バージョンをインストールするために前のバージョンをアンインストールする必要がないことを意味します。
+<span data-ttu-id="75981-145">1 台のコンピューターで複数バージョンの .NET Framework が同時に共存できることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="75981-145">Note that multiple versions of the .NET Framework can coexist on a single computer at the same time.</span></span> <span data-ttu-id="75981-146">これは、後続バージョンをインストールするために前のバージョンをアンインストールする必要がないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="75981-146">This means that you don't have to uninstall previous versions in order to install a later version.</span></span>
 
 <a name="ForDevelopers"></a> 
-## <a name="the-net-framework-for-developers"></a>開発者にとっての .NET Framework
+## <a name="the-net-framework-for-developers"></a><span data-ttu-id="75981-147">開発者にとっての .NET Framework</span><span class="sxs-lookup"><span data-stu-id="75981-147">The .NET Framework for developers</span></span>
 
-開発者は、アプリを作成するために .NET Framework をサポートする任意のプログラミング言語を選択できます。 .NET Framework は言語への依存性がなく、相互運用性があるので、開発に使用した言語に関係なく、他の .NET Framework アプリおよびコンポーネントと対話できます。
+<span data-ttu-id="75981-148">開発者は、アプリを作成するために .NET Framework をサポートする任意のプログラミング言語を選択できます。</span><span class="sxs-lookup"><span data-stu-id="75981-148">If you're a developer, choose any programming language that supports the .NET Framework to create your apps.</span></span> <span data-ttu-id="75981-149">.NET Framework は言語への依存性がなく、相互運用性があるので、開発に使用した言語に関係なく、他の .NET Framework アプリおよびコンポーネントと対話できます。</span><span class="sxs-lookup"><span data-stu-id="75981-149">Because the .NET Framework provides language independence and interoperability, you interact with other .NET Framework apps and components regardless of the language with which they were developed.</span></span>
 
-.NET Framework アプリまたはコンポーネントを開発するには、次の操作を行います。
+<span data-ttu-id="75981-150">.NET Framework アプリまたはコンポーネントを開発するには、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="75981-150">To develop .NET Framework apps or components, do the following:</span></span>
 
-1. オペレーティング システムにプレインストールされていない場合は、アプリが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンである .NET Framework 4.7 は Windows 10 Creators Update にプレインストールされていますが、以前のバージョンの Windows オペレーティング システムでも使用できます。 .NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 .NET Framework の追加パッケージは、アウト オブ バンドでリリースされます。これは、通常のリリース サイクルや定期的なリリース サイクルではなく、ローリング方式でリリースされるということを意味します。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。
+1. <span data-ttu-id="75981-151">オペレーティング システムにプレインストールされていない場合は、アプリが対象とする .NET Framework のバージョンをインストールします。</span><span class="sxs-lookup"><span data-stu-id="75981-151">If it's not preinstalled on your operating system, install the version of the .NET Framework that your app will target.</span></span> <span data-ttu-id="75981-152">最新の製品バージョンである .NET Framework 4.7.1 は Windows 10 Fall Creators Update にプレインストールされていますが、以前のバージョンの Windows オペレーティング システムでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="75981-152">The most recent production version is the .NET Framework 4.7.1, which is preinstalled on Windows 10 Fall Creators Update and is available for download on earlier versions of the Windows operating system.</span></span> <span data-ttu-id="75981-153">.NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="75981-153">For .NET Framework system requirements, see [System Requirements](../../../docs/framework/get-started/system-requirements.md).</span></span> <span data-ttu-id="75981-154">その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="75981-154">For information on installing other versions of the .NET Framework, see [Installation Guide](../../../docs/framework/install/guide-for-developers.md).</span></span> <span data-ttu-id="75981-155">.NET Framework の追加パッケージは、アウト オブ バンドでリリースされます。これは、通常のリリース サイクルや定期的なリリース サイクルではなく、ローリング方式でリリースされるということを意味します。</span><span class="sxs-lookup"><span data-stu-id="75981-155">Additional .NET Framework packages are released out of band, which means that they're released on a rolling basis outside of any regular or scheduled release cycle.</span></span> <span data-ttu-id="75981-156">これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="75981-156">For information about these packages, see [The .NET Framework and Out-of-Band Releases](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).</span></span>
 
-2. .NET Framework でサポートされている、アプリ開発に使用する言語を選択します。 Microsoft の Visual Basic、C#、Visual F#、および C++/CLI を含む多くの言語から選択できます  (.NET Framework のアプリを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](http://go.microsoft.com/fwlink/?LinkId=199862)に準拠します)。
+2. <span data-ttu-id="75981-157">.NET Framework でサポートされている、アプリ開発に使用する言語を選択します。</span><span class="sxs-lookup"><span data-stu-id="75981-157">Select the language or languages supported by the .NET Framework that you intend to use to develop your apps.</span></span> <span data-ttu-id="75981-158">Microsoft の Visual Basic、C#、Visual F#、および C++/CLI を含む多くの言語から選択できます </span><span class="sxs-lookup"><span data-stu-id="75981-158">A number of languages are available, including Visual Basic, C#, Visual F#, and C++/CLI from Microsoft.</span></span> <span data-ttu-id="75981-159">(.NET Framework のアプリを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](http://go.microsoft.com/fwlink/?LinkId=199862)に準拠します)。</span><span class="sxs-lookup"><span data-stu-id="75981-159">(A programming language that allows you to develop apps for the .NET Framework adheres to the [Common Language Infrastructure (CLI) specification](http://go.microsoft.com/fwlink/?LinkId=199862).)</span></span>
 
-3. アプリの作成に使用する、選択したプログラミング言語をサポートする開発環境を選択してインストールします。 [Visual Studio](http://go.microsoft.com/fwlink/?LinkId=325532) は、.NET Framework アプリ用の Microsoft 統合開発環境 (IDE) です。 これには、いくつかエディションがあります。
+3. <span data-ttu-id="75981-160">アプリの作成に使用する、選択したプログラミング言語をサポートする開発環境を選択してインストールします。</span><span class="sxs-lookup"><span data-stu-id="75981-160">Select and install the development environment to use to create your apps and that supports your selected programming language or languages.</span></span> <span data-ttu-id="75981-161">[Visual Studio](http://go.microsoft.com/fwlink/?LinkId=325532) は、.NET Framework アプリ用の Microsoft 統合開発環境 (IDE) です。</span><span class="sxs-lookup"><span data-stu-id="75981-161">The Microsoft integrated development environment (IDE) for .NET Framework apps is [Visual Studio](http://go.microsoft.com/fwlink/?LinkId=325532).</span></span> <span data-ttu-id="75981-162">これには、いくつかエディションがあります。</span><span class="sxs-lookup"><span data-stu-id="75981-162">It's available in a number of editions.</span></span>
 
-.NET Framework を対象にしたアプリの開発の詳細については、「[.NET Framework の開発ガイド](../../../docs/framework/development-guide.md)」を参照してください。
+<span data-ttu-id="75981-163">.NET Framework を対象にしたアプリの開発の詳細については、「[.NET Framework の開発ガイド](../../../docs/framework/development-guide.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="75981-163">For more information on developing apps that target the .NET Framework, see the [Development Guide](../../../docs/framework/development-guide.md).</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="75981-164">関連トピック</span><span class="sxs-lookup"><span data-stu-id="75981-164">Related topics</span></span>
 
-| タイトル | 説明 |
+| <span data-ttu-id="75981-165">タイトル</span><span class="sxs-lookup"><span data-stu-id="75981-165">Title</span></span> | <span data-ttu-id="75981-166">説明</span><span class="sxs-lookup"><span data-stu-id="75981-166">Description</span></span> |
 | ----- |------------ |
-| [概要](../../../docs/framework/get-started/overview.md) | .NET Framework を対象としたアプリを作成する開発者向けの詳細情報を提供します。 |
-| [インストール ガイド](../../../docs/framework/install/index.md) | .NET Framework のインストールに関する情報を提供します。 |  
-| [NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md) | .NET Framework のアウト オブ バンド リリースと、これらをアプリ内で使用する方法について説明します。 |
-| [システム要件](../../../docs/framework/get-started/system-requirements.md) | .NET Framework を実行するためのハードウェアおよびソフトウェアの要件を示します。 |
-| [.NET Core とオープン ソース](../../../docs/framework/get-started/net-core-and-open-source.md) | .NET Core と .NET Framework の関係性、およびオープン ソースの .NET Core プロジェクトにアクセスする方法について説明します。 |
-| [.NET Core ドキュメント](https://docs.microsoft.com/dotnet/) | .NET Core の概念と API リファレンス ドキュメントを提供します。 |
+| [<span data-ttu-id="75981-167">概要</span><span class="sxs-lookup"><span data-stu-id="75981-167">Overview</span></span>](../../../docs/framework/get-started/overview.md) | <span data-ttu-id="75981-168">.NET Framework を対象としたアプリを作成する開発者向けの詳細情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="75981-168">Provides detailed information for developers who build apps that target the .NET Framework.</span></span> |
+| [<span data-ttu-id="75981-169">インストール ガイド</span><span class="sxs-lookup"><span data-stu-id="75981-169">Installation guide</span></span>](../../../docs/framework/install/index.md) | <span data-ttu-id="75981-170">.NET Framework のインストールに関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="75981-170">Provides information about installing the .NET Framework.</span></span> |  
+| [<span data-ttu-id="75981-171">NET Framework および特別なリリース</span><span class="sxs-lookup"><span data-stu-id="75981-171">The .NET Framework and Out-of-Band Releases</span></span>](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md) | <span data-ttu-id="75981-172">.NET Framework のアウト オブ バンド リリースと、これらをアプリ内で使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="75981-172">Describes the .NET Framework out of band releases and how to use them in your app.</span></span> |
+| [<span data-ttu-id="75981-173">システム要件</span><span class="sxs-lookup"><span data-stu-id="75981-173">System Requirements</span></span>](../../../docs/framework/get-started/system-requirements.md) | <span data-ttu-id="75981-174">.NET Framework を実行するためのハードウェアおよびソフトウェアの要件を示します。</span><span class="sxs-lookup"><span data-stu-id="75981-174">Lists the hardware and software requirements for running the .NET Framework.</span></span> |
+| [<span data-ttu-id="75981-175">.NET Core とオープン ソース</span><span class="sxs-lookup"><span data-stu-id="75981-175">.NET Core and Open-Source</span></span>](../../../docs/framework/get-started/net-core-and-open-source.md) | <span data-ttu-id="75981-176">.NET Core と .NET Framework の関係性、およびオープン ソースの .NET Core プロジェクトにアクセスする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="75981-176">Describes .NET Core in relation to the .NET Framework and how to access the open-source .NET Core projects.</span></span> |
+| [<span data-ttu-id="75981-177">.NET Core ドキュメント</span><span class="sxs-lookup"><span data-stu-id="75981-177">.NET Core documentation</span></span>](https://docs.microsoft.com/dotnet/) | <span data-ttu-id="75981-178">.NET Core の概念と API リファレンス ドキュメントを提供します。</span><span class="sxs-lookup"><span data-stu-id="75981-178">Provides the conceptual and API reference documentation for .NET Core.</span></span> |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a><span data-ttu-id="75981-179">関連項目</span><span class="sxs-lookup"><span data-stu-id="75981-179">See also</span></span>
 
-[.NET Framework ガイド](../../../docs/framework/index.md)   
-[新機能](../../../docs/framework/whats-new/index.md)   
-[.NET API ブラウザー](/dotnet/api/)   
-[開発ガイド](../../../docs/framework/development-guide.md)
-
+<span data-ttu-id="75981-180">[.NET Framework ガイド](../../../docs/framework/index.md) </span><span class="sxs-lookup"><span data-stu-id="75981-180">[.NET Framework Guide](../../../docs/framework/index.md) </span></span>  
+<span data-ttu-id="75981-181">[新機能](../../../docs/framework/whats-new/index.md) </span><span class="sxs-lookup"><span data-stu-id="75981-181">[What's New](../../../docs/framework/whats-new/index.md) </span></span>  
+<span data-ttu-id="75981-182">[.NET API ブラウザー](/dotnet/api/) </span><span class="sxs-lookup"><span data-stu-id="75981-182">[.NET API Browser](/dotnet/api/) </span></span>  
+[<span data-ttu-id="75981-183">開発ガイド</span><span class="sxs-lookup"><span data-stu-id="75981-183">Development Guide</span></span>](../../../docs/framework/development-guide.md)

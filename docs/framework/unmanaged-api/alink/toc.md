@@ -3,7 +3,7 @@
 ## [AssemblyAttributesGoHereM](assemblyattributesgoherem.md)
 ## [AssemblyAttributesGoHereS](assemblyattributesgoheres.md)
 ## [AssemblyAttributesGoHereSM](assemblyattributesgoheresm.md)
-## [AssemblyOptions 列挙体](assemblyoptions-enumeration.md)
+## [AssemblyOptions 列挙型](assemblyoptions-enumeration.md)
 ## [CreateALink 関数](createalink-function.md)
 ## [GetALinkMessageDll 関数](getalinkmessagedll-function.md)
 ## [IALink インターフェイス](ialink-interface.md)

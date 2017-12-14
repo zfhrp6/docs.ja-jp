@@ -1,14 +1,10 @@
 ---
 title: "C# 演算子"
-ms.date: 2017-03-09
+ms.date: 03/09/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- cs.operators
-dev_langs:
-- CSharp
+f1_keywords: cs.operators
 helpviewer_keywords:
 - boolean operators [C#]
 - expressions [C#], operators
@@ -24,217 +20,201 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 0ac5c6bfb129f0367c2d62ebf139e44b8eb60379
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: eb8c4f11e540aa2685989ef11b2515a32d8d1fd6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="c-operators"></a>C# 演算子
-C# には、多くの演算子が用意されています。演算子とは、式で実行する演算 (数値演算、インデックス作成、関数呼び出しなど) を指定する記号のことです。  多くの演算子は、ユーザー定義型に適用する際に[オーバーロード](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)して、その意味を変更できます。  
+# <a name="c-operators"></a><span data-ttu-id="e3ce6-102">C# 演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-102">C# Operators</span></span>
+<span data-ttu-id="e3ce6-103">C# には、多くの演算子が用意されています。演算子とは、式で実行する演算 (数値演算、インデックス作成、関数呼び出しなど) を指定する記号のことです。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-103">C# provides many operators, which are symbols that specify which operations (math, indexing, function call, etc.) to perform in an expression.</span></span>  <span data-ttu-id="e3ce6-104">多くの演算子は、ユーザー定義型に適用する際に[オーバーロード](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)して、その意味を変更できます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-104">You can [overload](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) many operators to change their meaning when applied to a user-defined type.</span></span>  
   
- 整数型に対する演算 (`==`、`!=`、`<`、`>`、`&`、`|`) は、通常、列挙型 (`enum`) で使用できます。  
+ <span data-ttu-id="e3ce6-105">整数型に対する演算 (`==`、`!=`、`<`、`>`、`&`、`|`) は、通常、列挙型 (`enum`) で使用できます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-105">Operations on integral types (such as `==`, `!=`, `<`, `>`, `&`, `|`) are generally allowed on enumeration (`enum`) types.</span></span>  
   
- ここでは、C# の演算子を優先順位の高い順に示します。  各セクションの演算子の優先順位は同じです。  
+ <span data-ttu-id="e3ce6-106">ここでは、C# の演算子を優先順位の高い順に示します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-106">The sections lists the C# operators starting with the highest precedence to the lowest.</span></span>  <span data-ttu-id="e3ce6-107">各セクションの演算子の優先順位は同じです。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-107">The operators within each section share the same precedence level.</span></span>  
   
-## <a name="primary-operators"></a>主な演算子  
- 優先順位が最も高い演算子です。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="primary-operators"></a><span data-ttu-id="e3ce6-108">主な演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-108">Primary Operators</span></span>  
+ <span data-ttu-id="e3ce6-109">優先順位が最も高い演算子です。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-109">These are the highest precedence operators.</span></span>  <span data-ttu-id="e3ce6-110">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-110">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [x.y](../../../csharp/language-reference/operators/member-access-operator.md) – メンバー アクセス。  
+ <span data-ttu-id="e3ce6-111">[x.y](../../../csharp/language-reference/operators/member-access-operator.md) – メンバー アクセス。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-111">[x.y](../../../csharp/language-reference/operators/member-access-operator.md) – member access.</span></span>  
   
- [x?.y](../../../csharp/language-reference/operators/null-conditional-operators.md) – null 条件付きのメンバー アクセス。  左側のオペランドが `null` の場合に `null` を返します。  
+ <span data-ttu-id="e3ce6-112">[x?.y](../../../csharp/language-reference/operators/null-conditional-operators.md) – null 条件付きのメンバー アクセス。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-112">[x?.y](../../../csharp/language-reference/operators/null-conditional-operators.md) – null conditional member access.</span></span>  <span data-ttu-id="e3ce6-113">左側のオペランドが `null` の場合に `null` を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-113">Returns `null` if the left-hand operand is `null`.</span></span>  
  
- [x?[y]](../../../csharp/language-reference/operators/null-conditional-operators.md) - null 条件付きのインデックス アクセス。 左側のオペランドが `null` の場合に `null` を返します。
+ <span data-ttu-id="e3ce6-114">[x?[y]](../../../csharp/language-reference/operators/null-conditional-operators.md) - null 条件付きのインデックス アクセス。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-114">[x?[y]](../../../csharp/language-reference/operators/null-conditional-operators.md) - null conditional index access.</span></span> <span data-ttu-id="e3ce6-115">左側のオペランドが `null` の場合に `null` を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-115">Returns `null` if the left-hand operand is `null`.</span></span>
  
- [f(x)](../../../csharp/language-reference/operators/invocation-operator.md) – 関数の呼び出し。  
+ <span data-ttu-id="e3ce6-116">[f(x)](../../../csharp/language-reference/operators/invocation-operator.md) – 関数の呼び出し。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-116">[f(x)](../../../csharp/language-reference/operators/invocation-operator.md) – function invocation.</span></span>  
   
- [a&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md) – 集約オブジェクトのインデックス作成。  
+ <span data-ttu-id="e3ce6-117">[a&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md) – 集約オブジェクトのインデックス作成。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-117">[a&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md) – aggregate object indexing.</span></span>  
    
- [x++](../../../csharp/language-reference/operators/increment-operator.md) – 後置インクリメント。  x の値を返した後、1 大きくなった (通常は整数 1 が加算された) x の値で格納場所を更新します。  
+ <span data-ttu-id="e3ce6-118">[x++](../../../csharp/language-reference/operators/increment-operator.md) – 後置インクリメント。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-118">[x++](../../../csharp/language-reference/operators/increment-operator.md) – postfix increment.</span></span>  <span data-ttu-id="e3ce6-119">x の値を返した後、1 大きくなった (通常は整数 1 が加算された) x の値で格納場所を更新します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-119">Returns the value of x and then updates the storage location with the value of x that is one greater (typically adds the integer 1).</span></span>  
   
- [x--](../../../csharp/language-reference/operators/decrement-operator.md) – 後置デクリメント。  x の値を返した後、1 小さくなった (通常は整数 1 が減算された) x の値で格納場所を更新します。  
+ <span data-ttu-id="e3ce6-120">[x--](../../../csharp/language-reference/operators/decrement-operator.md) – 後置デクリメント。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-120">[x--](../../../csharp/language-reference/operators/decrement-operator.md) –  postfix decrement.</span></span>  <span data-ttu-id="e3ce6-121">x の値を返した後、1 小さくなった (通常は整数 1 が減算された) x の値で格納場所を更新します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-121">Returns the value of x and then updates the storage location with the value of x that is one less (typically subtracts the integer 1).</span></span>  
   
- [new](../../../csharp/language-reference/keywords/new-operator.md) – 型のインスタンス化。  
+ <span data-ttu-id="e3ce6-122">[new](../../../csharp/language-reference/keywords/new-operator.md) – 型のインスタンス化。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-122">[new](../../../csharp/language-reference/keywords/new-operator.md) – type instantiation.</span></span>  
   
- [typeof](../../../csharp/language-reference/keywords/typeof.md) – オペランドを表す System.Type オブジェクトを返します。  
+ <span data-ttu-id="e3ce6-123">[typeof](../../../csharp/language-reference/keywords/typeof.md) – オペランドを表す System.Type オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-123">[typeof](../../../csharp/language-reference/keywords/typeof.md) – returns the System.Type object representing the operand.</span></span>  
   
- [checked](../../../csharp/language-reference/keywords/checked.md) – 整数演算のオーバーフロー チェックを有効にします。  
+ <span data-ttu-id="e3ce6-124">[checked](../../../csharp/language-reference/keywords/checked.md) – 整数演算のオーバーフロー チェックを有効にします。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-124">[checked](../../../csharp/language-reference/keywords/checked.md) – enables overflow checking for integer operations.</span></span>  
   
- [unchecked](../../../csharp/language-reference/keywords/unchecked.md) – 整数演算のオーバーフロー チェックを無効にします。  これがコンパイラの既定の動作です。  
+ <span data-ttu-id="e3ce6-125">[unchecked](../../../csharp/language-reference/keywords/unchecked.md) – 整数演算のオーバーフロー チェックを無効にします。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-125">[unchecked](../../../csharp/language-reference/keywords/unchecked.md) – disables overflow checking for integer operations.</span></span>  <span data-ttu-id="e3ce6-126">これがコンパイラの既定の動作です。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-126">This is the default compiler behavior.</span></span>  
   
- [default(T)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md) – 型 T の既定の値 (参照型の場合は `null`、数値型の場合は 0、構造体型の場合は 0 または `null` が格納されたメンバー) を返します。  
+ <span data-ttu-id="e3ce6-127">[default(T)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md) – 型 T の既定の値 (参照型の場合は `null`、数値型の場合は 0、構造体型の場合は 0 または `null` が格納されたメンバー) を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-127">[default(T)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md) – returns the default value of type T, `null` for reference types, zero for numeric types, and zero/`null` filled in members for struct types.</span></span>  
   
- [Delegate](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) – delegate インスタンスを宣言して返します。  
+ <span data-ttu-id="e3ce6-128">[Delegate](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) – delegate インスタンスを宣言して返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-128">[delegate](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) – declares and returns a delegate instance.</span></span>  
   
- [sizeof](../../../csharp/language-reference/keywords/sizeof.md) – 型オペランドのサイズをバイト単位で返します。  
+ <span data-ttu-id="e3ce6-129">[sizeof](../../../csharp/language-reference/keywords/sizeof.md) – 型オペランドのサイズをバイト単位で返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-129">[sizeof](../../../csharp/language-reference/keywords/sizeof.md) – returns the size in bytes of the type operand.</span></span>  
   
- [->](../../../csharp/language-reference/operators/dereference-operator.md) – メンバー アクセスと組み合わせてポインターを逆参照します。  
+ <span data-ttu-id="e3ce6-130">[->](../../../csharp/language-reference/operators/dereference-operator.md) – メンバー アクセスと組み合わせてポインターを逆参照します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-130">[->](../../../csharp/language-reference/operators/dereference-operator.md) – pointer dereferencing combined with member access.</span></span>  
   
-## <a name="unary-operators"></a>単項演算子  
- これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="unary-operators"></a><span data-ttu-id="e3ce6-131">単項演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-131">Unary Operators</span></span>  
+ <span data-ttu-id="e3ce6-132">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-132">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-133">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-133">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [+x](../../../csharp/language-reference/operators/addition-operator.md) – x の値を返します。  
+ <span data-ttu-id="e3ce6-134">[+x](../../../csharp/language-reference/operators/addition-operator.md) – x の値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-134">[+x](../../../csharp/language-reference/operators/addition-operator.md) – returns the value of x.</span></span>  
   
- [-x](../../../csharp/language-reference/operators/subtraction-operator.md) – 数値の否定。  
+ <span data-ttu-id="e3ce6-135">[-x](../../../csharp/language-reference/operators/subtraction-operator.md) – 数値の否定。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-135">[-x](../../../csharp/language-reference/operators/subtraction-operator.md) – numeric negation.</span></span>  
   
- [!x](../../../csharp/language-reference/operators/logical-negation-operator.md) – 論理否定。  
+ [!x]<span data-ttu-id="e3ce6-136">(../../../csharp/language-reference/operators/logical-negation-operator.md) – 論理否定。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-136">(../../../csharp/language-reference/operators/logical-negation-operator.md) – logical negation.</span></span>  
   
- [~x](../../../csharp/language-reference/operators/bitwise-complement-operator.md) – ビットごとの補数。  
+ <span data-ttu-id="e3ce6-137">[~x](../../../csharp/language-reference/operators/bitwise-complement-operator.md) – ビットごとの補数。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-137">[~x](../../../csharp/language-reference/operators/bitwise-complement-operator.md) – bitwise complement.</span></span>  
   
- [++x](../../../csharp/language-reference/operators/increment-operator.md) – 前置インクリメント。  1 大きくなった (通常は整数 1 が加算された) x の値で格納場所を更新した後に x の値を返します。  
+ <span data-ttu-id="e3ce6-138">[++x](../../../csharp/language-reference/operators/increment-operator.md) – 前置インクリメント。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-138">[++x](../../../csharp/language-reference/operators/increment-operator.md) – prefix increment.</span></span>  <span data-ttu-id="e3ce6-139">1 大きくなった (通常は整数 1 が加算された) x の値で格納場所を更新した後に x の値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-139">Returns the value of x after updating the storage location with the value of x that is one greater (typically adds the integer 1).</span></span>  
   
- [--x](../../../csharp/language-reference/operators/decrement-operator.md) – 前置デクリメント。  1 小さくなった (通常は整数 1 が減算された) x の値で格納場所を更新した後に x の値を返します。  
+ <span data-ttu-id="e3ce6-140">[--x](../../../csharp/language-reference/operators/decrement-operator.md) – 前置デクリメント。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-140">[--x](../../../csharp/language-reference/operators/decrement-operator.md) – prefix decrement.</span></span>  <span data-ttu-id="e3ce6-141">1 小さくなった (通常は整数 1 が減算された) x の値で格納場所を更新した後に x の値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-141">Returns the value of x after updating the storage location with the value of x that is one less (typically adds the integer 1).</span></span>  
   
- [(T)x](../../../csharp/language-reference/operators/invocation-operator.md) – 型キャスト。  
+ <span data-ttu-id="e3ce6-142">[(T)x](../../../csharp/language-reference/operators/invocation-operator.md) – 型キャスト。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-142">[(T)x](../../../csharp/language-reference/operators/invocation-operator.md) – type casting.</span></span>  
   
- [await](../../../csharp/language-reference/keywords/await.md) – `Task` を待機します。  
+ <span data-ttu-id="e3ce6-143">[await](../../../csharp/language-reference/keywords/await.md) – `Task` を待機します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-143">[await](../../../csharp/language-reference/keywords/await.md) – awaits a `Task`.</span></span>  
   
- [&x](../../../csharp/language-reference/operators/and-operator.md) – アドレス。  
+ <span data-ttu-id="e3ce6-144">[&x](../../../csharp/language-reference/operators/and-operator.md) – アドレス。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-144">[&x](../../../csharp/language-reference/operators/and-operator.md) – address of.</span></span>  
   
- [*x](../../../csharp/language-reference/operators/multiplication-operator.md) – 逆参照。  
+ <span data-ttu-id="e3ce6-145">[*x](../../../csharp/language-reference/operators/multiplication-operator.md) – 逆参照。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-145">[*x](../../../csharp/language-reference/operators/multiplication-operator.md) – dereferencing.</span></span>  
   
-## <a name="multiplicative-operators"></a>乗算演算子  
- これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="multiplicative-operators"></a><span data-ttu-id="e3ce6-146">乗算演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-146">Multiplicative Operators</span></span>  
+ <span data-ttu-id="e3ce6-147">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-147">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-148">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-148">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [x * y](../../../csharp/language-reference/operators/multiplication-operator.md) – 乗算。  
+ <span data-ttu-id="e3ce6-149">[x * y](../../../csharp/language-reference/operators/multiplication-operator.md) – 乗算。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-149">[x * y](../../../csharp/language-reference/operators/multiplication-operator.md) – multiplication.</span></span>  
   
- [x / y](../../../csharp/language-reference/operators/division-operator.md) – 除算。  オペランドが整数の場合、結果は 0 に近い整数になるように切り捨てられます (例: `-7 / 2 is -3`)。  
+ <span data-ttu-id="e3ce6-150">[x / y](../../../csharp/language-reference/operators/division-operator.md) – 除算。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-150">[x / y](../../../csharp/language-reference/operators/division-operator.md) – division.</span></span>  <span data-ttu-id="e3ce6-151">オペランドが整数の場合、結果は 0 に近い整数になるように切り捨てられます (例: `-7 / 2 is -3`)。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-151">If the operands are integers, the result is an integer truncated toward zero (for example, `-7 / 2 is -3`).</span></span>  
   
- [x % y](../../../csharp/language-reference/operators/modulus-operator.md) – 剰余。  オペランドが整数の場合、x を y で除算した剰余を返します。  `q = x / y` で `r = x % y` の場合、`x = q * y + r` になります。  
+ <span data-ttu-id="e3ce6-152">[x % y](../../../csharp/language-reference/operators/modulus-operator.md) – 剰余。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-152">[x % y](../../../csharp/language-reference/operators/modulus-operator.md) – modulus.</span></span>  <span data-ttu-id="e3ce6-153">オペランドが整数の場合、x を y で除算した剰余を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-153">If the operands are integers, this returns the remainder of dividing x by y.</span></span>  <span data-ttu-id="e3ce6-154">`q = x / y` で `r = x % y` の場合、`x = q * y + r` になります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-154">If `q = x / y` and `r = x % y`, then `x = q * y + r`.</span></span>  
   
-## <a name="additive-operators"></a>加法演算子  
- これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="additive-operators"></a><span data-ttu-id="e3ce6-155">加法演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-155">Additive Operators</span></span>  
+ <span data-ttu-id="e3ce6-156">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-156">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-157">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-157">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [x + y](../../../csharp/language-reference/operators/addition-operator.md) – 加算。  
+ <span data-ttu-id="e3ce6-158">[x + y](../../../csharp/language-reference/operators/addition-operator.md) – 加算。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-158">[x + y](../../../csharp/language-reference/operators/addition-operator.md) – addition.</span></span>  
   
- [x – y](../../../csharp/language-reference/operators/subtraction-operator.md) – 減算。  
+ <span data-ttu-id="e3ce6-159">[x – y](../../../csharp/language-reference/operators/subtraction-operator.md) – 減算。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-159">[x – y](../../../csharp/language-reference/operators/subtraction-operator.md) – subtraction.</span></span>  
   
-## <a name="shift-operators"></a>シフト演算子  
- これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="shift-operators"></a><span data-ttu-id="e3ce6-160">シフト演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-160">Shift Operators</span></span>  
+ <span data-ttu-id="e3ce6-161">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-161">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-162">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-162">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [x <\<  y](../../../csharp/language-reference/operators/left-shift-operator.md) – ビットを左へシフトし、右側には 0 を格納します。  
+ <span data-ttu-id="e3ce6-163">[x <\<  y](../../../csharp/language-reference/operators/left-shift-operator.md) – ビットを左へシフトし、右側には 0 を格納します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-163">[x <\<  y](../../../csharp/language-reference/operators/left-shift-operator.md) – shift bits left and fill with zero on the right.</span></span>  
   
- [x >> y](../../../csharp/language-reference/operators/right-shift-operator.md) – ビットを右へシフトします。  左側のオペランドが `int` または `long` の場合、左側のビットには符号ビットが格納されます。  左側のオペランドが `uint` または `ulong` の場合、左側のビットには 0 が格納されます。  
+ <span data-ttu-id="e3ce6-164">[x >> y](../../../csharp/language-reference/operators/right-shift-operator.md) – ビットを右へシフトします。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-164">[x >> y](../../../csharp/language-reference/operators/right-shift-operator.md) – shift bits right.</span></span>  <span data-ttu-id="e3ce6-165">左側のオペランドが `int` または `long` の場合、左側のビットには符号ビットが格納されます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-165">If the left operand is `int` or `long`, then left bits are filled with the sign bit.</span></span>  <span data-ttu-id="e3ce6-166">左側のオペランドが `uint` または `ulong` の場合、左側のビットには 0 が格納されます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-166">If the left operand is `uint` or `ulong`, then left bits are filled with zero.</span></span>  
   
-## <a name="relational-and-type-testing-operators"></a>関係演算子と型検査演算子  
- これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="relational-and-type-testing-operators"></a><span data-ttu-id="e3ce6-167">関係演算子と型検査演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-167">Relational and Type-testing Operators</span></span>  
+ <span data-ttu-id="e3ce6-168">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-168">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-169">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-169">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [x \< y](../../../csharp/language-reference/operators/less-than-operator.md) – より小さい (x が y より小さい場合は true)。  
+ <span data-ttu-id="e3ce6-170">[x \< y](../../../csharp/language-reference/operators/less-than-operator.md) – より小さい (x が y より小さい場合は true)。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-170">[x \< y](../../../csharp/language-reference/operators/less-than-operator.md) – less than (true if x is less than y).</span></span>  
   
- [x > y](../../../csharp/language-reference/operators/greater-than-operator.md) – より大きい (x が y より大きい場合は true)。  
+ <span data-ttu-id="e3ce6-171">[x > y](../../../csharp/language-reference/operators/greater-than-operator.md) – より大きい (x が y より大きい場合は true)。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-171">[x > y](../../../csharp/language-reference/operators/greater-than-operator.md) – greater than (true if x is greater than y).</span></span>  
   
- [x \<= y](../../../csharp/language-reference/operators/less-than-equal-operator.md) – 以下。  
+ <span data-ttu-id="e3ce6-172">[x \<= y](../../../csharp/language-reference/operators/less-than-equal-operator.md) – 以下。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-172">[x \<= y](../../../csharp/language-reference/operators/less-than-equal-operator.md) – less than or equal to.</span></span>  
   
- [x >= y](../../../csharp/language-reference/operators/greater-than-equal-operator.md) – 以上。  
+ <span data-ttu-id="e3ce6-173">[x >= y](../../../csharp/language-reference/operators/greater-than-equal-operator.md) – 以上。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-173">[x >= y](../../../csharp/language-reference/operators/greater-than-equal-operator.md) – greater than or equal to.</span></span>  
   
- [is](../../../csharp/language-reference/keywords/is.md) – 型の互換性。  評価される左側のオペランドを右側のオペランドで指定された型 (静的な型) にキャストできる場合は、true を返します。  
+ <span data-ttu-id="e3ce6-174">[is](../../../csharp/language-reference/keywords/is.md) – 型の互換性。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-174">[is](../../../csharp/language-reference/keywords/is.md) – type compatibility.</span></span>  <span data-ttu-id="e3ce6-175">評価される左側のオペランドを右側のオペランドで指定された型 (静的な型) にキャストできる場合は、true を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-175">Returns true if the evaluated left operand can be cast to the type specified in the right operand (a static type).</span></span>  
   
- [as](../../../csharp/language-reference/keywords/as.md) – 型変換。  左側のオペランドを右側のオペランドで指定された型 (静的な型) にキャストして返します。ただし、`(T)x` が例外をスローした場合、`as` は `null` を返します。  
+ <span data-ttu-id="e3ce6-176">[as](../../../csharp/language-reference/keywords/as.md) – 型変換。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-176">[as](../../../csharp/language-reference/keywords/as.md) – type conversion.</span></span>  <span data-ttu-id="e3ce6-177">左側のオペランドを右側のオペランドで指定された型 (静的な型) にキャストして返します。ただし、`(T)x` が例外をスローした場合、`as` は `null` を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-177">Returns the left operand cast to the type specified by the right operand (a static type), but `as` returns `null` where `(T)x` would throw an exception.</span></span>  
   
-## <a name="equality-operators"></a>等値演算子  
- これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="equality-operators"></a><span data-ttu-id="e3ce6-178">等値演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-178">Equality Operators</span></span>  
+ <span data-ttu-id="e3ce6-179">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-179">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-180">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-180">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [x == y](../../../csharp/language-reference/operators/equality-comparison-operator.md) – 等価比較。  既定では、`string` 以外の参照型の場合、参照の等価性を返します (等価テスト)。  ただし、型は `==` をオーバーロードできるため、同一性のテストが目的の場合は `object` で `ReferenceEquals` メソッドを使用することをお勧めします。  
+ <span data-ttu-id="e3ce6-181">[x == y](../../../csharp/language-reference/operators/equality-comparison-operator.md) – 等価比較。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-181">[x == y](../../../csharp/language-reference/operators/equality-comparison-operator.md) – equality.</span></span>  <span data-ttu-id="e3ce6-182">既定では、`string` 以外の参照型の場合、参照の等価性を返します (等価テスト)。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-182">By default, for reference types other than `string`, this returns reference equality (identity test).</span></span>  <span data-ttu-id="e3ce6-183">ただし、型は `==` をオーバーロードできるため、同一性のテストが目的の場合は `object` で `ReferenceEquals` メソッドを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-183">However, types can overload `==`, so if your intent is to test identity, it is best to use the `ReferenceEquals` method on `object`.</span></span>  
   
- [x != y](../../../csharp/language-reference/operators/not-equal-operator.md) – 等しくない。  `==` のコメントを参照してください。  型が `==` をオーバーロードする場合は、`!=` をオーバーロードする必要があります。  
+ <span data-ttu-id="e3ce6-184">[x != y](../../../csharp/language-reference/operators/not-equal-operator.md) – 等しくない。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-184">[x != y](../../../csharp/language-reference/operators/not-equal-operator.md) – not equal.</span></span>  <span data-ttu-id="e3ce6-185">`==` のコメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-185">See comment for `==`.</span></span>  <span data-ttu-id="e3ce6-186">型が `==` をオーバーロードする場合は、`!=` をオーバーロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-186">If a type overloads `==`, then it must overload `!=`.</span></span>  
   
-## <a name="logical-and-operator"></a>論理 AND 演算子  
- この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="logical-and-operator"></a><span data-ttu-id="e3ce6-187">論理 AND 演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-187">Logical AND Operator</span></span>  
+ <span data-ttu-id="e3ce6-188">この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-188">This operator has higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-189">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-189">NOTE, you can click on the operator to go the details page with examples.</span></span>  
   
- [x & y](../../../csharp/language-reference/operators/and-operator.md) – 論理またはビットごとの AND。  通常、整数型および `enum` 型で使用できます。  
+ <span data-ttu-id="e3ce6-190">[x & y](../../../csharp/language-reference/operators/and-operator.md) – 論理またはビットごとの AND。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-190">[x & y](../../../csharp/language-reference/operators/and-operator.md) – logical or bitwise AND.</span></span>  <span data-ttu-id="e3ce6-191">通常、整数型および `enum` 型で使用できます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-191">Use with integer types and `enum` types is generally allowed.</span></span>  
   
-## <a name="logical-xor-operator"></a>論理 XOR 演算子  
- この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="logical-xor-operator"></a><span data-ttu-id="e3ce6-192">論理 XOR 演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-192">Logical XOR Operator</span></span>  
+ <span data-ttu-id="e3ce6-193">この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-193">This operator has higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-194">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-194">NOTE, you can click on the operator to go the details page with examples.</span></span>  
   
- [x ^ y](../../../csharp/language-reference/operators/xor-operator.md) – 論理またはビットごとの XOR。  通常、整数型と `enum` 型で使用できます。  
+ <span data-ttu-id="e3ce6-195">[x ^ y](../../../csharp/language-reference/operators/xor-operator.md) – 論理またはビットごとの XOR。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-195">[x ^ y](../../../csharp/language-reference/operators/xor-operator.md) – logical or bitwise XOR.</span></span>  <span data-ttu-id="e3ce6-196">通常、整数型と `enum` 型で使用できます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-196">You can generally use this with integer types and `enum` types.</span></span>  
   
-## <a name="logical-or-operator"></a>論理 OR 演算子  
- この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="logical-or-operator"></a><span data-ttu-id="e3ce6-197">論理 OR 演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-197">Logical OR Operator</span></span>  
+ <span data-ttu-id="e3ce6-198">この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-198">This operator has higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-199">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-199">NOTE, you can click on the operator to go the details page with examples.</span></span>  
   
- [x &#124; y](../../../csharp/language-reference/operators/or-operator.md) – 論理またはビットごとの OR。  通常、整数型および `enum` 型で使用できます。  
+ <span data-ttu-id="e3ce6-200">[x &#124; y](../../../csharp/language-reference/operators/or-operator.md) – 論理またはビットごとの OR。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-200">[x &#124; y](../../../csharp/language-reference/operators/or-operator.md) – logical or bitwise OR.</span></span>  <span data-ttu-id="e3ce6-201">通常、整数型および `enum` 型で使用できます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-201">Use with integer types and `enum` types is generally allowed.</span></span>  
   
-## <a name="conditional-and-operator"></a>条件 AND 演算子  
- この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="conditional-and-operator"></a><span data-ttu-id="e3ce6-202">条件 AND 演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-202">Conditional AND Operator</span></span>  
+ <span data-ttu-id="e3ce6-203">この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-203">This operator has higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-204">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-204">NOTE, you can click on the operator to go the details page with examples.</span></span>  
   
- [x && y](../../../csharp/language-reference/operators/conditional-and-operator.md) – 論理 AND。  最初のオペランドが false の場合、C# では 2 番目のオペランドが評価されません。  
+ <span data-ttu-id="e3ce6-205">[x && y](../../../csharp/language-reference/operators/conditional-and-operator.md) – 論理 AND。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-205">[x && y](../../../csharp/language-reference/operators/conditional-and-operator.md) – logical AND.</span></span>  <span data-ttu-id="e3ce6-206">最初のオペランドが false の場合、C# では 2 番目のオペランドが評価されません。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-206">If the first operand is false, then C# does not evaluate the second operand.</span></span>  
   
-## <a name="conditional-or-operator"></a>条件 OR 演算子  
- この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="conditional-or-operator"></a><span data-ttu-id="e3ce6-207">条件 OR 演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-207">Conditional OR Operator</span></span>  
+ <span data-ttu-id="e3ce6-208">この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-208">This operator has higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-209">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-209">NOTE, you can click on the operator to go the details page with examples.</span></span>  
   
- [x &#124;&#124; y](../../../csharp/language-reference/operators/conditional-or-operator.md) – 論理 OR。  最初のオペランドが true の場合、C# では 2 番目のオペランドが評価されません。  
+ <span data-ttu-id="e3ce6-210">[x &#124;&#124; y](../../../csharp/language-reference/operators/conditional-or-operator.md) – 論理 OR。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-210">[x &#124;&#124; y](../../../csharp/language-reference/operators/conditional-or-operator.md) – logical OR.</span></span>  <span data-ttu-id="e3ce6-211">最初のオペランドが true の場合、C# では 2 番目のオペランドが評価されません。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-211">If the first operand is true, then C# does not evaluate the second operand.</span></span>  
   
-## <a name="null-coalescing-operator"></a>Null 合体演算子  
- この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="null-coalescing-operator"></a><span data-ttu-id="e3ce6-212">Null 合体演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-212">Null-coalescing Operator</span></span>  
+ <span data-ttu-id="e3ce6-213">この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-213">This operator has higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-214">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-214">NOTE, you can click on the operator to go the details page with examples.</span></span>  
   
- [x ?? y](../../../csharp/language-reference/operators/null-conditional-operator.md) – `x` が `null` 以外の場合は x を返します。null の場合は `y` を返します。  
+ <span data-ttu-id="e3ce6-215">[x ?? y](../../../csharp/language-reference/operators/null-conditional-operator.md) – `x` が `null` 以外の場合は x を返します。null の場合は `y` を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-215">[x ?? y](../../../csharp/language-reference/operators/null-conditional-operator.md) – returns `x` if it is non-`null`; otherwise, returns `y`.</span></span>  
   
-## <a name="conditional-operator"></a>条件演算子  
- この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="conditional-operator"></a><span data-ttu-id="e3ce6-216">条件演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-216">Conditional Operator</span></span>  
+ <span data-ttu-id="e3ce6-217">この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-217">This operator has higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-218">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-218">NOTE, you can click on the operator to go the details page with examples.</span></span>  
   
- [t ? x : y](../../../csharp/language-reference/operators/conditional-operator.md) – テスト `t` が true の場合は `x` を評価して返します。それ以外の場合は `y` を評価して返します。  
+ <span data-ttu-id="e3ce6-219">[t ? x : y](../../../csharp/language-reference/operators/conditional-operator.md) – テスト `t` が true の場合は `x` を評価して返します。それ以外の場合は `y` を評価して返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-219">[t ? x : y](../../../csharp/language-reference/operators/conditional-operator.md) – if test `t` is true, then evaluate and return `x`; otherwise, evaluate and return `y`.</span></span>  
   
-## <a name="assignment-and-lambda-operators"></a>代入演算子とラムダ演算子  
- これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。  
+## <a name="assignment-and-lambda-operators"></a><span data-ttu-id="e3ce6-220">代入演算子とラムダ演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-220">Assignment and Lambda Operators</span></span>  
+ <span data-ttu-id="e3ce6-221">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-221">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-222">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-222">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- [x = y](../../../csharp/language-reference/operators/assignment-operator.md) – 代入。  
+ <span data-ttu-id="e3ce6-223">[x = y](../../../csharp/language-reference/operators/assignment-operator.md) – 代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-223">[x = y](../../../csharp/language-reference/operators/assignment-operator.md) – assignment.</span></span>  
   
- [x += y](../../../csharp/language-reference/operators/addition-assignment-operator.md) – インクリメント。  `y` の値を `x` の値に加算した結果を `x` に格納し、新しい値を返します。  `x` が `event` を指定した場合、`y` は、C# によってイベント ハンドラーとして追加される適切な関数である必要があります。  
+ <span data-ttu-id="e3ce6-224">[x += y](../../../csharp/language-reference/operators/addition-assignment-operator.md) – インクリメント。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-224">[x += y](../../../csharp/language-reference/operators/addition-assignment-operator.md) – increment.</span></span>  <span data-ttu-id="e3ce6-225">`y` の値を `x` の値に加算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-225">Add the value of `y` to the value of `x`, store the result in `x`, and return the new value.</span></span>  <span data-ttu-id="e3ce6-226">`x` が `event` を指定した場合、`y` は、C# によってイベント ハンドラーとして追加される適切な関数である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-226">If `x` designates an `event`, then `y` must be an appropriate function that C# adds as an event handler.</span></span>  
   
- [x -= y](../../../csharp/language-reference/operators/subtraction-assignment-operator.md) – デクリメント。  `y` の値を `x` の値から減算した結果を `x` に格納し、新しい値を返します。  `x` が `event` を指定した場合、`y` は、C# によってイベント ハンドラーとして削除される適切な関数である必要があります。  
+ <span data-ttu-id="e3ce6-227">[x -= y](../../../csharp/language-reference/operators/subtraction-assignment-operator.md) – デクリメント。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-227">[x -= y](../../../csharp/language-reference/operators/subtraction-assignment-operator.md) – decrement.</span></span>  <span data-ttu-id="e3ce6-228">`y` の値を `x` の値から減算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-228">Subtract the value of `y` from the value of `x`, store the result in `x`, and return the new value.</span></span>  <span data-ttu-id="e3ce6-229">`x` が `event` を指定した場合、`y` は、C# によってイベント ハンドラーとして削除される適切な関数である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-229">If `x` designates an `event`, then `y` must be an appropriate function that C# removes as an event handler</span></span>  
   
- [x *= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – 乗算代入。  `y` の値を `x` の値に乗算した結果を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-230">[x *= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – 乗算代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-230">[x *= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – multiplication assignment.</span></span>  <span data-ttu-id="e3ce6-231">`y` の値を `x` の値に乗算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-231">Multiply the value of `y` to the value of `x`, store the result in `x`, and return the new value.</span></span>  
   
- [x /= y](../../../csharp/language-reference/operators/division-assignment-operator.md) – 除算代入。  `x` の値を `y` の値で除算した結果を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-232">[x /= y](../../../csharp/language-reference/operators/division-assignment-operator.md) – 除算代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-232">[x /= y](../../../csharp/language-reference/operators/division-assignment-operator.md) – division assignment.</span></span>  <span data-ttu-id="e3ce6-233">`x` の値を `y` の値で除算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-233">Divide the value of `x` by the value of `y`, store the result in `x`, and return the new value.</span></span>  
   
- [x %= y](../../../csharp/language-reference/operators/modulus-assignment-operator.md) – 剰余代入。  `x` の値を `y` の値で除算した剰余を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-234">[x %= y](../../../csharp/language-reference/operators/modulus-assignment-operator.md) – 剰余代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-234">[x %= y](../../../csharp/language-reference/operators/modulus-assignment-operator.md) – modulus assignment.</span></span>  <span data-ttu-id="e3ce6-235">`x` の値を `y` の値で除算した剰余を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-235">Divide the value of `x` by the value of `y`, store the remainder in `x`, and return the new value.</span></span>  
   
- [x &= y](../../../csharp/language-reference/operators/and-assignment-operator.md) – AND 代入。  `y` の値と `x` の値の AND 演算を行った結果を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-236">[x &= y](../../../csharp/language-reference/operators/and-assignment-operator.md) – AND 代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-236">[x &= y](../../../csharp/language-reference/operators/and-assignment-operator.md) – AND assignment.</span></span>  <span data-ttu-id="e3ce6-237">`y` の値と `x` の値の AND 演算を行った結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-237">AND the value of `y` with the value of `x`, store the result in `x`, and return the new value.</span></span>  
   
- [x &#124;= y](../../../csharp/language-reference/operators/or-assignment-operator.md) – OR 代入。  `y` の値と `x` の値の OR 演算を行った結果を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-238">[x &#124;= y](../../../csharp/language-reference/operators/or-assignment-operator.md) – OR 代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-238">[x &#124;= y](../../../csharp/language-reference/operators/or-assignment-operator.md) – OR assignment.</span></span>  <span data-ttu-id="e3ce6-239">`y` の値と `x` の値の OR 演算を行った結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-239">OR the value of `y` with the value of `x`, store the result in `x`, and return the new value.</span></span>  
   
- [x ^= y](../../../csharp/language-reference/operators/xor-assignment-operator.md) – XOR 代入。  `y` の値と `x` の値の XOR 演算を行った結果を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-240">[x ^= y](../../../csharp/language-reference/operators/xor-assignment-operator.md) – XOR 代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-240">[x ^= y](../../../csharp/language-reference/operators/xor-assignment-operator.md) – XOR assignment.</span></span>  <span data-ttu-id="e3ce6-241">`y` の値と `x` の値の XOR 演算を行った結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-241">XOR the value of `y` with the value of `x`, store the result in `x`, and return the new value.</span></span>  
   
- [x <<= y](../../../csharp/language-reference/operators/left-shift-assignment-operator.md) – 左シフト代入。  `x` の値を `y` で指定した分だけ左へシフトした結果を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-242">[x <<= y](../../../csharp/language-reference/operators/left-shift-assignment-operator.md) – 左シフト代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-242">[x <<= y](../../../csharp/language-reference/operators/left-shift-assignment-operator.md) – left-shift assignment.</span></span>  <span data-ttu-id="e3ce6-243">`x` の値を `y` で指定した分だけ左へシフトした結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-243">Shift the value of `x` left by `y` places, store the result in `x`, and return the new value.</span></span>  
   
- [x >>= y](../../../csharp/language-reference/operators/right-shift-assignment-operator.md) – 右シフト代入。  `x` の値を `y` で指定した分だけ右へシフトした結果を `x` に格納し、新しい値を返します。  
+ <span data-ttu-id="e3ce6-244">[x >>= y](../../../csharp/language-reference/operators/right-shift-assignment-operator.md) – 右シフト代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-244">[x >>= y](../../../csharp/language-reference/operators/right-shift-assignment-operator.md) – right-shift assignment.</span></span>  <span data-ttu-id="e3ce6-245">`x` の値を `y` で指定した分だけ右へシフトした結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-245">Shift the value of `x` right by `y` places, store the result in `x`, and return the new value.</span></span>  
   
- [=>](../../../csharp/language-reference/operators/lambda-operator.md) – ラムダ宣言。  
+ <span data-ttu-id="e3ce6-246">[=>](../../../csharp/language-reference/operators/lambda-operator.md) – ラムダ宣言。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-246">[=>](../../../csharp/language-reference/operators/lambda-operator.md) – lambda declaration.</span></span>  
   
-## <a name="arithmetic-overflow"></a>算術オーバーフロー  
- 算術演算子 ([+](../../../csharp/language-reference/operators/addition-operator.md)、[-](../../../csharp/language-reference/operators/subtraction-operator.md)、[*](../../../csharp/language-reference/operators/multiplication-operator.md)、[/](../../../csharp/language-reference/operators/division-operator.md)) を実行すると、結果が数値型の有効な値の範囲を超えることがあります。 詳細については、各演算子に関するセクションを参照してください。概要は、以下のとおりです。  
+## <a name="arithmetic-overflow"></a><span data-ttu-id="e3ce6-247">算術オーバーフロー</span><span class="sxs-lookup"><span data-stu-id="e3ce6-247">Arithmetic Overflow</span></span>  
+ <span data-ttu-id="e3ce6-248">算術演算子 ([+](../../../csharp/language-reference/operators/addition-operator.md)、[-](../../../csharp/language-reference/operators/subtraction-operator.md)、[*](../../../csharp/language-reference/operators/multiplication-operator.md)、[/](../../../csharp/language-reference/operators/division-operator.md)) を実行すると、結果が数値型の有効な値の範囲を超えることがあります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-248">The arithmetic operators ([+](../../../csharp/language-reference/operators/addition-operator.md), [-](../../../csharp/language-reference/operators/subtraction-operator.md), [*](../../../csharp/language-reference/operators/multiplication-operator.md), [/](../../../csharp/language-reference/operators/division-operator.md)) can produce results that are outside the range of possible values for the numeric type involved.</span></span> <span data-ttu-id="e3ce6-249">詳細については、各演算子に関するセクションを参照してください。概要は、以下のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-249">You should refer to the section on a particular operator for details, but in general:</span></span>  
   
-- 整数の算術オーバーフローでは、<xref:System.OverflowException> がスローされるか、または結果の最上位ビットが破棄されます。 0 による整数除算では、常に @System.DivideByZeroException がスローされます。  
+- <span data-ttu-id="e3ce6-250">整数の算術オーバーフローでは、<xref:System.OverflowException> がスローされるか、または結果の最上位ビットが破棄されます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-250">Integer arithmetic overflow either throws an <xref:System.OverflowException> or discards the most significant bits of the result.</span></span> <span data-ttu-id="e3ce6-251">0 による整数除算では、常に <xref:System.DivideByZeroException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-251">Integer division by zero always throws a <xref:System.DivideByZeroException>.</span></span>  
 
-   整数のオーバーフローが発生したときの対処方法は、実行コンテキスト ([checked または unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)) によって異なります。 checked コンテキストの場合は、<xref:System.OverflowException> がスローされます。 unchecked コンテキストの場合は、結果の最上位ビットが破棄され、実行が続行されます。 このように、C# ではオーバーフローを処理するのか、それとも無視するのかをユーザーが選択できます。 既定では、算術演算は *unchecked* コンテキストで発生します。 
+   <span data-ttu-id="e3ce6-252">整数のオーバーフローが発生したときの対処方法は、実行コンテキスト ([checked または unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)) によって異なります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-252">When integer overflow occurs, what happens depends on the execution context, which can be [checked or unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md).</span></span> <span data-ttu-id="e3ce6-253">checked コンテキストの場合は、<xref:System.OverflowException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-253">In a checked context, an <xref:System.OverflowException> is thrown.</span></span> <span data-ttu-id="e3ce6-254">unchecked コンテキストの場合は、結果の最上位ビットが破棄され、実行が続行されます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-254">In an unchecked context, the most significant bits of the result are discarded and execution continues.</span></span> <span data-ttu-id="e3ce6-255">このように、C# ではオーバーフローを処理するのか、それとも無視するのかをユーザーが選択できます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-255">Thus, C# gives you the choice of handling or ignoring overflow.</span></span> <span data-ttu-id="e3ce6-256">既定では、算術演算は *unchecked* コンテキストで発生します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-256">By default, arithmetic operations occur in an *unchecked* context.</span></span> 
 
-   算術演算の場合だけでなく、整数型から整数型へのキャスト ([long](../../../csharp/language-reference/keywords/long.md) から [int](../../../csharp/language-reference/keywords/int.md) へのキャストなど) でもオーバーフローは発生し、その場合も実行が checked または unchecked のいずれかによって対処が異なります。 ただし、ビット処理演算子とシフト演算子ではオーバーフローは発生しません。  
+   <span data-ttu-id="e3ce6-257">算術演算の場合だけでなく、整数型から整数型へのキャスト ([long](../../../csharp/language-reference/keywords/long.md) から [int](../../../csharp/language-reference/keywords/int.md) へのキャストなど) でもオーバーフローは発生し、その場合も実行が checked または unchecked のいずれかによって対処が異なります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-257">In addition to the arithmetic operations, integral-type to integral-type casts can cause overflow (such as when you cast a [long](../../../csharp/language-reference/keywords/long.md) to an [int](../../../csharp/language-reference/keywords/int.md)), and are subject to checked or unchecked execution.</span></span> <span data-ttu-id="e3ce6-258">ただし、ビット処理演算子とシフト演算子ではオーバーフローは発生しません。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-258">However, bitwise operators and shift operators never cause overflow.</span></span>  
    
--   浮動小数点数の算術オーバーフローまたは 0 による浮動小数点除算では、例外はスローされません。これは、浮動小数点型が IEEE 754 に基づいており、無限大および NaN (Not a Number) を表現できるためです。  
+-   <span data-ttu-id="e3ce6-259">浮動小数点数の算術オーバーフローまたは 0 による浮動小数点除算では、例外はスローされません。これは、浮動小数点型が IEEE 754 に基づいており、無限大および NaN (Not a Number) を表現できるためです。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-259">Floating-point arithmetic overflow or division by zero never throws an exception, because floating-point types are based on IEEE 754 and so have provisions for representing infinity and NaN (Not a Number).</span></span>  
   
--   [小数](../../../csharp/language-reference/keywords/decimal.md)の算術オーバーフローでは、常に <xref:System.OverflowException> がスローされます。 0 による小数除算では、常に <xref:System.DivideByZeroException> がスローされます。  
+-   <span data-ttu-id="e3ce6-260">[小数](../../../csharp/language-reference/keywords/decimal.md)の算術オーバーフローでは、常に <xref:System.OverflowException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-260">[Decimal](../../../csharp/language-reference/keywords/decimal.md) arithmetic overflow always throws an <xref:System.OverflowException>.</span></span> <span data-ttu-id="e3ce6-261">0 による小数除算では、常に <xref:System.DivideByZeroException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-261">Decimal division by zero always throws a <xref:System.DivideByZeroException>.</span></span>  
   
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C#](../../../csharp/index.md) [オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="e3ce6-262">関連項目</span><span class="sxs-lookup"><span data-stu-id="e3ce6-262">See Also</span></span>  
+ [<span data-ttu-id="e3ce6-263">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="e3ce6-263">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="e3ce6-264">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="e3ce6-264">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ <span data-ttu-id="e3ce6-265">[C#](../../../csharp/index.md) [オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)</span><span class="sxs-lookup"><span data-stu-id="e3ce6-265">[C#](../../../csharp/index.md) [Overloadable Operators](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)</span></span>  
+ [<span data-ttu-id="e3ce6-266">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="e3ce6-266">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
