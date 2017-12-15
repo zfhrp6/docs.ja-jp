@@ -16,11 +16,11 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 80cc1418418518efdccbb6dc0429b1ac61b56420
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7565d688c6aa177ec65918e72670a64d7eec7e1a
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Windows フォームで使用するコントロール
 Windows フォームで使うことができるコントロールとコンポーネントのアルファベット順の一覧を次に示します。 このセクションで説明する Windows フォーム コントロールに加えて、ActiveX コントロールとカスタム コントロールを Windows フォームに追加できます。 必要なコントロールがここで見つからない場合は、独自に作成することもできます。 詳しくは、「[デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)」をご覧ください。 必要なコントロールの選択について詳しくは、「[Windows フォーム コントロールの機能別一覧](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)」をご覧ください。  
@@ -83,9 +83,8 @@ Windows フォームで使うことができるコントロールとコンポー
  [ErrorProvider コンポーネント](../../../../docs/framework/winforms/controls/errorprovider-component-windows-forms.md)  
  非侵入型の方法でユーザーにエラー情報を表示します。  
   
- "FileDialog クラス"  
- ファイル ダイアログ ボックスに基底クラスの機能を提供します。  
-  
+ [FileDialog クラス](../../../../docs/framework/winforms/controls/filedialog-class.md)ファイル ダイアログ ボックスの基本クラスの機能を提供します。
+
  [FlowLayoutPanel コントロール](../../../../docs/framework/winforms/controls/flowlayoutpanel-control-windows-forms.md)  
  水平方向または垂直方向に内容を動的にレイアウトするパネルを表します。  
   
@@ -173,8 +172,7 @@ Windows フォームで使うことができるコントロールとコンポー
  [SaveFileDialog コンポーネント](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)  
  保存するファイルとそれらの保存先を選択します。  
   
- "SoundPlayer クラス"  
- アプリケーションにサウンドを簡単に組み込むことができます。  
+ [SoundPlayer クラス](../../../../docs/framework/winforms/controls/soundplayer-class.md)アプリケーションにサウンドを簡単に追加することができます。
   
  [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
  ドッキングされたコントロールのサイズを変更できます。  

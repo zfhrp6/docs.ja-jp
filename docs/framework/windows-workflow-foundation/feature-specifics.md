@@ -12,11 +12,11 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 369c8738addeb083b42063161957cf9f97e2cd1c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: e60ed6fb2fb85faa1d2d744bf29e40d3eaa639c3
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation の機能仕様
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] は、Windows Workflow Foundation にいくつかの機能を追加します。 このドキュメントでは、いくつかの新機能について説明し、役に立つ可能性のあるシナリオの詳細を示します。  
@@ -82,7 +82,7 @@ ms.lasthandoff: 12/02/2017
   
 -   メッセージのグループ化に使用する相関関係の例は、メッセージをグループ化する要求/応答の相関関係です。  
   
-    -   <xref:System.ServiceModel.Activities.Receive> アクティビティで、<xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> プロパティをクリックし、前の最初のステップで作成した CorrelationHandle を使用して <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> を追加します。  
+    -   <xref:System.ServiceModel.Activities.Receive>アクティビティをクリックして、<xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A>プロパティを追加し、 <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> CorrelationHandle を使用して上記の最初の手順で作成します。  
   
     -   作成、<xref:System.ServiceModel.Activities.SendReply>アクティビティを右クリックして、 <xref:System.ServiceModel.Activities.Receive> [SendReply の作成] をクリックします。 これをワークフローの <xref:System.ServiceModel.Activities.Receive> アクティビティの後に貼り付けます。  
   
@@ -239,7 +239,7 @@ ms.lasthandoff: 12/02/2017
   
 -   サンプル:  
   
-    -   [メソッドの呼び出し](../../../docs/framework/windows-workflow-foundation/samples/invokemethod.md)  
+    -   [InvokeMethod](../../../docs/framework/windows-workflow-foundation/samples/invokemethod.md)  
   
 -   デザイナー ドキュメント: [InvokeMethod アクティビティ デザイナー](/visualstudio/workflow-designer/invokemethod-activity-designer)  
   

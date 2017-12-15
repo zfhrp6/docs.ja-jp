@@ -11,11 +11,11 @@ ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 caps.latest.revision: "41"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6be0f4dcf3aa9c66335ab466d1c50a5714314b42
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 45dd48a53d3fae58596d9328ef8daba566b2ded1
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="strings-c-programming-guide"></a>文字列 (C# プログラミング ガイド)
 文字列は、値がテキストの <xref:System.String> 型のオブジェクトです。 内部では、テキストは <xref:System.Char> オブジェクトの順次読み取り専用コレクションとして格納されます。 C# の文字列の末尾には null 終端文字はありません。したがって、C# の文字列には任意の数の null 文字 ('\0') を埋め込むことができます。 文字列の <xref:System.String.Length%2A> プロパティは、Unicode 文字の数ではなく、文字列に含まれている `Char` オブジェクトの数を表します。 文字列内の個別の Unicode コード ポイントにアクセスするには、<xref:System.Globalization.StringInfo> オブジェクトを使用します。  
@@ -130,9 +130,9 @@ string s = String.Empty;
 |[方法: 正規表現を使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-regular-expressions.md)|正規表現を使用して文字列を検索する方法について説明します。|  
 |[方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|文字列を安全に解析して、有効な数値があるかどうかを確認する方法を示します。|  
 |[方法: 文字列を DateTime に変換する](../../../csharp/programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)|"01/24/2008" などの文字列を、<xref:System.DateTime?displayProperty=nameWithType> オブジェクトに変換する方法を示します。|  
-|[基本的な文字列操作](https://msdn.microsoft.com/library/a292he7t)|<xref:System.String?displayProperty=nameWithType> メソッドおよび <xref:System.Text.StringBuilder?displayProperty=nameWithType> メソッドを使用し文字列の基本操作を実行する、トピックへのリンクがあります。|  
-|[文字列の解析](https://msdn.microsoft.com/library/b4w53z0y)|文字列に文字または空白を挿入する方法について説明します。|  
-|[文字列の比較](https://msdn.microsoft.com/library/fbh501kz)|文字列を比較する方法について説明し、C# および Visual Basic での例を示します。|  
+|[基本的な文字列操作](../../../../docs/standard/base-types/basic-string-operations.md)|<xref:System.String?displayProperty=nameWithType> メソッドおよび <xref:System.Text.StringBuilder?displayProperty=nameWithType> メソッドを使用し文字列の基本操作を実行する、トピックへのリンクがあります。|  
+|[文字列の解析](../../../../docs/standard/base-types/parsing-strings.md)|文字列に文字または空白を挿入する方法について説明します。|  
+|[文字列の比較](../../../../docs/standard/base-types/comparing.md)|文字列を比較する方法について説明し、C# および Visual Basic での例を示します。|  
 |[StringBuilder クラスの使用](../../../standard/base-types/stringbuilder.md)|<xref:System.Text.StringBuilder> クラスの動的な文字列オブジェクトを作成および変更する方法について説明します。|  
 |[LINQ と文字列](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)|LINQ クエリを使用してさまざまな文字列操作を実行する方法について説明します。|  
 |[C# プログラミング ガイド](../../../csharp/programming-guide/index.md)|C# のプログラミング要素について説明するトピックへのリンクを示します。|  

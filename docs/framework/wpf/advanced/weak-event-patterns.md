@@ -17,11 +17,11 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a27e17e4940ff68f34d1e7e4accfb9e112bc412b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3f024ae77740c596d8646b10a036428e2342d084
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="weak-event-patterns"></a>弱いイベント パターン
 アプリケーションでは、可能であれば、イベント ソースに接続されているハンドラーは破棄されません、ハンドラーをソースに接続されているリスナー オブジェクトと連携します。 このような状況は、メモリ リークが発生する可能性があります。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]この問題に対処、特定のイベントの専用マネージャー クラスを提供して、そのイベントのリスナーにインターフェイスを実装して使用できるデザイン パターンについて説明します。 この設計パターンと呼ばれる、*弱いイベント パターン*です。  
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/21/2017
 |--------------|-----------------------|  
 |既存の弱いイベント マネージャー クラスを使用します。|サブスクライブするイベントが、対応する<xref:System.Windows.WeakEventManager>、既存の弱いイベント マネージャーを使用します。 WPF に含まれている弱いイベント マネージャーの一覧は、継承階層を参照してください、<xref:System.Windows.WeakEventManager>クラスです。 ただし、他のアプローチのいずれかを選択する必要がありますので、WPF に含まれる比較的少数の弱いイベント マネージャーがあることに注意してください。|  
 |ジェネリックの弱いイベント マネージャー クラスを使用します。|ジェネリック型を使用して<xref:System.Windows.WeakEventManager%602>既存<xref:System.Windows.WeakEventManager>が利用できないを実装する簡単な方法を目的し、していない関係する効率。 ジェネリック<xref:System.Windows.WeakEventManager%602>既存またはカスタムの弱いイベント マネージャーより効率が下がります。 たとえば、discover イベントのイベントの名前を指定するために複数のリフレクションでは、ジェネリック クラス。 ジェネリックを使用して、イベントを登録するコードも、<xref:System.Windows.WeakEventManager%602>がより既存を使用するよりも詳細なまたは custom<xref:System.Windows.WeakEventManager>です。|  
-|カスタムの弱いイベント マネージャー クラスを作成します。|カスタム作成<xref:System.Windows.WeakEventManager>ときに既存する<xref:System.Windows.WeakEventManager>は使用できません最適な効率性を必要とします。 使用するカスタム<xref:System.Windows.WeakEventManager>をサブスクライブするイベントをより効率的になりますが、先頭にさらにコードを記述するコストが発生する操作を行います。|  
+|カスタムの弱いイベント マネージャー クラスを作成します。|カスタム作成<xref:System.Windows.WeakEventManager>既存<xref:System.Windows.WeakEventManager>ことはできませんし、最適な効率。 使用するカスタム<xref:System.Windows.WeakEventManager>をサブスクライブするイベントをより効率的になりますが、先頭にさらにコードを記述するコストが発生する操作を行います。|  
   
  次のセクションでは、弱いイベント パターンを実装する方法について説明します。  この説明の目的は、サブスクライブするイベントは、次の特性を持ちます。  
   

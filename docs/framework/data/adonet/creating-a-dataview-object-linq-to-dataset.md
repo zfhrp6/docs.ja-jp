@@ -16,11 +16,11 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b82b409f27b14109c8e13fc8909235befc7a8d1d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4363e4e4e444a2c34b79e3b3ad8d8e2f36fe8e1a
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>DataView オブジェクトの作成 (LINQ to DataSet)
 <xref:System.Data.DataView> のコンテキストで [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] を作成するには 2 つの方法があります。 <xref:System.Data.DataView> は、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] に対する <xref:System.Data.DataTable> クエリから作成したり、型指定されているまたは型指定されていない <xref:System.Data.DataTable> から作成したりできます。 どちらの場合も、作成、<xref:System.Data.DataView>のいずれかを使用して、<xref:System.Data.DataTableExtensions.AsDataView%2A>拡張メソッドです。<xref:System.Data.DataView>に直接構築することはできません、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]コンテキスト。  
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquery1)]
  [!code-vb[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquery1)]  
   
- また、文字列ベースの <xref:System.Data.DataView.RowFilter%2A> プロパティおよび <xref:System.Data.DataView.Sort%2A> プロパティを使用して、<xref:System.Data.DataView> をクエリから作成した後でフィルターを適用し、並べ替えることができます。 この操作を行うと、クエリから継承された並べ替えおよびフィルター情報がクリアされます。 次の例では、姓が "S" で始まる連絡先をフィルター処理する <xref:System.Data.DataView> クエリから [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] を作成します。 文字列ベースの <xref:System.Data.DataView.Sort%2A> プロパティは、姓を昇順に並べ替え、名を降順に並べ替えるように設定されています。  
+ 文字列ベースを使用することも<xref:System.Data.DataView.RowFilter%2A>と<xref:System.Data.DataView.Sort%2A>フィルターおよび並べ替えプロパティを<xref:System.Data.DataView>がクエリから作成された後です。 この操作を行うと、クエリから継承された並べ替えおよびフィルター情報がクリアされます。 次の例では、姓が "S" で始まる連絡先をフィルター処理する <xref:System.Data.DataView> クエリから [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] を作成します。 文字列ベースの <xref:System.Data.DataView.Sort%2A> プロパティは、姓を昇順に並べ替え、名を降順に並べ替えるように設定されています。  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquerystringsort)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquerystringsort)]  

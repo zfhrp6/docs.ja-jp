@@ -11,18 +11,18 @@ ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 250da307d024b1011e1fb04cd84eb25e41af3fa8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9f141c414ef56c591baa882d9495e591e6b08bc8
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="expression-trees-c"></a>式ツリー (C#)
 式ツリーでは、コードがツリー状のデータ構造で表示されます。各ノードは 1 つの式に対応しています。たとえば、メソッドの呼び出しや `x < y` のような二項演算などです。  
   
  式ツリーで表されるコードはコンパイルおよび実行できます。 これによって、実行可能なコードの動的な変更、さまざまなデータベースでの LINQ クエリの実行、および動的クエリの作成が可能になります。 LINQ の式ツリーの詳細については、「[How to: Use Expression Trees to Build Dynamic Queries (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md)」 (方法: 式ツリーを使用して動的クエリをビルドする (C#)) を参照してください。  
   
- また、式ツリーを動的言語ランタイム (DLR) に使用することで、動的言語と .NET Framework 間の相互運用性が実現し、コンパイラ ライターで Microsoft Intermediate language (MSIL) ではなく式ツリーを出力できるようになります。 DLR の詳細については、「[動的言語ランタイムの概要](https://msdn.microsoft.com/library/dd233052)」を参照してください。  
+ また、式ツリーを動的言語ランタイム (DLR) に使用することで、動的言語と .NET Framework 間の相互運用性が実現し、コンパイラ ライターで Microsoft Intermediate language (MSIL) ではなく式ツリーを出力できるようになります。 DLR の詳細については、「[動的言語ランタイムの概要](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)」を参照してください。  
   
  匿名のラムダ式に基づいて、C# と Visual Basic コンパイラで式ツリーを作成できます。または、<xref:System.Linq.Expressions> 名前空間を使用して手動で式ツリーを作成できます。  
   
@@ -160,5 +160,5 @@ Console.WriteLine(expr.Compile()(4));
  [方法 : 式ツリーを実行する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
  [方法: 式ツリーを変更する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)  
  [ラムダ式](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
- [動的言語ランタイムの概要](https://msdn.microsoft.com/library/dd233052)  
+ [動的言語ランタイムの概要](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
  [プログラミングの概念 (C#)](../../../../csharp/programming-guide/concepts/index.md)

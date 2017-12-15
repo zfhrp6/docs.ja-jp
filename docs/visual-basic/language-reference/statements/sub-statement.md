@@ -36,11 +36,11 @@ ms.assetid: e347d700-d06c-405b-b302-e9b1edb57dfc
 caps.latest.revision: "52"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 02ba9a999db20abce2106269522c9a3221a00cef
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0a2d0d5ffdca857a3a5ca58cd38b0930f254526f
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="sub-statement-visual-basic"></a>Sub ステートメント (Visual Basic)
 宣言名、パラメーター、およびコードを定義する、`Sub`プロシージャです。  
@@ -224,7 +224,7 @@ End Sub
  [!code-vb[VbVbalrStatements#58](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/sub-statement_1.vb)]  
   
 ## <a name="example"></a>例  
- 次の例では、 `DelayAsync` 、`Async``Function`の戻り値の型を持つ<xref:System.Threading.Tasks.Task%601>します。 `DelayAsync` には、整数を返す `Return` ステートメントがあります。 したがって、関数宣言の`DelayAsync`の戻り値の型を持つ必要があります`Task(Of Integer)`です。 戻り値の型があるため`Task(Of Integer)`の評価、`Await`式`DoSomethingAsync`ステートメントを次に示すように整数が生成されます:`Dim result As Integer = Await delayTask`です。  
+ 次の例では、`DelayAsync`は、`Async``Function`の戻り値の型を持つ<xref:System.Threading.Tasks.Task%601>します。 `DelayAsync` には、整数を返す `Return` ステートメントがあります。 したがって、関数宣言の`DelayAsync`の戻り値の型を持つ必要があります`Task(Of Integer)`です。 戻り値の型があるため`Task(Of Integer)`の評価、`Await`式`DoSomethingAsync`ステートメントを次に示すように整数が生成されます:`Dim result As Integer = Await delayTask`です。  
   
  `startButton_Click`プロシージャは、の例、`Async Sub`プロシージャです。 `DoSomethingAsync`は、`Async`関数では、タスクへの呼び出しを`DoSomethingAsync`ステートメントを次に示すように待機する必要があります:`Await DoSomethingAsync()`です。 `startButton_Click``Sub`でプロシージャを定義する必要があります、`Async`修飾子があるため、`Await`式。  
   

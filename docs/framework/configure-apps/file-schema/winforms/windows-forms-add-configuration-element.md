@@ -15,11 +15,11 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 367ca30c577cbb4ed7fed130bdcbd4faac2d46c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 828a28769e164535d4dde989ef8cce91caf9cb48
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="windows-forms-add-configuration-element"></a>Windows フォームの構成要素を追加します。
 
@@ -113,7 +113,7 @@ Windows フォーム アプリケーションで高 DPI サポートの利用の
 
 ### <a name="single-pass-scaling"></a>シングルパスのスケーリング
 
-ユーザー インターフェイスの認識される応答性に影響する 1 つまたは複数のパスのスケーリングと調整ので、視覚的な外観のユーザー インターフェイス要素です。 .NET Framework 4.7 以降、Windows フォームは、1 つのパスのスケーリングします。 .NET Framework の以前のバージョンでのスケーリングが必要以上にスケールする一部のコントロールの原因となる、複数のパスを通じて実行されました。 アプリは、従来の動作に依存する場合、単一パス scaling を無効のみ必要があります。  
+調整ので、ユーザー インターフェイスの見かけ上の応答性とユーザー インターフェイス要素の外観に影響 1 つまたは複数のパスをスケーリングします。 .NET Framework 4.7 以降、Windows フォームは、1 つのパスのスケーリングします。 .NET Framework の以前のバージョンでのスケーリングが必要以上にスケールする一部のコントロールの原因となる、複数のパスを通じて実行されました。 アプリは、従来の動作に依存する場合、単一パス scaling を無効のみ必要があります。  
 
 ## <a name="see-also"></a>関連項目
  
