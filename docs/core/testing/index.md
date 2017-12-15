@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-ms.openlocfilehash: 666c06b236ad870c5c683749ab57d4488b4b8a39
-ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
+ms.openlocfilehash: 780c2655b6d6a660939fb79ea58bec463ec97aa9
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>.NET Core と .NET Standard の単体テスト
 
@@ -34,15 +34,18 @@ ms.lasthandoff: 12/01/2017
 
 .NET Core プロジェクトでの単体テストの詳細については、次を参照してください。
 
-.NET Core の単体テスト プロジェクトは [C#](../../csharp/index.md)、[F#](../../fsharp/index.md)、[Visual Basic](../../visual-basic/index.md) でサポートされています。 また、[xUnit](http://xunit.github.io) か [MSTest](https://github.com/Microsoft/vstest-docs) を選択することもできます。
+.NET Core の単体テスト プロジェクトは [C#](../../csharp/index.md)、[F#](../../fsharp/index.md)、[Visual Basic](../../visual-basic/index.md) でサポートされています。 また、[xUnit](http://xunit.github.io)、[NUnit](http://nunit.org)、または [MSTest](https://github.com/Microsoft/vstest-docs) を選択することもできます。
 
 これらの組み合わせについては以下のチュートリアルで確認できます。
 
 * [*XUnit* と *C#* を使用して .NET Core CLI で単体テストを作成する](unit-testing-with-dotnet-test.md)。
+* [*NUnit* と *C#* を使用して .NET Core CLI で単体テストを作成する](unit-testing-with-nunit.md)。
 * [*MSTest* と *C#* を使用して .NET Core CLI で単体テストを作成する](unit-testing-with-mstest.md)。
 * [*XUnit* と *F#* を使用して .NET Core CLI で単体テストを作成する](unit-testing-fsharp-with-dotnet-test.md)。
+* [*NUnit* と *F#* を使用して .NET Core CLI](unit-testing-fsharp-with-nunit.md) で単体テストを作成する。
 * [*MSTest* と *F#* を使用して .NET Core CLI で単体テストを作成する](unit-testing-fsharp-with-mstest.md)。
 * [*XUnit* と *Visual Basic* を使用して .NET Core CLI で単体テストを作成する](unit-testing-visual-basic-with-dotnet-test.md)。
+* [*NUnit* と *Visual Basic* を使用して .NET Core CLI で単体テストを作成する](unit-testing-visual-basic-with-nunit.md)。
 * [*MSTest* と *Visual Basic* を使用して .NET Core CLI で単体テストを作成する](unit-testing-visual-basic-with-mstest.md)。
 
 使用するクラス ライブラリと単体テスト ライブラリには、さまざまな言語を選択できます。 先述のチュートリアルをうまく組み合わせることで、使用方法を学習できます。
