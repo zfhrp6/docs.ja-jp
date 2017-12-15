@@ -11,22 +11,22 @@ ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 3743c07f1de1d39f07d559aa161e4547422a6e52
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 923a64e98fde3ab11f4e3feb6c91507ae8886151
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-c"></a>アセンブリとグローバル アセンブリ キャッシュ (C#)
 アセンブリは、.NET ベースのアプリケーションの配置、バージョン管理、再利用、アクティベーション スコープ、およびセキュリティ権限の基本単位です。 アセンブリは、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (.dll) ファイルの形を取る、.NET Framework の構成要素です。 それらは、型の実装に関して必要な情報を共通言語ランタイムに提供します。 アセンブリは、機能的な論理的な単位を形成し、連携して動作するように構築された、型とリソースのコレクションと考えることができます。  
   
- アセンブリには、1 つまたは複数のモジュールを含めることができます。 たとえば、大規模なプロジェクトを、複数の開発者が別々のモジュールで作業し、すべてのモジュールをまとめて 1 つのアセンブリを作成するように計画することができます。 モジュールの詳細については、「[方法: マルチファイル アセンブリをビルドする](https://msdn.microsoft.com/library/226t7yxe)」を参照してください。  
+ アセンブリには、1 つまたは複数のモジュールを含めることができます。 たとえば、大規模なプロジェクトを、複数の開発者が別々のモジュールで作業し、すべてのモジュールをまとめて 1 つのアセンブリを作成するように計画することができます。 モジュールの詳細については、「[方法: マルチファイル アセンブリをビルドする](../../../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)」を参照してください。  
   
  アセンブリには、次の特徴があります。  
   
 -   アセンブリは、.exe または .dll ファイルとして実装されます。  
   
--   アセンブリは、グローバル アセンブリ キャッシュに配置することで、アプリケーション間で共有することができます。 グローバル アセンブリ キャッシュに含める前に、アセンブリに厳密な名前を付ける必要があります。 詳細については、「[厳密な名前付きアセンブリ](https://msdn.microsoft.com/library/wd40t7ad)」を参照してください。  
+-   アセンブリは、グローバル アセンブリ キャッシュに配置することで、アプリケーション間で共有することができます。 グローバル アセンブリ キャッシュに含める前に、アセンブリに厳密な名前を付ける必要があります。 詳細については、「[厳密な名前付きアセンブリ](../../../../../docs/framework/app-domains/strong-named-assemblies.md)」を参照してください。  
   
 -   アセンブリは、必要な場合にのみメモリに読み込まれます。 使用されない場合、読み込まれることはありません。 これは、アセンブリを使用すると、大規模なプロジェクト内のリソースを効率的に管理できることを意味します。  
   
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/21/2017
   
  アセンブリには、コンテンツ、バージョン管理、および依存関係に関する情報が含まれているため、C# で作成するアプリケーションが、正常に機能するために Windows のレジストリ値に依存することはありません。 アセンブリは、.dll の競合を減らし、アプリケーションの信頼性を高め、配置を容易にします。 多くの場合、 NET ベースのアプリケーションは、対象のコンピュータにそのファイルをコピーするだけでインストールすることができます。  
   
- 詳細については、「[アセンブリ マニフェスト](https://msdn.microsoft.com/library/1w45z383)」を参照してください。  
+ 詳細については、「[アセンブリ マニフェスト](../../../../../docs/framework/app-domains/assembly-manifest.md)」を参照してください。  
   
 ## <a name="adding-a-reference-to-an-assembly"></a>アセンブリへの参照の追加  
  アセンブリを使用するには、アセンブリへの参照を追加する必要があります。 次に、[using ディレクティブ](../../../../csharp/language-reference/keywords/using-directive.md)を使用して、使用する項目の名前空間を選択します。 アセンブリが参照されてインポートされた後、名前空間のアクセス可能なすべてのクラス、プロパティ、メソッド、およびのその他のメンバーのコードは、ソース ファイルの一部であるかのようにアプリケーションで使用することができます。  
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
- [共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)  
+ [共通言語ランタイムのアセンブリ](../../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [フレンド アセンブリ (C#)](friend-assemblies.md)  
  [方法 : アセンブリを他のアプリケーションと共有する (C#)](how-to-share-an-assembly-with-other-applications.md)  
  [方法: アセンブリを読み込み、アンロードする (C#)](how-to-load-and-unload-assemblies.md)  
