@@ -19,7 +19,7 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.openlocfilehash: 55e5aa633e3d788ac8acaa09684c92b8608e7cfa
 ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
@@ -90,7 +90,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                      int       nCmdShow)  
 ```  
   
- この属性は、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]の初期化時[!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)]、シングル スレッド アパートメント (STA) はあるモデルに必要なを使用する必要があります[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)](および[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)])。  
+ この属性は、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]の初期化時[!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)]、シングル スレッド アパートメント (STA) はあるモデルに必要なを使用する必要があります[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] (および[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)])。  
   
 ## <a name="create-a-windows-presentation-framework-page"></a>Windows Presentation Framework ページを作成します。  
  次に、定義する DLL を作成、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Page>です。 作成する最も簡単なは多くの場合、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Page>スタンドアロン アプリケーションでは、書き込みとデバッグ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]部分ようにします。  クリックすると、プロジェクトを右クリックして、DLL にそのプロジェクトを変換できますが終わったら、**プロパティ**しようとして、アプリケーション、および Windows クラス ライブラリに出力の種類を変更します。  

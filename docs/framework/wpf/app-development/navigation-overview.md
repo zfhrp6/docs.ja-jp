@@ -37,7 +37,7 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.openlocfilehash: 73bb3a2f43c5bd91d7a107a0a053381ca7bc0559
 ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
@@ -658,7 +658,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="navigating-to-loose-xaml-files"></a>Loose XAML ファイルへのナビゲート  
  厳密でない[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルは、次の特性を持つファイル。  
   
--   だけを含んだ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)](つまり、コードではなくです。  
+-   だけを含んだ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (つまり、コードではなくです。  
   
 -   適切な名前空間宣言がある。  
   
