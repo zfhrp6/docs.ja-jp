@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: ec5ca3132ac68b85ebb517e569241f20080b4f63
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 39de8879fd902c714a58cf59c70f0a4914b2ff6e
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="inheritance-in-c-and-net"></a>C# と .NET での継承
 
@@ -62,7 +62,7 @@ C# と .NET は*単一継承*のみをサポートしています。 つまり�
 
 - [内部](../language-reference/keywords/internal.md)メンバーは、基底クラスと同じアセンブリ内にある派生クラスでのみ表示されます。 基底クラスとは別のアセンブリにある派生クラスでは、表示されません。
 
-- [パブリック](../language-reference/keywords/public.md)メンバーが派生クラスの表示にされ、派生クラスのパブリック インターフェイスの一部であります。 パブリックの継承されたメンバーは、派生クラスで定義された場合と同様に呼び出すことができます。 次の例では、クラス `A` が `Method1` という名前のメソッドを定義し、クラス `B` がクラス `A` から継承します。 そこでこの例は、`Method1` を `B` 上のインスタンス メソッドであるかのように呼び出します。
+- [パブリック](../language-reference/keywords/public.md) メンバーは派生クラスで表示され、派生クラスのパブリック インターフェイスの一部です。 パブリックの継承されたメンバーは、派生クラスで定義された場合と同様に呼び出すことができます。 次の例では、クラス `A` が `Method1` という名前のメソッドを定義し、クラス `B` がクラス `A` から継承します。 そこでこの例は、`Method1` を `B` 上のインスタンス メソッドであるかのように呼び出します。
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
@@ -179,7 +179,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - どのメンバーを基底クラス `Publication` に含めるか、`Publication` メンバーがメソッドの実装を提供するかどうか、`Publication` をその派生クラスのテンプレートとなる抽象基底クラスとするかどうか。
 
-  ここで、`Publication` クラスはメソッドの実装を提供します。 「[抽象基底クラスとその派生クラスの設計](#abstract)」セクションには、抽象基底クラスを使用して、派生クラスがオーバーライドする必要があるメソッドを定義する例が含まれています。 派生クラスは、その派生型に適した任意の実装を提供することができます。
+  ここで、`Publication` クラスはメソッドの実装を提供します。 「[抽象基底クラスとその派生クラスの設計](#abstract)」セクションには、抽象基底クラスを使用して、派生クラスが上書きする必要があるメソッドを定義する例が含まれています。 派生クラスは、その派生型に適した任意の実装を提供することができます。
 
   コードを再利用する機能 (つまり、複数の派生クラスが基底クラスのメソッドの宣言と実装を共有し、それらをオーバーライドする必要がないこと) は、非抽象基底クラスの利点です。 そこで、コードが `Publication` 型の複数または非常に特殊化されたものによって共有される可能性が高い場合は、メンバーを `Publication` に追加します。 これが効率的にできていないと、基底クラスでの単一の実装で済むところを、派生クラスでほぼ同一のメンバーの実装を行わなければいけないことなります。 複数の箇所で重複するコードを保守する必要が生じ、バグを引き起こす元となりえます。
 

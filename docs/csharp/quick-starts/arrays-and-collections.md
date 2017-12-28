@@ -10,24 +10,24 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 228a9dd88d0a511492ccb8b70e0231278969acbe
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.openlocfilehash: 6f559c7a3290e7db2266e10ec792c283394fb904
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="c-quick-start-collections"></a>C# クイック スタート: コレクション #
 
-このクイック スタートは、c# 言語との基礎を概説、<xref:System.Collections.Generic.List%601>クラスです。
+このクイック スタートでは、C# 言語の概要と <xref:System.Collections.Generic.List%601> クラスの基本を説明します。
 
-このクイック スタートを使用する開発に使用することができます、マシンが必要です。 .NET トピック[10 分後に開始](https://www.microsoft.com/net/core)Mac や PC、Linux 上のローカル開発環境を設定する方法についてはします。
+このクイック スタートでは、開発用に使用できるマシンがあることを想定しています。 Mac、PC、または Linux 上でローカルの開発環境を設定する手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 使用するコマンドの概要を手短に確認するには、[ローカルでのクイック スタートの概要](local-environment.md)と詳細へのリンクをご覧ください。
 
-## <a name="a-basic-list-example"></a>一覧の基本的な例です。
+## <a name="a-basic-list-example"></a>基本のリストの例。
 
 「**list-quickstart**」という名前のディレクトリを作成します。 それを現在のディレクトリとし、`dotnet new console` を実行します。
 
 > [!NOTE]
-> 完了した場合[10 分後に .NET の概要](https://www.microsoft.com/net)、先ほど作成した myApp アプリケーションを使用して保持できます。
+> [10 分でわかる .NET の概要](https://www.microsoft.com/net)を完了したところであれば、先ほど作成した myApp アプリケーションを引き続き使用できます。
  
 好みのエディターで **Program.cs** を開き、既存のコードを次のコードで置き換えます。
 
@@ -210,7 +210,7 @@ foreach(var item in fibonacciNumbers)
 > このセクションにだけ集中したいときは、`WorkingWithStrings();` を呼び出すコードはコメント アウトしてかまいません。 `// WorkingWithStrings();` のように、呼び出しの前に `/` 文字を 2 つ記述します。 
 
 ## <a name="challenge"></a>課題
-このレッスンと以前のレッスンの中から、いくつかのレッスンの内容をまとめて理解できているかどうかを確認してみましょう。 ここまでフィボナッチ数を使用して作成してきたコードを使ってください。 シーケンスの最初の 20 個の数を生成するコードを記述してみましょう。
+このレッスンと以前のレッスンの中から、いくつかの概念を理解できているかどうかを確認してみましょう。 ここまでフィボナッチ数を使用して作成してきたコードを使ってください。 シーケンスの最初の 20 個の数を生成するコードを記述してみましょう。 (ヒント: フィボナッチ数の 20 番目の数は 6765 です。)
 
 ## <a name="complete-challenge"></a>課題完了
 
@@ -218,6 +218,6 @@ foreach(var item in fibonacciNumbers)
 
 ループの繰り返しごとに、リストの最後の 2 つの整数を取得して合計し、その値をリストに追加しています。 このループは、20 個の項目がリストに追加されるまで繰り返されます。
 
-これで、一覧のクイック スタートが完了します。 続行できますが、[クラスの概要](introduction-to-classes.md)独自開発環境でのクイック スタート。
+おつかれさまでした。リストについてのクイック スタートはこれで終了です。 続けて独自の開発環境で[クラスの概要](introduction-to-classes.md)のクイック スタートに進むことができます。
 
 `List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。

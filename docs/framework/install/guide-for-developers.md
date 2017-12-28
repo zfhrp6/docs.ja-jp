@@ -14,17 +14,17 @@ ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 46e79e67b5d6f088eb2a0fb39e6f4f10c6ed8549
-ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
+ms.openlocfilehash: cee014956ff4ba2f8e0f66df5bd46a4e843352e4
+ms.sourcegitcommit: 4a96a0fe9f87de70291245d71b76c7d1b15127ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="install-the-net-framework-for-developers"></a>開発者向けの .NET Framework のインストール
 
 .NET は、Windows 上で実行されている多数のアプリケーションに不可欠な部分であり、それらのアプリケーションが稼働するための共通の機能を提供します。 .NET Framework は、視覚的に美しいユーザー エクスペリエンスと、シームレスでありながらもセキュリティで保護された通信機能を備えたアプリケーションを構築するための包括的で一貫性のあるプログラミング モデルを開発者に提供します。  
 
-この記事では、.NET Framework 4.5 から [!INCLUDE[net_current](../../../includes/net-current-version.md)] までのすべての .NET Framework バージョンをコンピューターにインストールするためのリンクを紹介します。 開発者の場合、これらのリンクを使用して、.NET Framework をダウンロードし、アプリと共に .NET Framework を再配布することもできます。
+この記事では、.NET Framework 4.5 から [!INCLUDE[net_current](../../../includes/net-current-version.md)] までのすべての .NET Framework バージョンをコンピューターにインストールするためのリンクを紹介します。 開発者の場合、これらのリンクを使用して、.NET Framework をダウンロードし、アプリと共に .NET Framework を再配布することもできます。 アプリと一緒に .NET Framework のバージョンを配置する方法の詳細については、「[.NET Framework 配置ガイド (開発者向け)](../deployment/deployment-guide-for-developers.md)」をご覧ください。
 
 > [!NOTE]
 > このトピックは、独自のシステムに .NET Framework をインストールする開発者や自分のアプリケーションで .NET Framework をインストールする開発者のために作成されています。 .NET Framework のインストールに関心があるユーザーは、個別トピックをご覧ください。[Windows 10 と Windows Server 2016 に .NET Framework をインストールする](on-windows-10.md)方法など、特定のオペレーティング システムに .NET Framework をインストールする方法を紹介しています。  
