@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5cf2740b0218286178e62262723bb060dc2d3817
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6687f93be26dedcb34f08770708c072742fdd4de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwindowsgt-of-ltclientcredentialsgt-element"></a>&lt;clientCredentials&gt; 要素の &lt;windows&gt;
 クライアントを表すために使用される Windows 資格情報の設定を指定します。  
@@ -57,7 +58,7 @@ ms.lasthandoff: 12/02/2017
 |-------------|-----------------|  
 |[\<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|サービスに対するクライアントの認証に使用される資格情報を指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.WindowsClientElement>  
  <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
  <xref:System.ServiceModel.Description.ClientCredentials>  
@@ -67,4 +68,4 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.Security.WindowsClientCredential>  
  [クライアントのセキュリティ保護](../../../../../docs/framework/wcf/securing-clients.md)  
  [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [サービスとクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+ [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

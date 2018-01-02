@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: fd8e7d18ca72cbeb558876eefcde17ebdc6c095f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 490e58d4514667c5ec781dd76644012b0c97509d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;追加&gt;要素&lt;sharedListeners&gt;
 `sharedListeners` コレクションにリスナーを追加します。 `sharedListeners`リスナーのコレクションをするには[\<ソース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)または[\<トレース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)を参照できます。  既定では、リスナーに、`sharedListeners`にコレクションが配置されていない、`Listeners`コレクション。 名前で追加する必要があります、 [\<ソース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)または[\<トレース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)です。 内のリスナーを取得することはできません、`sharedListeners`実行時にコード内のコレクション。  
@@ -114,7 +115,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.TraceSource>  
  <xref:System.Diagnostics.TraceListener>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  

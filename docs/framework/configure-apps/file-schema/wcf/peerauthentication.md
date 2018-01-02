@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 103ee50e86a809ee4a5e36451fd9e6b99fc3bb2c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b1de8b8ceaf56931dfd3f09e5cc21ac939c49b4a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltpeerauthenticationgt"></a>&lt;peerAuthentication&gt;
 ピア ノードで使用されるピア証明書の認証設定を指定します。  
@@ -65,14 +66,14 @@ ms.lasthandoff: 12/02/2017
 ## <a name="remarks"></a>コメント  
  `<authentication>` 要素は、<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication> クラスに対応します。 この要素は、メッシュ内の近隣ノード間の認証時に呼び出される検証コントロールを指定します。 新しいピアが近隣ノードとの接続を確立しようとするとき、自身の資格情報を応答側のピアに渡します。 リモート パーティの資格情報を検証するために、応答側の検証が呼び出されます。 メッシュ内でピア接続が確立されるたびに、両方のピアが相互に認証されます。つまり、双方の検証が呼び出されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
  <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>  
  <xref:System.ServiceModel.Security.PeerCredential.PeerAuthentication%2A>  
  <xref:System.ServiceModel.Configuration.PeerCredentialElement.PeerAuthentication%2A>  
  <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>  
  [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [ピア ツー ピア ネットワーク](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [ピアツーピア ネットワーク](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
  [ピア チャネル メッセージの認証](http://msdn.microsoft.com/en-us/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
  [ピア チャネル カスタム認証](http://msdn.microsoft.com/en-us/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
- [ピア チャネル アプリケーションのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+ [セキュリティによるピア チャネル アプリケーションの保護](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

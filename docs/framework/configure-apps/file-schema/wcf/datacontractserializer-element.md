@@ -18,11 +18,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d38e3786c595c3fe6cc9ea54b68784c927901731
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 27b80c831fdc66bd3b022645c3de9c0c31ee575a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltdatacontractserializergt"></a>&lt;dataContractSerializer&gt;
 <xref:System.Runtime.Serialization.DataContractSerializer> 用の設定データが含まれています。 この要素は、2 つの異なる階層で使用されます。 1 つは以下の「スキーマの階層」に示したもので、もう 1 つは「解説」に記載しています。  
@@ -69,9 +70,9 @@ ms.lasthandoff: 12/02/2017
   
  既知の型の詳細については、<xref:System.Runtime.Serialization.DataContractSerializer> を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  
  <xref:System.ServiceModel.Configuration.DataContractSerializerElement>  
- [データ コントラクトの既知の型](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
+ [既知のデータ コントラクト型](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
  [データ転送とシリアル化](../../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e8a993c75f33dd3c98da5534658d02b4eeeda51a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 62c5cef51e125443d87c47f7f62dc76aa5d352b8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>DataSet に対する XPath クエリの実行
 同期済みの間のリレーションシップ<xref:System.Data.DataSet>と<xref:System.Xml.XmlDataDocument>XML を使用することができますにアクセスする XML パス言語 (XPath) クエリなどのサービス、 **XmlDataDocument**し、特定の機能を実行することができます簡単にアクセスするよりも、**データセット**直接です。 使用するのではなく、たとえば、**選択**のメソッド、<xref:System.Data.DataTable>で他のテーブルへのリレーションシップを移動する、**データセット**、に対して XPath クエリを実行できる、 **XmlDataDocument**と同期されている、**データセット**の形式で XML 要素の一覧を取得する、<xref:System.Xml.XmlNodeList>です。 内のノード、 **XmlNodeList**としてキャストされた、<xref:System.Xml.XmlElement>ノードに渡すことができます、 **GetRowFromElement**のメソッド、 **XmlDataDocument**を一致を返す<xref:System.Data.DataRow>は同期済みテーブルの行への参照**データセット**です。  
@@ -111,6 +112,6 @@ foreach (XmlNode xmlNode in nodeList)
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataSet と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

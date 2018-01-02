@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0aae23c295401d4b9565c35d4d47c5ab913029d5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3fcedf488a038f379bae26fd7da0f4bf027b2e55
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>XML スキーマ (XSD) からの DataSet リレーショナル構造の派生
 ここでは、XML スキーマ定義言語 (XSD) スキーマ ドキュメントから `DataSet` のリレーショナル スキーマを生成する方法についての概要を説明します。 一般に、それぞれの`complexType`で、テーブルが生成されて、スキーマ要素の子要素、`DataSet`です。 テーブル構造は、複合型の定義に基づいて決定されます。 テーブルに作成されます、`DataSet`スキーマ内の最上位要素です。 ただし、テーブルを最上位の作成のみ`complexType`要素と、`complexType`要素が別の内部に入れ子に`complexType`を内の要素が入れ子になった場合`complexType`に要素がマップされて、`DataTable`内で、`DataSet`です。  
@@ -93,7 +94,7 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
 ```  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [制約の DataSet 制約への XML スキーマ (XSD) 制約のマッピング](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [XML スキーマ (XSD) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  一意制約と外部キー制約の作成に使用される XML スキーマの要素について説明します、`DataSet`です。  
   
  [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
@@ -106,5 +107,5 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
  [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  読み込んで、リレーショナル構造とデータを永続化する方法について説明、 `DataSet` XML データとして。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

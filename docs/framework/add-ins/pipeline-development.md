@@ -20,11 +20,12 @@ caps.latest.revision: "31"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4991fc65a48d620d30d09c44f1a30c2d1839071e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0ad577145c26b9c43e8b7fb3b61f27f374ff9298
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pipeline-development"></a>パイプラインの開発
 アドイン パイプラインは、ホスト アプリケーションとそのアドインが互いに通信するために使用する必要がありますパイプライン セグメントのパスです。  
@@ -84,7 +85,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="walkthroughs"></a>チュートリアル  
  Visual Studio を使用してパイプラインを作成する方法を説明する 3 つのチュートリアル トピックがあります。  
   
--   [チュートリアル: 拡張性のあるアプリケーションの作成](../../../docs/framework/add-ins/walkthrough-create-extensible-app.md)  
+-   [チュートリアル : 拡張性のあるアプリケーションの作成](../../../docs/framework/add-ins/walkthrough-create-extensible-app.md)  
   
      ホストの加算、減算、乗算、および除算を実行する電卓アドインについて説明します。  
   
@@ -96,6 +97,6 @@ ms.lasthandoff: 11/21/2017
   
      書店のシナリオを使用してパイプライン経由でデータ コレクションを渡す方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アドイン パイプラインのシナリオ](http://msdn.microsoft.com/en-us/feb70e0b-8734-494c-aeaf-b567f014043e)  
  [アドインおよび拡張機能](../../../docs/framework/add-ins/index.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 33ef3ca88462595d81d269a92a643b43c9aea025
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 26f3d4f0b272168083bed2bbe249532181a6db67
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttrustedissuersgt"></a>&lt;trustedIssuers&gt;
 構成ベースの発行者名レジストリによって使用される信頼された発行者の証明書の一覧の構成 (<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>)。  
@@ -85,6 +86,6 @@ ms.lasthandoff: 11/21/2017
 </issuerNameRegistry>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>  
  <xref:System.IdentityModel.Tokens.IssuerNameRegistry>

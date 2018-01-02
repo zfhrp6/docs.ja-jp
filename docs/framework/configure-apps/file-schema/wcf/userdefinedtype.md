@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d7808036452a5344f24da73083f1d8fa15c79a6e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9bb67a585d7abf3e885c483145215ed4fb9f92be
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltuserdefinedtypegt"></a>&lt;userDefinedType&gt;
 サービス コントラクトに含まれるユーザー定義型 (UDT) を表します。  
@@ -101,10 +102,10 @@ ms.lasthandoff: 12/02/2017
   
  サービスを初期化する場合、統合ランタイムは、指定された型を検索し、指定されたコントラクトで既知の型のコレクションにそれらを追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ComContractElement.UserDefinedTypes%2A>  
  <xref:System.ServiceModel.Configuration.ComUdtElementCollection>  
  <xref:System.ServiceModel.Configuration.ComUdtElement>  
  [\<comContracts >](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
- [COM + アプリケーションとの統合](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
- [方法: COM + サービス設定の構成](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+ [COM+ アプリケーションとの統合](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
+ [方法 : COM+ サービス設定を構成する](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

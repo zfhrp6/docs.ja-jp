@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f7fdbb244663e5114880437a5a508270c80a9c79
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 64afd62c6eeca7bce14e331fdc65fccfa3d02bce
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltperformancecountersgt-element"></a>&lt;performanceCounters&gt;要素
 パフォーマンス カウンターが共有するグローバル メモリのサイズを指定します。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 11/21/2017
   
  別の共有メモリのサイズをレジストリの DWORD FileMappingSize 値キー hkey_local_machine \system\currentcontrolset\services\\*\<カテゴリ名 >*\Performance が参照されています。最初に、構成ファイル内のグローバル共有メモリに指定された値に続きます。 FileMappingSize 値が存在しないかどうかは、別の共有メモリのサイズが 4 分の 1 に設定されている (1/4)、構成ファイルのグローバル設定。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.PerformanceCounter>  
  <xref:System.Diagnostics.PerformanceCounterCategory>  
  <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>  

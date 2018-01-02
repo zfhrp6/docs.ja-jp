@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 507c71b5c13deeb7c1a81b6a4dd9604c3bd919f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7c9a4b4532d98b7dfc2484dab1bb57e5a26fa392
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnameentrygt-element"></a>&lt;nameEntry&gt;要素
 アルゴリズムの表示名にクラス名をマップして、1 つのクラスが多くの表示名を持つことを許可します。  
@@ -85,7 +86,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [暗号化設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
  [暗号サービス](../../../../../docs/standard/security/cryptographic-services.md)  

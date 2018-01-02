@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bdafddcb05dd50f059c9f6804573beec085a4a2a
-ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
+ms.workload: dotnet
+ms.openlocfilehash: f4c4bd9901b053c96a260435c34ffa3ddd2c7283
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnamedcachesgt-element-cache-settings"></a>&lt;namedCaches&gt;要素 (キャッシュの設定)
 名前付きの構成設定のコレクションを指定<xref:System.Runtime.Caching.MemoryCache>インスタンス。 <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A>プロパティは、1 つ以上の構成設定のコレクションを参照`namedCaches`構成ファイルの要素。  
@@ -97,5 +98,5 @@ ms.lasthandoff: 10/25/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<memoryCache > 要素 (キャッシュの設定)](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)

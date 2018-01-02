@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 20d411fbe052940fd8fc752e74d012f28ffa441b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a1716aa77808b2a9f8f3ca903dabf81b21b8f709
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltallowaccountsgt"></a>&lt;allowAccounts&gt;
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスをホストするプロセスのユーザー アカウントを指定し、共有サービスへの接続アクセス権が付与されている構成要素のコレクションを含みます。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 12/02/2017
 |-------------|-----------------|  
 |[\<net.pipe >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-pipe.md)または[ \<net.tcp >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)|Net Pipe または TCP 共有サービスの構成設定を指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Activation.Configuration.NetTcpSection.AllowAccounts%2A>  
  <xref:System.ServiceModel.Activation.Configuration.NetPipeSection.AllowAccounts%2A>  
  <xref:System.ServiceModel.Activation.Configuration.SecurityIdentifierElementCollection>  

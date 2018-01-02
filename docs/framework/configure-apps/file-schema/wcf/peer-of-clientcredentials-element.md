@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4f2fa776711223ace6a4cebce7783b1fa0c148a4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: accd6c261a393da3ffcffd261d6603d20b8fcb3d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltpeergt-of-ltclientcredentialsgt-element"></a>&lt;clientCredentials&gt; 要素の &lt;peer&gt;
 ピアツーピア クライアントの認証時に使用される資格情報を指定します。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 12/02/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<証明書 >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md)|ピアツーピア クライアントのメッセージの署名と暗号化に使用する X.509 証明書を指定します。 。|  
+|[\<証明書 >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md)|ピアツーピア クライアントのメッセージの署名と暗号化に使用する X.509 証明書を指定します。 である必要があります。|  
 |[\<peerAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)|ピア クライアントの認証オプションを指定します。|  
 |[\<messageSenderAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)|メッセージ送信者の認証オプションを指定します。|  
   
@@ -62,7 +63,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="remarks"></a>コメント  
  この構成要素は、ピア ノードがメッシュ内の他のノードに対して自身を認証するために使用する資格情報と、ピア ノードが他のピア ノードを認証するために使用する認証設定を指定します。 詳細については、次を参照してください。[ピア チャネル メッセージ認証](http://msdn.microsoft.com/en-us/80e73386-514e-4c30-9e4a-b9ca8c173a95)と[ピア チャネル アプリケーションのセキュリティで保護する](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
  <xref:System.ServiceModel.Description.ClientCredentials>  
  <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
@@ -70,9 +71,9 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.Description.ClientCredentials>  
  <xref:System.ServiceModel.Description.ClientCredentials.Peer%2A>  
  <xref:System.ServiceModel.Security.PeerCredential>  
- [ピア ツー ピア ネットワーク](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [ピアツーピア ネットワーク](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
  [クライアントのセキュリティ保護](../../../../../docs/framework/wcf/securing-clients.md)  
  [ピア チャネル メッセージの認証](http://msdn.microsoft.com/en-us/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
  [ピア チャネル カスタム認証](http://msdn.microsoft.com/en-us/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
- [ピア チャネル アプリケーションのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
- [サービスとクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+ [セキュリティによるピア チャネル アプリケーションの保護](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
+ [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

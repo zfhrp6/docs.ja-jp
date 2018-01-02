@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 6d587dced4660774b67a8e884bf6c25df3b6e400
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7ab053937587d9cfd9353fe53fa759e58859e3da
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltremovegt-element-for-schemesettings-uri-settings"></a>&lt;削除&gt;schemeSettings (Uri 設定) の要素
 スキーム名にスキームの設定を削除します。  
@@ -84,7 +85,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
  <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
  <xref:System.Configuration.UriSection?displayProperty=nameWithType>  

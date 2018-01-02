@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1980365da8514060290066a4e15e5f88e35f7f4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 11500830c7c5fd75a9e2880a5875bd21fb070634
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltconnectionpoolsettingsgt"></a>&lt;connectionPoolSettings&gt;
 名前付きパイプ バインディングの追加の接続プール設定を指定します。  
@@ -58,7 +59,7 @@ ms.lasthandoff: 12/02/2017
 |-------------|-----------------|  
 |[\<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|チャネルで名前付きパイプを使用してメッセージを転送するトランスポートを定義します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.NamedPipeConnectionPoolSettingsElement>  
  <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement.ConnectionPoolSettings%2A>  
  <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>  
@@ -68,5 +69,5 @@ ms.lasthandoff: 12/02/2017
  [トランスポートの選択](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

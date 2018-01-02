@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f2b7939371d99f8b503ac779f07b34f5fff497a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dda704e70fc7927f382e851189073ffa5dececb9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="system-functions"></a>システム関数
 .NET Framework Data Provider for SQL Server (SqlClient) には、次のシステム関数が用意されています。  
@@ -40,6 +41,6 @@ ms.lasthandoff: 11/21/2017
 |---------------------|---------------------|---------------------|  
 |[システム関数 Transact SQL)](http://go.microsoft.com/fwlink/?LinkId=115918)|[システム関数 Transact SQL)](http://go.microsoft.com/fwlink/?LinkId=115917)|[システム関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115919)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity SQL 言語](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
- [Framework 用 SqlClient エンティティ関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)
+ [Entity Framework 用 SqlClient 関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)

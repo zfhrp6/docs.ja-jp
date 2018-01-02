@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: be98c93452c9c7a37ecad5b03f5160ea08f2c82e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ac7284fa418c1540582c40bd744e913ba31aa881
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsecuritytokenhandlerconfigurationgt"></a>&lt;securityTokenHandlerConfiguration&gt;
 トークン ハンドラーのコレクションの構成を提供します。  
@@ -55,13 +56,13 @@ ms.lasthandoff: 10/18/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<Audienceuri >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)|この証明書利用者の許容可能な識別子 Uri のセットを指定します。 省略可能です。|  
-|[\<キャッシュ >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|セッション トークンやトークン リプレイ検出のために使用されるキャッシュに登録します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 省略可能です。|  
-|[\<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|トークン ハンドラーを使用して証明書の検証の設定を制御します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 特定のハンドラーが、独自の検証コントロールで構成されている場合、これらの設定は上書きされます。 省略可能です。|  
-|[\<issuerNameRegistry >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)|トークン ハンドラーはコレクション内のハンドラーによって使用される発行者名レジストリを構成します。 省略可能です。|  
-|[\<issuerTokenResolver >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)|トークン ハンドラーはコレクション内のハンドラーによって使用される発行者トークン リゾルバーを登録します。 発行者トークン リゾルバーを使用して、入力方向のトークンとメッセージの署名のトークンを解決します。 省略可能です。|  
-|[\<serviceTokenResolver >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)|トークン ハンドラーはコレクション内のハンドラーによって使用されるサービスのトークン リゾルバーを登録します。 サービスのトークン リゾルバーを使用して、入力方向のトークンとメッセージの暗号化トークンを解決します。 省略可能です。|  
-|[\<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|トークン リプレイ検出を有効にし、トークンの有効期限を指定します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 省略可能です。|  
+|[\<Audienceuri >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)|この証明書利用者の許容可能な識別子 Uri のセットを指定します。 任意。|  
+|[\<キャッシュ >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|セッション トークンやトークン リプレイ検出のために使用されるキャッシュに登録します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 任意。|  
+|[\<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|トークン ハンドラーを使用して証明書の検証の設定を制御します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 特定のハンドラーが、独自の検証コントロールで構成されている場合、これらの設定は上書きされます。 任意。|  
+|[\<issuerNameRegistry >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)|トークン ハンドラーはコレクション内のハンドラーによって使用される発行者名レジストリを構成します。 任意。|  
+|[\<issuerTokenResolver >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)|トークン ハンドラーはコレクション内のハンドラーによって使用される発行者トークン リゾルバーを登録します。 発行者トークン リゾルバーを使用して、入力方向のトークンとメッセージの署名のトークンを解決します。 任意。|  
+|[\<serviceTokenResolver >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)|トークン ハンドラーはコレクション内のハンドラーによって使用されるサービスのトークン リゾルバーを登録します。 サービスのトークン リゾルバーを使用して、入力方向のトークンとメッセージの暗号化トークンを解決します。 任意。|  
+|[\<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|トークン リプレイ検出を有効にし、トークンの有効期限を指定します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 任意。|  
   
 ### <a name="parent-elements"></a>親要素  
   

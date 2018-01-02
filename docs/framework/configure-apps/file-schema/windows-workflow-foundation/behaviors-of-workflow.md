@@ -12,11 +12,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bffe7cbf3cadf072a8bab88555b069983d262e38
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 83c1bf4beb244b72d2fe3d82d749ff6ae6723baf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltbehaviorsgt-of-workflow"></a>ワークフローの &lt;behaviors&gt;
 この要素が含まれています、 **serviceBehaviors**コレクション。  コレクション内の各要素は、ワークフロー サービスによって使用されるそれぞれの動作要素を定義します。 各動作要素は、独自のによって識別される**名前**属性。  
@@ -50,8 +51,8 @@ ms.lasthandoff: 12/02/2017
 |-------------|-----------------|  
 |[\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|すべてのワークフロー構成要素のルート要素。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.BehaviorsSection>  
  <xref:System.ServiceModel.Configuration.ServiceBehaviorElementCollection>  
  <xref:System.ServiceModel.Configuration.ServiceBehaviorElement>  
- [構成して、ランタイムのビヘイビアーの使用を拡張します。](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+ [動作を使用したランタイムの構成と拡張](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

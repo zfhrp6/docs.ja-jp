@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bbb74d9a542833a96c61bcc09f6e4e5f0807843d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eb624052c3638cb49abe143ebd4173a5ee85a054
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;追加&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;
 リスナーを追加、**リスナー**コレクション。  
@@ -110,7 +111,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.Trace>  
  <xref:System.Diagnostics.Debug>  
  <xref:System.Diagnostics.EventLogTraceListener>  

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 09ab06bb94249e79743335da1a360f6b668b1d86
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 064c9d438832142e1f761d0d33db528dbe73ef2a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-of-ltallowaccountsgt"></a>&lt;allowAccounts&gt; の &lt;add&gt;
 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスをホストし、共有サービスへの接続アクセスが付与されているプロセスのユーザー アカウントを指定します。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 12/02/2017
 </allowAccounts>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Activation.Configuration.NetTcpSection.AllowAccounts%2A>  
  <xref:System.ServiceModel.Activation.Configuration.NetPipeSection.AllowAccounts%2A>  
  <xref:System.ServiceModel.Activation.Configuration.SecurityIdentifierElementCollection>  

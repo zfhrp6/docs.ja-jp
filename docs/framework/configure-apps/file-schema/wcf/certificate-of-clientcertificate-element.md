@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aeb0479f661ed8f058f6c23ce79654ccb3a36fa0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0cbf4ac229d63ad1ab097e5dc2ffe76ccb144515
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcertificategt-of-ltclientcertificategt-element"></a>&lt;clientCertificate&gt; 要素の &lt;certificate&gt;
 メッセージの署名と暗号化に使用される X.509 証明書を指定します。  
@@ -86,10 +87,10 @@ X509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
 </serviceBehaviors>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.Certificate%2A>  
  <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement.Certificate%2A>  
  <xref:System.ServiceModel.Configuration.X509ClientCertificateCredentialsElement>  
  [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [方法: カスタム証明書検証を使用するサービスを作成します。](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
+ [方法 : カスタム証明書検証を使用するサービスを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
  [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a2653a94992440b747371c5d8a7b9daa66b3e3ab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 26fbae0474253dc9792a0290a36dd52044d148b9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dataviews"></a>DataView
 <xref:System.Data.DataView> では、<xref:System.Data.DataTable> に格納されているデータのさまざまなビューを作成できます。この機能は、データ連結アプリケーションで頻繁に使用されます。 使用して、 **DataView**さまざまな並べ替え順序、テーブル内のデータを公開することができます、および行の状態やフィルター式に基づいて、データをフィルター処理できます。  
@@ -32,19 +33,19 @@ ms.lasthandoff: 10/18/2017
  [DataView の作成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-dataview.md)  
  作成する方法について説明します、 **DataView**の**DataTable**です。  
   
- [並べ替えとデータをフィルター処理](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md)  
+ [データの並べ替えとフィルター処理](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md)  
  プロパティを設定する方法について説明、 **DataView**のサブセットを返すデータ行の特定のフィルター条件を満たす、または特定の並べ替え順序でデータを返します。  
   
- [Datarow および Datarowview](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarows-and-datarowviews.md)  
+ [DataRow および DataRowView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarows-and-datarowviews.md)  
  によって公開されるデータにアクセスする方法について説明します、 **DataView**です。  
   
- [行を検索します。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md)  
+ [行の検索](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md)  
  特定の行を検索する方法について説明、 **DataView**です。  
   
- [Childview とリレーション](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/childviews-and-relations.md)  
+ [ChildView とリレーション](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/childviews-and-relations.md)  
  使用して、親子関係からのデータのビューを作成する方法について説明、 **DataView**です。  
   
- [Dataview の変更](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/modifying-dataviews.md)  
+ [DataView の変更](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/modifying-dataviews.md)  
  基になるデータを変更する方法について説明**DataTable**を介して、 **DataView**、有効化と更新プログラムを無効にするとします。  
   
  [DataView イベントの処理](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataview-events.md)  
@@ -69,5 +70,5 @@ ms.lasthandoff: 10/18/2017
  [ADO.NET](../../../../../docs/framework/data/adonet/index.md)  
  ADO.NET のアーキテクチャとコンポーネントについて説明し、ADO.NET を使用して既存のデータ ソースにアクセスしたり、アプリケーション データを管理する方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

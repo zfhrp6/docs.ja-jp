@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 5ee20b9177d519010c40351e335973dce10256f4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 620197065a8e689997b4081b3d90169aa0e3c6c3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt-element-for-bypasslist-network-settings"></a>&lt;オフ&gt;bypasslist (ネットワーク設定) の要素
 プロキシ バイ パスの一覧をクリアします。  
@@ -80,6 +81,6 @@ ms.lasthandoff: 11/21/2017
 </configuration>   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

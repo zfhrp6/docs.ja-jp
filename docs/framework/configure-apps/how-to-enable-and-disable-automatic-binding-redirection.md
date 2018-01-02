@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 83b004934c303c95bdc4e6edb6031a86e2b1a6ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b6887706aeef3855c1e02c8b1379856022cdac04
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>方法: 自動バインディング リダイレクトを有効/無効にする
 [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)]以降では、[!INCLUDE[net_v451](../../../includes/net-v451-md.md)]を対象とするアプリをコンパイルするときに、アセンブリの統一をオーバーライドするために、アプリ構成ファイルにバインド リダイレクトが自動的に追加される場合があります。 アプリの構成ファイルで手動でバインド リダイレクトを指定している場合でも、アプリまたはそのコンポーネントが同じアセンブリの複数バージョンを参照している場合、バインド リダイレクトが追加されます。 自動バインド リダイレクト機能は、[!INCLUDE[net_v451](../../../includes/net-v451-md.md)] を対象とする従来のデスクトップ アプリと Web アプリに影響します。ただし、Web アプリに対する動作は若干異なります。 以前のバージョンの .NET Framework を対象とする既存のアプリがある場合は、自動バインド リダイレクトを有効にできます。また、手動で作成したバインド リダイレクトを保持する場合は、この機能を無効にできます。  
@@ -89,6 +90,6 @@ ms.lasthandoff: 11/21/2017
   
      ![バインディング リダイレクトのアクセス許可ダイアログ](../../../docs/framework/configure-apps/media/clr-addbindingredirect.png "CLR_AddBindingRedirect")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<bindingRedirect > 要素](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)  
  [アセンブリ バージョンのリダイレクト](../../../docs/framework/configure-apps/redirect-assembly-versions.md)

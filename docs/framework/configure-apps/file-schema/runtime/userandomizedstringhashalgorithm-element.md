@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7cd561cf0e0a9e080b150bdaa412686126423c91
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b6231f362a30f4766ccf5a43d33fa0dc7257ad57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltuserandomizedstringhashalgorithmgt-element"></a>&lt;UseRandomizedStringHashAlgorithm&gt;要素
 共通言語ランタイムがアプリケーション ドメインごとに文字列のハッシュ コードを計算するかどうかを判定します。  
@@ -103,7 +104,7 @@ String 'This is a string.' in domain 'PerDomain.exe': 5435776D
 String 'This is a string.' in domain 'NewDomain': 75CC8236  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType>  
  <xref:System.String.GetHashCode%2A?displayProperty=nameWithType>  
  <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>

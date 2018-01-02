@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 255cd8518bd9c6c6c199c75aa32ca086c801d23f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6a254b8a4de8f66cb0d051d246be2d07e905615a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-of-ltprotocolmappinggt"></a>&lt;protocolMapping&gt; の &lt;add&gt;
 トランスポート プロトコル スキーム (など、http、net.tcp、net.pipe など) の間の既定のプロトコル マッピングを表す、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]バインドします。 実行時に既定のエンドポイントを作成するときに、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は構成されたマッピングを確認し、特定のベース アドレスに使用するバインディングを決定します。  
@@ -64,6 +65,6 @@ ms.lasthandoff: 12/02/2017
 </protocolMapping>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ProtocolMappingSection?displayProperty=nameWithType>      
  <xref:System.ServiceModel.Configuration.ProtocolMappingElement?displayProperty=nameWithType>    

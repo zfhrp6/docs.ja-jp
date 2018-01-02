@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4573c3a5e0cf64996f2a4e109736d966b754494a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a77f93a0dff198821509c2c26f67caa137073ced
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltdevelopmentmodegt-element"></a>&lt;developmentMode&gt;要素
 DEVPATH 環境変数によって指定されたディレクトリで、ランタイムがアセンブリの検索を行うかどうかを指定します。  
@@ -79,7 +80,7 @@ DEVPATH 環境変数によって指定されたディレクトリで、ランタ
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [方法 : DEVPATH を使用してアセンブリを指定する](../../../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)

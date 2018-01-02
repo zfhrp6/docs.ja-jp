@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ce4134d9059d1f1d5bd2e435a3cc87d3fbccd422
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bc3f97619c8ec28a61a9a51b431581383558a7d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltfiltergt-element-for-ltaddgt-for-ltsharedlistenersgt"></a>&lt;フィルター&gt;要素&lt;追加&gt;の&lt;sharedListeners&gt;
 `sharedListeners` コレクションのリスナーにフィルターを追加します。  
@@ -94,7 +95,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.TraceFilter>  
  <xref:System.Diagnostics.TraceListener>  
  <xref:System.Diagnostics.TraceSource>  

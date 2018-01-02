@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec959a9eeea82c56d6a2ae5ec3a7befce67676e3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 351f49c346cb8126cdd9d540a4db382bf5f4e721
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltendpointgt-of-ltclientgt"></a>&lt;client&gt; の &lt;endpoint&gt;
 サーバーのサービス エンドポイントに接続するためにクライアントによって使用されるチャネル エンドポイントのコントラクト、バインディング、およびアドレスのプロパティを指定します。  
@@ -79,7 +80,7 @@ ms.lasthandoff: 12/02/2017
 </endpoint>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ChannelEndpointElement>  
  <xref:System.ServiceModel.Configuration.ClientSection>  
  <xref:System.ServiceModel.Configuration.ChannelEndpointElementCollection>  

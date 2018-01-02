@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2febd8582ded47827794762bf0fb842c8131666
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4e42b7449397bfe397cf9393ef774af5ba261856
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltmessagelogginggt"></a>&lt;メッセージ ログ&gt;
 この要素は Windows Communication Foundation (WCF) のメッセージ ログ機能の設定を定義します。  
@@ -126,7 +127,7 @@ ms.lasthandoff: 12/02/2017
  </messageLogging>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.DiagnosticSection>  
  <xref:System.ServiceModel.Diagnostics>  
  <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>  

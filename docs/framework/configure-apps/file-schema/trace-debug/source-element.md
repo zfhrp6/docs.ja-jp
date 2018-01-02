@@ -13,11 +13,12 @@ helpviewer_keywords:
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 129888986a933fe875aade153f6becd8439d4704
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d6c5c65be8a540fdbba64d5a604c0963f9797e0a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsourcegt-element"></a>&lt;ソース&gt;要素
 トレース メッセージを開始するトレース ソースを指定します。  
@@ -87,6 +88,6 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [トレース スイッチ](../../../../../docs/framework/debug-trace-profile/trace-switches.md)

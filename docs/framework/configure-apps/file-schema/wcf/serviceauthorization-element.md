@@ -13,11 +13,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bc04552b9b2ecd85a520ed16ae9a6ee0dfc98a46
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9572cea14b7c15893459133aa75e9fa62b10d4f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltserviceauthorizationgt-element"></a>&lt;serviceAuthorization&gt; 要素
 サービス操作へのアクセスを許可する設定を指定します。  
@@ -107,11 +108,11 @@ ms.lasthandoff: 12/02/2017
   
  この構成要素を使用する詳細な例についてを参照してください。[サービス操作へのアクセスを承認する](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)と[承認ポリシー](../../../../../docs/framework/wcf/samples/authorization-policy.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement>  
  <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>  
  [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [サービス操作へのアクセスを承認します。](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
- [方法: サービスのカスタム承認マネージャーを作成します。](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
+ [サービス操作へのアクセスの承認](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
+ [方法 : サービスで使用するカスタム承認マネージャーを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
  [方法: PrincipalPermissionAttribute クラスでアクセスを制限する](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)  
  [承認ポリシー](../../../../../docs/framework/wcf/samples/authorization-policy.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cbc0fc790ce6ed9de2a920c851ee6656fa3abaa
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9f534bab962e83f76dab7e411cc3c2ca14779df9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttcptransportgt"></a>&lt;tcpTransport&gt;
 カスタム バインドのメッセージを転送するためにチャネルで使用できる TCP トランスポートを定義します。  
@@ -91,7 +92,7 @@ ms.lasthandoff: 12/02/2017
   
  `tcpTransport` 要素は、TCP トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。 このトランスポートは、WCF 間の通信用に最適化されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.TcpTransportElement>  
  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TransportBindingElement>  
@@ -100,5 +101,5 @@ ms.lasthandoff: 12/02/2017
  [トランスポートの選択](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 39d24f03bde729e99b629162aee86efe4b60fdd1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 836d00cb0c3de36e8fd918babb605cf629239357
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltdatacontractserializergt-of-ltsystemruntimeserializationgt"></a>&lt;system.runtime.serialization&gt; の &lt;dataContractSerializer&gt;
 <xref:System.Runtime.Serialization.DataContractSerializer> 用の設定データが含まれています。  
@@ -70,7 +71,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="remarks"></a>コメント  
  既知の型の詳細については、次を参照してください。<xref:System.Runtime.Serialization.DataContractSerializer>と[データ コントラクトの既知の型](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  
- [データ コントラクトの既知の型](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+ [既知のデータ コントラクト型](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

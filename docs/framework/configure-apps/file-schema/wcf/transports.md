@@ -13,16 +13,17 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 911a770fb4dc6d11f17c1f287a53ddb6552c690a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 47799c5eb10a3274b8b5f10d4ccec96a575da949
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transports"></a>トランスポート
 トランスポート層は、チャネル スタックの最も低いレベルにあります。 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] で使用される主なトランスポートは、HTTP、HTTPS、TCP、および名前付きパイプです。 このセクションでは、さまざまな種類のトランスポートを構成できるすべての構成要素を示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.TransportElement>  
  <xref:System.ServiceModel.Channels.TransportBindingElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
@@ -30,5 +31,5 @@ ms.lasthandoff: 12/02/2017
  [トランスポートの選択](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 3f8e1f776a64ab1fd957fdf327eada2cb722777a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 754c380972d79343eab83b9e862e478798218ffc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="code-access-security-and-adonet"></a>コード アクセス セキュリティと ADO.NET
 .NET Framework はコード アクセス セキュリティ (CAS) に加えてロール ベースのセキュリティを備えています。どちらも、共通言語ランタイム (CLR) が提供する共通のインフラストラクチャを使って実装されています。 アンマネージ コードの場合、ほとんどのアプリケーションはユーザーまたはプリンシパルの権限で実行されます。 そのため、悪意のあるソフトウェアやエラーを含むソフトウェアが、システム特権を持つユーザーによって実行された場合、コンピューター システムが被害を受けたり、機密データが改ざんされる可能性があります。  
@@ -204,7 +205,7 @@ Failed, as expected: Request failed.
   
  .NET Framework は、COM 相互運用機能を介したアクセスを提供することによって、既存の COM コンポーネントとの下位互換性をサポートしています。 COM 相互運用ツールを使って適切な COM 型をインポートすることにより、.NET Framework アプリケーションに COM コンポーネントを組み込むことができます。 インポートが完了すると、COM 型を使用できるようになります。 アセンブリのメタデータをタイプ ライブラリにエクスポートし、マネージ コンポーネントを COM コンポーネントとして登録することで、COM クライアントからマネージ コードにアクセスすることもできます。 詳細については、次を参照してください。[高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [ネイティブ コードと .NET Framework コードのセキュリティ](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  
  [コード アクセス セキュリティ](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)  

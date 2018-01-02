@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 79eb9f9ef95dae24dd38fa93b137c9303815143b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 23bd6007beb870895316a565283ee7e7354c931b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-cryptography-classes"></a>暗号化クラスの設定
 [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]により、既定の暗号化アルゴリズムと .NET Framework および適切に記述されたアプリケーションを使用するアルゴリズムの実装を構成するコンピューターの管理者です。  たとえば、暗号アルゴリズムの実装を持つエンタープライズは、その実装に付属して実装ではなく既定値、[!INCLUDE[winsdkshort](../../../includes/winsdkshort-md.md)]です。 暗号化を使用するマネージ アプリケーションは、特定の実装にバインドするように常に選択できますが、暗号化の構成システムを使用して暗号オブジェクトを作成することをお勧めします。  

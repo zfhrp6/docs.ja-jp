@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bfa8c480524c920ac2f73236b6548072e7805ab2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6fb60d901d498c6db194e60a9229c0d5b69eee31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltpeertransportgt"></a>&lt;peerTransport&gt;
 カスタム バインドのピア トランスポートを定義します。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="remarks"></a>コメント  
  このトランスポートは、要求/応答操作を含むコントラクトと共に使用することはできません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.PeerTransportElement>  
  <xref:System.ServiceModel.Channels.PeerTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TransportBindingElement>  
@@ -77,5 +78,5 @@ ms.lasthandoff: 12/02/2017
  [トランスポートの選択](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a324c3b7f24d3395382067ea5581313af58e13f0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 219b8173fdbfd84719733edc2f900511f58967d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xml-schema-constraints-and-relationships"></a>XML スキーマ制約およびリレーションシップ
 XML スキーマ定義言語 (XSD) スキーマでは、制約を指定することができます (一意キー、およびキー参照制約) とのリレーションシップ (を使用して、 **msdata:Relationship**注釈)。 このトピックでは、XML スキーマで指定した制約およびリレーションシップを解釈して <xref:System.Data.DataSet> を生成する方法について説明します。  
@@ -196,6 +197,6 @@ OrderDetail(OrderNumber, ItemNumber, Order_Id)
   
  入れ子になったテーブルを参照するキー参照制約が含まれるかどうか、 **msdata:IsNested ="true"**注釈、**データセット**キー参照制約に基づいている 1 つの入れ子になったリレーションシップを作成し、関連するキー/一意制約。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML スキーマ (XSD) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

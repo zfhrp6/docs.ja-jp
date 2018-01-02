@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: c4ee8833578b082f25c427b13d77072d1954197f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ae572ff3a8a2335a4259bdce2af5f6922fb0596f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltclaimtypegt"></a>&lt;claimType&gt;
 受信セキュリティ トークンの 1 つの省略可能または必須のクレームを指定します。  
@@ -47,8 +48,8 @@ ms.lasthandoff: 10/18/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|型|クレームの種類。 通常は URI です。 必須です。|  
-|optional|要求の種類は省略可能かどうかを指定するブール値。 省略可能です。|  
+|型|要求の種類。 通常は URI です。 必須。|  
+|optional|要求の種類は省略可能かどうかを指定するブール値。 任意。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  

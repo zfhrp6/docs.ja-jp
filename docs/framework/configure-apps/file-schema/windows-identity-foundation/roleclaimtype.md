@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 8a5de30d60478b6601781ac34fd481a6167462e0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: eb46585561ca8a2ab7c69f09d073d38bc1b60646
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltroleclaimtypegt"></a>&lt;roleClaimType&gt;
 クレームを定義する、ロールの種類のコレクション内の要求の種類を指定<xref:System.Security.Claims.ClaimsIdentity>によって返されるオブジェクト、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>トークン ハンドラーのメソッドです。  
@@ -53,7 +54,7 @@ ms.lasthandoff: 10/18/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|値|ロール クレームの種類を使用する要求の要求の種類を表す URI を指定する文字列。|  
+|value|ロール クレームの種類を使用する要求の要求の種類を表す URI を指定する文字列。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  
@@ -77,5 +78,5 @@ ms.lasthandoff: 10/18/2017
 </add>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.RoleClaimType%2A>

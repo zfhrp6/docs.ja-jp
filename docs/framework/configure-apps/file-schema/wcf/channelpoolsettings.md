@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d48f3b304b337ba61f53bbd81cac8601bc68cb0a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 09496add0adcc11756b6aae01a0236fe590f819f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltchannelpoolsettingsgt"></a>&lt;channelPoolSettings&gt;
 カスタム バインドのチャネル プール設定を指定します。  
@@ -69,7 +70,7 @@ ms.lasthandoff: 12/02/2017
   
 -   `maxOutboundChannelsPerEndpoint` クォータは、サーバーとクライアントの両方に対するキャッシュ制限を設定し、信頼性向上のために使用されます。 既定値ではリソースが控えめに割り当てられており、開発環境および小規模なインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は値をレビューする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Channels.OneWayBindingElement.ChannelPoolSettings%2A>  
  <xref:System.ServiceModel.Channels.ChannelPoolSettings>  
  <xref:System.ServiceModel.Configuration.OneWayElement.ChannelPoolSettings%2A>  
@@ -78,5 +79,5 @@ ms.lasthandoff: 12/02/2017
  [\<oneWay >](../../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

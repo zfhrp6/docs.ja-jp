@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c7398fbea3b59cafed6f9a7f2f4f0440ef29b80a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5082adda3c03bfbc40eafb174513a39fe17a3da8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-pooling"></a>接続プール
 データ ソースへの接続は時間のかかる処理です。 ADO.NET 接続を開くコストを最小限に抑えると呼ばれる最適化の手法を使用して*接続プーリング*、繰り返しタグと終了の接続のコストを最小限に抑えられます。 接続プールは、.NET Framework データ プロバイダーに応じて異なる処理が行われます。  
@@ -29,6 +30,6 @@ ms.lasthandoff: 11/21/2017
  [OLE DB、ODBC、および Oracle 接続プール](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)  
  .NET Framework Data Provider for OLE DB、.NET Framework Data Provider for ODBC、および .NET Framework Data Provider for Oracle の接続プールについて説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

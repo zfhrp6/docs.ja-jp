@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 85a980191e727ec1a20cca618504d1d9cbc2c277
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8cdd5d8a05354ad6f0df8343d546fd6cd1e8eac4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicedebuggt"></a>&lt;serviceDebug&gt;
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスのデバッグおよびヘルプ情報機能を指定します。  
@@ -78,7 +79,7 @@ ms.lasthandoff: 12/02/2017
   
  省略可能な `httpHelpPageBinding` 属性および `httpHelpPageBinding` 属性を使用すると、サービス ウェブ ページにアクセスするためのバインディングを構成できます。 これらの属性が指定されていない場合、サービス ヘルプ ページへのアクセスには、適切な既定のバインディグ (HTTP の場合は `HttpTransportBindingElement`、HTTPS の場合は `HttpsTransportBindingElement`) が使用されます。 これらの属性は、組み込みの WCF バインディングでは使用できないことに注意してください。 バインディング xref:System.ServiceModel.Channels.IReplyChannel をサポートする内部バインド要素でのみ > がサポートされます。 さらに、バインディングの <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> である必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ServiceDebugElement>  
  <xref:System.ServiceModel.Description.ServiceDebugBehavior>  
  [コントラクトおよびサービスのエラーの指定と処理](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  

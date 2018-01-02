@@ -15,11 +15,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 828a28769e164535d4dde989ef8cce91caf9cb48
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.workload: dotnet
+ms.openlocfilehash: 331b2238ae87776938422484d34bb68b4653a56e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-add-configuration-element"></a>Windows フォームの構成要素を追加します。
 
@@ -78,13 +79,13 @@ Windows フォームの高 DPI サポートの概要については、次を参�
 
 ### <a name="dpiawareness"></a>DpiAwareness
 
-以降では、.NET Framework 4.7 以降では、Windows 10 の作成者のエディションとターゲットのバージョンの .NET Framework のバージョンの Windows で動作する Windows フォーム アプリケーションは、.NET Framework で導入された高 DPI 改善に活用するために構成することができます。4.7 です。 以下に例を示します。
+以降では、.NET Framework 4.7 以降では、Windows 10 の作成者のエディションとターゲットのバージョンの .NET Framework のバージョンの Windows で動作する Windows フォーム アプリケーションは、.NET Framework で導入された高 DPI 改善に活用するために構成することができます。4.7 です。 次の設定があります。
 
 - Windows フォーム アプリケーションの起動後、ユーザー DPI またはスケール ファクターを変更する動的の DPI シナリオをサポートします。
 
 - スケーリングとさまざまな Windows フォームのレイアウトの改善を制御するように、<xref:System.Windows.Forms.MonthCalendar>コントロールと<xref:System.Windows.Forms.CheckedListBox>コントロール。 
 
-高 DPI 認識は、オプトイン機能です。既定では、値`DpiAwareness`は`false`します。 DPI 認識にこのキーの値を設定して Windows フォームのサポートにオプトインできます`PerMonitorV2`アプリケーション構成ファイルにします。 DPI 認識が有効になっている場合、個々 のすべての DPI 機能も有効にします。 以下に例を示します。
+高 DPI 認識は、オプトイン機能です。既定では、値`DpiAwareness`は`false`します。 DPI 認識にこのキーの値を設定して Windows フォームのサポートにオプトインできます`PerMonitorV2`アプリケーション構成ファイルにします。 DPI 認識が有効になっている場合、個々 のすべての DPI 機能も有効にします。 次の設定があります。
 
 - DPI によって制御される、メッセージの変更、`DisableDpiChangedMessageHandling`キー。
 

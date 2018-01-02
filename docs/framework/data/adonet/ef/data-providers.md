@@ -13,17 +13,18 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f52ab1be62f6e196bc1c8aa8874d5aa440ba606f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f9afc2798a4d23425f7308445f96dc87b5159c97
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-framework-data-providers"></a>Entity Framework データ プロバイダー
 ここでは、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] をサポートするデータ プロバイダーについて説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [Entity Framework の EntityClient プロバイダー](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)  
+ [Entity Framework 用の EntityClient プロバイダー](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)  
  EntityClient データ プロバイダーについて説明します。 このプロバイダーは、データ モデルに対するクエリを正規コマンド ツリーに変換します。 すると、[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 用の [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] データ プロバイダーが、このコマンド ツリーを消費できるようになります。  
   
  [Entity Framework 用 SqlClient](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
@@ -36,5 +37,5 @@ ms.lasthandoff: 10/18/2017
  [Entity Framework 用のサード パーティ プロバイダー](http://go.microsoft.com/fwlink/?LinkId=143699)  
  現在、Entity Framework 用として公開されているサードパーティのデータ プロバイダーの一覧。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ プロバイダーの操作](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b3b097f9bca790d1f19da9d75f834c6277507d8d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: efaa9f3e72af6f5ed948b974920564188ae42b44
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-and-linq-to-dataset"></a>データ バインディングと LINQ to DataSet
 *データ バインディング*アプリケーションの UI とビジネス ロジックの間の接続を確立するプロセスです。 バインドが適切に設定され、データから適切な通知が提供される場合、データの値が変更されると、そのデータにバインドされている要素に変更が自動的に反映されます。 <xref:System.Data.DataSet> はメモリ内データ表現であり、含まれているデータ ソースとは関係なく、一貫性のあるリレーショナル プログラミング モデルを提供します。 ADO.NET 2.0 の <xref:System.Data.DataView> では、<xref:System.Data.DataTable> に格納されているデータの並べ替えとフィルター処理を行うことができます。 この機能は、データ バインド アプリケーションで一般に使用されます。 <xref:System.Data.DataView> を使用すると、さまざまな並べ替え順序を使用してテーブルのデータを公開したり、行の状態やフィルター式に基づいてデータをフィルター処理したりできます。 詳細については、<xref:System.Data.DataView>オブジェクトを参照してください[Dataview](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)です。  
@@ -27,7 +28,7 @@ ms.lasthandoff: 10/18/2017
  <xref:System.Data.DataView> はクエリ自体を表すもので、クエリに基づくビューではありません。 単純なデータ バインド モデルを提供する場合、<xref:System.Data.DataView> は、<xref:System.Windows.Forms.DataGrid> や <xref:System.Windows.Forms.DataGridView> などの UI コントロールにバインドされます。 当該テーブルの既定のビューを提供する場合、<xref:System.Data.DataView> は、<xref:System.Data.DataTable> から作成することもできます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [DataView オブジェクトを作成します。](../../../../docs/framework/data/adonet/creating-a-dataview-object-linq-to-dataset.md)  
+ [DataView オブジェクトの作成](../../../../docs/framework/data/adonet/creating-a-dataview-object-linq-to-dataset.md)  
  <xref:System.Data.DataView> の作成に関する情報を提供します。  
   
  [DataView によるフィルター処理](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)  
@@ -42,8 +43,8 @@ ms.lasthandoff: 10/18/2017
  [DataView のパフォーマンス](../../../../docs/framework/data/adonet/dataview-performance.md)  
  <xref:System.Data.DataView> およびパフォーマンスに関する情報を提供します。  
   
- [方法: DataView オブジェクトを Windows フォーム DataGridView コントロールにバインド](../../../../docs/framework/data/adonet/how-to-bind-a-dataview-object-to-a-winforms-datagridview-control.md)  
+ [方法 : DataView オブジェクトを Windows フォーム DataGridView コントロールにバインドする](../../../../docs/framework/data/adonet/how-to-bind-a-dataview-object-to-a-winforms-datagridview-control.md)  
  <xref:System.Data.DataView> オブジェクトを <xref:System.Windows.Forms.DataGridView> にバインドする方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラミング ガイド](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

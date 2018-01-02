@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 88e968d025c959ec33674a9d8edb5e63341433ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 302ccb3d95fc982ec7950dc7808dce61b263c481
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcookiehandlergt"></a>&lt;cookieHandler&gt;
 構成、<xref:System.IdentityModel.Services.CookieHandler>を<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM) は、読み取りし、書き込みの cookie を使用します。  
@@ -92,7 +93,7 @@ ms.lasthandoff: 11/21/2017
 <cookieHandler requireSsl="false" />  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Services.CookieHandler>  
  <xref:System.IdentityModel.Services.ChunkedCookieHandler>  
  <xref:System.IdentityModel.Services.SessionAuthenticationModule>

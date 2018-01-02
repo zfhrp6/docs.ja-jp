@@ -22,11 +22,12 @@ caps.latest.revision: "32"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6609f30844421f94965fbe05114db96ed8edbb31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ac4b6fc2ae36d848306178f281cceeeb0654ec03
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>チュートリアル : 拡張性のあるアプリケーションの作成
 このチュートリアルでは、簡単な電卓の機能を実行するアドイン用のパイプラインを作成する方法について説明します。 実際のシナリオでは; は示しません代わりに、パイプラインとどのように追加のサービスを提供できるホストの基本機能を示します。  
@@ -362,9 +363,9 @@ ms.lasthandoff: 11/21/2017
   
 4.  型**終了**キーを押すと、 **Enter**アプリケーションを閉じるにはキー。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル: ホスト変更時の旧バージョンとの互換性を有効にします。](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
  [チュートリアル: アドインとホスト間でのコレクションの受け渡し](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)  
  [パイプラインの開発要件](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
  [コントラクト、ビュー、およびアダプター](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c)  
- [Pipeline Development](../../../docs/framework/add-ins/pipeline-development.md)
+ [パイプライン開発](../../../docs/framework/add-ins/pipeline-development.md)

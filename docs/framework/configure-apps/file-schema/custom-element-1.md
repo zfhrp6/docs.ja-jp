@@ -10,11 +10,12 @@ ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 496967bc3638344d2b39d428b85270b575b325ed
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8ee722c7d5db9d58ab1a91f4b1299912981510af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>SingleTagSectionHandler のカスタム要素
 
@@ -45,7 +46,7 @@ ms.lasthandoff: 10/18/2017
 
 ## <a name="remarks"></a>コメント
 
-**\<SectionName >**要素は、カスタムの要素によって定義された、 [ **\<セクション >** ](~/docs/framework/configure-apps/file-schema/section-element.md)にタグを付ける、 [ **\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)要素。 構成システムを返します、<xref:System.Collections.IDictionary>オブジェクトを呼び出すとき<xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>です。
+ **\<SectionName >**要素は、カスタムの要素によって定義された、 [ **\<セクション >** ](~/docs/framework/configure-apps/file-schema/section-element.md)にタグを付ける、 [ **\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)要素。 構成システムを返します、<xref:System.Collections.IDictionary>オブジェクトを呼び出すとき<xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>です。
 
 ## <a name="example"></a>例
 

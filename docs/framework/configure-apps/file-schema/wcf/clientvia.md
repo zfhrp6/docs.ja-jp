@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3782eb9cbe793fef450c8b1c58456a1d4f7b0b94
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7a1870a8c331aae16ab14da62c64d6fb15ecd3bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltclientviagt"></a>&lt;clientVia&gt;
 トランスポート チャネルの作成対象となる URI を指定します。 詳細については、「<xref:System.ServiceModel.Description.ClientViaBehavior>」を参照してください。  
@@ -52,6 +53,6 @@ ms.lasthandoff: 12/02/2017
 |-------------|-----------------|  
 |[\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|エンドポイントの動作を指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ClientViaElement>  
  <xref:System.ServiceModel.Description.ClientViaBehavior>

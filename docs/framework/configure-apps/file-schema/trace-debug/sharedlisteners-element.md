@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 7ab96ad43248517dca99bff176be7edfab8d3ced
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: aef29e6107a2f441d8c1a6826b16f0f0c0b56973
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsharedlistenersgt-element"></a>&lt;sharedListeners&gt;要素
 任意の source 要素または trace 要素が参照できるリスナーを含みます。  これらのリスナーは、既定では、トレースを受け取りません、実行時にこれらのリスナーを取得することはできません。 共有リスナーとして識別されたリスナーは、名前でソースまたはカスタム トレースに追加できます。  
@@ -98,7 +99,7 @@ ms.lasthandoff: 11/21/2017
 </configuration></system.diagnostics>   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.TraceListener>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [トレース リスナー](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

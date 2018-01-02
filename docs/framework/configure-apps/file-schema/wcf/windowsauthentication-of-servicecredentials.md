@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8af7d89fdf09316594bc8ef3433e2b47e8fb0a7e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2b6043b35ea9dbed1e1e6e170035436038334b34
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwindowsauthenticationgt-of-ltservicecredentialsgt"></a>&lt;serviceCredentials&gt; の &lt;windowsAuthentication&gt;
 Windows サービス資格情報の設定を指定します。  
@@ -59,7 +60,7 @@ Windows サービス資格情報の設定を指定します。
 ## <a name="remarks"></a>コメント  
  匿名の Windows ユーザーのアクセスを許可するかどうかを指定するには、この要素を使用して、`allowAnonymousLogons` 属性を設定します。 また、`includeWindowsGroups` 属性を設定すると、ユーザーが属するグループの情報を AuthorizationContext に含めるかどうかも指定できます。 この属性が `true` (既定値) に設定されている場合、サービスはクライアントが属している Windows グループを特定できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.WindowsServiceElement>  
  <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.WindowsAuthentication%2A>  
  <xref:System.ServiceModel.Description.ServiceCredentials.WindowsAuthentication%2A>  

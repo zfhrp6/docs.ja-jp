@@ -18,11 +18,12 @@ caps.latest.revision: "3"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: d93a18b17e0d6b8e413903fb84dc6b427d94f6af
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3581c8079132de5f1faad4a01e6b43c8e4833316
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-settings-schema"></a>アプリケーション設定スキーマ
 
@@ -53,8 +54,8 @@ ms.lasthandoff: 10/18/2017
 
 | 属性        | 説明 |
 | ---------------- | ----------- |
-| **name**         | 必須です。 設定の一意の ID。 Visual Studio で作成した設定は、名前で保存`ProjectName.Properties.Settings`です。 |
-| **serializedAs** | 必須です。 テキスト値をシリアル化するために使用する形式。 次の値を指定できます。<br><br>- `string`. 使用して文字列として値がシリアル化、<xref:System.ComponentModel.TypeConverter>です。<br>- `xml`. XML シリアル化を使用して、値がシリアル化されます。<br>- `binary`. 値は、バイナリのシリアル化を使用して、テキスト エンコードされたバイナリとしてシリアル化します。<br />- `custom`. 設定プロバイダーは、この設定の固有の情報しシリアル化し、逆シリアル化されます。 |
+| **name**         | 必須。 設定の一意の ID。 Visual Studio で作成した設定は、名前で保存`ProjectName.Properties.Settings`です。 |
+| **serializedAs** | 必須。 テキスト値をシリアル化するために使用する形式。 次の値を指定できます。<br><br>- `string`. 使用して文字列として値がシリアル化、<xref:System.ComponentModel.TypeConverter>です。<br>- `xml`. XML シリアル化を使用して、値がシリアル化されます。<br>- `binary`. 値は、バイナリのシリアル化を使用して、テキスト エンコードされたバイナリとしてシリアル化します。<br />- `custom`. 設定プロバイダーは、この設定の固有の情報しシリアル化し、逆シリアル化されます。 |
 
 ## <a name="value-element"></a>\<値 > 要素
 

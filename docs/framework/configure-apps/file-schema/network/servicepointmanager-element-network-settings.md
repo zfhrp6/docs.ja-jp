@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 85ccad3e2c3b237e286f3737589a5e58994521bf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 38ffe6728ca05022caca8f5973b546f2b17412d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicepointmanagergt-element-network-settings"></a>&lt;servicePointManager&gt;要素 (ネットワーク設定)
 ネットワーク リソースへの接続を構成します。  
@@ -76,7 +77,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.ServicePointManager>  
  <xref:System.Net.Security.EncryptionPolicy>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -13,16 +13,17 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ba2475175fb6e25829c6ffd4d7393b3e7be7f8a1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a6e215b423847151639b8e1b32b9a343afca750f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltendpointbehaviorsgt"></a>&lt;endpointBehaviors&gt;
 この構成セクションは、特定のエンドポイントに対して定義されたすべての動作を表します。 クライアントの動作の構成の詳細については、次を参照してください。[クライアントの実行時の動作を指定する](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)と[クライアントの動作を構成する](../../../../../docs/framework/wcf/configuring-client-behaviors.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.EndpointBehaviorElementCollection>  
  <xref:System.ServiceModel.Configuration.EndpointBehaviorElement>  
  [クライアントのランタイム動作の指定](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)  

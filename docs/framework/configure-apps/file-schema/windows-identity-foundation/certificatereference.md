@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: c8acf4b6d6e6e8a0fcf7d73139a1d2c5ea03f063
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: fd0d4742a162000d438851cef9c00e21368b7ba1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcertificatereferencegt"></a>&lt;certificateReference&gt;
 検索し、証明書ストアで X.509 証明書の検証に使用される設定を指定します。  
@@ -52,11 +53,11 @@ ms.lasthandoff: 10/18/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|storeName|X.509 証明書ストアの名前。 既定値は"My"です。 省略可能です。|  
-|storeLocation|A <xref:System.Security.Cryptography.X509Certificates.StoreLocation> X.509 証明書ストアの場所を指定する値。 既定値は、"LocalMachine"です。 省略可能です。|  
-|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType>を実行する検索の種類を指定する値。 既定値は、「findbysubjectdistinguishedname です」です。 省略可能です。|  
-|findValue|X.509 証明書ストアで検索する値。 省略可能です。|  
-|isChainIncluded|証明書チェーンを使用して検証を実行するかどうかを指定します。 既定値は"true"です。検証は、証明書チェーンを使用して実行されます。 省略可能です。|  
+|storeName|X.509 証明書ストアの名前。 既定値は"My"です。 任意。|  
+|storeLocation|A <xref:System.Security.Cryptography.X509Certificates.StoreLocation> X.509 証明書ストアの場所を指定する値。 既定値は、"LocalMachine"です。 任意。|  
+|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType>を実行する検索の種類を指定する値。 既定値は、「findbysubjectdistinguishedname です」です。 任意。|  
+|findValue|X.509 証明書ストアで検索する値。 任意。|  
+|isChainIncluded|証明書チェーンを使用して検証を実行するかどうかを指定します。 既定値は"true"です。検証は、証明書チェーンを使用して実行されます。 任意。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  

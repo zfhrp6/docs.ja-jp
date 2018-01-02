@@ -22,11 +22,12 @@ caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bfea438ec19303c35ad9d7a2816cb7b9473a00c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dffff7fefa80f420e61045b21b0e0c1a170e2911
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linkedconfiguration-element"></a>\<linkedConfiguration > 要素
 
@@ -60,10 +61,10 @@ ms.lasthandoff: 10/18/2017
 
 ## <a name="remarks"></a>コメント
 
-**\<LinkedConfiguration >**要素は、サービス コンポーネントのアセンブリの簡略化します。 アセンブリを使用するアプリケーションの構成ファイルを使用できる 1 つまたは複数のアプリケーションでは、既知の場所に存在する構成ファイルがあるアセンブリを使用する場合、  **\<linkedConfiguration >**構成情報を直接含むのではなく、アセンブリの構成ファイルを含める要素。 コンポーネント アセンブリが処理された場合は、アセンブリを使用するすべてのアプリケーションに更新された構成情報を提供一般的な構成ファイルを更新します。
+ **\<LinkedConfiguration >**要素は、サービス コンポーネントのアセンブリの簡略化します。 アセンブリを使用するアプリケーションの構成ファイルを使用できる 1 つまたは複数のアプリケーションでは、既知の場所に存在する構成ファイルがあるアセンブリを使用する場合、  **\<linkedConfiguration >**構成情報を直接含むのではなく、アセンブリの構成ファイルを含める要素。 コンポーネント アセンブリが処理された場合は、アセンブリを使用するすべてのアプリケーションに更新された構成情報を提供一般的な構成ファイルを更新します。
 
 > [!NOTE]
-> **\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。
+>  **\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。
 
 次の規則は、リンクされた構成ファイルの使用を制御します。
 
@@ -75,7 +76,7 @@ ms.lasthandoff: 10/18/2017
 
 - すべてのリンクされた構成ファイルを結合し、1 つのファイルの動作と同様に、 `#include` C/C++ のディレクティブ。
 
-- **\<LinkedConfiguration >**要素がアプリケーション構成ファイルでのみ使用できます。 では無視されます*Machine.config*です。
+-  **\<LinkedConfiguration >**要素がアプリケーション構成ファイルでのみ使用できます。 では無視されます*Machine.config*です。
 
 - 循環参照が検出され、終了します。 つまり場合、  **\<linkedConfiguration >**ループを形成する一連の構成ファイルの要素、ループが検出され、停止します。
 

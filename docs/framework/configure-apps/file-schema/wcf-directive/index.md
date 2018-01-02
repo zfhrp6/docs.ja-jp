@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f91e4ac7b74b0ee3ab92e8ae59fe0f20e8f66287
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 34ea3b412af75f136255c7e95cc4f321bafe075b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-directive-syntax"></a>WCF ディレクティブ構文
 コンパイラに指示するために .svc ファイルの [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] ディレクティブによって使用される設定を指定します。 各ディレクティブには、そのディレクティブに固有な 1 つ以上の (値と対にした) 属性を含めることができます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] には [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) ディレクティブだけがあります。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 12/02/2017
  [方法 : WAS で WCF サービスをホストする](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
  Windows プロセス アクティブ化サービス (WAS) でサービスをホストするときの @ServiceHost ディレクティブの使用方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ホスティング](../../../../../docs/framework/wcf/feature-details/hosting.md)  
- [インターネット インフォメーション サービスをホストしています。](../../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [インターネット インフォメーション サービスでのホスティング](../../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
  [Windows プロセス アクティブ化サービスでのホスティング](../../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)

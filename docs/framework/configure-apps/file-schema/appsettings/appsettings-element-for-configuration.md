@@ -12,11 +12,12 @@ ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cb59120d88816ea193bd8588b152d6b848b682d2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cebb9ba7ebeb483233276324289a4ddc5a0bc381
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="appsettings-element-for-configuration"></a>\<appSettings > 要素を\<構成 >
 
@@ -55,11 +56,11 @@ ms.lasthandoff: 10/18/2017
 
 ## <a name="remarks"></a>コメント
 
-**\<AppSettings >**要素がデータベース接続文字列、ファイルのパス、XML Web サービス Url の他のカスタム構成情報など、カスタム アプリケーションの構成情報を格納します。アプリケーション。 指定されたキーと値のペア、  **\<appSettings >**要素は、コードを使用して、<xref:System.Configuration.ConfigurationSettings>クラスです。
+ **\<AppSettings >**要素がデータベース接続文字列、ファイルのパス、XML Web サービス Url の他のカスタム構成情報など、カスタム アプリケーションの構成情報を格納します。アプリケーション。 指定されたキーと値のペア、  **\<appSettings >**要素は、コードを使用して、<xref:System.Configuration.ConfigurationSettings>クラスです。
 
 使用することができます、**ファイル**属性、  **\<appSettings >**の要素、 *Web.config*とアプリケーション構成ファイル。 この属性で指定された設定を上書きまたは追加の設定を提供する構成ファイルを指定する、  **\<appSettings >**要素。 **ファイル**属性をソース コントロール チーム開発などのシナリオで、ユーザーがアプリケーション構成ファイルで指定されたプロジェクトの設定をオーバーライドするときに使用できます。
 
-指定された構成ファイル、**ファイル**属性のルート ノードが必要です**\<appSettings >**なく**\<構成>**。
+指定された構成ファイル、**ファイル**属性のルート ノードが必要です **\<appSettings >**なく**\<構成 >**.
 
 ## <a name="example"></a>例
 

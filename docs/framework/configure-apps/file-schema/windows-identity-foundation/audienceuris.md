@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 3ce884c19d205df4727dcce96ffdf34144ff1dd6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 69c96698b309a789b4527c76e1fe8b8b99811a19
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaudienceurisgt"></a>&lt;Audienceuri&gt;
 証明書利用者 (RP) の許容可能な識別子 Uri のセットを指定します。 許可されている対象 Uri のいずれかのスコープがない限り、トークンは承認されません。  
@@ -53,7 +54,7 @@ ms.lasthandoff: 10/18/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|モード|<xref:System.IdentityModel.Selectors.AudienceUriMode>着信トークンに対象者制限を適用するかどうかを指定する値。 使用可能な値は、「常に」、"Never"、"BearerKeyOnly"です。 既定値は、「常に」です。 省略可能です。|  
+|モード|<xref:System.IdentityModel.Selectors.AudienceUriMode>着信トークンに対象者制限を適用するかどうかを指定する値。 使用可能な値は、「常に」、"Never"、"BearerKeyOnly"です。 既定値は、「常に」です。 任意。|  
   
 ### <a name="child-elements"></a>子要素  
   

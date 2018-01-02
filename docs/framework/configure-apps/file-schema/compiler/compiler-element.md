@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 8d2562bb37413cd07b4548bbf2bad0b6a9aedbc5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2ef50301a5188193cc13cd0e657f53593ef0d93e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcompilergt-element"></a>&lt;コンパイラ&gt;要素
 言語プロバイダーのコンパイラ構成属性を指定します。  
@@ -105,7 +106,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.CodeDom.Compiler.CompilerInfo>  
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  

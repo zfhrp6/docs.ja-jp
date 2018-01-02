@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 34acc21230650fe5b8da2f81fd176c253c57f69d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 13d79a52690f8262b08c8510e1f78b7efbf3adab
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltextensionsgt"></a>&lt;拡張機能&gt;
 この構成要素には、標準の探索可能なメタデータと共に発行する必要のあるカスタム メタデータ (EPR、ContractTypeName、BindingName、Scope、ListenURI) を含む XML 要素のコレクションが格納されます。 この構成要素を使用する場合の例を次に示します。  
@@ -55,5 +56,5 @@ ms.lasthandoff: 12/02/2017
 </behaviors>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

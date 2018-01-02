@@ -15,11 +15,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 44bd6297142b6f29d93e9a3bebdb89d32d4bf46a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ed01035d7d5b154ebc6541eb6ac3dbae6a413fbc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltenableampmparseadjustmentgt-element"></a>&lt;EnableAmPmParseAdjustment&gt;要素
 日時解析メソッドが 1 日、月、1 時間、および AM/PM 指定子を含む日付文字列を解析するルールの調整済みセットを使用するかどうかを判断します。  
@@ -91,6 +92,6 @@ ms.lasthandoff: 11/21/2017
 |en-US|2017 5/1/4時 00分: 00 AM|4/10/2017 年 6時 00分: 00 AM|  
 |en-GB|5/1/2017 6:00:00|10/4/2017 6:00:00|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<ランタイム > 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)  
  [\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)

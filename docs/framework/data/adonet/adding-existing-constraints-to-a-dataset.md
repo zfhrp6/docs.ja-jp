@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0e457113eff471c620ccdbf78337d2013d7a62bb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fd760cf51aa0f3e89e49831b1aa165e62b321d20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adding-existing-constraints-to-a-dataset"></a>DataSet への既存の制約の追加
 **塗りつぶし**のメソッド、 **DataAdapter**塗りつぶします、<xref:System.Data.DataSet>のみテーブルの列およびデータ ソースからの行も制約は一般設定、データ ソースによって、 **を塗りつぶす**メソッドでは、このスキーマ情報には追加されません、**データセット**既定です。 設定する、**データセット**呼び出すかを使用してデータ ソースから既存の主キー制約情報できます、 **FillSchema**のメソッド、 **DataAdapter**、設定や、**MissingSchemaAction**のプロパティ、 **DataAdapter**に**AddWithKey**呼び出す前に**塗りつぶし**です。 これが主キーをにより、内の制約、**データセット**データ ソースに反映します。 外部キー制約情報が含まれていないのように、明示的に作成する必要があります[DataTable の制約](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)です。  
@@ -70,8 +71,8 @@ custAdapter.Fill(custDataSet, "Customers");
 > [!NOTE]
 >  場合、 **FillSchema**のメソッド、 **OleDbDataAdapter**を複数の結果セットを返すコマンドのオブジェクトが呼び出されると、最初の結果セットからスキーマ情報のみが返されます。 ときに複数の結果のスキーマ情報セットを返すを使用して、 **OleDbDataAdapter**を指定することをお勧め、 **MissingSchemaAction**の**AddWithKey**呼び出すときに、スキーマ情報を取得し、**塗りつぶし**メソッドです。  
   
-## <a name="see-also"></a>関連項目  
- [Dataadapter と Datareader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+## <a name="see-also"></a>参照  
+ [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [DataSet、DataTable、および DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

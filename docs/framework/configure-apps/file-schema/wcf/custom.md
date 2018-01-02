@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4e4b96e1274ad59ae5e63e7935d7408afd069a8c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9bcab1e8361448abfe14db8ac38a924c656b9065
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcustomgt"></a>&lt;カスタム&gt;
 ユーザー設定のピア リゾルバー サービスの設定を指定します。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="remarks"></a>コメント  
  この要素は、サービスをホストするピアのエンドポイント アドレスや特定のバインディング設定など、カスタム ピア リゾルバー サービスの基本設定を定義します。 カスタム競合回避モジュールを作成する方法の詳細については、次を参照してください。 [PeerChannel アプリケーションにカスタム競合回避モジュールを追加する](http://msdn.microsoft.com/en-us/12aa3787-2962-439c-ad27-46523c8b0419)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>  
  <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings>  
  <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>  

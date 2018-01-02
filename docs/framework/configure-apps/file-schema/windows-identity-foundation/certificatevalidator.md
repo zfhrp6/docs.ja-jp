@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 74dd0827ee073d57c82729ec1e6a9a672aa1f404
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 98112b3f13ff0b8e4be50f158ce40b048b213248
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcertificatevalidatorgt"></a>&lt;certificateValidator&gt;
 証明書検証のカスタム型を指定します。 場合にのみ、この型が使用される、`certificateValidationMode`の属性、 [ \<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)要素が"Custom"に設定します。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 10/18/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|型|派生するカスタム型を指定します、<xref:System.IdentityModel.Selectors.X509CertificateValidator>クラスです。 設定、`certificateValidationMode`の属性、 [ \<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)要素をこの型を使用するには、"Custom"にします。 指定する方法について、`type`属性は、「[カスタム型の参照](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md)です。 省略可能です。|  
+|型|派生するカスタム型を指定します、<xref:System.IdentityModel.Selectors.X509CertificateValidator>クラスです。 設定、`certificateValidationMode`の属性、 [ \<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)要素をこの型を使用するには、"Custom"にします。 指定する方法について、`type`属性は、「[カスタム型の参照](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md)です。 任意。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  

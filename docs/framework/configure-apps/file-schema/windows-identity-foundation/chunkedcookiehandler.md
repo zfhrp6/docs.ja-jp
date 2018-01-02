@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 906a9e7cafca14dc4ee13dcb9eb9e59736464fd9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c5d526ccd48ea5e822d5d29fb38dacd895c2556c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltchunkedcookiehandlergt"></a>&lt;chunkedCookieHandler&gt;
 構成、<xref:System.IdentityModel.Services.ChunkedCookieHandler>です。 この要素が存在するのみ場合、`mode`の属性、`<cookieHandler>`要素が"Default"または「チャンク」です。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 10/18/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|chunkSize|任意の 1 つの HTTP クッキーを HTTP cookie のデータの文字の最大サイズ。 チャンク サイズを調整するときに注意する必要があります。 Web ブラウザーの cookie とドメインごとに許可される数のサイズに異なる制限されている場合。 元の Netscape 仕様がこれらの制限を規定するなど、: (cookie の値だけでなく、メタデータを含む)、[cookie] ヘッダーあたり 4096 バイトと 20 cookie ドメインごと、300 cookie の合計します。 既定値は 2000 です。 必須です。|  
+|chunkSize|任意の 1 つの HTTP クッキーを HTTP cookie のデータの文字の最大サイズ。 チャンク サイズを調整するときに注意する必要があります。 Web ブラウザーの cookie とドメインごとに許可される数のサイズに異なる制限されている場合。 元の Netscape 仕様がこれらの制限を規定するなど、: (cookie の値だけでなく、メタデータを含む)、[cookie] ヘッダーあたり 4096 バイトと 20 cookie ドメインごと、300 cookie の合計します。 既定値は 2000 です。 必須。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  
@@ -72,5 +73,5 @@ ms.lasthandoff: 10/18/2017
 </cookieHandler>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Services.ChunkedCookieHandler>

@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 83244e1df239110d86367423b91458aefb5d07a5
-ms.sourcegitcommit: 5bfcb8d341239df251351f318038d31cdc9159d7
+ms.workload: dotnet
+ms.openlocfilehash: 9cc68f4be869a4773b8a6b932d1f6363855fe584
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt;要素
 <xref:System.AppContext> クラスで使用される、新機能に対するオプトアウト メカニズムを指定するスイッチを 1 つまたは複数定義します。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 12/15/2017
   
 ### <a name="value-attribute"></a>属性の値  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |"名前 = 値"|値と共に定義済みのスイッチの名前 (`true`または`false`)。 複数のスイッチの名前/値ペアをセミコロンで区切られます (「;」) です。 .NET Framework でサポートされている定義済みのスイッチ名の一覧は、「解説」セクションを参照してください。|  
   
@@ -139,7 +140,7 @@ ms.lasthandoff: 12/15/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.AppContext?displayProperty=nameWithType>  
  [\<ランタイム > 要素](runtime-element.md)  
  [\<configuration> 要素](../configuration-element.md)

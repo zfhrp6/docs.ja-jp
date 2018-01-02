@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 0fe32b20b9b0a0217ecef36f65ae1ee4084e92ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 97eab03079ac7881e69ba69d324287d287eb4ecf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt-element-for-connectionmanagement-network-settings"></a>&lt;オフ&gt;connectionManagement (ネットワーク設定) の要素
 接続の管理の一覧をクリアします。  
@@ -77,7 +78,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.ServicePoint>  
  <xref:System.Net.ServicePointManager>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

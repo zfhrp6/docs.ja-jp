@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 6b9a5fb2f62c27d278570ad789deab30917bc432
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0c62be73db6d9d0b6ce67dd87021c589502d5fec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltdefaultftpcachepolicygt-element-network-settings"></a>&lt;defaultFtpCachePolicy&gt;要素 (ネットワーク設定)
 かどうか FTP キャッシュがアクティブであり、既定のキャッシュ ポリシーの説明について説明します。  
@@ -89,7 +90,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.Cache>  
  <xref:System.Net.WebRequest>  
  <xref:System.Net.Cache.RequestCacheLevel>  

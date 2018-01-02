@@ -19,11 +19,12 @@ caps.latest.revision: "26"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 7446c43deff85e1a15288c0c847c9e3646870b72
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8abf7868312883e264848b0de1aa803ce3be5839
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="redirecting-assembly-versions"></a>アセンブリ バージョンのリダイレクト
 コンパイル時のバインド参照のリダイレクト先として、.NET Framework アセンブリ、サードパーティ製のアセンブリ、または独自のアプリのアセンブリを指定できます。 アプリで別のバージョンのアセンブリを使用するようにリダイレクトするには、発行者ポリシーを使用する、アプリ構成ファイルを使用する、コンピューター構成ファイルを使用するなど、さまざまな方法があります。 ここでは、.NET Framework でのアセンブリ バインドの動作の仕組みと、構成方法について説明します。  
@@ -161,7 +162,7 @@ ms.lasthandoff: 11/21/2017
 </assemblyBinding>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: 自動バインディング リダイレクトを有効/無効にする](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)  
  [\<bindingRedirect > 要素](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)  
  [アセンブリ バインディング リダイレクトのセキュリティ アクセス許可](../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)  
