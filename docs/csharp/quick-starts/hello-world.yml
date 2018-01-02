@@ -1,5 +1,4 @@
-### YamlMime:YamlDocument
-documentType: Tutorial
+### YamlMime:Tutorial
 title: Hello C#
 metadata:
   title: "Hello C#。 C# 言語の最初の導入です。"
@@ -7,34 +6,100 @@ metadata:
   audience: Developer
   level: Beginner
   nextTutorialHref: numbers-in-csharp
-  nextTutorialTitle: "C# の数値"
+  nextTutorialTitle: Numbers in C#
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: ce1791bd7949c89269b1051d15765f5efd273e7c
-  ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+  ms.openlocfilehash: e0ba04029605db719a06babedb989b189a478f54
+  ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 12/07/2017
+  ms.lasthandoff: 12/13/2017
 items:
 - durationInMinutes: 1
-  content: "このクイック スタートでは C# を対話形式で学習できます。ブラウザーを使用して C# を記述し、コードをコンパイルして実行した結果を確認します。 このチュートリアルには、\"Hello World\" プログラムを開始する一連のレッスンが含まれています。 これらのレッスンでは、C# 言語の基本を説明します。\n"
+  content: >
+    This quick start teaches you C# interactively, using your browser to write C# and see the results of compiling and running your code. It contains a series of lessons that begin with a "Hello World" program. These lessons teach you the fundamentals of the C# language.
 - title: "最初の C# プログラムの実行"
   durationInMinutes: 2
-  content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し、**[実行]** をクリックします。\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nおめでとうございます!  最初の C# プログラムを実行しました。 これは \"Hello World!\" というメッセージを出力する単純なプログラムです。 <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドを使用してこのメッセージを出力しました。 `Console` は、コンソール ウィンドウを表す型です。 `WriteLine` は、そのテキスト コンソールに 1 行のテキストを出力する `Console` 型の 1 つのメソッドです。\n\n次に進んで、さらに詳しく見てみましょう。 このレッスンの残りの部分では、C# においてテキストを表す `string` 型の機能を確認します。 `Console` 型と同じように、`string` 型にもメソッドがあります。 `string` メソッドはテキストを処理します。 \n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: "Run the following code in the interactive window. To do that, type the following code block in the interactive window and click the **Run** button:\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nCongratulations! You've run your first C# program. It's a simple program that prints the message \"Hello World!\". It used the <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> method to print that message. `Console` is a type that represents the console window. `WriteLine` is a method of the `Console` type that prints a line of text to that text console.\n\nLet's move on and explore more. The rest of this lesson explores working with the `string` type, which represents text in C#. Like the `Console` type, the `string` type has methods. The `string` methods work with text. \n\n> [!NOTE]\n> This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).\n"
 - title: "変数の宣言と使用"
   durationInMinutes: 3
-  content: "最初のプログラムでは、`string` の \"Hello World!\" を 画面に出力しました。 \n\n> [!TIP]\n> C# (または何らかのプログラミング言語) について詳しく学習するに従い、コードを記述する際にミスをすることもあるでしょう。 **コンパイラ**は、そうしたエラーを発見して報告します。 エラー メッセージが出力された場合は、例のコードをよく確認して、対話型ウィンドウで修正すべきコードを見つけます。\n> こうした実習が C# コードの構造を理解するのに役立ちます。 \n\n最初のプログラムは、1 つのメッセージしか出力できません。 **変数**を使用すると、もっと役立つプログラムを記述できます。 **変数**は、同じコードを別の値で実行するのに使用できる記号です。 試してみましょう。 対話型ウィンドウで記述したコードを次のコードに置き換えます。\n\n```csharp\nstring aFriend = \"Bill\";\nConsole.WriteLine(aFriend);\n```\n\n最初の行で変数 `aFriend` を宣言し、その変数に \"Bill\" という値を代入しています。 2 番目の行でその名前を出力しています。\n\n宣言した変数に別の値を代入できます。 この名前を友人の名前に変更できます。 対話型ウィンドウで、先ほど追加したコードのあとに次の 2 行を追加します。\n\n```csharp\naFriend = \"Maria\";\nConsole.WriteLine(aFriend);\n```\n\n`aFriend` 変数に格納された値に基づいて、コードの同じ行に 2 つの異なるメッセージが表示されていることに注目してください。\n\nお気付きかと思いますが、最後の 2 つのメッセージから \"Hello\" という言葉がなくなっています。 修正しましょう。  メッセージを出力する行を次のように変更します。\n\n```csharp\nConsole.WriteLine(\"Hello \" + aFriend);\n```\n\nもう一度 **[実行]** をクリックして結果を確認します。\n\nさらに進めると、`+` を利用して出力する文字列の作成が難しくなります。 文字列補間を利用すれば、より簡潔で読みやすい方法で文字列をつなぎ合わせることができます。\n\n文字列の開始引用符の前に `$` を追加する場合、中かっこの文字列の内部に、`aFriend` 変数など、文字列式を含めることができます。\n\n\n```csharp\nConsole.WriteLine($\"Hello {aFriend}\");\n```\n\nもう一度 **[実行]** をクリックして結果を確認します。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: "Your first program printed the `string` \"Hello World!\" on\nthe screen. \n\n> [!TIP]\n> As you explore C# (or any programming language), you'll\n> make mistakes when you write code. The **compiler** will\n> find those errors and report them to you. When the output\n> contains error messages, look closely at the example code,\n> and the code in the interactive window to see what to fix.\n> That exercise will help you learn the structure of C# code. \n\nYour first program is limited to printing one message. You can write more\nuseful programs by using **variables**. A **variable** is a symbol you can\nuse to run the same code with different values. Let's try it! Replace the\ncode you've written in the interactive window with the following code:\n\n```csharp\nstring aFriend = \"Bill\";\nConsole.WriteLine(aFriend);\n```\n\nThe first line declares a variable, `aFriend` and assigns it a value, \"Bill\". The second line\nprints out the name.\n\nYou can assign different values to any variable you declare. You can change\nthe name to one of your friends. Add these two lines in the interactive window\nfollowing the code you've already added:\n\n```csharp\naFriend = \"Maria\";\nConsole.WriteLine(aFriend);\n```\n\nNotice that the same line of code prints two different messages, based on\nthe value stored in the `aFriend` variable.\n\nYou may have also noticed that the word \"Hello\" was missing in the last two messages. Let's fix\nthat now.  Modify the lines that print the message to the following:\n\n```csharp\nConsole.WriteLine(\"Hello \" + aFriend);\n```\n\nClick **Run** again to see the results.\n\nAs we progress, creating strings to print using `+` becomes cumbersome. String interpolation lets you piece together strings in a more concise and readable way.\n\nIf you add a `$` before the opening quotes of the string, you can then include string expressions, like the `aFriend` variable, inside the string in curly brackets.\n\n\n```csharp\nConsole.WriteLine($\"Hello {aFriend}\");\n```\n\nClick **Run** again to see the results.\n\n> [!NOTE]\n> This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).\n"
 - title: "文字列の処理"
   durationInMinutes: 5
-  content: "先ほどの編集を通して、文字列を使って何ができるかを初めて確認しました。 さらに詳しく見てみましょう。\n\n`+` は C# において演算子と呼ばれるものの 1 つです。 `firstString + secondString` のように文字列に適用すると、1 つ目のテキストに 2 つ目のテキストが続く新しいテキストが作成されます。 これを*文字列の連結*と言います。 文字列変数も含めて、文字列をいくつでも連結できます。  これを試してみます。\n\n```csharp\nstring firstFriend = \"Maria\";\nstring secondFriend = \"Sage\";\nConsole.WriteLine($\"My friends are {firstFriend} and {secondFriend}\");\n```\n\n文字列についてさらに詳しく見ていきます。`Length` を使用して文字列の長さを知ることができます。 `Length` は文字列の**プロパティ**であり、その文字列の文字数を返します。 対話型ウィンドウの下部に次のコードを追加します。\n\n```csharp\nConsole.WriteLine($\"The name {firstFriend} has {firstFriend.Length} letters.\");\nConsole.WriteLine($\"The name {secondFriend} has {secondFriend.Length} letters.\");\n```\n\n> [!TIP]\n> このあたりで、自分で試してみるといいでしょう。 `Console.WriteLine()` を使用して画面にテキストを出力できることを学習しました。 変数を宣言して文字列同士を連結する方法についても学習しました。 対話型ウィンドウで実際に確認してみてください。 自分でより多くのメッセージを記述してみるとよいでしょう。 `+` 演算子を使用して文字列を作成してください。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: >
+    Your last edit was our first look at what you can do with strings. Let's explore more.
+
+
+    The `+` is called an operator in C#. When applied to strings like `firstString + secondString`, a new string is created with the text from the first followed by the text from the second. This is referred to as *string concatenation*. You can combine any number of strings, including string variables.  Try this:
+
+
+    ```csharp
+
+    string firstFriend = "Maria";
+
+    string secondFriend = "Sage";
+
+    Console.WriteLine($"My friends are {firstFriend} and {secondFriend}");
+
+    ```
+
+
+    As you explore more with strings, you can find the length of a string using `Length`. `Length` is a **property** of a string and it returns the number of characters in that string. Add the following code at the bottom of the interactive window:
+
+
+    ```csharp
+
+    Console.WriteLine($"The name {firstFriend} has {firstFriend.Length} letters.");
+
+    Console.WriteLine($"The name {secondFriend} has {secondFriend.Length} letters.");
+
+    ```
+
+
+    > [!TIP]
+
+    > This is a good time to explore on your own. You've learned that `Console.WriteLine()`
+
+    > writes text to the screen. You've learned how to declare variables and
+
+    > concatenate strings together. Experiment in the interactive window. Write
+
+    > some more messages yourself. Build strings using the `+` operator.
+
+
+    > [!NOTE]
+
+    > This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).
 - title: "文字列の追加操作"
   durationInMinutes: 5
-  content: "メッセージを出力するのに <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> **メソッド**を使用してきました。 **メソッド**は、何らかのアクションを実装したコードのブロックです。 メソッドに名前があることで、それにアクセスできます。 \n\n`string` 型には多くの便利なメソッドがあります。 <xref:System.String.Trim%2A> メソッドと、それに関連した <xref:System.String.TrimStart%2A> と <xref:System.String.TrimEnd%2A> メソッドを使ってみましょう。 これらのメソッドは、先頭と末尾にあるスペースを削除します。\n\n```csharp\nstring message = \"      Hello World!       \";\nConsole.WriteLine($\"[{message}]\");\n\nstring trimmedMessage = message.TrimStart();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n\ntrimmedMessage = message.TrimEnd();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n\ntrimmedMessage = message.Trim();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n```\n\nこのサンプルでは、文字列を処理するための重要な概念のいくつかを説明しています。 文字列を操作するメソッドは、定位置に変更を加えるのではなく、新しい文字列オブジェクトを返します。 `Trim` メソッドのいずれかに対する各呼び出しは新しい文字列を返すが元のメッセージを変更しない、ということが確認できます。\n\n文字列を処理するメソッドは他にもあります。 たとえば、エディターやワード プロセッサで検索と置換のコマンドを使用したことがあるかもしれません。 <xref:System.String.Replace%2A> メソッドはそれと似た処理を `string` で行います。 このメソッドは部分文字列を検索し、それを別のテキストに置き換えます。 <xref:System.String.Replace%2A> メソッドは、2 つの**パラメーター**を受け取ります。 パラメーターは丸かっこ内の文字列です。 最初の文字列は、検索対象のテキストです。 2 つ目の文字列は、置換後のテキストです。 ご自分で試してみてください。 このコードを追加します。\n\n```csharp\nstring message = \"Hello World!\";\nConsole.WriteLine(message);\nmessage = message.Replace(\"Hello\", \"Greetings\");\nConsole.WriteLine(message);\n```\n\nその他にも役立つメソッドが 2 つあり、1 つは文字列のすべてを大文字にし、もう 1 つは文字列のすべてを小文字にします。 次のコードを試してみてください。\n\n```csharp\nstring message = \"Hello World!\";\nConsole.WriteLine(message);\nConsole.WriteLine(message.ToUpper());\nConsole.WriteLine(message.ToLower());\n```\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: "You've been using a **method**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, to print messages. A **method** is a block of code that implements some action. It has a name, so you can access it. \n\nThe `string` type has many useful methods. Let's explore the <xref:System.String.Trim%2A> method, and related methods <xref:System.String.TrimStart%2A> and <xref:System.String.TrimEnd%2A>. These methods remove leading and trailing spaces:\n\n```csharp\nstring message = \"      Hello World!       \";\nConsole.WriteLine($\"[{message}]\");\n\nstring trimmedMessage = message.TrimStart();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n\ntrimmedMessage = message.TrimEnd();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n\ntrimmedMessage = message.Trim();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n```\n\nThis sample reinforces a couple of important concepts for working with strings. The methods that manipulate strings return new string objects rather than making modifications in place. You can see that each call to any of the `Trim` methods returns a new string, but does not change the original message.\n\nThere are other methods available to work with a string. For example, you've probably used a search and replace command in an editor or word processor. The <xref:System.String.Replace%2A> method does something similar in a `string`. It searches for a substring, and replaces it with different text. The <xref:System.String.Replace%2A> method takes two **parameters**. These are the strings between the parentheses. The first string is the text to search for. The second string is the text to replace it with. Try it for yourself. Add this code:\n\n```csharp\nstring message = \"Hello World!\";\nConsole.WriteLine(message);\nmessage = message.Replace(\"Hello\", \"Greetings\");\nConsole.WriteLine(message);\n```\n\nTwo other useful methods make a string ALL CAPS or all lower case. Try the following code:\n\n```csharp\nstring message = \"Hello World!\";\nConsole.WriteLine(message);\nConsole.WriteLine(message.ToUpper());\nConsole.WriteLine(message.ToLower());\n```\n\n> [!NOTE]\n> This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).\n"
 - title: "検索文字列"
   durationInMinutes: 10
-  content: "*検索と置換*の演算子は他にも、文字列内のテキストを検索できます。 検索には <xref:System.String.Contains%2A> メソッドを使用できます。 これにより、文字列内に部分文字列が含まれているかどうかを確認できます。 次のコードを試してみて、<xref:System.String.Contains%2A> を確認してください。\n\n```csharp\nstring message = \"You say goodbye, and I say hello\";\nConsole.WriteLine(message.Contains(\"goodbye\"));\nConsole.WriteLine(message.Contains(\"greetings\"));\n```\n\n<xref:System.String.Contains%2A> メソッドは**ブール値**を返し、検索した文字列が見つかったかどうかを知らせます。 **ブール値**は `true` か `false` どちらかの値を格納します。 **ブール値**については、この後のレッスンで詳しく学習します。\n\n***課題***\n\n似たような 2 つのメソッドがあり、<xref:System.String.StartsWith%2A> と <xref:System.String.EndsWith%2A> も文字列内の部分文字列を検索します。 これらは文字列の先頭または末尾の部分文字列を検索します。 先述のサンプルを変更して、<xref:System.String.Contains%2A> の代わりに <xref:System.String.StartsWith%2A> と <xref:System.String.EndsWith%2A> を使用してみてください。 文字列の先頭にある \"You\" または \"goodbye\" を検索します。 文字列の末尾にある \"hello\" または \"goodbye\" を検索します。\n\n> [!Note]\n> 文字列の末尾にあるテキストをテストするときは、句読点に注意します。 文字列が句点で終わる場合は、末尾に句点を含めた文字列を検索する必要があります。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: "The other part of a *search and replace* operation is to find text in a\nstring. You can use the  <xref:System.String.Contains%2A> method for searching. It\ntells you if a string contains a substring inside it. Try the following\ncode to explore <xref:System.String.Contains%2A>:\n\n```csharp\nstring message = \"You say goodbye, and I say hello\";\nConsole.WriteLine(message.Contains(\"goodbye\"));\nConsole.WriteLine(message.Contains(\"greetings\"));\n```\n\nThe <xref:System.String.Contains%2A> method returns a **boolean** value which tells you if the\nstring you were searching for was found. A **boolean** stores either a `true` or a\n`false` value. You'll learn more about **boolean** values\nin a later lesson.\n\n***Challenge***\n\nThere are two similar methods, <xref:System.String.StartsWith%2A> and <xref:System.String.EndsWith%2A> that also search for sub-strings in a string. These find a substring at the beginning or the\nend of the string. Try to modify the previous sample to use <xref:System.String.StartsWith%2A> and\n<xref:System.String.EndsWith%2A> instead of <xref:System.String.Contains%2A>. Search for \"You\" or \"goodbye\" at the beginning of a string. Search for \"hello\" or \"goodbye\" at the end of a string.\n\n> [!Note]\n> Watch your punctuation when you test for the text at the end of the string. If the string\n> ends with a period, you must check for a string that ends with a period.\n\nYou should get `true` for starting with \"You\" and ending with \"hello\" and false for starting with or ending with \"goodbye\". \n\n> [!NOTE]\n> This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).\n"
 - title: "課題完了"
   durationInMinutes: 3
-  content: "コードは次のようになりましたか?\n\n```csharp\nstring message = \"You say goodbye, and I say hello\";\nConsole.WriteLine(message.StartsWith(\"You\"));\nConsole.WriteLine(message.StartsWith(\"goodbye\"));\n\nConsole.WriteLine(message.EndsWith(\"hello\"));\nConsole.WriteLine(message.EndsWith(\"goodbye\"));\n```\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- content: "\"Hello C#\" クイック スタートはこれで終了です。\n\nこれまでのクイック スタートを、ご自身の開発環境でも行ってください。 ローカルの開発環境の設定手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 設定が完了したら、ローカルの開発環境で [C# の数値](numbers-in-csharp-local.md)を進めてください。\n\n`string` 型の機能の詳細については、「[C# プログラミング ガイド](../programming-guide/index.md)」の[文字列](../programming-guide/strings/index.md)に関するトピックで学習できます。\0"
+  content: >
+    Did you come up with something like this?
+
+
+    ```csharp
+
+    string message = "You say goodbye, and I say hello";
+
+    Console.WriteLine(message.StartsWith("You"));
+
+    Console.WriteLine(message.StartsWith("goodbye"));
+
+
+    Console.WriteLine(message.EndsWith("hello"));
+
+    Console.WriteLine(message.EndsWith("goodbye"));
+
+    ```
+
+
+    > [!NOTE]
+
+    > This online coding experience is in preview mode. If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).
+- content: "You've completed the \"Hello C#\" quick start.\n\nYou can learn more about working with the `string` type in the\n[C# Programming Guide](../programming-guide/index.md) topic on [strings](../programming-guide/strings/index.md).\0"
