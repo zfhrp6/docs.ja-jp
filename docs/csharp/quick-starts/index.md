@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: af7b04969519cce49e9d753993245e1347f596d4
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.openlocfilehash: 4443609c9494ca93cbc5934dd62fedf434599962
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="c-quick-starts"></a>C# クイック スタート #
 
@@ -30,19 +30,19 @@ Hello World レッスンに続くすべてのクイック スタートは、オ�
 
 ## <a name="numbers-in-cnumbers-in-csharpyml"></a>[C# における数値](numbers-in-csharp.yml)
 
-「[C# における数値](numbers-in-csharp.yml)」クイック スタートでは、コンピューターが数値を格納する方法と、異なる数値型で計算を実行する方法について説明します。 丸め処理の基礎と、C# で算術演算を実行する方法を学習します。 このクイック スタートも[コンピューターでローカルで実行する](numbers-in-csharp-local.md)ために使用できます。
+「[C# における数値](numbers-in-csharp.yml)」クイック スタートでは、コンピューターが数値を格納する方法と、異なる数値型で計算を実行する方法について説明します。 丸め処理の基礎と、C# で算術演算を実行する方法を学習します。 このクイック スタートも[コンピューターでローカルで実行するために](numbers-in-csharp-local.md)使用できます。
 
 このクイック スタートでは、「[Hello World](hello-world.yml)」チュートリアルが終了していることを前提としています。
 
 ## <a name="branches-and-loopsbranches-and-loopsyml"></a>[分岐とループ](branches-and-loops.yml)
 
-「[分岐とループ](branches-and-loops.yml)」クイック スタートでは、変数に格納された値に基づいて、コードのさまざまなパスを選択する作業の基礎を説明します。 プログラムが決定して異なる操作を選択する上で基本となる、制御フローの基礎を学習します。 このクイック スタートも[コンピューターでローカルで実行するために](branches-and-loops-local.md)使用できます。
+「[分岐とループ](branches-and-loops.yml)」クイック スタートでは、変数に格納された値に基づいて、コード実行のさまざまなパスを選択する作業の基礎を説明します。 プログラムが決定して異なる操作を選択する上で基本となる、制御フローの基礎を学習します。 このクイック スタートも[コンピューターでローカルで実行するために](branches-and-loops-local.md)使用できます。
 
 この入門レッスンでは、「[Hello World](hello-world.yml)」および「[C# における数値](numbers-in-csharp.yml)」の各レッスンが終了していることを前提としています。
 
 ## <a name="list-collectionlist-collectionyml"></a>[リスト コレクション](list-collection.yml)
 
-「[リスト コレクション](list-collection.yml)」レッスンでは、データのシーケンスを格納するリスト コレクション型について説明します。 項目の追加方法や削除方法、項目の検索方法、項目を削除してリストを並べ替える方法を学習します。 さまざまな種類のリストを紹介します。 このクイック スタートも[コンピューターでローカルで実行するために](arrays-and-collections.md)使用できます。
+「[リスト コレクション](list-collection.yml)」レッスンでは、データのシーケンスを格納するリスト コレクション型について説明します。 項目の追加方法や削除方法、項目の検索方法、リストを並べ替える方法を学習します。 さまざまな種類のリストを紹介します。 このクイック スタートも[コンピューターでローカルで実行するために](arrays-and-collections.md)使用できます。
 
 この入門クイック スタートでは、上記のクイック スタートが終了していることを前提としています。
 
