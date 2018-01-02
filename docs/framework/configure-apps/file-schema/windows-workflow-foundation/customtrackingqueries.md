@@ -12,24 +12,25 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 241684a3a2344d6eb7f3b34c81c581b0ec5130f1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 84c9635b37c592b4d82635deb58880d81d2fb5cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ltcustomtrackingqueriesgt"></a><span data-ttu-id="24892-102">&lt;customTrackingQueries&gt;</span><span class="sxs-lookup"><span data-stu-id="24892-102">&lt;customTrackingQueries&gt;</span></span>
-<span data-ttu-id="24892-103">コード アクティビティで定義するイベントを追跡するために使用する、クエリのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="24892-103">Represents a collection of queries that are used to track events that you define in your code activities.</span></span> <span data-ttu-id="24892-104">追跡参加要素がカスタム追跡レコードを定期受信するには、このクエリが必要です。</span><span class="sxs-lookup"><span data-stu-id="24892-104">The query is necessary for a tracking participant to subscribe to custom tracking records.</span></span>  
+# <a name="ltcustomtrackingqueriesgt"></a><span data-ttu-id="2028f-102">&lt;customTrackingQueries&gt;</span><span class="sxs-lookup"><span data-stu-id="2028f-102">&lt;customTrackingQueries&gt;</span></span>
+<span data-ttu-id="2028f-103">コード アクティビティで定義するイベントを追跡するために使用する、クエリのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="2028f-103">Represents a collection of queries that are used to track events that you define in your code activities.</span></span> <span data-ttu-id="2028f-104">追跡参加要素がカスタム追跡レコードを定期受信するには、このクエリが必要です。</span><span class="sxs-lookup"><span data-stu-id="2028f-104">The query is necessary for a tracking participant to subscribe to custom tracking records.</span></span>  
   
- <span data-ttu-id="24892-105">追跡プロファイルのクエリの詳細については、次を参照してください[追跡プロファイル。](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="24892-105">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
+ <span data-ttu-id="2028f-105">追跡プロファイルのクエリの詳細については、次を参照してください[追跡プロファイル。](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="2028f-105">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
   
-<span data-ttu-id="24892-106">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="24892-106">\<system.serviceModel></span></span>  
-<span data-ttu-id="24892-107">\<追跡 ></span><span class="sxs-lookup"><span data-stu-id="24892-107">\<tracking></span></span>  
-<span data-ttu-id="24892-108">\<trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="24892-108">\<trackingProfile></span></span>  
-<span data-ttu-id="24892-109">\<ワークフロー ></span><span class="sxs-lookup"><span data-stu-id="24892-109">\<workflow></span></span>  
-<span data-ttu-id="24892-110">\<customTrackingQueries ></span><span class="sxs-lookup"><span data-stu-id="24892-110">\<customTrackingQueries></span></span>  
+<span data-ttu-id="2028f-106">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="2028f-106">\<system.serviceModel></span></span>  
+<span data-ttu-id="2028f-107">\<追跡 ></span><span class="sxs-lookup"><span data-stu-id="2028f-107">\<tracking></span></span>  
+<span data-ttu-id="2028f-108">\<trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="2028f-108">\<trackingProfile></span></span>  
+<span data-ttu-id="2028f-109">\<ワークフロー ></span><span class="sxs-lookup"><span data-stu-id="2028f-109">\<workflow></span></span>  
+<span data-ttu-id="2028f-110">\<customTrackingQueries ></span><span class="sxs-lookup"><span data-stu-id="2028f-110">\<customTrackingQueries></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="24892-111">構文</span><span class="sxs-lookup"><span data-stu-id="24892-111">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2028f-111">構文</span><span class="sxs-lookup"><span data-stu-id="2028f-111">Syntax</span></span>  
   
 ```xml  
 <tracking>
@@ -44,26 +45,26 @@ ms.lasthandoff: 12/02/2017
 </tracking>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="24892-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="24892-112">Attributes and Elements</span></span>  
- <span data-ttu-id="24892-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="24892-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2028f-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="2028f-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="2028f-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="2028f-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="24892-114">属性</span><span class="sxs-lookup"><span data-stu-id="24892-114">Attributes</span></span>  
- <span data-ttu-id="24892-115">なし。</span><span class="sxs-lookup"><span data-stu-id="24892-115">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="2028f-114">属性</span><span class="sxs-lookup"><span data-stu-id="2028f-114">Attributes</span></span>  
+ <span data-ttu-id="2028f-115">なし。</span><span class="sxs-lookup"><span data-stu-id="2028f-115">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="24892-116">子要素</span><span class="sxs-lookup"><span data-stu-id="24892-116">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="2028f-116">子要素</span><span class="sxs-lookup"><span data-stu-id="2028f-116">Child Elements</span></span>  
   
-|<span data-ttu-id="24892-117">要素</span><span class="sxs-lookup"><span data-stu-id="24892-117">Element</span></span>|<span data-ttu-id="24892-118">説明</span><span class="sxs-lookup"><span data-stu-id="24892-118">Description</span></span>|  
+|<span data-ttu-id="2028f-117">要素</span><span class="sxs-lookup"><span data-stu-id="2028f-117">Element</span></span>|<span data-ttu-id="2028f-118">説明</span><span class="sxs-lookup"><span data-stu-id="2028f-118">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="24892-119">\<customTrackingQuery ></span><span class="sxs-lookup"><span data-stu-id="24892-119">\<customTrackingQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|<span data-ttu-id="24892-120">コード アクティビティで定義するイベントを追跡するために使用するクエリ。</span><span class="sxs-lookup"><span data-stu-id="24892-120">A query that is used to track events that you define in your code activities.</span></span>|  
+|[<span data-ttu-id="2028f-119">\<customTrackingQuery ></span><span class="sxs-lookup"><span data-stu-id="2028f-119">\<customTrackingQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|<span data-ttu-id="2028f-120">コード アクティビティで定義するイベントを追跡するために使用するクエリ。</span><span class="sxs-lookup"><span data-stu-id="2028f-120">A query that is used to track events that you define in your code activities.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="24892-121">親要素</span><span class="sxs-lookup"><span data-stu-id="24892-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="2028f-121">親要素</span><span class="sxs-lookup"><span data-stu-id="2028f-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="24892-122">要素</span><span class="sxs-lookup"><span data-stu-id="24892-122">Element</span></span>|<span data-ttu-id="24892-123">説明</span><span class="sxs-lookup"><span data-stu-id="24892-123">Description</span></span>|  
+|<span data-ttu-id="2028f-122">要素</span><span class="sxs-lookup"><span data-stu-id="2028f-122">Element</span></span>|<span data-ttu-id="2028f-123">説明</span><span class="sxs-lookup"><span data-stu-id="2028f-123">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="24892-124">\<ワークフロー ></span><span class="sxs-lookup"><span data-stu-id="24892-124">\<workflow></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|<span data-ttu-id="24892-125">によって識別される特定のワークフローのすべてのクエリを格納する構成要素、 **activityDefinitionId**プロパティです。</span><span class="sxs-lookup"><span data-stu-id="24892-125">A configuration element that contains all queries for a specific workflow identified by the **activityDefinitionId** property.</span></span>|  
+|[<span data-ttu-id="2028f-124">\<ワークフロー ></span><span class="sxs-lookup"><span data-stu-id="2028f-124">\<workflow></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|<span data-ttu-id="2028f-125">によって識別される特定のワークフローのすべてのクエリを格納する構成要素、 **activityDefinitionId**プロパティです。</span><span class="sxs-lookup"><span data-stu-id="2028f-125">A configuration element that contains all queries for a specific workflow identified by the **activityDefinitionId** property.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="24892-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="24892-126">See Also</span></span>  
- <span data-ttu-id="24892-127"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="24892-127"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span></span>       
- <span data-ttu-id="24892-128"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="24892-128"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span></span>       
- [<span data-ttu-id="24892-129">ワークフローの追跡とトレース</span><span class="sxs-lookup"><span data-stu-id="24892-129">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [<span data-ttu-id="24892-130">追跡プロファイル</span><span class="sxs-lookup"><span data-stu-id="24892-130">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+## <a name="see-also"></a><span data-ttu-id="2028f-126">参照</span><span class="sxs-lookup"><span data-stu-id="2028f-126">See Also</span></span>  
+ <span data-ttu-id="2028f-127"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="2028f-127"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span></span>       
+ <span data-ttu-id="2028f-128"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="2028f-128"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span></span>       
+ [<span data-ttu-id="2028f-129">ワークフローの追跡とトレース</span><span class="sxs-lookup"><span data-stu-id="2028f-129">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [<span data-ttu-id="2028f-130">追跡プロファイル</span><span class="sxs-lookup"><span data-stu-id="2028f-130">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
