@@ -21,16 +21,17 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a43a0f46532bfb0eeaa4e385946a5aaa1b50eba8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2259eccc3be68f562a0c5b00ffe7fd47bad9a238
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedscopegetchildren-method"></a><span data-ttu-id="69e1f-102">ISymUnmanagedScope::GetChildren メソッド</span><span class="sxs-lookup"><span data-stu-id="69e1f-102">ISymUnmanagedScope::GetChildren Method</span></span>
-<span data-ttu-id="69e1f-103">このスコープの子を取得します。</span><span class="sxs-lookup"><span data-stu-id="69e1f-103">Gets the children of this scope.</span></span>  
+# <a name="isymunmanagedscopegetchildren-method"></a><span data-ttu-id="084d5-102">ISymUnmanagedScope::GetChildren メソッド</span><span class="sxs-lookup"><span data-stu-id="084d5-102">ISymUnmanagedScope::GetChildren Method</span></span>
+<span data-ttu-id="084d5-103">このスコープの子を取得します。</span><span class="sxs-lookup"><span data-stu-id="084d5-103">Gets the children of this scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="69e1f-104">構文</span><span class="sxs-lookup"><span data-stu-id="69e1f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="084d5-104">構文</span><span class="sxs-lookup"><span data-stu-id="084d5-104">Syntax</span></span>  
   
 ```  
 HRESULT GetChildren(  
@@ -40,22 +41,22 @@ HRESULT GetChildren(
         length_is(*pcChildren)] ISymUnmanagedScope* children[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="69e1f-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="69e1f-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="084d5-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="084d5-105">Parameters</span></span>  
  `cChildren`  
- <span data-ttu-id="69e1f-106">[in]A`ULONG32`のサイズを示す、`children`配列。</span><span class="sxs-lookup"><span data-stu-id="69e1f-106">[in] A `ULONG32` that indicates the size of the `children` array.</span></span>  
+ <span data-ttu-id="084d5-106">[in]A`ULONG32`のサイズを示す、`children`配列。</span><span class="sxs-lookup"><span data-stu-id="084d5-106">[in] A `ULONG32` that indicates the size of the `children` array.</span></span>  
   
  `pcChildren`  
- <span data-ttu-id="69e1f-107">[out]ポインター、`ULONG32`子の格納に必要なバッファーのサイズを受け取る。</span><span class="sxs-lookup"><span data-stu-id="69e1f-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the children.</span></span>  
+ <span data-ttu-id="084d5-107">[out]ポインター、`ULONG32`子の格納に必要なバッファーのサイズを受け取る。</span><span class="sxs-lookup"><span data-stu-id="084d5-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the children.</span></span>  
   
  `children`  
- <span data-ttu-id="69e1f-108">[out]返された子の配列。</span><span class="sxs-lookup"><span data-stu-id="69e1f-108">[out] The returned array of children.</span></span>  
+ <span data-ttu-id="084d5-108">[out]返された子の配列。</span><span class="sxs-lookup"><span data-stu-id="084d5-108">[out] The returned array of children.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="69e1f-109">戻り値</span><span class="sxs-lookup"><span data-stu-id="69e1f-109">Return Value</span></span>  
- <span data-ttu-id="69e1f-110">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="69e1f-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="084d5-109">戻り値</span><span class="sxs-lookup"><span data-stu-id="084d5-109">Return Value</span></span>  
+ <span data-ttu-id="084d5-110">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="084d5-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="69e1f-111">要件</span><span class="sxs-lookup"><span data-stu-id="69e1f-111">Requirements</span></span>  
- <span data-ttu-id="69e1f-112">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="69e1f-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="084d5-111">必要条件</span><span class="sxs-lookup"><span data-stu-id="084d5-111">Requirements</span></span>  
+ <span data-ttu-id="084d5-112">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="084d5-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="69e1f-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="69e1f-113">See Also</span></span>  
- [<span data-ttu-id="69e1f-114">ISymUnmanagedScope インターフェイス</span><span class="sxs-lookup"><span data-stu-id="69e1f-114">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)  
- [<span data-ttu-id="69e1f-115">GetParent メソッド</span><span class="sxs-lookup"><span data-stu-id="69e1f-115">GetParent Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getparent-method.md)
+## <a name="see-also"></a><span data-ttu-id="084d5-113">参照</span><span class="sxs-lookup"><span data-stu-id="084d5-113">See Also</span></span>  
+ [<span data-ttu-id="084d5-114">ISymUnmanagedScope インターフェイス</span><span class="sxs-lookup"><span data-stu-id="084d5-114">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)  
+ [<span data-ttu-id="084d5-115">GetParent メソッド</span><span class="sxs-lookup"><span data-stu-id="084d5-115">GetParent Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getparent-method.md)

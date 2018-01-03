@@ -21,14 +21,15 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6051a4c28117a96fd154c874f6bd8081530c982a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0074607188ba55572e469491841ddcfa328c57bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugeditandcontinueerrorinfogeterrorcode-method"></a><span data-ttu-id="116c6-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode メソッド</span><span class="sxs-lookup"><span data-stu-id="116c6-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode Method</span></span>
-<span data-ttu-id="116c6-103">`GetErrorCode` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="116c6-103">`GetErrorCode` is obsolete.</span></span> <span data-ttu-id="116c6-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="116c6-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinueerrorinfogeterrorcode-method"></a><span data-ttu-id="c3b1e-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode メソッド</span><span class="sxs-lookup"><span data-stu-id="c3b1e-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode Method</span></span>
+<span data-ttu-id="c3b1e-103">`GetErrorCode` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="c3b1e-103">`GetErrorCode` is obsolete.</span></span> <span data-ttu-id="c3b1e-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="c3b1e-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="116c6-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="116c6-105">See Also</span></span>  
- [<span data-ttu-id="116c6-106">デバッグのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="116c6-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="c3b1e-105">参照</span><span class="sxs-lookup"><span data-stu-id="c3b1e-105">See Also</span></span>  
+ [<span data-ttu-id="c3b1e-106">デバッグ インターフェイス</span><span class="sxs-lookup"><span data-stu-id="c3b1e-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

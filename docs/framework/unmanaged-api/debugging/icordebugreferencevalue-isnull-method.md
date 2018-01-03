@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f8a7892900149380c979f0bee1a4229407af8c9c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 53eaa411dc405142461de99bc787eba7a5d52db6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugreferencevalueisnull-method"></a><span data-ttu-id="166ca-102">ICorDebugReferenceValue::IsNull メソッド</span><span class="sxs-lookup"><span data-stu-id="166ca-102">ICorDebugReferenceValue::IsNull Method</span></span>
-<span data-ttu-id="166ca-103">この ICorDebugReferenceValue いる場合、null 値は、かどうかを示す値を取得、`ICorDebugReferenceValue`がオブジェクトを指していません。</span><span class="sxs-lookup"><span data-stu-id="166ca-103">Gets a value that indicates whether this ICorDebugReferenceValue is a null value, in which case the `ICorDebugReferenceValue` does not point to an object.</span></span>  
+# <a name="icordebugreferencevalueisnull-method"></a><span data-ttu-id="3097a-102">ICorDebugReferenceValue::IsNull メソッド</span><span class="sxs-lookup"><span data-stu-id="3097a-102">ICorDebugReferenceValue::IsNull Method</span></span>
+<span data-ttu-id="3097a-103">この ICorDebugReferenceValue いる場合、null 値は、かどうかを示す値を取得、`ICorDebugReferenceValue`がオブジェクトを指していません。</span><span class="sxs-lookup"><span data-stu-id="3097a-103">Gets a value that indicates whether this ICorDebugReferenceValue is a null value, in which case the `ICorDebugReferenceValue` does not point to an object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="166ca-104">構文</span><span class="sxs-lookup"><span data-stu-id="166ca-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3097a-104">構文</span><span class="sxs-lookup"><span data-stu-id="3097a-104">Syntax</span></span>  
   
 ```  
 HRESULT IsNull (  
@@ -38,15 +39,15 @@ HRESULT IsNull (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="166ca-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="166ca-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="3097a-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="3097a-105">Parameters</span></span>  
  `pbNull`  
- <span data-ttu-id="166ca-106">[out]ブール値へのポインター`true`場合は、この`ICorDebugReferenceValue`オブジェクトは null。 それ以外の場合、`pbNull`は`false`します。</span><span class="sxs-lookup"><span data-stu-id="166ca-106">[out] A pointer to a Boolean value that is `true` if this `ICorDebugReferenceValue` object is null; otherwise, `pbNull` is `false`.</span></span>  
+ <span data-ttu-id="3097a-106">[out]ブール値へのポインター`true`場合は、この`ICorDebugReferenceValue`オブジェクトは null。 それ以外の場合、`pbNull`は`false`します。</span><span class="sxs-lookup"><span data-stu-id="3097a-106">[out] A pointer to a Boolean value that is `true` if this `ICorDebugReferenceValue` object is null; otherwise, `pbNull` is `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="166ca-107">要件</span><span class="sxs-lookup"><span data-stu-id="166ca-107">Requirements</span></span>  
- <span data-ttu-id="166ca-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="166ca-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3097a-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="3097a-107">Requirements</span></span>  
+ <span data-ttu-id="3097a-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="3097a-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="166ca-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="166ca-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="3097a-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="3097a-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="166ca-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="166ca-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="3097a-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="3097a-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="166ca-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="166ca-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="3097a-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3097a-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

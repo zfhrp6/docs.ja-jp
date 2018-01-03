@@ -13,39 +13,40 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fbf3f07f5669c4fcafa4d3cc4119fc715539651d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0b13df0d70a36e475e87bae3152912e58a9f8443
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebuginstancefieldsymbol-interface"></a><span data-ttu-id="dafe0-102">ICorDebugInstanceFieldSymbol インターフェイス</span><span class="sxs-lookup"><span data-stu-id="dafe0-102">ICorDebugInstanceFieldSymbol Interface</span></span>
-<span data-ttu-id="dafe0-103">インスタンス フィールドのデバッグ シンボル情報を表します。</span><span class="sxs-lookup"><span data-stu-id="dafe0-103">Represents the debug symbol information for an instance field.</span></span>  
+# <a name="icordebuginstancefieldsymbol-interface"></a><span data-ttu-id="81868-102">ICorDebugInstanceFieldSymbol インターフェイス</span><span class="sxs-lookup"><span data-stu-id="81868-102">ICorDebugInstanceFieldSymbol Interface</span></span>
+<span data-ttu-id="81868-103">インスタンス フィールドのデバッグ シンボル情報を表します。</span><span class="sxs-lookup"><span data-stu-id="81868-103">Represents the debug symbol information for an instance field.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="dafe0-104">メソッド</span><span class="sxs-lookup"><span data-stu-id="dafe0-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="81868-104">メソッド</span><span class="sxs-lookup"><span data-stu-id="81868-104">Methods</span></span>  
   
-|<span data-ttu-id="dafe0-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="dafe0-105">Method</span></span>|<span data-ttu-id="dafe0-106">説明</span><span class="sxs-lookup"><span data-stu-id="dafe0-106">Description</span></span>|  
+|<span data-ttu-id="81868-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="81868-105">Method</span></span>|<span data-ttu-id="81868-106">説明</span><span class="sxs-lookup"><span data-stu-id="81868-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="dafe0-107">GetName メソッド</span><span class="sxs-lookup"><span data-stu-id="dafe0-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-getname-method.md)|<span data-ttu-id="dafe0-108">インスタンス フィールドの名前を取得します。</span><span class="sxs-lookup"><span data-stu-id="dafe0-108">Gets the name of the instance field.</span></span>|  
-|[<span data-ttu-id="dafe0-109">GetOffset メソッド</span><span class="sxs-lookup"><span data-stu-id="dafe0-109">GetOffset Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-getoffset-method.md)|<span data-ttu-id="dafe0-110">このインスタンス フィールドの親クラスにおける、このインスタンス フィールドのオフセット (バイト単位) を取得します。</span><span class="sxs-lookup"><span data-stu-id="dafe0-110">Gets the offset in bytes of this instance field in its parent class.</span></span>|  
-|[<span data-ttu-id="dafe0-111">GetSize メソッド</span><span class="sxs-lookup"><span data-stu-id="dafe0-111">GetSize Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-getsize-method.md)|<span data-ttu-id="dafe0-112">インスタンス フィールドのサイズ (バイト単位) を取得します。</span><span class="sxs-lookup"><span data-stu-id="dafe0-112">Gets the size in bytes of the instance field.</span></span>|  
+|[<span data-ttu-id="81868-107">GetName メソッド</span><span class="sxs-lookup"><span data-stu-id="81868-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-getname-method.md)|<span data-ttu-id="81868-108">インスタンス フィールドの名前を取得します。</span><span class="sxs-lookup"><span data-stu-id="81868-108">Gets the name of the instance field.</span></span>|  
+|[<span data-ttu-id="81868-109">GetOffset メソッド</span><span class="sxs-lookup"><span data-stu-id="81868-109">GetOffset Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-getoffset-method.md)|<span data-ttu-id="81868-110">このインスタンス フィールドの親クラスにおける、このインスタンス フィールドのオフセット (バイト単位) を取得します。</span><span class="sxs-lookup"><span data-stu-id="81868-110">Gets the offset in bytes of this instance field in its parent class.</span></span>|  
+|[<span data-ttu-id="81868-111">GetSize メソッド</span><span class="sxs-lookup"><span data-stu-id="81868-111">GetSize Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-getsize-method.md)|<span data-ttu-id="81868-112">インスタンス フィールドのサイズ (バイト単位) を取得します。</span><span class="sxs-lookup"><span data-stu-id="81868-112">Gets the size in bytes of the instance field.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="dafe0-113">コメント</span><span class="sxs-lookup"><span data-stu-id="dafe0-113">Remarks</span></span>  
- <span data-ttu-id="dafe0-114">`ICorDebugInstanceFieldSymbol` インターフェイスは、インスタンス フィールドのデバッグ シンボル情報を取得するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="dafe0-114">The `ICorDebugInstanceFieldSymbol` interface is used to retrieve the debug symbol information for an instance field.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="81868-113">コメント</span><span class="sxs-lookup"><span data-stu-id="81868-113">Remarks</span></span>  
+ <span data-ttu-id="81868-114">`ICorDebugInstanceFieldSymbol` インターフェイスは、インスタンス フィールドのデバッグ シンボル情報を取得するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="81868-114">The `ICorDebugInstanceFieldSymbol` interface is used to retrieve the debug symbol information for an instance field.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="dafe0-115">このインターフェイスは .NET ネイティブでのみ使用可能です。</span><span class="sxs-lookup"><span data-stu-id="dafe0-115">This interface is available with .NET Native only.</span></span> <span data-ttu-id="dafe0-116">.NET ネイティブの外部で ICorDebug シナリオについてこのインターフェイスを実装する場合は、共通言語ランタイムはこのインターフェイスを無視します。</span><span class="sxs-lookup"><span data-stu-id="dafe0-116">If you implement this interface for ICorDebug scenarios outside of .NET Native, the common language runtime will ignore this interface.</span></span>  
+>  <span data-ttu-id="81868-115">このインターフェイスは .NET ネイティブでのみ使用可能です。</span><span class="sxs-lookup"><span data-stu-id="81868-115">This interface is available with .NET Native only.</span></span> <span data-ttu-id="81868-116">.NET ネイティブの外部で ICorDebug シナリオについてこのインターフェイスを実装する場合は、共通言語ランタイムはこのインターフェイスを無視します。</span><span class="sxs-lookup"><span data-stu-id="81868-116">If you implement this interface for ICorDebug scenarios outside of .NET Native, the common language runtime will ignore this interface.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="dafe0-117">要件</span><span class="sxs-lookup"><span data-stu-id="dafe0-117">Requirements</span></span>  
- <span data-ttu-id="dafe0-118">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="dafe0-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="81868-117">必要条件</span><span class="sxs-lookup"><span data-stu-id="81868-117">Requirements</span></span>  
+ <span data-ttu-id="81868-118">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="81868-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="dafe0-119">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="dafe0-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="81868-119">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="81868-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="dafe0-120">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="dafe0-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="81868-120">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="81868-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="dafe0-121">**.NET framework のバージョン:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dafe0-121">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
+ <span data-ttu-id="81868-121">**.NET framework のバージョン:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="81868-121">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="dafe0-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="dafe0-122">See Also</span></span>  
- [<span data-ttu-id="dafe0-123">ICorDebugStaticFieldSymbol インターフェイス</span><span class="sxs-lookup"><span data-stu-id="dafe0-123">ICorDebugStaticFieldSymbol Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md)  
- [<span data-ttu-id="dafe0-124">デバッグのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="dafe0-124">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [<span data-ttu-id="dafe0-125">デバッグ</span><span class="sxs-lookup"><span data-stu-id="dafe0-125">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a><span data-ttu-id="81868-122">参照</span><span class="sxs-lookup"><span data-stu-id="81868-122">See Also</span></span>  
+ [<span data-ttu-id="81868-123">ICorDebugStaticFieldSymbol インターフェイス</span><span class="sxs-lookup"><span data-stu-id="81868-123">ICorDebugStaticFieldSymbol Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md)  
+ [<span data-ttu-id="81868-124">デバッグ インターフェイス</span><span class="sxs-lookup"><span data-stu-id="81868-124">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [<span data-ttu-id="81868-125">デバッグ</span><span class="sxs-lookup"><span data-stu-id="81868-125">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -21,29 +21,30 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a53597067d14c5b3dc1f8829b8ea0a0df07de25a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 064febeec32e5c43b6b73ef2b3a44625f151eb48
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugevalabort-method"></a><span data-ttu-id="debdc-102">ICorDebugEval::Abort メソッド</span><span class="sxs-lookup"><span data-stu-id="debdc-102">ICorDebugEval::Abort Method</span></span>
-<span data-ttu-id="debdc-103">この ICorDebugEval オブジェクトが現在実行して、計算を中止します。</span><span class="sxs-lookup"><span data-stu-id="debdc-103">Aborts the computation this ICorDebugEval object is currently performing.</span></span>  
+# <a name="icordebugevalabort-method"></a><span data-ttu-id="17654-102">ICorDebugEval::Abort メソッド</span><span class="sxs-lookup"><span data-stu-id="17654-102">ICorDebugEval::Abort Method</span></span>
+<span data-ttu-id="17654-103">この ICorDebugEval オブジェクトが現在実行して、計算を中止します。</span><span class="sxs-lookup"><span data-stu-id="17654-103">Aborts the computation this ICorDebugEval object is currently performing.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="debdc-104">構文</span><span class="sxs-lookup"><span data-stu-id="debdc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="17654-104">構文</span><span class="sxs-lookup"><span data-stu-id="17654-104">Syntax</span></span>  
   
 ```  
 HRESULT Abort ();  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="debdc-105">コメント</span><span class="sxs-lookup"><span data-stu-id="debdc-105">Remarks</span></span>  
- <span data-ttu-id="debdc-106">評価が入れ子になっており、最新のものではありません、`Abort`メソッドが失敗する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="debdc-106">If the evaluation is nested and it is not the most recent one, the `Abort` method may fail.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="17654-105">コメント</span><span class="sxs-lookup"><span data-stu-id="17654-105">Remarks</span></span>  
+ <span data-ttu-id="17654-106">評価が入れ子になっており、最新のものではありません、`Abort`メソッドが失敗する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="17654-106">If the evaluation is nested and it is not the most recent one, the `Abort` method may fail.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="debdc-107">要件</span><span class="sxs-lookup"><span data-stu-id="debdc-107">Requirements</span></span>  
- <span data-ttu-id="debdc-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="debdc-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="17654-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="17654-107">Requirements</span></span>  
+ <span data-ttu-id="17654-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="17654-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="debdc-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="debdc-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="17654-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="17654-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="debdc-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="debdc-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="17654-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="17654-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="debdc-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="debdc-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="17654-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17654-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

@@ -21,16 +21,17 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f73035740965077d6508235d0d570d16ac5eeaab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 550f0512e3469fa13f918082dbe55ddb239f694b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugilframegetstackvalue-method"></a><span data-ttu-id="41746-102">ICorDebugILFrame::GetStackValue メソッド</span><span class="sxs-lookup"><span data-stu-id="41746-102">ICorDebugILFrame::GetStackValue Method</span></span>
-<span data-ttu-id="41746-103">このメソッドは実装されていません。</span><span class="sxs-lookup"><span data-stu-id="41746-103">This method has not been implemented.</span></span>  
+# <a name="icordebugilframegetstackvalue-method"></a><span data-ttu-id="43535-102">ICorDebugILFrame::GetStackValue メソッド</span><span class="sxs-lookup"><span data-stu-id="43535-102">ICorDebugILFrame::GetStackValue Method</span></span>
+<span data-ttu-id="43535-103">このメソッドは実装されていません。</span><span class="sxs-lookup"><span data-stu-id="43535-103">This method has not been implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="41746-104">構文</span><span class="sxs-lookup"><span data-stu-id="41746-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="43535-104">構文</span><span class="sxs-lookup"><span data-stu-id="43535-104">Syntax</span></span>  
   
 ```  
 HRESULT GetStackValue (  
@@ -39,5 +40,5 @@ HRESULT GetStackValue (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="41746-105">要件</span><span class="sxs-lookup"><span data-stu-id="41746-105">Requirements</span></span>  
- <span data-ttu-id="41746-106">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="41746-106">**Header:** CorDebug.idl, CorDebug.h</span></span>
+## <a name="requirements"></a><span data-ttu-id="43535-105">必要条件</span><span class="sxs-lookup"><span data-stu-id="43535-105">Requirements</span></span>  
+ <span data-ttu-id="43535-106">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="43535-106">**Header:** CorDebug.idl, CorDebug.h</span></span>

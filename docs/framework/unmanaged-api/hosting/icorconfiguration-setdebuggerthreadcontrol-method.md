@@ -21,16 +21,17 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4716e814c352fceacd8b949c2670058cf8a03bf1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 46bd2b7a40cbcf4f68b8c2f62fea466aa17f2d31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorconfigurationsetdebuggerthreadcontrol-method"></a><span data-ttu-id="5ab46-102">ICorConfiguration::SetDebuggerThreadControl メソッド</span><span class="sxs-lookup"><span data-stu-id="5ab46-102">ICorConfiguration::SetDebuggerThreadControl Method</span></span>
-<span data-ttu-id="5ab46-103">デバッグ サービスが共通言語ランタイム (CLR) のスレッドをブロックまたはブロック解除されたデバッグときに呼び出すコールバック インターフェイスを設定します。</span><span class="sxs-lookup"><span data-stu-id="5ab46-103">Sets the callback interface that the debugging services will call as common language runtime (CLR) threads are blocked and unblocked for debugging.</span></span>  
+# <a name="icorconfigurationsetdebuggerthreadcontrol-method"></a><span data-ttu-id="35256-102">ICorConfiguration::SetDebuggerThreadControl メソッド</span><span class="sxs-lookup"><span data-stu-id="35256-102">ICorConfiguration::SetDebuggerThreadControl Method</span></span>
+<span data-ttu-id="35256-103">デバッグ サービスが共通言語ランタイム (CLR) のスレッドをブロックまたはブロック解除されたデバッグときに呼び出すコールバック インターフェイスを設定します。</span><span class="sxs-lookup"><span data-stu-id="35256-103">Sets the callback interface that the debugging services will call as common language runtime (CLR) threads are blocked and unblocked for debugging.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5ab46-104">構文</span><span class="sxs-lookup"><span data-stu-id="5ab46-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="35256-104">構文</span><span class="sxs-lookup"><span data-stu-id="35256-104">Syntax</span></span>  
   
 ```  
 HRESULT SetDebuggerThreadControl (  
@@ -38,18 +39,18 @@ HRESULT SetDebuggerThreadControl (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="5ab46-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="5ab46-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="35256-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="35256-105">Parameters</span></span>  
  `pDebuggerThreadControl`  
- <span data-ttu-id="5ab46-106">[in]ポインター、 [IDebuggerThreadControl](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)ブロックおよびブロック解除のスレッドのデバッグ サービスでは、ホストに通知するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5ab46-106">[in] A pointer to an [IDebuggerThreadControl](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md) object that notifies the host about the blocking and unblocking of threads by the debugging services.</span></span>  
+ <span data-ttu-id="35256-106">[in]ポインター、 [IDebuggerThreadControl](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)ブロックおよびブロック解除のスレッドのデバッグ サービスでは、ホストに通知するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="35256-106">[in] A pointer to an [IDebuggerThreadControl](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md) object that notifies the host about the blocking and unblocking of threads by the debugging services.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5ab46-107">要件</span><span class="sxs-lookup"><span data-stu-id="5ab46-107">Requirements</span></span>  
- <span data-ttu-id="5ab46-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="5ab46-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="35256-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="35256-107">Requirements</span></span>  
+ <span data-ttu-id="35256-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="35256-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5ab46-109">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="5ab46-109">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="35256-109">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="35256-109">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="5ab46-110">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="5ab46-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="35256-110">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="35256-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="5ab46-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5ab46-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="35256-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="35256-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5ab46-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ab46-112">See Also</span></span>  
- [<span data-ttu-id="5ab46-113">ICorConfiguration インターフェイス</span><span class="sxs-lookup"><span data-stu-id="5ab46-113">ICorConfiguration Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)
+## <a name="see-also"></a><span data-ttu-id="35256-112">参照</span><span class="sxs-lookup"><span data-stu-id="35256-112">See Also</span></span>  
+ [<span data-ttu-id="35256-113">ICorConfiguration インターフェイス</span><span class="sxs-lookup"><span data-stu-id="35256-113">ICorConfiguration Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)
