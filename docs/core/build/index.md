@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8b49079c-6ede-429a-92d7-ecd2fda1ab0e
-ms.openlocfilehash: b2e62074992432dc5ee1360e17f87c782685dc35
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 6aa5abd071355b1c1a367b35e9521e6b1af9c945
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="build-net-core-from-source"></a>ソースから .NET Core をビルドする
 
-ソース コードから .NET Core をビルドできることは、複数の方法において重要なことです。.NET Core を新しいプラットフォームに簡単に移植でき、製品に対するコントリビューションと修正を有効にすることができ、また、.NET のカスタム バージョンを作成することができます。
+ソース コードから .NET Core をビルドできることは、複数の方法において重要なことです。 .NET Core を新しいプラットフォームに簡単に移植でき、製品に対するコントリビューションと修正を有効にすることができ、また、.NET のカスタム バージョンを作成することができます。
 この記事では、独自のバージョンの .NET Core をビルドして配布する開発者向けのガイダンスを提供します。
 
 ## <a name="build-the-clr-from-source"></a>ソースから CLR をビルドする

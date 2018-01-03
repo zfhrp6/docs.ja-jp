@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f2b312cb-f80c-4b0d-9101-93908f06a6fa
-ms.openlocfilehash: 54540b8a1fc0ceaf68dfb3fcbb04fefae2296695
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: de71e043533d7a7d3d7d3fd3af0a8530c0e145b6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-core-guide"></a>.NET Core のガイド
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 10/18/2017
 - [.NET ランタイム](https://github.com/dotnet/coreclr)。型システム、アセンブリ読み込み、ガベージ コレクター、ネイティブ相互運用機能、およびその他の基本的なサービスを提供します。 
 - 一連の[フレームワーク ライブラリ](https://github.com/dotnet/corefx)。プリミティブ データ型、アプリ コンポジションの種類、および基本的なユーティリティを提供します。 
 - [SDK ツールのセット](https://github.com/dotnet/cli)と[言語コンパイラ](https://github.com/dotnet/roslyn)。[.NET Core SDK](sdk.md) に含まれており、ベース開発者エクスペリエンスを有効にします。
-- 'dotnet' アプリケ ホスト。.NET Core アプリの起動に使用されます。 ランタイムの選択、ランタイムのホスト、アセンブリ読み込みポリシーの提供、およびアプリの起動を行います。 同じホストが、ほぼ同じ方法で SDK ツールの起動にも使用されます。
+- 'dotnet' アプリケ ホスト。 .NET Core アプリの起動に使用されます。 ランタイムの選択、ランタイムのホスト、アセンブリ読み込みポリシーの提供、およびアプリの起動を行います。 同じホストが、ほぼ同じ方法で SDK ツールの起動にも使用されます。
 
 ### <a name="languages"></a>言語
 

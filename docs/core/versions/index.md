@@ -8,11 +8,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
-ms.openlocfilehash: 48343ad8d42ad576b1975e81cd764b4ec6f5bc76
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 369d280268123a69ae9458a2c47e45396728deb5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-core-versioning"></a>.NET Core バージョン管理
 
@@ -187,7 +188,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 .NET Standard では、`MAJOR.MINOR` バージョン管理スキームを使用しています。 `PATCH` レベルは、.NET Standard では使用できません。これは、あまり頻繁に反復処理されないコントラクトのセットを表し、実際の実装と同じバージョン管理の要件を表さないためです。
 
-.NET Standard バージョンと .NET Core のバージョンの間に実際の結合はありません。.NET Core 2.0 は .NET Standard 2.0 を実装する場合がありますが、.NET Core の将来のバージョンが同じ .NET Standard のバージョンにマッピングされるという保証はありません。 .NET Core は、.NET Standard で定義されていない API を配布することができるので、新しい .NET Standard を必要とせずに新しバージョンを配布する場合があります。 .NET Standard は、たとえその始まりが .NET Core と同時に起こったとしても、.NET Framework や Mono などの他のターゲットに適用される概念でもあります。
+.NET Standard バージョンと .NET Core のバージョンの間に実際の結合はありません。 .NET Core 2.0 は .NET Standard 2.0 を実装する場合がありますが、.NET Core の将来のバージョンが同じ .NET Standard のバージョンにマッピングされるという保証はありません。 .NET Core は、.NET Standard で定義されていない API を配布することができるので、新しい .NET Standard を必要とせずに新しバージョンを配布する場合があります。 .NET Standard は、たとえその始まりが .NET Core と同時に起こったとしても、.NET Framework や Mono などの他のターゲットに適用される概念でもあります。
 
 ### <a name="packages"></a>パッケージ
 
