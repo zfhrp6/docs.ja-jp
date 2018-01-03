@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0b10e0eed3c2df8781aa7085cc43157894cc6e2c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 64be936277b0ebe04248ae2913a882b628ee363f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName メソッド
 モジュールのファイル名を取得します。  
@@ -53,7 +54,7 @@ HRESULT GetName(
 ## <a name="remarks"></a>コメント  
  `GetName`メソッドは、モジュールのファイル名には、ディスク上の名前が一致する場合は S_OK HRESULT を返します。 `GetName`場合は、名前は、用意された、動的またはメモリ内のモジュールの場合のように、S_FALSE HRESULT を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -62,6 +63,6 @@ HRESULT GetName(
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
     
  

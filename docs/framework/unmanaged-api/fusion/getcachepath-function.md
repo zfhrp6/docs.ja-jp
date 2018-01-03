@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 924482bf34d53d3d7144c4bae93a00a8f8d2ad4d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 371dab83d7441681b9d6bd5723bcd8c3caadb50e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getcachepath-function"></a>GetCachePath 関数
 指定したフラグを使用して、キャッシュされたアセンブリへのパスを取得します。  
@@ -51,13 +52,13 @@ HRESULT GetCachePath (
  `pcchPath`  
  [入力、出力].要求の最大長`pwzCachePath`、関数が戻るとき、実際の長さと`pwzCachePath`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Fusion.h  
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ASM_CACHE_FLAGS 列挙型](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md)  
  [Fusion グローバル静的関数](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)

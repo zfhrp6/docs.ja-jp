@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f1db7617d52e07489ade339b76023e21816835ee
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3c4c9c0a531d93ca2c7c72f50bcd2f7ee98887e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugframegetstackrange-method"></a>ICorDebugFrame::GetStackRange メソッド
 このスタック フレームの絶対アドレス範囲を取得します。  
@@ -49,7 +50,7 @@ HRESULT GetStackRange (
 ## <a name="remarks"></a>コメント  
  スタックのアドレス範囲は、複数のデバッグ エンジンから収集されインタリーブされたスタック トレースをつなぎ合わせてに役立ちます。 数値の範囲には、スタック フレームのコンテンツに関する情報は含まれません。 スタック フレームの場所の比較に対してのみ意味があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

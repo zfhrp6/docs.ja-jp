@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3cd5f7191c00b7c6b07bacc463d906982c994578
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c7a932d04fef438e19176af565c92e0673339e02
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugthreadgethandle-method"></a>ICorDebugThread::GetHandle メソッド
 この ICorDebugThread のアクティブな部分の現在のハンドルを取得します。  
@@ -47,7 +48,7 @@ HRESULT GetHandle (
   
  このハンドルは、デバッグ API が所有します。 デバッガーを使用する前に複製する必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

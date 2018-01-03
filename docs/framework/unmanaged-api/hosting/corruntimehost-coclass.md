@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3d7a272aff3a3c7d32042b76d37fdb15c9dcad4d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 23bee1a79dfb54a696495fdb61a7ba9ba4b4c143
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corruntimehost-coclass"></a>CorRuntimeHost コクラス
 共通言語ランタイムで実行されているアプリケーションを管理するためのインターフェイスを提供します。  
@@ -42,7 +43,7 @@ coclass CorRuntimeHost {
   
 ## <a name="interfaces"></a>インターフェイス  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |[ICorConfiguration インターフェイス](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)|共通言語ランタイム (CLR) を構成するためのメソッドを提供します。|  
 |[ICorRuntimeHost インターフェイス](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)|ホストが起動し、作成して既定のドメインにアクセスして、プロセスで実行されているすべてのドメインを列挙するアプリケーション ドメインを構成する共通言語ランタイムを明示的に停止できるようにするメソッドを提供します。|  
@@ -50,7 +51,7 @@ coclass CorRuntimeHost {
 |[IGCHost インターフェイス](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)|ガベージ コレクション システムに関する情報を取得して、ガベージ コレクションの一部の側面を制御するためのメソッドを提供します。|  
 |"IValidator"|ポータブル実行可能イメージの検証と検証エラーの詳細なレポート作成のメソッドを提供します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.idl  
@@ -59,5 +60,5 @@ coclass CorRuntimeHost {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ホスト コクラス](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c089c32d4bc8474168274186a9303d39976abfca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 89c3181a157ce5162d93d1df14641b393fb3082d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="createapplicationcontext-function"></a>CreateApplicationContext 関数
 この関数は、.NET Framework インフラストラクチャをサポートしているし、コードから直接使用するものではありません。  
@@ -44,7 +45,7 @@ HRESULT CreateApplicationContext (
  `ppCtx`  
  [out]アプリケーション コンテキストへのポインター。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Fusion.h  
@@ -53,7 +54,7 @@ HRESULT CreateApplicationContext (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IAssemblyCache インターフェイス](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)  
  [Fusion グローバル静的関数](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
  [グローバル アセンブリ キャッシュ](../../../../docs/framework/app-domains/gac.md)

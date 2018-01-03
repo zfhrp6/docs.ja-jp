@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e0df76f43ad037a4681f985e99401cb8c7f5a2ce
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a9cbb755bd8f52482f7eece6e9d236f29cadc419
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugclass2getparameterizedtype-method"></a>ICorDebugClass2::GetParameterizedType メソッド
 このクラスの型宣言を取得します。  
@@ -66,7 +67,7 @@ HRESULT GetParameterizedType (
   
  導入、`ICorDebugType`型の実行時の概念を表現するオブジェクトが、API 全体に影響します。 かかっていた関数、`ICorDebugClass`または`ICorDebugClass2`オブジェクトまたはであっても、`CorElementType`値を汎用化されて、`ICorDebugType`オブジェクト。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

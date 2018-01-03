@@ -22,11 +22,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 53616fb8e947d2a301dcfcb4e3870a9a9dc36ec1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d341b875f9f64b9aa1fcdcf21668dafea0beac12
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="coreclrdebugprocinfo-structure"></a>CoreClrDebugProcInfo 構造体
 リモート コンピューターで実行されているプロセスを表します。  
@@ -49,7 +50,7 @@ struct  CoreClrDebugProcInfo {
 |`m_dwInternalID`|対象のコンピューターで実行されているリモート デバッグ プロキシによって割り当てられたプロセス識別子。 この識別子は OS 識別子よりも少ない頻度で再利用されます。|  
 |`m_wszName`|プロセスのコマンド ライン。 このメンバーは切り詰められる場合があります。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CoreClrRemoteDebuggingInterfaces.h  

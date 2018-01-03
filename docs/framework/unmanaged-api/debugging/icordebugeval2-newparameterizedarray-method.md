@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cf7f8fb0d3418f863f2cd1531dc32b7e64c2b8a5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a605276fac66e395d5663bacff727c235981a868
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugeval2newparameterizedarray-method"></a>ICorDebugEval2::NewParameterizedArray メソッド
 指定した要素の型および次元の新しい配列を割り当てます。  
@@ -57,7 +58,7 @@ HRESULT NewParameterizedArray(
 ## <a name="remarks"></a>コメント  
  配列の要素のジェネリック型のインスタンスがあります。 配列は常に、現在のスレッドが実行されているアプリケーション ドメインに作成します。 .NET Framework 2.0 の値で`rank`1 にする必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

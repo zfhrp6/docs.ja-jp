@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1ca1514eaa916f5e607e49b5a5713763f855d937
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 14258ef1ae473fc867d86c89ec877ddbf8c80213
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugprocess2clearunmanagedbreakpoint-method"></a>ICorDebugProcess2::ClearUnmanagedBreakpoint メソッド
 削除前に設定した、指定されたアドレスのブレークポイント。  
@@ -49,7 +50,7 @@ HRESULT ClearUnmanagedBreakpoint (
   
  `ClearUnmanagedBreakpoint`メソッドでは、マネージのみのモードで、デバッガーがアタッチされている場合、または指定したアドレスにブレークポイントが存在しない場合はエラー コードが返されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

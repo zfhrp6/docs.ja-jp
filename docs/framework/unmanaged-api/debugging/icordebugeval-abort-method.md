@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a53597067d14c5b3dc1f8829b8ea0a0df07de25a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 064febeec32e5c43b6b73ef2b3a44625f151eb48
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugevalabort-method"></a>ICorDebugEval::Abort メソッド
 この ICorDebugEval オブジェクトが現在実行して、計算を中止します。  
@@ -39,7 +40,7 @@ HRESULT Abort ();
 ## <a name="remarks"></a>コメント  
  評価が入れ子になっており、最新のものではありません、`Abort`メソッドが失敗する可能性があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

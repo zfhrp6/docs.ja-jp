@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3e478f057b3c319d099b0156188f3d1e23bb82e8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 98c885e7ffd4b35bcc3af34757509910c78c0c90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugevalnewobject-method"></a>ICorDebugEval::NewObject メソッド
 オブジェクトの新しいインスタンスを割り当てるし、指定したコンス トラクター メソッドを呼び出します。  
@@ -52,7 +53,7 @@ HRESULT NewObject (
  `ppArgs`  
  [in]ICorDebugValue オブジェクトのコンス トラクターに渡される引数を表す配列。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -61,5 +62,5 @@ HRESULT NewObject (
   
  **.NET framework のバージョン:** 1.1、1.0  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [NewParameterizedObject メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)

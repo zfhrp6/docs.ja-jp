@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3fbde18a15b08b8921c6d31f0fb3c19c85c26cfe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 479ad2db4752f9e031783b430396286c6989b115
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugframegetchain-method"></a>ICorDebugFrame::GetChain メソッド
 このフレームの一部であるチェーンへのポインターを取得します。  
@@ -42,7 +43,7 @@ HRESULT GetChain (
  `ppChain`  
  [out]このフレームを含むチェーンを表す ICorDebugChain オブジェクトのアドレスへのポインター。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

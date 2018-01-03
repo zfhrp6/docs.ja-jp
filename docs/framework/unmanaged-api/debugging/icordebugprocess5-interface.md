@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0f0a46e18121a222ee62fec207dde938d1e967b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e26f50967f0fb70e0593584e3f175d20a7b213e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugprocess5-interface"></a>ICorDebugProcess5 インターフェイス
 管理対象のオブジェクトのガベージ コレクションに関する情報を提供する、マネージ ヒープに対するアクセスをサポートするために ICorDebugProcess インターフェイスを拡張し、デバッガーかどうかを判断するには、アプリケーションのローカル ネイティブ イメージ キャッシュからイメージを読み込みます。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[EnableNGenPolicy メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enablengenpolicy-method.md)|アプリケーションがマネージ デバッガーで実行中にネイティブ イメージを読み込む方法を決定する値を設定します。|  
+|[EnableNGENPolicy メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enablengenpolicy-method.md)|アプリケーションがマネージ デバッガーで実行中にネイティブ イメージを読み込む方法を決定する値を設定します。|  
 |[EnumerateGCReferences メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md)|プロセスでガベージ コレクトされるすべてのオブジェクトの列挙子を取得します。|  
 |[EnumerateHandles メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md)|プロセスで、オブジェクト ハンドルの列挙子を取得します。|  
 |[EnumerateHeap メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheap-method.md)|マネージ ヒープのオブジェクトの列挙子を取得します。|  
@@ -51,7 +52,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  このインターフェイスは、別のコンピューターとは別のプロセスでのリモート呼び出しをサポートしていません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -60,6 +61,6 @@ ms.lasthandoff: 11/21/2017
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [デバッグのインターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+## <a name="see-also"></a>参照  
+ [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

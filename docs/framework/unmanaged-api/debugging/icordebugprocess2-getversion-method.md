@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 84db785d47f97fe058b8a66070bcf4757fa11517
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ae9c80a65908d6ec1514ce64845217bd7b5c7805
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugprocess2getversion-method"></a>ICorDebugProcess2::GetVersion メソッド
 このプロセスで実行されている共通言語ランタイム (CLR) のバージョン番号を取得します。  
@@ -45,7 +46,7 @@ HRESULT GetVersion (
 ## <a name="remarks"></a>コメント  
  `GetVersion`プロセスのランタイムが読み込まれていない場合、メソッドはエラー コードを返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

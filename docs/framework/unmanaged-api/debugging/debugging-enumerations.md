@@ -17,11 +17,12 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c24882f2bd9819043bbc786bd2e5f35129a92744
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a5e294275da45575a3aed457fb2428c4768e78d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="debugging-enumerations"></a>列挙体のデバッグ
 このセクションでは、デバッグ API が使用するアンマネージ列挙体について説明します。  
@@ -42,19 +43,19 @@ ms.lasthandoff: 10/18/2017
  CorDebugChainReason  
  呼び出しチェーンが開始する理由を示します。  
   
- [CorDebugCodeInvokeKind 列挙体](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md)  
+ [CorDebugCodeInvokeKind 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md)  
  エクスポートされた関数がマネージ コードを呼び出す方法を示します。  
   
- [CorDebugCodeInvokePurpose 列挙体](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md)  
+ [CorDebugCodeInvokePurpose 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md)  
  エクスポートされた関数がマネージ コードを呼び出す理由を示します。  
   
  CorDebugCreateProcessFlags  
  呼び出しで使用できる追加のデバッグ オプションを提供、 [icordebug::createprocess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md)メソッドです。  
   
- [CorDebugDebugEventKind 列挙体](../../../../docs/framework/unmanaged-api/debugging/cordebugdebugeventkind-enumeration.md)  
+ [CorDebugDebugEventKind 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugdebugeventkind-enumeration.md)  
  情報がデコードされるによってイベントの種類を示す、 [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md)メソッドです。  
   
- [CorDebugDecodeEventFlagsWindows 列挙体](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md)  
+ [CorDebugDecodeEventFlagsWindows 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md)  
  Windows プラットフォームのデバッグ イベントに関する追加情報を提供します。  
   
  CorDebugExceptionCallbackType  
@@ -105,7 +106,7 @@ ms.lasthandoff: 10/18/2017
  [CorDebugPlatform 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md)  
  使用されるターゲット プラットフォームの値を提供、 [icordebugdatatarget::getplatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md)メソッドです。  
   
- [CorDebugRecordFormat 列挙体](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
+ [CorDebugRecordFormat 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
  ネイティブ例外デバッグ イベントに関する情報を格納するバイト配列内のデータの形式を示します。  
   
  CorDebugRegister  
@@ -114,7 +115,7 @@ ms.lasthandoff: 10/18/2017
  [CorDebugSetContextFlag 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugsetcontextflag-enumeration.md)  
  スタック上のアクティブ (またはリーフ) フレーム上からのコンテキストなのか、別のフレームからのアンワインドにより計算されたコンテキストなのかを示します。  
   
- [CorDebugStateChange 列挙体](../../../../docs/framework/unmanaged-api/debugging/cordebugstatechange-enumeration.md)  
+ [CorDebugStateChange 列挙型](../../../../docs/framework/unmanaged-api/debugging/cordebugstatechange-enumeration.md)  
  プロセスへの変更に基づいて破棄が必要となった、キャッシュされたデータの量を示します。  
   
  CorDebugStepReason  
@@ -150,7 +151,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="related-sections"></a>関連項目  
  [デバッグ コクラス](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
   
- [デバッグのインターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
   
  [デバッグ グローバル静的関数](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
   

@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 372b2466baaa76ba47a6710447d93f9fa6bb967f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 18e4518a2e321609a8add06c399ed9588748d1ae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clrruntimehost-coclass"></a>CLRRuntimeHost コクラス
 ランタイムによってコードの実行を管理するためのインターフェイスを提供します。  
@@ -39,12 +40,12 @@ coclass CLRRuntimeHost {
   
 ## <a name="interfaces"></a>インターフェイス  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |[ICLRRuntimeHost インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)|ランタイムによってアプリケーションの実行を制御するためのメソッドを提供します。|  
 |[ICLRValidator インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-interface.md)|ポータブル実行可能イメージの検証と検証エラーの詳細なレポート作成のメソッドを提供します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.idl  
@@ -53,5 +54,5 @@ coclass CLRRuntimeHost {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ホスト コクラス](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)

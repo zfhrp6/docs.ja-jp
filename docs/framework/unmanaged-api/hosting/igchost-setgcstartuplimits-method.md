@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f95e5afa1297602e4ef12ed0dfb3f98aa5c762ca
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d99212b1ece4d3c0ce9440ac973b8254ebca6dde
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="igchostsetgcstartuplimits-method"></a>IGCHost::SetGCStartupLimits メソッド
 ジェネレーション 0 のセグメントのサイズと最大サイズを設定します。  
@@ -52,7 +53,7 @@ HRESULT SetGCStartupLimits (
 ## <a name="remarks"></a>コメント  
  `SetGCStartupLimits`メソッドを 1 回だけ呼び出すことができます。 これらの値は、後で変更することはできません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** GCHost.idl、GCHost.h  
@@ -61,5 +62,5 @@ HRESULT SetGCStartupLimits (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IGCHost インターフェイス](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

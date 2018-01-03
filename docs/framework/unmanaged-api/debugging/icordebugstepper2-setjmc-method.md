@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4b34e0d612957da1ec1ca3535bfa1a0d7a5bae5f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7fbbe0d3e42df073a5718ca037b44f6f2f31ec23
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugstepper2setjmc-method"></a>ICorDebugStepper2::SetJMC メソッド
 アプリケーションの開発者によって作成されたコードでのみこの ICorDebugStepper が手順かどうかを指定する値を設定します。 このプロセスは、マイ コード (のみ JMC) のデバッグとも呼ばれます。  
@@ -42,7 +43,7 @@ HRESULT SetJMC (
  `fIsJMCStepper`  
  [in]設定`true`のみ、アプリケーションの開発者によって作成されたためです。 それ以外の場合に設定するコードをステップ実行する`false`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

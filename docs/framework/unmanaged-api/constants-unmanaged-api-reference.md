@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 45e4d41c16695010dc452d2f22850d43f885974a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e086e856bb7a872b14815825f78d208ff5296899
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="constants-unmanaged-api-reference"></a>定数 (アンマネージ API リファレンス)
 このトピックでは、言語の種類、言語の販売元、および CorSym.idl で定義されているドキュメント型の定数について説明します。  
@@ -58,5 +59,5 @@ ms.lasthandoff: 10/18/2017
 |CorSym_DocumentType_Text|テキスト ドキュメントを表します。|  
 |CorSym_DocumentType_MC|テキスト以外のドキュメントを表します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アンマネージ API リファレンス](../../../docs/framework/unmanaged-api/index.md)

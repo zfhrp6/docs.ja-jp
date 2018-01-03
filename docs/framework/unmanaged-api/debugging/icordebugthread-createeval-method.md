@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: aebabf12e6dcf12f0e1e1f24ec2ad69ea55ec86c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 766677d9eef60c811c8537bc60bb8db29dd988c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugthreadcreateeval-method"></a>ICorDebugThread::CreateEval メソッド
 収集し、この ICorDebugThread の機能を公開する ICorDebugEval オブジェクトを作成します。  
@@ -45,7 +46,7 @@ HRESULT CreateEval (
 ## <a name="remarks"></a>コメント  
  評価オブジェクトは、計算を実行する前に、スレッドで新しいチェーンにプッシュされます。 これにより、現在実行中のスレッドで評価が完了するまで計算が中断します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

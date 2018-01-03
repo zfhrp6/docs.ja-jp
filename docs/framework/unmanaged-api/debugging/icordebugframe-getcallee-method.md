@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 54a26ad7d4818aae81b765ab4e6c0e5be821680e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 079d598e54f429fa4dd0b5c0c4cadbe2c66c1d50
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugframegetcallee-method"></a>ICorDebugFrame::GetCallee メソッド
 このフレームと呼ばれる現在のチェーンで ICorDebugFrame オブジェクトへのポインターを取得します。  
@@ -42,7 +43,7 @@ HRESULT GetCallee (
  `ppFrame`  
  [out]アドレスへのポインター、`ICorDebugFrame`呼び出されたフレームを表すオブジェクト。 この値は、呼び出し元のフレームが現在のチェーン内の最も内側のフレームが場合は null です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
