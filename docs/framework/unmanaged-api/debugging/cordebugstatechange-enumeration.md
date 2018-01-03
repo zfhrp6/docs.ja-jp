@@ -17,11 +17,12 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: caf49621342be0ff85ac3cb56b95bb87f524c3be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: da9d2bb793340aa4736e0b26ab9bf9d5ec7c546a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugstatechange-enumeration"></a>CorDebugStateChange 列挙体
 プロセスへの変更に基づいて破棄が必要となった、キャッシュされたデータの量を示します。  
@@ -49,7 +50,7 @@ typedef enum CorDebugStateChange
 > [!NOTE]
 >  この列挙体は .NET ネイティブのデバッグ シナリオのみで使用することを目的としています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -58,6 +59,6 @@ typedef enum CorDebugStateChange
   
  **.NET framework のバージョン:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [列挙体のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
+## <a name="see-also"></a>参照  
+ [列挙型のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

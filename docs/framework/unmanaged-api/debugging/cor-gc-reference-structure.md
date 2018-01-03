@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 11be45743bd215315139fb77f016e85bc9b592c5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a86604febb7641eef147608e564a27883fdc4bec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corgcreference-structure"></a>COR_GC_REFERENCE 構造体
 ガベージ コレクトされるオブジェクトに関する情報が含まれます。  
@@ -65,7 +66,7 @@ typedef struct _COR_GC_REFERENCE {
   
 -   `Size`。 場合、`type`は`CorGCREferenceType.CorHandleStrongSizedByref`、このフィールドは、ガベージ コレクターがオブジェクトのルートを計算する、オブジェクト ツリーの最後のサイズ。 この計算は最新の状態とは限りませんではないことに注意してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -74,6 +75,6 @@ typedef struct _COR_GC_REFERENCE {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

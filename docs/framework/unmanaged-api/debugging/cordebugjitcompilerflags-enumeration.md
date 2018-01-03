@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d7eb8421dcd68c67536e0de038f7038500556c47
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dfb78a160a7a6b9f50174fc8bb177cfd8d3f9383
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugjitcompilerflags-enumeration"></a>CorDebugJITCompilerFlags 列挙型
 マネージ Just-In-Time (JIT) コンパイラの動作に影響を与える値が含まれます。  
@@ -48,7 +49,7 @@ typedef enum CorDebugJITCompilerFlags {
 |`CORDEBUG_JIT_DISABLE_OPTIMIZATION`|コンパイラが最適化の無効になりますが、コンパイルのデータを追跡する必要がありますを指定します。|  
 |`CORDEBUG_JIT_ENABLE_ENC`|コンパイラ追跡コンパイル データの最適化を無効にしをエディット コンティニュのテクノロジを指定します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -57,5 +58,5 @@ typedef enum CorDebugJITCompilerFlags {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [列挙体のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>参照  
+ [列挙型のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

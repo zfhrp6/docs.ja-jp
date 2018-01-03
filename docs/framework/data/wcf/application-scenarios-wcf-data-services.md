@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9a72445a73be44e8c7b039463ccd8b939ae6a148
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ab5d1bd8116c2f5c07c9e91bbf0a5168c6d075d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-scenarios-wcf-data-services"></a>アプリケーション シナリオ (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]公開およびとしてデータを使用するためのシナリオのコア セットをサポートしている[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 このトピックでは、これらのシナリオに関連するトピックを紹介します。  
@@ -30,19 +31,19 @@ ms.lasthandoff: 12/02/2017
   
 -   [サービスとしてのデータの公開](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
   
--   [方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成します。](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)  
+-   [方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成する](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)  
   
  任意の CLR データ クラスを [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードとして公開する。  
  -   [サービスとしてのデータの公開](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
   
--   [方法: リフレクション プロバイダーを使用してデータ サービスを作成します。](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)  
+-   [方法: リフレクション プロバイダーを使用してデータ サービスを作成する](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)  
   
--   [データ サービス プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
+-   [Data Services プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
   
  .NET Framework ベースのクライアント アプリケーションの [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを使用する。  
  -   [クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
   
--   [クライアント アプリケーションでデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
+-   [クライアント アプリケーションでのデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
   
 -   [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
   
@@ -54,7 +55,7 @@ ms.lasthandoff: 12/02/2017
 -   [方法: データ サービスのデータ コントロールをバインド (WCF データ サービス/Silverlight)](http://msdn.microsoft.com/en-us/bda7d82e-7b1f-4690-8a33-c6297465bdd5)  
   
  AJAX ベースのクライアント アプリケーションの [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを使用する。  
- -   [クライアント アプリケーションでデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
+ -   [クライアント アプリケーションでのデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
   
 -   [OData: URI 規則](http://go.microsoft.com/fwlink/?LinkId=185564)  
   
@@ -63,12 +64,12 @@ ms.lasthandoff: 12/02/2017
  使用するデータをエンド ツー エンド ソリューションを作成する[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]クライアントとサーバー間でデータを転送します。  
  -   [クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
   
--   [クライアント アプリケーションでデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
+-   [クライアント アプリケーションでのデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
   
 -   [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
   
  クライアントの待機時間に伴う問題を回避するために [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを非同期で使用する .NET Framework ベースのクライアント アプリケーションを作成する。  
- -   [方法: 非同期データ サービス クエリを実行](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)  
+ -   [方法: 非同期データ サービス クエリを実行する](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)  
   
 -   [非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
@@ -80,22 +81,22 @@ ms.lasthandoff: 12/02/2017
 -   [バイナリ データの操作](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)  
   
  バインド[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Windows Presentation Framework (WPF) アプリケーション内のコントロールにフィードできます。  
- -   [コントロールへのデータ バインディング](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
+ -   [コントロールへのデータのバインド](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
   
 -   [方法: Windows Presentation Foundation 要素にデータをバインドする](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)  
   
--   [方法: プロジェクト データ ソースを使用してデータをバインド](../../../../docs/framework/data/wcf/how-to-bind-data-using-a-project-data-source-wcf-data-services.md)  
+-   [方法: プロジェクト データ ソースを使用してデータをバインドする](../../../../docs/framework/data/wcf/how-to-bind-data-using-a-project-data-source-wcf-data-services.md)  
   
  データ サービスへのメッセージを先に取得してクエリのデータ検証およびロール ベースのフィルター処理を実行する。  
- -   [方法: データ サービス メッセージを途中受信](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md)  
+ -   [方法: データ サービス メッセージを先に取得する](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md)  
   
 -   [インターセプター](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md)  
   
  データ サービス上にエンドポイントを作成してカスタム サービスの動作を有効にする。  
- -   [方法: サービス操作を定義します。](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)  
+ -   [方法: サービス操作を定義する](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)  
   
 -   [サービス操作](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
  [リソース](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)

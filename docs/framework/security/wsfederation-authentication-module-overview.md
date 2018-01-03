@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: ea17e384ecb4536ed544e3b874631db6fe54e0e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b9e76cbfc0afc682f6a7cd0bc95c254d25f77954
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wsfederation-authentication-module-overview"></a>WSFederation 認証モジュールの概要
 Windows Identity Foundation (WIF) は、WS-Federated Authentication Module (WS-FAM) を通じて ASP.NET アプリケーションでのフェデレーション認証をサポートします。 このトピックは、フェデレーション認証の動作とその使用方法の理解に役立ちます。  
@@ -148,7 +149,7 @@ Windows Identity Foundation (WIF) は、WS-Federated Authentication Module (WS-F
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Services.SessionAuthenticationModule>  
  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
  [\<federationConfiguration>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)

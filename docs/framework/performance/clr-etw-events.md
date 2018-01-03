@@ -17,11 +17,12 @@ caps.latest.revision: "45"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1d0619388b429bd1824a62bc29ccb222eea1ffde
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17701ee1ddbb1056c9b06b2467c4ce10b91271ff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-etw-events"></a>CLR ETW イベント
 このセクションのトピックでは、Windows イベント トレーシング (ETW) イベントについて説明します。 各イベントは、キーワードとレベルに関連付けられています。詳細については、「[CLR ETW のキーワードとレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」トピックを参照してください。 CLR には、イベントのプロバイダーが 2 つあります。  
@@ -69,7 +70,7 @@ ms.lasthandoff: 11/21/2017
  [スタック イベント](../../../docs/framework/performance/stack-etw-event.md)  
  イベントが発生した後に、他のイベントでスタック トレースの生成に使用された情報をキャプチャします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグの向上と ETW でのパフォーマンス チューニング](http://go.microsoft.com/fwlink/?LinkId=179696)  
  [Windows パフォーマンス ブログ](http://go.microsoft.com/fwlink/?LinkId=179509)  
  [.NET Framework のログ記録の制御](../../../docs/framework/performance/controlling-logging.md)  

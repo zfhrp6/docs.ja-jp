@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 7db69de994770e122dd4a4233b9a44d572c32344
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1af6fc1b7802fe69f0585011322e2485695a030c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>操作方法: WCF Web サービス アプリケーションの WIF を有効にする
 ## <a name="applies-to"></a>対象  
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/18/2017
   
 -   手順 2 – WCF サービスのクライアント アプリケーションの作成  
   
--   手順 3 – ソリューションのテスト  
+-   手順 3 – ソリューションをテストする  
   
 ## <a name="objectives"></a>目的  
   
@@ -68,7 +69,7 @@ ms.lasthandoff: 10/18/2017
   
 -   手順 2 – WCF サービスのクライアント アプリケーションの作成  
   
--   手順 3 – ソリューションのテスト  
+-   手順 3 – ソリューションをテストする  
   
 ## <a name="step-1--create-a-simple-wcf-service"></a>手順 1 – 簡単な WCF サービスの作成  
  この手順では、Identity and Access Tool に付属している開発用 STS を使用する新しい WCF サービスを作成します。  
@@ -153,7 +154,7 @@ ms.lasthandoff: 10/18/2017
   
 3.  **[Client]** プロジェクトの下の **[参照設定]** を右クリックし、**[サービス参照の追加]** をクリックします。  
   
-4.  **[サービス参照の追加]** ウィンドウで、**[探索]** ボタンのドロップダウン矢印をクリックし、**[ソリューションのサービス]** をクリックします。 **[アドレス]** には、前の手順で作成した WCF サービスが自動的に入力されます。**[名前空間]** は、**[ServiceReference1]** に設定されます。 **[OK]** をクリックします。  
+4.  **[サービス参照の追加]** ウィンドウで、**[探索]** ボタンのドロップダウン矢印をクリックし、**[ソリューションのサービス]** をクリックします。 **[アドレス]** には、前の手順で作成した WCF サービスが自動的に入力されます。**[名前空間]** は、**[ServiceReference1]** に設定されます。 **[OK]**をクリックします。  
   
     > [!IMPORTANT]
     >  クライアントにサービス参照を追加するときに、**TestService** と **LocalSTS** の両方が実行されている必要があります。  
@@ -240,7 +241,7 @@ ms.lasthandoff: 10/18/2017
   
 8.  ソリューションをビルドします。  
   
-## <a name="step-3--test-your-solution"></a>手順 3 – ソリューションのテスト  
+## <a name="step-3--test-your-solution"></a>手順 3 – ソリューションをテストする  
  この手順では、WIF 対応 WCF アプリケーションをテストし、クレームが表示されることを確認します。  
   
 #### <a name="to-test-your-wif-enabled-wcf-application-for-claims"></a>WIF 対応 WCF アプリケーションをテストしてクレームを確認するには  

@@ -12,11 +12,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e23ec35b94196d1f8a597d3a74850b5292a4ef09
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 239834a732fe3bc1cb3e8e7f1d126d26c210d1f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>バージョン 3.5 SP1 における HttpWebRequest の NTLM 認証への変更
 セキュリティの変更は、System.Net 名前空間の <xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、<xref:System.Net.Security.NegotiateStream>、および関連クラスによる統合 Windows 認証の処理方法に影響を与える、.NET Framework Version 3.5 SP1 以降で行われました。 これらの変更は、これらのクラスを使用して Web 要求を作成し、NTLM に基づく統合 Windows 認証が使用されている応答を受信するアプリケーションに影響を及ぼす場合があります。 この変更は、統合 Windows 認証を使用するように構成されている Web サーバーおよびクライアント アプリケーションに影響を与える可能性があります。  
@@ -59,7 +60,7 @@ ms.lasthandoff: 11/21/2017
   
  [http://support.microsoft.com/kb/896861](http://go.microsoft.com/fwlink/?LinkID=179657) で説明されているように、あまり安全ではない回避策はループ バック チェックを無効にすることです。 これによって、リフレクション攻撃に対する保護が無効になります。 そのため、実際に使用するコンピューターと想定するコンピューターにのみ、代替名のセットを制限することをお勧めします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=nameWithType>  
  <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType>  
  <xref:System.Net.HttpWebRequest.Host%2A?displayProperty=nameWithType>

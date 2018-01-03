@@ -49,11 +49,12 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5ed637cd5d173e12114f436b739ce3c114bb420f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ad218e8f87c2a04a9df6f67a918097de20296d0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reliability-best-practices"></a>信頼性に関するベスト プラクティス
 以下の信頼性ルールは SQL Server を対象としたものですが、他のホスト ベースのサーバー アプリケーションにも当てはまります。 SQL Server などのサーバーがリソースをリークせず、停止しないことが非常に重要です。  ただし、オブジェクトの状態を変更するすべてのメソッドに対してバックアウト コードを記述することでは、それを実現できません。  目標は、バックアウト コードによりすべての場所ですべてのエラーから復旧する 100% 信頼できるマネージ コードを記述することではありません。  それは、成功する可能性がほとんどない面倒な作業です。  共通言語ランタイム (CLR) では、完全なマネージ コードを作成できるという十分に強力な保証は簡単には得られません。  ASP.NET とは異なり、SQL Server で使用されているプロセスは 1 つだけであり、受け入れられないほど長い時間データベースを停止させない限りリサイクルできません。  
@@ -286,6 +287,6 @@ public static MyClass SingletonProperty
   
  このようにすると、`try` ブロックを実行する前に finally ブロック内のすべてのコードを準備するよう、Just-In-Time コンパイラに指示されます。 これにより、finally ブロック内のコードがすべてのケースでビルドされて実行されることが保証されます。 CER では空の `try` ブロックを使うことが珍しくありません。 CER を使うと、非同期スレッドの中止およびメモリ不足例外に対して保護されます。 非常に深いコードに対するスタック オーバーフローを追加で処理する CER の形式については、「<xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.ConstrainedExecution>  
  [SQL Server プログラミングとホスト保護属性](../../../docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)

@@ -16,15 +16,16 @@ caps.latest.revision: "11"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 71a5a2e4319debf1a4d8ddd08d7f0979443682b9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f7529c68e96f93ebbba9fc5e750e09331bda9699
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>UI オートメーションによる標準コントロールのサポート
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  このトピックでは、 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 、 [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)]、および [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]フレームワーク向けに開発されたアプリケーションの標準コントロールに対する [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] サポートについて説明します。  
   
@@ -83,7 +84,7 @@ ms.lasthandoff: 10/18/2017
 |ToolbarWindow32|区切り記号|  
 |tooltips_class32|ヒント|  
 |#32774|ヒント|  
-|ReBarWindow32|ToolBar|  
+|ReBarWindow32|ツール バー|  
 |SysTreeView32|ツリー|  
 |SysTreeView32|TreeItem|  
   
@@ -98,7 +99,7 @@ ms.lasthandoff: 10/18/2017
 |SysDateTimePick32|カスタム|  
 |SysMonthCal32|予定表|  
 |MS_WINNOTE|ヒント|  
-|VBBubble|ヒント|  
+|VBBubble|Tooltip|  
 |ScrollBar (スタンドアロン コントロールとして使用される場合)|スライダー|  
 |SuperGrid|カスタム|  
   
@@ -177,5 +178,5 @@ ms.lasthandoff: 10/18/2017
 |RaftingContainer|  
 |StatusStrip|  
   
-## <a name="see-also"></a>関連項目  
- [UI Automation Control Types](../../../docs/framework/ui-automation/ui-automation-control-types.md)
+## <a name="see-also"></a>参照  
+ [UI オートメーション コントロール型](../../../docs/framework/ui-automation/ui-automation-control-types.md)

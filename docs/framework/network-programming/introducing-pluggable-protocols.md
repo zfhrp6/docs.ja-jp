@@ -32,11 +32,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 372f681fbdd4808b5f6a0012cf6ad01e278e05c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3cc7ad6b6270b74e2eb6aa4a2cc3a540175d540b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introducing-pluggable-protocols"></a>プラグ可能なプロトコルの概要
 Microsoft .NET Framework は、アプリケーションにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージ実装を提供します。 <xref:System.Net> および <xref:System.Net.Sockets> の名前空間内のインターネット アクセス クラスは、Web ベース アプリケーションとインターネット ベース アプリケーションの両方を実装するために使用できます。  
@@ -75,7 +76,7 @@ Microsoft .NET Framework は、アプリケーションにすばやく簡単に�
   
  Windows ソケット インターフェイスに精通している開発者、またはソケット レベルでのプログラミングにより提供されるコントロールが必要な開発者は、**System.Net.Sockets** クラスにより自身のニーズを満たすことができます。 **System.Net.Sockets** クラスは、**System.Net** クラス内でのマネージ コードからネイティブ コードへの遷移ポイントです。 ほとんどの場合、**System.Net.Sockets** クラスは、Windows の 32 ビットに相当するものにデータをマーシャリングするだけでなく、必要なセキュリティ チェックをすべて処理します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  

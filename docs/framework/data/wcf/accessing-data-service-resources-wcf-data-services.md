@@ -19,11 +19,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c15ca5efcb23fa6705a4fcfa3eac6d6db09fcbad
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dddbd9cf8e11f09cf1c2dc36db49281d00e97aac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>データ サービス リソースへのアクセス (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]サポートしている、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]は Uri によってアドレス指定できるリソースを含むフィードとしてデータを公開します。 これらのリソースがのエンティティとリレーションシップの規則に従って表現は、 [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)です。 このモデルでは、エンティティはアプリケーション ドメイン内のデータの操作単位 (データ型) を表します (顧客、注文、項目、製品など)。 エンティティ データは、Representational State Transfer (REST) のセマンティクス (特に、標準的な HTTP 動詞である GET、PUT、POST、および DELETE) を使用してアクセスおよび変更できます。  
@@ -106,5 +107,5 @@ http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/$links/Shipper
 ## <a name="consuming-the-returned-feed"></a>返されたフィードの使用  
  URI、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]リソースを使用すると、サービスによって公開されるエンティティ データのアドレスにします。 Web ブラウザーのアドレス フィールドに URI を入力すると、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]要求されたリソースのフィードの表現が返されます。 詳細については、次を参照してください。、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。 Web ブラウザーは、データ サービス リソースが予期されたデータを返します、アプリケーション コードによってアクセスできますも作成、更新、およびデータを削除する運用データ サービスのことをテストまたは Web ページのスクリプト言語に便利です。 詳細については、次を参照してください。[クライアント アプリケーションでデータ サービスを使用して](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Open Data Protocol Web サイト](http://go.microsoft.com/fwlink/?LinkID=182204)

@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0f117d64673729113d917d700e3a26f9723b5a6e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3fe418b1f8a5d5a6d3c2d36184ca76d5ef9989bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exporttypeforwarder-method"></a>ExportTypeForwarder メソッド
 指定したアセンブリの型のテーブルには型フォワーダーを追加します。  
@@ -55,10 +56,10 @@ HRESULT ExportTypeForwarder(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は、S_OK を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Alink.h が必要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [IALink2 インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

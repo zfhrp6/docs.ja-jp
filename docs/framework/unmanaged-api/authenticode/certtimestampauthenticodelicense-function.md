@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 42ec863e9accbd2156b6eeed5857ff86075cf0a5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 53241a459f561bdfd8fc5cb077cb8384f1d906b9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="certtimestampauthenticodelicense-function"></a>CertTimestampAuthenticodeLicense 関数
 Authenticode XrML ライセンスにタイム スタンプを付けます。  
@@ -51,5 +52,5 @@ HRESULT CertTimestampAuthenticodeLicense (
 ## <a name="return-value"></a>戻り値  
  関数が成功した場合は `S_OK`。 それ以外の場合はエラー コードを返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

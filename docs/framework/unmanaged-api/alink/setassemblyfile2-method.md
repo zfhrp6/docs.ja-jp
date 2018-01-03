@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7363a8f633d5f447f72e27ba03055f589564bdd2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 671fb857015a5babd388366066d282cb87462c18
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setassemblyfile2-method"></a>SetAssemblyFile2 メソッド
 名前と新しいアセンブリのオプションを設定します。 非バインド モジュールを作成する際に、このメソッドを呼び出さないでください。  
@@ -55,10 +56,10 @@ HRESULT SetAssemblyFile2(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は、S_OK を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Alink.h が必要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IALink2 インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

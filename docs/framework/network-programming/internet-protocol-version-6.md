@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e8ac63cae9d70f0249533848fa472da77f04b807
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 333fbb452cb1f24b5e62d1106eff4560b26267b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="internet-protocol-version-6"></a>インターネット プロトコル バージョン 6
 インターネット プロトコル バージョン 6 (IPv6) は、インターネットのネットワーク層の標準プロトコルの新しいスイートです。 IPv6 は、アドレスの不足、セキュリティ、自動構成、拡張性などに関して、インターネット プロトコル スイートの現在のバージョン (IPv4) が抱える多くの問題を解決するために設計されています。 IPv6 は、インターネットの機能を拡張して、ピア ツー ピア アプリケーションやモバイル アプリケーションなどの新しい種類のアプリケーションを有効にします。 現在の IPv4 プロトコルの主な問題を次に示します。  
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
   
  [Technet の IPv6 分野](http://go.microsoft.com/fwlink/?LinkID=179658)でも IPv6 関連の情報を見つけることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IPv6 ソケットのサンプル](http://go.microsoft.com/fwlink/?LinkID=179568)  
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  
  [ソケット](../../../docs/framework/network-programming/sockets.md)

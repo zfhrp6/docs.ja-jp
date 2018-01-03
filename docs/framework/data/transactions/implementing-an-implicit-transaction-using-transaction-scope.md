@@ -15,11 +15,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7733543fa1120d4cd8409fe131ddaffa7a76be41
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b75091739b0ea97b63b35830f4946a78e49ff8f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>トランザクション スコープを使用した暗黙的なトランザクションの実装
 <xref:System.Transactions.TransactionScope> クラスを使用すると、コード ブロックがトランザクションに参加しているものとして簡単にマークすることができ、トランザクション自体と対話する必要がありません。 トランザクション スコープは、アンビエント トランザクションを自動的に選択して管理することができます。 トランザクション アプリケーションを開発する際は、使いやすさと効率の点から、<xref:System.Transactions.TransactionScope> クラスを使用することをお勧めします。  
@@ -177,6 +178,6 @@ using(TransactionScope scope1 = new TransactionScope())
 ## <a name="interop-with-com"></a>COM+ との相互運用  
  新しい <xref:System.Transactions.TransactionScope> インスタンスを作成する際には、いずれかのコンストラクターで <xref:System.Transactions.EnterpriseServicesInteropOption> 列挙体を使用して、COM+ との対話方法を指定することができます。 詳細については、次を参照してください。[エンタープライズ サービス、および COM + トランザクションとの相互運用](../../../../docs/framework/data/transactions/interoperability-with-enterprise-services-and-com-transactions.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Transactions.Transaction.Clone%2A>  
  <xref:System.Transactions.TransactionScope>

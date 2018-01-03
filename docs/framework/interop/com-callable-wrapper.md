@@ -23,11 +23,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 874550511ed04427003f6fd54fdd97b3001356fc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e8c39d3c84fe24f86692c289860f22381a3cf5a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="com-callable-wrapper"></a>COM 呼び出し可能ラッパー
 COM クライアントが .NET オブジェクトを呼び出すと、共通言語ランタイムがマネージ オブジェクトとそのオブジェクトのための COM 呼び出し可能ラッパー (CCW: COM Callable Wrapper) を作成します。 COM クライアントは .NET オブジェクトを直接参照できないため、CCW をマネージ オブジェクトのプロキシとして使用します。  
@@ -55,7 +56,7 @@ COM インターフェイスおよび COM 呼び出し可能ラッパー
   
  マネージ環境でクラスによって明示的実装されるインターフェイスを公開するだけでなく、.NET Framework は、オブジェクトの代わりに、次の表にリストされている COM インターフェイスの実装を提供します。 .NET クラスは、これらのインターフェイスの独自の実装を提供することで、既定の動作をオーバーライドできます。 ただし、ランタイムは **IUnknown** と **IDispatch** インターフェイス実装を常に提供します。  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |**Idispatch**|型への遅延バインディングのメカニズムを提供します。|  
 |**IerrorInfo**|エラー、そのソース、ヘルプ ファイル、ヘルプ コンテキスト、およびエラーを定義したインターフェイスの GUID (.NET クラスでは常に **GUID_NULL**) に関する説明文を示します。|  
@@ -184,7 +185,7 @@ public class LoanApp : IAnother {
   
  自動的に生成されたデュアル インターフェイスが適切な場合もまれにありますが、より多くの場合、それはバージョンに関連する複雑さを生じさせます。 たとえば、派生クラスのクラス インターフェイスを使用する COM クライアントは、基本クラスが変更されると簡単に中断します。 サード パーティが基本クラスを提供するとき、クラス インターフェイスのレイアウトを自分で制御することはできません。 さらに、ディスパッチ専用インターフェイスとは異なり、デュアル インターフェイス (**ClassInterface.AutoDual**) は、エクスポートされたタイプ ライブラリ内にクラス インターフェイスの説明を提供します。 そのような説明は、遅延バインディングのクライアントが実行時に DISPID をキャッシュすることを促進します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
  [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)  
  [COM ラッパー](../../../docs/framework/interop/com-wrappers.md)  

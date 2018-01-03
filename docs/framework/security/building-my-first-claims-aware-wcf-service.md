@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: a27420609a6bcb6e30a351e4b84a899da9583d5e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: af39c3c5788db95eaee248ca8454534022cab659
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>クレーム対応の WCF サービスを初めて構築する
 ## <a name="applies-to"></a>対象  
@@ -49,5 +50,5 @@ ms.lasthandoff: 10/18/2017
   
  WIF を使用して初めてのクレーム対応 WCF サービスをビルドするには、「[方法: WIF を使用してクレーム対応 WCF サービスをビルドする](http://msdn.microsoft.com/en-us/431e6415-62ed-4a9f-af03-f14d2b4dfe6d)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WIF の概要](../../../docs/framework/security/getting-started-with-wif.md)

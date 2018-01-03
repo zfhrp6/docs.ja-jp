@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 1b6e63c0db9815c7bcfc32ec962e3f85362cce4f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 712daba98667381650066b7a719dbfdd5224c143
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="network-programming-how-to-topics"></a>ネットワーク プログラミング方法のトピック
 概念を説明したドキュメントに用意されている、ネットワーク プログラミングに関する方法を説明したトピックへのリンクの一覧を次に示します。  
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [方法: ホストに対して ping を実行](../../../docs/framework/network-programming/how-to-ping-a-host.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  
  [MSDN Code Gallery 上の .NET 用のネットワークのサンプル](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

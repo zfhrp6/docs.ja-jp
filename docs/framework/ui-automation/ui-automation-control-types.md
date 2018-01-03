@@ -17,11 +17,12 @@ caps.latest.revision: "61"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: e521f07048e37533e052dc8a43fb2c522750f92a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 658c5aca3dc8d70400cdd26d9e0af1e253e175c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-control-types"></a>UI オートメーション コントロール型
 **注**このドキュメントでは、管理を使用する .NET Framework 開発者向け[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]で定義されたクラス、<xref:System.Windows.Automation>名前空間。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
@@ -58,7 +59,7 @@ ms.lasthandoff: 10/18/2017
  [UI オートメーションによる SplitButton コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-splitbutton-control-type.md)  
  [UI オートメーションによる StatusBar コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-statusbar-control-type.md)  
  [UI オートメーションによる Tab コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-tab-control-type.md)  
- [UI オートメーションによる TabItem コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-tabitem-control-type.md)  
+ [UI オートメーションでの TabItem コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-tabitem-control-type.md)  
  [UI オートメーションによる Table コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-table-control-type.md)  
  [UI オートメーションによる Text コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-text-control-type.md)  
  [UI オートメーションによる Thumb コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-thumb-control-type.md)  
@@ -72,5 +73,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="reference"></a>参照  
  <xref:System.Windows.Automation.ControlType>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)

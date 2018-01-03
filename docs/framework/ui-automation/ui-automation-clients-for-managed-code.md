@@ -17,28 +17,29 @@ caps.latest.revision: "58"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 8142ef17bdfb78226e7a65376e132bad18bc258e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 68ff7e03fe30ff61a35b20517ebaea73144ff621
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>マネージ コードの UI オートメーション クライアント
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  このセクションには、UI オートメーション クライアントの概要と、クライアントの開発に役立つハウツーに関するトピックが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [UI Automation and Screen Scaling](../../../docs/framework/ui-automation/ui-automation-and-screen-scaling.md)  
+ [UI オートメーションおよび画面の拡大縮小](../../../docs/framework/ui-automation/ui-automation-and-screen-scaling.md)  
  [UI オートメーションによる標準コントロールのサポート](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md)  
  [クライアントの UI オートメーション イベント](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
  [UI オートメーション クライアントにおけるキャッシュ](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
- [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
+ [クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
  [UI オートメーション クライアントのコントロール パターン マッピング](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [UI オートメーション要素を取得します。](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)  
- [UI オートメーション スレッド処理の問題](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)  
+ [UI オートメーション要素の取得](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)  
+ [UI オートメーション スレッド処理の問題点](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)  
  [方法トピック](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code-how-to-topics.md)  
   
 ## <a name="reference"></a>参照  

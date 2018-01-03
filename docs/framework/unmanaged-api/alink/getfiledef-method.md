@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a31dee6bb1af4f555211822a3b7ec108353214a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 473cbaba8712ee247733ba3075c0163e259cf4dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getfiledef-method"></a>GetFileDef メソッド
 (ALink によって割り当てられたトークン) ではなくメタデータで使用される実際の FileDef トークンを取得します。  
@@ -51,10 +52,10 @@ HRESULT GetFileDef(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は、S_OK を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  Alink.h が必要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IALink2 インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

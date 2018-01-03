@@ -18,11 +18,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b6eec726342381f7e3ec71aeedd2ff012bc6c3e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: adbdd005bba9e7276a77f2e78c53be43fdceffae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>アンマネージ コードの安全なコーディングのガイドライン
 一部のライブラリ コードは、アンマネージ コードを呼び出す必要があります (たとえば、Win32 などのネイティブ コード API)。 これは、マネージ コード用のセキュリティの境界の外部に出ることなので、注意が必要です。 セキュリティ的に中立なコードである場合、コードとそのコードを呼び出すコードは、アンマネージ コードのアクセス許可 (<xref:System.Security.Permissions.SecurityPermission> フラグを指定した <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> ) を持つ必要があります。  
@@ -59,5 +60,5 @@ ms.lasthandoff: 10/18/2017
 |**native**|セキュリティに中立的。つまり、呼び出すためにアンマネージ コードのアクセス許可を必要とするアンマネージ コードです。 セキュリティがチェックされ、承認のない呼び出し元は停止されます。|  
 |**unsafe**|セキュリティが抑止された、危険性のあるアンマネージ コード エントリ ポイントです。 このようなアンマネージ コードを使用するとき、開発者は最大限の注意を払う必要があり、セキュリティ脆弱性を避けるための別の手段の保護機能が設定されていることを確認します。 このキーワードはセキュリティ システムをオーバーライドするため、開発者がセキュリティ対策を行う必要があります。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)

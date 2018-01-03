@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e316b964e3e983f50b81228709623e162529b05c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 991e018c3967693f5b87b71c77cdbadcd4ae0cfe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corheapinfo-structure"></a>COR_HEAPINFO 構造体
 列挙可能かどうかなど、ガベージ コレクション ヒープに関する情報が提供されます。  
@@ -55,7 +56,7 @@ typedef struct _COR_HEAPINFO {
   
  ガベージ コレクション ヒープ上のオブジェクトを列挙するには、前にする必要があります常に確認する、`areGCStructuresValid`フィールドをヒープが列挙可能な状態であることを確認します。 詳細については、次を参照してください。、 [icordebugprocess 5::getgcheapinformation](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md)メソッドです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -64,6 +65,6 @@ typedef struct _COR_HEAPINFO {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

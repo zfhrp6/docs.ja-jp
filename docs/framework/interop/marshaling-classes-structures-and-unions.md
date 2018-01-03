@@ -29,11 +29,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dcfa2e60a9659db6d38e0561785ece5726989ee0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3ddb5abeee9c1cad12e40b84f2e5c81295cbed9f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>クラス、構造体、および共用体のマーシャリング
 クラスと構造体は、.NET Framework では類似しています。 どちらもフィールド、プロパティ、およびイベントを持つことができます。 静的メソッドと非静的メソッドを持つこともできます。 1 つの重要な違いは、構造体は値型でクラスは参照型であることです。  
@@ -296,7 +297,7 @@ typedef struct _MYSTRSTRUCT2
  [!code-csharp[Conceptual.Interop.Marshaling#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/outarrayofstructs.cs#21)]
  [!code-vb[Conceptual.Interop.Marshaling#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/outarrayofstructs.vb#21)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
  [プラットフォーム呼び出しのデータ型](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [マーシャリング (文字列の)](../../../docs/framework/interop/marshaling-strings.md)  

@@ -18,11 +18,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 154bbe14a14d34c0d998e3192a70a96b9922f32c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 97428837d78c246915381b51fb5005a68518b7bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugehclause-structure"></a>CorDebugEHClause 構造体
 [.NET Framework 4.5.2 以降のバージョンでのみでサポート]  
@@ -69,7 +70,7 @@ typedef struct _CorDebugEHClause {
 |`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|`finally` 句。|  
 |`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|fault 句 (例外がスローされた場合にのみ `finally` 句が呼び出される)。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -78,6 +79,6 @@ typedef struct _CorDebugEHClause {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [GetEHClauses メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

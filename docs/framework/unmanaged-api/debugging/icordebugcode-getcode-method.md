@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 12820d0be725c92754640aaa4eebca56bbc33ab6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f906fddf8073a00d2a3741613aae537b8604af67
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugcodegetcode-method"></a>ICorDebugCode::GetCode メソッド
 指定した関数のすべてのコードを取得し、逆アセンブリ用に書式設定します。 .NET Framework version 2.0 では、このメソッドは廃止されました。 使用して[icordebugcode 2::getcodechunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)代わりにします。  
@@ -62,7 +63,7 @@ HRESULT GetCode (
 ## <a name="remarks"></a>コメント  
  場合は、関数のコードは、複数のチャンクに分割して、ネイティブのオフセットの昇順で連結されます。 命令の境界はチェックされません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -71,6 +72,6 @@ HRESULT GetCode (
   
  **.NET framework のバージョン:** 1.1、1.0  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [GetCodeChunks メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)  
  

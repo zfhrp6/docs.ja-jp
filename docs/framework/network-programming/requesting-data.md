@@ -27,11 +27,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bb5c79980246a9afa5a7e5024049c26815cab49d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 76ea605444b5d1776c5a85891db4f3460e9df24b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="requesting-data"></a>データの要求
 今日のインターネットの分散操作環境で動作するアプリケーションを開発するには、あらゆる種類のリソースからデータを取得するための効率的で使いやすい方法が必要です。 プラグ可能なプロトコルを使うと、単一のインターフェイスを使って複数のインターネット プロトコルからデータを取得するアプリケーションを開発できます。  
@@ -61,7 +62,7 @@ Dim sr As StreamReader
 sr = New StreamReader(resp.GetResponseStream(), Encoding.ASCII)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
  [方法: Web ページを要求し、ストリームとして結果を取得する](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)  
  [方法: WebRequest に一致するプロトコル固有の WebResponse を取得する](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)

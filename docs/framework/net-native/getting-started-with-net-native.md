@@ -13,11 +13,12 @@ caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: eeda0c58e9b5e9f8b48e335849ce12f7e8d94a1b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 07882617e7625c07bade85c59116581e16f95121
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-net-native"></a>.NET ネイティブの概要
 Windows 10 用に新しい Windows アプリを作成する場合も、既存の Windows ストア アプリを移行する場合も、次に示す同じ手順を実行することになります。 [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリを作成するには、次の手順を実行します。  
@@ -120,7 +121,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
   
 -   [.NET ネイティブ アプリでのランタイム例外](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [NIB: .NET ネイティブのセットアップと構成](http://msdn.microsoft.com/en-us/7c9bc375-8b87-4c33-bede-72d513e362ec)  
  [.NET ネイティブとコンパイル](../../../docs/framework/net-native/net-native-and-compilation.md)  

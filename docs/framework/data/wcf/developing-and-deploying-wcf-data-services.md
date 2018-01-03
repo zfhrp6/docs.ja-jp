@@ -18,11 +18,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 87a074b96583f44e8655c9efde145e28b490f6e9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 34fd9bc3bf16446505caf12c6cfa4192ffb391c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>WCF Data Services の開発と配置
 このトピックでは、 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]の開発と配置について説明します。 複数の基本情報については[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を参照してください[作業の開始](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)と[概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)です。  
@@ -129,7 +130,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の実装が含まれているので、Windows Server AppFabric を使用して、Windows Server で実行されている IIS に配置されたデータ サービスを監視できます。 Server AppFabric を使用したデータ サービスの監視の[!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、ブログの記事「 [Tracking WCF Data Services with Windows Server AppFabric (Windows Server AppFabric による WCF Data Services の追跡)](http://go.microsoft.com/fwlink/?LinkID=202005)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ サービスのホスティング](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)  
  [WCF Data Services のセキュリティ保護](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

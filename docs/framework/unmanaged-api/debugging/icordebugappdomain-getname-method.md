@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 590bfb5d7d8cac8e322bddfe6258ad9bf377dad6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 62defcb4b7a2f143269c7f617b762e3419d55426
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugappdomaingetname-method"></a>ICorDebugAppDomain::GetName メソッド
 アプリケーション ドメインの名前を取得します。  
@@ -54,7 +55,7 @@ HRESULT GetName (
 ## <a name="remarks"></a>コメント  
  デバッガーは、`GetName`メソッドを 1 回、名前に必要なバッファーのサイズを取得します。 デバッガーはバッファーを割り当てたし、メソッドを呼び出して、再度バッファーが満杯にします。 最初の呼び出しで、名前のサイズを取得すると呼びます*クエリ モード*です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

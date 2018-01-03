@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e400d68924f1ed57ea1e71892e52f5aae2f5eebc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 35f4449f7a826ea49be750cd750cb989c8c455fb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wstrustchannelfactory-and-wstrustchannel"></a>WSTrustChannelFactory および WSTrustChannel
 Windows Communication Foundation (WCF) をよくご存じの方は、WCF クライアントが既にフェデレーションに対応していることを理解されていると思います。 <xref:System.ServiceModel.WSFederationHttpBinding> または同様のカスタム バインドを使用して WCF クライアントを構成することで、サービスに対するフェデレーション認証を有効にすることができます。  
@@ -108,5 +109,5 @@ IHelloService serviceChannel = channelFactory.CreateChannelWithIssuedToken<IHell
   
 -   <xref:System.ServiceModel.Security.WSTrustChannelFactory> と <xref:System.ServiceModel.Security.WSTrustChannel> により、WCF のベスト プラクティスに従ってチャネル キャッシュ、エラー、および復元のセマンティクスを制御できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WIF の機能](../../../docs/framework/security/wif-features.md)

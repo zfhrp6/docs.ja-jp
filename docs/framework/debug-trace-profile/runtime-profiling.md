@@ -22,11 +22,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 876635cfe0349c734a61dcc827a6f9594bb2a5d7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4a8f3af4878e0f6911fcc55ec76b26649d517b3b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="runtime-profiling"></a>ランタイム プロファイリング
 プロファイリングは、任意の開発シナリオまたは配置シナリオでパフォーマンス データを収集する方法の 1 つです。 このセクションは、アプリケーションのパフォーマンスに関する情報の収集を必要とする開発者およびシステム管理者を対象にしています。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 10/18/2017
   
 6.  **[選択したオブジェクトのインスタンス]** リスト ボックスで、**[\<すべてのインスタンス>]** をクリックして、共通言語ランタイムのパフォーマンス カウンターをグローバルに (つまり、システム全体で) 監視するように指定します。  
   
-     または  
+     - または -  
   
      **[選択したオブジェクトのインスタンス]** リスト ボックスで、アプリケーション名をクリックして、そのアプリケーションのパフォーマンス カウンターを監視します。  
   
@@ -74,5 +75,5 @@ ms.lasthandoff: 10/18/2017
 |<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=nameWithType>|`PerformanceCounter` コンポーネントのインストーラーを指定します。|  
 |<xref:System.Diagnostics.PerformanceCounterType?displayProperty=nameWithType>|`NextValue` の `PerformanceCounter`メソッドを計算する数式を指定します。|  
   
-## <a name="see-also"></a>関連項目  
- [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md)
+## <a name="see-also"></a>参照  
+ [パフォーマンス カウンター](../../../docs/framework/debug-trace-profile/performance-counters.md)

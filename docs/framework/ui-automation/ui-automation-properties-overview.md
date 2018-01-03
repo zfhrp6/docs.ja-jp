@@ -16,21 +16,22 @@ caps.latest.revision: "17"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: a6fec422e235413bd76d86cdcb5a72a351bb3f97
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 38237dd1885047eed5be06aba092c261f56f6da3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-properties-overview"></a>UI オートメーション プロパティの概要
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  UI オートメーション プロバイダーは、 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 要素のプロパティを公開します。 これらのプロパティにより、UI オートメーション クライアント アプリケーションは、静的データと動的データを含め、 [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]の構成部分 (特にコントロール) に関する情報を探索できます。  
   
  このセクションでは、 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] プロパティの概要を説明します。 詳細については、以下のトピックで説明しています。  
   
--   [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
+-   [クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
   
 -   [サーバー側 UI オートメーション プロバイダーの実装](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
   
@@ -72,7 +73,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="display-characteristics"></a>表示特性  
   
-|プロパティの識別子|「プロパティ アクセス」|  
+|プロパティの識別子|プロパティ アクセス|  
 |-------------------------|---------------------|  
 |<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.BoundingRectangle%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.CultureProperty>|適用なし|  
@@ -82,7 +83,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="element-type"></a>要素型  
   
-|プロパティの識別子|「プロパティ アクセス」|  
+|プロパティの識別子|プロパティ アクセス|  
 |-------------------------|---------------------|  
 |<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.IsContentElementProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A>|  
@@ -92,7 +93,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="identification"></a>識別  
   
-|プロパティの識別子|「プロパティ アクセス」|  
+|プロパティの識別子|プロパティ アクセス|  
 |-------------------------|---------------------|  
 |<xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.ClassNameProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ClassName%2A>|  
@@ -105,7 +106,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="interaction"></a>相互作用  
   
-|プロパティの識別子|「プロパティ アクセス」|  
+|プロパティの識別子|プロパティ アクセス|  
 |-------------------------|---------------------|  
 |<xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AcceleratorKey%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AccessKey%2A>|  
@@ -139,7 +140,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="miscellaneous"></a>その他の指定  
   
-|プロパティの識別子|「プロパティ アクセス」|  
+|プロパティの識別子|プロパティ アクセス|  
 |-------------------------|---------------------|  
 |<xref:System.Windows.Automation.AutomationElement.IsRequiredForFormProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsRequiredForForm%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.IsPasswordProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsPassword%2A>|  
@@ -169,10 +170,10 @@ ms.lasthandoff: 11/21/2017
   
  クライアントは、イベントをサブスクライブすることでイベントをリッスンします。 イベントをサブスクライブすることは、イベントを処理できるデリゲート メソッドを作成し、それらのメソッドで処理する特定のイベントと共に、それらのメソッドを [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] に渡すことを意味します。 特にプロパティ変更イベントについては、クライアントが <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>を実装する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [UI オートメーション クライアントにおけるキャッシュ](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
- [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
+ [クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
  [サーバー側 UI オートメーション プロバイダーの実装](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
- [プロパティ条件に基づく UI オートメーション要素を検索します。](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  
- [UI オートメーション プロバイダーからプロパティを返す](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
- [UI オートメーション プロバイダーからイベントを発生させる](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)
+ [プロパティ条件に基づく UI オートメーション要素の検索](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  
+ [UI オートメーション プロバイダーからのプロパティの返却](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
+ [UI オートメーション プロバイダーからのイベントの発生](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)

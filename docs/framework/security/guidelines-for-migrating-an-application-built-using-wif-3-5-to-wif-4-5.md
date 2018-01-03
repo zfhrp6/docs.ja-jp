@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: fc5554193d93f2a88fd9e6d1c1af7923a23b2280
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87443a83b80440a30e942b30bd98cce09816f25f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidelines-for-migrating-an-application-built-using-wif-35-to-wif-45"></a>WIF 3.5 でビルドされたアプリケーションを WIF 4.5 に移行するためのガイドライン
 ## <a name="applies-to"></a>対象  
@@ -179,7 +180,7 @@ add-windowsfeature windows-identity-foundation
 > [!NOTE]
 >  WIF 3.5 および WIF 4.5 では多くのクラスが同じ名前を持つため、WIF 3.5 と WIF 4.5 の両方を使用している場合は、完全修飾クラス名、または WIF 3.5 および WIF 4.5 でクラスを区別するための名前空間エイリアスを必ず使用してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WIF 構成スキーマ](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md)  
  [WIF 3.5 と WIF 4.5 間での名前空間マッピング](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)  
  [Windows Identity Foundation 4.5 の新機能](../../../docs/framework/security/whats-new-in-wif.md)  

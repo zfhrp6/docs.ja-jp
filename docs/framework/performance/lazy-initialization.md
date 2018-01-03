@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1ffa3cb853a02af21ca1dd528174e560b8d830a5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f4998cc0c836cf46d79d854ad9a85e7eacf70d7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lazy-initialization"></a>限定的な初期化
 オブジェクトの*遅延初期化*とは、初めて使用されるまでオブジェクトの作成が延期されることを意味します。 (このトピックでは、*遅延初期化*と*遅延インスタンス化*を同じ意味の言葉として使っています。)遅延初期化は主に、パフォーマンスの改善、無駄な計算処理の回避、プログラムのメモリ要件の縮小を目的として利用されます。 最も一般的なシナリオ:  
@@ -159,7 +160,7 @@ ms.lasthandoff: 11/21/2017
   
  この例では、ループの繰り返しの旅に初期化プロシージャが呼び出されていることに注意してください。 マルチスレッド シナリオでは、初期化プロシージャを呼び出した最初のスレッドの値をすべてのスレッドで確認できます。 後続のスレッドも初期化プロシージャを呼び出しますが、その結果は利用されません。 この種類の潜在的競合状態が許容できない場合、ブール値引数と同期オブジェクトを取る <xref:System.Threading.LazyInitializer.EnsureInitialized%2A?displayProperty=nameWithType> のオーバーロードを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ スレッド処理の基本](../../../docs/standard/threading/managed-threading-basics.md)  
  [スレッドおよびスレッド処理](../../../docs/standard/threading/threads-and-threading.md)  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  

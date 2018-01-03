@@ -17,15 +17,16 @@ caps.latest.revision: "39"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 079a778a3518e6632f429a261ee229db0b46d9b1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 03ebb5a8193d3376d40fa830f13ab9324846ba2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>サーバー側 UI オートメーション プロバイダーの実装
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  このセクションでは、カスタム コントロールのサーバー側 UI オートメーション プロバイダーを実装する方法について説明します。  
   
@@ -179,12 +180,12 @@ ms.lasthandoff: 11/21/2017
   
  これを実現するため、Rebar のフラグメント ルート プロバイダーは、バンドを表す子のセットを公開します。 各バンドには、プロパティとパターンを公開するプロバイダーが 1 つあります。 その <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>の実装で、バンド プロバイダーはコントロール HWND の既定のウィンドウ プロバイダーを返します。これを取得するには、コントロールのウィンドウ ハンドルを渡して <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>を呼び出します。 最後に、Rebar のフラグメント ルート プロバイダーは <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride> インターフェイスを実装し、その <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd%2A> の実装で、指定した HWND に含まれるコントロールの適切なバンド プロバイダーを返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [UI オートメーション プロバイダーの概要](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)  
- [サーバー側 UI オートメーション プロバイダーを公開します。](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
- [UI オートメーション プロバイダーからプロパティを返す](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
- [UI オートメーション プロバイダーからイベントを発生させる](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
- [UI オートメーション フラグメント プロバイダーでのナビゲーションを有効にします。](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
- [UI オートメーション プロバイダーでコントロール パターンをサポートします。](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [サーバー側 UI オートメーション プロバイダーの公開](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
+ [UI オートメーション プロバイダーからのプロパティの返却](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
+ [UI オートメーション プロバイダーからのイベントの発生](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
+ [UI オートメーション フラグメント プロバイダーでのナビゲーションの有効化](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
+ [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [単純なプロバイダーのサンプル](http://msdn.microsoft.com/en-us/c10a6255-e8dc-494b-a051-15111b47984a)  
  [フラグメント プロバイダーのサンプル](http://msdn.microsoft.com/en-us/778ef1bc-8610-4bc9-886e-aeff94a8a13e)

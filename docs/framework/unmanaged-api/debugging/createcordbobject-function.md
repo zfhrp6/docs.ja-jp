@@ -22,11 +22,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 06e08148e5526d65d82eca52ffe8db66a4e7df6e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7007e541e9999e0cb14a83845eb28d71336b3ff6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="createcordbobject-function"></a>CreateCordbObject 関数
 デバッガー インターフェイスを作成します ([ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md))、リモート プロセスでマネージ デバッグ セッションをインスタンス化するための機能を提供します。  
@@ -63,7 +64,7 @@ HRESULT CordbCreateObject (
 ## <a name="remarks"></a>コメント  
  [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)で返されるインターフェイス`ppCordb`はすべてのマネージ デバッグ サービスの最上位レベルのデバッグ インターフェイスです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CoreClrRemoteDebuggingInterfaces.h  

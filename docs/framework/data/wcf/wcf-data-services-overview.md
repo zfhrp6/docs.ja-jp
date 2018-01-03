@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 88d586ead18e4129707728733029c735083b477c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c98ecc987f4710d344f6eab07563a14cbf4d9962
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-data-services-overview"></a>WCF Data Services の概要
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]使用して作成し、Web またはイントラネット用のデータ サービスの利用を有効に、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]です。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Uri によってアドレス指定できるリソースとしてデータを公開できます。 したがって、Representational State Transfer (REST) のセマンティクス (標準的な HTTP 動詞 GET、PUT、POST、DELETE) を使用してデータにアクセスし、そのデータを変更できます。 このトピックでは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] で定義されるパターンとプラクティスの両方の概要について説明します。また、.NET Framework ベースのアプリケーションで [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を利用するために [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] で提供される機能についても説明します。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/02/2017
   
  ![WCF Data Services アーキテクチャ図](../../../../docs/framework/data/wcf/media/astoriaservicearch.gif "AstoriaServiceArch")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)  
  [はじめに](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  

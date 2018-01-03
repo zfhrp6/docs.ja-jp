@@ -26,11 +26,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a7657540991099cca29dc911c8e42e5ddcd22802
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e2866ef2b8f1c869da7c5989e892c1e3a5dd19fa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>タイプ ライブラリのアセンブリとしてのインポート
 通常、COM 型の定義は、タイプ ライブラリに存在します。 これに対し、CLS 準拠のコンパイラはアセンブリ内に型のメタデータを生成します。 型情報の 2 つのソースは大きく異なります。 このトピックでは、タイプ ライブラリからメタデータを生成する方法について説明します。 結果のアセンブリは相互運用機能アセンブリと呼ばれ、含まれる型情報により、.NET Framework アプリケーションで COM 型を使用できます。  
@@ -78,7 +79,7 @@ ms.lasthandoff: 11/21/2017
   
  COM 相互運用機能のインポート処理の詳細については、「[Type Library to Assembly Conversion Summary](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)」(タイプ ライブラリからアセンブリへの変換の要約) を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.TypeLibConverter>  
  [.NET Framework への COM コンポーネントの公開](../../../docs/framework/interop/exposing-com-components.md)  
  [タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  

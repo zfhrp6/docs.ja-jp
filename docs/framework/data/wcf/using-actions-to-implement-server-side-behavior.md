@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7879a600ec0ecfebc96b18476121f2ad205ece8f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d8ca19a5a49815130103672f43452ebbfedfae3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>アクションを使用してサーバー側の動作を実装する
 OData アクションを使用すると、OData サービスから取得したリソースに対する動作を実装できます。  たとえば、リソースとしてデジタル ムービーについて考えてみましょう。デジタル ムービーについては、チェックアウト、評価やコメント、チェックインなど、多様な操作が考えられます。 これらはすべて、デジタル ムービーを管理するために WCF Data Services で実装できるアクションの例です。 アクションは、そのアクションを呼び出すことのできる対象のリソースが含まれている OData 応答に記述します。 ユーザーが、デジタル ムービーを表すリソースを要求した場合、WCF Data Services から返される応答には、そのリソースに使用できるアクションに関する情報が含まれています。 アクションを使用できるかどうかは、データ サービスまたはリソースの状態によって変わる場合があります。 たとえば、デジタル ムービーがチェックアウトされている場合、それを別のユーザーがチェックアウトすることはできません。 クライアントは、URL を指定するだけでアクションを呼び出すことができます。 たとえば、「http://MyServer/MovieService.svc/Movies(6)」と指定すると特定のデジタル ムービーが示され、「http://MyServer/MovieService.svc/Movies(6)/Checkout」と指定すると特定のムービーに対するアクションが呼び出されます。 アクションを使用すると、データ モデルを公開することなくサービス モデルを公開することができます。 先ほどのムービー サービスを例とすると、評価データをリソースとして直接公開せずにムービーをユーザーが評価できるようにするというケースが考えられます。 そこで、たとえば Rate (評価) アクションを実装することにより、リソースとして評価データに直接アクセスせずに、ムービーをユーザーが評価できるようにすることができます。  
@@ -89,8 +90,8 @@ MoviesModel context = new MoviesModel (new Uri("http://MyServer/MoviesService.sv
   
  上のコード スニペットの `MoviesModel` クラスは、Visual Studio の [サービス参照の追加] で WCF Data Services への参照を追加することでが生成されたものです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
- [開発および WCF Data Services の配置](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)  
+ [WCF Data Services の開発と配置](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)  
  [カスタム データ サービス プロバイダー](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)

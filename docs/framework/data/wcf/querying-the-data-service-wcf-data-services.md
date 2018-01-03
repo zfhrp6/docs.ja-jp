@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d25f8357f5b375792e8a05833e8397085cc27b23
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 976f1e4d8a149f8104325fd5d006d245afee04a9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>データ サービスに対するクエリ (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリを使用すると、言語統合クエリ (LINQ) を含め、使い慣れた [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] プログラミング パターンを使用してデータ サービスに対してクエリを実行できます。 このクライアント ライブラリは、クライアント上で <xref:System.Data.Services.Client.DataServiceQuery%601> クラスのインスタンスとして定義されたクエリを HTTP GET 要求メッセージに変換します。 ライブラリは、応答メッセージを受信し、クライアント データ サービス クラスのインスタンスに変換します。 これらのクラスは、<xref:System.Data.Services.Client.DataServiceContext> が属する <xref:System.Data.Services.Client.DataServiceQuery%601> によって追跡されます。  
@@ -134,7 +135,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
  さらに、<xref:System.Int32> メソッドまたは <xref:System.Int64> メソッドを呼び出すことにより、それぞれ <xref:System.Linq.Enumerable.Count%2A> 値または <xref:System.Linq.Enumerable.LongCount%2A> 値として、セット内のエンティティの合計数のみを取得することもできます。 これらのメソッドを呼び出すと、<xref:System.Data.Services.Client.QueryOperationResponse%601> は返されず、カウント値のみが返されます。 詳細については、次を参照してください。[する方法:、数のエンティティ クエリによって返される、決定](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [クエリの射影](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)  
+ [クエリ射影](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)  
   
  [オブジェクトの具体化](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
   
@@ -142,15 +143,15 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
  [方法: データ サービス クエリを実行する](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
   
- [方法: データ サービス クエリにクエリ オプションを追加](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)  
+ [方法: データ サービス クエリにクエリ オプションを追加する](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)  
   
- [方法: クエリによって返されるエンティティの数を決定します。](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md)  
+ [方法: クエリで返されたエンティティの数を確認する](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md)  
   
  [方法: データ サービス要求のクライアント資格情報の指定](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md)  
   
- [方法: クライアント要求のヘッダーを設定](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)  
+ [方法: クライアント要求のヘッダーを設定する](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)  
   
- [方法: クエリ結果を射影](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)  
+ [方法: クエリ結果を射影する](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

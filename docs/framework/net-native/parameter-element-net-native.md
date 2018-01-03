@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f603f795682c7ea1f48e5d9356af6e0477246da1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 820c36abda104bbf748e5b3a7838f3c7715048e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltparametergt-element-net-native"></a>&lt;Parameter&gt; 要素 (.NET ネイティブ)
 メソッドに渡された引数の型にリフレクション ポリシーを適用します。  
@@ -81,7 +82,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="remarks"></a>コメント  
  `<Parameter>` 要素は [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) 要素の子で、特定のメソッド パラメーターにポリシーを適用するために使用されます。 特定のメソッド パラメーターは、型ではなく名前で指定されます。 `Activate` や `Dynamic` などのポリシーの種類を表す属性が 1 つ以上必要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<Method> 要素](../../../docs/framework/net-native/method-element-net-native.md)  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  

@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 06fc335e4b8011afd92e698b20e4b84572b153c3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 133d48baa9613ea698b6d6a21f0dfe88a798859c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="garbage-collection-etw-events"></a>ガベージ コレクション ETW イベント
 <a name="top"></a> これらのイベントは、ガベージ コレクションに関連する情報を収集します。 ガベージ コレクションが実行された回数、ガベージ コレクションの間に解放されたメモリの量など、診断やデバッグに役立つ情報を入手できます。  
@@ -374,5 +375,5 @@ ms.lasthandoff: 10/18/2017
   
  イベント データはありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "32"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 1dfb4c1acd12b58d5c4f032ebe0ad8c56fc0db87
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 30aac15a4394a8008e2c1f89dce76dd134acf7b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-events-for-clients"></a>クライアントの UI オートメーション イベント
 > [!NOTE]
@@ -67,8 +68,8 @@ ms.lasthandoff: 11/21/2017
   
  コード例を参照してください[の UI オートメーション イベントをサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [UI オートメーション イベントにサブスクライブします。](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)  
+## <a name="see-also"></a>参照  
+ [UI オートメーション イベントのサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)  
  [UI オートメーション イベントの概要](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
  [UI オートメーション プロパティの概要](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
  [TrackFocus サンプル](http://msdn.microsoft.com/en-us/4a91c0af-6bb5-4d38-a743-cf136f268fc9)

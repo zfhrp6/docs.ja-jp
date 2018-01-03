@@ -17,15 +17,16 @@ caps.latest.revision: "14"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: cf8a054b832b1accdfa8e1d63b2d971a10f244b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 50335994fab424b3100c91a202a7ea53643db551
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>クライアント側 UI オートメーション プロバイダーの実装
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] のオペレーティング システムでは、 [!INCLUDE[TLA#tla_ms](../../../includes/tlasharptla-ms-md.md)] 、 [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]、 [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]など、いくつかの異なる [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]フレームワークが使用されています。 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] は、UI 要素に関する情報をクライアントに公開します。 ただし、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 自体は、それらのフレームワークに存在する各種のコントロールや、それらから情報を抽出するために必要な手法を認識しているわけではありません。 その代わりに、このタスクをプロバイダーと呼ばれるオブジェクトに任せます。 プロバイダーは、特定のコントロールから情報を抽出し、その情報を [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]に渡します。次に UI オートメーションが、その情報を一貫性のある方法でクライアントに提示します。  
   
@@ -59,6 +60,6 @@ ms.lasthandoff: 11/21/2017
   
  最後の 2 つのパラメーターは省略できます。 クライアントでは、異なるアプリケーションに対して異なるプロバイダーを使用する必要がある場合、ターゲット アプリケーションのイメージ名を指定することができます。 たとえば、クライアントは、Multiple View パターンをサポートする既知のアプリケーションの [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] リスト ビュー コントロールに対して、あるプロバイダーを使用し、そのパターンをサポートしない別の既知のアプリケーションの同様のコントロールに対して別のプロバイダーを使用できます。  
   
-## <a name="see-also"></a>関連項目  
- [クライアント側 UI オートメーション プロバイダーを作成します。](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
- [クライアント アプリケーションでの UI オートメーション プロバイダーを実装します。](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+## <a name="see-also"></a>参照  
+ [クライアント側 UI オートメーション プロバイダーの作成](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
+ [クライアント アプリケーションに UI オートメーション プロバイダーを実装する](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)

@@ -24,11 +24,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2e9f2208f2e309b2433bc158a309284131ae8abd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5459efbb07aa235bd7c1d34ffd6b56195fe0bf1c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate MDA
 `callbackOnCollectedDelegate` マネージ デバッグ アシスタント (MDA) は、デリゲートがマネージ コードからアンマネージ コードに関数ポインターとしてマーシャリングされ、デリゲートがガベージ コレクトされた後にその関数ポインター上にコールバックが配置された場合にアクティブ化されます。  
@@ -116,7 +117,7 @@ public class Entry
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)  

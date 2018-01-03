@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 98124b7b9efb2c92ebee6b6e99f73edc6cf173a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 092024f3f4e6fc1bc923ae2a299c5d9c21f1b1b8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clrdebuggingversion-structure"></a>CLR_DEBUGGING_VERSION 構造体
 デバッグのために共通言語ランタイム (CLR) の製品バージョンを定義します。  
@@ -54,7 +55,7 @@ WORD wRevision;
 ## <a name="remarks"></a>コメント  
  `CLR_DEBUGGING_VERSION`構造は、同じ COR_VERSION 構造体としてただし、`CLR_DEBUGGING_VERSION`構造により、追加の構造のバージョン フィールド (`wStructVersion`)。 現時点では、このフィールドは、0 に設定する必要があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl  
@@ -63,6 +64,6 @@ WORD wRevision;
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

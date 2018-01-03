@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 375c3b44f505a9bf36ce721c5ccde9b888114309
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bafad45e6b6b546707c4f805f857e85549f0f071
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cache-policy"></a>キャッシュ ポリシー
 キャッシュ ポリシーには、要求されたリソースのキャッシュ コピーを使用して要求を満たすことができるかどうかを決定するルールを定義します。 アプリケーションは、更新のクライアント キャッシュ要件を指定しますが、実質的なキャッシュ ポリシーは、クライアントのキャッシュ要件、サーバーのコンテンツ有効期限要件、およびサーバーの再検証要件によって決まります。 最新のコンテンツをクライアント アプリケーションに確実に返すために、クライアントのキャッシュ ポリシーとサーバーの要件の相互作用によって、常に最も保守的なキャッシュ ポリシーが適用されます。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
  キャッシュ ポリシーを作成し、利用する方法を示すコード例については、「[Configuring Caching in Network Applications](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)」(ネットワーク アプリケーションでのキャッシュの構成) を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ネットワーク アプリケーションのキャッシュ管理](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
  [場所ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/location-based-cache-policies.md)  
  [時間ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/time-based-cache-policies.md)  

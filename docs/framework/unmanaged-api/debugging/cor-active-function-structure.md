@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 85096b607fa2fec9875e497cc1f50167fc482fbd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7bb587f485427d9fd88e2f834d844ece18d336ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="coractivefunction-structure"></a>COR_ACTIVE_FUNCTION 構造体
 スレッドのフレームで現在アクティブな機能に関する情報が含まれます。 この構造体を使って、 [icordebugthread 2::getactivefunctions](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md)メソッドです。  
@@ -50,7 +51,7 @@ typedef struct  _COR_ACTIVE_FUNCTION {
 |`ilOffset`|フレームの Microsoft intermediate language (MSIL) オフセットします。|  
 |`flags`|将来の機能拡張予約されています。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl  
@@ -59,6 +60,6 @@ typedef struct  _COR_ACTIVE_FUNCTION {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

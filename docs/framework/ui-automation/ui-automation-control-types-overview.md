@@ -16,15 +16,16 @@ caps.latest.revision: "22"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: c1a424f05f2d57f773e8367e102f553d69b7dc22
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 39d76b5d68938569fbe2d5e35230ed70737fdecc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-control-types-overview"></a>UI オートメーション コントロール型の概要
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] コントロール型は、コンボ ボックスやボタンなど、特定の要素が表すコントロールの種類を示すのに使用できる既知の識別子です。  
   
@@ -102,7 +103,7 @@ ms.lasthandoff: 10/18/2017
   
 -   [UI オートメーションによる Tab コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-tab-control-type.md)  
   
--   [UI オートメーションによる TabItem コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-tabitem-control-type.md)  
+-   [UI オートメーションでの TabItem コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-tabitem-control-type.md)  
   
 -   [UI オートメーションによる Table コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-table-control-type.md)  
   
@@ -122,5 +123,5 @@ ms.lasthandoff: 10/18/2017
   
 -   [UI オートメーションによる Window コントロール型のサポート](../../../docs/framework/ui-automation/ui-automation-support-for-the-window-control-type.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Automation.ControlType>

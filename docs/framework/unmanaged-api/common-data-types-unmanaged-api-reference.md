@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 03350825b3de4515a0d30e8644f34df71efa25db
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a565ec6ded0a82ed4ab3c0fd03b082d996369ddc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="common-data-types-unmanaged-api-reference"></a>共有のデータ型 (アンマネージ API リファレンス)
 このトピックでは、C/C++ `typedef` ステートメントで定義される .NET Framework のアンマネージ API で使用する、簡単なデータ型について示します。 これらのデータ型は通常、C/C++ のプリミティブ データ型のエイリアスです。 一般的にこれらのデータ型の値は不透明です。これらのデータ型の値は他の関数またはメソッドに対して変更なしで渡せるように、特定の関数またはメソッドによって返されるためです。  
@@ -44,5 +45,5 @@ ms.lasthandoff: 10/18/2017
 |TASKID|`typedef UINT64 TASKID;`|cordebug.h、mscoree.h|識別子、 [ICLRTask](../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)インスタンス。|  
 |ThreadID|`typedef UINT_PTR ThreadID;`|corprof.h|マネージ スレッドの識別子。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アンマネージ API リファレンス](../../../docs/framework/unmanaged-api/index.md)

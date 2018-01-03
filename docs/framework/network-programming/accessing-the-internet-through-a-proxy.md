@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 9e2be47cfd1ce56df7a0ad926166f8224a812449
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 55bc8b3ef02238c217f03e8a3f0b554e13521e37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>プロキシを介したインターネットへのアクセス
 サイトでプロキシを使用してインターネットへのアクセスを提供する場合、アプリケーションが Web プロキシと通信できるようにプロキシ インスタンスを構成する必要があります。  
@@ -41,6 +42,6 @@ ms.lasthandoff: 11/21/2017
   
 -   [方法: グローバル プロキシの選択をオーバーライドする](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーション プロトコルの使用](../../../docs/framework/network-programming/using-application-protocols.md)  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)

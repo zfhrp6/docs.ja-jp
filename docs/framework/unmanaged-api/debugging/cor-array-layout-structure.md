@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 02ddd87cfaf16990ff487dfe27f30a2493cb9a01
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b936b1b2187ec68db7f5fdecb0344e6cac211ab1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corarraylayout-structure"></a>COR_ARRAY_LAYOUT 構造体
 メモリ内の配列オブジェクトのレイアウトに関する情報が提供されます。  
@@ -61,7 +62,7 @@ typedef struct COR_ARRAY_LAYOUT {
   
  値`numRanks`は 1 次元配列の場合は 1 と`N`の多次元配列を`N`ディメンションです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -70,6 +71,6 @@ typedef struct COR_ARRAY_LAYOUT {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

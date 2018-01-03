@@ -13,11 +13,12 @@ caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c4257876abeeccf762a7caa87f667468a16bba70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ce23d66f79f94af74250cff137499f6c8b1582ac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Windows ストア アプリの .NET ネイティブへの移行
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は、Windows ストアまたは開発者のコンピューターでアプリの静的なコンパイルを行います。 これは、デバイス上で Just-In-Time (JIT) コンパイラまたは [ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) によって Windows ストア アプリに対して実行される動的なコンパイルとは異なります。 違いはありますが、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は [Windows ストア アプリ用 .NET](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)との互換性を保持しようとします。 Windows ストア アプリ用 .NET で機能する大部分が [!INCLUDE[net_native](../../../includes/net-native-md.md)]でも機能します。  ただし、動作に違いがある場合もあります。 このドキュメントでは、次の領域における、標準の Windows ストア アプリ用 .NET と [!INCLUDE[net_native](../../../includes/net-native-md.md)] との違いについて説明します。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
 -   スレッドでの呼び出しを行わない無限ループ (たとえば、 `while(true);`) によって、アプリが停止する可能性があります。 同様に、長時間または無限の待機によってもアプリが停止する可能性があります。  
   
--   特定の汎用初期化サイクルは、 [!INCLUDE[net_native](../../../includes/net-native-md.md)]で例外をスローしません。 たとえば、次のコードは標準 CLR では <xref:System.TypeLoadException> 例外をスローします。 [!INCLUDE[net_native](../../../includes/net-native-md.md)]ではスローしません。  
+-   特定の汎用初期化サイクルは、[!INCLUDE[net_native](../../../includes/net-native-md.md)]で例外をスローしません。 たとえば、次のコードは標準 CLR では <xref:System.TypeLoadException> 例外をスローします。 [!INCLUDE[net_native](../../../includes/net-native-md.md)]ではスローしません。  
   
      [!code-csharp[ProjectN#8](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat1.cs#8)]  
   
@@ -79,7 +80,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="other-reflection-related-differences"></a>リフレクションに関するその他の違い  
  Windows ストア アプリ用 .NET と [!INCLUDE[net_native](../../../includes/net-native-md.md)]の間には、その動作にリフレクション関連のその他の個別の違いが多数あります。  
   
- [!INCLUDE[net_native](../../../includes/net-native-md.md)]の場合:  
+ [!INCLUDE[net_native](../../../includes/net-native-md.md)] の場合:  
   
 -   .NET Framework クラス ライブラリでの型とメンバーに対するプライベート リフレクションはサポートされません。 ただし、独自のプライベート型とメンバー、およびサードパーティ ライブラリの型とメンバーに対するリフレクションは行うことができます。  
   
@@ -205,7 +206,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.Net.Http.HttpClientHandler.MaxRequestContentBufferSize%2A?displayProperty=nameWithType> プロパティは構成できません。  
   
--   <xref:System.Net.Http.HttpClientHandler.PreAuthenticate%2A?displayProperty=nameWithType> プロパティは常に `true` です。  Windows ストア アプリ用 .NET での既定値は `false`です。  
+-   <xref:System.Net.Http.HttpClientHandler.PreAuthenticate%2A?displayProperty=nameWithType> プロパティは常に `true` です。  Windows ストア アプリ用 .NET での既定値は `false` です。  
   
 -   応答の `SetCookie2` ヘッダーは廃止されたものとして無視されます。  
   
@@ -248,7 +249,7 @@ ms.lasthandoff: 11/21/2017
   
  非推奨の <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> インターフェイスの API ([!INCLUDE[net_native](../../../includes/net-native-md.md)]では非サポート):  
   
-|型|メンバー|  
+|種類|メンバー|  
 |----------|------------|  
 |<xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType>|すべてのメンバー。|  
 |<xref:System.Runtime.InteropServices.CustomQueryInterfaceMode?displayProperty=nameWithType>|すべてのメンバー。|  
@@ -257,7 +258,7 @@ ms.lasthandoff: 11/21/2017
   
  その他のサポートされない相互運用機能:  
   
-|型|メンバー|  
+|種類|メンバー|  
 |----------|------------|  
 |<xref:System.Runtime.InteropServices.ICustomAdapter?displayProperty=nameWithType>|すべてのメンバー。|  
 |<xref:System.Runtime.InteropServices.SafeBuffer?displayProperty=nameWithType>|すべてのメンバー。|  
@@ -269,7 +270,7 @@ ms.lasthandoff: 11/21/2017
   
  ほとんど使用されないマーシャリング API:  
   
-|型|メンバー|  
+|種類|メンバー|  
 |----------|------------|  
 |<xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.ReadByte%28System.Object%2CSystem.Int32%29>|  
 |<xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.ReadInt16%28System.Object%2CSystem.Int32%29>|  
@@ -602,7 +603,7 @@ ms.lasthandoff: 11/21/2017
   
      [!code-csharp[ProjectN#10](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat3.cs#10)]  
   
-     基底クラスのメンバーはシリアル化時にスキャンされないため、 `InnerType` 型はシリアライザーに認識されていません。  
+     基底クラスのメンバーはシリアル化時にスキャンされないため、`InnerType` 型はシリアライザーに認識されていません。  
   
 -   <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> は、 <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するクラスまたは構造体のシリアル化に失敗します。 たとえば、次の型ではシリアル化と逆シリアル化が失敗します。  
   
@@ -682,7 +683,7 @@ ms.lasthandoff: 11/21/2017
   
  Windows ストア アプリ用単体テスト ライブラリ プロジェクトで [!INCLUDE[net_native](../../../includes/net-native-md.md)] を有効にすることはサポートされていません。有効にすると、プロジェクトはビルドに失敗します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../docs/framework/net-native/getting-started-with-net-native.md)  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [.NET Windows ストア アプリの概要](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)  

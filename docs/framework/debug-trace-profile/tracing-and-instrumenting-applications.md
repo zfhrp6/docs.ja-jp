@@ -24,11 +24,12 @@ caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 932fef22681aeb2a68d7852884127155757e4099
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 20eea5ed6f69c17466aeb33617f418ac71a3e1b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tracing-and-instrumenting-applications"></a>アプリケーションのトレースとインストルメント
 トレースとは、実行中のアプリケーションの実行状態を監視する方法です。 .NET Framework アプリケーションの開発時に、トレースとデバッグのインストルメンテーションをアプリケーションに追加できます。このインストルメンテーションは、アプリケーションの開発中でも開発したアプリケーションの配置後でも使用できます。 <xref:System.Diagnostics.Trace?displayProperty=nameWithType>、<xref:System.Diagnostics.Debug?displayProperty=nameWithType>、および <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> の各クラスを使用すると、エラーおよびアプリケーションの実行についての情報を後で分析するために、ログ、テキスト ファイル、またはその他のデバイスに記録できます。  
@@ -149,15 +150,15 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 ## <a name="security-concerns"></a>セキュリティに関する注意事項  
  ASP.NET アプリケーションを配置する前にトレースとデバッグを無効にしないと、アプリケーションに関する情報が公開され、悪意を持ったプログラムによって利用される可能性があります。 詳細については、「[方法 : トレースとデバッグを指定して条件付きコンパイルを実行する](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)」、「[Compiling and Building](/visualstudio/ide/compiling-and-building-in-visual-studio)」(コンパイルとビルド)、および「[方法 : トレース スイッチを作成、初期化、および構成する](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)」を参照してください。 デバッグは、IIS (Internet Information Services) で設定することもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.Trace>  
  <xref:System.Diagnostics.TraceSource>  
  [コード コントラクト](../../../docs/framework/debug-trace-profile/code-contracts.md)  
  [C#、F#、および Visual Basic のプロジェクト](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)  
- [方法: アプリケーション コードにトレース ステートメントを追加](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
- [方法: トレースとデバッグによる条件付きコンパイル](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
- [方法: 作成、初期化、およびトレース スイッチを構成します。](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
- [方法: を作成し、トレース ソースの初期化](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
- [方法: TraceSource とフィルターを使用してトレース リスナー](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)  
+ [方法 : アプリケーション コードにトレース ステートメントを追加する](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
+ [方法 : トレースとデバッグを指定して条件付きコンパイルを実行する](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
+ [方法 : トレース スイッチを作成、初期化、および構成する](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
+ [方法: トレース ソースを作成し初期化する](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
+ [方法 : TraceSource とフィルターをトレース リスナーと共に使用する](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)  
  [トレース リスナー](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
  [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)

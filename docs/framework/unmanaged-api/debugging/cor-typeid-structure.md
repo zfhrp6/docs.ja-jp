@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 795dea77ac8dac1e1d22574c23f1e1c13344a71a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ca6c9b3b02314843a3eaf01d8cd4a9eac5513efa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cortypeid-structure"></a>COR_TYPEID 構造体
 型識別子が含まれます。  
@@ -49,7 +50,7 @@ typedef struct COR_TYPEID{
   
  A`COR_TYPEID`オブジェクトは不透明にするためのものです。 その個々 のフィールドをアクセスまたは操作する必要があります。 として指定されている識別子としてのみ使用することは、`out`さらに、メソッドの呼び出しとそのには、パラメーターが追加情報を提供するその他のメソッドに渡されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -58,6 +59,6 @@ typedef struct COR_TYPEID{
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

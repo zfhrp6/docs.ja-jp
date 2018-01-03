@@ -17,11 +17,12 @@ caps.latest.revision: "24"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 76b747624a22212fb7b9ba1a6353956a99ed1559
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d702e7c910536566aabfaa7948afb24ae94d2cb1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="network-programming-in-the-net-framework"></a>.NET Framework のネットワーク プログラミング
 Microsoft .NET Framework は、アプリケーションにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージ実装を提供します。 ネットワーク アプリケーションは、プラグ可能なプロトコルを基に自動的に新しいインターネット プロトコルを使用するように作成することも、ソケット レベルでネットワークを使用できるように Windows ソケット インターフェイスのマネージ実装を使用することもできます。  
@@ -142,7 +143,7 @@ Microsoft .NET Framework は、アプリケーションにすばやく簡単に�
  <xref:System.Security.Authentication.ExtendedProtection.Configuration?displayProperty=nameWithType>  
  アプリケーションの拡張保護を使用した認証の構成をサポートします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ネットワーク プログラミング方法のトピック](../../../docs/framework/network-programming/network-programming-how-to-topics.md)  
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  
  [MSDN Code Gallery 上の .NET 用のネットワークのサンプル](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)  

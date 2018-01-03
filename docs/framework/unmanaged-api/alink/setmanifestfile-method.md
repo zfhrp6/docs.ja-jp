@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 807452326193d193f3bc603ebc7b74a5a0f1c281
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cf48153454fbb2c24dc3f1cfe1f82deefa4ee723
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setmanifestfile-method"></a>SetManifestFile メソッド
 指定するか、アセンブリの作成時に、リンカーが使用するマニフェスト ファイルをリセットできます。  
@@ -47,10 +48,10 @@ HRESULT SetManifestFile(
 ## <a name="remarks"></a>コメント  
  これを呼び出して、Win32ResBlob を求めます。 値、`pszFile`パラメーターは、その内容の読み取りおよび RT_MANIFEST の ID では、Win32 リソースにマニフェスト ファイルの名前。 NULL のパラメーターを使用して呼び出されると、以前に読み取られたマニフェストがクリアされます。 これにより、1 つの初期化時に、リンカーの状態をリセットすることができます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  ALink.h が必要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IALink3 インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  

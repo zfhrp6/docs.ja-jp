@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: da6c9723849694a764a3cb1c050abdb447776113
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c4957e3ec6891dbee207c7aac5fcf1564ecd0af5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enabling-network-tracing"></a>ネットワークのトレースの有効化
 ネットワークのトレースでは、メソッド呼び出しについての情報、およびマネージ アプリケーションによって生成されるネットワーク トラフィックについての情報にアクセスできます。 アプリケーションでネットワーク トレースを有効にするには、次のタスクを実行する必要があります。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 </system.diagnostics>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ネットワークのトレースの解釈](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
  [.NET Framework のネットワークのトレース](../../../docs/framework/network-programming/network-tracing.md)  
  [実装とトレースの概要](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)

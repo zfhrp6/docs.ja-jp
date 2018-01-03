@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 980ed0a10c4e8152da20846710b21c244a341271
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 722a317a01d79f56496810b8727ce041705c8f78
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="runtime-callable-wrapper"></a>ランタイム呼び出し可能ラッパー
 共通言語ランタイムは、ランタイム呼び出し可能ラッパー (RCW) と呼ばれるプロキシを介して COM オブジェクトを公開します。 .NET クライアントでは RCW が普通のオブジェクトとして示されますが、その主な機能は、.NET クライアントと COM オブジェクトの間で呼び出しをマーシャリングすることです。  
@@ -64,7 +65,7 @@ COM インターフェイスおよびランタイム呼び出し可能ラッパ�
 |**IDispatchEx**|クラスが **IDispatchEx** を実装する場合、RCW は **IExpando** を実装します。 **IDispatchEx** インターフェイスは、**IDispatch** インターフェイスの拡張版で、**IDispatch** とは異なり、列挙、追加、削除、および大文字小文字を区別したメンバーの呼び出しが可能になります。|  
 |**IEnumVARIANT**|列挙をサポートする COM 型がコレクションとして扱われることを可能にします。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [COM ラッパー](../../../docs/framework/interop/com-wrappers.md)  
  [選択したインターフェイスのマーシャ リング](http://msdn.microsoft.com/en-us/fdb97fd0-f694-4832-bf15-a4e7cf413840)  
  [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)  

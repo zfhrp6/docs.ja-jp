@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: f1086958a56aadbddf54f20295b91e885adf71c4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: bc6a9d828f1ab666ddda687931785f3853b74374
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="claims-based-authorization-using-wif"></a>WIF を使用したクレーム ベースの承認
 証明書利用者アプリケーションでは、承認によって、認証済み ID がアクセスできるリソースと、そのリソースで実行できる操作が決まります。 承認が不適切だったり弱かったりすると、それは情報漏えいとデータの改ざんにつながります。 ここでは、Windows Identity Foundation (WIF) とセキュリティ トークン サービス (STS)、たとえば Microsoft Azure のアクセス制御サービス (ACS) を使用して、クレーム対応 ASP.NET の Web アプリケーションとサービスの承認を実装する方法の概要を説明します。  

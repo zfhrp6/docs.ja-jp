@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 7065455e3459ad37a8e296107ca8c6991334b328
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 39364f06cec35b1a5417540dfa29b0cac24fbdb6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-build-claims-aware-aspnet-mvc-web-application-using-wif"></a>方法: WIF を使用してクレーム対応 ASP.NET MVC Web アプリケーションをビルドする
 ## <a name="applies-to"></a>対象  
@@ -39,7 +40,7 @@ ms.lasthandoff: 10/18/2017
   
 -   手順 2 – クレーム ベースの認証用の ASP.NET MVC アプリケーションを構成する  
   
--   手順 3 – ソリューションのテスト  
+-   手順 3 – ソリューションをテストする  
   
 -   関連項目  
   

@@ -18,11 +18,12 @@ caps.latest.revision: "37"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0bd4ee6c43b5089c45789b4f22326e17ec2218c8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ba7b6bca4618b8de7c1b5ce2ef45b8455ee71c5c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-transparent-code-level-2"></a>透過的セキュリティ コード、レベル 2
 <a name="top"></a>
@@ -199,6 +200,6 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> プロパティは既定では `false` であるため、検証をスキップするにはこのプロパティを `true` に設定する必要があります。 これをするのは、最適化のためだけにしてください。 使用して、アセンブリの透過的なコードが検証可能なことを確認、`transparent`オプション、 [PEVerify ツール](../../../docs/framework/tools/peverify-exe-peverify-tool.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティ透過的なコード、レベル 1](../../../docs/framework/misc/security-transparent-code-level-1.md)  
  [セキュリティの変更](../../../docs/framework/security/security-changes.md)

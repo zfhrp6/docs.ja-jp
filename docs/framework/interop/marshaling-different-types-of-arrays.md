@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 157d157eceaa83893df3acf5efc9a8d4c1b27200
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e34a0b267e9a1dc7cf545ae981211cabf220e0d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="marshaling-different-types-of-arrays"></a>さまざまな型の配列のマーシャリング
 配列は、同じ型の 1 つ以上の要素を含むマネージ コード内の参照型です。 配列は参照型ですが、アンマネージ関数には In パラメーターとして渡されます。 この動作は、マネージ配列がマネージ オブジェクトに渡される方法 (In/Out パラメーターとして渡される) と一致しません。 詳細については、「 [コピーと固定](../../../docs/framework/interop/copying-and-pinning.md)」を参照してください。  
@@ -110,9 +111,9 @@ typedef struct _MYPERSON
 } MYPERSON;  
 ```  
   
- このサンプルでは、 `MyPoint` と `MyPerson` 構造体に埋め込み型が含まれています。 各メンバーが出現する順番でメモリ内に順次配列されることを保証するために、 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性を設定します。  
+ このサンプルでは、`MyPoint` と `MyPerson` 構造体に埋め込み型が含まれています。 各メンバーが出現する順番でメモリ内に順次配列されることを保証するために、 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性を設定します。  
   
- `LibWrap` クラスには、 `App` クラスによって呼び出されるメソッドのセットが含まれます。 配列を渡す特定の方法について詳しくは、次のサンプル内のコメントを参照してください。 参照型の配列は、既定では In パラメーターとして渡されます。 呼び出し元が結果を受け取るためには、 **InAttribute** と **OutAttribute** を配列が含まれる引数に明示的に適用する必要があります。  
+ `LibWrap` クラスには、`App` クラスによって呼び出されるメソッドのセットが含まれます。 配列を渡す特定の方法について詳しくは、次のサンプル内のコメントを参照してください。 参照型の配列は、既定では In パラメーターとして渡されます。 呼び出し元が結果を受け取るためには、 **InAttribute** と **OutAttribute** を配列が含まれる引数に明示的に適用する必要があります。  
   
 ### <a name="declaring-prototypes"></a>プロトタイプの宣言  
  [!code-csharp[Conceptual.Interop.Marshaling#31](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#31)]
@@ -122,7 +123,7 @@ typedef struct _MYPERSON
  [!code-csharp[Conceptual.Interop.Marshaling#32](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#32)]
  [!code-vb[Conceptual.Interop.Marshaling#32](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/arrays.vb#32)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型の配列のマーシャリング](http://msdn.microsoft.com/en-us/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)  
  [プラットフォーム呼び出しのデータ型](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)

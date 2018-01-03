@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1b72a24f349237aa35ccae295e9e552facc21ddd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6615abdf621217baa7ced4211bfa19abac944be9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>方法: プライマリ相互運用機能アセンブリを登録する
 クラスは、COM 相互運用でのみマーシャリングすることができ、常にインターフェイスとしてマーシャリングされます。 場合によっては、クラスをマーシャリングするために使用されるインターフェイスが、クラス インターフェイスと呼ばれます。 クラス インターフェイスを任意のインターフェイスでオーバーライドする方法の詳細については、「[COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)」を参照してください。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/21/2017
 regasm CompanyA.UtilLib.dll  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プライマリ相互運用機能アセンブリを使ったプログラミング](http://msdn.microsoft.com/en-us/306fa1d6-0703-4004-9e93-d0a57f1be81e)  
  [プライマリ相互運用機能アセンブリの検索](http://msdn.microsoft.com/en-us/d6768e4b-cd80-414d-a4f8-05d979eb393b)  
  [プライマリ相互運用機能アセンブリの再配布](http://msdn.microsoft.com/en-us/e76384f0-d631-474c-bdbd-13884cba0265)

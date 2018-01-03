@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e477a870107a8d4d8fbac9a3d4fb10a285158280
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e41e6c6d47d7057e2482a48e6f48c33a1325294c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>MissingRuntimeArtifactException クラス (.NET ネイティブ)
 **Windows 10 の Windows アプリ用 .NET ([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ)**  
@@ -88,6 +89,6 @@ ms.lasthandoff: 11/21/2017
   
  `MissingRuntimeArtifactException` クラスには一意のメンバーは含まれていません。メンバーはすべて基底クラスの <xref:System.MemberAccessException> から継承されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

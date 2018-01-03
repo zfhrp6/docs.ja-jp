@@ -17,21 +17,22 @@ caps.latest.revision: "62"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 10af8087eb72577dfabef261544cb2363ba17a0c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9960c55e5a47271c0d7091deb61a29daa9ae3433
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-control-patterns-how-to-topics"></a>UI オートメーション コントロール パターンに関する「方法」トピック
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  ここでは、コントロール パターンの実装について詳しく説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [Expose the Content of a Table Using UI Automation](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
- [サポートされている UI オートメーション コントロール パターンを取得します。](../../../docs/framework/ui-automation/get-supported-ui-automation-control-patterns.md)  
- [UI オートメーションを使用する チェック ボックスのトグル状態の取得します。](../../../docs/framework/ui-automation/get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
- [UI オートメーションを使用したコントロールを呼び出し](../../../docs/framework/ui-automation/invoke-a-control-using-ui-automation.md)  
- [UI オートメーション要素を移動します。](../../../docs/framework/ui-automation/move-a-ui-automation-element.md)
+ [UI オートメーションを使用したテーブルの内容の公開](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
+ [サポートされている UI オートメーション コントロール パターンの取得](../../../docs/framework/ui-automation/get-supported-ui-automation-control-patterns.md)  
+ [UI オートメーションを使用した、チェック ボックスのトグル状態の取得](../../../docs/framework/ui-automation/get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
+ [UI オートメーションを使用したコントロールの呼び出し](../../../docs/framework/ui-automation/invoke-a-control-using-ui-automation.md)  
+ [UI オートメーション要素の移動](../../../docs/framework/ui-automation/move-a-ui-automation-element.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4b29ed1c3659b1705640888ded5fe21432dc6ada
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 28203dc428db6a2dd06e9c1e85b64ef80e81ffbe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="type-equivalence-and-embedded-interop-types"></a>型の等価性と埋め込まれた相互運用機能型
 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降、共通言語ランタイムでは、マネージ アセンブリに COM 型の型情報を直接埋め込めるようになりました。マネージ アセンブリで相互運用アセンブリから COM 型の型情報を取得する必要がありません。 埋め込まれる型情報にはマネージ アセンブリに実際に使用される型とメンバーのみが含まれるため、2 つのマネージ アセンブリで同じ COM 型の表示が非常に異なることが考えられます。 マネージ アセンブリごとに、COM 型の表示を表す異なる <xref:System.Type> オブジェクトが与えられます。 共通言語ランタイムでは、インターフェイス、構造、列挙、委任といった異なる表示間で型の等価性が与えられます。  
@@ -58,7 +59,7 @@ ms.lasthandoff: 11/21/2017
   
 -   型を COM インポート型にします。 <xref:System.Runtime.InteropServices.ComImportAttribute> 属性が与えられていると、インターフェイスは COM インポート型となります。 それが定義されているアセンブリに <xref:System.Runtime.InteropServices.ImportedFromTypeLibAttribute> 属性が含まれる場合、インターフェイス、構造、列挙、委任は COM インポート型となります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Type.IsEquivalentTo%2A>  
  [マネージ コードの COM 型の使用](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
  [タイプ ライブラリのアセンブリとしてのインポート](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)

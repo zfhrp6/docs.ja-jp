@@ -19,11 +19,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3ee72f1c3eaf2c78a7cdff9b2a4db81ef0b767a2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 94ca7614e6df2d82216fa869309dff2da8eee634
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>方法: プロジェクト データ ソースを使用してデータをバインドする (WCF Data Services)
 生成されたデータ オブジェクトに基づいて [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント アプリケーション内にデータ ソースを作成できます。 使用してデータ サービスへの参照を追加すると、**サービス参照の追加**ダイアログ ボックスで、生成されたクライアント データ クラスと一緒にプロジェクト データ ソースが作成されます。 データ サービスが公開する各エンティティ セットに対して 1 つのデータ ソースが作成されます。 これらのデータ ソース アイテムをドラッグして、サービスからデータを表示するフォームを作成することができます、**データソース**ウィンドウからデザイナーにします。 これらの項目は、データ ソースにバインドされているコントロールになります。 インスタンスに、実行中にこのデータ ソースがバインドされている、<xref:System.Data.Services.Client.DataServiceCollection%601>クラスは、データ サービスに、クエリによって返されるオブジェクトが挿入されます。 詳細については、次を参照してください。[コントロールへのデータ バインディング](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)です。  
@@ -126,6 +127,6 @@ ms.lasthandoff: 12/02/2017
   
 10. このコードは、Northwind データ サービスから <xref:System.Data.Services.Client.DataServiceCollection%601> の `Customers` を返す <xref:System.Data.Services.Client.DataServiceQuery%601> の実行に基づいて <xref:System.Collections.Generic.IEnumerable%601> 型の `Customers` のインスタンスを作成し、`customersBindingSource` にバインドします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
  [方法: Windows Presentation Foundation 要素にデータをバインドする](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)

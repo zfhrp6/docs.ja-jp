@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 1d4746e2303949ddeabee36e4875e7480467f33e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 868ab986a0f7343e2efd2d4b5f7016d0554084cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>バージョン 3.5 のソケット パフォーマンスの強化
 非同期ネットワーク I/O を利用して最高のパフォーマンスを達成するために、バージョン 3.5 で、<xref:System.Net.Sockets.Socket?displayProperty=nameWithType> クラスが機能強化されました。 <xref:System.Net.Sockets.Socket> クラスの機能強化の一環として、一連の新しいクラスが追加されました。これが提供する代替非同期パターンは、目的に特化した高パフォーマンスのソケット アプリケーションで利用できます。 この機能強化は、高いパフォーマンスを必要とするネットワーク サーバー アプリケーションのために設計されたものです。 あるアプリケーションで、機能強化された非同期パターンを排他的に、言い換えると、アプリケーションの高負荷領域 (大量のデータを受け取るときなど) のみで使用できます。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
  新しい非同期ソケット操作コンテキスト オブジェクトの有効期間は、アプリケーション コードの参照と非同期 I/O の参照により決定されます。 非同期ソケット操作メソッドの 1 つにパラメーターとして送信された後、非同期ソケット操作コンテキスト オブジェクトの参照をアプリケーションが維持する必要はありません。 完了コールバックが戻るまで、参照状態が維持されます。 ただし、コンテキスト オブジェクトの参照をアプリケーションが維持することには、将来の非同期ソケット操作で再利用できるため、利便性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.Sockets.Socket?displayProperty=nameWithType>  
  <xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType>  
  <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType>  

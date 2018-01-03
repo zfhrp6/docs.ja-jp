@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 68d21502b9033b4102c22fb4e0ea10a031e2e7cb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d6afee9ea1528d4219d32d32fff670ddbfb3033c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-detect-network-availability-and-address-changes"></a>方法: ネットワークの可用性とアドレスの変更を検出する
 このサンプルでは、インターフェイスのネットワーク アドレスの変更を検出する方法を示します。  
@@ -56,4 +57,4 @@ namespace Examples.Net.AddressChanges
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  この例で必要な要素は次のとおりです。  
   
--   **System.Net** 名前空間の参照。
+-   **System.Net** 名前空間への参照。

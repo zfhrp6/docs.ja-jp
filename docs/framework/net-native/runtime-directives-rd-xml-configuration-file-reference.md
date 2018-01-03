@@ -13,11 +13,12 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2ecfc61c5b586dd3385890d73ded729a38fb41c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f452a32b209c30175f95aec7a8a90e0783c10086
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス
 ランタイム ディレクティブ (.rd.xml) ファイルは、指定されたプログラム要素をリフレクションに使用できるかどうかを示す XML 構成ファイルです。 ランタイム ディレクティブ ファイルの例を次に示します。  
@@ -51,24 +52,24 @@ ms.lasthandoff: 11/21/2017
  [Application](../../../docs/framework/net-native/application-element-net-native.md) [0:1]  
  [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
  [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) (それを含む型のサブクラス) [O:1]  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (それを含む型が属性) [O:1]  
  [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0:M]  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
@@ -81,9 +82,9 @@ ms.lasthandoff: 11/21/2017
  [Event](../../../docs/framework/net-native/event-element-net-native.md) [0:M]  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
  [Parameter](../../../docs/framework/net-native/parameter-element-net-native.md) [0:M]  
  [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0:M]  
@@ -95,24 +96,24 @@ ms.lasthandoff: 11/21/2017
  [Library](../../../docs/framework/net-native/library-element-net-native.md) [0:M]  
  [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
  [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) (それを含む型のサブクラス) [O:1]  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (それを含む型が属性) [O:1]  
  [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0:M]  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
@@ -122,9 +123,9 @@ ms.lasthandoff: 11/21/2017
  [Event](../../../docs/framework/net-native/event-element-net-native.md) [0:M]  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (構築されたジェネリック型) [0:M]  
- 。 です。 。  
+ である必要があります。 からドラッグします。 である必要があります。  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
  [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (構築されたジェネリック メソッド) [0:M]  
  [Property](../../../docs/framework/net-native/property-element-net-native.md) [0:M]  
@@ -467,6 +468,6 @@ ms.lasthandoff: 11/21/2017
   
  詳細については、「[Windows ストア アプリの .NET ネイティブへの移行](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)」の「シリアライザーの違い」セクションを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [リフレクションおよび .NET ネイティブ](../../../docs/framework/net-native/reflection-and-net-native.md)

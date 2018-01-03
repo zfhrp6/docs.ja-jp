@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: cafd84ce3acea80905d686f33f23338e3581a9c4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d1d504ca056f35fe8716b299ec73f45648bb3d77
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="find-a-ui-automation-element-based-on-a-property-condition"></a>プロパティ条件に基づく UI オートメーション要素の検索
 > [!NOTE]
@@ -40,7 +41,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[InvokePatternApp#1100](../../../samples/snippets/csharp/VS_Snippets_Wpf/InvokePatternApp/CSharp/InvokePatternApp.cs#1100)]
  [!code-vb[InvokePatternApp#1100](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InvokePatternApp/VisualBasic/Client.vb#1100)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [InvokePattern および ExpandCollapsePattern メニュー項目のサンプル](http://msdn.microsoft.com/en-us/b7fa141c-e2d1-4da2-a27f-81a7d1172210)  
- [UI オートメーション要素を取得します。](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)  
- [AutomationID プロパティを使用します。](../../../docs/framework/ui-automation/use-the-automationid-property.md)
+ [UI オートメーション要素の取得](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)  
+ [AutomationID プロパティの使用](../../../docs/framework/ui-automation/use-the-automationid-property.md)

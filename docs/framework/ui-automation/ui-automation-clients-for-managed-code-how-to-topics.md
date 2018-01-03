@@ -17,11 +17,12 @@ caps.latest.revision: "58"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 31cd858cd6a753b1fddd7b4be6805390142be833
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 69ef9c378aae18767d41990094e52ac2be3cbd1f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-clients-for-managed-code-how-to-topics"></a>マネージ コード用の UI オートメーション クライアントに関する「方法」トピック
 > [!NOTE]
@@ -30,11 +31,11 @@ ms.lasthandoff: 10/18/2017
  このセクションでは、の機能の実装の詳細についてを説明[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]クライアント アプリケーションでします。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [プロパティ条件に基づく UI オートメーション要素を検索します。](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  
- [Treewalker を使用した UI オートメーション要素間の移動します。](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)  
- [UI オートメーション要素のリスト項目の検索します。](../../../docs/framework/ui-automation/find-a-ui-automation-element-for-a-list-item.md)  
- [UI オートメーション要素のプロパティを取得します。](../../../docs/framework/ui-automation/get-ui-automation-element-properties.md)  
- [UI オートメーションにおけるキャッシュを使用します。](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
- [UI オートメーション イベントにサブスクライブします。](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)  
- [クライアント側プロバイダー アセンブリを登録します。](../../../docs/framework/ui-automation/register-a-client-side-provider-assembly.md)  
- [AutomationID プロパティを使用します。](../../../docs/framework/ui-automation/use-the-automationid-property.md)
+ [プロパティ条件に基づく UI オートメーション要素の検索](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  
+ [TreeWalker を使用した UI オートメーション要素間の移動](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)  
+ [リスト項目の UI オートメーション要素の検索](../../../docs/framework/ui-automation/find-a-ui-automation-element-for-a-list-item.md)  
+ [UI オートメーション要素のプロパティの取得](../../../docs/framework/ui-automation/get-ui-automation-element-properties.md)  
+ [UI オートメーションにおけるキャッシュの使用](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
+ [UI オートメーション イベントのサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)  
+ [クライアント側プロバイダー アセンブリの登録](../../../docs/framework/ui-automation/register-a-client-side-provider-assembly.md)  
+ [AutomationID プロパティの使用](../../../docs/framework/ui-automation/use-the-automationid-property.md)

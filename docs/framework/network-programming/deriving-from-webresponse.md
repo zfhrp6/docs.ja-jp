@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 3f732f60afeba71d26391ba5fb6484ab7562654a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2c0c70719e3f149ddf1f1e22cee8158e31fccf3c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deriving-from-webresponse"></a>WebResponse からの派生
 <xref:System.Net.WebResponse> クラスは、.NET Framework プラグ可能なプロトコル モデルに適合するプロトコル固有の応答を作成するための基本メソッドとプロパティを提供する抽象基底クラスです。 <xref:System.Net.WebRequest> クラスを使用してリソースからデータを要求するアプリケーションは、**WebResponse** で応答を受信します。 プロトコル固有の **WebResponse**の子孫は、**WebResponse** クラスの抽象メンバーを実装する必要があります。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
   
  **GetResponseStream** メソッドによって返されるストリーム インスタンスは、アプリケーションによって所有され、**WebResponse** を閉じずに閉じることができます。 規則により、**WebResponse.Close** メソッドの呼び出しも **GetResponse** で返されるストリームを閉じます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.WebResponse>  
  <xref:System.Net.HttpWebResponse>  
  <xref:System.Net.FileWebResponse>  

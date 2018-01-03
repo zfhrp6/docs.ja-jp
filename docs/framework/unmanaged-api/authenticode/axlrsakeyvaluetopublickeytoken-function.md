@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4af27a2abf1a0bcf4d79eda389c5f79f0ecb1eef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b1380f658d9c154d9ea41228cace5f9a3eed39b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="axlrsakeyvaluetopublickeytoken-function"></a>_AxlRSAKeyValueToPublicKeyToken 関数
 Modulus および Exponent を、厳密な名前の公開キー トークンに変換します。  
@@ -48,5 +49,5 @@ HRESULT _AxlRSAKeyValueToPublicKeyToken (
 ## <a name="return-value"></a>戻り値  
  関数が成功した場合は `S_OK`。 それ以外の場合はエラー コードを返します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

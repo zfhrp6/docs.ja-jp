@@ -15,11 +15,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: cbf6b6eab3502f8f04f33f6f11d5d071e3406a7a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ef42c2cdc4d3b230195f89580a7c7abf0952f487
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest"></a>方法: WebRequest に一致するプロトコル固有の WebResponse を取得する
 この例では、WebRequest に一致するプロトコル固有の WebResponse を取得する方法を説明します。  
@@ -39,7 +40,7 @@ Dim resp As WebResponse = req.GetResponse()
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  この例で必要な要素は次のとおりです。  
   
--   **System.Net** 名前空間の参照。  
+-   **System.Net** 名前空間への参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データの要求](../../../docs/framework/network-programming/requesting-data.md)

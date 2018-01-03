@@ -18,11 +18,12 @@ caps.latest.revision: "60"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 8fc62b22673c732d1cb5f698916960dc1edcc192
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f6320bb23420ffcaf736aafabcb5fde38061febd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-providers-for-managed-code-how-to-topics"></a>マネージ コードの UI オートメーション プロバイダーに関する「方法」トピック
 > [!NOTE]
@@ -31,10 +32,10 @@ ms.lasthandoff: 10/18/2017
  このセクションには、書き込みでタスクを示すコード例が含まれています。[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]プロバイダー[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]要素。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [サーバー側 UI オートメーション プロバイダーを公開します。](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
- [UI オートメーション プロバイダーからプロパティを返す](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
- [UI オートメーション プロバイダーからイベントを発生させる](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
- [UI オートメーション フラグメント プロバイダーでのナビゲーションを有効にします。](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
- [UI オートメーション プロバイダーでコントロール パターンをサポートします。](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [クライアント側 UI オートメーション プロバイダーを作成します。](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
- [クライアント アプリケーションでの UI オートメーション プロバイダーを実装します。](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+ [サーバー側 UI オートメーション プロバイダーの公開](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
+ [UI オートメーション プロバイダーからのプロパティの返却](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
+ [UI オートメーション プロバイダーからのイベントの発生](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
+ [UI オートメーション フラグメント プロバイダーでのナビゲーションの有効化](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
+ [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [クライアント側 UI オートメーション プロバイダーの作成](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
+ [クライアント アプリケーションに UI オートメーション プロバイダーを実装する](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)

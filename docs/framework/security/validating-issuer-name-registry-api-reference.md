@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 7afec493cc62f84da6458127478e88999f6aed8c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 665979517d6aca9b867cfe0ea5ce1d567f1ff067
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="validating-issuer-name-registry-api-reference"></a>発行者名レジストリ API リファレンスの検証
 このセクションでは、WIF の Validating Issuer Name Registry 拡張機能の API リファレンスを提供します。

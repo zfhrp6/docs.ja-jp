@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 750f4e6852cd5aa52d03f884edcbfbf80ed5fab5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 89dace5ba946f2c6bd1384f23ffcff797e99bdd4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="marshaling-strings"></a>文字列のマーシャリング
 プラットフォーム呼び出しは、文字列のパラメーターをコピーし、必要な場合は、.NET Framework 形式 (Unicode) からアンマネージ形式 (ANSI) に変換します。 マネージ文字列は変更できないため、プラットフォーム呼び出しでは、関数から戻るときに、アンマネージ メモリからマネージ メモリに文字列がコピーされて戻されることはありません。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
 |文字列の配列として値渡し。|値によって渡される文字列の配列を作成します。|[配列](../../../docs/framework/interop/marshaling-different-types-of-arrays.md)|  
 |文字列を含む構造体の配列として値渡し。|文字列を含む構造体の配列を作成し、配列を値で渡します。|[配列](../../../docs/framework/interop/marshaling-different-types-of-arrays.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
  [プラットフォーム呼び出しのデータ型](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [クラス、構造体、および共用体のマーシャリング](../../../docs/framework/interop/marshaling-classes-structures-and-unions.md)  

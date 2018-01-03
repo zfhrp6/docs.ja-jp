@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 968727dbdc8897ebe3f88af2f7b7c28c481d8783
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 20bee2f0d6821c8abec08231e9ab0b8fdb211854
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-get-interface-and-protocol-information"></a>方法: インターフェイス情報とプロトコル情報を取得する
 このサンプルでは、ネットワーク インターフェイスの TCP 統計情報を読み取る方法を示します。  
@@ -80,4 +81,4 @@ public static void ShowTcpStatistics(NetworkInterfaceComponent version)
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  この例で必要な要素は次のとおりです。  
   
--   **System.Net** 名前空間の参照。
+-   **System.Net** 名前空間への参照。

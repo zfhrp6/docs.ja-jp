@@ -20,11 +20,12 @@ caps.latest.revision: "22"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 9634c686d23503dcb4deae171f0023055c41ce2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8b28d6aafc0e9680123859ee0e9a28dd71a2249c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-events-overview"></a>UI オートメーション イベントの概要
 > [!NOTE]
@@ -91,7 +92,7 @@ ms.lasthandoff: 11/21/2017
   
  イベント識別子の一覧については、「 [UI Automation Events for Clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クライアントの UI オートメーション イベント](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
  [サーバー側 UI オートメーション プロバイダーの実装](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
- [UI オートメーション イベントにサブスクライブします。](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)
+ [UI オートメーション イベントのサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)

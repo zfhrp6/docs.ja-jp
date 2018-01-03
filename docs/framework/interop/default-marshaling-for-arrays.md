@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ab9a72607f5201164f31d9e4cfdf058e9af804ae
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cb66908c28a54d4dc24cb77bd82c59862a7fd789
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="default-marshaling-for-arrays"></a>配列に対する既定のマーシャリング
 全体がマネージ コードで構成されるアプリケーションでは、共通言語ランタイムは、配列型を In/Out パラメーターとして渡します。 これに対し、相互運用マーシャラーは、既定で In パラメーターとして配列を渡します。  
@@ -380,7 +381,7 @@ public struct MyStruct {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)  
  [Blittable 型と非 Blittable 型](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
  [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  

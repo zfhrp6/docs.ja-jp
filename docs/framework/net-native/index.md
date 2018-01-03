@@ -19,11 +19,12 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a79744d99571fa1428da1fade8f63c4c80ae7b6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 92dac407ace9a039f5e6edc16b093fea5c485f63
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compiling-apps-with-net-native"></a>.NET ネイティブによるアプリのコンパイル
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]Visual Studio 2015 およびそれ以降のバージョンに含まれているプリコンパイル テクノロジを構築および Windows アプリを展開するためです。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  
@@ -89,5 +90,5 @@ ms.lasthandoff: 10/18/2017
   
 -   [.NET ネイティブの一般的なトラブルシューティング](../../../docs/framework/net-native/net-native-general-troubleshooting.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET ネイティブに関する FAQ](http://msdn.microsoft.com/vstudio/dn642499.aspx)

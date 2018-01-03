@@ -15,11 +15,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cd350f7a215af4692bb2384012699812bc50528c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: de0ff924e2c9ae20b9796fbcae2df0fd858295dd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ialink2-interface"></a>IALink2 インターフェイス
 補完、 [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)など新しいメタデータ インターフェイスで操作するメソッドを宣言することによって[IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)です。 さらに、IALink2 では、元の IALink インターフェイス経由で追加の使用の柔軟性を提供するメソッドを宣言します。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
  [SetPEKind メソッド](../../../../docs/framework/unmanaged-api/alink/setpekind-method.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [Al.exe (アセンブリ リンカー)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

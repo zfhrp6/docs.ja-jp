@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1955d503b612ce4b3a6c4eaaae2003b652f38fd4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: bd01e13c49ef2aa0f55b18e40c1763f61be09a57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugchaingetnext-method"></a>ICorDebugChain::GetNext メソッド
 スレッドの次のフレーム チェーンを取得します。  
@@ -42,7 +43,7 @@ HRESULT GetNext (
  `ppChain`  
  [out]次のスレッドのフレーム チェーンを表す ICorDebugChain オブジェクトのアドレスへのポインター。 このチェーンの最後のチェーン場合`ppChain`が null です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 08ce62f54e70fe1650914060ade0f52357f8a736
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1fbeae8d01d9ef03c476679ea7fc59273b7a0a0b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="code-access-security-basics"></a>コード アクセス セキュリティの基礎
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -157,7 +158,7 @@ public class MyClass {
   
  アンマネージ コードにアクセスすることが必要な操作をアプリケーションで実行する場合、必要な機能 をラップする信頼できるマネージ クラス (存在する場合) を使用してそうした操作をアプリケーションで実行しなければなりません。 安全なクラス ライブラリ内のラッパー クラスが既に存在する場合には、独自にラッパー クラスを作成しないでください。 ラッパー クラスでは、アンマネージ コードへの呼び出しが許可されるように高度な信頼が付与される必要があります。呼び出し元に適切なアクセス許可があることを確認要求する責任はラッパー クラスにあります。 ラッパー クラスを使用する場合、作成したコードで必要となるのは、ラッパー クラスが確認要求するアクセス許可を要求して付与することのみです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Security.PermissionSet>  
  <xref:System.Security.Permissions.FileIOPermission>  
  <xref:System.Security.NamedPermissionSet>  

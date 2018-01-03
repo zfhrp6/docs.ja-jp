@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 25a6666127d16a8245093bdf11ae7d0e76fc8365
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 563d08a5907c8248a74ba992de17ac3dd0679827
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>.NET Framework クライアント アプリケーションの作成 (WCF Data Services クイック スタート)
 これは、最後のタスク、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クイック スタート。 このタスクが、コンソール アプリケーションをソリューションに追加されたらへの参照を追加、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]この新しいクライアント、アプリケーションにアクセス フィード、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]生成されたクライアント データ サービス クラスおよびクライアントを使用して、クライアント アプリケーションからフィードライブラリ。  
@@ -90,6 +91,6 @@ ms.lasthandoff: 12/02/2017
 ## <a name="next-steps"></a>次の手順  
  ここでは、サンプル Northwind の [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードにアクセスするクライアント アプリケーションを作成しました。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クイック スタートも完了しました。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]アクセス、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]からフィード、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]アプリケーションを参照してください[WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
  [リソース](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)

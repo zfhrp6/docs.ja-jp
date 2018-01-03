@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 27f3ede2967d030d0f85919e658ca6a8dd410743
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7ce0b322c2601709bdb17cb6990c4b6d96480bb0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="etw-events-in-the-net-framework"></a>.NET Framework の ETW イベント
 Windows イベント トレーシング (ETW) は、Windows オペレーティング システムによって提供される高パフォーマンスで低オーバーヘッドかつスケーラブルなトレース システムです。 .NET Framework で提供されるプロファイリングとデバッグのサポートを補完し、さまざまなシナリオのトラブルシューティングに使用できます。  
@@ -34,7 +35,7 @@ Windows イベント トレーシング (ETW) は、Windows オペレーティ�
  [共通言語ランタイムの ETW イベント](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)  
  CLR ETW イベントが、共通言語ランタイムによって提供されるプロファイリングとデバッグのサポートをどのように補完するかについて説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

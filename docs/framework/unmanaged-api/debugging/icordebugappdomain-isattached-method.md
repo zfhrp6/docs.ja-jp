@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2a85b674ad705f77e00cf2a8a5286d6a74f7a646
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a1af550de7198041a885a788d6b36349c8e1c091
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugappdomainisattached-method"></a>ICorDebugAppDomain::IsAttached メソッド
 アプリケーション ドメインに、デバッガーがアタッチされているかどうかを示す値を取得します。  
@@ -45,7 +46,7 @@ HRESULT IsAttached (
 ## <a name="remarks"></a>コメント  
  ICorDebugController メソッドは、デバッガーは、アプリケーション ドメインにアタッチされるまで使用できません。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
