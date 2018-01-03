@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d3a34579787e976022ffa8caf7c29d8a565a7c73
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cf6860a616312504e3d23177734cb532405bd714
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrdebugginglibraryproviderprovidelibrary-method"></a>ICLRDebuggingLibraryProvider::ProvideLibrary メソッド
 コールバック インターフェイスの共通言語ランタイム (CLR) バージョン固有の上にロードし、要求時にデバッグ ライブラリをライブラリ プロバイダーを取得します。  
@@ -72,7 +73,7 @@ HRESULT ProvideLibrary(
 >   
 >  Mscordbi.dll または mscordacwks.dll などの既にリリースされてライブラリで重大なセキュリティ上の問題が検出された場合、shim にパッチできるの不適切なバージョンのファイルを認識するようにします。 Shim は、によるパッチ形式のバージョンのファイルに対する要求を発行し、すべての要求に対する応答で提供される場合は、不適切なバージョンを拒否します。 これは、shim の新しいバージョンに、ユーザーがパッチされている場合にのみに発生することができます。 未修正のバージョンは、脆弱なままです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -81,6 +82,6 @@ HRESULT ProvideLibrary(
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [デバッグのインターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+## <a name="see-also"></a>参照  
+ [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "25"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 6cb90d456165442935b3988fdac23ceb334f5cb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 25a1ddb113916563c234eefb8cdc0746b04f3e66
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-tree-overview"></a>UI オートメーション ツリーの概要
 > [!NOTE]
@@ -64,6 +65,6 @@ ms.lasthandoff: 11/21/2017
   
  コンテンツ ビューを取得するを持つ要素を検索、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A>プロパティに設定`true`、またはを使用して、<xref:System.Windows.Automation.TreeWalker.ContentViewWalker>ツリーを移動します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Automation.AutomationElement>  
  [UI オートメーションの概要](../../../docs/framework/ui-automation/ui-automation-overview.md)

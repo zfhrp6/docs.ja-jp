@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 48c1a36e32feb94e8399c46f88a98f75c81fdb6a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6cc45d766801391fcd157c39357058be17759f8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugevalnewstring-method"></a>ICorDebugEval::NewString メソッド
 指定した内容を持つ新しい文字列インスタンスを割り当てます。  
@@ -45,7 +46,7 @@ HRESULT NewString (
 ## <a name="remarks"></a>コメント  
  文字列は常に、現在のスレッドが実行しているアプリケーション ドメインで作成されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

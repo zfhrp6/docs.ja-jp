@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 07b0490e322c70763a37b86fbb02e2f8b99bd768
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3530b5a7a747816a12e76d00fa7c299acf7657c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugcodeisil-method"></a>ICorDebugCode::IsIL メソッド
 この"ICorDebugCode"が Microsoft intermediate language (MSIL) にコンパイルされたコードを表すかどうかを示す値を取得します。  
@@ -42,7 +43,7 @@ HRESULT IsIL (
  `pbIL`  
  [out]`true`この`ICorDebugCode`、それ以外の MSIL にコンパイルされるコードを表す`false`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -51,5 +52,5 @@ HRESULT IsIL (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  
