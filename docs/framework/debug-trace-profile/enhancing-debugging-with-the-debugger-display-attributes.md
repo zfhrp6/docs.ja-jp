@@ -24,11 +24,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c396a794cd3afa394cbb6b2393257a3103c6239d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ac5097326ae76a8790569c13fd8b1285b0cfeec0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>デバッガー表示属性によるデバッグ機能の拡張
 デバッガー表示属性は、型を指定し、その型の実行時の動作を最もよく理解している型の開発者が、デバッガーで表示されたときに、その型がどのように見えるかも指定できるようにします。 さらに、`Target` プロパティを提供するデバッガー表示属性は、ソース コードの知識がなくても、ユーザーがアセンブリ レベルで適用することができます。 <xref:System.Diagnostics.DebuggerDisplayAttribute> 属性は、デバッガーの変数ウィンドウで型やメンバーを表示する方法を制御します。 <xref:System.Diagnostics.DebuggerBrowsableAttribute> 属性は、デバッガーの変数ウィンドウにフィールドまたはプロパティを表示するかどうか、および表示方法を決定します。 <xref:System.Diagnostics.DebuggerTypeProxyAttribute> 属性は、型に対して代理の型 (プロキシ) を指定し、その型をデバッガー ウィンドウで表示する方法を変更します。 プロキシ (代理の型) を指定した変数を表示すると、元の型の代理としてプロキシがデバッガーの表示ウィンドウに表示されます**。** デバッガーの変数ウィンドウには、プロキシ型のパブリック メンバーのみが表示されます。 プライベート メンバーは表示されません。  
@@ -109,7 +110,7 @@ class MyHashtable : Hashtable
  [!code-csharp[System.Diagnostics.DebuggerBrowsableAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DebuggerBrowsableAttribute/CS/program.cs#1)]
  [!code-vb[System.Diagnostics.DebuggerBrowsableAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DebuggerBrowsableAttribute/VB/module1.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.DebuggerDisplayAttribute>  
  <xref:System.Diagnostics.DebuggerBrowsableAttribute>  
  <xref:System.Diagnostics.DebuggerTypeProxyAttribute>

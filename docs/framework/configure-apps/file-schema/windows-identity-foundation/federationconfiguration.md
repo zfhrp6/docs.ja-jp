@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9abe07c065dbea67c5ebc4a4490d9f88258130c8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0014e0224221cd5143709ba0a5b38f10e457b494
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltfederationconfigurationgt"></a>&lt;federationConfiguration&gt;
 構成、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) および<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM) を使用する場合は、Ws-federation プロトコルを使用した認証をフェデレーションします。 構成、<xref:System.Security.Claims.ClaimsAuthorizationManager>を使用する場合、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>または<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クレームに基づくアクセス制御を提供するクラス。  
@@ -41,16 +42,16 @@ ms.lasthandoff: 11/21/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|name|このフェデレーションの構成要素の名前。 この属性は、主の将来のプロトコル機能拡張ポイントを提供します。 省略可能です。|  
-|identityConfigurationName|指定された id の構成セクションの名前、 [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素を使用します。 この属性が指定されていない場合、既定の id 構成セクションが表示されます。 省略可能です。|  
+|name|このフェデレーションの構成要素の名前。 この属性は、主の将来のプロトコル機能拡張ポイントを提供します。 任意。|  
+|identityConfigurationName|指定された id の構成セクションの名前、 [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素を使用します。 この属性が指定されていない場合、既定の id 構成セクションが表示されます。 任意。|  
   
 ### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<cookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|SAM によって使用されるクッキー ハンドラーを構成します。 省略可能です。|  
-|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|暗号化し、トークン暗号化解除に使用される証明書を構成します。 省略可能です。|  
-|[\<wsFederation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|Ws-federation 認証モジュール (WSFAM) を構成します。 省略可能です。|  
+|[\<cookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|SAM によって使用されるクッキー ハンドラーを構成します。 任意。|  
+|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|暗号化し、トークン暗号化解除に使用される証明書を構成します。 任意。|  
+|[\<wsFederation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|Ws-federation 認証モジュール (WSFAM) を構成します。 任意。|  
   
 ### <a name="parent-elements"></a>親要素  
   
@@ -100,7 +101,7 @@ ms.lasthandoff: 11/21/2017
 </system.identityModel.services>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
  <xref:System.IdentityModel.Services.SessionAuthenticationModule>  
  <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>  

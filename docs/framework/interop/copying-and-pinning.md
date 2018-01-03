@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8e25d9a7bffdf0a3e8f68639dc0442ccf62a4412
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5014bcc0696a8650bed1d00d1224c892660c041e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="copying-and-pinning"></a>コピーと固定
 データをマーシャリングするときに、相互運用マーシャラーはマーシャリングされるデータをコピーまたは固定できます。 データをコピーすると、あるメモリ位置のデータのコピーが別のメモリ位置に配置されます。 マネージ メモリからアンマネージ メモリへの値型のコピーと、参照渡しされる型のコピーの違いを次の図に示します。  
@@ -85,7 +86,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Text.StringBuilder?displayProperty=nameWithType> を値渡しする場合、マーシャラーは **StringBuilder** の内部バッファーへの参照を直接呼び出し元に渡します。 呼び出し元と呼び出し先は、バッファーのサイズに同意する必要があります。 呼び出し元は、適切な長さの **StringBuilder** を作成します。 呼び出し先は、バッファーのオーバーランが発生しないように必要な予防措置をとる必要があります。 **StringBuilder** は、値渡しされる参照型は既定で In パラメーターとして渡される、という規則の例外です。 StringBuilder は常に In/Out として渡されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)  
  [相互運用マーシャラーによるメモリ管理](http://msdn.microsoft.com/en-us/417206ce-ee3e-4619-9529-0c0b686c7bee)  
  [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  

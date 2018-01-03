@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 220416aa4e282cb342ee6080d9040f9f4818fbf0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6fe20fd26b78bde19ed73e2415b1b5c283a0d1f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queries-in-linq-to-entities"></a>LINQ to Entities でのクエリ
 クエリは、データ ソースからデータを取得する式です。 一般に、クエリは専用のクエリ言語で表現されます。たとえば、リレーショナル データベースであれば SQL、XML であれば XQuery が使用されます。 そのため、開発者はクエリの対象となるデータ ソースやデータ形式ごとに新しいクエリ言語を習得する必要があります。 統合言語クエリ (LINQ) は、データ ソースや形式の違いを意識することなくデータを扱うことのできる、より簡素化された一貫したモデルを提供します。 LINQ クエリでは、常にプログラミング オブジェクトを操作することになります。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [クエリ式の構文例: フィルター処理](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-filtering.md)  
   
--   [クエリ式の構文例: 順序付け](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-ordering.md)  
+-   [クエリ式の構文例: 並べ替え](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-ordering.md)  
   
 -   [クエリ式の構文例: 集計演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-aggregate-operators.md)  
   
@@ -53,7 +54,7 @@ ms.lasthandoff: 11/21/2017
 -   [クエリ式の構文例: リレーションシップのナビゲーション](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-navigating-relationships.md)  
   
 ### <a name="method-based-query-syntax"></a>メソッド ベースのクエリ構文  
- [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリを作成するもう 1 つの方法として、メソッド ベースのクエリがあります。 メソッド ベースのクエリ構文は、LINQ の演算子メソッド、ラムダ式をパラメーターとして渡すことへの直接的なメソッド呼び出しのシーケンスです。 詳しくは、「[ラムダ式](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」をご覧ください。 メソッドベースの構文の使用方法を示す例については、次のトピックを参照してください。  
+ [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリを作成するもう 1 つの方法として、メソッド ベースのクエリがあります。 メソッド ベースのクエリ構文は、LINQ の演算子メソッド、ラムダ式をパラメーターとして渡すことへの直接的なメソッド呼び出しのシーケンスです。 詳細については、「[ラムダ式](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」を参照してください。 メソッドベースの構文の使用方法を示す例については、次のトピックを参照してください。  
   
 -   [メソッド ベースのクエリ構文例: 射影](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-projection.md)  
   
@@ -73,9 +74,9 @@ ms.lasthandoff: 11/21/2017
   
 -   [メソッド ベースのクエリ構文例: グループ化](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-grouping.md)  
   
--   [メソッド ベースのクエリ構文例: リレーションシップのナビゲーション](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
+-   [メソッド ベースのクエリ構文例: リレーションシップの操作](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
  [C# の LINQ の概要](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [Visual Basic の LINQ の概要](~/docs/visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  

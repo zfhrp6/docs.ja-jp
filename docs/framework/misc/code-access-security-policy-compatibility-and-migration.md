@@ -12,11 +12,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 11c64d3ece454e95adfc41c7d89913e9ce7363dc
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.workload: dotnet
+ms.openlocfilehash: 9feb4553b1b9e013c5c299d867d74499a09e1434
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>コード アクセス セキュリティ ポリシーの互換性と移行
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -145,6 +146,6 @@ ms.lasthandoff: 12/12/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法 : サンドボックスで部分信頼コードを実行する](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
  [安全なコーディングのガイドライン](../../standard/security/secure-coding-guidelines.md)

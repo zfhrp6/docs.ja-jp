@@ -15,11 +15,11 @@ ms.assetid: dd4b29e7-6fa1-428c-877e-69955420bb72
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6118ca5f73a0d446842c33859e0623032082bcd8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d804ce75929592675068fdc434a1ba7429fa5373
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctype-function-visual-basic"></a>CType 関数 (Visual Basic)
 任意の式を、指定されたデータ型、オブジェクト、構造体、クラス、またはインターフェイスに明示的に変換し、その結果を返します。  
@@ -66,11 +66,11 @@ CType(expression, typename)
   
  その他の例では、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.OverflowException>  
  <xref:System.InvalidCastException>  
  [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [変換関数](../../../visual-basic/language-reference/functions/conversion-functions.md)  
  [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)  
  [方法 : 変換演算子を定義する](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
- [.NET Framework における型変換](http://msdn.microsoft.com/library/ba36154f-064c-47d3-9f05-72f93a7ca96d)
+ [.NET Framework における型変換](../../../standard/base-types/type-conversion.md)

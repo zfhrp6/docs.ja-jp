@@ -14,11 +14,11 @@ ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
 caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b7f41b659399ae5a12663d4e359c02606bb6f952
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: e0be7d230f16750395aaceb3c94539546716b8fd
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="keyfile"></a>T:System.Reflection.AssemblyKeyFileAttribute
 アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。  
@@ -31,10 +31,10 @@ ms.lasthandoff: 12/09/2017
   
 ## <a name="arguments"></a>引数  
  `file`  
- 必須です。 キーを含むファイルです。 ファイル名にスペースが含まれている場合は、名前を引用符で囲みます ("") です。  
+ 必須。 キーを含むファイルです。 ファイル名にスペースが含まれている場合は、名前を引用符で囲みます ("") です。  
   
 ## <a name="remarks"></a>コメント  
- コンパイラは、アセンブリ マニフェストに公開キーを挿入し、秘密キーを使用し、最終的なアセンブリを署名します。 キー ファイルを生成する入力`sn -k file`コマンドライン。 詳細については、「[Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)」を参照してください。  
+ コンパイラは、アセンブリ マニフェストに公開キーを挿入し、秘密キーを使用し、最終的なアセンブリを署名します。 キー ファイルを生成する入力`sn -k file`コマンドライン。 詳細については、[Sn.exe (厳密名ツール)] を参照してください。[Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md))。  
   
  コンパイルする場合`/target:module`、キー ファイルの名前が、モジュール内に保持しを伴うアセンブリをコンパイルするときに作成されるアセンブリに組み込む[/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)です。  
   
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/09/2017
   
  キー ファイルには公開キーだけが含まれる場合があることに注意してください。  
   
- 参照してください[作成と使用](../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)アセンブリに署名する方法についてです。  
+ 参照してください[作成と使用](../../../framework/app-domains/create-and-use-strong-named-assemblies.md)アセンブリに署名する方法についてです。  
   
 > [!NOTE]
 >  `/keyfile`オプションは内から使用できません、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]開発環境は、コマンドラインからコンパイルするときにのみ使用します。  
@@ -58,7 +58,7 @@ ms.lasthandoff: 12/09/2017
 vbc /keyfile:myfile.sn input.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [/reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)  

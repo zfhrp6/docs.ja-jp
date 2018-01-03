@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ba0c376bc0b57013fe4701a1f9e84fdd9a5ed62a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1f606d01c12ce3f5d9d4ff8720b06511a64347f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="-or-entity-sql"></a>|| (OR) (Entity SQL)
 2 つの `Boolean` 式を結合します。  
@@ -46,9 +47,9 @@ boolean_expression || boolean_expression
   
 ||`TRUE`|`FALSE`|`NULL`|  
 |-|------------|-------------|------------|  
-|`TRUE`|true|true|true|  
-|`FALSE`|true|false|NULL|  
-|`NULL`|true|NULL|NULL|  
+|`TRUE`|true|TRUE|TRUE|  
+|`FALSE`|TRUE|FALSE|NULL|  
+|`NULL`|TRUE|NULL|NULL|  
   
 ## <a name="example"></a>例  
  次の Entity SQL クエリでは、OR 演算子を使用して 2 つの `Boolean` 式を結合します。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。  
@@ -59,5 +60,5 @@ boolean_expression || boolean_expression
   
  [!code-csharp[DP EntityServices Concepts 2#OR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#or)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

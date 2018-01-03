@@ -15,11 +15,11 @@ ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f1c90b28f1df18e7e0a4f9e22730e1c3476fa650
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 07ab386ddb456c059b6390b986ec0a880320973b
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="debug-visual-basic"></a>/debug (Visual Basic)
 コンパイラがデバッグ情報が生成され、出力ファイルに配置します。  
@@ -36,8 +36,8 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`+` &#124; `-`|省略可能です。 指定する`+`または`/debug`コンパイラがデバッグ情報を生成して .pdb ファイルに配置します。 指定する`-`を指定しない場合と同じ効果`/debug`です。|  
-|`full` &#124; `pdbonly`|省略可能です。 コンパイラによって生成されるデバッグ情報の種類を指定します。 指定しない場合`/debug:pdbonly`、既定値は`full`、実行中のプログラムにデバッガーをアタッチできます。 `pdbonly`引数により、ソース コードのデバッグ時に、デバッガーでプログラムが開始されていて、実行中のプログラムが、デバッガーに接続されている場合にのみ、アセンブリ言語のコードが表示されます。|  
+|`+` &#124; `-`|任意。 指定する`+`または`/debug`コンパイラがデバッグ情報を生成して .pdb ファイルに配置します。 指定する`-`を指定しない場合と同じ効果`/debug`です。|  
+|`full` &#124; `pdbonly`|任意。 コンパイラによって生成されるデバッグ情報の種類を指定します。 指定しない場合`/debug:pdbonly`、既定値は`full`、実行中のプログラムにデバッガーをアタッチできます。 `pdbonly`引数により、ソース コードのデバッグ時に、デバッガーでプログラムが開始されていて、実行中のプログラムが、デバッガーに接続されている場合にのみ、アセンブリ言語のコードが表示されます。|  
   
 ## <a name="remarks"></a>コメント  
  このオプションを使用してデバッグ ビルドを作成します。 指定しない場合`/debug`、 `/debug+`、または`/debug:full`プログラムの出力ファイルをデバッグすることはできません。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
 |Visual Studio で/debug を設定するには、統合開発環境|  
 |---|  
-|1.**ソリューション エクスプ ローラー**でプロジェクトを選択し、 **[プロジェクト]** メニューの **[プロパティ]**をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.をクリックして**詳細コンパイル オプション**です。<br />4.値を変更、**デバッグ情報の生成**ボックス。|  
+|1.**ソリューション エクスプ ローラー**でプロジェクトを選択し、 **[プロジェクト]** メニューの **[プロパティ]**をクリックします。 <br />2.**[コンパイル]** タブをクリックします。<br />3.**[詳細コンパイル オプション]** をクリックします。<br />4.値を変更、**デバッグ情報の生成**ボックス。|  
   
 ## <a name="example"></a>例  
  次の例は、デバッグ情報を出力ファイルに入れ`App.exe`です。  
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/21/2017
 vbc /debug /out:app.exe test.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)  
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

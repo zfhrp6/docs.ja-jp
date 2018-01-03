@@ -14,11 +14,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fe2f00d9f735583bb048669ff0ab2659db68bf1f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: accbc05018644e3ead4ee0c08f44ec39cad8f036
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-data-services-resources"></a>WCF Data Services リソース
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の概要に関するトピックは次のとおりです。 これらのトピックの多くには、詳細情報が記載された関連トピックへのリンクも含まれています。  
@@ -68,5 +69,5 @@ ms.lasthandoff: 12/02/2017
  [Entity-relationship Model: Toward a Unified View データの](http://go.microsoft.com/fwlink/?LinkId=91909)Peter Pin-shan Chen、マサチューセッツ工科大学テクノロジによって  
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] によって実装されるエンティティ リレーショナル モデルの基礎について説明します。 コンピューター分野で最もよく引用される 1976 年に書かれた論文。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)

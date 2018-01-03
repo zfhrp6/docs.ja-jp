@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 49deb2e209127f92a333195e9fcd0d1e1bece7d8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 71beb254bf258da97207f14afca73cd68c6927ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Web ブラウザーからサービスへのアクセス (WCF Data Services クイックスタート)
 このタスクでは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] から [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] を開始し、必要に応じて Web ブラウザーでのフィード読み取りを無効にします。 サービス定義ドキュメントを取得するだけでなく公開されているリソースを Web ブラウザーから HTTP GET 要求を送信することでデータ サービス リソースにアクセスします。  
@@ -83,5 +84,5 @@ ms.lasthandoff: 12/02/2017
   
  [.NET Framework クライアント アプリケーションの作成](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ サービス リソースへのアクセス](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)

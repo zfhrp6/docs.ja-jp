@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b0df9a6bd4da9131961e0ca35ab75109053b97c3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8a2bd68833cd9dc7f2d19af171b20d18fad9a1bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltfactorysettingsgt"></a>&lt;factorySettings&gt;
 チャネル ファクトリ キャッシュの設定を指定します。  
@@ -96,9 +97,9 @@ ms.lasthandoff: 12/02/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Activities.SendMessageChannelCache>  
  <xref:System.ServiceModel.Activities.Configuration.SendMessageChannelCacheElement>  
  <xref:System.ServiceModel.Activities.Send>  
  <xref:System.ServiceModel.Activities.ChannelCacheSettings>  
- [Send アクティビティのレベルのキャッシュ共有を変更します。](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)
+ [Send アクティビティのキャッシュ共有レベルの変更](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)

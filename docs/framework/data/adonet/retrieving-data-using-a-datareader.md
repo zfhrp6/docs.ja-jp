@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0b66ca2fbcc760598b771b4c02a46acc3c9c1d4e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b36f76516d4ddf94e177a5ecbb705e1d729318b8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-data-using-a-datareader"></a>DataReader によるデータの取得
 使用してデータの取得、 **DataReader**のインスタンスを作成、**コマンド**オブジェクト作成し、作成、 **DataReader**を呼び出して**Command.ExecuteReader**データ ソースから行を取得します。 使用して次の例を示しています、 **DataReader**場所`reader`は有効な datareader および`command`有効なコマンド オブジェクトを表します。  
@@ -258,9 +259,9 @@ adapter.TableMappings.Add("Table1", "Departments");
 adapter.Fill(ds);  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Datareader の操作](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
- [Dataadapter と Datareader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

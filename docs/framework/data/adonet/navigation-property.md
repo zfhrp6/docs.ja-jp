@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1677ab1be071eeabd72b29c7ce61d01aaf6164a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dc980a2c61be736e2c1d8e52d8f13d0ea5ed09f2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="navigation-property"></a>ナビゲーション プロパティ
 A*ナビゲーション プロパティ*では、省略可能なプロパティ、[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)から 1 つのナビゲーションを可能にする[終了](../../../../docs/framework/data/adonet/association-end.md)の[アソシエーション](../../../../docs/framework/data/adonet/association-type.md)にその他の終了時刻です。 その他のとは異なり[プロパティ](../../../../docs/framework/data/adonet/property.md)、ナビゲーション プロパティがデータを伝達しません。  
@@ -45,6 +46,6 @@ A*ナビゲーション プロパティ*では、省略可能なプロパティ�
   
  ナビゲーション プロパティの定義に必要な情報を伝達するために、XML 属性が使用されています。属性 `Name` にはプロパティ名が含まれ、`Relationship` には移動対象のアソシエーション名が含まれ、`FromRole` および `ToRole` にはアソシエーション End が含まれています。  
   
-## <a name="see-also"></a>関連項目  
- [エンティティ データ モデルの主要な概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
- [エンティティ データ モデル](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a>参照  
+ [Entity Data Model キーの概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

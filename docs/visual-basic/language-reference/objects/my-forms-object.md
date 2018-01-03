@@ -13,17 +13,17 @@ ms.assetid: f6bff4e6-6769-4294-956b-037aa6106d2a
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a5aa7af1f07a29660335d968c1ecc17be5f8beec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe548caacf2c8e7498e3b7abc814b4f89af9b3d6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="myforms-object"></a>My.Forms オブジェクト
 現在のプロジェクトで宣言されている各 Windows フォームのインスタンスにアクセスするためには、プロパティを提供します。  
   
 ## <a name="remarks"></a>コメント  
- `My.Forms`オブジェクトが現在のプロジェクト内の各フォームのインスタンスを提供します。 プロパティの名前は、プロパティにアクセスするフォームの名前と同じです。 プロジェクトにフォームを追加する方法の詳細については、次を参照してください。[する方法: Windows フォームをプロジェクトに追加](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1)です。  
+ `My.Forms`オブジェクトが現在のプロジェクト内の各フォームのインスタンスを提供します。 プロパティの名前は、プロパティにアクセスするフォームの名前と同じです。   
   
  によって提供されるフォームにアクセスすることができます、`My.Forms`修飾なし、フォームの名前を使用してオブジェクト。 プロパティ名がフォームの型名と同じであるため、これにより、既定のインスタンスがあった場合、フォームにアクセスできます。 たとえば、`My.Forms.Form1.Show` は、`Form1.Show` と同じです。  
   
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrMyForms#2](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-forms-object_1.vb)]  
   
- この例を実行するため、プロジェクトがという名前のフォーム`SidebarMenu`です。 詳細については、次を参照してください。[する方法: Windows フォームをプロジェクトに追加](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1)です。  
+ この例を実行するため、プロジェクトがという名前のフォーム`SidebarMenu`です。  
   
  このコードは、Windows アプリケーション プロジェクトでのみ動作します。  
   
@@ -69,14 +69,13 @@ ms.lasthandoff: 11/21/2017
 |Windows コントロール ライブラリ|いいえ|  
 |Web コントロール ライブラリ|いいえ|  
 |Windows サービス|いいえ|  
-|Web サイト|いいえ|  
+|Web サイト|×|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>  
  <xref:System.Windows.Forms.Form>  
  <xref:System.Windows.Forms.Form.Close%2A>  
  [オブジェクト](../../../visual-basic/language-reference/objects/index.md)  
- [方法: Windows フォームをプロジェクトに追加します。](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1)  
  [Is 演算子](../../../visual-basic/language-reference/operators/is-operator.md)  
  [IsNot 演算子](../../../visual-basic/language-reference/operators/isnot-operator.md)  
  [アプリケーション フォームへのアクセス](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "24"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 996da59640281c8584774fa9e66b42619753afb6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 97db1cef60af267087e86f86ecd0a77021604642
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-transparent-code"></a>透過的セキュリティ コード
 <a name="top"></a>
@@ -114,6 +115,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="transparency-enforcement"></a>透過性の適用  
  透過性規則は、透過性が計算されるまで適用されません。 このとき、透過性規則に違反すると、<xref:System.InvalidOperationException> がスローされます。 透過性が計算されるタイミングは、複数の要因によって左右されるので予測できません。 できる限り遅く計算されます。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、アセンブリ レベルの透過性の計算は、.NET Framework 2.0 よりも早く実行されます。 保証されるのは、必要になるまでに透過性の計算が行われるということだけです。 これは、メソッドがコンパイルされてメソッドのエラーが検出される時点が JIT コンパイラで変更される方法に似ています。 透過性の計算は、コードに透過性エラーがない場合は目に見えません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティ透過的なコード、レベル 1](../../../docs/framework/misc/security-transparent-code-level-1.md)  
  [透過的セキュリティ コード、レベル 2](../../../docs/framework/misc/security-transparent-code-level-2.md)

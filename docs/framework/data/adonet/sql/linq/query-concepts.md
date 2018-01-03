@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 14be34b5d988a51a4785defbfcec95a4a073cc2c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 907761184256b7cf51c7c0f20fa43ee603e0ab12
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="query-concepts"></a>クエリの概念
 このセクションでは、[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] で [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリを設計するうえでの主要な概念について説明します。  
@@ -26,20 +27,20 @@ ms.lasthandoff: 10/18/2017
  [LINQ to SQL クエリ](../../../../../../docs/framework/data/adonet/sql/linq/linq-to-sql-queries.md)  
  一般的な [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] トピックを参照し、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 固有のアイテムについて説明します。  
   
- [リレーションシップ間でクエリを実行します。](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md)  
+ [リレーションシップを介したクエリの実行](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md)  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] オブジェクト モデルで関連付けを使用する方法について説明します。  
   
- [リモート実行とします。ローカル実行](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)  
+ [クエリのリモート実行とローカル実行](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)  
  クエリの実行場所を指定する方法について説明します。  
   
- [遅延実行と即時読み込み](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)  
+ [遅延読み込みと即時読み込み](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)  
  関連オブジェクトをいつ読み込むかを指定する方法について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
  [プログラミング ガイド](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] テクノロジについて説明するトピックへのリンクを示します。  
   
- [オブジェクト Id](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
+ [オブジェクト ID](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のオブジェクト識別子の概念について説明します。  
   
  [LINQ クエリの概要 (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  

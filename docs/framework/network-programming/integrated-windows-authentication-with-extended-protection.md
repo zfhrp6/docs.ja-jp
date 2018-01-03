@@ -12,11 +12,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: a32019a99421cdb2b581f1196a0e477c8e5d30a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a453a2142ee8c3d1ab8d8d00e84e1ead60c46d91
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>統合 Windows 認証と拡張保護
 <xref:System.Net> 名前空間および関連名前空間の <xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、<xref:System.Net.Mail.SmtpClient>、<xref:System.Net.Security.SslStream>、<xref:System.Net.Security.NegotiateStream>、および関連クラスによる統合 Windows 認証の処理方法に影響を与える、機能強化が行われました。 セキュリティ強化のため、拡張保護のサポートが追加されました。  
@@ -157,6 +158,6 @@ ms.lasthandoff: 11/21/2017
   
  これらの拡張保護機能は、サーバー アプリケーションによって、他の種類の要求での認証に使用したり、信頼されたプロキシが使用されている場合に使用することもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Security.Authentication.ExtendedProtection>  
  <xref:System.Security.Authentication.ExtendedProtection.Configuration>

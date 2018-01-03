@@ -14,11 +14,11 @@ ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4177b9da15bb89f37a7b3cbb27937e09d1c12635
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 90e2a6a0f6a7b1eb3b919cca22ae8ce37a9c00bc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platform-visual-basic"></a>/platform (Visual Basic)
 出力ファイルをどのプラットフォーム用の共通言語ランタイム (CLR) で実行するかを指定します。  
@@ -71,13 +71,11 @@ ms.lasthandoff: 12/09/2017
   
 -   `/platform:anycpu32bitpreferred` でコンパイルされた実行可能ファイルは、32 ビット CLR で実行されます。  
   
- 64 ビット バージョンの Windows で実行するアプリケーションを開発する方法の詳細については、次を参照してください。 [64 ビット アプリケーション](../../../../docs/framework/64-bit-apps.md)です。  
+ 64 ビット バージョンの Windows で実行するアプリケーションを開発する方法の詳細については、次を参照してください。 [64 ビット アプリケーション](../../../framework/64-bit-apps.md)です。  
   
 ### <a name="to-set-platform-in-the-visual-studio-ide"></a>Visual Studio IDE で /platform を設定するには  
   
 1.  **ソリューション エクスプ ローラー**、プロジェクトを選択を開く、**プロジェクト** メニューをクリックして**プロパティ**です。  
-  
-     詳細については、次を参照してください。 [NIB: プロジェクト デザイナーでプロジェクトのプロパティを管理する](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e)です。  
   
 2.  **コンパイル** タブ、オンまたはオフ、**必要に応じて 32 ビット** チェック ボックスまたは、**ターゲット CPU**一覧で、値を選択します。  
   
@@ -90,7 +88,7 @@ ms.lasthandoff: 12/09/2017
 vbc /platform:x86 myFile.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [/target (Visual Basic)](target.md)  
  [Visual Basic のコマンド ライン コンパイラ](index.md)  
  [コンパイル コマンド ラインのサンプル](sample-compilation-command-lines.md)

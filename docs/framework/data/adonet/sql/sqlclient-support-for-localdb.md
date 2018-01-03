@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: abe9487f9c2ebbb93c2e712959237f722ee707b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 99845420549393829582ade11f38b75e3ebff484
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlclient-support-for-localdb"></a>SqlClient による LocalDB のサポート
 コード名 Denali 以降の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、LocalDB という軽量バージョンの [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]を使用できます。 このトピックでは、LocalDB データベースに接続する方法について説明します。  
@@ -68,6 +69,6 @@ ms.lasthandoff: 11/21/2017
   
 -   .MDF ファイルを指定するには、 `AttachDBFilename` 接続文字列キーワードを使用する。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL Server の機能と ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

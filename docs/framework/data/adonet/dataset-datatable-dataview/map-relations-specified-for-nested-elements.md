@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9866b556f2ba09cef7616fea4a2a6d8135e6b8e8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 221e204c9eef5a861fbd6b85c1e23a0674c6aa4c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="map-relations-specified-for-nested-elements"></a>入れ子になっている要素に指定したリレーションシップの割り当て
 スキーマを含めることができます、 **msdata:Relationship**注釈をスキーマ内にある 2 つの要素間のマッピングを明示的に指定します。 2 つの要素で指定された**msdata:Relationship**スキーマでは、入れ子にすることができますが、する必要はありません。 マッピング プロセスを使用して**msdata:Relationship**を 2 つの列の間で主キー/外部キーのリレーションシップを生成するスキーマです。  
@@ -84,7 +85,7 @@ ms.lasthandoff: 11/21/2017
   
  割り当て処理によって制約は作成されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- [制約の DataSet 制約への XML スキーマ (XSD) 制約のマッピング](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [XML スキーマ (XSD) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

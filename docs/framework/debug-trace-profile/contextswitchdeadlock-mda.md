@@ -23,11 +23,12 @@ caps.latest.revision: "22"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e67c5c47dbe95d7c2b804f0ae87200db489d0306
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 816afbae0cca18de24c11152541a509b54c119b8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contextswitchdeadlock-mda"></a>contextSwitchDeadlock MDA
 `contextSwitchDeadlock` マネージ デバッグ アシスタント (MDA) は、COM コンテキストの遷移の試行中にデッドロックが検出されるとアクティブ化されます。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  この MDA は、[!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] 以上のバージョンの既定のセットに含まれています。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でホスティング プロセスが有効にされている場合、既定のセットに含まれる MDA を無効にすることはできません。 ホスティング プロセスは既定で有効になるため、明示的に無効にする必要があります。 MDA を無効にする方法については、「[マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)」の「MDA の有効化と無効化」を参照してください。  
   
-## <a name="resolution"></a>解決策  
+## <a name="resolution"></a>解像度  
  STA メッセージ ポンプに関する COM 規則に従います。  
   
 ## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
@@ -74,7 +75,7 @@ ms.lasthandoff: 11/21/2017
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)

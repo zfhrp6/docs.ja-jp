@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: eee2cb916d79bf3b79e882cd757b10344121f6b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0ece4395c574a4d6bc9399788ad3fb513cb86379
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltmsmqtransportsecuritygt"></a>&lt;msmqTransportSecurity&gt;
 カスタム バインドの MSMQ トランスポート セキュリティ設定を指定します。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="remarks"></a>コメント  
  トランスポート セキュリティの詳細については、次を参照してください。[トランスポート セキュリティ](../../../../../docs/framework/wcf/feature-details/transport-security.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity>  
  <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
@@ -74,6 +75,6 @@ ms.lasthandoff: 11/21/2017
  [トランスポートの選択](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
  [トランスポート セキュリティ](../../../../../docs/framework/wcf/feature-details/transport-security.md)

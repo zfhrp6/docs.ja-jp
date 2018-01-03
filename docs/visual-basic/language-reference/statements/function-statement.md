@@ -35,11 +35,11 @@ ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
 caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 667ab7ceb54e1f339fd645883ca2686c0cbb72b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 52e9210f9e715b6055e6ed199ef1aa4b919c6dd6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="function-statement-visual-basic"></a>Function ステートメント (Visual Basic)
 宣言名、パラメーター、およびコードを定義する、`Function`プロシージャです。  
@@ -59,11 +59,11 @@ End Function
   
 -   `attributelist`  
   
-     省略可能です。 参照してください[属性一覧](attribute-list.md)です。  
+     任意。 参照してください[属性一覧](attribute-list.md)です。  
   
 -   `accessmodifier`  
   
-     省略可能です。 次のいずれかの値を指定します。  
+     任意。 次のいずれかの値を指定します。  
   
     -   [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
@@ -79,7 +79,7 @@ End Function
   
 -   `proceduremodifiers`  
   
-     省略可能です。 次のいずれかの値を指定します。  
+     任意。 次のいずれかの値を指定します。  
   
     -   [オーバーロード](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
@@ -97,31 +97,31 @@ End Function
   
 -   `Shared`  
   
-     省略可能です。 参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。  
+     任意。 参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。  
   
 -   `Shadows`  
   
-     省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
+     任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
   
 -   `Async`  
   
-     省略可能です。 参照してください[Async](../../../visual-basic/language-reference/modifiers/async.md)です。  
+     任意。 参照してください[Async](../../../visual-basic/language-reference/modifiers/async.md)です。  
   
 -   `Iterator`  
   
-     省略可能です。 参照してください[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。  
+     任意。 参照してください[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。  
   
 -   `name`  
   
-     必須です。 プロシージャの名前。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
+     必須。 プロシージャの名前。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
   
 -   `typeparamlist`  
   
-     省略可能です。 ジェネリック プロシージャの型パラメーターの一覧です。 参照してください[のリストを入力](type-list.md)です。  
+     任意。 ジェネリック プロシージャの型パラメーターの一覧です。 参照してください[のリストを入力](type-list.md)です。  
   
 -   `parameterlist`  
   
-     省略可能です。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 参照してください[パラメーター リスト](parameter-list.md)です。  
+     任意。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 参照してください[パラメーター リスト](parameter-list.md)です。  
   
 -   `returntype`  
   
@@ -129,7 +129,7 @@ End Function
   
 -   `Implements`  
   
-     省略可能です。 この手順には、1 つまたは複数が実装されていることを示します`Function`プロシージャ、このプロシージャの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつです。 参照してください[ステートメントを実装します](implements-statement.md)です。  
+     任意。 この手順には、1 つまたは複数が実装されていることを示します`Function`プロシージャ、このプロシージャの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつです。 参照してください[ステートメントを実装します](implements-statement.md)です。  
   
 -   `implementslist`  
   
@@ -143,12 +143,12 @@ End Function
   
     |パーツ|説明|  
     |---|---|  
-    |`interface`|必須です。 このプロシージャによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。|  
-    |`definedname`|必須です。 `interface` の中でプロシージャを定義するために使用する名前。|  
+    |`interface`|必須。 このプロシージャによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。|  
+    |`definedname`|必須。 `interface` の中でプロシージャを定義するために使用する名前。|  
   
 -   `Handles`  
   
-     省略可能です。 この手順が 1 つまたは複数の特定のイベントを処理できることを示します。 参照してください[処理](handles-clause.md)です。  
+     任意。 この手順が 1 つまたは複数の特定のイベントを処理できることを示します。 参照してください[処理](handles-clause.md)です。  
   
 -   `eventlist`  
   
@@ -162,12 +162,12 @@ End Function
   
     |パーツ|説明|  
     |---|---|  
-    |`eventvariable`|必須です。 クラスまたはイベントを発生させる構造体のデータ型で宣言されたオブジェクト変数です。|  
-    |`event`|必須です。 このプロシージャを処理するイベントの名前。|  
+    |`eventvariable`|必須。 クラスまたはイベントを発生させる構造体のデータ型で宣言されたオブジェクト変数です。|  
+    |`event`|必須。 このプロシージャを処理するイベントの名前。|  
   
 -   `statements`  
   
-     省略可能です。 このプロシージャ内で実行されるステートメントのブロックです。  
+     任意。 このプロシージャ内で実行されるステートメントのブロックです。  
   
 -   `End Function`  
   
@@ -239,7 +239,7 @@ End Function
   
  反復子関数の戻り値の型を指定できます<xref:System.Collections.IEnumerable>、 <xref:System.Collections.Generic.IEnumerable%601>、 <xref:System.Collections.IEnumerator>、または<xref:System.Collections.Generic.IEnumerator%601>です。  
   
- 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
+ 詳細については、「 [反復子](../../programming-guide/concepts/iterators.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、`Function`名、パラメーター、およびの本体を構成するコードを宣言するステートメント、`Function`プロシージャです。 `ParamArray`修飾子により、可変個の引数を受け入れるように機能します。  
@@ -258,7 +258,7 @@ End Function
   
  [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/function-statement_5.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Sub ステートメント](sub-statement.md)  
  [Function プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)  
  [パラメーター リスト](parameter-list.md)  

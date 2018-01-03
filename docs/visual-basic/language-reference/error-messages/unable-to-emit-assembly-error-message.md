@@ -14,11 +14,11 @@ ms.assetid: 2e7eb2b9-eda6-4bdb-95cc-72c7f0be7528
 caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9dcf3d4bec379faa5783ca17847b91f9739df598
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b19b6439d85822c69adac0b3e0e04b2f31299836
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unable-to-emit-assembly-lterror-messagegt"></a>アセンブリを作成できません:&lt;エラー メッセージ&gt;
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラは、マニフェストを伴うアセンブリを生成するためにアセンブリ リンカー (Al.exe、Alink とも呼ばれます) を呼び出しますが、アセンブリを生成する出力段階でリンカーからエラーが報告されます。  
@@ -27,15 +27,15 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  引用されているエラー メッセージを調べ、「 [Al.exe ツールのエラーと警告](http://msdn.microsoft.com/en-us/7f125d49-0a03-47a6-9ba9-d61a679a7d4b) 」というトピックで、より詳細な説明とアドバイスを参照します。  
+1.  引用符で囲まれたエラー メッセージを確認し、トピックを参照して[Al.exe](../../../framework/tools/al-exe-assembly-linker.md)です。 さらに詳しい説明とアドバイスを参照します。  
   
-2.  アセンブリに手動で署名するかを使用して再試行してください、 [Al.exe (アセンブリ リンカー)](https://msdn.microsoft.com/library/c405shex)または[Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)です。  
+2.  アセンブリに手動で署名するかを使用して再試行してください、 [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)または[Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md)です。  
   
 3.  エラーが続く場合は、状況に関する情報を収集し、マイクロソフト プロダクト サポート サービスに通知してください。  
   
 ### <a name="to-sign-the-assembly-manually"></a>アセンブリを手動で署名するには  
   
-1.  使用して、 [Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)公開/秘密キー ペア ファイルを作成します。  
+1.  [Sn.exe (厳密名ツール)] を使用して[Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md)) 公開/秘密キー ペア ファイルを作成します。  
   
      このファイルは .snk の拡張子を持ちます。  
   
@@ -61,9 +61,9 @@ ms.lasthandoff: 11/21/2017
   
 6.  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で、作成したファイルに .NET アセンブリへの参照を追加します。  
   
-## <a name="see-also"></a>関連項目  
- [Al.exe (アセンブリ リンカー)](https://msdn.microsoft.com/library/c405shex)  
- [Al.exe ツールのエラーと警告](http://msdn.microsoft.com/en-us/7f125d49-0a03-47a6-9ba9-d61a679a7d4b)  
- [Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)  
- [方法: 公開キーと秘密キーのキー ペアを作成する](http://msdn.microsoft.com/library/05026813-f3bd-4d7c-9e0b-fc588eb3d114)  
+## <a name="see-also"></a>参照  
+ 
+ [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)です。  
+ [Sn.exe (厳密名ツール)][Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md))  
+ [方法: 公開キーと秘密キーのキー ペアを作成する](../../../framework/app-domains/how-to-create-a-public-private-key-pair.md)  
  [ご意見](/visualstudio/ide/talk-to-us)

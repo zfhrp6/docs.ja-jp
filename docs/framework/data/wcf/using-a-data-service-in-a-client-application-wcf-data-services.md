@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 79c4f7e066f4961caa66d3fd19dee9eb0f21ada4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c802342f352652e24e53b70c730ddb4c5b8973a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>クライアント アプリケーションでのデータ サービスの使用 (WCF Data Services)
 公開するサービスにアクセスすることができます、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Web ブラウザーに URI を指定することによってフィードします。 URI はリソースのアドレスを提供し、要求メッセージがこれらのアドレスに送信されてリソースが表す基になるデータのアクセスまたは変更を行います。 ブラウザーは HTTP GET コマンドを発行して、要求されたリソースを [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードとして返します。 詳細については、次を参照してください。 [Web ブラウザーからサービスにアクセスする](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)です。  
@@ -61,6 +62,6 @@ ms.lasthandoff: 12/02/2017
   
  プログラミング ライブラリを利用することができますを使用するが、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]他の種類のクライアント アプリケーションでのフィードです。 詳細については、次を参照してください。、 [OData SDK](http://go.microsoft.com/fwlink/?LinkId=185796)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ サービス リソースへのアクセス](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
  [クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

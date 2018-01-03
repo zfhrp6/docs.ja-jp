@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a8313a6b06387f6fd0a5f95191ea57bdf034c372
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload: dotnet
+ms.openlocfilehash: 6ad262c2c813b5baa9dbde475e40cd445bd06701
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="etw-events-in-the-common-language-runtime"></a>共通言語ランタイムの ETW イベント
 共通言語ランタイム (CLR) は、さまざまなデバッグとプロファイリング イベントを通じて、有用な Windows イベント トレーシング (ETW) の診断情報を提供します。 CLR ETW イベントは、Windows ETW トレース システムを利用して、共通言語ランタイムによって提供される既存のプロファイリングとデバッグのサポートを拡張します。  
@@ -43,5 +44,5 @@ ms.lasthandoff: 10/21/2017
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)  
  CLR ETW イベント、キーワード、レベル、およびイベント データに関する詳細情報を提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework の ETW イベント](../../../docs/framework/performance/etw-events.md)

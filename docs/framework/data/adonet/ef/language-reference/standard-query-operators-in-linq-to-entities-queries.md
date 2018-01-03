@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 97782834480e8acb5f66d8da2099089b1c47e093
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7413bf21167af129c7e20b199d7ea6a0ac1c8978
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>LINQ to Entities クエリの標準クエリ演算子
 クエリでは、データ ソースから取得する情報を指定できます。 また、並べ替え、グループ化、整形方法を指定して情報を取得することもできます。 LINQ には、クエリで使用できる一連の標準クエリ メソッドが用意されています。 これらのメソッドのほとんどの操作のシーケンスです。このコンテキストで、シーケンスがの型を実装するオブジェクト、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスまたは<xref:System.Linq.IQueryable%601>インターフェイスです。 標準クエリ演算子のクエリ機能には、フィルター処理、投影、集計、並べ替え、グループ化、ページングなどがあります。 よく使用される標準クエリ演算子の中には、クエリ式構文を使用することで呼び出しが可能になるように、専用のキーワード構文のあるものもあります。 クエリ式はメソッド ベースの方法とは異なり、読み取りやすくクエリを表現できます。 クエリ式の句は、コンパイル時にクエリ メソッドへの呼び出しに変換されます。 等価のクエリ式の句を持つ標準クエリ演算子の一覧は、次を参照してください。[標準クエリ演算子の概要](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)です。  
@@ -86,6 +87,6 @@ ms.lasthandoff: 11/21/2017
   
  多くのページング メソッドはサポートされていません。これは、関数をデータ ソースにマップできないことと、データ ソースでのセットの明示的な順序付けが不足していることのいずれかが理由です。 既定値を返すメソッドは、null 既定値を持つ概念モデル プリミティブ型および参照型に限定されます。 空シーケンスで実行されるページング メソッドは null を返します。  
   
-## <a name="see-also"></a>関連項目  
- [サポートされており、サポートされていない LINQ メソッド (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
+## <a name="see-also"></a>参照  
+ [サポート対象の LINQ メソッドとサポート非対象の LINQ メソッド (LINQ to Entities) ](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
  [標準クエリ演算子の概要](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)

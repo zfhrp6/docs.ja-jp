@@ -14,11 +14,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1e66c26c12f3f62ee61e02e16318e747793ff927
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 61b04be25f54ef22511f45b5752c3ccfa90d94ac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="defining-wcf-data-services"></a>WCF Data Services の定義
 このセクションで作成および構成する方法を説明する[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]としてデータを公開する、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ サービスを作成するために必要な基本的な手順を参照してください[データ サービスとして公開する](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)です。  
@@ -27,7 +28,7 @@ ms.lasthandoff: 12/02/2017
  [データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)  
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] によって提供されるデータ サービス構成オプションについて説明します。  
   
- [データ サービス プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
+ [Data Services プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
  データ サービスとしてデータを公開するプロバイダー モデルについて説明します。  
   
  [サービス操作](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)  
@@ -39,7 +40,7 @@ ms.lasthandoff: 12/02/2017
  [インターセプター](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md)  
  インターセプター メソッドを定義してデータ サービスへの要求に対してカスタム ビジネス ロジックを実行する方法について説明します。  
   
- [開発および WCF Data Services の配置](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)  
+ [WCF Data Services の開発と配置](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)  
  Visual Studio を使用してデータ サービスを開発および配置する方法について説明します。  
   
  [WCF Data Services のセキュリティ保護](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
@@ -54,7 +55,7 @@ ms.lasthandoff: 12/02/2017
  [WCF Data Services プロトコル実装の詳細](../../../../docs/framework/data/wcf/wcf-data-services-protocol-implementation-details.md)  
  WCF Data Services で現在実装されていない [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルのオプション機能について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
  [データ サービス リソースへのアクセス](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
  [はじめに](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)

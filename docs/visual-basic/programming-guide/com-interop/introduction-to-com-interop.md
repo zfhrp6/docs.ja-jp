@@ -14,11 +14,11 @@ ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 13df7dc6b325b97411b910c0fc8e05e65a332dc5
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 39a4245b51c1199a6aeb0c23282b1917f51164d2
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>COM 相互運用の概要 (Visual Basic)
 コンポーネント オブジェクト モデル (COM) は、他のコンポーネントおよびホスト アプリケーションには、その機能を公開するオブジェクトを付与します。 COM オブジェクトは、Windows 長年にわたってプログラミングの基本されていますが、共通言語ランタイム (CLR) 用に設計されたアプリケーションでは、多くの利点が提供しています。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 12/09/2017
 ### <a name="importing-and-exporting-type-libraries"></a>インポートおよびタイプ ライブラリをエクスポートします。  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]タイプ ライブラリから情報をインポートできる Tlbimp ユーティリティが含まれています、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションです。 Tlbexp ユーティリティを使用して、アセンブリからタイプ ライブラリを生成できます。  
   
- Tlbimp と Tlbexp については、次を参照してください。 [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)と[Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)です。  
+ Tlbimp と Tlbexp については、次を参照してください。 [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../framework/tools/tlbimp-exe-type-library-importer.md)と[Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)です。  
   
 ## <a name="interop-assemblies"></a>相互運用機能アセンブリ  
  相互運用機能アセンブリは[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ブリッジ マネージ リソースとアンマネージ間をアセンブリ コードに、マッピングの COM オブジェクトのメンバーに相当する[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メンバーを管理します。 Visual Basic .NET で作成された相互運用機能アセンブリは、多くの相互運用マーシャ リングなどの COM オブジェクトの操作の詳細を処理します。  
@@ -59,13 +59,13 @@ ms.lasthandoff: 12/09/2017
 ## <a name="interoperability-marshaling"></a>相互運用マーシャ リング  
  すべて[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションを使用するプログラミング言語に関係なく、オブジェクトの相互運用性を有効にする一般的な種類のセットを共有します。 パラメーターおよび COM オブジェクトの戻り値は、マネージ コードで使用されるものとは異なるデータ型を使用して場合があります。 *相互運用マーシャ リング*はパッケージ パラメーターと同等のデータ型に戻り値の処理、COM オブジェクトとの間を移動します。 詳細については、次を参照してください。[相互運用マーシャ リング](../../../framework/interop/interop-marshaling.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [COM 相互運用](../../../visual-basic/programming-guide/com-interop/index.md)  
  [チュートリアル : COM オブジェクトによる継承の実装](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- [アンマネージ コードとの相互運用](../../../../docs/framework/interop/index.md)  
+ [アンマネージ コードとの相互運用](../../../framework/interop/index.md)  
  [相互運用性のトラブルシューティング](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
  [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../framework/tools/tlbimp-exe-type-library-importer.md)  
  [Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
  [相互運用マーシャリング](../../../framework/interop/interop-marshaling.md)  
  [登録を必要としない COM 相互運用機能](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)

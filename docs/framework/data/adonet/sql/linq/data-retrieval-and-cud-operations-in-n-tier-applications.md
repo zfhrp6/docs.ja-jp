@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: adc5d50707155495c43703b6586cedf5da209b69
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 84a72642636be2238a81f1b9c00e3ac4e7037272
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>N 層アプリケーションでのデータ取得および CUD 操作 (LINQ to SQL)
 Customers または Orders のようなエンティティ オブジェクトをネットワークを介してクライアントにシリアル化すると、これらのエンティティはデータ コンテキストからデタッチされます。 変更内容、および他のオブジェクトとの関連付けはデータ コンテキストによって追跡されなくなります。 クライアントがデータを読み取るだけの場合は、これは問題にはなりません。 また、クライアントが新しい行をデータベースに追加できるようにすることも、ある程度簡単です。 しかし、アプリケーションでクライアントによるデータの更新または削除を可能にする必要がある場合には、<xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType> を呼び出す前に、新しいデータ コンテキストにエンティティをアタッチする必要があります。 さらに、元の値によるオプティミスティック同時実行制御チェックを使用する場合には、何らかの方法で、元のエンティティと変更後のエンティティをデータベースに渡す必要もあります。 エンティティがデタッチされた後に新しいデータ コンテキストにエンティティを入れるために、`Attach` メソッドが用意されています。  
@@ -416,6 +417,6 @@ public void UpdateProductInfo(Product newProd, Product originalProd)
   
  オブジェクトの `IEnumerable` セットを使ってアタッチするとき、既存のキーが含まれる場合には、<xref:System.Data.Linq.DuplicateKeyException> がスローされます。 残りのオブジェクトはアタッチされません。  
   
-## <a name="see-also"></a>関連項目  
- [N 層でおよびリモート アプリケーション LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
+## <a name="see-also"></a>参照  
+ [LINQ to SQL を使用する n 層アプリケーションとリモート アプリケーション](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

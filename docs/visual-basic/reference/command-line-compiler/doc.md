@@ -14,11 +14,11 @@ ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2490529b951ef6e583e3bfa54afced89c823e874
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1f9d4f584f217e6996a499614b97f184b28664f8
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="doc"></a>/doc
 ドキュメント コメントを XML ファイルに出力します。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`+` &#124; `-`|省略可能です。 指定する +、または単`/doc`、コンパイラでドキュメント情報を生成し、XML ファイル内に配置します。 指定する`-`を指定しないことに相当`/doc`、なり、ドキュメントの情報を作成します。|  
+|`+` &#124; `-`|任意。 指定する +、または単`/doc`、コンパイラでドキュメント情報を生成し、XML ファイル内に配置します。 指定する`-`を指定しないことに相当`/doc`、なり、ドキュメントの情報を作成します。|  
 |`file`|`/doc:` を使用する場合に、必ず指定します。 コンパイルのソース コード ファイルからのコメントが設定されている出力 XML ファイルを指定します。 ファイル名にスペースが含まれている場合は、引用符で囲まれます名を囲む ("") です。|  
   
 ## <a name="remarks"></a>コメント  
@@ -55,11 +55,11 @@ ms.lasthandoff: 11/21/2017
   
 |Visual Studio で/doc を設定するには、統合開発環境|  
 |---|  
-|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.値を設定、**生成の XML ドキュメント ファイル**ボックス。|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[コンパイル]** タブをクリックします。<br />3.値を設定、**生成の XML ドキュメント ファイル**ボックス。|  
   
 ## <a name="example"></a>例  
  参照してください[XML でコードを文書化](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)サンプルについてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [XML の使用によるコードのドキュメントの作成](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)

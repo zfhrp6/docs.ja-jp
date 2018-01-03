@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a8b196dd7eda673d1bd5f436f708471c81a857eb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9781d97a133a39a7768c853ce80f7524db87df39
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-and-adonet"></a>LINQ と ADO.NET
 今日、ビジネス アプリケーション開発者の多くは、2 つ (またはそれ以上) のプログラミング言語を使ってアプリケーションを開発しています。ビジネス ロジックやプレゼンテーション層には高級言語 ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] など) が、データベースとの対話にはクエリ言語 ([!INCLUDE[tsql](../../../../includes/tsql-md.md)] など) が使用されています。 開発者は実質的に複数の言語に精通していることが要求され、開発環境における言語の不整合が生じる原因にもなっています。 たとえば、データ アクセス API を使用してデータベースを照会するアプリケーションでは、クエリは文字列リテラルとして引用符で囲んで指定する必要があります。 コンパイラはこのクエリ文字列を認識できないため、エラー (無効な構文、参照されている列または行が実際に存在するかどうかなど) のチェック機構が働きません。 クエリ パラメーターの型チェックや `IntelliSense` のサポートもありません。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)]を介して、リレーショナル データは .NET 環境でオブジェクトとして公開されます。 これにより、[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] の利用に最適なオブジェクト レイヤーが実現されます。開発者は、ビジネス ロジックの構築に使用する言語で、データベースを照会するクエリを作成できます。 この機能は、[!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)] と呼ばれます。 LINQ の詳細については、「[LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md)  
  [LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)  
  [LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  

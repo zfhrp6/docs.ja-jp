@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 19a95cf5d8d9b5fc5f805574b6de15c90fb38efd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2b3d1a42430a02e4b3dd4a715ef27acd3e46b8ea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="common-schema-collections"></a>共通のスキーマ コレクション
 共通のスキーマ コレクションとは、それぞれの .NET Framework マネージ プロバイダーにより実装されるスキーマ コレクションのことです。 呼び出すことによってサポートされるスキーマ コレクションの一覧を特定の .NET Framework マネージ プロバイダーを照会することができます、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。 これらのコレクションは、必要なすべての列を表現します。 プロバイダーでは、任意で列を追加できます。 たとえば、`SqlClient` と `OracleClient` は、ParameterName を制限のコレクションに追加します。  
@@ -104,7 +105,7 @@ ms.lasthandoff: 11/21/2017
 |----------------|--------------|-----------------|  
 |ところ予約語|string|プロバイダー固有の仕様には、word が予約されています。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [GetSchema およびスキーマ コレクション](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

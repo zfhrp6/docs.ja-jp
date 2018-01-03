@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e96eb8e48b5787db5296458af650133747687295
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3df07f8b7bf71d658e9073a8aeb3d51dee087544
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>DataAdapter DataTable と DataColumn のマップ
 A **DataAdapter** 0 個以上のコレクションを含んでいます<xref:System.Data.Common.DataTableMapping>内のオブジェクトの**TableMappings**プロパティです。 A **DataTableMapping** 、データ ソースに対するクエリから返されるデータの間のマスター マッピングを提供し、<xref:System.Data.DataTable>です。 **DataTableMapping**の代わりに名前を渡すことができます、 **DataTable**名、**塗りつぶし**のメソッド、 **DataAdapter**です。 次の例を作成、 **DataTableMapping**という**AuthorsMapping**の**作成者**テーブル。  
@@ -107,7 +108,7 @@ adapter.TableMappings.Add("Customers1", "Orders")
 adapter.Fill(customersDataSet, "Customers")  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Dataadapter と Datareader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+## <a name="see-also"></a>参照  
+ [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

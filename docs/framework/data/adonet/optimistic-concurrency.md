@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 45939dcec8b8db8e1b06ebfc67d89bfead67575a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0cd77b63c54b926c21641024c7688476cef2fdcf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimistic-concurrency"></a>オプティミスティック同時実行制御
 マルチユーザー環境には、データベースのデータを更新するための 2 つのモデルがあります。オプティミスティック同時実行制御とペシミスティック同時実行制御です。 <xref:System.Data.DataSet> オブジェクトは、データをリモート処理するときや、データと対話するときのように長時間にわたる利用状況では、オプティミスティック同時実行制御の使用を奨励するように設計されています。  
@@ -216,9 +217,9 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [DataAdapter によるデータ ソースの更新](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
- [行のエラー情報](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
+ [行エラー情報](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
  [トランザクションと同時実行](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

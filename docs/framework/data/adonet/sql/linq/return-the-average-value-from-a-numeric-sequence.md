@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 87a23bce302ac7eed3081b5670cb8c532a550cde
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1759ff9ca3bbf5198187d2ec5470718dd1730cff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="return-the-average-value-from-a-numeric-sequence"></a>一連の数値の平均値の取得
 <xref:System.Linq.Enumerable.Average%2A> 演算子は、一連の数値の平均値を計算します。  
@@ -124,5 +125,5 @@ ms.lasthandoff: 10/18/2017
   
  `Gravad lax`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [集計クエリ](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)

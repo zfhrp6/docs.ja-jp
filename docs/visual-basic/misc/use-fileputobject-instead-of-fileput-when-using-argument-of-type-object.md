@@ -9,11 +9,11 @@ ms.assetid: d207b9b7-5898-4c13-8b03-9feefac5f726
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8cba4af206e2dbf767fdb883ec81229a67842c57
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5612c2bd4dc08f767643d2cd865a2ba1a8210c15
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="use-39fileputobject39-instead-of-39fileput39-when-using-argument-of-type-39object39"></a>使用して &#39;FilePutObject &#39;代わりに &#39;です。FilePut &#39;型 &#39; オブジェクト &#39; の引数を使用する場合
 `FilePut`メソッドには、型の引数が含まれています。`Object`です。 あいまいさを避けるため、`FilePutObject` の代わりに `FilePut` を使用する必要があります。  
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/21/2017
   
 -   `My.Computer.FileSystem` オブジェクトで利用できる機能を使用します。  
   
-## <a name="see-also"></a>関連項目  
- [ビルド内にありません: FilePutObject 関数](http://msdn.microsoft.com/en-us/a0f52a1c-5ecc-4945-b18c-03147af61d6b)  
- [My.Computer.FileSystem オブジェクト](../../visual-basic/language-reference/objects/my-computer-filesystem-object.md)  
- [My.Computer.FileSystem.WriteAllBytes メソッド](http://msdn.microsoft.com/en-us/b1a24dc1-eac8-4e22-8ffa-cc3bacbaf826)
+## <a name="see-also"></a>参照  
+   
+ [My.Computer.FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)  
+ [My.Computer.FileSystem.WriteAllBytes](xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.WriteAllBytes%2A)

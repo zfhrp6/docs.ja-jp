@@ -13,18 +13,19 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e04c8fcb56b497ab183e05a0d6f40cb3facfed73
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6aa72d4c3ac27b3be6704943819596ad628e4f7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="oracle-lobs"></a>Oracle LOB
 .NET Framework Data Provider for Oracle が含まれています、 <xref:System.Data.OracleClient.OracleLob> Oracle を操作するために使用されるクラス**LOB**データ型。  
   
  **OracleLob**これらのいずれかの<xref:System.Data.OracleClient.OracleType>データ型。  
   
-|データ型|説明|  
+|データの種類|説明|  
 |---------------|-----------------|  
 |**Blob**|Oracle **BLOB** 4 ギガバイト単位の最大サイズのバイナリ データを格納するデータ型。 これはマップ、**配列**型の**バイト**です。|  
 |**Clob**|Oracle **CLOB**サーバーで、4 ギガバイト単位の最大サイズを既定の文字に基づく文字データを含むデータ型を設定します。 これはマップ**文字列**です。|  
@@ -257,6 +258,6 @@ cmd.ExecuteNonQuery();
 tx.Commit();  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Oracle および ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

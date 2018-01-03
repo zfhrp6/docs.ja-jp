@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f8484fe902b356f7fae4e526bdaa5610bf7d7ac6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0e4c854d9f7e1262a771dadc897878dac20a642e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltreliablesessiongt"></a>&lt;reliableSession&gt;
 WS-ReliableMessaging の設定を定義します。 この要素がカスタム バインドに追加される場合、その結果となるチャネルにより、正確に 1 回の配信保証をサポートできます。  
@@ -129,12 +130,12 @@ WS-ReliableMessaging の設定を定義します。 この要素がカスタム 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ReliableSessionElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
  <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>  
  [信頼できるセッション](../../../../../docs/framework/wcf/feature-details/reliable-sessions.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a080dd13f4e9950c9e65b8031ffc77ddf18eaf9d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 533786ffe1fa39928f90d94bbb0d80584bf85b8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-sql-queries"></a>LINQ to SQL クエリ
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリは、[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] クエリと同じ構文を使用して定義します。 異なる点は、クエリ内で参照されるオブジェクトがデータベース内の要素に割り当てられるという点だけです。 詳細については、「[LINQ クエリの概要 (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)」を参照してください。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
 |リモート実行とローカル実行||詳細については、次を参照してください。[リモート実行とします。ローカル実行](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)です。|  
 |ストリーミングとキャッシュ クエリ|ローカル メモリ シナリオでは適用なし||  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ クエリの概要 (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
  [LINQ クエリの基本操作](~/docs/csharp/programming-guide/concepts/linq/basic-linq-query-operations.md)  
  [LINQ クエリ操作での型の関係](~/docs/csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)  

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d0d7df7ff1a0e8e732688e10befb4bffa86599d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 184a55c3c5479f1999057e55dcc761a250051e5e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-key"></a>エンティティ キー
 *エンティティ キー*は、[プロパティ](../../../../docs/framework/data/adonet/property.md)または一連のプロパティの[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)id を判断するために使用されます。 エンティティ キーを構成するプロパティは、デザイン時に選択されます。 エンティティのキー プロパティの値は、内のエンティティ型インスタンスを一意に識別する必要があります、[エンティティ セット](../../../../docs/framework/data/adonet/entity-set.md)実行時にします。 エンティティ キーを構成するプロパティには、エンティティ セット内のインスタンスの一意性を保証するものを選択する必要があります。  
@@ -49,6 +50,6 @@ ms.lasthandoff: 11/21/2017
   
  同じ名前の 2 人の著者が同じ住所に住む可能性は低いため、エンティティ キーに `Name` および `Address` を使用するのは妥当な選択になります。 ただし、エンティティ キーのこの選択では、エンティティ セット内のエンティティ キーの一意性を絶対的に保証することはできません。 この場合には、`AuthorId` などのプロパティを追加して、著者を一意に識別することが推奨されます。  
   
-## <a name="see-also"></a>関連項目  
- [エンティティ データ モデルの主要な概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
- [エンティティ データ モデル](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a>参照  
+ [Entity Data Model キーの概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

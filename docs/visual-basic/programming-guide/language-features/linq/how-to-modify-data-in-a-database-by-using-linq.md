@@ -21,18 +21,18 @@ ms.assetid: cf52635f-0c1b-46c3-aff1-bdf181cf19b1
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 69e2fc7a6860ad2ff43742d37cd35671ebe35acf
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 66f21b2a47d3890875062bbdf45e1c4507e1d603
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-modify-data-in-a-database-by-using-linq-visual-basic"></a>方法 : LINQ を使用してデータベースのデータを変更する (Visual Basic)
 統合言語クエリ (LINQ) クエリを行う簡単にデータベース情報にアクセスして、データベース内の値を変更します。  
   
  次の例では、SQL Server データベースを取得する新しいアプリケーションを作成する方法と更新プログラムの情報を示します。  
   
- このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューター上に Northwind サンプル データベースがないことからダウンロードする、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
+ このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューター上に Northwind サンプル データベースがないことからダウンロードする、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
 ### <a name="to-create-a-connection-to-a-database"></a>データベースへの接続を作成するには  
   
@@ -165,9 +165,9 @@ ms.lasthandoff: 12/09/2017
   
 7.  F5 キーを押してプロジェクトを実行します。 をクリックして**追加**新しいレコードを追加します。 をクリックして**更新**新しいレコードを変更します。 をクリックして**削除**新しいレコードを削除します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
  [クエリ](../../../../visual-basic/language-reference/queries/queries.md)  
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
  [DataContext メソッド (O/R デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
  [方法: 更新、挿入、および削除 (O/R デザイナー) を実行するストアド プロシージャを割り当てる](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)

@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5f45addd61f275a0bba4b61552bb629bfc6ee7df
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 44d171cab4099436d7daea26def831f149b75b13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="merging-dataset-contents"></a>DataSet の内容のマージ
 <xref:System.Data.DataSet.Merge%2A> メソッドを使用して、<xref:System.Data.DataSet>、<xref:System.Data.DataTable>、または <xref:System.Data.DataRow> の配列の内容を既存の `DataSet` にマージできます。 いくつかの要因とオプションが、新しいデータを既存の `DataSet` にマージする方法に影響します。  
@@ -88,10 +89,10 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[DataWorks DataSet.MergeAcceptChanges#2](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataSet.MergeAcceptChanges/CS/source.cs#2)]
  [!code-vb[DataWorks DataSet.MergeAcceptChanges#2](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataSet.MergeAcceptChanges/VB/source.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [行の状態と行のバージョン](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
- [Dataadapter と Datareader](../../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [行の状態とバージョン](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
+ [DataAdapter と DataReader](../../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [ADO.NET でのデータの取得および変更](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [Identity 値および Autonumber 値を取得します。](../../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
+ [ID 値および Autonumber 値の取得](../../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

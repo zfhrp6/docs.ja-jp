@@ -14,11 +14,12 @@ caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 53e189b761ccd1c3cee75d4afa81291e02082684
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f4b453392e21079fe1042f3f07bd895bbcdad888
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwshttpbindinggt"></a>&lt;wsHttpBinding&gt;
 双方向サービス コントラクト以外に適した、安全で信頼のおける相互操作可能なバインディングを定義します。 バインディングは、信頼のための WS-ReliableMessaging、およびメッセージのセキュリティと認証のための WS-Security を実装します。 トランスポートは HTTP、メッセージ エンコーディングは Text/XML エンコーディングです。  
@@ -144,10 +145,10 @@ ms.lasthandoff: 12/02/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.WSHttpBinding>  
  <xref:System.ServiceModel.Configuration.WSHttpBindingElement>  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<バインド >](../../../../../docs/framework/misc/binding.md)

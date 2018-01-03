@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0ccc47a1ea740c5106517f6f53620ddc8097c531
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e8bbeb0d7ce040387b263486b947e793eca39d29
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-directly-execute-sql-queries"></a>方法 : SQL クエリを直接実行する
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、作成したクエリをパラメーター化された SQL クエリ (テキスト形式) に変換し、それを SQL Server に送って処理します。  
@@ -45,6 +46,6 @@ ms.lasthandoff: 11/21/2017
   
  クエリ テキスト内では、`Console.WriteLine()` および `String.Format()` で使用するのと同じ中かっこ表記を使用して、パラメーターを表現します。 実際には、`String.Format()`などのパラメーター名の生成中、中かっこで囲んだパラメーターを置き換えることを指定するクエリ文字列で実際に呼び出される@p0、 @p1 ..., @p(n)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
- [データベースの照会](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+ [データベースに対するクエリの実行](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)

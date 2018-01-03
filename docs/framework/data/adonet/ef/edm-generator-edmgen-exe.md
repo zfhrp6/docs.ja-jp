@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: da99c43d9142ee754b2b48db45ca070d1ab7c4e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ee356fc3e7d6e1279e0cba8014d6d285620add3b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM ジェネレーター (EdmGen.exe)
 EdmGen.exe は、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] モデルとマッピング ファイルを操作するためのコマンドライン ツールです。 EdmGen.exe ツールを使用すると、次の操作を行うことができます。  
@@ -75,13 +76,13 @@ EdmGen /mode:choice [options]
 |`/targetversion:`\<文字列 >|生成されたコードのコンパイルに使用される .NET Framework のバージョンです。 サポートされているバージョンは 4 と 4.5 です。 既定値は 4 です。|  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [方法: EdmGen.exe を使用してモデル ファイルとマッピング ファイルを生成するには](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)  
+ [方法: EdmGen.exe を使用してモデル ファイルとマッピング ファイルを生成する](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)  
   
- [方法: EdmGen.exe を使用してオブジェクトレイヤー コードを生成するには](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md)  
+ [方法: EdmGen.exe を使用してオブジェクトレイヤー コードを生成する](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md)  
   
- [方法: EdmGen.exe を使用してモデル ファイルとマッピング ファイルを検証するには](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)  
+ [方法: EdmGen.exe を使用してモデル ファイルとマッピング ファイルを検証する](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET Entity Data Model ツール](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)  
- [エンティティ データ モデル](../../../../../docs/framework/data/adonet/entity-data-model.md)  
+ [Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md)  
  [CSDL、SSDL、および MSL 仕様](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

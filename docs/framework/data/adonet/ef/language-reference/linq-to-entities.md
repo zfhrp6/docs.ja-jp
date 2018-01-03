@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 685651f4291a11b857da82a63068e4bd2333275c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c1ef47e6b4f584e0a49482d9eb2ed7bf14602a03
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 LINQ to Entities は、開発者が Visual Basic または Visual C# を使用して Entity Framework 概念モデルに対するクエリを作成するための統合言語クエリ (LINQ) のサポートを提供します。 Entity Framework に対するクエリで代表的なものが、コマンド ツリー クエリです。これはオブジェクト コンテキストに対して実行されます。 LINQ to Entities では、統合言語クエリ (LINQ) クエリをコマンド ツリー クエリに変換し、そのクエリを Entity Framework に対して実行します。返されたオブジェクトは、Entity Framework でも LINQ でも使用できます。 次に、LINQ to Entities クエリを作成して実行する手順を示します。  
@@ -82,7 +83,7 @@ LINQ to Entities は、開発者が Visual Basic または Visual C# を使用�
   
  [LINQ to Entities クエリ内の式](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)  
   
- [LINQ to Entities クエリで関数の呼び出し](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)  
+ [LINQ to Entities クエリ内の関数の呼び出し](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)  
   
  [コンパイル済みクエリ (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md)  
   
@@ -90,16 +91,16 @@ LINQ to Entities は、開発者が Visual Basic または Visual C# を使用�
   
  [クエリ結果](../../../../../../docs/framework/data/adonet/ef/language-reference/query-results.md)  
   
- [LINQ to Entities クエリ内の標準クエリ演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)  
+ [LINQ to Entities クエリの標準クエリ演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)  
   
- [正規の関数マッピングに CLR メソッド](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)  
+ [CLR メソッドと正規関数とのマッピング](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)  
   
- [サポートされており、サポートされていない LINQ メソッド (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
+ [サポート対象の LINQ メソッドとサポート非対象の LINQ メソッド (LINQ to Entities) ](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
   
- [既知の問題とエンティティを LINQ での考慮事項](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
+ [LINQ to Entities の既知の問題および注意点](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
   
-## <a name="see-also"></a>関連項目  
- [既知の問題とエンティティを LINQ での考慮事項](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
+## <a name="see-also"></a>参照  
+ [LINQ to Entities の既知の問題および注意点](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
  [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
  [LINQ と ADO.NET](../../../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
  [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)

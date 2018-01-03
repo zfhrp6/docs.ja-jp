@@ -13,17 +13,18 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 995ac8b4fc91517573dbf9cc02dd1133074ade54
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 313364f71c463a320816bb92113f3b720146fe25
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="method-based-query-examples-linq-to-dataset"></a>メソッド ベースのクエリ例 (LINQ to DataSet)
 このセクションでは、標準クエリ演算子を使った [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] プログラミングの例をメソッド ベースのクエリ構文を中心に紹介しています。 <xref:System.Data.DataSet>これらの例で使用されるを使用して設定されます、`FillDataSet`で指定されているメソッド[、データセットにデータを読み込む](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)します。 詳細については、次を参照してください。[標準クエリ演算子の概要](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [プロジェクション](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-projection.md)  
+ [射影](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-projection.md)  
  このトピックでは、<xref:System.Linq.Enumerable.Select%2A> メソッドおよび <xref:System.Linq.Enumerable.SelectMany%2A> メソッドを使って <xref:System.Data.DataSet> を照会する例を取り上げます。  
   
  [パーティション分割](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-partitioning-linq.md)  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
  [Join](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-join-linq-to-dataset.md)  
  このトピックでは、<xref:System.Linq.Enumerable.GroupJoin%2A> メソッドおよび <xref:System.Linq.Enumerable.Join%2A> メソッドを使って <xref:System.Data.DataSet> を照会する例を取り上げます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クエリ式の例](../../../../docs/framework/data/adonet/query-expression-examples-linq-to-dataset.md)  
- [データセット固有の演算子の例](../../../../docs/framework/data/adonet/dataset-specific-operator-examples-linq-to-dataset.md)  
+ [DataSet 固有の演算子の例](../../../../docs/framework/data/adonet/dataset-specific-operator-examples-linq-to-dataset.md)  
  [LINQ to DataSet の例](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

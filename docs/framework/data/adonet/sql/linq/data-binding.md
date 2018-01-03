@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7405cf37aaa21f8773952c9e7ed941bc8ae3150b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 99aa438c64fdb8f2d14207e6afb06afa8e5f014a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding"></a>データ バインディング
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]グリッド コントロールなどのコモン コントロールにバインドをサポートします。 具体的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]データ グリッドへのバインドの表示と更新の両方に関して、マスター/詳細バインディングを処理するための基本的なパターンを定義します。  
@@ -116,5 +117,5 @@ ms.lasthandoff: 10/18/2017
   
 -   1 つのエンティティが 2 つの別個のグリッド (たとえばマスター グリッドと詳細グリッド) にバインドされている場合、マスター グリッドで `Delete` を行っても、詳細グリッドには反映されません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

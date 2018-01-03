@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 73d98d5e2f97bd0425f11db35877f3eabca449be
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f3e80b5bb62cc785c220e2baeb773e6990c5fee1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="provider-manifest-specification"></a>プロバイダー マニフェストの仕様
 ここでは、データ ストア プロバイダーでデータ ストアの型および関数がどのようにサポートされているかについて説明します。  
@@ -272,7 +273,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |ReturnType|String|Ｘ|Void|関数の戻り値の EDM 型|  
 |Aggregate|Boolean|Ｘ|False|関数が集計関数の場合は True|  
 |BuiltIn|Boolean|Ｘ|True|関数がデータ ストアに組み込まれている場合は True|  
-|StoreFunctionName|String|いいえ|\<名 >|データ ストア内の関数名。  関数名のリダイレクト レベルを許可できます。|  
+|StoreFunctionName|String|×|\<名 >|データ ストア内の関数名。  関数名のリダイレクト レベルを許可できます。|  
 |NiladicFunction|Boolean|Ｘ|False|関数にパラメーターが必要なく、パラメーターなしで呼び出される場合は True|  
 |ParameterType<br /><br /> Semantics|ParameterSemantics|Ｘ|AllowImplicit<br /><br /> 変換|クエリ パイプラインによるパラメーター型の置換の処理方法の選択<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
   
@@ -289,5 +290,5 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ##### <a name="namespace-attribute"></a>Namespace 属性  
  各データ ストア プロバイダーでは、マニフェストで定義された情報に対して 1 つの名前空間または名前空間のグループを定義する必要があります。 この名前空間は、Entity SQL クエリで、関数および型の名前を解決するために使用できます。 たとえば SqlServer の場合、 その名前空間は、標準的な関数が Entity SQL クエリでサポートされるように Entity Services で定義された正規の名前空間 (EDM) とは別にする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity Framework データ プロバイダーの作成](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)

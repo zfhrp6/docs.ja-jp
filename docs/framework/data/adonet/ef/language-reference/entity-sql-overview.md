@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 301a934cad59b14d1a65a1e98247490d578e6866
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f77e3a5d0073cb13d1904f802c4d6760fc52caa9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-sql-overview"></a>Entity SQL の概要
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、[!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] 内の概念モデルに対するクエリの実行に使用できる SQL に似た言語です。 概念モデルでは、データを表すエンティティおよびリレーションシップとしてと[!INCLUDE[esql](../../../../../../includes/esql-md.md)]それらのエンティティとリレーションシップ SQL を使用しているユーザーになじみのある形式のクエリを実行することができます。  
@@ -29,7 +30,7 @@ ms.lasthandoff: 11/21/2017
  ここでは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の概念について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [TRANSACT-SQL における Entity SQL の違い](../../../../../../docs/framework/data/adonet/ef/language-reference/how-entity-sql-differs-from-transact-sql.md)  
+ [Entity SQL と Transact-SQL の相違点](../../../../../../docs/framework/data/adonet/ef/language-reference/how-entity-sql-differs-from-transact-sql.md)  
   
  [Entity SQL クイック リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-quick-reference.md)  
   
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
   
  [型定義](../../../../../../docs/framework/data/adonet/ef/language-reference/type-definitions-entity-sql.md)  
   
- [コンス トラクター](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md)  
+ [コンストラクター](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md)  
   
  [クエリ プランのキャッシュ](../../../../../../docs/framework/data/adonet/ef/language-reference/query-plan-caching-entity-sql.md)  
   
@@ -53,7 +54,7 @@ ms.lasthandoff: 11/21/2017
   
  [リテラル](../../../../../../docs/framework/data/adonet/ef/language-reference/literals-entity-sql.md)  
   
- [Null リテラルと型推論](../../../../../../docs/framework/data/adonet/ef/language-reference/null-literals-and-type-inference-entity-sql.md)  
+ [NULL リテラルと型推論](../../../../../../docs/framework/data/adonet/ef/language-reference/null-literals-and-type-inference-entity-sql.md)  
   
  [入力文字セット](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md)  
   
@@ -69,9 +70,9 @@ ms.lasthandoff: 11/21/2017
   
  [入れ子になった Entity SQL クエリの作成](../../../../../../docs/framework/data/adonet/ef/language-reference/composing-nested-entity-sql-queries.md)  
   
- [Null 許容の構造化型](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)  
+ [NULL 値が許容される構造化型](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [Entity SQL 言語](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
  [CSDL、SSDL、および MSL 仕様](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

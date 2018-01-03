@@ -24,11 +24,12 @@ caps.latest.revision: "28"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 21032358c9edb1b79d9e170e477502670f781fc3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4368ce1256e1e0637907768b3698ca7dab97c5f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="debugging-tracing-and-profiling"></a>デバッグ、トレース、およびプロファイリング
 .NET Framework アプリケーションをデバッグするには、アプリケーションにデバッガーをアタッチできるようにコンパイラとランタイム環境を構成する必要があり、可能であれば、アプリケーションとそれに対応する Microsoft Intermediate Language (MSIL) について記号マップと行マップの両方を生成する必要があります。 マネージ アプリケーションのデバッグが完了した後は、パフォーマンスを向上するようにプロファイルできます。 プロファイルでは、最も頻繁に実行されるコードを生成するソース コード行と、そのコードの実行に要する時間を評価して記述します。  
@@ -51,7 +52,7 @@ ms.lasthandoff: 10/18/2017
  [デバッガー表示属性によるデバッグ機能の拡張](../../../docs/framework/debug-trace-profile/enhancing-debugging-with-the-debugger-display-attributes.md)  
  型の開発者が、その型をデバッガーで表示した場合にどのように見えるかを指定する方法について説明します。  
   
- [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md)  
+ [パフォーマンス カウンター](../../../docs/framework/debug-trace-profile/performance-counters.md)  
  アプリケーションのパフォーマンスを追跡するために使用できるカウンターについて説明します。  
   
 ## <a name="related-sections"></a>関連項目  

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 95bf64ce56b9e70317b2a51e3abf77ea6dbd7bc1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a9bd06e056a70e3cb97967a03604baf5dc9b4ff5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="samples"></a>サンプル
 ここでは、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] サンプル コードが用意されている [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] および C# のソリューションへのリンクを示します。  
@@ -37,6 +38,6 @@ ms.lasthandoff: 11/21/2017
   
 -   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] および C# のコード例を含む、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] テクノロジについて記載されているホワイト ペーパーを参照します。 詳細については、次を参照してください。 [LINQ to SQL: リレーショナル データ用 .net 統合言語クエリ](http://go.microsoft.com/fwlink/?LinkId=93205)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)  
  [LINQ to SQL チュートリアル](http://msdn.microsoft.com/en-us/308e66ac-f704-4e00-9b4e-7af0045a2374)

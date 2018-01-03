@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f4e92d9a7c66d176357499bc831f07c56f36c90d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: df86e69684a111effc29a2663d18310b276f4b83
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="case-entity-sql"></a>CASE (Entity SQL)
 一連の `Boolean` 式を評価して結果を決定します。  
@@ -66,7 +67,7 @@ END
   
  [!code-csharp[DP EntityServices Concepts 2#CASE_WHEN_THEN_ELSE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#case_when_then_else)]  
   
-## <a name="see-also"></a>関連項目  
- [そうしたら](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)  
- [選択します。](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)  
+## <a name="see-also"></a>参照  
+ [THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)  
+ [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

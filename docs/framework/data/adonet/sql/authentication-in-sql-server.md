@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e3b597d04ee53a094d9c50dff406f57e5fd57b00
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c462b7c2e888ed0f6394435e0de2131e26dbef08
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="authentication-in-sql-server"></a>SQL Server での認証
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] は、Windows 認証モードと混合モードという 2 つの認証モードをサポートしています。  
@@ -88,9 +89,9 @@ ms.lasthandoff: 11/21/2017
 |--------------|-----------------|  
 |[プリンシパル](http://msdn.microsoft.com/library/bb543165.aspx)で[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]オンライン ブック|[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] のログインおよびその他のセキュリティ プリンシパルについて説明します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [SQL Server におけるアプリケーション セキュリティ シナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  [データ ソースへの接続](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
  [接続文字列](../../../../../docs/framework/data/adonet/connection-strings.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

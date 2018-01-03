@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c254865800694af8eb754c3e8d4072688fd7e89a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4a3cc1f0c27af1ad41e14374b4c155e6b8620f28
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="schema-restrictions"></a>スキーマの制限
 2 番目の省略可能なパラメーター、 **GetSchema**メソッドは、スキーマ情報の量を制限するために使用される制限が返されに渡される、 **GetSchema**文字列の配列としてメソッド. 配列での位置により、渡すことができる値が決定します。これは、制限の番号に相当します。  
@@ -153,7 +154,7 @@ class Program
   
 |制限の名前|パラメーター名|制限の既定値|制限の番号|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|名前|@Name|名前|1|  
+|name|@Name|name|1|  
   
 ### <a name="tables"></a>[テーブル]  
   
@@ -171,7 +172,7 @@ class Program
 |Catalog|@Catalog|TABLE_CATALOG|1|  
 |Owner|@Owner|TABLE_SCHEMA|2|  
 |テーブル|@Table|TABLE_NAME|3|  
-|列|@Column|COLUMN_NAME|4|  
+|Column|@Column|COLUMN_NAME|4|  
   
 ### <a name="structuredtypemembers"></a>StructuredTypeMembers  
   
@@ -180,7 +181,7 @@ class Program
 |Catalog|@Catalog|TABLE_CATALOG|1|  
 |Owner|@Owner|TABLE_SCHEMA|2|  
 |テーブル|@Table|TABLE_NAME|3|  
-|列|@Column|COLUMN_NAME|4|  
+|Column|@Column|COLUMN_NAME|4|  
   
 ### <a name="views"></a>ビュー  
   
@@ -197,7 +198,7 @@ class Program
 |Catalog|@Catalog|VIEW_CATALOG|1|  
 |Owner|@Owner|VIEW_SCHEMA|2|  
 |テーブル|@Table|VIEW_NAME|3|  
-|列|@Column|COLUMN_NAME|4|  
+|Column|@Column|COLUMN_NAME|4|  
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
@@ -205,7 +206,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Catalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|名前|@Name|SPECIFIC_NAME|3|  
+|name|@Name|SPECIFIC_NAME|3|  
 |パラメーター|@Parameter|PARAMETER_NAME|4|  
   
 ### <a name="procedures"></a>手順  
@@ -214,7 +215,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Catalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|名前|@Name|SPECIFIC_NAME|3|  
+|name|@Name|SPECIFIC_NAME|3|  
 |型|@Type|ROUTINE_TYPE|4|  
   
 ### <a name="indexcolumns"></a>IndexColumns  
@@ -225,7 +226,7 @@ class Program
 |Owner|@Owner|user_name()|2|  
 |テーブル|@Table|o.name|3|  
 |ConstraintName|@ConstraintName|x.name|4|  
-|列|@Column|c.name|5|  
+|Column|@Column|c.name|5|  
   
 ### <a name="indexes"></a>Indexes  
   
@@ -249,7 +250,7 @@ class Program
 |Catalog|@Catalog|CONSTRAINT_CATALOG|1|  
 |Owner|@Owner|CONSTRAINT_SCHEMA|2|  
 |テーブル|@Table|TABLE_NAME|3|  
-|名前|@Name|CONSTRAINT_NAME|4|  
+|name|@Name|CONSTRAINT_NAME|4|  
   
 ## <a name="sql-server-2008-schema-restrictions"></a>SQL Server 2008 スキーマの制限  
  次の表に、SQL Server 2008 スキーマ コレクションの制限を示します。 これらの制限は、.NET Framework 3.5 SP1 および SQL Server 2008 以降で有効です。 これらの制限は、以前のバージョンの .NET Framework および SQL Server ではサポートされません。  
@@ -269,7 +270,7 @@ class Program
 |Catalog|@Catalog|TABLE_CATALOG|1|  
 |Owner|@Owner|TABLE_SCHEMA|2|  
 |テーブル|@Table|TABLE_NAME|3|  
-|列|@Column|COLUMN_NAME|4|  
+|Column|@Column|COLUMN_NAME|4|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

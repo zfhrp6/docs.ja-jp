@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b60cffd357022454de001986a48ef06bdd1fe3f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 804acd77887c1cf05caa2004e75ef01110909490
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="aggregate-functions-sqlclient-for-entity-framework"></a>集計関数 (Entity Framework 用 SqlClient)
 .NET Framework Data Provider for SQL Server (SqlClient) には、集計関数が用意されています。 集計関数は、一連の入力値に対して計算を実行し、値を返します。 これらの関数は、SqlClient の SqlServer 名前空間に存在します。 Entity Framework は、プロバイダーの名前空間プロパティを使用することにより、型や関数など、特定のコンストラクターに対してこのプロバイダーによってどのプレフィックスが使用されているかを特定できます。  
@@ -55,6 +56,6 @@ ms.lasthandoff: 11/21/2017
 |---------------------|---------------------|---------------------|  
 |[集計関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115906)|[集計関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkID=115903)|[集計関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115907)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity SQL 言語](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
  [集計正規関数](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)

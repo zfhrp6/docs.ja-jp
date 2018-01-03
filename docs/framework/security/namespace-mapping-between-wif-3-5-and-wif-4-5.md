@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e2c8d3150f19b5790f2db7b93b3100a9becff4c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b8d27385a08c58c61983315da41f27f4dcb29368
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="namespace-mapping-between-wif-35-and-wif-45"></a>WIF 3.5 と WIF 4.5 間での名前空間マッピング
 .NET 4.5 以降では、Windows Identity Foundation (WIF) は .NET Framework に完全に統合されています。 この統合により、名前の変更および WIF の名前空間と API サーフェスの統合が行われました。 このトピックでは、いくつかのガイダンスと、WIF 3.5 の名前空間と WIF 4.5 の名前空間の間の一般的なマッピングを示します。 すべてを網羅するものではなく、使い慣れた WIF 3.5 のクラスが WIF 4.5 のどこで見つかるかについての一般的な情報を提供するだけです。 WIF 3.5 と WIF 4.5 の間の違いについては、「[Windows Identity Foundation 4.5 の新機能](../../../docs/framework/security/whats-new-in-wif.md)」を参照してください。 WIF 3.5 を使ってビルドされたアプリケーションを WIF 4.5 に移行する方法のガイダンスについては、「[Guidelines for Migrating an Application Built Using WIF 3.5 to WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)」(WIF 3.5 でビルドされたアプリケーションを WIF 4.5 に移行するためのガイドライン) を参照してください。  
@@ -53,6 +54,6 @@ ms.lasthandoff: 11/21/2017
 |`Microsoft.IdentityModel.Web.Controls`|WIF 4.5 では実装されていません。|`Microsoft.IdentityModel.Web.Controls` のクラスはフェデレーション パッシブ サインイン コントロールを実装していましたが、WIF 4.5 には存在しません。|  
 |`Microsoft.IdentityModel.WindowsTokenService`|WIF 4.5 では実装されていません。|-|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows Identity Foundation 4.5 の新機能](../../../docs/framework/security/whats-new-in-wif.md)  
  [WIF 3.5 でビルドされたアプリケーションを WIF 4.5 に移行するためのガイドライン](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0916ca83cae40d1deda2e1126fd7b7ebab46a23c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0d476b3fc3cce1bcb283f740f734ae285e55e192
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>SQL Server の承認と権限
 データベース オブジェクトを作成する際は、ユーザーがそれらのオブジェクトにアクセスできるように明示的に権限を付与する必要があります。 セキュリティ保護可能なすべてのオブジェクトには、権限ステートメントを使ってプリンシパルに付与することのできる権限が関連付けられています。  
@@ -68,10 +69,10 @@ ms.lasthandoff: 11/21/2017
 |--------------|-----------------|  
 |[アクセス許可](http://msdn.microsoft.com/library/ms191291.aspx)SQL Server オンライン ブック|権限の階層、カタログ ビュー、および固定サーバー ロールと固定データベース ロールの権限について説明します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [SQL Server におけるアプリケーション セキュリティ シナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  [SQL Server での認証](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  
- [サーバーと SQL server データベース ロール](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)  
- [所有権と SQL Server のユーザーとスキーマの分離](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)  
+ [SQL Server のサーバー ロールとデータベース ロール](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)  
+ [SQL Server における所有権とユーザーとスキーマの分離](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

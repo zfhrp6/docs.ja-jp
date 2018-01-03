@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 885c87439ebf7393380c7ff20165d8587f1b26f0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 84c7f870edd1c8082936b380547e181d129f529e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-clr-type-mapping"></a>SQL と CLR の型マッピング
 LINQ to SQL では、リレーショナル データベースのデータ モデルが、任意のプログラミング言語で表されるオブジェクト モデルに対応付けられています。 アプリケーションが実行されると、LINQ to SQL は、オブジェクト モデルの統合言語クエリを SQL に変換し、それをデータベースに送信して実行します。 データベースから結果が返されると、LINQ to SQL はその結果をプログラミング言語で操作できるオブジェクトに変換し直します。  
@@ -238,7 +239,7 @@ LINQ to SQL では、リレーショナル データベースのデータ モデ
  これ以外にもさまざまなバイナリのマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。 詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。  
   
 ### <a name="sql-server-filestream"></a>SQL Server の FILESTREAM  
- `FILESTREAM` 列の `VARBINARY(MAX)` 属性は、Microsoft SQL Server 2008 以降で使用できます。.NET Framework version 3.5 SP1 以降の LINQ to SQL では、これらの属性にマップすることができます。  
+ `FILESTREAM` 列の `VARBINARY(MAX)` 属性は、Microsoft SQL Server 2008 以降で使用できます.NET Framework version 3.5 SP1 以降の LINQ to SQL では、これらの属性にマップすることができます。  
   
  `VARBINARY(MAX)` 属性を持つ `FILESTREAM` 列を <xref:System.Data.Linq.Binary> オブジェクトにマップすることはできますが、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドを使用して `FILESTREAM` 属性を持つ列を自動的に作成することはできません。 詳細については`FILESTREAM`を参照してください[FILESTREAM の概要](http://go.microsoft.com/fwlink/?LinkId=115291)Microsoft SQL Server Books Online にします。  
   
@@ -264,8 +265,8 @@ LINQ to SQL では、リレーショナル データベースのデータ モデ
   
  LINQ to SQL では、ここに示したその他の型に対する上記以外の型マッピングはサポートされません。  詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。  
   
-## <a name="see-also"></a>関連項目  
- [属性ベースのマッピング](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
+## <a name="see-also"></a>参照  
+ [属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
  [外部マップ](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
- [データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
- [SQL CLR 型の不一致](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
+ [データ型と関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
+ [SQL と CLR の型の不一致](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)

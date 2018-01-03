@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e11e6a6746c555db9b51d76da3554ce75c1f6ee8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7946bdef8ebe93e9298850635ce46257533ab121
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="international-resource-identifier-support-in-systemuri"></a>System.Uri での International Resource Identifier のサポート
 <xref:System.Uri?displayProperty=nameWithType> クラスは、International Resource Identifier (IRI) および国際化ドメイン名 (IDN) のサポートにより拡張されました。 これらの機能拡張は、.NET Framework 3.5、3.0 SP1、および 2.0 SP1 で使用できます。  
@@ -52,7 +53,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> 構成クラスと <xref:System.Configuration.IdnElement?displayProperty=nameWithType> 構成クラスの構成設定は、最初の <xref:System.Uri?displayProperty=nameWithType> クラスが構築されるときに 1 回、読み取られます。 それ以降の構成設定の変更は無視されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Configuration.IdnElement?displayProperty=nameWithType>  
  <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>  
  <xref:System.Uri?displayProperty=nameWithType>  

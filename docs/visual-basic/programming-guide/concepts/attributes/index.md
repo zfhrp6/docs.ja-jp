@@ -12,11 +12,11 @@ ms.assetid: 1449f69b-c063-41de-8d89-f0bbdcf96ac6
 caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: efdfa297099fb5538e7b92514c8440c2722f3fe1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 2b78eb3e5ac52ec89e810fde682249c689ba304a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="attributes-overview-visual-basic"></a>属性の概要 (Visual Basic)
 属性は、メタデータまたは宣言型の情報を、コード (アセンブリ、型、メソッド、プロパティなど) に関連付けるための優れた方法です。 属性をプログラム要素に関連付けると、*リフレクション*と呼ばれる手法を使用して、実行時にその属性を照会することができます。 詳細については、「[リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)」を参照してください。  
@@ -151,7 +151,7 @@ Module: CLSCompliant(True)>
   
 -   [呼び出し元情報 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)  
  [リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
- [属性](../../../../../docs/standard/attributes/index.md)
+ [属性](../../../../standard/attributes/index.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1133db68d233032b64d113a09e367781cf73321e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 876ebeb5568ffff0a10aa5a54ce96c256d237d86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="large-udts"></a>大きな UDT
 開発者は、ユーザー定義型 (UDT) を使用すると、SQL Server データベースに共通言語ランタイム (CLR) オブジェクトを格納して、サーバーのスカラー型システムを拡張することができます。 UDT は複数の要素を持つことができ、動作を定義できます。この点は、1 つの SQL Server システム データ型から構成される従来の別名データ型と異なります。  
@@ -141,8 +142,8 @@ Using connection As New SqlConnection( _
 End Using  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [パラメーターとパラメーターのデータ型の構成](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
+## <a name="see-also"></a>参照  
+ [パラメーターおよびパラメーター データ型の構成](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
  [データベース スキーマ情報の取得](../../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [SQL Server データ型のマッピング](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
  [SQL Server のバイナリ データと大きな値のデータ](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  

@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: edb48bd9cb0ff00c733af2d6ff4e616655a62b26
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: df3af6ae9fcd0c4539998357b3ab87b11dd13494
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 ここでは、[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] を実装するときに発生する可能性のある一般的な問題の対処法について説明します。  
@@ -209,7 +210,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
   
  A:  読み取り専用モードでは、変更を追跡するコンテキスト機能は無効です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
  [トラブルシューティング](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)  
- [LINQ to SQL でのセキュリティ](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)
+ [LINQ to SQL におけるセキュリティ](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)

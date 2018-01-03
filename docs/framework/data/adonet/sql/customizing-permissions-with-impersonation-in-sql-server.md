@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: cde4fafaa10d7c9b495d4f98ddcd42c7f8a7524a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fbd5aa34fa9e90df972e718c28d0ba97287c3d8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>SQL Server での借用を使用した権限のカスタマイズ
 多くのアプリケーションでは、ベース テーブルへのアクセスを制限する組み合わせ所有権を利用して、ストアド プロシージャを使ってデータにアクセスします。 ストアド プロシージャに対して EXECUTE 権限を付与するとき、ベース テーブルに対する権限を取り消したり拒否したりできます。 ストアド プロシージャとテーブルの所有者が同じ場合、SQL Server では呼び出し元の権限をチェックしません。 ただし、オブジェクトの所有者が異なる場合や、動的 SQL の場合には、組み合わせ所有権が無効になります。  
@@ -83,12 +84,12 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 |[コンテキストの切り替え](http://msdn.microsoft.com/library/ms188268.aspx)SQL Server オンライン ブック|EXECUTE AS 句の使用方法を説明しているトピックへのリンクが用意されています。|  
 |[EXECUTE AS を使用してカスタム アクセス許可セットを作成する](http://msdn.microsoft.com/library/ms190384.aspx)と[モジュールで EXECUTE AS を使用して](http://msdn.microsoft.com/library/ms178106.aspx)SQL Server オンライン ブック|EXECUTE AS 句の使用方法を説明するトピックです。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [SQL Server のセキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
- [SQL Server におけるアプリケーション セキュリティ シナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
- [SQL Server でストアド プロシージャを使用した権限の管理](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
- [SQL Server での動的 SQL の安全な作成](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
- [SQL Server でストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
- [ストアド プロシージャによるデータの変更](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
+ [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [SQL Server でのストアド プロシージャを使用したアクセス許可の管理](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
+ [SQL Server での安全な動的 SQL の作成](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
+ [SQL Server でのストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
+ [ストアド プロシージャでのデータの変更](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 3ded6b669a5232246e2878ea26d3116774aea532
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f6323c134af24759e2b9839fa26af06f7a0b9343
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="date-and-time-canonical-functions"></a>日付と時刻の正規関数
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] には、日付および時刻の正規関数が含まれます。  
@@ -44,15 +45,15 @@ ms.lasthandoff: 10/18/2017
 |`CurrentUtcDateTime()`|UTS タイム ゾーンでのサーバーの現在の日時として <xref:System.DateTime> 値を返します。<br /><br /> **戻り値**<br /><br /> `DateTime`。|  
 |`Day(` `expression` `)`|1 ～ 31 の間の `expression` として `Int32` の日付の部分を返します。<br /><br /> **引数**<br /><br /> `DateTime` および `DateTimeOffset`。<br /><br /> **戻り値**<br /><br /> `Int32`。<br /><br /> **例**<br /><br /> `-- The following example returns 12.`<br /><br /> `Day(cast('03/12/1998' as DateTime))`|  
 |`DayOfYear(` `expression` `)`|`expression` の日付の部分を 1 ～ 366 の間の `Int32` として返します。366 はうるう年の最後の日に対して返されます。<br /><br /> **引数**<br /><br /> `DateTime` または `DateTimeOffset`。<br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffNanoseconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差をナノ秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffMilliseconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差をミリ秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffMicroseconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差をマイクロ秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffSeconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffMinutes(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を分単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffHours(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を時間単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffDays(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を日単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime` または `DateTimeOffset`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffMonths(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を月単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime` または `DateTimeOffset`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
-|`DiffYears(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を年単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime` または `DateTimeOffset`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。   <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffNanoseconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差をナノ秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffMilliseconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差をミリ秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffMicroseconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差をマイクロ秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffSeconds(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を秒単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffMinutes(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を分単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffHours(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を時間単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime`、`DateTimeOffset`、または `Time`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffDays(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を日単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime` または `DateTimeOffset`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffMonths(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を月単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime` または `DateTimeOffset`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
+|`DiffYears(` `startExpression`, `endExpression``)`|`startExpression` と `endExpression` の差を年単位で返します。<br /><br /> **引数**<br /><br /> `startExpression`、`endExpression`: `DateTime` または `DateTimeOffset`。 **注:** `startExpression`と`endExpression`同じ型でなければなりません。 <br /><br /> **戻り値**<br /><br /> `Int32`。|  
 |`GetTotalOffsetMinutes(` `datetimeoffset` `)`|GMT からのオフセット `datetimeoffset` (分数) を返します。 この値は通常、+780 ～ -780 (+ 13 時間～ - 13 時間) の間になります。 **注:**この関数は SQL Server 2008 でのみサポートされます。 <br /><br /> **引数**<br /><br /> `DateTimeOffset`。<br /><br /> **戻り値**<br /><br /> `Int32`。|  
 |`Hour (` `expression` `)`|0 ～ 23 の間の `expression` として `Int32` の時間の部分を返します。<br /><br /> **引数**<br /><br /> `DateTime, Time` および `DateTimeOffset`。<br /><br /> **例**<br /><br /> `-- The following example returns 22.`<br /><br /> `Hour(cast('22:35:5' as DateTime))`|  
 |`Millisecond(` `expression` `)`|0 ～ 999 の間の `expression` として `Int32` のミリ秒の部分を返します。<br /><br /> **引数**<br /><br /> `DateTime, Time` および `DateTimeOffset`。<br /><br /> **戻り値**<br /><br /> `Int32`。|  
@@ -66,5 +67,5 @@ ms.lasthandoff: 10/18/2017
   
  同等の機能は、Microsoft SQL クライアント マネージ プロバイダーでも利用できます。 詳細については、次を参照してください。 [Framework 用 SqlClient エンティティ関数](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)

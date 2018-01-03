@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1c0452e03e9c6471a35cd8612c1f36bbabe002d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ae0bb07688cf1e9573d02826f186811cd7340c90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-data-types"></a>基本データ型
 LINQ to SQL クエリは、Microsoft SQL Server で実行される前に Transact-SQL に変換されるため、 LINQ to SQL は、SQL Server が基本データ型に対してサポートするのと同じ組み込み機能の多くをサポートします。  
@@ -32,6 +33,6 @@ LINQ to SQL クエリは、Microsoft SQL Server で実行される前に Transac
   
 -   Is 演算子 : `IS` 演算子には、継承の割り当ての使用時にサポートされる変換があります。 これは、オブジェクトが特定の種類のエンティティであるかどうかを検査する場合に、判別列を直接調べる代わりとして使用でき、判別列のチェックに変換されます。 Visual Basic および C# の場合は、演算子の詳細については、次を参照してください。 [Is 演算子](~/docs/visual-basic/language-reference/operators/is-operator.md)と[は](~/docs/csharp/language-reference/keywords/is.md)します。  
   
-## <a name="see-also"></a>関連項目  
- [SQL CLR の型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
- [データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a>参照  
+ [SQL と CLR の型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
+ [データ型と関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

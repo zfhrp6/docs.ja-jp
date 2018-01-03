@@ -12,14 +12,14 @@ ms.assetid: de26f410-9bd1-4b55-a343-cc82f81684be
 caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 314c65ebfbb2aaf1acc9fad4cefa13c5f4f17cec
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 0930b6504306efd7dfaf019e090a6d1212c65657
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly-visual-basic"></a>方法: がかどうか、ファイル アセンブリ (Visual Basic)
-ファイルが管理されていて、ファイルのメタデータにアセンブリ エントリが含まれている場合、そのファイルはアセンブリです。 アセンブリとメタデータの詳細については、「[アセンブリ マニフェスト](../../../../../docs/framework/app-domains/assembly-manifest.md)」を参照してください。  
+ファイルが管理されていて、ファイルのメタデータにアセンブリ エントリが含まれている場合、そのファイルはアセンブリです。 アセンブリとメタデータの詳細については、「[アセンブリ マニフェスト](../../../../framework/app-domains/assembly-manifest.md)」を参照してください。  
   
 ## <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>ファイルがアセンブリかどうかを手動で確認する方法  
   
@@ -61,7 +61,7 @@ End Module
   
  <xref:System.Reflection.AssemblyName.GetAssemblyName%2A> メソッドはテスト ファイルを読み込み、情報が読み取られた時点で解放します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Reflection.AssemblyName>  
  [プログラミングの概念](../../../../visual-basic/programming-guide/concepts/index.md)  
  [アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](index.md)

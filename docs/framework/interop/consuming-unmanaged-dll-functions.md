@@ -24,11 +24,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ec93728566d6aa16d4b9b15b171d79831cc0dbeb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6276f2dc2bd57dc3eaf81eb2949e3c1ea3727e69
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>アンマネージ DLL 関数の処理
 プラットフォーム呼び出しは、マネージ コードがダイナミック リンク ライブラリ (DLL) に実装されたアンマネージ関数 (Win32 API に含まれているものなど) を呼び出すことを可能にするサービスです。 これはエクスポートされた関数を見つけて呼び出し、必要に応じて相互運用の境界を越えて、その引数 (整数、文字列、配列、構造体、その他) をマーシャリングします。 このサービスの詳細については、「[プラットフォーム呼び出しの詳細](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)」を参照してください。  
@@ -80,7 +81,7 @@ ms.lasthandoff: 11/21/2017
   
  プラットフォーム呼び出しは、アンマネージ関数によって生成された例外を、マネージ呼び出し元にスローします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アンマネージ コードとの相互運用](../../../docs/framework/interop/index.md)  
  [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)  

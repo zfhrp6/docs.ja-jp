@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9a3a928185146ac90ec4c3a905bf4f0e69e0e8d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2ef073004b213ee03ce9655096f612acb5750684
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltfieldgt-element-net-native"></a>&lt;Field&gt; 要素 (.NET ネイティブ)
 フィールドにランタイム リフレクション ポリシーを適用します。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="remarks"></a>コメント  
  フィールドのポリシーが明示的に定義されていない場合は、その親要素の実行時ポリシーを継承します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

@@ -18,11 +18,11 @@ ms.assetid: 38149bd4-0a6f-4b31-b5f8-94a8c33f1600
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 739934b65241a7846b5323d5e75446832d83e5d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 60c62eae57ae127fcbb860fe72853604802cccd9
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="references-and-the-imports-statement-visual-basic"></a>参照と Imports ステートメント (Visual Basic)
 利用できる外部オブジェクトをプロジェクトを選択して、**参照の追加**コマンドを**プロジェクト**メニュー。 参照[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]タイプ ライブラリが含まれていますが、詳細についてにと似ていますが、アセンブリを指すことができます。  
@@ -56,10 +56,10 @@ ms.lasthandoff: 11/21/2017
   
  場合、`Imports`ステートメントは、エイリアス名を指定していない、インポートされた名前空間内で定義されている要素を修飾なしのモジュールで使用できます。 エイリアス名が指定されている場合その名前空間内に含まれる名前の修飾子として使用するあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.ControlChars>  
  <xref:Microsoft.VisualBasic>  
- [NIB 方法: [参照の追加] ダイアログ ボックスを使用して参照を追加または削除する](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)  
+   
  [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)  
  [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
  [方法: コマンド ラインを使用してアセンブリを作成および使用する](http://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4)  

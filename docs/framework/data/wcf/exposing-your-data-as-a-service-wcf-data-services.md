@@ -17,11 +17,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c2d664166d9c0b750f6aecf9588a63b8705f0d1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 55e0bc058b92540c9b11965854d38e8d124e205c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exposing-your-data-as-a-service-wcf-data-services"></a>サービスとしてのデータの公開 (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]簡単としてデータを公開するサービスを定義するために Visual Studio と統合し、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 公開データ サービスを作成する、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードには、次の基本的な手順が含まれます。  
@@ -38,6 +39,6 @@ ms.lasthandoff: 12/02/2017
   
  Northwind サンプル データベースに基づく単純なデータ サービスを作成する方法の例は、次を参照してください。[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
  [概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)

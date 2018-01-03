@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 19f0198103999da687e07f472cd5a480406830cd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7dd730e2337cdd735530107abaedd13b726e5cfc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-a-changeset"></a>方法 : 変更セットを表示する
 <xref:System.Data.Linq.DataContext> によって追跡される変更を <xref:System.Data.Linq.DataContext.GetChangeSet%2A> を使って表示することができます。  
@@ -85,5 +86,5 @@ ms.lasthandoff: 10/18/2017
   
  `Total changes: {Added: 0, Removed: 0, Modified: 8}`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグのサポート](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)

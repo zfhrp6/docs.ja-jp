@@ -24,18 +24,18 @@ ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
 caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a8c77804a9813d6127edcf4bd8371e0de2b36074
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: dbdc074bef64413b8b25709e48bba49f296ecb95
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>方法 : LINQ を使用したデータの数、合計、または平均の算出 (Visual Basic)
 統合言語クエリ (LINQ) では、簡単にデータベース情報にアクセスしてクエリを実行します。  
   
  次の例では、SQL Server データベースに対してクエリを実行する新しいアプリケーションを作成する方法を示します。 サンプルは、カウントの合計を計算しを使用して、結果の平均を計算、`Aggregate`と`Group By`句。 詳細については、次を参照してください。 [Aggregate 句](../../../../visual-basic/language-reference/queries/aggregate-clause.md)と[グループ By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)です。  
   
- このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューター上に Northwind サンプル データベースがないことからダウンロードする、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
+ このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューター上に Northwind サンプル データベースがないことからダウンロードする、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -85,10 +85,10 @@ ms.lasthandoff: 12/09/2017
   
 4.  F5 キーを押してプロジェクトを実行し、結果を表示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
  [クエリ](../../../../visual-basic/language-reference/queries/queries.md)  
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
  [DataContext メソッド (O/R デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
  [Aggregate 句](../../../../visual-basic/language-reference/queries/aggregate-clause.md)  
  [Group By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)

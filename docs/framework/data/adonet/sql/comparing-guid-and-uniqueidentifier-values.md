@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7bdd8108261e1e1bc18dd636ba654f7fb6bed981
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4cadc6af85c833013ac56399ae0821731dbf2d41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="comparing-guid-and-uniqueidentifier-values"></a>GUID と uniqueidentifier 値の比較
 SQL Server のグローバル一意識別子 (GUID: Globally Unique Identifier) データ型は、16 バイトのバイナリ値を格納する `uniqueidentifier` データ型で表現されます。 GUID は、2 進数の値です。GUID は主に、多数のコンピューターが多数のサイトに存在するネットワーク内で、一意である必要のある識別子として使用されます。 GUID は、Transact-SQL NEWID 関数を呼び出すことにより生成され、世界中のコンピューターの中で一意であることが保証されています。 詳細については、SQL Server オンライン ブックの「uniqueidentifier データの使用」を参照してください。  
@@ -55,6 +56,6 @@ Sorted SqlGuids:
 1aaaaaaa-bbbb-cccc-dddd-3eeeeeeeeeee  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL Server データ型と ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

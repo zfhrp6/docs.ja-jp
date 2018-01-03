@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 8c19c459bf3b62b7e1d7e2917e09717c246e728c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c3d952c2a9e8f1199fa8ef4b6181dabcfbcc4012
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-sql-generation"></a>チュートリアル: SQL 生成
 このトピックでの SQL 生成の実行方法について説明します、[サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616)です。 次の Entity SQL クエリでは、サンプル プロバイダーに含まれているモデルを使用します。  
@@ -209,5 +210,5 @@ FROM: "[dbo].[Orders]", " AS ", <symbol_Extent4>,
   
  2 番目のフェーズの最後に、最終的な SQL ステートメントが生成されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サンプル プロバイダーでの SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)

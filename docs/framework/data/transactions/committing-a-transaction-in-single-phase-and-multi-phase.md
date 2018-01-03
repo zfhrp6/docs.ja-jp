@@ -15,11 +15,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 96304cdde766f264fcfbd0f4aa3cf168adf8422d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2891313c15b4003db5d50f2e9f2d461de9397dfc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>単一フェースおよび複数フェーズでのトランザクションのコミット
 トランザクションで使用される各リソースは、リソース マネージャー (RM) によって管理され、その動作はトランザクション マネージャー (TM) によって調整されます。 [リソースをトランザクションの参加者として参加](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)リソース (または複数のリソース) をトランザクションに参加させる方法について説明します。 ここでは、参加リソース間でトランザクションのコミットメントを調整する方法について説明します。  
@@ -118,6 +119,6 @@ public void InDoubt (Enlistment enlistment)
 ## <a name="single-phase-commit-optimization"></a>単一フェーズ コミットの最適化  
  単一フェーズ コミット プロトコルは、すべての更新が明示的な調整なしに行われるため、実行時に、より効率的です。 このプロトコルの詳細については、次を参照してください。[単一フェーズのコミットし、昇格可能な単一フェーズの通知を使用して、最適化](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [単一フェーズのコミットし、昇格可能な単一フェーズの通知を使用して、最適化](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
- [トランザクションの参加者としてリソースを参加させる](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)
+## <a name="see-also"></a>参照  
+ [単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
+ [トランザクションの参加要素としてのリソースの参加](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)

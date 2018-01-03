@@ -17,11 +17,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 65b02945aa81fdf18ad328a833f8f85744035871
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8e8f5626ab7439b34377ba0200fd232c41017652
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-data-services-client-library"></a>WCF Data Services クライアント ライブラリ
 HTTP 要求を送信し、データ サービスが返す [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードを処理できるのであれば、どのようなアプリケーションでも [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのデータ サービスと対話できます。 この相互運用性によって、広範な Web 対応アプリケーションから [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのサービスにアクセスすることが可能になります。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]使用する際に、豊富なプログラミングの経験を提供するクライアント ライブラリを含む[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].NET Framework や Silverlight ベースのアプリケーションからのフィードです。  
@@ -46,21 +47,21 @@ HTTP 要求を送信し、データ サービスが返す [!INCLUDE[ssODataFull]
  [非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
  非同期でデータ サービスを操作するためにクライアント ライブラリで提供される機能について説明します。  
   
- [操作のバッチ処理](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
+ [バッチ処理](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
  クライアント ライブラリを使用して複数の要求を 1 つのバッチでデータ サービスに送信する方法について説明します。  
   
- [コントロールへのデータ バインディング](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
+ [コントロールへのデータのバインド](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
  コントロールにバインドする方法について説明します、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]データ サービスによって返されるフィード。  
   
  [サービス操作の呼び出し](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)  
  クライアント ライブラリを使用してサービス操作を呼び出す方法について説明します。  
   
- [データ サービス コンテキストを管理します。](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)  
+ [データ サービス コンテキストの管理](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)  
  クライアント ライブラリの動作を管理するオプションについて説明します。  
   
  [バイナリ データの操作](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)  
  データ サービスによってデータ ストリームとして返されるバイナリ データにアクセスしてバイナリ データを変更する方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
  [はじめに](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)

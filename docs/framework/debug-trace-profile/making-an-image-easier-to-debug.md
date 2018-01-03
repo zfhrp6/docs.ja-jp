@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 46a9c11f3545e5d2b9f91572a87ee2614810e4d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 86dd0c4349dce8dd9e50fdd44c38a08ec39d90bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="making-an-image-easier-to-debug"></a>イメージのデバッグの簡略化
 アンマネージ コードをコンパイルするときは、IDE スイッチまたはコマンド ライン オプションを使用して、デバッグ用の実行可能イメージを構成できます。 たとえば、Visual C++ で /**Zi** コマンド ライン オプションを使用すると、デバッグ シンボル ファイル (拡張子 .pdb) が生成されます。 同様に、/**Od** コマンド ライン オプションを使用すると、コンパイラは最適化処理を無効にします。 出力されるコードの処理速度は低下しますが、デバッグは簡単になるため、デバッグ時にはこれらのオプションを指定することをお勧めします。  
@@ -63,7 +64,7 @@ AllowOptimize=0
 > [!NOTE]
 >  .NET Framework Version 1.0 では、**/clr** および **/Zi** コンパイラ オプションを指定すると、Microsoft Visual C++ コンパイラによって **DebuggableAttribute** が追加されます。 .NET Framework Version 1.1 では、**DebuggableAttribute** をコードに手動で追加するか、**/ASSEMBLYDEBUG** リンカー オプションを使用する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ、トレース、およびプロファイリング](../../../docs/framework/debug-trace-profile/index.md)  
  [JIT アタッチ デバッグの有効化](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
  [プロファイルの有効化](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)

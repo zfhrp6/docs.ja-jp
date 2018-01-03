@@ -31,11 +31,11 @@ ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
 caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 009c5a383cc3296f7f92888a344fa265547f1077
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8a50f44a167952c735c6ed2830ca87105413401b
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next ステートメント (Visual Basic)
 ステートメントのグループを指定した回数だけ繰り返されます。  
@@ -57,14 +57,14 @@ Next [ counter ]
 |パーツ|説明|  
 |----------|-----------------|  
 |`counter`|必要な`For`ステートメントです。 数値型の変数です。 ループの制御変数。 詳細については、次を参照してください。[カウンター引数](#BKMK_Counter)このトピックで後述します。|  
-|`datatype`|省略可能です。 データ型`counter`です。 詳細については、次を参照してください。[カウンター引数](#BKMK_Counter)このトピックで後述します。|  
-|`start`|必須です。 数値式です。 `counter` の初期値になります。|  
-|`end`|必須です。 数値式です。 最終値`counter`です。|  
-|`step`|省略可能です。 数値式です。 量`counter`ループのたびにインクリメントされます。|  
-|`statements`|省略可能です。 1 つまたは複数のステートメントの間で`For`と`Next`一定の回数を実行します。|  
-|`Continue For`|省略可能です。 次のループ反復に制御を転送します。|  
-|`Exit For`|省略可能です。 うちの制御を転送、`For`ループします。|  
-|`Next`|必須です。 定義を終了、`For`ループします。|  
+|`datatype`|任意。 データ型`counter`です。 詳細については、次を参照してください。[カウンター引数](#BKMK_Counter)このトピックで後述します。|  
+|`start`|必須。 数値式です。 `counter` の初期値になります。|  
+|`end`|必須。 数値式です。 最終値`counter`です。|  
+|`step`|任意。 数値式です。 量`counter`ループのたびにインクリメントされます。|  
+|`statements`|任意。 1 つまたは複数のステートメントの間で`For`と`Next`一定の回数を実行します。|  
+|`Continue For`|任意。 次のループ反復に制御を転送します。|  
+|`Exit For`|任意。 うちの制御を転送、`For`ループします。|  
+|`Next`|必須。 定義を終了、`For`ループします。|  
   
 > [!NOTE]
 >  `To`キーワードは、カウンターの範囲を指定する次のステートメントで使用します。 このキーワードを使用することも、[を選択しています.ステートメントの case](../../../visual-basic/language-reference/statements/select-case-statement.md)および配列の宣言。 配列の宣言の詳細については、次を参照してください。 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)です。  
@@ -139,7 +139,7 @@ Next [ counter ]
 |----------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------|  
 |いいえ|はい|いいえ、ため`counter`は既に定義されています。 場合のスコープ`counter`コンパイル警告が発生した、プロシージャに対してローカルにないです。|  
 |いいえ|いいえ|はい。 データ型から推論されます、 `start`、 `end`、および`step`式。 型の推定については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。|  
-|はい|はい|場合に限り、[はい]、既存の`counter`プロシージャの外部から変数を定義します。 その変数は別に維持します。 場合、既存のスコープ`counter`変数は、プロシージャに対してローカルに、コンパイル時エラーが発生します。|  
+|[はい]|はい|場合に限り、[はい]、既存の`counter`プロシージャの外部から変数を定義します。 その変数は別に維持します。 場合、既存のスコープ`counter`変数は、プロシージャに対してローカルに、コンパイル時エラーが発生します。|  
 |はい|いいえ|はい。|  
   
  データ型`counter`イテレーションでは、次の種類のいずれかを指定する必要がありますの種類を決定します。  
@@ -179,11 +179,11 @@ Next [ counter ]
   
  [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_7.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Generic.List%601>  
  [ループ構造](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
  [While...End While ステートメント](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
  [Do...Loop ステートメント](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
  [入れ子になった制御構造](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
  [Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)
+ [コレクション](../../programming-guide/concepts/collections.md)

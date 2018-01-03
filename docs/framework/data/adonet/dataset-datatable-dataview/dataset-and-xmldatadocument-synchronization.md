@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 923a6b6cf1523c8a11cb509679443b9658e07ce5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: acc68fd36d2887e5e951f9ba5adc20e8cfd87fd2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>DataSet と XmlDataDocument の同期
 ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナル表現があります。 階層データにアクセスするには、.NET Framework で使用できる XML クラスを使用できます。 従来、この 2 つのデータ表現は個別に使用されていました。 ただし、.NET Framework によりを使用してデータのリレーショナルおよび階層表現の両方へリアルタイムに同期のアクセス、**データセット**オブジェクトおよび<xref:System.Xml.XmlDataDocument>オブジェクト、それぞれします。  
@@ -106,14 +107,14 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
  [DataSet に対する XPath クエリの実行](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/performing-an-xpath-query-on-a-dataset.md)  
  内容に対する XPath クエリの実行を示しています、**データセット**です。  
   
- [XSLT 変換をデータセットに適用します。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)  
+ [DataSet への XSLT 変換の適用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)  
  内容に対する XSLT 変換の適用を示しています、**データセット**です。  
   
 ## <a name="related-sections"></a>関連項目  
  [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  について説明しますが、どのように**データセット**読み込みの内容を保持するなど、データ ソースとして XML と対話、**データセット**XML データとして。  
   
- [Datarelation の入れ子化](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
+ [DataRelation の入れ子化](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
  重要性について説明入れ子になった**DataRelation**オブジェクトの内容を表す時に、**データセット**XML データとしてこれらのリレーションを作成する方法について説明します。  
   
  [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
@@ -122,5 +123,5 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
  <xref:System.Xml.XmlDataDocument>  
  に関するリファレンス情報を含む、 **XmlDataDocument**クラスです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

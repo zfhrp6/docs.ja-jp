@@ -9,11 +9,11 @@ ms.assetid: 84e14245-dfdf-4b62-8b84-e83a31608899
 caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 56d9181b1be33c196e6a7394947197a8301a21b1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0e1e3aa7d8fa2a1440b28074cc2739fe3d8a8e2d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="line-ltnumbergt-cannot-be-parsed-using-the-current-fieldwidths"></a>行&lt;数&gt;現在の Fieldwidth を使用して解析できません
 指定された行のフィールドの幅が指定よりも大きいため、その行を解析できません。  
@@ -22,9 +22,9 @@ ms.lasthandoff: 11/21/2017
   
 -   行が正しく解析できるように `FieldWidths` を調整するか、その行を処理するために例外処理コードを挿入します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: 複数の書式を持つテキスト ファイルを読み取る](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)  
- [My.Computer.FileSystem.OpenTextFieldParser メソッド](http://msdn.microsoft.com/en-us/e5869f85-c078-485f-8323-8dc716494546)  
+ [My.Computer.FileSystem.OpenTextFieldParser](xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser%2A)  
  [TextFieldParser オブジェクトによるテキスト ファイルの解析](../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
  [TextFieldParser オブジェクト](../../visual-basic/language-reference/objects/textfieldparser-object.md)  
  [TextFieldParser.FieldWidths プロパティ](http://msdn.microsoft.com/en-us/c6985360-60c6-494e-89e7-43b6b73f2597)  

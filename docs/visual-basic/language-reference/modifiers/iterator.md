@@ -11,11 +11,11 @@ ms.assetid: 69cb0b04-ac87-49d0-bcfe-810c0d60daff
 caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 503d586c0515b4cb53f8ec5656e5fe765cc094a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fd6c0b1fa422dc4ab659d8c59472e5c098c729bc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="iterator-visual-basic"></a>反復子 (Visual Basic)
 指定する関数または`Get`アクセサーが反復子。  
@@ -33,11 +33,9 @@ ms.lasthandoff: 11/21/2017
   
  反復子を、イベント、インスタンス コンストラクター、静的コンストラクター、静的デストラクターで指定することはできません。  
   
- 反復子は、匿名の関数を指定できます。 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
+ 反復子は、匿名の関数を指定できます。 詳細については、「 [反復子](../../programming-guide/concepts/iterators.md)」を参照してください。  
   
- 反復子について詳しくは、「[Iterators](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
-  
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  `Iterator` 修飾子は、次のコンテキストで使用できます。  
   
 -   [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
@@ -54,9 +52,9 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_2.vb)]  
   
- その他の例では、次を参照してください。[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)です。  
+ その他の例では、次を参照してください。[反復子](../../programming-guide/concepts/iterators.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.CompilerServices.IteratorStateMachineAttribute>  
- [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)  
+ [反復子](../../programming-guide/concepts/iterators.md)  
  [Yield ステートメント](../../../visual-basic/language-reference/statements/yield-statement.md)

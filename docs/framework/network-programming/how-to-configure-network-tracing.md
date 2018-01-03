@@ -21,11 +21,12 @@ caps.latest.revision: "23"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 12f328d58ef568c78d1e2c8a8ff564839cba9f3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4a6b277b2676409bebc059637daca5681b853f03
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-configure-network-tracing"></a>方法: ネットワークのトレースを構成する
 アプリケーションまたはコンピューターの構成ファイルには、ネットワークのトレースの形式と内容を決定する設定が保持されます。 この手順に従う前に、トレースが有効になっていることを確認します。 トレースの有効化については、「[ネットワークのトレースの有効化](../../../docs/framework/network-programming/enabling-network-tracing.md)」を参照してください。  
@@ -105,8 +106,8 @@ ms.lasthandoff: 11/21/2017
 |`maxdatasize`|省略可能な <xref:System.Int32> 属性です。 各行トレースに含まれるネットワーク データの最大バイト数を設定します。 既定値は 1024 です。<br /><br /> この属性は、この例に示すように、\<source> 要素で設定する必要があります。 この属性を \<switches> 要素の下の要素で設定すると、例外がスローされます。|  
 |`Tracemode`|省略可能な <xref:System.String> 属性です。 プロトコル トレースを 16 進数およびテキストの形式で表示するには、`includehex` に設定します。 テキストのみを表示するには、`protocolonly` に設定します。 既定値は `includehex` です。<br /><br /> この属性は、この例に示すように、\<switches> 要素で設定する必要があります。 この属性を \<source> 要素の下の要素で設定すると、例外がスローされます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ネットワークのトレースの解釈](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
  [.NET Framework のネットワークのトレース](../../../docs/framework/network-programming/network-tracing.md)  
- [ネットワークのトレースを有効にします。](../../../docs/framework/network-programming/enabling-network-tracing.md)  
+ [ネットワークのトレースの有効化](../../../docs/framework/network-programming/enabling-network-tracing.md)  
  [実装とトレースの概要](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)

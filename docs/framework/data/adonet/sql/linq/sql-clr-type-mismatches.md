@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: cc1458996e70e8af05c4e2bc9e6c61a5d8a9f87d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 20031092f5109fef1bf7167eccab949e2e7c5b39
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-clr-type-mismatches"></a>SQL と CLR の型の不一致
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] はオブジェクト モデルと SQL Server 間の変換のほとんどを自動化します。 ただし、正確な変換が実行されない場合もあります。 以下のセクションでは、共通言語ランタイム (CLR) の型と SQL Server データベースの型の主な不一致について概要を示します。 特定の型マッピングおよびでの関数の変換に関する詳細を検索する[SQL-CLR 型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)と[データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)です。  
@@ -303,5 +304,5 @@ Where Col1 + Col2 > 4
   
  SQL Server と CLR の型システムの境界を越えるときは、セマンティクスの相違に加えて、パフォーマンスへの影響も考慮することが重要です。 データセットが大きい場合、このようなパフォーマンスの問題が、アプリケーションの展開が可能かどうかを左右することがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

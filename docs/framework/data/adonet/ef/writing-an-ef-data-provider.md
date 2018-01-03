@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 6cbb6d4c11c06c1771cb32021c6c148564a6034a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a316ae288d677a0ad5bd602399e27389839ef092
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="writing-an-entity-framework-data-provider"></a>Entity Framework データ プロバイダーの作成
 ここでは、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] 以外のデータ ソースをサポートする [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] プロバイダーの作成方法について説明します。 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] には、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] をサポートするプロバイダーが含まれています。  
@@ -51,5 +52,5 @@ ms.lasthandoff: 10/18/2017
   
  [プロバイダー マニフェストの仕様](../../../../../docs/framework/data/adonet/ef/provider-manifest-specification.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ プロバイダーの操作](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)

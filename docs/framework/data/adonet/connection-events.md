@@ -16,16 +16,17 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 0e551a09ef6dc778f5dfab9ba8cf263f803556f8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e0eb38eb764faa51524565e57826db17311fc5dd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-events"></a>接続イベント
 すべての .NET Framework データ プロバイダーが**接続**データ ソースから情報メッセージを取得するかどうかを判断に使用できる 2 つのイベントを持つオブジェクトの状態、**接続**が変更されました。 次の表に、イベント、**接続**オブジェクト。  
   
-|イベント|説明|  
+|event|説明|  
 |-----------|-----------------|  
 |**InfoMessage**|データ ソースから情報メッセージが返されたときに発生します。 情報メッセージはデータ ソースからのメッセージであり、例外はスローされません。|  
 |**StateChange**|発生したときの状態、**接続**変更します。|  
@@ -115,6 +116,6 @@ protected static void OnStateChange(object sender,
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ ソースへの接続](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

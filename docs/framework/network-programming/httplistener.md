@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ca0a22ff1d06485658da75a46bd408a12a3a964c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b4b8c1e916aa9382d156a197fa15c2e72e900a1c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="httplistener"></a>HttpListener
 <xref:System.Net.HttpListener> クラスは、プログラムによって制御できる HTTP プロトコル リスナーを提供します。 リスナーは、<xref:System.Net.HttpListener> オブジェクトの有効期間にわたってアクティブで、アプリケーション内で実行されます。  
@@ -25,7 +26,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="httpsys"></a>HTTP.SYS  
  <xref:System.Net.HttpListener> クラスは、Windows のすべての HTTP トラフィックを処理するカーネル モード リスナーである HTTP.sys の上に構築されています。 HTTP.sys は、接続管理、帯域幅の調整、および Web サーバーのログ記録を提供します。 SSL 証明書の追加には `HttpCfg.exe` ツールを使用します。 詳細については、[サーバー](http://go.microsoft.com/fwlink/?LinkID=178285) ドキュメントで、[HttpCfg.exe](http://go.microsoft.com/fwlink/?LinkID=178284) ツールのドキュメントを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.HttpListener>  
  <xref:System.Net.HttpWebRequest>  
  <xref:System.Net.HttpWebResponse>  

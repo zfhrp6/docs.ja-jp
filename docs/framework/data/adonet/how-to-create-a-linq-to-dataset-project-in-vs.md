@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 192273c6d364cebe828965ed016eea81135602f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6710d3e9bf52ff10ee8dd545161f0858001f2c40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>方法 : Visual Studio で LINQ to DataSet プロジェクトを作成する
 別の種類の [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] プロジェクトでは、特定のインポートされる名前空間 (Visual Basic) または `using` ディレクティブ (C#) および参照が必要です。 最小要件は、System.Core.dll への参照と、`using` の <xref:System.Linq> ディレクティブです。 既定では、これらは新しい [!INCLUDE[csharp_orcas_long](../../../../includes/csharp-orcas-long-md.md)] プロジェクトを作成した場合に提供されます。 また、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] では、System.Data.dll および System.Data.DataSetExtensions.dll への参照と、`Imports` (Visual Basic) または `using` (C#) ディレクティブも必要です。  
@@ -59,6 +60,6 @@ ms.lasthandoff: 11/21/2017
   
 6.  オプションで、データベースにどのように接続するかに合わせて、`using` または `System.Data.Common` の `System.Data.SqlClient` ディレクティブまたはインポートされる名前空間を追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)  
  [はじめに (LINQ について)](http://msdn.microsoft.com/en-us/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)

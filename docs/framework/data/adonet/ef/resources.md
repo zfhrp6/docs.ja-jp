@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 928934070cfb428f467ddf9ee89e01af1f605328
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a9907876c92a815df7b1a3b449076823465745de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-framework-resources"></a>Entity Framework のリソース
 次の外部リソースでは、Entity Framework アプリケーションの作成に関する情報とサポートを提供しています。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
  [Entity Framework に関する FAQ](http://go.microsoft.com/fwlink/?LinkID=213877)  
  Entity Framework に関してよく寄せられる質問が記載されているブログ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity Framework の概要](../../../../../docs/framework/data/adonet/ef/overview.md)  
  [はじめに](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
  [Entity Framework の用語](../../../../../docs/framework/data/adonet/ef/terminology.md)  

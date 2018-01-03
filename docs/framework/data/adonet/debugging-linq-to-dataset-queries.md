@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 964a4d051600621d581e05dcf6b518b2766e2750
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 08c66309d4c789acc0f2ddf6159a11c5fb963e80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>LINQ to DataSet クエリのデバッグ
 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] は、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] コードのデバッグをサポートしています。 ただし、デバッグの違いがある[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]コードと非-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]マネージ コード。 ほとんどのデバッグ機能と[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]ステートメントをステップ実行、ブレークポイントの設定、デバッガー ウィンドウに表示される結果を表示するなどです。 ただし、クエリの実行がデバッグ中に考慮すべきいくつかの副作用を遅延[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]コードし、はエディット コンティニュを使用するには、いくつか制限があります。 このトピックに固有のデバッグの側面を説明します。[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]と比較して非[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]マネージ コード。  
@@ -36,6 +37,6 @@ ms.lasthandoff: 11/21/2017
   
  Visual Studio で Visual basic で行うこともできますエディット コンティニュ非[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]を含むメソッドであっても、コード、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリ。 追加または前にコードを削除することができます、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]ステートメントでは、行番号が変わる場合でも、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリ。 エクスペリエンスのデバッグ、Visual Basic ではない[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]前と同じコードまま[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]が導入されました。 変更、追加、または削除することはできません、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリ、ただし、変更を適用するデバッグを停止する場合を除き、します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ コードをデバッグする](/visualstudio/debugger/debugging-managed-code)  
  [プログラミング ガイド](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

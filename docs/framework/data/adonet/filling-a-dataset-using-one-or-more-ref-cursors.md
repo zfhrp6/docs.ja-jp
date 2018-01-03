@@ -14,11 +14,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1ef5633c53f537f34a3c72ede89f55b1beac09a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d06889144edd9c2c5d93292e3513f92be55ea035
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="filling-a-dataset-using-one-or-more-ref-cursors"></a>1 つまたは複数の REF CURSOR を使用した DataSet の値の設定
 この Microsoft Visual Basic の例では、2 つの REF CURSOR パラメーターを返し、返された行を <xref:System.Data.DataSet> に入力する、PL/SQL ストアド プロシージャを実行する方法について説明します。  
@@ -55,6 +56,6 @@ Private Sub Button1_Click(ByVal sender As Object, _
   End Using  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Oracle REF Cursor](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
+## <a name="see-also"></a>参照  
+ [Oracle REF CURSOR](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

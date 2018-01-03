@@ -20,11 +20,12 @@ caps.latest.revision: "32"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bdc1a4f9afb8b1d7cf56b74a329353100accc46d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd4655524c74175d03191cbf7065177c10e3ddda
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-transparent-code-level-1"></a>セキュリティ透過的なコード、レベル 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -138,6 +139,6 @@ public class B
   
  上記のコードは、`Critical` メソッドを明示的にセキュリティ クリティカルとしてマークしている以外は、透過的です。 アセンブリ レベルで <xref:System.Security.SecurityCriticalAttribute> 属性が指定されていても、既定の設定は透過的です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [透過的セキュリティ コード、レベル 2](../../../docs/framework/misc/security-transparent-code-level-2.md)  
  [セキュリティの変更](../../../docs/framework/security/security-changes.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e51188f550b7d910cb278165776133d6f4c03eb3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 52f26358a933844d27dea790cee15a73d2f71bf2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>DataView からの DataTable の作成
 データ ソースからデータを取得し、<xref:System.Data.DataTable> にデータを格納した後、再度データを取得せずに、返されたデータの並べ替え、フィルター処理、または制限の適用を行うことが必要になる場合があります。 これを行うには、<xref:System.Data.DataView> クラスを使用します。 さらに、新しいを作成する必要がある場合<xref:System.Data.DataTable>から、 <xref:System.Data.DataView>、使用することができます、<xref:System.Data.DataView.ToTable%2A>に、新しいすべての行と列、またはデータのサブセットをコピーする方法<xref:System.Data.DataTable>です。 <xref:System.Data.DataView.ToTable%2A> メソッドには、次の操作を行うためのオーバーロード機能があります。  
@@ -215,7 +216,7 @@ Console.WriteLine();
   
  }  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Data.DataView.ToTable%2A>  
  [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

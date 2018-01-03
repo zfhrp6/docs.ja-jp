@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 4f41a794916c63672ca0c844f086629f77b90aa0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4b8eafeedd03097488b1493b5654db360eab94fb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-security"></a>SQL Server のセキュリティ
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] には、安全なデータベース アプリケーションの作成を支援するさまざまな機能が備わっています。  
@@ -33,10 +34,10 @@ ms.lasthandoff: 11/21/2017
  このセクションの各トピックでは、開発者に関係のある [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] のセキュリティ機能を簡単に説明します。[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックの関連項目へのリンクのほか、より掘り下げて解説したリソースへのリンクも示しています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [SQL Server のセキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] のアーキテクチャおよびセキュリティ機能について説明します。  
   
- [SQL Server におけるアプリケーション セキュリティ シナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  ADO.NET および [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] アプリケーションに該当するさまざまなセキュリティ シナリオを取り上げます。  
   
  [SQL Server Express のセキュリティ](../../../../../docs/framework/data/adonet/sql/sql-server-express-security.md)  
@@ -49,7 +50,7 @@ ms.lasthandoff: 11/21/2017
  [SQL Server のセキュリティに関する考慮事項](http://go.microsoft.com/fwlink/?LinkId=98587)  
  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックのセキュリティ トピックです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server と ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -14,14 +14,14 @@ ms.assetid: adbd34bb-43d2-4266-90e7-cd1afaf49b4e
 caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9f7121d4787ce36feb6de5f08ca60a4419877f98
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: bc82714d25efbe9d379fff36f92261cf25a78862
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="type-of-member-39ltmembernamegt39-is-not-cls-compliant"></a>メンバー &#39; の種類&lt;membername&gt;&#39; CLS 準拠ではありません
-このメンバーに指定されたデータ型の一部、[言語非依存および言語非依存コンポーネント](../../../../docs/standard/language-independence-and-language-independent-components.md)(CLS)。 これは、エラーではありません、コンポーネント内であるため、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]と[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]このデータ型をサポートします。 ただし、厳密に CLS 準拠コードで記述された別のコンポーネントがこのデータ型をサポートしていません。 このようなコンポーネントはできないコンポーネントを正常にやり取りすることがあります。  
+このメンバーに指定されたデータ型の一部、[言語非依存および言語非依存コンポーネント](../../../standard/language-independence-and-language-independent-components.md)(CLS)。 これは、エラーではありません、コンポーネント内であるため、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]と[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]このデータ型をサポートします。 ただし、厳密に CLS 準拠コードで記述された別のコンポーネントがこのデータ型をサポートしていません。 このようなコンポーネントはできないコンポーネントを正常にやり取りすることがあります。  
   
  次の [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] データ型は CLS に準拠していません。  
   
@@ -47,6 +47,6 @@ ms.lasthandoff: 12/09/2017
   
 -   オートメーション オブジェクトや COM オブジェクトとやり取りする場合は、一部の型のデータ幅が [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] とは異なることに注意してください。 たとえば、他の多くの環境では `uint` は 16 ビットです。 このようなコンポーネントに 16 ビットの引数を渡す場合として宣言`UShort`の代わりに`UInteger`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コード。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リフレクション](../../../framework/reflection-and-codedom/reflection.md)  
- [\<経由で PAVE > CLS 準拠コードの記述](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)
+ 

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: de0f11149c2ec587372b9e25f39f35f8552503c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 75ab1e733915349c64742e1a9c1142cad988ade0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-dataset"></a>LINQ to DataSet
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] は、<xref:System.Data.DataSet> オブジェクトにキャッシュされたデータに対するクエリをより簡単に、より高速にします。 具体的には、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]を個別のクエリ言語を使用して、クエリの代わりにプログラミング言語そのものを記述する開発者を有効にしてクエリを簡素化します。 これは特に役立ちます[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]利用できるようのコンパイル時の構文チェック、静的な型指定、IntelliSense のサポートによって提供される、開発者、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]がクエリでします。  
@@ -40,7 +41,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Data.DataRowComparer>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
  [LINQ と ADO.NET](../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
  [ADO.NET](../../../../docs/framework/data/adonet/index.md)

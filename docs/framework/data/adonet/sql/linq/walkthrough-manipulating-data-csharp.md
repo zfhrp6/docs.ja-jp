@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 502023c3929ffaa6766c906ca32489b43915f0ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ac02ea6c07797c600fe9ce9c7b197a95fc84da61
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-manipulating-data-c"></a>チュートリアル : データの操作 (C#)
 このチュートリアルでは、データベースに対してデータの追加、変更、および削除を行う、基本の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] シナリオ全体を示します。 顧客の追加、顧客名の変更、および注文の削除を行うため、サンプルの Northwind データベースのコピーを使用します。  
@@ -73,7 +74,7 @@ ms.lasthandoff: 10/18/2017
   
 5.  **場所**ボックスで、プロジェクト ファイルを格納することを確認します。  
   
-6.  **[OK]** をクリックします。  
+6.  **[OK]**をクリックします。  
   
 ## <a name="adding-linq-references-and-directives"></a>LINQ の参照とディレクティブを追加する  
  このチュートリアルで使用するアセンブリは、既定ではプロジェクトにインストールされていない場合があります。 System.Data.Linq がプロジェクトの参照として表示されない場合は、次に説明する手順に従って追加してください。  
@@ -171,5 +172,5 @@ ms.lasthandoff: 10/18/2017
 > [!NOTE]
 >  変更内容を送信して新しい顧客を追加した後で、このソリューションを再度実行することはできません。 ソリューションを再度実行するには、追加する顧客の名前と顧客 ID を変更します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

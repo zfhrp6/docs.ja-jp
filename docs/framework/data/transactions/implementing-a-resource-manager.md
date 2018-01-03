@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d9fe72090de3722137c2b0c2190c11f190be5fbc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 25a45626564bb58950b251ae5e9041609d96a207
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-a-resource-manager"></a>リソース マネージャーの実装
 トランザクションで使用される各リソースはリソース マネージャーによって管理され、その動作はトランザクション マネージャーによって調整されます。 リソース マネージャーは、トランザクション マネージャーと連携してアプリケーションに原子性と分離を保証します。 Microsoft SQL Server、永続的なメッセージ キュー、メモリ内ハッシュ テーブルはすべて、リソース マネージャーの例です。  
@@ -44,22 +45,22 @@ ms.lasthandoff: 12/02/2017
 ## <a name="in-this-section"></a>このセクションの内容  
  リソース マネージャーが通常実行する手順の概要については、次のトピックを参照してください。  
   
- [トランザクションの参加者としてリソースを参加させる](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
+ [トランザクションの参加要素としてのリソースの参加](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
   
  永続性リソースまたは揮発性リソースがトランザクションに参加する方法について説明しています。  
   
- [単一フェーズと複数のフェーズでトランザクションをコミットします。](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [単一フェースおよび複数フェーズでのトランザクションのコミット](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  リソース マネージャーがコミット通知に応答し、コミットの準備を行うしくみについて説明しています。  
   
- [回復を実行します。](../../../../docs/framework/data/transactions/performing-recovery.md)  
+ [回復の実行](../../../../docs/framework/data/transactions/performing-recovery.md)  
   
  永続的リソース マネージャーが、どのようにエラーから回復するかについて説明しています。  
   
- [リソースへのアクセスのセキュリティ信頼レベル](../../../../docs/framework/data/transactions/security-trust-levels-in-accessing-resources.md)  
+ [リソースへのアクセス時のセキュリティ信頼レベル](../../../../docs/framework/data/transactions/security-trust-levels-in-accessing-resources.md)  
   
  System.Transactions の 3 つの信頼レベルで、<xref:System.Transactions> が公開するリソースの種類に対するアクセスがどのように制限されるかについて説明しています。  
   
- [単一フェーズのコミットし、昇格可能な単一フェーズの通知を使用して、最適化](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
+ [単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
   
  リソース マネージャーの実装に使用できる最適化の技法について説明します。

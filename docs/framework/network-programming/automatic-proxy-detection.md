@@ -24,11 +24,12 @@ caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 8eec6ff84978cdbd31dd4be307d0eb9560edde19
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bbfdb16e284fcd266bcc8ebf41a197733e92ca23
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="automatic-proxy-detection"></a>自動プロキシ検出
 自動プロキシ検出は、Web プロキシ サーバーがシステムによって確認され、クライアントに代わって要求を送信する際に使用されるプロセスです。 この機能は、Web プロキシの自動検出 (WPAD) とも呼ばれます。 自動プロキシ検出を有効にすると、システムは、要求に使用できるプロキシのセットを返すプロキシ構成スクリプトを検索しようとします。 プロキシ構成スクリプトが見つかった場合、プロキシ情報、要求ストリーム、または <xref:System.Net.WebProxy> インスタンスを使用する要求に対する応答が取得されたときに、ローカル コンピューター上でスクリプトがダウンロード、コンパイル、および実行されます。  
@@ -76,7 +77,7 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
   
  プロキシがない要求では、アプリケーション ドメインの既定のプロキシが使用されます。この既定のプロキシは <xref:System.Net.WebRequest.DefaultWebProxy%2A> プロパティで使用できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.WebProxy>  
  <xref:System.Net.WebRequest>  
  [\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)

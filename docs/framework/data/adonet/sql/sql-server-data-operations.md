@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f40fa8a29ea1c4204c6c3c9aa10507bd0a8a4789
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ee19f9816650f544552a19c6b80f38d7b0ff46e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-data-operations-in-adonet"></a>ADO.NET における SQL Server データ操作
 このセクションでは、.NET Framework Data Provider for SQL Server (<xref:System.Data.SqlClient>) 固有の SQL Server の機能について説明します。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
  [テーブル値パラメーター](../../../../../docs/framework/data/adonet/sql/table-valued-parameters.md)  
  SQL Server 2008 で導入された、テーブル値パラメーターの使用方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET でのデータの取得および変更](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [SQL Server と ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -32,11 +32,11 @@ ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
 caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 59fee9eb79af86df7f01bd77c27a929ef61fcfe2
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 22595eff2509d3954b3ce9d5038b19a681fbfbbe
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="declared-element-names-visual-basic"></a>宣言された要素の名前 (Visual Basic)
 すべての宣言された要素とも呼ばれる、名前が付いて、*識別子*、これは、コードを使用して、それを参照してください。  
@@ -71,7 +71,7 @@ ms.lasthandoff: 12/09/2017
  `xyz$wv`  
   
 > [!CAUTION]
->  アンダー スコアで始まる要素名 (`_`) に含まれていませんが、[言語非依存および言語非依存コンポーネント](../../../../../docs/standard/language-independence-and-language-independent-components.md)(CLS) ため、CLS 準拠コードのような名前を定義するコンポーネントを使用することはできません。 ただし、要素名は、他の場所内でアンダー スコアは CLS に準拠していません。  
+>  アンダー スコアで始まる要素名 (`_`) に含まれていませんが、[言語非依存および言語非依存コンポーネント](../../../../standard/language-independence-and-language-independent-components.md)(CLS) ため、CLS 準拠コードのような名前を定義するコンポーネントを使用することはできません。 ただし、要素名は、他の場所内でアンダー スコアは CLS に準拠していません。  
   
 ### <a name="name-length-guidelines"></a>名前の長さのガイドライン  
  実際には、自分の名前する必要がありますをできるだけ短く中の要素の特性を明確にします。 これにより、コードの読みやすさを向上させ、行の長さとソース ファイルのサイズを削減できます。  
@@ -97,7 +97,7 @@ ms.lasthandoff: 12/09/2017
 ## <a name="names-and-locales"></a>名前とロケール  
  名前の比較は、ロケールに依存しません。 1 つのロケールで 2 つの名前が同じ場合は、すべてのロケールに一致するように保証されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [宣言された要素](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)  
  [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
  [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  

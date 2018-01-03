@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 853f8e4e75df3fffad4a2d5ecd4f7ae21b5d674f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5c574a5e880dd838397b35df48138079cb58e2cf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-commands-to-modify-data"></a>コマンドを使用したデータ変更
 .NET Framework データ プロバイダーを使用すると、ストアド プロシージャまたはデータ定義言語のステートメント (たとえば、CREATE TABLE、ALTER COLUMN など) を実行して、データベースやカタログに対するスキーマ操作を実行できます。 クエリとは、これらのコマンドは行を返さないため、**コマンド**オブジェクトを提供、 **ExecuteNonQuery**それらを処理します。  
@@ -30,10 +31,10 @@ ms.lasthandoff: 11/21/2017
  [データ ソースのデータの更新](../../../../docs/framework/data/adonet/updating-data-in-a-data-source.md)  
  データベース内のデータを変更するコマンドまたはストアド プロシージャを実行する方法について説明します。  
   
- [カタログ操作を実行します。](../../../../docs/framework/data/adonet/performing-catalog-operations.md)  
+ [カタログ操作の実行](../../../../docs/framework/data/adonet/performing-catalog-operations.md)  
  データベース スキーマを変更するコマンドを実行する方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

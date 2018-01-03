@@ -30,11 +30,11 @@ ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
 caps.latest.revision: "56"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4aefacd33e0b3c8f64fd26929af06469136237f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 11601eb1caad1c6cc6d9898f590436a977a78fa1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next ステートメント (Visual Basic)
 コレクションの各要素に対して、ステートメントのグループを繰り返します。  
@@ -57,11 +57,11 @@ Next [ element ]
 |---|---|  
 |`element`|必要な`For Each`ステートメントです。 省略可能で、`Next`ステートメントです。 変数。 コレクションの要素を反復処理するために使用します。|  
 |`datatype`|場合は必須`element`既に宣言されていません。 データ型`element`です。|  
-|`group`|必須です。 コレクション型またはオブジェクト型を含む変数を指定します。 コレクションを参照する対象で、`statements`繰り返されるはします。|  
-|`statements`|省略可能です。 1 つまたは複数のステートメント間`For Each`と`Next`内の各項目で実行される`group`です。|  
-|`Continue For`|省略可能です。 先頭に制御を転送、`For Each`ループします。|  
-|`Exit For`|省略可能です。 うちの制御を転送、`For Each`ループします。|  
-|`Next`|必須です。 定義を終了、`For Each`ループします。|  
+|`group`|必須。 コレクション型またはオブジェクト型を含む変数を指定します。 コレクションを参照する対象で、`statements`繰り返されるはします。|  
+|`statements`|任意。 1 つまたは複数のステートメント間`For Each`と`Next`内の各項目で実行される`group`です。|  
+|`Continue For`|任意。 先頭に制御を転送、`For Each`ループします。|  
+|`Exit For`|任意。 うちの制御を転送、`For Each`ループします。|  
+|`Next`|必須。 定義を終了、`For Each`ループします。|  
   
 ## <a name="simple-example"></a>簡単な例  
  使用して、`For Each`しています.`Next`コレクションまたは配列の各要素の一連のステートメントを繰り返すときループします。  
@@ -73,7 +73,7 @@ Next [ element ]
   
  [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_1.vb)]  
   
- 例については、次を参照してください。[コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)と[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)です。  
+ 例については、次を参照してください。[コレクション](../../../standard/collections/index.md)と[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)です。  
   
 ## <a name="nested-loops"></a>入れ子になったループ  
  入れ子にすることができます`For Each`別内で 1 つのループを記述することによってループします。  
@@ -105,7 +105,7 @@ Next [ element ]
   
 -   これは、大規模なまたは無限も可能回数だけ実行できるループ、無限ループがあります。 このような条件を検出した場合を使用できます`Exit For`ループをエスケープするためにします。 詳細については、次を参照してください[操作を行います.。ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。  
   
-## <a name="iterators"></a>反復子  
+## <a name="iterators"></a>Iterators  
  使用する、*反復子*コレクションに対するカスタム イテレーションを実行します。 関数は、反復子または`Get`アクセサー。 使用して、`Yield`ステートメントを一度にいずれかのコレクションの各要素を返します。  
   
  使用して、反復子を呼び出す、`For Each...Next`ステートメントです。 `For Each` ループの各イテレーションは、反復子を呼び出します。 ときに、`Yield`ステートメントが、反復子の式に到達、`Yield`ステートメントが返され、コードの現在の位置が保持されます。 次回、反復子が呼び出されると、この位置から実行が再開されます。  
@@ -114,7 +114,7 @@ Next [ element ]
   
  [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_4.vb)]  
   
- 詳細については、次を参照してください。[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)、 [Yield ステートメント](../../../visual-basic/language-reference/statements/yield-statement.md)、および[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。  
+ 詳細については、次を参照してください。[反復子](../../programming-guide/concepts/iterators.md)、 [Yield ステートメント](../../../visual-basic/language-reference/statements/yield-statement.md)、および[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。  
   
 ## <a name="technical-implementation"></a>技術的な実装  
  ときに、`For Each`しています.`Next` ステートメントが実行されて、Visual Basic では、コレクション、ループを開始する前に、1 つだけの時間を評価します。 ステートメント ブロックが変更された場合`element`または`group`、これらの変更には影響しません、ループの反復処理します。  
@@ -179,8 +179,8 @@ End Sub
   
  [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
   
-## <a name="see-also"></a>関連項目  
- [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
+## <a name="see-also"></a>参照  
+ [コレクション](../../../standard/collections/index.md)  
  [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
  [ループ構造](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
  [While...End While ステートメント](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9b1d3d1b07a349ab1a5efb4a7c41f9b9b34fc55f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 56eec4ccd8083afb8c91ea5d31e444b322736191
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="top-entity-sql"></a>TOP (Entity SQL)
 SELECT 句には、オプションの ALL/DISTINCT 修飾子に続けてオプションの TOP サブ句を指定できます。 TOP サブ句は、クエリ結果の先頭から指定した行セットだけを返すよう指定します。  
@@ -54,9 +55,9 @@ SELECT 句には、オプションの ALL/DISTINCT 修飾子に続けてオプ�
   
  [!code-csharp[DP EntityServices Concepts 2#TOP](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#top)]  
   
-## <a name="see-also"></a>関連項目  
- [選択します。](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)  
- [スキップします。](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)  
- [制限](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)  
+## <a name="see-also"></a>参照  
+ [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)  
+ [SKIP](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)  
+ [LIMIT](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)  
  [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

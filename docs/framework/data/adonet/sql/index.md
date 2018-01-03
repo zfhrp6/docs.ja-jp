@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ab519f7881dd20c3fd9e2e08fef14591477d94a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 691423e2d5893e56e1ed2e7080e38cc9c23d854a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server と ADO.NET
 このセクションでは、.NET Framework Data Provider for SQL Server (<xref:System.Data.SqlClient>) 固有の機能および動作について説明します。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 11/21/2017
   
  [SQL Server オンライン ブック](http://msdn.microsoft.com/library/ms130214.aspx)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [ADO.NET でのデータ型のマッピング](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  

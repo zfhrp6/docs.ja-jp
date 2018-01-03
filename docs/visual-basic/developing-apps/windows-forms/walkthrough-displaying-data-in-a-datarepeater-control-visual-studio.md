@@ -13,11 +13,11 @@ ms.assetid: 65dcdb95-6c3e-47cc-987d-190000f71653
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6f0cf690b816d57dc4a2646eb82d649727d033a9
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 93072bf30c8ee2a4a44c4862de0882072c298f8b
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-displaying-data-in-a-datarepeater-control-visual-studio"></a>チュートリアル : DataRepeater コントロールでのデータの表示 (Visual Studio)
 このチュートリアルでは、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールにバインドされたデータを表示する基本的なシナリオ全体を示します。  
@@ -25,7 +25,7 @@ ms.lasthandoff: 12/09/2017
 ## <a name="prerequisite"></a>必須コンポーネント  
  このチュートリアルには、Northwind サンプル データベースが必要です。  
   
- 開発用コンピューターにこのデータベースがない場合は、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088)からダウンロードできます。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
+ 開発用コンピューターにこのデータベースがない場合は、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088)からダウンロードできます。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
 ## <a name="overview"></a>概要  
  このチュートリアルの前半部分は、次の 4 つの主要なタスクについて説明します。  
@@ -91,9 +91,9 @@ ms.lasthandoff: 12/09/2017
   
     -   Northwind サンプル データベースへのデータ接続がドロップダウン リストに表示されている場合は、これをクリックします。  
   
-         または  
+         - または -  
   
-    -   **[新しい接続]** をクリックし、新しいデータ接続を構成します。 詳細については、「 [How to: Create Connections to SQL Server Databases](http://msdn.microsoft.com/en-us/360c340d-e5a6-4a7e-a569-e95d500be43d)」を参照してください。  
+    -   **[新しい接続]** をクリックし、新しいデータ接続を構成します。 詳細については、次を参照してください。[新しい接続を追加](/visualstudio/data-tools/add-new-connections)です。  
   
 5.  データベースにパスワードが必要な場合は、該当するオプションを選択して重要情報を含め、 **[次へ]**をクリックします。  
   
@@ -236,7 +236,7 @@ ms.lasthandoff: 12/09/2017
   
 7.  F5 キーを押してアプリケーションを実行します。 1 番目の <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールで顧客を選択すると、2 番目の <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールにその顧客の注文が表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataRepeater コントロールの概要](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
  [方法: DataRepeater コントロールに、バインドされたデータを表示する](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)  
  [方法: DataRepeater コントロールに非バインド コントロールを表示する](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)  

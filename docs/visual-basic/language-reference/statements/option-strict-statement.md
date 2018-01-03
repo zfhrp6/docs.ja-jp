@@ -19,11 +19,11 @@ ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
 caps.latest.revision: "49"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 238f64001b097b86306e0ed9630bd5df2e6a189f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1a01edd918ea49c08defddb45bf23c33307e814f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="option-strict-statement"></a>Option Strict Statement
 暗黙的なデータ型の変換のみ拡大変換を制限、遅延バインディングは許可されていません、および結果となる暗黙の型指定は許可されていません、`Object`型です。  
@@ -38,8 +38,8 @@ Option Strict { On | Off }
   
 |用語|定義|  
 |---|---|  
-|`On`|省略可能です。 により、`Option Strict`をチェックします。|  
-|`Off`|省略可能です。 無効に`Option Strict`をチェックします。|  
+|`On`|任意。 により、`Option Strict`をチェックします。|  
+|`Off`|任意。 無効に`Option Strict`をチェックします。|  
   
 ## <a name="remarks"></a>コメント  
  ときに`Option Strict On`または`Option Strict`ファイルで、コンパイル時エラーが発生する、次の条件が表示されます。  
@@ -48,7 +48,7 @@ Option Strict { On | Off }
   
 -   遅延バインディング  
   
--   結果となる暗黙の型指定、`Object`型  
+-   結果が `Object` 型となる暗黙の型指定  
   
 > [!NOTE]
 >  設定することが警告の構成で、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)コンパイル時エラーが発生する 3 つの条件に対応する 3 つの設定があります。 これらの設定を使用する方法については、次を参照してください。 [IDE で警告の構成を設定する](../../../visual-basic/language-reference/statements/option-strict-statement.md#conditions)このトピックで後述します。  
@@ -66,7 +66,7 @@ Option Strict { On | Off }
 -   高速化のコードを実行します。 理由は、1 つがある場合、プログラミング要素のデータ型を指定しないと、Visual Basic コンパイラが割り当てる、`Object`型です。 コンパイルされたコードは間を変換する必要があります`Object`およびその他のデータ型は、パフォーマンスが低下します。  
   
 ## <a name="implicit-narrowing-conversion-errors"></a>暗黙的な縮小変換エラー  
- 縮小変換は暗黙的なデータ型変換がある場合に、暗黙的な縮小変換エラーが発生します。  
+ 縮小変換する暗黙的なデータ型変換がある場合は、暗黙的な縮小変換エラーが発生します。  
   
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]多くのデータ型を他のデータ型に変換できます。 1 つのデータ型の値でありより精度の低いまたは容量の小さいデータ型に変換するときに、データ損失が発生することができます。 このような縮小変換が失敗した場合、実行時エラーが発生します。 `Option Strict`これらの縮小変換のコンパイル時の通知のことを確認して、それらを回避するようにします。 詳細については、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)と[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)です。  
   
@@ -89,10 +89,10 @@ Option Strict { On | Off }
  内の要素からの変換のコンパイル時に暗黙的な縮小変換エラーが抑制されます、`For Each…Next`ループ コントロール変数のコレクション。 これが発生した場合でも`Option Strict`にします。 詳細についてを参照してください「の縮小変換」[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)します。  
   
 ## <a name="late-binding-errors"></a>遅延バインド エラー  
- プロパティまたはメソッドの型に宣言されている変数に代入される場合、オブジェクトは遅延バインディング`Object`です。 詳細については、次を参照してください。 [Early and 遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)です。  
+ `Object` 型として宣言された変数のプロパティまたはメソッドにオブジェクトを代入する場合は、そのオブジェクトは遅延バインディングされます。 詳細については、次を参照してください。 [Early and 遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)です。  
   
 ## <a name="implicit-object-type-errors"></a>暗黙的なオブジェクトの種類のエラー  
- 適切な型ができない場合に暗黙的なオブジェクトの種類のエラーが発生するための型の宣言された変数に対して推定された`Object`が推論されます。 これを使用するときに、主に発生する、`Dim`ステートメントを使用せずに変数を宣言する、`As`句、および`Option Infer`がオフです。 詳細については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[Visual Basic 言語仕様](../../../visual-basic/reference/language-specification/index.md)です。  
+ 適切な型が宣言された変数を推論できない場合は暗黙的なオブジェクトの型エラーが発生するため、`Object` の型が推論されます。 これは主に、`As` 句を使用せず、`Option Infer` をオフにして、`Dim` ステートメントを使用して変数を宣言した場合に発生します。 詳細については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[Visual Basic 言語仕様](../../../visual-basic/reference/language-specification/index.md)です。  
   
  メソッドのパラメーターに、`As`句は省略可能場合`Option Strict`は無効になっています。 ただし、すべて 1 つのパラメーターで使用する場合、`As`句、これらはすべて使用する必要の。 場合`Option Strict`が有効になって、`As`句がパラメーター定義のそれぞれに必要です。  
   
@@ -106,7 +106,7 @@ Option Strict { On | Off }
 |Ｘ|Ｘ|`Dim qty`|`Option Strict` がオフ (既定値) の場合、変数は `Nothing` に設定されます。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
 |Ｘ|○|`Dim qty = 5`|`Option Infer` がオン (既定値) の場合、変数は初期化子のデータ型になります。 参照してください[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
 |○|Ｘ|`Dim qty As Integer`|変数は、データ型の既定値に初期化されます。 詳細については、次を参照してください。 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)です。|  
-|はい|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  
+|[はい]|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  
   
 ## <a name="when-an-option-strict-statement-is-not-present"></a>Option Strict ステートメントが存在する場合されません。  
  ソース コードが含まれていない場合、`Option Strict`ステートメントでは、 **Option strict**の設定、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)を使用します。 **[コンパイル] ページ**にエラーが生成される条件をさらに制御を提供する設定があります。  
@@ -116,7 +116,7 @@ Option Strict { On | Off }
 ### <a name="to-set-option-strict-in-the-ide"></a>IDE で Option Strict を設定するには  
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。  
   
 2.  **コンパイル** タブの値を設定、 **Option Strict**ボックス。  
   
@@ -125,18 +125,18 @@ Option Strict { On | Off }
   
 -   **暗黙的な変換**  
   
--   **遅延バインディングです。実行時に呼び出しが失敗します。**  
+-   **遅延バインディング、呼び出しが実行時に失敗する可能性があります**  
   
--   **暗黙の型です。オブジェクトと見なされます**  
+-   **暗黙的な型、オブジェクトと見なされます**  
   
- 設定すると**Option Strict**に**で**、これらの警告の構成設定の 3 つすべてに設定されている**エラー**です。 設定すると**Option Strict**に**オフ**、3 つすべての設定に設定されて**None**です。  
+ **[Option Strict]** を **[オン]** に設定すると、これら 3 つの警告の構成設定のすべてが **[エラー]** に設定されます。 **[Option Strict]** を **[オフ]** に設定すると、3 つの設定すべてが **[なし]** に設定されます。  
   
- 各警告する構成設定を変更することができますに個別に**None**、**警告**、または**エラー**です。 次の 3 つすべての警告構成設定が設定されている場合**エラー**、`On`に表示されます、`Option strict`ボックス。 3 つすべてが設定されている場合**None**、`Off`このボックスに表示されます。 これらの設定の他の任意の組み合わせの**(カスタム)**が表示されます。  
+ 各警告の構成設定を個別に **[なし]**、**[警告]**、または **[エラー]** に変更することができます。 3 つの警告の構成設定がすべて **[エラー]** に設定されている場合、`Option strict` ボックスに `On` が表示されます。 3 つすべてが **[なし]** に設定されている場合、このボックスには `Off` が表示されます。 これらの設定のその他の組み合わせに対しては、**(カスタム)** が表示されます。  
   
 ### <a name="to-set-the-option-strict-default-setting-for-new-projects"></a>新しいプロジェクトの Option Strict の既定の設定を設定するには  
  プロジェクトを作成するときに、 **Option Strict**の設定、**コンパイル** タブに設定されている、 **Option Strict**での設定、**オプション**ダイアログ ボックス。  
   
- 設定する`Option Strict`このダイアログ ボックスで、上、**ツール** メニューのをクリックして**オプション**です。 **オプション** ダイアログ ボックスで、展開**プロジェクトおよびソリューション**、クリックして**既定値は VB**です。 初期の既定の設定**VB 既定**は`Off`します。  
+ 設定する`Option Strict`このダイアログ ボックスで、上、**ツール** メニューのをクリックして**オプション**です。 **[オプション]** ダイアログ ボックスの **[プロジェクトおよびソリューション]** を展開し、**[VISUAL BASIC の既定値]** をクリックします。 初期の既定の設定**VB 既定**は`Off`します。  
   
 ### <a name="to-set-option-strict-on-the-command-line"></a>コマンドラインで Option Strict を設定するには  
  含める、 [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)コンパイラ オプション、 **vbc**コマンド。  
@@ -158,7 +158,7 @@ Option Strict { On | Off }
   
  [!code-vb[VbVbalrStatements#164](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_4.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
  [暗黙の型変換と明示的な型変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
  [[コンパイル] ページ、プロジェクト デザイナー (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)  

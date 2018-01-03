@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 35de20b1cb35fdcd87a653f1ac202c01d345c317
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4ea157cd52bf92dace924baaa40f5b1bba6f13a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>ADO.NET でのデータの取得および変更
 データベース アプリケーションの主な機能は、データ ソースとの接続およびデータベースに格納されているデータの取得です。 使用してデータの取得も同様のコマンドを実行することができます、アプリケーションとデータ ソース間のブリッジとしての ADO.NET の .NET Framework データ プロバイダーの機能、 **DataReader**または**DataAdapter**. データベースに格納されているデータを更新する機能は、データベース アプリケーションの重要な機能の 1 つです。 ADO.NET でデータの更新を使用して、 **DataAdapter**と<xref:System.Data.DataSet>、および**コマンド**オブジェクトも含まれますトランザクションを使用します。  
@@ -35,19 +36,19 @@ ms.lasthandoff: 11/21/2017
  [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  コマンドおよびコマンド ビルダーを作成する方法、パラメーターを構成する方法、およびコマンドを実行してデータを取得および変更する方法について説明します。  
   
- [Dataadapter と Datareader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  DataReaders、DataAdapters、パラメーター、DataAdapter イベントの処理、およびバッチ操作の実行について説明します。  
   
  [トランザクションと同時実行](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  ローカル トランザクションや分散トランザクションの実行方法、およびオプティミスティック同時実行の使用方法について説明します。  
   
- [Identity 値および Autonumber 値を取得します。](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
+ [ID 値および Autonumber 値の取得](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
  生成された値のマッピングの例を示します、 **identity**内の列、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]テーブルまたは、 **Autonumber**フィールドをテーブルに挿入された行の列の Access テーブルにします。 `DataTable` での ID 値の結合について説明します。  
   
  [バイナリ データの取得](../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
  バイナリ データまたは使用して大規模なデータ構造体を取得する方法について説明`CommandBehavior`です。`SequentialAccess` 既定の動作を変更する、`DataReader`です。  
   
- [ストアド プロシージャによるデータの変更](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
+ [ストアド プロシージャでのデータの変更](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
  ストアド プロシージャの入力パラメーターおよび出力パラメーターを使用してデータベースに行を挿入し、新しい ID 値を返す方法について説明します。  
   
  [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/21/2017
  [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
  プロバイダー ファクトリ モデルについて説明し、`System.Data.Common` 名前空間の基本クラスの使用方法を示します。  
   
- [ADO.NET でデータのトレース](../../../../docs/framework/data/adonet/data-tracing.md)  
+ [ADO.NET のデータ追跡](../../../../docs/framework/data/adonet/data-tracing.md)  
  ADO.NET が備える組み込みデータ トレース機能のしくみについて説明します。  
   
  [パフォーマンス カウンター](../../../../docs/framework/data/adonet/performance-counters.md)  
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/21/2017
  [SqlClient ストリーミング サポート](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)  
  完全にメモリに読み込むことなく [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からデータをストリームするアプリケーションの作成方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET でのデータ型のマッピング](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  [DataSet、DataTable、および DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  

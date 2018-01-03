@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 90fa57bae7bec1fb7f29ad566e92ae9143a39539
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2835f1fdbe2132feb929a5264d3b2772d8f66377
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loaderlock-mda"></a>loaderLock MDA
 `loaderLock` マネージ デバッグ アシスタント (MDA) は、Microsoft Windows オペレーティング システムのローダー ロックを保持しているスレッド上でマネージ コードを実行する試行を検出します。  このような実行は、デッドロックの原因になる可能性があり、オペレーティング システムのローダーが初期化する前に DLL が使用される可能性があるため、不適切です。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/18/2017
   
  .NET Framework バージョン 2.0 用に構築されたマネージ/アンマネージ混在 C++ アセンブリの場合、このような問題の影響をあまり受けません。オペレーティング システムのルールに違反するアンマネージ DLL を使用するアプリケーションと同程度に少ないリスクです。  たとえば、アンマネージ DLL の `DllMain` エントリ ポイントが `CoCreateInstance` を呼び出して、COM に公開されているマネージ オブジェクトを取得する場合、結果として、ローダー ロック内のマネージ コードを実行することになります。 .NET Framework バージョン 2.0 以降のローダー ロックの問題については、「[混在アセンブリの初期化](/cpp/dotnet/initialization-of-mixed-assemblies)」を参照してください。  
   
-## <a name="resolution"></a>解決策  
+## <a name="resolution"></a>解像度  
  Visual C++ .NET 2002 および Visual C++ .NET 2003 では、`/clr` コンパイラ オプションを指定してコンパイルされた DLL は、読み込み時に非確定的にデッドロックを生じる可能性があります。この問題は、混在モード DLL 読み込み時の問題 (またはローダー ロックの問題) と呼ばれていました。 Visual C++ 2005 以降の場合、混在モード DLL の読み込みプロセスで、このような確定的でない場合の問題はほとんどなくなりました。 ただし、ローダー ロックが (確定的に) 発生する可能性のあるシナリオはいくつか残っています。 その他のローダー ロック問題の原因と解決策の詳細については、「[混在アセンブリの初期化](/cpp/dotnet/initialization-of-mixed-assemblies)」を参照してください。 このトピックでローダー ロックの問題が特定できない場合は、スレッドのスタックを調べて、ローダー ロックが発生している理由と問題の解決方法を判断する必要があります。 この MDA をアクティブにしたスレッドのスタック トレースを確認してください。  オペレーティング システムのローダー ロックを保持しているときに、スレッドが不正にマネージ コードを呼び出そうとしています。  スタックに DLL の `DllMain` または同等のエントリ ポイントが存在するはずです。  このようなエントリ ポイント内から実行が許可されることについて、オペレーティング システムのルールは非常に制限されています。  オペレーティング システムのルールでは、あらゆるマネージ実行が除外されています。  
   
 ## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
@@ -63,5 +64,5 @@ ms.lasthandoff: 10/18/2017
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

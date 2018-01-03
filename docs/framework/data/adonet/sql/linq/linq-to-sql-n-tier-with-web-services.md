@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a8577c10dd4d3e2118a4b4dca8b22766a54fc854
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 37dfeec82339ed4381d158b1bd5ac442223bfe50
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Web サービスを使用した LINQ to SQL N 層
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Web サービスなどの疎結合のデータ アクセス層 (DAL) の中間層で使用するために特別に設計されています。 プレゼンテーション層が ASP.NET Web ページである場合、中間層の <xref:System.Web.UI.WebControls.LinqDataSource> とユーザー インターフェイスとのデータ転送を管理するために [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Web サーバー コントロールを使用します。 プレゼンテーション層が ASP.NET ページでない場合には、中間層とプレゼンテーション層の両方で、データのシリアル化と逆シリアル化を管理するための追加の操作を行う必要があります。  
@@ -46,6 +47,6 @@ ms.lasthandoff: 11/21/2017
   
  詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [N 層でおよびリモート アプリケーション LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
+## <a name="see-also"></a>参照  
+ [LINQ to SQL を使用する n 層アプリケーションとリモート アプリケーション](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
  [NIB: LinqDataSource Web サーバー コントロールの概要](http://msdn.microsoft.com/en-us/104cfc3f-7385-47d3-8a51-830dfa791136)

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a32b57488b49e9fd2f4e6342391690b27d7ad825
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 257fff19d10c4b803ec6fc539087cc558bd07a0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemtimespan-methods"></a>System.TimeSpan メソッド
 <xref:System.TimeSpan?displayProperty=nameWithType> のメンバー サポートは、使用している .NET Framework と Microsoft SQL Server のバージョンに大きく依存します。  
@@ -45,8 +46,8 @@ ms.lasthandoff: 11/21/2017
 ### <a name="addition-and-subtraction"></a>加算と減算  
  加算と減算は、CLR の <xref:System.TimeSpan?displayProperty=nameWithType> 型ではサポートされていますが、SQL の `TIME` 型ではサポートされていません。 そのため、LINQ to SQL クエリにより、SQL の `TIME` 型にマッピングしたときに加算や減算を試みると、エラーが発生します。 SQL 日付と時刻型を操作するための他の考慮事項を見つけることができます[SQL-CLR 型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クエリの概念](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
  [オブジェクト モデルの作成](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)  
- [SQL CLR の型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
- [データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+ [SQL と CLR の型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
+ [データ型と関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

@@ -14,11 +14,11 @@ ms.assetid: 3ffd1bdf-1b8d-47f5-87eb-75b659f64294
 caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6a64eaba75128a3844847fbf803c86c2d700db72
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 58568b541c43a35f093c45f5ad0efe978b642c91
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="com-interop-visual-basic"></a>COM 相互運用 (Visual Basic)
 コンポーネント オブジェクト モデル (COM) では、オブジェクトがその機能を他のコンポーネントに公開し、アプリケーションをホストすることを許可します。 今日のソフトウェアのほとんどに、COM オブジェクトが含まれています。 .NET アセンブリは新しいアプリケーションに最適ですが、時には COM オブジェクトを使用する必要があります。 このセクションには、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での COM オブジェクトの作成と使用に関連するいくつかの問題も含まれています。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 12/09/2017
  新しいオブジェクトの基本として既存の COM オブジェクトを使用する方法を説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [アンマネージ コードとの相互運用](../../../../docs/framework/interop/index.md)  
+ [アンマネージ コードとの相互運用](../../../framework/interop/index.md)  
  共通言語ランタイムが提供する相互運用サービスについて説明します。  
   
  [.NET Framework への COM コンポーネントの公開](http://msdn.microsoft.com/library/e78b14f1-e487-43cd-9c6d-1a07483f1730)  
@@ -64,5 +64,5 @@ ms.lasthandoff: 12/09/2017
  [COM への .NET Framework コンポーネントの公開](http://msdn.microsoft.com/library/e42a65f7-1e61-411f-b09a-aca1bbce24c6)  
  COM からのマネージ型の準備と使用方法について説明します。  
   
- [相互運用固有の属性の適用](../../../../docs/framework/interop/applying-interop-attributes.md)  
+ [相互運用固有の属性の適用](../../../framework/interop/applying-interop-attributes.md)  
  アンマネージ コードを操作するときに使用できる属性について説明します。

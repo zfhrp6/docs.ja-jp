@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c8a3a3e794941c2713af0e5b098bd7f8d783eb4c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b04a7199fefc5df93d5e3472163d16c66e9279c1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlclient-for-entity-frameworktypes"></a>Entity Framework 用 SqlClient の型
 .NET Framework Data Provider for SQL Server (SqlClient) プロバイダー マニフェスト ファイルには、プロバイダー プリミティブ型のリスト、それぞれの型のファセット、概念モデルとストレージ モデルのプリミティブ型とのマッピング、および概念モデルとストレージ モデルのプリミティブ型間での昇格と変換の規則が含まれています。  
@@ -33,32 +34,32 @@ ms.lasthandoff: 10/18/2017
 |`bigint`|該当なし|`Edm.Int64`|該当なし|  
 |`float`|該当なし|`Edm.Double`|該当なし|  
 |`real`|該当なし|`Edm.Double`|該当なし|  
-|`decimal`|適用なし|`Edm.Decimal`|有効桁数。<br /><br /> -最小値: 1<br /><br /> -最大: 38<br /><br /> -既定値: 18<br /><br /> -定数: False<br /><br /> スケール:<br /><br /> -最小値: 0<br /><br /> -最大: 38<br /><br /> -既定値: 0<br /><br /> -定数: False|  
-|`numeric`|適用なし|`Edm.Decimal`|有効桁数。<br /><br /> -最小値: 1<br /><br /> -最大: 38<br /><br /> -既定値: 18<br /><br /> -定数: False<br /><br /> スケール:<br /><br /> -最小値: 0<br /><br /> -最大: 38<br /><br /> -既定値: 0<br /><br /> -定数: False|  
-|`smallmoney`|適用なし|`Edm.Decimal`|有効桁数。<br /><br /> -既定値: 10<br /><br /> -定数: True<br /><br /> スケール:<br /><br /> -既定値: 4<br /><br /> -定数: True|  
-|`money`|適用なし|`Edm.Decimal`|有効桁数。<br /><br /> -既定値: 19<br /><br /> -定数: True<br /><br /> スケール:<br /><br /> -既定値: 4<br /><br /> -定数: True|  
-|`binary`|適用なし|`Edm.Binary`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
-|`varbinary`|適用なし|`Edm.Binary`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
-|`varbinary(max)`<br /><br /> 注: この型はではサポートされていません[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]です。|適用なし|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 214748364780<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
-|`image`|適用なし|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 2,147, 483,647<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
-|`timestamp`|適用なし|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 8<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
-|`rowversion`|適用なし|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 8<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
-|`smalldatetime`|適用なし|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 0<br /><br /> -定数: True|  
-|`datetime`|適用なし|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 3<br /><br /> -定数: True|  
-|`date`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|適用なし|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 0<br /><br /> -定数: False|  
-|`time`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|適用なし|`Edm.Time`|有効桁数。<br /><br /> -既定値: 7<br /><br /> -定数: False|  
-|`datetime2`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|適用なし|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 7<br /><br /> -定数: False|  
-|`datetimeoffset`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|適用なし|`Edm.DateTimeOffset`|有効桁数。<br /><br /> -既定値: 7<br /><br /> -定数: False|  
-|`nvarchar`<br /><br /> 注: この型はではサポートされていません[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]です。|適用なし|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 4000<br /><br /> -既定値: 4000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: True<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
-|`varchar`<br /><br /> 注: この型はではサポートされていません[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]です。|適用なし|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
-|`char`|適用なし|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
-|`nchar`|適用なし|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 4000<br /><br /> -既定値: 4000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: True<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
-|`varchar`(`max`)|適用なし|`Edm.String`|MaxLength:<br /><br /> -既定値: 2,147, 483,647<br /><br /> -定数: True<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
-|`nvarchar`(`max`)|適用なし|`Edm.String`|MaxLength:<br /><br /> -既定値: 1073741823<br /><br /> -定数: True<br /><br /> Unicode:<br /><br /> -既定値: True<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
+|`decimal`|N/A|`Edm.Decimal`|有効桁数。<br /><br /> -最小値: 1<br /><br /> -最大: 38<br /><br /> -既定値: 18<br /><br /> -定数: False<br /><br /> スケール:<br /><br /> -最小値: 0<br /><br /> -最大: 38<br /><br /> -既定値: 0<br /><br /> -定数: False|  
+|`numeric`|N/A|`Edm.Decimal`|有効桁数。<br /><br /> -最小値: 1<br /><br /> -最大: 38<br /><br /> -既定値: 18<br /><br /> -定数: False<br /><br /> スケール:<br /><br /> -最小値: 0<br /><br /> -最大: 38<br /><br /> -既定値: 0<br /><br /> -定数: False|  
+|`smallmoney`|N/A|`Edm.Decimal`|有効桁数。<br /><br /> -既定値: 10<br /><br /> -定数: True<br /><br /> スケール:<br /><br /> -既定値: 4<br /><br /> -定数: True|  
+|`money`|N/A|`Edm.Decimal`|有効桁数。<br /><br /> -既定値: 19<br /><br /> -定数: True<br /><br /> スケール:<br /><br /> -既定値: 4<br /><br /> -定数: True|  
+|`binary`|N/A|`Edm.Binary`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
+|`varbinary`|N/A|`Edm.Binary`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
+|`varbinary(max)`<br /><br /> 注: この型はではサポートされていません[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]です。|N/A|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 214748364780<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
+|`image`|N/A|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 2,147, 483,647<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
+|`timestamp`|N/A|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 8<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
+|`rowversion`|N/A|`Edm.Binary`|MaxLength:<br /><br /> -既定値: 8<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
+|`smalldatetime`|N/A|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 0<br /><br /> -定数: True|  
+|`datetime`|N/A|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 3<br /><br /> -定数: True|  
+|`date`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|N/A|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 0<br /><br /> -定数: False|  
+|`time`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|N/A|`Edm.Time`|有効桁数。<br /><br /> -既定値: 7<br /><br /> -定数: False|  
+|`datetime2`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|N/A|`Edm.DateTime`|有効桁数。<br /><br /> -既定値: 7<br /><br /> -定数: False|  
+|`datetimeoffset`<br /><br /> 注: この型は、SQL Server 2005 および SQL Server 2000 ではサポートされていません。|N/A|`Edm.DateTimeOffset`|有効桁数。<br /><br /> -既定値: 7<br /><br /> -定数: False|  
+|`nvarchar`<br /><br /> 注: この型はではサポートされていません[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]です。|N/A|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 4000<br /><br /> -既定値: 4000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: True<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
+|`varchar`<br /><br /> 注: この型はではサポートされていません[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]です。|N/A|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
+|`char`|N/A|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 8000<br /><br /> -既定値: 8000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
+|`nchar`|N/A|`Edm.String`|MaxLength:<br /><br /> -最小値: 1<br /><br /> -最大: 4000<br /><br /> -既定値: 4000<br /><br /> -定数: False<br /><br /> Unicode:<br /><br /> -既定値: True<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: True<br /><br /> -定数: True|  
+|`varchar`(`max`)|N/A|`Edm.String`|MaxLength:<br /><br /> -既定値: 2,147, 483,647<br /><br /> -定数: True<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
+|`nvarchar`(`max`)|N/A|`Edm.String`|MaxLength:<br /><br /> -既定値: 1073741823<br /><br /> -定数: True<br /><br /> Unicode:<br /><br /> -既定値: True<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
 |`ntext`|等しいかどうか比較可能な: False<br /><br /> 順序を比較できる: False|`Edm.String`|MaxLength:<br /><br /> -既定値: 1073741823<br /><br /> -定数: True<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
 |`text`|等しいかどうか比較可能な: False<br /><br /> 順序を比較できる: False|`Edm.String`|MaxLength:<br /><br /> -既定値: 2,147, 483,647<br /><br /> -定数: True<br /><br /> Unicode:<br /><br /> -既定値: False<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
-|`Unique`<br /><br /> `identifier`|等しいかどうか比較可能な: True<br /><br /> 順序を比較できる: True|`Edm.Guid`|適用なし|  
+|`Unique`<br /><br /> `identifier`|等しいかどうか比較可能な: True<br /><br /> 順序を比較できる: True|`Edm.Guid`|N/A|  
 |`xml`|等しいかどうか比較可能な: False<br /><br /> 順序を比較できる: False|`Edm.String`|MaxLength:<br /><br /> -既定値: 1073741823<br /><br /> -定数: True<br /><br /> Unicode:<br /><br /> -既定値: True<br /><br /> -定数: True<br /><br /> FixedLength:<br /><br /> -既定値: False<br /><br /> -定数: True|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CSDL、SSDL、および MSL 仕様](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: be5969bf8653512da27785479ac7feae1f6c09a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e848a0fac5d41628d4d39f1771019eb870e6395b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datatable-schema-definition"></a>DataTable スキーマの定義
 テーブルのスキーマ (構造) は、列と制約で表されます。 <xref:System.Data.DataTable> のスキーマは、<xref:System.Data.DataColumn>、<xref:System.Data.ForeignKeyConstraint>、<xref:System.Data.UniqueConstraint> の各オブジェクトを使用して定義します。 テーブルの列は、データ ソースの列に割り当てたり、式で算出された値を格納したり、格納されている値を自動的にインクリメントしたり、主キー値を格納したりできます。  
@@ -30,7 +31,7 @@ ms.lasthandoff: 11/21/2017
 >  <xref:System.Data.DataTable.CaseSensitive%2A>のプロパティ、 **DataTable**この動作には影響しません。 **CaseSensitive**プロパティは、列、リレーション、および制約への参照ではなく、テーブルや並べ替え、検索、フィルター処理、制約の適用などのデータに適用されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [DataTable に列を追加](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-columns-to-a-datatable.md)  
+ [DataTable への列の追加](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-columns-to-a-datatable.md)  
  使用してテーブルの列を定義する方法について説明**DataColumn**オブジェクト。  
   
  [式列の作成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-expression-columns.md)  
@@ -45,6 +46,6 @@ ms.lasthandoff: 11/21/2017
  [DataTable の制約](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)  
  テーブルの列の外部キー制約と UNIQUE 制約を定義する方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

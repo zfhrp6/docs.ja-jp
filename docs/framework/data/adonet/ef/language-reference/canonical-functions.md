@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b80eeedc67678d703664eb705408a72b7e4a2274
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: da48efc110669c170fc409e22cb8402f471b22e7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="canonical-functions"></a>正規関数
 このセクションでは、すべてのデータ プロバイダーがサポートし、あらゆるクエリ テクノロジで使用されている正規関数について説明します。 正規関数は、プロバイダーが拡張することはできません。  
@@ -48,17 +49,17 @@ ms.lasthandoff: 11/21/2017
  [日付と時刻の正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)  
  日付および時刻の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。  
   
- [ビットごとの正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)  
+ [ビット単位の正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)  
  ビット単位の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。  
   
  [空間関数](../../../../../../docs/framework/data/adonet/ef/language-reference/spatial-functions.md)  
  空間に関する [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の正規関数について説明します。  
   
- [他の正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/other-canonical-functions.md)  
+ [その他の正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/other-canonical-functions.md)  
  ビット単位、日付/時刻、文字列、数学、または集計に分類されない関数について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [概念モデル正規 SQL Server の関数のマッピング](../../../../../../docs/framework/data/adonet/ef/conceptual-model-canonical-to-sql-server-functions-mapping.md)  
+ [概念モデル正規関数と SQL Server 関数とのマッピング](../../../../../../docs/framework/data/adonet/ef/conceptual-model-canonical-to-sql-server-functions-mapping.md)  
  [ユーザー定義関数](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md)

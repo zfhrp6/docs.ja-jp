@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f53c84b216c847740f2c093582fd151d5ed0ef63
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 28f774b8d8bb232512fb975d292df4423f56a6d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="skip-entity-sql"></a>SKIP (Entity SQL)
 物理的なページングは、ORDER BY 句の SKIP サブ句を使用して実行できます。 SKIP を ORDER BY 句と切り離して使用することはできません。  
@@ -45,8 +46,8 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] この [例の中の](https://msdn.microsoft.com/library/bb738702\(v=vs.100\).aspx#_ESQL) クエリでは、SELECT ステートメントで返されたオブジェクトの並べ替え順序の指定に ORDER BY 演算子を SKIP と共に使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)  
  [方法: 結果をクエリ ページング](http://msdn.microsoft.com/en-us/ffc0f920-e7de-42e0-9b12-ef356421d030)  
  [ページング](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)  
- [ページのトップへ](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
+ [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)

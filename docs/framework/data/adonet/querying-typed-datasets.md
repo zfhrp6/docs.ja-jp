@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: bd78b4f47d7f48d7b4cbacdf53140758a05b7869
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c232ca2888c957bea33d06c84a62b00fdc7fd80c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="querying-typed-datasets"></a>型指定された DataSet のクエリ
 アプリケーションのデザイン時に <xref:System.Data.DataSet> のスキーマがわかっている場合は、<xref:System.Data.DataSet> を使用するときに、型指定された [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] を用いることをお勧めします。 型指定された<xref:System.Data.DataSet>から派生したクラスには、<xref:System.Data.DataSet>です。 したがって、型指定されたデータセットは <xref:System.Data.DataSet> のすべてのメソッド、イベント、およびプロパティを継承します。 さらに、型指定された<xref:System.Data.DataSet>厳密に型指定されたメソッド、イベント、およびプロパティを提供します。 つまり、コレクションベースのメソッドを使用せずに名前でテーブルおよび列にアクセスできます。 これによりクエリが簡素化され、読みやすくなります。 詳細については、次を参照してください。[型指定されたデータセット](../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)です。  
@@ -66,7 +67,7 @@ For Each Dim onlineOrder In query
 Next  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Dataset のクエリ](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
- [テーブルにまたがるクエリ](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
+## <a name="see-also"></a>参照  
+ [DataSet のクエリ](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
+ [複数テーブルにまたがるクエリ](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
  [単一テーブルのクエリ](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)

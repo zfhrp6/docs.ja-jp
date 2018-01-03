@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 0332bca146041aa955ea000cfeee78d3f5287036
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b116e3aa88f919b850d6f79754d25ee10ac974f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ipv6-auto-configuration"></a>IPv6 の自動構成
 IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレイをサポートすることです。 つまり、IPv6 ネットワークにノードを接続して、それを人間の操作なしに自動的に構成できる必要があります。  
@@ -33,6 +34,6 @@ IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレ�
 ## <a name="ipv6-mobility"></a>IPv6 モビリティ  
  モバイル デバイスの急増によって、新しい要件が導入されました。デバイスが IPv6 インターネット上の場所を任意に変更しても既存の接続を維持できるようにする必要があります。 この機能を提供するために、モバイル ノードに常に到達できるホーム アドレスが割り当てられます。 モバイル ノードが自宅にあるときは、ホーム リンクに接続し、ホーム アドレスを使用します。 モバイル ノードが自宅から離れた場所にあるときは、ホーム エージェント (通常はルーター) が、モバイル ノードと通信相手のノードの間でメッセージを中継します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [インターネット プロトコル バージョン 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
  [ソケット](../../../docs/framework/network-programming/sockets.md)

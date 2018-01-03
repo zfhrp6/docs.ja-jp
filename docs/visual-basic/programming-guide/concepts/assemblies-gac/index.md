@@ -12,22 +12,22 @@ ms.assetid: fcf78ff1-f1ab-4a5d-b6d8-00d2046b6c80
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9ef4306da5c093b8302e377cc3b68d5700b8dfa8
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 893d869b1abaf9caa6f4705f40750912081d7df2
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-visual-basic"></a>アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)
 アセンブリは、.NET ベースのアプリケーションの配置、バージョン管理、再利用、アクティベーション スコープ、およびセキュリティ権限の基本単位です。 アセンブリは、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (.dll) ファイルの形を取る、.NET Framework の構成要素です。 それらは、型の実装に関して必要な情報を共通言語ランタイムに提供します。 アセンブリは、機能的な論理的な単位を形成し、連携して動作するように構築された、型とリソースのコレクションと考えることができます。  
   
- アセンブリには、1 つまたは複数のモジュールを含めることができます。 たとえば、大規模なプロジェクトを、複数の開発者が別々のモジュールで作業し、すべてのモジュールをまとめて 1 つのアセンブリを作成するように計画することができます。 モジュールの詳細については、「[方法: マルチファイル アセンブリをビルドする](../../../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)」を参照してください。  
+ アセンブリには、1 つまたは複数のモジュールを含めることができます。 たとえば、大規模なプロジェクトを、複数の開発者が別々のモジュールで作業し、すべてのモジュールをまとめて 1 つのアセンブリを作成するように計画することができます。 モジュールの詳細については、「[方法: マルチファイル アセンブリをビルドする](../../../../framework/app-domains/how-to-build-a-multifile-assembly.md)」を参照してください。  
   
  アセンブリには、次の特徴があります。  
   
 -   アセンブリは、.exe または .dll ファイルとして実装されます。  
   
--   アセンブリは、グローバル アセンブリ キャッシュに配置することで、アプリケーション間で共有することができます。 グローバル アセンブリ キャッシュに含める前に、アセンブリに厳密な名前を付ける必要があります。 詳細については、「[厳密な名前付きアセンブリ](../../../../../docs/framework/app-domains/strong-named-assemblies.md)」を参照してください。  
+-   アセンブリは、グローバル アセンブリ キャッシュに配置することで、アプリケーション間で共有することができます。 グローバル アセンブリ キャッシュに含める前に、アセンブリに厳密な名前を付ける必要があります。 詳細については、「[厳密な名前付きアセンブリ](../../../../framework/app-domains/strong-named-assemblies.md)」を参照してください。  
   
 -   アセンブリは、必要な場合にのみメモリに読み込まれます。 使用されない場合、読み込まれることはありません。 これは、アセンブリを使用すると、大規模なプロジェクト内のリソースを効率的に管理できることを意味します。  
   
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/09/2017
   
  アセンブリには、コンテンツ、バージョン管理、および依存関係に関する情報が含まれているため、Visual Basic で作成するアプリケーションは、正常に機能するために Windows のレジストリ値に依存するはありません。 アセンブリは、.dll の競合を減らし、アプリケーションの信頼性を高め、配置を容易にします。 多くの場合、 NET ベースのアプリケーションは、対象のコンピュータにそのファイルをコピーするだけでインストールすることができます。  
   
- 詳細については、「[アセンブリ マニフェスト](../../../../../docs/framework/app-domains/assembly-manifest.md)」を参照してください。  
+ 詳細については、「[アセンブリ マニフェスト](../../../../framework/app-domains/assembly-manifest.md)」を参照してください。  
   
 ## <a name="adding-a-reference-to-an-assembly"></a>アセンブリへの参照の追加  
  アセンブリを使用するには、アセンブリへの参照を追加する必要があります。 次に、[Imports ステートメント](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)を使用して、使用する項目の名前空間を選択します。 アセンブリが参照されてインポートされた後、名前空間のアクセス可能なすべてのクラス、プロパティ、メソッド、およびのその他のメンバーのコードは、ソース ファイルの一部であるかのようにアプリケーションで使用することができます。  
@@ -57,8 +57,8 @@ ms.lasthandoff: 12/09/2017
 > [!NOTE]
 >  Visual Studio でアセンブリをビルドするには、**[ビルド]** メニューの **[ビルド]** を選択します。  
   
-## <a name="see-also"></a>関連項目  
- [共通言語ランタイムのアセンブリ](../../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+## <a name="see-also"></a>参照  
+ [共通言語ランタイムのアセンブリ](../../../../framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [フレンド アセンブリ (Visual Basic)](friend-assemblies.md)  
  [方法: アセンブリ共有する他のアプリケーション (Visual Basic)](how-to-share-an-assembly-with-other-applications.md)  
  [方法: ロードおよびアンロード アセンブリ (Visual Basic)](how-to-load-and-unload-assemblies.md)  

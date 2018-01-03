@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a780e35d9eb5420138587102aee753e96a8eff9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb264374b3f9ff4e1f424f69565751f69ed810e0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="inserting-an-image-from-a-file"></a>ファイルからの画像の挿入
 データ ソースのフィールドの型に応じて、バイナリ データまたは文字データとして、BLOB (バイナリ ラージ オブジェクト) をデータベースに書き込むことができます。 BLOB は `text`、`ntext`、および `image` データ型を示す一般的な用語であり、通常ドキュメントとピクチャが含まれています。  
@@ -140,8 +141,8 @@ public static byte[] GetPhoto(string filePath)
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [コマンドを使用してデータを変更するには](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+## <a name="see-also"></a>参照  
+ [コマンドを使用したデータ変更](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
  [バイナリ データの取得](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
  [SQL Server のバイナリ データと大きな値のデータ](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
  [SQL Server データ型のマッピング](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  

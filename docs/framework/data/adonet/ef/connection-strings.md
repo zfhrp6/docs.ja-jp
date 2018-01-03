@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b141f7bb31374c403f8d802a5df2ff1329b1e079
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 64f2d0fbc54900443046bd2c71215cc0928c8658
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-strings"></a>接続文字列
 接続文字列には、データ プロバイダーからデータ ソースにパラメーターとして渡す初期化情報が含まれています。 接続文字列は接続を開くときに解析され、その構文はデータ プロバイダーによって異なります。 Entity Framework で使用される接続文字列には、Entity Framework のサポート基盤である ADO.NET データ プロバイダーへの接続に使用される情報が含まれています。 また、必要なモデル ファイルおよびマッピング ファイルに関する情報も含まれています。  
@@ -117,8 +118,8 @@ Metadata=.\
   
  `DataDirectory` 置換文字列と ~ 演算子の解決は非再帰型です。 たとえば、`DataDirectory` に `~` 文字が含まれる場合は、例外が発生します。 これにより、無限再帰が回避されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ プロバイダーの操作](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)  
- [展開に関する考慮事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
+ [配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
  [接続とトランザクションを管理します。](http://msdn.microsoft.com/en-us/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
  [接続文字列](../../../../../docs/framework/data/adonet/connection-strings.md)

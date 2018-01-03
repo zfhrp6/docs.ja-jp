@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: bcf0e640e6b6b45ddb87070c7d6df2fa6dadc834
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1f736554cd50a5ca2bd45dfab2f41ba672601f29
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-transform-incoming-claims"></a>方法: 入力方向の要求の変換
 ## <a name="applies-to"></a>対象  
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/18/2017
   
 -   手順 2 – カスタム ClaimsAuthenticationManager を使用してクレーム変換を実装する  
   
--   手順 3 – ソリューションのテスト  
+-   手順 3 – ソリューションをテストする  
   
 ## <a name="objectives"></a>目的  
   
@@ -60,7 +61,7 @@ ms.lasthandoff: 10/18/2017
   
 -   手順 2 – カスタム ClaimsAuthenticationManager を使用してクレーム変換を実装する  
   
--   手順 3 – ソリューションのテスト  
+-   手順 3 – ソリューションをテストする  
   
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>手順 1 – 簡単な ASP.NET Web フォーム アプリケーションを作成する  
  この手順では、新しい ASP.NET Web フォーム アプリケーションを作成します。  
@@ -171,7 +172,7 @@ ms.lasthandoff: 10/18/2017
     <claimsAuthenticationManager type="ClaimsTransformation.ClaimsTransformationModule, ClaimsTransformation" />  
     ```  
   
-## <a name="step-3--test-your-solution"></a>手順 3 – ソリューションのテスト  
+## <a name="step-3--test-your-solution"></a>手順 3 – ソリューションをテストする  
  この手順では、ASP.NET Web フォーム アプリケーションをテストし、ユーザーがフォーム認証を使用してサインインするときに、クレームが表示されることを確認します。  
   
 #### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>フォーム認証を使用してクレーム用の ASP.NET Web フォーム アプリケーションをテストするには  

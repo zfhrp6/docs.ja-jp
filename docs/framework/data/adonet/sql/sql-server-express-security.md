@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 2052656a524eafd7b9a137ac7d5006aba53fc075
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 77658b1c4b40090b8e532f1a0566ecb927328d65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-express-security"></a>SQL Server Express のセキュリティ
 Microsoft SQL Server Express Edition (SQL Server Express) は Microsoft SQL Server をベースとしており、同データベース エンジンの多くの機能をサポートしています。 必須ではない機能やネットワーク接続は、既定では無効にされています。 これは悪意のあるユーザーに攻撃の隙をできるだけ与えないようにするための配慮です。  
@@ -47,7 +48,7 @@ Microsoft SQL Server Express Edition (SQL Server Express) は Microsoft SQL Serv
 |[管理者以外のユーザー インスタンス](http://msdn.microsoft.com/library/ms143684.aspx)SQL Server オンライン ブック|ユーザー インスタンスの作成方法および配置方法について説明します。|  
 |[SQL Server Express ユーザー インスタンス](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|ADO.NET アプリケーションにおけるユーザー インスタンスの機能について説明します。 ユーザー インスタンスを有効にする方法、<xref:System.Data.SqlClient.SqlConnection> を使ってユーザー インスタンスに接続する方法、ユーザー インスタンスの有効期間、ユーザー インスタンスのシナリオについて情報を提供します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL Server のセキュリティ](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [SQL Server Express ユーザー インスタンス](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

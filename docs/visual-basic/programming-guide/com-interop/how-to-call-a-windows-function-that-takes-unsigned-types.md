@@ -23,11 +23,11 @@ ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5b1a306ba694d4bbfc4719fc728112964b1ce40f
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: a3663ca5d3e0e2c94530d4a19ebff0022f495f3d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>方法: 符号なしの型を使用する Windows の機能を呼び出す (Visual Basic)
 クラス、モジュール、または符号なし整数型のメンバーを含む構造体を使用している場合にこれらのメンバーにアクセスできます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
@@ -77,7 +77,7 @@ ms.lasthandoff: 12/09/2017
     ```  
   
     > [!CAUTION]
-    >  `UInteger`、 `ULong`、 `UShort`、および`SByte`データ型がないの一部、[言語非依存および言語非依存コンポーネント](../../../../docs/standard/language-independence-and-language-independent-components.md)(CLS)、CLS 準拠コードのコンポーネントを利用できないようにします。それらを使用します。  
+    >  `UInteger`、 `ULong`、 `UShort`、および`SByte`データ型がないの一部、[言語非依存および言語非依存コンポーネント](../../../standard/language-independence-and-language-independent-components.md)(CLS)、CLS 準拠コードのコンポーネントを利用できないようにします。それらを使用します。  
   
     > [!IMPORTANT]
     >  Windows アプリケーション プログラミング インターフェイス (API) など、アンマネージ コードへの呼び出しを行うには、潜在的なセキュリティ リスクに対するコードを公開します。  
@@ -85,7 +85,7 @@ ms.lasthandoff: 12/09/2017
     > [!IMPORTANT]
     >  Windows API を呼び出すと、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [整数データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
  [UInteger データ型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  

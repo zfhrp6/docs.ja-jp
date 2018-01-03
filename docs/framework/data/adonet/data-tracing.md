@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a71b28a1653b72d212455e99f8aa0101bb74e7a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fcd149b34282ef6ae21593e4549478bab91e0189
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-tracing-in-adonet"></a>ADO.NET のデータ追跡
 ADO.NET は、組み込みデータ トレース機能を特徴としています。この機能は、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]、Oracle、OLE DB、および ODBC 用の .NET データ プロバイダーと、ADO.NET <xref:System.Data.DataSet> および [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] ネットワーク プロトコルによりサポートされています。  
@@ -61,7 +62,7 @@ add event rpc_completed (action (client_connection_id))
 add target ring_buffer with (track_causality=on)  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework のネットワークのトレース](../../../../docs/framework/network-programming/network-tracing.md)  
  [アプリケーションのトレースとインストルメント](../../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

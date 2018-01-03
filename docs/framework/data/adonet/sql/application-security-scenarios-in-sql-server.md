@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d3791ea4084a6ae568fef1e76680f91434284639
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8576ba3ae26788076fedf71a1f8028afbd263378
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>SQL Server におけるアプリケーション セキュリティのシナリオ
 安全な SQL Server クライアント アプリケーションを作成するにあたって、絶対に正しいという唯一の方法はありません。 アプリケーションの要件、配置環境、およびユーザー数は、アプリケーションごとに異なります。 配置した当初は十分なセキュリティが確保されたアプリケーションも、時間の経過と共に安全性が低下してゆくことが考えられます。 将来発生する脅威を正確に予測することは不可能です。  
@@ -45,29 +46,29 @@ ms.lasthandoff: 11/21/2017
  Windows 認証を使用する場合でも、`sa` アカウントに必ず強力なパスワードを割り当てます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [SQL Server でストアド プロシージャを使用した権限の管理](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
+ [SQL Server でのストアド プロシージャを使用したアクセス許可の管理](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
  ストアド プロシージャを使用して権限を管理したり、データ アクセスを制御したりする方法について説明します。 ストアド プロシージャは、セキュリティ上のさまざまな脅威に対抗する手段として効果的です。  
   
- [SQL Server での動的 SQL の安全な作成](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
+ [SQL Server での安全な動的 SQL の作成](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
  ストアド プロシージャを使用して、安全な動的 SQL を作成する手法について説明します。  
   
- [SQL Server でストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
+ [SQL Server でのストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
  証明書を使ってストアド プロシージャに署名することで、ユーザーが直接アクセスしなくてもデータを利用できるようにする方法について説明します。 これにより、操作を直接実行するための権限が呼び出し元になくても、ストアド プロシージャで操作を実行できます。  
   
- [SQL Server での偽装アクセス許可のカスタマイズ](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
+ [SQL Server での借用を使用したアクセス許可のカスタマイズ](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
  EXECUTE AS 句を使って他のユーザーの権限を借用する方法について説明します。 権限の借用では、呼び出し元の実行コンテキストが、特定のユーザーの実行コンテキストに切り替えられます。  
   
- [SQL Server で行レベルの権限の付与](../../../../../docs/framework/data/adonet/sql/granting-row-level-permissions-in-sql-server.md)  
+ [SQL Server における行レベルのアクセス許可の付与](../../../../../docs/framework/data/adonet/sql/granting-row-level-permissions-in-sql-server.md)  
  データ アクセスを制限する行レベルの権限を実装する方法について説明します。  
   
- [SQL Server でアプリケーション ロールを作成します。](../../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)  
+ [SQL Server でのアプリケーション ロールの作成](../../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)  
  アプリケーション ロールの機能について説明します。  
   
- [SQL server データベースにまたがるアクセスを有効にします。](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
+ [SQL Server での複数データベースにまたがるアクセスの有効化](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
  セキュリティを損なうことなく複数データベースにまたがるアクセスを有効にする方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL Server のセキュリティ](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [SQL Server のセキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

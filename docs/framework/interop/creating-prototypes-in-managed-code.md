@@ -28,11 +28,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 59cfb9160ccd84c41d71ad29b417b05fb4a17233
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9a85da0d1714c263b446c88b7c18e934817aea94
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-prototypes-in-managed-code"></a>マネージ コードでのプロトタイプの作成
 このトピックは、アンマネージ関数にアクセスする方法について説明し、マネージ コードでメソッドの定義の注釈を設定するいくつかの属性フィールドを紹介しています。 プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)」を参照してください。  
@@ -229,7 +230,7 @@ interface IDemandStubsItf
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
  [エントリ ポイントの指定](../../../docs/framework/interop/specifying-an-entry-point.md)  
  [文字セットの指定](../../../docs/framework/interop/specifying-a-character-set.md)  

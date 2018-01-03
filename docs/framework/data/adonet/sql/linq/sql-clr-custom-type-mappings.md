@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 82456bf5b892bc32a6eba0d3cf074b4adc76a305
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0df2c3eea706bae92a9cbef9165c374e8efb368a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-clr-custom-type-mappings"></a>SQL と CLR のカスタム型マッピング
 SQL Server と共通言語ランタイム (CLR) 間の型マッピングは、SQLMetal コマンド ライン ツールのオブジェクト リレーショナル デザイナー (O/R デザイナー) を使用すると、自動的に指定されます。  
@@ -41,6 +42,6 @@ SQL Server と共通言語ランタイム (CLR) 間の型マッピングは、SQ
 ## <a name="incorporating-database-changes"></a>データベースの変更の組み込み  
  データベースを変更すると、DBML ファイルを更新して、これらの変更を反映する必要があります。 その 1 つの方法として、新しい DBML ファイルを自動作成してから型マッピングのカスタマイズをやり直します。 もう 1 つは、新しい DBML ファイルとカスタマイズした DBML ファイルを比較し、カスタム DBML ファイルを手動で更新してデータベースの変更を反映させる方法です。  
   
-## <a name="see-also"></a>関連項目  
- [SQL CLR の型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
+## <a name="see-also"></a>参照  
+ [SQL と CLR の型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
  [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)

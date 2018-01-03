@@ -15,11 +15,11 @@ ms.assetid: 7237b766-b44d-4cc5-9a3c-885348a7d9e4
 caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a6f602e0b0b23345bf1f5aae843bd44bd2642bc9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 62a9a4bf3428f3ee731e7ecc63be51dbf3076ee4
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="optioncompare"></a>/optioncompare
 文字列比較の方法を指定します。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="to-set-optioncompare-in-the-visual-studio-ide"></a>Visual Studio IDE で/optioncompare を設定するには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。   
   
 2.  **[コンパイル]** タブをクリックします。  
   
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/21/2017
 vbc /optioncompare:binary projFile.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  
  [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)  

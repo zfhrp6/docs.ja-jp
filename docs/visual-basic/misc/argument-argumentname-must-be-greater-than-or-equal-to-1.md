@@ -9,11 +9,11 @@ ms.assetid: e7769937-5227-4530-89ca-3d6ffc505005
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ed31138dc4e255248c30cb6e0fe9aa9b251ee90a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5055894c808d3f38f1aa9c53ed267ce702ad62ec
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="argument-39ltargumentnamegt39-must-be-greater-than-or-equal-to-1"></a>引数 &#39;&lt;argumentname&gt;&#39; 1 以上にする必要があります
 引数の値が 1 未満です。  
@@ -24,6 +24,6 @@ ms.lasthandoff: 11/21/2017
   
 2.  引数が計算によって指定される場合は、計算で処理される値を確認します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [引数の値渡しと参照渡し](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)  
- [パラメーターを渡す Visual Basic 6.0 ユーザー向けの機能](http://msdn.microsoft.com/en-us/0fa2b0dc-aa1c-4797-bbd6-aa13c611cab2)
+

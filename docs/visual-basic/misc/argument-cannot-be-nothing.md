@@ -9,11 +9,11 @@ ms.assetid: 2abd995b-36a5-45f0-b3c1-6e0c3b31a875
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3a54cf0ed9e2b307174c1be0e853a920dfc94202
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5de506c4a24f787dbb9e2d96f0e9e228f7e92288
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="argument-cannot-be-nothing"></a>引数には Nothing を使用できません
 値が必要な引数に null 値を指定しました。  
@@ -24,5 +24,5 @@ ms.lasthandoff: 10/18/2017
   
 -   値が正しく計算されることを確認してください。  
   
-## <a name="see-also"></a>関連項目  
- [例外のトラブルシューティング : System.NullReferenceException](http://msdn.microsoft.com/library/4822b0b4-8105-43fb-887a-3cc51ff02899)
+## <a name="see-also"></a>参照  
+ <xref:System.NullReferenceException>

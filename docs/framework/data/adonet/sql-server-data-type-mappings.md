@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1a2fbbdc2ad89c562ef6fd0e0174ef0b06a93408
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 09be97c0c875b7fd7427bc4327deb95be99984f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-data-type-mappings"></a>SQL Server データ型のマッピング
 SQL Server と .NET Framework は異なる型システムを使用しています。 たとえば、.NET Framework の <xref:System.Decimal> 構造体の最大小数点以下桁数は 28 ですが、SQL Server の decimal データ型と numeric データ型の最大小数点以下桁数は 38 です。 データを読み書きするときにデータの整合性を保つために、<xref:System.Data.SqlClient.SqlDataReader> では、.NET Framework の型を返すアクセサー メソッドと共に、<xref:System.Data.SqlTypes> のオブジェクトを返す SQL Server 固有の型指定されたアクセサー メソッドを公開しています。 SQL Server の型と .NET Framework の型は、両方とも <xref:System.Data.DbType> および <xref:System.Data.SqlDbType> クラスの列挙によって表されます。これらは <xref:System.Data.SqlClient.SqlParameter> データ型を指定するときに使用できます。  
@@ -64,9 +65,9 @@ SQL Server と .NET Framework は異なる型システムを使用していま�
 ## <a name="includessnoversionincludesssnoversion-mdmd-books-online-reference"></a>[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]オンライン ブックのリファレンス  
  詳細については[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]データ型を参照してください[データ型 (データベース エンジン)](http://go.microsoft.com/fwlink/?LinkID=107468)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL Server データ型と ADO.NET](../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
  [SQL Server のバイナリ データと大きな値のデータ](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
  [ADO.NET でのデータ型のマッピング](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
- [パラメーターとパラメーターのデータ型の構成](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
+ [パラメーターおよびパラメーター データ型の構成](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

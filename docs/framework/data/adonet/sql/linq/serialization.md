@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 844f206219fed527b73b5125ab82f1c044c59b5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 60f73644a047230a590e75f095575cf85140f3a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="serialization"></a>シリアル化
 このトピックについて説明[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]のシリアル化機能します。 デザイン時のコード生成でシリアル化を追加する方法と、実行時の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のクラスのシリアル化の動作について説明します。  
@@ -82,7 +83,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[DLinqSerialization#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#7)]
  [!code-vb[DLinqSerialization#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#7)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
  [SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)  
- [方法: エンティティをシリアル化](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)
+ [方法 : エンティティをシリアル化可能にする](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)

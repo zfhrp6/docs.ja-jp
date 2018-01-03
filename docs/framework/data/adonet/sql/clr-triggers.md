@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7c0f93a5c4e515db937945d374ee7cbe8d9b3cf8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cfe6a2137b3f3c9b5bcde6de0f0c692904bd7529
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-triggers"></a>CLR トリガー
 トリガーは、言語イベントが実行されると自動的に実行される特殊な種類のストアド プロシージャです。 Microsoft SQL Server が .NET Framework 共通言語ランタイム (CLR) と統合されているため、任意の .NET Framework 言語を使用して CLR トリガーを作成できます。  
@@ -28,6 +29,6 @@ ms.lasthandoff: 11/21/2017
   
 1.  [CLR トリガー](http://go.microsoft.com/fwlink/?LinkId=115397)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ コードでの SQL Server 2005 のオブジェクトの作成](http://msdn.microsoft.com/en-us/5358a825-e19b-49aa-8214-674ce5fed1da)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -12,11 +12,11 @@ ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2082d8169dc325b86957e7a54c6e49304660aa94
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 42ed9866f168c06e8641ace712da58e953951676
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Windows フォーム アプリケーションの基礎 (Visual Basic)
 重要な部分[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ユーザーのコンピューターでローカルに実行する Windows フォーム アプリケーションを作成する機能です。 Visual Studio を使用して、Windows フォームを使用して、アプリケーションとユーザー インターフェイスを作成することができます。 Windows フォーム アプリケーションからのクラスをベースに構築、<xref:System.Windows.Forms>名前空間。  
@@ -24,11 +24,11 @@ ms.lasthandoff: 12/09/2017
 ## <a name="designing-windows-forms-applications"></a>設計の Windows フォーム アプリケーション  
  Windows フォームと Windows サービス アプリケーションを作成することができます[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]です。 詳細については、次のトピックを参照してください。  
   
--   [Windows フォームの概要](../../../../docs/framework/winforms/getting-started-with-windows-forms.md)です。 作成し、Windows フォームをプログラミングする方法についてを説明します。  
+-   [Windows フォームの概要](../../../framework/winforms/getting-started-with-windows-forms.md)です。 作成し、Windows フォームをプログラミングする方法についてを説明します。  
    
--   [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)です。 Windows フォーム コントロールの使用の詳細を示すトピックのコレクションです。  
+-   [Windows フォーム コントロール](../../../framework/winforms/controls/index.md)です。 Windows フォーム コントロールの使用の詳細を示すトピックのコレクションです。  
   
--   [Windows サービス アプリケーション](../../../../docs/framework/windows-services/index.md)です。 Windows サービスを作成する方法を説明するトピックを一覧表示します。  
+-   [Windows サービス アプリケーション](../../../framework/windows-services/index.md)です。 Windows サービスを作成する方法を説明するトピックを一覧表示します。  
   
 ## <a name="building-rich-interactive-user-interfaces"></a>リッチで対話型のユーザー インターフェイスの構築  
  Windows フォームのスマート クライアント コンポーネントは、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、読み取りと書き込み、ファイル システムなど、アプリケーションの一般的なタスクを有効にするマネージ ライブラリのセット。 などの開発環境を使用して[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、ネットワーク経由でをリモート コンピューターで情報を表示したり、ユーザーから入力を要求、通信する Windows フォーム アプリケーションを作成することができます。  
@@ -36,10 +36,10 @@ ms.lasthandoff: 12/09/2017
  Windows フォームでは、フォームは、ユーザーに情報を表示しているビジュアル サーフェイスです。 通常、Windows フォーム アプリケーションをビルドするには、コントロールをフォームに配置し、マウスのクリックやキーの押下などのユーザー アクションへの応答を開発します。 "*コントロール*" は、データを表示したりデータ入力を受け入れたりする独立したユーザー インターフェイス (UI) 要素です。  
   
 ### <a name="events"></a>イベント  
- ユーザーがフォームまたはコントロールのコントロールのいずれかに対して、イベントが生成されます。 アプリケーションは、コードを使用してこれらのイベントに反応し、イベントが発生したときにそのイベントを処理します。 詳細については、「[Windows フォーム内でのイベント ハンドラーの作成](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)」を参照してください。  
+ ユーザーがフォームまたはコントロールのコントロールのいずれかに対して、イベントが生成されます。 アプリケーションは、コードを使用してこれらのイベントに反応し、イベントが発生したときにそのイベントを処理します。 詳細については、「[Windows フォーム内でのイベント ハンドラーの作成](../../../framework/winforms/creating-event-handlers-in-windows-forms.md)」を参照してください。  
   
 ### <a name="controls"></a>コントロール  
- Windows フォームには、さまざまなフォームに配置できるコントロールが含まれています。 テキスト ボックス、ボタン、ドロップダウン リスト ボックス、ラジオ ボタン、および Web ページを表示するコントロール。 フォーム上で使用できるすべてのコントロールの一覧については、「[Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)」を参照してください。 既存のコントロールがニーズを満たしていない場合に、Windows フォームは <xref:System.Windows.Forms.UserControl> クラスを使用した独自のカスタム コントロールの作成もサポートしています。  
+ Windows フォームには、さまざまなフォームに配置できるコントロールが含まれています。 テキスト ボックス、ボタン、ドロップダウン リスト ボックス、ラジオ ボタン、および Web ページを表示するコントロール。 フォーム上で使用できるすべてのコントロールの一覧については、「[Windows フォームで使用するコントロール](../../../framework/winforms/controls/controls-to-use-on-windows-forms.md)」を参照してください。 既存のコントロールがニーズを満たしていない場合に、Windows フォームは <xref:System.Windows.Forms.UserControl> クラスを使用した独自のカスタム コントロールの作成もサポートしています。  
   
  Windows フォームには、Microsoft Office のようなハイエンド アプリケーションの機能をエミュレートする豊富な UI コントロールが用意されています。 使用して、<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.MenuStrip>コントロール、ツールバーとメニュー テキストとイメージを含む、サブメニューを表示および他のコントロールのテキスト ボックスやコンボ ボックスなどのホストを作成できます。  
   
@@ -53,9 +53,9 @@ ms.lasthandoff: 12/09/2017
 |目的|参照トピック|  
 |--------|---------|  
 |使用して新しい Windows フォーム アプリケーションを作成します。[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/en-us/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
-|フォーム上のコントロールを使用します。|[方法: Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
-|使用してグラフィックスを作成します。<xref:System.Drawing>|[グラフィックス プログラミングについて](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
-|カスタム コントロールを作成します。|[方法: UserControl クラスを継承する](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
+|フォーム上のコントロールを使用します。|[方法: Windows フォームにコントロールを追加する](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
+|使用してグラフィックスを作成します。<xref:System.Drawing>|[グラフィックス プログラミングについて](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
+|カスタム コントロールを作成します。|[方法: UserControl クラスを継承する](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ## <a name="displaying-and-manipulating-data"></a>データの表示と操作  
  多くのアプリケーションは、データベース、XML ファイル、XML Web サービス、またはその他のデータ ソースからデータを表示する必要があります。 Windows フォームと呼ばれる、柔軟に制御を提供する、<xref:System.Windows.Forms.DataGridView>のすべてのデータが独自のセルを占有するので、このような従来の行と列の形式で表形式のデータを表示するためのコントロールです。 使用して<xref:System.Windows.Forms.DataGridView>個々 のセルの外観をカスタマイズ、任意の行と列のロックおよびその他の機能のセルの内部の複雑なコントロールを表示できます。  
@@ -72,7 +72,7 @@ ms.lasthandoff: 12/09/2017
   
 |目的|参照トピック|  
 |--------|---------|  
-|使用して、<xref:System.Windows.Forms.BindingSource>コンポーネント|[方法: デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
+|使用して、<xref:System.Windows.Forms.BindingSource>コンポーネント|[方法: デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
 |扱う[!INCLUDE[vstecado](~/includes/vstecado-md.md)]データ ソース|[方法: Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する](https://msdn.microsoft.com/library/ya3sah92.aspx)|  
 |データ ソース ウィンドウを使用します。|[チュートリアル: Windows フォームでのデータの表示](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
@@ -98,10 +98,10 @@ ms.lasthandoff: 12/09/2017
   
 |目的|参照トピック|  
 |--------|---------|  
-|フォームの内容を印刷します。|[方法: Windows フォームでグラフィックスを印刷する](../../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
-|Windows フォームのセキュリティについての詳細|[Windows フォームのセキュリティの概要](../../../../docs/framework/winforms/security-in-windows-forms-overview.md)|  
+|フォームの内容を印刷します。|[方法: Windows フォームでグラフィックスを印刷する](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
+|Windows フォームのセキュリティについての詳細|[Windows フォームのセキュリティの概要](../../../framework/winforms/security-in-windows-forms-overview.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  
- [Windows フォームの概要](../../../../docs/framework/winforms/windows-forms-overview.md)  
+ [Windows フォームの概要](../../../framework/winforms/windows-forms-overview.md)  
  [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)

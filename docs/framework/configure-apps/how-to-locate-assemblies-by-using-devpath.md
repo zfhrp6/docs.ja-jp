@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 70448f7ce4c00274dde14bace603e5c8852bf148
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4ee4200a67ef9d9d123be3bc32b02ac61512d23b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-locate-assemblies-by-using-devpath"></a>方法 : DEVPATH を使用してアセンブリを指定する
 開発者は、複数のアプリケーションの構築、共有アセンブリが正常に動作するかどうかを確認する可能性があります。 開発サイクル中に、グローバル アセンブリ キャッシュにアセンブリを配置継続的に、代わりに、開発者は、アセンブリのビルド出力ディレクトリを指す DEVPATH 環境変数を作成できます。  
@@ -53,5 +54,5 @@ ms.lasthandoff: 10/18/2017
 > [!NOTE]
 >  この設定を使用して、開発時のみです。 ランタイムは、DEVPATH で見つかった厳密な名前のアセンブリのバージョンをチェックしません。 最初に見つかったアセンブリは単に使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework アプリの構成](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)

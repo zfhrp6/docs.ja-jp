@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c3e8ac8b5a97c62bb173fba57ac8aeb26a1dad42
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f041fc4e42d2b1e18ef701cd80396e92e571bff0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="floating-point-numbers"></a>浮動小数点数
 このトピックでは、開発者が [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] で浮動小数点数を扱う際によく遭遇する問題について説明します。 これらはコンピューターによる浮動小数点数の格納方法に起因する問題であり、<xref:System.Data.SqlClient> や <xref:System.Data.OracleClient> など、特定のプロバイダーに固有の問題ではありません。  
@@ -28,6 +29,6 @@ ms.lasthandoff: 11/21/2017
   
  等価比較の問題を回避するには、最下位桁の差異を無視できるようにアプリケーションをコーディングすることを検討してください。 たとえば、2 つの数値の等価性を比較するのではなく、一方の数値からもう一方の数値を減算するようにします。 その差が丸め処理の許容範囲内であれば、2 つの数値が等価であるものとして処理できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [浮動小数点数の精度の低下](http://msdn.microsoft.com/library/1acb1add-ac06-4134-a2fd-aff13d8c4c15)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

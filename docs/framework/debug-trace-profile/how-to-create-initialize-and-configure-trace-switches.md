@@ -22,11 +22,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f5fa8a0fbe6dc08811162ba9b1d4198af9256fc4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 41e41f65b82061cebc52485ed08176633c45613d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>方法 : トレース スイッチを作成、初期化、および構成する
 トレース スイッチを使用すると、トレース出力を有効/無効にしたり、トレースの出力をフィルター処理したりできます。  
@@ -133,8 +134,8 @@ ms.lasthandoff: 11/21/2017
     </system.diagnostics>  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
- [方法: アプリケーション コードにトレース ステートメントを追加](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
+ [方法 : アプリケーション コードにトレース ステートメントを追加する](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
  [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)  
  [トレースおよびデバッグ設定のスキーマ](../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

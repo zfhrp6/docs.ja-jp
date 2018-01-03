@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dabb780e24d1316a3d736f7d1f3da249704a4ff4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a37758ed497211ba0550666ec4857666041c5285
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lteventgt-element-net-native"></a>&lt;Event&gt; 要素 (.NET ネイティブ)
 イベントにランタイム リフレクション ポリシーを適用します。  
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="remarks"></a>コメント  
  イベントのポリシーが明示的に定義されていない場合は、その親要素の実行時ポリシーを継承します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

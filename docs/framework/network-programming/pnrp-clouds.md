@@ -12,11 +12,12 @@ caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 1b9769d4e3936e127407f68de81f9b5b5da4fbc0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f142c7aaa71ab2dbee1d2955f2c235a65e6c8bfa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pnrp-clouds"></a>PNRP クラウド
 PNRP "クラウド" は、ネットワーク経由で相互に通信できるノードのセットを表します。 "クラウド" という用語は、"ピア メッシュ" や "ピアツーピア グラフ" と同義です。  
@@ -40,6 +41,6 @@ PNRP "クラウド" は、ネットワーク経由で相互に通信できるノ
   
  クラウド インスタンスを作成または取得した後は、それにピア名を登録して、既知のピアのメッシュを作成できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Net.PeerToPeer.Cloud>  
  [ピア名解決プロトコル](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)

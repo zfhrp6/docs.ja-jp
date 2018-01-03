@@ -15,11 +15,11 @@ ms.assetid: f33126c5-d7c4-43e2-8e36-4ae3f0703d97
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 99f5129d5cb43cddfb17731f337a72fae22d3626
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0bc2f5c2dca1fbd6039f10ddd6204673f60a679d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="yield-statement-visual-basic"></a>Yield ステートメント (Visual Basic)
 コレクションの次の要素を送信、`For Each...Next`ステートメントです。  
@@ -34,7 +34,7 @@ Yield expression
   
 |用語|定義|  
 |---|---|  
-|`expression`|必須です。 反復子関数の型に暗黙的に変換される式または`Get`アクセサーが含まれている`Yield`ステートメントです。|  
+|`expression`|必須。 反復子関数の型に暗黙的に変換される式または`Get`アクセサーが含まれている`Yield`ステートメントです。|  
   
 ## <a name="remarks"></a>コメント  
  `Yield`ステートメントは、一度にコレクションの 1 つの要素を返します。 `Yield`ステートメントが iterator 関数に含まれるまたは`Get`アクセサーをコレクションに対するカスタム イテレーションを実行します。  
@@ -47,7 +47,7 @@ Yield expression
   
  「生成」予約語ではないあり、特別な意味で使用されている場合にのみ、`Iterator`関数または`Get`アクセサー。  
   
- 反復子関数の詳細については、`Get`アクセサーを参照してください[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)です。  
+ 反復子関数の詳細については、`Get`アクセサーを参照してください[反復子](../../programming-guide/concepts/iterators.md)です。  
   
 ## <a name="iterator-functions-and-get-accessors"></a>反復子関数と Get アクセサー  
  反復子関数の宣言または`Get`アクセサーは、次の要件を満たす必要があります。  
@@ -60,7 +60,7 @@ Yield expression
   
  Iterator 関数は、イベント、コンス トラクター、静的コンス トラクターまたは静的のデストラクターで発生することはできません。  
   
- Iterator 関数では、匿名の関数を指定できます。 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
+ Iterator 関数では、匿名の関数を指定できます。 詳細については、「 [反復子](../../programming-guide/concepts/iterators.md)」を参照してください。  
   
 ## <a name="exception-handling"></a>例外処理  
  A`Yield`内のステートメントに含めることができます、`Try`のブロック、[を再試行してください.キャッチしてください.Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)です。 A`Try`を持つブロック、`Yield`ステートメントが持つことができます`Catch`をブロックしてができます、`Finally`ブロックします。  
@@ -97,8 +97,7 @@ Next
   
  [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_2.vb)]  
   
- その他の例では、次を参照してください。[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)です。  
+ その他の例では、次を参照してください。[反復子](../../programming-guide/concepts/iterators.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)  
+## <a name="see-also"></a>参照  
  [ステートメント](../../../visual-basic/language-reference/statements/index.md)

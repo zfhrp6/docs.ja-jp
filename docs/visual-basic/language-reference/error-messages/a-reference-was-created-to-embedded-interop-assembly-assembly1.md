@@ -15,11 +15,11 @@ ms.assetid: 520e39cb-8ab6-46f5-aa00-08afd51b4b7c
 caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bc2fbb044fc839aa24abf3dc1ea864457efb0653
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: aaaa7460ade00ad4232807ce11ee125e270742bf
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="a-reference-was-created-to-embedded-interop-assembly-39ltassembly1gt39-because-of-an-indirect-reference-to-that-assembly-from-assembly-39ltassembly2gt39"></a>参照が埋め込まれた相互運用機能アセンブリ &#39; に作成されました&lt;assembly1&gt;&#39;アセンブリ &#39; からそのアセンブリへの間接参照のため、;&lt;assembly2&gt;&#39;です。
 埋め込まれた相互運用機能アセンブリ '\<assembly1>' への参照が作成されました。これは、そのアセンブリへの間接参照がアセンブリ '\<assembly2>' によって作成されたためです。 両方のアセンブリで '相互運用機能型の埋め込み' プロパティを変更することを検討してください。  
@@ -37,6 +37,6 @@ ms.lasthandoff: 11/21/2017
   
 -   assembly1 の `Embed Interop Types` プロパティを `False` に設定すると警告を回避できます。 この例では、相互運用機能型の詳細については、プライマリ相互運用機能アセンブリ (PIA) によって提供されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [/link (Visual Basic)](../../../visual-basic/reference/command-line-compiler/link.md)  
- [プライマリ相互運用機能アセンブリを使ったプログラミング](http://msdn.microsoft.com/en-us/306fa1d6-0703-4004-9e93-d0a57f1be81e)
+ [アンマネージ コードとの相互運用](../../../framework/interop/index.md)

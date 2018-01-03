@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: b1cca286fc967631c60aa02a1318fe24120e05b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 48f9eef329f5d2e0e751fd2a03b0d3af9ddc355c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltidentityconfigurationgt"></a>&lt;identityConfiguration&gt;
 サービス レベルの id 設定を指定します。  
@@ -52,13 +53,13 @@ ms.lasthandoff: 11/21/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<キャッシュ >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|セッション トークンやトークン リプレイ検出のために使用されるキャッシュに登録します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 省略可能です。|  
-|[\<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|トークン ハンドラーを使用して証明書の検証の設定を制御します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 省略可能です。|  
-|[\<claimsAuthenticationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|入力方向の要求の要求認証マネージャーに登録します。 省略可能です。|  
-|[\<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|入力方向の要求の要求の承認マネージャーを登録します。 省略可能です。|  
-|[\<claimTypeRequired >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|必要な受信セキュリティ トークンのクレームのセットを指定します。 省略可能です。|  
-|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|セキュリティ トークン ハンドラーのコレクションを指定します。 セキュリティ トークン ハンドラーの 0 個以上のコレクションを指定することができます。 省略可能です。|  
-|[\<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|トークン リプレイ検出を有効にし、トークンの有効期限を指定します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 省略可能です。|  
+|[\<キャッシュ >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|セッション トークンやトークン リプレイ検出のために使用されるキャッシュに登録します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 任意。|  
+|[\<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|トークン ハンドラーを使用して証明書の検証の設定を制御します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 任意。|  
+|[\<claimsAuthenticationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|入力方向の要求の要求認証マネージャーに登録します。 任意。|  
+|[\<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|入力方向の要求の要求の承認マネージャーを登録します。 任意。|  
+|[\<claimTypeRequired >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|必要な受信セキュリティ トークンのクレームのセットを指定します。 任意。|  
+|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|セキュリティ トークン ハンドラーのコレクションを指定します。 セキュリティ トークン ハンドラーの 0 個以上のコレクションを指定することができます。 任意。|  
+|[\<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|トークン リプレイ検出を有効にし、トークンの有効期限を指定します。 サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。 任意。|  
   
 ### <a name="parent-elements"></a>親要素  
   
@@ -102,6 +103,6 @@ ms.lasthandoff: 11/21/2017
 </system.identityModel>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Configuration.IdentityConfiguration>  
  <xref:System.IdentityModel.Configuration.IdentityConfigurationElement>

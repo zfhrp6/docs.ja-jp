@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c040b2a9a4c806d6e0f82ea2b22113b44df7d4c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a042d1b1e78afee632dea20bbafe2383e50430c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="find-the-minimum-value-in-a-numeric-sequence"></a>一連の数値の中の最小値の検出
 一連の数値の中から最小値を返すには、<xref:System.Linq.Enumerable.Min%2A> 演算子を使用します。  
@@ -81,6 +82,6 @@ ms.lasthandoff: 11/21/2017
   
  `Konbu`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [集計クエリ](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
  [サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

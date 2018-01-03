@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 2299a974fc9c6af9e5fba0de6e16ab72de8b5e10
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7765779187156866c20374b60a4b541d36ac9a5b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>SQL Server と System.Transactions の統合
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] バージョン 2.0 では、 <xref:System.Transactions> 名前空間を介してアクセスできるトランザクション フレームワークが導入されました。 このフレームワークでは、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]を含む [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]に完全に統合された形でトランザクションが公開されます。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
  昇格可能なトランザクションを使用する利点は、アクティブな <xref:System.Transactions.TransactionScope> トランザクションによって接続が開かれ、その他の接続が開いていない場合に、完全な分散トランザクションによるオーバーヘッドが生じることなく、トランザクションが軽量なトランザクションとしてコミットされることです。  
   
 ### <a name="connection-string-keywords"></a>接続文字列キーワード  
- <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> プロパティではキーワード `Enlist`がサポートされており、 <xref:System.Data.SqlClient> によってトランザクションのコンテキストが検出され、分散トランザクションに接続が自動的に参加するかどうかが示されます。 `Enlist=true`である場合は、開いているスレッドの現在のトランザクション コンテキストに接続が自動的に参加します。 `Enlist=false`である場合、 `SqlClient` 接続は分散トランザクションとは対話しません。 `Enlist` の既定値は true です。 `Enlist` が接続文字列で指定されていない場合、接続が開いたときに分散トランザクションがあればそれに自動的に参加します。  
+ <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> プロパティではキーワード `Enlist`がサポートされており、 <xref:System.Data.SqlClient> によってトランザクションのコンテキストが検出され、分散トランザクションに接続が自動的に参加するかどうかが示されます。 `Enlist=true` である場合は、開いているスレッドの現在のトランザクション コンテキストに接続が自動的に参加します。 `Enlist=false`である場合、 `SqlClient` 接続は分散トランザクションとは対話しません。 `Enlist` の既定値は true です。 `Enlist` が接続文字列で指定されていない場合、接続が開いたときに分散トランザクションがあればそれに自動的に参加します。  
   
  参加する `Transaction Binding` トランザクションと接続の関連付けは、 <xref:System.Data.SqlClient.SqlConnection> 接続文字列の `System.Transactions` キーワードによって制御されます。 <xref:System.Data.SqlClient.SqlConnectionStringBuilder.TransactionBinding%2A> の <xref:System.Data.SqlClient.SqlConnectionStringBuilder>プロパティを介して利用することもできます。  
   
@@ -238,6 +239,6 @@ Public Function CreateTransactionScope( _
 End Function  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [トランザクションと同時実行](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 6107c21ed04c9c39d69c5c784244d8f6bf9560e7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 423b9ed389a5a3750c8e9b0339e0887d6b650741
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adding-columns-to-a-datatable"></a>DataTable への列の追加
 A<xref:System.Data.DataTable>のコレクションを格納<xref:System.Data.DataColumn>によって参照されるオブジェクト、**列**テーブルのプロパティです。 この列のコレクションと制約によって、テーブルのスキーマ (構造) が定義されます。  
@@ -61,7 +62,7 @@ workTable.Columns.Add("Purchases", typeof(Double));
   
  <xref:System.Xml.Linq.XElement> を、<xref:System.Data.DataColumn.DataType%2A> 内の <xref:System.Data.DataColumn> の <xref:System.Data.DataTable> として使用すると、データを読み取るときに XML シリアル化が機能しません。 たとえば、<xref:System.Xml.XmlDocument> メソッドを使用して `DataTable.WriteXml` を書き込むと、XML へのシリアル化で <xref:System.Xml.Linq.XElement> に親ノードが追加されます。 この問題に対処するには、<xref:System.Data.SqlTypes.SqlXml> の代わりに <xref:System.Xml.Linq.XElement> 型を使用します。 `ReadXml` および `WriteXml` は、<xref:System.Data.SqlTypes.SqlXml> で適切に機能します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Data.DataColumn>  
  <xref:System.Data.DataColumnCollection>  
  <xref:System.Data.DataTable>  

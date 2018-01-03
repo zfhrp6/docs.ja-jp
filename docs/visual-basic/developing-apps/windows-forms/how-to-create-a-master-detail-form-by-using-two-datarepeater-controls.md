@@ -10,11 +10,11 @@ ms.assetid: eec43ae3-05d8-45a1-8d41-3803c6359dbe
 caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 02f98cce74f99d8a00bc916b38e5c290045926a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f17cb86c3ea0ea056291a51becd7ecf9f73d0a73
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-a-masterdetail-form-by-using-two-datarepeater-controls-visual-studio"></a>方法 : 2 つの DataRepeater コントロールを使用してマスター/詳細形式のフォームを作成する (Visual Studio)
 関連するデータを表示するには 2 つ以上を使用して<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>マスター/詳細フォームを作成するコントロール。 いずれかで顧客の一覧を表示するなど、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>、ユーザーは、顧客を選択するときに、1 秒あたりその顧客の注文の一覧を表示および<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>です。  
@@ -46,10 +46,10 @@ ms.lasthandoff: 11/21/2017
   
 9. このテーブル ノードを選択し、2 番目の項目テンプレート領域にドラッグ<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  
  [DataRepeater コントロールの概要](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
  [方法: DataRepeater コントロールに、バインドされたデータを表示する](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)  
- [方法: 関連するデータを Windows フォーム アプリケーションに表示する](http://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd)  
+ [方法: 関連するデータを Windows フォーム アプリケーションに表示する](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio)  
  [方法: DataRepeater コントロールの外観を変更する](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)  
  [DataRepeater コントロールのトラブルシューティング](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)

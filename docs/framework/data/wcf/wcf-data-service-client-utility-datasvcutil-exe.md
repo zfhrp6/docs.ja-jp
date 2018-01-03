@@ -17,11 +17,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 21189ffd5fc8b113cc746fd855bd5c325aad78c6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fcbbbe5180acaf943956310d4837a105d8d049d7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-data-service-client-utility-datasvcutilexe"></a>WCF Data Service クライアント ユーティリティ (DataSvcUtil.exe)
 DataSvcUtil.exe は、コマンド ライン ツールによって提供される[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を消費する、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードし、.NET Framework クライアント アプリケーションからデータ サービスにアクセスするために必要なクライアント データ サービス クラスが生成されます。 このユーティリティでは、以下のメタデータ ソースを使用してデータ クラスを生成できます。  
@@ -55,6 +56,6 @@ datasvcutil /out:file [/in:file | /uri:serviceuri] [/dataservicecollection] [/la
 |`/uri:`*\<文字列 >*|URI、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。|  
 |`/version:`[1.0&#124;2.0]|許容される [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] の最上位バージョンを指定します。 基に、バージョンが決定されます、`DataServiceVersion`返されたデータ サービス メタデータの DataService 要素の属性です。 詳細については、次を参照してください。[データ サービスのバージョン管理](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)です。 指定すると、`/dataservicecollection`パラメーターも指定してください`/version:2.0`データ バインディングを有効にします。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ サービス クライアント ライブラリの生成](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
- [方法: データ サービス参照の追加](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)
+ [方法: データ サービス参照を追加する](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)

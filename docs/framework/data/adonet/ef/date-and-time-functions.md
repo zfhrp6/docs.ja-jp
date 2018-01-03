@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c3d47b4ced66a8826424cdbb75e5694fadb9038d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 559d6c8bf6abb0dd021784046b3161c799b58df4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="date-and-time-functions"></a>日付と時刻関数
 .NET Framework Data Provider for SQL Server (SqlClient) には、`System.DateTime` 型の入力値に対して操作を実行し、`string`、数値、または `System.DateTime` 値の結果を返す日付と時刻関数が用意されています。 これらの関数は、SqlClient の SqlServer 名前空間に存在します。 Entity Framework は、プロバイダーの名前空間プロパティを使用することにより、型や関数など、特定のコンストラクターに対してこのプロバイダーによってどのプレフィックスが使用されているかを特定できます。次の表に、SqlClient の日付と時刻関数を示します。  
@@ -43,5 +44,5 @@ ms.lasthandoff: 10/18/2017
 |---------------------|---------------------|---------------------|  
 |[日付と時刻の関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115908)|[日付と時刻の関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115909)|[日付と時刻の関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=98360)|  
   
-## <a name="see-also"></a>関連項目  
- [Framework 用 SqlClient エンティティ関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)
+## <a name="see-also"></a>参照  
+ [Entity Framework 用 SqlClient 関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)

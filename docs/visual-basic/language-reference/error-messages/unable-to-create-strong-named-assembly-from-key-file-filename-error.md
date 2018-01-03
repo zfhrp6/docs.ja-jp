@@ -14,11 +14,11 @@ ms.assetid: 5dd09785-bc10-4ae7-ba24-b795057aca31
 caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2d03c4f3ac66b13c1d9a4aea964fba8ad8518f4f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e6f71266f92c6ddb05c217736cdb59c5ce968a4a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="unable-to-create-strong-named-assembly-from-key-file-39ltfilenamegt39-lterrorgt"></a>キー ファイル &#39; から厳密な名前付きのアセンブリを作成できません。&lt;filename&gt;&#39;:&lt;エラー&gt;
 指定されたキー ファイルから、厳密な名前のアセンブリを作成できませんでした。  
@@ -29,5 +29,5 @@ ms.lasthandoff: 10/18/2017
   
 1.  適切なキー ファイルが指定されていると、別のアプリケーションによってロックされていないことを確認します。  
   
-## <a name="see-also"></a>関連項目  
- [Sn.exe (厳密名ツール)](https://msdn.microsoft.com/library/k5b5tt23)
+## <a name="see-also"></a>参照  
+ [Sn.exe (厳密名ツール)][Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md))

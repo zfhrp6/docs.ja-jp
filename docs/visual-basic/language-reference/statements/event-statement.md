@@ -26,11 +26,11 @@ ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
 caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b863ed5c8aca3332f4af3d759789eec153a79aed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4ba49d6582eb2ecac4846eaee570a4d92439a5d9
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="event-statement"></a>Event ステートメント
 ユーザー定義イベントを宣言します。  
@@ -65,26 +65,26 @@ End Event
   
 |パーツ|説明|  
 |---|---|  
-|`attrlist`|省略可能です。 このイベントに適用される属性の一覧です。 複数の属性を指定するときは、コンマで区切ります。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。|  
-|`accessmodifier`|省略可能です。 どのようなコードからイベントにアクセスできるのかを指定します。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md): 宣言された要素にアクセスできる任意のコードがアクセスできます。<br />-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)— のみがそのクラスまたは派生クラス内でコードがアクセスできます。<br />-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)— のみ同じアセンブリ内のコードがアクセスできます。<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md): 宣言された要素のコードからのみアクセスできます。<br /><br /> `Protected Friend` と指定すると、イベントのクラス、その派生クラス、または同じアセンブリ内のコードからアクセスできます。|  
-|`Shared`|省略可能です。 このイベントがクラスまたは構造体の特定のインスタンスに関連付けられないことを指定します。|  
-|`Shadows`|省略可能です。 このイベントが、基本クラスにある、同じ名前を持つプログラミング要素、またはオーバーロードされる要素のセットを宣言し直して隠ぺいすることを示します。 宣言された要素は、他の任意の種類の要素でシャドウできます。<br /><br /> シャドウされた要素は、その要素をシャドウする派生クラスからは使用できません。ただし、シャドウする要素がアクセスできない要素の場合は例外です。 たとえば、`Private` 要素が基本クラスの要素をシャドウすると、`Private` 要素へのアクセス許可を持たないコードは、代わりに基本クラスにアクセスします。|  
-|`eventname`|必須です。 イベントの名前です。変数の標準的な名前付け規則に従って名前を付けます。|  
-|`parameterlist`|省略可能です。 このイベントのパラメーターを表すローカル変数のリストです。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
-|`Implements`|省略可能です。 このイベントがインターフェイスのイベントを実装することを示します。|  
+|`attrlist`|任意。 このイベントに適用される属性の一覧です。 複数の属性を指定するときは、コンマで区切ります。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。|  
+|`accessmodifier`|任意。 どのようなコードからイベントにアクセスできるのかを指定します。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md): 宣言された要素にアクセスできる任意のコードがアクセスできます。<br />-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)— のみがそのクラスまたは派生クラス内でコードがアクセスできます。<br />-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)— のみ同じアセンブリ内のコードがアクセスできます。<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md): 宣言された要素のコードからのみアクセスできます。<br /><br /> `Protected Friend` と指定すると、イベントのクラス、その派生クラス、または同じアセンブリ内のコードからアクセスできます。|  
+|`Shared`|任意。 このイベントがクラスまたは構造体の特定のインスタンスに関連付けられないことを指定します。|  
+|`Shadows`|任意。 このイベントが、基本クラスにある、同じ名前を持つプログラミング要素、またはオーバーロードされる要素のセットを宣言し直して隠ぺいすることを示します。 宣言された要素は、他の任意の種類の要素でシャドウできます。<br /><br /> シャドウされた要素は、その要素をシャドウする派生クラスからは使用できません。ただし、シャドウする要素がアクセスできない要素の場合は例外です。 たとえば、`Private` 要素が基本クラスの要素をシャドウすると、`Private` 要素へのアクセス許可を持たないコードは、代わりに基本クラスにアクセスします。|  
+|`eventname`|必須。 イベントの名前です。変数の標準的な名前付け規則に従って名前を付けます。|  
+|`parameterlist`|任意。 このイベントのパラメーターを表すローカル変数のリストです。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
+|`Implements`|任意。 このイベントがインターフェイスのイベントを実装することを示します。|  
 |`implementslist`|`Implements` を指定する場合は、必ず指定します。 実装される `Sub` プロシージャのリストです。 複数のプロシージャを指定するときは、コンマで区切ります。<br /><br /> *implementedprocedure* [、 *implementedprocedure* ...]<br /><br /> `implementedprocedure` の構文と指定項目は次のとおりです。<br /><br /> `interface`.`definedname`<br /><br /> -   `interface`必須。 このプロシージャの包含クラスまたは包含構造体が実装しているインターフェイスの名前です。<br />-   `Definedname`必須。 `interface` の中でプロシージャを定義するために使用する名前。 これは、`name` (定義されているプロシージャを実装するためにこのプロシージャが使用している名前) と同じである必要はありません。|  
-|`Custom`|必須です。 `Custom` として宣言されたイベントでは、`AddHandler`、`RemoveHandler`、および `RaiseEvent` の各カスタム アクセサーを定義する必要があります。|  
-|`delegatename`|省略可能です。 イベント ハンドラーの署名を指定するデリゲートの名前。|  
-|`AddHandler`|必須です。 `AddHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが追加されたとき実行するステートメントを、`AddHandler` ステートメントを使って明示的に指定するか、`Handles` 句を使って暗黙的に指定します。|  
-|`End AddHandler`|必須です。 `AddHandler` ブロックを終了します。|  
-|`value`|必須です。 パラメーター名です。|  
-|`RemoveHandler`|必須です。 `RemoveHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが削除されたときに実行するステートメントを、`RemoveHandler` ステートメントを使って指定します。|  
-|`End RemoveHandler`|必須です。 `RemoveHandler` ブロックを終了します。|  
-|`RaiseEvent`|必須です。 `RaiseEvent` アクセサーを宣言します。ここでは、イベントが発生したときに実行するステートメントを、`RaiseEvent` ステートメントを使って指定します。 通常は、`AddHandler` アクセサーと `RemoveHandler` アクセサーによって管理されるデリゲートのリストが呼び出されます。|  
-|`End RaiseEvent`|必須です。 `RaiseEvent` ブロックを終了します。|  
-|`delegatesignature`|必須です。 `delegatename` デリゲートに必要なパラメーターと一致するパラメーターのリストです。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
-|`statements`|省略可能です。 `AddHandler`、`RemoveHandler`、および `RaiseEvent` の各メソッドの本体が含まれるステートメントです。|  
-|`End Event`|必須です。 `Event` ブロックを終了します。|  
+|`Custom`|必須。 `Custom` として宣言されたイベントでは、`AddHandler`、`RemoveHandler`、および `RaiseEvent` の各カスタム アクセサーを定義する必要があります。|  
+|`delegatename`|任意。 イベント ハンドラーの署名を指定するデリゲートの名前。|  
+|`AddHandler`|必須。 `AddHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが追加されたとき実行するステートメントを、`AddHandler` ステートメントを使って明示的に指定するか、`Handles` 句を使って暗黙的に指定します。|  
+|`End AddHandler`|必須。 `AddHandler` ブロックを終了します。|  
+|`value`|必須。 パラメーター名です。|  
+|`RemoveHandler`|必須。 `RemoveHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが削除されたときに実行するステートメントを、`RemoveHandler` ステートメントを使って指定します。|  
+|`End RemoveHandler`|必須。 `RemoveHandler` ブロックを終了します。|  
+|`RaiseEvent`|必須。 `RaiseEvent` アクセサーを宣言します。ここでは、イベントが発生したときに実行するステートメントを、`RaiseEvent` ステートメントを使って指定します。 通常は、`AddHandler` アクセサーと `RemoveHandler` アクセサーによって管理されるデリゲートのリストが呼び出されます。|  
+|`End RaiseEvent`|必須。 `RaiseEvent` ブロックを終了します。|  
+|`delegatesignature`|必須。 `delegatename` デリゲートに必要なパラメーターと一致するパラメーターのリストです。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
+|`statements`|任意。 `AddHandler`、`RemoveHandler`、および `RaiseEvent` の各メソッドの本体が含まれるステートメントです。|  
+|`End Event`|必須。 `Event` ブロックを終了します。|  
   
 ## <a name="remarks"></a>コメント  
  宣言したイベントは、`RaiseEvent` ステートメントを使って発生させます。 通常、イベントの宣言と発生は、次のように行われます。  
@@ -122,9 +122,9 @@ End Event
  前の例を実行し、ボタンをクリックして f5 キーを押して**開始**です。 最初のテキスト ボックスで、秒のカウント ダウンが開始されます。 カウントダウンが終わると (10 秒が経過すると)、1 つ目のテキスト ボックスに "Done" と表示されます。  
   
 > [!NOTE]
->  `My.Application.DoEvents` メソッドがイベントを処理する方法は、フォームと同じではありません。 フォームでイベントを直接処理するには、マルチスレッドを使用します。 詳細については、次を参照してください。[スレッド](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)です。  
+>  `My.Application.DoEvents` メソッドがイベントを処理する方法は、フォームと同じではありません。 フォームでイベントを直接処理するには、マルチスレッドを使用します。 詳細については、次を参照してください。[スレッド](../../programming-guide/concepts/threading/index.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [RaiseEvent ステートメント](../../../visual-basic/language-reference/statements/raiseevent-statement.md)  
  [Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)  
  [イベント](../../../visual-basic/programming-guide/language-features/events/index.md)  

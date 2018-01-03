@@ -14,11 +14,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 702eda2d4641dc2efdac40f9d730228063e306a8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1fa20e9ed0cefbe587bba90ad25d5460592e3ecf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-a-data-service-reference-wcf-data-services"></a>方法: データ サービス参照を追加する (WCF Data Services)
 使用することができます、**サービス参照の追加**への参照を追加する Visual Studio でのダイアログ[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]です。 参照をデータ サービスに追加すると、Visual Studio で開発したクライアント アプリケーションのデータ サービスに容易にアクセスできます。 この手順を完了すると、データ サービスから取得されたメタデータに基づいてデータ クラスが生成されます。 詳細については、次を参照してください。[データ サービス クライアント ライブラリを生成する](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)です。  
@@ -31,13 +32,13 @@ ms.lasthandoff: 12/02/2017
   
 3.  データ サービスが、現在のソリューションの一部の場合は、クリックして**Discover**です。  
   
-     または  
+     - または -  
   
      **アドレス**ボックスに、データ サービスのベース URL を入力するように`http://localhost:1234/Northwind.svc`、クリックして**移動**です。  
   
-4.  **[OK]** をクリックします。  
+4.  **[OK]**をクリックします。  
   
      新しいコード ファイルが追加されます。このコード ファイルには、データ サービス リソースにアクセスし、オブジェクトとしてデータ サービス リソースと対話するデータ クラスが含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

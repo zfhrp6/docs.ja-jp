@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d7288eeffeb642d1e897e11153802633d71747bd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2c0921e154f10abecb7cdedb23092f4341987a26
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-overview"></a>セキュリティの概要
 アプリケーションのセキュリティ保護は継続的なプロセスとして行う必要があります。 開発者は、アプリケーションがあらゆる攻撃に対して安全であることを常に保証できるわけではありません。これは、新しい技術がもたらす未知の攻撃を予測することが不可能なためです。 反対に、システムに欠陥が発見 (または公開) されていない場合も、そのシステムに欠陥がないとは限りません。 プロジェクトの設計フェーズでセキュリティを考慮することはもちろんのこと、アプリケーションの使用期間を通じてセキュリティをいかに確保してゆくかを計画しておく必要があります。  
@@ -111,7 +112,7 @@ ms.lasthandoff: 11/21/2017
 |[NIB: セキュリティ ポリシーの管理](http://msdn.microsoft.com/en-us/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|セキュリティ ポリシーの作成と管理について説明します。|  
 |[NIB: セキュリティ ポリシーのベスト プラクティス](http://msdn.microsoft.com/en-us/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|セキュリティ ポリシーの管理方法について説明したトピックへのリンクを提供します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [ネイティブ コードと .NET Framework コードのセキュリティ](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  
  [SQL Server のセキュリティ](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  

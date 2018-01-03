@@ -27,11 +27,11 @@ ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
 caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 56dd7fc339c452d64eb18211337b9a7674a83e1c
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: c297a84b37b455a4b30b1848aa9bdd30dc567ec1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch...Finally ステートメント (Visual Basic)
 コードの実行中に、コードの所定のブロックで発生する可能性があります一部またはすべての可能なエラーを処理する方法を提供します。  
@@ -55,16 +55,16 @@ End Try
   
 |用語|定義|  
 |---|---|  
-|`tryStatements`|省略可能です。 ステートメントは、エラーが発生できます。 複合ステートメントにすることもできます。|  
-|`Catch`|省略可能です。 複数`Catch`許可されているブロックです。 処理するときに例外が発生した場合、`Try`ブロックする場合に、各`Catch`と、例外を処理するかどうかを決定するテキストの順序でステートメントを調べる`exception`がスローされた例外を表すです。|  
-|`exception`|省略可能です。 任意の変数名を指定します。 `exception` の初期値は、スローされたエラーの値です。 と共に使用`Catch`キャッチ、エラーを指定します。 省略した場合は、`Catch`ステートメントはすべての例外をキャッチします。|  
-|`type`|省略可能です。 クラスのフィルターの種類を指定します。 場合の値`exception`で指定された型の`type`。 つまり、派生型の識別子が例外オブジェクトをバインドになります。|  
-|`When`|省略可能です。 A`Catch`ステートメントを`When`句が例外がキャッチされる場合にのみ`expression`に評価される`True`です。 A`When`句は、例外の種類を確認後にのみ適用されると`expression`が例外を表す識別子を参照してください。|  
-|`expression`|省略可能です。 暗黙的に変換する必要があります`Boolean`です。 汎用フィルターを記述する式。 通常、エラー番号によるフィルター処理に使用されます。 と共に使用`When`エラーはキャッチされる状況を指定するキーワードです。|  
-|`catchStatements`|省略可能です。 関連する発生したエラーを処理するステートメント`Try`ブロックします。 複合ステートメントにすることもできます。|  
-|`Exit Try`|省略可能です。 抜けキーワード、`Try...Catch...Finally`構造体。 すぐに次のコードの実行が再開、`End Try`ステートメントです。 `Finally`ステートメントは実行もします。 は許可されません`Finally`ブロックします。|  
-|`Finally`|省略可能です。 A`Finally`ブロックは、実行がの一部を離れると常に実行、`Try...Catch`ステートメントです。|  
-|`finallyStatements`|省略可能です。 その他のすべての処理の中にエラーが発生した後に実行されるステートメントです。|  
+|`tryStatements`|任意。 ステートメントは、エラーが発生できます。 複合ステートメントにすることもできます。|  
+|`Catch`|任意。 複数`Catch`許可されているブロックです。 処理するときに例外が発生した場合、`Try`ブロックする場合に、各`Catch`と、例外を処理するかどうかを決定するテキストの順序でステートメントを調べる`exception`がスローされた例外を表すです。|  
+|`exception`|任意。 任意の変数名を指定します。 `exception` の初期値は、スローされたエラーの値です。 と共に使用`Catch`キャッチ、エラーを指定します。 省略した場合は、`Catch`ステートメントはすべての例外をキャッチします。|  
+|`type`|任意。 クラスのフィルターの種類を指定します。 場合の値`exception`で指定された型の`type`。 つまり、派生型の識別子が例外オブジェクトをバインドになります。|  
+|`When`|任意。 A`Catch`ステートメントを`When`句が例外がキャッチされる場合にのみ`expression`に評価される`True`です。 A`When`句は、例外の種類を確認後にのみ適用されると`expression`が例外を表す識別子を参照してください。|  
+|`expression`|任意。 暗黙的に変換する必要があります`Boolean`です。 汎用フィルターを記述する式。 通常、エラー番号によるフィルター処理に使用されます。 と共に使用`When`エラーはキャッチされる状況を指定するキーワードです。|  
+|`catchStatements`|任意。 関連する発生したエラーを処理するステートメント`Try`ブロックします。 複合ステートメントにすることもできます。|  
+|`Exit Try`|任意。 抜けキーワード、`Try...Catch...Finally`構造体。 すぐに次のコードの実行が再開、`End Try`ステートメントです。 `Finally`ステートメントは実行もします。 は許可されません`Finally`ブロックします。|  
+|`Finally`|任意。 A`Finally`ブロックは、実行がの一部を離れると常に実行、`Try...Catch`ステートメントです。|  
+|`finallyStatements`|任意。 その他のすべての処理の中にエラーが発生した後に実行されるステートメントです。|  
 |`End Try`|終了、`Try...Catch...Finally`構造体。|  
   
 ## <a name="remarks"></a>コメント  
@@ -137,7 +137,7 @@ End Try
 ## <a name="iterators"></a>反復子  
  Iterator 関数または`Get`アクセサーは、コレクションに対するカスタム イテレーションを実行します。 反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)ステートメントを一度にいずれかのコレクションの各要素を返します。 使用して反復子関数を呼び出す、[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)します。  
   
- A`Yield`内のステートメントに含めることができます、`Try`ブロックします。 A`Try`を含むブロック、`Yield`ステートメントが持つことができます`Catch`をブロックしてができます、`Finally`ブロックします。 "再試行ブロック Visual Basic で"を参照してください[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)例についてはします。  
+ A`Yield`内のステートメントに含めることができます、`Try`ブロックします。 A`Try`を含むブロック、`Yield`ステートメントが持つことができます`Catch`をブロックしてができます、`Finally`ブロックします。 "再試行ブロック Visual Basic で"を参照してください[反復子](../../programming-guide/concepts/iterators.md)例についてはします。  
   
  A`Yield`ステートメント内で使用できない、`Catch`ブロックまたは`Finally`ブロックします。  
   
@@ -188,11 +188,11 @@ End Try
   
  [!code-vb[csAsyncExceptions#3](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_8.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Information.Err%2A>  
  <xref:System.Exception>  
  [Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)  
  [On Error ステートメント](../../../visual-basic/language-reference/statements/on-error-statement.md)  
  [コード スニペットを使用するためのベスト プラクティス](/visualstudio/ide/best-practices-for-using-code-snippets)  
- [例外処理](../../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)  
+ [例外処理](../../../standard/parallel-programming/exception-handling-task-parallel-library.md)  
  [Throw ステートメント](../../../visual-basic/language-reference/statements/throw-statement.md)

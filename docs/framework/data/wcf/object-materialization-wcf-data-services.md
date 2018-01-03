@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a8f20023e158b388ddd71e518ebcaa48c214252c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b093fce50de6a0437456f4fb0e025e3c853777e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="object-materialization-wcf-data-services"></a>オブジェクトの具体化 (WCF Data Services)
 使用すると、**サービス参照の追加**ダイアログを使用、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] .NET Framework ベースのクライアント アプリケーションでのフィード、同等のデータ クラスは、生成、フィードによって公開されているデータ モデルの各エンティティの種類。 詳細については、次を参照してください。[データ サービス クライアント ライブラリを生成する](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)です。 クエリによって返されるエンティティ データは、これらの生成されたクライアント データ サービス クラスのいずれかのインスタンスに具体化されます。 マージ オプションおよび追跡されているオブジェクトの id の解決については、次を参照してください。[データ サービス コンテキストを管理する](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)です。  
@@ -56,6 +57,6 @@ ms.lasthandoff: 12/02/2017
   
 5.  クライアント ライブラリは <xref:System.Data.Services.Client.DataServiceContext> にオブジェクトをアタッチします。 <xref:System.Data.Services.Client.MergeOption> が <xref:System.Data.Services.Client.MergeOption.NoTracking> の場合は、オブジェクトはアタッチされません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ サービスに対するクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
- [クエリの射影](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
+ [クエリ射影](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)

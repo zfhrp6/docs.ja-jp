@@ -17,11 +17,11 @@ ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8bc3056c3e2d7a4aad469d3bf2c404f5f5248384
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 62669ec40803170cb623382b09472b82121d26bb
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="define-visual-basic"></a>/define (Visual Basic)
 条件付きコンパイル定数を定義します。  
@@ -52,14 +52,14 @@ ms.lasthandoff: 11/21/2017
   
 |Visual Studio 統合開発環境で /define を設定するには|  
 |---|  
-|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.**[詳細設定]** をクリックします。<br />4.値を変更、**カスタム定数**ボックス。|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[コンパイル]** タブをクリックします。<br />3.**[詳細設定]** をクリックします。<br />4.値を変更、**カスタム定数**ボックス。|  
   
 ## <a name="example"></a>例  
  2 つの条件付きコンパイル定数を定義して使用する場合のコード例を次に示します。  
   
  [!code-vb[VbVbalrCompiler#45](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/define_1.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [#If...Then...#Else ディレクティブ](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
  [#Const ディレクティブ](../../../visual-basic/language-reference/directives/const-directive.md)  

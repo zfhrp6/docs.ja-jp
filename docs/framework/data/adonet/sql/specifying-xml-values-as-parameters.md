@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 4d48cc329644873be268606409c154ffe832cd91
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5957dee03d7f3cd54b3fdacd0d38dead5bbc077d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-xml-values-as-parameters"></a>パラメーターとしての XML 値の指定
 開発者がのインスタンスを使用してその値を指定できますクエリには、その値は、XML 文字列パラメーターが必要とする場合、 **SqlXml**データ型。 特別な処理は必要ありません。[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] の XML 列は、他のデータ型と同じ方法でパラメーター値を受け入れます。  
@@ -169,7 +170,7 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Data.SqlTypes.SqlXml>  
- [SQL Server の XML データ](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
+ [SQL Server における XML データ](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

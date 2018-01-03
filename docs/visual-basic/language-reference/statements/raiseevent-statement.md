@@ -18,11 +18,11 @@ ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2575598577820bd7a72fae2d9b8ba52978f5952d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e6ba5ce4b009e0d8c675db07b56b9811c595ae2f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent ステートメント
 クラス、フォーム、またはドキュメント内のモジュール レベルで宣言されているイベントをトリガーします。  
@@ -35,10 +35,10 @@ RaiseEvent eventname[( argumentlist )]
   
 ## <a name="parts"></a>指定項目  
  `eventname`  
- 必須です。 トリガーするイベントの名前です。  
+ 必須。 トリガーするイベントの名前です。  
   
  `argumentlist`  
- 省略可能です。 変数、配列、または式のコンマ区切り一覧。 `argumentlist`引数はかっこで囲む必要があります。 引数がない場合は、かっこを省略する必要があります。  
+ 任意。 変数、配列、または式のコンマ区切り一覧。 `argumentlist`引数はかっこで囲む必要があります。 引数がない場合は、かっこを省略する必要があります。  
   
 ## <a name="remarks"></a>コメント  
  必要な`eventname`は、モジュール内で宣言されたイベントの名前。 Visual Basic 変数の名前付け規則に従うことです。  
@@ -80,9 +80,9 @@ RaiseEvent eventname[( argumentlist )]
  前の例を実行し、ボタンをクリックして f5 キーを押して**開始**です。 最初のテキスト ボックスで、秒のカウント ダウンが開始されます。 カウントダウンが終わると (10 秒が経過すると)、1 つ目のテキスト ボックスに "Done" と表示されます。  
   
 > [!NOTE]
->  `My.Application.DoEvents`の形式として、メソッドがまったく同じ方法でイベントを処理できません。 使用することができますを許可するフォームがイベントを直接処理する場合のマルチ スレッド化します。 詳細については、次を参照してください。[スレッド](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)です。  
+>  `My.Application.DoEvents`の形式として、メソッドがまったく同じ方法でイベントを処理できません。 使用することができますを許可するフォームがイベントを直接処理する場合のマルチ スレッド化します。 詳細については、次を参照してください。[スレッド](../../programming-guide/concepts/threading/index.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イベント](../../../visual-basic/programming-guide/language-features/events/index.md)  
  [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)  
  [AddHandler ステートメント](../../../visual-basic/language-reference/statements/addhandler-statement.md)  

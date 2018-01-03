@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f1fd1c21fc4f156bfe7a5abf9f76bd341e2d0f10
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2835d2064f1845b55dd3a33abb086c5af0fb9e6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="comparison-semantics-entity-sql"></a>比較セマンティクス (Entity SQL)
 次のいずれかの [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 演算子を実行すると、型インスタンスの比較が行われます。  
@@ -76,7 +77,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="supported-combinations"></a>サポートされている組み合わせ  
  次の表は、各種類の型の比較演算子のサポートされているすべての組み合わせを示します。  
   
-|**Type**|**=**<br /><br /> **!=**|**グループ化**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **点を除いて**<br /><br /> **設定**<br /><br /> **重複しています**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**NULL です。**<br /><br /> **NULL でないです。**|  
+|**Type**|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**NULL です。**<br /><br /> **NULL でないです。**|  
 |-|-|-|-|-|-|-|-|  
 |エンティティ型|Ref<sup>1</sup>|すべてのプロパティ<sup>2</sup>|すべてのプロパティ<sup>2</sup>|すべてのプロパティ<sup>2</sup>|スロー<sup>3</sup>|スロー<sup>3</sup>|Ref<sup>1</sup>|  
 |複合型|スロー<sup>3</sup>|スロー<sup>3</sup>|スロー<sup>3</sup>|スロー<sup>3</sup>|スロー<sup>3</sup>|スロー<sup>3</sup>|スロー<sup>3</sup>|  
@@ -112,5 +113,5 @@ WHERE p1 != REF(p2)
   
  <sup>5</sup>参照のすべての個々 の要素を比較 (エンティティ セット名およびエンティティ型のすべてのキー プロパティを含む)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

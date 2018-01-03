@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 545096292f34566b4bb6c3c44bb20ddac426af26
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 824abc79ae8d7ddd36b907977057a659aca86f20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>データ サービスのバージョン管理 (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]クライアントは、Uri を使用して、データ モデルに基づいたリソースとしてデータをアクセスできるように、データ サービスを作成することができます。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、サービス操作の定義もサポートしています。 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、これらのデータ サービスを変更することが必要になる場合があります。 既存のデータ サービスに変更を加える場合は、新しいバージョンのデータ サービスを定義する必要性や、既存のクライアント アプリケーションへの影響を最小限に抑える最善の方法を検討する必要があります。 ここでは、新しいバージョンのデータ サービスをいつどのように作成するかに関するガイダンスを示します。 さらに、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] が [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルの異なるバージョンをサポートするクライアントとデータ サービスの間の交換どのように処理するかについても説明します。  
@@ -83,6 +84,6 @@ ms.lasthandoff: 12/02/2017
   
  返されたメタデータの `DataServices` 要素には `DataServiceVersion` 属性も含まれます。この属性は、応答メッセージの `DataServiceVersion` ヘッダーの値と同じです。 クライアント アプリケーションなど、**サービス参照の追加** ダイアログ ボックスで[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]、この情報を使用してクライアント データ サービス クラスのバージョンで正常に機能を生成する[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]データ サービスをホストします。 詳細については、次を参照してください。 [OData: プロトコルのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=186071)です。  
   
-## <a name="see-also"></a>関連項目  
- [データ サービス プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
+## <a name="see-also"></a>参照  
+ [Data Services プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

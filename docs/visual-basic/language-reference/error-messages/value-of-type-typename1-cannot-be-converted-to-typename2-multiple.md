@@ -14,11 +14,11 @@ ms.assetid: 8be5aa0d-d236-4ac3-aa9c-5044f9f6562b
 caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: cc6138c7a7ca7d50a56fdd1f536e8d2dc3462a08
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f22516a5ca9626f43cb89745e67c66619cf9461f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="value-of-type-39lttypename1gt39-cannot-be-converted-to-39lttypename2gt39-multiple-file-references"></a>型 &#39; の値&lt;typename1&gt;&#39; に変換できません (& m); #39&lt;typename2&gt;&#39;です。(複数のファイル参照)
 型の値 '\<typename1 >' に変換できません。'\<typename2 >' です。 型の不一致へのファイル参照を混在させる可能性があります '\<filepath1 >' プロジェクトで'\<projectname1 >' へのファイル参照を '\<filepath2 >' プロジェクトで'\<projectname2 >' です。 両方のアセンブリが同一である場合は、これらの参照を同じ場所から参照するように置き換えてください。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/21/2017
   
 -   参照アセンブリが同じアセンブリ id を持たない場合は、1 つのもう一方の型に型変換を行いませんようにコードを変更します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic での型変換](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
  [プロジェクト内の参照の管理](/visualstudio/ide/managing-references-in-a-project)  
- [NIB 方法: [参照の追加] ダイアログ ボックスを使用して参照を追加または削除する](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)
+ 

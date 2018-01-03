@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9119b6db6b1d3c2099af3c7bdbe042ced4dca94e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0f5aed56ba4958d44e0628f55115308751afae55
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>パラメーターおよびパラメーター データ型の構成
 コマンド オブジェクトは、パラメーターを使用して SQL ステートメントまたはストアド プロシージャに値を渡すことによって、型チェックと検証の機能を実現します。 コマンド テキストとは異なり、パラメーターの入力は実行可能なコードとしてではなく、リテラル値として扱われます。 これにより、攻撃者がサーバーのセキュリティを侵害するコマンドを SQL ステートメントに "注入" する SQL インジェクション攻撃を防ぐことができます。  
@@ -63,7 +64,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.DateTime>|DateTime|DateTime|DBTimeStamp|DateTime|DateTime|  
 |<xref:System.DateTimeOffset>|DateTimeOffset|SQL Server 2008 の DateTimeOffset。 SQL Server 2008 より前のバージョンの SQL Server では、DateTimeOffset から <xref:System.Data.SqlDbType> への推論はサポートされていません。|||DateTime|  
 |<xref:System.Decimal>|Decimal (10 進数型)|Decimal (10 進数型)|Decimal (10 進数型)|数字|Number|  
-|<xref:System.Double>|倍精度浮動小数点型|Float|倍精度浮動小数点型|倍精度浮動小数点型|倍精度浮動小数点型|  
+|<xref:System.Double>|倍精度浮動小数点型|Float|Double (倍精度浮動小数点型)|倍精度浮動小数点型|倍精度浮動小数点型|  
 |<xref:System.Single>|Single|Real|Single|Real|Float|  
 |<xref:System.Guid>|Guid|UniqueIdentifier|Guid|UniqueIdentifier|Raw|  
 |<xref:System.Int16 >|Int16|SmallInt|SmallInt|SmallInt|Int16|  
@@ -71,7 +72,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Number|  
 |<xref:System.Object>|オブジェクト|バリアント|バリアント|Object から OdbcType への推論はサポートされていません。|Blob|  
 |<xref:System.String>|String|NVarChar。 文字列が NVarChar の最大サイズ (4000 文字) より大きい場合、この暗黙の変換はエラーになります。 4000 文字を超える文字列の場合は、明示的に <xref:System.Data.SqlDbType>を設定してください。|VarWChar|NVarChar|NVarChar|  
-|<xref:System.TimeSpan>|時間|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、TimeSpan から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時間|DateTime|  
+|<xref:System.TimeSpan>|時間|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、TimeSpan から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時刻|DateTime|  
 |<xref:System.UInt16>|UInt16|UInt16 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedSmallInt|Int|UInt16|  
 |<xref:System.UInt32>|UInt32|UInt32 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedInt|BigInt|UInt32|  
 |<xref:System.UInt64>|UInt64|UInt64 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedBigInt|数字|Number|  
@@ -81,7 +82,7 @@ ms.lasthandoff: 11/21/2017
 |``|日付|SQL Server 2008 の Date。 SQL Server 2008 より前のバージョンの SQL Server では、Date から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBDate|日付|DateTime|  
 |``|SByte|SByte から <xref:System.Data.SqlDbType> への推論はサポートされていません。|TinyInt|SByte から `OdbcType` への推論はサポートされていません。|SByte|  
 ||StringFixedLength|NChar|WChar|NChar|NChar|  
-||時間|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、Time から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時間|DateTime|  
+||時刻|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、Time から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時刻|DateTime|  
 ||VarNumeric|VarNumeric から <xref:System.Data.SqlDbType> への推論はサポートされていません。|VarNumeric|VarNumeric から `OdbcType` への推論はサポートされていません。|Number|  
 |ユーザー定義型 ( <xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>を持つオブジェクト)|プロバイダーに応じて Object または String (SqlClient は常に Object を返し、Odbc は常に String を返します。OleDb マネージ データ プロバイダーはいずれかを表示できます)。|<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> がある場合は SqlDbType.Udt、それ以外の場合は Variant。|OleDbType.VarWChar (値が null の場合)、それ以外の場合は OleDbType.Variant。|OdbcType.NVarChar|サポート外|  
   
@@ -205,7 +206,7 @@ parameter = command.Parameters.Add( _
 parameter.Direction = ParameterDirection.Output;  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [DataAdapter パラメーター](../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
  [ADO.NET でのデータ型のマッピング](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  

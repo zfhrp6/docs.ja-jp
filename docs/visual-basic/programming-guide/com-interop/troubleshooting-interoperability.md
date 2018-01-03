@@ -25,11 +25,11 @@ ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
 caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 988d07fe08a6a78ae295d13f694c55a3b8f9d2e4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 33e5a03f29f521a2ba7f93bdd084655e8fc7de8d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>相互運用性のトラブルシューティング (Visual Basic)
 マネージ コードと COM の相互運用するときに、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、1 つ以上の次の一般的な問題が発生する可能性があります。  
@@ -134,10 +134,10 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
   
  共有されていないアセンブリは、呼び出し元のアプリケーションを使用してディレクトリにサイド バイ サイドで配置する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
  [COM 相互運用](../../../visual-basic/programming-guide/com-interop/index.md)  
- [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../framework/tools/tlbimp-exe-type-library-importer.md)  
  [Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
  [チュートリアル : COM オブジェクトによる継承の実装](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
  [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)  

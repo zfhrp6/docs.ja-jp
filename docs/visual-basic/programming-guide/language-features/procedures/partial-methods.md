@@ -20,11 +20,11 @@ ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
 caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 975a86e33eb5744f94cd58efb227bf52eb07c1e8
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 33e34c63988e74be2c22cb7b1358f5e8b04048c6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="partial-methods-visual-basic"></a>部分メソッド (Visual Basic)
 部分メソッドでは、開発者はカスタム ロジックをコードに挿入を有効にします。 通常、コードは、デザイナーで生成されたクラスの一部です。 部分メソッドはコード ジェネレーターによって作成される部分クラスで定義され、何かが変更されたことを通知によく使用されます。 開発者は、変更に応じて、カスタム動作を指定できます。  
@@ -58,7 +58,7 @@ End Sub
   
  前の例が、宣言内の署名を正確に複製がバリエーションが可能です。 具体的には、その他の修飾子を追加できるように`Overloads`または`Overrides`です。 1 つだけ`Overrides`修飾子を使用します。 メソッドの修飾子の詳細については、次を参照してください。 [Sub ステートメント](../../../../visual-basic/language-reference/statements/sub-statement.md)です。  
   
-## <a name="use"></a>用途  
+## <a name="use"></a>使用  
  同じように呼び出します、他の部分メソッドを呼び出す`Sub`プロシージャです。 メソッドが実装されている場合、引数が評価され、メソッドの本体が実行されます。 ただし、部分メソッドの実装が省略可能なことに注意してください。 メソッドが実装されていない場合それへの呼び出しも何も起こりません、およびメソッドに引数として渡された式は評価されません。  
   
 ## <a name="example"></a>例  
@@ -78,10 +78,10 @@ End Sub
   
  `Quantity was changed to 100`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Sub ステートメント](../../../../visual-basic/language-reference/statements/sub-statement.md)  
  [Sub プロシージャ](./sub-procedures.md)  
  [省略可能なパラメーター](./optional-parameters.md)  
  [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)  
- [LINQ to SQL でのコード生成](../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
- [部分メソッドを使用してビジネス ロジックを追加します。](../../../../../docs/framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)
+ [LINQ to SQL でのコード生成](../../../../framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [部分メソッドによるビジネス ロジックの追加](../../../../framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)

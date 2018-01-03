@@ -11,11 +11,11 @@ ms.assetid: 130f7c2b-8eb1-4a6e-81aa-e30e27d3d4f7
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bceda3e102ec79bda6607d77c3b778f9a2014a33
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 37c88c7d88e01e6201a4679ae312e045c8cfab4a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="visual-basic-run-time-messages"></a>Visual Basic ランタイム メッセージ
 このセクションでは、実行時に発生する [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] エラー メッセージについて説明します。  
@@ -304,7 +304,7 @@ ms.lasthandoff: 11/21/2017
   
  [メソッドまたはデータ メンバーが見つかりません](../../visual-basic/misc/method-or-data-member-not-found.md)  
   
- [My.Application.Log は空きディスク領域の容量を求めることができません](../../visual-basic/misc/my-application-log-cannot-determine-the-amount-of-free-disk-space.md)  
+ [My.Application.Log](xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log)  
   
  [名前付き引数 '\<argumentname >' は複数回指定](../../visual-basic/misc/named-argument-argumentname-specified-multiple-times.md)  
   
@@ -558,6 +558,6 @@ ms.lasthandoff: 11/21/2017
   
  [現在のフォルダーの下のパスか、そのフォルダーのサブフォルダー 1 つを指定する必要があります](../../visual-basic/misc/you-must-specify-path-that-is-under-the-current-folder-or-one-of-sub-folders.md)  
   
-## <a name="see-also"></a>関連項目  
- [NOTINBUILD 方法: Visual Basic ランタイム エラーに関する情報の取得](http://msdn.microsoft.com/en-us/22a7d0a6-b7d7-4c5d-971c-52ff0583c656)  
+## <a name="see-also"></a>参照  
+   
  [エラー メッセージ](../../visual-basic/language-reference/error-messages/index.md)

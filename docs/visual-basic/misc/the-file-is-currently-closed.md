@@ -8,11 +8,11 @@ ms.assetid: 095c38ae-a741-4b46-b099-bc6826a49c83
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9a484488193e8eaf0f80d461d866de0beba05514
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 10c3726c3c048f5d9310d8761164dceb3a4441de
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="the-file-is-currently-closed"></a>ファイルは現在閉じられています。
 ファイルが開いているときにのみ実行できる操作を実行しようとしますが、現在、ファイルは閉じられています。  
@@ -21,8 +21,8 @@ ms.lasthandoff: 11/21/2017
   
 -   ファイルを開いて、操作をやり直します。  
   
-## <a name="see-also"></a>関連項目  
- [ビルド内にありません: FileOpen 関数](http://msdn.microsoft.com/en-us/0f07e1df-d4ea-44a9-a21c-76aa2e242f81)  
- [NOT IN BUILD: FileClose 関数](http://msdn.microsoft.com/en-us/f307b39f-a996-4ff6-ab13-e0b05ea5ab91)  
- [My.Computer.FileSystem オブジェクト](../../visual-basic/language-reference/objects/my-computer-filesystem-object.md)  
+## <a name="see-also"></a>参照  
+   
+   
+ [My.Computer.FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)  
  [Visual Basic におけるファイル アクセス](../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)

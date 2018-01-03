@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 6e50147d356ad9e389a87868205bb9b8b6b3e7b3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b4989fcce44f6081dba52cd17d0349c87197d508
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="calling-functions-in-linq-to-entities-queries"></a>LINQ to Entities クエリ内の関数の呼び出し
 このセクションの各トピックでは、LINQ to Entities クエリで関数を呼び出す方法について説明します。  
@@ -35,17 +36,17 @@ ms.lasthandoff: 11/21/2017
  詳細については、このセクションの各トピックを参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [方法: 正規関数を呼び出す](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-canonical-functions.md)  
+ [正規関数を呼び出す方法](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-canonical-functions.md)  
   
- [方法: データベース関数を呼び出す](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-database-functions.md)  
+ [データベース関数を呼び出す方法](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-database-functions.md)  
   
- [方法: カスタム データベース関数を呼び出す](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-custom-database-functions.md)  
+ [カスタム データベース関数を呼び出す方法](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-custom-database-functions.md)  
   
- [方法: クエリでモデル定義関数を呼び出す](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md)  
+ [方法: クエリを使用してモデル定義関数を呼び出す](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md)  
   
- [方法: オブジェクトのメソッドとしてのモデル定義関数を呼び出す](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-as-object-methods.md)  
+ [方法: モデル定義関数をオブジェクト メソッドとして呼び出す](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-as-object-methods.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to Entities でのクエリ](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)  
  [正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)  
  [.edmx ファイルの概要](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  

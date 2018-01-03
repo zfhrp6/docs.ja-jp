@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7bd381706c9ceb7c1c8f80002cee3b857b695372
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 81803df493d53b94a57720755f9bc351404b7d49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reference"></a>参照
 このセクションには、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] を使用する開発者向けのリファレンス情報が用意されています。  
@@ -25,10 +26,10 @@ ms.lasthandoff: 10/18/2017
  特定の問題に関する Microsoft のドキュメントを検索しに参加するには、特に推奨も、 [LINQ フォーラム](http://go.microsoft.com/fwlink/?LinkId=76488)、専門家の複雑なトピックについての詳細を説明することができます。 また、Visual Basic および C# のコード例を含む、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] テクノロジについて記載されているホワイト ペーパーを参照することもできます。 詳細については、次を参照してください。 [LINQ to SQL: リレーショナル データ用 .net 統合言語クエリ](http://go.microsoft.com/fwlink/?LinkId=93205)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
+ [データ型と関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
  言語の一般的な説明ランタイム (CLR) コンストラクトでは、対応する式を持つ SQL の部分だけ[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]変換エンジンで変換を明示的に提供します。  
   
- [属性ベースのマッピング](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
+ [属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
  について説明します、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]マッピングに対する属性ベースのアプローチ、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]オブジェクト モデルを SQL Server データベース。  
   
  [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  

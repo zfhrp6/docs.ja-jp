@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 93d3198cebac463556b4b31bf4c043d7a0ce0055
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0ee026a3eb7509b7ab8ce3b211dd9b590275902e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sequence-operators"></a>シーケンス演算子
 一般的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、次のいずれかの性質を持つシーケンス演算子はサポートされません。  
@@ -55,5 +56,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="differences-from-net"></a>.NET との相違  
  サポートされるすべてのシーケンス演算子は、`Average` を除いて、共通言語ランタイム (CLR) で正常に動作します。 `Average` は、平均化される型と同じ型の値を返しますが、CLR での `Average` は、常に <xref:System.Double> または <xref:System.Decimal> を返します。 ソース引数が明示的に double / decimal にキャストされている場合、または、セレクターが double / decimal にキャストする場合、作成される SQL でもこのような変換が行われるため、結果に問題はありません。  
   
-## <a name="see-also"></a>関連項目  
- [データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a>参照  
+ [データ型と関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

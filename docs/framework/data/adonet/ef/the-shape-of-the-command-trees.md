@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c3311ac88355ac0d7214ec932719e1445757d9e1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 13e2e154a96b46d630b6df11fe3ae024d799c8e6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="the-shape-of-the-command-trees"></a>コマンド ツリーの構造
 SQL 生成モジュールは、指定された入力クエリ コマンド ツリー式に基づいてバックエンドに固有の SQL クエリを生成します。 ここでは、クエリ コマンド ツリーの特性、プロパティ、および構造について説明します。  
@@ -115,5 +116,5 @@ SQL 生成モジュールは、指定された入力クエリ コマンド ツ�
 ### <a name="using-primitive-types"></a>プリミティブ型の使用  
  プリミティブ型を出力コマンド ツリー内で参照する場合、通常は概念モデルのプリミティブ型で参照します。 ただし、一部の式に対しては、対応するストア プリミティブ型がプロバイダーで必要となります。 このような式の例としては、DbCastExpression があります。また、null を対応する型にキャストする必要がある場合は、DbNullExpression も同様です。 こうした式では、プロバイダーは、プリミティブ型の種類およびファセットに基づいて、プロバイダー型へマッピングする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 38961451a51ae47d05d7625ee0e83da97261eb0b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 53ddead8bd03fd9ce5e1adf8fe41a6f4c8b06154
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="learning-by-walkthroughs"></a>チュートリアルによる学習
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]ドキュメントには、いくつかのチュートリアルが用意されています。 このトピックでは、チュートリアルに関する全般的な話題 (トラブルシューティングを含む) を取り上げます。また、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] について学ぶための、いくつかの入門レベルのチュートリアルへのリンクを示します。  
@@ -32,10 +33,10 @@ ms.lasthandoff: 10/18/2017
   
 |目標|Visual Basic|C#|  
 |---------------|------------------|---------|  
-|エンティティ クラスを作成し、簡単なクエリを実行します。|[チュートリアル: 単純なオブジェクト モデルとクエリ (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[チュートリアル: 単純なオブジェクト モデルとクエリ (c#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
-|2 番目のクラスを追加し、より複雑なクエリを実行します <br /><br /> (前のチュートリアルを完了している必要があります)。|[チュートリアル: リレーションシップ (Visual Basic) 間でクエリの実行](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md)|[チュートリアル: リレーションシップ (c#) 間でクエリの実行](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)|  
-|データベースの項目を追加、変更、および削除します。|[チュートリアル: 操作のデータ (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[チュートリアル: データ (c#) の操作](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
-|ストアド プロシージャを使用します。|[チュートリアル: のみストアド プロシージャの使用 (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[チュートリアル: のみストアド プロシージャの使用 (c#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
+|エンティティ クラスを作成し、簡単なクエリを実行します。|[チュートリアル : 簡単なオブジェクト モデルとクエリ (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[チュートリアル : 簡単なオブジェクト モデルとクエリ (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
+|2 番目のクラスを追加し、より複雑なクエリを実行します <br /><br /> (前のチュートリアルを完了している必要があります)。|[チュートリアル : リレーションシップ間でのクエリの実行 (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md)|[チュートリアル : リレーションシップ間でのクエリの実行 (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)|  
+|データベースの項目を追加、変更、および削除します。|[チュートリアル : データの操作 (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[チュートリアル : データの操作 (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
+|ストアド プロシージャを使用します。|[チュートリアル : ストアド プロシージャのみの使用 (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[チュートリアル : ストアド プロシージャのみを使用する (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
   
 ## <a name="general"></a>全般  
  以下の情報は、これらのチュートリアル全体に該当します。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 10/18/2017
   
 -   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]チュートリアルでは、Northwind サンプル データベースが通常必要とします。 詳細については、次を参照してください。[サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
--   使用している設定または [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] のエディションによっては、チュートリアルの中で、ヘルプの記載と異なるダイアログ ボックスやメニュー コマンドが表示される場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+-   使用している設定または [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] のエディションによっては、チュートリアルの中で、ヘルプの記載と異なるダイアログ ボックスやメニュー コマンドが表示される場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 -   多階層のシナリオに関連するチュートリアルでは、開発用コンピューターとは別のコンピューターにサーバーが配置されていることと、そのサーバーにアクセスするための適切なアクセス許可が必要です。  
   
@@ -97,5 +98,5 @@ ms.lasthandoff: 10/18/2017
   
 3.  右クリック**SQL Server (SQLEXPRESS)**、クリックして**再起動**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a20f9675af5a67291d95a9297b1ffa1c81a80522
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a4311b610859b36f1587e5e3f85e2a5f06503e1d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bitwise-canonical-functions"></a>ビット単位の正規関数
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] にはビット単位の正規関数があります。  
@@ -32,5 +33,5 @@ ms.lasthandoff: 10/18/2017
 |`BitWiseOr (` `value1` `,`  `value2` `)`|`value1` と `value2` のビット単位の論理和を `value1` と `value2` の型で返します。<br /><br /> **引数**<br /><br /> A `Byte`、 `Int16`、`Int32`と`Int64`です。<br /><br /> **例**<br /><br /> `-- The following example returns 3.`<br /><br /> `BitWiseOr(1,3)`|  
 |`BitWiseXor (` `value1` `,`  `value2` `)`|`value1` と `value2` のビット単位の排他的論理和を `value1` と `value2` の型で返します。<br /><br /> **引数**<br /><br /> A `Byte`、 `Int16`、`Int32`と`Int64`です。<br /><br /> **例**<br /><br /> `-- The following example returns 2.`<br /><br /> `BitWiseXor (1,3)`|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)

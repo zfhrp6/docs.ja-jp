@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: defdaa7f101c12e30e4e3f2b7f099685fa573fc1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a20759300c44c8255427272cfa6034a877c4f6da
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="string-functions"></a>文字列関数
 .NET Framework Data Provider for SQL Server (SqlClient) には、入力された `String` に対して操作を実行し、その結果を `String` または数値として返す `String` 関数が用意されています。 これらの関数は、SqlClient の SqlServer 名前空間に存在します。 Entity Framework は、プロバイダーの名前空間プロパティを使用することにより、型や関数など、特定のコンストラクターに対してこのプロバイダーによってどのプレフィックスが使用されているかを特定できます。  
@@ -56,6 +57,6 @@ ms.lasthandoff: 11/21/2017
 |---------------------|---------------------|---------------------|  
 |[文字列関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115915)|[文字列関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115916)|[文字列関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115914)|  
   
-## <a name="see-also"></a>関連項目  
- [Framework 用 SqlClient エンティティ関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)  
- [Entity Framework 用 SqlClient の既知の問題](../../../../../docs/framework/data/adonet/ef/known-issues-in-sqlclient-for-entity-framework.md)
+## <a name="see-also"></a>参照  
+ [Entity Framework 用 SqlClient 関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)  
+ [Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題](../../../../../docs/framework/data/adonet/ef/known-issues-in-sqlclient-for-entity-framework.md)

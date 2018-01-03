@@ -16,11 +16,11 @@ ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
 caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 32f993e4b9bcd126ebb6d70310fc0781e8b137b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: df0e8ad1990fe7a1aa495e1794c942813cffb5bc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
 1 つまたは複数の宣言されたプログラミング要素がその宣言を含むアセンブリ内からのみアクセスできることを指定します。  
@@ -39,14 +39,14 @@ ms.lasthandoff: 11/21/2017
  比較について`Friend`と、その他のアクセス修飾子を参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。  
   
 > [!NOTE]
->  別のアセンブリがで許可されているすべての種類およびとマークされているメンバーにアクセスするアセンブリを指定することができます`Friend`です。 詳細については、[Friend アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)に関するページを参照してください。  
+>  別のアセンブリがで許可されているすべての種類およびとマークされているメンバーにアクセスするアセンブリを指定することができます`Friend`です。 詳細については、[Friend アセンブリ](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)に関するページを参照してください。  
   
 ## <a name="example"></a>例  
  次のクラスは、`Friend`特定のメンバーにアクセスする同じアセンブリ内の他のプログラミング要素を許可する修飾子です。  
   
  [!code-vb[VbVbalrAccessModifiers#1](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/friend_1.vb)]  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  使用することができます、`Friend`これらのコンテキストで修飾子。  
   
  [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)  
@@ -75,7 +75,7 @@ ms.lasthandoff: 11/21/2017
   
  [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
  [Public](../../../visual-basic/language-reference/modifiers/public.md)  
  [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  

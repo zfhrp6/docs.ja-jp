@@ -26,16 +26,17 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 3df78be14da96d0bb7b8875a5c7532c003d1dbc8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 25c033ae46abc65040c00b6beb105c8ebb6b1d90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-client-sockets"></a>クライアント ソケットの使用
 <xref:System.Net.Sockets.Socket> を使用して会話を開始するには、まずアプリケーションとリモート デバイス間にデータ パイプを作成する必要があります。 他のネットワーク アドレス ファミリとプロトコルもありますが、この例では、リモート サービスとの TCP/IP 接続を作成する方法を説明します。  
   
- TCP/IP はネットワーク アドレスとサービス ポート番号を使用して、サービスを一意に識別しています。 ネットワーク アドレスは、ネットワーク上の特定のデバイスを識別します。ポート番号は、そのデバイス上の特定のサービスの接続先を識別します。 ネットワーク アドレスとサービス ポートの組み合わせはエンドポイントと呼ばれます。.NET Framework では、エンドポイントは <xref:System.Net.EndPoint> クラスで表されます。 **EndPoint** の子孫は、サポートされるアドレス ファミリごとに定義されます。IP アドレス ファミリの場合、クラスは <xref:System.Net.IPEndPoint> です。  
+ TCP/IP はネットワーク アドレスとサービス ポート番号を使用して、サービスを一意に識別しています。 ネットワーク アドレスは、ネットワーク上の特定のデバイスを識別します。ポート番号は、そのデバイス上の特定のサービスの接続先を識別します。 ネットワーク アドレスとサービス ポートの組み合わせはエンドポイントと呼ばれます.NET Framework では、エンドポイントは <xref:System.Net.EndPoint> クラスで表されます。 **EndPoint** の子孫は、サポートされるアドレス ファミリごとに定義されます。IP アドレス ファミリの場合、クラスは <xref:System.Net.IPEndPoint> です。  
   
  <xref:System.Net.Dns> クラスは、TCP/IP インターネット サービスを使用するアプリケーションにドメインネーム サービスを提供します。 <xref:System.Net.Dns.Resolve%2A> メソッドは、ユーザー フレンドリなドメイン名 ("host.contoso.com" など) を数値のインターネット アドレス (192.168.1.1 など) にマップするクエリを DNS サーバーに送信します。 **Resolve** は、要求した名前のアドレスとエイリアスの一覧を含む <xref:System.Net.IPHostEntry> を返します。 ほとんどの場合、<xref:System.Net.IPHostEntry.AddressList%2A> 配列で返された最初のアドレスを使用できます。 次のコードでは、サーバー host.contoso.com の IP アドレスを含む <xref:System.Net.IPAddress> を取得します。  
   
@@ -86,7 +87,7 @@ try {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
  [非同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
  [方法: ソケットを作成する](../../../docs/framework/network-programming/how-to-create-a-socket.md)  

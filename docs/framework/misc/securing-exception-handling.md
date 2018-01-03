@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a028fcdfb6c85e456c8722decdb1bca8fd907a9f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 548606a0196012fdd21bf5512e8ea7b089c723ab
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-exception-handling"></a>例外処理の保護
 Visual C および Visual Basic では、スタックをさらにフィルター式を実行前に、 **finally**ステートメントです。 **キャッチ**に関連付けられているブロックの後にそのフィルターが実行される、**最後に**ステートメントです。 詳細については、次を参照してください。[ユーザー フィルター例外](../../../docs/standard/exceptions/using-user-filtered-exception-handlers.md)です。 このセクションでは、この注文のセキュリティへの影響を調べます。 どのフィルター ステートメント内での順序を示す次の擬似コード例について考えますと**最後に**ステートメントを実行します。  
@@ -167,5 +168,5 @@ YourObject.YourMethod()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)

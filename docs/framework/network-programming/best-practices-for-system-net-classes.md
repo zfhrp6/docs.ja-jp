@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e50df22f66d4d55298aad5f3cc501dfb39ffcd9a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 83254955138c99ec0187e5cf74566266c2ecb303
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="best-practices-for-systemnet-classes"></a>System.Net クラスのベスト プラクティス
 次の推奨事項は、<xref:System.Net> に含まれるクラスを最大限に活用するのに役立ちます。  
@@ -39,5 +40,5 @@ ms.lasthandoff: 10/18/2017
   
 -   資格情報を必要とするサイトにアクセスする場合、要求ごとに資格情報を入力するのではなく、<xref:System.Net.CredentialCache> クラスを使用して資格情報のキャッシュを作成します。 **CredentialCache** クラスがキャッシュを検索して要求で表示する適切な資格情報を検索するため、ユーザーは URL に基づいて資格情報を作成したり、表示したりする必要がなくなります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)

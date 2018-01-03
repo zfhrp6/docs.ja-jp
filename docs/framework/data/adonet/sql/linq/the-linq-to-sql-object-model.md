@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 30231ea756e80ddeac087fa8b3e46664860c26a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1ecccda5b9570519f69cadc9214daded16edbc89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="the-linq-to-sql-object-model"></a>LINQ to SQL オブジェクト モデル
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]開発者のプログラミング言語で表されるオブジェクト モデルは、リレーショナル データベースのデータ モデルにマップします。 データ操作はオブジェクト モデルに従って行われます。  
@@ -90,6 +91,6 @@ ms.lasthandoff: 11/21/2017
   
  詳細については、の関数の属性、Stored Procedure 属性およびパラメーターの属性のセクションを参照してください。[属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)と[Stored Procedures](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [属性ベースのマッピング](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
+## <a name="see-also"></a>参照  
+ [属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

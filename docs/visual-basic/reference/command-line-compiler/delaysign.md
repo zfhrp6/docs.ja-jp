@@ -14,11 +14,11 @@ ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: dc457a1a32048441f82976488158f223e7e3e087
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: b4d29f99d0c375eebee0f477720cb9a22172dddb
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="delaysign"></a>T:System.Reflection.AssemblyDelaySignAttribute
 アセンブリに完全に署名するか、部分的に署名するかを指定します。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 12/09/2017
   
 ## <a name="arguments"></a>引数  
  `+` &#124; `-`  
- 省略可能です。 完全署名されたアセンブリを作成する場合は、`/delaysign-` を使用します。 使用して`/delaysign+`かどうかは、署名のハッシュのアセンブリと予約のスペースで公開キーを配置します。 既定値は、`/delaysign-` です。  
+ 任意。 完全署名されたアセンブリを作成する場合は、`/delaysign-` を使用します。 使用して`/delaysign+`かどうかは、署名のハッシュのアセンブリと予約のスペースで公開キーを配置します。 既定値は、`/delaysign-` です。  
   
 ## <a name="remarks"></a>コメント  
  `/delaysign`オプションも何も起こりませんと共に使用しなければ[/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)または[/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)です。  
@@ -40,17 +40,17 @@ ms.lasthandoff: 12/09/2017
   
  たとえばを使用して`/delaysign+`組織内の開発者は、テスト担当者がグローバル アセンブリ キャッシュに登録して使用するアセンブリのバージョンの符号なしのテストを配布できます。 アセンブリでの作業が完了したら、組織の秘密キーの責任者は、アセンブリを完全署名できます。 この区分は、すべての開発者が、アセンブリに作業しながら、情報の漏えいから組織の秘密キーを保護します。  
   
- 参照してください[作成と使用](../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)アセンブリに署名する方法についてです。  
+ 参照してください[作成と使用](../../../framework/app-domains/create-and-use-strong-named-assemblies.md)アセンブリに署名する方法についてです。  
   
 ### <a name="to-set-delaysign-in-the-visual-studio-integrated-development-environment"></a>Visual Studio で/delaysign を設定するには、統合開発環境  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。   
   
 2.  **[署名]** タブをクリックします。  
   
 3.  値を設定、**遅延署名のみ**ボックス。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)  
  [/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)  

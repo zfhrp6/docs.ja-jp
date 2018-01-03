@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9cba4c71d895d9398e2444885f4f26bf04433251
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cfdcec277489d269b241b9909a2ae13049c00f3a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>ビジネス ロジックの実装 (LINQ to SQL)
 このトピックの「ビジネス ロジック」とは、データベースでデータを挿入、更新、または削除される前にデータに適用されるカスタム規則または検証テストのことです。 ビジネス ロジックは、「ビジネス ルール」または「ドメイン ロジック」とも呼ばれます。 n 層アプリケーションでは、通常、論理層として設計されるため、プレゼンテーション層やデータ アクセス層から独立して変更できます。 データベースのデータを更新、挿入、または削除する前または後に、データ アクセス層によってビジネス ロジックを呼び出すことができます。  
@@ -193,7 +194,7 @@ partial class Customer
   
  [チュートリアル: エンティティ クラスへの検証の追加](http://msdn.microsoft.com/library/85b06a02-b2e3-4534-95b8-d077c8d4c1d7)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [部分クラスと部分メソッド](~/docs/csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)  
  [部分メソッド](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)  
  [Visual Studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  

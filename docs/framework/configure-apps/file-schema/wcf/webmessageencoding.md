@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e9629ecbe744ac1f4bbd44e22ac42a3e81fff27a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b3b5a8ff5fdf9e3da8824e7eb9443f71613899dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwebmessageencodinggt"></a>&lt;webMessageEncoding&gt;
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] バインディングで使用されるときに、プレーンテキストの XML、JSON (JavaScript Object Notation) メッセージ エンコーディング、および "生の" バイナリ コンテンツの読み取りと書き込みができるようにします。  
@@ -85,14 +86,14 @@ writeEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />
 />  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.WebMessageEncodingElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
  <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
  <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>  
- [メッセージのエンコード](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
- [メッセージ エンコーダーを選択します。](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [メッセージ エンコーディング](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
+ [メッセージ エンコーダーを選択する](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c713cc8e5f3d7e81b196820e0a25fde0018b6c80
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 07892869759ac5856b26099f2421caff1ebaf74d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="secure-data-access"></a>安全なデータ アクセス
 セキュリティで保護された ADO.NET コードを作成するには、基になるデータ ストア、つまりデータベースで利用可能なセキュリティ機構を理解しておく必要があります。 さらに、アプリケーションに含まれる他の機能またはコンポーネントのセキュリティへの影響も考慮する必要があります。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
 |[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)|保護構成を使用して接続文字列を暗号化する方法など、セキュリティのベスト プラクティスと接続情報を保護する手法について説明します。|  
 |[データ アクセスに関する推奨事項](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|データへのアクセスおよびデータベース操作の実行に関連した推奨事項について説明します。|  
 |[接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)|実行時にユーザー入力から接続文字列を構築する方法について説明します。|  
-|[SQL Server のセキュリティの概要](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|SQL Server のセキュリティ アーキテクチャについて説明します。|  
+|[SQL Server セキュリティの概要](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|SQL Server のセキュリティ アーキテクチャについて説明します。|  
   
 ## <a name="parameterized-commands-and-sql-injection"></a>パラメーター化コマンドと SQL インジェクション  
  パラメーター化コマンドは SQL インジェクション攻撃への対策として利用できます。SQL インジェクション攻撃は、SQL ステートメントに、サーバーのセキュリティを侵害するコマンドを "注入" することによって行われます。 パラメーター化コマンドを使用した場合、外部ソースから受け取る値が必ず値として渡され、Transact-SQL ステートメントの一部になることはないため、SQL インジェクション攻撃を防ぐことができます。 Transact-SQL コマンドが値に挿入されたとしても、データ ソースに対して実行されることはありません。 これらのコマンドは、単なるパラメーター値として処理されます。 セキュリティ面の利点に加え、パラメーター化コマンドには、Transact-SQL ステートメントで渡される値やストアド プロシージャに渡される値を簡単に扱うことができるという利点もあります。  
@@ -46,8 +47,8 @@ ms.lasthandoff: 11/21/2017
 |リソース|説明|  
 |--------------|-----------------|  
 |[DataAdapter パラメーター](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|`DataAdapter` でパラメーターを使用する方法について説明します。|  
-|[ストアド プロシージャによるデータの変更](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|パラメーターの指定方法および戻り値の取得方法について説明します。|  
-|[SQL Server でストアド プロシージャを使用した権限の管理](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|SQL Server のストアド プロシージャを使用してデータ アクセスをカプセル化する方法を説明します。|  
+|[ストアド プロシージャでのデータの変更](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|パラメーターの指定方法および戻り値の取得方法について説明します。|  
+|[SQL Server でのストアド プロシージャを使用したアクセス許可の管理](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|SQL Server のストアド プロシージャを使用してデータ アクセスをカプセル化する方法を説明します。|  
   
 ## <a name="script-exploits"></a>スクリプト攻略  
  Web ページに悪意のある文字を挿入することによって行われるスクリプト攻略もインジェクション型の攻撃に属します。 挿入された文字はブラウザーによって検証されることなく、ページの一部として処理されます。  
@@ -100,7 +101,7 @@ ms.lasthandoff: 11/21/2017
 |[アンマネージ コードとの相互運用](../../../../docs/framework/interop/index.md)|COM コンポーネントを .NET Framework に公開する方法、および .NET Framework コンポーネントを COM に公開する方法について説明します。|  
 |[高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|プライマリ相互運用機能アセンブリ、スレッド処理、カスタム マーシャリングなど高度なトピックが含まれています。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server のセキュリティ](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [データ アクセスに関する推奨事項](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  

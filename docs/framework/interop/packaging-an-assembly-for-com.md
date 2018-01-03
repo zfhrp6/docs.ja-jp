@@ -27,11 +27,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 149d0c2595844c5b71767e2ea3ee5b0c6002c080
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 72b9237a8abeee936070799c5087abc6b45ff3b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="packaging-an-assembly-for-com"></a>COM 用のアセンブリのパッケージ化
 COM 開発者がアプリケーションに組み込むときに役立つ、マネージ型に関する情報を次に示します。  
@@ -88,7 +89,7 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
 ## <a name="net-services-installation-tool"></a>.NET サービス インストール ツール  
  [.NET サービス インストール ツール (Regsvcs.exe)](../../../docs/framework/tools/regsvcs-exe-net-services-installation-tool.md) は、Windows 2000 コンポーネント サービスにマネージ クラスを追加したり、1 つのツール内の複数のタスクを統合したりします。 Regsvcs.exe は、アセンブリの読み込みおよび登録だけでなく、タイプ ライブラリの生成、登録、および既存の COM+ 1.0 アプリケーションへのインストールができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.TypeLibConverter>  
  <xref:System.Runtime.InteropServices.ITypeLibConverter>  
  [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  

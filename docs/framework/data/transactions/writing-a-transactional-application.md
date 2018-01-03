@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c988f5ab5a342ad3282414634ca3bfc21f481ea5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9fab355da61ea7445e429cfc4e336a14b588e30c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="writing-a-transactional-application"></a>トランザクション アプリケーションの作成
 トランザクション アプリケーションのプログラマは、<xref:System.Transactions> 名前空間に用意されている 2 つのプログラミング モデルを活用して、トランザクションを作成できます。 使用して、明示的なプログラミング モデルを使用することができます、<xref:System.Transactions.Transaction>クラス、または暗黙的なプログラミング モデルがトランザクションは自動的に管理のインフラストラクチャでを使用して、<xref:System.Transactions.TransactionScope>クラスです。 開発のため、暗黙のトランザクション モデルを使用することをお勧めします。 トランザクション スコープを使用する方法の詳細についてを見つけることができます、[トランザクション スコープを使用して、暗黙的なトランザクションを実装する](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)トピックです。  
@@ -28,11 +29,11 @@ ms.lasthandoff: 12/02/2017
 ### <a name="creating-a-transaction"></a>トランザクションの作成  
  <xref:System.Transactions> 名前空間には、トランザクションを作成する 2 つのモデルが用意されています。 これらのモデルは、以下のトピックで取り上げられています。  
   
- [トランザクション スコープを使用して、暗黙的なトランザクションを実装します。](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)  
+ [トランザクション スコープを使用した暗黙的なトランザクションの実装](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)  
   
  <xref:System.Transactions> 名前空間がサポートする、<xref:System.Transactions.TransactionScope> クラスを使用した暗黙的なトランザクションの作成について説明します。  
   
- [CommittableTransaction を使用して、明示的なトランザクションを実装します。](../../../../docs/framework/data/transactions/implementing-an-explicit-transaction-using-committabletransaction.md)  
+ [CommittableTransaction を使用した明示的なトランザクションの実装](../../../../docs/framework/data/transactions/implementing-an-explicit-transaction-using-committabletransaction.md)  
   
  <xref:System.Transactions> 名前空間がサポートする、<xref:System.Transactions.CommittableTransaction> クラスを使用した明示的なトランザクションの作成について説明します。  
   

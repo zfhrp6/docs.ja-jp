@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50d523fdd0498aef7e662af5f4dc41b2394dcf42
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c993a4f09a7187b45331f6beb71a9637da87d20f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>データ サービス コンテキストの管理 (WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> クラスは、特定のデータ サービスに対してサポートされている操作をカプセル化します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスはステートレスですが、コンテキストはステートレスではありません。 したがって、使用することができます、<xref:System.Data.Services.Client.DataServiceContext>変更管理などの機能をサポートするために、データ サービスとのやり取りの間でクライアントの状態を維持するクラス。 このクラスは、ID の管理と変更の追跡も行います。  
@@ -46,8 +47,8 @@ ms.lasthandoff: 12/02/2017
 ### <a name="post-tunneling"></a>POST トンネリング  
  既定では、クライアント ライブラリは、作成、読み取り、更新、および削除要求を、POST、GET、PUT/MERGE/PATCH、および DELETE の対応する HTTP メソッドを使用して、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスに送信します。 これは、Representational State Transfer (REST) の基本原則に沿った動作です。 ただし、すべての Web サーバー実装で HTTP メソッドの完全なセットがサポートされるとは限りません。 場合によっては、サポートされているメソッドが GET と POST のみに制限されていることもあります。 このような状況は、ファイアウォールのような仲介物が特定のメソッドの要求をブロックしている場合に発生します。 GET メソッドと POST メソッドは一般的にサポートされているメソッドであるため、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、サポートされていない HTTP メソッドを POST 要求を使用して実行する方法を規定しています。 呼ばれる*メソッド トンネリング*または*POST トンネリング*、これにより、クライアント ユーザー設定で指定された実際のメソッドを POST 要求を送信する`X-HTTP-Method`ヘッダー。 要求の POST トンネリングを有効にするには、<xref:System.Data.Services.Client.DataServiceContext.UsePostTunneling%2A> インスタンスの <xref:System.Data.Services.Client.DataServiceContext> プロパティを `true` に設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
  [データ サービスの更新](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
  [非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
- [操作のバッチ処理](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)
+ [バッチ処理](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9ac8e64c02d96450d41233cfbe65e1db839df9e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8ac310542ba9dea360acbc2a0fbcbb07b7a8d6fc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>XML スキーマ (XSD) 制約の DataSet 制約への割り当て
 XML スキーマ定義言語 (XSD) を使用すると、定義する要素と属性で制約を指定できます。 内のリレーショナル スキーマに XML スキーマをマップするとき、 <xref:System.Data.DataSet>、XML スキーマの制約は、テーブルや列内で適切なリレーショナル制約にマップされて、**データセット**です。  
@@ -37,13 +38,13 @@ XML スキーマ定義言語 (XSD) を使用すると、定義する要素と属
  マッピング プロセス内で作成されたテーブルに適切な制約にこれらのスキーマの制約を変換する、**データセット**です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [制約の DataSet 制約への一意の XML スキーマ (XSD) 制約をマップします。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [XML スキーマ (XSD) の UNIQUE 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  Unique 制約を作成するために使用する XML スキーマの要素について説明します、**データセット**です。  
   
- [マップ キー制約の DataSet 制約への XML スキーマ (XSD) 制約](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-key-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [XML スキーマ (XSD) のキー制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-key-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  キー制約 (一意制約は null 値が許可されていません) を作成するために使用する XML スキーマの要素について説明します、**データセット**です。  
   
- [マップのキー参照制約の DataSet 制約への XML スキーマ (XSD) 制約](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [XML スキーマ (XSD) のキー参照制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  参照で (外部キー) 制約の作成に使用する XML スキーマ要素について説明します、**データセット**です。  
   
 ## <a name="related-sections"></a>関連項目  
@@ -53,5 +54,5 @@ XML スキーマ定義言語 (XSD) を使用すると、定義する要素と属
  [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
  テーブルの列間のリレーションを作成するために使用する XML スキーマの要素について説明します、**データセット**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

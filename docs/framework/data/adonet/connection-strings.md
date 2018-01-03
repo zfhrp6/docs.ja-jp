@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: bd787373b869c31727cfc0d027b6b98774b0d630
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a20061c551f5cb1a19c64a2f92b8180465f58eb2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-strings-in-adonet"></a>ADO.NET での接続文字列
 .NET Framework 2.0 では、接続文字列を扱う新しい機能が導入されました。接続文字列ビルダー クラスに追加された新しいキーワードもその 1 つであり、有効な接続文字列を実行時に簡単に作成できるようになっています。  
@@ -47,6 +48,6 @@ ms.lasthandoff: 11/21/2017
  [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  データ ソースへの接続に使用する情報を保護する方法を示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ ソースへの接続](/cpp/data/odbc/connecting-to-a-data-source)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

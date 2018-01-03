@@ -34,11 +34,12 @@ caps.latest.revision: "28"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 2bd01e697d6852b9eb50418e5b6f506a133cbc2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 32607c853506ae7339057893c10fd9931e5823be
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>構成ファイルを使用してアプリを構成する方法
 .NET Framework を使用すると、開発者および管理者は、構成ファイルを使用することにより、アプリケーションの実行方法を制御し、アプリケーションの実行に柔軟性を持たせることができます。 構成ファイルは XML ファイルで、必要に応じて変更できます。 管理者は、アプリケーションからアクセスできるプロテクト リソース、アプリケーションが使用するアセンブリのバージョン、およびリモート アプリケーションやオブジェクトの配置場所を制御できます。 開発者は、構成ファイル内に設定を格納できます。これにより、設定変更のたびにアプリケーションを再コンパイルする必要がなくなります。 このセクションでは、設定できる内容と、アプリケーションを設定することが有益である理由を説明します。  
@@ -128,7 +129,7 @@ ms.lasthandoff: 11/21/2017
  [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)  
  スキーマ、起動時の階層、ランタイム、ネットワーク、およびその他の種類の構成設定を説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリの場所の指定](../../../docs/framework/configure-apps/specify-assembly-location.md)  
  [アセンブリ バージョンのリダイレクト](../../../docs/framework/configure-apps/redirect-assembly-versions.md)  

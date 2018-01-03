@@ -15,11 +15,11 @@ ms.assetid: f6c09db1-0553-464a-abe3-d4510c61d6ed
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4400ee58214c8f9990d4b123e17ef0f6553a5a69
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2df7fa743e72d12dcef1aa9be5ea43d24ef43cee
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="optioninfer"></a>/optioninfer
 変数宣言でローカル型推論を使用できるようにします。  
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`+` &#124; `-`|省略可能です。 `/optioninfer+` を指定してローカル型推論を有効にするか、または `/optioninfer-` を指定してローカル型推論をブロックします。 `/optioninfer` オプションは、何も値を指定しない場合、`/optioninfer+` と同じです。 `/optioninfer` スイッチが存在しない場合の既定値も `/optioninfer+` です。 既定値は、Vbc.rsp 応答ファイル内に設定されています。|  
+|`+` &#124; `-`|任意。 `/optioninfer+` を指定してローカル型推論を有効にするか、または `/optioninfer-` を指定してローカル型推論をブロックします。 `/optioninfer` オプションは、何も値を指定しない場合、`/optioninfer+` と同じです。 `/optioninfer` スイッチが存在しない場合の既定値も `/optioninfer+` です。 既定値は、Vbc.rsp 応答ファイル内に設定されています。|  
   
 > [!NOTE]
 >  `/noconfig` オプションを使用すると、vbc.rsp に指定するのではなく、コンパイラの内部既定値を保持できます。 このオプションのコンパイラの既定値は `/optioninfer-` です。  
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="to-set-optioninfer-in-the-visual-studio-ide"></a>Visual Studio IDE で /optioninfer を設定するには  
   
-1.  プロジェクトを選択**ソリューション エクスプ ローラー**です。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、次を参照してください。 [NIB: プロジェクト デザイナーでプロジェクトのプロパティを管理する](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e)です。  
+1.  プロジェクトを選択**ソリューション エクスプ ローラー**です。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。  
   
 2.  **コンパイル** タブの値を変更、 **Option infer**ボックス。  
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 vbc /optioninfer+ test.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)  
  [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)  

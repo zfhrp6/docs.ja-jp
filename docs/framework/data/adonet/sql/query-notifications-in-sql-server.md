@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 854407d2e6d1341d5917cc78664c1f653e55fa35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d922598cb31e60b1c1648884555695c1ba089726
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="query-notifications-in-sql-server"></a>SQL Server のクエリ通知
 クエリ通知は Service Broker インフラストラクチャに基づいて構築されており、データが変更されたときにクエリ通知を使用してアプリケーションに通知できます。 この機能は、Web アプリケーションなど、データベースから情報のキャッシュを提供し、ソース データが変更された場合に通知を必要とするアプリケーションに特に役立ちます。  
@@ -49,13 +50,13 @@ ms.lasthandoff: 11/21/2017
 -   [開発 (Service Broker)](http://msdn.microsoft.com/library/bb522908.aspx)  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [クエリ通知を有効にします。](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md)  
+ [クエリ通知の有効化](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md)  
  クエリ通知を有効にするための要件を含め、クエリ通知の使用方法について説明します。  
   
  [ASP.NET アプリケーションでの SqlDependency](../../../../../docs/framework/data/adonet/sql/sqldependency-in-an-aspnet-app.md)  
  ASP.NET アプリケーションからクエリ通知を使用する方法について説明します。  
   
- [Sqldependency を使用した変更の検出](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
+ [SqlDependency を使用した変更の検出](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
  最初に取得された結果と異なるクエリ結果を検出する方法について説明します。  
   
  [SqlCommand の実行と SqlNotificationRequest](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
@@ -71,6 +72,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Web.Caching.SqlCacheDependency>  
  <xref:System.Web.Caching.SqlCacheDependency> クラスおよびそのすべてのメンバーについて説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL Server と ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

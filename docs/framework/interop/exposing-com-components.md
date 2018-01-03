@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 26efd43a05252e657626063d7dd04b1020dace18
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9361de4726b1dc58238db5ca7b5605f2cc75485d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>.NET Framework への COM コンポーネントの公開
 このセクションでは、既存の COM コンポーネントをマネージ コードに公開するために必要なプロセスをまとめています。 .NET Framework と緊密に統合される COM サーバーの詳細については、「[Design Considerations for Interoperation](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)」(相互運用のためのデザインの考慮事項) を参照してください。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
   
      相互運用アプリケーションは、[厳密な名前を付けた](../../../docs/framework/app-domains/strong-named-assemblies.md)、署名されたアセンブリとして、グローバル アセンブリ キャッシュに最適に展開されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アンマネージ コードとの相互運用](../../../docs/framework/interop/index.md)  
  [相互運用のためのデザインの考慮事項](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)  
  [COM 相互運用機能のサンプル: .NET クライアントおよび COM サーバー](../../../docs/framework/interop/com-interop-sample-net-client-and-com-server.md)  

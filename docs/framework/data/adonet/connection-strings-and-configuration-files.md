@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: fe56dc279471f77a3f9ae014f65faaa99a113624
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87406da2c591f9f3a8f47adb2029bf1e239cc64e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-strings-and-configuration-files"></a>接続文字列と構成ファイル
 接続文字列をアプリケーションのコードに組み込むと、セキュリティ上の脆弱性やメンテナンスの問題を引き起こす可能性があります。 使用して、アプリケーションのソース コードにコンパイルされ暗号化されていない接続文字列を表示できます、 [Ildasm.exe (IL 逆アセンブラー)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md)ツールです。 さらに、接続文字列が変わるたびにアプリケーションを再コンパイルする必要性が生じます。 そのため、接続文字列はアプリケーション構成ファイルに保存することをお勧めします。  
@@ -155,7 +156,7 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Configuration> 名前空間には、構成設定をプログラムから行うためのクラスが存在します。 <xref:System.Configuration.ConfigurationManager> クラスは、コンピューター、アプリケーション、ユーザーの各構成ファイルへのアクセスを提供します。 使用することができます、ASP.NET アプリケーションを作成する場合、<xref:System.Web.Configuration.WebConfigurationManager>内で検索できるなどの ASP.NET アプリケーションに固有の設定にアクセスすることもできます、同じ機能を提供するクラス **\<system.web >**です。  
   
 > [!NOTE]
->  <xref:System.Security.Cryptography> 名前空間には、データの暗号化と復号化に関連した補足的なオプションを提供するクラスが存在します。 これらのクラスは、保護構成では利用できない暗号化サービスが必要な場合に使用します。 これらのクラスは必ずしも純粋なマネージ実装とは限らず、アンマネージ Microsoft CryptoAPI 用のラッパーもあります。 詳細については、次を参照してください。 [Cryptographic Services](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781)です。  
+>  <xref:System.Security.Cryptography> 名前空間には、データの暗号化と復号化に関連した補足的なオプションを提供するクラスが存在します。 これらのクラスは、保護構成では利用できない暗号化サービスが必要な場合に使用します。 これらのクラスは必ずしも純粋なマネージ実装とは限らず、アンマネージ Microsoft CryptoAPI 用のラッパーもあります。 詳細については、「[暗号サービス](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781)」をご覧ください。  
   
 ### <a name="appconfig-example"></a>App.config の例  
  この例では、暗号化を切り替える、 **connectionStrings** 」の「、 **app.config** Windows アプリケーション用のファイルです。 この例に示したプロシージャは、MyApplication.exe など、アプリケーションの名前を引数として受け取ります。 **App.config**ファイルが、暗号化および MyApplication.exe.config という名前で実行可能ファイルが含まれているフォルダーにコピーします。  
@@ -179,7 +180,7 @@ ms.lasthandoff: 11/21/2017
   
  ASP.NET アプリケーションのセキュリティ保護の詳細については、次を参照してください。 [NIB: ASP.NET セキュリティ](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d)と[一目で ASP.NET 2.0 セキュリティ プラクティス](http://go.microsoft.com/fwlink/?LinkId=59997)ASP.NET デベロッパー センターにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [構成クラスの使用](http://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)  

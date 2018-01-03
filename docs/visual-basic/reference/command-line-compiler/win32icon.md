@@ -14,11 +14,11 @@ ms.assetid: aecaab01-9353-46c5-941c-6edabd4eff92
 caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 65149c617220966bc3bb6897d757a71cd60167d6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4fc5210d2dcf30d9c4603b67b890c78510af1338
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="win32icon"></a>/win32icon
 .Ico ファイルを出力ファイルに挿入します。 この .ico ファイルは出力ファイルを表す**ファイル エクスプ ローラー**です。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/21/2017
   
 |Visual Studio IDE で/win32icon を設定するには|  
 |---|  
-|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[アプリケーション]** タブをクリックします。<br />3.値を変更、**アイコン**ボックス。|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[アプリケーション]** タブをクリックします。<br />3.値を変更、**アイコン**ボックス。|  
   
 ## <a name="example"></a>例  
  次のコードのコンパイル`In.vb`.ico ファイルをアタッチおよび`Rf.ico`です。  
@@ -51,6 +51,6 @@ ms.lasthandoff: 11/21/2017
 vbc /win32icon:rf.ico in.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

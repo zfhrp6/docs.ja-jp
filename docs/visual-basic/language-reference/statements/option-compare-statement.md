@@ -26,11 +26,11 @@ ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
 caps.latest.revision: "37"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 281b18322f5be4e7dadcb9533680b25016a44c96
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 00753eddb641c07ef9c6e6282fe00c5e8d00547a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="option-compare-statement"></a>Option Compare ステートメント
 文字列データを比較するときに使用する既定の比較方法を宣言します。  
@@ -72,13 +72,13 @@ Option Compare { Binary | Text }
   
 #### <a name="to-set-option-compare-in-the-ide"></a>IDE で Option Compare を設定するには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、次を参照してください。 [NIB: プロジェクト デザイナーでプロジェクトのプロパティを管理する](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e)です。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。  
   
 2.  **[コンパイル]** タブをクリックします。  
   
 3.  値を設定、 **Option Compare**ボックス。  
   
- プロジェクトを作成するときに、 **Option Compare**の設定、**コンパイル** タブに設定されている、 **Option Compare**での設定、**オプション**ダイアログ ボックス。 この設定を変更する、**ツール** メニューのをクリックして**オプション**です。 **オプション** ダイアログ ボックスで、展開**プロジェクトおよびソリューション**、クリックして**既定値は VB**です。 初期の既定の設定**VB の既定値**は**バイナリ**です。  
+ プロジェクトを作成するときに、 **Option Compare**の設定、**コンパイル** タブに設定されている、 **Option Compare**での設定、**オプション**ダイアログ ボックス。 この設定を変更する、**ツール** メニューのをクリックして**オプション**です。 **[オプション]** ダイアログ ボックスの **[プロジェクトおよびソリューション]** を展開し、**[VISUAL BASIC の既定値]** をクリックします。 初期の既定の設定**VB の既定値**は**バイナリ**です。  
   
 #### <a name="to-set-option-compare-on-the-command-line"></a>コマンド ラインで Option Compare を設定するには  
   
@@ -94,7 +94,7 @@ Option Compare { Binary | Text }
   
  [!code-vb[VbVbalrStatements#46](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-compare-statement_2.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Strings.InStr%2A>  
  <xref:Microsoft.VisualBasic.Strings.InStrRev%2A>  
  <xref:Microsoft.VisualBasic.Strings.Replace%2A>  

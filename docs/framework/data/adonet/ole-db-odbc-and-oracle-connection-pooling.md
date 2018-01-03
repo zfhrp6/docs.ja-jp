@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 22ef6afa36c7fc46713ec5c0940c305fc967e91b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7ee991417daa4636cd87c7a3655138d066c261f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>OLE DB、ODBC、および Oracle 接続プール
 接続をプールすると、アプリケーションのパフォーマンスとスケーラビリティを大幅に改善できます。 このセクションでは、OLE DB、ODBC、および Oracle 用の .NET Framework データ プロバイダーの接続プールについて説明します。  
@@ -80,7 +81,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 |`Min Pool Size`|0|プールで維持できる最小接続数。|  
 |`Pooling`|'true'|`true` に設定すると、接続が適切なプールから取り出されるか、または必要に応じて作成され、適切なプールに追加されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [接続プール](../../../../docs/framework/data/adonet/connection-pooling.md)  
  [パフォーマンス カウンター](../../../../docs/framework/data/adonet/performance-counters.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

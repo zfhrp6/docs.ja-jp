@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 107b222d37d62505c021f277a660741b52a9cdbb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 39de644f0701f11c4083d77071c70bb87147cac9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-entity-framework"></a>セキュリティに関する注意事項 (Entity Framework)
 このトピックでは、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] アプリケーションの開発、配置、および実行に特有のセキュリティの注意点について説明します。 このほかに、安全な [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] アプリケーションを作成するための推奨事項にも従うようにしてください。 詳細については、次を参照してください。[セキュリティの概要](../../../../../docs/framework/data/adonet/security-overview.md)です。  
@@ -171,7 +172,7 @@ ms.lasthandoff: 11/21/2017
 #### <a name="do-not-accept-metadataworkspace-objects-from-untrusted-sources"></a>信頼されていないソースから MetadataWorkspace オブジェクトを受け取らない  
  信頼されていないソースから <xref:System.Data.Metadata.Edm.MetadataWorkspace> クラスのインスタンスをアプリケーションで受け取らないようにしてください。 代わりに、それらのソースから明示的にワークスペースを作成および設定する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [展開に関する考慮事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
- [移行に関する考慮事項](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)
+ [配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
+ [移行に関する注意事項](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)

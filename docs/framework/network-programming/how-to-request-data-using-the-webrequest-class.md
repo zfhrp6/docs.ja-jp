@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e831f3c305716afe11df6c0b1e21db1ed5a4f01e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd714a9e006f87a817ca931757aaaaed920f50f7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-request-data-using-the-webrequest-class"></a>方法: WebRequest クラスを使用してデータを要求する
 次の手順では、たとえば、Web ページやファイルなどのリソースをサーバーから要求するための手順について説明します。 リソースは URI で識別される必要があります。  
@@ -181,9 +182,9 @@ Namespace Examples.System.Net
 End Namespace  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [インターネット要求の作成](../../../docs/framework/network-programming/creating-internet-requests.md)  
- [ネットワーク上のストリームの使用](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
+ [ネットワーク上でストリームを使用する](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
  [プロキシを介したインターネットへのアクセス](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
  [データの要求](../../../docs/framework/network-programming/requesting-data.md)  
  [方法: WebRequest クラスを使用してデータを送信する](../../../docs/framework/network-programming/how-to-send-data-using-the-webrequest-class.md)

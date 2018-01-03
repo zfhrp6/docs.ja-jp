@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5115fce1d5060d258ae5feeefd99aaaf5123a123
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ba49a4394d2a52b199edab88b977d2322bff945f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>典型的な LINQ to SQL の使用手順
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションを実装するには、このトピックで説明する手順に従います。 多くの手順は省略できます。 既定の状態でオブジェクト モデルを使用することもできます。  
@@ -91,7 +92,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="6-debug-and-test-your-application"></a>6.アプリケーションをデバッグおよびテストします。  
  詳細については、次を参照してください。[デバッグのサポート](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)  
  [オブジェクト モデルの作成](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)  
  [ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

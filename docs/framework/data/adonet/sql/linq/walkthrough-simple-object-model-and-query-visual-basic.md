@@ -14,11 +14,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ed6436dcac1791d735132c295943519af36e307d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d202aa7b014b457b3990153e9af470c3d0e5b03b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>チュートリアル : 簡単なオブジェクト モデルとクエリ (Visual Basic)
 このチュートリアルでは、複雑さを抑えた、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 全体の基本的なシナリオを示します。 サンプルの Northwind データベースにある Customers テーブルのモデル化を行うエンティティ クラスを作成します。 次に、住所がロンドンの顧客を表示するための簡単なクエリを作成します。  
@@ -63,7 +64,7 @@ ms.lasthandoff: 10/18/2017
   
 4.  **名前**ボックスに、入力**linqconsoleapp」と入力**です。  
   
-5.  **[OK]** をクリックします。  
+5.  **[OK]**をクリックします。  
   
 ## <a name="adding-linq-references-and-directives"></a>LINQ の参照とディレクティブを追加する  
  このチュートリアルで使用するアセンブリは、既定ではプロジェクトにインストールされていない場合があります。 場合`System.Data.Linq`がプロジェクトの参照として表示されない (をクリックして**すべてのファイル**で**ソリューション エクスプ ローラー**を展開し、**参照**ノード)、」の説明に従って、追加次の手順です。  
@@ -161,5 +162,5 @@ ms.lasthandoff: 10/18/2017
   
  「リレーションシップ間でクエリを実行する」のチュートリアルに進む場合は、必要条件として、ここで完了したチュートリアルのソリューションを保存しておく必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

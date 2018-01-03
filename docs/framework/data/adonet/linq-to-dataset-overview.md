@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 8b853eac26f41a3537438bd1f9b0263ae06b6e77
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 00b5d9ddd248c8a6bd54c77bd930eb56a4fa6057
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-dataset-overview"></a>LINQ to DataSet の概要
 <xref:System.Data.DataSet> は、[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] のコンポーネントの中でもきわめて使用頻度の高いコンポーネントの 1 つです。 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] の基礎を成す非接続型プログラミング モデルの重要な要素であり、さまざまなデータ ソースからのデータを明示的にキャッシュできます。 プレゼンテーション層では、<xref:System.Data.DataSet> とデータ バインドの GUI コントロールとが密接に連携します。 中間層では、リレーショナル形式のデータを維持するキャッシュとして機能し、単純で高速なクエリと、階層的なナビゲーション サービスを提供します。 データベースに対する要求の数を削減するための一般的な手法は、使用する、<xref:System.Data.DataSet>を中間層でキャッシュします。 たとえば、データ ドリブン[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]Web アプリケーションです。 ほとんど変更されないアプリケーション データがかなりの割合で存在し、しかも、複数のセッションまたは複数のユーザー間で共通して使用されているケースがよくあります。 このデータを Web サーバー上のメモリに維持しておくことで、データベースに対する要求数を減らし、高速な対話処理をユーザーに提供できます。 別の点、<xref:System.Data.DataSet>は、アプリケーションに 1 つまたは複数のデータ ソースから対象のデータのサブセットをアプリケーション空間に取り込むことができます。 アプリケーションは、そのデータをリレーショナル形式を維持したままインメモリで操作できます。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
   
  n 層アプリケーションでは、Web アプリケーションの情報をキャッシュするために <xref:System.Data.DataSet> が中間層で使用されます。 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリ機能は拡張メソッドによって実装され、既存の ADO.NET 2.0 の拡張<xref:System.Data.DataSet>です。  
   
-## <a name="see-also"></a>関連項目  
- [Dataset のクエリ](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
+## <a name="see-also"></a>参照  
+ [DataSet のクエリ](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
  [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
  [LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)

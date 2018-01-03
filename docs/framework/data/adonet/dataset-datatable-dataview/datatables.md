@@ -13,14 +13,15 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d1222d3df30bf2b3de1761b8fa5c702dc687d0a0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3803d550fe345c6f485dd204cc119f8a927a3501
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datatables"></a>DataTables
-<xref:System.Data.DataSet> は、テーブル、リレーションシップ、および制約のコレクションで構成されます。 ADO.NET では、<xref:System.Data.DataTable>内のテーブルを表すオブジェクトを使用する**データセット**です。 A **DataTable**のインメモリ リレーショナル データの 1 つのテーブルを表すデータがローカルに、します。NET ベースのアプリケーションをそれが存在するが、Microsoft SQL Server を使用するなどのデータ ソースからデータを読み込むことができます、 **DataAdapter**詳細については、次を参照してください[DataAdapter からの DataSet の読み込み](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)。  
+<xref:System.Data.DataSet> は、テーブル、リレーションシップ、および制約のコレクションで構成されます。 ADO.NET では、<xref:System.Data.DataTable>内のテーブルを表すオブジェクトを使用する**データセット**です。 A **DataTable**のインメモリ リレーショナル データの 1 つのテーブルを表すデータがローカルに、します。NET ベースのアプリケーションをそれが存在するが、Microsoft SQL Server を使用するなどのデータ ソースからデータを読み込むことができます、 **DataAdapter**詳細については、次を参照してください[DataAdapter からの DataSet の読み込み](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md).  
   
  **DataTable**クラスのメンバーである、 **System.Data** .NET Framework クラス ライブラリ内で名前空間。 作成して使用することができます、 **DataTable**とは独立してまたはのメンバーとして、**データセット**、および**DataTable**オブジェクトは、他の .NET Framework のオブジェクトと組み合わせても使用できます含む、<xref:System.Data.DataView>です。 コレクション内のテーブルにアクセスする、**データセット**を通じて、**テーブル**のプロパティ、**データセット**オブジェクト。  
   
@@ -37,7 +38,7 @@ ms.lasthandoff: 10/18/2017
  [DataTable スキーマの定義](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
  作成と使用に関する情報を提供**DataColumn**オブジェクトと制約。  
   
- [DataTable 内のデータを操作します。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [DataTable 内のデータの操作](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
  テーブル内のデータを追加、変更、および削除する方法について説明します。 使用する方法について説明します**DataTable**を調べるテーブル内のデータへの変更イベント。  
   
  [DataTable イベントの処理](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)  
@@ -65,5 +66,5 @@ ms.lasthandoff: 10/18/2017
  [クラス ライブラリの概要](../../../../../docs/standard/class-library-overview.md)  
  .NET Framework クラス ライブラリの概要を説明を含む、**システム**名前空間、第 2 レベルの名前空間だけでなく**System.Data**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

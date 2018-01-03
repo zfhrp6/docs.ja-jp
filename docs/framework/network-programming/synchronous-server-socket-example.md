@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 4304a8928b2fe768f20b2ff0bde94921565155ac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7a249277a82a1b234f83e2fe17510e997425f278
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="synchronous-server-socket-example"></a>同期サーバー ソケットの例
 次のプログラム例では、クライアントからの接続要求を受け取るサーバーを作成します。 このサーバーは同期ソケットで構築されます。そのため、サーバー アプリケーションの実行は、クライアントからの接続を待っている間、一時停止となります。 このアプリケーションはクライアントから文字列を受信し、それをコンソールに表示し、クライアントにエコー バックします。 クライアントからの文字列には、文字列 "\<EOF>" が含まれている必要があります。これは、メッセージの終わりを伝えるためのものです。  
@@ -166,7 +167,7 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [同期クライアント ソケットの例](../../../docs/framework/network-programming/synchronous-client-socket-example.md)  
  [同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
  [ソケットのコード例](../../../docs/framework/network-programming/socket-code-examples.md)

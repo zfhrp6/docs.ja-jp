@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 828e5ae0a9db2542debf8e09e5d8875fcea0ba23
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2ac06c78670b4113ab718c06423c04c0ea27c208
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="oracle-schema-collections"></a>Oracle スキーマ コレクション
 Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ コレクションに加えて次のスキーマ コレクションをサポートしています。  
@@ -111,10 +112,10 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |LAST_ANALYZED|DateTime|インデックスが最後に分析された日付。|  
 |DEGREE|String|インデックスがスキャンされるインスタンスごとのスレッド数。|  
 |INSTANCES|String|インデックスがスキャンされるインスタンス数。|  
-|PARTITIONED|文字列型|このインデックスがパーティション分割されているかどうか (はい &#124;です。いいえ)。|  
+|PARTITIONED|String|このインデックスがパーティション分割されているかどうか (はい &#124;です。いいえ)。|  
 |TEMPORARY|String|インデックスが一時テーブルにあるかどうかを示します。|  
-|GENERATED|文字列型|(Y &#124; 生成されたインデックスの名前がシステムであるかどうかN)。|  
-|SECONDARY|文字列型|インデックスが Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトでかどうか (Y &#124;です。N)。|  
+|GENERATED|String|(Y &#124; 生成されたインデックスの名前がシステムであるかどうかN)。|  
+|SECONDARY|String|インデックスが Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトでかどうか (Y &#124;です。N)。|  
 |BUFFER_POOL|String|インデックス ブロックで使用される既定のバッファー プールの名前。|  
 |USER_STATS|String|統計情報がユーザーによって直接入力されたものかどうかを示します。|  
 |DURATION|String|一時テーブルの存続期間を示します。1) SYS$SESSION: セッションが存続している間、行が保持されます。2) SYS$TRANSACTION: COMMIT 後に行が削除されます。3) 永続テーブルの場合は NULL です。|  
@@ -156,7 +157,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
 |GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
-|SECONDARY|文字列型|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
+|SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
 |CREATED|DateTime|オブジェクトが作成された日付。|  
   
 ## <a name="sequences"></a>シーケンス  
@@ -231,7 +232,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
 |GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
-|SECONDARY|文字列型|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
+|SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
   
 ## <a name="packages"></a>パッケージ  
   
@@ -247,7 +248,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
 |GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
-|SECONDARY|文字列型|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
+|SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
 |CREATED|DateTime|オブジェクトが作成された日付。|  
   
 ## <a name="packagebodies"></a>PackageBodies  
@@ -264,7 +265,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
 |GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
-|SECONDARY|文字列型|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
+|SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
 |CREATED|DateTime|オブジェクトが作成された日付。|  
   
 ## <a name="arguments"></a>引数  
@@ -389,5 +390,5 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |CHAR_LENGTH|Decimal (10 進数型)|文字列データ型の文字数制限。|  
 |CHAR_USED|String|文字列のバイト数制限 (B) または文字数制限 (C) が正式であるかどうかを示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

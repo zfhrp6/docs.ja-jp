@@ -9,11 +9,11 @@ ms.assetid: 7c2c0cee-02a1-4157-be03-39d18e18408f
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: fbc8458231c36f3af9ca4de524e01e19a162ee47
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9cb8cef696ba93f922dfe0d92195a5fb5147b4cc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="this-single-instance-application-could-not-connect-to-the-original-instance"></a>この単一インスタンス アプリケーションは元のインスタンスに接続できませんでした
 この単一インスタンス アプリケーションは元のインスタンスに接続できませんでした。 この問題の考えられる原因の一部は次のとおりです。  
@@ -36,7 +36,6 @@ ms.lasthandoff: 11/21/2017
   
 5.  エラーが発生した状況を記録して、Microsoft 製品サポート サービスに電話でご連絡ください。  
   
-## <a name="see-also"></a>関連項目  
- [NIB: 方法: アプリケーション (Visual Basic) のインスタンス化動作を指定します。](http://msdn.microsoft.com/en-us/48539ad8-d960-4210-beab-ee65f6c6dc6e)  
+## <a name="see-also"></a>参照  
  [デバッガーの基本事項](/visualstudio/debugger/debugger-basics)  
- [PAVEOVER 製品のサポートとアクセシビリティ](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)
+

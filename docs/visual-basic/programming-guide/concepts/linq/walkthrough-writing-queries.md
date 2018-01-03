@@ -17,11 +17,11 @@ ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
 caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d30ad7f0db2760427493610c630f3fff8dcfac31
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: e78d93895a86ad9b2456e5ac7c05db83ebf0379d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>チュートリアル: Visual Basic でクエリを記述する
 このチュートリアルでは、書き込みを Visual Basic 言語の機能を使用する方法を示しています[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]クエリ式。 このチュートリアルでは、Student オブジェクトの一覧にクエリを作成する方法、クエリを実行する方法、およびそれらを変更する方法について説明します。 クエリでは、オブジェクト初期化子、ローカル型推論、および匿名型を含むいくつかの機能を組み込みます。  
@@ -145,13 +145,13 @@ ms.lasthandoff: 12/09/2017
   
  [LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)  
   
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
   
  [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)  
   
  [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [統合言語クエリ (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)  
  [Visual Basic の LINQ の概要](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  

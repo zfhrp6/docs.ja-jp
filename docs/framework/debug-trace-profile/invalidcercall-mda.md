@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0c051e1513f8e8ad1735085cb93f106b4fb9b0d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c77c49fef5657d5f69538285149e458209ee9b7c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="invalidcercall-mda"></a>invalidCERCall MDA
 `invalidCERCall` マネージ デバッグ アシスタント (MDA) は、制約された実行領域 (CER) グラフ内で信頼契約がないかまたは過度に脆弱な契約を持つメソッドの呼び出しがある場合に、アクティブ化されます。 脆弱な契約とは、最悪のケースの状態の破損が、呼び出しに渡されるインスタンスよりも大きい範囲であることを宣言する契約です。つまり、<xref:System.AppDomain> またはプロセスの状態が破損するか、または CER 内で呼び出されたときにその結果を常に確定的に計算できるとは限りません。  
@@ -62,7 +63,7 @@ ms.lasthandoff: 11/21/2017
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>  
  <xref:System.Runtime.ConstrainedExecution>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

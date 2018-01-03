@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d8e2fa4fe72b7b4c2f421aefa566f89492c06457
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 00567c32b800bb98386e15b2ba822ccc9623d72b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicecredentialsgt"></a>&lt;serviceCredentials&gt;
 サービスの認証に使用される資格情報と、クライアントの資格情報検証関連の設定を指定します。  
@@ -76,7 +77,7 @@ ms.lasthandoff: 12/02/2017
 |-------------|-----------------|  
 |[\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.ServiceCredentialsElement>  
  <xref:System.ServiceModel.Description.ServiceCredentials>  
  [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)

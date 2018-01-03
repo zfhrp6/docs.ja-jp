@@ -13,20 +13,21 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 341723d44960d4eaf9d8338e3c266720816c0899
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58d04a3ba1d73d4236353ff4f08a747ac7b6f0cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="manipulating-data-in-a-datatable"></a>DataTable 内のデータの操作
 <xref:System.Data.DataTable> 内に <xref:System.Data.DataSet> を作成した後で、データベース内のテーブルを使用する場合と同じ操作を実行できます。 テーブル内のデータの追加、表示、編集、および削除を実行したり、エラーとイベントを監視したり、テーブル内のデータを照会したりできます。 内のデータを変更するときに、 **DataTable**変更が正確し、プログラムによって受け入れるか、変更を拒否するかどうかを決定かどうかを確認することもできます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [DataTable にデータを追加します。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)  
+ [DataTable へのデータの追加](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)  
  新しい行を作成してテーブルに追加する方法について説明します。  
   
- [DataTable にデータを表示します。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/viewing-data-in-a-datatable.md)  
+ [DataTable 内のデータの表示](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/viewing-data-in-a-datatable.md)  
  元のバージョンのデータや現在のバージョンのデータを含め、行内のデータにアクセスする方法について説明します。  
   
  [Load メソッド](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/the-load-method.md)  
@@ -35,19 +36,19 @@ ms.lasthandoff: 11/21/2017
  [DataTable の編集](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-edits.md)  
  提示された変更が検証され、受け入れられるまで行への実際の変更を保留しておく方法も含め、行内のデータを変更する方法について説明します。  
   
- [行の状態と行のバージョン](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
+ [行の状態とバージョン](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
  行のさまざまな状態について説明します。  
   
  [DataRow の削除](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarow-deletion.md)  
  テーブルから行を削除する方法について説明します。  
   
- [行のエラー情報](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
+ [行エラー情報](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
  アプリケーション内でのデータに関する問題を解決するために、行ごとのエラー情報を挿入する方法について説明します。  
   
- [Acceptchange と Rejectchange](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
+ [AcceptChange と RejectChange](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
  行への変更を受け入れたり拒否したりする方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
  [DataTable イベントの処理](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

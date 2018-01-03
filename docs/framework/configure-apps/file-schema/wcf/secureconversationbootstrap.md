@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: c8b29b9b4253e51f8cc1d0625fb27998a2d10b3a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5cff19fc6d931f5dd391776c39f3934c8809a5ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsecureconversationbootstrapgt"></a>&lt;secureConversationBootstrap&gt;
 セキュリティで保護されたメッセージ交換サービスの開始に使用される既定値を指定します。  
@@ -84,14 +85,14 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 |-------------|-----------------|  
 |[\<セキュリティ >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|カスタム バインドのセキュリティ オプションを指定します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
  <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>  
  <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
- [方法: SecurityBindingElement を使用してカスタム バインディングを作成します。](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [カスタム バインディングのセキュリティ](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+ [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [カスタム バインド セキュリティ](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

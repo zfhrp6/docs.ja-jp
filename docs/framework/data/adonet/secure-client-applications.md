@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b42c06b9507894568a4299f23b62010e44076194
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1218cda46a6a901c3dbf9fb11333b04d0133df42
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="secure-client-applications"></a>安全なクライアント アプリケーション
 通常、アプリケーションは多数の要素で構成されており、それぞれをデータの損失やシステムのセキュリティ侵害を招く脆弱性から確実に保護する必要があります。 安全なユーザー インターフェイスを作成し、攻撃者によるデータやシステム リソースへのアクセスを未然に阻止することで、多くの問題を防ぐことができます。  
@@ -75,7 +76,7 @@ ms.lasthandoff: 11/21/2017
 |[リモート処理でのセキュリティ](http://msdn.microsoft.com/en-us/9574262c-d4b1-41c5-8600-24ff147c0add)|認証と暗号化のほか、リモート処理に関連したその他のセキュリティ トピックについて説明します。|  
 |[セキュリティとリモート処理の考慮事項](../../../../docs/framework/misc/security-and-remoting-considerations.md)|保護されたオブジェクトやアプリケーション ドメインの境界越えに伴うセキュリティの問題について説明します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [データ アクセスに関する推奨事項](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
  [アプリケーションの保護](/visualstudio/ide/securing-applications)  

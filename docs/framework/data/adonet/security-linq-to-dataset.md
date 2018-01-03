@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c0c919bb5be12005850b81059fc641f6f25b06bb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2f67ad1947d421a5221a34ad8392242e4d18039f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-linq-to-dataset"></a>セキュリティ (LINQ to DataSet)
 このトピックでは、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] におけるセキュリティの問題について説明します。  
@@ -32,5 +33,5 @@ ms.lasthandoff: 10/18/2017
   
  直接、間接を問わず、ユーザーまたは外部エージェントから受け取った入力には、対象言語の構文を巧みに利用して不正なアクションを実行する内容が含まれている可能性があります。 これは、対象言語が Transact-SQL である場合、その攻撃パターンにちなんで SQL インジェクション攻撃と呼ばれます。 クエリに直接挿入されるユーザー入力を使用して、データベースのテーブルを削除したり、サービス拒否の状態を引き起こしたり、本来実行される操作を改変したりします。 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] 内でクエリを構築することは可能ですが、オブジェクト モデルの API を介して構築します。 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリが TRANSACT-SQL では、従来の感覚で SQL インジェクション攻撃を受ける可能性がない文字列操作や文字列連結を使用して、構成されていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラミング ガイド](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

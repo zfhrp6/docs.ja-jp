@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ae25f03a091d3a9705a2e445fec948d8c5e15e0f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e18115e460bf546c2fd6263e4671457a3da68f65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adonet-overview"></a>ADO.NET の概要
 ADO.NET は、SQL Server や XML などのデータ ソースや、OLE DB や ODBC 経由で公開されるデータ ソースに対する一貫性を持ったアクセス機能を実現します。 データを共有する消費者向けアプリケーションで ADO.NET を使用することで、そのようなデータ ソースへの接続や、データ ソースに格納されているデータの取得、操作、更新を実行できます。  
@@ -42,13 +43,13 @@ ADO.NET は、SQL Server や XML などのデータ ソースや、OLE DB や OD
  [LINQ と ADO.NET](../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
  ADO.NET での統合言語クエリ (LINQ) の実装方法を説明し、関連項目へのリンクを示します。  
   
- [.NET framework データ プロバイダー](../../../../docs/framework/data/adonet/data-providers.md)  
+ [.NET Framework データ プロバイダー](../../../../docs/framework/data/adonet/data-providers.md)  
  .NET Framework データ プロバイダーと、ADO.NET に同梱される .NET Framework データ プロバイダーのデザインの概要を説明します。  
   
  [ADO.NET データセット](../../../../docs/framework/data/adonet/ado-net-datasets.md)  
  `DataSet` のデザインとコンポーネントの概要を説明します。  
   
- [ADO.NET でのサイド バイ サイド実行](../../../../docs/framework/data/adonet/side-by-side-execution.md)  
+ [ADO.NET での side-by-side 実行](../../../../docs/framework/data/adonet/side-by-side-execution.md)  
  ADO.NET のバージョン間の相違と、その相違が side-by-side 実行とアプリケーションの互換性に及ぼす影響について説明します。  
   
  [ADO.NET のコード例](../../../../docs/framework/data/adonet/ado-net-code-examples.md)  
@@ -67,7 +68,7 @@ ADO.NET は、SQL Server や XML などのデータ ソースや、OLE DB や OD
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  データ ソースへの接続、データの取得、データの変更の方法について説明します。 これには、`DataReaders` と `DataAdapters` が含まれます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
  [Visual Studio でのデータへのアクセス](/visualstudio/data-tools/accessing-data-in-visual-studio)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

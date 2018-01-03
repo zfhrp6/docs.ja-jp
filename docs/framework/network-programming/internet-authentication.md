@@ -25,11 +25,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f44bef7804e9101b2d1bc50ba53f3fc7a5fa90ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fbf25ae866b338d2f1ac0ea11570e0d535e9137c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="internet-authentication"></a>インターネット認証
 <xref:System.Net> クラスは、さまざまなクライアント認証メカニズムをサポートしています。これには、基本、ダイジェスト、ネゴシエート、NTLM、および Kerberos の標準のインターネット認証方法の他に、ユーザーが作成できるカスタム メソッドも含まれます。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 11/21/2017
   
  一部の認証スキームでは、最初にリソースの要求を作成しなくても、ユーザーを認証することができます。 リソースでユーザーを事前認証することで、サーバーへのラウンド トリップを少なくとも 1 回減らせるため、アプリケーションが時間を節約できます。 または、後でユーザーへの応答性を高めるため、プログラムの起動中に認証を実行できます。 事前認証を使用できる認証スキームで <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> プロパティを **true** に設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本認証とダイジェスト認証](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
- [NTLM と Kerberos 認証](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
+ [NTLM 認証および Kerberos 認証](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
  [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)

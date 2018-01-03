@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7a0650f444f901d37797ca81343f06cb566f8112
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2b5389f4ea65af9160fe5cf077b62fd075fb89b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="external-mapping"></a>外部マップ
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]サポートしている*外部マッピング*、これによって、データベースのデータ モデルと、オブジェクト モデルの間のマッピングを指定する別の XML ファイルを使用するプロセスです。 外部マッピング ファイルを使用すると、次のような利点があります。  
@@ -26,7 +27,7 @@ ms.lasthandoff: 11/21/2017
   
 -   外部マッピング ファイルは、構成ファイルのような方法で扱うことができます。 たとえば、バイナリを配布した後、外部マッピング ファイルを交換するだけでアプリケーションの動作を更新できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  マッピング ファイルは、XML ファイルである必要があり、ファイルが検証のため、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]スキーマ定義 (.xsd) ファイル。  
   
  次の規則が適用されます。  
@@ -151,7 +152,7 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
- [方法: 外部ファイルとしてオブジェクト モデルを生成します。](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)
+ [方法 : オブジェクト モデルを外部ファイルとして生成する](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)

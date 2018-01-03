@@ -14,11 +14,11 @@ ms.assetid: 7ebf2106-0652-4fdc-bf60-70fc86465d83
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8da27ea2f9f0a4d370928d70cda1a796b822d97c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d1eafe8d7ccd6f2c71b754dadc343518948e7146
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="nowarn"></a>/nowarn
 警告を生成するコンパイラの機能を無効にします。  
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`numberList`|省略可能です。 コンパイラはしないようにする警告の ID 番号のコンマ区切り一覧。 警告の Id が指定されていない場合、すべての警告は抑制されます。|  
+|`numberList`|任意。 コンパイラはしないようにする警告の ID 番号のコンマ区切り一覧。 警告の Id が指定されていない場合、すべての警告は抑制されます。|  
   
 ## <a name="remarks"></a>コメント  
  `/nowarn`オプションにより、コンパイラの警告を生成しないことができます。 個々 の警告を抑制するのに警告の ID を指定、`/nowarn`コロンの後ろのオプションです。 複数の警告番号をカンマで区切ります。  
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
 |開発環境を統合するには、Visual Studio での/nowarn の設定|  
 |---|  
-|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.選択、**すべての警告を無効にする**すべての警告を無効にする チェック ボックスです。<br />     または<br />     特定の警告を無効にするには、 **None**警告の横にあるドロップダウン リストからです。|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[コンパイル]** タブをクリックします。<br />3.選択、**すべての警告を無効にする**すべての警告を無効にする チェック ボックスです。<br />     または<br />     特定の警告を無効にするには、 **None**警告の横にあるドロップダウン リストからです。|  
   
 ## <a name="example"></a>例  
  次のコードのコンパイル`T2.vb`し、すべての警告を表示しません。  
@@ -60,7 +60,7 @@ vbc /nowarn t2.vb
 vbc /nowarn:42024 t2.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [Visual Basic での警告の構成](/visualstudio/ide/configuring-warnings-in-visual-basic)

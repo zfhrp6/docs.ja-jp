@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 743e938df0b9c7f12a9c3a11a4b5558137add529
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: efff585cff127e71e2dedd8abf2f502ca28e8df7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-generate-customized-code-by-modifying-a-dbml-file"></a>方法 : DBML ファイルを変更してカスタマイズ コードを生成する
 生成することができます[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]または c# ソース コード データベース マークアップ言語 (.dbml) メタデータ ファイルからです。 この方法を使用すると、アプリケーション マッピング コードを生成する前に、既定の .dbml ファイルをカスタマイズできます。 これは高度な機能です。  
@@ -48,7 +49,7 @@ sqlmetal /namespace:nwind /code:nwind.vb /language:vb DBMLFile.dbml
 sqlmetal /namespace:nwind /code:nwind.cs /language:csharp DBMLFile.dbml  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
  [SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)  
  [オブジェクト モデルの作成](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)

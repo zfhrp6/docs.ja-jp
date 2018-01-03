@@ -14,11 +14,11 @@ ms.assetid: 49819f1d-a1bd-4201-affe-5afe6d9712e1
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 04b79b3d14a9c4a9f9721860cd1ed44032dfa5d1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d472795affe0df098d1551daf51a2f0ae20723ba
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="warnaserror-visual-basic"></a>/warnaserror (Visual Basic)
 コンパイラで最初に発生した警告をエラーとして処理します。  
@@ -33,8 +33,8 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|+ &#124; -|省略可能です。 既定では、`/warnaserror-`が有効になります。 警告は妨げませんコンパイラ出力ファイルを作成します。 `/warnaserror`オプションは、同じとして`/warnaserror+`、警告をエラーとして扱うことです。|  
-|`numberList`|省略可能です。 警告 ID のコンマ区切りの一覧の番号を`/warnaserror`オプションが適用されます。 警告 ID が指定されていない場合、`/warnaserror`オプションのすべての警告に適用されます。|  
+|+ &#124; -|任意。 既定では、`/warnaserror-`が有効になります。 警告は妨げませんコンパイラ出力ファイルを作成します。 `/warnaserror`オプションは、同じとして`/warnaserror+`、警告をエラーとして扱うことです。|  
+|`numberList`|任意。 警告 ID のコンマ区切りの一覧の番号を`/warnaserror`オプションが適用されます。 警告 ID が指定されていない場合、`/warnaserror`オプションのすべての警告に適用されます。|  
   
 ## <a name="remarks"></a>コメント  
  `/warnaserror`オプションは、すべての警告をエラーとして扱います。 警告をエラーとしてレポートされる代わりに、通常は報告されるメッセージ。 コンパイラは警告として同じ警告のそれ以降の出現箇所を報告します。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
 |すべての警告、Visual Studio IDE でのエラーとして扱う/warnaserror を設定するには|  
 |---|  
-|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.確認してください、**すべての警告を無効にする** チェック ボックスがオフになっています。<br />4.チェック、**すべての警告をエラーとして扱う**チェック ボックスをオンします。|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[コンパイル]** タブをクリックします。<br />3.確認してください、**すべての警告を無効にする** チェック ボックスがオフになっています。<br />4.チェック、**すべての警告をエラーとして扱う**チェック ボックスをオンします。|  
   
 |Visual Studio IDE でのエラーとして特定の警告を処理する/warnaserror を設定するには|  
 |---|  
@@ -68,7 +68,7 @@ vbc /warnaserror in.vb
 vbc /warnaserror:42024 t2.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [Visual Basic での警告の構成](/visualstudio/ide/configuring-warnings-in-visual-basic)

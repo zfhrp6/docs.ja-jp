@@ -20,11 +20,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 467c572d456bf2beca9f69359d362867aefbe5a1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b93b6e8b6e687f2e39fd5792aba08eaa47fa29fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>方法: IIS 上で実行する WCF Data Service を開発する
 このトピックは、使用する方法を示します[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]でインターネット インフォメーション サービス (IIS) を実行している ASP.NET Web アプリケーションによってホストされる Northwind サンプル データベースに基づくデータ サービスを作成します。 ASP.NET 開発サーバーで実行されている ASP.NET Web アプリケーションとして同じ Northwind データ サービスを作成する方法の例は、次を参照してください。、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 12/02/2017
   
 4.  型`NorthwindService`として、プロジェクトの名前。  
   
-5.  **[OK]** をクリックします。  
+5.  **[OK]**をクリックします。  
   
 6.  **プロジェクト**メニューの  **NorthwindService プロパティ**です。  
   
@@ -169,5 +170,5 @@ ms.lasthandoff: 12/02/2017
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#servicedefinition)]
      [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サービスとしてのデータの公開](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)

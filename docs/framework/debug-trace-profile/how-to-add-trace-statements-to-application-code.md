@@ -24,11 +24,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5dd46da24c379a7900dff0dc482577195f5f4c23
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 134e03a1438e4c9399962a245eb44eec9dd02924
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>方法 : アプリケーション コードにトレース ステートメントを追加する
 トレースで最も使用頻度の高いメソッドは、出力をリスナーに書き込むメソッドである **Write**、**WriteIf**、**WriteLine**、**WriteLineIf**、**Assert**、および **Fail** です。 これらのメソッドは、次の 2 つのカテゴリに分類できます。**Write**、**WriteLine**、および **Fail** はすべて出力を無条件に生成します。それに対して、**WriteIf**、**WriteLineIf**、および **Assert** はブール条件をテストし、条件の値に基づいて書き込みを行ったり行わなかったりします。 **WriteIf** と **WriteLineIf** は条件が `true` の場合に出力を生成し、**Assert** は条件が `false` の場合に出力を生成します。  
@@ -92,12 +93,12 @@ ms.lasthandoff: 11/21/2017
     > [!NOTE]
     >  **Assert** は、トレースとデバッグの両方で使用できます。 この例では、呼び出し履歴を **Listeners** コレクションのリスナーに出力しています。 詳細については、「[マネージ コードのアサーション](/visualstudio/debugger/assertions-in-managed-code)」および「<xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Diagnostics.Debug.WriteIf%2A?displayProperty=nameWithType>  
  <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=nameWithType>  
  <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>  
  <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>  
  [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
- [方法: 作成、初期化、およびトレース スイッチを構成します。](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
+ [方法 : トレース スイッチを作成、初期化、および構成する](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
  [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)  
  [トレース リスナー](../../../docs/framework/debug-trace-profile/trace-listeners.md)

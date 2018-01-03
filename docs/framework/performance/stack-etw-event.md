@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 55219fe755f49b6edbd3b53cc686bf4f9087aa08
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1107c6608fe5136eb6159b1d4f0a438e95c4dabb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stack-etw-event"></a>スタック ETW イベント
 イベントの発生後にスタック トレースを生成するには、スタック イベントを他のイベントと併用する必要があります。 ランタイム プロバイダーが有効になると、ログに記録されます。 これは頻度が非常に高いイベントです。別のランタイム イベントが発生するたびに発生するためです。 そのような理由から、このイベントの使用には注意が必要です。  
@@ -47,5 +48,5 @@ ms.lasthandoff: 10/18/2017
 |FrameCount|win:UInt32|スタック トレースのフレーム数。|  
 |Stack|win:Pointer|命令ポインターの列。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)

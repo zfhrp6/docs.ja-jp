@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 6b28be2b3bdddd9457874881e930ea978ef5c2b1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9d0cef0247c36f3c7819e37f8144635ebdbf610b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-set"></a>エンティティ セット
 *エンティティ セット*の論理的なコンテナーは、のインスタンス、[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)とそのエンティティ型から派生した任意の型のインスタンス。 (派生型については、次を参照してください[Entity Data Model: 継承](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)。)。エンティティ型とエンティティ セットの関係は、リレーショナル データベースの行とテーブルの関係に似ており、エンティティ型は行のようにデータ構造を表し、エンティティ セットにはテーブルのように構造のインスタンスが格納されます。 エンティティ セットは、データ モデリング構造ではなく、データ構造を表しません。 エンティティ セットは、エンティティ型のインスタンスをグループ化してデータ ストアにマップするための、ホスト環境またはストレージ環境 (共通言語ランタイムや SQL Server データベースなど) の構造を提供します。  
@@ -54,6 +55,6 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xml[EDM_Example_Model#MESTExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books2.edmx#mestexample)]  
   
-## <a name="see-also"></a>関連項目  
- [エンティティ データ モデルの主要な概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
- [エンティティ データ モデル](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a>参照  
+ [Entity Data Model キーの概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

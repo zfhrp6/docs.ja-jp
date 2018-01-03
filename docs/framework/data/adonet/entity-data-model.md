@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 69b72a824e6f9468c9b3d86073243d506382e766
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8433376c9950594b57b800b401d68d849e743d85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-data-model"></a>エンティティ データ モデル
 Entity Data Model (EDM) は、格納される形式に関係なく、データ構造を記述する一連の概念です。 EDM は、1976 年に Peter Chen により記述されたエンティティ リレーションシップ モデルを取り入れていますが、これを土台にして利用法が拡張されています。  
@@ -29,7 +30,7 @@ Entity Data Model (EDM) は、格納される形式に関係なく、データ�
 ## <a name="in-this-section"></a>このセクションの内容  
  このセクションのトピックでは、Entity Data Model の概念について説明します。 EDM を実装する DSL には、ここで解説した概念を含める必要があります。 なお、 [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) CSDL を使用して概念モデルを定義します。 詳細については、次を参照してください。 [CSDL 仕様](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)です。  
   
- [エンティティ データ モデルの主要な概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Entity Data Model キーの概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
   
  [Entity Data Model: 名前空間](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md)  
   
@@ -37,13 +38,13 @@ Entity Data Model (EDM) は、格納される形式に関係なく、データ�
   
  [Entity Data Model: 継承](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)  
   
- [アソシエーション end](../../../../docs/framework/data/adonet/association-end.md)  
+ [アソシエーション End](../../../../docs/framework/data/adonet/association-end.md)  
   
- [アソシエーション end の多重度](../../../../docs/framework/data/adonet/association-end-multiplicity.md)  
+ [アソシエーション End の多重度](../../../../docs/framework/data/adonet/association-end-multiplicity.md)  
   
- [関連付けセット](../../../../docs/framework/data/adonet/association-set.md)  
+ [アソシエーション セット](../../../../docs/framework/data/adonet/association-set.md)  
   
- [アソシエーション セット end](../../../../docs/framework/data/adonet/association-set-end.md)  
+ [アソシエーション セット End](../../../../docs/framework/data/adonet/association-set-end.md)  
   
  [アソシエーション型](../../../../docs/framework/data/adonet/association-type.md)  
   
@@ -55,7 +56,7 @@ Entity Data Model (EDM) は、格納される形式に関係なく、データ�
   
  [エンティティ セット](../../../../docs/framework/data/adonet/entity-set.md)  
   
- [エンティティの種類](../../../../docs/framework/data/adonet/entity-type.md)  
+ [エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)  
   
  [facet](../../../../docs/framework/data/adonet/facet.md)  
   
@@ -71,7 +72,7 @@ Entity Data Model (EDM) は、格納される形式に関係なく、データ�
   
  [参照整合性制約](../../../../docs/framework/data/adonet/referential-integrity-constraint.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET Entity Data Model ツール](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)  
  [.edmx ファイルの概要](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
- [CSDL の仕様](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)
+ [CSDL 仕様](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)

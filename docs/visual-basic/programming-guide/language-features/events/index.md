@@ -14,11 +14,11 @@ ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 10213597fa65c44a56b30c37e2e6f4e732d96954
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 5a1edd7976f1e22117e1f4f31354388d5257ffc1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="events-visual-basic"></a>イベント (Visual Basic)
 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] プロジェクトとは、順に実行される一連のプロシージャと思っているかもしれませんが、実際には、ほとんどのプログラムはイベント ドリブン型です。つまり、実行の流れは、外部で発生する "*イベント*" と呼ばれる事象によって決まります。  
@@ -113,5 +113,5 @@ ms.lasthandoff: 12/09/2017
 |[方法: カスタム イベントを宣言してメモリを節約する](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|イベントを処理するときにのみ、メモリを使用するカスタム イベントを定義する方法を示します。|  
 |[Visual Basic での継承されたイベント ハンドラーのトラブルシューティング](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|継承されたコンポーネントのイベント ハンドラーで生じる一般的な問題を一覧表示します。|  
 |[イベント](../../../../standard/events/index.md)|[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のイベント モデルについて概説します。|  
-|[Windows フォーム内のイベント ハンドラーの作成](../../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)|Windows フォーム オブジェクトに関連付けられているイベントの処理方法について説明します。|  
+|[Windows フォーム内でのイベント ハンドラーの作成](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Windows フォーム オブジェクトに関連付けられているイベントの処理方法について説明します。|  
 |[デリゲート](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Visual Basic でのデリゲートの概要を示します。|

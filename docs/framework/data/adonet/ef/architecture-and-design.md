@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: f0dcad5d6287d5399dac6cea38b10984781770f9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 48b80856242730a5412cd9d5d8dd2c7f857304ae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="architecture-and-design"></a>アーキテクチャとデザイン
 SQL 生成モジュール、[サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616)コマンド ツリーを表す式ツリー上のビジターとして実装されます。 生成は、式ツリーを介した単一のパスで行われます。  
@@ -424,5 +425,5 @@ IsEmpty(inut) = Not Exists(input)
   
  エクステントの別名と列の両方について一意の名前を生成するには、<existing_name>_n を使用します。n はまだ使用されていない最小の別名です。 すべての別名のグローバル リストを使用すると、連鎖名前変更の必要性が高くなります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サンプル プロバイダーでの SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)

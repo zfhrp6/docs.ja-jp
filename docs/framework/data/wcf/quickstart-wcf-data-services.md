@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08296be1002ee50e18a45c546645f4cc117d6bb5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fa6711ef5591110c74a1da95358aac4d8a8da655
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="quickstart-wcf-data-services"></a>クイック スタート (WCF Data Services)
 このクイック スタートでは、理解できます。[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]と[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]一連のトピックでは、をサポートするタスクを[作業の開始](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)です。  
@@ -53,5 +54,5 @@ ms.lasthandoff: 12/02/2017
 ## <a name="next-steps"></a>次の手順  
  [クイック スタートの開始](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md)

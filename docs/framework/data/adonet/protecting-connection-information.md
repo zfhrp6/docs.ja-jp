@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 31196697a606b3edbc0b3aa00b01e5eacb66cb03
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 10fc559b5aafa5aa180d6c2203de0375cbfa8275
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="protecting-connection-information"></a>接続情報の保護
 アプリケーションのセキュリティを実現するうえで、データ ソースへのアクセスを保護することは、最も重要な目標の 1 つです。 保護されていない接続文字列は脆弱性を招く原因になります。 接続情報をテキスト形式で保存したり、メモリ内に保持したりすると、システム全体のセキュリティが損なわれる可能性があります。 使用して、ソース コードに埋め込まれた接続文字列を読み取ることができます、 [Ildasm.exe (IL 逆アセンブラー)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md)コンパイルされたアセンブリで Microsoft intermediate language (MSIL) を表示します。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="encrypt-configuration-files"></a>構成ファイルの暗号化  
  接続文字列は構成ファイルに保存することもでき、そうすることで、アプリケーションのコードに接続文字列を組み込むことを避けられます。 構成ファイルは、.NET Framework が基本的な要素を定義するために使用する標準的な XML ファイルです。 構成ファイル内の接続文字列内に格納されて通常、  **\<connectionStrings >**内の要素、 **app.config** Windows アプリケーションの場合、または**web.config** ASP.NET アプリケーションのファイルです。 格納する基本の詳細については、取得して、構成ファイルから接続文字列の暗号化を参照してください[接続文字列と構成ファイル](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [保護された構成を使用して構成情報の暗号化](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)  
  [ネイティブ コードと .NET Framework コードのセキュリティ](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  

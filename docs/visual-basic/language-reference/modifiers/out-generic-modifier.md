@@ -12,11 +12,11 @@ ms.assetid: c4418369-1518-4a46-9a1e-054c61038eca
 caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 94d18200e6d7ce0ad63a229223ae77d99302e0e6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4e54504cd65b78846af41692f39899140a6d99b5
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="out-generic-modifier-visual-basic"></a>Out (ジェネリック修飾子) (Visual Basic)
 ジェネリック型パラメーターで、`Out`キーワードは、型が共変であることを指定します。  
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/21/2017
 -   型パラメーターがインターフェイス メソッドの戻り値の型としてのみ使用され、メソッド引数の型として使用されない。  
   
     > [!NOTE]
-    >  この規則には例外が 1 つあります。 共変のインターフェイスで反変の汎用デリゲートをメソッド パラメーターとして使用する場合は、共変の型をこのデリゲートのジェネリック型パラメーターとして使用できます。 共変および反変の汎用デリゲートの詳細については、「[デリゲートの分散](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)」および「[Func および Action 汎用デリゲートでの分散の使用](http://msdn.microsoft.com/library/e69c4f39-09aa-4c6d-a752-08cc767d8290)」を参照してください。  
+    >  この規則には例外が 1 つあります。 共変のインターフェイスで反変の汎用デリゲートをメソッド パラメーターとして使用する場合は、共変の型をこのデリゲートのジェネリック型パラメーターとして使用できます。 共変および反変の汎用デリゲートの詳細については、「[デリゲートの分散](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)」および「[Func および Action 汎用デリゲートでの分散の使用](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)」を参照してください。  
   
 -   型パラメーターがインターフェイス メソッドのジェネリック制約として使用されない。  
   
@@ -59,6 +59,6 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[vbVarianceKeywords#4](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/out-generic-modifier_2.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ジェネリック インターフェイスの分散](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
  [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)

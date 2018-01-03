@@ -19,11 +19,11 @@ ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
 caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4634c198b5fc41a4834cbd3cd96f9d3f1863d09b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1c8bd94bc8dd379edfda8c4350428684a5cda0b1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="option-infer-statement"></a>Option Infer ステートメント
 変数の宣言でローカル型推論を使用できるようにします。  
@@ -68,13 +68,13 @@ Option Infer がオフのときの IntelliSense
   
 #### <a name="to-set-option-infer-in-the-ide"></a>IDE の Option Infer を設定するには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、次を参照してください。 [NIB: プロジェクト デザイナーでプロジェクトのプロパティを管理する](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e)です。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。  
   
 2.  **[コンパイル]** タブをクリックします。  
   
 3.  値を設定、 **Option infer**ボックス。  
   
- 新しいプロジェクトを作成するときに、 **Option Infer**の設定、**コンパイル** タブに設定されている、 **Option Infer**で設定、**既定値は VB**ダイアログ ボックス。 アクセスする、**既定値は VB**  ダイアログ ボックスで、**ツール** メニューのをクリックして**オプション**です。 **オプション** ダイアログ ボックスで、展開**プロジェクトおよびソリューション**、クリックして**既定値は VB**です。 初期の既定の設定**VB 既定**は`On`します。  
+ 新しいプロジェクトを作成するときに、 **Option Infer**の設定、**コンパイル** タブに設定されている、 **Option Infer**で設定、**既定値は VB**ダイアログ ボックス。 アクセスする、**既定値は VB**  ダイアログ ボックスで、**ツール** メニューのをクリックして**オプション**です。 **[オプション]** ダイアログ ボックスの **[プロジェクトおよびソリューション]** を展開し、**[VISUAL BASIC の既定値]** をクリックします。 初期の既定の設定**VB 既定**は`On`します。  
   
 #### <a name="to-set-option-infer-on-the-command-line"></a>コマンド ラインで Option Infer を設定するには  
   
@@ -88,7 +88,7 @@ Option Infer がオフのときの IntelliSense
 |Ｘ|Ｘ|`Dim qty`|`Option Strict` がオフ (既定値) の場合、変数は `Nothing` に設定されます。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
 |Ｘ|○|`Dim qty = 5`|`Option Infer` がオン (既定値) の場合、変数は初期化子のデータ型になります。 参照してください[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
 |○|Ｘ|`Dim qty As Integer`|変数は、データ型の既定値に初期化されます。 詳細については、次を参照してください。 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)です。|  
-|はい|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  
+|[はい]|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  
   
 ## <a name="example"></a>例  
  次の例では、`Option Infer` ステートメントがローカル型推論をどのように有効にするかを示します。  
@@ -100,7 +100,7 @@ Option Infer がオフのときの IntelliSense
   
  [!code-vb[VbVbalrTypeInference#11](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/option-infer-statement_2.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
  [ローカル型の推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
  [Option Compare ステートメント](../../../visual-basic/language-reference/statements/option-compare-statement.md)  

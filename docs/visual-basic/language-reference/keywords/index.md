@@ -17,11 +17,11 @@ ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
 caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 35a40d6dfb6c66183afb0f3a2980a3b7863353fa
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: 2ee98b317e9d94cad5087e708bd71ca88d2bae63
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="keywords-visual-basic"></a>キーワード (Visual Basic)
 次の表は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のすべてのキーワードの一覧です。  
@@ -107,7 +107,6 @@ ms.lasthandoff: 12/02/2017
 |-----------|-----------------|  
 |[配列の概要](../../../visual-basic/language-reference/keywords/arrays-summary.md)|配列の作成、定義、および使用に使用される言語要素の一覧を示します。|  
 |[Collection オブジェクトの概要](../../../visual-basic/language-reference/keywords/collection-object-summary.md)|コレクションに使用される言語要素の一覧を示します。|  
-|[コンパイラ ディレクティブの概要 (Visual Basic)](http://msdn.microsoft.com/en-us/874dad02-d4a5-4a9d-8a48-0191a0ac794a)|コンパイラの動作を制御するためのディレクティブの一覧を示します。|  
 |[制御フローの概要](../../../visual-basic/language-reference/keywords/control-flow-summary.md)|プロシージャ フローをループおよび制御するために使用されるステートメントの一覧を示します。|  
 |[変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)|数値、日付、時刻、および文字列の変換に使用される関数の一覧を示します。|  
 |[データ型の概要](../../../visual-basic/language-reference/keywords/data-types-summary.md)|データ型の一覧を示します。 また、データ型間の変換およびデータ型の検証に使用される関数の一覧も示します。|  
@@ -124,5 +123,5 @@ ms.lasthandoff: 12/02/2017
 |[レジストリの概要](../../../visual-basic/language-reference/keywords/registry-summary.md)|プログラム設定の読み込み、保存、および削除に使用される関数の一覧を示します。|  
 |[文字列操作の概要](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)|文字列操作に使用される関数の一覧を示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic ランタイム ライブラリのメンバー](../../../visual-basic/language-reference/runtime-library-members.md)

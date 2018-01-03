@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1156608e9e1aa63a2404d5394c0c4211eea60693
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a30adbc060ead6eb1805f85bd563021ba7530c36
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="standard-query-operator-translation"></a>標準クエリ演算子の変換
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、標準クエリ演算子から SQL コマンドへの変換が行われます。 データベースのクエリ プロセッサでは、SQL 変換の実行のセマンティクスを決定します。  
@@ -235,10 +236,10 @@ ORDER BY [t0].[CustomerID]
   
     -   <xref:System.Linq.Enumerable.ToArray%2A>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
- [戻り値またはシーケンスの要素のスキップ](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
- [2 つのシーケンスを連結します。](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  
- [2 つのシーケンスの差集合を返す](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)  
- [2 つのシーケンスの積集合を返す](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)  
- [2 つのシーケンスの和集合を返す](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)
+ [シーケンスの要素の取得またはスキップ](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
+ [2 つのシーケンスの連結](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  
+ [2 つのシーケンスの差集合の取得](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)  
+ [2 つのシーケンスの積集合の取得](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)  
+ [2 つのシーケンスの和集合の取得](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)

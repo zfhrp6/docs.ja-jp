@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 143447020f41368a3553a0c8cda78e80806b75ba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0424a92f2308c21404cf35cd59c797498e6af992
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-adonet-applications"></a>ADO.NET アプリケーションのセキュリティ保護
 ユーザー入力の検証を怠るなど、コーディング時に陥りやすい基本的なミスを防ぐだけでは、安全な ADO.NET アプリケーションを作成することはできません。 データにアクセスするアプリケーションには、機密データの取得、操作、破壊など、攻撃者に攻略される可能性がある障害点が多数あります。 そのため、アプリケーションの設計フェーズで行う脅威のモデリングのプロセスから、アプリケーションの最終的な配置と継続的な保守に至るまで、セキュリティのすべての側面を理解することが重要です。  
@@ -30,10 +31,10 @@ ms.lasthandoff: 11/21/2017
  [セキュリティの概要](../../../../docs/framework/data/adonet/security-overview.md)  
  安全な ADO.NET アプリケーションを設計するための推奨事項について説明します。  
   
- [データ アクセスのセキュリティ保護します。](../../../../docs/framework/data/adonet/secure-data-access.md)  
+ [安全なデータ アクセス](../../../../docs/framework/data/adonet/secure-data-access.md)  
  セキュリティで保護されたデータ ソースのデータを使用する方法について説明します。  
   
- [クライアント アプリケーションをセキュリティ保護します。](../../../../docs/framework/data/adonet/secure-client-applications.md)  
+ [安全なクライアント アプリケーション](../../../../docs/framework/data/adonet/secure-client-applications.md)  
  クライアント アプリケーションのセキュリティに関する考慮事項について説明します。  
   
  [コード アクセス セキュリティと ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
  [SQL Server のセキュリティ](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  開発者の観点から SQL Server のセキュリティ機能について説明します。  
   
- [セキュリティに関する考慮事項](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
+ [セキュリティの考慮事項](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
  Entity Framework アプリケーションのセキュリティについて説明します。  
   
  [セキュリティ](../../../../docs/standard/security/index.md)  
@@ -61,6 +62,6 @@ ms.lasthandoff: 11/21/2017
  [セキュリティ参考文献](/visualstudio/ide/security-bibliography)  
  オンラインまたは出版物として提供されている外部リソースへのリンク集です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

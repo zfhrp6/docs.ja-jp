@@ -14,11 +14,11 @@ ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
 caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8a8a9fcd6fa6dfaace01f8fbb7fa407145acc16f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 900693ac3793fb59133b31d8fc0136df63c11a10
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="target-visual-basic"></a>/target (Visual Basic)
 コンパイラの出力の形式を指定します。  
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="to-set-target-in-the-visual-studio-ide"></a>Visual Studio IDE で/target を設定するには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。   
   
 2.  **[アプリケーション]** タブをクリックします。  
   
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/21/2017
 vbc /target:library in.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [/main](../../../visual-basic/reference/command-line-compiler/main.md)  
  [/out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)  
