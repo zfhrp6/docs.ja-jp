@@ -21,16 +21,17 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2a85b674ad705f77e00cf2a8a5286d6a74f7a646
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a1af550de7198041a885a788d6b36349c8e1c091
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugappdomainisattached-method"></a><span data-ttu-id="cc9d8-102">ICorDebugAppDomain::IsAttached メソッド</span><span class="sxs-lookup"><span data-stu-id="cc9d8-102">ICorDebugAppDomain::IsAttached Method</span></span>
-<span data-ttu-id="cc9d8-103">アプリケーション ドメインに、デバッガーがアタッチされているかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="cc9d8-103">Gets a value that indicates whether the debugger is attached to the application domain.</span></span>  
+# <a name="icordebugappdomainisattached-method"></a><span data-ttu-id="a7ea2-102">ICorDebugAppDomain::IsAttached メソッド</span><span class="sxs-lookup"><span data-stu-id="a7ea2-102">ICorDebugAppDomain::IsAttached Method</span></span>
+<span data-ttu-id="a7ea2-103">アプリケーション ドメインに、デバッガーがアタッチされているかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="a7ea2-103">Gets a value that indicates whether the debugger is attached to the application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cc9d8-104">構文</span><span class="sxs-lookup"><span data-stu-id="cc9d8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a7ea2-104">構文</span><span class="sxs-lookup"><span data-stu-id="a7ea2-104">Syntax</span></span>  
   
 ```  
 HRESULT IsAttached (  
@@ -38,18 +39,18 @@ HRESULT IsAttached (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="cc9d8-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="cc9d8-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a7ea2-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7ea2-105">Parameters</span></span>  
  `pbAttached`  
- <span data-ttu-id="cc9d8-106">[out]`true`デバッガーがアプリケーション ドメインに接続されている、それ以外の場合は`false`します。</span><span class="sxs-lookup"><span data-stu-id="cc9d8-106">[out] `true` if the debugger is attached to the application domain; otherwise, `false`.</span></span>  
+ <span data-ttu-id="a7ea2-106">[out]`true`デバッガーがアプリケーション ドメインに接続されている、それ以外の場合は`false`します。</span><span class="sxs-lookup"><span data-stu-id="a7ea2-106">[out] `true` if the debugger is attached to the application domain; otherwise, `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="cc9d8-107">コメント</span><span class="sxs-lookup"><span data-stu-id="cc9d8-107">Remarks</span></span>  
- <span data-ttu-id="cc9d8-108">ICorDebugController メソッドは、デバッガーは、アプリケーション ドメインにアタッチされるまで使用できません。</span><span class="sxs-lookup"><span data-stu-id="cc9d8-108">The ICorDebugController methods cannot be used until the debugger attaches to the application domain.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a7ea2-107">コメント</span><span class="sxs-lookup"><span data-stu-id="a7ea2-107">Remarks</span></span>  
+ <span data-ttu-id="a7ea2-108">ICorDebugController メソッドは、デバッガーは、アプリケーション ドメインにアタッチされるまで使用できません。</span><span class="sxs-lookup"><span data-stu-id="a7ea2-108">The ICorDebugController methods cannot be used until the debugger attaches to the application domain.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cc9d8-109">要件</span><span class="sxs-lookup"><span data-stu-id="cc9d8-109">Requirements</span></span>  
- <span data-ttu-id="cc9d8-110">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="cc9d8-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a7ea2-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="a7ea2-109">Requirements</span></span>  
+ <span data-ttu-id="a7ea2-110">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="a7ea2-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="cc9d8-111">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="cc9d8-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="a7ea2-111">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a7ea2-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="cc9d8-112">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cc9d8-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a7ea2-112">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a7ea2-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="cc9d8-113">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cc9d8-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="a7ea2-113">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a7ea2-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

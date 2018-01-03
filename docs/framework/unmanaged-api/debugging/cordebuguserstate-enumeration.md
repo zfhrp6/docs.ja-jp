@@ -19,16 +19,17 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 95240dfea92a4ebbf2c7b9c11b7376d912c40fe5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 57fd9df27b1911c90bd11712b67e6e64588c2b5f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="cordebuguserstate-enumeration"></a><span data-ttu-id="416f0-102">CorDebugUserState 列挙型</span><span class="sxs-lookup"><span data-stu-id="416f0-102">CorDebugUserState Enumeration</span></span>
-<span data-ttu-id="416f0-103">スレッドのユーザーの状態を示します。</span><span class="sxs-lookup"><span data-stu-id="416f0-103">Indicates the user state of a thread.</span></span>  
+# <a name="cordebuguserstate-enumeration"></a><span data-ttu-id="b1655-102">CorDebugUserState 列挙型</span><span class="sxs-lookup"><span data-stu-id="b1655-102">CorDebugUserState Enumeration</span></span>
+<span data-ttu-id="b1655-103">スレッドのユーザーの状態を示します。</span><span class="sxs-lookup"><span data-stu-id="b1655-103">Indicates the user state of a thread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="416f0-104">構文</span><span class="sxs-lookup"><span data-stu-id="416f0-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b1655-104">構文</span><span class="sxs-lookup"><span data-stu-id="b1655-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugUserState {  
@@ -44,33 +45,33 @@ typedef enum CorDebugUserState {
 } CorDebugUserState;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="416f0-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="416f0-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="b1655-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="b1655-105">Members</span></span>  
   
-|<span data-ttu-id="416f0-106">値</span><span class="sxs-lookup"><span data-stu-id="416f0-106">Value</span></span>|<span data-ttu-id="416f0-107">説明</span><span class="sxs-lookup"><span data-stu-id="416f0-107">Description</span></span>|  
+|<span data-ttu-id="b1655-106">値</span><span class="sxs-lookup"><span data-stu-id="b1655-106">Value</span></span>|<span data-ttu-id="b1655-107">説明</span><span class="sxs-lookup"><span data-stu-id="b1655-107">Description</span></span>|  
 |-----------|-----------------|  
-|`USER_STOP_REQUESTED`|<span data-ttu-id="416f0-108">スレッドの終了が要求されました。</span><span class="sxs-lookup"><span data-stu-id="416f0-108">A termination of the thread has been requested.</span></span>|  
-|`USER_SUSPEND_REQUESTED`|<span data-ttu-id="416f0-109">スレッドの中断が要求されました。</span><span class="sxs-lookup"><span data-stu-id="416f0-109">A suspension of the thread has been requested.</span></span>|  
-|`USER_BACKGROUND`|<span data-ttu-id="416f0-110">スレッドのバック グラウンドで実行します。</span><span class="sxs-lookup"><span data-stu-id="416f0-110">The thread is running in the background.</span></span>|  
-|`USER_UNSTARTED`|<span data-ttu-id="416f0-111">スレッドは、実行を開始していません。</span><span class="sxs-lookup"><span data-stu-id="416f0-111">The thread has not started executing.</span></span>|  
-|`USER_STOPPED`|<span data-ttu-id="416f0-112">スレッドが終了しました。</span><span class="sxs-lookup"><span data-stu-id="416f0-112">The thread has been terminated.</span></span>|  
-|`USER_WAIT_SLEEP_JOIN`|<span data-ttu-id="416f0-113">スレッドは、別のスレッドにタスクの完了を待機しています。</span><span class="sxs-lookup"><span data-stu-id="416f0-113">The thread is waiting for another thread to complete a task.</span></span>|  
-|`USER_SUSPENDED`|<span data-ttu-id="416f0-114">スレッドが中断されました。</span><span class="sxs-lookup"><span data-stu-id="416f0-114">The thread has been suspended.</span></span>|  
-|`USER_UNSAFE_POINT`|<span data-ttu-id="416f0-115">スレッドは、アンセーフ ポイントでです。</span><span class="sxs-lookup"><span data-stu-id="416f0-115">The thread is at an unsafe point.</span></span> <span data-ttu-id="416f0-116">つまり、スレッドはポイントで実行ガベージ コレクションを妨げること可能性があります。</span><span class="sxs-lookup"><span data-stu-id="416f0-116">That is, the thread is at a point in execution where it may block garbage collection.</span></span><br /><br /> <span data-ttu-id="416f0-117">デバッグ イベントは、安全でないポイントからディスパッチすることがありますが、安全でない時点でスレッドを中断する可能性が高いデッドロックが発生スレッドが再開されるまでです。</span><span class="sxs-lookup"><span data-stu-id="416f0-117">Debug events may be dispatched from unsafe points, but suspending a thread at an unsafe point  will very likely cause a deadlock until the thread is resumed.</span></span> <span data-ttu-id="416f0-118">安全性と安全でないポイントは、・ イン タイム (JIT) とガベージ コレクションの実装によって決まります。</span><span class="sxs-lookup"><span data-stu-id="416f0-118">The safe and unsafe points are determined by the just-in-time (JIT) and garbage collection implementation.</span></span>|  
-|`USER_THREADPOOL`|<span data-ttu-id="416f0-119">スレッドはスレッド プールです。</span><span class="sxs-lookup"><span data-stu-id="416f0-119">The thread is from the thread pool.</span></span>|  
+|`USER_STOP_REQUESTED`|<span data-ttu-id="b1655-108">スレッドの終了が要求されました。</span><span class="sxs-lookup"><span data-stu-id="b1655-108">A termination of the thread has been requested.</span></span>|  
+|`USER_SUSPEND_REQUESTED`|<span data-ttu-id="b1655-109">スレッドの中断が要求されました。</span><span class="sxs-lookup"><span data-stu-id="b1655-109">A suspension of the thread has been requested.</span></span>|  
+|`USER_BACKGROUND`|<span data-ttu-id="b1655-110">スレッドのバック グラウンドで実行します。</span><span class="sxs-lookup"><span data-stu-id="b1655-110">The thread is running in the background.</span></span>|  
+|`USER_UNSTARTED`|<span data-ttu-id="b1655-111">スレッドは、実行を開始していません。</span><span class="sxs-lookup"><span data-stu-id="b1655-111">The thread has not started executing.</span></span>|  
+|`USER_STOPPED`|<span data-ttu-id="b1655-112">スレッドが終了しました。</span><span class="sxs-lookup"><span data-stu-id="b1655-112">The thread has been terminated.</span></span>|  
+|`USER_WAIT_SLEEP_JOIN`|<span data-ttu-id="b1655-113">スレッドは、別のスレッドにタスクの完了を待機しています。</span><span class="sxs-lookup"><span data-stu-id="b1655-113">The thread is waiting for another thread to complete a task.</span></span>|  
+|`USER_SUSPENDED`|<span data-ttu-id="b1655-114">スレッドが中断されました。</span><span class="sxs-lookup"><span data-stu-id="b1655-114">The thread has been suspended.</span></span>|  
+|`USER_UNSAFE_POINT`|<span data-ttu-id="b1655-115">スレッドは、アンセーフ ポイントでです。</span><span class="sxs-lookup"><span data-stu-id="b1655-115">The thread is at an unsafe point.</span></span> <span data-ttu-id="b1655-116">つまり、スレッドはポイントで実行ガベージ コレクションを妨げること可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b1655-116">That is, the thread is at a point in execution where it may block garbage collection.</span></span><br /><br /> <span data-ttu-id="b1655-117">デバッグ イベントは、安全でないポイントからディスパッチすることがありますが、安全でない時点でスレッドを中断する可能性が高いデッドロックが発生スレッドが再開されるまでです。</span><span class="sxs-lookup"><span data-stu-id="b1655-117">Debug events may be dispatched from unsafe points, but suspending a thread at an unsafe point  will very likely cause a deadlock until the thread is resumed.</span></span> <span data-ttu-id="b1655-118">安全性と安全でないポイントは、・ イン タイム (JIT) とガベージ コレクションの実装によって決まります。</span><span class="sxs-lookup"><span data-stu-id="b1655-118">The safe and unsafe points are determined by the just-in-time (JIT) and garbage collection implementation.</span></span>|  
+|`USER_THREADPOOL`|<span data-ttu-id="b1655-119">スレッドはスレッド プールです。</span><span class="sxs-lookup"><span data-stu-id="b1655-119">The thread is from the thread pool.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="416f0-120">コメント</span><span class="sxs-lookup"><span data-stu-id="416f0-120">Remarks</span></span>  
- <span data-ttu-id="416f0-121">スレッドのユーザーの状態は、スレッドが、デバッガーがチェック時に状態です。</span><span class="sxs-lookup"><span data-stu-id="416f0-121">The user state of a thread is the state that the thread has when the debugger examines it.</span></span> <span data-ttu-id="416f0-122">スレッドは、ユーザー状態の組み合わせがあります。</span><span class="sxs-lookup"><span data-stu-id="416f0-122">A thread may have a combination of user states.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b1655-120">コメント</span><span class="sxs-lookup"><span data-stu-id="b1655-120">Remarks</span></span>  
+ <span data-ttu-id="b1655-121">スレッドのユーザーの状態は、スレッドが、デバッガーがチェック時に状態です。</span><span class="sxs-lookup"><span data-stu-id="b1655-121">The user state of a thread is the state that the thread has when the debugger examines it.</span></span> <span data-ttu-id="b1655-122">スレッドは、ユーザー状態の組み合わせがあります。</span><span class="sxs-lookup"><span data-stu-id="b1655-122">A thread may have a combination of user states.</span></span>  
   
- <span data-ttu-id="416f0-123">使用して、 [icordebugthread::getuserstate](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md)スレッドのユーザー状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="416f0-123">Use the [ICorDebugThread::GetUserState](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) method to retrieve a thread's user state.</span></span>  
+ <span data-ttu-id="b1655-123">使用して、 [icordebugthread::getuserstate](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md)スレッドのユーザー状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="b1655-123">Use the [ICorDebugThread::GetUserState](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) method to retrieve a thread's user state.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="416f0-124">要件</span><span class="sxs-lookup"><span data-stu-id="416f0-124">Requirements</span></span>  
- <span data-ttu-id="416f0-125">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="416f0-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b1655-124">必要条件</span><span class="sxs-lookup"><span data-stu-id="b1655-124">Requirements</span></span>  
+ <span data-ttu-id="b1655-125">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="b1655-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="416f0-126">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="416f0-126">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b1655-126">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b1655-126">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="416f0-127">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="416f0-127">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b1655-127">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b1655-127">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="416f0-128">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="416f0-128">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="b1655-128">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b1655-128">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="416f0-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="416f0-129">See Also</span></span>  
- [<span data-ttu-id="416f0-130">列挙体のデバッグ</span><span class="sxs-lookup"><span data-stu-id="416f0-130">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="b1655-129">参照</span><span class="sxs-lookup"><span data-stu-id="b1655-129">See Also</span></span>  
+ [<span data-ttu-id="b1655-130">列挙型のデバッグ</span><span class="sxs-lookup"><span data-stu-id="b1655-130">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -15,29 +15,30 @@ caps.latest.revision: "54"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 57fd183b042779d06274573db7b4569dbe6a54d0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c87034827d0295578f9a7efe134d158291f87713
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ui-automation-fundamentals"></a><span data-ttu-id="31efb-102">UI オートメーションの基礎</span><span class="sxs-lookup"><span data-stu-id="31efb-102">UI Automation Fundamentals</span></span>
+# <a name="ui-automation-fundamentals"></a><span data-ttu-id="3f3d8-102">UI オートメーションの基礎</span><span class="sxs-lookup"><span data-stu-id="3f3d8-102">UI Automation Fundamentals</span></span>
 > [!NOTE]
->  <span data-ttu-id="31efb-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="31efb-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="31efb-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="31efb-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
+>  <span data-ttu-id="3f3d8-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="3f3d8-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="3f3d8-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3f3d8-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- <span data-ttu-id="31efb-105">このセクションには大まかな概要が含まれています、 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="31efb-105">This section contains high-level overviews of the [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)].</span></span>  
+ <span data-ttu-id="3f3d8-105">このセクションには大まかな概要が含まれています、 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="3f3d8-105">This section contains high-level overviews of the [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="31efb-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="31efb-106">In This Section</span></span>  
- [<span data-ttu-id="31efb-107">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="31efb-107">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)  
- [<span data-ttu-id="31efb-108">UI オートメーションと Microsoft Active Accessibility</span><span class="sxs-lookup"><span data-stu-id="31efb-108">UI Automation and Microsoft Active Accessibility</span></span>](../../../docs/framework/ui-automation/ui-automation-and-microsoft-active-accessibility.md)  
- [<span data-ttu-id="31efb-109">UI オートメーション ツリーの概要</span><span class="sxs-lookup"><span data-stu-id="31efb-109">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [<span data-ttu-id="31efb-110">UI オートメーション コントロール パターンの概要</span><span class="sxs-lookup"><span data-stu-id="31efb-110">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
- [<span data-ttu-id="31efb-111">UI オートメーション プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="31efb-111">UI Automation Properties Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
- [<span data-ttu-id="31efb-112">UI オートメーション イベントの概要</span><span class="sxs-lookup"><span data-stu-id="31efb-112">UI Automation Events Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
- [<span data-ttu-id="31efb-113">UI オートメーションのセキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="31efb-113">UI Automation Security Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-security-overview.md)  
- [<span data-ttu-id="31efb-114">UI オートメーションをによる自動テスト</span><span class="sxs-lookup"><span data-stu-id="31efb-114">Using UI Automation for Automated Testing</span></span>](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
+## <a name="in-this-section"></a><span data-ttu-id="3f3d8-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="3f3d8-106">In This Section</span></span>  
+ [<span data-ttu-id="3f3d8-107">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="3f3d8-107">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)  
+ [<span data-ttu-id="3f3d8-108">UI オートメーションと Microsoft Active Accessibility</span><span class="sxs-lookup"><span data-stu-id="3f3d8-108">UI Automation and Microsoft Active Accessibility</span></span>](../../../docs/framework/ui-automation/ui-automation-and-microsoft-active-accessibility.md)  
+ [<span data-ttu-id="3f3d8-109">UI Automation ツリーの概要</span><span class="sxs-lookup"><span data-stu-id="3f3d8-109">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="3f3d8-110">UI Automation コントロール パターンの概要</span><span class="sxs-lookup"><span data-stu-id="3f3d8-110">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="3f3d8-111">UI オートメーション プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="3f3d8-111">UI Automation Properties Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
+ [<span data-ttu-id="3f3d8-112">UI オートメーション イベントの概要</span><span class="sxs-lookup"><span data-stu-id="3f3d8-112">UI Automation Events Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
+ [<span data-ttu-id="3f3d8-113">UI オートメーションのセキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="3f3d8-113">UI Automation Security Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-security-overview.md)  
+ [<span data-ttu-id="3f3d8-114">UI オートメーションによる自動テスト</span><span class="sxs-lookup"><span data-stu-id="3f3d8-114">Using UI Automation for Automated Testing</span></span>](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
   
-## <a name="reference"></a><span data-ttu-id="31efb-115">参照</span><span class="sxs-lookup"><span data-stu-id="31efb-115">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="3f3d8-115">参照</span><span class="sxs-lookup"><span data-stu-id="3f3d8-115">Reference</span></span>  
  <xref:System.Windows.Automation>  
   
  <xref:System.Windows.Automation.Provider>  

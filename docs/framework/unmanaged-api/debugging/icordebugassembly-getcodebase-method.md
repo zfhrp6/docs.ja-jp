@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dc39d9d73485eaf8abbf2679fba044502823f31f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 24ac81f841be21fe477ad46ef210e2f7d1595acb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugassemblygetcodebase-method"></a><span data-ttu-id="5011c-102">ICorDebugAssembly::GetCodeBase メソッド</span><span class="sxs-lookup"><span data-stu-id="5011c-102">ICorDebugAssembly::GetCodeBase Method</span></span>
-<span data-ttu-id="5011c-103">.NET Framework の現在のバージョンでは、このメソッドが実装されていません。</span><span class="sxs-lookup"><span data-stu-id="5011c-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugassemblygetcodebase-method"></a><span data-ttu-id="523d3-102">ICorDebugAssembly::GetCodeBase メソッド</span><span class="sxs-lookup"><span data-stu-id="523d3-102">ICorDebugAssembly::GetCodeBase Method</span></span>
+<span data-ttu-id="523d3-103">.NET Framework の現在のバージョンでは、このメソッドが実装されていません。</span><span class="sxs-lookup"><span data-stu-id="523d3-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5011c-104">構文</span><span class="sxs-lookup"><span data-stu-id="5011c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="523d3-104">構文</span><span class="sxs-lookup"><span data-stu-id="523d3-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCodeBase (  

@@ -19,16 +19,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 35503a89077b05d622ccc3f8e5cf1bb7d95ea9e0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9e35aa2656a1e950cead94480eb06cde96e4c811
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="cordebugcreateprocessflags-enumeration"></a><span data-ttu-id="3edb6-102">CorDebugCreateProcessFlags 列挙型</span><span class="sxs-lookup"><span data-stu-id="3edb6-102">CorDebugCreateProcessFlags Enumeration</span></span>
-<span data-ttu-id="3edb6-103">呼び出しで使用できる追加のデバッグ オプションを提供、 [icordebug::createprocess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="3edb6-103">Provides additional debugging options that can be used in a call to the [ICorDebug::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md) method.</span></span>  
+# <a name="cordebugcreateprocessflags-enumeration"></a><span data-ttu-id="caa7b-102">CorDebugCreateProcessFlags 列挙型</span><span class="sxs-lookup"><span data-stu-id="caa7b-102">CorDebugCreateProcessFlags Enumeration</span></span>
+<span data-ttu-id="caa7b-103">呼び出しで使用できる追加のデバッグ オプションを提供、 [icordebug::createprocess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="caa7b-103">Provides additional debugging options that can be used in a call to the [ICorDebug::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3edb6-104">構文</span><span class="sxs-lookup"><span data-stu-id="3edb6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="caa7b-104">構文</span><span class="sxs-lookup"><span data-stu-id="caa7b-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugCreateProcessFlags {  
@@ -36,20 +37,20 @@ typedef enum CorDebugCreateProcessFlags {
 } CorDebugCreateProcessFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="3edb6-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="3edb6-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="caa7b-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="caa7b-105">Members</span></span>  
   
-|<span data-ttu-id="3edb6-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="3edb6-106">Member</span></span>|<span data-ttu-id="3edb6-107">説明</span><span class="sxs-lookup"><span data-stu-id="3edb6-107">Description</span></span>|  
+|<span data-ttu-id="caa7b-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="caa7b-106">Member</span></span>|<span data-ttu-id="caa7b-107">説明</span><span class="sxs-lookup"><span data-stu-id="caa7b-107">Description</span></span>|  
 |------------|-----------------|  
-|`DEBUG_NO_SPECIAL_OPTIONS`|<span data-ttu-id="3edb6-108">特殊なオプションが設定されていません。</span><span class="sxs-lookup"><span data-stu-id="3edb6-108">No special options are set.</span></span>|  
+|`DEBUG_NO_SPECIAL_OPTIONS`|<span data-ttu-id="caa7b-108">特殊なオプションが設定されていません。</span><span class="sxs-lookup"><span data-stu-id="caa7b-108">No special options are set.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="3edb6-109">要件</span><span class="sxs-lookup"><span data-stu-id="3edb6-109">Requirements</span></span>  
- <span data-ttu-id="3edb6-110">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="3edb6-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="caa7b-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="caa7b-109">Requirements</span></span>  
+ <span data-ttu-id="caa7b-110">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="caa7b-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3edb6-111">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="3edb6-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="caa7b-111">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="caa7b-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="3edb6-112">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="3edb6-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="caa7b-112">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="caa7b-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="3edb6-113">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3edb6-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="caa7b-113">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="caa7b-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3edb6-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="3edb6-114">See Also</span></span>  
- [<span data-ttu-id="3edb6-115">列挙体のデバッグ</span><span class="sxs-lookup"><span data-stu-id="3edb6-115">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="caa7b-114">参照</span><span class="sxs-lookup"><span data-stu-id="caa7b-114">See Also</span></span>  
+ [<span data-ttu-id="caa7b-115">列挙型のデバッグ</span><span class="sxs-lookup"><span data-stu-id="caa7b-115">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

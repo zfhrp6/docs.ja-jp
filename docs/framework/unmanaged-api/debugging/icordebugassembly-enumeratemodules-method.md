@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 28c6f2efe4a48c198bd64fa7f5665b97969dbc43
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e5bc6aced78d1d7ffc6521bca52bed1b2e232bbe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugassemblyenumeratemodules-method"></a><span data-ttu-id="16cb5-102">ICorDebugAssembly::EnumerateModules メソッド</span><span class="sxs-lookup"><span data-stu-id="16cb5-102">ICorDebugAssembly::EnumerateModules Method</span></span>
-<span data-ttu-id="16cb5-103">含まれるモジュールの列挙子を取得、`ICorDebugAssembly`です。</span><span class="sxs-lookup"><span data-stu-id="16cb5-103">Gets an enumerator for the modules contained in the `ICorDebugAssembly`.</span></span>  
+# <a name="icordebugassemblyenumeratemodules-method"></a><span data-ttu-id="9b23a-102">ICorDebugAssembly::EnumerateModules メソッド</span><span class="sxs-lookup"><span data-stu-id="9b23a-102">ICorDebugAssembly::EnumerateModules Method</span></span>
+<span data-ttu-id="9b23a-103">含まれるモジュールの列挙子を取得、`ICorDebugAssembly`です。</span><span class="sxs-lookup"><span data-stu-id="9b23a-103">Gets an enumerator for the modules contained in the `ICorDebugAssembly`.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="16cb5-104">構文</span><span class="sxs-lookup"><span data-stu-id="16cb5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9b23a-104">構文</span><span class="sxs-lookup"><span data-stu-id="9b23a-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateModules (  
@@ -38,15 +39,15 @@ HRESULT EnumerateModules (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="16cb5-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="16cb5-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="9b23a-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9b23a-105">Parameters</span></span>  
  `ppModules`  
- <span data-ttu-id="16cb5-106">[out]列挙子である ICorDebugModuleEnum インターフェイスのアドレスへのポインター。</span><span class="sxs-lookup"><span data-stu-id="16cb5-106">[out] A pointer to the address of the ICorDebugModuleEnum interface that is the enumerator.</span></span>  
+ <span data-ttu-id="9b23a-106">[out]列挙子である ICorDebugModuleEnum インターフェイスのアドレスへのポインター。</span><span class="sxs-lookup"><span data-stu-id="9b23a-106">[out] A pointer to the address of the ICorDebugModuleEnum interface that is the enumerator.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="16cb5-107">要件</span><span class="sxs-lookup"><span data-stu-id="16cb5-107">Requirements</span></span>  
- <span data-ttu-id="16cb5-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="16cb5-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9b23a-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="9b23a-107">Requirements</span></span>  
+ <span data-ttu-id="9b23a-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="9b23a-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="16cb5-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="16cb5-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="9b23a-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="9b23a-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="16cb5-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="16cb5-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="9b23a-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9b23a-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="16cb5-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="16cb5-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="9b23a-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9b23a-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

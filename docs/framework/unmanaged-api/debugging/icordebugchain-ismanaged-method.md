@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fe5736a1ca420eb361e062743ed93982e7ec3f29
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9e9937222c215d22ef4ef572873385f279e7ba86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugchainismanaged-method"></a><span data-ttu-id="ae2dc-102">ICorDebugChain::IsManaged メソッド</span><span class="sxs-lookup"><span data-stu-id="ae2dc-102">ICorDebugChain::IsManaged Method</span></span>
-<span data-ttu-id="ae2dc-103">このチェーンがマネージ コードを実行しているかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="ae2dc-103">Gets a value that indicates whether this chain is running managed code.</span></span>  
+# <a name="icordebugchainismanaged-method"></a><span data-ttu-id="bfcb6-102">ICorDebugChain::IsManaged メソッド</span><span class="sxs-lookup"><span data-stu-id="bfcb6-102">ICorDebugChain::IsManaged Method</span></span>
+<span data-ttu-id="bfcb6-103">このチェーンがマネージ コードを実行しているかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="bfcb6-103">Gets a value that indicates whether this chain is running managed code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ae2dc-104">構文</span><span class="sxs-lookup"><span data-stu-id="ae2dc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bfcb6-104">構文</span><span class="sxs-lookup"><span data-stu-id="bfcb6-104">Syntax</span></span>  
   
 ```  
 HRESULT IsManaged (  
@@ -38,15 +39,15 @@ HRESULT IsManaged (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="ae2dc-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ae2dc-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="bfcb6-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="bfcb6-105">Parameters</span></span>  
  `pManaged`  
- <span data-ttu-id="ae2dc-106">[out]`true`このチェーンには、マネージ コードが実行されている場合は、それ以外の場合、`false`です。</span><span class="sxs-lookup"><span data-stu-id="ae2dc-106">[out] `true` if this chain is running managed code; otherwise, `false`.</span></span>  
+ <span data-ttu-id="bfcb6-106">[out]`true`このチェーンには、マネージ コードが実行されている場合は、それ以外の場合、`false`です。</span><span class="sxs-lookup"><span data-stu-id="bfcb6-106">[out] `true` if this chain is running managed code; otherwise, `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ae2dc-107">要件</span><span class="sxs-lookup"><span data-stu-id="ae2dc-107">Requirements</span></span>  
- <span data-ttu-id="ae2dc-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="ae2dc-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bfcb6-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="bfcb6-107">Requirements</span></span>  
+ <span data-ttu-id="bfcb6-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="bfcb6-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ae2dc-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="ae2dc-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="bfcb6-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="bfcb6-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="ae2dc-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ae2dc-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bfcb6-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bfcb6-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="ae2dc-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ae2dc-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="bfcb6-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bfcb6-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
