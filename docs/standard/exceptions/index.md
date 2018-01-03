@@ -21,11 +21,14 @@ caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b064dc39f5807b154a1529eebe17493ae84981cf
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 82e314dacc9fb2657a3a7088a928b59d00282a5d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>.NET での例外の処理とスロー
 
@@ -65,7 +68,7 @@ ms.lasthandoff: 10/21/2017
 | <xref:System.ArgumentNullException> | <xref:System.Exception> | null の引数を許可しないメソッドによってスローされます。 | `String s = null; "Calculate".IndexOf (s);` |
 | <xref:System.ArgumentOutOfRangeException> | <xref:System.Exception> | 引数が特定の範囲内にあることを検査するメソッドによってスローされます。 | `String s = "string"; s.Substring(s.Length+1);` |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [Exception クラスとプロパティ](exception-class-and-properties.md)
 * [方法: Try ブロックと Catch ブロックを使用して例外をキャッチする](how-to-use-the-try-catch-block-to-catch-exceptions.md)

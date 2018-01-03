@@ -12,11 +12,12 @@ ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a7d84b55abd6c7d72c3a74d17b4f24d00e117a0c
-ms.sourcegitcommit: f416ac259c1a771e4e6c72728d8c11a77082f11c
+ms.workload: dotnet
+ms.openlocfilehash: 3295d17b0ef4650c38f264dfc785eee7a452be86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
 

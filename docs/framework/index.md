@@ -13,11 +13,12 @@ ms.assetid: f61f02f2-2f20-483d-8f56-a9c8f3a54986
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 531da21d69f13a212eecb7b079fbf90bd7c8e681
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 34402e74bb0cb560d213760c38ce4b936d712eb4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-guide"></a>.NET Framework ガイド
 

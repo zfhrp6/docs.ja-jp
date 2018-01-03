@@ -18,11 +18,12 @@ caps.latest.revision: "65"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 777c78a1ee296fd92d48547aeb53a083afa95b28
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2615c7b8c75f7736bbf8334512790d0a5c43c8d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-tools"></a>.NET Framework ツール
 .NET Framework ツールを使用すると、.NET Framework に対応したアプリケーションやコンポーネントを簡単に作成、配置、および管理できます。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/18/2017
   
  アセンブリ キャッシュ ビューアー (Shfusion.dll) を除き、これらのツールはすべてコマンド ラインから実行できます。 エクスプローラーから Shfusion.dll にアクセスする必要があります。  
   
- コマンド ライン ツールの最適な実行方法は、Visual Studio 用開発者コマンド プロンプトを使用することです。 これらのユーティリティを使用すると、インストール フォルダーに移動することなくツールを簡単に実行できます。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ コマンド ライン ツールの最適な実行方法は、Visual Studio 用開発者コマンド プロンプトを使用することです。 これらのユーティリティを使用すると、インストール フォルダーに移動することなくツールを簡単に実行できます。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
 > [!NOTE]
 >  ツールの中には、32 ビット コンピューターまたは 64 ビット コンピューターに固有のものもあります。 該当するコンピューターに適切なバージョンのツールを実行します。  

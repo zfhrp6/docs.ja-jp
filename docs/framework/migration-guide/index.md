@@ -12,11 +12,12 @@ ms.assetid: 02d55147-9b3a-4557-a45f-fa936fadae3b
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0c1f9ffd1df3861c2e9b000faccae381b04295dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ae193819b191e6a3a09f0556ff221960c1aeb7b3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migration-guide-to-the-net-framework-47-46-and-45"></a>.NET Framework 4.7、4.6、4.5 移行ガイド 
 旧バージョンの .NET Framework を使用してアプリを作成した場合、通常は .NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、.NET Framework 4.6 とそのポイント リリース (4.6.1 と 4.6.2)、または .NET Framework 4.7 とそのポイント リリース、.NET Framework 4.7.1 へ簡単にアップグレードできます。 Visual Studio でプロジェクトを開きます。 プロジェクトが旧バージョンの Visual Studio で作成されている場合は、**[Project Compatibility]\(プロジェクト互換性\)** ダイアログ ボックスが自動的に開きます。 Visual Studio におけるプロジェクトのアップグレードの詳細については、「[Visual Studio プロジェクトのポート、移行、アップグレード](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)」と「[Visual Studio 2017 の対象プラットフォームと互換性](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs)」を参照してください。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [新機能](../../../docs/framework/whats-new/index.md)に関するページで、アプリに追加できる可能性のある新機能の説明を確認してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)  
  [.NET Framework 1.1 からの移行](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)  
  [バージョンの互換性](../../../docs/framework/migration-guide/version-compatibility.md)  

@@ -20,11 +20,14 @@ caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d5b5c8db7dc264185a5f58438ead83d4a65ec492
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 80f95099644552aed34553385544f21d07b29114
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="handling-and-raising-events"></a>イベントの処理と発生
 .NET Framework でのイベントは、デリゲート モデルに基づいています。 デリゲート モデルはオブザーバー デザイン パターンに従って、サブスクライバーがプロバイダーに登録して通知を受信できるようにします。 イベントの送信元がイベント発生の通知をプッシュしたら、イベント レシーバーはその通知を受信して、通知に対する応答を定義します。 ここでは、デリゲート モデルの主要コンポーネント、アプリケーションでイベントを利用する方法、およびコードでイベントを実装する方法について説明します。  
@@ -94,7 +97,7 @@ ms.lasthandoff: 11/21/2017
 |[オブサーバー デザイン パターン](../../../docs/standard/events/observer-design-pattern.md)|サブスクライバーがプロバイダーに登録して、通知を受信できるようにするデザイン パターンについて説明します。|  
 |[方法 : Web フォーム アプリケーションでイベントを利用する](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Web フォーム コントロールによって発生したイベントを処理する方法を示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.EventHandler>  
  <xref:System.EventHandler%601>  
  <xref:System.EventArgs>  

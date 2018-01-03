@@ -36,11 +36,14 @@ caps.latest.revision: "23"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 510d7f30853496409caccab69e68f55a6638319e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d06c2ae074045ae750c079383f43c3d6aa6f726c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generics-in-the-net-framework"></a>.NET Framework におけるジェネリック
 <a name="top"></a> ジェネリックを使用すると、操作対象のデータ型に厳密に合わせてメソッド、クラス、構造体、またはインターフェイスを調整できます。 たとえば、任意の型のキーと値が許可される <xref:System.Collections.Hashtable> クラスを使用する代わりに、 <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスを使用して、キーに使用できる型と、値に使用できる型を指定できます。 ジェネリックの利点として、コードの再利用性やタイプ セーフの向上などを挙げることができます。  
@@ -87,7 +90,7 @@ ms.lasthandoff: 10/18/2017
   
 -   一般的な用語である *ジェネリック型* には、構築型とジェネリック型定義の両方が含まれます。  
   
--   ジェネリック型パラメーターの*共変性* と *反変性* of generic type parameters enable you to use constructed generic types whose type arguments are more derived (covariance) or less derived (反変性) than a target constructed type. 共変性と反変性は、"*分散*" と総称されます。 詳細については、「[共変性と反変性](../../../docs/standard/generics/covariance-and-contravariance.md)」を参照してください。  
+-   ジェネリック型パラメーターの*共変性* と *反変性* of generic type parameters enable you to use constructed generic types whose type arguments are more derived (covariance) or less derived (反変性) than a target constructed type. 共変性と反変性は、*"分散"* と総称されます。 詳細については、「[共変性と反変性](../../../docs/standard/generics/covariance-and-contravariance.md)」を参照してください。  
   
 -   *制約* は、ジェネリック型パラメーターに適用される制限です。 たとえば、型パラメーターを、<xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> ジェネリック インターフェイスを実装する型に制限して、型のインスタンスを並べ替えることができるようにできます。 また、型パラメーターを、特定の基本クラスや既定のコンストラクターを持つ型、または参照型や値型に制約できます。 ジェネリック型のユーザーは、制約を満たさない型引数に置き換えることはできません。  
   
@@ -125,7 +128,7 @@ ms.lasthandoff: 10/18/2017
   
  ジェネリックの制限事項を次に示します。  
   
--   ジェネリック型は、 <xref:System.MarshalByRefObject> などのほとんどの基本クラスから派生できます (制約を使用して、ジェネリック型パラメーターが <xref:System.MarshalByRefObject>のような基本クラスから派生することを要求できます)。 ただし、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、コンテキスト バインドのジェネリック型はサポートしていません。 ジェネリック型は、 <xref:System.ContextBoundObject>から派生できますが、その型のインスタンスを作成しようとすると、 <xref:System.TypeLoadException>が発生します。  
+-   ジェネリック型は、 <xref:System.MarshalByRefObject> などのほとんどの基本クラスから派生できます (制約を使用して、ジェネリック型パラメーターが <xref:System.MarshalByRefObject>のような基本クラスから派生することを要求できます)。 ただし、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、コンテキスト バインドのジェネリック型はサポートしていません。 ジェネリック型は、 <xref:System.ContextBoundObject>から派生できますが、その型のインスタンスを作成しようとすると、 <xref:System.TypeLoadException>が発生します。  
   
 -   列挙型にジェネリック型パラメーターを含めることはできません。 列挙型が、単なる偶然によってジェネリックのみになる可能性はあります (たとえば、Visual Basic、C#、または C++ を使用して定義されたジェネリック型に入れ子にされているため)。 詳細については、「 [Common Type System](../../../docs/standard/base-types/common-type-system.md)」の「列挙型」を参照してください。  
   

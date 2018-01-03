@@ -17,11 +17,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d6b1c760fb8667850d4f4e88ca8fe5bcf0b0a662
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7746d53748260610a7f0e33611dd672fd644d269
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="working-with-base-types-in-net"></a>.NET における基本型の操作
 このセクションでは、書式設定、変換、および一般的な操作を含む、.NET 基本型の操作について説明します。  
@@ -36,7 +39,7 @@ ms.lasthandoff: 10/18/2017
  [文字列の操作](../../../docs/standard/base-types/manipulating-strings.md)  
  文字列を操作し、書式設定する方法について説明します。  
   
- [文字列の解析](../../../docs/standard/base-types/parsing-strings.md)  
+ [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)  
  文字列を .NET Framework 型に変換する方法について説明します。  
   
 ## <a name="related-sections"></a>関連項目  

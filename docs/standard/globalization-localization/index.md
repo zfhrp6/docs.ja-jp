@@ -21,11 +21,14 @@ caps.latest.revision: "42"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3f6beb720819a1be4e45bf4cefac3d805d7ee5e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7e176ebf6660e1c517e5ef7a505c259666bb30a0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>.NET Framework アプリケーションのグローバライズとローカライズ
 1 つ以上の言語にローカライズされるアプリケーションなど、[国際対応アプリケーション](http://msdn.microsoft.com/goglobal/bb978433.aspx)を開発するには、グローバリゼーション、ローカライズ対象の確認、およびローカリゼーションの 3 つの手順が必要です。  

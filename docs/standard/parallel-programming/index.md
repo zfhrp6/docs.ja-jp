@@ -14,11 +14,14 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e061508b6b74e81b79ab7d53b0277afd38072635
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 554de5d65929afc03b57bdc604ceeb6ac35362d4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="parallel-programming-in-net"></a>.NET での並列プログラミング
 多くのパーソナル コンピューターとワークステーションには、複数スレッドの同時実行を可能にする 2 つまたは 4 つのコア (CPU) があります。 近い将来、コンピューターは、これよりはるかに多くのコアを搭載すると予想されています。 現在および将来のハードウェアを活用するには、コードを並列化して複数のプロセッサに負荷を分散します。 以前は、並列化には低水準のスレッドおよびロックの操作が必要でした。 [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] および [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、新しいランタイム、新しいクラス ライブラリの型、および新しい診断ツールを提供することで、並列プログラミングのサポートを強化しています。 これらの機能により並行開発が簡素化され、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] の並列プログラミング アーキテクチャの高度な概要を次の図に示します。  
@@ -38,6 +41,6 @@ ms.lasthandoff: 11/21/2017
 |[PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)|C# および Visual Basic のラムダ式について簡単に説明し、PLINQ およびタスク並列ライブラリでラムダ式を使用する方法を示します。|  
 |[関連項目](../../../docs/standard/parallel-programming/for-further-reading-parallel-programming.md)|.NET Framework での並列プログラミングに関する追加のドキュメントとサンプル リソースへのリンクを示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4 (並列プログラミングのパターン: .NET Framework 4 での並列パターンの理解と適用)](http://go.microsoft.com/fwlink/?LinkID=185142)  
  [.NET Framework による並列プログラミングのサンプル](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
