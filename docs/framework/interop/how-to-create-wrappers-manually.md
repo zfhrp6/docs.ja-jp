@@ -14,37 +14,38 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 19f605203a79f8435d414fb3c2eb7041c9824640
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c6826a9b214e7507c63752a8a990116b88dda09d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-create-wrappers-manually"></a><span data-ttu-id="7241a-102">方法: ラッパを手動で作成する</span><span class="sxs-lookup"><span data-stu-id="7241a-102">How to: Create Wrappers Manually</span></span>
-<span data-ttu-id="7241a-103">マネージ ソース コード内で COM の型を手動で宣言することにした場合、まず既存のインターフェイス定義言語 (IDL: Interface Definition Language) ファイルまたはタイプ ライブラリを用意することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="7241a-103">If you decide to declare COM types manually in managed source code, the best place to start is with an existing Interface Definition Language (IDL) file or type library.</span></span> <span data-ttu-id="7241a-104">IDL ファイルがないか、またはタイプ ライブラリ ファイルを生成できない場合には、マネージ宣言を作成してその結果のアセンブリをタイプ ライブラリにエクスポートすることで、COM の型をシミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="7241a-104">When you do not have the IDL file or cannot generate a type library file, you can simulate the COM types by creating managed declarations and exporting the resulting assembly to a type library.</span></span>  
+# <a name="how-to-create-wrappers-manually"></a><span data-ttu-id="47efa-102">方法: ラッパを手動で作成する</span><span class="sxs-lookup"><span data-stu-id="47efa-102">How to: Create Wrappers Manually</span></span>
+<span data-ttu-id="47efa-103">マネージ ソース コード内で COM の型を手動で宣言することにした場合、まず既存のインターフェイス定義言語 (IDL: Interface Definition Language) ファイルまたはタイプ ライブラリを用意することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="47efa-103">If you decide to declare COM types manually in managed source code, the best place to start is with an existing Interface Definition Language (IDL) file or type library.</span></span> <span data-ttu-id="47efa-104">IDL ファイルがないか、またはタイプ ライブラリ ファイルを生成できない場合には、マネージ宣言を作成してその結果のアセンブリをタイプ ライブラリにエクスポートすることで、COM の型をシミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="47efa-104">When you do not have the IDL file or cannot generate a type library file, you can simulate the COM types by creating managed declarations and exporting the resulting assembly to a type library.</span></span>  
   
-### <a name="to-simulate-com-types-from-managed-source"></a><span data-ttu-id="7241a-105">マネージ ソースから COM の型をシミュレートするには</span><span class="sxs-lookup"><span data-stu-id="7241a-105">To simulate COM types from managed source</span></span>  
+### <a name="to-simulate-com-types-from-managed-source"></a><span data-ttu-id="47efa-105">マネージ ソースから COM の型をシミュレートするには</span><span class="sxs-lookup"><span data-stu-id="47efa-105">To simulate COM types from managed source</span></span>  
   
-1.  <span data-ttu-id="7241a-106">共通言語仕様 (CLS: Common Language Specification) に準拠した言語を使用して型を宣言してからファイルをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="7241a-106">Declare the types in a language that is compliant with the Common Language Specification (CLS) and compile the file.</span></span>  
+1.  <span data-ttu-id="47efa-106">共通言語仕様 (CLS: Common Language Specification) に準拠した言語を使用して型を宣言してからファイルをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="47efa-106">Declare the types in a language that is compliant with the Common Language Specification (CLS) and compile the file.</span></span>  
   
-2.  <span data-ttu-id="7241a-107">[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) を使用して、その型を含むアセンブリをエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="7241a-107">Export the assembly containing the types with the [Type Library Exporter (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md).</span></span>  
+2.  <span data-ttu-id="47efa-107">[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) を使用して、その型を含むアセンブリをエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="47efa-107">Export the assembly containing the types with the [Type Library Exporter (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md).</span></span>  
   
-3.  <span data-ttu-id="7241a-108">エクスポートした COM タイプ ライブラリを、COM 指向のマネージ型を宣言するための基礎として使用します。</span><span class="sxs-lookup"><span data-stu-id="7241a-108">Use the exported COM type library as a basis for declaring COM-oriented managed types.</span></span>  
+3.  <span data-ttu-id="47efa-108">エクスポートした COM タイプ ライブラリを、COM 指向のマネージ型を宣言するための基礎として使用します。</span><span class="sxs-lookup"><span data-stu-id="47efa-108">Use the exported COM type library as a basis for declaring COM-oriented managed types.</span></span>  
   
-### <a name="to-create-a-runtime-callable-wrapper-rcw"></a><span data-ttu-id="7241a-109">ランタイム呼び出し可能ラッパー (RCW: Runtime Callable Wrapper) を作成するには</span><span class="sxs-lookup"><span data-stu-id="7241a-109">To create a runtime callable wrapper (RCW)</span></span>  
+### <a name="to-create-a-runtime-callable-wrapper-rcw"></a><span data-ttu-id="47efa-109">ランタイム呼び出し可能ラッパー (RCW: Runtime Callable Wrapper) を作成するには</span><span class="sxs-lookup"><span data-stu-id="47efa-109">To create a runtime callable wrapper (RCW)</span></span>  
   
-1.  <span data-ttu-id="7241a-110">IDL ファイルまたはタイプ ライブラリ ファイルがあることを前提として、カスタム RCW に含めるクラスとインターフェイスを決定します。</span><span class="sxs-lookup"><span data-stu-id="7241a-110">Assuming that you have an IDL file or type library file, decide which classes and interfaces you want to include in the custom RCW.</span></span> <span data-ttu-id="7241a-111">アプリケーション内で直接にも間接にも使用される予定がない型がある場合は、それらを除外できます。</span><span class="sxs-lookup"><span data-stu-id="7241a-111">You can exclude any types that you do not intend to use directly or indirectly in your application.</span></span>  
+1.  <span data-ttu-id="47efa-110">IDL ファイルまたはタイプ ライブラリ ファイルがあることを前提として、カスタム RCW に含めるクラスとインターフェイスを決定します。</span><span class="sxs-lookup"><span data-stu-id="47efa-110">Assuming that you have an IDL file or type library file, decide which classes and interfaces you want to include in the custom RCW.</span></span> <span data-ttu-id="47efa-111">アプリケーション内で直接にも間接にも使用される予定がない型がある場合は、それらを除外できます。</span><span class="sxs-lookup"><span data-stu-id="47efa-111">You can exclude any types that you do not intend to use directly or indirectly in your application.</span></span>  
   
-2.  <span data-ttu-id="7241a-112">CLS 準拠言語でソース ファイルを作成し、型を宣言します。</span><span class="sxs-lookup"><span data-stu-id="7241a-112">Create a source file in a CLS-compliant language and declare the types.</span></span> <span data-ttu-id="7241a-113">インポート変換プロセスの詳しい説明については、「[タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7241a-113">See [Type Library to Assembly Conversion Summary](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958) for a complete description of the import conversion process.</span></span> <span data-ttu-id="7241a-114">実際には、カスタム RCW を作成する場合は、[タイプ ライブラリ インポーター (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) によって提供される型変換機能を手動で実行していることになります。</span><span class="sxs-lookup"><span data-stu-id="7241a-114">Effectively, when you create a custom RCW, you are manually performing the type conversion activity provided by the [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md).</span></span> <span data-ttu-id="7241a-115">次のセクションの例では、IDL またはタイプ ライブラリ ファイル内の型と、C# コード内でそれぞれに対応する型について示します。</span><span class="sxs-lookup"><span data-stu-id="7241a-115">The example in the next section shows types in an IDL or type library file and their corresponding types in C# code.</span></span>  
+2.  <span data-ttu-id="47efa-112">CLS 準拠言語でソース ファイルを作成し、型を宣言します。</span><span class="sxs-lookup"><span data-stu-id="47efa-112">Create a source file in a CLS-compliant language and declare the types.</span></span> <span data-ttu-id="47efa-113">インポート変換プロセスの詳しい説明については、「[タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="47efa-113">See [Type Library to Assembly Conversion Summary](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958) for a complete description of the import conversion process.</span></span> <span data-ttu-id="47efa-114">実際には、カスタム RCW を作成する場合は、[タイプ ライブラリ インポーター (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) によって提供される型変換機能を手動で実行していることになります。</span><span class="sxs-lookup"><span data-stu-id="47efa-114">Effectively, when you create a custom RCW, you are manually performing the type conversion activity provided by the [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md).</span></span> <span data-ttu-id="47efa-115">次のセクションの例では、IDL またはタイプ ライブラリ ファイル内の型と、C# コード内でそれぞれに対応する型について示します。</span><span class="sxs-lookup"><span data-stu-id="47efa-115">The example in the next section shows types in an IDL or type library file and their corresponding types in C# code.</span></span>  
   
-3.  <span data-ttu-id="7241a-116">宣言が完成したら、他のマネージ ソース コードのコンパイルと同様に、このファイルをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="7241a-116">When the declarations are complete, compile the file as you compile any other managed source code.</span></span>  
+3.  <span data-ttu-id="47efa-116">宣言が完成したら、他のマネージ ソース コードのコンパイルと同様に、このファイルをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="47efa-116">When the declarations are complete, compile the file as you compile any other managed source code.</span></span>  
   
-4.  <span data-ttu-id="7241a-117">Tlbimp.exe でインポートする型と同様に、追加情報が必要となる場合があります。その場合には、コードに直接追加できます。</span><span class="sxs-lookup"><span data-stu-id="7241a-117">As with the types imported with Tlbimp.exe, some require additional information, which you can add directly to your code.</span></span> <span data-ttu-id="7241a-118">詳細については、「[方法 : 相互運用機能アセンブリを編集する](http://msdn.microsoft.com/en-us/16aacb20-2269-42bf-a812-b6a7df17e277)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7241a-118">For details, see [How to: Edit Interop Assemblies](http://msdn.microsoft.com/en-us/16aacb20-2269-42bf-a812-b6a7df17e277).</span></span>  
+4.  <span data-ttu-id="47efa-117">Tlbimp.exe でインポートする型と同様に、追加情報が必要となる場合があります。その場合には、コードに直接追加できます。</span><span class="sxs-lookup"><span data-stu-id="47efa-117">As with the types imported with Tlbimp.exe, some require additional information, which you can add directly to your code.</span></span> <span data-ttu-id="47efa-118">詳細については、「[方法 : 相互運用機能アセンブリを編集する](http://msdn.microsoft.com/en-us/16aacb20-2269-42bf-a812-b6a7df17e277)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="47efa-118">For details, see [How to: Edit Interop Assemblies](http://msdn.microsoft.com/en-us/16aacb20-2269-42bf-a812-b6a7df17e277).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7241a-119">例</span><span class="sxs-lookup"><span data-stu-id="7241a-119">Example</span></span>  
- <span data-ttu-id="7241a-120">IDL に含まれる `ISATest` インターフェイスおよび `SATest` クラスの例と、C# ソース コードのそれらに対応する型を次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="7241a-120">The following code shows an example of the `ISATest` interface and `SATest` class in IDL and the corresponding types in C# source code.</span></span>  
+## <a name="example"></a><span data-ttu-id="47efa-119">例</span><span class="sxs-lookup"><span data-stu-id="47efa-119">Example</span></span>  
+ <span data-ttu-id="47efa-120">IDL に含まれる `ISATest` インターフェイスおよび `SATest` クラスの例と、C# ソース コードのそれらに対応する型を次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="47efa-120">The following code shows an example of the `ISATest` interface and `SATest` class in IDL and the corresponding types in C# source code.</span></span>  
   
- <span data-ttu-id="7241a-121">**IDL またはタイプ ライブラリ ファイル**</span><span class="sxs-lookup"><span data-stu-id="7241a-121">**IDL or type library file**</span></span>  
+ <span data-ttu-id="47efa-121">**IDL またはタイプ ライブラリ ファイル**</span><span class="sxs-lookup"><span data-stu-id="47efa-121">**IDL or type library file**</span></span>  
   
 ```  
  [  
@@ -69,7 +70,7 @@ coclass SATest
  };  
 ```  
   
- <span data-ttu-id="7241a-122">**マネージ ソース コード内のラッパー**</span><span class="sxs-lookup"><span data-stu-id="7241a-122">**Wrapper in managed source code**</span></span>  
+ <span data-ttu-id="47efa-122">**マネージ ソース コード内のラッパー**</span><span class="sxs-lookup"><span data-stu-id="47efa-122">**Wrapper in managed source code**</span></span>  
   
 ```csharp  
 using System;  
@@ -106,10 +107,10 @@ namespace SAServer
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7241a-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="7241a-123">See Also</span></span>  
- [<span data-ttu-id="7241a-124">ランタイム呼び出し可能ラッパーのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="7241a-124">Customizing Runtime Callable Wrappers</span></span>](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)  
- [<span data-ttu-id="7241a-125">COM のデータ型</span><span class="sxs-lookup"><span data-stu-id="7241a-125">COM Data Types</span></span>](http://msdn.microsoft.com/en-us/f93ae35d-a416-4218-8700-c8218cc90061)  
- [<span data-ttu-id="7241a-126">方法: 相互運用機能アセンブリの編集</span><span class="sxs-lookup"><span data-stu-id="7241a-126">How to: Edit Interop Assemblies</span></span>](http://msdn.microsoft.com/en-us/16aacb20-2269-42bf-a812-b6a7df17e277)  
- [<span data-ttu-id="7241a-127">タイプ ライブラリからアセンブリへの変換の要約</span><span class="sxs-lookup"><span data-stu-id="7241a-127">Type Library to Assembly Conversion Summary</span></span>](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
- [<span data-ttu-id="7241a-128">Tlbimp.exe (タイプ ライブラリ インポーター)</span><span class="sxs-lookup"><span data-stu-id="7241a-128">Tlbimp.exe (Type Library Importer)</span></span>](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
- [<span data-ttu-id="7241a-129">Tlbexp.exe (タイプ ライブラリ エクスポーター)</span><span class="sxs-lookup"><span data-stu-id="7241a-129">Tlbexp.exe (Type Library Exporter)</span></span>](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)
+## <a name="see-also"></a><span data-ttu-id="47efa-123">参照</span><span class="sxs-lookup"><span data-stu-id="47efa-123">See Also</span></span>  
+ [<span data-ttu-id="47efa-124">ランタイム呼び出し可能ラッパーのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="47efa-124">Customizing Runtime Callable Wrappers</span></span>](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)  
+ [<span data-ttu-id="47efa-125">COM のデータ型</span><span class="sxs-lookup"><span data-stu-id="47efa-125">COM Data Types</span></span>](http://msdn.microsoft.com/en-us/f93ae35d-a416-4218-8700-c8218cc90061)  
+ [<span data-ttu-id="47efa-126">方法: 相互運用機能アセンブリの編集</span><span class="sxs-lookup"><span data-stu-id="47efa-126">How to: Edit Interop Assemblies</span></span>](http://msdn.microsoft.com/en-us/16aacb20-2269-42bf-a812-b6a7df17e277)  
+ [<span data-ttu-id="47efa-127">タイプ ライブラリからアセンブリへの変換の要約</span><span class="sxs-lookup"><span data-stu-id="47efa-127">Type Library to Assembly Conversion Summary</span></span>](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
+ [<span data-ttu-id="47efa-128">Tlbimp.exe (タイプ ライブラリ インポーター)</span><span class="sxs-lookup"><span data-stu-id="47efa-128">Tlbimp.exe (Type Library Importer)</span></span>](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
+ [<span data-ttu-id="47efa-129">Tlbexp.exe (タイプ ライブラリ エクスポーター)</span><span class="sxs-lookup"><span data-stu-id="47efa-129">Tlbexp.exe (Type Library Exporter)</span></span>](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)

@@ -12,16 +12,17 @@ caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 08002bf223d96d49cffb67ec744659747fa49e26
-ms.sourcegitcommit: 32f5e1db8755ed7dfac0b4ec764fa809e5a7548c
+ms.workload: dotnet
+ms.openlocfilehash: 0772e77d699d11e29d17770bb2c737247ed1771d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-upload-files-with-ftp"></a><span data-ttu-id="81fe2-102">方法: FTP を使用してファイルをアップロードする</span><span class="sxs-lookup"><span data-stu-id="81fe2-102">How to: Upload Files with FTP</span></span>
-<span data-ttu-id="81fe2-103">このサンプルでは、FTP サーバーにファイルをアップロードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="81fe2-103">This sample shows how to upload a file to an FTP server.</span></span>  
+# <a name="how-to-upload-files-with-ftp"></a><span data-ttu-id="257db-102">方法: FTP を使用してファイルをアップロードする</span><span class="sxs-lookup"><span data-stu-id="257db-102">How to: Upload Files with FTP</span></span>
+<span data-ttu-id="257db-103">このサンプルでは、FTP サーバーにファイルをアップロードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="257db-103">This sample shows how to upload a file to an FTP server.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="81fe2-104">例</span><span class="sxs-lookup"><span data-stu-id="81fe2-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="257db-104">例</span><span class="sxs-lookup"><span data-stu-id="257db-104">Example</span></span>  
   
 ```csharp  
 using System;  
@@ -62,11 +63,11 @@ namespace Examples.System.Net
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="81fe2-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="81fe2-105">Compiling the Code</span></span>  
- <span data-ttu-id="81fe2-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="81fe2-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="257db-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="257db-105">Compiling the Code</span></span>  
+ <span data-ttu-id="257db-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="257db-106">This example requires:</span></span>  
   
--   <span data-ttu-id="81fe2-107">**System.Net** 名前空間の参照。</span><span class="sxs-lookup"><span data-stu-id="81fe2-107">References to the **System.Net** namespace.</span></span>  
+-   <span data-ttu-id="257db-107">**System.Net** 名前空間への参照。</span><span class="sxs-lookup"><span data-stu-id="257db-107">References to the **System.Net** namespace.</span></span>  
   
-## <a name="robust-programming"></a><span data-ttu-id="81fe2-108">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="81fe2-108">Robust Programming</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="257db-108">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="257db-108">Robust Programming</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="81fe2-109">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="81fe2-109">.NET Framework Security</span></span>
+## <a name="net-framework-security"></a><span data-ttu-id="257db-109">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="257db-109">.NET Framework Security</span></span>

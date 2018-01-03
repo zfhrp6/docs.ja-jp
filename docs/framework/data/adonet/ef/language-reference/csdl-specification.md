@@ -13,13 +13,14 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a492da92b464614037eb372d7320a9df82ab360b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4bbdf1ab43ca04f02836e619cbbb4636067db8cb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="csdl-specification"></a><span data-ttu-id="c1dcd-102">CSDL 仕様</span><span class="sxs-lookup"><span data-stu-id="c1dcd-102">CSDL Specification</span></span>
-<span data-ttu-id="c1dcd-103">[Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef)サイトでは、主に Entity Framework に関するコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="c1dcd-103">The [msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef) site is now the main location for the Entity Framework content.</span></span>  
+# <a name="csdl-specification"></a><span data-ttu-id="1953e-102">CSDL 仕様</span><span class="sxs-lookup"><span data-stu-id="1953e-102">CSDL Specification</span></span>
+<span data-ttu-id="1953e-103">[Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef)サイトでは、主に Entity Framework に関するコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="1953e-103">The [msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef) site is now the main location for the Entity Framework content.</span></span>  
   
- <span data-ttu-id="c1dcd-104">このトピックの内容は次のページで使用できるようになりました: [CSDL 仕様](http://msdn.microsoft.com/data/jj652004)です。</span><span class="sxs-lookup"><span data-stu-id="c1dcd-104">The content for this topic is now available on the following page: [CSDL Specification](http://msdn.microsoft.com/data/jj652004).</span></span>
+ <span data-ttu-id="1953e-104">このトピックの内容は次のページで使用できるようになりました: [CSDL 仕様](http://msdn.microsoft.com/data/jj652004)です。</span><span class="sxs-lookup"><span data-stu-id="1953e-104">The content for this topic is now available on the following page: [CSDL Specification](http://msdn.microsoft.com/data/jj652004).</span></span>

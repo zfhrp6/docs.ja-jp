@@ -14,20 +14,20 @@ ms.assetid: 5dd09785-bc10-4ae7-ba24-b795057aca31
 caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2d03c4f3ac66b13c1d9a4aea964fba8ad8518f4f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e6f71266f92c6ddb05c217736cdb59c5ce968a4a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="unable-to-create-strong-named-assembly-from-key-file-39ltfilenamegt39-lterrorgt"></a><span data-ttu-id="ab17e-102">キー ファイル &#39; から厳密な名前付きのアセンブリを作成できません。&lt;filename&gt;&#39;:&lt;エラー&gt;</span><span class="sxs-lookup"><span data-stu-id="ab17e-102">Unable to create strong-named assembly from key file &#39;&lt;filename&gt;&#39;: &lt;error&gt;</span></span>
-<span data-ttu-id="ab17e-103">指定されたキー ファイルから、厳密な名前のアセンブリを作成できませんでした。</span><span class="sxs-lookup"><span data-stu-id="ab17e-103">A strong-named assembly could not be created from the specified key file.</span></span>  
+# <a name="unable-to-create-strong-named-assembly-from-key-file-39ltfilenamegt39-lterrorgt"></a><span data-ttu-id="2b9dc-102">キー ファイル &#39; から厳密な名前付きのアセンブリを作成できません。&lt;filename&gt;&#39;:&lt;エラー&gt;</span><span class="sxs-lookup"><span data-stu-id="2b9dc-102">Unable to create strong-named assembly from key file &#39;&lt;filename&gt;&#39;: &lt;error&gt;</span></span>
+<span data-ttu-id="2b9dc-103">指定されたキー ファイルから、厳密な名前のアセンブリを作成できませんでした。</span><span class="sxs-lookup"><span data-stu-id="2b9dc-103">A strong-named assembly could not be created from the specified key file.</span></span>  
   
- <span data-ttu-id="ab17e-104">**エラー ID:** BC31026</span><span class="sxs-lookup"><span data-stu-id="ab17e-104">**Error ID:** BC31026</span></span>  
+ <span data-ttu-id="2b9dc-104">**エラー ID:** BC31026</span><span class="sxs-lookup"><span data-stu-id="2b9dc-104">**Error ID:** BC31026</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="ab17e-105">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="ab17e-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="2b9dc-105">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="2b9dc-105">To correct this error</span></span>  
   
-1.  <span data-ttu-id="ab17e-106">適切なキー ファイルが指定されていると、別のアプリケーションによってロックされていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="ab17e-106">Verify that the correct key file has been specified, and that it is not locked by another application.</span></span>  
+1.  <span data-ttu-id="2b9dc-106">適切なキー ファイルが指定されていると、別のアプリケーションによってロックされていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="2b9dc-106">Verify that the correct key file has been specified, and that it is not locked by another application.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ab17e-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="ab17e-107">See Also</span></span>  
- [<span data-ttu-id="ab17e-108">Sn.exe (厳密名ツール)</span><span class="sxs-lookup"><span data-stu-id="ab17e-108">Sn.exe (Strong Name Tool)</span></span>](https://msdn.microsoft.com/library/k5b5tt23)
+## <a name="see-also"></a><span data-ttu-id="2b9dc-107">参照</span><span class="sxs-lookup"><span data-stu-id="2b9dc-107">See Also</span></span>  
+ <span data-ttu-id="2b9dc-108">[Sn.exe (厳密名ツール)][Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md))</span><span class="sxs-lookup"><span data-stu-id="2b9dc-108">[Sn.exe (Strong Name Tool)][Sn.exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md))</span></span>

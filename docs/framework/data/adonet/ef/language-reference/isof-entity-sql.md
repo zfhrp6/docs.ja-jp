@@ -13,58 +13,59 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 980256f4a1f2ef2055d46ead6c89b60650f4cdfc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3e3f58608f6ef872f0000bc2d887cfd548589e17
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isof-entity-sql"></a><span data-ttu-id="31479-102">ISOF (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="31479-102">ISOF (Entity SQL)</span></span>
-<span data-ttu-id="31479-103">式の型が指定の型であるか、またはそのサブタイプであるかを判断します。</span><span class="sxs-lookup"><span data-stu-id="31479-103">Determines whether the type of an expression is of the specified type or one of its subtypes.</span></span>  
+# <a name="isof-entity-sql"></a><span data-ttu-id="94664-102">ISOF (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="94664-102">ISOF (Entity SQL)</span></span>
+<span data-ttu-id="94664-103">式の型が指定の型であるか、またはそのサブタイプであるかを判断します。</span><span class="sxs-lookup"><span data-stu-id="94664-103">Determines whether the type of an expression is of the specified type or one of its subtypes.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="31479-104">構文</span><span class="sxs-lookup"><span data-stu-id="31479-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="94664-104">構文</span><span class="sxs-lookup"><span data-stu-id="94664-104">Syntax</span></span>  
   
 ```  
 expression IS [ NOT ] OF ( [ ONLY ] type )  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="31479-105">引数</span><span class="sxs-lookup"><span data-stu-id="31479-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="94664-105">引数</span><span class="sxs-lookup"><span data-stu-id="94664-105">Arguments</span></span>  
  `expression`  
- <span data-ttu-id="31479-106">型を判断するための任意の有効なクエリ式。</span><span class="sxs-lookup"><span data-stu-id="31479-106">Any valid query expression to determine the type of.</span></span>  
+ <span data-ttu-id="94664-106">型を判断するための任意の有効なクエリ式。</span><span class="sxs-lookup"><span data-stu-id="94664-106">Any valid query expression to determine the type of.</span></span>  
   
- <span data-ttu-id="31479-107">NOT</span><span class="sxs-lookup"><span data-stu-id="31479-107">NOT</span></span>  
- <span data-ttu-id="31479-108">IS OF の EDM.Boolean の結果を否定します。</span><span class="sxs-lookup"><span data-stu-id="31479-108">Negates the EDM.Boolean result of IS OF.</span></span>  
+ <span data-ttu-id="94664-107">NOT</span><span class="sxs-lookup"><span data-stu-id="94664-107">NOT</span></span>  
+ <span data-ttu-id="94664-108">IS OF の EDM.Boolean の結果を否定します。</span><span class="sxs-lookup"><span data-stu-id="94664-108">Negates the EDM.Boolean result of IS OF.</span></span>  
   
- <span data-ttu-id="31479-109">ONLY</span><span class="sxs-lookup"><span data-stu-id="31479-109">ONLY</span></span>  
- <span data-ttu-id="31479-110">`true` が `expression` 型であり、そのサブタイプでない場合に限り、IS OF が `type` を返すことを指定します。</span><span class="sxs-lookup"><span data-stu-id="31479-110">Specifies that IS OF returns `true` only if `expression` is of type `type` and not any of one its subtypes.</span></span>  
+ <span data-ttu-id="94664-109">ONLY</span><span class="sxs-lookup"><span data-stu-id="94664-109">ONLY</span></span>  
+ <span data-ttu-id="94664-110">`true` が `expression` 型であり、そのサブタイプでない場合に限り、IS OF が `type` を返すことを指定します。</span><span class="sxs-lookup"><span data-stu-id="94664-110">Specifies that IS OF returns `true` only if `expression` is of type `type` and not any of one its subtypes.</span></span>  
   
  `type`  
- <span data-ttu-id="31479-111">`expression` を判定するための型。</span><span class="sxs-lookup"><span data-stu-id="31479-111">The type to test `expression` against.</span></span> <span data-ttu-id="31479-112">型は名前空間で修飾する必要があります。</span><span class="sxs-lookup"><span data-stu-id="31479-112">The type must be namespace-qualified.</span></span>  
+ <span data-ttu-id="94664-111">`expression` を判定するための型。</span><span class="sxs-lookup"><span data-stu-id="94664-111">The type to test `expression` against.</span></span> <span data-ttu-id="94664-112">型は名前空間で修飾する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94664-112">The type must be namespace-qualified.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="31479-113">戻り値</span><span class="sxs-lookup"><span data-stu-id="31479-113">Return Value</span></span>  
- <span data-ttu-id="31479-114">`true` が型 T で、T が基本データ型または `expression` の派生型である場合は、`type` となります。`expression` が実行時に null である場合は null となり、それ以外の場合は `false` となります。</span><span class="sxs-lookup"><span data-stu-id="31479-114">`true` if `expression` is of type T and T is either a base type, or a derived type of `type`; null if `expression` is null at runtime; otherwise, `false`.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="94664-113">戻り値</span><span class="sxs-lookup"><span data-stu-id="94664-113">Return Value</span></span>  
+ <span data-ttu-id="94664-114">`true` が型 T で、T が基本データ型または `expression` の派生型である場合は、`type` となります。`expression` が実行時に null である場合は null となり、それ以外の場合は `false` となります。</span><span class="sxs-lookup"><span data-stu-id="94664-114">`true` if `expression` is of type T and T is either a base type, or a derived type of `type`; null if `expression` is null at runtime; otherwise, `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="31479-115">コメント</span><span class="sxs-lookup"><span data-stu-id="31479-115">Remarks</span></span>  
- <span data-ttu-id="31479-116">式`expression IS NOT OF (type)`と`expression IS NOT OF (ONLY type)`構文は同じ`NOT (expression IS OF (type))`と`NOT (expression IS OF (ONLY type))`、それぞれします。</span><span class="sxs-lookup"><span data-stu-id="31479-116">The expressions `expression IS NOT OF (type)` and `expression IS NOT OF (ONLY type)` are syntactically equivalent to `NOT (expression IS OF (type))` and `NOT (expression IS OF (ONLY type))`, respectively.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="94664-115">コメント</span><span class="sxs-lookup"><span data-stu-id="94664-115">Remarks</span></span>  
+ <span data-ttu-id="94664-116">式`expression IS NOT OF (type)`と`expression IS NOT OF (ONLY type)`構文は同じ`NOT (expression IS OF (type))`と`NOT (expression IS OF (ONLY type))`、それぞれします。</span><span class="sxs-lookup"><span data-stu-id="94664-116">The expressions `expression IS NOT OF (type)` and `expression IS NOT OF (ONLY type)` are syntactically equivalent to `NOT (expression IS OF (type))` and `NOT (expression IS OF (ONLY type))`, respectively.</span></span>  
   
- <span data-ttu-id="31479-117">次の表に、いくつかの通常およびコーナー パターンにおける `IS OF` 演算子の動作を示します。</span><span class="sxs-lookup"><span data-stu-id="31479-117">The following table shows the behavior of `IS OF` operator over some typical- and corner patterns.</span></span> <span data-ttu-id="31479-118">すべての例外はクライアント側にスローされてから、プロバイダーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="31479-118">All exceptions are thrown from the client side before the provider gets invoked:</span></span>  
+ <span data-ttu-id="94664-117">次の表に、いくつかの通常およびコーナー パターンにおける `IS OF` 演算子の動作を示します。</span><span class="sxs-lookup"><span data-stu-id="94664-117">The following table shows the behavior of `IS OF` operator over some typical- and corner patterns.</span></span> <span data-ttu-id="94664-118">すべての例外はクライアント側にスローされてから、プロバイダーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="94664-118">All exceptions are thrown from the client side before the provider gets invoked:</span></span>  
   
-|<span data-ttu-id="31479-119">パターン</span><span class="sxs-lookup"><span data-stu-id="31479-119">Pattern</span></span>|<span data-ttu-id="31479-120">動作</span><span class="sxs-lookup"><span data-stu-id="31479-120">Behavior</span></span>|  
+|<span data-ttu-id="94664-119">パターン</span><span class="sxs-lookup"><span data-stu-id="94664-119">Pattern</span></span>|<span data-ttu-id="94664-120">動作</span><span class="sxs-lookup"><span data-stu-id="94664-120">Behavior</span></span>|  
 |-------------|--------------|  
-|<span data-ttu-id="31479-121">null IS OF (EntityType)</span><span class="sxs-lookup"><span data-stu-id="31479-121">null IS OF (EntityType)</span></span>|<span data-ttu-id="31479-122">スロー</span><span class="sxs-lookup"><span data-stu-id="31479-122">Throws</span></span>|  
-|<span data-ttu-id="31479-123">null IS OF (ComplexType)</span><span class="sxs-lookup"><span data-stu-id="31479-123">null IS OF (ComplexType)</span></span>|<span data-ttu-id="31479-124">スロー</span><span class="sxs-lookup"><span data-stu-id="31479-124">Throws</span></span>|  
-|<span data-ttu-id="31479-125">null IS OF (RowType)</span><span class="sxs-lookup"><span data-stu-id="31479-125">null IS OF (RowType)</span></span>|<span data-ttu-id="31479-126">スロー</span><span class="sxs-lookup"><span data-stu-id="31479-126">Throws</span></span>|  
-|<span data-ttu-id="31479-127">TREAT (null AS EntityType) IS OF (EntityType)</span><span class="sxs-lookup"><span data-stu-id="31479-127">TREAT (null AS EntityType) IS OF (EntityType)</span></span>|<span data-ttu-id="31479-128">DBNull を返します。</span><span class="sxs-lookup"><span data-stu-id="31479-128">Returns DBNull</span></span>|  
-|<span data-ttu-id="31479-129">TREAT (null AS ComplexType) IS OF (ComplexType)</span><span class="sxs-lookup"><span data-stu-id="31479-129">TREAT (null AS ComplexType) IS OF (ComplexType)</span></span>|<span data-ttu-id="31479-130">スロー</span><span class="sxs-lookup"><span data-stu-id="31479-130">Throws</span></span>|  
-|<span data-ttu-id="31479-131">TREAT (null AS RowType) IS OF (RowType)</span><span class="sxs-lookup"><span data-stu-id="31479-131">TREAT (null AS RowType) IS OF (RowType)</span></span>|<span data-ttu-id="31479-132">スロー</span><span class="sxs-lookup"><span data-stu-id="31479-132">Throws</span></span>|  
-|<span data-ttu-id="31479-133">EntityType IS OF (EntityType)</span><span class="sxs-lookup"><span data-stu-id="31479-133">EntityType IS OF (EntityType)</span></span>|<span data-ttu-id="31479-134">true または false を返します。</span><span class="sxs-lookup"><span data-stu-id="31479-134">Returns true/false</span></span>|  
-|<span data-ttu-id="31479-135">ComplexType IS OF (ComplexType)</span><span class="sxs-lookup"><span data-stu-id="31479-135">ComplexType IS OF (ComplexType)</span></span>|<span data-ttu-id="31479-136">スロー</span><span class="sxs-lookup"><span data-stu-id="31479-136">Throws</span></span>|  
-|<span data-ttu-id="31479-137">RowType IS OF (RowType)</span><span class="sxs-lookup"><span data-stu-id="31479-137">RowType IS OF (RowType)</span></span>|<span data-ttu-id="31479-138">スロー</span><span class="sxs-lookup"><span data-stu-id="31479-138">Throws</span></span>|  
+|<span data-ttu-id="94664-121">null IS OF (EntityType)</span><span class="sxs-lookup"><span data-stu-id="94664-121">null IS OF (EntityType)</span></span>|<span data-ttu-id="94664-122">スロー</span><span class="sxs-lookup"><span data-stu-id="94664-122">Throws</span></span>|  
+|<span data-ttu-id="94664-123">null IS OF (ComplexType)</span><span class="sxs-lookup"><span data-stu-id="94664-123">null IS OF (ComplexType)</span></span>|<span data-ttu-id="94664-124">スロー</span><span class="sxs-lookup"><span data-stu-id="94664-124">Throws</span></span>|  
+|<span data-ttu-id="94664-125">null IS OF (RowType)</span><span class="sxs-lookup"><span data-stu-id="94664-125">null IS OF (RowType)</span></span>|<span data-ttu-id="94664-126">スロー</span><span class="sxs-lookup"><span data-stu-id="94664-126">Throws</span></span>|  
+|<span data-ttu-id="94664-127">TREAT (null AS EntityType) IS OF (EntityType)</span><span class="sxs-lookup"><span data-stu-id="94664-127">TREAT (null AS EntityType) IS OF (EntityType)</span></span>|<span data-ttu-id="94664-128">DBNull を返します。</span><span class="sxs-lookup"><span data-stu-id="94664-128">Returns DBNull</span></span>|  
+|<span data-ttu-id="94664-129">TREAT (null AS ComplexType) IS OF (ComplexType)</span><span class="sxs-lookup"><span data-stu-id="94664-129">TREAT (null AS ComplexType) IS OF (ComplexType)</span></span>|<span data-ttu-id="94664-130">スロー</span><span class="sxs-lookup"><span data-stu-id="94664-130">Throws</span></span>|  
+|<span data-ttu-id="94664-131">TREAT (null AS RowType) IS OF (RowType)</span><span class="sxs-lookup"><span data-stu-id="94664-131">TREAT (null AS RowType) IS OF (RowType)</span></span>|<span data-ttu-id="94664-132">スロー</span><span class="sxs-lookup"><span data-stu-id="94664-132">Throws</span></span>|  
+|<span data-ttu-id="94664-133">EntityType IS OF (EntityType)</span><span class="sxs-lookup"><span data-stu-id="94664-133">EntityType IS OF (EntityType)</span></span>|<span data-ttu-id="94664-134">true または false を返します。</span><span class="sxs-lookup"><span data-stu-id="94664-134">Returns true/false</span></span>|  
+|<span data-ttu-id="94664-135">ComplexType IS OF (ComplexType)</span><span class="sxs-lookup"><span data-stu-id="94664-135">ComplexType IS OF (ComplexType)</span></span>|<span data-ttu-id="94664-136">スロー</span><span class="sxs-lookup"><span data-stu-id="94664-136">Throws</span></span>|  
+|<span data-ttu-id="94664-137">RowType IS OF (RowType)</span><span class="sxs-lookup"><span data-stu-id="94664-137">RowType IS OF (RowType)</span></span>|<span data-ttu-id="94664-138">スロー</span><span class="sxs-lookup"><span data-stu-id="94664-138">Throws</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="31479-139">例</span><span class="sxs-lookup"><span data-stu-id="31479-139">Example</span></span>  
- <span data-ttu-id="31479-140">次[!INCLUDE[esql](../../../../../../includes/esql-md.md)]クエリ、IS OF 演算子を使用して、クエリ式の種類を確認して、TREAT 演算子を使用して Course 型のオブジェクトを OnsiteCourse 型のオブジェクトのコレクションに変換します。</span><span class="sxs-lookup"><span data-stu-id="31479-140">The following [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query uses the IS OF operator to determine the type of a query expression, and then uses the TREAT operator to convert an object of the type Course to a collection of objects of the type OnsiteCourse.</span></span> <span data-ttu-id="31479-141">このクエリは、 [School モデル](http://msdn.microsoft.com/en-us/859a9587-81ea-4a45-9bc0-f8d330e1adac)に基づいています。</span><span class="sxs-lookup"><span data-stu-id="31479-141">The query is based on the [School Model](http://msdn.microsoft.com/en-us/859a9587-81ea-4a45-9bc0-f8d330e1adac).</span></span>  
+## <a name="example"></a><span data-ttu-id="94664-139">例</span><span class="sxs-lookup"><span data-stu-id="94664-139">Example</span></span>  
+ <span data-ttu-id="94664-140">次[!INCLUDE[esql](../../../../../../includes/esql-md.md)]クエリ、IS OF 演算子を使用して、クエリ式の種類を確認して、TREAT 演算子を使用して Course 型のオブジェクトを OnsiteCourse 型のオブジェクトのコレクションに変換します。</span><span class="sxs-lookup"><span data-stu-id="94664-140">The following [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query uses the IS OF operator to determine the type of a query expression, and then uses the TREAT operator to convert an object of the type Course to a collection of objects of the type OnsiteCourse.</span></span> <span data-ttu-id="94664-141">このクエリは、 [School モデル](http://msdn.microsoft.com/en-us/859a9587-81ea-4a45-9bc0-f8d330e1adac)に基づいています。</span><span class="sxs-lookup"><span data-stu-id="94664-141">The query is based on the [School Model](http://msdn.microsoft.com/en-us/859a9587-81ea-4a45-9bc0-f8d330e1adac).</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#TREAT_ISOF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#treat_isof)]  
   
-## <a name="see-also"></a><span data-ttu-id="31479-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="31479-142">See Also</span></span>  
- [<span data-ttu-id="31479-143">Entity SQL リファレンス</span><span class="sxs-lookup"><span data-stu-id="31479-143">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a><span data-ttu-id="94664-142">参照</span><span class="sxs-lookup"><span data-stu-id="94664-142">See Also</span></span>  
+ [<span data-ttu-id="94664-143">Entity SQL リファレンス</span><span class="sxs-lookup"><span data-stu-id="94664-143">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

@@ -13,13 +13,14 @@ caps.latest.revision: "10"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 14798b2d45beca7344d9e68b92efbcd4ec62b375
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 877bf62fe08b4b2423ae0be2f678b5d5468edf32
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="adonet-entity-framework"></a><span data-ttu-id="6ac09-102">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="6ac09-102">ADO.NET Entity Framework</span></span>
-<span data-ttu-id="6ac09-103">現在、[msdn.com/data/ef](http://msdn.microsoft.com/data/ef) サイトでは、主に Entity Framework に関するコンテンツを提供しています。</span><span class="sxs-lookup"><span data-stu-id="6ac09-103">The [msdn.com/data/ef](http://msdn.microsoft.com/data/ef) site is now the main location for the Entity Framework content.</span></span>  
+# <a name="adonet-entity-framework"></a><span data-ttu-id="7ee8a-102">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="7ee8a-102">ADO.NET Entity Framework</span></span>
+<span data-ttu-id="7ee8a-103">現在、[msdn.com/data/ef](http://msdn.microsoft.com/data/ef) サイトでは、主に Entity Framework に関するコンテンツを提供しています。</span><span class="sxs-lookup"><span data-stu-id="7ee8a-103">The [msdn.com/data/ef](http://msdn.microsoft.com/data/ef) site is now the main location for the Entity Framework content.</span></span>  
   
- <span data-ttu-id="6ac09-104">このトピックの内容は、[「Entity Framework 開発ワークフロー](http://msdn.microsoft.com/data/jj590134)」で公開されています。</span><span class="sxs-lookup"><span data-stu-id="6ac09-104">The content for this topic is now available on the following page: [Introducing Entity Framework](http://msdn.microsoft.com/data/jj590134).</span></span>
+ <span data-ttu-id="7ee8a-104">このトピックの内容は、[「Entity Framework 開発ワークフロー](http://msdn.microsoft.com/data/jj590134)」で公開されています。</span><span class="sxs-lookup"><span data-stu-id="7ee8a-104">The content for this topic is now available on the following page: [Introducing Entity Framework](http://msdn.microsoft.com/data/jj590134).</span></span>

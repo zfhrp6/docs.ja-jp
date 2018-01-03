@@ -13,14 +13,15 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: af5e18b9c4334cfab26c9a84ac647bb433391ef1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8c5f19918ca1c80daffab482436ab6ce018321f5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemmath-methods"></a><span data-ttu-id="a0e27-102">System.Math メソッド</span><span class="sxs-lookup"><span data-stu-id="a0e27-102">System.Math Methods</span></span>
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="a0e27-103"> は、次の <xref:System.Math> メソッドをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="a0e27-103"> does not support the following <xref:System.Math> methods.</span></span>  
+# <a name="systemmath-methods"></a><span data-ttu-id="09078-102">System.Math メソッド</span><span class="sxs-lookup"><span data-stu-id="09078-102">System.Math Methods</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="09078-103"> は、次の <xref:System.Math> メソッドをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="09078-103"> does not support the following <xref:System.Math> methods.</span></span>  
   
 -   <xref:System.Math.DivRem%28System.Int32%2CSystem.Int32%2CSystem.Int32%40%29?displayProperty=nameWithType>  
   
@@ -28,12 +29,12 @@ ms.lasthandoff: 10/18/2017
   
 -   <xref:System.Math.IEEERemainder%28System.Double%2CSystem.Double%29?displayProperty=nameWithType>  
   
-## <a name="differences-from-net"></a><span data-ttu-id="a0e27-104">.NET との相違</span><span class="sxs-lookup"><span data-stu-id="a0e27-104">Differences from .NET</span></span>  
- <span data-ttu-id="a0e27-105">.NET Framework で使用される丸めセマンティクスは SQL Server とは異なります。</span><span class="sxs-lookup"><span data-stu-id="a0e27-105">The .NET Framework has different rounding semantics from SQL Server.</span></span> <span data-ttu-id="a0e27-106"><xref:System.Math.Round%2A> .NET Framework のメソッドは、実行*銀行型丸めが*.5 で終わる数値を丸めるをここでの代わりに次の上位桁に偶数桁の数字に最も近いです。</span><span class="sxs-lookup"><span data-stu-id="a0e27-106">The <xref:System.Math.Round%2A> method in the .NET Framework performs *Banker's rounding*, where numbers that ends in .5 round to the nearest even digit instead of to the next higher digit.</span></span> <span data-ttu-id="a0e27-107">たとえば、2.5 は 2 に丸められ、3.5 は 4 に丸められます </span><span class="sxs-lookup"><span data-stu-id="a0e27-107">For example, 2.5 rounds to 2, while 3.5 rounds to 4.</span></span> <span data-ttu-id="a0e27-108">(この方法は、大規模なデータ トランザクションで、値が大きくなる組織的バイアスの回避に役立ちます)。</span><span class="sxs-lookup"><span data-stu-id="a0e27-108">(This technique helps avoid systematic bias toward higher values in large data transactions.)</span></span>  
+## <a name="differences-from-net"></a><span data-ttu-id="09078-104">.NET との相違</span><span class="sxs-lookup"><span data-stu-id="09078-104">Differences from .NET</span></span>  
+ <span data-ttu-id="09078-105">.NET Framework で使用される丸めセマンティクスは SQL Server とは異なります。</span><span class="sxs-lookup"><span data-stu-id="09078-105">The .NET Framework has different rounding semantics from SQL Server.</span></span> <span data-ttu-id="09078-106"><xref:System.Math.Round%2A> .NET Framework のメソッドは、実行*銀行型丸めが*.5 で終わる数値を丸めるをここでの代わりに次の上位桁に偶数桁の数字に最も近いです。</span><span class="sxs-lookup"><span data-stu-id="09078-106">The <xref:System.Math.Round%2A> method in the .NET Framework performs *Banker's rounding*, where numbers that ends in .5 round to the nearest even digit instead of to the next higher digit.</span></span> <span data-ttu-id="09078-107">たとえば、2.5 は 2 に丸められ、3.5 は 4 に丸められます </span><span class="sxs-lookup"><span data-stu-id="09078-107">For example, 2.5 rounds to 2, while 3.5 rounds to 4.</span></span> <span data-ttu-id="09078-108">(この方法は、大規模なデータ トランザクションで、値が大きくなる組織的バイアスの回避に役立ちます)。</span><span class="sxs-lookup"><span data-stu-id="09078-108">(This technique helps avoid systematic bias toward higher values in large data transactions.)</span></span>  
   
- <span data-ttu-id="a0e27-109">SQL では、`ROUND` 関数は常に、0 から遠ざかる方向に丸めを実行します。</span><span class="sxs-lookup"><span data-stu-id="a0e27-109">In SQL, the `ROUND` function instead always rounds away from 0.</span></span> <span data-ttu-id="a0e27-110">したがって、2.5 は 3 に丸められます。これは、2 に丸められる .NET Framework とは対照的です。</span><span class="sxs-lookup"><span data-stu-id="a0e27-110">Therefore 2.5 rounds to 3, contrasted with its rounding to 2 in the .NET Framework.</span></span>  
+ <span data-ttu-id="09078-109">SQL では、`ROUND` 関数は常に、0 から遠ざかる方向に丸めを実行します。</span><span class="sxs-lookup"><span data-stu-id="09078-109">In SQL, the `ROUND` function instead always rounds away from 0.</span></span> <span data-ttu-id="09078-110">したがって、2.5 は 3 に丸められます。これは、2 に丸められる .NET Framework とは対照的です。</span><span class="sxs-lookup"><span data-stu-id="09078-110">Therefore 2.5 rounds to 3, contrasted with its rounding to 2 in the .NET Framework.</span></span>  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="a0e27-111"> は、SQL の `ROUND` セマンティクスに到達するため、銀行型丸めを実装しようとしません。</span><span class="sxs-lookup"><span data-stu-id="a0e27-111"> passes through to the SQL `ROUND` semantics and does not try to implement Banker's rounding.</span></span>  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="09078-111"> は、SQL の `ROUND` セマンティクスに到達するため、銀行型丸めを実装しようとしません。</span><span class="sxs-lookup"><span data-stu-id="09078-111"> passes through to the SQL `ROUND` semantics and does not try to implement Banker's rounding.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a0e27-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="a0e27-112">See Also</span></span>  
- [<span data-ttu-id="a0e27-113">データ型および関数</span><span class="sxs-lookup"><span data-stu-id="a0e27-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a><span data-ttu-id="09078-112">参照</span><span class="sxs-lookup"><span data-stu-id="09078-112">See Also</span></span>  
+ [<span data-ttu-id="09078-113">データ型と関数</span><span class="sxs-lookup"><span data-stu-id="09078-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

@@ -13,22 +13,23 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e00fe409a9628d160700b5eed4dd0f57f8a1c3bf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 712630938989e2187042e8ab143361da664e6bcf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="xml-data-in-sql-server"></a><span data-ttu-id="20264-102">SQL Server における XML データ</span><span class="sxs-lookup"><span data-stu-id="20264-102">XML Data in SQL Server</span></span>
-<span data-ttu-id="20264-103">SQL Server は、.NET Framework 内部の SQLXML の機能を公開します。</span><span class="sxs-lookup"><span data-stu-id="20264-103">SQL Server exposes the functionality of SQLXML inside the .NET Framework.</span></span> <span data-ttu-id="20264-104">開発者は、SQL Server のインスタンスから XML データにアクセスし、データを .NET Framework 環境に持ち込んで処理し、更新を SQL Server に送り返すアプリケーションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="20264-104">Developers can write applications that access XML data from an instance of SQL Server, bring the data into the .NET Framework environment, process the data, and send the updates back to SQL Server.</span></span> <span data-ttu-id="20264-105">SQL Server では、XML データをデータ ストレージなどの目的に、あるいはデータを取得するときのパラメーター値として使用できます。</span><span class="sxs-lookup"><span data-stu-id="20264-105">XML data can be used in several ways in SQL Server, including data storage, and as parameter values for retrieving data.</span></span> <span data-ttu-id="20264-106">**SqlXml** .NET Framework のクラスは、SQL Server 内で XML 列に格納されているデータを操作するため、クライアント側のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="20264-106">The **SqlXml** class in the .NET Framework provides the client-side support for working with data stored in an XML column within SQL Server.</span></span> <span data-ttu-id="20264-107">詳細については、SQL Server オンライン ブックの「SQLXML マネージ クラス」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="20264-107">For more information, see "SQLXML Managed Classes" in SQL Server Books Online.</span></span>  
+# <a name="xml-data-in-sql-server"></a><span data-ttu-id="7854c-102">SQL Server における XML データ</span><span class="sxs-lookup"><span data-stu-id="7854c-102">XML Data in SQL Server</span></span>
+<span data-ttu-id="7854c-103">SQL Server は、.NET Framework 内部の SQLXML の機能を公開します。</span><span class="sxs-lookup"><span data-stu-id="7854c-103">SQL Server exposes the functionality of SQLXML inside the .NET Framework.</span></span> <span data-ttu-id="7854c-104">開発者は、SQL Server のインスタンスから XML データにアクセスし、データを .NET Framework 環境に持ち込んで処理し、更新を SQL Server に送り返すアプリケーションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="7854c-104">Developers can write applications that access XML data from an instance of SQL Server, bring the data into the .NET Framework environment, process the data, and send the updates back to SQL Server.</span></span> <span data-ttu-id="7854c-105">SQL Server では、XML データをデータ ストレージなどの目的に、あるいはデータを取得するときのパラメーター値として使用できます。</span><span class="sxs-lookup"><span data-stu-id="7854c-105">XML data can be used in several ways in SQL Server, including data storage, and as parameter values for retrieving data.</span></span> <span data-ttu-id="7854c-106">**SqlXml** .NET Framework のクラスは、SQL Server 内で XML 列に格納されているデータを操作するため、クライアント側のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="7854c-106">The **SqlXml** class in the .NET Framework provides the client-side support for working with data stored in an XML column within SQL Server.</span></span> <span data-ttu-id="7854c-107">詳細については、SQL Server オンライン ブックの「SQLXML マネージ クラス」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7854c-107">For more information, see "SQLXML Managed Classes" in SQL Server Books Online.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="20264-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="20264-108">In This Section</span></span>  
- [<span data-ttu-id="20264-109">SQL XML 列の値</span><span class="sxs-lookup"><span data-stu-id="20264-109">SQL XML Column Values</span></span>](../../../../../docs/framework/data/adonet/sql/sql-xml-column-values.md)  
- <span data-ttu-id="20264-110">SQL Server から XML データを取得し、使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="20264-110">Demonstrates how to retrieve and work with XML data retrieved from SQL Server.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="7854c-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7854c-108">In This Section</span></span>  
+ [<span data-ttu-id="7854c-109">SQL XML 列値</span><span class="sxs-lookup"><span data-stu-id="7854c-109">SQL XML Column Values</span></span>](../../../../../docs/framework/data/adonet/sql/sql-xml-column-values.md)  
+ <span data-ttu-id="7854c-110">SQL Server から XML データを取得し、使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7854c-110">Demonstrates how to retrieve and work with XML data retrieved from SQL Server.</span></span>  
   
- [<span data-ttu-id="20264-111">パラメーターとして XML 値を指定します。</span><span class="sxs-lookup"><span data-stu-id="20264-111">Specifying XML Values as Parameters</span></span>](../../../../../docs/framework/data/adonet/sql/specifying-xml-values-as-parameters.md)  
- <span data-ttu-id="20264-112">コマンドに XML データをパラメーターとして渡す方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="20264-112">Demonstrates how to pass XML data as a parameter to a command.</span></span>  
+ [<span data-ttu-id="7854c-111">パラメーターとしての XML 値の指定</span><span class="sxs-lookup"><span data-stu-id="7854c-111">Specifying XML Values as Parameters</span></span>](../../../../../docs/framework/data/adonet/sql/specifying-xml-values-as-parameters.md)  
+ <span data-ttu-id="7854c-112">コマンドに XML データをパラメーターとして渡す方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7854c-112">Demonstrates how to pass XML data as a parameter to a command.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="20264-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="20264-113">See Also</span></span>  
- [<span data-ttu-id="20264-114">SQL Server と ADO.NET</span><span class="sxs-lookup"><span data-stu-id="20264-114">SQL Server and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/index.md)  
- [<span data-ttu-id="20264-115">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="20264-115">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="7854c-113">参照</span><span class="sxs-lookup"><span data-stu-id="7854c-113">See Also</span></span>  
+ [<span data-ttu-id="7854c-114">SQL Server と ADO.NET</span><span class="sxs-lookup"><span data-stu-id="7854c-114">SQL Server and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/index.md)  
+ [<span data-ttu-id="7854c-115">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="7854c-115">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

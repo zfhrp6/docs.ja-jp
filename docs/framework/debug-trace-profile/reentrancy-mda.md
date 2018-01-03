@@ -24,37 +24,38 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a54a985abbc59aea0eeb46cc74560485e86b897d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a305658068e6d59f27957879c053b18742ea642f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="reentrancy-mda"></a><span data-ttu-id="74133-102">reentrancy MDA</span><span class="sxs-lookup"><span data-stu-id="74133-102">reentrancy MDA</span></span>
-<span data-ttu-id="74133-103">`reentrancy` マネージ デバッグ アシスタント (MDA) は、前のマネージ コードからネイティブ コードへの切り替えが遷移順序を守って実行されなかった場合に、ネイティブ コードからマネージ コードへの遷移が試みられるとアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="74133-103">The `reentrancy` managed debugging assistant (MDA) is activated when an attempt is made to transition from native to managed code in cases where a prior switch from managed to native code was not performed through an orderly transition.</span></span>  
+# <a name="reentrancy-mda"></a><span data-ttu-id="9788b-102">reentrancy MDA</span><span class="sxs-lookup"><span data-stu-id="9788b-102">reentrancy MDA</span></span>
+<span data-ttu-id="9788b-103">`reentrancy` マネージ デバッグ アシスタント (MDA) は、前のマネージ コードからネイティブ コードへの切り替えが遷移順序を守って実行されなかった場合に、ネイティブ コードからマネージ コードへの遷移が試みられるとアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="9788b-103">The `reentrancy` managed debugging assistant (MDA) is activated when an attempt is made to transition from native to managed code in cases where a prior switch from managed to native code was not performed through an orderly transition.</span></span>  
   
-## <a name="symptoms"></a><span data-ttu-id="74133-104">症状</span><span class="sxs-lookup"><span data-stu-id="74133-104">Symptoms</span></span>  
- <span data-ttu-id="74133-105">ネイティブ コードからマネージ コードに遷移するときに、オブジェクト ヒープが壊れたり、他の重大なエラーが発生しています。</span><span class="sxs-lookup"><span data-stu-id="74133-105">The object heap is corrupted or other serious errors are occurring when transitioning from native to managed code.</span></span>  
+## <a name="symptoms"></a><span data-ttu-id="9788b-104">症状</span><span class="sxs-lookup"><span data-stu-id="9788b-104">Symptoms</span></span>  
+ <span data-ttu-id="9788b-105">ネイティブ コードからマネージ コードに遷移するときに、オブジェクト ヒープが壊れたり、他の重大なエラーが発生しています。</span><span class="sxs-lookup"><span data-stu-id="9788b-105">The object heap is corrupted or other serious errors are occurring when transitioning from native to managed code.</span></span>  
   
- <span data-ttu-id="74133-106">ネイティブ コードとマネージ コードの間でどちらかの方向に切り替えるスレッドは、適切な遷移順序を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="74133-106">Threads that switch between native and managed code in either direction must perform an orderly transition.</span></span> <span data-ttu-id="74133-107">ただし、ベクトル化例外ハンドラーなど、オペレーティング システムの特定の低レベル拡張ポイントでは、適切な遷移順序を実行しなくてもマネージ コードからネイティブ コードに切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="74133-107">However, certain low-level extensibility points in the operating system, such as the vectored exception handler, allow switches from managed to native code without performing an orderly transition.</span></span>  <span data-ttu-id="74133-108">これらの切り替えは、共通言語ランタイム (CLR) の管理下ではなく、オペレーティング システムの管理下にあります。</span><span class="sxs-lookup"><span data-stu-id="74133-108">These switches are under operating system control, rather than under common language runtime (CLR) control.</span></span>  <span data-ttu-id="74133-109">これらの拡張ポイント内で実行されるネイティブ コードでは、マネージ コードへのコールバックを避ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="74133-109">Any native code that executes inside these extensibility points must avoid calling back into managed code.</span></span>  
+ <span data-ttu-id="9788b-106">ネイティブ コードとマネージ コードの間でどちらかの方向に切り替えるスレッドは、適切な遷移順序を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9788b-106">Threads that switch between native and managed code in either direction must perform an orderly transition.</span></span> <span data-ttu-id="9788b-107">ただし、ベクトル化例外ハンドラーなど、オペレーティング システムの特定の低レベル拡張ポイントでは、適切な遷移順序を実行しなくてもマネージ コードからネイティブ コードに切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="9788b-107">However, certain low-level extensibility points in the operating system, such as the vectored exception handler, allow switches from managed to native code without performing an orderly transition.</span></span>  <span data-ttu-id="9788b-108">これらの切り替えは、共通言語ランタイム (CLR) の管理下ではなく、オペレーティング システムの管理下にあります。</span><span class="sxs-lookup"><span data-stu-id="9788b-108">These switches are under operating system control, rather than under common language runtime (CLR) control.</span></span>  <span data-ttu-id="9788b-109">これらの拡張ポイント内で実行されるネイティブ コードでは、マネージ コードへのコールバックを避ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="9788b-109">Any native code that executes inside these extensibility points must avoid calling back into managed code.</span></span>  
   
-## <a name="cause"></a><span data-ttu-id="74133-110">原因</span><span class="sxs-lookup"><span data-stu-id="74133-110">Cause</span></span>  
- <span data-ttu-id="74133-111">ベクトル化例外ハンドラーなどの低レベルのオペレーティング システム拡張ポイントは、マネージ コードの実行中にアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="74133-111">A low-level operating system extensibility point, such as the vectored exception handler, has activated while executing managed code.</span></span>  <span data-ttu-id="74133-112">そのような拡張ポイントを介して呼び出されたアプリケーション コードが、マネージ コードにコールバックしようとしています。</span><span class="sxs-lookup"><span data-stu-id="74133-112">The application code that is invoked through that extensibility point is attempting to call back into managed code.</span></span>  
+## <a name="cause"></a><span data-ttu-id="9788b-110">原因</span><span class="sxs-lookup"><span data-stu-id="9788b-110">Cause</span></span>  
+ <span data-ttu-id="9788b-111">ベクトル化例外ハンドラーなどの低レベルのオペレーティング システム拡張ポイントは、マネージ コードの実行中にアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="9788b-111">A low-level operating system extensibility point, such as the vectored exception handler, has activated while executing managed code.</span></span>  <span data-ttu-id="9788b-112">そのような拡張ポイントを介して呼び出されたアプリケーション コードが、マネージ コードにコールバックしようとしています。</span><span class="sxs-lookup"><span data-stu-id="9788b-112">The application code that is invoked through that extensibility point is attempting to call back into managed code.</span></span>  
   
- <span data-ttu-id="74133-113">この問題は常に、アプリケーション コードが原因で発生します。</span><span class="sxs-lookup"><span data-stu-id="74133-113">This problem is always caused by application code.</span></span>  
+ <span data-ttu-id="9788b-113">この問題は常に、アプリケーション コードが原因で発生します。</span><span class="sxs-lookup"><span data-stu-id="9788b-113">This problem is always caused by application code.</span></span>  
   
-## <a name="resolution"></a><span data-ttu-id="74133-114">解像度</span><span class="sxs-lookup"><span data-stu-id="74133-114">Resolution</span></span>  
- <span data-ttu-id="74133-115">この MDA をアクティブにしたスレッドのスタック トレースを確認します。</span><span class="sxs-lookup"><span data-stu-id="74133-115">Examine the stack trace for the thread that has activated this MDA.</span></span>  <span data-ttu-id="74133-116">スレッドがマネージ コードの不正な呼び出しを試みています。</span><span class="sxs-lookup"><span data-stu-id="74133-116">The thread is attempting to illegally call into managed code.</span></span>  <span data-ttu-id="74133-117">スタック トレースでは、この拡張ポイントを使っているアプリケーションのコード、この拡張ポイントを提供しているオペレーティング システムのコード、および拡張ポイントによって中断されたマネージ コードが、示されているはずです。</span><span class="sxs-lookup"><span data-stu-id="74133-117">The stack trace should reveal the application code using this extensibility point, the operating system code that provides this extensibility point, and the managed code that was interrupted by the extensibility point.</span></span>  
+## <a name="resolution"></a><span data-ttu-id="9788b-114">解像度</span><span class="sxs-lookup"><span data-stu-id="9788b-114">Resolution</span></span>  
+ <span data-ttu-id="9788b-115">この MDA をアクティブにしたスレッドのスタック トレースを確認します。</span><span class="sxs-lookup"><span data-stu-id="9788b-115">Examine the stack trace for the thread that has activated this MDA.</span></span>  <span data-ttu-id="9788b-116">スレッドがマネージ コードの不正な呼び出しを試みています。</span><span class="sxs-lookup"><span data-stu-id="9788b-116">The thread is attempting to illegally call into managed code.</span></span>  <span data-ttu-id="9788b-117">スタック トレースでは、この拡張ポイントを使っているアプリケーションのコード、この拡張ポイントを提供しているオペレーティング システムのコード、および拡張ポイントによって中断されたマネージ コードが、示されているはずです。</span><span class="sxs-lookup"><span data-stu-id="9788b-117">The stack trace should reveal the application code using this extensibility point, the operating system code that provides this extensibility point, and the managed code that was interrupted by the extensibility point.</span></span>  
   
- <span data-ttu-id="74133-118">たとえば、ベクトル化例外ハンドラー内からのマネージ コードの呼び出しの試みによってアクティブ化された MDA が表示されます。</span><span class="sxs-lookup"><span data-stu-id="74133-118">For example, you will see the MDA activated in an attempt to call managed code from inside a vectored exception handler.</span></span>  <span data-ttu-id="74133-119">スタックには、オペレーティング システムの例外処理コードと、<xref:System.DivideByZeroException> や <xref:System.AccessViolationException> などの例外をトリガーするマネージ コードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="74133-119">On the stack you will see the operating system exception handling code and some managed code triggering an exception such as a <xref:System.DivideByZeroException> or an <xref:System.AccessViolationException>.</span></span>  
+ <span data-ttu-id="9788b-118">たとえば、ベクトル化例外ハンドラー内からのマネージ コードの呼び出しの試みによってアクティブ化された MDA が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9788b-118">For example, you will see the MDA activated in an attempt to call managed code from inside a vectored exception handler.</span></span>  <span data-ttu-id="9788b-119">スタックには、オペレーティング システムの例外処理コードと、<xref:System.DivideByZeroException> や <xref:System.AccessViolationException> などの例外をトリガーするマネージ コードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9788b-119">On the stack you will see the operating system exception handling code and some managed code triggering an exception such as a <xref:System.DivideByZeroException> or an <xref:System.AccessViolationException>.</span></span>  
   
- <span data-ttu-id="74133-120">この例の正しい解決策は、アンマネージ コードでベクトル化例外ハンドラーを完全に実装することです。</span><span class="sxs-lookup"><span data-stu-id="74133-120">In this example, the correct resolution is to implement the vectored exception handler completely in unmanaged code.</span></span>  
+ <span data-ttu-id="9788b-120">この例の正しい解決策は、アンマネージ コードでベクトル化例外ハンドラーを完全に実装することです。</span><span class="sxs-lookup"><span data-stu-id="9788b-120">In this example, the correct resolution is to implement the vectored exception handler completely in unmanaged code.</span></span>  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="74133-121">ランタイムへの影響</span><span class="sxs-lookup"><span data-stu-id="74133-121">Effect on the Runtime</span></span>  
- <span data-ttu-id="74133-122">この MDA は CLR に影響しません。</span><span class="sxs-lookup"><span data-stu-id="74133-122">This MDA has no effect on the CLR.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="9788b-121">ランタイムへの影響</span><span class="sxs-lookup"><span data-stu-id="9788b-121">Effect on the Runtime</span></span>  
+ <span data-ttu-id="9788b-122">この MDA は CLR に影響しません。</span><span class="sxs-lookup"><span data-stu-id="9788b-122">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="74133-123">出力</span><span class="sxs-lookup"><span data-stu-id="74133-123">Output</span></span>  
- <span data-ttu-id="74133-124">MDA は、無効な再入が試みられていることを報告します。</span><span class="sxs-lookup"><span data-stu-id="74133-124">The MDA reports that illegal reentrancy is being attempted.</span></span>  <span data-ttu-id="74133-125">これが発生している理由と、問題の解決方法を確認するには、スレッドのスタックを調べます。</span><span class="sxs-lookup"><span data-stu-id="74133-125">Examine the thread's stack to determine why this is happening and how to correct the problem.</span></span> <span data-ttu-id="74133-126">サンプルの出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="74133-126">The following is sample output.</span></span>  
+## <a name="output"></a><span data-ttu-id="9788b-123">出力</span><span class="sxs-lookup"><span data-stu-id="9788b-123">Output</span></span>  
+ <span data-ttu-id="9788b-124">MDA は、無効な再入が試みられていることを報告します。</span><span class="sxs-lookup"><span data-stu-id="9788b-124">The MDA reports that illegal reentrancy is being attempted.</span></span>  <span data-ttu-id="9788b-125">これが発生している理由と、問題の解決方法を確認するには、スレッドのスタックを調べます。</span><span class="sxs-lookup"><span data-stu-id="9788b-125">Examine the thread's stack to determine why this is happening and how to correct the problem.</span></span> <span data-ttu-id="9788b-126">サンプルの出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="9788b-126">The following is sample output.</span></span>  
   
 ```  
 Additional Information: Attempting to call into managed code without   
@@ -64,7 +65,7 @@ low-level native extensibility points. Managed Debugging Assistant
 ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.  
 ```  
   
-## <a name="configuration"></a><span data-ttu-id="74133-127">構成</span><span class="sxs-lookup"><span data-stu-id="74133-127">Configuration</span></span>  
+## <a name="configuration"></a><span data-ttu-id="9788b-127">構成</span><span class="sxs-lookup"><span data-stu-id="9788b-127">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -74,8 +75,8 @@ ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.
 </mdaConfig>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="74133-128">例</span><span class="sxs-lookup"><span data-stu-id="74133-128">Example</span></span>  
- <span data-ttu-id="74133-129">次のコード例では、<xref:System.AccessViolationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="74133-129">The following code example causes an <xref:System.AccessViolationException> to be thrown.</span></span>  <span data-ttu-id="74133-130">ベクトル化例外処理をサポートする Windows のバージョンでは、これによりマネージ ベクトル化例外ハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="74133-130">On versions of Windows that support vectored exception handling, this will cause the managed vectored exception handler to be called.</span></span>  <span data-ttu-id="74133-131">`reentrancy` MDA が有効にされている場合、オペレーティング システムのベクトル化例外処理サポート コードから `MyHandler` の呼び出しが試みられると、MDA がアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="74133-131">If the `reentrancy` MDA is enabled, the MDA will activate during the attempted call to `MyHandler` from the operating system's vectored exception handling support code.</span></span>  
+## <a name="example"></a><span data-ttu-id="9788b-128">例</span><span class="sxs-lookup"><span data-stu-id="9788b-128">Example</span></span>  
+ <span data-ttu-id="9788b-129">次のコード例では、<xref:System.AccessViolationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="9788b-129">The following code example causes an <xref:System.AccessViolationException> to be thrown.</span></span>  <span data-ttu-id="9788b-130">ベクトル化例外処理をサポートする Windows のバージョンでは、これによりマネージ ベクトル化例外ハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="9788b-130">On versions of Windows that support vectored exception handling, this will cause the managed vectored exception handler to be called.</span></span>  <span data-ttu-id="9788b-131">`reentrancy` MDA が有効にされている場合、オペレーティング システムのベクトル化例外処理サポート コードから `MyHandler` の呼び出しが試みられると、MDA がアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="9788b-131">If the `reentrancy` MDA is enabled, the MDA will activate during the attempted call to `MyHandler` from the operating system's vectored exception handling support code.</span></span>  
   
 ```  
 using System;  
@@ -112,5 +113,5 @@ public class Reenter
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="74133-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="74133-132">See Also</span></span>  
- [<span data-ttu-id="74133-133">マネージ デバッグ アシスタントによるエラーの診断</span><span class="sxs-lookup"><span data-stu-id="74133-133">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a><span data-ttu-id="9788b-132">参照</span><span class="sxs-lookup"><span data-stu-id="9788b-132">See Also</span></span>  
+ [<span data-ttu-id="9788b-133">マネージ デバッグ アシスタントによるエラーの診断</span><span class="sxs-lookup"><span data-stu-id="9788b-133">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

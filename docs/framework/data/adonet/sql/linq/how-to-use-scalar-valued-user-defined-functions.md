@@ -16,20 +16,21 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ef9e687522e200487e0fc2a661bbd545d4eb4bbf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a70d46362ef8b2be0533a1530c79124c464375af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-use-scalar-valued-user-defined-functions"></a><span data-ttu-id="7c12d-102">方法 : スカラー値のユーザー定義関数を使用する</span><span class="sxs-lookup"><span data-stu-id="7c12d-102">How to: Use Scalar-Valued User-Defined Functions</span></span>
-<span data-ttu-id="7c12d-103"><xref:System.Data.Linq.Mapping.FunctionAttribute> 属性を使用することによって、クラスで定義されているクライアント メソッドを、ユーザー定義関数に対応付けることができます。</span><span class="sxs-lookup"><span data-stu-id="7c12d-103">You can map a client method defined on a class to a user-defined function by using the <xref:System.Data.Linq.Mapping.FunctionAttribute> attribute.</span></span> <span data-ttu-id="7c12d-104">メソッドの本体は、メソッド呼び出しの目的を反映する式を構築し、変換および実行のためにその式を <xref:System.Data.Linq.DataContext> に渡します。</span><span class="sxs-lookup"><span data-stu-id="7c12d-104">Note that the body of the method constructs an expression that captures the intent of the method call, and passes that expression to the <xref:System.Data.Linq.DataContext> for translation and execution.</span></span>  
+# <a name="how-to-use-scalar-valued-user-defined-functions"></a><span data-ttu-id="11d02-102">方法 : スカラー値のユーザー定義関数を使用する</span><span class="sxs-lookup"><span data-stu-id="11d02-102">How to: Use Scalar-Valued User-Defined Functions</span></span>
+<span data-ttu-id="11d02-103"><xref:System.Data.Linq.Mapping.FunctionAttribute> 属性を使用することによって、クラスで定義されているクライアント メソッドを、ユーザー定義関数に対応付けることができます。</span><span class="sxs-lookup"><span data-stu-id="11d02-103">You can map a client method defined on a class to a user-defined function by using the <xref:System.Data.Linq.Mapping.FunctionAttribute> attribute.</span></span> <span data-ttu-id="11d02-104">メソッドの本体は、メソッド呼び出しの目的を反映する式を構築し、変換および実行のためにその式を <xref:System.Data.Linq.DataContext> に渡します。</span><span class="sxs-lookup"><span data-stu-id="11d02-104">Note that the body of the method constructs an expression that captures the intent of the method call, and passes that expression to the <xref:System.Data.Linq.DataContext> for translation and execution.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="7c12d-105">直接実行は、関数がクエリの外部で呼び出される場合のみ発生します。</span><span class="sxs-lookup"><span data-stu-id="7c12d-105">Direct execution occurs only if the function is called outside a query.</span></span> <span data-ttu-id="7c12d-106">詳細については、次を参照してください。[する方法: Call User-Defined 関数をインライン](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md)です。</span><span class="sxs-lookup"><span data-stu-id="7c12d-106">For more information, see [How to: Call User-Defined Functions Inline](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md).</span></span>  
+>  <span data-ttu-id="11d02-105">直接実行は、関数がクエリの外部で呼び出される場合のみ発生します。</span><span class="sxs-lookup"><span data-stu-id="11d02-105">Direct execution occurs only if the function is called outside a query.</span></span> <span data-ttu-id="11d02-106">詳細については、次を参照してください。[する方法: Call User-Defined 関数をインライン](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md)です。</span><span class="sxs-lookup"><span data-stu-id="11d02-106">For more information, see [How to: Call User-Defined Functions Inline](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7c12d-107">例</span><span class="sxs-lookup"><span data-stu-id="7c12d-107">Example</span></span>  
- <span data-ttu-id="7c12d-108">次の SQL コードは、スカラー値のユーザー定義関数 `ReverseCustName()` を示しています。</span><span class="sxs-lookup"><span data-stu-id="7c12d-108">The following SQL code presents a scalar-valued user-defined function `ReverseCustName()`.</span></span>  
+## <a name="example"></a><span data-ttu-id="11d02-107">例</span><span class="sxs-lookup"><span data-stu-id="11d02-107">Example</span></span>  
+ <span data-ttu-id="11d02-108">次の SQL コードは、スカラー値のユーザー定義関数 `ReverseCustName()` を示しています。</span><span class="sxs-lookup"><span data-stu-id="11d02-108">The following SQL code presents a scalar-valued user-defined function `ReverseCustName()`.</span></span>  
   
 ```  
 CREATE FUNCTION ReverseCustName(@string varchar(100))  
@@ -42,10 +43,10 @@ BEGIN
 END  
 ```  
   
- <span data-ttu-id="7c12d-109">このコードで、次のようなクライアント メソッドを対応付けます。</span><span class="sxs-lookup"><span data-stu-id="7c12d-109">You would map a client method such as the following for this code:</span></span>  
+ <span data-ttu-id="11d02-109">このコードで、次のようなクライアント メソッドを対応付けます。</span><span class="sxs-lookup"><span data-stu-id="11d02-109">You would map a client method such as the following for this code:</span></span>  
   
  [!code-csharp[DLinqUDFS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqUDFS/cs/northwind-tfunc.cs#3)]
  [!code-vb[DLinqUDFS#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqUDFS/vb/northwind-tfunc.vb#3)]  
   
-## <a name="see-also"></a><span data-ttu-id="7c12d-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="7c12d-110">See Also</span></span>  
- [<span data-ttu-id="7c12d-111">ユーザー定義関数</span><span class="sxs-lookup"><span data-stu-id="7c12d-111">User-Defined Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)
+## <a name="see-also"></a><span data-ttu-id="11d02-110">参照</span><span class="sxs-lookup"><span data-stu-id="11d02-110">See Also</span></span>  
+ [<span data-ttu-id="11d02-111">ユーザー定義関数</span><span class="sxs-lookup"><span data-stu-id="11d02-111">User-Defined Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)

@@ -9,18 +9,15 @@ ms.assetid: eddb087d-b2e9-4bc7-a567-0bb6c45e0d42
 caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3153d3fd249abaea3492c98328965e0ae9234dfe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8614adab3f95b3a887d698924ed8e90d07b9e8a7
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="cannot-rename-with-different-drive"></a><span data-ttu-id="352d4-102">ディスク名は変更できません</span><span class="sxs-lookup"><span data-stu-id="352d4-102">Cannot rename with different drive</span></span>
-<span data-ttu-id="352d4-103">`Rename` ステートメントではファイル パスにドライブ名を指定できません。</span><span class="sxs-lookup"><span data-stu-id="352d4-103">The `Rename` statement cannot specify a drive letter in the file path.</span></span>  
+# <a name="cannot-rename-with-different-drive"></a><span data-ttu-id="8569e-102">ディスク名は変更できません</span><span class="sxs-lookup"><span data-stu-id="8569e-102">Cannot rename with different drive</span></span>
+<span data-ttu-id="8569e-103">`Rename` ステートメントではファイル パスにドライブ名を指定できません。</span><span class="sxs-lookup"><span data-stu-id="8569e-103">The `Rename` statement cannot specify a drive letter in the file path.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="352d4-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="352d4-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="8569e-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="8569e-104">To correct this error</span></span>  
   
--   <span data-ttu-id="352d4-105">ファイル パスからドライブ文字を削除します。</span><span class="sxs-lookup"><span data-stu-id="352d4-105">Remove the drive letter from the file path.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="352d4-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="352d4-106">See Also</span></span>  
- [<span data-ttu-id="352d4-107">ビルド内にありません: rename 関数</span><span class="sxs-lookup"><span data-stu-id="352d4-107">NOT IN BUILD: Rename Function</span></span>](http://msdn.microsoft.com/en-us/464062d8-2320-4305-8a8c-1f43e96c94df)
+-   <span data-ttu-id="8569e-105">ファイル パスからドライブ文字を削除します。</span><span class="sxs-lookup"><span data-stu-id="8569e-105">Remove the drive letter from the file path.</span></span>
