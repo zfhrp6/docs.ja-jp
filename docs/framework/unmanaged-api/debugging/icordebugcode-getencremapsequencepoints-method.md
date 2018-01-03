@@ -21,16 +21,17 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 512a39f55fec7b7246fe5e20008af594028c89dc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 508979a63c2ab25ee3478dde490a5c3f7df14c73
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugcodegetencremapsequencepoints-method"></a><span data-ttu-id="eae1e-102">ICorDebugCode::GetEnCRemapSequencePoints メソッド</span><span class="sxs-lookup"><span data-stu-id="eae1e-102">ICorDebugCode::GetEnCRemapSequencePoints Method</span></span>
-<span data-ttu-id="eae1e-103">.NET Framework の現在のバージョンでは、このメソッドが実装されていません。</span><span class="sxs-lookup"><span data-stu-id="eae1e-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugcodegetencremapsequencepoints-method"></a><span data-ttu-id="0ea9f-102">ICorDebugCode::GetEnCRemapSequencePoints メソッド</span><span class="sxs-lookup"><span data-stu-id="0ea9f-102">ICorDebugCode::GetEnCRemapSequencePoints Method</span></span>
+<span data-ttu-id="0ea9f-103">.NET Framework の現在のバージョンでは、このメソッドが実装されていません。</span><span class="sxs-lookup"><span data-stu-id="0ea9f-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="eae1e-104">構文</span><span class="sxs-lookup"><span data-stu-id="eae1e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0ea9f-104">構文</span><span class="sxs-lookup"><span data-stu-id="0ea9f-104">Syntax</span></span>  
   
 ```  
 HRESULT GetEnCRemapSequencePoints(  
@@ -41,5 +42,5 @@ HRESULT GetEnCRemapSequencePoints(
 );  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="eae1e-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="eae1e-105">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="0ea9f-105">参照</span><span class="sxs-lookup"><span data-stu-id="0ea9f-105">See Also</span></span>  
  

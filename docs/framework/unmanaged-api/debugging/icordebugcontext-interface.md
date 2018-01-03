@@ -19,28 +19,29 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2e66084e7edfc3541a8b58552270a6f6eeae3989
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ada645c4feb5976fe1bacfb9c9ab1ab53d3969af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugcontext-interface1"></a><span data-ttu-id="eb746-102">ICorDebugContext Interface1</span><span class="sxs-lookup"><span data-stu-id="eb746-102">ICorDebugContext Interface1</span></span>
-<span data-ttu-id="eb746-103">コンテキストのオブジェクトを表します。</span><span class="sxs-lookup"><span data-stu-id="eb746-103">Represents a context object.</span></span> <span data-ttu-id="eb746-104">このインターフェイスはまだ実装されていません。</span><span class="sxs-lookup"><span data-stu-id="eb746-104">This interface has not been implemented yet.</span></span>  
+# <a name="icordebugcontext-interface1"></a><span data-ttu-id="1c203-102">ICorDebugContext Interface1</span><span class="sxs-lookup"><span data-stu-id="1c203-102">ICorDebugContext Interface1</span></span>
+<span data-ttu-id="1c203-103">コンテキストのオブジェクトを表します。</span><span class="sxs-lookup"><span data-stu-id="1c203-103">Represents a context object.</span></span> <span data-ttu-id="1c203-104">このインターフェイスはまだ実装されていません。</span><span class="sxs-lookup"><span data-stu-id="1c203-104">This interface has not been implemented yet.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="eb746-105">コメント</span><span class="sxs-lookup"><span data-stu-id="eb746-105">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1c203-105">コメント</span><span class="sxs-lookup"><span data-stu-id="1c203-105">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="eb746-106">このインターフェイスは、コンピューター間またはプロセス間でのリモート呼び出しをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="eb746-106">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+>  <span data-ttu-id="1c203-106">このインターフェイスは、コンピューター間またはプロセス間でのリモート呼び出しをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="1c203-106">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="eb746-107">要件</span><span class="sxs-lookup"><span data-stu-id="eb746-107">Requirements</span></span>  
- <span data-ttu-id="eb746-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="eb746-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1c203-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="1c203-107">Requirements</span></span>  
+ <span data-ttu-id="1c203-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="1c203-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="eb746-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="eb746-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="1c203-109">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="1c203-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="eb746-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="eb746-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1c203-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1c203-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="eb746-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eb746-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="1c203-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1c203-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eb746-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="eb746-112">See Also</span></span>  
- [<span data-ttu-id="eb746-113">デバッグのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="eb746-113">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="1c203-112">参照</span><span class="sxs-lookup"><span data-stu-id="1c203-112">See Also</span></span>  
+ [<span data-ttu-id="1c203-113">デバッグ インターフェイス</span><span class="sxs-lookup"><span data-stu-id="1c203-113">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
