@@ -19,11 +19,12 @@ caps.latest.revision: "29"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3370dade937d67aa40be263faf3a433d142d932c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c4a53687c473a87edae38207c44f89f0140f8ccd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilercallback-interface"></a>ICorProfilerCallback インターフェイス
 プロファイラーがサブスクライブしているイベントが発生したときに、コード プロファイラーに通知を共通言語ランタイム (CLR) によって使用されるメソッドを提供します。  
@@ -112,7 +113,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  プロファイラーは、1 つの COM オブジェクトを登録します。 プロファイラーが、.NET Framework version 1.0 または 1.1 では、COM オブジェクトのメソッドだけを実装する必要があることを対象とするかどうかは`ICorProfilerCallback`します。 COM オブジェクトがのメソッドを実装する必要がありますも場合は、.NET Framework バージョン 2.0 以降を対象とすることは、`ICorProfilerCallback2`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
@@ -121,7 +122,7 @@ ms.lasthandoff: 11/21/2017
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [ICorProfilerCallback2 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)  
  [ICorProfilerCallback3 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md)  

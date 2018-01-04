@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ed1b4dd4816f67bb98472b7150f3da3bd5b927b6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2c9b23472cdeee15788d496fae160c3e7d2de20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="itypelibresolver-interface"></a>ITypeLibResolver インターフェイス
 提供、 [ResolveTypeLib メソッド](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md)、タイプ ライブラリのファイル パスを解決します。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/21/2017
 |------------|-----------------|  
 |[ResolveTypeLib メソッド](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md)|完全修飾パスを返すことによって、タイプ ライブラリの簡易名を解決します。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** TlbRef.idl、TlbRef.h  
@@ -43,6 +44,6 @@ ms.lasthandoff: 11/21/2017
   
  **.NET framework のバージョン:** 4、3.5、3.0、2.0  
   
-## <a name="see-also"></a>関連項目  
- [Tlbexp ヘルパー関数します。](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
+## <a name="see-also"></a>参照  
+ [Tlbexp ヘルパー関数](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
  [LoadTypeLibEx 関数](https://msdn.microsoft.com/library/windows/desktop/ms221249\(v=vs.85\).aspx)

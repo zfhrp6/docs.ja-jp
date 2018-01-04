@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 75329ee4ee925f4eb74d96d8ce7ef3145eb4a966
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 69312030689ab1b87e3aadd040395f06e1c94ac8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="get-function"></a>Get 関数
 存在する場合は、指定されたプロパティ値を取得します。
@@ -58,7 +59,7 @@ HRESULT Get (
 
 `plFlavor`[out]関数が正常に返された場合は、プロパティの原点に関する情報を受け取ります。 その値を指定できます`null`、またはいずれかで定義されている次の WBEM_FLAVOR_TYPE 定数の*WbemCli.h*ヘッダー ファイル。 
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | プロパティは、標準のシステム プロパティです。 |
 | `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | クラスの: このプロパティは、親クラスから継承します。 </br> インスタンス: プロパティは、親クラスから継承されたときに変更されていないインスタンスがします。  |
@@ -68,7 +69,7 @@ HRESULT Get (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | 1 つまたは複数のパラメーターが有効ではありません。 |
@@ -84,7 +85,7 @@ HRESULT Get (
 
 `pVal`引数には、正しい型および修飾子と COM の値が割り当てられている[VariantInit](https://msdn.microsoft.com/library/ms221402(v=vs.85).aspx)関数
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

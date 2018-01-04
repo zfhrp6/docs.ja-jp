@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bfbfee6f8e98d04a591c58560e6d50044e716a1f
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 2058bad61af79244d211afb6a7661ca1642db070
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="createclassenumwmi-function"></a>CreateClassEnumWmi 関数
 指定した選択条件を満たすすべてのクラスの列挙子を返します。  
@@ -50,7 +51,7 @@ HRESULT CreateClassEnumWmi (
 `lFlags`   
 [in]この関数の動作に影響するフラグの組み合わせ。 次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。 
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | 場合は、関数のセットは、現在の接続のロケールのローカライズされた名前空間に格納されている修正済みの修飾子を取得します。 <br/> 指定しない場合、セット、関数は、イミディ エイトの名前空間に格納されている修飾子のみを取得します。 |
 | `WBEM_FLAG_DEEP` | 0 | 列挙には、このクラスではなく、階層ですべてのサブクラスが含まれています。 |
@@ -88,7 +89,7 @@ HRESULT CreateClassEnumWmi (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | ユーザーには、1 つ以上の関数が返すことができるクラスを表示するアクセス許可がありません。 |
 | `WBEM_E_FAILED` | 0x80041001 | 不明なエラーが発生しました。 |
@@ -105,7 +106,7 @@ HRESULT CreateClassEnumWmi (
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

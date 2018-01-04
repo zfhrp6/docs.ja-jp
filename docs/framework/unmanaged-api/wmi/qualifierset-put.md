@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7fdb6759d4e39ad9ab6bd6da2c2a0e2abfbe5d56
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 1bf5c6dbf0f707942d58f4d7cf155636f0532724
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="qualifiersetput-function"></a>QualifierSet_Put 関数
 名前付きの修飾子と値を書き込みます。 新しい修飾子には、同じ名前の前の値が上書きされます。 修飾子が存在しない場合は作成されます。 
@@ -52,7 +53,7 @@ HRESULT QualifierSet_Put (
 
 `lFlavor`[in]この修飾子に必要な修飾子のフレーバーを定義する次の定数の 1 つ。 既定値は`WBEM_FLAVOR_OVERRIDABLE`(0) です。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_OVERRIDABLE` | 0 | 修飾子は、派生クラスまたはインスタンスでオーバーライドできます。 **これは、既定値です。** |
 | `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | この修飾子は、インスタンスに反映されます。 |
@@ -64,7 +65,7 @@ HRESULT QualifierSet_Put (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_CANNOT_BE_KEY` | 0x8004101f | 指定する無効なが試行されました、**キー**することはできません、キー プロパティでの修飾子です。 キーが指定されて om c; オブジェクトの定義はアセンブリと、インスタンスごとに変更することはできません。 |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
@@ -76,7 +77,7 @@ HRESULT QualifierSet_Put (
 
 この関数への呼び出しをラップする、 [IWbemQualifierSet::Put](https://msdn.microsoft.com/library/aa391871(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

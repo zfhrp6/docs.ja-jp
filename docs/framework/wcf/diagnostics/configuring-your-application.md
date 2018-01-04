@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 064f396d0a757e5b2f5f12c4a2a836b74f5e66a6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 72fd6dba860906fb87d67e19148f13b70dc64136
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-your-application"></a>アプリケーションの構成
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、.NET 構成システムを使用して、コンピューターとアプリケーションのスコープでサービスを構成できるようにします。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 12/02/2017
 > [!NOTE]
 >  構成ファイルを編集する場合、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web サービス プロジェクトの[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]で右クリックして**ソリューション エクスプ ローラー**、ことに注意して、 **Edit WCF Config**コンテキスト メニュー項目がありません. この問題を回避するには、をクリックして、**ツール**] メニューの [選択**WCF Service Config Editor**です。 その後、構成ファイルを右クリックして使用することができます、 **Edit WCF Config**コンテキスト メニュー項目。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構成エディター ツール (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
  [サービスの構成](../../../../docs/framework/wcf/configuring-services.md)  
  [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)

@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b7a4ffce4789fb59d84778d02b41910c974216bd
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: b1996103eea87562226537f9aa90dc337c56313c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="putinstancewmi-function"></a>PutInstanceWmi 関数
 作成するか、既存のクラスのインスタンスを更新します。 インスタンスは、WMI リポジトリに書き込まれます。 
@@ -44,7 +45,7 @@ HRESULT PutInstanceWmi (
 `lFlags`   
 [in]この関数の動作に影響するフラグの組み合わせ。 次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。 
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | かどうか設定、WMI は格納されませんされた修飾子で、 **Amended**フレーバー。 </br> セットと見なされます、このオブジェクトがローカライズされていないとすべての修飾子がある storedwith されていない場合はこのインスタンス。 |
 | `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | 存在したり、既に存在する場合は、上書きしない場合は、インスタンスを作成します。 |
@@ -62,7 +63,7 @@ HRESULT PutInstanceWmi (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | ユーザーには、指定したクラスのインスタンスを更新するアクセス許可がありません。 |
 | `WBEM_E_FAILED` | 0x80041001 | 不明なエラーが発生しました。 |
@@ -92,7 +93,7 @@ Windows の管理には、インスタンスの子クラスのいずれかのプ
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

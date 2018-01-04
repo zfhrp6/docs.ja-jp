@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 233fff0a51657be7e02ae707c55999ff85a794ac
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 672b9d3216e1b37a456d485751e53730429bb5cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="missingnecessarykeyusage"></a>MissingNecessaryKeyUsage
 Id: 156  
@@ -29,6 +30,6 @@ Id: 156
 ## <a name="description"></a>説明  
  このイベントは、指定したサブジェクト名と拇印を持つ ID 証明書が、対応する KeyUsages に特定のデータを提供していないことを示します。 プロセス名とプロセス ID も表示されます。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

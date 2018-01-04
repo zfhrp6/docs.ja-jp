@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 12a742774bff22030bdfaaa34e431059e016a4bf
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 90c3e8448a61145290ea4a75b1d38f7ae010cb9f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration 関数
 列挙体の先頭に戻るには、列挙子をリセットします。  
@@ -49,7 +50,7 @@ HRESULT BeginEnumeration (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | フラグの組み合わせ`lEnumFlags`が無効か、無効な引数が指定されました。 |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | 2 番目の呼び出しに`BeginEnumeration`せずに中間の呼び出しが行われた[ `EndEnumeration`](endenumeration.md)です。 |
@@ -64,21 +65,21 @@ HRESULT BeginEnumeration (
 
 **グループ 1**
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | キーのみを構成するプロパティが含まれます。 |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | オブジェクト参照のみであるプロパティが含まれます。 |
 
 **グループ 2**
 
-定数  |値  |説明  |
+定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | システムのプロパティのみを列挙型を制限します。 |
 |`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | ローカルおよび伝達されたプロパティが含まれますが、列挙体からシステムのプロパティを除外します。 |
 
 クラス。
 
-定数  |値  |説明  |
+定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | クラスの定義でオーバーライドされたプロパティ、列挙型を制限します。 |
 |`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | 現在のクラス定義でオーバーライドされたプロパティ、およびクラスで定義されている新しいプロパティに列挙型を制限します。 |
@@ -88,13 +89,13 @@ HRESULT BeginEnumeration (
 
 インスタンス。
 
-定数  |値  |説明  |
+定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | 定義またはクラス自身で変更されるプロパティ、列挙型を制限します。 |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | 基本クラスから継承されたプロパティ、列挙型を制限します。 |
 
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

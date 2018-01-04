@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2ba2530dd43e6924187c80214d5efa13ebc548de
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 80284900c318a3776168b781ce2e0e5e4a68f96d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getnames-function"></a>GetNames 関数
 一部またはすべてのオブジェクトのプロパティの名前を取得します。 
@@ -62,7 +63,7 @@ HRESULT GetNames (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | 1 つまたは複数のパラメーターが有効でないか、フラグとパラメーターの組み合わせが正しくないが指定されました。 |
@@ -80,19 +81,19 @@ HRESULT GetNames (
 
 フラグとして渡すことができる、`lEnumFlags`引数は、ビット フィールドで定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定数としてコードで定義します。  その他のグループから任意のフラグを使って各グループから 1 つのフラグを組み合わせることができます。 ただし、同じグループにフラグは相互に排他的です。 
 
-| グループ 1 フラグ |値  |説明  |
+| グループ 1 フラグ |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_ALWAYS` | 0 | すべてのプロパティ名を返します。 `strQualifierName``pQualifierVal`使用されていません。 |
 | `WBEM_FLAG_ONLY_IF_TRUE` | 1 | 指定した名前の修飾子を持つプロパティのみを返す、`strQualifierName`パラメーター。 このフラグを使用する必要がありますを指定する`strQualifierName`です。 |
 |`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  によって指定された名前の修飾子を持たない唯一のプロパティを返す、`strQualifierName`パラメーター。 このフラグを使用する必要がありますを指定する`strQualifierName`です。 |
 |`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | によって指定された名前の修飾子を持つプロパティのみを返す、`wszQualifierName`パラメーターで指定されているのと同じ値が設定されても、`pQualifierVal`構造体。 このフラグを使用する場合、両方を指定する必要があります、`wszQualifierName`と`pQualifierValue`です。 |
 
-| グループ 2 フラグ |値  |説明  |
+| グループ 2 フラグ |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | キーを定義するプロパティの名前のみを返します。 |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | 戻り値のみプロパティ名オブジェクト参照であります。 |
 
-| フラグのグループ 3 |値  |説明  |
+| フラグのグループ 3 |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | 最派生クラスに属しているプロパティ名のみが返されます。 親クラスからプロパティを除外します。 |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | 親クラスに属しているプロパティ名のみが返されます。 |
@@ -101,7 +102,7 @@ HRESULT GetNames (
 
 関数を常に割り当てる新しい`SAFEARRAY`を返す場合`WBEM_S_NO_ERROR`、および`pstrNames`は常に設定します。 指定したフィルターに一致するプロパティがない場合、返される配列要素がゼロことができます。 以外の場合、値が返されます場合`WBM_S_NO_ERROR`、新しい`SAFEARRAY`構造は返されません。
  
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

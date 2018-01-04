@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 4d1afed1aefbdd8a2733697c342fcf7aafabd8f4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7927d3b4d41731c9b69154fa8895a8f698f53e31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilercallback2-interface"></a>ICorProfilerCallback2 インターフェイス
 プロファイラーがサブスクライブしているイベントが発生したときに、コード プロファイラーに通知を共通言語ランタイム (CLR) によって使用されるメソッドを提供します。 `ICorProfilerCallback2`インターフェイスの拡張機能は、 [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)インターフェイスです。 つまり、.NET Framework version 2.0 で導入された新しいコールバックを提供します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  プロファイラーは、1 つの COM オブジェクトを登録します。 その COM オブジェクトが必要がありますのメソッドを実装のみ場合は、プロファイラーは、.NET Framework version 1.0 または 1.1 でのターゲット、`ICorProfilerCallback`です。 .NET Framework version 2.0 がターゲットとすると、後で、COM オブジェクトである必要がありますのメソッドを実装も`ICorProfilerCallback2`します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
@@ -63,7 +64,7 @@ ms.lasthandoff: 11/21/2017
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ICorProfilerCallback3 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md)  

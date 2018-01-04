@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: db1152e82edde34dc8dbaba09f20b9f769dffbca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d884b80ba8ccc42d1b6acc671db408305a095a7d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>CLR プロファイラーと Windows ストア アプリ
 このトピックでは、分析する診断ツールの書き込みが Windows ストア アプリ内で実行されているコードを管理する場合について検討する必要がありますについて説明します。  また、Windows ストア アプリに対して実行する、操作を続行するために、既存の開発ツールを変更するガイドラインを示します。  この情報を理解するのには、ツールを変更するスクリプトは Windows デスクトップ アプリケーション、およびするに対して正しく実行、対象となるようになりましたこと診断ツールで、この API を既に使用している場合は、共通言語ランタイム プロファイリング API に慣れている、最適ですWindows ストア アプリに対して正しく実行します。  
@@ -429,9 +430,9 @@ GetAppContainerFolderPath(acSid, out acDir);
  **Windows ストア アプリ**  
  -   [ファイルへのアクセスと権限 (Windows ランタイム アプリ](https://msdn.microsoft.com/library/windows/apps/hh967755.aspx)  
   
--   [開発者用ライセンスを取得します。](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx)  
+-   [開発者ライセンスを取得](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx)  
   
 -   [IPackageDebugSettings インターフェイス](https://msdn.microsoft.com/library/hh438393\(v=vs.85\).aspx)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロファイル](../../../../docs/framework/unmanaged-api/profiling/index.md)

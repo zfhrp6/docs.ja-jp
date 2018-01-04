@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: df6a089f66ddd6f8f9a2d5677dd8dd6917fcb719
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 270150bb674ee7f9a71cf28008c663e3b833600d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clone-function"></a>複製関数
 現在のオブジェクトの完全な複製である新しいオブジェクトを返します。   
@@ -50,7 +51,7 @@ HRESULT Clone (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null`パラメーターとして指定されたこの使用法ではありません。 |
@@ -63,7 +64,7 @@ HRESULT Clone (
 
 複製されたオブジェクトは、1 の参照カウントのある COM オブジェクトです。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

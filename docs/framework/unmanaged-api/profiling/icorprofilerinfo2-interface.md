@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cbc0b4ad46c6a49313a42c4c232873988e7f4e99
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 47ce316765117108da8e26d92a72febd0efb124d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilerinfo2-interface"></a>ICorProfilerInfo2 インターフェイス
 コード プロファイラーが共通言語ランタイム (CLR) イベントの監視の制御と要求情報を通信に使用するメソッドを提供します。 `ICorProfilerInfo2`インターフェイスの拡張機能は、 [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)インターフェイスです。 つまり、.NET Framework バージョン 2.0 およびそれ以降のバージョンでサポートされている新しいメソッドを提供します。  
@@ -61,7 +62,7 @@ ms.lasthandoff: 11/21/2017
   
  CLR から渡される、`ICorProfilerInfo2`へのプロファイラーの実装を使用して初期化中に、各コード プロファイラーのインターフェイス[icorprofilercallback::initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)です。 コード プロファイラーは、のメソッドを呼び出すことができますし、 `ICorProfilerInfo2` CLR の制御下で実行されているマネージ コードに関する情報を取得するインターフェイスです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
@@ -70,6 +71,6 @@ ms.lasthandoff: 11/21/2017
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

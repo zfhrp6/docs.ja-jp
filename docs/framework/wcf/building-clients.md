@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1c3f5a197be1ace2fc4f039baf783492db77bed7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d50ab37a90df418b031cb8aba5d84f0bbac9a1d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="building-clients"></a>クライアントを構築する
 このセクションのトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントの作成方法と使用方法について説明します。  

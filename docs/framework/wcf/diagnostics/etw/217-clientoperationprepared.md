@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea5526c39d8947a578174dd4d58685249b4952e1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3e1b4e3aab6a6a7f94bfb3783c9e32f83557db19
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="217---clientoperationprepared"></a>217 - ClientOperationPrepared
 ## <a name="properties"></a>プロパティ  
@@ -35,11 +36,11 @@ ms.lasthandoff: 12/02/2017
 ## <a name="message"></a>メッセージ  
  クライアントは '%2' コントラクトと関連付けられている Action '%1' を実行しています。 メッセージは '%3' に送信されます。  
   
-## <a name="details"></a>詳細  
+## <a name="details"></a>説明  
   
 |データ項目名|データ項目の型|説明|  
 |--------------------|--------------------|-----------------|  
-|操作|`xs:string`|送信メッセージの SOAP アクション ヘッダー。|  
+|アクション|`xs:string`|送信メッセージの SOAP アクション ヘッダー。|  
 |Contract Name|`xs:string`|コントラクトの名前。 例: ICalculator。|  
 |保存先|`xs:string`|メッセージの送信先となるサービス エンドポイントのアドレス。|  
 |HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。 その形式とは見なさ ' Web サイト名アプリケーション仮想パス &#124;です。サービス仮想パス &#124;です。ServiceName' です。 例: ' 既定の Web サイト/CalculatorApplication &#124;/CalculatorService.svc &#124;です。CalculatorService'。|  

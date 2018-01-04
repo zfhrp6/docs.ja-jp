@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8cd80805eee58db16f5865683cbd322a49c554a8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ecb8ae5edfb35ccaffecbfb4e960d3f4a46bad0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>リソース消費の制御とパフォーマンスの向上
 ここでは、リソース消費を制御し、パフォーマンス メトリックに影響を与える [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アーキテクチャのさまざまな領域の各種プロパティについて説明します。  
@@ -56,6 +57,6 @@ ms.lasthandoff: 12/02/2017
 ## <a name="performance-issues-when-hosting-wcf-services-under-aspnet"></a>ASP.NET で WCF サービスをホストする場合のパフォーマンスの問題  
  WCF サービスを IIS および ASP.NET でホストする場合、IIS と ASP.NET の構成設定が WCF サービスのスループットやメモリの占有領域に影響する場合があります。  [!INCLUDE[crabout](../../../includes/crabout-md.md)]ASP.NET のパフォーマンスを参照してください[ASP.NET のパフォーマンスを向上させる](http://go.microsoft.com/fwlink/?LinkId=186462)です。  予想外の結果を引き起こす可能性のある設定の 1 つに、<xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> があります。これは、<xref:System.Web.Configuration.ProcessModelSection> のプロパティです。 アプリケーションのクライアントが固定数または少数である場合、<xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> を 2 に設定すると、CPU の使用率が 100% に近いマルチプロセッサ コンピューターのスループットが向上する場合があります。 このパフォーマンスの向上にはコストが伴います。つまり、メモリの使用率も増加するため、スケーラビリティが低下する場合があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [管理と診断](../../../docs/framework/wcf/diagnostics/index.md)  
- [大規模なデータとストリーミング](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
+ [大規模データとストリーミング](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)

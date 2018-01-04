@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3341f9ae5600536a7d824034582bf232f5be90ad
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f9083a6dc9849fcd177b1e6a38ca7bb72e7799dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="209---messageinspectorbeforesendinvoked"></a>209 - MessageInspectorBeforeSendInvoked
 ## <a name="properties"></a>プロパティ  
@@ -35,7 +36,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="message"></a>メッセージ  
  ディスパッチャーが型 '%1' の MessageInspector で 'BeforeSendRequest' を呼び出しました。  
   
-## <a name="details"></a>詳細  
+## <a name="details"></a>説明  
   
 |データ項目名|データ項目の型|説明|  
 |--------------------|--------------------|-----------------|  

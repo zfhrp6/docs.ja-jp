@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b250913b55ba59261a666760cc15466b6f9d096e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: a42c6c3c778dbdefd4b83621e65b81741b940ebe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType 関数
 呼び出し元を実行しているアパートメントの種類を取得します。   
@@ -49,7 +50,7 @@ HRESULT GetCurrentApartmentType (
 ## <a name="return-value"></a>戻り値
 
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `S_OK` | 0 | 関数が正常に完了しました。 |
 | `E_FAIL` | 0x80000008 | 呼び出し元はアパートメントで実行していません。 |
@@ -58,7 +59,7 @@ HRESULT GetCurrentApartmentType (
 
 この関数への呼び出しをラップする、 [IComThreadingInfo::GetCurrentApartmentType](https://msdn.microsoft.com/library/windows/desktop/ms683752(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

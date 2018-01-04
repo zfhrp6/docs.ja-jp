@@ -21,11 +21,12 @@ caps.latest.revision: "29"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7ff2c57be82166ecf5eb8a012491044eb2cb79d4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dc3d490284e371aefb2de712cb5721b0246caa6a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setting-up-a-profiling-environment"></a>プロファイル環境の設定
 > [!NOTE]
@@ -103,5 +104,5 @@ pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)
   
  この方法では、すべての CLR プロセスもプロファイリングの対象になります。 プロファイラーは、ロジックを追加する必要があります、 [icorprofilercallback::initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)現在のプロセスは対象とするかどうかを検出するためにコールバックします。 プロファイリングの対象ではない場合、プロファイラーは、初期化を実行せずにコールバックからエラーを返すことができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プロファイルの概要](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)

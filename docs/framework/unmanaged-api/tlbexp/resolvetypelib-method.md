@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b430b050117243ced9d764045075071278841da2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b668610f50c32373790130def17928b8b3b3d8b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib メソッド
 完全修飾パスを返すことによって、タイプ ライブラリの簡易名を解決します。  
@@ -69,7 +70,7 @@ HRESULT ResolveTypeLib(
   
  このインターフェイスのカスタム実装を返す必要があります、 [BSTR](http://msdn.microsoft.com/en-us/1b2d7d2c-47af-4389-a6b6-b01b7e915228)という名前で、タイプ ライブラリの完全なパスを含む、`bstrSimpleName`パラメーター。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** TlbRef.idl、TlbRef.h  
@@ -78,6 +79,6 @@ HRESULT ResolveTypeLib(
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [Tlbexp ヘルパー関数します。](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
+## <a name="see-also"></a>参照  
+ [Tlbexp ヘルパー関数](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
  [LoadTypeLibEx](http://msdn.microsoft.com/en-us/56a7f9e1-810b-4a42-aa4d-691f4304f5ef)

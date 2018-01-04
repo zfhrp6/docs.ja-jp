@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56cfe60c221062e3ad7ae1b8cbdc9b135e6fa2e8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b24d54930a29a24dab97ce403c2808fb74b8cbfe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="301---userdefinederroroccurred"></a>301 - UserDefinedErrorOccurred
 ## <a name="properties"></a>プロパティ  
@@ -35,10 +36,10 @@ ms.lasthandoff: 12/02/2017
 ## <a name="message"></a>メッセージ  
  名前:'%1'、参照:'%2'、ペイロード:%3  
   
-## <a name="details"></a>詳細  
+## <a name="details"></a>説明  
   
 |データ項目名|データ項目の型|説明|  
 |--------------------|--------------------|-----------------|  
-|名前|`xs:string`|イベントのユーザー定義名。|  
+|name|`xs:string`|イベントのユーザー定義名。|  
 |HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。 その形式とは見なさ ' Web サイト名アプリケーション仮想パス &#124;です。サービス仮想パス &#124;です。ServiceName' です。 例: ' 既定の Web サイト/CalculatorApplication &#124;/CalculatorService.svc &#124;です。CalculatorService'。|  
 |Payload|`xs:string`|イベントのユーザー定義ペイロード。|

@@ -17,11 +17,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d8698e0657de31d78699df478da5e716bf831fc4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1f33d64e9ec1881b1ef7b93ba29d233f2f580c29
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>WCF クライアントを使用したサービスへのアクセス
 サービスを作成したら、次に、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを作成します。 クライアント アプリケーションは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを使用してサービスと通信します。 通常、クライアント アプリケーションはサービスのメタデータをインポートし、サービスを呼び出すことのできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント コードを生成します。  
@@ -192,13 +193,13 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
   
  このような種類の例外が発生した場合、問題を解決するには、サービス側でトレースをオンにし、そこで発生した例外を特定することをお勧めします。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]トレースを参照してください[トレース](../../../docs/framework/wcf/diagnostics/tracing/index.md)と[、アプリケーションのトラブルシューティングを使用してトレース](../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
- [方法: 双方向コントラクトでサービスへのアクセス](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
- [方法: サービス操作を非同期的に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)  
- [方法: 一方向のサービスにアクセスし、要求/応答コントラクト](../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)  
- [方法: WSE 3.0 にアクセス サービス](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)  
+ [方法 : 双方向コントラクトを使用してサービスにアクセスする](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
+ [方法 : サービス操作を非同期に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)  
+ [方法 : 一方向コントラクトと要求/応答コントラクトを使用してサービスにアクセスする](../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)  
+ [方法 : WSE 3.0 サービスにアクセスする](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)  
  [生成されたクライアント コードの理解](../../../docs/framework/wcf/feature-details/understanding-generated-client-code.md)  
- [方法: スタートアップ時間の WCF クライアント アプリケーション、XmlSerializer を使用してを向上させる](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)  
+ [方法 : XmlSerializer を使用する WCF クライアント アプリケーションの起動時間を短縮する](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)  
  [クライアントのランタイム動作の指定](../../../docs/framework/wcf/specifying-client-run-time-behavior.md)  
  [クライアントの動作の構成](../../../docs/framework/wcf/configuring-client-behaviors.md)

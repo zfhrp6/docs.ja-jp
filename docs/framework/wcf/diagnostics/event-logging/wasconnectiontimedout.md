@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ba0feb3cc151db31110b76344019426c460c4bfb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 67eab28e2e3ebd3656459bb388574b745977c9ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wasconnectiontimedout"></a>WasConnectionTimedout
 ID : 163  
@@ -29,6 +30,6 @@ ID : 163
 ## <a name="description"></a>説明  
  このイベントは、Windows プロセス アクティブ化サービス (WAS) で必要な接続がタイムアウトになったことを示し、プロセス名とプロセス ID を表示します。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

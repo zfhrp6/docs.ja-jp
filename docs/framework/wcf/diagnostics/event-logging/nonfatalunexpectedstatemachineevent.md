@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7cd8618a140110056f31863fb31844518caaf9f3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 376cf99af9de806df67db4f33ebb74c388575b70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="nonfatalunexpectedstatemachineevent"></a>NonFatalUnexpectedStateMachineEvent
 ID : 148  
@@ -29,6 +30,6 @@ ID : 148
 ## <a name="description"></a>説明  
  このイベントは、ステート マシンが予期しないイベントを処理しようとしたことを示します。 このイベントは致命的なものとは見なされません。 イベントには、トランザクション ID、ステート マシン、現在の状態、履歴、イベント名、イベントの詳細、プロセス名、およびプロセス ID が表示されます。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

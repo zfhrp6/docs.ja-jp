@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7a4103a0103a334a0e5eace32d8fcf1b365917b8
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 22bcf2731ff682bf538858fc66a7a94be7f5d7df
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cloneenumwbemclassobject-function"></a>CloneEnumWbemClassObject 関数
 列挙体の現在位置を保持、列挙子の論理コピーを作成します。  
@@ -65,7 +66,7 @@ HRESULT CloneEnumWbemClassObject (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
@@ -85,7 +86,7 @@ HRESULT CloneEnumWbemClassObject (
 
 例については、次を参照してください。、 [IEnumWbemClassObject::Clone](https://msdn.microsoft.com/library/aa390859(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

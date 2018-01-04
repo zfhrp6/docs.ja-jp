@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c01db47b5362d7048e2e5ecd1b63acfe03eff860
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.workload: dotnet
+ms.openlocfilehash: 3daa89ec0b40bb9c08898ecd682f05f0f0ce09a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="formatfromrawvalue-function"></a>FormatFromRawValue 関数
 形式の変換が時間ベースの場合は、指定された形式に 1 つの生のパフォーマンス データの値または生のパフォーマンス データの 2 つの値に変換します。   
@@ -46,7 +47,7 @@ int FormatFromRawValue (
 `dwFormat`  
 [in]生のパフォーマンス データを変換先形式です。 次の値のいずれかを指定できます。
 
-|定数  |値  |説明 |
+|定数  |[値]  |説明 |
 |---------|---------|---------|
 | `PDH_FMT_DOUBLE` |0x00000200 | 倍精度浮動小数点値として計算された値を返します。 | 
 | `PDH_FMT_LARGE` | 0x00000400 | 計算される値を 64 ビット整数として返します。 |
@@ -54,7 +55,7 @@ int FormatFromRawValue (
 
 次のスケーリングのフラグのいずれかの論理和は以前の値のいずれかのことができます。
 
-|定数  |値  |説明 |
+|定数  |[値]  |説明 |
 |---------|---------|---------|
 | `PDH_FMT_NOSCALE` | 0x00001000 | カウンターのスケール ファクターは適用されません。 |
 | `PDH_FMT_1000` | 0x00002000 | 1,000 最終的な値を乗算します。 | 
@@ -72,7 +73,7 @@ int FormatFromRawValue (
 
 この関数では、次の値が返されます。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `ERROR_SUCCESS` | 0 | 関数呼び出しが成功します。 |
 | `PDH_INVALID_ARGUMENT` | 0xC0000BBD | 必須の引数は、見つからないか正しくないです。 | 
@@ -82,7 +83,7 @@ int FormatFromRawValue (
 
 この関数への呼び出しをラップする、 [FormatFromRawValue](https://msdn.microsoft.com/library/ms231047(v=vs.85).aspx)関数。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ライブラリ:** PerfCounter.dll  

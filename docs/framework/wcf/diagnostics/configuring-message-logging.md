@@ -14,11 +14,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e42b4007d438fbabaf497981b654415ca7eeb415
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a867d5f85177ad9a19a5766c65a8f1f98c04cd17
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-message-logging"></a>メッセージ ログの構成
 ここでは、さまざまなシナリオでのメッセージ ログの構成方法を示します。  
@@ -172,7 +173,7 @@ ms.lasthandoff: 12/02/2017
   
  `type` 属性は、型のアセンブリ修飾名に設定する必要があることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [\<メッセージ ログ >](../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)  
- [メッセージのログ記録](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
+ [メッセージ ログ](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
  [トレースとメッセージ ログの推奨設定](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md)

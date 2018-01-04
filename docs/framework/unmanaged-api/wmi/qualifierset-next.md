@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6b66eeab2cba18268b602350c8bc8f489d943309
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 01a9c9d162039547849597aaa9c8a6fa38a31455
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="qualifiersetnext-function"></a>QualifierSet_Next 関数
 呼び出しの使用を開始する列挙体の次の修飾子を取得、 [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md)関数。   
@@ -62,7 +63,7 @@ HRESULT QualifierSet_Next (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | 呼び出し元を呼び出さなかった[QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md)です。 |
@@ -78,7 +79,7 @@ HRESULT QualifierSet_Next (
 
 列挙体の中に返された修飾子の順序は定義されません。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

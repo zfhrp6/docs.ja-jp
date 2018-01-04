@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 36924bdc79a9789a991befb53c0025b7ea1fd601
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e878aadf1c7df6042323c008ff52a4be8a9d817f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-bindings"></a>Windows Communication Foundation バインディング
 バインディングは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス エンドポイントが他のエンドポイントと通信する方法を指定します。 バインディングでは、まず、使用するトランスポート (HTTP や TCP など) を指定する必要があります。 セキュリティやトランザクションのサポートなど、その他の特性もバインディングによって設定できます。  
@@ -40,9 +41,9 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.Channels>  
   
 ## <a name="related-sections"></a>関連項目  
- [エンドポイント: アドレス、バインディング、およびコントラクト](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [エンドポイント : アドレス、バインディング、およびコントラクト](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
   
  [バインディング](../../../docs/framework/wcf/feature-details/bindings.md)  
   
-## <a name="see-also"></a>関連項目  
- [カスタム バインド](../../../docs/framework/wcf/extending/custom-bindings.md)
+## <a name="see-also"></a>参照  
+ [カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)

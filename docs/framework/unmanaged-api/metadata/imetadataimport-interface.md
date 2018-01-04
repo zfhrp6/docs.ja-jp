@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6c7f1c7e99df61cc0cd33e1697de52a039d412df
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1067582b506d60092bef9639dc4a96ba41306437
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imetadataimport-interface"></a>IMetaDataImport インターフェイス
 ポータブル実行可能 (PE) ファイルまたはその他のソース (タイプ ライブラリ、スタンドアロンのランタイム メタデータ バイナリなど) から既存のメタデータをインポートおよび操作するメソッドを提供します。  
@@ -106,7 +107,7 @@ ms.lasthandoff: 11/21/2017
   
 -   Get メソッドは、メタデータ項目の単一値のプロパティを返すように特別にデザインされています。 プロパティが別の項目への参照である場合、その項目のトークンが返されます。 特定の値が要求されていないことを示すために、ポインター入力型を NULL に設定できます。 基本的にコレクション オブジェクトであるプロパティ (クラスが実装するインターフェイスのコレクションなど) を取得するには、列挙メソッドを使用します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
@@ -115,6 +116,6 @@ ms.lasthandoff: 11/21/2017
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メタデータ インターフェイス](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

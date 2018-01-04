@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a771cbc22febf966fec2cf608a9b59204fc6e51a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: da73af529a20a8d2e3e7df0ebadf2aeee4acbf1c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-logging"></a>メッセージ ログ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、オフラインで使用できるように送受信メッセージをログに記録できます。 メッセージ ログを使用すると、メッセージとメッセージ本文を確認できます。 この種のログは、どの引数が渡され、XML で表現された引数が受信エンドポイントでどのように表示されるかを知る上で特に役立ちます。 また、受信時にメッセージをログに記録すると、無効なメッセージを診断できるだけでなく、メッセージがどのような経路で到着したかを確認できます。 また、使用されたセキュリティ トークン、暗号化および署名された部分、および元のままの部分を調べることもできます。  
@@ -31,13 +32,13 @@ ms.lasthandoff: 12/02/2017
   
  ここでは、さまざまなシナリオでのメッセージ ログの構成方法を示します。  
   
- [メッセージ ログを表示します。](../../../../docs/framework/wcf/diagnostics/viewing-message-logs.md)  
+ [メッセージ ログを参照する](../../../../docs/framework/wcf/diagnostics/viewing-message-logs.md)  
   
  ここでは、メッセージ ログの表示方法について説明します。  
   
- [メッセージ ログのセキュリティに関する注意事項](../../../../docs/framework/wcf/diagnostics/security-concerns-for-message-logging.md)  
+ [メッセージ ログ記録のセキュリティの考慮事項](../../../../docs/framework/wcf/diagnostics/security-concerns-for-message-logging.md)  
   
  ここでは、メッセージ ログに表示される機密データだけでなく、メッセージ ログによって生成されるイベントを保護する方法についても説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [管理と診断](../../../../docs/framework/wcf/diagnostics/index.md)

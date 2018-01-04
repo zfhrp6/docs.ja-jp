@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9245fc0ee109837249f1f3df400385c117a2f2d7
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 4e7b5650a0b47fd8d9b64bb9d0fff3511afe2d43
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="qualifiersetdelete-function"></a>QualifierSet_Delete 関数
 名前で指定された修飾子を削除します。  
@@ -50,7 +51,7 @@ HRESULT QualifierSet_Delete (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `wszName`パラメーターが無効です。 |
 |`WBEM_E_INVALID_OPERATION` | 0x80041016 | この修飾子を削除することはできません。 |
@@ -64,7 +65,7 @@ HRESULT QualifierSet_Delete (
 
 修飾子の伝達の規則により、特定の修飾子可能性があります別のオブジェクトから継承されだけでは、現在のクラスまたはインスタンスでオーバーライドされます。 ここで、`QualifierSet_Delete`メソッドは、継承された値は元に、修飾子をリセットします。 関数は、この場合、ステータス コードを返します`WBEM_S_RESET_TO_DEFAULT`です。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

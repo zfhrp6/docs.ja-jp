@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 86d741a16a0293892d0d6d90f1763d744ed3675d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2127cdb1178da37bcfe77a0e1a02ccd34be2d800
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>厳密な名前付け (アンマネージ API リファレンス)
 厳密な名前付け API では、クライアントが厳密な名前のアセンブリの署名を管理できるようにします。  
@@ -119,6 +120,6 @@ ms.lasthandoff: 11/21/2017
  [PublicKeyBlob 構造体](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
  バイナリ形式で公開/秘密キーのペアの公開キーを表します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRStrongName インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)  
  [アンマネージ API リファレンス](../../../../docs/framework/unmanaged-api/index.md)

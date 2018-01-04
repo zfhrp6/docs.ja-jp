@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 26fa9471b46a7a963d66ebf0d5b3c6a0286ae640
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5583a9b81d81acfca80368ca54d5f97899daa1d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="profiling-unmanaged-api-reference"></a>プロファイル (アンマネージ API リファレンス)
 プロファイル API を使用すると、プロファイラーは、共通言語ランタイム (CLR) によってプログラムの実行を監視します。  
@@ -33,19 +34,19 @@ ms.lasthandoff: 10/18/2017
  [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  プロファイル API で使用されるアンマネージ インターフェイスについて説明します。  
   
- [プロファイル環境を設定します。](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)  
+ [プロファイル環境の設定](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)  
  .NET Framework アプリケーションのプロファイリングを行う手順について説明します。  
   
- [CLR プロファイラーと Windows ストア アプリ](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md)  
+ [CLR プロファイラと Windows ストア アプリ](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md)  
  正常に機能する Windows ストア アプリを使用して CLR プロファイル API を使用する診断ツールを移植する方法について説明します。  
   
  [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md)  
  文書化されるメソッドの呼び出しが返された条件、 `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE` HRESULT。  
   
- [プロファイリング グローバル静的関数](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
+ [グローバル静的関数のプロファイル](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
  プロファイル API で使用されるアンマネージ グローバル静的関数について説明します。  
   
- [列挙体のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)  
+ [列挙型のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)  
  プロファイル API で使用されるアンマネージ列挙体について説明します。  
   
  [構造体のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)  

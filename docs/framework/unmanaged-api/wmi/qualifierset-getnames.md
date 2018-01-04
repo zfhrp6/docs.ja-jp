@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b87518bdc1f6ac19eb48991538be5904fdb63f1f
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 6077b448c2644f68d12679cf208ee921c2af119a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="qualifiersetgetnames-function"></a>QualifierSet_GetNames 関数
 すべての修飾子のまたは現在のオブジェクトまたはプロパティから使用できる特定の修飾子の名前を取得します。 
@@ -47,7 +48,7 @@ HRESULT QualifierSet_GetNames (
 `lFlags`   
 [in]次のフラグまたは列挙体に追加するには、どの名前を指定する値のいずれか。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |  | 0 | すべての修飾子の名前を返します。 |
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | 現在のプロパティまたはオブジェクトに特定の修飾子の名前のみを返します。 <br/> プロパティの: (オーバーライドを含む)、プロパティに特定の修飾子のみを返すし、クラス定義から伝達されたこれらの修飾子されません。 <br/> インスタンス: インスタンス固有の修飾子名のみが返されます。 <br/> クラスの: 派生クラス beiong に特定の修飾子のみを返します。
@@ -59,7 +60,7 @@ HRESULT QualifierSet_GetNames (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | 十分なメモリが新しい列挙体を開始します。 |
@@ -73,7 +74,7 @@ HRESULT QualifierSet_GetNames (
 
 ゼロ修飾子があるためには、指定したオブジェクトのエラーではありませんで文字列の数`pstrNames`返された場合は 0 を指定する場合でも、この関数を返します`WBEM_S_NO_ERROR`です。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

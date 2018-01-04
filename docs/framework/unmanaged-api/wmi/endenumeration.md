@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 043fce26870e5af2850b9f2e91e7e97c7bee6c90
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: fee3137dad3f89fa8849b28e9ca38b40040f916e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endenumeration-function"></a>EndEnumeration 関数
 呼び出し時に起動列挙のシーケンスの終了、 [BeginEnumeration 関数](beginenumeration.md)です。  
@@ -47,7 +48,7 @@ HRESULT EndEnumeration (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
 |`WBEM_S_NO_ERROR` | 0 | 関数呼び出しに成功しました。  |
@@ -58,7 +59,7 @@ HRESULT EndEnumeration (
 
 呼び出し、`EndEnumeration`関数は必要ありませんが、列挙体に関連付けられているリソースを解放するためお勧めします。 ただし、resoruces は次回の列挙が開始されたか、オブジェクトが解放されるときに、自動的に解放されます。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

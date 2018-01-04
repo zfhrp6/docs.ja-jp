@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8cbf27ae76d562b2d68eb51557550621ec468327
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 44d06fbbf4340b5a1b8504be681b57bc958c4b83
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wmiunregistrationfailed"></a>WmiUnregistrationFailed
 Id: 127  
@@ -29,6 +30,6 @@ Id: 127
 ## <a name="description"></a>説明  
  このイベントは、WMI プロバイダーが登録解除されなかったことを示します。 イベントには、WMI オブジェクト、エラー、プロセス名、およびプロセス ID が表示されます。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

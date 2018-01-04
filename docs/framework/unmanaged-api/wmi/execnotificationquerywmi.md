@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7f42878c146d478d5183342c3a743f3bd208008b
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: d6dd0926d2262f8d0aa125b86755017a65a95a7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="execnotificationquerywmi-function"></a>ExecNotificationQueryWmi 関数
 イベントを受信するクエリを実行します。 呼び出しが、すぐに返され、受信したときに、呼び出し元がイベントの返された列挙子をポーリングすることです。 返された列挙子を解放するには、クエリが取り消されます。  
@@ -54,7 +55,7 @@ HRESULT ExecNotificationQueryWmi (
 `lFlags`   
 [in]この関数の動作に影響する次の 2 つのフラグの組み合わせ。 これらの値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定数としてコードで定義します。 
 
-| 定数 | 値  | 説明  |
+| 定数 | [値]  | 説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | フラグは、半同期呼び出しがします。 このフラグが設定されていない場合、呼び出しが失敗します。 これは、イベントが継続的に、受信したため、ユーザーは、返された列挙子をポーリングする必要があります。 この呼び出しを無期限にブロックするようにするが不可能です。 |
 | `WBEM_FLAG_FORWARD_ONLY` | 0x20 | この関数は、順方向専用の列挙子を返します。 呼び出しを許可しませんが、通常、順方向専用の列挙子は、高速および従来の列挙子よりも少ないメモリを使用して[クローン](clone.md)です。 |
@@ -86,7 +87,7 @@ HRESULT ExecNotificationQueryWmi (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | ユーザーには、1 つ以上の関数が返すことができるクラスを表示するアクセス許可がありません。 |
 | `WBEM_E_FAILED` | 0x80041001 | 不明なエラーが発生しました。 |
@@ -113,7 +114,7 @@ HRESULT ExecNotificationQueryWmi (
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

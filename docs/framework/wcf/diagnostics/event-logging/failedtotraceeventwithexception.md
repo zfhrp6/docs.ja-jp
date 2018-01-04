@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cb0de5f8a2d8b34018d2dfc85f77096758112c7d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 14340fd742dfb40c1455b32d63c0aa117e32949a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="failedtotraceeventwithexception"></a>FailedToTraceEventWithException
 ID : 105  
@@ -31,6 +32,6 @@ ID : 105
   
  イベントには、元のイベント文字列、例外、プロセス名、およびプロセス ID が表示されます。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

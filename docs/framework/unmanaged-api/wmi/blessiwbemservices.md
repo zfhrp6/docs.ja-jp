@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 67431d4272ac1da4d400a5552c61cf464680b502
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: f384e8d045dd7a6f2f864f0991f8caf4a674408b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="blessiwbemservices-function"></a>BlessIWbemServices 関数
 ユーザーの資格情報が、指定したへのアクセスを許可するかどうかを示す[IWbemServices](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx)クラスです。   
@@ -59,7 +60,7 @@ HRESULT BlessIWbemServices (
 
 この関数によって返される次の値が定義されている、 *WinError.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `E_INVALIDARG` | 0x80070057 | 1 つまたは複数の引数が無効です。 |
 | `E_POINTER` | 0x80004003 | `pIWbemServices` は `null` です。 | 
@@ -67,7 +68,7 @@ HRESULT BlessIWbemServices (
 | `E_OUTOFMEMORY` | 0x80000002 | 操作の実行に使用できるは、メモリ不足です。 | 
 | `S_OK` | 0 | 関数呼び出しに成功しました。 | 
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

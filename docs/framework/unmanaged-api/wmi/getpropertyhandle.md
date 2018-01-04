@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1ab3df6d2233059de76036da7ff27f5cc1808aaf
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 3af852fb4b9899a7937f288ffb65d8ca84e4aef1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getpropertyhandle-function"></a>GetPropertyHandle 関数
 プロパティを識別する一意のハンドルを返します。
@@ -58,7 +59,7 @@ HRESULT GetPropertyHandle (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | 指定したプロパティ名が見つかりませんでした。 |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
@@ -73,7 +74,7 @@ HRESULT GetPropertyHandle (
 
 ハンドルを以外のすべてのデータ型のプロパティを取得できる`CIM_OBJECT`と`CIM_ARRAY`です。 クラスのすべてのインスタンス ハンドルの作業が返されます。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

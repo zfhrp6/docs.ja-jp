@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 68df29e88b41cb12d002913d5bbd42050395d871
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 0a79bfc62ad776cb2bfab2c143d19761d64358bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getpropertyorigin-function"></a>GetPropertyOrigin 関数
 プロパティが宣言されるクラスを決定します。
@@ -54,7 +55,7 @@ HRESULT GetPropertyOrigin (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | 指定したプロパティは見つかりませんでした。 |
@@ -70,7 +71,7 @@ HRESULT GetPropertyOrigin (
 
 `pstrClassName`パラメーターは、有効なを指していない必要があります`BSTR`ため、これは、関数が呼び出される前に、`out`パラメーターです。 この関数が返された後に、ポインターが割り当て解除されません。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

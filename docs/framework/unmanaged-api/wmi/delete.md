@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f32487d2bd59bd76acdc32218c6bb0842de20e87
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 30f5bf651990cafe06811019cf2b3d92f866f646
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="delete-function"></a>関数を削除します。
 CIM クラス定義から、指定したプロパティとその修飾子のすべてを削除します。
@@ -50,7 +51,7 @@ HRESULT Delete (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | 不明なエラーが発生しました。 |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | プロパティを削除することはできません。 |
@@ -66,7 +67,7 @@ HRESULT Delete (
 
 この関数への呼び出しをラップする、 [IWbemClassObject::Delete](https://msdn.microsoft.com/library/aa391438(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

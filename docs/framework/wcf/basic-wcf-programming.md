@@ -19,11 +19,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 83404a56de68de8f8aec271c28e9896c4fa8702b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dfcd0a09f247077f299d8b9c14a07bdc667245b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-wcf-programming"></a>基本的な WCF プログラミング
 ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションを作成するときの基本を示します。  
@@ -75,6 +76,6 @@ ms.lasthandoff: 12/02/2017
   
  [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
   
- [IIS ホストのインライン コードを使用します。](../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  
+ [インライン コードを使用した IIS ホスティング](../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  
   
- [自己ホストします。](../../../docs/framework/wcf/samples/self-host.md)
+ [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)

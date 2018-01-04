@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a5dc55a9538798b81dce9db02583c271b9f2ed54
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4f6b1ad18809b46b7a2b38137231028f696d51b8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="gettypelibinfo-function"></a>GetTypeLibInfo 関数
 確認するには、指定したタイプ ライブラリに関する情報を返します、 [TLIBATTR](https://msdn.microsoft.com/library/ms221376\(v=vs.85\).aspx)構造体。  
@@ -65,7 +66,7 @@ HRESULT GetTypeLibInfo(
   
  任意のパラメーターが null を返します、`HRESULT`の`E_POINTER`します。 返しますそれ以外の場合、`S_OK`です。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** TlbRef.h  
@@ -74,6 +75,6 @@ HRESULT GetTypeLibInfo(
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [Tlbexp ヘルパー関数します。](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
+## <a name="see-also"></a>参照  
+ [Tlbexp ヘルパー関数](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
  [LoadTypeLibEx 関数](https://msdn.microsoft.com/library/ms221249\(v=vs.85\).aspx)

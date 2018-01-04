@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 33f576b177ddb66d6145e0b1a5d0d104346640ee
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b4980beca761a4c49c39e92c6c73a7bc1a5038b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="end-to-end-tracing-scenarios"></a>エンドツーエンドのトレースのシナリオ
 このセクションの各トピックで、トレースの使用に関するさまざまなシナリオを説明します。  
@@ -38,16 +39,16 @@ ms.lasthandoff: 12/02/2017
   
 -   [アクティビティ ID の伝達](../../../../../docs/framework/wcf/diagnostics/tracing/activity-id-propagation.md)  
   
--   [HTTP、TCP または名前付きパイプを使用した同期のシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/synchronous-scenarios-using-http-tcp-or-named-pipe.md)  
+-   [HTTP、TCP、または名前付きパイプを使用した同期シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/synchronous-scenarios-using-http-tcp-or-named-pipe.md)  
   
--   [HTTP、TCP、または名前付きパイプを使用して非同期シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md)  
+-   [HTTP、TCP、または名前付きパイプを使用した非同期シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md)  
   
 -   [メッセージ セキュリティにおけるアクティビティ トレース](../../../../../docs/framework/wcf/diagnostics/tracing/activity-tracing-in-message-security.md)  
   
 -   [MSMQ](../../../../../docs/framework/wcf/diagnostics/tracing/msmq.md)  
   
--   [COM +](../../../../../docs/framework/wcf/diagnostics/tracing/com.md)  
+-   [COM+](../../../../../docs/framework/wcf/diagnostics/tracing/com.md)  
   
-## <a name="see-also"></a>関連項目  
- [トレースを使用して、アプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [エンド ツー エンドのトレース](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)
+## <a name="see-also"></a>参照  
+ [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [エンドツーエンドのトレース](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)

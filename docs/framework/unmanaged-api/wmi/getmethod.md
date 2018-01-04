@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b4e89dabb7f4542a63260445ff2d70edcafc1784
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: f22a2dfa7aae411cac960cbad2017718df8057e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getmethod-function"></a>GetMethod 関数
 指定したメソッドに関する情報を取得します。
@@ -62,7 +63,7 @@ HRESULT GetMethod (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | 指定したプロパティは見つかりませんでした。 |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | 操作を完了するのに十分なメモリがあります。 |
@@ -76,7 +77,7 @@ Windows の管理を設定できる、 [IWbemClassObject](https://msdn.microsoft
 
 `ppInSignature`と`ppOutSignature`in および out パラメーターをそれぞれのプロパティとして、説明、`IWbemClassObject`システム クラスのインスタンス[_Parameters](https://msdn.microsoft.com/library/aa394667(v=vs.85).aspx)です。 指定したプロパティ`ppInsignature`は名前付き**Param***n*ここで、  *n*  (このようなメソッド シグネチャのパラメーターの位置は、として`Param1`、 `Param2`, などです。)。 指定したプロパティ`ppOutSignature`とも呼ば**Param***n*、および戻り値が名前付き**ReturnValue**です。 例および詳細については、次を参照してください。 [IWbemClassObject::GetMethod メソッド](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx)です。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

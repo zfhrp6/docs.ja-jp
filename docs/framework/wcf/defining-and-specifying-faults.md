@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 754c938242035549b9deb94a2fe3b975b1384fc0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 713b9594ac628c2c256e8592d3894feee8029332
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="defining-and-specifying-faults"></a>エラーの定義と指定
 SOAP エラーを使用する目的は、エラー状態情報をサービスからクライアントに伝達し、双方向のシナリオでは、相互利用が可能な手段でクライアントからサービスにも伝達することです。 ここでは、カスタムのエラー コンテンツをいつどのように定義し、そのエラーを返す操作をどのように指定するかについて説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]サービス、または双方向のクライアントは、これらのエラーと、クライアントまたはサービス アプリケーションがこのようなエラーを処理する方法を送信できます、方法を参照してください。[送信と受信エラー](../../../docs/framework/wcf/sending-and-receiving-faults.md)です。 エラー処理の概要については[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]アプリケーションを参照してください[を指定して処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
@@ -97,7 +98,7 @@ End Class
   
  エラーを生成する非サービスを利用する場合には、特定の制限事項があります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、スキーマによって記述され、データ コントラクトと互換性のある、詳細な型を持つエラーしかサポートされません。 たとえば、上記のように [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、詳細な型で XML 属性を使用するエラーや、詳細セクションに複数のトップレベル要素を持つエラーがサポートされていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.FaultContractAttribute>  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
@@ -106,4 +107,4 @@ End Class
  [方法: サービス コントラクトでのエラーを宣言する](../../../docs/framework/wcf/how-to-declare-faults-in-service-contracts.md)  
  [保護レベルの理解](../../../docs/framework/wcf/understanding-protection-level.md)  
  [方法: ProtectionLevel プロパティを設定する](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
- [サービス コントラクトで指定するデータを転送します。](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+ [サービス コントラクトでのデータ転送の指定](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

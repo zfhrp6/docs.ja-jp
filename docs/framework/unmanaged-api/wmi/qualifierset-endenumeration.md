@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7868a0c0ba5abb880af201ce73b35f5ffed6f223
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 7d8e6bb24eb471d807af2493f82b6be4f644124f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="qualifiersetendenumeration-function"></a>QualifierSet_EndEnumeration 関数
 呼び出しで開始された列挙の終了、 [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md)関数。  
@@ -46,7 +47,7 @@ HRESULT QualifierSet_EndEnumeration (
 
 この関数によって返される次の値がで定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができます、定数としてコードで定義します。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_S_NO_ERROR` | 0 | 関数呼び出しに成功しました。  |
   
@@ -56,7 +57,7 @@ HRESULT QualifierSet_EndEnumeration (
 
 この呼び出しは、推奨しますが、必要ありません。 すぐに、列挙体に関連付けられているリソースを解放します。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 
 **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   

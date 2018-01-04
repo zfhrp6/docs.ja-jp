@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8d60d6061a8b6af00b38922dfbc3c1f2e1a1dcf0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 03eed22efe7c0c81faaa24239384e84427e7996d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transactionbridgerecoveryfailure"></a>TransactionBridgeRecoveryFailure
 Id: 146  
@@ -27,8 +28,8 @@ Id: 146
  カテゴリ : TransactionBridge  
   
 ## <a name="description"></a>説明  
- このイベントは、回復時に MSDTC TransactionBridge でエラーが発生したことを示しています。 これは致命的な状況であるため、MSDTC サービスは終了されました。 イベントには、例外、プロセス名、およびプロセス ID が表示されます。 。  
+ このイベントは、回復時に MSDTC TransactionBridge でエラーが発生したことを示しています。 これは致命的な状況であるため、MSDTC サービスは終了されました。 イベントには、例外、プロセス名、およびプロセス ID が表示されます。 である必要があります。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

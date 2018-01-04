@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6a210fc0c1984ee9bc77114ba30c3287ae43b169
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5548254eb160547643a874fd2e31a085ec6f3ecb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot メソッド
 指定のスレッドのスタックでマネージ フレームを走査し、コールバックを通じてプロファイラーに情報を送信します。  
@@ -102,7 +103,7 @@ HRESULT DoStackSnapshot(
   
  デッドロックの危険性を呼び出す場合`DoStackSnapshot`別の対象のスレッドのスタックを走査できるように、プロファイラーが作成したスレッドからです。 最初に作成したスレッドが特定`ICorProfilerInfo*`メソッド (含む`DoStackSnapshot`)、CLR がスレッドごと、そのスレッドで CLR 固有の初期化を実行します。 プロファイラーが対象のスレッドがスタック ウォークをしようとしてを中断している場合、このスレッドごとの初期化を実行するために必要なロックを所有する対象のスレッドが発生した場合、デッドロックが発生します。 このデッドロックを避けるために最初の呼び出しを行う`DoStackSnapshot`に段階的に、プロファイラーが作成したスレッドから別のスレッドは対象まず対象のスレッドを中断しないようにします。 この初期の呼び出しにより、デッドロックなしスレッドごとの初期化を完了できるようにします。 場合`DoStackSnapshot`が成功し、レポートには、少なくとも 1 つのフレームでは、その後、ことが、対象のスレッドと呼び出しを中断するプロファイラーが作成したスレッドの安全な`DoStackSnapshot`その対象のスレッドのスタック ウォークをします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
@@ -111,6 +112,6 @@ HRESULT DoStackSnapshot(
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

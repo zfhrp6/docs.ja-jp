@@ -14,11 +14,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de970bf27fdf3365daa0ac515852a68d01a246eb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 857ec77e54d6a55bde1a94fd9fd5758ef7a24309
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-services"></a>サービスの構成
 サービス コントラクトの設計、実装が終われば、サービスを構成できる状態になります。 クライアント側から見たサービスの動作は、ここで定義、カスタマイズします。サービスと通信するためのアドレス、メッセージの送受信に使うトランスポートやエンコーディング、必要なセキュリティ型などを指定できます。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 12/02/2017
   
  [管理と診断](../../../docs/framework/wcf/diagnostics/index.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)  
  [概念](../../../docs/framework/wcf/conceptual-overview.md)  
  [WCF 機能の詳細](../../../docs/framework/wcf/feature-details/index.md)

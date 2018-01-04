@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b24fd3951721a90874b098f0aa71e6612a43cf53
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 364568ff119a275efc782f18056ab333b2616243
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lafailedtolistenforapp"></a>LAFailedToListenForApp
 Id: 160  
@@ -29,6 +30,6 @@ Id: 160
 ## <a name="description"></a>説明  
  このイベントは、指定されたサイトをリッスンしようとしたときに、指定されたプロトコルの指定されたアクティブ化サービスでエラーが発生したため、このサイトのプロトコルが一時的に無効になっていることを示します。このイベントには、URL、状態、例外、プロセス名、およびプロセス ID が表示されます。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

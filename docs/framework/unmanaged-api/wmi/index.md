@@ -8,11 +8,12 @@ ms.date: 11/06/2017
 ms.topic: article-type-from-white-list
 ms.prod: .net-framework
 ms.devlang: cpp
-ms.openlocfilehash: 461d90aaf5beca1c0f1d1965ce0ea07411e56e79
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.workload: dotnet
+ms.openlocfilehash: 466ba410f7d6c13eb5f1949bf3aa32c3951a8ba7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>Windows Management Instrumentation (WMI) およびパフォーマンス カウンター (アンマネージ API リファレンス)
 
@@ -28,13 +29,13 @@ API には、次の関数が含まれています。
 | [BeginMethodEnumeration 関数](beginmethodenumeration.md) |  オブジェクトの使用可能なメソッドの列挙を開始します。 |
 | [BlessIWbemServices 関数](blessiwbemservices.md) | ユーザーの資格情報が指定した IWbemServices クラスへのアクセスを許可するかどうかを示します。 |
 | [BlessIWbemServicesObject 関数](blessiwbemservicesobject.md) | ユーザーの資格情報が指定した IWbem サービス オブジェクトへのアクセスを許可するかどうかを示します。 |
-| [複製関数](clone.md) | 現在のオブジェクトの完全な複製である新しいオブジェクトを返します。 |
+| [Clone 関数](clone.md) | 現在のオブジェクトの完全な複製である新しいオブジェクトを返します。 |
 | [CloneEnumWbemClassObject 関数](cloneenumwbemclassobject.md) | 列挙体の現在位置を保持、列挙子の論理コピーを作成します。 |
 | [CompareTo 関数](compareto.md) | 別の Windows 管理オブジェクトにオブジェクトを比較します。 |
 | [ConnectServerWmi 関数](connectserverwmi.md) | 指定したコンピューターで WMI 名前空間に使用する DCOM による接続を作成します。 |
 | [CreateClassEnumWmi 関数](createclassenumwmi.md) | 指定した選択条件を満たすすべてのクラスの列挙子を返します。 |
 | [CreateInstanceEnumWmi 関数](createinstanceenumwmi.md) | 指定したクラスの指定された選択条件を満たすためを返す列挙子を返します。 |
-| [関数を削除します。](delete.md) | クラスの定義とすべての修飾子から、指定したプロパティを削除します。 |
+| [Delete 関数](delete.md) | クラスの定義とすべての修飾子から、指定したプロパティを削除します。 |
 | [DeleteMethod 関数](deletemethod.md) | CIM クラス定義から、指定したメソッドを削除します。 |
 | [EndEnumeration 関数](endenumeration.md) | 列挙のシーケンスを終了します。 | 
 | [EndMethodEnumeration 関数](endmethodenumeration.md) | 呼び出しによって開始された列挙のシーケンスの終了、 [BeginMethodEnumeration 関数](beginmethodenumeration.md)です。 |

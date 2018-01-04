@@ -17,11 +17,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3204e4c280c6c1acd50062fa44b46344926c3908
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 293d7f8502b39eac6508ba10b2fac128c6aa4879
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="designing-service-contracts"></a>サービス コントラクトの設計
 ここでは、サービス コントラクトの概要、定義方法、使用できる操作 (および基になるメッセージ交換の影響)、使用するデータ型、およびシナリオの要件を満たす操作を設計する際に役立つその他の問題について説明します。  
@@ -186,7 +187,7 @@ End Interface
 ### <a name="specify-message-protection-level-on-the-contract"></a>コントラクトでのメッセージ保護レベルの指定  
  コントラクトの設計時に、コントラクトを実装するサービスのメッセージ保護レベルも決定する必要があります。 これは、メッセージ セキュリティをコントラクトのエンドポイントのバインディングに適用する場合にのみ必要です。 バインディングのセキュリティが無効になっている場合 (つまり、システム指定のバインディングで <xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType> の値が <xref:System.ServiceModel.SecurityMode.None?displayProperty=nameWithType> に設定されている場合)、コントラクトのメッセージ保護レベルを決定する必要はありません。 ほとんどの場合、メッセージ レベルのセキュリティが適用されたシステム指定のバインディングは、十分な保護レベルを備えているため、操作ごとまたはメッセージごとに保護レベルを検討する必要はありません。  
   
- 保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 保護レベルは、さまざまなスコープ (サービス レベル、特定の操作、その操作内のメッセージ、またはメッセージ部分) で設定できます。 あるスコープで設定された値は、明示的にオーバーライドしない限り、そのスコープよりも小さなスコープの既定値になります。 コントラクトに必要とされる最小限の保護レベルをバインディング構成で提供できない場合は、例外がスローされます。 保護レベルの値がコントラクトで明示的に設定されていない場合、バインディングのメッセージ セキュリティが有効であれば、バインディング構成によってすべてのメッセージの保護レベルが制御されます。 これが既定の動作です。  
+ 保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 保護レベルは、さまざまなスコープ (サービス レベル、特定の操作、その操作内のメッセージ、またはメッセージ部分) で設定できます。 あるスコープで設定された値は、明示的にオーバーライドしない限り、そのスコープよりも小さなスコープの既定値になります。 コントラクトに必要とされる最小限の保護レベルをバインディング構成で提供できない場合は、例外がスローされます。 保護レベルの値がコントラクトで明示的に設定されていない場合、バインディングのメッセージ セキュリティが有効であれば、バインド構成によってすべてのメッセージの保護レベルが制御されます。 これが既定の動作です。  
   
 > [!IMPORTANT]
 >  一般に、コントラクトのさまざまなスコープを完全な保護レベルである <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> よりも下のレベルに明示的に設定するかどうかは、パフォーマンスの向上と引き換えに、ある程度のセキュリティで妥協できるかどうかという判断によって決まります。 このような場合、操作および操作で交換するデータの価値に焦点を絞って判断を下す必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。  
@@ -276,13 +277,13 @@ End Interface
 ##### <a name="names-namespaces-and-obfuscation"></a>名前、名前空間、および難読化  
  コントラクトおよび操作の定義内の .NET 型の名前や名前空間は、コントラクトが WSDL に変換されるとき、およびコントラクト メッセージが作成および送信されるときに重要になります。 したがって、サービス コントラクトの名前と名前空間は、`Name`、`Namespace`、<xref:System.ServiceModel.ServiceContractAttribute>、<xref:System.ServiceModel.OperationContractAttribute> などの、すべてのサポート対象コントラクト属性や、他のコントラクト属性の <xref:System.Runtime.Serialization.DataContractAttribute> プロパティと <xref:System.Runtime.Serialization.DataMemberAttribute> プロパティを使用して明示的に設定することを強くお勧めします。  
   
- この 1 つの結果として、名前と名前空間が明示的に設定されていない場合、アセンブリで IL 隠ぺいを使用すると、コントラクトの型名と名前空間が変更され、その結果、WSDL が変更され、通常はネットワークでのメッセージ交換に失敗します。 コントラクトの名前と名前空間を明示的に設定せずに隠ぺいを使用する場合は、<xref:System.Reflection.ObfuscationAttribute> 属性と <xref:System.Reflection.ObfuscateAssemblyAttribute> 属性を使用して、コントラクトの型名と名前空間が変更されないようにします。  
+ この 1 つの結果として、名前と名前空間が明示的に設定されていない場合、アセンブリで IL 難読化を使用すると、コントラクトの型名と名前空間が変更され、その結果、WSDL が変更され、通常はネットワークでのメッセージ交換に失敗します。 コントラクトの名前と名前空間を明示的に設定せずに隠ぺいを使用する場合は、<xref:System.Reflection.ObfuscationAttribute> 属性と <xref:System.Reflection.ObfuscateAssemblyAttribute> 属性を使用して、コントラクトの型名と名前空間が変更されないようにします。  
   
-## <a name="see-also"></a>関連項目  
- [方法: 要求/応答コントラクトを作成します。](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)  
- [方法: 一方向コントラクトを作成します。](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md)  
- [方法: 双方向コントラクトを作成します。](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)  
- [サービス コントラクトで指定するデータを転送します。](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
+## <a name="see-also"></a>参照  
+ [方法 : 要求/応答コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)  
+ [方法 : 一方向コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md)  
+ [方法 : 双方向コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)  
+ [サービス コントラクトでのデータ転送の指定](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
  [コントラクトおよびサービスのエラーの指定と処理](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  
  [セッションの使用](../../../docs/framework/wcf/using-sessions.md)  
  [同期操作と非同期操作](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)  

@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dacb1516bebfc73ae9e16b03f3755ab49382e571
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 038074b5bb3adc816caa226d3167395758d2ae57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compareto-function"></a>CompareTo 関数
 別の Windows 管理オブジェクトにオブジェクトを比較します。  
@@ -55,7 +56,7 @@ HRESULT CompareTo (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | 不明なエラーが発生しました。 |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
@@ -70,7 +71,7 @@ HRESULT CompareTo (
 
 フラグとして渡すことができる、`lEnumFlags`で引数が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定数としてコードで定義します。 次のフラグのビットごとの組み合わせを指定することによって、比較に関係する個々 の特性を指定できます。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | ソース (サーバーと、元の名前空間) を無視します。 |
 | `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | すべての修飾子を無視する (含む**キー**と**動的**) |
@@ -81,11 +82,11 @@ HRESULT CompareTo (
 
 または、次のように 1 つの複合フラグを指定できます。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_COMPARISON_INCLUDE_ALL` | 0 | 比較のすべての機能を検討してください。 |
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

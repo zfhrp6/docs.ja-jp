@@ -24,11 +24,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0fbe77f16ed022458a036b6627b82f80d194276c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 81e6eaa83baab67f54a1b1ce46d616be7e6fdd62
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo 関数
 厳密な名前の関数のいずれかによって発生した最後のエラー コードを取得します。  
@@ -47,7 +48,7 @@ HRESULT StrongNameErrorInfo ();
 ## <a name="remarks"></a>コメント  
  厳密な名前のメソッドのほとんどは、単純なを返す`true`または`false`が正常に完了を示す値。 使用して、`StrongNameErrorInfo`を厳密な名前の関数によって生成された最後のエラーを示す HRESULT を取得します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** StrongName.h  
@@ -56,5 +57,5 @@ HRESULT StrongNameErrorInfo ();
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [厳密な名前付けグローバル静的関数](http://msdn.microsoft.com/en-us/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)

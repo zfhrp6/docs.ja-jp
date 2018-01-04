@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea85d3acc7b332a641726ab565409f1bdf1c51ba
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 44c4c1bbd42b2bf66c83899623012d6b07c1a2f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="piiloggingnotallowed"></a>PiiLoggingNotAllowed
 ID : 108  
@@ -29,6 +30,6 @@ ID : 108
 ## <a name="description"></a>説明  
  このイベントは、既知の PII がログ記録されていないことを示します。 既知の PII はログ記録できません。 既知の PII をログ記録できるようにするには、Machine.config の "enableLoggingKnownPii" を `true` に設定します。イベントには、プロセス名とプロセス ID が表示されます。  
   
-## <a name="see-also"></a>関連項目  
- [イベントのログ記録](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [イベントの一般的なリファレンス](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>参照  
+ [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

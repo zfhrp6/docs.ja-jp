@@ -14,11 +14,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eb2d66217202ee43fb2377f4a8ef26a47b676c11
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4bc4fc7559872a808c2de87e4926075614351030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Windows Communication Foundation のバインディングの概要
 バインディングとは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのエンドポイントへの接続に必要な通信の詳細設定を指定する際に使用するオブジェクトのことです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの各エンドポイントでは、バインディングを適切に指定する必要があります。 ここでは、バインディングによって定義される通信の詳細設定、バインディングの要素、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているバインディング、およびエンドポイントにバインディングを指定する方法について説明します。  
@@ -64,5 +65,5 @@ ms.lasthandoff: 12/02/2017
 ## <a name="code-and-configuration"></a>コードおよび構成  
  バインディングを定義するには、コードによる方法と構成による方法の 2 とおりがあります。 この 2 つの方法は、システム指定またはカスタムのどちらのバインディングを使用している場合でも有効です。 一般的には、コードを使用すると、開発者がデザイン時にバインディングの定義を完全に制御することになります。 一方、構成を使用する場合は、システム管理者や、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスまたはクライアントのユーザーが、サービス アプリケーションをコンパイルし直すことなくバインディングのパラメーターを変更できます。 通常は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションの展開先の具体的なコンピューター要件を予測する方法がないため、柔軟性のあるこの方法が望まれます。 バインディング情報とアドレス情報をコードに含めないでおくと、これらの情報を変更したときにアプリケーションを再度コンパイルしたり、展開したりする必要がなくなります。 コードで定義したバインディングは、構成で指定したバインディングの後に作成されます。そのため、構成で定義したバインディングはコードで定義したバインディングによって上書きされることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

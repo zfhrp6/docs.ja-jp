@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 26337a13ab9840b79c253d4af2d84a10e70877c5
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 7221c9e0f1cb49ab0e27130ce69c0527ba903148
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="writepropertyvalue-function"></a>WritePropertyValue 関数
 プロパティのハンドルによって識別されたプロパティに指定したバイト数を書き込みます。
@@ -58,7 +59,7 @@ HRESULT WritePropertyValue (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | 型の不一致が発生しました。 |
@@ -72,7 +73,7 @@ HRESULT WritePropertyValue (
 
 プロパティ値は文字列ではない、`lNumBytes`指定されたプロパティの型の適切なデータ サイズにする必要があります。 文字列プロパティの値の`lNumBytes`長さにする必要があります (バイト単位) で指定した文字列および文字列の偶数の長さ (バイト単位) の必要があり、null 終端文字の後にします。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
 **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

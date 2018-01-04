@@ -17,17 +17,18 @@ caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 35a8e5bce0263c78d99e4530d01a9a9cad3e913e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2c4ad879c486fa39c739ccb3d1da76d64082144d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-enumerations"></a>メタデータ列挙体
 このセクションでは、メタデータ API が使用するアンマネージ列挙について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [AssemblyFlags 列挙体](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md)  
+ [AssemblyFlags 列挙型](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md)  
  アセンブリのランタイム機能を記述する値が格納されます。  
   
  [AssemblyRefFlags 列挙型](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md)  

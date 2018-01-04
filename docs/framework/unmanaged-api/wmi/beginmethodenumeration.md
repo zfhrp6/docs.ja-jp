@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2e44c432f9503f96ad4dab9e25b78e6dd148f94c
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 7d843c40a8ab0dd1c48a08126b8c7472505a1732
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration 関数
 オブジェクトの使用可能なメソッドの列挙を開始します。  
@@ -46,7 +47,7 @@ HRESULT BeginMethodEnumeration (
 `lEnumFlags`  
 [in]ゼロ (0) のすべてのメソッド、または列挙体のスコープを指定するフラグ。 次のフラグが定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-定数  |値  |説明  |
+定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | 列挙型クラス自体で定義されているメソッドを制限します。 |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | 基本クラスから継承されたプロパティ、列挙型を制限します。 |
@@ -55,7 +56,7 @@ HRESULT BeginMethodEnumeration (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags`ゼロ以外は、指定したフラグのいずれか。 |
 |`WBEM_S_NO_ERROR` | 0 | 関数呼び出しに成功しました。  |
@@ -66,7 +67,7 @@ HRESULT BeginMethodEnumeration (
 
 このメソッドの呼び出しは、現在のオブジェクトがクラス定義である場合にのみサポートされます。 メソッドの操作からは使用できない[IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンスを指すポインターです。 メソッドが列挙される順序は、特定のインスタンスのバリアントすることは保証[IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)です。
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  

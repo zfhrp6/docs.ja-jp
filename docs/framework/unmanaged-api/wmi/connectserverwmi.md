@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b51050bce4603ebcfe99fb38d66e54683c677293
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: dc821bddf1d33ea1144fef0821b81cf027d8f92f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi 関数
 指定したコンピューターで WMI 名前空間に使用する DCOM による接続を作成します。  
@@ -53,14 +54,14 @@ HRESULT ConnectServerWmi (
  
 `lSecurityFlags`[in]渡すフラグ、`ConnectServerWmi`メソッドです。 このパラメーターにゼロ (0) の値の結果への呼び出しで`ConnectServerWmi`サーバーへの接続が確立された後にのみを返すことです。 これは、結果、応答していない無制限にサーバーが切断されたかどうか、アプリケーションです。 その他の有効な値は次のとおりです。
 
-| 定数  | 値  | 説明  |
+| 定数  | [値]  | 説明  |
 |---------|---------|---------|
 | `CONNECT_REPOSITORY_ONLY` | 0x40 | 内部使用のために予約されています。 使用しないでください。 |
 | `WBEM_FLAG_CONNECT_USE_MAX_WAIT` | 0x80 | `ConnectServerWmi`2 分以内を返します。 |
 
 `strAuthority`[in]ユーザーのドメイン名。 次の値のいずれかを取ります。
 
-| 値 | 説明 |
+| [値] | 説明 |
 |---------|---------|
 | 空白 | NTLM 認証を使用すると、し、現在のユーザー NTLM ドメインを使用します。 場合`strUser`ドメイン (推奨される場所) を指定します。 ここで指定してはなりませんがします。 この関数を返します`WBEM_E_INVALID_PARAMETER`両方のパラメーターでドメインを指定する場合。 |
 | Kerberos:*プリンシパル名* | Kerberos 認証を使用して、このパラメーターには、Kerberos プリンシパル名が含まれています。 |
@@ -82,7 +83,7 @@ HRESULT ConnectServerWmi (
 
 この関数によって返される次の値が定義されている、 *WbemCli.h*ヘッダー ファイル、またはすることができますに定義する定数として、コード。
 
-|定数  |値  |説明  |
+|定数  |[値]  |説明  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
@@ -98,7 +99,7 @@ HRESULT ConnectServerWmi (
 `strUser`空の文字列にすることはできません。 ドメインが指定されている場合`strAuthority`、その必要がありますいないに含めることも`strUser`、または、関数を返します`WBEM_E_INVALID_PARAMETER`です。
 
 
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
