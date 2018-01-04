@@ -19,16 +19,17 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 85a909d92be8bfdb9ada709b54cf252183ff411e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0f39a1481361377fce3f6b55cf6c7daf8c075ce5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="corsetenc-enumeration"></a><span data-ttu-id="1108e-102">CorSetENC 列挙型</span><span class="sxs-lookup"><span data-stu-id="1108e-102">CorSetENC Enumeration</span></span>
-<span data-ttu-id="1108e-103">メタデータの生成中の動作を決定する値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="1108e-103">Contains values used to influence behavior during the generation of metadata.</span></span>  
+# <a name="corsetenc-enumeration"></a><span data-ttu-id="137fe-102">CorSetENC 列挙型</span><span class="sxs-lookup"><span data-stu-id="137fe-102">CorSetENC Enumeration</span></span>
+<span data-ttu-id="137fe-103">メタデータの生成中の動作を決定する値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="137fe-103">Contains values used to influence behavior during the generation of metadata.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1108e-104">構文</span><span class="sxs-lookup"><span data-stu-id="1108e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="137fe-104">構文</span><span class="sxs-lookup"><span data-stu-id="137fe-104">Syntax</span></span>  
   
 ```  
 typedef enum CorSetENC {  
@@ -46,25 +47,25 @@ typedef enum CorSetENC {
 } CorSetENC;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="1108e-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="1108e-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="137fe-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="137fe-105">Members</span></span>  
   
-|<span data-ttu-id="1108e-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="1108e-106">Member</span></span>|<span data-ttu-id="1108e-107">説明</span><span class="sxs-lookup"><span data-stu-id="1108e-107">Description</span></span>|  
+|<span data-ttu-id="137fe-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="137fe-106">Member</span></span>|<span data-ttu-id="137fe-107">説明</span><span class="sxs-lookup"><span data-stu-id="137fe-107">Description</span></span>|  
 |------------|-----------------|  
-|`MDSetENCOn`|<span data-ttu-id="1108e-108">互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="1108e-108">Obsolete.</span></span>|  
-|`MDSetENCOff`|<span data-ttu-id="1108e-109">互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="1108e-109">Obsolete.</span></span>|  
-|`MDUpdateENC`|<span data-ttu-id="1108e-110">あるメタデータを更新できる一方トークンは移動できないことを示します。</span><span class="sxs-lookup"><span data-stu-id="1108e-110">Indicates that whereas metadata can be updated, tokens cannot be moved.</span></span>|  
-|`MDUpdateFull`|<span data-ttu-id="1108e-111">トークンを更新中に移動できることを示します。</span><span class="sxs-lookup"><span data-stu-id="1108e-111">Indicates that tokens can be moved during updates.</span></span>|  
-|`MDUpdateExtension`|<span data-ttu-id="1108e-112">更新プログラムが追加ののみで構成できることを示します。</span><span class="sxs-lookup"><span data-stu-id="1108e-112">Indicates that updates can consist only of additions.</span></span> <span data-ttu-id="1108e-113">トークンを移動することはできません。</span><span class="sxs-lookup"><span data-stu-id="1108e-113">Tokens cannot be moved.</span></span>|  
-|`MDUpdateIncremental`|<span data-ttu-id="1108e-114">コンパイルが増分であることを示します。</span><span class="sxs-lookup"><span data-stu-id="1108e-114">Indicates that compilation is incremental.</span></span>|  
-|`MDUpdateDelta`|<span data-ttu-id="1108e-115">変更されたメタデータだけを保存するかを示します。</span><span class="sxs-lookup"><span data-stu-id="1108e-115">Indicates that only changed metadata should be saved.</span></span>|  
-|`MDUpdateMask`|<span data-ttu-id="1108e-116">含む`MDUpdateENC`、`MDUpdateFull`と`MDUpdateIncremental`です。</span><span class="sxs-lookup"><span data-stu-id="1108e-116">Includes `MDUpdateENC`, `MDUpdateFull` and `MDUpdateIncremental`.</span></span>|  
+|`MDSetENCOn`|<span data-ttu-id="137fe-108">互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="137fe-108">Obsolete.</span></span>|  
+|`MDSetENCOff`|<span data-ttu-id="137fe-109">互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="137fe-109">Obsolete.</span></span>|  
+|`MDUpdateENC`|<span data-ttu-id="137fe-110">あるメタデータを更新できる一方トークンは移動できないことを示します。</span><span class="sxs-lookup"><span data-stu-id="137fe-110">Indicates that whereas metadata can be updated, tokens cannot be moved.</span></span>|  
+|`MDUpdateFull`|<span data-ttu-id="137fe-111">トークンを更新中に移動できることを示します。</span><span class="sxs-lookup"><span data-stu-id="137fe-111">Indicates that tokens can be moved during updates.</span></span>|  
+|`MDUpdateExtension`|<span data-ttu-id="137fe-112">更新プログラムが追加ののみで構成できることを示します。</span><span class="sxs-lookup"><span data-stu-id="137fe-112">Indicates that updates can consist only of additions.</span></span> <span data-ttu-id="137fe-113">トークンを移動することはできません。</span><span class="sxs-lookup"><span data-stu-id="137fe-113">Tokens cannot be moved.</span></span>|  
+|`MDUpdateIncremental`|<span data-ttu-id="137fe-114">コンパイルが増分であることを示します。</span><span class="sxs-lookup"><span data-stu-id="137fe-114">Indicates that compilation is incremental.</span></span>|  
+|`MDUpdateDelta`|<span data-ttu-id="137fe-115">変更されたメタデータだけを保存するかを示します。</span><span class="sxs-lookup"><span data-stu-id="137fe-115">Indicates that only changed metadata should be saved.</span></span>|  
+|`MDUpdateMask`|<span data-ttu-id="137fe-116">含む`MDUpdateENC`、`MDUpdateFull`と`MDUpdateIncremental`です。</span><span class="sxs-lookup"><span data-stu-id="137fe-116">Includes `MDUpdateENC`, `MDUpdateFull` and `MDUpdateIncremental`.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="1108e-117">要件</span><span class="sxs-lookup"><span data-stu-id="1108e-117">Requirements</span></span>  
- <span data-ttu-id="1108e-118">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="1108e-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="137fe-117">必要条件</span><span class="sxs-lookup"><span data-stu-id="137fe-117">Requirements</span></span>  
+ <span data-ttu-id="137fe-118">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="137fe-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1108e-119">**ヘッダー:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="1108e-119">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="137fe-119">**ヘッダー:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="137fe-119">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="1108e-120">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1108e-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="137fe-120">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="137fe-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1108e-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="1108e-121">See Also</span></span>  
- [<span data-ttu-id="1108e-122">メタデータ列挙体</span><span class="sxs-lookup"><span data-stu-id="1108e-122">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="137fe-121">参照</span><span class="sxs-lookup"><span data-stu-id="137fe-121">See Also</span></span>  
+ [<span data-ttu-id="137fe-122">メタデータ列挙型</span><span class="sxs-lookup"><span data-stu-id="137fe-122">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

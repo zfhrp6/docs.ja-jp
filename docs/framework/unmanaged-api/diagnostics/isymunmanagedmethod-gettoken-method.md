@@ -21,31 +21,32 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b3cbcd27d42928223411a31dbb68e6d1dd0391fd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: bfdc070c21c7929166bfa957c0e0dd63da80f761
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedmethodgettoken-method"></a><span data-ttu-id="0b796-102">ISymUnmanagedMethod::GetToken メソッド</span><span class="sxs-lookup"><span data-stu-id="0b796-102">ISymUnmanagedMethod::GetToken Method</span></span>
-<span data-ttu-id="0b796-103">このメソッドのメタデータ トークンを返します。</span><span class="sxs-lookup"><span data-stu-id="0b796-103">Returns the metadata token for this method.</span></span>  
+# <a name="isymunmanagedmethodgettoken-method"></a><span data-ttu-id="0618a-102">ISymUnmanagedMethod::GetToken メソッド</span><span class="sxs-lookup"><span data-stu-id="0618a-102">ISymUnmanagedMethod::GetToken Method</span></span>
+<span data-ttu-id="0618a-103">このメソッドのメタデータ トークンを返します。</span><span class="sxs-lookup"><span data-stu-id="0618a-103">Returns the metadata token for this method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0b796-104">構文</span><span class="sxs-lookup"><span data-stu-id="0b796-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0618a-104">構文</span><span class="sxs-lookup"><span data-stu-id="0618a-104">Syntax</span></span>  
   
 ```  
 HRESULT GetToken(  
    [out, retval]  mdMethodDef  *pToken);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="0b796-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0b796-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="0618a-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0618a-105">Parameters</span></span>  
  `pToken`  
- <span data-ttu-id="0b796-106">[out]ポインター、`mdMethodDef`メタデータの格納に必要なバッファーの文字のサイズを受け取る。</span><span class="sxs-lookup"><span data-stu-id="0b796-106">[out] A pointer to a `mdMethodDef` that receives the size, in characters, of the buffer required to contain the metadata.</span></span>  
+ <span data-ttu-id="0618a-106">[out]ポインター、`mdMethodDef`メタデータの格納に必要なバッファーの文字のサイズを受け取る。</span><span class="sxs-lookup"><span data-stu-id="0618a-106">[out] A pointer to a `mdMethodDef` that receives the size, in characters, of the buffer required to contain the metadata.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0b796-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="0b796-107">Return Value</span></span>  
- <span data-ttu-id="0b796-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="0b796-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="0618a-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="0618a-107">Return Value</span></span>  
+ <span data-ttu-id="0618a-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="0618a-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0b796-109">要件</span><span class="sxs-lookup"><span data-stu-id="0b796-109">Requirements</span></span>  
- <span data-ttu-id="0b796-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="0b796-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0618a-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="0618a-109">Requirements</span></span>  
+ <span data-ttu-id="0618a-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="0618a-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0b796-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="0b796-111">See Also</span></span>  
- [<span data-ttu-id="0b796-112">ISymUnmanagedMethod インターフェイス</span><span class="sxs-lookup"><span data-stu-id="0b796-112">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+## <a name="see-also"></a><span data-ttu-id="0618a-111">参照</span><span class="sxs-lookup"><span data-stu-id="0618a-111">See Also</span></span>  
+ [<span data-ttu-id="0618a-112">ISymUnmanagedMethod インターフェイス</span><span class="sxs-lookup"><span data-stu-id="0618a-112">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

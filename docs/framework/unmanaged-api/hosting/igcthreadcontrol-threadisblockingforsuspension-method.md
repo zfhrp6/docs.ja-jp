@@ -21,32 +21,33 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 815ed06cb5772e7d04002f9d0d31bd971f2d345a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0cb7cfbab18334f1892c24225311160179920f81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="igcthreadcontrolthreadisblockingforsuspension-method"></a><span data-ttu-id="d838e-102">IGCThreadControl::ThreadIsBlockingForSuspension メソッド</span><span class="sxs-lookup"><span data-stu-id="d838e-102">IGCThreadControl::ThreadIsBlockingForSuspension Method</span></span>
-<span data-ttu-id="d838e-103">呼び出しを行っているスレッドがガベージ コレクションまたはその他の中断のためにブロックすることをホストに通知します。</span><span class="sxs-lookup"><span data-stu-id="d838e-103">Notifies the host that the thread that is making the call is about to block, perhaps for a garbage collection or other suspension.</span></span>  
+# <a name="igcthreadcontrolthreadisblockingforsuspension-method"></a><span data-ttu-id="c9df2-102">IGCThreadControl::ThreadIsBlockingForSuspension メソッド</span><span class="sxs-lookup"><span data-stu-id="c9df2-102">IGCThreadControl::ThreadIsBlockingForSuspension Method</span></span>
+<span data-ttu-id="c9df2-103">呼び出しを行っているスレッドがガベージ コレクションまたはその他の中断のためにブロックすることをホストに通知します。</span><span class="sxs-lookup"><span data-stu-id="c9df2-103">Notifies the host that the thread that is making the call is about to block, perhaps for a garbage collection or other suspension.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d838e-104">構文</span><span class="sxs-lookup"><span data-stu-id="d838e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c9df2-104">構文</span><span class="sxs-lookup"><span data-stu-id="c9df2-104">Syntax</span></span>  
   
 ```  
 HRESULT ThreadIsBlockingForSuspension ( );  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="d838e-105">コメント</span><span class="sxs-lookup"><span data-stu-id="d838e-105">Remarks</span></span>  
- <span data-ttu-id="d838e-106">内でホストを選択ことがあります、`ThreadIsBlockingForSuspension`コールバック スレッドのスケジュールを変更するかどうか。</span><span class="sxs-lookup"><span data-stu-id="d838e-106">The host may choose within the `ThreadIsBlockingForSuspension` callback whether to reschedule a thread.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c9df2-105">コメント</span><span class="sxs-lookup"><span data-stu-id="c9df2-105">Remarks</span></span>  
+ <span data-ttu-id="c9df2-106">内でホストを選択ことがあります、`ThreadIsBlockingForSuspension`コールバック スレッドのスケジュールを変更するかどうか。</span><span class="sxs-lookup"><span data-stu-id="c9df2-106">The host may choose within the `ThreadIsBlockingForSuspension` callback whether to reschedule a thread.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d838e-107">要件</span><span class="sxs-lookup"><span data-stu-id="d838e-107">Requirements</span></span>  
- <span data-ttu-id="d838e-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="d838e-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c9df2-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="c9df2-107">Requirements</span></span>  
+ <span data-ttu-id="c9df2-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="c9df2-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d838e-109">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="d838e-109">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="c9df2-109">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="c9df2-109">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="d838e-110">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="d838e-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="c9df2-110">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="c9df2-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="d838e-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d838e-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="c9df2-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c9df2-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d838e-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="d838e-112">See Also</span></span>  
- [<span data-ttu-id="d838e-113">IGCThreadControl インターフェイス</span><span class="sxs-lookup"><span data-stu-id="d838e-113">IGCThreadControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-interface.md)
+## <a name="see-also"></a><span data-ttu-id="c9df2-112">参照</span><span class="sxs-lookup"><span data-stu-id="c9df2-112">See Also</span></span>  
+ [<span data-ttu-id="c9df2-113">IGCThreadControl インターフェイス</span><span class="sxs-lookup"><span data-stu-id="c9df2-113">IGCThreadControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-interface.md)

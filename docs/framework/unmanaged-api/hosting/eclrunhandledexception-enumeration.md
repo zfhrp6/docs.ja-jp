@@ -19,16 +19,17 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 67787072779e0cb22a339c2d13c972ba36f3ed61
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a8fcc9254499724d94153c445943fdaf78d12a10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="eclrunhandledexception-enumeration"></a><span data-ttu-id="b4b68-102">EClrUnhandledException 列挙型</span><span class="sxs-lookup"><span data-stu-id="b4b68-102">EClrUnhandledException Enumeration</span></span>
-<span data-ttu-id="b4b68-103">ユーザー コードで処理されない例外を管理するためのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="b4b68-103">Describes the available options for managing exceptions that are unhandled in user code.</span></span>  
+# <a name="eclrunhandledexception-enumeration"></a><span data-ttu-id="1d579-102">EClrUnhandledException 列挙型</span><span class="sxs-lookup"><span data-stu-id="1d579-102">EClrUnhandledException Enumeration</span></span>
+<span data-ttu-id="1d579-103">ユーザー コードで処理されない例外を管理するためのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="1d579-103">Describes the available options for managing exceptions that are unhandled in user code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b4b68-104">構文</span><span class="sxs-lookup"><span data-stu-id="b4b68-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1d579-104">構文</span><span class="sxs-lookup"><span data-stu-id="1d579-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -37,29 +38,29 @@ typedef enum {
 } EClrUnhandledException;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="b4b68-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="b4b68-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="1d579-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="1d579-105">Members</span></span>  
   
-|<span data-ttu-id="b4b68-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="b4b68-106">Member</span></span>|<span data-ttu-id="b4b68-107">説明</span><span class="sxs-lookup"><span data-stu-id="b4b68-107">Description</span></span>|  
+|<span data-ttu-id="1d579-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="1d579-106">Member</span></span>|<span data-ttu-id="1d579-107">説明</span><span class="sxs-lookup"><span data-stu-id="1d579-107">Description</span></span>|  
 |------------|-----------------|  
-|`eRuntimeDeterminedPolicy`|<span data-ttu-id="b4b68-108">既定の動作が発生することを指定します。</span><span class="sxs-lookup"><span data-stu-id="b4b68-108">Specifies that the default behavior occurs.</span></span> <span data-ttu-id="b4b68-109">プロセスは破棄されます。</span><span class="sxs-lookup"><span data-stu-id="b4b68-109">The process is torn down.</span></span>|  
-|`eHostDeterminedPolicy`|<span data-ttu-id="b4b68-110">共通言語ランタイム (CLR) が未処理の例外を無視し、により、さらにアクションを判断する、ホストを指定します。</span><span class="sxs-lookup"><span data-stu-id="b4b68-110">Specifies that the common language runtime (CLR) ignores unhandled exceptions and lets the host determine any further action.</span></span>|  
+|`eRuntimeDeterminedPolicy`|<span data-ttu-id="1d579-108">既定の動作が発生することを指定します。</span><span class="sxs-lookup"><span data-stu-id="1d579-108">Specifies that the default behavior occurs.</span></span> <span data-ttu-id="1d579-109">プロセスは破棄されます。</span><span class="sxs-lookup"><span data-stu-id="1d579-109">The process is torn down.</span></span>|  
+|`eHostDeterminedPolicy`|<span data-ttu-id="1d579-110">共通言語ランタイム (CLR) が未処理の例外を無視し、により、さらにアクションを判断する、ホストを指定します。</span><span class="sxs-lookup"><span data-stu-id="1d579-110">Specifies that the common language runtime (CLR) ignores unhandled exceptions and lets the host determine any further action.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="b4b68-111">コメント</span><span class="sxs-lookup"><span data-stu-id="b4b68-111">Remarks</span></span>  
- <span data-ttu-id="b4b68-112">CLR が以前のバージョンと同様に動作するを指定する、`eHostDeterminedPolicy`メンバー。</span><span class="sxs-lookup"><span data-stu-id="b4b68-112">To specify that the CLR behave like earlier versions, use the `eHostDeterminedPolicy` member.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1d579-111">コメント</span><span class="sxs-lookup"><span data-stu-id="1d579-111">Remarks</span></span>  
+ <span data-ttu-id="1d579-112">CLR が以前のバージョンと同様に動作するを指定する、`eHostDeterminedPolicy`メンバー。</span><span class="sxs-lookup"><span data-stu-id="1d579-112">To specify that the CLR behave like earlier versions, use the `eHostDeterminedPolicy` member.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b4b68-113">要件</span><span class="sxs-lookup"><span data-stu-id="b4b68-113">Requirements</span></span>  
- <span data-ttu-id="b4b68-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="b4b68-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1d579-113">必要条件</span><span class="sxs-lookup"><span data-stu-id="1d579-113">Requirements</span></span>  
+ <span data-ttu-id="1d579-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="1d579-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b4b68-115">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="b4b68-115">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="1d579-115">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="1d579-115">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="b4b68-116">**ライブラリ:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b4b68-116">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="1d579-116">**ライブラリ:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1d579-116">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="b4b68-117">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b4b68-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1d579-117">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1d579-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b4b68-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="b4b68-118">See Also</span></span>  
- [<span data-ttu-id="b4b68-119">EClrFailure 列挙型</span><span class="sxs-lookup"><span data-stu-id="b4b68-119">EClrFailure Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
- [<span data-ttu-id="b4b68-120">EClrOperation 列挙型</span><span class="sxs-lookup"><span data-stu-id="b4b68-120">EClrOperation Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)  
- [<span data-ttu-id="b4b68-121">ICLRPolicyManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b4b68-121">ICLRPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)  
- [<span data-ttu-id="b4b68-122">SetUnhandledExceptionPolicy メソッド</span><span class="sxs-lookup"><span data-stu-id="b4b68-122">SetUnhandledExceptionPolicy Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md)  
- [<span data-ttu-id="b4b68-123">IHostPolicyManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b4b68-123">IHostPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
- [<span data-ttu-id="b4b68-124">ホスティングの列挙体</span><span class="sxs-lookup"><span data-stu-id="b4b68-124">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="1d579-118">参照</span><span class="sxs-lookup"><span data-stu-id="1d579-118">See Also</span></span>  
+ [<span data-ttu-id="1d579-119">EClrFailure 列挙型</span><span class="sxs-lookup"><span data-stu-id="1d579-119">EClrFailure Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
+ [<span data-ttu-id="1d579-120">EClrOperation 列挙型</span><span class="sxs-lookup"><span data-stu-id="1d579-120">EClrOperation Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)  
+ [<span data-ttu-id="1d579-121">ICLRPolicyManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="1d579-121">ICLRPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)  
+ [<span data-ttu-id="1d579-122">SetUnhandledExceptionPolicy メソッド</span><span class="sxs-lookup"><span data-stu-id="1d579-122">SetUnhandledExceptionPolicy Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md)  
+ [<span data-ttu-id="1d579-123">IHostPolicyManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="1d579-123">IHostPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
+ [<span data-ttu-id="1d579-124">ホスティングの列挙型</span><span class="sxs-lookup"><span data-stu-id="1d579-124">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

@@ -21,31 +21,32 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 99ee3e5a2d1f5987377ed7ac224c821cb0906757
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c87ef1b3ce185c2a92813f231abe6a9ef14ac055
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedreadersymbolsearchinfogetsymbolsearchinfocount-method"></a><span data-ttu-id="4cd93-102">ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfoCount メソッド</span><span class="sxs-lookup"><span data-stu-id="4cd93-102">ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfoCount Method</span></span>
-<span data-ttu-id="4cd93-103">シンボル検索情報の数を取得します。</span><span class="sxs-lookup"><span data-stu-id="4cd93-103">Gets a count of symbol search information.</span></span>  
+# <a name="isymunmanagedreadersymbolsearchinfogetsymbolsearchinfocount-method"></a><span data-ttu-id="dea15-102">ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfoCount メソッド</span><span class="sxs-lookup"><span data-stu-id="dea15-102">ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfoCount Method</span></span>
+<span data-ttu-id="dea15-103">シンボル検索情報の数を取得します。</span><span class="sxs-lookup"><span data-stu-id="dea15-103">Gets a count of symbol search information.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4cd93-104">構文</span><span class="sxs-lookup"><span data-stu-id="4cd93-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dea15-104">構文</span><span class="sxs-lookup"><span data-stu-id="dea15-104">Syntax</span></span>  
   
 ```  
 HRESULT GetSymbolSearchInfoCount(  
     [out] ULONG32 *pcSearchInfo);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="4cd93-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="4cd93-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="dea15-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="dea15-105">Parameters</span></span>  
  `pcSearchInfo`  
- <span data-ttu-id="4cd93-106">out] へのポインター、`ULONG32`検索情報の格納に必要なバッファーのサイズを受け取る。</span><span class="sxs-lookup"><span data-stu-id="4cd93-106">]out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the search information.</span></span>  
+ <span data-ttu-id="dea15-106">out] へのポインター、`ULONG32`検索情報の格納に必要なバッファーのサイズを受け取る。</span><span class="sxs-lookup"><span data-stu-id="dea15-106">]out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the search information.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="4cd93-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="4cd93-107">Return Value</span></span>  
- <span data-ttu-id="4cd93-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="4cd93-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="dea15-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="dea15-107">Return Value</span></span>  
+ <span data-ttu-id="dea15-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="dea15-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4cd93-109">要件</span><span class="sxs-lookup"><span data-stu-id="4cd93-109">Requirements</span></span>  
- <span data-ttu-id="4cd93-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="4cd93-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="dea15-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="dea15-109">Requirements</span></span>  
+ <span data-ttu-id="dea15-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="dea15-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4cd93-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="4cd93-111">See Also</span></span>  
- [<span data-ttu-id="4cd93-112">ISymUnmanagedReaderSymbolSearchInfo インターフェイス</span><span class="sxs-lookup"><span data-stu-id="4cd93-112">ISymUnmanagedReaderSymbolSearchInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreadersymbolsearchinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="dea15-111">参照</span><span class="sxs-lookup"><span data-stu-id="dea15-111">See Also</span></span>  
+ [<span data-ttu-id="dea15-112">ISymUnmanagedReaderSymbolSearchInfo インターフェイス</span><span class="sxs-lookup"><span data-stu-id="dea15-112">ISymUnmanagedReaderSymbolSearchInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreadersymbolsearchinfo-interface.md)

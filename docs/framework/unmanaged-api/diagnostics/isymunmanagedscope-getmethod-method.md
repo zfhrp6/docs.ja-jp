@@ -21,31 +21,32 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bb062ad7ab485a1631a9cbe15f904b21226cb502
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e4756ff1f373f09a96daa64c1fb01875274a6d0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedscopegetmethod-method"></a><span data-ttu-id="339a5-102">ISymUnmanagedScope::GetMethod メソッド</span><span class="sxs-lookup"><span data-stu-id="339a5-102">ISymUnmanagedScope::GetMethod Method</span></span>
-<span data-ttu-id="339a5-103">このスコープに含まれているメソッドを取得します。</span><span class="sxs-lookup"><span data-stu-id="339a5-103">Gets the method that contains this scope.</span></span>  
+# <a name="isymunmanagedscopegetmethod-method"></a><span data-ttu-id="d88d7-102">ISymUnmanagedScope::GetMethod メソッド</span><span class="sxs-lookup"><span data-stu-id="d88d7-102">ISymUnmanagedScope::GetMethod Method</span></span>
+<span data-ttu-id="d88d7-103">このスコープに含まれているメソッドを取得します。</span><span class="sxs-lookup"><span data-stu-id="d88d7-103">Gets the method that contains this scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="339a5-104">構文</span><span class="sxs-lookup"><span data-stu-id="339a5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d88d7-104">構文</span><span class="sxs-lookup"><span data-stu-id="d88d7-104">Syntax</span></span>  
   
 ```  
 HRESULT GetMethod(  
     [out, retval] ISymUnmanagedMethod** pRetVal);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="339a5-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="339a5-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="d88d7-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d88d7-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="339a5-106">[out]返されたへのポインター [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="339a5-106">[out] A pointer to the returned [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) interface.</span></span>  
+ <span data-ttu-id="d88d7-106">[out]返されたへのポインター [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="d88d7-106">[out] A pointer to the returned [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="339a5-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="339a5-107">Return Value</span></span>  
- <span data-ttu-id="339a5-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="339a5-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d88d7-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="d88d7-107">Return Value</span></span>  
+ <span data-ttu-id="d88d7-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="d88d7-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="339a5-109">要件</span><span class="sxs-lookup"><span data-stu-id="339a5-109">Requirements</span></span>  
- <span data-ttu-id="339a5-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="339a5-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d88d7-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="d88d7-109">Requirements</span></span>  
+ <span data-ttu-id="d88d7-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="d88d7-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="339a5-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="339a5-111">See Also</span></span>  
- [<span data-ttu-id="339a5-112">ISymUnmanagedScope インターフェイス</span><span class="sxs-lookup"><span data-stu-id="339a5-112">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+## <a name="see-also"></a><span data-ttu-id="d88d7-111">参照</span><span class="sxs-lookup"><span data-stu-id="d88d7-111">See Also</span></span>  
+ [<span data-ttu-id="d88d7-112">ISymUnmanagedScope インターフェイス</span><span class="sxs-lookup"><span data-stu-id="d88d7-112">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)

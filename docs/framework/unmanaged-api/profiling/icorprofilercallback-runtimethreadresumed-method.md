@@ -21,35 +21,36 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b460f87ead93c5f375c758a5547c0ae0be2b5691
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 94d7e46140b36d6fcce788d70cc856a6776e9f24
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilercallbackruntimethreadresumed-method"></a><span data-ttu-id="82a86-102">ICorProfilerCallback::RuntimeThreadResumed メソッド</span><span class="sxs-lookup"><span data-stu-id="82a86-102">ICorProfilerCallback::RuntimeThreadResumed Method</span></span>
-<span data-ttu-id="82a86-103">指定したスレッドが中断された後に再開されたことをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="82a86-103">Notifies the profiler that the specified thread has resumed after being suspended.</span></span>  
+# <a name="icorprofilercallbackruntimethreadresumed-method"></a><span data-ttu-id="fd8a3-102">ICorProfilerCallback::RuntimeThreadResumed メソッド</span><span class="sxs-lookup"><span data-stu-id="fd8a3-102">ICorProfilerCallback::RuntimeThreadResumed Method</span></span>
+<span data-ttu-id="fd8a3-103">指定したスレッドが中断された後に再開されたことをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="fd8a3-103">Notifies the profiler that the specified thread has resumed after being suspended.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="82a86-104">構文</span><span class="sxs-lookup"><span data-stu-id="82a86-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fd8a3-104">構文</span><span class="sxs-lookup"><span data-stu-id="fd8a3-104">Syntax</span></span>  
   
 ```  
 HRESULT RuntimeThreadResumed(  
     [in] ThreadID threadId);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="82a86-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="82a86-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="fd8a3-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="fd8a3-105">Parameters</span></span>  
  `threadId`  
- <span data-ttu-id="82a86-106">[in]再開されているスレッドの ID です。</span><span class="sxs-lookup"><span data-stu-id="82a86-106">[in] The ID of the thread that has been resumed.</span></span>  
+ <span data-ttu-id="fd8a3-106">[in]再開されているスレッドの ID です。</span><span class="sxs-lookup"><span data-stu-id="fd8a3-106">[in] The ID of the thread that has been resumed.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="82a86-107">要件</span><span class="sxs-lookup"><span data-stu-id="82a86-107">Requirements</span></span>  
- <span data-ttu-id="82a86-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="82a86-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fd8a3-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="fd8a3-107">Requirements</span></span>  
+ <span data-ttu-id="fd8a3-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="fd8a3-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="82a86-109">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="82a86-109">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="fd8a3-109">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="fd8a3-109">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="82a86-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="82a86-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="fd8a3-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fd8a3-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="82a86-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="82a86-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="fd8a3-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fd8a3-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="82a86-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="82a86-112">See Also</span></span>  
- [<span data-ttu-id="82a86-113">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="82a86-113">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [<span data-ttu-id="82a86-114">RuntimeThreadSuspended メソッド</span><span class="sxs-lookup"><span data-stu-id="82a86-114">RuntimeThreadSuspended Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadsuspended-method.md)
+## <a name="see-also"></a><span data-ttu-id="fd8a3-112">参照</span><span class="sxs-lookup"><span data-stu-id="fd8a3-112">See Also</span></span>  
+ [<span data-ttu-id="fd8a3-113">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="fd8a3-113">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
+ [<span data-ttu-id="fd8a3-114">RuntimeThreadSuspended メソッド</span><span class="sxs-lookup"><span data-stu-id="fd8a3-114">RuntimeThreadSuspended Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadsuspended-method.md)

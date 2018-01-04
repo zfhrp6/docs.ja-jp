@@ -21,16 +21,17 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 415b1dc67bd3ae3638edd61558cc9e13ebf03fd8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b1e6ef9443b99b3e6b36154558ce226d421dbc0a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="imetadataimportgetcustomattributeprops-method"></a><span data-ttu-id="c2a1a-102">IMetaDataImport::GetCustomAttributeProps メソッド</span><span class="sxs-lookup"><span data-stu-id="c2a1a-102">IMetaDataImport::GetCustomAttributeProps Method</span></span>
-<span data-ttu-id="c2a1a-103">指定したメタデータ トークンのカスタム属性の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-103">Gets the value of the custom attribute, given its metadata token.</span></span>  
+# <a name="imetadataimportgetcustomattributeprops-method"></a><span data-ttu-id="c3b5c-102">IMetaDataImport::GetCustomAttributeProps メソッド</span><span class="sxs-lookup"><span data-stu-id="c3b5c-102">IMetaDataImport::GetCustomAttributeProps Method</span></span>
+<span data-ttu-id="c3b5c-103">指定したメタデータ トークンのカスタム属性の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-103">Gets the value of the custom attribute, given its metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c2a1a-104">構文</span><span class="sxs-lookup"><span data-stu-id="c2a1a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c3b5c-104">構文</span><span class="sxs-lookup"><span data-stu-id="c3b5c-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCustomAttributeProps (  
@@ -42,34 +43,34 @@ HRESULT GetCustomAttributeProps (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="c2a1a-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c2a1a-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="c3b5c-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c3b5c-105">Parameters</span></span>  
  `cv`  
- <span data-ttu-id="c2a1a-106">[in] 取得するカスタム属性を表すメタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-106">[in] A metadata token that represents the custom attribute to be retrieved.</span></span>  
+ <span data-ttu-id="c3b5c-106">[in] 取得するカスタム属性を表すメタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-106">[in] A metadata token that represents the custom attribute to be retrieved.</span></span>  
   
  `ptkObj`  
- <span data-ttu-id="c2a1a-107">[out](省略可能) カスタム属性が変更されるオブジェクトを表すメタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-107">[out, optional] A metadata token representing the object that the custom attribute modifies.</span></span> <span data-ttu-id="c2a1a-108">この値には、`mdCustomAttribute` を除く任意の種類のトークンを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-108">This value can be any type of metadata token except `mdCustomAttribute`.</span></span>  
+ <span data-ttu-id="c3b5c-107">[out](省略可能) カスタム属性が変更されるオブジェクトを表すメタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-107">[out, optional] A metadata token representing the object that the custom attribute modifies.</span></span> <span data-ttu-id="c3b5c-108">この値には、`mdCustomAttribute` を除く任意の種類のトークンを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-108">This value can be any type of metadata token except `mdCustomAttribute`.</span></span>  
   
  `ptkType`  
- <span data-ttu-id="c2a1a-109">[out](省略可能) 返されるカスタム属性の <xref:System.Type> を表す `mdMethodDef` または `mdMemberRef` メタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-109">[out, optional] An `mdMethodDef` or `mdMemberRef` metadata token representing the <xref:System.Type> of the returned custom attribute.</span></span>  
+ <span data-ttu-id="c3b5c-109">[out](省略可能) 返されるカスタム属性の <xref:System.Type> を表す `mdMethodDef` または `mdMemberRef` メタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-109">[out, optional] An `mdMethodDef` or `mdMemberRef` metadata token representing the <xref:System.Type> of the returned custom attribute.</span></span>  
   
  `ppBlob`  
- <span data-ttu-id="c2a1a-110">[out](省略可能) カスタム属性の値であるデータの配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-110">[out, optional] A pointer to an array of data that is the value of the custom attribute.</span></span>  
+ <span data-ttu-id="c3b5c-110">[out](省略可能) カスタム属性の値であるデータの配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-110">[out, optional] A pointer to an array of data that is the value of the custom attribute.</span></span>  
   
  `pcbSize`  
- <span data-ttu-id="c2a1a-111">[out](省略可能) *`ppBlob` に返されたデータのサイズ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-111">[out, optional] The size in bytes of the data returned in *`ppBlob`.</span></span>  
+ <span data-ttu-id="c3b5c-111">[out](省略可能) *`ppBlob` に返されたデータのサイズ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-111">[out, optional] The size in bytes of the data returned in *`ppBlob`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c2a1a-112">コメント</span><span class="sxs-lookup"><span data-stu-id="c2a1a-112">Remarks</span></span>  
- <span data-ttu-id="c2a1a-113">カスタム属性はデータの配列として格納され、その形式はメタデータ エンジンによって解釈されます。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-113">A custom attribute is stored as an array of data, the format which is understood by the metadata engine.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c3b5c-112">コメント</span><span class="sxs-lookup"><span data-stu-id="c3b5c-112">Remarks</span></span>  
+ <span data-ttu-id="c3b5c-113">カスタム属性はデータの配列として格納され、その形式はメタデータ エンジンによって解釈されます。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-113">A custom attribute is stored as an array of data, the format which is understood by the metadata engine.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c2a1a-114">要件</span><span class="sxs-lookup"><span data-stu-id="c2a1a-114">Requirements</span></span>  
- <span data-ttu-id="c2a1a-115">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c3b5c-114">必要条件</span><span class="sxs-lookup"><span data-stu-id="c3b5c-114">Requirements</span></span>  
+ <span data-ttu-id="c3b5c-115">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c2a1a-116">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c2a1a-116">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="c3b5c-116">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c3b5c-116">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="c2a1a-117">**ライブラリ:** MsCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="c2a1a-117">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="c3b5c-117">**ライブラリ:** MsCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="c3b5c-117">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="c2a1a-118">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c2a1a-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c3b5c-118">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c3b5c-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c2a1a-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="c2a1a-119">See Also</span></span>  
- [<span data-ttu-id="c2a1a-120">IMetaDataImport インターフェイス</span><span class="sxs-lookup"><span data-stu-id="c2a1a-120">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [<span data-ttu-id="c2a1a-121">IMetaDataImport2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="c2a1a-121">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="c3b5c-119">参照</span><span class="sxs-lookup"><span data-stu-id="c3b5c-119">See Also</span></span>  
+ [<span data-ttu-id="c3b5c-120">IMetaDataImport インターフェイス</span><span class="sxs-lookup"><span data-stu-id="c3b5c-120">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
+ [<span data-ttu-id="c3b5c-121">IMetaDataImport2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="c3b5c-121">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

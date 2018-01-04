@@ -19,16 +19,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d64064c29d2a03578305f71a37e759907814727e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4125a76ae50a293e35e326f775500c06120420d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="couninitializeee-function"></a><span data-ttu-id="30bc1-102">CoUninitializeEE 関数</span><span class="sxs-lookup"><span data-stu-id="30bc1-102">CoUninitializeEE Function</span></span>
-<span data-ttu-id="30bc1-103">`CoUninitializeEE`廃止されており機能は備えていません。</span><span class="sxs-lookup"><span data-stu-id="30bc1-103">`CoUninitializeEE` is obsolete and provides no functionality.</span></span>  
+# <a name="couninitializeee-function"></a><span data-ttu-id="d4be5-102">CoUninitializeEE 関数</span><span class="sxs-lookup"><span data-stu-id="d4be5-102">CoUninitializeEE Function</span></span>
+<span data-ttu-id="d4be5-103">`CoUninitializeEE`廃止されており機能は備えていません。</span><span class="sxs-lookup"><span data-stu-id="d4be5-103">`CoUninitializeEE` is obsolete and provides no functionality.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="30bc1-104">構文</span><span class="sxs-lookup"><span data-stu-id="30bc1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d4be5-104">構文</span><span class="sxs-lookup"><span data-stu-id="d4be5-104">Syntax</span></span>  
   
 ```  
 void CoUninitializeEE (  
@@ -36,9 +37,9 @@ void CoUninitializeEE (
 );  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="30bc1-105">コメント</span><span class="sxs-lookup"><span data-stu-id="30bc1-105">Remarks</span></span>  
- <span data-ttu-id="30bc1-106">共通言語ランタイムの実行エンジンは、プロセスからアンロードすることはできません。</span><span class="sxs-lookup"><span data-stu-id="30bc1-106">The common language runtime execution engine cannot be unloaded from a process.</span></span> <span data-ttu-id="30bc1-107">実行エンジンの呼び出しをシャット ダウン[CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md)です。</span><span class="sxs-lookup"><span data-stu-id="30bc1-107">To shut down the execution engine call [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d4be5-105">コメント</span><span class="sxs-lookup"><span data-stu-id="d4be5-105">Remarks</span></span>  
+ <span data-ttu-id="d4be5-106">共通言語ランタイムの実行エンジンは、プロセスからアンロードすることはできません。</span><span class="sxs-lookup"><span data-stu-id="d4be5-106">The common language runtime execution engine cannot be unloaded from a process.</span></span> <span data-ttu-id="d4be5-107">実行エンジンの呼び出しをシャット ダウン[CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md)です。</span><span class="sxs-lookup"><span data-stu-id="d4be5-107">To shut down the execution engine call [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="30bc1-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="30bc1-108">See Also</span></span>  
- [<span data-ttu-id="30bc1-109">CoInitializeEE 関数</span><span class="sxs-lookup"><span data-stu-id="30bc1-109">CoInitializeEE Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md)  
- [<span data-ttu-id="30bc1-110">メタデータ グローバル静的関数</span><span class="sxs-lookup"><span data-stu-id="30bc1-110">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+## <a name="see-also"></a><span data-ttu-id="d4be5-108">参照</span><span class="sxs-lookup"><span data-stu-id="d4be5-108">See Also</span></span>  
+ [<span data-ttu-id="d4be5-109">CoInitializeEE 関数</span><span class="sxs-lookup"><span data-stu-id="d4be5-109">CoInitializeEE Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md)  
+ [<span data-ttu-id="d4be5-110">メタデータ グローバル静的関数</span><span class="sxs-lookup"><span data-stu-id="d4be5-110">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

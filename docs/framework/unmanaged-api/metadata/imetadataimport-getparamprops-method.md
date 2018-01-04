@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3f36282df52b316bfa32c50c3fa9f55f829aa04e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f393ccd6296cb06498b30a29c7ea55f088e0a393
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="imetadataimportgetparamprops-method"></a><span data-ttu-id="7100d-102">IMetaDataImport::GetParamProps メソッド</span><span class="sxs-lookup"><span data-stu-id="7100d-102">IMetaDataImport::GetParamProps Method</span></span>
-<span data-ttu-id="7100d-103">指定した ParamDef トークンによって参照されるパラメーターのメタデータ値を取得します。</span><span class="sxs-lookup"><span data-stu-id="7100d-103">Gets metadata values for the parameter referenced by the specified ParamDef token.</span></span>  
+# <a name="imetadataimportgetparamprops-method"></a><span data-ttu-id="8b92d-102">IMetaDataImport::GetParamProps メソッド</span><span class="sxs-lookup"><span data-stu-id="8b92d-102">IMetaDataImport::GetParamProps Method</span></span>
+<span data-ttu-id="8b92d-103">指定した ParamDef トークンによって参照されるパラメーターのメタデータ値を取得します。</span><span class="sxs-lookup"><span data-stu-id="8b92d-103">Gets metadata values for the parameter referenced by the specified ParamDef token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7100d-104">構文</span><span class="sxs-lookup"><span data-stu-id="7100d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8b92d-104">構文</span><span class="sxs-lookup"><span data-stu-id="8b92d-104">Syntax</span></span>  
   
 ```  
 HRESULT GetParamProps (  
@@ -47,46 +48,46 @@ HRESULT GetParamProps (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="7100d-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="7100d-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="8b92d-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8b92d-105">Parameters</span></span>  
  `tk`  
- <span data-ttu-id="7100d-106">[in]メタデータを返すパラメーターを表す ParamDef トークンです。</span><span class="sxs-lookup"><span data-stu-id="7100d-106">[in] A ParamDef token that represents the parameter to return metadata for.</span></span>  
+ <span data-ttu-id="8b92d-106">[in]メタデータを返すパラメーターを表す ParamDef トークンです。</span><span class="sxs-lookup"><span data-stu-id="8b92d-106">[in] A ParamDef token that represents the parameter to return metadata for.</span></span>  
   
  `pmd`  
- <span data-ttu-id="7100d-107">[out]パラメーターを受け取るメソッドを表す MethodDef トークンへのポインター。</span><span class="sxs-lookup"><span data-stu-id="7100d-107">[out] A pointer to a MethodDef token representing the method that takes the parameter.</span></span>  
+ <span data-ttu-id="8b92d-107">[out]パラメーターを受け取るメソッドを表す MethodDef トークンへのポインター。</span><span class="sxs-lookup"><span data-stu-id="8b92d-107">[out] A pointer to a MethodDef token representing the method that takes the parameter.</span></span>  
   
  `pulSequence`  
- <span data-ttu-id="7100d-108">[out]メソッドの引数リストで、パラメーターの序数の位置。</span><span class="sxs-lookup"><span data-stu-id="7100d-108">[out] The ordinal position of the parameter in the method argument list.</span></span>  
+ <span data-ttu-id="8b92d-108">[out]メソッドの引数リストで、パラメーターの序数の位置。</span><span class="sxs-lookup"><span data-stu-id="8b92d-108">[out] The ordinal position of the parameter in the method argument list.</span></span>  
   
  `szName`  
- <span data-ttu-id="7100d-109">[out]パラメーターの名前を保持するバッファー。</span><span class="sxs-lookup"><span data-stu-id="7100d-109">[out] A buffer to hold the name of the parameter.</span></span>  
+ <span data-ttu-id="8b92d-109">[out]パラメーターの名前を保持するバッファー。</span><span class="sxs-lookup"><span data-stu-id="8b92d-109">[out] A buffer to hold the name of the parameter.</span></span>  
   
  `cchName`  
- <span data-ttu-id="7100d-110">[in]要求されたサイズのワイド文字単位`szName`です。</span><span class="sxs-lookup"><span data-stu-id="7100d-110">[in] The requested size in wide characters of `szName`.</span></span>  
+ <span data-ttu-id="8b92d-110">[in]要求されたサイズのワイド文字単位`szName`です。</span><span class="sxs-lookup"><span data-stu-id="8b92d-110">[in] The requested size in wide characters of `szName`.</span></span>  
   
  `pchName`  
- <span data-ttu-id="7100d-111">[out]ワイド文字で返されるサイズ`szName`です。</span><span class="sxs-lookup"><span data-stu-id="7100d-111">[out] The returned size in wide characters of `szName`.</span></span>  
+ <span data-ttu-id="8b92d-111">[out]ワイド文字で返されるサイズ`szName`です。</span><span class="sxs-lookup"><span data-stu-id="8b92d-111">[out] The returned size in wide characters of `szName`.</span></span>  
   
  `pdwAttr`  
- <span data-ttu-id="7100d-112">[out]パラメーターに関連付けられている任意の属性フラグへのポインター。</span><span class="sxs-lookup"><span data-stu-id="7100d-112">[out] A pointer to any attribute flags associated with the parameter.</span></span>  
+ <span data-ttu-id="8b92d-112">[out]パラメーターに関連付けられている任意の属性フラグへのポインター。</span><span class="sxs-lookup"><span data-stu-id="8b92d-112">[out] A pointer to any attribute flags associated with the parameter.</span></span>  
   
  `pdwCPlusTypeFlag`  
- <span data-ttu-id="7100d-113">[out]パラメーターを指定するフラグへのポインター、<xref:System.ValueType>です。</span><span class="sxs-lookup"><span data-stu-id="7100d-113">[out] A pointer to a flag specifying that the parameter is a <xref:System.ValueType>.</span></span>  
+ <span data-ttu-id="8b92d-113">[out]パラメーターを指定するフラグへのポインター、<xref:System.ValueType>です。</span><span class="sxs-lookup"><span data-stu-id="8b92d-113">[out] A pointer to a flag specifying that the parameter is a <xref:System.ValueType>.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="7100d-114">[out]パラメーターによって返される定数文字列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="7100d-114">[out] A pointer to a constant string returned by the parameter.</span></span>  
+ <span data-ttu-id="8b92d-114">[out]パラメーターによって返される定数文字列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="8b92d-114">[out] A pointer to a constant string returned by the parameter.</span></span>  
   
  `pcchValue`  
- <span data-ttu-id="7100d-115">[out]サイズ`ppValue`ワイド文字、または場合は 0 で`ppValue`文字列を保持しません。</span><span class="sxs-lookup"><span data-stu-id="7100d-115">[out] The size of `ppValue` in wide characters, or zero if `ppValue` does not hold a string.</span></span>  
+ <span data-ttu-id="8b92d-115">[out]サイズ`ppValue`ワイド文字、または場合は 0 で`ppValue`文字列を保持しません。</span><span class="sxs-lookup"><span data-stu-id="8b92d-115">[out] The size of `ppValue` in wide characters, or zero if `ppValue` does not hold a string.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7100d-116">要件</span><span class="sxs-lookup"><span data-stu-id="7100d-116">Requirements</span></span>  
- <span data-ttu-id="7100d-117">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="7100d-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="8b92d-116">必要条件</span><span class="sxs-lookup"><span data-stu-id="8b92d-116">Requirements</span></span>  
+ <span data-ttu-id="8b92d-117">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="8b92d-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7100d-118">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="7100d-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="8b92d-118">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="8b92d-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="7100d-119">**ライブラリ:** MsCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="7100d-119">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="8b92d-119">**ライブラリ:** MsCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="8b92d-119">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="7100d-120">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7100d-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="8b92d-120">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8b92d-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7100d-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="7100d-121">See Also</span></span>  
- [<span data-ttu-id="7100d-122">IMetaDataImport インターフェイス</span><span class="sxs-lookup"><span data-stu-id="7100d-122">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [<span data-ttu-id="7100d-123">IMetaDataImport2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="7100d-123">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="8b92d-121">参照</span><span class="sxs-lookup"><span data-stu-id="8b92d-121">See Also</span></span>  
+ [<span data-ttu-id="8b92d-122">IMetaDataImport インターフェイス</span><span class="sxs-lookup"><span data-stu-id="8b92d-122">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
+ [<span data-ttu-id="8b92d-123">IMetaDataImport2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="8b92d-123">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

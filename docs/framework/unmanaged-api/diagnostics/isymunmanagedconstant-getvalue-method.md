@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: df55345b34340349c4c20213f75591e9586153cc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 15ae3e9f2e680c7e85d3b8daa0d6010773797258
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedconstantgetvalue-method"></a><span data-ttu-id="8a93c-102">ISymUnmanagedConstant::GetValue メソッド</span><span class="sxs-lookup"><span data-stu-id="8a93c-102">ISymUnmanagedConstant::GetValue Method</span></span>
-<span data-ttu-id="8a93c-103">定数の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="8a93c-103">Gets the value of the constant.</span></span>  
+# <a name="isymunmanagedconstantgetvalue-method"></a><span data-ttu-id="e7a9e-102">ISymUnmanagedConstant::GetValue メソッド</span><span class="sxs-lookup"><span data-stu-id="e7a9e-102">ISymUnmanagedConstant::GetValue Method</span></span>
+<span data-ttu-id="e7a9e-103">定数の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="e7a9e-103">Gets the value of the constant.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8a93c-104">構文</span><span class="sxs-lookup"><span data-stu-id="8a93c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e7a9e-104">構文</span><span class="sxs-lookup"><span data-stu-id="e7a9e-104">Syntax</span></span>  
   
 ```  
 HRESULT GetValue(  
@@ -38,17 +39,17 @@ HRESULT GetValue(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="8a93c-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8a93c-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="e7a9e-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e7a9e-105">Parameters</span></span>  
  `pValue`  
- <span data-ttu-id="8a93c-106">[out]値を受け取る変数へのポインター。</span><span class="sxs-lookup"><span data-stu-id="8a93c-106">[out] A pointer to a variable that receives the value.</span></span>  
+ <span data-ttu-id="e7a9e-106">[out]値を受け取る変数へのポインター。</span><span class="sxs-lookup"><span data-stu-id="e7a9e-106">[out] A pointer to a variable that receives the value.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="8a93c-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="8a93c-107">Return Value</span></span>  
- <span data-ttu-id="8a93c-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="8a93c-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e7a9e-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="e7a9e-107">Return Value</span></span>  
+ <span data-ttu-id="e7a9e-108">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="e7a9e-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8a93c-109">要件</span><span class="sxs-lookup"><span data-stu-id="8a93c-109">Requirements</span></span>  
- <span data-ttu-id="8a93c-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="8a93c-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e7a9e-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="e7a9e-109">Requirements</span></span>  
+ <span data-ttu-id="e7a9e-110">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="e7a9e-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8a93c-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="8a93c-111">See Also</span></span>  
- [<span data-ttu-id="8a93c-112">ISymUnmanagedConstant インターフェイス</span><span class="sxs-lookup"><span data-stu-id="8a93c-112">ISymUnmanagedConstant Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)  
- [<span data-ttu-id="8a93c-113">GetName メソッド</span><span class="sxs-lookup"><span data-stu-id="8a93c-113">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)  
- [<span data-ttu-id="8a93c-114">GetSignature メソッド</span><span class="sxs-lookup"><span data-stu-id="8a93c-114">GetSignature Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)
+## <a name="see-also"></a><span data-ttu-id="e7a9e-111">参照</span><span class="sxs-lookup"><span data-stu-id="e7a9e-111">See Also</span></span>  
+ [<span data-ttu-id="e7a9e-112">ISymUnmanagedConstant インターフェイス</span><span class="sxs-lookup"><span data-stu-id="e7a9e-112">ISymUnmanagedConstant Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)  
+ [<span data-ttu-id="e7a9e-113">GetName メソッド</span><span class="sxs-lookup"><span data-stu-id="e7a9e-113">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)  
+ [<span data-ttu-id="e7a9e-114">GetSignature メソッド</span><span class="sxs-lookup"><span data-stu-id="e7a9e-114">GetSignature Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)

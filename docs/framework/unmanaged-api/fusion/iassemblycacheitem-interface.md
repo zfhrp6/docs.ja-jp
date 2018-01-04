@@ -19,31 +19,32 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e61b8dd90bb9311c1314a4cb4d68d75e0cd511c5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 323b501efbdf309d5e0d595137407dd8289de17a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="iassemblycacheitem-interface"></a><span data-ttu-id="f0dc6-102">IAssemblyCacheItem インターフェイス</span><span class="sxs-lookup"><span data-stu-id="f0dc6-102">IAssemblyCacheItem Interface</span></span>
-<span data-ttu-id="f0dc6-103">グローバル アセンブリ キャッシュ内の 1 つのアセンブリを表します。</span><span class="sxs-lookup"><span data-stu-id="f0dc6-103">Represents a single assembly in the global assembly cache.</span></span>  
+# <a name="iassemblycacheitem-interface"></a><span data-ttu-id="71879-102">IAssemblyCacheItem インターフェイス</span><span class="sxs-lookup"><span data-stu-id="71879-102">IAssemblyCacheItem Interface</span></span>
+<span data-ttu-id="71879-103">グローバル アセンブリ キャッシュ内の 1 つのアセンブリを表します。</span><span class="sxs-lookup"><span data-stu-id="71879-103">Represents a single assembly in the global assembly cache.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="f0dc6-104">メソッド</span><span class="sxs-lookup"><span data-stu-id="f0dc6-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="71879-104">メソッド</span><span class="sxs-lookup"><span data-stu-id="71879-104">Methods</span></span>  
   
-|<span data-ttu-id="f0dc6-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="f0dc6-105">Method</span></span>|<span data-ttu-id="f0dc6-106">説明</span><span class="sxs-lookup"><span data-stu-id="f0dc6-106">Description</span></span>|  
+|<span data-ttu-id="71879-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="71879-105">Method</span></span>|<span data-ttu-id="71879-106">説明</span><span class="sxs-lookup"><span data-stu-id="71879-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="f0dc6-107">AbortItem メソッド</span><span class="sxs-lookup"><span data-stu-id="f0dc6-107">AbortItem Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-abortitem-method.md)|<span data-ttu-id="f0dc6-108">リリースされる前に、クリーンアップ操作を実行する、グローバル アセンブリ キャッシュにアセンブリを使用します。</span><span class="sxs-lookup"><span data-stu-id="f0dc6-108">Allows the assembly in the global assembly cache to perform cleanup operations before it is released.</span></span>|  
-|[<span data-ttu-id="f0dc6-109">Commit メソッド</span><span class="sxs-lookup"><span data-stu-id="f0dc6-109">Commit Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-commit-method.md)|<span data-ttu-id="f0dc6-110">メモリにキャッシュされたアセンブリ参照をコミットします。</span><span class="sxs-lookup"><span data-stu-id="f0dc6-110">Commits the cached assembly reference to memory.</span></span>|  
-|[<span data-ttu-id="f0dc6-111">CreateStream メソッド</span><span class="sxs-lookup"><span data-stu-id="f0dc6-111">CreateStream Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-createstream-method.md)|<span data-ttu-id="f0dc6-112">指定した名前と形式を使用するストリームを作成します。</span><span class="sxs-lookup"><span data-stu-id="f0dc6-112">Creates a stream with the specified name and format.</span></span>|  
+|[<span data-ttu-id="71879-107">AbortItem メソッド</span><span class="sxs-lookup"><span data-stu-id="71879-107">AbortItem Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-abortitem-method.md)|<span data-ttu-id="71879-108">リリースされる前に、クリーンアップ操作を実行する、グローバル アセンブリ キャッシュにアセンブリを使用します。</span><span class="sxs-lookup"><span data-stu-id="71879-108">Allows the assembly in the global assembly cache to perform cleanup operations before it is released.</span></span>|  
+|[<span data-ttu-id="71879-109">Commit メソッド</span><span class="sxs-lookup"><span data-stu-id="71879-109">Commit Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-commit-method.md)|<span data-ttu-id="71879-110">メモリにキャッシュされたアセンブリ参照をコミットします。</span><span class="sxs-lookup"><span data-stu-id="71879-110">Commits the cached assembly reference to memory.</span></span>|  
+|[<span data-ttu-id="71879-111">CreateStream メソッド</span><span class="sxs-lookup"><span data-stu-id="71879-111">CreateStream Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-createstream-method.md)|<span data-ttu-id="71879-112">指定した名前と形式を使用するストリームを作成します。</span><span class="sxs-lookup"><span data-stu-id="71879-112">Creates a stream with the specified name and format.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="f0dc6-113">要件</span><span class="sxs-lookup"><span data-stu-id="f0dc6-113">Requirements</span></span>  
- <span data-ttu-id="f0dc6-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="f0dc6-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="71879-113">必要条件</span><span class="sxs-lookup"><span data-stu-id="71879-113">Requirements</span></span>  
+ <span data-ttu-id="71879-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="71879-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f0dc6-115">**ヘッダー:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="f0dc6-115">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="71879-115">**ヘッダー:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="71879-115">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="f0dc6-116">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f0dc6-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="71879-116">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="71879-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f0dc6-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="f0dc6-117">See Also</span></span>  
- [<span data-ttu-id="f0dc6-118">Fusion インターフェイス</span><span class="sxs-lookup"><span data-stu-id="f0dc6-118">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [<span data-ttu-id="f0dc6-119">グローバル アセンブリ キャッシュ</span><span class="sxs-lookup"><span data-stu-id="f0dc6-119">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)  
- [<span data-ttu-id="f0dc6-120">IAssemblyCache インターフェイス</span><span class="sxs-lookup"><span data-stu-id="f0dc6-120">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+## <a name="see-also"></a><span data-ttu-id="71879-117">参照</span><span class="sxs-lookup"><span data-stu-id="71879-117">See Also</span></span>  
+ [<span data-ttu-id="71879-118">Fusion インターフェイス</span><span class="sxs-lookup"><span data-stu-id="71879-118">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
+ [<span data-ttu-id="71879-119">グローバル アセンブリ キャッシュ</span><span class="sxs-lookup"><span data-stu-id="71879-119">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)  
+ [<span data-ttu-id="71879-120">IAssemblyCache インターフェイス</span><span class="sxs-lookup"><span data-stu-id="71879-120">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)

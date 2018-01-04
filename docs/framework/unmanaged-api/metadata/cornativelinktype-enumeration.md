@@ -19,16 +19,17 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b8da034590bc5e0b2cbd9456d9d5b4ef4970f259
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f19a4366958249881c1f4c33919f239f33c21b21
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="cornativelinktype-enumeration"></a><span data-ttu-id="9ecc2-102">CorNativeLinkType 列挙型</span><span class="sxs-lookup"><span data-stu-id="9ecc2-102">CorNativeLinkType Enumeration</span></span>
-<span data-ttu-id="9ecc2-103">ネイティブ コード内のリンクの種類を示す値を提供します。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-103">Provides values that indicate the type linked in native code.</span></span>  
+# <a name="cornativelinktype-enumeration"></a><span data-ttu-id="dfdf3-102">CorNativeLinkType 列挙型</span><span class="sxs-lookup"><span data-stu-id="dfdf3-102">CorNativeLinkType Enumeration</span></span>
+<span data-ttu-id="dfdf3-103">ネイティブ コード内のリンクの種類を示す値を提供します。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-103">Provides values that indicate the type linked in native code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9ecc2-104">構文</span><span class="sxs-lookup"><span data-stu-id="9ecc2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dfdf3-104">構文</span><span class="sxs-lookup"><span data-stu-id="dfdf3-104">Syntax</span></span>  
   
 ```  
 typedef enum   
@@ -42,25 +43,25 @@ typedef enum
 } CorNativeLinkType;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="9ecc2-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="9ecc2-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="dfdf3-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="dfdf3-105">Members</span></span>  
   
-|<span data-ttu-id="9ecc2-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="9ecc2-106">Member</span></span>|<span data-ttu-id="9ecc2-107">説明</span><span class="sxs-lookup"><span data-stu-id="9ecc2-107">Description</span></span>|  
+|<span data-ttu-id="dfdf3-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="dfdf3-106">Member</span></span>|<span data-ttu-id="dfdf3-107">説明</span><span class="sxs-lookup"><span data-stu-id="dfdf3-107">Description</span></span>|  
 |------------|-----------------|  
-|`nltNone`|<span data-ttu-id="9ecc2-108">キーワードのいずれも指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-108">Indicates that none of the keywords are specified.</span></span>|  
-|`nltAnsi`|<span data-ttu-id="9ecc2-109">ANSI キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-109">Indicates that an ANSI keyword is specified.</span></span>|  
-|`nltUnicode`|<span data-ttu-id="9ecc2-110">Unicode キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-110">Indicates that a Unicode keyword is specified</span></span>|  
-|`nltAuto`|<span data-ttu-id="9ecc2-111">Auto キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-111">Indicates that an auto keyword is specified.</span></span>|  
-|`nltOle`|<span data-ttu-id="9ecc2-112">OLE キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-112">Indicates that an OLE keyword is specified.</span></span>|  
-|`nltMaxValue`|<span data-ttu-id="9ecc2-113">使用しません。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-113">Not used.</span></span>|  
+|`nltNone`|<span data-ttu-id="dfdf3-108">キーワードのいずれも指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-108">Indicates that none of the keywords are specified.</span></span>|  
+|`nltAnsi`|<span data-ttu-id="dfdf3-109">ANSI キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-109">Indicates that an ANSI keyword is specified.</span></span>|  
+|`nltUnicode`|<span data-ttu-id="dfdf3-110">Unicode キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-110">Indicates that a Unicode keyword is specified</span></span>|  
+|`nltAuto`|<span data-ttu-id="dfdf3-111">Auto キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-111">Indicates that an auto keyword is specified.</span></span>|  
+|`nltOle`|<span data-ttu-id="dfdf3-112">OLE キーワードが指定されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-112">Indicates that an OLE keyword is specified.</span></span>|  
+|`nltMaxValue`|<span data-ttu-id="dfdf3-113">使用しません。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-113">Not used.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="9ecc2-114">要件</span><span class="sxs-lookup"><span data-stu-id="9ecc2-114">Requirements</span></span>  
- <span data-ttu-id="9ecc2-115">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="dfdf3-114">必要条件</span><span class="sxs-lookup"><span data-stu-id="dfdf3-114">Requirements</span></span>  
+ <span data-ttu-id="dfdf3-115">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9ecc2-116">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9ecc2-116">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="dfdf3-116">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="dfdf3-116">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="9ecc2-117">**ライブラリ:** MsCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="9ecc2-117">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="dfdf3-117">**ライブラリ:** MsCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="dfdf3-117">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="9ecc2-118">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9ecc2-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="dfdf3-118">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dfdf3-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9ecc2-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="9ecc2-119">See Also</span></span>  
- [<span data-ttu-id="9ecc2-120">メタデータ列挙体</span><span class="sxs-lookup"><span data-stu-id="9ecc2-120">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="dfdf3-119">参照</span><span class="sxs-lookup"><span data-stu-id="dfdf3-119">See Also</span></span>  
+ [<span data-ttu-id="dfdf3-120">メタデータ列挙型</span><span class="sxs-lookup"><span data-stu-id="dfdf3-120">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

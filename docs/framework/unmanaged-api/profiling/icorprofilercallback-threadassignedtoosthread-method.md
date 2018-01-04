@@ -21,16 +21,17 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c70de2b53fd428361d5404aa406d2b2be67d0914
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 42c23a8190ea611d0333ebd96a31428574191b23
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilercallbackthreadassignedtoosthread-method"></a><span data-ttu-id="2d38e-102">ICorProfilerCallback::ThreadAssignedToOSThread メソッド</span><span class="sxs-lookup"><span data-stu-id="2d38e-102">ICorProfilerCallback::ThreadAssignedToOSThread Method</span></span>
-<span data-ttu-id="2d38e-103">特定のオペレーティング システム スレッドを使用して、マネージ スレッドが実装されていることをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="2d38e-103">Notifies the profiler that a managed thread is being implemented using a particular operating system thread.</span></span>  
+# <a name="icorprofilercallbackthreadassignedtoosthread-method"></a><span data-ttu-id="a06d4-102">ICorProfilerCallback::ThreadAssignedToOSThread メソッド</span><span class="sxs-lookup"><span data-stu-id="a06d4-102">ICorProfilerCallback::ThreadAssignedToOSThread Method</span></span>
+<span data-ttu-id="a06d4-103">特定のオペレーティング システム スレッドを使用して、マネージ スレッドが実装されていることをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="a06d4-103">Notifies the profiler that a managed thread is being implemented using a particular operating system thread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2d38e-104">構文</span><span class="sxs-lookup"><span data-stu-id="2d38e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a06d4-104">構文</span><span class="sxs-lookup"><span data-stu-id="a06d4-104">Syntax</span></span>  
   
 ```  
 HRESULT ThreadAssignedToOSThread(  
@@ -38,24 +39,24 @@ HRESULT ThreadAssignedToOSThread(
     [in] DWORD    osThreadId);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2d38e-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="2d38e-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a06d4-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a06d4-105">Parameters</span></span>  
  `managedThreadId`  
- <span data-ttu-id="2d38e-106">[in]マネージ スレッドの識別子。</span><span class="sxs-lookup"><span data-stu-id="2d38e-106">[in] The identifier of the managed thread.</span></span>  
+ <span data-ttu-id="a06d4-106">[in]マネージ スレッドの識別子。</span><span class="sxs-lookup"><span data-stu-id="a06d4-106">[in] The identifier of the managed thread.</span></span>  
   
  `osThreadId`  
- <span data-ttu-id="2d38e-107">[in]オペレーティング システム スレッドの識別子。</span><span class="sxs-lookup"><span data-stu-id="2d38e-107">[in] The identifier of the operating system thread.</span></span>  
+ <span data-ttu-id="a06d4-107">[in]オペレーティング システム スレッドの識別子。</span><span class="sxs-lookup"><span data-stu-id="a06d4-107">[in] The identifier of the operating system thread.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2d38e-108">コメント</span><span class="sxs-lookup"><span data-stu-id="2d38e-108">Remarks</span></span>  
- <span data-ttu-id="2d38e-109">`ThreadAssignedToOSThread`コールバック存在できるように、プロファイラーはマネージ スレッドをオペレーティング システム スレッドのファイバー間で正確なマッピングを維持することができます。</span><span class="sxs-lookup"><span data-stu-id="2d38e-109">The `ThreadAssignedToOSThread` callback exists so that the profiler can maintain an accurate mapping across fibers of operating system threads to managed threads.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a06d4-108">コメント</span><span class="sxs-lookup"><span data-stu-id="a06d4-108">Remarks</span></span>  
+ <span data-ttu-id="a06d4-109">`ThreadAssignedToOSThread`コールバック存在できるように、プロファイラーはマネージ スレッドをオペレーティング システム スレッドのファイバー間で正確なマッピングを維持することができます。</span><span class="sxs-lookup"><span data-stu-id="a06d4-109">The `ThreadAssignedToOSThread` callback exists so that the profiler can maintain an accurate mapping across fibers of operating system threads to managed threads.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2d38e-110">要件</span><span class="sxs-lookup"><span data-stu-id="2d38e-110">Requirements</span></span>  
- <span data-ttu-id="2d38e-111">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="2d38e-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a06d4-110">必要条件</span><span class="sxs-lookup"><span data-stu-id="a06d4-110">Requirements</span></span>  
+ <span data-ttu-id="a06d4-111">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="a06d4-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2d38e-112">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="2d38e-112">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="a06d4-112">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="a06d4-112">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="2d38e-113">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2d38e-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a06d4-113">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a06d4-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="2d38e-114">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2d38e-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="a06d4-114">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a06d4-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2d38e-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="2d38e-115">See Also</span></span>  
- [<span data-ttu-id="2d38e-116">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="2d38e-116">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="a06d4-115">参照</span><span class="sxs-lookup"><span data-stu-id="a06d4-115">See Also</span></span>  
+ [<span data-ttu-id="a06d4-116">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a06d4-116">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
