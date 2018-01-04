@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08c722ad9256f16ead8947e793e64cef9763c512
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 94ff7c693824e721b17c79b921f4380dba7d04e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="scenario"></a>シナリオ
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] シナリオを示すサンプルが含まれています。  
@@ -26,7 +27,7 @@ ms.lasthandoff: 12/02/2017
  [データ バインディングのシナリオ](../../../../docs/framework/wcf/samples/data-binding-scenarios.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のデータ バインドのシナリオを示します。  
   
- [探索のセキュリティ サンプル](../../../../docs/framework/wcf/samples/discovery-security-sample.md)  
+ [探索のセキュリティのサンプル](../../../../docs/framework/wcf/samples/discovery-security-sample.md)  
  コンパクトな署名形式 (WS-Discovery 仕様のセクション 8.2 を参照) を使用してメッセージ署名の計算と検証を行うカスタム チャネルの実装方法を示します。  
   
  [フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)  

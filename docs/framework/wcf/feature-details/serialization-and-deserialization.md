@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cf83f7c9af667a9efed59ff7a1f86ace6d8821d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a73fa30f1ebae805abd6f3e7e397d005d5b7130d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="serialization-and-deserialization"></a>シリアル化と逆シリアル化
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には新しいシリアル化エンジン、 <xref:System.Runtime.Serialization.DataContractSerializer>が含まれます。 <xref:System.Runtime.Serialization.DataContractSerializer> は、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 ここでは、シリアライザーのしくみについて説明します。  
@@ -213,7 +214,7 @@ ms.lasthandoff: 12/02/2017
 >  段階的なシリアル化を使用すると、スキーマが無効な XML が生成されることがあります。  
   
 ## <a name="deserialization"></a>逆シリアル化  
- 次の情報は <xref:System.Runtime.Serialization.XmlObjectSerializer>を継承するすべてのクラス ( <xref:System.Runtime.Serialization.DataContractSerializer> クラスおよび <xref:System.Runtime.Serialization.NetDataContractSerializer> クラスを含む) に適用されます。  
+ 次の情報は <xref:System.Runtime.Serialization.XmlObjectSerializer> を継承するすべてのクラス (<xref:System.Runtime.Serialization.DataContractSerializer> クラスおよび <xref:System.Runtime.Serialization.NetDataContractSerializer> クラスを含む) に適用されます。  
   
  オブジェクトを逆シリアル化する最も簡単な方法は、 <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> メソッド オーバーロードのいずれかを呼び出すことです。 3 つのオーバーロードがあり、それぞれ <xref:System.Xml.XmlDictionaryReader>、 `XmlReader`、および `Stream`を使用した読み取りに対応しています。 `Stream` オーバーロードは、クォータによって保護されていないテキスト形式の <xref:System.Xml.XmlDictionaryReader> を作成するため、信頼されたデータを読み取る場合にのみ使用します。  
   
@@ -270,7 +271,7 @@ ms.lasthandoff: 12/02/2017
   
  また、 `NetDataContractSerializer` は、オブジェクト グラフの各ノードについて、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型とアセンブリの完全名を出力しません。 この情報を出力するのは、情報が不明確な場合だけです。 つまり、ポリモーフィックである場合に、ルート オブジェクト レベルで出力します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.NetDataContractSerializer>  
  <xref:System.Runtime.Serialization.XmlObjectSerializer>  

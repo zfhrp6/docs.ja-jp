@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1364aa4284bcc858a9164f78e14daecc1a3ad54
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3c50bbc54d56d3fdc7a848af0e77cfbb2c15c9bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queuing-in-wcf"></a>WCF でのキュー
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でキュー通信を使用する方法について説明します。  
@@ -60,7 +61,7 @@ ms.lasthandoff: 12/02/2017
   
 -   `ExactlyOnce`: `true` (既定) に設定した場合、キューに置かれたチャネルによって、メッセージが重複しないようにすることができます (メッセージが配信される場合)。 また、メッセージが失われないようにすることもできます。 メッセージを配信できない場合、またはメッセージを配信する前にメッセージの有効期間 (TTL: Time To Live) が切れた場合、失敗したメッセージが配信エラー理由と共に配信不能キューに記録されます。 `false` に設定した場合、キューに置かれたチャネルにより、メッセージの転送が試行されます。 この場合、必要に応じて配信不能キューを選択できます。  
   
--   `Durable:``true` (既定) に設定した場合、キューに置かれたチャネルによって、MSMQ がメッセージをディスクに永続的に格納することが保証されます。 したがって、MSMQ サービスを停止して再起動した場合、ディスク上のメッセージがターゲット キューに転送されるか、サービスに配信されます。 `false` に設定した場合、メッセージは揮発性ストアに格納され、MSMQ サービスを停止して再起動すると、メッセージは失われます。  
+-   `Durable:` `true` (既定) に設定した場合、キューに置かれたチャネルによって、MSMQ がメッセージをディスクに永続的に格納することが保証されます。 したがって、MSMQ サービスを停止して再起動した場合、ディスク上のメッセージがターゲット キューに転送されるか、サービスに配信されます。 `false` に設定した場合、メッセージは揮発性ストアに格納され、MSMQ サービスを停止して再起動すると、メッセージは失われます。  
   
  `ExactlyOnce` の信頼できる転送を実現するために、MSMQ ではトランザクション キューを使用する必要があります。 また、MSMQ では、トランザクションがトランザクション キューから読み取られる必要があります。 このため、`NetMsmqBinding` を使用する場合、`ExactlyOnce` を `true` に設定したときは、メッセージの送受信にトランザクションが必要なことに注意してください。 同様に、ベスト エフォート保証を使用する場合 (`ExactlyOnce` が `false` の場合など) および揮発性メッセージングを行う場合、MSMQ で非トランザクション キューを使用する必要があります。 このため、`ExactlyOnce` を `false` に設定するか、または Durable を `false` に設定した場合、トランザクションを使用して送受信できません。  
   
@@ -115,9 +116,9 @@ ms.lasthandoff: 12/02/2017
 ### <a name="sample-code"></a>サンプル コード  
  MSMQ を使用する WCF サービスを書き込む方法の手順については、次のトピックを参照してください。  
   
--   [方法: WCF エンドポイントでメッセージを交換して、メッセージ キュー アプリケーション](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+-   [方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
   
--   [方法: Exchange の WCF エンドポイントとメッセージのキュー](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+-   [方法 : WCF エンドポイントを使用してキューに置かれたメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
   
  WCF での MSMQ の使用を示す完全なコード サンプルについては、次のトピックを参照してください。  
   
@@ -127,9 +128,9 @@ ms.lasthandoff: 12/02/2017
   
 -   [配信不能キュー](../../../../docs/framework/wcf/samples/dead-letter-queues.md)  
   
--   [セッションおよびキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
+-   [セッションとキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
   
--   [双方向の通信](../../../../docs/framework/wcf/samples/two-way-communication.md)  
+-   [双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)  
   
 -   [トランザクション バッチ](../../../../docs/framework/wcf/samples/transacted-batching.md)  
   
@@ -137,6 +138,6 @@ ms.lasthandoff: 12/02/2017
   
 -   [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サービス エンドポイントとキューのアドレス指定](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)  
- [キューに置かれたアプリケーションをホストする web](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+ [キューに置かれたアプリケーションの Web ホスト](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

@@ -13,14 +13,15 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3e6543f1faec5d3298c9a2b825b3a016eb5e7d09
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c74f95fba492b677d3b1702d090c7a055bc5f1ff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-in-a-managed-application"></a>マネージ アプリケーションのホスト
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスは、任意の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アプリケーションでホストできます。 自己ホスト型サービスは、展開を要するインフラストラクチャが最も少ないので、最も柔軟なホスト オプションです。 ただし、マネージ アプリケーションは、インターネット インフォメーション サービス (IIS) や Windows サービスなど、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の他のホスト オプションが備えている高度なホスト機能と管理機能を提供しないので、堅牢さに最も乏しいホスト オプションでもあります。  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスは、任意の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アプリケーションでホストできます。 自己ホスト型サービスは、展開を要するインフラストラクチャが最も少ないので、最も柔軟なホスト オプションです。 ただし、マネージ アプリケーションは、インターネット インフォメーション サービス (IIS) や Windows サービスなど、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の他のホスト オプションが備えている高度なホスト機能と管理機能を提供しないので、堅牢さに最も乏しいホスト オプションでもあります。  
   
  自己ホスト型サービスを作成するには、メッセージをリッスンするサービスを開始する <xref:System.ServiceModel.ServiceHost>のインスタンスを作成して開きます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: マネージ アプリケーションで WCF サービスをホスト](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)です。  
   
@@ -34,6 +35,6 @@ ms.lasthandoff: 12/02/2017
 ## <a name="rich-client-applications"></a>リッチ クライアント アプリケーション  
  自己ホストによって可能になるもう 1 つの一般的なシナリオは、リッチ クライアント アプリケーションです。これには、 [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] または Windows フォーム (WinForms) に基づいて作成されたリッチ クライアント アプリケーションなどがあります。 このホスト オプションを使用すると、 [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] や WinForms アプリケーションなど、外部と通信を行うリッチ クライアント アプリケーションの作成も容易になります。 たとえば、ユーザー インターフェイスに [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] を使用しながら、他のクライアントからの接続を許容して情報を共有するために [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストするピア ツー ピア コラボレーションのクライアントなどです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)  
  [チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)

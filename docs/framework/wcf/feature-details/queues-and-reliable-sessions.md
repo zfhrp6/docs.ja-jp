@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b2ad869e8127bcaf513bee82e3175b35349d922
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a9a78bab9f7c4af23cf01c44e1d22a41a87a96f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queues-and-reliable-sessions"></a>キューと信頼できるセッション
 キューおよび信頼できるセッションは、信頼できるメッセージングを実装する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の機能です。 このセクションの各トピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の信頼できるメッセージング機能について説明します。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 12/02/2017
   
  キュー間でのメッセージの信頼できる転送に加え、送信元と送信先の分離により、疎結合されたアプリケーションで信頼できる通信を実現できます。 信頼できるセッションとは異なり、送信元と送信先が同時に実行されている必要はありません。 このため、送信元によるメッセージの生成レートと送信先によるメッセージの消費レートが一致しないときに、キューを実質的に負荷平準化機構として使用できるようになります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]キューを参照してください[WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [信頼できるセッション](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)  

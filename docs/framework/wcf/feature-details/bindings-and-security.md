@@ -18,11 +18,12 @@ caps.latest.revision: "42"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9a6ba021688094afcbbb176cf03fb3e4b4c10df7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9e44db963a696f22f91569eb3d7c2956289a9c76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bindings-and-security"></a>バインディングとセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されたシステム指定のバインディングを使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをすばやくプログラミングできます。 1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。 ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。  
@@ -61,7 +62,7 @@ ms.lasthandoff: 11/21/2017
   
 -   WS-Security。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.BasicHttpSecurity>、<xref:System.ServiceModel.BasicHttpMessageSecurity>、<xref:System.ServiceModel.BasicHttpMessageCredentialType>、および <xref:System.ServiceModel.BasicHttpSecurityMode>。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.BasicHttpSecurity>、<xref:System.ServiceModel.BasicHttpMessageSecurity>、<xref:System.ServiceModel.BasicHttpMessageCredentialType>、および <xref:System.ServiceModel.BasicHttpSecurityMode>。  
   
 ### <a name="wshttpbinding"></a>WSHttpBinding  
  コードを使用して、<xref:System.ServiceModel.WSHttpBinding>クラスは、構成を使用して、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。  
@@ -122,7 +123,7 @@ ms.lasthandoff: 11/21/2017
   
 -   メッセージ資格情報を使用するトランスポート セキュリティ (TLS (Transport Layer Security) over TCP によって実現される機密性と整合性、および WS-Security によって提供される承認に使用する資格情報)  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.NetTcpSecurity>、<xref:System.ServiceModel.TcpTransportSecurity>、<xref:System.ServiceModel.TcpClientCredentialType>、<xref:System.ServiceModel.MessageSecurityOverTcp>、および <xref:System.ServiceModel.MessageCredentialType>。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetTcpSecurity>、<xref:System.ServiceModel.TcpTransportSecurity>、<xref:System.ServiceModel.TcpClientCredentialType>、<xref:System.ServiceModel.MessageSecurityOverTcp>、および <xref:System.ServiceModel.MessageCredentialType>。  
   
 ### <a name="netnamedpipebinding"></a>NetNamedPipeBinding  
  コードを使用して、<xref:System.ServiceModel.NetNamedPipeBinding>クラスは、構成を使用して、 [ \<netNamedPipeBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)です。  
@@ -185,12 +186,12 @@ ms.lasthandoff: 11/21/2017
  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity>、および<xref:System.ServiceModel.WSFederationHttpSecurityMode>です。  
   
 ## <a name="custom-bindings"></a>カスタム バインディング  
- システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインディングを作成できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
+ システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインドを作成できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
   
 ## <a name="binding-choices"></a>バインディングの選択肢  
  次の表は、セキュリティ モード設定で提供される機能をまとめたものです。つまり、セキュリティ モードを `Transport`、`Message`、または `TransportWithMessageCredential` に設定したときに使用できる機能の一覧です。 アプリケーションで必要なセキュリティ機能を決定するときに、この表を参考にしてください。  
   
-|設定|機能|  
+|設定|フィーチャー|  
 |-------------|--------------|  
 |Transport|サーバー認証<br /><br /> クライアント認証<br /><br /> Point-to-Point のセキュリティ<br /><br /> 相互運用性<br /><br /> ハードウェアの高速化<br /><br /> 高いスループット<br /><br /> セキュリティで保護されたファイアウォール<br /><br /> 待ち時間の長いアプリケーション<br /><br /> 複数のホップでの再暗号化|  
 |メッセージ|サーバー認証<br /><br /> クライアント認証<br /><br /> エンド ツー エンドのセキュリティ<br /><br /> 相互運用性<br /><br /> 多様なクレーム<br /><br /> フェデレーション<br /><br /> 複数要因の認証<br /><br /> カスタム トークン<br /><br /> Notary/Timestamp サービス<br /><br /> 待ち時間の長いアプリケーション<br /><br /> メッセージ署名の永続化|  
@@ -198,16 +199,16 @@ ms.lasthandoff: 11/21/2017
   
  さまざまなモード設定をサポートするバインディングを次の表に示します。 サービス エンドポイントを作成するときは、使用するバインディングをこの表から選択してください。  
   
-|バインディング|トランスポート モードのサポート|メッセージ モードのサポート|TransportWithMessageCredential のサポート|  
+|バインド|トランスポート モードのサポート|メッセージ モードのサポート|TransportWithMessageCredential のサポート|  
 |-------------|----------------------------|--------------------------|--------------------------------------------|  
-|`BasicHttpBinding`|はい|はい|はい|  
+|`BasicHttpBinding`|[はい]|はい|はい|  
 |`WSHttpBinding`|はい|はい|はい|  
 |`WSDualHttpBinding`|いいえ|はい|いいえ|  
 |`NetTcpBinding`|はい|はい|はい|  
-|`NetNamedPipeBinding`|はい|いいえ|いいえ|  
+|`NetNamedPipeBinding`|はい|いいえ|Ｘ|  
 |`NetMsmqBinding`|はい|はい|いいえ|  
-|`MsmqIntegrationBinding`|はい|いいえ|いいえ|  
-|`wsFederationHttpBinding`|いいえ|はい|はい|  
+|`MsmqIntegrationBinding`|はい|いいえ|Ｘ|  
+|`wsFederationHttpBinding`|Ｘ|はい|[はい]|  
   
 ## <a name="transport-credentials-in-bindings"></a>バインディングにおけるトランスポート資格情報  
  トランスポート セキュリティ モードで `BasicHttpBinding` または `WSHttpBinding` を使用するときに使用できるクライアント資格情報の種類を、次の表に示します。  
@@ -233,10 +234,10 @@ ms.lasthandoff: 11/21/2017
 |証明書|証明書を使用したクライアントの認証を、サービスで要求することが可能になります。|  
 |IssuedToken|サービスは、セキュリティ トークン サービスを使用してカスタム トークンを提供できます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [サービスとクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [資格情報の種類を選択します。](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
- [カスタム バインドのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
+ [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [資格情報の種類の選択](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [カスタム バインドを使用したセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
  [セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

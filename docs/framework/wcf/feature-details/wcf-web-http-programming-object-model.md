@@ -13,11 +13,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5300f22ba1cb44016fee64be4e85120da45a3edf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d71a373d3410c90f405a37e104e7d1b440a7aa14
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-web-http-programming-object-model"></a>WCF Web HTTP プログラミング オブジェクト モデル
 WCF Web HTTP プログラミング モデルを使用すると、開発者は基本 HTTP 要求を使用して [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web サービスを公開できるようになり、SOAP は必要ありません。 WCF WEB HTTP プログラミング モデルは、既存の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張モデルに基づいて構築されます。 Web HTTP プログラミング モデルでは、次のクラスが定義されます。  
@@ -109,7 +110,7 @@ WCF Web HTTP プログラミング モデルを使用すると、開発者は基
 ## <a name="security"></a>セキュリティ  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS-* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで構築された Web サービスを保護するには、SSL を使用してサービスを公開するしかありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]SSL を設定する[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.WebHttpBinding>  
  <xref:System.ServiceModel.Web.WebGetAttribute>  
  <xref:System.ServiceModel.Web.WebInvokeAttribute>  

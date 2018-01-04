@@ -13,11 +13,12 @@ caps.latest.revision: "25"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 93849fc315409b769a06cdd216bbc86e83cf6155
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 39f805da7570b81ff1f6593e82f5d0a9310ee9c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pii-security-lockdown"></a>PII セキュリティ ロックダウン
 このサンプルでは、次の機能を使用して、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの複数のセキュリティ関連機能を制御する方法を示します。  
@@ -152,5 +153,5 @@ ms.lasthandoff: 10/18/2017
   
 1.  Machine.config を編集して `enableLoggingKnownPii` 属性を `false` に設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

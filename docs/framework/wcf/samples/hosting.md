@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a861c4293cfa64776d2f5c9ea7880a1bd781189b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b270125ae5acc63094c3aa6be6e93e46f9433a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting"></a>ホスト
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストする方法を示すサンプルが含まれています。  
@@ -32,14 +33,14 @@ ms.lasthandoff: 12/02/2017
  [SystemWebRouting 統合サンプル](../../../../docs/framework/wcf/samples/systemwebrouting-integration-sample.md)  
  <xref:System.Web.Routing> 名前空間内のクラスを使用してレイヤーの統合をホストする方法を示します。  
   
- [ASP.NET との互換性](../../../../docs/framework/wcf/samples/aspnet-compatibility.md)  
+ [ASP.NET 互換性](../../../../docs/framework/wcf/samples/aspnet-compatibility.md)  
  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 互換性モードを有効にする方法を示します。  
   
- [IIS ホストのインライン コードを使用します。](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  
+ [インライン コードを使用した IIS ホスティング](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  
  インターネット インフォメーション サービス (IIS) によってホストされるサービスを実装する方法を示します。サービス コードは .svc ファイルにインラインで含まれており、必要に応じてコンパイルされます。  
   
  [Windows サービス ホスト](../../../../docs/framework/wcf/samples/windows-service-host.md)  
  マネージ Windows サービスでホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを示します。  
   
- [自己ホストします。](../../../../docs/framework/wcf/samples/self-host.md)  
+ [自己ホスト](../../../../docs/framework/wcf/samples/self-host.md)  
  自己ホスト型サービスをコンソール アプリケーションに実装する方法を示します。

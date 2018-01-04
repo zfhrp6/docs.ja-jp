@@ -13,11 +13,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea35904fe038bdeac528254e476e799369b8b013
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 54e2b87a9e104ea61c32b06ffc604fc864283f3d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>カスタム メッセージ エンコーダー : カスタム テキスト エンコーダー
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してカスタム テキスト メッセージ エンコーダーを実装する方法を示します。  
@@ -33,15 +34,15 @@ ms.lasthandoff: 12/02/2017
   
  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされているエンコーディングは、UTF-8、UTF-16、および Big Endean Unicode のみです。 このサンプルのカスタム テキスト メッセージ エンコーダーでは、すべてのプラットフォームでサポートされ、相互運用に必要とされる可能性のある文字エンコーディングがサポートされます。 このサンプルは、クライアント コンソール プログラム (.exe)、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll)、およびテキスト メッセージ エンコーダー ライブラリ (.dll) で構成されています。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。 このコントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 (加算、減算、乗算、および 除算) を公開しています。 クライアントは指定された算術演算を同期要求し、サービスは結果と共に応答します。 クライアントとサービスはどちらも、既定の `CustomTextMessageEncoder` の代わりに <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> を使用します。  
   
- カスタム エンコーダーの実装は、メッセージ エンコーダー ファクトリ、メッセージ エンコーダー、メッセージ エンコーディング バインディング要素、および構成ハンドラーで構成され、次が示されます。  
+ カスタム エンコーダーの実装は、メッセージ エンコーダー ファクトリ、メッセージ エンコーダー、メッセージ エンコーディング バインド要素、および構成ハンドラーで構成され、次が示されます。  
   
 -   カスタム エンコーダーおよびエンコーダー ファクトリの作成。  
   
 -   カスタム エンコーダーのバインディング要素の作成。  
   
--   カスタム バインディング要素を統合するためのカスタム バインディング構成の使用。  
+-   カスタム バインド要素を統合するためのカスタム バインド構成の使用。  
   
--   カスタム バインディング要素のファイル構成を可能にするカスタム構成ハンドラーの開発。  
+-   カスタム バインド要素のファイル構成を可能にするカスタム構成ハンドラーの開発。  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
@@ -200,7 +201,7 @@ public class CustomTextMessageEncoderFactory : MessageEncoderFactory
 }  
 ```  
   
-## <a name="message-encoding-binding-element"></a>メッセージ エンコーディング バインディング要素  
+## <a name="message-encoding-binding-element"></a>メッセージ エンコーディング バインド要素  
  このバインディング要素により、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイム スタックの構成が可能になります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーション内でカスタム メッセージ エンコーダーを使用するには、ランタイム スタックの適切なレベルで適切な設定を使用してメッセージ エンコーダー ファクトリを作成する、バインディング要素が必要です。  
   
  `CustomTextMessageBindingElement` は <xref:System.ServiceModel.Channels.BindingElement> 基本クラスから派生し、<xref:System.ServiceModel.Channels.MessageEncodingBindingElement> クラスを継承します。 これによって、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンポーネントは、このバインディング要素をメッセージ エンコーディング バインディング要素として認識できます。 <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> を実装すると、一致するメッセージ エンコーダー ファクトリのインスタンスが適切に設定されて返されます。  
@@ -218,7 +219,7 @@ bindingElements.Add(httpBindingElement);
 CustomBinding binding = new CustomBinding(bindingElements);  
 ```  
   
-## <a name="adding-metadata-support-to-the-message-encoding-binding-element"></a>メッセージ エンコーディング バインディング要素へのメタデータのサポートの追加  
+## <a name="adding-metadata-support-to-the-message-encoding-binding-element"></a>メッセージ エンコーディング バインド要素へのメタデータのサポートの追加  
  <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> から派生するすべての型は、サービスに対して生成される WSDL ドキュメント内の SOAP バインドのバージョンを更新します。 これを行うには、`ExportEndpoint` インターフェイス上に <xref:System.ServiceModel.Description.IWsdlExportExtension> メソッドを実装し、生成された WSDL を変更します。 このサンプルでは、`CustomTextMessageBindingElement` は `TextMessageEncodingBinidngElement` からの WSDL エクスポート ロジックを使用します。  
   
  このサンプルの場合、クライアント構成は手動構成です。 Svcutil.exe を使用してクライアント構成を生成することはできません。`CustomTextMessageBindingElement` では、動作を記述するポリシー アサーションがエクスポートされないからです。 通常は、カスタム バインディング要素上に <xref:System.ServiceModel.Description.IPolicyExportExtension> インターフェイスを実装して、バインディング要素によって実装される動作または機能を記述するカスタム ポリシー アサーションをエクスポートする必要があります。 カスタム バインド要素のポリシー アサーションをエクスポートする方法の例は、次を参照してください。、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。  
@@ -248,4 +249,4 @@ Microsoft.ServiceModel.Samples.CustomTextMessageEncodingBindingSection,
 </extensions>  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

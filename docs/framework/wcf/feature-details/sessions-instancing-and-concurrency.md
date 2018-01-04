@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 44aebb701eb7222773c030994fbaa9c0109dce70
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5d4559f177b05f7d238c9f30649a5b01af7fb6f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sessions-instancing-and-concurrency"></a>セッション、インスタンス化、および同時実行
 *"セッション"* とは、2 つのエンドポイント間で送信されるすべてのメッセージを相互に関連付けたものです。 *"インスタンス化"* とは、ユーザー定義のサービス オブジェクトとこれらのオブジェクトに関連する <xref:System.ServiceModel.InstanceContext> オブジェクトの有効期間を制御することです。 また、*同時実行* は、 <xref:System.ServiceModel.InstanceContext> で同時に実行されるスレッドの数の制御を表す用語です。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 12/02/2017
   
  クライアント アプリケーションとサービス アプリケーションでは、異なる方法でセッションと対話します。 クライアント アプリケーションはセッションを開始し、セッション内で送信されてきたメッセージの受信と処理を行います。 サービス アプリケーションでは、動作を追加するための機能拡張ポイントとしてセッションを使用できます。 これは <xref:System.ServiceModel.InstanceContext> を直接操作する、またはカスタムのインスタンス コンテキスト プロバイダーを実装することで可能になります。  
   
-## <a name="instancing"></a>"インスタンス化"  
+## <a name="instancing"></a>インスタンス化  
  インスタンス化動作 (<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティを使用して設定します) は、受信メッセージに応答して <xref:System.ServiceModel.InstanceContext> を作成する方法を制御します。 既定では、各 <xref:System.ServiceModel.InstanceContext> は 1 つのユーザー定義サービス オブジェクトに関連付けられています。したがって、(既定では) <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティを設定することによってもユーザー定義サービス オブジェクトのインスタンス化を制御できます。 インスタンス化モードは <xref:System.ServiceModel.InstanceContextMode> 列挙体によって定義されます。  
   
  次のインスタンス化モードを使用できます。  
@@ -117,10 +118,10 @@ public class CalculatorService : ICalculatorConcurrency
 |PerSession|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext>チャネルごとにします。<br />のセッションレス チャネルで動作: 例外がスローされます。|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext>チャネルごとにします。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>呼び出しごとにします。|のセッションフル チャネルで動作: 例外がスローされます。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>呼び出しごとにします。|  
 |Single|のセッションフル チャネルで動作: セッションと 1 つ<xref:System.ServiceModel.InstanceContext>すべての呼び出しにします。<br />のセッションレス チャネルで動作: 例外がスローされます。|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext>作成またはユーザー指定のシングルトンです。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>作成またはユーザー指定のシングルトンです。|のセッションフル チャネルで動作: 例外がスローされます。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>各作成したシングルトンまたはユーザー指定のシングルトンです。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セッションの使用](../../../../docs/framework/wcf/using-sessions.md)  
- [方法: セッションを必要とするサービスを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)  
- [方法: コントロール サービスのインスタンス化](../../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)  
+ [方法 : セッションを必要とするサービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)  
+ [方法 : サービスのインスタンス化を制御する](../../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)  
  [同時実行](../../../../docs/framework/wcf/samples/concurrency.md)  
  [インスタンス化](../../../../docs/framework/wcf/samples/instancing.md)  
  [セッション](../../../../docs/framework/wcf/samples/session.md)

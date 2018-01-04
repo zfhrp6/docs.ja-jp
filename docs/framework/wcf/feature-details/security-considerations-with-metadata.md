@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 75191aa28be76da549d38403c4a6f019c6f54bc2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 098b31e479322d9de3a299f06652e819a5388c42
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-with-metadata"></a>メタデータを使用する場合のセキュリティ上の考慮事項
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のメタデータの機能を使用するときは、サービス メタデータの公開、取得、および使用によって生じるセキュリティへの影響を考慮する必要があります。  
@@ -48,6 +49,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="protecting-application-configuration-files"></a>アプリケーション構成ファイルの保護  
  サービスのアプリケーション構成ファイルでは、メタデータを公開する方法、および公開の有無を制御できます。 攻撃者が設定を変更できないように、適切なアクセス制御リスト (ACL) でアプリケーション構成ファイルを保護することをお勧めします。  
   
-## <a name="see-also"></a>関連項目  
- [方法: メタデータ エンドポイントをセキュリティで保護](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)  
+## <a name="see-also"></a>参照  
+ [方法 : セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)  
  [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)

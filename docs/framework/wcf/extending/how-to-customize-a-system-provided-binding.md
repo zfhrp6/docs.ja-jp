@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c46886879d19d612827b94821e0105c68c437c56
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a9b048b5c57d174ac921793ee8677622b88a0595
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>方法 : システム指定のバインディングをカスタマイズする
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、システム指定のバインディングがいくつか含まれています。これらのバインディングを使用して、基になるバインド要素の一部のプロパティを構成できますが、すべてのプロパティを構成できるとは限りません。 ここでは、バインド要素のプロパティを設定してカスタム バインドを作成する方法を示します。  
@@ -60,8 +61,8 @@ ms.lasthandoff: 12/02/2017
      [!code-csharp[C_HowTo_ChangeStandardBinding#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_changestandardbinding/cs/program.cs#3)]
      [!code-vb[C_HowTo_ChangeStandardBinding#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_changestandardbinding/vb/program.vb#3)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
  <xref:System.ServiceModel.BasicHttpBinding>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
- [カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)
+ [カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)

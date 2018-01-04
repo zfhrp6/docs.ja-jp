@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bdd547a62391d11050071e1ede648b28c28bd3f4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0184d07210322e6ed04441f7190857cf07205b15
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-bindingelement"></a>BindingElement の作成
 バインディングとバインド要素 (それぞれ、<xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> と <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> を拡張するオブジェクト) は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーション モデルがチャネル ファクトリおよびチャネル リスナーと関連付けられる場所です。 結合がないカスタム チャネルを使用する必要がありますチャネル レベルでのプログラミング」の説明に従って[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)と[クライアント チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/client-channel-level-programming.md)です。 チャネルを使用して有効にする最小要件について説明[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の開発、<xref:System.ServiceModel.Channels.BindingElement>チャネル、および手順 4 の説明に従って、アプリケーションから使用を有効にする の[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  
@@ -62,7 +63,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
 #### <a name="transport-binding-elements"></a>トランスポート バインド要素  
  新しいトランスポート バインド要素を作成するには、<xref:System.ServiceModel.Channels.TransportBindingElement> インターフェイスを拡張します。 次に、少なくとも <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> メソッドと <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A?displayProperty=nameWithType> プロパティを実装する必要があります。  
   
- <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> - このバインド要素の新しいコピーを返します。  最善の方法としては、バインディング要素の作成者は基本の copy コンストラクターを呼び出す copy コンストラクターを使用して、複製を実装し、このクラスに含まれるすべての追加フィールドを複製することをお勧めします。  
+ <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> - このバインド要素の新しいコピーを返します。  最善の方法としては、バインド要素の作成者は基本の copy コンストラクターを呼び出す copy コンストラクターを使用して、複製を実装し、このクラスに含まれるすべての追加フィールドを複製することをお勧めします。  
   
  <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> – <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> get プロパティは、バインディング要素によって表されるトランスポート プロトコルの URI スキームを返します。 たとえば、<xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType>と<xref:System.ServiceModel.Channels.TcpTransportBindingElement?displayProperty=nameWithType>、それぞれから"http"および"net.tcp"を返します<xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A>プロパティです。  
   
@@ -81,7 +82,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
   
  チャネルのバインド要素を作成した後に戻り、[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)かどうかをバインド要素に構成ファイル サポートを追加する場合と、メタデータ ドキュメントのサポートを追加する方法を表示するトピックとユーザー定義のバインディングを構築するために、このバインディング要素を使用する方法とかどうか。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Channels.BindingElement>  
  [チャネルの開発](../../../../docs/framework/wcf/extending/developing-channels.md)  
  [トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)

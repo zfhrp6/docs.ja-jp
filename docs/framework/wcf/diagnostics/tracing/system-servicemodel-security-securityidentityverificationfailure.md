@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 436c2b9c5bf2cc0e87326b9f0d791942e1289801
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9a43c3263e9ba8dc2dd4a3f9c6afc09d1a673d76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemservicemodelsecuritysecurityidentityverificationfailure"></a>System.ServiceModel.Security.SecurityIdentityVerificationFailure
 System.ServiceModel.Security.SecurityIdentityVerificationFailure  
@@ -25,7 +26,7 @@ System.ServiceModel.Security.SecurityIdentityVerificationFailure
 ## <a name="description"></a>説明  
  ID の検査が失敗しました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [トレースを使用して、アプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

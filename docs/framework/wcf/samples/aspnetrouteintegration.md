@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a942a26ad239233f13ee8791d1178fb47573e710
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bf4f96116e8a4e687e7818796fa4b95e1b9b171a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="aspnetrouteintegration"></a>AspNetRouteIntegration
 このサンプルでは、ASP.NET ルートを使用して [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST サービスをホストする方法を示します。 [基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)サンプルはこのシナリオの自己ホスト型のバージョンを表示および深さのサービスの実装について説明します。 ここでは、ASP.NET 統合機能について集中的に説明します。 ASP.NET ルーティング[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「<xref:System.Web.Routing>」を参照してください。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 12/02/2017
  クライアント  
  サービスを呼び出すコンソール アプリケーション プロジェクト。  
   
- 共通  
+ Common  
  クライアントとサービスによって使用される `Customer` 型を含む共有ライブラリ。 クライアント コンソール アプリケーションが実行されると、クライアントはサービスに要求を発行し、応答からの適切な情報をコンソール ウィンドウに書き込みます。  
   
 #### <a name="to-use-this-sample"></a>このサンプルを使用するには  
@@ -71,4 +72,4 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AspNetRouteIntegration`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

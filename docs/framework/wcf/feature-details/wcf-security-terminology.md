@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 386e58c5b04ed82f9ee42c7f04eacd4610c2a598
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d63871f45fc8e209eb562fec7b208b10f67414b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-security-terminology"></a>WCF セキュリティ用語
 セキュリティについて説明するときに使用する用語の中には、だれもが知っているとは限らないものもあります。 ここでは、セキュリティ用語の一部を簡単に説明します。このトピックは、すべての項目について詳細に説明することを目的としたものではありません。  
@@ -108,7 +109,7 @@ ms.lasthandoff: 11/21/2017
  秘密キー  
  公開キー アルゴリズムで使用するキー ペアのうち、公開されない方のキー。 通常、秘密キーは、対称セッション キーの暗号化、メッセージのデジタル署名、または対応する公開キーで暗号化されたメッセージの復号化に使用されます。 「公開キー」も参照してください。  
   
- プロセス  
+ process  
  アプリケーションが実行されるセキュリティ コンテキスト。 通常、セキュリティ コンテキストはユーザーに関連付けられています。したがって、特定のプロセスで実行されるすべてのアプリケーションに、所有するユーザーのアクセス許可と特権が適用されます。  
   
  公開キーと秘密キーのペア  
@@ -191,7 +192,7 @@ ms.lasthandoff: 11/21/2017
  X.509  
  国際的に認知されている証明書の規格。証明書の必須部分が定義されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows Communication Foundation の基本概念](../../../../docs/framework/wcf/fundamental-concepts.md)  
- [セキュリティの基本概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [セキュリティの概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

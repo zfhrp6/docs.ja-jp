@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 20dbd0c86f012b6f29b752c4ad9195ce453f78b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 04a5cb87b9ed61fd278ce0f2e05e5f1c954de5b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contract"></a>コントラクト
 コントラクト  
@@ -59,7 +60,7 @@ class Contract
   
  このコントラクトに関連付けられている動作。  
   
-### <a name="name"></a>名前  
+### <a name="name"></a>name  
  データ型: string  
   
  アクセスの種類 : 読み取り専用  
@@ -108,11 +109,11 @@ class Contract
   
  コントラクトの型。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
 |---------|-----------------------------------|  
 |Namespace|root\ServiceModel で定義|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Description.ContractDescription>

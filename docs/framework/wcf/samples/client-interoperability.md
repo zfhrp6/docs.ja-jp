@@ -13,17 +13,18 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 34f99bba686ec3b2de128c0f3573ecea42110b4e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fb8f8cba76099ea83c8384e422fbf8673e1ac58e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-interoperability"></a>クライアント相互運用性
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] と他のテクノロジとの相互運用性を示すサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [ASMX Web サービスとの相互運用](../../../../docs/framework/wcf/samples/interoperating-with-asmx-web-services.md)  
+ [ASMX Web サービスとの相互運用性](../../../../docs/framework/wcf/samples/interoperating-with-asmx-web-services.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アプリケーションを既存の ASMX Web サービスと統合する方法を示します。  
   
  [XMLSerializer サンプル](../../../../docs/framework/wcf/samples/xmlserializer-sample.md)  

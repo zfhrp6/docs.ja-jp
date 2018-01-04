@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e03a38e2a93dd866bc3da65527d5410b09009e00
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b95ee7c28c67ff861dc401d1405306c78b9663de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>方法 : X.509 証明書を WCF からアクセス可能にする
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] から X.509 証明書にアクセスできるようにするには、アプリケーション コードで証明書ストアの名前と場所を指定する必要があります。 特定の状況では、X.509 証明書に関連付けられた秘密キーを格納しているファイルにプロセス ID がアクセスできる必要があります。 証明書ストア内の X.509 証明書に関連付けられている秘密キーを取得するには、それを行うためのアクセス許可が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に必要になります。 既定では、所有者と System アカウントだけが証明書の秘密キーにアクセスできます。  
@@ -39,10 +40,10 @@ ms.lasthandoff: 12/02/2017
   
         |X.509 証明書の使用法|秘密キー|  
         |---------------------------|-----------------|  
-        |送信 SOAP メッセージにデジタル署名する。|はい|  
-        |受信 SOAP メッセージの署名を検証する。|いいえ|  
-        |送信 SOAP メッセージを暗号化する。|いいえ|  
-        |受信 SOAP メッセージを復号化する。|はい|  
+        |送信 SOAP メッセージにデジタル署名する。|[はい]|  
+        |受信 SOAP メッセージの署名を検証する。|×|  
+        |送信 SOAP メッセージを暗号化する。|×|  
+        |受信 SOAP メッセージを復号化する。|[はい]|  
   
     2.  証明書が格納されている証明書ストアの場所と名前を決定します。  
   
@@ -80,7 +81,7 @@ ms.lasthandoff: 12/02/2017
         cacls.exe "C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto\RSA\MachineKeys\8aeda5eb81555f14f8f9960745b5a40d_38f7de48-5ee9-452d-8a5a-92789d7110b1" /E /G "NETWORK SERVICE":R  
         ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md)  
- [方法: 証明書のサムプリントの取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)  
+ [方法 : 証明書のサムプリントを取得する](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)  
  [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

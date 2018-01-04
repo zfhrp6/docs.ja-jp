@@ -17,17 +17,18 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c8243524b2de57c58143b7dfb74050a116c5186
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8591a2b42f375f0b0e275fa9f6e34e69e7c054ef
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-contract-serializer"></a>データ コントラクト シリアライザー
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] インフラストラクチャでは、<xref:System.Runtime.Serialization.DataContractSerializer> クラスを既定のシリアライザーとして使用します。 このセクションの各トピックでは、これをスタンドアロンのシリアライザーとして使用するときの詳細について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)  
+ [シリアル化と逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)  
  <xref:System.Runtime.Serialization.DataContractSerializer> クラスを使用してオブジェクト グラフをシリアル化したり、XML ドキュメントをオブジェクトに逆シリアル化したりする方法を詳細に説明します。  
   
  [スキーマのインポートとエクスポート](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
@@ -47,6 +48,6 @@ ms.lasthandoff: 12/02/2017
   
  [データ転送とシリアル化](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
- [Specifying Data Transfer in Service Contracts](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+ [サービス コントラクトでのデータ転送の指定](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

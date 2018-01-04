@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4f1595cbb1d225e3dd4e73a354028745d4cd0428
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: acc7131d02f1f4e3cde0df152bdfbc591724b600
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-syndication-overview"></a>WCF 配信の概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスから配信フィードを公開することができます。 配信は、サーバーがフィードと呼ばれる相互運用可能な形式でアプリケーション データの一部を公開するためのアプリケーション統合の機構です。 フィードはアプリケーション データのコレクションであり、フィード レベルのメタデータ (タイトル、作成者、URL、およびその他のメタデータ) と一連のフィード アイテムから構成されます。 フィード内で、フィード アイテムは通常、発生の逆順に並べられます。 フィード アイテムは、アイテム レベルのメタデータの標準セット (タイトル、URL、作成日時、カテゴリ、およびその他のアイテム レベルのメタデータ) と任意の大きさのアプリケーション固有のデータから構成されます。 最も一般的な配信フィードは、RSS (Really Simple Syndication) 2.0 と Atom 1.0 であり、どちらも [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされています。  
@@ -31,5 +32,5 @@ ms.lasthandoff: 12/02/2017
 ## <a name="syndication-formats"></a>配信フォーマット  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の配信プラットフォームでは、RSS 2.0 と Atom 1.0 をサポートしています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

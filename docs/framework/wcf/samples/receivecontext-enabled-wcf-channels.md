@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 729bf8bd1371bf64b9b05a235331120608824083
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 765efb43efc0ea60ebb71bc8cdb5bd8edf973c2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="receivecontext-enabled-wcf-channels"></a>ReceiveContext が有効な WCF チャネル
 このサンプルでは、<xref:System.ServiceModel.Channels.ReceiveContext> を有効にした WCF チャネルの有用性を示します。 このサンプルでは、NetMSMQ チャネルを使用して 2 つの数値の積を見つけるサービスを実装します。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/02/2017
   
             -   [MSMQ HTTP サポート]  
   
-        4.  **[OK]** をクリックします。  
+        4.  **[OK]**をクリックします。  
   
         5.  コンピューターを再起動するメッセージが表示されたら、クリックして**OK**インストールを完了します。  
   

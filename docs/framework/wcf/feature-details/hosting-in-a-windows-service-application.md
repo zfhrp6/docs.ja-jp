@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1f411e0280a1f663e5e001e471eb836208083160
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d1a39162097c21f20c0dd04f3911442602871436
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Windows サービス アプリケーションのホスト
 Windows サービス (従来 Windows NT サービスと呼ばれていたもの) が提供するプロセス モデルが特に適しているのは、長い期間にわたって動作し続ける必要があり、どのような形式でもユーザー インターフェイスを表示することのないアプリケーションです。 Windows サービス アプリケーションのプロセスの有効期間を管理するのは、サービス コントロール マネージャー (SCM) です。SCM を使用して、Windows サービス アプリケーションを起動、停止、および一時停止できます。 「常時オン」アプリケーション用の適切なホスティング環境を作成、コンピューターの起動時に自動的に開始する Windows サービスのプロセスを構成することができます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows サービス アプリケーションを参照してください[Windows サービス アプリケーション](http://go.microsoft.com/fwlink/?LinkId=89450)です。  
@@ -46,10 +47,10 @@ Windows サービス (従来 Windows NT サービスと呼ばれていたもの)
   
      [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストする Windows サービス アプリケーションも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使わない Windows サービス アプリケーションと同様に展開および管理されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceProcess>  
- [チュートリアル: コンポーネント デザイナーでの Windows サービス アプリケーションの作成](http://go.microsoft.com/fwlink/?LinkId=94875)  
- [方法: マネージ Windows サービスで WCF サービスをホスト](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)  
+ [チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成](http://go.microsoft.com/fwlink/?LinkId=94875)  
+ [方法 : マネージ Windows サービスで WCF サービスをホストする](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)  
  [Windows サービス ホスト](../../../../docs/framework/wcf/samples/windows-service-host.md)  
  [サービス アプリケーションのプログラミング アーキテクチャ](http://go.microsoft.com/fwlink/?LinkId=94876)  
  [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)

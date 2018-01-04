@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 743e8cdf1a10efb7b99d6c6dcfcff611df6fbf4e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cb8ba8145d371a8773d860e88f073bcc5b732f1c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="choosing-a-message-encoder"></a>メッセージ エンコーダーを選択する
 このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されているメッセージ エンコーダー (バイナリ、テキスト、および MTOM (Message Transmission Optimization Mechanism)) を選択する際の基準について説明します。  
@@ -92,6 +93,6 @@ WCF 4.5 以降の WCF バイナリ エンコーダーでは、圧縮がサポー
 
 クライアントとサービスの両方を圧縮したメッセージの送受信に同意する必要があります。 したがって、compressionFormat プロパティは、クライアントとサービスの両方の binaryMessageEncoding 要素で構成する必要があります. サービスまたはクライアントの一方で圧縮が構成され、他方で圧縮が構成されていない場合は ProtocolException がスローされます。圧縮の有効化は慎重に考慮する必要があります。 圧縮は、ネットワーク帯域幅がボトルネックになっている場合に最も効果的です。 CPU がボトルネックである場合、圧縮によりスループットが低下します。 これがアプリケーションにとってメリットがあるかどうかを確認するために、適切なテストをシミュレートされた環境で行う必要があります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [バインディング](../../../../docs/framework/wcf/feature-details/bindings.md)

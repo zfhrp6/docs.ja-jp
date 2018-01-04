@@ -13,11 +13,12 @@ caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3bb2646a500db299f164dce34fb062a509f90047
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 96ae88fd29391bf173da33398dfb41b3a06441ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unsupported-scenarios"></a>サポートされていないシナリオ
 さまざまな理由から、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でサポートされていないセキュリティ シナリオがあります。 たとえば、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition は SSPI または Kerberos 認証プロトコルを実装しないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、このプラットフォーム上での Windows 認証を使用するサービスの実行をサポートしません。 Windows XP Home Edition で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を実行している場合、ユーザー名/パスワードや HTTP/HTTPS 統合認証などの他の認証機構がサポートされます。  
@@ -118,10 +119,10 @@ ms.lasthandoff: 12/02/2017
   
  解決策は、インポートを行った後、クライアント側で直接バインディングを変更することです。  
   
-## <a name="see-also"></a>関連項目  
- [セキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [情報漏えいが起こる](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [特権の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [サービス拒否が起こる](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- [改ざん](../../../../docs/framework/wcf/feature-details/tampering.md)  
+## <a name="see-also"></a>参照  
+ [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
+ [権限の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [改変](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)

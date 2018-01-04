@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3c3b478d88eff022d8cb28f4123291f4662644ba
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5e7a371d43237b795536711cf1745030e14d6eca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="activity-list"></a>アクティビティ リスト
 ここでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] で定義されたすべてのアクティビティを示します。  
@@ -28,7 +29,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="servicemodel-activities"></a>ServiceModel アクティビティ  
  主要な使用シナリオに対応するすべてのアクティビティを次の表に示します。  
   
-|ラベル|アクティビティ名|アクティビティの種類|説明|  
+|group1|活動名|活動の種類|説明|  
 |-----------|-------------------|-------------------|-----------------|  
 |A、M|アンビエント アクティビティ|N/A (ServiceModel によって制御されません)|ServiceModel コード (クライアント側またはサーバー側) を呼び出す前に、ID が TLS に設定されるアクティビティ。<br /><br /> 例 : [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] クライアントで open が呼び出されるか、serviceHost.open が呼び出されるアクティビティ。|  
 |B|構成体<br /><br /> 構築する。 ContractType: '[種類]'。|構成体||  
@@ -46,14 +47,14 @@ ms.lasthandoff: 12/02/2017
 ## <a name="security-activities"></a>セキュリティ アクティビティ  
  セキュリティに関連するすべてのアクティビティを次の表に示します。  
   
-|アクティビティ名|アクティビティの種類|説明|  
+|活動名|活動の種類|説明|  
 |-------------------|-------------------|-----------------|  
 |セキュリティで保護されたセッションをセットアップする|SetupSecurity|クライアント側だけに存在します。 認証およびセキュリティ コンテキストの設定のためのすべての "RST*/SCT 交換" を格納します。 場合`propagateActivity` = `true`、このアクティビティは、サービスの対応するプロセス アクション RST にマージ\*/SCT アクティビティ。|  
 |セキュリティで保護されたセッションを閉じる|SetupSecurity|クライアント側に存在します。 セキュリティで保護されたセッションを閉じるための "メッセージ交換のキャンセル" を格納します。 場合`propagateActivity` = `true`、このアクティビティは、サービスのプロセス アクション「キャンセル」とマージします。|  
   
  COM+ に関連するすべてのアクティビティを次の表に示します。  
   
-|アクティビティ名|アクティビティの種類|説明|  
+|活動名|活動の種類|説明|  
 |-------------------|-------------------|-----------------|  
 |COM+ インスタンスを作成する|TransferToCOMPlus|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] コードからの COM+ 呼び出しごとに 1 つのアクティビティ インスタンス|  
 |これを実行すると COM +\<操作 >|TransferToCOMPlus|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] コードからの COM+ 呼び出しごとに 1 つのアクティビティ インスタンス|  
@@ -61,7 +62,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="wmi-activities"></a>WMI アクティビティ  
  WMI に関連するすべてのアクティビティを次の表に示します。  
   
-|アクティビティ名|アクティビティの種類|説明|  
+|活動名|活動の種類|説明|  
 |-------------------|-------------------|-----------------|  
 |WMI Get|WMIGetObject|ユーザーは、WMI からデータを取得しています。|  
 |WMI Put|WmiPutInstance|ユーザーは、WMI でデータを更新しています。|

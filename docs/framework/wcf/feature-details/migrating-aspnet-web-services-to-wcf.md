@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ca1eb73842f3f7dac5557c1eafff637396d317a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f90f7dd508e2ff4058b787fc29d152abc18f24fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>ASP.NET Web サービスを WCF に移行する
 ASP.NET には Web サービスを構築するための .NET Framework クラス ライブラリとツールが用意されています。また、インターネット インフォメーション サービス (IIS) 内でサービスをホストする機能も用意されています。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、.NET Framework クラス ライブラリ、ツール、およびホスティング機能が用意されており、ソフトウェア エンティティが、Web サービスによって使用されるプロトコルを含む、任意のプロトコルを使用して通信できるようになっています。  ASP.NET Web サービスから [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 独自の新しい機能や強化された機能をアプリケーションで利用できます。  
@@ -45,9 +46,9 @@ ASP.NET には Web サービスを構築するための .NET Framework クラス
   
  このセクションでは、上記のオプションの詳細、ASP.NET Web サービスと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] との比較、ASP.NET Web サービスのコードを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行する方法の手順について説明します。  
   
-## <a name="see-also"></a>関連項目  
- [Windows Communication Foundation の採用: 将来の移行の容易化](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)  
- [Windows Communication Foundation の採用: 将来的な統合の容易化](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)  
+## <a name="see-also"></a>参照  
+ [Windows Communication Foundation の採用: 将来の移行の簡略化](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)  
+ [Windows Communication Foundation 導入の準備: 将来的な統合の容易化](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)  
  [Windows Communication Foundation の採用](../../../../docs/framework/wcf/feature-details/adopting-wcf.md)  
- [WCF ベースの目的で使用されている標準を ASP.NET Web サービスとの比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)  
- [開発に基づいた WCF を ASP.NET Web サービスとの比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)
+ [使用目的と使用標準に基づく ASP.NET Web サービスと WCF との比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)  
+ [開発者の視点から見た ASP.NET Web サービスと WCF との比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b2c8b85c2920133e21e7659ca0c27e28ab4a8eae
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5605c90d5f63e0ed80ac5a47b36781c45b687cba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>サービス エンドポイントとキューのアドレス指定
 ここでは、キューから読み取るサービスをクライアントがアドレス指定するしくみと、サービス エンドポイントがキューにマップされるしくみについて説明します。 キューに置かれた [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションの標準的な配置を次の図に示します。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/02/2017
   
  net.msmq:// \<*ホスト名*>/[プライベート/] \<*キュー名*>  
   
- ここで、  
+ それぞれの文字について以下に説明します。  
   
 -   \<*ホスト名*> ターゲット キューをホストしているコンピューターの名前を指定します。  
   
@@ -114,5 +115,5 @@ ms.lasthandoff: 12/02/2017
   
  `MsmqIntegrationBinding` では、net.msmq:// によるアドレス指定を使用できないことに注意してください。 `MsmqIntegrationBinding` は、自由形式の MSMQ 形式名によるアドレス指定をサポートしているため、このバインディングを使って MSMQ のマルチキャスト機能と配布リスト機能を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを使用できます。 ただし、`CustomDeadLetterQueue` を使用するときに、`MsmqIntegrationBinding` を指定する場合を除きます。 これは、`NetMsmqBinding` を使用して指定するのと同様に、net.msmq:// という形式にする必要があります。  
   
-## <a name="see-also"></a>関連項目  
- [キューに置かれたアプリケーションをホストする web](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+## <a name="see-also"></a>参照  
+ [キューに置かれたアプリケーションの Web ホスト](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c0952f238c34176112f6ec6a8520fb603cca4750
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f1d3f7ed4ebde0f607b3c86cf9879d219af85b20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queues-overview"></a>キューの概要
 ここでは、キューを使った通信の概要とその基本概念を解説します。 後の各セクションでは、キューの概念がどのように [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に活かされているかを詳しく説明します。  
@@ -82,14 +83,14 @@ ms.lasthandoff: 12/02/2017
 ## <a name="poison-message-queue-programming"></a>有害メッセージ キューのプログラミング  
  メッセージがターゲット キューに到達しても、サービス側で繰り返し処理に失敗する場合があります。 原因としては、アプリケーションがトランザクション内でキューからメッセージを読み込み、データベースを更新しようとしたところ、データベースの接続が一時的に切断されていた、というような状況が考えられます。 この場合は、トランザクションのロールバック、新たなトランザクションの作成、メッセージの再読み込みが行われます。 ただし、2 回目の試行で成功するかどうかはわかりません。 エラーの原因によっては、メッセージをアプリケーションに配信する処理が繰り返し失敗することがあります。 このようなメッセージは "有害" であると見なされ、 有害メッセージ キューに移されます。このキューの内容は、有害メッセージを処理するアプリケーションに渡すことができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
- [セッションおよびキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
+ [セッションとキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
  [配信不能キュー](../../../../docs/framework/wcf/samples/dead-letter-queues.md)  
  [揮発性キューによる通信](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)  
- [メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
- [メッセージ キュー (MSMQ) をインストールします。](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
+ [Windows Communication Foundation でのメッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
+ [メッセージ キュー (MSMQ) のインストール](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
  [メッセージ キュー統合バインディングのサンプル](http://msdn.microsoft.com/en-us/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)  
- [Windows Communication foundation キュー メッセージ](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
+ [Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
  [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3b56fe2aaf958e6a94f9562629ca320901307e0f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0802c8f92a240d04e8eb764a83cd40a8fefc0d40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="peer-channel-concepts"></a>ピア チャネルの概要
 このセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のピア チャネルを構成する概念について簡単に説明します。  
@@ -31,5 +32,5 @@ ms.lasthandoff: 12/02/2017
   
  [競合回避モジュールをピア ツー ピア](../../../../docs/framework/wcf/feature-details/peer-resolvers.md): でピア名解決プロトコル (PRNP) およびその他のカスタム競合回避モジュールの使用について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ピア チャネル アプリケーションの構築](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

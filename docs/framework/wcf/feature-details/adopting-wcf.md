@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e27ee5f2e1b2ad042fd8c0104e89b99eb5e4bc96
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 522d4d39df6df62a6bed2fdc9f6d72df1193faca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adopting-windows-communication-foundation"></a>Windows Communication Foundation の採用
 ASP.NET を使用して開発した既存のアプリケーションのメンテナンスを続行しながら、新規開発については [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を選択できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、どのようなシナリオにおいても .NET Framework を使用してビルドされたアプリケーションとの通信を容易に行うための最適な選択となるように設計されているため、これまで ASP.NET では実現できなかったような方法でソフトウェア通信における多様な問題を解決するための標準ツールとして使用できます。  
@@ -34,7 +35,7 @@ ASP.NET を使用して開発した既存のアプリケーションのメンテ
   
  既存の ASP.NET Web サービスを WCF に移行する方法の完全な分析を参照してください[ASP.NET Web サービスおよび Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkID=71761)です。 ここでは、ASP.NET Web サービスのメタデータから WCF 準拠サービスを実装する方法、および ASP.NET Web サービスおよびクライアントのコードを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行する方法について説明しています。  
   
-## <a name="see-also"></a>関連項目  
- [方法: メタデータを取得し、準拠サービスの実装](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)  
- [方法: ASP.NET Web サービスのコードを Windows Communication Foundation に移行](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-to-wcf.md)  
- [方法: ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-client-to-wcf.md)
+## <a name="see-also"></a>参照  
+ [方法 : メタデータの取得および準拠サービスの実装をする](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)  
+ [方法 : ASP.NET Web サービス コードを Windows Communication Foundation に移行する](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-to-wcf.md)  
+ [方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-client-to-wcf.md)

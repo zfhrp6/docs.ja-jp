@@ -14,16 +14,17 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4de910e2e66bc480abefe228bd183fe95270fb69
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5e9d7fbf42f2ed9b8f68b1faf2e2425050b62eaa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-quotas"></a>トランスポート クォータ
 トランスポート クォータは、接続がリソースを過剰に消費している時期を特定するポリシー機構です。 クォータとは、クォータ値を超えた場合に、それ以上のリソースの使用を禁止する確実な制限です。 トランスポート クォータは、悪質な、または意図的でないサービス拒否攻撃を防ぎます。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] トランスポートのクォータの既定値は、控えめなリソース割り当てに基づいています。 これらの既定値は開発環境、および小規模のインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は、トランスポート クォータを確認し、個別のクォータ値を調整する必要があります。  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] トランスポートのクォータの既定値は、控えめなリソース割り当てに基づいています。 これらの既定値は開発環境、および小規模のインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は、トランスポート クォータをレビューし、個別のクォータ値を調整する必要があります。  
   
 ## <a name="types-of-transport-quotas"></a>トランスポート クォータの種類  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のトランスポートには 3 種類のクォータがあります。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 12/02/2017
   
  各クォータ設定では、種類、最小値、および既定値を設定します。 クォータの最大値は、クォータの種類によって制限されます。 コンピューターの制限により、クォータを最大値に設定できない場合もあります。  
   
-|名前|型|最小<br /><br /> value|既定<br /><br /> value|説明|  
+|name|型|最小<br /><br /> value|既定値<br /><br /> value|説明|  
 |----------|----------|--------------------|-----------------------|-----------------|  
 |`ChannelInitializationTimeout`|TimeSpan|1 目盛り|5 秒|最初の読み取り中に、接続が前文の送信を待機する最大時間。 このデータは、認証が行われる前に受信されます。 この設定は一般に、`ReceiveTimeout` クォータ値よりも大幅に小さな値になります。|  
 |`CloseTimeout`|TimeSpan|0|1 分|接続の終了を待機する最大時間。これを超えるとトランスポートで例外が発生します。|  
@@ -68,9 +69,9 @@ ms.lasthandoff: 12/02/2017
 ### <a name="controlling-transport-quotas-from-the-binding-element"></a>バインド要素によるトランスポート クォータの制御  
  バインド要素を介してトランスポート クォータを設定した場合、トランスポートの動作を最も柔軟に制御できます。 閉じる、開く、受信、送信の各操作の既定のタイムアウトは、チャネルを構築したときにバインディングから設定されます。  
   
-|名前|HTTP|TCP/IP|名前付きパイプ|  
+|name|HTTP|TCP/IP|名前付きパイプ|  
 |----------|----------|-------------|----------------|  
-|`ChannelInitializationTimeout`||X|X|  
+|`ChannelInitializationTimeout`||x|X|  
 |`CloseTimeout`||||  
 |`ConnectionBufferSize`||X|X|  
 |`IdleTimeout`||X|X|  
@@ -82,7 +83,7 @@ ms.lasthandoff: 12/02/2017
 |`MaxOutputDelay`||X|X|  
 |`MaxPendingAccepts`||X|X|  
 |`MaxPendingConnections`||X|X|  
-|`MaxReceivedMessageSize`|X|X|X|  
+|`MaxReceivedMessageSize`|X|X|x|  
 |`OpenTimeout`||||  
 |`ReceiveTimeout`||||  
 |`SendTimeout`||||  
@@ -90,24 +91,24 @@ ms.lasthandoff: 12/02/2017
 ### <a name="controlling-transport-quotas-from-the-binding"></a>バインディングによるトランスポート クォータの制御  
  バインディングによるトランスポート クォータの設定では、選択対象のクォータがセットにまとめられます。ただし、最も一般的に使用するクォータ値にはアクセスできます。  
   
-|名前|HTTP|TCP/IP|名前付きパイプ|  
+|name|HTTP|TCP/IP|名前付きパイプ|  
 |----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||||  
-|`CloseTimeout`|X|X|X|  
+|`CloseTimeout`|x|X|X|  
 |`ConnectionBufferSize`||||  
 |`IdleTimeout`||||  
 |`LeaseTimeout`||||  
 |`ListenBacklog`||X||  
-|`MaxBufferPoolSize`|X|X|X|  
-|`MaxBufferSize`|1|X|X|  
+|`MaxBufferPoolSize`|X|X|x|  
+|`MaxBufferSize`|1|x|x|  
 |`MaxOutboundConnectionsPerEndpoint`||2|2|  
 |`MaxOutputDelay`||||  
 |`MaxPendingAccepts`||||  
 |`MaxPendingConnections`||2|2|  
-|`MaxReceivedMessageSize`|X|X|X|  
+|`MaxReceivedMessageSize`|x|X|X|  
 |`OpenTimeout`|X|X|X|  
 |`ReceiveTimeout`|X|X|X|  
-|`SendTimeout`|X|X|X|  
+|`SendTimeout`|X|X|x|  
   
 1.  `MaxBufferSize` トランスポート クォータは、`BasicHttp` バインディングでのみ使用可能です。 `WSHttp` バインディングは、ストリーミング トランスポート モードがサポートされないシナリオに対応します。  
   
@@ -116,7 +117,7 @@ ms.lasthandoff: 12/02/2017
 ### <a name="controlling-transport-quotas-from-configuration"></a>構成によるトランスポート クォータの制御  
  アプリケーション構成からバインディング上のプロパティに直接アクセスして、同じトランスポート クォータを設定できます。 構成ファイルでは、トランスポート クォータの名前は必ず小文字で始めます。 たとえば、バインディングの `CloseTimeout` プロパティは構成では `closeTimeout` 設定に対応し、バインディングの `MaxConnections` プロパティは構成では `maxConnections` 設定に対応します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  

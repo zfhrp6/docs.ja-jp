@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 28e6de46098a8309a17e0c264411f865fb9b1de2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d1d8ea4987d918da79dcf1f69b842f19901e63a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extensibility"></a>機能拡張
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のカスタムの機能拡張およびその他の機能に関するサンプルが含まれています。  
@@ -29,19 +30,19 @@ ms.lasthandoff: 12/02/2017
  [探索の機能拡張](../../../../docs/framework/wcf/samples/discovery-extensibility.md)  
  カスタム探索の例を示します。  
   
- [機能拡張をインスタンス化](../../../../docs/framework/wcf/samples/instancing-extensibility.md)  
+ [インスタンス化拡張](../../../../docs/framework/wcf/samples/instancing-extensibility.md)  
  カスタムの機能拡張の例を示します。  
   
- [相互運用機能拡張](../../../../docs/framework/wcf/samples/interop-extensibility.md)  
+ [相互運用性の拡張](../../../../docs/framework/wcf/samples/interop-extensibility.md)  
  カスタムの相互運用性の例を示します。  
   
  [メッセージ エンコーダー拡張](../../../../docs/framework/wcf/samples/message-encoder-extensibility.md)  
  カスタムのメッセージ エンコーディングの例を示します。  
   
- [メタデータの拡張](../../../../docs/framework/wcf/samples/metadata-extensibility.md)  
+ [メタデータ拡張](../../../../docs/framework/wcf/samples/metadata-extensibility.md)  
  カスタム メタデータの例を示します。  
   
- [セキュリティ拡張機能](../../../../docs/framework/wcf/samples/security-extensibility.md)  
+ [セキュリティ拡張](../../../../docs/framework/wcf/samples/security-extensibility.md)  
  カスタム セキュリティの例を示します。  
   
  [配信の拡張のサンプル](../../../../docs/framework/wcf/samples/syndication-extensibility-samples.md)  
@@ -68,7 +69,7 @@ ms.lasthandoff: 12/02/2017
  [エラー処理およびレポートに対する制御の拡張](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インターフェイスを使用して、<xref:System.ServiceModel.Dispatcher.IErrorHandler> サービスのエラー処理およびエラー報告に対する制御を拡張する方法を示します。  
   
- [メッセージ インスペクタ](../../../../docs/framework/wcf/samples/message-inspectors.md)  
+ [メッセージ インスペクター](../../../../docs/framework/wcf/samples/message-inspectors.md)  
  クライアントとサービスのメッセージ インスペクターを実装して構成する方法を示します。  
   
  [WebContentTypeMapper](../../../../docs/framework/wcf/samples/webcontenttypemapper-sample.md)  

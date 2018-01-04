@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9d6418f1f6af544669cf63b48db736d3e144a595
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9eedf84d1dccb8bc2540aca7e6bd338b4e58326d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>サービス メタデータからの WCF クライアントの生成
 ここでは、Svcutil.exe の各種のスイッチを使用して、メタデータ ドキュメントからクライアントを生成する方法を説明します。  
@@ -79,6 +80,6 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
 |**/mergeConfig**|既存のファイルを上書きする代わりに、生成される構成ファイルを既存のファイルにマージします。|  
 |**/noConfig**|構成ファイルを生成しません。|  
   
-## <a name="see-also"></a>関連項目  
- [メタデータを使用します。](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+## <a name="see-also"></a>参照  
+ [メタデータを使用する](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
  [メタデータ アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)

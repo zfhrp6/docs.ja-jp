@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 684d9bcf2e4787457a6ef3251e0202e1559561b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 14b045ef55ac0b6d76bb06e711b4134d54b3d61f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-export-metadata-from-service-endpoints"></a>方法 : メタデータをサービス エンドポイントからエクスポートする
 このトピックでは、メタデータをサービス エンドポイントからエクスポートする方法について説明します。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  Program.cs をコンパイルするときは、System.ServiceModel.dll への参照を追加してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メタデータ アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
- [メタデータを使用します。](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [エンドポイント: アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+ [メタデータを使用する](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [エンドポイント : アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

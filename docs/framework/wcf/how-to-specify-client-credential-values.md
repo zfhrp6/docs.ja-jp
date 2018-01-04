@@ -16,11 +16,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 42c6390fb2bd39a0003beecbbe10cd72a38ed63d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cd818a2342ff5b44e4e8ab1b237f7c657d3bf438
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-specify-client-credential-values"></a>方法 : クライアントの資格情報の値を指定する
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、サービスに対するクライアントの認証方法を指定できます。 たとえば、証明書を使用してクライアントを認証するように指定できます。  
@@ -101,14 +102,14 @@ ms.lasthandoff: 12/02/2017
     </client>  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.NetTcpBinding>  
  <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A>  
  <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential>  
  <xref:System.ServiceModel.ClientBase%601>  
  <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>  
  [WCF セキュリティのプログラミング](../../../docs/framework/wcf/feature-details/programming-wcf-security.md)  
- [資格情報の種類を選択します。](../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [資格情報の種類の選択](../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
  [証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  

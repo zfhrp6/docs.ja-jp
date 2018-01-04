@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ccf6e5363da872d3902c12713bd19f5820370428
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8dbb50af9d5655a76abb3827cd2f512eab0fd662
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-integration"></a>Windows Communication Foundation 導入の準備: 将来的な統合の容易化
 現在 ASP.NET を使用しており、将来 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を採用する予定である場合、このトピックは、新規の ASP.NET Web サービスが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションと共に問題なく動作するためのガイダンスになります。  
@@ -53,5 +54,5 @@ public interface IEcho
 ## <a name="security"></a>セキュリティ  
  インターネット インフォメーション サービス (IIS) に用意されている認証オプションは使用しないでください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントではこれらの認証オプションはサポートされません。 サービスをセキュリティで保護する必要がある場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供されるオプションを使用します。こちらのオプションの方が選択の幅が広く、標準プロトコルに基づいているためです。  
   
-## <a name="see-also"></a>関連項目  
- [Windows Communication Foundation の採用: 将来の移行の容易化](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
+## <a name="see-also"></a>参照  
+ [Windows Communication Foundation の採用: 将来の移行の簡略化](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)

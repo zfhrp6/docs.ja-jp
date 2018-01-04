@@ -20,11 +20,12 @@ caps.latest.revision: "22"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 595999bfa7d3472fc31274a0c9652af5416d2da5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 84fa0e6b20f3d2b75d3182f64ddc9c70ef661f10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-security-mode"></a>方法 : セキュリティ モードを設定する
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] セキュリティには、"トランスポート"、"メッセージ"、および "メッセージ資格情報付きトランスポート" という 3 つの共通のセキュリティ モードがあり、ほとんどの定義済みバインディングでサポートされます。 これ以外に、2 つのバインディングに固有の 2 つのモードがあります。<xref:System.ServiceModel.BasicHttpBinding> の "トランスポート資格情報専用" モードと、<xref:System.ServiceModel.NetMsmqBinding> の "両方" モードです。 ここでは、3 つの共通のセキュリティモードである <xref:System.ServiceModel.SecurityMode.Transport>、<xref:System.ServiceModel.SecurityMode.Message>、および <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential> に重点を置いて説明します。  
@@ -123,11 +124,11 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: トランスポート セキュリティを使用してメッセージ資格情報](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [方法: SSL 証明書でポートを構成します。](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
- [方法: トランスポート セキュリティを使用してメッセージ資格情報](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
+## <a name="see-also"></a>参照  
+ [方法 : SSL 証明書を使用してポートを構成する](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [方法 : トランスポート セキュリティとメッセージ資格情報を使用する](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
  [トランスポート セキュリティ](../../../docs/framework/wcf/feature-details/transport-security.md)  
- [メッセージ セキュリティ](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
+ [メッセージのセキュリティ](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
  [セキュリティの概要](../../../docs/framework/wcf/feature-details/security-overview.md)  
  [システム標準のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)  
  [\<セキュリティ >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)  

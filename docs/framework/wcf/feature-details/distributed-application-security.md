@@ -16,11 +16,12 @@ caps.latest.revision: "32"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 842ce0efefcc026ad33d9be3b2b681fcfc9c0b59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1e67c5da534e7b35d4d27c0164d9389c8afe252b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="distributed-application-security"></a>分散アプリケーションのセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティは、転送セキュリティ、アクセス制御、および監査の 3 つの主要な機能領域に分けられます。 転送セキュリティは、整合性、機密性、および認証を実現します。 転送セキュリティは、トランスポート セキュリティ、メッセージ セキュリティ、または `TransportWithMessageCredential` のいずれかによって提供されます。  
@@ -88,7 +89,7 @@ ms.lasthandoff: 11/21/2017
 |-------------|-----------------|  
 |なし|サービスが匿名クライアントとやり取りを行うことが可能になります。|  
 |Windows|Windows 資格情報の認証済みコンテキストで SOAP メッセージ交換を実行できるようにします。 SSPI ネゴシエーション機構を使用して、認証サービスとして Kerberos プロトコルまたは NTLM を選択します。|  
-|[ユーザー名]|ユーザー名資格情報を使用したクライアントの認証をサービスで要求できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、署名の生成やデータの暗号化など、ユーザー名を使用した暗号化操作が許可されないことに注意してください。 そのため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。|  
+|ユーザー名|ユーザー名資格情報を使用したクライアントの認証をサービスで要求できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、署名の生成やデータの暗号化など、ユーザー名を使用した暗号化操作が許可されないことに注意してください。 そのため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。|  
 |証明書|証明書を使用したクライアントの認証を、サービスで要求することが可能になります。|  
 |[!INCLUDE[infocard](../../../../includes/infocard-md.md)]|[!INCLUDE[infocard](../../../../includes/infocard-md.md)] を使用したクライアントの認証をサービスで要求できるようにします。|  
   
@@ -104,7 +105,7 @@ ms.lasthandoff: 11/21/2017
   
  また、メッセージ セキュリティ モードでは、初期ネゴシエーションの一環としてサービス資格情報がクライアントと交換されるように転送のセキュリティを実行できます。 ネゴシエーションを有効にするには、<xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> プロパティを `true` に設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エンドポイントの作成の概要](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  

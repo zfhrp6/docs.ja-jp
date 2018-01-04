@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5b60b31133a3721611285b5b4caa93d3c34e193f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 01e841e76c4a6cf06169113422921367d671ea98
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exporting-schemas-from-classes"></a>クラスからのスキーマのエクスポート
 データ コントラクト モデルで使用されているクラスから XML スキーマ定義言語 (XSD) スキーマを生成するには、 <xref:System.Runtime.Serialization.XsdDataContractExporter> クラスを使います。 このトピックでは、スキーマの作成手順を説明します。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="the-export-process"></a>エクスポート処理  
  スキーマのエクスポート処理では、まず型の定義をエクスポートするので、型定義を XML 形式で記述した <xref:System.Xml.Schema.XmlSchemaSet> を生成します。  
   
- `XmlSchemaSet` は、一連の XSD スキーマ ドキュメントを表す [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]のスキーマ オブジェクト モデル (SOM) の一部です。 XSD ドキュメントを `XmlSchemaSet`から生成するために、 <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> クラスの `XmlSchemaSet` プロパティから取得した、スキーマのコレクションを使います。 次に各 <xref:System.Xml.Schema.XmlSchema> オブジェクトを、 <xref:System.Xml.Serialization.XmlSerializer>を使ってシリアル化します。  
+ `XmlSchemaSet` は、一連の XSD スキーマ ドキュメントを表す [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] のスキーマ オブジェクト モデル (SOM) の一部です。 XSD ドキュメントを `XmlSchemaSet`から生成するために、 <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> クラスの `XmlSchemaSet` プロパティから取得した、スキーマのコレクションを使います。 次に各 <xref:System.Xml.Schema.XmlSchema> オブジェクトを、 <xref:System.Xml.Serialization.XmlSerializer>を使ってシリアル化します。  
   
 #### <a name="to-export-schemas"></a>スキーマをエクスポートするには  
   
@@ -68,9 +69,9 @@ ms.lasthandoff: 12/02/2017
   
  以上のメソッドの動作は、エクスポート オプションの影響を受けます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.XsdDataContractImporter>  
  <xref:System.Runtime.Serialization.XsdDataContractExporter>  
  [スキーマのインポートとエクスポート](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
- [クラスを生成するスキーマのインポート](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)
+ [クラスを作成するためのスキーマのインポート](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)

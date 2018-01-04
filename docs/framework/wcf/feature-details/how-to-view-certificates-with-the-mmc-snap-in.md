@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5981e68ebe2870870fff5e92e87d7582ac2c42b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 582eaef518e10acb4c4c356226ce0be24d1b4c35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-view-certificates-with-the-mmc-snap-in"></a>方法 : MMC スナップインを使用して証明書を参照する
 X.509 証明書は、広く使用されている資格情報です。 セキュリティで保護されたサービスやクライアントを作成する場合、<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> メソッドなどのメソッドを使用して、クライアントやサービスの資格情報として使用する証明書を指定できます。 このメソッドでは、証明書を格納するストアや証明書を検索するときに使用する値など、さまざまなパラメーターが必要になります。 次の手順では、コンピューター上のストアを調べて適切な証明書を検索する方法を示します。 証明書の拇印を検索の例は、次を参照してください。[する方法: 証明書のサムプリントを取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)です。  
@@ -47,9 +48,9 @@ X.509 証明書は、広く使用されている資格情報です。 セキュ�
   
 11. **コンソール ルート**ウィンドウで、をクリックして**証明書 (ローカル コンピューター)**コンピューターのストアに証明書を表示します。  
   
-12. 省略可能です。 自分のアカウントの証明書を表示するには、手順 3. ～ 6. を繰り返し、 手順 7. で選択する代わりに**コンピューター アカウント**をクリックして**ユーザー アカウント**手順 8. ~ 10. を繰り返します。  
+12. 任意。 自分のアカウントの証明書を表示するには、手順 3. ～ 6. を繰り返し、 手順 7. で選択する代わりに**コンピューター アカウント**をクリックして**ユーザー アカウント**手順 8. ~ 10. を繰り返します。  
   
-13. 省略可能です。 **ファイル** メニューのをクリックして**保存**または**名前を付けて保存**です。 再利用できるようにコンソール ファイルを保存します。  
+13. 任意。 **ファイル** メニューのをクリックして**保存**または**名前を付けて保存**です。 再利用できるようにコンソール ファイルを保存します。  
   
 ## <a name="viewing-certificates-with-internet-explorer"></a>Internet Explorer を使用した証明書の表示  
  Internet Explorer を使用して、証明書を表示、エクスポート、インポート、または削除することもできます。  
@@ -64,7 +65,7 @@ X.509 証明書は、広く使用されている資格情報です。 セキュ�
   
 4.  任意の証明書の詳細を表示し、証明書を選択し、クリックして**ビュー**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [方法: 開発中に使用するための一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)  
- [方法: 証明書のサムプリントの取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
+ [方法 : 開発中に使用する一時的な証明書を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)  
+ [方法 : 証明書のサムプリントを取得する](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)

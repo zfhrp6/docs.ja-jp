@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d00f8847e64e30b42490f319ea3e1df5e5a1850d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c87e384b3186a1dd4b53ba6c21d92bf4d0e6a8c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Windows Communication Foundation のキュー
 このセクションの各トピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でのキューのサポートについて説明します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、Microsoft Message Queuing (以前の MSMQ) をトランスポートとして利用することによってキューをサポートしており、次のシナリオを実現できます。  
@@ -40,19 +41,19 @@ ms.lasthandoff: 12/02/2017
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によるキューのサポートの概要です。  
   
- [方法: Exchange の WCF エンドポイントとメッセージのキュー](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [方法 : WCF エンドポイントを使用してキューに置かれたメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
  <xref:System.ServiceModel.NetMsmqBinding> クラスを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス間で通信を行う方法を説明します。  
   
- [方法: WCF エンドポイントでメッセージを交換して、メッセージ キュー アプリケーション](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ [方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションとメッセージ キュー アプリケーション間で通信を行う方法を説明します。  
   
- [グループ化は、セッションでメッセージをキューに登録](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)  
+ [セッションでキューに置かれたメッセージのグループ化](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)  
  単一の受信側アプリケーションが関連メッセージを迅速に処理できるように、キューでメッセージをグループ化する方法を説明します。  
   
- [トランザクションでのメッセージをバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
+ [トランザクションに含まれるメッセージのバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
  トランザクションでメッセージをバッチ処理する方法について説明します。  
   
- [配信不能メッセージ キューを使用して、メッセージの転送エラーを処理するには](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
+ [配信不能キューを使用したメッセージ転送エラー処理](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
  配信不能キューを使用してメッセージの転送エラーと配信エラーを処理する方法、および配信不能キューのメッセージを処理する方法を説明します。  
   
  [有害メッセージ処理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)  
@@ -61,10 +62,10 @@ ms.lasthandoff: 12/02/2017
  [Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違点](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、[!INCLUDE[wv](../../../../includes/wv-md.md)]、および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] における [!INCLUDE[wxp](../../../../includes/wxp-md.md)] キュー機能の相違についてまとめています。  
   
- [トランスポート セキュリティを使用してメッセージをセキュリティで保護します。](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
+ [トランスポート セキュリティを使用したメッセージのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
  トランスポート セキュリティを使用して、キューに置かれたメッセージを保護する方法を説明します。  
   
- [メッセージ セキュリティを使用してメッセージをセキュリティで保護します。](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)  
+ [メッセージ セキュリティを使用したメッセージのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)  
  メッセージ セキュリティを使用して、キューに置かれたメッセージを保護する方法を説明します。  
   
  [キューに置かれたメッセージングのトラブルシューティング](../../../../docs/framework/wcf/feature-details/troubleshooting-queued-messaging.md)  
@@ -73,5 +74,5 @@ ms.lasthandoff: 12/02/2017
  [キューに置かれた通信のベスト プラクティス](../../../../docs/framework/wcf/feature-details/best-practices-for-queued-communication.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のキューを使用した通信のベスト プラクティスについて説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ キュー](http://msdn.microsoft.com/en-us/ff917e87-05d5-478f-9430-0f560675ece1)

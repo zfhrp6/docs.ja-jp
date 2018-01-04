@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b8d353b50cf9439a9741199a52ca650e02e4d49f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f6fcae1989b75a668fd6ff38596b06feca7be9e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-contract-surrogates"></a>データ コントラクト サロゲート
 データ コントラクト*サロゲート*データ コントラクト モデルに基づいて構築されている高度な機能です。 この機能は、型をシリアル化または逆シリアル化する方法や、型をメタデータに投影する方法をユーザーが変更する場合に、型のカスタマイズと置換に使用することを目的としています。 サロゲートを使用できるのは、型のデータ コントラクトが指定されていない場合、フィールドやプロパティが <xref:System.Runtime.Serialization.DataMemberAttribute> 属性でマークされていない場合、またはユーザーがスキーマのバリエーションを動的に作成することを希望している場合などです。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/02/2017
 ### <a name="getdatacontracttype"></a>GetDataContractType  
  <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> メソッドは、ある型を別の型に割り当てます。 これは、シリアル化、逆シリアル化、インポート、およびエクスポートに必須のメソッドです。  
   
- 最初の作業として、他の型に割り当てる型を定義します。 例:  
+ 最初のタスクとして、他の型に割り当てる型を定義します。 例:  
   
  [!code-csharp[C_IDataContractSurrogate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#3)]  
   
@@ -80,7 +81,7 @@ ms.lasthandoff: 12/02/2017
 ### <a name="getdeserializedobject-method"></a>GetDeserializedObject Method  
  <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> メソッドは、サロゲートされた型のインスタンスを元の型のインスタンスに変換します。 これは、逆シリアル化に必須のメソッドです。  
   
- 次の作業として、サロゲート インスタンスから元のインスタンスに物理データを割り当てる方法を定義します。 例:  
+ 次のタスクとして、サロゲート インスタンスから元のインスタンスに物理データを割り当てる方法を定義します。 例:  
   
  [!code-csharp[C_IDataContractSurrogate#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#5)]  
   
@@ -200,7 +201,7 @@ ms.lasthandoff: 12/02/2017
   
      [!code-csharp[C_IDataContractSurrogate#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#10)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.IDataContractSurrogate>  
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  

@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f502d24f98c9229d064be3de0e0edc081664dd03
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dd52e36199fc2412abb003d530dd5614cda8049b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wsdl-and-policy"></a>WSDL とポリシー
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WSDL 1.1、WS-Policy、および WS-PolicyAttachment の実装の詳細、および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって導入される追加の WS-Policy アサーションと WSDL 1.1 拡張について説明します。  
@@ -82,7 +83,7 @@ ms.lasthandoff: 12/02/2017
 |mssp:MustNotSendCancel|入れ子|Cancel バインディング [WS-Trust、WS-SC] を使用するセキュリティ トークン要求 (RST) の要求メッセージ [WS-Trust] を特定の SecurityContextToken の発行者に送信しないという要件を指定します。 このアサーションが存在する場合、このような要求メッセージを発行者に送信することはできません。 このアサーションが存在しない場合、このような要求メッセージを発行者に送信できます。|  
 |mssp:RequireClientCertificate|入れ子|このオプション要素では、TLSNEGO プロトコルの一部としてクライアント証明書を提供するという要件を指定します。 このアサーションが存在する場合、クライアント証明書を提供する必要があります。 このアサーションが存在しない場合、クライアント証明書を提供しないでください。 このアサーションは、mssp:SslContextToken の外側で使用することはできません。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カスタム WSDL パブリケーション](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md)  
- [方法: カスタム WSDL のエクスポート](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)  
- [方法: カスタム WSDL をインポート](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
+ [方法 : カスタム WSDL をエクスポートする](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)  
+ [方法 : カスタム WSDL をインポートする](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)

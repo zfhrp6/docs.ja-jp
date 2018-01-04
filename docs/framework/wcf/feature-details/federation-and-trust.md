@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a5228ffaab43e24849d461080cdf3ef09b2fa6c0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 98b1274866dec2a4ca923d390f33df68449cf286
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="federation-and-trust"></a>フェデレーションと信頼
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] におけるフェデレーション アプリケーション、信頼の境界と構成、および発行済みトークンの使用に関連したさまざまな側面について説明します。  
@@ -46,8 +47,8 @@ ms.lasthandoff: 12/02/2017
 ## <a name="issued-tokens-and-inclusionmode"></a>発行済みトークンと InclusionMode  
  クライアントからフェデレーション エンドポイントに送信されたメッセージで発行済みトークンがシリアル化されるかどうかは、<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InclusionMode%2A> クラスの <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> プロパティを設定することによって制御します。 このプロパティは <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode> 列挙値のいずれかに設定できますが、これはほとんどのフェデレーション シナリオでは役に立ちません。 `SecurityTokenInclusionMode.Never` 値および `SecurityTokenInclusionMode.AlwaysToInitiator` 値を設定すると、クライアントによって、セキュリティ トークンサービスによって発行されたトークンへの参照が証明書利用者に送信されます。 証明書利用者がこの発行済みトークンのコピーを持っていない限り、トークン参照が解決されないため、認証は失敗します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では `SecurityTokenInclusionMode.Once` を `SecurityTokenInclusionMode.AlwaysToRecipient` と等価のものとして扱います。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>  
- [方法: フェデレーション クライアントを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
- [方法: フェデレーション サービスの資格情報を構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
- [方法: WSFederationHttpBinding を作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+ [方法 : フェデレーション クライアントを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [方法 : フェデレーション サービスで資格情報を設定する](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [方法 : WSFederationHttpBinding を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)

@@ -14,26 +14,27 @@ caps.latest.revision: "18"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9428c5d7c8c6cf0f571b05a8b9c33b96d073d7a5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d8881768d66e95ce1391ce1be1663bdc3107a347
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="common-security-scenarios"></a>一般的なセキュリティ シナリオ
 ここでは、考えられるさまざまなクライアントおよびサービスのセキュリティ構成の一覧を示します。 構成はさまざまな要因により異なります。 たとえば、サービスやクライアントがイントラネット上にあるかどうか、また、セキュリティが Windows とトランスポート (HTTPS など) のどちらで提供されるかなどが考えられます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [インターネットのセキュリティ保護されていないクライアントとサービス](../../../../docs/framework/wcf/feature-details/internet-unsecured-client-and-service.md)  
+ [セキュリティで保護されていないインターネット環境のクライアントとサービス](../../../../docs/framework/wcf/feature-details/internet-unsecured-client-and-service.md)  
  セキュリティで保護されていないパブリックなクライアントとサービスの例です。  
   
- [イントラネットのセキュリティ保護されていないクライアントとサービス](../../../../docs/framework/wcf/feature-details/intranet-unsecured-client-and-service.md)  
+ [セキュリティで保護されていないイントラネットのクライアントとサービス](../../../../docs/framework/wcf/feature-details/intranet-unsecured-client-and-service.md)  
  セキュリティで保護されたプライベートなネットワーク上で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションに情報を提供するために開発された基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスです。  
   
- [基本認証でのトランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security-with-basic-authentication.md)  
+ [基本認証を使用する場合のトランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security-with-basic-authentication.md)  
  アプリケーションは、カスタム認証を使用して、クライアントにログオンを許可します。  
   
- [トランスポート セキュリティと Windows 認証](../../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)  
+ [Windows 認証を使用する場合のトランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)  
  Windows セキュリティによってセキュリティ保護されたクライアントとサービスを示します。  
   
  [トランスポート セキュリティと匿名クライアント](../../../../docs/framework/wcf/feature-details/transport-security-with-an-anonymous-client.md)  
@@ -45,22 +46,22 @@ ms.lasthandoff: 11/21/2017
  [メッセージ セキュリティと匿名クライアント](../../../../docs/framework/wcf/feature-details/message-security-with-an-anonymous-client.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ セキュリティによってセキュリティ保護されたクライアントとサービスを示します。  
   
- [ユーザー名クライアントとメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-a-user-name-client.md)  
+ [ユーザー名クライアントを使用したメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-a-user-name-client.md)  
  クライアントは、ドメイン ユーザー名とパスワードを使用してクライアントのログオンを許可する Windows フォーム アプリケーションです。  
   
  [メッセージ セキュリティと証明書クライアント](../../../../docs/framework/wcf/feature-details/message-security-with-a-certificate-client.md)  
  サーバー側の証明書は複数あり、クライアント側の証明書はそれぞれ 1 つです。 セキュリティのコンテキストは、トランスポート層セキュリティ (TLS: Transport Layer Security) ネゴシエーションを介して確立されます。  
   
- [Windows クライアントとメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client.md)  
+ [Windows クライアントを使用する場合のメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client.md)  
  証明書クライアントのバリエーションの 1 つです。 サーバー側の証明書は複数あり、クライアント側の証明書はそれぞれ 1 つです。 セキュリティのコンテキストは TLS ネゴシエーションを介して確立されます。  
   
- [メッセージ セキュリティと資格情報ネゴシエーションを使用しない Windows クライアント](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client-without-credential-negotiation.md)  
+ [資格情報ネゴシエーションを使用しない Windows クライアントを使用するメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client-without-credential-negotiation.md)  
  Kerberos ドメインによってセキュリティ保護されたクライアントとサービスを示します。  
   
- [メッセージ セキュリティと相互の証明書](../../../../docs/framework/wcf/feature-details/message-security-with-mutual-certificates.md)  
+ [相互の証明書を使用する場合のメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-mutual-certificates.md)  
  サーバー側の証明書は複数あり、クライアント側の証明書はそれぞれ 1 つです。 サーバーの証明書はアプリケーションと共に配布され、帯域外でも使用可能です。  
   
- [発行済みトークンとメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-issued-tokens.md)  
+ [発行済みトークンを使用したメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-issued-tokens.md)  
  フェデレーション セキュリティにより独立したドメイン間で信頼を確立できます。  
   
  [信頼できるサブシステム](../../../../docs/framework/wcf/feature-details/trusted-subsystem.md)  
@@ -78,7 +79,7 @@ ms.lasthandoff: 11/21/2017
   
  [バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
   
- [サービスとクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
   
  [認証](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
   
@@ -88,6 +89,6 @@ ms.lasthandoff: 11/21/2017
   
  [監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
   
-## <a name="see-also"></a>関連項目  
- [セキュリティ ガイダンスとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+## <a name="see-also"></a>参照  
+ [セキュリティ ガイドラインとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

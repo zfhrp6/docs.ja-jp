@@ -14,11 +14,12 @@ caps.latest.revision: "37"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3f9834e99fb7fa98e2f986a1ce5460aa387143f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: be4ffac8444f6365dacb2b20db6abbb6792c2239
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-performance-counters"></a>WCF パフォーマンス カウンター
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] には、アプリケーションのパフォーマンス測定に役立つ多数のパフォーマンス カウンターが備わっています。  
@@ -83,7 +84,7 @@ config.Save();
 ## <a name="types-of-performance-counters"></a>パフォーマンス カウンターの種類  
  パフォーマンス カウンターには、サービス、エンドポイント、操作の 3 つのレベルがあります。  
   
- WMI を使用してパフォーマンス カウンターのインスタンス名を取得できます。 次に例を示します。  
+ WMI を使用してパフォーマンス カウンターのインスタンス名を取得できます。 たとえば、オブジェクトに適用された  
   
 -   WMI を通じてサービス カウンターのインスタンス名を取得できます[サービス](../../../../../docs/framework/wcf/diagnostics/wmi/service.md)インスタンスの"CounterInstanceName"プロパティです。  
   
@@ -147,5 +148,5 @@ ServiceName@ServiceBaseAddress
   
  カウンターをプログラムでアクセスする方法の詳細については、次を参照してください。[パフォーマンス カウンターのプログラミング アーキテクチャ](http://go.microsoft.com/fwlink/?LinkId=95179)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

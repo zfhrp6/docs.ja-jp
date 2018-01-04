@@ -16,23 +16,24 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9a08627e213196c2d5fb296f458a5d3a8c7bb1a0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 432ed9debeffad82125b567508ed46b46d4b8821
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="authentication-in-wcf"></a>WCF での認証
 以下のトピックでは、Windows 認証、X.509 証明書、ユーザー名とパスワードなど、認証を提供する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のさまざまな機構を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [方法: ASP.NET メンバーシップ プロバイダーを使用](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)  
+ [方法 : ASP.NET メンバーシップ プロバイダーを使用する](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)  
  ASP.NET の機能には、メンバーシップとロール プロバイダー、認証のためのユーザー名とパスワードの組み合わせを格納するデータベース、および承認のためのユーザー ロールがあります。 ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが同じデータベースを使用してユーザーの認証と承認を行うしくみについて説明します。  
   
- [方法: カスタム ユーザー名およびパスワード検証を使用します。](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)  
+ [方法 : カスタム ユーザー名およびパスワード検証を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)  
  カスタム ユーザー名およびパスワード検証を統合する方法を示します。  
   
- [サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [サービス ID と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  追加の保護手段として、クライアントは、予期されるを指定してサービスを認証できます*identity*サービス。 予想される ID とサービスから返される ID が一致しない場合、認証は失敗します。  
   
  [セキュリティ ネゴシエーションとタイムアウト](../../../../docs/framework/wcf/feature-details/security-negotiation-and-timeouts.md)  
@@ -47,6 +48,6 @@ ms.lasthandoff: 12/02/2017
 ## <a name="related-sections"></a>関連項目  
  [一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

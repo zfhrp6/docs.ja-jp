@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1bf20f11e7077c981e73aa087c654b9cf0c87bcb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7cf47ce71c70ab9054b1417bab7ae05d9c029188
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="information-disclosure"></a>情報の漏えい
 情報が漏えいすると、攻撃者はシステムに関する重要情報を入手できます。 そのため、どのような情報を公開しているか、また、その情報が悪意のあるユーザーによって使用される可能性があるかどうかに常に気を配る必要があります。 考えられる情報漏えい攻撃とその軽減策を以下に示します。  
@@ -66,10 +67,10 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
   
  ドメインを指定していても、エンドポイント ID 機能を使用して無効なサービス プリンシパル名を指定した場合は、NTLM が使用されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]エンドポイント id を指定するを参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [セキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [特権の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [サービス拒否が起こる](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- [改ざん](../../../../docs/framework/wcf/feature-details/tampering.md)  
- [サポートされていないシナリオ](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)  
+## <a name="see-also"></a>参照  
+ [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [権限の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [改変](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [サポートされていないシナリオ:](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)  
  [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)

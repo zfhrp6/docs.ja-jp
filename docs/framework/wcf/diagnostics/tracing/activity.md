@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 382197f2a8d2375903f286dc5aa54ce5dc632bce
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cbcf33aa734cde1d2458e46cd161f9ea5197a827
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="activity"></a>アクティビティ
 ここでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] トレース モデルのアクティビティ トレースについて説明します。 アクティビティは、ユーザーがエラーの範囲を絞り込む上で役立つ処理単位です。 同じアクティビティで発生したエラーは直接関連します。 たとえば、メッセージを復号化できなかったために、ある操作が失敗したとします。 この操作とメッセージ復号化失敗のトレースは同じアクティビティ内に表示され、復号化エラーと要求エラー間の直接相関関係が示されます。  
@@ -88,7 +89,7 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
   
  同じアクティビティの直接関連するイベントを検出するときや、転送トレースを追跡する場合に関連アクティビティのイベントを検出するときに、ツールはこれらのトレースを使用して、トレース ログのナビゲーションを最適化することができます。 たとえば、ツールが Start/Stop トレースを確認したときに、特定のアクティビティのログの解析を中止できます。  
   
- Start/Stop トレースは、プロファイリングに使用することもできます。 開始マーカーと終了マーカーの間で使用されるリソースは、論理アクティビティを含むアクティビティの包括的時間を表します。 Suspend トレースから Resume トレースまでの時間間隔を減算することで、アクティビティの実際の時間がわかります。  
+ Start/Stop トレースは、プロファイリングに使用することもできます。 開始マーカーと終了マーカーの間で使用されるリソースは、論理アクティビティを含むアクティビティの包括時間を表します。 Suspend トレースから Resume トレースまでの時間間隔を減算することで、アクティビティの実際の時間がわかります。  
   
  また、Stop トレースは、実装済みのアクティビティのスコープを検証する際に特に役立ちます。 特定のアクティビティ内ではなく Stop トレースの後に出現する処理トレースがある場合、これはコードの欠陥を示している可能性があります。  
   
@@ -105,11 +106,11 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
   
 -   メッセージの受信または処理によって起動されるアクティビティは、トレースの境界によって表されます。  
   
--   アクティビティはアクティビティを表します。オブジェクトとは限りません。 アクティビティとして解釈する必要があります"これが発生しているときにします。 。 」を参照してください。 (有効なトレース出力が発生したときに) これが発生していた" と解釈する必要があります。  
+-   アクティビティはアクティビティを表します。オブジェクトとは限りません。 アクティビティとして解釈する必要があります"これが発生しているときにします。 である必要があります。 である必要があります。 (有効なトレース出力が発生したときに) これが発生していた" と解釈する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
- [エンド ツー エンドのトレース シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
+ [エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
  [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
  [ユーザー コード トレースの出力](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)

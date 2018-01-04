@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f53f8396dc16f9f4538b772d376287cc1695ff47
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bcf707e58586673097c89e0e0f4d72ea68ef7247
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-declare-faults-in-service-contracts"></a>方法 : サービス コントラクトでのエラーを宣言する
 マネージ コードでは、エラー条件が発生すると例外がスローされます。 しかし [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションでは、サービス コントラクトで SOAP エラーを宣言することにより、どのエラー情報をクライアントに通知するかを指定するようになっています。 例外とエラー間のリレーションシップの概要については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
@@ -54,6 +55,6 @@ ms.lasthandoff: 12/02/2017
  [!code-csharp[FaultContractAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#1)]
  [!code-vb[FaultContractAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType>  
  <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>

@@ -16,11 +16,12 @@ caps.latest.revision: "23"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 98bce70d7092a8ce9b9244479f7ff6d999bb0825
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb7a40bc38a3fdf3f7be2b31e30e768e26be2d15
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-for-data"></a>セキュリティに関するデータの考慮事項
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]でデータを処理するとき、さまざまな種類の脅威について考慮する必要があります。 データ処理に関連する最も重要な脅威の種類を次の表に示します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、これらの脅威を軽減するためのツールが用意されています。  
@@ -202,7 +203,7 @@ ms.lasthandoff: 11/21/2017
  次の各セクションで、これらの種類の脅威について詳しく説明します。  
   
 ## <a name="datacontractserializer"></a>DataContractSerializer  
- (<xref:System.Xml.Serialization.XmlSerializer> のセキュリティ情報については、関連ドキュメントを参照してください)。<xref:System.Xml.Serialization.XmlSerializer> のセキュリティ モデルは、<xref:System.Runtime.Serialization.DataContractSerializer> のセキュリティ モデルに似ていますが、細かい部分が異なります。 たとえば、型を含めるために、<xref:System.Xml.Serialization.XmlIncludeAttribute> 属性ではなく <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性が使用されます。 <xref:System.Xml.Serialization.XmlSerializer> に固有のいくつかの脅威については、このトピックの後半で説明します。  
+ (<xref:System.Xml.Serialization.XmlSerializer> のセキュリティ情報については、関連ドキュメントを参照してください)。<xref:System.Xml.Serialization.XmlSerializer> のセキュリティ モデルは、<xref:System.Runtime.Serialization.DataContractSerializer> のセキュリティ モデルに似ていますが、細かい部分が異なります。 たとえば、型を含めるために、 <xref:System.Xml.Serialization.XmlIncludeAttribute> 属性ではなく <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性が使用されます。 <xref:System.Xml.Serialization.XmlSerializer> に固有のいくつかの脅威については、このトピックの後半で説明します。  
   
 ### <a name="preventing-unintended-types-from-being-loaded"></a>意図しない型の読み込み防止  
  意図しない型を読み込むと、その型が悪質である場合も、単にセキュリティに影響するような副作用がある型の場合も、重大な結果を引き起こす可能性があります。 型は、悪用されやすいセキュリティの脆弱性を含んでいたり、その型のコンストラクターまたはクラス コンストラクターでセキュリティに影響するアクションを実行したりする可能性があります。また、サービス拒否攻撃の実行を容易にしてしまうほどメモリ フットプリントが大きい場合や、回復不可能な例外をスローする場合もあります。 型には、インスタンスが作成されるよりも前に、その型が読み込まれると直ちに実行されるクラス コンストラクターが用意されている可能性があります。 これらの理由から、デシリアライザーがどのような型を読み込むかを制御することが重要です。  
@@ -262,9 +263,9 @@ ms.lasthandoff: 11/21/2017
   
 -   データ コントラクト型は、プロパティの setter が特定の順序で呼び出されなくてもよいように設計します。  
   
--   <xref:System.SerializableAttribute> 属性でマークされた従来の型を使用する場合は十分に注意します。 このような型のほとんどは、信頼されたデータのみで使用するために、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] リモート処理で操作することを目的に設計されています。 この属性でマークされた既存の型は、状態の安全性を考えて設計されていない可能性があります。  
+-   <xref:System.SerializableAttribute> 属性でマークされた従来の型を使用する場合は十分に注意します。 このような型のほとんどは、信頼されたデータのみで使用するために、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] リモート処理で操作することを目的に設計されています。 この属性でマークされた既存の型は、状態の安全性を考えて設計されていない可能性があります。  
   
--   状態の安全性に関しては、データの存在を保証するために、 <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> 属性の `DataMemberAttribute` プロパティに依存することはできません。 データは常に `null`、 `zero`、または `invalid`になります。  
+-   状態の安全性に関しては、データの存在を保証するために、 <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> 属性の `DataMemberAttribute` プロパティに依存することはできません。 データは常に `null`、`zero`、または `invalid` になります。  
   
 -   信頼できないデータ ソースから逆シリアル化されたオブジェクト グラフは、検証せずに信頼してはいけません。 各オブジェクトが整合状態にあっても、オブジェクト グラフ全体としては整合状態にない場合があります。 さらに、オブジェクト グラフの保存モードが無効になっている場合でも、逆シリアル化されたグラフに、同じオブジェクトへの複数の参照または循環参照が存在することがあります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
@@ -351,7 +352,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="a-note-on-components"></a>コンポーネントに関する注意事項  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、柔軟でカスタマイズ可能なシステムです。 このトピックのほとんどの内容は、最も一般的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の使用シナリオに基づいています。 ただし、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が提供するコンポーネントは、複数の異なる方法で構築できます。 各コンポーネントを使用した場合のセキュリティへの影響について理解することが重要です。 特に次の点に注意してください。  
   
--   XML リーダーを使用する必要があるときは、 <xref:System.Xml.XmlDictionaryReader> クラスに用意されたリーダーを使用し、それ以外のリーダーは使用しないようにします。 安全なリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> のいずれかのメソッドを使用して作成できます。 <xref:System.Xml.XmlReader.Create%2A> メソッドは使用しないでください。 リーダーは、必ず安全なクォータを使用して設定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のシリアル化エンジンがセキュリティで保護されるのは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で提供されるセキュリティで保護された XML リーダーを使用する場合だけです。  
+-   XML リーダーを使用する必要があるときは、 <xref:System.Xml.XmlDictionaryReader> クラスに用意されたリーダーを使用し、それ以外のリーダーは使用しないようにします。 安全なリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> のいずれかのメソッドを使用して作成できます。 <xref:System.Xml.XmlReader.Create%2A> メソッドは使用しないでください。 リーダーは、必ず安全なクォータを使用して設定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のシリアル化エンジンがセキュリティで保護されるのは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供されるセキュリティで保護された XML リーダーを使用する場合だけです。  
   
 -   <xref:System.Runtime.Serialization.DataContractSerializer> を使用して、信頼できない可能性のあるデータを逆シリアル化する場合は、必ず <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A> プロパティを設定します。  
   
@@ -363,8 +364,8 @@ ms.lasthandoff: 11/21/2017
   
 -   通常、クォータを受け入れるコンポーネントを使用する場合は、そのセキュリティへの影響を理解し、クォータを安全な値に設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Xml.XmlDictionaryReader>  
  <xref:System.Xml.Serialization.XmlSerializer>  
- [データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+ [既知のデータ コントラクト型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

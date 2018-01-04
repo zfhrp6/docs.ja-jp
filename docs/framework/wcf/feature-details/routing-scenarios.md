@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 7ae79ad13b360a61e1d9b10f94dff5a37aae1d89
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3ef101a9a5f78e1b85ac7cb983b4766088b83317
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing-scenarios"></a>ルーティング シナリオ
 ルーティング サービスは自由にカスタマイズできますが、まったく新しい構成を作成するときは、効率的なルーティング ロジックを設計するのが困難である場合があります。  しかし、ほとんどのルーティング サービスの構成で想定されている一般的なシナリオがいくつかあります。 これらのシナリオは、特定の構成に直接、適用できない場合もありますが、これらのシナリオに対応するルーティング サービスの構成方法を理解しておくことは、ルーティング サービスを理解する助けとなります。  
@@ -67,7 +68,7 @@ ms.lasthandoff: 10/18/2017
 ### <a name="protocol-bridging"></a>プロトコル ブリッジ  
  メッセージを異種の SOAP プロトコル間でルーティングするときに、ルーティング サービスは、WCF API を使用して、1 つのプロトコルから他のプロトコルにメッセージを変換します。 この処理は、ルーティング サービスが公開するサービス エンドポイントで、メッセージのルーティング先のクライアント エンドポイントとは異なるプロトコルが使用されると自動的に実行されます。 使用されているプロトコルが標準ではない場合は、この動作を無効にすることができますが、ブリッジのための独自のコードを提供する必要があります。  
   
- 。 サービスを使用して、ルーティング プロトコル間でメッセージを変換する例は、次を参照してください。、[ブリッジおよびエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)サンプルです。  
+ である必要があります。 サービスを使用して、ルーティング プロトコル間でメッセージを変換する例は、次を参照してください。、[ブリッジおよびエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)サンプルです。  
   
 ### <a name="error-handling"></a>エラー処理  
  分散環境では、一時的なネットワークまたは通信の障害が発生することは少なくありません。 ルーティング サービスなどの中継局サービスがない場合は、このような障害処理の負担がクライアント アプリケーションにかかることになります。 ネットワークまたは通信の障害発生時に再試行するための特定のロジックと、代替の場所に関する情報がクライアント アプリケーションに含まれていない場合は、メッセージが送信先サービスで正常に処理されるまでに、ユーザーがメッセージを複数回送信することが必要になる可能性があります。 これは、信頼性が低いと見なされる可能性があるため、アプリケーションの顧客満足度の低下につながります。  
@@ -77,13 +78,13 @@ ms.lasthandoff: 10/18/2017
  エラー処理の構成に使用する手順については、次を参照してください。 [How To: Error Handling](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)です。 エラー処理の実装の例は、次を参照してください。、[ブリッジおよびエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)と[エラー処理の高度な](../../../../docs/framework/wcf/samples/advanced-error-handling.md)サンプルです。  
   
 ### <a name="in-this-section"></a>このセクションの内容  
- [方法: サービスのバージョン管理](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+ [サービスのバージョンを管理する方法](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
   
- [サービス データのパーティション分割する方法](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
+ [サービス データのパーティションを分割する方法](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
   
- [方法: 動的更新](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
+ [動的な更新を行う方法](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
   
- [方法: エラー処理](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
+ [エラーを処理する方法](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)

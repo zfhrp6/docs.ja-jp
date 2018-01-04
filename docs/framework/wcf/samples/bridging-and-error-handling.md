@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc809b75a965107594f7b2aa8a78d412bf284d8e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 84a7d3385d89d4308e6a75d303a567fb4d7b22d3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bridging-and-error-handling"></a>ブリッジとエラー処理
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ルーティング サービスを、各種のバインディングを使用するクライアントとサービス間の通信をブリッジするために使用する方法を示します。 また、バックアップ サービスを使用してフェールオーバーのシナリオに対処する方法も示します。 ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに簡単に追加できるようにする [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンポーネントです。 このサンプルでは、標準の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 電卓のサンプルを改良し、ルーティング サービスを使用して通信するようにします。  
@@ -79,5 +80,5 @@ ms.lasthandoff: 12/02/2017
 ### <a name="real-world-scenario"></a>実際のシナリオ  
  Contoso では、外部には相互運用可能なサービスのエンドポイントを公開し、内部ではパフォーマンスを最適化したいと考えています。 そのため、外部には BasicHttpBinding を使用するエンドポイントを通じてサービスを公開し、内部ではルーティング サービスを使用して、そのサービスの NetTcpBinding を使用するエンドポイントにその接続をブリッジしています。 さらに、Contoso では、運用サービスのいずれかが一時的に停止した場合でも、サービスの提供を継続できるようにしたいと考えています。そのため、ルーター サービスの背後で複数のエンドポイントを仮想化し、必要に応じて、エラー処理機能を使用して自動的にバックアップ エンドポイントにフェールオーバーされるようにしています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 48a5d2e1d8c5381f322ea1b6ffc9022853683efc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b7447d11e93cf33e69bc52d2cdec239c1be55bcd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="host-lock-renewal-period"></a>ホストのロック更新時間
 **ホストのロック更新時間**SQL Workflow Instance Store のプロパティを使用して、ホストがワークフロー インスタンスに対してロックを更新するまでの時間を指定できます。 ロックは、ホストのロック更新時間 + 30 秒の間は有効です。 この期間内にホストがロックの更新 (つまり、リースを延長) に失敗した場合は、ロックの有効期限が切れ、永続化プロバイダーはインスタンスのロックを解除します。 このプロパティの値は"hh:mm:ss"の形式は TimeSpan 型です。 最小許容値は"00: 00:01"(1 秒)。 このプロパティの既定値は"00: 00:30"(30 秒)。  

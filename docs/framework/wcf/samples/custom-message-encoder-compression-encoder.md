@@ -13,11 +13,12 @@ caps.latest.revision: "37"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c3c59a574d2206de7722958f676a721b51fbc2d7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 517b37ca1ed92cf36f447a4d634b8f487f2b4abe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>カスタム メッセージ エンコーダー : 圧縮エンコーダー
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] プラットフォームを使用するカスタム エンコーダーを実装する方法を示します。  
@@ -41,9 +42,9 @@ ms.lasthandoff: 12/02/2017
   
 -   カスタム エンコーダーおよびエンコーダー ファクトリの作成。  
   
--   カスタム エンコーダのバインディング要素の開発。  
+-   カスタム エンコーダのバインド要素の開発。  
   
--   カスタム バインディング要素を統合するためのカスタム バインディング構成の使用。  
+-   カスタム バインド要素を統合するためのカスタム バインド構成の使用。  
   
 -   カスタム バインディング要素のファイル構成を可能にするカスタム構成ハンドラーの開発。  
   
@@ -57,9 +58,9 @@ ms.lasthandoff: 12/02/2017
   
     2.  サービス ホストが作成されて開かれます。  
   
-    3.  カスタム構成要素がカスタム バインディング要素を作成して返します。  
+    3.  カスタム構成要素がカスタム バインド要素を作成して返します。  
   
-    4.  カスタム バインディング要素がメッセージ エンコーダ ファクトリを作成して返します。  
+    4.  カスタム バインド要素がメッセージ エンコーダ ファクトリを作成して返します。  
   
 3.  メッセージが受信されます。  
   
@@ -75,7 +76,7 @@ ms.lasthandoff: 12/02/2017
   
  エンコーダおよびエンコーダ ファクトリが定義されたら、これを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントとサービスで使用できるようになります。 ただし、これらのエンコーダをチャネル スタックに追加する必要があります。 <xref:System.ServiceModel.ServiceHost> クラスと <xref:System.ServiceModel.ChannelFactory%601> クラスの派生クラスを作成して `OnInitialize` メソッドをオーバーライドすると、このエンコーダ ファクトリを手動で追加することができます。 また、カスタム バインディング要素を介してエンコーダ ファクトリを公開することもできます。  
   
- 新しいカスタム バインディング要素を作成するには、<xref:System.ServiceModel.Channels.BindingElement> クラスの派生クラスを作成します。 ただし、バインディング要素には複数の型があります。 カスタム バインディング要素がメッセージ エンコード バインディング要素として認識されるには、さらに <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> も実装する必要があります。 <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> は、新しいメッセージ エンコーダ ファクトリ (`CreateMessageEncoderFactory`) を作成するためのメソッドを公開します。このメソッドを実装すると、一致するメッセージ エンコーダ ファクトリのインスタンスが返されます。 また、<xref:System.ServiceModel.Channels.MessageEncodingBindingElement> にはアドレス バージョンを示すプロパティがあります。 このサンプルでは既存のエンコーダをラップするので、サンプルの実装では既存のエンコーダ バインディング要素もラップし、内部のエンコーダ バインディング要素をコンストラクタへのパラメータとして設定して、プロパティを介して公開します。 `GZipMessageEncodingBindingElement` クラスを実装する方法を次のサンプル コードに示します。  
+ 新しいカスタム バインディング要素を作成するには、<xref:System.ServiceModel.Channels.BindingElement> クラスの派生クラスを作成します。 ただし、バインド要素には複数の型があります。 カスタム バインディング要素がメッセージ エンコード バインディング要素として認識されるには、さらに <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> も実装する必要があります。 <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> は、新しいメッセージ エンコーダ ファクトリ (`CreateMessageEncoderFactory`) を作成するためのメソッドを公開します。このメソッドを実装すると、一致するメッセージ エンコーダ ファクトリのインスタンスが返されます。 また、<xref:System.ServiceModel.Channels.MessageEncodingBindingElement> にはアドレス バージョンを示すプロパティがあります。 このサンプルでは既存のエンコーダをラップするので、サンプルの実装では既存のエンコーダ バインディング要素もラップし、内部のエンコーダ バインディング要素をコンストラクタへのパラメータとして設定して、プロパティを介して公開します。 `GZipMessageEncodingBindingElement` クラスを実装する方法を次のサンプル コードに示します。  
   
 ```  
 public sealed class GZipMessageEncodingBindingElement   
@@ -217,7 +218,7 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
 </configuration>  
 ```  
   
- これで、一致する圧縮エンコーダのバインディング要素ができるので、新しいカスタム バインディング オブジェクトを作成してそのカスタム バインディング要素を追加すると、プログラムによって圧縮エンコーダのバインディング要素をサービスまたはクライアントにフックできます。次のサンプル コードを参照してください。  
+ これで、一致する圧縮エンコーダのバインド要素ができるので、新しいカスタム バインド オブジェクトを作成してそのカスタム バインド要素を追加すると、プログラムによって圧縮エンコーダのバインド要素をサービスまたはクライアントにフックできます。次のサンプル コードを参照してください。  
   
 ```  
 ICollection<BindingElement> bindingElements = new List<BindingElement>();  
@@ -230,7 +231,7 @@ binding.Name = "SampleBinding";
 binding.Namespace = "http://tempuri.org/bindings";  
 ```  
   
- ほとんどのユーザー シナリオではこのコードで十分ですが、サービスが Web ホストの場合はファイル構成のサポートが重要になります。 Web ホストのシナリオをサポートするには、カスタム構成ハンドラを開発して、カスタム バインディング要素をファイル内で構成できるようにする必要があります。  
+ ほとんどのユーザー シナリオではこのコードで十分ですが、サービスが Web ホストの場合はファイル構成のサポートが重要になります。 Web ホストのシナリオをサポートするには、カスタム構成ハンドラを開発して、カスタム バインド要素をファイル内で構成できるようにする必要があります。  
   
  バインディング要素の構成ハンドラーを、[!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)] によって用意された構成システム上にビルドできます。 バインディング要素の構成ハンドラーは、<xref:System.ServiceModel.Configuration.BindingElementExtensionElement> クラスから派生する必要があります。 `BindingElementType` プロパティを使用して、このセクション用に作成するバインディング要素の型を構成システムに通知します。 設定可能な `BindingElement` のすべての側面を、<xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 派生クラスのプロパティとして公開する必要があります。 <xref:System.Configuration.ConfigurationPropertyAttribute> を使用して、構成要素の属性をプロパティにマップしたり、属性がない場合は既定値を設定する際に役立てます。 構成から値が読み込まれてプロパティに適用されると、<xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> メソッドが呼び出されます。このメソッドは、プロパティをバインディング要素の具体的なインスタンスに変換します。 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> メソッドを使用して、<xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 派生クラスのプロパティを、新しく作成されたバインディング要素の設定対象の値に変換します。  
   
@@ -365,4 +366,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

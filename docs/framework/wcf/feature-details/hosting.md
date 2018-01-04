@@ -13,11 +13,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cc98a6c6b0e8b552a7bf04d3fc1a97b41883677
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f25f0c9e773bbadd992284adf6c79d77aaa2441c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting"></a>ホスト
 このセクションのトピックでは、サービス ホスティングについて説明します。 インターネット インフォメーション サービス (IIS)、Windows プロセス アクティブ化サービス (WAS)、Windows Server AppFabric、Windows サービス、またはマネージ アプリケーションによっては、サービスをホストされていることができます: このオプションは、多くの場合と呼びます*セルフ ホスト*です。  
@@ -25,7 +26,7 @@ ms.lasthandoff: 12/02/2017
  信頼されていないホストからサービスや拡張機能を実行すると、セキュリティが損なわれるので注意してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [インターネット インフォメーション サービスをホストしています。](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [インターネット インフォメーション サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
  について説明する方法、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]サービスがインターネット インフォメーション サービスでホストされているまたは[Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496)です。  
   
  [Windows プロセス アクティブ化サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
@@ -43,6 +44,6 @@ ms.lasthandoff: 12/02/2017
  [複数の IIS サイト バインディングのサポート](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)  
  1 つの Web サイト上で同じ URI スキームを使用してサービスの複数のベース アドレスを指定する方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)  
  [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)

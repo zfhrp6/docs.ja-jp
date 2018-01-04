@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c97279b553a615feda1dd3a195ad033744d82983
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a7e7187eb6ed444ba2c28aa301ce4b3b16129030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>WSE 3.0 Web サービスの WCF への移行
 WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に移行する利点には、パフォーマンスの向上と、追加のトランスポート、追加のセキュリティ シナリオ、および WS-* 仕様のサポートなどがあります。 WSE 3.0 から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行した Web サービスでは、パフォーマンスが最大 200% から 400% 向上する可能性があります。 サポートされているトランスポートの詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。 によってサポートされるシナリオの一覧については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)です。 サポートされている仕様の一覧については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[Web サービス プロトコルの相互運用性ガイド](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)です。  
@@ -60,7 +61,7 @@ WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
 </customBinding>  
 ```  
   
- ポリシー ファイルで指定されている WSE 3.0 Web サービスのセキュリティ設定を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行するには、構成ファイルでカスタム バインディングを作成し、設定不要のセキュリティ アサーションを同等の認証モードに設定する必要があります。 さらに、WSE 3.0 クライアントがサービスと通信するときに 2004 年 8 月版の WS-Addressing 仕様を使用するように、カスタム バインディングを構成する必要もあります。 移行後の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが WSE 3.0 クライアントと通信する必要がなく、等価のセキュリティの保持のみが必要な場合は、カスタム バインディングを作成する代わりに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] システム定義のバインディングと適切なセキュリティ設定を使用することを考慮してください。  
+ ポリシー ファイルで指定されている WSE 3.0 Web サービスのセキュリティ設定を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行するには、構成ファイルでカスタム バインディングを作成し、設定不要のセキュリティ アサーションを同等の認証モードに設定する必要があります。 さらに、WSE 3.0 クライアントがサービスと通信するときに 2004 年 8 月版の WS-Addressing 仕様を使用するように、カスタム バインドを構成する必要もあります。 移行後の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが WSE 3.0 クライアントと通信する必要がなく、等価のセキュリティの保持のみが必要な場合は、カスタム バインディングを作成する代わりに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] システム定義のバインディングと適切なセキュリティ設定を使用することを考慮してください。  
   
  WSE 3.0 ポリシー ファイルと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の同等のカスタム バインディングとの対応関係を次の表に示します。  
   
@@ -132,8 +133,8 @@ WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
 ### <a name="custom-transport"></a>カスタム トランスポート  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] において WSE 3.0 カスタム トランスポートに相当するのは、チャネル拡張です。 チャネル拡張機能の作成に関する詳細については、「 [、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的なプログラミング ライフサイクル](../../../../docs/framework/wcf/basic-programming-lifecycle.md)  
- [カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [方法: SecurityBindingElement を使用してカスタム バインディングを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [方法: 指定された認証モード用の SecurityBindingElement を作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+ [カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [方法 : 指定した認証モード用の SecurityBindingElement を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

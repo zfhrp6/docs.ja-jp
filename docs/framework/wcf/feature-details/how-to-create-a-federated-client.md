@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 87d29a53bc33ecd114e3315475984cbf04ce17c8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7fda534d591ae5142fb732607c7e248ef3cc71bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-federated-client"></a>方法 : フェデレーション クライアントを作成する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]、クライアントを作成、*フェデレーション サービス*の 3 つの主要な手順で構成されています。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 12/02/2017
      [!code-csharp[c_CreateSTS#15](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#15)]
      [!code-vb[c_CreateSTS#15](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#15)]  
   
-4.  省略可能です。 <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> をパーセンテージに設定します。 既定値は 60 (パーセント) です。 このプロパティは、トークンの有効期間をパーセンテージで指定します。 たとえば、発行されたトークンが 10 時間有効で、<xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> が 80 に設定されている場合、このトークンは 8 時間後に更新されます。 この値を 80% に設定する例を次に示します。  
+4.  任意。 <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> をパーセンテージに設定します。 既定値は 60 (パーセント) です。 このプロパティは、トークンの有効期間をパーセンテージで指定します。 たとえば、発行されたトークンが 10 時間有効で、<xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> が 80 に設定されている場合、このトークンは 8 時間後に更新されます。 この値を 80% に設定する例を次に示します。  
   
      [!code-csharp[c_CreateSTS#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#16)]
      [!code-vb[c_CreateSTS#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#16)]  
@@ -109,7 +110,7 @@ ms.lasthandoff: 12/02/2017
     <issuedToken defaultKeyEntropyMode = "ServerEntropy" />  
     ```  
   
-6.  省略可能です。 作成することで、発行者固有のカスタム エンドポイント動作を構成する <`issuerChannelBehaviors`> の子要素として、<`issuedToken`> 要素。 各動作を作成する <`add`> の子要素として、<`issuerChannelBehaviors`> 要素。 設定して動作の発行者のアドレスを指定、`issuerAddress`属性に、<`add`> 要素。 設定して自体の動作を指定、`behaviorConfiguration`属性に、<`add`> 要素。  
+6.  任意。 作成することで、発行者固有のカスタム エンドポイント動作を構成する <`issuerChannelBehaviors`> の子要素として、<`issuedToken`> 要素。 各動作を作成する <`add`> の子要素として、<`issuerChannelBehaviors`> 要素。 設定して動作の発行者のアドレスを指定、`issuerAddress`属性に、<`add`> 要素。 設定して自体の動作を指定、`behaviorConfiguration`属性に、<`add`> 要素。  
   
     ```xml  
     <issuerChannelBehaviors>  
@@ -170,11 +171,11 @@ ms.lasthandoff: 12/02/2017
 > [!NOTE]
 >  特定の URI に範囲指定された証明書というクライアントの概念は、該当する URI でエンドポイントを公開するサービスへの送信呼び出しを行うアプリケーションにだけ適用されます。 によって返されるコレクション内のサーバーで構成されているものなど、発行済みトークンの署名に使用される証明書には適用されません、<xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A>の<xref:System.ServiceModel.Security.IssuedTokenServiceCredential>クラスです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: フェデレーション サービスの資格情報を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)  
- [方法: WSFederationHttpBinding 上のセッションが無効にするにセキュリティで保護](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
- [方法: WSFederationHttpBinding を作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
- [方法: フェデレーション サービスの資格情報を構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
- [方法: ローカル発行者を構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
- [メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
- [方法: メタデータ エンドポイントをセキュリティで保護](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)
+ [方法 : WSFederationHttpBinding のセキュリティで保護されたセッションを無効にする](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
+ [方法 : WSFederationHttpBinding を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [方法 : フェデレーション サービスで資格情報を設定する](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [方法 : ローカル発行者を設定する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
+ [メタデータを使用する場合のセキュリティ上の考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
+ [方法 : セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)

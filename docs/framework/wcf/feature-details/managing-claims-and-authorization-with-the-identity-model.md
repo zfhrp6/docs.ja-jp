@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b69c17b9fcb14bbd70b60c32965fb1163c22e765
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: db0a304a908e906b635672eed1a84f0277284ad7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>ID モデルを使用したクレームと承認の管理
 承認は、コンピューター リソースを変更または表示したり、コンピューター リソースにアクセスしたりする権限を持つエンティティを特定するプロセスです。 たとえば、ある業務で、管理者だけが従業員のファイルへのアクセスを許可される場合があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、承認処理を実行するための 2 つの機構をサポートしています。 1 つ目の機構では、既存の共通言語ランタイム (CLR: Common Language Runtime) 構造を使用して承認を制御できます。 2 つ目は、クレームに基づくモデルと呼ばれる、 *Id モデル*です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ID モデルを使用して受信メッセージからクレームを作成します。ID モデル クラスを拡張することで、カスタム承認方式に対応する新しいクレームの種類をサポートできます。 このトピックでは、ID モデル機能のプログラミングの主要概念について概説し、この機能で使用する最も重要なクラスの一覧を示します。  
@@ -76,10 +77,10 @@ ms.lasthandoff: 12/02/2017
  保護されたリソース  
  システム内に存在するものの中で、まず特定の要件が満たされた場合にのみ、使用、アクセス、または操作が可能になるもの。  
   
- 右  
+ 権限  
  リソースに対する使用能力。 ID モデル API によって定義された権限は、<xref:System.IdentityModel.Claims.Rights> クラスのプロパティです。 システムが提供する権限には、<xref:System.IdentityModel.Claims.Rights.Identity%2A> や <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> などがあります。  
   
- 値  
+ [値]  
  権限がクレームされる対象。  
   
 ## <a name="claims"></a>クレーム  
@@ -169,7 +170,7 @@ ms.lasthandoff: 12/02/2017
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A>|サービスの <xref:System.ServiceModel.ServiceAuthorizationManager> を返します。 承認決定は、<xref:System.ServiceModel.ServiceAuthorizationManager> が行います。|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A>|サービスに指定されたカスタム承認ポリシーのコレクション。 受信メッセージの資格情報に関連するポリシーに加え、これらのポリシーも評価されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IdentityModel.Policy.AuthorizationContext>  
  <xref:System.IdentityModel.Claims.Claim>  
  <xref:System.IdentityModel.Policy.EvaluationContext>  
@@ -181,11 +182,11 @@ ms.lasthandoff: 12/02/2017
  <xref:System.IdentityModel.Tokens>  
  <xref:System.IdentityModel.Selectors>  
  [クレームとトークン](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)  
- [信頼性情報およびリソースへのアクセスを拒否します。](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)  
+ [リソースへのアクセスのクレームと拒否](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)  
  [クレームの作成とリソース値](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)  
- [方法: カスタム クレームを作成](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)  
- [方法: クレームの比較](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)  
- [方法: カスタム承認ポリシーを作成します。](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)  
- [方法: サービスのカスタム承認マネージャーを作成します。](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
+ [方法 : カスタム クレームを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)  
+ [方法 : クレームを比較する](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)  
+ [方法 : カスタム承認ポリシーを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)  
+ [方法 : サービスで使用するカスタム承認マネージャーを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)

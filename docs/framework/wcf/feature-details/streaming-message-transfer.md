@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0ff5fbf570c826f5c430109d9f79b3d5f39382f6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a751245f0a933fda649d5919bab86abf2969dbf6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-message-transfer"></a>メッセージ転送ストリーミング
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポートでは、メッセージを転送するための次の 2 つのモードをサポートしています。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="enabling-streamed-transfers"></a>ストリーミング転送の有効化  
  バッファー転送モードとストリーミング転送モードは、トランスポートのバインド要素で切り替えます。 バインディング要素には、<xref:System.ServiceModel.TransferMode> プロパティがあり、`Buffered`、`Streamed`、`StreamedRequest`、または `StreamedResponse` に設定できます。 転送モードを `Streamed` に設定すると、両方向のストリーミング通信が可能になります。 転送モードを `StreamedRequest` または `StreamedResponse` に設定すると、指定した方向のストリーミング通信だけが有効になります。  
   
- <xref:System.ServiceModel.BasicHttpBinding>、<xref:System.ServiceModel.NetTcpBinding>、および <xref:System.ServiceModel.NetNamedPipeBinding> の各バインディングは、<xref:System.ServiceModel.TransferMode> プロパティを公開します。 他のトランスポートの場合、転送モードを設定するにはカスタム バインディングを作成する必要があります。  
+ <xref:System.ServiceModel.BasicHttpBinding>、<xref:System.ServiceModel.NetTcpBinding>、および <xref:System.ServiceModel.NetNamedPipeBinding> の各バインディングは、<xref:System.ServiceModel.TransferMode> プロパティを公開します。 他のトランスポートの場合、転送モードを設定するにはカスタム バインドを作成する必要があります。  
   
  バッファー転送とストリーミング転送のどちらを使用するかは、エンドポイントごとにローカルに決定します。 HTTP トランスポートの場合、転送モードは、接続、つまりサーバーなどの中継局に伝達されません。 転送モードの設定は、サービス インターフェイスの記述に反映されません。 サービスに対してクライアント クラスを生成した後、ストリーミング転送で使用する予定のサービスの構成ファイルを編集し、転送モードを設定する必要があります。 TCP トランスポートと名前付きパイプ トランスポートの場合、転送モードはポリシー アサーションとして伝達されます。  
   
@@ -56,5 +57,5 @@ ms.lasthandoff: 12/02/2017
 ## <a name="differences-between-buffered-and-streamed-transfers"></a>バッファー転送とストリーミング転送の違い  
  転送モードをバッファーからストリーミングに変更すると、TCP トランスポートと名前付きパイプ トランスポートのネイティブなチャネル形状も変更されます。 バッファー転送では、ネイティブなチャネル形状は <xref:System.ServiceModel.Channels.IDuplexSessionChannel> です。 ストリーム転送では、ネイティブなチャネル形状は <xref:System.ServiceModel.Channels.IRequestChannel> と <xref:System.ServiceModel.Channels.IReplyChannel> です。 これらのトランスポートを直接 (つまり、サービス コントラクトを介さずに) 使用する既存のアプリケーションで転送モードを変更するには、チャネル ファクトリおよびリスナーの予測されるチャネル形状を変更する必要があります。  
   
-## <a name="see-also"></a>関連項目  
- [方法: ストリーミングを有効にします。](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+## <a name="see-also"></a>参照  
+ [方法 : ストリーミングを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

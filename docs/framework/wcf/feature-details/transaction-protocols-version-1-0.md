@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 544e505dd182d331179d9a6d3da4815b849fdd95
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e616f989416fcee77caa9b9a5d87cfa6812eab32
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transaction-protocols-version-10"></a>トランザクション プロトコル バージョン 1.0
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] バージョン 1 は、WS-Atomic Transaction プロトコルおよび WS-Coordination プロトコルのバージョン 1.0 を実装します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]バージョン 1.1 を参照してください[トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)です。  
@@ -95,7 +96,7 @@ ms.lasthandoff: 12/02/2017
 #### <a name="activation-and-registration-binding-configuration"></a>アクティベーションと登録のバインディング構成  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、HTTPS 上での関連付けにおいて要求/応答の二重バインディングが必要です  (関連付けと要求/応答メッセージ交換パターンの詳細については、WS-AtomicTransaction 仕様のセクション 8 を参照してください)。  
   
-#### <a name="2pc-protocol-binding-configuration"></a>2PC プロトコルのバインディング構成  
+#### <a name="2pc-protocol-binding-configuration"></a>2PC プロトコルのバインド構成  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 (データグラム) メッセージをサポートしています。 メッセージ間の関連付けは、実装詳細の状態にしておきます。  
   
  B2131: 実装をサポートする必要があります`wsa:ReferenceParameters`Ws-addressing の相関関係を実現するために」の説明に従って[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の 2 pc メッセージ。  
@@ -106,7 +107,7 @@ ms.lasthandoff: 12/02/2017
 #### <a name="https-transport-configuration"></a>HTTPS トランスポート構成  
  トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。 クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。  
   
-#### <a name="activation-message-binding-configuration"></a>アクティベーション メッセージのバインディング構成  
+#### <a name="activation-message-binding-configuration"></a>アクティベーション メッセージのバインド構成  
  アクティベーション メッセージは通常、アプリケーションとローカルのトランザクション マネージャー間で発生するため、相互運用には参加しません。  
   
  B1221:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]双方向の HTTPS バインドを使用して (「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) アクティベーション メッセージのです。 要求および応答メッセージは、WS-Addressing 2004/08 を使用して関連付けられます。  

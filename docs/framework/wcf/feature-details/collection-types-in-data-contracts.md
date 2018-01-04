@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e22763f78d8a40ced4350a93a1f1833e19aac17f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e74bd7d90d5653890fd5cf48e76c81d0227c6172
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="collection-types-in-data-contracts"></a>データ コントラクトのコレクション型
 *"コレクション"* は、特定の型の項目のリストです。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]では、このようなリストは、配列や他のさまざまな型を使用して表すことができます (ジェネリック List、ジェネリック <xref:System.ComponentModel.BindingList%601>、 <xref:System.Collections.Specialized.StringCollection>、または <xref:System.Collections.ArrayList>)。 たとえば、コレクションでは指定された顧客のアドレスのリストを保持できます。 これらのコレクションは、実際の型に関係なく、 *リスト コレクション*と呼びます。  
@@ -236,7 +237,7 @@ ms.lasthandoff: 12/02/2017
   
  既定では、コードをインポートする際に、カスタマイズされていないコレクションの型は生成されません。 リスト コレクション型のデータ メンバーは配列としてインポートされ、ディクショナリ コレクション型のデータ メンバーはジェネリック ディクショナリとしてインポートされます。  
   
- ただし、カスタマイズされたコレクションの場合、<xref:System.Runtime.Serialization.CollectionDataContractAttribute> 属性でマークされた個別の型が生成されます  (スキーマにおけるカスタマイズされたコレクション型とは、既定の名前空間、名前、反復される要素名、またはキー/値要素名を使用しない型のことです)。これらの型は、リスト型のジェネリック <xref:System.Collections.Generic.List%601> およびディクショナリ型のジェネリック ディクショナリから派生した空の型です。  
+ ただし、カスタマイズされたコレクションの場合、 <xref:System.Runtime.Serialization.CollectionDataContractAttribute> 属性でマークされた個別の型が生成されます (スキーマにおけるカスタマイズされたコレクション型とは、既定の名前空間、名前、反復される要素名、またはキー/値要素名を使用しない型のことです)。これらの型は、リスト型のジェネリック <xref:System.Collections.Generic.List%601> およびディクショナリ型のジェネリック ディクショナリから派生した空の型です。  
   
  たとえば、サーバーで次のような型を使用するとします。  
   
@@ -358,7 +359,7 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 -   Name を使用してオーバーライドしていない場合、リスト コレクション データ コントラクトの既定の名前は、文字列 "ArrayOf" とコレクションに含まれる型のデータ コントラクト名を組み合わせたものです。 たとえば、Integers のジェネリック List のデータ コントラクト名は "ArrayOfint" です。 `Object` のデータ コントラクト名は "anyType" であることに留意してください。したがって、 <xref:System.Collections.ArrayList> のような非ジェネリック リストのデータ コントラクト名は、"ArrayOfanyType" になります。  
   
- `Name`を使用してオーバーライドしていない場合、ディクショナリ コレクション データ コントラクトの既定の名前は、文字列 "ArrayOfKeyValueOf"、キーの型のデータ コントラクト名、および値の型のデータ コントラクト名をこの順番で組み合わせたものです。 たとえば、String と Integer のジェネリック ディクショナリのデータ コントラクト名は、"ArrayOfKeyValueOfstringint" になります。 また、キーの型と値の型がいずれもプリミティブ型ではない場合は、キーおよび値の型のデータ コントラクト名前空間の名前空間ハッシュが名前に付加されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、「 [Data Contract Names](../../../../docs/framework/wcf/feature-details/data-contract-names.md)。  
+ `Name` を使用してオーバーライドしていない場合、ディクショナリ コレクション データ コントラクトの既定の名前は、文字列 "ArrayOfKeyValueOf"、キーの型のデータ コントラクト名、および値の型のデータ コントラクト名をこの順番で組み合わせたものです。 たとえば、String と Integer のジェネリック ディクショナリのデータ コントラクト名は、"ArrayOfKeyValueOfstringint" になります。 また、キーの型と値の型がいずれもプリミティブ型ではない場合は、キーおよび値の型のデータ コントラクト名前空間の名前空間ハッシュが名前に付加されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、「 [Data Contract Names](../../../../docs/framework/wcf/feature-details/data-contract-names.md)。  
   
  各ディクショナリ コレクション データ コントラクトには、ディクショナリの 1 エントリを表すコンパニオン データ コントラクトが存在します。 コンパニオン データ コントラクトの名前は、"ArrayOf" プレフィックスを除いたディクショナリ データ コントラクトの名前と同じです。また、名前空間は、ディクショナリ データ コントラクトの名前空間と同じです。 たとえば、"ArrayOfKeyValueOfstringint" ディクショナリ データ コントラクトの場合、"KeyValueofstringint" データ コントラクトがディクショナリの 1 エントリを表します。 次のセクションで説明するように、このデータ コントラクトの名前は、 `ItemName` プロパティを使用してカスタマイズできます。  
   
@@ -405,5 +406,5 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 ## <a name="collections-and-object-reference-preservation"></a>コレクションとオブジェクト参照の保存  
  シリアライザーがオブジェクト参照を保存するモードで機能している場合、オブジェクト参照の保存はコレクションにも適用されます。 具体的には、コレクション全体と、コレクションに含まれる個々の項目の両方のオブジェクト ID が保存されます。 ディクショナリの場合、キーと値のペア オブジェクトと、個々のキー オブジェクトおよび値オブジェクトのオブジェクト ID が保存されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.CollectionDataContractAttribute>

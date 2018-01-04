@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: c9d0c81d715b2e876fe8144d4cff198f3321a22e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9d24e517a8fd63a3363d080ebbabf2c1e3306b76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-filters"></a>カスタム フィルター
 カスタム フィルターを使用すると、システムが提供するメッセージ フィルターを使用して実現できない一致ロジックを定義できます。 たとえば、特定のメッセージ要素をハッシュし、その値を検証してフィルターが true または false のどちらを返すかを決定するカスタム フィルターを作成できます。  
@@ -64,7 +65,7 @@ public class MyMessageFilter: MessageFilter
   
  実稼働環境でカスタム フィルターを使用する前に、パフォーマンス テストを実行して、フィルターがメッセージを評価するのに要する平均時間を調べる必要があります。 フィルター テーブルで使用される他のフィルターの平均処理時間と合わせることで、クライアント アプリケーションで指定する必要がある最大タイムアウト値を正確に計算できます。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  で、ルーティング サービスを、カスタム フィルターを使用するためにする必要がありますに追加、フィルター テーブル型の新しいフィルター エントリを指定することで"Custom"メッセージ フィルターの完全修飾型名とアセンブリの名前。  その他の MessageFilter と同様に、カスタム フィルターのコンストラクターに渡される文字列 filterData を指定できます。  
   
  カスタム フィルターをルーティング サービスと使用する例を次に示します。  

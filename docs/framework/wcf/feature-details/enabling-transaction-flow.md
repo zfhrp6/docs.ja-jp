@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4b5d0b90ed28928e734089265cb8c58839b6d0cd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 814df9ff4fb11b0aa59270ac251b5dbd9ed7fe96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enabling-transaction-flow"></a>トランザクション フローの有効化
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、高い柔軟性を備えた、トランザクション フローの制御用オプションが用意されています。 サービスのトランザクション フローの設定は、属性と構成の組み合わせを使用して表すことができます。  
@@ -42,12 +43,12 @@ ms.lasthandoff: 12/02/2017
   
 |TransactionFlow<br /><br /> バインド|TransactionFlow バインディング プロパティ|TransactionFlowProtocol バインディング プロパティ|トランザクション フローの種類|  
 |---------------------------------|--------------------------------------|----------------------------------------------|------------------------------|  
-|必須|TRUE|WS-AT|トランザクションは、相互運用可能な WS-AT 形式でフローさせる必要があります。|  
-|必須|TRUE|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせる必要があります。|  
-|必須|false|該当なし|この構成は無効なため、適用できません。|  
-|Allowed|TRUE|WS-AT|トランザクションは、相互運用可能な WS-AT 形式でフローさせることができます。|  
-|Allowed|TRUE|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせることができます。|  
-|Allowed|false|任意の値|トランザクションは送信されません。|  
+|必須|true|WS-AT|トランザクションは、相互運用可能な WS-AT 形式でフローさせる必要があります。|  
+|必須|true|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせる必要があります。|  
+|必須|False|利用不可|この構成は無効なため、適用できません。|  
+|Allowed|true|WS-AT|トランザクションは、相互運用可能な WS-AT 形式でフローさせることができます。|  
+|Allowed|true|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせることができます。|  
+|Allowed|False|任意の値|トランザクションは送信されません。|  
 |NotAllowed|任意の値|任意の値|トランザクションは送信されません。|  
   
  メッセージ処理の結果を次の表にまとめます。  

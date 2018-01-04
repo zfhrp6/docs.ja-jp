@@ -14,11 +14,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08ebb19cb7fab8221ac1eb534777afffa0bad328
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: aac52f3c542f88adbca40c6cbbdddc734e12903b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicemodel-transaction-attributes"></a>ServiceModel トランザクションの属性
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、<xref:System.ServiceModel> サービスのトランザクションの動作を構成できる次の 3 つの標準的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性のプロパティが用意されています。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 12/02/2017
   
 -   <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> は、トランザクションが完了したときに基になるサービス インスタンスを解放するかどうかを指定します。 このプロパティの既定値は `true` です。 次の受信メッセージによって、基になる新しいインスタンスが作成されると、以前のインスタンスが保持していたトランザクションごとの状態は破棄されます。 サービス インスタンスの解放はサービスが実行する内部動作であるため、クライアントが確立した既存の接続またはセッションに影響を及ぼすことはありません。 この機能は、COM+ に用意された Just-In-Time アクティベーション機能に相当します。 このプロパティが `true` の場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> と <xref:System.ServiceModel.ConcurrencyMode.Single> を一致させる必要があります。 そうでない場合、サービスの起動中に無効な構成の検証例外がスローされます。  
   
--   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> は、サービスのトランザクションで使用する分離レベルを指定します。このプロパティは、<xref:System.Transactions.IsolationLevel> の値のいずれかに設定されます。 ローカルの分離レベル プロパティが、<xref:System.Transactions.IsolationLevel.Unspecified> 以外に設定されている場合は、受信トランザクションの分離レベルをこのローカルのプロパティの設定に一致させる必要があります。 そうでない場合、受信トランザクションは拒否され、クライアントにエラーが返されます。 <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> が `true` であり、トランザクションがフローしていない場合、このプロパティによって、ローカルで作成されるトランザクションに使用する <xref:System.Transactions.IsolationLevel> の値が決まります。 <xref:System.Transactions.IsolationLevel> が <xref:System.Transactions.IsolationLevel.Unspecified> に設定されている場合は、<xref:System.Transactions.IsolationLevel><xref:System.Transactions.IsolationLevel.Serializable> が使用されます。  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> は、サービスのトランザクションで使用する分離レベルを指定します。このプロパティは、<xref:System.Transactions.IsolationLevel> の値のいずれかに設定されます。 ローカルの分離レベル プロパティが、<xref:System.Transactions.IsolationLevel.Unspecified> 以外に設定されている場合は、受信トランザクションの分離レベルをこのローカルのプロパティの設定に一致させる必要があります。 そうでない場合、受信トランザクションは拒否され、クライアントにエラーが返されます。 <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> が `true` であり、トランザクションがフローしていない場合、このプロパティによって、ローカルで作成されるトランザクションに使用する <xref:System.Transactions.IsolationLevel> の値が決まります。 場合<xref:System.Transactions.IsolationLevel>に設定されている<xref:System.Transactions.IsolationLevel.Unspecified>、 <xref:System.Transactions.IsolationLevel> <xref:System.Transactions.IsolationLevel.Serializable>を使用します。  
   
 -   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> は、サービスで作成された新しいトランザクションを完了させる期間を指定します。 この期間が過ぎてもトランザクションが完了しない場合は、トランザクションは中止されます。 <xref:System.TimeSpan> は、<xref:System.Transactions.TransactionScope> が <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> に設定された任意の操作、および新しいトランザクションが作成された任意の操作の `true` タイムアウトとして使用されます。 このタイムアウトは、2 フェーズ コミット プロトコルにおいて、トランザクションが作成されてからフェーズ 1 が完了するまでの最大許容時間です。 使用されるタイムアウト値は、<xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> プロパティと `transactionTimeout` 構成設定のうち、常に小さい方の値になります。  
   

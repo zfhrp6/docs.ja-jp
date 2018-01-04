@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31720b0639f9be68a2124b4ff844a2837787ef81
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7d2b5b6d4a671a3eb281f49dd60fd3c00ee76f8a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>方法 : Metadata Exchange コントラクトと共にサービス モニカーを使用する
 新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをいくつか開発した後に、そのサービスをスクリプトまたは Visual Basic 6.0 アプリケーションから呼び出せるようにする必要が生じる場合があります。 この方法の 1 つに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アセンブリを作成し、そのアセンブリを COM を使用して登録して GAC にインストールし、Visual Basic コードで COM 型を参照する方法があります。 アプリケーションを配布するときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アセンブリも配信する必要があります。 次にユーザーは COM を使用して WCF クライアント アセンブリを登録し、それを GAC に配置する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] COM Interop でも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アセンブリに依存しない同じサービス呼び出しを作成できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] モニカーを使用すれば、サービスに関する型情報を抽出するためにサービス モニカーで使用されるメタデータ交換 (Mex) エンドポイント URI を指定することにより、必要な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを任意の COM 互換言語 (Visual Basic、VBScript、Visual Basic for Applications (VBA) など) から呼び出すことができます。 ここでは、Mex エンドポイントを指定する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] モニカーを使用して、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の入門サンプルを呼び出す方法を説明します。  
@@ -49,6 +50,6 @@ ms.lasthandoff: 12/02/2017
     > [!NOTE]
     >  モニカーの形式が正しくないか、`GetObject` を呼び出せない場合は、"構文が無効です" というメッセージが返されます。  このエラーが発生した場合は、使用しているモニカーが正しく、サービスが使用可能であることを確認してください。  
   
-## <a name="see-also"></a>関連項目  
- [方法: 登録しないと Windows Communication Foundation サービス モニカーを使用します。](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
- [方法: WSDL コントラクトと共にサービス モニカーを使用](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)
+## <a name="see-also"></a>参照  
+ [方法 : 未登録で Windows Communication Foundation のサービス モニカーを使用する](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
+ [方法 : WSDL コントラクトと共にサービス モニカーを使用する](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)

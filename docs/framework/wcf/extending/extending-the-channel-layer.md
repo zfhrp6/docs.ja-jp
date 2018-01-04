@@ -14,11 +14,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3f9d14183092b70f0bbe1ce8894f10369aa46c31
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5a1a1bb0b1f2c5e6b42ee793f18f5ad442b1fe8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-the-channel-layer"></a>チャネル レイヤーの拡張
 チャネル レイヤーはクライアントとサービス間のメッセージの交換を担います。 チャネル拡張では、新しいプロトコル機能 (セキュリティなど)、またはトランスポート機能 (SOAP メッセージを送信する新しいネットワーク トランスポートの実装など) を実装できます。  
@@ -33,5 +34,5 @@ ms.lasthandoff: 12/02/2017
  [カスタム エンコーダー](../../../../docs/framework/wcf/extending/custom-encoders.md)  
  メッセージ エンコーダーがチャネルで果たす役割、およびメッセージ エンコーダーの作成方法について説明します。  
   
- [カスタム ストリーム アップグレード](../../../../docs/framework/wcf/extending/custom-stream-upgrades.md)  
+ [カスタム ストリームのアップグレード](../../../../docs/framework/wcf/extending/custom-stream-upgrades.md)  
  ストリーム指向のトランスポートによって提供されるストリームのアップグレード プロセスについて説明します。

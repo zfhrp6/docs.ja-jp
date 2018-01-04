@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e3640e69a46596d4675d7744c6e43fe9a499cb99
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0d7657c56191d8f28e71fca2fd2960bd69559ecf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-windows-workflow-foundation"></a>Windows Workflow Foundation の拡張
 次のセクションでは、[!INCLUDE[wf](../../../includes/wf-md.md)] の外部の再ホストされた環境でカスタム アクティビティとデザイナーを使用して [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を拡張する方法について説明します。  

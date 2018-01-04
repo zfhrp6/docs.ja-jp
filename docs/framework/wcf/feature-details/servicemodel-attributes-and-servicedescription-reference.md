@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8dbaa6f3df2bd4dcbde199f867686b3e05ae235f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 61a0811176a5db17e040073d031fa50865a09857
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>ServiceModel 属性および ServiceDescription 参照
 *説明ツリー*型の階層は、(以降で、<xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType>クラス)、サービスのすべての側面を同時に記述します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、説明ツリーを使用して、有効なサービス ランタイムの構築、Web サービス記述言語 (WSDL: Web Services Description Language)、XML スキーマ定義言語 (XSD: XML Schema Definition language)、およびクライアントが接続して使用できるサービスに関するポリシー アサーション (メタデータ) の公開、説明ツリーの値を表すさまざまなコードと構成ファイルの生成を行います。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 12/02/2017
   
 |ServiceBehaviorAttribute プロパティ|影響を受ける説明ツリーの値|  
 |---------------------------------------|-------------------------------------|  
-|名前|<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>|  
+|name|<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>|  
 |名前空間|<xref:System.ServiceModel.Description.ServiceDescription.Namespace%2A>|  
 |ConfigurationName|<xref:System.ServiceModel.Description.ServiceDescription.ConfigurationName%2A>|  
 |IgnoreExtensionDataObject|すべての操作の <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.IgnoreExtensionDataObject%2A> プロパティを設定します。|  
@@ -57,7 +58,7 @@ ms.lasthandoff: 12/02/2017
 |IsOneWay|<xref:System.ServiceModel.Description.MessageDescription> の 1 つの <xref:System.ServiceModel.Description.OperationDescription.Messages%2A> にマップします。|  
 |IsInitiating|<xref:System.ServiceModel.Description.OperationDescription.IsInitiating%2A>|  
 |IsTerminating|<xref:System.ServiceModel.Description.OperationDescription.IsTerminating%2A>|  
-|名前|<xref:System.ServiceModel.Description.OperationDescription.Name%2A>|  
+|name|<xref:System.ServiceModel.Description.OperationDescription.Name%2A>|  
 |ProtectionLevel|<xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> と、場合によっては子の保護レベル。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]保護レベルの階層を参照してください[について保護レベル](../../../../docs/framework/wcf/understanding-protection-level.md)です。|  
 |ReplyAction|出力メッセージまたは入力メッセージの <xref:System.ServiceModel.Description.MessageDescription.Action%2A>。コントラクトまたはコールバック コントラクトによって異なります。|  
   
@@ -65,18 +66,18 @@ ms.lasthandoff: 12/02/2017
 |----------------------------------|-------------------------------------|  
 |アクション|<xref:System.ServiceModel.Description.FaultDescription.Action%2A>。コントラクトまたはコールバック コントラクトによって異なります。|  
 |DetailType|<xref:System.ServiceModel.Description.FaultDescription.DetailType%2A>|  
-|名前|<xref:System.ServiceModel.Description.FaultDescription.Name%2A>|  
+|name|<xref:System.ServiceModel.Description.FaultDescription.Name%2A>|  
 |名前空間|<xref:System.ServiceModel.Description.FaultDescription.Namespace%2A>|  
 |ProtectionLevel|<xref:System.ServiceModel.Description.FaultDescription.ProtectionLevel%2A>|  
   
 |DataContractFormatAttribute 値|影響を受ける説明ツリーの値|  
 |---------------------------------------|-------------------------------------|  
-|用途|操作の <xref:System.ServiceModel.DataContractFormatAttribute.Style%2A> に <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> 値が設定されます。|  
+|使用|操作の <xref:System.ServiceModel.DataContractFormatAttribute.Style%2A> に <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> 値が設定されます。|  
   
 |XmlSerializerFormatAttribute 値|影響を受ける説明ツリーの値|  
 |----------------------------------------|-------------------------------------|  
 |スタイル|操作の <xref:System.ServiceModel.XmlSerializerFormatAttribute> に、この <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> プロパティが設定されます。|  
-|用途|操作の <xref:System.ServiceModel.XmlSerializerFormatAttribute> に、<xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> が設定されます。|  
+|使用|操作の <xref:System.ServiceModel.XmlSerializerFormatAttribute> に、<xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> が設定されます。|  
   
 |TransactionFlowAttribute 値|影響を受ける説明ツリーの値|  
 |------------------------------------|-------------------------------------|  
@@ -90,16 +91,16 @@ ms.lasthandoff: 12/02/2017
   
 |MessageHeaderAttribute 値|影響を受ける説明ツリーの値|  
 |----------------------------------|-------------------------------------|  
-|Actor|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
+|アクター|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
-|名前|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
+|name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |名前空間|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |ProtectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |Relay|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A>対応するヘッダーの<xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
   
 |MessageBodyMemberAttribute 値|影響を受ける説明ツリーの値|  
 |--------------------------------------|-------------------------------------|  
-|名前|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>対応する部分<xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>対応する部分<xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
 |名前空間|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A>対応する部分<xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
 |順序|<xref:System.ServiceModel.Description.MessagePartDescription.Index%2A>対応する部分<xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
 |ProtectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A>対応する部分<xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
@@ -108,20 +109,20 @@ ms.lasthandoff: 12/02/2017
 |---------------------------------------|-------------------------------------|  
 |アクター|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A>|  
 |MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A>|  
-|名前|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
+|name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
 |名前空間|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A>|  
 |ProtectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A>|  
 |Relay|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A>|  
   
 |MessagePropertyAttribute 値|影響を受ける説明ツリーの値|  
 |------------------------------------|-------------------------------------|  
-|名前|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
+|name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
   
 |MessageParameterAttribute 値|影響を受ける説明ツリーの値|  
 |-------------------------------------|-------------------------------------|  
-|名前|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>対応する部分<xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>対応する部分<xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)]説明ツリーの値は、メタデータに変換する方法を参照してください。 [ServiceDescription と WSDL 参照](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ServiceDescription と WSDL 参照](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)

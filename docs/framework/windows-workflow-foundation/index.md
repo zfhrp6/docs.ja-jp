@@ -15,11 +15,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fded7335c616bdc4b98074f2734948a9ad000e9a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d6b61f5ae7d0e7f3102e0566fb1a6eff3ca072d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-workflow-foundation"></a>Windows Workflow Foundation
 ここでは、[!INCLUDE[wf](../../../includes/wf-md.md)] のプログラミング モデル、サンプル、およびツールについて説明します。  

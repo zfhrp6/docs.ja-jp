@@ -20,11 +20,12 @@ caps.latest.revision: "42"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cdb9e539d16b874ffd37b8e381757594561386e7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 24d26358c0bf0440b2fbba143629a0e4bda21cec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-contract-known-types"></a>既知のデータ コントラクト型
 <xref:System.Runtime.Serialization.KnownTypeAttribute> クラスを使用すると、逆シリアル化において考慮する必要のある型を事前に指定できます。 実施例については、「 [Known Types](../../../../docs/framework/wcf/samples/known-types.md) 」の例を参照してください。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 12/02/2017
 > [!NOTE]
 >  他のプリミティブ型とは異なり、 <xref:System.DateTimeOffset> 構造は、既定では既知の型ではないため、既知の型のリストに手動で追加する必要があります。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  <xref:System.Runtime.Serialization.KnownTypeAttribute> クラスの使用例を次に示します。  
   
 #### <a name="example-1"></a>例 1  
@@ -177,7 +178,7 @@ ms.lasthandoff: 12/02/2017
   
  前の構成ファイルでは、 `MyCompany.Library.Shape` というコントラクト型が `MyCompany.Library.Circle` を既知の型として持つと宣言されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.KnownTypeAttribute>  
  <xref:System.Collections.Hashtable>  
  <xref:System.Object>  

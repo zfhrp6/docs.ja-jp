@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: f0205f4bc468d4a38a50fd2be36d05583ad87906
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.workload: dotnet
+ms.openlocfilehash: e0fe14f096ae0914235ea1d23b874f0aea906d9d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing-introduction"></a>ルーティングの概要
 ルーティング サービスは、メッセージの内容を基にメッセージをルーティングできる、プラグ可能な汎用の SOAP 中継局を提供します。 ルーティング サービスを使用すると、サービスの集計、サービスのバージョン管理、優先度ルーティング、マルチキャスト ルーティングなどのシナリオを実装できる複雑なルーティング ロジックを作成できます。 また、ルーティング サービスは、バックアップ エンドポイントのリストを設定できるエラー処理機能も提供します。バックアップ エンドポイントは、プライマリ送信先エンドポイントへの送信時に障害が発生した場合に、メッセージの送信先になります。  
@@ -367,19 +368,19 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), backupList);
 |パターン|セッション|トランザクション|受信コンテキスト|サポートされるバックアップ リスト|メモ|  
 |-------------|-------------|-----------------|---------------------|---------------------------|-----------|  
 |一方向||||はい|バックアップ エンドポイントでメッセージの再送を試みます。 このメッセージがマルチキャストされる場合は、エラーが発生したチャネルのメッセージのみが、バックアップ先に移動されます。|  
-|一方向||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||いいえ|例外がスローされ、トランザクションがロールバックされます。|  
-|一方向|||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|はい|バックアップ エンドポイントでメッセージの再送を試みます。 メッセージの受信が成功したら、すべての受信コンテキストを完了します。 どのエンドポイントでもメッセージを受信できなかった場合は、受信コンテキストを完了しません。<br /><br /> このメッセージがマルチキャストされる場合は、少なくとも 1 つのエンドポイント (プライマリでもバックアップでも) でメッセージが受信された場合にのみ、受信コンテキストが完了されます。 どのマルチキャスト パスのエンドポイントでもメッセージを受信できなかった場合は、受信コンテキストを完了しません。|  
-|一方向||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|はい|前のトランザクションを中止し、新しいトランザクションを作成して、すべてのメッセージを再送します。 エラーが発生したメッセージは、バックアップ先に転送されます。<br /><br /> すべての転送が成功するトランザクションが作成されたら、受信コンテキストを完了して、転送をコミットします。|  
-|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|||はい|バックアップ エンドポイントでメッセージの再送を試みます。 マルチキャスト セッションの場合は、エラーが発生したセッションまたはセッションを終了できなかったセッションのメッセージのみが、バックアップ先に送信されます。|  
-|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||いいえ|例外がスローされ、トランザクションがロールバックされます。|  
-|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|はい|バックアップ エンドポイントでメッセージの再送を試みます。 エラーが発生せずに、すべてのメッセージ送信が完了したら、セッションが他にメッセージがないことを通知して、ルーティング サービスがすべての送信セッション チャネルを終了します。また、受信コンテキストが完了し、受信セッション チャネルが終了します。|  
-|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|はい|現在のトランザクションを中止し、新しいトランザクションを作成します。 セッションに含まれる、以前のメッセージをすべて再送します。 すべてのメッセージ送信が成功したトランザクションが作成され、セッションが他にメッセージがないことを通知すると、すべての送信セッション チャネルが終了します。また、そのトランザクションのすべての受信コンテキストが完了し、受信セッション チャネルが終了して、トランザクションがコミットされます。<br /><br /> セッションがマルチキャストされる場合は、エラーが発生していないメッセージが、前回と同じ送信先に再送され、エラーが発生したメッセージはバックアップ先に送信されます。|  
+|一方向||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||×|例外がスローされ、トランザクションがロールバックされます。|  
+|一方向|||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|[はい]|バックアップ エンドポイントでメッセージの再送を試みます。 メッセージの受信が成功したら、すべての受信コンテキストを完了します。 どのエンドポイントでもメッセージを受信できなかった場合は、受信コンテキストを完了しません。<br /><br /> このメッセージがマルチキャストされる場合は、少なくとも 1 つのエンドポイント (プライマリでもバックアップでも) でメッセージが受信された場合にのみ、受信コンテキストが完了されます。 どのマルチキャスト パスのエンドポイントでもメッセージを受信できなかった場合は、受信コンテキストを完了しません。|  
+|一方向||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|[はい]|前のトランザクションを中止し、新しいトランザクションを作成して、すべてのメッセージを再送します。 エラーが発生したメッセージは、バックアップ先に転送されます。<br /><br /> すべての転送が成功するトランザクションが作成されたら、受信コンテキストを完了して、転送をコミットします。|  
+|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|||[はい]|バックアップ エンドポイントでメッセージの再送を試みます。 マルチキャスト セッションの場合は、エラーが発生したセッションまたはセッションを終了できなかったセッションのメッセージのみが、バックアップ先に送信されます。|  
+|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||×|例外がスローされ、トランザクションがロールバックされます。|  
+|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|[はい]|バックアップ エンドポイントでメッセージの再送を試みます。 エラーが発生せずに、すべてのメッセージ送信が完了したら、セッションが他にメッセージがないことを通知して、ルーティング サービスがすべての送信セッション チャネルを終了します。また、受信コンテキストが完了し、受信セッション チャネルが終了します。|  
+|一方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|[はい]|現在のトランザクションを中止し、新しいトランザクションを作成します。 セッションに含まれる、以前のメッセージをすべて再送します。 すべてのメッセージ送信が成功したトランザクションが作成され、セッションが他にメッセージがないことを通知すると、すべての送信セッション チャネルが終了します。また、そのトランザクションのすべての受信コンテキストが完了し、受信セッション チャネルが終了して、トランザクションがコミットされます。<br /><br /> セッションがマルチキャストされる場合は、エラーが発生していないメッセージが、前回と同じ送信先に再送され、エラーが発生したメッセージはバックアップ先に送信されます。|  
 |双方向||||はい|バックアップ先に送信します。  チャネルが応答メッセージを返した後に、元のクライアントに応答を返します。|  
-|双方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|||はい|チャネルのすべてのメッセージをバックアップ先に送信します。  チャネルが応答メッセージを返した後に、元のクライアントに応答を返します。|  
-|双方向||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||いいえ|例外がスローされ、トランザクションがロールバックされます。|  
-|双方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||いいえ|例外がスローされ、トランザクションがロールバックされます。|  
+|双方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|||[はい]|チャネルのすべてのメッセージをバックアップ先に送信します。  チャネルが応答メッセージを返した後に、元のクライアントに応答を返します。|  
+|双方向||![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||×|例外がスローされ、トランザクションがロールバックされます。|  
+|双方向|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")||×|例外がスローされ、トランザクションがロールバックされます。|  
 |二重||||Ｘ|セッションのない二重通信は、現在サポートされていません。|  
-|二重|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|||はい|バックアップ先に送信します。|  
+|二重|![チェック マーク](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "チェック マーク")|||[はい]|バックアップ先に送信します。|  
   
 ## <a name="hosting"></a>ホスト  
  ルーティング サービスは WCF サービスとして実装されるため、アプリケーション内に自己ホストされるか、IIS または WAS によってホストされる必要があります。 ルーティング サービスは、IIS、WAS、または Windows サービス アプリケーションにホストし、これらのホスト環境で提供される自動開始機能やライフ サイクル管理機能を利用できるようにすることをお勧めします。  
@@ -411,7 +412,7 @@ using (ServiceHost serviceHost =
   
  ルーティング サービスで Windows 資格情報の偽装を使用するには、資格情報とサービスの両方を構成する必要があります。 クライアント資格情報オブジェクト (<xref:System.ServiceModel.Security.WindowsClientCredential> からアクセス可能な <xref:System.ServiceModel.ChannelFactory>) は、<xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> プロパティを定義します。偽装を許可するには、このプロパティを設定する必要があります。 最後に、サービスで、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> 動作を構成して、`ImpersonateCallerForAllOperations` を `true` に設定する必要があります。 ルーティング サービスでは、偽装が有効になっているメッセージを転送するためのクライアントを作成するかどうかを、このフラグを使用して決定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)  
  [ルーティング コントラクト](../../../../docs/framework/wcf/feature-details/routing-contracts.md)  
  [フィルターの選択](../../../../docs/framework/wcf/feature-details/choosing-a-filter.md)

@@ -14,11 +14,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 669c6be6756d79b30266c9fda0909fedc71aeae3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8f30ad7819a570f0149868502261f986f4dd8c0b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="differences-in-queuing-features-in-windows-vista-windows-server-2003-and-windows-xp"></a>Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違点
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]、[!INCLUDE[wv](../../../../includes/wv-md.md)]、および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] における [!INCLUDE[wxp](../../../../includes/wxp-md.md)] キュー機能の相違について説明します。  
@@ -44,6 +45,6 @@ ms.lasthandoff: 12/02/2017
 ## <a name="remote-transactional-read"></a>リモート トランザクション読み取り  
  [!INCLUDE[wv](../../../../includes/wv-md.md)] 上の MSMQ は、リモート トランザクション読み取りをサポートします。 これによって、キューから読み取りを行うアプリケーションを、そのキューをホストしているコンピューターとは別のコンピューター上でホストすることが可能になります。 これにより、サービスのファーム全体で中央のキューから読み取りを行うことができるようになり、システムの全体のスループットが向上します。 また、メッセージの読み取り中および処理中にエラーが発生した場合、トランザクションはロールバックし、メッセージは後で処理できるようにキューに残るようにもなります。  
   
-## <a name="see-also"></a>関連項目  
- [配信不能メッセージ キューを使用して、メッセージの転送エラーを処理するには](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
+## <a name="see-also"></a>参照  
+ [配信不能キューを使用したメッセージ転送エラー処理](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
  [有害メッセージ処理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

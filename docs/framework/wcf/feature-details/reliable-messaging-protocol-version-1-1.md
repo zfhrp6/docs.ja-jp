@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 586e26825bd01947706bb26061ef1b8879fecb4c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 67df8b539109d7e4dafcbc42ad7679643767021a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reliable-messaging-protocol-version-11"></a>信頼できるメッセージング プロトコル バージョン 1.1
 ここでは、HTTP トランスポートを使用した相互運用に必要な WS-ReliableMessaging 2007/02 (バージョン 1.1) プロトコルに関する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 実装の詳細について説明します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ここに記載した制約と説明に基づく WS-ReliableMessaging 仕様に従っています。 以降では、Ws-reliablemessaging 1.1 プロトコルを実装することに注意してください、[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]です。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 12/02/2017
 |-|-|  
 |wsrm|http://docs.oasis-open.org/ws-rx/wsrm/200702|  
 |netrm|http://schemas.microsoft.com/ws/2006/05/rm|  
-|秒|http://www.w3.org/2003/05/soap-envelope|  
+|s|http://www.w3.org/2003/05/soap-envelope|  
 |wsa|http://schemas.xmlsoap.org/ws/2005/08/addressing|  
 |wsse|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wssecurity-secext-1.0.xsd|  
 |wsrmp|http://docs.oasis-open.org/ws-rx/wsrmp/200702|  
@@ -381,7 +382,7 @@ Example TerminateSequenceResponse message:
   
 -   B3006: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は常に `wsrmp:ExactlyOnce` 配信保証を指定します。  
   
--   B3007: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、WS-ReliableMessaging アサーションの以下のプロパティを生成して読み込み、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の `ReliableSessionBindingElement` でこれらのプロパティを制御します。  
+-   B3007:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]が生成されます、Ws-reliablemessaging アサーションの以下のプロパティを読み取るし、上に制御を提供、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] `ReliableSessionBindingElement`:  
   
     -   `netrmp:InactivityTimeout`  
   
@@ -437,7 +438,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="one-way-non-addressable-initiator"></a>一方向 : アドレス不可能なイニシエーター  
   
-#### <a name="binding"></a>バインディング  
+#### <a name="binding"></a>バインド  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、1 つの HTTP チャネルで 1 つのシーケンスを使用して、一方向メッセージ交換パターンを提供します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTP 要求を使用してイニシエーターからレスポンダーにすべてのメッセージを送信し、HTTP 応答を使用してレスポンダーからイニシエーターにすべてのメッセージを送信します。  
   
 #### <a name="createsequence-exchange"></a>CreateSequence の交換  
@@ -454,7 +455,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="one-way-addressable-initiator"></a>一方向 : アドレス可能なイニシエーター  
   
-#### <a name="binding"></a>バインディング  
+#### <a name="binding"></a>バインド  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、受信用 HTTP チャネルと送信用 HTTP チャネルで 1 つのシーケンスを使用する、一方向メッセージ交換パターンを提供します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTP 要求を使用してすべてのメッセージを送信します。 すべての HTTP 応答に、空の本文と HTTP 202 ステータス コードが含まれます。  
   
 #### <a name="createsequence-exchange"></a>CreateSequence の交換  
@@ -462,7 +463,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="duplex-addressable-initiator"></a>双方向 : アドレス可能なイニシエーター  
   
-#### <a name="binding"></a>バインディング  
+#### <a name="binding"></a>バインド  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、受信用 HTTP チャネルと送信用 HTTP チャネルで 2 つのシーケンスを使用する、完全に非同期の双方向メッセージ交換パターンが用意されています。 このメッセージ交換パターンは、限定された方法で `Request/Reply`、`Addressable` イニシエーター メッセージ交換パターンに組み込むことができます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTP 要求を使用してすべてのメッセージを送信します。 すべての HTTP 応答に、空の本文と HTTP 202 ステータス コードが含まれます。  
   
 #### <a name="createsequence-exchange"></a>CreateSequence の交換  
@@ -477,7 +478,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="request-reply-and-one-way-non-addressable-initiator"></a>要求/応答および一方向のアドレス不可能なイニシエーター  
   
-#### <a name="binding"></a>バインディング  
+#### <a name="binding"></a>バインド  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、1 つの HTTP チャネルで 2 つのシーケンスを使用して、一方向の要求/応答メッセージ交換パターンを提供します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTP 要求を使用してイニシエーターからレスポンダーにすべてのメッセージを送信し、HTTP 応答を使用してレスポンダーからイニシエーターにすべてのメッセージを送信します。  
   
 #### <a name="createsequence-exchange"></a>CreateSequence の交換  
@@ -514,7 +515,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="requestreply-addressable-initiator"></a>要求/応答 : アドレス可能なイニシエーター  
   
-#### <a name="binding"></a>バインディング  
+#### <a name="binding"></a>バインド  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、受信用 HTTP チャネルと送信用 HTTP チャネルで 2 つのシーケンスを使用する、要求/応答メッセージ交換パターンが用意されています。 このメッセージ交換パターンは、限定された方法で `Duplex, Addressable` イニシエーター メッセージ交換パターンに組み込むことができます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTP 要求を使用してすべてのメッセージを送信します。 すべての HTTP 応答に、空の本文と HTTP 202 ステータス コードが含まれます。  
   
 #### <a name="createsequence-exchange"></a>CreateSequence の交換  

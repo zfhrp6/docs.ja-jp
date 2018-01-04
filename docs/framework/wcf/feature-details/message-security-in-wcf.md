@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 21cbeff554be6da77ce28e87b7f82ffdd58f542d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 92422e40742909dbf338ec2660e5494ffcdd31cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-security-in-wcf"></a>WCF のメッセージのセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、セキュリティを提供する 2 つの主なモード (`Transport` および `Message`) と、この 2 つを組み合わせた 3 番目のモード (`TransportWithMessageCredential`) があります。 ここでは、メッセージ セキュリティとその必要性について説明します。  
@@ -68,8 +69,8 @@ ms.lasthandoff: 12/02/2017
   
 -   XML レベルのセキュリティ機構の実装と WS-Security 仕様のサポートが必要です。 これは、相互運用性に影響する可能性があります。  
   
-## <a name="see-also"></a>関連項目  
- [サービスとクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+## <a name="see-also"></a>参照  
+ [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security.md)  
- [方法: トランスポート セキュリティを使用してメッセージ資格情報](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
+ [方法 : トランスポート セキュリティとメッセージ資格情報を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
  [Microsoft Patterns and Practices、第 3 章: を実装するトランスポートとメッセージ層セキュリティ](http://go.microsoft.com/fwlink/?LinkId=88897)

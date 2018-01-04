@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6cba37a82174ab255cb6814e296154485fbdd54c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f0ea15e8fe9580f561eedf048ed2aaf2e2ed248f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>方法 : 署名の検証に使用する証明機関の証明書チェーンを指定する (WCF)
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、X.509 証明書を使用して署名された SOAP メッセージを受信すると、その X.509 証明書が信頼された証明機関によって発行されたものかどうかを既定で検証します。 これは、証明書ストアを検索し、その証明機関の証明書が信頼された証明書として指定されているかどうかを確認することによって行われます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこれを確認するには、証明機関証明書チェーンを適切な証明書ストアにインストールする必要があります。  
@@ -43,5 +44,5 @@ ms.lasthandoff: 12/02/2017
   
          [!INCLUDE[crabout](../../../../includes/crabout-md.md)]MMC では、証明書スナップインを使用して参照してください[する方法: MMC スナップインで証明書の表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c75a7cedac9d06c9f8da36dc131521053450a37
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8583ac00f1216e68f95c3d41d8c896b555d0aa8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stand-alone-json-serialization"></a>スタンドアロン JSON のシリアル化
 JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで実行される JavaScript コードで使用するために特別に設計されたデータ形式です。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で作成される ASP.NET AJAX サービスは、既定でこのデータ形式を使用します。  
@@ -31,14 +32,14 @@ JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで�
 ## <a name="mapping-net-types-to-json-types"></a>.NET 型から JSON 型へのマッピング  
  シリアル化および逆シリアル化の手順でマップされる場合の .NET 型と JSON/JavaScript 型の対応表を次に示します。  
   
-|.NET 型|JSON/JavaScript|ノート|  
+|.NET 型|JSON/JavaScript|メモ|  
 |----------------|----------------------|-----------|  
 |すべての数値型 (<xref:System.Int32>、<xref:System.Decimal>、<xref:System.Double> など)|数値|`Double.NaN`、`Double.PositiveInfinity`、`Double.NegativeInfinity` などの特殊な値はサポートされていないため、無効な JSON になります。|  
 |<xref:System.Enum>|数値|このトピックの「列挙体と JSON」を参照してください。|  
 |<xref:System.Boolean>|ブール型|--|  
-|<xref:System.String>, <xref:System.Char>|文字列型|--|  
+|<xref:System.String>, <xref:System.Char>|String|--|  
 |<xref:System.TimeSpan>、<xref:System.Guid>、<xref:System.Uri>|String|JSON のこれらの型の形式は、XML の場合と同じです (基本的には、TimeSpan は ISO 8601 の日付/時刻形式、GUID は "12345678-ABCD-ABCD-ABCD-1234567890AB" 形式、URI は "http://www.example.com" のような自然な文字列形式です)。 正確な情報は、次を参照してください。[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。|  
-|<xref:System.Xml.XmlQualifiedName>|文字列型|形式は "name:namespace" です (最初のコロンの前が名前です)。 名前または名前空間が存在しない場合があります。 名前空間がない場合、コロンも省略されることがあります。|  
+|<xref:System.Xml.XmlQualifiedName>|String|形式は "name:namespace" です (最初のコロンの前が名前です)。 名前または名前空間が存在しない場合があります。 名前空間がない場合、コロンも省略されることがあります。|  
 |<xref:System.Array> 型の <xref:System.Byte>|数値の配列型|各数値は、1 バイトの値を表します。|  
 |<xref:System.DateTime>|DateTime 型または文字列型|このトピックの「日付/時刻と JSON」を参照してください。|  
 |<xref:System.DateTimeOffset>|複合型|このトピックの「日付/時刻と JSON」を参照してください。|  
@@ -270,5 +271,5 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 ### <a name="valid-json-key-names"></a>JSON の有効なキー名  
  シリアライザーは、無効な XML 名のキー名を XML エンコードします。 たとえば、「123」の名前を持つデータ メンバーには、エンコードされた名前がなど"_x0031\__x0032\__x0033\_"「123」は無効な XML 要素名 (数字で開始) であるためです。 XML 名が有効ではない一部の国際文字セットでも、同様の状況が発生する場合があります。 この JSON の処理での XML の影響の詳細については、次を参照してください。[マッピングの間で JSON および XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [JSON などの他のデータ転送形式をサポートします。](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)
+## <a name="see-also"></a>参照  
+ [JSON などのデータ転送形式のサポート](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)

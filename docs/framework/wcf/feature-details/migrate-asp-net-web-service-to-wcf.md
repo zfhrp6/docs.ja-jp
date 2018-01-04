@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1d6ed443d2b645687d59a3d795c706f303616cfb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e56d2481785a9a8486174e611001b9d800c7c869
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-migrate-aspnet-web-service-code-to-the-windows-communication-foundation"></a>方法 : ASP.NET Web サービス コードを Windows Communication Foundation に移行する
 ASP.NET Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に移行する手順を次に示します。  
@@ -223,5 +224,5 @@ ASP.NET Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
   
 19. テスト セットを実行して、想定どおりに変更されていることを確認してください。  
   
-## <a name="see-also"></a>関連項目  
- [方法: ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-client-to-wcf.md)
+## <a name="see-also"></a>参照  
+ [方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-client-to-wcf.md)

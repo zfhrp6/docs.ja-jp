@@ -17,21 +17,22 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a3d436690108158cfd7675cf00788a564b8a1dc6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2c84f25dfd5d3066f9c5d0b62bc0b28bc98c283d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-wcf"></a>WCF の拡張
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、実行時コンポーネントを変更し、拡張することによって、サービス ベースのアプリケーションを正確に制御および拡張できます。 このセクションのトピックでは、その拡張アーキテクチャについて詳しく説明します。 基本的なプログラミングの詳細については、次を参照してください。[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [拡張 ServiceHost とサービス モデル レイヤー](../../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)  
+ [ServiceHost とサービス モデル レイヤーの拡張](../../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)  
  サービス モデル レイヤーには、基になるチャネルから受信メッセージを取得し、そのメッセージをアプリケーション コードでのメソッド呼び出しに変換し、結果を呼び出し元に送信するという役割があります。  サービス モデル拡張は、ディスパッチャーの機能、カスタム動作、メッセージとパラメーターの途中受信、およびその他の拡張機能に関連する実行や通信の動作と機能を変更または実装します。  
   
  [バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)  
- バインディングはエンドポイントに接続するために必要な通信の詳細設定を記述するオブジェクトです。 バインディングの拡張やカスタム バインディングは、アプリケーションの各種機能をサポートするために必要なカスタム通信機能を実装します。  
+ バインディングはエンドポイントに接続するために必要な通信の詳細設定を記述するオブジェクトです。 バインディングの拡張やカスタム バインドは、アプリケーションの各種機能をサポートするために必要なカスタム通信機能を実装します。  
   
  [チャネル レイヤーの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)  
  チャネル レイヤーは、サービス モデル レイヤーより下に位置し、クライアントとサービス間のメッセージの交換を担います。 チャネル拡張は、セキュリティなどの新しいプロトコル機能を実装できます。 また、SOAP メッセージを伝達する新しいネットワーク トランスポートの実装など、トランスポート機能も実装できます。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/02/2017
  [メタデータ システムの拡張](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のメタデータ システムは複数のクラスのグループおよびインターフェイスで、サービス ベースのアプリケーションを実装するために必要なメタデータを表します。 クラスを変更または拡張するか、WSDL (Web サービス記述言語) の拡張子やカスタム WS-PolicyAttachments アサーションなどのカスタム メタデータをエクスポート/インポートするインターフェイスを実装して構成します。  
   
- [拡張エンコーダーとシリアライザー](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
+ [エンコーダーとシリアライザーの拡張](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
  エンコーダーとシリアライザーは、データをある形式から別の形式に変換します。 このセクションのトピックでは、提供されたクラスを特別な要件に合わせて拡張する方法を説明します。  
   
 ## <a name="reference"></a>参照  

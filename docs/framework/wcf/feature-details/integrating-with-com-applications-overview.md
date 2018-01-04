@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6ae704ad9542c162b1c37f3eb9edf31f864cd42e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5b20ae5329f08e9391fd7b93218c44c3c1978a48
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="integrating-with-com-applications-overview"></a>COM アプリケーションとの統合の概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、マネージ コード開発者は、接続されたアプリケーションを作成するための多彩な環境を使用できます。 ただし、COM ベースのアンマネージ コードにかなりの投資を行っており移行を望まない場合でも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス モニカーを使用することで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web サービスを既存のコードに直接統合できます。 サービス モニカーは Office VBA、Visual Basic 6.0、または Visual C++ 6.0 などの幅広い COM ベースの開発環境で使用可能です。  
@@ -74,5 +75,5 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `</configuration>`  
   
-## <a name="see-also"></a>関連項目  
- [方法: 登録し、サービス モニカーの構成](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+## <a name="see-also"></a>参照  
+ [方法 : サービス モニカーを登録および構成する](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

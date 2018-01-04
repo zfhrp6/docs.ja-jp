@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9da2addce9c837499783664bb3b1417d30b937b0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 687eba2a346b3f554c8a7618bebe2e9c04f4d5b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-http-service"></a>基本的な HTTP サービス
 このサンプルでは、HTTP ベース、RPC ベースのよく"POX"(Plain Old XML) サービスと呼ばれるを使用してサービスを実装する方法、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST プログラミング モデルです。 このサンプルは、自己ホスト型 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP サービス (Service.cs) と、サービスの作成およびサービスへの呼び出しを行うコンソール アプリケーション (Program.cs) の 2 つのコンポーネントで構成されています。  
@@ -52,6 +53,6 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\BasicHttpService`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [形式の自動選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)  
  [基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)

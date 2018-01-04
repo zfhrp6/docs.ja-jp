@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ee7376f87fd0e4ce15d192dd53f872e84187acc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b7812023fbe2159daba205727e20e1b69b84686
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-formats"></a>メタデータ形式
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、次の表に示すメタデータ形式をサポートしています。  
@@ -33,6 +34,6 @@ ms.lasthandoff: 12/02/2017
 |WS-Metadata Exchange|[Web サービス メタデータ交換 (Ws-metadataexchange) バージョン 1.1](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、XML スキーマ、WSDL、WS-Policy を取得するために WS-MetadataExchange が実装されています。|  
 |WS Addressing Binding for WSDL|[Web Services Addressing 1.0 - WSDL バインディング](http://go.microsoft.com/fwlink/?LinkId=94869)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、WSDL でアドレス指定情報を関連付けるために、WS-Addressing Binding for WSDL が実装されています。|  
   
-## <a name="see-also"></a>関連項目  
- [Web サービスのシステム指定の相互運用性バインディングでサポートされるプロトコル](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+## <a name="see-also"></a>参照  
+ [システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
  [WSDL とポリシー](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)

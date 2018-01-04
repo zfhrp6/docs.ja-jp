@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 54c1ffcef9946d2be174f92545cdba3181b0d8ee
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c99748e77f1fccd9512c8915d0f4068d0da51a41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-workflow-service-that-calls-another-workflow-service"></a>方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する
 ワークフロー サービスでは、別のワークフロー サービスから情報を取得することが必要になる場合があります。  このトピックでは、別のワークフロー サービスからワークフロー サービスを呼び出す方法について説明します。 このトピックでは、2 つのワークフロー サービスを作成します。入力文字列を反転させるメソッドを持つワークフロー サービスと、その最初のサービスを使用して文字列を反転させた後、入力文字列を大文字に変換するワークフロー サービスです。  
@@ -124,7 +125,7 @@ ms.lasthandoff: 12/02/2017
   
 1.  クライアントという新しいコンソール アプリケーション プロジェクトをソリューションに追加します。  
   
-2.  クライアント プロジェクトを右クリックし **サービス参照の追加**です。 表示されるウィンドウで  **Discover**です。 StringReverserService.xamlx を選択し、名前空間として「ReverseService」と入力します。  **[OK]** をクリックします。  
+2.  クライアント プロジェクトを右クリックし **サービス参照の追加**です。 表示されるウィンドウで  **Discover**です。 StringReverserService.xamlx を選択し、名前空間として「ReverseService」と入力します。  **[OK]**をクリックします。  
   
 3.  Program.cs の Main メソッドを次のコードで置き換えます。  
   

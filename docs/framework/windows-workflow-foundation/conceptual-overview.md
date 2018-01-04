@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aef97889abdd2ad4d2d6ff7978140ae09f75565b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 70c60d00ed59cf6b28c05d7948f579eda39a8fae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-workflow-conceptual-overview"></a>Windows Workflow の概念
 このセクションには、[!INCLUDE[wf](../../../includes/wf-md.md)] の背景となる、より大きな概念について説明したトピックが含まれます。  

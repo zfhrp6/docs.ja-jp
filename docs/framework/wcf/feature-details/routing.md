@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 4ea56330e4de55a7acbc6ccca737cd62b8f151d1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 335780b600535c066bc822cc5dd6c77233618bb6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing"></a>ルーティング
 このセクションのトピックでは、ルーティング サービスについて説明します。 ルーティング サービスは、構成可能な汎用の SOAP 中継局です。ルーティング サービスを使用すると、コンテンツ ベースのルーティングの構成、プロトコル ブリッジの設定、通信エラーの処理、および実行時のルーティング ロジックの動的な更新が可能となります。  
@@ -42,5 +43,5 @@ ms.lasthandoff: 10/18/2017
  [メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)  
  メッセージ フィルターのコンテンツ ベースのルーティングへの使用方法を説明します。  
   
- [ルーティングのシナリオ](../../../../docs/framework/wcf/feature-details/routing-scenarios.md)  
+ [ルーティング シナリオ](../../../../docs/framework/wcf/feature-details/routing-scenarios.md)  
  共通のルーティング シナリオについて説明します。

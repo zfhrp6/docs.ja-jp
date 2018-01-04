@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 492a3cb4b11706bfabc42976fb1adfad24a2279a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 54566bc452baa2e02cef7d8d13d29fcd5864c95c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="operation-class"></a>操作クラス
 操作  
@@ -104,7 +105,7 @@ class Operation
   
  操作のメソッド署名。  
   
-### <a name="name"></a>名前  
+### <a name="name"></a>name  
  データ型: string  
   
  アクセスの種類 : 読み取り専用  
@@ -132,11 +133,11 @@ class Operation
   
  操作の戻り値の型。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
 |---------|-----------------------------------|  
 |Namespace|root\ServiceModel で定義|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Description.OperationDescription>

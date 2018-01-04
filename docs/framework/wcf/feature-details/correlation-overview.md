@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56b6252188854374b9e0eddd7aca53daba6f6086
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 094c962e2576653fc8c9de4c0dece912fcaa07f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="correlation-overview"></a>相関関係の概要
 相関関係とは、ワークフロー サービス メッセージを互いに関連付ける、最初の要求への応答などのアプリケーションのインスタンス状態と関連付ける、または特定の注文 ID を注文処理ワークフローの永続化された状態に関連付けるためのしくみです。 ここでは、相関関係の概要について説明します。 このセクションの他のトピックでは、相関関係の各種類についての追加情報を提供します。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="content-based-correlation"></a>コンテンツ ベースの相関関係  
  コンテンツ ベースの相関関係では、メッセージ内の一部の情報を特定のインスタンスとの関連付けに使用します。 プロトコル ベースの相関関係と異なり、コンテンツ ベースの相関関係では、各関連メッセージ内のこの情報がある場所に、アプリケーションの作成者が明示的に記述されている必要があります。 コンテンツ ベースの相関関係を使用するアクティビティでは、<xref:System.ServiceModel.MessageQuerySet> を使用して、このメッセージ データを指定します。 コンテンツ ベースの相関関係は、<xref:System.ServiceModel.BasicHttpContextBinding> などのコンテキスト バインディングの 1 つを使用しないサービスと通信する場合に便利です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コンテンツ ベースの相関関係を参照してください[コンテンツ ベース](../../../../docs/framework/wcf/feature-details/content-based-correlation.md)です。 サンプル コードについては、[コンテンツ ベースの相関関係](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)と[相関電卓](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)サンプルです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コンテンツ ベースの相関関係](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
  [相関電卓](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)  
  [永続的な二重 &#91;WF のサンプル &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  

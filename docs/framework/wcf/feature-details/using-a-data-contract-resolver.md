@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46a532b45024321a6885fa3e45d172c054d18c1c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 28bba68c985191b69fea3b7ab85812917a827b30
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-data-contract-resolver"></a>データ コントラクト リゾルバーの使用
 データ コントラクト リゾルバーでは、既知の型を動的に構成できます。 データ コントラクトが予期しない型をシリアル化または逆シリアル化するときには、既知の型が必要です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、「 [Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。 通常、既知の型は静的に指定されます。 これは、操作を実装する間に操作が受け取る可能性のあるすべての型を把握しておく必要があることを意味します。 これが当てはまらず、既知の型を動的に指定できることが重要である場合もあります。  
@@ -97,7 +98,7 @@ SerializerBehavior.DataContractResolver = new MyCustomerResolver();
   
  サービスに適用できる属性を実装して、データ コントラクト リゾルバーを宣言によって指定できます。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)サンプルです。 このサンプルは"KnownAssembly"と呼ばれる属性を実装してカスタム データ コントラクト リゾルバー サービスの動作を追加します。  
   
-## <a name="see-also"></a>関連項目  
- [データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
+## <a name="see-also"></a>参照  
+ [既知のデータ コントラクト型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
  [DataContractSerializer サンプル](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)  
  [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)

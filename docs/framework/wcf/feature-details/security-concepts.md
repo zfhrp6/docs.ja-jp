@@ -13,17 +13,18 @@ caps.latest.revision: "11"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 3d589b5411da147b3ae8f17ab862d00026867822
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1ac16afc6ee22665188d5df5e79288341072026e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-concepts"></a>セキュリティの概念
 このセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティに関連する概念について簡単に説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [WCF で使用されるセキュリティの基本概念](../../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md)  
+ [WCF で使用されるセキュリティの概要](../../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md)  
  セキュリティの実装で使用される概念の概要を示します。  
   
  [分散アプリケーションのセキュリティ](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="related-sections"></a>関連項目  
  [セキュリティの拡張](../../../../docs/framework/wcf/extending/extending-security.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

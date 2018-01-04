@@ -16,17 +16,18 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 29ca4041e24a99546dfb665b0ce9e695732442d4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8daadec1eef20e62747cdbfcafd1fd13cfc16093
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-transfer-and-serialization"></a>データ転送とシリアル化
 接続されたシステムでは、サービスとクライアントのタスクの実行は、データの交換に依存します。 サービスやクライアントの開発者は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ処理方法とデータのシリアル化を理解して、効果的で保守しやすいアプリケーションを作成する必要があります。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [Specifying Data Transfer in Service Contracts](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
+ [サービス コントラクトでのデータ転送の指定](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
  サービスでのデータ転送の基本的な概念について説明します。  
   
  [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
@@ -47,10 +48,10 @@ ms.lasthandoff: 12/02/2017
  [フィルター処理](../../../../docs/framework/wcf/feature-details/filtering.md)  
  各種の条件に基づいて、メッセージを事前処理できるフィルター処理について説明します。  
   
- [大規模なデータとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
+ [大規模データとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
  バイナリ ファイルなど、大きなデータ ブロックを送信する方法について説明します。  
   
- [データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
+ [セキュリティに関するデータの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
  データの転送とシリアル化をプログラムするときに注意する必要のある項目について説明します。  
   
  [データ転送のアーキテクチャの概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)  
@@ -68,8 +69,8 @@ ms.lasthandoff: 12/02/2017
  <xref:System.Xml.Serialization>  
   
 ## <a name="related-sections"></a>関連項目  
- [拡張エンコーダーとシリアライザー](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
+ [エンコーダーとシリアライザーの拡張](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ベスト プラクティス: データ コントラクトのバージョン管理](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
  [サービスのバージョン管理](../../../../docs/framework/wcf/service-versioning.md)

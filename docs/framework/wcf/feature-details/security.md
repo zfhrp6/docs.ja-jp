@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 38f62a6ccc0c9291f3963173475f99d5800feb39
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2f2314c8def27bac9e64685d2af3cdd7639332f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-security"></a>Windows Communication Foundation セキュリティ
 このセクションの各トピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティ機能、およびこれらの機能を使用してメッセージをセキュリティで保護する方法について説明します。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 10/18/2017
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ機能について説明します。  
   
- [セキュリティの基本概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [セキュリティの概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティで使用される基本的な用語と概念について説明します。  
   
  [一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
@@ -44,7 +45,7 @@ ms.lasthandoff: 10/18/2017
  [バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
  カスタム セキュリティ バインディングの作成方法を示すトピックなど、バインディングをセキュリティの観点から説明します。  
   
- [サービスとクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ機能を使用して、メッセージをセキュリティで保護する方法について説明します。  
   
  [認証](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
@@ -62,7 +63,7 @@ ms.lasthandoff: 10/18/2017
  [監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
  セキュリティ イベントを監査する方法について説明します。  
   
- [セキュリティ ガイダンスとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [セキュリティ ガイドラインとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  セキュリティで保護された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの作成に関するガイドラインを示します。  
   
 ## <a name="reference"></a>参照  
@@ -79,5 +80,5 @@ ms.lasthandoff: 10/18/2017
   
  [概念](../../../../docs/framework/wcf/conceptual-overview.md)  
   
-## <a name="see-also"></a>関連項目  
- [アプリケーションを構成します。](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)
+## <a name="see-also"></a>参照  
+ [アプリケーションの構成](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)

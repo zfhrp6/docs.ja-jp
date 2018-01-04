@@ -13,11 +13,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5886b327f1ea6d2866b9fc76bb29031ee870934e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3e6039567e4fad7fe4c014665dd3ae0c3082a9d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="supported-deployment-scenarios"></a>サポートされている配置シナリオ
 部分的に信頼されたアプリケーションでの使用のために用意されている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 機能のサブセットは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を使用するための一部のシナリオ (全部ではありません) の要件を満たすように作成されています。 サーバーでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、セキュリティの理由により [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] の中程度の信頼アクセス許可セットでサードパーティ製アプリケーションを実行するインターネット規模の共有ホスティング プロバイダーの要件を満たします。 クライアントでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の部分信頼サポート機能は、 [ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712) または [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]の XAML ブラウザー アプリケーション (XBAP) テクノロジなどの展開技術の要件を満たすように設計されています。これらの技術は、信頼できないサイトからシームレスかつ安全にデスクトップ アプリケーションを展開できるようにするためのものです。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 12/02/2017
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、 [ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712) または XBAP によって展開された部分信頼のアプリケーション内からリモート サーバーと通信するときに使用できます。 インターネット ゾーン アクセス許可セットには、元のホスト用の <xref:System.Net.WebPermission> が含まれます。これにより、このようなアプリケーションは、サポートされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングのいずれかを使用してそれぞれの元のサーバーと通信できます (「 [Partial Trust Feature Compatibility](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md)を使用するための一部のシナリオ (全部ではありません) の要件を満たすように作成されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コード アクセス セキュリティ](http://go.microsoft.com/fwlink/?LinkId=83717)  
  [Windows Presentation Foundation ブラウザーによってホストされるアプリケーションの概要](http://go.microsoft.com/fwlink/?LinkId=98397)  
  [部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)  

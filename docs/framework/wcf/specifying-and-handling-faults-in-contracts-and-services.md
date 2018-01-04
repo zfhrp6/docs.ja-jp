@@ -14,11 +14,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7df149ab75d2e3f1e9167f66ef8ec3c40b73c827
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 57fc01b77379389ca4d86d241ec8f3d672b519b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>コントラクトおよびサービスのエラーの指定と処理
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションは、マネージ例外オブジェクトを SOAP エラー オブジェクトにマップし、SOAP エラー オブジェクトをマネージ例外オブジェクトにマップすることによって、エラー状態を処理します。 ここでは、エラー状態がカスタムの SOAP エラーとして公開されるようにコントラクトを設計する方法、そのエラーをサービス実装の一部として返す方法、およびクライアントがそのエラーをキャッチする方法を説明します。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 12/02/2017
   
 -   クライアントとサービスは、SOAP エラーを例外として送受信します。  
   
- また、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のクライアントとサービスは、デバッグの目的で非宣言 SOAP エラーを使用でき、既定のエラー動作を拡張できます。 以下のセクションで、これらの手順と概念について説明します。  
+ また、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のクライアントとサービスは、デバッグの目的で非宣言 SOAP エラーを使用でき、既定のエラー動作を拡張できます。 以下のセクションで、これらのタスクと概念について説明します。  
   
 ## <a name="map-exceptions-to-soap-faults"></a>SOAP エラーへの例外のマッピング  
  エラー状態の処理操作を作成するための最初の手順は、クライアント アプリケーションにエラーを通知する状態を決定することです。 一部の操作には、その機能に固有のエラー状態があります。 たとえば、`PurchaseOrder` 操作では、発注書の作成が禁止になっている顧客に特定の情報を返すことができます。 また、`Calculator` サービスなどでは、より一般的な `MathFault` SOAP エラーを使用してサービス全体のすべてのエラー状態を記述できます。 サービスのクライアントのエラー状態を特定したら、カスタム SOAP エラーを作成し、エラー状態が発生したときに SOAP エラーを返す操作として、対応する操作をマークします。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="fault-serialization-issues"></a>エラーのシリアル化の問題  
  WCF では、エラー コントラクトを逆シリアル化する場合、最初に SOAP メッセージのエラー コントラクト名とエラー コントラクトの型を一致させようとします。 正しく一致しない場合、使用可能なエラー コントラクトのアルファベット順のリストで互換性のある型を検索します。 2 つのエラー コントラクトが互換性のある型である場合 (たとえば、一方のコントラクトが別のコントラクトのサブクラスである場合)、エラーを逆シリアル化するときに間違った型が使用される場合があります。 このような問題は、エラー コントラクトで名前、名前空間、およびアクションが指定されていない場合に発生します。 このような問題が発生しないようにするには、常に名前、名前空間、およびアクションの属性を指定して、エラー コントラクトを完全修飾するようにしてください。 また、共有基本クラスから派生した関連エラー コントラクトを定義している場合は、新しいメンバーを `[DataMember(IsRequired=true)]` でマークしてください。 この `IsRequired` 属性の詳細については、「<xref:System.Runtime.Serialization.DataMemberAttribute>」を参照してください。 この結果、基本クラスに互換性のある型が指定されなくなり、正しい派生型にエラーが逆シリアル化されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.FaultException>  
  <xref:System.ServiceModel.FaultContractAttribute>  
  <xref:System.ServiceModel.FaultException>  

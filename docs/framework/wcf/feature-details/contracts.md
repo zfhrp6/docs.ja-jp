@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc7f90ed679abc55a62ca5ab6028af4c86bd52a2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9a45fc606ac962b4dc7aac8b49ed9a3c6c421ccd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contracts"></a>コントラクト
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] コントラクトを定義および実装する方法について説明します。 サービス コントラクトでは、エンドポイントが外部と何をやりとりするかが指定されます。 具体的には、要求/応答、一方向、双方向など、基本的なメッセージ交換パターン (MEP) に編成された一連のメッセージに関する記述です。 サービス コントラクトがメッセージ交換の論理的に関連したセットであるとすると、サービス操作は単一のメッセージ交換です。 たとえば、`Hello` という操作では、1 つのメッセージを受け取り、呼び出し元があいさつを通知できるようにする必要があり、メッセージを返すことができます (マナーが悪ければ返さない場合もあり得ます)。  
@@ -75,7 +76,7 @@ ms.lasthandoff: 12/02/2017
   
  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス アプリケーションを設計、実装、構成、およびホストする際には、この追加要件のプロセスに注意することが重要です。 たとえば、コントラクトでセッションをサポートする必要があることが指定されている場合があります。 その場合、コントラクトの要件をサポートするようにバインディングを構成する必要があります。そうしないと、サービス実装は機能しなくなります。 また、サービスが統合 Windows 認証を必要としており、インターネット インフォメーション サービス (IIS) でホストされる場合、サービスが存在する Web アプリケーションでは、統合 Windows 認証を有効にし、匿名サポートを無効にしておく必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]機能と、別のサービス ホスト アプリケーションの種類の影響を参照してください。[ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [エンドポイント: アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+## <a name="see-also"></a>参照  
+ [エンドポイント : アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
  [サービス コントラクトの設計](../../../../docs/framework/wcf/designing-service-contracts.md)  
  [サービス コントラクトの実装](../../../../docs/framework/wcf/implementing-service-contracts.md)

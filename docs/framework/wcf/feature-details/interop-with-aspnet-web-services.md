@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd30b2d62d3ecf21027c0225490da6f31113cb07
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ef174f457114003e5b2783b50040424d9a96945c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="interoperability-with-aspnet-web-services"></a>ASP.NET Web サービスとの相互運用
 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスと [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web サービスの相互運用性は、この 2 つのテクノロジを使用して実装されたサービスを確実に WS-I Basic Profile 1.1 仕様に準拠させることによって実現されます。 WS-I Basic Profile 1.1 準拠の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] システムによって提供されるバインディングである [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用することで <xref:System.ServiceModel.BasicHttpBinding> クライアントと相互運用できます。  
@@ -65,5 +66,5 @@ public class Service : IEcho
 <httpModules/>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [方法: ASP.NET Web サービス クライアントと相互運用する WCF サービスを構成します。](../../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md)
+## <a name="see-also"></a>参照  
+ [方法 : WCF サービスおよび ASP.NET Web サービス クライアントを相互運用するために構成する](../../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md)

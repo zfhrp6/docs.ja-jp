@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e92b3b4950e0a2edecc9a1f954a9f2959595c4e3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2cc313be8c3d6325630e57e0b0e845ad4902bd2a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-consistently-reference-x509-certificates"></a>方法 : 一貫性を保って X.509 証明書を参照する
 証明書を識別する方法には、証明書のハッシュを使用する方法、発行者とシリアル番号を使用する方法、またはサブジェクト キー識別子 (SKI) を使用する方法があります。 SKI を使用すると、証明書のサブジェクト公開キーを一意に識別できます。SKI は、XML デジタル署名を処理する場合によく使用されます。 SKI の値は、X.509 証明書の一部では通常、 *X.509 証明書の拡張*です。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]既定値を持つ*参照スタイル*SKI 拡張が証明書に見つからない場合、発行者とシリアル番号を使用します。 証明書に SKI 拡張が含まれる場合、既定の参照スタイルは SKI を使用してその証明書を識別します。 アプリケーションの開発中に、SKI 拡張を使用しない証明書から SKI 拡張を使用する証明書に切り替えた場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が生成するメッセージに使用される参照スタイルも変更されます。  
@@ -45,5 +46,5 @@ ms.lasthandoff: 12/02/2017
   
 -   <xref:System.ServiceModel.Security.Tokens>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

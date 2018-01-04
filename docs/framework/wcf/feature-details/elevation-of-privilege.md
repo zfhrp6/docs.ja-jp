@@ -16,11 +16,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2e44d0ecf6afb81928d83ea925f836f8b6927d97
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4225460698d36b3b56b9b0b03cde34e4502b13c9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="elevation-of-privilege"></a>権限の昇格
 *特権の昇格*攻撃者承認本来付与されたもの以外のアクセス許可を与えた結果します。 たとえば、"読み取り専用" アクセス許可の権限セットを持つ攻撃者が、何らかの方法で権限セットを "読み取り/書き込み" アクセス許可を含むものに昇格させます。  
@@ -92,10 +93,10 @@ ms.lasthandoff: 12/02/2017
   
  これをできるだけ防ぐには、X.509 証明書を別の方法 (<xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial> の使用など) で参照します。  
   
-## <a name="see-also"></a>関連項目  
- [セキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [情報漏えいが起こる](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [サービス拒否が起こる](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+## <a name="see-also"></a>参照  
+ [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
+ [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
- [改ざん](../../../../docs/framework/wcf/feature-details/tampering.md)  
- [サポートされていないシナリオ](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+ [改変](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [サポートされていないシナリオ:](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

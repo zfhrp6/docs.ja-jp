@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: abe0bd7b08d254e97eef74ad1a99b1bcf6dd997e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dbdbef495232fb1ffaeb8d1dc739c2db1355556d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>WCF 拡張に対するカスタム メタデータのエクスポート
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、メタデータのエクスポートは、サービス エンドポイントを説明したり、それらを並行して計画したりするプロセスで、クライアントがサービスの使用方法を理解する標準化表現です。 カスタム メタデータは、システム指定のメタデータ エクスポーターでエクスポートできない XML 要素で構成されます。 通常、これは、ユーザー定義動作のカスタム WSDL 要素とバインド要素、およびバインディングとコントラクトの機能と要件に関するポリシー アサーションを含みます。  
@@ -51,7 +52,7 @@ ms.lasthandoff: 12/02/2017
   
  詳細については、次を参照してください。[する方法: カスタム ポリシー アサーションのエクスポート](../../../../docs/framework/wcf/extending/how-to-export-custom-policy-assertions.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [方法: カスタム WSDL のエクスポート](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)  
- [方法: カスタム ポリシー アサーションをエクスポート](../../../../docs/framework/wcf/extending/how-to-export-custom-policy-assertions.md)  
+## <a name="see-also"></a>参照  
+ [方法 : カスタム WSDL をエクスポートする](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)  
+ [方法 : カスタム ポリシー アサーションをエクスポートする](../../../../docs/framework/wcf/extending/how-to-export-custom-policy-assertions.md)  
  [WCF 拡張に対するカスタム メタデータのインポート](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)

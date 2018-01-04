@@ -13,17 +13,18 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 14f5c4bd3575b5451b7882e76c547ed722cd2b7e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a6b6fc83fe6e5e186b8d94c928c3a69c47a27818
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing-services"></a>ルーティング サービス
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ルーターを使用する方法を示すサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [ルーティング サービスでの hello World](../../../../docs/framework/wcf/samples/hello-world-with-the-routing-service.md)  
+ [ルーティング サービスを使用した Hello World](../../../../docs/framework/wcf/samples/hello-world-with-the-routing-service.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ルーターを使用する方法を示します。  
   
  [ブリッジとエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)  

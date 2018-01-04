@@ -17,11 +17,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 19ff205fd1e76a5d2ee787522cc5d94916b0c11c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b741e421a8773e1a4b2d2ab7da5e119073e861ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-identity-and-authentication"></a>サービス ID と認証
 サービスの*エンドポイント id*サービス Web サービス記述言語 (WSDL) から生成された値です。 この値は、すべてのクライアントに反映され、サービスの認証に使用されます。 クライアントがエンドポイントとの通信を開始し、サービスがクライアントに対して認証を行った後に、クライアントは、エンドポイント ID 値とエンドポイントの認証プロセスから返された実際の値を比較します。 この 2 つの値が一致した場合、クライアントは要求したサービス エンドポイントに接続していることを確認できます。 これは、関数は、保護として*フィッシング*クライアントが悪意のあるサービスによってホストされているエンドポイントにリダイレクトされるようにすることで。  
@@ -113,20 +114,20 @@ ms.lasthandoff: 12/02/2017
   
  (<xref:System.ServiceModel.EndpointAddress.Identity%2A> プロパティを使用して) ID をプログラムによって指定することは任意です。 ID が指定されておらず、クライアント資格情報の種類が Windows の場合、既定値は、先頭に "host/" リテラルが付加されたサービス エンドポイント アドレスのホスト名の部分に値が設定された SPN になります。 ID が指定されておらず、クライアント資格情報の種類が証明書の場合、既定値は `Certificate` です。 これは、メッセージ レベルとトランスポート レベルの両方のセキュリティに適用されます。  
   
-## <a name="identity-and-custom-bindings"></a>ID とカスタム バインディング  
- サービスの ID は使用するバインディングの種類によって異なるため、カスタム バインディングの作成時には、適切な ID が公開されていることを確認する必要があります。 たとえば、次のコード例では、セキュリティで保護された通信のブートストラップ バインディングの ID と、エンドポイントのバインディングの ID が一致していないため、セキュリティの種類と適合しない ID が公開されます。 セキュリティで保護された通信のバインディングでは DNS ID が設定され、<xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> では UPN ID または SPN ID が設定されます。  
+## <a name="identity-and-custom-bindings"></a>ID とカスタム バインド  
+ サービスの ID は使用するバインディングの種類によって異なるため、カスタム バインドの作成時には、適切な ID が公開されていることを確認する必要があります。 たとえば、次のコード例では、セキュリティで保護された通信のブートストラップ バインディングの ID と、エンドポイントのバインディングの ID が一致していないため、セキュリティの種類と適合しない ID が公開されます。 セキュリティで保護された通信のバインディングでは DNS ID が設定され、<xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> では UPN ID または SPN ID が設定されます。  
   
  [!code-csharp[C_Identity#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#8)]
  [!code-vb[C_Identity#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#8)]  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)]スタックのバインド要素、カスタム バインドを正しく参照してください方法[ユーザー定義バインディング](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]使用するカスタム バインディングを作成する、<xref:System.ServiceModel.Channels.SecurityBindingElement>を参照してください[する方法: 指定された認証モードでは、SecurityBindingElement を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [方法: SecurityBindingElement を使用してカスタム バインディングを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [方法: 指定された認証モード用の SecurityBindingElement を作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)  
- [方法: カスタムのクライアント Id 検証機能を作成します。](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
- [資格情報の種類を選択します。](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+## <a name="see-also"></a>参照  
+ [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [方法 : 指定した認証モード用の SecurityBindingElement を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)  
+ [方法 : カスタム クライアント ID 検証機能を作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ [資格情報の種類の選択](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
- [ユーザー定義のバインディングを作成します。](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)  
- [方法: 証明書のサムプリントの取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
+ [ユーザー定義バインディングの作成](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)  
+ [方法 : 証明書のサムプリントを取得する](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fbf351f0d71893457419d3b8b0e2cfb9c96ad0b0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2aa8adc0ce197c3776b8314009fcaa061bed884d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-feature-details"></a>WCF 機能の詳細
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、アプリケーションのメッセージング機能を広範囲に制御できます。 このセクションの各トピックでは、使用できる機能について詳しく説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]基本的なプログラミングを参照してください[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
@@ -30,7 +31,7 @@ ms.lasthandoff: 12/02/2017
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  ワークフロー サービスを作成および構成する方法について説明します。  
   
- [エンドポイント: アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [エンドポイント : アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
  サービスのさまざまな側面を制御する方法について説明します。  
   
  [データ転送とシリアル化](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)  
@@ -51,7 +52,7 @@ ms.lasthandoff: 12/02/2017
  [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)  
  機密性と整合性を備えたアプリケーションを作成するうえで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティがどのように役立つかについて説明します。 監査機能として、認証と承認を使用することもできます。  
   
- [ピア ツー ピア ネットワーク](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [ピアツーピア ネットワーク](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
  ビア サービスとクライアントを作成する方法について詳しく説明します。  
   
  [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)  
@@ -63,7 +64,7 @@ ms.lasthandoff: 12/02/2017
  [ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)  
  ホストについて説明します。 サービスは、別のアプリケーションまたは自己ホストを使用してホストできます。  
   
- [相互運用性との統合](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
+ [相互運用性と統合](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
  COM+ でホストされるコンポーネント ベースのアプリケーション ロジックに多くの投資を行っている場合に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して既存のロジックを修正することなく拡張する方法について説明します。  
   
  [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  

@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4f4c89e6382b5edd0ca295fde8f498fe97bdb64d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4df9060f173647767a3a070a451e0f2d3e02cf0d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>WCF サービス付き ASMX クライアント
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してサービスを作成し、ASMX クライアントなどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 以外のクライアントからこのサービスにアクセスする方法を示します。  
@@ -159,4 +160,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\ASMX`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

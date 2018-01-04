@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4c677ed869c0e5dd0df1288de48668ba403df5aa
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c50381c678a84f5602d08342d02dbf44316994c2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ordered-processing-of-messages-in-single-concurrency-mode"></a>Single 同時実行モードでメッセージを順番に処理する
 基になるチャネルがセッションフルでない限り、WCF は、メッセージが処理される順序に関する保証はありません。  インスタンスの順序でメッセージを処理する、セッションの多いチャネルではない MsmqInputChannel を使用する WCF サービスは失敗します。 状況によっては、開発者可能性があります順番に処理動作をしますが、セッションを使用するには。 このトピックでは、サービスが Single 同時実行モードで実行されている場合にこの動作を構成する方法について説明します。  
@@ -35,6 +36,6 @@ ms.lasthandoff: 12/02/2017
   
  <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> をその他の値に設定すると、<xref:System.InvalidOperationException> がスローされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セッション、インスタンス化、および同時実行](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)  
  [同時実行](../../../../docs/framework/wcf/samples/concurrency.md)

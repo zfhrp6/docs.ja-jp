@@ -17,11 +17,12 @@ caps.latest.revision: "19"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 441b3a72d5b0a9e63d6093bc130335801503489e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ad5e459e7dc070b9412de860048c840f677421f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="best-practices-for-security-in-wcf"></a>WCF のセキュリティのベスト プラクティス
 以下のセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してセキュリティで保護されたアプリケーションを作成する場合に考慮する必要のあるベスト プラクティスを示します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]セキュリティを参照してください[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 11/21/2017
  転送攻撃 NTLM の概要についてを参照してください[http://msdn.microsoft.com/msdnmag/issues/06/09/SecureByDesign/default.aspx](http://go.microsoft.com/fwlink/?LinkId=109571)です。  
   
 ## <a name="always-revert-after-impersonation"></a>偽装後は必ず元に戻す  
- クライアントの偽装を有効にする API を使用した後は、必ず元の ID に戻してください。 たとえば、<xref:System.Security.Principal.WindowsIdentity> および <xref:System.Security.Principal.WindowsImpersonationContext> を使用する場合は、次のコードに示すように、C# の `using` ステートメントまたは [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] の `Using` ステートメントを使用します。 <xref:System.Security.Principal.WindowsImpersonationContext> クラスは <xref:System.IDisposable> インターフェイスを実装しているため、コードが `using` ブロックを抜けると共通言語ランタイム (CLR: Common Language Runtime) は自動的に元の ID に戻ります。  
+ クライアントの偽装を有効にする API を使用した後は、必ず元の ID に戻してください。 使用する場合など、<xref:System.Security.Principal.WindowsIdentity>と<xref:System.Security.Principal.WindowsImpersonationContext>、c# を使用して`using`ステートメントまたは[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]`Using`ステートメントでは、次のコードに示すようにします。 <xref:System.Security.Principal.WindowsImpersonationContext> クラスは <xref:System.IDisposable> インターフェイスを実装しているため、コードが `using` ブロックを抜けると共通言語ランタイム (CLR: Common Language Runtime) は自動的に元の ID に戻ります。  
   
  [!code-csharp[c_SecurityBestPractices#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securitybestpractices/cs/source.cs#1)]
  [!code-vb[c_SecurityBestPractices#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securitybestpractices/vb/source.vb#1)]  
@@ -67,7 +68,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>カスタム バインドで SecurityBindingElement.IncludeTimestamp を true に設定する  
  カスタム バインディングを作成するときは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> を `true` に設定する必要があります。 <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `false` に設定されている場合に、クライアントが、X509 証明書などの非対称キーに基づくトークンを使用すると、メッセージは署名されません。  
   
-## <a name="see-also"></a>関連項目  
- [セキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
- [メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+## <a name="see-also"></a>参照  
+ [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [セキュリティに関するデータの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
+ [メタデータを使用する場合のセキュリティ上の考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)

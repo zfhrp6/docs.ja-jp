@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a1771f5c69442ea4e95925339c28204663f78eb2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0725c4f4275853cce958072a57d7f6ca4059e8cf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Windows Communication Foundation エンドポイント
 すべての通信、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスが使用して行われる、*エンドポイント*サービス。 エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。  
@@ -46,10 +47,10 @@ ms.lasthandoff: 12/02/2017
  [エンドポイント アドレスの指定](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
  エンドポイントを通して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスと通信する方法を解説します。  
   
- [方法: 構成でサービス エンドポイントの作成](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
+ [方法 : 構成にサービス エンドポイントを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
  構成でサービス エンドポイントを作成する方法を解説します。  
   
- [方法: コードでサービス エンドポイントの作成](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
+ [方法 : コード内にサービス エンドポイントを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
  コードでサービス エンドポイントを作成する方法を解説します。  
   
  [メタデータ エンドポイントを公開する](../../../docs/framework/wcf/publishing-metadata-endpoints.md)  

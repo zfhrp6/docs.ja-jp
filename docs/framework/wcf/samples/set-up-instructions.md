@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e88737d50b24f524e4a33fd51ee16678c1928b1a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cfbd4769d1fc974369093e3b5253f9853a9ef730
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="set-up-instructions"></a>セットアップ手順
 このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの実行に必要なサービスをセットアップする方法について説明します。  
@@ -32,10 +33,10 @@ ms.lasthandoff: 12/02/2017
  [ファイアウォール手順](../../../../docs/framework/wcf/samples/firewall-instructions.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを機能させる Windows ファイアウォールをセットアップするために必要な手順について説明します。  
   
- [インターネット情報サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
+ [インターネット インフォメーション サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
  IIS のセットアップに必要な手順について説明します。  
   
- [インターネット インフォメーション サービス (IIS) サーバー証明書のインストール手順](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md)  
+ [インターネット インフォメーション サービス (IIS) サーバー証明書インストール手順](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md)  
  IIS のサーバー証明書のインストール処理について説明します。  
   
  [仮想ディレクトリのセットアップ手順](../../../../docs/framework/wcf/samples/virtual-directory-setup-instructions.md)  
@@ -50,7 +51,7 @@ ms.lasthandoff: 12/02/2017
  [ピア ツー ピア サービスの有効化](http://msdn.microsoft.com/library/e7a0fcf4-b0e5-4b26-a7e3-f0f37b60a1f9)  
  ピアツーピアのメッセージ サービス用の組み込みリゾルバである Windows ピアツーピア コンポーネントのインストール手順について説明します。  
   
- [メッセージ キュー (MSMQ) をインストールします。](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
+ [メッセージ キュー (MSMQ) のインストール](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
  メッセージ キューのインストール手順について説明します。  
   
 ## <a name="related-sections"></a>関連項目  

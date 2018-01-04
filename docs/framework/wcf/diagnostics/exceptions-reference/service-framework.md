@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2ced290c0644fcf89fdf3f87778e705794164b0f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 67e856aff583513fa8a16d289cf5190a9698c52c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-framework"></a>サービス フレームワーク
 ここでは、サービス フレームワーク データによって生成されるすべての例外を示します。  
@@ -102,7 +103,7 @@ ms.lasthandoff: 12/02/2017
 |SFxCreateDuplexChannelNoCallbackUserObject|この CreateChannel オーバーロードは DuplexChannelFactory のこのインスタンスでは呼び出せません。 DuplexChannelFactory に渡された InstanceContext に有効な UserObject が含まれていません。|  
 |SFxCreateNonDuplexChannel1|ChannelFactory は指定されたコントラクトをサポートしていません。 ChannelFactory は 1 つ以上の操作が含まれたコールバック コントラクトを定義しています。 ChannelFactory の代わりに DuplexChannelFactory を使用してください。|  
 |SFxCustomBindingNeedsTransport1|指定されたコントラクトを持つ ServiceEndpoint の CustomBinding には、TransportBindingElement がありません。 いずれのバインディングにも TransportBindingElement から派生するバインド要素を少なくとも 1 つ含んでいる必要があります。|  
-|SFxCustomBindingWithoutTransport|このカスタム バインディングには TransportBindingElement がないため、このバインディング用のスキームを計算できません。 いずれのバインディングにも TransportBindingElement から派生するバインド要素を少なくとも 1 つ含んでいる必要があります。|  
+|SFxCustomBindingWithoutTransport|このカスタム バインドには TransportBindingElement がないため、このバインディング用のスキームを計算できません。 いずれのバインディングにも TransportBindingElement から派生するバインド要素を少なくとも 1 つ含んでいる必要があります。|  
 |SFxDataContractSerializerDoesNotSupportBareArray|DataContractSerializer は、指定された要素で指定されたコレクションをサポートしていません。|  
 |SFxDictionaryIsEmpty|辞書が空なので、この操作を行えません。|  
 |SFxDocEncodedNotSupported|指定された対象の反映中にエラーが発生しました。 エンコードされたドキュメントはサポートされていません。 'Use' をリテラルに変更するか、'Style' を RPC に変更してください。|  

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c1570832e5f179b6d2685ad33fad743c9530bb16
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fe4222ac124174341a28035c955a2a9bef4a167c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trace-type-summary"></a>トレースの種類の概要
 [Sourcelevels](http://go.microsoft.com/fwlink/?LinkID=94943)さまざまなトレース レベルを定義します。 重大なエラー、警告、情報、および Verbose も同様の説明、`ActivityTracing`の出力を切り替えるかをフラグは、境界とアクティビティ転送イベントをトレースします。  
@@ -33,9 +34,9 @@ ms.lasthandoff: 12/02/2017
 |警告|情報メッセージ。|  
 |情報|重大ではない問題。|  
 |詳細|トレースのデバッグ。|  
-|開始|処理の論理単位の開始。|  
+|[開始]|処理の論理単位の開始。|  
 |Suspend|処理の論理単位の中断。|  
-|Resume|処理の論理単位の再開。|  
+|再開|処理の論理単位の再開。|  
 |停止|処理の論理単位の停止。|  
 |転送|相関 ID の変更。|  
   

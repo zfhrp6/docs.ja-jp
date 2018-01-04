@@ -13,11 +13,12 @@ caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b6ca4b3e254055c7142259ea6022a53f003ea25f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1d2749188214f3f68ee3ed5df87fc0aa7cac604d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reliable-sessions-overview"></a>信頼できるセッションの概要
 
@@ -75,9 +76,9 @@ HTTPS などのカスタム バインディングを作成することで、他�
 
 | サポートされている信頼できるセッション チャネルの種類 &#8224;です。 | `IRequestChannel` | `IRequestSessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :---------------: | :----------------------: | :--------------: | :---------------------: |
-| `IOutputSessionChannel`                         | はい               | はい                      | はい              | はい                     |
-| `IRequestSessionChannel`                        | はい               | はい                      | いいえ               | いいえ                      |
-| `IDuplexSessionChannel`                         | いいえ                | いいえ                       | はい              | はい                     |
+| `IOutputSessionChannel`                         | [はい]               | はい                      | はい              | はい                     |
+| `IRequestSessionChannel`                        | はい               | はい                      | いいえ               | Ｘ                      |
+| `IDuplexSessionChannel`                         | Ｘ                | Ｘ                       | はい              | [はい]                     |
 
 &#8224;です。サポートされているチャネルの種類は、ジェネリックの使用可能な値`TChannel`に渡されるパラメーター値、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingContext%29>メソッドです。
 
@@ -85,9 +86,9 @@ HTTPS などのカスタム バインディングを作成することで、他�
 
 | サポートされている信頼できるセッション チャネルの種類 &#8225;です。 | `IReplyChannel` | `IReplySessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :-------------: | :--------------------: | :--------------: | :---------------------: |
-| `IInputSessionChannel`                          | はい             | はい                    | はい              | はい                     |
-| `IReplySessionChannel`                          | はい             | はい                    | いいえ               | いいえ                      |
-| `IDuplexSessionChannel`                         | いいえ              | いいえ                     | はい              | はい                     |
+| `IInputSessionChannel`                          | [はい]             | はい                    | はい              | はい                     |
+| `IReplySessionChannel`                          | はい             | はい                    | いいえ               | Ｘ                      |
+| `IDuplexSessionChannel`                         | Ｘ              | Ｘ                     | はい              | [はい]                     |
 
 &#8225;です。サポートされているチャネルの種類は、ジェネリックの使用可能な値`TChannel`に渡されるパラメーター値、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener%60%601%28System.ServiceModel.Channels.BindingContext%29>メソッドです。
 

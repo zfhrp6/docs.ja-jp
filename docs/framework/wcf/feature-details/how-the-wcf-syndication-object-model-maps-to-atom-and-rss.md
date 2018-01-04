@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 00c5b310fbda189cfffe74767c9d77ac86481afe
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 01030ed226a5cdc384db56933325d7c4eeade989
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 配信サービスを開発する場合、次のクラスを使用するフィードや項目を作成します。  
@@ -407,9 +408,9 @@ ms.lasthandoff: 12/02/2017
   
  `</content>`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
  [配信のアーキテクチャ](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
- [方法: 基本的な RSS フィードを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
- [方法: 基本的な Atom フィードの作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
- [方法: として両方 Atom フィードを公開し、RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+ [方法 : 基本的な RSS フィードを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
+ [方法 : 基本的な ATOM フィードを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
+ [方法 : Atom および RSS の両方としてフィードを公開する](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)

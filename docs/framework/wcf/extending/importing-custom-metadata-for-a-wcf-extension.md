@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d05cbb3091eb3a6bae3341947e14fcc1e78d1207
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9208a73f6a35e4c05ab9be612491f3f7db792a5b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="importing-custom-metadata-for-a-wcf-extension"></a>WCF 拡張に対するカスタム メタデータのインポート
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、メタデータのインポートとは、サービス、またはサービスのコンポーネントの抽象表現をサービスのメタデータから生成するプロセスです。 たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.ServiceModel.Description.ServiceEndpoint> インスタンス、<xref:System.ServiceModel.Channels.Binding> インスタンス、または <xref:System.ServiceModel.Description.ContractDescription> インスタンスをサービスの WSDL ドキュメントからインポートできます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービス メタデータをインポートするには、<xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> 抽象クラスの実装を使用します。 <xref:System.ServiceModel.Description.MetadataImporter> クラスから派生した型では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の WS-Policy インポート ロジックを利用したメタデータ形式のインポートをサポートします。  
@@ -58,7 +59,7 @@ ms.lasthandoff: 12/02/2017
 > [!IMPORTANT]
 >  無効なメタデータまたは不適切なメタデータがインポーターに渡される可能性があります。 カスタム インポーターがすべての形式の XML に対して強固であることを確認してください。  
   
-## <a name="see-also"></a>関連項目  
- [方法: カスタム WSDL をインポート](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)  
- [方法: カスタム ポリシー アサーションのインポート](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)  
- [方法: servicecontractgenerator の拡張の作成](../../../../docs/framework/wcf/extending/how-to-write-an-extension-for-the-servicecontractgenerator.md)
+## <a name="see-also"></a>参照  
+ [方法 : カスタム WSDL をインポートする](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)  
+ [方法 : カスタム ポリシー アサーションをインポートする](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)  
+ [方法 : ServiceContractGenerator の拡張を記述する](../../../../docs/framework/wcf/extending/how-to-write-an-extension-for-the-servicecontractgenerator.md)

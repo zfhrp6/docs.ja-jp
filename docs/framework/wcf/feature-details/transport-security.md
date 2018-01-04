@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d9576321ca44d568633fcba40e56f9582d3f5db5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 364326e2ded11f7174adc891a5fd9bcdd3c98334
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-security"></a>トランスポート セキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポート セキュリティは、選択したバインディングに依存します。 バインディングが実装するトランスポートによって実際のセキュリティ機構が決まります。 このセクションの各トピックでは、実装される機構とそのオプションについて説明します。  
@@ -32,10 +33,10 @@ ms.lasthandoff: 10/18/2017
  [HTTP 認証の理解](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)  
  HTTP 認証方式 (基本、ダイジェスト、NTLM (NT LAN Manager) など) について説明します。  
   
- [トランスポート セキュリティでの権限借用の使用](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
+ [トランスポート セキュリティでの偽装の使用](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
  トランスポート セキュリティ モードで使用できる 5 つの偽装レベルについて説明します。  
   
- [方法: SSL 証明書でポートを構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [方法 : SSL 証明書を使用してポートを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
  SSL (トランスポート) セキュリティを実現するために、X.509 証明書を使用してコンピューターのポートを構成する際の基本事項について説明します。  
   
 ## <a name="reference"></a>参照  
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/18/2017
  <xref:System.ServiceModel.Security>  
   
 ## <a name="related-sections"></a>関連項目  
- [サービスとクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF セキュリティのプログラミング](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)

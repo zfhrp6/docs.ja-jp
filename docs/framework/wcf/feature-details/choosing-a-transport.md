@@ -14,11 +14,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 620e039dd9a53a7c09eedd3d1a4892c5c43ffd2b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d41e9d2416ddbbd4c729b8c2a23754d19f0630d3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="choosing-a-transport"></a>トランスポートの選択
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されている HTTP、TCP、名前付きパイプという 3 つの主なトランスポートの中から、1 つのトランスポートを選択する基準について説明します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、メッセージ キュー (MSMQ とも呼ばれます) トランスポートも用意されていますが、ここではメッセージ キューについては説明しません。  
@@ -70,7 +71,7 @@ ms.lasthandoff: 12/02/2017
 |スループット|スループットは、指定の期間内に送信し、処理できるデータの量を示します。 待ち時間のように、選択したトランスポートが、サービス操作のスループットに影響する場合があります。 トランスポートのスループットを最大にするには、コンテンツを送信するときのオーバーヘッドおよびメッセージ交換が完了するまでの待ち時間を最小限に抑えることが必要です。 TCP トランスポートと名前付きパイプ トランスポートは、メッセージ本文に対するオーバーヘッドが小さく、メッセージ応答の待ち時間を短縮するネイティブ双方向パターンをサポートします。|TCP、名前付きパイプ|  
 |ツール|ツールは、開発、診断、ホスティング、およびその他のアクティビティに関する、サードパーティ アプリケーションによるプロトコルへのサポートを表します。 HTTP プロトコルで動作するツールとソフトウェアの開発には、大規模な投資が行われています。|HTTP|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.BasicHttpBinding>  
  <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`>  
   <<!--zz <xref:System.ServiceModel.WsDualHttpBinding> --> `System.ServiceModel.WsDualHttpBinding`
@@ -81,4 +82,4 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>  
  [バインディング](../../../../docs/framework/wcf/feature-details/bindings.md)  
  [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)  
- [ユーザー定義のバインディングを作成します。](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)
+ [ユーザー定義バインディングの作成](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)

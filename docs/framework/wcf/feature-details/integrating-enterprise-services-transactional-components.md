@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a236a34dd20661d62d59a3712a1800ff1f9a11ad
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b6ce82d100341fec4415cf9fdb7159706b2accc4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>エンタープライズ サービスのトランザクション コンポーネントの統合
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]エンタープライズ サービスと統合するための自動メカニズム (を参照してください[COM + アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md))。 ただし、柔軟性を高めるために、エンタープライズ サービス内でホストされるトランザクション コンポーネントを内部的に使用するサービスを開発する場合があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]トランザクション機能が組み込まれている、<xref:System.Transactions>インフラストラクチャ、エンタープライズ サービスとの統合のプロセス[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]間の相互運用性を指定するのと同じです<xref:System.Transactions>および Enterpriseサービスで説明したよう[エンタープライズ サービス、および COM + トランザクションとの相互運用](http://go.microsoft.com/fwlink/?LinkId=94949)です。  
@@ -102,6 +103,6 @@ static void Main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [COM + アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
+## <a name="see-also"></a>参照  
+ [COM+ アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  [COM アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)

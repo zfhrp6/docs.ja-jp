@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: a4d4180a0a60e062ab6d8872b153d5bc8b416708
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 97a3c9c618fc7d6c96deba0b72e25ef36c5785e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>トランスポート セキュリティと匿名クライアント
 この [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] シナリオでは、トランスポート セキュリティ (HTTPS) を使用して機密性と整合性を確保します。 サーバーは SSL (Secure Sockets Layer) 証明書で認証される必要があり、クライアントはサーバーの証明書を信頼する必要があります。 クライアントを認証する機構はないため、匿名となります。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
 |--------------------|-----------------|  
 |セキュリティ モード|Transport|  
 |相互運用性|既存の Web サービスとクライアントを使用する|  
-|認証 (サーバー)<br /><br /> 認証 (クライアント)|はい<br /><br /> アプリケーション レベル ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサポートなし)|  
+|認証 (サーバー)<br /><br /> 認証 (クライアント)|[はい]<br /><br /> アプリケーション レベル ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサポートなし)|  
 |整合性|はい|  
 |機密性|はい|  
 |Transport|HTTPS|  
@@ -124,7 +125,7 @@ ms.lasthandoff: 11/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [WS トランスポート セキュリティ](../../../../docs/framework/wcf/samples/ws-transport-security.md)  
  [トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)  

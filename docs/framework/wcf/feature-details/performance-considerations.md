@@ -13,22 +13,23 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c47d1408bde53fb006fe6a5392ac1f0c86afe1f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cd73af407b6cac238f8a22b13c7598aa0d27b1c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-considerations"></a>パフォーマンスに関する考慮事項
 アプリケーションを構築する際には、パフォーマンスについて常に考慮することが重要です。 このセクションには、パフォーマンスとセキュリティに関連するトピックが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [クレームと Id モデルによる承認の管理](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
+ [ID モデルを使用したクレームと承認の管理](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
  クレームのコレクション内ですばやくクレームを検索するための機構について説明します。  
   
- [デジタル署名の暗号化](../../../../docs/framework/wcf/feature-details/encryption-of-digital-signatures.md)  
+ [電子署名の暗号化](../../../../docs/framework/wcf/feature-details/encryption-of-digital-signatures.md)  
  デジタル署名の暗号化がパフォーマンスに及ぼす影響と、この機能を無効にする方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティのベスト プラクティス](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)  
- [セキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
+ [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)

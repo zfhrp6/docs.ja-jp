@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bd6d3e24becfe1cf8a30d6006087fe74e9487fbe
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0d4c3a91d69fd7adc863c6e947b72aa9134c376b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="behaviors"></a>ビヘイビアー
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの動作を示すサンプルが含まれています。  
@@ -26,7 +27,7 @@ ms.lasthandoff: 12/02/2017
  [同時実行](../../../../docs/framework/wcf/samples/concurrency.md)  
  <xref:System.ServiceModel.ServiceBehaviorAttribute> を <xref:System.ServiceModel.ConcurrencyMode> 列挙体と共に使用する方法を示します。この列挙体は、サービスのインスタンスがメッセージを順番に処理するか、または同時に処理するかを制御します。  
   
- [既定のサービス動作](../../../../docs/framework/wcf/samples/default-service-behavior.md)  
+ [既定のサービスの動作](../../../../docs/framework/wcf/samples/default-service-behavior.md)  
  サービスの動作設定を構成する方法を示します。  
   
  [インスタンス化](../../../../docs/framework/wcf/samples/instancing.md)  

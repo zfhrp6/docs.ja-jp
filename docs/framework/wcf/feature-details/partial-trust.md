@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 893b8bb58c9d78d6880f95f2490c55c7d9e27483
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ac76f092d5583519220d2d1b7a8d6d1bbb665632
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="partial-trust"></a>部分信頼
 [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] 以降では、部分的に信頼された呼び出し元は、<xref:System.ServiceModel>、<xref:System.Runtime.Serialization>、および <xref:System.ServiceModel.Web> に実装されたパブリック型とパブリック メソッドにアクセスできます。 このセクションでは、部分的に信頼されたアプリケーション内における [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の使用でサポートされるシナリオと、コード アクセス セキュリティ (CAS: Code Access Security) のアクセス許可レベルを下げて実行されるアプリケーションで利用できる、限られた [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 機能について説明します。  

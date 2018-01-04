@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 007dec81766423ea2826e98ae0b6b399a1508f11
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7031e222b152bfa61e13e0e4a44b5ad9418b07c9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mixing-trust-protocols-in-federated-scenarios"></a>Trust プロトコルが混在するフェデレーション シナリオ
 シナリオによっては、フェデレーション クライアントが、Trust バージョンの一致しないサービスやセキュリティ トークン サービス (STS: Security Token Service) と通信する場合があります。 たとえば、サービス WSDL に、STS とは異なるバージョンの WS-Trust 要素を持つ `RequestSecurityTokenTemplate` アサーションが含まれることがあります。 このような場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントは、`RequestSecurityTokenTemplate` から受け取った WS-Trust 要素を、STS Trust のバージョンに一致するように変換します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、標準バインディングでのみ不一致の Trust バージョンを処理します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって認識されるすべての標準アルゴリズム パラメーターは、標準バインディングの一部です。 このトピックでは、サービスと STS との間のさまざまな Trust 設定での [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の動作について説明します。  

@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 75b18dab37a18723671cebf51c3cc943b907b38a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fa6f9d0b9631420013593cb44903b5451549e8c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する
 既存の MSMQ アプリケーションを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションと統合できます。それには、メッセージ キュー (MSMQ) 統合バインディングを使用して MSMQ メッセージを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージとの間で相互に変換できます。 これにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントから MSMQ の受信側アプリケーションを呼び出したり、MSMQ の送信元アプリケーションから [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを呼び出したりできます。  
@@ -72,10 +73,10 @@ ms.lasthandoff: 12/02/2017
   
      [!code-csharp[S_WcfToMsmq#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wcftomsmq/cs/client.cs#4)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
- [方法: Exchange の WCF エンドポイントとメッセージのキュー](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
- [メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
- [メッセージ キュー (MSMQ) をインストールします。](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
- [Windows Communication foundation キュー メッセージ](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
+ [方法 : WCF エンドポイントを使用してキューに置かれたメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [Windows Communication Foundation でのメッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
+ [メッセージ キュー (MSMQ) のインストール](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
+ [Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
  [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
