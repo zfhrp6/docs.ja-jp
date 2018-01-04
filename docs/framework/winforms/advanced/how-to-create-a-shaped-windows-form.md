@@ -29,31 +29,32 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 981256c2447a53aef8e1ea676db38ce693d1337e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b0641adfcd7fa8e1d3367ea55d00830dd5a60706
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-create-a-shaped-windows-form"></a><span data-ttu-id="24c31-102">方法 : 成型された Windows フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="24c31-102">How to: Create a Shaped Windows Form</span></span>
-<span data-ttu-id="24c31-103">この例は、フォームのサイズを変更する楕円形です。</span><span class="sxs-lookup"><span data-stu-id="24c31-103">This example gives a form an elliptical shape that resizes with the form.</span></span>  
+# <a name="how-to-create-a-shaped-windows-form"></a><span data-ttu-id="16dbc-102">方法 : 成型された Windows フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="16dbc-102">How to: Create a Shaped Windows Form</span></span>
+<span data-ttu-id="16dbc-103">この例は、フォームのサイズを変更する楕円形です。</span><span class="sxs-lookup"><span data-stu-id="16dbc-103">This example gives a form an elliptical shape that resizes with the form.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="24c31-104">例</span><span class="sxs-lookup"><span data-stu-id="24c31-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="16dbc-104">例</span><span class="sxs-lookup"><span data-stu-id="16dbc-104">Example</span></span>  
  [!code-cpp[System.Drawing.ConceptualHowTos#10](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/cpp/form1.cpp#10)]
  [!code-csharp[System.Drawing.ConceptualHowTos#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/CS/form1.cs#10)]
  [!code-vb[System.Drawing.ConceptualHowTos#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/VB/form1.vb#10)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="24c31-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="24c31-105">Compiling the Code</span></span>  
- <span data-ttu-id="24c31-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="24c31-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="16dbc-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="16dbc-105">Compiling the Code</span></span>  
+ <span data-ttu-id="16dbc-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="16dbc-106">This example requires:</span></span>  
   
--   <span data-ttu-id="24c31-107"><xref:System.Windows.Forms> 名前空間と <xref:System.Drawing> 名前空間への参照。</span><span class="sxs-lookup"><span data-stu-id="24c31-107">References to the <xref:System.Windows.Forms> and <xref:System.Drawing> namespaces.</span></span>  
+-   <span data-ttu-id="16dbc-107"><xref:System.Windows.Forms> 名前空間と <xref:System.Drawing> 名前空間への参照。</span><span class="sxs-lookup"><span data-stu-id="16dbc-107">References to the <xref:System.Windows.Forms> and <xref:System.Drawing> namespaces.</span></span>  
   
- <span data-ttu-id="24c31-108">この例で上書き、<xref:System.Windows.Forms.Control.OnPaint%2A>フォームの形状を変更するメソッド。</span><span class="sxs-lookup"><span data-stu-id="24c31-108">This example overrides the <xref:System.Windows.Forms.Control.OnPaint%2A> method to change the shape of the form.</span></span> <span data-ttu-id="24c31-109">このコードを使用するには、メソッドの宣言とメソッドの内部の描画コードをコピーします。</span><span class="sxs-lookup"><span data-stu-id="24c31-109">To use this code, copy the method declaration as well as the drawing code inside the method.</span></span>  
+ <span data-ttu-id="16dbc-108">この例で上書き、<xref:System.Windows.Forms.Control.OnPaint%2A>フォームの形状を変更するメソッド。</span><span class="sxs-lookup"><span data-stu-id="16dbc-108">This example overrides the <xref:System.Windows.Forms.Control.OnPaint%2A> method to change the shape of the form.</span></span> <span data-ttu-id="16dbc-109">このコードを使用するには、メソッドの宣言とメソッドの内部の描画コードをコピーします。</span><span class="sxs-lookup"><span data-stu-id="16dbc-109">To use this code, copy the method declaration as well as the drawing code inside the method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="24c31-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="24c31-110">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="16dbc-110">参照</span><span class="sxs-lookup"><span data-stu-id="16dbc-110">See Also</span></span>  
  <xref:System.Windows.Forms.Control.OnPaint%2A>  
  <xref:System.Drawing.Region>  
  <xref:System.Drawing>  
  <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>  
  <xref:System.Windows.Forms.Control.Region%2A>  
- [<span data-ttu-id="24c31-111">グラフィックス プログラミングについて</span><span class="sxs-lookup"><span data-stu-id="24c31-111">Getting Started with Graphics Programming</span></span>](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)
+ [<span data-ttu-id="16dbc-111">グラフィックス プログラミングについて</span><span class="sxs-lookup"><span data-stu-id="16dbc-111">Getting Started with Graphics Programming</span></span>](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)

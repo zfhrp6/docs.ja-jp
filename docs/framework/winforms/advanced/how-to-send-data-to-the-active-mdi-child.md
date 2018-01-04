@@ -21,24 +21,25 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b7f505d68bfd6d8c65104244f9583fd3cf975dd6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9268e10b42653dbe0628b3e37e0fad71b35409cb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-send-data-to-the-active-mdi-child"></a><span data-ttu-id="5e6a6-102">方法 : アクティブな MDI 子フォームにデータを送信する</span><span class="sxs-lookup"><span data-stu-id="5e6a6-102">How to: Send Data to the Active MDI Child</span></span>
-<span data-ttu-id="5e6a6-103">コンテキスト内で多くの場合、[マルチ ドキュメント インターフェイス (MDI) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)ユーザーが MDI アプリケーションにクリップボードからデータを貼り付けますときなど、アクティブな子ウィンドウにデータを送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5e6a6-103">Often, within the context of [Multiple-Document Interface (MDI) Applications](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md), you will need to send data to the active child window, such as when the user pastes data from the Clipboard into an MDI application.</span></span>  
+# <a name="how-to-send-data-to-the-active-mdi-child"></a><span data-ttu-id="ef093-102">方法 : アクティブな MDI 子フォームにデータを送信する</span><span class="sxs-lookup"><span data-stu-id="ef093-102">How to: Send Data to the Active MDI Child</span></span>
+<span data-ttu-id="ef093-103">コンテキスト内で多くの場合、[マルチ ドキュメント インターフェイス (MDI) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)ユーザーが MDI アプリケーションにクリップボードからデータを貼り付けますときなど、アクティブな子ウィンドウにデータを送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef093-103">Often, within the context of [Multiple-Document Interface (MDI) Applications](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md), you will need to send data to the active child window, such as when the user pastes data from the Clipboard into an MDI application.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="5e6a6-104">フォーカスが子ウィンドウを確認して、クリップボードにその内容を送信するについては、次を参照してください。[アクティブな MDI 子フォームを決定する](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)です。</span><span class="sxs-lookup"><span data-stu-id="5e6a6-104">For information about verifying which child window has focus and sending its contents to the Clipboard, see [Determining the Active MDI Child](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md).</span></span>  
+>  <span data-ttu-id="ef093-104">フォーカスが子ウィンドウを確認して、クリップボードにその内容を送信するについては、次を参照してください。[アクティブな MDI 子フォームを決定する](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)です。</span><span class="sxs-lookup"><span data-stu-id="ef093-104">For information about verifying which child window has focus and sending its contents to the Clipboard, see [Determining the Active MDI Child](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md).</span></span>  
   
-### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a><span data-ttu-id="5e6a6-105">アクティブな MDI 子ウィンドウに、クリップボードからデータを送信するには</span><span class="sxs-lookup"><span data-stu-id="5e6a6-105">To send data to the active MDI child window from the Clipboard</span></span>  
+### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a><span data-ttu-id="ef093-105">アクティブな MDI 子ウィンドウに、クリップボードからデータを送信するには</span><span class="sxs-lookup"><span data-stu-id="ef093-105">To send data to the active MDI child window from the Clipboard</span></span>  
   
-1.  <span data-ttu-id="5e6a6-106">メソッド内には、アクティブな子フォームのアクティブ コントロールをクリップボードにテキストをコピーします。</span><span class="sxs-lookup"><span data-stu-id="5e6a6-106">Within a method, copy the text on the Clipboard to the active control of the active child form.</span></span>  
+1.  <span data-ttu-id="ef093-106">メソッド内には、アクティブな子フォームのアクティブ コントロールをクリップボードにテキストをコピーします。</span><span class="sxs-lookup"><span data-stu-id="ef093-106">Within a method, copy the text on the Clipboard to the active control of the active child form.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="5e6a6-107">この例では、MDI 親フォームがある (`Form1`) を含む 1 つまたは複数の MDI 子ウィンドウを持つ、<xref:System.Windows.Forms.RichTextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="5e6a6-107">This example assumes there is an MDI parent form (`Form1`) that has one or more MDI child windows containing a <xref:System.Windows.Forms.RichTextBox> control.</span></span> <span data-ttu-id="5e6a6-108">詳細については、次を参照してください。 [MDI 親フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="5e6a6-108">For more information, see [Creating MDI Parent Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md).</span></span>  
+    >  <span data-ttu-id="ef093-107">この例では、MDI 親フォームがある (`Form1`) を含む 1 つまたは複数の MDI 子ウィンドウを持つ、<xref:System.Windows.Forms.RichTextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="ef093-107">This example assumes there is an MDI parent form (`Form1`) that has one or more MDI child windows containing a <xref:System.Windows.Forms.RichTextBox> control.</span></span> <span data-ttu-id="ef093-108">詳細については、次を参照してください。 [MDI 親フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="ef093-108">For more information, see [Creating MDI Parent Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md).</span></span>  
   
     ```vb  
     Public Sub mniPaste_Click(ByVal sender As Object, _  
@@ -101,9 +102,9 @@ ms.lasthandoff: 11/21/2017
     }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="5e6a6-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="5e6a6-109">See Also</span></span>  
- [<span data-ttu-id="5e6a6-110">マルチ ドキュメント インターフェイス (MDI) アプリケーション</span><span class="sxs-lookup"><span data-stu-id="5e6a6-110">Multiple-Document Interface (MDI) Applications</span></span>](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
- [<span data-ttu-id="5e6a6-111">方法: MDI 親フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="5e6a6-111">How to: Create MDI Parent Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
- [<span data-ttu-id="5e6a6-112">方法: MDI 子フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="5e6a6-112">How to: Create MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
- [<span data-ttu-id="5e6a6-113">方法: アクティブな MDI 子フォームを特定する</span><span class="sxs-lookup"><span data-stu-id="5e6a6-113">How to: Determine the Active MDI Child</span></span>](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
- [<span data-ttu-id="5e6a6-114">方法: MDI 子フォームを配置する</span><span class="sxs-lookup"><span data-stu-id="5e6a6-114">How to: Arrange MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)
+## <a name="see-also"></a><span data-ttu-id="ef093-109">参照</span><span class="sxs-lookup"><span data-stu-id="ef093-109">See Also</span></span>  
+ [<span data-ttu-id="ef093-110">マルチ ドキュメント インターフェイス (MDI) アプリケーション</span><span class="sxs-lookup"><span data-stu-id="ef093-110">Multiple-Document Interface (MDI) Applications</span></span>](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
+ [<span data-ttu-id="ef093-111">方法: MDI 親フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="ef093-111">How to: Create MDI Parent Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ [<span data-ttu-id="ef093-112">方法: MDI 子フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="ef093-112">How to: Create MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
+ [<span data-ttu-id="ef093-113">方法: アクティブな MDI 子フォームを特定する</span><span class="sxs-lookup"><span data-stu-id="ef093-113">How to: Determine the Active MDI Child</span></span>](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
+ [<span data-ttu-id="ef093-114">方法: MDI 子フォームを配置する</span><span class="sxs-lookup"><span data-stu-id="ef093-114">How to: Arrange MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)

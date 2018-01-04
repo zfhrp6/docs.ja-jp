@@ -15,27 +15,28 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 37a811f8c3d4e7da82c24fa8f2147ee4cafe64c6
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0bdd08efff930b2ddb8b985376992dd895067cfb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="events-how-to-topics"></a><span data-ttu-id="de64a-102">イベントに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="de64a-102">Events How-to Topics</span></span>
-<span data-ttu-id="de64a-103">このセクションのトピックでは、WPF でイベントを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="de64a-103">The topics in this section describe how to use events in WPF.</span></span>  
+# <a name="events-how-to-topics"></a><span data-ttu-id="a3da8-102">イベントに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="a3da8-102">Events How-to Topics</span></span>
+<span data-ttu-id="a3da8-103">このセクションのトピックでは、WPF でイベントを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a3da8-103">The topics in this section describe how to use events in WPF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="de64a-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="de64a-104">In This Section</span></span>  
- [<span data-ttu-id="de64a-105">コードを使用してイベント ハンドラーを追加する</span><span class="sxs-lookup"><span data-stu-id="de64a-105">Add an Event Handler Using Code</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-an-event-handler-using-code.md)  
- [<span data-ttu-id="de64a-106">ルーティング イベントを処理する</span><span class="sxs-lookup"><span data-stu-id="de64a-106">Handle a Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md)  
- [<span data-ttu-id="de64a-107">カスタム ルーティング イベントを作成する</span><span class="sxs-lookup"><span data-stu-id="de64a-107">Create a Custom Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md)  
- [<span data-ttu-id="de64a-108">イベント ハンドラーでソース要素を検索する</span><span class="sxs-lookup"><span data-stu-id="de64a-108">Find the Source Element in an Event Handler</span></span>](../../../../docs/framework/wpf/advanced/how-to-find-the-source-element-in-an-event-handler.md)  
- [<span data-ttu-id="de64a-109">ルーティング イベントのクラス処理を追加する</span><span class="sxs-lookup"><span data-stu-id="de64a-109">Add Class Handling for a Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-class-handling-for-a-routed-event.md)  
+## <a name="in-this-section"></a><span data-ttu-id="a3da8-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="a3da8-104">In This Section</span></span>  
+ [<span data-ttu-id="a3da8-105">コードを使用してイベント ハンドラーを追加する</span><span class="sxs-lookup"><span data-stu-id="a3da8-105">Add an Event Handler Using Code</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-an-event-handler-using-code.md)  
+ [<span data-ttu-id="a3da8-106">ルーティング イベントを処理する</span><span class="sxs-lookup"><span data-stu-id="a3da8-106">Handle a Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md)  
+ [<span data-ttu-id="a3da8-107">カスタム ルーティング イベントを作成する</span><span class="sxs-lookup"><span data-stu-id="a3da8-107">Create a Custom Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md)  
+ [<span data-ttu-id="a3da8-108">イベント ハンドラーでソース要素を検索する</span><span class="sxs-lookup"><span data-stu-id="a3da8-108">Find the Source Element in an Event Handler</span></span>](../../../../docs/framework/wpf/advanced/how-to-find-the-source-element-in-an-event-handler.md)  
+ [<span data-ttu-id="a3da8-109">ルーティング イベントのクラス処理を追加する</span><span class="sxs-lookup"><span data-stu-id="a3da8-109">Add Class Handling for a Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-class-handling-for-a-routed-event.md)  
   
-## <a name="reference"></a><span data-ttu-id="de64a-110">参照</span><span class="sxs-lookup"><span data-stu-id="de64a-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="a3da8-110">参照</span><span class="sxs-lookup"><span data-stu-id="a3da8-110">Reference</span></span>  
  <xref:System.Windows.RoutedEvent>  
   
  <xref:System.Windows.EventManager>  
   
  <xref:System.Windows.RoutingStrategy>  
   
-## <a name="related-sections"></a><span data-ttu-id="de64a-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="de64a-111">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="a3da8-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3da8-111">Related Sections</span></span>

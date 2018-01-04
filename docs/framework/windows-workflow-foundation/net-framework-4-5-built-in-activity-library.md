@@ -12,33 +12,34 @@ caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 97fa3ad3a92500614e1c174c516883a2ee2e0202
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cabff74808b25ba523d61931afc624d0353b2be1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="net-framework-45-built-in-activity-library"></a><span data-ttu-id="2e436-102">.NET Framework 4.5 ビルトイン アクティビティ ライブラリ</span><span class="sxs-lookup"><span data-stu-id="2e436-102">.NET Framework 4.5 Built-In Activity Library</span></span>
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]<span data-ttu-id="2e436-103"> には、拡張された機能を持つ新しいアクティビティ ライブラリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2e436-103"> includes a new activity library with expanded functionality.</span></span> <span data-ttu-id="2e436-104">アクティビティには次の型があります。</span><span class="sxs-lookup"><span data-stu-id="2e436-104">The types of activities include the following:</span></span>  
+# <a name="net-framework-45-built-in-activity-library"></a><span data-ttu-id="942d9-102">.NET Framework 4.5 ビルトイン アクティビティ ライブラリ</span><span class="sxs-lookup"><span data-stu-id="942d9-102">.NET Framework 4.5 Built-In Activity Library</span></span>
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]<span data-ttu-id="942d9-103"> には、拡張された機能を持つ新しいアクティビティ ライブラリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="942d9-103"> includes a new activity library with expanded functionality.</span></span> <span data-ttu-id="942d9-104">アクティビティには次の型があります。</span><span class="sxs-lookup"><span data-stu-id="942d9-104">The types of activities include the following:</span></span>  
   
--   [<span data-ttu-id="2e436-105">制御フロー</span><span class="sxs-lookup"><span data-stu-id="2e436-105">Control Flow</span></span>](../../../docs/framework/windows-workflow-foundation/control-flow-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-105">制御フロー</span><span class="sxs-lookup"><span data-stu-id="942d9-105">Control Flow</span></span>](../../../docs/framework/windows-workflow-foundation/control-flow-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-106">フローチャート</span><span class="sxs-lookup"><span data-stu-id="2e436-106">Flowchart</span></span>](../../../docs/framework/windows-workflow-foundation/flowchart-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-106">フローチャート</span><span class="sxs-lookup"><span data-stu-id="942d9-106">Flowchart</span></span>](../../../docs/framework/windows-workflow-foundation/flowchart-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-107">ステート マシン</span><span class="sxs-lookup"><span data-stu-id="2e436-107">State Machine</span></span>](../../../docs/framework/windows-workflow-foundation/state-machine-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-107">ステート マシン</span><span class="sxs-lookup"><span data-stu-id="942d9-107">State Machine</span></span>](../../../docs/framework/windows-workflow-foundation/state-machine-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-108">メッセージング アクティビティ</span><span class="sxs-lookup"><span data-stu-id="2e436-108">Messaging Activities</span></span>](../../../docs/framework/wcf/feature-details/messaging-activities.md)  
+-   [<span data-ttu-id="942d9-108">メッセージング アクティビティ</span><span class="sxs-lookup"><span data-stu-id="942d9-108">Messaging Activities</span></span>](../../../docs/framework/wcf/feature-details/messaging-activities.md)  
   
--   [<span data-ttu-id="2e436-109">ランタイム</span><span class="sxs-lookup"><span data-stu-id="2e436-109">Runtime</span></span>](../../../docs/framework/windows-workflow-foundation/runtime-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-109">ランタイム</span><span class="sxs-lookup"><span data-stu-id="942d9-109">Runtime</span></span>](../../../docs/framework/windows-workflow-foundation/runtime-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-110">Primitives</span><span class="sxs-lookup"><span data-stu-id="2e436-110">Primitives</span></span>](../../../docs/framework/windows-workflow-foundation/primitives-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-110">Primitives</span><span class="sxs-lookup"><span data-stu-id="942d9-110">Primitives</span></span>](../../../docs/framework/windows-workflow-foundation/primitives-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-111">トランザクション</span><span class="sxs-lookup"><span data-stu-id="2e436-111">Transaction</span></span>](../../../docs/framework/windows-workflow-foundation/transaction-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-111">トランザクション</span><span class="sxs-lookup"><span data-stu-id="942d9-111">Transaction</span></span>](../../../docs/framework/windows-workflow-foundation/transaction-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-112">コレクション</span><span class="sxs-lookup"><span data-stu-id="2e436-112">Collection</span></span>](../../../docs/framework/windows-workflow-foundation/collection-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-112">コレクション</span><span class="sxs-lookup"><span data-stu-id="942d9-112">Collection</span></span>](../../../docs/framework/windows-workflow-foundation/collection-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-113">エラー処理</span><span class="sxs-lookup"><span data-stu-id="2e436-113">Error Handling</span></span>](../../../docs/framework/windows-workflow-foundation/error-handling-activities-in-wf.md)  
+-   [<span data-ttu-id="942d9-113">エラー処理</span><span class="sxs-lookup"><span data-stu-id="942d9-113">Error Handling</span></span>](../../../docs/framework/windows-workflow-foundation/error-handling-activities-in-wf.md)  
   
--   [<span data-ttu-id="2e436-114">移行</span><span class="sxs-lookup"><span data-stu-id="2e436-114">Migration</span></span>](../../../docs/framework/windows-workflow-foundation/migration-activity-in-wf.md)  
+-   [<span data-ttu-id="942d9-114">移行</span><span class="sxs-lookup"><span data-stu-id="942d9-114">Migration</span></span>](../../../docs/framework/windows-workflow-foundation/migration-activity-in-wf.md)  
   
- <span data-ttu-id="2e436-115">組み込みのアクティビティ ライブラリのアクティビティを構成してワークフローを作成したり、カスタム アクティビティと一緒に使用したりできます。</span><span class="sxs-lookup"><span data-stu-id="2e436-115">The activites in the built-in activity library can be composed into workflows, or used alongside custom activities.</span></span> <span data-ttu-id="2e436-116">組み込みのアクティビティ ライブラリのアクティビティはシールされています。これらの使用目的は、継承によって新しい機能を作成することではありません。</span><span class="sxs-lookup"><span data-stu-id="2e436-116">The activities in the built-in activity library are sealed; they are not intended to be used to create new functionality through inheritance.</span></span>
+ <span data-ttu-id="942d9-115">組み込みのアクティビティ ライブラリのアクティビティを構成してワークフローを作成したり、カスタム アクティビティと一緒に使用したりできます。</span><span class="sxs-lookup"><span data-stu-id="942d9-115">The activites in the built-in activity library can be composed into workflows, or used alongside custom activities.</span></span> <span data-ttu-id="942d9-116">組み込みのアクティビティ ライブラリのアクティビティはシールされています。これらの使用目的は、継承によって新しい機能を作成することではありません。</span><span class="sxs-lookup"><span data-stu-id="942d9-116">The activities in the built-in activity library are sealed; they are not intended to be used to create new functionality through inheritance.</span></span>

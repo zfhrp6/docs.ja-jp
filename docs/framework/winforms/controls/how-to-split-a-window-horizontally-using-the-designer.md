@@ -17,22 +17,23 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aedf7c59533458b6c7ba97b9e921382e29460d06
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d41c1506081a2e227c5f21096c0e0bb60d2ddb91
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-split-a-window-horizontally-using-the-designer"></a><span data-ttu-id="2ac97-102">方法 : デザイナーを使用してウィンドウを水平方向に分割する</span><span class="sxs-lookup"><span data-stu-id="2ac97-102">How to: Split a Window Horizontally Using the Designer</span></span>
-<span data-ttu-id="2ac97-103">この例では、分割するスプリッター、<xref:System.Windows.Forms.SplitContainer>コントロールの水平方向です。</span><span class="sxs-lookup"><span data-stu-id="2ac97-103">This example makes the splitter that divides the <xref:System.Windows.Forms.SplitContainer> control horizontal.</span></span>  
+# <a name="how-to-split-a-window-horizontally-using-the-designer"></a><span data-ttu-id="4e201-102">方法 : デザイナーを使用してウィンドウを水平方向に分割する</span><span class="sxs-lookup"><span data-stu-id="4e201-102">How to: Split a Window Horizontally Using the Designer</span></span>
+<span data-ttu-id="4e201-103">この例では、分割するスプリッター、<xref:System.Windows.Forms.SplitContainer>コントロールの水平方向です。</span><span class="sxs-lookup"><span data-stu-id="4e201-103">This example makes the splitter that divides the <xref:System.Windows.Forms.SplitContainer> control horizontal.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="2ac97-104"><xref:System.Windows.Forms.SplitContainer.Orientation%2A>のプロパティ、<xref:System.Windows.Forms.SplitContainer>コントロールは、スプリッターのではなく、コントロール自体の方向を決定します。</span><span class="sxs-lookup"><span data-stu-id="2ac97-104">The <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control determines the direction of the splitter, not of the control itself.</span></span> <span data-ttu-id="2ac97-105">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="2ac97-105">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="2ac97-106">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="2ac97-106">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="2ac97-107">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2ac97-107">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
+>  <span data-ttu-id="4e201-104"><xref:System.Windows.Forms.SplitContainer.Orientation%2A>のプロパティ、<xref:System.Windows.Forms.SplitContainer>コントロールは、スプリッターのではなく、コントロール自体の方向を決定します。</span><span class="sxs-lookup"><span data-stu-id="4e201-104">The <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control determines the direction of the splitter, not of the control itself.</span></span> <span data-ttu-id="4e201-105">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="4e201-105">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="4e201-106">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4e201-106">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="4e201-107">詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4e201-107">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### <a name="to-split-a-window-horizontally"></a><span data-ttu-id="2ac97-108">ウィンドウを水平方向に分割するには</span><span class="sxs-lookup"><span data-stu-id="2ac97-108">To split a window horizontally</span></span>  
+### <a name="to-split-a-window-horizontally"></a><span data-ttu-id="4e201-108">ウィンドウを水平方向に分割するには</span><span class="sxs-lookup"><span data-stu-id="4e201-108">To split a window horizontally</span></span>  
   
-1.  <span data-ttu-id="2ac97-109">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.SplitContainer.Orientation%2A>のプロパティ、<xref:System.Windows.Forms.SplitContainer>に制御を<xref:System.Windows.Forms.Orientation.Horizontal>です。</span><span class="sxs-lookup"><span data-stu-id="2ac97-109">In the **Properties** window, set the <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control to <xref:System.Windows.Forms.Orientation.Horizontal>.</span></span>  
+1.  <span data-ttu-id="4e201-109">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.SplitContainer.Orientation%2A>のプロパティ、<xref:System.Windows.Forms.SplitContainer>に制御を<xref:System.Windows.Forms.Orientation.Horizontal>です。</span><span class="sxs-lookup"><span data-stu-id="4e201-109">In the **Properties** window, set the <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control to <xref:System.Windows.Forms.Orientation.Horizontal>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2ac97-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="2ac97-110">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="4e201-110">参照</span><span class="sxs-lookup"><span data-stu-id="4e201-110">See Also</span></span>  
  <xref:System.Windows.Forms.SplitContainer>  
- [<span data-ttu-id="2ac97-111">SplitContainer コントロール</span><span class="sxs-lookup"><span data-stu-id="2ac97-111">SplitContainer Control</span></span>](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)
+ [<span data-ttu-id="4e201-111">SplitContainer コントロール</span><span class="sxs-lookup"><span data-stu-id="4e201-111">SplitContainer Control</span></span>](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)

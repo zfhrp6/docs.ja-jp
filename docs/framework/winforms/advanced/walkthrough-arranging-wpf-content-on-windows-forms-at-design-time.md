@@ -20,149 +20,150 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9ae86989489ec4c50a4234eeb4a0950a71e53b0a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0c222e6f43bd595d264caeca2d9f79f7845f7f99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a><span data-ttu-id="7b175-102">チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの配置</span><span class="sxs-lookup"><span data-stu-id="7b175-102">Walkthrough: Arranging WPF Content on Windows Forms at Design Time</span></span>
-<span data-ttu-id="7b175-103">このチュートリアルでは、固定やスナップ線などの Windows フォームのレイアウト機能を使用して、Windows Presentation Foundation (WPF) コントロールを配置する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="7b175-103">This walkthrough shows you how to use the Windows Forms layout features, such as anchoring and snaplines, to arrange Windows Presentation Foundation (WPF) controls.</span></span>  
+# <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a><span data-ttu-id="e1ac5-102">チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの配置</span><span class="sxs-lookup"><span data-stu-id="e1ac5-102">Walkthrough: Arranging WPF Content on Windows Forms at Design Time</span></span>
+<span data-ttu-id="e1ac5-103">このチュートリアルでは、固定やスナップ線などの Windows フォームのレイアウト機能を使用して、Windows Presentation Foundation (WPF) コントロールを配置する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-103">This walkthrough shows you how to use the Windows Forms layout features, such as anchoring and snaplines, to arrange Windows Presentation Foundation (WPF) controls.</span></span>  
   
- <span data-ttu-id="7b175-104">このチュートリアルでは次のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="7b175-104">In this walkthrough, you perform the following tasks:</span></span>  
+ <span data-ttu-id="e1ac5-104">このチュートリアルでは次のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-104">In this walkthrough, you perform the following tasks:</span></span>  
   
--   <span data-ttu-id="7b175-105">プロジェクトを作成する。</span><span class="sxs-lookup"><span data-stu-id="7b175-105">Create the project.</span></span>  
+-   <span data-ttu-id="e1ac5-105">プロジェクトを作成する。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-105">Create the project.</span></span>  
   
--   <span data-ttu-id="7b175-106">WPF コントロールを作成する。</span><span class="sxs-lookup"><span data-stu-id="7b175-106">Create the WPF control.</span></span>  
+-   <span data-ttu-id="e1ac5-106">WPF コントロールを作成する。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-106">Create the WPF control.</span></span>  
   
--   <span data-ttu-id="7b175-107">レイアウト パネルで WPF コントロールをホストする。</span><span class="sxs-lookup"><span data-stu-id="7b175-107">Host WPF controls in a layout panel.</span></span>  
+-   <span data-ttu-id="e1ac5-107">レイアウト パネルで WPF コントロールをホストする。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-107">Host WPF controls in a layout panel.</span></span>  
   
--   <span data-ttu-id="7b175-108">WPF コントロールを配置するスナップ線を使用する。</span><span class="sxs-lookup"><span data-stu-id="7b175-108">Use snaplines to align WPF controls.</span></span>  
+-   <span data-ttu-id="e1ac5-108">WPF コントロールを配置するスナップ線を使用する。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-108">Use snaplines to align WPF controls.</span></span>  
   
--   <span data-ttu-id="7b175-109">WPF コントロールを固定してドッキングする。</span><span class="sxs-lookup"><span data-stu-id="7b175-109">Anchor and dock WPF controls.</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="7b175-110">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7b175-110">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="7b175-111">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7b175-111">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="7b175-112">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7b175-112">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
-  
-## <a name="prerequisites"></a><span data-ttu-id="7b175-113">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="7b175-113">Prerequisites</span></span>  
- <span data-ttu-id="7b175-114">このチュートリアルを実行するには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="7b175-114">You need the following components to complete this walkthrough:</span></span>  
-  
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="7b175-115">。</span><span class="sxs-lookup"><span data-stu-id="7b175-115">.</span></span>  
-  
-## <a name="creating-the-project"></a><span data-ttu-id="7b175-116">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="7b175-116">Creating the Project</span></span>  
- <span data-ttu-id="7b175-117">まず、Windows フォーム プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="7b175-117">The first step is to create the Windows Forms project.</span></span>  
+-   <span data-ttu-id="e1ac5-109">WPF コントロールを固定してドッキングする。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-109">Anchor and dock WPF controls.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="7b175-118">WPF コンテンツをホストする場合は、C# プロジェクトと Visual Basic プロジェクトのみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="7b175-118">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>  
+>  <span data-ttu-id="e1ac5-110">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-110">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="e1ac5-111">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-111">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="e1ac5-112">詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-112">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-#### <a name="to-create-the-project"></a><span data-ttu-id="7b175-119">プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="7b175-119">To create the project</span></span>  
+## <a name="prerequisites"></a><span data-ttu-id="e1ac5-113">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="e1ac5-113">Prerequisites</span></span>  
+ <span data-ttu-id="e1ac5-114">このチュートリアルを実行するには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-114">You need the following components to complete this walkthrough:</span></span>  
   
--   <span data-ttu-id="7b175-120">Visual Basic または Visual c# のという名前で新しい Windows フォーム アプリケーション プロジェクトを作成`ArrangeElementHost`です。</span><span class="sxs-lookup"><span data-stu-id="7b175-120">Create a new Windows Forms Application project in Visual Basic or Visual C# named `ArrangeElementHost`.</span></span>  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="e1ac5-115">。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-115">.</span></span>  
   
-## <a name="creating-the-wpf-control"></a><span data-ttu-id="7b175-121">WPF コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="7b175-121">Creating the WPF Control</span></span>  
- <span data-ttu-id="7b175-122">プロジェクトに WPF コントロール型を追加したら、フォーム状に配置できます。</span><span class="sxs-lookup"><span data-stu-id="7b175-122">After you add a WPF control to the project, you can arrange it on the form.</span></span>  
+## <a name="creating-the-project"></a><span data-ttu-id="e1ac5-116">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="e1ac5-116">Creating the Project</span></span>  
+ <span data-ttu-id="e1ac5-117">まず、Windows フォーム プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-117">The first step is to create the Windows Forms project.</span></span>  
   
-#### <a name="to-create-wpf-controls"></a><span data-ttu-id="7b175-123">WPF コントロールを作成するには</span><span class="sxs-lookup"><span data-stu-id="7b175-123">To create WPF controls</span></span>  
+> [!NOTE]
+>  <span data-ttu-id="e1ac5-118">WPF コンテンツをホストする場合は、C# プロジェクトと Visual Basic プロジェクトのみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-118">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>  
   
-1.  <span data-ttu-id="7b175-124">新しい WPF <xref:System.Windows.Controls.UserControl> をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="7b175-124">Add a new WPF <xref:System.Windows.Controls.UserControl> to the project.</span></span> <span data-ttu-id="7b175-125">コントロール型の既定の名前である `UserControl1.xaml` を使用します。</span><span class="sxs-lookup"><span data-stu-id="7b175-125">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="7b175-126">詳細については、次を参照してください。[チュートリアル: 新しい WPF コンテンツの作成デザイン時に Windows フォームで](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b175-126">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>  
+#### <a name="to-create-the-project"></a><span data-ttu-id="e1ac5-119">プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="e1ac5-119">To create the project</span></span>  
   
-2.  <span data-ttu-id="7b175-127">デザイン ビューで `UserControl1` が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7b175-127">In Design view, make sure that `UserControl1` is selected.</span></span> <span data-ttu-id="7b175-128">詳細については、次を参照してください。[する方法: Select およびデザイン サーフェイス上の要素の移動](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474)です。</span><span class="sxs-lookup"><span data-stu-id="7b175-128">For more information, see [How to: Select and Move Elements on the Design Surface](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span></span>  
+-   <span data-ttu-id="e1ac5-120">Visual Basic または Visual c# のという名前で新しい Windows フォーム アプリケーション プロジェクトを作成`ArrangeElementHost`です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-120">Create a new Windows Forms Application project in Visual Basic or Visual C# named `ArrangeElementHost`.</span></span>  
   
-3.  <span data-ttu-id="7b175-129">**プロパティ**ウィンドウで、設定の値、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティ`200`です。</span><span class="sxs-lookup"><span data-stu-id="7b175-129">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to `200`.</span></span>  
+## <a name="creating-the-wpf-control"></a><span data-ttu-id="e1ac5-121">WPF コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="e1ac5-121">Creating the WPF Control</span></span>  
+ <span data-ttu-id="e1ac5-122">プロジェクトに WPF コントロール型を追加したら、フォーム状に配置できます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-122">After you add a WPF control to the project, you can arrange it on the form.</span></span>  
   
-4.  <span data-ttu-id="7b175-130"><xref:System.Windows.Controls.Control.Background%2A> プロパティの値を `Blue` に設定します。</span><span class="sxs-lookup"><span data-stu-id="7b175-130">Set the value of the <xref:System.Windows.Controls.Control.Background%2A> property to `Blue`.</span></span>  
+#### <a name="to-create-wpf-controls"></a><span data-ttu-id="e1ac5-123">WPF コントロールを作成するには</span><span class="sxs-lookup"><span data-stu-id="e1ac5-123">To create WPF controls</span></span>  
   
-5.  <span data-ttu-id="7b175-131">プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="7b175-131">Build the project.</span></span>  
+1.  <span data-ttu-id="e1ac5-124">新しい WPF <xref:System.Windows.Controls.UserControl> をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-124">Add a new WPF <xref:System.Windows.Controls.UserControl> to the project.</span></span> <span data-ttu-id="e1ac5-125">コントロール型の既定の名前である `UserControl1.xaml` を使用します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-125">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="e1ac5-126">詳細については、次を参照してください。[チュートリアル: 新しい WPF コンテンツの作成デザイン時に Windows フォームで](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-126">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>  
   
-## <a name="hosting-wpf-controls-in-a-layout-panel"></a><span data-ttu-id="7b175-132">レイアウト パネルで WPF コントロールをホストする</span><span class="sxs-lookup"><span data-stu-id="7b175-132">Hosting WPF Controls in a Layout Panel</span></span>  
- <span data-ttu-id="7b175-133">その他の Windows フォーム コントロールを使用するのと同じ方法で、レイアウト パネルで WPF コントロールを使用できます。</span><span class="sxs-lookup"><span data-stu-id="7b175-133">You can use WPF controls in layout panels in the same way you use other Windows Forms controls.</span></span>  
+2.  <span data-ttu-id="e1ac5-127">デザイン ビューで `UserControl1` が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-127">In Design view, make sure that `UserControl1` is selected.</span></span> <span data-ttu-id="e1ac5-128">詳細については、次を参照してください。[する方法: Select およびデザイン サーフェイス上の要素の移動](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474)です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-128">For more information, see [How to: Select and Move Elements on the Design Surface](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span></span>  
   
-#### <a name="to-host-wpf-controls-in-a-layout-panel"></a><span data-ttu-id="7b175-134">レイアウト パネルで WPF コントロールをホストするには</span><span class="sxs-lookup"><span data-stu-id="7b175-134">To host WPF controls in a layout panel</span></span>  
+3.  <span data-ttu-id="e1ac5-129">**プロパティ**ウィンドウで、設定の値、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティ`200`です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-129">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to `200`.</span></span>  
   
-1.  <span data-ttu-id="7b175-135">Windows フォーム デザイナーで `Form1` を開きます。</span><span class="sxs-lookup"><span data-stu-id="7b175-135">Open `Form1` in the Windows Forms Designer.</span></span>  
+4.  <span data-ttu-id="e1ac5-130"><xref:System.Windows.Controls.Control.Background%2A> プロパティの値を `Blue` に設定します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-130">Set the value of the <xref:System.Windows.Controls.Control.Background%2A> property to `Blue`.</span></span>  
   
-2.  <span data-ttu-id="7b175-136">**ツールボックス**、ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>コントロールをフォームにします。</span><span class="sxs-lookup"><span data-stu-id="7b175-136">In the **Toolbox**, drag a <xref:System.Windows.Forms.TableLayoutPanel> control onto the form.</span></span>  
+5.  <span data-ttu-id="e1ac5-131">プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-131">Build the project.</span></span>  
   
-3.  <span data-ttu-id="7b175-137"><xref:System.Windows.Forms.TableLayoutPanel>コントロールのスマート タグ パネルで、**最後の行を削除する**です。</span><span class="sxs-lookup"><span data-stu-id="7b175-137">On the <xref:System.Windows.Forms.TableLayoutPanel> control's smart tag panel, select **Remove Last Row**.</span></span>  
+## <a name="hosting-wpf-controls-in-a-layout-panel"></a><span data-ttu-id="e1ac5-132">レイアウト パネルで WPF コントロールをホストする</span><span class="sxs-lookup"><span data-stu-id="e1ac5-132">Hosting WPF Controls in a Layout Panel</span></span>  
+ <span data-ttu-id="e1ac5-133">その他の Windows フォーム コントロールを使用するのと同じ方法で、レイアウト パネルで WPF コントロールを使用できます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-133">You can use WPF controls in layout panels in the same way you use other Windows Forms controls.</span></span>  
   
-4.  <span data-ttu-id="7b175-138">幅と高さが大きくなるよう <xref:System.Windows.Forms.TableLayoutPanel> コントロールのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="7b175-138">Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a larger width and height.</span></span>  
+#### <a name="to-host-wpf-controls-in-a-layout-panel"></a><span data-ttu-id="e1ac5-134">レイアウト パネルで WPF コントロールをホストするには</span><span class="sxs-lookup"><span data-stu-id="e1ac5-134">To host WPF controls in a layout panel</span></span>  
   
-5.  <span data-ttu-id="7b175-139">**ツールボックス**をダブルクリックして`UserControl1`のインスタンスを作成する`UserControl1`の最初のセルで、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7b175-139">In the **Toolbox**, double-click `UserControl1` to create an instance of `UserControl1` in the first cell of the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
+1.  <span data-ttu-id="e1ac5-135">Windows フォーム デザイナーで `Form1` を開きます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-135">Open `Form1` in the Windows Forms Designer.</span></span>  
   
-     <span data-ttu-id="7b175-140">`UserControl1` のインスタンスは、`elementHost1` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。</span><span class="sxs-lookup"><span data-stu-id="7b175-140">The instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>  
+2.  <span data-ttu-id="e1ac5-136">**ツールボックス**、ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>コントロールをフォームにします。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-136">In the **Toolbox**, drag a <xref:System.Windows.Forms.TableLayoutPanel> control onto the form.</span></span>  
   
-6.  <span data-ttu-id="7b175-141">**ツールボックス**をダブルクリックして`UserControl1`の 2 番目のセルで別のインスタンスを作成する、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7b175-141">In the **Toolbox**, double-click `UserControl1` to create another instance in the second cell of the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
+3.  <span data-ttu-id="e1ac5-137"><xref:System.Windows.Forms.TableLayoutPanel>コントロールのスマート タグ パネルで、**最後の行を削除する**です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-137">On the <xref:System.Windows.Forms.TableLayoutPanel> control's smart tag panel, select **Remove Last Row**.</span></span>  
   
-7.  <span data-ttu-id="7b175-142">**ドキュメント アウトライン**ウィンドウで、`tableLayoutPanel1`です。</span><span class="sxs-lookup"><span data-stu-id="7b175-142">In the **Document Outline** window, select `tableLayoutPanel1`.</span></span> <span data-ttu-id="7b175-143">詳細については、次を参照してください。[ドキュメント アウトライン ウィンドウ](http://msdn.microsoft.com/en-us/9054f2bc-f6f8-4242-9fe0-be71089b12f8)します。</span><span class="sxs-lookup"><span data-stu-id="7b175-143">For more information, see [Document Outline Window](http://msdn.microsoft.com/en-us/9054f2bc-f6f8-4242-9fe0-be71089b12f8).</span></span>  
+4.  <span data-ttu-id="e1ac5-138">幅と高さが大きくなるよう <xref:System.Windows.Forms.TableLayoutPanel> コントロールのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-138">Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a larger width and height.</span></span>  
   
-8.  <span data-ttu-id="7b175-144">**プロパティ**ウィンドウで、設定の値、<xref:System.Windows.Forms.Control.Padding%2A>プロパティを`10, 10, 10, 10`です。</span><span class="sxs-lookup"><span data-stu-id="7b175-144">In the **Properties** window, set the value of the <xref:System.Windows.Forms.Control.Padding%2A> property to `10, 10, 10, 10`.</span></span>  
+5.  <span data-ttu-id="e1ac5-139">**ツールボックス**をダブルクリックして`UserControl1`のインスタンスを作成する`UserControl1`の最初のセルで、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-139">In the **Toolbox**, double-click `UserControl1` to create an instance of `UserControl1` in the first cell of the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
   
-     <span data-ttu-id="7b175-145">両方の <xref:System.Windows.Forms.Integration.ElementHost> コントロールが、新しいレイアウトに収まるようにサイズ変更されました。</span><span class="sxs-lookup"><span data-stu-id="7b175-145">Both <xref:System.Windows.Forms.Integration.ElementHost> controls are resized to fit into the new layout.</span></span>  
+     <span data-ttu-id="e1ac5-140">`UserControl1` のインスタンスは、`elementHost1` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-140">The instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>  
   
-## <a name="using-snaplines-to-align-wpf-controls"></a><span data-ttu-id="7b175-146">WPF コントロールを配置するスナップ線を使用する</span><span class="sxs-lookup"><span data-stu-id="7b175-146">Using Snaplines to Align WPF Controls</span></span>  
- <span data-ttu-id="7b175-147">スナップ線により、フォームのコントロールの配置を簡単に調整できます。</span><span class="sxs-lookup"><span data-stu-id="7b175-147">Snaplines enable easy alignment of controls on a form.</span></span> <span data-ttu-id="7b175-148">スナップ線を使用して、WPF コントロールも配置することができます。</span><span class="sxs-lookup"><span data-stu-id="7b175-148">You can use snaplines to align your WPF controls as well.</span></span> <span data-ttu-id="7b175-149">詳細については、次を参照してください。[チュートリアル: Windows フォームを使用するスナップ線上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b175-149">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using Snaplines](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).</span></span>  
+6.  <span data-ttu-id="e1ac5-141">**ツールボックス**をダブルクリックして`UserControl1`の 2 番目のセルで別のインスタンスを作成する、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-141">In the **Toolbox**, double-click `UserControl1` to create another instance in the second cell of the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
   
-#### <a name="to-use-snaplines-to-align-wpf-controls"></a><span data-ttu-id="7b175-150">WPF コントロールを配置するスナップ線を使用するには</span><span class="sxs-lookup"><span data-stu-id="7b175-150">To use snaplines to align WPF controls</span></span>  
+7.  <span data-ttu-id="e1ac5-142">**ドキュメント アウトライン**ウィンドウで、`tableLayoutPanel1`です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-142">In the **Document Outline** window, select `tableLayoutPanel1`.</span></span> <span data-ttu-id="e1ac5-143">詳細については、次を参照してください。[ドキュメント アウトライン ウィンドウ](http://msdn.microsoft.com/en-us/9054f2bc-f6f8-4242-9fe0-be71089b12f8)します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-143">For more information, see [Document Outline Window](http://msdn.microsoft.com/en-us/9054f2bc-f6f8-4242-9fe0-be71089b12f8).</span></span>  
   
-1.  <span data-ttu-id="7b175-151">**ツールボックス**のインスタンスをドラッグ`UserControl1`フォーム上に下の領域に配置し、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7b175-151">From the **Toolbox**, drag an instance of `UserControl1` onto the form and place it in the space beneath the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
+8.  <span data-ttu-id="e1ac5-144">**プロパティ**ウィンドウで、設定の値、<xref:System.Windows.Forms.Control.Padding%2A>プロパティを`10, 10, 10, 10`です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-144">In the **Properties** window, set the value of the <xref:System.Windows.Forms.Control.Padding%2A> property to `10, 10, 10, 10`.</span></span>  
   
-     <span data-ttu-id="7b175-152">`UserControl1` のインスタンスは、`elementHost3` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。</span><span class="sxs-lookup"><span data-stu-id="7b175-152">The instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost3`.</span></span>  
+     <span data-ttu-id="e1ac5-145">両方の <xref:System.Windows.Forms.Integration.ElementHost> コントロールが、新しいレイアウトに収まるようにサイズ変更されました。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-145">Both <xref:System.Windows.Forms.Integration.ElementHost> controls are resized to fit into the new layout.</span></span>  
   
-2.  <span data-ttu-id="7b175-153">スナップ線を使用して、`elementHost3` の左端を <xref:System.Windows.Forms.TableLayoutPanel> コントロールの左端に揃えます。</span><span class="sxs-lookup"><span data-stu-id="7b175-153">Using snaplines, align the left edge of `elementHost3` with the left edge of <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
+## <a name="using-snaplines-to-align-wpf-controls"></a><span data-ttu-id="e1ac5-146">WPF コントロールを配置するスナップ線を使用する</span><span class="sxs-lookup"><span data-stu-id="e1ac5-146">Using Snaplines to Align WPF Controls</span></span>  
+ <span data-ttu-id="e1ac5-147">スナップ線により、フォームのコントロールの配置を簡単に調整できます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-147">Snaplines enable easy alignment of controls on a form.</span></span> <span data-ttu-id="e1ac5-148">スナップ線を使用して、WPF コントロールも配置することができます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-148">You can use snaplines to align your WPF controls as well.</span></span> <span data-ttu-id="e1ac5-149">詳細については、次を参照してください。[チュートリアル: Windows フォームを使用するスナップ線上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-149">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using Snaplines](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).</span></span>  
   
-3.  <span data-ttu-id="7b175-154">スナップ線を使用して、`elementHost3` のサイズを <xref:System.Windows.Forms.TableLayoutPanel> コントロールと同じ幅にします。</span><span class="sxs-lookup"><span data-stu-id="7b175-154">Using snaplines, size `elementHost3` to the same width as the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
+#### <a name="to-use-snaplines-to-align-wpf-controls"></a><span data-ttu-id="e1ac5-150">WPF コントロールを配置するスナップ線を使用するには</span><span class="sxs-lookup"><span data-stu-id="e1ac5-150">To use snaplines to align WPF controls</span></span>  
   
-4.  <span data-ttu-id="7b175-155">コントロール間に中央揃えのスナップ線が表示されるまで`elementHost3` を <xref:System.Windows.Forms.TableLayoutPanel> コントロールの方へ移動します。</span><span class="sxs-lookup"><span data-stu-id="7b175-155">Move `elementHost3` toward the <xref:System.Windows.Forms.TableLayoutPanel> control until a center snapline appears between the controls.</span></span>  
+1.  <span data-ttu-id="e1ac5-151">**ツールボックス**のインスタンスをドラッグ`UserControl1`フォーム上に下の領域に配置し、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-151">From the **Toolbox**, drag an instance of `UserControl1` onto the form and place it in the space beneath the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
   
-5.  <span data-ttu-id="7b175-156">**プロパティ**ウィンドウで、余白プロパティの値を設定する`20, 20, 20, 20`です。</span><span class="sxs-lookup"><span data-stu-id="7b175-156">In the **Properties** window, set the value of the Margin property to `20, 20, 20, 20`.</span></span>  
+     <span data-ttu-id="e1ac5-152">`UserControl1` のインスタンスは、`elementHost3` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-152">The instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost3`.</span></span>  
   
-6.  <span data-ttu-id="7b175-157">中央揃えのスナップ線がもう一度表示されるまで、`elementHost3` を <xref:System.Windows.Forms.TableLayoutPanel> コントロールから移動します。</span><span class="sxs-lookup"><span data-stu-id="7b175-157">Move the `elementHost3` away from the <xref:System.Windows.Forms.TableLayoutPanel> control until the center snapline appears again.</span></span> <span data-ttu-id="7b175-158">中央揃えのスナップ線が、余白 20 を示すようになりました。</span><span class="sxs-lookup"><span data-stu-id="7b175-158">The center snapline now indicates a margin of 20.</span></span>  
+2.  <span data-ttu-id="e1ac5-153">スナップ線を使用して、`elementHost3` の左端を <xref:System.Windows.Forms.TableLayoutPanel> コントロールの左端に揃えます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-153">Using snaplines, align the left edge of `elementHost3` with the left edge of <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
   
-7.  <span data-ttu-id="7b175-159">左端が `elementHost1` の左端に配置されるまで、`elementHost3` を右に移動します。</span><span class="sxs-lookup"><span data-stu-id="7b175-159">Move `elementHost3` to the right, until its left edge aligns with the left edge of `elementHost1`.</span></span>  
+3.  <span data-ttu-id="e1ac5-154">スナップ線を使用して、`elementHost3` のサイズを <xref:System.Windows.Forms.TableLayoutPanel> コントロールと同じ幅にします。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-154">Using snaplines, size `elementHost3` to the same width as the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
   
-8.  <span data-ttu-id="7b175-160">右端が `elementHost2` の右端に配置されるまで、`elementHost3` の幅を変更します。</span><span class="sxs-lookup"><span data-stu-id="7b175-160">Change the width of `elementHost3` until its right edge aligns with the right edge of `elementHost2`.</span></span>  
+4.  <span data-ttu-id="e1ac5-155">コントロール間に中央揃えのスナップ線が表示されるまで`elementHost3` を <xref:System.Windows.Forms.TableLayoutPanel> コントロールの方へ移動します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-155">Move `elementHost3` toward the <xref:System.Windows.Forms.TableLayoutPanel> control until a center snapline appears between the controls.</span></span>  
   
-## <a name="anchoring-and-docking-wpf-controls"></a><span data-ttu-id="7b175-161">WPF コントロールの固定およびドッキング</span><span class="sxs-lookup"><span data-stu-id="7b175-161">Anchoring and Docking WPF Controls</span></span>  
- <span data-ttu-id="7b175-162">フォームでホストされている WPF コントロールは、他の Windows フォーム コントロールと同じ固定とドッキングの動作を持ちます。</span><span class="sxs-lookup"><span data-stu-id="7b175-162">A WPF control hosted on a form has the same anchoring and docking behavior as other Windows Forms controls.</span></span>  
+5.  <span data-ttu-id="e1ac5-156">**プロパティ**ウィンドウで、余白プロパティの値を設定する`20, 20, 20, 20`です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-156">In the **Properties** window, set the value of the Margin property to `20, 20, 20, 20`.</span></span>  
   
-#### <a name="to-anchor-and-dock-wpf-controls"></a><span data-ttu-id="7b175-163">WPF コントロールを固定してドッキングするには</span><span class="sxs-lookup"><span data-stu-id="7b175-163">To anchor and dock WPF controls</span></span>  
+6.  <span data-ttu-id="e1ac5-157">中央揃えのスナップ線がもう一度表示されるまで、`elementHost3` を <xref:System.Windows.Forms.TableLayoutPanel> コントロールから移動します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-157">Move the `elementHost3` away from the <xref:System.Windows.Forms.TableLayoutPanel> control until the center snapline appears again.</span></span> <span data-ttu-id="e1ac5-158">中央揃えのスナップ線が、余白 20 を示すようになりました。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-158">The center snapline now indicates a margin of 20.</span></span>  
   
-1.  <span data-ttu-id="7b175-164">`elementHost1` を選択します。</span><span class="sxs-lookup"><span data-stu-id="7b175-164">Select `elementHost1`.</span></span>  
+7.  <span data-ttu-id="e1ac5-159">左端が `elementHost1` の左端に配置されるまで、`elementHost3` を右に移動します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-159">Move `elementHost3` to the right, until its left edge aligns with the left edge of `elementHost1`.</span></span>  
   
-2.  <span data-ttu-id="7b175-165">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを**Top、Bottom、Left、Right**です。</span><span class="sxs-lookup"><span data-stu-id="7b175-165">In the **Properties** window, set the <xref:System.Windows.Forms.Control.Anchor%2A> property to **Top, Bottom, Left, Right**.</span></span>  
+8.  <span data-ttu-id="e1ac5-160">右端が `elementHost2` の右端に配置されるまで、`elementHost3` の幅を変更します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-160">Change the width of `elementHost3` until its right edge aligns with the right edge of `elementHost2`.</span></span>  
   
-3.  <span data-ttu-id="7b175-166"><xref:System.Windows.Forms.TableLayoutPanel> コントロールを大きなサイズに変更します。</span><span class="sxs-lookup"><span data-stu-id="7b175-166">Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a larger size.</span></span>  
+## <a name="anchoring-and-docking-wpf-controls"></a><span data-ttu-id="e1ac5-161">WPF コントロールの固定およびドッキング</span><span class="sxs-lookup"><span data-stu-id="e1ac5-161">Anchoring and Docking WPF Controls</span></span>  
+ <span data-ttu-id="e1ac5-162">フォームでホストされている WPF コントロールは、他の Windows フォーム コントロールと同じ固定とドッキングの動作を持ちます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-162">A WPF control hosted on a form has the same anchoring and docking behavior as other Windows Forms controls.</span></span>  
   
-     <span data-ttu-id="7b175-167">`elementHost1` コントロールがセルを満たすようサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="7b175-167">The `elementHost1` control resizes to fill the cell.</span></span>  
+#### <a name="to-anchor-and-dock-wpf-controls"></a><span data-ttu-id="e1ac5-163">WPF コントロールを固定してドッキングするには</span><span class="sxs-lookup"><span data-stu-id="e1ac5-163">To anchor and dock WPF controls</span></span>  
   
-4.  <span data-ttu-id="7b175-168">`elementHost2` を選択します。</span><span class="sxs-lookup"><span data-stu-id="7b175-168">Select `elementHost2`.</span></span>  
+1.  <span data-ttu-id="e1ac5-164">`elementHost1` を選択します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-164">Select `elementHost1`.</span></span>  
   
-5.  <span data-ttu-id="7b175-169">**プロパティ**ウィンドウで、設定の値、<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>です。</span><span class="sxs-lookup"><span data-stu-id="7b175-169">In the **Properties** window, set the value of the <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
+2.  <span data-ttu-id="e1ac5-165">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを**Top、Bottom、Left、Right**です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-165">In the **Properties** window, set the <xref:System.Windows.Forms.Control.Anchor%2A> property to **Top, Bottom, Left, Right**.</span></span>  
   
-     <span data-ttu-id="7b175-170">`elementHost2` コントロールがセルを満たすようサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="7b175-170">The `elementHost2` control resizes to fill the cell.</span></span>  
+3.  <span data-ttu-id="e1ac5-166"><xref:System.Windows.Forms.TableLayoutPanel> コントロールを大きなサイズに変更します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-166">Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a larger size.</span></span>  
   
-6.  <span data-ttu-id="7b175-171"><xref:System.Windows.Forms.TableLayoutPanel> コントロールを選択します。</span><span class="sxs-lookup"><span data-stu-id="7b175-171">Select the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
+     <span data-ttu-id="e1ac5-167">`elementHost1` コントロールがセルを満たすようサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-167">The `elementHost1` control resizes to fill the cell.</span></span>  
   
-7.  <span data-ttu-id="7b175-172"><xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle.Top> に設定します。</span><span class="sxs-lookup"><span data-stu-id="7b175-172">Set the value of its <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Top>.</span></span>  
+4.  <span data-ttu-id="e1ac5-168">`elementHost2` を選択します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-168">Select `elementHost2`.</span></span>  
   
-8.  <span data-ttu-id="7b175-173">`elementHost3` を選択します。</span><span class="sxs-lookup"><span data-stu-id="7b175-173">Select `elementHost3`.</span></span>  
+5.  <span data-ttu-id="e1ac5-169">**プロパティ**ウィンドウで、設定の値、<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-169">In the **Properties** window, set the value of the <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
   
-9. <span data-ttu-id="7b175-174"><xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle.Fill> に設定します。</span><span class="sxs-lookup"><span data-stu-id="7b175-174">Set the value of its <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
+     <span data-ttu-id="e1ac5-170">`elementHost2` コントロールがセルを満たすようサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-170">The `elementHost2` control resizes to fill the cell.</span></span>  
   
-     <span data-ttu-id="7b175-175">`elementHost3` コントロールが、フォームの残りの領域を満たすようサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="7b175-175">The `elementHost3` control resizes to fill the remaining space on the form.</span></span>  
+6.  <span data-ttu-id="e1ac5-171"><xref:System.Windows.Forms.TableLayoutPanel> コントロールを選択します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-171">Select the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
   
-10. <span data-ttu-id="7b175-176">フォームのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="7b175-176">Resize the form.</span></span>  
+7.  <span data-ttu-id="e1ac5-172"><xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle.Top> に設定します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-172">Set the value of its <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Top>.</span></span>  
   
-     <span data-ttu-id="7b175-177">3 つすべての <xref:System.Windows.Forms.Integration.ElementHost> コントロールのサイズを適切に変更します。</span><span class="sxs-lookup"><span data-stu-id="7b175-177">All three <xref:System.Windows.Forms.Integration.ElementHost> controls resize appropriately.</span></span>  
+8.  <span data-ttu-id="e1ac5-173">`elementHost3` を選択します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-173">Select `elementHost3`.</span></span>  
   
-     <span data-ttu-id="7b175-178">詳細については、次を参照してください。[する方法: アンカーと TableLayoutPanel コントロールで子コントロールのドッキング](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b175-178">For more information, see [How to: Anchor and Dock Child Controls in a TableLayoutPanel Control](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md).</span></span>  
+9. <span data-ttu-id="e1ac5-174"><xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle.Fill> に設定します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-174">Set the value of its <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7b175-179">関連項目</span><span class="sxs-lookup"><span data-stu-id="7b175-179">See Also</span></span>  
+     <span data-ttu-id="e1ac5-175">`elementHost3` コントロールが、フォームの残りの領域を満たすようサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-175">The `elementHost3` control resizes to fill the remaining space on the form.</span></span>  
+  
+10. <span data-ttu-id="e1ac5-176">フォームのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-176">Resize the form.</span></span>  
+  
+     <span data-ttu-id="e1ac5-177">3 つすべての <xref:System.Windows.Forms.Integration.ElementHost> コントロールのサイズを適切に変更します。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-177">All three <xref:System.Windows.Forms.Integration.ElementHost> controls resize appropriately.</span></span>  
+  
+     <span data-ttu-id="e1ac5-178">詳細については、次を参照してください。[する方法: アンカーと TableLayoutPanel コントロールで子コントロールのドッキング](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="e1ac5-178">For more information, see [How to: Anchor and Dock Child Controls in a TableLayoutPanel Control](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="e1ac5-179">参照</span><span class="sxs-lookup"><span data-stu-id="e1ac5-179">See Also</span></span>  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
- [<span data-ttu-id="7b175-180">方法: TableLayoutPanel コントロールで子コントロールを固定およびドッキングする</span><span class="sxs-lookup"><span data-stu-id="7b175-180">How to: Anchor and Dock Child Controls in a TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
- [<span data-ttu-id="7b175-181">方法: デザイン時にフォームの端に合わせてコントロールを配置する</span><span class="sxs-lookup"><span data-stu-id="7b175-181">How to: Align a Control to the Edges of Forms at Design Time</span></span>](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)  
- [<span data-ttu-id="7b175-182">チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="7b175-182">Walkthrough: Arranging Controls on Windows Forms Using Snaplines</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
- [<span data-ttu-id="7b175-183">移行と相互運用性</span><span class="sxs-lookup"><span data-stu-id="7b175-183">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
- [<span data-ttu-id="7b175-184">WPF コントロールの使用</span><span class="sxs-lookup"><span data-stu-id="7b175-184">Using WPF Controls</span></span>](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
- [<span data-ttu-id="7b175-185">WPF デザイナー</span><span class="sxs-lookup"><span data-stu-id="7b175-185">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)
+ [<span data-ttu-id="e1ac5-180">方法: TableLayoutPanel コントロールで子コントロールを固定およびドッキングする</span><span class="sxs-lookup"><span data-stu-id="e1ac5-180">How to: Anchor and Dock Child Controls in a TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [<span data-ttu-id="e1ac5-181">方法: デザイン時にフォームの端に合わせてコントロールを配置する</span><span class="sxs-lookup"><span data-stu-id="e1ac5-181">How to: Align a Control to the Edges of Forms at Design Time</span></span>](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)  
+ [<span data-ttu-id="e1ac5-182">チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="e1ac5-182">Walkthrough: Arranging Controls on Windows Forms Using Snaplines</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ [<span data-ttu-id="e1ac5-183">移行と相互運用性</span><span class="sxs-lookup"><span data-stu-id="e1ac5-183">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [<span data-ttu-id="e1ac5-184">WPF コントロールの使用</span><span class="sxs-lookup"><span data-stu-id="e1ac5-184">Using WPF Controls</span></span>](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ [<span data-ttu-id="e1ac5-185">WPF デザイナー</span><span class="sxs-lookup"><span data-stu-id="e1ac5-185">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)

@@ -12,22 +12,23 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 07a39983d0e561fdad4c09e641912b0d15aa4033
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 79ceeb7406fdae9b4044053e12bec2aad926f26e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="binding-a-custom-activity-property-to-a-designer-control"></a><span data-ttu-id="9f541-102">デザイナー コントロールへのカスタム アクティビティ プロパティのバインド</span><span class="sxs-lookup"><span data-stu-id="9f541-102">Binding a custom activity property to a designer control</span></span>
-<span data-ttu-id="9f541-103">テキスト ボックスのデザイナー コントロールをアクティビティ引数にバインドする方法はきわめて簡単ですが、コンボ ボックスなどの複合デザイナー コントロールをアクティビティ引数にバインドする場合は困難が伴うことがあります。</span><span class="sxs-lookup"><span data-stu-id="9f541-103">Binding a text box designer control to an activity argument is fairly straightforward; binding a complex designer control (such as a combo box) to an activity argument may present challenges, however.</span></span> <span data-ttu-id="9f541-104">このトピックでは、カスタム アクティビティ デザイナーでアクティビティ引数をコンボ ボックス コントロールにバインドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9f541-104">This topic discusses how to bind an activity argument to a combo box control on a custom activity designer.</span></span>  
+# <a name="binding-a-custom-activity-property-to-a-designer-control"></a><span data-ttu-id="50a1d-102">デザイナー コントロールへのカスタム アクティビティ プロパティのバインド</span><span class="sxs-lookup"><span data-stu-id="50a1d-102">Binding a custom activity property to a designer control</span></span>
+<span data-ttu-id="50a1d-103">テキスト ボックスのデザイナー コントロールをアクティビティ引数にバインドする方法はきわめて簡単ですが、コンボ ボックスなどの複合デザイナー コントロールをアクティビティ引数にバインドする場合は困難が伴うことがあります。</span><span class="sxs-lookup"><span data-stu-id="50a1d-103">Binding a text box designer control to an activity argument is fairly straightforward; binding a complex designer control (such as a combo box) to an activity argument may present challenges, however.</span></span> <span data-ttu-id="50a1d-104">このトピックでは、カスタム アクティビティ デザイナーでアクティビティ引数をコンボ ボックス コントロールにバインドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-104">This topic discusses how to bind an activity argument to a combo box control on a custom activity designer.</span></span>  
   
-#### <a name="creating-the-combo-box-item-converter"></a><span data-ttu-id="9f541-105">コンボ ボックス項目コンバーターの作成</span><span class="sxs-lookup"><span data-stu-id="9f541-105">Creating the combo box item converter</span></span>  
+#### <a name="creating-the-combo-box-item-converter"></a><span data-ttu-id="50a1d-105">コンボ ボックス項目コンバーターの作成</span><span class="sxs-lookup"><span data-stu-id="50a1d-105">Creating the combo box item converter</span></span>  
   
-1.  <span data-ttu-id="9f541-106">Visual Studio で、CustomProperty という名前で新しい空のソリューションを作成します。</span><span class="sxs-lookup"><span data-stu-id="9f541-106">Create a new empty solution in Visual Studio called CustomProperty.</span></span>  
+1.  <span data-ttu-id="50a1d-106">Visual Studio で、CustomProperty という名前で新しい空のソリューションを作成します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-106">Create a new empty solution in Visual Studio called CustomProperty.</span></span>  
   
-2.  <span data-ttu-id="9f541-107">ComboBoxItemConverter という名前で新しいクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="9f541-107">Create a new class called ComboBoxItemConverter.</span></span> <span data-ttu-id="9f541-108">System.Windows.Data に参照を追加し、<xref:System.Windows.Data.IValueConverter> の派生クラスを使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="9f541-108">Add a reference to System.Windows.Data, and have the class derive from <xref:System.Windows.Data.IValueConverter>.</span></span> <span data-ttu-id="9f541-109">Visual Studio で、`Convert` および `ConvertBack` のスタブを生成するインターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="9f541-109">Have Visual Studio implement the interface to generate stubs for `Convert` and `ConvertBack`.</span></span>  
+2.  <span data-ttu-id="50a1d-107">ComboBoxItemConverter という名前で新しいクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-107">Create a new class called ComboBoxItemConverter.</span></span> <span data-ttu-id="50a1d-108">System.Windows.Data に参照を追加し、<xref:System.Windows.Data.IValueConverter> の派生クラスを使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="50a1d-108">Add a reference to System.Windows.Data, and have the class derive from <xref:System.Windows.Data.IValueConverter>.</span></span> <span data-ttu-id="50a1d-109">Visual Studio で、`Convert` および `ConvertBack` のスタブを生成するインターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-109">Have Visual Studio implement the interface to generate stubs for `Convert` and `ConvertBack`.</span></span>  
   
-3.  <span data-ttu-id="9f541-110">`Convert` メソッドに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="9f541-110">Add the following code to the `Convert` method.</span></span> <span data-ttu-id="9f541-111">次のコードはアクティビティの <xref:System.Activities.InArgument%601> 型の <xref:System.String> をデザイナーに配置される値に変換します。</span><span class="sxs-lookup"><span data-stu-id="9f541-111">This code converts the activity's <xref:System.Activities.InArgument%601> of type <xref:System.String> to the value to be placed in the designer.</span></span>  
+3.  <span data-ttu-id="50a1d-110">`Convert` メソッドに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-110">Add the following code to the `Convert` method.</span></span> <span data-ttu-id="50a1d-111">次のコードはアクティビティの <xref:System.Activities.InArgument%601> 型の <xref:System.String> をデザイナーに配置される値に変換します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-111">This code converts the activity's <xref:System.Activities.InArgument%601> of type <xref:System.String> to the value to be placed in the designer.</span></span>  
   
     ```  
     ModelItem modelItem = value as ModelItem;  
@@ -54,7 +55,7 @@ ms.lasthandoff: 12/02/2017
     return null;  
     ```  
   
-     <span data-ttu-id="9f541-112">上のコード スニペットの式は、<xref:Microsoft.CSharp.Activities.CSharpValue%601> の代わりに <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> を使用しても作成できます。</span><span class="sxs-lookup"><span data-stu-id="9f541-112">The expression in the above code snippet can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.</span></span>  
+     <span data-ttu-id="50a1d-112">上のコード スニペットの式は、<xref:Microsoft.CSharp.Activities.CSharpValue%601> の代わりに <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> を使用しても作成できます。</span><span class="sxs-lookup"><span data-stu-id="50a1d-112">The expression in the above code snippet can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.</span></span>  
   
     ```  
     ModelItem modelItem = value as ModelItem;  
@@ -81,7 +82,7 @@ ms.lasthandoff: 12/02/2017
     return null;  
     ```  
   
-4.  <span data-ttu-id="9f541-113">`ConvertBack` メソッドに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="9f541-113">Add the following code to the `ConvertBack` method.</span></span> <span data-ttu-id="9f541-114">このコードは受信コンボ ボックス項目を <xref:System.Activities.InArgument%601> に戻します。</span><span class="sxs-lookup"><span data-stu-id="9f541-114">This code converts the incoming combo box item back to an <xref:System.Activities.InArgument%601>.</span></span>  
+4.  <span data-ttu-id="50a1d-113">`ConvertBack` メソッドに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-113">Add the following code to the `ConvertBack` method.</span></span> <span data-ttu-id="50a1d-114">このコードは受信コンボ ボックス項目を <xref:System.Activities.InArgument%601> に戻します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-114">This code converts the incoming combo box item back to an <xref:System.Activities.InArgument%601>.</span></span>  
   
     ```  
     // Convert combo box value to InArgument<string>  
@@ -91,7 +92,7 @@ ms.lasthandoff: 12/02/2017
                 return inArgument;  
     ```  
   
-     <span data-ttu-id="9f541-115">上のコード スニペットの式は、<xref:Microsoft.CSharp.Activities.CSharpValue%601> の代わりに <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> を使用しても作成できます。</span><span class="sxs-lookup"><span data-stu-id="9f541-115">The expression in the above code snippet can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.</span></span>  
+     <span data-ttu-id="50a1d-115">上のコード スニペットの式は、<xref:Microsoft.CSharp.Activities.CSharpValue%601> の代わりに <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> を使用しても作成できます。</span><span class="sxs-lookup"><span data-stu-id="50a1d-115">The expression in the above code snippet can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.</span></span>  
   
     ```  
     // Convert combo box value to InArgument<string>  
@@ -101,13 +102,13 @@ ms.lasthandoff: 12/02/2017
                 return inArgument;  
     ```  
   
-#### <a name="adding-the-comboboxitemconverter-to-the-custom-designer-of-an-activity"></a><span data-ttu-id="9f541-116">アクティビティのカスタム デザイナーへの ComboBoxItemConverter の追加</span><span class="sxs-lookup"><span data-stu-id="9f541-116">Adding the ComboBoxItemConverter to the custom designer of an activity</span></span>  
+#### <a name="adding-the-comboboxitemconverter-to-the-custom-designer-of-an-activity"></a><span data-ttu-id="50a1d-116">アクティビティのカスタム デザイナーへの ComboBoxItemConverter の追加</span><span class="sxs-lookup"><span data-stu-id="50a1d-116">Adding the ComboBoxItemConverter to the custom designer of an activity</span></span>  
   
-1.  <span data-ttu-id="9f541-117">新しい項目をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="9f541-117">Add a new item to the project.</span></span> <span data-ttu-id="9f541-118">[新しい項目] ダイアログ ボックスで [ワークフロー] ノードを選択し、新しい項目の種類として [アクティビティ デザイナー] を選択します。</span><span class="sxs-lookup"><span data-stu-id="9f541-118">In the New Item dialog, select the Workflow node and select Activity Designer as the type of the new item.</span></span> <span data-ttu-id="9f541-119">項目に CustomPropertyDesigner という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="9f541-119">Name the item CustomPropertyDesigner.</span></span>  
+1.  <span data-ttu-id="50a1d-117">新しい項目をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-117">Add a new item to the project.</span></span> <span data-ttu-id="50a1d-118">[新しい項目] ダイアログ ボックスで [ワークフロー] ノードを選択し、新しい項目の種類として [アクティビティ デザイナー] を選択します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-118">In the New Item dialog, select the Workflow node and select Activity Designer as the type of the new item.</span></span> <span data-ttu-id="50a1d-119">項目に CustomPropertyDesigner という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="50a1d-119">Name the item CustomPropertyDesigner.</span></span>  
   
-2.  <span data-ttu-id="9f541-120">新しいデザイナーにコンボ ボックスを追加します。</span><span class="sxs-lookup"><span data-stu-id="9f541-120">Add a Combo Box to the new designer.</span></span> <span data-ttu-id="9f541-121">Items プロパティには、コンボ ボックスに 2 つの項目を追加し、コンテンツの値に "Item1" および "Item2" を指定します。</span><span class="sxs-lookup"><span data-stu-id="9f541-121">In the Items property, add a couple of items to the combo box, with Content values of "Item1" and 'Item2".</span></span>  
+2.  <span data-ttu-id="50a1d-120">新しいデザイナーにコンボ ボックスを追加します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-120">Add a Combo Box to the new designer.</span></span> <span data-ttu-id="50a1d-121">Items プロパティには、コンボ ボックスに 2 つの項目を追加し、コンテンツの値に "Item1" および "Item2" を指定します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-121">In the Items property, add a couple of items to the combo box, with Content values of "Item1" and 'Item2".</span></span>  
   
-3.  <span data-ttu-id="9f541-122">コンボ ボックスの XAML を変更し、新しい項目コンバーターをコンボ ボックスに使用する項目コンバーターとして追加します。</span><span class="sxs-lookup"><span data-stu-id="9f541-122">Modify the XAML of the combo box to add the new item converter as the item converter to be used for the combo box.</span></span> <span data-ttu-id="9f541-123">コンバーターは ActivityDesigner.Resources セグメントにリソースとして追加され、<xref:System.Windows.Controls.ComboBox> の Converter 属性にコンバーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="9f541-123">The converter is added as a resource in the ActivityDesigner.Resources segment, and specifies the converter in the Converter attribute for the <xref:System.Windows.Controls.ComboBox>.</span></span> <span data-ttu-id="9f541-124">プロジェクトの名前空間はアクティビティ デザイナーの名前空間属性で指定します。デザイナーを別のプロジェクトで使用する場合は、この名前空間を変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9f541-124">Note that the namespace of the project is specified in the namespaces attributes for the activity designer; if the designer is to be used in a different project, this namespace will need to be changed.</span></span>  
+3.  <span data-ttu-id="50a1d-122">コンボ ボックスの XAML を変更し、新しい項目コンバーターをコンボ ボックスに使用する項目コンバーターとして追加します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-122">Modify the XAML of the combo box to add the new item converter as the item converter to be used for the combo box.</span></span> <span data-ttu-id="50a1d-123">コンバーターは ActivityDesigner.Resources セグメントにリソースとして追加され、<xref:System.Windows.Controls.ComboBox> の Converter 属性にコンバーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-123">The converter is added as a resource in the ActivityDesigner.Resources segment, and specifies the converter in the Converter attribute for the <xref:System.Windows.Controls.ComboBox>.</span></span> <span data-ttu-id="50a1d-124">プロジェクトの名前空間はアクティビティ デザイナーの名前空間属性で指定します。デザイナーを別のプロジェクトで使用する場合は、この名前空間を変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="50a1d-124">Note that the namespace of the project is specified in the namespaces attributes for the activity designer; if the designer is to be used in a different project, this namespace will need to be changed.</span></span>  
   
     ```  
     <sap:ActivityDesigner x:Class="CustomProperty.CustomPropertyDesigner"  
@@ -131,14 +132,14 @@ ms.lasthandoff: 12/02/2017
     </sap:ActivityDesigner>  
     ```  
   
-4.  <span data-ttu-id="9f541-125"><xref:System.Activities.CodeActivity> 型の新しい項目を作成します。</span><span class="sxs-lookup"><span data-stu-id="9f541-125">Create a new item of type <xref:System.Activities.CodeActivity>.</span></span> <span data-ttu-id="9f541-126">この例では、アクティビティの IDE によって作成された既定のコードで十分です。</span><span class="sxs-lookup"><span data-stu-id="9f541-126">The default code created by the IDE for the activity will be sufficient for this example.</span></span>  
+4.  <span data-ttu-id="50a1d-125"><xref:System.Activities.CodeActivity> 型の新しい項目を作成します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-125">Create a new item of type <xref:System.Activities.CodeActivity>.</span></span> <span data-ttu-id="50a1d-126">この例では、アクティビティの IDE によって作成された既定のコードで十分です。</span><span class="sxs-lookup"><span data-stu-id="50a1d-126">The default code created by the IDE for the activity will be sufficient for this example.</span></span>  
   
-5.  <span data-ttu-id="9f541-127">クラス定義に次の属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="9f541-127">Add the following attribute to the class definition:</span></span>  
+5.  <span data-ttu-id="50a1d-127">クラス定義に次の属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-127">Add the following attribute to the class definition:</span></span>  
   
     ```  
     [Designer(typeof(CustomPropertyDesigner))]  
     ```  
   
-     <span data-ttu-id="9f541-128">この行は、新しいデザイナーを新しいクラスに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="9f541-128">This line associates the new designer with the new class.</span></span>  
+     <span data-ttu-id="50a1d-128">この行は、新しいデザイナーを新しいクラスに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="50a1d-128">This line associates the new designer with the new class.</span></span>  
   
- <span data-ttu-id="9f541-129">これで新しいアクティビティがデザイナーに関連付けられました。</span><span class="sxs-lookup"><span data-stu-id="9f541-129">The new activity should now be associated with the designer.</span></span> <span data-ttu-id="9f541-130">新しいアクティビティをテストするには、アクティビティをワークフローに追加し、コンボ ボックスに 2 つの値を設定します。</span><span class="sxs-lookup"><span data-stu-id="9f541-130">To test the new activity, add it to a workflow, and set the combo box to the two values.</span></span> <span data-ttu-id="9f541-131">プロパティ ウィンドウが更新されてコンボ ボックスの値が反映されます。</span><span class="sxs-lookup"><span data-stu-id="9f541-131">The properties window should update to reflect the combo box value.</span></span>
+ <span data-ttu-id="50a1d-129">これで新しいアクティビティがデザイナーに関連付けられました。</span><span class="sxs-lookup"><span data-stu-id="50a1d-129">The new activity should now be associated with the designer.</span></span> <span data-ttu-id="50a1d-130">新しいアクティビティをテストするには、アクティビティをワークフローに追加し、コンボ ボックスに 2 つの値を設定します。</span><span class="sxs-lookup"><span data-stu-id="50a1d-130">To test the new activity, add it to a workflow, and set the combo box to the two values.</span></span> <span data-ttu-id="50a1d-131">プロパティ ウィンドウが更新されてコンボ ボックスの値が反映されます。</span><span class="sxs-lookup"><span data-stu-id="50a1d-131">The properties window should update to reflect the combo box value.</span></span>

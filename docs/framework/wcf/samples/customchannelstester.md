@@ -13,40 +13,41 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 802d501dabbf14d30a26cd682afb366f0a83a17a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 92de7f168ce323a0d84975863564389ff389d680
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="customchannelstester"></a><span data-ttu-id="0abef-102">CustomChannelTester</span><span class="sxs-lookup"><span data-stu-id="0abef-102">CustomChannelsTester</span></span>
-<span data-ttu-id="0abef-103">`CustomChannelsTester` は、カスタム チャネルの実装を、定義済みのサービス コントラクト セットに対してテストする際に使用できるツールです。</span><span class="sxs-lookup"><span data-stu-id="0abef-103">The `CustomChannelsTester` is a tool that you can use to test your custom channel implementations against a set of predefined service contracts.</span></span> <span data-ttu-id="0abef-104">サービス コントラクト セットを選択し、XML ファイルを使用してこのツールに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="0abef-104">You can select the set of service contracts and pass it to the tool using an XML file.</span></span> <span data-ttu-id="0abef-105">これを受け取ったツールは、メッセージ交換中にカスタム チャネル実装をテストするサービスとクライアントを生成します。</span><span class="sxs-lookup"><span data-stu-id="0abef-105">The tool then generates the service and client that exercises your custom channel implementations during message exchange.</span></span>  
+# <a name="customchannelstester"></a><span data-ttu-id="350b2-102">CustomChannelTester</span><span class="sxs-lookup"><span data-stu-id="350b2-102">CustomChannelsTester</span></span>
+<span data-ttu-id="350b2-103">`CustomChannelsTester` は、カスタム チャネルの実装を、定義済みのサービス コントラクト セットに対してテストする際に使用できるツールです。</span><span class="sxs-lookup"><span data-stu-id="350b2-103">The `CustomChannelsTester` is a tool that you can use to test your custom channel implementations against a set of predefined service contracts.</span></span> <span data-ttu-id="350b2-104">サービス コントラクト セットを選択し、XML ファイルを使用してこのツールに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="350b2-104">You can select the set of service contracts and pass it to the tool using an XML file.</span></span> <span data-ttu-id="350b2-105">これを受け取ったツールは、メッセージ交換中にカスタム チャネル実装をテストするサービスとクライアントを生成します。</span><span class="sxs-lookup"><span data-stu-id="350b2-105">The tool then generates the service and client that exercises your custom channel implementations during message exchange.</span></span>  
   
-### <a name="to-build-the-tool"></a><span data-ttu-id="0abef-106">ツールをビルドするには</span><span class="sxs-lookup"><span data-stu-id="0abef-106">To build the tool</span></span>  
+### <a name="to-build-the-tool"></a><span data-ttu-id="350b2-106">ツールをビルドするには</span><span class="sxs-lookup"><span data-stu-id="350b2-106">To build the tool</span></span>  
   
-1.  <span data-ttu-id="0abef-107">指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="0abef-107">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+1.  <span data-ttu-id="350b2-107">指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="350b2-107">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-2.  <span data-ttu-id="0abef-108">ソリューションをビルドすると、CustomChannelsTester.exe、TestSpec.xml、および SampleRun.cmd の 3 つのファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="0abef-108">Building the solution generates three files: CustomChannelsTester.exe, TestSpec.xml and SampleRun.cmd.</span></span> <span data-ttu-id="0abef-109">SampleRun.cmd ファイルがテストにこのツールを使用する方法を示すサンプルのコマンドライン、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="0abef-109">The file SampleRun.cmd has a sample command line that shows how to use this tool to test the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
+2.  <span data-ttu-id="350b2-108">ソリューションをビルドすると、CustomChannelsTester.exe、TestSpec.xml、および SampleRun.cmd の 3 つのファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="350b2-108">Building the solution generates three files: CustomChannelsTester.exe, TestSpec.xml and SampleRun.cmd.</span></span> <span data-ttu-id="350b2-109">SampleRun.cmd ファイルがテストにこのツールを使用する方法を示すサンプルのコマンドライン、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="350b2-109">The file SampleRun.cmd has a sample command line that shows how to use this tool to test the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
   
-### <a name="to-run-the-tool"></a><span data-ttu-id="0abef-110">ツールを実行するには</span><span class="sxs-lookup"><span data-stu-id="0abef-110">To run the tool</span></span>  
+### <a name="to-run-the-tool"></a><span data-ttu-id="350b2-110">ツールを実行するには</span><span class="sxs-lookup"><span data-stu-id="350b2-110">To run the tool</span></span>  
   
--   <span data-ttu-id="0abef-111">コマンド プロンプトに次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="0abef-111">At the command prompt type the following command:</span></span>  
+-   <span data-ttu-id="350b2-111">コマンド プロンプトに次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="350b2-111">At the command prompt type the following command:</span></span>  
   
     ```  
     CustomChannelsTester.exe /binding:YourCustomBindngName /dll:TheAssemblyWhereThisTypeisDefined /testspec:XmlFileNameWhichContainsTestOptions  
     ```  
   
-     <span data-ttu-id="0abef-112">`/binding` オプションを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0abef-112">Using the `/binding` option is required.</span></span>  
+     <span data-ttu-id="350b2-112">`/binding` オプションを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="350b2-112">Using the `/binding` option is required.</span></span>  
   
-     <span data-ttu-id="0abef-113">"binding" が `/dll` で用意されているシステム指定のバインディングでない場合は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が必要です。</span><span class="sxs-lookup"><span data-stu-id="0abef-113">`/dll` is required if "binding" is not a system-provided binding provided by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
+     <span data-ttu-id="350b2-113">"binding" が `/dll` で用意されているシステム指定のバインディングでない場合は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が必要です。</span><span class="sxs-lookup"><span data-stu-id="350b2-113">`/dll` is required if "binding" is not a system-provided binding provided by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
   
-     <span data-ttu-id="0abef-114">`/testspec` は省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0abef-114">`/testspec` is optional.</span></span>  
+     <span data-ttu-id="350b2-114">`/testspec` は省略可能です。</span><span class="sxs-lookup"><span data-stu-id="350b2-114">`/testspec` is optional.</span></span>  
   
-     <span data-ttu-id="0abef-115">これにより、テストの仕様とバインディングに基づくサーバーとクライアントが作成されます。</span><span class="sxs-lookup"><span data-stu-id="0abef-115">This creates server and clients based on the test specifications and the binding.</span></span>  
+     <span data-ttu-id="350b2-115">これにより、テストの仕様とバインディングに基づくサーバーとクライアントが作成されます。</span><span class="sxs-lookup"><span data-stu-id="350b2-115">This creates server and clients based on the test specifications and the binding.</span></span>  
   
-     <span data-ttu-id="0abef-116">クライアントとサーバーを実行し、結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="0abef-116">Executes the client and server and returns the results.</span></span>  
+     <span data-ttu-id="350b2-116">クライアントとサーバーを実行し、結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="350b2-116">Executes the client and server and returns the results.</span></span>  
   
-     <span data-ttu-id="0abef-117">テストの仕様を説明する XML のサンプルを次に示します (testspec.xml)。</span><span class="sxs-lookup"><span data-stu-id="0abef-117">The following is the sample XML for the description of the test specifications (testspec.xml):</span></span>  
+     <span data-ttu-id="350b2-117">テストの仕様を説明する XML のサンプルを次に示します (testspec.xml)。</span><span class="sxs-lookup"><span data-stu-id="350b2-117">The following is the sample XML for the description of the test specifications (testspec.xml):</span></span>  
   
     ```xml  
     <TestSpec xmlns="http://WCF/TestSpec" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"   
@@ -79,4 +80,4 @@ ms.lasthandoff: 12/02/2017
     </TestSpec>  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="0abef-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="0abef-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="350b2-118">参照</span><span class="sxs-lookup"><span data-stu-id="350b2-118">See Also</span></span>

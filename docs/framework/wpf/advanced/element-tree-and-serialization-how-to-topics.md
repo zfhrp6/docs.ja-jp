@@ -17,24 +17,25 @@ caps.latest.revision: "74"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 86f812c233a161764836c54817dc616577a4bb5e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 84020af84822ca4a8815e516a882fb15100b22e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="element-tree-and-serialization-how-to-topics"></a><span data-ttu-id="5e6fd-102">要素のツリーおよびシリアル化に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="5e6fd-102">Element Tree and Serialization How-to Topics</span></span>
-<span data-ttu-id="5e6fd-103">このセクションのトピックでは、WPF 要素ツリーを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5e6fd-103">The topics in this section describe how to use the WPF element tree.</span></span>  
+# <a name="element-tree-and-serialization-how-to-topics"></a><span data-ttu-id="509c4-102">要素のツリーおよびシリアル化に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="509c4-102">Element Tree and Serialization How-to Topics</span></span>
+<span data-ttu-id="509c4-103">このセクションのトピックでは、WPF 要素ツリーを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="509c4-103">The topics in this section describe how to use the WPF element tree.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5e6fd-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="5e6fd-104">In This Section</span></span>  
- [<span data-ttu-id="5e6fd-105">要素を名前で検索する</span><span class="sxs-lookup"><span data-stu-id="5e6fd-105">Find an Element by Its Name</span></span>](../../../../docs/framework/wpf/advanced/how-to-find-an-element-by-its-name.md)  
- [<span data-ttu-id="5e6fd-106">論理ツリーをオーバーライドする</span><span class="sxs-lookup"><span data-stu-id="5e6fd-106">Override the Logical Tree</span></span>](../../../../docs/framework/wpf/advanced/how-to-override-the-logical-tree.md)  
+## <a name="in-this-section"></a><span data-ttu-id="509c4-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="509c4-104">In This Section</span></span>  
+ [<span data-ttu-id="509c4-105">要素を名前で検索する</span><span class="sxs-lookup"><span data-stu-id="509c4-105">Find an Element by Its Name</span></span>](../../../../docs/framework/wpf/advanced/how-to-find-an-element-by-its-name.md)  
+ [<span data-ttu-id="509c4-106">論理ツリーをオーバーライドする</span><span class="sxs-lookup"><span data-stu-id="509c4-106">Override the Logical Tree</span></span>](../../../../docs/framework/wpf/advanced/how-to-override-the-logical-tree.md)  
   
-## <a name="reference"></a><span data-ttu-id="5e6fd-107">参照</span><span class="sxs-lookup"><span data-stu-id="5e6fd-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="509c4-107">参照</span><span class="sxs-lookup"><span data-stu-id="509c4-107">Reference</span></span>  
  <xref:System.Windows.LogicalTreeHelper>  
   
  <xref:System.Windows.Media.VisualTreeHelper>  
   
  <xref:System.Windows.Markup>  
   
-## <a name="related-sections"></a><span data-ttu-id="5e6fd-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="5e6fd-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="509c4-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="509c4-108">Related Sections</span></span>

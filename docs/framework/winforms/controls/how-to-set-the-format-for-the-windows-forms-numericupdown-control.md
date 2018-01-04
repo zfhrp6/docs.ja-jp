@@ -20,18 +20,19 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 001cc32aa9e1f31695f3b349480b6dd5154b31a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b4ff6d8e584e65482285012af351ebd1a669b806
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-set-the-format-for-the-windows-forms-numericupdown-control"></a><span data-ttu-id="4ba44-102">方法 : Windows フォームの NumericUpDown コントロールの書式を設定する</span><span class="sxs-lookup"><span data-stu-id="4ba44-102">How to: Set the Format for the Windows Forms NumericUpDown Control</span></span>
-<span data-ttu-id="4ba44-103">Windows フォームでの値を表示する方法を構成する<xref:System.Windows.Forms.NumericUpDown>コントロール。</span><span class="sxs-lookup"><span data-stu-id="4ba44-103">You can configure how values are displayed in the Windows Forms <xref:System.Windows.Forms.NumericUpDown> control.</span></span> <span data-ttu-id="4ba44-104"><xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>プロパティ、小数点の後に表示される番号の数が以外の場合は、既定値は 0 です。</span><span class="sxs-lookup"><span data-stu-id="4ba44-104">The <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> property determines how many numbers appear after the decimal point; the default is 0.</span></span> <span data-ttu-id="4ba44-105"><xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティは、3 桁ごと、区切り記号を挿入するかどうかを決定以外の場合は、既定値は`false`します。</span><span class="sxs-lookup"><span data-stu-id="4ba44-105">The <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> property determines whether a separator will be inserted between every three decimal digits; the default is `false`.</span></span> <span data-ttu-id="4ba44-106">コントロールは、場合に、10 進数の形式ではなく 16 進数の値を表示できます、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティに設定されている`true`; 既定値は`false`します。</span><span class="sxs-lookup"><span data-stu-id="4ba44-106">The control can display values in hexadecimal instead of decimal format, if the <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> property is set to `true`; the default is `false`.</span></span>  
+# <a name="how-to-set-the-format-for-the-windows-forms-numericupdown-control"></a><span data-ttu-id="e66e7-102">方法 : Windows フォームの NumericUpDown コントロールの書式を設定する</span><span class="sxs-lookup"><span data-stu-id="e66e7-102">How to: Set the Format for the Windows Forms NumericUpDown Control</span></span>
+<span data-ttu-id="e66e7-103">Windows フォームでの値を表示する方法を構成する<xref:System.Windows.Forms.NumericUpDown>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e66e7-103">You can configure how values are displayed in the Windows Forms <xref:System.Windows.Forms.NumericUpDown> control.</span></span> <span data-ttu-id="e66e7-104"><xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>プロパティ、小数点の後に表示される番号の数が以外の場合は、既定値は 0 です。</span><span class="sxs-lookup"><span data-stu-id="e66e7-104">The <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> property determines how many numbers appear after the decimal point; the default is 0.</span></span> <span data-ttu-id="e66e7-105"><xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティは、3 桁ごと、区切り記号を挿入するかどうかを決定以外の場合は、既定値は`false`します。</span><span class="sxs-lookup"><span data-stu-id="e66e7-105">The <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> property determines whether a separator will be inserted between every three decimal digits; the default is `false`.</span></span> <span data-ttu-id="e66e7-106">コントロールは、場合に、10 進数の形式ではなく 16 進数の値を表示できます、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティに設定されている`true`; 既定値は`false`します。</span><span class="sxs-lookup"><span data-stu-id="e66e7-106">The control can display values in hexadecimal instead of decimal format, if the <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> property is set to `true`; the default is `false`.</span></span>  
   
-### <a name="to-format-the-numeric-value"></a><span data-ttu-id="4ba44-107">数値の値の書式設定</span><span class="sxs-lookup"><span data-stu-id="4ba44-107">To format the numeric value</span></span>  
+### <a name="to-format-the-numeric-value"></a><span data-ttu-id="e66e7-107">数値の値の書式設定</span><span class="sxs-lookup"><span data-stu-id="e66e7-107">To format the numeric value</span></span>  
   
--   <span data-ttu-id="4ba44-108">設定して、10 進値を表示、<xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>プロパティ整数と設定を<xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティを`true`または`false`です。</span><span class="sxs-lookup"><span data-stu-id="4ba44-108">Display a decimal value by setting the <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> property to an integer and setting the <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> property to `true` or `false`.</span></span>  
+-   <span data-ttu-id="e66e7-108">設定して、10 進値を表示、<xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>プロパティ整数と設定を<xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティを`true`または`false`です。</span><span class="sxs-lookup"><span data-stu-id="e66e7-108">Display a decimal value by setting the <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> property to an integer and setting the <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> property to `true` or `false`.</span></span>  
   
     ```vb  
     NumericUpDown1.DecimalPlaces = 2  
@@ -48,9 +49,9 @@ ms.lasthandoff: 11/21/2017
     numericUpDown1->ThousandsSeparator = true;  
     ```  
   
-     <span data-ttu-id="4ba44-109">または</span><span class="sxs-lookup"><span data-stu-id="4ba44-109">-or-</span></span>  
+     <span data-ttu-id="e66e7-109">- または -</span><span class="sxs-lookup"><span data-stu-id="e66e7-109">-or-</span></span>  
   
--   <span data-ttu-id="4ba44-110">16 進数の値を設定して表示、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="4ba44-110">Display a hexadecimal value by setting the <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> property to `true`.</span></span>  
+-   <span data-ttu-id="e66e7-110">16 進数の値を設定して表示、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="e66e7-110">Display a hexadecimal value by setting the <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> property to `true`.</span></span>  
   
     ```vb  
     NumericUpDown1.Hexadecimal = True  
@@ -65,9 +66,9 @@ ms.lasthandoff: 11/21/2017
     ```  
   
     > [!NOTE]
-    >  <span data-ttu-id="4ba44-111">値は、16 進数としてフォームに表示されて、場合でも他のテストを実行するには<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティは、10 進値をテストします。</span><span class="sxs-lookup"><span data-stu-id="4ba44-111">Even if the value is displayed on the form as hexadecimal, any tests you perform on the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property will be testing its decimal value.</span></span>  
+    >  <span data-ttu-id="e66e7-111">値は、16 進数としてフォームに表示されて、場合でも他のテストを実行するには<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティは、10 進値をテストします。</span><span class="sxs-lookup"><span data-stu-id="e66e7-111">Even if the value is displayed on the form as hexadecimal, any tests you perform on the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property will be testing its decimal value.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4ba44-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ba44-112">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="e66e7-112">参照</span><span class="sxs-lookup"><span data-stu-id="e66e7-112">See Also</span></span>  
  <xref:System.Windows.Forms.NumericUpDown>  
- [<span data-ttu-id="4ba44-113">NumericUpDown コントロール</span><span class="sxs-lookup"><span data-stu-id="4ba44-113">NumericUpDown Control</span></span>](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)  
- [<span data-ttu-id="4ba44-114">NumericUpDown コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="4ba44-114">NumericUpDown Control Overview</span></span>](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)
+ [<span data-ttu-id="e66e7-113">NumericUpDown コントロール</span><span class="sxs-lookup"><span data-stu-id="e66e7-113">NumericUpDown Control</span></span>](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)  
+ [<span data-ttu-id="e66e7-114">NumericUpDown コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="e66e7-114">NumericUpDown Control Overview</span></span>](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)

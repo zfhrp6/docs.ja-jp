@@ -12,17 +12,18 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d7637a9d49100d3a46ceb3c49769cacae14b5e8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e51235105e9d2cdb1cad3847fb00ad5604061564
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="pausing-and-resuming-a-workflow"></a><span data-ttu-id="2b661-102">ワークフローの一時停止と再開</span><span class="sxs-lookup"><span data-stu-id="2b661-102">Pausing and Resuming a Workflow</span></span>
-<span data-ttu-id="2b661-103">ワークフローはブックマークや <xref:System.Activities.Statements.Delay> などのブロッキング アクティビティへの応答として一時停止および再開をしますが、永続化を使用して、明示的に一時停止、アンロード、再開することもできます。</span><span class="sxs-lookup"><span data-stu-id="2b661-103">Workflows will pause and resume in response to bookmarks and blocking activities such as <xref:System.Activities.Statements.Delay>, but a workflow can also be explicitly paused, unloaded, and resumed by using persistence.</span></span>  
+# <a name="pausing-and-resuming-a-workflow"></a><span data-ttu-id="454c2-102">ワークフローの一時停止と再開</span><span class="sxs-lookup"><span data-stu-id="454c2-102">Pausing and Resuming a Workflow</span></span>
+<span data-ttu-id="454c2-103">ワークフローはブックマークや <xref:System.Activities.Statements.Delay> などのブロッキング アクティビティへの応答として一時停止および再開をしますが、永続化を使用して、明示的に一時停止、アンロード、再開することもできます。</span><span class="sxs-lookup"><span data-stu-id="454c2-103">Workflows will pause and resume in response to bookmarks and blocking activities such as <xref:System.Activities.Statements.Delay>, but a workflow can also be explicitly paused, unloaded, and resumed by using persistence.</span></span>  
   
-## <a name="pausing-a-workflow"></a><span data-ttu-id="2b661-104">ワークフローの一時停止</span><span class="sxs-lookup"><span data-stu-id="2b661-104">Pausing a Workflow</span></span>  
- <span data-ttu-id="2b661-105">ワークフローを一時停止するには、<xref:System.Activities.WorkflowApplication.Unload%2A> を使用します。</span><span class="sxs-lookup"><span data-stu-id="2b661-105">To pause a workflow, use <xref:System.Activities.WorkflowApplication.Unload%2A>.</span></span>  <span data-ttu-id="2b661-106">このメソッドはワークフローの永続化とアンロードを要求し、ワークフローが 30 秒以内にアンロードしないと <xref:System.TimeoutException> をスローします。</span><span class="sxs-lookup"><span data-stu-id="2b661-106">This method requests that the workflow persist and unload, and will throw a <xref:System.TimeoutException> if the workflow does not unload in 30 seconds.</span></span>  
+## <a name="pausing-a-workflow"></a><span data-ttu-id="454c2-104">ワークフローの一時停止</span><span class="sxs-lookup"><span data-stu-id="454c2-104">Pausing a Workflow</span></span>  
+ <span data-ttu-id="454c2-105">ワークフローを一時停止するには、<xref:System.Activities.WorkflowApplication.Unload%2A> を使用します。</span><span class="sxs-lookup"><span data-stu-id="454c2-105">To pause a workflow, use <xref:System.Activities.WorkflowApplication.Unload%2A>.</span></span>  <span data-ttu-id="454c2-106">このメソッドはワークフローの永続化とアンロードを要求し、ワークフローが 30 秒以内にアンロードしないと <xref:System.TimeoutException> をスローします。</span><span class="sxs-lookup"><span data-stu-id="454c2-106">This method requests that the workflow persist and unload, and will throw a <xref:System.TimeoutException> if the workflow does not unload in 30 seconds.</span></span>  
   
 ```csharp  
 try  
@@ -36,8 +37,8 @@ catch (TimeoutException e)
 }  
 ```  
   
-## <a name="resuming-a-workflow"></a><span data-ttu-id="2b661-107">ワークフローの再開</span><span class="sxs-lookup"><span data-stu-id="2b661-107">Resuming a Workflow</span></span>  
- <span data-ttu-id="2b661-108">以前に一時停止およびアンロードされているワークフローを再開するには、<xref:System.Activities.WorkflowApplication.Load%2A> を使用します。</span><span class="sxs-lookup"><span data-stu-id="2b661-108">To resume a previously paused and unloaded workflow, use <xref:System.Activities.WorkflowApplication.Load%2A>.</span></span> <span data-ttu-id="2b661-109">このメソッドは、ワークフローを永続化ストアからメモリに読み込みます。</span><span class="sxs-lookup"><span data-stu-id="2b661-109">This method loads a workflow from a persistence store into memory.</span></span>  
+## <a name="resuming-a-workflow"></a><span data-ttu-id="454c2-107">ワークフローの再開</span><span class="sxs-lookup"><span data-stu-id="454c2-107">Resuming a Workflow</span></span>  
+ <span data-ttu-id="454c2-108">以前に一時停止およびアンロードされているワークフローを再開するには、<xref:System.Activities.WorkflowApplication.Load%2A> を使用します。</span><span class="sxs-lookup"><span data-stu-id="454c2-108">To resume a previously paused and unloaded workflow, use <xref:System.Activities.WorkflowApplication.Load%2A>.</span></span> <span data-ttu-id="454c2-109">このメソッドは、ワークフローを永続化ストアからメモリに読み込みます。</span><span class="sxs-lookup"><span data-stu-id="454c2-109">This method loads a workflow from a persistence store into memory.</span></span>  
   
 ```csharp  
 WorkflowApplication application = new WorkflowApplication(activity);  
@@ -45,8 +46,8 @@ application.InstanceStore = instanceStore;
 application.Load(id);  
 ```  
   
-## <a name="example"></a><span data-ttu-id="2b661-110">例</span><span class="sxs-lookup"><span data-stu-id="2b661-110">Example</span></span>  
- <span data-ttu-id="2b661-111">次のコード例は、永続化を使用してワークフローを一時停止および再開する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2b661-111">The following code sample demonstrates how to pause and resume a workflow by using persistence.</span></span>  
+## <a name="example"></a><span data-ttu-id="454c2-110">例</span><span class="sxs-lookup"><span data-stu-id="454c2-110">Example</span></span>  
+ <span data-ttu-id="454c2-111">次のコード例は、永続化を使用してワークフローを一時停止および再開する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="454c2-111">The following code sample demonstrates how to pause and resume a workflow by using persistence.</span></span>  
   
 ```csharp  
 static string bkName = "bkName";  

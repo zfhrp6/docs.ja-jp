@@ -16,41 +16,42 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 775d1a350075811dc02ae33efd1a6ae05328c4ff
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 945d9a658dd3d75dd0edb9f4eaca78334ee4d652
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="statusbar-control-windows-forms"></a><span data-ttu-id="01d0b-102">StatusBar コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="01d0b-102">StatusBar Control (Windows Forms)</span></span>
+# <a name="statusbar-control-windows-forms"></a><span data-ttu-id="53ac5-102">StatusBar コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="53ac5-102">StatusBar Control (Windows Forms)</span></span>
 > [!NOTE]
->  <span data-ttu-id="01d0b-103"><xref:System.Windows.Forms.ToolStripStatusLabel> コントロールは、<xref:System.Windows.Forms.StatusBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.StatusBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。</span><span class="sxs-lookup"><span data-stu-id="01d0b-103">The <xref:System.Windows.Forms.ToolStripStatusLabel> control replaces and adds functionality to the <xref:System.Windows.Forms.StatusBar> control; however, the <xref:System.Windows.Forms.StatusBar> control is retained for both backward compatibility and future use, if you choose.</span></span>  
+>  <span data-ttu-id="53ac5-103"><xref:System.Windows.Forms.ToolStripStatusLabel> コントロールは、<xref:System.Windows.Forms.StatusBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.StatusBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。</span><span class="sxs-lookup"><span data-stu-id="53ac5-103">The <xref:System.Windows.Forms.ToolStripStatusLabel> control replaces and adds functionality to the <xref:System.Windows.Forms.StatusBar> control; however, the <xref:System.Windows.Forms.StatusBar> control is retained for both backward compatibility and future use, if you choose.</span></span>  
   
- <span data-ttu-id="01d0b-104">Windows フォームの <xref:System.Windows.Forms.StatusBar> コントロールは、フォーム上で領域として使用され、通常はウィンドウの下端に表示されます。アプリケーションは、このコントロールにさまざまな種類のステータス情報を表示できます</span><span class="sxs-lookup"><span data-stu-id="01d0b-104">The Windows Forms <xref:System.Windows.Forms.StatusBar> control is used on forms as an area, usually displayed at the bottom of a window, in which an application can display various kinds of status information.</span></span> <span data-ttu-id="01d0b-105"><xref:System.Windows.Forms.StatusBar>コントロールは、状態、または一連のプロセスが動作してを示すアニメーションのアイコンを示すアイコンを表示でそれらのステータス バー パネルを持つことができます。たとえば、ことを示す Microsoft Word ドキュメント保存されます。</span><span class="sxs-lookup"><span data-stu-id="01d0b-105"><xref:System.Windows.Forms.StatusBar> controls can have status-bar panels on them that display icons to indicate state, or a series of icons in an animation that indicate a process is working; for example, Microsoft Word indicating that the document is being saved.</span></span>  
+ <span data-ttu-id="53ac5-104">Windows フォームの <xref:System.Windows.Forms.StatusBar> コントロールは、フォーム上で領域として使用され、通常はウィンドウの下端に表示されます。アプリケーションは、このコントロールにさまざまな種類のステータス情報を表示できます</span><span class="sxs-lookup"><span data-stu-id="53ac5-104">The Windows Forms <xref:System.Windows.Forms.StatusBar> control is used on forms as an area, usually displayed at the bottom of a window, in which an application can display various kinds of status information.</span></span> <span data-ttu-id="53ac5-105"><xref:System.Windows.Forms.StatusBar>コントロールは、状態、または一連のプロセスが動作してを示すアニメーションのアイコンを示すアイコンを表示でそれらのステータス バー パネルを持つことができます。たとえば、ことを示す Microsoft Word ドキュメント保存されます。</span><span class="sxs-lookup"><span data-stu-id="53ac5-105"><xref:System.Windows.Forms.StatusBar> controls can have status-bar panels on them that display icons to indicate state, or a series of icons in an animation that indicate a process is working; for example, Microsoft Word indicating that the document is being saved.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="01d0b-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="01d0b-106">In This Section</span></span>  
- [<span data-ttu-id="01d0b-107">StatusBar コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="01d0b-107">StatusBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)  
- <span data-ttu-id="01d0b-108">一般的な概念が導入されています、<xref:System.Windows.Forms.StatusBar>コントロールで、フォーカスがあるコントロールの関連情報を表示することができます。</span><span class="sxs-lookup"><span data-stu-id="01d0b-108">Introduces the general concepts of the <xref:System.Windows.Forms.StatusBar> control, which enables users to see relevant information for the control that has focus.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="53ac5-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="53ac5-106">In This Section</span></span>  
+ [<span data-ttu-id="53ac5-107">StatusBar コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="53ac5-107">StatusBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)  
+ <span data-ttu-id="53ac5-108">一般的な概念が導入されています、<xref:System.Windows.Forms.StatusBar>コントロールで、フォーカスがあるコントロールの関連情報を表示することができます。</span><span class="sxs-lookup"><span data-stu-id="53ac5-108">Introduces the general concepts of the <xref:System.Windows.Forms.StatusBar> control, which enables users to see relevant information for the control that has focus.</span></span>  
   
- [<span data-ttu-id="01d0b-109">方法: StatusBar コントロールにパネルを追加する</span><span class="sxs-lookup"><span data-stu-id="01d0b-109">How to: Add Panels to a StatusBar Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-panels-to-a-statusbar-control.md)  
- <span data-ttu-id="01d0b-110">プログラミング可能なパネルを追加する方法について説明します、<xref:System.Windows.Forms.StatusBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="01d0b-110">Explains how to add programmable panels to the <xref:System.Windows.Forms.StatusBar> control.</span></span>  
+ [<span data-ttu-id="53ac5-109">方法: StatusBar コントロールにパネルを追加する</span><span class="sxs-lookup"><span data-stu-id="53ac5-109">How to: Add Panels to a StatusBar Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-panels-to-a-statusbar-control.md)  
+ <span data-ttu-id="53ac5-110">プログラミング可能なパネルを追加する方法について説明します、<xref:System.Windows.Forms.StatusBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="53ac5-110">Explains how to add programmable panels to the <xref:System.Windows.Forms.StatusBar> control.</span></span>  
   
- [<span data-ttu-id="01d0b-111">方法: Windows フォームの StatusBar コントロールでクリックされたパネルを確認する</span><span class="sxs-lookup"><span data-stu-id="01d0b-111">How to: Determine Which Panel in the Windows Forms StatusBar Control Was Clicked</span></span>](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)  
- <span data-ttu-id="01d0b-112">処理する方法について説明します<xref:System.Windows.Forms.Control.Click>からのイベントが発生、<xref:System.Windows.Forms.StatusBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="01d0b-112">Explains how to handle <xref:System.Windows.Forms.Control.Click> events raised from the <xref:System.Windows.Forms.StatusBar> control.</span></span>  
+ [<span data-ttu-id="53ac5-111">方法: Windows フォームの StatusBar コントロールでクリックされたパネルを確認する</span><span class="sxs-lookup"><span data-stu-id="53ac5-111">How to: Determine Which Panel in the Windows Forms StatusBar Control Was Clicked</span></span>](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)  
+ <span data-ttu-id="53ac5-112">処理する方法について説明します<xref:System.Windows.Forms.Control.Click>からのイベントが発生、<xref:System.Windows.Forms.StatusBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="53ac5-112">Explains how to handle <xref:System.Windows.Forms.Control.Click> events raised from the <xref:System.Windows.Forms.StatusBar> control.</span></span>  
   
- [<span data-ttu-id="01d0b-113">方法: ステータス バー パネルのサイズを設定する</span><span class="sxs-lookup"><span data-stu-id="01d0b-113">How to: Set the Size of Status-Bar Panels</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)  
- <span data-ttu-id="01d0b-114">幅を制御およびステータス バー パネルの動作の実行時にサイズを変更するプロパティの詳細を示します。</span><span class="sxs-lookup"><span data-stu-id="01d0b-114">Gives details on the properties that control the width and resize behavior of status-bar panels at run time.</span></span>  
+ [<span data-ttu-id="53ac5-113">方法: ステータス バー パネルのサイズを設定する</span><span class="sxs-lookup"><span data-stu-id="53ac5-113">How to: Set the Size of Status-Bar Panels</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)  
+ <span data-ttu-id="53ac5-114">幅を制御およびステータス バー パネルの動作の実行時にサイズを変更するプロパティの詳細を示します。</span><span class="sxs-lookup"><span data-stu-id="53ac5-114">Gives details on the properties that control the width and resize behavior of status-bar panels at run time.</span></span>  
   
- [<span data-ttu-id="01d0b-115">チュートリアル: ステータス バー情報の実行時更新</span><span class="sxs-lookup"><span data-stu-id="01d0b-115">Walkthrough: Updating Status Bar Information at Run Time</span></span>](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)  
- <span data-ttu-id="01d0b-116">ステータス バー パネル内のデータをプログラムで制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="01d0b-116">Explains how to programmatically control the data within status-bar panels.</span></span>  
+ [<span data-ttu-id="53ac5-115">チュートリアル: ステータス バー情報の実行時更新</span><span class="sxs-lookup"><span data-stu-id="53ac5-115">Walkthrough: Updating Status Bar Information at Run Time</span></span>](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)  
+ <span data-ttu-id="53ac5-116">ステータス バー パネル内のデータをプログラムで制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="53ac5-116">Explains how to programmatically control the data within status-bar panels.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="01d0b-117">参照</span><span class="sxs-lookup"><span data-stu-id="01d0b-117">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="53ac5-117">参照</span><span class="sxs-lookup"><span data-stu-id="53ac5-117">Reference</span></span>  
  <xref:System.Windows.Forms.StatusBar>  
- <span data-ttu-id="01d0b-118">クラスとそのメンバーに関するリファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="01d0b-118">Provides reference information on the class and its members.</span></span>  
+ <span data-ttu-id="53ac5-118">クラスとそのメンバーに関するリファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="53ac5-118">Provides reference information on the class and its members.</span></span>  
   
  <xref:System.Windows.Forms.ToolStripStatusLabel>  
- <span data-ttu-id="01d0b-119">置き換えする機能を追加、<xref:System.Windows.Forms.StatusBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="01d0b-119">Replaces and adds functionality to the <xref:System.Windows.Forms.StatusBar> control.</span></span>  
+ <span data-ttu-id="53ac5-119">置き換えする機能を追加、<xref:System.Windows.Forms.StatusBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="53ac5-119">Replaces and adds functionality to the <xref:System.Windows.Forms.StatusBar> control.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="01d0b-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="01d0b-120">Related Sections</span></span>  
- [<span data-ttu-id="01d0b-121">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="01d0b-121">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- <span data-ttu-id="01d0b-122">Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。</span><span class="sxs-lookup"><span data-stu-id="01d0b-122">Provides a complete list of Windows Forms controls, with links to information on their use.</span></span>
+## <a name="related-sections"></a><span data-ttu-id="53ac5-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="53ac5-120">Related Sections</span></span>  
+ [<span data-ttu-id="53ac5-121">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="53ac5-121">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ <span data-ttu-id="53ac5-122">Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。</span><span class="sxs-lookup"><span data-stu-id="53ac5-122">Provides a complete list of Windows Forms controls, with links to information on their use.</span></span>

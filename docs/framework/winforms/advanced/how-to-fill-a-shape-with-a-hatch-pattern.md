@@ -20,17 +20,18 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 36ee5b7152dabc7dcd1e0c844e8549eb03aa0045
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f44289b79812f2330639cc333727bd21b6ef4fe6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-fill-a-shape-with-a-hatch-pattern"></a><span data-ttu-id="5da91-102">方法 : ハッチ パターンで図形を塗りつぶす</span><span class="sxs-lookup"><span data-stu-id="5da91-102">How to: Fill a Shape with a Hatch Pattern</span></span>
-<span data-ttu-id="5da91-103">2 つの色からハッチ パターンが行われます: バック グラウンドとバック グラウンド上、パターンを形成する、行のいずれかのいずれか。</span><span class="sxs-lookup"><span data-stu-id="5da91-103">A hatch pattern is made from two colors: one for the background and one for the lines that form the pattern over the background.</span></span> <span data-ttu-id="5da91-104">ハッチ パターンで、閉じた図形の塗りつぶし を使用して、<xref:System.Drawing.Drawing2D.HatchBrush>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5da91-104">To fill a closed shape with a hatch pattern, use a <xref:System.Drawing.Drawing2D.HatchBrush> object.</span></span> <span data-ttu-id="5da91-105">次の例では、ハッチ パターンで楕円を塗りつぶす方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5da91-105">The following example demonstrates how to fill an ellipse with a hatch pattern:</span></span>  
+# <a name="how-to-fill-a-shape-with-a-hatch-pattern"></a><span data-ttu-id="62594-102">方法 : ハッチ パターンで図形を塗りつぶす</span><span class="sxs-lookup"><span data-stu-id="62594-102">How to: Fill a Shape with a Hatch Pattern</span></span>
+<span data-ttu-id="62594-103">2 つの色からハッチ パターンが行われます: バック グラウンドとバック グラウンド上、パターンを形成する、行のいずれかのいずれか。</span><span class="sxs-lookup"><span data-stu-id="62594-103">A hatch pattern is made from two colors: one for the background and one for the lines that form the pattern over the background.</span></span> <span data-ttu-id="62594-104">ハッチ パターンで、閉じた図形の塗りつぶし を使用して、<xref:System.Drawing.Drawing2D.HatchBrush>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="62594-104">To fill a closed shape with a hatch pattern, use a <xref:System.Drawing.Drawing2D.HatchBrush> object.</span></span> <span data-ttu-id="62594-105">次の例では、ハッチ パターンで楕円を塗りつぶす方法を示します。</span><span class="sxs-lookup"><span data-stu-id="62594-105">The following example demonstrates how to fill an ellipse with a hatch pattern:</span></span>  
   
-## <a name="example"></a><span data-ttu-id="5da91-106">例</span><span class="sxs-lookup"><span data-stu-id="5da91-106">Example</span></span>  
- <span data-ttu-id="5da91-107"><xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A>コンス トラクターは、次の 3 つの引数を受け取る: 陰影のスタイル、ハッチの線の色と背景の色。</span><span class="sxs-lookup"><span data-stu-id="5da91-107">The <xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A> constructor takes three arguments: the hatch style, the color of the hatch line, and the color of the background.</span></span> <span data-ttu-id="5da91-108">陰影のスタイル引数が任意の値を指定できます、<xref:System.Drawing.Drawing2D.HatchStyle>列挙します。</span><span class="sxs-lookup"><span data-stu-id="5da91-108">The hatch style argument can be any value from the <xref:System.Drawing.Drawing2D.HatchStyle> enumeration.</span></span> <span data-ttu-id="5da91-109">50 以上の要素がある、<xref:System.Drawing.Drawing2D.HatchStyle>列挙体です。 これらのいくつか要素は、次の一覧に含まれています。</span><span class="sxs-lookup"><span data-stu-id="5da91-109">There are more than fifty elements in the <xref:System.Drawing.Drawing2D.HatchStyle> enumeration; a few of those elements are shown in the following list:</span></span>  
+## <a name="example"></a><span data-ttu-id="62594-106">例</span><span class="sxs-lookup"><span data-stu-id="62594-106">Example</span></span>  
+ <span data-ttu-id="62594-107"><xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A>コンス トラクターは、次の 3 つの引数を受け取る: 陰影のスタイル、ハッチの線の色と背景の色。</span><span class="sxs-lookup"><span data-stu-id="62594-107">The <xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A> constructor takes three arguments: the hatch style, the color of the hatch line, and the color of the background.</span></span> <span data-ttu-id="62594-108">陰影のスタイル引数が任意の値を指定できます、<xref:System.Drawing.Drawing2D.HatchStyle>列挙します。</span><span class="sxs-lookup"><span data-stu-id="62594-108">The hatch style argument can be any value from the <xref:System.Drawing.Drawing2D.HatchStyle> enumeration.</span></span> <span data-ttu-id="62594-109">50 以上の要素がある、<xref:System.Drawing.Drawing2D.HatchStyle>列挙体です。 これらのいくつか要素は、次の一覧に含まれています。</span><span class="sxs-lookup"><span data-stu-id="62594-109">There are more than fifty elements in the <xref:System.Drawing.Drawing2D.HatchStyle> enumeration; a few of those elements are shown in the following list:</span></span>  
   
 -   <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>  
   
@@ -44,15 +45,15 @@ ms.lasthandoff: 10/22/2017
   
 -   <xref:System.Drawing.Drawing2D.HatchStyle.DiagonalCross>  
   
- <span data-ttu-id="5da91-110">次の図は、塗りつぶされた楕円を示します。</span><span class="sxs-lookup"><span data-stu-id="5da91-110">The following illustration shows the filled ellipse.</span></span>  
+ <span data-ttu-id="62594-110">次の図は、塗りつぶされた楕円を示します。</span><span class="sxs-lookup"><span data-stu-id="62594-110">The following illustration shows the filled ellipse.</span></span>  
   
- <span data-ttu-id="5da91-111">![ハッチ パターン](../../../../docs/framework/winforms/advanced/media/hatch1.png "hatch1")</span><span class="sxs-lookup"><span data-stu-id="5da91-111">![Hatch Pattern](../../../../docs/framework/winforms/advanced/media/hatch1.png "hatch1")</span></span>  
+ <span data-ttu-id="62594-111">![ハッチ パターン](../../../../docs/framework/winforms/advanced/media/hatch1.png "hatch1")</span><span class="sxs-lookup"><span data-stu-id="62594-111">![Hatch Pattern](../../../../docs/framework/winforms/advanced/media/hatch1.png "hatch1")</span></span>  
   
  [!code-csharp[System.Drawing.UsingABrush#41](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.UsingABrush#41](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#41)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="5da91-112">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="5da91-112">Compiling the Code</span></span>  
- <span data-ttu-id="5da91-113">前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。</span><span class="sxs-lookup"><span data-stu-id="5da91-113">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="62594-112">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="62594-112">Compiling the Code</span></span>  
+ <span data-ttu-id="62594-113">前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。</span><span class="sxs-lookup"><span data-stu-id="62594-113">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5da91-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="5da91-114">See Also</span></span>  
- [<span data-ttu-id="5da91-115">ブラシを使用した図形の塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="5da91-115">Using a Brush to Fill Shapes</span></span>](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)
+## <a name="see-also"></a><span data-ttu-id="62594-114">参照</span><span class="sxs-lookup"><span data-stu-id="62594-114">See Also</span></span>  
+ [<span data-ttu-id="62594-115">ブラシを使用した図形の塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="62594-115">Using a Brush to Fill Shapes</span></span>](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)

@@ -21,30 +21,31 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cbfd7be17e2e9472afbd5ad00dad2ca104ee1854
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e9191778cdb8c57c5cf4628a072ea20fae532e81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="globalization-and-localization"></a><span data-ttu-id="50c9d-102">グローバライズとローカライズ</span><span class="sxs-lookup"><span data-stu-id="50c9d-102">Globalization and Localization</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="50c9d-103">国際対応アプリケーションの開発には、広範なサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="50c9d-103"> provides extensive support for the development of world-ready applications.</span></span>  
+# <a name="globalization-and-localization"></a><span data-ttu-id="ce206-102">グローバライズとローカライズ</span><span class="sxs-lookup"><span data-stu-id="ce206-102">Globalization and Localization</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="ce206-103">国際対応アプリケーションの開発には、広範なサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="ce206-103"> provides extensive support for the development of world-ready applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="50c9d-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="50c9d-104">In This Section</span></span>  
- [<span data-ttu-id="50c9d-105">WPF のグローバリゼーションおよびローカリゼーションの概要</span><span class="sxs-lookup"><span data-stu-id="50c9d-105">WPF Globalization and Localization Overview</span></span>](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)  
- [<span data-ttu-id="50c9d-106">WPF のグローバリゼーション</span><span class="sxs-lookup"><span data-stu-id="50c9d-106">Globalization for WPF</span></span>](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
- [<span data-ttu-id="50c9d-107">自動レイアウトの使用の概要</span><span class="sxs-lookup"><span data-stu-id="50c9d-107">Use Automatic Layout Overview</span></span>](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)  
- [<span data-ttu-id="50c9d-108">ローカリゼーション属性とコメント</span><span class="sxs-lookup"><span data-stu-id="50c9d-108">Localization Attributes and Comments</span></span>](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md)  
- [<span data-ttu-id="50c9d-109">WPF の双方向機能の概要</span><span class="sxs-lookup"><span data-stu-id="50c9d-109">Bidirectional Features in WPF Overview</span></span>](../../../../docs/framework/wpf/advanced/bidirectional-features-in-wpf-overview.md)  
- [<span data-ttu-id="50c9d-110">方法トピック</span><span class="sxs-lookup"><span data-stu-id="50c9d-110">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/globalization-and-localization-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ce206-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="ce206-104">In This Section</span></span>  
+ [<span data-ttu-id="ce206-105">WPF のグローバリゼーションおよびローカリゼーションの概要</span><span class="sxs-lookup"><span data-stu-id="ce206-105">WPF Globalization and Localization Overview</span></span>](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)  
+ [<span data-ttu-id="ce206-106">WPF のグローバリゼーション</span><span class="sxs-lookup"><span data-stu-id="ce206-106">Globalization for WPF</span></span>](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
+ [<span data-ttu-id="ce206-107">自動レイアウトの使用の概要</span><span class="sxs-lookup"><span data-stu-id="ce206-107">Use Automatic Layout Overview</span></span>](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)  
+ [<span data-ttu-id="ce206-108">ローカリゼーション属性とコメント</span><span class="sxs-lookup"><span data-stu-id="ce206-108">Localization Attributes and Comments</span></span>](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md)  
+ [<span data-ttu-id="ce206-109">WPF の双方向機能の概要</span><span class="sxs-lookup"><span data-stu-id="ce206-109">Bidirectional Features in WPF Overview</span></span>](../../../../docs/framework/wpf/advanced/bidirectional-features-in-wpf-overview.md)  
+ [<span data-ttu-id="ce206-110">方法トピック</span><span class="sxs-lookup"><span data-stu-id="ce206-110">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/globalization-and-localization-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="50c9d-111">参照</span><span class="sxs-lookup"><span data-stu-id="50c9d-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="ce206-111">参照</span><span class="sxs-lookup"><span data-stu-id="ce206-111">Reference</span></span>  
  <xref:System.Globalization>  
   
  <xref:System.Windows.FrameworkElement.FlowDirection%2A>  
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [<span data-ttu-id="50c9d-112">XAML における xml:lang の処理</span><span class="sxs-lookup"><span data-stu-id="50c9d-112">xml:lang Handling in XAML</span></span>](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md)  
+ [<span data-ttu-id="ce206-112">XAML における xml:lang の処理</span><span class="sxs-lookup"><span data-stu-id="ce206-112">xml:lang Handling in XAML</span></span>](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="50c9d-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="50c9d-113">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="ce206-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="ce206-113">Related Sections</span></span>

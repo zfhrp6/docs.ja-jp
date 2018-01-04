@@ -22,20 +22,21 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0dc272e26124acf5c6bd5cf3030941c26c021c49
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1764b55232d1883516c2cc8684e3ee1b0cb5c05b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-determine-when-formatting-attributes-change-in-the-windows-forms-richtextbox-control"></a><span data-ttu-id="7e54a-102">方法 : Windows フォームの RichTextBox コントロールにおける書式属性の変更を確認する</span><span class="sxs-lookup"><span data-stu-id="7e54a-102">How to: Determine When Formatting Attributes Change in the Windows Forms RichTextBox Control</span></span>
-<span data-ttu-id="7e54a-103">Windows フォームの一般的な用途<xref:System.Windows.Forms.RichTextBox>コントロールのフォント オプションなどの段落のスタイル属性を含むテキストは、書式設定します。</span><span class="sxs-lookup"><span data-stu-id="7e54a-103">A common use of the Windows Forms <xref:System.Windows.Forms.RichTextBox> control is formatting text with attributes such as font options or paragraph styles.</span></span> <span data-ttu-id="7e54a-104">アプリケーションは、テキストの多くのワード プロセッシング アプリケーションと同様に、ツールバーを表示するために書式設定の変更を追跡する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e54a-104">Your application may need to keep track of any changes in text formatting for the purpose of displaying a toolbar, as in many word-processing applications.</span></span>  
+# <a name="how-to-determine-when-formatting-attributes-change-in-the-windows-forms-richtextbox-control"></a><span data-ttu-id="eaef3-102">方法 : Windows フォームの RichTextBox コントロールにおける書式属性の変更を確認する</span><span class="sxs-lookup"><span data-stu-id="eaef3-102">How to: Determine When Formatting Attributes Change in the Windows Forms RichTextBox Control</span></span>
+<span data-ttu-id="eaef3-103">Windows フォームの一般的な用途<xref:System.Windows.Forms.RichTextBox>コントロールのフォント オプションなどの段落のスタイル属性を含むテキストは、書式設定します。</span><span class="sxs-lookup"><span data-stu-id="eaef3-103">A common use of the Windows Forms <xref:System.Windows.Forms.RichTextBox> control is formatting text with attributes such as font options or paragraph styles.</span></span> <span data-ttu-id="eaef3-104">アプリケーションは、テキストの多くのワード プロセッシング アプリケーションと同様に、ツールバーを表示するために書式設定の変更を追跡する必要があります。</span><span class="sxs-lookup"><span data-stu-id="eaef3-104">Your application may need to keep track of any changes in text formatting for the purpose of displaying a toolbar, as in many word-processing applications.</span></span>  
   
-### <a name="to-respond-to-changes-in-formatting-attributes"></a><span data-ttu-id="7e54a-105">属性の書式設定の変更に応答するには</span><span class="sxs-lookup"><span data-stu-id="7e54a-105">To respond to changes in formatting attributes</span></span>  
+### <a name="to-respond-to-changes-in-formatting-attributes"></a><span data-ttu-id="eaef3-105">属性の書式設定の変更に応答するには</span><span class="sxs-lookup"><span data-stu-id="eaef3-105">To respond to changes in formatting attributes</span></span>  
   
-1.  <span data-ttu-id="7e54a-106">コードを記述、<xref:System.Windows.Forms.RichTextBox.SelectionChanged>イベント ハンドラー属性の値に応じて適切なアクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="7e54a-106">Write code in the <xref:System.Windows.Forms.RichTextBox.SelectionChanged> event handler to perform an appropriate action depending on the value of the attribute.</span></span> <span data-ttu-id="7e54a-107">次の例の値に応じてツール バー ボタンの外観を変更する、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7e54a-107">The following example changes the appearance of a toolbar button depending on the value of the <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> property.</span></span> <span data-ttu-id="7e54a-108">ツール バー ボタンは、コントロール内にカーソルが移動したときにのみ更新されます。</span><span class="sxs-lookup"><span data-stu-id="7e54a-108">The toolbar button will only be updated when the insertion point is moved in the control.</span></span>  
+1.  <span data-ttu-id="eaef3-106">コードを記述、<xref:System.Windows.Forms.RichTextBox.SelectionChanged>イベント ハンドラー属性の値に応じて適切なアクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="eaef3-106">Write code in the <xref:System.Windows.Forms.RichTextBox.SelectionChanged> event handler to perform an appropriate action depending on the value of the attribute.</span></span> <span data-ttu-id="eaef3-107">次の例の値に応じてツール バー ボタンの外観を変更する、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="eaef3-107">The following example changes the appearance of a toolbar button depending on the value of the <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> property.</span></span> <span data-ttu-id="eaef3-108">ツール バー ボタンは、コントロール内にカーソルが移動したときにのみ更新されます。</span><span class="sxs-lookup"><span data-stu-id="eaef3-108">The toolbar button will only be updated when the insertion point is moved in the control.</span></span>  
   
-     <span data-ttu-id="7e54a-109">次の例にフォームを前提としています、<xref:System.Windows.Forms.RichTextBox>コントロールと<xref:System.Windows.Forms.ToolBar>ツール バー ボタンが含まれるコントロール。</span><span class="sxs-lookup"><span data-stu-id="7e54a-109">The example below assumes a form with a <xref:System.Windows.Forms.RichTextBox> control and a <xref:System.Windows.Forms.ToolBar> control that contains a toolbar button.</span></span> <span data-ttu-id="7e54a-110">ツールバーとツール バー ボタンの詳細については、次を参照してください。[する方法: ツール バー コントロールの追加ボタン](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="7e54a-110">For more information about toolbars and toolbar buttons, see [How to: Add Buttons to a ToolBar Control](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md).</span></span>  
+     <span data-ttu-id="eaef3-109">次の例にフォームを前提としています、<xref:System.Windows.Forms.RichTextBox>コントロールと<xref:System.Windows.Forms.ToolBar>ツール バー ボタンが含まれるコントロール。</span><span class="sxs-lookup"><span data-stu-id="eaef3-109">The example below assumes a form with a <xref:System.Windows.Forms.RichTextBox> control and a <xref:System.Windows.Forms.ToolBar> control that contains a toolbar button.</span></span> <span data-ttu-id="eaef3-110">ツールバーとツール バー ボタンの詳細については、次を参照してください。[する方法: ツール バー コントロールの追加ボタン](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="eaef3-110">For more information about toolbars and toolbar buttons, see [How to: Add Buttons to a ToolBar Control](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md).</span></span>  
   
     ```vb  
     ' The following code assumes the existence of a toolbar control  
@@ -90,8 +91,8 @@ ms.lasthandoff: 11/21/2017
        }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="7e54a-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="7e54a-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="eaef3-111">参照</span><span class="sxs-lookup"><span data-stu-id="eaef3-111">See Also</span></span>  
  <xref:System.Windows.Forms.RichTextBox.SelectionChanged>  
  <xref:System.Windows.Forms.RichTextBox>  
- [<span data-ttu-id="7e54a-112">RichTextBox コントロール</span><span class="sxs-lookup"><span data-stu-id="7e54a-112">RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
- [<span data-ttu-id="7e54a-113">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="7e54a-113">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+ [<span data-ttu-id="eaef3-112">RichTextBox コントロール</span><span class="sxs-lookup"><span data-stu-id="eaef3-112">RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
+ [<span data-ttu-id="eaef3-113">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="eaef3-113">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

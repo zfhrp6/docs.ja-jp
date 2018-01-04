@@ -12,18 +12,19 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: daf8208663b524b7812d4bbbbeec815058f14353
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: afa76503377db8de164253f2d24d0b2be1981a04
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="composite"></a><span data-ttu-id="5b5d9-102">複合</span><span class="sxs-lookup"><span data-stu-id="5b5d9-102">Composite</span></span>
-<span data-ttu-id="5b5d9-103">このセクションでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] の他のアクティビティで構成されるカスタム アクティビティのサンプルを示します。</span><span class="sxs-lookup"><span data-stu-id="5b5d9-103">This section contains custom activity samples composed of other activities in [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
+# <a name="composite"></a><span data-ttu-id="6a40e-102">複合</span><span class="sxs-lookup"><span data-stu-id="6a40e-102">Composite</span></span>
+<span data-ttu-id="6a40e-103">このセクションでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] の他のアクティビティで構成されるカスタム アクティビティのサンプルを示します。</span><span class="sxs-lookup"><span data-stu-id="6a40e-103">This section contains custom activity samples composed of other activities in [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5b5d9-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="5b5d9-104">In This Section</span></span>  
- [<span data-ttu-id="5b5d9-105">基本的なアクティビティの構成</span><span class="sxs-lookup"><span data-stu-id="5b5d9-105">Basic Activity Composition</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/basic-activity-composition.md)  
- <span data-ttu-id="5b5d9-106">カスタム アクティビティとシステム標準アクティビティを作成して、追加のカスタム アクティビティを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5b5d9-106">Demonstrates how to compose custom activities and system-provided activities to build more custom activities.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="6a40e-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6a40e-104">In This Section</span></span>  
+ [<span data-ttu-id="6a40e-105">基本的なアクティビティの構成</span><span class="sxs-lookup"><span data-stu-id="6a40e-105">Basic Activity Composition</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/basic-activity-composition.md)  
+ <span data-ttu-id="6a40e-106">カスタム アクティビティとシステム標準アクティビティを作成して、追加のカスタム アクティビティを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6a40e-106">Demonstrates how to compose custom activities and system-provided activities to build more custom activities.</span></span>  
   
- [<span data-ttu-id="5b5d9-107">カスタム アクティビティの記述について</span><span class="sxs-lookup"><span data-stu-id="5b5d9-107">Getting Started Writing a Custom Activity</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/getting-started-writing-a-custom-activity.md)  
- <span data-ttu-id="5b5d9-108">XAML で単純なカスタム アクティビティを定義する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5b5d9-108">Demonstrates how to define a simple custom activity in XAML.</span></span>
+ [<span data-ttu-id="6a40e-107">カスタム アクティビティの記述について</span><span class="sxs-lookup"><span data-stu-id="6a40e-107">Getting Started Writing a Custom Activity</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/getting-started-writing-a-custom-activity.md)  
+ <span data-ttu-id="6a40e-108">XAML で単純なカスタム アクティビティを定義する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6a40e-108">Demonstrates how to define a simple custom activity in XAML.</span></span>

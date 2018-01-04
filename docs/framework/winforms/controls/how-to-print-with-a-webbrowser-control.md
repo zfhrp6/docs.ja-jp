@@ -23,30 +23,31 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7a0f80785ee923874379a206b344db6a8c80055
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f72ba017870bfccbb7c0e404c57cab77a96ab8b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-print-with-a-webbrowser-control"></a><span data-ttu-id="ee740-102">方法 : WebBrowser コントロールを使用して印刷する</span><span class="sxs-lookup"><span data-stu-id="ee740-102">How to: Print with a WebBrowser Control</span></span>
-<span data-ttu-id="ee740-103">次のコード例で使用方法、<xref:System.Windows.Forms.WebBrowser>表示せず、Web ページを印刷するコントロール。</span><span class="sxs-lookup"><span data-stu-id="ee740-103">The following code example demonstrates how use the <xref:System.Windows.Forms.WebBrowser> control to print a Web page without displaying it.</span></span>  
+# <a name="how-to-print-with-a-webbrowser-control"></a><span data-ttu-id="fb38e-102">方法 : WebBrowser コントロールを使用して印刷する</span><span class="sxs-lookup"><span data-stu-id="fb38e-102">How to: Print with a WebBrowser Control</span></span>
+<span data-ttu-id="fb38e-103">次のコード例で使用方法、<xref:System.Windows.Forms.WebBrowser>表示せず、Web ページを印刷するコントロール。</span><span class="sxs-lookup"><span data-stu-id="fb38e-103">The following code example demonstrates how use the <xref:System.Windows.Forms.WebBrowser> control to print a Web page without displaying it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ee740-104">例</span><span class="sxs-lookup"><span data-stu-id="ee740-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="fb38e-104">例</span><span class="sxs-lookup"><span data-stu-id="fb38e-104">Example</span></span>  
  [!code-csharp[WebBrowserMisc#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/WebBrowserMisc/CS/WebBrowserMisc.cs#10)]
  [!code-vb[WebBrowserMisc#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WebBrowserMisc/vb/WebBrowserMisc.vb#10)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="ee740-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="ee740-105">Compiling the Code</span></span>  
- <span data-ttu-id="ee740-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="ee740-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="fb38e-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="fb38e-105">Compiling the Code</span></span>  
+ <span data-ttu-id="fb38e-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="fb38e-106">This example requires:</span></span>  
   
--   <span data-ttu-id="ee740-107">`System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。</span><span class="sxs-lookup"><span data-stu-id="ee740-107">References to the `System` and `System.Windows.Forms` assemblies.</span></span>  
+-   <span data-ttu-id="fb38e-107">`System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。</span><span class="sxs-lookup"><span data-stu-id="fb38e-107">References to the `System` and `System.Windows.Forms` assemblies.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ee740-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="ee740-108">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="fb38e-108">参照</span><span class="sxs-lookup"><span data-stu-id="fb38e-108">See Also</span></span>  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowser.Print%2A>  
  <xref:System.Windows.Forms.WebBrowser.Url%2A>  
- [<span data-ttu-id="ee740-109">方法: WebBrowser コントロールで URL に移動する</span><span class="sxs-lookup"><span data-stu-id="ee740-109">How to: Navigate to a URL with the WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
- [<span data-ttu-id="ee740-110">方法: Windows フォーム アプリケーションに Web ブラウザーの機能を追加する</span><span class="sxs-lookup"><span data-stu-id="ee740-110">How to: Add Web Browser Capabilities to a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
- [<span data-ttu-id="ee740-111">方法: Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する</span><span class="sxs-lookup"><span data-stu-id="ee740-111">How to: Create an HTML Document Viewer in a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
- [<span data-ttu-id="ee740-112">WebBrowser コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="ee740-112">WebBrowser Control Overview</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
- [<span data-ttu-id="ee740-113">WebBrowser セキュリティ</span><span class="sxs-lookup"><span data-stu-id="ee740-113">WebBrowser Security</span></span>](../../../../docs/framework/winforms/controls/webbrowser-security.md)
+ [<span data-ttu-id="fb38e-109">方法: WebBrowser コントロールで URL に移動する</span><span class="sxs-lookup"><span data-stu-id="fb38e-109">How to: Navigate to a URL with the WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
+ [<span data-ttu-id="fb38e-110">方法: Windows フォーム アプリケーションに Web ブラウザーの機能を追加する</span><span class="sxs-lookup"><span data-stu-id="fb38e-110">How to: Add Web Browser Capabilities to a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
+ [<span data-ttu-id="fb38e-111">方法: Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する</span><span class="sxs-lookup"><span data-stu-id="fb38e-111">How to: Create an HTML Document Viewer in a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="fb38e-112">WebBrowser コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="fb38e-112">WebBrowser Control Overview</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
+ [<span data-ttu-id="fb38e-113">WebBrowser セキュリティ</span><span class="sxs-lookup"><span data-stu-id="fb38e-113">WebBrowser Security</span></span>](../../../../docs/framework/winforms/controls/webbrowser-security.md)

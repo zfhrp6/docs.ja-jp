@@ -16,51 +16,52 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd42299a217cef6125f348d47e0a5216f9e8205f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7ad763512a4f39f2d0b2e2f03b052de5b8dcc031
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="windows-workflow-foundation-programming"></a><span data-ttu-id="ba84b-102">Windows Workflow Foundation プログラミングの新機能</span><span class="sxs-lookup"><span data-stu-id="ba84b-102">Windows Workflow Foundation Programming</span></span>
-<span data-ttu-id="ba84b-103">このセクションには、[!INCLUDE[wf](../../../includes/wf-md.md)] の熟練したプログラマになるうえで理解する必要がある一連の入門トピックが含まれます。</span><span class="sxs-lookup"><span data-stu-id="ba84b-103">This section contains a set of primer topics that you should understand to become a proficient [!INCLUDE[wf](../../../includes/wf-md.md)] programmer.</span></span>  
+# <a name="windows-workflow-foundation-programming"></a><span data-ttu-id="e3505-102">Windows Workflow Foundation プログラミングの新機能</span><span class="sxs-lookup"><span data-stu-id="e3505-102">Windows Workflow Foundation Programming</span></span>
+<span data-ttu-id="e3505-103">このセクションには、[!INCLUDE[wf](../../../includes/wf-md.md)] の熟練したプログラマになるうえで理解する必要がある一連の入門トピックが含まれます。</span><span class="sxs-lookup"><span data-stu-id="e3505-103">This section contains a set of primer topics that you should understand to become a proficient [!INCLUDE[wf](../../../includes/wf-md.md)] programmer.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ba84b-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="ba84b-104">In This Section</span></span>  
- [<span data-ttu-id="ba84b-105">ワークフローの設計</span><span class="sxs-lookup"><span data-stu-id="ba84b-105">Designing Workflows</span></span>](../../../docs/framework/windows-workflow-foundation/designing-workflows.md)  
- <span data-ttu-id="ba84b-106">ワークフローの開発で使用するフロー制御パラダイムについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-106">Topics that describe the flow-control paradigms used in workflow development.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="e3505-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e3505-104">In This Section</span></span>  
+ [<span data-ttu-id="e3505-105">ワークフローの設計</span><span class="sxs-lookup"><span data-stu-id="e3505-105">Designing Workflows</span></span>](../../../docs/framework/windows-workflow-foundation/designing-workflows.md)  
+ <span data-ttu-id="e3505-106">ワークフローの開発で使用するフロー制御パラダイムについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-106">Topics that describe the flow-control paradigms used in workflow development.</span></span>  
   
- [<span data-ttu-id="ba84b-107">アクティビティの使用と作成</span><span class="sxs-lookup"><span data-stu-id="ba84b-107">Using and Creating Activities</span></span>](../../../docs/framework/windows-workflow-foundation/using-and-creating-activities.md)  
- <span data-ttu-id="ba84b-108">[!INCLUDE[wf](../../../includes/wf-md.md)] で使用できる、システムによって提供されるアクティビティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-108">Topics that describes the system-provided activities available in [!INCLUDE[wf](../../../includes/wf-md.md)].</span></span>  
+ [<span data-ttu-id="e3505-107">アクティビティの使用と作成</span><span class="sxs-lookup"><span data-stu-id="e3505-107">Using and Creating Activities</span></span>](../../../docs/framework/windows-workflow-foundation/using-and-creating-activities.md)  
+ <span data-ttu-id="e3505-108">[!INCLUDE[wf](../../../includes/wf-md.md)] で使用できる、システムによって提供されるアクティビティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-108">Topics that describes the system-provided activities available in [!INCLUDE[wf](../../../includes/wf-md.md)].</span></span>  
   
- [<span data-ttu-id="ba84b-109">Windows Workflow Foundation のデータ モデル</span><span class="sxs-lookup"><span data-stu-id="ba84b-109">Windows Workflow Foundation Data Model</span></span>](../../../docs/framework/windows-workflow-foundation/data-model.md)  
- <span data-ttu-id="ba84b-110">[!INCLUDE[wf1](../../../includes/wf1-md.md)] の変数、引数、および式について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-110">Topics that describe variables, arguments and expressions in [!INCLUDE[wf1](../../../includes/wf1-md.md)].</span></span>  
+ [<span data-ttu-id="e3505-109">Windows Workflow Foundation のデータ モデル</span><span class="sxs-lookup"><span data-stu-id="e3505-109">Windows Workflow Foundation Data Model</span></span>](../../../docs/framework/windows-workflow-foundation/data-model.md)  
+ <span data-ttu-id="e3505-110">[!INCLUDE[wf1](../../../includes/wf1-md.md)] の変数、引数、および式について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-110">Topics that describe variables, arguments and expressions in [!INCLUDE[wf1](../../../includes/wf1-md.md)].</span></span>  
   
- [<span data-ttu-id="ba84b-111">ワークフロー内での入力の待機</span><span class="sxs-lookup"><span data-stu-id="ba84b-111">Waiting for Input in a Workflow</span></span>](../../../docs/framework/windows-workflow-foundation/waiting-for-input-in-a-workflow.md)  
- <span data-ttu-id="ba84b-112">ブックマークとメッセージング アクティビティの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-112">Topics that describes how to use bookmarks and messaging activities.</span></span>  
+ [<span data-ttu-id="e3505-111">ワークフロー内での入力の待機</span><span class="sxs-lookup"><span data-stu-id="e3505-111">Waiting for Input in a Workflow</span></span>](../../../docs/framework/windows-workflow-foundation/waiting-for-input-in-a-workflow.md)  
+ <span data-ttu-id="e3505-112">ブックマークとメッセージング アクティビティの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-112">Topics that describes how to use bookmarks and messaging activities.</span></span>  
   
- [<span data-ttu-id="ba84b-113">例外、トランザクション、および補正</span><span class="sxs-lookup"><span data-stu-id="ba84b-113">Exceptions, Transactions, and Compensation</span></span>](../../../docs/framework/windows-workflow-foundation/exceptions-transactions-and-compensation.md)  
- <span data-ttu-id="ba84b-114">ランタイム エラーを処理する例外ハンドラー、トランザクション、および補正の使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-114">Topics that describe how to use exception handlers, transactions, and compensation to handle run-time errors.</span></span>  
+ [<span data-ttu-id="e3505-113">例外、トランザクション、および補正</span><span class="sxs-lookup"><span data-stu-id="e3505-113">Exceptions, Transactions, and Compensation</span></span>](../../../docs/framework/windows-workflow-foundation/exceptions-transactions-and-compensation.md)  
+ <span data-ttu-id="e3505-114">ランタイム エラーを処理する例外ハンドラー、トランザクション、および補正の使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-114">Topics that describe how to use exception handlers, transactions, and compensation to handle run-time errors.</span></span>  
   
- [<span data-ttu-id="ba84b-115">ワークフローのホスティング</span><span class="sxs-lookup"><span data-stu-id="ba84b-115">Hosting Workflows</span></span>](../../../docs/framework/windows-workflow-foundation/hosting-workflows.md)  
- <span data-ttu-id="ba84b-116">ワークフロー ホスト アプリケーションの作成の詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-116">Topics that describe the details for writing workflow host applications.</span></span>  
+ [<span data-ttu-id="e3505-115">ワークフローのホスティング</span><span class="sxs-lookup"><span data-stu-id="e3505-115">Hosting Workflows</span></span>](../../../docs/framework/windows-workflow-foundation/hosting-workflows.md)  
+ <span data-ttu-id="e3505-116">ワークフロー ホスト アプリケーションの作成の詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-116">Topics that describe the details for writing workflow host applications.</span></span>  
   
- [<span data-ttu-id="ba84b-117">動的な更新</span><span class="sxs-lookup"><span data-stu-id="ba84b-117">Dynamic Update</span></span>](../../../docs/framework/windows-workflow-foundation/dynamic-update.md)  
- <span data-ttu-id="ba84b-118">動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-118">Describes how to use dynamic update to update the workflow definition of a persisted workflow instance.</span></span>  
+ [<span data-ttu-id="e3505-117">動的な更新</span><span class="sxs-lookup"><span data-stu-id="e3505-117">Dynamic Update</span></span>](../../../docs/framework/windows-workflow-foundation/dynamic-update.md)  
+ <span data-ttu-id="e3505-118">動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-118">Describes how to use dynamic update to update the workflow definition of a persisted workflow instance.</span></span>  
   
- [<span data-ttu-id="ba84b-119">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="ba84b-119">Workflow Services</span></span>](../../../docs/framework/wcf/feature-details/workflow-services.md)  
- <span data-ttu-id="ba84b-120">サービスの宣言による作成をサポートするプログラミング モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-120">Topics that describe the programming model that supports writing services declaratively.</span></span>  
+ [<span data-ttu-id="e3505-119">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="e3505-119">Workflow Services</span></span>](../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ <span data-ttu-id="e3505-120">サービスの宣言による作成をサポートするプログラミング モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-120">Topics that describe the programming model that supports writing services declaratively.</span></span>  
   
- [<span data-ttu-id="ba84b-121">ワークフローの永続性</span><span class="sxs-lookup"><span data-stu-id="ba84b-121">Workflow Persistence</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)  
- <span data-ttu-id="ba84b-122">ワークフロー データを自動または手動で永続化したり、メモリからワークフローをアンロードするためのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-122">Topics that describe the options for automatically or manually persisting workflow data and unloading workflows from memory.</span></span>  
+ [<span data-ttu-id="e3505-121">ワークフローの永続性</span><span class="sxs-lookup"><span data-stu-id="e3505-121">Workflow Persistence</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)  
+ <span data-ttu-id="e3505-122">ワークフロー データを自動または手動で永続化したり、メモリからワークフローをアンロードするためのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-122">Topics that describe the options for automatically or manually persisting workflow data and unloading workflows from memory.</span></span>  
   
- [<span data-ttu-id="ba84b-123">移行ガイダンス</span><span class="sxs-lookup"><span data-stu-id="ba84b-123">Migration Guidance</span></span>](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)  
- <span data-ttu-id="ba84b-124">前のバージョンの [!INCLUDE[wf](../../../includes/wf-md.md)] からワークフローを移行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-124">Topics that describe how to migrate workflows from previous versions of [!INCLUDE[wf](../../../includes/wf-md.md)].</span></span>  
+ [<span data-ttu-id="e3505-123">移行ガイダンス</span><span class="sxs-lookup"><span data-stu-id="e3505-123">Migration Guidance</span></span>](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)  
+ <span data-ttu-id="e3505-124">前のバージョンの [!INCLUDE[wf](../../../includes/wf-md.md)] からワークフローを移行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-124">Topics that describe how to migrate workflows from previous versions of [!INCLUDE[wf](../../../includes/wf-md.md)].</span></span>  
   
- [<span data-ttu-id="ba84b-125">ワークフローの追跡とトレース</span><span class="sxs-lookup"><span data-stu-id="ba84b-125">Workflow Tracking and Tracing</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- <span data-ttu-id="ba84b-126">ワークフローの追跡とトレース、およびワークフロー アプリケーションを監視するためにこれらの機能を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-126">Topics that describe workflow tracking and tracing and how these features are used for monitoring workflow applications.</span></span>  
+ [<span data-ttu-id="e3505-125">ワークフローの追跡とトレース</span><span class="sxs-lookup"><span data-stu-id="e3505-125">Workflow Tracking and Tracing</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ <span data-ttu-id="e3505-126">ワークフローの追跡とトレース、およびワークフロー アプリケーションを監視するためにこれらの機能を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-126">Topics that describe workflow tracking and tracing and how these features are used for monitoring workflow applications.</span></span>  
   
- [<span data-ttu-id="ba84b-127">ワークフローのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="ba84b-127">Workflow Security</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-security.md)  
- <span data-ttu-id="ba84b-128">SQL および [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] を使用する場合に、ワークフローのセキュリティを維持する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-128">Discusses how to keep your workflow secure when using SQL and [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].</span></span>  
+ [<span data-ttu-id="e3505-127">ワークフローのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="e3505-127">Workflow Security</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-security.md)  
+ <span data-ttu-id="e3505-128">SQL および [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] を使用する場合に、ワークフローのセキュリティを維持する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3505-128">Discusses how to keep your workflow secure when using SQL and [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].</span></span>  
   
- [<span data-ttu-id="ba84b-129">Windows Workflow Foundation 4 のパフォーマンス</span><span class="sxs-lookup"><span data-stu-id="ba84b-129">Windows Workflow Foundation 4 Performance</span></span>](../../../docs/framework/windows-workflow-foundation/performance.md)  
- <span data-ttu-id="ba84b-130">[!INCLUDE[wf2](../../../includes/wf2-md.md)] 4 のパフォーマンスについて説明し、WF の以前のバージョンと比較します。</span><span class="sxs-lookup"><span data-stu-id="ba84b-130">Discusses [!INCLUDE[wf2](../../../includes/wf2-md.md)] 4 performance and compares it to the previous version of WF.</span></span>
+ [<span data-ttu-id="e3505-129">Windows Workflow Foundation 4 のパフォーマンス</span><span class="sxs-lookup"><span data-stu-id="e3505-129">Windows Workflow Foundation 4 Performance</span></span>](../../../docs/framework/windows-workflow-foundation/performance.md)  
+ <span data-ttu-id="e3505-130">[!INCLUDE[wf2](../../../includes/wf2-md.md)] 4 のパフォーマンスについて説明し、WF の以前のバージョンと比較します。</span><span class="sxs-lookup"><span data-stu-id="e3505-130">Discusses [!INCLUDE[wf2](../../../includes/wf2-md.md)] 4 performance and compares it to the previous version of WF.</span></span>
