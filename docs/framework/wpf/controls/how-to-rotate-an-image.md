@@ -19,16 +19,17 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c8b30b09aeb39123776ba5b0c27ae4ac3b062631
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 565f0fa2dd81237fae11a3d872238faff09f3d23
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-rotate-an-image"></a><span data-ttu-id="d22a9-102">方法 : イメージを回転させる</span><span class="sxs-lookup"><span data-stu-id="d22a9-102">How to: Rotate an Image</span></span>
-<span data-ttu-id="d22a9-103">この例を使用してイメージを 90 ° 回転、<xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A>のプロパティ、<xref:System.Windows.Media.Imaging.BitmapImage>です。</span><span class="sxs-lookup"><span data-stu-id="d22a9-103">This example shows how to rotate an image 90 degrees by using a <xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A> property of a <xref:System.Windows.Media.Imaging.BitmapImage>.</span></span>  
+# <a name="how-to-rotate-an-image"></a><span data-ttu-id="f5ac3-102">方法 : イメージを回転させる</span><span class="sxs-lookup"><span data-stu-id="f5ac3-102">How to: Rotate an Image</span></span>
+<span data-ttu-id="f5ac3-103">この例を使用してイメージを 90 ° 回転、<xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A>のプロパティ、<xref:System.Windows.Media.Imaging.BitmapImage>です。</span><span class="sxs-lookup"><span data-stu-id="f5ac3-103">This example shows how to rotate an image 90 degrees by using a <xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A> property of a <xref:System.Windows.Media.Imaging.BitmapImage>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d22a9-104">例</span><span class="sxs-lookup"><span data-stu-id="d22a9-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f5ac3-104">例</span><span class="sxs-lookup"><span data-stu-id="f5ac3-104">Example</span></span>  
  [!code-xaml[ImageElementExample_snip#TransformedXAML2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/TransformedImageExample.xaml#transformedxaml2)]  
   
  [!code-csharp[ImageElementExample_snip#TransformedCSharp1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/TransformedImageExample.xaml.cs#transformedcsharp1)]

@@ -18,30 +18,31 @@ caps.latest.revision: "68"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 29123dc5de6390d18aaccbb064e53748499d61e4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 79ef4306d193bdb6f55aec467074c8b5b2f374b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="tooltip"></a><span data-ttu-id="5b154-102">ヒント</span><span class="sxs-lookup"><span data-stu-id="5b154-102">ToolTip</span></span>
-<span data-ttu-id="5b154-103">ツールヒントは、ユーザーなどを超えると、要素の上にマウス ポインターを置いたときに表示される小さいポップアップ ウィンドウ、<xref:System.Windows.Controls.Button>です。</span><span class="sxs-lookup"><span data-stu-id="5b154-103">A tooltip is a small pop-up window that appears when a user pauses the mouse pointer over an element, such as over a <xref:System.Windows.Controls.Button>.</span></span>  
+# <a name="tooltip"></a><span data-ttu-id="d69d4-102">ヒント</span><span class="sxs-lookup"><span data-stu-id="d69d4-102">ToolTip</span></span>
+<span data-ttu-id="d69d4-103">ツールヒントは、ユーザーなどを超えると、要素の上にマウス ポインターを置いたときに表示される小さいポップアップ ウィンドウ、<xref:System.Windows.Controls.Button>です。</span><span class="sxs-lookup"><span data-stu-id="d69d4-103">A tooltip is a small pop-up window that appears when a user pauses the mouse pointer over an element, such as over a <xref:System.Windows.Controls.Button>.</span></span>  
   
- <span data-ttu-id="5b154-104">次の図に、マウス ポインターが指す、**閉じる**<xref:System.Windows.Controls.Button>、そのを識別する、次の表示<xref:System.Windows.Controls.ToolTip>です。</span><span class="sxs-lookup"><span data-stu-id="5b154-104">The following illustration shows a mouse pointer that points to the **Close**<xref:System.Windows.Controls.Button>, which then displays its identifying <xref:System.Windows.Controls.ToolTip>.</span></span>  
+ <span data-ttu-id="d69d4-104">次の図に、マウス ポインターが指す、**閉じる**<xref:System.Windows.Controls.Button>、そのを識別する、次の表示<xref:System.Windows.Controls.ToolTip>です。</span><span class="sxs-lookup"><span data-stu-id="d69d4-104">The following illustration shows a mouse pointer that points to the **Close**<xref:System.Windows.Controls.Button>, which then displays its identifying <xref:System.Windows.Controls.ToolTip>.</span></span>  
   
- <span data-ttu-id="5b154-105">ツールヒントが表示された [閉じる] ボタン</span><span class="sxs-lookup"><span data-stu-id="5b154-105">Close button with its tooltip displayed</span></span>  
+ <span data-ttu-id="d69d4-105">ツールヒントが表示された [閉じる] ボタン</span><span class="sxs-lookup"><span data-stu-id="d69d4-105">Close button with its tooltip displayed</span></span>  
   
- <span data-ttu-id="5b154-106">![ツールヒント スクリーン ショット](../../../../docs/framework/wpf/controls/media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span><span class="sxs-lookup"><span data-stu-id="5b154-106">![ToolTip screen shot](../../../../docs/framework/wpf/controls/media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span></span>  
+ <span data-ttu-id="d69d4-106">![ツールヒント スクリーン ショット](../../../../docs/framework/wpf/controls/media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span><span class="sxs-lookup"><span data-stu-id="d69d4-106">![ToolTip screen shot](../../../../docs/framework/wpf/controls/media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5b154-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="5b154-107">In This Section</span></span>  
- [<span data-ttu-id="5b154-108">ToolTip の概要</span><span class="sxs-lookup"><span data-stu-id="5b154-108">ToolTip Overview</span></span>](../../../../docs/framework/wpf/controls/tooltip-overview.md)  
-  [<span data-ttu-id="5b154-109">方法トピック</span><span class="sxs-lookup"><span data-stu-id="5b154-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d69d4-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d69d4-107">In This Section</span></span>  
+ [<span data-ttu-id="d69d4-108">ToolTip の概要</span><span class="sxs-lookup"><span data-stu-id="d69d4-108">ToolTip Overview</span></span>](../../../../docs/framework/wpf/controls/tooltip-overview.md)  
+  [<span data-ttu-id="d69d4-109">方法トピック</span><span class="sxs-lookup"><span data-stu-id="d69d4-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="5b154-110">参照</span><span class="sxs-lookup"><span data-stu-id="5b154-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="d69d4-110">参照</span><span class="sxs-lookup"><span data-stu-id="d69d4-110">Reference</span></span>  
  <xref:System.Windows.Controls.ToolTip>  
   <xref:System.Windows.Controls.ToolTipService>  
   <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="5b154-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="5b154-111">Related Sections</span></span>  
- [<span data-ttu-id="5b154-112">ポップアップの概要</span><span class="sxs-lookup"><span data-stu-id="5b154-112">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
-  [<span data-ttu-id="5b154-113">方法トピック</span><span class="sxs-lookup"><span data-stu-id="5b154-113">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)
+## <a name="related-sections"></a><span data-ttu-id="d69d4-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="d69d4-111">Related Sections</span></span>  
+ [<span data-ttu-id="d69d4-112">ポップアップの概要</span><span class="sxs-lookup"><span data-stu-id="d69d4-112">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
+  [<span data-ttu-id="d69d4-113">方法トピック</span><span class="sxs-lookup"><span data-stu-id="d69d4-113">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)

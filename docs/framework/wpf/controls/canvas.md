@@ -18,19 +18,20 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9f2d82be5dc5a5c78b19a6ac5326cbecf9918092
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c79cd6b9c4b1f4f7227a08a1a719e147e41055fb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="canvas"></a><span data-ttu-id="13ac8-102">Canvas</span><span class="sxs-lookup"><span data-stu-id="13ac8-102">Canvas</span></span>
-<span data-ttu-id="13ac8-103"><xref:System.Windows.Controls.Canvas>子要素の絶対配置できるようにするレイアウト コントロールです。</span><span class="sxs-lookup"><span data-stu-id="13ac8-103"><xref:System.Windows.Controls.Canvas> is a layout control that enables absolute positioning of child elements.</span></span>  
+# <a name="canvas"></a><span data-ttu-id="184bd-102">Canvas</span><span class="sxs-lookup"><span data-stu-id="184bd-102">Canvas</span></span>
+<span data-ttu-id="184bd-103"><xref:System.Windows.Controls.Canvas>子要素の絶対配置できるようにするレイアウト コントロールです。</span><span class="sxs-lookup"><span data-stu-id="184bd-103"><xref:System.Windows.Controls.Canvas> is a layout control that enables absolute positioning of child elements.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="13ac8-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="13ac8-104">In This Section</span></span>  
- [<span data-ttu-id="13ac8-105">方法トピック</span><span class="sxs-lookup"><span data-stu-id="13ac8-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="184bd-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="184bd-104">In This Section</span></span>  
+ [<span data-ttu-id="184bd-105">方法トピック</span><span class="sxs-lookup"><span data-stu-id="184bd-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="13ac8-106">参照</span><span class="sxs-lookup"><span data-stu-id="13ac8-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="184bd-106">参照</span><span class="sxs-lookup"><span data-stu-id="184bd-106">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -45,9 +46,9 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="13ac8-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="13ac8-107">Related Sections</span></span>  
- [<span data-ttu-id="13ac8-108">レイアウト</span><span class="sxs-lookup"><span data-stu-id="13ac8-108">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="184bd-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="184bd-107">Related Sections</span></span>  
+ [<span data-ttu-id="184bd-108">レイアウト</span><span class="sxs-lookup"><span data-stu-id="184bd-108">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="13ac8-109">チュートリアル: 初めての WPF デスクトップ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="13ac8-109">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="184bd-109">チュートリアル: 初めての WPF デスクトップ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="184bd-109">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="13ac8-110">ScrollViewer の概要</span><span class="sxs-lookup"><span data-stu-id="13ac8-110">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="184bd-110">ScrollViewer の概要</span><span class="sxs-lookup"><span data-stu-id="184bd-110">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

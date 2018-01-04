@@ -15,25 +15,26 @@ caps.latest.revision: "86"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 921a9f3abd8c4cba8cfa0f59b8321ee309642dbb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58f65d6c25627ba84ffe83677bbaadfc2e55e6f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="documents"></a><span data-ttu-id="7cfc8-102">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="7cfc8-102">Documents</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="7cfc8-103"> には、多彩なアプリケーション開発コンポーネントが用意されており、開発者は、こうしたコンポーネントを使って、高度なドキュメント機能を備えた読みやすいアプリケーションを構築できます。</span><span class="sxs-lookup"><span data-stu-id="7cfc8-103"> provides a versatile set of components that enable developers to build applications with advanced document features and an improved reading experience.</span></span> <span data-ttu-id="7cfc8-104">また、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、機能と品質の向上を実現するだけでなく、ドキュメントのパッケージ化、セキュリティ、および保存を対象としたシンプルな管理サービスも提供します。</span><span class="sxs-lookup"><span data-stu-id="7cfc8-104">In addition to enhanced capabilities and quality, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] also provides simplified management services for document packaging, security, and storage.</span></span>  
+# <a name="documents"></a><span data-ttu-id="081c0-102">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="081c0-102">Documents</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="081c0-103"> には、多彩なアプリケーション開発コンポーネントが用意されており、開発者は、こうしたコンポーネントを使って、高度なドキュメント機能を備えた読みやすいアプリケーションを構築できます。</span><span class="sxs-lookup"><span data-stu-id="081c0-103"> provides a versatile set of components that enable developers to build applications with advanced document features and an improved reading experience.</span></span> <span data-ttu-id="081c0-104">また、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、機能と品質の向上を実現するだけでなく、ドキュメントのパッケージ化、セキュリティ、および保存を対象としたシンプルな管理サービスも提供します。</span><span class="sxs-lookup"><span data-stu-id="081c0-104">In addition to enhanced capabilities and quality, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] also provides simplified management services for document packaging, security, and storage.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="7cfc8-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7cfc8-105">In This Section</span></span>  
- [<span data-ttu-id="7cfc8-106">WPF のドキュメント</span><span class="sxs-lookup"><span data-stu-id="7cfc8-106">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [<span data-ttu-id="7cfc8-107">ドキュメントのシリアル化および保存</span><span class="sxs-lookup"><span data-stu-id="7cfc8-107">Document Serialization and Storage</span></span>](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)  
- [<span data-ttu-id="7cfc8-108">コメント</span><span class="sxs-lookup"><span data-stu-id="7cfc8-108">Annotations</span></span>](../../../../docs/framework/wpf/advanced/annotations.md)  
- [<span data-ttu-id="7cfc8-109">フロー コンテンツ</span><span class="sxs-lookup"><span data-stu-id="7cfc8-109">Flow Content</span></span>](../../../../docs/framework/wpf/advanced/flow-content.md)  
- [<span data-ttu-id="7cfc8-110">タイポグラフィ</span><span class="sxs-lookup"><span data-stu-id="7cfc8-110">Typography</span></span>](../../../../docs/framework/wpf/advanced/typography.md)  
- [<span data-ttu-id="7cfc8-111">印刷および印刷システムの管理</span><span class="sxs-lookup"><span data-stu-id="7cfc8-111">Printing and Print System Management</span></span>](../../../../docs/framework/wpf/advanced/printing-and-print-system-management.md)  
+## <a name="in-this-section"></a><span data-ttu-id="081c0-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="081c0-105">In This Section</span></span>  
+ [<span data-ttu-id="081c0-106">WPF のドキュメント</span><span class="sxs-lookup"><span data-stu-id="081c0-106">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="081c0-107">ドキュメントのシリアル化および保存</span><span class="sxs-lookup"><span data-stu-id="081c0-107">Document Serialization and Storage</span></span>](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)  
+ [<span data-ttu-id="081c0-108">コメント</span><span class="sxs-lookup"><span data-stu-id="081c0-108">Annotations</span></span>](../../../../docs/framework/wpf/advanced/annotations.md)  
+ [<span data-ttu-id="081c0-109">フロー コンテンツ</span><span class="sxs-lookup"><span data-stu-id="081c0-109">Flow Content</span></span>](../../../../docs/framework/wpf/advanced/flow-content.md)  
+ [<span data-ttu-id="081c0-110">タイポグラフィ</span><span class="sxs-lookup"><span data-stu-id="081c0-110">Typography</span></span>](../../../../docs/framework/wpf/advanced/typography.md)  
+ [<span data-ttu-id="081c0-111">印刷および印刷システムの管理</span><span class="sxs-lookup"><span data-stu-id="081c0-111">Printing and Print System Management</span></span>](../../../../docs/framework/wpf/advanced/printing-and-print-system-management.md)  
   
-## <a name="see-also"></a><span data-ttu-id="7cfc8-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="7cfc8-112">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="081c0-112">参照</span><span class="sxs-lookup"><span data-stu-id="081c0-112">See Also</span></span>  
  <xref:System.Windows.Controls.DocumentViewer>  
  <xref:System.Windows.Documents.FlowDocument>  
  <xref:System.Windows.Xps>  
- [<span data-ttu-id="7cfc8-113">isXPS.exe (isXPS 適合性ツール)</span><span class="sxs-lookup"><span data-stu-id="7cfc8-113">isXPS.exe (isXPS Conformance Tool)</span></span>](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3)
+ [<span data-ttu-id="081c0-113">isXPS.exe (isXPS 適合性ツール)</span><span class="sxs-lookup"><span data-stu-id="081c0-113">isXPS.exe (isXPS Conformance Tool)</span></span>](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3)

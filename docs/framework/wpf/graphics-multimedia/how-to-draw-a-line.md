@@ -17,26 +17,27 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4911aea91416fb84e9a18d54c145b494737ef9dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88d667e8654f72226dc609a14aec650effe2d5c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-draw-a-line"></a><span data-ttu-id="a85b6-102">方法 : 線を描画する</span><span class="sxs-lookup"><span data-stu-id="a85b6-102">How to: Draw a Line</span></span>
-<span data-ttu-id="a85b6-103">この例を使用して線を描画する方法を示します、<xref:System.Windows.Shapes.Line>要素。</span><span class="sxs-lookup"><span data-stu-id="a85b6-103">This example shows you how to draw lines by using the <xref:System.Windows.Shapes.Line> element.</span></span>  
+# <a name="how-to-draw-a-line"></a><span data-ttu-id="d346d-102">方法 : 線を描画する</span><span class="sxs-lookup"><span data-stu-id="d346d-102">How to: Draw a Line</span></span>
+<span data-ttu-id="d346d-103">この例を使用して線を描画する方法を示します、<xref:System.Windows.Shapes.Line>要素。</span><span class="sxs-lookup"><span data-stu-id="d346d-103">This example shows you how to draw lines by using the <xref:System.Windows.Shapes.Line> element.</span></span>  
   
- <span data-ttu-id="a85b6-104">線を描画するには、作成、<xref:System.Windows.Shapes.Line>要素。</span><span class="sxs-lookup"><span data-stu-id="a85b6-104">To draw a line, create a <xref:System.Windows.Shapes.Line> element.</span></span> <span data-ttu-id="a85b6-105">使用してその<xref:System.Windows.Shapes.Line.X1%2A>と<xref:System.Windows.Shapes.Line.Y1%2A>; 始点を設定して使用するプロパティの<xref:System.Windows.Shapes.Line.X2%2A>と<xref:System.Windows.Shapes.Line.Y2%2A>終了点を設定するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="a85b6-105">Use its <xref:System.Windows.Shapes.Line.X1%2A> and <xref:System.Windows.Shapes.Line.Y1%2A> properties to set its start point; and use its <xref:System.Windows.Shapes.Line.X2%2A> and <xref:System.Windows.Shapes.Line.Y2%2A> properties to set its end point.</span></span> <span data-ttu-id="a85b6-106">最後に、設定、<xref:System.Windows.Shapes.Shape.Stroke%2A>と<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>線なしの行が表示されないためです。</span><span class="sxs-lookup"><span data-stu-id="a85b6-106">Finally, set its <xref:System.Windows.Shapes.Shape.Stroke%2A> and <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> because a line without a stroke is invisible.</span></span>  
+ <span data-ttu-id="d346d-104">線を描画するには、作成、<xref:System.Windows.Shapes.Line>要素。</span><span class="sxs-lookup"><span data-stu-id="d346d-104">To draw a line, create a <xref:System.Windows.Shapes.Line> element.</span></span> <span data-ttu-id="d346d-105">使用してその<xref:System.Windows.Shapes.Line.X1%2A>と<xref:System.Windows.Shapes.Line.Y1%2A>; 始点を設定して使用するプロパティの<xref:System.Windows.Shapes.Line.X2%2A>と<xref:System.Windows.Shapes.Line.Y2%2A>終了点を設定するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="d346d-105">Use its <xref:System.Windows.Shapes.Line.X1%2A> and <xref:System.Windows.Shapes.Line.Y1%2A> properties to set its start point; and use its <xref:System.Windows.Shapes.Line.X2%2A> and <xref:System.Windows.Shapes.Line.Y2%2A> properties to set its end point.</span></span> <span data-ttu-id="d346d-106">最後に、設定、<xref:System.Windows.Shapes.Shape.Stroke%2A>と<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>線なしの行が表示されないためです。</span><span class="sxs-lookup"><span data-stu-id="d346d-106">Finally, set its <xref:System.Windows.Shapes.Shape.Stroke%2A> and <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> because a line without a stroke is invisible.</span></span>  
   
- <span data-ttu-id="a85b6-107">設定、<xref:System.Windows.Shapes.Shape.Fill%2A>行の要素も何も起こりません、行には、内部があるないためです。</span><span class="sxs-lookup"><span data-stu-id="a85b6-107">Setting the <xref:System.Windows.Shapes.Shape.Fill%2A> element for a line has no effect, because a line has no interior.</span></span>  
+ <span data-ttu-id="d346d-107">設定、<xref:System.Windows.Shapes.Shape.Fill%2A>行の要素も何も起こりません、行には、内部があるないためです。</span><span class="sxs-lookup"><span data-stu-id="d346d-107">Setting the <xref:System.Windows.Shapes.Shape.Fill%2A> element for a line has no effect, because a line has no interior.</span></span>  
   
- <span data-ttu-id="a85b6-108">次の例は、内の次の 3 つの線を描画する<xref:System.Windows.Controls.Canvas>要素。</span><span class="sxs-lookup"><span data-stu-id="a85b6-108">The following example draws three lines inside a <xref:System.Windows.Controls.Canvas> element.</span></span>  
+ <span data-ttu-id="d346d-108">次の例は、内の次の 3 つの線を描画する<xref:System.Windows.Controls.Canvas>要素。</span><span class="sxs-lookup"><span data-stu-id="d346d-108">The following example draws three lines inside a <xref:System.Windows.Controls.Canvas> element.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="a85b6-109">例</span><span class="sxs-lookup"><span data-stu-id="a85b6-109">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="d346d-109">例</span><span class="sxs-lookup"><span data-stu-id="d346d-109">Example</span></span>  
  [!code-xaml[drawingwithshapeelements#LineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
   
- <span data-ttu-id="a85b6-110">この例より大きなサンプルの一部サンプル全体については、次を参照してください。[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)です。</span><span class="sxs-lookup"><span data-stu-id="a85b6-110">This example is part of a larger sample; for the complete sample, see [Shape Elements Sample](http://go.microsoft.com/fwlink/?LinkID=160037).</span></span>  
+ <span data-ttu-id="d346d-110">この例より大きなサンプルの一部サンプル全体については、次を参照してください。[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)です。</span><span class="sxs-lookup"><span data-stu-id="d346d-110">This example is part of a larger sample; for the complete sample, see [Shape Elements Sample](http://go.microsoft.com/fwlink/?LinkID=160037).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a85b6-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="a85b6-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d346d-111">参照</span><span class="sxs-lookup"><span data-stu-id="d346d-111">See Also</span></span>  
  <xref:System.Windows.Shapes.Line>  
- [<span data-ttu-id="a85b6-112">図形要素のサンプル</span><span class="sxs-lookup"><span data-stu-id="a85b6-112">Shape Elements Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160037)
+ [<span data-ttu-id="d346d-112">図形要素のサンプル</span><span class="sxs-lookup"><span data-stu-id="d346d-112">Shape Elements Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160037)

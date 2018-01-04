@@ -17,36 +17,37 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e58fbb6a577354f862d4b4d79e947e7618bd75a0
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 472bb286f57701342be82d4a981714236e147932
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="flow-content-elements-how-to-topics"></a><span data-ttu-id="25a33-102">フロー コンテンツ要素に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="25a33-102">Flow Content Elements How-to Topics</span></span>
-<span data-ttu-id="25a33-103">このセクションのトピックでは、さまざまなフロー コンテンツ要素および関連機能を使用した共通タスクを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="25a33-103">The topics in this section describe how to accomplish common tasks using various flow content elements and related features.</span></span>  
+# <a name="flow-content-elements-how-to-topics"></a><span data-ttu-id="9be9b-102">フロー コンテンツ要素に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="9be9b-102">Flow Content Elements How-to Topics</span></span>
+<span data-ttu-id="9be9b-103">このセクションのトピックでは、さまざまなフロー コンテンツ要素および関連機能を使用した共通タスクを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9be9b-103">The topics in this section describe how to accomplish common tasks using various flow content elements and related features.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="25a33-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="25a33-104">In This Section</span></span>  
- [<span data-ttu-id="25a33-105">段落間の間隔を調整する</span><span class="sxs-lookup"><span data-stu-id="25a33-105">Adjust Spacing Between Paragraphs</span></span>](../../../../docs/framework/wpf/advanced/how-to-adjust-spacing-between-paragraphs.md)  
- [<span data-ttu-id="25a33-106">プログラムによってテーブルをビルドする</span><span class="sxs-lookup"><span data-stu-id="25a33-106">Build a Table Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
- [<span data-ttu-id="25a33-107">プログラムによってコンテンツの FlowDirection を変更する</span><span class="sxs-lookup"><span data-stu-id="25a33-107">Change the FlowDirection of Content Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-flowdirection-of-content-programmatically.md)  
- [<span data-ttu-id="25a33-108">TextWrapping プロパティをプログラムにより変更する</span><span class="sxs-lookup"><span data-stu-id="25a33-108">Change the TextWrapping Property Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-textwrapping-property-programmatically.md)  
- [<span data-ttu-id="25a33-109">XAML を使用してテーブルを定義する</span><span class="sxs-lookup"><span data-stu-id="25a33-109">Define a Table with XAML</span></span>](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
- [<span data-ttu-id="25a33-110">テキストの文字体裁を変更する</span><span class="sxs-lookup"><span data-stu-id="25a33-110">Alter the Typography of Text</span></span>](../../../../docs/framework/wpf/advanced/how-to-alter-the-typography-of-text.md)  
- [<span data-ttu-id="25a33-111">テキストのトリミングを有効にする</span><span class="sxs-lookup"><span data-stu-id="25a33-111">Enable Text Trimming</span></span>](../../../../docs/framework/wpf/advanced/how-to-enable-text-trimming.md)  
- [<span data-ttu-id="25a33-112">プログラムでテキストに要素を挿入する</span><span class="sxs-lookup"><span data-stu-id="25a33-112">Insert an Element Into Text Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-insert-an-element-into-text-programmatically.md)  
- [<span data-ttu-id="25a33-113">Blocks プロパティを介してフロー コンテンツ要素を操作する</span><span class="sxs-lookup"><span data-stu-id="25a33-113">Manipulate Flow Content Elements through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
- [<span data-ttu-id="25a33-114">Inlines プロパティを介してフロー コンテンツ要素を操作する</span><span class="sxs-lookup"><span data-stu-id="25a33-114">Manipulate Flow Content Elements through the Inlines Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-inlines-property.md)  
- [<span data-ttu-id="25a33-115">Blocks プロパティを介して FlowDocument を操作する</span><span class="sxs-lookup"><span data-stu-id="25a33-115">Manipulate a FlowDocument through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
- [<span data-ttu-id="25a33-116">Columns プロパティによってテーブルの列を操作する</span><span class="sxs-lookup"><span data-stu-id="25a33-116">Manipulate a Table's Columns through the Columns Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
- [<span data-ttu-id="25a33-117">RowGroups プロパティを介してテーブルの行グループを操作する</span><span class="sxs-lookup"><span data-stu-id="25a33-117">Manipulate a Table's Row Groups through the RowGroups Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
- [<span data-ttu-id="25a33-118">フロー コンテンツ要素を使用する</span><span class="sxs-lookup"><span data-stu-id="25a33-118">Use Flow Content Elements</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)  
- [<span data-ttu-id="25a33-119">FlowDocument の列区切り属性を使用する</span><span class="sxs-lookup"><span data-stu-id="25a33-119">Use FlowDocument Column-Separating Attributes</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flowdocument-column-separating-attributes.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9be9b-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="9be9b-104">In This Section</span></span>  
+ [<span data-ttu-id="9be9b-105">段落間の間隔を調整する</span><span class="sxs-lookup"><span data-stu-id="9be9b-105">Adjust Spacing Between Paragraphs</span></span>](../../../../docs/framework/wpf/advanced/how-to-adjust-spacing-between-paragraphs.md)  
+ [<span data-ttu-id="9be9b-106">プログラムによってテーブルをビルドする</span><span class="sxs-lookup"><span data-stu-id="9be9b-106">Build a Table Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  
+ [<span data-ttu-id="9be9b-107">プログラムによってコンテンツの FlowDirection を変更する</span><span class="sxs-lookup"><span data-stu-id="9be9b-107">Change the FlowDirection of Content Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-flowdirection-of-content-programmatically.md)  
+ [<span data-ttu-id="9be9b-108">TextWrapping プロパティをプログラムにより変更する</span><span class="sxs-lookup"><span data-stu-id="9be9b-108">Change the TextWrapping Property Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-textwrapping-property-programmatically.md)  
+ [<span data-ttu-id="9be9b-109">XAML を使用してテーブルを定義する</span><span class="sxs-lookup"><span data-stu-id="9be9b-109">Define a Table with XAML</span></span>](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
+ [<span data-ttu-id="9be9b-110">テキストの文字体裁を変更する</span><span class="sxs-lookup"><span data-stu-id="9be9b-110">Alter the Typography of Text</span></span>](../../../../docs/framework/wpf/advanced/how-to-alter-the-typography-of-text.md)  
+ [<span data-ttu-id="9be9b-111">テキストのトリミングを有効にする</span><span class="sxs-lookup"><span data-stu-id="9be9b-111">Enable Text Trimming</span></span>](../../../../docs/framework/wpf/advanced/how-to-enable-text-trimming.md)  
+ [<span data-ttu-id="9be9b-112">プログラムでテキストに要素を挿入する</span><span class="sxs-lookup"><span data-stu-id="9be9b-112">Insert an Element Into Text Programmatically</span></span>](../../../../docs/framework/wpf/advanced/how-to-insert-an-element-into-text-programmatically.md)  
+ [<span data-ttu-id="9be9b-113">Blocks プロパティを介してフロー コンテンツ要素を操作する</span><span class="sxs-lookup"><span data-stu-id="9be9b-113">Manipulate Flow Content Elements through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
+ [<span data-ttu-id="9be9b-114">Inlines プロパティを介してフロー コンテンツ要素を操作する</span><span class="sxs-lookup"><span data-stu-id="9be9b-114">Manipulate Flow Content Elements through the Inlines Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-inlines-property.md)  
+ [<span data-ttu-id="9be9b-115">Blocks プロパティを介して FlowDocument を操作する</span><span class="sxs-lookup"><span data-stu-id="9be9b-115">Manipulate a FlowDocument through the Blocks Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
+ [<span data-ttu-id="9be9b-116">Columns プロパティによってテーブルの列を操作する</span><span class="sxs-lookup"><span data-stu-id="9be9b-116">Manipulate a Table's Columns through the Columns Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
+ [<span data-ttu-id="9be9b-117">RowGroups プロパティを介してテーブルの行グループを操作する</span><span class="sxs-lookup"><span data-stu-id="9be9b-117">Manipulate a Table's Row Groups through the RowGroups Property</span></span>](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
+ [<span data-ttu-id="9be9b-118">フロー コンテンツ要素を使用する</span><span class="sxs-lookup"><span data-stu-id="9be9b-118">Use Flow Content Elements</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)  
+ [<span data-ttu-id="9be9b-119">FlowDocument の列区切り属性を使用する</span><span class="sxs-lookup"><span data-stu-id="9be9b-119">Use FlowDocument Column-Separating Attributes</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flowdocument-column-separating-attributes.md)  
   
-## <a name="reference"></a><span data-ttu-id="25a33-120">参照</span><span class="sxs-lookup"><span data-stu-id="25a33-120">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="9be9b-120">参照</span><span class="sxs-lookup"><span data-stu-id="9be9b-120">Reference</span></span>  
  <xref:System.Windows.Documents.FlowDocument>  
   <xref:System.Windows.Documents.Block>  
   <xref:System.Windows.Documents.Inline>  
   
-## <a name="related-sections"></a><span data-ttu-id="25a33-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="25a33-121">Related Sections</span></span>  
- [<span data-ttu-id="25a33-122">WPF のドキュメント</span><span class="sxs-lookup"><span data-stu-id="25a33-122">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="9be9b-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="9be9b-121">Related Sections</span></span>  
+ [<span data-ttu-id="9be9b-122">WPF のドキュメント</span><span class="sxs-lookup"><span data-stu-id="9be9b-122">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)

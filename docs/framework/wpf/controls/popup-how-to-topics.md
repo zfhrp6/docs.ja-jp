@@ -17,21 +17,22 @@ caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6853b915cb133b2ea1cbc0579f3eb59e1e956f5e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: dfe53e4782fda95142a9eaa8ab10227f5353612b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="popup-how-to-topics"></a><span data-ttu-id="4f62f-102">ポップアップに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="4f62f-102">Popup How-to Topics</span></span>
-<span data-ttu-id="4f62f-103">このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Primitives.Popup>コントロールに現在のアプリケーション ウィンドウで別のウィンドウでコンテンツを表示します。</span><span class="sxs-lookup"><span data-stu-id="4f62f-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Primitives.Popup> control to display content in a separate window that floats over the current application window.</span></span>  
+# <a name="popup-how-to-topics"></a><span data-ttu-id="053e1-102">ポップアップに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="053e1-102">Popup How-to Topics</span></span>
+<span data-ttu-id="053e1-103">このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Primitives.Popup>コントロールに現在のアプリケーション ウィンドウで別のウィンドウでコンテンツを表示します。</span><span class="sxs-lookup"><span data-stu-id="053e1-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Primitives.Popup> control to display content in a separate window that floats over the current application window.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4f62f-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="4f62f-104">In This Section</span></span>  
- [<span data-ttu-id="4f62f-105">ポップアップをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="4f62f-105">Animate a Popup</span></span>](../../../../docs/framework/wpf/controls/how-to-animate-a-popup.md)  
- [<span data-ttu-id="4f62f-106">ポップアップのカスタム位置を指定する</span><span class="sxs-lookup"><span data-stu-id="4f62f-106">Specify a Custom Popup Position</span></span>](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)  
+## <a name="in-this-section"></a><span data-ttu-id="053e1-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="053e1-104">In This Section</span></span>  
+ [<span data-ttu-id="053e1-105">ポップアップをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="053e1-105">Animate a Popup</span></span>](../../../../docs/framework/wpf/controls/how-to-animate-a-popup.md)  
+ [<span data-ttu-id="053e1-106">ポップアップのカスタム位置を指定する</span><span class="sxs-lookup"><span data-stu-id="053e1-106">Specify a Custom Popup Position</span></span>](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)  
   
-## <a name="reference"></a><span data-ttu-id="4f62f-107">参照</span><span class="sxs-lookup"><span data-stu-id="4f62f-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="053e1-107">参照</span><span class="sxs-lookup"><span data-stu-id="053e1-107">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="4f62f-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="4f62f-108">Related Sections</span></span>  
- [<span data-ttu-id="4f62f-109">ポップアップの概要</span><span class="sxs-lookup"><span data-stu-id="4f62f-109">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)
+## <a name="related-sections"></a><span data-ttu-id="053e1-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="053e1-108">Related Sections</span></span>  
+ [<span data-ttu-id="053e1-109">ポップアップの概要</span><span class="sxs-lookup"><span data-stu-id="053e1-109">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)

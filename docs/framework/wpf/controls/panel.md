@@ -18,20 +18,21 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a73772ddb9d9344e53bf4df71775f1f17e179342
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1a74bf246a66f54e274833c2c9f04f8da0f48a0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="panel"></a><span data-ttu-id="96825-102">パネル</span><span class="sxs-lookup"><span data-stu-id="96825-102">Panel</span></span>
-<span data-ttu-id="96825-103"><xref:System.Windows.Controls.Panel>アプリケーションのレイアウトをサポートするすべての要素の基底クラスは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="96825-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="panel"></a><span data-ttu-id="0ffac-102">パネル</span><span class="sxs-lookup"><span data-stu-id="0ffac-102">Panel</span></span>
+<span data-ttu-id="0ffac-103"><xref:System.Windows.Controls.Panel>アプリケーションのレイアウトをサポートするすべての要素の基底クラスは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="0ffac-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="96825-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="96825-104">In This Section</span></span>  
- [<span data-ttu-id="96825-105">パネルの概要</span><span class="sxs-lookup"><span data-stu-id="96825-105">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [<span data-ttu-id="96825-106">方法トピック</span><span class="sxs-lookup"><span data-stu-id="96825-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="0ffac-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="0ffac-104">In This Section</span></span>  
+ [<span data-ttu-id="0ffac-105">パネルの概要</span><span class="sxs-lookup"><span data-stu-id="0ffac-105">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [<span data-ttu-id="0ffac-106">方法トピック</span><span class="sxs-lookup"><span data-stu-id="0ffac-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="96825-107">参照</span><span class="sxs-lookup"><span data-stu-id="96825-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="0ffac-107">参照</span><span class="sxs-lookup"><span data-stu-id="0ffac-107">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -46,9 +47,9 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="96825-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="96825-108">Related Sections</span></span>  
- [<span data-ttu-id="96825-109">レイアウト</span><span class="sxs-lookup"><span data-stu-id="96825-109">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="0ffac-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="0ffac-108">Related Sections</span></span>  
+ [<span data-ttu-id="0ffac-109">レイアウト</span><span class="sxs-lookup"><span data-stu-id="0ffac-109">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="96825-110">チュートリアル: 初めての WPF デスクトップ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="96825-110">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="0ffac-110">チュートリアル: 初めての WPF デスクトップ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="0ffac-110">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="96825-111">ScrollViewer の概要</span><span class="sxs-lookup"><span data-stu-id="96825-111">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="0ffac-111">ScrollViewer の概要</span><span class="sxs-lookup"><span data-stu-id="0ffac-111">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

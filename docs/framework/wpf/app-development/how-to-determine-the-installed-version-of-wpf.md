@@ -14,23 +14,24 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 60f2dd65702a5dfcff4cbafa97e5a48080b8e5be
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: cf58e8e8ade7382d8a897a3ec59bef0c810a48bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-determine-the-installed-version-of-wpf"></a><span data-ttu-id="0ab12-102">方法: インストールされている WPF のバージョンを確認する</span><span class="sxs-lookup"><span data-stu-id="0ab12-102">How to: Determine the Installed Version of WPF</span></span>
-<span data-ttu-id="0ab12-103">現在インストールされているバージョンのバージョン番号[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]内にある、**レジストリ**です。</span><span class="sxs-lookup"><span data-stu-id="0ab12-103">The version number for the current installed version of [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] is located in the **Registry**.</span></span>  
+# <a name="how-to-determine-the-installed-version-of-wpf"></a><span data-ttu-id="7442c-102">方法: インストールされている WPF のバージョンを確認する</span><span class="sxs-lookup"><span data-stu-id="7442c-102">How to: Determine the Installed Version of WPF</span></span>
+<span data-ttu-id="7442c-103">現在インストールされているバージョンのバージョン番号[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]内にある、**レジストリ**です。</span><span class="sxs-lookup"><span data-stu-id="7442c-103">The version number for the current installed version of [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] is located in the **Registry**.</span></span>  
   
- <span data-ttu-id="0ab12-104">バージョン番号を検索するには。</span><span class="sxs-lookup"><span data-stu-id="0ab12-104">To find the version number:</span></span>  
+ <span data-ttu-id="7442c-104">バージョン番号を検索するには。</span><span class="sxs-lookup"><span data-stu-id="7442c-104">To find the version number:</span></span>  
   
-1.  <span data-ttu-id="0ab12-105">**[スタート]** メニューで、 **[ファイル名を指定して実行]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="0ab12-105">On the **Start** menu, click **Run**.</span></span>  
+1.  <span data-ttu-id="7442c-105">**[スタート]** メニューで、 **[ファイル名を指定して実行]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7442c-105">On the **Start** menu, click **Run**.</span></span>  
   
-2.  <span data-ttu-id="0ab12-106">**開く**、型**regedit.exe**です。</span><span class="sxs-lookup"><span data-stu-id="0ab12-106">In **Open**, type **regedit.exe**.</span></span>  
+2.  <span data-ttu-id="7442c-106">**開く**、型**regedit.exe**です。</span><span class="sxs-lookup"><span data-stu-id="7442c-106">In **Open**, type **regedit.exe**.</span></span>  
   
-3.  <span data-ttu-id="0ab12-107">次のキーを開きます。</span><span class="sxs-lookup"><span data-stu-id="0ab12-107">Open the following key:</span></span>  
+3.  <span data-ttu-id="7442c-107">次のキーを開きます。</span><span class="sxs-lookup"><span data-stu-id="7442c-107">Open the following key:</span></span>  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.0\Setup\Windows Presentation Foundation`  
   
- <span data-ttu-id="0ab12-108">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]にバージョン番号が格納されている、**バージョン**値。</span><span class="sxs-lookup"><span data-stu-id="0ab12-108">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] version number is stored in the **Version** value.</span></span>
+ <span data-ttu-id="7442c-108">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]にバージョン番号が格納されている、**バージョン**値。</span><span class="sxs-lookup"><span data-stu-id="7442c-108">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] version number is stored in the **Version** value.</span></span>

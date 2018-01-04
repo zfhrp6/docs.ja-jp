@@ -17,40 +17,41 @@ caps.latest.revision: "79"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 30310b08f33d0f8c4b854635ba41565bce439c05
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 3d2d3bd20a35f5d4b28f0ab4aaba02fdd19a3ee9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="imaging-how-to-topics"></a><span data-ttu-id="5360c-102">イメージングに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="5360c-102">Imaging How-to Topics</span></span>
-<span data-ttu-id="5360c-103">このセクションのトピックでは、使用する方法をデモンストレーション[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]を表示またはビットマップ イメージを変更するためにします。</span><span class="sxs-lookup"><span data-stu-id="5360c-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] in order to display or alter bitmap images.</span></span>  
+# <a name="imaging-how-to-topics"></a><span data-ttu-id="b875b-102">イメージングに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="b875b-102">Imaging How-to Topics</span></span>
+<span data-ttu-id="b875b-103">このセクションのトピックでは、使用する方法をデモンストレーション[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]を表示またはビットマップ イメージを変更するためにします。</span><span class="sxs-lookup"><span data-stu-id="b875b-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] in order to display or alter bitmap images.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5360c-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="5360c-104">In This Section</span></span>  
- [<span data-ttu-id="5360c-105">XAML で BitmapImage を使用する</span><span class="sxs-lookup"><span data-stu-id="5360c-105">Use a BitmapImage in XAML</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-bitmapimage.md)  
- [<span data-ttu-id="5360c-106">サムネイルとしてイメージを読み込む</span><span class="sxs-lookup"><span data-stu-id="5360c-106">Load an Image as a Thumbnail</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-load-an-image-as-a-thumbnail.md)  
- [<span data-ttu-id="5360c-107">BitmapImage に変換を適用する</span><span class="sxs-lookup"><span data-stu-id="5360c-107">Apply a Transform to a Bitmap Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-a-bitmapimage.md)  
- [<span data-ttu-id="5360c-108">ビジュアルからビットマップを作成する</span><span class="sxs-lookup"><span data-stu-id="5360c-108">Create a Bitmap from a Visual</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-bitmap-from-a-visual.md)  
- [<span data-ttu-id="5360c-109">ビジュアルをイメージ ファイルにエンコードする</span><span class="sxs-lookup"><span data-stu-id="5360c-109">Encode a Visual to an Image File</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-a-visual-to-an-image-file.md)  
- [<span data-ttu-id="5360c-110">新しい BitmapSource を作成する</span><span class="sxs-lookup"><span data-stu-id="5360c-110">Create a new BitmapSource</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-new-bitmapsource.md)  
- [<span data-ttu-id="5360c-111">BitmapSource オブジェクトをチェーンする</span><span class="sxs-lookup"><span data-stu-id="5360c-111">Chain BitmapSource Objects Together</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-chain-bitmapsource-objects-together.md)  
- [<span data-ttu-id="5360c-112">BitmapSource を別の PixelFormat に変換する</span><span class="sxs-lookup"><span data-stu-id="5360c-112">Convert a BitmapSource to a Different PixelFormat</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-convert-a-bitmapsource-to-a-different-pixelformat.md)  
- [<span data-ttu-id="5360c-113">BitmapSource をインデックス付きピクセル形式に変換する</span><span class="sxs-lookup"><span data-stu-id="5360c-113">Convert a BitmapSource to an Indexed Pixel Format</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-convert-a-bitmapsource-to-an-indexed-pixel-format.md)  
- [<span data-ttu-id="5360c-114">JPEG イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="5360c-114">Encode and Decode a JPEG Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-jpeg-image.md)  
- [<span data-ttu-id="5360c-115">BMP イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="5360c-115">Encode and Decode a BMP Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-bmp-image.md)  
- [<span data-ttu-id="5360c-116">PNG イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="5360c-116">Encode and Decode a PNG Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-png-image.md)  
- [<span data-ttu-id="5360c-117">WDP イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="5360c-117">Encode and Decode a WDP Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-wdp-image.md)  
- [<span data-ttu-id="5360c-118">GIF イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="5360c-118">Encode and Decode a GIF Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-gif-image.md)  
- [<span data-ttu-id="5360c-119">TIFF イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="5360c-119">Encode and Decode a TIFF Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-tiff-image.md)  
- [<span data-ttu-id="5360c-120">ビットマップにメタデータを書き込む</span><span class="sxs-lookup"><span data-stu-id="5360c-120">Write Metadata to a Bitmap</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-write-metadata-to-a-bitmap.md)  
- [<span data-ttu-id="5360c-121">ビットマップからメタデータを読み取る</span><span class="sxs-lookup"><span data-stu-id="5360c-121">Read Metadata from a Bitmap</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-read-metadata-from-a-bitmap.md)  
+## <a name="in-this-section"></a><span data-ttu-id="b875b-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="b875b-104">In This Section</span></span>  
+ [<span data-ttu-id="b875b-105">XAML で BitmapImage を使用する</span><span class="sxs-lookup"><span data-stu-id="b875b-105">Use a BitmapImage in XAML</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-bitmapimage.md)  
+ [<span data-ttu-id="b875b-106">サムネイルとしてイメージを読み込む</span><span class="sxs-lookup"><span data-stu-id="b875b-106">Load an Image as a Thumbnail</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-load-an-image-as-a-thumbnail.md)  
+ [<span data-ttu-id="b875b-107">BitmapImage に変換を適用する</span><span class="sxs-lookup"><span data-stu-id="b875b-107">Apply a Transform to a Bitmap Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-a-bitmapimage.md)  
+ [<span data-ttu-id="b875b-108">ビジュアルからビットマップを作成する</span><span class="sxs-lookup"><span data-stu-id="b875b-108">Create a Bitmap from a Visual</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-bitmap-from-a-visual.md)  
+ [<span data-ttu-id="b875b-109">ビジュアルをイメージ ファイルにエンコードする</span><span class="sxs-lookup"><span data-stu-id="b875b-109">Encode a Visual to an Image File</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-a-visual-to-an-image-file.md)  
+ [<span data-ttu-id="b875b-110">新しい BitmapSource を作成する</span><span class="sxs-lookup"><span data-stu-id="b875b-110">Create a new BitmapSource</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-new-bitmapsource.md)  
+ [<span data-ttu-id="b875b-111">BitmapSource オブジェクトをチェーンする</span><span class="sxs-lookup"><span data-stu-id="b875b-111">Chain BitmapSource Objects Together</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-chain-bitmapsource-objects-together.md)  
+ [<span data-ttu-id="b875b-112">BitmapSource を別の PixelFormat に変換する</span><span class="sxs-lookup"><span data-stu-id="b875b-112">Convert a BitmapSource to a Different PixelFormat</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-convert-a-bitmapsource-to-a-different-pixelformat.md)  
+ [<span data-ttu-id="b875b-113">BitmapSource をインデックス付きピクセル形式に変換する</span><span class="sxs-lookup"><span data-stu-id="b875b-113">Convert a BitmapSource to an Indexed Pixel Format</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-convert-a-bitmapsource-to-an-indexed-pixel-format.md)  
+ [<span data-ttu-id="b875b-114">JPEG イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="b875b-114">Encode and Decode a JPEG Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-jpeg-image.md)  
+ [<span data-ttu-id="b875b-115">BMP イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="b875b-115">Encode and Decode a BMP Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-bmp-image.md)  
+ [<span data-ttu-id="b875b-116">PNG イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="b875b-116">Encode and Decode a PNG Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-png-image.md)  
+ [<span data-ttu-id="b875b-117">WDP イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="b875b-117">Encode and Decode a WDP Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-wdp-image.md)  
+ [<span data-ttu-id="b875b-118">GIF イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="b875b-118">Encode and Decode a GIF Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-gif-image.md)  
+ [<span data-ttu-id="b875b-119">TIFF イメージのエンコードおよびデコード</span><span class="sxs-lookup"><span data-stu-id="b875b-119">Encode and Decode a TIFF Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-tiff-image.md)  
+ [<span data-ttu-id="b875b-120">ビットマップにメタデータを書き込む</span><span class="sxs-lookup"><span data-stu-id="b875b-120">Write Metadata to a Bitmap</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-write-metadata-to-a-bitmap.md)  
+ [<span data-ttu-id="b875b-121">ビットマップからメタデータを読み取る</span><span class="sxs-lookup"><span data-stu-id="b875b-121">Read Metadata from a Bitmap</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-read-metadata-from-a-bitmap.md)  
   
-## <a name="reference"></a><span data-ttu-id="5360c-122">参照</span><span class="sxs-lookup"><span data-stu-id="5360c-122">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="b875b-122">参照</span><span class="sxs-lookup"><span data-stu-id="b875b-122">Reference</span></span>  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
-## <a name="see-also"></a><span data-ttu-id="5360c-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="5360c-123">See Also</span></span>  
- [<span data-ttu-id="5360c-124">イメージングの概要</span><span class="sxs-lookup"><span data-stu-id="5360c-124">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+## <a name="see-also"></a><span data-ttu-id="b875b-123">参照</span><span class="sxs-lookup"><span data-stu-id="b875b-123">See Also</span></span>  
+ [<span data-ttu-id="b875b-124">イメージングの概要</span><span class="sxs-lookup"><span data-stu-id="b875b-124">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)

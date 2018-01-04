@@ -17,21 +17,22 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f09c1aac387d26d44398331d62b25e588d4bbdc1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d9bec0b3edd6a5ab3997c42e3b8154f0c41531d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="control-customization"></a><span data-ttu-id="a5b17-102">コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="a5b17-102">Control Customization</span></span>
-<span data-ttu-id="a5b17-103">このカテゴリにはさまざまな基本クラス、インターフェイス、およびその他の要素および完全に機能の作成に使用される概念[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]コントロール。</span><span class="sxs-lookup"><span data-stu-id="a5b17-103">This category covers the various base classes, interfaces and other elements and concepts used in creating a fully functional [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] control.</span></span>  
+# <a name="control-customization"></a><span data-ttu-id="60531-102">コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="60531-102">Control Customization</span></span>
+<span data-ttu-id="60531-103">このカテゴリにはさまざまな基本クラス、インターフェイス、およびその他の要素および完全に機能の作成に使用される概念[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]コントロール。</span><span class="sxs-lookup"><span data-stu-id="60531-103">This category covers the various base classes, interfaces and other elements and concepts used in creating a fully functional [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="a5b17-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="a5b17-104">In This Section</span></span>  
- [<span data-ttu-id="a5b17-105">コントロールの作成の概要</span><span class="sxs-lookup"><span data-stu-id="a5b17-105">Control Authoring Overview</span></span>](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
- [<span data-ttu-id="a5b17-106">スタイルの設定が可能なコントロールを設計するためのガイドライン</span><span class="sxs-lookup"><span data-stu-id="a5b17-106">Guidelines for Designing Stylable Controls</span></span>](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md)  
- [<span data-ttu-id="a5b17-107">装飾</span><span class="sxs-lookup"><span data-stu-id="a5b17-107">Adorners</span></span>](../../../../docs/framework/wpf/controls/adorners.md)  
- [<span data-ttu-id="a5b17-108">コントロールのスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="a5b17-108">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
- [<span data-ttu-id="a5b17-109">WPF カスタム コントロールの UI オートメーション</span><span class="sxs-lookup"><span data-stu-id="a5b17-109">UI Automation of a WPF Custom Control</span></span>](../../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md)  
+## <a name="in-this-section"></a><span data-ttu-id="60531-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="60531-104">In This Section</span></span>  
+ [<span data-ttu-id="60531-105">コントロールの作成の概要</span><span class="sxs-lookup"><span data-stu-id="60531-105">Control Authoring Overview</span></span>](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [<span data-ttu-id="60531-106">スタイルの設定が可能なコントロールを設計するためのガイドライン</span><span class="sxs-lookup"><span data-stu-id="60531-106">Guidelines for Designing Stylable Controls</span></span>](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md)  
+ [<span data-ttu-id="60531-107">装飾</span><span class="sxs-lookup"><span data-stu-id="60531-107">Adorners</span></span>](../../../../docs/framework/wpf/controls/adorners.md)  
+ [<span data-ttu-id="60531-108">コントロールのスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="60531-108">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="60531-109">WPF カスタム コントロールの UI オートメーション</span><span class="sxs-lookup"><span data-stu-id="60531-109">UI Automation of a WPF Custom Control</span></span>](../../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md)  
   
-## <a name="see-also"></a><span data-ttu-id="a5b17-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5b17-110">See Also</span></span>  
- [<span data-ttu-id="a5b17-111">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="a5b17-111">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a><span data-ttu-id="60531-110">参照</span><span class="sxs-lookup"><span data-stu-id="60531-110">See Also</span></span>  
+ [<span data-ttu-id="60531-111">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="60531-111">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)

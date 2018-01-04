@@ -17,28 +17,29 @@ caps.latest.revision: "61"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c34bb03e27d223c09238f658563e8a368a0c6948
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b6aee3d6161d5a20a55e05e86c8479b9182d4e0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="image-how-to-topics"></a><span data-ttu-id="29997-102">イメージに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="29997-102">Image How-to Topics</span></span>
-<span data-ttu-id="29997-103">このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Image>要素。</span><span class="sxs-lookup"><span data-stu-id="29997-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Image> element.</span></span>  
+# <a name="image-how-to-topics"></a><span data-ttu-id="93dc7-102">イメージに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="93dc7-102">Image How-to Topics</span></span>
+<span data-ttu-id="93dc7-103">このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Image>要素。</span><span class="sxs-lookup"><span data-stu-id="93dc7-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Image> element.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="29997-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="29997-104">In This Section</span></span>  
- [<span data-ttu-id="29997-105">イメージ要素を使用する</span><span class="sxs-lookup"><span data-stu-id="29997-105">Use the Image Element</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-image-element.md)  
-  [<span data-ttu-id="29997-106">イメージをグレースケールに変換する</span><span class="sxs-lookup"><span data-stu-id="29997-106">Convert an Image to Greyscale</span></span>](../../../../docs/framework/wpf/controls/how-to-convert-an-image-to-greyscale.md)  
-  [<span data-ttu-id="29997-107">イメージをトリミングする</span><span class="sxs-lookup"><span data-stu-id="29997-107">Crop an Image</span></span>](../../../../docs/framework/wpf/controls/how-to-crop-an-image.md)  
-  [<span data-ttu-id="29997-108">イメージを回転させる</span><span class="sxs-lookup"><span data-stu-id="29997-108">Rotate an Image</span></span>](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)  
+## <a name="in-this-section"></a><span data-ttu-id="93dc7-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="93dc7-104">In This Section</span></span>  
+ [<span data-ttu-id="93dc7-105">イメージ要素を使用する</span><span class="sxs-lookup"><span data-stu-id="93dc7-105">Use the Image Element</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-image-element.md)  
+  [<span data-ttu-id="93dc7-106">イメージをグレースケールに変換する</span><span class="sxs-lookup"><span data-stu-id="93dc7-106">Convert an Image to Greyscale</span></span>](../../../../docs/framework/wpf/controls/how-to-convert-an-image-to-greyscale.md)  
+  [<span data-ttu-id="93dc7-107">イメージをトリミングする</span><span class="sxs-lookup"><span data-stu-id="93dc7-107">Crop an Image</span></span>](../../../../docs/framework/wpf/controls/how-to-crop-an-image.md)  
+  [<span data-ttu-id="93dc7-108">イメージを回転させる</span><span class="sxs-lookup"><span data-stu-id="93dc7-108">Rotate an Image</span></span>](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)  
   
-## <a name="reference"></a><span data-ttu-id="29997-109">参照</span><span class="sxs-lookup"><span data-stu-id="29997-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="93dc7-109">参照</span><span class="sxs-lookup"><span data-stu-id="93dc7-109">Reference</span></span>  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
-## <a name="see-also"></a><span data-ttu-id="29997-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="29997-110">See Also</span></span>  
- [<span data-ttu-id="29997-111">イメージングの概要</span><span class="sxs-lookup"><span data-stu-id="29997-111">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [<span data-ttu-id="29997-112">方法トピック</span><span class="sxs-lookup"><span data-stu-id="29997-112">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="93dc7-110">参照</span><span class="sxs-lookup"><span data-stu-id="93dc7-110">See Also</span></span>  
+ [<span data-ttu-id="93dc7-111">イメージングの概要</span><span class="sxs-lookup"><span data-stu-id="93dc7-111">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [<span data-ttu-id="93dc7-112">方法トピック</span><span class="sxs-lookup"><span data-stu-id="93dc7-112">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)

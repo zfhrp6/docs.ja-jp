@@ -19,26 +19,27 @@ caps.latest.revision: "82"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a8935616159d2ea55e5616b6d7f4ebc4ff2c61e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2952c1c59e5a60cbc51d505d3a53e063ec3351d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="advanced-windows-presentation-foundation"></a><span data-ttu-id="95594-102">詳細設定 (Windows Presentation Foundation)</span><span class="sxs-lookup"><span data-stu-id="95594-102">Advanced (Windows Presentation Foundation)</span></span>
-<span data-ttu-id="95594-103">このセクションでは、WPF の高度な領域について説明します。</span><span class="sxs-lookup"><span data-stu-id="95594-103">This section describes some of the advanced areas in WPF.</span></span>  
+# <a name="advanced-windows-presentation-foundation"></a><span data-ttu-id="969f7-102">詳細設定 (Windows Presentation Foundation)</span><span class="sxs-lookup"><span data-stu-id="969f7-102">Advanced (Windows Presentation Foundation)</span></span>
+<span data-ttu-id="969f7-103">このセクションでは、WPF の高度な領域について説明します。</span><span class="sxs-lookup"><span data-stu-id="969f7-103">This section describes some of the advanced areas in WPF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="95594-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="95594-104">In This Section</span></span>  
- [<span data-ttu-id="95594-105">WPF アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="95594-105">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
- [<span data-ttu-id="95594-106">基本要素</span><span class="sxs-lookup"><span data-stu-id="95594-106">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)  
- [<span data-ttu-id="95594-107">要素のツリーおよびシリアル化</span><span class="sxs-lookup"><span data-stu-id="95594-107">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
- [<span data-ttu-id="95594-108">ドラッグ アンド ドロップ</span><span class="sxs-lookup"><span data-stu-id="95594-108">Drag and Drop</span></span>](../../../../docs/framework/wpf/advanced/drag-and-drop.md)  
- [<span data-ttu-id="95594-109">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="95594-109">Documents</span></span>](../../../../docs/framework/wpf/advanced/documents.md)  
- [<span data-ttu-id="95594-110">グローバライズとローカライズ</span><span class="sxs-lookup"><span data-stu-id="95594-110">Globalization and Localization</span></span>](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)  
- [<span data-ttu-id="95594-111">移行と相互運用性</span><span class="sxs-lookup"><span data-stu-id="95594-111">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
- [<span data-ttu-id="95594-112">パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="95594-112">Performance</span></span>](../../../../docs/framework/wpf/advanced/performance.md)  
- [<span data-ttu-id="95594-113">スレッド モデル</span><span class="sxs-lookup"><span data-stu-id="95594-113">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)  
- [<span data-ttu-id="95594-114">WPF のアドインの概要</span><span class="sxs-lookup"><span data-stu-id="95594-114">WPF Add-Ins Overview</span></span>](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)  
- [<span data-ttu-id="95594-115">WPF のアンマネージ API リファレンス</span><span class="sxs-lookup"><span data-stu-id="95594-115">Unmanaged WPF API Reference</span></span>](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)  
+## <a name="in-this-section"></a><span data-ttu-id="969f7-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="969f7-104">In This Section</span></span>  
+ [<span data-ttu-id="969f7-105">WPF アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="969f7-105">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
+ [<span data-ttu-id="969f7-106">基本要素</span><span class="sxs-lookup"><span data-stu-id="969f7-106">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)  
+ [<span data-ttu-id="969f7-107">要素のツリーおよびシリアル化</span><span class="sxs-lookup"><span data-stu-id="969f7-107">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
+ [<span data-ttu-id="969f7-108">ドラッグ アンド ドロップ</span><span class="sxs-lookup"><span data-stu-id="969f7-108">Drag and Drop</span></span>](../../../../docs/framework/wpf/advanced/drag-and-drop.md)  
+ [<span data-ttu-id="969f7-109">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="969f7-109">Documents</span></span>](../../../../docs/framework/wpf/advanced/documents.md)  
+ [<span data-ttu-id="969f7-110">グローバライズとローカライズ</span><span class="sxs-lookup"><span data-stu-id="969f7-110">Globalization and Localization</span></span>](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)  
+ [<span data-ttu-id="969f7-111">移行と相互運用性</span><span class="sxs-lookup"><span data-stu-id="969f7-111">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [<span data-ttu-id="969f7-112">パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="969f7-112">Performance</span></span>](../../../../docs/framework/wpf/advanced/performance.md)  
+ [<span data-ttu-id="969f7-113">スレッド モデル</span><span class="sxs-lookup"><span data-stu-id="969f7-113">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)  
+ [<span data-ttu-id="969f7-114">WPF のアドインの概要</span><span class="sxs-lookup"><span data-stu-id="969f7-114">WPF Add-Ins Overview</span></span>](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)  
+ [<span data-ttu-id="969f7-115">WPF のアンマネージ API リファレンス</span><span class="sxs-lookup"><span data-stu-id="969f7-115">Unmanaged WPF API Reference</span></span>](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="95594-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="95594-116">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="969f7-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="969f7-116">Related Sections</span></span>

@@ -17,27 +17,28 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9a86833f2b773f1724393de091bc65a5cbb75c9b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 157e7bf7ed481afc0b797a05721a4d7973b8790b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="graphics"></a><span data-ttu-id="90275-102">グラフィックス</span><span class="sxs-lookup"><span data-stu-id="90275-102">Graphics</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="90275-103">プランには、マルチ メディア、ベクター グラフィックス、アニメーション、およびコンテンツの構成、簡単に興味深いユーザー インターフェイスとコンテンツを構築する開発者向けのサポートが統合されています。</span><span class="sxs-lookup"><span data-stu-id="90275-103"> offers integrated support for multimedia, vector graphics, animation, and content composition, making it easy for developers to build interesting user interfaces and content.</span></span>  
+# <a name="graphics"></a><span data-ttu-id="34a79-102">グラフィックス</span><span class="sxs-lookup"><span data-stu-id="34a79-102">Graphics</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="34a79-103">プランには、マルチ メディア、ベクター グラフィックス、アニメーション、およびコンテンツの構成、簡単に興味深いユーザー インターフェイスとコンテンツを構築する開発者向けのサポートが統合されています。</span><span class="sxs-lookup"><span data-stu-id="34a79-103"> offers integrated support for multimedia, vector graphics, animation, and content composition, making it easy for developers to build interesting user interfaces and content.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="90275-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="90275-104">In This Section</span></span>  
- [<span data-ttu-id="90275-105">ビットマップ効果</span><span class="sxs-lookup"><span data-stu-id="90275-105">Bitmap Effects</span></span>](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects.md)  
- [<span data-ttu-id="90275-106">ブラシ</span><span class="sxs-lookup"><span data-stu-id="90275-106">Brushes</span></span>](../../../../docs/framework/wpf/graphics-multimedia/brushes.md)  
- [<span data-ttu-id="90275-107">描画</span><span class="sxs-lookup"><span data-stu-id="90275-107">Drawings</span></span>](../../../../docs/framework/wpf/graphics-multimedia/drawings.md)  
- [<span data-ttu-id="90275-108">ジオメトリ</span><span class="sxs-lookup"><span data-stu-id="90275-108">Geometries</span></span>](../../../../docs/framework/wpf/graphics-multimedia/geometries.md)  
- [<span data-ttu-id="90275-109">イメージ</span><span class="sxs-lookup"><span data-stu-id="90275-109">Images</span></span>](../../../../docs/framework/wpf/graphics-multimedia/images.md)  
- [<span data-ttu-id="90275-110">図形</span><span class="sxs-lookup"><span data-stu-id="90275-110">Shapes</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes.md)  
- [<span data-ttu-id="90275-111">変換</span><span class="sxs-lookup"><span data-stu-id="90275-111">Transformations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/transformations.md)  
- [<span data-ttu-id="90275-112">グラフィックス レンダリングのレジストリ設定</span><span class="sxs-lookup"><span data-stu-id="90275-112">Graphics Rendering Registry Settings</span></span>](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
- [<span data-ttu-id="90275-113">方法トピック</span><span class="sxs-lookup"><span data-stu-id="90275-113">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/graphics-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="34a79-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="34a79-104">In This Section</span></span>  
+ [<span data-ttu-id="34a79-105">ビットマップ効果</span><span class="sxs-lookup"><span data-stu-id="34a79-105">Bitmap Effects</span></span>](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects.md)  
+ [<span data-ttu-id="34a79-106">ブラシ</span><span class="sxs-lookup"><span data-stu-id="34a79-106">Brushes</span></span>](../../../../docs/framework/wpf/graphics-multimedia/brushes.md)  
+ [<span data-ttu-id="34a79-107">描画</span><span class="sxs-lookup"><span data-stu-id="34a79-107">Drawings</span></span>](../../../../docs/framework/wpf/graphics-multimedia/drawings.md)  
+ [<span data-ttu-id="34a79-108">ジオメトリ</span><span class="sxs-lookup"><span data-stu-id="34a79-108">Geometries</span></span>](../../../../docs/framework/wpf/graphics-multimedia/geometries.md)  
+ [<span data-ttu-id="34a79-109">イメージ</span><span class="sxs-lookup"><span data-stu-id="34a79-109">Images</span></span>](../../../../docs/framework/wpf/graphics-multimedia/images.md)  
+ [<span data-ttu-id="34a79-110">図形</span><span class="sxs-lookup"><span data-stu-id="34a79-110">Shapes</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes.md)  
+ [<span data-ttu-id="34a79-111">変換</span><span class="sxs-lookup"><span data-stu-id="34a79-111">Transformations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/transformations.md)  
+ [<span data-ttu-id="34a79-112">グラフィックス レンダリングのレジストリ設定</span><span class="sxs-lookup"><span data-stu-id="34a79-112">Graphics Rendering Registry Settings</span></span>](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
+ [<span data-ttu-id="34a79-113">方法トピック</span><span class="sxs-lookup"><span data-stu-id="34a79-113">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/graphics-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="90275-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="90275-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="34a79-114">参照</span><span class="sxs-lookup"><span data-stu-id="34a79-114">See Also</span></span>  
  <xref:System.Windows.Shapes.Shape>  
  <xref:System.Windows.Media.Transform>  
  <xref:System.Windows.Media.Imaging.BitmapImage>  
@@ -45,6 +46,6 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Windows.Media.Drawing>  
  <xref:System.Windows.Media.Brush>  
  <xref:System.Windows.Media.Effects.BitmapEffect>  
- [<span data-ttu-id="90275-115">2D グラフィックスとイメージング</span><span class="sxs-lookup"><span data-stu-id="90275-115">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [<span data-ttu-id="90275-116">グラフィックスとマルチメディア</span><span class="sxs-lookup"><span data-stu-id="90275-116">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
- [<span data-ttu-id="90275-117">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="90275-117">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+ [<span data-ttu-id="34a79-115">2D グラフィックスとイメージング</span><span class="sxs-lookup"><span data-stu-id="34a79-115">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [<span data-ttu-id="34a79-116">グラフィックスとマルチメディア</span><span class="sxs-lookup"><span data-stu-id="34a79-116">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+ [<span data-ttu-id="34a79-117">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="34a79-117">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

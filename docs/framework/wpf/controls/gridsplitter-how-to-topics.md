@@ -17,23 +17,24 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2770f1a0c965dc956e837c5c362e5767d0c9cea
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 5256c0ffffb219776a8705dfee0409ebde07a7ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="gridsplitter-how-to-topics"></a><span data-ttu-id="346cd-102">GridSplitter に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="346cd-102">GridSplitter How-to Topics</span></span>
-<span data-ttu-id="346cd-103">このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.GridSplitter>コントロール。</span><span class="sxs-lookup"><span data-stu-id="346cd-103">The topics in this section describe how to use the <xref:System.Windows.Controls.GridSplitter> control.</span></span>  
+# <a name="gridsplitter-how-to-topics"></a><span data-ttu-id="54385-102">GridSplitter に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="54385-102">GridSplitter How-to Topics</span></span>
+<span data-ttu-id="54385-103">このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.GridSplitter>コントロール。</span><span class="sxs-lookup"><span data-stu-id="54385-103">The topics in this section describe how to use the <xref:System.Windows.Controls.GridSplitter> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="346cd-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="346cd-104">In This Section</span></span>  
- [<span data-ttu-id="346cd-105">GridSplitter を使用して行のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="346cd-105">Resize Rows with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-rows-with-a-gridsplitter.md)  
- [<span data-ttu-id="346cd-106">GridSplitter を使用して列のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="346cd-106">Resize Columns with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-columns-with-a-gridsplitter.md)  
- [<span data-ttu-id="346cd-107">GridSplitter を表示されるようにする</span><span class="sxs-lookup"><span data-stu-id="346cd-107">Make Sure That a GridSplitter Is Visible</span></span>](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md)  
+## <a name="in-this-section"></a><span data-ttu-id="54385-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="54385-104">In This Section</span></span>  
+ [<span data-ttu-id="54385-105">GridSplitter を使用して行のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="54385-105">Resize Rows with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-rows-with-a-gridsplitter.md)  
+ [<span data-ttu-id="54385-106">GridSplitter を使用して列のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="54385-106">Resize Columns with a GridSplitter</span></span>](../../../../docs/framework/wpf/controls/how-to-resize-columns-with-a-gridsplitter.md)  
+ [<span data-ttu-id="54385-107">GridSplitter を表示されるようにする</span><span class="sxs-lookup"><span data-stu-id="54385-107">Make Sure That a GridSplitter Is Visible</span></span>](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md)  
   
-## <a name="reference"></a><span data-ttu-id="346cd-108">参照</span><span class="sxs-lookup"><span data-stu-id="346cd-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="54385-108">参照</span><span class="sxs-lookup"><span data-stu-id="54385-108">Reference</span></span>  
  <xref:System.Windows.Controls.GridSplitter>  
   
  <xref:System.Windows.Controls.Grid>  
   
-## <a name="related-sections"></a><span data-ttu-id="346cd-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="346cd-109">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="54385-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="54385-109">Related Sections</span></span>

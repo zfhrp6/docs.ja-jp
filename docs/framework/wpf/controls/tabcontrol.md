@@ -17,22 +17,23 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eed0485fd823caea1f332262edd9bcd8817bc31a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cc7e81e3735baff267b09ae59b80f53f80170354
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="tabcontrol"></a><span data-ttu-id="1a5ad-102">TabControl</span><span class="sxs-lookup"><span data-stu-id="1a5ad-102">TabControl</span></span>
-<span data-ttu-id="1a5ad-103"><xref:System.Windows.Controls.TabControl>要素は、適切なタブをクリックしてアクセスされる個別のページのコンテンツを表示します。各タブには、<xref:System.Windows.Controls.TabItem>です。</span><span class="sxs-lookup"><span data-stu-id="1a5ad-103"><xref:System.Windows.Controls.TabControl> elements display content on discrete pages accessed by selecting the appropriate tab. Each tab contains a <xref:System.Windows.Controls.TabItem>.</span></span>  
+# <a name="tabcontrol"></a><span data-ttu-id="737bc-102">TabControl</span><span class="sxs-lookup"><span data-stu-id="737bc-102">TabControl</span></span>
+<span data-ttu-id="737bc-103"><xref:System.Windows.Controls.TabControl>要素は、適切なタブをクリックしてアクセスされる個別のページのコンテンツを表示します。各タブには、<xref:System.Windows.Controls.TabItem>です。</span><span class="sxs-lookup"><span data-stu-id="737bc-103"><xref:System.Windows.Controls.TabControl> elements display content on discrete pages accessed by selecting the appropriate tab. Each tab contains a <xref:System.Windows.Controls.TabItem>.</span></span>  
   
- <span data-ttu-id="1a5ad-104">次の図は、<xref:System.Windows.Controls.TabControl>です。</span><span class="sxs-lookup"><span data-stu-id="1a5ad-104">The following illustration shows a <xref:System.Windows.Controls.TabControl>.</span></span>  
+ <span data-ttu-id="737bc-104">次の図は、<xref:System.Windows.Controls.TabControl>です。</span><span class="sxs-lookup"><span data-stu-id="737bc-104">The following illustration shows a <xref:System.Windows.Controls.TabControl>.</span></span>  
   
- <span data-ttu-id="1a5ad-105">![タブ コントロール](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span><span class="sxs-lookup"><span data-stu-id="1a5ad-105">![Tab control](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span></span>  
-<span data-ttu-id="1a5ad-106">一般的な TabControl</span><span class="sxs-lookup"><span data-stu-id="1a5ad-106">Typical TabControl</span></span>  
+ <span data-ttu-id="737bc-105">![タブ コントロール](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span><span class="sxs-lookup"><span data-stu-id="737bc-105">![Tab control](../../../../docs/framework/wpf/controls/media/ss-ctl-tabcontrol.gif "SS_CTL_tabcontrol")</span></span>  
+<span data-ttu-id="737bc-106">一般的な TabControl</span><span class="sxs-lookup"><span data-stu-id="737bc-106">Typical TabControl</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="1a5ad-107">参照</span><span class="sxs-lookup"><span data-stu-id="1a5ad-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="737bc-107">参照</span><span class="sxs-lookup"><span data-stu-id="737bc-107">Reference</span></span>  
  <xref:System.Windows.Controls.TabControl>  
   <xref:System.Windows.Controls.TabItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="1a5ad-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="1a5ad-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="737bc-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="737bc-108">Related Sections</span></span>

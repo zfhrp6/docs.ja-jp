@@ -17,25 +17,26 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46e54e05d30e14ad89454a627a7436fbd3cbedbe
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 1a39badbd6e7ddfc445d674a719ba9fe82f554d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="input-wpf"></a><span data-ttu-id="d08ba-102">入力 (WPF)</span><span class="sxs-lookup"><span data-stu-id="d08ba-102">Input (WPF)</span></span>
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="d08ba-103">いくつかの種類の入力をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="d08ba-103"> includes support for several types of input.</span></span> <span data-ttu-id="d08ba-104">この入力には、テキスト、タッチ、マウス、コマンド、フォーカス、タッチ、ドラッグ アンド ドロップ、およびデジタル インクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d08ba-104">This input includes text, touch, mouse, commands, focus, touch, drag-and-drop, and digital ink.</span></span> <span data-ttu-id="d08ba-105">このセクションでは、WPF では入力に関連するトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d08ba-105">This section describes topics related to input in WPF.</span></span>  
+# <a name="input-wpf"></a><span data-ttu-id="d82f0-102">入力 (WPF)</span><span class="sxs-lookup"><span data-stu-id="d82f0-102">Input (WPF)</span></span>
+[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="d82f0-103">いくつかの種類の入力をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="d82f0-103"> includes support for several types of input.</span></span> <span data-ttu-id="d82f0-104">この入力には、テキスト、タッチ、マウス、コマンド、フォーカス、タッチ、ドラッグ アンド ドロップ、およびデジタル インクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d82f0-104">This input includes text, touch, mouse, commands, focus, touch, drag-and-drop, and digital ink.</span></span> <span data-ttu-id="d82f0-105">このセクションでは、WPF では入力に関連するトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d82f0-105">This section describes topics related to input in WPF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="d08ba-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d08ba-106">In This Section</span></span>  
- [<span data-ttu-id="d08ba-107">入力の概要</span><span class="sxs-lookup"><span data-stu-id="d08ba-107">Input Overview</span></span>](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [<span data-ttu-id="d08ba-108">コマンド実行の概要</span><span class="sxs-lookup"><span data-stu-id="d08ba-108">Commanding Overview</span></span>](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [<span data-ttu-id="d08ba-109">フォーカスの概要</span><span class="sxs-lookup"><span data-stu-id="d08ba-109">Focus Overview</span></span>](../../../../docs/framework/wpf/advanced/focus-overview.md)  
- [<span data-ttu-id="d08ba-110">コントロールのフォーカスのスタイルと FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="d08ba-110">Styling for Focus in Controls, and FocusVisualStyle</span></span>](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)  
- [<span data-ttu-id="d08ba-111">チュートリアル: 初めてのタッチ アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="d08ba-111">Walkthrough: Creating Your First Touch Application</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)  
- [<span data-ttu-id="d08ba-112">方法トピック</span><span class="sxs-lookup"><span data-stu-id="d08ba-112">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/input-and-commands-how-to-topics.md)  
- [<span data-ttu-id="d08ba-113">デジタル インク</span><span class="sxs-lookup"><span data-stu-id="d08ba-113">Digital Ink</span></span>](../../../../docs/framework/wpf/advanced/digital-ink.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d82f0-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d82f0-106">In This Section</span></span>  
+ [<span data-ttu-id="d82f0-107">入力の概要</span><span class="sxs-lookup"><span data-stu-id="d82f0-107">Input Overview</span></span>](../../../../docs/framework/wpf/advanced/input-overview.md)  
+ [<span data-ttu-id="d82f0-108">コマンド実行の概要</span><span class="sxs-lookup"><span data-stu-id="d82f0-108">Commanding Overview</span></span>](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
+ [<span data-ttu-id="d82f0-109">フォーカスの概要</span><span class="sxs-lookup"><span data-stu-id="d82f0-109">Focus Overview</span></span>](../../../../docs/framework/wpf/advanced/focus-overview.md)  
+ [<span data-ttu-id="d82f0-110">コントロールのフォーカスのスタイルと FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="d82f0-110">Styling for Focus in Controls, and FocusVisualStyle</span></span>](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)  
+ [<span data-ttu-id="d82f0-111">チュートリアル: 初めてのタッチ アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="d82f0-111">Walkthrough: Creating Your First Touch Application</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)  
+ [<span data-ttu-id="d82f0-112">方法トピック</span><span class="sxs-lookup"><span data-stu-id="d82f0-112">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/input-and-commands-how-to-topics.md)  
+ [<span data-ttu-id="d82f0-113">デジタル インク</span><span class="sxs-lookup"><span data-stu-id="d82f0-113">Digital Ink</span></span>](../../../../docs/framework/wpf/advanced/digital-ink.md)  
   
-## <a name="reference"></a><span data-ttu-id="d08ba-114">参照</span><span class="sxs-lookup"><span data-stu-id="d08ba-114">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="d82f0-114">参照</span><span class="sxs-lookup"><span data-stu-id="d82f0-114">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.FrameworkElement>  
@@ -50,6 +51,6 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.Input.FocusManager>  
   
-## <a name="related-sections"></a><span data-ttu-id="d08ba-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="d08ba-115">Related Sections</span></span>  
- [<span data-ttu-id="d08ba-116">コントロール</span><span class="sxs-lookup"><span data-stu-id="d08ba-116">Controls</span></span>](../../../../docs/framework/wpf/controls/index.md)  
-  [<span data-ttu-id="d08ba-117">イベント</span><span class="sxs-lookup"><span data-stu-id="d08ba-117">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="d82f0-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="d82f0-115">Related Sections</span></span>  
+ [<span data-ttu-id="d82f0-116">コントロール</span><span class="sxs-lookup"><span data-stu-id="d82f0-116">Controls</span></span>](../../../../docs/framework/wpf/controls/index.md)  
+  [<span data-ttu-id="d82f0-117">イベント</span><span class="sxs-lookup"><span data-stu-id="d82f0-117">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)

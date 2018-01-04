@@ -17,25 +17,26 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cad3fd6a1bdecf9d6187f3592fe4771bbb0b0e98
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 214fdff11b5b64c78b2719e66813b5210884e318
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="tooltip-how-to-topics"></a><span data-ttu-id="605c5-102">ToolTip に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="605c5-102">ToolTip How-to Topics</span></span>
-## <a name="in-this-section"></a><span data-ttu-id="605c5-103">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="605c5-103">In This Section</span></span>  
- [<span data-ttu-id="605c5-104">ToolTip を配置する</span><span class="sxs-lookup"><span data-stu-id="605c5-104">Position a ToolTip</span></span>](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)  
-  [<span data-ttu-id="605c5-105">BetweenShowDelay プロパティを使用する</span><span class="sxs-lookup"><span data-stu-id="605c5-105">Use the BetweenShowDelay Property</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)  
+# <a name="tooltip-how-to-topics"></a><span data-ttu-id="7bc5e-102">ToolTip に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="7bc5e-102">ToolTip How-to Topics</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="7bc5e-103">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7bc5e-103">In This Section</span></span>  
+ [<span data-ttu-id="7bc5e-104">ToolTip を配置する</span><span class="sxs-lookup"><span data-stu-id="7bc5e-104">Position a ToolTip</span></span>](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)  
+  [<span data-ttu-id="7bc5e-105">BetweenShowDelay プロパティを使用する</span><span class="sxs-lookup"><span data-stu-id="7bc5e-105">Use the BetweenShowDelay Property</span></span>](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)  
   
-## <a name="reference"></a><span data-ttu-id="605c5-106">参照</span><span class="sxs-lookup"><span data-stu-id="605c5-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="7bc5e-106">参照</span><span class="sxs-lookup"><span data-stu-id="7bc5e-106">Reference</span></span>  
  <xref:System.Windows.Controls.ToolTip>  
   
  <xref:System.Windows.Controls.ToolTipService>  
   
  <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="605c5-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="605c5-107">Related Sections</span></span>  
- [<span data-ttu-id="605c5-108">ポップアップの概要</span><span class="sxs-lookup"><span data-stu-id="605c5-108">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="7bc5e-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="7bc5e-107">Related Sections</span></span>  
+ [<span data-ttu-id="7bc5e-108">ポップアップの概要</span><span class="sxs-lookup"><span data-stu-id="7bc5e-108">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
   
- [<span data-ttu-id="605c5-109">方法トピック</span><span class="sxs-lookup"><span data-stu-id="605c5-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)
+ [<span data-ttu-id="7bc5e-109">方法トピック</span><span class="sxs-lookup"><span data-stu-id="7bc5e-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)

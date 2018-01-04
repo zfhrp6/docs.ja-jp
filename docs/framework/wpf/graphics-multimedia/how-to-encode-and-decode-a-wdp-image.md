@@ -24,28 +24,29 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8b97f730da7e2a305ad26b56a6ccdc14851355b5
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 209db48bfc81b416b54f91918a10c0871eee88d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-encode-and-decode-a-wdp-image"></a><span data-ttu-id="11343-102">方法: WDP イメージをエンコードおよびデコードする</span><span class="sxs-lookup"><span data-stu-id="11343-102">How to: Encode and Decode a WDP Image</span></span>
-<span data-ttu-id="11343-103">次の例は、デコードとエンコード方法を示して、 [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)] 、固有の仕様を使用するイメージ<xref:System.Windows.Media.Imaging.WmpBitmapDecoder>と<xref:System.Windows.Media.Imaging.WmpBitmapEncoder>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="11343-103">The following examples show how to decode and encode a [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)] image using the specific <xref:System.Windows.Media.Imaging.WmpBitmapDecoder> and <xref:System.Windows.Media.Imaging.WmpBitmapEncoder> objects.</span></span>  
+# <a name="how-to-encode-and-decode-a-wdp-image"></a><span data-ttu-id="f6037-102">方法: WDP イメージをエンコードおよびデコードする</span><span class="sxs-lookup"><span data-stu-id="f6037-102">How to: Encode and Decode a WDP Image</span></span>
+<span data-ttu-id="f6037-103">次の例は、デコードとエンコード方法を示して、 [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)] 、固有の仕様を使用するイメージ<xref:System.Windows.Media.Imaging.WmpBitmapDecoder>と<xref:System.Windows.Media.Imaging.WmpBitmapEncoder>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="f6037-103">The following examples show how to decode and encode a [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)] image using the specific <xref:System.Windows.Media.Imaging.WmpBitmapDecoder> and <xref:System.Windows.Media.Imaging.WmpBitmapEncoder> objects.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="11343-104">例</span><span class="sxs-lookup"><span data-stu-id="11343-104">Example</span></span>  
- <span data-ttu-id="11343-105">この例では、デコード、[!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)]を使用するイメージ、<xref:System.Windows.Media.Imaging.WmpBitmapDecoder>から、<xref:System.Uri>です。</span><span class="sxs-lookup"><span data-stu-id="11343-105">This example demonstrates how to decode a [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)] image using a <xref:System.Windows.Media.Imaging.WmpBitmapDecoder> from a <xref:System.Uri>.</span></span>  
+## <a name="example"></a><span data-ttu-id="f6037-104">例</span><span class="sxs-lookup"><span data-stu-id="f6037-104">Example</span></span>  
+ <span data-ttu-id="f6037-105">この例では、デコード、[!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)]を使用するイメージ、<xref:System.Windows.Media.Imaging.WmpBitmapDecoder>から、<xref:System.Uri>です。</span><span class="sxs-lookup"><span data-stu-id="f6037-105">This example demonstrates how to decode a [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)] image using a <xref:System.Windows.Media.Imaging.WmpBitmapDecoder> from a <xref:System.Uri>.</span></span>  
   
  [!code-cpp[WdpBitmapDecoderEncoder#1](../../../../samples/snippets/cpp/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/CPP/WDPEncoderDecoder.cpp#1)]
  [!code-csharp[WdpBitmapDecoderEncoder#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/CSharp/WDPEncoderDecoder.cs#1)]
  [!code-vb[WdpBitmapDecoderEncoder#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/VB/WDPEncoderDecoder.vb#1)]  
   
-## <a name="example"></a><span data-ttu-id="11343-106">例</span><span class="sxs-lookup"><span data-stu-id="11343-106">Example</span></span>  
- <span data-ttu-id="11343-107">この例では、エンコード、<xref:System.Windows.Media.Imaging.BitmapSource>に、[!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)]を使用するイメージ、<xref:System.Windows.Media.Imaging.WmpBitmapEncoder>です。</span><span class="sxs-lookup"><span data-stu-id="11343-107">This example demonstrates how to encode a <xref:System.Windows.Media.Imaging.BitmapSource> into a [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)] image using a <xref:System.Windows.Media.Imaging.WmpBitmapEncoder>.</span></span>  
+## <a name="example"></a><span data-ttu-id="f6037-106">例</span><span class="sxs-lookup"><span data-stu-id="f6037-106">Example</span></span>  
+ <span data-ttu-id="f6037-107">この例では、エンコード、<xref:System.Windows.Media.Imaging.BitmapSource>に、[!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)]を使用するイメージ、<xref:System.Windows.Media.Imaging.WmpBitmapEncoder>です。</span><span class="sxs-lookup"><span data-stu-id="f6037-107">This example demonstrates how to encode a <xref:System.Windows.Media.Imaging.BitmapSource> into a [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)] image using a <xref:System.Windows.Media.Imaging.WmpBitmapEncoder>.</span></span>  
   
  [!code-cpp[WdpBitmapDecoderEncoder#4](../../../../samples/snippets/cpp/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/CPP/WDPEncoderDecoder.cpp#4)]
  [!code-csharp[WdpBitmapDecoderEncoder#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/CSharp/WDPEncoderDecoder.cs#4)]
  [!code-vb[WdpBitmapDecoderEncoder#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/VB/WDPEncoderDecoder.vb#4)]  
   
-## <a name="see-also"></a><span data-ttu-id="11343-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="11343-108">See Also</span></span>  
- [<span data-ttu-id="11343-109">イメージングの概要</span><span class="sxs-lookup"><span data-stu-id="11343-109">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+## <a name="see-also"></a><span data-ttu-id="f6037-108">参照</span><span class="sxs-lookup"><span data-stu-id="f6037-108">See Also</span></span>  
+ [<span data-ttu-id="f6037-109">イメージングの概要</span><span class="sxs-lookup"><span data-stu-id="f6037-109">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)

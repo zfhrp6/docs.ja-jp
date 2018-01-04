@@ -21,25 +21,26 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a34c47b1e9b767d396bcdf8ec74c80aaab5f33d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f5749378169c6f19f5b8041d3a99e0798e2b8a4b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="drawings-how-to-topics"></a><span data-ttu-id="6639f-102">描画に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="6639f-102">Drawings How-to Topics</span></span>
-<span data-ttu-id="6639f-103">このセクションのトピックを使用する方法について説明<xref:System.Windows.Media.Drawing>図形、画像、またはテキストを描画するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6639f-103">The topics in this section describe how to use <xref:System.Windows.Media.Drawing> objects to draw shapes, images, or text.</span></span>  
+# <a name="drawings-how-to-topics"></a><span data-ttu-id="1ba22-102">描画に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="1ba22-102">Drawings How-to Topics</span></span>
+<span data-ttu-id="1ba22-103">このセクションのトピックを使用する方法について説明<xref:System.Windows.Media.Drawing>図形、画像、またはテキストを描画するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1ba22-103">The topics in this section describe how to use <xref:System.Windows.Media.Drawing> objects to draw shapes, images, or text.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="6639f-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6639f-104">In This Section</span></span>  
- [<span data-ttu-id="6639f-105">描画に GuidelineSet を適用する</span><span class="sxs-lookup"><span data-stu-id="6639f-105">Apply a GuidelineSet to a Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-guidelineset-to-a-drawing.md)  
-  [<span data-ttu-id="6639f-106">複合描画を作成する</span><span class="sxs-lookup"><span data-stu-id="6639f-106">Create a Composite Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-drawing.md)  
-  [<span data-ttu-id="6639f-107">GeometryDrawing を作成する</span><span class="sxs-lookup"><span data-stu-id="6639f-107">Create a GeometryDrawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-geometrydrawing.md)  
-  [<span data-ttu-id="6639f-108">ImageDrawing を使用してイメージを描画する</span><span class="sxs-lookup"><span data-stu-id="6639f-108">Draw an Image Using ImageDrawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-an-image-using-imagedrawing.md)  
-  [<span data-ttu-id="6639f-109">VideoDrawing を使用してメディアを再生する</span><span class="sxs-lookup"><span data-stu-id="6639f-109">Play Media using a VideoDrawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-using-a-videodrawing.md)  
-  [<span data-ttu-id="6639f-110">描画をイメージ ソースとして使用する</span><span class="sxs-lookup"><span data-stu-id="6639f-110">Use a Drawing as an Image Source</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-drawing-as-an-image-source.md)  
+## <a name="in-this-section"></a><span data-ttu-id="1ba22-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="1ba22-104">In This Section</span></span>  
+ [<span data-ttu-id="1ba22-105">描画に GuidelineSet を適用する</span><span class="sxs-lookup"><span data-stu-id="1ba22-105">Apply a GuidelineSet to a Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-guidelineset-to-a-drawing.md)  
+  [<span data-ttu-id="1ba22-106">複合描画を作成する</span><span class="sxs-lookup"><span data-stu-id="1ba22-106">Create a Composite Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-drawing.md)  
+  [<span data-ttu-id="1ba22-107">GeometryDrawing を作成する</span><span class="sxs-lookup"><span data-stu-id="1ba22-107">Create a GeometryDrawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-geometrydrawing.md)  
+  [<span data-ttu-id="1ba22-108">ImageDrawing を使用してイメージを描画する</span><span class="sxs-lookup"><span data-stu-id="1ba22-108">Draw an Image Using ImageDrawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-an-image-using-imagedrawing.md)  
+  [<span data-ttu-id="1ba22-109">VideoDrawing を使用してメディアを再生する</span><span class="sxs-lookup"><span data-stu-id="1ba22-109">Play Media using a VideoDrawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-using-a-videodrawing.md)  
+  [<span data-ttu-id="1ba22-110">描画をイメージ ソースとして使用する</span><span class="sxs-lookup"><span data-stu-id="1ba22-110">Use a Drawing as an Image Source</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-drawing-as-an-image-source.md)  
   
-## <a name="see-also"></a><span data-ttu-id="6639f-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="6639f-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="1ba22-111">参照</span><span class="sxs-lookup"><span data-stu-id="1ba22-111">See Also</span></span>  
  <xref:System.Windows.Media.Drawing>  
- [<span data-ttu-id="6639f-112">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="6639f-112">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [<span data-ttu-id="6639f-113">WPF での図形と基本描画の概要</span><span class="sxs-lookup"><span data-stu-id="6639f-113">Shapes and Basic Drawing in WPF Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [<span data-ttu-id="6639f-114">グラフィックスとマルチメディア</span><span class="sxs-lookup"><span data-stu-id="6639f-114">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+ [<span data-ttu-id="1ba22-112">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="1ba22-112">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
+ [<span data-ttu-id="1ba22-113">WPF での図形と基本描画の概要</span><span class="sxs-lookup"><span data-stu-id="1ba22-113">Shapes and Basic Drawing in WPF Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
+ [<span data-ttu-id="1ba22-114">グラフィックスとマルチメディア</span><span class="sxs-lookup"><span data-stu-id="1ba22-114">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)

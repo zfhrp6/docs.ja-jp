@@ -17,20 +17,21 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1013b7567fbd80d8d1ee55ac81e00c7b29635bac
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c790ec775740bf53e3c68a1c8834df9e13339c38
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="digital-ink-how-to-topics"></a><span data-ttu-id="f6f3f-102">デジタル インクに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="f6f3f-102">Digital Ink How-to Topics</span></span>
-## <a name="in-this-section"></a><span data-ttu-id="f6f3f-103">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="f6f3f-103">In This Section</span></span>  
- [<span data-ttu-id="f6f3f-104">カスタム コントロールからインクを選択する</span><span class="sxs-lookup"><span data-stu-id="f6f3f-104">Select Ink from a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)  
-  [<span data-ttu-id="f6f3f-105">インク データにカスタム データを追加する</span><span class="sxs-lookup"><span data-stu-id="f6f3f-105">Add Custom Data to Ink Data</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-custom-data-to-ink-data.md)  
-  [<span data-ttu-id="f6f3f-106">カスタム コントロールでインクを消去する</span><span class="sxs-lookup"><span data-stu-id="f6f3f-106">Erase Ink on a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)  
-  [<span data-ttu-id="f6f3f-107">アプリケーション ジェスチャを認識する</span><span class="sxs-lookup"><span data-stu-id="f6f3f-107">Recognize Application Gestures</span></span>](../../../../docs/framework/wpf/advanced/how-to-recognize-application-gestures.md)  
-  [<span data-ttu-id="f6f3f-108">インクをドラッグ アンド ドロップする</span><span class="sxs-lookup"><span data-stu-id="f6f3f-108">Drag and Drop Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-drag-and-drop-ink.md)  
-  [<span data-ttu-id="f6f3f-109">InkCanvas にデータをバインドする</span><span class="sxs-lookup"><span data-stu-id="f6f3f-109">Data Bind to an InkCanvas</span></span>](../../../../docs/framework/wpf/advanced/how-to-data-bind-to-an-inkcanvas.md)  
-  [<span data-ttu-id="f6f3f-110">分析のヒントに従ってインクを分析する</span><span class="sxs-lookup"><span data-stu-id="f6f3f-110">Analyze Ink with Analysis Hints</span></span>](../../../../docs/framework/wpf/advanced/how-to-analyze-ink-with-analysis-hints.md)  
-  [<span data-ttu-id="f6f3f-111">インクの回転</span><span class="sxs-lookup"><span data-stu-id="f6f3f-111">Rotate Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-rotate-ink.md)  
-  [<span data-ttu-id="f6f3f-112">WPF アプリケーションの RealTimeStylus を無効にする</span><span class="sxs-lookup"><span data-stu-id="f6f3f-112">Disable the RealTimeStylus for WPF Applications</span></span>](../../../../docs/framework/wpf/advanced/disable-the-realtimestylus-for-wpf-applications.md)
+# <a name="digital-ink-how-to-topics"></a><span data-ttu-id="e4de9-102">デジタル インクに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="e4de9-102">Digital Ink How-to Topics</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="e4de9-103">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e4de9-103">In This Section</span></span>  
+ [<span data-ttu-id="e4de9-104">カスタム コントロールからインクを選択する</span><span class="sxs-lookup"><span data-stu-id="e4de9-104">Select Ink from a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-select-ink-from-a-custom-control.md)  
+  [<span data-ttu-id="e4de9-105">インク データにカスタム データを追加する</span><span class="sxs-lookup"><span data-stu-id="e4de9-105">Add Custom Data to Ink Data</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-custom-data-to-ink-data.md)  
+  [<span data-ttu-id="e4de9-106">カスタム コントロールでインクを消去する</span><span class="sxs-lookup"><span data-stu-id="e4de9-106">Erase Ink on a Custom Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)  
+  [<span data-ttu-id="e4de9-107">アプリケーション ジェスチャを認識する</span><span class="sxs-lookup"><span data-stu-id="e4de9-107">Recognize Application Gestures</span></span>](../../../../docs/framework/wpf/advanced/how-to-recognize-application-gestures.md)  
+  [<span data-ttu-id="e4de9-108">インクをドラッグ アンド ドロップする</span><span class="sxs-lookup"><span data-stu-id="e4de9-108">Drag and Drop Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-drag-and-drop-ink.md)  
+  [<span data-ttu-id="e4de9-109">InkCanvas にデータをバインドする</span><span class="sxs-lookup"><span data-stu-id="e4de9-109">Data Bind to an InkCanvas</span></span>](../../../../docs/framework/wpf/advanced/how-to-data-bind-to-an-inkcanvas.md)  
+  [<span data-ttu-id="e4de9-110">分析のヒントに従ってインクを分析する</span><span class="sxs-lookup"><span data-stu-id="e4de9-110">Analyze Ink with Analysis Hints</span></span>](../../../../docs/framework/wpf/advanced/how-to-analyze-ink-with-analysis-hints.md)  
+  [<span data-ttu-id="e4de9-111">インクの回転</span><span class="sxs-lookup"><span data-stu-id="e4de9-111">Rotate Ink</span></span>](../../../../docs/framework/wpf/advanced/how-to-rotate-ink.md)  
+  [<span data-ttu-id="e4de9-112">WPF アプリケーションの RealTimeStylus を無効にする</span><span class="sxs-lookup"><span data-stu-id="e4de9-112">Disable the RealTimeStylus for WPF Applications</span></span>](../../../../docs/framework/wpf/advanced/disable-the-realtimestylus-for-wpf-applications.md)

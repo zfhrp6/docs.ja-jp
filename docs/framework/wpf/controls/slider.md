@@ -17,23 +17,24 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0390a8c19cf14ef3fa7ce08bdfb30592b5294377
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7516dfafeb4ff5a2adcbf6b2bb51efd07945cb35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="slider"></a><span data-ttu-id="89851-102">スライダー</span><span class="sxs-lookup"><span data-stu-id="89851-102">Slider</span></span>
-<span data-ttu-id="89851-103"><xref:System.Windows.Controls.Slider>移動することによって、値の範囲から選択できます、<xref:System.Windows.Controls.Primitives.Thumb>に沿って、<xref:System.Windows.Controls.Primitives.Track>です。</span><span class="sxs-lookup"><span data-stu-id="89851-103">The <xref:System.Windows.Controls.Slider> allows you select from a range of values by moving a <xref:System.Windows.Controls.Primitives.Thumb> along a <xref:System.Windows.Controls.Primitives.Track>.</span></span>  
+# <a name="slider"></a><span data-ttu-id="73f87-102">スライダー</span><span class="sxs-lookup"><span data-stu-id="73f87-102">Slider</span></span>
+<span data-ttu-id="73f87-103"><xref:System.Windows.Controls.Slider>移動することによって、値の範囲から選択できます、<xref:System.Windows.Controls.Primitives.Thumb>に沿って、<xref:System.Windows.Controls.Primitives.Track>です。</span><span class="sxs-lookup"><span data-stu-id="73f87-103">The <xref:System.Windows.Controls.Slider> allows you select from a range of values by moving a <xref:System.Windows.Controls.Primitives.Thumb> along a <xref:System.Windows.Controls.Primitives.Track>.</span></span>  
   
- <span data-ttu-id="89851-104">次の図は、水平方向の例を示します<xref:System.Windows.Controls.Slider>コントロール。</span><span class="sxs-lookup"><span data-stu-id="89851-104">The following illustration shows an example of a horizontal <xref:System.Windows.Controls.Slider> control.</span></span>  
+ <span data-ttu-id="73f87-104">次の図は、水平方向の例を示します<xref:System.Windows.Controls.Slider>コントロール。</span><span class="sxs-lookup"><span data-stu-id="73f87-104">The following illustration shows an example of a horizontal <xref:System.Windows.Controls.Slider> control.</span></span>  
   
- <span data-ttu-id="89851-105">![目盛り付きの水平スライダー](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span><span class="sxs-lookup"><span data-stu-id="89851-105">![Horizontal slider with tick marks](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span></span>  
+ <span data-ttu-id="73f87-105">![目盛り付きの水平スライダー](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span><span class="sxs-lookup"><span data-stu-id="73f87-105">![Horizontal slider with tick marks](../../../../docs/framework/wpf/controls/media/ss-ctl-hslider-ticks.png "SS_CTL_hslider_ticks")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="89851-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="89851-106">In This Section</span></span>  
- [<span data-ttu-id="89851-107">スライダーの目盛りをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="89851-107">Customize the Ticks on a Slider</span></span>](../../../../docs/framework/wpf/controls/how-to-customize-the-ticks-on-a-slider.md)  
+## <a name="in-this-section"></a><span data-ttu-id="73f87-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="73f87-106">In This Section</span></span>  
+ [<span data-ttu-id="73f87-107">スライダーの目盛りをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="73f87-107">Customize the Ticks on a Slider</span></span>](../../../../docs/framework/wpf/controls/how-to-customize-the-ticks-on-a-slider.md)  
   
-## <a name="reference"></a><span data-ttu-id="89851-108">参照</span><span class="sxs-lookup"><span data-stu-id="89851-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="73f87-108">参照</span><span class="sxs-lookup"><span data-stu-id="73f87-108">Reference</span></span>  
  <xref:System.Windows.Controls.Slider>  
   <xref:System.Windows.Controls.Primitives.Track>  
   <xref:System.Windows.Controls.Primitives.Thumb>
