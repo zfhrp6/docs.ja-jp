@@ -18,11 +18,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c65fdca99bb12cccf70273194e3294c71a2f5a7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 7a9face3d38f7f64e3bda9d5dbe9ecfb7f730ee8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-input-in-windows-forms"></a>Windows フォームでのユーザー入力
 Windows フォームには、関連する Windows メッセージの処理中に発生するイベントに基づくユーザーの入力モデルが含まれています。 特定のタスクを実行する方法を示すコード例を含む、マウスとキーボードのユーザー入力については、このセクションのトピックで説明します。  

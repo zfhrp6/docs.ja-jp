@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1db788ae0fabdfd27cf215bfcf466c41df19c637
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: fbb7c4aff56fae9b4cc0346f8086bc490269ec8b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-paint-an-area-with-a-drawing"></a>方法 : 描画を使用して領域を塗りつぶす
 この例では、描画を使用して領域を塗りつぶす方法を示します。 描画を使用して領域を塗りつぶすには、使用する、<xref:System.Windows.Media.DrawingBrush>と 1 つまたは複数<xref:System.Windows.Media.Drawing>オブジェクト。   次の例では、 <xref:System.Windows.Media.DrawingBrush> 2 つの楕円の描画を使用してオブジェクトの描画にします。  

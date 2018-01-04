@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f614e244293d08cd836edaf82496ca9e7b51423e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 41895974b7e6c128d979e362f2dcef1c68e0a5c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-apply-a-focusvisualstyle-to-a-control"></a>方法 : FocusVisualStyle をコントロールに適用する
 この例は、リソースにフォーカス visual スタイルを作成して、コントロールにスタイルを適用する方法を示しますを使用して、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>プロパティです。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
   
  Visual スタイルは、テーマ、または、UI の間で一貫して使用する必要がありますフォーカス フォーカス可能な要素ごとに別の名前を使用するのではなくです。 詳細については、「[コントロール、および FocusVisualStyle でフォーカスのスタイルは](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [コントロールのフォーカスのスタイルと FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)

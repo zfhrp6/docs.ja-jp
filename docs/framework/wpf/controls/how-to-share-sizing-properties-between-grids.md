@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f0e3be0a0b550f6fbbc9876709094d4a23abe1a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f8f80d93f9625ff962a3e3fab1f6647678ecf32f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-share-sizing-properties-between-grids"></a>方法 : グリッド間でサイズ設定プロパティを共有する
 この例は、列のサイズ変更データを共有する方法について説明し、間で行<xref:System.Windows.Controls.Grid>一貫性のあるサイズ変更を保持するために要素。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[gridIssharedsizescopeProp#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml.cs#3)]
  [!code-vb[gridIssharedsizescopeProp#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/gridIssharedsizescopeProp/VisualBasic/Window1.xaml.vb#3)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.Grid>  
  <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A>  
  [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)

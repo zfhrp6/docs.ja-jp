@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e21053043a48b68dce229a7de20c4a7e38f7a62c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cd716f4d9f072284b29958c79350d497442cf41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textbox-how-to-topics"></a>TextBox に関する「方法」トピック
 このセクションで説明を使用した共通タスクを実行する方法を示す例について、<xref:System.Windows.Controls.TextBox>コントロール。  
@@ -50,6 +51,6 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="see-also"></a>関連項目  
- [WPF コントロール ギャラリーのサンプル](http://go.microsoft.com/fwlink/?LinkID=160053)  
+## <a name="see-also"></a>参照  
+ [WPF Controls Gallery Sample](http://go.microsoft.com/fwlink/?LinkID=160053)  
  [TextBox のスタイルとテンプレート](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)

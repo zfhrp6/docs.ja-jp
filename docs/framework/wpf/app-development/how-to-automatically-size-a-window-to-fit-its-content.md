@@ -20,11 +20,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d6d13312de86f3952eb363b16c3ae30162961a3
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c9ae9253c394e8cd9495adf4926fa39da29952c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-automatically-size-a-window-to-fit-its-content"></a>方法: コンテンツに合わせてウィンドウのサイズを自動的に
 この例は、設定する方法を示します、<xref:System.Windows.Window.SizeToContent%2A>コンテンツに合わせてウィンドウのサイズを変更する方法を指定するプロパティです。  

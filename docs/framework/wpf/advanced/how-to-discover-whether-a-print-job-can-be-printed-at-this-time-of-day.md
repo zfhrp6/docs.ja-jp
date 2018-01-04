@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9ac89b8dce67c95c78a5dd46e591d84730a68346
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ef9da205792823b7069024c5e4a3e9ac80d60a24
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>方法 : 現在、印刷ジョブが印刷可能であるかどうかを検出する
 印刷キューは常に使用できません、1 日 24 時間です。 1 日の特定の時刻に使用できないように設定できます開始と終了の時刻のプロパティがあります。 たとえば、この機能は、特定の部門午後 5 時以降後に排他的に使用するプリンターを予約するは使用できます。 その部門は、別のキュー サービスの他の部門よりプリンターを使用して必要があります。 午後 5 時以降に他の部署のキューを設定すると、する部門用のキューを設定することが常に使用します。  
@@ -84,7 +85,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[DiagnoseProblematicPrintJob#TimeConverter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#timeconverter)]
  [!code-vb[DiagnoseProblematicPrintJob#TimeConverter](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#timeconverter)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.DateTime>  
  <xref:System.Printing.PrintSystemJobInfo>  
  <xref:System.Printing.PrintQueue>  

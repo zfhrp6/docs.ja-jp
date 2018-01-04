@@ -17,11 +17,12 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0390a8c19cf14ef3fa7ce08bdfb30592b5294377
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7516dfafeb4ff5a2adcbf6b2bb51efd07945cb35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="slider"></a>スライダー
 <xref:System.Windows.Controls.Slider>移動することによって、値の範囲から選択できます、<xref:System.Windows.Controls.Primitives.Thumb>に沿って、<xref:System.Windows.Controls.Primitives.Track>です。  

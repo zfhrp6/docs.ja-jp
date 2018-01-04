@@ -17,11 +17,12 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cad3fd6a1bdecf9d6187f3592fe4771bbb0b0e98
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 214fdff11b5b64c78b2719e66813b5210884e318
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tooltip-how-to-topics"></a>ToolTip に関する「方法」トピック
 ## <a name="in-this-section"></a>このセクションの内容  

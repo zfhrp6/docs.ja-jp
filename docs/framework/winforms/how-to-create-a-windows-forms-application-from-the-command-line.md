@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e6ddb27f724e30071be339ac753cfd85599ccd86
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 22acab6ea3912488ae1382ffb42ca5383a7311af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>方法: コマンドラインから Windows フォーム アプリケーションを作成します。
 次の手順では、コマンドラインから Windows フォーム アプリケーションを作成して実行するために完了する必要のある基本的な手順について説明します。 Visual Studio では、これらの手順に対する広範なサポートが用意されています。  参照してください[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\))です。  
@@ -117,7 +118,7 @@ ms.lasthandoff: 11/21/2017
   
 -   コードをコンパイルするには、アプリケーションをコンパイルして実行する方法を説明した、前述の手順に従います。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Form>  
  <xref:System.Windows.Forms.Control>  
  [Windows フォームの表示形式の変更](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  

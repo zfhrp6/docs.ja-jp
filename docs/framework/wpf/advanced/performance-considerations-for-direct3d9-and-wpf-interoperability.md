@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 886ef6c8c9df9d14b5c2a805da2e3948d5e55f69
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8142125eae26b15f12652d28fdf0c34f19d49c4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-considerations-for-direct3d9-and-wpf-interoperability"></a>Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項
 使用して Direct3D9 コンテンツをホストすることができます、<xref:System.Windows.Interop.D3DImage>クラスです。 Direct3D9 コンテンツをホストするいると、アプリケーションのパフォーマンスに影響する可能性です。 このトピックでは、Windows Presentation Foundation (WPF) アプリケーションで Direct3D9 コンテンツをホストする場合にパフォーマンスを最適化するために、ベスト プラクティスについて説明します。 これらのベスト プラクティスには、使用する方法が含まれます。<xref:System.Windows.Interop.D3DImage>およびベスト プラクティスの Windows Vista、Windows XP を使用していると、複数のモニターに表示されます。  
@@ -69,7 +70,7 @@ ms.lasthandoff: 11/21/2017
 |(ロックではない) では D3DFMT_A8R8G8B8|**ハードウェアの更新**|ソフトウェアの更新|ソフトウェアの更新|ソフトウェアの更新|  
 |(ロック) では D3DFMT_A8R8G8B8|**ハードウェアの更新**|ソフトウェアの更新|**ハードウェアの更新**|ソフトウェアの更新|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Interop.D3DImage>  
  [WPF と Direct3D9 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)  
  [チュートリアル: WPF でホストするための Direct3D9 コンテンツの作成](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  

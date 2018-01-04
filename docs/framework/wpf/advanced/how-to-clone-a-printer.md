@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 303cb9c1c5b6521839987a56cdc008eac0559cf1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 43a08faf27186bde85dd12f027034f759378debf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-clone-a-printer"></a>方法 : プリンターを複製する
 ほとんどの企業が、ある時点で、購入、同じモデルの複数のプリンターです。 通常、これらはすべてほぼ同一の構成の設定でインストールします。 各プリンターのインストールとできる時間がかかる場合、エラーが発生します。 <xref:System.Printing.IndexedProperties?displayProperty=nameWithType>名前空間および<xref:System.Printing.PrintServer.InstallPrintQueue%2A>で公開されているクラス[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]を即座に既存の印刷キューから任意の数の複製されたその他の印刷キューをインストールできるようになります。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[ClonePrinter#ClonePrinter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
  [!code-vb[ClonePrinter#ClonePrinter](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Printing.IndexedProperties>  
  <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>  
  <xref:System.Printing.LocalPrintServer>  

@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 965e2061d6457084e4f316d27e29865109f62e34
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 49bc3ac8c57e95e597d6b9aa505a931a6204b3f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-margins-of-elements-and-controls"></a>方法 : 要素およびコントロールのマージンを設定する
 この例を設定する方法について説明、<xref:System.Windows.FrameworkElement.Margin%2A>分離コードで余白の幅を既存のプロパティ値を変更することで、プロパティです。 <xref:System.Windows.FrameworkElement.Margin%2A>プロパティは、プロパティの<xref:System.Windows.FrameworkElement>基本要素、およびさまざまなコントロールとその他の要素によって継承されるためです。  

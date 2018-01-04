@@ -16,11 +16,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bcb666c41f849ac39386c3eaf85bbaf8b19053e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bc9ff97583566bd950486d96bd100f05ef651c7e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-overview"></a>Windows フォームの概要
 次の概要では、スマート クライアント アプリケーションの利点、Windows フォームのプログラミングの主な機能について説明し、Windows フォームを使用して今日の企業とエンドユーザーのニーズを満たすスマート クライアントを構築する方法を示します。  
@@ -71,7 +72,7 @@ ms.lasthandoff: 11/21/2017
 |説明|ヘルプ トピック|  
 |-----------------|----------------|  
 |<xref:System.Windows.Forms.BindingSource> コンポーネントを使用する|[方法: デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする](../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
-|[!INCLUDE[vstecado](../../../includes/vstecado-md.md)] データ ソースを操作する|[方法 : Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する](../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|  
+|[!INCLUDE[vstecado](../../../includes/vstecado-md.md)] データ ソースを操作する|[方法: Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する](../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|  
 |[データ ソース] ウィンドウを使用する|[チュートリアル: Windows フォームでのデータの表示](http://msdn.microsoft.com/library/f6e08c2c-c792-43de-adf3-3e52c0100225)|  
 |アプリケーション設定を使用する|[方法 : アプリケーション設定を作成する](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)|  
   
@@ -102,7 +103,7 @@ ms.lasthandoff: 11/21/2017
 |フォームの内容を印刷する|[方法 : Windows フォームでグラフィックスを印刷する](../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|  
 |Windows フォームのセキュリティについての詳細|[Windows フォームのセキュリティの概要](../../../docs/framework/winforms/security-in-windows-forms-overview.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームについて](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
  [新しい Windows フォームの作成](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
  [ToolStrip コントロールの概要](../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  

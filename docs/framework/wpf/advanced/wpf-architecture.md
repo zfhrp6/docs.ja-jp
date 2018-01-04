@@ -27,11 +27,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8580f805e23732f24248a046201c87b0a5a370b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4d688bb460b01c0b3fe4d7571916b887cd485b87
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-architecture"></a>WPF アーキテクチャ
 このトピックでは、ガイド付きツアー、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]クラス階層です。 主要なサブシステムのほとんどをカバー [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、それらの相互作用について説明します。 いくつかの設計担当者が行った選択の表示[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。  
@@ -144,14 +145,14 @@ ms.lasthandoff: 11/21/2017
  コントロールのデータ モデルの一般的な側面は、コンテンツ モデルです。 コントロールを確認する場合と同様に<xref:System.Windows.Controls.Button>、型の「コンテンツ」という名前のプロパティを使用しているが表示されます<xref:System.Object>です。 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]と[!INCLUDE[TLA#tla_aspnet](../../../../includes/tlasharptla-aspnet-md.md)]、このプロパティは文字列である通常 –、ボタンに配置することができますが、コンテンツの種類を制限します。 ボタンのコンテンツできます、単純な文字列、複雑なデータ オブジェクト、またはツリー全体。 データ オブジェクトの場合は、データ テンプレートは、ディスプレイを構築するために使用されます。  
   
 <a name="Summary"></a>   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]データ ドリブン プレゼンテーション システムを動的に作成できるように設計されています。 動作を制御するプロパティ セットを通じてオブジェクトを作成するのには、システムのすべての部分は設計されています。 データ バインディングは、システムの基本的な部分は、され、すべてのレイヤーで統合されます。  
   
  従来のアプリケーションは、表示を作成し、後、一部のデータをバインドします。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、いくつかの種類のデータ バインディングによって生成される、コントロール、ディスプレイ画面のあらゆる側面に関するすべてのものです。 ボタンの内側にあるテキストは、ボタンの内部で構成されるコントロールを作成し、ボタンのコンテンツ プロパティの表示をバインドして表示されます。  
   
  開発を開始すると、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ベースのアプリケーション、非常になじみと考える必要があります。 プロパティ、オブジェクトを使用してを設定することができ、データ バインドほぼ同じ方法を使用できる[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]または[!INCLUDE[TLA#tla_aspnet](../../../../includes/tlasharptla-aspnet-md.md)]です。 アーキテクチャに深く調査と[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、基本的に、アプリケーションのコア ドライバーとしてデータを処理するはるかに充実したアプリケーションを作成するためにできる可能性があることがわかります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Visual>  
  <xref:System.Windows.UIElement>  
  <xref:System.Windows.Input.ICommand>  

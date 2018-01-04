@@ -23,11 +23,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 16c3184c329fa83ddf091326c97d6faf2e2c88f5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 01939eb8735e6764e0f0cba811091c7fdbd6797f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>イメージ、描画、およびビジュアルによる塗りつぶし
 このトピックを使用する方法について説明<xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>、イメージを使用して領域を描画するオブジェクト、 <xref:System.Windows.Media.Drawing>、または<xref:System.Windows.Media.Visual>です。  
@@ -144,7 +145,7 @@ DrawingBrush で塗りつぶされたオブジェクト
   
  タイルの機能の詳細については<xref:System.Windows.Media.TileBrush>、オブジェクトを参照してください、 [TileBrush 概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.ImageBrush>  
  <xref:System.Windows.Media.DrawingBrush>  
  <xref:System.Windows.Media.VisualBrush>  

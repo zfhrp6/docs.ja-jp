@@ -25,11 +25,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ca88d95f760e44b6cdc319923215151eff4bf762
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4fceebbd3da7a0643e744d80a55cb1c953eba3bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="animation-tips-and-tricks"></a>アニメーションのヒントとテクニック
 アニメーションを使用するときに[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]がいくつかのヒント、およびアニメーションできるようにするトリックはパフォーマンスを向上させ、苛立ちを保存します。  
@@ -138,5 +139,5 @@ ms.lasthandoff: 10/22/2017
   
  クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

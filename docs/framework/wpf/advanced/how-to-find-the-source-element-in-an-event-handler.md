@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e9746683ec5b7ad142591c2b419f9af21be8d69c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d62d657b886b867481088e32fe1dd0614377e146
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-find-the-source-element-in-an-event-handler"></a>方法 : イベント ハンドラーでソース要素を検索する
 この例では、イベント ハンドラーでソース要素を検索する方法を示します。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[RoutedEventSource#Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventSource/CSharp/default.xaml.cs#handler)]
  [!code-vb[RoutedEventSource#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventSource/VisualBasic/default.xaml.vb#handler)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.RoutedEventArgs>  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)

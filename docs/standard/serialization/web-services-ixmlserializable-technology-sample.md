@@ -12,11 +12,14 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 73ce34f101efc4f439b83e9a1ed69d286971486e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: be0c76371bda9e91e0becf8a9e09beb44e44dd3c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="web-services-ixmlserializable-technology-sample"></a>Web サービス IXmlSerializable の技術サンプル
 [サンプルのダウンロード](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/IXmlSerializable.zip.exe)  
@@ -43,7 +46,7 @@ ms.lasthandoff: 12/02/2017
   
 9. [Web 共有] タブで、**[このフォルダーを共有する]** をクリックし、名前 IXmlSerializable など既定の設定を確認します。  
   
-10. **[OK]** をクリックします。  
+10. **[OK]**をクリックします。  
   
 ### <a name="to-run-the-sample"></a>サンプルを実行するには  
   
@@ -51,7 +54,7 @@ ms.lasthandoff: 12/02/2017
   
 2.  「**http://localhost/IXmlSerializable/Service.asmx**」と入力します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Serialization.IXmlSerializable>  
  <xref:System.Xml.Serialization>  
  <xref:System.Xml.XmlConvert>  

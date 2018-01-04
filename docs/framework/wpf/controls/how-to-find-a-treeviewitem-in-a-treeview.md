@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a231f5eae92bff8e3d525579dae865aaa0d7e496
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 696a9e2d92b9c44e4aedbcc200b41e5548cd7411
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-find-a-treeviewitem-in-a-treeview"></a>方法: TreeView で TreeViewItem を検索する
 <xref:System.Windows.Controls.TreeView>コントロールには、階層データを表示する便利な手段が用意されています。 場合、<xref:System.Windows.Controls.TreeView>は、データ ソースにバインドされて、<xref:System.Windows.Controls.TreeView.SelectedItem%2A>プロパティは、選択したデータ オブジェクトを迅速に取得するための便利な方法を提供します。 通常、基になるデータ オブジェクトを使用する最適な場合がありますがする必要しますが、ありますプログラムで操作を含むデータの<xref:System.Windows.Controls.TreeViewItem>します。 たとえば、プログラムを展開する必要があります、 <xref:System.Windows.Controls.TreeViewItem>、またはで別の項目を選択、<xref:System.Windows.Controls.TreeView>です。  
@@ -51,5 +52,5 @@ ms.lasthandoff: 10/22/2017
   
  [!code-xaml[TreeViewFindTVI#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewFindTVI/CSharp/MainWindow.xaml#3)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [TreeView のパフォーマンスを改善する](../../../../docs/framework/wpf/controls/how-to-improve-the-performance-of-a-treeview.md)

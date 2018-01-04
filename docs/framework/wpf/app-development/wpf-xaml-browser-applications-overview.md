@@ -21,11 +21,12 @@ caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 58ed9a97d9a1eb09ccbcf832c62bbdfb990c7838
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c894d431aa31e32b4a8cb7ff02d39d5aa5e95381
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>WPF XAML ブラウザー アプリケーションの概要
 <a name="introduction"></a>
@@ -128,7 +129,7 @@ ms.lasthandoff: 11/21/2017
   
 7.  **[セキュリティ]** の下にある **[設定]** ボックスで、**[マイ コンピューターのファイルでのアクティブ コンテンツの実行を許可する]** チェック ボックスをオンにします。  
   
-8.  **[OK]** をクリックします。  
+8.  **[OK]**をクリックします。  
   
      変更は、Internet Explorer を再起動すると有効になります。  
   
@@ -196,6 +197,6 @@ ms.lasthandoff: 11/21/2017
   
  さらに、[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] のダウンロード シーケンスの同時実行の改良によって、開始時間は最大 10% 短縮されます。 [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] がマニフェストをダウンロードして評価した後、アプリケーションのダウンロードが始まり、進行状況バーの更新が開始されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Studio を構成して Web サービスを呼び出す XAML ブラウザー アプリケーションをデバッグする](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
  [WPF アプリケーションの配置](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)

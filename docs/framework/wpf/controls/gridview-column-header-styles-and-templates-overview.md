@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ad0f7cacc8256e060bb12611bd1818b694e1e6dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 996d6d5f531a866d4fc80acc3848cdf264901032
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="gridview-column-header-styles-and-templates-overview"></a>GridView の列ヘッダー スタイルおｙびテンプレートの概要
 この概要説明のカスタマイズ内の列ヘッダーを使用するプロパティの優先順位、<xref:System.Windows.Controls.GridView>の表示モード、<xref:System.Windows.Controls.ListView>コントロール。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
  <sup>1</sup>の**ヘッダー テンプレート プロパティ**テンプレートとテンプレート セレクターのプロパティをテンプレートのプロパティが優先されますの両方を設定する場合は、します。 たとえば、両方を設定する場合、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>と<xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A>、プロパティ、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>プロパティが優先されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法トピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
  [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)  
  [GridView の概要](../../../../docs/framework/wpf/controls/gridview-overview.md)

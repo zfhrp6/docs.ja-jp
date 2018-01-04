@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b29904954a593607a7872c0b59265bbf241dce98
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9df10ecabc8f61c3ef984adb6466f195395fd181
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-the-designer-with-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのデザイナーの使用
 Visual Studio のデザイナーのサポートを提供、`DataGridView`コントロールのコードを記述することがなく多数のセットアップ タスクを実行することができます。 これらのタスクには、データを表示する列の変更、データ ソースにコントロールが使用されるバインディングとコントロールの基本的な動作と外観を調整することが含まれます。  
@@ -64,5 +65,5 @@ Visual Studio のデザイナーのサポートを提供、`DataGridView`コン�
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView> コントロールのリファレンス ドキュメントを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

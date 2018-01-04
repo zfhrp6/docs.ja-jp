@@ -17,11 +17,12 @@ caps.latest.revision: "66"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 877367098baf6e50b18ecfba2e6b20cdbe29313d
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 8b3fca74adb89ba46d2be2a4cba83cc5458396c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="panel-how-to-topics"></a>パネルに関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Panel>要素および関連する[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]です。  

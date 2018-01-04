@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d14d3bb167fc3e027371c28147720cf2a098c136
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 112a9badaf9a64b2c6d3f73d64c27fbc36ec48a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dialog-boxes-overview"></a>ダイアログ ボックスの概要
 スタンドアロン アプリケーションは通常、メイン ウィンドウが対象で、アプリケーションが動作して、を介してそのデータを処理する機能を公開、メイン データをある[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]メカニズムは、メニュー バー、ツールバー、およびステータス バーと同様にします。 重要なアプリケーションは、次のようなことをするための追加のウィンドウを表示することもあります。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
   
 -   情報の表示と収集の両方を行う。  
   
- これらの種類のウィンドウと呼ばれる* ダイアログ ボックス*、し、2 種類があります: モーダルとモードレスです。  
+ これらの種類のウィンドウと呼ばれる *ダイアログ ボックス*、し、2 種類があります: モーダルとモードレスです。  
   
  A*モーダル*関数には、引き続きユーザーからの追加データが必要がある場合、関数によってダイアログ ボックスが表示されます。 機能は、モーダル ダイアログ ボックスに依存してデータを収集するため、モーダル ダイアログ ボックスが開いている間、ユーザーはアプリケーション内の他のウィンドウをアクティブ化することはできません。 ほとんどの場合、モーダル ダイアログ ボックスで、ユーザー キーを押して、モーダル ダイアログ ボックスを終了する場合はシグナルを**OK**または**キャンセル**ボタンをクリックします。 キーを押して、 **OK**ボタンは、こと、ユーザーがデータを入力し、データ処理を継続する関数を示します。 キーを押して、**キャンセル**ボタンは、ユーザーが、関数が完全に実行を停止することを示します。 モーダル ダイアログ ボックスの最も一般的な例は、データを開く、保存する、および印刷するために表示されます。  
   
@@ -354,7 +355,7 @@ ms.lasthandoff: 11/21/2017
 [!code-csharp[DialogBoxSample#FindDialogCloseCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#finddialogclosecodebehind2)]
 [!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ポップアップの概要](../../../../docs/framework/wpf/controls/popup-overview.md)  
  [ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)  
  [ColorPicker カスタム コントロールのサンプル](http://go.microsoft.com/fwlink/?LinkID=159977)

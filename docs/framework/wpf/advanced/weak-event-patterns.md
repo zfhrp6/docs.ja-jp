@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3f024ae77740c596d8646b10a036428e2342d084
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.workload: dotnet
+ms.openlocfilehash: 21a36797f945f37a641e7002bbb9937a664650fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="weak-event-patterns"></a>弱いイベント パターン
 アプリケーションでは、可能であれば、イベント ソースに接続されているハンドラーは破棄されません、ハンドラーをソースに接続されているリスナー オブジェクトと連携します。 このような状況は、メモリ リークが発生する可能性があります。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]この問題に対処、特定のイベントの専用マネージャー クラスを提供して、そのイベントのリスナーにインターフェイスを実装して使用できるデザイン パターンについて説明します。 この設計パターンと呼ばれる、*弱いイベント パターン*です。  
@@ -139,7 +140,7 @@ ms.lasthandoff: 12/14/2017
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.WeakEventManager>  
  <xref:System.Windows.IWeakEventListener>  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  

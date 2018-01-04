@@ -20,11 +20,12 @@ caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 49778dc9551652ee4a4d36426b4b396652b9dcd2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7390181570c6deeea77e5e76493a62e84107286b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="freezable-objects-overview"></a>Freezable オブジェクトの概要
 このトピックを効果的に使用して作成する方法について説明<xref:System.Windows.Freezable>オブジェクトで、アプリケーションのパフォーマンスを改善する特別な機能を提供します。 Freezable オブジェクトの例には、ブラシ、ペン、変換、ジオメトリ、およびアニメーションが含まれます。  
@@ -171,7 +172,7 @@ mc:Ignorable="PresentationOptions"
   
  カスタムの例については<xref:System.Windows.Freezable>クラスを参照してください、[カスタム アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=159981)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Freezable>  
  [カスタム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=159981)  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  

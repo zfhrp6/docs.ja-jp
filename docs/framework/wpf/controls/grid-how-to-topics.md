@@ -17,11 +17,12 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4288c2d9847edb38cec4d79e73ea713d3ab031f3
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 50820c87948fa9e1d81126a00b1b989e01242303
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="grid-how-to-topics"></a>グリッドに関する「方法」トピック
 このセクションのトピックを使用して要素を配置する方法について説明、<xref:System.Windows.Controls.Grid>要素。  

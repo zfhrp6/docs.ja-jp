@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 19bad48188a039baeeb6365a2cd38671f83fca4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 394ebc503338ad73001aa9859e0aa0d9c3fa42b4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-keyboard-events"></a>キーボード イベントの使用
 多くの Windows フォーム プログラムは、キーボード イベントを処理することによってキーボード入力を処理します。 ここでは、どのような場合に各キーボード イベントを使用するか、また各イベントがどのようなデータを提供するかについての詳細を含め、キーボード イベントの概要について説明します。  参照してください[イベント ハンドラーの概要 (Windows フォーム)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\))、[イベントの概要 (Windows フォーム)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\))です。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Forms.Control.KeyPress>|このイベントは、1 つまたは複数のキーを押すことにより文字が出力された場合に発生します。 たとえば、Shift キーを押しながら小文字の "a" キーを押すと、大文字の "A" が出力されます。|<xref:System.Windows.Forms.Control.KeyPress> は、<xref:System.Windows.Forms.Control.KeyDown> の後に発生します。<br /><br /> <ul><li><xref:System.Windows.Forms.Control.KeyPress> のハンドラーは、次の項目を受け取ります。</li><li><xref:System.Windows.Forms.KeyPressEventArgs> パラメーター。このパラメーターには、押したキーの文字コードが入ります。 この文字コードは、文字キーと修飾子キーの組み合わせごとに一意です。<br /><br />     たとえば、"A" キーは次の文字コードを生成します。<br /><br /> <ul><li>文字コード 65 (Shift キーまたは Caps Lock キーと一緒に押した場合)</li><li>97 (単独で押した場合)</li><li>1 (Ctrl キーと一緒に押した場合)</li></ul></li></ul>|  
 |<xref:System.Windows.Forms.Control.KeyUp>|このイベントは、ユーザーが物理キーを離すと発生します。|<xref:System.Windows.Forms.Control.KeyUp> のハンドラーは、次の項目を受け取ります。<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs> パラメーターの値。次のプロパティを提供します。<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> プロパティ (物理キーボード ボタンを示します)。</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> プロパティ (Shift、Ctrl、または Alt キー)。</li><li><xref:System.Globalization.SortKey.KeyData%2A> プロパティ (キー コードと修飾子を組み合わせます)。</li></ul></li></ul>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム アプリケーションにおけるキーボード入力](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
  [キーボード入力のしくみ](../../../docs/framework/winforms/how-keyboard-input-works.md)  
  [Windows フォーム アプリケーションにおけるマウス入力](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: acdbcac957f8dc682e0038600afa90ccdfd0fe14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: abdc98a6fbf48a30f2f5702e7c2d78396381de6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drawing-objects-overview"></a>Drawing オブジェクトの概要
 このトピックで紹介<xref:System.Windows.Media.Drawing>オブジェクトし、図形、ビットマップ、文字列、およびメディアを効率的に描画に使用する方法について説明します。 使用して<xref:System.Windows.Media.Drawing>で描画します。 オブジェクト クリップアートを作成するときに、 <xref:System.Windows.Media.DrawingBrush>、使用または<xref:System.Windows.Media.Visual>オブジェクト。  
@@ -243,7 +244,7 @@ DrawingBrush で使われる GeometryDrawing
   
  [!code-csharp[DrawingMiscSnippets_snip#GraphicsMMRetrieveDrawings](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/EnumerateDrawingsExample.xaml.cs#graphicsmmretrievedrawings)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Drawing>  
  <xref:System.Windows.Media.DrawingGroup>  
  [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  

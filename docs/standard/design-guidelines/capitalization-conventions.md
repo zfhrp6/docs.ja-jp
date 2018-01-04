@@ -19,11 +19,14 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e1bddb7bb3559e6f39b7884b92f64bee8fbb3510
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b36f230c9a5f8653f3e252d26fe6464bb9cac4bb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="capitalization-conventions"></a>大文字の使用規則
 単純なメソッドを使用するためのこの章のレイアウトのガイドライン場合は、型、メンバー、およびパラメーターについて読みやすくする識別子を一貫して、適用されるときにします。  
@@ -60,10 +63,10 @@ ms.lasthandoff: 11/21/2017
 |----------------|------------|-------------|  
 |名前空間|Pascal|`namespace System.Security { ... }`|  
 |型|Pascal|`public class StreamReader { ... }`|  
-|インターフェイス|Pascal|`public interface IEnumerable { ... }`|  
+|Interface|Pascal|`public interface IEnumerable { ... }`|  
 |メソッド|Pascal|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|  
 |プロパティ|Pascal|`public class String {` <br />  `public int Length { get; }` <br /> `}`|  
-|イベント|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
+|event|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
 |フィールド|Pascal|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|  
 |列挙値|Pascal|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|  
 |パラメーター|Camel 形式|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
@@ -112,6 +115,6 @@ ms.lasthandoff: 11/21/2017
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
  [名前付けのガイドライン](../../../docs/standard/design-guidelines/naming-guidelines.md)

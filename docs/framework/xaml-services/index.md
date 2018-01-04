@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: b8d1214e011e4a6569b5612d7be93ed05b776166
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.workload: dotnet
+ms.openlocfilehash: 458b4c94d26b7bc083c5d31fcbccf05b42bba52e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-services"></a>XAML サービス
 このトピックでは、サービスの .NET Framework XAML と呼ばれるテクノロジ一連の機能について説明します。 導入されたアセンブリである System.Xaml アセンブリに、ほとんどのサービスおよび説明する Api がある、 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] .NET core アセンブリのセット。 サービスには、リーダーとライター、スキーマのクラスおよびスキーマのサポートは、ファクトリ クラス、XAML 言語の組み込みサポート、およびその他の XAML 言語機能の属性です。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/18/2017
  言語としての XAML の入門資料を探してみてください[XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)です。 そのトピックについて説明します XAML は、新しいユーザー向けの両方に[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]と XAML マークアップと XAML 言語機能を使用して、さらにします。 別の役立つ文書は入門資料に、 [XAML 言語仕様](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
   
 ## <a name="net-framework-xaml-services-and-systemxaml-in-the-net-architecture"></a>.NET framework XAML サービスと System.Xaml に .NET アーキテクチャ  
- 以前のバージョンの[!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)]、上に構築されたフレームワークによって実装されていた XAML 言語機能のサポートを[!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、 [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]と[!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)])、そのため、動作やによって使用される API でさまざまなと特定のフレームワークを使用していた。 これにより、XAML が含まれます。 パーサーと、オブジェクト グラフの作成メカニズム、XAML 言語の組み込み関数、シリアル化のサポート、およびなどです。  
+ 以前のバージョンの[!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)]、上に構築されたフレームワークによって実装されていた XAML 言語機能のサポートを[!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)]([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、[!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]と[!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)])、そのため、動作やによって使用される API でさまざまなと特定のフレームワークを使用していた。 これにより、XAML が含まれます。 パーサーと、オブジェクト グラフの作成メカニズム、XAML 言語の組み込み関数、シリアル化のサポート、およびなどです。  
   
  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]と System.Xaml アセンブリの .NET Framework XAML サービスの XAML 言語機能をサポートするために必要な量を定義します。 これには、XAML リーダーと XAML ライターの基本クラスが含まれます。 フレームワーク固有の XAML 実装のいずれかに存在していたいない .NET Framework XAML サービスに追加された最も重要な機能は、xaml 型システム表現です。 型システム表現は、フレームワークの特定の機能に依存することがなく XAML の機能に重点を置いたオブジェクト指向の方法で XAML を表示します。  
   

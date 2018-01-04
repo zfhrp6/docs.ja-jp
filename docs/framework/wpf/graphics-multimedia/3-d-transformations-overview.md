@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 431f4abd55da3b8c4e348d3abbd107e2f6344d5d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7b45c2c12393f296f916eaf8ea3f912958b54b09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="3-d-transformations-overview"></a>3-D 変換の概要
 このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] グラフィックス システムで 3-D モデルに変換を適用する方法について説明します。 変換を使うと、モデルを定義する基本の値を変更することなく、モデルの位置、サイズ、向きを変更できます。  
@@ -115,7 +116,7 @@ ScaleVector の例
   
  カメラもモデルなので、カメラのプロパティを変換することもできます。  カメラの位置または平面距離を変換することにより (実際には、シーン全体の投影を変換して) シーンの外観を変更できますが、この方法で得られる効果の多くは、シーン内のモデルの場所や位置に適用される変換ほど大きな "視覚的意味" を見ている人に与えられない場合があることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [3-D グラフィックスの概要](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)  
  [変換の概要](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
  [2-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)

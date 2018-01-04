@@ -17,11 +17,12 @@ caps.latest.revision: "67"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3046e88e26e16172a9c7e6c50123145ce7664f28
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0616507752c3053b71b2f050997eacfea22240a1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-in-wpf-applications"></a>WPF アプリケーションのウィンドウ
 ユーザーは、windows 経由でアプリケーションと対話します。 ウィンドウの基本的な目的をホストし、コンテンツを表示します。 ウィンドウがホストに依存するデータの種類、アプリケーションが動作する、メディア、Extensible Application Markup Language (XAML) ページ、Web ページ、ドキュメント、データベース テーブルとレコード、およびシステム情報が含まれてコンテンツの種類。  

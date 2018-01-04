@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a61844f917539f5d5e7c99299c8a33f4aa18450f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 108b532e3aea27571c8a3b1290d931e2b0769be9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-simple-binding"></a>方法 : 簡単なバインディングを作成する
 この例は、単純なを作成する方法を示します<xref:System.Windows.Data.Binding>です。  
@@ -41,6 +42,6 @@ ms.lasthandoff: 11/21/2017
   
  その結果、<xref:System.Windows.Controls.TextBlock>値"Joe"とともに表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

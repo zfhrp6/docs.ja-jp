@@ -20,11 +20,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dc4ef4473a200a424134a16d64655a5acf1488b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fe3f0caa8f23a3b68f1017254a770af766f83f81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="annotations-overview"></a>注釈の概要
 用紙にメモやコメントを書くことは普通の行為であり、人はそれを当たり前のことと思っています。 そのようなメモやコメントが "注釈" です。注釈をドキュメントに追加することで情報に目印を付け、興味のある内容を強調表示し、後で参照します。 印刷したドキュメントにメモを書くことは簡単で一般的な行為ですが、電子ドキュメントに個人的なコメントを追加する機能は利用できるとしても一般的に非常に限定されています。  
@@ -74,7 +75,7 @@ ms.lasthandoff: 11/21/2017
   
  他のシナリオ例としては、電子メールを利用し、ドキュメント リーダー間で注釈や付箋を交換できるアプリケーションがあります。 そのような機能を利用すると、交換された注釈を含むページにドキュメント リーダーで移動できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.Primitives.DocumentViewerBase>  
  <xref:System.Windows.Controls.DocumentViewer>  
  <xref:System.Windows.Controls.FlowDocumentPageViewer>  

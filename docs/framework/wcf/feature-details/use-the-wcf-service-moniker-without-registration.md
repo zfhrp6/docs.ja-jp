@@ -14,11 +14,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9e91889947a17f8cba66d822b857e1c8bc875cab
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 18f575e9bae37b66526d7b61a641374266ba627b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>方法 : 未登録で Windows Communication Foundation のサービス モニカーを使用する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに接続して通信するには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アプリケーションに、サービス アドレス、バインディング構成、およびサービス コントラクトの詳細が必要です。  
@@ -66,5 +67,5 @@ binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/
 > [!NOTE]
 >  モニカーの形式が正しくないか、サービスを使用できない場合は、`GetObject` を呼び出すと、"構文が無効です" というエラーが返されます。 このエラーが発生した場合は、使用しているモニカーが正しく、サービスが使用可能であることを確認してください。  
   
-## <a name="see-also"></a>関連項目  
- [方法: 登録し、サービス モニカーの構成](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+## <a name="see-also"></a>参照  
+ [方法 : サービス モニカーを登録および構成する](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

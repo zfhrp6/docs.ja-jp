@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0298462db5897e955bf0a2551cca7fc81bb27d89
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4d44565907904509a1b8f670453db5d7aa4e2583
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-apply-animations-to-text"></a>方法 : アニメーションをテキストに適用する
 アニメーションを利用すると、アプリケーションのテキストの表示方法や見た目を変えることができます。 次の例では、アニメーションの別の種類を使用して、内のテキストの表示には影響を<xref:System.Windows.Controls.TextBlock>コントロール。  
@@ -47,5 +48,5 @@ ms.lasthandoff: 10/22/2017
   
  [!code-xaml[TextAnimationSample#TextAnimationSample4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample4)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

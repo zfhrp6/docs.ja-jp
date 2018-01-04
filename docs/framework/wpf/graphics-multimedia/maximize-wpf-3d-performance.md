@@ -14,11 +14,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26df55c9658721eb907db5837ac467a5899e84eb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 45053762a4782544531a09c92531b26f99663016
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="maximize-wpf-3d-performance"></a>WPF の 3D パフォーマンスの最大化
 使用すると、 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 3D コントロールをビルドし、アプリケーションで 3D シーンを含むにはパフォーマンスの最適化を検討してください。 このトピックでは、3 D のクラスと、それらを使用するときにパフォーマンスを最適化するための推奨事項と共に、アプリケーションのパフォーマンスに影響を与えるプロパティの一覧を示します。  
@@ -68,5 +69,5 @@ ms.lasthandoff: 10/18/2017
 |淡色|黒のランプは見えませんが、時間を表示するために追加されます。これらを省略することを検討してください。|  
 |<xref:System.Windows.Media.Media3D.MeshGeometry3D>|大規模なコレクションの構築時を最小限に抑える[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]、MeshGeometry3D のなど<xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A>、 <xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A>、 <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>、および<xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A>値の母集団の前に、コレクションのサイズを事前です。 可能であれば、配列またはリストなど、コレクションのコンス トラクター事前設定済みのデータ構造体を渡します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [3-D グラフィックスの概要](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)

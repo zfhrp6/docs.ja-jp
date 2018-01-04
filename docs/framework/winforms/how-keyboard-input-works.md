@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f45d01da6f9a851a0e51f9d614e84a3fba91e4d3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 43b92051b6524a730735fea98d64ee64578b4e06
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-keyboard-input-works"></a>キーボード入力のしくみ
 Windows フォームは、Windows メッセージに応答してキーボード イベントを発生させることにより、キーボード入力を処理します。 多くの Windows フォーム アプリケーションは、キーボード イベントを処理することによってキーボード入力を排他的に処理します。 しかし、高度なキーボード入力のシナリオ (キーがコントロールに到達する前にインターセプトするなど) を実装するためには、キーボード メッセージのしくみについて理解することが必要です。 このトピックでは、Windows フォームが認識するキー データの種類について説明し、キーボード メッセージをルーティングする方法について概要を説明します。 キーボード イベントの詳細については、「[キーボード イベントの使用](../../../docs/framework/winforms/using-keyboard-events.md)」を参照してください。  
@@ -45,7 +46,7 @@ Windows フォームは、Windows メッセージに応答してキーボード 
   
 ### <a name="preprocessing-for-a-keydown-event"></a>KeyDown イベントの前処理  
   
-|アクション|関連メソッド|ノート|  
+|アクション|関連メソッド|メモ|  
 |------------|--------------------|-----------|  
 |アクセラレータやメニュー ショートカットなどのコマンド キーの確認。|<xref:System.Windows.Forms.Control.ProcessCmdKey%2A>|このメソッドはコマンド キーを処理します。コマンド キーは通常のキーよりも優先順位が上です。 このメソッドが `true` を返した場合、キー メッセージはディスパッチされず、キー イベントも発生しません。 返された場合`false`、<xref:System.Windows.Forms.Control.IsInputKey%2A>は呼び出されます`.`|  
 |プリプロセスを必要とする特殊なキーまたは通常の文字キーを発生させるかを確認、<xref:System.Windows.Forms.Control.KeyDown>イベント コントロールにディスパッチするとします。|<xref:System.Windows.Forms.Control.IsInputKey%2A>|メソッドを返す場合`true`、コントロールが通常の文字を意味し、<xref:System.Windows.Forms.Control.KeyDown>イベントが発生します。 場合`false`、<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>と呼びます。 **注:**するにはコントロール キーまたはキーの組み合わせを取得することを確認するには、処理、<xref:System.Windows.Forms.Control.PreviewKeyDown>イベントとセット<xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A>の<xref:System.Windows.Forms.PreviewKeyDownEventArgs>に`true`キーまたはキーをします。|  
@@ -53,7 +54,7 @@ Windows フォームは、Windows メッセージに応答してキーボード 
   
 ### <a name="preprocessing-for-a-keypress-event"></a>KeyPress イベントの前処理  
   
-|アクション|関連メソッド|ノート|  
+|アクション|関連メソッド|メモ|  
 |------------|--------------------|-----------|  
 |キーがコントロールによって処理される通常の文字であるかどうかの確認|<xref:System.Windows.Forms.Control.IsInputChar%2A>|このメソッドが戻るかどうかは、通常の文字が、文字、 `true`、<xref:System.Windows.Forms.Control.KeyPress>イベントが発生し、それ以上の前処理が発生します。 それ以外の場合<xref:System.Windows.Forms.Control.ProcessDialogChar%2A>が呼び出されます。|  
 |文字がニーモニック (ボタン上の &OK など) かどうかの確認|<xref:System.Windows.Forms.Control.ProcessDialogChar%2A>|このメソッドは、のような<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>コントロールの階層構造は、呼び出されます。 呼び出してニーモニックの確認、コントロールがコンテナー コントロールの場合は、<xref:System.Windows.Forms.Control.ProcessMnemonic%2A>自体とその子コントロールにします。 場合<xref:System.Windows.Forms.Control.ProcessDialogChar%2A>返します`true`、<xref:System.Windows.Forms.Control.KeyPress>イベントは発生しません。|  
@@ -78,7 +79,7 @@ Windows フォームは、Windows メッセージに応答してキーボード 
 |実行中に入力またはナビゲーションの特別な処理、<xref:System.Windows.Forms.Control.KeyPress>イベント。 たとえば、リスト コントロール内で "r" キーを押し続けると、r の文字で始まる項目にスキップするなど。|<xref:System.Windows.Forms.Control.ProcessDialogChar%2A> をオーバーライドします。|  
 |カスタムなニーモニックの処理を実行する。たとえば、ツール バーに配置されたオーナー描画ボタンのニーモニックを処理するなど。|<xref:System.Windows.Forms.Control.ProcessMnemonic%2A> をオーバーライドします。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Keys>  
  <xref:System.Windows.Forms.Control.WndProc%2A>  
  <xref:System.Windows.Forms.Control.PreProcessMessage%2A>  

@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7c3aacd0f08641c01200f0b1791a78413a306590
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 03d9eac41e693568da2d057bc1394c426df4c736
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="protected-members"></a>プロテクト メンバー
 単独で保護されたメンバーはすべての機能拡張を指定しないがサブクラス化によって拡張機能をより強力な行うことができます。 メインのパブリック インターフェイスを不必要に複雑化せず、高度なカスタマイズ オプションを公開に使用できます。  
@@ -41,6 +44,6 @@ ms.lasthandoff: 11/21/2017
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
- [機能拡張のための設計](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+ [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

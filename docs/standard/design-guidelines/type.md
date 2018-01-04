@@ -18,11 +18,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2b24a934285f88386daa764c5b28bd82cf5d39a9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6b02abef0180b6de82e26837863849cce35c994f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="type-design-guidelines"></a>型のデザインのガイドライン
 CLR の観点からは、型の 2 つのカテゴリがあります: 参照型と値の型: フレームワーク デザインの詳細については、するためにお種類以上の論理グループ分け、それぞれ独自の特定のデザイン規則には。  
@@ -42,16 +45,16 @@ CLR の観点からは、型の 2 つのカテゴリがあります: 参照型�
  **✓ しないで**各型が適切に定義された一連の関連するメンバーは、関連付けられていない機能のランダムなコレクションだけでなくであることを確認します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [クラスと構造体の使い分け](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)  
+ [クラスまたは構造体の選択](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)  
  [抽象クラスのデザイン](../../../docs/standard/design-guidelines/abstract-class.md)  
  [静的クラスのデザイン](../../../docs/standard/design-guidelines/static-class.md)  
- [インターフェイスの設計](../../../docs/standard/design-guidelines/interface.md)  
+ [インターフェイスのデザイン](../../../docs/standard/design-guidelines/interface.md)  
  [構造体のデザイン](../../../docs/standard/design-guidelines/struct.md)  
- [列挙型のデザイン](../../../docs/standard/design-guidelines/enum.md)  
+ [列挙型デザイン](../../../docs/standard/design-guidelines/enum.md)  
  [入れ子にされた型](../../../docs/standard/design-guidelines/nested-types.md)  
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 322ac3e5ebfe2d820a4711d877396b9a1a2759a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 173be3048f7bf082db2eef2ea21eb1e0319f9a43
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-and-reference-a-resource"></a>方法 : リソースを定義および参照する
 この例は、内の属性を使用して、参照およびリソースを定義する方法を示しています。[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -34,6 +35,6 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xaml[FEResource#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEResource/CS/default.xaml#xaml)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ddbbab88a22a4350626a36f79236aab67da24a7f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 28cb1b02e67d076f9190e2d8e36b72c20cc5c4e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="default-keyboard-and-mouse-behavior-in-the-datagrid-control"></a>DataGrid コントロールの既定のキーボード動作とマウス動作
 このトピックとユーザーの対話方法について説明します、<xref:System.Windows.Controls.DataGrid>キーボードとマウスを使用して制御します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 |Ctrl + PageUp|ページの上と同じです。|  
 |F2|場合、<xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=nameWithType>プロパティは`false`と<xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A?displayProperty=nameWithType>プロパティは`false`現在の列のセルの編集モードに現在のセルを挿入します。|  
 |Enter|現在のセルと行に変更をコミットし、現在のセルの直下のセルにフォーカスを移動します。 最後の行にフォーカスがある場合は、フォーカスを移動させることがなく変更をコミットします。|  
-|ESC|コントロールが編集モードである場合は、編集をキャンセルし、コントロールに加えられた変更を元に戻します。 場合は、基になるデータ ソースを実装して<xref:System.ComponentModel.IEditableObject>、行全体の編集モードをキャンセル、2 回目の esc キーを押します。|  
+|Esc|コントロールが編集モードである場合は、編集をキャンセルし、コントロールに加えられた変更を元に戻します。 場合は、基になるデータ ソースを実装して<xref:System.ComponentModel.IEditableObject>、行全体の編集モードをキャンセル、2 回目の esc キーを押します。|  
 |BACKSPACE キー|セルを編集するときは、カーソルより前に、の文字を削除します。|  
 |Del|セルの編集時に、カーソルより後の文字を削除します。|  
 |Ctrl + Enter|現在のセルにフォーカスを移動せず変更をコミットします。|  
@@ -106,6 +107,6 @@ ms.lasthandoff: 11/21/2017
   
  隣接する行の連続していない範囲を選択するには、CTRL + SHIFT を組み合わせて指定できます。 これを行うには、shift キーを使用して、最初の範囲を選択 + 前述のようにクリックします。 行の最初の範囲を選択した後、ctrl キーを押し + をクリックして [次へ] の範囲内で最初の行を選択、CTRL + SHIFT を押しながら次の範囲の最後の行をクリックできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.DataGrid>  
  <xref:System.Windows.Controls.DataGrid.SelectionMode%2A>

@@ -18,11 +18,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dbee2fb24b9acf9bc2512b399e3a74e66720cc3c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f21e9239199ecd36432ed8f14adb896f1799506b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="designing-for-extensibility"></a>機能拡張のデザイン
 フレームワーク設計の 1 つの重要な側面を行って、フレームワークの拡張性が慎重に考慮されていることを確認しています。 これは、コストとさまざまな機能拡張メカニズムに関連付けられている利点を理解することが必要です。 この章では、機能拡張メカニズムを判断するのに役立ちます: サブクラス化、イベント、仮想メンバー、コールバック、およびなど —、framework の要件を満たす最適なことができます。  
@@ -30,16 +33,16 @@ ms.lasthandoff: 10/18/2017
  フレームワークの機能拡張を許可する方法はたくさんあります。 コストが非常に強力に低コストの低いから範囲です。 、特定の機能拡張必要条件については、要件を満たす低コストの機能拡張メカニズムを選択してください。 通常、後で、複数の機能拡張を追加することが可能であるが、重大な変更を導入することがなく離れた実行しないことができますに注意してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [封印されていないクラス](../../../docs/standard/design-guidelines/unsealed-classes.md)  
- [保護されたメンバー](../../../docs/standard/design-guidelines/protected-members.md)  
- [イベントやコールバック](../../../docs/standard/design-guidelines/events-and-callbacks.md)  
+ [シールされていないクラス](../../../docs/standard/design-guidelines/unsealed-classes.md)  
+ [プロテクト メンバー](../../../docs/standard/design-guidelines/protected-members.md)  
+ [イベントとコールバック](../../../docs/standard/design-guidelines/events-and-callbacks.md)  
  [仮想メンバー](../../../docs/standard/design-guidelines/virtual-members.md)  
- [抽象クラス (抽象型とインターフェイス)](../../../docs/standard/design-guidelines/abstractions-abstract-types-and-interfaces.md)  
- [抽象化を実装するための基本クラス](../../../docs/standard/design-guidelines/base-classes-for-implementing-abstractions.md)  
- [封印](../../../docs/standard/design-guidelines/sealing.md)  
+ [抽象化 (抽象型およびインターフェイス)](../../../docs/standard/design-guidelines/abstractions-abstract-types-and-interfaces.md)  
+ [抽象化の実装用の基本クラス](../../../docs/standard/design-guidelines/base-classes-for-implementing-abstractions.md)  
+ [シール](../../../docs/standard/design-guidelines/sealing.md)  
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

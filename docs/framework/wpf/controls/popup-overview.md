@@ -16,11 +16,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 96ee7b227d4e2ea5dfcb0b8870d77d03abf08db8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0cb20895b5af35fec7274ca4c747740390104355
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="popup-overview"></a>ポップアップの概要
 <xref:System.Windows.Controls.Primitives.Popup>コントロールは、指定された要素または画面座標の基準とした、現在のアプリケーション ウィンドウで別のウィンドウの内容を表示する方法を提供します。 このトピックでは、<xref:System.Windows.Controls.Primitives.Popup>制御し、その使用に関する情報を提供します。  
@@ -98,7 +99,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Controls.Primitives.Popup>コントロールへの参照を保持する、<xref:System.Windows.Controls.Primitives.Popup.Child%2A>論理子としてコンテンツ。 作成時に、新しいウィンドウが、コンテンツの<xref:System.Windows.Controls.Primitives.Popup>visual の子ウィンドウの論理子のままになり<xref:System.Windows.Controls.Primitives.Popup>です。 これに対し、<xref:System.Windows.Controls.Primitives.Popup>の論理上の親のまま、<xref:System.Windows.Controls.Primitives.Popup.Child%2A>コンテンツ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.Primitives.Popup>  
  <xref:System.Windows.Controls.Primitives.PopupPrimaryAxis>  
  <xref:System.Windows.Controls.Primitives.PlacementMode>  

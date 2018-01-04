@@ -22,11 +22,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d1b62c7f49653627c626bce2583b2799df931dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 15ba7f3315b2ce71357bd4735e2dfca1b3de616d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-callbacks-and-validation"></a>依存関係プロパティのコールバックと検証
 このトピックでは、検証による判定、プロパティの有効値が変更されたときに呼び出されるコールバック、値の決定への外部的影響のオーバーライドなど、プロパティ関連機能の代替カスタム実装を使用して依存関係プロパティを作成する方法について説明します。 また、これらの手法を用いてプロパティ システムの既定の動作を拡張することが適切であるシナリオについても説明します。  
@@ -90,7 +91,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="using-coercevalue-to-cancel-value-changes"></a>CoerceValue を使用した値変更の取り消し  
  プロパティ システムには、いずれかの処理は<xref:System.Windows.CoerceValueCallback>値を返す<xref:System.Windows.DependencyProperty.UnsetValue>特殊なケースとして。 この特殊なケースを意味するプロパティの変更を発生させた、<xref:System.Windows.CoerceValueCallback>プロパティ システムによって拒否される必要があります呼び出されていること、およびプロパティ システムでは、プロパティがどのような以前の値を報告する代わりにします。 このメカニズムは、非同期に開始されたプロパティの変更が現在のオブジェクトの状態に対して依然として有効であるかどうかをチェックし、有効でない場合はその変更を抑制する場合に役立ちます。 考えられるもう 1 つのシナリオとして、プロパティ値の決定におけるどの構成要素が報告されるプロパティ値を決定するかに応じて値を選択的に抑制することもできます。 これを行うには、使用することができます、<xref:System.Windows.DependencyProperty>として渡されたコールバックおよびプロパティの識別子の入力を<xref:System.Windows.DependencyPropertyHelper.GetValueSource%2A>、し、処理、<xref:System.Windows.ValueSource>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)

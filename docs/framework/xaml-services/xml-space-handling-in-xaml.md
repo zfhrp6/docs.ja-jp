@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a5048cbad1d2ea914d041ac3c87a43223b208c3a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8b8356cdb47b6b834e8d9a6bb84b26445af6d865
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xmlspace-handling-in-xaml"></a>XAML における xml:space の処理
 `xml:space`属性はオブジェクト要素内で重要な空白の処理の動作を宣言する XML 定義の属性です。 この動作は、要素内に含まれるすべてのコンテンツ (内部テキ スト) に関連する場所`xml:space`が宣言されているし、もスコープの子要素にします。  
@@ -50,6 +51,6 @@ ms.lasthandoff: 11/21/2017
   
  空白の XAML の処理の詳細については、次を参照してください。 [XAML での空白の処理](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML での空白の処理](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

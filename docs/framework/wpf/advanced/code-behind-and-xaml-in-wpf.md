@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 241fe815f1a7c2e70a664068a47d511a3dbd7e0a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 19c7c2cdd49663a57a4184027fd7d6ad8fcd7656
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>WPF における分離コードと XAML
 <a name="introduction"></a>分離コードとは、マークアップ定義オブジェクトによって結合されるコードの記述に使用される用語と、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページがマークアップ コンパイルします。 このトピックは、分離コードの要件および内のコードの別のインライン コード メカニズムについて説明します。[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="inline-code-limitations"></a>インライン コードの制限  
  回避するインライン コードの使用を制限したりすることを検討する必要があります。 アーキテクチャとコーディングの原理に関してマークアップと分離コードの間の分離の維持は保持設計者と開発者の役割もはっきりと区別します。 技術的な詳細レベルでは、インライン コードを記述するコードが生じること書き込むには、メッセージが不適切に常に記述するため、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]部分クラスを生成し、既定の XML 名前空間のマッピングのみを使用できます。 追加できないため、`using`ステートメント、する必要がありますを完全修飾の多く、[!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)]行う呼び出しです。 既定値[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]マッピングを含める最もすべてではない[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]名前空間に存在する、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アセンブリへの呼び出しの種類およびその他の CLR 名前空間内に含まれるメンバーを完全に修飾する必要があります。 定義することもできない部分クラス以外のインライン コードにしを参照するすべてのユーザー コードのエンティティが生成される部分クラス内の変数またはメンバーとして存在する必要があります。 その他の言語固有プログラミングなどの機能、マクロや`#ifdef`グローバル変数、またはビルド変数、に対しては、利用できません。 詳細については、次を参照してください。 [X:code 組み込み XAML 型](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [x:Code 組み込み XAML 型 ](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)  
  [WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  

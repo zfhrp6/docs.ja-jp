@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 47df7aaad45000bc8c761a9bb9022d37e0f0828c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 145ff1be88f1af6692a8cf374e871479ed38d7bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-a-property-by-using-an-animationclock"></a>方法 : AnimationClock を使用してプロパティをアニメーション化する
 この例を使用する方法を示しています。<xref:System.Windows.Media.Animation.Clock>プロパティをアニメーション化するオブジェクト。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
   
  対話的に制御する方法を示す例については、<xref:System.Windows.Media.Animation.Clock>が起動したらを参照してください。[クロックを対話的に制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-interactively-control-a-clock.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ストーリーボードを使ってプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)  
  [ストーリーボードを使用せずにプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)  
  [プロパティ アニメーションの手法の概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)

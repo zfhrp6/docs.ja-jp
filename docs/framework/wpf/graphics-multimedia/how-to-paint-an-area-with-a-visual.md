@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4cd1bafb528613f15ec5eb597179bc0dd05ace0f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 183117472cc74c958bdd7f807236eded97610b1c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-paint-an-area-with-a-visual"></a>方法 : ビジュアルで領域を塗りつぶす
 この例を使用する方法を示しています、<xref:System.Windows.Media.VisualBrush>で領域を塗りつぶすクラス、<xref:System.Windows.Media.Visual>です。  
@@ -41,5 +42,5 @@ ms.lasthandoff: 10/22/2017
   
  このコード例に示されている例の一部である、<xref:System.Windows.Media.VisualBrush>クラスです。 サンプル全体については、次を参照してください。、 [VisualBrush サンプル](http://go.microsoft.com/fwlink/?LinkID=160049)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

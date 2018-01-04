@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2a0d88e521d953e57ce729e3365e78f274a0283a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eed39a0a0388d1d091a167addb8f81f25c8c04b3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-convert-an-image-to-greyscale"></a>方法 : イメージをグレースケールに変換する
 この例では、イメージをグレースケールを使用して変換する<xref:System.Windows.Media.Imaging.FormatConvertedBitmap>です。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[ImagingSnippetGallery_procedural_snip#FormatConvertedBitmapCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/FormatConvertedBitmapExample.cs#formatconvertedbitmapcodeexamplewholepage)]
  [!code-vb[ImagingSnippetGallery_procedural_snip#FormatConvertedBitmapCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/FormatConvertedBitmapExample.vb#formatconvertedbitmapcodeexamplewholepage)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージ要素を使用する](../../../../docs/framework/wpf/controls/how-to-use-the-image-element.md)  
  [イメージをトリミングする](../../../../docs/framework/wpf/controls/how-to-crop-an-image.md)  
  [イメージを回転させる](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)

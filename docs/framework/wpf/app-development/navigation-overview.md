@@ -35,11 +35,12 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 73bb3a2f43c5bd91d7a107a0a053381ca7bc0559
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload: dotnet
+ms.openlocfilehash: 3a3b7d865a503189ebb5b3adadc7258603461c9b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="navigation-overview"></a>ナビゲーションの概要
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]2 つの種類のアプリケーションで使用できるブラウザー スタイルのナビゲーションをサポートしています: スタンドアロン アプリケーションと[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]です。 ナビゲーションのためのパッケージのコンテンツを[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]提供、<xref:System.Windows.Controls.Page>クラスです。 1 つから移動することができます<xref:System.Windows.Controls.Page>別に宣言してを使用して、 <xref:System.Windows.Documents.Hyperlink>、またはを使用して、プログラムによって、<xref:System.Windows.Navigation.NavigationService>です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ナビゲート元のページを記憶し、それらのページに戻るために、履歴を使用します。  
@@ -658,7 +659,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="navigating-to-loose-xaml-files"></a>Loose XAML ファイルへのナビゲート  
  厳密でない[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルは、次の特性を持つファイル。  
   
--   だけを含んだ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (つまり、コードではなくです。  
+-   だけを含んだ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)](つまり、コードではなくです。  
   
 -   適切な名前空間宣言がある。  
   
@@ -739,7 +740,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="security"></a>セキュリティ  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ナビゲーションのサポートにより、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]とインターネット間を移動できない場合にサード パーティのコンテンツをホストするアプリケーションを許可します。 有害な動作は、アプリケーションとユーザーの両方を保護するために[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]で説明されているセキュリティ機能のさまざまな提供[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)と[WPF 部分信頼セキュリティ](../../../../docs/framework/wpf/wpf-partial-trust-security.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Application.SetCookie%2A>  
  <xref:System.Windows.Application.GetCookie%2A>  
  [アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)  

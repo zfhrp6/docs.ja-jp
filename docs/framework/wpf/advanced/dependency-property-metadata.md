@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 69f7a5af655586a62776a8c470f2e1c9811f91d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5b5c4ee554e8a0148c7d8d8044735f66778e7117
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-metadata"></a>依存関係プロパティのメタデータ
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プロパティ システムには、リフレクションや一般的な [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] 特性から得られる以上の詳細なプロパティ情報を提供するメタデータ報告システムがあります。 依存関係プロパティのメタデータは、依存関係プロパティを定義するクラスで個別に割り当てることも、依存関係プロパティを別のクラスに追加する際に変更することもできます。また、依存関係プロパティをその定義元の基本クラスから継承するすべての派生クラスで明確にオーバーライドすることもできます。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>必須コンポーネント  
- このトピックでは、ユーザーが [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] クラスの既存の依存関係プロパティの使用という観点から依存関係プロパティを理解し、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」トピックを通読していることを前提としています。 このトピックの例に従うには、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] について理解し、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの作成方法に精通している必要があります。  
+ このトピックでは、ユーザーが [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] クラスの既存の依存関係プロパティの使用という観点から依存関係プロパティを理解し、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」トピックを通読していることを前提としています。 このトピックの例を理解するには、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] について理解し、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの作成方法に精通している必要があります。  
   
 <a name="dp_metadata_contents"></a>   
 ## <a name="how-dependency-property-metadata-is-used"></a>依存関係プロパティのメタデータの使用方法  
@@ -101,7 +102,7 @@ ms.lasthandoff: 11/21/2017
 #### <a name="addowner-and-attached-properties"></a>AddOwner および添付プロパティ  
  呼び出すことができます<xref:System.Windows.DependencyProperty.AddOwner%2A>依存関係プロパティの添付プロパティの所有者のクラスによって定義されます。 通常、これは、以前の添付プロパティを非添付の依存関係プロパティとして公開する目的で行います。 公開は、<xref:System.Windows.DependencyProperty.AddOwner%2A>として値を返す、`public static readonly`依存関係プロパティの識別子として使用するためのフィールドし、プロパティは、メンバー テーブルが表示され、非添付プロパティをサポートするように、適切な「ラッパー」プロパティを定義しますクラスの使用率。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.PropertyMetadata>  
  <xref:System.Windows.DependencyObject>  
  <xref:System.Windows.DependencyProperty>  

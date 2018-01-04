@@ -19,11 +19,12 @@ caps.latest.revision: "37"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 69f6acbc61d68e32846e055125ad8042a9ea55db
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: bf4e6efe35234a6ea86b3b1af5561a1ceb10af18
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clocks-how-to-topics"></a>クロックに関する「方法」トピック
 次のトピックを使用する方法について説明、<xref:System.Windows.Media.Animation.Clock>のタイミング状態情報を維持するためにオブジェクト、<xref:System.Windows.Media.Animation.Timeline>です。  

@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f5eba773a290f1100fcea411919c5c16558e01ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4c4c2c3b9cabb630b5762fdc49f6cb62eef28f71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fromtoby-animations-overview"></a>From/To/By アニメーションの概要
 このトピックでは、From/To/By アニメーションを使って依存関係プロパティをアニメーション化する方法を説明します。 From/To/By アニメーションでは、2 つの値の間の遷移が作成されます。  
@@ -129,7 +130,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#frombyanimationinline)]
  [!code-vb[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#frombyanimationinline)]  
   
-### <a name="from"></a>変換前  
+### <a name="from"></a>From  
  指定した場合だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>アニメーションの値、アニメーションで指定された値、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>プロパティ、または作成中のアニメーションの出力にはアニメーション化するプロパティのベース値にします。  
   
  次の例の設定だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>のプロパティ、 <xref:System.Windows.Media.Animation.DoubleAnimation> 50 にします。 終了値が指定されなかったため、<xref:System.Windows.Media.Animation.DoubleAnimation>のベース値を使用して、<xref:System.Windows.FrameworkElement.Width%2A>プロパティを 100、としてその終了値。 <xref:System.Windows.FrameworkElement.Width%2A>の<xref:System.Windows.Shapes.Rectangle>は 50 からのベース値にアニメーション、<xref:System.Windows.FrameworkElement.Width%2A>プロパティ、100 です。  
@@ -150,7 +151,7 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、独自のカスタム アニメーションの種類を作成することもできます。 詳細については、次を参照してください。、[カスタム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Animation.Timeline>  
  <xref:System.Windows.Media.Animation.Storyboard>  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  

@@ -19,11 +19,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3061b7fed225f00bf6bb91efe529de35a5a036a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0776e7960aa76a76422d01180af5fd6a089bc98b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contextmenu-overview"></a>ContextMenu の概要
 <xref:System.Windows.Controls.ContextMenu>クラスは、特定のコンテキストを使用して、機能を公開する要素を表します<xref:System.Windows.Controls.Menu>です。 通常、ユーザーが公開する、<xref:System.Windows.Controls.ContextMenu>で、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]をマウスのボタンを右クリックします。 このトピックでは、<xref:System.Windows.Controls.ContextMenu>要素で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]とコード。  
@@ -72,11 +73,11 @@ ms.lasthandoff: 11/21/2017
 </Style>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.ContextMenu>  
  <xref:System.Windows.Style>  
  <xref:System.Windows.Controls.Menu>  
  <xref:System.Windows.Controls.MenuItem>  
  [ContextMenu](../../../../docs/framework/wpf/controls/contextmenu.md)  
  [ContextMenu のスタイルとテンプレート](../../../../docs/framework/wpf/controls/contextmenu-styles-and-templates.md)  
- [WPF コントロール ギャラリーのサンプル](http://go.microsoft.com/fwlink/?LinkID=160053)
+ [WPF Controls Gallery Sample](http://go.microsoft.com/fwlink/?LinkID=160053)

@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a68b8966e72339a6bf5929661cf89f7f8a0b07c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7989269e8076eda1deef6384b7efdb51c2d279ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="annotations-schema"></a>注釈スキーマ
 このトピックでは、Microsoft Annotations Framework でユーザー注釈データの保存と取得に使用される XML スキーマ定義 (XSD) について説明します。  
@@ -591,7 +592,7 @@ ms.lasthandoff: 11/21/2017
 </anc:Annotations>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Annotations>  
  <xref:System.Windows.Annotations.Storage>  
  <xref:System.Windows.Annotations.Annotation>  

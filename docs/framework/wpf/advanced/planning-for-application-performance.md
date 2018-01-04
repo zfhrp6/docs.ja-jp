@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f47f56e28064c852e5d8f721bdb3a0f73172c12a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6bdb140d90de02fa817c55a05f40e57fcd0d636c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="planning-for-application-performance"></a>アプリケーション パフォーマンスの計画
 パフォーマンスの目標を達成できるは、どの程度する戦略を作成するパフォーマンスによって異なります。 計画は、任意の製品の開発の最初のステージです。 このトピックでは、良好なパフォーマンスの戦略を開発するためのいくつかの非常に単純な規則について説明します。  
@@ -42,13 +43,13 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コントロールは、広く使用されているカスタマイズの場合、コントロールの動作を変更しない中に、表示されるようにすることでは本質的に拡張できます。 活用してスタイル、データ テンプレート、およびコントロール テンプレートを作成し、カスタマイズ可能な増分進化[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]パフォーマンス要件に適合します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
  [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
  [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
  [オブジェクトの動作](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
  [アプリケーション リソース](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [テキスト](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [[テキスト]](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [パフォーマンスに関するその他の推奨事項](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

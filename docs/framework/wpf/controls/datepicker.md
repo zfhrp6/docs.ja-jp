@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cd5c7c796ee9d51a216368de3f3b04c10a5a3acd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd2a1755ae076369661b2c9a7a2b744961cdb129
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datepicker"></a>DatePicker
 <xref:System.Windows.Controls.DatePicker>コントロールで日付を選択、入力テキスト フィールドにするか、またはドロップダウン リストを使用して、ユーザーは、<xref:System.Windows.Controls.Calendar>コントロール。  
@@ -34,6 +35,6 @@ DatePicker コントロール
   
  ユーザーが直接設定するテキスト フィールドに日付を入力、<xref:System.Windows.Controls.DatePicker.Text%2A>プロパティです。 場合、<xref:System.Windows.Controls.DatePicker>有効な日付を入力した文字列を変換できません、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベントが発生します。 イベント ハンドラーが、例外が発生したこの既定では、<xref:System.Windows.Controls.DatePicker.DateValidationError>を設定できます、<xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A>プロパティを`false`と、例外が発生するようにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール](../../../../docs/framework/wpf/controls/index.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

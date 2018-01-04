@@ -40,11 +40,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0aa85c9ec6e6b911444b07a4169dc769ac4df816
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88e66210fd8066e82a11d07ea0cfeb83808d646c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-syntax-in-detail"></a>XAML 構文の詳細
 このトピックでは、XAML 構文の要素の記述に使用する用語を定義します。 これらの条項は、具体的には、XAML や、XAML 言語レベルのサポート、System.Xaml で有効になっている基本的な XAML の概念を使用する他のフレームワークの WPF のドキュメントのどちらも、このドキュメントの残りの部分全体でよく使用されます。 このトピックのトピックで導入された基本的な用語を詳述[XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)です。  
@@ -325,7 +326,7 @@ ms.lasthandoff: 11/21/2017
   
  同じように、 *typeName*.*memberName*属性に関しては、フォーム*baseTypeName*.*memberName*マークアップでは、不適切なスタイルは、これを避ける必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [XAML 名前空間 (x:) 言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
  [WPF XAML 拡張機能](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  

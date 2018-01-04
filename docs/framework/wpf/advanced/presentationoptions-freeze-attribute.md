@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d8f1a876f65941afb159d4c3d8904ab4426d9177
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cb305c69cec7c4e4766153ae64d37b19ab0bccea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="presentationoptionsfreeze-attribute"></a>PresentationOptions:Freeze 属性
 セット、<xref:System.Windows.Freezable.IsFrozen%2A>状態`true`に含まれている<xref:System.Windows.Freezable>要素。 既定の動作、<xref:System.Windows.Freezable>せず、`PresentationOptions:Freeze`属性が指定される<xref:System.Windows.Freezable.IsFrozen%2A>は`false`負荷時、および [全般] に依存<xref:System.Windows.Freezable>実行時に動作します。  
@@ -51,7 +52,7 @@ ms.lasthandoff: 11/21/2017
   
  すべての値、`Freeze`以外の属性`true`(いない大文字小文字を区別)、読み込み時にエラーが生成されます。 (を指定する、`Freeze`属性に`false`、エラーではありません設定するため、既定ではない`false`何も行われません)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Freezable>  
  [Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
  [mc:Ignorable 属性](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md)

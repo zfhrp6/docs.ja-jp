@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 360b453b2a25b6822485f18cc81cb43e313949eb
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e413a7ddf7e256538e56876712a54f875392b59a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>チュートリアル: ユーザー コントロールでのドラッグ アンド ドロップの有効化
 このチュートリアルでのドラッグ アンド ドロップのデータ転送に含めることができるカスタム ユーザー コントロールを作成する方法を示します[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。  
@@ -346,5 +347,5 @@ ms.lasthandoff: 10/22/2017
   
      ![CTRL キーを押しながら Circle をドラッグ](../../../../docs/framework/wpf/advanced/media/dragdrop-paneldrop.png "DragDrop_PanelDrop")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ドラッグ アンド ドロップの概要](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

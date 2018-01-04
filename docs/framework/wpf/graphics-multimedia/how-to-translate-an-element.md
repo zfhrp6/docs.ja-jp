@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 222aebe0ffe3d2bb1d84002a2ad94b0b92ede15b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2f9b8363f0c3b9e0a9653dfc9864727c9460f695
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-translate-an-element"></a>方法 : 要素を変換する
 この例では変換 (移動) 要素を使用して、<xref:System.Windows.Media.TranslateTransform>です。  
@@ -34,5 +35,5 @@ ms.lasthandoff: 10/22/2017
   
  完全なサンプルについては、「[2-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [変換の概要](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)

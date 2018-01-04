@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ca55e31060388012e6bb94e40159c2e602484911
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ed10e52c59112714a500fe52ccf5b398c14a97b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Visual Basic と WPF のイベント処理
 [!INCLUDE[TLA#tla_visualbnet](../../../../includes/tlasharptla-visualbnet-md.md)]言語固有の言語を使用する具体的には、`Handles`属性を持つイベント ハンドラーのアタッチ、またはを使用してではなく、インスタンスにイベント ハンドラーを関連付けるキーワード、<xref:System.Windows.UIElement.AddHandler%2A>メソッドです。 ただし、`Handles`ために、ハンドラーのインスタンスにアタッチする方法はいくつかの制限には、`Handles`構文は、の特定のルーティング イベント機能の一部をサポートできない、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]イベント システムです。  
@@ -52,7 +53,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  内で[!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]、[!INCLUDE[TLA2#tla_intellisense](../../../../includes/tla2sharptla-intellisense-md.md)]要素が使用できる入力候補を表示できます、`Handles`ページ内の参照。 ただし、これがかかるコンパイル パスの 1 つの中間ファイルがすべてに設定できるように、`Friends`参照します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.UIElement.AddHandler%2A>  
  [ルーティング イベントの処理済みとしてのマーキング、およびクラス処理](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  

@@ -8,11 +8,14 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1f442f450aea5833fd21e57980c842cc1559ccc1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 76946ed1b714ba0bd01c79bb772524c84cf8b2ca
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="serialization-concepts"></a>シリアル化の概念
 シリアル化が必要となる理由について考えてみます。 最も重要な理由として、オブジェクトの状態をストレージ メディアに保持し、後の段階で同一コピーを再作成できるようにすることと、アプリケーション ドメイン間でオブジェクトを値渡しで送信することの 2 つが挙げられます。 たとえば、シリアル化は ASP.NET でのセッション状態を保存したり、オブジェクトを Windows フォームのクリップボードにコピーしたりするために使用されます。 また、リモート処理でオブジェクトを 1 つのアプリケーション ドメインから別のアプリケーション ドメインに値渡しするためにも使用されます。

@@ -17,11 +17,12 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f09c1aac387d26d44398331d62b25e588d4bbdc1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d9bec0b3edd6a5ab3997c42e3b8154f0c41531d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="control-customization"></a>コントロールのカスタマイズ
 このカテゴリにはさまざまな基本クラス、インターフェイス、およびその他の要素および完全に機能の作成に使用される概念[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]コントロール。  
@@ -33,5 +34,5 @@ ms.lasthandoff: 10/22/2017
  [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
  [WPF カスタム コントロールの UI オートメーション](../../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

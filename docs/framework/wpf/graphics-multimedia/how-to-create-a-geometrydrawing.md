@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7f0fa86a9786e5440db9fec0cee76c5ed28363b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 31417a3eeee2c1e61674c43558c2799705797c35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-geometrydrawing"></a>方法 : GeometryDrawing を作成する
 この例を作成し、表示する方法を示しています、<xref:System.Windows.Media.GeometryDrawing>です。 A<xref:System.Windows.Media.GeometryDrawing>を関連付けることで作成して、アウトラインの図形を作成することができます、<xref:System.Windows.Media.Pen>と<xref:System.Windows.Media.Brush>で、<xref:System.Windows.Media.Geometry>です。 <xref:System.Windows.Media.GeometryDrawing.Geometry%2A>図形の構造について説明します、 <xref:System.Windows.Media.GeometryDrawing.Brush%2A> 、図形の塗りつぶしをについて説明し、<xref:System.Windows.Media.GeometryDrawing.Pen%2A>図形の輪郭をについて説明します。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 11/21/2017
   
  複雑な図面を作成するには、描画を使用して 1 つの複合に複数の描画オブジェクトを結合できます、<xref:System.Windows.Media.DrawingGroup>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.DrawingGroup>  
  [Drawing オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)  
  [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)  

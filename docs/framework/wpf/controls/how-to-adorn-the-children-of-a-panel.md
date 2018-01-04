@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d30e9e5ac15f48dabf983123ba007674a14626d
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 70a2c1e7735a6df31a44fce7eb9bb2371acc208b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-adorn-the-children-of-a-panel"></a>方法 : パネルの子を装飾する
 この例では、指定した子に装飾をプログラムでバインド<xref:System.Windows.Controls.Panel>です。  
@@ -43,5 +44,5 @@ ms.lasthandoff: 10/22/2017
 > [!NOTE]
 >  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を使用して、装飾を別の要素にバインドする方法は、現在サポートされていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [装飾の概要](../../../../docs/framework/wpf/controls/adorners-overview.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 0d53db49961c2a75e4547f6b57240cefd2cc17c3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 58349c5440d0062c64346933e48b64de6c4c7b60
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xfactorymethod-directive"></a>x:FactoryMethod ディレクティブ
 XAML プロセッサが、バッキング型の解決後、オブジェクトを初期化するために使用するコンス トラクター以外の方法を指定します。  
@@ -66,5 +67,5 @@ XAML プロセッサが、バッキング型の解決後、オブジェクトを
   
  `x:FactoryMethod`要素には、その他のすべてのプロパティ要素が前に指定する必要があります、としてはいずれかで始まる必要があります`x:Arguments`も、要素として提供されており、コンテンツ/内部のテキスト/初期化のテキストの前にする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:Arguments ディレクティブ](../../../docs/framework/xaml-services/x-arguments-directive.md)

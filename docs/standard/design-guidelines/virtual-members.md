@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 56838fc4c1c1e7cb8723beee3f0e6b23515d43f0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 692a5803ddb538de6dc5f061c18cc0b250d0f4ae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="virtual-members"></a>仮想メンバー
 したがって、サブクラスの動作を変更する、仮想メンバーをオーバーライドできます。 それらは、拡張性の観点からのコールバックを非常に似ていますが、実行のパフォーマンスとメモリ消費量の観点から優れています。 また、仮想メンバーは、特殊な既存の型 (特殊化) の種類を作成する必要があるシナリオで複数な操作です。  
@@ -46,6 +49,6 @@ ms.lasthandoff: 11/21/2017
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
- [機能拡張のための設計](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+ [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

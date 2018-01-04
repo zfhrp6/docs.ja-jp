@@ -29,11 +29,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f0badceeb9ce085dc68fce2c59ec6c42877f2622
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f598cecef2d0994692f197df09e9befc39a58723
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="threading-model"></a>スレッド モデル
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]スレッド処理の問題の開発者を保存する設計されています。 その結果、ほとんどの[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]開発者は、複数のスレッドを使用するインターフェイスを記述する必要はありません。 マルチ スレッド プログラムは複雑でデバッグが困難であるため、避けてシングル スレッドが存在する場合。  
@@ -227,5 +228,5 @@ ms.lasthandoff: 10/22/2017
   
  タスクを[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]させず、メモリ リーク、再入 everywhere をブロックしない理由は、予期しない再入を避けることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [実行時間の長い計算のサンプルを使用して、シングル スレッド アプリケーション](http://go.microsoft.com/fwlink/?LinkID=160038)

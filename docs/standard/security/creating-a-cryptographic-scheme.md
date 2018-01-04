@@ -16,11 +16,14 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3e3c4a832f70fae7808bf71016cb9f6648332f01
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b0aabdc9150aea73ad9078b0e9ee92b2abd03e17
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="creating-a-cryptographic-scheme"></a>暗号スキームの作成
 .NET Framework の暗号化コンポーネントを組み合わせて、データの暗号化と復号化を行うさまざまなスキームを作成することができます。  
@@ -39,5 +42,5 @@ ms.lasthandoff: 10/18/2017
   
  暗号スキームの作成は簡単な作業ではありません。 暗号化の使用の詳細については、http://msdn.microsoft.com/library のプラットフォーム SDK ドキュメントにある「暗号化」トピックを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)

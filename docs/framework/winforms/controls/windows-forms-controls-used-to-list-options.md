@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0e1b26ec97f4b379e6b2d75a407408b8382bca52
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f43e8982dc9caaa57ffb6865bf9988243f42fa8b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-controls-used-to-list-options"></a>オプションのリストを表示するための Windows フォーム コントロール
 選択できるオプションの一覧をユーザーに提供する場合は、Windows フォームにさまざまなコントロールを追加できます。 量によって制限するユーザーの入力ですが、追加できます、<xref:System.Windows.Forms.ListBox>コントロール、<xref:System.Windows.Forms.ComboBox>コントロール、または<xref:System.Windows.Forms.CheckedListBox>コントロール。 次のリンクを使用して、最適なコントロールがニーズを判断します。  

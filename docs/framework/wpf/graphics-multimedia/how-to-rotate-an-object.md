@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4b9b6212ed6c50faf73a6d3531f001a1b7e72d33
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b356ef1782ec5bba4f7288644a0802f029456bbf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-rotate-an-object"></a>方法 : オブジェクトを回転させる
 次の例では、オブジェクトを回転させる方法を示します。 例では、最初に作成、<xref:System.Windows.Media.RotateTransform>し、その<xref:System.Windows.Media.RotateTransform.Angle%2A>(度単位)。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
   
  完全なサンプルについては、「[2-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Transform>  
  [変換の概要](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: d006c8d0937a454dcbe092dcc3e35c4644088e59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 647bfed7b321a949090f6da047f9b8105d335101
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xstatic-markup-extension"></a>x:Static のマークアップ拡張機能
 定義されているすべての静的な値でコードのエンティティを参照して、 [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– 準拠した方法です。 参照される静的プロパティは、XAML では、プロパティの値を提供する使用できます。  
@@ -40,9 +41,9 @@ ms.lasthandoff: 11/21/2017
   
 |||  
 |-|-|  
-|`prefix`|省略可能です。 割り当てられた、既定以外の XAML 名前空間を表すプレフィックスです。 `prefix`明示的に使用量のため表示を既定の XAML 名前空間から静的なプロパティを参照することはほとんどありません。 「解説」を参照してください。|  
-|`typeName`|必須です。 目的の静的メンバーを定義する型の名前。|  
-|`staticMemberName`|必須です。 静的な値が必要なメンバー (定数、静的なプロパティ、フィールド、または列挙値) の名前。|  
+|`prefix`|任意。 割り当てられた、既定以外の XAML 名前空間を表すプレフィックスです。 `prefix`明示的に使用量のため表示を既定の XAML 名前空間から静的なプロパティを参照することはほとんどありません。 「解説」を参照してください。|  
+|`typeName`|必須。 目的の静的メンバーを定義する型の名前。|  
+|`staticMemberName`|必須。 静的な値が必要なメンバー (定数、静的なプロパティ、フィールド、または列挙値) の名前。|  
   
 ## <a name="remarks"></a>コメント  
  参照されているコード エンティティは、次のいずれかにする必要があります。  
@@ -86,6 +87,6 @@ ms.lasthandoff: 11/21/2017
   
  WPF のプレフィックスと XAML 名前空間を使用する方法の詳細については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:Type マークアップ拡張機能](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
  [WPF から System.Xaml に移行した型](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

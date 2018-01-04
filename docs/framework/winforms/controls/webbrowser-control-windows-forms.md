@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a0a87c1cd87b21b10404ae4a19ee931cc5f69ece
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 65c92a64619ae993671f7669117e852994072047
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="webbrowser-control-windows-forms"></a>WebBrowser コントロール (Windows フォーム)
 Windows フォーム`WebBrowser`コントロールは、Web ページをホストし、Web 参照をアプリケーションに機能を提供します。  
@@ -88,5 +89,5 @@ Windows フォーム`WebBrowser`コントロールは、Web ページをホス�
  <xref:System.Windows.Forms.WebBrowserRefreshOption>  
  この列挙は、そのすべての値について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

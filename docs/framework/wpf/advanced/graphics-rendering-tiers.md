@@ -19,11 +19,12 @@ caps.latest.revision: "44"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a64ca2f0da2e10a3042b5f9c30baf3caa37534e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 457b7e76b16e42c71d1e2d1986d58b2708396e22
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="graphics-rendering-tiers"></a>グラフィックスの描画層
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェア性能は描画層で決まります。  
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
   
  次の表は、描画層 1 と描画層 2 のグラフィックス ハードウェア要件の違いをまとめたものです。  
   
-|特性|層 1|層 2|  
+|機能|層 1|層 2|  
 |-------------|------------|------------|  
 |[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン|9.0 以上が要求されます。|9.0 以上が要求されます。|  
 |ビデオ RAM|60MB 以上が要求されます。|120MB 以上が要求されます。|  
@@ -76,7 +77,7 @@ ms.lasthandoff: 11/21/2017
   
  次の機能は、描画層 1 と描画層 2 でハードウェア高速化されます。  
   
-|特性|ノート|  
+|機能|メモ|  
 |-------------|-----------|  
 |2D 描画|ほとんどの 2D 描画をサポートします。|  
 |3D ラスター化|ほとんどの 3D ラスター化をサポートします。|  
@@ -88,13 +89,13 @@ ms.lasthandoff: 11/21/2017
   
  次の機能は、描画層 2 でのみハードウェア高速化されます。  
   
-|特性|ノート|  
+|機能|メモ|  
 |-------------|-----------|  
 |3D アンチエイリアス|3D アンチエイリアシングは、[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] や [!INCLUDE[win7](../../../../includes/win7-md.md)] など、Windows Display Driver Model (WDDM) 対応のオペレーティング システムでのみサポートされています。|  
   
  次の機能はハードウェア高速化**されません**。  
   
-|特性|ノート|  
+|機能|メモ|  
 |-------------|-----------|  
 |印刷コンテンツ|印刷コンテンツはすべて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ソフトウェア パイプラインを利用して描画されます。|  
 |使用するラスタライズされたコンテンツ<xref:System.Windows.Media.Imaging.RenderTargetBitmap>|すべてのコンテンツを使用して、<xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A>メソッドの<xref:System.Windows.Media.Imaging.RenderTargetBitmap>します。|  
@@ -139,7 +140,7 @@ ms.lasthandoff: 11/21/2017
  ![スクリーン ショット: DirectX 診断ツール](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
 DirectX 診断ツールのメイン ウィンドウ  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.RenderCapability>  
  <xref:System.Windows.Media.RenderOptions>  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  

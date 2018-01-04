@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fb6f832b77404b57ab22e4ac472e7707f0e10dd5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 60135c09f63bd98f753e151c515938cbf13e70ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-input-in-a-windows-forms-application"></a>Windows フォーム アプリケーションにおけるユーザー入力
 Windows フォームでは、ユーザー入力が Windows メッセージの形式でアプリケーションに送信されます。 一連のオーバーライド可能なメソッドは、アプリケーションでは、フォーム、これらのメッセージを処理し、レベルを制御します。 これらのメソッドは、マウスとキーボードのメッセージを受信するときに、マウスの情報を取得またはキーボード入力を処理できるイベントが発生します。 多くの場合、Windows フォーム アプリケーションはこれらのイベントを処理するだけですべてのユーザー入力を処理することになります。 それ以外の場合、アプリケーションは、アプリケーション、フォーム、またはコントロールによって受信される前に、特定のメッセージを傍受するためにメッセージを処理する方法の 1 つをオーバーライドする必要があります。  
@@ -39,7 +40,7 @@ Windows フォームでは、ユーザー入力が Windows メッセージの形
   
  キーボードとマウスのメッセージは、追加のメッセージの種類に固有のオーバーライド可能なメソッドのセットでも処理されます。 詳細については、次を参照してください。[キーボード入力のしくみ](../../../docs/framework/winforms/how-keyboard-input-works.md)と[マウス入力のしくみ Windows フォームで](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームでのユーザー入力](../../../docs/framework/winforms/user-input-in-windows-forms.md)  
  [Windows フォーム アプリケーションにおけるキーボード入力](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
  [Windows フォーム アプリケーションにおけるマウス入力](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

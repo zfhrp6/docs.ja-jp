@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6fb2f920928002e4ee374e36f307a537e4af593c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 142973793fd002925bbe2b4b09ce8e6d34553031
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="technology-regions-overview"></a>技術領域の概要
 、WPF、Win32、または DirectX、などのアプリケーションで複数のプレゼンテーション テクノロジが使用されている場合、共通のトップレベル ウィンドウ内の表示領域を共有する必要があります。 このトピックでは、プレゼンテーション層と、WPF の相互運用アプリケーションへの入力は影響を与える問題について説明します。  
@@ -70,7 +71,7 @@ ms.lasthandoff: 11/21/2017
   
 -   アプリケーションが実行されている場合[!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)]、レイヤード ウィンドウの上に[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]画面がちらつく場合に、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]アプリケーションが表示されます。  (実際のレンダリング シーケンスは[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]し、階層化 ウィンドウを非表示に[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]を描画すると、し[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]レイヤード ウィンドウを戻します)。  非[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイヤード ウィンドウにもこの制限があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF と Win32 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
  [チュートリアル: Win32 での WPF クロックのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-clock-in-win32.md)  
  [WPF での Win32 コンテンツのホスト](../../../../docs/framework/wpf/advanced/hosting-win32-content-in-wpf.md)

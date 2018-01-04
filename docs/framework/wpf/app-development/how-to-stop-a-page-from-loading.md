@@ -23,11 +23,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b68936ed83a61fc6d4c80408bd055c0eb05e030d
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6109a45f885a6a94a5785329d10bce52a0090802
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-stop-a-page-from-loading"></a>方法: ページの読み込みの停止
 この例を呼び出す方法を示します、<xref:System.Windows.Navigation.NavigationWindow.StopLoading%2A>ダウンロードが完了する前に、コンテンツへの移動を中断します。  

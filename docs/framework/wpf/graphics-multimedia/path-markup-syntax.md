@@ -18,11 +18,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f2b04dfa51f578ba80e2b766f455719afbb86b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cd8f9b14f114060ebec8e336c1212d61fa19c83
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="path-markup-syntax"></a>パス マークアップ構文
 パスは、後ほど[図形と WPF の概要での基本的な描画](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)と[ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)、ただし、このトピックの詳細、強力で複雑なミニ言語の説明パスの指定に使用することができます使用してよりコンパクト ジオメトリ[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -234,7 +235,7 @@ ms.lasthandoff: 11/21/2017
   
  指数表記を使用することもできます。 たとえば、`+1.e17`有効な値です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Shapes.Path>  
  <xref:System.Windows.Media.StreamGeometry>  
  <xref:System.Windows.Media.PathGeometry>  

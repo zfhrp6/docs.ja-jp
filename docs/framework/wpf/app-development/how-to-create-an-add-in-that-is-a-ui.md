@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9151dd5fa36e3691361bcf6d7c7b281646982f3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fea1c718eedb12d49eced9964e4f9045badf07ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-an-add-in-that-is-a-ui"></a>方法 : UI であるアドインを作成する
 この例は、アドインを作成する方法を示しています、 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]によってホストされている、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]スタンドアロン アプリケーションです。  
@@ -114,6 +115,6 @@ ms.lasthandoff: 11/21/2017
   
  このアクティビティは、ホスト アプリケーションから完全に分離されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アドインおよび拡張機能](../../../../docs/framework/add-ins/index.md)  
  [WPF のアドインの概要](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)

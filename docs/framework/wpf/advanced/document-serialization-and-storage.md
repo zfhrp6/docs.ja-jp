@@ -17,11 +17,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 34b517366a5f143a86388abff5ae13022bc710c3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9a232e1e2557bf1ecc6bb5f27f941e03a204aec6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="document-serialization-and-storage"></a>ドキュメントのシリアル化および保存
 [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] では、高品質のドキュメントを作成および表示するための強力な環境が提供されています。  固定ドキュメントとフロー ドキュメントの両方および高度な表示コントロールをサポートし、強力な 2D および 3D グラフィックス機能と組み合わされた拡張機能により、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] アプリケーションの品質とユーザー エクスペリエンスは新しいレベルになります。  ドキュメントのメモリ内の表現を柔軟に管理できることは [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] の重要な機能であり、ほぼすべてのアプリケーションではデータ ストアのドキュメントを効率的に保存および読み込むことができる必要があります。  内部のメモリ内表現から外部のデータ ストアにドキュメントを変換するプロセスは、シリアル化と呼ばれます。  データ ストアを読み取って元のメモリ内インスタンスを再作成する逆のプロセスは、逆シリアル化と呼ばれます。  
@@ -83,7 +84,7 @@ ms.lasthandoff: 11/21/2017
   
 3.  プラグイン シリアライザーを作成した後、プラグインを配布してインストール (およびアンインストール) するためのインストール スクリプトを実装します (前の「[プラグイン シリアライザーのインストール](#InstallingPluginSerializers)」を参照)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Documents.Serialization>  
  <xref:System.Windows.Xps.XpsDocumentWriter>  
  <xref:System.Windows.Xps.Packaging.XpsDocument>  

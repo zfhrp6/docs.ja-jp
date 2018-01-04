@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7735e721917c5f78b791a200a670599fe3cff310
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d5d81497872e231fb1b235d9707b9a36505d3165
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-windows-forms"></a>Windows フォームについて
 Windows フォームでは、Windows ベースの強力なアプリケーションを作成できます。 次のトピックは、データを表示、ユーザー入力を処理し、強化されたセキュリティを使用して簡単に、アプリケーションの展開の Windows フォームの機能を利用する方法詳細について説明します。  

@@ -17,15 +17,16 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a2461c507c0d2a27f1c2bdfe85327d11318b17ee
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a68c9278d4e8092be5c744109e56f7cb52498095
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Windows フォームでの高 DPI サポート
 
-.NET Framework 4.7 以降、Windows フォームには、共通の高 DPI と動的 DPI シナリオ用の機能強化が含まれています。 以下に例を示します。 
+.NET Framework 4.7 以降、Windows フォームには、共通の高 DPI と動的 DPI シナリオ用の機能強化が含まれています。 次の設定があります。 
 
 - スケーリングとさまざまな Windows フォームのレイアウトの改善を制御するように、<xref:System.Windows.Forms.MonthCalendar>コントロールと<xref:System.Windows.Forms.CheckedListBox>コントロール。 
 
@@ -103,7 +104,7 @@ ms.lasthandoff: 10/18/2017
 
 ## <a name="new-helper-methods-and-properties"></a>新しいヘルパー メソッドとプロパティ
 
-.NET Framework 4.7 では、さまざまな DPI スケーリングに関する情報を提供し、DPI スケールを実行できるようにする新しいヘルパー メソッドとプロパティも追加されます。 以下に例を示します。
+.NET Framework 4.7 では、さまざまな DPI スケーリングに関する情報を提供し、DPI スケールを実行できるようにする新しいヘルパー メソッドとプロパティも追加されます。 次の設定があります。
 
 - <xref:System.Windows.Forms.Control.LogicalToDeviceUnits%2A>を論理座標から値をデバイス ピクセルに変換します。
 

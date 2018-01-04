@@ -20,11 +20,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 362231bbd1f4e95c260370a99233b7e8c2617ca1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a72843547d934aeaeec062eec1241e402baf56bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-paint-an-area-with-a-video"></a>方法 : ビデオを使用して領域を塗りつぶす
 この例では、メディアを使用して領域を塗りつぶす方法を示します。 メディアを使用して領域を描画する方法の 1 つを使用して、<xref:System.Windows.Controls.MediaElement>と共に、<xref:System.Windows.Media.VisualBrush>です。 使用して、<xref:System.Windows.Controls.MediaElement>ロードし、メディアを再生し、設定を使用する、<xref:System.Windows.Media.VisualBrush.Visual%2A>のプロパティ、<xref:System.Windows.Media.VisualBrush>です。 使用してできます、<xref:System.Windows.Media.VisualBrush>読み込まれたメディアで領域を塗りつぶすにします。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
  そのため、アプリケーションが media ファイルなどのコンテンツ ファイルを追加する方法については、次を参照してください。 [WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)です。 メディア ファイルを追加すると、リソース ファイルではなく、コンテンツ ファイルとして追加する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.VisualBrush>  
  [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
  [TileBrush の概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)  

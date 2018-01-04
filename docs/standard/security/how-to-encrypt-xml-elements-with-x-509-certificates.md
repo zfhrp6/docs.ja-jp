@@ -24,11 +24,14 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6690c87bb7a632a783fc89341d405bf81166470c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 108a07a818adaec6734637da2c95aed42e837847
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-encrypt-xml-elements-with-x509-certificates"></a>方法 : X.509 証明書で XML 要素を暗号化する
 <xref:System.Security.Cryptography.Xml> 名前空間のクラスを使用して、XML ドキュメント内の要素を暗号化することができます。  XML 暗号化は、データが簡単に読み取られる心配なく、暗号化された XML データを交換または保存する標準的な方法です。  XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmldsig-core/ にある World Wide Web Consortium (W3C) の XML 暗号化の仕様を参照してください。  
@@ -123,6 +126,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  この例で使用される X.509 証明書は、テスト専用です。  アプリケーションは、信頼された証明機関が生成する X.509 証明書、または Microsoft Windows 証明書サーバーによって生成された証明書を使用する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Security.Cryptography.Xml>  
  [方法: X.509 証明書で XML 要素を復号化する](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md)

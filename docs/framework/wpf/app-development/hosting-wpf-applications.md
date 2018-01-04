@@ -18,11 +18,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2c61c4fd5651b8915971f67addeb162aca50108
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 051f37b0a7098cad5ac43766877cd973ca86e5b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-wpf-applications"></a>WPF アプリケーションのホスト
 WPF XAML ブラウザー アプリケーション (Xbap) は、リッチ クライアント アプリケーションを Web サーバーに配置し、ブラウザーで起動されたことができます。 WPF ホスト (PresentationHost.exe) は、シェルと XBAP と XAML ファイルの MIME ハンドラーとして登録されます。 したがって、Internet Explorer では、ホストを開始、WPF XBAP が起動されたときに認識しています。 Firefox のユーザーには、ホストの Xbap Firefox を有効にする Firefox アドオンをインストールできます。 XBAP は、WPF によって提供されているホスティング Api ネイティブ ブラウザーを使用して、他のブラウザーやスタンドアロンのアプリケーションでホストできます。  

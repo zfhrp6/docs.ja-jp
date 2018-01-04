@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d266d85e10ca8e77cd32338096cf3a3b761c188
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 610fa829b4d2c49d0c3ae760f5601610bd2a0c46
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-customize-the-ticks-on-a-slider"></a>方法 : スライダーの目盛りをカスタマイズする
 この例を作成する方法を示しています、<xref:System.Windows.Controls.Slider>目盛りを持つコントロール。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xaml[Slider#4](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Slider/xaml/window1.xaml#4)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.Slider>  
  <xref:System.Windows.Controls.Primitives.TickBar>  
  <xref:System.Windows.Controls.Slider.TickPlacement%2A>  

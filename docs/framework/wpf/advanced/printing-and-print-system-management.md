@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5be4840f059467556e131e41dfa9ae9aac3bea34
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 077b98eb63559a0a4bb691b4b35949aa98d0592c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printing-and-print-system-management"></a>印刷および印刷システムの管理
 [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]および[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]新しい印刷パスを導入: の代わりに[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]印刷 — と大幅に拡張された一連の印刷システム管理[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]です。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
  [方法トピック](../../../../docs/framework/wpf/advanced/printing-how-to-topics.md)  
  新しい印刷パスを使用する方法を示す記事のセットと[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Printing>  
  <xref:System.Printing.IndexedProperties>  
  <xref:System.Printing.Interop>  

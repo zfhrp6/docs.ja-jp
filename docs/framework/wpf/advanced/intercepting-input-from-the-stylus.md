@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 611a2d2de56025e2f1b5add6106294834586f9af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b5fde62e2e1ab17b26c91051f68b7d4225450c60
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="intercepting-input-from-the-stylus"></a>スタイラスからの入力のインターセプト
 <xref:System.Windows.Input.StylusPlugIns>アーキテクチャ上の低レベルの制御を実装するためのメカニズムを提供する<xref:System.Windows.Input.Stylus>入力し、デジタル インクの作成<xref:System.Windows.Ink.Stroke>オブジェクト。 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>クラスには、カスタム動作を実装し、最適なパフォーマンスのスタイラス デバイスからのデータのストリームに適用するメカニズムが用意されています。  
@@ -80,6 +81,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="conclusion"></a>まとめ  
  独自の派生によって<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>クラスとそれらに挿入する<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>コレクション、デジタル インクの動作が大幅に向上することができます。 アクセスがある、<xref:System.Windows.Input.StylusPoint>データを生成するをカスタマイズする機会を提供するので、<xref:System.Windows.Input.Stylus>入力します。 このような低レベルのアクセス権があるため、<xref:System.Windows.Input.StylusPoint>データ、アプリケーションのインクの収集と最適なパフォーマンスでレンダリングを実装することができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [高度なインク処理](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
  [アクセスとペン入力を操作します。](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

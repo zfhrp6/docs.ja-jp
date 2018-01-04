@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6f71f910dca651b66d02971d05fb83a8d7bbc5f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0f58a4e7b23204167acb31cfcfb3a4fe27977e70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-the-size-of-an-arcsegment"></a>方法 : ArcSegment のサイズをアニメーション化する
 この例は、アニメーション化する方法を示しています、<xref:System.Windows.Media.ArcSegment.Size%2A>のプロパティ、<xref:System.Windows.Media.ArcSegment>です。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
   
  追加のジオメトリおよびアニメーションのサンプルでは、次を参照してください。、[ジオメトリ サンプル](http://go.microsoft.com/fwlink/?LinkID=159989)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.ArcSegment.Size%2A>  
  <xref:System.Windows.Media.ArcSegment>  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  

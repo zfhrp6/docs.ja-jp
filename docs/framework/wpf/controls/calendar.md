@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 857f6b3be1467ec54fd27c76679279c0d0960690
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 04d602161a20e56395e978dfeeb7ec5e756af7a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="calendar"></a>予定表
 カレンダーでは、ビジュアルな予定表を使用して日付を選択するユーザーを使用できます。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Controls.Calendar>コントロールは、マウスまたはキーボードを使用して基本的なナビゲーションを提供します。 次の表は、キーボード ナビゲーションをまとめたものです。  
   
-|キーの組み合わせ|<xref:System.Windows.Controls.Calendar.DisplayMode%2A>|操作|  
+|キーの組み合わせ|<xref:System.Windows.Controls.Calendar.DisplayMode%2A>|アクション|  
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|------------|  
 |矢印|<xref:System.Windows.Controls.CalendarMode.Month>|変更、<xref:System.Windows.Controls.Calendar.SelectedDate%2A>プロパティ場合、<xref:System.Windows.Controls.Calendar.SelectionMode%2A>プロパティに設定されていない<xref:System.Windows.Controls.CalendarSelectionMode.None>です。|  
 |矢印|<xref:System.Windows.Controls.CalendarMode.Year>|変更の月、<xref:System.Windows.Controls.Calendar.DisplayDate%2A>プロパティです。 なお、<xref:System.Windows.Controls.Calendar.SelectedDate%2A>は変わりません。|  
@@ -61,6 +62,6 @@ ms.lasthandoff: 11/21/2017
 |Ctrl +↓|どれでも可|次に切り替わります小さい<xref:System.Windows.Controls.Calendar.DisplayMode%2A>です。 場合<xref:System.Windows.Controls.Calendar.DisplayMode%2A>は既に<xref:System.Windows.Controls.CalendarMode.Month>何もしません。|  
 |Space キーまたは ENTER|<xref:System.Windows.Controls.CalendarMode.Year> または <xref:System.Windows.Controls.CalendarMode.Decade>|スイッチ<xref:System.Windows.Controls.Calendar.DisplayMode%2A>を<xref:System.Windows.Controls.CalendarMode.Month>または<xref:System.Windows.Controls.CalendarMode.Year>フォーカスのあるアイテムによって表されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コントロール](../../../../docs/framework/wpf/controls/index.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

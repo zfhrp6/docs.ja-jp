@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 073730382f98a6c3d61ebdadf4f1f74411ba4e63
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b7ee4b3b00a675cfafc884d41079b76656bdf49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters および XAML
 このトピックでは、一般的な XAML 言語機能として、文字列からの型変換の目的について説明します。 .NET Framework で、<xref:System.ComponentModel.TypeConverter>クラスは、特定の目的を XAML 属性の使用方法のプロパティ値として使用できる管理対象のカスタム クラスの実装の一部として機能します。 場合は、カスタム クラスを記述する、XAML 設定可能な属性値として使用できるようにするのには、クラスのインスタンスは、適用する必要があります、 <xref:System.ComponentModel.TypeConverterAttribute> 、クラスに記述するカスタム<xref:System.ComponentModel.TypeConverter>クラス、またはその両方です。  
@@ -123,7 +124,7 @@ ms.lasthandoff: 11/21/2017
   
  また、プロパティごとに型コンバーターを提供することもできます。 適用する代わりに、 [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute>クラス定義にプロパティの定義に適用 (メイン定義されません、 `get` / `set`内に実装)。 プロパティの型は、カスタム型コンバーターによって処理される型と一致する必要があります。 この属性を適用するには、Xaml では、そのプロパティの値を処理するときに、入力文字列を処理し、オブジェクト インスタンスを返します。 プロパティごとに型コンバーターを提供する手法は、[!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)] やその他のライブラリなど、クラス定義を制御することができず、<xref:System.ComponentModel.TypeConverterAttribute> を適用できないライブラリからプロパティの型を使用する場合に特に便利です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ComponentModel.TypeConverter>  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  

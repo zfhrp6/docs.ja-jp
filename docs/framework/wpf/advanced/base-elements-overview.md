@@ -14,11 +14,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 270388b8e3dda0342ba74187d8dc45616d0e769d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 52f0bb90d7eb61a199097813eb8313cd9c154f3a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="base-elements-overview"></a>基本要素の概要
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のクラスの大部分は、[!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] のドキュメントで一般に基本要素クラスと呼ばれている 4 つのクラスから派生しています。 これらのクラスは<xref:System.Windows.UIElement>、 <xref:System.Windows.FrameworkElement>、 <xref:System.Windows.ContentElement>、および<xref:System.Windows.FrameworkContentElement>です。 <xref:System.Windows.DependencyObject>両方の共通の基本クラスになっているため、クラスが関係も<xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>  
@@ -59,7 +60,7 @@ ms.lasthandoff: 11/21/2017
   
 -   データ バインディングのサポート。 詳しくは、「 [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」をご覧ください。  
   
--   動的リソース参照のサポート。 詳しくは、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+-   動的リソース参照のサポート。 詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
   
 -   プロパティ値継承のサポート、および、データ バインディング、スタイル、またはレイアウトのフレームワークの実装などのフレームワーク サービスのプロパティに関する条件をレポートする場合に役立つ、メタデータ内の他のフラグ。 詳細については、「[フレームワーク プロパティ メタデータ](../../../../docs/framework/wpf/advanced/framework-property-metadata.md)」を参照してください。  
   
@@ -106,7 +107,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="control"></a>コントロール  
  <xref:System.Windows.Controls.Control>目的の基底クラス型のオブジェクトは、コントロールまたはテクノロジによって、コンポーネントと呼ばれるさまざまです。 一般に [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コントロール クラスは、UI コントロールを直接表すクラスか、コントロールの複合に密接に参加するクラスです。 主要な機能を<xref:System.Windows.Controls.Control>コントロール テンプレートは、有効にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.Control>  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  

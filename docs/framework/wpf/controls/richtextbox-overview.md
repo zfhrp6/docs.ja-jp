@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 41b423235fc2ed9c0e0612c90017d41ab0e83d0a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e88afe5f9c35448b3234498af413500bee163abc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="richtextbox-overview"></a>RichTextBox の概要
 <xref:System.Windows.Controls.RichTextBox>コントロールでは、表示または段落、画像、テーブルなどのフロー コンテンツを編集することができます。 このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と[!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)]です。  
@@ -35,8 +36,8 @@ ms.lasthandoff: 11/21/2017
   
 |コントロール|リアルタイム スペル チェック|コンテキスト メニュー|ようなコマンドの書式設定<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)|<xref:System.Windows.Documents.FlowDocument>イメージ、段落、テーブルなどのコンテンツ。|  
 |-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Windows.Controls.TextBox>|はい|はい|いいえ|いいえ。|  
-|<xref:System.Windows.Controls.RichTextBox>|はい|はい|はい|はい|  
+|<xref:System.Windows.Controls.TextBox>|[はい]|はい|×|いいえ。|  
+|<xref:System.Windows.Controls.RichTextBox>|[はい]|はい|はい|[はい]|  
   
  **注:**が<xref:System.Windows.Controls.TextBox>のように関連するコマンドの書式設定をサポートしていません<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)、多くの基本的なコマンドがなどの両方のコントロールでサポートされて<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>です。  
   
@@ -104,6 +105,6 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/SaveLoadPrintRTB.xaml.cs#saveloadprintrtbcodeexamplewholepage)]
  [!code-vb[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/VisualBasic/SaveLoadPrintRTB.xaml.vb#saveloadprintrtbcodeexamplewholepage)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法トピック](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)  
  [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)

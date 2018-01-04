@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 05eaab4497949231d32ceab0ba696b9f252d67ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c0e5bfb4f327028f09e8c898cf07e5fec9a5f789
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generics-in-xaml"></a>XAML のジェネリック
 System.Xaml に実装されている .NET Framework XAML サービスでは、CLR 型のジェネリック型を使用するためのサポートを提供します。 このサポートには、引数の型としてジェネリックの制約を指定して、適切な呼び出しによって、制約の適用が含まれます。`Add`メソッドのジェネリック コレクションの場合。 このトピックを使用して、XAML でのジェネリック型の参照の側面について説明します。  
@@ -51,7 +52,7 @@ System.Xaml に実装されている .NET Framework XAML サービスでは、CL
   
  カスタム ワークフロー[!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]の[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]汎用的な XAML の使用方法をサポートしていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:TypeArguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)

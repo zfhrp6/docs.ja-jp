@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cad79f26a48f3f5e905b2f2ac7de9191dd8539f8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d1d85e85079504e28a5b0ae78dc8be3a4b928ea3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drawing-formatted-text"></a>書式設定されたテキストの描画
 このトピックの機能の概要を示します、<xref:System.Windows.Media.FormattedText>オブジェクト。 このオブジェクトは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでのテキストの描画に対する低レベルの制御を提供します。  
@@ -41,7 +42,7 @@ FormattedText オブジェクトを使用して表示されるテキスト
 >  [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] API から移行する開発者のために、「[Win32 の移行](#win32_migration)」の表に [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText フラグと [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] におけるほぼ同等のものを示します。  
   
 ### <a name="reasons-for-using-formatted-text"></a>書式設定されたテキストを使用する理由  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、画面にテキストを描画するための複数のコントロールが含まれています。 各コントロールは異なるシナリオを対象にしており、それぞれに一連の機能と制限があります。 一般に、<xref:System.Windows.Controls.TextBlock>制限付きのテキストのサポートが必要な場合、簡単な文など、要素を使用する必要があります、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 <xref:System.Windows.Controls.Label>最小限のテキストのサポートが必要な場合に使用できます。 詳細については、「[WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)」を参照してください。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には画面にテキストを描画するための複数のコントロールが含まれています。 各コントロールは異なるシナリオを対象にしており、それぞれに一連の機能と制限があります。 一般に、<xref:System.Windows.Controls.TextBlock>制限付きのテキストのサポートが必要な場合、簡単な文など、要素を使用する必要があります、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 <xref:System.Windows.Controls.Label>最小限のテキストのサポートが必要な場合に使用できます。 詳細については、「[WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)」を参照してください。  
   
  <xref:System.Windows.Media.FormattedText>オブジェクトが書式設定機能よりも大きい値のテキストを提供[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]テキスト コントロールとテキスト装飾的な要素として使用する場合に役に立ちます。 詳細については、後の「[書式設定されたテキストのジオメトリへの変換](#converting_formatted_text)」を参照してください。  
   
@@ -106,7 +107,7 @@ FormattedText オブジェクトを使用して表示されるテキスト
 ## <a name="win32-migration"></a>Win32 の移行  
  機能<xref:System.Windows.Media.FormattedText>テキストを描画するための機能に似ていますが、 [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText 関数。 [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] API から移行する開発者のために、[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText フラグと [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] におけるほぼ同等のものを次の表に示します。  
   
-|DrawText フラグ|同等の WPF 操作|ノート|  
+|DrawText フラグ|同等の WPF 操作|メモ|  
 |-------------------|--------------------|-----------|  
 |DT_BOTTOM|<xref:System.Windows.Media.FormattedText.Height%2A>|使用して、<xref:System.Windows.Media.FormattedText.Height%2A>プロパティを適切なコンピューティング[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]方向の位置。|  
 |DT_CALCRECT|<xref:System.Windows.Media.FormattedText.Height%2A>, <xref:System.Windows.Media.FormattedText.Width%2A>|使用して、<xref:System.Windows.Media.FormattedText.Height%2A>と<xref:System.Windows.Media.FormattedText.Width%2A>プロパティを出力四角形を計算します。|  
@@ -133,7 +134,7 @@ FormattedText オブジェクトを使用して表示されるテキスト
 |DT_WORDBREAK|なし|不要。 単語区切り処理が自動的に行われます<xref:System.Windows.Media.FormattedText>オブジェクト。 無効にすることはできません。|  
 |DT_WORD_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|使用して、 <xref:System.Windows.Media.FormattedText.Trimming%2A> 、値を持つプロパティ<xref:System.Windows.TextTrimming.WordEllipsis>です。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.FormattedText>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  

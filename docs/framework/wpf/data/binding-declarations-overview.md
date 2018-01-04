@@ -23,11 +23,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 28b139f6ea2aad41e4d733e8c622699f2474b3e6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2fc90769b1524ec93fd3df6a9b8be3eb28de8195
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding-declarations-overview"></a>バインディング宣言の概要
 このトピックでは、バインディングを宣言するさまざまな方法について説明します。  
@@ -137,7 +138,7 @@ ms.lasthandoff: 11/21/2017
   
 -   既定値<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>値によって異なります<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>と<xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>も、バインドされた依存関係プロパティによって異なります。 ほとんどの依存関係プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> です。ただし、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
  [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  

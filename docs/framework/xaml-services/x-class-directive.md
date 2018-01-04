@@ -21,11 +21,12 @@ caps.latest.revision: "27"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 1828ef3614cc1f3a81d8aeff62c15ed5accfe380
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b894a56caa3644bae140e7ec37cf5b55ab093a59
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xclass-directive"></a>x:Class ディレクティブ
 部分クラスのマークアップと分離コードの間で結合する XAML マークアップのコンパイルを構成します。 コードの部分クラスが個別のコード ファイル内で定義されている、[!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]言語、マークアップの部分クラスは、通常、XAML のコンパイル時にコード生成によって作成されします。  
@@ -42,8 +43,8 @@ ms.lasthandoff: 11/21/2017
   
 |||  
 |-|-|  
-|`namespace`|省略可能です。 指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]で識別される部分クラスを含む名前空間`classname`です。 場合`namespace`を指定すると、ドット (.) で区切られます`namespace`と`classname`です。 「解説」を参照してください。|  
-|`classname`|必須です。 指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]読み込まれた XAML およびその XAML の分離コードで接続する部分クラスの名前。|  
+|`namespace`|任意。 指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]で識別される部分クラスを含む名前空間`classname`です。 場合`namespace`を指定すると、ドット (.) で区切られます`namespace`と`classname`です。 「解説」を参照してください。|  
+|`classname`|必須。 指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]読み込まれた XAML およびその XAML の分離コードで接続する部分クラスの名前。|  
   
 ## <a name="dependencies"></a>依存関係  
  `x:Class`XAML の運用環境のルート要素でのみ指定できます。 `x:Class`XAML の運用環境である親を持つ任意のオブジェクトで有効です。 詳細については、次を参照してください。 [ \[MS-XAML\]セクション 4.3.1.6](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
@@ -70,7 +71,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="silverlight-usage-notes"></a>Silverlight の使用上の注意  
  Silverlight 用の `x:Class` に関しては、別途ドキュメントが用意されています。 詳細については、次を参照してください[XAML Namespace (x:)。言語機能 (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:Subclass ディレクティブ](../../../docs/framework/xaml-services/x-subclass-directive.md)  
  [WPF における XAML とカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
  [x:ClassModifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)  

@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: faa74e982fb114d041468c53dde2f978bb3faa35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0feef370e6b09d2f58a33f2142bd654e1d7e3402
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>XAML のマークアップ拡張機能の概要
 マークアップ拡張機能は、プリミティブでも特定の XAML 型でもない値を取得するための XAML の手法です。 属性による使用では、マークアップ拡張機能は、左中かっこ `{` でマークアップ拡張機能スコープに入り、右中かっこ `}` で終了するという、既知の文字シーケンスを使用します。 .NET Framework XAML サービスを使用する場合は、System.Xaml アセンブリから XAML 言語の定義済みのマークアップ拡張機能をいくつか使用できます。 また、System.Xaml で定義された <xref:System.Windows.Markup.MarkupExtension> クラスからサブクラスを作成し、独自のマークアップ拡張機能を定義することもできます。 あるいは、特定のフレームワークを既に参照している場合は、そのフレームワークによって定義されたマークアップ拡張機能を使用することができます。  
@@ -164,7 +165,7 @@ public Collate(CollationMode collationMode, object collateThis) {...}
   
  保存パスで XAML ノード ストリームを処理している場合は、通常、シリアル化するオブジェクトが当初はマークアップ拡張機能の使用と `ProvideValue` の結果によって提供されたことを知らせる情報はオブジェクト グラフ表現の中に存在しません。 マークアップ拡張機能の使用をラウンドトリップさせ、オブジェクト グラフのその他の変化もキャプチャする必要があるシナリオでは、元の XAML 入力に由来するマークアップ拡張機能の使用の情報を保存するため、独自の手法を考案する必要があります。 たとえば、マークアップ拡張機能の使用を復元するには、保存パス上のノード ストリームを処理してマークアップ拡張機能の使用を復元するか、元の XAML とラウンドトリップされた XAML に対して何らかのマージ処理を実行することができます。 WPF などの一部の XAML 実装フレームワークでは、中間の型 (式) を使用して、マークアップ拡張機能の使用が値を提供したケースを表す場合があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Markup.MarkupExtension>  
  [XAML の型コンバーターおよびマークアップ拡張機能](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)  
  [マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

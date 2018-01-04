@@ -22,11 +22,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 757745b24c8e9e281d243cd15a5351b01d3479ca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c73509d58112e47f707e82243005bfdf9edca151
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-resize-a-canvas-by-using-a-thumb"></a>方法: つまみを使用してキャンバスのサイズを変更する
 この例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.Thumb>コントロール サイズを変更する、<xref:System.Windows.Controls.Canvas>コントロール。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/21/2017
   
  サンプル全体については、次を参照してください。 [Thumb ドラッグ機能のサンプル](http://go.microsoft.com/fwlink/?LinkID=160042)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.Primitives.Thumb>  
  <xref:System.Windows.Controls.Primitives.Thumb.DragStarted>  
  <xref:System.Windows.Controls.Primitives.Thumb.DragDelta>  

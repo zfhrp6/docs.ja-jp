@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e1e39bf6db28290b7cba600ea1d2012c58633587
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: af07e1876666351d72eada56e7af3e787ccc90f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-startup-time"></a>アプリケーションの起動時間
 WPF アプリケーションの起動に必要な時間には、かなりばらつきがあります。 このトピックでは、Windows Presentation Foundation (WPF) アプリケーションの認識される起動時間と実際の起動時間を短縮する方法について説明します。  
@@ -132,7 +133,7 @@ WPF アプリケーションの起動に必要な時間には、かなりばら�
 ## <a name="set-data-binding-programmatically"></a>データ バインディングのプログラムによる設定  
  XAML を使用して設定するのではなく、<xref:System.Windows.FrameworkElement.DataContext%2A>宣言によって、メイン ウィンドウのプログラムで設定することを検討してください、<xref:System.Windows.Application.OnActivated%2A>メソッドです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.SplashScreen>  
  <xref:System.AppDomain>  
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  

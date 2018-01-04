@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dad0cd8aaa81e6a458307ec69ec60ed369ca6b03
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 449b55d07aa0119ff23c8642ca83b0989f5b1d4b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-routedcommand"></a>方法 : RoutedCommand を作成する
 この例は、カスタムを作成する方法を示しています。<xref:System.Windows.Input.RoutedCommand>および作成することで、カスタム コマンドを実装する方法、<xref:System.Windows.Input.ExecutedRoutedEventHandler>と<xref:System.Windows.Input.CanExecuteRoutedEventHandler>にアタッチすると、<xref:System.Windows.Input.CommandBinding>です。  コマンド実行の詳細については、次を参照してください。、[コマンド実行の概要](../../../../docs/framework/wpf/advanced/commanding-overview.md)です。  
@@ -56,6 +57,6 @@ ms.lasthandoff: 11/21/2017
   
  ボタンがクリックされたときに、 <xref:System.Windows.Input.RoutedCommand.Execute%2A> 、カスタム<xref:System.Windows.Input.RoutedCommand>と呼びます。  <xref:System.Windows.Input.RoutedCommand>を発生させます、<xref:System.Windows.Input.CommandManager.PreviewExecuted>と<xref:System.Windows.Input.CommandManager.Executed>イベントにルーティングします。  これらのイベントを探して、要素ツリーを走査する<xref:System.Windows.Input.CommandBinding>この特定のコマンド。  場合、<xref:System.Windows.Input.CommandBinding>が見つかると、<xref:System.Windows.Input.ExecutedRoutedEventHandler>に関連付けられている<xref:System.Windows.Input.CommandBinding>と呼びます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Input.RoutedCommand>  
  [コマンド実行の概要](../../../../docs/framework/wpf/advanced/commanding-overview.md)

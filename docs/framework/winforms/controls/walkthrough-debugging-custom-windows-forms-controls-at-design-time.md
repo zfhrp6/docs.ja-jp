@@ -26,11 +26,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc5f0fab7c380268dfc041d6105595858c2fed93
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7fd38f6246d44bd24753d9c86a5b0b08819d3db7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>チュートリアル : カスタム Windows フォーム コントロールのデザイン時のデバッグ
 カスタム コントロールを作成するときに、多くの場合、必要な場合が、デザイン時の動作をデバッグします。 これは、カスタム コントロールのカスタム デザイナーを作成している場合に特に当てはまります。 詳細については、「[チュートリアル:、Windows フォーム コントロール利用の Visual Studio デザイン時の機能を作成する](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)です。  
@@ -182,7 +183,7 @@ ms.lasthandoff: 11/21/2017
   
 -   カスタム コントロールのカスタム デザイナーを記述することができます。 Visual Studio によって公開される拡張可能なデザイナー インフラストラクチャを使用してデザイン環境を完全に制御できます。 詳細については、「[チュートリアル:、Windows フォーム コントロール利用の Visual Studio デザイン時の機能を作成する](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル: Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
  [方法: デザイン時のサービスにアクセス](http://msdn.microsoft.com/library/c186c4b6-076c-438d-9ed3-f13da29c8c1f)  
  [方法: Windows フォームでのデザイン時サポートのアクセス](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)

@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5730b930a4f863ad01fcb6153d9bfd8f700fdb92
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb7956ab70dc30c7d090b9616cc603df2dc0b4e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-control-the-fill-of-a-composite-shape"></a>方法 : 複合図形の塗りつぶしを制御する
 <xref:System.Windows.Media.GeometryGroup.FillRule%2A>のプロパティ、<xref:System.Windows.Media.GeometryGroup>または<xref:System.Windows.Media.PathGeometry>、複合図形を使用して特定の時点のジオメトリの一部であるかどうかを決定する「ルール」を指定します。 2 つの値がある<xref:System.Windows.Media.FillRule>:<xref:System.Windows.Media.FillRule.EvenOdd>と<xref:System.Windows.Media.FillRule.Nonzero>です。 以下のセクションでは、これら 2 つの規則の使用方法を説明します。  
@@ -71,6 +72,6 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="example"></a>例  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [複合図形を作成する](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md)  
  [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)

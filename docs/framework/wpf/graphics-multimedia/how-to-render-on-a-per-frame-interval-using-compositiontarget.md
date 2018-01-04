@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7616a418b9f2f6b175b925e4385322c42546e9bc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eb7e917c59f11ed78f8d44fa4b674d8d572f3623
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-render-on-a-per-frame-interval-using-compositiontarget"></a>方法 : CompositionTarget を使用したフレームの間隔ごとの描画
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のアニメーション エンジンには、フレームベースのアニメーションを作成するためのさまざまな機能が用意されています。 ただし、フレームベースの描画をさらにきめ細かく制御することが必要となるアプリケーション シナリオがあります。 <xref:System.Windows.Media.CompositionTarget>オブジェクトは、フレームごとのコールバックに基づくカスタム アニメーションを作成する機能を提供します。  
@@ -50,6 +51,6 @@ ms.lasthandoff: 11/21/2017
   
  追加または削除を表示する<xref:System.EventHandler>デリゲートがイベントを発生させるときに、イベントの終了後まで遅延されますを発生させます。 これは、方法と一致<xref:System.MulticastDelegate>-ベースのイベントは、共通言語ランタイム (CLR) を処理します。 また、描画イベントが特定の順序で呼び出されるかどうかは保証されません。 複数ある場合<xref:System.EventHandler>デリゲートを特定の順序に依存する、1 つを登録する必要があります<xref:System.Windows.Media.CompositionTarget.Rendering>イベントおよびマルチプレクシング正しい内のデリゲートでは、自分で注文します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.CompositionTarget>  
  [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

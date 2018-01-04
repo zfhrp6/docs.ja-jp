@@ -19,11 +19,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9c2d7cfcb228c492d2adbe614d0ed88a3b02bb68
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9a876a818086e0d54251f53a1e8f83cc74a574ae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exceptions-and-performance"></a>例外とパフォーマンス
 例外に関連する 1 つの一般的な問題は、こと日常的に失敗したコードの例外を使用する場合の実装では、パフォーマンスは許容できないです。 これは、有効な問題です。 メンバーは、例外をスローするときに、パフォーマンスが桁違い低速にできます。 ただし、厳密にエラー コードの使用を許可しない例外のガイドラインに従いながら良好なパフォーマンスを実現することはできます。 このセクションで説明した 2 つのパターンは、これを行う方法を提案します。  
@@ -80,6 +83,6 @@ public struct DateTime {
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
- [例外のデザイン ガイドライン](../../../docs/standard/design-guidelines/exceptions.md)
+ [例外のデザインのガイドライン](../../../docs/standard/design-guidelines/exceptions.md)

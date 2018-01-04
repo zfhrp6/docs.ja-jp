@@ -19,18 +19,19 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ee46c41d6f0f42bbb9f50bd5862f6eb076b34bb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a33e56b69a357694a1d1a23d5cd3c887c88cea37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-drawingvisual-objects"></a>DrawingVisual オブジェクトの使用
 このトピックの使用方法の概要を説明する<xref:System.Windows.Media.DrawingVisual>内のオブジェクト、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ビジュアル層です。  
   
 <a name="drawingvisual_object"></a>   
 ## <a name="drawingvisual-object"></a>DrawingVisual オブジェクト  
- <xref:System.Windows.Media.DrawingVisual>は、軽量な図形、画像、またはテキストを表示するために使用されるクラスを描画します。 このクラスが軽量と見なされる理由は、レイアウトやイベントの処理を行わないことで、パフォーマンスが向上するからです。 このため、背景やクリップ アートの描画に適しています。  
+ <xref:System.Windows.Media.DrawingVisual>は、軽量な図形、画像、またはテキストを表示するために使用されるクラスを描画します。 このクラスが軽量と見なされる理由は、レイアウトやイベントの処理を行わないことで、パフォーマンスが向上するからです。 そのため、背景やクリップ アートの描画に適しています。  
   
 <a name="drawingvisual_host_container"></a>   
 ## <a name="drawingvisual-host-container"></a>DrawingVisual ホスト コンテナー  
@@ -79,7 +80,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[DrawingVisualSample#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#103)]
  [!code-vb[DrawingVisualSample#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.DrawingVisual>  
  <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>  
  [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  

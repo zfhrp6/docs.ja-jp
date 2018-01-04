@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc4411c8141579150cde1bda2e46d7d2abe42e9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d915af4ee436bb6c661a7b412b0e36702191339a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cleartype-registry-settings"></a>ClearType レジストリの設定
 このトピックの概要を説明する、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)]によって使用されているレジストリ設定[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。  
@@ -91,7 +92,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="pixel-structure"></a>ピクセル構造  
  ピクセル構造は、ディスプレイ デバイスを構成するピクセルの種類を示します。 ピクセル構造は、次の 3 種類のいずれかとして定義されます。  
   
-|型|値|説明|  
+|型|[値]|説明|  
 |----------|-----------|-----------------|  
 |フラット|0|ディスプレイ デバイスにピクセル構造がありません。 つまり、各色の光源がピクセル領域に均等に拡散しています。これは、グレースケール レンダリングと呼ばれます。 標準のディスプレイ デバイスはこのようにして機能します。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] はレンダリングされたテキストに適用されません。|  
 |RGB|1|ディスプレイ デバイスのピクセルは、赤、緑、青の順の 3 つのストライプで構成されます。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] がレンダリングされたテキストに適用されます。|  
@@ -124,6 +125,6 @@ ms.lasthandoff: 11/21/2017
   
  ![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ClearType の概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
  [ClearType アンチエイリアシング](https://msdn.microsoft.com/library/dd183433(v=vs.85).aspx)

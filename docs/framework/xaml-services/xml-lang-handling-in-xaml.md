@@ -18,11 +18,12 @@ caps.latest.revision: "16"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 47dd34db82e796418b68fcf9b28ef3e4d4eaca4e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3dad1600d93f53198d7ca7842148612b7755fc10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xmllang-handling-in-xaml"></a>XAML における xml:lang の処理
 `xml:lang` 属性は [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]の定義済み属性の 1 つであり、XML の要素の言語およびカルチャ情報を宣言します。 属性の意味は XAML でも同じですが、いくつかの追加の考慮事項が適用されます。  
@@ -53,5 +54,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="wpf-usage-nodes"></a>WPF の使用上の注意  
  要素が <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement>の派生クラスの場合は、 <xref:System.Windows.FrameworkElement.Language%2A> 属性の代わりに、同等の `xml:lang` 依存関係プロパティを使用できます。 別途設定されない限り、 <xref:System.Windows.FrameworkElement.Language%2A> プロパティの値は既定で "en-US" となります。このプロパティの値は、このプロパティを通して、または `xml:lang` 属性を処理することによって設定されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF のグローバリゼーション](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)

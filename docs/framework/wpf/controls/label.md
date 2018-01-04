@@ -17,11 +17,12 @@ caps.latest.revision: "66"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3c271d1c90d36832e36d042a83a0fdbcc6c79a14
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1ffb1a826bb37bddeefae9862e34f59096826685
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="label"></a>group1
 <xref:System.Windows.Controls.Label>コントロールが通常の情報を提供して、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。  従来、<xref:System.Windows.Controls.Label>テキストのみが格納されているが、<xref:System.Windows.Controls.Label>に付属している[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]は、 <xref:System.Windows.Controls.ContentControl>、いずれかのテキストを含めることができます、または<xref:System.Windows.UIElement>です。  

@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 417fea4dcbb5a8d0a27f9605be19de5921aaf0ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ece6a5d2123bb118f11940081e3c1d939815a8ce
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-an-application-scope-resource-dictionary"></a>方法 : アプリケーション スコープのリソース ディクショナリを使用する
 この例では、アプリケーション スコープのカスタム リソース ディクショナリを定義して、使用する方法を示します。  
@@ -51,7 +52,7 @@ ms.lasthandoff: 11/21/2017
   
  2 つの考慮事項を使用する場合がある<xref:System.Windows.Application.Resources%2A>です。 まず、ディクショナリ*キー*オブジェクトは両方の設定とプロパティ値を取得するときに正確に同じオブジェクト インスタンスを使用する必要があります。 (キーに文字列を使用する場合、大文字と小文字が区別されることに注意してください)。2 番目、ディクショナリ*値*がオブジェクト、プロパティ値を取得するときに、値を目的の型に変換しなければならないためです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.ResourceDictionary>  
  <xref:System.Windows.Application.Resources%2A>  
  [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)  

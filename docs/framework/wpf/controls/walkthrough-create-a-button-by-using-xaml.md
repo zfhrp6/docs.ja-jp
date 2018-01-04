@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 543e6496c826c864dc77e50fd096fc4cb43f600e
-ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+ms.workload: dotnet
+ms.openlocfilehash: 5c5efa9f8787e65d59e1b544632e806bf3fbbc81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/13/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>チュートリアル : XAML を使用したボタンの作成
 このチュートリアルの目的で使用するためのアニメーションのボタンを作成する方法については、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]アプリケーションです。 このチュートリアルでは、スタイルとテンプレートを使用して、コードの再利用やボタン宣言からボタン ロジックを分離するカスタマイズされたボタンのリソースを作成します。 このチュートリアルが完全に書き込まれる[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -385,7 +386,7 @@ ms.lasthandoff: 12/13/2017
   
      F5 キーを押して、アプリケーションを実行し、ボタンのいずれかをクリックします。 ボタンをクリックしたときにグラス四角形が回転します。  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  このチュートリアルでは、次の演習を実行しました。  
   
 -   対象となる、<xref:System.Windows.Style>オブジェクト型 (<xref:System.Windows.Controls.Button>)。  
@@ -398,7 +399,7 @@ ms.lasthandoff: 12/13/2017
   
 -   ユーザーの操作への応答のボタンの動作のカスタマイズ (など<xref:System.Windows.UIElement.MouseEnter>、 <xref:System.Windows.UIElement.MouseLeave>、および<xref:System.Windows.Controls.Primitives.ButtonBase.Click>) アニメーション効果を含めることです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Microsoft Expression Blend を使用してボタンを作成する](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  

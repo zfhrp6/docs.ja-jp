@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 55e5aa633e3d788ac8acaa09684c92b8608e7cfa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload: dotnet
+ms.openlocfilehash: caf652f8a80da8e927a74ffc012d09b2389b1b09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>チュートリアル: Win32 での WPF クロックのホスト
 配置する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]アプリケーションに、<xref:System.Windows.Interop.HwndSource>を含む HWND を提供する、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コンテンツ。 最初に作成、 <xref:System.Windows.Interop.HwndSource>CreateWindow のようなパラメーターを指定します。  指示、<xref:System.Windows.Interop.HwndSource>に関する、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内部するコンテンツ。  最後に、HWND のうち、<xref:System.Windows.Interop.HwndSource>です。 このチュートリアルは、混合を作成する方法を示しています。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]オペレーティング システムを reimplements アプリケーション**日付と時刻のプロパティ**ダイアログ。  
@@ -90,7 +91,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                      int       nCmdShow)  
 ```  
   
- この属性は、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]の初期化時[!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)]、シングル スレッド アパートメント (STA) はあるモデルに必要なを使用する必要があります[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] (および[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)])。  
+ この属性は、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]の初期化時[!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)]、シングル スレッド アパートメント (STA) はあるモデルに必要なを使用する必要があります[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)](および[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)])。  
   
 ## <a name="create-a-windows-presentation-framework-page"></a>Windows Presentation Framework ページを作成します。  
  次に、定義する DLL を作成、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Page>です。 作成する最も簡単なは多くの場合、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Page>スタンドアロン アプリケーションでは、書き込みとデバッグ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]部分ようにします。  クリックすると、プロジェクトを右クリックして、DLL にそのプロジェクトを変換できますが終わったら、**プロパティ**しようとして、アプリケーション、および Windows クラス ライブラリに出力の種類を変更します。  
@@ -235,7 +236,7 @@ HWND clock = ManagedCode::GetHwnd(hDlg, point.x, point.y, width, height);
   
  このスクリーン ショットを作成したコードに、最終結果を比較するを参照してください。[クロックの相互運用の Win32 サンプル](http://go.microsoft.com/fwlink/?LinkID=160051)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Interop.HwndSource>  
  [WPF と Win32 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
  [Win32 クロックの相互運用性サンプル](http://go.microsoft.com/fwlink/?LinkID=160051)

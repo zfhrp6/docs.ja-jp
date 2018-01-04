@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6d32dfe359d4f51403c5aaaae319fe4cb52eed3c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 913cccadc90eaef589f42d097a14b1472c7129fc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>ファイル ダイアログ ボックスのカスタム プレイス用既知のフォルダー GUID
 使用する、<xref:System.Guid>を指定する、[!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)]既知のフォルダーにフォルダーを追加するときに、<xref:System.Windows.Forms.FileDialog.CustomPlaces%2A>コレクション。 既知のフォルダー Guid は、大文字小文字は区別されずで KnownFolders.h ファイルで定義されて、[!INCLUDE[winSDK](../../../../includes/winsdk-md.md)]です。  
@@ -131,7 +132,7 @@ ms.lasthandoff: 11/21/2017
  ネットワーク コンピューター  
  C5ABBF53-E17F-4121-8900-86626FC2C973  
   
- Network  
+ ネットワーク  
  D20BEEC4-5CA8-4905-AE3B-BF251EA09B53  
   
  OriginalImages  
@@ -179,7 +180,7 @@ ms.lasthandoff: 11/21/2017
  Programs  
  A77F5D77-2E2B-44C3-A6A2-ABA601054A51  
   
- パブリック  
+ Public  
  DFDF76A2-C82A-4D63-906A-5644AC457385  
   
  PublicDesktop  
@@ -296,6 +297,6 @@ ms.lasthandoff: 11/21/2017
  Windows  
  F38BF404-1D43-42F2-9305-67DE0B28FC23  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.FileDialogCustomPlace>  
  [方法: よく使用する場所をファイル ダイアログ ボックスに追加する](../../../../docs/framework/winforms/controls/how-to-add-a-custom-place-to-a-file-dialog-box.md)

@@ -23,11 +23,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd4e0f65d404e70f441cf2918fd6c50e08ebec79
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4992b5be4243d8d29b6075c0ad746494dc2eb168
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transforms-overview"></a>変換の概要
 このトピックを使用する方法について説明、 [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform>回転、拡大縮小、移動クラス (翻訳)、および傾斜させる<xref:System.Windows.FrameworkElement>オブジェクト。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 11/21/2017
 |-|-|-|  
 |<xref:System.Windows.Media.Matrix.M11%2A><br /><br /> 既定値: 1.0|<xref:System.Windows.Media.Matrix.M12%2A><br /><br /> 既定値: 0.0|0.0|  
 |<xref:System.Windows.Media.Matrix.M21%2A><br /><br /> 既定値: 0.0|<xref:System.Windows.Media.Matrix.M22%2A><br /><br /> 既定値: 1.0|0.0|  
-|<xref:System.Windows.Media.Matrix.OffsetX%2A><br /><br /> 既定値: 0.0|<xref:System.Windows.Media.Matrix.OffsetY%2A><br /><br /> 既定値: 0.0|1.0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A><br /><br /> 既定値: 0.0|<xref:System.Windows.Media.Matrix.OffsetY%2A><br /><br /> 既定値: 0.0|1|  
   
  行列の値を操作することで、オブジェクトを回転、拡大縮小、傾斜、移動 (平行移動) させることができます。 たとえば、3 番目の行の最初の列の値を変更する場合 (、<xref:System.Windows.Media.Matrix.OffsetX%2A>値) 100、することができるために使用する x 軸に沿って、オブジェクトの 100 単位を移動します。 2 番目の行の 2 列目の値を 3 に変更すると、オブジェクトの高さを現在の 3 倍に拡張できます。 両方の値を変更した場合は、オブジェクトが x 軸に沿って 100 単位移動し、高さが 3 倍に拡張されます。 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] ではアフィン変換しかサポートされていないため、右側の列の値は常に 0, 0, 1 になります。  
   
@@ -159,7 +160,7 @@ LayoutTransform を使用したボタンの回転
 ## <a name="freezable-features"></a>Freezable 機能  
  継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.Transform>クラスがいくつかの特別な機能を提供:<xref:System.Windows.Media.Transform>オブジェクトとして宣言できます[リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)を向上させるのには読み取り専用に、複数のオブジェクト間で共有パフォーマンスが複製され、スレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください、 [Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Transform>  
  <xref:System.Windows.Media.Matrix>  
  [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)  

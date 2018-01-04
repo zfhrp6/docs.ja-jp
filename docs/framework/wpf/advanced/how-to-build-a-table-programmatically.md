@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ef961bb219f201cf5fe32a5b2bbdf70ef45e73b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: fca6a304ea12dd90a71f8718fed5f1595f4cd4b3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-build-a-table-programmatically"></a>方法 : プログラムによってテーブルをビルドする
 次の例は、プログラムで作成する方法を示して、<xref:System.Windows.Documents.Table>し、コンテンツを設定します。 テーブルの内容は、5 つの行に分配する (によって表される<xref:System.Windows.Documents.TableRow>に含まれるオブジェクト、<xref:System.Windows.Documents.Table.RowGroups%2A>オブジェクト) と 6 つの列 (によって表される<xref:System.Windows.Documents.TableColumn>オブジェクト)。 たとえば、タイトル行はテーブル全体のタイトルの設定に使用され、ヘッダー行はテーブル内のデータ列の説明、フッター行は要約情報の格納に使用されます。  "タイトル"、"ヘッダー"、"フッター" 行の概念はテーブルに固有のものではなく、単純に異なる特性を持つ行です。 テキスト、画像、またはその他のほとんどので構成されることができます、実際のコンテンツを含むテーブル セルが[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]要素。  
@@ -65,5 +66,5 @@ ms.lasthandoff: 10/22/2017
  [!code-csharp[TableSnippets#_TableAddFooterRow](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tableaddfooterrow)]
  [!code-vb[TableSnippets#_TableAddFooterRow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableaddfooterrow)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [テーブルの概要](../../../../docs/framework/wpf/advanced/table-overview.md)

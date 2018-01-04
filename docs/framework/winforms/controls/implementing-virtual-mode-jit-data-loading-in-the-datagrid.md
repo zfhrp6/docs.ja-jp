@@ -23,11 +23,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0bddac01a0d85ae985b54587619bcac6de5f966f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2a830c11e8df73b71f16c1b9dfd1007461d910f5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-virtual-mode-with-just-in-time-data-loading-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装
 仮想モードを実装する 1 つの理由、<xref:System.Windows.Forms.DataGridView>コントロールは、必要なデータのみを取得します。 これと呼ばれる*- just-in-time データ読み込み*です。  
@@ -80,7 +81,7 @@ ms.lasthandoff: 11/21/2017
   
  アプリケーションのスクロールのパフォーマンスを向上させるのには、ローカルに格納されているデータの量を変更できます。 起動時間を向上させるのにする必要がありますは避けてください大量のデータを最初に読み込みます。 変更することも、`Cache`クラスを格納できるデータ ページの数を増やします。 スクロールの効率を向上させる多くのデータ ページを使用することができますが、使用可能な帯域幅とサーバーの待機時間に応じてのデータ ページ内の行の最適な数を決定する必要があります。 サイズの小さいページは、サーバーより頻繁にアクセスするより短時間で要求されたデータを返します。 待機時間がより多くの帯域幅よりも、問題の場合は、大きなデータ ページを使用することがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
  [Windows フォーム DataGridView コントロールでのパフォーマンス チューニング](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  

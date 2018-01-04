@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec35ae2e064acf78d1165f64ce8c9e34b153299d
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 25245319c02ae376410d71afb7a1e56eda259e99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-make-a-uielement-transparent-or-semi-transparent"></a>方法 : UIElement を透明または半透明にする
 この例では、作成、<xref:System.Windows.UIElement>透明または半透明です。 設定する要素を透明または半透明にその<xref:System.Windows.UIElement.Opacity%2A>プロパティです。 値`0.0`要素は完全に透明で、値の中に、`1.0`要素を完全に不透明になります。 値`0.5`により要素 50% 不透明で、やなどです。 要素の<xref:System.Windows.UIElement.Opacity%2A>に設定されている`1.0`既定です。  

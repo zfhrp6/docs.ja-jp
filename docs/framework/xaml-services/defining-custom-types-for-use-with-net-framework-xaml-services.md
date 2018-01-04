@@ -14,11 +14,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 0b35c35be7351fdf45157153ce6ca55fc763c3ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c7cce479c7c7a5f6c7112f08f1e15f3bc7e4d366
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>.NET Framework XAML サービスで使用するためのカスタム型の定義
 ビジネス オブジェクトは、カスタム型の定義または特定のフレームワークに依存関係がない型は、するときに行うことができる XAML の運用方法があります。 これらのプラクティスに従うと場合、.NET Framework XAML サービスおよびその XAML リーダーと XAML ライターを型の XAML の特性を検出し、XAML 型システムを使用して XAML ノード ストリームで適切な形式。 このトピックでは、型定義、メンバーの定義、および CLR 型またはメンバーの属性の設定のベスト プラクティスについて説明します。  
@@ -106,7 +107,7 @@ ms.lasthandoff: 11/21/2017
   
  カスタムの型の XAML サポート対象の各 XAML 関連の属性の一覧については、次を参照してください。[カスタム型およびライブラリの CLR 属性を XAML-Related](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)です。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  カスタム型の使用方法は、マークアップの作成者がカスタム型を含むアセンブリと CLR 名前空間のプレフィックスをマップする必要がある必要があります。 このトピックでは、この手順が記載されていません。  
   
 ## <a name="access-level"></a>アクセス レベル  
@@ -123,6 +124,6 @@ ms.lasthandoff: 11/21/2017
   
  WPF XAML 用語では、*内部型*は、同じアセンブリも含まれており、参照元の XAML で定義されている型です。 アセンブリを意図的に省略された XAML 名前空間を介してこのような型をマップすることができます、マッピングの一部を =`xmlns:local="clr-namespace:WPFApplication1"`です。  BAML が内部の型を参照するかどうか、型がある`internal`アクセス レベル、これが生成されます、`GeneratedInternalTypeHelper`アセンブリのクラスです。 避けたい場合`GeneratedInternalTypeHelper`、いずれかを使用する必要がある`public`アクセス レベル、または必要があります別のアセンブリに関連するクラスを要素し、そのアセンブリが依存するようにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カスタム型およびライブラリの XAML 関連の CLR 属性](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)  
  [XAML サービス](../../../docs/framework/xaml-services/index.md)

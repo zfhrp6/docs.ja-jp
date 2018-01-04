@@ -23,11 +23,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 290682542a0accaf38408127f7358625abca14af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 76a836e2699617803b78f76f90b27452bd0cdd0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-add-ins-overview"></a>WPF アドインの概要
 <a name="Introduction"></a> [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] には、開発者がアドイン機能拡張をサポートするアプリケーションの作成に使用できるアドイン モデルが用意されています。 このアドイン モデルを使用することで、アプリケーション機能に統合され、アプリケーション機能を拡張するアドインを作成できます。 一部のシナリオでは、アドインが提供する [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] をアプリケーションで表示する必要があります。このトピックでは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] が [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アドイン モデルを強化してこうしたシナリオを実現するしくみ、背後にあるアーキテクチャ、その利点、および制限事項について説明します。  
@@ -292,7 +293,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="performance-optimization"></a>パフォーマンスの最適化  
  既定では、複数のアプリケーション ドメインが使用されていると、各アプリケーションで必要とされているさまざまな [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アセンブリがすべてそのアプリケーションのドメインに読み込まれます。 その結果、新しいアプリケーション ドメインを作成してその中でアプリケーションを開始するために必要な時間がパフォーマンスに影響します。 ただし、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] には、アセンブリが既に読み込まれている場合に、それをアプリケーション ドメイン間で共有するようアプリケーションに指示することで開始時間を短縮する手段が用意されています。 使用して、これを行う、<xref:System.LoaderOptimizationAttribute>属性は、エントリ ポイント メソッドに適用する必要があります (`Main`)。 この場合、アプリケーション定義を実装するコードのみを使用する必要があります (「[アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)」を参照)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.LoaderOptimizationAttribute>  
  [アドインおよび拡張機能](../../../../docs/framework/add-ins/index.md)  
  [アプリケーション ドメイン](../../../../docs/framework/app-domains/application-domains.md)  

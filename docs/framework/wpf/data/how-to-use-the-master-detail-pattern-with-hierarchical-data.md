@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bb546a3429012a49ee7652a3470460935fc76d70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2e392b47682d1bf53dc31073920bdf212fb7d997
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-the-master-detail-pattern-with-hierarchical-data"></a>方法 : 階層データでマスター詳細パターンを使用する
 この例では、マスター/詳細シナリオを実装する方法を示します。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
  使用しているときに、手法は若干異なります[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]データ。 例については、次を参照してください。[階層の XML データを、マスター/詳細形式のパターンを使用して](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.HierarchicalDataTemplate>  
  [コレクションにバインドして選択に基づく情報を表示する](../../../../docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md)  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  

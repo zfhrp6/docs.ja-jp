@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f4e10f7136b636829f99da34388db7676810cd06
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d35b65f88452085e601569b9dcfc62a541a1655f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="focus-overview"></a>フォーカスの概要
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、キーボード フォーカスと論理フォーカスという、フォーカスに関する 2 つの主要な概念があります。  キーボード フォーカスはキーボード入力を受け取る要素を指し、論理フォーカスはフォーカスを持つフォーカス範囲内の要素を指します。  これらの概念については、この概要で詳しく説明します。  フォーカスを取得可能な領域を複数持つ複雑なアプリケーションを作成する場合は、これらの概念の違いを理解することが重要です。  
@@ -127,7 +128,7 @@ ms.lasthandoff: 11/21/2017
   
  論理フォーカスに関連するイベントは<xref:System.Windows.UIElement.GotFocus>と<xref:System.Windows.UIElement.LostFocus>です。  これらのイベントがで定義された、<xref:System.Windows.Input.FocusManager>としてアタッチされるイベントは、ですが、 <xref:System.Windows.Input.FocusManager> CLR イベントのラッパーを公開しません。  <xref:System.Windows.UIElement>および<xref:System.Windows.ContentElement>これらのイベントをより簡単に公開します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Input.FocusManager>  
  <xref:System.Windows.UIElement>  
  <xref:System.Windows.ContentElement>  

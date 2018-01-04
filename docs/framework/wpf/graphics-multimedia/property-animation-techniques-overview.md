@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1a8c196ea15617b13abe8311f8501ab32fd320c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 132d41346e1c6dcec6ed39b3a9485f04fe8f845c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="property-animation-techniques-overview"></a>プロパティ アニメーションの手法の概要
 このトピックでは、ストーリーボード、ローカル アニメーション、クロック、フレームごとのアニメーションなど、プロパティをアニメーション化するさまざまなアプローチについて説明します。  
@@ -41,10 +42,10 @@ ms.lasthandoff: 11/21/2017
   
 |アニメーションの手法|シナリオ|XAML のサポート|対話的に制御可能|  
 |-------------------------|---------------|-------------------|--------------------------------|  
-|ストーリー ボード アニメーション|インスタンスごとの<xref:System.Windows.Style>、 <xref:System.Windows.Controls.ControlTemplate>、<xref:System.Windows.DataTemplate>|はい|はい|  
-|ローカル アニメーション|インスタンス単位|いいえ|いいえ|  
-|クロック アニメーション|インスタンス単位|いいえ|はい|  
-|フレーム単位のアニメーション|インスタンス単位|いいえ|N/A|  
+|ストーリー ボード アニメーション|インスタンスごとの<xref:System.Windows.Style>、 <xref:System.Windows.Controls.ControlTemplate>、<xref:System.Windows.DataTemplate>|[はい]|[はい]|  
+|ローカル アニメーション|インスタンス単位|×|×|  
+|クロック アニメーション|インスタンス単位|×|[はい]|  
+|フレーム単位のアニメーション|インスタンス単位|×|N/A|  
   
 <a name="storyboard_animations"></a>   
 ## <a name="storyboard-animations"></a>ストーリー ボード アニメーション  
@@ -66,10 +67,10 @@ ms.lasthandoff: 11/21/2017
   
 |ストーリーボードが開始される場所|インスタンス単位|スタイル|コントロール テンプレート|データ テンプレート|例|  
 |--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard>および<xref:System.Windows.EventTrigger>|はい|はい|はい|はい|[ストーリーボードを使ってプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard>プロパティ名<xref:System.Windows.Trigger>|いいえ|はい|はい|はい|[プロパティ値が変化したときにアニメーションをトリガーする](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard>および<xref:System.Windows.DataTrigger>|いいえ|はい|はい|はい|[方法: データが変化したときにアニメーションをトリガーする](http://msdn.microsoft.com/en-us/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
-|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> メソッド|はい|いいえ|いいえ|いいえ|[ストーリーボードを使ってプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard>および<xref:System.Windows.EventTrigger>|[はい]|はい|はい|[はい]|[ストーリーボードを使ってプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard>プロパティ名<xref:System.Windows.Trigger>|×|はい|はい|[はい]|[プロパティ値が変化したときにアニメーションをトリガーする](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard>および<xref:System.Windows.DataTrigger>|×|はい|はい|[はい]|[方法: データが変化したときにアニメーションをトリガーする](http://msdn.microsoft.com/en-us/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
+|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> メソッド|[はい]|いいえ|Ｘ|×|[ストーリーボードを使ってプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
   
  詳細については<xref:System.Windows.Media.Animation.Storyboard>、オブジェクトを参照してください、[ストーリー ボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
   
@@ -131,7 +132,7 @@ ms.lasthandoff: 11/21/2017
   
  詳細については、次を参照してください。、<xref:System.Windows.Media.CompositionTarget.Rendering>ページ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
  [アニメーションとタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  

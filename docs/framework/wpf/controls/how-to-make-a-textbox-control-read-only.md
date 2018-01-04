@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 36116346b389dac7e9783e69d9bcd79573b4bf75
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f3d3acf1e5065633f9f4c75f24780230525b01ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-make-a-textbox-control-read-only"></a>方法 : TextBox コントロールを読み取り専用にする
 この例は、構成する方法を示します、<xref:System.Windows.Controls.TextBox>ユーザー入力や変更を許可しないように制御します。  
@@ -34,6 +35,6 @@ ms.lasthandoff: 11/21/2017
   
  既定値の<xref:System.Windows.Controls.Primitives.TextBoxBase.IsReadOnly%2A>は**false**です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

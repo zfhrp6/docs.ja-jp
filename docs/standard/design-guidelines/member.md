@@ -18,11 +18,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5df4ad5f6c947d8b3bf62c3bf7eb8426419e5f3f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ae69b77098c7f2e1de83eedd40cf0f0da9473326
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="member-design-guidelines"></a>メンバーのデザインのガイドライン
 メソッド、プロパティ、イベント、コンス トラクター、およびフィールドは、メンバーとしてまとめて呼ばれます。 メンバーは、最終的に、フレームワークのエンドユーザーに、フレームワークの機能が公開されている手段です。  
@@ -32,17 +35,17 @@ ms.lasthandoff: 10/18/2017
  この章では、任意の型のメンバーをデザインするときに従う必要がありますの基本的なガイドラインを提供します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [メンバーのオーバー ロード](../../../docs/standard/design-guidelines/member-overloading.md)  
+ [メンバーのオーバーロード](../../../docs/standard/design-guidelines/member-overloading.md)  
  [プロパティのデザイン](../../../docs/standard/design-guidelines/property.md)  
- [コンス トラクターのデザイン](../../../docs/standard/design-guidelines/constructor.md)  
+ [コンストラクターのデザイン](../../../docs/standard/design-guidelines/constructor.md)  
  [イベントのデザイン](../../../docs/standard/design-guidelines/event.md)  
  [フィールドのデザイン](../../../docs/standard/design-guidelines/field.md)  
  [拡張メソッド](../../../docs/standard/design-guidelines/extension-methods.md)  
- [演算子のオーバー ロード](../../../docs/standard/design-guidelines/operator-overloads.md)  
+ [演算子のオーバーロード](../../../docs/standard/design-guidelines/operator-overloads.md)  
  [パラメーターのデザイン](../../../docs/standard/design-guidelines/parameter-design.md)  
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9560e9d0a2809ae8f55a060eaec3b271539d5f94
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6e8d15a1b8432b3dae5bee73396bdec9fc9d50f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-a-duration-for-an-animation"></a>方法 : アニメーションの継続時間を設定する
 A<xref:System.Windows.Media.Animation.Timeline>を表す時間のセグメントとそのセグメントの長さは、タイムラインのによって決まります<xref:System.Windows.Duration>です。 ときに、<xref:System.Windows.Media.Animation.Timeline>が最後に達するとその継続時間の再生は停止します。 場合、<xref:System.Windows.Media.Animation.Timeline>が子タイムラインも再生を停止します。 アニメーションの場合、<xref:System.Windows.Duration>アニメーションにかかる時間の遷移の終了値をその開始値からを指定します。  
@@ -33,6 +34,6 @@ A<xref:System.Windows.Media.Animation.Timeline>を表す時間のセグメント
 ## <a name="example"></a>例  
  [!code-xaml[timingbehaviors_snip#DurationExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/DurationExample.xaml#durationexamplewholepage)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Duration>  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

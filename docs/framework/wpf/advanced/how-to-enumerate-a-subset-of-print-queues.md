@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 393d1692526551b1eb9aa16f48d3c78c3cd6692f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 397ec40e2d8a0694e208296593687e9268546fc7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enumerate-a-subset-of-print-queues"></a>方法 : 印刷キューのサブセットを列挙する
 プリンターの全社的なセットを管理する情報技術 (IT) プロフェッショナルが直面している一般的な状況では、特定の特性を持つプリンターの一覧を生成します。 この機能が用意されて、<xref:System.Printing.PrintServer.GetPrintQueues%2A>のメソッド、<xref:System.Printing.PrintServer>オブジェクトおよび<xref:System.Printing.EnumeratedPrintQueueTypes>列挙します。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 11/21/2017
   
  用意することによって、この例を拡張する可能性があります、`foreach`各印刷キューをステップ実行をさらにはループ スクリーン処理します。 たとえば、する可能性があります画面ループ呼び出し用意することによって、両面印刷をサポートしていないプリンタを各印刷キューの<xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>メソッドと二重化の有無のテスト、返される値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Printing.PrintServer.GetPrintQueues%2A>  
  <xref:System.Printing.PrintServer>  
  <xref:System.Printing.LocalPrintServer>  

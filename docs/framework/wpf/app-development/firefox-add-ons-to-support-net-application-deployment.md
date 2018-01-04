@@ -18,11 +18,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f16fc118ccfef6cfcb9ab0dc1356cb0c732ae229
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b5734d58d0cce15c52da6b7242b28ffc8d574060
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="firefox-add-ons-to-support-net-application-deployment"></a>.NET アプリケーションの配置をサポートするための Firefox のアドオン
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Firefox および Firefox の有効化の .NET Framework アシスタントのプラグイン[!INCLUDE[TLA#tla_winfxwebapp#plural](../../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]loose、 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、や Mozilla Firefox ブラウザーで動作する ClickOnce アプリケーションです。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
  Firefox の .NET Framework アシスタントに含まれて、[!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)]です。 Firefox の .NET Framework アシスタント削除については、次を参照してください。 [Firefox の .NET Framework アシスタントを削除する方法](http://go.microsoft.com/fwlink/?LinkId=177944)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF アプリケーションの配置](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
  [WPF XAML ブラウザー アプリケーションの概要](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
  [Firefox に対応した WPF プラグインがインストールされているかどうかを確認する](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed.md)

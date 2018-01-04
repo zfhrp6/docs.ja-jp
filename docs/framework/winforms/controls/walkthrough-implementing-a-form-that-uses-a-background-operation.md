@@ -26,11 +26,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 89a352baed4d07c3c935643e9962131a20af2802
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c12892c4761f0158153c87464066dd727c83bfc3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>チュートリアル : バックグラウンド操作を使用するフォームの実装
 完了するには長い時間がかかる操作があると応答を停止する、ユーザー インターフェイス (UI) を設定したくない、または「ハング」しを使用できる場合、<xref:System.ComponentModel.BackgroundWorker>別のスレッドで操作を実行するクラス。  
@@ -173,7 +174,7 @@ ms.lasthandoff: 11/21/2017
     > [!CAUTION]
     >  どのような種類のマルチスレッドを使用している場合でも、非常に深刻で複雑なバグを引き起こしてしまう可能性があります。 マルチスレッドを使用するソリューションを実装する前に、「[マネージ スレッド処理の実施](../../../../docs/standard/threading/managed-threading-best-practices.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ComponentModel.BackgroundWorker>  
  [マネージ スレッド処理の実施](../../../../docs/standard/threading/managed-threading-best-practices.md)  
  [コンポーネントのマルチスレッド](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  

@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2ba541b367e56a809fa444528dccd69860c4de46
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8831566daca6ca36b40fbaaedbec9ff3ca8aaa99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-invoke-a-print-dialog"></a>方法 : 印刷ダイアログ ボックスを呼び出す
 アプリケーションから印刷する機能を提供するだけで作成して開く、、<xref:System.Windows.Controls.PrintDialog>オブジェクト。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
   
  厳密には、使用することができます、<xref:System.Windows.Controls.PrintDialog.PrintDocument%2A>ダイアログを開くことがなくメソッドです。 その意味では、コンポーネントとして含まれる未知、印刷コントロールを使用できます。 パフォーマンス上の理由から、いずれかを使用する方がよいなりますが、<xref:System.Printing.PrintQueue.AddJob%2A>メソッドまたは多くのいずれかの<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>と<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>のメソッド、 <xref:System.Windows.Xps.XpsDocumentWriter>。 詳細については、これは、次を参照してください。 [XPS ファイルをプログラムによって印刷](../../../../docs/framework/wpf/advanced/how-to-programmatically-print-xps-files.md)とします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.PrintDialog>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)  

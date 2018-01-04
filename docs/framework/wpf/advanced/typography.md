@@ -18,11 +18,12 @@ caps.latest.revision: "60"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8425084b2124fc6082331c9bb87c1f1f2ad9031e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 136c7b13cf5f0e824985398564fc8f17476d64f2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typography"></a>タイポグラフィ
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]テキスト コンテンツの豊富なプレゼンテーションのサポートが含まれます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のテキストは、テキストのわかりやすさと読みやすさを高める [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] を使用して描画されます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]サポートしています[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]によって定義されたもの以外の他の機能を提供する、フォント、[!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)]形式です。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
  [グリフ](../../../../docs/framework/wpf/advanced/glyphs.md)  
  [方法トピック](../../../../docs/framework/wpf/advanced/typography-how-to-topics.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Documents.Typography>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [OpenType フォントの機能](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  

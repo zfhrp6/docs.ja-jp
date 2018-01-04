@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9182c95b9770cac94b2a747e277fcd0cc02b387f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a125aa0968abbd69580cab46f3231a6536eff9c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="behavior-security"></a>動作のセキュリティ
 このセクションには、サービスの動作に対するセキュリティの構成を示すサンプルが含まれています。  
@@ -29,7 +30,7 @@ ms.lasthandoff: 10/18/2017
  [メンバーシップとロール プロバイダー](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)  
  このサンプルでは、サービスが [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] メンバーシップとロール プロバイダーを使用してクライアントを認証および承認するための方法を示します。  
   
- [サービス操作へのアクセスを承認します。](../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
+ [サービス操作へのアクセスの承認](../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
  このサンプルを使用する方法を示します、 [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md)の使用を有効にする、<xref:System.Security.Permissions.PrincipalPermissionAttribute>属性をサービス操作へのアクセスを承認します。  
   
  [クライアントの偽装](../../../../docs/framework/wcf/samples/impersonating-the-client.md)  

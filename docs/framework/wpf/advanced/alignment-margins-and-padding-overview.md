@@ -21,11 +21,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c0a57018959aedc72e0fa02befa1733f66f265b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9d53ec57bdd6126aa1b82e3fa34d01b8907ca169
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="alignment-margins-and-padding-overview"></a>配置、余白、パディングの概要
 <xref:System.Windows.FrameworkElement>クラスは子要素を正確に配置に使用されるいくつかのプロパティを公開します。 このトピックでは、4 つの最も重要なプロパティについて説明します。 <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>、 <xref:System.Windows.FrameworkElement.Margin%2A>、 <xref:System.Windows.Controls.Border.Padding%2A>、および<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>です。 これらのプロパティの効果を理解することが重要です。[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの要素の位置を制御するための基本となるためです。  
@@ -151,7 +152,7 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レイアウトの詳細はその他の資料で確認できます。 [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)トピックには、さまざまなについての詳細が含まれています。<xref:System.Windows.Controls.Panel>要素。 トピック[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)コンポーネントを配置して、そのアクションをデータ ソースにバインドするレイアウト要素を使用して高度な技術が導入されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.FrameworkElement>  
  <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>  
  <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>  

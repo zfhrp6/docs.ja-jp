@@ -23,11 +23,14 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 550b1e8bf04bf7e2cec52ce26d647022688c4004
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ee2baef3ddcaebb494f1eae2813e861f93e489dd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="examples-of-xml-serialization"></a>XML シリアル化の例
 XML シリアル化は、単純な形式から複雑な形式に至るまで、さまざまな形で実行できます。 たとえば、「[XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)」に示すように、パブリック フィールドとパブリック プロパティだけで構成されるクラスをシリアル化できます。 次の例では、XML シリアル化を使用して特定の XML スキーマ (XSD) ドキュメントに準拠する XML ストリームを生成する方法など、各種の高度なシナリオに対応するコード例を示します。  
@@ -771,7 +774,7 @@ public class Test
 </PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)  
  [属性を使用した XML シリアル化の制御](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
  [XML シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  

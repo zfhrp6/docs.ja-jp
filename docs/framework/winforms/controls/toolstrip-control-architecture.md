@@ -14,11 +14,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6884598e6b883ab5e6369be5f2f796a194c7f930
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b112cb1e383b092c1bcc4403e04938b3b83c5ecc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstrip-control-architecture"></a>ToolStrip コントロールのアーキテクチャ
 <xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.ToolStripItem>クラスは、ツールバー、ステータス、およびメニュー項目を表示するため、柔軟な拡張可能なシステムを提供します。 これらのクラスはすべて、<xref:System.Windows.Forms>名前空間と、通常すべて"ToolStrip"プレフィックスを持つという名前 (など<xref:System.Windows.Forms.ToolStripOverflow>) または「ストリップ」サフィックスを持つ (など<xref:System.Windows.Forms.MenuStrip>)。  
@@ -170,7 +171,7 @@ ToolStrip オブジェクト モデル
   
 -   アクセス キーがない場合に処理された<xref:System.Security.Permissions.UIPermissionWindow.AllWindows>が許可されていません。  
   
-#### <a name="usage"></a>使用方法  
+#### <a name="usage"></a>使用法  
  次の使用パターンに関係がある<xref:System.Windows.Forms.ToolStrip>レイアウト、キーボード操作、およびエンドユーザーの動作。  
   
 -   結合します。<xref:System.Windows.Forms.ToolStripPanel>  
@@ -274,17 +275,17 @@ ToolStripItem オブジェクト モデル
   
 |含まれるアイテム|ToolStrip|MenuStrip|ContextMenuStrip|StatusStrip|ToolStripDropDown|  
 |--------------------|---------------|---------------|----------------------|-----------------|-----------------------|  
-|<xref:System.Windows.Forms.ToolStripButton>|はい|いいえ|いいえ|いいえ|はい|  
+|<xref:System.Windows.Forms.ToolStripButton>|[はい]|いいえ|Ｘ|Ｘ|はい|  
 |<xref:System.Windows.Forms.ToolStripComboBox>|はい|はい|はい|いいえ|はい|  
-|<xref:System.Windows.Forms.ToolStripSplitButton>|はい|いいえ|いいえ|はい|はい|  
-|<xref:System.Windows.Forms.ToolStripLabel>|はい|いいえ|いいえ|はい|はい|  
+|<xref:System.Windows.Forms.ToolStripSplitButton>|はい|いいえ|Ｘ|はい|はい|  
+|<xref:System.Windows.Forms.ToolStripLabel>|はい|いいえ|Ｘ|はい|はい|  
 |<xref:System.Windows.Forms.ToolStripSeparator>|はい|はい|はい|いいえ|はい|  
-|<xref:System.Windows.Forms.ToolStripDropDownButton>|はい|いいえ|いいえ|はい|はい|  
+|<xref:System.Windows.Forms.ToolStripDropDownButton>|はい|いいえ|Ｘ|はい|はい|  
 |<xref:System.Windows.Forms.ToolStripTextBox>|はい|はい|はい|いいえ|はい|  
-|<xref:System.Windows.Forms.ToolStripMenuItem>|いいえ|はい|はい|いいえ|いいえ|  
-|<xref:System.Windows.Forms.ToolStripStatusLabel>|いいえ|いいえ|いいえ|はい|いいえ|  
-|<xref:System.Windows.Forms.ToolStripProgressBar>|はい|いいえ|いいえ|はい|いいえ|  
-|<xref:System.Windows.Forms.ToolStripControlHost>|はい|はい|いいえ|はい|はい|  
+|<xref:System.Windows.Forms.ToolStripMenuItem>|いいえ|はい|はい|いいえ|Ｘ|  
+|<xref:System.Windows.Forms.ToolStripStatusLabel>|Ｘ|Ｘ|Ｘ|はい|いいえ|  
+|<xref:System.Windows.Forms.ToolStripProgressBar>|はい|いいえ|Ｘ|はい|いいえ|  
+|<xref:System.Windows.Forms.ToolStripControlHost>|はい|はい|いいえ|はい|[はい]|  
   
 ### <a name="toolstripbutton"></a>ToolStripButton  
  <xref:System.Windows.Forms.ToolStripButton>ボタンの項目は、<xref:System.Windows.Forms.ToolStrip>です。 さまざまな境界線スタイルを表示して、表示および操作状態をアクティブ化を行うこともできます。 既定では、フォーカスがあるにも定義できます。  
@@ -387,7 +388,7 @@ ToolStripItem オブジェクト モデル
   
 -   <xref:System.Windows.Forms.ToolStripPanel>移動および配置するための領域を提供<xref:System.Windows.Forms.ToolStrip>コントロール。 1 つだけのパネルを使用するには、これを選択した場合と<xref:System.Windows.Forms.ToolStripPanel>は MDI のシナリオに適しています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
  [ToolStrip テクノロジの概要](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)  
  [ToolStrip コントロール](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  

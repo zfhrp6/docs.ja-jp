@@ -17,11 +17,12 @@ caps.latest.revision: "61"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c34bb03e27d223c09238f658563e8a368a0c6948
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b6aee3d6161d5a20a55e05e86c8479b9182d4e0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="image-how-to-topics"></a>イメージに関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Image>要素。  
@@ -39,6 +40,6 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージングの概要](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)

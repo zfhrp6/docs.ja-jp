@@ -26,11 +26,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08cdc3dcb9e6d73b0d3b95915bf955ee27782782
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5e6dec42d40039f9cc23ba976ecf421f6471888e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>マークアップ拡張機能と WPF XAML
 ここでは XAML のマークアップ拡張の概念について、構文規則、目的、その基になるクラス オブジェクト モデルなどを説明します。 マークアップ拡張は、XAML 言語、および XAML サービスの .NET 実装の一般的な機能です。 ここでは、WPF XAML で使用するマークアップ拡張について特に詳しく説明します。  
@@ -127,7 +128,7 @@ ms.lasthandoff: 11/21/2017
   
  ほとんどのマークアップ拡張は、プロパティ要素を指定するオブジェクト要素構文で使用される場合、内側にコンテンツや他のプロパティ要素構文を含みません。 このため、オブジェクト要素タグを閉じ、子要素は指定しません。 オブジェクト要素が XAML プロセッサで検出されるたびに、そのクラスのコンストラクターが呼び出され、解析した要素から作成されたオブジェクトがインスタンス化されます。 マークアップ拡張クラスも同じです。マークアップ拡張をオブジェクト要素構文で使用できるようにする場合は、既定のコンストラクターを用意する必要があります。 既存のマークアップ拡張の中には、有効な初期化のために指定する必要のある必須プロパティ値を少なくとも 1 つ持っているものがあります。 その場合、通常、そのプロパティ値はオブジェクト要素のプロパティ属性として指定します。 「[XAML 名前空間 (x:) 言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)」および「[WPF XAML 拡張機能](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)」の各リファレンス ページで、必須プロパティを持つマークアップ拡張 (および必須プロパティの名前) について説明します。 これらのリファレンス ページでは、特定のマークアップ拡張でオブジェクト要素構文と属性構文のどちらかが使用できないケースについても説明します。 特に注意する必要があるケースは、[x:Array マークアップ拡張](../../../../docs/framework/xaml-services/x-array-markup-extension.md)です。このマークアップ拡張では、配列の内容をタグ設定の内側にコンテンツとして指定する必要があるため、属性構文をサポートできません。 配列の内容は一般的なオブジェクトとして扱われるため、属性に対する既定の型コンバーターは使用できません。 また、[x:Array マークアップ拡張](../../../../docs/framework/xaml-services/x-array-markup-extension.md)には `type` パラメーターが必要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [XAML 名前空間 (x:) 言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
  [WPF XAML 拡張機能](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  

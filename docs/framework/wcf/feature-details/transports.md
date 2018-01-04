@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9275f1812111365ed6b0fb3be6957cd9ca883fdf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 62eb27919e762004667b3d5179c35cb04d9a9422
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Windows Communication Foundation のトランスポート
 トランスポート層は、チャネル スタックの最も低いレベルにあります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で使用される主なトランスポートは、HTTP、HTTPS、TCP、および名前付きパイプです。 このセクションのトピックでは、このようなトランスポートの選択、トランスポートの構成、およびチューニング プロパティの設定について説明します。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 12/02/2017
  [トランスポートの選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  3 つの主なトランスポートについて説明し、そのうちの 1 つを選択する際の考慮事項を示します。  
   
- [メッセージ エンコーダーを選択します。](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [メッセージ エンコーダーを選択する](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
  メッセージ エンコーディングのバインド要素を選択する際に考慮する必要のある要因について説明します。  
   
  [メッセージ転送ストリーミング](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md)  
@@ -41,13 +42,13 @@ ms.lasthandoff: 12/02/2017
  [HTTP および HTTPS の構成](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)  
  HTTP および HTTPS トランスポート バインド要素の構成方法について説明します。  
   
- [方法: WCF URL 予約を制限付きの予約に置き換える](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
+ [方法 : WCF URL 予約を制限付きの予約に置き換える](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の URL 制限付き予約の使用方法について説明します。  
   
  [トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)  
  トランスポート層で使用できるクォータを設定する際の考慮事項について説明します。  
   
- [Nat とファイアウォールの使用](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md)  
+ [NAT とファイアウォールの使用](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md)  
  ファイアウォールを介してメッセージを送受信する場合や、ネットワーク アドレス交換 (NAT) が存在する場合にトランスポート層を構成する方法について説明します。  
   
  [Net.TCP ポート共有](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  

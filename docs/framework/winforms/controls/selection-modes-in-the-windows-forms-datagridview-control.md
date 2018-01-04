@@ -16,11 +16,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4f6b603382382971249b08cddd482566ec6e5fa5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f0d605b7ee7e48ad0ed2e693f0e71e5f1c25e022
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="selection-modes-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールの選択モード
 アプリケーション内のユーザーの選択に基づいて操作を実行することがあります、<xref:System.Windows.Forms.DataGridView>コントロール。 によって、アクション可能な選択の種類を制限します。 たとえば、アプリケーションは、現在選択されているレコードに対してレポートを印刷できます。 ここでは、構成する場合は、<xref:System.Windows.Forms.DataGridView>コントロールに常に、行内でクリックしてできるようには、全体の行を選択し、一度に 1 つだけその行を選択できるようにします。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 > [!TIP]
 >  選択したセルのプログラムによる使用方法を示すコード例は含まれて、<xref:System.Windows.Forms.DataGridView>クラスの概要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.MultiSelect%2A>  
  <xref:System.Windows.Forms.DataGridView.SelectionMode%2A>  

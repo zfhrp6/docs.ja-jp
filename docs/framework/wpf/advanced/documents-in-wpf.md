@@ -21,11 +21,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 659c30105be7826aba4bbad49d68bdb94ddb0efc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 02f65d68cdaad8824905c4545239f5b607c672d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="documents-in-wpf"></a>WPF のドキュメント
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] の前の世代よりも簡単にアクセスおよび読み取りを行うことができるように設計されている、高品質なコンテンツの作成を可能にするさまざまなドキュメント機能を提供します。 拡張された機能と品質に加えて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、ドキュメントの表示、パッケージ化、およびセキュリティの統合されたサービスも提供します。 ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のドキュメントの種類とドキュメントのパッケージ化の概要を説明します。  
@@ -144,7 +145,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] と互換性があるプリンターにドキュメントを直接ルーティングする。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Documents.FixedDocument>  
  <xref:System.Windows.Documents.FlowDocument>  
  <xref:System.Windows.Xps.Packaging.XpsDocument>  

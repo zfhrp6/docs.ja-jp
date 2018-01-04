@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9f23a99418d585f43348cd155bc65a3c3e73742b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ea1f2edf4677e3a04e6dd007dcf0fef9137180fe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-a-background-thread-to-search-for-files"></a>方法 : バックグラウンド スレッドを使用してファイルを検索する
 <xref:System.ComponentModel.BackgroundWorker>コンポーネントの置換し、する機能を追加、<xref:System.Threading>名前空間です。 ただし、、<xref:System.Threading>を選択した場合、旧バージョンとの互換性と将来の使用の両方の名前空間は保持されます。 詳細については、次を参照してください。 [BackgroundWorker コンポーネントの概要](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)です。  
@@ -772,7 +773,7 @@ namespace SampleUsage
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ComponentModel.BackgroundWorker>  
  [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
  [イベントベースの非同期パターンの概要](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)

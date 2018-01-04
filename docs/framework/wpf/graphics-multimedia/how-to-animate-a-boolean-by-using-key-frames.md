@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0ac129bf133cca88a6d2f6a724d25ea2519cb72e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 910210b8360956b9e92b613fad52e7bfc7f5e49e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-a-boolean-by-using-key-frames"></a>方法 : キー フレームを使用してブール値をアニメーション化する
 この例のブール型プロパティ値をアニメーション化する方法を示しています、<xref:System.Windows.Controls.Button>キー フレームを使用して制御します。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
   
  サンプル全体については、「[キーフレーム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160012)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames>  
  <xref:System.Windows.UIElement.IsEnabled%2A>  
  <xref:System.Windows.Controls.Button>  

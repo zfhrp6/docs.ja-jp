@@ -24,11 +24,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 81ed657de0c0e4d07fcb10b099cbf5e5c80a71fc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cbf55b5d84420a6aa7af06e94497a85a2b54a0c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="collecting-ink"></a>インクの収集
 [Windows Presentation Foundation](../../../../docs/framework/wpf/index.md) プラットフォームでは、その機能の中核としてデジタル インクが収集されます。 ここでは、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] でのインクの収集方法について説明します。  
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
   
  通知方法、<xref:System.Windows.Controls.StackPanel>ボタンの上に配置します。、<xref:System.Windows.Controls.InkCanvas>です。 ボタンの上にインクをしようとする場合、<xref:System.Windows.Controls.InkCanvas>を収集し、ボタンの背景にインクをレンダリングします。 これは、ボタンがあるため、<xref:System.Windows.Controls.InkCanvas>子とは対照的です。 また、ボタンは z オーダーの上位に位置するため、インクはその背後で描画されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Ink.DrawingAttributes>  
  <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>  
  <xref:System.Windows.Ink>

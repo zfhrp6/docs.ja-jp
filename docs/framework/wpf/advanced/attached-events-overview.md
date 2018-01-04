@@ -23,11 +23,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 87df4a79ec288323fff3dda5789fbbd90c0e88e9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fcfe0d97b86a27859d79685e035d8f3f765a965b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="attached-events-overview"></a>添付イベントの概要
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] は言語コンポーネントと*添付イベント*と呼ばれている種類のイベントを定義します。 添付イベントという概念を利用すると、イベントを実際に定義または継承する要素にではなく、任意の要素に特定のイベントのハンドラーを追加できます。 この場合、イベントを発生させる可能性があるオブジェクトとターゲット処理インスタンスのいずれもイベントを定義せず、"所有" しません。  
@@ -101,7 +102,7 @@ ms.lasthandoff: 11/21/2017
   
  ただし、に基づいてカスタム添付イベントを定義しているかどうか、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]にアタッチされるイベントをベースのモデル<xref:System.Windows.RoutedEvent>、使用することができます<xref:System.Windows.UIElement.RaiseEvent%2A>イベントを発生させる接続されているいずれかから<xref:System.Windows.UIElement>または<xref:System.Windows.ContentElement>です。 (接続するか) のルーティング イベントを発生させるには、イベント ソースとして、要素ツリー内の特定の要素を宣言することが必要です。そのソースが報告されて、<xref:System.Windows.UIElement.RaiseEvent%2A>呼び出し元。 ツリーのソースとして報告される要素を決定することはサービスの担当です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
  [XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)  
  [WPF における XAML とカスタム クラス](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3b2e53df114c491e99e13940ae47a4119bd8da46
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: aac8d56c87ff03b313565a3d04cd3f3cc4e85f72
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>方法 : Windows フォーム アプリケーションでのフォント パターンの変更に応答する
 Windows オペレーティング システムでは、ユーザーが表示される既定のフォントのサイズを変更するシステム全体のフォント設定を変更できます。 これらのフォント設定を変更するは、視覚に障害を画面上のテキストを読み取るより大きい型を必要なユーザーに重要です。 フォント パターンが変更されるたびに、フォームとに含まれるすべてのテキストのサイズを増減してこれらの変更に反応する Windows フォーム アプリケーションを調整することができます。 フォームをフォント サイズの変化に動的に対応する場合は、フォームにコードを追加できます。  
@@ -73,6 +74,6 @@ Windows オペレーティング システムでは、ユーザーが表示さ�
   
  このコード例では constructer にはへの呼び出しが含まれています`InitializeComponent`、これは Visual Studio で新しい Windows フォーム プロジェクトを作成するときに定義されています。 コマンドラインでアプリケーションを構築する場合は、次のコード行を削除します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>  
  [Windows フォームにおける自動スケーリング](../../../docs/framework/winforms/automatic-scaling-in-windows-forms.md)

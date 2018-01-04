@@ -26,11 +26,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f17ec5f48115f3e85852f33ea926657df172a2da
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 745a5b87119bbce3211332eee9f23d80c15c9c28
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-partial-trust-security"></a>WPF 部分信頼セキュリティ
 <a name="introduction"></a>一般に、悪意のある破損を防ぐための重要なシステム リソースに直接アクセスする必要がなくなりますインターネット アプリケーションを制限する必要があります。 既定では、[!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)]クライアント側のスクリプト言語は、重要なシステム リソースにアクセスすることができません。 [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]ブラウザ ホスト アプリケーションでは、ブラウザーから起動できる、同様の制限のセットに準拠する必要があります。 これらの制限が適用[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]両方に依存している[!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]と[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)](を参照してください[WPF のセキュリティ方針 - プラットフォーム セキュリティ](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md))。 既定では、ブラウザ ホスト アプリケーションでは、インターネット ゾーンを要求[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]インターネット、ローカル イントラネット、またはローカル コンピューターから起動するかどうかに関係なく、権限のセット。 未満のアクセス許可の完全なセットを使用して実行するアプリケーションは、部分信頼で実行されていると見なされます。  
@@ -51,7 +52,7 @@ ms.lasthandoff: 11/21/2017
   
  部分信頼で安全な表 1: WPF 機能  
   
-|機能分野|特性|  
+|機能分野|機能|  
 |------------------|-------------|  
 |全般|ブラウザーのウィンドウ<br /><br /> 配信元のアクセスのサイト<br /><br /> IsolatedStorage (512 KB 制限)<br /><br /> UIAutomation プロバイダー<br /><br /> コマンド実行<br /><br /> 入力方式エディター (IME)<br /><br /> タブレット スタイラスとインク<br /><br /> マウスのキャプチャと移動イベントを使用してシミュレートされたドラッグ アンド ドロップ<br /><br /> OpenFileDialog<br /><br /> (XamlReader.Load) 経由で XAML シリアル化解除|  
 |Web の統合|ブラウザーのダウンロード ダイアログ ボックス<br /><br /> 最上位のユーザーによるナビゲーション<br /><br /> mailto:links<br /><br /> Uniform Resource Identifier パラメーター<br /><br /> HTTPWebRequest<br /><br /> IFRAME にホストされている WPF コンテンツ<br /><br /> フレームを使用して、同じサイトの HTML ページのホスト<br /><br /> Web ブラウザーを使用して、同じサイトの HTML ページのホスティング<br /><br /> Web サービス (ASMX)<br /><br /> (Windows Communication Foundation を使用して) web サービス<br /><br /> [スクリプティング]<br /><br /> ドキュメント オブジェクト モデル|  
@@ -80,7 +81,7 @@ ms.lasthandoff: 11/21/2017
   
  部分信頼で安全でない表 2: WPF 機能  
   
-|機能分野|特性|  
+|機能分野|機能|  
 |------------------|-------------|  
 |全般|ウィンドウ (定義済みのアプリケーション ウィンドウとダイアログ ボックス)<br /><br /> SaveFileDialog<br /><br /> ファイル システム<br /><br /> レジストリへのアクセス<br /><br /> ドラッグ アンド ドロップ<br /><br /> (XamlWriter.Save) 経由で XAML シリアル化<br /><br /> UIAutomation クライアント<br /><br /> ソース ウィンドウへのアクセス (HwndHost)<br /><br /> 完全な音声サポート<br /><br /> Windows フォームの相互運用性|  
 |ビジュアル|ビットマップ効果<br /><br /> イメージのエンコード|  
@@ -140,23 +141,23 @@ ms.lasthandoff: 11/21/2017
   
 |アクセス許可|属性|ローカル イントラネット|インターネット|  
 |----------------|---------------|-------------------|--------------|  
-|DNS|DNS サーバーのアクセス|はい|いいえ|  
-|環境変数|読み取り|はい|いいえ|  
-|ファイル ダイアログ ボックス|開く|はい|はい|  
-|ファイル ダイアログ ボックス|無制限|はい|いいえ|  
-|分離ストレージ|ユーザーによるアセンブリの分離|はい|いいえ|  
-|分離ストレージ|不明な分離|はい|はい|  
-|分離ストレージ|無制限のユーザーのクォータ|はい|いいえ|  
-|メディア|安全なオーディオ、ビデオ、およびイメージ|はい|はい|  
-|印刷|既定の印刷|はい|いいえ|  
-|印刷|安全な印刷|はい|はい|  
-|リフレクション|出力|はい|いいえ|  
-|セキュリティ|マネージ コードの実行|はい|はい|  
-|セキュリティ|付与されたアクセス許可をアサートします。|はい|いいえ|  
-|ユーザー インターフェイス|無制限|はい|いいえ|  
-|ユーザー インターフェイス|安全なトップレベル ウィンドウ|はい|はい|  
-|ユーザー インターフェイス|独自のクリップボード|はい|はい|  
-|Web ブラウザー|HTML への安全なフレーム ナビゲーション|はい|はい|  
+|DNS|DNS サーバーのアクセス|[はい]|×|  
+|環境変数|読み取り|[はい]|×|  
+|ファイル ダイアログ ボックス|開く|[はい]|[はい]|  
+|ファイル ダイアログ ボックス|無制限|[はい]|×|  
+|分離ストレージ|ユーザーによるアセンブリの分離|[はい]|×|  
+|分離ストレージ|不明な分離|[はい]|[はい]|  
+|分離ストレージ|無制限のユーザーのクォータ|[はい]|×|  
+|メディア|安全なオーディオ、ビデオ、およびイメージ|[はい]|[はい]|  
+|印刷|既定の印刷|[はい]|×|  
+|印刷|安全な印刷|[はい]|[はい]|  
+|リフレクション|出力|[はい]|×|  
+|セキュリティ|マネージ コードの実行|[はい]|[はい]|  
+|セキュリティ|付与されたアクセス許可をアサートします。|[はい]|×|  
+|ユーザー インターフェイス|無制限|[はい]|×|  
+|ユーザー インターフェイス|安全なトップレベル ウィンドウ|[はい]|[はい]|  
+|ユーザー インターフェイス|独自のクリップボード|[はい]|[はい]|  
+|Web ブラウザー|HTML への安全なフレーム ナビゲーション|[はい]|[はい]|  
   
 > [!NOTE]
 >  切り取りと貼り付けは、のみ部分的な信頼でユーザーが開始したときにできます。  
@@ -173,7 +174,7 @@ ms.lasthandoff: 11/21/2017
   
  代わりに、任意のセキュリティ ゾーンから完全な信頼の展開用 ClickOnce 信頼されている配置モデルを使用することができます。 詳細については、次を参照してください。[信頼されたアプリケーションの展開の概要](/visualstudio/deployment/trusted-application-deployment-overview)と[セキュリティ](../../../docs/framework/wpf/security-wpf.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティ](../../../docs/framework/wpf/security-wpf.md)  
  [WPF のセキュリティ方針 - プラットフォーム セキュリティ](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
  [WPF のセキュリティ方針 - セキュリティ エンジニアリング](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)

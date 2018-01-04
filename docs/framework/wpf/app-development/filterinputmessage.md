@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6b3a0e58c7485d46f004db7ea52215be60340b68
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 7e76f9863b68d5c7c34bca8adc872210527d6c17
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="filterinputmessage"></a>FilterInputMessage
 E_NOTIMPL が返されない限り、メッセージを受信するたびに PresentationHost.exe によって呼び出されます。  
@@ -52,5 +53,5 @@ HRESULT FilterInputMessage( [in] MSG* pMsg ) ;
   
  ホストされるアプリケーションでは、生の入力メッセージを受信によって返された生の入力デバイス (ヒューマン インターフェイス デバイス) のセットを登録して[GetRawInputDevices](../../../../docs/framework/wpf/app-development/getrawinputdevices.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WM_INPUT 通知](http://msdn.microsoft.com/library/default.asp?url=/library/winui/winui/windowsuserinterface/userinput/rawinput/rawinputreference/rawinputmessages/wm_input.asp)

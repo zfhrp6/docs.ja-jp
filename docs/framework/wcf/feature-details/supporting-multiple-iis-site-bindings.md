@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bf2dbccd81b9c2e7b4ec78863d3de0227baedf92
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8dcd6a5e6204b1a629c1ee1e2ddfb9b263fa8054
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>複数の IIS サイト バインディングのサポート
 インターネット インフォメーション サービス (IIS: Internet Information Services) 7.0 で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストする場合は、同じサイトで同じプロトコルを使用する、複数のベース アドレスを提供できます。 これにより、同じサービスで多数の異なる URI に応答できます。 http://www.contoso.com および http://contoso.com でリッスンするサービスをホストするときには、これが役立ちます。また、内部ユーザー用に 1 つのベース アドレスを持ち、外部ユーザー用に別のベース アドレスを持つサービスを作成するのにも役立ちます。 たとえば、http://internal.contoso.com および http://www.contoso.com というベース アドレスを持つ場合があります。  

@@ -18,11 +18,12 @@ caps.latest.revision: "52"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d3b256b36affb310be3a59bbe1d058a3ff3a57b1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2ac7bb57f06f0d7021f3c060005033d25ec448b3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="advanced-ink-handling"></a>高度なインク処理
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]が付属しています、 <xref:System.Windows.Controls.InkCanvas>、収集して表示するインクをすぐに開始するアプリケーションに配置できる要素であるとします。 ただし場合、<xref:System.Windows.Controls.InkCanvas>コントロールが、正常なレベルの制御を提供していない、独自のインクの収集とを使用してインクのレンダリング クラスをカスタマイズすることにより、高いレベルで制御を維持できます<xref:System.Windows.Input.StylusPlugIns>です。  

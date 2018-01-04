@@ -14,11 +14,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 76b767fd210deed536b4452dc6d7bb505f5bd3e7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0f642c699a0ecf3e3cce328363f90110766002e0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bitmap-effects-overview"></a>ビットマップ効果の概要
 ビットマップ効果を使うと、設計者と開発者は、レンダリングされる [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] コンテンツに視覚効果を適用できます。 たとえば、ビットマップ効果を簡単に適用できます、<xref:System.Windows.Media.Effects.DropShadowBitmapEffect>特殊効果またはイメージやボタンをぼかし効果。  
@@ -69,7 +70,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="creating-custom-effects"></a>カスタム効果の作成  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、マネージ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションで使うことができるカスタム効果を作成するためのアンマネージ インターフェイスも提供されています。 カスタム ビットマップ効果の作成に関する参考資料については、「[Unmanaged WPF Bitmap Effect](https://msdn.microsoft.com/library/ms735092.aspx)」(アンマネージ WPF ビットマップ効果) ドキュメントをご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Effects.BitmapEffectGroup>  
  <xref:System.Windows.Media.Effects.BitmapEffectInput>  
  <xref:System.Windows.Media.Effects.BitmapEffectCollection>  

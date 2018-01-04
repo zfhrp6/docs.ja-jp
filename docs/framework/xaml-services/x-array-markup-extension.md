@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 2cefdee5ca2d1b0a6c79325365aa101d767b6926
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bc2304ba68956b705904c72e29a17bdac4536c79
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xarray-markup-extension"></a>x:Array のマークアップ拡張機能
 マークアップ拡張機能によって、XAML でのオブジェクトの配列には、一般的なサポートを提供します。 これに対応して、 `x:ArrayExtension` [MS-XAML] の XAML の型。  
@@ -79,6 +80,6 @@ ms.lasthandoff: 11/21/2017
   
  配列の要素として使用されるカスタム型、クラスは、xaml オブジェクト要素としてインスタンス化の要件をサポートもする必要があります。 詳細については、次を参照してください。 [XAML と WPF のカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
  [WPF から System.Xaml に移行した型](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

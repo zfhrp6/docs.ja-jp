@@ -17,11 +17,12 @@ caps.latest.revision: "74"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4403d508f0a99b4cefd3ef59e6d1caf746f31fec
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 38da15eee931d2519efa0c502cfaa61ed0691a8f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resources-how-to-topics"></a>リソースに関する「方法」トピック
 このセクションのトピックを使用する方法について説明[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]リソース。  

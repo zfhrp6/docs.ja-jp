@@ -17,11 +17,12 @@ caps.latest.revision: "54"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1dcda3888df64e95704e726db118bf75c92deaa8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1c1eeb859ecb39c5c2bb7eaef480e32c17d391cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="path-animation-how-to-topics"></a>パス アニメーションに関する「方法」トピック
 このセクションのトピックでは、パスに沿ってオブジェクトをアニメーション化する方法を示します。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Media.Animation.Storyboard>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グラフィックスとマルチメディア](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)

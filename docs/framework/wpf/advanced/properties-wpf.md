@@ -19,11 +19,12 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 61e2bc470641279b594b8f77eb924a47d8a063ac
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6a1b3e78bac5c388bbca4afa6354e5f9aee02c65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="properties-wpf"></a>プロパティ (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティの機能を拡張するために使用できる一連のサービスが用意されています。 通常、これらのサービスをまとめて WPF プロパティ システムと呼びます。 [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] プロパティ システムによって使用されるプロパティは、依存関係プロパティと呼ばれています。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 10/22/2017
  [DependencyObject の安全なコンストラクター パターン](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)  
  [コレクション型依存関係プロパティ](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
  [XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
- [方法のトピック](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)  
+ [方法トピック](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)  
   
 ## <a name="reference"></a>参照  
  <xref:System.Windows.DependencyProperty>  

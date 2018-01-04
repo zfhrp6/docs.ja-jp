@@ -19,11 +19,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e0886e387b6de34673cd4990ef8b61e08674b531
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 62144217199a62da3e41bf381162c94c91d00e72
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listview-overview"></a>ListView の概要
 <xref:System.Windows.Controls.ListView>コントロールには、さまざまなレイアウトまたはビューにデータ項目のセットを表示するためのインフラストラクチャが用意されています。 たとえば、ユーザーは、テーブルにデータ項目を表示し、その列を並べ替えできます。  
@@ -93,7 +94,7 @@ ms.lasthandoff: 11/21/2017
   
  カスタム表示モードの例は、[ListView with Multiple Views Sample](http://go.microsoft.com/fwlink/?LinkID=160013)を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.GridView>  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.ListViewItem>  

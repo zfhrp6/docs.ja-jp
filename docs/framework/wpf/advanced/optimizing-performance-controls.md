@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b414aee19082196ab242706c7730c031cf3a76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b8008d104437454f36f6f425634c40968d5481a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-controls"></a>パフォーマンスの最適化 : コントロール
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、大半の Windows アプリケーションで使用される一般的なユーザー インターフェイス (UI: User Interface) コンポーネントが多数含まれています。 このトピックでは、UI のパフォーマンスを向上させる方法について説明します。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
 -   設定<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>に`false`です。  
   
--   設定<!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A>-->`IsVirtualizing`に`false`です。    
+-   設定<!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A>-->`IsVirtualizing`に`false`です。  
   
  コンテナー項目を仮想化する際の重要な考慮事項は項目が属する項目コンテナーに関連付けられた追加の状態情報があるかどうかです。 その場合は、追加状態を保存する必要があります。 たとえばに含まれている項目があります、<xref:System.Windows.Controls.Expander>コントロールと<xref:System.Windows.Controls.Expander.IsExpanded%2A>状態を連結すると、アイテムのコンテナーおよびアイテム自体にありません。 コンテナーが、新しい項目の現在の値の再利用された日時<xref:System.Windows.Controls.Expander.IsExpanded%2A>新しい項目のために使用します。 さらに、古い項目は、正しい失った<xref:System.Windows.Controls.Expander.IsExpanded%2A>値。  
   
@@ -85,7 +86,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  仮想化し、[リサイクル] コンテナーを有効にする方法の例については、<xref:System.Windows.Controls.TreeView>を参照してください[TreeView のパフォーマンスを向上させる](../../../../docs/framework/wpf/controls/how-to-improve-the-performance-of-a-treeview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レイアウト](../../../../docs/framework/wpf/advanced/layout.md)  
  [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
  [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  

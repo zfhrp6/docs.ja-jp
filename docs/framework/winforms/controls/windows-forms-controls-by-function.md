@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5c49c42b02511fea66c88544bf689b2b05e788ea
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a48e1e728e3ded58b0045554a81588933027074c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-controls-by-function"></a>Windows フォーム コントロールの機能別一覧
 Windows フォーム コントロールと多くの機能を実行するコンポーネントを提供します。 次の表には、Windows フォーム コントロールと一般的な機能に合わせてコンポーネントが一覧表示します。 さらに、複数のコントロールが存在する同じ機能を提供、置き換えるコントロールについての注釈を推奨されるコントロールが表示されます。 別の後続のテーブルには、置換対象のコントロールは、対応する推奨と共に一覧表示されます。  
@@ -94,6 +95,6 @@ Windows フォーム コントロールと多くの機能を実行するコン�
 ||<xref:System.Windows.Forms.StatusBar>|<xref:System.Windows.Forms.StatusStrip>|  
 |フォームのレイアウト|<xref:System.Windows.Forms.Splitter>|<xref:System.Windows.Forms.SplitContainer>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)

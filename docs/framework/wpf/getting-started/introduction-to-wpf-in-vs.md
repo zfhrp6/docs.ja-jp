@@ -26,11 +26,12 @@ caps.latest.revision: "54"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1e04dc0cd878f4583fb4e0bd0ba5816ddfe0b358
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 1fa9592dd6f2f0cb3f6fc70f0cc5843ee3b76403
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introduction-to-wpf-in-visual-studio-2015"></a>Visual Studio 2015 での WPF の概要
 Visual Studio 2015 の Windows Presentation Foundation (WPF) は、Windows 上の最新の基幹業務デスクトップ アプリケーションを構築するための統一されたプログラミング モデルを開発者に提供します。  

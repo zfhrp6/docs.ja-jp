@@ -18,11 +18,12 @@ caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0b52b809b732f3859a7ce02a4433b2387e797932
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d95cd0545fa4800f159f4e5e0f661cf7bddc6548
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-value-precedence"></a>依存関係プロパティ値の優先順位
 <a name="introduction"></a>このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プロパティ システムの動作が依存関係プロパティの値に与える影響と、システムのさまざまな部分がプロパティの有効な値に適用する優先順位について説明します。  
@@ -136,7 +137,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="clearvalue-and-value-precedence"></a>ClearValue と値の優先順位  
  <xref:System.Windows.DependencyObject.ClearValue%2A>メソッドには任意のローカルに適用されている要素に設定されている依存関係プロパティ値をクリアする、便利なことを意味します。 ただし、呼び出し<xref:System.Windows.DependencyObject.ClearValue%2A>プロパティの登録中に、メタデータで確立された既定値は、新しい有効な値である保証はありません。 値の優先順位に関係する他のすべての要因はアクティブなままです。 ローカルで設定された値が優先順位のシーケンスから削除されるだけです。 呼び出す場合など、<xref:System.Windows.DependencyObject.ClearValue%2A>どこでも、そのプロパティが、テーマのスタイルで設定し、テーマの値がメタデータに基づく既定ではなく、新しい値として適用されるプロパティです。 依存関係プロパティのメタデータと、クエリと明確にして既定値が既定値をローカルで使用できることを取得するには、プロセス外のすべてのプロパティ値の参加者を行い、登録されているメタデータの既定値を設定する場合は、呼び出しを使用してプロパティを設定<xref:System.Windows.DependencyObject.SetValue%2A>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.DependencyObject>  
  <xref:System.Windows.DependencyProperty>  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  

@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c276e9da3eaaf786038a117532848364b03e9b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 45f2a141b09c52085c13803b8d338fdc9eebf135
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-a-method"></a>方法 : メソッドにバインドする
 次の例を使用して、メソッドにバインドする方法を示しています。<xref:System.Windows.Data.ObjectDataProvider>です。  
@@ -41,6 +42,6 @@ ms.lasthandoff: 11/21/2017
   
  `InvalidationCharacterRule`は、<xref:System.Windows.Controls.ValidationRule>無効な文字のことを確認します。 赤い枠線では、既定のエラーのテンプレートの周囲、 <xref:System.Windows.Controls.TextBox>、入力値が double 値ではないときにユーザーに通知が表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
  [方法: 列挙値にバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-an-enumeration.md)

@@ -23,11 +23,14 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6bacdb47d1107f6a800d9beec2578c0f7085a894
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ac84956e8b80dbc91fa59af3ae0f33d18112a9a2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-decrypt-xml-elements-with-symmetric-keys"></a>方法 : 共通キーで XML 要素を復号化する
 <xref:System.Security.Cryptography.Xml> 名前空間のクラスを使用して、XML ドキュメント内の要素を暗号化することができます。  XML の暗号化を使用すると、データが簡単に読み取られる心配をせずに機密性の高い XML を格納またはトランスポートできます。  このコード例では、Rijndael としても知られる Advanced Encryption Standard (AES) アルゴリズムを使用して XML 要素を復号化します。  
@@ -88,6 +91,6 @@ ms.lasthandoff: 11/21/2017
   
  対称暗号化キーを使用して完了したら、各バイトをゼロ (0) にするか、マネージ暗号化クラスの <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> メソッドを呼び出してメモリから消去します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Security.Cryptography.Xml>  
  [方法: 共通キーで XML 要素を暗号化する](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md)

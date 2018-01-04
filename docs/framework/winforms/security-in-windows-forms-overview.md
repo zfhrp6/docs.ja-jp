@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e34e9dc864ffa3960c7c4f60f84b4996bab0bb28
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 63b7b704cf5d69ea2186ddef6e86f5c6d7993778
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-in-windows-forms-overview"></a>Windows フォームのセキュリティの概要
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のリリース以前、ユーザーのコンピューターで実行されているすべてのコードは、リソースにアクセスするために、そのコンピューターのユーザーが持っていたのと同じ権限またはアクセス許可を持っていました。 たとえば、ユーザーにファイル システムへのアクセスが許可されている場合は、コードにファイル システムへのアクセスが許可され、ユーザーにデータベースへのアクセスが許可されている場合は、コードにデータベースへのアクセスが許可されていました。 これらの権限やアクセス許可は、ユーザーがローカル コンピューターに明示的にインストールした実行可能ファイルのコードに対しては受け入れることができますが、インターネットやローカル イントラネットからの悪意のある可能性があるコードに対しては受け入れることができません。 このコードは、アクセス許可がないユーザーのコンピューター リソースにアクセスすべきではありません。  
@@ -92,7 +93,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="testing-the-application"></a>アプリケーションのテスト  
  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用して Windows フォーム アプリケーションを配置した場合は、開発環境から、部分信頼または制限されたアクセス許可セットでのデバッグを有効にできます。  「[方法 : アクセス許可が制限された ClickOnce アプリケーションをデバッグする](http://msdn.microsoft.com/library/593zkfdf\(v=vs.110\))」または「[方法 : アクセス許可が制限された ClickOnce アプリケーションをデバッグする](http://msdn.microsoft.com/library/593zkfdf\(v=vs.120\))」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームのセキュリティ](../../../docs/framework/winforms/windows-forms-security.md)  
  [コード アクセス セキュリティの基礎](../../../docs/framework/misc/code-access-security-basics.md)  
  [ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)  

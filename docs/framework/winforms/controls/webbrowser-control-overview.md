@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c2dfae4cbd7f583ce69ff5591c24a573db0d4e4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d2c1ed93769cc91d9622a86ea2d894cea57f5bcd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="webbrowser-control-overview"></a>WebBrowser コントロールの概要
 <xref:System.Windows.Forms.WebBrowser>コントロールは、WebBrowser ActiveX コントロールのマネージ ラッパーを提供します。 マネージ ラッパーを使用して、Windows フォーム クライアント アプリケーションで Web ページを表示できます。 使用することができます、<xref:System.Windows.Forms.WebBrowser>したりするアプリケーションで Internet Explorer Web ブラウズの機能を複製するコントロールが既定の Internet Explorer の機能を無効にしてとして単純な HTML ドキュメント ビューアー コントロールを使用します。 DHTML ベースのユーザー インターフェイス要素をフォームに追加しでホストされているという事実を非表示にする、コントロールを使用することも、<xref:System.Windows.Forms.WebBrowser>コントロール。 この方法では、Web コントロールを 1 つのアプリケーションで Windows フォーム コントロールとシームレスに結合することができます。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/21/2017
   
  `Document`プロパティでは Web ページのクライアント アプリケーション コードからコードをスクリプトで実装されているメソッドを呼び出すこともできます。 スクリプト コードから、クライアント アプリケーション コードにアクセスするには、設定、`ObjectForScripting`プロパティです。 指定したオブジェクトとして、スクリプト コードでアクセスできる、`window.external`オブジェクト。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.WebBrowser.Document%2A> プロパティ|現在の Web ページの HTML ドキュメント オブジェクト モデル (DOM) への管理アクセスを提供するオブジェクトを取得します。|  
 |<xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベント|Web ページには、読み込みが完了したときに発生します。|  
@@ -49,7 +50,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Forms.WebBrowser.Stop%2A> メソッド|現在のナビゲーションを停止し、音声とアニメーションなどの動的なページの要素を停止します。|  
 |<xref:System.Windows.Forms.WebBrowser.Url%2A> プロパティ|取得または現在の Web ページの URL を設定します。 このプロパティを設定すると、新しい URL にコントロールが移動します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  

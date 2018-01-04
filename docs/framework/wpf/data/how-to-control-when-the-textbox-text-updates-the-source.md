@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c923a24f5abfdb059a436206a15181a67d03068f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9c503eb3300aba4a44c5a013c62942e7a171ae96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>方法 : TextBox テキストでソースを更新するタイミングを制御する
 このトピックを使用する方法について説明、<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>バインディング ソースを更新するタイミングを制御するプロパティです。 トピックを使用して、<xref:System.Windows.Controls.TextBox>例と同様に制御します。  
@@ -55,5 +56,5 @@ ms.lasthandoff: 10/22/2017
 > [!NOTE]
 >  <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>プロパティ ソースの更新を扱うためだけに関連しています<xref:System.Windows.Data.BindingMode.TwoWay>または<xref:System.Windows.Data.BindingMode.OneWayToSource>バインドします。 <xref:System.Windows.Data.BindingMode.TwoWay>と<xref:System.Windows.Data.BindingMode.OneWayToSource>するには、プロパティの変更通知を提供するソース オブジェクトの要件にバインドします。 詳しくは、このトピック内にあるサンプルをご覧ください。 また、「[方法 : プロパティの変更通知を実装する](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md)」もご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ バインドに関する「方法」トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

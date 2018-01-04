@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d1b81949d6d91420c828564debd311af47dfdfd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7b035f5922722a05759ff1e13514cc760a57d668
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-a-web-service"></a>方法 : Web サービスにバインドする
 この例では、Web サービス メソッドの呼び出しによって返されるオブジェクトにバインドする方法を示します。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 11/21/2017
   
  構造について**getContentResponse**を参照してください[コンテンツ サービス ドキュメント](http://services.msdn.microsoft.com/ContentServices/ContentService.asmx)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
  [XAML でデータをバインディング可能にする](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d754d0ed2f3951c39b3eaeae097589adf3510f5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cd12b811ae4dd89c645ada1f4f70b06f73b9b13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-improve-rendering-performance-by-caching-an-element"></a>方法: 要素をキャッシュしてレンダリングのパフォーマンスを向上させる
 使用して、<xref:System.Windows.Media.BitmapCache>の複雑なレンダリング パフォーマンスを向上させるためにクラス<xref:System.Windows.UIElement>です。 要素をキャッシュするには、新しいインスタンスを作成、<xref:System.Windows.Media.BitmapCache>クラスし、要素に割り当てる<xref:System.Windows.UIElement.CacheMode%2A>プロパティです。 再利用することができます、<xref:System.Windows.Media.BitmapCache>が効率的な<xref:System.Windows.Media.BitmapCacheBrush>します。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xaml[System.Windows.Media.BitmapCache#_BitmapCacheXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcache/cs/window1.xaml#_bitmapcachexaml)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.BitmapCache>  
  <xref:System.Windows.Media.BitmapCacheBrush>  
  <xref:System.Windows.UIElement.CacheMode%2A>  

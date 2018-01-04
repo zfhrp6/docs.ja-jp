@@ -18,11 +18,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5ecb47efdd69730350cf98e1c7b1e49150ad324d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8f4b42fd71dacb0071013067dc3c14add96c8aca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-coordinates"></a>Windows フォームの座標
 Windows フォームの座標システムは、デバイスの座標に基づいており、Windows フォームで描画するときに、メジャーの基本単位は、デバイス単位 (通常は、ピクセル)。 画面上の点は増加権限、および y 座標が上から下に増加する x 座標を使用して、x 座標と y 座標ペアで説明します。 画面の基準とした、元の場所は、画面、またはクライアント座標を指定するかどうかによって異なります。  
@@ -38,6 +39,6 @@ Windows フォームの座標システムは、デバイスの座標に基づい
 ## <a name="mapping-from-one-type-of-coordinate-to-another"></a>座標の 1 つの型から別のマッピング  
  場合によっては、画面座標からクライアント座標をマップする必要があります。 簡単にこれを行うを使用して、<xref:System.Windows.Forms.Control.PointToClient%2A>と<xref:System.Windows.Forms.Control.PointToScreen%2A>で使用できるメソッド、<xref:System.Windows.Forms.Control>クラスです。 たとえば、<xref:System.Windows.Forms.Control.MousePosition%2A>プロパティの<xref:System.Windows.Forms.Control>画面座標で報告されるクライアント座標に変換することができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Control.PointToClient%2A>  
  <xref:System.Windows.Forms.Control.PointToScreen%2A>

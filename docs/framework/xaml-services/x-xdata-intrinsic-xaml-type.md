@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 3e448c28be6515748254e267b70f3c898b9226a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ec46d0363e5b10d3bd3bd3f9c8f4d3694abc1c8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData 組み込み XAML 型
 XAML の運用環境での XML データ アイランドの配置を有効にします。 内の XML 要素`x:XData`機能を実行する既定の XAML 名前空間の一部、またはその他の XAML 名前空間かのように XAML プロセッサで扱うことはできません。 `x:XData`整形式の任意の XML を含めることができます。  
@@ -45,7 +46,7 @@ XAML の運用環境での XML データ アイランドの配置を有効にし
 |||  
 |-|-|  
 |`elementDataRoot`|囲まれたデータ アイランドの単一のルート要素です。 ほとんどの最終的なコンシューマーの単一のルートがない XML が無効と見なされます。 具体的には、単一のルートは、必要な場合、`x:XData`では、XML データ ソースの WPF または他の多くのテクノロジにも、XML ソース データ バインディングを使用します。|  
-|`[elementData]`|省略可能です。 XML データを表す XML です。 要素のデータとして格納できる要素の任意の数と、入れ子になった要素は、他の要素に含まれていることができます。ただし、XML の一般的な規則が適用されます。|  
+|`[elementData]`|任意。 XML データを表す XML です。 要素のデータとして格納できる要素の任意の数と、入れ子になった要素は、他の要素に含まれていることができます。ただし、XML の一般的な規則が適用されます。|  
   
 ## <a name="remarks"></a>コメント  
  内の XML 要素、`x:XData`オブジェクトには、すべての可能な名前空間およびプレフィックス内でデータを含む XMLDOM の再を宣言できます。  
@@ -59,7 +60,7 @@ XAML の運用環境での XML データ アイランドの配置を有効にし
   
  技術的には、`x:XData`型のプロパティの内容として使用できる<xref:System.Xml.Serialization.IXmlSerializable>です。 ただし、<xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType>のみ著名な実装です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Data.XmlDataProvider>  
  [データ バインディングの概要](../../../docs/framework/wpf/data/data-binding-overview.md)  
  [バインドのマークアップ拡張機能](../../../docs/framework/wpf/advanced/binding-markup-extension.md)

@@ -26,11 +26,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 2b960e52d8d7dca590411f1c5f096a6942e1ade9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6052e575b62994b54799cc1af88584f433b06ff8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="built-in-types-for-common-xaml-language-primitives"></a>共通の XAML 言語プリミティブの組み込み型
 XAML 2009 では、いくつかのデータ型に対する XAML 言語をサポートします。これらのデータ型は、共通言語ランタイム (CLR: Common Language Runtime) およびその他のプログラミング言語でよく使用されているプリミティブです。 XAML 2009 でサポートされるようになったのは、 `x:Object`, `x:Boolean`, `x:Char`, `x:String`, `x:Decimal`, `x:Single`, `x:Double`, `x:Int16`, `x:Int32`, `x:Int64`, `x:TimeSpan`, `x:Uri`, `x:Byte`、および `x:Array`の各プリミティブです。  
@@ -61,7 +62,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 ### <a name="xboolean"></a>x:Boolean  
  CLR バッキングの場合は、 `x:Boolean` プリミティブは <xref:System.Boolean>に対応しています。  
   
- XAML は、 `x:Boolean` の値の大文字と小文字を区別しないで解析します。 `x:Bool` は、承諾済みのプリミティブではありません。 XAML 言語仕様の定義を参照してください。 [ \[MS-XAML\]セクション 5.2.17 および 5.4.11](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
+ XAML は、`x:Boolean` の値の大文字と小文字を区別しないで解析します。 `x:Bool` は、承諾済みのプリミティブではありません。 XAML 言語仕様の定義を参照してください。 [ \[MS-XAML\]セクション 5.2.17 および 5.4.11](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
   
 ### <a name="xchar"></a>x:Char  
  CLR バッキングの場合は、 `x:Char` プリミティブは <xref:System.Char>に対応しています。  
@@ -83,7 +84,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 ### <a name="xsingle"></a>x:Single  
  CLR バッキングの場合は、 `x:Single` プリミティブは <xref:System.Single>に対応しています。  
   
- 数値に加え、 `x:Single` のテキスト構文はトークン `Infinity`、 `-Infinity`、および `NaN`も許可しています。 これらのトークンは、大文字と小文字を区別します。  
+ 数値に加え、`x:Single` のテキスト構文はトークン `Infinity`、`-Infinity`、および `NaN` も許可しています。 これらのトークンは、大文字と小文字を区別します。  
   
  `x:Single` は、テキスト構文の最初の文字が `e` または `E`の場合は、指数表記形式の値をサポートします。  
   
@@ -92,7 +93,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 ### <a name="xdouble"></a>x:Double  
  CLR バッキングの場合は、 `x:Double` プリミティブは <xref:System.Double>に対応しています。  
   
- 数値に加え、 `x:Double` のテキスト構文は、 `Infinity`、 `-Infinity`、および `NaN`の各トークンも許可しています。 これらのトークンは、大文字と小文字を区別します。  
+ 数値に加え、`x:Double` のテキスト構文は、`Infinity`、`-Infinity`、および `NaN` の各トークンも許可しています。 これらのトークンは、大文字と小文字を区別します。  
   
  `x:Double` は指数表記形式の値をサポートしています。 `e` または `E` という文字を使用して指数部分を示すことができます。  
   

@@ -24,11 +24,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b7abab8747272fcf23611539c29ab476c5bed48
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fae5c8553cc395268b1c6afb1b64727014756975
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-wpf"></a>セキュリティ (WPF)
 <a name="introduction"></a>開発するときに[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]スタンドアロン アプリケーションとブラウザーによってホストされるアプリケーション、セキュリティ モデルを考慮する必要があります。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]無制限のアクセス許可を持つスタンドアロンのアプリケーションを実行 ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust**アクセス許可セット) Windows インストーラー (.msi)、XCopy を使用して配置するかどうか、または[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]です。 部分的に信頼されたスタンドアロンの WPF アプリケーションを ClickOnce で展開することはサポートされていません。 ただし、完全に信頼されたホスト アプリケーションが部分的に信頼を作成できます<xref:System.AppDomain>アドインの .NET Framework モデルを使用します。 詳細については、次を参照してください。 [WPF アドイン概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。  
@@ -72,7 +73,7 @@ ms.lasthandoff: 11/21/2017
 |リソース|ビルドの種類のプロジェクトに追加されるファイル**リソース**です。|`pack://application:,,,/MyResourceFile.xaml`|  
 |Content|ビルドの種類のプロジェクトに追加されるファイル**コンテンツ**です。|`pack://application:,,,/MyContentFile.xaml`|  
 |起点サイト|ビルドの種類のプロジェクトに追加されるファイル**None**です。|`pack://siteoforigin:,,,/MySiteOfOriginFile.xaml`|  
-|アプリケーション コード|コンパイルされたコード分離を含む XAML リソース。<br /><br /> または<br /><br /> XAML ファイルのビルドの種類のプロジェクトに追加される**ページ**です。|`pack://application:,,,/MyResourceFile` `.xaml`|  
+|アプリケーション コード|コンパイルされたコード分離を含む XAML リソース。<br /><br /> - または -<br /><br /> XAML ファイルのビルドの種類のプロジェクトに追加される**ページ**です。|`pack://application:,,,/MyResourceFile` `.xaml`|  
   
 > [!NOTE]
 >  アプリケーションのデータ ファイルとパックの詳細については[!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)]を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)です。  
@@ -281,7 +282,7 @@ ms.lasthandoff: 11/21/2017
 |[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]|[ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)|  
 |[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
  [WPF のセキュリティ方針 - プラットフォーム セキュリティ](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
  [WPF のセキュリティ方針 - セキュリティ エンジニアリング](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)  

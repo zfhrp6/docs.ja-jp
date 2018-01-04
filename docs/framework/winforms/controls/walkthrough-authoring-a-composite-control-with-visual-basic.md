@@ -24,11 +24,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c86a3d420b85c1287597cda738c6d72f0433d0f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c31e76e9f190990f0a3dddab359ef9523783d955
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>チュートリアル : Visual Basic による複合コントロールの作成
 複合コントロールは、カスタム グラフィカル インターフェイスを作成し、再利用するための手段を提供します。 複合コントロールは、基本的には視覚的に表示されるコンポーネントです。 そのため、複合コントロールは、1 つ以上の Windows フォーム コントロール、コンポーネント、または機能を拡張できるコード ブロックで構成されます。コード ブロックでは、ユーザー入力の検証、表示プロパティの変更、作成者が必要とする他のタスクの実行などによって機能を拡張します。 複合コントロールは、他のコントロールと同様に Windows フォームに配置できます。 このチュートリアルの前半では、`ctlClock` という単純な複合コントロールを作成します。 チュートリアルの後半では、継承によって `ctlClock` の機能を拡張します。  
@@ -69,8 +70,8 @@ ms.lasthandoff: 11/21/2017
   
     |プロパティ|変更後の値|  
     |--------------|---------------|  
-    |**名前**|`lblDisplay`|  
-    |**テキスト**|`(blank space)`|  
+    |**Name**|`lblDisplay`|  
+    |**[テキスト]**|`(blank space)`|  
     |**TextAlign**|`MiddleCenter`|  
     |**Font.Size**|`14`|  
   
@@ -254,8 +255,8 @@ ms.lasthandoff: 11/21/2017
   
     |プロパティ|設定|  
     |--------------|-------------|  
-    |**名前**|`lblAlarm`|  
-    |**テキスト**|**Alarm!**|  
+    |**Name**|`lblAlarm`|  
+    |**[テキスト]**|**Alarm!**|  
     |**TextAlign**|`MiddleCenter`|  
     |**Visible**|`False`|  
   
@@ -366,11 +367,11 @@ ms.lasthandoff: 11/21/2017
   
 11. これらのコントロールのプロパティを次のように設定します。  
   
-    |コントロール|プロパティ|値|  
+    |コントロール|プロパティ|[値]|  
     |-------------|--------------|-----------|  
-    |`label1`|**テキスト**|`(blank space)`|  
-    ||**名前**|`lblTest`|  
-    |`dateTimePicker1`|**名前**|`dtpTest`|  
+    |`label1`|**[テキスト]**|`(blank space)`|  
+    ||**Name**|`lblTest`|  
+    |`dateTimePicker1`|**Name**|`dtpTest`|  
     ||**Format**|<xref:System.Windows.Forms.DateTimePickerFormat.Time>|  
   
 12. デザイナーで **[dtpTest]** をダブルクリックします。  
@@ -405,7 +406,7 @@ ms.lasthandoff: 11/21/2017
   
      このチュートリアルでは、多数の重要な概念を取り上げました。 コントロールとコンポーネントを複合コントロール コンテナーに組み込んで複合コントロールを作成する方法を説明しました。 また、コントロールにプロパティを追加する方法と、カスタム機能を実装するコードを記述する方法も説明しました。 最後のセクションでは、継承によって特定の複合コントロールの機能を拡張する方法と、ホスト メソッドをオーバーライドすることでメソッドの機能を変更する方法を説明しました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
  [方法: 複合コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)  
  [方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)  

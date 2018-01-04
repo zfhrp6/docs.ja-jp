@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8828ff0f263943c6094af0073ec4cad6068c6e1c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 55c9482ecb540baab3ddd57ca9350fd7265ac251
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>パフォーマンスの最適化 : ハードウェアの活用
 内部アーキテクチャ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は、2 つのレンダリング パイプライン、ハードウェアおよびソフトウェア。 このトピックをアプリケーションのパフォーマンスの最適化に関する決定を行うには、これらのレンダリング パイプラインについて情報を提供します。  
@@ -64,13 +65,13 @@ ms.lasthandoff: 11/21/2017
   
  詳細については[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]階層を表示するを参照してください[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
  [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
  [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
  [オブジェクトの動作](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
  [アプリケーション リソース](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [テキスト](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [[テキスト]](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [パフォーマンスに関するその他の推奨事項](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

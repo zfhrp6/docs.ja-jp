@@ -18,11 +18,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d601ab89b08dd9e9bd0b27d2cfb1c495c33a2786
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 276c5883487d8fba47d7fb80060d4c947e0f6cd6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>抽象化 (抽象型およびインターフェイス)
 抽象化では、コントラクトを記述、コントラクトの完全な実装は提供されませんする型です。 抽象化は通常インターフェイスまたは抽象クラスとして実装され、適切に定義された一連のコントラクトを実装する型の必要なセマンティクスを説明するリファレンス ドキュメントになります。 .NET Framework における最も重要な抽象化のものが<xref:System.IO.Stream>、 <xref:System.Collections.Generic.IEnumerable%601>、および<xref:System.Object>です。  
@@ -45,6 +48,6 @@ ms.lasthandoff: 11/21/2017
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
- [機能拡張のための設計](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+ [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

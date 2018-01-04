@@ -17,11 +17,12 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d926970046b96029ee253c10a5abcc8b8e0602bc
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 885cd77ed3d65fdb1173b695c50b9d6d26a8acb1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="expander-how-to-topics"></a>エキスパンダーに関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Expander>コントロール。  

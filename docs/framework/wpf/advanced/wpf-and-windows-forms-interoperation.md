@@ -19,11 +19,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d713a03469edc5d4c950c75c8094386372657486
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 49a27fa04c28376dd5e627d2a80a180a5d81a3b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-and-windows-forms-interoperation"></a>WPF と Windows フォームの相互運用性
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]アプリケーション インターフェイスを作成するための 2 つの異なるアーキテクチャを提供します。 <xref:System.Windows.Forms.Integration?displayProperty=nameWithType>名前空間は、一般的な相互運用シナリオを有効にするクラスを提供します。 相互運用機能を実装する 2 つのキー クラス<xref:System.Windows.Forms.Integration.WindowsFormsHost>と<xref:System.Windows.Forms.Integration.ElementHost>です。 このトピックには、相互運用シナリオがサポートされているし、するシナリオはサポートされていませんがについて説明します。  
@@ -127,7 +128,7 @@ ms.lasthandoff: 11/21/2017
 |クリップボードのトピック|すべてのクリップボードは通常どおり操作できます。 これには、カット アンド ペースト間が含まれます[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]と[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コントロール。|該当なし。|  
 |ドラッグ アンド ドロップ機能|すべてのドラッグ アンド ドロップ操作が通常どおりに動作します。 間での操作が含まれます[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]と[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コントロール。|該当なし。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [チュートリアル: WPF での Windows フォーム コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)  

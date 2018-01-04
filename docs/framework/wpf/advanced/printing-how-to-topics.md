@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56fcba73e9b3dac40f4723e9aeb8c8f6169a9b2c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dd76921059222c9c5b8958ce8e1761a3f04cb037
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printing-how-to-topics"></a>印刷に関する「方法」トピック
 このセクションのトピックでは、印刷を使用する方法を示す、印刷システム管理機能を含む、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]だけでなく、新しい[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]印刷パス。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/21/2017
  [PrintTickets を検証およびマージする](../../../../docs/framework/wpf/advanced/how-to-validate-and-merge-printtickets.md)  
  印刷チケットが有効であることを要求しないプリンターでサポートされていないことをチェックする手順です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Printing>  
  <xref:System.Printing.IndexedProperties>  
  <xref:System.Printing.Interop>  

@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 5c6e91fcecb60dee2577ea62c2313f8b2c7eecbf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1d620b59208b9dc852abee3dd2e4d6c58b223d70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xsubclass-directive"></a>x:Subclass ディレクティブ
 XAML マークアップのコンパイルの動作を変更してとき`x:Class`も用意されています。 基になっている部分クラスを作成する代わりに`x:Class`、提供されている`x:Class`、中間クラスとして作成された基になる、指定された派生クラスを想定し、`x:Class`です。  
@@ -42,10 +43,10 @@ XAML マークアップのコンパイルの動作を変更してとき`x:Class`
   
 |||  
 |-|-|  
-|`namespace`|省略可能です。 含む CLR 名前空間が指定`classname`です。 場合`namespace`を指定すると、ドット (.) で区切られます`namespace`と`classname`です。|  
-|`classname`|必須です。 読み込まれた XAML およびその XAML の分離コードで接続する部分クラスの CLR 名を指定します。 「解説」を参照してください。|  
-|`subclassNamespace`|省略可能です。 異なっていてもかまいません`namespace`他の各名前空間を解決できない場合。 含む CLR 名前空間が指定`subclassName`です。 場合`subclassName`を指定すると、ドット (.) で区切られます`subclassNamespace`と`subclassName`です。|  
-|`subclassName`|必須です。 サブクラスの CLR 名を指定します。|  
+|`namespace`|任意。 含む CLR 名前空間が指定`classname`です。 場合`namespace`を指定すると、ドット (.) で区切られます`namespace`と`classname`です。|  
+|`classname`|必須。 読み込まれた XAML およびその XAML の分離コードで接続する部分クラスの CLR 名を指定します。 「解説」を参照してください。|  
+|`subclassNamespace`|任意。 異なっていてもかまいません`namespace`他の各名前空間を解決できない場合。 含む CLR 名前空間が指定`subclassName`です。 場合`subclassName`を指定すると、ドット (.) で区切られます`subclassNamespace`と`subclassName`です。|  
+|`subclassName`|必須。 サブクラスの CLR 名を指定します。|  
   
 ## <a name="dependencies"></a>依存関係  
  [X:class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)も、同じオブジェクトに提供される必要があり、そのオブジェクトは XAML の運用環境のルート要素である必要があります。  
@@ -66,6 +67,6 @@ XAML マークアップのコンパイルの動作を変更してとき`x:Class`
   
  両方を定義するときに`x:Class`と`x:Subclass`、によって参照されているクラスのすべての実装を提供する必要はありません`x:Class`です。 のみを使用して名前を指定する必要があります、`x:Class`属性のコンパイラに中間ファイル (コンパイラ選択しません、既定の名前でも) で作成するクラスについてガイダンスを持つようにします。 付与できる、`x:Class`クラスの実装です。 ただし、これは、典型的なシナリオの両方を使用して`x:Class`と`x:Subclass`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [WPF における XAML とカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

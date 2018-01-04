@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de5bcaeffb77f52b80c229cf0402c2c090e40d81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ec7e566e6f56c215bbaeafdfb5c5e97cc0add0bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-brushes-overview"></a>WPF のブラシの概要
 画面に表示できるものは、ブラシによって描画されているために表示されます。 たとえば、ブラシを使用して、ボタン、テキストの前景色、図形の塗りつぶしの背景について説明します。 このトピックでの描画の概念を説明する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]ブラシし、例について説明します。 ブラシを使用すると、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] オブジェクトを単色で塗りつぶすことも、パターンとイメージの複雑な組み合わせで塗りつぶすこともできます。  
@@ -169,7 +170,7 @@ VisualBrush を使用して描画された四角形
   
  理由の詳細については<xref:System.Windows.Media.VisualBrush>オブジェクトにすることはできません固定されるを参照してください、<xref:System.Windows.Media.VisualBrush>の種類 ページ。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Brush>  
  <xref:System.Windows.Media.Brushes>  
  [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  

@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1828b6ffe2d24c2bfb98b4668a9540adf5978e5f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9bb2664b267301fdf1e3a67e385595a5d28212bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="advanced-text-formatting"></a>テキストの高度な書式設定
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]堅牢な一連の提供[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]アプリケーションにテキストを含めるためです。 レイアウトと[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)][!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]など<xref:System.Windows.Controls.TextBlock>一般のテキスト表現の要素の使用を最も一般的な提供します。 描画[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]など<xref:System.Windows.Media.GlyphRunDrawing>と<xref:System.Windows.Media.FormattedText>図面に書式付きテキストを含めるための手段を提供します。 高度なレベルでは、一番[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]形式設定エンジンは、テキスト ストアの管理、実行テキスト書式管理、および埋め込みオブジェクトの管理などのテキストのプレゼンテーションのすべての側面を制御する、拡張可能なテキストを提供します。  
@@ -80,7 +81,7 @@ ms.lasthandoff: 11/21/2017
   
  次の表は、定義済みのいくつか<xref:System.Windows.Media.TextFormatting.TextRun>オブジェクト。  
   
-|TextRun の種類|使用方法|  
+|TextRun の種類|使用法|  
 |------------------|-----------|  
 |<xref:System.Windows.Media.TextFormatting.TextCharacters>|文字グリフの表示をテキスト フォーマッタに返すために使用される特殊なテキスト ラン。|  
 |<xref:System.Windows.Media.TextFormatting.TextEmbeddedObject>|テキスト内のボタンやイメージなど、測定、ヒット テスト、描画が全部行われるコンテンツを提供するための特殊なテキスト ラン。|  
@@ -104,6 +105,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="specifying-formatting-properties"></a>書式設定プロパティを指定する  
  <xref:System.Windows.Media.TextFormatting.TextRun>オブジェクトは、テキスト ストアによって提供されるプロパティを使用して書式設定されます。 これらのプロパティには、次の 2 つの種類で<xref:System.Windows.Media.TextFormatting.TextParagraphProperties>と<xref:System.Windows.Media.TextFormatting.TextRunProperties>です。 <xref:System.Windows.Media.TextFormatting.TextParagraphProperties>段落の包括的なプロパティをなどに処理<xref:System.Windows.TextAlignment>と<xref:System.Windows.FlowDirection>です。 <xref:System.Windows.Media.TextFormatting.TextRunProperties>各テキスト ラン前景ブラシなど、段落内のさまざまなことができるプロパティは、 <xref:System.Windows.Media.Typeface>、およびフォント サイズ。 カスタムの段落およびカスタム テキスト プロパティの型を実装する、アプリケーションがから派生するクラスを作成する必要があります<xref:System.Windows.Media.TextFormatting.TextParagraphProperties>と<xref:System.Windows.Media.TextFormatting.TextRunProperties>それぞれします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)

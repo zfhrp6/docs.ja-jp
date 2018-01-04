@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 808d29292e176af8d3af1fc0f4a02c48ee05ea35
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c3b750e6ee21c8347d3896ec290f0ff564cc0a2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-the-opacity-of-an-element-or-brush"></a>方法 : 要素またはブラシの不透明度をアニメーション化する
 フレームワーク要素がフェードインおよびフェードアウトするために、アニメーション化できますその<xref:System.Windows.UIElement.Opacity%2A>またはプロパティをアニメーション化することができます、<xref:System.Windows.Media.Brush.Opacity%2A>のプロパティ、 <xref:System.Windows.Media.Brush> (またはブラシ) ペイントするために使用します。 でき、要素の不透明度をアニメーション化してその子のフェードインおよびフェードアウトが要素のどの部分がフェードインはより慎重に選択する要素の描画に使用するブラシをアニメーション化することができます。 たとえば、ボタンの背景の描画に使用されるブラシの不透明度をアニメーション化する可能性があります。 これにより、ビュー、そのテキストを完全に不透明なままのフェードインおよびフェードアウトするボタンの背景が原因です。  

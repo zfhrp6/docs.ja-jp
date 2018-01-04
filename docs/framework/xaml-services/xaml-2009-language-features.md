@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 6299a29cb79650eb59df3f198c3ea3fcd49d0076
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 447ba37330e8027d86fd24239a8aca2461dce8d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-2009-language-features"></a>XAML 2009 言語機能
 XAML 2009 とは、既存の XAML 言語仕様を拡張した、XAML の新しい言語機能の短縮名です。 XAML 2009 には、いくつかの新しいディレクティブとコンストラクトが導入されています。 たとえば、[x:Arguments Directive](../../../docs/framework/xaml-services/x-arguments-directive.md)、 [x:FactoryMethod Directive](../../../docs/framework/xaml-services/x-factorymethod-directive.md)、 [x:Reference Markup Extension](../../../docs/framework/xaml-services/x-reference-markup-extension.md)、 [x:TypeArguments Directive](../../../docs/framework/xaml-services/x-typearguments-directive.md)、共通言語プリミティブの組み込み型 ( `x:Char`など) があります。  
@@ -42,5 +43,5 @@ XAML 2009 とは、既存の XAML 言語仕様を拡張した、XAML の新し�
 ### <a name="event-attributes"></a>イベント属性  
  イベントによってサポートされる属性については、XAML 2006 ではマークアップ コンパイルが関係していると仮定されて、イベントはマークアップ コンパイルに送信されます。 XAML 2009 はマークアップ拡張機能に似たマークアップ形式をサポートします。このマークアップ形式は、XAML のランタイム解析と読み込みが行われるまでイベント接続を遅延します。 ただし、WPF アプリケーション、および WPF の UI の XAML シナリオでは、一般にこの機能は使用しません。 WPF およびその XAML 2006 の実装では、イベント属性処理の大部分に対し、 <xref:System.Windows.UIElement> レベルで定義されたルーティング イベントのイベント ハンドラー接続と、そのマークアップ コンパイラ手順の組み合わせを使用します。 マークアップ コンパイラは、XAML 内に見つかるすべてのイベント属性を事前に処理し、マークアップ コンパイラが使用されることがビルド アクションによって宣言されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

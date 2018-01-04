@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 45d71dde85ea65e45a36b4f938e1fd5135cc0e00
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: cb5f0203c80cc94d17fcfcd40ff4d79bf8ecdc85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-seek-a-storyboard-synchronously"></a>方法 : ストーリーボードを同期的にシークする
 次の例を使用する方法を示しています、<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>のメソッド、<xref:System.Windows.Media.Animation.Storyboard>同期的に、ストーリー ボードのアニメーションの任意の位置をシークします。  

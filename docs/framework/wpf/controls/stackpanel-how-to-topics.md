@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d010e83b0bc5a3e69f8a0c205247681d2bb3d26
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a947e1e7ccfe31ffcb638f8e09aae5cdd594b449
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stackpanel-how-to-topics"></a>StackPanel に関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.StackPanel>要素を水平方向または垂直方向にコンテンツをスタックします。  

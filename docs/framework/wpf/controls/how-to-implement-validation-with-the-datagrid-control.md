@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8c611919b5702877db34e9a02e367312678a1b27
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 78846e2b6a1d73e011441b0ccb46b8aad365d5dd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>方法: DataGrid コントロールを使用して検証を実装する
 <xref:System.Windows.Controls.DataGrid>コントロールでは、セルと行の両方のレベルに検証を実行することができます。 セル レベルの検証、ユーザーが値を更新したときに、バインドされたデータ オブジェクトの個々 のプロパティを検証します。 行レベルの検証、ユーザーが行に変更をコミット時に、データ オブジェクト全体を検証します。 検証エラーのカスタマイズされた視覚的なフィードバックを提供したり、既定の視覚的フィードバックを使用する、<xref:System.Windows.Controls.DataGrid>コントロールを提供します。  
@@ -100,7 +101,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xaml[DataGrid_Validation#FullXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#fullxaml)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.DataGrid>  
  [DataGrid](../../../../docs/framework/wpf/controls/datagrid.md)  
  [データ バインディング](../../../../docs/framework/wpf/data/data-binding-wpf.md)  

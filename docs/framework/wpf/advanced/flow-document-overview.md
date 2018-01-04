@@ -20,11 +20,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10f7eda2b6761a825dcb2b24ae9f11b2e1262d7e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a99bd2336de41366d27c15e4bc4cfb2b2aff3cd0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flow-document-overview"></a>フロー ドキュメントの概要
 フロー ドキュメントは、表示と読みやすさを最適化するように設計されたドキュメントです。 フロー ドキュメントは、1 つの定義済みのレイアウトに設定するのではなく、ウィンドウのサイズ、デバイスの解像度、省略可能なユーザー設定など、ランタイム変数に基づいてコンテンツを動的に調整したりリフローしたりします。 また、フロー ドキュメントは、改ページ位置の自動修正や列などの高度なドキュメント機能を提供します。 ここでは、フロー ドキュメントの概要およびフロー ドキュメントの作成方法について説明します。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="flow-document-types"></a>フロー ドキュメントの種類  
  フロー ドキュメント コンテンツの表示、およびそれがどのように表示されるかは、どのようなオブジェクトがフロー コンテンツをホストするために使用されるかに依存します。 フロー コンテンツの表示をサポートする 4 つのコントロールがあります: <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentPageViewer>、 <xref:System.Windows.Controls.RichTextBox>、および<xref:System.Windows.Controls.FlowDocumentScrollViewer>です。 これらのコントロールについて、以下に簡単に説明します。  
   
- **注:** <xref:System.Windows.Documents.FlowDocument>を使用するこれらのコントロールの表示のために直接フロー コンテンツをホストする、必要な<xref:System.Windows.Documents.FlowDocument>フロー コンテンツをホストしているを有効にします。  
+ **注:** <xref:System.Windows.Documents.FlowDocument>を使用するこれらのコントロールの表示のために直接フロー コンテンツをホストする、必要な<xref:System.Windows.Documents.FlowDocument>フロー コンテンツをホストしているを有効にします。
   
 ### <a name="flowdocumentreader"></a>FlowDocumentReader  
  <xref:System.Windows.Controls.FlowDocumentReader>ユーザーが単一ページ (ページに-を-時) の表示モードの 2 つのページに-を-時点 (読書形式) 表示モード、および連続スクロール (ボトムレス) 表示モードなど、さまざまな表示モードを動的に選択できるようにする機能が含まれます。 これらの表示モードの詳細については、次を参照してください。<xref:System.Windows.Controls.FlowDocumentReaderViewingMode>です。 動的に表示モードを切り替えることが必要がない場合<xref:System.Windows.Controls.FlowDocumentPageViewer>と<xref:System.Windows.Controls.FlowDocumentScrollViewer>コンテンツ ビューアーは、特定の表示モードで修正される軽量のフローを提供します。  
@@ -358,7 +359,7 @@ ms.lasthandoff: 11/21/2017
   
  参照してください[WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)タイポグラフィについての詳細。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [[テキスト]](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
  [方法トピック](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  

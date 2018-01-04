@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6674628acd4ea6b18f98a0ab5e20935220595de5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f6628ec27ab381f52a086cac3f8d0cd92aea2cd8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-property-change-notification"></a>方法 : プロパティの変更通知を実装する
 サポートする<xref:System.Windows.Data.BindingMode.OneWay>または<xref:System.Windows.Data.BindingMode.TwoWay>を自動的に (たとえば、プレビュー ウィンドウをユーザーがフォームを編集するときに自動的に更新する)、バインディング ソースの動的な変更を反映するように、バインディング ターゲット プロパティを有効にするバインディング クラス適切なプロパティの変更通知を提供する必要があります。 この例を実装するクラスを作成する方法を示しています。<xref:System.ComponentModel.INotifyPropertyChanged>です。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
   
  方法の例を参照する`Person`クラスをサポートするために使用できます<xref:System.Windows.Data.BindingMode.TwoWay>バインドを参照してください[ ボックスにテキストが、ソースを更新するときに制御](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

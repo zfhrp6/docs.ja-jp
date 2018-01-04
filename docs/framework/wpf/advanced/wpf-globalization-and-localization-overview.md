@@ -16,11 +16,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 791b1b134717859a0e90914bf118fcf1dc3e1e4f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6f2bc9021ca376b7b27f74efed6866a907b480ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>WPF のグローバリゼーションおよびローカリゼーションの概要
 1 つの言語、製品の可用性を制限する場合は、潜在的な顧客の世界 6.5 と人口の割合をベースを制限します。 世界各国のユーザーに到達するようにアプリケーションを実行する場合に、製品のコスト効果の高いローカライズはより多くの顧客に最適かつ最も経済的な方法のいずれかです。  
@@ -179,7 +180,7 @@ ms.lasthandoff: 10/22/2017
   
  このファイルを編集する Unicode をサポートする使い慣れた CSV エディターを使用します。 "None"のローカライズのカテゴリのすべてのエントリをフィルター処理します。 次のエントリが表示されます。  
   
-|リソース キー|ローカライズのカテゴリ|値|  
+|リソース キー|ローカライズのカテゴリ|[値]|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|ボタン|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|ボタン|キャンセル|  
@@ -191,7 +192,7 @@ ms.lasthandoff: 10/22/2017
   
  アプリケーションをドイツ語のローカライズにを実行すると次の変換が必要です。  
   
-|リソース キー|ローカライズのカテゴリ|値|  
+|リソース キー|ローカライズのカテゴリ|[値]|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|ボタン|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|ボタン|Abbrechen|  
@@ -266,7 +267,7 @@ ms.lasthandoff: 10/22/2017
   
  このコメントが LocBaml ツール場合 TextBlock_1 のコンテンツに関連付けられます (を参照してください[アプリケーションをローカライズする](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)) には、出力ファイルに、.csv TextBlock_1 行の 6 番目の列に表示されることができます。  
   
-|リソース キー|カテゴリ|読み取り可能です|変更可能|コメント|値|  
+|リソース キー|カテゴリ|読み取り可能です|変更可能|コメント|[値]|  
 |-|-|-|-|-|-|  
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|テキスト|true|true|この文字は、装飾的な規則として使用されます。|&#124;|  
   

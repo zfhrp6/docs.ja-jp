@@ -22,11 +22,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 52cb3a5391d6e24643b03a880d3695a11baceca3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7d708674682ffd7b0d13c9cbe828e28bbc26e260
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-content-model"></a>WPF のコンテンツ モデル
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、多くのコントロールやコントロールのような型を提供する表示プラットフォームで、その主な目的は、異なる種類のコンテンツを表示することです。 使用するコントロールまたは派生元のコントロールを判断するには、特定のコントロールが最適に表示できるオブジェクトの種類を理解する必要があります。  
@@ -262,5 +263,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="classes-that-format-your-text"></a>テキストを書式設定するクラス  
  <xref:System.Windows.Documents.TextElement>され、その関連クラスでは、テキストの書式設定することができます。 <xref:System.Windows.Documents.TextElement>オブジェクトを含めるし、内のテキストを書式設定<xref:System.Windows.Controls.TextBlock>と<xref:System.Windows.Documents.FlowDocument>オブジェクト。 2 つの基本的な種類<xref:System.Windows.Documents.TextElement>オブジェクトが<xref:System.Windows.Documents.Block>要素および<xref:System.Windows.Documents.Inline>要素。 A<xref:System.Windows.Documents.Block>要素は段落またはリストなどのテキストのブロックを表します。 <xref:System.Windows.Documents.Inline>要素は、ブロック内のテキストの一部を表します。 多く<xref:System.Windows.Documents.Inline>クラスを適用するテキストの書式を指定します。 各<xref:System.Windows.Documents.TextElement>独自のコンテンツ モデルを持ちます。 詳細については、「[TextElement Content Model Overview](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [詳細設定](../../../../docs/framework/wpf/advanced/index.md)

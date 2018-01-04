@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: d6a9333b2267e82fc25b2a0ec4bf5dd14f644078
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c9cc5e2bff9cc2591c7a12630da5422dbf73713a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xshared-attribute"></a>x:Shared 属性
 設定すると`false`、WPF リソース検索の動作を変更して、属性付きのリソースに対して要求が、同じインスタンスのすべての要求を共有することがなく各要求の新しいインスタンスを作成できるようにします。  
@@ -59,7 +60,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.Windows.ResourceDictionary> 、項目を含む他の中で入れ子にする必要がありますいない<xref:System.Windows.ResourceDictionary>です。 たとえば、使用することはできません`x:Shared`内のアイテム、<xref:System.Windows.ResourceDictionary>内にある、<xref:System.Windows.Style>にではない、<xref:System.Windows.ResourceDictionary>項目。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.ResourceDictionary>  
  [XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [基本要素](../../../docs/framework/wpf/advanced/base-elements.md)

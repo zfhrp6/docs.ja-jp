@@ -17,11 +17,12 @@ caps.latest.revision: "56"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 09129f2dc2bac2bb17ebacd6d6db020288b6f616
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9651b55741a607b1c99a813c0011db380dfd38f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-management-overview"></a>アプリケーション管理の概要
 すべてのアプリケーションは、アプリケーションの実装と管理に適用される機能を共有することがよくあります。 このトピックでは、機能の概要を示します、<xref:System.Windows.Application>を作成して、アプリケーションを管理するためのクラスです。  
@@ -60,7 +61,7 @@ ms.lasthandoff: 11/21/2017
 |アプリケーション スコープのプロパティを取得し、設定する|<xref:System.Windows.Application.Properties%2A?displayProperty=nameWithType> プロパティを使用します。|  
 |アプリケーションの状態を取得し、保存する|参照してください[永続化し、アプリケーション セッション間でのアプリケーション スコープのプロパティを復元](../../../../docs/framework/wpf/app-development/persist-and-restore-application-scope-properties.md)です。|  
 |リソース ファイル、コンテンツ ファイル、起点ファイルなど、コード以外のデータ ファイルを管理する。|参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)です。|  
-|スタンドアロン アプリケーションのウィンドウを管理する|参照してください[WPF Windows 概要](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)です。|  
+|スタンドアロン アプリケーションのウィンドウを管理する|「[WPF ウィンドウの概要](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)」を参照してください。|  
 |ナビゲーションを追跡し、管理する|参照してください[ナビゲーション概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)です。|  
   
 <a name="The_Application_Definition"></a>   
@@ -374,7 +375,7 @@ ms.lasthandoff: 11/21/2017
   
  ![XBAP - アプリケーション オブジェクト イベント](../../../../docs/framework/wpf/app-development/media/applicationmodeloverview-applicationobjectevents-xbap.png "ApplicationModelOverview_ApplicationObjectEvents_xbap")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Application>  
  [WPF ウィンドウの概要](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)  
  [ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)  

@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 538b2e9cc1ce11dc336a8d90ec84ba504baa6f2b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eac3e03cfc0ca8bbb6f61f1bc6663c67fd6303f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="property-value-inheritance"></a>プロパティ値の継承
 プロパティ値の継承は、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プロパティ システムの機能です。 プロパティ値の継承により、要素のツリー内の子要素は、親要素から特定のプロパティの値を取得できます。これは、最も近い親要素のいずれかに設定されているとおりにその値を継承することで行われます。 親要素もプロパティ値の継承を通じてその値を取得している場合があるため、システムはページ ルートまで再帰している可能性があります。 プロパティ値の継承は、プロパティ システムの既定の動作ではありません。あるプロパティに子要素でのプロパティ値の継承を実行させるには、そのプロパティに特定のメタデータを設定する必要があります。  
@@ -51,7 +52,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="inheriting-property-values-across-tree-boundaries"></a>ツリー境界を越えてプロパティ値を継承する  
  プロパティの継承は、要素のツリーを走査して行われます。 多くの場合、このツリーは論理ツリーに対応します。 ただし、要素のツリーをなどを定義するマークアップに WPF コア レベルのオブジェクトを含めるとするたびに、 <xref:System.Windows.Media.Brush>、不連続の論理ツリーを作成しました。 True の論理ツリーが概念的には及ばないを通じて、<xref:System.Windows.Media.Brush>論理ツリーが WPF フレームワーク レベルの概念であるためです。 ご覧のメソッドを使用する場合、結果に反映<xref:System.Windows.LogicalTreeHelper>です。 ただし、プロパティ値の継承は、論理ツリー内には、このギャップを埋めることができ、継承可能なプロパティが添付プロパティおよびありません意図的な継承のブロックの境界として登録されている限り、引き続きを使用すると、継承された値を渡すことができます (など、 <xref:System.Windows.Controls.Frame>) が発生しました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
  [添付プロパティの概要](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
  [依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)

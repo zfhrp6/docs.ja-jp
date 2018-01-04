@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: d1b21e2a654b18547c8da7da724c87946724f71f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d39249a5d1c0e230d21e6d889b92d0b57c98e2ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xcode-intrinsic-xaml-type"></a>x:Code 組み込み XAML 型 
 XAML の運用環境でコードの配置を許可します。 XAML、またはランタイムによって解釈など、後から使用の XAML の運用環境で左側をコンパイルする XAML プロセッサの実装でこのようなコードをコンパイルするか、できます。  
@@ -58,7 +59,7 @@ XAML の運用環境でコードの配置を許可します。 XAML、または�
   
 -   部分クラスの CLR 名前空間の外部コードのエンティティへの参照する必要がありますすべて完全修飾します。 上書きを部分クラスのオーバーライド可能なメンバーにメンバーが宣言されている場合は、言語固有のオーバーライド キーワードを使用してこれを指定してください。 メンバーが宣言されている場合`x:Code`XAML から作成された部分クラスのメンバーと競合するスコープ、ように、コンパイラが、競合を報告していること、XAML ファイルことはできませんコンパイル、またはロードします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [WPF における分離コードと XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

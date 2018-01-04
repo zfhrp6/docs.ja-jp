@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e92621e7e62750ae5ad73158232ccdabfb22287a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a751025470b566ef1e735e4ddd192cfd8fc354ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>方法 : コレクションにバインドして選択に基づく情報を表示する
 マスター/詳細形式の単純なシナリオでデータ バインドがある<xref:System.Windows.Controls.ItemsControl>など、<xref:System.Windows.Controls.ListBox>です。 詳細については、選択した項目を表示するユーザーの選択に基づいて、です。 この例では、このシナリオを実装する方法を示します。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[CollectionBinding#ToString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Data.cs#tostring)]
  [!code-vb[CollectionBinding#ToString](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CollectionBinding/VisualBasic/Person.vb#tostring)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [階層データでマスター詳細パターンを使用する](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)  
  [階層 XML データでマスター詳細パターンを使用する](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  

@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6621cc0048270b97c42ff4c4e646b0ddd9ca3477
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2d4cf06a86a1da7bb34074623f8f19f4bda7a724
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-resize-rows-with-a-gridsplitter"></a>方法 : GridSplitter を使用して行のサイズを変更する
 この例は、水平方向の使用方法を示しています。<xref:System.Windows.Controls.GridSplitter>の 2 つの行の間の領域を再配布する、<xref:System.Windows.Controls.Grid>の寸法を変更することなく、<xref:System.Windows.Controls.Grid>です。  
@@ -46,6 +47,6 @@ ms.lasthandoff: 11/21/2017
  [!code-xaml[GridSplitterRowColumn#GridSplitterEntireRowPart1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart1)]  
 [!code-xaml[GridSplitterRowColumn#GridSplitterEntireRowPart2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.GridSplitter>  
  [データ バインドに関する「方法」トピック](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)

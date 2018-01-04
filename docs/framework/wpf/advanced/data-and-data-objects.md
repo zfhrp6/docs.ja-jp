@@ -20,11 +20,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc5d5f8c2090f6abaa1157db2a92d2e689d7f216
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: cb2354b61a0433981675ba55978f31937212cabc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-and-data-objects"></a>データとデータ オブジェクト
 ドラッグ アンド ドロップ操作の一部として転送されるデータは、データ オブジェクトに格納されます。  概念的には、データ オブジェクトは、1 つ以上の次のペアで構成されます。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 10/22/2017
 ## <a name="data-objects"></a>データ オブジェクト  
  すべてのデータ オブジェクトを実装する必要があります、<xref:System.Windows.IDataObject>次の標準セットを有効にして、データ転送を容易にするメソッドを提供するインターフェイスです。  
   
-|メソッド|概要|  
+|メソッド|まとめ|  
 |------------|-------------|  
 |<xref:System.Windows.IDataObject.GetData%2A>|指定したデータ形式のデータ オブジェクトを取得します。|  
 |<xref:System.Windows.IDataObject.GetDataPresent%2A>|データで使用可能でまたは指定された形式に変換できるかどうかを確認します。|  

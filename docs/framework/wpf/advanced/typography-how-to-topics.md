@@ -15,11 +15,12 @@ caps.latest.revision: "90"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2ecb85c1cb6bca654433ccddfb895bc361a4e2b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd866c67a5885a378dace6e14e280b5efe630695
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typography-how-to-topics"></a>文字体裁に関する「方法」トピック
 このセクションのトピックを使用する方法について説明[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーション内のテキストの豊富なプレゼンテーションのサポートします。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
  [ビジュアルにテキストを描画する](../../../../docs/framework/wpf/advanced/how-to-draw-text-to-a-visual.md)  
  [XAML で特殊文字を使用する](../../../../docs/framework/wpf/advanced/how-to-use-special-characters-in-xaml.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Documents.Typography>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [OpenType フォントの機能](../../../../docs/framework/wpf/advanced/opentype-font-features.md)

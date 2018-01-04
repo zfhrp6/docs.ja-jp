@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fa4d0881d7dcdb2c56c66c5617652ec1a2cbc374
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 31c8461febf72e4345e015c10e0f731fcfbb05e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-to-a-page"></a>方法: ページに移動
 この例で、ページに移動するからいくつかの方法を示しています、<xref:System.Windows.Navigation.NavigationWindow>です。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  [!INCLUDE[TLA#tla_uri#initcap#plural](../../../../includes/tlasharptla-urisharpinitcapsharpplural-md.md)]相対パスまたは絶対のいずれかを指定できます。 詳細については、「[WPF におけるパック URI](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.Frame>  
  <xref:System.Windows.Controls.Page>  
  <xref:System.Windows.Navigation.NavigationService>

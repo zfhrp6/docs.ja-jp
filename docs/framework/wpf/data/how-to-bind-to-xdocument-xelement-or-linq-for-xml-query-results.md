@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6b39c45a7c85155a0fb46e8e176da5979e52e6e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ceb6023157d487aebeff4fb5335b58c0958f2851
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results"></a>方法 : XDocument、XElement、または LINQ for XML クエリの結果にバインドする
 この例は、XML データをバインドする方法を示します、<xref:System.Windows.Controls.ItemsControl>を使用して<xref:System.Xml.Linq.XDocument>です。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[XLinqExample#BindToResults](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml.cs#bindtoresults)]
  [!code-vb[XLinqExample#BindToResults](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/XLinqExample/visualbasic/window1.xaml.vb#bindtoresults)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
  [LINQ to XML による WPF のデータ バインディングの概要](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)  
  [LINQ to XML を使用した WPF のデータ バインディングの例](/visualstudio/designers/wpf-data-binding-using-linq-to-xml-example)  

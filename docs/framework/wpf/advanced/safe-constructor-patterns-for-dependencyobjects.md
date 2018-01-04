@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 43a38406a3c9cc171944448fce2fa2f70c483baa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: db1b7f47ef135b1a174eecef7e53b41e6996256d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>DependencyObject の安全なコンストラクター パターン
 一般的に、コンストラクターは派生クラスのコンストラクターの基底の初期化として呼び出されることがあるため、クラスのコンストラクターでは、仮想メソッドやデリゲートなどのコールバックを呼び出しません。 対象オブジェクトの初期化が不完全な状態で、仮想メソッドに入ることがあります。 ただし、プロパティ システム自体は、依存関係プロパティ システムの一部としてコールバックを呼び出し、内部的に公開します。 単純な操作と依存関係プロパティの値を設定した場合と<xref:System.Windows.DependencyObject.SetValue%2A>呼び出しには可能性がありますが含まれますコールバックには任意の場所を特定します。 このため、使用する型が基底クラスとして使われる場合に、コンストラクター本体内に依存関係プロパティ値を設定すると問題が発生する可能性があり、注意が必要です。 実装するための特定のパターンがある<xref:System.Windows.DependencyObject>」で説明されている依存関係プロパティの状態と固有のコールバックでは、特定の問題を回避するコンス トラクターです。  
@@ -124,7 +125,7 @@ public MyClass : SomeBaseClass {
 #### <a name="setting-dependency-properties-with-setvalue"></a>SetValue による依存関係プロパティの設定  
  これらと同じパターンの適用に無効なプロパティの設定の利便性のため、ラッパーを持つ値を設定するプロパティを設定する場合は<xref:System.Windows.DependencyObject.SetValue%2A>します。 呼び出す<xref:System.Windows.DependencyObject.SetValue%2A>コンス トラクターのパラメーターをパススルーすることで、初期化のためのクラスの既定のコンス トラクターを呼び出すことがも必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)

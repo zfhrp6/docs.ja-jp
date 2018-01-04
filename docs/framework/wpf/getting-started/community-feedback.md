@@ -22,11 +22,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cec4326c8ae93507ee94c0b9573e679c8584a77
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 82f176a5c4d0f3e371993c9b2273bb045fe6df1f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-community-feedback"></a>WPF コミュニティのフィードバック
 [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] は、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] について学習したり、ディスカッションしたり、フィードバックしたりできるさまざまなコミュニティ リソースを公開しています。これには、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] チーム メンバーやコミュニティ リーダーによって作成されたブログ、フォーラム、[!INCLUDE[TLA2#tla_ms](../../../../includes/tla2sharptla-ms-md.md)] 製品フィードバック センターが含まれます。 コミュニティ リソースごとに異なるメリットが提供されます。 これらのメリットについて説明し、一般的なコミュニティや特に [!INCLUDE[TLA2#tla_ms](../../../../includes/tla2sharptla-ms-md.md)]から最善の反応を得るために各メリットを使用するためのベスト プラクティスも示します。  

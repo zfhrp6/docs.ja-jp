@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 55e261018e6c7b9fea9ad449c5e92a131df40807
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f3010d3123e78a5e292c5ac78ef4894962fb8f9d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datetime-xaml-syntax"></a>DateTime XAML 構文
 などのいくつかのコントロール<xref:System.Windows.Controls.Calendar>と<xref:System.Windows.Controls.DatePicker>、使用できるプロパティがあります、<xref:System.DateTime>型です。 これらのコントロールに対する日付または時刻の初期値は、分離コードで実行時に指定するのが一般的です。ただし、日付または時刻の初期値を XAML で指定することもできます。 WPF XAML パーサーの解析を処理する<xref:System.DateTime>組み込み XAML テキスト構文を使用して値をします。 このトピックの詳細を記述する、 <xref:System.DateTime> XAML テキスト構文です。  
@@ -84,5 +85,5 @@ ms.lasthandoff: 10/18/2017
 ### <a name="other-formats-and-patterns"></a>その他の形式とパターン  
  以前は、ように、 <xref:System.DateTime> XAML では、許容される任意の文字列として指定できますの入力として<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>です。 形式化されたその他の形式が含まれます (たとえば<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>)、および特定として形式化されていない形式<xref:System.Globalization.DateTimeFormatInfo>フォーム。 たとえば、フォーム`YYYY/mm/dd`が許容されるの入力として<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>です。 このトピックでは、使用可能な形式の一部を説明します。標準的な使用手順としては、短い形式の日付パターンをお勧めします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

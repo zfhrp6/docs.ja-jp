@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 02c0d41ccb21cb68c5cae3459a2d7518e98cda20
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 42843e4be907c7361f55a95abb4d91b4426a9f6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-unmanaged-api-reference"></a>WPF のアンマネージ API リファレンス
 Windows Presentation Foundation (WPF) ライブラリでは、内部使用のみを目的としているアンマネージ関数の数を公開します。 ユーザー コードから呼び出すことはできません。  
@@ -32,5 +33,5 @@ Windows Presentation Foundation (WPF) ライブラリでは、内部使用のみ
  [SaveToHistory 関数](../../../../docs/framework/wpf/advanced/savetohistory-function-wpf-unmanaged-api-reference.md)  
  [SetFakeActiveWindow 関数](../../../../docs/framework/wpf/advanced/setfakeactivewindow-function-wpf-unmanaged-api-reference.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [詳細設定](../../../../docs/framework/wpf/advanced/index.md)

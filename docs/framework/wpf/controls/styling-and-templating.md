@@ -26,11 +26,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5bd85383cc27687974fbf3689793a60569a4f97a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c33739d0e753146ffdc8b825d88c6ca7ba63fa1a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="styling-and-templating"></a>スタイルとテンプレート
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]スタイルとテンプレートは、開発者および設計者が視覚的に説得力のある効果を作成し、製品の一貫した外観を作成できる、一連の機能 (スタイル、テンプレート、トリガー、およびストーリーボード) を表します。 開発者や設計者は、アプリケーション単位で広範囲に外観をカスタマイズできますが、アプリケーション内およびアプリケーション間で外観の保守および共有を可能にするには、強力なスタイルとテンプレートのモデルが必要です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] はそのモデルを提供します。  
@@ -209,7 +210,7 @@ ms.lasthandoff: 11/21/2017
   
  カスタム コントロールのテーマを作成する場合、「[Control Authoring Overview](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」の「外部のコントロール ライブラリ」セクションを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF におけるパッケージの URI](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
  [方法: ControlTemplate によって生成された要素を検索する](../../../../docs/framework/wpf/controls/how-to-find-controltemplate-generated-elements.md)  
  [DataTemplate によって生成された要素を検索する](../../../../docs/framework/wpf/data/how-to-find-datatemplate-generated-elements.md)

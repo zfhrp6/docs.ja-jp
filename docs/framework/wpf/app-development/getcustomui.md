@@ -14,11 +14,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3f3c101ad13df9b99a2d872bac8783baed8b4b9a
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 88c2873a5929e25335b0c6ef64f8121e31177ab4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getcustomui"></a>GetCustomUI
 実装されている場合に、ホストからカスタムの進行状況とエラー メッセージを取得する PresentationHost.exe によって呼び出されます。  
@@ -54,5 +55,5 @@ HRESULT GetCustomUI( [out] BSTR* pwzProgressAssemblyName, [out] BSTR* pwzProgres
   
  この関数は PresentationHost の初期化中に 1 回呼び出されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IWpfHostSupport](../../../../docs/framework/wpf/app-development/iwpfhostsupport.md)

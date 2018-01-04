@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bf04af2baa037b2df9e2980cc2347460de961c39
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4d29fda788aa4ec79ad4278beefa16ee14208832
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="styling-for-focus-in-controls-and-focusvisualstyle"></a>コントロールのフォーカスのスタイルと FocusVisualStyle
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]キーボード フォーカスを受け取るときに、コントロールの外観を変更するための 2 つの並列メカニズムを提供します。 最初のメカニズムがなどを使用してプロパティの setter のプロパティは<xref:System.Windows.UIElement.IsKeyboardFocused%2A>スタイルまたはコントロールに適用されているテンプレート内で。 2 番目の機構の値として別のスタイルを提供する、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>プロパティです"visual スタイルにフォーカスする"または他の UI コントロールのビジュアル ツリーを変更するのではなく、コントロールの上に描画される装飾用の別個のビジュアル ツリーの作成。置換する要素。 このトピックでは、これらのメカニズムが適切であるシナリオについて説明します。  
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="other-focus-properties"></a>その他のフォーカス プロパティ  
  Setter を基本または上をトリガーする必要がありますフォーカスを変更するすべての考えられる原因を視覚的な動作を生成する場合は、<xref:System.Windows.UIElement.IsFocused%2A>依存関係プロパティをまたはに、<xref:System.Windows.UIElement.GotFocus>または<xref:System.Windows.UIElement.LostFocus>に使用されるイベント、<xref:System.Windows.EventSetter>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [フォーカスの概要](../../../../docs/framework/wpf/advanced/focus-overview.md)  

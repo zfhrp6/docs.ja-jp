@@ -24,11 +24,12 @@ caps.latest.revision: "52"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3dabd2d7b067f923e371102ed2c78a3edb08f829
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 34fcb4d029b027cb88bd5b434954a6348396e926
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="shapes"></a>図形
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]使用して基本図形を描画するためのサポートを提供、<xref:System.Windows.Shapes.Shape>クラスです。 図形オブジェクトから取得<xref:System.Windows.FrameworkElement>とそのため、レイアウト システムに参加しを使用して単に描画できる[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
  [WPF での図形と基本描画の概要](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/shapes-how-to-topics.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Shapes.Shape>  
  [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
  [グラフィックスとマルチメディア](../../../../docs/framework/wpf/graphics-multimedia/index.md)

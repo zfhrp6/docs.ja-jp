@@ -23,11 +23,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c20753aab569bf90b7db2f062050c7e185d638fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f2a4d023600456adf1e14b801ee6c24fd0a2348c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-and-windows-forms"></a>データ連結と Windows フォーム
 Windows フォームでは、従来のデータ ソースだけでなく、データを含むほぼすべての構造にバインドできます。 実行時に計算する値、ファイルから読み取る値、または他のコントロールの値から派生する値の配列にバインドできます。  
@@ -63,7 +64,7 @@ Windows フォームでは、従来のデータ ソースだけでなく、デ�
 |マスター/詳細リレーションシップ|マスター/詳細アプリケーションは、関連データを表現するための形式の 1 つです。 具体的には、2 つのデータ テーブルと、それらを結合する関係があります。典型的なビジネスの例では、"顧客" テーブルと "注文" テーブルがあり、それらの間には、顧客とそれに対応する注文を結合する関係があります。 2 つの Windows フォームで、マスター/詳細アプリケーションの作成の詳細については<xref:System.Windows.Forms.DataGridView>コントロールを参照してください[する方法: マスター/詳細形式を使用して 2 つ Windows フォーム DataGridView コントロールの作成](../../../docs/framework/winforms/controls/create-a-master-detail-form-using-two-datagridviews.md)|  
 |ルックアップ テーブル|別の一般的なデータ表示/操作シナリオに、テーブル ルックアップがあります。 多くの場合、より大きなデータ表示の一部として、<xref:System.Windows.Forms.ComboBox> コントロールを使用してデータを表示および操作します。 重要な点は、<xref:System.Windows.Forms.ComboBox> コントロールで表示されるデータは、データベースに書き込まれるデータとは異なることです。 たとえば、食料品店から入手できる項目を表示する <xref:System.Windows.Forms.ComboBox> コントロールがあり、製品の名前 (パン、牛乳、卵) を表示するとします。 しかし、データベース内での情報の取得を容易にしたり、データベースを正規化したりするには、ある注文の特定の項目に関する情報を項目番号 (#501、#603 など) で格納する必要がある場合があります。 そのため、フォームの <xref:System.Windows.Forms.ComboBox> コントロールにある食料品項目の "わかりやすい名前" と、注文に表示される該当する項目番号との間には暗黙的なつながりがあります。 これがテーブル ルックアップの本質です。 詳細については、次を参照してください。[する方法: Windows フォーム BindingSource コンポーネントのルックアップ テーブルを作成](../../../docs/framework/winforms/controls/how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component.md)です。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Binding>  
  [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)  
  [方法: データ ソースに Windows フォーム DataGrid コントロールをバインドする](../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  

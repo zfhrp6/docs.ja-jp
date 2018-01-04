@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 48a28db24731f9aa248bb149c9f19a57cf76bbf1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1eba92d764e73360b1cd58957ea5318c5b263b8b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Windows フォームでのユーザー入力の検証
 ユーザーがアプリケーションにデータを入力する場合、アプリケーションがそれを使用する前に、データが有効であることを確認します。 特定のテキスト フィールドにならないこと長さがゼロでフィールドが、電話番号などの適切な形式のデータの型として書式設定されること、または文字列がデータベースのセキュリティを侵害するために使用できる任意の安全でない文字を含まないことを要求することがあります。 Windows フォームでは、アプリケーションで入力を検証するためのいくつかの方法を提供します。  
@@ -100,7 +101,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  フォームを閉じるには、この方法を強制すると、既に保存されていないするフォームのコントロール内のデータは失われます。 さらに、モーダル フォームは、閉じられるときにコントロールの内容を検証しません。 コントロールにフォーカスをロックするコントロールの検証を使用することもできますが、フォームを閉じると関連付けられた動作について考慮する必要はありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
  <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType>  

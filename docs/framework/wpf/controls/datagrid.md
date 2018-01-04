@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 63eb1b7aec0c65192f67035fc7bc624fa1d2ae81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: daea7d382d64e768c9ec681e1c2041c4c80c255e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datagrid"></a>DataGrid
 <xref:System.Windows.Controls.DataGrid>コントロールでは、表示および SQL データベース、LINQ クエリ、またはその他のバインド可能なデータ ソースからなど、さまざまなソースからデータを編集することができます。 詳しくは、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」をご覧ください。  
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
 |[方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する](../../../../docs/framework/wpf/controls/how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|データを表示する方法について説明、<xref:System.Windows.Controls.DataGrid>によってグループ化、並べ替え、およびデータのフィルター処理のさまざまな方法でします。|  
 |[DataGrid コントロールのサイズ変更方法](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)|絶対と自動サイズ変更を制御する方法について説明します、<xref:System.Windows.Controls.DataGrid>です。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.DataGrid>  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  

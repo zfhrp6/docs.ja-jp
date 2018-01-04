@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4c163897af27c9b34c8cd87a3b197047f86d21ab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58f29783e48aa7173010ffec6a65f9ac1d8a2b62
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-a-rectangle"></a>方法 : 四角形を描画する
 この例を使用して、四角形を描画する方法を示しています、<xref:System.Windows.Shapes.Rectangle>要素。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 11/21/2017
   
  この例より大きなサンプルの一部サンプル全体については、次を参照してください。[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Shapes.Rectangle>  
  [図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)  
  [WPF での図形と基本描画の概要](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  

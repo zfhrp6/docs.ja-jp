@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ebe0a47d38a2cfda2a7d150b4a3886d9f63ee190
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f540ad92c69219a2c22763403ce4ecc734c8e5cb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-data-by-using-gridviewrowpresenter"></a>方法 : GridViewRowPresenter を使用してデータを表示する
 この例を使用する方法を示しています、<xref:System.Windows.Controls.GridViewRowPresenter>と<xref:System.Windows.Controls.GridViewHeaderRowPresenter>列にデータを表示するオブジェクト。  
@@ -30,7 +31,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xaml[GridViewRowPresenterSample#GridViewRowPresenter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridViewRowPresenterSample/CS/Window1.xaml#gridviewrowpresenter)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.GridViewHeaderRowPresenter>  
  <xref:System.Windows.Controls.GridViewRowPresenter>  
  <xref:System.Windows.Controls.GridViewColumnCollection>  

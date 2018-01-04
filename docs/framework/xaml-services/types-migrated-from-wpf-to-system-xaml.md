@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: db227b5c7915b6ce0b0fe8400a8545256ea6d6b3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 86dd2dc74903dfb889ab618622786f5349a5fb32
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>WPF から System.Xaml に移行した型
 [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] および [!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)]では、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] と [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] の両方に XAML 言語の実装が含まれていました。 WPF XAML 実装に拡張性を与えていたパブリック型の多くは、WindowsBase、PresentationCore、および PresentationFramework アセンブリに存在していました。 同様に、 [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] XAML に拡張性を与えていたパブリック型は System.Workflow.ComponentModel アセンブリにありました。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]では、XAML 関連の型の一部が System.Xaml アセンブリに移行されました。 XAML 言語サービスの一般的な .NET Framework 実装では、もともと特定のフレームワークの XAML 実装によって定義されていた XAML 機能拡張のシナリオの多くを、今では全体的な [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] XAML 言語サポートの一部として使用できるようになりました。 このトピックでは、移行された型を紹介し、移行に伴う問題について説明します。  
@@ -135,5 +136,5 @@ ms.lasthandoff: 10/18/2017
   
  WPF アセンブリと System.Xaml の両方を参照しており、 `include` 名前空間と <xref:System.Windows.Markup> 名前空間の両方に対して <xref:System.Xaml> ステートメントを使用している場合は、あいまいさを排除して型を解決するために、これらの API への呼び出しを完全修飾する必要があることがあります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML サービス](../../../docs/framework/xaml-services/index.md)

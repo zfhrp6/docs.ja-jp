@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bdff5ebeb51daff4e8848e9a7c8282c2eee6f208
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d82a211f59fbdecdc932b7e57b242274e91cd5b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-icommandsource"></a>方法 : ICommandSource を実装する
 この例は、実装することによってコマンド ソースを作成する方法を示します<xref:System.Windows.Input.ICommandSource>です。  コマンド ソースは、コマンドを呼び出す方法を認識しているオブジェクトです。  <xref:System.Windows.Input.ICommandSource>インターフェイスが 3 つのメンバーを公開: <xref:System.Windows.Input.ICommandSource.Command%2A>、 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>、および<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>です。  <xref:System.Windows.Input.ICommandSource.Command%2A>呼び出されるコマンドです。 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>はコマンドのソースから、コマンドを処理するメソッドに渡されるユーザー定義データ型です。 <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>コマンドが実行されているオブジェクトです。  
@@ -67,7 +68,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandexecute)]
  [!code-vb[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandexecute)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Input.ICommandSource>  
  <xref:System.Windows.Input.ICommand>  
  <xref:System.Windows.Input.RoutedCommand>  

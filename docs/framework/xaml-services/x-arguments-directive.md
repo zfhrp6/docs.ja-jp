@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 00f605bba709f0ce5f3238ccc3c6ac6cd962f0a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb1f5986a0d9f9eb69ade0228925ec06164cee4d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xarguments-directive"></a>x:Arguments ディレクティブ
 XAML では、既定以外のコンス トラクター オブジェクト要素の宣言またはファクトリ メソッドのオブジェクトの宣言は、パッケージ構築引数。  
@@ -71,7 +72,7 @@ XAML では、既定以外のコンス トラクター オブジェクト要素�
   
  XAML 属性の使用方法`<x:Arguments>string</x:Arguments>`は技術的に可能です。 ただし、これにより、ありませんでした何それ以外の場合の初期化のテキストと型コンバーターを使ってれない機能と、この構文を使用して XAML 2009 のファクトリ メソッドの機能の目的で設計ではありません。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例は、署名、次の XAML の使用方法に既定以外のコンス トラクターを示します`x:Arguments`そのシグネチャにアクセスします。  
   
 ```csharp  
@@ -116,6 +117,6 @@ public Food TryLookupFood(string name)
 </my:Food>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework XAML サービスで使用するためのカスタム型の定義](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

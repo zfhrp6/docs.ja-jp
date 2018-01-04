@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eee894b536b19ec38a9809ab5dc49f5682c1df9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4219dc88a263b73aa89812a2f841a920c804796b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sizing-options-in-the-datagrid-control"></a>DataGrid コントロールのサイズ変更方法
 さまざまなオプションは、コントロールを使用する方法、<xref:System.Windows.Controls.DataGrid>自体のサイズを設定します。 <xref:System.Windows.Controls.DataGrid>、および個々 の行と列、<xref:System.Windows.Controls.DataGrid>その内容を自動的にサイズに設定することができます、または特定の値に設定することができます。 既定では、<xref:System.Windows.Controls.DataGrid>拡大およびその内容のサイズに合わせて縮小されます。  
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
   
  次の表に、によって提供される値、<xref:System.Windows.Controls.DataGridLengthUnitType>構造体。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Controls.DataGridLengthUnitType.Auto>|既定の自動サイズ変更モード サイズ<xref:System.Windows.Controls.DataGrid>セルと列ヘッダーの内容に基づく列です。|  
 |<xref:System.Windows.Controls.DataGridLengthUnitType.SizeToCells>|セルに基づく自動サイズ変更モード サイズ<xref:System.Windows.Controls.DataGrid>列ヘッダーを含まない、列内のセルの内容に基づく列です。|  
@@ -95,7 +96,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="resizing-with-the-mouse"></a>マウスを使用してサイズを変更します。  
  サイズを変更できるユーザー<xref:System.Windows.Controls.DataGrid>行と列、行または列のヘッダー区分線をドラッグします。 <xref:System.Windows.Controls.DataGrid>行または列のヘッダー区分線をダブルクリックして行および列の自動サイズ変更もサポートします。 設定をユーザーが特定の列のサイズを変更することを防ぐために、<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType>プロパティを`false`個々 の列に対するです。 ユーザーがすべての列のサイズを変更することを防止するには、設定、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティを`false`です。 ユーザーがすべての行のサイズを変更することを防止するには、設定、<xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A?displayProperty=nameWithType>プロパティを`false`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.DataGrid>  
  <xref:System.Windows.Controls.DataGridColumn>  
  <xref:System.Windows.Controls.DataGridLength>  

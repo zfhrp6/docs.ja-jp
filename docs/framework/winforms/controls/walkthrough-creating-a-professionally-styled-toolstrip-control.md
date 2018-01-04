@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0fbc03ad16bcc0d63a75df5478f7da8abbf19193
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f3d47f285643f0b989db9419392eed736d0efbea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a>チュートリアル : プロフェッショナル スタイルの ToolStrip コントロールの作成
 アプリケーションを移すことができる<xref:System.Windows.Forms.ToolStrip>から派生した独自のクラスを記述して、プロフェッショナルな外観と動作を制御、<xref:System.Windows.Forms.ToolStripProfessionalRenderer>型です。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
  このトピックの「単一のリストとしてコードをコピーするに、を参照してください。[する方法: プロフェッショナル スタイルの ToolStrip コントロールを作成](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
@@ -74,7 +75,7 @@ ms.lasthandoff: 11/21/2017
   
     |プロパティ|値|  
     |--------------|-----------|  
-    |名前|`stackStrip`|  
+    |name|`stackStrip`|  
     |CanOverflow|`false`|  
     |ドッキング|<xref:System.Windows.Forms.DockStyle.Bottom>|  
     |フォント|`Tahoma, 10pt, style=Bold`|  
@@ -89,8 +90,8 @@ ms.lasthandoff: 11/21/2017
   
     |プロパティ|値|  
     |--------------|-----------|  
-    |名前|`mailStackButton`|  
-    |CheckOnClick|TRUE|  
+    |name|`mailStackButton`|  
+    |CheckOnClick|true|  
     |CheckState|<xref:System.Windows.Forms.CheckState.Checked>|  
     |DisplayStyle|<xref:System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText>|  
     |ImageAlign|<xref:System.Drawing.ContentAlignment.MiddleLeft>|  
@@ -194,7 +195,7 @@ ms.lasthandoff: 11/21/2017
   
 -   ドッキングとマルチ ドキュメント インターフェイス (MDI) フォームを作成する<xref:System.Windows.Forms.ToolStrip>コントロール。 詳細については、次を参照してください。[する方法: メニューのマージと ToolStrip コントロールを MDI フォームを作成](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.StatusStrip>  

@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0625695933b776b8cdbe5488adc116723b930dd0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3812c81538eb1f3d8716d7ea9bf8e9411188e48a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>チュートリアル : Visual Basic による Windows フォーム コントロールからの継承
 [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では、*継承*によって強力なカスタム コントロールを作成できます。 継承を使用すると、標準の Windows フォーム コントロールの固有の機能をすべて保持しながら、カスタム機能も組み込んだコントロールを作成できます。 このチュートリアルでは、`ValueButton` という単純な継承されたコントロールを作成します。 このボタンは、標準の Windows フォームの機能を継承<xref:System.Windows.Forms.Button>制御、およびと呼ばれるカスタム プロパティを公開`ButtonValue`です。  
@@ -67,7 +68,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  **ソリューション エクスプローラー**で、**[ValueButton.vb]** を右クリックし、ショートカット メニューの **[コードの表示]** をクリックします。  
   
-2.  `Public Class ValueButton` ステートメントを見つけます。 このステートメントの直後に、次のコードを追加します。  
+2.  `Public Class ValueButton` ステートメントを探します。 このステートメントの直後に、次のコードを追加します。  
   
     ```vb  
     ' Creates the private variable that will store the value of your   
@@ -155,7 +156,7 @@ ms.lasthandoff: 11/21/2017
   
      `Label1` に数字の "5" が表示されます。これは、継承されたコントロールの `ButtonValue` プロパティが、`ValueButton1_Click` メソッドによって `Label1` に渡されたことを示しています。 このようにして、`ValueButton` コントロールは標準の Windows フォーム ボタンの機能をすべて継承しながら、追加のカスタム プロパティを公開します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル: Visual Basic による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
  [方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)  
  [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  

@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a63a8080c71ad026664e2e14fc1762fcdd4bdb36
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e601fb5895460e52aa21836c542d0b1367527f09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments ディレクティブ
 パスの制約は、ジェネリック型のコンス トラクターにジェネリック型の引数を入力します。  
@@ -91,7 +92,7 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
   
  WPF では、対象とするときに[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、と共に XAML 2009 の機能を使用する`x:TypeArguments`loose XAML (XAML をマークアップ コンパイルされていない) に対してのみです。 WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。 必要なマークアップをコンパイルした場合、XAML は、「XAML 2006 および WPF 汎用 XAML の使用」セクションで説明した制限で動作する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [x:Type マークアップ拡張機能](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
  [共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)  

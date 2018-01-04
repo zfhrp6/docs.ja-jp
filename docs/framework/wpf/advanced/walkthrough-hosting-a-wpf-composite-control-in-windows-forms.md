@@ -14,11 +14,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5dc0a0f7b579feca6150e299cd7f0ef3a6e7a5e3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 965136c94b696fc182537b60dde71ee4f02afe7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>チュートリアル: Windows フォームでの WPF 複合コントロールのホスト
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、アプリケーションの作成に適した環境を提供します。 ただしがある場合、かなりの投資[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コードをより効果的かを既存の拡張[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]アプリケーション[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]はなく最初から書き直します。 一般的なシナリオを 1 つを埋め込むまたはで多くのコントロールが実装されているときに、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内で、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]アプリケーションです。 WPF コントロールのカスタマイズの詳細については、次を参照してください。[コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)です。  
@@ -238,7 +239,7 @@ Windows フォーム アプリケーションでホストされる WPF 複合コ
   
 4.  次の追加<xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>フォームのコントロールです。  
   
-    |名前|テキスト|  
+    |name|テキスト|  
     |----------|----------|  
     |groupBox1|背景色|  
     |groupBox2|前景色|  
@@ -250,7 +251,7 @@ Windows フォーム アプリケーションでホストされる WPF 複合コ
   
 5.  次の追加<xref:System.Windows.Forms.RadioButton?displayProperty=nameWithType>コントロールを<xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>コントロール。  
   
-    |GroupBox|名前|テキスト|  
+    |GroupBox|name|テキスト|  
     |--------------|----------|----------|  
     |groupBox1|radioBackgroundOriginal|元|  
     |groupBox1|radioBackgroundLightGreen|ライトグリーン|  
@@ -271,7 +272,7 @@ Windows フォーム アプリケーションでホストされる WPF 複合コ
   
 6.  次の追加<xref:System.Windows.Forms.Label?displayProperty=nameWithType>最後の制御<xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>です。 これらのコントロールがによって返されるデータを表示、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]複合コントロール。  
   
-    |GroupBox|名前|テキスト|  
+    |GroupBox|name|テキスト|  
     |--------------|----------|----------|  
     |groupBox7|lblName|名前:|  
     |groupBox7|lblAddress|番地:|  
@@ -330,7 +331,7 @@ Windows フォーム アプリケーションでホストされる WPF 複合コ
   
  アプリケーションをビルドして実行します。 別のオプション ボタンをクリックして、WPF 複合コントロール上の影響を確認します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  

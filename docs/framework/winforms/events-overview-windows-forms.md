@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4989a13ef16445bc19b3dc3c6d265d943a464c62
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f73a336da5b61de90a67a8392b5cfc8f28619254
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="events-overview-windows-forms"></a>イベントの概要 (Windows フォーム)
 イベントとは、プログラマが応答できる、つまり、コードを使って "処理" できるアクションのことです。 イベントは、マウスのクリックやキーを押すなどのユーザー アクション、プログラム コードまたはシステムによって生成されます。  
@@ -53,6 +54,6 @@ ms.lasthandoff: 11/21/2017
   
  デリゲートと共に使用される関連付けの機構は動的です。デリゲートは、シグネチャがイベント ハンドラのシグネチャと一致する任意のメソッドに実行時に関連付けできます。 この機能によって、状況に応じて関連付けるメソッドを設定または変更したり、イベント ハンドラをコントロールに動的に関連付けることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)

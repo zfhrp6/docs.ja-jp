@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dcc37651d6f1f304f15d3244c2504517a2a9fb76
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: eec4ec2fc7ba99081eaafa6803d20c99bebc6c2f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-paint-an-area-with-a-linear-gradient"></a>方法 : 線形グラデーションを使用して領域を塗りつぶす
 この例を使用する方法を示しています、<xref:System.Windows.Media.LinearGradientBrush>線形グラデーションで領域を塗りつぶすクラス。 次の例で、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>赤青の淡い緑から黄色から遷移対角線方向の線形グラデーションで塗りつぶされます。  

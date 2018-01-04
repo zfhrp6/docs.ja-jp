@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 69f11a6c42aaf1ddc0d19cc54580cb44501b9307
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 31dd8d636a64b54c914d48b4faee95f82de680fc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="richtextbox-how-to-topics"></a>RichTextBox に関する「方法」トピック
 このセクションで説明を使用した共通タスクを実行する方法を示す例について、<xref:System.Windows.Controls.RichTextBox>コントロール。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/21/2017
  [カスタム コンテキスト メニューを RichTextBox に配置する](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)  
  [方法: RichTextBox の既定のコンテンツ ホストの置換](http://msdn.microsoft.com/en-us/dec1b2ce-9ca5-4bb2-bf54-f8a80a3c8beb)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.TextBox>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

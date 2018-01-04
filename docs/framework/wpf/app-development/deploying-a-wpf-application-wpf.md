@@ -16,11 +16,12 @@ caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 860549d444bcef3a25af753923955b2e3e1a3677
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4c7addef624ee8a41e2f421e0d912efbbaac6eb5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>WPF アプリケーションの配置 (WPF)
 ビルドされた [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは、配置する必要があります。 [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、いくつかの配置テクノロジがあります。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置に使用される配置テクノロジは、アプリケーションの種類によって決まります。 このトピックでは、それぞれの配置テクノロジの概要と使用法を、それぞれの [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの種類の配置要件に関連して説明します。  
@@ -57,7 +58,7 @@ ms.lasthandoff: 11/21/2017
  [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] の詳細については、「[Windows インストーラー配置](http://msdn.microsoft.com/en-us/121be21b-b916-43e2-8f10-8b080516d2a0)」を参照してください。  
   
 <a name="ClickOnce_Deployment"></a>   
-### <a name="clickonce-deployment"></a>ClickOnce の配置  
+### <a name="clickonce-deployment"></a>ClickOnce 配置  
  [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] を使用すると、非 Web アプリケーションを Web スタイル アプリケーションと同じように配置できます。 アプリケーションは、Web サーバーまたはファイル サーバーに公開され、これらのサーバーから配置されます。 [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] は、[!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] によってインストールされるアプリケーションがサポートするような広い範囲のクライアント機能をサポートするわけではありませんが、次のような機能をサポートします。  
   
 -   [スタート] メニューおよび [プログラム] コントロール パネルとの統合。  
@@ -133,6 +134,6 @@ ms.lasthandoff: 11/21/2017
   
  詳細については、「[.NET Framework およびアプリケーションの配置](../../../../docs/framework/deployment/index.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
  [セキュリティ](../../../../docs/framework/wpf/security-wpf.md)

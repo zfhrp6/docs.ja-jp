@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 9a445d7e730ecb743d5e4086ec682b12a7bf3ff9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 25aac1d4478279561cbcdda6c1cf912c3c3b2cde
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>カスタム型およびライブラリの XAML 関連の CLR 属性
 このトピックでは、.NET Framework XAML サービスによって定義されている共通言語ランタイム (CLR) の属性について説明します。 その他の CLR 属性、.NET Framework で定義されているアセンブリまたは型へのアプリケーションの XAML 関連のシナリオがあることについても説明します。 これらの CLR 属性を持つアセンブリ、型、またはメンバーの属性の型に関連する XAML 型システム情報を提供します。 情報は、直接、XAML ノード ストリームを処理するため、または専用の XAML リーダーと XAML ライターで、.NET Framework XAML サービスを使用する任意の XAML コンシューマーに提供されます。  
@@ -277,6 +278,6 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  .NET framework XAML サービスは、XAML 関連の属性も定義<xref:System.Windows.Markup.RootNamespaceAttribute>です。 この属性は、プロジェクト システムのサポートのアセンブリ レベル属性と、XAML のカスタム型には無効です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Attribute>  
  [.NET Framework XAML サービスで使用するためのカスタム型の定義](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)

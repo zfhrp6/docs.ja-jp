@@ -14,11 +14,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10c6afbcde22a82e6227ce1d95d57749bee1a88c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 06c5bb1d4a36d51bb07d59b48c730f722af23f8c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="virtual-mode-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでの仮想モード
 仮想モードでは、間の相互作用を管理することができます、<xref:System.Windows.Forms.DataGridView>コントロールとカスタム データ キャッシュします。 仮想モードを実装するのには、設定、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティを`true`し、1 つ以上のこのトピックで説明するイベントを処理します。 通常を処理するには、少なくとも、`CellValueNeeded`イベントで、コントロールのルックアップ データ キャッシュ内の値を使用します。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 11/21/2017
   
  次のイベントにのみ発生するときに、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティに設定されている`true`です。  
   
-|イベント|説明|  
+|event|説明|  
 |-----------|-----------------|  
 |<xref:System.Windows.Forms.DataGridView.CellValueNeeded>|コントロールによって表示用のデータ キャッシュから、セルの値を取得するために使用します。 このイベントは、バインドされていない列のセルに対してのみ発生します。|  
 |<xref:System.Windows.Forms.DataGridView.CellValuePushed>|セルのユーザー入力をデータ キャッシュにコミットするため、コントロールで使用します。 このイベントは、バインドされていない列のセルに対してのみ発生します。<br /><br /> 呼び出す、<xref:System.Windows.Forms.DataGridView.UpdateCellValue%2A>メソッドの外部のキャッシュされた値を変更するときに、<xref:System.Windows.Forms.DataGridView.CellValuePushed>コントロールで現在の値が表示されていることを確認し、現在有効になっている自動サイズ変更モードを適用するイベント ハンドラー。|  
@@ -71,7 +72,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="best-practices-in-virtual-mode"></a>仮想モードでのベスト プラクティス  
  大量のデータと効率よく連携するために仮想モードを実装している場合もすることを使用する効率的なことを確認、<xref:System.Windows.Forms.DataGridView>自体を制御します。 セルのスタイル、サイズの自動調整、選択内容、および行の共有の効率的な使用に関する詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
  [Windows フォーム DataGridView コントロールでのパフォーマンス チューニング](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  

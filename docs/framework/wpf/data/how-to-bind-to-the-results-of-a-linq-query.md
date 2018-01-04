@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e77a0c698dae0330877c54422c15e14c82376891
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ad4969d80f7bd801ec738fa40e8b2d4ab9deefad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-the-results-of-a-linq-query"></a>方法 : LINQ クエリの結果にバインドする
 この例では、LINQ クエリを実行し、結果にバインドする方法を示します。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
   
  に、2 番目のリスト ボックスがそのコレクションにバインドその<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>に値が設定されている`{Binding}`です。 その結果、返されるコレクションが表示されます (に基づいて、 `myTaskTemplate` <xref:System.Windows.DataTemplate>)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML でデータをバインディング可能にする](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md)  
  [コレクションにバインドして選択に基づく情報を表示する](../../../../docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md)  
  [WPF Version 4.5 の新機能](../../../../docs/framework/wpf/getting-started/whats-new.md)  

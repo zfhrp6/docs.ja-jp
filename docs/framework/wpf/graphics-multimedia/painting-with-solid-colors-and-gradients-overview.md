@@ -20,11 +20,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f26ab394ea94b27257b6d0b662f3a78f3e68ca99
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb71a1ae52b35b421474954410869f20fa004eb7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>純色およびグラデーションによる塗りつぶしの概要
 このトピックを使用する方法について説明<xref:System.Windows.Media.SolidColorBrush>、 <xref:System.Windows.Media.LinearGradientBrush>、および<xref:System.Windows.Media.RadialGradientBrush>純色の線形グラデーションおよび放射状グラデーションで塗りつぶすオブジェクト。  
@@ -178,7 +179,7 @@ GradientOrigin、Center、RadiusX、および RadiusY の設定が異なる Radi
 ## <a name="painting-with-images-drawings-visuals-and-patterns"></a>イメージ、描画、ビジュアル、およびパターンによる塗りつぶし  
  <xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>クラスを使用すると、画像、図形、またはビジュアルを使用して領域を描画します。 イメージ、描画、およびパターンによる塗りつぶしの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Brush>  
  <xref:System.Windows.Media.SolidColorBrush>  
  <xref:System.Windows.Media.LinearGradientBrush>  

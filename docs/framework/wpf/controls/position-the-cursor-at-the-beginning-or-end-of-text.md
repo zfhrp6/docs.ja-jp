@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0efa81a9606235b214f30a8c6febb94ea2968714
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: df30adf232ad782999d8bdf52b1946f84785f98d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-position-the-cursor-at-the-beginning-or-end-of-text-in-a-textbox-control"></a>方法 : TextBox コントロールのテキストの先頭または末尾にカーソルを配置する
 この例は、の先頭または末尾のテキストの内容にカーソルを配置する方法を示します、<xref:System.Windows.Controls.TextBox>コントロール。  
@@ -46,6 +47,6 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[TextBox_MiscCode#_CursorToEnd](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_cursortoend)]
  [!code-vb[TextBox_MiscCode#_CursorToEnd](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_cursortoend)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

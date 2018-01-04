@@ -17,11 +17,12 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6e3c52b7deaa27862fe8dedc0b3c91a96597461f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 42a57e029c642aa01cd290db0971a70f27e25739
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="3-d-graphics-how-to-topics"></a>3-D グラフィックスに関する「方法」トピック
 このセクションのトピックでは、使用する方法をデモンストレーション[!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)]でグラフィックス[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションです。  

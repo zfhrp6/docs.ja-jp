@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f24b71bcb5f013c4b7054dd0948e5f2709230a99
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 36a34e8f5a96f8b45a6c830ec3c1edeea816bd3b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-extract-the-text-content-from-a-richtextbox"></a>方法 : RichTextBox からテキスト コンテンツを抽出する
 この例の内容を抽出する方法を示しています、<xref:System.Windows.Controls.RichTextBox>プレーン テキストとして。  
@@ -43,6 +44,6 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[RichTextBoxSnippets#_RTB_StringFrom](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxSnippets/CSharp/Window1.xaml.cs#_rtb_stringfrom)]
  [!code-vb[RichTextBoxSnippets#_RTB_StringFrom](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxSnippets/visualbasic/window1.xaml.vb#_rtb_stringfrom)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)  
  [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)

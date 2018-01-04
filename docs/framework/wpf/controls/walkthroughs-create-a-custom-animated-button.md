@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bce1140ed11332b5bf30d487b2acacc644687d26
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 3ece907b23772504990ef334f446d7b6072f5d44
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>チュートリアル : カスタム アニメーション ボタンの作成
 その名前からわかるように、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]は顧客の経験の豊富なプレゼンテーションを行うために役立ちます。 これらのチュートリアルでは、(アニメーションを含む) ボタンの動作と外観をカスタマイズする方法を示します。 このカスタマイズを行う、スタイルとテンプレートを使用すると、このカスタム ボタンをアプリケーションで他のボタンに簡単に適用できます。 次の図を作成する場合、カスタマイズされたボタンを示しています。  

@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2770f1a0c965dc956e837c5c362e5767d0c9cea
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 5256c0ffffb219776a8705dfee0409ebde07a7ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="gridsplitter-how-to-topics"></a>GridSplitter に関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.GridSplitter>コントロール。  

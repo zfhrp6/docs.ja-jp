@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 849082fc1b933c4172c0d22ec3c9c2a1644a32fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ac69ec232485ebd3097f2db3b31d3fd43d0ccc99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-test-point4d-structures-for-equality-and-inequality"></a>方法 : Point4D 構造体が等価かどうかをテストする
 この例をテストする方法を示しています。<xref:System.Windows.Media.Media3D.Point4D>等値演算子および非等値の構造体。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="example"></a>例  
  [!code-csharp[3DGallery_procedural_snip#Point4DEqualityExample_csharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/Misc3DOperationsExample.cs#point4dequalityexample_csharp)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Media3D.Point4D.op_Equality%2A>  
  <xref:System.Windows.Media.Media3D.Point4D.op_Inequality%2A>  
  <xref:System.Windows.Media.Media3D.Point4D.Equals%2A>

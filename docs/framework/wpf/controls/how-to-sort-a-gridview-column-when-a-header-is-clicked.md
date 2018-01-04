@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a6f05f9f1fef335bc0bae578220d458ade9bfe06
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f24be0ce97071905ce53610e5b44db8f92f24e0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>方法 : ヘッダーがクリックされたときに GridView 列を並べ替える
 この例を作成する方法を示しています、<xref:System.Windows.Controls.ListView>を実装するコントロール、<xref:System.Windows.Controls.GridView>モードと並べ替え、ユーザーが列見出しをクリックしたときにデータがコンテンツを表示します。  
@@ -228,7 +229,7 @@ Private Sub Sort(ByVal sortBy As String, ByVal direction As ListSortDirection)
         End Sub  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.GridView>  
  [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)  

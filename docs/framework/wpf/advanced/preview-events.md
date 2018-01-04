@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 04bdf32ea329ff25fd62255b4512d8a9d5703b8f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a258a0e145e9a24e6e87bb511fdbd6166422a656
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="preview-events"></a>プレビュー イベント
 プレビュー イベントは、イベントのトンネリングとも呼ばれるは、イベントを発生し、イベント データのソースとして報告されている要素に対するアプリケーションのルートからのルートの方向の移動、ルーティングされたイベントです。 すべてのイベント シナリオがサポートまたはプレビュー イベント; が必要このトピックでは、プレビュー イベントが存在、アプリケーションやコンポーネントを処理する方法、それらの状況と、カスタム コンポーネントまたはクラスでプレビュー イベントを作成する場合があります適切なケースについて説明します。  
@@ -39,6 +40,6 @@ ms.lasthandoff: 11/21/2017
   
  これらの手法のそれぞれは、副作用または制限事項のいずれかにあります。 プレビュー イベントの処理の有効であること、バブルのイベントを処理するハンドラーが無効にその時点でイベントを処理であるため、制限することは通常、Previ のままである間に処理されるイベントをマークすることをお勧めルートの新しい部分。 制限事項、`handledEventsToo`手法は指定できません、`handledEventsToo`ハンドラー[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を属性として登録する必要あります、イベント ハンドラー コードでハンドラーがアタッチするのには、要素へのオブジェクト参照を取得した後にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ルーティング イベントの処理済みとしてのマーキング、およびクラス処理](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

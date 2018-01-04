@@ -16,11 +16,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7d55dc1330c21e7eb9f7cfd7f554234dccd6f274
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c642e6491722e9bfe35337d066e3870f5a70f38c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-automatic-layout-to-create-a-button"></a>方法: 自動レイアウトを使用してボタンを作成する
 この例では、自動レイアウトの方法を使用して、ローカライズ可能なアプリケーションにボタンを作成する方法について説明します。  
@@ -39,6 +40,6 @@ ms.lasthandoff: 11/21/2017
  ![同じテキストのボタンを異なる言語で](../../../../docs/framework/wpf/advanced/media/globalizationbutton.png "GlobalizationButton")  
 自動サイズ変更可能なボタン  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [自動レイアウトの使用の概要](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)  
  [自動レイアウト用のグリッドを使用する](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)

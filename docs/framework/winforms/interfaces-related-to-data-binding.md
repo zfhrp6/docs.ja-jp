@@ -23,11 +23,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8108cd3c5ae305b6def5324385cb12c94cd42774
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a0e48ddc6f74d3c4e030bc953ac4f853660a00d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="interfaces-related-to-data-binding"></a>データ連結に関連するインターフェイス
 [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] では、アプリケーションのバインドのニーズや使用するデータに合わせてさまざまなデータ構造を作成できます。 Windows フォームでデータを提供または使用するための独自のクラスを作成することもできます。 これらのオブジェクトは、基本的なデータ バインディングから、デザイン時サポートの提供、エラー チェック、変更通知、データ自体に加えられた変更の構造化されたロールバックのサポートに至るまで、さまざまなレベルの機能を提供することができ、複雑さに対応できます。  
@@ -159,7 +160,7 @@ ms.lasthandoff: 11/21/2017
     > [!NOTE]
     >  継承するクラスを<xref:System.Windows.Forms.Control>管理バインドを使用して自動的にその<xref:System.Windows.Forms.Control.BindingContext%2A>プロパティを実装する必要があります。 その場合、<xref:System.Windows.Forms.ICurrencyManagerProvider>非常にまれです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
  [方法: Windows フォームに単純バインド コントロールを作成する](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
  [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)

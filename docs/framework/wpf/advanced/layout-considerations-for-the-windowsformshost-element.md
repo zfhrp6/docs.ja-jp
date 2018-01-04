@@ -20,11 +20,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d21077e6012f8e48a1418f67e8f0d156d82003c3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 895185797ebdef2145caec4c1c5ac26e3688c463
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>WindowsFormsHost 要素のレイアウトに関する考慮事項
 このトピックの内容について説明しますが、どのように<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素の対話、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイアウト システムです。  
@@ -108,7 +109,7 @@ ms.lasthandoff: 11/21/2017
   
 -   場合、<xref:System.Windows.Forms.Control.Size%2A>プロパティ、指定された制約よりも小さいサイズを返します<xref:System.Windows.Forms.Integration.WindowsFormsHost>このサイズの値を受け取り、値を返します、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイアウト システムです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [チュートリアル: WPF での Windows フォーム コントロールの配置](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)  

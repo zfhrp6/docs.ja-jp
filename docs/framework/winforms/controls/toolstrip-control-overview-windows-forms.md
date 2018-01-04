@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 15e24e0350071fabd32342402abdf497937ee90d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 45dab820072b3eb0bcc448ce32251e3ff5a3e622
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstrip-control-overview-windows-forms"></a>ToolStrip コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールとその関連クラスは、ツールバー、ステータス バー、およびメニューにユーザー インターフェイス要素を結合するため、共通のフレームワークを提供します。 <xref:System.Windows.Forms.ToolStrip>コントロールは、水平または垂直のスペースを共有するツールバーの機能は、インプレース アクティブ化と編集、カスタム レイアウト、およびラフティング、豊富なデザイン時のエクスペリエンスを提供します。  
@@ -55,7 +56,7 @@ Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールと�
   
 ### <a name="important-toolstrip-members"></a>ToolStrip の重要なメンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStrip.Dock%2A>|取得または設定の親コンテナーの端、<xref:System.Windows.Forms.ToolStrip>にドッキングします。|  
 |<xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>|<xref:System.Windows.Forms.ToolStrip> クラスがドラッグ アンド ドロップおよび項目の並べ替えをプライベートで処理するかどうかを示す値を取得または設定します。|  
@@ -71,7 +72,7 @@ Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールと�
   
 ### <a name="important-toolstrip-companion-classes"></a>ToolStrip の重要なコンパニオン クラス  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.MenuStrip>|置き換えする機能を追加、<xref:System.Windows.Forms.MainMenu>クラスです。|  
 |<xref:System.Windows.Forms.StatusStrip>|置き換えする機能を追加、<xref:System.Windows.Forms.StatusBar>クラスです。|  
@@ -88,7 +89,7 @@ Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールと�
   
  詳細については、次を参照してください。 [ToolStrip テクノロジの概要](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)と[ToolStrip コントロールのアーキテクチャ](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ContextMenuStrip>  

@@ -18,11 +18,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1f9d0ff535d0784343b36d0b2df48b123ff3beef
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2d58802bcdfa57bb7689e7406651fcc9829a7e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-resources"></a>XAML リソース
 リソースは、アプリケーションで別の場所で再利用可能なオブジェクトです。 リソースの例には、ブラシとスタイルが含まれます。 この概要は、リソースを使用する方法を説明[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 作成してコードを使用して、またはコードの間で同じ意味でリソースにアクセスし、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 詳細については、次を参照してください。[リソースやコード](../../../../docs/framework/wpf/advanced/resources-and-code.md)です。  
@@ -163,7 +164,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.DataTemplate>暗黙のキーがあります。 暗黙のキーを<xref:System.Windows.DataTemplate>は、<xref:System.Windows.DataTemplate.DataType%2A>プロパティの値。 <xref:System.Windows.DataTemplate.DataType%2A>明示的に使用するのではなく、型の名前として指定することも[{X:type…}](../../../../docs/framework/xaml-services/x-type-markup-extension.md). 詳細については、「[データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.ResourceDictionary>  
  [アプリケーション リソース](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
  [リソースとコード](../../../../docs/framework/wpf/advanced/resources-and-code.md)  

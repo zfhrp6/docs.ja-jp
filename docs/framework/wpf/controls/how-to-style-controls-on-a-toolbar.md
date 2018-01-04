@@ -17,11 +17,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ce090ace11262e4809dbecadd5fe89d7dfaf62e5
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: fa6c2373a9372947b1093c4dcca31f563c2a8bf9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-style-controls-on-a-toolbar"></a>方法 : ToolBar のコントロールのスタイルを指定する
 <xref:System.Windows.Controls.ToolBar>定義<xref:System.Windows.ResourceKey>内のコントロールのスタイルを指定するオブジェクト、<xref:System.Windows.Controls.ToolBar>です。  内のコントロールのスタイルを設定する、 <xref:System.Windows.Controls.ToolBar>、設定、`x:key`するスタイルの属性、<xref:System.Windows.ResourceKey>で定義されている<xref:System.Windows.Controls.ToolBar>です。  
@@ -50,5 +51,5 @@ ms.lasthandoff: 10/22/2017
  [!code-xaml[ToolBar_snip#ToolBarAllStyles](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarallstyles)]  
 [!code-xaml[ToolBar_snip#ToolBar](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbar)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

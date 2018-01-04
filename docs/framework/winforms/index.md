@@ -17,11 +17,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2799bd6652c9f575be8758f47c9770d3fde93580
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4b38cbe1bab4c3d2bf0c6ee518dd26df4ff440dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms"></a>Windows フォーム
 フォームはアプリケーションの基本単位であるため、機能とデザインにある程度の配慮を与えることが重要です。 フォームは、最終的には開発者がユーザー インターフェイスを作成するコントロールとデータを操作するコードを拡張する白紙状態です。 そのために、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] はコード作成を支援する統合開発環境 (IDE) や、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] を使用して作成された豊富なコントロール セットを提供します。 これらのコントロールの機能をコードに補完することにより、必要なソリューションを簡単に素早く開発できます。  

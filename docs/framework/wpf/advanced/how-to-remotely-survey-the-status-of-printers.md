@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ad824a1cef637edc99e6aaafc99d557167ea1f1f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eef67d6ade8fb2a17edadff35fc3155608f831cd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-remotely-survey-the-status-of-printers"></a>方法 : プリンターのステータスをリモート操作で調査する
 中企業および大企業では、任意の時点において、紙詰まりや用紙切れなどの問題が発生したために動作していないプリンターが複数存在する場合があります。 [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] の [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] で公開されているさまざまなプリンター プロパティには、プリンターの状態を迅速に調査する手段が用意されています。  
@@ -83,7 +84,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[PrinterStatusSurvey#UsingStartAndUntilTimes](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PrinterStatusSurvey/CSharp/Program.cs#usingstartanduntiltimes)]
  [!code-vb[PrinterStatusSurvey#UsingStartAndUntilTimes](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PrinterStatusSurvey/visualbasic/program.vb#usingstartanduntiltimes)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Printing.PrintQueue.StartTimeOfDay%2A>  
  <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A>  
  <xref:System.DateTime>  

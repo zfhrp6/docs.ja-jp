@@ -17,11 +17,12 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4d0939788210819279059729e21f9827124eb13f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ba9f7b729210224571d973519c08737ac386cfa9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="menu"></a>メニュー
 A<xref:System.Windows.Controls.Menu>コマンドまたはイベント ハンドラーに関連付けられている要素の階層構造を使用するコントロールです。 各<xref:System.Windows.Controls.Menu>複数を含めることができる<xref:System.Windows.Controls.MenuItem>コントロール。 各<xref:System.Windows.Controls.MenuItem>コマンドを呼び出すかを呼び出すことができます、`Click`イベント ハンドラー。 A<xref:System.Windows.Controls.MenuItem>複数を持つことができますも<xref:System.Windows.Controls.MenuItem>サブメニューを形成する子要素として。  

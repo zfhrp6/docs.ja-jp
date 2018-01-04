@@ -17,11 +17,12 @@ caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fa8d4fba67227e9ca1e3971ea9dc983a5054e08e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f6a46884b056b5ba3bc768deb0725f96386fea84
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="documentviewer"></a>DocumentViewer
 <xref:System.Windows.Controls.DocumentViewer>コントロールを使用して、表示<xref:System.Windows.Documents.FixedDocument>コンテンツ (など[!INCLUDE[TLA#tla_metro](../../../../includes/tlasharptla-metro-md.md)]ドキュメント)、改ページ調整された形式でします。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Documents.FixedDocument>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ドキュメント](../../../../docs/framework/wpf/advanced/documents.md)  
  [ドキュメントのシリアル化および保存](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)  
  [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)

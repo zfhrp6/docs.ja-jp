@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 857cc04af6c619035fa2bf0a548053f57292f7bc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eac54e18f397cf455ffd5fa33c2e000d87b917a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolbar-control-overview-windows-forms"></a>ToolBar コントロールの概要 (Windows フォーム)
 > [!NOTE]
@@ -39,7 +40,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Forms.ToolBar>コントロールでは、ツールバーを追加することで作成できます。<xref:System.Windows.Forms.Button>オブジェクトを、<xref:System.Windows.Forms.ToolBar.Buttons%2A>コレクション。 ボタンを追加するコレクション エディターを使用することができます、<xref:System.Windows.Forms.ToolBar>コントロール; 各<xref:System.Windows.Forms.Button>オブジェクトがテキストまたはイメージが割り当てられて、両方を割り当てることはできます。 イメージは、関連付けられた [ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) コンポーネントから取得されます。 実行時に、追加または削除できますからボタン、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection>を使用して、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A>と<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A>メソッドです。 プログラムのボタンを<xref:System.Windows.Forms.ToolBar>、コードを追加、<xref:System.Windows.Forms.ToolBar.ButtonClick>のイベント、<xref:System.Windows.Forms.ToolBar>を使用して、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>のプロパティ、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs>クリックしてされたボタンを決めるクラスをします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ToolBar>  
  [ToolBar コントロール](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)  
  [方法: ツール バー コントロールにボタンを追加する](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)  

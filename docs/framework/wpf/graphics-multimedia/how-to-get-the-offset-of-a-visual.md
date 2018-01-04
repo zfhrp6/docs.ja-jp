@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 22c35a683f479660a17f11e44f9a0721f9d35968
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ee18503bdd6100cbe7a62ac70d7ea0848fb124eb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-get-the-offset-of-a-visual"></a>方法 : ビジュアルのオフセットを取得する
 これらの例では、その親または先祖、または子孫に対応するビジュアル オブジェクトのオフセット値を取得する方法を示します。  
@@ -75,7 +76,7 @@ ms.lasthandoff: 11/21/2017
   
  オフセットは考慮に入れて、<xref:System.Windows.FrameworkElement.Margin%2A>すべてのオブジェクトの値。 この場合、 <xref:System.Windows.Vector.X%2A> -4、および<xref:System.Windows.Vector.Y%2A>-4 です。 オフセットの値は負の値は、親オブジェクトは、子オブジェクトに対してオフセット悪影響を及ぼすためです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.Visual>  
  <xref:System.Windows.Media.VisualTreeHelper>  
  [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d0f15339b829335798d7ee21dcc90b81cb536cf2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8264e49b29f5a790e37c97c3683d7bf09e850c3e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-manipulate-a-table39s-columns-through-the-columns-property"></a>方法: テーブル &#39; の操作の列プロパティを通じて s 列
 この例では、によって、テーブルの列で実行できる一般的な操作の一部を示しています、<xref:System.Windows.Documents.Table.Columns%2A>プロパティです。  
@@ -75,7 +76,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[TableSnippets2#_Table_Columns_Clear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_columns_clear)]
  [!code-vb[TableSnippets2#_Table_Columns_Clear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_columns_clear)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [テーブルの概要](../../../../docs/framework/wpf/advanced/table-overview.md)  
  [XAML を使用してテーブルを定義する](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
  [プログラムによってテーブルをビルドする](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  

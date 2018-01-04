@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c8c1dc0ea45efe32e36b649d92111fff3d5f61a7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9cd6f9d7025de9f5deb836d48a8ce9c7134973d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-security"></a>依存関係プロパティのセキュリティ
 依存関係プロパティは、一般に、パブリック プロパティと考える必要があります。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のプロパティ システムの性質のため、依存関係プロパティの値に関してセキュリティを保証することはできません。  
@@ -49,5 +50,5 @@ ms.lasthandoff: 10/22/2017
 ### <a name="validation-and-security"></a>検証とセキュリティ  
  要求を適用する、<xref:System.Windows.DependencyProperty.ValidateValueCallback%2A>と適切なセキュリティ メカニズムをなってをプロパティが設定されていることを防ぐために必要に応じてエラーの発生時に検証エラーを指定してください。 によって値の設定の無効化が強制実行<xref:System.Windows.DependencyProperty.ValidateValueCallback%2A>それらの呼び出し元は、アプリケーション ドメイン内で動作している場合、悪意のある呼び出し元が抑制も可能性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)

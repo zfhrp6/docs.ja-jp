@@ -25,11 +25,12 @@ caps.latest.revision: "27"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: ed0372349a08687fd83b0fc989cc4cb88c29d96c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a4d645d5c953c0ff33435a5648024ace099455e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xtype-markup-extension"></a>x:Type マークアップ拡張機能
 CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオブジェクト。  
@@ -50,8 +51,8 @@ CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオ�
   
 |||  
 |-|-|  
-|`prefix`|省略可能です。 既定以外の XAML 名前空間にマップされるプレフィックス。 プレフィックスを指定する多くの場合必要はありません。 「解説」を参照してください。|  
-|`typeNameValue`|必須です。 現在既定の XAML 名前空間以外に解決可能な型名指定した場合はマップのプレフィックスまたは`prefix`を指定します。|  
+|`prefix`|任意。 既定以外の XAML 名前空間にマップされるプレフィックス。 プレフィックスを指定する多くの場合必要はありません。 「解説」を参照してください。|  
+|`typeNameValue`|必須。 現在既定の XAML 名前空間以外に解決可能な型名指定した場合はマップのプレフィックスまたは`prefix`を指定します。|  
   
 ## <a name="remarks"></a>コメント  
  `x:Type`マークアップ拡張機能と同様の機能は、`typeof()`で演算子[!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)]または`GetType`で演算子[!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)]です。  
@@ -89,7 +90,7 @@ CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオ�
   
  WPF では、loose XAML (XAML をマークアップ コンパイルされていない) については、XAML 2009 の機能を使用することができます。 WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Style>  
  [スタイルとテンプレート](../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  

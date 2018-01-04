@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: caa97d0dbd4c847892e164ecb168349c38f7f271
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a333fd6c1906eaea2c8eaf2c3b07502b5a9c4d40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-shape-using-a-streamgeometry"></a>方法 : StreamGeometry を使用して図形を作成する
 <xref:System.Windows.Media.StreamGeometry>軽量な代替手段は、<xref:System.Windows.Media.PathGeometry>幾何学図形を作成するためです。 使用して、<xref:System.Windows.Media.StreamGeometry>複合ジオメトリを記述する必要がある場合は、サポートするオーバーヘッドのデータ バインディング、アニメーション、または変更しません。 などにより、効率、<xref:System.Windows.Media.StreamGeometry>クラスは、装飾を記述するための適切な選択です。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryExample.cs#streamgeometryexamplewholepage)]
  [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometryexample.vb#streamgeometryexamplewholepage)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.PathGeometry>  
  <xref:System.Windows.Media.StreamGeometry>  
  <xref:System.Windows.Media.StreamGeometryContext>  

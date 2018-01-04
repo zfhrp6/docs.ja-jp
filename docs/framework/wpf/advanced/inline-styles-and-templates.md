@@ -18,11 +18,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2acb455db8f8bdc5a95bfd2462b651cebbb692c3
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 5dccf0b274121ff4fe88c9270119a2f631ffcf29
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="inline-styles-and-templates"></a>インライン スタイルおよびテンプレート
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]提供<xref:System.Windows.Style>オブジェクトとテンプレートのオブジェクト (<xref:System.Windows.FrameworkTemplate>サブクラス)、リソースで要素の外観を定義する手段として使用できるように複数回です。 このため、属性で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]型を受け取る<xref:System.Windows.Style>と<xref:System.Windows.FrameworkTemplate>新しいものをインラインで定義するのではなく、ほとんどの場合の既存のスタイルとテンプレートにリソース参照を作成します。  
@@ -46,5 +47,5 @@ ms.lasthandoff: 10/22/2017
   
  オブジェクトを返すマークアップ拡張機能を有効になっている他の構文もスタイルとテンプレートの考えられます。 可能なシナリオがあるこのような 2 つの拡張機能を含める[TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)と<xref:System.Windows.Data.Binding>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

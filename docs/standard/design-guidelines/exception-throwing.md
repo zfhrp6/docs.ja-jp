@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b1aa0eaccc26e1bd7cc6b78953dc0a782b2f952e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2c1fc02b64a494220070a1cfed928b616e4970c0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exception-throwing"></a>例外のスロー
 このセクションで説明されている例外スローのガイドラインでは、実行エラーの意味を適切な定義が必要です。 メンバーが実行できないときに実行エラーが発生する (新機能、メンバー名のとおり) を実行するように設計します。 たとえば場合、`OpenFile`メソッドは、呼び出し元に、開いているファイル ハンドルを返すことはできません、実行エラーと見なされるとします。  
@@ -72,6 +75,6 @@ ms.lasthandoff: 11/21/2017
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
- [例外のデザイン ガイドライン](../../../docs/standard/design-guidelines/exceptions.md)
+ [例外のデザインのガイドライン](../../../docs/standard/design-guidelines/exceptions.md)

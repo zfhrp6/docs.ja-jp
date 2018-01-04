@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 80edbd452be52e77a464ab29347dbe5d4067d0e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6707a434f64838467033966c9093e1e415b1fb31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>スタイルの設定が可能なコントロールを設計するためのガイドライン
 このドキュメントは、スタイルの設定とテンプレートの作成を簡単に行うためのコントロールを設計する際に考慮すべき一連のベスト プラクティスをまとめたものです。 組み込みの [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コントロール セットのテーマのコントロールのスタイルの操作で試行錯誤を繰り返した結果、この一連のベスト プラクティスにたどり着きました。 スタイリングの成功の鍵は、スタイルそのものであると同様に、適切に設計されたオブジェクト モデルの機能であることが分かりました。 このドキュメントの対象読者は、スタイルの作成者ではなく、コントロールの作成者です。  
@@ -128,6 +129,6 @@ ms.lasthandoff: 11/21/2017
   
 -   **テーマ スタイルは、すべてのテーマで一貫性のある「レイアウト」セマンティクスを持つ必要はありません**。 たとえば、既定のスタイルは、コントロールがすべてのテーマで同じ量のサイズを占有することを保証する必要はなく、また、コントロールがすべてのテーマで同じコンテンツの余白/パディングを持つことを保証する必要もありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)

@@ -15,11 +15,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10f18c46c85ed840b6625d9ed754d1d036a80975
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c48950e43d253679eebe16bff1b6ee18966e2cc7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="splitcontainer-control-overview-windows-forms"></a>SplitContainer コントロールの概要 (Windows フォーム)
 Windows フォームの <xref:System.Windows.Forms.SplitContainer> コントロールは複合と考えることができ、移動可能なバーで区切られた 2 つのパネルです。 マウス ポインターがバーの上に移動すると、ポインターの形が変わり、バーが移動可能であることを示します。  
@@ -46,7 +47,7 @@ Windows フォームの <xref:System.Windows.Forms.SplitContainer> コントロ�
   
 ## <a name="commonly-used-properties-methods-and-events"></a>一般的に使用されるプロパティ、メソッド、およびイベント  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> プロパティ|どのパネルは変わりませんを決定後サイズ、<xref:System.Windows.Forms.SplitContainer>コントロールのサイズを変更します。|  
 |<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティ|キーボードまたはマウスで分割線を移動できるかどうかを判断します。|  
@@ -57,7 +58,7 @@ Windows フォームの <xref:System.Windows.Forms.SplitContainer> コントロ�
 |<xref:System.Windows.Forms.SplitContainer.SplitterMoving> イベント|分割境界線が移動するときに発生します。|  
 |<xref:System.Windows.Forms.SplitContainer.SplitterMoved> イベント|分割境界線が移動されたときに発生します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.SplitContainer>  
  [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
  [SplitContainer コントロールのサンプル](http://msdn.microsoft.com/en-us/9015fad0-7108-4d85-a83a-a72d038c4f65)

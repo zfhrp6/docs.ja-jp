@@ -20,11 +20,12 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1a4819f0c4596c34312bf689d57cca687641d6a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6cefca8e6856680d509d6166eec4d97855f1babc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sizing-options-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールのサイズ変更オプション
 <xref:System.Windows.Forms.DataGridView>行、列、およびヘッダーは、多くの異なるオカレンスの結果としてのサイズを変更できます。 次の表は、その要因を示します。  
@@ -137,7 +138,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="content-based-sizing-options"></a>コンテンツ ベースのサイズ変更オプション  
  サイズ変更プロパティおよびメソッドで使用される列挙体では、コンテンツ ベースのサイズ変更と同様の値があります。 これらの値を適切なサイズの計算に使用するセルを制限できます。 すべてのサイズ変更の列挙は、表示されているセルを参照する名前を持つ値は、表示されている行のセルに計算を制限します。 行の除外は、大量の行を使用しているときに、パフォーマンスの低下を避けるために便利です。 計算またはヘッダー以外のセルのセルの値を制限することもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.AllowUserToResizeColumns%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.DataGridView.AllowUserToResizeRows%2A?displayProperty=nameWithType>  

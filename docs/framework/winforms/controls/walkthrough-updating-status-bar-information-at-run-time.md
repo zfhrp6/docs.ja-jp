@@ -22,11 +22,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6c67aa303f375734408201ce15d1c3db3dc32c8e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8253d1d04d2bf2a70076ffb003eb27be2eb47d46
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-updating-status-bar-information-at-run-time"></a>チュートリアル : ステータス バー情報の実行時更新
 > [!IMPORTANT]
@@ -94,7 +95,7 @@ ms.lasthandoff: 11/21/2017
     > [!NOTE]
     >  ステータス バーに時計が表示されるまでに約 30 秒かかります。 これは、できるだけ正確な時刻を取得するためです。 逆に、すぐに表示される、時計をするためには、することができますの値を減らして、<xref:System.Windows.Forms.Timer.Interval%2A>プロパティが、前の手順の手順 7 に設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.StatusBar>  
  <xref:System.Windows.Forms.ToolStripStatusLabel>  
  [方法: StatusBar コントロールにパネルを追加する](../../../../docs/framework/winforms/controls/how-to-add-panels-to-a-statusbar-control.md)  

@@ -17,11 +17,12 @@ caps.latest.revision: "60"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7684cb379f3cd24da008342c26e14bbf70c10d07
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b74eafb1189335a642df7cb267727ef7e8ee59b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-wpf"></a>概要 (WPF)
 Windows Presentation Foundation (WPF) は、デスクトップ クライアント アプリケーションを作成する UI フレームワークです。 WPF の開発プラットフォームは、アプリケーション モデル、リソース、コントロール、グラフィックス、レイアウト、データ バインディング、ドキュメント、セキュリティなどのさまざまなアプリケーション開発機能の一式をサポートします。 WPF は .NET Framework のサブセットであるため、以前 ASP.NET や Windows フォームを使用して .NET Framework でアプリケーションを構築したことがあれば、プログラミングには馴染みがあるでしょう。 WPF は、Extensible Application Markup Language (XAML) を使用して、アプリケーションのプログラミング用に、宣言型モデルを提供します。 このセクションには、WPF の紹介のトピックと、WPF の使用を開始するトピックがあります。  
@@ -36,7 +37,7 @@ Windows Presentation Foundation (WPF) は、デスクトップ クライアン�
 |WPF の詳細な説明...|[Visual Studio 2015 での WPF の概要](../../../../docs/framework/wpf/getting-started/introduction-to-wpf-in-vs.md)<br /><br /> [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)<br /><br /> [コントロール](../../../../docs/framework/wpf/controls/index.md)<br /><br /> [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)|  
 |Windows フォームの開発者向け|[Windows フォーム コントロールおよび同等の WPF コントロール](../../../../docs/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls.md)<br /><br /> [WPF と Windows フォームの相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-windows-forms-interoperation.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス ライブラリ](../../../../docs/framework/wpf/class-library-wpf.md)  
  [アプリケーションの開発](../../../../docs/framework/wpf/app-development/index.md)  
  [.NET Framework デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=187437)

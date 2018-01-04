@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de51aa83af71027ce86909a15f3ceee58fb47814
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17b7fc68319552a7b31d5eaf7826146de5c41aa5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-filter-data-in-a-view"></a>方法 : ビュー内のデータをフィルター処理する
 この例では、ビュー内のデータをフィルター処理する方法を示します。  
@@ -57,7 +58,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[DataBindingLab#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#5)]
  [!code-vb[DataBindingLab#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#5)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Data.CollectionView.CanFilter%2A>  
  <xref:System.Windows.Data.BindingListCollectionView.CustomFilter%2A>  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  

@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 81f95ea4582230fe66c59655ab9b98a405c1e173
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 95d25ff6819ba913b7e9270bc2d87dd77032c5c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textelement-content-model-overview"></a>TextElement コンテンツ モデルの概要
 このコンテンツ モデルの概要で説明するサポートされているコンテンツを<xref:System.Windows.Documents.TextElement>です。 <xref:System.Windows.Documents.Paragraph>クラスは、型の<xref:System.Windows.Documents.TextElement>します。 コンテンツ モデルは、他のオブジェクトや要素に含めることのできるオブジェクトや要素を記述します。 この概要から派生したオブジェクトに使用されるコンテンツ モデルの概要を示します<xref:System.Windows.Documents.TextElement>です。 詳細については、次を参照してください。[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)です。  
@@ -111,7 +112,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="types-that-can-contain-textelement-objects"></a>TextElement オブジェクトを含むことのできる型  
  参照してください[WPF コンテンツ モデル](../../../../docs/framework/wpf/controls/wpf-content-model.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Blocks プロパティを介して FlowDocument を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
  [Blocks プロパティを介してフロー コンテンツ要素を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
  [Blocks プロパティを介して FlowDocument を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  

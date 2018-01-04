@@ -18,11 +18,12 @@ caps.latest.revision: "52"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ba1092b9fd4a39a3e497ec31b9fd6bb1227f827
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 42ef2d29f7364d09c35dec27e0aa6f775dbc2982
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-xaml-extensions"></a>WPF XAML 拡張機能
 ## <a name="in-this-section"></a>このセクションの内容  

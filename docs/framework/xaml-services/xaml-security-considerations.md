@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 59d0b835a0de3e84e2cb6e77ed368511bfe21b19
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b58719f36cd911497c5cd892610330688221e7ef
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-security-considerations"></a>XAML セキュリティの考慮事項
 このトピックは、XAML と .NET Framework XAML サービス API を使用するときに、アプリケーションのセキュリティのベスト プラクティスを説明します。  
@@ -51,5 +52,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="xaml-type-mapping-and-type-system-access"></a>XAML の型マッピングおよびシステム アクセスの種類  
  XAML では、独自の型システムがあるさまざまな方法でピア CLR が、基本的な CLR 型システムを実装する方法をサポートしています。 ただし、特定の要素の型情報に基づいて、型に関する信頼の決定を行う型対応の型のバッキング CLR の型情報に従う必要があります。 これは XAML 型システムの特定のレポート機能の一部は仮想メソッドとして開かれたままを完全に元の .NET Framework XAML サービス実装の制御下です。 これらの拡張ポイントは、XAML 型システムでは、拡張可能な XAML 自体の拡張機能とその考えられる別型マッピングの手法と、既定の実装で CLR バックアップおよび既定の XAML スキーマ コンテキストとを照合するために存在します。 詳細については、のプロパティのいくつかの特定のノートを参照してください。<xref:System.Xaml.XamlType>と<xref:System.Xaml.XamlMember>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xaml.Permissions.XamlAccessLevel>

@@ -17,11 +17,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 806a62d57e1099bb9d7cdcca657be500c33b0df1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88f1a22fc15e85e687c7b7eeb0a6e01445277d09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding-sources-overview"></a>バインディング ソースの概要
 データ バインディングでは、バインディング ソース オブジェクトは、データの取得元のオブジェクトを表します。 このトピックでは、バインディング ソースとして使用できるオブジェクトの型について説明します。  
@@ -87,8 +88,8 @@ ms.lasthandoff: 11/21/2017
 |プロパティの型<br /><br /> (すべてのアクセス修飾子)|動的オブジェクトのプロパティ|動的オブジェクトのプロパティ|CLR プロパティ|CLR プロパティ|依存関係プロパティ|依存関係プロパティ|  
 |------------------------------------------------|-----------------------------|-----------------------------|------------------|------------------|-------------------------|-------------------------|  
 |**信頼レベル**|**完全信頼**|**部分信頼**|**完全信頼**|**部分信頼**|**完全信頼**|**部分信頼**|  
-|パブリック クラス|はい|はい|はい|はい|はい|はい|  
-|非パブリック クラス|はい|いいえ|はい|いいえ|はい|はい|  
+|パブリック クラス|[はい]|はい|はい|はい|はい|[はい]|  
+|非パブリック クラス|[はい]|いいえ|はい|いいえ|はい|[はい]|  
   
  この表では、データ バインディングのアクセス許可要件について次の重要事項を説明します。  
   
@@ -104,7 +105,7 @@ ms.lasthandoff: 11/21/2017
   
  部分信頼セキュリティの詳細については、「[WPF 部分信頼セキュリティ](../../../../docs/framework/wpf/wpf-partial-trust-security.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Data.ObjectDataProvider>  
  <xref:System.Windows.Data.XmlDataProvider>  
  [バインディング ソースを指定する](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)  

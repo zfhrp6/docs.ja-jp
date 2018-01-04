@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b1a3c211829ed5542b0d5501955ccaa334f670e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5241958ce297fbb4aac859c203dcdc3dfc500253
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance"></a>パフォーマンス
 最適なアプリケーションのパフォーマンスを達成するためのベスト プラクティスを理解してアプリケーションの設計で考慮が必要[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションの開発。 このセクションのトピックでは、高パフォーマンスの構築に関する追加情報を提供[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。  
@@ -38,6 +39,6 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Diagnostics.PresentationTraceSources>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レイアウト](../../../../docs/framework/wpf/advanced/layout.md)  
  [アニメーションのヒントとテクニック](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

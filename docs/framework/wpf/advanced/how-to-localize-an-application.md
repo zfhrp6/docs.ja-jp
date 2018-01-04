@@ -16,11 +16,12 @@ ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: df52c44ca72108ffc984bed169daae654c01aa87
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 83ed8ee8b8bfd9c3d6dadfedad8889af10a86466
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-localize-an-application"></a>方法 : アプリケーションをローカライズする
 このチュートリアルでは、LocBaml ツールを使用して、ローカライズされたアプリケーションを作成する方法について説明します。  
@@ -171,7 +172,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="merge_translations"></a>   
 ## <a name="use-locbaml-to-generate-a-new-resourcesdll-file"></a>LocBaml を使用して新しい .resources.dll ファイルを生成する  
- LocBaml で HelloApp.resources.dll を解析して識別されたコンテンツは翻訳済みであり、元のアプリケーションにマージする必要があります。 新しい .resources.dll ファイルを生成するには、**generate** または **-g** オプションを使用します。  
+ LocBaml で HelloApp.resources.dll を解析して識別されたコンテンツは翻訳済みであり、元のアプリケーションにマージする必要があります。 使用して、**生成**または**-g**新しいを生成するオプション.resources.dll ファイル。  
   
 1.  新しい HelloApp.resources.dll ファイルを生成するには、次の構文を使用します。 カルチャを en-US (/cul:en-US) としてマークします。  
   
@@ -194,7 +195,7 @@ ms.lasthandoff: 11/21/2017
   
 7.  新しいサテライト アセンブリをテストするには、アプリケーションが実行するカルチャを変更する必要があります。 2 つの方法のいずれかでこれを行うことができます。  
   
-    -   オペレーティング システムの地域設定を変更 (**開始**&#124;です。**コントロール パネルの ** &#124;です。**地域と言語のオプション**)。  
+    -   オペレーティング システムの地域設定を変更 (**開始**&#124;です。**コントロール パネルの**  &#124;です。**地域と言語のオプション**)。  
   
     -   アプリケーションで、次のコードを App.xaml.cs に追加します。  
   
@@ -215,6 +216,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="whats-next"></a>次の内容  
  これで、LocBaml ツールの使用方法に関する基本的な知識が得られました。  UID を含むファイルを作成できるようになりました。 LocBaml ツールを使用することで、ローカライズ可能なコンテンツを抽出するファイルを解析できます。コンテンツを翻訳すると、翻訳済みのコンテンツをマージする .resources.dll ファイルを生成できます。 このトピックには、可能性のあるすべての詳細情報は含まれていませんが、LocBaml を使用してアプリケーションをローカライズするために必要な知識は得られました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WPF のグローバリゼーション](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
  [自動レイアウトの使用の概要](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)

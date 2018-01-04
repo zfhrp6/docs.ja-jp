@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c494b386cc52786c5adfbcbbea78b912bbf9887d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: da599afc94fba617d4df17c57679d8ee4bb05c61
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>WPF における XAML とカスタム クラス
 実装されている XAML[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]フレームワークは、いずれかでカスタムのクラスまたは構造体を定義する機能をサポートしている[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]言語、およびしアクセス クラスの XAML マークアップを使用しています。 組み合わせを使用できる[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]の XAML 名前空間プレフィックスをカスタムの型をマップして、通常の型と同じマークアップ ファイル内でカスタム型を定義します。 このトピックでは、カスタムのクラスは、XAML 要素として使用できるように満たす必要がある要件について説明します。  
@@ -122,7 +123,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="serializing-xaml"></a>XAML シリアル化します。  
  場合など、特定のシナリオをコントロールの作成者は、XAML でインスタンス化できる任意のオブジェクト表現は、同等の XAML マークアップにもシリアル化できるようにすることもできます。 シリアル化の要件は、このトピックでは説明しません。 参照してください[作成の概要を制御](../../../../docs/framework/wpf/controls/control-authoring-overview.md)と[要素ツリーおよびシリアル化](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
  [コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  

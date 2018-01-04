@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dc8ffe9ad68060d9dfbcafe99133a736237a2bb3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c977e8a4a23f9739541cf28d9e34ad9e8db1daf0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-ink"></a>インクの概要
 デジタル インクを組み込むことをアプリケーションには、これまでよりも簡単です。 インクのプログラミングに完全な統合を実現するための COM および Windows フォームのメソッドへの推論の進化に伴い、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 個別の Sdk またはランタイム ライブラリをインストールする必要はありません。  
@@ -87,7 +88,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[InkCanvasConsoleApp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InkCanvasConsoleApp/CSharp/Program.cs#1)]
  [!code-vb[InkCanvasConsoleApp#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InkCanvasConsoleApp/VisualBasic/Module1.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デジタル インク](../../../../docs/framework/wpf/advanced/digital-ink.md)  
  [インクの収集](../../../../docs/framework/wpf/advanced/collecting-ink.md)  
  [手書き認識](../../../../docs/framework/wpf/advanced/handwriting-recognition.md)  

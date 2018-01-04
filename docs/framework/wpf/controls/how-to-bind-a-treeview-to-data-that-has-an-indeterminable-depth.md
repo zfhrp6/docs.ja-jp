@@ -14,11 +14,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b16cae3a91eae73a4480484d89bb075862256b25
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: be21ecb75420b6499e5b95d5f4d93a5f079f9646
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth"></a>方法 : 深度がわからないデータに TreeView をバインドする
 バインドする場合がある可能性があります、<xref:System.Windows.Controls.TreeView>の深さがわかっているいないデータ ソースにします。  これは、データが再帰的な場所のフォルダーには、フォルダーを含めることができます、ファイル システムや企業の組織の構造など、本質的に直属の部下として他の従業員の従業員のある場合に発生します。  
@@ -34,6 +35,6 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xaml[TreeViewWithUnknownDepth#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewWithUnknownDepth/CS/Window1.xaml#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)

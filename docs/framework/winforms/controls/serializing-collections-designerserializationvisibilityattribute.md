@@ -22,11 +22,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9efad2da27f4003632b643b9f5f0602be0d55480
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 060f411dfc7c3153fdf0e0d6e19781f0d60b141b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-serializing-collections-of-standard-types-with-the-designerserializationvisibilityattribute"></a>チュートリアル: DesignerSerializationVisibilityAttribute を使用した、標準データ型のコレクションのシリアル化
 カスタム コントロールは、プロパティとして、コレクションを公開して場合があります。 このチュートリアルを使用する方法を示します、<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>クラスをデザイン時にコレクションをシリアル化する方法を制御します。 適用する、<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content>値をコレクション プロパティにより、プロパティをシリアル化することです。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/21/2017
  このトピックの「単一のリストとしてコードをコピーするに、を参照してください。[する方法: シリアル化するコレクションの標準の型、designerserializationvisibilityattribute を](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
@@ -147,7 +148,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [チュートリアル: Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>  
  [デザイナーのシリアル化の概要](http://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)  
  [方法: designerserializationvisibilityattribute を使用、標準的なデータ型のコレクションをシリアル化](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)  

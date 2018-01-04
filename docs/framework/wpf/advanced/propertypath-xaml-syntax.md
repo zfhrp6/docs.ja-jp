@@ -16,11 +16,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1dc58845a78607090002467e3aa63d4c549ec116
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9778094eb098d1e119ef4ef0c25dd022130a11ae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath の XAML 構文
 <xref:System.Windows.PropertyPath>オブジェクトは、複雑なインラインをサポートしている[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]をさまざまなプロパティを設定するための構文、<xref:System.Windows.PropertyPath>それらの値としての型。 このトピックのドキュメント、<xref:System.Windows.PropertyPath>構文バインドおよびアニメーションの構文に適用されるとします。  
@@ -206,7 +207,7 @@ or
   
  一般に、<xref:System.Windows.PropertyPath>バインディングでの使用と最も単純なアニメーションと複雑なアニメーションの使用の 2 つの異なるコンス トラクターを使用するよう設計されています。 使用して、<xref:System.Windows.PropertyPath.%23ctor%28System.Object%29>オブジェクトの文字列の位置の使用法にバインドするための署名。 使用して、<xref:System.Windows.PropertyPath.%23ctor%28System.Object%29>ワンステップ アニメーション パス、オブジェクトの位置の署名、<xref:System.Windows.DependencyProperty>です。 使用して、<xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29>複雑なアニメーションの署名。 後者のコンストラクターでは、先頭のパラメーター用のトークン文字列と、トークン文字列内の位置に設定されるオブジェクトの配列を使用して、プロパティ パスのリレーションシップを定義します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.PropertyPath>  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)

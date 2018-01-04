@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2b1da3216ce6d3507c304ff957728d33ba1b9bd9
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: b3c657cde9da19f8ebc6b6d4d05077ed027781b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-an-adorner-to-an-element"></a>方法 : 要素に装飾をバインドする
 この例は、指定された装飾をプログラムでバインドする方法を示します<xref:System.Windows.UIElement>です。  
@@ -43,5 +44,5 @@ ms.lasthandoff: 10/22/2017
 > [!NOTE]
 >  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を使用して、装飾を別の要素にバインドする方法は、現在サポートされていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [装飾の概要](../../../../docs/framework/wpf/controls/adorners-overview.md)
