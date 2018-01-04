@@ -12,11 +12,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ebd6586500c82144f7bceca01dea278a76759b1f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bd30abdb158f07724e7acdf172546111e3330713
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bookmarks"></a>ブックマーク
 ブックマークは、ワークフローのスレッド上に保持することなく、アクティビティが受動的に入力を待機できるようにする機構です。 アクティビティが働きかけを待機していることを示すときは、ブックマークを作成できます。 これは、現在実行中の (<xref:System.Activities.Bookmark> を作成した) メソッドから返された場合でも、アクティビティの実行が完了していると見なさないことをランタイムに対して示します。  

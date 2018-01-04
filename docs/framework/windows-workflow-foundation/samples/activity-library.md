@@ -12,11 +12,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f6d94a2c06711e30455e1e8195f9e9c004bae78f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 99d8fba848129156d94e54d1da7d08122ccfa735
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="activity-library"></a>アクティビティ ライブラリ
 このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] の高度なカスタム アクティビティを示すサンプルが含まれています。  
@@ -46,10 +47,10 @@ ms.lasthandoff: 12/02/2017
  [SendMail カスタム アクティビティ](../../../../docs/framework/windows-workflow-foundation/samples/sendmail-custom-activity.md)  
  <xref:System.Activities.AsyncCodeActivity> から派生するカスタム アクティビティを作成して、SMTP を使用して電子メールを送信し、ワークフロー アプリケーション内で使用する方法を示します。  
   
- [アクティビティの](../../../../docs/framework/windows-workflow-foundation/samples/for-activity.md)  
+ [For アクティビティ](../../../../docs/framework/windows-workflow-foundation/samples/for-activity.md)  
  <xref:System.Activities.NativeActivity> から継承するカスタム アクティビティを構築し、そのアクティビティをワークフローで使用して値の範囲を反復処理する方法を示します。  
   
- [入力アクティビティを待機します。](../../../../docs/framework/windows-workflow-foundation/samples/wait-for-input-activity.md)  
+ [入力アクティビティの待機](../../../../docs/framework/windows-workflow-foundation/samples/wait-for-input-activity.md)  
  ワークフローに名前付きブックマークを作成する方法を示します。  
   
  [制限された並列 ForEach](../../../../docs/framework/windows-workflow-foundation/samples/throttled-parallel-foreach.md)  
@@ -76,5 +77,5 @@ ms.lasthandoff: 12/02/2017
  [非ジェネリックの ParallelForEach](../../../../docs/framework/windows-workflow-foundation/samples/non-generic-parallelforeach.md)  
  <xref:System.Activities.Statements.ParallelForEach%601> アクティビティの非ジェネリック バージョンを作成する方法を示します。  
   
- [WorkflowInstanceId を取得します。](../../../../docs/framework/windows-workflow-foundation/samples/get-workflowinstanceid.md)  
+ [WorkflowInstanceId の取得](../../../../docs/framework/windows-workflow-foundation/samples/get-workflowinstanceid.md)  
  カスタム アクティビティ `GetWorkflowInstanceId` を使用して、ワークフロー インスタンス ID を返す方法を示します。

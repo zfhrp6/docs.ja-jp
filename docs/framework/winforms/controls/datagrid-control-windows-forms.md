@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c60927451ad4350ef507f2e2a661bcfaab4ea788
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e0ad5ba4bdd283e411c746906adfed53282c55b9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datagrid-control-windows-forms"></a>DataGrid コントロール (Windows フォーム)
 > [!NOTE]
@@ -87,6 +88,6 @@ ms.lasthandoff: 11/21/2017
  [Windows フォームでのデータ バインディング](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
  Windows フォームのデータ結合に関するトピックへのリンクを示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)

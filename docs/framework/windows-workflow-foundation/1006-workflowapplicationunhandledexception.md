@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a2dad3135de6d3d96328ea039aa36906addb217
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 842d6bb6172eed5f7382633119045ea7507fb955
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="1006---workflowapplicationunhandledexception"></a>1006 - WorkflowApplicationUnhandledException
 ## <a name="properties"></a>プロパティ  
@@ -34,7 +35,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="message"></a>メッセージ  
  WorkflowInstance Id: '%1' はハンドルされない例外が発生しました。  例外の発生元 Activity '%2'、DisplayName: '%3' です。  次の操作が実行されます: %n%n 4 です。  
   
-## <a name="details"></a>詳細  
+## <a name="details"></a>説明  
   
 |データ項目名|データ項目の型|説明|  
 |--------------------|--------------------|-----------------|  

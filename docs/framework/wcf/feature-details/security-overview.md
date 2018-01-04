@@ -16,11 +16,12 @@ caps.latest.revision: "37"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 74a2e5c15b25dc9958b74ddeb0abf9adcad10bc0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c4c6ecbfc3407e3ebc321e92cd9e78dc2d80a3a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-overview"></a>セキュリティの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、SOAP メッセージに基づく分散プログラミングのプラットフォームです。データを保護するには、クライアントとサービス間のメッセージをセキュリティで保護することが不可欠です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、既存のセキュリティ インフラストラクチャと、認識されている SOAP メッセージのセキュリティ標準の両方に基づき、セキュリティで保護されたメッセージを交換する汎用的で相互運用可能なプラットフォームを提供します。  
@@ -107,17 +108,17 @@ ms.lasthandoff: 11/21/2017
 ### <a name="auditing"></a>監査  
  *監査*は、Windows イベント ログにセキュリティ イベントのログ記録します。 認証の失敗 (または成功) などのセキュリティ関連のイベントをログに記録できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。 プログラミングの詳細については、「[する方法: セキュリティ イベントの監査](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
  [サービスのセキュリティ保護](../../../../docs/framework/wcf/securing-services.md)  
  [一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
  [バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
- [サービスとクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [認証](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
  [承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
  [フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
  [監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [セキュリティ ガイダンスとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [セキュリティ ガイドラインとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  [構成ファイルを使用してサービスを構成する方法](../../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
  [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [エンドポイントの作成の概要](../../../../docs/framework/wcf/endpoint-creation-overview.md)  

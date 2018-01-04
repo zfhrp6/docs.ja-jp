@@ -27,11 +27,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f192081d9b7e30f10373342aef39443ff49e9931
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2e49c9c3a8f2b133337ee3c153841a7daeff178
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="backgroundworker-component-overview"></a>BackgroundWorker コンポーネントの概要
 一般的な操作には、実行時間が長くかかるものが数多くあります。 次に例を示します。  
@@ -69,6 +70,6 @@ ms.lasthandoff: 11/21/2017
   
  使用する方法について、<xref:System.ComponentModel.BackgroundWorker>クラスを参照してください[する方法: バック グラウンドで操作を実行](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [NOT IN BUILD: Visual Basic でのマルチ スレッド](http://msdn.microsoft.com/en-us/c731a50c-09c1-4468-9646-54c86b75d269)  
  [方法: バックグラウンド操作を使用するフォームを実装する](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)

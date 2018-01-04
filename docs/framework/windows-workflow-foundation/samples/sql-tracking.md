@@ -12,11 +12,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c2b9eb78c6d8e7125d65ec8fea4c1611ac55e2c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6bd8fbe1a29793778d93eeca64b185079d706f3e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-tracking"></a>SQL 追跡
 このサンプルでは、カスタム SQL 追跡参加要素を作成し、追跡レコードを SQL データベースに書き込む方法を示します。 [!INCLUDE[wf](../../../../includes/wf-md.md)] には、ワークフロー インスタンスの実行を視覚的に示すワークフロー追跡機能が用意されています。 追跡ランタイムでは、ワークフローの実行中にワークフロー追跡レコードが出力されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ワークフロー追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。  
@@ -68,5 +69,5 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

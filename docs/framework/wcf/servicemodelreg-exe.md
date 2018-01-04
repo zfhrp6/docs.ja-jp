@@ -13,11 +13,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4cfe522817fdc9a2aea23b1c9e8dce3b658d892c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 862c5635dd98933f57ec15ddcd20de043da69117
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>ServiceModel 登録ツール (ServiceModelReg.exe)
 このコマンド ライン ツールは、単一コンピューター上で WCF および WF コンポーネントの登録を管理するための機能を提供します。 WCF および WF コンポーネントはインストール時に構成されるため、通常の状況ではこのツールを使用する必要はありません。 しかし、サービスのアクティブ化に関する問題が発生する場合は、このツールを使用してコンポーネントを登録できます。  
@@ -77,7 +78,7 @@ File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToke
   
  このファイルを参照する XML ノードを見つけ"'system.servicemodel, Version 2.0.0.0 を ="、および子ノードを削除します。 ファイルを保存し ServiceModelReg.exe を再実行すると、この問題は解決します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例に、ServiceModelReg.exe ツールの最も一般的なオプションの使用方法を示します。  
   
 ```  

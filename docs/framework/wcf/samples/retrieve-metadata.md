@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 275e74d6a95971ceb33bf2a879b97de88c0ddbb0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7321578cb76b9f06f09086834c2826a72631e49f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieve-metadata"></a>メタデータの抽出
 このサンプルでは、サービスからメタデータを動的に取得し、通信に使用するエンドポイントを選択するクライアントを実装する方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 2 つのエンドポイントを公開するサービスが変更された — にベース アドレスを使用して、エンドポイント、`basicHttpBinding`バインディング、およびセキュリティで保護されたエンドポイントに {*baseaddress*} を使用してセキュリティで保護された/、`wsHttpBinding`バインドします。 これらのエンドポイント アドレスとバインディングを使用してクライアントを構成する代わりに、クライアントでは <xref:System.ServiceModel.Description.MetadataExchangeClient> クラスを使用してサービスのメタデータを動的に取得し、<xref:System.ServiceModel.Description.ServiceEndpointCollection> クラスを使用してこのメタデータを <xref:System.ServiceModel.Description.WsdlImporter> としてインポートします。  
@@ -79,4 +80,4 @@ foreach (ServiceEndpoint ep in endpoints)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\RetrieveMetadata`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dc8355e15b4b8ae783ec02b1931554c11c54b02d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3b482d0a8a3b45e00d8e1faaa9e4a5c561595126
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-process-activation"></a>Windows プロセス アクティブ化
 このセクションには、ネットワーク プロトコルを使用したサービスのアクティブ化について説明するサンプルが含まれています。  
@@ -26,5 +27,5 @@ ms.lasthandoff: 12/02/2017
  [NamedPipe アクティベーション](../../../../docs/framework/wcf/samples/namedpipe-activation.md)  
  名前付きパイプを介して通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス (WAS: Windows Process Activation Service) を使用してサービスをホストする方法を示します。  
   
- [TCP のアクティブ化](../../../../docs/framework/wcf/samples/tcp-activation.md)  
+ [TCP アクティベーション](../../../../docs/framework/wcf/samples/tcp-activation.md)  
  net.tcp プロトコルで通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス (WAS) を使用してサービスをホストする方法を示します。

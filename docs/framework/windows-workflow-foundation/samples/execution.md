@@ -12,11 +12,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0849f1e086a99539978e2c3c978807d2f83ae7ed
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 30ae225ac5482bfd6955dd0e87cbfb4bbdae2b4a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="execution"></a>実行
 このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] でのワークフローの実行を示すサンプルが含まれています。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 12/02/2017
  [WorkflowApplication ReadLine ホスト](../../../../docs/framework/windows-workflow-foundation/samples/workflowapplication-readline-host.md)  
  汎用 ReadLine ホストを作成する方法を示します。  
   
- [作成して、ワークフロー インスタンスの実行](../../../../docs/framework/windows-workflow-foundation/samples/creating-and-running-a-workflow-instance.md)  
+ [ワークフロー インスタンスの作成と実行](../../../../docs/framework/windows-workflow-foundation/samples/creating-and-running-a-workflow-instance.md)  
  ワークフロー インスタンスを実行する方法を示します。 ここでは、ワークフロー インスタンスを同期的または非同期的に実行する方法を示します。  
   
  [WorkflowHostingEndpoint 再開ブックマーク](../../../../docs/framework/windows-workflow-foundation/samples/workflowhostingendpoint-resume-bookmark.md)  

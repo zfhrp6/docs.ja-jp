@@ -10,11 +10,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 29489cd1b82cf1c31f178d8a305a21371b542f15
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.workload: dotnet
+ms.openlocfilehash: 32e1a4a3de01371d67be8d19613b1f29c1ce3c29
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="findprivatekey-sample"></a>FindPrivateKey サンプル
 
@@ -31,7 +32,7 @@ X.509 証明書は、コンピューターの管理者または任意のユー�
 
 自己ホスト型の実行可能ファイルなどのユーザー アカウントで Windows Communication Foundation (WCF) サービスを実行している場合は、ユーザー アカウントが、ファイルに読み取り専用アクセス権を持っていることを確認します。 インターネット インフォメーション サービス (IIS) WCF サービスを実行するときに、サービスを実行する既定のアカウントは IIS 7 と以前のバージョンで、ネットワーク サービスまたは IIS 7.5、およびそれ以降のバージョンのアプリケーション プール Id です。 詳細については、次を参照してください。[アプリケーション プール Id](/iis/manage/configuring-security/application-pool-identities)です。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 対象のプロセスは読み取り特権がない証明書にアクセスするときに次の例のような例外メッセージを参照してください。
 
@@ -69,7 +70,7 @@ cacls.exe "C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto
 
  "\<*値*>"を入力するパラメーター値を表します。
 
-## <a name="usage"></a>使用方法
+## <a name="usage"></a>使用法
 
 ```
 FindPrivateKey <storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprint>} } [-f | -d | -a]]
@@ -87,7 +88,7 @@ FindPrivateKey <storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbpri
 
 コマンド プロンプト パラメーターが指定されていない場合は、このヘルプ テキストが表示されます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 この例は、証明書のサブジェクト名を持つファイル名を検索"CN = localhost"、現在のユーザーの個人用ストアにします。
 

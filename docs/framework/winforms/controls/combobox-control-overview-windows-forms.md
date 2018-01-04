@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 979a410020ab6e3a1f2c15dcee52b062eb00c1ac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 801ebb97c6ee52ce52bbb8f96a07d55e68ca6f1d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="combobox-control-overview-windows-forms"></a>ComboBox コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.ComboBox>ドロップダウン コンボ ボックスにデータを表示するコントロールを使用します。 既定では、<xref:System.Windows.Forms.ComboBox>コントロールは、2 つの部分が表示されます。 最上部には、ユーザーがリスト項目を入力できるテキスト ボックス。 2 番目の部分は、元のユーザーが選択できる 1 つの項目の一覧を表示するリスト ボックスです。 コンボ ボックスの他のスタイルの詳細については、次を参照してください。 [Windows フォーム ComboBox Instead of リスト ボックスを使用するときに](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)です。  
@@ -32,7 +33,7 @@ Windows フォーム<xref:System.Windows.Forms.ComboBox>ドロップダウン �
   
  項目を追加または削除、<xref:System.Windows.Forms.ComboBox>コントロールを使用して、 <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>、 <xref:System.Windows.Forms.ComboBox.ObjectCollection.Insert%2A>、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Clear%2A>または<xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>メソッドです。 使用して、リストに項目を追加することができます、<xref:System.Windows.Forms.ComboBox.Items%2A>デザイナーのプロパティにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ComboBox>  
  [ListBox コントロールの概要](../../../../docs/framework/winforms/controls/listbox-control-overview-windows-forms.md)  
  [ListBox の代わりに Windows フォーム ComboBox を使用する場合](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)  

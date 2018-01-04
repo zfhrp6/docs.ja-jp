@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c01b39a8f21011bb45a1d73fcf44df76d5bf6fb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ba0308505f54b7c96259af5d797dd7c1957e6a92
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="rehosting-the-workflow-designer"></a>ワークフロー デザイナーのホスト変更
 [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]は、ワークフローを作成、変更、および監視する目的で [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] 以外の環境にホストを変更できます。  
@@ -32,5 +33,5 @@ ms.lasthandoff: 12/02/2017
   
  [再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ワークフロー デザイン操作のカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)

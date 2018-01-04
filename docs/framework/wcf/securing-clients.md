@@ -14,11 +14,12 @@ caps.latest.revision: "22"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d41d2f8419644d5ddcb15f49bbe895b0a3f1f2d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a30f42c88e2478341737b99ad239d37c87a1063e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-clients"></a>クライアントのセキュリティ保護
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、サービスがクライアントのセキュリティ要件を決定します。 つまり、使用するセキュリティ モード、およびクライアントが資格情報を提供するかどうかは、サービスによって指定されます。 そのため、クライアントをセキュリティで保護するプロセスは、サービスから取得したメタデータ (公開されている場合) を使用してクライアントを構築するという簡単なものになります。 クライアントを構成する方法は、メタデータによって指定されます。 クライアントが資格情報を提供することをサービスが要求する場合、要件に適した資格情報を取得する必要があります。 ここでは、このプロセスについて詳しく説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]セキュリティで保護されたサービスを作成するを参照してください[Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。  
@@ -161,7 +162,7 @@ ms.lasthandoff: 11/21/2017
 </wsHttpBinding>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>  
  <xref:System.ServiceModel.ClientBase%601>  
  <xref:System.ServiceModel.Description.ClientCredentials>  

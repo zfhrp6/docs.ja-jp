@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4dcaf023960aab1989493475fe4e5306623adf8e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 13c409865846acdf7b557c20330f9a2fd62d47d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-activity-to-switch-on-a-range-of-values"></a>値の範囲で切り替えを行うカスタム アクティビティ
 このサンプルでは、<xref:System.Activities.Statements.Switch%601> の使用を拡張するカスタム アクティビティを作成する方法を示します。 従来の <xref:System.Activities.Statements.Switch%601> ステートメントでは、単一の値に基づく切り替えが可能です。 しかし、ビジネス上のシナリオでは、値の範囲に基づいて切り替えを行う必要があるアクティビティもあります。 たとえば、切り替えの基準となる値が 1 ～ 5 の場合はあるアクションを実行し、6 ～ 10 の場合は別のアクションを実行し、それ以外の値の場合は既定のアクションを実行するようなアクティビティもあります。 このカスタム アクティビティを使用すると、そのようなシナリオが可能になります。  

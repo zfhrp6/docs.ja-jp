@@ -24,11 +24,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08a0cc15cff39bb936a78db95c73568aa643d0b6
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 51f6765e5960ddadd27a476f7229a76fbfe985e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datagridview-control-windows-forms"></a>DataGridView コントロール (Windows フォーム)
 `DataGridView` コントロールには、データを表形式で表示するための強力で柔軟な機能が用意されています。 `DataGridView` コントロールを使用すると、読み取り専用のビューに少量のデータを表示したり、拡大して非常に大量のデータのセットの編集可能なビューを表示したりできます。  
@@ -92,5 +93,5 @@ ms.lasthandoff: 10/22/2017
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.BindingSource> コンポーネントのリファレンス ドキュメントを提供します。 <xref:System.Windows.Forms.DataGridView> コントロールと <xref:System.Windows.Forms.BindingSource> コンポーネントは、密接に連携して機能するようにデザインされています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

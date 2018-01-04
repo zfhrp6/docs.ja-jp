@@ -12,11 +12,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0089d08604f5d738e04461f4ed5f8efcb1140420
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 96a8b8321239e3f01b30bcbe0400930a292a8f41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migration-guidance"></a>移行のガイドライン
 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、[!INCLUDE[wf](../../../includes/wf-md.md)] の 2 番目のメジャー バージョンがリリースされています。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] は、[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (これに含まれていた System.Workflow.* 名前空間の型は現在 WF3 と呼ばれています) でリリースされ、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] で強化されました。 WF3 もの一部、 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]、新しいワークフロー テクノロジが存在するが、(System.Activities。 内の型\*名前空間です。 WF4 と呼ばれます)。 WF4 の導入時期を検討する場合は、最初にそのタイミングの管理を認識することが重要です。  
@@ -64,5 +65,5 @@ ms.lasthandoff: 12/02/2017
  [WF のガイダンス: ワークフロー サービス](http://go.microsoft.com/fwlink/?LinkId=275564)  
  事前定義アクティビティの一般的なシナリオ向けに、WF3 で作成した Windows Communication Foundation (WCF) Web サービス (一般にワークフロー サービスと呼ばれます) を実装するワークフローを WF4 を使用するように再設計するための詳細な手順を例を中心として示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Activities.Statements.Interop>

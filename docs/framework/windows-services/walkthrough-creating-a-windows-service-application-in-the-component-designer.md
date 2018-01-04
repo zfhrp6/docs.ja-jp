@@ -15,11 +15,12 @@ caps.latest.revision: "57"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: fb868aa38381294333538afcd99c030162d2f235
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
+ms.workload: dotnet
+ms.openlocfilehash: 42fc5f27f1c78e243ff1d3a705c61a20ff459937
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-a-windows-service-application-in-the-component-designer"></a>チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成
 この記事では、イベント ログにメッセージを書き込む単純な Windows サービス アプリケーションを Visual Studio で作成する方法を示します。 サービスを作成して使用するために実行する基本的な手順は次のとおりです。  
@@ -487,8 +488,8 @@ End Sub
   
  インストーラーを使用すると、アプリケーションの実行時にイベント ログを作成する代わりに、アプリケーションのインストール時にイベント ログを作成できます。 さらに、イベント ログは、アプリケーションがアンインストールされたときにインストーラーによって削除されます。 詳細については、 <xref:System.Diagnostics.EventLogInstaller> のリファレンス ページを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーション](../../../docs/framework/windows-services/index.md)  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: Windows サービス アプリケーションのデバッグ](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
+ [方法 : Windows サービス アプリケーションをデバッグする](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
  [サービス (Windows)](http://msdn.microsoft.com/library/windows/desktop/ms685141.aspx)

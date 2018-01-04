@@ -12,11 +12,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 06a302b13db3b82dabb43989ac272df0d9aac008
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: db4110ca8ce72b43bf5771db5b1020a826bc058f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-xaml-only-service"></a>基本的な XAML 専用サービス
 このサンプルでは、XAML 専用サービスを作成する方法を示します。 このシナリオは自動車関連の問題に対する診断サービスです。 このサービスは、顧客に一連の質問をして問題を診断するワークフローとして実装されます。 このサービスで診断できる問題は 2 種類です (車のエンジンがかからない、または空調装置が動作しない)。 ワークフローでは、デザイナーの要求/応答テンプレートを使用して、3 つの簡単なサービス操作を公開します。 サービスは、IIS に仮想ディレクトリを作成し、service1.xamlx ファイルおよび Web.config ファイルをその仮想ディレクトリにコピーすることによって IIS でホストされます。コンパイルされたコードは必要ありません。 既定ではこのサンプルは自動的に必要なファイルにコピー WCF および WF のサンプルのセットアップ手順をたどるときに作成された仮想ディレクトリ: [WindowsCommunicationFoundationサンプルの1回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) Visual Studio 2010 でのビルド時にします。  

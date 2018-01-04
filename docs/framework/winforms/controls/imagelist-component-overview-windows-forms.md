@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 02fb14b84341d594f35885be220027631999d202
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a913de1a6808c7e600a4f28ed58dedf93506466b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imagelist-component-overview-windows-forms"></a>ImageList コンポーネントの概要 (Windows フォーム)
 Windows フォーム <xref:System.Windows.Forms.ImageList> コンポーネントは、コントロールで表示するイメージの保存に使用します。 イメージ リストでは、一貫性のある 1 つのイメージのカタログのコードを記述することができます。 たとえば、ボタンの <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> プロパティまたは <xref:System.Windows.Forms.ButtonBase.ImageKey%2A> プロパティを変更するだけで、<xref:System.Windows.Forms.Button> コントロールによって表示されるイメージを回転できます。 同じイメージのリストを複数のコントロールに関連付けることもできます。 たとえば、<xref:System.Windows.Forms.ListView> コントロールと <xref:System.Windows.Forms.TreeView> コントロールの両方を使用して同じファイルのリストを表示する場合、イメージのリストでファイルのアイコンを変更すると、新しいアイコンが両方のビューに表示されます。  
@@ -35,6 +36,6 @@ Windows フォーム <xref:System.Windows.Forms.ImageList> コンポーネント
   
  [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] を使用している場合は、アプリケーションで使用する標準のイメージの大規模なライブラリにアクセスできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ImageList>  
  [方法: Windows フォームの ImageList コンポーネントにイメージを追加または削除する](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)

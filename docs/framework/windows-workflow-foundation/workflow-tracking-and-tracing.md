@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3738b484321a9c6a3cbcb2a59854bb91770bf8bf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c7383d899af741e4a6c85b40e2316a6b759aa416
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflow-tracking-and-tracing"></a>ワークフロー追跡とトレース
 Windows ワークフロー追跡は、ワークフローの実行を確認できるように設計された [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] の機能です。 また、ワークフロー インスタンスの実行を追跡できる追跡インフラストラクチャが用意されています。 WF 追跡インフラストラクチャはワークフローを透過的にインストルメント化し、実行中の主要イベントを反映してレコードを出力します。 この機能はすべての [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ワークフローから既定で使用できます。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] ワークフローで追跡を実行するために変更は必要ありません。 必要なのは、受信する追跡データの量を決定することのみです。 ワークフロー インスタンスが開始または完了すると、追跡レコードの処理が出力されます。 また、追跡によって、ワークフロー変数に関連付けられたビジネス関連データを抽出することもできます。 たとえば、ワークフローが注文処理システムを表している場合、注文 ID と共に <xref:System.Activities.Tracking.TrackingRecord> オブジェクトを抽出できます。 一般的に、WF 追跡機能を有効にすると、ワークフローの実行から診断またはビジネス分析データにアクセスしやすくなります。  
@@ -62,5 +63,5 @@ Windows ワークフロー追跡は、ワークフローの実行を確認でき
  [トレースを使用したワークフロー実行時間の決定](../../../docs/framework/windows-workflow-foundation/determining-workflow-execution-duration-using-tracing.md)  
  トレース メッセージを使用してワークフローの実行時間を決定する方法を説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQL 追跡](../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)

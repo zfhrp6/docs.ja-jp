@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6aa79e76bd81c0d56b30d4bac2edd4b9cbef6b33
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c12bd11cee62cd769f7dffc142806fa5ab1b0137
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>開発者の視点から見た ASP.NET Web サービスと WCF との比較
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には ASP.NET 互換モードがあります。このモードにすると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションを ASP.NET Web サービスと同じようにプログラミングおよび構成し、動作を真似ることができます。 以下のセクションでは、ASP.NET Web サービスと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を、それぞれの技術を使ってアプリケーションを開発する視点から比較してみます。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 12/02/2017
   
  通常、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの開発も、複合型の定義から始めます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でも ASP.NET Web サービスと同じ .NET Framework 型を使用できます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<xref:System.Runtime.Serialization.DataContractAttribute> や <xref:System.Runtime.Serialization.DataMemberAttribute> を .NET Framework 型に追加して、ある型のインスタンスを XML にシリアル化できる旨や、当該型のどのフィールドやプロパティを実際にシリアル化できるのかを指定することができます。その例を以下に示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.Runtime.Serialization.DataContractAttribute>と<xref:System.Runtime.Serialization.DataMemberAttribute>型のインスタンスは、XML、およびどの特定のフィールドまたはプロパティの型をシリアル化する、次の例に示すようにシリアル化されることを示すために .NET Framework の型に追加できますコードです。  
   
 ```  
 //Example One:   
@@ -760,5 +761,5 @@ public void Receive(Message input)
 ## <a name="globalization"></a>グローバリゼーション  
  ASP.NET 構成言語では、個々のサービスごとにカルチャを指定することができます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこの設定ができるのは、ASP.NET 互換モードの場合に限ります。 ASP.NET 互換モードでない [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをローカライズするためには、サービス型をコンパイルしてカルチャごとのアセンブリを生成し、エンドポイントもカルチャごとのアセンブリそれぞれについて用意する必要があります。  
   
-## <a name="see-also"></a>関連項目  
- [WCF ベースの目的で使用されている標準を ASP.NET Web サービスとの比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
+## <a name="see-also"></a>参照  
+ [使用目的と使用標準に基づく ASP.NET Web サービスと WCF との比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)

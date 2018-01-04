@@ -13,11 +13,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72d6dcef2ac59fd63706d8d8c843f739575cf5cc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4c06efd7450afe93eaecca1e678eb6f8bf5de7a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
 このサンプルでは、カスタム プロトコル チャネルを作成し、セッション管理用の HTTP クッキーを使用する方法を示します。 このチャネルは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスと ASMX クライアント間の通信、または [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントと ASMX サービス間の通信を有効にします。  
@@ -92,10 +93,10 @@ InputQueue<RequestContext> requestQueue;
 ## <a name="client-channel"></a>クライアント チャネル  
  対応するクライアント チャネルは、`HttpCookieSessionChannelFactory` クラスにあります。 チャネルの作成中、チャネル ファクトリは内部要求チャネルを `HttpCookieRequestSessionChannel` でラップします。 `HttpCookieRequestSessionChannel` クラスは、基になる要求チャネルへの呼び出しを転送します。 クライアントがプロキシを閉じると、`HttpCookieRequestSessionChannel` はチャネルが閉じられようとしていることを示すメッセージをサービスに送信します。 そのため、サービス チャネル スタックは、使用中のセッション チャネルを正常にシャットダウンできます。  
   
-## <a name="binding-and-binding-element"></a>バインディングとバインディング要素  
+## <a name="binding-and-binding-element"></a>バインディングとバインド要素  
  サービス チャネルおよびクライアント チャネルを作成した後の次の手順は、それらのチャネルを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムに統合することです。 チャネルは、バインディングとバインディング要素を介して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に公開されます。 バインディングは、1 つまたは複数のバインディング要素で構成されています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、いくつかのシステム定義バインディングが用意されています。たとえば、BasicHttpBinding や WSHttpBinding などがあります。 `HttpCookieSessionBindingElement` クラスには、バインディング要素の実装が含まれています。 この実装によってチャネル リスナとチャネル ファクトリの作成メソッドがオーバーライドされ、必要なチャネル リスナまたはチャネル ファクトリがインスタンス化されます。  
   
- このサンプルでは、サービスの説明のポリシー アサーションを使用します。 これにより、サンプルのチャネルの要件を、そのサービスを利用できる他のクライアントに公開できます。 たとえば、このバインディング要素はポリシー アサーションを公開し、セッションがサポートされていることを潜在的なクライアントに通知します。 このサンプルでは、バインディング要素の構成で `ExchangeTerminateMessage` プロパティが有効になっています。そのため、サービスで余分なメッセージ交換アクションがサポートされ、セッションでのメッセージ交換が終了されることを示すために必要なアサーションが追加されます。 その後、クライアントはこのアクションを使用できます。 `HttpCookieSessionBindingElement` から作成されたポリシー アサーションを、次の WSDL コードに示します。  
+ このサンプルでは、サービスの説明のポリシー アサーションを使用します。 これにより、サンプルのチャネルの要件を、そのサービスを利用できる他のクライアントに公開できます。 たとえば、このバインド要素はポリシー アサーションを公開し、セッションがサポートされていることを潜在的なクライアントに通知します。 このサンプルでは、バインディング要素の構成で `ExchangeTerminateMessage` プロパティが有効になっています。そのため、サービスで余分なメッセージ交換アクションがサポートされ、セッションでのメッセージ交換が終了されることを示すために必要なアサーションが追加されます。 その後、クライアントはこのアクションを使用できます。 `HttpCookieSessionBindingElement` から作成されたポリシー アサーションを、次の WSDL コードに示します。  
   
 ```xml  
 <wsp:Policy wsu:Id="HttpCookieSessionBinding_IWcfCookieSessionService_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
@@ -114,7 +115,7 @@ InputQueue<RequestContext> requestQueue;
  このサンプルでは、構成を使用してサンプル チャネルを公開する 2 つのクラスを提供します。 1 つ目のクラスは、<xref:System.ServiceModel.Configuration.BindingElementExtensionElement> の `HttpCookieSessionBindingElement` です。 実装の大部分は `HttpCookieSessionBindingConfigurationElement` で代行されます。これは <xref:System.ServiceModel.Configuration.StandardBindingElement> の派生です。 `HttpCookieSessionBindingConfigurationElement` には、`HttpCookieSessionBindingElement` のプロパティに対応するプロパティがあります。  
   
 ### <a name="binding-element-extension-section"></a>要素拡張セクションのバインディング  
- セクション `HttpCookieSessionBindingElementSection` は <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> で、`HttpCookieSessionBindingElement` を構成システムに公開します。 構成セクション名をいくつかオーバーライドして、バインディング要素の種類とバインディング要素の作成方法が定義されます。 その後、次のようにして拡張セクションを構成ファイルに登録できます。  
+ セクション `HttpCookieSessionBindingElementSection` は <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> で、`HttpCookieSessionBindingElement` を構成システムに公開します。 構成セクション名をいくつかオーバーライドして、バインド要素の種類とバインド要素の作成方法が定義されます。 その後、次のようにして拡張セクションを構成ファイルに登録できます。  
   
 ```xml  
 <configuration>        
@@ -180,4 +181,4 @@ Press <ENTER> to terminate client.
   
 4.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

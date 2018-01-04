@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1c6ae9c4159f8f9eafd73608e4fc3f4a646c1eaa
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 3fa5c240adaaf6512cfbd6b7bd0796bd0983a530
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-formatting-and-styling-in-the-windows-forms-datagridview-control"></a>Windows フォームの DataGridView コントロールの基本的な書式設定およびスタイル設定
 `DataGridView`コントロールでは、簡単にセルの基本の外観およびセルの値の表示形式を定義します。 外観を定義することができ、個々 のセル、行、および特定の列にセルまたはコントロールのすべてのセルのプロパティを設定してスタイルの書式設定、`DataGridViewCellStyle`さまざまなを介してアクセスされるオブジェクト`DataGridView`プロパティを制御します。 さらに、処理することにより、セルの値などの要因に基づいて動的にこれらのスタイルを変更することができます、`CellFormatting`イベント。  
@@ -67,5 +68,5 @@ ms.lasthandoff: 10/22/2017
  [Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
  よくを説明するトピックに使用されるセル、行、および列のプロパティを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

@@ -12,11 +12,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d33e809a0db0b812cf7311d7b5686d9125e80976
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 41615618857c804c37f00e9d20a031a6d17bcab3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="instance-activation"></a>インスタンスのアクティブ化処理
 SQL Workflow Instance Store が実行する内部タスクは、定期的にアクティブになり、実行可能またはアクティブ化可能なワークフロー インスタンスを永続性データベースで検出します。 このタスクは、実行可能なワークフロー インスタンスを検出すると、このインスタンスをアクティブ化することができるワークフロー ホストに通知します。 Instance Store がアクティブ化可能なワークフロー インスタンスを検出した場合、ワークフロー ホストをアクティブ化する汎用ホストに Instance Store が通知を行い、ワークフロー ホストがワークフロー インスタンスを実行します。 このトピックの以降のセクションでは、インスタンスのアクティブ化処理を詳細に説明します。  

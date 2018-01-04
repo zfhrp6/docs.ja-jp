@@ -13,11 +13,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6d3a9dd8c17b39ae52fffb5995f4763b250a3551
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 90013752ed03f24c0995bc837efde5f20bf272c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Windows Communication Foundation でのメッセージ キュー
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションでメッセージをメッセージ キュー (MSMQ) アプリケーションに送信する方法について説明します。 サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。 サービスとクライアントは同時に実行されていなくてもかまいません。  
@@ -183,6 +184,6 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
   
-## <a name="see-also"></a>関連項目  
- [方法: WCF エンドポイントでメッセージを交換して、メッセージ キュー アプリケーション](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+## <a name="see-also"></a>参照  
+ [方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  [メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=94968)

@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e2d177045f82f9df5318a38c67a23d6b9fa2d268
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0717aae2c13c9fa5fcbf0ea47d344cac5675fbea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="x509-certificate-validator"></a>X.509 証明書検証
 このサンプルでは、カスタム X.509 証明書検証を実装する方法を示します。 これは、アプリケーションの要件に適した組み込みの X.509 証明書検証モードがない場合に便利です。 このサンプルでは、自己発行の証明書を許可するカスタム検証を備えたサービスを示します。 クライアントはこのような証明書を使用して、このサービスに認証されます。  
@@ -366,4 +367,4 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
 > [!NOTE]
 >  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

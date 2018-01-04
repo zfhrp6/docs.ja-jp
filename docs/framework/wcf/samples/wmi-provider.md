@@ -13,11 +13,12 @@ caps.latest.revision: "35"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4d5537c636edfa557c75298c5cf63127f10f4827
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c1b1f923b6673ead42c7c702bd50d253ea06c765
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wmi-provider"></a>WMI プロバイダー
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に組み込まれている Windows Management Instrumentation (WMI) プロバイダーを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのデータを実行時に収集する方法を示します。 また、このサンプルでは、ユーザー定義の WMI オブジェクトをサービスに追加する方法も示します。 サンプル用の WMI プロバイダーをアクティブ化、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)からデータを収集する方法を説明し、`ICalculator`実行時にサービス。  
@@ -153,5 +154,5 @@ cscript EnumerateCustomObjects.js
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\WMIProvider`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

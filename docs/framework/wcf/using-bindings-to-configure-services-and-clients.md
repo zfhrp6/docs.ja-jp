@@ -14,11 +14,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e5290256f302f16f17dd50b570b470beedd00d81
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e63bb0b44e19ec9186096a819801ea05195b5523
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>サービスとクライアントを構成するためのバインディングの使用
 バインディングとは、エンドポイントへの接続に必要な通信の詳細設定を指定するオブジェクトです。 具体的には、バインディングには構成情報が含まれており、この情報を使用してそれぞれのエンドポイントまたはクライアント チャネルで使用されるトランスポート仕様、ワイヤ形式 (メッセージ エンコード) 仕様、プロトコル仕様が定義され、クライアントまたはサービスのランタイムが作成されます。 機能する [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを作成するには、サービスの各エンドポイントにバインディングが必要です。 ここでは、エンドポイントにおけるバインディングの概要と定義方法、特定のバインディングの指定方法を説明します。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [方法: クライアントを構成する](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md)の構成を使用してクライアントを作成する例を示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [方法: 構成でサービス バインディングを指定する](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)  
  [方法: コード内でサービス バインディングを指定する](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md)  

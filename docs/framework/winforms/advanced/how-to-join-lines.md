@@ -25,11 +25,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f02da181d66f7bb26a8414782e42eff2570e6918
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d12cc7b4b4c878ec812190fd56a1face64118ab4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-join-lines"></a>方法 : 直線を接合する
 直線の接合部は、2 本の線の端を満たすことや、重ねてによって形成される一般的な領域です。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]3 つの結合線を提供します。 つながる、傾斜、およびラウンドです。 直線の接合スタイルのプロパティは、<xref:System.Drawing.Pen>クラスです。 直線の接合スタイルを指定すると、<xref:System.Drawing.Pen>オブジェクトのいずれかで接続されているすべての行への接合スタイルが適用されること<xref:System.Drawing.Drawing2D.GraphicsPath>そのペンを使用して描画オブジェクトです。  
@@ -47,5 +48,5 @@ ms.lasthandoff: 10/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)

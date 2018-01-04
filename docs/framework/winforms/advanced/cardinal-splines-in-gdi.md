@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0ad417ee61026f6573f19e70409511e0b28e4d78
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9b7653e05fff241f05836624ff02273fb8c24ef6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cardinal-splines-in-gdi"></a>GDI+ でのカーディナル スプライン
 カーディナル スプラインは、大規模な曲線を形成に参加している個々 の曲線のシーケンスです。 スプラインは、ポイントおよびテンション パラメーターの配列を指定します。 配列内の各ポイントを通過するカーディナル スプラインがスムーズに通過します。ありませんとがった角と曲線のテンションの急激な変化があります。 次の図は、一連のポイントと、セット内の各ポイントを通過するカーディナル スプラインを示します。  
@@ -45,6 +46,6 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[LinesCurvesAndShapes#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#31)]
  [!code-vb[LinesCurvesAndShapes#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#31)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
  [曲線の作成と描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)

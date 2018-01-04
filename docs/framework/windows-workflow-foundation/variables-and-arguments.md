@@ -12,11 +12,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5f231a4e43723ce3ea73831086ed54e9ee08c1a0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d01c31cce9aa6ae6d87773fc8e616e0e08bbd8c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="variables-and-arguments"></a>変数と引数
 [!INCLUDE[wf](../../../includes/wf-md.md)] では、変数はデータ ストレージを表し、引数はアクティビティとのデータ フローを表します。 アクティビティには一連の引数があり、その引数はアクティビティの署名を構成します。 また、アクティビティは開発者がワークフローの設計時に変数を追加または削除できる変数のリストを保持しています。 引数は、値を返す式を使用してバインドされます。  

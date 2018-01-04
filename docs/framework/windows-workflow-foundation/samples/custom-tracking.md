@@ -12,11 +12,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 71a27ffb1c18f0f5ae6f30cac432d5ffd8712b74
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 465da20193245a338143c566d1046c3d2212279e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-tracking"></a>カスタム追跡
 このサンプルでは、カスタムの追跡参加要素を作成し、追跡データをコンソールに出力する方法を示します。 また、ユーザー定義データが設定された <xref:System.Activities.Tracking.CustomTrackingRecord> オブジェクトを出力する方法も示します。 コンソール ベースの追跡参加要素は、コードで作成された追跡プロファイル オブジェクトを使用して、ワークフローで出力された <xref:System.Activities.Tracking.TrackingRecord> オブジェクトをフィルター処理します。  
@@ -157,5 +158,5 @@ context.Track(customRecord);
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\CustomTracking`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

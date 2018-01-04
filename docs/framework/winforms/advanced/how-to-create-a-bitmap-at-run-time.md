@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 57682ce5486bc3b7ce1c0db525c7948b1c6a00cc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4769a44358dc19c9897c6d6ee29f0c7b8426ed7b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-bitmap-at-run-time"></a>方法 : 実行時にビットマップを作成する
 この例は、作成し描画、<xref:System.Drawing.Bitmap>オブジェクトを既存の Windows フォームに表示<xref:System.Windows.Forms.PictureBox>コントロール。  
@@ -37,6 +38,6 @@ ms.lasthandoff: 11/21/2017
   
 -   System、System.Drawing、および system.windows.forms の各アセンブリをインポートする Windows フォームです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Bitmap>  
  [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)

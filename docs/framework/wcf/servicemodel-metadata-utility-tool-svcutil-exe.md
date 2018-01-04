@@ -18,11 +18,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0f2ef91986cb5ad31560c4a7f418218a168f1b2f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ce66f98f064ec5c9460dd1909f8eb7bc44c26f76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)
 ServiceModel メタデータ ユーティリティ ツールを使用して、メタデータ ドキュメントからサービス モデル コードを生成したり、サービス モデル コードからメタデータ ドキュメントを生成します。  
@@ -35,11 +36,11 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
   
 |タスク|トピック|  
 |----------|-----------|  
-|実行中のサービスまたは静的なメタデータ ドキュメントからコードを生成します。|[サービス メタデータから WCF クライアントの生成](../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)|  
-|コンパイル済みのコードからメタデータ ドキュメントをエクスポートします。|[方法: Svcutil.exe を使用してコンパイル済みサービス コードからメタデータをエクスポートするには](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|  
-|コンパイル済みサービス コードを検証します。|[方法: Svcutil.exe を使用してコンパイル済みサービス コードを検証するには](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|  
-|実行中のサービスからメタデータ ドキュメントをダウンロードします。|[方法: Svcutil.exe を使用してメタデータ ドキュメントをダウンロードするには](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|  
-|シリアル化コードを生成します。|[方法: スタートアップ時間の WCF クライアント アプリケーション、XmlSerializer を使用してを向上させる](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|  
+|実行中のサービスまたは静的なメタデータ ドキュメントからコードを生成します。|[サービス メタデータからの WCF クライアントの生成](../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)|  
+|コンパイル済みのコードからメタデータ ドキュメントをエクスポートします。|[方法 : Svcutil.exe を使用してコンパイル済みのサービス コードからメタデータをエクスポートする](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|  
+|コンパイル済みサービス コードを検証します。|[方法 : Svcutil.exe を使用してコンパイル済みサービス コードを検証する](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|  
+|実行中のサービスからメタデータ ドキュメントをダウンロードします。|[方法 : Svcutil.exe を使用してメタデータ ドキュメントをダウンロードする](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|  
+|シリアル化コードを生成します。|[方法 : XmlSerializer を使用する WCF クライアント アプリケーションの起動時間を短縮する](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|  
   
 > [!CAUTION]
 >  パラメーターに指定された名前が同じ場合、Svcutil はディスク上の既存のファイルを上書きします。 これには、コード ファイル、構成ファイル、またはメタデータ ファイルが含まれます。 コード ファイルや構成ファイルの生成時にこれを回避するには、`/mergeConfig` スイッチを使用します。  
@@ -192,7 +193,7 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
 |/out:\<ファイル >|生成されるコードのファイル名を指定します。 このオプションは、複数のアセンブリが入力としてツールに渡される場合は無視されます。<br /><br /> 既定 : アセンブリ名から派生します。<br /><br /> 短縮形: `/o`|  
 |/UseSerializerForFaults|指定する、 <!--zz <xref:System.Xml.XmlSerializer> --> `xref:System.Xml.XmlSerializer `の既定値ではなく、エラーの読み書きに使用する必要があります<xref:System.Runtime.Serialization.DataContractSerializer>です。|  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次のコマンドにより、実行中のサービスまたはオンラインのメタデータ ドキュメントからクライアント コードが生成されます。  
   
  `svcutil http://service/metadataEndpoint`  
@@ -271,7 +272,7 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
   
  また、現在のプロセスにサービス拒否を引き起こす可能性があるため、アプリケーションの中間層でツールを使用しないようにする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)

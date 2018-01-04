@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9bf104af8c88413298412d3ec3a29cd934558e2d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 770be9ea5327b32286de64207a3cf07bca7449c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mapping-between-json-and-xml"></a>JSON と XML 間のマッピング
 <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> によって作成されるリーダーとライターには、JSON (JavaScript Object Notation) コンテンツでの XML API が備わっています。 JSON は、JavaScript のオブジェクト リテラルのサブセットを使用してデータをエンコードします。 このファクトリによって作成されるリーダーおよびライターは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションが <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> または <xref:System.ServiceModel.WebHttpBinding> を使用して JSON コンテンツを送信または受信するときにも使用されます。  
@@ -240,7 +241,7 @@ ms.lasthandoff: 12/02/2017
   
  `["myValue1",2,[true,null]]`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory>  
  <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>  
  [スタンドアロン JSON のシリアル化](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)

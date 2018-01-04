@@ -29,11 +29,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 05247d24f3db95d042cb4ac34ec6ed648ec1d997
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eace68b646b3cdf75546527204bc41584ba64f85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-an-outlined-shape"></a>方法 : 形状のアウトラインを描画する
 この例では、フォームに記載された楕円と四角形を描画します。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  常に呼び出す必要があります<xref:System.IDisposable.Dispose%2A>など、システム リソースを消費するすべてのオブジェクトに対する<xref:System.Drawing.Pen>と<xref:System.Drawing.Graphics>オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Graphics.DrawEllipse%2A>  
  <xref:System.Windows.Forms.Control.OnPaint%2A>  
  <xref:System.Drawing.Graphics.DrawRectangle%2A>  

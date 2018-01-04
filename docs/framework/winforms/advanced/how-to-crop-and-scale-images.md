@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8fb5d527cd1047197f370c4a9a9b1f8f33461653
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: de905cf70013098a4282e3f4af092ccbea16ccfd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-crop-and-scale-images"></a>方法 : イメージをトリミングおよびスケーリングする
 <xref:System.Drawing.Graphics>クラスには、いくつか用意されて<xref:System.Drawing.Graphics.DrawImage%2A>トリミングおよびスケール イメージに使用できる元とコピー先の四角形のパラメーターを持つこれらのいくつかの方法です。  
@@ -45,6 +46,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。 必ず置き換えて`Apple.gif`イメージのファイル名と、システムで有効なパスを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

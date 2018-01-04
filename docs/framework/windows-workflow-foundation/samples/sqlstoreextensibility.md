@@ -12,11 +12,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e3e63a11ce87c95a5afc8e7f60c8e262da5c6bd1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f4d3776c4cc3fb61fc01b84ee90bb714e1acb4fa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlstoreextensibility"></a>SQLStoreExtensibility
 このサンプルでは、SQL ワークフロー インスタンス ストアの昇格したプロパティの使用法と構成を示します。 SQL Workflow Instance Store は、SQL ベースのインスタンス ストアの実装です。 SQL Workflow Instance Store を使用すると、インスタンスの状態を SQL Server データベースや SQL Server Express データベースに保存したり読み込んだりすることができます。 ストア拡張機能を使用すると、ユーザーは、インスタンス ストアに格納されるプロパティを定義できます。 このようなプロパティは、ユーザーがクエリを実行できる昇格したプロパティ ビューに表示されます。  
@@ -86,7 +87,7 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Persistence\SQLStoreExtensibility`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ワークフローの永続性](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

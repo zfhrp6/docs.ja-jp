@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c2b0ce30f76fe7f8cbdc156c4a8ff5abffafae10
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 69499cdee7803de504e960b08754df33602cfcf6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-standard-windows-forms-print-jobs"></a>方法 : 標準の Windows フォーム印刷ジョブを作成する
 Windows フォームにおける印刷の基盤となるは、<xref:System.Drawing.Printing.PrintDocument>コンポーネント-具体的には、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。 処理するコードを記述して、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント、印刷する対象とそれを印刷する方法を指定できます。  
@@ -86,6 +87,6 @@ Windows フォームにおける印刷の基盤となるは、<xref:System.Drawi
   
      Windows フォームの詳細については、プログラムで印刷ジョブを作成する方法を含む、印刷ジョブを参照してください<xref:System.Drawing.Printing.PrintPageEventArgs>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Printing.PrintDocument>  
  [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

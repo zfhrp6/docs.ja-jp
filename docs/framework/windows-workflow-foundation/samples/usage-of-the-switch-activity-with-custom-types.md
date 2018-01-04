@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2fbf80f0038ad830ab35fdb55272e45d8a6bffdc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 61485a59ae3af17bef58c0fccbe062c8b9171a34
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="usage-of-the-switch-activity-with-custom-types"></a>カスタム型を使用した Switch アクティビティの使用
 このサンプルでは、<xref:System.Activities.Statements.Switch%601> アクティビティを有効にしてユーザー定義の複合型を実行時に評価する方法について説明します。 従来のほとんどの手続き型プログラミング言語で、[切り替える](http://go.microsoft.com/fwlink/?LinkId=180521)ステートメントが変数の条件の評価に基づいて実行ロジックを選択します。 従来、`switch` ステートメントは、静的に評価できる式を対象としています。 つまり、たとえば C# では、プリミティブ型 (<xref:System.Boolean>、<xref:System.Int32>、<xref:System.String>、列挙型など) のみがサポートされます。  
@@ -139,5 +140,5 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Switch`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ビルトイン アクティビティ ライブラリ](../../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md)

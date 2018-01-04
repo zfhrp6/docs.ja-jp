@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f6c2542ca7ee27bec96bb5010bcdb2fcd7416f72
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b0db67e8da97f380c3bb2eb9aab951628c4b6487
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contextmenu-component-overview-windows-forms"></a>ContextMenu コンポーネントの概要 (Windows フォーム)
 > [!IMPORTANT]
@@ -30,12 +31,12 @@ ms.lasthandoff: 11/21/2017
   
  Windows フォームで<xref:System.Windows.Forms.ContextMenu>コンポーネント、選択したオブジェクトに関連付けられている頻繁に使用されるコマンドを簡単にアクセスできるショートカット メニューをユーザーに提供できます。 ショートカット メニューの項目は、多くの場合、アプリケーションでの場所に表示されるメイン メニューの項目のサブセットです。 ユーザーは、マウスを右クリックしてショートカット メニューを通常アクセスできます。 Windows フォームでは、ショートカット メニューは、コントロールに関連付けられます。  
   
-## <a name="key-properties"></a>主要プロパティ  
+## <a name="key-properties"></a>キー プロパティ  
  コントロールにするには、コントロールのショートカット メニューを関連付けることができます<xref:System.Windows.Forms.Control.ContextMenu%2A>プロパティを<xref:System.Windows.Forms.ContextMenu>コンポーネントです。 1 つのショートカット メニューは、複数のコントロールを関連付けることができますが、各コントロールが 1 つだけのショートカット メニューを持つことができます。  
   
  キー プロパティ、<xref:System.Windows.Forms.ContextMenu>コンポーネントは、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティです。 メニュー項目を追加するにはプログラムで作成することで<xref:System.Windows.Forms.MenuItem>オブジェクトとに追加すること、<xref:System.Windows.Forms.Menu.MenuItemCollection>のショートカット メニュー。 ショートカット メニューの項目は通常、その他のメニューから描画、ためにをコピーしてショートカット メニューに項目を最も頻繁に追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ContextMenu>  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ContextMenuStrip>

@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 432402fefc6c958fbab0b1450a429d9b130b8239
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8e8d05bd0c3e76d643d56b652c8849eef1045ea8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="global-and-local-transformations"></a>グローバル変換とローカル変換
 グローバル変換によって描画されたすべての項目に適用される変換とは、指定された<xref:System.Drawing.Graphics>オブジェクト。 これに対し、ローカルの変換は、描画する特定の項目に適用される変換です。  
@@ -70,6 +71,6 @@ ms.lasthandoff: 11/21/2017
   
  ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art16.gif "AboutGdip05_art16")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
  [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

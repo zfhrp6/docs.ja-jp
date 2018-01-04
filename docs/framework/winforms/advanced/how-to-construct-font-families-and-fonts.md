@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 066cf358e43dabb3b952b32ecec34ca77c6e8c38
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e152c525550554082d7d6c38a972ccc150adabb9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-construct-font-families-and-fonts"></a>方法 : フォント ファミリとフォントを作成する
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]スタイルは異なっても同じ書体を使用するフォントのフォント ファミリにグループ化します。 たとえば、Arial フォント ファミリには、次のフォントが含まれています。  
@@ -59,6 +60,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> のパラメーターである `e`<xref:System.Windows.Forms.PaintEventHandler> を必要とします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

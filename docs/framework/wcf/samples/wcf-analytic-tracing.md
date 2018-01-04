@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5c238d4c923b00a6c3387caa9bdafd69b126753c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 37dea97db8816f68f0331580cfa21daed7f69914
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-analytic-tracing"></a>WCF 分析トレース
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] の ETW に書き込む分析トレースのストリームに独自のトレース イベントを追加する方法を示します。 分析トレースは、パフォーマンスを低下させずに簡単にサービスを確認できるようにするためのものです。 このサンプルでは、<xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと統合されるイベントを記述する方法を示します。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="custom-event-details"></a>カスタム イベントの詳細  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の ETW イベント プロバイダー マニフェストには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成者がサービス コード内から生成できるように設計された 3 つのイベントが定義されています。 次の表に、その 3 つのイベントの概要を示します。  
   
-|イベント|説明|イベント ID|  
+|event|説明|イベント ID|  
 |-----------|-----------------|--------------|  
 |UserDefinedInformationEventOccurred|このイベントは、問題以外の通知すべき処理がサービスで発生した場合に生成します。 たとえば、データベースの呼び出しに成功した後にイベントを生成します。|301|  
 |UserDefinedWarningOccurred|このイベントは、後続の処理でエラーになる可能性がある問題が発生した場合に生成します。 たとえば、データベースの呼び出しが失敗したものの、冗長なデータ ストアを使用して回復できた場合に警告イベントを生成します。|302|  
@@ -127,5 +128,5 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

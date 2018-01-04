@@ -12,11 +12,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 248af9c669687d0ab4d41f0ac93985d0d9a17678
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7dd56b41b7b661b58446219d426be1a19edba059
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compensation"></a>補正
 [!INCLUDE[wf](../../../includes/wf-md.md)] の補正は、エラーが発生した場合に、前に完了した作業を (アプリケーションで定義されるロジックに応じて) 取り消したり補正したりできる機構です。 ここでは、ワークフローで補正を使用する方法について説明します。  
@@ -331,7 +332,7 @@ Activity wf = new Sequence()
 ## <a name="nesting-compensation-activities"></a>補正アクティビティの入れ子化  
  <xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> セクションに配置できます。 <xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで処理されない場合があります。 親の <xref:System.Activities.Statements.CompensableActivity> が取り消されたとき、確認されたとき、または補正されたとき、正常に完了していてまだ確認または補正されていないすべての子の補正可能なアクティビティを、親が取り消し、確認、または補正を完了する前に、確認または補正されるようにするのが親のそのアクティビティの役割ですです。 補正が明示的にモデル化されていない場合、親の <xref:System.Activities.Statements.CompensableActivity> は、親が取り消しまたは補正のシグナルを受け取ったとき、子の補正可能なアクティビティを暗黙的に補正します。 親は、確認通知を受け取ると、暗黙的に子の補正可能なアクティビティを確認します。 取り消し、確認、または補正を処理するロジックが親の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで明示的にモデル化されている場合、明示的に処理されなかった子は暗黙的に確認されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Activities.Statements.CompensableActivity>  
  <xref:System.Activities.Statements.Compensate>  
  <xref:System.Activities.Statements.Confirm>  

@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f19e53a2dfd2c659a3ba111a80a35cd0737fa163
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7eafe31bec86a969a12661c9f5629b2d55e3e3d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flowlayoutpanel-control-overview"></a>FlowLayoutPanel コントロールの概要
 <xref:System.Windows.Forms.FlowLayoutPanel> コントロールは、水平または垂直のフローの方向に内容を整列させます。 コントロールの内容をある行から次の行、またはある列から次の列にラップすることができます。 また、内容をラップする代わりにクリップすることができます。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
   
  参照してください[チュートリアル: Windows を使用して、FlowLayoutPanel をフォーム上のコントロールの配置](http://msdn.microsoft.com/library/z9w7ek2f\(v=vs.110\))です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A>  
  <xref:System.Windows.Forms.TableLayoutPanel>  
  [FlowLayoutPanel コントロール](../../../../docs/framework/winforms/controls/flowlayoutpanel-control-windows-forms.md)

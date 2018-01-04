@@ -13,11 +13,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ef105626d2427f0ea6dd49f696b78ffac4834f92
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 95336c55b2c3e83e2bd68bb653bbaacc446d8934
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-correlation"></a>メッセージ相関
 このサンプルでは、メッセージ キュー (MSMQ) アプリケーションで MSMQ メッセージを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに送信する方法と、要求または応答のシナリオで、メッセージを送信側のアプリケーションと受信側のアプリケーション間で相互に関連付ける方法を示します。 このサンプルでは、msmqIntegrationBinding バインディングを使用します。 この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。 k  
@@ -322,6 +323,6 @@ static void DisplayOrderStatus()
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=94968)

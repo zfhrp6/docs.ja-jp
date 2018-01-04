@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b2cee42de74609cbfc793822471655d88b32d9ce
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 924368f5de4c5698c439a6c8744a15babd62d762
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="services"></a>サービス
 このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] のサービス機能を示すサンプルへのリンクが含まれています。  
@@ -28,16 +29,16 @@ ms.lasthandoff: 12/02/2017
  [永続的な遅延](../../../../docs/framework/windows-workflow-foundation/samples/durable-delay.md)  
  永続的な遅延を使用する方法を示します。これは、遅延の間、ワークフローを永続的なデバイスに永続化する遅延のことです。  
   
- [送信して、エラーの処理](../../../../docs/framework/windows-workflow-foundation/samples/sending-and-handling-faults.md)  
+ [エラーの送信と処理](../../../../docs/framework/windows-workflow-foundation/samples/sending-and-handling-faults.md)  
  <xref:System.ServiceModel.Activities.SendReply> および <xref:System.ServiceModel.Activities.ReceiveReply> メッセージング アクティビティを使用して、予期したエラーと予期しないエラーを送受信する方法を示します。  
   
- [SendParameters および ReceiveParameters アクティビティの基本的な使用法](../../../../docs/framework/windows-workflow-foundation/samples/basic-usage-of-sendparameters-and-receiveparameters-activities.md)  
+ [SendParameters および ReceiveParameters アクティビティの基本的な使用方法](../../../../docs/framework/windows-workflow-foundation/samples/basic-usage-of-sendparameters-and-receiveparameters-activities.md)  
  使用例を示します<!--zz <xref:System.ServiceModel.Activities.SendParameters> -->`System.ServiceModel.Activities.SendParameters`と<!--zz <xref:System.ServiceModel.Activities.ReceiveParameters> -->`System.ServiceModel.Activities.ReceiveParameters`アクティビティ。
   
  [基本的な XAML 専用サービス](../../../../docs/framework/windows-workflow-foundation/samples/basic-xaml-only-service.md)  
  XAML 専用サービスを作成する方法を示します。  
   
- [ワークフロー サービス内のメッセージを書式設定](../../../../docs/framework/windows-workflow-foundation/samples/formatting-messages-in-workflow-services.md)  
+ [ワークフロー サービスでのメッセージの書式設定](../../../../docs/framework/windows-workflow-foundation/samples/formatting-messages-in-workflow-services.md)  
  メッセージング アクティビティ (WF サービス) で使用できるユーザーの種類を示します。 サンプルのサービスは、簡単な費用承認サービスで、3 つの操作を公開します。  
   
  [永続的な二重](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
@@ -52,11 +53,11 @@ ms.lasthandoff: 12/02/2017
  [XAMLX における永続的な遅延](../../../../docs/framework/windows-workflow-foundation/samples/durable-delay-in-xamlx.md)  
  永続的な遅延を使用する方法を示します。これは、遅延の間、ワークフローを永続的なデバイスに永続化する遅延のことです。  
   
- [バッファー内の受信](../../../../docs/framework/windows-workflow-foundation/samples/buffered-receive.md)  
+ [バッファーされた受信機能](../../../../docs/framework/windows-workflow-foundation/samples/buffered-receive.md)  
  [!INCLUDE[wf](../../../../includes/wf-md.md)] のバッファーされた受信機能を設定および構成する方法を示します。  
   
  [XAML アクティベーション](../../../../docs/framework/windows-workflow-foundation/samples/xaml-activation.md)  
  宣言型ワークフローを [!INCLUDE[iisver](../../../../includes/iisver-md.md)] でホストする方法を示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)

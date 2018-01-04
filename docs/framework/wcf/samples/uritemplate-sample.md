@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ddab3e7b473310f2f7b9c1bd1f3495f9bc523704
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 035167cfbaf35720a6e172288ffa2941ee4537a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="uritemplate-sample"></a>UriTemplate サンプル
 <xref:System.UriTemplate> クラスには、共通構造を共有する URI のセットを使用するためのメソッドが用意されています。 このサンプルでは、次の `UriTemplate` に関連する重要な概念を示します。  
@@ -43,6 +44,6 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\UriTemplate`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [UriTemplate テーブル](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)  
  [UriTemplate テーブル ディスパッチャー](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)

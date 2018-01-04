@@ -12,11 +12,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d8bccc1b9505f685fd4e358216e76c22ec751e9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5a179ae5aaca959383a88105b96cbba2cebd1919
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>TryCatch を使用した Flowchart アクティビティでのエラー処理
 このサンプルでは、複雑な制御フロー アクティビティ内で <xref:System.Activities.Statements.TryCatch> アクティビティを使用する方法を示します。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 12/02/2017
 |`promoCode` の値|割引率 (%)|  
 |--------------------------|--------------------|  
 |Single|10|  
-|MNK|15|  
+|MNK|16|  
 |MWK|15 + (1 – 1/`numberOfKids`)\*10**注:**可能性のある、この計算がスローすることが、<xref:System.DivideByZeroException>です。 そのため、割引率の計算は、<xref:System.Activities.Statements.TryCatch> 例外をキャッチして割引率をゼロに設定する <xref:System.DivideByZeroException> アクティビティでラップされます。|  
   
 #### <a name="to-use-this-sample"></a>このサンプルを使用するには  
@@ -55,6 +56,6 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\FlowChartWithFaultHandling`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Flowchart のワークフロー](../../../../docs/framework/windows-workflow-foundation/flowchart-workflows.md)  
  [例外](../../../../docs/framework/windows-workflow-foundation/exceptions.md)

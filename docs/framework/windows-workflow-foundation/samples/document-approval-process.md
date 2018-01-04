@@ -12,11 +12,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 345fb44bed207d5d5e2c30bf4dd6e6ace27d7511
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b46597e16156db3d36fef97040104d8497294ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="document-approval-process"></a>ドキュメント承認プロセス
 このサンプルでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] と [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のさまざまな機能を一緒に使用して、 ドキュメント承認プロセスのシナリオを実装する方法を示します。 クライアント アプリケーションでは、承認の必要なドキュメントを送信したり、ドキュメントを承認したりすることができます。 クライアント間の通信を促進したり承認プロセスのルールを適用したりするための承認マネージャー アプリケーションも用意されています。 この承認プロセスは、複数の種類の承認を実行できるワークフローで、 単一承認、定足数承認 (承認者全体のパーセンテージ)、および複合承認 (定足数承認と単一承認のシーケンスから成る承認) を得るためのアクティビティが用意されています。  

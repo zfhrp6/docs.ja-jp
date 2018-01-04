@@ -12,11 +12,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: abb29dc584bbede14adcb396df8cd37a894b6f2f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f1d4b3f319d86dd463dabc8b71be7c76c7fef41f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tracking-using-a-text-file"></a>テキスト ファイルを使用した追跡
 このサンプルでは、カスタムの追跡参加要素を作成して [!INCLUDE[wf](../../../../includes/wf-md.md)] で追跡を拡張する方法を示します。 追跡参加要素は、出力された追跡レコードをランタイムから受け取る .NET Framework クラスです。 追跡参加要素を作成して、シナリオに必要な出力先に追跡イベントを転送することができます。 たとえば、ETW (Event Tracing for Windows) 追跡参加要素は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の一部として提供されています。 このサンプルの追跡参加要素は、レコードを XML 形式でテキスト ファイルに書き込みます。  
@@ -100,5 +101,5 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\TextFileTracking`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

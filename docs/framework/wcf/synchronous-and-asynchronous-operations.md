@@ -19,11 +19,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4fce4129924b4f0ce4542f2d274d2cc4031928c9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3d108c8c84af2563e48a9f339df2a96f8218c742
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>同期操作と非同期操作
 ここでは、非同期サービス操作の実装と呼び出しについて説明します。  
@@ -192,6 +193,6 @@ svcutil http://localhost:8000/servicemodelsamples/service/mex /async
   
  メッセージ オブジェクトを受信する場合、`Result`プロパティように、そのオブジェクトにプロパティを使用して、返される値であると、 **/messageContract**コマンド オプション。 これにより、`Result` オブジェクトの <xref:System.EventArgs> プロパティとして応答メッセージを返すシグネチャが生成されます。 すべての内部戻り値は、応答メッセージ オブジェクトのプロパティになります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A>  
  <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A>

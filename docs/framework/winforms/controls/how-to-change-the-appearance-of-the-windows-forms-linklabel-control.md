@@ -23,11 +23,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 42aaef183178e7170d3046b4c5daefc8647f7cc1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7dc3963ab1b242ce8dce53d9bba996f52347679b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-linklabel-control"></a>方法 : Windows フォーム LinkLabel コントロールの表示形式を変更する
 によって表示されるテキストを変更することができます、<xref:System.Windows.Forms.LinkLabel>さまざまな目的に合わせてコントロール。 たとえば、下線付きで特定の色で表示するテキストを設定してテキストをクリックすることができます、ユーザーに示すためによくあることを勧めします。 ユーザーは、テキストをクリックすると、異なる色に色を変更します。 この動作を制御するには、5 つの異なるプロパティを設定することができます。 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>プロパティです。  
@@ -131,7 +132,7 @@ ms.lasthandoff: 11/21/2017
        }  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>  
  <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>  
  <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>  

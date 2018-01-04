@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d097068720bb937911316fdb29a83ba0e8e67713
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a38c0c224c93941efa767d142aa7738296a62f15
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>ワークフロー サービスへのトランザクションのフロー
 ワークフロー サービスとワークフロー クライアントはトランザクションに参加できます。  サービス操作をアンビエント トランザクションの一部にするには、<xref:System.ServiceModel.Activities.Receive> アクティビティを <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティの中に配置します。 <xref:System.ServiceModel.Activities.Send> 内の <xref:System.ServiceModel.Activities.SendReply> または <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティによる呼び出しが行われると、アンビエント トランザクション内でも呼び出しが行われます。 ワークフロー クライアント アプリケーションでは、<xref:System.Activities.Statements.TransactionScope> アクティビティを使用してアンビエント トランザクションを作成し、そのアンビエント トランザクションを使用してサービス操作を呼び出すことができます。 ここでは、トランザクションに参加するワークフロー サービスとワークフロー クライアントを作成する手順について説明します。  
@@ -109,7 +110,7 @@ ms.lasthandoff: 12/02/2017
   
 6.  ドラッグ アンド ドロップ、<xref:System.ServiceModel.Activities.Receive>内のアクティビティ、**要求**のセクションで、<xref:System.ServiceModel.Activities.TransactedReceiveScope>アクティビティ。 次のプロパティを設定します。  
   
-    |プロパティ|値|  
+    |プロパティ|[値]|  
     |--------------|-----------|  
     |CanCreateInstance|True (チェック ボックスをオンにする)|  
     |OperationName|StartSample|  
@@ -125,7 +126,7 @@ ms.lasthandoff: 12/02/2017
   
 8.  <xref:System.Activities.Statements.Sequence> アクティビティを <xref:System.ServiceModel.Activities.TransactedReceiveScope> の Body セクションにドラッグ アンド ドロップします。 <xref:System.Activities.Statements.Sequence> アクティビティに 2 つの <xref:System.Activities.Statements.WriteLine> アクティビティをドラッグ アンド ドロップし、<xref:System.Activities.Statements.WriteLine.Text%2A> プロパティを次の表のとおりに設定します。  
   
-    |アクティビティ|値|  
+    |アクティビティ|[値]|  
     |--------------|-----------|  
     |1 つ目の WriteLine|"Service: 完了した受信"|  
     |2 つ目の WriteLine|"Service: Received = " + requestMessage|  
@@ -140,10 +141,10 @@ ms.lasthandoff: 12/02/2017
   
 10. <xref:System.Activities.Statements.Assign> アクティビティを `PrintTransactionInfo` アクティビティの後にドラッグ アンド ドロップし、次の表のとおりにプロパティを設定します。  
   
-    |プロパティ|値|  
+    |プロパティ|[値]|  
     |--------------|-----------|  
-    |目的|replyMessage|  
-    |値|"Service: Sending reply."|  
+    |終了|replyMessage|  
+    |[値]|"Service: Sending reply."|  
   
 11. <xref:System.Activities.Statements.WriteLine> アクティビティを <xref:System.Activities.Statements.Assign> アクティビティの後にドラッグ アンド ドロップし、<xref:System.Activities.Statements.WriteLine.Text%2A> プロパティを "Service: Begin reply" に設定します。  
   
@@ -189,7 +190,7 @@ ms.lasthandoff: 12/02/2017
   
 8.  <xref:System.ServiceModel.Activities.Send> アクティビティを <xref:System.Activities.Statements.Assign> アクティビティの後にドラッグ アンド ドロップし、次のプロパティを設定します。  
   
-    |プロパティ|値|  
+    |プロパティ|[値]|  
     |--------------|-----------|  
     |EndpointConfigurationName|workflowServiceEndpoint|  
     |OperationName|StartSample|  
@@ -322,7 +323,7 @@ ms.lasthandoff: 12/02/2017
         }  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
- [Windows Communication Foundation トランザクションの概要](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
+ [Windows Communication Foundation のトランザクションの概要](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
  [TransactedReceiveScope の使用](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "16"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: e4f93da8a2a5be00d798d64caba0f54bfd71ceb2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8352edaa9386adc1fbf3057c6e98f5a9cf9ce4a1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-start-services"></a>方法 : サービスを開始する
 サービスをインストールした後で、サービスを起動します。 起動することで、サービス クラスの <xref:System.ServiceProcess.ServiceBase.OnStart%2A> メソッドが呼び出されます。 通常、<xref:System.ServiceProcess.ServiceBase.OnStart%2A> メソッドにはサービスが本来行う処理を定義します。 サービスの起動後は、手動で一時停止または停止するまで、アクティブの状態を維持します。  
@@ -74,7 +75,7 @@ ms.lasthandoff: 11/21/2017
     -   Windows Server 2003 および Windows 2000 Server をクリックして**開始**、 をポイント**プログラム**、 をクリックして**管理ツール**、順にクリック**Services**.  
   
         > [!NOTE]
-        >  Windows NT version 4.0 からこのダイアログ ボックスを開くことができます**コントロール パネルの **です。  
+        >  Windows NT version 4.0 からこのダイアログ ボックスを開くことができます**コントロール パネルの** です。  
   
      サービスが一覧表示されます、 **Services**ウィンドウのセクションです。  
   
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  <xref:System.ServiceProcess.ServiceController.Start%2A> メソッドを呼び出してサービスを起動します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: Windows サービスの作成](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
- [方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
+ [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
+ [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

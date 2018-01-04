@@ -14,11 +14,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc42aa130ce5da05739af43d287441d1644d55c3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a8890cc05ec6b0b889dafcb787e216b50a681876
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-architecture-overview"></a>メタデータ アーキテクチャの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、サービス メタデータをエクスポート、公開、取得、およびインポートするためのさまざまなインフラストラクチャが用意されています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、メタデータを使用してサービスのエンドポイントとの対話方法を記述し、Svcutil.exe などのツールでサービスにアクセスするためのクライアント コードを自動的に生成できるようにします。  
@@ -53,7 +54,7 @@ ms.lasthandoff: 12/02/2017
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのメタデータ エンドポイントを公開するには、最初に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> サービス動作のインスタンスをサービスに追加しておく必要があります。 サービスに <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> インスタンスを追加することによって、1 つ以上のメタデータ エンドポイントを公開することでメタデータを公開する機能がサービスに追加されます。 <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> サービス動作を追加すると、MEX プロトコルをサポートするメタデータ エンドポイント、または HTTP/GET 要求に応答するメタデータ エンドポイントを公開できます。  
   
- MEX プロトコルを使用するメタデータ エンドポイントを追加するには、IMetadataExchange をという名前のサービス コントラクトを使用するサービス ホストにサービス エンドポイントを追加します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 定義、<xref:System.ServiceModel.Description.IMetadataExchange>このサービス コントラクト名を持つインターフェイスです。 WS-MetadataExchange のエンドポイント、つまり MEX エンドポイントは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> クラスで静的ファクトリ メソッドが公開する 4 つの既定のバインディングの 1 つを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ツール (Svcutil.exe など) によって使用される既定のバインディングを照合できます。 また、カスタム バインディングを使用して MEX メタデータ エンドポイントを構成することもできます。  
+ MEX プロトコルを使用するメタデータ エンドポイントを追加するには、IMetadataExchange をという名前のサービス コントラクトを使用するサービス ホストにサービス エンドポイントを追加します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 定義、<xref:System.ServiceModel.Description.IMetadataExchange>このサービス コントラクト名を持つインターフェイスです。 WS-MetadataExchange のエンドポイント、つまり MEX エンドポイントは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> クラスで静的ファクトリ メソッドが公開する 4 つの既定のバインディングの 1 つを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ツール (Svcutil.exe など) によって使用される既定のバインディングを照合できます。 また、カスタム バインドを使用して MEX メタデータ エンドポイントを構成することもできます。  
   
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior> は <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> を使用して、サービス内のすべてのサービス エンドポイント用のメタデータをエクスポートします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]サービスからメタデータをエクスポートするを参照してください[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。  
   
@@ -96,12 +97,12 @@ ms.lasthandoff: 12/02/2017
 ## <a name="dynamic-bindings"></a>動的なバインド  
  エンドポイントのバインドが変化するイベントでサービス エンドポイントへのチャネルを作成する、または、同じコントラクトを使用しているがバインドが異なるエンドポイントへのチャネルを作成するために使用するバインドを動的に更新することができます。 <xref:System.ServiceModel.Description.MetadataResolver> 静的クラスを使用して、特定のコントラクトを実装しているサービス エンドポイントのメタデータを、実行時に取得またはインポートできます。 その後、インポートした <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> オブジェクトを使用して、必要なエンドポイントに対するクライアントまたはチャネル ファクトリを作成できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Description>  
  [メタデータ形式](../../../../docs/framework/wcf/feature-details/metadata-formats.md)  
- [エクスポートして、メタデータのインポート](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)  
+ [メタデータのエクスポートとインポート](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)  
  [メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)  
- [メタデータの取得](../../../../docs/framework/wcf/feature-details/retrieving-metadata.md)  
- [メタデータを使用します。](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
+ [メタデータを取得する](../../../../docs/framework/wcf/feature-details/retrieving-metadata.md)  
+ [メタデータを使用する](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [メタデータを使用する場合のセキュリティ上の考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
  [メタデータ システムの拡張](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)

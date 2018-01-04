@@ -12,11 +12,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 92cc99a80c718811d0184a557efd38dd93fcc949
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f65d5d2f9bfee144f59d9ecf11cd26ab15113139
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="what39s-new-in-windows-workflow-foundation-in-net-45"></a>どのような &#39; .NET 4.5 での Windows Workflow Foundation の新機能として s
 [!INCLUDE[wf](../../../includes/wf-md.md)] の [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、新しいアクティビティ、デザイナー機能、ワークフロー開発モデルなどの多くの新機能が導入されました。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入された新しいワークフロー機能の多くは、ホストを変更したワークフロー デザイナーでサポートされています (ただし、すべての機能がサポートされているわけではありません)。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]サポートされている新機能を参照してください[、再ホストされたワークフロー デザイナーで新しい Workflow Foundation 4.5 機能のサポート](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)].NET 3.0 を移行して、最新バージョンを使用する .NET 3.5 ワークフロー アプリケーションを参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。 ここでは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入された新しいワークフロー機能の概要について説明します。  
@@ -79,7 +80,7 @@ ms.lasthandoff: 12/02/2017
   
 5.  型は、シリアル化に <xref:System.Runtime.Serialization.ISerializable> または <xref:System.SerializableAttribute> を使用しません。シリアル化する型では、<xref:System.Runtime.Serialization.DataContractSerializer> をサポートする必要があります。  
   
-6.  <xref:System.Activities.Expressions.LambdaValue%601> を使用する式は <xref:System.Security.Permissions.ReflectionPermissionAttribute.RestrictedMemberAccess%2A> を必要とするため、部分信頼では動作しません。 <xref:System.Activities.Expressions.LambdaValue%601> を使用するワークフローでは、これらの式を、<xref:System.Activities.CodeActivity%601> から派生するアクティビティと置き換える必要があります。 」を参照してください。  
+6.  <xref:System.Activities.Expressions.LambdaValue%601> を使用する式は <xref:System.Security.Permissions.ReflectionPermissionAttribute.RestrictedMemberAccess%2A> を必要とするため、部分信頼では動作しません。 <xref:System.Activities.Expressions.LambdaValue%601> を使用するワークフローでは、これらの式を、<xref:System.Activities.CodeActivity%601> から派生するアクティビティと置き換える必要があります。 である必要があります。  
   
 7.  部分信頼では、<xref:System.Activities.XamlIntegration.TextExpressionCompiler> または Visual Basic でホストされているコンパイラを使用して式をコンパイルすることはできませんが、以前コンパイルされた式を実行することはできます。  
   

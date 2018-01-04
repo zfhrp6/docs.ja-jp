@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9d52b71fe783764dcdbf5acd2ffe0e0ee1e7e56d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3f6282dfbf5e67f91167e5abf0640641000994d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-msmq-binding"></a>ネット MSMQ バインディング
 このセクションには、エンドポイント要素の MSMQ バインディング属性の使用方法を示すサンプルが含まれています。  
@@ -32,13 +33,13 @@ ms.lasthandoff: 12/02/2017
  [配信不能キュー](../../../../docs/framework/wcf/samples/dead-letter-queues.md)  
  配信できなかったメッセージの処理方法を示します。  
   
- [有害メッセージが MSMQ 4.0 での処理](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md)  
+ [MSMQ 4.0 での有害メッセージ処理](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md)  
  MSMQ 4.0 を使用して、サービスで有害メッセージの処理を実行する方法を示します。  
   
- [セッションおよびキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
+ [セッションとキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
  メッセージ キュー (MSMQ) トランスポートを介して、キュー通信で一連の関連メッセージを送受信する方法を示します。  
   
- [双方向の通信](../../../../docs/framework/wcf/samples/two-way-communication.md)  
+ [双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)  
  MSMQ を介して、トランザクション キューによる双方向通信を実行する方法を示します。  
   
  [トランザクション バッチ](../../../../docs/framework/wcf/samples/transacted-batching.md)  

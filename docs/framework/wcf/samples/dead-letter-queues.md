@@ -13,11 +13,12 @@ caps.latest.revision: "35"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e2cd61bf9c1e3d7165b76f55f1808b04c979d4d2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 09a41abc8bc9fc3469ba35d7c7cfbe85d05ca174
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dead-letter-queues"></a>配信不能キュー
 このサンプルでは、配信できなかったメッセージの処理方法を示します。 基にして、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)サンプルです。 このサンプルでは、`netMsmqBinding` バインディングを使用します。 サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。  
@@ -371,4 +372,4 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\DeadLetter`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

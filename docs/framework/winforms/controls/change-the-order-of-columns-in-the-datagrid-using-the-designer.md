@@ -18,11 +18,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dd0e0542e46a17cffef629bc9b916d7b5929e878
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c36bfdd69cb4a3e7827302a7bde5139675a30429
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列の順序を変更する
 Windows フォームのバインドと<xref:System.Windows.Forms.DataGridView>コントロール、データ ソースを自動的に生成された列の表示順序には、データ ソースによって決まります。 この順序が好ましくない場合は、デザイナーを使用して列の順序を変更することができます。 コントロールにバインドされていない列を追加し、その表示順序を変更することもできます。 プログラムで列の順序を変更する方法については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールで列の順序を変更する](../../../../docs/framework/winforms/controls/how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md)です。  
@@ -40,7 +41,7 @@ Windows フォームのバインドと<xref:System.Windows.Forms.DataGridView>�
   
 3.  上矢印または下矢印の右側に、**選択した列**選択した列が目的の位置になるまでを一覧表示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  [方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する](../../../../docs/framework/winforms/controls/add-and-remove-columns-in-the-datagrid-using-the-designer.md)  
  [方法: Windows アプリケーション プロジェクトの作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)  

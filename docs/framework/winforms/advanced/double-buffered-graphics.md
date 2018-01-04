@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 89413e0958366dd39c62bfaedb7e36471123bc22
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e7e4445b0a729eb1f826d17340db02f0c56149b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="double-buffered-graphics"></a>ダブル バッファリングされたグラフィックス
 グラフィックスをプログラミングするときは、ちらつきが一般的な問題になります。 複数の複雑な描画操作を必要とするグラフィックス操作を実行すると、描画されたイメージがちらつきなどによって適切に表示されないことがあります。 このような問題に対処するために、.NET Framework では、ダブル バッファリングを利用できます。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
  使用する方法について、<xref:System.Drawing.BufferedGraphics>クラスを参照してください[バッファリングされたグラフィックス レンダリング手動で](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)です。 グラフィックスの描画の詳細については、「[Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.BufferedGraphics>  
  <xref:System.Drawing.BufferedGraphicsContext>  
  <xref:System.Drawing.BufferedGraphicsManager>  

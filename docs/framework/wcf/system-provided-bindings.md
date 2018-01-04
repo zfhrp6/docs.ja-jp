@@ -14,11 +14,12 @@ caps.latest.revision: "60"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea5cd7f8510836b17a20b523dc2455611cdb2382
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c5f8df31e31c9617fe7bcd92789671d220382a82
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="system-provided-bindings"></a>システム標準のバインディング
 バインディングにより、エンドポイントとの通信で使用する通信メカニズムが指定され、エンドポイントへの接続方法が示されます。 バインディングには次の要素が含まれます。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="system-provided-bindings"></a>システム標準のバインディング  
  次のバインディングは [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に付属します。  
   
-|バインディング|構成要素|説明|  
+|バインド|構成要素|説明|  
 |-------------|---------------------------|-----------------|  
 |<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)|ASP.NET Web サービス (ASMX) ベースのサービスなど、WS-Basic Profile に適合する Web サービスとの通信に適したバインディング。 このバインディングはトランスポートとして HTTP を、既定のメッセージ エンコーディングとして text/XML を使用します。|  
 |<xref:System.ServiceModel.WSHttpBinding>|[\<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|二重のサービス コントラクト以外に適した、セキュリティで保護された相互操作可能なバインディング。|  
@@ -62,30 +63,30 @@ ms.lasthandoff: 12/02/2017
   
  各システム指定のバインディングの機能を次の表に示します。 各バインディングをこの表の列に示します。機能とその説明は 2 番目の表の行に示します。 次の表に、使用されるバインディングの省略形のキーを示します。 バインディングを選択するには、必要な行の機能がすべて含まれる列を調べます。  
   
-|バインディング|相互運用性|セキュリティ (既定)|セッション<br /><br /> (既定)|トランザクション|二重|エンコード (かっこ内は既定値)|ストリーム<br /><br /> (既定)|  
+|バインド|相互運用性|セキュリティ (既定)|セッション<br /><br /> (既定)|トランザクション|二重|エンコード (かっこ内は既定値)|ストリーム<br /><br /> (既定)|  
 |-------------|----------------------|--------------------------|-----------------------------|------------------|------------|--------------------------|-------------------------------|  
-|<xref:System.ServiceModel.BasicHttpBinding>|Basic Profile 1.1|(なし)、トランスポート、メッセージ、混在|(なし)|(なし)|適用なし|テキスト、(MTOM)|はい<br /><br /> (buffered)|  
-|<xref:System.ServiceModel.WSHttpBinding>|WS|トランスポート、(メッセージ)、混在|(なし)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|適用なし|(テキスト)、MTOM|いいえ|  
-|<xref:System.ServiceModel.WSDualHttpBinding>|WS|(メッセージ)、なし|(信頼できるセッション)、セキュリティ保護されたセッション|(なし)、あり|はい|(テキスト)、MTOM|いいえ|  
-|<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|(メッセージ)、混在、なし|(なし)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|いいえ|(テキスト)、MTOM|いいえ|  
+|<xref:System.ServiceModel.BasicHttpBinding>|Basic Profile 1.1|(なし)、トランスポート、メッセージ、混在|(なし)|(なし)|N/A|テキスト、(MTOM)|[はい]<br /><br /> (buffered)|  
+|<xref:System.ServiceModel.WSHttpBinding>|WS|トランスポート、(メッセージ)、混在|(なし)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|N/A|(テキスト)、MTOM|×|  
+|<xref:System.ServiceModel.WSDualHttpBinding>|WS|(メッセージ)、なし|(信頼できるセッション)、セキュリティ保護されたセッション|(なし)、あり|[はい]|(テキスト)、MTOM|×|  
+|<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|(メッセージ)、混在、なし|(なし)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|×|(テキスト)、MTOM|×|  
 |<xref:System.ServiceModel.NetHttpBinding>|.NET|(なし)、トランスポート、メッセージ、TransportWithMessageCredential、TransportCredentialOnly|下記のメモを参照|なし|下記のメモを参照|(バイナリ)、テキスト、MTOM|〇 (バッファリング)|  
 |<xref:System.ServiceModel.NetHttpsBinding>|.NET|(トランスポート)、TransportWithMessageCredential|下記のメモを参照|なし|下記のメモを参照|(バイナリ)、テキスト、MTOM|〇 (バッファリング)|  
-|<xref:System.ServiceModel.NetTcpBinding>|.NET|(トランスポート)、メッセージ、なし、混在|(トランスポート)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|はい|2 項|はい<br /><br /> (buffered)|  
-|<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|(トランスポート)、なし|なし、(トランスポート)|(なし)、あり|はい|2 項|はい<br /><br /> (buffered)|  
-|<xref:System.ServiceModel.NetMsmqBinding>|.NET|メッセージ、(トランスポート)、なし|(なし)、トランスポート|なし、(あり)|いいえ|2 項|いいえ|  
-|<xref:System.ServiceModel.NetPeerTcpBinding>|Peer|(トランスポート)|(なし)|(なし)|はい||いいえ|  
-|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|MSMQ|(トランスポート)|(なし)|なし、(あり)|適用なし|適用なし|いいえ|  
-|<xref:System.ServiceModel.BasicHttpContextBinding>|Basic Profile 1.1|(なし)、トランスポート、メッセージ、混在|(なし)|(なし)|適用なし|テキスト、(MTOM)|はい<br /><br /> (buffered)|  
-|<xref:System.ServiceModel.NetTcpContextBinding>|.NET|(トランスポート)、メッセージ、なし、混在|(トランスポート)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|はい|2 項|はい<br /><br /> (buffered)|  
-|<xref:System.ServiceModel.WSHttpContextBinding>|WS|トランスポート、(メッセージ)、混在|(なし)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|適用なし|テキスト、(MTOM)|いいえ|  
-|<xref:System.ServiceModel.UdpBinding>|.NET**注:**相互運用性は、このバインディングを実装する標準の over UDP の SOAP 仕様を実装することによって実現できます。|(なし)|(なし)|(なし)|適用なし|(テキスト)|いいえ|  
+|<xref:System.ServiceModel.NetTcpBinding>|.NET|(トランスポート)、メッセージ、なし、混在|(トランスポート)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|[はい]|2 項|[はい]<br /><br /> (buffered)|  
+|<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|(トランスポート)、なし|なし、(トランスポート)|(なし)、あり|[はい]|2 項|[はい]<br /><br /> (buffered)|  
+|<xref:System.ServiceModel.NetMsmqBinding>|.NET|メッセージ、(トランスポート)、なし|(なし)、トランスポート|なし、(あり)|×|2 項|×|  
+|<xref:System.ServiceModel.NetPeerTcpBinding>|Peer|(トランスポート)|(なし)|(なし)|[はい]||×|  
+|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|MSMQ|(トランスポート)|(なし)|なし、(あり)|N/A|N/A|×|  
+|<xref:System.ServiceModel.BasicHttpContextBinding>|Basic Profile 1.1|(なし)、トランスポート、メッセージ、混在|(なし)|(なし)|N/A|テキスト、(MTOM)|[はい]<br /><br /> (buffered)|  
+|<xref:System.ServiceModel.NetTcpContextBinding>|.NET|(トランスポート)、メッセージ、なし、混在|(トランスポート)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|[はい]|2 項|[はい]<br /><br /> (buffered)|  
+|<xref:System.ServiceModel.WSHttpContextBinding>|WS|トランスポート、(メッセージ)、混在|(なし)、信頼できるセッション、セキュリティ保護されたセッション|(なし)、あり|N/A|テキスト、(MTOM)|×|  
+|<xref:System.ServiceModel.UdpBinding>|.NET**注:**相互運用性は、このバインディングを実装する標準の over UDP の SOAP 仕様を実装することによって実現できます。|(なし)|(なし)|(なし)|N/A|(テキスト)|×|  
   
 > [!IMPORTANT]
 >  <xref:System.ServiceModel.NetHttpBinding> は、HTTP や WebSocket のサービスを使用するために設計されたバインドで、既定ではバイナリ エンコードを使用します。 <xref:System.ServiceModel.NetHttpBinding> は、要求-応答コントラクトと双方向コントラクトのどちらで使用されているかを検出し、一致するように動作を変更します。要求-応答には HTTP、双方向には WebSocket を使用します。 使用してこの動作をオーバーライドすることができます、 <!--zz <xref:System.ServiceModel.NetHttpBinding.WebSocketTransportUsage%2A>--> `System.ServiceModel.NetHttpBinding.WebSocketTransportUsage`バインディング: - 許可されているこの既定値は、前述のように動作します。NotAllowed - この Websocket が使用されないようにします。 この設定で二重のコントラクトを使用しようとして、例外が発生します。必要な - Websocket が要求/応答コントラクトに対しても使用されるようにします。 NetHttpBinding では、HTTP モードと WebSocket モードの両方で信頼できるセッションをサポートしています。 WebSocket モードでは、セッションがトランスポートによって提供されます。  
   
  次の表では、前の表に示された機能について説明します。  
   
-|特性|説明|  
+|機能|説明|  
 |-------------|-----------------|  
 |相互運用性の種類|バインディングによる相互操作を可能にするプロトコルまたはテクノロジに名前を付けます。|  
 |セキュリティ|チャネルをセキュリティで保護する方法を指定します。<br /><br /> -なし:、SOAP メッセージ セキュリティ保護されていないと、クライアントが認証されていません。<br />トランスポート: セキュリティ要件はトランスポート層で満たされます。<br />-メッセージ: セキュリティ要件はメッセージ層で満たされます。<br />混合: 要求が実行されます。 メッセージです。整合性と機密性の要件はトランスポート層で満たされます。|  
@@ -95,7 +96,7 @@ ms.lasthandoff: 12/02/2017
 |エンコード|メッセージのネットワーク上での形式を指定します。 次の値を使用できます。<br /><br /> テキスト。 たとえば utf-8 です。<br />-バイナリ<br />メッセージ転送の最適化メカニズム (MTOM): SOAP エンベロープのコンテキスト内でのバイナリの XML 要素を効率的にエンコードするためのメソッドです。|  
 |ストリーム|受信メッセージおよび送信メッセージに対してストリーミングをサポートするかどうかを指定します。 バインディングで `TransferMode` プロパティを使用して値を設定します。 次の値を使用できます。<br /><br /> -   <xref:System.ServiceModel.TransferMode.Buffered>: 要求メッセージと応答メッセージを共にバッファリングします。<br />-   <xref:System.ServiceModel.TransferMode.Streamed>: 要求メッセージと応答メッセージを共にストリーミングします。<br />-   <xref:System.ServiceModel.TransferMode.StreamedRequest>: 要求メッセージをストリーミングし、応答メッセージをバッファーします。<br />-   <xref:System.ServiceModel.TransferMode.StreamedResponse>: 要求メッセージをバッファーし、応答メッセージをストリーミングします。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7306c58f04483d0e4230b39b05cbebc3de857736
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 55e60aaba0ebba57668f91d692ce774bd0ef0115
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Windows Presentation Foundation クライアントでのデータ バインディング
 このサンプルでは、Windows Presentation Foundation (WPF) クライアントでのデータ バインディングの使用方法を示します。 このサンプルでは、アルバムの配列をランダムに生成してクライアントに返す [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを使用します。 各アルバムには、名前、価格、およびアルバム トラックの一覧が含まれます。 アルバム トラックには、名前と継続時間が含まれます。 サービスによって返される情報は、[!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] クライアントが提供するユーザー インターフェイス (UI) に自動的にバインドされます。  
@@ -92,4 +93,4 @@ void client_GetAlbumListCompleted(object sender, GetAlbumListCompletedEventArgs 
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WPFDataBinding`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7ce4e6a62097fc673268f38a6db660b3bc9cba7b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 3dbf95e54cbb2b6a729265ab39e99332d1cc1871
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dialog-box-controls-and-components-windows-forms"></a>ダイアログ ボックス コントロールおよびコンポーネント (Windows フォーム)
 次の Windows フォーム コントロールおよびコンポーネントは、標準のダイアログ ボックスを表示します。 各ダイアログ ボックスで使用できる機能に関する詳細については、リンクに従ってください。  

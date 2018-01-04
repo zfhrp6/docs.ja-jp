@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 515f91baf48f68ba0c1cb32e00152bf025fe7323
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4b6e24c72002c7eef0e03af18f43992cc93b1d5c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="discovery-proxy-sample"></a>探索プロキシのサンプル
 このサンプルでは、既存のサービスに関する情報を格納するために探索プロキシの実装を作成する方法、およびクライアントからそのプロキシに情報のクエリを行う方法を示します。 このサンプルは、3 つのプロジェクトで構成されます。  
@@ -65,4 +66,4 @@ ms.lasthandoff: 12/02/2017
   
 5.  最後に、クライアント、サービス、プロキシの順に終了します。 プロキシは、サービスのオフライン アナウンスを受け取るまでは実行されている必要があります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72af16b7dcb7709dd132a3748a454eda57acc168
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ec53957a61806239fdd41761de6e172681b7497b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="limitations-of-the-windows-forms-timer-component39s-interval-property"></a>制限事項の Windows フォームの Timer コンポーネント &#39; s 間隔プロパティ
 Windows フォーム<xref:System.Windows.Forms.Timer>コンポーネントには、<xref:System.Windows.Forms.Timer.Interval%2A>と次の 1 つのタイマー イベント間で渡されるミリ秒数を指定するプロパティです。 タイマーは引き続き受信コンポーネントが無効にしない限り、<xref:System.Windows.Forms.Timer.Tick>ほぼ一定時間の間隔でイベント。  
@@ -38,7 +39,7 @@ Windows フォーム<xref:System.Windows.Forms.Timer>コンポーネントには
   
 -   有効桁数、<xref:System.Windows.Forms.Timer.Interval%2A>プロパティは、(ミリ秒単位)。 一部のコンピューターでは、ミリ秒単位より高い解像度が高解像度カウンターを提供します。 このようなカウンターの可用性は、コンピューターのプロセッサ ハードウェアに依存します。 詳細については、172338、「どのように使用 QueryPerformanceCounter に時間コードへ、」http://support.microsoft.com にで、Microsoft サポート技術情報の記事を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Timer>  
  [Timer コンポーネント](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
  [Timer コンポーネントの概要](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)

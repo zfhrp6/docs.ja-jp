@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eaa6286731d196dad387e1648644ca3e8103da03
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 163af74d27adcb7ec720a54bfd969bd704f7b1e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-rotate-reflect-and-skew-images"></a>方法 : イメージを回転、反転、および傾斜させる
 回転、反転、および元のイメージの左、右、上および左下コーナーの終点を指定することによって、イメージを傾けることができます。 次の 3 つのターゲット ポイントでは、元の四角形の画像を指定した平行四辺形にマップされるアフィン変換を決定します。  
@@ -58,5 +59,5 @@ ms.lasthandoff: 10/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。 必ず置き換えて`Stripes.bmp`をシステム上で有効であるイメージへのパス。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

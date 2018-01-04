@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 18e89d0a236d3b370c521b73dfb640a09137a5dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 73b397d750d3883bf7613756889726a52e1233cd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする
 コントロールがフォームに追加して、アプリケーションのユーザー インターフェイスを決定したら、実行時にユーザーは変更を アプリケーションに関連するデータを保存できるように、データ ソースにコントロールをバインドできます。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/21/2017
  手順を実行するには、データベースから派生したデータ ソースにバインドすると見なされます。 その他のデータのストアからデータ ソースを作成する方法の詳細については、次を参照してください。[新しいデータ ソースを追加](/visualstudio/data-tools/add-new-data-sources)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-bind-a-control-at-design-time"></a>デザイン時にコントロールをバインドするには  
   
@@ -69,7 +70,7 @@ ms.lasthandoff: 11/21/2017
   
      **データソース**UI 型エディターが閉じ、データ セット<xref:System.Windows.Forms.BindingSource>およびテーブル アダプターのデータ接続が、フォームに追加されたことを特定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.BindingNavigator>  
  [新しいデータ ソースの追加](/visualstudio/data-tools/add-new-data-sources)  

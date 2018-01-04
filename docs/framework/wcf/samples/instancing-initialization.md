@@ -13,11 +13,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5345816295b9de54426aef3da697b99b4f0ce10e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0bc034028f8dacbac638c27e6fb8f48603cdcf2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="instancing-initialization"></a>初期化のインスタンス化
 このサンプルを拡張、[プーリング](../../../../docs/framework/wcf/samples/pooling.md)インターフェイスを定義することでサンプル`IObjectControl`でのアクティブ化と非アクティブ化するオブジェクトの初期化をカスタマイズします。 クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。  
@@ -275,4 +276,4 @@ else if (pool.Count < minPoolSize)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Initialization`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

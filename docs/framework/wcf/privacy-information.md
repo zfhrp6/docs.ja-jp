@@ -17,11 +17,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 93b03a2fb49774c425882183bf7fcda8b6e5c3de
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f66f773551f45f9e4c5978ef09bbe4061a3326bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation のプライバシー情報
 マイクロソフトは、エンド ユーザーのプライバシー保護に力を入れています。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] (バージョン 3.0) を使用してアプリケーションを作成した場合、アプリケーションがエンド ユーザーのプライバシーに影響する可能性があります。 たとえば、アプリケーションが明示的にユーザーの連絡先情報を収集することがあります。つまり、アプリケーションがインターネットを経由して Web サイトに情報を要求したり、情報を送信したりすることがあります。 マイクロソフトの技術をアプリケーションに組み込んでいる場合、その技術にプライバシーに影響を与える可能性がある独自の動作が存在することがあります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、アプリケーションの作成者またはエンド ユーザーが選択しない限り、アプリケーションからマイクロソフトに情報を送信することはありません。  
@@ -411,6 +412,6 @@ ms.lasthandoff: 12/02/2017
   
  Web サービス記述言語 (WSDL) には、ポートの定義が入ります。 各ポートには、エンドポイント アドレス、およびアプリケーションが使用するサービスを表すバインディングがあります。 WSDL の公開は、構成を使用して無効にできます。 コンピューターに保持される情報はありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows Communication Foundation](http://msdn.microsoft.com/en-us/fd327ade-0260-4c40-adbe-b74645ba3277)  
  [セキュリティ](../../../docs/framework/wcf/feature-details/security.md)

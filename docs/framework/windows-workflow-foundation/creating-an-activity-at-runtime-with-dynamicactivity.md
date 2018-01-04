@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d40fe3601cb8ad7c4f77cf50825da1deace5644e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ebbd6e77c2c47754054a81f4b07d3d845cdcac00
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-an-activity-at-runtime-with-dynamicactivity"></a>実行時における DynamicActivity を使用したアクティビティの作成
 <xref:System.Activities.DynamicActivity> は、パブリック コンストラクターを持つ、具体的なシール クラスです。 <xref:System.Activities.DynamicActivity> は、実行時にアクティビティ DOM を使用してアクティビティの機能を構築するために使用できます。  
@@ -105,6 +106,6 @@ ms.lasthandoff: 12/02/2017
   
 8.  Workflow1.xaml ファイルを右クリックし、**ソリューション エクスプ ローラー**選択**コードの表示**です。 アクティビティ クラスが `x:Class` を使用して作成され、プロパティが `x:Property` を使用して作成されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)  
  [DynamicActivity の作成](../../../docs/framework/windows-workflow-foundation/samples/dynamicactivity-creation.md)

@@ -12,11 +12,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a809c1d0eeb8f45d55f4e1f436b70ceb01b4a2f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5ae60b8267e60d880ccdc156566b489163d2e686
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-custom-expression-editor"></a>カスタム式エディターの使用
 カスタム式エディターを実装して、式の編集を多機能化したり単純化したりすることができます。 たとえば、次のような場合にカスタム式エディターを使用できます。  
@@ -287,7 +288,7 @@ namespace WpfApplication1
 ### <a name="notes"></a>メモ  
  使用している場合、 **ExpressionTextBox**コントロール、カスタム アクティビティ デザイナーで必要はありません作成し、破棄を使用して式エディターに、<xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A>と<xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A>のメソッド、<xref:System.Activities.Presentation.View.IExpressionEditorService>インターフェイスです。 <xref:System.Activities.Presentation.View.ExpressionTextBox> クラスによってこの処理が行われます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Activities.Presentation.View.IExpressionEditorService>  
  <xref:System.Activities.Presentation.View.IExpressionEditorInstance>  
  [カスタム アクティビティ デザイナーでの ExpressionTextBox の使用](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

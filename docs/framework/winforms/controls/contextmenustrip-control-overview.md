@@ -18,11 +18,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c04e8095d84468ee7574b31f0a30fb6f2d2b03a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 11d5de760b8a03d7bc35adabb631048a70e20264
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contextmenustrip-control-overview"></a>ContextMenuStrip コントロールの概要
 > [!NOTE]
@@ -40,7 +41,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Forms.ToolStripDropDown>|ユーザーが、ユーザーがクリックしたときに表示される一覧から 1 つの項目を選択できるようにするコントロールを表します、<xref:System.Windows.Forms.ToolStripDropDownButton>または高レベルのメニュー項目。|  
 |<xref:System.Windows.Forms.ToolStripDropDownItem>|派生したコントロールの基本的な機能を提供<xref:System.Windows.Forms.ToolStripItem>クリックされたときにドロップダウン項目を表示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ContextMenuStrip>  

@@ -12,18 +12,19 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 61a5ecdf05fed6c171a84c4f30f50e9a468a414d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bbbed0209eec95ec452385b6c78b1beb2ddfcd75
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corporate-purchase-process"></a>企業の購買プロセス
 このサンプルは、Request for Proposals (RFP: 提案依頼書) に基づくごく基本的な購買プロセスを作成する方法を示しています。この購買プロセスでは最良の提案が自動的に選択されます。 このサンプルでは、<xref:System.Activities.Statements.Parallel>、<xref:System.Activities.Statements.ParallelForEach%601>、および <xref:System.Activities.Statements.ForEach%601> と、プロセスを表すワークフローを作成するカスタム アクティビティが組み合わされています。  
   
  このサンプルには、異なる参加者として (元の要求者や特定のベンダーとして) プロセスとやり取りできる [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クライアント アプリケーションが含まれています。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 -   [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]。  
   

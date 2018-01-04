@@ -12,11 +12,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26c68c24ad525d077d26f0b7bd917a936372e0a5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a25e658d512cf0575a4e3902a9a951099675e29a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exposing-data-with-cachemetadata"></a>CacheMetadata を使用したデータの公開
 アクティビティを実行する前に、ワークフロー ランタイムは実行を維持するために必要なアクティビティに関するすべての情報を取得します。 ワークフロー ランタイムは <xref:System.Activities.Activity.CacheMetadata%2A> メソッドの実行時にこの情報を取得します。 このメソッドの既定の実装は、アクティビティによって公開されたすべてのパブリック引数、変数、子アクティビティを実行時にランタイムに提供します。アクティビティがランタイムにその他の情報 (プライベート メンバーやアクティビティによってスケジュールされるアクティビティなど) を提供する必要がある場合、このメソッドをオーバーライドして情報を提供できます。  

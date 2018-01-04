@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c47ff269cb1c367abee0be197fdc80485fb37b97
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 64661bbdcb267e2f2ce33b8a8db2ab2aac9a86f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-cardinal-splines"></a>方法 : カーディナル スプラインを描画する
 カーディナル スプラインとは、指定された一連のポイントをスムーズに通過する曲線です。 カーディナル スプラインを描画するには、作成、<xref:System.Drawing.Graphics>オブジェクトおよびへのポインターの配列のアドレスを渡す、<xref:System.Drawing.Graphics.DrawCurve%2A>メソッドです。  
@@ -59,6 +60,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用する用に設計され、必要な<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
  [曲線の作成と描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)

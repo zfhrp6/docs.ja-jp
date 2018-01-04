@@ -18,11 +18,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a154a3f639102e3f3e2acd62626379e12bbd1344
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 39645a02cd66d37d61df72028ab129677edb757e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="checkbox-control-overview-windows-forms"></a>CheckBox コントロールの概要 (Windows フォーム)
 Windows フォーム <xref:System.Windows.Forms.CheckBox> コントロールは、特定の条件がオンかオフかを示します。 一般的に、はい/いいえ、または True/False の選択肢をユーザーに提示するために使用されます。 ユーザーが 1 つ以上選択可能な複数の選択肢を表示するために、チェック ボックス コントロールをグループの中で使用できます。  
@@ -33,7 +34,7 @@ Windows フォーム <xref:System.Windows.Forms.CheckBox> コントロールは�
   
  <xref:System.Windows.Forms.CheckBox>コントロールは、2 つの重要なプロパティを持つ<xref:System.Windows.Forms.CheckBox.Checked%2A>と<xref:System.Windows.Forms.CheckBox.CheckState%2A>です。 <xref:System.Windows.Forms.CheckBox.Checked%2A>プロパティには、どちらかを返します`true`または`false`です。 <xref:System.Windows.Forms.CheckBox.CheckState%2A>プロパティには、どちらかを返します<xref:System.Windows.Forms.CheckState.Checked>または<xref:System.Windows.Forms.CheckState.Unchecked>; またはの場合、<xref:System.Windows.Forms.CheckBox.ThreeState%2A>プロパティに設定されている`true`、<xref:System.Windows.Forms.CheckBox.CheckState%2A>を返すことも<xref:System.Windows.Forms.CheckState.Indeterminate>します。 不確定な状態で淡色表示オプションは使用を示すために、ボックスが表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.CheckBox>  
  [方法: Windows フォームの CheckBox コントロールでオプションを設定する](../../../../docs/framework/winforms/controls/how-to-set-options-with-windows-forms-checkbox-controls.md)  
  [方法: Windows フォームの CheckBox のクリックに応答する](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-checkbox-clicks.md)  

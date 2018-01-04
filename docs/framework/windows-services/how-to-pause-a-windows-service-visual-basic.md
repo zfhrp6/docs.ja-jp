@@ -18,11 +18,12 @@ caps.latest.revision: "17"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: d44358d3f76f50a06ede5e7d720f4f48d80893de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 90f2b01fae057a05cc71f77cecea3fdf85c832b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-pause-a-windows-service-visual-basic"></a>方法: Windows サービスを一時中断する (Visual Basic)
 この例では、<xref:System.ServiceProcess.ServiceController>コンポーネントがローカル コンピューター上の IIS 管理サービスを一時停止します。  
@@ -54,8 +55,8 @@ ms.lasthandoff: 11/21/2017
   
  使用してサービスの情報へのアクセスを制限することがあります、<xref:System.Security.Permissions.PermissionState>アクセス許可を設定、<xref:System.Security.Permissions.SecurityPermission>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceProcess.ServiceController>  
  <xref:System.ServiceProcess.ServiceControllerStatus>  
  <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>  
- [方法: Windows サービス (Visual Basic) を続行](../../../docs/framework/windows-services/how-to-continue-a-windows-service-visual-basic.md)
+ [方法 : Windows サービスを続行する (Visual Basic)](../../../docs/framework/windows-services/how-to-continue-a-windows-service-visual-basic.md)

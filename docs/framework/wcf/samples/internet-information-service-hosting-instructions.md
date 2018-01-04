@@ -13,11 +13,12 @@ caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7dd9d70a3b93faf721b5ac3bbd5f1114bf5c1461
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: de7dc897aa435d62c04c2e6a3ca82adf3a637a2a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="internet-information-service-hosting-instructions"></a>インターネット インフォメーション サービスのホスティング手順
 インターネット インフォメーション サービス (IIS) によってホストされているこのサンプルを実行するには、IIS が適切にインストールされて実行されていることを確認する必要があります。  
@@ -78,7 +79,7 @@ ms.lasthandoff: 12/02/2017
   
 15. 下にある、**インターネット インフォメーション サービス**ディレクトリ、ラベル付き項目を展開**Microsoft .NET Framework 3.5.1**、し、 **Windows Communication Foundation Http Activation**.  
   
-16. **[OK]** をクリックします。  
+16. **[OK]**をクリックします。  
   
 ### <a name="to-install-iis-version-70-on-windows-server-2008"></a>Windows Server 2008 に IIS バージョン 7.0 をインストールするには  
   

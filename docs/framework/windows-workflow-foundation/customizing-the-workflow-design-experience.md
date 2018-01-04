@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 60e8d01ad32e10f06191f7e0b38dcb648780ba29
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5ca6e23febf14b2db28bad950d2cd012fdce30fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="customizing-the-workflow-design-experience"></a>ワークフロー デザイン操作のカスタマイズ
 [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] では、カスタム アクティビティを設計するシナリオや [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]を再ホストするシナリオが大幅に簡略化されました。 開発も配置も簡単になり、柔軟性も向上しました。 主要なインフラストラクチャ上の変更として、新しいアクティビティ デザイナー プログラミング モデルが [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] の上に構築されています。 そのため、アクティビティ デザイナーを宣言によって定義することや、他のアプリケーションに[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]を再ホストすることが比較的簡単にできます。 再ホストするときに、カスタム式エディターを開発して、IntelliSense や簡略化された式ドメインをサポートできます。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] との統合は、ワークフロー サービスを使用することで、よりシームレスになっています。 カスタム アクティビティ デザイナーおよびモデル アイテム ツリーを使用して、再ホストされたワークフロー デザイナーのデザイン時の操作を拡張できます。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="reference"></a>参照  
  <xref:System.Activities.Presentation.ActivityDesigner>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows Workflow Foundation の拡張](../../../docs/framework/windows-workflow-foundation/extend.md)  
  [デザイナー](../../../docs/framework/windows-workflow-foundation/samples/designer.md)  
  [カスタム アクティビティ デザイナー](../../../docs/framework/windows-workflow-foundation/samples/custom-activity-designers.md)  

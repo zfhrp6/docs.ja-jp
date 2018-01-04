@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 35f89bb5d87ef58c5ecda7be4cb9fb41da08e8a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0a32e6c1901f84c276c071402dac641d45566717
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-shear-colors"></a>方法 : 色を傾斜する
 傾斜だけ増加または減少色要素の色の別のコンポーネントに比例した量。 たとえば、赤の要素は青の要素の値の半分ずつ増加する、変換があるとします。 このような変換は、下にある色 (0.2、0.5, 1) になります (0.7, 0.5, 1)。 新しい赤の要素が 0.2 + (1/2)(1) 0.7 を = です。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。 置き換える`ColorBars.bmp`イメージの名前とパスがシステム上で有効にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Imaging.ColorMatrix>  
  <xref:System.Drawing.Imaging.ImageAttributes>  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  

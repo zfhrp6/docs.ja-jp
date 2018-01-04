@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a7cf84c30c5784de813f947d26b18816906ec6a7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 29dab29e6f2e8317d0403ab384fceb2b44b972c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="operationcontextscope"></a>OperationContextScope
 OperationContextScope サンプルでは、ヘッダーを使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 呼び出しに追加情報を送信する方法を示します。 このサンプルでは、サーバーとクライアントは両方ともコンソール アプリケーションです。  
@@ -140,4 +141,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\OperationContextScope`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

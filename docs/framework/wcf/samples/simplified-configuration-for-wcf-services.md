@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c6f0d73ba01ec51fe2fcd00f33bbd3183e382c74
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 02611dc44b98c1b8b5ef5ae74559f9f370483792
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>WCF サービスの簡略化された構成
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して、一般的なサービスおよびクライアントを実装して構成する方法を示します。 このサンプルは、他のすべての基本的な技術サンプルの基礎になります。  
@@ -88,6 +89,6 @@ ms.lasthandoff: 12/02/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigSimplificationIn40`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [AppFabric 管理のサンプル](http://go.microsoft.com/fwlink/?LinkId=193960)  
  [簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)

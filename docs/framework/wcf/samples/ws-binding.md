@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ef396a909b26110267b03f42728589640c7e2242
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f733aaf62d37f9c8ca853a0958e627a4f354121d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ws-binding"></a>WS バインディング
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] での Windows サービスのバインディングを示すサンプルが含まれています。  

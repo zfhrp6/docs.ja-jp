@@ -16,11 +16,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ffafaff2355e89e2127742f2fba5c005492b4580
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 827e93ad779dfeb2dd398a2fc031fcb99a77a39c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="change-notification-in-windows-forms-data-binding"></a>Windows フォーム データ バインディングの変更通知
 Windows フォーム データ バインディングの最も重要な概念の 1 つは*変更通知*です。 データ ソースとバインドされたコントロール常に最新のデータを入手するには、データ バインディングの変更通知を追加する必要があります。 具体的には、バインドされたコントロールが、データ ソースに加えられた変更の通知を受け取ることを保証して、データ ソースは、コントロールのバインド プロパティに対して行われた変更の通知です。  
@@ -42,7 +43,7 @@ Windows フォーム データ バインディングの最も重要な概念の 
 ## <a name="change-notification-for-custom-controls"></a>カスタム コントロールの変更通知  
  最後に、制御側の必要がありますを公開する、 *PropertyName*データにバインドするように設計の各プロパティの変更イベント。 コントロール プロパティへの変更は、バインド データ ソースに反映し、されます。 詳細については、次を参照してください[する方法: PropertyNameChanged パターンを適用。](../../../docs/framework/winforms/how-to-apply-the-propertynamechanged-pattern.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.ComponentModel.INotifyPropertyChanged>  
  <xref:System.ComponentModel.BindingList%601>  

@@ -23,17 +23,18 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bda4cb3641ff890646614af35d38ff13621cc16b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f042816b912a0de643dd1d0f66ddba6d5eff7df2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>方法 : Windows フォーム上のオブジェクトをレイヤー化する
 複雑なユーザー インターフェイスを作成またはマルチ ドキュメント インターフェイス (MDI) フォームを操作するときに多くの場合のコントロールと複雑なユーザー インターフェイス (UI) を作成する子フォームをレイヤーにします。 移動し、コントロールと windows グループのコンテキスト内での追跡を z オーダーを操作できます。 *Z オーダー* (深度) のフォームの z 軸に沿ってフォーム上のコントロールのビジュアルの重ね順がします。 Z オーダーの上部にあるウィンドウには、他のすべてのウィンドウが重複しています。 その他のすべての windows では、z オーダーの下部にあるウィンドウと重複します。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-layer-controls-at-design-time"></a>デザイン時にコントロールをレイヤーに  
   
@@ -62,7 +63,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  Windows フォームをサポートしている*コントロール コンテインメント*です。 コントロール コンテインメントの数などのコンテナー コントロール内のコントロールの数に配置する<xref:System.Windows.Forms.RadioButton>内で制御、<xref:System.Windows.Forms.GroupBox>コントロール。 コントロールを格納しているコントロール内で、階層化することができます。 グループ化するボックスを移動すると、その内部に格納されているためにも、コントロールが移動します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
  [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
  [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  

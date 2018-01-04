@@ -12,11 +12,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1e4bb05f1b5f14554ff5183b42bbc8884cb114f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 669e1bd1daeb8f2569a851e21d10f250d1bc2204
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>WorkflowInvoker と WorkflowApplication の使用
 [!INCLUDE[wf](../../../includes/wf-md.md)] は、ワーク フローのホスティングのいくつかのメソッドを提供します。 <xref:System.Activities.WorkflowInvoker> は、メソッド呼び出しのようにワークフローを呼び出す簡単な方法を提供し、永続化を使用しないワークフローのみに使用できます。 <xref:System.Activities.WorkflowApplication> は、ライフサイクル イベントの通知、実行制御、ブックマークの再開、および永続化を含むワークフローを実行するための豊富なモデルを提供します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> は、メッセージング アクティビティをサポートし、主にワーク フロー サービスと一緒に使用されます。 このトピックでは、<xref:System.Activities.WorkflowInvoker> と <xref:System.Activities.WorkflowApplication> を使用したワークフロー ホスティングついて説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]ワークフローのホスティング<xref:System.ServiceModel.Activities.WorkflowServiceHost>を参照してください[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)と[ワークフロー サービスの概要をホストしている](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)です。  
@@ -106,5 +107,5 @@ ms.lasthandoff: 12/02/2017
  
  [!code-csharp[CFX_WorkflowApplicationExample#2](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#2)]  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  <xref:System.Activities.WorkflowInvoker> はワークフローを呼び出す簡単な方法を提供します。また、ワークフローの開始時にデータを渡し、完了したワークフローからデータを抽出する方法を提供しますが、<xref:System.Activities.WorkflowApplication> を使用できるような複雑なシナリオには使用できません。

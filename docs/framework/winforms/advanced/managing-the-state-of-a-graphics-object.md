@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 438243d16d8031d99e27993cadb44fd58bbec0b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7a9514d845580bfe921fefa5f4a249c5a905d03d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-the-state-of-a-graphics-object"></a>Graphics オブジェクトの状態の管理
 <xref:System.Drawing.Graphics>クラスは、の中核は[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]します。 取得するものを描画するには<xref:System.Drawing.Graphics>オブジェクト、そのプロパティを設定し、そのメソッドを呼び出す<xref:System.Drawing.Graphics.DrawLine%2A>、 <xref:System.Drawing.Graphics.DrawImage%2A>、<xref:System.Drawing.Graphics.DrawString%2A>など)。  
@@ -160,6 +161,6 @@ graphics.DrawLine(pen, 40, 20, 190, 150);
   
  ![クリップ領域を制限](../../../../docs/framework/winforms/advanced/media/graphicsascon2.png "graphicsascon2")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [入れ子になっているグラフィックス コンテナーの使用](../../../../docs/framework/winforms/advanced/using-nested-graphics-containers.md)

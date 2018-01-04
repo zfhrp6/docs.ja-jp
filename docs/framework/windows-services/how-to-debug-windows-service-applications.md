@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: c49d05a9ca09a12044c0846db381368166e105bd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 86d90e4129f089a77e51e6e58233a1087fe5d0f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-debug-windows-service-applications"></a>方法 : Windows サービス アプリケーションをデバッグする
 サービスは、Visual Studio 内からではなく、サービス コントロール マネージャーのコンテキスト内から実行する必要があります。 そのため、サービスのデバッグは、その他の種類の Visual Studio アプリケーションをデバッグするように単純ではありません。 サービスのデバッグを行うには、サービスを起動してから、サービスを実行しているプロセスにデバッガーをアタッチします。 これにより、Visual Studio のすべての標準デバッグ機能を使用して、アプリケーションをデバッグできるようになります。  
@@ -121,8 +122,8 @@ ms.lasthandoff: 11/21/2017
   
  システムの起動時にのみ発生する問題をデバッグするときなどのいくつかのケースでは、Windows デバッガーを使用する必要があります。 インストール[Debugging Tools for Windows](http://msdn.microsoft.com/windows/hardware/hh852365)して[Windows サービスをデバッグする方法について](http://support.microsoft.com/kb/824344)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: インストールし、サービスのアンインストール](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [方法: サービスを開始します。](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [方法 : サービスをインストールおよびアンインストールする](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [方法 : サービスを開始する](../../../docs/framework/windows-services/how-to-start-services.md)  
  [サービスのデバッグ](http://msdn.microsoft.com/library/windows/desktop/ms682546.aspx)

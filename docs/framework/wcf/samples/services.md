@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d68f1b6ecfb55a917dde97b395b4455930565409
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: edfd0670d951a07526454bc380cee91c66e4e7a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="services"></a>サービス
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを示すサンプルが含まれています。  
@@ -26,13 +27,13 @@ ms.lasthandoff: 12/02/2017
  [ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストする方法を示します。  
   
- [サービスの相互運用性](../../../../docs/framework/wcf/samples/service-interoperability.md)  
+ [サービス相互運用性](../../../../docs/framework/wcf/samples/service-interoperability.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と他のサービス技術間の対話を示します。  
   
- [動作](../../../../docs/framework/wcf/samples/behaviors.md)  
+ [ビヘイビアー](../../../../docs/framework/wcf/samples/behaviors.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの動作を示します。  
   
- [サービスのセキュリティ](../../../../docs/framework/wcf/samples/service-security.md)  
+ [サービス セキュリティ](../../../../docs/framework/wcf/samples/service-security.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス セキュリティを示します。  
   
  [WCF サービスの簡略化された構成](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)  
@@ -41,7 +42,7 @@ ms.lasthandoff: 12/02/2017
  [標準エンドポイントの使用](../../../../docs/framework/wcf/samples/usage-of-standard-endpoints.md)  
  サービスの構成ファイルでの標準エンドポイントの使用方法を示します。  
   
- [階層構造の構成モデル](../../../../docs/framework/wcf/samples/hierarchical-configuration-model.md)  
+ [階層的な構成モデル](../../../../docs/framework/wcf/samples/hierarchical-configuration-model.md)  
  サービスの構成ファイルの階層を実装する方法を示します。  
   
  [拡張保護ポリシー](../../../../docs/framework/wcf/samples/extended-protection-policy.md)  
@@ -53,7 +54,7 @@ ms.lasthandoff: 12/02/2017
  [アドレス指定](../../../../docs/framework/wcf/samples/addressing.md)  
  エンドポイント アドレスのさまざまな特性と機能を示します。  
   
- [命令型](../../../../docs/framework/wcf/samples/imperative.md)  
+ [強制](../../../../docs/framework/wcf/samples/imperative.md)  
  定義する方法を示します、<<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> を定義する代わりに、コードを使用してサービスを`wsHttpBinding`構成にバインドします。  
   
  [複数のコントラクト](../../../../docs/framework/wcf/samples/multiple-contracts.md)  
@@ -62,7 +63,7 @@ ms.lasthandoff: 12/02/2017
  [複数のエンドポイント](../../../../docs/framework/wcf/samples/multiple-endpoints.md)  
  複数のエンドポイントを 1 つのサービスに構成する方法と、クライアントから各エンドポイントと通信を行う方法を示します。  
   
- [単一 ListenUri で複数のエンドポイント](../../../../docs/framework/wcf/samples/multiple-endpoints-at-a-single-listenuri.md)  
+ [単一 ListenUri に対する複数のエンドポイント](../../../../docs/framework/wcf/samples/multiple-endpoints-at-a-single-listenuri.md)  
  単一 `ListenUri` で複数のエンドポイントをホストするサービスを示します。  
   
  [OperationContextScope](../../../../docs/framework/wcf/samples/operationcontextscope.md)  

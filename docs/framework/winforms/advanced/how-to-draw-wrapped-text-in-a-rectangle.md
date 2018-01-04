@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 773216c30adf1c684ec705a909038354aab0fec9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 82e8c324cac8f9eda8f3052f77230733dd47777d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-wrapped-text-in-a-rectangle"></a>方法 : 四角形内にテキストを折り返して描画する
 四角形で囲まれたテキストを描画するにを使用して、<xref:System.Drawing.Graphics.DrawString%2A>オーバー ロードされたメソッドの<xref:System.Drawing.Graphics>を受け取るクラス、<xref:System.Drawing.Rectangle>または<xref:System.Drawing.RectangleF>パラメーター。 また、使用、<xref:System.Drawing.Brush>と<xref:System.Drawing.Font>です。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.Windows.Forms.PaintEventArgs>`e`、パラメーターのある<xref:System.Windows.Forms.PaintEventHandler>です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: GDI を使用してテキストを描画する](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
  [方法: フォント ファミリとフォントを作成する](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  

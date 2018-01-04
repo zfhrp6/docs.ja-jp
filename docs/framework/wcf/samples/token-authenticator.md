@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7404087117ec45e09495897905094690c01fbaa8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d635a1d5122319e228feb4d8a362b7609129c9de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="token-authenticator"></a>トークン認証システム
 このサンプルでは、カスタム トークンの認証システムを実装する方法を示します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトークン認証システムは、メッセージと共に使用されるトークンの検証、このトークンに自己矛盾がないことの確認、およびこのトークンに関連付けられている ID の認証に使用されます。  
@@ -377,4 +378,4 @@ static void DisplayIdentityInformation()
   
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

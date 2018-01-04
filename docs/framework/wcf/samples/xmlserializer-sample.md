@@ -13,11 +13,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1e18459d985447359d6314b68e48ce1ad4b0b9d2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c89194eebbfe4f25b8d8120be16a18306a92a889
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xmlserializer-sample"></a>XMLSerializer サンプル
 このサンプルでは、<xref:System.Xml.Serialization.XmlSerializer> と互換性のある型をシリアル化および逆シリアル化する方法を示します。 既定の [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] フォーマッタは <xref:System.Runtime.Serialization.DataContractSerializer> クラスです。 <xref:System.Xml.Serialization.XmlSerializer> クラスを使用すると、<xref:System.Runtime.Serialization.DataContractSerializer> クラスを使用できない場合に、型をシリアル化および逆シリアル化できます。 これは、XML を厳密に制御する必要がある場合、たとえば、データの一部が XML 属性であるが XML 要素ではない、などと制御する必要がある場合に多く該当します。 さらに、<xref:System.Xml.Serialization.XmlSerializer> は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 以外のサービスに対してクライアントを作成する場合に自動的に選択されることがよくあります。  
@@ -144,4 +145,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\XmlSerializer`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

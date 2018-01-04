@@ -18,11 +18,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0913dc2745e1b244e4b03c0e6b946441a401c5b1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 35f43316e2535aae6622ccf7952f649cdb92fc81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-pen-to-draw-lines-and-shapes"></a>ペンを使用した直線と図形の描画
 使用して[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]`Pen`線分、曲線、および図形の輪郭を描画するオブジェクト。 このセクションで*行*という意味では直線セグメントのみを指定しない限りは、次のいずれかを参照します。 色、幅、配置、およびそのペンで描画された直線のスタイルを制御するペンのプロパティを設定します。  

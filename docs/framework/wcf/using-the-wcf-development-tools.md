@@ -13,21 +13,22 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9532363adafd492ca35e10e6d20c788ddf5b1d17
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7d253f38fab21496dd305cc67e7b6e84846579f3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-the-wcf-development-tools"></a>WCF 開発ツールの使用
-ここでは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] サービスの開発に役立つ [!INCLUDE[indigo1](../../../includes/indigo1-md.md)][!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 開発ツールについて説明します。  
+このセクションの内容について説明します、 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]開発ツールの開発に役立つ、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス。  
   
- 基盤となる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートを使用して独自のサービスをすばやく構築し、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントを使用してサービスをデバッグおよびテストすることができます。 これらのツールによって、高速でシームレスなデバッグとテストのサイクルが実現し、初期の段階でホスト モデルにコミットする必要がなくなります。  
+ 使用することができます、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]独自のサービスを迅速に構築する基礎としてテンプレートを使用し、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスの自動ホストと[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]をデバッグし、サービスをテストするクライアントをテストします。 これらのツールによって、高速でシームレスなデバッグとテストのサイクルが実現し、初期の段階でホスト モデルにコミットする必要がなくなります。  
   
 ## <a name="the-wcf-developer-tools"></a>WCF の開発者用ツール  
  [WCF Visual Studio テンプレート](../../../docs/framework/wcf/wcf-vs-templates.md)  
   
- 定義済みの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] プロジェクト テンプレートと項目テンプレートを [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で使用すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスや周辺アプリケーションをすばやく構築できます。  
+ 定義済みを使用することができます[!INCLUDE[indigo2](../../../includes/indigo2-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]でプロジェクトと項目テンプレート[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]をすばやく構築[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスや周辺アプリケーションです。  
   
  [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
   
@@ -52,7 +53,7 @@ netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
   
  [!INCLUDE[crabout](../../../includes/crabout-md.md)]Netsh.exe を参照してください[Netsh.exe ツールとコマンド ライン スイッチを使用する方法](http://go.microsoft.com/fwlink/?LinkId=97877)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF Visual Studio テンプレート](../../../docs/framework/wcf/wcf-vs-templates.md)  
  [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
  [WCF のテスト用クライアント (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

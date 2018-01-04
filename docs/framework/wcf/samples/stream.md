@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c0cbbae6ae8ba486791c525b70e8d208880661d7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ab56dd7938f2c7594627b54b4cb61b4e0f6b28fe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stream"></a>ストリーム
 このストリーム サンプルでは、ストリーミング転送モードの通信を使用する方法を示します。 サービスは、ストリームを送受信する複数の操作を公開します。 このサンプルは自己ホスト型です。 クライアントとサービスはどちらもコンソール プログラムです。  
@@ -51,7 +52,7 @@ public interface IStreamingSample
 ## <a name="enabling-streamed-transfers"></a>ストリーミング転送の有効化  
  前述のように操作コントラクトを定義することにより、プログラミング モデル レベルでのストリーミングが実現します。 ここで作業を終えても、トランスポートはメッセージ全体の内容をバッファします。 トランスポートのストリーミングを有効にするには、トランスポートのバインディング要素で転送モードを選択します。 バインディング要素には、`TransferMode` プロパティがあり、`Buffered`、`Streamed`、`StreamedRequest`、または `StreamedResponse` に設定できます。 転送モードを `Streamed` に設定すると、両方向のストリーミング通信が可能になります。 転送モードを `StreamedRequest` または `StreamedResponse` に設定すると、それぞれ要求または応答のみでのストリーミング通信が可能になります。  
   
- `basicHttpBinding` は、`TransferMode` および `NetTcpBinding` と同様に、バインディングで `NetNamedPipeBinding` プロパティを開示します。 他のトランスポートの場合、転送モードを設定するにはカスタム バインディングを作成する必要があります。  
+ `basicHttpBinding` は、`TransferMode` および `NetTcpBinding` と同様に、バインディングで `NetNamedPipeBinding` プロパティを開示します。 他のトランスポートの場合、転送モードを設定するにはカスタム バインドを作成する必要があります。  
   
  次のサンプルの構成コードでは、`TransferMode` とカスタム HTTP バインディングで、`basicHttpBinding` プロパティをストリーミングに設定しています。  
   
@@ -195,4 +196,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Stream`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

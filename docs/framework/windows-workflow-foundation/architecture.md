@@ -12,11 +12,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b58456fe99331a47871fbf4b1ad86cd43c53c2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ed13d7885cb8abd760aed6bd5812cb8b7c75bc02
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-workflow-architecture"></a>Windows Workflow のアーキテクチャ
 [!INCLUDE[wf](../../../includes/wf-md.md)] は、実行時間の長いインタラクティブ アプリケーションの開発用に抽象化のレベルを引き上げます。 作業単位はアクティビティとしてカプセル化されます。 アクティビティが実行される環境には、フロー制御、例外処理、エラー伝達、状態データの永続化、動作中のワークフローのメモリへの読み込みやアンロード、追跡、トランザクション フローに対応する機能が備わっています。  

@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3fd8b59cd69807928b1a441d1bfb57f82d072288
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a10be10687f03b5de45846faa9ca832ead193e19
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="operation-formatter-and-operation-selector"></a>操作フォーマッタと操作セレクター
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 拡張ポイントを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で想定されている形式と異なる形式のメッセージ データを許可する方法を示します。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]フォーマッタの下に含まれるメソッドのパラメーターを想定して、`soap:body`要素。 このサンプルでは、代わりに HTTP GET クエリ文字列のパラメータ データを解析するカスタム操作フォーマッタを実装し、そのデータを使用してメソッドを呼び出す方法を示します。  
@@ -70,7 +71,7 @@ ms.lasthandoff: 12/02/2017
   
  <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A> は <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> 実装に設定されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、既定では完全一致のアドレス フィルタを使用します。 受信メッセージ上の URI には、操作名のサフィックスと、その後にパラメータ データを格納するクエリ文字列が含まれています。したがって、アドレス フィルタは、エンドポイントの動作によっても、プレフィックスが一致するフィルタに変更されます。 このために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> が使用されます。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、既定では完全一致のアドレス フィルタを使用します。 受信メッセージ上の URI には、操作名のサフィックスと、その後にパラメータ データを格納するクエリ文字列が含まれています。したがって、アドレス フィルタは、エンドポイントの動作によっても、プレフィックスが一致するフィルタに変更されます。 使用して、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>この目的のためです。  
   
 ### <a name="installing-operation-formatters"></a>操作フォーマッタのインストール  
  フォーマッタを指定する操作の動作は一意です。 このような動作は、常に既定で操作ごとに実装され、必要な操作フォーマッタを作成します。 ただし、これらの動作は他の操作動作と同様に見えるため、他の属性では識別できません。 置換動作をインストールするには、この実装で、既定で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 型ローダーによってインストールされる特定のフォーマッタの動作を検索し、その動作に置き換えるか、または互換性のある動作を追加して既定の動作後に実行する必要があります。  
@@ -188,4 +189,4 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
 3.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

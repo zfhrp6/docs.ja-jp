@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e06fbfde68c0d02a94f8c7e4657e2907cd3fa7eb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 00be8ca2e4e227b6e4593b0a9e32172ecb9457f5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-an-html-document-viewer-in-a-windows-forms-application"></a>方法 : Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する
 使用することができます、<xref:System.Windows.Forms.WebBrowser>コントロールを表示し、インターネットの Web ブラウザーの全機能を提供せずに HTML ドキュメントを印刷します。 これは、HTML の書式設定機能を利用する場合、ユーザーは信頼されていない Web コントロールまたは悪意のあるスクリプト コードを含む可能性のある任意の Web ページを読み込むをしないようにする場合に便利です。 機能を制限することができます、 <xref:System.Windows.Forms.WebBrowser> HTML 電子メール ビューアーとして使用するか、アプリケーションで HTML 形式のヘルプを提供するなど、この方法を制御します。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 11/21/2017
   
 -   `System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A>  
  <xref:System.Windows.Forms.WebBrowser.Url%2A>  

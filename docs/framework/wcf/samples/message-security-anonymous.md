@@ -14,11 +14,12 @@ caps.latest.revision: "52"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 561e451656cd725a732ea727badeb47087252b9b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 769869fb00c5cc8352ebe8c3952b3d7a9aa75abc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-security-anonymous"></a>メッセージ セキュリティ匿名
 メッセージ セキュリティ匿名のサンプルでは、クライアント認証を行わないでメッセージ レベルのセキュリティを使用するが、サーバーの X.509 証明書を使用したサーバー認証を必要とする [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを実装する方法を示します。 クライアント/サーバー間のすべてのアプリケーション メッセージは署名され、暗号化されます。 このサンプルがに基づいて、 [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。 このサンプルは、クライアント コンソール プログラム (.exe) と、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll) で構成されています。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
@@ -249,4 +250,4 @@ Press <ENTER> to terminate client.
 > [!NOTE]
 >  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com.` となります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

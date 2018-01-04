@@ -13,14 +13,15 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7774af6c1531e48be29351299555a650548687f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: acac4baa5be68d042dd1b0a11d7acfe609169e10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-message-interceptor"></a>カスタム メッセージ インターセプター
-このサンプルでは、チャネル拡張モデルの使用方法を示します。 特に、チャネル ファクトリとチャネル リスナーを作成するカスタム バインディング要素を実装して、ランタイム スタックの特定のポイントですべての送受信メッセージを中断する方法を示します。 また、このサンプルには、こうしたカスタム ファクトリの使用方法を示すクライアントとサーバーも含まれます。  
+このサンプルでは、チャネル拡張モデルの使用方法を示します。 特に、チャネル ファクトリとチャネル リスナーを作成するカスタム バインド要素を実装して、ランタイム スタックの特定のポイントですべての送受信メッセージを中断する方法を示します。 また、このサンプルには、こうしたカスタム ファクトリの使用方法を示すクライアントとサーバーも含まれます。  
   
  このサンプルでは、クライアントとサービスは両方ともコンソール プログラム (.exe) です。 そして、これらのクライアントとサービスの両方で、カスタム バインディング要素およびこれに関連付けられたランタイム オブジェクトを含む共通ライブラリ (.dll) を使用します。  
   
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/02/2017
   
 2.  チャネル形状をサポートするチャネル ファクトリおよびチャネル リスナを作成します。  
   
-3.  チャネル スタックにカスタム階層チャネルを追加するバインディング要素を追加します。  
+3.  チャネル スタックにカスタム階層チャネルを追加するバインド要素を追加します。  
   
 4.  バインド要素拡張セクションを追加して、新しいバインド要素を構成システムに公開します。  
   
@@ -61,7 +62,7 @@ class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>
 { ... }  
 ```  
   
-## <a name="adding-a-binding-element"></a>バインディング要素の追加  
+## <a name="adding-a-binding-element"></a>バインド要素の追加  
  このサンプルでは、`InterceptingBindingElement` というカスタム バインディング要素を定義します。 `InterceptingBindingElement``ChannelMessageInterceptor`は入力としてこれを使用して`ChannelMessageInterceptor`通過するメッセージを操作します。 公開する必要があるクラスはこれだけです。 ファクトリ、リスナ、およびチャネルはすべて、ランタイム パブリック インターフェイスの内部実装として設定できます。  
   
 ```  
@@ -69,7 +70,7 @@ public class InterceptingBindingElement : BindingElement
 ```  
   
 ## <a name="adding-configuration-support"></a>構成サポートの追加  
- バインディング構成と統合するには、ライブラリで、構成セクション ハンドラをバインディング要素拡張セクションとして定義します。 クライアントとサーバーの構成ファイルでは、バインディング要素拡張を構成システムに登録する必要があります。 バインディング要素を構成システムに公開する実装は、このクラスから派生できます。  
+ バインド構成と統合するには、ライブラリで、構成セクション ハンドラをバインド要素拡張セクションとして定義します。 クライアントとサーバーの構成ファイルでは、バインディング要素拡張を構成システムに登録する必要があります。 バインディング要素を構成システムに公開する実装は、このクラスから派生できます。  
   
 ```  
 public abstract class InterceptingElement : BindingElementExtensionElement { ... }  
@@ -78,7 +79,7 @@ public abstract class InterceptingElement : BindingElementExtensionElement { ...
 ## <a name="adding-policy"></a>ポリシーの追加  
  ポリシー システムと統合するには、`InterceptingBindingElement` に IPolicyExportExtension を実装し、ポリシーの生成に参加する必要があることを通知します。 生成されたクライアント上でポリシーのインポートをサポートするには、`InterceptingBindingElementImporter` の派生クラスを登録し、`CreateMessageInterceptor`() をオーバーライドして、ポリシーが有効なそれらの `ChannelMessageInterceptor` クラスを生成します。  
   
-## <a name="example-droppable-message-inspector"></a>例 : 破棄可能なメッセージ インスペクタ  
+## <a name="example-droppable-message-inspector"></a>例: 破棄可能なメッセージ インスペクタ  
  このサンプルには、メッセージを破棄する `ChannelMessageInspector` の実装例が含まれています。  
   
 ```  
@@ -171,4 +172,4 @@ Dangerous wind detected! Reported speed (70) is greater than 64 kph.
   
 5.  最初に Service.exe を実行して次に Client.exe を実行し、両方のコンソール ウィンドウで出力を表示します。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

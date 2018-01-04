@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: 8137e41f92335849916dfc9e9ce72afeb186e73c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0dcb666f317ab285ae0156d2df16947f71665aee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>方法 : サービス アプリケーションにインストーラーを追加する
 Visual Studio では、サービス アプリケーションに関連付けられているリソースをインストールするインストール コンポーネントが同梱されています。 インストール コンポーネントにインストールされていると、サービス コントロール マネージャー知らせます、サービスが存在するシステム上の個々 のサービスを登録します。 サービス アプリケーションを操作するときに自動的に適切なインストーラーをプロジェクトに追加する [プロパティ] ウィンドウでリンクを選択することができます。  
@@ -38,7 +39,7 @@ Visual Studio では、サービス アプリケーションに関連付けら�
  サービスを正しくインストールするインストーラー内に特殊なコーディングを行う必要はありません。 ただし、インストール プロセスに特別な機能を追加する必要がある場合、インストーラーの内容を変更する必要がある場合があります。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-add-installers-to-your-service-application"></a>サービス アプリケーションにインストーラーを追加するには  
   
@@ -54,7 +55,7 @@ Visual Studio では、サービス アプリケーションに関連付けら�
   
 5.  調べるには、サービスの開始方法をクリックして、<xref:System.ServiceProcess.ServiceInstaller>コンポーネントで、設定、<xref:System.ServiceProcess.ServiceInstaller.StartType%2A>プロパティを適切な値にします。  
   
-    |値|結果|  
+    |[値]|結果|  
     |-----------|------------|  
     |<xref:System.ServiceProcess.ServiceStartMode.Manual>|サービスは、インストール後に手動で開始する必要があります。 詳細については、次を参照してください。[する方法: サービスを開始](../../../docs/framework/windows-services/how-to-start-services.md)です。|  
     |<xref:System.ServiceProcess.ServiceStartMode.Automatic>|サービスは、コンピューターが再起動されるたびに、それ自体で起動されます。|  
@@ -69,8 +70,8 @@ Visual Studio では、サービス アプリケーションに関連付けら�
     > [!NOTE]
     >  プロジェクト内の追加サービスごとに追加する必要があります<xref:System.ServiceProcess.ServiceInstaller>コンポーネントをプロジェクトの`ProjectInstaller`クラスです。 <xref:System.ServiceProcess.ServiceProcessInstaller>手順 3 で追加したコンポーネントがすべて、プロジェクト内の個々 のサービスのインストーラーの動作です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: インストールし、サービスのアンインストール](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [方法: サービスを開始します。](../../../docs/framework/windows-services/how-to-start-services.md)  
- [方法: サービスのセキュリティ コンテキストを指定](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)
+ [方法 : サービスをインストールおよびアンインストールする](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [方法 : サービスを開始する](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [方法 : サービスのセキュリティ コンテキストを指定する](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)

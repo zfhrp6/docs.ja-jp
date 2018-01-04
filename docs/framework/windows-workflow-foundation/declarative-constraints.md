@@ -12,11 +12,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a07b5d3b3451a9e5e29680fb74ea8411db6d11f7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a11c62c7011d7ffb13ed0d0ebf060a3cbeb7d7f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="declarative-constraints"></a>宣言の制約
 宣言の制約には、アクティビティ、およびそのアクティビティと他のアクティビティとの関係に関する検証の強力なメソッドが用意されています。 アクティビティに関する制約はプロセスの作成中に構成されますが、ワークフロー ホストによって追加の制約を指定することもできます。 ここでは、宣言の制約を使用してアクティビティを検証する方法の概要について説明します。  

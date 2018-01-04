@@ -23,11 +23,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 97c31998885926e9a7372bcf3182d1c95f0b79d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d795df8e8b514345632491fd6afdd618c2f18ec2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>方法 : Windows フォームの NotifyIcon コンポーネントによってタスクバーにアプリケーション アイコンを追加する
 Windows フォーム<xref:System.Windows.Forms.NotifyIcon>コンポーネントには、タスク バーの状態通知領域に 1 つのアイコンが表示されます。 状態 領域で複数のアイコンを表示するにする必要があります複数<xref:System.Windows.Forms.NotifyIcon>フォーム上のコンポーネントです。 コントロールで表示されるアイコンを設定するには、使用、<xref:System.Windows.Forms.NotifyIcon.Icon%2A>プロパティです。 コードを記述することも、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>のため、その問題が起こった、ユーザーがアイコンをダブルクリックすると、イベント ハンドラー。 たとえば、行うことができるダイアログ ボックスをユーザーがアイコンで表されるバック グラウンド プロセスの構成を表示します。  
@@ -80,7 +81,7 @@ Windows フォーム<xref:System.Windows.Forms.NotifyIcon>コンポーネント�
     notifyIcon1->Text = "Antivirus program";  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.NotifyIcon>  
  <xref:System.Windows.Forms.NotifyIcon.Icon%2A>  
  [方法: ショートカット メニューを Windows フォーム NotifyIcon コンポーネントに関連付ける](../../../../docs/framework/winforms/controls/how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  

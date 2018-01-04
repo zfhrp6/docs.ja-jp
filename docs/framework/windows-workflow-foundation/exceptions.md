@@ -12,11 +12,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 545049900ec632aaaf3955656bcd93e845b094de
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bf2c6e12dac2130a26aa01efc21b8f58f509294a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exceptions"></a>例外
 ワークフローは、<xref:System.Activities.Statements.TryCatch> アクティビティを使用して、ワークフローの実行中に発生した例外を処理することができます。 これらの例外は、処理することも可能ですが、<xref:System.Activities.Statements.Rethrow> アクティビティを使用して再スローすることもできます。 <xref:System.Activities.Statements.TryCatch.Finally%2A> セクションのアクティビティは、<xref:System.Activities.Statements.TryCatch.Try%2A> セクションまたは <xref:System.Activities.Statements.TryCatch.Catches%2A> セクションが完了したときに実行されます。 によってホストされるワークフロー、<xref:System.Activities.WorkflowApplication>インスタンスでも使用できます、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A>で処理されない例外を処理するイベント ハンドラー、<xref:System.Activities.Statements.TryCatch>アクティビティ。  
@@ -59,7 +60,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="exception-handling-versus-compensation"></a>例外処理と補正の比較  
  例外処理は、アクティビティの実行中に発生するという点で補正と異なります。 補正が発生するのは、アクティビティが正常に完了した後です。 例外処理では、アクティビティが例外を生成した後でクリーン アップを実行できます。また、補正処理では、前に完了したアクティビティの正常に完了した作業を元に戻すことが可能です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][補正](../../../docs/framework/windows-workflow-foundation/compensation.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Activities.Statements.TryCatch>  
  <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A>  
  <xref:System.Activities.Statements.CompensableActivity>

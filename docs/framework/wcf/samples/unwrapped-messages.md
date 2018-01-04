@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 476a708acebc7c671e8d7f6ef1812a34e5221db8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6014ee5fa7f714340f7069e5b5d39e6b4146dbb8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unwrapped-messages"></a>ラップされていないメッセージ
 このサンプルでは、ラップされていないメッセージを示します。 既定では、メッセージの本文は、サービス操作に渡されるパラメーターがラップされるように書式設定されます。 ラップされたモードでの `Add` サービスへの `ICalculator` 要求メッセージのサンプルを次に示します。  
@@ -101,7 +102,7 @@ public class ResponseMessage
   
  送受信されたメッセージを表示できるようにするため、このサンプルではトレースを使用します。 さらに、<xref:System.ServiceModel.WSHttpBinding> は、記録されるメッセージ数を減らす目的で、セキュリティを無効にして構成されています。  
   
- 結果のトレース ログ (c:\logs\Message.log) を使用して表示することができます、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)です。 メッセージの内容を表示するには選択**メッセージ**左と、サービス トレース ビューアー ツールの右側のウィンドウの両方でします。 このサンプルのトレース ログは、C:\LOGS フォルダーに生成されるように構成されています。 サンプルの実行前にこのフォルダを作成し、ユーザー Network Service にそのディレクトリへの書き込み権限を与えます。  
+ 結果のトレース ログ (c:\logs\Message.log) を使用して表示することができます、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)です。 メッセージの内容を表示するには選択**メッセージ**左と、サービス トレース ビューアー ツールの右側のウィンドウの両方でします。 このサンプルのトレース ログは、C:\LOGS フォルダーに生成されるように構成されています。 サンプルの実行前にこのフォルダーを作成し、ユーザー Network Service にそのディレクトリへの書き込み権限を与えます。  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
@@ -122,4 +123,4 @@ public class ResponseMessage
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Unwrapped`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

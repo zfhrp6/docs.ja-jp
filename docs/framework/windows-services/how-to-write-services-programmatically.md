@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: 1721417b8d1fc799e6af5d09762ee852d9fbfb03
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cdb9c7bba564b71bfba86076218e48610cf73076
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-write-services-programmatically"></a>方法 : プログラムでサービスを作成する
 Windows サービス プロジェクトのテンプレートを使用しない場合は、継承などの基本要素を設定して独自のサービスを作成できます。 プログラミングによってサービスを作成する場合は、テンプレートでは自動化される手順を手動で行う必要があります。  
@@ -44,7 +45,7 @@ Windows サービス プロジェクトのテンプレートを使用しない�
   
     3.  スクロール**System.ServiceProcess.dll**  をクリック**選択**です。  
   
-    4.  **[OK]** をクリックします。  
+    4.  **[OK]**をクリックします。  
   
 2.  クラスを追加し、<xref:System.ServiceProcess.ServiceBase> から継承されるように設定します。  
   
@@ -79,9 +80,9 @@ Windows サービス プロジェクトのテンプレートを使用しない�
   
 10. サービスをインストールします。 詳細については、「 [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: Windows サービスの作成](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
- [方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
- [方法: サービスに関する情報を記録](../../../docs/framework/windows-services/how-to-log-information-about-services.md)  
- [チュートリアル: コンポーネント デザイナーでの Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+ [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
+ [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
+ [方法 : サービスに関する情報のログを記録する](../../../docs/framework/windows-services/how-to-log-information-about-services.md)  
+ [チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

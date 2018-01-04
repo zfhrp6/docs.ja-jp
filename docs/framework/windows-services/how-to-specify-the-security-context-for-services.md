@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: 50a9c6ff7f02cda4475aa5390181fa5d410af161
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9ce65358f6d63414dbe6798d3cc2464ee2741980
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>方法 : サービスのセキュリティ コンテキストを指定する
 既定では、サービスは、ログイン ユーザーの場合よりも別のセキュリティ コンテキストで実行します。 既定のシステム アカウントのコンテキストで実行するサービスと呼ばれる`LocalSystem`、与えるさまざまなアクセス特権ユーザーのシステム リソースにします。 サービスを実行する別のユーザー アカウントを指定するには、この動作を変更することができます。  
@@ -53,7 +54,7 @@ ms.lasthandoff: 11/21/2017
   
 3.  **プロパティ**ウィンドウで、設定、<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>適切な値にします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
- [方法: Windows サービスの作成](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+ [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
+ [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)

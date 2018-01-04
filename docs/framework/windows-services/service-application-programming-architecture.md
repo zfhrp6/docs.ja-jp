@@ -25,11 +25,12 @@ caps.latest.revision: "15"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: e9c16f2e603a3ce9bbc59be4e01aa492239d2c63
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2d44ee323040346437261b51fddb707a30d1de6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-application-programming-architecture"></a>サービス アプリケーションのプログラミング アーキテクチャ
 継承するクラスに基づいて Windows サービス アプリケーション、<xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>クラスです。 このクラスからメソッドをオーバーライドして、サービスの動作を決定するそれらの機能を定義します。  
@@ -58,7 +59,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  これらのメソッドは、サービスがその有効期間内に通過状態を表しています。サービスは、1 つの状態から、次に遷移します。 応答するサービスを決して取得するなど、<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>する前にコマンド<xref:System.ServiceProcess.ServiceBase.OnStart%2A>呼び出されました。  
   
- その他のいくつかのプロパティと関心のあるメソッドがあります。 以下に例を示します。  
+ その他のいくつかのプロパティと関心のあるメソッドがあります。 次の設定があります。  
   
 -   <xref:System.ServiceProcess.ServiceBase.Run%2A>メソッドを<xref:System.ServiceProcess.ServiceBase>クラスです。 これは、サービスのメイン エントリ ポイントです。 アプリケーションのコードが挿入される Windows サービス テンプレートを使用してサービスを作成するときに`Main`メソッドをサービスを実行します。 このコードは、次のようになります。  
   
@@ -75,6 +76,6 @@ ms.lasthandoff: 11/21/2017
   
  呼ばれるコンポーネントを使用することも、<xref:System.ServiceProcess.ServiceController>と通信して、既存のサービスの動作を制御します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: Windows サービスの作成](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+ [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)

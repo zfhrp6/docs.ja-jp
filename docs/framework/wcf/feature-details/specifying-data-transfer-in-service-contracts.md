@@ -17,11 +17,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be6262714ad2753d3a6f62a2956a31529641a246
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c650a59402099e1fe71a0292dd0ccfc409d3448d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>サービス コントラクトでのデータ転送の指定
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、一種のメッセージング インフラストラクチャと考えることができます。 サービス操作では、メッセージを受信し、それらのメッセージを処理し、送信することができます。 メッセージは、操作コントラクトを使用して記述されます。 たとえば、次のようなコントラクトがあるとします。  
@@ -583,7 +584,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)]シリアル化の概念の詳細を参照してください[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XmlSerializer クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)  
- [方法: ストリーミングを有効にします。](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)  
- [方法: クラスまたは構造体に基本的なデータ コントラクトを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+ [方法 : ストリーミングを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)  
+ [方法 : クラスまたは構造体に基本的なデータ コントラクトを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

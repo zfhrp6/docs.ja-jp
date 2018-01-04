@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 91ef5c2c0d581575f60456e19920185a285cab07
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 50efd36e1d54bd456e184c42d62aded14e510947
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="scenario"></a>シナリオ
 このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] シナリオの例が含まれています。  
@@ -37,8 +38,8 @@ ms.lasthandoff: 12/02/2017
  [FlowChart と Pick の組み合わせを使用する StateMachine シナリオ](../../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
  <xref:System.Activities.Statements.Flowchart> アクティビティと <xref:System.Activities.Statements.Pick> アクティビティを組み合わせて簡単なストップウォッチ シナリオを実装する方法を示します。  
   
- [WPF および xaml WF の統合](../../../../docs/framework/windows-workflow-foundation/samples/wpf-and-wf-integration-in-xaml.md)  
+ [XAML での WPF と WF の統合](../../../../docs/framework/windows-workflow-foundation/samples/wpf-and-wf-integration-in-xaml.md)  
  [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] および [!INCLUDE[wf](../../../../includes/wf-md.md)] 機能を使用するアプリケーションを 1 つの XAML ドキュメントで作成する方法を示します。 これを実現するために、サンプルでは [!INCLUDE[wf](../../../../includes/wf-md.md)] および XAML 機能拡張を使用します。  
   
- [External Ruleset Toolkit](../../../../docs/framework/windows-workflow-foundation/samples/external-ruleset-toolkit.md)  
+ [External RuleSet Toolkit](../../../../docs/framework/windows-workflow-foundation/samples/external-ruleset-toolkit.md)  
  データベースで RuleSet を管理および編集し、実行時にそれらの RuleSet にワークフローからアクセスする方法を示します。

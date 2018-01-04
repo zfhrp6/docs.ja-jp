@@ -13,11 +13,12 @@ caps.latest.revision: "48"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc30a755278251ac9e06f2ddd56e2c369b950af4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1933d216f991b78e21a56ec67826dce0b4a7b24a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-udp"></a>トランスポート: UDP
 UDP トランスポートのサンプルでは、UDP ユニキャストとマルチキャストを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] カスタム トランスポートとして実装する方法を示します。 このサンプルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でカスタム トランスポートを作成するための推奨手順について説明します。作成時には、チャネル フレームワークと次に示す [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のベスト プラクティスを使用します。 カスタム トランスポートを作成する手順は、次のとおりです。  
@@ -132,7 +133,7 @@ message = MessageEncoderFactory.Encoder.ReadMessage(new ArraySegment<byte>(buffe
   
 <a name="AddingABindingElement"></a>   
 ## <a name="adding-a-binding-element"></a>バインド要素の追加  
- ファクトリおよびチャネルを作成したので、バインディングを使用してそれらを ServiceModel ランタイムに開示する必要があります。 バインディングは、サービス アドレスに関連する通信スタックを表すバインディング要素のコレクションです。 スタック内の各要素で表される、 [\<バインディング >](../../../../docs/framework/misc/binding.md)要素。  
+ ファクトリおよびチャネルを作成したので、バインディングを使用してそれらを ServiceModel ランタイムに開示する必要があります。 バインディングは、サービス アドレスに関連する通信スタックを表すバインド要素のコレクションです。 スタック内の各要素で表される、 [\<バインディング >](../../../../docs/framework/misc/binding.md)要素。  
   
  このサンプルでは、バインディング要素は `UdpTransportBindingElement` で、<xref:System.ServiceModel.Channels.TransportBindingElement> から派生しています。 バインディングに関連したファクトリを作成すると、次のメソッドが無効になります。  
   
@@ -315,7 +316,7 @@ if (context.Endpoint.Binding is CustomBinding)
 ## <a name="adding-configuration-support"></a>構成サポートの追加  
  構成を通じてトランスポートを公開するには、2 つの構成セクションを実装する必要があります。 1 つ目のクラスは、`BindingElementExtensionElement` の `UdpTransportBindingElement` です。 これは、`CustomBinding` の実装がバインディング要素を参照するためのものです。 2 つ目のクラスは、`Configuration` の `SampleProfileUdpBinding` です。  
   
-### <a name="binding-element-extension-element"></a>バインディング要素の拡張要素  
+### <a name="binding-element-extension-element"></a>バインド要素の拡張要素  
  セクション `UdpTransportElement` は `BindingElementExtensionElement` で、`UdpTransportBindingElement` を構成システムに公開します。 いくつかの基本的なオーバーライドを行うことで、構成セクションの名前、バインド要素の種類とバインド要素の作成方法を定義します。 その後、次のコードに示すように、拡張セクションを構成ファイルに登録できます。  
   
 ```xml

@@ -24,11 +24,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ed463b41d3c2a51b0f9be3d4ddabfd2d54a3c07
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17253e21739911d4aa0541fde9ae205b0be1c5a2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>方法 :ピクセルをコピーして Windows フォームのちらつきを低減する
 単純なグラフィックをアニメーション化するときにユーザーことができる場合もありますが発生ちらつき、またはその他の望ましくない視覚効果。 この問題を制限する 1 つの方法は、プロセスを使用して、"bitblt"画像の上です。 Bitblt は、「ビット ブロック転送」色データの元の四角形にはピクセルからピクセルの四角形に。  
@@ -72,7 +73,7 @@ private void Form1_Paint(System.Object sender,
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  上記のコードをフォームの実行は<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー、フォームが再描画されると、グラフィックスが永続化できるようにします。 そのためグラフィックスに関連するメソッドを呼び出す必要はありません、 <xref:System.Windows.Forms.Form.Load> 、イベント ハンドラー描画済みのコンテンツが再描画されませんフォームがサイズ変更されるか、別の形式によって隠されるためです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.CopyPixelOperation>  
  <xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.Control.OnPaint%2A?displayProperty=nameWithType>  

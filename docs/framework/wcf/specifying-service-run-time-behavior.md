@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 117011d0ceecf04b6c73655873985dbd08768ab6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c2c1534b161f81fa90dce52c825b0417dc8fd35d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-service-run-time-behavior"></a>サービスのランタイム動作の指定
 サービス コントラクトを設計して ([Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md))、実装 ([Implementing Service Contracts](../../../docs/framework/wcf/implementing-service-contracts.md)) が終わると、サービス ランタイムの実行動作を構成できます。 ここでは、システム指定のサービスと操作の動作について説明し、新しい動作を作成するための詳細情報の参照先を示します。 一部の動作は属性として適用されますが、多くの動作はアプリケーション構成ファイルまたはプログラムを使用して適用されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 、「 [Configuring Services](../../../docs/framework/wcf/configuring-services.md)」を参照してください。  
@@ -130,6 +131,6 @@ ms.lasthandoff: 12/02/2017
   
 -   <xref:System.ServiceModel.TransactionFlowAttribute>。 サービス操作がトランザクション ヘッダーを受け入れるレベルを指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サービスの構成](../../../docs/framework/wcf/configuring-services.md)  
- [方法: コントロール サービスのインスタンス化](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)
+ [方法 : サービスのインスタンス化を制御する](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)

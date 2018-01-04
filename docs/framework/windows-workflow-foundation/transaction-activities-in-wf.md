@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e6c72a54d596468e1ae6948ff9f177e026458628
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b12cfa1cecde648e66872784eb1e353f8c16da8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transaction-activities-in-wf"></a>WF におけるトランザクションのアクティビティ
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、トランザクションや、補正、取り消しをモデル化するためのシステム指定のアクティビティがいくつかあります。 これらのプログラミング モデルにより、ビジネス ロジックとエラー処理の変更の場合に、ワークフローは進行を続けることができます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]トランザクションや、補正、取り消しを参照してください。[トランザクション](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md)、[補正](../../../docs/framework/windows-workflow-foundation/compensation.md)、および[キャンセル](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md)です。  

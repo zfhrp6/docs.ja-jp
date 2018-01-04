@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 452e88b4b41a22cc78f73e120e49468e4f4dad56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 66527be5a70f9c7c60f4ca3836ee68b96872442f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-color-of-a-pen"></a>方法 : ペンの色を設定する
 この例は、既存の色を変更<xref:System.Drawing.Pen>オブジェクト  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  呼び出す必要があります<xref:System.Drawing.Pen.Dispose%2A>システム リソースを消費しているオブジェクトの (など<xref:System.Drawing.Pen>オブジェクト) を使用してそれらが完了した後です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Pen>  
  [グラフィックス プログラミングについて](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  
  [方法: ペンを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-pen.md)  

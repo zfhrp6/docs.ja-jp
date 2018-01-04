@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b658cc481d3ca5e87b5b9e2aab6b7561be2c65b1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dbbaefbd32048924434342dc3f902c99a3c2448c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="discovery-binding-element-sample"></a>探索バインド要素のサンプル
 このサンプルでは、探索クライアント バインド要素を使用してサービスを探索する方法を示します。 この機能を使用すると、開発者は、探索クライアント チャネルを既存のクライアント チャネル スタックに追加することにより、プログラミング モデルをきわめて直感的にすることができます。 関連付けられたチャネルが開いている場合、サービスのアドレスは探索を使用して解決されます。 このサンプルは、次のプロジェクトで構成されています。  
@@ -130,4 +131,4 @@ CalculatorServiceClient client = new CalculatorServiceClient(CreateCustomBinding
   
 4.  クライアントがサービスのアドレスを知ることなくサービスを検索できたことを確認します。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

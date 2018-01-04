@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: 2912568e967c8c6096842b1b4f24eac88318dffb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 17d4c5908929f02077b1eb48932a50e83f48d076
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-windows-service-applications"></a>Windows サービス アプリケーションの開発
 Microsoft[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]または Microsoft [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] SDK、簡単にサービスを作成できますが、サービスとしてインストールされているアプリケーションを作成しています。 この種類のアプリケーションには、Windows サービスが呼び出されます。 フレームワーク機能を使用することができますサービスを作成、したり、インストールし、開始、停止、および動作を制御します。  
@@ -37,13 +38,13 @@ Microsoft[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]または Microsoft [
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  サービス、およびその他の一般的なプロジェクトの種類のサービス アプリケーションの違いの有効期間の Windows サービス アプリケーションの概要を説明します。  
   
- [チュートリアル: コンポーネント デザイナーでの Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)  
+ [チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)  
  サービスを作成する例を示します[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]および Visual c# です。  
   
  [サービス アプリケーションのプログラミング アーキテクチャ](../../../docs/framework/windows-services/service-application-programming-architecture.md)  
  サービスのプログラミングで使用される言語要素をについて説明します。  
   
- [方法: Windows サービスの作成](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
+ [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
  作成して、Windows サービス プロジェクトのテンプレートを使用して Windows サービスの構成のプロセスについて説明します。  
   
 ## <a name="related-sections"></a>関連項目  

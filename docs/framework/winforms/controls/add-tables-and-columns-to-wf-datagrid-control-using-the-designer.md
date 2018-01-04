@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4c80bd12db83284c30f637f48dfc09e7de22280b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 48471427baccfa9fb8e7c3aedbb9576ab0d34243
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control-using-the-designer"></a>方法 : デザイナーを使って Windows フォーム DataGrid コントロールにテーブルと列を追加する
 > [!NOTE]
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
  次の手順が必要な**Windows アプリケーション**を含むフォームを使用してプロジェクト、<xref:System.Windows.Forms.DataGrid>コントロール。 このようなプロジェクトを設定する方法については、次を参照してください。[する方法: Windows アプリケーション プロジェクトを作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)と[する方法: Windows フォームにコントロールを追加](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)です。 既定で[!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)]、<xref:System.Windows.Forms.DataGrid>コントロールに含まれていない、**ツールボックス**です。 追加の詳細については、次を参照してください。[する方法: ツールボックス アイテムの追加](http://msdn.microsoft.com/en-us/458e119e-17fe-450b-b889-e31c128bd7e0)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-add-a-table-to-the-datagrid-control-in-the-designer"></a>デザイナーで、DataGrid コントロールにテーブルを追加するには  
   
@@ -66,6 +67,6 @@ ms.lasthandoff: 11/21/2017
   
 5.  **プロパティ**コレクション エディターでは、select のボックス、<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>を表示する列の値。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
  [方法: Windows フォーム DataGrid コントロールの列を削除するまたは非表示にする](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50521591af6f77b98e52aa4a847216f63186d78b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fad26de46f3af04ae0340da6aa02bbe454e77e6f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する
 フォームまたは他のオブジェクトを継承する最も簡単な方法は、**[継承ピッカー]** ダイアログ ボックスを使用することです。 これを使用して、その他のソリューションで作成済みのコードまたはユーザー インターフェイス (UI) を利用できます。  
@@ -29,7 +30,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  **[継承ピッカー]** ダイアログ ボックスを使用してフォームを継承するには、そのフォームを含むプロジェクトが、実行可能ファイルまたは DLL に組み込まれている必要があります。 プロジェクトをビルドするには、**[ビルド]** メニューの **[ソリューションのビルド]** を選択します。  
 >   
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-create-a-windows-form-inherited-from-an-existing-form-by-using-the-inheritance-picker"></a>継承ピッカーを使用して既存のフォームから継承された Windows フォームを作成するには  
   
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
     > [!NOTE]
     >  継承されたコントロールとコンポーネントを、Windows フォーム上の標準的なコントロールとコンポーネントに結合する場合、z オーダーとの競合が発生する可能性があります。 これを修正するには、**[書式]** メニュー内でクリックして、**[順序]** をポイントし、**[最前面へ移動]** または **[最背面へ移動]** をクリックして z オーダーを変更します。 コントロールの z オーダーの詳細については、「[方法 : Windows フォーム上のオブジェクトをレイヤー化する](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Inherits ステートメント](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
  [using](~/docs/csharp/language-reference/keywords/using.md)  
  [基本フォームの外観を変更した場合の影響](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)  

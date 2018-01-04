@@ -13,17 +13,18 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc0190747545e9325b62453bc79d163d3e566791
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 75723b03468c2e7aeda765f2dabfc30e394c8c88
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-visual-studio-templates"></a>WCF Visual Studio テンプレート
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] サービスや周辺アプリケーションをすばやく構築するために [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] で使用できる、定義済みのプロジェクト テンプレートと項目テンプレートです。  
   
 ## <a name="using-the-wcf-templates"></a>WCF テンプレートの使用  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートには、サービス開発のための基本クラス構造が含まれています。 これには、サービス コントラクト、データ コントラクト、サービス実装、および構成の基本的な定義が含まれます。 これらのテンプレートを使用すると、最小限のコードを使用した単純なサービスや、より高度なサービスのビルド ブロックを作成できます。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートには、サービス開発のための基本クラス構造が含まれています。 これには、サービス コントラクト、データ コントラクト、サービス実装、および構成の基本的な定義が含まれます。 これらのテンプレートを使用すると、最小限のコードを使用した単純なサービスや、より高度なサービスのビルド ブロックを作成できます。  
   
 ### <a name="wcf-service-library-project-template"></a>WCF サービス ライブラリ プロジェクト テンプレート  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス ライブラリ プロジェクト テンプレートは、新しいプロジェクト ダイアログ ボックスの下で使用**Visual C# \WCF**と**Visual Basic\WCF**です。  
@@ -92,6 +93,6 @@ ms.lasthandoff: 12/02/2017
 > [!NOTE]
 >  Silverlight 対応 WCF サービスは、セキュリティ設定を一切有効にせずに `basicHttpBinding` エンドポイントを公開します。 したがって、サービスに接続しているすべてのクライアントが、このサービスに関する情報を取得できることになります。 また、サービスとクライアント間で交換されるメッセージの署名と暗号化も行われません。 エンドポイントを正しくセキュリティで保護するには、ASP.NET 認証や HTTPS などのメカニズムを使用する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
  [WCF のテスト用クライアント (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

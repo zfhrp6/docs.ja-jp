@@ -13,11 +13,12 @@ caps.latest.revision: "83"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5b699a9af286287f1cdd1aa224afd3f8c41dd90d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7ffc74fdbec204b798ee93a8ee2c91db992a83cb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Windows Communication Foundation サンプルの 1 回限りのセットアップの手順
 ほとんどの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルは、インターネット インフォメーション サービス (IIS) でホストされ、共通の仮想ディレクトリから実行されます。 この 1 回限りのセットアップの手順では、ディスクにフォルダーを作成します。という名前の iis 仮想ディレクトリも追加**ServiceModelSamples**です。  
@@ -96,4 +97,4 @@ ms.lasthandoff: 12/02/2017
   
 15. 一部のサンプルには証明書が必要です。 参照してください[インターネット インフォメーション サービス (IIS) サーバー証明書のインストール手順](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md)です。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

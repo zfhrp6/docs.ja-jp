@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec78d6d8059e19671849ee50ede9b5e64964c362
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1ebbce3b48796e9ef2d2b4fa722a563dc8c133cd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-string-and-connection-string-name"></a>接続文字列と接続文字列名
 **接続文字列**プロパティは、SQL Workflow Instance Store が永続性データベースへの接続に使用する接続文字列を指定します。 このパラメーターは省略可能です。 **接続文字列名**プロパティは、SQL Workflow Instance Store が永続性データベースへの接続に使用する名前付き接続文字列の名前を指定します。 このパラメーターは省略可能です。 既定の名前付き接続文字列を使用するには、SQL Workflow Instance Store したくない場合は、接続文字列名プロパティまたは接続文字列プロパティの値を指定する必要があります**DefaultSqlWorkflowInstanceStoreConnectionString**.

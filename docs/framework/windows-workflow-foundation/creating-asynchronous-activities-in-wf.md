@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aa388328b1fee73aef829a512dcbcadbd3889781
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1d06f825b96f66e35bdd30db272b99bb4e2e3e1e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-asynchronous-activities-in-wf"></a>WF 内での非同期アクティビティの作成
 <xref:System.Activities.AsyncCodeActivity> は使用する基本クラスをアクティビティ作成者に提供します。その結果、派生アクティビティが非同期実行ロジックを実装できるようになります。 これは、ワークフローのスケジューラ スレッドを保持したり、並行して実行される可能性があるすべてのアクティビティをブロックしたりすることなく、非同期作業を実行する必要があるカスタム アクティビティに役立ちます。 ここでは、<xref:System.Activities.AsyncCodeActivity> を使用してカスタムの非同期アクティビティを作成する方法の概要を説明します。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/02/2017
 ### <a name="scheduling-actions-or-child-activities-using-asynccodeactivity"></a>AsyncCodeActivity を使用した、アクションまたは子アクティビティのスケジュール設定  
  <xref:System.Activities.AsyncCodeActivity> 派生カスタム アクティビティはワークフローのスレッドに関する作業を非同期に実行するメソッドを提供しますが、子アクティビティやアクションをスケジュールする機能はありません。 ただし、非同期動作は、コンポジションを介して子アクティビティのスケジュール設定と組み合わせることができます。 非同期アクティビティを作成してから、<xref:System.Activities.Activity> または <xref:System.Activities.NativeActivity> の派生アクティビティと共に構成すると、子アクティビティまたはアクションの非同期動作とスケジュール機能を提供できます。 たとえば、アクティビティを <xref:System.Activities.Activity> から派生するように作成し、その実装時に <xref:System.Activities.Statements.Sequence> に非同期アクティビティと共にアクティビティのロジックを実装する他のアクティビティを含めることができます。 使用してアクティビティの作成の例について<xref:System.Activities.Activity>と<xref:System.Activities.NativeActivity>を参照してください[する方法: アクティビティを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)、[アクティビティ作成オプション](../../../docs/framework/windows-workflow-foundation/activity-authoring-options-in-wf.md)、および[複合](../../../docs/framework/windows-workflow-foundation/samples/composite.md)アクティビティのサンプルです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Action>  
  <xref:System.Func%602>  
  [アクティビティでの AsyncOperationContext の使用](../../../docs/framework/windows-workflow-foundation/samples/using-asyncoperationcontext-in-an-activity-sample.md)

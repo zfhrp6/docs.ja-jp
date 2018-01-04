@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8a7dd9e0ccc29c81426064110eda3e00d2f27b99
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 54ed92ee666a55b52db22abbbe46922189b3f8fb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="non-persisted-workflow-instances"></a>非永続化ワークフロー インスタンス
 状態が永続するワークフローの新しいインスタンスを <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> に作成すると、サービス ホストはそのサービスのエントリをインスタンス ストアに作成します。 その後、ワークフロー インスタンスが初めて永続化されると、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は現在のインスタンス状態を格納します。 ワークフローが Windows プロセス アクティブ化サービスにホストされている場合は、インスタンスが初めて永続化するとサービス配置データもインスタンス ストアに書き込まれます。  

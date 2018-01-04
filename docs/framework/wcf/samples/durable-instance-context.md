@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d4a1dfb2f517496cab1dcc2a57be3082c7c6f1a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e4f1f3f9e840ba422e327792ec2b0554fad45902
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="durable-instance-context"></a>永続性インスタンス コンテキスト
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ランタイムをカスタマイズして、永続性インスタンス コンテキストを有効にする方法を示します。 バッキング ストアとして、SQL Server 2005 (この場合は SQL Server 2005 Express) を使用します。 ただし、カスタム ストレージ機構にアクセスする方法も示します。  
@@ -59,7 +60,7 @@ class DurableInstanceContextChannelBase
   
  これら 2 つのメソッドは、`IContextManager` 実装を使用して、メッセージへのコンテキスト ID の書き込みと、メッセージからのコンテキスト ID の読み取りを行います  (`IContextManager` は、すべてのコンテキスト マネージャのコントラクトの定義に使用されるカスタム インターフェイスです)。チャネルは、このコンテキスト ID を、カスタム SOAP ヘッダーか HTTP クッキー ヘッダーのどちらかに含めることができます。 各コンテキスト マネージャの実装は、`ContextManagerBase` クラスを継承します。このクラスには、すべてのコンテキスト マネージャについての共通機能が含まれています。 このクラスの `GetContextId` メソッドは、コンテキスト ID をクライアント側で生成する際に使用されます。 コンテキスト ID が最初に生成されると、このメソッドはこれをテキスト ファイルに保存します。テキスト ファイルの名前は、リモート エンドポイント アドレスによって作成されます (通常の URI に含まれる、ファイル名として無効な文字は、@ 文字に置き換えられます)。  
   
- コンテキスト ID が後で同じリモート エンドポイントで必要になると、このメソッドは適切なファイルが存在するかどうかをチェックします。 ファイルが存在する場合は、コンテキスト ID を読み取って返します。 存在しない場合は、新しく生成されたコンテキスト ID を返してこれをファイルに保存します。 既定の構成では、これらのファイルは現在のユーザーの一時ディレクトリ内にある ContextStore ディレクトリにあります。 ただし、この場所はバインディング要素を使用して構成できます。  
+ コンテキスト ID が後で同じリモート エンドポイントで必要になると、このメソッドは適切なファイルが存在するかどうかをチェックします。 ファイルが存在する場合は、コンテキスト ID を読み取って返します。 存在しない場合は、新しく生成されたコンテキスト ID を返してこれをファイルに保存します。 既定の構成では、これらのファイルは現在のユーザーの一時ディレクトリ内にある ContextStore ディレクトリにあります。 ただし、この場所はバインド要素を使用して構成できます。  
   
  コンテキスト ID の転送に使用される機構は構成可能です。 HTTP クッキー ヘッダーか、またはカスタム SOAP ヘッダーのどちらかに記述できます。 カスタム SOAP ヘッダーに記述する場合は、このプロトコルを HTTP 以外のプロトコル (TCP や NamedPipes など) で使用できます。 これらの 2 つのオプションは、`MessageHeaderContextManager` と `HttpCookieContextManager` という名前の 2 つのクラスに実装されます。  
   
@@ -401,7 +402,7 @@ public class ShoppingCart : IShoppingCart
  }  
 ```  
   
- クライアント アプリケーションは、カスタム バインディングを使用して DurableInstanceContextChannel をチャネル スタックに追加する必要があります。 構成ファイル内でチャネルを宣言して構成するには、バインディング要素セクションをバインディング要素拡張のコレクションに追加する必要があります。  
+ クライアント アプリケーションは、カスタム バインディングを使用して DurableInstanceContextChannel をチャネル スタックに追加する必要があります。 構成ファイル内でチャネルを宣言して構成するには、バインド要素セクションをバインド要素拡張のコレクションに追加する必要があります。  
   
 ```xml  
 <system.serviceModel>  
@@ -413,7 +414,7 @@ type="Microsoft.ServiceModel.Samples.DurableInstanceContextBindingElementSection
  </extensions>  
 ```  
   
- これで、他の基本的なバインディング要素と同様、このバインディング要素をカスタム バインディングで使用できるようになりました。  
+ これで、他の基本的なバインド要素と同様、このバインド要素をカスタム バインドで使用できるようになりました。  
   
 ```xml  
 <bindings>  
@@ -470,4 +471,4 @@ Press ENTER to shut down client
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

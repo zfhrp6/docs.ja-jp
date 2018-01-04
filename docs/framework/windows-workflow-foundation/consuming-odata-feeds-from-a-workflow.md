@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c538ead434a7e5abe85f0d28ac7bf7edae98cbb8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9a01be08367fac1f7713f5db4953f67b0d32e073
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>ワークフローからの OData フィードの利用
 WCF Data Services は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のコンポーネントです。このコンポーネントを使用すると、Representational State Transfer (REST) のセマンティクスを使用して、Web またはイントラネット上のデータを公開および使用するために Open Data Protocol (OData) を使用するサービスを作成できます。 OData は、URI でアドレス指定できるリソースとしてデータを公開します。 HTTP 要求を送信し、データ サービスが返す OData フィードを処理できるのであれば、どのようなアプリケーションでも OData ベースのデータ サービスと対話できます。 さらに、WCF Data Services には [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] アプリケーションから OData フィードを使用する際のプログラミング エクスペリエンスを向上させるクライアント ライブラリが含まれています。 このトピックでは、クライアント ライブラリを使用した場合と使用しない場合のワークフローでの OData フィードの使用の概要について説明します。  

@@ -13,11 +13,12 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ab728751a01d16c6b3d2d14de4dd09c2d2b0a17a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ea429e16914d737547885b6667fc1d81b23a0f0d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="supporting-tokens"></a>トークンのサポート
 このトークンのサポート サンプルでは、WS-Security を使用するメッセージに追加トークンを追加する方法を示します。 この例では、ユーザー名セキュリティ トークンに加え、X.509 バイナリ セキュリティ トークンを追加します。 トークンは、WS-Security メッセージ ヘッダーでクライアントからサービスに渡されます。そのメッセージの一部は X.509 証明書を所有していることを受信側に証明するため、X.509 セキュリティ トークンに関連付けられた秘密キーで署名されます。 これは、複数のクレームをメッセージに関連付けて送信側を認証または承認する必要がある場合に便利です。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
@@ -477,4 +478,4 @@ iisreset
 > [!NOTE]
 >  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 別のコンピューターで証明書を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

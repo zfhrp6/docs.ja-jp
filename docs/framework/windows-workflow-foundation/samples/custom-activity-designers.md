@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc300d63d33ddbb234a4563d00675c5aaaee7cda
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8d94ad8974562872687889ef74efa6106c62c0f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-activity-designers"></a>カスタム アクティビティ デザイナー
 このセクションでは、ワークフロー デザイナーに表示するカスタム デザイナーを使用するアクティビティ サンプルを示します。  
@@ -28,7 +29,7 @@ ms.lasthandoff: 12/02/2017
  [カスタム複合デザイナー - Workflow Items Presenter](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md)  
  このサンプルでは、このような編集可能なコレクションを表示するアクティビティ デザイナーの構築方法を示します。  
   
- [メタデータ ストアのプログラミング](../../../../docs/framework/windows-workflow-foundation/samples/metadata-store-programmability.md)  
+ [メタデータ ストアのプログラム性](../../../../docs/framework/windows-workflow-foundation/samples/metadata-store-programmability.md)  
  このサンプルでは、属性を実行時の型に適用することで、メタデータ ストアを使用して制御できないソースをプログラミングする方法を示します。  
   
  [カスタム アクティビティ デザイナーでの ExpressionTextBox の使用](../../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)  

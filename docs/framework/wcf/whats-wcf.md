@@ -17,11 +17,12 @@ caps.latest.revision: "51"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a24f1bd921de848cb75a2c9f35fa3dd279bc741
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f5301bf3a2fed35dbdd0046e01eb2acb9083a290
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="what-is-windows-communication-foundation"></a>Windows Communication Foundation とは
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、サービス指向アプリケーションを構築するためのフレームワークです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を使用すると、1 つのサービス エンドポイントから別のサービス エンドポイントに非同期メッセージとしてデータを送信できます。 サービス エンドポイントには、IIS でホストされている、継続的に使用可能なサービスの一部を使用したり、アプリケーションでホストされているサービスを使用できます。 エンドポイントには、サービス エンドポイントからデータを要求するサービスのクライアントを使用できます。 メッセージは XML として送信された 1 文字または 1 語の簡単なものでも、バイナリ データのストリームのような複雑なものでも構いません。 サンプル シナリオをいくつか挙げます。  
@@ -102,7 +103,7 @@ ms.lasthandoff: 12/02/2017
   
  [!INCLUDE[dublin](../../../includes/dublin-md.md)] アプリケーション サーバーは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を通信に使用するアプリケーションを配置および管理するために特別に構築されています。 [!INCLUDE[dublin2](../../../includes/dublin2-md.md)] には、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]対応アプリケーションに合わせて特別に設計された豊富なツールおよび構成オプションが揃っています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel>  
  [Windows Communication Foundation の基本概念](../../../docs/framework/wcf/fundamental-concepts.md)  
  [Windows Communication Foundation のアーキテクチャ](../../../docs/framework/wcf/architecture.md)  

@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 20674a93459f42a793ddf5f7ee5dffb1fa122d0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2db19d402f32bd43bb7053403428e8055755d017
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-disable-tab-pages"></a>方法 : タブ ページを無効化する
 状況によっては、Windows フォーム アプリケーション内で使用可能なデータへのアクセスを制限するされます。 タブ コントロールのタブ ページに表示されるデータがある場合、一例があります。guest アカウントや下位レベルのユーザーを制限するタブ ページ上の情報を保持できたは、管理者。  
@@ -111,7 +112,7 @@ ms.lasthandoff: 11/21/2017
        gcnew System::EventHandler(this, &Form1::tabControl1_SelectedIndexChanged);  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [TabControl コントロールの概要](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)  
  [方法: タブ ページにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)  
  [方法: Windows フォーム TabControl のタブを追加および削除する](../../../../docs/framework/winforms/controls/how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)  

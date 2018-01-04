@@ -14,11 +14,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4b8fe20b1a5d65a011ec0315773eafd6b4dd6ade
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5ab5ea1204a4fbb8ef623191d54d1b24f3dc8f56
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xmlreader-sample"></a>XmlReader サンプル
 XmlReader サンプルでは、<xref:System.Xml.XmlReader> を使用したメッセージ本文の処理を示します。 サンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)、電卓サービスを実装します。 `Sum` という 1 つのサービス操作が追加され、このサービス操作は、合計する値の配列を含むメッセージを受け入れます。 サービスは、<xref:System.Xml.XmlReader> を使用してメッセージを読み取ります。  
@@ -117,4 +118,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\XmlReader`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

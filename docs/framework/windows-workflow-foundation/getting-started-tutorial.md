@@ -15,11 +15,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3bc2f081411577094ea1b95c25478822a6c1747c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f25058071e041ac1e14de2c223750013c8ef1d30
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-tutorial"></a>チュートリアル入門
 このセクションには、[!INCLUDE[wf](../../../includes/wf-md.md)] アプリケーションのプログラミングの概要を説明する一連のチュートリアル トピックが掲載されています。 これらのトピックの手順に従って、数値推測ゲーム アプリケーションを構築します。 チュートリアルの最初のトピックでは、ワークフローに必要なカスタム アクティビティを作成する手順について説明します。 2 番目のトピックでは、カスタム アクティビティをビルトイン ワークフロー アクティビティと共にフローチャート ワークフローにアセンブルします。 3 番目のトピックでは、ホスト アプリケーションを構成してワークフローを実行します。最後のトピックでは永続化の概要について説明します。 このプロセスの各手順はその前の手順に基づいているため、順番に完了することをお勧めします。  
@@ -46,5 +47,5 @@ ms.lasthandoff: 12/02/2017
  [実行中のワークフロー インスタンスの定義を更新する方法](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md)  
  動的更新を使用して、実行中のワークフロー インスタンスを変更する方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows Workflow Foundation プログラミング](../../../docs/framework/windows-workflow-foundation/programming.md)

@@ -12,11 +12,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a86cbe3d36383623c70c6a0588d3c0e8fe0bf5c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b66783ae09e15d324cc1b6ff2aa8db90e052dddf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-persistence-database"></a>SQL Server 永続性データベース
 このセクションでは、SQL Workflow Instance Store でサポートされるパブリック データベース ビューの詳細について説明し、インスタンスのプリミティブ データ プロパティを逆シリアル化する方法と非永続的インスタンスに対してクエリを実行する方法を示します。  
@@ -29,5 +30,5 @@ ms.lasthandoff: 12/02/2017
   
 -   [方法: 非永続的インスタンスを検索する](../../../docs/framework/windows-workflow-foundation/how-to-query-for-non-persisted-instances.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [App Fabric SQL サーバー永続性データベース](http://go.microsoft.com/fwlink/?LinkID=201202&clcid=0x409)

@@ -12,11 +12,12 @@ caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e1eda65837bc6f58201652938751959f28da63db
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fca570f661b1867737cc3af295aff5fd8d4cd5ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fundamental-windows-workflow-concepts"></a>Windows Workflow の基本概念
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のワークフロー開発で使用される概念は、一部の開発者には不慣れなことも考えられます。 ここでは、そのいくつかの概念について、内容と実装方法を説明します。  

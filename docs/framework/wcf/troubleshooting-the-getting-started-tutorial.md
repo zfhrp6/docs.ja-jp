@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7372aab9e728876a6127eb49e1594ac50810c99
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 55288074b35bcb00d6c6b453f1320ad40d26a5f7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="troubleshooting-the-getting-started-tutorial"></a>チュートリアル入門のトラブルシューティング
 このトピックでは、チュートリアル入門の作業中に遭遇する最も一般的な問題とその解決方法の一覧を示します。  
@@ -79,7 +80,7 @@ selfhost.AddServiceEndpoint(typeof(ICalculator), new WSHttpBinding(SecurityMode.
 <security mode="Node" />  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)  
  [WCF トラブルシューティング クイックスタート](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
  [セットアップ問題のトラブルシューティング](../../../docs/framework/wcf/troubleshooting-setup-issues.md)
