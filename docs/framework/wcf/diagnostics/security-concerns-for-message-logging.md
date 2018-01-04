@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 1f3d62e8b6771666dd3a55855ca0c5e41853f439
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87815be1f0951d54a8d9eedbfdcaca038fa6fe09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-concerns-for-message-logging"></a>メッセージ ログ記録のセキュリティの考慮事項
 ここでは、メッセージ ログに表示される機密データだけでなく、メッセージ ログによって生成されるイベントを保護する方法についても説明します。  
@@ -119,6 +120,6 @@ ms.lasthandoff: 11/21/2017
   
  これらのイベントは、Windows に付属するイベント ビューアー ツールを使用して表示できます。 詳細については、次を参照してください。[イベント ログ](../../../../docs/framework/wcf/diagnostics/event-logging/index.md)です。  
   
-## <a name="see-also"></a>関連項目  
- [メッセージのログ記録](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
- [セキュリティに関する注意事項とトレース用の便利なヒント](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)
+## <a name="see-also"></a>参照  
+ [メッセージ ログ](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
+ [トレースに関するセキュリティの考慮事項と役立つヒント](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)

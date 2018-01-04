@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 174459c23bd6ecd336394146b6d91e265cb820d3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5badbb9142261fc1dc6c2b2d5af3c89c7af776b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tools"></a>ツール
 ここでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] ツールによって生成されるすべての例外を示します。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/02/2017
 |WrnNoServiceContractTypes|指定されたアセンブリの XmlSerializer 型を生成できません。 サービス コントラクト型が見つかりませんでした。|  
 |WrnCouldNotLoadTypesFromReferenceAssemblyAt|指定された対象から読み込んだアセンブリで、型の読み込み中にエラーが発生しました。 アセンブリ内の一部の型は読み込めないため、ツールで使用できません。|  
 |ErrDirectoryPointsToAFile|指定された無効な値が指定されたオプションに渡されました。 指定された値はファイルへのパスです。|  
-|エラー|エラー :|  
+|Error|エラー :|  
 |ErrDuplicateReferenceValues|指定されたオプションを使用して、指定されたアセンブリが 2 回読み込まれました。 アセンブリは、1 回しか参照できません。|  
 |WrnNoXmlSerializerOperationBehavior|指定されたアセンブリの XmlSerializer を生成できません。 このアセンブリには、XmlSerializerOperationBehavior を使用する操作を含むサービス コントラクトがありません。|  
 |ErrCannotCreateDirectory|指定されたディレクトリを作成できません。|  
@@ -86,7 +87,7 @@ ms.lasthandoff: 12/02/2017
 |ErrDuplicateValuePassedToTypeArg|指定された値が指定されたオプションに繰り返し、渡されました。 各型は 1 回しか指定できません。|  
 |ErrInputEPRFileParseError|指定された対象からエンドポイント参照を読み取ることができません。 XML の形式が正しく、有効であることを確認してください。|  
 |ErrCouldNotCreateCodeProvider|/{1} 引数に渡された指定された値に対してコード プロバイダーを作成できません。 コード プロバイダーが適切にインストールおよび構成されていることを確認してください。|  
-|ErrPathTooLongDirOnly|結果の指定されたパスが長すぎます。 指定された引数を確認してください。|  
+|ErrPathTooLongDirOnly|結果の指定されたパスが長すぎます。 指定された引数をレビューしてください。|  
 |HelpDataContractSerializer|シリアル化と逆シリアル化に DataContract シリアライザーを使用するデータ型を生成します。|  
 |ErrUnableToExportEndpoint|指定された名前空間の指定されたエンドポイント名を、アセンブリに対して読み込んだ構成ファイル内の指定されたサービス型にエクスポートしているときにエラーが発生しました。|  
 |HelpUsage1|ヘルプの使用方法を表示します。|  
@@ -120,7 +121,7 @@ ms.lasthandoff: 12/02/2017
 |ErrCannotDisambiguateSpecifiedTypes|同じ名前を持つ複数の型が参照アセンブリのセットに存在します。 指定されたオプションで、アセンブリ修飾名を使用して指定された型を区別してください。|  
 |RetreivingMetadataWithMexOnly|WS-Metadata Exchange を使用して、指定された場所からメタデータをダウンロードしようとしています。 この URL は DISCO をサポートしていません。|  
 |ErrInvalidTarget|指定されたターゲットは、指定されたオプションを使用して指定した場合は無効です。 サポートされているターゲットが指定されています。|  
-|ErrPathTooLong|結果のパスが長すぎます。 指定された引数を確認してください。|  
+|ErrPathTooLong|結果のパスが長すぎます。 指定された引数をレビューしてください。|  
 |HelpCommonOptionsCategory|-= 共通のオプション =-|  
 |ParametersServiceName|\<serviceConfigName >|  
 |ErrNoValidInputFilesSpecified|有効な入力ファイルが指定されていません。 メタデータ ドキュメントまたはアセンブリ ファイルを指定してください。|  

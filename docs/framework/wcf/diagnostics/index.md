@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4aa9cacfaa966bbe37618406f4b1413dec433726
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d26386a0669c92b1b21559474c8f5f61862e6de7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="administration-and-diagnostics"></a>管理と診断
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、アプリケーションのライフサイクルのさまざまな段階を監視できるようにする豊富な機能が用意されています。 たとえば、展開時に構成を使用してサービスとクライアントを設定できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、アプリケーションのパフォーマンス測定に役立つ多数のパフォーマンス カウンターが備わっています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。 アプリケーションにエラーが発生したり、適切に動作しなくなったりした場合は、イベント ログを使用して、何か重大なことが発生していないかを確認できます。 メッセージ ログとトレースを使用して、アプリケーションでどのようなイベントが発生しているのかをエンドツーエンドで確認することもできます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションが正常に動作しなくなった場合、開発者や IT 専門家は、これらの機能を使用してトラブルシューティングを行うことができます。  
@@ -49,16 +50,16 @@ ms.lasthandoff: 12/02/2017
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの作成、展開、および管理を容易にする GUI ツールとコマンド ライン ツールも用意されています。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Windows Communication Foundation ツール](../../../../docs/framework/wcf/tools.md)です。 たとえば、使用することができます、[構成エディター ツール (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)を作成および編集[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]構成設定の XML を直接編集ではなく、ウィザードを使用します。 使用することも、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)を表示、グループ、およびトレース メッセージをフィルター処理を診断することができるため、修復、および問題を確認してください[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]services です。  
   
-## <a name="see-also"></a>関連項目  
- [アプリケーションを構成します。](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)  
- [サービスを展開します。](../../../../docs/framework/wcf/diagnostics/deploying-services.md)  
- [例外のリファレンス](../../../../docs/framework/wcf/diagnostics/exceptions-reference/index.md)  
- [イベントのログ記録](../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [メッセージのログ記録](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
+## <a name="see-also"></a>参照  
+ [アプリケーションの構成](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)  
+ [サービスの配置](../../../../docs/framework/wcf/diagnostics/deploying-services.md)  
+ [例外リファレンス](../../../../docs/framework/wcf/diagnostics/exceptions-reference/index.md)  
+ [イベント ログ](../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [メッセージ ログ](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
  [構成エディター ツール (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
  [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
  [ServiceModel 登録ツール](../../../../docs/framework/wcf/diagnostics/servicemodel-registration-tool.md)  
  [トレース](../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Windows Management Instrumentation を使用して、詳細な診断](../../../../docs/framework/wcf/diagnostics/wmi/index.md)  
+ [診断用の WMI (Windows Management Instrumentation) の使用](../../../../docs/framework/wcf/diagnostics/wmi/index.md)  
  [パフォーマンス カウンター](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)  
  [Windows Communication Foundation ツール](../../../../docs/framework/wcf/tools.md)

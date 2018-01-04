@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 55ae2ed6ac8a02218fa4c13063fb8b8a8c474fd8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 28924f04dc83387f49c2369c2598c028f9b8d4bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemservicemodelchannelsmsmqpoisonmessagerejected"></a>System.ServiceModel.Channels.MsmqPoisonMessageRejected
 有害メッセージは拒否されました。  
@@ -27,9 +28,9 @@ ms.lasthandoff: 12/02/2017
   
  参照してください[有害メッセージの処理](http://go.microsoft.com/fwlink/?LinkId=99546)ときにメッセージが有害となる適切に処理するサービスを構成する方法の詳細についてはします。 参照してください[MQMarkMessageRejected](http://go.microsoft.com/fwlink/?LinkId=99548)拒否されたメッセージは MSMQ では意味の詳細についてはします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [トレースを使用して、アプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)  
  [有害メッセージ処理](http://go.microsoft.com/fwlink/?LinkId=99546)  
  [MQMarkMessageRejected](http://go.microsoft.com/fwlink/?LinkId=99548)

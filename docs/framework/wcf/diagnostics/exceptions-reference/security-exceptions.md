@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 0c1b3e921714d104ab2bb5018184a9517c7ad345
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 431226f8ce56300f83df64a713b477f0065e2f56
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-exceptions"></a>セキュリティ例外
 ここでは、すべてのセキュリティ例外を示します。  
@@ -122,7 +123,7 @@ ms.lasthandoff: 10/18/2017
 |SecurityAuditFailToLoadDll|指定されたダイナミック リンク ライブラリ (dll) を読み込むことができませんでした。|  
 |SecurityAuditNotSupportedOnChannelFactory|SecurityAuditBehavior は、チャネル ファクトリではサポートされていません。|  
 |SecurityAuditPlatformNotSupported|現在のプラットフォームでは、セキュリティ ログへの監査メッセージの書き込みはサポートされていません。 監査メッセージはアプリケーション ログに書き込む必要があります。|  
-|SecurityBindingElementCannotBeExpressedInConfig|エンドポイントのセキュリティ ポリシーがインポートされました。 このセキュリティ ポリシーには、Windows Communication Foundation の構成では表現できない要件が含まれています。 生成された構成ファイルで、必須の SecurityBindingElement パラメーターに関するコメントを参照してください。 コードを使用して正しいバインド要素を作成してください。 構成ファイル内のバインディング構成はセキュリティで保護されていません。|  
+|SecurityBindingElementCannotBeExpressedInConfig|エンドポイントのセキュリティ ポリシーがインポートされました。 このセキュリティ ポリシーには、Windows Communication Foundation の構成では表現できない要件が含まれています。 生成された構成ファイルで、必須の SecurityBindingElement パラメーターに関するコメントを参照してください。 コードを使用して正しいバインド要素を作成してください。 構成ファイル内のバインド構成はセキュリティで保護されていません。|  
 |SecurityBindingSupportsOneWayOnly|指定されたコントラクトに対する指定されたバインディングの SecurityBinding は、OneWay 操作のみをサポートしています。|  
 |SecurityContextDoesNotAllowImpersonation|指定されたアクションを含む要求メッセージの UltimateReceiver ロールの SecurityContext が Windows ID に割り当てられていないため、偽装を開始できません。|  
 |SecurityListenerClosing|リスナーは、閉じている途中のため、セキュリティで保護された新しいメッセージ交換を受け入れていません。|  
