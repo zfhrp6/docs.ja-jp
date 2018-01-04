@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a0c1d3a58f59f9a45583bf5f0b5c70fe2e7ea446
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2eae5a3019b77ace6b67d7487d621a47439534e6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsconnectionpoolmaxoutboundconnectionsperendpointquotareached"></a><span data-ttu-id="10c50-102">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span><span class="sxs-lookup"><span data-stu-id="10c50-102">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span></span>
-<span data-ttu-id="10c50-103">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span><span class="sxs-lookup"><span data-stu-id="10c50-103">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span></span>  
+# <a name="systemservicemodelchannelsconnectionpoolmaxoutboundconnectionsperendpointquotareached"></a><span data-ttu-id="37ee7-102">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span><span class="sxs-lookup"><span data-stu-id="37ee7-102">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span></span>
+<span data-ttu-id="37ee7-103">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span><span class="sxs-lookup"><span data-stu-id="37ee7-103">System.ServiceModel.Channels.ConnectionPoolMaxOutboundConnectionsPerEndpointQuotaReached</span></span>  
   
-## <a name="description"></a><span data-ttu-id="10c50-104">説明</span><span class="sxs-lookup"><span data-stu-id="10c50-104">Description</span></span>  
- <span data-ttu-id="10c50-105">MaxOutboundConnectionsPerEndpoint のクォータに達したため、接続は閉じられ、この接続プールには保存されませんでした。</span><span class="sxs-lookup"><span data-stu-id="10c50-105">MaxOutboundConnectionsPerEndpoint quota has been reached, so the connection was closed and not stored in this connection pool.</span></span>  
+## <a name="description"></a><span data-ttu-id="37ee7-104">説明</span><span class="sxs-lookup"><span data-stu-id="37ee7-104">Description</span></span>  
+ <span data-ttu-id="37ee7-105">MaxOutboundConnectionsPerEndpoint のクォータに達したため、接続は閉じられ、この接続プールには保存されませんでした。</span><span class="sxs-lookup"><span data-stu-id="37ee7-105">MaxOutboundConnectionsPerEndpoint quota has been reached, so the connection was closed and not stored in this connection pool.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="10c50-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="10c50-106">See Also</span></span>  
- [<span data-ttu-id="10c50-107">トレース</span><span class="sxs-lookup"><span data-stu-id="10c50-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="10c50-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="10c50-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="10c50-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="10c50-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="37ee7-106">参照</span><span class="sxs-lookup"><span data-stu-id="37ee7-106">See Also</span></span>  
+ [<span data-ttu-id="37ee7-107">トレース</span><span class="sxs-lookup"><span data-stu-id="37ee7-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="37ee7-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="37ee7-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="37ee7-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="37ee7-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

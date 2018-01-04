@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7ebc1001e15d80728f6154017952ee316cdda185
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2f1cc3dc275e634ccfd1c9c9020d9fdfe039677f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="1439---pendingacceptsatzero"></a><span data-ttu-id="27217-102">1439 - PendingAcceptsAtZero</span><span class="sxs-lookup"><span data-stu-id="27217-102">1439 - PendingAcceptsAtZero</span></span>
-## <a name="properties"></a><span data-ttu-id="27217-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="27217-103">Properties</span></span>  
+# <a name="1439---pendingacceptsatzero"></a><span data-ttu-id="fd59d-102">1439 - PendingAcceptsAtZero</span><span class="sxs-lookup"><span data-stu-id="fd59d-102">1439 - PendingAcceptsAtZero</span></span>
+## <a name="properties"></a><span data-ttu-id="fd59d-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="fd59d-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="27217-104">ID</span><span class="sxs-lookup"><span data-stu-id="27217-104">ID</span></span>|<span data-ttu-id="27217-105">1439</span><span class="sxs-lookup"><span data-stu-id="27217-105">1439</span></span>|  
-|<span data-ttu-id="27217-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="27217-106">Keywords</span></span>|<span data-ttu-id="27217-107">クォータ</span><span class="sxs-lookup"><span data-stu-id="27217-107">Quota</span></span>|  
-|<span data-ttu-id="27217-108">レベル</span><span class="sxs-lookup"><span data-stu-id="27217-108">Level</span></span>|<span data-ttu-id="27217-109">情報</span><span class="sxs-lookup"><span data-stu-id="27217-109">Information</span></span>|  
-|<span data-ttu-id="27217-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="27217-110">Channel</span></span>|<span data-ttu-id="27217-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="27217-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="fd59d-104">ID</span><span class="sxs-lookup"><span data-stu-id="fd59d-104">ID</span></span>|<span data-ttu-id="fd59d-105">1439</span><span class="sxs-lookup"><span data-stu-id="fd59d-105">1439</span></span>|  
+|<span data-ttu-id="fd59d-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="fd59d-106">Keywords</span></span>|<span data-ttu-id="fd59d-107">クォータ</span><span class="sxs-lookup"><span data-stu-id="fd59d-107">Quota</span></span>|  
+|<span data-ttu-id="fd59d-108">レベル</span><span class="sxs-lookup"><span data-stu-id="fd59d-108">Level</span></span>|<span data-ttu-id="fd59d-109">情報</span><span class="sxs-lookup"><span data-stu-id="fd59d-109">Information</span></span>|  
+|<span data-ttu-id="fd59d-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="fd59d-110">Channel</span></span>|<span data-ttu-id="fd59d-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="fd59d-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="27217-112">説明</span><span class="sxs-lookup"><span data-stu-id="27217-112">Description</span></span>  
- <span data-ttu-id="27217-113">このイベントは、保留中の受け入れがない場合に生成されます。</span><span class="sxs-lookup"><span data-stu-id="27217-113">This event is emitted with pending accepts at zero.</span></span>  
+## <a name="description"></a><span data-ttu-id="fd59d-112">説明</span><span class="sxs-lookup"><span data-stu-id="fd59d-112">Description</span></span>  
+ <span data-ttu-id="fd59d-113">このイベントは、保留中の受け入れがない場合に生成されます。</span><span class="sxs-lookup"><span data-stu-id="fd59d-113">This event is emitted with pending accepts at zero.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="27217-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="27217-114">Message</span></span>  
- <span data-ttu-id="27217-115">保留中の受け入れはありません</span><span class="sxs-lookup"><span data-stu-id="27217-115">Zero pending accepts left</span></span>  
+## <a name="message"></a><span data-ttu-id="fd59d-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="fd59d-114">Message</span></span>  
+ <span data-ttu-id="fd59d-115">保留中の受け入れはありません</span><span class="sxs-lookup"><span data-stu-id="fd59d-115">Zero pending accepts left</span></span>  
   
-## <a name="details"></a><span data-ttu-id="27217-116">詳細</span><span class="sxs-lookup"><span data-stu-id="27217-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="fd59d-116">詳細</span><span class="sxs-lookup"><span data-stu-id="fd59d-116">Details</span></span>

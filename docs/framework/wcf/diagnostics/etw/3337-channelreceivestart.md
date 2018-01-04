@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 59eea4bf0213757d1eb3725488b88c78916597f7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d7f7b592a833590f3940619c417d75bcfee56c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3337---channelreceivestart"></a><span data-ttu-id="c98a0-102">3337 - ChannelReceiveStart</span><span class="sxs-lookup"><span data-stu-id="c98a0-102">3337 - ChannelReceiveStart</span></span>
-## <a name="properties"></a><span data-ttu-id="c98a0-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="c98a0-103">Properties</span></span>  
+# <a name="3337---channelreceivestart"></a><span data-ttu-id="f90b6-102">3337 - ChannelReceiveStart</span><span class="sxs-lookup"><span data-stu-id="f90b6-102">3337 - ChannelReceiveStart</span></span>
+## <a name="properties"></a><span data-ttu-id="f90b6-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="f90b6-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="c98a0-104">ID</span><span class="sxs-lookup"><span data-stu-id="c98a0-104">ID</span></span>|<span data-ttu-id="c98a0-105">3337</span><span class="sxs-lookup"><span data-stu-id="c98a0-105">3337</span></span>|  
-|<span data-ttu-id="c98a0-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="c98a0-106">Keywords</span></span>|<span data-ttu-id="c98a0-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="c98a0-107">Channel</span></span>|  
-|<span data-ttu-id="c98a0-108">レベル</span><span class="sxs-lookup"><span data-stu-id="c98a0-108">Level</span></span>|<span data-ttu-id="c98a0-109">詳細</span><span class="sxs-lookup"><span data-stu-id="c98a0-109">Verbose</span></span>|  
-|<span data-ttu-id="c98a0-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="c98a0-110">Channel</span></span>|<span data-ttu-id="c98a0-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="c98a0-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="f90b6-104">ID</span><span class="sxs-lookup"><span data-stu-id="f90b6-104">ID</span></span>|<span data-ttu-id="f90b6-105">3337</span><span class="sxs-lookup"><span data-stu-id="f90b6-105">3337</span></span>|  
+|<span data-ttu-id="f90b6-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="f90b6-106">Keywords</span></span>|<span data-ttu-id="f90b6-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="f90b6-107">Channel</span></span>|  
+|<span data-ttu-id="f90b6-108">レベル</span><span class="sxs-lookup"><span data-stu-id="f90b6-108">Level</span></span>|<span data-ttu-id="f90b6-109">詳細</span><span class="sxs-lookup"><span data-stu-id="f90b6-109">Verbose</span></span>|  
+|<span data-ttu-id="f90b6-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="f90b6-110">Channel</span></span>|<span data-ttu-id="f90b6-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="f90b6-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="c98a0-112">説明</span><span class="sxs-lookup"><span data-stu-id="c98a0-112">Description</span></span>  
- <span data-ttu-id="c98a0-113">このイベントは、チャネルの受信が開始されると生成されます。</span><span class="sxs-lookup"><span data-stu-id="c98a0-113">This event is emitted when the channel receive starts.</span></span>  
+## <a name="description"></a><span data-ttu-id="f90b6-112">説明</span><span class="sxs-lookup"><span data-stu-id="f90b6-112">Description</span></span>  
+ <span data-ttu-id="f90b6-113">このイベントは、チャネルの受信が開始されると生成されます。</span><span class="sxs-lookup"><span data-stu-id="f90b6-113">This event is emitted when the channel receive starts.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="c98a0-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="c98a0-114">Message</span></span>  
- <span data-ttu-id="c98a0-115">ChannelHandlerId:%1 - メッセージ受信ループを開始しました。</span><span class="sxs-lookup"><span data-stu-id="c98a0-115">ChannelHandlerId:%1 - Message receive loop started.</span></span>  
+## <a name="message"></a><span data-ttu-id="f90b6-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="f90b6-114">Message</span></span>  
+ <span data-ttu-id="f90b6-115">ChannelHandlerId:%1 - メッセージ受信ループを開始しました。</span><span class="sxs-lookup"><span data-stu-id="f90b6-115">ChannelHandlerId:%1 - Message receive loop started.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="c98a0-116">詳細</span><span class="sxs-lookup"><span data-stu-id="c98a0-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="f90b6-116">詳細</span><span class="sxs-lookup"><span data-stu-id="f90b6-116">Details</span></span>

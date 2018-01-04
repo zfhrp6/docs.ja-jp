@@ -13,27 +13,28 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 91da7fa1dd3d72cb7a3092ad2ca3ddab9a61b9e4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 15c35ff356d29946565bff0aeff18da3fbcecc80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3382---clientreliablesessionreconnect"></a><span data-ttu-id="26b33-102">3382 - ClientReliableSessionReconnect</span><span class="sxs-lookup"><span data-stu-id="26b33-102">3382 - ClientReliableSessionReconnect</span></span>
-## <a name="properties"></a><span data-ttu-id="26b33-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="26b33-103">Properties</span></span>  
+# <a name="3382---clientreliablesessionreconnect"></a><span data-ttu-id="38531-102">3382 - ClientReliableSessionReconnect</span><span class="sxs-lookup"><span data-stu-id="38531-102">3382 - ClientReliableSessionReconnect</span></span>
+## <a name="properties"></a><span data-ttu-id="38531-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="38531-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="26b33-104">ID</span><span class="sxs-lookup"><span data-stu-id="26b33-104">ID</span></span>|<span data-ttu-id="26b33-105">3382</span><span class="sxs-lookup"><span data-stu-id="26b33-105">3382</span></span>|  
-|<span data-ttu-id="26b33-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="26b33-106">Keywords</span></span>|<span data-ttu-id="26b33-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="26b33-107">Channel</span></span>|  
-|<span data-ttu-id="26b33-108">レベル</span><span class="sxs-lookup"><span data-stu-id="26b33-108">Level</span></span>|<span data-ttu-id="26b33-109">情報</span><span class="sxs-lookup"><span data-stu-id="26b33-109">Informational</span></span>|  
-|<span data-ttu-id="26b33-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="26b33-110">Channel</span></span>|<span data-ttu-id="26b33-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="26b33-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="38531-104">ID</span><span class="sxs-lookup"><span data-stu-id="38531-104">ID</span></span>|<span data-ttu-id="38531-105">3382</span><span class="sxs-lookup"><span data-stu-id="38531-105">3382</span></span>|  
+|<span data-ttu-id="38531-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="38531-106">Keywords</span></span>|<span data-ttu-id="38531-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="38531-107">Channel</span></span>|  
+|<span data-ttu-id="38531-108">レベル</span><span class="sxs-lookup"><span data-stu-id="38531-108">Level</span></span>|<span data-ttu-id="38531-109">情報</span><span class="sxs-lookup"><span data-stu-id="38531-109">Informational</span></span>|  
+|<span data-ttu-id="38531-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="38531-110">Channel</span></span>|<span data-ttu-id="38531-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="38531-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="26b33-112">説明</span><span class="sxs-lookup"><span data-stu-id="26b33-112">Description</span></span>  
- <span data-ttu-id="26b33-113">このイベントは ClientReliableSession を再接続するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="26b33-113">This event is emitted when the ClientReliableSession is reconnecting.</span></span>  
+## <a name="description"></a><span data-ttu-id="38531-112">説明</span><span class="sxs-lookup"><span data-stu-id="38531-112">Description</span></span>  
+ <span data-ttu-id="38531-113">このイベントは ClientReliableSession を再接続するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="38531-113">This event is emitted when the ClientReliableSession is reconnecting.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="26b33-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="26b33-114">Message</span></span>  
- <span data-ttu-id="26b33-115">SessionId:%1 を再接続します。</span><span class="sxs-lookup"><span data-stu-id="26b33-115">SessionId:%1 reconnecting.</span></span>  
+## <a name="message"></a><span data-ttu-id="38531-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="38531-114">Message</span></span>  
+ <span data-ttu-id="38531-115">SessionId:%1 を再接続します。</span><span class="sxs-lookup"><span data-stu-id="38531-115">SessionId:%1 reconnecting.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="26b33-116">詳細</span><span class="sxs-lookup"><span data-stu-id="26b33-116">Details</span></span>  
- <span data-ttu-id="26b33-117">このイベントは ClientReliableSession を再接続するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="26b33-117">This event is emitted when the ClientReliableSession is reconnecting.</span></span>
+## <a name="details"></a><span data-ttu-id="38531-116">詳細</span><span class="sxs-lookup"><span data-stu-id="38531-116">Details</span></span>  
+ <span data-ttu-id="38531-117">このイベントは ClientReliableSession を再接続するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="38531-117">This event is emitted when the ClientReliableSession is reconnecting.</span></span>

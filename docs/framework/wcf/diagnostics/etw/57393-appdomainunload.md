@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d5c59c1536b3bf31d392d77660edd40071a52c6b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 945341f284bac20dbb0972db9584cb47916c4b59
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="57393---appdomainunload"></a><span data-ttu-id="4dd1b-102">57393 - AppDomainUnload</span><span class="sxs-lookup"><span data-stu-id="4dd1b-102">57393 - AppDomainUnload</span></span>
-## <a name="properties"></a><span data-ttu-id="4dd1b-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="4dd1b-103">Properties</span></span>  
+# <a name="57393---appdomainunload"></a><span data-ttu-id="47fad-102">57393 - AppDomainUnload</span><span class="sxs-lookup"><span data-stu-id="47fad-102">57393 - AppDomainUnload</span></span>
+## <a name="properties"></a><span data-ttu-id="47fad-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="47fad-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="4dd1b-104">ID</span><span class="sxs-lookup"><span data-stu-id="4dd1b-104">ID</span></span>|<span data-ttu-id="4dd1b-105">57393</span><span class="sxs-lookup"><span data-stu-id="4dd1b-105">57393</span></span>|  
-|<span data-ttu-id="4dd1b-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="4dd1b-106">Keywords</span></span>|<span data-ttu-id="4dd1b-107">インフラストラクチャ</span><span class="sxs-lookup"><span data-stu-id="4dd1b-107">Infrastructure</span></span>|  
-|<span data-ttu-id="4dd1b-108">レベル</span><span class="sxs-lookup"><span data-stu-id="4dd1b-108">Level</span></span>|<span data-ttu-id="4dd1b-109">情報</span><span class="sxs-lookup"><span data-stu-id="4dd1b-109">Information</span></span>|  
-|<span data-ttu-id="4dd1b-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="4dd1b-110">Channel</span></span>|<span data-ttu-id="4dd1b-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="4dd1b-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="47fad-104">ID</span><span class="sxs-lookup"><span data-stu-id="47fad-104">ID</span></span>|<span data-ttu-id="47fad-105">57393</span><span class="sxs-lookup"><span data-stu-id="47fad-105">57393</span></span>|  
+|<span data-ttu-id="47fad-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="47fad-106">Keywords</span></span>|<span data-ttu-id="47fad-107">インフラストラクチャ</span><span class="sxs-lookup"><span data-stu-id="47fad-107">Infrastructure</span></span>|  
+|<span data-ttu-id="47fad-108">レベル</span><span class="sxs-lookup"><span data-stu-id="47fad-108">Level</span></span>|<span data-ttu-id="47fad-109">情報</span><span class="sxs-lookup"><span data-stu-id="47fad-109">Information</span></span>|  
+|<span data-ttu-id="47fad-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="47fad-110">Channel</span></span>|<span data-ttu-id="47fad-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="47fad-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="4dd1b-112">説明</span><span class="sxs-lookup"><span data-stu-id="4dd1b-112">Description</span></span>  
- <span data-ttu-id="4dd1b-113">このイベントは AppDomain のアンロード時に生成されます。</span><span class="sxs-lookup"><span data-stu-id="4dd1b-113">This event is emitted on AppDomain unloading.</span></span>  
+## <a name="description"></a><span data-ttu-id="47fad-112">説明</span><span class="sxs-lookup"><span data-stu-id="47fad-112">Description</span></span>  
+ <span data-ttu-id="47fad-113">このイベントは AppDomain のアンロード時に生成されます。</span><span class="sxs-lookup"><span data-stu-id="47fad-113">This event is emitted on AppDomain unloading.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="4dd1b-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="4dd1b-114">Message</span></span>  
- <span data-ttu-id="4dd1b-115">AppDomain をアンロードしています。</span><span class="sxs-lookup"><span data-stu-id="4dd1b-115">AppDomain unloading.</span></span> <span data-ttu-id="4dd1b-116">AppDomain.FriendlyName %1、ProcessName %2、ProcessId %3。</span><span class="sxs-lookup"><span data-stu-id="4dd1b-116">AppDomain.FriendlyName %1, ProcessName %2, ProcessId %3.</span></span>  
+## <a name="message"></a><span data-ttu-id="47fad-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="47fad-114">Message</span></span>  
+ <span data-ttu-id="47fad-115">AppDomain をアンロードしています。</span><span class="sxs-lookup"><span data-stu-id="47fad-115">AppDomain unloading.</span></span> <span data-ttu-id="47fad-116">AppDomain.FriendlyName %1、ProcessName %2、ProcessId %3。</span><span class="sxs-lookup"><span data-stu-id="47fad-116">AppDomain.FriendlyName %1, ProcessName %2, ProcessId %3.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="4dd1b-117">詳細</span><span class="sxs-lookup"><span data-stu-id="4dd1b-117">Details</span></span>
+## <a name="details"></a><span data-ttu-id="47fad-117">詳細</span><span class="sxs-lookup"><span data-stu-id="47fad-117">Details</span></span>

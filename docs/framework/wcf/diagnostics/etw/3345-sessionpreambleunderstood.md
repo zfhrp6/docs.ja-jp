@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 633763e536d790aacc52af3bfadadde3b6b9dc74
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ed82d96f7e48d9f719a87b606fa35b65508b839e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3345---sessionpreambleunderstood"></a><span data-ttu-id="acf2d-102">3345 - SessionPreambleUnderstood</span><span class="sxs-lookup"><span data-stu-id="acf2d-102">3345 - SessionPreambleUnderstood</span></span>
-## <a name="properties"></a><span data-ttu-id="acf2d-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="acf2d-103">Properties</span></span>  
+# <a name="3345---sessionpreambleunderstood"></a><span data-ttu-id="3e1c8-102">3345 - SessionPreambleUnderstood</span><span class="sxs-lookup"><span data-stu-id="3e1c8-102">3345 - SessionPreambleUnderstood</span></span>
+## <a name="properties"></a><span data-ttu-id="3e1c8-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="3e1c8-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="acf2d-104">ID</span><span class="sxs-lookup"><span data-stu-id="acf2d-104">ID</span></span>|<span data-ttu-id="acf2d-105">3345</span><span class="sxs-lookup"><span data-stu-id="acf2d-105">3345</span></span>|  
-|<span data-ttu-id="acf2d-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="acf2d-106">Keywords</span></span>|<span data-ttu-id="acf2d-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="acf2d-107">Channel</span></span>|  
-|<span data-ttu-id="acf2d-108">レベル</span><span class="sxs-lookup"><span data-stu-id="acf2d-108">Level</span></span>|<span data-ttu-id="acf2d-109">詳細</span><span class="sxs-lookup"><span data-stu-id="acf2d-109">Verbose</span></span>|  
-|<span data-ttu-id="acf2d-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="acf2d-110">Channel</span></span>|<span data-ttu-id="acf2d-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="acf2d-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="3e1c8-104">ID</span><span class="sxs-lookup"><span data-stu-id="3e1c8-104">ID</span></span>|<span data-ttu-id="3e1c8-105">3345</span><span class="sxs-lookup"><span data-stu-id="3e1c8-105">3345</span></span>|  
+|<span data-ttu-id="3e1c8-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="3e1c8-106">Keywords</span></span>|<span data-ttu-id="3e1c8-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="3e1c8-107">Channel</span></span>|  
+|<span data-ttu-id="3e1c8-108">レベル</span><span class="sxs-lookup"><span data-stu-id="3e1c8-108">Level</span></span>|<span data-ttu-id="3e1c8-109">詳細</span><span class="sxs-lookup"><span data-stu-id="3e1c8-109">Verbose</span></span>|  
+|<span data-ttu-id="3e1c8-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="3e1c8-110">Channel</span></span>|<span data-ttu-id="3e1c8-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="3e1c8-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="acf2d-112">説明</span><span class="sxs-lookup"><span data-stu-id="acf2d-112">Description</span></span>  
- <span data-ttu-id="acf2d-113">このイベントは、NetTcp のセッション プリアンブルが認識されると生成されます。</span><span class="sxs-lookup"><span data-stu-id="acf2d-113">This event is emitted when the NetTcp session preamble is understood.</span></span>  
+## <a name="description"></a><span data-ttu-id="3e1c8-112">説明</span><span class="sxs-lookup"><span data-stu-id="3e1c8-112">Description</span></span>  
+ <span data-ttu-id="3e1c8-113">このイベントは、NetTcp のセッション プリアンブルが認識されると生成されます。</span><span class="sxs-lookup"><span data-stu-id="3e1c8-113">This event is emitted when the NetTcp session preamble is understood.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="acf2d-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="acf2d-114">Message</span></span>  
- <span data-ttu-id="acf2d-115">'%1' のセッション プリアンブルが認識されました。</span><span class="sxs-lookup"><span data-stu-id="acf2d-115">Session preamble for '%1' understood.</span></span>  
+## <a name="message"></a><span data-ttu-id="3e1c8-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="3e1c8-114">Message</span></span>  
+ <span data-ttu-id="3e1c8-115">'%1' のセッション プリアンブルが認識されました。</span><span class="sxs-lookup"><span data-stu-id="3e1c8-115">Session preamble for '%1' understood.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="acf2d-116">詳細</span><span class="sxs-lookup"><span data-stu-id="acf2d-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="3e1c8-116">詳細</span><span class="sxs-lookup"><span data-stu-id="3e1c8-116">Details</span></span>

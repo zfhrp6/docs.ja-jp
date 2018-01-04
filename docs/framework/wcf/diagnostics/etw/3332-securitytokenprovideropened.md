@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 129023562a2d8e8ef0892ce9096bc63892786d80
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fc7f21e0ebc829de225eb8eed72e09c27329f2c3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3332---securitytokenprovideropened"></a><span data-ttu-id="845b9-102">3332 - SecurityTokenProviderOpened</span><span class="sxs-lookup"><span data-stu-id="845b9-102">3332 - SecurityTokenProviderOpened</span></span>
-## <a name="properties"></a><span data-ttu-id="845b9-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="845b9-103">Properties</span></span>  
+# <a name="3332---securitytokenprovideropened"></a><span data-ttu-id="da31a-102">3332 - SecurityTokenProviderOpened</span><span class="sxs-lookup"><span data-stu-id="da31a-102">3332 - SecurityTokenProviderOpened</span></span>
+## <a name="properties"></a><span data-ttu-id="da31a-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="da31a-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="845b9-104">ID</span><span class="sxs-lookup"><span data-stu-id="845b9-104">ID</span></span>|<span data-ttu-id="845b9-105">3332</span><span class="sxs-lookup"><span data-stu-id="845b9-105">3332</span></span>|  
-|<span data-ttu-id="845b9-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="845b9-106">Keywords</span></span>|<span data-ttu-id="845b9-107">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="845b9-107">Security</span></span>|  
-|<span data-ttu-id="845b9-108">レベル</span><span class="sxs-lookup"><span data-stu-id="845b9-108">Level</span></span>|<span data-ttu-id="845b9-109">詳細</span><span class="sxs-lookup"><span data-stu-id="845b9-109">Verbose</span></span>|  
-|<span data-ttu-id="845b9-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="845b9-110">Channel</span></span>|<span data-ttu-id="845b9-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="845b9-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="da31a-104">ID</span><span class="sxs-lookup"><span data-stu-id="da31a-104">ID</span></span>|<span data-ttu-id="da31a-105">3332</span><span class="sxs-lookup"><span data-stu-id="da31a-105">3332</span></span>|  
+|<span data-ttu-id="da31a-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="da31a-106">Keywords</span></span>|<span data-ttu-id="da31a-107">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="da31a-107">Security</span></span>|  
+|<span data-ttu-id="da31a-108">レベル</span><span class="sxs-lookup"><span data-stu-id="da31a-108">Level</span></span>|<span data-ttu-id="da31a-109">詳細</span><span class="sxs-lookup"><span data-stu-id="da31a-109">Verbose</span></span>|  
+|<span data-ttu-id="da31a-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="da31a-110">Channel</span></span>|<span data-ttu-id="da31a-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="da31a-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="845b9-112">説明</span><span class="sxs-lookup"><span data-stu-id="845b9-112">Description</span></span>  
- <span data-ttu-id="845b9-113">このイベントは、SecurityTokenProvider のオープンが完了したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="845b9-113">This event is emitted when the SecurityTokenProvider opening completed.</span></span>  
+## <a name="description"></a><span data-ttu-id="da31a-112">説明</span><span class="sxs-lookup"><span data-stu-id="da31a-112">Description</span></span>  
+ <span data-ttu-id="da31a-113">このイベントは、SecurityTokenProvider のオープンが完了したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="da31a-113">This event is emitted when the SecurityTokenProvider opening completed.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="845b9-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="845b9-114">Message</span></span>  
- <span data-ttu-id="845b9-115">SecurityTokenProvider のオープンが完了しました。</span><span class="sxs-lookup"><span data-stu-id="845b9-115">SecurityTokenProvider opening completed.</span></span>  
+## <a name="message"></a><span data-ttu-id="da31a-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="da31a-114">Message</span></span>  
+ <span data-ttu-id="da31a-115">SecurityTokenProvider のオープンが完了しました。</span><span class="sxs-lookup"><span data-stu-id="da31a-115">SecurityTokenProvider opening completed.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="845b9-116">詳細</span><span class="sxs-lookup"><span data-stu-id="845b9-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="da31a-116">詳細</span><span class="sxs-lookup"><span data-stu-id="da31a-116">Details</span></span>

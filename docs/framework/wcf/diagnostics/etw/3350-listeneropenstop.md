@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ed0860ce38bdbb30e8a630ec9cf3462d9c179f98
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 351de92c78a5e26e60aa6d1bf7a84a56f744c786
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3350---listeneropenstop"></a><span data-ttu-id="e013f-102">3350 - ListenerOpenStop</span><span class="sxs-lookup"><span data-stu-id="e013f-102">3350 - ListenerOpenStop</span></span>
-## <a name="properties"></a><span data-ttu-id="e013f-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e013f-103">Properties</span></span>  
+# <a name="3350---listeneropenstop"></a><span data-ttu-id="cbc79-102">3350 - ListenerOpenStop</span><span class="sxs-lookup"><span data-stu-id="cbc79-102">3350 - ListenerOpenStop</span></span>
+## <a name="properties"></a><span data-ttu-id="cbc79-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="cbc79-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="e013f-104">ID</span><span class="sxs-lookup"><span data-stu-id="e013f-104">ID</span></span>|<span data-ttu-id="e013f-105">3350</span><span class="sxs-lookup"><span data-stu-id="e013f-105">3350</span></span>|  
-|<span data-ttu-id="e013f-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="e013f-106">Keywords</span></span>|<span data-ttu-id="e013f-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="e013f-107">Channel</span></span>|  
-|<span data-ttu-id="e013f-108">レベル</span><span class="sxs-lookup"><span data-stu-id="e013f-108">Level</span></span>|<span data-ttu-id="e013f-109">詳細</span><span class="sxs-lookup"><span data-stu-id="e013f-109">Verbose</span></span>|  
-|<span data-ttu-id="e013f-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="e013f-110">Channel</span></span>|<span data-ttu-id="e013f-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="e013f-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="cbc79-104">ID</span><span class="sxs-lookup"><span data-stu-id="cbc79-104">ID</span></span>|<span data-ttu-id="cbc79-105">3350</span><span class="sxs-lookup"><span data-stu-id="cbc79-105">3350</span></span>|  
+|<span data-ttu-id="cbc79-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="cbc79-106">Keywords</span></span>|<span data-ttu-id="cbc79-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="cbc79-107">Channel</span></span>|  
+|<span data-ttu-id="cbc79-108">レベル</span><span class="sxs-lookup"><span data-stu-id="cbc79-108">Level</span></span>|<span data-ttu-id="cbc79-109">詳細</span><span class="sxs-lookup"><span data-stu-id="cbc79-109">Verbose</span></span>|  
+|<span data-ttu-id="cbc79-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="cbc79-110">Channel</span></span>|<span data-ttu-id="cbc79-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="cbc79-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="e013f-112">説明</span><span class="sxs-lookup"><span data-stu-id="e013f-112">Description</span></span>  
- <span data-ttu-id="e013f-113">このイベントは、ListenerOpen が停止すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="e013f-113">This event is emitted with ListenerOpen stop.</span></span>  
+## <a name="description"></a><span data-ttu-id="cbc79-112">説明</span><span class="sxs-lookup"><span data-stu-id="cbc79-112">Description</span></span>  
+ <span data-ttu-id="cbc79-113">このイベントは、ListenerOpen が停止すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="cbc79-113">This event is emitted with ListenerOpen stop.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="e013f-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="e013f-114">Message</span></span>  
- <span data-ttu-id="e013f-115">リスナーのオープンが完了しました。</span><span class="sxs-lookup"><span data-stu-id="e013f-115">Listener open completed.</span></span>  
+## <a name="message"></a><span data-ttu-id="cbc79-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="cbc79-114">Message</span></span>  
+ <span data-ttu-id="cbc79-115">リスナーのオープンが完了しました。</span><span class="sxs-lookup"><span data-stu-id="cbc79-115">Listener open completed.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="e013f-116">詳細</span><span class="sxs-lookup"><span data-stu-id="e013f-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="cbc79-116">詳細</span><span class="sxs-lookup"><span data-stu-id="cbc79-116">Details</span></span>

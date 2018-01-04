@@ -21,16 +21,17 @@ caps.latest.revision: "26"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 424694770bac05611288279b2b42992a17afaa6f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6d62fbdf4b6dd2acbb67b0655938990d625f8df8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilercallbackmovedreferences-method"></a><span data-ttu-id="26cab-102">ICorProfilerCallback::MovedReferences メソッド</span><span class="sxs-lookup"><span data-stu-id="26cab-102">ICorProfilerCallback::MovedReferences Method</span></span>
-<span data-ttu-id="26cab-103">圧縮ガベージ コレクションを実行した後の、ヒープ内のオブジェクトの新しいレイアウトを報告するために呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="26cab-103">Called to report the new layout of objects in the heap as a result of a compacting garbage collection.</span></span>  
+# <a name="icorprofilercallbackmovedreferences-method"></a><span data-ttu-id="b7122-102">ICorProfilerCallback::MovedReferences メソッド</span><span class="sxs-lookup"><span data-stu-id="b7122-102">ICorProfilerCallback::MovedReferences Method</span></span>
+<span data-ttu-id="b7122-103">圧縮ガベージ コレクションを実行した後の、ヒープ内のオブジェクトの新しいレイアウトを報告するために呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b7122-103">Called to report the new layout of objects in the heap as a result of a compacting garbage collection.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="26cab-104">構文</span><span class="sxs-lookup"><span data-stu-id="26cab-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b7122-104">構文</span><span class="sxs-lookup"><span data-stu-id="b7122-104">Syntax</span></span>  
   
 ```  
 HRESULT MovedReferences(  
@@ -40,59 +41,59 @@ HRESULT MovedReferences(
     [in, size_is(cMovedObjectIDRanges)] ULONG    cObjectIDRangeLength[] );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="26cab-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="26cab-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="b7122-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b7122-105">Parameters</span></span>  
  `cMovedObjectIDRanges`  
- <span data-ttu-id="26cab-106">[in] 圧縮ガベージ コレクションを実行した後に移動される、隣接したオブジェクトのブロック数。</span><span class="sxs-lookup"><span data-stu-id="26cab-106">[in] The number of blocks of contiguous objects that moved as the result of the compacting garbage collection.</span></span> <span data-ttu-id="26cab-107">つまり、`cMovedObjectIDRanges` の値は `oldObjectIDRangeStart`、`newObjectIDRangeStart`、および `cObjectIDRangeLength` 配列の合計サイズです。</span><span class="sxs-lookup"><span data-stu-id="26cab-107">That is, the value of `cMovedObjectIDRanges` is the total size of the `oldObjectIDRangeStart`, `newObjectIDRangeStart`, and `cObjectIDRangeLength` arrays.</span></span>  
+ <span data-ttu-id="b7122-106">[in] 圧縮ガベージ コレクションを実行した後に移動される、隣接したオブジェクトのブロック数。</span><span class="sxs-lookup"><span data-stu-id="b7122-106">[in] The number of blocks of contiguous objects that moved as the result of the compacting garbage collection.</span></span> <span data-ttu-id="b7122-107">つまり、`cMovedObjectIDRanges` の値は `oldObjectIDRangeStart`、`newObjectIDRangeStart`、および `cObjectIDRangeLength` 配列の合計サイズです。</span><span class="sxs-lookup"><span data-stu-id="b7122-107">That is, the value of `cMovedObjectIDRanges` is the total size of the `oldObjectIDRangeStart`, `newObjectIDRangeStart`, and `cObjectIDRangeLength` arrays.</span></span>  
   
- <span data-ttu-id="26cab-108">`MovedReferences` の次の 3 つの引数は並列配列です。</span><span class="sxs-lookup"><span data-stu-id="26cab-108">The next three arguments of `MovedReferences` are parallel arrays.</span></span> <span data-ttu-id="26cab-109">つまり、`oldObjectIDRangeStart[i]`、`newObjectIDRangeStart[i]`、`cObjectIDRangeLength[i]` はすべて、隣接するオブジェクトの同じブロックを対象としています。</span><span class="sxs-lookup"><span data-stu-id="26cab-109">In other words, `oldObjectIDRangeStart[i]`, `newObjectIDRangeStart[i]`, and `cObjectIDRangeLength[i]` all concern a single block of contiguous objects.</span></span>  
+ <span data-ttu-id="b7122-108">`MovedReferences` の次の 3 つの引数は並列配列です。</span><span class="sxs-lookup"><span data-stu-id="b7122-108">The next three arguments of `MovedReferences` are parallel arrays.</span></span> <span data-ttu-id="b7122-109">つまり、`oldObjectIDRangeStart[i]`、`newObjectIDRangeStart[i]`、`cObjectIDRangeLength[i]` はすべて、隣接するオブジェクトの同じブロックを対象としています。</span><span class="sxs-lookup"><span data-stu-id="b7122-109">In other words, `oldObjectIDRangeStart[i]`, `newObjectIDRangeStart[i]`, and `cObjectIDRangeLength[i]` all concern a single block of contiguous objects.</span></span>  
   
  `oldObjectIDRangeStart`  
- <span data-ttu-id="26cab-110">[in] それぞれがメモリ内の有効な隣接オブジェクト ブロックの古い (ガベージ コレクション実行前の) 開始アドレスを表す、`ObjectID` 値の配列。</span><span class="sxs-lookup"><span data-stu-id="26cab-110">[in] An array of `ObjectID` values, each of which is the old (pre-garbage collection) starting address of a block of contiguous, live objects in memory.</span></span>  
+ <span data-ttu-id="b7122-110">[in] それぞれがメモリ内の有効な隣接オブジェクト ブロックの古い (ガベージ コレクション実行前の) 開始アドレスを表す、`ObjectID` 値の配列。</span><span class="sxs-lookup"><span data-stu-id="b7122-110">[in] An array of `ObjectID` values, each of which is the old (pre-garbage collection) starting address of a block of contiguous, live objects in memory.</span></span>  
   
  `newObjectIDRangeStart`  
- <span data-ttu-id="26cab-111">[in] それぞれがメモリ内の有効な隣接オブジェクト ブロックの新しい (ガベージ コレクション実行後の) 開始アドレスを表す、`ObjectID` 値の配列。</span><span class="sxs-lookup"><span data-stu-id="26cab-111">[in] An array of `ObjectID` values, each of which is the new (post-garbage collection) starting address of a block of contiguous, live objects in memory.</span></span>  
+ <span data-ttu-id="b7122-111">[in] それぞれがメモリ内の有効な隣接オブジェクト ブロックの新しい (ガベージ コレクション実行後の) 開始アドレスを表す、`ObjectID` 値の配列。</span><span class="sxs-lookup"><span data-stu-id="b7122-111">[in] An array of `ObjectID` values, each of which is the new (post-garbage collection) starting address of a block of contiguous, live objects in memory.</span></span>  
   
  `cObjectIDRangeLength`  
- <span data-ttu-id="26cab-112">[in] それぞれがメモリ内の隣接オブジェクト ブロックのサイズを表す、整数の配列。</span><span class="sxs-lookup"><span data-stu-id="26cab-112">[in] An array of integers, each of which is the size of a block of contiguous objects in memory.</span></span>  
+ <span data-ttu-id="b7122-112">[in] それぞれがメモリ内の隣接オブジェクト ブロックのサイズを表す、整数の配列。</span><span class="sxs-lookup"><span data-stu-id="b7122-112">[in] An array of integers, each of which is the size of a block of contiguous objects in memory.</span></span>  
   
- <span data-ttu-id="26cab-113">サイズは、`oldObjectIDRangeStart` および `newObjectIDRangeStart` 配列内の参照される各ブロックに対して指定します。</span><span class="sxs-lookup"><span data-stu-id="26cab-113">A size is specified for each block that is referenced in the `oldObjectIDRangeStart` and `newObjectIDRangeStart` arrays.</span></span>  
+ <span data-ttu-id="b7122-113">サイズは、`oldObjectIDRangeStart` および `newObjectIDRangeStart` 配列内の参照される各ブロックに対して指定します。</span><span class="sxs-lookup"><span data-stu-id="b7122-113">A size is specified for each block that is referenced in the `oldObjectIDRangeStart` and `newObjectIDRangeStart` arrays.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="26cab-114">コメント</span><span class="sxs-lookup"><span data-stu-id="26cab-114">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b7122-114">コメント</span><span class="sxs-lookup"><span data-stu-id="b7122-114">Remarks</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="26cab-115">このメソッドは、64 ビット プラットフォームで 4 GB より大きいオブジェクトのサイズを `MAX_ULONG` として報告します。</span><span class="sxs-lookup"><span data-stu-id="26cab-115">This method reports sizes as `MAX_ULONG` for objects that are greater than 4 GB on 64-bit platforms.</span></span> <span data-ttu-id="26cab-116">4 GB より大きいオブジェクトのサイズを取得する、 [icorprofilercallback 4::movedreferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)メソッド代わりにします。</span><span class="sxs-lookup"><span data-stu-id="26cab-116">To get the size of objects that are larger than 4 GB, use the [ICorProfilerCallback4::MovedReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md) method instead.</span></span>  
+>  <span data-ttu-id="b7122-115">このメソッドは、64 ビット プラットフォームで 4 GB より大きいオブジェクトのサイズを `MAX_ULONG` として報告します。</span><span class="sxs-lookup"><span data-stu-id="b7122-115">This method reports sizes as `MAX_ULONG` for objects that are greater than 4 GB on 64-bit platforms.</span></span> <span data-ttu-id="b7122-116">4 GB より大きいオブジェクトのサイズを取得する、 [icorprofilercallback 4::movedreferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)メソッド代わりにします。</span><span class="sxs-lookup"><span data-stu-id="b7122-116">To get the size of objects that are larger than 4 GB, use the [ICorProfilerCallback4::MovedReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md) method instead.</span></span>  
   
- <span data-ttu-id="26cab-117">圧縮ガベージ コレクターは、無効なオブジェクトによって占有されているメモリを解放し、解放された領域を圧縮します。</span><span class="sxs-lookup"><span data-stu-id="26cab-117">A compacting garbage collector reclaims the memory occupied by dead objects and compacts that freed space.</span></span> <span data-ttu-id="26cab-118">その結果、ヒープ内で有効なオブジェクトが移動され、以前の通知で配布された `ObjectID` の値が変更されることがあります。</span><span class="sxs-lookup"><span data-stu-id="26cab-118">As a result, live objects might be moved within the heap, and `ObjectID` values distributed by previous notifications might change.</span></span>  
+ <span data-ttu-id="b7122-117">圧縮ガベージ コレクターは、無効なオブジェクトによって占有されているメモリを解放し、解放された領域を圧縮します。</span><span class="sxs-lookup"><span data-stu-id="b7122-117">A compacting garbage collector reclaims the memory occupied by dead objects and compacts that freed space.</span></span> <span data-ttu-id="b7122-118">その結果、ヒープ内で有効なオブジェクトが移動され、以前の通知で配布された `ObjectID` の値が変更されることがあります。</span><span class="sxs-lookup"><span data-stu-id="b7122-118">As a result, live objects might be moved within the heap, and `ObjectID` values distributed by previous notifications might change.</span></span>  
   
- <span data-ttu-id="26cab-119">既存の `ObjectID` の値 (`oldObjectID`) が次の範囲内にあるとします。</span><span class="sxs-lookup"><span data-stu-id="26cab-119">Assume that an existing `ObjectID` value (`oldObjectID`) lies within the following range:</span></span>  
+ <span data-ttu-id="b7122-119">既存の `ObjectID` の値 (`oldObjectID`) が次の範囲内にあるとします。</span><span class="sxs-lookup"><span data-stu-id="b7122-119">Assume that an existing `ObjectID` value (`oldObjectID`) lies within the following range:</span></span>  
   
  `oldObjectIDRangeStart[i]` <= `oldObjectID` < `oldObjectIDRangeStart[i]` + `cObjectIDRangeLength[i]`  
   
- <span data-ttu-id="26cab-120">この場合、範囲の開始からオブジェクトの開始までのオフセットは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="26cab-120">In this case, the offset from the start of the range to the start of the object is as follows:</span></span>  
+ <span data-ttu-id="b7122-120">この場合、範囲の開始からオブジェクトの開始までのオフセットは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="b7122-120">In this case, the offset from the start of the range to the start of the object is as follows:</span></span>  
   
  `oldObjectID` - `oldObjectRangeStart[i]`  
   
- <span data-ttu-id="26cab-121">`i` の値が次の範囲内にあるとします。</span><span class="sxs-lookup"><span data-stu-id="26cab-121">For any value of `i` that is in the following range:</span></span>  
+ <span data-ttu-id="b7122-121">`i` の値が次の範囲内にあるとします。</span><span class="sxs-lookup"><span data-stu-id="b7122-121">For any value of `i` that is in the following range:</span></span>  
   
- <span data-ttu-id="26cab-122">0 <= `i` < `cMovedObjectIDRanges`</span><span class="sxs-lookup"><span data-stu-id="26cab-122">0 <= `i` < `cMovedObjectIDRanges`</span></span>  
+ <span data-ttu-id="b7122-122">0 <= `i` < `cMovedObjectIDRanges`</span><span class="sxs-lookup"><span data-stu-id="b7122-122">0 <= `i` < `cMovedObjectIDRanges`</span></span>  
   
- <span data-ttu-id="26cab-123">この場合、新しい `ObjectID` は次のように計算できます。</span><span class="sxs-lookup"><span data-stu-id="26cab-123">you can calculate the new `ObjectID` as follows:</span></span>  
+ <span data-ttu-id="b7122-123">この場合、新しい `ObjectID` は次のように計算できます。</span><span class="sxs-lookup"><span data-stu-id="b7122-123">you can calculate the new `ObjectID` as follows:</span></span>  
   
- <span data-ttu-id="26cab-124">`newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)</span><span class="sxs-lookup"><span data-stu-id="26cab-124">`newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)</span></span>  
+ <span data-ttu-id="b7122-124">`newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)</span><span class="sxs-lookup"><span data-stu-id="b7122-124">`newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)</span></span>  
   
- <span data-ttu-id="26cab-125">ガーベッジ コレクションでオブジェクトが古い場所から新しい場所へ移動中の可能性があるため、コールバックの間は `MovedReferences` によって渡される `ObjectID` 値はすべて無効です。</span><span class="sxs-lookup"><span data-stu-id="26cab-125">None of the `ObjectID` values passed by `MovedReferences` are valid during the callback itself, because the garbage collection might be in the middle of moving objects from old locations to new locations.</span></span> <span data-ttu-id="26cab-126">このため、`MovedReferences` 呼び出しの間、プロファイラーはオブジェクトを検査するべきではありません。</span><span class="sxs-lookup"><span data-stu-id="26cab-126">Therefore, profilers should not attempt to inspect objects during a `MovedReferences` call.</span></span> <span data-ttu-id="26cab-127">A [icorprofilercallback 2::garbagecollectionfinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md)コールバックすべてのオブジェクトが新しい場所に移動され、検査を実行できることを示します。</span><span class="sxs-lookup"><span data-stu-id="26cab-127">A [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) callback indicates that all objects have been moved to their new locations and inspection can be performed.</span></span>  
+ <span data-ttu-id="b7122-125">ガーベッジ コレクションでオブジェクトが古い場所から新しい場所へ移動中の可能性があるため、コールバックの間は `MovedReferences` によって渡される `ObjectID` 値はすべて無効です。</span><span class="sxs-lookup"><span data-stu-id="b7122-125">None of the `ObjectID` values passed by `MovedReferences` are valid during the callback itself, because the garbage collection might be in the middle of moving objects from old locations to new locations.</span></span> <span data-ttu-id="b7122-126">このため、`MovedReferences` 呼び出しの間、プロファイラーはオブジェクトを検査するべきではありません。</span><span class="sxs-lookup"><span data-stu-id="b7122-126">Therefore, profilers should not attempt to inspect objects during a `MovedReferences` call.</span></span> <span data-ttu-id="b7122-127">A [icorprofilercallback 2::garbagecollectionfinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md)コールバックすべてのオブジェクトが新しい場所に移動され、検査を実行できることを示します。</span><span class="sxs-lookup"><span data-stu-id="b7122-127">A [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) callback indicates that all objects have been moved to their new locations and inspection can be performed.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="26cab-128">要件</span><span class="sxs-lookup"><span data-stu-id="26cab-128">Requirements</span></span>  
- <span data-ttu-id="26cab-129">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="26cab-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b7122-128">必要条件</span><span class="sxs-lookup"><span data-stu-id="b7122-128">Requirements</span></span>  
+ <span data-ttu-id="b7122-129">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="b7122-129">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="26cab-130">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="26cab-130">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="b7122-130">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="b7122-130">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="26cab-131">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="26cab-131">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b7122-131">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b7122-131">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="26cab-132">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="26cab-132">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="b7122-132">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b7122-132">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="26cab-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="26cab-133">See Also</span></span>  
- [<span data-ttu-id="26cab-134">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="26cab-134">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [<span data-ttu-id="26cab-135">MovedReferences2 メソッド</span><span class="sxs-lookup"><span data-stu-id="26cab-135">MovedReferences2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)  
- [<span data-ttu-id="26cab-136">プロファイリングのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="26cab-136">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [<span data-ttu-id="26cab-137">プロファイル</span><span class="sxs-lookup"><span data-stu-id="26cab-137">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a><span data-ttu-id="b7122-133">参照</span><span class="sxs-lookup"><span data-stu-id="b7122-133">See Also</span></span>  
+ [<span data-ttu-id="b7122-134">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b7122-134">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
+ [<span data-ttu-id="b7122-135">MovedReferences2 メソッド</span><span class="sxs-lookup"><span data-stu-id="b7122-135">MovedReferences2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)  
+ [<span data-ttu-id="b7122-136">プロファイリングのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="b7122-136">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
+ [<span data-ttu-id="b7122-137">プロファイル</span><span class="sxs-lookup"><span data-stu-id="b7122-137">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)

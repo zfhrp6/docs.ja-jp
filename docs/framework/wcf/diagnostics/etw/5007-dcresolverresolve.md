@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ed93c37e2472539d6255105e76823d13712e7fb1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 83b082d01d2ca66274c8707c3227430ec954e619
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="5007---dcresolverresolve"></a><span data-ttu-id="9c435-102">5007 - DCResolverResolve</span><span class="sxs-lookup"><span data-stu-id="9c435-102">5007 - DCResolverResolve</span></span>
-## <a name="properties"></a><span data-ttu-id="9c435-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="9c435-103">Properties</span></span>  
+# <a name="5007---dcresolverresolve"></a><span data-ttu-id="3c72a-102">5007 - DCResolverResolve</span><span class="sxs-lookup"><span data-stu-id="3c72a-102">5007 - DCResolverResolve</span></span>
+## <a name="properties"></a><span data-ttu-id="3c72a-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="3c72a-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="9c435-104">ID</span><span class="sxs-lookup"><span data-stu-id="9c435-104">ID</span></span>|<span data-ttu-id="9c435-105">5007</span><span class="sxs-lookup"><span data-stu-id="9c435-105">5007</span></span>|  
-|<span data-ttu-id="9c435-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="9c435-106">Keywords</span></span>|<span data-ttu-id="9c435-107">シリアル化</span><span class="sxs-lookup"><span data-stu-id="9c435-107">Serialization</span></span>|  
-|<span data-ttu-id="9c435-108">レベル</span><span class="sxs-lookup"><span data-stu-id="9c435-108">Level</span></span>|<span data-ttu-id="9c435-109">詳細</span><span class="sxs-lookup"><span data-stu-id="9c435-109">Verbose</span></span>|  
-|<span data-ttu-id="9c435-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="9c435-110">Channel</span></span>|<span data-ttu-id="9c435-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="9c435-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="3c72a-104">ID</span><span class="sxs-lookup"><span data-stu-id="3c72a-104">ID</span></span>|<span data-ttu-id="3c72a-105">5007</span><span class="sxs-lookup"><span data-stu-id="3c72a-105">5007</span></span>|  
+|<span data-ttu-id="3c72a-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="3c72a-106">Keywords</span></span>|<span data-ttu-id="3c72a-107">シリアル化</span><span class="sxs-lookup"><span data-stu-id="3c72a-107">Serialization</span></span>|  
+|<span data-ttu-id="3c72a-108">レベル</span><span class="sxs-lookup"><span data-stu-id="3c72a-108">Level</span></span>|<span data-ttu-id="3c72a-109">詳細</span><span class="sxs-lookup"><span data-stu-id="3c72a-109">Verbose</span></span>|  
+|<span data-ttu-id="3c72a-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="3c72a-110">Channel</span></span>|<span data-ttu-id="3c72a-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="3c72a-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="9c435-112">説明</span><span class="sxs-lookup"><span data-stu-id="9c435-112">Description</span></span>  
- <span data-ttu-id="9c435-113">このイベントは、DataContract リゾルバーが解決を開始すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="9c435-113">This event is emitted when the DataContract resolver starts resolving .</span></span>  
+## <a name="description"></a><span data-ttu-id="3c72a-112">説明</span><span class="sxs-lookup"><span data-stu-id="3c72a-112">Description</span></span>  
+ <span data-ttu-id="3c72a-113">このイベントは、DataContract リゾルバーが解決を開始すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="3c72a-113">This event is emitted when the DataContract resolver starts resolving .</span></span>  
   
-## <a name="message"></a><span data-ttu-id="9c435-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="9c435-114">Message</span></span>  
- <span data-ttu-id="9c435-115">DataContract リゾルバーが %1 の解決を開始します。</span><span class="sxs-lookup"><span data-stu-id="9c435-115">DataContract resolver resolving %1 start.</span></span>  
+## <a name="message"></a><span data-ttu-id="3c72a-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="3c72a-114">Message</span></span>  
+ <span data-ttu-id="3c72a-115">DataContract リゾルバーが %1 の解決を開始します。</span><span class="sxs-lookup"><span data-stu-id="3c72a-115">DataContract resolver resolving %1 start.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="9c435-116">詳細</span><span class="sxs-lookup"><span data-stu-id="9c435-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="3c72a-116">詳細</span><span class="sxs-lookup"><span data-stu-id="3c72a-116">Details</span></span>

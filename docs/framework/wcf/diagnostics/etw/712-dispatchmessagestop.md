@@ -13,26 +13,27 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 755c11ec2b1f9c23faf1b9bcbb650f9b1fc8823c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 58622d60c920b87caea9cde0936d889fed9f5553
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="712---dispatchmessagestop"></a><span data-ttu-id="1fbdc-102">712 - DispatchMessageStop</span><span class="sxs-lookup"><span data-stu-id="1fbdc-102">712 - DispatchMessageStop</span></span>
-## <a name="properties"></a><span data-ttu-id="1fbdc-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1fbdc-103">Properties</span></span>  
+# <a name="712---dispatchmessagestop"></a><span data-ttu-id="ca953-102">712 - DispatchMessageStop</span><span class="sxs-lookup"><span data-stu-id="ca953-102">712 - DispatchMessageStop</span></span>
+## <a name="properties"></a><span data-ttu-id="ca953-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="ca953-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="1fbdc-104">ID</span><span class="sxs-lookup"><span data-stu-id="1fbdc-104">ID</span></span>|<span data-ttu-id="1fbdc-105">712</span><span class="sxs-lookup"><span data-stu-id="1fbdc-105">712</span></span>|  
-|<span data-ttu-id="1fbdc-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="1fbdc-106">Keywords</span></span>|<span data-ttu-id="1fbdc-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="1fbdc-107">ServiceModel</span></span>|  
-|<span data-ttu-id="1fbdc-108">レベル</span><span class="sxs-lookup"><span data-stu-id="1fbdc-108">Level</span></span>|<span data-ttu-id="1fbdc-109">情報</span><span class="sxs-lookup"><span data-stu-id="1fbdc-109">Information</span></span>|  
-|<span data-ttu-id="1fbdc-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="1fbdc-110">Channel</span></span>|<span data-ttu-id="1fbdc-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="1fbdc-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
+|<span data-ttu-id="ca953-104">ID</span><span class="sxs-lookup"><span data-stu-id="ca953-104">ID</span></span>|<span data-ttu-id="ca953-105">712</span><span class="sxs-lookup"><span data-stu-id="ca953-105">712</span></span>|  
+|<span data-ttu-id="ca953-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="ca953-106">Keywords</span></span>|<span data-ttu-id="ca953-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="ca953-107">ServiceModel</span></span>|  
+|<span data-ttu-id="ca953-108">レベル</span><span class="sxs-lookup"><span data-stu-id="ca953-108">Level</span></span>|<span data-ttu-id="ca953-109">情報</span><span class="sxs-lookup"><span data-stu-id="ca953-109">Information</span></span>|  
+|<span data-ttu-id="ca953-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="ca953-110">Channel</span></span>|<span data-ttu-id="ca953-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="ca953-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="1fbdc-112">説明</span><span class="sxs-lookup"><span data-stu-id="1fbdc-112">Description</span></span>  
- <span data-ttu-id="1fbdc-113">このイベントは、メッセージのディスパッチが完了するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="1fbdc-113">This event is emitted when message dispatching is completed.</span></span>  
+## <a name="description"></a><span data-ttu-id="ca953-112">説明</span><span class="sxs-lookup"><span data-stu-id="ca953-112">Description</span></span>  
+ <span data-ttu-id="ca953-113">このイベントは、メッセージのディスパッチが完了するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="ca953-113">This event is emitted when message dispatching is completed.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="1fbdc-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="1fbdc-114">Message</span></span>  
- <span data-ttu-id="1fbdc-115">メッセージのディスパッチが完了しました</span><span class="sxs-lookup"><span data-stu-id="1fbdc-115">Message dispatching completed.</span></span>  
+## <a name="message"></a><span data-ttu-id="ca953-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="ca953-114">Message</span></span>  
+ <span data-ttu-id="ca953-115">メッセージのディスパッチが完了しました</span><span class="sxs-lookup"><span data-stu-id="ca953-115">Message dispatching completed.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="1fbdc-116">詳細</span><span class="sxs-lookup"><span data-stu-id="1fbdc-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="ca953-116">詳細</span><span class="sxs-lookup"><span data-stu-id="ca953-116">Details</span></span>

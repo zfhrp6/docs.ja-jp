@@ -13,14 +13,15 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 558767eb027c45f66334bc087e814e1b76643eec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a87e9c4447ca5cfc084ed44a25d934dd5a2bca7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="endpoint-calls"></a><span data-ttu-id="06512-102">エンドポイント : 呼び出し</span><span class="sxs-lookup"><span data-stu-id="06512-102">Endpoint: Calls</span></span>
-<span data-ttu-id="06512-103">カウンター名 : 呼び出し。</span><span class="sxs-lookup"><span data-stu-id="06512-103">Counter Name: Calls.</span></span>  
+# <a name="endpoint-calls"></a><span data-ttu-id="3d946-102">エンドポイント : 呼び出し</span><span class="sxs-lookup"><span data-stu-id="3d946-102">Endpoint: Calls</span></span>
+<span data-ttu-id="3d946-103">カウンター名 : 呼び出し。</span><span class="sxs-lookup"><span data-stu-id="3d946-103">Counter Name: Calls.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="06512-104">説明</span><span class="sxs-lookup"><span data-stu-id="06512-104">Description</span></span>  
- <span data-ttu-id="06512-105">このエンドポイントへの呼び出しの数です。</span><span class="sxs-lookup"><span data-stu-id="06512-105">Number of calls to this endpoint.</span></span>
+## <a name="description"></a><span data-ttu-id="3d946-104">説明</span><span class="sxs-lookup"><span data-stu-id="3d946-104">Description</span></span>  
+ <span data-ttu-id="3d946-105">このエンドポイントへの呼び出しの数です。</span><span class="sxs-lookup"><span data-stu-id="3d946-105">Number of calls to this endpoint.</span></span>

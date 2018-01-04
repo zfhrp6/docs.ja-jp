@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2842e5183e44a0472bb3f3d8e42a603c663ac38d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e790ab0f0805e16d0609e6ffc211a5437435f381
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="4035---pendingsessionqueueratio"></a><span data-ttu-id="67ff7-102">4035 - PendingSessionQueueRatio</span><span class="sxs-lookup"><span data-stu-id="67ff7-102">4035 - PendingSessionQueueRatio</span></span>
-## <a name="properties"></a><span data-ttu-id="67ff7-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="67ff7-103">Properties</span></span>  
+# <a name="4035---pendingsessionqueueratio"></a><span data-ttu-id="b3a26-102">4035 - PendingSessionQueueRatio</span><span class="sxs-lookup"><span data-stu-id="b3a26-102">4035 - PendingSessionQueueRatio</span></span>
+## <a name="properties"></a><span data-ttu-id="b3a26-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b3a26-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="67ff7-104">ID</span><span class="sxs-lookup"><span data-stu-id="67ff7-104">ID</span></span>|<span data-ttu-id="67ff7-105">4035</span><span class="sxs-lookup"><span data-stu-id="67ff7-105">4035</span></span>|  
-|<span data-ttu-id="67ff7-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="67ff7-106">Keywords</span></span>|<span data-ttu-id="67ff7-107">クォータ</span><span class="sxs-lookup"><span data-stu-id="67ff7-107">Quota</span></span>|  
-|<span data-ttu-id="67ff7-108">レベル</span><span class="sxs-lookup"><span data-stu-id="67ff7-108">Level</span></span>|<span data-ttu-id="67ff7-109">詳細</span><span class="sxs-lookup"><span data-stu-id="67ff7-109">Verbose</span></span>|  
-|<span data-ttu-id="67ff7-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="67ff7-110">Channel</span></span>|<span data-ttu-id="67ff7-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="67ff7-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="b3a26-104">ID</span><span class="sxs-lookup"><span data-stu-id="b3a26-104">ID</span></span>|<span data-ttu-id="b3a26-105">4035</span><span class="sxs-lookup"><span data-stu-id="b3a26-105">4035</span></span>|  
+|<span data-ttu-id="b3a26-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="b3a26-106">Keywords</span></span>|<span data-ttu-id="b3a26-107">クォータ</span><span class="sxs-lookup"><span data-stu-id="b3a26-107">Quota</span></span>|  
+|<span data-ttu-id="b3a26-108">レベル</span><span class="sxs-lookup"><span data-stu-id="b3a26-108">Level</span></span>|<span data-ttu-id="b3a26-109">詳細</span><span class="sxs-lookup"><span data-stu-id="b3a26-109">Verbose</span></span>|  
+|<span data-ttu-id="b3a26-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="b3a26-110">Channel</span></span>|<span data-ttu-id="b3a26-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="b3a26-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="67ff7-112">説明</span><span class="sxs-lookup"><span data-stu-id="67ff7-112">Description</span></span>  
- <span data-ttu-id="67ff7-113">このイベントは、保留セッション キューの比率に関する情報を提供するために生成されます。</span><span class="sxs-lookup"><span data-stu-id="67ff7-113">This event is emitted to inform about the pending session queue ratio.</span></span>  
+## <a name="description"></a><span data-ttu-id="b3a26-112">説明</span><span class="sxs-lookup"><span data-stu-id="b3a26-112">Description</span></span>  
+ <span data-ttu-id="b3a26-113">このイベントは、保留セッション キューの比率に関する情報を提供するために生成されます。</span><span class="sxs-lookup"><span data-stu-id="b3a26-113">This event is emitted to inform about the pending session queue ratio.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="67ff7-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="67ff7-114">Message</span></span>  
- <span data-ttu-id="67ff7-115">保留セッション キューの比率: %1/%2</span><span class="sxs-lookup"><span data-stu-id="67ff7-115">Pending session queue ratio: %1/%2</span></span>  
+## <a name="message"></a><span data-ttu-id="b3a26-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="b3a26-114">Message</span></span>  
+ <span data-ttu-id="b3a26-115">保留セッション キューの比率: %1/%2</span><span class="sxs-lookup"><span data-stu-id="b3a26-115">Pending session queue ratio: %1/%2</span></span>  
   
-## <a name="details"></a><span data-ttu-id="67ff7-116">詳細</span><span class="sxs-lookup"><span data-stu-id="67ff7-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="b3a26-116">詳細</span><span class="sxs-lookup"><span data-stu-id="b3a26-116">Details</span></span>

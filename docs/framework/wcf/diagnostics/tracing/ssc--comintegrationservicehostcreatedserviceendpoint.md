@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0e8769966ab82b5702166eb9d6b43187cd25979a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9e0c9d8e5f58296b9913eb06177cbd60963e2269
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationservicehostcreatedserviceendpoint"></a><span data-ttu-id="41c8f-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="41c8f-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span></span>
-<span data-ttu-id="41c8f-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="41c8f-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationservicehostcreatedserviceendpoint"></a><span data-ttu-id="b47ad-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="b47ad-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span></span>
+<span data-ttu-id="b47ad-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="b47ad-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceEndpoint</span></span>  
   
-## <a name="description"></a><span data-ttu-id="41c8f-104">説明</span><span class="sxs-lookup"><span data-stu-id="41c8f-104">Description</span></span>  
- <span data-ttu-id="41c8f-105">ComPlus : 作成されたサービス エンドポイント。</span><span class="sxs-lookup"><span data-stu-id="41c8f-105">ComPlus: Created service endpoint.</span></span>  
+## <a name="description"></a><span data-ttu-id="b47ad-104">説明</span><span class="sxs-lookup"><span data-stu-id="b47ad-104">Description</span></span>  
+ <span data-ttu-id="b47ad-105">ComPlus : 作成されたサービス エンドポイント。</span><span class="sxs-lookup"><span data-stu-id="b47ad-105">ComPlus: Created service endpoint.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="41c8f-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="41c8f-106">See Also</span></span>  
- [<span data-ttu-id="41c8f-107">トレース</span><span class="sxs-lookup"><span data-stu-id="41c8f-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="41c8f-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="41c8f-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="41c8f-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="41c8f-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="b47ad-106">参照</span><span class="sxs-lookup"><span data-stu-id="b47ad-106">See Also</span></span>  
+ [<span data-ttu-id="b47ad-107">トレース</span><span class="sxs-lookup"><span data-stu-id="b47ad-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="b47ad-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="b47ad-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="b47ad-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="b47ad-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

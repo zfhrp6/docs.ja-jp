@@ -13,17 +13,18 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 23016861eb5385d8383a68e90e23211aec4bde38
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8eba92f70c2534d854c1e7f747d610ca30700aac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="calls-faulted"></a><span data-ttu-id="39c61-102">失敗した呼び出し</span><span class="sxs-lookup"><span data-stu-id="39c61-102">Calls Faulted</span></span>
-<span data-ttu-id="39c61-103">カウンター名 : 失敗した呼び出し</span><span class="sxs-lookup"><span data-stu-id="39c61-103">Counter Name: Calls Faulted</span></span>  
+# <a name="calls-faulted"></a><span data-ttu-id="012d4-102">失敗した呼び出し</span><span class="sxs-lookup"><span data-stu-id="012d4-102">Calls Faulted</span></span>
+<span data-ttu-id="012d4-103">カウンター名 : 失敗した呼び出し</span><span class="sxs-lookup"><span data-stu-id="012d4-103">Counter Name: Calls Faulted</span></span>  
   
-## <a name="description"></a><span data-ttu-id="39c61-104">説明</span><span class="sxs-lookup"><span data-stu-id="39c61-104">Description</span></span>  
- <span data-ttu-id="39c61-105">この操作への呼び出しに失敗した回数です。</span><span class="sxs-lookup"><span data-stu-id="39c61-105">Number of calls to this operation that returned faults.</span></span> <span data-ttu-id="39c61-106">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] アプリケーションでは、サービス メソッドは SOAP エラー メッセージを使用して操作エラー情報を通知します。</span><span class="sxs-lookup"><span data-stu-id="39c61-106">In [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] applications, service methods communicate processing error information using SOAP fault messages.</span></span> <span data-ttu-id="39c61-107">SOAP エラーは、サービス操作のメタデータに含まれるメッセージ型であり、堅牢かつインタラクティブに実行できるようにクライアントが使用するエラー コントラクトを作成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="39c61-107">SOAP faults are message types that are included in the metadata for a service operation and therefore create a fault contract that clients can use to make their execution more robust or interactive.</span></span> <span data-ttu-id="39c61-108">SOAP エラーは XML 形式でクライアントに渡されるので、相互運用性の面でも優れています。</span><span class="sxs-lookup"><span data-stu-id="39c61-108">Since SOAP faults are expressed to clients in XML form, they are highly interoperable.</span></span>  
+## <a name="description"></a><span data-ttu-id="012d4-104">説明</span><span class="sxs-lookup"><span data-stu-id="012d4-104">Description</span></span>  
+ <span data-ttu-id="012d4-105">この操作への呼び出しに失敗した回数です。</span><span class="sxs-lookup"><span data-stu-id="012d4-105">Number of calls to this operation that returned faults.</span></span> <span data-ttu-id="012d4-106">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] アプリケーションでは、サービス メソッドは SOAP エラー メッセージを使用して操作エラー情報を通知します。</span><span class="sxs-lookup"><span data-stu-id="012d4-106">In [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] applications, service methods communicate processing error information using SOAP fault messages.</span></span> <span data-ttu-id="012d4-107">SOAP エラーは、サービス操作のメタデータに含まれるメッセージ型であり、堅牢かつインタラクティブに実行できるようにクライアントが使用するエラー コントラクトを作成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="012d4-107">SOAP faults are message types that are included in the metadata for a service operation and therefore create a fault contract that clients can use to make their execution more robust or interactive.</span></span> <span data-ttu-id="012d4-108">SOAP エラーは XML 形式でクライアントに渡されるので、相互運用性の面でも優れています。</span><span class="sxs-lookup"><span data-stu-id="012d4-108">Since SOAP faults are expressed to clients in XML form, they are highly interoperable.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="39c61-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="39c61-109">See Also</span></span>  
- [<span data-ttu-id="39c61-110">コントラクトおよびサービスのエラーの指定と処理</span><span class="sxs-lookup"><span data-stu-id="39c61-110">Specifying and Handling Faults in Contracts and Services</span></span>](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
+## <a name="see-also"></a><span data-ttu-id="012d4-109">参照</span><span class="sxs-lookup"><span data-stu-id="012d4-109">See Also</span></span>  
+ [<span data-ttu-id="012d4-110">コントラクトおよびサービスのエラーの指定と処理</span><span class="sxs-lookup"><span data-stu-id="012d4-110">Specifying and Handling Faults in Contracts and Services</span></span>](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

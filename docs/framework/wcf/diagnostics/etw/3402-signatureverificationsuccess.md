@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5b46f276f1ed9b07de8900eac44ca40eec9539f0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 06da7c8301614d5f42645d79a49246a552e7e69f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3402---signatureverificationsuccess"></a><span data-ttu-id="0f11d-102">3402 - SignatureVerificationSuccess</span><span class="sxs-lookup"><span data-stu-id="0f11d-102">3402 - SignatureVerificationSuccess</span></span>
-## <a name="properties"></a><span data-ttu-id="0f11d-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="0f11d-103">Properties</span></span>  
+# <a name="3402---signatureverificationsuccess"></a><span data-ttu-id="e7c34-102">3402 - SignatureVerificationSuccess</span><span class="sxs-lookup"><span data-stu-id="e7c34-102">3402 - SignatureVerificationSuccess</span></span>
+## <a name="properties"></a><span data-ttu-id="e7c34-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e7c34-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="0f11d-104">ID</span><span class="sxs-lookup"><span data-stu-id="0f11d-104">ID</span></span>|<span data-ttu-id="0f11d-105">3402</span><span class="sxs-lookup"><span data-stu-id="0f11d-105">3402</span></span>|  
-|<span data-ttu-id="0f11d-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="0f11d-106">Keywords</span></span>|<span data-ttu-id="0f11d-107">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="0f11d-107">Security</span></span>|  
-|<span data-ttu-id="0f11d-108">レベル</span><span class="sxs-lookup"><span data-stu-id="0f11d-108">Level</span></span>|<span data-ttu-id="0f11d-109">詳細</span><span class="sxs-lookup"><span data-stu-id="0f11d-109">Verbose</span></span>|  
-|<span data-ttu-id="0f11d-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="0f11d-110">Channel</span></span>|<span data-ttu-id="0f11d-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="0f11d-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="e7c34-104">ID</span><span class="sxs-lookup"><span data-stu-id="e7c34-104">ID</span></span>|<span data-ttu-id="e7c34-105">3402</span><span class="sxs-lookup"><span data-stu-id="e7c34-105">3402</span></span>|  
+|<span data-ttu-id="e7c34-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="e7c34-106">Keywords</span></span>|<span data-ttu-id="e7c34-107">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="e7c34-107">Security</span></span>|  
+|<span data-ttu-id="e7c34-108">レベル</span><span class="sxs-lookup"><span data-stu-id="e7c34-108">Level</span></span>|<span data-ttu-id="e7c34-109">詳細</span><span class="sxs-lookup"><span data-stu-id="e7c34-109">Verbose</span></span>|  
+|<span data-ttu-id="e7c34-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="e7c34-110">Channel</span></span>|<span data-ttu-id="e7c34-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="e7c34-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="0f11d-112">説明</span><span class="sxs-lookup"><span data-stu-id="0f11d-112">Description</span></span>  
- <span data-ttu-id="0f11d-113">このイベントは、署名の検証に成功すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="0f11d-113">This event is emitted when the signature verification has succeeded.</span></span>  
+## <a name="description"></a><span data-ttu-id="e7c34-112">説明</span><span class="sxs-lookup"><span data-stu-id="e7c34-112">Description</span></span>  
+ <span data-ttu-id="e7c34-113">このイベントは、署名の検証に成功すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="e7c34-113">This event is emitted when the signature verification has succeeded.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="0f11d-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="0f11d-114">Message</span></span>  
- <span data-ttu-id="0f11d-115">署名の検証に成功しました</span><span class="sxs-lookup"><span data-stu-id="0f11d-115">Signature verification succeeded</span></span>  
+## <a name="message"></a><span data-ttu-id="e7c34-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="e7c34-114">Message</span></span>  
+ <span data-ttu-id="e7c34-115">署名の検証に成功しました</span><span class="sxs-lookup"><span data-stu-id="e7c34-115">Signature verification succeeded</span></span>  
   
-## <a name="details"></a><span data-ttu-id="0f11d-116">詳細</span><span class="sxs-lookup"><span data-stu-id="0f11d-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="e7c34-116">詳細</span><span class="sxs-lookup"><span data-stu-id="e7c34-116">Details</span></span>

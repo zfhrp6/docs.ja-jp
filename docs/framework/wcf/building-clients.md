@@ -16,26 +16,27 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1c3f5a197be1ace2fc4f039baf783492db77bed7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d50ab37a90df418b031cb8aba5d84f0bbac9a1d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="building-clients"></a><span data-ttu-id="f55b4-102">クライアントを構築する</span><span class="sxs-lookup"><span data-stu-id="f55b4-102">Building Clients</span></span>
-<span data-ttu-id="f55b4-103">このセクションのトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントの作成方法と使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f55b4-103">The topics in this section demonstrate how to create and use a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] client.</span></span>  
+# <a name="building-clients"></a><span data-ttu-id="7d66d-102">クライアントを構築する</span><span class="sxs-lookup"><span data-stu-id="7d66d-102">Building Clients</span></span>
+<span data-ttu-id="7d66d-103">このセクションのトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントの作成方法と使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d66d-103">The topics in this section demonstrate how to create and use a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] client.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f55b4-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="f55b4-104">In This Section</span></span>  
- [<span data-ttu-id="f55b4-105">WCF クライアントの概要</span><span class="sxs-lookup"><span data-stu-id="f55b4-105">WCF Client Overview</span></span>](../../../docs/framework/wcf/wcf-client-overview.md)  
- <span data-ttu-id="f55b4-106">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントとその動作の概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="f55b4-106">Provides an overview of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] clients and how they work.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="7d66d-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7d66d-104">In This Section</span></span>  
+ [<span data-ttu-id="7d66d-105">WCF クライアントの概要</span><span class="sxs-lookup"><span data-stu-id="7d66d-105">WCF Client Overview</span></span>](../../../docs/framework/wcf/wcf-client-overview.md)  
+ <span data-ttu-id="7d66d-106">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントとその動作の概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d66d-106">Provides an overview of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] clients and how they work.</span></span>  
   
- [<span data-ttu-id="f55b4-107">WCF クライアントを使用したサービスへのアクセス</span><span class="sxs-lookup"><span data-stu-id="f55b4-107">Accessing Services Using a WCF Client</span></span>](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
- <span data-ttu-id="f55b4-108">クライアント アプリケーションで使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成するための基本的な方法の概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="f55b4-108">Outlines the basic method of creating a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] client object for use in a client application.</span></span>  
+ [<span data-ttu-id="7d66d-107">WCF クライアントを使用したサービスへのアクセス</span><span class="sxs-lookup"><span data-stu-id="7d66d-107">Accessing Services Using a WCF Client</span></span>](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
+ <span data-ttu-id="7d66d-108">クライアント アプリケーションで使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成するための基本的な方法の概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d66d-108">Outlines the basic method of creating a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] client object for use in a client application.</span></span>  
   
- [<span data-ttu-id="f55b4-109">クライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="f55b4-109">Securing Clients</span></span>](../../../docs/framework/wcf/securing-clients.md)  
- <span data-ttu-id="f55b4-110">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントのセキュリティを構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f55b4-110">Describes how to configure security for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] clients.</span></span>  
+ [<span data-ttu-id="7d66d-109">クライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="7d66d-109">Securing Clients</span></span>](../../../docs/framework/wcf/securing-clients.md)  
+ <span data-ttu-id="7d66d-110">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントのセキュリティを構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d66d-110">Describes how to configure security for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] clients.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="f55b4-111">参照</span><span class="sxs-lookup"><span data-stu-id="f55b4-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="7d66d-111">参照</span><span class="sxs-lookup"><span data-stu-id="7d66d-111">Reference</span></span>  
  <xref:System.ServiceModel.ClientBase%601>  
   
  <xref:System.ServiceModel.DuplexClientBase%601>  
@@ -50,7 +51,7 @@ ms.lasthandoff: 12/02/2017
   
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
   
-## <a name="related-sections"></a><span data-ttu-id="f55b4-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="f55b4-112">Related Sections</span></span>  
- [<span data-ttu-id="f55b4-113">ホスティング サービス</span><span class="sxs-lookup"><span data-stu-id="f55b4-113">Hosting Services</span></span>](../../../docs/framework/wcf/hosting-services.md)  
+## <a name="related-sections"></a><span data-ttu-id="7d66d-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="7d66d-112">Related Sections</span></span>  
+ [<span data-ttu-id="7d66d-113">ホスティング サービス</span><span class="sxs-lookup"><span data-stu-id="7d66d-113">Hosting Services</span></span>](../../../docs/framework/wcf/hosting-services.md)  
   
- [<span data-ttu-id="f55b4-114">サービスの設計と実装</span><span class="sxs-lookup"><span data-stu-id="f55b4-114">Designing and Implementing Services</span></span>](../../../docs/framework/wcf/designing-and-implementing-services.md)
+ [<span data-ttu-id="7d66d-114">サービスの設計と実装</span><span class="sxs-lookup"><span data-stu-id="7d66d-114">Designing and Implementing Services</span></span>](../../../docs/framework/wcf/designing-and-implementing-services.md)

@@ -13,22 +13,23 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a949c27d6d2ff95f36050bcb6c1241b0acf7ce96
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: affaa62c14c7997ceedb6609f2f460fff5b291a7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="wasdisconnected"></a><span data-ttu-id="09aee-102">WasDisconnected</span><span class="sxs-lookup"><span data-stu-id="09aee-102">WasDisconnected</span></span>
-<span data-ttu-id="09aee-103">Id: 162</span><span class="sxs-lookup"><span data-stu-id="09aee-103">Id: 162</span></span>  
+# <a name="wasdisconnected"></a><span data-ttu-id="e18ad-102">WasDisconnected</span><span class="sxs-lookup"><span data-stu-id="e18ad-102">WasDisconnected</span></span>
+<span data-ttu-id="e18ad-103">Id: 162</span><span class="sxs-lookup"><span data-stu-id="e18ad-103">Id: 162</span></span>  
   
- <span data-ttu-id="09aee-104">重大度 : エラー</span><span class="sxs-lookup"><span data-stu-id="09aee-104">Severity: Error</span></span>  
+ <span data-ttu-id="e18ad-104">重大度 : エラー</span><span class="sxs-lookup"><span data-stu-id="e18ad-104">Severity: Error</span></span>  
   
- <span data-ttu-id="09aee-105">カテゴリ: SMSvcHost</span><span class="sxs-lookup"><span data-stu-id="09aee-105">Category: SMSvcHost</span></span>  
+ <span data-ttu-id="e18ad-105">カテゴリ: SMSvcHost</span><span class="sxs-lookup"><span data-stu-id="e18ad-105">Category: SMSvcHost</span></span>  
   
-## <a name="description"></a><span data-ttu-id="09aee-106">説明</span><span class="sxs-lookup"><span data-stu-id="09aee-106">Description</span></span>  
- <span data-ttu-id="09aee-107">このイベントは、WAS (Windows Process Activation) が切断されたことを示します。</span><span class="sxs-lookup"><span data-stu-id="09aee-107">This event indicates that Windows Process Activation (WAS) was disconnected.</span></span> <span data-ttu-id="09aee-108">イベントには、HRESULT、プロセス名、およびプロセス ID が表示されます。</span><span class="sxs-lookup"><span data-stu-id="09aee-108">The event lists the HRESULT, process name and process ID.</span></span>  
+## <a name="description"></a><span data-ttu-id="e18ad-106">説明</span><span class="sxs-lookup"><span data-stu-id="e18ad-106">Description</span></span>  
+ <span data-ttu-id="e18ad-107">このイベントは、WAS (Windows Process Activation) が切断されたことを示します。</span><span class="sxs-lookup"><span data-stu-id="e18ad-107">This event indicates that Windows Process Activation (WAS) was disconnected.</span></span> <span data-ttu-id="e18ad-108">イベントには、HRESULT、プロセス名、およびプロセス ID が表示されます。</span><span class="sxs-lookup"><span data-stu-id="e18ad-108">The event lists the HRESULT, process name and process ID.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="09aee-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="09aee-109">See Also</span></span>  
- [<span data-ttu-id="09aee-110">イベントのログ記録</span><span class="sxs-lookup"><span data-stu-id="09aee-110">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [<span data-ttu-id="09aee-111">イベントの一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="09aee-111">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="e18ad-109">参照</span><span class="sxs-lookup"><span data-stu-id="e18ad-109">See Also</span></span>  
+ [<span data-ttu-id="e18ad-110">イベント ログ</span><span class="sxs-lookup"><span data-stu-id="e18ad-110">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="e18ad-111">イベント一覧</span><span class="sxs-lookup"><span data-stu-id="e18ad-111">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

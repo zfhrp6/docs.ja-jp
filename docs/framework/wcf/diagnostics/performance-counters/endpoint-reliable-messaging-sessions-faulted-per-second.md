@@ -13,18 +13,19 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a65ce815cbf958d898c26433fede931c5e3db6f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fd75dd054fd16278a1b908eecbfc3f2d03e762ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="endpoint-reliable-messaging-sessions-faulted-per-second"></a><span data-ttu-id="509dc-102">エンドポイント : 1 秒あたりのエラーとなった信頼できるメッセージ セッション</span><span class="sxs-lookup"><span data-stu-id="509dc-102">Endpoint: Reliable Messaging Sessions Faulted Per Second</span></span>
-<span data-ttu-id="509dc-103">カウンター名 : 1 秒あたりのエラーとなった信頼できるメッセージ セッション</span><span class="sxs-lookup"><span data-stu-id="509dc-103">Counter Name: Reliable Messaging Sessions Faulted Per Second.</span></span>  
+# <a name="endpoint-reliable-messaging-sessions-faulted-per-second"></a><span data-ttu-id="92c37-102">エンドポイント : 1 秒あたりのエラーとなった信頼できるメッセージ セッション</span><span class="sxs-lookup"><span data-stu-id="92c37-102">Endpoint: Reliable Messaging Sessions Faulted Per Second</span></span>
+<span data-ttu-id="92c37-103">カウンター名 : 1 秒あたりのエラーとなった信頼できるメッセージ セッション</span><span class="sxs-lookup"><span data-stu-id="92c37-103">Counter Name: Reliable Messaging Sessions Faulted Per Second.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="509dc-104">説明</span><span class="sxs-lookup"><span data-stu-id="509dc-104">Description</span></span>  
- <span data-ttu-id="509dc-105">1 秒以内にこのエンドポイントでエラーになった信頼できるメッセージ セッション数。</span><span class="sxs-lookup"><span data-stu-id="509dc-105">Number of reliable messaging sessions that are faulted at this endpoint in a second.</span></span>  
+## <a name="description"></a><span data-ttu-id="92c37-104">説明</span><span class="sxs-lookup"><span data-stu-id="92c37-104">Description</span></span>  
+ <span data-ttu-id="92c37-105">1 秒以内にこのエンドポイントでエラーになった信頼できるメッセージ セッション数。</span><span class="sxs-lookup"><span data-stu-id="92c37-105">Number of reliable messaging sessions that are faulted at this endpoint in a second.</span></span>  
   
- <span data-ttu-id="509dc-106">このカウンターは、パフォーマンス カウンター型[PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649)、次の数式を使用してその値を計算します。</span><span class="sxs-lookup"><span data-stu-id="509dc-106">This counter is of performance counter type [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), whose value is calculated using the following formula.</span></span>  
+ <span data-ttu-id="92c37-106">このカウンターは、パフォーマンス カウンター型[PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649)、次の数式を使用してその値を計算します。</span><span class="sxs-lookup"><span data-stu-id="92c37-106">This counter is of performance counter type [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), whose value is calculated using the following formula.</span></span>  
   
- <span data-ttu-id="509dc-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span><span class="sxs-lookup"><span data-stu-id="509dc-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span></span>
+ <span data-ttu-id="92c37-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span><span class="sxs-lookup"><span data-stu-id="92c37-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span></span>

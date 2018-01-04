@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 28286c73bceba3d8a7fcc01e56f5a6631731a5e7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3ca8255d3ffcf6371efc162024983248db2066c9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="5203---jsonmessagedecodingstart"></a><span data-ttu-id="a39ec-102">5203 - JsonMessageDecodingStart</span><span class="sxs-lookup"><span data-stu-id="a39ec-102">5203 - JsonMessageDecodingStart</span></span>
-## <a name="properties"></a><span data-ttu-id="a39ec-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a39ec-103">Properties</span></span>  
+# <a name="5203---jsonmessagedecodingstart"></a><span data-ttu-id="e1419-102">5203 - JsonMessageDecodingStart</span><span class="sxs-lookup"><span data-stu-id="e1419-102">5203 - JsonMessageDecodingStart</span></span>
+## <a name="properties"></a><span data-ttu-id="e1419-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e1419-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="a39ec-104">ID</span><span class="sxs-lookup"><span data-stu-id="a39ec-104">ID</span></span>|<span data-ttu-id="a39ec-105">5203</span><span class="sxs-lookup"><span data-stu-id="a39ec-105">5203</span></span>|  
-|<span data-ttu-id="a39ec-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="a39ec-106">Keywords</span></span>|<span data-ttu-id="a39ec-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="a39ec-107">Channel</span></span>|  
-|<span data-ttu-id="a39ec-108">レベル</span><span class="sxs-lookup"><span data-stu-id="a39ec-108">Level</span></span>|<span data-ttu-id="a39ec-109">詳細</span><span class="sxs-lookup"><span data-stu-id="a39ec-109">Verbose</span></span>|  
-|<span data-ttu-id="a39ec-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="a39ec-110">Channel</span></span>|<span data-ttu-id="a39ec-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="a39ec-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="e1419-104">ID</span><span class="sxs-lookup"><span data-stu-id="e1419-104">ID</span></span>|<span data-ttu-id="e1419-105">5203</span><span class="sxs-lookup"><span data-stu-id="e1419-105">5203</span></span>|  
+|<span data-ttu-id="e1419-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="e1419-106">Keywords</span></span>|<span data-ttu-id="e1419-107">チャネル</span><span class="sxs-lookup"><span data-stu-id="e1419-107">Channel</span></span>|  
+|<span data-ttu-id="e1419-108">レベル</span><span class="sxs-lookup"><span data-stu-id="e1419-108">Level</span></span>|<span data-ttu-id="e1419-109">詳細</span><span class="sxs-lookup"><span data-stu-id="e1419-109">Verbose</span></span>|  
+|<span data-ttu-id="e1419-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="e1419-110">Channel</span></span>|<span data-ttu-id="e1419-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="e1419-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="a39ec-112">説明</span><span class="sxs-lookup"><span data-stu-id="a39ec-112">Description</span></span>  
- <span data-ttu-id="a39ec-113">このイベントは、JsonMessageEncoder がメッセージのデコードを開始したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="a39ec-113">This event is emitted when the JsonMessageEncoder started decoding the message.</span></span>  
+## <a name="description"></a><span data-ttu-id="e1419-112">説明</span><span class="sxs-lookup"><span data-stu-id="e1419-112">Description</span></span>  
+ <span data-ttu-id="e1419-113">このイベントは、JsonMessageEncoder がメッセージのデコードを開始したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="e1419-113">This event is emitted when the JsonMessageEncoder started decoding the message.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="a39ec-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="a39ec-114">Message</span></span>  
- <span data-ttu-id="a39ec-115">JsonMessageEncoder がメッセージのデコードを開始しました。</span><span class="sxs-lookup"><span data-stu-id="a39ec-115">JsonMessageEncoder started decoding the message.</span></span>  
+## <a name="message"></a><span data-ttu-id="e1419-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="e1419-114">Message</span></span>  
+ <span data-ttu-id="e1419-115">JsonMessageEncoder がメッセージのデコードを開始しました。</span><span class="sxs-lookup"><span data-stu-id="e1419-115">JsonMessageEncoder started decoding the message.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="a39ec-116">詳細</span><span class="sxs-lookup"><span data-stu-id="a39ec-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="e1419-116">詳細</span><span class="sxs-lookup"><span data-stu-id="e1419-116">Details</span></span>

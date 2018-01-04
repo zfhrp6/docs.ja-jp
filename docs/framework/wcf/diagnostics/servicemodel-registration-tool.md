@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8bdd5a394ef757dc85b874c28fed457ddd3d5aac
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d8cbb42e4840a6c89a410879bb8a1ce1c53d4ca4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="servicemodel-registration-tool"></a><span data-ttu-id="b9358-102">ServiceModel 登録ツール</span><span class="sxs-lookup"><span data-stu-id="b9358-102">ServiceModel Registration Tool</span></span>
-<span data-ttu-id="b9358-103">ServiceModel 登録ツールは、単一のコンピューターで ServiceModel の登録を管理できるコマンド ライン ツールです。</span><span class="sxs-lookup"><span data-stu-id="b9358-103">The ServiceModel Registration Tool is command-line tool that allow you to manage the registration of ServiceModel on a single machine.</span></span> <span data-ttu-id="b9358-104">このツールの詳細については、次を参照してください。 [ServiceModel 登録ツール (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md)です。</span><span class="sxs-lookup"><span data-stu-id="b9358-104">For more information on this tool, see [ServiceModel Registration Tool (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md).</span></span>
+# <a name="servicemodel-registration-tool"></a><span data-ttu-id="eeb28-102">ServiceModel 登録ツール</span><span class="sxs-lookup"><span data-stu-id="eeb28-102">ServiceModel Registration Tool</span></span>
+<span data-ttu-id="eeb28-103">ServiceModel 登録ツールは、単一のコンピューターで ServiceModel の登録を管理できるコマンド ライン ツールです。</span><span class="sxs-lookup"><span data-stu-id="eeb28-103">The ServiceModel Registration Tool is command-line tool that allow you to manage the registration of ServiceModel on a single machine.</span></span> <span data-ttu-id="eeb28-104">このツールの詳細については、次を参照してください。 [ServiceModel 登録ツール (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md)です。</span><span class="sxs-lookup"><span data-stu-id="eeb28-104">For more information on this tool, see [ServiceModel Registration Tool (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md).</span></span>

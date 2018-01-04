@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 55e7fce9cb01b0ab1ab265650aea96e49b2ad456
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a640bba672420827bf756d4a725338c3fc25caa8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodeldiagnosticsmessagecountlimitexceeded"></a><span data-ttu-id="8018a-102">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span><span class="sxs-lookup"><span data-stu-id="8018a-102">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span></span>
-<span data-ttu-id="8018a-103">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span><span class="sxs-lookup"><span data-stu-id="8018a-103">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span></span>  
+# <a name="systemservicemodeldiagnosticsmessagecountlimitexceeded"></a><span data-ttu-id="97582-102">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span><span class="sxs-lookup"><span data-stu-id="97582-102">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span></span>
+<span data-ttu-id="97582-103">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span><span class="sxs-lookup"><span data-stu-id="97582-103">System.ServiceModel.Diagnostics.MessageCountLimitExceeded</span></span>  
   
-## <a name="description"></a><span data-ttu-id="8018a-104">説明</span><span class="sxs-lookup"><span data-stu-id="8018a-104">Description</span></span>  
- <span data-ttu-id="8018a-105">ログに記録するメッセージの制限に達しました。</span><span class="sxs-lookup"><span data-stu-id="8018a-105">Reached the limit of messages to log.</span></span> <span data-ttu-id="8018a-106">メッセージ ログは停止します。</span><span class="sxs-lookup"><span data-stu-id="8018a-106">Message logging is stopping.</span></span>  
+## <a name="description"></a><span data-ttu-id="97582-104">説明</span><span class="sxs-lookup"><span data-stu-id="97582-104">Description</span></span>  
+ <span data-ttu-id="97582-105">ログに記録するメッセージの制限に達しました。</span><span class="sxs-lookup"><span data-stu-id="97582-105">Reached the limit of messages to log.</span></span> <span data-ttu-id="97582-106">メッセージ ログは停止します。</span><span class="sxs-lookup"><span data-stu-id="97582-106">Message logging is stopping.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8018a-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="8018a-107">See Also</span></span>  
- [<span data-ttu-id="8018a-108">トレース</span><span class="sxs-lookup"><span data-stu-id="8018a-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="8018a-109">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="8018a-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="8018a-110">管理と診断</span><span class="sxs-lookup"><span data-stu-id="8018a-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="97582-107">参照</span><span class="sxs-lookup"><span data-stu-id="97582-107">See Also</span></span>  
+ [<span data-ttu-id="97582-108">トレース</span><span class="sxs-lookup"><span data-stu-id="97582-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="97582-109">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="97582-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="97582-110">管理と診断</span><span class="sxs-lookup"><span data-stu-id="97582-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

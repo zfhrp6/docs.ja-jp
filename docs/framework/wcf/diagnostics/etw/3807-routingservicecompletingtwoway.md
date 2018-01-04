@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f6e01b8a52c691ca04a3e2a20bc69f76acb075c2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 056ef994a81bd92ee0937d466bb3a9091fc2d9ac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3807---routingservicecompletingtwoway"></a><span data-ttu-id="fed41-102">3807 - RoutingServiceCompletingTwoWay</span><span class="sxs-lookup"><span data-stu-id="fed41-102">3807 - RoutingServiceCompletingTwoWay</span></span>
-## <a name="properties"></a><span data-ttu-id="fed41-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="fed41-103">Properties</span></span>  
+# <a name="3807---routingservicecompletingtwoway"></a><span data-ttu-id="751bd-102">3807 - RoutingServiceCompletingTwoWay</span><span class="sxs-lookup"><span data-stu-id="751bd-102">3807 - RoutingServiceCompletingTwoWay</span></span>
+## <a name="properties"></a><span data-ttu-id="751bd-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="751bd-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="fed41-104">ID</span><span class="sxs-lookup"><span data-stu-id="fed41-104">ID</span></span>|<span data-ttu-id="fed41-105">3807</span><span class="sxs-lookup"><span data-stu-id="fed41-105">3807</span></span>|  
-|<span data-ttu-id="fed41-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="fed41-106">Keywords</span></span>|<span data-ttu-id="fed41-107">RoutingServices</span><span class="sxs-lookup"><span data-stu-id="fed41-107">RoutingServices</span></span>|  
-|<span data-ttu-id="fed41-108">レベル</span><span class="sxs-lookup"><span data-stu-id="fed41-108">Level</span></span>|<span data-ttu-id="fed41-109">情報</span><span class="sxs-lookup"><span data-stu-id="fed41-109">Information</span></span>|  
-|<span data-ttu-id="fed41-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="fed41-110">Channel</span></span>|<span data-ttu-id="fed41-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="fed41-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="751bd-104">ID</span><span class="sxs-lookup"><span data-stu-id="751bd-104">ID</span></span>|<span data-ttu-id="751bd-105">3807</span><span class="sxs-lookup"><span data-stu-id="751bd-105">3807</span></span>|  
+|<span data-ttu-id="751bd-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="751bd-106">Keywords</span></span>|<span data-ttu-id="751bd-107">RoutingServices</span><span class="sxs-lookup"><span data-stu-id="751bd-107">RoutingServices</span></span>|  
+|<span data-ttu-id="751bd-108">レベル</span><span class="sxs-lookup"><span data-stu-id="751bd-108">Level</span></span>|<span data-ttu-id="751bd-109">情報</span><span class="sxs-lookup"><span data-stu-id="751bd-109">Information</span></span>|  
+|<span data-ttu-id="751bd-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="751bd-110">Channel</span></span>|<span data-ttu-id="751bd-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="751bd-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="fed41-112">説明</span><span class="sxs-lookup"><span data-stu-id="fed41-112">Description</span></span>  
- <span data-ttu-id="fed41-113">このイベントは、ルーティング サービスの要求応答メッセージを完了しているときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="fed41-113">This event is emitted when the Routing Service request reply message is completing.</span></span>  
+## <a name="description"></a><span data-ttu-id="751bd-112">説明</span><span class="sxs-lookup"><span data-stu-id="751bd-112">Description</span></span>  
+ <span data-ttu-id="751bd-113">このイベントは、ルーティング サービスの要求応答メッセージを完了しているときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="751bd-113">This event is emitted when the Routing Service request reply message is completing.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="fed41-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="fed41-114">Message</span></span>  
- <span data-ttu-id="fed41-115">ルーティング サービスの要求応答メッセージを完了しています。</span><span class="sxs-lookup"><span data-stu-id="fed41-115">A Routing Service request reply message is completing.</span></span>  
+## <a name="message"></a><span data-ttu-id="751bd-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="751bd-114">Message</span></span>  
+ <span data-ttu-id="751bd-115">ルーティング サービスの要求応答メッセージを完了しています。</span><span class="sxs-lookup"><span data-stu-id="751bd-115">A Routing Service request reply message is completing.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="fed41-116">詳細</span><span class="sxs-lookup"><span data-stu-id="fed41-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="751bd-116">詳細</span><span class="sxs-lookup"><span data-stu-id="751bd-116">Details</span></span>
