@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: cd6dd5800531755eb907f5210fbbddc0e582613d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 487c849e765bd8f0bc51eee3032845f19258a952
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecuritysessionrequestoroperationfailure"></a><span data-ttu-id="4b0e9-102">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span><span class="sxs-lookup"><span data-stu-id="4b0e9-102">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span></span>
-<span data-ttu-id="4b0e9-103">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span><span class="sxs-lookup"><span data-stu-id="4b0e9-103">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span></span>  
+# <a name="systemservicemodelsecuritysecuritysessionrequestoroperationfailure"></a><span data-ttu-id="31d38-102">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span><span class="sxs-lookup"><span data-stu-id="31d38-102">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span></span>
+<span data-ttu-id="31d38-103">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span><span class="sxs-lookup"><span data-stu-id="31d38-103">System.ServiceModel.Security.SecuritySessionRequestorOperationFailure</span></span>  
   
-## <a name="description"></a><span data-ttu-id="4b0e9-104">説明</span><span class="sxs-lookup"><span data-stu-id="4b0e9-104">Description</span></span>  
- <span data-ttu-id="4b0e9-105">クライアントのセキュリティ セッションの操作が失敗しました。</span><span class="sxs-lookup"><span data-stu-id="4b0e9-105">The client security session operation failed.</span></span>  
+## <a name="description"></a><span data-ttu-id="31d38-104">説明</span><span class="sxs-lookup"><span data-stu-id="31d38-104">Description</span></span>  
+ <span data-ttu-id="31d38-105">クライアントのセキュリティ セッションの操作が失敗しました。</span><span class="sxs-lookup"><span data-stu-id="31d38-105">The client security session operation failed.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4b0e9-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b0e9-106">See Also</span></span>  
- [<span data-ttu-id="4b0e9-107">トレース</span><span class="sxs-lookup"><span data-stu-id="4b0e9-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="4b0e9-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="4b0e9-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="4b0e9-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="4b0e9-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="31d38-106">参照</span><span class="sxs-lookup"><span data-stu-id="31d38-106">See Also</span></span>  
+ [<span data-ttu-id="31d38-107">トレース</span><span class="sxs-lookup"><span data-stu-id="31d38-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="31d38-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="31d38-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="31d38-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="31d38-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,17 +13,18 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aefe0bc0e0be17c2585499e4c943b43672907dfc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e360bed1cbdd11920d983c08cd7f3955b7432a96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="datacontractresolver"></a><span data-ttu-id="75bc4-102">DataContractResolver</span><span class="sxs-lookup"><span data-stu-id="75bc4-102">DataContractResolver</span></span>
-<span data-ttu-id="75bc4-103">このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-103">This sample demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span> <span data-ttu-id="75bc4-104">このサンプルでは、シリアル化および逆シリアル化の際に CLR 型と xsi:type 表現との間にマッピングを行うために DataContractResolver を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-104">This sample shows how to use a DataContractResolver to map CLR types to and from an xsi:type representation during serialization and deserialization.</span></span>  
+# <a name="datacontractresolver"></a><span data-ttu-id="3bb70-102">DataContractResolver</span><span class="sxs-lookup"><span data-stu-id="3bb70-102">DataContractResolver</span></span>
+<span data-ttu-id="3bb70-103">このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="3bb70-103">This sample demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span> <span data-ttu-id="3bb70-104">このサンプルでは、シリアル化および逆シリアル化の際に CLR 型と xsi:type 表現との間にマッピングを行うために DataContractResolver を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="3bb70-104">This sample shows how to use a DataContractResolver to map CLR types to and from an xsi:type representation during serialization and deserialization.</span></span>  
   
-## <a name="sample-details"></a><span data-ttu-id="75bc4-105">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="75bc4-105">Sample Details</span></span>  
- <span data-ttu-id="75bc4-106">サンプルでは、次の CLR 型を定義します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-106">The sample defines the following CLR types.</span></span>  
+## <a name="sample-details"></a><span data-ttu-id="3bb70-105">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="3bb70-105">Sample Details</span></span>  
+ <span data-ttu-id="3bb70-106">サンプルでは、次の CLR 型を定義します。</span><span class="sxs-lookup"><span data-stu-id="3bb70-106">The sample defines the following CLR types.</span></span>  
   
 ```csharp  
 using System;  
@@ -57,13 +58,13 @@ namespace Types
 }  
 ```  
   
- <span data-ttu-id="75bc4-107">サンプルでは、このアセンブリを読み込み、これらの各型を抽出して、型をシリアル化および逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-107">The sample loads the assembly, extracts each of these types, and then serializes and deserializes them.</span></span> <span data-ttu-id="75bc4-108">次の例で示すように、<xref:System.Runtime.Serialization.DataContractResolver> は <xref:System.Runtime.Serialization.DataContractResolver> 派生クラスのインスタンスを <xref:System.Runtime.Serialization.DataContractSerializer> コンストラクターに渡すことによってシリアル化プロセスに追加されます。</span><span class="sxs-lookup"><span data-stu-id="75bc4-108">The <xref:System.Runtime.Serialization.DataContractResolver> is plugged into the serialization process by passing an instance of the <xref:System.Runtime.Serialization.DataContractResolver>-derived class to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, as shown in the following example.</span></span>  
+ <span data-ttu-id="3bb70-107">サンプルでは、このアセンブリを読み込み、これらの各型を抽出して、型をシリアル化および逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="3bb70-107">The sample loads the assembly, extracts each of these types, and then serializes and deserializes them.</span></span> <span data-ttu-id="3bb70-108">次の例で示すように、<xref:System.Runtime.Serialization.DataContractResolver> は <xref:System.Runtime.Serialization.DataContractResolver> 派生クラスのインスタンスを <xref:System.Runtime.Serialization.DataContractSerializer> コンストラクターに渡すことによってシリアル化プロセスに追加されます。</span><span class="sxs-lookup"><span data-stu-id="3bb70-108">The <xref:System.Runtime.Serialization.DataContractResolver> is plugged into the serialization process by passing an instance of the <xref:System.Runtime.Serialization.DataContractResolver>-derived class to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, as shown in the following example.</span></span>  
   
 ```csharp  
 this.serializer = new DataContractSerializer(typeof(Object), null, int.MaxValue, false, true, null, new MyDataContractResolver(assembly));  
 ```  
   
- <span data-ttu-id="75bc4-109">次のコード例に示すように、サンプルでは CLR 型をシリアル化しています。</span><span class="sxs-lookup"><span data-stu-id="75bc4-109">The sample then serializes the CLR types as shown in the following code example.</span></span>  
+ <span data-ttu-id="3bb70-109">次のコード例に示すように、サンプルでは CLR 型をシリアル化しています。</span><span class="sxs-lookup"><span data-stu-id="3bb70-109">The sample then serializes the CLR types as shown in the following code example.</span></span>  
   
 ```csharp  
 Assembly assembly = Assembly.Load(new AssemblyName("Types"));  
@@ -92,7 +93,7 @@ public void serialize(Type type)
 }  
 ```  
   
- <span data-ttu-id="75bc4-110">次のコード例に示すように、サンプルでは xsi:types を逆シリアル化しています。</span><span class="sxs-lookup"><span data-stu-id="75bc4-110">The sample then deserializes the xsi:types as shown in the following code example.</span></span>  
+ <span data-ttu-id="3bb70-110">次のコード例に示すように、サンプルでは xsi:types を逆シリアル化しています。</span><span class="sxs-lookup"><span data-stu-id="3bb70-110">The sample then deserializes the xsi:types as shown in the following code example.</span></span>  
   
 ```csharp  
 public void deserialize(Type type)  
@@ -107,9 +108,9 @@ public void deserialize(Type type)
 }  
 ```  
   
- <span data-ttu-id="75bc4-111">カスタム <xref:System.Runtime.Serialization.DataContractResolver> は <xref:System.Runtime.Serialization.DataContractSerializer> コンストラクターに渡されるため、CLR 型を同等の <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> にマッピングするためのシリアル化時に `xsi:type` が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="75bc4-111">Since the custom <xref:System.Runtime.Serialization.DataContractResolver> is passed in to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, the <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> is called during serialization to map a CLR type to an equivalent `xsi:type`.</span></span> <span data-ttu-id="75bc4-112">同様に、<xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> を同等の CLR 型にマッピングするための逆シリアル化時に `xsi:type` が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="75bc4-112">Similarly the <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> is called during deserialization to map the `xsi:type` to an equivalent CLR type.</span></span> <span data-ttu-id="75bc4-113">このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> は、次の例のように定義されます。</span><span class="sxs-lookup"><span data-stu-id="75bc4-113">In this sample, the <xref:System.Runtime.Serialization.DataContractResolver> is defined as shown in the following example.</span></span>  
+ <span data-ttu-id="3bb70-111">カスタム <xref:System.Runtime.Serialization.DataContractResolver> は <xref:System.Runtime.Serialization.DataContractSerializer> コンストラクターに渡されるため、CLR 型を同等の <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> にマッピングするためのシリアル化時に `xsi:type` が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="3bb70-111">Since the custom <xref:System.Runtime.Serialization.DataContractResolver> is passed in to the <xref:System.Runtime.Serialization.DataContractSerializer> constructor, the <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> is called during serialization to map a CLR type to an equivalent `xsi:type`.</span></span> <span data-ttu-id="3bb70-112">同様に、<xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> を同等の CLR 型にマッピングするための逆シリアル化時に `xsi:type` が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="3bb70-112">Similarly the <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> is called during deserialization to map the `xsi:type` to an equivalent CLR type.</span></span> <span data-ttu-id="3bb70-113">このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> は、次の例のように定義されます。</span><span class="sxs-lookup"><span data-stu-id="3bb70-113">In this sample, the <xref:System.Runtime.Serialization.DataContractResolver> is defined as shown in the following example.</span></span>  
   
- <span data-ttu-id="75bc4-114"><xref:System.Runtime.Serialization.DataContractResolver> から派生するクラスのコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-114">The following code example is a class deriving from <xref:System.Runtime.Serialization.DataContractResolver>.</span></span>  
+ <span data-ttu-id="3bb70-114"><xref:System.Runtime.Serialization.DataContractResolver> から派生するクラスのコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="3bb70-114">The following code example is a class deriving from <xref:System.Runtime.Serialization.DataContractResolver>.</span></span>  
   
 ```  
 class MyDataContractResolver : DataContractResolver  
@@ -158,22 +159,22 @@ class MyDataContractResolver : DataContractResolver
 }  
 ```  
   
- <span data-ttu-id="75bc4-115">サンプルの一部として、Types プロジェクトでは、このサンプルで使用するすべての型を含むアセンブリが生成されます。</span><span class="sxs-lookup"><span data-stu-id="75bc4-115">As part of the sample, the Types project generates the assembly with all the types that are used in this sample.</span></span> <span data-ttu-id="75bc4-116">このプロジェクトは、シリアル化される型を追加、削除、または変更するために使用します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-116">Use this project to add, remove or modify the types that will be serialized.</span></span>  
+ <span data-ttu-id="3bb70-115">サンプルの一部として、Types プロジェクトでは、このサンプルで使用するすべての型を含むアセンブリが生成されます。</span><span class="sxs-lookup"><span data-stu-id="3bb70-115">As part of the sample, the Types project generates the assembly with all the types that are used in this sample.</span></span> <span data-ttu-id="3bb70-116">このプロジェクトは、シリアル化される型を追加、削除、または変更するために使用します。</span><span class="sxs-lookup"><span data-stu-id="3bb70-116">Use this project to add, remove or modify the types that will be serialized.</span></span>  
   
-#### <a name="to-use-this-sample"></a><span data-ttu-id="75bc4-117">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="75bc4-117">To use this sample</span></span>  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="3bb70-117">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="3bb70-117">To use this sample</span></span>  
   
-1.  <span data-ttu-id="75bc4-118">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を使用して、DCRSample.sln ソリューション ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="75bc4-118">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the DCRSample.sln solution file.</span></span>  
+1.  <span data-ttu-id="3bb70-118">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を使用して、DCRSample.sln ソリューション ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="3bb70-118">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the DCRSample.sln solution file.</span></span>  
   
-2.  <span data-ttu-id="75bc4-119">ソリューションを実行するには、F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-119">To run the solution, press F5</span></span>  
+2.  <span data-ttu-id="3bb70-119">ソリューションを実行するには、F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="3bb70-119">To run the solution, press F5</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="75bc4-120">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="75bc4-120">The samples may already be installed on your machine.</span></span> <span data-ttu-id="75bc4-121">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="75bc4-121">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="3bb70-120">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="3bb70-120">The samples may already be installed on your machine.</span></span> <span data-ttu-id="3bb70-121">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="3bb70-121">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="75bc4-122">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="75bc4-122">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="75bc4-123">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="75bc4-123">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="3bb70-122">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="3bb70-122">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="3bb70-123">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="3bb70-123">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\DataContractResolver`  
   
-## <a name="see-also"></a><span data-ttu-id="75bc4-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="75bc4-124">See Also</span></span>  
- [<span data-ttu-id="75bc4-125">データ コントラクト リゾルバーを使用します。</span><span class="sxs-lookup"><span data-stu-id="75bc4-125">Using a Data Contract Resolver</span></span>](../../../../docs/framework/wcf/feature-details/using-a-data-contract-resolver.md)
+## <a name="see-also"></a><span data-ttu-id="3bb70-124">参照</span><span class="sxs-lookup"><span data-stu-id="3bb70-124">See Also</span></span>  
+ [<span data-ttu-id="3bb70-125">データ コントラクト リゾルバーの使用</span><span class="sxs-lookup"><span data-stu-id="3bb70-125">Using a Data Contract Resolver</span></span>](../../../../docs/framework/wcf/feature-details/using-a-data-contract-resolver.md)

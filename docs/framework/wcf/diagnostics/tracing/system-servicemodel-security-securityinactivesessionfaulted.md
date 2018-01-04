@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9dd61980e4874988840d345e71b90b08400fe74c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4c321d9e84a18ba5cc01a3ef4386bdb273eb82f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecurityinactivesessionfaulted"></a><span data-ttu-id="43f20-102">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span><span class="sxs-lookup"><span data-stu-id="43f20-102">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span></span>
-<span data-ttu-id="43f20-103">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span><span class="sxs-lookup"><span data-stu-id="43f20-103">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span></span>  
+# <a name="systemservicemodelsecuritysecurityinactivesessionfaulted"></a><span data-ttu-id="11673-102">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span><span class="sxs-lookup"><span data-stu-id="11673-102">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span></span>
+<span data-ttu-id="11673-103">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span><span class="sxs-lookup"><span data-stu-id="11673-103">System.ServiceModel.Security.SecurityInactiveSessionFaulted</span></span>  
   
-## <a name="description"></a><span data-ttu-id="43f20-104">説明</span><span class="sxs-lookup"><span data-stu-id="43f20-104">Description</span></span>  
- <span data-ttu-id="43f20-105">アクティブでないセキュリティ セッションはサーバー側でエラーとなりました。</span><span class="sxs-lookup"><span data-stu-id="43f20-105">An inactive security session was faulted by the server.</span></span>  
+## <a name="description"></a><span data-ttu-id="11673-104">説明</span><span class="sxs-lookup"><span data-stu-id="11673-104">Description</span></span>  
+ <span data-ttu-id="11673-105">アクティブでないセキュリティ セッションはサーバー側でエラーとなりました。</span><span class="sxs-lookup"><span data-stu-id="11673-105">An inactive security session was faulted by the server.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="43f20-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="43f20-106">See Also</span></span>  
- [<span data-ttu-id="43f20-107">トレース</span><span class="sxs-lookup"><span data-stu-id="43f20-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="43f20-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="43f20-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="43f20-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="43f20-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="11673-106">参照</span><span class="sxs-lookup"><span data-stu-id="11673-106">See Also</span></span>  
+ [<span data-ttu-id="11673-107">トレース</span><span class="sxs-lookup"><span data-stu-id="11673-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="11673-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="11673-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="11673-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="11673-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

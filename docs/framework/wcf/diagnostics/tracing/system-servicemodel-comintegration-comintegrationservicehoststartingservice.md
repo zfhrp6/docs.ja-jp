@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: feaf5d06bf70a8433d1ef0d6a0e0aa38a14f0ec2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 782500f08ae21e88ad40a7757bb12a929301e376
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationservicehoststartingservice"></a><span data-ttu-id="a7809-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span><span class="sxs-lookup"><span data-stu-id="a7809-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span></span>
-<span data-ttu-id="a7809-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span><span class="sxs-lookup"><span data-stu-id="a7809-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationservicehoststartingservice"></a><span data-ttu-id="bc2f6-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span><span class="sxs-lookup"><span data-stu-id="bc2f6-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span></span>
+<span data-ttu-id="bc2f6-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span><span class="sxs-lookup"><span data-stu-id="bc2f6-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a7809-104">説明</span><span class="sxs-lookup"><span data-stu-id="a7809-104">Description</span></span>  
- <span data-ttu-id="a7809-105">ComPlus : サービスを開始します。</span><span class="sxs-lookup"><span data-stu-id="a7809-105">ComPlus: Starting service.</span></span>  
+## <a name="description"></a><span data-ttu-id="bc2f6-104">説明</span><span class="sxs-lookup"><span data-stu-id="bc2f6-104">Description</span></span>  
+ <span data-ttu-id="bc2f6-105">ComPlus : サービスを開始します。</span><span class="sxs-lookup"><span data-stu-id="bc2f6-105">ComPlus: Starting service.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a7809-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="a7809-106">See Also</span></span>  
- [<span data-ttu-id="a7809-107">トレース</span><span class="sxs-lookup"><span data-stu-id="a7809-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="a7809-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="a7809-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="a7809-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="a7809-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="bc2f6-106">参照</span><span class="sxs-lookup"><span data-stu-id="bc2f6-106">See Also</span></span>  
+ [<span data-ttu-id="bc2f6-107">トレース</span><span class="sxs-lookup"><span data-stu-id="bc2f6-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="bc2f6-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="bc2f6-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="bc2f6-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="bc2f6-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2333d5839e994e06afd23d67e3d14dadaeec5818
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 05d84e006580610d0de7ed3e7ec92a0ae7d0ecd8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelactivationserviceshutdownerror"></a><span data-ttu-id="44444-102">System.ServiceModel.Activation.ServiceShutdownError</span><span class="sxs-lookup"><span data-stu-id="44444-102">System.ServiceModel.Activation.ServiceShutdownError</span></span>
-<span data-ttu-id="44444-103">System.ServiceModel.Activation.ServiceShutdownError</span><span class="sxs-lookup"><span data-stu-id="44444-103">System.ServiceModel.Activation.ServiceShutdownError</span></span>  
+# <a name="systemservicemodelactivationserviceshutdownerror"></a><span data-ttu-id="92f28-102">System.ServiceModel.Activation.ServiceShutdownError</span><span class="sxs-lookup"><span data-stu-id="92f28-102">System.ServiceModel.Activation.ServiceShutdownError</span></span>
+<span data-ttu-id="92f28-103">System.ServiceModel.Activation.ServiceShutdownError</span><span class="sxs-lookup"><span data-stu-id="92f28-103">System.ServiceModel.Activation.ServiceShutdownError</span></span>  
   
-## <a name="description"></a><span data-ttu-id="44444-104">説明</span><span class="sxs-lookup"><span data-stu-id="44444-104">Description</span></span>  
- <span data-ttu-id="44444-105">NT サービスのシャットダウン中に予期しないエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="44444-105">An unexpected error occurred while shutting down the NT service.</span></span>  
+## <a name="description"></a><span data-ttu-id="92f28-104">説明</span><span class="sxs-lookup"><span data-stu-id="92f28-104">Description</span></span>  
+ <span data-ttu-id="92f28-105">NT サービスのシャットダウン中に予期しないエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="92f28-105">An unexpected error occurred while shutting down the NT service.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="44444-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="44444-106">See Also</span></span>  
- [<span data-ttu-id="44444-107">トレース</span><span class="sxs-lookup"><span data-stu-id="44444-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="44444-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="44444-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="44444-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="44444-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="92f28-106">参照</span><span class="sxs-lookup"><span data-stu-id="92f28-106">See Also</span></span>  
+ [<span data-ttu-id="92f28-107">トレース</span><span class="sxs-lookup"><span data-stu-id="92f28-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="92f28-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="92f28-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="92f28-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="92f28-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

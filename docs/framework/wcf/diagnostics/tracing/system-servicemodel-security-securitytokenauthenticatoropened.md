@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 65266e4567b2be1773836f27a9e3775b99be2a90
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: efe045198e161208fa4cd294ba74dcc0ab68add7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecuritytokenauthenticatoropened"></a><span data-ttu-id="a23de-102">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span><span class="sxs-lookup"><span data-stu-id="a23de-102">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span></span>
-<span data-ttu-id="a23de-103">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span><span class="sxs-lookup"><span data-stu-id="a23de-103">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span></span>  
+# <a name="systemservicemodelsecuritysecuritytokenauthenticatoropened"></a><span data-ttu-id="1ba03-102">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span><span class="sxs-lookup"><span data-stu-id="1ba03-102">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span></span>
+<span data-ttu-id="1ba03-103">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span><span class="sxs-lookup"><span data-stu-id="1ba03-103">System.ServiceModel.Security.SecurityTokenAuthenticatorOpened</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a23de-104">説明</span><span class="sxs-lookup"><span data-stu-id="a23de-104">Description</span></span>  
- <span data-ttu-id="a23de-105">セキュリティ トークンの認証システムを開きました。</span><span class="sxs-lookup"><span data-stu-id="a23de-105">A security token authenticator was opened.</span></span>  
+## <a name="description"></a><span data-ttu-id="1ba03-104">説明</span><span class="sxs-lookup"><span data-stu-id="1ba03-104">Description</span></span>  
+ <span data-ttu-id="1ba03-105">セキュリティ トークンの認証システムを開きました。</span><span class="sxs-lookup"><span data-stu-id="1ba03-105">A security token authenticator was opened.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a23de-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="a23de-106">See Also</span></span>  
- [<span data-ttu-id="a23de-107">トレース</span><span class="sxs-lookup"><span data-stu-id="a23de-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="a23de-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="a23de-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="a23de-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="a23de-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="1ba03-106">参照</span><span class="sxs-lookup"><span data-stu-id="1ba03-106">See Also</span></span>  
+ [<span data-ttu-id="1ba03-107">トレース</span><span class="sxs-lookup"><span data-stu-id="1ba03-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="1ba03-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="1ba03-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="1ba03-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="1ba03-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

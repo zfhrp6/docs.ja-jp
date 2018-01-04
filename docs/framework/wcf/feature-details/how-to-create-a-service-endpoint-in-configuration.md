@@ -13,17 +13,18 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8e60708ecf5ae7ed15b42e982b9ae40c00d72ecc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b96ccdb7e80faa35748a41947ed97f273cb330e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-create-a-service-endpoint-in-configuration"></a><span data-ttu-id="fb2c8-102">方法 : 構成にサービス エンドポイントを作成する</span><span class="sxs-lookup"><span data-stu-id="fb2c8-102">How to: Create a Service Endpoint in Configuration</span></span>
-<span data-ttu-id="fb2c8-103">エンドポイントは、クライアントが [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスによって提供される機能にアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-103">Endpoints provide clients with access to the functionality a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service offers.</span></span> <span data-ttu-id="fb2c8-104">エンドポイントの相対アドレスと絶対アドレスを組み合わせてサービスのエンドポイントを 1 つ以上定義できます。または、サービス エンドポイントを定義しない場合、ランタイムは既定で一部を提供します。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-104">You can define one or more endpoints for a service by using a combination of relative and absolute endpoint addresses, or if you do not define any service endpoints, the runtime provides some by default for you.</span></span> <span data-ttu-id="fb2c8-105">このトピックでは、相対アドレスと絶対アドレスの両方を含んでいる構成ファイルを使用したエンドポイントの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-105">This topic shows how to add endpoints using a configuration file that contain both relative and absolute addresses.</span></span>  
+# <a name="how-to-create-a-service-endpoint-in-configuration"></a><span data-ttu-id="e686c-102">方法 : 構成にサービス エンドポイントを作成する</span><span class="sxs-lookup"><span data-stu-id="e686c-102">How to: Create a Service Endpoint in Configuration</span></span>
+<span data-ttu-id="e686c-103">エンドポイントは、クライアントが [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスによって提供される機能にアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="e686c-103">Endpoints provide clients with access to the functionality a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service offers.</span></span> <span data-ttu-id="e686c-104">エンドポイントの相対アドレスと絶対アドレスを組み合わせてサービスのエンドポイントを 1 つ以上定義できます。または、サービス エンドポイントを定義しない場合、ランタイムは既定で一部を提供します。</span><span class="sxs-lookup"><span data-stu-id="e686c-104">You can define one or more endpoints for a service by using a combination of relative and absolute endpoint addresses, or if you do not define any service endpoints, the runtime provides some by default for you.</span></span> <span data-ttu-id="e686c-105">このトピックでは、相対アドレスと絶対アドレスの両方を含んでいる構成ファイルを使用したエンドポイントの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e686c-105">This topic shows how to add endpoints using a configuration file that contain both relative and absolute addresses.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="fb2c8-106">例</span><span class="sxs-lookup"><span data-stu-id="fb2c8-106">Example</span></span>  
- <span data-ttu-id="fb2c8-107">次のサービス構成では、1 つのベース アドレスと 5 つのエンドポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-107">The following service configuration specifies a base address and five endpoints.</span></span>  
+## <a name="example"></a><span data-ttu-id="e686c-106">例</span><span class="sxs-lookup"><span data-stu-id="e686c-106">Example</span></span>  
+ <span data-ttu-id="e686c-107">次のサービス構成では、1 つのベース アドレスと 5 つのエンドポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="e686c-107">The following service configuration specifies a base address and five endpoints.</span></span>  
   
 ```xml  
 <configuration>  
@@ -79,8 +80,8 @@ ms.lasthandoff: 12/02/2017
 </configuration>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="fb2c8-108">例</span><span class="sxs-lookup"><span data-stu-id="fb2c8-108">Example</span></span>  
- <span data-ttu-id="fb2c8-109">ベース アドレスは、次のサンプルのように `add` 要素を使用して service/host/baseAddresses の下に指定します。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-109">The base address is specified using the `add` element, under service/host/baseAddresses, as shown in the following sample.</span></span>  
+## <a name="example"></a><span data-ttu-id="e686c-108">例</span><span class="sxs-lookup"><span data-stu-id="e686c-108">Example</span></span>  
+ <span data-ttu-id="e686c-109">ベース アドレスは、次のサンプルのように `add` 要素を使用して service/host/baseAddresses の下に指定します。</span><span class="sxs-lookup"><span data-stu-id="e686c-109">The base address is specified using the `add` element, under service/host/baseAddresses, as shown in the following sample.</span></span>  
   
 ```xml  
 <service   
@@ -92,8 +93,8 @@ ms.lasthandoff: 12/02/2017
   </host>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="fb2c8-110">例</span><span class="sxs-lookup"><span data-stu-id="fb2c8-110">Example</span></span>  
- <span data-ttu-id="fb2c8-111">次のサンプルの最初のエンドポイント定義では、相対アドレスを指定します。つまり、エンドポイント アドレスは、ベース アドレスと URI (Uniform Resource Identifier) 構造の規則に従った相対アドレスの組み合わせということを意味します。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-111">The first endpoint definition shown in the following sample specifies a relative address, which means the endpoint address is a combination of the base address and the relative address following the rules of Uniform Resource Identifier (URI) composition.</span></span> <span data-ttu-id="fb2c8-112">相対アドレスが空 ("") のため、エンドポイント アドレスはベース アドレスと同じになります。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-112">The relative address is empty (""), so the endpoint address is the same as the base address.</span></span> <span data-ttu-id="fb2c8-113">具体的には http://localhost:8000/servicemodelsamples/service です。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-113">The actual endpoint address is http://localhost:8000/servicemodelsamples/service.</span></span>  
+## <a name="example"></a><span data-ttu-id="e686c-110">例</span><span class="sxs-lookup"><span data-stu-id="e686c-110">Example</span></span>  
+ <span data-ttu-id="e686c-111">次のサンプルの最初のエンドポイント定義では、相対アドレスを指定します。つまり、エンドポイント アドレスは、ベース アドレスと URI (Uniform Resource Identifier) 構造の規則に従った相対アドレスの組み合わせということを意味します。</span><span class="sxs-lookup"><span data-stu-id="e686c-111">The first endpoint definition shown in the following sample specifies a relative address, which means the endpoint address is a combination of the base address and the relative address following the rules of Uniform Resource Identifier (URI) composition.</span></span> <span data-ttu-id="e686c-112">相対アドレスが空 ("") のため、エンドポイント アドレスはベース アドレスと同じになります。</span><span class="sxs-lookup"><span data-stu-id="e686c-112">The relative address is empty (""), so the endpoint address is the same as the base address.</span></span> <span data-ttu-id="e686c-113">具体的には http://localhost:8000/servicemodelsamples/service です。</span><span class="sxs-lookup"><span data-stu-id="e686c-113">The actual endpoint address is http://localhost:8000/servicemodelsamples/service.</span></span>  
   
 ```xml  
 <endpoint address=""   
@@ -101,8 +102,8 @@ ms.lasthandoff: 12/02/2017
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="fb2c8-114">例</span><span class="sxs-lookup"><span data-stu-id="fb2c8-114">Example</span></span>  
- <span data-ttu-id="fb2c8-115">2 番目のエンドポイント定義でも、相対アドレスを指定します。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-115">The second endpoint definition also specifies a relative address, as shown in the following sample configuration.</span></span> <span data-ttu-id="fb2c8-116">相対アドレス "test" がベース アドレスの末尾に追加されています。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-116">The relative address, "test", is appended to the base address.</span></span> <span data-ttu-id="fb2c8-117">具体的には http://localhost:8000/servicemodelsamples/service/test です。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-117">The actual endpoint address is http://localhost:8000/servicemodelsamples/service/test.</span></span>  
+## <a name="example"></a><span data-ttu-id="e686c-114">例</span><span class="sxs-lookup"><span data-stu-id="e686c-114">Example</span></span>  
+ <span data-ttu-id="e686c-115">2 番目のエンドポイント定義でも、相対アドレスを指定します。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e686c-115">The second endpoint definition also specifies a relative address, as shown in the following sample configuration.</span></span> <span data-ttu-id="e686c-116">相対アドレス "test" がベース アドレスの末尾に追加されています。</span><span class="sxs-lookup"><span data-stu-id="e686c-116">The relative address, "test", is appended to the base address.</span></span> <span data-ttu-id="e686c-117">具体的には http://localhost:8000/servicemodelsamples/service/test です。</span><span class="sxs-lookup"><span data-stu-id="e686c-117">The actual endpoint address is http://localhost:8000/servicemodelsamples/service/test.</span></span>  
   
 ```xml  
 <endpoint address="/test"  
@@ -110,8 +111,8 @@ ms.lasthandoff: 12/02/2017
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="fb2c8-118">例</span><span class="sxs-lookup"><span data-stu-id="fb2c8-118">Example</span></span>  
- <span data-ttu-id="fb2c8-119">3 番目のエンドポイント定義では、絶対アドレスを指定します。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-119">The third endpoint definition specifies an absolute address, as shown in the following sample configuration.</span></span> <span data-ttu-id="fb2c8-120">このアドレスでは、ベース アドレスは使用されていません。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-120">The base address plays no role in the address.</span></span> <span data-ttu-id="fb2c8-121">具体的には http://localhost:8001/hello/servicemodelsamples です。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-121">The actual endpoint address is http://localhost:8001/hello/servicemodelsamples.</span></span>  
+## <a name="example"></a><span data-ttu-id="e686c-118">例</span><span class="sxs-lookup"><span data-stu-id="e686c-118">Example</span></span>  
+ <span data-ttu-id="e686c-119">3 番目のエンドポイント定義では、絶対アドレスを指定します。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e686c-119">The third endpoint definition specifies an absolute address, as shown in the following sample configuration.</span></span> <span data-ttu-id="e686c-120">このアドレスでは、ベース アドレスは使用されていません。</span><span class="sxs-lookup"><span data-stu-id="e686c-120">The base address plays no role in the address.</span></span> <span data-ttu-id="e686c-121">具体的には http://localhost:8001/hello/servicemodelsamples です。</span><span class="sxs-lookup"><span data-stu-id="e686c-121">The actual endpoint address is http://localhost:8001/hello/servicemodelsamples.</span></span>  
   
 ```xml  
 <endpoint address="http://localhost:8001/hello/servicemodelsamples"  
@@ -119,8 +120,8 @@ ms.lasthandoff: 12/02/2017
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="fb2c8-122">例</span><span class="sxs-lookup"><span data-stu-id="fb2c8-122">Example</span></span>  
- <span data-ttu-id="fb2c8-123">4 番目のエンドポイント アドレスは、絶対アドレスと別のトランスポート (ここでは TCP) を指定しています。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-123">The fourth endpoint address specifies an absolute address and a different transport—TCP.</span></span> <span data-ttu-id="fb2c8-124">このアドレスでは、ベース アドレスは使用されていません。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-124">The base address plays no role in the address.</span></span> <span data-ttu-id="fb2c8-125">具体的には net.tcp://localhost:9000/servicemodelsamples/service です。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-125">The actual endpoint address is net.tcp://localhost:9000/servicemodelsamples/service.</span></span>  
+## <a name="example"></a><span data-ttu-id="e686c-122">例</span><span class="sxs-lookup"><span data-stu-id="e686c-122">Example</span></span>  
+ <span data-ttu-id="e686c-123">4 番目のエンドポイント アドレスは、絶対アドレスと別のトランスポート (ここでは TCP) を指定しています。</span><span class="sxs-lookup"><span data-stu-id="e686c-123">The fourth endpoint address specifies an absolute address and a different transport—TCP.</span></span> <span data-ttu-id="e686c-124">このアドレスでは、ベース アドレスは使用されていません。</span><span class="sxs-lookup"><span data-stu-id="e686c-124">The base address plays no role in the address.</span></span> <span data-ttu-id="e686c-125">具体的には net.tcp://localhost:9000/servicemodelsamples/service です。</span><span class="sxs-lookup"><span data-stu-id="e686c-125">The actual endpoint address is net.tcp://localhost:9000/servicemodelsamples/service.</span></span>  
   
 ```xml  
 <endpoint address="net.tcp://localhost:9000/servicemodelsamples/service"  
@@ -128,8 +129,8 @@ ms.lasthandoff: 12/02/2017
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="fb2c8-126">例</span><span class="sxs-lookup"><span data-stu-id="fb2c8-126">Example</span></span>  
- <span data-ttu-id="fb2c8-127">ランタイムによって提供された既定のエンドポイントを使用するには、コードまたは構成ファイルでサービス エンドポイントを指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-127">To use the default endpoints provided by the runtime, do not specify any service endpoints in either the code or the configuration file.</span></span> <span data-ttu-id="fb2c8-128">次の例では、サービスを開くときに、ランタイムは既定のエンドポイントを作成します。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-128">In this example, the runtime creates the default endpoints when the service is opened.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="fb2c8-129">既定のエンドポイント、バインディング、および動作を参照してください[簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="fb2c8-129"> default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="e686c-126">例</span><span class="sxs-lookup"><span data-stu-id="e686c-126">Example</span></span>  
+ <span data-ttu-id="e686c-127">ランタイムによって提供された既定のエンドポイントを使用するには、コードまたは構成ファイルでサービス エンドポイントを指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="e686c-127">To use the default endpoints provided by the runtime, do not specify any service endpoints in either the code or the configuration file.</span></span> <span data-ttu-id="e686c-128">次の例では、サービスを開くときに、ランタイムは既定のエンドポイントを作成します。</span><span class="sxs-lookup"><span data-stu-id="e686c-128">In this example, the runtime creates the default endpoints when the service is opened.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="e686c-129">既定のエンドポイント、バインディング、および動作を参照してください[簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="e686c-129"> default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
 ```xml  
 <configuration>  

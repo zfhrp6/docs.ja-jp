@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 99780f40a11a61786b7af5beaae365b797fb8e52
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 985456a7a62c1720a38f3defdb715f3dfcea3de6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelextensioncollectionnamenotfound"></a><span data-ttu-id="5fb3e-102">System.ServiceModel.ExtensionCollectionNameNotFound</span><span class="sxs-lookup"><span data-stu-id="5fb3e-102">System.ServiceModel.ExtensionCollectionNameNotFound</span></span>
-<span data-ttu-id="5fb3e-103">System.ServiceModel.ExtensionCollectionNameNotFound</span><span class="sxs-lookup"><span data-stu-id="5fb3e-103">System.ServiceModel.ExtensionCollectionNameNotFound</span></span>  
+# <a name="systemservicemodelextensioncollectionnamenotfound"></a><span data-ttu-id="41fa4-102">System.ServiceModel.ExtensionCollectionNameNotFound</span><span class="sxs-lookup"><span data-stu-id="41fa4-102">System.ServiceModel.ExtensionCollectionNameNotFound</span></span>
+<span data-ttu-id="41fa4-103">System.ServiceModel.ExtensionCollectionNameNotFound</span><span class="sxs-lookup"><span data-stu-id="41fa4-103">System.ServiceModel.ExtensionCollectionNameNotFound</span></span>  
   
-## <a name="description"></a><span data-ttu-id="5fb3e-104">説明</span><span class="sxs-lookup"><span data-stu-id="5fb3e-104">Description</span></span>  
- <span data-ttu-id="5fb3e-105">拡張要素が拡張のコレクションに関連付けられていません。</span><span class="sxs-lookup"><span data-stu-id="5fb3e-105">The extension element is not associated with an extension collection.</span></span>  
+## <a name="description"></a><span data-ttu-id="41fa4-104">説明</span><span class="sxs-lookup"><span data-stu-id="41fa4-104">Description</span></span>  
+ <span data-ttu-id="41fa4-105">拡張要素が拡張のコレクションに関連付けられていません。</span><span class="sxs-lookup"><span data-stu-id="41fa4-105">The extension element is not associated with an extension collection.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5fb3e-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="5fb3e-106">See Also</span></span>  
- [<span data-ttu-id="5fb3e-107">トレース</span><span class="sxs-lookup"><span data-stu-id="5fb3e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="5fb3e-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="5fb3e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="5fb3e-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="5fb3e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="41fa4-106">参照</span><span class="sxs-lookup"><span data-stu-id="41fa4-106">See Also</span></span>  
+ [<span data-ttu-id="41fa4-107">トレース</span><span class="sxs-lookup"><span data-stu-id="41fa4-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="41fa4-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="41fa4-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="41fa4-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="41fa4-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

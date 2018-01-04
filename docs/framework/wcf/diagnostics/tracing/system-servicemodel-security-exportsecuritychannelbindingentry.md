@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d3c18f029514aa5ba1d585f65e963e5d8c9a99c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dc44d107a5f1f3ed02e5d0e09f5d6becbd3cbffa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecurityexportsecuritychannelbindingentry"></a><span data-ttu-id="0f95c-102">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span><span class="sxs-lookup"><span data-stu-id="0f95c-102">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span></span>
-<span data-ttu-id="0f95c-103">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span><span class="sxs-lookup"><span data-stu-id="0f95c-103">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span></span>  
+# <a name="systemservicemodelsecurityexportsecuritychannelbindingentry"></a><span data-ttu-id="3474e-102">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span><span class="sxs-lookup"><span data-stu-id="3474e-102">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span></span>
+<span data-ttu-id="3474e-103">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span><span class="sxs-lookup"><span data-stu-id="3474e-103">System.ServiceModel.Security.ExportSecurityChannelBindingEntry</span></span>  
   
-## <a name="description"></a><span data-ttu-id="0f95c-104">説明</span><span class="sxs-lookup"><span data-stu-id="0f95c-104">Description</span></span>  
- <span data-ttu-id="0f95c-105">セキュリティの ExportChannelBinding を開始しています。</span><span class="sxs-lookup"><span data-stu-id="0f95c-105">Starting the Security ExportChannelBinding.</span></span>  
+## <a name="description"></a><span data-ttu-id="3474e-104">説明</span><span class="sxs-lookup"><span data-stu-id="3474e-104">Description</span></span>  
+ <span data-ttu-id="3474e-105">セキュリティの ExportChannelBinding を開始しています。</span><span class="sxs-lookup"><span data-stu-id="3474e-105">Starting the Security ExportChannelBinding.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0f95c-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="0f95c-106">See Also</span></span>  
- [<span data-ttu-id="0f95c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="0f95c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="0f95c-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="0f95c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="0f95c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="0f95c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="3474e-106">参照</span><span class="sxs-lookup"><span data-stu-id="3474e-106">See Also</span></span>  
+ [<span data-ttu-id="3474e-107">トレース</span><span class="sxs-lookup"><span data-stu-id="3474e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="3474e-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="3474e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="3474e-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="3474e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

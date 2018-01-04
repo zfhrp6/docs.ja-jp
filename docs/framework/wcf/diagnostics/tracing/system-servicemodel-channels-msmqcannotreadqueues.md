@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b4a02f7ed78339e62d73b871088efa12f8277ac6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5ce5d3c5965fa6bb0e3a740ab2908adf8e16975a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmsmqcannotreadqueues"></a><span data-ttu-id="e421c-102">System.ServiceModel.Channels.MsmqCannotReadQueues</span><span class="sxs-lookup"><span data-stu-id="e421c-102">System.ServiceModel.Channels.MsmqCannotReadQueues</span></span>
-<span data-ttu-id="e421c-103">System.ServiceModel.Channels.MsmqCannotReadQueues</span><span class="sxs-lookup"><span data-stu-id="e421c-103">System.ServiceModel.Channels.MsmqCannotReadQueues</span></span>  
+# <a name="systemservicemodelchannelsmsmqcannotreadqueues"></a><span data-ttu-id="6ccfd-102">System.ServiceModel.Channels.MsmqCannotReadQueues</span><span class="sxs-lookup"><span data-stu-id="6ccfd-102">System.ServiceModel.Channels.MsmqCannotReadQueues</span></span>
+<span data-ttu-id="6ccfd-103">System.ServiceModel.Channels.MsmqCannotReadQueues</span><span class="sxs-lookup"><span data-stu-id="6ccfd-103">System.ServiceModel.Channels.MsmqCannotReadQueues</span></span>  
   
-## <a name="description"></a><span data-ttu-id="e421c-104">説明</span><span class="sxs-lookup"><span data-stu-id="e421c-104">Description</span></span>  
- <span data-ttu-id="e421c-105">MSMQ アクティベーション サービスはキューを検出できません。</span><span class="sxs-lookup"><span data-stu-id="e421c-105">MSMQ activation service cannot discover queues.</span></span>  
+## <a name="description"></a><span data-ttu-id="6ccfd-104">説明</span><span class="sxs-lookup"><span data-stu-id="6ccfd-104">Description</span></span>  
+ <span data-ttu-id="6ccfd-105">MSMQ アクティベーション サービスはキューを検出できません。</span><span class="sxs-lookup"><span data-stu-id="6ccfd-105">MSMQ activation service cannot discover queues.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e421c-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="e421c-106">See Also</span></span>  
- [<span data-ttu-id="e421c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="e421c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="e421c-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="e421c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="e421c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="e421c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="6ccfd-106">参照</span><span class="sxs-lookup"><span data-stu-id="6ccfd-106">See Also</span></span>  
+ [<span data-ttu-id="6ccfd-107">トレース</span><span class="sxs-lookup"><span data-stu-id="6ccfd-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="6ccfd-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="6ccfd-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="6ccfd-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="6ccfd-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

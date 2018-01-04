@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 84bdeae4ecd76334bca3766316d20d128bd9720f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b8bdb2dbfdd7c04172d68052fd83eac1b6f8eae5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmsmqmessagelockedunderthetransaction"></a><span data-ttu-id="d53de-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="d53de-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>
-<span data-ttu-id="d53de-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="d53de-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>  
+# <a name="systemservicemodelchannelsmsmqmessagelockedunderthetransaction"></a><span data-ttu-id="28829-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="28829-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>
+<span data-ttu-id="28829-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="28829-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>  
   
-## <a name="description"></a><span data-ttu-id="d53de-104">説明</span><span class="sxs-lookup"><span data-stu-id="d53de-104">Description</span></span>  
- <span data-ttu-id="d53de-105">トランザクションでロックされているため、メッセージを移動することも削除することもできません。</span><span class="sxs-lookup"><span data-stu-id="d53de-105">Cannot move or delete message because it is still locked under the transaction.</span></span>  
+## <a name="description"></a><span data-ttu-id="28829-104">説明</span><span class="sxs-lookup"><span data-stu-id="28829-104">Description</span></span>  
+ <span data-ttu-id="28829-105">トランザクションでロックされているため、メッセージを移動することも削除することもできません。</span><span class="sxs-lookup"><span data-stu-id="28829-105">Cannot move or delete message because it is still locked under the transaction.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d53de-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="d53de-106">See Also</span></span>  
- [<span data-ttu-id="d53de-107">トレース</span><span class="sxs-lookup"><span data-stu-id="d53de-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="d53de-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="d53de-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="d53de-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="d53de-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="28829-106">参照</span><span class="sxs-lookup"><span data-stu-id="28829-106">See Also</span></span>  
+ [<span data-ttu-id="28829-107">トレース</span><span class="sxs-lookup"><span data-stu-id="28829-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="28829-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="28829-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="28829-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="28829-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a5423f90a5e0acfed973145b0848935389074f35
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 024016699d816b86757a62e24437f823b37e6f31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationwsdlchannelbuilderloaded"></a><span data-ttu-id="eb4af-102">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span><span class="sxs-lookup"><span data-stu-id="eb4af-102">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span></span>
-<span data-ttu-id="eb4af-103">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span><span class="sxs-lookup"><span data-stu-id="eb4af-103">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationwsdlchannelbuilderloaded"></a><span data-ttu-id="79155-102">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span><span class="sxs-lookup"><span data-stu-id="79155-102">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span></span>
+<span data-ttu-id="79155-103">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span><span class="sxs-lookup"><span data-stu-id="79155-103">System.ServiceModel.ComIntegration.ComIntegrationWsdlChannelBuilderLoaded</span></span>  
   
-## <a name="description"></a><span data-ttu-id="eb4af-104">説明</span><span class="sxs-lookup"><span data-stu-id="eb4af-104">Description</span></span>  
- <span data-ttu-id="eb4af-105">ComPlus : WSDL チャネル ビルダーが読み込まれました。</span><span class="sxs-lookup"><span data-stu-id="eb4af-105">ComPlus: The WSDL channel builder is loaded.</span></span>  
+## <a name="description"></a><span data-ttu-id="79155-104">説明</span><span class="sxs-lookup"><span data-stu-id="79155-104">Description</span></span>  
+ <span data-ttu-id="79155-105">ComPlus : WSDL チャネル ビルダーが読み込まれました。</span><span class="sxs-lookup"><span data-stu-id="79155-105">ComPlus: The WSDL channel builder is loaded.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eb4af-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="eb4af-106">See Also</span></span>  
- [<span data-ttu-id="eb4af-107">トレース</span><span class="sxs-lookup"><span data-stu-id="eb4af-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="eb4af-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="eb4af-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="eb4af-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="eb4af-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="79155-106">参照</span><span class="sxs-lookup"><span data-stu-id="79155-106">See Also</span></span>  
+ [<span data-ttu-id="79155-107">トレース</span><span class="sxs-lookup"><span data-stu-id="79155-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="79155-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="79155-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="79155-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="79155-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

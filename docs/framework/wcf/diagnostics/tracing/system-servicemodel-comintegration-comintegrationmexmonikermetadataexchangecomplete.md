@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b99994a6c2923af0d048ece754ac12a3b13f04e0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fc197a133e9ce5cd814756c67661e07f36901995
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemruntimeserializationreadobjectend"></a><span data-ttu-id="fdf1d-102">System.Runtime.Serialization.ReadObjectEnd</span><span class="sxs-lookup"><span data-stu-id="fdf1d-102">System.Runtime.Serialization.ReadObjectEnd</span></span>
-<span data-ttu-id="fdf1d-103">System.Runtime.Serialization.ReadObjectEnd</span><span class="sxs-lookup"><span data-stu-id="fdf1d-103">System.Runtime.Serialization.ReadObjectEnd</span></span>  
+# <a name="systemruntimeserializationreadobjectend"></a><span data-ttu-id="2c506-102">System.Runtime.Serialization.ReadObjectEnd</span><span class="sxs-lookup"><span data-stu-id="2c506-102">System.Runtime.Serialization.ReadObjectEnd</span></span>
+<span data-ttu-id="2c506-103">System.Runtime.Serialization.ReadObjectEnd</span><span class="sxs-lookup"><span data-stu-id="2c506-103">System.Runtime.Serialization.ReadObjectEnd</span></span>  
   
-## <a name="description"></a><span data-ttu-id="fdf1d-104">説明</span><span class="sxs-lookup"><span data-stu-id="fdf1d-104">Description</span></span>  
- <span data-ttu-id="fdf1d-105">終了した ReadObject。</span><span class="sxs-lookup"><span data-stu-id="fdf1d-105">Finished ReadObject.</span></span>  
+## <a name="description"></a><span data-ttu-id="2c506-104">説明</span><span class="sxs-lookup"><span data-stu-id="2c506-104">Description</span></span>  
+ <span data-ttu-id="2c506-105">終了した ReadObject。</span><span class="sxs-lookup"><span data-stu-id="2c506-105">Finished ReadObject.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fdf1d-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="fdf1d-106">See Also</span></span>  
- [<span data-ttu-id="fdf1d-107">トレース</span><span class="sxs-lookup"><span data-stu-id="fdf1d-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="fdf1d-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="fdf1d-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="fdf1d-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="fdf1d-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="2c506-106">参照</span><span class="sxs-lookup"><span data-stu-id="2c506-106">See Also</span></span>  
+ [<span data-ttu-id="2c506-107">トレース</span><span class="sxs-lookup"><span data-stu-id="2c506-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="2c506-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="2c506-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="2c506-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="2c506-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

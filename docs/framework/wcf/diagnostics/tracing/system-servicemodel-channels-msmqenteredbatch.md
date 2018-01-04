@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 83e96b51ef0ad8caa54f8c5cce7d06397aab31ad
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b8762addac428e1e3ff848463737463321b5281
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmsmqenteredbatch"></a><span data-ttu-id="7c820-102">System.ServiceModel.Channels.MsmqEnteredBatch</span><span class="sxs-lookup"><span data-stu-id="7c820-102">System.ServiceModel.Channels.MsmqEnteredBatch</span></span>
-<span data-ttu-id="7c820-103">System.ServiceModel.Channels.MsmqEnteredBatch</span><span class="sxs-lookup"><span data-stu-id="7c820-103">System.ServiceModel.Channels.MsmqEnteredBatch</span></span>  
+# <a name="systemservicemodelchannelsmsmqenteredbatch"></a><span data-ttu-id="caa9e-102">System.ServiceModel.Channels.MsmqEnteredBatch</span><span class="sxs-lookup"><span data-stu-id="caa9e-102">System.ServiceModel.Channels.MsmqEnteredBatch</span></span>
+<span data-ttu-id="caa9e-103">System.ServiceModel.Channels.MsmqEnteredBatch</span><span class="sxs-lookup"><span data-stu-id="caa9e-103">System.ServiceModel.Channels.MsmqEnteredBatch</span></span>  
   
-## <a name="description"></a><span data-ttu-id="7c820-104">説明</span><span class="sxs-lookup"><span data-stu-id="7c820-104">Description</span></span>  
- <span data-ttu-id="7c820-105">MSMQ がバッチ モードを開始しました。</span><span class="sxs-lookup"><span data-stu-id="7c820-105">MSMQ has entered batching mode.</span></span>  
+## <a name="description"></a><span data-ttu-id="caa9e-104">説明</span><span class="sxs-lookup"><span data-stu-id="caa9e-104">Description</span></span>  
+ <span data-ttu-id="caa9e-105">MSMQ がバッチ モードを開始しました。</span><span class="sxs-lookup"><span data-stu-id="caa9e-105">MSMQ has entered batching mode.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7c820-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="7c820-106">See Also</span></span>  
- [<span data-ttu-id="7c820-107">トレース</span><span class="sxs-lookup"><span data-stu-id="7c820-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="7c820-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="7c820-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="7c820-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="7c820-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="caa9e-106">参照</span><span class="sxs-lookup"><span data-stu-id="caa9e-106">See Also</span></span>  
+ [<span data-ttu-id="caa9e-107">トレース</span><span class="sxs-lookup"><span data-stu-id="caa9e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="caa9e-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="caa9e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="caa9e-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="caa9e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

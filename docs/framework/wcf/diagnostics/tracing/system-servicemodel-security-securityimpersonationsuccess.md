@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: f031dd1a1ba3e72d6897eb656165adb1529c43b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f2c0005c8ffa7579d6f9e994e934be2235718c0a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecurityimpersonationsuccess"></a><span data-ttu-id="9bd43-102">System.ServiceModel.Security.SecurityImpersonationSuccess</span><span class="sxs-lookup"><span data-stu-id="9bd43-102">System.ServiceModel.Security.SecurityImpersonationSuccess</span></span>
-<span data-ttu-id="9bd43-103">System.ServiceModel.Security.SecurityImpersonationSuccess</span><span class="sxs-lookup"><span data-stu-id="9bd43-103">System.ServiceModel.Security.SecurityImpersonationSuccess</span></span>  
+# <a name="systemservicemodelsecuritysecurityimpersonationsuccess"></a><span data-ttu-id="dc977-102">System.ServiceModel.Security.SecurityImpersonationSuccess</span><span class="sxs-lookup"><span data-stu-id="dc977-102">System.ServiceModel.Security.SecurityImpersonationSuccess</span></span>
+<span data-ttu-id="dc977-103">System.ServiceModel.Security.SecurityImpersonationSuccess</span><span class="sxs-lookup"><span data-stu-id="dc977-103">System.ServiceModel.Security.SecurityImpersonationSuccess</span></span>  
   
-## <a name="description"></a><span data-ttu-id="9bd43-104">説明</span><span class="sxs-lookup"><span data-stu-id="9bd43-104">Description</span></span>  
- <span data-ttu-id="9bd43-105">サーバー側でセキュリティの偽装が成功しました。</span><span class="sxs-lookup"><span data-stu-id="9bd43-105">Security Impersonation succeeded at the server.</span></span>  
+## <a name="description"></a><span data-ttu-id="dc977-104">説明</span><span class="sxs-lookup"><span data-stu-id="dc977-104">Description</span></span>  
+ <span data-ttu-id="dc977-105">サーバー側でセキュリティの偽装が成功しました。</span><span class="sxs-lookup"><span data-stu-id="dc977-105">Security Impersonation succeeded at the server.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9bd43-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="9bd43-106">See Also</span></span>  
- [<span data-ttu-id="9bd43-107">トレース</span><span class="sxs-lookup"><span data-stu-id="9bd43-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="9bd43-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="9bd43-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="9bd43-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="9bd43-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="dc977-106">参照</span><span class="sxs-lookup"><span data-stu-id="dc977-106">See Also</span></span>  
+ [<span data-ttu-id="dc977-107">トレース</span><span class="sxs-lookup"><span data-stu-id="dc977-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="dc977-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="dc977-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="dc977-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="dc977-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

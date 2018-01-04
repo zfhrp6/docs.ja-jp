@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7a5a1cb14902fd3f4a978cf793fb4f595f87dd2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 89bb8b7181122e638b653e45e85d2c85081d08c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelperformancecountersfailedforservice"></a><span data-ttu-id="0a32c-102">System.ServiceModel.PerformanceCountersFailedForService</span><span class="sxs-lookup"><span data-stu-id="0a32c-102">System.ServiceModel.PerformanceCountersFailedForService</span></span>
-<span data-ttu-id="0a32c-103">System.ServiceModel.PerformanceCountersFailedForService</span><span class="sxs-lookup"><span data-stu-id="0a32c-103">System.ServiceModel.PerformanceCountersFailedForService</span></span>  
+# <a name="systemservicemodelperformancecountersfailedforservice"></a><span data-ttu-id="8dc56-102">System.ServiceModel.PerformanceCountersFailedForService</span><span class="sxs-lookup"><span data-stu-id="8dc56-102">System.ServiceModel.PerformanceCountersFailedForService</span></span>
+<span data-ttu-id="8dc56-103">System.ServiceModel.PerformanceCountersFailedForService</span><span class="sxs-lookup"><span data-stu-id="8dc56-103">System.ServiceModel.PerformanceCountersFailedForService</span></span>  
   
-## <a name="description"></a><span data-ttu-id="0a32c-104">説明</span><span class="sxs-lookup"><span data-stu-id="0a32c-104">Description</span></span>  
- <span data-ttu-id="0a32c-105">サービス用のパフォーマンス カウンターの読み込みが失敗しました。</span><span class="sxs-lookup"><span data-stu-id="0a32c-105">Loading performance counters for the service failed.</span></span> <span data-ttu-id="0a32c-106">このサービスではパフォーマンス カウンターを使用できません。</span><span class="sxs-lookup"><span data-stu-id="0a32c-106">Performance counters are not available for this service.</span></span>  
+## <a name="description"></a><span data-ttu-id="8dc56-104">説明</span><span class="sxs-lookup"><span data-stu-id="8dc56-104">Description</span></span>  
+ <span data-ttu-id="8dc56-105">サービス用のパフォーマンス カウンターの読み込みが失敗しました。</span><span class="sxs-lookup"><span data-stu-id="8dc56-105">Loading performance counters for the service failed.</span></span> <span data-ttu-id="8dc56-106">このサービスではパフォーマンス カウンターを使用できません。</span><span class="sxs-lookup"><span data-stu-id="8dc56-106">Performance counters are not available for this service.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0a32c-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="0a32c-107">See Also</span></span>  
- [<span data-ttu-id="0a32c-108">トレース</span><span class="sxs-lookup"><span data-stu-id="0a32c-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="0a32c-109">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="0a32c-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="0a32c-110">管理と診断</span><span class="sxs-lookup"><span data-stu-id="0a32c-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="8dc56-107">参照</span><span class="sxs-lookup"><span data-stu-id="8dc56-107">See Also</span></span>  
+ [<span data-ttu-id="8dc56-108">トレース</span><span class="sxs-lookup"><span data-stu-id="8dc56-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="8dc56-109">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="8dc56-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="8dc56-110">管理と診断</span><span class="sxs-lookup"><span data-stu-id="8dc56-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

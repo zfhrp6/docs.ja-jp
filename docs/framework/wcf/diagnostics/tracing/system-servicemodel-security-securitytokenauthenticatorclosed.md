@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d5628c5e618205d15cec60fa74ed681db78f5410
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3ffd9bb57fbbcc29eeb452adf8a6cd37b4037287
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecuritytokenauthenticatorclosed"></a><span data-ttu-id="20280-102">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span><span class="sxs-lookup"><span data-stu-id="20280-102">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span></span>
-<span data-ttu-id="20280-103">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span><span class="sxs-lookup"><span data-stu-id="20280-103">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span></span>  
+# <a name="systemservicemodelsecuritysecuritytokenauthenticatorclosed"></a><span data-ttu-id="eec98-102">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span><span class="sxs-lookup"><span data-stu-id="eec98-102">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span></span>
+<span data-ttu-id="eec98-103">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span><span class="sxs-lookup"><span data-stu-id="eec98-103">System.ServiceModel.Security.SecurityTokenAuthenticatorClosed</span></span>  
   
-## <a name="description"></a><span data-ttu-id="20280-104">説明</span><span class="sxs-lookup"><span data-stu-id="20280-104">Description</span></span>  
- <span data-ttu-id="20280-105">セキュリティ トークン認証システムが閉じられました。</span><span class="sxs-lookup"><span data-stu-id="20280-105">A security token authenticator was closed.</span></span>  
+## <a name="description"></a><span data-ttu-id="eec98-104">説明</span><span class="sxs-lookup"><span data-stu-id="eec98-104">Description</span></span>  
+ <span data-ttu-id="eec98-105">セキュリティ トークン認証システムが閉じられました。</span><span class="sxs-lookup"><span data-stu-id="eec98-105">A security token authenticator was closed.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="20280-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="20280-106">See Also</span></span>  
- [<span data-ttu-id="20280-107">トレース</span><span class="sxs-lookup"><span data-stu-id="20280-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="20280-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="20280-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="20280-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="20280-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="eec98-106">参照</span><span class="sxs-lookup"><span data-stu-id="eec98-106">See Also</span></span>  
+ [<span data-ttu-id="eec98-107">トレース</span><span class="sxs-lookup"><span data-stu-id="eec98-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="eec98-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="eec98-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="eec98-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="eec98-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

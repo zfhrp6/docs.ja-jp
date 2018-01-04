@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9ed2a08d8ed10fe46eb1ab1641d59a56306d6197
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e4ee609f71bbd59a8c77deb4de5f633b108e3878
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecuritybindingverifyincomingmessagefailure"></a><span data-ttu-id="84831-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="84831-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>
-<span data-ttu-id="84831-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="84831-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>  
+# <a name="systemservicemodelsecuritysecuritybindingverifyincomingmessagefailure"></a><span data-ttu-id="67a8c-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="67a8c-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>
+<span data-ttu-id="67a8c-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="67a8c-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>  
   
-## <a name="description"></a><span data-ttu-id="84831-104">説明</span><span class="sxs-lookup"><span data-stu-id="84831-104">Description</span></span>  
- <span data-ttu-id="84831-105">セキュリティ プロトコルにより受信メッセージを検証できません。</span><span class="sxs-lookup"><span data-stu-id="84831-105">The security protocol cannot verify the incoming message.</span></span>  
+## <a name="description"></a><span data-ttu-id="67a8c-104">説明</span><span class="sxs-lookup"><span data-stu-id="67a8c-104">Description</span></span>  
+ <span data-ttu-id="67a8c-105">セキュリティ プロトコルにより受信メッセージを検証できません。</span><span class="sxs-lookup"><span data-stu-id="67a8c-105">The security protocol cannot verify the incoming message.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="84831-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="84831-106">See Also</span></span>  
- [<span data-ttu-id="84831-107">トレース</span><span class="sxs-lookup"><span data-stu-id="84831-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="84831-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="84831-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="84831-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="84831-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="67a8c-106">参照</span><span class="sxs-lookup"><span data-stu-id="67a8c-106">See Also</span></span>  
+ [<span data-ttu-id="67a8c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="67a8c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="67a8c-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="67a8c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="67a8c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="67a8c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 681cc27e1b4b3821260d013525b5190dedbef43b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6f6d782fb78730fcbb82eeded8c9e556e29dce9a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelactivationwebhostcompilation"></a><span data-ttu-id="37c11-102">System.ServiceModel.Activation.WebHostCompilation</span><span class="sxs-lookup"><span data-stu-id="37c11-102">System.ServiceModel.Activation.WebHostCompilation</span></span>
-<span data-ttu-id="37c11-103">System.ServiceModel.Activation.WebHostCompilation</span><span class="sxs-lookup"><span data-stu-id="37c11-103">System.ServiceModel.Activation.WebHostCompilation</span></span>  
+# <a name="systemservicemodelactivationwebhostcompilation"></a><span data-ttu-id="cac4f-102">System.ServiceModel.Activation.WebHostCompilation</span><span class="sxs-lookup"><span data-stu-id="cac4f-102">System.ServiceModel.Activation.WebHostCompilation</span></span>
+<span data-ttu-id="cac4f-103">System.ServiceModel.Activation.WebHostCompilation</span><span class="sxs-lookup"><span data-stu-id="cac4f-103">System.ServiceModel.Activation.WebHostCompilation</span></span>  
   
-## <a name="description"></a><span data-ttu-id="37c11-104">説明</span><span class="sxs-lookup"><span data-stu-id="37c11-104">Description</span></span>  
- <span data-ttu-id="37c11-105">インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) によってホストされるサービスが、.svc ファイル内にあるインライン コードからコンパイルされた場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="37c11-105">Occurs when an Internet Information Service (IIS) or Windows Process Activation Service (WAS) hosted service is compiled from inline code that is present in the .svc file.</span></span>  
+## <a name="description"></a><span data-ttu-id="cac4f-104">説明</span><span class="sxs-lookup"><span data-stu-id="cac4f-104">Description</span></span>  
+ <span data-ttu-id="cac4f-105">インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) によってホストされるサービスが、.svc ファイル内にあるインライン コードからコンパイルされた場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="cac4f-105">Occurs when an Internet Information Service (IIS) or Windows Process Activation Service (WAS) hosted service is compiled from inline code that is present in the .svc file.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="37c11-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="37c11-106">See Also</span></span>  
- [<span data-ttu-id="37c11-107">トレース</span><span class="sxs-lookup"><span data-stu-id="37c11-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="37c11-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="37c11-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="37c11-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="37c11-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="cac4f-106">参照</span><span class="sxs-lookup"><span data-stu-id="cac4f-106">See Also</span></span>  
+ [<span data-ttu-id="cac4f-107">トレース</span><span class="sxs-lookup"><span data-stu-id="cac4f-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="cac4f-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="cac4f-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="cac4f-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="cac4f-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

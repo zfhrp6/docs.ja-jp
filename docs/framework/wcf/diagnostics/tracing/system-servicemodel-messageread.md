@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e61dffd6ad3823aa74be3f1e104ba5408de02192
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ea5a52ef89230fd9d06540b1cc63013bd73021ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelmessageread"></a><span data-ttu-id="7f924-102">System.ServiceModel.MessageRead</span><span class="sxs-lookup"><span data-stu-id="7f924-102">System.ServiceModel.MessageRead</span></span>
-<span data-ttu-id="7f924-103">System.ServiceModel.MessageRead</span><span class="sxs-lookup"><span data-stu-id="7f924-103">System.ServiceModel.MessageRead</span></span>  
+# <a name="systemservicemodelmessageread"></a><span data-ttu-id="91a6c-102">System.ServiceModel.MessageRead</span><span class="sxs-lookup"><span data-stu-id="91a6c-102">System.ServiceModel.MessageRead</span></span>
+<span data-ttu-id="91a6c-103">System.ServiceModel.MessageRead</span><span class="sxs-lookup"><span data-stu-id="91a6c-103">System.ServiceModel.MessageRead</span></span>  
   
-## <a name="description"></a><span data-ttu-id="7f924-104">説明</span><span class="sxs-lookup"><span data-stu-id="7f924-104">Description</span></span>  
- <span data-ttu-id="7f924-105">メッセージが読み取られました。</span><span class="sxs-lookup"><span data-stu-id="7f924-105">A message was read.</span></span>  
+## <a name="description"></a><span data-ttu-id="91a6c-104">説明</span><span class="sxs-lookup"><span data-stu-id="91a6c-104">Description</span></span>  
+ <span data-ttu-id="91a6c-105">メッセージが読み取られました。</span><span class="sxs-lookup"><span data-stu-id="91a6c-105">A message was read.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7f924-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="7f924-106">See Also</span></span>  
- [<span data-ttu-id="7f924-107">トレース</span><span class="sxs-lookup"><span data-stu-id="7f924-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="7f924-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="7f924-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="7f924-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="7f924-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="91a6c-106">参照</span><span class="sxs-lookup"><span data-stu-id="91a6c-106">See Also</span></span>  
+ [<span data-ttu-id="91a6c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="91a6c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="91a6c-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="91a6c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="91a6c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="91a6c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

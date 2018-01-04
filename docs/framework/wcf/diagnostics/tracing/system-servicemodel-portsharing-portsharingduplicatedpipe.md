@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 59aba07a244109c77f11fcb74b456d7f3441ca8e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e5502cb3b3c40ea6cd9765922d05710e8881a9bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelportsharingportsharingduplicatedpipe"></a><span data-ttu-id="9cf01-102">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="9cf01-102">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span></span>
-<span data-ttu-id="9cf01-103">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="9cf01-103">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span></span>  
+# <a name="systemservicemodelportsharingportsharingduplicatedpipe"></a><span data-ttu-id="5ebd2-102">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="5ebd2-102">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span></span>
+<span data-ttu-id="5ebd2-103">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span><span class="sxs-lookup"><span data-stu-id="5ebd2-103">System.ServiceModel.PortSharing.PortSharingDuplicatedPipe</span></span>  
   
-## <a name="description"></a><span data-ttu-id="9cf01-104">説明</span><span class="sxs-lookup"><span data-stu-id="9cf01-104">Description</span></span>  
- <span data-ttu-id="9cf01-105">名前付きパイプが正常に複製されました。</span><span class="sxs-lookup"><span data-stu-id="9cf01-105">A named pipe was successfully duplicated.</span></span>  
+## <a name="description"></a><span data-ttu-id="5ebd2-104">説明</span><span class="sxs-lookup"><span data-stu-id="5ebd2-104">Description</span></span>  
+ <span data-ttu-id="5ebd2-105">名前付きパイプが正常に複製されました。</span><span class="sxs-lookup"><span data-stu-id="5ebd2-105">A named pipe was successfully duplicated.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9cf01-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="9cf01-106">See Also</span></span>  
- [<span data-ttu-id="9cf01-107">トレース</span><span class="sxs-lookup"><span data-stu-id="9cf01-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="9cf01-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="9cf01-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="9cf01-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="9cf01-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="5ebd2-106">参照</span><span class="sxs-lookup"><span data-stu-id="5ebd2-106">See Also</span></span>  
+ [<span data-ttu-id="5ebd2-107">トレース</span><span class="sxs-lookup"><span data-stu-id="5ebd2-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="5ebd2-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="5ebd2-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="5ebd2-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="5ebd2-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

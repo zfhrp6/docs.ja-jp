@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b57250d8ad5ce6734e84908cca8a5052016abc18
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 442101464b603438e4b08b69cdca4a5679d18471
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationtxproxytxabortedbycontext"></a><span data-ttu-id="d0832-102">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span><span class="sxs-lookup"><span data-stu-id="d0832-102">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span></span>
-<span data-ttu-id="d0832-103">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span><span class="sxs-lookup"><span data-stu-id="d0832-103">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationtxproxytxabortedbycontext"></a><span data-ttu-id="fa16c-102">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span><span class="sxs-lookup"><span data-stu-id="fa16c-102">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span></span>
+<span data-ttu-id="fa16c-103">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span><span class="sxs-lookup"><span data-stu-id="fa16c-103">System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxAbortedByContext</span></span>  
   
-## <a name="description"></a><span data-ttu-id="d0832-104">説明</span><span class="sxs-lookup"><span data-stu-id="d0832-104">Description</span></span>  
- <span data-ttu-id="d0832-105">ComPlus : トランザクションが COM+ のコンテキストで中止されました。</span><span class="sxs-lookup"><span data-stu-id="d0832-105">ComPlus: Transaction aborted by COM+ context.</span></span>  
+## <a name="description"></a><span data-ttu-id="fa16c-104">説明</span><span class="sxs-lookup"><span data-stu-id="fa16c-104">Description</span></span>  
+ <span data-ttu-id="fa16c-105">ComPlus : トランザクションが COM+ のコンテキストで中止されました。</span><span class="sxs-lookup"><span data-stu-id="fa16c-105">ComPlus: Transaction aborted by COM+ context.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d0832-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="d0832-106">See Also</span></span>  
- [<span data-ttu-id="d0832-107">トレース</span><span class="sxs-lookup"><span data-stu-id="d0832-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="d0832-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="d0832-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="d0832-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="d0832-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="fa16c-106">参照</span><span class="sxs-lookup"><span data-stu-id="fa16c-106">See Also</span></span>  
+ [<span data-ttu-id="fa16c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="fa16c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="fa16c-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="fa16c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="fa16c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="fa16c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 42f4fe2ed37afdfdf7caad1f21470591d1aeb9e1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e5555dcaf418c3b768ee24f0c91a79dc415314cf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelportsharingroutingtablelookup"></a><span data-ttu-id="02dff-102">System.ServiceModel.PortSharing.RoutingTableLookup</span><span class="sxs-lookup"><span data-stu-id="02dff-102">System.ServiceModel.PortSharing.RoutingTableLookup</span></span>
-<span data-ttu-id="02dff-103">System.ServiceModel.PortSharing.RoutingTableLookup</span><span class="sxs-lookup"><span data-stu-id="02dff-103">System.ServiceModel.PortSharing.RoutingTableLookup</span></span>  
+# <a name="systemservicemodelportsharingroutingtablelookup"></a><span data-ttu-id="cdfd3-102">System.ServiceModel.PortSharing.RoutingTableLookup</span><span class="sxs-lookup"><span data-stu-id="cdfd3-102">System.ServiceModel.PortSharing.RoutingTableLookup</span></span>
+<span data-ttu-id="cdfd3-103">System.ServiceModel.PortSharing.RoutingTableLookup</span><span class="sxs-lookup"><span data-stu-id="cdfd3-103">System.ServiceModel.PortSharing.RoutingTableLookup</span></span>  
   
-## <a name="description"></a><span data-ttu-id="02dff-104">説明</span><span class="sxs-lookup"><span data-stu-id="02dff-104">Description</span></span>  
- <span data-ttu-id="02dff-105">検索操作が要求されました。</span><span class="sxs-lookup"><span data-stu-id="02dff-105">A lookup operation was requested.</span></span>  
+## <a name="description"></a><span data-ttu-id="cdfd3-104">説明</span><span class="sxs-lookup"><span data-stu-id="cdfd3-104">Description</span></span>  
+ <span data-ttu-id="cdfd3-105">検索操作が要求されました。</span><span class="sxs-lookup"><span data-stu-id="cdfd3-105">A lookup operation was requested.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="02dff-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="02dff-106">See Also</span></span>  
- [<span data-ttu-id="02dff-107">トレース</span><span class="sxs-lookup"><span data-stu-id="02dff-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="02dff-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="02dff-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="02dff-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="02dff-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="cdfd3-106">参照</span><span class="sxs-lookup"><span data-stu-id="cdfd3-106">See Also</span></span>  
+ [<span data-ttu-id="cdfd3-107">トレース</span><span class="sxs-lookup"><span data-stu-id="cdfd3-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="cdfd3-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="cdfd3-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="cdfd3-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="cdfd3-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

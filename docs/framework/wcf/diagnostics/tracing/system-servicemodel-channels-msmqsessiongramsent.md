@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1861844fda0eb347122abb93c60f56aa84e714a3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 00d361944b9ed863e94adf4953dd4725bdb9a346
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmsmqsessiongramsent"></a><span data-ttu-id="ced7e-102">System.ServiceModel.Channels.MsmqSessiongramSent</span><span class="sxs-lookup"><span data-stu-id="ced7e-102">System.ServiceModel.Channels.MsmqSessiongramSent</span></span>
-<span data-ttu-id="ced7e-103">System.ServiceModel.Channels.MsmqSessiongramSent</span><span class="sxs-lookup"><span data-stu-id="ced7e-103">System.ServiceModel.Channels.MsmqSessiongramSent</span></span>  
+# <a name="systemservicemodelchannelsmsmqsessiongramsent"></a><span data-ttu-id="485c5-102">System.ServiceModel.Channels.MsmqSessiongramSent</span><span class="sxs-lookup"><span data-stu-id="485c5-102">System.ServiceModel.Channels.MsmqSessiongramSent</span></span>
+<span data-ttu-id="485c5-103">System.ServiceModel.Channels.MsmqSessiongramSent</span><span class="sxs-lookup"><span data-stu-id="485c5-103">System.ServiceModel.Channels.MsmqSessiongramSent</span></span>  
   
-## <a name="description"></a><span data-ttu-id="ced7e-104">説明</span><span class="sxs-lookup"><span data-stu-id="ced7e-104">Description</span></span>  
- <span data-ttu-id="ced7e-105">MSMQ トランスポート セッションが送信されました。</span><span class="sxs-lookup"><span data-stu-id="ced7e-105">MSMQ transport session sent.</span></span>  
+## <a name="description"></a><span data-ttu-id="485c5-104">説明</span><span class="sxs-lookup"><span data-stu-id="485c5-104">Description</span></span>  
+ <span data-ttu-id="485c5-105">MSMQ トランスポート セッションが送信されました。</span><span class="sxs-lookup"><span data-stu-id="485c5-105">MSMQ transport session sent.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ced7e-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="ced7e-106">See Also</span></span>  
- [<span data-ttu-id="ced7e-107">トレース</span><span class="sxs-lookup"><span data-stu-id="ced7e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="ced7e-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="ced7e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="ced7e-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="ced7e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="485c5-106">参照</span><span class="sxs-lookup"><span data-stu-id="485c5-106">See Also</span></span>  
+ [<span data-ttu-id="485c5-107">トレース</span><span class="sxs-lookup"><span data-stu-id="485c5-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="485c5-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="485c5-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="485c5-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="485c5-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 945ee0ea6746dac16f25f1225e11f1b4dd28347d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4484cbe90bec778a230923a62f0e63c0b72d6f70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodeldiagnosticsthrowingexception"></a><span data-ttu-id="1dfea-102">System.ServiceModel.Diagnostics.ThrowingException</span><span class="sxs-lookup"><span data-stu-id="1dfea-102">System.ServiceModel.Diagnostics.ThrowingException</span></span>
-<span data-ttu-id="1dfea-103">System.ServiceModel.Diagnostics.ThrowingException</span><span class="sxs-lookup"><span data-stu-id="1dfea-103">System.ServiceModel.Diagnostics.ThrowingException</span></span>  
+# <a name="systemservicemodeldiagnosticsthrowingexception"></a><span data-ttu-id="f7a3b-102">System.ServiceModel.Diagnostics.ThrowingException</span><span class="sxs-lookup"><span data-stu-id="f7a3b-102">System.ServiceModel.Diagnostics.ThrowingException</span></span>
+<span data-ttu-id="f7a3b-103">System.ServiceModel.Diagnostics.ThrowingException</span><span class="sxs-lookup"><span data-stu-id="f7a3b-103">System.ServiceModel.Diagnostics.ThrowingException</span></span>  
   
-## <a name="description"></a><span data-ttu-id="1dfea-104">説明</span><span class="sxs-lookup"><span data-stu-id="1dfea-104">Description</span></span>  
- <span data-ttu-id="1dfea-105">例外をスローしています。</span><span class="sxs-lookup"><span data-stu-id="1dfea-105">Throwing an exception.</span></span>  
+## <a name="description"></a><span data-ttu-id="f7a3b-104">説明</span><span class="sxs-lookup"><span data-stu-id="f7a3b-104">Description</span></span>  
+ <span data-ttu-id="f7a3b-105">例外をスローしています。</span><span class="sxs-lookup"><span data-stu-id="f7a3b-105">Throwing an exception.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1dfea-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="1dfea-106">See Also</span></span>  
- [<span data-ttu-id="1dfea-107">トレース</span><span class="sxs-lookup"><span data-stu-id="1dfea-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="1dfea-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="1dfea-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="1dfea-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="1dfea-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="f7a3b-106">参照</span><span class="sxs-lookup"><span data-stu-id="f7a3b-106">See Also</span></span>  
+ [<span data-ttu-id="f7a3b-107">トレース</span><span class="sxs-lookup"><span data-stu-id="f7a3b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="f7a3b-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="f7a3b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="f7a3b-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="f7a3b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

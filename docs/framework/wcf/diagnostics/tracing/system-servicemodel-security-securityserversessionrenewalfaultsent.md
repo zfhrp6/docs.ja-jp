@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 2058adb134cbb26f25bc702df4d991e6ef6acf79
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0a9a80c0483eb2bbcc8cd241c7c5e5661fc6f4a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecurityserversessionrenewalfaultsent"></a><span data-ttu-id="2dc61-102">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span><span class="sxs-lookup"><span data-stu-id="2dc61-102">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span></span>
-<span data-ttu-id="2dc61-103">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span><span class="sxs-lookup"><span data-stu-id="2dc61-103">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span></span>  
+# <a name="systemservicemodelsecuritysecurityserversessionrenewalfaultsent"></a><span data-ttu-id="e90d1-102">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span><span class="sxs-lookup"><span data-stu-id="e90d1-102">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span></span>
+<span data-ttu-id="e90d1-103">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span><span class="sxs-lookup"><span data-stu-id="e90d1-103">System.ServiceModel.Security.SecurityServerSessionRenewalFaultSent</span></span>  
   
-## <a name="description"></a><span data-ttu-id="2dc61-104">説明</span><span class="sxs-lookup"><span data-stu-id="2dc61-104">Description</span></span>  
- <span data-ttu-id="2dc61-105">サーバーのセキュリティ セッションはクライアントにキーの更新エラーを送信しました。</span><span class="sxs-lookup"><span data-stu-id="2dc61-105">The server security session sent a key renewal fault to the client.</span></span>  
+## <a name="description"></a><span data-ttu-id="e90d1-104">説明</span><span class="sxs-lookup"><span data-stu-id="e90d1-104">Description</span></span>  
+ <span data-ttu-id="e90d1-105">サーバーのセキュリティ セッションはクライアントにキーの更新エラーを送信しました。</span><span class="sxs-lookup"><span data-stu-id="e90d1-105">The server security session sent a key renewal fault to the client.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2dc61-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="2dc61-106">See Also</span></span>  
- [<span data-ttu-id="2dc61-107">トレース</span><span class="sxs-lookup"><span data-stu-id="2dc61-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="2dc61-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="2dc61-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="2dc61-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="2dc61-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e90d1-106">参照</span><span class="sxs-lookup"><span data-stu-id="e90d1-106">See Also</span></span>  
+ [<span data-ttu-id="e90d1-107">トレース</span><span class="sxs-lookup"><span data-stu-id="e90d1-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e90d1-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="e90d1-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e90d1-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="e90d1-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

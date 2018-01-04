@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a286b5f12635d2a4444b5dd5ec7888864a211366
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 143cff3fce6786429e2d2658014e85f22bf097b4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelwarnhelppageenablednobaseaddress"></a><span data-ttu-id="8630e-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="8630e-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>
-<span data-ttu-id="8630e-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="8630e-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>  
+# <a name="systemservicemodelwarnhelppageenablednobaseaddress"></a><span data-ttu-id="e25c8-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="e25c8-102">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>
+<span data-ttu-id="e25c8-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span><span class="sxs-lookup"><span data-stu-id="e25c8-103">System.ServiceModel.WarnHelpPageEnabledNoBaseAddress</span></span>  
   
-## <a name="description"></a><span data-ttu-id="8630e-104">説明</span><span class="sxs-lookup"><span data-stu-id="8630e-104">Description</span></span>  
- <span data-ttu-id="8630e-105">ServiceDebugBehavior ヘルプ ページは相対アドレスで有効になっていますが、ベース アドレスがないため作成できません。</span><span class="sxs-lookup"><span data-stu-id="8630e-105">The ServiceDebugBehavior Help Page is enabled at a relative address and cannot be created because there is no base address.</span></span>  
+## <a name="description"></a><span data-ttu-id="e25c8-104">説明</span><span class="sxs-lookup"><span data-stu-id="e25c8-104">Description</span></span>  
+ <span data-ttu-id="e25c8-105">ServiceDebugBehavior ヘルプ ページは相対アドレスで有効になっていますが、ベース アドレスがないため作成できません。</span><span class="sxs-lookup"><span data-stu-id="e25c8-105">The ServiceDebugBehavior Help Page is enabled at a relative address and cannot be created because there is no base address.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8630e-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="8630e-106">See Also</span></span>  
- [<span data-ttu-id="8630e-107">トレース</span><span class="sxs-lookup"><span data-stu-id="8630e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="8630e-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="8630e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="8630e-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="8630e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e25c8-106">参照</span><span class="sxs-lookup"><span data-stu-id="e25c8-106">See Also</span></span>  
+ [<span data-ttu-id="e25c8-107">トレース</span><span class="sxs-lookup"><span data-stu-id="e25c8-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e25c8-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="e25c8-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e25c8-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="e25c8-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

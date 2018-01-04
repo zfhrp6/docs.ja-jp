@@ -13,19 +13,20 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e3625ad475e15ad2afecbbb5cedc23971b849993
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dd6a1ae4f7f03ab71ba307d488b73d08cf9291d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodeldiagnosticsfailedtoreadanactivityidheader"></a><span data-ttu-id="d3ce3-102">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="d3ce3-102">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span></span>
-<span data-ttu-id="d3ce3-103">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="d3ce3-103">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span></span>  
+# <a name="systemservicemodeldiagnosticsfailedtoreadanactivityidheader"></a><span data-ttu-id="804c1-102">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="804c1-102">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span></span>
+<span data-ttu-id="804c1-103">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="804c1-103">System.ServiceModel.Diagnostics.FailedToReadAnActivityIdHeader</span></span>  
   
-## <a name="description"></a><span data-ttu-id="d3ce3-104">説明</span><span class="sxs-lookup"><span data-stu-id="d3ce3-104">Description</span></span>  
- <span data-ttu-id="d3ce3-105">メッセージのアクティビティ ID ヘッダーを読み取ることができませんでした。</span><span class="sxs-lookup"><span data-stu-id="d3ce3-105">Failed to read an activity id header on a message.</span></span>  
+## <a name="description"></a><span data-ttu-id="804c1-104">説明</span><span class="sxs-lookup"><span data-stu-id="804c1-104">Description</span></span>  
+ <span data-ttu-id="804c1-105">メッセージのアクティビティ ID ヘッダーを読み取ることができませんでした。</span><span class="sxs-lookup"><span data-stu-id="804c1-105">Failed to read an activity id header on a message.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d3ce3-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="d3ce3-106">See Also</span></span>  
- [<span data-ttu-id="d3ce3-107">トレース</span><span class="sxs-lookup"><span data-stu-id="d3ce3-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="d3ce3-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="d3ce3-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="d3ce3-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="d3ce3-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="804c1-106">参照</span><span class="sxs-lookup"><span data-stu-id="804c1-106">See Also</span></span>  
+ [<span data-ttu-id="804c1-107">トレース</span><span class="sxs-lookup"><span data-stu-id="804c1-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="804c1-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="804c1-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="804c1-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="804c1-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

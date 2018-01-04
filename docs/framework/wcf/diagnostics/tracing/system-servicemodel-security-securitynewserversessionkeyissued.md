@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 285ab626213efb06d923b294242bfb73aa7738ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bdb5f7f9ac8ed00570b8f62c670cdbf0a0739b0b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecuritynewserversessionkeyissued"></a><span data-ttu-id="e51dc-102">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span><span class="sxs-lookup"><span data-stu-id="e51dc-102">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span></span>
-<span data-ttu-id="e51dc-103">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span><span class="sxs-lookup"><span data-stu-id="e51dc-103">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span></span>  
+# <a name="systemservicemodelsecuritysecuritynewserversessionkeyissued"></a><span data-ttu-id="b0988-102">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span><span class="sxs-lookup"><span data-stu-id="b0988-102">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span></span>
+<span data-ttu-id="b0988-103">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span><span class="sxs-lookup"><span data-stu-id="b0988-103">System.ServiceModel.Security.SecurityNewServerSessionKeyIssued</span></span>  
   
-## <a name="description"></a><span data-ttu-id="e51dc-104">説明</span><span class="sxs-lookup"><span data-stu-id="e51dc-104">Description</span></span>  
- <span data-ttu-id="e51dc-105">新しいセキュリティのセッション キーがサーバーによって発行されました。</span><span class="sxs-lookup"><span data-stu-id="e51dc-105">A new security session key was issued by the server.</span></span>  
+## <a name="description"></a><span data-ttu-id="b0988-104">説明</span><span class="sxs-lookup"><span data-stu-id="b0988-104">Description</span></span>  
+ <span data-ttu-id="b0988-105">新しいセキュリティのセッション キーがサーバーによって発行されました。</span><span class="sxs-lookup"><span data-stu-id="b0988-105">A new security session key was issued by the server.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e51dc-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="e51dc-106">See Also</span></span>  
- [<span data-ttu-id="e51dc-107">トレース</span><span class="sxs-lookup"><span data-stu-id="e51dc-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="e51dc-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="e51dc-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="e51dc-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="e51dc-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="b0988-106">参照</span><span class="sxs-lookup"><span data-stu-id="b0988-106">See Also</span></span>  
+ [<span data-ttu-id="b0988-107">トレース</span><span class="sxs-lookup"><span data-stu-id="b0988-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="b0988-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="b0988-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="b0988-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="b0988-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

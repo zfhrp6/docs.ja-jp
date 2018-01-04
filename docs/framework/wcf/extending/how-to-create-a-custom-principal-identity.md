@@ -21,23 +21,24 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 90dbd173293a91ab4c2fb1aa34c0aefc5e4ffefa
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 393bc7a33a522f483dc4daf1531c23afe421c261
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-create-a-custom-principal-identity"></a><span data-ttu-id="38f92-102">方法 : カスタム プリンシパル ID を作成する</span><span class="sxs-lookup"><span data-stu-id="38f92-102">How to: Create a Custom Principal Identity</span></span>
-<span data-ttu-id="38f92-103"><xref:System.Security.Permissions.PrincipalPermissionAttribute> は、サービス メソッドへのアクセスを宣言によって制御する手段として使用できます。</span><span class="sxs-lookup"><span data-stu-id="38f92-103">The <xref:System.Security.Permissions.PrincipalPermissionAttribute> is a declarative means of controlling access to service methods.</span></span> <span data-ttu-id="38f92-104">この属性を使用する場合、承認チェックを実行するためのモードが <xref:System.ServiceModel.Description.PrincipalPermissionMode> 列挙体で指定されます。</span><span class="sxs-lookup"><span data-stu-id="38f92-104">When using this attribute, the <xref:System.ServiceModel.Description.PrincipalPermissionMode> enumeration specifies the mode for performing authorization checks.</span></span> <span data-ttu-id="38f92-105">このモードが <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> に設定されている場合、ユーザーは、<xref:System.Security.Principal.IPrincipal> プロパティから返されるカスタムの <xref:System.Threading.Thread.CurrentPrincipal%2A> クラスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="38f92-105">When this mode is set to <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom>, it enables the user to specify a custom <xref:System.Security.Principal.IPrincipal> class returned by the <xref:System.Threading.Thread.CurrentPrincipal%2A> property.</span></span> <span data-ttu-id="38f92-106">ここでは、<xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> を、カスタム承認ポリシーおよびカスタム プリンシパルと組み合わせて使用する場合のシナリオを説明します。</span><span class="sxs-lookup"><span data-stu-id="38f92-106">This topic illustrates the scenario when <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> is used in combination with a custom authorization policy and a custom principal.</span></span>  
+# <a name="how-to-create-a-custom-principal-identity"></a><span data-ttu-id="36281-102">方法 : カスタム プリンシパル ID を作成する</span><span class="sxs-lookup"><span data-stu-id="36281-102">How to: Create a Custom Principal Identity</span></span>
+<span data-ttu-id="36281-103"><xref:System.Security.Permissions.PrincipalPermissionAttribute> は、サービス メソッドへのアクセスを宣言によって制御する手段として使用できます。</span><span class="sxs-lookup"><span data-stu-id="36281-103">The <xref:System.Security.Permissions.PrincipalPermissionAttribute> is a declarative means of controlling access to service methods.</span></span> <span data-ttu-id="36281-104">この属性を使用する場合、承認チェックを実行するためのモードが <xref:System.ServiceModel.Description.PrincipalPermissionMode> 列挙体で指定されます。</span><span class="sxs-lookup"><span data-stu-id="36281-104">When using this attribute, the <xref:System.ServiceModel.Description.PrincipalPermissionMode> enumeration specifies the mode for performing authorization checks.</span></span> <span data-ttu-id="36281-105">このモードが <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> に設定されている場合、ユーザーは、<xref:System.Security.Principal.IPrincipal> プロパティから返されるカスタムの <xref:System.Threading.Thread.CurrentPrincipal%2A> クラスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="36281-105">When this mode is set to <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom>, it enables the user to specify a custom <xref:System.Security.Principal.IPrincipal> class returned by the <xref:System.Threading.Thread.CurrentPrincipal%2A> property.</span></span> <span data-ttu-id="36281-106">ここでは、<xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> を、カスタム承認ポリシーおよびカスタム プリンシパルと組み合わせて使用する場合のシナリオを説明します。</span><span class="sxs-lookup"><span data-stu-id="36281-106">This topic illustrates the scenario when <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> is used in combination with a custom authorization policy and a custom principal.</span></span>  
   
- <span data-ttu-id="38f92-107">使用しての詳細については、<xref:System.Security.Permissions.PrincipalPermissionAttribute>を参照してください[する方法: PrincipalPermissionAttribute クラスを使用したアクセスの制限](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)です。</span><span class="sxs-lookup"><span data-stu-id="38f92-107">For more information about using the <xref:System.Security.Permissions.PrincipalPermissionAttribute>, see [How to: Restrict Access with the PrincipalPermissionAttribute Class](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).</span></span>  
+ <span data-ttu-id="36281-107">使用しての詳細については、<xref:System.Security.Permissions.PrincipalPermissionAttribute>を参照してください[する方法: PrincipalPermissionAttribute クラスを使用したアクセスの制限](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)です。</span><span class="sxs-lookup"><span data-stu-id="36281-107">For more information about using the <xref:System.Security.Permissions.PrincipalPermissionAttribute>, see [How to: Restrict Access with the PrincipalPermissionAttribute Class](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="38f92-108">例</span><span class="sxs-lookup"><span data-stu-id="38f92-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="36281-108">例</span><span class="sxs-lookup"><span data-stu-id="36281-108">Example</span></span>  
  [!code-csharp[PrincipalPermissionMode#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#8)]
  [!code-vb[PrincipalPermissionMode#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#8)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="38f92-109">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="38f92-109">Compiling the Code</span></span>  
- <span data-ttu-id="38f92-110">このコードをコンパイルするには、次の名前空間へ参照が必要です。</span><span class="sxs-lookup"><span data-stu-id="38f92-110">References to the following namespaces are needed to compile the code:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="36281-109">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="36281-109">Compiling the Code</span></span>  
+ <span data-ttu-id="36281-110">このコードをコンパイルするには、次の名前空間へ参照が必要です。</span><span class="sxs-lookup"><span data-stu-id="36281-110">References to the following namespaces are needed to compile the code:</span></span>  
   
 -   <xref:System>  
   
@@ -59,9 +60,9 @@ ms.lasthandoff: 12/02/2017
   
 -   <xref:System.IdentityModel.Policy>  
   
-## <a name="see-also"></a><span data-ttu-id="38f92-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="38f92-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="36281-111">参照</span><span class="sxs-lookup"><span data-stu-id="36281-111">See Also</span></span>  
  <xref:System.ServiceModel.Description.PrincipalPermissionMode>  
  <xref:System.ServiceModel.Description.PrincipalPermissionMode>  
  <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
- [<span data-ttu-id="38f92-112">方法: サービスで ASP.NET ロール プロバイダーを使用</span><span class="sxs-lookup"><span data-stu-id="38f92-112">How to: Use the ASP.NET Role Provider with a Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)  
- [<span data-ttu-id="38f92-113">方法: PrincipalPermissionAttribute クラスでアクセスを制限する</span><span class="sxs-lookup"><span data-stu-id="38f92-113">How to: Restrict Access with the PrincipalPermissionAttribute Class</span></span>](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
+ [<span data-ttu-id="36281-112">方法 : ASP.NET のロール プロバイダーとサービスを使用する</span><span class="sxs-lookup"><span data-stu-id="36281-112">How to: Use the ASP.NET Role Provider with a Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)  
+ [<span data-ttu-id="36281-113">方法: PrincipalPermissionAttribute クラスでアクセスを制限する</span><span class="sxs-lookup"><span data-stu-id="36281-113">How to: Restrict Access with the PrincipalPermissionAttribute Class</span></span>](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)

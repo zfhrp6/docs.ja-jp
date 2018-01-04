@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: edd832277ef27ee8f09b514d4d50a281efa8b1f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 40c7164a0370865f6cfc79446e00a7393f626410
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsstreamsecurityupgradeaccepted"></a><span data-ttu-id="1f34f-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="1f34f-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>
-<span data-ttu-id="1f34f-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="1f34f-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>  
+# <a name="systemservicemodelchannelsstreamsecurityupgradeaccepted"></a><span data-ttu-id="4787b-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="4787b-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>
+<span data-ttu-id="4787b-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="4787b-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>  
   
-## <a name="description"></a><span data-ttu-id="1f34f-104">説明</span><span class="sxs-lookup"><span data-stu-id="1f34f-104">Description</span></span>  
- <span data-ttu-id="1f34f-105">ストリームのセキュリティ更新を正常に受信しました。</span><span class="sxs-lookup"><span data-stu-id="1f34f-105">The stream security upgrade was accepted successfully.</span></span>  
+## <a name="description"></a><span data-ttu-id="4787b-104">説明</span><span class="sxs-lookup"><span data-stu-id="4787b-104">Description</span></span>  
+ <span data-ttu-id="4787b-105">ストリームのセキュリティ更新を正常に受信しました。</span><span class="sxs-lookup"><span data-stu-id="4787b-105">The stream security upgrade was accepted successfully.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1f34f-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="1f34f-106">See Also</span></span>  
- [<span data-ttu-id="1f34f-107">トレース</span><span class="sxs-lookup"><span data-stu-id="1f34f-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="1f34f-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="1f34f-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="1f34f-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="1f34f-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="4787b-106">参照</span><span class="sxs-lookup"><span data-stu-id="4787b-106">See Also</span></span>  
+ [<span data-ttu-id="4787b-107">トレース</span><span class="sxs-lookup"><span data-stu-id="4787b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="4787b-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="4787b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="4787b-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="4787b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

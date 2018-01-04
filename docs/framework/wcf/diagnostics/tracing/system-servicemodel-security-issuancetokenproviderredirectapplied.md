@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: a7ea9086096241984dcfa884db0dd54911805273
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5e04d4df17da5b47f39ffe03077b23a9afbd8d6a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecurityissuancetokenproviderredirectapplied"></a><span data-ttu-id="553a4-102">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span><span class="sxs-lookup"><span data-stu-id="553a4-102">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span></span>
-<span data-ttu-id="553a4-103">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span><span class="sxs-lookup"><span data-stu-id="553a4-103">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span></span>  
+# <a name="systemservicemodelsecurityissuancetokenproviderredirectapplied"></a><span data-ttu-id="16902-102">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span><span class="sxs-lookup"><span data-stu-id="16902-102">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span></span>
+<span data-ttu-id="16902-103">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span><span class="sxs-lookup"><span data-stu-id="16902-103">System.ServiceModel.Security.IssuanceTokenProviderRedirectApplied</span></span>  
   
-## <a name="description"></a><span data-ttu-id="553a4-104">説明</span><span class="sxs-lookup"><span data-stu-id="553a4-104">Description</span></span>  
- <span data-ttu-id="553a4-105">リダイレクト ヘッダーを適用された IssuanceTokenProvider。</span><span class="sxs-lookup"><span data-stu-id="553a4-105">The IssuanceTokenProvider applied a redirection header.</span></span>  
+## <a name="description"></a><span data-ttu-id="16902-104">説明</span><span class="sxs-lookup"><span data-stu-id="16902-104">Description</span></span>  
+ <span data-ttu-id="16902-105">リダイレクト ヘッダーを適用された IssuanceTokenProvider。</span><span class="sxs-lookup"><span data-stu-id="16902-105">The IssuanceTokenProvider applied a redirection header.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="553a4-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="553a4-106">See Also</span></span>  
- [<span data-ttu-id="553a4-107">トレース</span><span class="sxs-lookup"><span data-stu-id="553a4-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="553a4-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="553a4-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="553a4-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="553a4-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="16902-106">参照</span><span class="sxs-lookup"><span data-stu-id="16902-106">See Also</span></span>  
+ [<span data-ttu-id="16902-107">トレース</span><span class="sxs-lookup"><span data-stu-id="16902-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="16902-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="16902-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="16902-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="16902-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -18,16 +18,17 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3f60f7b2fadec39ce4a6bec462e81dd8424c15bc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e9e8c01fa3451cbeb335c4771e287566af1c104b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="request-reply-services"></a><span data-ttu-id="fb31a-102">要求/応答サービス</span><span class="sxs-lookup"><span data-stu-id="fb31a-102">Request-Reply Services</span></span>
-<span data-ttu-id="fb31a-103">要求/応答サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の操作コントラクトの既定の種類です。</span><span class="sxs-lookup"><span data-stu-id="fb31a-103">Request-reply services are the default type of operation contract in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span> <span data-ttu-id="fb31a-104">クライアントはサービス操作を呼び出し、サービスからの応答を待機します。</span><span class="sxs-lookup"><span data-stu-id="fb31a-104">Clients make calls to service operations and wait for a response from the service.</span></span> <span data-ttu-id="fb31a-105">サービス操作の呼び出しは、同期的または非同期的に実行できます。同期呼び出しでは、応答を受信するか、呼び出しがタイムアウトするまで、クライアントがブロックされます。非同期呼び出しでは、クライアントはサービス操作の呼び出し後、動作を続行し、別のスレッドのサービスからの応答を受信できます。</span><span class="sxs-lookup"><span data-stu-id="fb31a-105">You can perform calls to a service operation either synchronously, where the client blocks until it receives a response from the service or the call times, or asynchronously, where the client makes a call to the service operation, continues working, and receives the response from the service on another thread.</span></span>  
+# <a name="request-reply-services"></a><span data-ttu-id="1501c-102">要求/応答サービス</span><span class="sxs-lookup"><span data-stu-id="1501c-102">Request-Reply Services</span></span>
+<span data-ttu-id="1501c-103">要求/応答サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の操作コントラクトの既定の種類です。</span><span class="sxs-lookup"><span data-stu-id="1501c-103">Request-reply services are the default type of operation contract in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span> <span data-ttu-id="1501c-104">クライアントはサービス操作を呼び出し、サービスからの応答を待機します。</span><span class="sxs-lookup"><span data-stu-id="1501c-104">Clients make calls to service operations and wait for a response from the service.</span></span> <span data-ttu-id="1501c-105">サービス操作の呼び出しは、同期的または非同期的に実行できます。同期呼び出しでは、応答を受信するか、呼び出しがタイムアウトするまで、クライアントがブロックされます。非同期呼び出しでは、クライアントはサービス操作の呼び出し後、動作を続行し、別のスレッドのサービスからの応答を受信できます。</span><span class="sxs-lookup"><span data-stu-id="1501c-105">You can perform calls to a service operation either synchronously, where the client blocks until it receives a response from the service or the call times, or asynchronously, where the client makes a call to the service operation, continues working, and receives the response from the service on another thread.</span></span>  
   
- <span data-ttu-id="fb31a-106">要求/応答サービス コントラクトを作成するには、サービス コントラクトを定義し、次のサンプル コードに示すように <xref:System.ServiceModel.OperationContractAttribute> クラスを各操作に適用します。</span><span class="sxs-lookup"><span data-stu-id="fb31a-106">To create a request-reply service contract, define your service contract, and apply the <xref:System.ServiceModel.OperationContractAttribute> class to each operation, as shown in the following sample code.</span></span>  
+ <span data-ttu-id="1501c-106">要求/応答サービス コントラクトを作成するには、サービス コントラクトを定義し、次のサンプル コードに示すように <xref:System.ServiceModel.OperationContractAttribute> クラスを各操作に適用します。</span><span class="sxs-lookup"><span data-stu-id="1501c-106">To create a request-reply service contract, define your service contract, and apply the <xref:System.ServiceModel.OperationContractAttribute> class to each operation, as shown in the following sample code.</span></span>  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -38,8 +39,8 @@ public interface IRequestReplyCalculator
 }  
 ```  
   
- <span data-ttu-id="fb31a-107">これは既定の動作であるため、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティを `false` に設定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="fb31a-107">You do not have to set the  <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> property to `false` because this is the default behavior.</span></span>  
+ <span data-ttu-id="1501c-107">これは既定の動作であるため、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティを `false` に設定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1501c-107">You do not have to set the  <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> property to `false` because this is the default behavior.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fb31a-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="fb31a-108">See Also</span></span>  
- [<span data-ttu-id="fb31a-109">一方向サービス</span><span class="sxs-lookup"><span data-stu-id="fb31a-109">One-Way Services</span></span>](../../../../docs/framework/wcf/feature-details/one-way-services.md)  
- [<span data-ttu-id="fb31a-110">双方向サービス</span><span class="sxs-lookup"><span data-stu-id="fb31a-110">Duplex Services</span></span>](../../../../docs/framework/wcf/feature-details/duplex-services.md)
+## <a name="see-also"></a><span data-ttu-id="1501c-108">参照</span><span class="sxs-lookup"><span data-stu-id="1501c-108">See Also</span></span>  
+ [<span data-ttu-id="1501c-109">一方向サービス</span><span class="sxs-lookup"><span data-stu-id="1501c-109">One-Way Services</span></span>](../../../../docs/framework/wcf/feature-details/one-way-services.md)  
+ [<span data-ttu-id="1501c-110">双方向サービス</span><span class="sxs-lookup"><span data-stu-id="1501c-110">Duplex Services</span></span>](../../../../docs/framework/wcf/feature-details/duplex-services.md)
