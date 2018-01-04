@@ -15,11 +15,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6fccf64215c38a3aee0b367866dd2371b483b0a7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 5379da3361a8a4b2115f46d0d2db80a565f6bfc9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="soundplayer-class"></a>SoundPlayer クラス
 `SoundPlayer` クラスを使用すると、アプリケーションにサウンドを簡単に組み込むことができます。  

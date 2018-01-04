@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4abc783961177a55cdb81cefd21ed2d7aefb0620
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3a1a4c9c77e1f347f95c0a5e17ab0d37e0013d6b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstripcontainer-control-overview"></a>ToolStripContainer コントロールの概要
 A<xref:System.Windows.Forms.ToolStripContainer>左、右、上との配置とラフティングの下側にパネル<xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.MenuStrip>、および<xref:System.Windows.Forms.StatusStrip>コントロール。 複数の <xref:System.Windows.Forms.ToolStrip> コントロールを左右の <xref:System.Windows.Forms.ToolStripContainer> に配置すると、コントロールは垂直方向に積み重ねられます。 上または下の <xref:System.Windows.Forms.ToolStripContainer> に配置すると、コントロールは水平方向に積み重ねられます。 <xref:System.Windows.Forms.ToolStripContainer> の中央の <xref:System.Windows.Forms.ToolStripContentPanel> を使用すると、従来のコントロールをフォーム上に配置できます。  
@@ -30,7 +31,7 @@ A<xref:System.Windows.Forms.ToolStripContainer>左、右、上との配置とラ
   
 ### <a name="important-toolstripcontainer-members"></a>ToolStripContainer の重要なメンバー  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStripContainer.BottomToolStripPanel%2A>|下のパネルを取得、<xref:System.Windows.Forms.ToolStripContainer>です。|  
 |<xref:System.Windows.Forms.ToolStripContainer.BottomToolStripPanelVisible%2A>|取得または設定を示す値かどうかの下のパネル、<xref:System.Windows.Forms.ToolStripContainer>が表示されます。|  
@@ -41,6 +42,6 @@ A<xref:System.Windows.Forms.ToolStripContainer>左、右、上との配置とラ
 |<xref:System.Windows.Forms.ToolStripContainer.TopToolStripPanel%2A>|上のパネルを取得、<xref:System.Windows.Forms.ToolStripContainer>です。|  
 |<xref:System.Windows.Forms.ToolStripContainer.TopToolStripPanelVisible%2A>|取得または設定を示す値かどうかの上のパネル、<xref:System.Windows.Forms.ToolStripContainer>が表示されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ToolStripContainer>  
  <xref:System.Windows.Forms.ToolStripContentPanel>

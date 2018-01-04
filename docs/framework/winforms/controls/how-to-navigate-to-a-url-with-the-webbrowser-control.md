@@ -22,11 +22,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 28ceb5e465b8737d047c9c0e65bd9efc8cd3c8ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a447d69eb6dafbff75ddd9d161abd4f78c607cdd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a>方法 : WebBrowser コントロールで URL に移動する
 次のコード例では、移動、<xref:System.Windows.Forms.WebBrowser>特定の URL をコントロールします。  
@@ -50,7 +51,7 @@ this.webBrowser1.Navigate("http://www.microsoft.com");
   
 -   `System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowser.DocumentCompleted?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.WebBrowser.Navigating?displayProperty=nameWithType>  

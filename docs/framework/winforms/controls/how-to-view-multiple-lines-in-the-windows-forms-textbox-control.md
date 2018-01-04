@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0e8f39e031835275818504151e66834f0634b7f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5dca8d0f869702dee50bf851a2099317c45aa842
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-view-multiple-lines-in-the-windows-forms-textbox-control"></a>方法 : Windows フォーム TextBox コントロールで複数行を表示する
 既定では、Windows フォーム<xref:System.Windows.Forms.TextBox>コントロールは、1 行のテキストを表示し、スクロール バーは表示されません。 テキストは、使用可能な領域よりも長くなりますが、テキストの一部のみが表示されます。 この既定の動作を変更するには設定して、 <xref:System.Windows.Forms.TextBox.Multiline%2A>、<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>と<xref:System.Windows.Forms.TextBox.ScrollBars%2A>プロパティを適切な値にします。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  <xref:System.Windows.Forms.TextBox.ScrollBars%2A> プロパティに適切な値を設定します。  
   
-    |値|説明|  
+    |[値]|説明|  
     |-----------|-----------------|  
     |<xref:System.Windows.Forms.ScrollBars.None>|段落テキストにする場合は、この値を使用するコントロールにほぼ常に適合します。 ユーザーは、一度にすべてを表示するには、テキストが長すぎる場合、コントロール内に移動する、マウス ポインターを使用できます。|  
     |<xref:System.Windows.Forms.ScrollBars.Horizontal>|線、これらのいくつかの幅を超える可能性がありますの一覧を表示する場合、この値を使用して、<xref:System.Windows.Forms.TextBox>コントロール。|  
@@ -51,12 +52,12 @@ ms.lasthandoff: 11/21/2017
   
 3.  <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> プロパティに適切な値を設定します。  
   
-    |値|説明|  
+    |[値]|説明|  
     |-----------|-----------------|  
     |`false`|コントロール内のテキストが自動的に折り返される、ため、行の区切りに到達するまで右にスクロールされます。 選択した場合は、この値を使用して<xref:System.Windows.Forms.ScrollBars.Horizontal>スクロール バーまたは<xref:System.Windows.Forms.ScrollBars.Both>上、します。|  
     |`true` (既定値)|水平スクロール バーは表示されません。 選択した場合は、この値を使用して<xref:System.Windows.Forms.ScrollBars.Vertical>スクロール バーまたは<xref:System.Windows.Forms.ScrollBars.None>、上記の 1 つまたは複数の段落を表示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.TextBox>  
  [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
  [方法: Windows フォーム TextBox コントロールでのカーソル位置を制御する](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  

@@ -26,11 +26,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0ca0bab0d10f8bc8c08e441b7e92f5f938d65dac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: db68fba51cd7ef9bad9ba6f7c4ba8d05a31c4371
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>方法 : Windows フォーム コントロールのスレッド セーフな呼び出しを行う
 マルチスレッドを使用して Windows フォーム アプリケーションのパフォーマンスを向上させる場合は、必ずスレッド セーフな方法でコントロールを呼び出してください。  
@@ -103,7 +104,7 @@ private:
   
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] は、スレッド セーフでない方法でコントロールにアクセスしていることを検出するのに役立ちます。 デバッガーでアプリケーションを実行しているときに、コントロールを作成したスレッド以外のスレッドがそのコントロールを呼び出そうとすると、デバッガーは <xref:System.InvalidOperationException> を発生させ、"コントロールが作成されたスレッド以外のスレッドからコントロール ' *コントロール名* ' がアクセスされました。" というメッセージが示されます。  
   
- この例外は、デバッグ時には確実に発生しますが、場合によっては実行時に発生することもあります。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] より前に [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]を使用して、作成したアプリケーションのデバッグを行う場合に、この例外が発生することがあります。 この問題が発生したら修正することを強くお勧めしますが、 <xref:System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls%2A> プロパティを `false`に設定して無効にすることもできます。 これによりコントロールは、Visual Studio .NET 2003 および [!INCLUDE[net_v11_short](../../../../includes/net-v11-short-md.md)]の下で実行しているかのように実行されます。  
+ この例外は、デバッグ時には確実に発生しますが、場合によっては実行時に発生することもあります。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] より前に [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] を使用して、作成したアプリケーションのデバッグを行う場合に、この例外が発生することがあります。 この問題が発生したら修正することを強くお勧めしますが、 <xref:System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls%2A> プロパティを `false`に設定して無効にすることもできます。 これによりコントロールは、Visual Studio .NET 2003 および [!INCLUDE[net_v11_short](../../../../includes/net-v11-short-md.md)]の下で実行しているかのように実行されます。  
   
 > [!NOTE]
 >  フォームで ActiveX コントロールを使用している場合、デバッガー下で実行すると、スレッド間の <xref:System.InvalidOperationException> を受け取ることがあります。 これが発生した場合、ActiveX コントロールではマルチスレッドをサポートしていません。 Windows フォームでの ActiveX コントロールの使用の詳細については、「 [Windows Forms and Unmanaged Applications](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)」を参照してください。 Visual Studio を使用している場合、Visual Studio ホスティング プロセスを無効にすることで、この例外を防止できます。「 [How to: Disable the Hosting Process](/visualstudio/ide/how-to-disable-the-hosting-process)」を参照してください。  
@@ -1056,7 +1057,7 @@ int main()
 > [!CAUTION]
 >  どのようなマルチスレッドを使用する場合でも、コードで深刻かつ複雑なバグが発生する可能性があります。 詳細については、マルチスレッドを使用するソリューションを実装する前に、「[マネージ スレッド処理の実施](../../../../docs/standard/threading/managed-threading-best-practices.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ComponentModel.BackgroundWorker>  
  [方法: バックグラウンドで操作を実行する](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
  [方法: バックグラウンド操作を使用するフォームを実装する](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
