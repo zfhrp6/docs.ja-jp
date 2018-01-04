@@ -20,11 +20,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bfefd41a4773c81757f73e725095057f988cef2c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ecd629bd38e08c8d6909ee4ad771f17b1554fc80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="best-practices-for-scaling-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールを拡張するための推奨される手順
 <xref:System.Windows.Forms.DataGridView>コントロールが最大限のスケーラビリティを提供するように設計されています。 大量のデータを表示する必要がある場合または大量のメモリを使用して、ユーザー インターフェイス (UI) の応答性を低下させることを回避するには、このトピックで説明されているガイドラインに従ってください。 このトピックでは、次の問題について説明します。  
@@ -145,7 +146,7 @@ ms.lasthandoff: 11/21/2017
   
 -   呼び出す必要はありません、`Sort(IComparer)`のオーバー ロード、<xref:System.Windows.Forms.DataGridView.Sort%2A>メソッドです。 カスタムの比較演算子の並び替えにすると、すべての行を非共有になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  [Windows フォーム DataGridView コントロールでのパフォーマンス チューニング](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  
  [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)  

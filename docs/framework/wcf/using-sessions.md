@@ -17,11 +17,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 82fab5b5d7c702bc9f5e595572b8eba821159cd7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 14b7691b1c105ceb3e209c5d86bda455657a4198
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-sessions"></a>セッションの使用
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションでは、 *"セッション"* がメッセージのグループを相互に関連付けて通信を行います。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] セッションは、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションで使用できるセッション オブジェクトとは異なるものであり、サポートされる動作と制御する方法が異なります。 ここでは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのセッションで有効になる諸機能とそれらの使用方法について説明します。  
@@ -154,6 +155,6 @@ ms.lasthandoff: 12/02/2017
 > [!NOTE]
 >  この場合、利用可能になる "セッション" は 1 つしかないため、MaxConcurrentSessions は効力を失います。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A>  
  <xref:System.ServiceModel.OperationContractAttribute.IsTerminating%2A>

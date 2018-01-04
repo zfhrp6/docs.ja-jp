@@ -13,11 +13,12 @@ caps.latest.revision: "45"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 868e76b39156dc2fff85da2afe3501e39faf8812
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 28098a4e598d1c3bede3b05e3afe1001c3944d42
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF のテスト用クライアント (WcfTestClient.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] テスト クライアント (WcfTestClient.exe) は、テスト パラメーターを入力し、その入力をサービスに送信して、サービスから返される応答を確認できる GUI ツールです。 このツールを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと組み合わせて使用すると、シームレスにサービスをテストできるようになります。  
@@ -175,5 +176,5 @@ ms.lasthandoff: 12/02/2017
   
 -   右クリックし、 **WCF サービス ホスト**をクリックして通知領域アイコン**終了します。** これにより、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントの両方がシャットダウンし、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ処理が停止します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

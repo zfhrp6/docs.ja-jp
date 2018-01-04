@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72c9c2078f694a1739a7f33689a0d8275d786937
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: be885a964ad7e8d63045febfa279b23d0d85ab1f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflow-hosting-options"></a>ワークフロー ホスティングのオプション
 [!INCLUDE[wf](../../../includes/wf-md.md)] のほとんどのサンプルでは、コンソール アプリケーションでホストされているワークフローが使用されていますが、これは実際のワークフローにとって現実的なシナリオではありません。 実際のビジネス アプリケーションのワークフローは、開発者が作成した Windows サービス、[!INCLUDE[iisver](../../../includes/iisver-md.md)] や AppFabric などのサーバー アプリケーションのいずれかの永続的なプロセスでホストされます。 これらの方法の違いを次に示します。  

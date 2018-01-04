@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dba245df31ad14150e57188c95ab3a980ae8d3db
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a22667e4227067dfbf0baaad1838ab520e0ac7e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="monthcalendar-control-overview-windows-forms"></a>MonthCalendar コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールがユーザーを表示し、日付情報を設定するための直感的なグラフィカル インターフェイスを表示します。 カレンダーを表示します。 は月、日、曜日、強調表示されている日付の選択範囲の下にある列に配置の番号付きの日を含むグリッドです。 月のキャプションのどちらかの側にある矢印ボタンをクリックして、別の月を選択できます。 異なり、類似<xref:System.Windows.Forms.DateTimePicker>コントロール、このコントロールに 1 つ以上の日付を選択できます。 詳細については、<xref:System.Windows.Forms.DateTimePicker>を制御しを参照してください[DateTimePicker コントロール](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)です。  
@@ -34,6 +35,6 @@ Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロール�
   
  キー プロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロールが<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>コントロールで選択されている日付の範囲です。 <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>値が選択できる設定日数の最大数を超えることはできません、<xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A>プロパティです。 ユーザーが選択できる最初と最後の日付がによって決定されます、<xref:System.Windows.Forms.MonthCalendar.MaxDate%2A>と<xref:System.Windows.Forms.MonthCalendar.MinDate%2A>プロパティです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.MonthCalendar>  
  [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)

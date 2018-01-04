@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d4823b7d7411b7896e723683b70021292dd989aa
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2ed5ccd46a6563ced2cf5946304a36d0c204a00a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="monthcalendar-control-windows-forms"></a>MonthCalendar コントロール (Windows フォーム)
 Windows フォーム`MonthCalendar`コントロールがユーザーを表示し、日付情報を設定するための直感的なグラフィカル インターフェイスを表示します。 コントロールには、月、日、週の下にある列に配置の番号付きの日を含むグリッドが表示されます。 月のキャプションのどちらかの側にある矢印ボタンをクリックして、別の月を選択できます。 よく似ているとは異なり<xref:System.Windows.Forms.DateTimePicker>コントロール、; このコントロールを含む日付の範囲を選択するただし、<xref:System.Windows.Forms.DateTimePicker>コントロールでは、時間を設定することができますの日付とします。  

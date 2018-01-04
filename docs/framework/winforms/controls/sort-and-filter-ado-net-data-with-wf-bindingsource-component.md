@@ -24,11 +24,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46947e314394d56b5ef0439f33910bb493012db3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 310f90c7b95d74f1fab8ab2e9871d6c1a0937c52
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-sort-and-filter-adonet-data-with-the-windows-forms-bindingsource-component"></a>方法 : Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する
 並べ替えやフィルタ リングの機能を公開することができます<xref:System.Windows.Forms.BindingSource>を介して制御、<xref:System.Windows.Forms.BindingSource.Sort%2A>と<xref:System.Windows.Forms.BindingSource.Filter%2A>プロパティです。 基になるデータ ソースが場合は、単純な並べ替えを適用することができます、 <xref:System.ComponentModel.IBindingList>、フィルターを適用し、高度なデータ ソースがときの並べ替えと、<xref:System.ComponentModel.IBindingListView>です。 <xref:System.Windows.Forms.BindingSource.Sort%2A>プロパティには標準[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]構文: データ ソースのデータの列の名前を表す文字列が続く`ASC`または`DESC`一覧を昇順または降順で並べ替える必要があるかどうかを示すためにします。 高度な並べ替えまたは各列をコンマ区切り記号で区切って複数列の並べ替えを設定することができます。 <xref:System.Windows.Forms.BindingSource.Filter%2A>プロパティには文字列式を指定します。  
@@ -63,7 +64,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  この例を実行するコードを貼り付けます、フォームが含まれていますが、<xref:System.Windows.Forms.BindingSource>という名前`BindingSource1`と<xref:System.Windows.Forms.DataGridView>という`dataGridView1`です。 処理、 <xref:System.Windows.Forms.Form.Load> 、フォームの呼び出しのイベント`InitializeSortedFilteredBindingSource`load イベント ハンドラー メソッドにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.BindingSource.Sort%2A>  
  <xref:System.Windows.Forms.BindingSource.Filter%2A>  
  [方法 : サンプル データベースをインストールする](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)  

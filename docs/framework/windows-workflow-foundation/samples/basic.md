@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cfd3075ef58114d50be07e4070cfaa4492408e83
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7ec3fe498bc76c5fe7221d14c8af219420037c14
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic"></a>Basic
 このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] の基本的な機能を示すサンプルが用意されています。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 12/02/2017
  [移行](../../../../docs/framework/windows-workflow-foundation/samples/migration.md)  
  前のバージョンの [!INCLUDE[wf](../../../../includes/wf-md.md)] で作成されたワークフローの移行を示すサンプルが含まれます。  
   
- [永続化](../../../../docs/framework/windows-workflow-foundation/samples/persistence.md)  
+ [永続性](../../../../docs/framework/windows-workflow-foundation/samples/persistence.md)  
  永続メディアへのワークフローの永続化を示すサンプルが含まれます。  
   
  [ルールのサンプル](../../../../docs/framework/windows-workflow-foundation/samples/rules-samples.md)  

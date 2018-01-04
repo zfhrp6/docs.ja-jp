@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9df2866251e08b8989f8550d045b587c9de8d2cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b610e499ff980d2e705ad855ae98c1d54ff412e7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-read-image-metadata"></a>方法 : イメージ メタデータを読み取る
 一部のイメージ ファイルには、イメージの機能を決定するために読み取ることができますメタデータが含まれます。 たとえば、デジタル写真には、make とイメージをキャプチャするために使用する、カメラのモデルを決定するために読み取ることができますメタデータが含まれます可能性があります。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]既存のメタデータを読み取ることができます、およびイメージ ファイルに新しいメタデータを記述することもできます。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 11/21/2017
 |-----------------------|-----------------|  
 |0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|イメージのタイトル<br /><br /> 相手先ブランド供給<br /><br /> 機器のモデル<br /><br /> ExifDTOriginal<br /><br /> Exif 露出時間<br /><br /> 輝度テーブル<br /><br /> 色光度テーブル|  
   
-## <a name="value"></a>値  
+## <a name="value"></a>[値]  
  値の配列。 値の形式はによって決まります、<xref:System.Drawing.Imaging.PropertyItem.Type%2A>プロパティです。  
   
 ## <a name="len"></a>Len  
@@ -57,7 +58,7 @@ ms.lasthandoff: 11/21/2017
 |5|2 つの配列`Byte`有理数を表すオブジェクト|  
 |6|未使用|  
 |7|未定義|  
-|9|未使用|  
+|8|未使用|  
 |9|`SLong`|  
 |10|`SRational`|  
   
@@ -133,6 +134,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。 フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントとペイントのイベント ハンドラーに次のコードを貼り付けます。 置き換える必要があります`FakePhoto.jpg`イメージの名前と、システムとインポートの有効なパスと、`System.Drawing.Imaging`名前空間。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

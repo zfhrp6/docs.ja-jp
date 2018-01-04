@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aa2da4bdc593296ff72251284bc04eb8552c999f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e85101524b641a8abd11d0e8c6291635ed8e5dca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="folderbrowserdialog-component-windows-forms"></a>FolderBrowserDialog コンポーネント (Windows フォーム)
 Windows フォーム`FolderBrowserDialog`コンポーネントが使用するユーザーが参照しフォルダーを選択または新規に作成インターフェイスを表示します。 補完することが、 [OpenFileDialog コンポーネント](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)参照してファイルを選択するに使用されるコンポーネントです。  

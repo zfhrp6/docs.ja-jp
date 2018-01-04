@@ -25,11 +25,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 96f18f02f82b0e7f9f517890ec963b43fa8d8f60
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: faf0422db9915806442ab96759d63e15ff98b813
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>方法 : Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する
 項目は、Windows フォームのコンボ ボックス、リスト ボックスに追加できるまたはこれらのコントロールは、さまざまなデータ ソースにバインドすることができますので、さまざまな方法でボックスの一覧を確認します。 ただし、このトピックでは、最も簡単な方法を示していて、データ バインドは必要ありません。 表示される項目は、通常の文字列です。ただし、すべてのオブジェクトを使用できます。 コントロールに表示されるテキストが、オブジェクトのによって返される値`ToString`メソッドです。  
@@ -146,7 +147,7 @@ ms.lasthandoff: 11/21/2017
     listBox1->Items->Clear();  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ComboBox>  
  <xref:System.Windows.Forms.ListBox>  
  <xref:System.Windows.Forms.CheckedListBox>  

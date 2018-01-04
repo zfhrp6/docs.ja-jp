@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d082b0e3db1e1c115d28446cf515cf6acf60a7d2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a654fef461d92c4b93db131e303bb07a1e839d34
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>ShouldSerialize メソッドと Reset メソッドによる既定値の定義
 `ShouldSerialize``Reset`プロパティ用に指定できるオプションのメソッドは、プロパティがない場合、単純な既定値があります。 プロパティの単純な既定値が、適用してください、<xref:System.ComponentModel.DefaultValueAttribute>し、代わりに、属性クラスのコンス トラクターを既定値を指定します。 これらのメカニズムのいずれかにより、デザイナーで、次の機能。  
@@ -153,7 +154,7 @@ public class MyControl : Control {
   
  ここでは、プライベート変数の値がからアクセスする場合でも、`MyFont`プロパティは`null`、プロパティ ブラウザーは表示されません`null`代わりに、表示、<xref:System.Windows.Forms.Control.Font%2A>されていない場合は、親のプロパティ`null`、。既定値または<xref:System.Windows.Forms.Control.Font%2A>で定義された値<xref:System.Windows.Forms.Control>です。 既定値ため`MyFont`、単に設定することはできませんと<xref:System.ComponentModel.DefaultValueAttribute>このプロパティには適用できません。 代わりに、`ShouldSerialize`と`Reset`のメソッドを実装する必要があります、`MyFont`プロパティです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム コントロールのプロパティ](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
  [プロパティの定義](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
  [プロパティ変更イベント](../../../../docs/framework/winforms/controls/property-changed-events.md)

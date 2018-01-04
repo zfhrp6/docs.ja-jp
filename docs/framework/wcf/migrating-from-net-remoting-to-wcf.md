@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f39a26d52d7002e793935135e0c5d5e8f11c3d8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b387e100ff881c5394b6a77716a733b3928eae9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>.NET リモート処理から WCF への移行
 この記事では、.NET リモート処理を使用するアプリケーションを、Windows Communication Foundation (WCF) を使用するように移行する方法について説明します。 これらの製品間で類似する概念を比較した後、WCF で一般的なリモート処理のシナリオを実現する方法を説明します。  
@@ -222,7 +223,7 @@ public class WCFCustomer
   
  WCF が階層をまたいでオブジェクトを送信する場合は、値のみをシリアル化し、もう一方の階層でオブジェクトの新しいインスタンスを作成します。 オブジェクトの値とのやり取りはローカルでのみ発生し、.NET リモート処理の参照渡しのオブジェクトのような方法でもう一方の階層と通信することはありません。 詳細については、次のトピックを参照してください。  
   
--   [シリアル化および逆シリアル化](./feature-details/serialization-and-deserialization.md)  
+-   [シリアル化と逆シリアル化](./feature-details/serialization-and-deserialization.md)  
   
 -   [Windows Communication Foundation でのシリアル化](http://msdn.microsoft.com/magazine/cc163569.aspx)  
   
@@ -677,5 +678,5 @@ public class RemotingServer : MarshalByRefObject
   
  WCF での通常のデータ交換は、値渡しで行われます。 これにより、こういったデータ オブジェクトの 1 つでのメソッド呼び出しはローカルでのみ実行され、他の階層ではコードが呼び出されないことが保証されています。 返される参照渡しのオブジェクトのようなものを実現することができますが*から*、サーバーは参照渡しでオブジェクトを渡し、クライアントの*に*サーバー。 クライアントとサーバーの間で対話を必要とするシナリオは、WCF で双方向サービスを使用することによって実現できます。 詳細については、次を参照してください。[双方向サービス](./feature-details/duplex-services.md)です。  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  .NET リモート処理は、完全に信頼できる環境内のみでの使用を意図した通信フレームワークです。 これはレガシー製品であり、旧バージョンとの互換性のためだけにサポートされています。 新しいアプリケーションの構築には使用できません。 反対に、WCF はセキュリティを考慮して設計されており、新規および既存のアプリケーション向けに推奨されています。 既存のリモート処理アプリケーションから、WCF または ASP.NET Web API を使用したアプリケーションに移行することをお勧めします。

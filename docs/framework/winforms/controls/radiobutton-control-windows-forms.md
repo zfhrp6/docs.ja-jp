@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3b763217527a2306bfe648e3b327124408cea62f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 206a2632221f2521992a43e72abc152923dd85a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="radiobutton-control-windows-forms"></a>RadioButton コントロール (Windows フォーム)
 Windows フォーム`RadioButton`コントロールがユーザーに 2 つ以上の相互に排他的な選択肢を表示します。 重要な違いがあるオプション ボタンおよびチェック ボックスは、類似した機能に見える場合があります、にもかかわらず: ユーザーは、オプション ボタンを選択するときは、同じグループ内の他のオプション ボタンをも選択することはできません。  

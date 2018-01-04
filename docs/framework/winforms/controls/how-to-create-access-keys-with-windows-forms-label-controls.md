@@ -28,11 +28,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ad6cd99a6399adea2e69cbf844b9f134d2e592e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6a856090a76f484c21c1d9982d67e9fdf21e8451
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-access-keys-with-windows-forms-label-controls"></a>方法 : Windows フォームの Label コントロールでアクセス キーを作成する
 Windows フォーム<xref:System.Windows.Forms.Label>を他のコントロールのアクセス キーを定義するコントロールを使用できます。 ラベル コントロールにアクセス キーを定義するときに、ユーザーは ALT キーとそれに続くタブ オーダーでコントロールにフォーカスを移動するように指定した文字キーを押すことができます。 ラベルは、フォーカスを受け取ることはできません、ため、タブ オーダーの次のコントロールにフォーカスが自動的に移動します。 この手法を使用して、テキスト ボックス、コンボ ボックス、リスト ボックス、およびデータ グリッドにアクセス キーを割り当てます。  
@@ -41,7 +42,7 @@ Windows フォーム<xref:System.Windows.Forms.Label>を他のコントロール
   
 1.  最初に、ラベルを描画し、その他のコントロールを描画します。  
   
-     または  
+     - または -  
   
      任意の順序で、コントロールを描画し、設定、<xref:System.Windows.Forms.Control.TabIndex%2A>他のコントロールより 1 小さい値をラベルのプロパティです。  
   
@@ -73,7 +74,7 @@ Windows フォーム<xref:System.Windows.Forms.Label>を他のコントロール
     label2->Text = "&Copy && Paste";  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: Windows フォーム Label コントロールのサイズを内容に合わせて変更する](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
  [Label コントロールの概要](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)  
  [Label コントロール](../../../../docs/framework/winforms/controls/label-control-windows-forms.md)

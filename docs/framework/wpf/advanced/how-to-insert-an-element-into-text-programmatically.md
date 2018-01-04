@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b99b4f77f43f8ca9ac1516be2bf6a671810e7d90
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: b200489c4b7fb06f2eb98c0ec9c84da42f18a395
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-insert-an-element-into-text-programmatically"></a>方法 : プログラムでテキストに要素を挿入する
 次の例は、2 つを使用する方法を示しています。<xref:System.Windows.Documents.TextPointer>を適用するテキスト内での範囲を指定するオブジェクト、<xref:System.Windows.Documents.Span>する要素。  
@@ -39,5 +40,5 @@ ms.lasthandoff: 10/22/2017
   
  ![テキストの範囲に適用される Span 要素](../../../../docs/framework/wpf/advanced/media/flow-insertelementintotextprogrammatically.png "Flow_InsertElementIntoTextProgrammatically")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

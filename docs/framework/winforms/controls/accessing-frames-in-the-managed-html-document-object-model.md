@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c8766e33f0fb253d532ff7161ed0a1e7842d0c50
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f9355596982025bf9834924a0de8e79e7073fc0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>マネージ HTML DOM (Document Object Model) へのアクセス
 一部の HTML ドキュメントが不在で構成される*フレーム*、または独自の個別の HTML ドキュメントを持つウィンドウです。 フレームを使用すると、ページ内に 1 つ以上の静的な部分 (ナビゲーション バーなど) があり、その他のフレームでは内容が常に変化するような HTML ページを簡単に作成できます。  
@@ -50,6 +51,6 @@ ms.lasthandoff: 11/21/2017
   
  クロスサイト スクリプティングの詳細については、次を参照してください。[に関するクロス フレームのスクリプティングとセキュリティ](http://msdn.microsoft.com/library/ms533028.aspx)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [フレーム要素 &#124;です。フレーム オブジェクト](http://msdn.microsoft.com/library/ms535250.aspx)  
  [マネージ HTML DOM (Document Object Model) の使用](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

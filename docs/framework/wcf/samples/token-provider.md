@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 87965b8802dd770d6977154ab805889838e9c5e4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 975014007ed57cc7e4b1035972923f61753c6d4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="token-provider"></a>トークン プロバイダー
 このサンプルでは、カスタム トークン プロバイダーを実装する方法を示します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトークン プロバイダーは、資格情報をセキュリティ インフラストラクチャに提供するために使用します。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、既定の Credential Manager Token Provider が付属しています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、[!INCLUDE[infocard](../../../../includes/infocard-md.md)] トークン プロバイダーも付属しています。 カスタム トークン プロバイダーは、次の場合に便利です。  
@@ -303,4 +304,4 @@ static void DisplayIdentityInformation()
   
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

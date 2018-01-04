@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 95888fc5c0df31529db429ead0e7d3e342f9a6e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 09eb28e865fb020dae9a8b6ffc3f05a52e6eec4a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-the-itypedlist-interface"></a>方法 : ITypedList インターフェイスを実装する
 実装、<xref:System.ComponentModel.ITypedList>バインド可能な一覧については、スキーマの検出を有効にするインターフェイスです。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
 -   System.Drawing アセンブリおよび System.Windows.Forms アセンブリへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ComponentModel.ITypedList>  
  <xref:System.ComponentModel.BindingList%601>  
  <xref:System.ComponentModel.IBindingList>  

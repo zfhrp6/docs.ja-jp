@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: c4d7f2f19c8d156f86513ac7138bccd59ae3b7fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7d93f8543b9e6e370827f5a666315d562e28ee76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-windows-services"></a>方法 : Windows サービスを作成する
 サービスを作成するときに、という名前の Visual Studio プロジェクト テンプレートを使用することができます**Windows サービス**です。 このテンプレートを使用すると、作業の多くを自動化できます。この自動化は、適切なクラスと名前空間を参照し、サービスの基底クラスからの継承を設定し、メソッドのいくつかをオーバーライドすることで実現されます。  
@@ -76,12 +77,12 @@ ms.lasthandoff: 11/21/2017
   
 8.  サービスをインストールします。 詳細については、「 [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [方法: プログラムによってサービスを作成](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)  
- [方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
- [方法: サービスに関する情報を記録](../../../docs/framework/windows-services/how-to-log-information-about-services.md)  
- [方法: サービスを開始します。](../../../docs/framework/windows-services/how-to-start-services.md)  
- [方法: サービスのセキュリティ コンテキストを指定](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)  
- [方法: インストールし、サービスのアンインストール](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [チュートリアル: コンポーネント デザイナーでの Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+ [方法 : プログラムでサービスを作成する](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)  
+ [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
+ [方法 : サービスに関する情報のログを記録する](../../../docs/framework/windows-services/how-to-log-information-about-services.md)  
+ [方法 : サービスを開始する](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [方法 : サービスのセキュリティ コンテキストを指定する](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)  
+ [方法 : サービスをインストールおよびアンインストールする](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

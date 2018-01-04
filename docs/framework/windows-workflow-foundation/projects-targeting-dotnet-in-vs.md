@@ -12,11 +12,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6dc6657bad5cc11eaa723c733319673468749b79
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 38f0106fedc4755aaa01d97b134c771972f509bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="writing-projects-targeting-the-net-framework-30-and-35-in-visual-studio-2010"></a>Visual Studio 2010 での .NET Framework 3.0 および 3.5 を対象とするプロジェクトの作成
 [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を使用して、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Version 3.0 または 3.5 を対象とするプロジェクトを作成します。 このトピックでは、この実行方法について説明します。  

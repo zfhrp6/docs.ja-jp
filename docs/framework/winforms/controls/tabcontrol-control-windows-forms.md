@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fdeb5011e5f44eb45d553045c2f89b97f9e4d100
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 705f9dbb8ea7f4d462a2b19cc0c6b845ae8f578b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tabcontrol-control-windows-forms"></a>TabControl コントロール (Windows フォーム)
 Windows フォーム `TabControl` は、ノートの仕切りや書類キャビネットのフォルダー セットのラベルに似た、複数のタブを表示します。 タブには画像やその他のコントロールを含めることができます。 プロパティ ページを作成するには、`TabControl` を使用します。  

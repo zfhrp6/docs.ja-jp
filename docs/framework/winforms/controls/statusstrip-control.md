@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 33e2810cf72117f0f6c74812dbd6bf07af05fa8f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 10b1d9134c34cbef9d34fe4a5fa37adb82b5a9a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="statusstrip-control"></a>StatusStrip コントロール
 Windows フォームの `StatusStrip` コントロールは、フォーム上で領域として使用され、通常はウィンドウの下端に表示されます。アプリケーションは、このコントロールにさまざまな種類のステータス情報を表示できます `StatusStrip` コントロールには、通常は `ToolStripStatusLabel` コントロールを配置し、状態を示すためのテキストまたはアイコンや、処理の完了状態を視覚的に表示するための <xref:System.Windows.Forms.ToolStripProgressBar> を表示します。  
@@ -41,5 +42,5 @@ Windows フォームの `StatusStrip` コントロールは、フォーム上で
  <xref:System.Windows.Forms.ToolStripStatusLabel>  
  クラスとそのメンバーに関するリファレンス情報を提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

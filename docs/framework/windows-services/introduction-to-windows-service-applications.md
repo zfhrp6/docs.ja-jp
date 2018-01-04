@@ -31,11 +31,12 @@ caps.latest.revision: "17"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: d24daf5520c7bfe74c09abc24a4260266e5b9c1a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 613107a13820ad71b854dcba93f21c41f2a5fa5f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introduction-to-windows-service-applications"></a>Windows サービス アプリケーションの概要
 Microsoft Windows サービス (旧 NT サービス) を使用すると、Microsoft Windows サービス自体の Windows セッションで長時間にわたって実行されるアプリケーションを作成できます。 作成したサービスは、コンピューターのブート時に自動的に起動させることができます。また、サービスを一時停止したり、再起動したりすることもできます。このサービスはユーザー インターフェイスを表示しません。 このような特徴があるため、サービスはサーバー上で使用するのに適しており、コンピューターを共用する他のユーザーの邪魔をせずに長時間稼動させる機能を実現するのに最適です。 また、ログオン ユーザーや既定のコンピューター アカウントとは異なる、特定のユーザー アカウントのセキュリティ コンテキストでサービスを実行することもできます。 サービスと Windows セッションの詳細については、Windows SDK のマニュアルを参照してください。  
@@ -82,18 +83,18 @@ Microsoft Windows サービス (旧 NT サービス) を使用すると、Micros
   
  詳細については、「<xref:System.ServiceProcess.ServiceController>」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 -   サービスを作成する必要があります、 **Windows サービス**アプリケーション プロジェクトまたは別の .NET Framework – 有効になっているプロジェクトをビルド時に、.exe ファイルを作成し、継承、<xref:System.ServiceProcess.ServiceBase>クラスです。  
   
 -   Windows サービスを含むプロジェクトには、プロジェクトのインストール コンポーネントと、プロジェクトのサービスのインストール コンポーネントが必要です。 これから簡単に実現することができます、**プロパティ**ウィンドウです。 詳細については、次を参照してください。[する方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーション](../../../docs/framework/windows-services/index.md)  
  [サービス アプリケーションのプログラミング アーキテクチャ](../../../docs/framework/windows-services/service-application-programming-architecture.md)  
- [方法: Windows サービスの作成](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
- [方法: インストールし、サービスのアンインストール](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [方法: サービスを開始します。](../../../docs/framework/windows-services/how-to-start-services.md)  
- [方法: Windows サービス アプリケーションのデバッグ](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
- [チュートリアル: コンポーネント デザイナーでの Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)  
- [方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
+ [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
+ [方法 : サービスをインストールおよびアンインストールする](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [方法 : サービスを開始する](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [方法 : Windows サービス アプリケーションをデバッグする](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
+ [チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)  
+ [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

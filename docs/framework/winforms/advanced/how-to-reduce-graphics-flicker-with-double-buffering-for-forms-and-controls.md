@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6d1b22babcc653f999ff500a5e52a12616fc1ae4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fc782ba262527a319cbb05cc6d36ca568afc55c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls"></a>方法 : フォームとコントロールのダブル バッファリングを行うことによってグラフィックスのちらつきを軽減する
 ダブル バッファリングでは、メモリ バッファーを使用して、複数の描画操作に関連するちらつきの問題に対処します。 ダブル バッファリングを有効にすると、すべての描画操作が画面上の描画サーフェイスではなく、最初にメモリ バッファーに描画されます。 描画操作がすべて完了すると、メモリ バッファーが、関連付けられている描画サーフェイスに直接コピーされます。 1 つだけのグラフィックス操作が実行されるため、画面に、複雑な描画操作に関連付けられているイメージのちらつきが排除されます。ほとんどのアプリケーションでの既定のダブル バッファリングによって提供される、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]最良の結果を提供します。 既定ではバッファー内の標準の Windows フォーム コントロールをダブルクリックします。 ダブル バッファリングをフォーム内での既定値を有効にすることができ、2 つの方法でコントロールを作成します。 設定するか、<xref:System.Windows.Forms.Control.DoubleBuffered%2A>プロパティを`true`、呼び出すか、または、<xref:System.Windows.Forms.Control.SetStyle%2A>を設定するメソッド、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>フラグを`true`です。 両方のメソッドは既定のフォームまたはコントロールのダブル バッファリングを有効にして、グラフィックスのちらつきなしのレンダリングを提供します。 呼び出す、<xref:System.Windows.Forms.Control.SetStyle%2A>レンダリングのすべてのコードが記述されているカスタム コントロールに対してのみメソッドをお勧めします。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 11/21/2017
      [!code-csharp[System.Windows.Forms.LegacyBufferedGraphics#32](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/CS/Class1.cs#32)]
      [!code-vb[System.Windows.Forms.LegacyBufferedGraphics#32](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/VB/Class1.vb#32)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Control.DoubleBuffered%2A>  
  <xref:System.Windows.Forms.Control.SetStyle%2A>  
  [ダブル バッファリングされたグラフィックス](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  

@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1879ac6704619092c4c0d9cd6fab0356ea07a13d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4255356d4e50f3e8be28024f29701e0e9c010473
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-settings-attributes"></a>アプリケーション設定の属性
 アプリケーション設定アーキテクチャでは、アプリケーション設定のラッパー クラスまたはその個々 のプロパティに適用できる多くの属性を提供します。 これらの属性は、実行時に示されたカスタム ラッパーのニーズにその動作を調整するためにアプリケーション設定のインフラストラクチャ、具体的には多くの場合、設定プロバイダーをでチェックします。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
  *クラス*アプリケーション設定のラッパー クラスにのみ、属性を適用できることを示します。 *プロパティ*属性が設定プロパティだけに適用できることを示します。 *両方*いずれかのレベルで属性を適用できることを示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Configuration.ApplicationSettingsBase>  
  <xref:System.Configuration.SettingsProvider>  
  [アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)  

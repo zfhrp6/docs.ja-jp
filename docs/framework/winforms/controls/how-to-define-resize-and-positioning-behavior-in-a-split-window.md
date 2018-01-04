@@ -20,18 +20,19 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: db4a99c7dae7783e8ea51f43ad51fcd2214997e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ed78a49119c87c52a07cc2ade030e66087d3f420
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>方法 : 分割ウィンドウでのサイズ変更および位置指定動作を定義する
 パネル、<xref:System.Windows.Forms.SplitContainer>コントロール役立つ中に適切にサイズ変更され、ユーザーが操作されます。 ただしがあるプログラムから分割線を制御する場合は、場所が配置されているしにどの程度まで移動できます。  
   
  <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>プロパティおよびその他のプロパティを<xref:System.Windows.Forms.SplitContainer>コントロールは、ニーズに合わせて、ユーザー インターフェイスの動作を正確に制御を提供します。 これらのプロパティは、次の表に一覧表示されます。  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティ|分割線は、キーボードまたはマウスを使用して移動可能なかどうかを判断します。|  
 |<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> プロパティ|移動可能な分割バーを左端または上端からのピクセル単位で距離を決定します。|  
@@ -73,6 +74,6 @@ ms.lasthandoff: 11/21/2017
   
      左または右にスプリッターを若干移動効果はありません難しくします。ただし、マウス ポインターが両方向に 10 ピクセルに出ると、分割が新しい位置にスナップされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.SplitContainer>  
  <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>

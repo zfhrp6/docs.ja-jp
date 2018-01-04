@@ -31,11 +31,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b33e710e7f57e1a84372dc556d904e32584a75ea
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6af28e7b50cb7e4a2a90153a053a83931c738214
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="types-of-bitmaps"></a>ビットマップの種類
 ビットマップは、ピクセルの四角形の配列に各ピクセルの色を指定するビットの配列です。 各ピクセルのビット数では、そのピクセルに割り当てることのできる色の数を決定します。 たとえば、各ピクセルが 4 ビットで表されている場合、指定されたピクセル割り当てることができる 16 色のいずれか (2 ^4 = 16)。 次の表は、指定したビット数で表されるピクセルに割り当てることのできる色の数のいくつかの例を示します。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
 |1|2^1 = 2|  
 |2|2^2 = 4|  
 |4|2^4 = 16|  
-|9|2^8 = 256|  
+|8|2^8 = 256|  
 |16|2^16 = 65,536|  
 |24|2^24 = 16,777,216|  
   
@@ -95,7 +96,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="tag-image-file-format-tiff"></a>タグ イメージ ファイルの形式 (TIFF)  
  TIFF は、さまざまなプラットフォームとイメージ処理アプリケーションでサポートされている柔軟性と拡張性の高い形式です。 TIFF ファイルでは、ピクセルあたりのビット数の任意の数を含むイメージを格納することができます、さまざまな圧縮アルゴリズムを使用できます。 いくつかのイメージは、1 つ、複数のページの TIFF ファイルに格納できます。 (スキャナーの種類、ホスト コンピューター、型の圧縮、向き、1 つのピクセルのサンプル) のイメージに関連する情報をファイルに格納し、タグを使用して配置します。 TIFF 形式は、必要に応じて、承認および新しいタグの追加によって拡張できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Image?displayProperty=nameWithType>  
  <xref:System.Drawing.Bitmap?displayProperty=nameWithType>  
  <xref:System.Drawing.Imaging.PixelFormat?displayProperty=nameWithType>  

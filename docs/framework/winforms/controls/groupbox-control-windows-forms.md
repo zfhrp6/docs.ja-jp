@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 06821673e36a80b01647f87a855e1c023e630c9f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0d2676184512ddd2f7e1e38f5c9783cdb45c0272
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="groupbox-control-windows-forms"></a>GroupBox コントロール (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.GroupBox>コントロールを使用して、その他のコントロールのグループに分けます。 通常、関数によって、フォームを分割するのにグループ ボックスを使用します。 たとえば、注文書を使用するどの宅配業者などの絞り込みメール配信オプションを指定するがあります。 グループ ボックス内のすべてのオプションをグループ化と、ユーザーが論理を視覚的に。 <xref:System.Windows.Forms.GroupBox>コントロールに似ていますが、<xref:System.Windows.Forms.Panel>コントロール。 ただし、のみ、<xref:System.Windows.Forms.GroupBox>コントロールは、キャプションを表示およびのみ、<xref:System.Windows.Forms.Panel>コントロールがスクロール バーを持つことができます。  

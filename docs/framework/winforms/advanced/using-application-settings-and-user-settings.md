@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f9544b6af74608bd1b29db3250e887999ae3187f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 310fcad07ce7cf541312ff83e41d7e5fc2643898
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-application-settings-and-user-settings"></a>アプリケーション設定とユーザー設定の使用
 .NET Framework 2.0 以降で作成し、アプリケーション実行セッション間で保持される値にアクセスできます。 これらの値と呼ばれる*設定*です。 設定は、ユーザー設定を表すことができるか、貴重な情報をアプリケーションを使用する必要があります。 たとえば、一連のアプリケーションの画面の配色に関するユーザー設定を保存している設定を作成する可能性があります。 または、アプリケーションを使用するデータベースを指定する接続文字列を格納する可能性があります。 設定は、個々 のユーザーの設定を保存するプロファイルを作成して、コードの外部のアプリケーションにとって重要な情報を永続化両方を実行できるようにします。  
@@ -52,5 +53,5 @@ ms.lasthandoff: 10/18/2017
   
  C# のアプリケーションに複数セットの設定を追加する方法について詳しく説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォームのアプリケーション設定](../../../../docs/framework/winforms/advanced/application-settings-for-windows-forms.md)

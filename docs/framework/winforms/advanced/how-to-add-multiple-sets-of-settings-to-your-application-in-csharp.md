@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec541a8f83990eec79226be7fb4880ef8dda639d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1d9bd7d0721aae8691fdbca4d7b934f820666536
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a>方法 : C# のアプリケーションに複数の設定セットを追加する #
 場合によってで、アプリケーションに複数セットの設定があることができます。 たとえばを開発しているアプリケーションの設定の特定のグループが頻繁に変更すると思われる場合だと考えられますファイルを置換できる、されるように 1 つのファイルに分離してその他の設定は変わりません。 Visual Studio では、複数のセットの設定をプロジェクトに追加することができます。 設定の追加セットは、Properties.Settings オブジェクト経由でアクセスできます。  
@@ -35,6 +36,6 @@ ms.lasthandoff: 11/21/2017
   
 4.  追加し、その他の設定ファイルと同様に、このファイルの設定を使用します。 この設定は、Properties.Settings オブジェクトでのグループにアクセスできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーション設定とユーザー設定の使用](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
  [アプリケーション設定の概要](../../../../docs/framework/winforms/advanced/application-settings-overview.md)

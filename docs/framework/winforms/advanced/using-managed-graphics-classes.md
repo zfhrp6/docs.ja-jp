@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a53d5d4961e191ae3f3b821641e3f4b161cddf1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2a34e2726182c194882d94fe4b8d1164993d8284
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-managed-graphics-classes"></a>マネージ グラフィックス クラスの使用
 次のトピックを使用する方法について説明、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]マネージ クラス フレームワーク内の API です。  

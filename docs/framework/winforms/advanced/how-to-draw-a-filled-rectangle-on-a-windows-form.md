@@ -22,11 +22,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dce1a8d1070ed1d016da0c94c1f3ecc1ed9df389
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17d143c0c265fea876d084ebc21663d93553fe9d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-a-filled-rectangle-on-a-windows-form"></a>方法 : Windows フォームに塗りつぶした四角形を描画する
 この例では、フォームに塗りつぶした四角形を描画します。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  常に呼び出す必要があります<xref:System.IDisposable.Dispose%2A>など、システム リソースを消費するすべてのオブジェクトに対する<xref:System.Drawing.Brush>と<xref:System.Drawing.Graphics>オブジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Graphics.FillRectangle%2A>  
  <xref:System.Windows.Forms.Control.OnPaint%2A>  
  [グラフィックス プログラミングについて](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  

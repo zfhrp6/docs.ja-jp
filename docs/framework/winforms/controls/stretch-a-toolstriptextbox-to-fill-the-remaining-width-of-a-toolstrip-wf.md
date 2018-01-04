@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 213929e52f08fff19eb7641092789501c31648e0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ddf17a9e96389abd23c860380613ac492b9ab134
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-stretch-a-toolstriptextbox-to-fill-the-remaining-width-of-a-toolstrip-windows-forms"></a>方法 : ToolStripTextBox を拡大して ToolStrip の残りの幅に合わせる (Windows フォーム)
 設定すると、<xref:System.Windows.Forms.ToolStrip.Stretch%2A>のプロパティ、<xref:System.Windows.Forms.ToolStrip>に制御を`true`コントロールのコンテナーをエンド ツー エンドで塗りつぶし、コンテナーのサイズを変更すると、サイズ変更します。 この構成では有用なことなど、コントロールでは、項目をストレッチする、<xref:System.Windows.Forms.ToolStripTextBox>空き領域の塗りつぶし、およびコントロールのサイズを変更するとサイズ変更します。 この拡大役に立ちます、たとえば、外観と Microsoft® Internet Explorer のアドレス バーのような動作を実現したい場合。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 11/21/2017
   
 -   System、System.Drawing、および System.Windows.Forms の各アセンブリへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.ToolStrip.Stretch%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.ToolStripTextBox>  

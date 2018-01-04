@@ -22,11 +22,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 80ec592bf83969ae57495b0df2af110b5622ea11
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c7a6f1d569234f7cee4b5eedc81fcc68a41fcf0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hscrollbar-and-vscrollbar-controls-overview-windows-forms"></a>HScrollBar コントロールと VScrollBar コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.ScrollBar>または垂直方向に水平方向にスクロールすることにより、アプリケーションまたはコントロール内で簡単にナビゲート長い一覧の項目または大量の情報を提供するコントロールを使用します。 スクロール バーは、Windows のインターフェイスの一般的な要素をそのため、<xref:System.Windows.Forms.ScrollBar>コントロールから派生していないを持つコントロールが使用される多くの場合、<xref:System.Windows.Forms.ScrollableControl>クラスです。 組み込むに多くの開発者が同様に、選択、<xref:System.Windows.Forms.ScrollBar>独自のユーザー コントロールを作成するときに制御します。  
@@ -45,7 +46,7 @@ Windows フォーム<xref:System.Windows.Forms.ScrollBar>または垂直方向�
   
  押されたときの矢印のいずれかのキーか、スクロール バーのボタンのいずれかをクリックすると、<xref:System.Windows.Forms.ScrollBar.Value%2A>プロパティの変更に設定された値に従って、<xref:System.Windows.Forms.ScrollBar.SmallChange%2A>プロパティです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.HScrollBar>  
  <xref:System.Windows.Forms.VScrollBar>  
  [.NET Framework 2.0 の Windows フォームへの追加](http://msdn.microsoft.com/en-us/c61a923d-3d6a-4c8c-820c-e94c83f3f9a8)  

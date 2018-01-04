@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd6c3011b234f9d281a68a51fa8d9ef9d610816c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 111fc6e4945998c99e63560afab6104f4daf89e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-search-capabilities-to-a-listview-control"></a>方法 : ListView コントロールに検索機能を追加する
 内の項目の大規模な一覧を使用する場合に多くの場合、<xref:System.Windows.Forms.ListView>をユーザーに検索機能を提供するコントロール。 <xref:System.Windows.Forms.ListView>コントロールは、次の 2 つの異なる方法でこの機能を提供しています。 テキストに一致すると、場所を検索します。  
@@ -57,7 +58,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[System.Windows.Forms.ListViewFindItems#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewFindItems/CS/form1.cs#2)]
  [!code-vb[System.Windows.Forms.ListViewFindItems#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewFindItems/VB/form1.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ListView>  
  <xref:System.Windows.Forms.ListView.FindItemWithText%2A>  
  <xref:System.Windows.Forms.ListView.FindNearestItem%2A>  

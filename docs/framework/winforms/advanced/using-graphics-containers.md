@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 337057e10e03712aa93b00d9c687374e53f8dd03
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 244f8e8a280369798daf12f8a61519826f937a4a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-graphics-containers"></a>グラフィックス コンテナーの使用
 A<xref:System.Drawing.Graphics>オブジェクトなどのメソッドを提供<xref:System.Drawing.Graphics.DrawLine%2A>、 <xref:System.Drawing.Graphics.DrawImage%2A>、および<xref:System.Drawing.Graphics.DrawString%2A>ベクター イメージ、ラスター イメージおよびテキストを表示するためです。 A<xref:System.Drawing.Graphics>オブジェクトに品質と印刷の向きに描画される項目の影響を与えるいくつかのプロパティもあります。 たとえば、スムージング モード プロパティは、直線と曲線にアンチエイリアシングを適用し、位置と回転に描画される項目のワールド変換プロパティに影響を与えますかどうかを判断します。  

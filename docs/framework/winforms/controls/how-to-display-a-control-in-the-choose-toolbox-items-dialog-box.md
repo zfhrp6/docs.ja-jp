@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7bbb13e8a2b877d0f503e091b5bb8b1e7e89d00
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1323ffbd59a14d19d1161e0718fad083bcc37a89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-a-control-in-the-choose-toolbox-items-dialog-box"></a>方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する
 を作成およびコントロールを配置することがそれらのコントロールに表示される、**ツールボックス アイテムの選択**を右クリックしたときに表示されるダイアログ ボックスで、**ツールボックス**選択**項目を選択して**です。 AssemblyFoldersEx 登録手順を使用してこのダイアログ ボックスに表示するコントロールを有効にすることができます。  
@@ -32,11 +33,11 @@ ms.lasthandoff: 11/21/2017
   
 -   コントロール アセンブリをグローバル アセンブリ キャッシュにインストールします。 詳細については、次を参照してください[する方法: グローバル アセンブリ キャッシュにアセンブリをインストール。](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
   
-     または  
+     - または -  
   
 -   AssemblyFoldersEx 登録手順を使用して、コントロールとその関連付けられたデザイン時アセンブリを登録します。 AssemblyFoldersEx は、サード パーティ ベンダーがサポートされる framework の各バージョンのパスを格納する場所のレジストリの場所です。 デザイン時の解像度は、この参照アセンブリを検索するレジストリの場所で確認できます。 レジストリ スクリプトは、ツールボックスに表示するコントロールを指定できます。 詳細については、次を参照してください。[カスタム コントロールとデザイン時アセンブリ (Visual Studio 2013) の展開](http://msdn.microsoft.com/en-us/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [[ツールボックス アイテムの選択] ダイアログ ボックス (Visual Studio)](http://msdn.microsoft.com/en-us/bd07835f-18a8-433e-bccc-7141f65263bb)  
  [カスタム コントロールとデザイン時アセンブリ (Visual Studio 2013) の展開](http://msdn.microsoft.com/en-us/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)  
  [デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  

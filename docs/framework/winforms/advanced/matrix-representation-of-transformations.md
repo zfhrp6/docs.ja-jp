@@ -27,11 +27,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10babac22fd94bd00b14b7f861fe99469d3ecbda
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c68a79f2a40117a980cb6206b74d42f885874aa8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="matrix-representation-of-transformations"></a>変換の行列表現
 M × n マトリックスは、一連の数字が m 個の行と n 個の列に配置します。 次の図は、いくつかのマトリックスを示します。  
@@ -113,6 +114,6 @@ M × n マトリックスは、一連の数字が m 個の行と n 個の列に�
   
  ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art13.gif "AboutGdip05_art13")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
  [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

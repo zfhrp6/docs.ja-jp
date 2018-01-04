@@ -19,11 +19,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f107e4d1a9779c04a33060af34ee1fc873305eab
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c379cf39f30bf7e75907dba5fb06ba4e3862e299
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="understanding-protection-level"></a>保護レベルの理解
 `ProtectionLevel` プロパティは、<xref:System.ServiceModel.ServiceContractAttribute> クラス、<xref:System.ServiceModel.OperationContractAttribute> クラスなど、多くのクラスで使用されています。 このプロパティは、メッセージの一部または全体を保護する方法を制御します。 このトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] の機能と動作について説明します。  
@@ -104,7 +105,7 @@ ms.lasthandoff: 12/02/2017
   
  クライアントが `Price` メソッドを呼び出し、サービスから応答を受け取ると、例外をスローします。 例外をスローするのは、クライアントが `ProtectionLevel` で `ServiceContractAttribute` を指定していないため、<xref:System.Net.Security.ProtectionLevel.EncryptAndSign> メソッドを含むすべてのメソッドに既定値 (`Price`) を使用するからです。 ただし、保護レベルが <xref:System.Net.Security.ProtectionLevel.Sign> に設定された 1 つのメソッドがサービス コントラクトで定義されているため、サービスは、<xref:System.Net.Security.ProtectionLevel.Sign> レベルを使用して値を返します。 この場合、クライアントは、サービスからの応答を検証するときにエラーをスローします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
  <xref:System.ServiceModel.FaultContractAttribute>  

@@ -22,11 +22,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3ed5335108e010ed61d8a96e3169353133e9ddd0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 31c9495e22af0e06869d54f02d4ce0e866e28dbb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-play-a-sound-from-a-windows-form"></a>方法 : Windows フォームからサウンドを再生する
 この例では、実行時に指定されたパスでサウンドを再生します。  
@@ -74,7 +75,7 @@ private void playSimpleSound()
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  ファイル名からファイルの内容を判断しないでください。 たとえば、`Form1.vb` というファイルは Visual Basic のソース ファイルではない可能性もあります。 アプリケーションでデータを使用する前に、入力をすべて検証してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Media.SoundPlayer>  
  [方法: Windows フォーム内でサウンドを非同期的に読み込む](../../../../docs/framework/winforms/controls/how-to-load-a-sound-asynchronously-within-a-windows-form.md)  
  

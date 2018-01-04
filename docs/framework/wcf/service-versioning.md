@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 679a6a30e72e18547a04007c58c82d5f121893d0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 791e201907f72f9d590f6d835fd6ec1bfc25633f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-versioning"></a>サービスのバージョン管理
 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、サービス (およびサービスが公開するエンドポイント) を変更することが必要になる場合があります。 変更が発生するたびに、新しいバージョンのサービスが導入されます。 ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] でのバージョン管理の考え方について説明します。  
@@ -185,7 +186,7 @@ public class PurchaseOrderV2 : IPurchaseOrderV1, IPurchaseOrderV2
   
  `PurchaseOrderV2` の観点で作成された新しい操作を含めるために、サービス コントラクトが更新されます。 `IPurchaseOrderV1` の観点で作成された既存のビジネス ロジックは、`PurchaseOrderV2` で引き続き機能し、`OrderDate` プロパティを必要とする新しいビジネス ロジックが `IPurchaseOrderV2` の観点で作成されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A>  

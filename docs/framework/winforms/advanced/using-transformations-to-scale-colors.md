@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a4584b74cd7a394f7dd04d0cfba150b907ca7c82
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7515f34858ef6f4b0495ac6fc545ae498d45c7f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-transformations-to-scale-colors"></a>変換を使用した色のスケーリング
 拡大縮小変換は、番号で 4 つの色要素の 1 つ以上を乗算します。 拡大/縮小を表すカラー マトリックス エントリは、次の表で表されます。  
@@ -73,7 +74,7 @@ ms.lasthandoff: 11/21/2017
 |(1, 1, 0, 1)|(0.75, 0.65, 0, 1)|  
 |(1, 0, 1, 1)|(0.75, 0, 0.5, 1)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Imaging.ColorMatrix>  
  <xref:System.Drawing.Imaging.ImageAttributes>  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  

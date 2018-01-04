@@ -26,11 +26,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be89584ee8e7a82c405bf8664bfad18ced6d989a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 287b1c9eddef882041d9e4eac44a06190f3585a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="types-of-coordinate-systems"></a>座標系の種類
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]次の 3 つの座標空間を使用して: world、ページ、およびデバイス。 ワールド座標特定グラフィック世界をモデル化するために使用する座標、.NET Framework のメソッドに渡す座標。 ページ座標は、フォームやコントロールなどの描画サーフェイスで使用される座標系を参照してください。 デバイスの座標は、画面や枚の用紙など、描画されている物理デバイスで使用される座標です。 呼び出しを行うとき`myGraphics.DrawLine(myPen, 0, 0, 160, 80)`、渡された点、<xref:System.Drawing.Graphics.DrawLine%2A>メソッド —`(0, 0)`と`(160, 80)`— 世界の座標空間にします。 前に[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]画面に線を描画することができます、座標は、変換のシーケンスを通過します。 ワールド変換と呼ばれる 1 つの変換は、ページ座標にワールド座標を変換し、ページ変換と呼ばれる別の変換は、ページ座標をデバイス座標に変換します。  
@@ -104,6 +105,6 @@ ms.lasthandoff: 11/21/2017
 |ページ|(2, 0.5) に (4, 1.5)|  
 |デバイス|(192, 48) に (384, 144)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
  [変換の行列表現](../../../../docs/framework/winforms/advanced/matrix-representation-of-transformations.md)

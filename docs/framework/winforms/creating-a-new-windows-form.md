@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f373696f4d3a92f15ab7c8641e02303da4a54e6d
-ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.workload: dotnet
+ms.openlocfilehash: e5f2769921241216d60c3ed1bb25edcf238830d7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-new-windows-form"></a>新しい Windows フォームの作成
 このトピックでは、初めての Windows フォーム アプリケーションを作成する方法について説明したトピックへのリンクを示します。 また、このセクションのトピックでは、Windows フォーム アプリケーションを作成する際に理解しておくべき基本的な用語とガイドラインもいくつか紹介します。 Windows フォーム アプリケーションに関する詳細についてに、イベントとイベントの処理、および、ユーザーからの入力を処理する方法で使用できるコントロールは、関連するトピックの一覧を参照してください。  

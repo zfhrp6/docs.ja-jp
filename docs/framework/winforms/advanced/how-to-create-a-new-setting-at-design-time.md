@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3e8a05b6f37f7686f18a6200e009aabe7eed5537
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 04b86579f45c5a357f8759bf36ae41f7a5c6e98b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-new-setting-at-design-time"></a>方法 : 設計時に新しい設定を作成する
 デザイン時に、新しい設定を作成するには、設定デザイナーを使用します。 設定デザイナーは、グリッド スタイル インターフェイスを使用すると、新しい設定を作成し、それらの設定のプロパティを指定します。 名前、値、型、および、新しい設定のスコープを指定する必要があります。 設定が作成されるは、コード内でアクセスします。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
   
 3.  設定デザイナーでは、名前、値、型、およびスコープを設定を設定します。 各行は、1 つの設定を表します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーション設定とユーザー設定の使用](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
  [アプリケーション設定の概要](../../../../docs/framework/winforms/advanced/application-settings-overview.md)  
  [方法: 設計時に既存の設定の値を変更する](../../../../docs/framework/winforms/advanced/how-to-change-the-value-of-an-existing-setting-at-design-time.md)

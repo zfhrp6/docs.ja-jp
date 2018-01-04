@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c122931b0a00f487ddab07550913988462cfd50e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 74735afcb1d6be319ad5d497615a3b725a4d5574
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="multiple-document-interface-mdi-applications"></a>マルチ ドキュメント インターフェイス (MDI) アプリケーション
 マルチ ドキュメント インターフェイス (MDI) アプリケーションでは、独自のウィンドウに表示される各ドキュメントに、同時に複数のドキュメントを表示できます。 MDI アプリケーションには、多くの場合、ウィンドウまたはドキュメントを切り替えるためのサブメニューのあるウィンドウのメニュー項目があります。  

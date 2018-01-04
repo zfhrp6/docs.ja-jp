@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a98e57d325fc7fd9413babb45d235cbb353a0c86
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 088d9f1f76e88d8be838cbf7050601835eff216a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="column-sort-modes-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロール内の列の並べ替えモード
 <xref:System.Windows.Forms.DataGridView>列では、次の 3 つの並べ替えモードがあります。 各列の並べ替えモードを指定、 <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> 、次のいずれかに設定することができる列のプロパティ<xref:System.Windows.Forms.DataGridViewColumnSortMode>列挙値。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  <xref:System.Windows.Forms.DataGridView.SortCompare>イベントが発生しないときに、<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティが設定されて場合や、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティの値が`true`です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.Sort%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.DataGridView.SortedColumn%2A?displayProperty=nameWithType>  

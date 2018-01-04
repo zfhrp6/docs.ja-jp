@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0c674fec227e765213edfe2f2827543024cceac7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0d57bccb12bfa9b0b193967a5a2ce3830dd6ef7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="numericupdown-control-windows-forms"></a>NumericUpDown コントロール (Windows フォーム)
 Windows フォームの `NumericUpDown` コントロールの外観は、テキスト ボックスと、クリックして値を調整できる複数の矢印で構成されています。 コントロールでは、オプション リストから 1 つの数値を表示したり設定したりできます。 数値を増減するには、上下の矢印ボタンをクリックする、上下の方向キーを押す、数値を入力するのいずれかを実行します。 上方向キーを押すと値が最大値を上限に増加します。下方向キーを押すと最低値を下限に値が減少します。 このようなコントロールの使用例には、ミュージック プレーヤーのボリューム コントロールがあります。 数値を増減するコントロールは、Windows のコントロール パネルの一部のアプリケーションで使用されています。  

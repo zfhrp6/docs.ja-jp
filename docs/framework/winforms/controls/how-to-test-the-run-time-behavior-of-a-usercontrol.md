@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2ce4f821a7b964b3ed2e03c795346b47bb88d618
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9ccf386acd50338f1743bbf8f6be38b3267a7103
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>方法 : UserControl の実行時の動作をテストする
 開発する際に、<xref:System.Windows.Forms.UserControl>実行時の動作をテストする必要があります。 個別の Windows ベースのアプリケーション プロジェクトを作成し、テスト フォームにコントロールを配置することができますが、この手順は便利ではありません。 高速で簡単には、 **UserControl テスト コンテナー** Visual Studio が提供されます。 このテスト コンテナーは、Windows コントロール ライブラリ プロジェクトから直接起動します。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
 >  テスト コンテナーを読み込む、<xref:System.Windows.Forms.UserControl>コントロールは、少なくとも 1 つのパブリック コンス トラクターをいる必要があります。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 > [!NOTE]
 >  使用して Visual C のコントロールをテストすることはできません、 **UserControl テスト コンテナー**です。  
@@ -76,7 +77,7 @@ ms.lasthandoff: 11/21/2017
   
 6.  使用して、**ユーザー コントロールの選択**<xref:System.Windows.Forms.ComboBox>から 2 つのユーザー コントロールの間で切り替えるには、**ファイルを開く**プロジェクト。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.UserControl>  
  [方法: 複合コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)  
  [チュートリアル : Visual Basic による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  

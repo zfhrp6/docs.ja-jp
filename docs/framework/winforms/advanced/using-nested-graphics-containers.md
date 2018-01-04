@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10c5a1b077e4339f17093e5eb935416bb1ae3d1b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 512c8903611f025364a1af2cb6cbaaffc8d759eb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-nested-graphics-containers"></a>入れ子になっているグラフィックス コンテナーの使用
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]置換またはで状態の一部を強化を一時的に使用できるコンテナーを提供する<xref:System.Drawing.Graphics>オブジェクト。 呼び出して、コンテナーを作成した、<xref:System.Drawing.Graphics.BeginContainer%2A>のメソッド、<xref:System.Drawing.Graphics>オブジェクト。 呼び出すことができます<xref:System.Drawing.Graphics.BeginContainer%2A>繰り返しを入れ子になったコンテナーを形成します。 各呼び出し<xref:System.Drawing.Graphics.BeginContainer%2A>への呼び出しと組み合わせる必要がある<xref:System.Drawing.Graphics.EndContainer%2A>です。  
@@ -66,6 +67,6 @@ ms.lasthandoff: 11/21/2017
   
  ![コンテナーを入れ子になった](../../../../docs/framework/winforms/advanced/media/nestedcontainers3.png "nestedcontainers3")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Graphics>  
  [Graphics オブジェクトの状態の管理](../../../../docs/framework/winforms/advanced/managing-the-state-of-a-graphics-object.md)

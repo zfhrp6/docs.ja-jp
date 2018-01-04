@@ -20,11 +20,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 309429c2481bad3a8dff4708d9e2ea8a03057a4e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e12620a5079efaba4faa9101253a3a586965b7e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-validate-application-settings"></a>方法 : アプリケーション設定を検証する
 このトピックでは、アプリケーション設定を永続化する前に検証する方法について説明します。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/21/2017
   
  次の表に示すように、使用するイベントは設定をいつ検証する必要があるかによって決まります。  
   
-|イベント|発生と使用|  
+|event|発生と使用|  
 |-----------|------------------------|  
 |<xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>|設定プロパティ グループの初期読み込み後に発生します。<br /><br /> プロパティ グループ全体の初期値がアプリケーション内で使用される前に値を検証するには、このイベントを使用します。|  
 |<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>|1 つの設定プロパティの値が変更される前に発生します。<br /><br /> 1 つのプロパティが変更される前にプロパティを検証するには、このイベントを使用します。 アクションと選択に関するフィードバックをユーザーにすぐに提供できます。|  
@@ -68,11 +69,11 @@ ms.lasthandoff: 11/21/2017
         MySettings.Default   
         ```  
   
-         または  
+         - または -  
   
     -   Visual Basic 開発者がプロジェクト デザイナーを使用してアプリケーション設定を作成した場合は、[My.Settings オブジェクト](~/docs/visual-basic/language-reference/objects/my-settings-object.md)を使用して設定を取得できます。  
   
-         または  
+         - または -  
   
     -   派生することで、設定を作成する場合<xref:System.Configuration.ApplicationSettingsBase>直接、手動で、クラスのインスタンスを作成する必要があります。  
   
@@ -90,7 +91,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  C# 開発者は、フォームまたはコントロールのかどうかは`Load`イベント、イベント ハンドラーを追加、<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>イベント。  
   
-     または  
+     - または -  
   
      Visual Basic 開発者の場合、`WithEvents` キーワードを使用して `Settings` 変数を宣言します。  
   
@@ -170,6 +171,6 @@ ms.lasthandoff: 11/21/2017
     End Sub  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム内でのイベント ハンドラーの作成](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [方法: アプリケーション設定を作成する](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)

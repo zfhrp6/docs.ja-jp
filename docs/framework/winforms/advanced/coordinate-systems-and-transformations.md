@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b89453b427e6a9552416f95c488f0c2a575b5cb4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d44805021f0070109ce67f28126d59d36e4175f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="coordinate-systems-and-transformations"></a>座標系と変換
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]ワールド変換とページ変換を提供し、変換できるように (回転、拡大縮小、平行移動、およびなど) を描画する項目。 2 つの変換を使用して、さまざまな座標システムで動作することもできます。  

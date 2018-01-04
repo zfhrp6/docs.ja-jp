@@ -12,11 +12,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 912694eb07a5f95b42f3a0f0cf39f25db1313e69
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 94a3cb69e2e897e992a05a19325630ca9bb1ae3a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="modeling-cancellation-behavior-in-workflows"></a>ワークフローでの取り消し動作のモデル化
 アクティビティは、たとえば <xref:System.Activities.Statements.Parallel> アクティビティを使用して、ワークフロー内部で取り消すことができます。このアクティビティでは、<xref:System.Activities.Statements.Parallel.CompletionCondition%2A> の評価結果が `true` になると、完了していない分岐が取り消されます。また、ホストで <xref:System.Activities.WorkflowApplication.Cancel%2A> を呼び出すと、アクティビティをワークフロー外から取り消すこともできます。 取り消し処理を指定するには、ワークフローの作成者は、<xref:System.Activities.Statements.CancellationScope> アクティビティまたは <xref:System.Activities.Statements.CompensableActivity> アクティビティを使用するか、取り消しロジックを指定するカスタム アクティビティを作成します。 このトピックでは、ワークフローにおける取り消しの概要について説明します。  

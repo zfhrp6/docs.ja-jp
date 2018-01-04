@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 73ea6d3615780c8def31b7dbdcf870020a106e80
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e295e761f9ac0ec090bf950a67008d19cb350d75
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-reordering-of-toolstrip-items-at-run-time-in-windows-forms"></a>方法 : Windows フォーム内で実行時に ToolStrip 項目を並べ替えできるようにする
 再配置するユーザーを有効にすることができます<xref:System.Windows.Forms.ToolStripItem>コントロールに対して、<xref:System.Windows.Forms.ToolStrip>です。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 11/21/2017
     toolStrip1.AllowItemReorder = true;  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>  
  [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  

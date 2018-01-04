@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 65a9f5ca09fd93861df19af1ced86f7b74af93ed
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4147f00b9396609ae80091a02c3f7d2450db34f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trusted-facade-service"></a>信頼されたファサード サービス
 このシナリオのサンプルでは、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティ インフラストラクチャを使用して、呼び出し元の ID 情報をあるサービスから別のサービスにフローする方法を示します。  
@@ -301,4 +302,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

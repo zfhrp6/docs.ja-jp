@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ac0a04c506919ef807a3f8c5ed5aa75ee998f64a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 67befd973dec38628f97a0d3153c399d48c18305
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="radiobutton-control-overview-windows-forms"></a>RadioButton コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.RadioButton>コントロールがユーザーに 2 つ以上の相互に排他的な選択肢を表示します。 重要な違いがあるオプション ボタンおよびチェック ボックスは、類似した機能に見える場合があります、にもかかわらず: ユーザーは、オプション ボタンを選択するときは、同じグループ内の他のオプション ボタンをも選択することはできません。 これに対し、任意の数のチェック ボックスを選択することができます。 ラジオ ボタン グループの定義は、「ここでは 1 つだけを選択できる選択肢のセットです」  
@@ -33,7 +34,7 @@ Windows フォーム<xref:System.Windows.Forms.RadioButton>コントロールが
   
  <xref:System.Windows.Forms.RadioButton>がされている場合は選択すると、押されている場合に表示されるコマンド ボタンのように、コントロールの表示、<xref:System.Windows.Forms.RadioButton.Appearance%2A>プロパティに設定されている<xref:System.Windows.Forms.Appearance.Button>です。 オプション ボタンを使用してイメージを表示も、<xref:System.Windows.Forms.ButtonBase.Image%2A>と<xref:System.Windows.Forms.ButtonBase.ImageList%2A>プロパティです。 詳細については、次を参照してください。[する方法: Windows フォーム コントロールによってイメージの表示設定](../../../../docs/framework/winforms/controls/how-to-set-the-image-displayed-by-a-windows-forms-control.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.RadioButton>  
  [Panel コントロールの概要](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  
  [GroupBox コントロールの概要](../../../../docs/framework/winforms/controls/groupbox-control-overview-windows-forms.md)  

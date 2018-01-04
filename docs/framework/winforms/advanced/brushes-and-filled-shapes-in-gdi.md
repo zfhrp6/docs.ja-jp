@@ -24,11 +24,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 01d7359499c858ad7c4f1da2fa24f18e801bb324
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 89f0a7c86a83222030d9b50e20228f32e85ce730
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="brushes-and-filled-shapes-in-gdi"></a>GDI+ でのブラシと塗りつぶされた図形
 四角形や楕円など、閉じた図形は、概要と、内部で構成されます。 ペンを使用して、アウトラインが描画され、内部はブラシと塗りつぶされます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]閉じた図形の内部を塗りつぶすときのいくつかのブラシ クラスを提供します。 <xref:System.Drawing.SolidBrush>、 <xref:System.Drawing.Drawing2D.HatchBrush>、 <xref:System.Drawing.TextureBrush>、 <xref:System.Drawing.Drawing2D.LinearGradientBrush>、および<xref:System.Drawing.Drawing2D.PathGradientBrush>です。 継承するすべてのクラス、<xref:System.Drawing.Brush>クラスです。 次の図は、四角形とソリッド ブラシ、ハッチ ブラシを使用して塗りつぶした楕円を示します。  
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
   
  ![図形の入力](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art23.gif "AboutGdip02_Art23")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.SolidBrush?displayProperty=nameWithType>  
  <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=nameWithType>  
  <xref:System.Drawing.TextureBrush?displayProperty=nameWithType>  

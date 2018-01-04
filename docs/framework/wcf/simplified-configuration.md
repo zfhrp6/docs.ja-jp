@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2e9d851d083f0b3a1bd00bafe5b0805a55635158
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3ff1dee5a57b0c134c25631ce5c694b1b6b2c006
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="simplified-configuration"></a>簡略化された構成
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスの構成は複雑な作業になることがあります。 さまざまなオプションがあり、どの設定が必要であるかをいつでも簡単に判断できるとは限りません。 構成ファイルを使用することで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの柔軟性は高まりますが、構成ファイルは、発見しにくい問題の多くの根源でもあります。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] では、このような問題に対応し、サービス構成の規模と複雑さを軽減する手段を提供しています。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 12/02/2017
 </system.serviceModel>  
 ```  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] では、&lt;[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]&gt; 要素の要件を廃止することで、`service` サービスの構成を簡略化しています。 <`service`> セクションを追加したり、<`service`> セクションにエンドポイントを追加したりせず、サービスがプログラムを使用してエンドポイントを定義しない場合は、一連の既定のエンドポイントが自動的にサービスに追加されます。この場合、各サービスのベース アドレスに対して 1 つ、サービスによって実装される各コントラクトに対して 1 つのエンドポイントが追加されます。 これらの各エンドポイントでは、エンドポイント アドレスがベース アドレスに対応し、バインドがベース アドレス スキームで決定されます。また、コントラクトは、サービスによって実装されるコントラクトになります。 エンドポイントまたはサービスの動作を指定する必要も、バインド設定を変更する必要もない場合、サービス構成ファイルを指定する必要はありません。 サービスが 2 つのコントラクトを実装し、ホストが HTTP トランスポートと TCP トランスポートの両方を有効にしている場合、サービス ホストは、それぞれのトランスポートを使用する各コントラクトに対して 1 つずつ、合計 4 つの既定のエンドポイントを作成します。 既定のエンドポイントを作成するには、使用するバインドをサービス ホストに伝える必要があります。 これらの設定は、<`protocolMappings`> セクション内の <`system.serviceModel`> セクションに指定します。 <`protocolMappings`> セクションには、バインドの型にマップされたトランスポート プロトコル スキームの一覧が設定されます。 サービス ホストは、渡されたベース アドレスを使用して、使用するバインドを決定します。 次の例では、<`protocolMappings`> 要素を使用しています。  
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] では、<[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]> 要素の要件を廃止することで、`service` サービスの構成を簡略化しています。 <`service`> セクションを追加したり、<`service`> セクションにエンドポイントを追加したりせず、サービスがプログラムを使用してエンドポイントを定義しない場合は、一連の既定のエンドポイントが自動的にサービスに追加されます。この場合、各サービスのベース アドレスに対して 1 つ、サービスによって実装される各コントラクトに対して 1 つのエンドポイントが追加されます。 これらの各エンドポイントでは、エンドポイント アドレスがベース アドレスに対応し、バインドがベース アドレス スキームで決定されます。また、コントラクトは、サービスによって実装されるコントラクトになります。 エンドポイントまたはサービスの動作を指定する必要も、バインド設定を変更する必要もない場合、サービス構成ファイルを指定する必要はありません。 サービスが 2 つのコントラクトを実装し、ホストが HTTP トランスポートと TCP トランスポートの両方を有効にしている場合、サービス ホストは、それぞれのトランスポートを使用する各コントラクトに対して 1 つずつ、合計 4 つの既定のエンドポイントを作成します。 既定のエンドポイントを作成するには、使用するバインドをサービス ホストに伝える必要があります。 これらの設定は、<`protocolMappings`> セクション内の <`system.serviceModel`> セクションに指定します。 <`protocolMappings`> セクションには、バインドの型にマップされたトランスポート プロトコル スキームの一覧が設定されます。 サービス ホストは、渡されたベース アドレスを使用して、使用するバインドを決定します。 次の例では、<`protocolMappings`> 要素を使用しています。  
   
 > [!WARNING]
 >  バインディングまたは動作のような既定の構成要素を変更すると、構成階層の下のレベルで定義されたサービスはこれらの既定のバインディングおよび動作を使用している可能性があるため、影響を受けることがあります。 したがって、既定のバインディングおよび動作を変更する場合は、これらの変更が階層の他のサービスに影響を与える可能性があることに注意する必要があります。  
@@ -120,10 +121,10 @@ ms.lasthandoff: 12/02/2017
 > [!IMPORTANT]
 >  この機能は、WCF サービス構成にのみ適用され、クライアント構成には適用されません。 ほとんどの場合、WCF クライアント構成は、svcutil.exe などのツールを使用したり、Visual Studio からサービス参照を追加したりすることで生成されます。 WCF クライアントを手動で構成している場合は、追加する必要があります、\<クライアント > 要素を構成し、呼び出すエンドポイントを指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構成ファイルを使用してサービスを構成する方法](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
  [サービスのバインディングの構成](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)  
- [システム指定のバインディングを構成します。](../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [システムが提供するバインディングの構成](../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  [サービスの構成](../../../docs/framework/wcf/configuring-services.md)  
  [Windows Communication Foundation アプリケーションの構成](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
  [コード内での WCF サービスの構成](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)

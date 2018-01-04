@@ -12,17 +12,18 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6f544a92aa0e8df154ba5e165ce9a940b6120950
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 532dc0a0ab765a90facd2fb8eae14a221dd3fe79
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="designer"></a>Designer
 このセクションには、[!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]を使用する方法を示すサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [XAML ファイルを追加、デザイナーのビューステートを削除します。](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md)  
+ [デザイナーによって XAML ファイルに追加されるビューステートの削除](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md)  
  <xref:System.Windows.Markup.XamlWriter> から派生し、XAML ファイルからビューステートを削除するクラスを作成する方法を示します。  
   
  [モデル アイテム ツリーのプログラミング](../../../../docs/framework/windows-workflow-foundation/samples/programming-model-item-tree.md)  

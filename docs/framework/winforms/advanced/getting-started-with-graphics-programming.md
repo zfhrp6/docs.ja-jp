@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ca9f439dbb4f95a05886c822cd6436793acab6a9
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 15bcd9295ba825b156668152b3f1addf538aa884
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-graphics-programming"></a>グラフィックス プログラミングについて
 このセクションを使用して作業を開始する方法を示しています。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Windows フォーム アプリケーションでします。 次のトピックをいくつかを完了する方法について説明[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]を描画し、図形やテキストの入力などのタスクです。  

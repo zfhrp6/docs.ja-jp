@@ -15,11 +15,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e4602796a1a7740adb9a352d0a21fb6c2a58959d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 32d8829e7303ce23a22d0a01f2428a889ce4ae0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="splitter-control-overview-windows-forms"></a>Splitter コントロールの概要 (Windows フォーム)
 > [!IMPORTANT]
@@ -30,7 +31,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="working-with-the-splitter-control"></a>Splitter コントロールの操作  
  ユーザーは、分割コントロールがサイズを変更できるコントロールのドッキングが解除されたエッジにマウス ポインターをポイント、ポインターは、コントロールのサイズを変更できることを示すために、外観を変更します。 分割コントロールが、ユーザーがすぐ前にあるドッキングされたコントロールをサイズ変更できます。 そのため、実行時にドッキングされたコントロールのサイズを変更するユーザーを有効にするには、コントロールをコンテナーの端をサイズ変更を分割コントロールをそのコンテナーの同じ側にドッキングできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.SplitContainer>  
  [方法: Windows フォーム上のコントロールをドッキングする](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

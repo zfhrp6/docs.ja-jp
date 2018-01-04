@@ -12,11 +12,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d877c147a19635782b652d96031644b3be42448a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ac05054d56c424ab3f4d1fdfd9c3590aac8b00bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wait-for-input-activity"></a>入力アクティビティの待機
 このサンプルでは、ワークフローに名前付きブックマークを作成する方法を示します。 [!INCLUDE[wf](../../../../includes/wf-md.md)] には、宣言型ブックマークを作成するアクティビティは用意されていません。 そのため、ワークフローにブックマークを作成する場合は、ブックマークを作成するカスタム アクティビティを記述する必要があります。 このサンプルで定義される `WaitForInput` アクティビティはこの機能を提供します。そのため、ユーザーはワークフロー内で宣言によってブックマークを作成できます。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 12/02/2017
   
  このアクティビティには、デザイナーをバインドするための属性、更新可能なジェネリック引数機能を追加するための属性、および既定のジェネリック型を文字列に設定するための属性が割り当てられます。 また、このアクティビティには、次の表に示す引数があります。  
   
-|**名前**|**Type**|**説明**|  
+|**Name**|**Type**|**説明**|  
 |-|-|-|  
 |TResult|ジェネリック引数 (TResult)|ブックマークの型。 これは再開時にブックマークに渡されるデータの型です。|  
 |BookmarkName|InArgument\<文字列 >|ブックマークの名前。|  

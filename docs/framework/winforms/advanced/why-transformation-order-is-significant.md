@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8b170c9247b2415c724c1306a4c21d067c823b4c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cd3363a1afb8658ed3bb27359259cb752464507d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="why-transformation-order-is-significant"></a>変換順序が重要となる理由
 1 つ<xref:System.Drawing.Drawing2D.Matrix>オブジェクトは、単一の変換または変換のシーケンスを格納できます。 後者を複合変換と呼びます。 複合変換のマトリックスは、個々 の変換行列を乗算することによって取得されます。  
@@ -48,7 +49,7 @@ ms.lasthandoff: 11/21/2017
   
  直前の例の結果は、このトピックの最初の例の結果と同じです。 これは、メソッド呼び出しの順序と行列乗算の順序の両方は元に戻すためにです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Drawing2D.Matrix>  
  [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
  [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 52cead578ad03052b5734c5b7a5b5a897dd48732
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8cc06a81c879e6ebd50c4eb6a70590c28cc43f6e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="b233zier-splines-in-gdi"></a>B &#233; ベジエ スプライン GDI + で
 ベジエ スプラインは、4 つのポイントで指定された曲線: 次の 2 つの終点 (p1 と p2) と 2 つの制御ポイント (c1 と c2)。 曲線では、p1 で開始され、p2 で終了します。 コントロール ポイントを曲線が通過しませんが、管理ポイントが磁石、特定の方向に曲線をプルし、曲線曲がる方法に影響を与えるとして機能します。 次の図は、およびそのエンドポイントとの制御点のベジエ曲線を示します。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
  ![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art13.gif "Aboutgdip02_art13")  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
  <xref:System.Drawing.Pen?displayProperty=nameWithType>  
  [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  

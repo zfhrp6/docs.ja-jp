@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50bd1492c4e2e8941a77f344c04414a763390e89
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 63641f7a99b7c567e871d6a67dd72380f0c077ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>トランスポート : WSE 3.0 TCP 相互運用性
 WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、TCP 二重セッションを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] カスタム トランスポートとして実装する方法を示します。 さらに、チャネル レイヤーの拡張機能を使用して、ネットワーク経由で既存の配置システムと連結する方法も示します。 この [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] カスタム トランスポートを作成する方法を、次の手順に示します。  
@@ -101,8 +102,8 @@ WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、TCP 二�
   
  新しいソケットが受け入れられると、サーバー チャネルがこのソケットで初期化されます。 すべての入出力は既に基本クラスに実装されているので、このチャネルでソケットの初期化に対応します。  
   
-## <a name="adding-a-binding-element"></a>バインディング要素の追加  
- ファクトリおよびチャネルを作成したら、バインディングを使用してそれらを ServiceModel ランタイムに開示する必要があります。 バインディングは、サービス アドレスに関連する通信スタックを表すバインディング要素のコレクションです。 スタックの各要素は、バインディング要素によって表されます。  
+## <a name="adding-a-binding-element"></a>バインド要素の追加  
+ ファクトリおよびチャネルを作成したら、バインディングを使用してそれらを ServiceModel ランタイムに開示する必要があります。 バインディングは、サービス アドレスに関連する通信スタックを表すバインド要素のコレクションです。 スタックの各要素は、バインディング要素によって表されます。  
   
  このサンプルでは、バインディング要素は `WseTcpTransportBindingElement` で、<xref:System.ServiceModel.Channels.TransportBindingElement> から派生しています。 <xref:System.ServiceModel.Channels.IDuplexSessionChannel> がサポートされており、次のメソッドをオーバーライドして、バインディングに関連したファクトリを作成します。  
   
@@ -205,4 +206,4 @@ Symbols:
   
     8.  TCP トランスポートのテスト クライアントが、新しいコンソールで開始します。 クライアントはサービスに株価情報を要求し、その結果がコンソール ウィンドウに表示されます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照

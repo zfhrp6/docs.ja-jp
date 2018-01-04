@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b5709f07edc90b9094561870d31fbe28697974ac
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6f590080d1a3898e84df30f0fb690c3d18905f8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="arranging-controls-on-windows-forms"></a>Windows フォームでのコントロールの配置
 さまざまな方法でフォームにコントロールを配置したり、フォームのコントロールを操作したりすることで、ユーザーが直観的に操作できる機能的なユーザー インターフェイスを構築できます。  
@@ -63,7 +64,7 @@ ms.lasthandoff: 10/18/2017
  [方法 : 既存のコントロールを別の親に再配置する](../../../../docs/framework/winforms/controls/how-to-reassign-existing-controls-to-a-different-parent.md)  
  新しい親コンテナーに既存のコントロールを割り当てる方法について説明します。  
   
- [チュートリアル: Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)  
+ [チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)  
  使用して、フォーム上のコントロールを配置する方法について説明します、 <xref:System.Windows.Forms.Control.Margin%2A>、 <xref:System.Windows.Forms.Control.Padding%2A>、および<xref:System.Windows.Forms.Control.AutoSize%2A>内のプロパティ、**フォーム デザイナー**です。  
   
  [チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  

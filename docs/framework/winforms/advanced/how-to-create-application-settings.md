@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 481239b472ced5ef6251b665dad16e83a170607d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6d0ede88d8f9b4c15cd3e0f141870b9a5e747aa9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-application-settings"></a>方法 : アプリケーション設定を作成する
 マネージ コードを使用することにより、新しいアプリケーション設定を作成し、フォームまたはフォームのコントロールのプロパティにバインドして、これらの設定が実行時に自動的に読み込まれて保存されるようにすることができます。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  既定の設定プロバイダーの <xref:System.Configuration.LocalFileSettingsProvider> は、情報をプレーン テキストとして構成ファイルに保存します。 これにより、セキュリティがオペレーティング システムが現在のユーザーに対して提供するファイル アクセスのセキュリティに制限されます。 このため、構成ファイルに保存される情報に注意する必要があります。 たとえば、アプリケーション設定の一般的な用途の 1 つとして、アプリケーションのデータ ストアをポイントする接続文字列を格納します。 ただし、セキュリティの問題があるため、このような文字列にパスワードは含まれません。 接続文字列の詳細については、「<xref:System.Configuration.SpecialSetting>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Configuration.SpecialSettingAttribute>  
  <xref:System.Configuration.LocalFileSettingsProvider>  
  [アプリケーション設定の概要](../../../../docs/framework/winforms/advanced/application-settings-overview.md)  

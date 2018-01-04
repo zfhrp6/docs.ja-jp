@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5a1c4ab7c2ee6f7164b6158dcb4ca4721be12650
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6a84a68f9082d00559938c2710b6574690fa6ab4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-gradient-brush-to-fill-shapes"></a>グラデーション ブラシを使用した図形の塗りつぶし
 グラデーション ブラシを使用して、図形を塗りつぶす色が徐々 に変化させることができます。 たとえば、色、形状の左端から右端に移動する段階的に変化するように図形を塗りつぶすに水平方向のグラデーションを使用できます。 黒を左の端で四角形を想像してください (0, 0, 0 は、赤、緑、および青のコンポーネントによって表されます)、右端が赤 (255, 0, 0) とします。 四角形が 256 ピクセルである場合は、いずれかの左側にあるピクセルの赤の要素より大きい値を特定のピクセルの赤の要素になります。 行の左端のピクセルの色要素 (0, 0, 0)、2 番目のピクセルが (1, 0, 0)、3 番目のピクセルが (2, 0, 0)、し、右端のピクセルの色要素 (255, 0, 0) に達するまでします。 これらの色の補間値は、色のグラデーションを構成します。  
