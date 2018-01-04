@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 46da785535bef3443a1b917a5fb997e8e6ef3fa8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6ce57a4130c19ffd040bc9fbeba5e775a751efdb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrtaskneedspriorityscheduling-method"></a>ICLRTask::NeedsPriorityScheduling メソッド
 再スケジュールの優先度の高いとしてマークするには、スイッチ アウトされる、現在のタスクが必要かどうかを示す値を取得します。  
@@ -56,7 +57,7 @@ HRESULT NeedsPriorityScheduling (
 ## <a name="remarks"></a>コメント  
  CLR がの値を設定するタスクがガベージ コレクターによって収集されるに近い場合は、`pbNeedsPriorityScheduling`に`true`、優先度の高い再スケジューリングを示すです。 これにより、これにより、ガベージ コレクションで遅延が発生する可能性を最小限に抑えると連携して、メモリ リソースを節約するには、ホストと、ランタイムを有効にすると、タスクを迅速に再スケジュールするホストできます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -65,7 +66,7 @@ HRESULT NeedsPriorityScheduling (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
  [IHostTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  

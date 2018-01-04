@@ -22,11 +22,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9d50c9c4e4bb102e94c5a5302576f623a8e04ed5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ffd3eb58a471e5685b34aaae634f6d200375b0eb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cleardownloadcache-function"></a>ClearDownloadCache 関数
 ダウンロードされたアセンブリのグローバル アセンブリ キャッシュをクリアします。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
 HRESULT ClearDownloadCache ();  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Fusion.h  
@@ -46,6 +47,6 @@ HRESULT ClearDownloadCache ();
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Fusion グローバル静的関数](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
  [グローバル アセンブリ キャッシュ](../../../../docs/framework/app-domains/gac.md)

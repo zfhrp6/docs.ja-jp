@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e4e791bdc41707133fb787a511a39d3ec3d7453a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e26377fe3c5cfbae68f90087e3fb624ae4db0dc8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corprffunctionargumentinfo-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO 構造体
 関数の引数を左から右方向で表します。  
@@ -53,7 +54,7 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
  レジスタに格納されている引数は、構造を構築するためのメモリに書き込まれました。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorProf.idl  
@@ -62,5 +63,5 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構造体のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

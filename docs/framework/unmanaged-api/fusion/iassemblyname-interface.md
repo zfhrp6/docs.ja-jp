@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1d11889ab9db408b6e703bbaec17fd0487f142a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 902ad9f67d06306e79666f0e10d85bdb9c65c377
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iassemblyname-interface"></a>IAssemblyName インターフェイス
 記述するおよびアセンブリの一意の id を使用するメソッドを提供します。  
@@ -41,13 +42,13 @@ ms.lasthandoff: 11/21/2017
 |[IsEqual メソッド](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md)|指定したかどうかを決定`IAssemblyName`オブジェクトがこの`IAssemblyName`指定した比較フラグに基づいて、します。|  
 |[SetProperty メソッド](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-setproperty-method.md)|指定したによって参照されるプロパティの値を設定`PropertyId`です。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Fusion.h  
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Fusion インターフェイス](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
  [IAssemblyEnum インターフェイス](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)

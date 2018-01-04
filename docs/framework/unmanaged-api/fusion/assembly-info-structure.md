@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d532bbd2d338f942c09c4213620468a3361db5f6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 215d80c3d207c2f50cfbd74386915b0467692b57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblyinfo-structure"></a>ASSEMBLY_INFO 構造体
 グローバル アセンブリ キャッシュに登録されているアセンブリに関する情報が含まれています。  
@@ -50,13 +51,13 @@ typedef struct _ASSEMBLY_INFO {
 |`pszCurrentAssemblyPathBuf`|マニフェスト ファイルに、現在のパスを格納する文字列バッファーへのポインター。 パスの末尾に null 文字を使用する必要があります。|  
 |`cchBuf`|ワイド文字で、null 終端文字の数を`pszCurrentAssemblyPathBuf`が含まれています。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Fusion.h  
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Fusion 構造体](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
  [グローバル アセンブリ キャッシュ](../../../../docs/framework/app-domains/gac.md)

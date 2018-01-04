@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2c285a42bb48970756a54d5313d2839c76a9835c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6183014bf5487d0eebccf2fb70a13c363212046b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilercallbackmoduleattachedtoassembly-method"></a>ICorProfilerCallback::ModuleAttachedToAssembly メソッド
 モジュールが、親アセンブリにアタッチされていることをプロファイラーに通知します。  
@@ -48,7 +49,7 @@ HRESULT ModuleAttachedToAssembly(
 ## <a name="remarks"></a>コメント  
  呼び出すことによってインポート アドレス テーブル (IAT) を通じて、モジュールを読み込むことができる`LoadLibrary`、またはメタデータの参照を使用します。 その結果、共通言語ランタイム (CLR) ローダーでは、モジュールが住んでいるアセンブリを判断するための複数のコード パスがあります。 したがって、可能であれば後に[icorprofilercallback::moduleloadfinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)が呼び出されると、モジュールには、どのようなアセンブリはわからない内にあるし、親アセンブリ ID を取得することはできません。 `ModuleAttachedToAssembly`モジュールが、親アセンブリとその親アセンブリの ID を取得できるに関連付けられている場合、メソッドが呼び出されます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
@@ -57,5 +58,5 @@ HRESULT ModuleAttachedToAssembly(
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

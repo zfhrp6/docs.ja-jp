@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fd156aac23cdca446bcf2666ce36e91fef6d5392
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b3047a473f36762ec57ae4ea87067e941ac568c4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorruntimehostmapfile-method"></a>ICorRuntimeHost::MapFile メソッド
 メモリに指定されたファイルをマップします。 このメソッドは、互換性のために残されています。  
@@ -46,7 +47,7 @@ HRESULT MapFile(
  `hMapAddress`  
  [out]ファイルのマッピングを開始する開始メモリ アドレス。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -55,5 +56,5 @@ HRESULT MapFile(
   
  **.NET framework のバージョン:** 1.0、1.1  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICorRuntimeHost インターフェイス](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

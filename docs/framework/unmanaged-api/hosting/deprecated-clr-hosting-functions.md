@@ -18,11 +18,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9530fecb4f2ca6f59d165e49c282320966fd2fa8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 985425ad44003f5971b21f107fad322f2123f6ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deprecated-clr-hosting-functions"></a>サポートされなくなった CLR ホスト関数
 このセクションでは、以前のバージョンのホスト API で使用されていたアンマネージ グローバル静的関数について説明します。  
@@ -166,5 +167,5 @@ ms.lasthandoff: 10/18/2017
  [_CorValidateImage 関数](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md)  
  マネージ モジュール イメージを検証し、それらが読み込まれると、オペレーティング システム ローダーに通知します。  
   
-## <a name="see-also"></a>関連項目  
- [.NET framework 4 ホスト グローバル静的関数](../../../../docs/framework/unmanaged-api/hosting/net-framework-4-hosting-global-static-functions.md) 
+## <a name="see-also"></a>参照  
+ [.NET Framework 4 ホスト グローバル静的関数](../../../../docs/framework/unmanaged-api/hosting/net-framework-4-hosting-global-static-functions.md) 

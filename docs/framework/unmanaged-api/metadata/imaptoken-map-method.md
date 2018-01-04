@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2e3a9701bab27764803442a3cd0c24c4e412deaf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: fe034d2bc6d70e820fa3ad5de8140afa9a19a6bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map メソッド
 メタデータ署名を使用してアセンブリ間の関係をマップします。  
@@ -49,7 +50,7 @@ HRESULT Map (
 ## <a name="remarks"></a>コメント  
  トークンの再マップ発生すると、マージ中には、元のトークンがインポートされた (ソース) のメタデータ スコープ内スコープが設定され、新しいトークンが生成された (ターゲット) のメタデータ スコープにスコープが設定します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
@@ -58,5 +59,5 @@ HRESULT Map (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IMapToken インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)

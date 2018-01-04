@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 48a86317774a3ebba4ed600b880110a7adaa02a7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9af89f355916f01fad118a4b63b57b23b2671f54
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugthreadgetuserstate-method"></a>ICorDebugThread::GetUserState メソッド
 この ICorDebugThread の現在のユーザー状態を取得します。  
@@ -45,7 +46,7 @@ HRESULT GetUserState (
 ## <a name="remarks"></a>コメント  
  スレッドのユーザーの状態は、デバッグ中は、プログラムによってチェックするときのスレッドの状態です。 スレッドは、複数の状態ビットが設定があります。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  

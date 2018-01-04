@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5144cd3ac261647c04ec7e3e27e28618c94fb439
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 366110eca3c4621866213b2c9fc4bcf99103d0a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="correftodefcheck-enumeration"></a>CorRefToDefCheck 列挙型
 コードを最適化するために定義に変換される、参照先アイテムを制御するフラグを指定します。  
@@ -50,12 +51,12 @@ typedef enum CorRefToDefCheck {
 |`MDTypeRefToDef`|型参照のみが型定義に変換されることを指定します。|  
 |`MDMemberRefToDef`|メンバーの参照だけが定義に変換されることを指定します。 つまり、メンバー参照は、メソッドの定義またはフィールドの定義のいずれかに変換する必要があります。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorHdr.h  
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [メタデータ列挙体](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>参照  
+ [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

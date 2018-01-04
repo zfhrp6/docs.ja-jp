@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6894d15221b8ace12e76b8eba4ac69503eaa792d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8b29f19933ae985d15627d1eba2622f350a52e72
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostassemblystoreprovidemodule-method"></a>IHostAssemblyStore::ProvideModule メソッド
 アセンブリとリンク (ではありません、埋め込み) 内のモジュール リソース ファイルを解決します。  
@@ -70,7 +71,7 @@ HRESULT ProvideModule (
 ## <a name="remarks"></a>コメント  
  Id 値が返される`pdwModuleId`ホストによって指定します。 識別子は、プロセスの有効期間内で一意である必要があります。 CLR は、この値を関連付けられているストリームの一意識別子として使用します。 値に対して各値をチェック`pAssemblyId`への呼び出しによって返される[ProvideAssembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md)の値に対して`pdwModuleId`を他の呼び出しによって返される`ProvideModule`です。 別のホストが同じ識別子の値を返す場合`IStream`CLR では、そのストリームの内容が既にマップされているかどうかを確認します。 場合は、CLR は、新しいものをマップする代わりにイメージの既存のコピーを読み込みます。 したがって、識別子も重複していないから返されたアセンブリ識別子を持つ`ProvideAssembly`します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -79,7 +80,7 @@ HRESULT ProvideModule (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRAssemblyReferenceList インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  
  [IHostAssemblyManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
  [IHostAssemblyStore インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)

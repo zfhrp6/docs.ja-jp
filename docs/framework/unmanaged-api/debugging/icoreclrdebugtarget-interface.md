@@ -22,11 +22,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e13355078727a55c950bed795d3b01b6c7d52564
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 62d43121efbc039b8fad0b78bed7ec4a655efabb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icoreclrdebugtarget-interface"></a>ICoreClrDebugTarget インターフェイス
 参照カウントを制御し、プロセスを列挙し、Macintosh Silverlight にリモート ターゲットに接続されているデバッガーに関連付けられているメモリを解放するメソッドを提供します。  
@@ -56,14 +57,14 @@ class ICoreClrDebugTarget {
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[Icoreclrdebugtarget::enumprocesses メソッド](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md)|リモート コンピューターで実行されているプロセスを列挙します。|  
-|[Icoreclrdebugtarget::enumruntimes メソッド](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md)|リモート コンピューターで、指定されたプロセスでは、共通言語ランタイム (Clr) を列挙します。|  
-|[Icoreclrdebugtarget::freememory メソッド](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md)|このクラスの列挙体のメソッドによって割り当てられたメモリを解放します。|  
+|[ICoreClrDebugTarget::EnumProcesses メソッド](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md)|リモート コンピューターで実行されているプロセスを列挙します。|  
+|[ICoreClrDebugTarget::EnumRuntimes メソッド](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md)|リモート コンピューターで、指定されたプロセスでは、共通言語ランタイム (Clr) を列挙します。|  
+|[ICoreClrDebugTarget::FreeMemory メソッド](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md)|このクラスの列挙体のメソッドによって割り当てられたメモリを解放します。|  
   
 ## <a name="remarks"></a>コメント  
  現在、この機能はサポートされてのみリモート Macintosh コンピューターで実行されている Silverlight ベースのアプリケーションのターゲットをデバッグします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CoreClrRemoteDebuggingInterfaces.h  
@@ -72,8 +73,8 @@ class ICoreClrDebugTarget {
   
  **.NET framework のバージョン:** 3.5 SP1  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICorDebugRemoteTarget インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
  [ICorDebug インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
     
- [デバッグのインターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

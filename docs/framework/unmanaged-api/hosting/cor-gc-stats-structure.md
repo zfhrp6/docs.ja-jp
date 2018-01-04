@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e7c620c4a33032711abc0d7b82af908018bd44cf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 02a775be4976760b354a492e7252a67ef04eace9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corgcstats-structure"></a>COR_GC_STATS 構造体
 共通言語ランタイム (CLR) のガベージ コレクションのメカニズムについての統計情報を提供します。  
@@ -79,7 +80,7 @@ GCStats.Flags = COR_GC_COUNTS | COR_GC_MEMORYUSAGE;
 pCLRGCManager->GetStats(&GCStats);  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** GCHost.idl  
@@ -88,7 +89,7 @@ pCLRGCManager->GetStats(&GCStats);
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ホスト構造体](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
  [自動メモリ管理](../../../../docs/standard/automatic-memory-management.md)  
  [ガベージ コレクション](../../../../docs/standard/garbage-collection/index.md)

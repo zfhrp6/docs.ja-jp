@@ -17,17 +17,18 @@ ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a7069762dd95636399c53c98e8bdef6f00be62c1
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 9836d8d02bb81fc19a5b3a1714e32fcefeb8791d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unmanaged-api-reference"></a>アンマネージ API リファレンス
 このセクションには、ランタイム ホスト、コンパイラ、逆アセンブラー、難読化ツール、デバッガー、プロファイラーなど、マネージ コード関連のアプリケーションが使用できるアンマネージ API に関する情報が含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [一般的なデータ型](../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)  
+ [共有のデータ型](../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)  
  特にアンマネージ プロファイリング API とデバッギング API で使用される一般的なデータ型を示します。  
   
  [ALink](../../../docs/framework/unmanaged-api/alink/index.md)  
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/15/2017
  [WMI およびパフォーマンス カウンター](wmi/index.md)  
  Windows Management Instrumentation (WMI) のライブラリへの呼び出しをラップする Api について説明します。
   
- [Tlbexp ヘルパー関数します。](../../../docs/framework/unmanaged-api/tlbexp/index.md)  
+ [Tlbexp ヘルパー関数](../../../docs/framework/unmanaged-api/tlbexp/index.md)  
  タイプ ライブラリ エクスポーター (Tlbexp.exe) がアセンブリからタイプ ライブラリへの変換プロセス中に使用する、2 つのヘルパー関数とインターフェイスについて説明します。  
   
 ## <a name="related-sections"></a>関連項目  

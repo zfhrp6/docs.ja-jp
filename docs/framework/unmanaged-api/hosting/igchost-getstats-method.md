@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6c8db4f854b73d04e7260457c978a7a644677559
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8d105b0aed9c47d5e2d8ad664744e6424db63961
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="igchostgetstats-method"></a>IGCHost::GetStats メソッド
 ガベージ コレクション システムの現在の状態の統計情報を取得します。  
@@ -45,7 +46,7 @@ HRESULT GetStats (
 ## <a name="remarks"></a>コメント  
  統計は、スマート割り当てシステムによってガベージ コレクション システムの動作をするために使用できます。 たとえば、割り当てシステム可能性がありますを判断より多くのメモリを追加またはコレクションを強制的に必要な統計情報を確認した後。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** GCHost.idl、GCHost.h  
@@ -54,5 +55,5 @@ HRESULT GetStats (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [IGCHost インターフェイス](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

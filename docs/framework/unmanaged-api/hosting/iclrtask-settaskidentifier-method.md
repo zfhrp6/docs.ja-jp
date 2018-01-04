@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 916f4638ad8206352f3b5973bb6c8b5dab39cda4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9ace5b7b0153e9e019b56ebc2b7f5df0c5ed91d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrtasksettaskidentifier-method"></a>ICLRTask::SetTaskIdentifier メソッド
 共通言語ランタイム (CLR) に指定した id 値を現在のタスクに関連付けるように指示[ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)インスタンス。  
@@ -56,7 +57,7 @@ HRESULT SetTaskIdentifier (
 ## <a name="remarks"></a>コメント  
  ホストは、CLR とデバッグ環境でホストを統合するためのタスクに識別子を関連付けることができます。 識別子には、CLR の意味はありません。 CLR を渡しますデバッガー アプリケーションです。 デバッガーに CLR の呼び出し履歴を関連付けるホスト呼び出し履歴では、この識別子を使用でき、デバッガーのユーザー インターフェイスに表示されるときに統合するには、そのそれぞれトレース情報を有効にすることができます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -65,7 +66,7 @@ HRESULT SetTaskIdentifier (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
  [IHostTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  

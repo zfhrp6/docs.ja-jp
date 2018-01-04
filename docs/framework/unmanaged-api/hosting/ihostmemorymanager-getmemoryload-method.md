@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7296790eb80fe90cd115150749e533ce1800834b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 320881447eed00bf0dfeada0f5fbd224c32dfe96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostmemorymanagergetmemoryload-method"></a>IHostMemoryManager::GetMemoryLoad メソッド
 現在使用中で利用できない、ホストによって報告された、物理メモリの量を取得します。  
@@ -62,7 +63,7 @@ HRESULT GetMemoryLoad (
   
  ランタイムは、ガベージ コレクターのヒューリスティックとして戻り値を使用します。 たとえば、ホストは、そのメモリの大部分が使用を報告する場合、ガベージ コレクター高めても差し支え複数生成結果になることができます可能性のある使用可能なメモリの量を増やしてから収集します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -71,6 +72,6 @@ HRESULT GetMemoryLoad (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.GC?displayProperty=nameWithType>  
  [IHostMemoryManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)

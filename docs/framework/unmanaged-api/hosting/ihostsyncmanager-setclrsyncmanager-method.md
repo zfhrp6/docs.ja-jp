@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 45899e3cb6a08aef6a9b8df197541c4d0233d92d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fca59f0d2617c6fb244b2b1ed7b5cf46a7d5869f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostsyncmanagersetclrsyncmanager-method"></a>IHostSyncManager::SetCLRSyncManager メソッド
 セット、 [ICLRSyncManager](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)に現在関連付けインスタンス[IHostSyncManager](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)インスタンス。  
@@ -56,7 +57,7 @@ HRESULT SetCLRSyncManager (
 ## <a name="remarks"></a>コメント  
  ホストと CLR の間の通信を容易にホスト インターフェイスは、通常のペアになっています。 ペアの 1 つのメンバーは、ホストによって実装し、他のメンバーは、CLR で実装します。 ホスト側の実装として、`IHostSyncManager`に対応するインターフェイス、 `ICLRSyncManager` CLR によって実装されるインターフェイス。 CLR 呼び出し`SetCLRSyncManager`を指定する、`ICLRSyncManager`現在に関連付けるホストをインスタンス`IHostSyncManager`インスタンス。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -65,6 +66,6 @@ HRESULT SetCLRSyncManager (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)

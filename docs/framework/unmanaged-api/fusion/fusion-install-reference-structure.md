@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 244ea215b6668685920a454c1bd9da065076f38b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 36321606fe208233fb6114fe9568b655f0e1b400
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fusioninstallreference-structure"></a>FUSION_INSTALL_REFERENCE 構造体
 アプリケーションがグローバル アセンブリ キャッシュにアプリケーションがインストールされているアセンブリに参照を表します。  
@@ -50,13 +51,13 @@ typedef struct _FUSION_INSTALL_REFERENCE_ {
 |`szIdentifier`|アセンブリをグローバル アセンブリ キャッシュにインストールされているアプリケーションを識別する一意の文字列。 その値は、の値によって異なります、`guidScheme`フィールドです。|  
 |`szNonCanonicalData`|参照を追加するエンティティだけが認識する文字列。 グローバル アセンブリ キャッシュは、この文字列を格納しますでは使用されません。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Fusion.h  
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Fusion 構造体](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
  [グローバル アセンブリ キャッシュ](../../../../docs/framework/app-domains/gac.md)

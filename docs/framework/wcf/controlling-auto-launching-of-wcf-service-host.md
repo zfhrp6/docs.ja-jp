@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 60c7e2ddd4d4d57b675f2c12f8c5f567e8d23020
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 65daceac9b865f3e8224c709d672344606905d9f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="controlling-auto-launching-of-wcf-service-host"></a>WCF サービス ホストの自動起動の制御
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ソリューションに複数のプロジェクトが含まれている場合、既定では、同じソリューション内の別のプロジェクトをデバッグするときでも、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ プロジェクトの [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] サービス ホスト (WcfSvcHost.exe) が自動的に起動します。この自動起動機能は制御できます。  
@@ -37,5 +38,5 @@ ms.lasthandoff: 12/02/2017
   
 -   配信サービス ライブラリ プロジェクト  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 57e5efc604568aea0a6edef5cc57f83fb99eb561
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0501e104b2ed74656de125e668b7234efcbc9997
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrmetahostpolicygetrequestedruntime-method"></a>ICLRMetaHostPolicy::GetRequestedRuntime メソッド
 ホスト ポリシー、マネージ アセンブリ、バージョン文字列、および構成ストリームに基づいて、適切な共通言語ランタイム (CLR) のバージョンへのインターフェイスを提供します。 このメソッドの読み込みまたは単純に返しますが、CLR をアクティブ化は実際には、 [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)ポリシーの結果を表すインターフェイスです。 このメソッドは、 [GetRequestedRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)、 [GetRequestedRuntimeVersion](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)、 [CorBindToRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md)、 [CorBindToRuntimeByCfg](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md)、および[GetCORRequiredVersion](../../../../docs/framework/unmanaged-api/hosting/getcorrequiredversion-function.md)メソッドです。  
@@ -48,7 +49,7 @@ HRESULT GetRequestedRuntime(
   
 #### <a name="parameters"></a>パラメーター  
   
-|名前|説明|  
+|name|説明|  
 |----------|-----------------|  
 |`dwPolicyFlags`|[in] 必須。 メンバーを指定します、 [METAHOST_POLICY_FLAGS](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)バインディング ポリシー、および任意の数の修飾子を表す列挙。 現在利用可能な唯一のポリシーは[METAHOST_POLICY_HIGHCOMPAT](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)です。<br /><br /> 修飾子に[METAHOST_POLICY_EMULATE_EXE_LAUNCH](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)、 [METAHOST_POLICY_APPLY_UPGRADE_POLICY](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)、 [METAHOST_POLICY_SHOW_ERROR_DIALOG](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)、 [METAHOST_POLICY_USE_PROCESS_IMAGE_PATH](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)、および[METAHOST_POLICY_ENSURE_SKU_SUPPORTED](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md)です。|  
 |`pwzBinary`|[in] オプション。 アセンブリのファイル パスを指定します。|  
@@ -78,12 +79,12 @@ HRESULT GetRequestedRuntime(
 |HRESULT|説明|  
 |-------------|-----------------|  
 |S_OK|メソッドは正常に完了しました。|  
-|E_POINTER|`pwzVersion` は null 以外で、`pcchVersion` は null です。<br /><br /> または<br /><br /> `pwzImageVersion` は null 以外で、`pcchImageVersion` は null です。|  
+|E_POINTER|`pwzVersion` は null 以外で、`pcchVersion` は null です。<br /><br /> - または -<br /><br /> `pwzImageVersion` は null 以外で、`pcchImageVersion` は null です。|  
 |E_INVALIDARG|`dwPolicyFlags` は `METAHOST_POLICY_HIGHCOMPAT` を指定しません。|  
-|ERROR_INSUFFICIENT_BUFFER|`pwzVerison` に割り当てられたメモリが不十分です。<br /><br /> または<br /><br /> `pwzImageVerison` に割り当てられたメモリが不十分です。|  
+|ERROR_INSUFFICIENT_BUFFER|`pwzVerison` に割り当てられたメモリが不十分です。<br /><br /> - または -<br /><br /> `pwzImageVerison` に割り当てられたメモリが不十分です。|  
 |CLR_E_SHIM_RUNTIMELOAD|`dwPolicyFlags` には METAHOST_POLICY_APPLY_UPGRADE_POLICY が含まれ、`pwzVersion` と `pcchVersion` はいずれも null です。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MetaHost.h  
@@ -92,8 +93,8 @@ HRESULT GetRequestedRuntime(
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRMetaHostPolicy インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)  
- [CLR ホスト インターフェイスが 4 と 4.5 の .NET Framework の追加](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
+ [.NET Framework 4 および 4.5 で追加された CLR ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
  [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [ホスティング](../../../../docs/framework/unmanaged-api/hosting/index.md)

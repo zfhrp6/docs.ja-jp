@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 91760b6d16b663257bf3d89915da3bd88b3411bf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 605817ef23246f708b6cf46a93072cde3003ab43
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblyflags-enumeration"></a>AssemblyFlags 列挙体
 アセンブリの実行時の機能を記述する値が含まれています。  
@@ -53,7 +54,7 @@ typedef enum {
 ## <a name="remarks"></a>コメント  
  参照されたアセンブリのサイド バイ サイド互換性機能を記述する 0x0010 ~ 0x0070、包括的な値が使用されます。 これらの値のいずれも設定されている場合、アセンブリがサイド バイ サイド互換性のあると見なされます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MsCorEE.h  
@@ -62,6 +63,6 @@ typedef enum {
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [メタデータ列挙体](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
+## <a name="see-also"></a>参照  
+ [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
  [IMetaDataAssemblyEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

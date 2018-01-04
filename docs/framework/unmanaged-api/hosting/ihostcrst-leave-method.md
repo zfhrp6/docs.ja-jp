@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 21e9a99e4fd22b2cc7d954d0f7316c45ffd7074c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 391aff3920e7ea2ef010ce7d97bdedb4e636dc86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostcrstleave-method"></a>IHostCrst::Leave メソッド
 現在のインスタンスで表されるクリティカル セクションのまま[IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)です。  
@@ -50,7 +51,7 @@ HRESULT Leave ();
 ## <a name="remarks"></a>コメント  
  `Leave`により、ホストの実装では、スレッド処理ではなく、対応する Win32 を使用して直接通信するために CLR`LeaveCriticalSection`関数。 現在によって表される、クリティカル セクションの所有権を取得したスレッド`IHostCrst`インスタンスで呼び出す必要があります`Leave`時間ごとに、そのクリティカル セクションに入るとします。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -59,7 +60,7 @@ HRESULT Leave ();
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostCrst インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)  
  [IHostSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)

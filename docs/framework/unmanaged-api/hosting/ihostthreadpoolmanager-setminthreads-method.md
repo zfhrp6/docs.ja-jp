@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ab0b107c050b1c4b686f761ede75ea2349825270
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4fccfeb616b7a1c6d797ad9d91f47e696c4f3599
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostthreadpoolmanagersetminthreads-method"></a>IHostThreadPoolManager::SetMinThreads メソッド
 要求に応じるため、ホストを維持する必要がありますアイドルのスレッドの最小数を設定します。  
@@ -57,7 +58,7 @@ HRESULT SetMinThreads (
 ## <a name="remarks"></a>コメント  
  ホストがの実装を提供する必要はありません`SetMinThreads`です。 この場合、HRESULT 値 E_NOTIMPL を返します。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -66,7 +67,7 @@ HRESULT SetMinThreads (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.ThreadPool.SetMinThreads%2A>  
  <xref:System.Threading.ThreadPool>  
  [GetMinThreads メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getminthreads-method.md)  

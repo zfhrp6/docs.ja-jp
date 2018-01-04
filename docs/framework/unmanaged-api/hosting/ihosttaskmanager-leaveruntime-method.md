@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 326fa3d495cafe187f06e1e6a804cbe90fb12efd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a4c168cffba44a21d6705e8abd921ecbf8a9da6b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihosttaskmanagerleaveruntime-method"></a>IHostTaskManager::LeaveRuntime メソッド
 現在実行中のタスクが共通言語ランタイム (CLR) のままにし、アンマネージ コードの入力があるホストに通知します。  
@@ -60,7 +61,7 @@ HRESULT LeaveRuntime (
 ## <a name="remarks"></a>コメント  
  アンマネージ コードとの間の呼び出しシーケンスは、入れ子にすることができます。 たとえば、次の表に仮想的な状況への呼び出しのシーケンス`LeaveRuntime`、 [ihosttaskmanager::reverseenterruntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)、 [ihosttaskmanager::reverseleaveruntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md)、および`IHostTaskManager::EnterRuntime`ホストが入れ子になったレイヤーを特定できるようにします。  
   
-|操作|対応するメソッドの呼び出し|  
+|アクション|対応するメソッドの呼び出し|  
 |------------|-------------------------------|  
 |マネージ Visual Basic 実行可能なプラットフォームを使用して、C で記述されたアンマネージ関数を呼び出します。|`IHostTaskManager::LeaveRuntime`|  
 |アンマネージ C 関数は、c# で記述されたマネージ DLL でメソッドを呼び出します。|`IHostTaskManager::ReverseEnterRuntime`|  
@@ -69,7 +70,7 @@ HRESULT LeaveRuntime (
 |C# 関数は、最初のアンマネージ関数に実行を返します。|`IHostTaskManager::ReverseLeaveRuntime`|  
 |1 つ目のアンマネージ関数では、Visual Basic プログラムに実行を返します。|`IHostTaskManager::EnterRuntime`|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -78,7 +79,7 @@ HRESULT LeaveRuntime (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
  [IHostTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  

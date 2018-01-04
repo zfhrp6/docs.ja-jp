@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 876dfabd835fa96fd3661f4e91eeb661ddaf9c30
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 823f2e0b542f5a9d8868cd3b71adb9a8cca4ec6a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-unmanaged-api-reference"></a>ホスト (アンマネージ API リファレンス)
 ホスト API を使用すると、アンマネージ ホストのアプリケーションに共通言語ランタイム (CLR: Common Language Runtime) を統合できます。  
@@ -30,7 +31,7 @@ ms.lasthandoff: 10/18/2017
  [ホスト コクラス](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
  ホスト API で使用されるアンマネージ コクラスについて説明します。  
   
- [ホスティングの列挙体](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
+ [ホスティングの列挙型](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
  ホスト API で使用されるアンマネージ列挙体について説明します。  
   
  [ホスト グローバル静的関数](../../../../docs/framework/unmanaged-api/hosting/hosting-global-static-functions.md)  

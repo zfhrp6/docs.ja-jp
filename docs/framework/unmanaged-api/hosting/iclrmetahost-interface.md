@@ -19,11 +19,12 @@ caps.latest.revision: "28"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d271a69847e3bd4dc972ed8e697b8cd15f049fb9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a12635e14b694b361e2877041588d7d9f08a4102
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrmetahost-interface"></a>ICLRMetaHost インターフェイス
 そのバージョン番号に基づいた、共通言語ランタイム (CLR) の特定のバージョンを返す、インストールされている Clr のすべてを一覧表示、指定されたプロセスに読み込まれるすべてのランタイムの一覧で、アセンブリをコンパイル、プロセスを終了するために使用する CLR バージョンを検出するメソッドを提供します。クリーン ランタイムがシャット ダウン、および従来の API バインドをクエリします。  
@@ -49,7 +50,7 @@ HRESULT hr = CLRCreateInstance(CLSID_CLRMetaHost,
                    IID_ICLRMetaHost, (LPVOID*)&pMetaHost);  
 ```  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MetaHost.h  
@@ -58,6 +59,6 @@ HRESULT hr = CLRCreateInstance(CLSID_CLRMetaHost,
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [ホスティング](../../../../docs/framework/unmanaged-api/hosting/index.md)

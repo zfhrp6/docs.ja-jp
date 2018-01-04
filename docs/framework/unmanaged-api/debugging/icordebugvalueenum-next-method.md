@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 71775db7134c8f376099b0820f4330602d3db0e6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4a497488c06dd387f65182318c22f3189dfd7725
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugvalueenumnext-method"></a>ICorDebugValueEnum::Next メソッド
 列挙体の現在位置から指定数の"ICorDebugValue"のインスタンスを取得します。  
@@ -51,7 +52,7 @@ HRESULT Next (
  `pceltFetched`  
  [out]数へのポインター`ICorDebugValue`実際に返されるインスタンス。 この値を null にすることがある場合`celt`は 1 つです。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
@@ -60,6 +61,6 @@ HRESULT Next (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
     
  

@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 555f9a216c8e28f7f4fcd79babce77f929ecc072
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 18a5257dbc0272aedb8fe5c7ddec601b999c609b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-structures"></a>メタデータ構造体
 ここでは、メタデータ API が使用する、アンマネージ構造体について説明します。  
@@ -47,6 +48,6 @@ ms.lasthandoff: 10/18/2017
   
  [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
   
- [メタデータ列挙体](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
+ [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
   
  [メタデータ共用体](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)

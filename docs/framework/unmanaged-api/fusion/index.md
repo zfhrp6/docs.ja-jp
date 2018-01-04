@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 10a3dc67cb1edffb01671d34c8671f8228146bf3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9860b90ad61dcd53a990235acb3924c08168782b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fusion-unmanaged-api-reference"></a>fusion (アンマネージ API リファレンス)
 Fusion API では、ランタイム ホストが、アプリケーションのリソースの正しいバージョンを見つけるために、アプリケーションのリソースのプロパティにアクセスできるようにします。  
@@ -33,7 +34,7 @@ Fusion API では、ランタイム ホストが、アプリケーションの�
  [Fusion グローバル静的関数](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
  Fusion API が使用されるアンマネージ グローバル静的関数をについて説明します。  
   
- [Fusion 列挙体](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)  
+ [Fusion 列挙型](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)  
  Fusion API を使用するアンマネージ列挙について説明します。  
   
  [Fusion 構造体](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  

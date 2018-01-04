@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5c19125d96d5f4a9e91fc083d53f36ebebd2c569
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0d55500efbe808b2fce16e869422e727b8ed0b93
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostmanualevent-interface"></a>IHostManualEvent インターフェイス
 手動リセット イベントの形式のホストの実装を提供します。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
 |[Set メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-set-method.md)|現在の設定`IHostManualEvent`インスタンスがシグナル状態にします。|  
 |[Wait メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-wait-method.md)|により、現在`IHostManualEvent`所有されているまで待機するインスタンスまたは指定された時間が経過時間。|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ICLRSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostAutoEvent インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  
  [IHostSemaphore インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md)  

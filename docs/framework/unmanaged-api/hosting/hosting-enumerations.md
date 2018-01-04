@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f415b4f3062a83f97d2bf186981289cf16e555a4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cc6b5df39c9fad6182f0ee6e4ff95638e9aaf448
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-enumerations"></a>ホスティングの列挙体
 このセクションでは、ホスト API で使用するアンマネージ列挙について説明します。  
@@ -93,7 +94,7 @@ ms.lasthandoff: 10/18/2017
  [HOST_TYPE 列挙型](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md)  
  アプリケーションを起動するホストの種類を指定する値が含まれています。  
   
- [MALLOC_TYPE 列挙体](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md)  
+ [MALLOC_TYPE 列挙型](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md)  
  割り当てられるメモリの特性を指定する値が含まれています。  
   
  [METAHOST_CONFIG_FLAGS 列挙型](../../../../docs/framework/unmanaged-api/hosting/metahost-config-flags-enumeration.md)  
@@ -122,6 +123,6 @@ ms.lasthandoff: 10/18/2017
   
  [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
   
- [推奨されなくなった CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ [サポートされなくなった CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
   
  [ホスト構造体](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)

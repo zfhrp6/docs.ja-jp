@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8932e295aa1a6c6cf961e7b3a218e76984da02cb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 00f4aa4e87c0deb4b1326cb8bf4256a9307b3393
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corelementtype-enumeration1"></a>CorElementType Enumeration1
 共通言語ランタイムを指定<xref:System.Type>、型修飾子、またはメタデータ型シグネチャに型に関する情報。  
@@ -140,12 +141,12 @@ typedef enum CorElementType {
 |`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE <、`mdTypeRef`または`mdTypeDef`メタデータ トークン >|  
 |`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT <、`mdTypeRef`または`mdTypeDef`メタデータ トークン >|  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorHdr.h  
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [メタデータ列挙体](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>参照  
+ [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 638727dae1f0f32e5c92c0da7513719bd11ae8d9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e4043bdb7ea128e7ac34349dad8c51a0b247df71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-interfaces"></a>メタデータ インターフェイス
 このセクションでは、.NET Framework の型、メソッド、フィールドなどによって公開されるメタデータにアクセスできるようにするアンマネージ インターフェイスについて説明します。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/18/2017
  タイプ ライブラリをそれぞれのメタデータ署名にマップして、一方から他方に変換するメソッドを提供します。  
   
  [IMetaDataDispenser インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)  
- `IMetaDataDispenser` は互換性のために残されています。 代わりに、 `IMetaDataDispenserEx` を使用してください。  
+ `IMetaDataDispenser` は互換性のために残されています。 代わりに、`IMetaDataDispenserEx` を使用してください。  
   
  [IMetaDataDispenserEx インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
  メタデータを作成または変更するためのメモリ領域を割り当てるメソッドを提供します。  
@@ -84,7 +85,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="related-sections"></a>関連項目  
  [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
   
- [メタデータ列挙体](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
+ [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
   
  [メタデータ構造体](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
   

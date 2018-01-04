@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b47ed129b1d4859b744c32fe4cea763ea27e66a2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dd26760d105b1bf11ee411464fd0507ce8a6b480
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-unions"></a>メタデータ共用体
 このセクションでは、メタデータ API で使用されるアンマネージ共用体について説明します。  
@@ -35,6 +36,6 @@ ms.lasthandoff: 10/18/2017
   
  [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
   
- [メタデータ列挙体](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
+ [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
   
  [メタデータ構造体](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9948673d6988de21c83c37538fb4d7c030296e58
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c0a304c2052192d3cba761a128e15dc463011030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostthreadpoolmanagerqueueuserworkitem-method"></a>IHostThreadPoolManager::QueueUserWorkItem メソッド
 関数の実行をキューに配置し、その関数によって使用されるデータを格納しているオブジェクトを指定します。 この関数は、スレッドが利用可能になったら実行します。  
@@ -64,7 +65,7 @@ HRESULT QueueUserWorkItem (
 ## <a name="remarks"></a>コメント  
  `QueueUserWorkItem`スレッド プールでワーカー スレッドに作業項目キューに入れます。 その署名およびパラメーターの型は、対応する Win32 関数の同じ名前を持つものと同じです。 詳細については、Windows プラットフォームのドキュメントを参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
@@ -73,7 +74,7 @@ HRESULT QueueUserWorkItem (
   
  **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>  
  <xref:System.Threading.ThreadPool>  
  [IHostThreadPoolManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
