@@ -23,11 +23,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7a0f80785ee923874379a206b344db6a8c80055
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f72ba017870bfccbb7c0e404c57cab77a96ab8b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-print-with-a-webbrowser-control"></a>方法 : WebBrowser コントロールを使用して印刷する
 次のコード例で使用方法、<xref:System.Windows.Forms.WebBrowser>表示せず、Web ページを印刷するコントロール。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
   
 -   `System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowser.Print%2A>  
  <xref:System.Windows.Forms.WebBrowser.Url%2A>  

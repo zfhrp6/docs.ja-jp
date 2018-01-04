@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4897a195dcafb8264bbab619f1a46118a829f44e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fc7227ee46f127070b44771a56a89b82bd0930ca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-dock-controls-on-windows-forms"></a>方法 : Windows フォーム上のコントロールをドッキングする
 コントロールをフォームの端にドッキングするか、またはコントロールのコンテナー (フォームまたはコンテナー コントロール) を挿入したりします。 Windows エクスプ ローラーのドッキングなど、その<xref:System.Windows.Forms.TreeView>ウィンドウの左側にあるコントロールとその<xref:System.Windows.Forms.ListView>ウィンドウの右側にあるコントロールです。 使用して、<xref:System.Windows.Forms.Control.Dock%2A>すべて表示されている Windows フォームのコントロールのドッキングのモードを定義するプロパティです。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
     > [!NOTE]
     >  継承されたコントロールがある必要があります`Protected`ドッキングできるようにします。 コントロールのアクセス レベルを変更するには、次のように設定します。 その**修飾子**プロパティ ウィンドウでプロパティです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
  [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
  [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  

@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 84915ecf08c9ef5471ec3a48685893c42ef13013
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 19997c206e118353c4b712ac8c5650cd71ed3a58
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-resize-controls-on-windows-forms"></a>方法 : Windows フォーム上のコントロールのサイズを変更する
 個々 のコントロールのサイズを変更することができ、サイズを変更する、同じまたは異なる種類の複数のコントロールなど<xref:System.Windows.Forms.Button>と<xref:System.Windows.Forms.GroupBox>コントロール。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  **形式**] メニューの [選択**同じサイズに揃える**、4 つのオプションのいずれかを選択します。 最初の 3 つのコマンドは、最初に選択されたコントロールに合わせてコントロールのサイズを変更します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
  [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
  [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  

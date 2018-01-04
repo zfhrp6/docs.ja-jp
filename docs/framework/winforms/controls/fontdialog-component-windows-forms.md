@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e92ce3e74ee4da518b78f8ab4ac5015a50a547b1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 97f2db18737578087f4db151669d6d3b05cf3598
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fontdialog-component-windows-forms"></a>FontDialog コンポーネント (Windows フォーム)
 Windows フォームの <xref:System.Windows.Forms.FontDialog> コンポーネントは、事前構成済みのダイアログ ボックスです。 これは、同じ**フォント** ダイアログ ボックスが、Windows オペレーティング システムによって公開されています。 このコンポーネントは、<xref:System.Windows.Forms.CommonDialog>クラスです。  

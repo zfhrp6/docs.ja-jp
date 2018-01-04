@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3b20c526b27eb185bf79eaf0ace47e5a9fded42a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4645e502544072cbc6268ae07e054ea5450d9c5c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control"></a>方法 : Windows フォームの RichTextBox コントロールにスクロール バーを表示する
 既定では、Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールは、必要に応じて、垂直および水平スクロール バーを表示します。 7 つの可能な値がある、<xref:System.Windows.Forms.RichTextBox.ScrollBars%2A>のプロパティ、<xref:System.Windows.Forms.RichTextBox>コントロールで、次の表で説明します。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  設定、<xref:System.Windows.Forms.RichTextBox.ScrollBars%2A>プロパティの適切な値を<xref:System.Windows.Forms.RichTextBoxScrollBars>列挙します。  
   
-    |値|説明|  
+    |[値]|説明|  
     |-----------|-----------------|  
     |<xref:System.Windows.Forms.RichTextBoxScrollBars.Both> (既定値)|テキストがコントロールの高さや幅を超えた場合にのみ、水平または垂直スクロール バー、またはその両方を表示します。|  
     |<xref:System.Windows.Forms.RichTextBoxScrollBars.None>|スクロール バーの任意の型がまったく表示されません。|  
@@ -44,12 +45,12 @@ ms.lasthandoff: 11/21/2017
   
 3.  <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> プロパティに適切な値を設定します。  
   
-    |値|説明|  
+    |[値]|説明|  
     |-----------|-----------------|  
     |`false`|コントロール内のテキスト行の区切りに到達するまで右にスクロールされますので、コントロールの幅に合わせて自動的に調整されません。 または、両方の水平スクロール バーを上に選択した場合は、この値を使用します。|  
     |`true` (既定値)|コントロール内のテキストは、コントロールの幅に合わせて自動的に調整します。 水平スクロール バーは表示されません。 1 つまたは複数の段落を表示する、上記の垂直スクロール バーまたは none を選択した場合は、この値を使用します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.RichTextBoxScrollBars>  
  <xref:System.Windows.Forms.RichTextBox>  
  [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  

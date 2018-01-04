@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a1c5b0447895b0ca5c67fff054d88da0d0107c5a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6a8571209ea0a80a64c1f30336c9a52b1bc79622
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-sort-modes-for-columns-in-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロール内の列の並べ替えモードを設定する
 <xref:System.Windows.Forms.DataGridView>他の列の型が自動的に並べ替えられていないときに、既定では、自動並べ替えコントロール、テキスト ボックスの列を使用します。 これらの既定値をオーバーライドする場合があります。 たとえば、テキスト、数値、または列挙型のセルの値の代わりにイメージを表示することができます。 イメージを並べ替えることはできません、中に、それが表す基になる値を並べ替えることができます。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System?displayProperty=nameWithType> アセンブリおよび <xref:System.Windows.Forms?displayProperty=nameWithType> アセンブリへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>  
  [Windows フォームの DataGridView コントロールでのデータの並べ替え](../../../../docs/framework/winforms/controls/sorting-data-in-the-windows-forms-datagridview-control.md)  

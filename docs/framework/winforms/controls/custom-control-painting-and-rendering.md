@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: babf3d235f4cca61ad6d0e5fdc4e6b6146c7d060
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 355a5842348aa4395d1841d0343080ddef634456
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-control-painting-and-rendering"></a>コントロールのカスタム描画およびレンダリング
 コントロールのカスタム描画は、.NET Framework で簡単に作成する多くの複雑なタスクのいずれかです。 カスタム コントロールを作成するときに、コントロールの外観に関する多くのオプションがあります。 継承されるコントロールを作成している場合、 `Control`、グラフィカル表示を表示するために、コントロールを可能にするコードを指定する必要があります。 継承することで、ユーザー コントロールを作成するかどうかは、 `UserControl`、継承、または Windows フォーム コントロールのいずれかでは、標準のグラフィカル表示をオーバーライドして、独自のグラフィックス コードを提供します。 内在コントロールのカスタムの表示を提供するかどうか、`UserControl`オーサリングするは、これは、オプションが制限されますが、コントロールとアプリケーションのグラフィカル表現の広範な許可を許可します。  

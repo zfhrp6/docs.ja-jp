@@ -22,11 +22,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9ebe73e0c29a211e3319998ef7acd14e78e4eb14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a31bfc6fb3fa8a3c549a10fd0db017abde66539f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-change-the-border-and-gridline-styles-in-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールの境界線とグリッド線のスタイルを変更する
 <xref:System.Windows.Forms.DataGridView>コントロール、コントロールの枠線と、ユーザー エクスペリエンスを向上させるためにグリッド線の外観をカスタマイズすることができます。 グリッド線の色と、コントロール内のセルの境界線スタイルに加え、コントロールの境界線のスタイルを変更することができます。 通常のセル、行ヘッダー セル、および列ヘッダー セルの別のセルの境界線のスタイルを適用することもできます。  
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System?displayProperty=nameWithType>、<xref:System.Windows.Forms?displayProperty=nameWithType>、および <xref:System.Drawing?displayProperty=nameWithType> の各アセンブリへの参照。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.BorderStyle>  
  <xref:System.Windows.Forms.DataGridView.BorderStyle%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.DataGridView.CellBorderStyle%2A?displayProperty=nameWithType>  

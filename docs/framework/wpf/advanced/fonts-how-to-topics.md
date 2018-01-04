@@ -15,11 +15,12 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f0ff080218b459625bb98803216fae88c3aadd1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8e4df7bac45abe367f985167b354b515f247ae90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fonts-how-to-topics"></a>フォントに関する「方法」トピック
 このセクションのトピックに含まれているフォント機能を使用する方法をデモンストレーション[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。  
@@ -28,7 +29,7 @@ ms.lasthandoff: 11/21/2017
  [システム フォントを列挙する](../../../../docs/framework/wpf/advanced/how-to-enumerate-system-fonts.md)  
  [FontSizeConverter クラスを使用する](../../../../docs/framework/wpf/advanced/how-to-use-the-fontsizeconverter-class.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.FontStyle>  
  <xref:System.Windows.SystemFonts>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  

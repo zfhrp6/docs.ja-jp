@@ -12,11 +12,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 68c81b81ac8070cff539b52c75e1cd7ffb3e54b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 66968503d2f481647d999854358a246b4d963475
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="policy-activity-in-net-framework-45"></a>.NET Framework 4.5 のポリシー アクティビティ
 Policy4 アクティビティは、[!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 3.5) [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] オブジェクト内の <xref:System.Workflow.Activities.Rules.RuleSet> を、WF 3.5 に付属しているルール エンジンを使用して [!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 4.5) の [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] で直接使用できるようにします。 このアクティビティを使用すると、WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> を作成して実行できます。 Windows Workflow Foundation の一部として用意されている WF 3.5 ルール エンジンの[!INCLUDE[crabout](../../../../includes/crabout-md.md)]については、「Windows Workflow Foundation ルール エンジンの紹介」を参照してください。 移行の詳細についての WF ルール[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]をお読みください[移行のガイダンス](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  

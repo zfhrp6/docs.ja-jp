@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e9d0c50fe8f99df471376d31a2258912c870dd37
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 256fb961c01b17c21613fe4ec60b8e7f68c2d8f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="keyboard-input-in-a-windows-forms-application"></a>Windows フォーム アプリケーションにおけるキーボード入力
 Windows フォームでは、標準のキーボードおよびイベントを特定のキー入力に応答することは、傍受、変更、およびアプリケーションでは、フォーム、キーの押下を消費およびレベルを制御するための方法も含まれます。  

@@ -17,17 +17,18 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 71fa29fc36292bb6620ab458785abaabc749c38d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 05dd1e06c2cba31bca1282e8d409ab1b5610d1dd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-or-remove-imagelist-images-with-the-designer"></a>方法 : デザイナーを使って ImageList イメージを追加または削除する
 イメージを追加することができます、<xref:System.Windows.Forms.ImageList>コンポーネントいくつかの方法です。 関連付けられているスマート タグを使用してイメージを非常に迅速に追加することができます、 <xref:System.Windows.Forms.ImageList>、やの他のいくつかのプロパティを設定する場合、 <xref:System.Windows.Forms.ImageList>、[プロパティ] ウィンドウにイメージを追加する方が便利見つけることがあります。 コードを使用してイメージを追加することもできます。 コードでイメージを追加する方法の詳細については、次を参照してください。[する方法: 追加または削除する Windows フォームの ImageList コンポーネントにイメージを](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)です。 設定する通常、<xref:System.Windows.Forms.ImageList>コンポーネントはイメージ コントロールに関連付けられているが、これは必須ではありません。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-add-or-remove-images-by-using-the-properties-window"></a>追加またはプロパティ ウィンドウを使用してイメージを削除するには  
   
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
 4.  **イメージ コレクション エディター**  をクリックして**追加**または**削除**を追加または一覧からイメージを削除します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [チュートリアル: Windows フォーム コントロールのスマート タグを使用した共通タスクの実行](../../../../docs/framework/winforms/controls/performing-common-tasks-using-smart-tags-on-wf-controls.md)  
  [ImageList コンポーネント](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)

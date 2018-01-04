@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a4141a27a3b195dbb747a827d2bd9426a948f83
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 267a69b9470040dfc60f3c0b280b71e3f52dbc88
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a>方法 : 文字列に引用符を挿入する (Windows フォーム)
 テキストの文字列に引用符 (" ") を挿入することが必要な場合があります。 例:  
@@ -58,7 +59,7 @@ ms.lasthandoff: 11/21/2017
        }  
     ```  
   
-     または  
+     - または -  
   
 2.  引用符を表す ASCII 文字または Unicode 文字を挿入します。 [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では、ASCII 文字 (34) を使用します。 [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] では、Unicode 文字 (\u0022) を使用します。  
   
@@ -77,7 +78,7 @@ ms.lasthandoff: 11/21/2017
     > [!NOTE]
     >  この例では、基本文字セットの文字を指定するユニバーサル文字名を使用できないため、\u0022 を使用することはできません。 使用した場合、C3851 が発生します。 詳細については、「[コンパイラ エラー C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851)」を参照してください。  
   
-     または  
+     - または -  
   
 3.  文字の定数を定義し、必要に応じてその定数を使用することもできます。  
   
@@ -98,7 +99,7 @@ ms.lasthandoff: 11/21/2017
        const_cast<String^>(quote));  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.TextBox>  
  <xref:Microsoft.VisualBasic.ControlChars.Quote>  
  [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  

@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c64715fbc976af5c765da2efe563acdc3d2ae13c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4f62b4538b5f91c2f57cab52fa7563680016903a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printdialog-component-windows-forms"></a>PrintDialog コンポーネント (Windows フォーム)
 Windows フォーム `PrintDialog` コンポーネントは、構成済みのダイアログ ボックスであり、Windows ベースのアプリケーションのプリンターの選択、印刷するページの選択、およびその他の印刷関連の設定の確認に使用します。 独自のダイアログ ボックスを構成する代わりに、プリンターと印刷関連の設定の選択のための簡単なソリューションとして使用します。 ユーザーが自分のドキュメントのさまざまな部分 (すべての印刷、指定したページ範囲の印刷、または、選択部分の印刷) を印刷できるようにすることが可能です。 Windows の標準のダイアログ ボックスを使用して、ユーザーがすぐに慣れる基本的な機能を持つアプリケーションを作成します。  

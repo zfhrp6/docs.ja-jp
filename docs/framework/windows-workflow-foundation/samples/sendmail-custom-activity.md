@@ -12,11 +12,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4fb8454d3e1e679154bc016e37b83c3ac4ff6768
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8a6d0338b7c460d7053af9264527a6cd6d263673
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sendmail-custom-activity"></a>SendMail カスタム アクティビティ
 このサンプルでは、<xref:System.Activities.AsyncCodeActivity> から派生するカスタム アクティビティを作成して、SMTP を使用して電子メールを送信し、ワークフロー アプリケーション内で使用する方法を示します。 カスタム アクティビティは <xref:System.Net.Mail.SmtpClient> の機能を使用して、電子メールを非同期的に送信したり、電子メールを認証付きで送信します。 また、テスト モード、トークン置換、ファイル テンプレート、テスト ドロップ パスなどのエンドユーザーの機能も提供しています。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 12/02/2017
 |UserName|String|差出人の <xref:System.Net.Mail.SmtpClient.Credentials%2A> プロパティを認証する資格情報を設定するユーザー名。|  
 |[Password]|String|差出人の <xref:System.Net.Mail.SmtpClient.Credentials%2A> プロパティを認証する資格情報を設定するパスワード。|  
 |Subject|<xref:System.Activities.InArgument%601>\<文字列 >|メッセージの件名。|  
-|Body|<xref:System.Activities.InArgument%601>\<文字列 >|メッセージの本文。|  
+|本文|<xref:System.Activities.InArgument%601>\<文字列 >|メッセージの本文。|  
 |Attachments|<xref:System.Activities.InArgument%601>\<文字列 >|この電子メール メッセージに添付されるデータの格納に使用される添付データのコレクション。|  
 |変換前|<xref:System.Net.Mail.MailAddress>|この電子メール メッセージの差出人アドレス。|  
 |終了|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|この電子メール メッセージの受信者を格納するアドレスのコレクション。|  

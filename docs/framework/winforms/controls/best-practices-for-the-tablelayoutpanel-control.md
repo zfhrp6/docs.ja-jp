@@ -25,11 +25,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 802cc501b695f6c5cfe990bf72a4d9d2af68ba2b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8f2c5a16ea1f07f7688c9df14bdb6b29350f3acf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="best-practices-for-the-tablelayoutpanel-control"></a>TableLayoutPanel コントロールの推奨される手順
 <xref:System.Windows.Forms.TableLayoutPanel>コントロールは、Windows フォームで使用する前に慎重に考慮すべき強力なレイアウト機能を提供します。  
@@ -65,6 +66,6 @@ ms.lasthandoff: 11/21/2017
 ### <a name="avoid-visual-inheritance"></a>ビジュアル継承を避ける  
  <xref:System.Windows.Forms.TableLayoutPanel>コントロールは、Windows フォーム デザイナーでのビジュアル継承をサポートしません。 A <xref:System.Windows.Forms.TableLayoutPanel> 「ロックされている」デザイン時に、派生クラスでのコントロールが表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.TableLayoutPanel>  
  <xref:System.Windows.Forms.FlowLayoutPanel>

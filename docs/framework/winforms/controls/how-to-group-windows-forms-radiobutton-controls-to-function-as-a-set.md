@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 37d8571624272f62c6ce327b0ed25e082c5cf713
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c92048374941f735568bcd758ed475eba78b81e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set"></a>方法 : セットとして機能する Windows フォーム RadioButton コントロールをグループ化する
 Windows フォーム<xref:System.Windows.Forms.RadioButton>ユーザーがいるプロシージャまたはオブジェクトを 1 つのみを割り当てることが、2 つ以上の設定の間で選択できるようにデザインされています。 たとえば、一連の<xref:System.Windows.Forms.RadioButton>コントロールは、注文の配送業者をパッケージの選択を表示できますが、通信事業者の 1 つだけ使用します。 1 つだけしたがって<xref:System.Windows.Forms.RadioButton>一度に選択できる場合でも、機能グループの一部であります。  
@@ -35,7 +36,7 @@ Windows フォーム<xref:System.Windows.Forms.RadioButton>ユーザーがいる
   
 2.  描画<xref:System.Windows.Forms.RadioButton>コントロールに対して、<xref:System.Windows.Forms.GroupBox>または<xref:System.Windows.Forms.Panel>コントロール。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.RadioButton>  
  [RadioButton コントロールの概要](../../../../docs/framework/winforms/controls/radiobutton-control-overview-windows-forms.md)  
  [Panel コントロールの概要](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  

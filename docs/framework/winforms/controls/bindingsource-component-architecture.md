@@ -18,11 +18,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 127111df239cb042f8261acaa62c3798b99653ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 25a69f31d8da8638cfc92ff94d8f90dbcb327158
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bindingsource-component-architecture"></a>BindingSource コンポーネント アーキテクチャ
 <xref:System.Windows.Forms.BindingSource>コンポーネントは、ユニバーサル データ ソースにすべての Windows フォーム コントロールをバインドすることができます。  
@@ -72,7 +73,7 @@ ms.lasthandoff: 11/21/2017
   
 -   統合<xref:System.Windows.Forms.BindingNavigator>です。  
   
-### <a name="indirection"></a>間接  
+### <a name="indirection"></a>間接参照  
  <xref:System.Windows.Forms.BindingSource>コンポーネントは、コントロールとデータ ソース間を間接化レベルを提供します。 コントロールをバインドするデータ ソースに直接コントロールをバインディングではなく、 <xref:System.Windows.Forms.BindingSource>、接続して、データ ソース、<xref:System.Windows.Forms.BindingSource>コンポーネントの<xref:System.Windows.Forms.BindingSource.DataSource%2A>プロパティです。  
   
  このレベルの間接参照するには、使用は、コントロールのバインディングをリセットせず、データ ソースを変更できます。 これにより、次の機能。  
@@ -173,12 +174,12 @@ ms.lasthandoff: 11/21/2017
 |メンバー|説明|  
 |------------|-----------------|  
 |<xref:System.Windows.Forms.BindingSource.Filter%2A> プロパティ|データ ソースが <xref:System.ComponentModel.IBindingListView> である場合は、表示する行のフィルター処理に使用する式を取得または設定します。|  
-|<xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティ|データ ソースが <xref:System.ComponentModel.IBindingList> である場合は、並べ替えに使用する列名と並べ替え順序情報を取得または設定します。<br /><br /> または<br /><br /> データ ソースがある場合、<xref:System.ComponentModel.IBindingListView>を並べ替え、高度なサポートの並べ替えと並べ替え順序に使用する複数の列名を取得します|  
+|<xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティ|データ ソースが <xref:System.ComponentModel.IBindingList> である場合は、並べ替えに使用する列名と並べ替え順序情報を取得または設定します。<br /><br /> - または -<br /><br /> データ ソースがある場合、<xref:System.ComponentModel.IBindingListView>を並べ替え、高度なサポートの並べ替えと並べ替え順序に使用する複数の列名を取得します|  
   
 ### <a name="integration-with-bindingnavigator"></a>BindingNavigator との統合  
  使用することができます、<xref:System.Windows.Forms.BindingSource>データ ソースへの Windows フォーム コントロールをバインドするコンポーネントですが、<xref:System.Windows.Forms.BindingNavigator>コントロールは操作専用に設計されています、<xref:System.Windows.Forms.BindingSource>コンポーネントです。 <xref:System.Windows.Forms.BindingNavigator>コントロールを制御するためのユーザー インターフェイスを提供する、<xref:System.Windows.Forms.BindingSource>コンポーネントの現在の項目。 既定では、<xref:System.Windows.Forms.BindingNavigator>コントロールには、ナビゲーション メソッドに対応するボタンが用意されています、<xref:System.Windows.Forms.BindingSource>コンポーネントです。 詳細については、次を参照してください。[する方法: Windows フォーム BindingNavigator コントロールにデータを移動](../../../../docs/framework/winforms/controls/how-to-navigate-data-with-the-windows-forms-bindingnavigator-control.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.BindingNavigator>  
  [BindingSource コンポーネントの概要](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)  

@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 38373b8e3201ea0a6c32d972c7ac9c72888d5eae
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3bc6d1fa2450d0aba52bd6a5a030c025fede0cb2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="differences-between-the-windows-forms-datagridview-and-datagrid-controls"></a>Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて
 <xref:System.Windows.Forms.DataGridView>コントロールは、新しいコントロールを置き換える、<xref:System.Windows.Forms.DataGrid>コントロール。 <xref:System.Windows.Forms.DataGridView>コントロールで欠落している多数の基本と高度な機能を提供する、<xref:System.Windows.Forms.DataGrid>コントロール。 さらのアーキテクチャ、<xref:System.Windows.Forms.DataGridView>コントロールを使用すると拡張とカスタマイズよりもはるかに簡単、<xref:System.Windows.Forms.DataGrid>コントロール。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Forms.DataGridView>コントロールが完全に新しいアーキテクチャは、使用できる単純変換パスはありません<xref:System.Windows.Forms.DataGrid>とカスタマイズ、<xref:System.Windows.Forms.DataGridView>コントロール。 多く<xref:System.Windows.Forms.DataGrid>のカスタマイズが必要とされない、<xref:System.Windows.Forms.DataGridView>制御、ただし、新しいコントロールで使用できる組み込みの機能が原因です。 カスタム列の型を作成した場合、<xref:System.Windows.Forms.DataGrid>で使用するコントロール、<xref:System.Windows.Forms.DataGridView>コントロール、もう一度新しいアーキテクチャを使用してそれらを実装する必要があります。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのカスタマイズ](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGrid>  
  <xref:System.Windows.Forms.BindingSource>  

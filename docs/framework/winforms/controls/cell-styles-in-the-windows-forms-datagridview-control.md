@@ -17,11 +17,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: edec8a00aff59195c6c80414eb4b950d68e488da
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 915aba380b6fe35299de94720f216cda5ab66721
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cell-styles-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのセルのスタイル
 内の各セル、<xref:System.Windows.Forms.DataGridView>コントロールがテキスト形式、背景色、前景色、およびフォントなどの独自のスタイルを持つことができます。 通常、ただし、複数のセルが共有の特定のスタイル特性。  
@@ -154,7 +155,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  セルに格納されている値をキャッシュ<xref:System.Windows.Forms.DataGridViewCell.Style%2A>プロパティは、特定のスタイル値が設定されているかに関係なく重要です。 スタイルの設定を一時的に置換する場合をセルに戻ってより高いレベルからスタイルの設定を継承することにより元の「設定ではない」状態に復元すること。 有効で、スタイルを継承するかどうかに関係なく、セルの実際のスタイルを決定する必要がある場合は、セルを使用して<xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A>プロパティです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridViewCellStyle>  
  <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType>  

@@ -22,11 +22,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cbcbc786c19ad1af74114915b0fd0689d466fcbe
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6d83ff69053a71626d0bf9a844d9e94235080d78
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="backgroundworker-component"></a>BackgroundWorker コンポーネント
 `BackgroundWorker`コンポーネントにより、フォームまたはコントロールを非同期的に操作を実行します。  

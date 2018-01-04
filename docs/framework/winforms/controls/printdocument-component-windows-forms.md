@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f37fdb04d29ae713d0ca851b53fe075c04a8e6bf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c65d90b39dde9adaae3a6711c978383eb92c4480
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printdocument-component-windows-forms"></a>PrintDocument コンポーネント (Windows フォーム)
 Windows フォーム `PrintDocument` コンポーネントを使用して印刷する対象を記述するプロパティを設定し、Windows ベースのアプリケーション内でドキュメントを印刷します。 ドキュメント印刷のあらゆる側面を管理するために、<xref:System.Windows.Forms.PrintDialog> コンポーネントと組み合わせて使用することができます。  

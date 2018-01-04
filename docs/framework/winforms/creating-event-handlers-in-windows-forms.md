@@ -19,11 +19,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0625d5272b4c3ae4f21793d0b0fc8645158e6a2c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a18afd8ba06b5bcc70ca5a6febc10be8050891b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-event-handlers-in-windows-forms"></a>Windows フォーム内でのイベント ハンドラーの作成
 イベント ハンドラーは、ユーザーがボタンをクリックする、またはメッセージ キューがメッセージを受信するなどのイベントが発生したときに実行するアクションを決定する、コード内の手順です。 イベントが発生すると、そのイベントを受信した一つまたは複数のイベント ハンドラーが実行されます。 イベントは複数のハンドラーに割り当てられ、特定のイベントを処理するメソッドは動的に変更できます。 イベント ハンドラーを作成するには、Windows フォーム デザイナーを使用することもできます。  

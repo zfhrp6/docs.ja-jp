@@ -20,11 +20,12 @@ caps.latest.revision: "54"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c384e9e77eeee29cf91cceca3863f54c0ad1654
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9737a006e7f3591defeaf7039236bd1768aa5361
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="glyphs"></a>グリフ
 グリフは、画面上に描画される文字の低レベルの表現です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]インターセプトし、テキストを書式設定後に永続化を希望お客様のグリフに直接アクセスを提供します。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/21/2017
  [GlyphRun オブジェクトと Glyphs 要素の概要](../../../../docs/framework/wpf/advanced/introduction-to-the-glyphrun-object-and-glyphs-element.md)  
   [方法: グリフを使用してテキストを描画する](../../../../docs/framework/wpf/advanced/draw-text-using-glyphs.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Media.GlyphRun>  
  <xref:System.Windows.Media.DrawingContext.DrawText%2A>  
  <xref:System.Windows.Documents.Glyphs>  

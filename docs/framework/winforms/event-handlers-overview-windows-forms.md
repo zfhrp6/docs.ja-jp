@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7353f3ab4513d8331b1d38cb01ad16c7d3cde165
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 44d79fb9d6ca2712c470354999b4795408044166
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="event-handlers-overview-windows-forms"></a>イベント ハンドラーの概要 (Windows フォーム)
 イベント ハンドラーは、イベントにバインドされている方法です。 このイベントは、イベント ハンドラー内のコードが実行されます。 各イベント ハンドラーは、イベントを正しく処理することは 2 つのパラメーターを提供します。 次の例は、イベント ハンドラーを<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Click>イベント。  
@@ -58,6 +59,6 @@ private:
   
  同じイベント ハンドラーを使用して、異なるコントロールに同じイベントを処理することができますも。 グループがある場合など、<xref:System.Windows.Forms.RadioButton>フォーム上のコントロールの 1 つのイベント ハンドラーを作成する可能性があります、<xref:System.Windows.Forms.Control.Click>イベントにある各コントロールの<xref:System.Windows.Forms.Control.Click>イベントが 1 つのイベント ハンドラーにバインドします。 詳細については、次を参照してください。[する方法: Windows フォームの 1 つのイベント ハンドラーの複数のイベントを接続](../../../docs/framework/winforms/how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [イベントの概要](../../../docs/framework/winforms/events-overview-windows-forms.md)

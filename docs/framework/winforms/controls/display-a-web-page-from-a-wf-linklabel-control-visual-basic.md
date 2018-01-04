@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 38ef165dc655fedbf682a21220d6a76532b18f6a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ba5ba3b29bab148087e0f8b80b3f1c43aa74e761
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-a-web-page-from-a-windows-forms-linklabel-control-visual-basic"></a>方法 : Windows フォームの LinkLabel コントロールから Web ページを表示する (Visual Basic)
 この例では、ユーザーが Windows フォームをクリックしたときに既定のブラウザーで Web ページを表示<xref:System.Windows.Forms.LinkLabel>コントロール。  
@@ -57,6 +58,6 @@ End Sub
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  呼び出し、<xref:System.Diagnostics.Process.Start%2A>メソッドには、完全な信頼が必要です。 詳細については、「<xref:System.Security.SecurityException>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.LinkLabel>  
  [LinkLabel コントロール](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)
