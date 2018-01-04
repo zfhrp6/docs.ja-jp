@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3fef77481db23303f91166c36adb89f6e9c19997
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9100aa0dd0d910b203718991b119925a6fc1d7cf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelactivationserviceshutdown"></a><span data-ttu-id="d3e56-102">System.ServiceModel.Activation.ServiceShutdown</span><span class="sxs-lookup"><span data-stu-id="d3e56-102">System.ServiceModel.Activation.ServiceShutdown</span></span>
-<span data-ttu-id="d3e56-103">System.ServiceModel.Activation.ServiceShutdown</span><span class="sxs-lookup"><span data-stu-id="d3e56-103">System.ServiceModel.Activation.ServiceShutdown</span></span>  
+# <a name="systemservicemodelactivationserviceshutdown"></a><span data-ttu-id="bff47-102">System.ServiceModel.Activation.ServiceShutdown</span><span class="sxs-lookup"><span data-stu-id="bff47-102">System.ServiceModel.Activation.ServiceShutdown</span></span>
+<span data-ttu-id="bff47-103">System.ServiceModel.Activation.ServiceShutdown</span><span class="sxs-lookup"><span data-stu-id="bff47-103">System.ServiceModel.Activation.ServiceShutdown</span></span>  
   
-## <a name="description"></a><span data-ttu-id="d3e56-104">説明</span><span class="sxs-lookup"><span data-stu-id="d3e56-104">Description</span></span>  
- <span data-ttu-id="d3e56-105">サービスをシャットダウンする要求を受信しました。</span><span class="sxs-lookup"><span data-stu-id="d3e56-105">A request to shutdown the service was received.</span></span>  
+## <a name="description"></a><span data-ttu-id="bff47-104">説明</span><span class="sxs-lookup"><span data-stu-id="bff47-104">Description</span></span>  
+ <span data-ttu-id="bff47-105">サービスをシャットダウンする要求を受信しました。</span><span class="sxs-lookup"><span data-stu-id="bff47-105">A request to shutdown the service was received.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d3e56-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="d3e56-106">See Also</span></span>  
- [<span data-ttu-id="d3e56-107">トレース</span><span class="sxs-lookup"><span data-stu-id="d3e56-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="d3e56-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="d3e56-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="d3e56-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="d3e56-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="bff47-106">参照</span><span class="sxs-lookup"><span data-stu-id="bff47-106">See Also</span></span>  
+ [<span data-ttu-id="bff47-107">トレース</span><span class="sxs-lookup"><span data-stu-id="bff47-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="bff47-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="bff47-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="bff47-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="bff47-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c520874cbe267c418acbbf532f80416442869a12
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 23109551be8ac02f48c563d358a978140eef45ac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstopped"></a><span data-ttu-id="2b22f-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="2b22f-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>
-<span data-ttu-id="2b22f-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="2b22f-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstopped"></a><span data-ttu-id="51694-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="51694-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>
+<span data-ttu-id="51694-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="51694-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>  
   
-## <a name="description"></a><span data-ttu-id="2b22f-104">説明</span><span class="sxs-lookup"><span data-stu-id="2b22f-104">Description</span></span>  
- <span data-ttu-id="2b22f-105">ServiceModelInitializer は、構成されたサービスを停止しました。</span><span class="sxs-lookup"><span data-stu-id="2b22f-105">The ServiceModelInitializer has stopped the configured services.</span></span>  
+## <a name="description"></a><span data-ttu-id="51694-104">説明</span><span class="sxs-lookup"><span data-stu-id="51694-104">Description</span></span>  
+ <span data-ttu-id="51694-105">ServiceModelInitializer は、構成されたサービスを停止しました。</span><span class="sxs-lookup"><span data-stu-id="51694-105">The ServiceModelInitializer has stopped the configured services.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2b22f-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="2b22f-106">See Also</span></span>  
- [<span data-ttu-id="2b22f-107">トレース</span><span class="sxs-lookup"><span data-stu-id="2b22f-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="2b22f-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="2b22f-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="2b22f-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="2b22f-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="51694-106">参照</span><span class="sxs-lookup"><span data-stu-id="51694-106">See Also</span></span>  
+ [<span data-ttu-id="51694-107">トレース</span><span class="sxs-lookup"><span data-stu-id="51694-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="51694-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="51694-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="51694-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="51694-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
