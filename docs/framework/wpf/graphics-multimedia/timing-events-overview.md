@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f50923d9e314d2f677e26416cef59fdf380213e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 79669bdc4b5f9cfb8bdac92efa07e932cc14ac57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="timing-events-overview"></a>タイミング イベントの概要
 このトピックで使用できる 5 つのタイミング イベントを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>オブジェクト。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="public-events"></a>パブリック イベント  
  <xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>両方のクラスには、5 つのタイミング イベントが用意されています。 次の表は、これらのイベントと、それらをトリガーする条件を示したものです。  
   
-|Event|対話型操作のトリガー|その他のトリガー|  
+|event|対話型操作のトリガー|その他のトリガー|  
 |-----------|--------------------------------------|--------------------|  
 |**Completed**|塗りつぶしまでスキップ|時計が完了する。|  
 |**CurrentGlobalSpeedInvalidated**|一時停止、再開、シーク、速度比を設定、塗りつぶしまでスキップ、停止|クロックが反転、加速、開始、または停止する。|  
@@ -86,7 +87,7 @@ ms.lasthandoff: 11/21/2017
   
  登録すると、<xref:System.Windows.Media.Animation.Timeline.Completed>タイムラインでイベントをたとえばを実際にということですね、システムに登録する、<xref:System.Windows.Media.Animation.Clock.Completed>タイムラインに作成される各クロックのイベントです。 コードでは、前にこのイベントを登録する必要があります、 <xref:System.Windows.Media.Animation.Clock> ; このタイムラインの作成は、それ以外の場合、通知を受信しません。 自動的にこのような[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; パーサーが自動的に登録する前に、イベントの<xref:System.Windows.Media.Animation.Clock>を作成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アニメーションとタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [タイミング動作の概要](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

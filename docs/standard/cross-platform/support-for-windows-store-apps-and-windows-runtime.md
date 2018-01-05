@@ -19,11 +19,14 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a8ee68c53173f0919a9200ed5ac82fed3e27affc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6dccf9d70772c4eaa8818388ad662b1f93804431
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Windows ストア アプリおよび Windows ランタイムのための .NET Framework サポート
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は [!INCLUDE[wrt](../../../includes/wrt-md.md)]のさまざまなソフトウェア開発シナリオをサポートします。 これらのシナリオは次の 3 つのカテゴリに分類されます。  
@@ -96,7 +99,7 @@ ms.lasthandoff: 10/18/2017
 ### <a name="primitive-types"></a>プリミティブ型  
  マネージ コードで [!INCLUDE[wrt](../../../includes/wrt-md.md)]のナチュラルな使用を有効にすると、[!INCLUDE[wrt](../../../includes/wrt-md.md)]のプリミティブ型ではなく .NET Framework のプリミティブ型がコードに表示されます。 .NET Framework では、`Int32` 構造体などのプリミティブ型には、`Int32.TryParse` メソッドなどの便利なプロパティとメソッドが多くあります。 一方、[!INCLUDE[wrt](../../../includes/wrt-md.md)]のプリミティブ型と構造体にはフィールドしかありません。 マネージ コードでプリミティブを使用すると、.NET Framework の型のように表示され、通常どおりに .NET Framework 型のプロパティとメソッドを使用できます。 要約すると、次のようになります。  
   
--   [!INCLUDE[wrt](../../../includes/wrt-md.md)]のプリミティブ `Int32`、`Int64`、`Single`、`Double`、`Boolean`、`String` (Unicode 文字の変更できないコレクション)、`Enum`、`UInt32`、`UInt64`、および `Guid` では、`System` 名前空間内の同じ名前の型を使用します。  
+-   [!INCLUDE[wrt](../../../includes/wrt-md.md)] のプリミティブ `Int32`、`Int64`、`Single`、`Double`、`Boolean`、`String` (Unicode 文字の変更できないコレクション)、`Enum`、`UInt32`、`UInt64`、および `Guid` については、`System` 名前空間と同じ名前の型を使用します。  
   
 -   `UInt8` では、`System.Byte` を使用します。  
   

@@ -14,11 +14,14 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a695e10ae9b074f0f9dc913d2f687c82e00475dd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 27423607959af4b3201da8d83630b7827b2eeeb6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="serialization-guidelines"></a>シリアル化のガイドライン
 このドキュメントには、シリアル化できるように API をデザインする際に考慮すべきガイドラインを示します。  

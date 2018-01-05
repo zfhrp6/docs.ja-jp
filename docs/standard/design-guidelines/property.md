@@ -16,11 +16,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 477b3b69ce1b8a3bb160e8e120885239e3d99e56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8f9c65dc6265daa793656177f066b97373f48ab8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="property-design"></a>プロパティのデザイン
 プロパティはメソッドに技術的には非常に似ていますは、使用シナリオの観点からはまったく異なります。 これらは、スマート フィールドと考える必要があります。 フィールドの呼び出し構文とメソッドの柔軟性があります。  
@@ -95,6 +98,6 @@ ms.lasthandoff: 11/21/2017
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
- [メンバーのデザイン ガイドライン](../../../docs/standard/design-guidelines/member.md)  
+## <a name="see-also"></a>参照  
+ [メンバーのデザインのガイドライン](../../../docs/standard/design-guidelines/member.md)  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

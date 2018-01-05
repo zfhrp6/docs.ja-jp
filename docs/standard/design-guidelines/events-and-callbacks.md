@@ -18,11 +18,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 217e9eae3540e0a20afd0888d24803285d6352b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 39dd4e31e84e455b72ce53bd8abffd650ce77dfc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="events-and-callbacks"></a>イベントとコールバック
 コールバックでは、フレームワークがデリゲートからのユーザー コードにコールバックする機能拡張ポイントです。 これらのデリゲートは、メソッドのパラメーターを通じて通常フレームワークに渡されます。  
@@ -51,6 +54,6 @@ ms.lasthandoff: 11/21/2017
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>関連項目  
- [機能拡張のための設計](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+## <a name="see-also"></a>参照  
+ [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

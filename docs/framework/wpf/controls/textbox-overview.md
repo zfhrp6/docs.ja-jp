@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1116093ddcd95c99deac8a1e1b14fef3b0a458f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 50e36192198c172843d79a4195e894b848f84c90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textbox-overview"></a>TextBox の概要
 <xref:System.Windows.Controls.TextBox>クラスを使用する書式設定されていないテキストを表示または編集します。 一般的な用途、<xref:System.Windows.Controls.TextBox>形式で書式設定されていないテキストを編集します。 たとえば、ユーザーの名前、電話番号の入力を求めるフォームなど使用<xref:System.Windows.Controls.TextBox>のテキスト入力コントロール。 このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と[!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)]です。  
@@ -33,8 +34,8 @@ ms.lasthandoff: 11/21/2017
   
 |コントロール|リアルタイム スペル チェック|コンテキスト メニュー|ようなコマンドの書式設定<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)|<xref:System.Windows.Documents.FlowDocument>イメージ、段落、テーブルなどのコンテンツ。|  
 |-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Windows.Controls.TextBox>|はい|はい|いいえ|いいえ。|  
-|<xref:System.Windows.Controls.RichTextBox>|はい|はい|はい (「[RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)」を参照)|はい (「[RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)」を参照)|  
+|<xref:System.Windows.Controls.TextBox>|[はい]|はい|×|いいえ。|  
+|<xref:System.Windows.Controls.RichTextBox>|[はい]|[はい]|はい (「[RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)」を参照)|はい (「[RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)」を参照)|  
   
 > [!NOTE]
 >  <xref:System.Windows.Controls.TextBox>のようなコマンドを関連する編集の書式設定をサポートしない機能は<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)、多くの基本的なコマンドがなどの両方のコントロールでサポートされて<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>です。 詳細については、「<xref:System.Windows.Documents.EditingCommands>」を参照してください。  
@@ -77,6 +78,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="detect-when-content-changes"></a>内容が変更されたときに検出する  
  通常、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>を検出するたびにイベントを使用する必要があります内のテキスト、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>変更ではなく<xref:System.Windows.UIElement.KeyDown>想定される場合があります。 例については、「[TextBox のテキストがいつ変更されたかを検出する](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法トピック](../../../../docs/framework/wpf/controls/textbox-how-to-topics.md)  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

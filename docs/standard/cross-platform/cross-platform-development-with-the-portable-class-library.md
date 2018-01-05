@@ -17,11 +17,14 @@ caps.latest.revision: "95"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 697842906772c190c67e2f6ec1a4eb255229f289
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 893bbc94d909d5c94b7f8727912a298575617c2c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発
 Visual Studio の .NET Framework ポータブル クラス ライブラリ プロジェクト タイプにより、Microsoft プラットフォームを対象としたクロスプラットフォーム アプリとライブラリをすばやく簡単に開発できます。  
@@ -37,7 +40,7 @@ Visual Studio の .NET Framework ポータブル クラス ライブラリ プ�
 > [!WARNING]
 >  [Visual Studio 2013 Update 2](http://go.microsoft.com/fwlink/p/?LinkId=393658)にポータブル クラス ライブラリ テンプレートの更新が含まれています。 Visual Studio と同じコンピューターにインストールされている Visual Studio 2013 以前のバージョンがあり、更新プログラム 2 への変更をインストールする場合、**ターゲット フレームワーク**選択肢は、Visual Studio の両方のバージョンに適用されます。  
   
- このトピックの内容  
+ このトピックの内容:  
   
  [Visual Studio のサポート](#vs_support)  
  [ポータブル クラス ライブラリ プロジェクトを作成します。](#create_pcl)  
@@ -126,7 +129,7 @@ Visual Studio 2012 の [ターゲットの変更] ダイアログ ボックス
 ## <a name="supported-features"></a>サポートされている機能  
  次の表に、各プラットフォームでサポートされている機能とバージョンを示します。 中には Microsoft がNuGet パッケージのリリースのサポートを追加しているものがありますが、その場合は注記が付されています。 .NET Framework 用の NuGet パッケージの詳細については、次を参照してください。 [.NET Framework および帯域外のリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)です。  
   
-|特性|.NET Framework|.NET Framework|.NET Framework|Windows ストア|Windows ストア|Windows Phone ストア|Windows Phone Silverlight|Windows Phone Silverlight|Windows Phone Silverlight|Silverlight|Silverlight|Xbox 360|  
+|機能|.NET Framework|.NET Framework|.NET Framework|Windows ストア|Windows ストア|Windows Phone ストア|Windows Phone Silverlight|Windows Phone Silverlight|Windows Phone Silverlight|Silverlight|Silverlight|Xbox 360|  
 |-------------|--------------------|--------------------|--------------------|-------------------|-------------------|-------------------------|-------------------------------|-------------------------------|-------------------------------|-----------------|-----------------|--------------|  
 ||**4**|**4.0.3**|**4.5**|**8**|**8.1**|**8.1**|**7.5**|**8**|**8.1**|**4**|**5**||  
 |コア ライブラリ|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓|  
@@ -226,8 +229,8 @@ Visual Studio 2012 の [ターゲットの変更] ダイアログ ボックス
 </div>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [MVVM をポータブル クラス ライブラリの使用](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)  
+## <a name="see-also"></a>参照  
+ [MVVM を利用した汎用性のあるクラス ライブラリの使用](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)  
  [複数のプラットフォームを対象とするライブラリのアプリケーション リソース](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md)  
  [.NET 移植性アナライザー](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)  
  [Windows ストア アプリおよび Windows ランタイムのための .NET Framework サポート](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)  

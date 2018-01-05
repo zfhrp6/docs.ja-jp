@@ -18,11 +18,12 @@ caps.latest.revision: "20"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 80b75897f54136849aa4b356c414145510d9cd3c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c382be7dabca90ef201fa24cfb79472955347eef
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="whitespace-processing-in-xaml"></a>XAML での空白の処理
 XAML の言語規則では、空白の意味は [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] プロセッサの実装によって処理する必要があると定められています。 ここでは、それらの XAML 言語規則について説明します。 また、XAML プロセッサの [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] 実装およびシリアル化用の XAML ライターで定義されている追加の空白処理についても説明します。  
@@ -84,7 +85,7 @@ XAML の言語規則では、空白の意味は [!INCLUDE[TLA2#tla_xaml](../../.
   
  また、フロー ドキュメント モデルで改行を意味する特定のインライン要素では、空白が意味を持つコレクションでも、余分なスペースを挿入しないように注意する必要があります。 たとえば、<xref:System.Windows.Documents.LineBreak>要素と同じ目的には、 \<BR/> にタグを付ける[!INCLUDE[TLA2#tla_html](../../../includes/tla2sharptla-html-md.md)]、マークアップでは、読みやすくするため、通常、<xref:System.Windows.Documents.LineBreak>はで改行を入れて後続のテキストから区切られます。 その改行は、正規化されて後続の行の先頭のスペースになってはなりません。 その動作を有効にするために、 <xref:System.Windows.Documents.LineBreak> 要素のクラス定義は <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>を適用します。これは、 [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] を囲む空白を常にトリミングするという意味に <xref:System.Windows.Documents.LineBreak> プロセッサによって解釈されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [XML 文字エンティティと XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)  
  [XAML における xml:space の処理](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md)

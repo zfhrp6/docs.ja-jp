@@ -17,11 +17,12 @@ caps.latest.revision: "55"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7da9803b6182ed21c25b0bb3a54cecd246587da7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5d42c65207cd6bec7f6af6936589cb86745028e6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="key-frame-animation-how-to-topics"></a>キー フレーム アニメーションに関する「方法」トピック
 このセクションのトピックでは、キー フレーム アニメーションを使用して、2 つのプロパティの値、コントロールの補間よりも多くのアニメーション化する方法を説明します。  
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Windows.Media.Animation.KeyTime>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グラフィックスとマルチメディア](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)

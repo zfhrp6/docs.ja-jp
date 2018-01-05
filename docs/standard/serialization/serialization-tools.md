@@ -12,11 +12,14 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3ea06f1ce1d49b731a37d28a43626b05380a3718
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 33da3336cc78763de080eb21e3b84fd4cfdc7716
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="serialization-tools"></a>シリアル化ツール
 ここでは、シリアル化ツールについて詳しく説明します。 すべてのツールは、コマンド ラインから実行できます。  
@@ -31,5 +34,5 @@ ms.lasthandoff: 12/02/2017
 |[XML シリアライザー ジェネレーター ツール (Sgen.exe)](../../../docs/standard/serialization/xml-serializer-generator-tool-sgen-exe.md)|指定されたアセンブリの種類に対応する XML シリアル化アセンブリを作成して、<xref:System.Xml.Serialization.XmlSerializer> のランタイム パフォーマンスを向上させます。|  
 |[XML スキーマ定義ツール (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)|W3C (World Wide Web Consortium) により提案された XSD 言語に準拠する XML スキーマを生成します。 このツールは、XSD スキーマ ファイルから共通言語ランタイム クラスと <xref:System.Data.DataSet> クラスを生成します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)

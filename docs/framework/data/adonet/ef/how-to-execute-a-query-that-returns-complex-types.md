@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a499c8cf9caeac480e09d7c965032db2d9fefec4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0d39052b9ba818e74b28de2f4f0097d2b3299889
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-execute-a-query-that-returns-complex-types"></a>複合型を返すクエリの実行方法
 このトピックでは、複合型プロパティを含むエンティティ型オブジェクトを返す [!INCLUDE[esql](../../../../../includes/esql-md.md)] クエリを実行する方法について説明します。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/18/2017
   
 4.  選択した場合は、新しい複合型`Email`と`Phone`にプロパティを追加、**モデル ブラウザー**です。 複合型で、既定の名前が指定されていること: 型の名前を変更`EmailPhone`で、**プロパティ**ウィンドウです。 また、新しい `ComplexProperty` プロパティが `Contact` エンティティ型に追加されます。 プロパティの名前を `EmailPhoneComplexType.` に変更します。  
   
-     作成して、Entity Data Model ウィザードを使用した複合型の変更については、次を参照してください[する方法: 複合型プロパティへの既存のプロパティをリファクター](http://msdn.microsoft.com/en-us/5b2eb3b3-693d-42cb-b43a-405812d677eb)と[する方法: 作成との複合型の変更](http://msdn.microsoft.com/en-us/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
+     作成して、Entity Data Model ウィザードを使用した複合型の変更については、次を参照してください[する方法: 複合型プロパティへの既存のプロパティをリファクター](http://msdn.microsoft.com/en-us/5b2eb3b3-693d-42cb-b43a-405812d677eb)と[する方法: 作成との複合型の変更。](http://msdn.microsoft.com/en-us/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
   
 ## <a name="example"></a>例  
  次の例のコレクションを返すクエリを実行する`Contact`オブジェクトし、の 2 つのプロパティを表示、`Contact`オブジェクト:`ContactID`との値、`EmailPhoneComplexType`複合型。  

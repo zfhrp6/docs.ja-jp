@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 09fc69ba6d82fdab5aa03dd3987ec1acdf0be17e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e41eb1168774a5ebfc17147f65901de0e432789f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loading-dataset-schema-information-from-xml"></a>XML の DataSet スキーマ情報の読み込み
 スキーマ、 <xref:System.Data.DataSet> (そのテーブル、列、リレーション、および制約) はプログラムでは、によって作成された、**塗りつぶし**または**FillSchema**のメソッド、<xref:System.Data.Common.DataAdapter>から読み込まれたか、XML ドキュメントです。 読み込む**データセット**スキーマ情報、XML ドキュメントから、いずれかを使用して、 **ReadXmlSchema**または**InferXmlSchema**のメソッド、**データセット**. **ReadXmlSchema**の読み込みまたは推論することができます**データセット**XML スキーマ定義言語 (XSD) スキーマ、またはインライン XML スキーマを持つ XML ドキュメントを含むドキュメントからスキーマ情報。 **InferXmlSchema**指定した特定の XML 名前空間を無視しているときに、XML ドキュメントからスキーマを推論することができます。  
@@ -83,7 +84,7 @@ xmlStream.Close();
 </NewDataSet>  
 ```  
   
- 上記の XML ドキュメント内の要素に指定された属性のため両方、 **ReadXmlSchema**メソッドおよび**ReadXml**メソッドを**XmlReadMode**の**InferSchema** 、ドキュメント内のすべての要素のテーブルの作成は:**カテゴリ**、 **CategoryID**、 **CategoryName**、**説明**、**製品**、 **ProductID**、 **ReorderLevel**、および**提供が中止されました**. (詳細については、次を参照してください[推論 DataSet リレーショナル構造の XML から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)。)。適切な構造体のみを作成すること、ただし、**カテゴリ**と**製品**テーブルを作成し、 **CategoryID**、 **CategoryName**、および**説明**内の列、**カテゴリ**テーブル、および**ProductID**、 **ReorderLevel**、および**生産中止**内の列、**製品**テーブル。 を確保するため、推論されるスキーマが XML 要素で指定された属性を無視することを使用して、 **InferXmlSchema**メソッドの XML 名前空間を指定して**officedata**無視するように、のように、次の例です。  
+ 上記の XML ドキュメント内の要素に指定された属性のため両方、 **ReadXmlSchema**メソッドおよび**ReadXml**メソッドを**XmlReadMode**の**InferSchema** 、ドキュメント内のすべての要素のテーブルの作成は:**カテゴリ**、 **CategoryID**、 **CategoryName**、**説明**、**製品**、 **ProductID**、 **ReorderLevel**、および**提供が中止されました。**. (詳細については、次を参照してください[推論 DataSet リレーショナル構造の XML から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)。)。適切な構造体のみを作成すること、ただし、**カテゴリ**と**製品**テーブルを作成し、 **CategoryID**、 **CategoryName**、および**説明**内の列、**カテゴリ**テーブル、および**ProductID**、 **ReorderLevel**、および**生産中止**内の列、**製品**テーブル。 を確保するため、推論されるスキーマが XML 要素で指定された属性を無視することを使用して、 **InferXmlSchema**メソッドの XML 名前空間を指定して**officedata**無視するように、のように、次の例です。  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  
@@ -95,7 +96,7 @@ DataSet dataSet = new DataSet();
 dataSet.InferXmlSchema("input_od.xml", new string[] "urn:schemas-microsoft-com:officedata");  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  [XML スキーマ (XSD) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
  [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  

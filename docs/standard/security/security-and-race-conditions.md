@@ -21,11 +21,14 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c092113f670c5799d98dcb13c9c713bbd1a47fb6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 73664df9c072189f11d451da46bc3019c8593ec9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="security-and-race-conditions"></a>セキュリティと競合状態
 問題の別の領域は、競合状態によって生じるセキュリティ ホールが発生する可能性です。 これが発生するいくつかの方法はあります。 次のサブトピックをアウトラインの主要な落とし穴を開発者が回避する必要があります。  
@@ -111,5 +114,5 @@ void DoOtherWork()
 ## <a name="race-conditions-in-finalizers"></a>ファイナライザーでの競合状態  
  競合状態は、そのファイナライザーで解放し、静的またはアンマネージ リソースを参照するオブジェクトでも発生することができます。 複数のオブジェクトは、クラスのファイナライザーで操作されるリソースを共有している場合、オブジェクトは、そのリソースへのすべてのアクセスを同期する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)

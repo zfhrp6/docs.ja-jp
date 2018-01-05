@@ -12,11 +12,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f0b1f27af6b4ec372b9dbd63e4bc89a5c435efe6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 10fc7461c077d73fedb1e326f88156e4a816cdee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>方法: カスタム アクティビティ デザイナーを作成する
 カスタム アクティビティ デザイナーは、通常、関連付けられたアクティビティを他のアクティビティと組み合わせることができるように実装されます。他のアクティビティのデザイナーは、アクティビティと一緒にデザイン サーフェイスにドロップできます。 この機能は、カスタム アクティビティ デザイナーが、任意のアクティビティを配置できる「ドロップ ゾーン」とも、デザイン画面上の要素の結果のコレクションを管理するための手段を提供することが必要です。 ここでは、そのようなドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成する方法と、デザイナー要素のコレクションを管理するために必要な編集機能を提供するカスタム アクティビティ デザイナーを作成する方法を説明します。  
@@ -37,7 +38,7 @@ ms.lasthandoff: 12/02/2017
   
 1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。  
   
-2.  **ファイル**] メニューのをポイント**新規**、し、[**プロジェクト...**.  
+2.  **ファイル**] メニューのをポイント**新規**、し、[**プロジェクト.**.  
   
      **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
@@ -51,7 +52,7 @@ ms.lasthandoff: 12/02/2017
   
 7.  **ソリューション**ボックスで、既定値をそのまま使用します。  
   
-8.  **[OK]** をクリックします。  
+8.  **[OK]**をクリックします。  
   
 9. MainWindows.xaml ファイルを右クリックして、**ソリューション エクスプ ローラー**[**削除**ことを確認および**[ok]**で、 **Microsoft Visual Studio**] ダイアログ ボックス。  
   
@@ -351,7 +352,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Activities.Presentation.ActivityDesigner>  
  <xref:System.Activities.Presentation.WorkflowItemPresenter>  
  <xref:System.Activities.Presentation.WorkflowItemsPresenter>  

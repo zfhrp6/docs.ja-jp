@@ -20,11 +20,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c04a2860b46460065a09de3dafedc7010753d36
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 81d808b982852d5cc6dc187a3c8389748a0dc0bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>チュートリアル: WPF アプリケーション内のアプリケーション データのキャッシュ
 キャッシュを使用すると、メモリにデータを格納して高速にアクセスできます。 データを再度アクセスすると、アプリケーションは、代わりに、元のソースから取得するキャッシュからデータを取得できます。 そのため、パフォーマンスとスケーラビリティが向上します。 また、データ ソースが一時的に使用できない場合でも、キャッシュのデータを使用できます。  
@@ -83,7 +84,7 @@ ms.lasthandoff: 11/21/2017
   
 6.  選択、**ソリューションのディレクトリを作成**チェック ボックスをオンします。  
   
-7.  **[OK]** をクリックします。  
+7.  **[OK]**をクリックします。  
   
      WPF デザイナーで開きます**デザイン**を表示し、MainWindow.xaml ファイルを表示します。 [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]作成、 **My Project**フォルダー、Application.xaml ファイル、および、MainWindow.xaml ファイル。  
   
@@ -103,13 +104,13 @@ ms.lasthandoff: 11/21/2017
   
 2.  **[コンパイル]** タブをクリックします。  
   
-3.  ウィンドウの下部には、をクリックして**詳細コンパイル オプション**.  
+3.  ウィンドウの下部には、をクリックして**詳細コンパイル オプション.**.  
   
      **コンパイラ設定の高度な** ダイアログ ボックスが表示されます。  
   
 4.  **ターゲット フレームワーク (すべての構成)**一覧で、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]です。 (選択しないでください[!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)])。  
   
-5.  **[OK]** をクリックします。  
+5.  **[OK]**をクリックします。  
   
      **ターゲット フレームワークの変更** ダイアログ ボックスが表示されます。  
   
@@ -335,7 +336,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[CachingWPFApplications#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
  [!code-vb[CachingWPFApplications#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.Caching.MemoryCache>  
  <xref:System.Runtime.Caching.ObjectCache>  
  <xref:System.Runtime.Caching>  

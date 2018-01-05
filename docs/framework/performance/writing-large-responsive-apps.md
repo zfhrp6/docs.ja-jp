@@ -13,11 +13,12 @@ caps.latest.revision: "25"
 author: BillWagner
 ms.author: wiwagn
 manager: wpickett
-ms.openlocfilehash: 3cb06be8d7cc4ee6d3b604f6057b5f5274773daf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: wiwagn
+ms.openlocfilehash: ac4052773044e44f546894a54dc21728dbd6634a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>規模が大きく、応答性の高い .NET Framework アプリの作成
 この記事では、大規模な .NET Framework アプリや、ファイルやデータベースなど大量のデータを処理するアプリのパフォーマンス改善のヒントを説明します。 説明するヒントは C# および Visual Basic コンパイラを マネージ コードで作成し直した際に得られたものです。この記事では C# コンパイラでの実際の例をいくつか紹介します。  
@@ -349,7 +350,7 @@ var predicate = new Func<Symbol, bool>(l.Evaluate);
   
  `symbols` 変数の型は <xref:System.Collections.Generic.List%601> です。  <xref:System.Collections.Generic.List%601> コレクション型は <xref:System.Collections.Generic.IEnumerable%601> を実装し、<xref:System.Collections.Generic.IEnumerator%601> が <xref:System.Collections.Generic.List%601>を使用して実装する列挙子 (`struct` インターフェイス) を適切に定義します。  クラスの代わりに構造体を使用すると、通常ヒープ割り当てが回避されます。ヒープ割り当ては、ガベージ コレクションのパフォーマンスに影響することがあります。  通常、列挙子は言語の `foreach` ループで使用されます。このループは、コール スタックで返される列挙子構造を使用します。  オブジェクトのスペースを確保するためにコール スタック ポインターをインクリメントしても、GC はヒープ割り当てのような影響を受けません。  
   
- 拡張 `FirstOrDefault` 呼び出しの場合、このコードは`GetEnumerator()` に対して <xref:System.Collections.Generic.IEnumerable%601> を呼び出す必要があります。  `symbols` を `enumerable` 型の `IEnumerable<Symbol>` 変数に割り当てると、実際のオブジェクトが <xref:System.Collections.Generic.List%601> であるという情報が失われます。  つまり、コードが `enumerable.GetEnumerator()` で列挙子をフェッチするときには、.NET Framework は返される構造体をボックス化し、`enumerator` 変数に割り当てる必要があります。  
+ 拡張 `FirstOrDefault` 呼び出しの場合、このコードは`GetEnumerator()` に対して <xref:System.Collections.Generic.IEnumerable%601> を呼び出す必要があります。  `symbols` を `enumerable` 型の `IEnumerable<Symbol>` 変数に割り当てると、実際のオブジェクトが <xref:System.Collections.Generic.List%601> であるという情報が失われます.  つまり、コードが `enumerable.GetEnumerator()` で列挙子をフェッチするときには、.NET Framework は返される構造体をボックス化し、`enumerator` 変数に割り当てる必要があります。  
   
  **例 5 の修正**  
   
@@ -394,7 +395,7 @@ class Compilation { /*...*/
 }  
 ```  
   
- `GetSyntaxTreeAsync()` を呼び出すと `Parser` がインスタンス化され、コードが解析され、<xref:System.Threading.Tasks.Task> オブジェクトが返されることがわかります`Task<SyntaxTree>`.  コストがかかる部分は、`Parser` インスタンスの割り当てとコードの解析です。  この関数は <xref:System.Threading.Tasks.Task> を返すので、呼び出し元はユーザー入力に応答するために解析作業を待ち、UI スレッドを解放できます。  
+ `GetSyntaxTreeAsync()` を呼び出すと `Parser` がインスタンス化され、コードが解析され、<xref:System.Threading.Tasks.Task> オブジェクトが返されることがわかります。`Task<SyntaxTree>`.  コストがかかる部分は、`Parser` インスタンスの割り当てとコードの解析です。  この関数は <xref:System.Threading.Tasks.Task> を返すので、呼び出し元はユーザー入力に応答するために解析作業を待ち、UI スレッドを解放できます。  
   
  Visual Studio の複数の機能が同じ構文ツリーを取得しようとすることがあるため、解析結果をキャッシュする次のコードを記述すると、時間と割り当てを節約できます。  ただしこのコードでは割り当てが発生します。  
   
@@ -469,7 +470,7 @@ class Compilation { /*...*/
   
 -   すべては割り当てで決まる - コンパイラ プラットフォーム チームは、新しいコンパイラのパフォーマンスの向上のため、この分野に最も多くの時間をかけました。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [このトピックのプレゼンテーションのビデオ](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)  
  [パフォーマンス プロファイリングのビギナーズ ガイド](/visualstudio/profiling/beginners-guide-to-performance-profiling)  
  [パフォーマンス](../../../docs/framework/performance/index.md)  
