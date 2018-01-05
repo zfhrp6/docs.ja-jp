@@ -41,6 +41,7 @@
 ### [開発環境またはテスト環境の RabbitMQ でイベント バスを実装する](multi-container-microservice-net-applications/rabbitmq-event-bus-development-test-environment.md)
 ### [イベントのサブスクライブ](multi-container-microservice-net-applications/subscribe-events.md)
 ### [ASP.NET Core サービスと Web アプリのテスト](multi-container-microservice-net-applications/test-aspnet-core-services-web-apps.md)
+### [IHostedService を使ってマイクロサービスのバックグラウンド タスクを実装する](multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md)
 ## [マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む](microservice-ddd-cqrs-patterns/index.md)
 ### [マイクロサービスに簡略化された CQRS と DDD パターンを適用する](microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns.md)
 ### [eShopOnContainers の DDD マイクロサービスに CQRS および CQS のアプローチを適用する](microservice-ddd-cqrs-patterns/eshoponcontainers-cqrs-ddd-microservice.md)

@@ -659,7 +659,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="navigating-to-loose-xaml-files"></a>Loose XAML ファイルへのナビゲート  
  厳密でない[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルは、次の特性を持つファイル。  
   
--   だけを含んだ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)](つまり、コードではなくです。  
+-   だけを含んだ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (つまり、コードではなくです。  
   
 -   適切な名前空間宣言がある。  
   
