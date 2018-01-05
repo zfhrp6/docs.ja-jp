@@ -17,13 +17,13 @@
 ### [.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ](standard/microservices-architecture/)
 ## [サーバー アプリ用 .NET Core と .NET Framework の選択](standard/choosing-core-framework-server.md)
 ## ["マネージ コード" とは](standard/managed-code.md)
-### [自動メモリ管理](standard/automatic-memory-management.md) 
+### [自動メモリ管理](standard/automatic-memory-management.md)
 ## [共通言語ランタイム (CLR)](standard/clr.md)
 ## [言語の独立性](standard/language-independence.md)
 ### [言語への非依存性、および言語非依存コンポーネント](standard/language-independence-and-language-independent-components.md)
 ## [フレームワーク ライブラリ](standard/framework-libraries.md)
-### [クラス ライブラリの概要](standard/class-library-overview.md)  
-### [基本データ型](standard/base-types/)  
+### [クラス ライブラリの概要](standard/class-library-overview.md)
+### [基本データ型](standard/base-types/)
 ## [.NET クラス ライブラリ](standard/class-libraries.md)
 ## [移植性アナライザー](standard/portability-analyzer.md)
 ## [例外の処理とスロー](standard/exceptions/)
@@ -101,10 +101,15 @@
 ### [.NET Core アプリケーションの Docker イメージのビルド](core/docker/building-net-docker-images.md)
 ### [Visual Studio Tools for Docker](/aspnet/core/publishing/visual-studio-tools-for-docker)
 ## [単体テスト](core/testing/index.md)
-### [dotnet テストおよび xUnit を使用した単体テスト](core/testing/unit-testing-with-dotnet-test.md)
-### [dotnet テストおよび MSTest を使用した単体テスト](core/testing/unit-testing-with-mstest.md)
-### [dotnet テストおよび xUnit を使用した F# 単体テスト](core/testing/unit-testing-fsharp-with-dotnet-test.md)
-### [dotnet テストおよび MSTest を使用した F# 単体テスト](core/testing/unit-testing-fsharp-with-mstest.md)
+### [xUnit を使用した C# の単体テスト](core/testing/unit-testing-with-dotnet-test.md)
+### [NUnit を使用した C# の単体テスト](core/testing/unit-testing-with-nunit.md)
+### [MSTest を使用した C# の単体テスト](core/testing/unit-testing-with-mstest.md)
+### [xUnit を使用した F# の単体テスト](core/testing/unit-testing-fsharp-with-dotnet-test.md)
+### [NUnit を使用した F# の単体テスト](core/testing/unit-testing-fsharp-with-nunit.md)
+### [MSTest を使用した F# の単体テスト](core/testing/unit-testing-fsharp-with-mstest.md)
+### [xUnit を使用した VB の単体テスト](core/testing/unit-testing-visual-basic-with-dotnet-test.md)
+### [NUnit を使用した VB の単体テスト](core/testing/unit-testing-visual-basic-with-nunit.md)
+### [MSTest を使用した VB の単体テスト](core/testing/unit-testing-visual-basic-with-mstest.md)
 ### [選択的単体テストの実行](core/testing/selective-unit-tests.md)
 ### [単体テストで発行された出力](core/testing/unit-testing-published-output.md)
 ### [Visual Studio を使用した .NET Core プロジェクトの Live Unit Testing](/visualstudio/test/live-unit-testing-start)
@@ -204,7 +209,7 @@
 ## [C# のツアー](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
-## [C# の新機能](csharp/whats-new/index.md) 
+## [C# の新機能](csharp/whats-new/index.md)
 ### [C# 7.2 の新機能](csharp/whats-new/csharp-7-2.md)
 ### [C# 7.1 の新機能](csharp/whats-new/csharp-7-1.md)
 ### [C# 7 の新機能](csharp/whats-new/csharp-7.md)
@@ -212,8 +217,6 @@
 ### [C# バージョン履歴](csharp/whats-new/csharp-version-history.md)
 ### [言語とフレームワークの関係](csharp/whats-new/relationships-between-language-and-library.md)
 <!-- End What's New -->
-<!--## [🔧 C# Interactive](csharp/interactive/)-->
-<!-- Do this section later, once master redirects are in place -->
 ## C# の概念
 ### [C# の型システム](csharp/programming-guide/types/index.md)
 ### [名前空間](csharp/programming-guide/namespaces/index.md)
@@ -223,8 +226,7 @@
 ### [タプル](csharp/tuples.md)
 ### [タプルおよびその他の型の分解](csharp/deconstruct.md)
 ### [インターフェイス](csharp/programming-guide/interfaces/index.md)
-<!--### [🔧 Methods and Lambda Expressions](csharp/methods-lambda-expressions.md)-->
-### [メソッド](csharp/methods.md)
+#### [メソッド](csharp/methods.md)
 #### [ラムダ式](csharp/lambda-expressions.md)
 ### [プロパティ](csharp/properties.md)
 ### [インデクサー](csharp/indexers.md)
@@ -242,7 +244,6 @@
 #### [デリゲートとイベントの識別](csharp/distinguish-delegates-events.md)
 ### [統合言語クエリ (LINQ)](csharp/linq/)
 ### [非同期プログラミング](csharp/async.md)
-<!--### [🔧 Parallel programming](csharp/parallel.md)-->
 ### [パターン一致](csharp/pattern-matching.md)
 ### [値の型による参照セマンティクス](csharp/reference-semantics-with-value-types.md)
 ### [式ツリー](csharp/expression-trees.md)
@@ -254,11 +255,10 @@
 #### [式の変換](csharp/expression-trees-translating.md)
 #### [まとめ](csharp/expression-trees-summary.md)
 ### [ネイティブ相互運用性](csharp/programming-guide/interop/index.md)
-<!--### [🔧 Reflection & code generation](csharp/reflection.md)-->
 ### [コードのドキュメントの作成](csharp/codedoc.md)
 ### [バージョン管理](csharp/versioning.md)
 <!-- End of C# Concepts section -->
-<!--## [🔧 Using the .NET Compiler Platform](csharp/roslyn/index.md)-->
+## [.NET Compiler Platform SDK (Roslyn API)](csharp/roslyn-sdk/)
 ## [C# プログラミング ガイド](csharp/programming-guide/)
 ## [言語リファレンス](csharp/language-reference/)
 ## [チュートリアル](csharp/walkthroughs.md)
