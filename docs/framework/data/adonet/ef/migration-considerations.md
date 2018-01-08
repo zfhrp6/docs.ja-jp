@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5ed85fde0b7c031a95ce3fee577cb07380a05eb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 038cf7ad9f6004f785fe35eccf38185272b0ed37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migration-considerations-entity-framework"></a>移行に関する注意事項 (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework には、既存のアプリケーションにとっていくつかの利点があります。 特に重要な利点の 1 つが、概念モデルを使用して、アプリケーションで使用するデータ構造をデータ ソースのスキーマから分離できることです。 これにより、ストレージ モデルやデータ ソース自体の将来の変更が容易になり、その変更を補うための変更をアプリケーションに加える必要がなくなります。 使用する利点の詳細についての[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]を参照してください[Entity Framework の概要](../../../../../docs/framework/data/adonet/ef/overview.md)と[Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md)です。  
@@ -105,6 +106,6 @@ ms.lasthandoff: 11/21/2017
  状態を保持するアプリケーション  
  [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Web アプリケーションは、Web ページまたはユーザー セッションの状態を維持頻繁にする必要があります。 内のオブジェクト、<xref:System.Data.Objects.ObjectContext>インスタンスまたはサーバーで、セッション状態のクライアント ビュー ステートに格納し、後で取得して新しいオブジェクト コンテキストに再アタッチします。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
   
-## <a name="see-also"></a>関連項目  
- [展開に関する考慮事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
+## <a name="see-also"></a>参照  
+ [配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
  [Entity Framework の用語](../../../../../docs/framework/data/adonet/ef/terminology.md)

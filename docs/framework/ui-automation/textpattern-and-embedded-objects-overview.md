@@ -18,15 +18,16 @@ caps.latest.revision: "17"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: af8d519b8036c5598740331960cacce07f375ac0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0b08bb2b4d9cdb5e90582fbce280a03f6fc04d13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern および埋め込みオブジェクトの概要
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  この概要では、 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] がテキスト ドキュメントまたはコンテナー内で埋め込みオブジェクトや子要素を公開する方法について説明します。  
   
@@ -137,7 +138,7 @@ ms.lasthandoff: 11/21/2017
   
 |イメージを含むセル|テキストを含むセル|  
 |---------------------|--------------------|  
-|![イメージの例を埋め込み](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|X|  
+|![イメージの例を埋め込み](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|x|  
 |![埋め込みイメージの例 2](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|Y|  
 |![埋め込みイメージの例 3](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample3.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample3")<br /><br /> Z のイメージ|Z|  
   
@@ -148,7 +149,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Automation.GridPattern.GetItem%2A> (パラメーターは (0, 0))|セルのコンテンツを表す <xref:System.Windows.Automation.AutomationElement> を返します。この場合、要素はテキスト コントロールです。|  
 |<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> ( <xref:System.Windows.Automation.AutomationElement> は、前の `GetItem` メソッドから返されるオブジェクト)|イメージをカバーする範囲を返します![埋め込みイメージの例](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")です。|  
 |前の<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> メソッドから返されるオブジェクトの `RangeFromChild` |セルを表す <xref:System.Windows.Automation.AutomationElement> を返します。この場合、要素は TableItemPattern をサポートするテキスト コントロールです。|  
-|前の<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> メソッドから返されるオブジェクトの `GetEnclosingElement` |テーブルを表す <xref:System.Windows.Automation.AutomationElement> を返します。|  
+|前の `GetEnclosingElement` メソッドから返されるオブジェクトの <xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|テーブルを表す <xref:System.Windows.Automation.AutomationElement> を返します。|  
 |前の<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> メソッドから返されるオブジェクトの `GetEnclosingElement` |テキスト プロバイダー自体を表す <xref:System.Windows.Automation.AutomationElement> を返します。|  
   
  **例 2: セルのテキスト コンテンツを取得する**  
@@ -156,14 +157,14 @@ ms.lasthandoff: 11/21/2017
 |呼び出されるメソッド|結果|  
 |-------------------|------------|  
 |<xref:System.Windows.Automation.GridPattern.GetItem%2A> (パラメーターは (1, 1))|セルのコンテンツを表す <xref:System.Windows.Automation.AutomationElement> を返します。この場合、要素はテキスト コントロールです。|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> ( <xref:System.Windows.Automation.AutomationElement> は、前の `GetItem` メソッドから返されるオブジェクト)|"Y" を返します。|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> (<xref:System.Windows.Automation.AutomationElement> は、前の `GetItem` メソッドから返されるオブジェクト)|"Y" を返します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Automation.TextPattern>  
  <xref:System.Windows.Automation.Text.TextPatternRange>  
  <xref:System.Windows.Automation.Provider.ITextProvider>  
  <xref:System.Windows.Automation.Provider.ITextRangeProvider>  
- [UI オートメーションを使用してオブジェクトを埋め込みへのアクセス](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)  
- [Expose the Content of a Table Using UI Automation](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
- [UI オートメーションを使用したテキストをスキャンします。](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)  
+ [UI オートメーションを使用した、埋め込みオブジェクトへのアクセス](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)  
+ [UI オートメーションを使用したテーブルの内容の公開](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
+ [UI オートメーションを使用したテキストのスキャン](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)  
  [TextPattern の検索と選択のサンプル](http://msdn.microsoft.com/en-us/0a3bca57-8b72-489d-a57c-da85b7a22c7f)

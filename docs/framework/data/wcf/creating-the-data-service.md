@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 22fc561d7df9bbd81bf19d351af2d07bc6b51237
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 57e305fd8b03e8d46c1fdcb7dd551f32062a1009
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-the-data-service"></a>データ サービスの作成
 このタスクを使用するサンプル データ サービスを作成する[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を公開する、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Northwind サンプル データベースに基づいているフィード。 このタスクに必要な基本手順は次のとおりです。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 12/02/2017
   
 3.  型`NorthwindService`として、プロジェクトの名前。  
   
-4.  **[OK]** をクリックします。  
+4.  **[OK]**をクリックします。  
   
 5.  (省略可能) Web アプリケーションに対して特定のポート番号を指定します。 メモ: このクイック スタートの以降の作業では、ポート番号 `12345` を使用します。  
   
@@ -112,5 +113,5 @@ ms.lasthandoff: 12/02/2017
   
  [Web ブラウザーからサービスへのアクセス](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ADO.NET Entity Data Model ツール](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)

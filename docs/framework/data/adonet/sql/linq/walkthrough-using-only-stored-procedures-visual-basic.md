@@ -14,11 +14,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 2facb328791f07d6def2d466c799f031fe500d6f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2eed4db8ee76d6f7bea8b0628219e858a1db9695
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>チュートリアル : ストアド プロシージャのみの使用 (Visual Basic)
 このチュートリアルでは、ストアド プロシージャのみを使用してデータにアクセスする、基本の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] シナリオ全体を示します。 この方法は、データ ストアへのアクセス方法を制限する目的で、データベース管理者によってよく使用されます。  
@@ -79,7 +80,7 @@ ms.lasthandoff: 11/21/2017
   
 4.  **名前**ボックスに、入力**sproconlyapp」と入力**です。  
   
-5.  **[OK]** をクリックします。  
+5.  **[OK]**をクリックします。  
   
      Windows フォーム デザイナーが開きます。  
   
@@ -200,6 +201,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="next-steps"></a>次の手順  
  いくつかの変更を加えることによって、このプロジェクトを強化できます。 たとえば、使用できるストアド プロシージャの一覧をリスト ボックスに表示し、実行するプロシージャをユーザーに選択させることができます。 レポートの出力をテキスト ファイルに送ることもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)  
  [ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

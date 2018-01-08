@@ -12,11 +12,11 @@ ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 838038fd873c3a841fd83d30df1c7b3e27fe697f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9a7abe74b76b2b7d0b4b2d45894e2cd4940f989a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>チュートリアル: Visual Studio でのオブジェクトの永続化 (Visual Basic)
 オブジェクトのプロパティはデザイン時に既定値に設定できますが、そのオブジェクトが破棄されると、実行時に入力した値はすべて失われます。 シリアル化によってインスタンス間でオブジェクトのデータを永続化すると、値を保存しておき、次にそのオブジェクトをインスタンス化するときに、その値を取得することができます。  
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/21/2017
 >  この例では、バイナリにデータを格納します。 この形式は、パスワードやクレジット カード情報などの重要情報には使用しないでください。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio IDE のカスタマイズ](/visualstudio/ide/personalizing-the-visual-studio-ide)」を参照してください。  
   
 ## <a name="creating-the-loan-object"></a>Loan オブジェクトの作成  
  まず、`Loan` クラスとそのクラスを使用するテスト アプリケーションを作成します。  
@@ -224,6 +224,6 @@ ms.lasthandoff: 11/21/2017
   
  この時点で、アプリケーションを再度ビルドして実行できます。 最初に既定値がテキスト ボックスに表示されます。 値を変更して、4 番目のテキスト ボックスに名前を入力します。 いったんアプリケーションを閉じて、再び実行します。 これで、新しい値がテキスト ボックスに表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [シリアル化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)  
  [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)
