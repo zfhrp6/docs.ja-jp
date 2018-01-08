@@ -13,11 +13,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b7fd2b0ce2a8f5ab77fd654863a1e68baad6a41e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fa26531b1d2573b4bef49ec93f4205716227e25b
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="transaction-fundamentals"></a>トランザクションの基礎
 トランザクションとは、複数のタスクを互いに結合したものです。 たとえば、あるアプリケーションが 2 つのタスクを実行するものとします。 まず、このアプリケーションはデータベースに新しいテーブルを作成します。 次に、データを収集、フォーマットし、新しく作成したテーブルに挿入する特定のオブジェクトを呼び出します。 この 2 つのタスクは、単に関連しているだけでなく、相互に依存しており、たとえば、新しいテーブルにデータを格納できなければ新しいテーブルを作成しないようにできます。 単一のトランザクションのスコープ内でこの 2 つのタスクを実行すると、両タスク間の結合が行われます。 第 2 のタスクが失敗すると、新しいテーブルの作成以前の時点まで第 1 のタスクがロールバックされます。  
@@ -30,7 +30,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Transactions> の提供するクラスを使用してトランザクション アプリケーションを開発する際は、必要なトランザクションの種類や関連するトランザクション マネージャーを気にする必要はありません。 <xref:System.Transactions> インフラストラクチャが自動的にこれらを管理します。  
   
- トランザクションの作成時に、トランザクションに適用する分離レベルを指定できます。 分離レベルは <xref:System.Transactions.IsolationLevel> クラスによって定義されます。分離レベルにより、特定のトランザクションの影響を受けるデータに対して他のトランザクションが持つアクセス レベルが決定されます。  
+ トランザクションの作成時に、トランザクションに適用する分離レベルを指定できます。 によって定義された、分離レベルで、<xref:System.Transactions.IsolationLevel>列挙型、他のトランザクションがデータに影響は、トランザクション アクセスのレベルを決定します。  
   
  ADO.NET を使用してトランザクションを作成する<xref:System.EnterpriseServices>、または、トランザクション プログラミング モデルによって提供される、<xref:System.Transactions>名前空間。 [System.Transactions によって提供される機能](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)を使用して、トランザクション アプリケーションの記述に使用できる機能について説明、<xref:System.Transactions>名前空間。  
   

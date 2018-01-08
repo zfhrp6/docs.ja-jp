@@ -29,16 +29,16 @@ ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e1039359145902bffe3f91aa654a43790d16b887
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 96baa5d91d0a600b84ed832fb1e3b1ed71a9d89d
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error ステートメント (Visual Basic)
 エラー処理ルーチンを有効にし、プロシージャ内のルーチンの場所を指定しますエラー処理ルーチンを無効にも使用できます。  
   
- なし、`On Error`ステートメントでは、発生するすべての実行時エラーが致命的な: エラー メッセージが表示され、実行が停止します。  
+ エラー処理せず、実行時に発生するは致命的なエラー: エラー メッセージが表示され、実行が停止します。  
   
  可能な限り、ことをお勧め非構造化例外処理を使用するのではなく、処理、コードの構造化例外を使用して、`On Error`ステートメントです。 詳しくは、「[Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」をご覧ください。  
   
@@ -55,7 +55,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
   
 |用語|定義|  
 |---|---|  
-|`GoTo``line`|要求で指定した行から開始するエラー処理ルーチンを有効に`line`引数。 `line`引数が任意の行ラベルまたは行番号。 実行時エラーが発生した場合は、エラー ハンドラーをアクティブにする際、指定した行に分岐を制御します。 指定した行と同じ手順である必要があります、`On Error`ステートメント、またはコンパイル時エラーが発生します。|  
+|`GoTo` `line`|要求で指定した行から開始するエラー処理ルーチンを有効に`line`引数。 `line`引数が任意の行ラベルまたは行番号。 実行時エラーが発生した場合は、エラー ハンドラーをアクティブにする際、指定した行に分岐を制御します。 指定した行と同じ手順である必要があります、`On Error`ステートメント、またはコンパイル時エラーが発生します。|  
 |`GoTo` 0|現在のプロシージャで有効になっているエラー ハンドラーが無効になり、リセット`Nothing`です。|  
 |`GoTo` -1|現在のプロシージャで有効になっている例外を無効にしをリセット`Nothing`です。|  
 |`Resume Next`|実行時エラーが発生したときに、エラーが発生し、そのポイントから実行が継続ステートメントの直後のステートメントに制御が移動を指定します。 このフォームを使用してなく`On Error GoTo`オブジェクトにアクセスするときにします。|  
@@ -119,12 +119,12 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
   
  [!code-vb[VbVbalrErrorHandling#20](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_4.vb)]  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
  **アセンブリ:** Visual Basic Runtime Library (Microsoft.VisualBasic.dll)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Information.Err%2A>  
  <xref:Microsoft.VisualBasic.ErrObject.Number%2A>  
  <xref:Microsoft.VisualBasic.ErrObject.Description%2A>  

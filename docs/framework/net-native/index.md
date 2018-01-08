@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 92dac407ace9a039f5e6edc16b093fea5c485f63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dec4d465b53f939f8fa711950ba6a000bd304e13
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="compiling-apps-with-net-native"></a>.NET ネイティブによるアプリのコンパイル
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]Visual Studio 2015 およびそれ以降のバージョンに含まれているプリコンパイル テクノロジを構築および Windows アプリを展開するためです。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 -   アプリのメモリ使用量を最適化します。  
 
 > [!IMPORTANT]
-> ほとんどのアプリとのシナリオでは、.NET ネイティブではスタートアップに時間が大幅に高速と IL をまたは NGEN イメージにコンパイルされたアプリを比較した場合にパフォーマンスが優れています。 ただし、結果は異なる場合があります。 アプリが .NET ネイティブのパフォーマンス向上の恩恵を受けていることを確認するには、.NET ネイティブ以外のバージョンのアプリのパフォーマンスを比較する必要があります。 詳細については、次を参照してください。[パフォーマンス セッションの概要](https:/docs.microsoft.com/visualstudio/profiling/performance-session-overview)です。
+> ほとんどのアプリとのシナリオでは、.NET ネイティブではスタートアップに時間が大幅に高速と IL をまたは NGEN イメージにコンパイルされたアプリを比較した場合にパフォーマンスが優れています。 ただし、結果は異なる場合があります。 アプリが .NET ネイティブのパフォーマンス向上の恩恵を受けていることを確認するには、.NET ネイティブ以外のバージョンのアプリのパフォーマンスを比較する必要があります。 詳細については、次を参照してください。[パフォーマンス セッションの概要](https://docs.microsoft.com/visualstudio/profiling/performance-session-overview)です。
  
 ただし、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] では、ネイティブ コードへのコンパイル以上の操作が行われます。 .NET Framework アプリのビルド方法と実行方法が変更されます。 特に次の点に注意してください。  
   

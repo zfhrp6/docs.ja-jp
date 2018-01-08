@@ -14,16 +14,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 28098a4e598d1c3bede3b05e3afe1001c3944d42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18866260c5d14cf27634afcd8391b159abac1dd1
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF のテスト用クライアント (WcfTestClient.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] テスト クライアント (WcfTestClient.exe) は、テスト パラメーターを入力し、その入力をサービスに送信して、サービスから返される応答を確認できる GUI ツールです。 このツールを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと組み合わせて使用すると、シームレスにサービスをテストできるようになります。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Test Client (WcfTestClient.exe) は、C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\ にあります。  
+ 通常は入手できます、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]次の場所でのテスト用クライアント (WcfTestClient.exe): C:\Program Files (x86) \Microsoft Visual Studio\2017\Community\Common7\IDE - コミュニティでは、"Enterprise"、「担当者」または「コミュニティ」のいずれかの可能性がありますこれによって Visual Studio のレベルがインストールされます。
   
 ## <a name="scenarios-for-using-test-client"></a>テスト用クライアントを使用するシナリオ  
  以下のセクションで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントを使用して開発プロセスを効率化できる最も一般的なシナリオについて説明します。  

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ab453800-d4d0-4a11-9d55-2b358d56af27
-ms.openlocfilehash: d1000e991a6c07693f2e639ee8f0a386d53a2aae
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: cb21ef7385cb679f9d445f8ee419db3d727fa057
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="symbol-and-operator-reference"></a>シンボルと演算子のリファレンス
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 10/18/2017
 |`>?`|[Null 許容の演算子](nullable-operators.md)|<ul><li>右辺が null 許容型である場合は、"大なり" 演算を実行します。<br /></li><ul/>|
 |`>>`|[関数](../functions/index.md)|<ul><li>2 つの関数を合成します (前方合成演算子)。<br /></li><ul/>|
 |`>>>`|[ビット処理演算子](bitwise-operators.md)|<ul><li>左辺にある数のビットを、右辺に指定された桁数だけ右にシフトします。<br /></li><ul/>|
-|`>=`|[算術演算子](arithmetic-operators.md)|<ul><li>右辺が左辺以上である場合は `true` を返します。それ以外の場合は `false` を返します。<br /></li><ul/>|
+|`>=`|[算術演算子](arithmetic-operators.md)|<ul><li>返します`true`左側にあるが、右側にある; 以上の場合、それを返します`false`です。<br /></li><ul/>|
 |`>=?`|[Null 許容の演算子](nullable-operators.md)|<ul><li>右辺が null 許容型である場合は、"以上" 演算を実行します。<br /></li><ul/>|
 |`?`|[パラメーターと引数](../parameters-and-arguments.md)|<ul><li>省略可能な引数を指定します。<br /></li><li>動的メソッドや動的プロパティの呼び出しのための演算子として使用されます。 独自の実装を提供する必要があります。<br /></li><ul/>|
 |`? ... <- ...`|詳細情報はありません。|<ul><li>動的プロパティを設定するための演算子として使用されます。 独自の実装を提供する必要があります。<br /></li><ul/>|
@@ -127,7 +127,7 @@ ms.lasthandoff: 10/18/2017
 |--------|-------------|
 |`as`|Right|
 |`when`|権限|
-|<code>&#124;</code>(パイプ)|左|
+|<code>&#124;</code>(パイプ)|Left|
 |`;`|Right|
 |`let`|非結合|
 |`function`, `fun`, `match`, `try`|非結合|
@@ -135,25 +135,25 @@ ms.lasthandoff: 10/18/2017
 |`->`|Right|
 |`:=`|Right|
 |`,`|非結合|
-|`or`, <code>&#124;&#124;</code>|左|
-|`&`, `&&`|左|
+|`or`, <code>&#124;&#124;</code>|Left|
+|`&`, `&&`|Left|
 |`:>`, `:?>`|権限|
-|`!=`*op*、 `<` *op*、 `>` *op*、 `=`、 <code>&#124;</code> *op*、 `&` *op*、`&`<br /><br />(`<<<`、`>>>`、<code>&#124;&#124;&#124;</code>、`&&&` を含む)|左|
+|`!=`*op*、 `<` *op*、 `>` *op*、 `=`、 <code>&#124;</code> *op*、 `&` *op*、`&`<br /><br />(`<<<`、`>>>`、<code>&#124;&#124;&#124;</code>、`&&&` を含む)|Left|
 |`^`*op*<br /><br />(`^^^` を含む)|権限|
 |`::`|権限|
 |`:?`|非結合|
 |`-`*op*、`+`*op*|これらのシンボルを挿入辞として使用するために適用|
 |`*`*op*、`/`*op*、`%`*op*|左|
 |`**`*op*|権限|
-|`f x` (関数適用)|左|
+|`f x` (関数適用)|Left|
 |<code>&#124;</code>(パターン マッチ)|権限|
-|前置演算子 (`+`*op*、`-`*op*、`%`、`%%`、`&`、`&&`、`!`*op*、`~`*op*)|左|
+|前置演算子 (`+`*op*、`-`*op*、`%`、`%%`、`&`、`&&`、`!`*op*、`~`*op*)|Left|
 |`.`|Left|
-|`f(x)`|左|
-|`f<`*types*`>`|左|
+|`f(x)`|Left|
+|`f<`*types*`>`|Left|
 F# はカスタム演算子のオーバー ロードをサポートしています。 これは、独自の演算子を定義できることを意味します。 上記の表では、*op* に、組み込みまたはユーザー定義の有効な (場合によっては空の) 演算子文字シーケンスを指定できます。 つまり、この表を使用して、カスタム演算子に使用する文字のシーケンスを決定し、目的のレベルの優先順位を実現することができます。 先行する `.` 文字は、コンパイラが優先順位を決定する場合は無視されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [F# 言語リファレンス](../index.md)
 
 [演算子のオーバーロード](../operator-overloading.md)
