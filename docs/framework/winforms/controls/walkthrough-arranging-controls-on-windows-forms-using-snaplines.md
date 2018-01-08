@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be514f435b787c770eca114d42bee5c1424a40c3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 028b66fea2b35e7b36760ec7c606f81ca2301620
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置
 フォーム上のコントロールを正確に配置することは、多くのアプリケーションで優先度の高い作業です。 Windows フォーム デザイナーでは、これを実現するさまざまなレイアウト ツールを提供します。 最も重要な 1 つは、<xref:System.Windows.Forms.Design.Behavior.SnapLine>機能します。  
@@ -232,7 +233,7 @@ ms.lasthandoff: 11/21/2017
   
 #### <a name="to-disable-snaplines-in-the-design-environment"></a>デザイン環境のスナップ線を無効にするには  
   
-1.  **ツール**メニューを開き、**オプション** ダイアログ ボックス。 Windows フォーム デザイナー ダイアログ ボックスを開きます。 詳細については、[[全般]、Windows フォーム デザイナー、オプション ダイアログ ボックス](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834)です。  
+1.  **ツール**メニューを開き、**オプション** ダイアログ ボックス。 Windows フォーム デザイナー ダイアログ ボックスを開きます。 詳細については、「 [[全般]、Windows フォーム デザイナー、オプション ダイアログ ボックス](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834)です。  
   
 2.  選択、**全般**ノード。 **レイアウト モード**セクションからの選択を変更**スナップ線**に**SnapToGrid**です。  
   
@@ -249,9 +250,9 @@ ms.lasthandoff: 11/21/2017
   
  Windows ユーザー インターフェイスの設計方法については、ブックを参照してください。 *Microsoft Windows ユーザー エクスペリエンス、ユーザー インターフェイスの開発者とデザイナーの Official Guidelines* Redmond、WA: Microsoft Press、1999 年。 (USBN: 0-7356-0566-1)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.Design.Behavior.SnapLine>  
  [チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
  [チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
- [チュートリアル: Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)  
+ [チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)  
  [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)

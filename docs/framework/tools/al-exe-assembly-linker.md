@@ -18,11 +18,12 @@ caps.latest.revision: "37"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 71600e0771c31392f568e11a7f51fc258ac5b362
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 830c141a13f2a7676e120600e05d786093a5ff44
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (アセンブリ リンカー)
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/18/2017
 > [!NOTE]
 > [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] 以降では、C# と Visual Basic のどちらのコンパイラを使用しても、Win32 マニフェストはアセンブリに自動的に埋め込まれます。 詳細については、「[/win32manifest (C# コンパイラ オプション)](~/docs/csharp/language-reference/compiler-options/win32manifest-compiler-option.md)」を参照してください。
 
-このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。
+このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。
 
 コマンド プロンプトに次のように入力します。
 
@@ -69,7 +70,7 @@ al sources options
 |**/flags:** `flags`|アセンブリの `Flags` フィールドに値を指定します。 `flags` に指定できる値は次のとおりです。<br /><br /> 0x0000<br /> アセンブリは side-by-side 実行をサポートしています。<br /><br /> 0x0010<br /> アセンブリは別のバージョンが同じアプリケーション ドメインで実行されている場合には実行できません。<br /><br /> 0x0020<br /> アセンブリは別のバージョンが同じプロセスで実行されている場合には実行できません。<br /><br /> 0x0030<br /> アセンブリは別のバージョンが同じコンピューターで実行されている場合には実行できません。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyFlagsAttribute>) として指定することもできます。|
 |**/fullpaths**|エラー メッセージで報告されるすべてのファイルについて、*Al.exe* が絶対パスを使用するように指定します。|
 |**/help**|このツールのコマンド構文とオプションを表示します。|
-|**/keyf[ile]:** `filename`|アセンブリに署名するためのキー ペアまたは公開キーだけを含むファイル (`filename`) を指定します。 コンパイラは、アセンブリ マニフェストに公開キーを挿入し、最終的なアセンブリに秘密キーで署名します。 キー ファイルの生成、およびキー コンテナーへのキー ペアのインストールについては、「[厳密名ツール (*Sn.exe*)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)」を参照してください。<br /><br /> 遅延署名を使用する場合は、通常、このファイルには公開キーだけが含まれ、秘密キーは含まれません。<br /><br /> キー ペアの公開キー情報は、アセンブリの .publickey フィールドに表示されます。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyKeyFileAttribute>) として指定することもできます。<br /><br /> 同じコンパイルで、コマンド ライン オプションまたはカスタム属性によって **/keyfile** と **/keyname** の両方が指定された場合、*Al.exe* はまず、**/keyname** で指定されたコンテナーを検索します。 成功すると、キー コンテナー内の情報を使用して、アセンブリが署名されます。 キー コンテナーを検出できなかった場合、*Al.exe* は **/keyfile** で指定されたファイルを検索します。 ファイルが検出された場合、アセンブリはキー ファイルの情報で署名され、キー情報はキー コンテナーにインストールされるため ([*Sn.exe*](../../../docs/framework/tools/sn-exe-strong-name-tool.md) の -i オプションと同様)、次のコンパイル時には **/keyname** オプションが有効となります。|
+|**/keyf[ile]:** `filename`|アセンブリに署名するためのキー ペアまたは公開キーだけを含むファイル (`filename`) を指定します。 コンパイラは、アセンブリ マニフェストに公開キーを挿入し、最終的なアセンブリに秘密キーで署名します。 キー ファイルの生成、およびキー コンテナーへのキー ペアのインストールについては、「[厳密名ツール (*Sn.exe*)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)」を参照してください。<br /><br /> 遅延署名を使用する場合は、通常、このファイルには公開キーだけが含まれ、秘密キーは含まれません。<br /><br /> キー ペアの公開キー情報は、アセンブリの .publickey フィールドに表示されます。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyKeyFileAttribute>) として指定することもできます。<br /><br /> 同じコンパイルで、コマンド ライン オプションまたはカスタム属性によって **/keyfile** と **/keyname** の両方が指定された場合、*Al.exe* はまず、**/keyname** で指定されたコンテナーを検索します。 成功すると、キー コンテナー内の情報を使用して、アセンブリが署名されます。 キー コンテナーを検出できなかった場合、*Al.exe* は **/keyfile** で指定されたファイルを検索します。 ファイルが検出された場合、アセンブリはキー ファイルの情報で署名され、キー情報はキー コンテナーにインストールされるため ([*Sn.exe*](../../../docs/framework/tools/sn-exe-strong-name-tool.md) の -i オプションと同様)、次のコンパイル時には **/keyname **オプションが有効となります。|
 |**/keyn[ame]:** `text`|キー ペアを保持するコンテナーを指定します。 これにより、公開キーがアセンブリ マニフェストに挿入され、アセンブリに署名 (厳密な名前が指定) されます。 次に、*Al.exe* は最終的なアセンブリに秘密キーで署名します。<br /><br /> *Sn.exe* を使用して、キー ペアを生成します。<br /><br /> キー情報は、アセンブリの .publickey フィールドに表示されます。<br /><br /> 空白が埋め込まれている場合は、`text` を二重引用符 (" ") で囲みます。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyKeyNameAttribute>) として指定することもできます。|
 |**/main:** `method`|モジュールを実行可能ファイルに変換するときに、エントリ ポイントとして使用するメソッドの完全修飾名 (`class`.`method`) を指定します。|
 |**/nologo**|*Al.exe* の起動時に、著作権情報またはロゴをコマンド ラインに表示しないようにします。|
@@ -81,9 +82,9 @@ al sources options
 |**/template:** `filename`|カルチャ フィールドを除く、すべてのアセンブリ メタデータの継承元であるアセンブリ (`filename`) を指定します。<br /><br /> **/template** を指定して作成したアセンブリは、サテライト アセンブリになります。|
 |**/title:** `text`|アセンブリの **Title** フィールドに文字列を指定します。 `text` に空白が含まれている場合は、文字列を二重引用符 (" ") で囲みます。 この文字列はアセンブリのカスタム属性であり、リフレクションを使用して表示するために使用できます。<br /><br /> **/win32res** を指定しないと、**/title** が Win32 **Description** リソースとしてエクスプローラーに表示され、アプリケーションのフレンドリ名としてシェルによって使用されます。 この文字列は、複数のアプリケーションでサポートされる種類のファイルに対するショートカット メニューの **[ファイルを開くアプリケーションの選択]** サブメニューにも表示されます。<br /><br /> テキストが空の文字列の場合、Win32 **Description** リソースは単一の空白として表示されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/title** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyTitleAttribute>) として指定することもできます。|
 |**/trade[mark]:** `text`|アセンブリの **Trademark** フィールドに文字列を指定します。 `text` に空白が含まれている場合は、文字列を二重引用符 (" ") で囲みます。 この文字列はアセンブリのカスタム属性であり、リフレクションを使用して表示するために使用できます。<br /><br /> **/win32res** を指定しないと、**/trademark** が Win32 **Trademark** リソースとしてエクスプローラーに表示されます。<br /><br /> テキストが空の文字列の場合、Win32 **Trademark** リソースは単一の空白として表示されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/trademark** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyTrademarkAttribute>) として指定することもできます。|
-|**/v[ersion]:** `version`|アセンブリのバージョン情報を指定します。 バージョン文字列の形式は `major`.`minor`.`build`.`revision` です。既定値は 0 です。<br /><br /> **/version** を指定する場合、`major` も指定する必要があります。 `major` と `minor` を指定する場合、`build` に対してアスタリスク (\*) を指定できます。 その場合、`build` は現地時間の 2000 年 1 月 1 日以降の経過日数と等しい値になり、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> `major`、`minor`、および `build` を指定する場合、`revision` に対してアスタリスクを指定できます。 その場合、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> まとめると、有効なバージョン文字列は次のようになります。<br /><br /> X<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> X は 65535 を除く unsigned short 定数 (0 ～ 65534) です。<br /><br /> **/win32res** を指定しないと、**/version** が Win32 **Assembly Version** リソースとして使用されます。<br /><br /> **/win32res**、**/productversion**、および **/fileversion** を指定しない場合、**/version** が **Assembly Version**、File Version、および **Product Version** Win32 リソースに対して使用されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/version** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyVersionAttribute>) として指定することもできます。|
+|**/v[ersion]:** `version`|アセンブリのバージョン情報を指定します。 バージョン文字列の形式は `major`.`minor`.`build`.`revision` です。既定値は 0 です。<br /><br /> **/version** を指定する場合、`major` も指定する必要があります。 `major` と `minor` を指定する場合、`build` に対してアスタリスク (\*) を指定できます。 その場合、`build` は現地時間の 2000 年 1 月 1 日以降の経過日数と等しい値になり、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> `major`、`minor`、および `build` を指定する場合、`revision` に対してアスタリスクを指定できます。 その場合、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> まとめると、有効なバージョン文字列は次のようになります。<br /><br /> x<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> X は 65535 を除く unsigned short 定数 (0 ～ 65534) です。<br /><br /> **/win32res** を指定しないと、**/version** が Win32 **Assembly Version** リソースとして使用されます。<br /><br /> **/win32res**、**/productversion**、および **/fileversion** を指定しない場合、**/version** が **Assembly Version**、File Version、および **Product Version** Win32 リソースに対して使用されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/version** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyVersionAttribute>) として指定することもできます。|
 |**/win32icon:** `filename`|.ico ファイルをアセンブリに挿入します。 この .ico ファイルは、エクスプローラーにおける出力ファイルの視覚的な表現を提供します。|
-|**/win32res:** `filename`|Win32 リソース (.res ファイル) を出力ファイルに挿入します。 Win32 リソース ファイルは、リソース コンパイラを使用して作成できます。 リソース コンパイラは、Visual C++ プログラムをコンパイルするときに呼び出されます。.res ファイルは .rc ファイルから作成されます。|
+|**/win32res:** `filename`|Win32 リソース (.res ファイル) を出力ファイルに挿入します。 Win32 リソース ファイルは、リソース コンパイラを使用して作成できます。 リソース コンパイラは、Visual C++ プログラムをコンパイルするときに呼び出されます。 .res ファイルは .rc ファイルから作成されます。|
 |`@filename`|*Al.exe* コマンドが格納されている応答ファイルを指定します。<br /><br /> 応答ファイルでは、コマンドは各行に 1 つずつ指定されるか、複数のコマンドが 1 行に空白で区切られて指定されます。|
 |**/?**|このツールのコマンド構文とオプションを表示します。|
 
@@ -97,7 +98,7 @@ al sources options
 
 *Al.exe* で発生するエラーの一覧を次の表に示します。
 
-| エラー | 説明 |
+| Error | 説明 |
 | ----- | ----------- |
 |al1001|内部コンパイル エラー<br /><br /> *Al.exe* のエラーの発生原因が、予期しない構文を解析できなかったためかどうかを調べてください。 その後、マイクロソフト製品 サポート サービスにお問い合わせください。|
 |al1002|メモリ不足<br /><br /> *Al.exe* がメモリ不足のため、停止しました。 使用できるメモリの容量を増やしてください。|
@@ -187,4 +188,4 @@ al t2.netmodule /target:exe /out:t2a.exe /main:MyClass.Main
 [*Sn.exe* (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
 [*Gacutil.exe* (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)  
 [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)  
-[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

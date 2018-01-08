@@ -26,11 +26,12 @@ caps.latest.revision: "46"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c9ece6deab2fa414861bdb7c76a2093464156395
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ca54817183b5e659b62ef04b1693698bd689370b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (リソース ファイル ジェネレーター)
 リソース ファイル ジェネレーター (Resgen.exe) は、テキスト (.txt または .restext) ファイルおよび XML ベースのリソース形式 (.resx) ファイルを共通言語ランタイムのバイナリ (.resources) ファイルに変換します。この .resources ファイルは、ランタイム バイナリ実行可能ファイルまたはサテライト アセンブリに埋め込むことができます。 「[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)」をご覧ください。  
@@ -63,7 +64,7 @@ resgen /?
   
  Resgen.exe を使用してバイナリ .resources ファイルを生成する場合は、言語コンパイラを使用して実行可能アセンブリにバイナリ ファイルを埋め込むか、[アセンブリ リンカー (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) を使用してサテライト アセンブリにコンパイルできます。  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
@@ -292,7 +293,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  パラメーターとスイッチ:  
   
  `inputFilename`  
- 厳密に型指定されたリソース クラスを生成するためのリソース ファイルのファイル名 (拡張子を含む)。 ファイルは、テキスト ベース、XML ベース、または .resources バイナリ ファイルです。.txt、.restext、.resw、または .resources 拡張子を持つことができます。  
+ 厳密に型指定されたリソース クラスを生成するためのリソース ファイルのファイル名 (拡張子を含む)。 ファイルは、テキスト ベース、XML ベース、または .resources バイナリ ファイルです。 .txt、.restext、.resw、または .resources 拡張子を持つことができます。  
   
  `outputFilename`  
  出力ファイルの名前。 `outputFilename` でディレクトリ パスが示されている場合、ディレクトリが存在する必要があります。 `outputFilename` を省略した場合は、Resgen.exe が `inputFilename` と同じディレクトリに `inputFilename` のルート ファイル名の .resources ファイルを作成します。  
@@ -304,7 +305,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  *language*  
  厳密な型のリソース クラスのソース コードの生成に使用する言語。 指定できる値は、C# コードの場合は `cs`、`C#`、`csharp`、Visual Basic コードの場合は `vb`、`visualbasic`、VBScript コードの場合は `vbs`、`vbscript`、C++ コードの場合は `c++`、`mc`、`cpp` です。  
   
- *名前空間*  
+ *namespace*  
  厳密に型指定したクラスを含む名前空間。 .resources ファイルおよびリソース クラスは、同じ名前空間を持つ必要があります。 `outputFilename` で名前空間を指定する場合については、「[リソースのバイナリ ファイルへのコンパイル](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Compiling)」をご覧ください。 *namespace* を省略すると、リソース クラスは、名前空間に含まれなくなります。  
   
  *classname*  
@@ -337,9 +338,9 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
 resgen StringResources.txt /str:vb,,StringResources   
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
  [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)  
  [リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
  [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

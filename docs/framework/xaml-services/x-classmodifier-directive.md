@@ -21,11 +21,12 @@ caps.latest.revision: "22"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 111c4a6ed78a908ae3b171dc9349a3c9b81750de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1a4918e23a915ee07eace388ea2cea512c2e479d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier ディレクティブ
 XAML のコンパイルの動作を変更するときに`x:Class`も用意されています。 部分を作成する代わりに、具体的には、`class`を持つ、`Public`アクセス レベル (既定)、指定された`x:Class`で作成された、`NotPublic`アクセス レベル。 この動作では、生成されたアセンブリでクラスのアクセス レベルに影響します。  
@@ -63,7 +64,7 @@ XAML のコンパイルの動作を変更するときに`x:Class`も用意され
 ## <a name="security-notes"></a>セキュリティに関する注意事項  
  アクセス レベルで宣言されている`x:ClassModifier`は、特定のフレームワークとその機能によって解釈される可能性があります。 WPF には、読み込みし、型のインスタンスを作成する機能が含まれています。 ここで`x:ClassModifier`は`internal`パック URI 参照を使用して、WPF リソースからそのクラスが参照されている場合、します。 この場合は、可能性のある他のフレームワークによって実装されるようなその他の結果として使用しない専用に`x:ClassModifier`をすべての可能なインスタンス化をブロックしようとします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [WPF における分離コードと XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)  
  [x:FieldModifier ディレクティブ](../../../docs/framework/xaml-services/x-fieldmodifier-directive.md)  

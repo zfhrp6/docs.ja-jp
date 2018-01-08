@@ -26,11 +26,12 @@ caps.latest.revision: "44"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 71f0a8c8d0e5e09cb6f39e5b8b104c0848c4d8ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0054e77138218e83693c13727866e8e6841170f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (コード アクセス セキュリティ ポリシー ツール)
 ユーザーと管理者は、コード アクセス セキュリティ (CAS) ポリシー ツール (Caspol.exe) を使用して、コンピューター ポリシー レベル、ユーザー ポリシー レベル、およびエンタープライズ ポリシー レベルのセキュリティ ポリシーを変更できます。  
@@ -121,7 +122,7 @@ caspol [options]
  名前付きアクセス許可セットを参照する場合は、名前を使用します。 **–list** オプションでは、最初にコード グループの一覧、次にそのポリシーの中で利用できる名前付きアクセス許可セットの一覧が表示されます。  
   
 ## <a name="caspolexe-behavior"></a>Caspol.exe の動作  
- **-s****[ecurity]** {**on** &#124; **off**} を除くすべてのオプションが、Caspol.exe と共にインストールされたバージョンの .NET Framework を使用します。 *あるバージョン*のランタイムと共にインストールされた Caspol.exe を実行する場合、変更内容はそのバージョンだけに適用されます。 その他のランタイムが共存する場合、それらのランタイムは影響を受けません。 特定のランタイム バージョンのディレクトリに切り替えずに Caspol.exe をコマンド ラインで実行する場合、Caspol.exe はパスに含まれる最初のランタイム バージョン (通常は最後にインストールされたランタイム バージョン) のディレクトリから実行されます。  
+ **-s****[ecurity]** {**on** &#124; **off**} を除くすべてのオプションが、Caspol.exe と共にインストールされたバージョンの .NET Framework を使用します。 あるバージョンのランタイムと共にインストールされた Caspol.exe を実行する場合、変更内容はそのバージョンだけに適用されます*。* その他のランタイムが共存する場合、それらのランタイムは影響を受けません。 特定のランタイム バージョンのディレクトリに切り替えずに Caspol.exe をコマンド ラインで実行する場合、Caspol.exe はパスに含まれる最初のランタイム バージョン (通常は最後にインストールされたランタイム バージョン) のディレクトリから実行されます。  
   
  **-s****[ecurity]** {**on** &#124; **off**} オプションは、コンピューター全体に対する操作です。 コード アクセス セキュリティをオフにすると、すべてのマネージ コードおよびコンピューター上のすべてのユーザーに対するセキュリティ チェックが中止されます。 side-by-side 実行バージョンの .NET Framework がインストールされている場合は、このコマンドによってコンピューターにインストールされているすべてのバージョンのセキュリティがオフになります。 **-list** オプションを使用するとセキュリティがオフになっていることが示されますが、他のユーザーに対してセキュリティがオフになっていることが明確に示されることはありません。  
   
@@ -135,7 +136,7 @@ caspol [options]
   
  ほとんどの場合、手動によるセキュリティ構成ファイルの編集はお勧めしません。 ただし、これらのファイルを変更する必要が生じることもあります。たとえば、管理者が特定のユーザーについてセキュリティ設定を編集する場合などです。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  **-addfulltrust**  
   
  カスタム アクセス許可を含むアクセス許可セットがコンピューター ポリシーに追加されたものと見なします。 このカスタム アクセス許可は、`MyPerm.exe` と、`MyPerm.exe` の `MyOther.exe` 参照クラスに実装されます。 両方のアセンブリとも、完全信頼アセンブリ一覧に追加する必要があります。 `MyPerm.exe` アセンブリをコンピューター ポリシーの完全信頼一覧に追加するコマンドを次に示します。  
@@ -254,6 +255,6 @@ caspol -customall "c:\config_test\security.config" -resolvegroup myassembly
 caspol -all -resolveperm testassembly  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
