@@ -8,11 +8,11 @@ ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 36bb31975523055962fa9572109dab7e2ed47336
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4fe9a9250e0a87ecaa02258526b7cc796de8e387
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="refactoring-into-pure-functions-c"></a>純粋関数へのリファクタリング (C#)
 
@@ -35,21 +35,21 @@ ms.lasthandoff: 11/21/2017
  次の例に示す 2 つの非純粋関数と 1 つの純粋関数を参照して、その違いを確認してください。  
   
 ### <a name="non-pure-function-that-changes-a-class-member"></a>クラス メンバーを変更する非純粋関数  
- 次のコードの `HypenatedConcat` 関数は、クラス内の `aMember` データ メンバーを変更するため、純粋関数ではありません。  
+ 次のコードの `HyphenatedConcat` 関数は、クラス内の `aMember` データ メンバーを変更するため、純粋関数ではありません。  
   
 ```csharp  
 public class Program  
 {  
     private static string aMember = "StringOne";  
   
-    public static void HypenatedConcat(string appendStr)  
+    public static void HyphenatedConcat(string appendStr)  
     {  
         aMember += '-' + appendStr;  
     }  
   
     public static void Main()  
     {  
-        HypenatedConcat("StringTwo");  
+        HyphenatedConcat("StringTwo");  
         Console.WriteLine(aMember);  
     }  
 }  
@@ -69,7 +69,7 @@ StringOne-StringTwo
 ```csharp  
 public class Program  
 {  
-    public static void HypenatedConcat(StringBuilder sb, String appendStr)  
+    public static void HyphenatedConcat(StringBuilder sb, String appendStr)  
     {  
         sb.Append('-' + appendStr);  
     }  
@@ -77,19 +77,19 @@ public class Program
     public static void Main()  
     {  
         StringBuilder sb1 = new StringBuilder("StringOne");  
-        HypenatedConcat(sb1, "StringTwo");  
+        HyphenatedConcat(sb1, "StringTwo");  
         Console.WriteLine(sb1);  
     }  
 }  
 ```  
   
- このバージョンのプログラムは、最初のバージョンと同じ出力を生成します。これは、`HypenatedConcat` 関数が <xref:System.Text.StringBuilder.Append%2A> メンバー関数を呼び出して最初のパラメーターの値 (状態) を変更したためです。 `HypenatedConcat` はパラメーターを値で渡しますが、それでもこの変更は行われるので注意してください。  
+ このバージョンのプログラムは、最初のバージョンと同じ出力を生成します。これは、`HyphenatedConcat` 関数が <xref:System.Text.StringBuilder.Append%2A> メンバー関数を呼び出して最初のパラメーターの値 (状態) を変更したためです。 `HyphenatedConcat` はパラメーターを値で渡しますが、それでもこの変更は行われるので注意してください。  
   
 > [!IMPORTANT]
 >  参照型の場合、パラメーターを値で渡すと、渡されるオブジェクトへの参照がコピーされて渡されます。 このコピーは、参照変数が新しいオブジェクトに割り当てられるまで、元の参照と同じインスタンス データに関連付けられたままとなります。 パラメーターを変更する場合に、必ずしも関数に参照を渡す必要はありません。  
   
 ### <a name="pure-function"></a>純粋関数  
-次のバージョンのプログラムは、`HypenatedConcat` 関数を純粋関数として実装する方法を示しています。  
+次のバージョンのプログラムは、`HyphenatedConcat` 関数を純粋関数として実装する方法を示しています。  
   
 ```csharp  
 class Program  
@@ -117,6 +117,6 @@ class Program
   
  詳細については、「[標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [純粋関数型変換の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
  [関数型プログラミングと命令型プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

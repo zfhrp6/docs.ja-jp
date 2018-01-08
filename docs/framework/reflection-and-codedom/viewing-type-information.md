@@ -22,11 +22,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5f6051c3da274c6a8579516e073c0ea91a195d59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2b31c029eb18943c926dfd5ed5b0576e866067d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="viewing-type-information"></a>型情報の表示
 <xref:System.Type?displayProperty=nameWithType> クラスは、リフレクションの中心です。 共通言語ランタイムは、リフレクションの要求時に読み込まれる型の**型**を作成します。 **型**オブジェクトのメソッド、フィールド、プロパティ、および入れ子になったクラスから、その型に関することがすべてわかります。  
@@ -82,7 +83,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source4.cs#4)]
  [!code-vb[Conceptual.Types.ViewInfo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source4.vb#4)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Reflection.BindingFlags>  
  <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>  
  <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType>  

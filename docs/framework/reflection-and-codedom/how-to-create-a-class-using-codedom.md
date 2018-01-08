@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d92af3e2a04588e3942dd6c8c0625c607e08f123
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ccf5a4edc9404ed13d732dc8bbf0ab1bde1e5d6d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>方法 : CodeDOM を使用してクラスを作成する
 2 つのフィールド、3 つのプロパティ、1 つのメソッド、1 つのコンストラクター、1 つのエントリ ポイントを含むクラスを生成する CodeDOM グラフを作成し、コンパイルする方法を次に示します。  
@@ -126,6 +127,6 @@ The object:
   
 -   このコード サンプルを正しく実行するには、`FullTrust` アクセス許可を設定する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CodeDOM の使用方法](../../../docs/framework/reflection-and-codedom/using-the-codedom.md)  
  [CodeDOM グラフからのソース コードの生成およびコンパイル](../../../docs/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph.md)

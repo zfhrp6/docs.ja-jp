@@ -24,16 +24,17 @@ caps.latest.revision: "40"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 611df94890200f442e8e2b0f5d1442eb44f25c70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: edda4e415f8ce0246ce6aa1a4d39f5bb6cec7728
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="installutilexe-installer-tool"></a>Installutil.exe (インストーラー ツール)
 インストーラー ツールは、指定したアセンブリ内のインストーラー コンポーネントを実行することによってサーバー リソースのインストールとアンインストールを実行できるコマンド ライン ユーティリティです。 このツールは、<xref:System.Configuration.Install> 名前空間のクラスと組み合わせることによって動作します。  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
@@ -54,8 +55,8 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
   
 |オプション|説明|  
 |------------|-----------------|  
-|`/h[elp]`<br /><br /> または<br /><br /> `/?`|このツールのコマンド構文とオプションを表示します。|  
-|`/help` *assembly*<br /><br /> または<br /><br /> `/?` *assembly*|InstallUtil.exe のコマンド構文とオプションと共に、指定したアセンブリ内でそれぞれのインストーラーによって認識される追加オプションを表示します。 このオプションを指定すると、各インストーラー コンポーネントの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> プロパティによって返されるテキストが InstallUtil.exe のヘルプ テキストに追加されます。|  
+|`/h[elp]`<br /><br /> - または -<br /><br /> `/?`|このツールのコマンド構文とオプションを表示します。|  
+|`/help` *assembly*<br /><br /> - または -<br /><br /> `/?` *assembly*|InstallUtil.exe のコマンド構文とオプションと共に、指定したアセンブリ内でそれぞれのインストーラーによって認識される追加オプションを表示します。 このオプションを指定すると、各インストーラー コンポーネントの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> プロパティによって返されるテキストが InstallUtil.exe のヘルプ テキストに追加されます。|  
 |`/AssemblyName` "*assemblyName*<br /><br /> ,Version=*major.minor.build.revision*<br /><br /> ,Culture=*locale*<br /><br /> ,PublicKeyToken=*publicKeyToken*"|グローバル アセンブリ キャッシュに登録されている必要があるアセンブリの厳密な名前を指定します。 アセンブリ名は、バージョン、カルチャ、およびアセンブリの公開キー トークンによって完全修飾にする必要があります。 完全修飾名は、引用符で囲む必要があります。<br /><br /> たとえば、"myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0" は、完全修飾のアセンブリ名です。|  
 |`/InstallStateDir=[` *directoryName* `]`|アセンブリをアンインストールするために使用されるデータを格納する .InstallState ファイルのディレクトリを指定します。 既定のディレクトリは、アセンブリを格納しているディレクトリです。|  
 |`/LogFile=`[*filename*]|インストールの進行状況を記録するログ ファイルの名前を指定します。 既定では、`/LogFile` オプションを省略した場合は、*assemblyname*.InstallLog という名前のログ ファイルが作成されます。 *filename* を省略した場合、ログ ファイルは生成されません。|  
@@ -96,7 +97,7 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
   
  C++ を使用して作成した Windows サービスを Installutil.exe で配置することはできません。Installutil.exe は、C++ コンパイラで作成される埋め込みのネイティブ コードを認識できません。 C++ Windows サービスを Installutil.exe で配置しようとすると、<xref:System.BadImageFormatException> などの例外がスローされます。 これを行うには、サービス コードを C++ モジュールに移行し、インストーラー オブジェクトを C# または Visual Basic で記述します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  InstallUtil.exe のコマンド構文とオプションの説明を表示するコマンドを次に示します。  
   
 ```  
@@ -169,7 +170,7 @@ installutil /LogFile= /email=admin@mycompany.com myAssembly.exe
 installutil /LogFile=myLog.InstallLog myAssembly.exe /LogFile=myTestLog.InstallLog myTestAssembly.exe  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Configuration.Install>  
  [ツール](../../../docs/framework/tools/index.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

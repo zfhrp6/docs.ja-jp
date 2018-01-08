@@ -26,11 +26,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6759e7b62f4083f6d53663385398baf098f2676f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e19aebbeee7fd65e27704af49185a1b8d48b9639
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-fully-qualified-type-names"></a>完全修飾型名の指定
 多様なリフレクション操作に対して有効な入力の型名を指定する必要があります。 完全修飾型名は、アセンブリ名の指定、名前空間の指定、および型名で構成されます。 型名の指定は、<xref:System.Type.GetType%2A?displayProperty=nameWithType>、<xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType>、<xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>、<xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> などのメソッドで使用されます。  
@@ -150,7 +151,7 @@ com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,
   
  **ModuleBuilder.GetType** の場合、`MyArray[0..5]` はサイズが 6 で下限が 0 の 1 次元配列です。 `MyArray[4…]` は、不明なサイズで下限が 4 の 1 次元配列です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Reflection.AssemblyName>  
  <xref:System.Reflection.Emit.ModuleBuilder>  
  <xref:System.Reflection.Emit.TypeBuilder>  

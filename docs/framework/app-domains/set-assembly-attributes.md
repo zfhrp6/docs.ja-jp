@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0683ee1e79d9e5fd9bef7af3b6b85dd5a58c3845
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f95d8c5f78dfa9ec388cfa63b81857ffe580abf3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setting-assembly-attributes"></a>アセンブリ属性の設定
 アセンブリの属性は、アセンブリに関する情報を提供する値です。 属性は、次のような情報に分類されます。  
@@ -94,6 +95,6 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[AssemblyDelaySignAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#4)]
  [!code-vb[AssemblyDelaySignAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyDelaySignAttribute/vb/source2.vb#4)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)  
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)

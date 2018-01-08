@@ -23,11 +23,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7dfa8bab1d142462d49524495e3e5dc0b4960a4d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a4123ea28b317d432f9a36ea0c084d7fdacc7ffe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>共通言語ランタイムのアセンブリ
 アセンブリは .NET Framework アプリケーションのビルド ブロックであり、配置、バージョン管理、再利用、アクティブ化のスコープの指定、およびセキュリティ アクセス許可の基本単位となります。 アセンブリは、相互に連携して 1 つの論理的な機能単位を形成するように構築された型やリソースの集合です。 共通言語ランタイムは、型の実装に関して必要な情報をアセンブリから取得します。 共通言語ランタイムにとって、型はアセンブリのコンテキストの外部には存在しません。  

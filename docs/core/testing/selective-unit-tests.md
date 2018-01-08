@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13d01272-bbf8-456c-a97a-560001d1a7f2
-ms.openlocfilehash: af832d04d2cba530a93710a90701ab119a66deef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: a650e971afd63171b0cc12f679d81bc222a609a5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="running-selective-unit-tests"></a>選択的単体テストの実行
 
@@ -45,7 +46,7 @@ namespace MSTestNamespace
 }
 ```
 
-| 式 | 結果 |
+| 正規表現 | 結果 |
 | ---------- | ------ |
 | `dotnet test --filter Method` | `FullyQualifiedName` に `Method` が含まれるテストを実行します。 `vstest 15.1+` で使用できます。 |
 | `dotnet test --filter Name~TestMethod1` | 名前に `TestMethod1` が含まれるテストを実行します。 |
@@ -56,7 +57,7 @@ namespace MSTestNamespace
 
 **条件演算子| と &amp; の使用**
 
-| 式 | 結果 |
+| 正規表現 | 結果 |
 | ---------- | ------ |
 | <code>dotnet test --filter "FullyQualifiedName~UnitTestClass1&#124;TestCategory=CategoryA"</code> | `FullyQualifiedName` に `UnitTestClass1` がある、**または** `TestCategory` が `CategoryA` のテストを実行します。 |
 | `dotnet test --filter "FullyQualifiedName~UnitTestClass1&TestCategory=CategoryA"` | `FullyQualifiedName` に `UnitTestClass1` がある、**および** `TestCategory` が `CategoryA` のテストを実行します。 |
@@ -86,7 +87,7 @@ namespace XUnitNamespace
 }
 ```
 
-| 式 | 結果 |
+| 正規表現 | 結果 |
 | ---------- | ------ |
 | `dotnet test --filter DisplayName=XUnitNamespace.TestClass1.Test1` | `XUnitNamespace.TestClass1.Test1` という 1 つのテストのみを実行します。 |
 | `dotnet test --filter FullyQualifiedName!=XUnitNamespace.TestClass1.Test1` | `XUnitNamespace.TestClass1.Test1` 以外のテストをすべて実行します。 |
@@ -94,14 +95,14 @@ namespace XUnitNamespace
 
 コード例では、特性をキー `Category` や `Priority` で定義すると、フィルター処理に使用できます。
 
-| 式 | 結果 |
+| 正規表現 | 結果 |
 | ---------- | ------ |
 | `dotnet test --filter XUnit` | `FullyQualifiedName` に `XUnit` が含まれるテストを実行します。  `vstest 15.1+` で使用できます。 |
 | `dotnet test --filter Category=bvt` | `[Trait("Category", "bvt")]` があるテストを実行します。 |
 
 **条件演算子| と &amp; の使用**
 
-| 式 | 結果 |
+| 正規表現 | 結果 |
 | ---------- | ------ |
 | <code>dotnet test --filter "FullyQualifiedName~TestClass1&#124;Category=Nightly"</code> | `FullyQualifiedName` に `TestClass1` がある、**または** `Category` が `Nightly` のテストを実行します。 |
 | `dotnet test --filter "FullyQualifiedName~TestClass1&Category=Nightly"` | `FullyQualifiedName` に `TestClass1` がある、**および** `Category` が `Nightly` のテストを実行します。 |

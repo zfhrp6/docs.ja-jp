@@ -21,11 +21,12 @@ caps.latest.revision: "44"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e303246737d52f76d893074973804710b2dc9b71
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ff7036bce069aa24742f7ead7bb0735fed0f3678
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (厳密名ツール)
 厳密名ツール (Sn.exe) は、[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)を使用してアセンブリに署名する場合に役立ちます。 Sn.exe には、キーの管理、署名の生成、署名の検査に関する各オプションが用意されています。  
@@ -90,7 +91,7 @@ sn [-quiet][option [parameter(s)]]
 > [!NOTE]
 >  レジストリなどの保護されたリソースに書き込むパラメーター (例: -**Vr)** の場合は、管理者として SN.exe を実行してください。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  新しいランダム キー ペアを作成し、`keyPair.snk` に格納するコマンドを次に示します。  
   
 ```  
@@ -127,8 +128,8 @@ sn -v MyAsm.dll
 sn -d MyContainer  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
  [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
  [厳密な名前付きアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

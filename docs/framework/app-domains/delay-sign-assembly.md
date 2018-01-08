@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 08f0f48a71415878cd24640272a41de4c0a5ade6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ce40f08b8b31ae3a4647e8919b4ea862fc03506f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="delay-signing-an-assembly"></a>アセンブリへの遅延署名
 組織には、開発者が日常的にアクセスしない厳重に保護されたキーのペアがある場合があります。 公開キーは広く使用可能ですが、秘密キーへのアクセスは少数のユーザーに限定されます。 厳密な名前のアセンブリを開発すると、厳密な名前のターゲット アセンブリを参照する各アセンブリに、そのターゲット アセンブリに厳密な名前を指定するために使用する公開キーのトークンが含まれています。 この場合、開発プロセスで、公開キーを使用できる必要があります。  
@@ -76,7 +77,7 @@ ms.lasthandoff: 11/21/2017
     sn -R myAssembly.dll sgKey.snk  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)  
  [方法: 公開キーと秘密キーのキー ペアを作成する](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
  [Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  

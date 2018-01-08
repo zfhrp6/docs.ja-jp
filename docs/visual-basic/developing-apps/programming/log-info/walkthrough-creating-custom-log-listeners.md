@@ -14,11 +14,11 @@ ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b1bda4a3465af4ed95de720117ea2e03f9a86b84
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: f141421350b0ad7b8287e43b676a9439eae1f24c
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>チュートリアル: カスタム ログ リスナーの作成 (Visual Basic)
 このチュートリアルでは、カスタム ログ リスナーを作成する方法と、`My.Application.Log` オブジェクトの出力を待機するように構成する方法について説明します。  
@@ -41,11 +41,11 @@ ms.lasthandoff: 12/09/2017
   
  `My.Application.Log` でログ リスナーが使用されるようにするには、ログ リスナーを含むアセンブリに厳密な名前を付ける必要があります。  
   
- 次の手順では、厳密な名前付きのログ リスナー アセンブリを作成するための簡単な手順を示します。 詳しくは、「[厳密な名前付きアセンブリの作成と使用](../../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)」をご覧ください。  
+ 次の手順では、厳密な名前付きのログ リスナー アセンブリを作成するための簡単な手順を示します。 詳しくは、「[厳密な名前付きアセンブリの作成と使用](../../../../framework/app-domains/create-and-use-strong-named-assemblies.md)」をご覧ください。  
   
 #### <a name="to-strongly-name-the-log-listener-assembly"></a>ログ リスナー アセンブリに厳密な名前を付けるには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]**をクリックします。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]**をクリックします。   
   
 2.  **[署名]** タブをクリックします。  
   
@@ -59,7 +59,7 @@ ms.lasthandoff: 12/09/2017
   
 6.  **[パスワードの入力]** および **[パスワードの確認入力]** ボックスにパスワードを入力します。  
   
-7.  **[OK]** をクリックします。  
+7.  **[OK]**をクリックします。  
   
 8.  アプリケーションをリビルドします。  
   
@@ -84,7 +84,7 @@ ms.lasthandoff: 12/09/2017
   
 1.  **ソリューション エクスプローラー** で app.config を右クリックし、 **[開く]**を選択します。  
   
-     または  
+     - または -  
   
      app.config ファイルがある場合は、次の操作を行います。  
   
@@ -112,7 +112,7 @@ ms.lasthandoff: 12/09/2017
   
      `SimpleLogStrongName` の値はリスナーの厳密な名前に置き換えてください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
  [アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)  
  [方法 : 例外をログに記録する](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)  

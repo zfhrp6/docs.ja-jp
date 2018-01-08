@@ -20,11 +20,12 @@ caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ddd937ec891f5e00410b74fffd152e23431652f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dd7f50d591232feda0259ecefdb5b9e39514ccb2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (.NET サービス インストール ツール)
 .NET サービス インストール ツールは、次のアクションを実行します。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
   
 -   プログラムでクラスに追加したサービスの設定。  
   
- このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
@@ -81,7 +82,7 @@ ms.lasthandoff: 11/21/2017
   
  上記のアクションの実行中に Regsvcs.exe が異常終了した場合は、対応するエラー メッセージが表示されます。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  `myTest.dll` に含まれるすべてのパブリック クラスを `myTargetApp` (既存の COM+ アプリケーション) に追加し、タイプ ライブラリ `myTest.tlb` を生成するコマンドを次に示します。  
   
 ```  
@@ -94,7 +95,7 @@ regsvcs /appname:myTargetApp myTest.dll
 regsvcs /appname:myTargetApp /tlb:newTest.tlb myTest.dll  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
  [方法: 厳密な名前でアセンブリに署名する](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

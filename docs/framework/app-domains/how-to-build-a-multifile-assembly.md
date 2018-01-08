@@ -28,11 +28,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 68a2217ed05588b2ba6070850dfd0d61a7a0fde2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f77922d08ce17f8b8659eac0dba5a46ca33a7502
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-build-a-multifile-assembly"></a>方法 : マルチファイル アセンブリをビルドする
 この記事では、マルチファイル アセンブリを作成する方法を説明し、プロシージャの各手順を示すコードを提供します。  
@@ -104,7 +105,7 @@ ms.lasthandoff: 11/21/2017
   
      [MSIL 逆アセンブラー (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) を使用すると、アセンブリの内容を調査したり、ファイルがアセンブリであるかモジュールであるかを判断したりできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)  
  [方法: アセンブリの内容を表示する](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
  [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  

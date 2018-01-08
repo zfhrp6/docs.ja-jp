@@ -21,11 +21,12 @@ caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 756873e93d6e13cbb9077d10a52a718932afcedb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ef0f9aac9222badb43e19c2901ff705485d5cf3a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-for-reflection"></a>リフレクションに関するセキュリティ上の考慮事項
 リフレクションを使用すると、型とメンバーに関する情報を取得し、メンバーにアクセスできます (つまり、メソッドやコンストラクターの呼び出し、プロパティ値の取得と設定、イベント ハンドラーの追加と削除などを実行できます)。 リフレクションを使用した型とメンバーに関する情報の取得には、制限がありません。 すべてのコードで、次のタスクを実行するためにリフレクションを使用できます。  
@@ -112,7 +113,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] 以降、リフレクションを使用して非パブリックな型とメンバーに関する情報を取得する場合、アクセス許可が不要になりました。 以前のバージョンでは、<xref:System.Security.Permissions.ReflectionPermission> に <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> フラグを指定する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Security.Permissions.ReflectionPermissionFlag>  
  <xref:System.Security.Permissions.ReflectionPermission>  
  <xref:System.Security.Permissions.SecurityPermission>  

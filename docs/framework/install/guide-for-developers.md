@@ -14,11 +14,12 @@ ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cee014956ff4ba2f8e0f66df5bd46a4e843352e4
-ms.sourcegitcommit: 4a96a0fe9f87de70291245d71b76c7d1b15127ae
+ms.workload: dotnet
+ms.openlocfilehash: cad3f3d813d6882b83a7e9db7ce212fba66e44ea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="install-the-net-framework-for-developers"></a>開発者向けの .NET Framework のインストール
 
@@ -181,7 +182,7 @@ Web インストーラーとオフライン インストーラーはどちらも
   
 サポートしている言語の一覧を次の表に示します。  
   
-| 言語              | カルチャ |
+| 言語              | culture |
 | --------------------- | :-----: |
 | アラビア語                | ar      |
 | チェコ語                 | cs      |
@@ -196,7 +197,7 @@ Web インストーラーとオフライン インストーラーはどちらも
 | イタリア語               | it      |
 | 日本語              | ja      |
 | 韓国語                | ko      |
-| ノルウェー語             | no      |
+| ノルウェー語             | Ｘ      |
 | ポーランド語                | pl      |
 | ポルトガル語 (ブラジル)   | pt-BR   |
 | ポルトガル語 (ポルトガル) | pt-PT   |
@@ -208,7 +209,7 @@ Web インストーラーとオフライン インストーラーはどちらも
 | トルコ語               | tr      |
 | 英語 (米国)            | en-US   |
   
-## <a name="next-steps"></a>次のステップ  
+## <a name="next-steps"></a>次の手順  
   
 - .NET Framework での経験がない場合は、[概要](~/docs/framework/get-started/overview.md)を参照して、主な概念とコンポーネントの概要を確認してください。  
   

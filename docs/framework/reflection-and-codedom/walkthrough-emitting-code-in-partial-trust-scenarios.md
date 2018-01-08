@@ -25,11 +25,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 121dfd91d797aa03860abd4404ffe20113e70f85
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 835483d740b60f98c3170a590edbfbfbe970d783
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>チュートリアル: 部分信頼シナリオにおけるコード出力
 リフレクション出力は、完全信頼または部分信頼において同じ API セットを使用しますが、部分的に信頼されるコードでは実行する機能によって特定のアクセス許可が必要になります。 リフレクション出力には、匿名でホストされる動的メソッドという機能があります。この機能は、透過的セキュリティ アセンブリによって部分信頼で使用されます。  
@@ -219,6 +220,6 @@ ms.lasthandoff: 11/21/2017
   
 -   このコード例を [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でビルドする場合は、クラスを <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> メソッドに渡すときに、名前空間を含むようにクラスの名前を変更する必要があります。 既定では、名前空間がプロジェクト名になります。 たとえば、プロジェクト名が "PartialTrust" である場合、クラス名は "PartialTrust.Worker" にする必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リフレクション出力のセキュリティ関連事項](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
  [方法 : サンドボックスで部分信頼コードを実行する](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)

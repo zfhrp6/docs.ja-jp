@@ -20,11 +20,12 @@ caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1ad02ade9c9e60e53fa8fb91d9a38d6ec12bc2e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 170e9ca4ed2b9ad17ec9120321612c37da32e453
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)
 アセンブリ バインディング ログ ビューアーは、アセンブリ バインドの詳細を表示します。 この情報は、.NET Framework が実行時にアセンブリを見つけられない原因を診断する場合に役立ちます。 通常、このようなエラーは、アセンブリが間違った位置に配置されているか、無効になったネイティブ イメージが存在するか、バージョン番号またはカルチャの不一致が存在する場合に発生します。 通常、共通言語ランタイムによるアセンブリ検出エラーは、アプリケーション内で <xref:System.TypeLoadException> として示されます。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
 > [!IMPORTANT]
 >  fuslogvw.exe は、管理者特権で実行する必要があります。  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、管理者の資格情報で開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、管理者の資格情報で開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
@@ -236,9 +237,9 @@ Discarding native image.
     > [!NOTE]
     >  このチェック ボックスは、Windows 8 以降でのみ有効になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.TypeLoadException>  
  [ツール](../../../docs/framework/tools/index.md)  
  [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)  
  [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

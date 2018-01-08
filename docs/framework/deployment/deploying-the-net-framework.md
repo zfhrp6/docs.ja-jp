@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b3a33b57ee7cf38e06195244023e8bb918dea02b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1320c0364b1fdc3a67d2ac99d0591f37044c36a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deploying-the-net-framework"></a>.NET Framework の配置
 .NET Framework ドキュメントのこのセクションでは、アプリケーションとともに .NET Framework をインストールする開発者、およびネットワーク上で .NET Framework を展開する管理者に対して情報を提供します。 また、アクティベーション、配置に伴う再起動の問題、.NET Framework のインストールの進捗を監視する方法についても説明します。  
@@ -44,5 +45,5 @@ ms.lasthandoff: 10/18/2017
  [方法: CLR のアクティブ化に関する問題をデバッグする](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  
  正しいバージョンの CLR でアプリケーションを実行して発生した問題を解決するために、どのようにして CLR アクティベーション ログを表示し、デバッグするかを説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [開発ガイド](../../../docs/framework/development-guide.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a0b03f2b5c0c656b8800d1b2ceff9b774a5c65d5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d8679e930b1f12119211a6463289fb37a18692d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理
 共通言語ランタイムの (CLR) のアクティベーション システムでは、マネージ アプリケーション コードの実行に使用する CLR のバージョンを特定します。 アクティベーション システムで、読み込む CLR のバージョンを検出できない場合もあります。 通常、この状況は、特定のコンピューターで無効になっているかインストールされていない CLR バージョンがアプリケーションで必要な場合に発生します。 要求されたバージョンが見つからない場合、CLR アクティベーション システムは、呼び出された関数またはインターフェイスから HRESULT エラー コードを返します。また、アプリケーションを実行しているユーザーにはエラー メッセージが表示されることがあります。 ここでは、HRESULT コードの一覧を示し、エラー メッセージが表示されないようにする方法について説明します。  
@@ -76,10 +77,10 @@ ms.lasthandoff: 11/21/2017
   
 |CLR ホスト|説明|エラー メッセージ ポリシー|エラー メッセージを無効にできるか|  
 |--------------|-----------------|--------------------------|------------------------------------|  
-|マネージ EXE ホスト|マネージ EXE を起動します。|.NET Framework のバージョンが見つからない場合に表示される|いいえ|  
+|マネージ EXE ホスト|マネージ EXE を起動します。|.NET Framework のバージョンが見つからない場合に表示される|×|  
 |マネージ COM ホスト|マネージ COM コンポーネントをプロセスに読み込みます。|.NET Framework のバージョンが見つからない場合に表示される|はい (SEM_FAILCRITICALERRORS フラグを設定すると可能)|  
-|ClickOnce ホスト|ClickOnce アプリケーションを起動します。|[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で、.NET Framework のバージョンが見つからない場合に表示される|いいえ|  
-|XBAP ホスト|WPF XBAP アプリケーションを起動します。|[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で、.NET Framework のバージョンが見つからない場合に表示される|いいえ|  
+|ClickOnce ホスト|ClickOnce アプリケーションを起動します。|[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で、.NET Framework のバージョンが見つからない場合に表示される|×|  
+|XBAP ホスト|WPF XBAP アプリケーションを起動します。|[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で、.NET Framework のバージョンが見つからない場合に表示される|×|  
   
 ## <a name="includewin8includeswin8-mdmd-behavior-and-ui"></a>[!INCLUDE[win8](../../../includes/win8-md.md)] の動作と UI  
  CLR アクティベーション システムでは、他のバージョンの Windows オペレーティング システムで提供しているのと同じ動作と UI を [!INCLUDE[win8](../../../includes/win8-md.md)] でも提供しています。ただし、CLR 2.0 を読み込む際に問題が発生する場合は除きます。 [!INCLUDE[win8](../../../includes/win8-md.md)] には、CLR 4.5 を使用する [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] が含まれています。 ただし、[!INCLUDE[win8](../../../includes/win8-md.md)] には CLR 2.0 を使用する .NET Framework 2.0、3.0、3.5 のいずれも含まれていません。 その結果、既定では、CLR 2.0 に依存するアプリケーションが [!INCLUDE[win8](../../../includes/win8-md.md)] で実行されません。 代わりに、ユーザーが .NET Framework 3.5 をインストールできるように、次のダイアログ ボックスが表示されます。 ユーザーは、コントロール パネルで .NET Framework 3.5 を有効にすることもできます。 両方のオプションの説明については、「[Windows 10、Windows 8.1、および Windows 8 への .NET Framework 3.5 のインストール](../../../docs/framework/install/dotnet-35-windows-10.md)」を参照してください。  
@@ -94,7 +95,7 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、CLR アクティベーション ログは、初期化エラー メッセージが表示された日時とその理由を記録するログ エントリを含むように強化されています。 詳しくは、「[方法: CLR のアクティブ化に関する問題をデバッグする](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
  [方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)  
  [方法: CLR のアクティブ化に関する問題をデバッグする](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  

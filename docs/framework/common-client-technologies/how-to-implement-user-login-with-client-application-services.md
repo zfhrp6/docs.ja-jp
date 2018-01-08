@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 909fbaa4e7dc1d384b5085d71cec346bde44cf14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2bf073b6db0a69cfda0c69ae34df0396f5dea35c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-user-login-with-client-application-services"></a>方法: クライアント アプリケーション サービスでユーザーのログインを実装する
 クライアント アプリケーション サービスを使用して、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスを介してユーザーを検証できます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスをセットアップする方法については、「[ASP.NET AJAX でのフォーム認証の使用](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e)」を参照してください。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  このトピックのコード例は、Windows クライアント アプリケーションでの認証の最も単純な使用方法を示しています。 ただし、クライアント アプリケーション サービス、およびフォーム認証で `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> メソッドを呼び出すと、<xref:System.Net.WebException> がスローされる場合があります。 これは、認証サービスが使用できないことを示します。 この例外を処理する方法の例は、「[チュートリアル: クライアント アプリケーション サービスの使用](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クライアント アプリケーション サービス](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
  [方法 : クライアント アプリケーション サービスを構成する](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  

@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
-ms.openlocfilehash: 93bec65e3bbee93855d6f5bce5e2d6cea8bb9f3d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 08fe18233c13410f0fb970020bce090d3345ca84
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="organizing-your-project-to-support-net-framework-and-net-core"></a>プロジェクトを整理し、.NET Framework と .NET Core をサポートする
 
@@ -69,7 +70,7 @@ ms.lasthandoff: 10/18/2017
 * .NET Core と既存のプロジェクトを別々のフォルダーに保存します。
     * プロジェクトを別々のフォルダーに保存すれば、Visual Studio 2017 を所有する必要がありません。 古いプロジェクトだけを開く別個のソリューションを作成できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 .NET Core に移行する方法の詳細なガイダンスについては、[.NET Core の移植に関するドキュメント][porting-doc]のページを参照してください。
 

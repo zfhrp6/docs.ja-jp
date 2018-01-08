@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 10f714f5793fff4d6081c9fc910159a02e34e53b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 555ef705dc485462dc209b090e5cdbee98983681
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-resource-files-for-desktop-apps"></a>デスクトップ アプリケーションに対するリソース ファイルの作成
 リソース ファイルにリソース (文字列、イメージ、オブジェクト データなど) を追加して、アプリケーションで簡単に使用できるようにすることが可能です。 .NET Framework では、次の 5 つの方法でリソース ファイルを作成できます。  
@@ -202,7 +203,7 @@ greeting=Hello, {0}!
   
  コンパイル時に、Visual Studio ではまずプロジェクト内の .resx ファイルをバイナリ リソース (.resources) ファイルに変換して、プロジェクトの obj ディレクトリのサブディレクトリに格納します。 ローカライズされたリソースが格納されていないリソース ファイルは、プロジェクトで生成されたメイン アセンブリに埋め込みます。 ローカライズされたリソースがリソース ファイルに格納されている場合、Visual Studio では、各ローカライズ カルチャの個別のサテライト アセンブリにそのファイルを埋め込みます。 各サテライト アセンブリは、ローカライズ カルチャに対応する名前のディレクトリに格納します。 たとえば、ローカライズされた英語 (米国) リソースは、en-US サブディレクトリ内のサテライト アセンブリに格納されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Resources>  
  [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)  
  [リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)

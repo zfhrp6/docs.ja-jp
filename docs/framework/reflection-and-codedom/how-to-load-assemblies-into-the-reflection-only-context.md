@@ -23,11 +23,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b1366107b7dca9b1a2128a91d4c9a66f72069e9a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ebf25ec707ddb238431ffad35156b3a8cec7e4b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>方法 : リフレクションのみのコンテキストにアセンブリを読み込む
 リフレクションのみの読み込みコンテキストでは、他のプラットフォームや .NET Framework の他のバージョン用にコンパイルされたアセンブリを検査できます。 このコンテキストに読み込まれたコードは検査のみ可能で、実行できません。 つまり、コンストラクターを実行できないので、オブジェクトは作成できません。 また、コードを実行できないため、依存関係は自動的には読み込まれません。 依存関係を検査する必要がある場合は、依存関係を独自に読み込む必要があります。  
@@ -60,7 +61,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[CustomAttributeData#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
  [!code-vb[CustomAttributeData#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>  
  <xref:System.Reflection.Assembly.ReflectionOnly%2A>  
  <xref:System.Reflection.CustomAttributeData>

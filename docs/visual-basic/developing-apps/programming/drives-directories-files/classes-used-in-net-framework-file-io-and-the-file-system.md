@@ -12,16 +12,16 @@ ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 772d3e59dbc84f77dc6f94e7cc60a89c7888551a
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 08fd340e895376b43f95a767992ef0d3c0c819c6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>.NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)
 以下の表は、.NET Framework のファイル I/O で一般的に使用するクラスの一覧です。ファイル I/O クラス、ストリームの作成に使用するクラス、ストリームの読み取りと書き込みに使用するクラスに分類されています。  
   
- [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] ドキュメントで詳細な一覧を参照するには、「[クラス ライブラリの概要](../../../../../docs/standard/class-library-overview.md)」をご覧ください。  
+ [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] ドキュメントで詳細な一覧を参照するには、「[クラス ライブラリの概要](../../../../standard/class-library-overview.md)」をご覧ください。  
   
 ## <a name="basic-io-classes-for-files-drives-and-directories"></a>ファイル、ドライブ、およびディレクトリ用の基本 I/O クラス  
  次の表は、ファイル I/O に使用する主要なクラスの一覧と各クラスの説明です。  
@@ -63,8 +63,8 @@ ms.lasthandoff: 12/09/2017
 |<xref:System.IO.StringReader?displayProperty=nameWithType>|`String` から文字を読み取ります。 出力は、任意のエンコーディングのストリームまたは `String` です。|  
 |<xref:System.IO.StringWriter?displayProperty=nameWithType>|`String` に文字を書き込みます。 出力は、任意のエンコーディングのストリームまたは `String` です。|  
   
-## <a name="see-also"></a>関連項目  
- [ストリームの構成](../../../../../docs/standard/io/composing-streams.md)  
- [ファイルおよびストリーム入出力](https://msdn.microsoft.com/library/k3352a4t)  
- [非同期ファイル I/O](https://msdn.microsoft.com/library/kztecsys)  
+## <a name="see-also"></a>参照  
+ [ストリームの構成](../../../../standard/io/composing-streams.md)  
+ [ファイルおよびストリーム入出力](../../../../standard/io/index.md)  
+ [非同期ファイル I/O](../../../../standard/io/asynchronous-file-i-o.md)  
  [.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)

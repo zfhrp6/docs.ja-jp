@@ -11,11 +11,11 @@ ms.assetid: 63527447-9535-4880-8e95-35e2075827df
 caps.latest.revision: "21"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 944b894e7e5f305d35d4db96d7426bf05322ca54
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a53c6ba29837ad8827d97ea745be0462451eb145
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="how-to-implement-interface-events-c-programming-guide"></a>方法 : インターフェイス イベントを実装する (C# プログラミング ガイド)
 [インターフェイス](../../../csharp/language-reference/keywords/interface.md)では[イベント](../../../csharp/language-reference/keywords/event.md)を宣言できます。 次の例では、クラス内にインターフェイス イベントを実装する方法について説明します。 基本的な原則は、インターフェイスのメソッドやプロパティを実装する場合と同じです。  
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
 -   クラス内でイベントを宣言してから、適切な領域でそのイベントを呼び出します。  
   
-    ```  
+    ```csharp
     namespace ImplementInterfaceEvents  
     {  
         public interface IDrawingObject  
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [イベント](../../../csharp/programming-guide/events/index.md)  
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)  

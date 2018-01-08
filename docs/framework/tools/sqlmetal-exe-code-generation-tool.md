@@ -20,11 +20,12 @@ caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c54f304117c86066e18bfb40f3b3640819647ac0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c14c01c670eccbc7f13210d3c0bb7df7bec07679
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (コード生成ツール)
 SqlMetal コマンド ライン ツールは、 [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] の [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]コンポーネント用のコードとマッピングを生成します。 このトピックで後述するオプションを適用することにより、次のようなアクションを SqlMetal で実行できます。  
@@ -118,7 +119,7 @@ sqlmetal [options] [<input file>]
   
  入力ファイル名を指定するには、その名前をコマンド ラインに入力ファイルとして追加します。 ( **/conn** オプションを使用して) 接続文字列にファイル名を含める操作は、サポートされていません。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  抽出された SQL メタデータを格納する .dbml ファイルを生成します。  
   
  **sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml**  
@@ -142,7 +143,7 @@ sqlmetal [options] [<input file>]
 > [!NOTE]
 >  サンプル データベース Northwind で **/pluralize** オプションを使用する場合には、注意を必要とする動作があります。 SqlMetal がテーブルのために行型の名前を生成するとき、テーブル名は単数形です。 テーブルに関する <xref:System.Data.Linq.DataContext> プロパティを生成するときには、テーブル名は複数形です。 偶然にも、サンプル データベース Northwind 内のテーブルには既に複数形が使われています。 このため、この部分はうまく機能しません。 データベース テーブルの名前は単数形にするのが一般的ですが、.NET では、コレクションの名前を複数形にすることも一般的です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: Visual Basic または C# でオブジェクト モデルを生成する](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  
  [LINQ to SQL でのコード生成](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
  [外部マップ](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)

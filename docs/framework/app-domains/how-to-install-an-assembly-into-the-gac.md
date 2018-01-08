@@ -19,11 +19,12 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 23a1d8c638b198c31d7c83aaf3f216b465f01453
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 47867a82432ec6abe2245a0421d800c242d92b2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>方法 : グローバル アセンブリ キャッシュにアセンブリをインストールする
 厳密な名前付きのアセンブリをグローバル アセンブリ キャッシュ (GAC) にインストールには、次の 2 つの方法があります。  
@@ -85,7 +86,7 @@ gacutil -i hello.dll
   
     4.  手順 c のファイルを **[インストール先コンピューターのファイル]** ペインにドラッグします (または、ファイルのショートカット メニューの **[コピー]** と **[貼り付け]** コマンドを使用します)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アセンブリとグローバル アセンブリ キャッシュの使用](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  
  [方法: グローバル アセンブリ キャッシュからアセンブリを削除する](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
  [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)  

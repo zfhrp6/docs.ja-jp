@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f894d032527611c036e41fff783b31920c354778
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 307347a1209a74c76e71c42a4cb9e3c3f814dee6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-a-generic-method-with-reflection-emit"></a>方法: リフレクション出力を使用してジェネリック メソッドを定義する
 最初の手順では、2 つの型パラメーターを持つ単純なジェネリック メソッドを作成する方法と、クラスの制約、インターフェイスの制約、および特殊な制約を型パラメーターに適用する方法を示します。  
@@ -178,6 +179,6 @@ ms.lasthandoff: 11/21/2017
   
 -   コマンド ラインで csc.exe、vbc.exe、または cl.exe を使用して、コードをコンパイルします。 Visual Studio でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Reflection.Emit.MethodBuilder>  
  [方法: リフレクション出力を使用してジェネリック型を定義する](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)

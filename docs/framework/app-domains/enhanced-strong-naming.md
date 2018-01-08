@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 429a54340cef6d608692abd71311c012afe9a3d0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 77eec473b95720e432c94b79778fa518f3ecf1c4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enhanced-strong-naming"></a>拡張された厳密な名前付け
 厳密な名前の署名は、アセンブリを識別するための .NET Framework の識別機構です。 これは通常、発行元 (署名者) から受取人 (検証者) に対して渡されるデータの整合性を検証するために使用される、公開キーによるデジタル署名です。 この署名はアセンブリに対する一意の ID として使用され、これによりアセンブリへの参照のあいまいさをなくします。 アセンブリはビルド プロセスの一部として署名され、読み込まれるときに検証されます。  
@@ -113,5 +114,5 @@ ms.lasthandoff: 10/18/2017
     sn -Ra MyAssembly.exe SignatureKey.snk  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [厳密な名前付きアセンブリの作成と使用](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

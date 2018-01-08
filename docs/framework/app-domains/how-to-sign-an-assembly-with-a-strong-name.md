@@ -22,11 +22,12 @@ caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: babd0f6a9b1babf02677d6c6c41c664e0a6541b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6fe5fbb5299c8e9c130538f99fe13081f8f26a55
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>方法 : 厳密な名前でアセンブリに署名する
 厳密な名前でアセンブリに署名するには、いくつかの方法があります。  
@@ -57,7 +58,7 @@ ms.lasthandoff: 11/21/2017
   
      **al** **/out:**\<*assemblyName*> *\<moduleName>* **/keyfile:**\<*keyfileName*>  
   
-     ここで、  
+     それぞれの文字について以下に説明します。  
   
      *assemblyName*  
      アセンブリ リンカーが生成する、厳密な名前で署名されたアセンブリ (.dll ファイルまたは .exe ファイル) の名前。  
@@ -105,7 +106,7 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
     csc /t:library UtilityLibrary.cs /keyfile:sgKey.snk  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [厳密な名前付きアセンブリの作成と使用](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
  [方法: 公開キーと秘密キーのキー ペアを作成する](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
  [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)  

@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7e61c037e85abfb362580930bbfeb7b06ba091f3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d8c98f8a1f09488bb2d93c4fda531f695354059a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>方法: 初回例外通知を受け取る
 <xref:System.AppDomain> クラスの <xref:System.AppDomain.FirstChanceException>イベントを使用すると、共通言語ランタイムが例外ハンドラーの検索を開始する前に、例外がスローされたことを知らせる通知を受け取ることができます。  
@@ -110,5 +111,5 @@ ms.lasthandoff: 10/18/2017
   
 -   この例はコマンド ライン アプリケーションです。 [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] でこのコードをコンパイルして実行するには、出力結果を確認する前にコマンド ウィンドウが閉じないように、`Main()`の最後に C# コード `Console.ReadLine();` (Visual Basic では `Console.ReadLine()`) を追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.AppDomain.FirstChanceException>

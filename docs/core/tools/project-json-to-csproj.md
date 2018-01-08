@@ -10,11 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
-ms.openlocfilehash: 0f82e82c6a11220e24c85cef19bc131e12c77bf0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 655f74def4d6163959d7dbbe605f7322fb0573c8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>project.json プロパティと csproj プロパティの間のマッピング
 
@@ -662,6 +663,6 @@ MSBuild では、これは[項目](/visualstudio/msbuild/common-msbuild-project-
 </ItemGroup>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [CLI の変更の概要](../tools/cli-msbuild-architecture.md)

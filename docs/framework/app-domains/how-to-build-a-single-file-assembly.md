@@ -24,11 +24,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dd4472587cabc0ebfb2cb64e0bdc15a8d4778507
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bd9f2bab23fff1bbc4ebb521b167ac8031af3bc7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-build-a-single-file-assembly"></a>方法: シングルファイル アセンブリをビルドする
 アセンブリの最も単純な形式であるシングルファイル アセンブリには、型の情報、実装、[アセンブリ マニフェスト](../../../docs/framework/app-domains/assembly-manifest.md)が含まれています。 コマンド ライン コンパイラや [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を利用し、シングルファイル アセンブリを作成できます。 既定では、コンパイラは .exe 拡張子でアセンブリ ファイルを作成します。  
@@ -95,7 +96,7 @@ csc /out:myCodeLibrary.dll /t:library myCode.cs
 vbc /out:myCodeLibrary.dll /t:library myCode.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)  
  [マルチファイル アセンブリ](../../../docs/framework/app-domains/multifile-assemblies.md)  
  [方法: マルチファイル アセンブリをビルドする](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  

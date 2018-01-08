@@ -168,11 +168,12 @@ caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 83f7b1f91b70281b4cce57632977bfc4685a58fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 22f556c87f676b86228fbb68f66206f3c39140cd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="winmdexpexe-error-messages"></a>Winmdexp.exe のエラー メッセージ
 ビルド プロセスは [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] で **[!INCLUDE[wrt](../../../includes/wrt-md.md)] コンポーネント** テンプレートを使うときに [Winmdexp.exe (Windows ランタイム メタデータのエクスポート ツール)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) を呼び出すため、Winmdexp.exe のエラー メッセージは **[エラー一覧]** に表示されます。 Winmdexp.exe は `/target:winmdobj` オプションでコンパイルされるモジュールで動作します。 コンパイルされたモジュールが入力として必要となるため、コンパイルが成功した場合を除き、そのエラー メッセージは表示されません。  
@@ -181,6 +182,6 @@ ms.lasthandoff: 11/21/2017
   
  エラーがこの記事では取り上げられていない場合や、問題に対処するために十分な情報がメッセージに含まれていないと感じる場合は、該当する記事のフィードバック リンクを使用してエラー メッセージをお送りください。 また、[Microsoft Connect Web サイト](http://go.microsoft.com/fwlink/p/?LinkId=251130)でバグを報告できます。 [MSDN フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=251129)で詳細な情報を参照することもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Winmdexp.exe (Windows ランタイム メタデータのエクスポート ツール)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md)  
  [Windows ランタイム コンポーネントのエラー条件の診断](http://go.microsoft.com/fwlink/p/?LinkId=251127)

@@ -16,18 +16,19 @@ caps.latest.revision: "68"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5bb802df171990eca411dda37fc4743de15fc169
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 405503ac824ccf443d8ada7387d65e55876cb3e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (マニフェストの生成および編集ツール)
 マニフェストの生成および編集ツール (Mage.exe) は、アプリケーション マニフェストおよび配置マニフェストの作成と編集をサポートするコマンド ライン ツールです。 コマンド ライン ツールであるため、Mage.exe は、バッチ スクリプトから実行することも、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションなど他の Windows ベースのアプリケーションから実行することもできます。  
   
  Mage.exe の代わりに、グラフィカルなアプリケーション プログラムである MageUI.exe を使用することもできます。 詳細については、「 [MageUI.exe (Manifest Generation and Editing Tool, Graphical Client)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)」を参照してください。  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] セットアップには、2 つのバージョンの Mage.exe および MageUI.exe がコンポーネントとして含まれています。 バージョン情報を確認するには、MageUI.exe を実行し、 **[ヘルプ]**をクリックして、 **[バージョン情報]**をクリックします。 このドキュメントでは、バージョン 4.0.x.x の Mage.exe および MageUI.exe について説明します。  
   
@@ -145,7 +146,7 @@ mage -Update c:\HelloWorldDeployment\HelloWorld.deploy -CertFile cert.pfx
 <framework targetVersion="4.0" profile="client" supportedRuntime="4.0.20506" />  
 ```  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  Mage 用のユーザー インターフェイス (MageUI.exe) を開く例を次に示します。  
   
 ```  
@@ -202,9 +203,9 @@ mage -Update HelloWorld.deploy -AppCodeBase http://anotherserver/HelloWorld/1.1.
 mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)  
  [チュートリアル : ClickOnce アプリケーションを手動で配置する](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)  
  [信頼されたアプリケーションの配置の概要](/visualstudio/deployment/trusted-application-deployment-overview)  
  [MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7ce95b1c4f33ed500eabf3f9c7a7ac01a3a08e03
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88792aeef4e1a18807267334b6c9ef722cb48d24
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>方法: CodeDOM を使用して XML ドキュメント ファイルを作成する
 CodeDOM を利用し、XML ドキュメントを生成するコードを作成できます。 XML ドキュメント コメントを含む CodeDOM グラフを作成する、コードを生成する、XML 文書出力を作成するコンパイラ オプションでその生成されたコードをコンパイルするというプロセスが行われます。  
@@ -87,7 +88,7 @@ CodeDOM を利用し、XML ドキュメントを生成するコードを作成�
   
 -   このコード サンプルを正しく実行するには、`FullTrust` アクセス許可を設定する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML の使用によるコードのドキュメントの作成](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)  
  [XML ドキュメント コメント](~/docs/csharp/programming-guide/xmldoc/xml-documentation-comments.md)  
  [XML に関するドキュメント](/cpp/ide/xml-documentation-visual-cpp)

@@ -18,16 +18,17 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 21da853d442a86eb42d04ff4f32d9f2798e14477
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b2762080c66c3c9451e7c7c3d4621d8cb9d4846e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (アセンブリ登録ツール)
 アセンブリ登録ツールは、1 つのアセンブリに含まれるメタデータを読み込み、必要なエントリをレジストリに追加します。これにより、COM クライアントによって .NET Framework クラスが自動的に作成されます。 クラスが登録されると、どの COM クライアントでも、そのクラスを COM クラスであるかのように使用できます。 クラスの登録は、アセンブリのインストール時に 1 回だけ行われます。 実際に登録されるまでは、アセンブリに含まれるクラスのインスタンスを COM から作成することはできません。  
   
- このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
@@ -70,7 +71,7 @@ regasm assemblyFile [options]
   
  Regasm.exe を使用してアセンブリを登録した後で、そのアセンブリを[グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)内に登録すると、どの COM クライアントからもアクティブにできます。 アセンブリをアクティブにするアプリケーションが 1 つだけの場合は、そのアプリケーションのディレクトリ内にアセンブリを格納できます。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  `myTest.dll` に含まれるすべてのパブリック クラスを登録するコマンドを次に示します。  
   
 ```  
@@ -89,9 +90,9 @@ regasm myTest.dll /regfile:myTest.reg
 regasm myTest.dll /tlb:myTest.tlb  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
  [Tlbexp.exe (タイプ ライブラリ エクスポーター)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
  [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
  [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

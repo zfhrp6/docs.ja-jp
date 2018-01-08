@@ -22,17 +22,18 @@ caps.latest.revision: "41"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4b95f3d70c7329efd1affcb333ac6eee08cc29d3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2507acc7ddf41d921af0b86622b1e85208191767
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL アセンブラー)
 
 IL アセンブラーは、ポータブル実行可能 (PE) ファイルを IL (Intermediate Language) から生成します (IL の詳細については、「[マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)」を参照してください)。IL と必要なメタデータを含む実行可能ファイルを実行すると、IL が予測どおりに動作するかどうかを確認できます。
 
-このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。
+このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。
 
 コマンド プロンプトに次のように入力します。
 
@@ -147,7 +148,7 @@ IL の文法の詳細については、 [!INCLUDE[winsdklong](../../../includes/
 
 IL の文法の詳細については、 [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]の asmparse.grammar ファイルを参照してください。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 IL ファイル *myTestFile.il* をアセンブルして実行可能ファイル *myTestFile.exe* を生成するコマンドを次に示します。
 
@@ -240,4 +241,4 @@ public class Hello
 [ツール](../../../docs/framework/tools/index.md)  
 [*Ildasm.exe* (IL 逆アセンブラー)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)  
 [マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)  
-[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -7,17 +7,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: dc4250ab7417c9f19babdf37c556daf7c3bd6a81
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.workload: dotnetcore
+ms.openlocfilehash: 52aac5ff1862397616287a77eac063582703d509
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet nuget push` - パッケージをサーバーにプッシュして発行します。
 
@@ -73,7 +74,7 @@ ms.lasthandoff: 11/28/2017
 
 すべてのログ出力を強制的に英語にします。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 API キーを指定して、既定のプッシュ ソースに *foo.nupkg* をプッシュします。
 
@@ -102,7 +103,3 @@ API キーを指定して、カスタム プッシュ ソース `http://customso
 カスタムの構成ファイル *./config/My.Config* を指定して、既定のプッシュ ソースに現在のディレクトリ内のすべての *.nupkg* ファイルをプッシュします。
 
 `dotnet nuget push *.nupkg --config-file ./config/My.Config`
-
-最も高い詳細レベルで、既定のプッシュ ソースに現在のディレクトリ内のすべての *.nupkg* ファイルをプッシュします。
-
-`dotnet nuget push *.nupkg --verbosity detailed`

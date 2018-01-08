@@ -16,18 +16,18 @@ ms.assetid: cadbc8c1-87af-4746-934e-55b79a4f6e2b
 caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 018aff8dc130bfe7217c861a7d7bc8ae275ccc66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8225deaac92b4f375f57501875e13216b35a120d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>方法: アプリケーション イベント ログに書き込む (Visual Basic)
 `My.Application.Log` オブジェクトおよび `My.Log` オブジェクトを使用すると、アプリケーション内で発生したイベントに関する情報を書き込めます。 この例では、 `My.Application.Log` がアプリケーション イベント ログにトレース情報を書き込むようにイベント ログ リスナーを構成する方法を示します。  
   
  セキュリティ ログに書き込むことはできません。 システム ログに書き込むためには、LocalSystem または Administrator アカウントのメンバーであることが必要です。  
   
- イベント ログを参照するには、 **サーバー エクスプローラー** または **Windows イベント ビューアー**を使用できます。 詳細については、「 [ETW Events in the .NET Framework](http://msdn.microsoft.com/library/d186276f-6afb-4dfd-bf3c-4251edc2c299)」を参照してください。  
+ イベント ログを参照するには、 **サーバー エクスプローラー** または **Windows イベント ビューアー**を使用できます。 詳細については、「 [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md)」を参照してください。  
   
 > [!NOTE]
 >  Windows 95、Windows 98、および Windows ME (Millennium Edition) では、イベント ログはサポートされていません。  
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/21/2017
   
      アセンブリに対してイベント ログ リスナーを設定すると、そのアセンブリで `My.Applcation.Log` が書き込んだすべてのメッセージを受け取ります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
  <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>  
  <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>  

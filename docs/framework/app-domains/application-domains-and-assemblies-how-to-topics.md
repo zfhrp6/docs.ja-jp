@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 396c3ac263f20608d69949c7ad5d9d5b1dffb555
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c70e2f1fec079e12605cbf3b72c60c0830723948
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-domains-and-assemblies-how-to-topics"></a>アプリケーション ドメインとアセンブリに関する方法のトピック
 次のセクションには、アプリケーション ドメインとアセンブリを使用したプログラミングの概念に関するドキュメントに用意されているすべての方法トピックへのリンクが含まれています。  
@@ -61,5 +62,5 @@ ms.lasthandoff: 10/18/2017
   
 -   [方法: アセンブリの内容を表示する](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーション ドメインとアセンブリ](../../../docs/framework/app-domains/index.md)

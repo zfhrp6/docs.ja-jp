@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 4165d968ff347dd9af3bff755be22484debc23c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c1d9fb79fa6c58ada7c342bd1d56281c3fbab900
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="strong-named-assemblies"></a>厳密な名前付きアセンブリ
 アセンブリの厳格な名前付けにより、アセンブリに対して一意の ID を作成し、アセンブリの競合を防ぐことができます。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 11/21/2017
   
  オープン ソースの開発者が厳密な名前付きのアセンブリによる ID の利点を必要とする場合、アセンブリに関連付けられた秘密キーをソース コントロール システムにチェックインすることを検討してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)  
  [方法: 厳密な名前でアセンブリに署名する](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
  [Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  

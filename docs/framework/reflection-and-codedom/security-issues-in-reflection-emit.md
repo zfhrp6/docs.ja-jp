@@ -22,11 +22,12 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d143798c4344b385d954cc64bd63c8f81eb48750
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2319ab244b2c2a296966692342df1f4967b85729
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-issues-in-reflection-emit"></a>リフレクション出力のセキュリティ関連事項
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] には、Microsoft Intermediate Language (MSIL) を出力する方法が 3 種類ありますが、それぞれに固有のセキュリティ問題があります。  
@@ -161,6 +162,6 @@ ms.lasthandoff: 11/21/2017
 ### <a name="obtaining-information-on-types-and-members"></a>型およびメンバーの情報の取得  
  [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] 以降から、非パブリックな型とメンバーに関する情報を取得する際にアクセス許可は不要になりました。 動的メソッドを出力するために必要な情報を取得するには、リフレクションを使用します。 たとえば、<xref:System.Reflection.MethodInfo> オブジェクトを使用してメソッド呼び出しを出力します。 以前のバージョンの [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、<xref:System.Security.Permissions.ReflectionPermission> に <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> フラグを指定する必要があります。 詳しくは、「[リフレクションに関するセキュリティ上の考慮事項](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リフレクションに関するセキュリティ上の考慮事項](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)  
  [動的メソッドおよびアセンブリの出力](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)

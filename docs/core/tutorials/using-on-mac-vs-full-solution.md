@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 6945bedf-5bf3-4955-8588-83fb87511b79
-ms.openlocfilehash: 60179fb0435803c3235b75ba012e588c6f1b35d3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: f64bc6463c455a288a374604e42e6747f701b0e7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
 
@@ -40,7 +41,7 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
    ![[新しいプロジェクト] ダイアログ](./media/using-on-mac-vs-full-solution/vsmacfull01.png)
 
-1. プロジェクトには "TextUtils" ("Text Utilities" の短い名前)、ソリューションには "WordCounter" という名前を付けます。 **[ソリューション ディレクトリ内にプロジェクト ディレクトリを作成する]** チェック ボックスはそのままにしておきます。 **[作成]** を選択します。
+1. プロジェクトには "TextUtils" ("Text Utilities" の短い名前)、ソリューションには "WordCounter" という名前を付けます。 **[ソリューション ディレクトリ内にプロジェクト ディレクトリを作成します]** チェック ボックスはそのままにしておきます。 **[作成]** を選択します。
 
    ![[新しいプロジェクト] ダイアログ](./media/using-on-mac-vs-full-solution/vsmacfull02.png)
 
@@ -110,7 +111,7 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
    ![IDE のメイン ウィンドウで GetWordCount を確認する最初の単体テスト](./media/using-on-mac-vs-full-solution/vsmacfull08.png)
 
-   TDD を使用して、新しいテストを一度失敗させてテスト ロジックが正しいことを確認することが重要です。 メソッドは "Jack" (先頭が大文字) という名前と、"Jack" および "jack" (先頭が大文字のものと小文字のもの) を含む文字列を渡します。 `GetWordCount` メソッドが正しく機能している場合は、検索語の 2 つのインスタンスのカウントが返されます。 このテストを意図的に失敗させるには、まず、検索語 "Jack" の 2 つのインスタンスが `GetWordCount` メソッドで返されないことを断定するテストを実装します。 次の手順に進んで意図的にテストを失敗させます。
+   TDD を使用して、新しいテストを一度失敗させてテスト ロジックが正しいことを確認することが重要です。 メソッドは "Jack" (先頭が大文字) という名前と、"Jack" および "jack" (先頭が大文字のものと小文字のもの) を含む文字列を渡します。 `GetWordCount` メソッドが正しく機能している場合は、検索語の 2 つのインスタンスのカウントが返されます。 このテストを意図的に失敗させるには、まず、検索語 "Jack" の 2 つのインスタンスが `GetWordCount` メソッドで返されないことをアサートするテストを実装します。 次の手順に進んで意図的にテストを失敗させます。
 
 1. 画面の右側の **[単体テスト]** パネルを開きます。
 
@@ -128,7 +129,7 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
 1. `Assert.NotEqual` から `Assert.Equal` に変更して `IgnoreCasing` テスト メソッドを変更します。 ファイルを保存します。その場合、キーボード ショートカット <kbd>&#8984;</kbd>+<kbd>s</kbd> を使用するか、メニューの **[ファイル]** > **[保存]** の順に選択するか、ファイルのタブを右クリックしてコンテキスト メニューから **[保存]** を選択します。
 
-   `searchWord` "Jack" は `GetWordCount` に渡された `inputString` "Jack jack" を含む 2 つのインスタンスを返すことが予想されます。 **[単体テスト]** パネルの **[テストの実行]** ボタン、または画面下部の **[テスト結果]** パネルの **[テストの再実行]** ボタンをクリックして、テストを再実行します。 テストに合格します。 文字列 "Jack jack" (大文字と小文字の区別は無視) に "Jack" のインスタンスが 2 つあり、テスト アサーションは `true` です。
+   `searchWord` "Jack" は `GetWordCount` に渡された `inputString` "Jack jack" を含む 2 つのインスタンスを返すことが予想されます。 **[単体テスト]** パネルの **[テストの実行]** ボタン、または画面下部の **[テスト結果]** パネルの **[テストの再実行]** ボタンをクリックして、テストを再実行します。 テストに合格します。 文字列 "Jack jack" (大文字と小文字は無視) に "Jack" のインスタンスが 2 つあり、テスト アサーションは `true` です。
 
    ![テスト成功](./media/using-on-mac-vs-full-solution/vsmacfull10.png)
 

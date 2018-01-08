@@ -10,11 +10,12 @@ ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e6cea26c07bc9c9d7d8bd590e5fbb13cf6d01a9e
-ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
+ms.workload: dotnet
+ms.openlocfilehash: 5875e5900f925e29fec303d276483947c994da8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework のバージョンおよび依存関係
 .NET Framework の各バージョンには、共通言語ランタイム (CLR)、基底クラス ライブラリ、およびその他のマネージ ライブラリが含まれています。 このトピックでは、.NET Framework の各バージョンの主要な機能について説明し、基になっている CLR のバージョンおよび関連する開発環境に関する情報と、Windows オペレーティング システムでインストールされる .NET Framework のバージョンを示します。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 12/01/2017
 |3.0|2.0|- WPF、WCF、WF、CardSpace|-|✓ Vista|✓ 2008 R2 SP1*<br />✓ 2008 SP2\*<br />+ 2003|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
 |2.0|2.0|- ジェネリック<br />- ASP.NET の機能追加<br />-   [その他...](http://msdn.microsoft.com/library/t357fb32\(v=vs.80\).aspx)|2005|-|✓ 2008 R2 SP1<br />✓ 2008 SP2<br />✓ 2003|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
 |1.1|1.1|- ASP.NET と ADO.NET の更新<br />- side-by-side 実行<br />-   [その他...](http://msdn.microsoft.com/library/9wtde3k4\(v=vs.80\).aspx)|2003|-|✓ 2003|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
-|1.0|1.0|.NET Framework の最初のバージョン。|Visual Studio .NET|-|-|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
+|1|1|.NET Framework の最初のバージョン。|Visual Studio .NET|-|-|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
   
  一般に、コンピューターにインストールされている .NET Framework のバージョンはアンインストールしないでください。使用するアプリケーションが特定のバージョンに依存しており、バージョンが削除されると破損する可能性があるからです。 1 台のコンピューターに複数バージョンの .NET Framework を同時に読み込むことができます。 これは、以前のバージョンをアンインストールすることなく、.NET Framework をインストールできることを意味します。 詳細については、[概要](../../../docs/framework/get-started/index.md)に関するページを参照してください。  
   
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/01/2017
   
  さらに、アプリケーションがバージョン 2.0、3.0、または 3.5 を対象とする場合、ユーザーがアプリケーションを実行する前に、[!INCLUDE[win8](../../../includes/win8-md.md)] または [!INCLUDE[win81](../../../includes/win81-md.md)] のコンピューター上で .NET Framework 3.5 を有効にするように求められる場合があります。 詳細については、[Windows 10、Windows 8.1、Windows 8 への .NET Framework 3.5 のインストール](../../../docs/framework/install/dotnet-35-windows-10.md)に関するページを参照してください。  
   
-## <a name="next-steps"></a>次のステップ  
+## <a name="next-steps"></a>次の手順  
   
 -   .NET Framework を初めて使用する場合は、[概要](../../../docs/framework/get-started/overview.md)に関するページを参照して、主な概念と機能の概要を確認してください。  
   

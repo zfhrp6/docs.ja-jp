@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 46c00bc73e586c7bcfaca95d3998cbe100c6f3c7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17c2cee97c3347a98a015e8526e436815378eed0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="working-with-resx-files-programmatically"></a>プログラムによる .resx ファイルの使用
 XML リソース (.resx) ファイルは適切に定義された XML で構成する必要があり、特定のスキーマに従ったヘッダーの後に、名前と値のペアになったデータが続きます。そのため、手動で作成するとエラーが発生しやすくなります。 代わりに、.NET Framework クラス ライブラリの型とメンバーを使って、.resx ファイルをプログラムで作成できます。 また、.resx ファイルに格納されているリソースを取得するために、.NET Framework クラス ライブラリを使うこともできます。 このトピックでは、 <xref:System.Resources> 名前空間の型とメンバーを使って、.resx ファイルを操作する方法を説明します。  
@@ -92,7 +93,7 @@ XML リソース (.resx) ファイルは適切に定義された XML で構成�
   
  **al** *resourcesFilename* **/out:** *assemblyFilename*  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
  [Resgen.exe (リソース ファイル ジェネレーター)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)  
  [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)

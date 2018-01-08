@@ -37,11 +37,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 55ba7c1b9dd7e8c912903fb9827e0073a8329abb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 56e2effec282900101fc0cbe489c76b523184ab2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>CodeDOM グラフからのソース コードの生成およびコンパイル
 <xref:System.CodeDom.Compiler> 名前空間は、CodeDOM オブジェクト グラフからソース コードを生成し、サポートされているコンパイラでコンパイルを管理するためのインターフェイスを提供します。 コード プロバイダーは、CodeDOM グラフに基づいて、特定のプログラミング言語でソース コードを生成できます。 <xref:System.CodeDom.Compiler.CodeDomProvider> から派生したクラスは、通常、プロバイダーが対応している言語のコードを生成し、コンパイルするためのメソッドを提供します。  
@@ -101,7 +102,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="languages-with-initial-support"></a>初期サポートの言語  
  .NET Framework は、C#、Visual Basic、C++、および JScript のコード コンパイラとコード ジェネレーターを提供します。 CodeDOM のサポートは、言語固有のコード ジェネレーターとコード コンパイラを実装することで、他の言語に拡張できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.CodeDom>  
  <xref:System.CodeDom.Compiler>  
  [動的なソース コードの生成とコンパイル](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)  

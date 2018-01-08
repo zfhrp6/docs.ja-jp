@@ -7,17 +7,18 @@ ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 4836f07ec1a8b59c343b4d0181587e602f61d45e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: f56ccc485884114262cd1364cf9398e302f2c48a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-clean"></a>dotnet-clean
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet clean` - プロジェクトの出力を消去します。
 
@@ -97,7 +98,7 @@ dotnet clean [-h|--help]
 
 ---
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 プロジェクトの既定のビルドを消去します。
 

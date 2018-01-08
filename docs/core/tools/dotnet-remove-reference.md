@@ -8,17 +8,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 7cb84c2dc7fc4d16b00bd6459132390ab80131f3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 691fd77c7605b6476adc764f20e59b51abd7d914
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-remove-reference"></a>dotnet remove reference
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet remove reference` - プロジェクト間参照を削除します。
 
@@ -50,7 +51,7 @@ ms.lasthandoff: 10/18/2017
 
 特定の[フレームワーク](../../standard/frameworks.md)を対象にしている場合にのみ、参照を削除します。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 指定したプロジェクトからプロジェクト参照を削除する:
 

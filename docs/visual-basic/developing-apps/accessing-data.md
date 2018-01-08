@@ -11,11 +11,11 @@ ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
 caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: fd4dbc66f37325afa64b7bf9720cad23e08c6bfb
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: ae0611fdadabd6ab684f3f97995f3be3e348e648
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Visual Basic アプリケーションにおけるデータ アクセス
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  
@@ -30,11 +30,11 @@ ms.lasthandoff: 12/09/2017
  [LINQ](../../visual-basic/programming-guide/language-features/linq/index.md)  
  Visual Basic での LINQ の使用方法について説明するトピックへのリンクを示します。  
   
- [LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md)  
  [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] に関する情報を提供します。 プログラミング例もあります。  
   
  [Visual Studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
- アプリケーションで [LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/index.md) オブジェクト モデルを作成する方法に関するトピックへのリンクを示します。  
+ アプリケーションで [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md) オブジェクト モデルを作成する方法に関するトピックへのリンクを示します。  
   
  [n 層アプリケーションでのデータセットの操作](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications)  
  複数層データ アプリケーションを作成する方法に関するトピックへのリンクを示します。  
@@ -57,7 +57,7 @@ ms.lasthandoff: 12/09/2017
  [データをデータベースに保存する](/visualstudio/data-tools/save-data-back-to-the-database)  
  更新済みのデータをアプリケーションからデータベースに送信する方法について説明しているページへのリンクを示します。  
   
- [ADO.NET](https://msdn.microsoft.com/library/e80y5yhx.aspx)  
+ [ADO.NET](../../framework/data/adonet/index.md)  
  .NET Framework プログラマにデータ アクセス サービスを公開する ADO.NET クラスについて説明します。
 
  [Office ソリューションにおけるデータ](https://msdn.microsoft.com/library/xx069ybh)  

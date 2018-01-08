@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8ac4bec06f2d5c7f8876c8e4e18a9d5c59f094fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0980488f3093bfcaedc730bac126b1b5b6505187
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessing-custom-attributes"></a>カスタム属性へのアクセス
 属性がプログラム要素に関連付けられると、リフレクションを使用して、その存在と値をクエリすることができます。 .NET Framework バージョン 1.0 および 1.1 では、カスタム属性は実行コンテキストで検証されます。 .NET Framework バージョン 2.0 では、新しい読み込みコンテキスト (リフレクションのみのコンテキスト) が提供されます。これを使用して、実行のために読み込むことができないコードを検証できます。  
@@ -80,7 +81,7 @@ public class LocalizationExtenderProvider
  [!code-csharp[CustomAttributeData#2](../../../samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source2.cs#2)]
  [!code-vb[CustomAttributeData#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source2.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType>  
  <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>  
  [型情報の表示](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)  

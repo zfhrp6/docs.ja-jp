@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: b9cfd81b966e2bab95aa780a4fbde26abec74b00
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d6a0b8b62b997ab0dc7ff21375e82bda7e05d3c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="manipulations-and-inertia-overview"></a>操作と慣性の概要
 "*操作*" では、"*マニピュレーター*" を使用して、ユーザー インターフェイス (UI) 要素の移動、回転、サイズ変更を行えます。 マニピュレーターは、マウス、または (タッチ対応のシナリオの場合) スタイラスや指を意味します。  
@@ -81,5 +82,5 @@ ms.lasthandoff: 10/18/2017
   
  慣性の処理と操作の処理は、多くの場合、一緒に使用されます。 これらのインターフェイスは類似しており、発生するイベントは (場合によって) 同一です。 一般に、UI 要素の操作が完了すると、慣性の処理が開始します。 これは、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> イベントをリッスンして、そのイベント ハンドラーから慣性の処理を開始することで実現します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Input.Manipulations>

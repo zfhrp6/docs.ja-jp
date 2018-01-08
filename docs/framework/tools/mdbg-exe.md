@@ -16,11 +16,12 @@ caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 04a96cfe492add5c0216528dc07efc5f40912412
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a4c4e06a5969aa6f7555a191f9950ddf64879e98
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (.NET Framework コマンド ライン デバッガー)
 .NET Framework コマンド ライン デバッガーは、.NET Framework 共通言語ランタイムを対象としたプログラムに含まれるバグの検索と修復について、ツールの販売元とアプリケーション開発者を支援するツールです。 このツールは、ランタイムのデバッグ API を使用してデバッグ サービスを提供します。 MDbg.exe を使用してもマネージ コードのデバッグしか実行できません。アンマネージ コードのデバッグはサポートされていません。  
@@ -60,7 +61,7 @@ MDbg [ProgramName[arguments]] [options]
 |**fo****[reach]** [*OtherCommand*]|すべてのスレッドでコマンドを実行します。 *OtherCommand* は、1 つのスレッドで動作する有効なコマンドです。**foreach** *OtherCommand* は、すべてのスレッドで同じコマンドを実行します。|  
 |**f****[unceval]** [`-ad` *Num*] *functionName* [*args ...* ]|現在のアクティブ スレッドで関数評価を実行します。*functionName* は、評価する関数です。 関数名には、名前空間を含めた完全修飾名を指定する必要があります。<br /><br /> `-ad` オプションは、関数の解決に使用するアプリケーション ドメインを指定します。 `-ad` オプションが指定されていない場合、解決に使用するアプリケーション ドメインは、関数評価に使用するスレッドが配置されたアプリケーション ドメインに既定で設定されます。<br /><br /> 評価対象の関数が静的ではない場合、渡される最初のパラメーターは `this` ポインターであることが必要です。 すべてのアプリケーション ドメインで、関数評価のための引数が検索されます。<br /><br /> アプリケーション ドメインから値を要求するには、変数の先頭にモジュール名とアプリケーション ドメイン名を付けます。たとえば、`funceval -ad 0 System.Object.ToString hello.exe#0!MyClass.g_rootRef` のようにします。 このコマンドは、アプリケーション ドメイン `System.Object.ToString` の `0` 関数を評価します。 `ToString` メソッドはインスタンス関数であるため、最初のパラメーターは `this` ポインターであることが必要です。|  
 |**g****[o]**|ブレークポイントに到達し、プログラムが終了するか、イベント (未処理の例外など) によってプログラムが中断されるまで、プログラムは続行されます。|  
-|**h****[elp]** [*command*]<br /><br /> または<br /><br /> **?** [*command*]|すべてのコマンドの説明、または指定したコマンドの詳細な説明を表示します。|  
+|**h****[elp]** [*command*]<br /><br /> - または -<br /><br /> **?** [*command*]|すべてのコマンドの説明、または指定したコマンドの詳細な説明を表示します。|  
 |**ig****[nore]** [*event*]|未処理の例外の発生時にだけデバッガーが停止します。|  
 |**int****[ercept]** *FrameNumber*|デバッガーを指定したフレーム番号にロールバックします。<br /><br /> デバッガーの実行時に例外が発生した場合は、このコマンドを使用してデバッガーを指定したフレーム番号にロールバックします。 **set** コマンドを使用してプログラムの状態を変更し、**go** コマンドを使用して続行できます。|  
 |**k****[ill]**|アクティブ プロセスを停止します。|  
@@ -114,6 +115,6 @@ mdbg>
   
 ## <a name="examples"></a>使用例  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

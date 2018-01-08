@@ -31,11 +31,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 939a64919e9982232f6e8bd99070fe96e242b9bd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0bb3ab57d78e1a7b6d53261af50d4698ab1a4ff2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-the-codedom"></a>CodeDOM の使用方法
 CodeDOM には一般的なさまざま種類のソース コード要素を表す型が用意されています。 オブジェクト グラフをアセンブルする CodeDOM 要素を使用すると、ソース コード モデルを構築するプログラムをデザインできます。 このオブジェクト グラフは、サポートされているプログラミング言語用の CodeDOM コード ジェネレーターを使用して、ソース コードとしてレンダリングできます。 また、CodeDOM を使用して、ソース コードをバイナリ アセンブリにコンパイルすることもできます。  

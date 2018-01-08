@@ -18,11 +18,11 @@ ms.assetid: 5b70143a-7741-45f2-ae1d-03324a3a4189
 caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4df7a80907b29a5eea79992f46c46603cbe2cc81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f35a850a262e96762b4ada3fdff1f14634f77317
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>チュートリアル: My.Application.Log による情報の書き込み先の確認 (Visual Basic)
 `My.Application.Log` オブジェクトは、複数のログ リスナーに情報を書き込むことができます。 ログ リスナーは、コンピューターの構成ファイルで設定し、アプリケーションの構成ファイルでオーバーライドできます。 このトピックでは、既定の設定について、およびアプリケーションの設定を確認する方法について説明します。  
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/21/2017
   
     -   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> リスナーは、導入部で説明したように、ファイル ログに書き込みます。  
   
-    -   <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> リスナーは、`initializeData` パラメーターで指定された、コンピューターのイベント ログに情報を書き込みます。 イベント ログを参照するには、 **サーバー エクスプローラー** または **Windows イベント ビューアー**を使用できます。 詳細については、「 [ETW Events in the .NET Framework](http://msdn.microsoft.com/library/d186276f-6afb-4dfd-bf3c-4251edc2c299)」を参照してください。  
+    -   <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> リスナーは、`initializeData` パラメーターで指定された、コンピューターのイベント ログに情報を書き込みます。 イベント ログを参照するには、 **サーバー エクスプローラー** または **Windows イベント ビューアー**を使用できます。 詳細については、「 [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md)」を参照してください。  
   
     -   <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> リスナーおよび <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> リスナーは、`initializeData` パラメーターで指定されたファイルに書き込みます。  
   
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/21/2017
   
     -   他の型のログ リスナーが情報を書き込む先については、その型のドキュメントを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
  <xref:System.Diagnostics.DefaultTraceListener>  
  <xref:System.Diagnostics.EventLogTraceListener>  
@@ -82,5 +82,5 @@ ms.lasthandoff: 11/21/2017
  [方法 : 例外をログに記録する](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)  
  [方法: ログ メッセージを書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)  
  [チュートリアル : My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
- [.NET Framework の ETW イベント](http://msdn.microsoft.com/library/d186276f-6afb-4dfd-bf3c-4251edc2c299)  
+ [.NET Framework の ETW イベント](../../../../framework/performance/etw-events.md)  
  [トラブルシューティング : ログ リスナー](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

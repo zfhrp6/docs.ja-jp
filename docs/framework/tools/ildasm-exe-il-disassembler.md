@@ -20,17 +20,18 @@ caps.latest.revision: "33"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9ce101a1770329ab54ec8be86ec537a77f0fc112
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f42726b24abe78b151e4174da37b7c7bfff4c8d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL 逆アセンブラー)
 
 IL 逆アセンブラーは、IL アセンブラー (*Ilasm.exe*) と対をなすツールです。 *Ildasm.exe* は、中間言語 (IL: Intermediate Language) コードを含む、ポータブル実行可能 (PE) ファイルを使用して、*Ilasm.exe* に対する入力として適したテキスト ファイルを作成します。
 
-このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。
+このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。
 
 コマンド プロンプトに次のように入力します。
 
@@ -143,7 +144,7 @@ public void Test([MarshalAs((short)70)] int test) { }
       …
 ```
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 PE ファイル `MyHello.exe` のメタデータと逆アセンブルしたコードを、*Ildasm.exe* の既定の GUI で表示するコマンドを次に示します。
 
@@ -197,4 +198,4 @@ ildasm /item:"MyClass::MyMethod(class [mscorlib]System.AppDomain(class [mscorlib
 [ツール](../../../docs/framework/tools/index.md)  
 [Ilasm.exe (IL アセンブラー)](../../../docs/framework/tools/ilasm-exe-il-assembler.md)  
 [マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)  
-[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -14,11 +14,11 @@ ms.assetid: 8ecc47ce-7730-49cd-b21d-3a13477eec6b
 caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3a0a4d4bd6bc07f4ca60ac781365f49c4af9e156
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 515e91dcecad31c7abf65d7ea1744728004bd62f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="performing-network-operations-visual-basic"></a>ネットワーク操作の実行 (Visual Basic)
 次の表は、`My.Computer.Network` オブジェクトに関連付けられているタスクの一覧です。  
@@ -46,5 +46,5 @@ ms.lasthandoff: 10/18/2017
  <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>  
  `UploadFile` メソッドについて説明します。  
   
- <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>  
+ <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable>  
  `IsAvailable` プロパティについて説明します。

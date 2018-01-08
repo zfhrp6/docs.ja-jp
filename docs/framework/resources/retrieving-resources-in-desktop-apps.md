@@ -29,11 +29,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4c1b751fc5fb5717ad4bf030777359bef2e69545
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b1227aa30d854d736bb24413b37d4722e729b2ff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>デスクトップ アプリケーションのリソースの取得
 ローカライズされたリソースを NET Framework デスクトップ アプリケーションで使用する場合は、既定カルチャまたはニュートラル カルチャ用のリソースをメイン アセンブリと共にパッケージ化し、アプリでサポートされている言語またはカルチャごとに個別のサテライト アセンブリを作成することが理想的です。 名前付きリソースには、次のセクションで説明する <xref:System.Resources.ResourceManager> クラスを使用してアクセスすることができます。 目的のリソースをメイン アセンブリおよびサテライト アセンブリに埋め込まない場合でも、.resources バイナリ ファイルには直接アクセスすることができます。詳細については、「 [.resources ファイルからのリソースの取得](#from_file) 」セクションを参照してください。  [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでリソースを取得するには、Windows デベロッパー センターの「 [Windows ストア アプリでのリソースの作成と取得](http://go.microsoft.com/fwlink/p/?LinkID=241674) 」を参照してください。  
@@ -208,7 +209,7 @@ Resgen Strings.ru-RU.txt Resources\Strings.ru-RU.resources
 csc Example.cs  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Resources.ResourceManager>  
  [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)  
  [リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  

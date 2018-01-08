@@ -1,5 +1,5 @@
 ---
-title: "反復子"
+title: Iterators
 description: "組み込み C# の反復子を使用して、独自のカスタム反復子メソッドを作成する方法について説明します。"
 keywords: .NET, .NET Core
 author: BillWagner
@@ -10,13 +10,13 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: 18a5819402c752f32aecd0cd4c3bd5a490292ebf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0a78fe3aa4d88cd5ea1c98f372e4d6672cff5236
+ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/19/2017
 ---
-# <a name="iterators"></a>反復子
+# <a name="iterators"></a>Iterators
 
 プログラムを記述するうえで、ほとんどのプログラムに必要になるのがコレクションの反復処理です。 反復処理が必要な場合は、コレクション内のすべての項目を調べるコードを記述します。 
 
@@ -171,7 +171,7 @@ private IEnumerable<int> IteratorMethod()
 
 ## <a name="deeper-dive-into-foreach"></a>`foreach` の詳細
 
-`foreach` ステートメントは、`IEnumable<T>` および `IEnumerator<T>` インターフェイスを使用してコレクションの全要素を反復処理する標準的な表現形式に展開されます。 また、開発者の不適切なリソース管理によって生じるエラーを最小化する効果もあります。 
+`foreach` ステートメントは、`IEnumerable<T>` および `IEnumerator<T>` インターフェイスを使用してコレクションの全要素を反復処理する標準的な表現形式に展開されます。 また、開発者の不適切なリソース管理によって生じるエラーを最小化する効果もあります。 
 
 最初の例に登場する `foreach` ループは、コンパイラによって次のコンストラクトに似たコードに変換されます。
 

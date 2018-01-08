@@ -23,11 +23,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3c3e2a8eac4383433888c324a3d36a6e62314462
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0b924f1c1b46eb132070b6d582cf065f38a8a600
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dynamically-loading-and-using-types"></a>型の動的な読み込みおよび使用
 リフレクションは、[!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] や JScript などの言語コンパイラで使用される、暗黙の遅延バインディングを実装するインフラストラクチャを提供します。 バインディングとは、一意に指定した型に対応する宣言 (つまり、実装) を検索するプロセスです。 このプロセスがコンパイル時ではなく、実行時に発生する場合、それは遅延バインディングと呼ばれます。 [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] のコードでは、暗黙の遅延バインディングを使用できます。これでは、Visual Basic のコンパイラが、オブジェクトの型を取得する、リフレクションを使用するヘルパー メソッドを呼び出します。 ヘルパー メソッドに渡される引数により、実行時に適切なメソッドが呼び出されます。 これらの引数は、メソッドを呼び出すインスタンス (オブジェクト)、呼び出されたメソッド名 (文字列)、呼び出されたメソッドに渡される引数 (オブジェクトの配列) です。  
@@ -107,7 +108,7 @@ End Module
   
  <xref:System.Type> クラスは、参照を特定のメンバーとして解決する **Binder** 型のパラメーターを使用する **get** メソッドを持っています。 <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>、<xref:System.Type.GetMethod%2A?displayProperty=nameWithType>、および <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> は、現在の型の特定のメンバーに関するシグネチャ情報を提供して、そのメンバーを検索します。 該当するメソッドの指定されたシグネチャ情報を選択するために、<xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType> および <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> がコールバックされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>  
  <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
  [型情報の表示](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)  

@@ -26,11 +26,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a0d1f54b417a9752ae96e52f78d9df7d2d60cbec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b8076f5ed713c88f8f538959855408a8c542705a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>方法: 公開キーと秘密キーのキー ペアを作成する
 アセンブリに厳密な名前で署名するには、公開/秘密キーの組み合わせが必要です。 このような公開キーと秘密キーからなる暗号鍵の組み合わせがコンパイル時に利用され、厳密な名前が付いたアセンブリが作成されます。 キーの組み合わせは[厳密名ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) を利用して作成できます。 キー ペア ファイルには通常、.snk 拡張子が与えられます。  
@@ -74,5 +75,5 @@ sn -p keypair.snk public.snk
  [!code-csharp[AssemblyName_KeyPair#21](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyName_KeyPair/CS/keyfileattrib.cs#21)]
  [!code-vb[AssemblyName_KeyPair#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyName_KeyPair/VB/keyfileattrib.vb#21)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [厳密な名前付きアセンブリの作成と使用](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

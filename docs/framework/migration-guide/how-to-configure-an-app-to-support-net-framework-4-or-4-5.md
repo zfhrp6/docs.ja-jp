@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 95266f9f28d5054db3ea8552ebb45e5a83aba060
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4ba3d248dbdd81cf2e2e4445d1e1eb160605542c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-configure-an-app-to-support-net-framework-4-or-45"></a>方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する
 共通言語ランタイム (CLR) をホストするすべてのアプリでは、マネージ コードを実行するために CLR を開始または*アクティブ化*する必要があります。 通常、.NET Framework アプリはビルドされた CLR のバージョンで実行されますが、アプリケーション構成ファイル (app.config ファイルと呼ばれることもあります) を使用して、デスクトップ アプリのこの動作を変更できます。 ただし、アプリケーション構成ファイルを使用して Windows ストア アプリまたは Windows Phone アプリの既定のアクティベーション動作は変更できません。 この記事では、デスクトップ アプリを .NET Framework の別のバージョンで実行できるようにする方法を説明し、Version 4 または 4.5 を対象とする方法の例を示します。  
@@ -89,6 +90,6 @@ ms.lasthandoff: 11/21/2017
   
  \* このエラー メッセージの詳細と回避方法については、「[.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework 1.1 からの移行](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)  
  [移行ガイド](../../../docs/framework/migration-guide/index.md)

@@ -15,11 +15,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8749e2d7b91e611ee153c6f36708fa34a44ecccd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 42eaddeb2714a8c294f45d24eb7e6d9cf216fecc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mitigation-pool-blocking-period"></a>軽減策: プールのロック期間
 Azure SQL データベースへの接続に関して、接続プールのブロック期間が削除されました。  
@@ -43,5 +44,5 @@ Azure SQL データベースへの接続に関して、接続プールのブロ�
   
  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> プロパティを `PoolBlockingPeriod.AlwaysBlock` に設定して、以前の動作を復元することができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ランタイムの変更点](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6-2.md)
