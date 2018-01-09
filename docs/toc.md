@@ -257,6 +257,7 @@
 ### [ネイティブ相互運用性](csharp/programming-guide/interop/index.md)
 ### [コードのドキュメントの作成](csharp/codedoc.md)
 ### [バージョン管理](csharp/versioning.md)
+## [C# に関するトピック](csharp/how-to/index.md)
 <!-- End of C# Concepts section -->
 ## [.NET Compiler Platform SDK (Roslyn API)](csharp/roslyn-sdk/)
 ## [C# プログラミング ガイド](csharp/programming-guide/)
