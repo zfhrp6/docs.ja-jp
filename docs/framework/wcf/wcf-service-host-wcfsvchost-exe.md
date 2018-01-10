@@ -13,11 +13,12 @@ caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 39d59e23b407a01e91f68022a1b67e590858235e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 495088463a6a7463ce1452588dc55d35110f0092
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>WCF サービス ホスト (WcfSvcHost.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス ホスト (WcfSvcHost.exe) を使用すると、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] デバッガーを起動して (F5 キーを押します)、実装しているサービスを自動的にホストおよびテストすることができます。 その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアント (WcfTestClient.exe) または独自のクライアントを使用してサービスをテストし、潜在的なエラーを見つけて修正できます。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/02/2017
  `/client:WcfTestClient.exe`  
   
 #### <a name="using-a-custom-client"></a>カスタム クライアントの使用  
- プロジェクトを右クリックし、カスタムのクライアントを使用するのに**ソリューション エクスプ ローラー**で[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]、**プロパティ**クリックし、**デバッグ** タブ。をクリックして**スタート プロジェクト**および編集、`/client`内のパラメーター、**コマンドライン引数**ダイアログ ボックスを次の例に示すように、カスタムのクライアント をポイントします。  
+ カスタムクライアントを使用するには、**ソリューションエクスプローラ** に [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]でプロジェクトを右クリックし、**プロパティ** を選択してから、**デバッグ** タブを選択します。をクリックして**スタート プロジェクト**および編集、`/client`内のパラメーター、**コマンドライン引数**ダイアログ ボックスを次の例に示すように、カスタムのクライアント をポイントします。  
   
  `/client:"path/CustomClient.exe"`  
   
@@ -120,5 +121,5 @@ netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
   
  Netsh.exe の詳細については、次を参照してください。"[Netsh.exe ツールとコマンド ライン スイッチを使用する方法](http://go.microsoft.com/fwlink/?LinkId=97877)"です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [WCF のテスト用クライアント (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

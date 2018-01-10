@@ -13,11 +13,12 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f36d944814adaf4a90a04715c60f2fe732cb544a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1950a0c4015658affb0b9fa0d7c87a062865144b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="partial-trust-feature-compatibility"></a>部分信頼機能の互換性
 部分信頼環境で実行される場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でサポートされる機能は、限られたサブセットになります。 部分信頼でサポートされる機能は、「 [Supported Deployment Scenarios](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) 」のトピックで説明される特定のシナリオを念頭にデザインされています。  
@@ -169,7 +170,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="unlisted-features"></a>記載されていない機能  
  部分信頼環境で利用できない情報やアクションを見つけ出す最善の方法は、リソースへのアクセスまたはアクションの実行を `try` ブロックの内側で試みて、エラーを `catch` することです。 トレース ファイルが重複したエラーでいっぱいになるのを防ぐために、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では最初のセキュリティ エラーの後でリソースまたはアクションのトレースを無効にします。 リソースへのアクセスまたはアクションの実行が初めて行われようとしたとき、例外トレースはリソース アクセスの各失敗に対して、1 回だけ行われます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  

@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 582f8815bd121199e564af7d1806f2e76f4595cd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 96e03aac921cfeb69811a0c51ad2151b7e70cd93
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dynamic-arguments"></a>動的引数
 このサンプルでは、アクティビティの作成者ではなくアクティビティのコンシューマーによって引数が定義されるアクティビティの実装方法を示します。 ここではそのために、ランタイムによるアクティビティのメタデータの構築方法をオーバーライドします。  

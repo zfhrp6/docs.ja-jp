@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d8a2f0883a2d83ad5b3c1a2a3dd6c7e016583af7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fc7af813f7fff422a2513c58c9e3cba6376de060
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a>方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする
 AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングに似ています。 唯一の違いは、ワークフロー サービスの投入、監視、および管理のために AppFabric に用意されているツールです。 このトピックで作成したワークフロー サービスを使用して、[実行時間の長いワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)です。 ワークフロー サービスの作成方法はそちらのトピックで説明されています。 このトピックでは、AppFabric を使用したワークフロー サービスのホスティング方法を説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric を参照してください[Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)です。 下の手順を完了する前に、Windows Server AppFabric がインストールされていることを確認してください。  インターネット インフォメーション サービス (inetmgr.exe) を開いてでサーバー名をクリックして、**接続**サイトをクリックし、をクリックして**既定の Web サイト**です。 画面の右側にある必要がありますと呼ばれるセクションを参照して**App Fabric**です。 (右側のペインの一番上に表示される) このセクションが表示されない場合は、AppFabric がインストールされていません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric のインストールを参照してください[をインストールする Windows Server Appfabric](http://go.microsoft.com/fwlink/?LinkId=193136)です。  
@@ -40,7 +41,7 @@ AppFabric でのワークフロー サービスのホスティングは IIS/WAS 
   
 2.  OrderService 仮想ディレクトリに移動し、**接続**ウィンドウです。  
   
-3.  [Orderservice] を右クリックし、選択**管理の WCF と WF サービス**、**構成しています...**. **WCF と WF アプリケーションの構成** ダイアログ ボックスが表示されます。  
+3.  [Orderservice] を右クリックし、選択**管理の WCF と WF サービス**、**構成しています**. **WCF と WF アプリケーションの構成** ダイアログ ボックスが表示されます。  
   
 4.  選択、**全般**の次のスクリーン ショットに示すように、アプリケーションに関する一般情報を表示するタブです。  
   
@@ -100,8 +101,8 @@ AppFabric でのワークフロー サービスのホスティングは IIS/WAS 
   
      Windows Server App Fabric の詳細については機能とその使用方法を参照してください[Windows Server App Fabric をホストしている機能](http://go.microsoft.com/fwlink/?LinkID=193143&clcid=0x409)  
   
-## <a name="see-also"></a>関連項目  
- [実行時間の長いワークフロー サービスを作成します。](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)  
+## <a name="see-also"></a>参照  
+ [長時間のワークフロー サービスの作成](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)  
  [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=193143)  
  [Windows Server App Fabric をインストールします。](http://go.microsoft.com/fwlink/?LinkId=193136)  
  [Windows Server App Fabric のドキュメント](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)

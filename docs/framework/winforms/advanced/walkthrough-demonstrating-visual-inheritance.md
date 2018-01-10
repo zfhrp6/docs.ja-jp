@@ -22,11 +22,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 711f823e418a1bbea1479b9d6a8d70d4fa506365
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 54f521050025f2f9e55085ee2656a5874b62226d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>チュートリアル : ビジュアル継承のデモンストレーション
 ビジュアル継承により、基本フォームのコントロールを表示して、新しいコントロールを追加できます。 このチュートリアルでは、基本フォームを作成してクラス ライブラリにコンパイルします。 このクラス ライブラリを別のプロジェクトにインポートして、基本フォームから継承する新しいフォームを作成します。 このチュートリアルでは、次の作業を行う方法について説明します。  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
  最終的には、このチュートリアルでは、継承されたフォーム上のプライベート コントロールとプロテクト コントロールの違いを示します。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 > [!CAUTION]
 >  すべてのコントロールが基本フォームのビジュアル継承をサポートするわけではありません。 次のコントロールでは、このチュートリアルで説明するシナリオはサポートされません。  
@@ -92,7 +93,7 @@ ms.lasthandoff: 11/21/2017
   
     -   設定、**修飾子**プロパティを**Protected**です。 継承するフォームができるようになります**Form1**のプロパティを変更する**btnProtected**です。  
   
-4.  ダブルクリックして、 **Say こんにちは**のイベント ハンドラーを追加するボタン、 ** をクリックして**イベント。  
+4.  ダブルクリックして、 **Say こんにちは**のイベント ハンドラーを追加するボタン、  **をクリックして**イベント。  
   
 5.  イベント ハンドラーに次のコードを追加します。  
   
@@ -116,7 +117,7 @@ ms.lasthandoff: 11/21/2017
   
     -   設定、**修飾子**プロパティを**プライベート**です。 継承するフォームが不可能になります。 **Form1**のプロパティを変更する**btnPrivate**です。  
   
-3.  ダブルクリックして、 **Say Goodbye**のイベント ハンドラーを追加するボタン、 ** をクリックして**イベント。 イベントの手順で、次のコード行を配置します。  
+3.  ダブルクリックして、 **Say Goodbye**のイベント ハンドラーを追加するボタン、  **をクリックして**イベント。 イベントの手順で、次のコード行を配置します。  
   
     ```vb  
     MessageBox.Show("Goodbye!")  
@@ -173,7 +174,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="next-steps"></a>次の手順  
  ユーザー コントロールの継承はほぼ同じ方法で機能します。 新しいクラス ライブラリ プロジェクトを開き、ユーザー コントロールを追加します。 内在コントロールを配置し、プロジェクトをコンパイルします。 別の新しいクラス ライブラリ プロジェクトを開き、コンパイル済みのクラス ライブラリへの参照を追加します。 また、[継承されたコントロールを追加してみてください (を通じて、**新しい項目の追加**] ダイアログ ボックス) をプロジェクトを使用して、**継承ピッカー**です。 ユーザー コントロールを追加し、`Inherits` ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] の`:`) ステートメントを変更します。 詳細については、次を参照してください。[する方法: Windows フォームの継承](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: Windows フォームを継承する](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)  
  [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
  [Windows フォーム](../../../../docs/framework/winforms/index.md)

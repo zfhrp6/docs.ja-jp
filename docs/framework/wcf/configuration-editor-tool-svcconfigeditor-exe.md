@@ -18,11 +18,12 @@ caps.latest.revision: "45"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a301e23ead8e52273ed4fe7a503f1fe11e2f1348
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e21dacd5f01ba956ba78456b8e325d0b7e767df7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>構成エディター ツール (SvcConfigEditor.exe)
 管理者と開発者は、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス構成エディター (SvcConfigEditor.exe) のグラフィカル ユーザー インターフェイスを使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの構成設定を作成および変更できます。 このツールを使用すると、XML 構成ファイルを直接編集せずに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のバインディング、動作、サービス、および診断の設定を管理できます。  
@@ -62,7 +63,7 @@ ms.lasthandoff: 12/02/2017
   
 -   ツリー ビュー ペイン: 左側に構成要素をツリー構造で表示します。 ノードを右クリックと、ツリーで操作を実行できます。  
   
--   タスク ペイン: ウィンドウの左下に現在の要素の一般的なタスクを表示します。  
+-   作業ウィンドウ: ウィンドウの左下に現在の要素の一般的なタスクを表示します。  
   
 -   詳細ペイン: ツリー ビューで選択された構成ノードの詳細設定を右側に表示します。  
   
@@ -118,7 +119,7 @@ ms.lasthandoff: 12/02/2017
   
 3.  ダイアログ ボックスにベース アドレスの URI を入力します。  
   
-4.  **[OK]** をクリックします。  
+4.  **[OK]**をクリックします。  
   
 > [!NOTE]
 >  値を編集することはできません[ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)このツール内です。 この要素を追加または変更するには、テキスト エディターまたは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用する必要があります。  
@@ -201,8 +202,8 @@ ms.lasthandoff: 12/02/2017
   
 4.  **[追加]**をクリックします。  
   
-#### <a name="adjusting-the-extension-position-in-a-custom-binding"></a>カスタム バインディングの拡張位置の調整  
- カスタム バインディングは、スタックを形成するバインディング要素のコレクションです。 スタックの各バインディング要素には、独自の構成設定があります。 カスタム バインディング内のバインディング要素拡張の順序は、スタック内のそれらの位置を示します。 スタック最上位の要素が最初に適用されます。 順序を変更するには  
+#### <a name="adjusting-the-extension-position-in-a-custom-binding"></a>カスタム バインドの拡張位置の調整  
+ カスタム バインディングは、スタックを形成するバインディング要素のコレクションです。 スタックの各バインド要素には、独自の構成設定があります。 カスタム バインディング内のバインディング要素拡張の順序は、スタック内のそれらの位置を示します。 スタック最上位の要素が最初に適用されます。 順序を変更するには  
   
 1.  カスタム バインド ノードを選択します。  
   
@@ -346,7 +347,7 @@ ms.lasthandoff: 12/02/2017
   
 2.  名前と種類を入力します。  
   
-3.  **[OK]** をクリックします。  
+3.  **[OK]**をクリックします。  
   
 4.  拡張は、エディターの適切な場所に表示されるようになります。 たとえば、動作要素拡張を追加すると、使用できる拡張一覧に表示されます。  
   

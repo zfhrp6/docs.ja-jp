@@ -17,11 +17,12 @@ caps.latest.revision: "28"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 509da8b697f38ea75d9509a8243f3e9e09cc661b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2b8e84fe75f812cdcb97dcc24a0edad2d238515b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-services"></a>サービスのセキュリティ保護
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのセキュリティは、転送セキュリティと承認という 2 つの主要要件で構成されます (3 番目の要件は、「セキュリティ イベントの監査[監査](../../../docs/framework/wcf/feature-details/auditing-security-events.md)。)簡単に説明すると、転送セキュリティは、認証 (サーバーとクライアント両方の ID の検証)、機密性 (メッセージの暗号化)、および整合性 (改ざんを検出するためのデジタル署名) で構成されます。 承認は、たとえば、特権のあるユーザーだけがファイルを読み取ることができるなど、リソースへのアクセスを制御することです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の機能を使用すれば、この 2 つの主要要件を簡単に実装できます。  
@@ -108,12 +109,12 @@ ms.lasthandoff: 11/21/2017
 ## <a name="protection-levels"></a>保護レベル  
  `ProtectionLevel` プロパティは、 <xref:System.ServiceModel.ServiceContractAttribute> クラス、 <xref:System.ServiceModel.OperationContractAttribute> クラスなどのいくつかの属性クラスで使用します。 保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]プロパティを参照してください[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)、プログラミング例については、次を参照してください。 および[する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] を使用してサービス コントラクトを設計する方法の `ProtectionLevel` については、「 [Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md)に依存します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.ServiceModel>  
  <xref:System.ServiceModel.Description.ServiceCredentials>  
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
- [サービス Id と認証](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [サービス ID と認証](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [保護レベルの理解](../../../docs/framework/wcf/understanding-protection-level.md)  
  [委任と偽装](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  
  [サービス コントラクトの設計](../../../docs/framework/wcf/designing-service-contracts.md)  

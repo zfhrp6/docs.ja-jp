@@ -18,23 +18,24 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9ab199f390fa6a704ad3b3d2a17387d034cf2e57
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7e3754df2930503e7e7a123ffdb4d4b787338c20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms"></a>方法 : コントロールを Windows フォームのスナップ線とグリッドを使用して配置する
 レイアウト機能を使用して[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]フォーム上のコントロールの配置場所を正確に指定できます。 行と、Windows フォーム デザイナーのグリッドの列に、コントロールをフォームに追加し、フォームを移動したかを自動的にアラインできます。 またはスナップ線機能を使用してコントロールを揃えることができます。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-snap-all-controls-to-the-grid"></a>すべてのコントロールをグリッドにスナップするには  
   
 -   選択、 **SnapToGrid** Windows フォーム デザイナーでレイアウト モード**オプション** ダイアログ ボックス。  
   
-     詳細については、次を参照してください。 [[全般]、[Windows フォーム デザイナー、オプション] ダイアログ ボックス](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834)です。 すべてのコントロールでは、グリッド上の点に沿った自体今すぐ揃えます。  
+     詳細については、次を参照してください。 [[全般]、Windows フォーム デザイナー、[オプション] ダイアログ ボックス](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834)です。 すべてのコントロールでは、グリッド上の点に沿った自体今すぐ揃えます。  
   
      個々 のコントロールをグリッドをスナップするには、それらの場所でロックできます。 ただし、ロックされているときに移動したりできないのサイズを変更します。 コントロールのロックの詳細については、次を参照してください。[する方法: Windows フォーム コントロールのロック](../../../../docs/framework/winforms/controls/how-to-lock-controls-to-windows-forms.md)です。  
   
@@ -44,7 +45,7 @@ ms.lasthandoff: 11/21/2017
   
      詳細については、次を参照してください。[チュートリアル: Windows フォームを使用するスナップ線上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)です。 スナップ線を使用して、フォーム上のコントロールを配置したりするようになりましたことができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一般に、Windows フォーム デザイナー、オプション ダイアログ ボックス](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834)  
  [チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  

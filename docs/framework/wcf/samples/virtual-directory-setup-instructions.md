@@ -13,11 +13,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72487c4a6720f80119beb837fbb3b5ea25ac3b93
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2684091d15a4c0796a0b8fb85952c0f902c1f545
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="virtual-directory-setup-instructions"></a>仮想ディレクトリのセットアップ手順
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルは、servicemodelsamples という共通の仮想ディレクトリの共有を想定しています。この仮想ディレクトリは %SystemDrive%\inetpub\wwwroot\servicemodelsamples フォルダーにマップされています。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 12/02/2017
   
 6.  物理パスを %SystemDrive%\inetpub\wwwroot\servicemodelsamples に設定します。  WCF サンプルの多くは、ビルド時にサービス実行可能ファイルをこの場所にコピーします。  
   
-7.  **[OK]** をクリックします。 Web アプリケーションが、WCF サンプル用に作成されました。  
+7.  **[OK]**をクリックします。 Web アプリケーションが、WCF サンプル用に作成されました。  
   
     > [!NOTE]
     >  すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルで同じ servicemodelsamples Web アプリケーションを使用するため、この作業は 1 回だけ実行してください。  
@@ -200,5 +201,5 @@ ms.lasthandoff: 12/02/2017
   
     3.  **グループ**列、ことを確認の値は、 **ASPNET** "Users"は、  
   
-## <a name="see-also"></a>関連項目  
- [インターネット情報サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+## <a name="see-also"></a>参照  
+ [インターネット インフォメーション サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)

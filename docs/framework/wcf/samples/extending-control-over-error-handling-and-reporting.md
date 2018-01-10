@@ -13,11 +13,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a4284f07a21a9bb176a78a8a2abefe7c7c7c6b66
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0ab2e105c9055760bbeaeef5e56a8cb18c538306
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>エラー処理およびレポートに対する制御の拡張
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] インターフェイスを使用して、<xref:System.ServiceModel.Dispatcher.IErrorHandler> サービスのエラー処理およびエラー報告に対する制御を拡張する方法を示します。 サンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)に追加のコード エラーを処理するサービスに追加します。 クライアントは、強制的にエラーが発生する状態にされます。 サービスはエラーを途中受信して、ファイルに記録します。  
@@ -59,7 +60,7 @@ public class CalculatorErrorHandler : IErrorHandler
     }  
 ```  
   
- `ErrorBehaviorAttribute` は、エラー ハンドラをサービスに登録する機構として存在します。 この属性は、単一の型のパラメータを受け取ります。 この型は <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装し、空のパブリック コンストラクタを含む必要があります。 この属性は、そのエラー ハンドラの型のインスタンスをインスタンス化し、サービスにインストールします。 これを行うには <xref:System.ServiceModel.Description.IServiceBehavior> インターフェイスを実装し、次に <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> メソッドを使用してエラー ハンドラのインスタンスをサービスに追加します。  
+ `ErrorBehaviorAttribute` は、エラー ハンドラをサービスに登録する機構として存在します。 この属性は、単一の型パラメーターを受け取ります。 この型は <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装し、空のパブリック コンストラクタを含む必要があります。 この属性は、そのエラー ハンドラの型のインスタンスをインスタンス化し、サービスにインストールします。 これを行うには <xref:System.ServiceModel.Description.IServiceBehavior> インターフェイスを実装し、次に <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> メソッドを使用してエラー ハンドラのインスタンスをサービスに追加します。  
   
 ```  
 // This attribute can be used to install a custom error handler for a service.  
@@ -168,4 +169,4 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\ErrorHandling`  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
