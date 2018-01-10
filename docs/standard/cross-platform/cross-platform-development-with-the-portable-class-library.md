@@ -20,11 +20,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 893bbc94d909d5c94b7f8727912a298575617c2c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ea0a111727093cb65a98e48255b06b3c4516d258
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発
 Visual Studio の .NET Framework ポータブル クラス ライブラリ プロジェクト タイプにより、Microsoft プラットフォームを対象としたクロスプラットフォーム アプリとライブラリをすばやく簡単に開発できます。  
@@ -57,7 +57,7 @@ Visual Studio の .NET Framework ポータブル クラス ライブラリ プ�
   
 |Visual Studio SKU|ポータブル クラス ライブラリ プロジェクト作成のサポート|  
 |-----------------------|---------------------------------------------------|  
-|Visual Studio 2010、Professional、Premium、または Ultimate|[はい] をインストールするときに、[ポータブル ライブラリ ツール](http://go.microsoft.com/fwlink/?LinkId=210823)です。|  
+|Visual Studio 2010、Professional、Premium、または Ultimate|[はい] をインストールするときに、[ポータブル ライブラリ ツール](https://marketplace.visualstudio.com/items?itemName=BCLTeam.PortableLibraryTools2)です。|  
 |Visual Studio Express 2010 の各バージョン|いいえ。|  
 |Visual Studio 2012、Professional、Premium、または Ultimate|はい。 サポートの電話番号、インストール、 [Windows Phone SDK 8.0](http://go.microsoft.com/fwlink/?LinkId=265772)です。|  
 |Visual Studio Express 2012 の各バージョン|いいえ。|  
@@ -171,7 +171,7 @@ Visual Studio 2012 の [ターゲットの変更] ダイアログ ボックス
   
  たとえば、ターゲットが Windows 8.1 と Windows Phone 8.1 の場合、ポータブル クラス ライブラリには UI 関連の型のみが含まれます。 また、ポータブル クラス ライブラリが導入される前にリリースされたプラットフォーム (Xbox、.NET Framework 4、Windows Phone 7 など) を対象とする場合、制限が課せられる可能性があります。 .NET Framework は NuGet でパッケージをリリースしています。これにより、このような古いプラットフォームの一部でのポータブル クラス ライブラリのサポートが向上します。 NuGet パッケージの一覧および詳細については、次を参照してください。 [.NET Framework および帯域外のリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)です。  
   
- メンバーがポータブル クラス ライブラリでサポートされており、選択したターゲットのメンバーである場合、IntelliSense でプロジェクトにこのメンバーが表示されます。 また、ポータブル クラス ライブラリ アイコン![ポータブル ライブラリでサポートされている](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon")メンバー テーブルに表示されます、 [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkId=211358)横にメンバーをサポートします。 たとえば、次のメンバー テーブルは、ポータブル クラス ライブラリで <xref:System.String.Chars%2A> クラスの <xref:System.String> プロパティがサポートされていることを示しています。  
+ メンバーがポータブル クラス ライブラリでサポートされており、選択したターゲットのメンバーである場合、IntelliSense でプロジェクトにこのメンバーが表示されます。 また、ポータブル クラス ライブラリ アイコン![ポータブル ライブラリでサポートされている](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon")メンバー テーブルに表示されます、 [.NET Framework クラス ライブラリ](https://msdn.microsoft.com/library/mt472912.aspx)横にメンバーをサポートします。 たとえば、次のメンバー テーブルは、ポータブル クラス ライブラリで <xref:System.String.Chars%2A> クラスの <xref:System.String> プロパティがサポートされていることを示しています。  
   
  ![サポートされているメンバー アイコン](../../../docs/standard/cross-platform/media/plibsupportedmemberlist.png "PlibSupportedMemberList")  
 ポータブル クラス ライブラリのアイコン  

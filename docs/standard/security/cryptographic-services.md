@@ -37,11 +37,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1fd0df0e12149371b3403782056982784c0ca3cd
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 1f95193e4ac90df0d0abe5a46ade08d799bdf6b2
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="cryptographic-services"></a>暗号化サービス
 <a name="top"></a> インターネットなどの公衆ネットワークには、エンティティ間の通信を保護する手段が用意されていません。 公衆ネットワークを経由した通信は、不当な第三者によって読み取られたり、さらには変更されたりするおそれがあります。 暗号化を使用すると、データが表示されないように保護し、データが変更されたかどうかを検出する方法を提供し、通常は安全でないチャネル上に安全な通信手段を確立できます。 たとえば、暗号化アルゴリズムを使用してデータを暗号化し、暗号化された状態で送信できます。送信先の相手は、後でこのデータを復号化できます。 暗号化されたデータを第三者が傍受したとしても、復号化するのは困難です。  
@@ -283,7 +283,7 @@ ms.lasthandoff: 12/23/2017
   
 <a name="suite_b"></a>   
 ## <a name="suite-b-support"></a>Suite B のサポート  
- [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] は、米国国家安全保障局 (NSA: National Security Agency) によって公開された暗号化アルゴリズム Suite B セットをサポートしています。 Suite B の詳細については、「 [NSA の Suite B 暗号化に関するファクト シート](http://go.microsoft.com/fwlink/?LinkId=100111)」を参照してください。  
+ [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] は、米国国家安全保障局 (NSA: National Security Agency) によって公開された暗号化アルゴリズム Suite B セットをサポートしています。 Suite B の詳細については、次を参照してください。、 [NSA の Suite B 暗号化に関するファクト シート](https://www.nsa.gov/what-we-do/information-assurance/)です。  
   
  次のアルゴリズムが含まれています。  
   

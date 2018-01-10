@@ -33,11 +33,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 866d31662b8ae7d5c887af7d86007cb93a57d88f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c4e460c11e0e78d56a54da1dd178b3f8e9f381b6
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="cryptographic-signatures"></a>暗号署名
 <a name="top"></a> 暗号デジタル署名は、公開キー アルゴリズムを使用してデータの整合性を提供します。 デジタル署名を使用してデータに署名すると、第三者が署名を検証し、データが署名者から発信され、署名後に変更されていないことを証明できます。 デジタル署名の詳細については、「 [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)」を参照してください。  
@@ -115,7 +115,7 @@ class Class1
 ### <a name="signing-xml-files"></a>XML ファイルへの署名  
  .NET Framework に用意されている <xref:System.Security.Cryptography.Xml> 名前空間を使用すると、XML に署名できます。 XML が特定のソースから送信されたことを検証する場合は、XML への署名が重要です。 たとえば、XML を使用する株価情報サービスを使用している場合であれば、署名されているかどうかによって XML のソースを検証できます。  
   
- この名前空間のクラスは、World Wide Web コンソーシアムの「 [XML 署名の構文と処理に関する勧告](http://go.microsoft.com/fwlink/?LinkId=136777) 」に従っています。  
+ この名前空間のクラスに従って、 [XML 署名の構文と処理に関する勧告](http://www.w3.org/TR/xmldsig-core/)World Wide Web Consortium からです。  
   
  [ページのトップへ](#top)  
   
