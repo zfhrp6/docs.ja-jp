@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 88f1a22fc15e85e687c7b7eeb0a6e01445277d09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6b603599232a5cb4d33e2b7c9ad00e7ab3a24649
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="binding-sources-overview"></a>バインディング ソースの概要
 データ バインディングでは、バインディング ソース オブジェクトは、データの取得元のオブジェクトを表します。 このトピックでは、バインディング ソースとして使用できるオブジェクトの型について説明します。  
@@ -39,7 +39,7 @@ ms.lasthandoff: 12/22/2017
 |動的オブジェクト|実装するオブジェクトの使用可能なプロパティとインデクサーにバインドすることができます、<xref:System.Dynamic.IDynamicMetaObjectProvider>インターフェイスです。 コード内のメンバーにアクセスできる場合、これにバインドできます。 たとえば、動的オブジェクトを使用して `someObjet.AProperty` を介してコード内のメンバーにアクセスできる場合、バインディング パスを `AProperty` に設定してこのメンバーにバインドできます。|  
 |[!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] オブジェクト|バインドできる[!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)]などのオブジェクト<xref:System.Data.DataTable>です。 [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] <xref:System.Data.DataView>を実装する、<xref:System.ComponentModel.IBindingList>バインディング エンジンがリッスンしている変更通知を提供するインターフェイスです。|  
 |[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] オブジェクト|バインドして実行する`XPath`でクエリが実行、 <xref:System.Xml.XmlNode>、 <xref:System.Xml.XmlDocument>、または<xref:System.Xml.XmlElement>です。 アクセスする便利な手段[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]バインド ソース マークアップには、データを使用して、<xref:System.Windows.Data.XmlDataProvider>オブジェクト。 詳細については、「[XMLDataProvider と XPath クエリを使用して XML データにバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)」を参照してください。<br /><br /> バインドすることも、<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XDocument>、またはクエリの LINQ to XML を使用して、これらの型のオブジェクトの実行の結果にバインドします。 マークアップでバインド ソースである XML データにアクセスする LINQ to XML を使用する便利な方法を使用して、<xref:System.Windows.Data.ObjectDataProvider>オブジェクト。 詳細については、「[XDocument、XElement、または LINQ for XML クエリの結果にバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)」を参照してください。|  
-|<xref:System.Windows.DependencyObject> オブジェクト|バインドできる依存関係 propertiesof 任意<xref:System.Windows.DependencyObject>です。 例については、「[2 つのコントロールのプロパティをバインドする](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)」を参照してください。|  
+|<xref:System.Windows.DependencyObject> オブジェクト|いずれかの依存関係プロパティにバインドできる<xref:System.Windows.DependencyObject>です。 例については、「[2 つのコントロールのプロパティをバインドする](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)」を参照してください。|  
   
 <a name="classes"></a>   
 ## <a name="implementing-a-class-for-the-binding-source"></a>バインディング ソースのクラスの実装  

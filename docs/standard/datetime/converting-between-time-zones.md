@@ -25,11 +25,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 58ed01520a9bbed53d32fc10e48a479e68f6ef7c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: eabe0c1511e6fd42798f1a879e9e8d526d543a29
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="converting-times-between-time-zones"></a>タイム ゾーン間での時刻の変換
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="converting-to-coordinated-universal-time"></a>世界協定時刻への変換
 
-世界協定時刻 (UTC) は、高精度の原子時標準です。 世界のタイム ゾーンは、UTC からの正または負のオフセットとして表現されます。 したがって、UTC はタイム ゾーンの影響を受けない、またはタイム ゾーンに依存しない種類の時刻を提供します。 コンピューター間の日時の移植性が重要となる場合には、UTC 時刻の使用が推奨されます。 (詳細および日付と時刻を使用して他のベスト プラクティスでは、次を参照してください[.NET Framework の DateTime を使用したベスト プラクティスのコーディング](http://go.microsoft.com/fwlink/?LinkId=92342)。)。個別のタイム ゾーンを UTC に変換すると、時間の比較が容易になります。
+世界協定時刻 (UTC) は、高精度の原子時標準です。 世界のタイム ゾーンは、UTC からの正または負のオフセットとして表現されます。 したがって、UTC はタイム ゾーンの影響を受けない、またはタイム ゾーンに依存しない種類の時刻を提供します。 コンピューター間の日時の移植性が重要となる場合には、UTC 時刻の使用が推奨されます。 (詳細および日付と時刻を使用して他のベスト プラクティスでは、次を参照してください[.NET Framework の DateTime を使用したベスト プラクティスのコーディング](https://msdn.microsoft.com/library/ms973825.aspx)。)。個別のタイム ゾーンを UTC に変換すると、時間の比較が容易になります。
 
 > [!NOTE]
 > シリアル化することも、<xref:System.DateTimeOffset>時間で明確に単一のポイントを表す構造体。 <xref:System.DateTimeOffset>オブジェクト値を格納します日付と時刻 (utc) からのオフセットと共に、常に特定の時点の間のリレーションシップに対してな UTC です。
@@ -74,7 +74,7 @@ ms.lasthandoff: 12/23/2017
 
 UTC を現地時刻に変換するには、「に変換する (utc) から現地時刻」次のセクションを参照してください。 (Utc) を指定する任意のタイム ゾーンの時刻に変換する呼び出し、<xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A>メソッドです。 このメソッドは、次の 2 つのパラメーターを受け取ります。
 
-* 変換対象の UTC。 これは、必要があります、<xref:System.DateTime>値が<xref:System.DateTime.Kind%2A>プロパティに設定されている<xref:System.DateTimeKind?displayProperty=nameWithType>または<xref:System.DateTimeKind?displayProperty=nameWithType>です。
+* 変換対象の UTC。 これは、必要があります、<xref:System.DateTime>値が<xref:System.DateTime.Kind%2A>プロパティに設定されている`Unspecified`または`Utc`です。
 
 * UTC の変換先のタイム ゾーン。
 
