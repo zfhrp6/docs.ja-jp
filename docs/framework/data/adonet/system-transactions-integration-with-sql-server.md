@@ -17,18 +17,18 @@ author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
 ms.workload: dotnet
-ms.openlocfilehash: 7765779187156866c20374b60a4b541d36ac9a5b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3b56d61593aed1a0cdce2fd45d902d9f4ac00cda
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>SQL Server と System.Transactions の統合
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] バージョン 2.0 では、 <xref:System.Transactions> 名前空間を介してアクセスできるトランザクション フレームワークが導入されました。 このフレームワークでは、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]を含む [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]に完全に統合された形でトランザクションが公開されます。  
   
  プログラミング上の強化に加えて、 <xref:System.Transactions> と [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] の連係により、トランザクション処理が最適化されます。 昇格可能なトランザクションとは、必要に応じて完全な分散トランザクションに自動的に昇格する、軽量の (ローカル) トランザクションです。  
   
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 以降では、 <xref:System.Data.SqlClient> を組み合わせて使用した場合、 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]によって昇格可能なトランザクションがサポートされます。 昇格可能なトランザクションは、必要な場合以外、分散トランザクションのオーバーヘッドの増加を引き起こすことはありません。 昇格可能なトランザクションは自動的に処理され、開発者による介入は必要ありません。  
+ [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 以降では、 <xref:System.Data.SqlClient> を組み合わせて使用した場合、 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]によって昇格可能なトランザクションがサポートされます。 昇格可能なトランザクションは、必要な場合以外、分散トランザクションのオーバーヘッドの増加を引き起こすことはありません。 昇格可能なトランザクションは、自動、開発者による介入は必要ありません。  
   
  昇格可能なトランザクションは、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server (`SqlClient`) を [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]で使用する場合のみ使用可能です。  
   
