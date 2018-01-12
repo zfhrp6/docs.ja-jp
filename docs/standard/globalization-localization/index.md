@@ -24,11 +24,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7e176ebf6660e1c517e5ef7a505c259666bb30a0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 63f0e001280773c55f18f0604ca93986acbb9674
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>.NET Framework アプリケーションのグローバライズとローカライズ
 1 つ以上の言語にローカライズされるアプリケーションなど、[国際対応アプリケーション](http://msdn.microsoft.com/goglobal/bb978433.aspx)を開発するには、グローバリゼーション、ローカライズ対象の確認、およびローカリゼーションの 3 つの手順が必要です。  
@@ -50,7 +50,7 @@ ms.lasthandoff: 12/23/2017
   
  .NET Framework には、国際対応アプリケーションやローカライズされたアプリケーションの開発の拡張サポートが備わっています。 特に、.NET Framework クラス ライブラリの多くの型メンバーは、現在のユーザーのカルチャまたは特定のカルチャの規則を表す値を返すことができ、グローバリゼーションに役立ちます。 また、.NET Framework はサテライト アセンブリをサポートし、アプリケーションのローカライズ プロセスを容易にします。  
   
- 詳細については、「[Go Global Developer Center](http://go.microsoft.com/fwlink/?LinkId=235015)」(グローバル デベロッパー センター) をご覧ください。  
+ 詳細については、[グローバリゼーションのドキュメント](/globalization/)をご覧ください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)  

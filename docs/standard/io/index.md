@@ -23,14 +23,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 33d33826037197a0c679dacfff57eb77de5f5341
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9ddb94119d009d61e8126724df2a4b852b7ad3f5
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="file-and-stream-io"></a>ファイルおよびストリーム入出力
-ファイルおよびストリーム I/O (入出力) とは、ストレージ メディアとの間のデータの転送を指します。 .NET Framework では、[System.IO](http://go.microsoft.com/fwlink/?LinkId=231142) 名前空間に、データ ストリームおよびファイルで同期的および非同期的に読み取りと書き込みを有効にする型が用意されています。 これらの名前空間には、ファイルを圧縮および圧縮解除する型、パイプとシリアル ポート経由の通信を有効にする型もあります。  
+ファイルおよびストリーム I/O (入出力) とは、ストレージ メディアとの間のデータの転送を指します。 .NET Framework では、`System.IO` 名前空間に、データ ストリームおよびファイルで同期的および非同期的に読み取りと書き込みを有効にする型が用意されています。 これらの名前空間には、ファイルを圧縮および圧縮解除する型、パイプとシリアル ポート経由の通信を有効にする型もあります。  
   
  ファイルとは、バイトを順序立てて格納する名前付きのコレクションであり、永続ストレージを保有します。 ファイルを操作するときには、ディレクトリ パス、ディスク ストレージ、ファイル名、ディレクトリ名を操作します。 これに対し、ストリームは、バッキング ストアの読み取りと書き込みに使用できるバイトのシーケンスです。バッキング ストアは、複数のストレージ メディアのいずれかになります (たとえば、ディスク、メモリ)。 ディスク以外にいくつかのバッキング ストアが存在するのと同じように、ファイル ストリーム以外にも、ネットワーク ストリーム、メモリ ストリーム、パイプ ストリームなど、さまざまなストリームが存在します。  
   
@@ -51,7 +51,7 @@ ms.lasthandoff: 12/23/2017
   
  これらのクラスに加えて、Visual Basic のユーザーは、ファイル I/O 用の <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> クラスに用意されているメソッドとプロパティを使用できます。  
   
- 「[方法: ディレクトリをコピーする](../../../docs/standard/io/how-to-copy-directories.md)」、「[方法: ディレクトリ リストを作成する](http://msdn.microsoft.com/en-us/4d2772b1-b991-4532-a8a6-6ef733277e69)」、および「[方法: ディレクトリとファイルを列挙する](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)」を参照してください。  
+ 「[方法: ディレクトリをコピーする](../../../docs/standard/io/how-to-copy-directories.md)」、「[方法: ディレクトリ リストを作成する](http://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69)」、および「[方法: ディレクトリとファイルを列挙する](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)」を参照してください。  
   
 ## <a name="streams"></a>ストリーム  
  抽象基底クラス <xref:System.IO.Stream> は、バイトの読み取りと書き込みをサポートします。 ストリームを表すすべてのクラスは、<xref:System.IO.Stream> クラスから継承されます。 <xref:System.IO.Stream> クラスとその派生クラスは、データ ソースやリポジトリの共通ビューを提供し、プログラマがオペレーティング システムや基になるデバイスに固有の詳細事項を考慮する必要をなくします。  
@@ -128,7 +128,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="isolated-storage"></a>分離ストレージ  
  分離ストレージは、コードと保存データを関連付ける標準化された方法を定義することにより、分離性と安全性を提供するデータ ストレージ機構です。 ストレージは、ユーザー、アセンブリ、および (必要に応じて) ドメイン別に分離された仮想ファイル システムを提供します。 分離ストレージは、アプリケーションにユーザー ファイルへのアクセス許可がない場合に特に便利です。 コンピューターのセキュリティ ポリシーによって制御される方法でアプリケーションの設定またはファイルを保存できます。  
   
- 分離ストレージは [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリには使用できません。代わりに、[Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) 名前空間のアプリケーション データ クラスを使用します。 詳細については、Windows デベロッパー センターの [アプリケーション データ](http://go.microsoft.com/fwlink/?LinkId=229175) に関する説明を参照してください。  
+ 分離ストレージは [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリには使用できません。代わりに、[Windows.Storage](/uwp/api/Windows.Storage) 名前空間のアプリケーション データ クラスを使用します。 詳細については、Windows デベロッパー センターの[アプリケーション データ](/previous-versions/windows/apps/hh464917(v=win.10))に関する説明を参照してください。  
   
  次のクラスは、分離ストレージを実装するときによく使用します。  
   
@@ -147,7 +147,7 @@ ms.lasthandoff: 12/23/2017
   
 -   <xref:System.IO.File>、<xref:System.IO.FileInfo>、<xref:System.IO.Directory>、<xref:System.IO.DirectoryInfo> など、特にファイル操作に関連する型は、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] に含まれていません。 代わりに、[StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx)、[StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx) など、[!INCLUDE[wrt](../../../includes/wrt-md.md)] の [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) 名前空間の型を使用します。  
   
--   分離ストレージは使用できません。代わりに、[アプリケーション データ](http://go.microsoft.com/fwlink/?LinkId=229175)を使用します。  
+-   分離ストレージは使用できません。代わりに、[アプリケーション データ](/previous-versions/windows/apps/hh464917(v=win.10))を使用します。  
   
 -   UI スレッドをブロックしないように、<xref:System.IO.Stream.ReadAsync%2A>、<xref:System.IO.Stream.WriteAsync%2A> などの非同期メソッドを使用します。  
   
@@ -160,7 +160,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="io-and-security"></a>I/O とセキュリティ  
  <xref:System.IO?displayProperty=nameWithType> 名前空間のクラスを使用する場合、アクセス制御リスト (ACL: Access Control List) などのオペレーティング システムのセキュリティ要件に従い、ファイルとディレクトリへのアクセスを制御する必要があります。 この要件の他にも、<xref:System.Security.Permissions.FileIOPermission> で指定されている要件を満たす必要があります。 ACL はプログラムで管理できます。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
   
- 既定のセキュリティ ポリシーでは、インターネットまたはイントラネットのアプリケーションはユーザーのコンピューターのファイルにアクセスできません。 したがって、インターネットまたはイントラネットを経由してダウンロードされるコードを記述する場合に、物理ファイル パスを必要とする I/O クラスを使用しないでください。 代わりに、従来の .NET Framework アプリケーション用の[分離ストレージ](../../../docs/standard/io/isolated-storage.md)を使用するか、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリ用の[アプリケーション データ](http://go.microsoft.com/fwlink/?LinkId=229175)を使用します。  
+ 既定のセキュリティ ポリシーでは、インターネットまたはイントラネットのアプリケーションはユーザーのコンピューターのファイルにアクセスできません。 したがって、インターネットまたはイントラネットを経由してダウンロードされるコードを記述する場合に、物理ファイル パスを必要とする I/O クラスを使用しないでください。 代わりに、従来の .NET Framework アプリケーション用の[分離ストレージ](../../../docs/standard/io/isolated-storage.md)を使用するか、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリ用の[アプリケーション データ](/previous-versions/windows/apps/hh464917(v=win.10))を使用します。  
   
  セキュリティ チェックが実行されるのは、ストリームが構築されている場合だけです。 したがって、ストリームを開いて、そのストリームを信頼度の低いコードやアプリケーション ドメインに渡さないでください。  
   
