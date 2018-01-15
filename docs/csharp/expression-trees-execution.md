@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: 4ca87c8410a04e9198e9dd6c379760e7b6596585
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: db481c18a79f55b079ec2558b884ce288e2a9933
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="executing-expression-trees"></a>式ツリーの実行
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/18/2017
 
 通常、これによって式とそれに対応するデリゲートの間で単純なマッピングが作成されます。 たとえば、`Expression<Func<int>>` によって表される式ツリーは、`Func<int>` 型のデリゲートに変換されます。 任意の戻り値の型と引数リストをもつラムダ式の場合、そのラムダ式によって表される実行可能コードのターゲット型となるデリゲート型が存在します。
 
-`LamdbaExpression` 型には、式ツリーを実行可能コードに変換するために使用する `Compile` と `CompileToMethod` メンバーが含まれます。 `Compile` メソッドはデリゲートを作成します。 `ConmpileToMethod` メソッドは、式ツリーのコンパイル済み出力を表す IL によって `MethodBuilder` オブジェクトを更新します。 なお、`CompileToMethod` は完全なデスクトップ フレームワークでのみ利用可能で、.NET Core framework では利用できません。
+`LamdbaExpression` 型には、式ツリーを実行可能コードに変換するために使用する `Compile` と `CompileToMethod` メンバーが含まれます。 `Compile` メソッドはデリゲートを作成します。 `CompileToMethod` メソッドは、式ツリーのコンパイル済み出力を表す IL によって `MethodBuilder` オブジェクトを更新します。 なお、`CompileToMethod` は完全なデスクトップ フレームワークでのみ利用可能で、.NET Core framework では利用できません。
 
 必要に応じて、生成されたデリゲート オブジェクトのシンボル デバッグ情報を受け取る `DebugInfoGenerator` を用意することもできます。 これにより、式ツリーをデリゲート オブジェクトに変換し、生成されたデリゲートの完全なデバッグ情報を入手できます。
 
