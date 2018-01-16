@@ -11,11 +11,11 @@ ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
 caps.latest.revision: "27"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7445a2919baaa477b4611c4c5ee5a0031539ca30
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 628f08aaebfa209fc9cb7cfb2b506fc67d5424f9
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>オブジェクト初期化子とコレクション初期化子 (C# プログラミング ガイド)
 オブジェクト初期化子を使用すると、オブジェクトの作成時にアクセスできるフィールドまたはプロパティに、コンストラクターを呼び出して代入ステートメントを使用しなくても、値を割り当てることができます。 オブジェクト初期化子の構文では、コンストラクターの引数を指定することも、引数 (およびかっこ構文) を省略することもできます。  以下の例では、名前付きの型である `Cat` でオブジェクト初期化子を使用する方法と、既定のコンストラクターを呼び出す方法を示します。 `Cat` クラス内で自動実装プロパティが使用されています。 詳細については、「[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」を参照してください。  
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideLINQ#45](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_2.cs)] 
  
-オブジェクト初期化子構文を使用する、インスタンスを作成し、割り当てられたプロパティを持つ、新しく作成されたオブジェクトの割り当てに変数に代入、その後です。
+オブジェクト初期化子の構文では、インスタンスを作成できます。その後、新規作成されたオブジェクトは、割り当てられたプロパティと共に、割り当ての変数に代入されます。
   
 ## <a name="object-initializers-with-anonymous-types"></a>オブジェクト初期化子と匿名型  
  オブジェクト初期化子は、どのような場合にも使うことができますが、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式で使うと特に有用です。 クエリ式では、次の宣言に示すように、オブジェクト初期化子を使うことによってのみ初期化できる[匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)が頻繁に使われます。  
@@ -80,10 +80,21 @@ var numbers = new Dictionary<int, string> {
 };  
 ```  
   
-## <a name="example"></a>例  
+## <a name="examples"></a>使用例
+
+ 次の例では、オブジェクトの概念とコレクション初期化子の概念が組み合わさっています。
+
  [!code-csharp[csProgGuideLINQ#46](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_6.cs)]  
-  
-## <a name="see-also"></a>関連項目  
+ 
+ 次の例では、複数のパラメーターを持つ `Add` メソッドが含まれる <xref:System.Collections.IEnumerable> を実装するオブジェクトが、`Add` メソッドのシグネチャに対応するリストの項目ごとの複数の要素を持つコレクション初期化子を可能にしています。 
+ 
+ [!code-csharp[csProgGuideLINQ#84](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_7.cs)]
+ 
+ `Add` メソッドでは、次の例で示すように、`params` キーワードを使用して可変数個の引数を受け取ることができます。 この例では、インデクサーのカスタム実装と、インデクサーを使用したコレクションの初期化を示しています。
+ 
+ [!code-csharp[csProgGuideLINQ#85](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_8.cs)]
+ 
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)  
  [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
