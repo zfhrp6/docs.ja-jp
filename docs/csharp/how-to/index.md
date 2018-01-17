@@ -7,11 +7,11 @@ ms.date: 12/20/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: 04c780980ef0665b40a0c3a698193fc9fa738424
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: cfe7115717fcca834d87b7bcdc64ddd1df8ef843
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-c"></a>方法 (C#)
 
@@ -57,7 +57,7 @@ C# の開発者には常識といえるヒントやコツがいくつかあり�
 - [文字列を比較する](../programming-guide/strings/how-to-compare-strings.md)。
 - [文字列の内容を変更する](../programming-guide/strings/how-to-modify-string-contents.md)。
 - [文字列が数値を表すかどうかを判断する](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)。
-- [<xref:System.String.Split%2A> を使用して文字列を区切る](../programming-guide/strings/how-to-parse-strings-using-string-split.md)。
+- [`String.Split` を使用して文字列を区切る](parse-strings-using-split.md)。
 - [複数の文字列を 1 つに結合する](../programming-guide/strings/how-to-concatenate-multiple-strings.md)。
 - [文字列内のテキストを検索する](../programming-guide/strings/how-to-search-strings-using-string-methods.md)。
 - [正規表現を使用して文字列を検索する](../programming-guide/strings/how-to-search-strings-using-regular-expressions.md)。
