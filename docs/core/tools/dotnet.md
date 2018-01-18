@@ -7,17 +7,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: bba8d77cda7538bf008dc0f510f9279d3c695c3d
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.workload: dotnetcore
+ms.openlocfilehash: 6db2bb6003e630aab900222eb20e33af287cf9c5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-command"></a>dotnet コマンド
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet` - コマンドラインのコマンドを実行するための一般的なドライバーです。
 
@@ -47,7 +48,7 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 `--additionaldeps <PATH>`
 
-その他へのパス*deps.json*ファイル。
+追加の *deps.json* ファイルへのパスです。
 
 `--additionalprobingpath <PATH>`
 
@@ -176,7 +177,7 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 [dotnet nuget locals](dotnet-nuget-locals.md) | HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。
 [dotnet nuget push](dotnet-nuget-push.md) | パッケージをサーバーにプッシュして発行します。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 コンパイルして実行できるサンプルの .NET Core コンソール アプリケーションを初期化します。
 

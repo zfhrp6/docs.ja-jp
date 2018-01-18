@@ -12,11 +12,12 @@ ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 manager: wpickett
 ms.custom: mvc
-ms.openlocfilehash: ce02033a7994d48494b4e627f1ed8f1dea4caadb
-ms.sourcegitcommit: 5bfcb8d341239df251351f318038d31cdc9159d7
+ms.workload: dotnetcore
+ms.openlocfilehash: 8c6daabb3040998d3376ad022790c16b9629233f
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>.NET および Docker の概要
 
@@ -103,7 +104,7 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 **.NET Framework 4.7**
 
-[dotnet-framework:4.7 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7)では、[.NET Framework 4.7](../../framework/whats-new/index.md#v47) の使用方法について基礎的な "hello world" で説明します。 [.NET Framework 4.7 の Docker イメージ](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile)に依存するアプリを構築して配置する方法を示します。
+[dotnet-framework: 4.7 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7)では、[.NET Framework 4.7](../../framework/whats-new/index.md#v47) の使用方法について基礎的な "hello world" で説明します。 [.NET Framework 4.7 の Docker イメージ](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile)に依存するアプリを構築して配置する方法を示します。
 
 **.NET Framework 4.6.2**
 
@@ -204,4 +205,3 @@ Docker プラットフォームとさまざまな Docker イメージについ�
 
 * [.NET Core での Docker の基礎の学習](docker-basics-dotnet-core.md)
 * [.NET Core の Docker イメージのビルド](building-net-docker-images.md)
-\

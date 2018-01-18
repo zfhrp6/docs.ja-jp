@@ -19,11 +19,12 @@ caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fba53a19810a91a2e679616e73ea8c5fc8d38da1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 124c9321623fd6fe9c5414fc1eed2e41be1e75f3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-using-client-application-services"></a>チュートリアル : クライアント アプリケーション サービスの使用
 このトピックでは、ユーザーを認証し、ユーザーのロールと設定を取得するクライアント アプリケーション サービスを使用する Windows アプリケーションを作成する方法について説明します。  
@@ -374,7 +375,7 @@ ms.lasthandoff: 11/21/2017
   
 3.  **[プロパティ]** ウィンドウで、ボタンの次のプロパティを設定します。  
   
-  	|プロパティ|値|  
+  	|プロパティ|[値]|  
   	|--------------|-----------|  
   	|**[(名前)]**|managerOnlyButton|  
   	|**[テキスト]**|&Manager task|  
@@ -536,7 +537,7 @@ ms.lasthandoff: 11/21/2017
   
  これで、サンプル アプリケーションが完成しました。 オフライン機能をテストするには、アプリケーションを実行し、従業員またはマネージャーとしてログインしてから、 **[Work offline]**をクリックします。 テキスト ボックスの値を変更してから、アプリケーションを終了します。 アプリケーションを再起動します ログインする前に、タスク バーの通知領域にある ASP.NET 開発サーバーのアイコンを右クリックしてから、 **[停止]**をクリックします。 次に、通常どおりにログインします。 サーバーが実行されていない場合でもログインできます。 テキスト ボックスの値を変更してから、終了および再起動を行って、変更された値を確認します。  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  このチュートリアルでは、Windows フォーム アプリケーションでのクライアント アプリケーション サービスの有効化および使用方法について学習しました。 テスト サーバーをセットアップした後、アプリケーションにコードを追加し、ユーザーを認証したり、サーバーからユーザーのロールとアプリケーションの設定を取得したりできるようにしました。 また、接続を使用できない場合に、アプリケーションがリモート サービスではなく、ローカル データ キャッシュを使用できるように、オフライン モードを有効にする方法についても学びました。  
   
 ## <a name="next-steps"></a>次の手順  
@@ -544,7 +545,7 @@ ms.lasthandoff: 11/21/2017
   
  アプリケーションのセキュリティを向上させるため、配置する前に必ずアプリケーションとサーバーを十分にテストしてください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クライアント アプリケーション サービス](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
  [方法 : クライアント アプリケーション サービスを構成する](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  

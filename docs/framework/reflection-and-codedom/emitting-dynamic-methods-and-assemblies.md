@@ -17,11 +17,12 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 91b0cc4614834f2ad8f7b54d9364d484ca9a6990
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c724620c987b2ee871dc282bca0dd3da1a5031bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>動的メソッドおよびアセンブリの出力
 ここでは、<xref:System.Reflection.Emit> 名前空間のマネージ型のセットについて説明します。これらのマネージ型を使用すると、コンパイラやツールでメタデータおよび Microsoft Intermediate Language (MSIL) を実行時に出力できます。また、ポータブル実行可能 (PE) ファイルをディスク上に生成することもできます。 この名前空間を使用する主な機能は、スクリプト エンジンとコンパイラです。 ここでは、リフレクション出力と呼ばれる <xref:System.Reflection.Emit> 名前空間の機能について説明します。  
@@ -46,20 +47,20 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="in-this-section"></a>このセクションの内容
   
-[出力リフレクションのセキュリティ関連事項](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
+[リフレクション出力のセキュリティ関連事項](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
 リフレクション出力を使用した動的アセンブリの作成時のセキュリティ関連事項について説明します。  
 
-[方法: を定義および動的メソッドの実行](how-to-define-and-execute-dynamic-methods.md)   
+[方法: 動的メソッドを定義および実行する](how-to-define-and-execute-dynamic-methods.md)   
 単純な動的メソッドおよびクラスのインスタンスにバインドされる動的メソッドを実行する方法を示します。
 
-[方法: リフレクションを使用してジェネリック型定義を生成](how-to-define-a-generic-type-with-reflection-emit.md)   
-2 つの型パラメーターを持つ単純なジェネリック型を作成する方法、型パラメーターにクラス、インターフェイス、および特殊な制約を適用する方法、およびパラメーター型としてクラスの型パラメーターを使用して型を返す memers を作成する方法を示しています。
+[方法: リフレクション出力を使用してジェネリック型を定義する](how-to-define-a-generic-type-with-reflection-emit.md)   
+2 つの型パラメーターを持つ単純なジェネリック型を作成する方法、クラス制約、インターフェイス制約、特殊な制約を型パラメーターに適用する方法、パラメーターの型や戻り値の型としてクラスの型パラメーターを使用するメンバーを作成する方法を紹介します。
 
-[方法: リフレクションを使用してジェネリック メソッド定義を生成](how-to-define-a-generic-method-with-reflection-emit.md)   
-作成し、出力、し、単純なジェネリック メソッドを呼び出す方法を示します。
+[方法: リフレクション出力を使用してジェネリック メソッドを定義する](how-to-define-a-generic-method-with-reflection-emit.md)   
+単純なジェネリック メソッドを作成、出力および呼び出す方法を示します。
 
-[回収可能アセンブリの動的な型の生成](collectible-assemblies.md)   
-回収可能アセンブリは、動的アセンブリを作成したアプリケーション ドメインをアンロードせずアンロードできるを紹介します。
+[動的な型生成のための収集可能なアセンブリ](collectible-assemblies.md)   
+そのアセンブリが作成されたアプリケーション ドメインをアンロードせずにアンロードできる動的アセンブリである、収集可能なアセンブリについて説明します。
   
 ## <a name="reference"></a>参照  
  <xref:System.Reflection.Emit.OpCodes>  
@@ -79,4 +80,4 @@ ms.lasthandoff: 10/18/2017
  メタデータとマネージ コードの探索方法について説明します。  
   
  [共通言語ランタイムのアセンブリ](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- .NET の実装内のアセンブリの概要を示します。
+ .NET 実装のアセンブリの概要を説明します。

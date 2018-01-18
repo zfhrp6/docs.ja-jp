@@ -17,11 +17,12 @@ caps.latest.revision: "41"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 659028e56849af1404768afff2de3ae95fb3aba8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f30b9e245ad38b0e861590e9b2ca3658a2b5e967
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>.NET Framework で互換性のために残されている型
 <a name="introduction"></a> この記事の表に、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] で互換性のために残されている型をアセンブリ別に示します。 各アセンブリで互換性のために残されている型と推奨される代替型の一覧を表示するには、以下のリンクを使用してください。 これらの型は廃止されているため、そのメンバーもすべて廃止されます。 .NET Framework クラス ライブラリで互換性のために残されているその他のメンバーの一覧については、[互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)に関する記事をご覧ください。  
@@ -93,51 +94,51 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Configuration.Assemblies.AssemblyHash?displayProperty=nameWithType>|<xref:System.Configuration.Assemblies.AssemblyHash> クラスの使用は推奨されていません。|  
 |<xref:System.Diagnostics.Contracts.Internal.ContractHelper?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。 代わりに、System.Runtime.CompilerServices 名前空間の <xref:System.Runtime.CompilerServices.ContractHelper?displayProperty=nameWithType> クラスを使用してください。|  
 |<xref:System.Reflection.Emit.UnmanagedMarshal?displayProperty=nameWithType>|代替 API を使用できます。代わりに、<xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> カスタム属性を生成してください。|  
-|<xref:System.Runtime.InteropServices.BIND_OPTS?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.BIND_OPTS?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.BINDPTR?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.BINDPTR?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.CALLCONV?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.CALLCONV?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.CONNECTDATA?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.CONNECTDATA?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.DESCKIND?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.DESCKIND?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.DISPPARAMS?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.DISPPARAMS?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.ELEMDESC?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ELEMDESC?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.EXCEPINFO?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.EXCEPINFO?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FILETIME?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FILETIME?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FUNCDESC?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FUNCDESC?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FUNCFLAGS?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FUNCFLAGS?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.FUNCKIND?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.FUNCKIND?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.BIND_OPTS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.BIND_OPTS?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.BINDPTR?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.BINDPTR?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.CALLCONV?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.CALLCONV?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.CONNECTDATA?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.CONNECTDATA?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.DESCKIND?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.DESCKIND?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.DISPPARAMS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.DISPPARAMS?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.ELEMDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ELEMDESC?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.EXCEPINFO?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.EXCEPINFO?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FILETIME?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FILETIME?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FUNCDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCDESC?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FUNCFLAGS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCFLAGS?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.FUNCKIND?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCKIND?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=nameWithType>|この属性の使用は推奨されていません。この属性は、将来のバージョンでは削除されます。|  
 |<xref:System.Runtime.InteropServices.IDispatchImplType?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=nameWithType> の使用は推奨されていません。|  
-|<xref:System.Runtime.InteropServices.IDLDESC?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IDLDESC?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.IDLFLAG?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IDLFLAG?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.IMPLTYPEFLAGS?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IMPLTYPEFLAGS?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.INVOKEKIND?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.INVOKEKIND?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.LIBFLAGS?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.LIBFLAGS?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.PARAMDESC?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.PARAMDESC?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.PARAMFLAG?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.PARAMFLAG?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.IDLDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IDLDESC?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.IDLFLAG?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IDLFLAG?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.IMPLTYPEFLAGS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IMPLTYPEFLAGS?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.INVOKEKIND?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.INVOKEKIND?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.LIBFLAGS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.LIBFLAGS?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.PARAMDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.PARAMDESC?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.PARAMFLAG?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.PARAMFLAG?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.SetWin32ContextInIDispatchAttribute?displayProperty=nameWithType>|この属性は推奨されていません。 アプリケーション ドメインでは、IDispatch の呼び出しでアクティベーション コンテキスト境界は考慮されなくなりました。|  
-|<xref:System.Runtime.InteropServices.STATSTG?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.STATSTG?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.SYSKIND?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.SYSKIND?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEATTR?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEATTR?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEDESC?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEDESC?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEFLAGS?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEFLAGS?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPEKIND?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPEKIND?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.TYPELIBATTR?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.TYPELIBATTR?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIBindCtx?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IBindCtx?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIConnectionPoint?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIConnectionPointContainer?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumConnectionPoints?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumConnections?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumConnections?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumMoniker?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumMoniker?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumString?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumString?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIEnumVARIANT?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IEnumVARIANT?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIMoniker?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IMoniker?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIPersistFile?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IPersistFile?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIRunningObjectTable?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IRunningObjectTable?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMIStream?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.IStream?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMITypeComp?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ITypeComp?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMITypeInfo?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ITypeInfo?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.UCOMITypeLib?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.ITypeLib?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.VARDESC?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.VARDESC?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.STATSTG?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.STATSTG?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.SYSKIND?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.SYSKIND?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEATTR?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEATTR?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEDESC?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEFLAGS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEFLAGS?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPEKIND?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEKIND?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.TYPELIBATTR?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPELIBATTR?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIBindCtx?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IBindCtx?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIConnectionPoint?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIConnectionPointContainer?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumConnectionPoints?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumConnections?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumConnections?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumMoniker?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumMoniker?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumString?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumString?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIEnumVARIANT?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IEnumVARIANT?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIMoniker?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IMoniker?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIPersistFile?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IPersistFile?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIRunningObjectTable?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IRunningObjectTable?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMIStream?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IStream?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMITypeComp?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ITypeComp?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMITypeInfo?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ITypeInfo?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.UCOMITypeLib?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.ITypeLib?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Runtime.InteropServices.VARDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.VARDESC?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.VARFLAGS?displayProperty=nameWithType>|代わりに、 <xref:System.Runtime.InteropServices.ComTypes.VARFLAGS?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Security.SecurityCriticalScope?displayProperty=nameWithType>|<xref:System.Security.SecurityCriticalScope> は、.NET 2.0 の透過的な互換性のみを目的として使用されます。|  
 |<xref:System.Security.SecurityTreatAsSafeAttribute?displayProperty=nameWithType>|<xref:System.Security.SecurityTreatAsSafeAttribute> は、.NET 2.0 の透過的な互換性のみを目的として使用されます。 代わりに、<xref:System.Security.SecuritySafeCriticalAttribute?displayProperty=nameWithType> を使用してください。|  
@@ -189,7 +190,7 @@ ms.lasthandoff: 11/21/2017
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 代わりに、 <xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 代わりに、<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Web.UI.Design.DataBindingCollectionConverter?displayProperty=nameWithType>|データ バインディングの編集は、プロパティ グリッドではなく、<xref:System.ComponentModel.Design.DesignerActionList?displayProperty=nameWithType> から起動されるので、この型の使用は推奨されていません。|  
 |<xref:System.Web.UI.Design.DataBindingCollectionEditor?displayProperty=nameWithType>|データ バインディングの編集は、プロパティ グリッドではなく、<xref:System.ComponentModel.Design.DesignerActionList?displayProperty=nameWithType> から起動されるので、この型の使用は推奨されていません。|  
 |<xref:System.Web.UI.Design.IControlDesignerBehavior?displayProperty=nameWithType>|別の方法として、<xref:System.Web.UI.Design.IControlDesignerTag?displayProperty=nameWithType> および <xref:System.Web.UI.Design.IControlDesignerView?displayProperty=nameWithType> を使用することをお勧めします。|  
@@ -250,7 +251,7 @@ ms.lasthandoff: 11/21/2017
 <a name="servicemodel"></a>   
 ### <a name="assembly-systemservicemodeldll"></a>アセンブリ: System.ServiceModel.dll  
   
-|種類|メッセージ|  
+|型|メッセージ|  
 |----------|-------------|  
 |<xref:System.ServiceModel.NetPeerTcpBinding?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
 |<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型は互換性のために残されています。 Http <xref:System.Net.CookieContainer> を有効にするには、Http バインドか `AllowCookies` で <xref:System.ServiceModel.Channels.HttpTransportBindingElement> プロパティを使用します。|  
@@ -287,7 +288,7 @@ ms.lasthandoff: 11/21/2017
 <a name="mobile"></a>   
 ### <a name="assembly-systemwebmobiledll"></a>アセンブリ: System.Web.Mobile.dll  
   
-|種類|メッセージ|  
+|型|メッセージ|  
 |----------|-------------|  
 |<xref:System.Web.Mobile.CookielessData?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
 |<xref:System.Web.Mobile.DeviceFilterElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
@@ -562,7 +563,7 @@ ms.lasthandoff: 11/21/2017
 <a name="xaml"></a>   
 ### <a name="assembly-systemxamldll"></a>アセンブリ: System.Xaml.dll  
   
-|種類|メッセージ|  
+|型|メッセージ|  
 |----------|-------------|  
 |<xref:System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute?displayProperty=nameWithType>|これは、XAML パーサーでは使用されなくなりました。 <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute?displayProperty=nameWithType> を参照してください。|  
   
@@ -638,7 +639,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="VBCompat"></a>   
 ### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>アセンブリ: Microsoft.VisualBasic.Compatibility.dll  
-  Visual Basic 6 から移行する方法については、次を参照してください。 [Visual Basic 6.0 リソース センター](https://msdn.microsoft.com/library/windows/desktop/ms788229)です。
+  Visual Basic 6 から移行する方法については、「[Visual Basic 6.0 リソース センター](https://msdn.microsoft.com/library/windows/desktop/ms788229)」を参照してください。
 |型|メッセージ|  
 |----------|-------------|  
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray?displayProperty=nameWithType>|このメンバーは使用されなくなりました。|  
@@ -784,6 +785,6 @@ ms.lasthandoff: 11/21/2017
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)  
  [互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)

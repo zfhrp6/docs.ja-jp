@@ -13,11 +13,11 @@ ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 caps.latest.revision: "46"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d03e12ae60b9a0145dcb58765ae00f756f84ca56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5d35a91805f6189f60803056c541ce8344c024f0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="platform-c-compiler-options"></a>/platform (C# コンパイラ オプション)
 アセンブリを実行できる共通言語ランタイム (CLR) のバージョンを指定します。  
@@ -40,11 +40,11 @@ ms.lasthandoff: 11/21/2017
   
 -   **ARM** は、Advanced RISC Machine (ARM) プロセッサ搭載のコンピューター上で実行されるように、アセンブリをコンパイルします。  
   
--   **x64** は、AMD64 または EM64T 命令セットをサポートするコンピューターで 64 ビット共通言語ランタイムにより実行できるように、アセンブリをコンパイルします。  
+-   **x64** は AMD64 または EM64T 命令セットをサポートするコンピューター上の 64 ビット CLR で実行されるように、アセンブリをコンパイルします。  
   
--   **x86** は、32 ビット x86 互換共通言語ランタイムにより実行できるように、アセンブリをコンパイルします。  
+-   **x86** は 32 ビット x86 互換 CLR で実行されるように、アセンブリをコンパイルします。  
   
--   **Itanium** は、Itanium プロセッサを搭載したコンピューターで 64 ビット共通言語ランタイムにより実行できるように、アセンブリをコンパイルします。  
+-   **Itanium** は、Itanium プロセッサ搭載のコンピューター上の 64 ビット CLR で実行されるように、アセンブリをコンパイルします。  
   
  64 ビット Windows オペレーティング システムの場合:  
   
@@ -79,6 +79,6 @@ ms.lasthandoff: 11/21/2017
 csc /platform:anycpu filename.cs  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# コンパイラ オプション](index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)

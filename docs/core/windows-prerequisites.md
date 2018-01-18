@@ -6,11 +6,12 @@ ms.author: johalex
 ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
-ms.openlocfilehash: 16a72edde39e4857dbdfb400f195deb9975f993c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: fdbba188cf939ce3eb969a1f780e086fcf17da13
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Windows における .NET Core の前提条件
 
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/18/2017
 
 ## <a name="net-core-dependencies"></a>.NET Core の依存関係
 
-1.1 およびそれ以前の .NET core は、Windows 10 および Windows Server 2016 より前のバージョンの Windows で実行されている場合、Visual C 再頒布可能が必要です。 この依存関係は、.NET Core インストーラーにより自動でインストールされます。
+.NET Core 1.1 以前のバージョンを Windows 10 と Windows Server 2016 よりも前の Windows バージョンで実行する場合、Visual C++ 再頒布可能パッケージが必要です。 この依存関係は、.NET Core インストーラーにより自動でインストールされます。
 
 次の場合には、[Microsoft Visual C++ 2015 再頒布可能パッケージ Update 3](https://www.microsoft.com/download/details.aspx?id=52685) を手動でインストールする必要があります。
 

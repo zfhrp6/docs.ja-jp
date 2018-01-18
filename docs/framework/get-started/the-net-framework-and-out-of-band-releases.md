@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1785c222238a58893edf71352839b40ea8db29f7
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload: dotnet
+ms.openlocfilehash: c79326634a24ddcc9aed71fca018c69c36c94db0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a>.NET Framework および特別なリリース
 .NET Framework は、従来のデスクトップ アプリや Web アプリに加えて、Windows Phone や Windows ストア アプリなど、さまざまなプラットフォームに対応し、コードを最大限に再利用できるように発展しています。 通常の .NET Framework のリリースに加えて、クロスプラットフォームでの開発の強化や新機能の導入を目的として、新しい機能をアウトオブバンド (OOB) リリースによって提供しています。 ここでは、.NET Framework および OOB リリースの将来の方向性について説明します。  
@@ -28,7 +29,7 @@ ms.lasthandoff: 10/21/2017
  独自のアプリで OOB 機能を使用する場合、OOB アセンブリはアプリのパッケージで配置されるため、ユーザーはアプリを実行するために最新バージョンの .NET Framework をインストールする必要はありません。  
   
 ## <a name="how-oob-packages-are-distributed"></a>OOB パッケージの配布方法  
-コア共通言語ランタイム (CLR) コンポーネントの OOB リリース経由で配信される、 [NuGet](https://www.nuget.org/)、これは、.NET 用のパッケージ マネージャーです。 NuGet によって、Visual Studio のソリューション エクスプローラーから簡単に、.NET Framework プロジェクトを参照したり、ライブラリを追加したりすることができます。 NuGet は、Visual Studio 2012 以降のすべてのエディションに付属しています。 NuGet がインストールされているかどうかを確認するには、Visual Studio の **[ツール]** メニューの **[ライブラリ パッケージ マネージャー]** を検索します。 インストールされていない場合:  
+共通言語ランタイム (CLR) のコア コンポーネントの OOB リリースは、.NET 用パッケージ マネージャーである [NuGet](https://www.nuget.org/) を通じて配布されます。 NuGet によって、Visual Studio のソリューション エクスプローラーから簡単に、.NET Framework プロジェクトを参照したり、ライブラリを追加したりすることができます。 NuGet は、Visual Studio 2012 以降のすべてのエディションに付属しています。 NuGet がインストールされているかどうかを確認するには、Visual Studio の **[ツール]** メニューの **[ライブラリ パッケージ マネージャー]** を検索します。 インストールされていない場合:  
   
 1.  Visual Studio のメニュー バーで、**[ツール]**、**[拡張機能と更新プログラム]** を選択します (Visual Studio 2010 では、**[拡張機能マネージャー]** を選択します)。  
   
@@ -62,5 +63,5 @@ ms.lasthandoff: 10/21/2017
   
  安定版パッケージのリリースについて通知を受ける場合は、[the .NET Framework のフィード](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/)を受信登録してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに](../../../docs/framework/get-started/index.md)

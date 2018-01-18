@@ -7,17 +7,18 @@ ms.date: 09/19/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 9c6b0f434a9d6b1431e375ec6a437497aaddfc61
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 9a79468168979a7c89efe48e11175f926e39cf4f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-add-reference"></a>dotnet-add 参照
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet add reference` - プロジェクト間 (P2P) 参照を追加します。
 
@@ -57,13 +58,13 @@ ms.lasthandoff: 10/18/2017
 
 特定の[フレームワーク](../../standard/frameworks.md)を対象にしている場合にのみ、プロジェクト参照を追加します。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 プロジェクト参照を追加する:
 
 `dotnet add app/app.csproj reference lib/lib.csproj`
 
-現在のディレクトリをプロジェクトに複数のプロジェクト参照を追加します。
+現在のディレクトリのプロジェクトに複数のプロジェクト参照を追加する:
 
 `dotnet add reference lib1/lib1.csproj lib2/lib2.csproj`
 

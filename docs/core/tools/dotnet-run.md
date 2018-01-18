@@ -7,17 +7,18 @@ ms.date: 09/24/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 7670934199d7d4b8a7c5e598142366ef1eb3ef1c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 1f5a3927859f89bef6c50d3d31b73de43cd1cd31
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-run"></a>dotnet run
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet run` -- 明示的なコンパイルや起動コマンドなしで、ソース コードを実行します。
 
@@ -75,7 +76,7 @@ dotnet myapp.dll
 
 `--force`
 
-最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 削除するのと同じ*project.assets.json*です。
+最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 これは、*project.assets.json* を削除する処理に相当します。
 
 `-h|--help`
 
@@ -136,7 +137,7 @@ dotnet myapp.dll
 
 ---
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 現在のディレクトリのプロジェクトを実行します。
 

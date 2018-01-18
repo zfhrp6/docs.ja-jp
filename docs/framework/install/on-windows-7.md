@@ -8,29 +8,30 @@ keywords: ".Net Framework, インストール"
 ms.date: 10/17/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.openlocfilehash: ac9116da40618d9a6f4bc2bb5f031bd8ffeec7b3
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnet
+ms.openlocfilehash: 9056a07859b388d2fa4c1992c270eaa4788f194c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Windows 7 SP1 および Windows Server 2008 R2 の .NET Framework をインストールします。
+# <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Windows 7 SP1 と Windows Server 2008 R2 に .NET Framework をインストールする
 
-Windows で多くのアプリケーションを実行するには、.NET Framework が必要です。 次の手順を使用すると、インストールします。 アプリケーションを実行しようとし、コンピューターに次のダイアログ ボックスを表示した後に、このページに到着したが可能性があります。
+.NET Framework は、Windows でさまざまなアプリケーションを実行するために必要です。 次の手順を使用してインストールすることができます。 このページをご覧になっている理由は、アプリケーションを実行しようとして次のようなダイアログがコンピューターに表示されたからではないでしょうか。
 
 ![このアプリケーションを開始できませんでした。](./media/this-application-could-not-be-started.png)
 
-これらの手順では必要がある .NET Framework のバージョンをインストールできます。 [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47)最新のバージョンであります。 これは Windows 7 と Windows Server 2008 R2 でサポートに含まれ、 [Windows 10 に収まる作成者 Update](https://www.microsoft.com/software-download/windows10)と[Windows Server 2016 バージョン 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709)です。
+これらの手順は、必要な .NET Framework バージョンをインストールする場合に役立ちます。 [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) が最新バージョンです。 これは Windows 7 と Windows Server 2008 R2 でサポートされ、[Windows 10 Fall Creators Update](https://www.microsoft.com/software-download/windows10) と [Windows Server 2016 Version 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709) に含まれています。
 
-## <a name="net-framework-471"></a>.NET framework 4.7.1
+## <a name="net-framework-471"></a>.NET Framework 4.7.1
 
-* [.NET Framework 4.7.1 をダウンロードします。](https://www.microsoft.com/net/framework/versions/net471?utm_source=ms-docs&utm_medium=referral)
+* [.NET Framework 4.7.1 のダウンロード](https://www.microsoft.com/net/framework/versions/net471?utm_source=ms-docs&utm_medium=referral)
 
-[.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) .NET Framework 4.0 またはそれ以降に構築されたアプリケーションの実行に使用できます。
+[.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) は、.NET Framework 4.0 以降用に構築されたアプリケーションを実行するために使用できます。
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 
-[.NET Framework 3.5](https://www.microsoft.com/en-us/download/details.aspx?id=21) Windows 7 に含まれています。
+[.NET Framework 3.5](https://www.microsoft.com/en-us/download/details.aspx?id=21) は、Windows 7 に含まれています。
 
 .NET Framework 3.5 は、.NET Framework 1.0 から 3.5 用に構築されたアプリケーションをサポートします。
 
@@ -40,6 +41,6 @@ Windows で多くのアプリケーションを実行するには、.NET Framewo
 
 ## <a name="see-also"></a>関連項目
 
-[.NET Framework をダウンロードします。](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
+[.NET Framework のダウンロード](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
 [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](troubleshoot-blocked-installations-and-uninstallations.md)   
-[開発者にとっての .NET Framework をインストールします。](guide-for-developers.md)
+[開発者向けの .NET Framework のインストール](guide-for-developers.md)

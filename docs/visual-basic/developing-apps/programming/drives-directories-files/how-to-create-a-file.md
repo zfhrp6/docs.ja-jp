@@ -14,11 +14,11 @@ ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 96e6785086f8c97f983c6dcd6fd713c01e34e258
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c1ce74601136c870097d6d558e1f3ff12ba1c212
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>方法 : Visual Basic でファイルを作成する
 この例では、<xref:System.IO.File> クラスで <xref:System.IO.File.Create%2A> メソッドを使用して、指定したパスに空のテキスト ファイルを作成します。  
@@ -53,8 +53,8 @@ ms.lasthandoff: 11/21/2017
   
  ユーザーがファイルを作成するアクセス許可を持っていない場合、<xref:System.UnauthorizedAccessException> がスローされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO>  
  <xref:System.IO.File.Create%2A>  
- [部分信頼コードからライブラリを使用します。](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)  
- [コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)
+ [部分信頼コードからのライブラリの使用](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)  
+ [コード アクセス セキュリティの基礎](../../../../framework/misc/code-access-security-basics.md)

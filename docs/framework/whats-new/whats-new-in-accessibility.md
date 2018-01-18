@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework のユーザー補助機能の新機能"
+title: ".NET Framework のアクセシビリティの新機能"
 ms.custom: updateeachrelease
 ms.date: 10/13/2017
 ms.prod: .net-framework
@@ -12,17 +12,18 @@ helpviewer_keywords: what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4886dad94d3a67e78525241a1538c06b9fe4b0be
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
+ms.workload: dotnet
+ms.openlocfilehash: e6a6759ae285f2dd101bddf71ea8e5ca792e87df
+ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 01/13/2018
 ---
-# <a name="whats-new-in-accessibility-in-the-net-framework"></a>.NET Framework のユーザー補助機能の新機能
+# <a name="whats-new-in-accessibility-in-the-net-framework"></a>.NET Framework のアクセシビリティの新機能
 
-.NET Framework の目的のユーザー用の複数の補助アプリケーションを作成します。 ユーザー補助機能は、支援技術のユーザーに適切なエクスペリエンスを提供するアプリケーションを許可します。 以降、.NET Framework 4.7.1 では、.NET Framework には、多数ユーザー補助アプリケーションを作成するためのアクセシビリティの機能強化にはが含まれています。 
+.NET Framework では、ユーザーのためにアプリケーションのアクセシビリティ向上を目指しています。 ユーザー補助機能により、支援機能の利用者にとってアプリケーションがさらに使いやすくなります。 .NET Framework 4.7.1 以降、.NET Framework にはさまざまなアクセシビリティ拡張機能が含まれるようになりました。それを利用することで開発者はアクセシビリティを備えたアプリケーションを開発できます。 
 
-新しいユーザー補助機能は、既定では、.NET Framework 4.7.1 を対象とするアプリケーションを有効になっている以降です。 さらに、アプリケーション、.NET Framework の以前のバージョンをターゲットが .NET Framework 4.7.1 で実行されているまたは後で選択できますレガシ ユーザー補助機能の動作の出力 (およびこれにより、.NET Framework 4.7.1 のユーザー補助機能強化にオプトイン) によって次のスイッチを追加する、 [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md)内の要素、 [ `<runtime>` ](~/docs/framework/configure-apps/file-schema/runtime/index.md)アプリケーションの構成ファイルのセクションです。 
+.NET Framework 4.7.1 以降を対象とするアプリケーションでは、この新しいユーザー補助機能が既定で有効になっています。 また、初期の .NET Framework を対象としているが、.NET Framework 4.7.1 以降で実行されているアプリケーションの場合、古いアクセシビリティ動作を利用しないことを選択できます (.NET Framework 4.7.1 のアクセシビリティ拡張機能の利用を選択します)。その場合、アプリケーションの設定ファイルの [`<runtime>`](~/docs/framework/configure-apps/file-schema/runtime/index.md) セクションで次のスイッチを [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 要素に追加してください。 
 
 ```xml
 <runtime>
@@ -31,7 +32,7 @@ ms.lasthandoff: 11/23/2017
 </runtime>
 ```
 
-以降 4.7.1 で .NET Framework のバージョンを対象とするアプリケーションがユーザー補助機能を無効にする次のスイッチを追加することで同様に、 [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md)内の要素、 [ `<runtime>` ](~/docs/framework/configure-apps/file-schema/runtime/index.md)アプリケーションの構成ファイルのセクションです。 
+同様に、4.7.1 以降の .NET Framework を対象にしているアプリケーションではアクセシビリティ機能を無効にできます。その場合、アプリケーションの設定ファイルの [`<runtime>`](~/docs/framework/configure-apps/file-schema/runtime/index.md) セクションで次のスイッチを [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 要素に追加してください。 
 
 ```xml
 <runtime>
@@ -40,9 +41,9 @@ ms.lasthandoff: 11/23/2017
 </runtime>
 ```
 
-## <a name="whats-new-in-accessibility-in-the-net-framework-471"></a>.NET Framework 4.7.1 のユーザー補助機能の新機能
+## <a name="whats-new-in-accessibility-in-the-net-framework-471"></a>.NET Framework 4.7.1 のアクセシビリティの新機能
 
-.NET Framework 4.7.1 には、次の領域の新しいユーザー補助機能が含まれます。
+.NET Framework 4.7.1 には、次の領域の新しいアクセシビリティ機能が含まれています。
 
 - [Windows Presentation Foundation (WPF)](#windows-presentation-foundation-wpf)
 
@@ -50,48 +51,48 @@ ms.lasthandoff: 11/23/2017
 
 ### <a name="windows-presentation-foundation-wpf"></a>Windows Presentation Foundation (WPF)
 
-**スクリーン リーダーの強化**
+**スクリーン リーダーの機能強化**
 
-ユーザー補助機能強化が有効な場合、.NET Framework 4.7.1 には、スクリーン リーダーに影響する次の機能強化が含まれています。
+アクセシビリティ拡張機能を有効にすると、.NET Framework 4.7.1 は次の面でスクリーン リーダーの機能を強化します。
 
-- .NET Framework 4.7 と以前のバージョンで<xref:System.Windows.Controls.Expander>ボタンとして画面リーダーによってコントロールが発表されました。 .NET Framework 4.7.1 から始めて、展開/折りたたみ可能なグループとして正しく読み上げられます。
+- .NET Framework 4.7 以前のバージョンでは、スクリーン リーダーが <xref:System.Windows.Controls.Expander> コントロールをボタンとして読み上げました。 .NET Framework 4.7.1 以降では、展開と折りたたみが可能なグループとして正しく読み上げられます。
 
-- .NET Framework 4.7 と以前のバージョンで<xref:System.Windows.Controls.DataGridCell>コントロールがスクリーン リーダーで"custom"に発表されました。 .NET Framework 4.7.1 から始めて、今すぐ正しく読み上げられます (ローカライズされた) データ グリッドのセルとして。
+- .NET Framework 4.7 以前のバージョンの場合、スクリーン リーダーが <xref:System.Windows.Controls.DataGridCell> コントロールを “カスタム” として読み上げました。 .NET Framework 4.7.1 以降では、データ グリッド セル (ローカライズされます) として正しく読み上げられます。
  
-- .NET Framework 4.7.1 から始めて、スクリーン リーダー アナウンスの編集可能な名前<xref:System.Windows.Controls.ComboBox>です。
+- .NET Framework 4.7.1 以降、スクリーン リーダーは編集可能な <xref:System.Windows.Controls.ComboBox> の名前を読み上げます。
 
-- .NET Framework 4.7 と以前のバージョンで<xref:System.Windows.Controls.PasswordBox>コントロール「ビューのアイテムがありません」として発表されたがそれ以外の場合に不適切な動作です。 この問題は、.NET Framework 4.7.1 以降では固定です。     
+- .NET Framework 4.7 以前のバージョンの場合、<xref:System.Windows.Controls.PasswordBox> コントロールが “ビューに項目がありません” として読み上げられたか、他の誤動作が発生しました。 この問題は .NET Framework 4.7.1 以降で修正されています。     
 
 **UIAutomation LiveRegion サポート**
 
-ナレーター ヘルプ人などのスクリーン リーダーは、フォーカスのある UI コンテンツの音声合成の出力で通常、アプリケーションの UI の内容を読み取る。 ただし、UI 要素が変更が、フォーカスされていない場合、ユーザーは通知されない場合があり、重要な情報を見逃す可能性があります。 この問題の解決を目的としてライブ領域。 開発者は、スクリーン リーダーや UI 要素に重要な変更が行われたその他の任意の UIAutomation クライアントを通知するためにそれらを使用できます。 スクリーン リーダー方法とタイミングを決定できますし、この変更のユーザーに通知します。 
+ナレーターなどのスクリーン リーダーはアプリケーションの UI コンテンツをユーザーのために読み上げます。通常、フォーカスを合わせた UI コンテンツのテキストが読み上げられます。 ただし、UI 要素が変わり、フォーカスがなくなったとき、ユーザーに通知されず、重要な情報を逃すことがあります。 ライブ領域は、この問題の解決を目指しています。 開発者はこれを利用し、UI 要素が大幅に変更されたことをスクリーン リーダーやその他の UIAutomation クライアントに指示できます。 指示後、スクリーン リーダーでは、その変更をユーザーに通知する方法とタイミングが決定されます。 
 
-領域をサポートするライブ、WPF に次の Api が追加されました。
+ライブ領域をサポートするために、次の API が WPF に追加されました。
 
-- <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType>と<xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType>、識別フィールド、 **LiveSetting**プロパティおよび**LiveRegionChanged**イベント。 これらは、XAML を使用して設定できます。
+- <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType> フィールドと <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType> フィールド。**LiveSetting** プロパティと **LiveRegionChanged** イベントを識別します。 XAML を利用して設定できます。
 
-- **AutomationProperties.LiveSetting**添付プロパティで、ユーザーに、UI の変更の重要度のスクリーン リーダーに通知します。
+- **AutomationProperties.LiveSetting** 添付プロパティ。UI の変化がユーザーにとって重要であることをスクリーン リーダーに伝えます。
 
-- <xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType>プロパティを識別する、 **AutomationProperties.LiveSetting**添付プロパティ。
+- <xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType> プロパティ。**AutomationProperties.LiveSetting** 添付プロパティを識別します。
  
-- <xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore%2A?displayProperty=nameWithType>できますをオーバーライドするメソッド、 **LiveSetting**値。
+- <xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore%2A?displayProperty=nameWithType> メソッド。**LiveSetting** 値を提供するようにオーバーライドできます。
 
-- <xref:System.Windows.Automation.AutomationProperties.GetLiveSetting%2A?displayProperty=nameWithType>と<xref:System.Windows.Automation.AutomationProperties.SetLiveSetting%2A?displayProperty=nameWithType>get し、set メソッド、 **LiveSetting**値。
+- <xref:System.Windows.Automation.AutomationProperties.GetLiveSetting%2A?displayProperty=nameWithType> メソッドと <xref:System.Windows.Automation.AutomationProperties.SetLiveSetting%2A?displayProperty=nameWithType> メソッド。**LiveSetting** 値を取得し、設定します。
  
-- <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType>列挙体は、次の考えられる定義**LiveSetting**値。
+- <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType> 列挙。次の指定可能 **LiveSetting** 値を定義します。
 
-   - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>。 要素は、ライブの領域の内容が変更された場合、通知を送信しません。   
+   - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>。 ライブ領域の内容が変更された場合でも、要素が通知を送信することはありません。   
    - <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType>。 ライブ領域の内容が変更された場合、要素は非割り込み型の通知を送信します。   
 
   - <xref:System.Windows.Automation.AutomationLiveSetting.Assertive?displayProperty=nameWithType>。 ライブ領域の内容が変更された場合、要素により割り込み通知が送信されます。   
 
-設定して、LiveRegion を作成することができます、 **AutomationProperties.LiveSetting**次の例で示すように、目的の要素のプロパティ。   
+関心のある要素で **AutomationProperties.LiveSetting** プロパティを作成できます。次の例をご覧ください。   
 
 ```xaml
 <TextBlock Name="myTextBlock" AutomationProperties.LiveSetting="Assertive">announcement</TextBlock>
 ```
 
-ライブ領域内のデータを変更すると、スクリーン リーダーに通知する必要がありますを明示的にイベントを発生させる、次の例に示すようにします。
+ライブ領域のデータが変化し、スクリーン リーダーに通知する必要があれば、次のサンプルのように、明示的にイベントを発生させます。
 
 ```csharp
 var peer = FrameworkElementAutomationPeer.FromElement(myTextBlock);
@@ -106,153 +107,153 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 **ハイ コントラスト**
 
-.NET Framework 4.7.1 から始めて、ハイ コントラストの機能強化に加えられたさまざまな WPF コントロールです。 これは表示されているときに、<xref:System.Windows.SystemParameters.HighContrast%2A>テーマを設定します。 以下に例を示します。
+.NET Framework 4.7.1 以降、さまざまな WPF コントロールでハイ コントラストが強化されました。 <xref:System.Windows.SystemParameters.HighContrast%2A> テーマが設定されているときにこれを確認できます。 次の設定があります。
 
 - <xref:System.Windows.Controls.Expander> コントロール
 
-    ビジュアルをフォーカス、<xref:System.Windows.Controls.Expander>コントロールが表示されるようになりました。 キーボードのビジュアルの<xref:System.Windows.Controls.ComboBox>、<xref:System.Windows.Controls.ListBox>、および<xref:System.Windows.Controls.RadioButton>コントロールがも表示されます。 例:
+    フォーカスを合わせたとき、<xref:System.Windows.Controls.Expander> コントロールが見やすくなりました。 <xref:System.Windows.Controls.ComboBox>、<xref:System.Windows.Controls.ListBox>、<xref:System.Windows.Controls.RadioButton> コントロールのキーボードも見やすくなりました。 例:
 
     前: 
     
-    ![ユーザー補助機能を強化する前にフォーカスを持つ expander コントロール](media/expander-before.png)
+    ![フォーカスを合わせた Expander コントロール (アクセシビリティ機能改善前)](media/expander-before.png)
 
-    後。 
+    後: 
 
-    ![ユーザー補助機能強化の後にフォーカスを持つ expander コントロール](media/expander-after.png)
+    ![フォーカスを合わせた Expander コントロール (アクセシビリティ機能改善後)](media/expander-after.png)
 
-- <xref:System.Windows.Controls.CheckBox>および<xref:System.Windows.Controls.RadioButton>コントロール
+- <xref:System.Windows.Controls.CheckBox> コントロールと <xref:System.Windows.Controls.RadioButton> コントロール
  
-    内のテキスト、<xref:System.Windows.Controls.CheckBox>と<xref:System.Windows.Controls.RadioButton>コントロールは、ハイ コントラスト テーマで選択するとわかりやすくようになりました。 例:
+    <xref:System.Windows.Controls.CheckBox> コントロールと <xref:System.Windows.Controls.RadioButton> コントロールのテキストは、ハイ コントラスト テーマで選択されているとき、見やすくなりました。 例:
 
     前: 
 
-    ![ユーザー補助機能を強化する前にフォーカスがあるハイ コントラストのラジオ ボタン](media/radio-button-before.png)
+    ![フォーカスを合わせたハイ コントラストのラジオ ボタン (アクセシビリティ機能改善前)](media/radio-button-before.png)
     
-    後。 
+    後: 
 
-    ![ユーザー補助機能強化の後にフォーカスがあるハイ コントラストのラジオ ボタン](media/radio-button-after.png)
+    ![フォーカスを合わせたハイ コントラストのラジオ ボタン (アクセシビリティ機能改善後)](media/radio-button-after.png)
 
 - <xref:System.Windows.Controls.ComboBox> コントロール
  
-    .NET Framework 4.7.1、無効なの枠線で始まる<xref:System.Windows.Controls.ComboBox>コントロールが無効なテキストと同じ色。 例:
+    .NET Framework 4.7.1 以降、無効にした <xref:System.Windows.Controls.ComboBox> コントロールの枠線が無効にしたテキストと同じ色になります。 例:
     
     前: 
 
-     ![コンボ ボックスには、罫線とユーザー補助機能を強化する前にテキストが無効になっています](media/combo-disabled-before.png)
+     ![無効にした ComboBox の枠線とテキスト (アクセシビリティ機能改善前)](media/combo-disabled-before.png)
 
-    後。   
+    後:   
 
-     ![コンボ ボックスはユーザー補助機能強化の後に罫線とテキストを無効にします。](media/combo-disabled-after.png)
+     ![無効にした ComboBox の枠線とテキスト (アクセシビリティ機能改善後)](media/combo-disabled-after.png)
 
-    さらに、無効になっており、フォーカスされたボタンは、適切なテーマの色を使用します。
+    また、無効にしているボタンにフォーカスを合わせたとき、正しいテーマ色が使用されます。
 
     前:
 
-    ![ユーザー補助機能を強化する前にボタンのテーマの色](media/button-themes-before.png) 
+    ![ボタンのテーマ色 (アクセシビリティ機能改善前)](media/button-themes-before.png) 
     
-    後。 
+    後: 
 
-    ![ユーザー補助機能強化の後にボタンのテーマの色](media/button-themes-after.png) 
+    ![ボタンのテーマ色 (アクセシビリティ機能改善後)](media/button-themes-after.png) 
 
-    .NET Framework 4.7 と設定、以前のバージョンで最後に、<xref:System.Windows.Controls.ComboBox>コントロールのスタイルを`Toolbar.ComboBoxStyleKey`ドロップダウン矢印を表示しない原因となった。 この問題は、.NET Framework 4.7.1 以降では固定です。 例:
+    最後になりますが、.NET Framework 4.7 以前のバージョンでは、<xref:System.Windows.Controls.ComboBox> コントロールのスタイルを `Toolbar.ComboBoxStyleKey` に設定すると、ドロップダウンの矢印が見えなくなりました。 この問題は .NET Framework 4.7.1 以降で修正されています。 例:
 
     前: 
 
-    ![ユーザー補助機能を強化する前に Toolbar.ComboBoxStyleKey](media/comboboxstylekey-before.png) 
+    ![Toolbar.ComboBoxStyleKey (アクセシビリティ機能改善前)](media/comboboxstylekey-before.png) 
     
-    後。 
+    後: 
 
-    ![ユーザー補助機能強化後 Toolbar.ComboBoxStyleKey](media/comboboxstylekey-after.png) 
+    ![Toolbar.ComboBoxStyleKey (アクセシビリティ機能改善後)](media/comboboxstylekey-after.png) 
 
 - <xref:System.Windows.Controls.DataGrid> コントロール
 
-    .NET Framework 4.7.1、並べ替えのインジケーターの矢印で始まる<xref:System.Windows.Controls.DataGrid>これで、使用して解決テーマの色を制御します。 例:
+    .NET Framework 4.7.1 以降、<xref:System.Windows.Controls.DataGrid> コントロールの並べ替えインジケーターで正しいテーマ色が使われるようになりました。 例:
 
     前: 
 
-    ![ユーザー補助機能を強化する前に並べ替えインジケーターの矢印](media/sort-indicator-before.png) 
+    ![並べ替えインジケーターの矢印 (アクセシビリティ機能改善前)](media/sort-indicator-before.png) 
     
-    後。   
+    後:   
  
-    ![ユーザー補助機能強化の後に並べ替えインジケーターの矢印](media/sort-indicator-after.png) 
+    ![並べ替えインジケーターの矢印 (アクセシビリティ機能改善後)](media/sort-indicator-after.png) 
     
-    さらに、.NET Framework 4.7 以前のバージョンで、リンクの既定のスタイル内に変更マウス上の正しくない色経由でハイ コントラスト モード。 これは、.NET Framework 4.7.1 以降の解決。 同様に、 <xref:System.Windows.Controls.DataGrid>  チェック ボックス列がキーボード フォーカス フィードバックについては、.NET Framework 4.7.1 以降の色を使用します。
+    また、.NET Framework 4.7 以前のバージョンでは、ハイ コントラスト モードでカーソルを合わせたとき、既定のリンク スタイルが正しくない色に変化しました。 これは .NET Framework 4.7.1 以降で修正されています。 同様に、.NET Framework 4.7.1 以降、<xref:System.Windows.Controls.DataGrid> チェックボックス列でキーボード フォーカス フィードバックに既定の色が使用されます。
 
     前: 
 
-    ![ユーザー補助機能を強化する前に既定のリンクのスタイルを DataGrid](media/default-link-style-before.png) 
+    ![DataGrid の既定のリンク スタイル (アクセシビリティ機能改善前)](media/default-link-style-before.png) 
  
-    後。    
+    後:    
   
-    ![ユーザー補助機能強化の後に既定のリンクのスタイルを DataGrid](media/default-link-style-after.png)  
+    ![DataGrid の既定のリンク スタイル (アクセシビリティ機能改善後)](media/default-link-style-after.png)  
 
-.NET Framework 4.7.1 の WPF ユーザー補助機能強化の詳細については、次を参照してください。 [WPF のユーザー補助機能の強化](../migration-guide/retargeting/4.7-4.7.1.md#accessibility-improvements-in-wpf)です。
+.NET Framework 4.7.1 のアクセシビリティ機能の改善の詳細については、「[Accessibility improvements in WPF](../migration-guide/retargeting/4.7-4.7.1.md#accessibility-improvements-in-wpf)」 (WPF のアクセシビリティ機能改善) を参照してください。
 
-## <a name="windows-forms-accessibility-improvements"></a>Windows フォームのユーザー補助機能強化
+## <a name="windows-forms-accessibility-improvements"></a>Windows フォームのアクセシビリティ機能改善
 
-.NET framework 4.7.1 では、Windows フォーム (WinForms) には、次の領域でユーザー補助機能の変更が含まれています。
+.NET Framework 4.7.1 では、Windows フォーム (WinForms) のアクセシビリティが次の領域で変更されました。
 
-**ハイ コントラスト モードで表示を改善しました**
+**ハイ コントラスト モードの表示が改善されました**
 
-以降、.NET Framework 4.7.1 では、さまざまな WinForms コントロールは、オペレーティング システムで使用できるハイコントラスト モードで向上のレンダリングを提供します。 Windows 10 には、ハイ コントラスト システムの一部の色の値が変更されており、Windows フォームは、Windows 10 の Win32 framework に基づいています。 最良の結果は、最新バージョンの Windows で実行し、テスト アプリケーションとコメントを解除して Windows 10 で、アプリケーション マニフェスト ファイルに OS 行がサポートされている場合に、次を追加して、OS の最新の変更を有効します。
+.NET Framework 4.7.1 以降では、オペレーティング システムで利用できるハイ コントラスト モードを選択したとき、さまざまな WinForms コントロールの表示が改善されました。 Windows 10 では、ハイ コントラストのシステム色の一部で値が変わりました。Windows フォームは Windows 10 Win32 フレームワークに基づきます。 最も快適に利用するためには、最新版の Windows で実行し、テスト アプリケーションに app.manifest ファイルを追加して最新の OS 変更を選択し、次の画像のように Windows 10 対応 OS 行のコメントを解除します。
 
 ```xml
 <!– Windows 10 –>
 <supportedOS Id=”{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}” />
 ```
-ハイ コントラストの変更の例をいくつかは次のとおりです。
+ハイ コントラストの変更例:
 
-- チェック マーク<xref:System.Windows.Forms.MenuStrip>項目は簡単に表示します。
+- <xref:System.Windows.Forms.MenuStrip> 項目のチェックマークが見やすくなりました。
 
-- 選択した場合は、次の無効になっています。<xref:System.Windows.Forms.MenuStrip>項目は簡単に表示します。
+- 選択したとき、無効になっている <xref:System.Windows.Forms.MenuStrip> 項目が見やすくなりました。
 
-- 選択したテキスト<xref:System.Windows.Forms.Button>選択範囲の色とコントラストを制御します。
+- 選択した <xref:System.Windows.Forms.Button> コントロールのテキストが背景色に対して際立ち、見やすくなりました。
 
-- 無効な文字が読みやすくします。 例:
+- 無効になっているテキストが読みやすくなりました。 例:
 
     前:
 
-    ![ユーザー補助機能を強化する前に無効なテキスト](media/wf-disabled-before.png) 
+    ![無効にしたテキスト (アクセシビリティ機能改善前)](media/wf-disabled-before.png) 
 
-    後。
+    後:
 
-    ![ユーザー補助機能強化の後に無効なテキスト](media/wf-disabled-after.png) 
+    ![無効にしたテキスト (アクセシビリティ機能改善後)](media/wf-disabled-after.png) 
 
-- スレッドの例外ダイアログ ボックスでハイ コントラストの向上。
+- スレッド例外ダイアログのハイ コントラストが改善されました。
 
-**ナレーターのサポートの強化**
+**ナレーター サポートが改善されました**
 
-.NET Framework 4.7.1 での Windows フォームには、ナレーターの次のユーザー補助機能強化が含まれています。
+.NET Framework 4.7.1 の Windows フォームでは、ナレーターのアクセシビリティが次の面で改善されました。
 
-- <xref:System.Windows.Forms.MonthCalendar>コントロールは、ナレーターおよび他の UI オートメーション ツールでアクセスできます。
+- <xref:System.Windows.Forms.MonthCalendar> コントロールに、他の UI 自動化ツールと同様に、ナレーターからアクセスできます。
 
-- <xref:System.Windows.Forms.CheckedListBox>コントロールがユーザーに通知するリスト項目の値を変更したこと、アイテムのチェック状態が変化したときに、ナレーターを通知します。
+- <xref:System.Windows.Forms.CheckedListBox> コントロールは、項目のチェック状態が変わったとき、ナレーターに通知します。その結果、リスト アイテムの値を変えたことがユーザーに通知されます。
  
-- <xref:System.Windows.Forms.DataGridViewCell>コントロールは、ナレーターに正しい読み取り専用ステータスをレポートします。
+- <xref:System.Windows.Forms.DataGridViewCell> コントロールは正しい読み取り専用状態をナレーターに報告します。
  
-- ナレーターは、無効を読み取ることができるようになりました<xref:System.Windows.Forms.ToolStripMenuItem>テキスト、無効なメニュー項目をスキップは、以前はします。
+- ナレーターが無効になっている <xref:System.Windows.Forms.ToolStripMenuItem> テキストを読み上げるようになりました。以前は、無効になっているメニュー項目はスキップされました。
 
-**UIAutomation アクセシビリティ パターンのサポートの強化**
+**UIAutomation アクセシビリティ パターンのサポートが強化されました**
 
-.NET Framework 4.7.1 から始めて、API ユーザー補助機能の一般的なパターンといくつかの WinForms コントロールのプロパティをユーザー補助テクノロジのツールの開発者は利用できます。 これらのユーザー補助機能強化は次のとおりです。
+.NET Framework 4.7.1 以降、アクセシビリティ技術ツールの開発者は、一部の WinForms コントロールについて、API アクセシビリティの共通のパターンとプロパティを活用できます。 アクセシビリティ機能改善の例:
 
-- <xref:System.Windows.Forms.ComboBox>と<xref:System.Windows.Forms.ToolStripSplitButton>ようになりました、[展開/折りたたみパターン](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md)です。
+- <xref:System.Windows.Forms.ComboBox> と <xref:System.Windows.Forms.ToolStripSplitButton> が[展開/折りたたみパターン](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md)対応になりました。
  
-- <xref:System.Windows.Forms.DataGridViewCheckBoxCell>ようになりました、[トグル パターン](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md)です。
+- <xref:System.Windows.Forms.DataGridViewCheckBoxCell> が[切り替えパターン](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md)対応になりました。
  
-- <xref:System.Windows.Forms.ToolStripItem>サポート、<xref:System.Windows.Automation.AutomationElement.Name>プロパティおよび[展開/折りたたみパターン](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md)です。
+- <xref:System.Windows.Forms.ToolStripItem> コントロールが <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name> プロパティと[展開/折りたたみパターン](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md)対応になりました。
 
-- <xref:System.Windows.Forms.NumericUpDown>と<xref:System.Windows.Forms.DomainUpDown>のサポートを制御、<xref:System.Windows.Automation.automationElement.Name>プロパティです。
+- <xref:System.Windows.Forms.NumericUpDown> コントロールと <xref:System.Windows.Forms.DomainUpDown> コントロールが <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name> プロパティ対応になりました。
 
-**ブラウザー エクスペリエンスの向上プロパティ**
+**プロパティ ブラウザーが使いやすくなりました**
 
-以降、.NET Framework 4.7.1 では、Windows フォームが含まれています。
+.NET Framework 4.7.1 以降、Windows フォームは次の点で改善されました。
 
-- さまざまなドロップダウン選択ウィンドウをキーボード ナビゲーション機能が向上します。
-- 不要なタブの削減を停止します。
-- コントロールの種類の報告が改善します。
-- ナレーターの強化された動作です。
+- さまざまなドロップダウン選択ウィンドウを利用することでキーボード操作が便利になりました。
+- 不要なタブ ストップが減りました。
+- コントロールの種類の報告機能が改善されました。
+- ナレーターの動作が改善されました。
  
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [.NET Framework の新機能](whats-new.md)   
  

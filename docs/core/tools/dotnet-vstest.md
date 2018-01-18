@@ -7,17 +7,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: c5a7ee0ba306cea641b0ff34f0b521c92bd03719
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: f2ad875430b2dc7f0ffbadfb9a39dd83854557cb
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet-vstest` - 指定されたファイルからテストを実行します。
 
@@ -111,11 +112,15 @@ ms.lasthandoff: 10/18/2017
 
 アダプターに渡す追加の引数を指定します。 引数は `<n>=<v>` 形式の名前と値のペアとして指定されます。この場合の `<n>` は引数名、`<v>` は引数値です。 複数の引数を指定する場合は、空白で区切ります。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 `mytestproject.dll` でテストを実行する:
 
 `dotnet vstest mytestproject.dll`
+
+`mytestproject.dll` でテストを実行し、カスタム名を持つカスタム フォルダーにエクスポートします。
+
+`dotnet vstest mytestproject.dll --logger:"trx;LogFileName=custom_file_name.trx" --ResultsDirectory:custom/file/path`
 
 `mytestproject.dll` と `myothertestproject.exe` でテストを実行する:
 
@@ -128,3 +133,4 @@ ms.lasthandoff: 10/18/2017
 `TestMethod1` および `TestMethod2` テストを実行する:
 
 `dotnet vstest /Tests:TestMethod1,TestMethod2`
+

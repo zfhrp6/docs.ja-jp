@@ -9,11 +9,12 @@ ms.topic: get-started-article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
-ms.openlocfilehash: b172e5fc4fcf9dd5c1e6f268f3c046e77592ebd3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 5a8f1fca7623763d43b977d0cc44396de249c62e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="getting-started-with-net-core-on-macos"></a>macOS での .NET Core の概要
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 10/18/2017
 > [!NOTE]
 > この記事では、macOS で [Visual Studio Code](http://code.visualstudio.com) を使用します。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>必須コンポーネント
 
 [.NET Core SDK](https://www.microsoft.com/net/core) のインストール。 .NET Core SDK には、.NET Core のフレームワークとランタイムの最新リリースが含まれています。
 
@@ -80,7 +81,7 @@ dotnet add library package Newtonsoft.Json
 </ItemGroup>
 ```
 
-実行[ `dotnet restore` ](../tools/dotnet-restore.md)、([注を参照してください](#dotnet-restore-note)) を依存関係を復元しを作成、 *obj*フォルダー*ライブラリ*3ファイルが含まれるなど、 *project.assets.json*ファイル。
+[`dotnet restore`](../tools/dotnet-restore.md) を実行します ([注記参照](#dotnet-restore-note))。これにより、依存関係が復元され、*project.assets.json* ファイルなどの 3 つのファイルを含む *obj* フォルダーが *library* 内に作成されます。
 
 ```console
 dotnet restore
@@ -194,7 +195,7 @@ dotnet sln add app/app.csproj
 dotnet add app/app.csproj reference library/library.csproj
 ```
 
-実行`dotnet restore`([注を参照してください](#dotnet-restore-note)) ソリューションの 3 つのプロジェクトの依存関係を復元します。 *Program.cs* を開き、`Main` メソッドの内容を次の行に置き換えます。
+`dotnet restore` を実行し、ソリューションの 3 つのプロジェクトの依存関係を復元します ([注記参照](#dotnet-restore-note))。 *Program.cs* を開き、`Main` メソッドの内容を次の行に置き換えます。
 
 ```csharp
 WriteLine($"The answer is {new Thing().Get(19, 23)}");

@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdc29497-64f2-4d11-a21b-4097e0bdf5c9
-ms.openlocfilehash: 288012e5f1f48ed60a388790ca42371496df92c3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 329a74cf083819896aafd7fc7993fa0e8ac8f8c2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core の csproj 形式に追加されたもの
 
@@ -37,11 +38,11 @@ ms.lasthandoff: 10/18/2017
 ### <a name="recommendations"></a>推奨事項
 `Microsoft.NETCore.App` または `NetStandard.Library` メタパッケージは暗黙的に参照されるので、ベスト プラクティスとして以下が推奨されます。
 
-* .NET Core または .NET 標準を対象にする場合は、明示的な参照ことはありませんがある、`Microsoft.NETCore.App`または`NetStandard.Library`を介して metapackages、`<PackageReference>`プロジェクト ファイル内の項目。
-* 場合 .NET Core をターゲットにする場合は、特定のバージョンのランタイムを作成する必要があります、する必要がありますを使用する、 `<RuntimeFrameworkVersion>` 、プロジェクトのプロパティ (たとえば、 `1.0.4`)、metapackage を参照する代わりにします。
+* .NET Core または .NET Standard を対象とするとき、プロジェクト ファイルの `<PackageReference>` アイテム経由で `Microsoft.NETCore.App` または `NetStandard.Library` メタパッケージを明示的に参照しないようにします。
+* .NET Core を対象にするとき、特定バージョンのランタイムが必要な場合、メタパッケージを参照するのではなく、プロジェクト内で `<RuntimeFrameworkVersion>` プロパティを使用します (`1.0.4` など)。
     * [自己完結型の展開](../deploying/index.md#self-contained-deployments-scd)を使用し、特定のパッチ バージョンの 1.0.0 LTS ランタイムが必要な場合などにこの問題が発生する可能性があります。
-* 特定のバージョンの必要がある場合、 `NetStandard.Library` metapackage .NET 標準を対象とする場合、使用できます、`<NetStandardImplicitPackageVersion>`プロパティと、バージョンを設定する必要があります。
-* 明示的に追加またはいずれかへの参照を更新しない、`Microsoft.NETCore.App`または`NetStandard.Library`metapackage の .NET Framework プロジェクト。 場合は任意のバージョンの`NetStandard.Library`そのバージョンをインストールする .NET 標準ベースの NuGet パッケージ、NuGet を自動的に使用する際に必要です。
+* .NET Standard を対象にするとき、特定バージョンの `NetStandard.Library` メタパッケージが必要な場合、`<NetStandardImplicitPackageVersion>` プロパティを使用し、必要なバージョンを設定できます。
+* .NET Framework プロジェクトでは、`Microsoft.NETCore.App` または `NetStandard.Library` メタパッケージに参照を明示的に追加したり、更新したりしないでください。 .NET Standard ベースの NuGet パッケージを使用するとき、何らかのバージョンの `NetStandard.Library` が必要であれば、NuGet はそのバージョンを自動的にインストールします。
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>.NET Core プロジェクトの既定のコンパイルの include
 最新バージョンの SDK の *csproj* 形式に移行すると共に、コンパイル項目と、SDK プロパティ ファイルに埋め込みリソースの既定の include と exclude を SDK プロパティ ファイルに移行しました。 つまり、これらの項目をプロジェクト ファイルに指定する必要はなくなりました。 
@@ -71,9 +72,9 @@ ms.lasthandoff: 10/18/2017
 
 この変更で、他の include の主なしくみは変わりません。 ただし、たとえばアプリで発行する一部のファイルを指定する場合は、*csproj* で既知のしくみ (たとえば `<Content>` 要素) を使用することができます。
 
-`<EnableDefaultCompileItems>`のみを無効に`Compile`glob と同様に、暗黙的なその他の glob には影響しませんが、`None`にも適用される glob \*.cs 項目。 そのため、**ソリューション エクスプ ローラー**表示は引き続き\*.cs 項目として含まれているプロジェクトの一部として`None`項目。 同様の方法で行うこともできます`<EnableDefaultNoneItems>`暗黙を無効にする`None`glob です。
+`<EnableDefaultCompileItems>` は `Compile` glob のみを無効にし、\*.cs 項目にも適用される暗黙的 `None` glob など、他の Glob には影響しません。 そのため、**ソリューション エクスプローラー**は \*.cs 項目を `None` 項目として含まれた、プロジェクトの一部として引き続き表示します。 同様に、`<EnableDefaultNoneItems>` を利用して暗黙的 `None` glob を無効にできます。
 
-無効にする**すべての暗黙的な glob**、設定することができます、`<EnableDefaultItems>`プロパティを`false`次の例のように。
+**暗黙的 glob をすべて**無効にするには、`<EnableDefaultItems>` プロパティを `false` に設定します。次の例をご覧ください。
 ```xml
 <PropertyGroup>
     <EnableDefaultItems>false</EnableDefaultItems>
@@ -110,7 +111,7 @@ csproj では、プロジェクトから既定の glob を削除し、多様な�
 <PackageReference Include="<package-id>" Version="" PrivateAssets="" IncludeAssets="" ExcludeAssets="" />
 ```
 
-#### <a name="version"></a>バージョン
+#### <a name="version"></a>Version
 `Version` は、復元するパッケージのバージョンを指定します。 この属性は、[NuGet バージョン管理](/nuget/create-packages/dependency-versions#version-ranges)スキームの規則に従います。 既定の動作では、バージョンを正確に一致させます。 たとえば、`Version="1.2.3"` を指定すると、パッケージのバージョンが正確に 1.2.3 であることを表す NuGet 表記の `[1.2.3]` と同じになります。
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets、ExcludeAssets、PrivateAssets
@@ -144,7 +145,7 @@ csproj では、プロジェクトから既定の glob を削除し、多様な�
 <DotNetCliToolReference Include="<package-id>" Version="" />
 ```
 
-#### <a name="version"></a>バージョン
+#### <a name="version"></a>Version
 `Version` は、復元するパッケージのバージョンを指定します。 この属性は、[NuGet バージョン管理](/nuget/create-packages/dependency-versions#version-ranges)スキームの規則に従います。 既定の動作では、バージョンを正確に一致させます。 たとえば、`Version="1.2.3"` を指定すると、パッケージのバージョンが正確に 1.2.3 であることを表す NuGet 表記の `[1.2.3]` と同じになります。
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers

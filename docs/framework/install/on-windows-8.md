@@ -9,37 +9,38 @@ ms.date: 10/17/2017
 ms.topic: article
 ms.prod: .net-framework
 ms.devlang: dotnet
-ms.openlocfilehash: f0ba44b6eecb7e74f65da530f39c7db55a7f90d8
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnet
+ms.openlocfilehash: 5a8ecaddf50969275e7de03f9b108019f423c23e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>.NET Framework をインストールする Windows 8 および Windows Server 2012
+# <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Windows 8 と Windows Server 2012 に .NET Framework をインストールする
 
-Windows で多くのアプリケーションを実行するには、.NET Framework が必要です。 次の手順を使用すると、インストールします。 アプリケーションを実行しようとし、コンピューターに次のダイアログ ボックスを表示した後に、このページに到着したが可能性があります。
+.NET Framework は、Windows でさまざまなアプリケーションを実行するために必要です。 次の手順を使用してインストールすることができます。 このページをご覧になっている理由は、アプリケーションを実行しようとして次のようなダイアログがコンピューターに表示されたからではないでしょうか。
 
 ![このアプリケーションを開始できませんでした。](./media/this-application-could-not-be-started.png)
 
-これらの手順では必要がある .NET Framework のバージョンをインストールできます。 [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47)最新のバージョンであります。 Windows 8 ではサポートされません。 付属しています、 [Windows 10 に収まる作成者 Update](https://www.microsoft.com/software-download/windows10)と[Windows Server 2016 バージョン 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709)です。
+これらの手順は、必要な .NET Framework バージョンをインストールする場合に役立ちます。 [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) が最新バージョンです。 Windows 8 ではサポートされていません。 [Windows 10 Fall Creators Update](https://www.microsoft.com/software-download/windows10) と [Windows Server 2016 Version 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709) に含まれています。
 
-## <a name="net-framework-471"></a>.NET framework 4.7.1
+## <a name="net-framework-471"></a>.NET Framework 4.7.1
 
-* [.NET Framework 4.7.1 をダウンロードします。](https://www.microsoft.com/net/framework/versions/net471?utm_source=ms-docs&utm_medium=referral)
+* [.NET Framework 4.7.1 のダウンロード](https://www.microsoft.com/net/framework/versions/net471?utm_source=ms-docs&utm_medium=referral)
 
-.NET Framework 4.7.1 は、Windows Server 2012 でサポートされます。 Windows 8 ではサポートされません。
+.NET Framework 4.7.1 は Windows Server 2012 でサポートされています。 Windows 8 ではサポートされていません。
 
-[.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) .NET Framework 4.0 またはそれ以降に構築されたアプリケーションの実行に使用できます。
+[.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) は、.NET Framework 4.0 以降用に構築されたアプリケーションを実行するために使用できます。
 
 ## <a name="net-framework-46"></a>.NET Framework 4.6
 
-[.NET Framework 4.6](https://www.microsoft.com/en-us/download/details.aspx?id=48130) Windows 8 の最新サポートされている .NET Framework バージョンです。
+[.NET Framework 4.6](https://www.microsoft.com/en-us/download/details.aspx?id=48130) は Windows 8 でサポートされている最も新しい .NET Framework バージョンです。
 
-.NET Framework 4.6 には、4.6 で .NET Framework 4.0 用にビルドされたアプリがサポートされています。
+.NET Framework 4.6 は、.NET Framework 4.0 から 4.6 用に構築されたアプリをサポートします。
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 
-指示に従ってインストールを[と 10 の Windows 8 での .NET Framework 3.5](dotnet-35-windows-10.md)です。
+手順に従って [.NET Framework 3.5 を Windows 8 と 10](dotnet-35-windows-10.md) にインストールしてください。
 
 .NET Framework 3.5 は、.NET Framework 1.0 から 3.5 用に構築されたアプリケーションをサポートします。
 
@@ -49,6 +50,6 @@ Windows で多くのアプリケーションを実行するには、.NET Framewo
 
 ## <a name="see-also"></a>関連項目
 
-[.NET Framework をダウンロードします。](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
+[.NET Framework のダウンロード](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
 [.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](troubleshoot-blocked-installations-and-uninstallations.md)   
-[開発者にとっての .NET Framework をインストールします。](guide-for-developers.md)
+[開発者向けの .NET Framework のインストール](guide-for-developers.md)

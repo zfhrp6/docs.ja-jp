@@ -1,7 +1,7 @@
 ---
-title: ".NET Core と Docker を基礎します。"
+title: ".NET Core での Docker の基礎の学習"
 description: "Docker と .NET Core の基本チュートリアル"
-keywords: ".NET、.NET core、Docker、チュートリアル"
+keywords: ".NET, .NET Core, Docker, チュートリアル"
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
@@ -12,53 +12,54 @@ ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 ms.custom: mvc
 manager: wpickett
-ms.openlocfilehash: 5935f67d7e4ca9c9e8768373e2bcaa9febccfdc5
-ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
+ms.workload: dotnetcore
+ms.openlocfilehash: 79ded2ce5de5100c18301127a2654f8791b8ed76
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="learn-docker-basics-with-net-core"></a>.NET Core と Docker を基礎します。
+# <a name="learn-docker-basics-with-net-core"></a>.NET Core での Docker の基礎の学習
 
-このチュートリアルでは、Docker コンテナーをビルドおよび .NET Core アプリケーションのタスクの配置で説明します。 このチュートリアルの中には、次の操作を説明します。
+このチュートリアルでは、Docker コンテナー ビルドと .NET Core アプリケーションの展開タスクについて学習します。 このチュートリアルを通して、以下のことを学びます。
 
 > [!div class="checklist"]
-> * Dockerfile を作成する方法
-> * .NET Core アプリケーションを作成する方法。
-> * Docker コンテナーにアプリを展開する方法です。
+> * Dockerfile の作成方法
+> * .NET Core アプリの作成方法
+> * Docker コンテナーにアプリを展開する方法
 
-[Docker プラットフォーム](https://docs.docker.com/engine/docker-overview/#the-docker-platform)を使用して、 [Docker エンジン](https://docs.docker.com/engine/docker-overview/#docker-engine)速やかに構築してとしてアプリをパッケージ化[Docker images](https://docs.docker.com/glossary/?term=image)です。 これらのイメージが記述された、 [Dockerfile](https://docs.docker.com/glossary/?term=Dockerfile)を展開し実行する形式、[コンテナー階層化](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/#container-and-layers)です。
+[Docker プラットフォーム](https://docs.docker.com/engine/docker-overview/#the-docker-platform)では [Docker エンジン](https://docs.docker.com/engine/docker-overview/#docker-engine)を使用してアプリを簡単にビルドし、[Docker イメージ](https://docs.docker.com/glossary/?term=image)としてパッケージ化します。 これらのイメージは [Dockerfile](https://docs.docker.com/glossary/?term=Dockerfile) 形式で記述され、[階層型コンテナー](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/#container-and-layers)に展開され、実行されます。
 
-## <a name="net-core-easiest-way-to-get-started"></a>作業を開始する最も簡単な方法を .NET core:
+## <a name="net-core-easiest-way-to-get-started"></a>.NET Core: 入門として最も簡単な方法
 
-Docker イメージを作成する前に、containerize するアプリケーションを作成する必要があります。 これは、Linux、MacOS、または Windows に作成できます。 行うには最速で簡単な方法では、.NET Core を使用します。
+Docker イメージを作成する前に、コンテナー化するアプリケーションを用意する必要があります。 それは Linux、MacOS、Windows で作成できます。 これを行う最も迅速かつ簡単な方法は、.NET Core を利用することです。
 
 .NET Core CLI ツールセットに慣れていない場合は、「[.NET Core SDK overview](../tools/index.md)」(.NET Core SDK の概要) を参照してください。
 
-Windows と Linux の両方のコンテナーをビルドする[マルチ arch ベース タグ](https://github.com/dotnet/announcements/issues/14)です。
+Windows コンテナーと Linux コンテナーの両方を[マルチアーキテクチャ ベース タグ](https://github.com/dotnet/announcements/issues/14)でビルドできます。
 
-## <a name="your-first-net-core-docker-app"></a>最初の .NET Core Docker アプリ
+## <a name="your-first-net-core-docker-app"></a>初めての .NET Core Docker アプリ
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
-このチュートリアルを完了します。
+このチュートリアルを完了するには、次のものが必要です。
 
-#### <a name="net-core-20-sdk"></a>.NET 2.0 SDK をコアします。
+#### <a name="net-core-20-sdk"></a>.NET Core 2.0 SDK
 
-* インストール[.NET Core SDK 2.0](https://www.microsoft.com/net/core)です。
+* [.NET Core SDK 2.0](https://www.microsoft.com/net/core) をインストールします。
 
 .NET Core 2.x がサポートされているオペレーティング システム (サポートされている OS バージョン以外) の完全なリスト、およびライフサイクル ポリシーのリンクについては、「[.NET Core 2.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md)」 (.NET Core 2.x がサポートされる OS のバージョン) を参照してください。
 
-* まだ行っていない場合、好きなコード エディターをインストールします。
+* コード エディターをまだインストールしていなければ、お気に入りのエディターをインストールしてください。
 
 > [!TIP]
-> コード エディターをインストールする必要がありますか。 再試行[Visual Studio](https://visualstudio.com/downloads)!
+> コード エディターをインストールする必要がありますか。 [Visual Studio](https://visualstudio.com/downloads) をお試しください。
 
-#### <a name="installing-docker-client"></a>Docker クライアントをインストールします。
+#### <a name="installing-docker-client"></a>Docker クライアントをインストールする
 
-インストール[Docker 17.06](https://docs.docker.com/release-notes/docker-ce/)またはそれ以降の Docker クライアント。
+[Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) 以降の Docker クライアントをインストールします。
 
-Docker クライアントをインストールすることができます。
+Docker クライアントがインストール可能な OS:
 
 * Linux ディストリビューション
 
@@ -72,9 +73,9 @@ Docker クライアントをインストールすることができます。
 
 * [macOS](https://docs.docker.com/docker-for-mac/)
 
-* [Windows](https://docs.docker.com/docker-for-windows/)です。
+* [Windows](https://docs.docker.com/docker-for-windows/)
 
-### <a name="create-a-net-core-20-console-app-for-dockerization"></a>Dockerization のコンソール アプリケーションを .NET Core 2.0 を作成します。
+### <a name="create-a-net-core-20-console-app-for-dockerization"></a>Docker で動作させるために .NET Core 2.0 コンソール アプリを作成する
 
 コマンド プロンプトを開き、*Hello* という名前のフォルダーを作成します。 作成したフォルダーに移動し、次のコマンドを入力します。
 
@@ -94,30 +95,30 @@ dotnet run
    プロジェクト ファイルでは、依存関係を復元し、プログラムをビルドするために必要なすべてのものを指定します。
 
    * `OutputType` タグは、実行可能ファイル (つまり、コンソール アプリケーション) をビルドすることを示します。
-   * `TargetFramework` タグは、対象の .NET 実装を指定します。 高度なシナリオでは、複数のターゲット フレームワークを指定して、単一の操作で指定されたフレームワークを作成します。 このチュートリアルでは、.NET Core 2.0 おビルドします。
+   * `TargetFramework` タグは、対象の .NET 実装を指定します。 高度なシナリオでは、複数の対象フレームワークを指定し、1 回の操作で指定したフレームワークにビルドできます。 このチュートリアルでは、.NET Core 2.0 のためにビルドします。
 
    `Program.cs`:
 
-   プログラムの起動`using System`です。 このステートメントは、次の場合、"すべての取り込み、`System`のこのファイルのスコープに名前空間です"。 `System` 名前空間には、`string` などの基本的な構造、または数値型が含まれます。
+   プログラムは `using System` で始まります。 これは、"`System` 名前空間のすべてがこのファイルのスコープになる" こと意味します。 `System` 名前空間には、`string` などの基本的な構造、または数値型が含まれます。
 
-   次に、`Hello` という名前空間を定義します。 名前空間は、自分の好きを変更できます。 `Program` という名前のクラスは、引数として文字列配列を使用する `Main` メソッドで、その名前空間内に定義されます。 この配列には、コンパイル済みプログラムの呼び出し時に渡される引数のリストが含まれます。 この例では、プログラムのみを書き込みます"Hello World!" 記述するだけです。
+   次に、`Hello` という名前空間を定義します。 名前空間は必要なものに変更できます。 `Program` という名前のクラスは、引数として文字列配列を使用する `Main` メソッドで、その名前空間内に定義されます。 この配列には、コンパイル済みプログラムの呼び出し時に渡される引数のリストが含まれます。 今回の例では、"Hello World!" とだけ記述されます。 記述するだけです。
 
 2. `$ dotnet restore`
 
-   .NET Core で 2.x、 **dotnet 新しい**実行、 [ `dotnet restore` ](../tools/dotnet-restore.md)コマンド。 **Dotnet 復元**との依存関係のツリーを復元する[NuGet](https://www.nuget.org/)(.NET パッケージ マネージャー) 呼び出し。
-   NuGet では、次のタスクを実行します。
-   * 分析し、 *Hello.csproj*ファイル 
-   * ファイルのダウンロードの依存関係 (またはコンピューターのキャッシュから grabs)
-   * 書き込みます、 *obj/project.assets.json*ファイル
+   .NET Core 2.x では、**dotnet new** で [`dotnet restore`](../tools/dotnet-restore.md) コマンドが実行されます。 **dotnet restore** は [NuGet](https://www.nuget.org/) (.NET パッケージ マネージャー) 呼び出しによって依存関係ツリーを復元します。
+   NuGet は次のタスクを実行します。
+   * *Hello.csproj* ファイルを分析する 
+   * ファイル依存関係をダウンロードする (あるいはコンピューター キャッシュから取得する)
+   * *obj/project.assets.json* ファイルを記述する
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
    
-   *Project.assets.json*ファイルは、NuGet の依存関係グラフ、バインディングの解像度、およびその他のアプリのメタデータの完全なセット。 ファイルがなどの他のツールで使用が必要なこの[ `dotnet build` ](../tools/dotnet-build.md)と[ `dotnet run` ](../tools/dotnet-run.md)、ソース コードを処理します。
+   *project.assets.json* ファイルは、NuGet の依存関係グラフ、バインディング解決、その他のアプリ メタデータをすべて揃えたものです。 この必須ファイルは、ソース コードを正しく処理するために、[`dotnet build`](../tools/dotnet-build.md) や [`dotnet run`](../tools/dotnet-run.md) など、他のツールで使用されます。
    
 3. `$ dotnet run`
 
-   [`dotnet run`](../tools/dotnet-run.md)呼び出し[ `dotnet build` ](../tools/dotnet-build.md)が正常に構築し、呼び出しを確認する`dotnet <assembly.dll>`アプリケーションを実行します。
+   [`dotnet run`](../tools/dotnet-run.md) は [`dotnet build`](../tools/dotnet-build.md) を呼び出してビルドの成功を確認し、それから `dotnet <assembly.dll>` を呼び出してアプリケーションを実行します。
    
     ```console
     $ dotnet run
@@ -125,17 +126,17 @@ dotnet run
     Hello World!
     ```
 
-    高度なシナリオは、次を参照してください。 [.NET Core アプリケーションの配置](../deploying/index.md)詳細についてはします。
+    高度なシナリオについては、「[.NET Core アプリケーション展開](../deploying/index.md)」を参照してください。
 
-## <a name="dockerize-the-net-core-application"></a>.NET Core アプリケーションを dockerize します。
+## <a name="dockerize-the-net-core-application"></a>.NET Core アプリケーションを Docker で動作させる
 
-こんにちは .NET Core コンソール アプリは正常にローカルで実行されます。 今すぐみましょうステップを実行すること、さらに、ビルドおよび Docker でアプリを実行します。
+Hello .NET Core コンソール アプリがローカルで正常に実行されます。 それでは先に進み、アプリをビルドし、Docker で実行します。
 
-### <a name="your-first-dockerfile"></a>最初の Dockerfile
+### <a name="your-first-dockerfile"></a>初めての Dockerfile
 
-テキスト エディターを開き、始めましょう! まだでアプリを構築しましたこんにちはディレクトリから取り組んでいます。
+テキスト エディターを開き、始めましょう。 引き続き、アプリをビルドした Hello ディレクトリから作業します。
 
-いずれかの Linux の次の Docker 命令を追加または[Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/)を新しいファイル。 完了したら、としてこんにちはディレクトリのルートに保存**Dockerfile**、拡張子のない (にファイルの種類を設定する必要があります`All types (*.*)`または似た)。
+Linux コンテナーまたは [Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/)の次の Docker 命令を新しいファイルに追加します。 完了したら、Hello ディレクトリのルートに **Dockerfile** として保存します。拡張子は付けません。場合によっては、ファイルの種類を `All types (*.*)` か、それと同様のものに設定する必要があります。
 
 ```Dockerfile
 FROM microsoft/dotnet:2.0-sdk
@@ -151,80 +152,80 @@ RUN dotnet publish -c Release -o out
 ENTRYPOINT ["dotnet", "out/Hello.dll"]
 ```
 
-Dockerfile には、順番に実行される Docker ビルド命令が含まれています。
+Dockerfile ファイルには、順次実行される Docker ビルド命令が含まれています。
 
-最初の命令である必要があります[ **FROM**](https://docs.docker.com/engine/reference/builder/#from)です。 この命令は、新しいビルド ステージを初期化し、残りの手順については、ベース イメージを設定します。 マルチ arch タグでは、Windows または Linux のいずれかのコンテナーをプル Docker for Windows に応じて[コンテナー モード](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers)です。 この例のベース イメージが microsoft/dotnet リポジトリから 2.0 sdk イメージです。
+最初の命令は [**FROM**](https://docs.docker.com/engine/reference/builder/#from) のはずです。 この命令は新しいビルド ステージを初期化し、残りの命令のベース イメージを設定します。 マルチアーキテクチャ タグは、Docker for Windows [コンテナー モード](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers)に基づき、Windows コンテナーまたは Linux コンテナーをプルします。 今回の例のベース イメージは microsoft/dotnet リポジトリの 2.0-sdk イメージです。
 
 ```Dockerfile
 FROM microsoft/dotnet:2.0-sdk
 ```
 
-[ **WORKDIR** ](https://docs.docker.com/engine/reference/builder/#workdir)命令セット、作業ディレクトリ、残りの実行、CMD、エントリ ポイント、コピー、および追加の Dockerfile の命令。 ディレクトリが存在しない場合は作成されます。 この場合、WORKDIR はアプリのディレクトリに設定されます。
+[**WORKDIR**](https://docs.docker.com/engine/reference/builder/#workdir) 命令は残りの命令、RUN、CMD、ENTRYPOINT、COPY、ADD Dockerfile の作業ディレクトリを設定します。 ディレクトリが存在しなければ、作成されます。 今回、WORKDIR がアプリ ディレクトリに設定されています。
 
 ```Dockerfile
 WORKDIR /app
 ```
 
-[**コピー** ](https://docs.docker.com/engine/reference/builder/#copy)命令がソース パスから新しいファイルまたはディレクトリをコピーし、変換先コンテナー ファイル システムに追加します。 この命令で、c# プロジェクト ファイルをコンテナーおコピーします。
+[**COPY**](https://docs.docker.com/engine/reference/builder/#copy) 命令はソース パスから新しいファイルまたはディレクトリをコピーし、それをターゲットのコンテナー ファイルシステムに追加します。 この命令により、C# プロジェクトがコンテナーにコピーされます。
 
 ```Dockerfile
 COPY *.csproj ./
 ```
 
-[**実行**](https://docs.docker.com/engine/reference/builder/#run)命令は、現在のイメージの上に新しいレイヤーでどのようなコマンドを実行し、結果をコミットします。 結果のコミットされたイメージは、Dockerfile の次の手順に使用されます。 実行中**dotnet 復元**c# プロジェクト ファイルの必要な依存関係を取得します。 
+[**RUN**](https://docs.docker.com/engine/reference/builder/#run) 命令は現在のイメージに加えて新しい層でコマンドを実行し、結果をコミットします。 結果のコミットされたイメージは、Dockerfile の次の手順に使用されます。 **dotnet restore** を実行し、C# プロジェクト ファイルの必要な依存関係を取得します。 
 
 ```Dockerfile
 RUN dotnet restore
 ```
 
-これは、**コピー**コードは、コピー、ファイルの残りの部分に、コンテナーに新しい[レイヤー](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/#images-and-layers)です。
+この **COPY** 命令は、コンテナーの残りのファイルを新しい[層](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/#images-and-layers)にコピーします。
 
 ```Dockerfile
 COPY . ./
 ```
 
-これを使用してアプリを公開**実行**命令します。 [ **Dotnet 発行**](../tools/dotnet-publish.md)コマンド、アプリケーションをコンパイルでは、その依存関係をプロジェクト ファイルで指定された読み取り、結果として得られる一連のファイルをディレクトリに発行します。 アプリが発行された、**リリース**構成と既定のディレクトリに出力します。
+この **RUN** 命令でアプリが公開されます。 [**dotnet publish**](../tools/dotnet-publish.md) コマンドはアプリケーションをコンパイルし、プロジェクト ファイルに指定されているその依存関係を読み通し、結果的に生成された一連のファイルをディレクトリに公開します。 今回のアプリは **Release** 構成で公開され、既定のディレクトリに出力されます。
 
 ```Dockerfile
 RUN dotnet publish -c Release -o out
 ```
 
-[ **ENTRYPOINT** ](https://docs.docker.com/engine/reference/builder/#entrypoint)命令により、実行可能ファイルとして実行するコンテナーです。
+[**ENTRYPOINT**](https://docs.docker.com/engine/reference/builder/#entrypoint) 命令では、コンテナーを実行可能ファイルとして実行できます。
 
 ```Dockerfile
 ENTRYPOINT ["dotnet", "out/Hello.dll"]
 ```
 
-これで、Dockerfile を。
+これで次のような Dockerfile が用意されました。
 
-* イメージへのアプリをコピーします。
-* イメージに、アプリの依存関係
-* 実行可能ファイルとして実行するアプリをビルドします。
+* アプリをイメージにコピーする
+* アプリの依存関係をイメージにコピーする
+* 実行可能ファイルとして実行できるようにアプリをビルドする
 
-### <a name="build-and-run-the-hello-net-core-20-app"></a>ビルドおよび実行するこんにちは .NET Core 2.0 アプリ
+### <a name="build-and-run-the-hello-net-core-20-app"></a>Hello .NET Core 2.0 アプリをビルドし、実行する
 
-#### <a name="essential-docker-commands"></a>必須の Docker コマンド
+#### <a name="essential-docker-commands"></a>基本的 Docker コマンド
 
-これらの Docker コマンドは、不可欠な。
+次の Docker コマンドは不可欠です。
 
-* [docker のビルド](https://docs.docker.com/engine/reference/commandline/build/)
-* [docker の実行](https://docs.docker.com/engine/reference/commandline/run/)
+* [docker build](https://docs.docker.com/engine/reference/commandline/build/)
+* [docker run](https://docs.docker.com/engine/reference/commandline/run/)
 * [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
 * [docker stop](https://docs.docker.com/engine/reference/commandline/stop/)
 * [docker rm](https://docs.docker.com/engine/reference/commandline/rm/)
 * [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/)
-* [docker イメージ](https://docs.docker.com/engine/reference/commandline/image/)
+* [docker image](https://docs.docker.com/engine/reference/commandline/image/)
 
-#### <a name="build-and-run"></a>ビルドおよび実行します。
+#### <a name="build-and-run"></a>ビルドして実行する
 
-Dockerfile; を作成します。今すぐ Docker では、アプリをビルドして、コンテナーを実行します。
+Dockerfile を記述しました。これで、Docker はアプリをビルドし、コンテナーを実行します。
 
 ```console
 docker build -t dotnetapp-dev .
 docker run --rm dotnetapp-dev Hello from Docker
 ```
 
-出力、`docker build`コマンドを次のコンソール出力に似たものにする必要があります。
+`docker build` コマンドからの出力は、次のコンソール出力と同じようなものになります。
 
 ```console
 Sending build context to Docker daemon   72.7kB
@@ -252,46 +253,46 @@ Successfully built 53c337887e18
 Successfully tagged dotnetapp-dev:latest
 ```
 
-出力からわかるように、Docker エンジンは、コンテナーの構築に Dockerfile を使用します。
+この出力からわかるように、Docker エンジンは Dockerfile を利用してコンテナーをビルドしました。
 
-出力、`docker run`コマンドを次のコンソール出力に似たものにする必要があります。
+`docker run` コマンドからの出力は、次のコンソール出力と同じようなものになります。
 
 ```console
 Hello World!
 ```
 
-おめでとうございます!  だけがある場合。
+おめでとうございます!  今回の成果:
 > [!div class="checklist"]
-> * .NET Core のローカルのアプリケーションの作成
-> * 最初のコンテナーを作成する Dockerfile を作成
-> * 構築され、Dockerized アプリの実行
+> * ローカル .NET Core アプリを作成しました
+> * Dockerfile を作成し、最初のコンテナーをビルドしました
+> * Docker で動作させるアプリをビルドし、実行しました
 
 
 
 ## <a name="next-steps"></a>次の手順
 
-ここでは、いくつか次の手順を実行できます。
+次の手順としては以下のものを用意しています。
 
-* [.NET Docker イメージのビデオの概要](https://channel9.msdn.com/Shows/Code-Conversations/Introduction-to-NET-Docker-Images-with-Kendra-Havens?term=docker)
-* [Visual Studio、Docker と Azure のコンテナー インスタンス高度な連携します。](https://blogs.msdn.microsoft.com/alimaz/2017/08/17/visual-studio-docker-azure-container-instances-better-together/)
-* [Azure クイック スタートの docker](https://docs.docker.com/docker-for-azure/#docker-community-edition-ce-for-azure)
-* [Azure の Docker でのアプリを展開します。](https://docs.docker.com/docker-for-azure/deploy/)
+* [.NET Docker イメージの入門動画](https://channel9.msdn.com/Shows/Code-Conversations/Introduction-to-NET-Docker-Images-with-Kendra-Havens?term=docker)
+* [Visual Studio、Docker、Azure コンテナーのインスタンスの併用の利点](https://blogs.msdn.microsoft.com/alimaz/2017/08/17/visual-studio-docker-azure-container-instances-better-together/)
+* [Docker for Azure クイックスタート](https://docs.docker.com/docker-for-azure/#docker-community-edition-ce-for-azure)
+* [Docker for Azure でアプリをデプロイする](https://docs.docker.com/docker-for-azure/deploy/)
 
 > [!Note]
-> Azure のサブスクリプションを持っていない場合[今すぐサインアップ](https://azure.microsoft.com/free/?b=16.48)30 日間の無料のアカウントと Azure サービスの任意の組み合わせを試す Azure クレジットの get $200 です。
+> Azure サブスクリプションをお持ちでない場合は、[今すぐサインアップ](https://azure.microsoft.com/free/?b=16.48)して 30 日間の無料アカウントと 200 ドル分の Azure クレジットを取得し、お好きな Azure サービスの組み合わせを試しましょう。
 
-## <a name="docker-images-used-in-this-sample"></a>このサンプルで使用する docker イメージ
+## <a name="docker-images-used-in-this-sample"></a>このサンプルで使用されている Docker イメージ
 
-次の Docker イメージは、このサンプルで使用されます。
+次の Docker イメージはこのサンプルで使用されています
 
 * [`microsoft/dotnet:2.0-sdk`](https://hub.docker.com/r/microsoft/dotnet)
 
 ## <a name="related-resources"></a>関連資料
 
-* [.NET core Docker サンプル](https://github.com/dotnet/dotnet-docker-samples/README.md)
+* [.NET Core Docker サンプル](https://github.com/dotnet/dotnet-docker-samples/README.md)
 * [Windows コンテナー上の Dockerfile](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)
-* [.NET framework の Docker のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples)
-* [ASP.NET Core dockerhub を使用しての](https://hub.docker.com/r/microsoft/aspnetcore/)
-* [.NET Core アプリケーションの Docker のチュートリアルを dockerize します。](https://docs.docker.com/engine/examples/dotnetcore/)
+* [.NET Framework Docker サンプル](https://github.com/Microsoft/dotnet-framework-docker-samples)
+* [DockerHub の ASP.NET Core](https://hub.docker.com/r/microsoft/aspnetcore/)
+* [.NET Core アプリケーションを Docker で動作させる - Docker チュートリアル](https://docs.docker.com/engine/examples/dotnetcore/)
 * [Visual Studio Docker ツールの使用](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
-* [Azure のコンテナー インスタンスを Azure のコンテナー レジストリから Docker イメージを展開します。](https://blogs.msdn.microsoft.com/stevelasker/2017/07/28/deploying-docker-images-from-the-azure-container-registry-to-azure-container-instances/)
+* [Azure Container Registry から Azure Container Instances に Docker イメージを配置する](https://blogs.msdn.microsoft.com/stevelasker/2017/07/28/deploying-docker-images-from-the-azure-container-registry-to-azure-container-instances/)

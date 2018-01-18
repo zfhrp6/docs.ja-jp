@@ -20,11 +20,12 @@ caps.latest.revision: "44"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0c93019b2024029fd27d78ac191f0f99bc9b0ce9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f05290486b107f325e61cfffad052311258eee3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
 .NET Client Profile は、.NET Framework のサブセットで、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以前のバージョンに含まれ、クライアント アプリケーション用に最適化されていました。 .NET Framework は、Windows、Windows Phone、および Microsoft Azure 用の開発プラットフォームであり、マネージ アプリの実行環境と .NET Framework クラス ライブラリを提供します。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以前のバージョンでは、2 種類の配置オプション (完全な .NET Framework と Client Profile) が用意されていました。 完全な .NET Framework に比べて、Client Profile では、配置の迅速化とアプリ インストール パッケージの小型化が実現されました。  
@@ -35,8 +36,8 @@ ms.lasthandoff: 11/21/2017
   
  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] をインストールすると、.NET Framework 4 Client Profile は .NET Framework の完全バージョンに更新されます。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールの詳細については、「[開発者向けの .NET Framework のインストール](../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
- [.NET framework Client Profile (.NET Framework 4)](http://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)  
+## <a name="see-also"></a>参照  
+ [.NET Framework Client Profile (.NET Framework 4)](http://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)  
  [Visual Studio のマルチ ターゲットの概要](http://msdn.microsoft.com/library/b1702c33-0672-4ebc-b779-2b324d6ea880)  
  [.NET Framework を対象とするエラーのトラブルシューティング](http://msdn.microsoft.com/library/830e3e45-9a93-4279-a249-75b84599aefb)  
  [方法: .NET Framework のバージョンをターゲットにする](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)

@@ -37,11 +37,12 @@ caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c91195c4e70366a3feb7a96f80e4e44dda89239e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f170c3e7174b231153a9e201f617faa786291056
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>デスクトップ アプリケーションでのリソースのパッケージ化と配置
 アプリケーションは、<xref:System.Resources.ResourceManager> クラスによって表される .NET Framework リソース マネージャーに依存して、ローカライズされたリソースを取得します。 リソース マネージャーでは、リソースのパッケージ化と配置にハブ アンド スポーク モデルを使うことが想定されています。 ハブは、ローカライズできない実行可能コードと、ニュートラル カルチャまたは既定のカルチャと呼ばれる単一カルチャ用のリソースを含む、メイン アセンブリです。 既定のカルチャはアプリケーション用のフォールバック カルチャです。つまり、ローカライズされたリソースが見つからない場合に使われるリソースのカルチャです。 各スポークは、単一のカルチャ用のリソースを含むがコードは含まないサテライト アセンブリに接続します。  
@@ -64,7 +65,7 @@ ms.lasthandoff: 11/21/2017
  アプリケーションのリソースをパッケージ化するときは、共通言語ランタイムで想定されているリソース名前付け規則を使って、リソースに名前を付ける必要があります。 ランタイムは、そのカルチャ名でリソースを識別します。 各カルチャには一意の名前が指定されています。通常は、言語に関連付けられた小文字 2 文字のカルチャ名と、必要に応じて、国または地域に関連付けられた大文字 2 文字のサブカルチャ名を組み合わせたものです。 カルチャ名の後にダッシュ (-) で区切ってサブカルチャ名は記述します。 日本で話される日本語は ja-JP、米国で話される英語は en-US、ドイツで話されるドイツ語は de-DE、オーストリアで話されるドイツ語は de-AT などとなります。 カルチャ名の詳細な一覧については、Go Global デベロッパー センターの「[National Language Support (NLS) API Reference](http://go.microsoft.com/fwlink/?LinkId=200048)」(各国語サポート (NLS) の API リファレンス) をご覧ください。  
   
 > [!NOTE]
->  リソース ファイルの作成方法の詳細については、次を参照してください。[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)と[サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)です。  
+>  リソース ファイルの作成については、「[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)」および「[サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)」をご覧ください。  
   
 <a name="cpconpackagingdeployingresourcesanchor1"></a>   
 ## <a name="the-resource-fallback-process"></a>リソース フォールバック プロセス  
@@ -191,7 +192,7 @@ Bon jour!
 ## <a name="suggested-packaging-alternative"></a>推奨されるパッケージ化の代替方法  
  時間や予算の制約により、アプリケーションがサポートするすべてのサブカルチャのリソース セットを作成できない場合があります。 そのような場合は、関連のあるすべてのサブカルチャで使うことができる親カルチャ用の単一のサテライト アセンブリを作成できます。 たとえば、地域固有の英語リソースを要求するユーザーによって取得される単一の英語サテライト アセンブリ (en) と、地域固有のドイツ語リソースを要求するユーザー用の単一のドイツ語サテライト アセンブリ (de) を提供することができます。 たとえば、ドイツ (de-DE)、オーストリア (de-AT)、スイス (de-CH) で話されるドイツ語の要求は、ドイツ語のサテライト アセンブリ (de) にフォールバックします。 既定のリソースは最終的なフォールバックであり、アプリケーションのほとんどのユーザーによって要求されるリソースであるため、これらのリソースは慎重に選択する必要があります。 この方法では、カルチャ固有性の低いリソースが配置されますが、アプリケーションのローカライズ費用を大幅に削減できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)  
  [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)  
  [リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  

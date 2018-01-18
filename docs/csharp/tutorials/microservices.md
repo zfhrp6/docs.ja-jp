@@ -10,15 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: 6cdc4eb0d0fea93b5210532210ad0c928e35a7a5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d399cdce81350356b71e21d879a4f5b5079f98d8
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="microservices-hosted-in-docker"></a>Docker でホストされているマイクロサービス
-
-## <a name="introduction"></a>はじめに
 
 このチュートリアルでは、Docker コンテナーにおける ASP.NET Core マイクロサービスの構築および展開に必要な作業について説明します。 このチュートリアルを通して、以下のことを学びます。
 
@@ -279,7 +277,7 @@ obj/*
 out/*
 ```
 
-Docker のビルド コマンドを使用してイメージを作成します。 自分のコードが含まれているディレクトリで、次のコマンドを実行します。
+`docker build` コマンドを使用してイメージを作成します。 自分のコードが含まれているディレクトリで、次のコマンドを実行します。
 
 ```console
 docker build -t weather-microservice .

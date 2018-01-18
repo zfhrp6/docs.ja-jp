@@ -16,11 +16,12 @@ caps.latest.revision: "40"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d208867789fc78a82a2e339596a5692280d95ff3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3af5e301e57350b72ac0ea50448c7a46ca6c5387
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework 配置ガイド (管理者向け)
 この記事では、システム管理者が Microsoft System Center Configuration Manager を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのシステムの依存関係をネットワーク経由で配置する方法を手順に沿って説明します。 ここでは、すべての対象のクライアント コンピューターが .NET Framework の最小要件を満たしていることを前提としています。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールに必要なソフトウェア要件とハードウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
  このトピックは、次のセクションで構成されています。  
   
- [展開プロセス](#the_deployment_process)  
+ [配置プロセス](#the_deployment_process)  
  [.NET Framework の配置](#deploying_in_a_test_environment)  
  [コレクションの作成](#creating_a_collection)  
  [パッケージとプログラムの作成](#creating_a_package)  
@@ -138,7 +139,7 @@ ms.lasthandoff: 11/21/2017
 |**/norestart**|セットアップ プログラムが自動的に再起動しないようにします。 このオプションを使用する場合、Configuration Manager でコンピューターの再起動を処理する必要があります。|  
 |**/chainingpackage** *PackageName*|チェーンを行っているパッケージの名前を指定します。 この情報は、[Microsoft カスタマー エクスペリエンス向上プログラム (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244) に申し込んだ場合のその他のインストール セッション情報と共に報告されます。 パッケージ名にスペースが含まれている場合は、区切り記号として二重引用符を使用します (例: **/chainingpackage "Chaining Product"**)。|  
   
- これらの手順によって、.NET Framework 4.5 という名前のパッケージが作成されます。 プログラムは、.NET Framework 4.5 のサイレント インストールを配置します。 サイレント インストールでは、ユーザーが、インストール プロセスを使って操作しないと、チェーン アプリケーションがリターン コードを取得し、再起動; を処理する必要参照してください[インストール パッケージからの進行状況情報の取得](http://go.microsoft.com/fwlink/?LinkId=179606)です。  
+ これらの手順によって、.NET Framework 4.5 という名前のパッケージが作成されます。 プログラムは、.NET Framework 4.5 のサイレント インストールを配置します。 サイレント インストールでは、ユーザーはインストール プロセスと対話しないので、チェーン アプリケーションがリターン コードをキャプチャし、再起動を処理する必要があります。「[Getting Progress Information from an Installation Package](http://go.microsoft.com/fwlink/?LinkId=179606)」 (インストール パッケージからの進行状況に関する情報の取得) を参照してください。  
  
 <a name="select_dist_point"></a>   
 ### <a name="select-a-distribution-point"></a>配布ポイントの選択  
@@ -264,6 +265,6 @@ ms.lasthandoff: 11/21/2017
   
 -   [Windows Update エージェントの結果コード](http://technet.microsoft.com/library/cc720442.aspx)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
  [システム要件](../../../docs/framework/get-started/system-requirements.md)

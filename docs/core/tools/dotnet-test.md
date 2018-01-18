@@ -7,17 +7,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 9eb5be38549711717c11767332bfc84920ea927a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnetcore
+ms.openlocfilehash: fac5e3cb602f6dc5c06b1b29e9924ce4be7ae273
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>名前
+## <a name="name"></a>name
 
 `dotnet test` - 単体テストを実行するために使用される .NET テスト ドライバー。
 
@@ -169,7 +170,7 @@ dotnet test [-h|--help]
 
 ---
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 現在のディレクトリのプロジェクトでテストを実行します。
 
@@ -189,7 +190,7 @@ dotnet test [-h|--help]
 
 | テスト フレームワーク | サポートされるプロパティ                                                                                      |
 | :------------: | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>名前</li><li>ClassName</li><li>優先度</li><li>TestCategory</li></ul> |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>name</li><li>ClassName</li><li>優先度</li><li>TestCategory</li></ul> |
 | Xunit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
 
 `<operator>` は、プロパティと値の関係を示します。
@@ -211,7 +212,7 @@ dotnet test [-h|--help]
 | <code>&#124;</code>      | OR       |
 | `&`      | AND      |
 
-条件演算子を使用する場合、かっこで式を囲むことができます (たとえば、 `(Name~TestMethod1) | (Name~TestMethod2)`)。
+条件演算子を使用する場合は、式をかっこで囲みます (例: `(Name~TestMethod1) | (Name~TestMethod2)`)。
 
 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[Running selective unit tests (選択的単体テストの実行)](../testing/selective-unit-tests.md)」をご覧ください。
 

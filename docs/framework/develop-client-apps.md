@@ -24,11 +24,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: daf09f94b4c0854365274773f8c426cc07e8c6dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f90cbac0e7f78d8965a75df281c0db6b213d9e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-client-applications-with-the-net-framework"></a>.NET Framework を使用したクライアント アプリケーションの開発
 ユーザーのコンピューターやデバイスでローカルに動作する .NET Framework で、Windows ベースのアプリケーションを開発する方法はいくつかあります。 このセクションには、Windows Presentation Foundation (WPF) または Windows Forms を使用して Windows ベースのアプリケーションを作成する方法について説明しているトピックがあります。 ただし、.NET Framework を使用して Web アプリケーションを作成したり、コンピューターやデバイス向けのクライアント アプリケーションを作成したりして、Windows ストアおよび Windows Phone ストアで公開することもできます。  
@@ -59,7 +60,7 @@ ms.lasthandoff: 11/21/2017
  [ASP.NET Web サイト入門](http://www.asp.net/get-started/websites)  
  ASP.NET を使用して Web アプリを開発する方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ポータブル クラス ライブラリ](../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)  
  [概要](../../docs/framework/get-started/overview.md)  
  [開発ガイド](../../docs/framework/development-guide.md)  

@@ -29,11 +29,12 @@ caps.latest.revision: "57"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: af79c4309dfd048562b2ee14a71c6da791040397
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b13da21709bb85ddf376f84df4fe2c7ae9f1a513
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (ネイティブ イメージ ジェネレーター)
 ネイティブ イメージ ジェネレーター (Ngen.exe) は、マネージ アプリケーションのパフォーマンスを向上するツールです。 Ngen.exe は、コンパイルされたプロセッサ固有のマシン コードを含むファイルであるネイティブ イメージを作成してローカル コンピューターのネイティブ イメージ キャッシュにインストールします。 ランタイムは、Just-In-Time (JIT) コンパイラを使用してオリジナルのアセンブリをコンパイルする代わりに、キャッシュにあるネイティブ イメージを使用できます。  
@@ -58,12 +59,12 @@ ms.lasthandoff: 11/21/2017
   
  Windows 8 の場合、「[ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)」を参照してください。  
   
- Ngen.exe とネイティブ イメージ サービスの使用に関する追加情報については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+ Ngen.exe とネイティブ イメージ サービスの使用に関する追加情報については、「[ネイティブ イメージ サービス][Native Image Service]」を参照してください。  
   
 > [!NOTE]
 >  .NET Framework バージョン 1.0 とバージョン 1.1 の Ngen.exe 構文は、「[ネイティブ イメージ ジェネレーター (Ngen.exe) のレガシ構文](http://msdn.microsoft.com/en-us/5a69fc7a-103f-4afc-8ab4-606adcb46324)」に記されています。  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
@@ -80,13 +81,13 @@ ngen /? | /help
 ## <a name="actions"></a>アクション  
  各 `action` の構文を示す表を次に示します。 `action` の各部分の説明については、「[引数](#ArgumentTable)」、「[優先順位](#PriorityTable)」、「[シナリオ](#ScenarioTable)」、および「[構成](#ConfigTable)」の各表を参照してください。 `options` およびヘルプ スイッチについては、「[オプション](#OptionTable)」の表を参照してください。  
   
-|操作|説明|  
+|アクション|説明|  
 |------------|-----------------|  
 |`install` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`] [`/queue`[`:`{`1`&#124;`2`&#124;`3`}]]|アセンブリおよびそれに依存する項目のネイティブ イメージを生成してネイティブ イメージ キャッシュにインストールします。<br /><br /> `/queue` を指定すると、アクションはネイティブ イメージ サービスのキューに置かれます。 既定の優先順位は 3 です。 「[優先順位](#PriorityTable)」の表を参照してください。|  
 |`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|アセンブリのネイティブ イメージとその依存関係をネイティブ イメージ キャッシュから削除します。<br /><br /> 単一のイメージとその依存関係をアンインストールするには、そのイメージをインストールしたときと同じコマンド ライン引数を使用します。 **メモ:** [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、アクション `uninstall` * はサポートされなくなりました。|  
 |`update` [`/queue`]|無効になったネイティブ イメージを更新します。<br /><br /> `/queue` を指定すると、更新はネイティブ イメージ サービスのキューに置かれます。 更新は常に優先順位 3 でスケジュールされるため、コンピューターがアイドル状態のときに実行されます。|  
 |`display` [`assemblyName` &#124; `assemblyPath`]|アセンブリのネイティブ イメージとその依存関係の状態を表示します。<br /><br /> 引数を指定しなければ、ネイティブ イメージ キャッシュのすべての内容が表示されます。|  
-|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> または<br /><br /> `eqi` [1&#124;2&#124;3]|キューに置かれているコンパイル ジョブを実行します。<br /><br /> 優先順位を指定すると、優先順位が高いかまたは同じコンパイル ジョブが実行されます。 優先順位を指定しなければ、キューに置かれているすべてのコンパイル ジョブが実行されます。|  
+|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> - または -<br /><br /> `eqi` [1&#124;2&#124;3]|キューに置かれているコンパイル ジョブを実行します。<br /><br /> 優先順位を指定すると、優先順位が高いかまたは同じコンパイル ジョブが実行されます。 優先順位を指定しなければ、キューに置かれているすべてのコンパイル ジョブが実行されます。|  
 |`queue` {`pause` &#124; `continue` &#124; `status`}|ネイティブ イメージ サービスを一時停止するか、停止しているサービスを再開するか、またはサービスの状態を照会します。|  
   
 <a name="ArgumentTable"></a>   
@@ -104,7 +105,7 @@ ngen /? | /help
 |--------------|-----------------|  
 |`1`|ネイティブ イメージが生成され、アイドル時間まで待たずに直ちにインストールされます。|  
 |`2`|ネイティブ イメージが生成され、アイドル時間まで待たずにインストールされますが、優先順位 1 のすべてのアクション (およびその依存関係) が完了した後にインストールされます。|  
-|`3`|コンピューターがアイドル状態になったことをネイティブ イメージ サービスが検出するとネイティブ イメージがインストールされます。 「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。|  
+|`3`|コンピューターがアイドル状態になったことをネイティブ イメージ サービスが検出するとネイティブ イメージがインストールされます。 「[ネイティブ イメージ サービス][Native Image Service]」を参照してください。|  
   
 <a name="ScenarioTable"></a>   
 ## <a name="scenarios"></a>シナリオ  
@@ -321,7 +322,7 @@ using namespace System::Runtime::CompilerServices;
   
 <a name="Deferred"></a>   
 ## <a name="deferred-processing"></a>遅延処理  
- 非常に大きいアプリケーションのネイティブ イメージの生成には、かなりの時間がかかります。 同様に、共有コンポーネントへの変更またはコンピューター設定への変更には、多くのネイティブ イメージの更新が必要になります。 `install` アクションと `update` アクションには `/queue` オプションがあり、これによって、ネイティブ イメージ サービスによる遅延実行をキューに置くことができます。 さらに、Ngen.exe には、サービスを制御するための `queue` アクションと `executeQueuedItems` アクションがあります。 詳細については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+ 非常に大きいアプリケーションのネイティブ イメージの生成には、かなりの時間がかかります。 同様に、共有コンポーネントへの変更またはコンピューター設定への変更には、多くのネイティブ イメージの更新が必要になります。 `install` アクションと `update` アクションには `/queue` オプションがあり、これによって、ネイティブ イメージ サービスによる遅延実行をキューに置くことができます。 さらに、Ngen.exe には、サービスを制御するための `queue` アクションと `executeQueuedItems` アクションがあります。 詳細については、「[ネイティブ イメージ サービス][Native Image Service]」を参照してください。  
   
 <a name="JITCompilation"></a>   
 ## <a name="native-images-and-jit-compilation"></a>ネイティブ イメージと JIT コンパイル  
@@ -393,7 +394,7 @@ using namespace System::Runtime::CompilerServices;
  [!code-csharp[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#2)]
  [!code-vb[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#2)]  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次のコマンドは、現在のディレクトリにある `ClientApp.exe` のネイティブ イメージを生成し、ネイティブ イメージ キャッシュにインストールします。 アセンブリの構成ファイルが存在する場合、Ngen.exe はその構成ファイルを使用します。 さらに、ネイティブ イメージは、`ClientApp.exe` が参照するあらゆる .dll ファイルに対して生成されます。  
   
 ```  
@@ -427,7 +428,7 @@ ngen install c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe
 ngen uninstall c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe  
 ```  
   
- グローバル アセンブリ キャッシュにアセンブリのネイティブ イメージを作成するには、アセンブリの表示名を使用します。 次に例を示します。  
+ グローバル アセンブリ キャッシュにアセンブリのネイティブ イメージを作成するには、アセンブリの表示名を使用します。 例:  
   
 ```  
 ngen install "ClientApp, Version=1.0.0.0, Culture=neutral,   
@@ -478,7 +479,7 @@ ngen display "myAssembly, version=1.0.0.0"
 ngen update  
 ```  
   
- すべてのイメージを更新するプロセスは、長くなることがあります。 ネイティブ イメージ サービスによる更新は、`/queue` オプションを使用してキューに置くことができます。 `/queue` オプションとインストールの優先順位の詳細については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+ すべてのイメージを更新するプロセスは、長くなることがあります。 ネイティブ イメージ サービスによる更新は、`/queue` オプションを使用してキューに置くことができます。 `/queue` オプションとインストールの優先順位の詳細については、「[ネイティブ イメージ サービス][Native Image Service]」を参照してください。  
   
 ```  
 ngen update /queue  
@@ -519,7 +520,7 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
   
  `install` アクションと同様に、拡張子を指定する場合は、アセンブリが格納されているディレクトリから Ngen.exe を実行するか、またはフル パスを指定する必要があります。  
   
- ネイティブ イメージ サービスに関連する例については、「[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)」を参照してください。  
+ ネイティブ イメージ サービスに関連する例については、「[ネイティブ イメージ サービス][Native Image Service]」を参照してください。  
   
 ## <a name="native-image-task"></a>ネイティブ イメージ タスク  
  ネイティブ イメージ タスクは、ネイティブ イメージを生成および保持する Windows タスクです。 ネイティブ イメージ タスクは、サポートされるシナリオでネイティブ イメージを自動的に生成し、解放します。 (「[ネイティブ イメージの作成](http://msdn.microsoft.com/en-us/2bc8b678-dd8d-4742-ad82-319e9bf52418)」を参照してください)。また、インストーラーが、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して、遅延時にネイティブ イメージを生成および更新できるようにします。  
@@ -528,10 +529,10 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
   
 |タスク名|32 ビット コンピューター|64 ビット コンピューター|  
 |---------------|----------------------|----------------------|  
-|NET Framework NGEN v4.0.30319|はい|はい|  
-|NET Framework NGEN v4.0.30319 64|いいえ|はい|  
+|NET Framework NGEN v4.0.30319|[はい]|[はい]|  
+|NET Framework NGEN v4.0.30319 64|×|[はい]|  
   
- ネイティブ イメージ タスクは、Windows 8 以降の実行時に .NET Framework 4.5 以降のバージョンで使用できます。 Windows の以前のバージョンでは、.NET Framework は[ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)を使用します。  
+ ネイティブ イメージ タスクは、Windows 8 以降の実行時に .NET Framework 4.5 以降のバージョンで使用できます。 Windows の以前のバージョンでは、.NET Framework は[ネイティブ イメージ サービス][Native Image Service]を使用します。  
   
 ### <a name="task-lifetime"></a>タスクの有効期間  
  一般に、Windows タスク スケジューラは、毎晩、コンピューターがアイドル状態のときにネイティブ イメージ タスクを開始します。 このタスクでは、アプリケーション インストーラーによってキューに入れられている遅延作業、遅延されているネイティブ イメージ更新要求、自動イメージ作成がないかどうかをチェックします。 このタスクは未完了の作業項目を完了すると、停止します。 このタスクの実行中にコンピューターがアイドル状態になると、タスクは停止します。  
@@ -592,10 +593,10 @@ ngen executeQueuedItems
 ### <a name="service-interaction-with-clients"></a>クライアントとサービスとのやり取り  
  .NET Framework Version 2.0 では、必ず Ngen.exe というコマンド ライン ツールを使用してネイティブ イメージ サービスとやり取りします。 インストール スクリプトでコマンド ライン ツールを使用してネイティブ イメージ サービスのアクションをキューに置いたり、サービスとやり取りしたりします。  
   
-## <a name="see-also"></a>関連項目  
- [ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)  
- [ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)  
+## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
  [マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)  
  [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+ [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+
+[Native Image Service]: #native-image-service
