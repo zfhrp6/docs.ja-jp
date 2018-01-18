@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0f5aed56ba4958d44e0628f55115308751afae55
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a71ba7ed12196184b7e826ed70c92a9873efdb0c
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>パラメーターおよびパラメーター データ型の構成
 コマンド オブジェクトは、パラメーターを使用して SQL ステートメントまたはストアド プロシージャに値を渡すことによって、型チェックと検証の機能を実現します。 コマンド テキストとは異なり、パラメーターの入力は実行可能なコードとしてではなく、リテラル値として扱われます。 これにより、攻撃者がサーバーのセキュリティを侵害するコマンドを SQL ステートメントに "注入" する SQL インジェクション攻撃を防ぐことができます。  
@@ -57,22 +57,22 @@ ms.lasthandoff: 12/22/2017
   
 |.NET Framework 型|DbType|SqlDbType|OleDbType|OdbcType|OracleType|  
 |-------------------------|------------|---------------|---------------|--------------|----------------|  
-|<xref:System.Boolean>|ブール型|ビット|ブール型|ビット|Byte|  
+|<xref:System.Boolean>|Boolean|ビット|ブール型|ビット|Byte|  
 |<xref:System.Byte>|Byte|TinyInt|UnsignedTinyInt|TinyInt|Byte|  
 |byte[]|2 項|VarBinary`.` 8000 バイトがバイト配列が VarBinary の最大サイズより大きい場合、この暗黙の変換は失敗します。8000 バイトを超えるバイト配列を明示的に設定、<xref:System.Data.SqlDbType>です。|VarBinary|2 項|Raw|  
 |<xref:System.Char>|``|char から <xref:System.Data.SqlDbType> への推論はサポートされていません。|Char|Char|Byte|  
 |<xref:System.DateTime>|DateTime|DateTime|DBTimeStamp|DateTime|DateTime|  
 |<xref:System.DateTimeOffset>|DateTimeOffset|SQL Server 2008 の DateTimeOffset。 SQL Server 2008 より前のバージョンの SQL Server では、DateTimeOffset から <xref:System.Data.SqlDbType> への推論はサポートされていません。|||DateTime|  
 |<xref:System.Decimal>|Decimal (10 進数型)|Decimal (10 進数型)|Decimal (10 進数型)|数字|Number|  
-|<xref:System.Double>|倍精度浮動小数点型|Float|Double (倍精度浮動小数点型)|倍精度浮動小数点型|倍精度浮動小数点型|  
+|<xref:System.Double>|Double (倍精度浮動小数点型)|Float|Double (倍精度浮動小数点型)|倍精度浮動小数点型|Double (倍精度浮動小数点型)|  
 |<xref:System.Single>|Single|Real|Single|Real|Float|  
 |<xref:System.Guid>|Guid|UniqueIdentifier|Guid|UniqueIdentifier|Raw|  
 |<xref:System.Int16 >|Int16|SmallInt|SmallInt|SmallInt|Int16|  
 |<xref:System.Int32>|Int32|Int|Int|Int|Int32|  
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Number|  
-|<xref:System.Object>|オブジェクト|バリアント|バリアント|Object から OdbcType への推論はサポートされていません。|Blob|  
+|<xref:System.Object>|Object|バリアント|バリアント|Object から OdbcType への推論はサポートされていません。|Blob|  
 |<xref:System.String>|String|NVarChar。 文字列が NVarChar の最大サイズ (4000 文字) より大きい場合、この暗黙の変換はエラーになります。 4000 文字を超える文字列の場合は、明示的に <xref:System.Data.SqlDbType>を設定してください。|VarWChar|NVarChar|NVarChar|  
-|<xref:System.TimeSpan>|時間|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、TimeSpan から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時刻|DateTime|  
+|<xref:System.TimeSpan>|時刻|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、TimeSpan から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時刻|DateTime|  
 |<xref:System.UInt16>|UInt16|UInt16 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedSmallInt|Int|UInt16|  
 |<xref:System.UInt32>|UInt32|UInt32 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedInt|BigInt|UInt32|  
 |<xref:System.UInt64>|UInt64|UInt64 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedBigInt|数字|Number|  

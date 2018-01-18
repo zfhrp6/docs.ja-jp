@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ec8a9515-3708-4cde-a688-4d8e6975f150
 caps.latest.revision: "7"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a219e4e3a58e3bd3e71bab3d3c41c87c393b20da
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82bb3ca8bd5ef0659bbb222753b3225288fcbcfc
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="modeling-and-mapping"></a>モデリングとマッピング
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、概念モデル、ストレージ モデル、およびこの 2 つのモデル間のマッピングをアプリケーションに最適な方法で定義できます。 Entity Data Model ツール[!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)]を作成することは、[ 。edmx ファイル](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)データベースまたはグラフィカルなモデルと、更新データベースまたはモデルのいずれかが変更されたときにこのファイルからです。  

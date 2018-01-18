@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ee356fc3e7d6e1279e0cba8014d6d285620add3b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aea41a58697acaad0b089f8e35b9f870e8bf841d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM ジェネレーター (EdmGen.exe)
 EdmGen.exe は、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] モデルとマッピング ファイルを操作するためのコマンドライン ツールです。 EdmGen.exe ツールを使用すると、次の操作を行うことができます。  
@@ -54,26 +54,26 @@ EdmGen /mode:choice [options]
   
 |オプション|説明|  
 |------------|-----------------|  
-|`/p[roject]:`\<文字列 >|使用するプロジェクト名を指定します。 このプロジェクト名は、名前空間の設定の既定値、モデル ファイルとマッピング ファイルの名前、オブジェクト ソース ファイルの名前、およびビュー生成のソース ファイルの名前として使用されます。 設定されているエンティティ コンテナー名\<プロジェクト > コンテキスト。|  
-|`/prov[ider]:`\<文字列 >|ストレージ モデル (.ssdl) ファイルの生成に使用する [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] データ プロバイダーの名前です。 既定のプロバイダーは、 [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>)。|  
+|`/p[roject]:`\<string>|使用するプロジェクト名を指定します。 このプロジェクト名は、名前空間の設定の既定値、モデル ファイルとマッピング ファイルの名前、オブジェクト ソース ファイルの名前、およびビュー生成のソース ファイルの名前として使用されます。 設定されているエンティティ コンテナー名\<プロジェクト > コンテキスト。|  
+|`/prov[ider]:`\<string>|ストレージ モデル (.ssdl) ファイルの生成に使用する [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] データ プロバイダーの名前です。 既定のプロバイダーは、 [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>)。|  
 |`/c[onnectionstring]:`\<接続文字列 >|データ ソースへの接続に使用する文字列を指定します。|  
-|`/incsdl:`\<ファイル >|.csdl ファイル、または .csdl ファイルがあるディレクトリを指定します。 この引数は複数回指定できるので、複数のディレクトリまたは .csdl ファイルを指定できます。 概念モデルが複数のファイルに分割されている場合にクラスの生成 (`/mode:EntityClassGeneration`) またはビューの生成 (`/mode:ViewGeneration`) を行うときは、複数のディレクトリを指定すると便利です。 また、複数のモデルを検証する (`/mode:ValidateArtifacts`) 場合にも役立ちます。|  
-|`/refcsdl:`\<ファイル >|追加の .csdl ファイル、またはソース .csdl ファイルの参照の解決に使用するファイルを指定します  (ソース .csdl ファイルは、`/incsdl` オプションで指定したファイルです)。 `/refcsdl` ファイルには、ソース .csdl ファイルが依存する型が含まれています。 この引数は複数回指定できます。|  
-|`/inmsl:`\<ファイル >|.msl ファイル、または .msl ファイルがあるディレクトリを指定します。 この引数は複数回指定できるので、複数のディレクトリまたは .msl ファイルを指定できます。 概念モデルが複数のファイルに分割されている場合にビューを生成 (`/mode:ViewGeneration`) するときは、複数のディレクトリを指定すると便利です。 また、複数のモデルを検証する (`/mode:ValidateArtifacts`) 場合にも役立ちます。|  
-|`/inssdl:`\<ファイル >|.ssdl ファイル、または .ssdl ファイルがあるディレクトリを指定します。 この引数は複数回指定できるので、複数のディレクトリまたは .ssdl ファイルを指定できます。 これは、複数のモデルを検証する場合 `(/mode:ValidateArtifacts)` に役立ちます。|  
-|`/outcsdl:`\<ファイル >|作成される .csdl ファイルの名前を指定します。|  
-|`/outmsl:`\<ファイル >|作成される .msl ファイルの名前を指定します。|  
-|`/outssdl:`\<ファイル >|作成される .ssdl ファイルの名前を指定します。|  
-|`/outobjectlayer:`\<ファイル >|.csdl ファイルから生成されたオブジェクトを含むソース コード ファイルの名前を指定します。|  
-|`/outviews:`\<ファイル >|生成されたビューを含むソース コード ファイルの名前を指定します。|  
-|`/language:`[VB &#124;です。CSharp]|生成されるソース コード ファイルの言語を指定します。 既定の言語は C# です。|  
-|`/namespace:`\<文字列 >|使用するモデル名前空間を指定します。 名前空間は、`/mode:FullGeneration` または `/mode:FromSSDLGeneration` の実行時に .csdl ファイルに設定されます。 `/mode:EntityClassGeneration` の実行時には名前空間は使用されません。|  
-|`/entitycontainer:`\<文字列 >|生成されたモデル ファイルとマッピング ファイルの `<EntityContainer>` 要素に適用する名前を指定します。|  
+|`/incsdl:`\<file>|.csdl ファイル、または .csdl ファイルがあるディレクトリを指定します。 この引数は複数回指定できるので、複数のディレクトリまたは .csdl ファイルを指定できます。 概念モデルが複数のファイルに分割されている場合にクラスの生成 (`/mode:EntityClassGeneration`) またはビューの生成 (`/mode:ViewGeneration`) を行うときは、複数のディレクトリを指定すると便利です。 また、複数のモデルを検証する (`/mode:ValidateArtifacts`) 場合にも役立ちます。|  
+|`/refcsdl:`\<file>|追加の .csdl ファイル、またはソース .csdl ファイルの参照の解決に使用するファイルを指定します  (ソース .csdl ファイルは、`/incsdl` オプションで指定したファイルです)。 `/refcsdl` ファイルには、ソース .csdl ファイルが依存する型が含まれています。 この引数は複数回指定できます。|  
+|`/inmsl:`\<file>|.msl ファイル、または .msl ファイルがあるディレクトリを指定します。 この引数は複数回指定できるので、複数のディレクトリまたは .msl ファイルを指定できます。 概念モデルが複数のファイルに分割されている場合にビューを生成 (`/mode:ViewGeneration`) するときは、複数のディレクトリを指定すると便利です。 また、複数のモデルを検証する (`/mode:ValidateArtifacts`) 場合にも役立ちます。|  
+|`/inssdl:`\<file>|.ssdl ファイル、または .ssdl ファイルがあるディレクトリを指定します。 この引数は複数回指定できるので、複数のディレクトリまたは .ssdl ファイルを指定できます。 これは、複数のモデルを検証する場合 `(/mode:ValidateArtifacts)` に役立ちます。|  
+|`/outcsdl:`\<file>|作成される .csdl ファイルの名前を指定します。|  
+|`/outmsl:`\<file>|作成される .msl ファイルの名前を指定します。|  
+|`/outssdl:`\<file>|作成される .ssdl ファイルの名前を指定します。|  
+|`/outobjectlayer:`\<file>|.csdl ファイルから生成されたオブジェクトを含むソース コード ファイルの名前を指定します。|  
+|`/outviews:`\<file>|生成されたビューを含むソース コード ファイルの名前を指定します。|  
+|`/language:`[VB&#124;CSharp]|生成されるソース コード ファイルの言語を指定します。 既定の言語は C# です。|  
+|`/namespace:`\<string>|使用するモデル名前空間を指定します。 名前空間は、`/mode:FullGeneration` または `/mode:FromSSDLGeneration` の実行時に .csdl ファイルに設定されます。 `/mode:EntityClassGeneration` の実行時には名前空間は使用されません。|  
+|`/entitycontainer:`\<string>|生成されたモデル ファイルとマッピング ファイルの `<EntityContainer>` 要素に適用する名前を指定します。|  
 |`/pl[uralize]`|単数形と複数形の英語のルールを、概念モデルの `Entity`、`EntitySet`、および `NavigationProperty` の各名前に適用します。 このオプションでは、以下の処理が実行されます。<br /><br /> -すべてのください`EntityType`単数形の名前。<br />-すべてのください`EntitySet`複数形の名前。<br />-ごと`NavigationProperty`最大で 1 つのエンティティを返す場合、名前の単数形です。<br />-ごと`NavigationProperty`が返すエンティティが 1 つ以上の場合、名前の複数形です。|  
 |`/SupressForeignKeyProperties or /nofk`|外部キー列が概念モデルのエンティティ型のスカラー プロパティとして公開されないようにします。|  
 |`/help` または `?`|このツールのコマンド構文とオプションを表示します。|  
 |`/nologo`|著作権メッセージが表示されないようにします。|  
-|`/targetversion:`\<文字列 >|生成されたコードのコンパイルに使用される .NET Framework のバージョンです。 サポートされているバージョンは 4 と 4.5 です。 既定値は 4 です。|  
+|`/targetversion:` \<string>|生成されたコードのコンパイルに使用される .NET Framework のバージョンです。 サポートされているバージョンは 4 と 4.5 です。 既定値は 4 です。|  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法: EdmGen.exe を使用してモデル ファイルとマッピング ファイルを生成する](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)  

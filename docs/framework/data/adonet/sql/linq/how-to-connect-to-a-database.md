@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: c33d74b3-530d-421b-a121-96786dd263a5
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d03dc5a3775ee9396573d58637c32f824760768f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a5447ce64803405668a2d486c7b3071b5ff923cb
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="how-to-connect-to-a-database"></a>方法 : データベースに接続する
 データベースへの接続、データベースからのオブジェクトの取得、およびデータベースへの変更内容の反映では、<xref:System.Data.Linq.DataContext> を仲介役として使用します。 使用する、<xref:System.Data.Linq.DataContext>使用したのと同様、 [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection>です。 つまり、接続または接続文字列を指定して、<xref:System.Data.Linq.DataContext> を初期化します。 詳細については、次を参照してください。 [DataContext メソッド (O/r デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer)です。  

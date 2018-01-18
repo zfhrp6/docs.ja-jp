@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 11ca23427460ed4c469fc45e43f3b32e4ec5eb25
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 26678ebf9478efadc73661defe19be77cb69d075
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>ADO.NET テクノロジのオプションとガイドライン
 ADO.NET データ プラットフォームは、概念エンティティ データ モデルに対してプログラムを作成できるようにして、開発者に必要とされるコード作成と保守作業の量を減らすための、複数のリリースにわたる戦略です。 このプラットフォームには、ADO.NET Entity Framework と関連技術が含まれています。  
@@ -30,7 +30,7 @@ ADO.NET データ プラットフォームは、概念エンティティ デー�
  エンティティ データ モデル (EDM) は、アプリケーション データをエンティティとリレーションシップの集合として定義するデザイン仕様です。 このモデルのデータは、アプリケーションの境界を越えたオブジェクト リレーショナル マッピングとデータ プログラミング機能をサポートします。  
   
 ### <a name="object-services"></a>オブジェクト サービス  
- Object Services を使用すると、プログラマが一連の共通言語ランタイム (CLR) クラスを介して概念モデルを操作できるようになります。 これらのクラスは、概念モデルから自動的に生成することも、概念モデルの構造を反映するように別途開発することもできます。 Object Services は、状態の管理、変更の追跡、ID の解決、リレーションシップの読み込みとナビゲート、オブジェクト変更のデータベースへの反映、Entity SQL のクエリ作成サポートなどのサービスを含む、エンティティ フレームワークに対するインフラストラクチャ サポートも提供します。 詳細は、[Object Services の概要 (Entity Framework)](http://msdn.microsoft.com/en-us/43014cf9-c9cb-4538-bfbb-197820b60038) をご覧ください。  
+ Object Services を使用すると、プログラマが一連の共通言語ランタイム (CLR) クラスを介して概念モデルを操作できるようになります。 これらのクラスは、概念モデルから自動的に生成することも、概念モデルの構造を反映するように別途開発することもできます。 Object Services は、状態の管理、変更の追跡、ID の解決、リレーションシップの読み込みとナビゲート、オブジェクト変更のデータベースへの反映、Entity SQL のクエリ作成サポートなどのサービスを含む、Entity Framework に対するインフラストラクチャ サポートも提供します。 詳細は、[Object Services の概要 (Entity Framework)](http://msdn.microsoft.com/en-us/43014cf9-c9cb-4538-bfbb-197820b60038) をご覧ください。  
   
 ### <a name="linq-to-entities"></a>LINQ to Entities  
  LINQ to Entities は、LINQ の式と標準クエリ演算子を使用することにより、Entity Framework オブジェクト コンテキストに対して厳密に型指定されたクエリを作成できるようにする統合言語クエリ (LINQ) の実装です。 LINQ to Entities を使用すると、開発者は Microsoft SQL Server とサードパーティ データベース間の非常に柔軟なオブジェクト リレーショナル マッピングを使用して、概念モデルを操作できます。 詳細については、次を参照してください。 [LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)です。  

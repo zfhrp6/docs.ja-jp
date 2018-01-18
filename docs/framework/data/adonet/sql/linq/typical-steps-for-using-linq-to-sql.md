@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ba49a4394d2a52b199edab88b977d2322bff945f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3aedef610d8ad3f743b346a46059b15d917cf7ca
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>典型的な LINQ to SQL の使用手順
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションを実装するには、このトピックで説明する手順に従います。 多くの手順は省略できます。 既定の状態でオブジェクト モデルを使用することもできます。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="1-select-a-tool-to-create-the-model"></a>1.モデルを作成するツールを選択します。  
  モデルを作成するツールとして、3 つのツールを使用できます。  
   
--   [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
+-   [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]   
   
      このデザイナーは、既存のデータベースからモデルを作成する多機能なユーザー インターフェイスを備えています。 このツールは [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] IDE の一部であり、小規模または中規模のデータベースに最適です。  
   

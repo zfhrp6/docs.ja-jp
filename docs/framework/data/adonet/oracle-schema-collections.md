@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2ac06c78670b4113ab718c06423c04c0ea27c208
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4f199a0fc0939bd5fae4fefb7440c46bd471e4b6
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="oracle-schema-collections"></a>Oracle スキーマ コレクション
 Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ コレクションに加えて次のスキーマ コレクションをサポートしています。  
@@ -156,7 +156,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |TIMESTAMP|String|オブジェクト (文字データ) の指定に対するタイムスタンプ。|  
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
+|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124; N).|  
 |SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
 |CREATED|DateTime|オブジェクトが作成された日付。|  
   
@@ -231,7 +231,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |TIMESTAMP|String|オブジェクト (文字データ) の指定に対するタイムスタンプ。|  
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
+|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124; N).|  
 |SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
   
 ## <a name="packages"></a>パッケージ  
@@ -247,7 +247,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |TIMESTAMP|String|オブジェクト (文字データ) の指定に対するタイムスタンプ。|  
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
+|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124; N).|  
 |SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
 |CREATED|DateTime|オブジェクトが作成された日付。|  
   
@@ -264,7 +264,7 @@ Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ �
 |TIMESTAMP|String|オブジェクト (文字データ) の指定に対するタイムスタンプ。|  
 |STATUS|String|オブジェクトのステータス (VALID、INVALID、または N/A)。|  
 |TEMPORARY|String|オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124;です。N)。|  
+|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します  (Y &#124; N).|  
 |SECONDARY|String|これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。|  
 |CREATED|DateTime|オブジェクトが作成された日付。|  
   

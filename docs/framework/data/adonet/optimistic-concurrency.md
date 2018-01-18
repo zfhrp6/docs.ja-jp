@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 0cd77b63c54b926c21641024c7688476cef2fdcf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4cc1ac0446f13bcc6bc1c8262eae5716302c3e2d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="optimistic-concurrency"></a>オプティミスティック同時実行制御
 マルチユーザー環境には、データベースのデータを更新するための 2 つのモデルがあります。オプティミスティック同時実行制御とペシミスティック同時実行制御です。 <xref:System.Data.DataSet> オブジェクトは、データをリモート処理するときや、データと対話するときのように長時間にわたる利用状況では、オプティミスティック同時実行制御の使用を奨励するように設計されています。  
@@ -41,9 +41,9 @@ ms.lasthandoff: 12/22/2017
   
  午後 1 時に、User1 が、次の値を持つデータベースから行を読み取ります。  
   
- **CustID LastName FirstName**  
+ **CustID     LastName     FirstName**  
   
- 101 Smith Bob  
+ 101          Smith             Bob  
   
 |列名|元の値|現在の値|データベース内の値|  
 |-----------------|--------------------|-------------------|-----------------------|  

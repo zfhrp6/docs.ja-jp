@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
 caps.latest.revision: "8"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 9781d97a133a39a7768c853ce80f7524db87df39
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d55185153e3d03ddb2b1726ed25566d6b5f396ae
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ と ADO.NET
 今日、ビジネス アプリケーション開発者の多くは、2 つ (またはそれ以上) のプログラミング言語を使ってアプリケーションを開発しています。ビジネス ロジックやプレゼンテーション層には高級言語 ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] など) が、データベースとの対話にはクエリ言語 ([!INCLUDE[tsql](../../../../includes/tsql-md.md)] など) が使用されています。 開発者は実質的に複数の言語に精通していることが要求され、開発環境における言語の不整合が生じる原因にもなっています。 たとえば、データ アクセス API を使用してデータベースを照会するアプリケーションでは、クエリは文字列リテラルとして引用符で囲んで指定する必要があります。 コンパイラはこのクエリ文字列を認識できないため、エラー (無効な構文、参照されている列または行が実際に存在するかどうかなど) のチェック機構が働きません。 クエリ パラメーターの型チェックや `IntelliSense` のサポートもありません。  

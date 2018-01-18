@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3d3ba44b-4302-40d8-a7a9-62932e0395e5
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 232098a4940e223fd8553eefa4964777b1695c5b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c343a0eba2478e041186f7bef18a85400c54bb5c
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="referential-integrity-constraint"></a>参照整合性制約
 A*参照整合性制約*Entity Data Model (EDM) では、リレーショナル データベースの参照整合性制約に似ています。 データベース テーブルから列 (または列) が、別のテーブルの主キーを参照できるように、同じ方法で、[プロパティ](../../../../docs/framework/data/adonet/property.md)(またはプロパティ) の[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)参照できる、[エンティティ キー](../../../../docs/framework/data/adonet/entity-key.md)別のエンティティ型。 参照されるエンティティ型が呼び出される、*プリンシパル end*制約のです。 プリンシパル end を参照するエンティティ型が呼び出される、*依存 end*制約のです。  

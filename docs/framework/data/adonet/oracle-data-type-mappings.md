@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ec34ae21-bbbb-4adb-b672-83865e2a8451
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6ec4bc061ea7a2b7875c9c5521d73dfd2e96954a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: adb0fc332e00e766a62d0af1c110c5a7ce2d42c3
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="oracle-data-type-mappings"></a>Oracle データ型のマッピング
 次の表に、Oracle データ型およびその <xref:System.Data.OracleClient.OracleDataReader> へのマップを示します。  
@@ -31,19 +31,19 @@ ms.lasthandoff: 12/22/2017
 |**CLOB**|**String**|<xref:System.Data.OracleClient.OracleLob>||  
 |**DATE**|**DateTime**|<xref:System.Data.OracleClient.OracleDateTime>||  
 |**FLOAT**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|このデータ型のエイリアスでは、**数**データ型とは、できるように、<xref:System.Data.OracleClient.OracleDataReader>を返します、 **System.Decimal**または<xref:System.Data.OracleClient.OracleNumber>浮動小数点値の代わりにします。 .NET Framework データ型を使用することで、オーバーフローが発生する場合があります。|  
-|**整数**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|このデータ型のエイリアスでは、 **NUMBER(38)**データ型とは、できるように、<xref:System.Data.OracleClient.OracleDataReader>を返します、 **System.Decimal**または<xref:System.Data.OracleClient.OracleNumber>整数値の代わりにします。 .NET Framework データ型を使用することで、オーバーフローが発生する場合があります。|  
+|**INTEGER**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|このデータ型のエイリアスでは、 **NUMBER(38)**データ型とは、できるように、<xref:System.Data.OracleClient.OracleDataReader>を返します、 **System.Decimal**または<xref:System.Data.OracleClient.OracleNumber>整数値の代わりにします。 .NET Framework データ型を使用することで、オーバーフローが発生する場合があります。|  
 |**INTERVAL YEAR TO MONTH**|**Int32**|<xref:System.Data.OracleClient.OracleMonthSpan>||  
 |**INTERVAL DAY TO 秒**|**TimeSpan**|<xref:System.Data.OracleClient.OracleTimeSpan>||  
 |**LONG**|**String**|<xref:System.Data.OracleClient.OracleString>||  
 |**LONG RAW**|**Byte[]**|<xref:System.Data.OracleClient.OracleBinary>||  
 |**NCHAR**|**String**|<xref:System.Data.OracleClient.OracleString>||  
 |**NCLOB**|**String**|<xref:System.Data.OracleClient.OracleLob>||  
-|**数**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|.NET Framework データ型を使用することで、オーバーフローが発生する場合があります。|  
+|**NUMBER**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|.NET Framework データ型を使用することで、オーバーフローが発生する場合があります。|  
 |**NVARCHAR2**|**String**|<xref:System.Data.OracleClient.OracleString>||  
 |**RAW**|**Byte[]**|<xref:System.Data.OracleClient.OracleBinary>||  
 |**REF CURSOR**|||Oracle **REF CURSOR**では、データ型はサポートされていない、<xref:System.Data.OracleClient.OracleDataReader>オブジェクト。|  
 |**ROWID**|**String**|<xref:System.Data.OracleClient.OracleString>||  
-|**タイムスタンプ**|**DateTime**|<xref:System.Data.OracleClient.OracleDateTime>||  
+|**TIMESTAMP**|**DateTime**|<xref:System.Data.OracleClient.OracleDateTime>||  
 |**ローカルのタイム ゾーンのタイムスタンプ**|**DateTime**|<xref:System.Data.OracleClient.OracleDateTime>||  
 |**タイム ゾーンのタイムスタンプ**|**DateTime**|<xref:System.Data.OracleClient.OracleDateTime>||  
 |**符号なし整数**|**数値**|<xref:System.Data.OracleClient.OracleNumber>|このデータ型のエイリアスでは、 **NUMBER(38)**データ型とは、できるように、<xref:System.Data.OracleClient.OracleDataReader>を返します、 **System.Decimal**または<xref:System.Data.OracleClient.OracleNumber>符号なし整数値の代わりにします。 .NET Framework データ型を使用することで、オーバーフローが発生する場合があります。|  
@@ -59,22 +59,22 @@ ms.lasthandoff: 12/22/2017
 |**CLOB**||**Clob**|Oracle では、バインドのみが許可、 **CLOB**として、 **CLOB**パラメーター。 .NET Data Provider for Oracle は自動的に作成できませんいずれかの以外にバインドしようとする場合**CLOB**などの値**System.String**または<xref:System.Data.OracleClient.OracleString>です。|  
 |**DATE**|**DateTime**|**DateTime**||  
 |**FLOAT**|**Single、Double、Decimal**|**Float、Double、Number**|<xref:System.Data.OracleClient.OracleParameter.Size%2A>決定、 **System.Data.DBType**と<xref:System.Data.OracleClient.OracleType>です。|  
-|**整数**|**SByte、Int16、Int32、Int64、Decimal**|**SByte、Int16、Int32、Number します。**|<xref:System.Data.OracleClient.OracleParameter.Size%2A>決定、 **System.Data.DBType**と<xref:System.Data.OracleClient.OracleType>です。|  
+|**INTEGER**|**SByte、Int16、Int32、Int64、Decimal**|**SByte、Int16、Int32、Number します。**|<xref:System.Data.OracleClient.OracleParameter.Size%2A>決定、 **System.Data.DBType**と<xref:System.Data.OracleClient.OracleType>です。|  
 |**INTERVAL YEAR TO MONTH**|**Int32**|**IntervalYearToMonth**|<xref:System.Data.OracleClient.OracleType> は、Oracle 9i クライアントとサーバー ソフトウェアの両方を使用している場合のみ使用できます。|  
 |**INTERVAL DAY TO 秒**|**オブジェクト**|**IntervalDayToSecond**|<xref:System.Data.OracleClient.OracleType> は、Oracle 9i クライアントとサーバー ソフトウェアの両方を使用している場合のみ使用できます。|  
 |**LONG**|**AnsiString**|**LongVarChar**||  
 |**LONG RAW**|**Binary**|**LongRaw**||  
 |**NCHAR**|**StringFixedLength**|**NChar**||  
 |**NCLOB**||**NClob**|Oracle では、バインドのみが許可、 **NCLOB**として、 **NCLOB**パラメーター。 .NET Data Provider for Oracle は自動的に作成できませんいずれかの以外にバインドしようとする場合**NCLOB**などの値**System.String**または<xref:System.Data.OracleClient.OracleString>です。|  
-|**数**|**VarNumeric**|**数値**||  
+|**NUMBER**|**VarNumeric**|**数値**||  
 |**NVARCHAR2**|**String**|**NVarChar**||  
 |**RAW**|**Binary**|**Raw**||  
 |**REF CURSOR**||**カーソル**|詳細については、次を参照してください。 [Oracle REF Cursor](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)です。|  
 |**ROWID**|**AnsiString**|**Rowid**||  
-|**タイムスタンプ**|**DateTime**|**タイムスタンプ**|<xref:System.Data.OracleClient.OracleType> は、Oracle 9i クライアントとサーバー ソフトウェアの両方を使用している場合のみ使用できます。|  
+|**TIMESTAMP**|**DateTime**|**タイムスタンプ**|<xref:System.Data.OracleClient.OracleType> は、Oracle 9i クライアントとサーバー ソフトウェアの両方を使用している場合のみ使用できます。|  
 |**ローカルのタイム ゾーンのタイムスタンプ**|**DateTime**|**TimestampLocal**|<xref:System.Data.OracleClient.OracleType> は、Oracle 9i クライアントとサーバー ソフトウェアの両方を使用している場合のみ使用できます。|  
 |**タイム ゾーンのタイムスタンプ**|**DateTime**|**TimestampWithTz**|<xref:System.Data.OracleClient.OracleType> は、Oracle 9i クライアントとサーバー ソフトウェアの両方を使用している場合のみ使用できます。|  
-|**符号なし整数**|**Byte、UInt16、UInt32、UInt64、Decimal**|**Byte、UInt16、Uint32、Number**|<xref:System.Data.OracleClient.OracleParameter.Size%2A>決定、 **System.Data.DBType**と<xref:System.Data.OracleClient.OracleType>です。|  
+|**符号なし整数**|**Byte, UInt16, UInt32, UInt64, Decimal**|**Byte、UInt16、Uint32、Number**|<xref:System.Data.OracleClient.OracleParameter.Size%2A>決定、 **System.Data.DBType**と<xref:System.Data.OracleClient.OracleType>です。|  
 |**VARCHAR2**|**AnsiString**|**VarChar**||  
   
  **InputOutput**、**出力**、および**ReturnValue** **ParameterDirection**によって使用される値、 <xref:System.Data.OracleClient.OracleParameter.Value%2A> のプロパティ<xref:System.Data.OracleClient.OracleParameter>入力値が、Oracle データ型でない限り、オブジェクトは .NET Framework データ型 (たとえば、<xref:System.Data.OracleClient.OracleNumber>または<xref:System.Data.OracleClient.OracleString>)。 これには適用されません**REF CURSOR**、 **BFILE**、または**LOB**データ型。  

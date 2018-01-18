@@ -1,5 +1,5 @@
 ---
-title: "」を参照してください。 (メンバー アクセス) (Entity SQL)"
+title: "である必要があります。 (メンバー アクセス) (Entity SQL)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4733e3b2-3efa-4b96-b591-ac31350e96ad
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 36699b403241e9a5496e722e81c833be0ed63101
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c90c908e567ac05f344292411978ff0c80919a65
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="-member-access-entity-sql"></a>である必要があります。 (メンバー アクセス) (Entity SQL)
 ドット演算子 (.) は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)]メンバー アクセス演算子です。 メンバー アクセス演算子を使用すると、構造型概念モデル型のインスタンスのプロパティ値またはフィールド値を生成できます。  

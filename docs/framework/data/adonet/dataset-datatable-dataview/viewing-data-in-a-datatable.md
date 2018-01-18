@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ab7a60b4195f3d8976a61e3909682b3748e30341
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2576c95ad7739d28e2ca822fd13fb6f176900814
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="viewing-data-in-a-datatable"></a>DataTable 内のデータの表示
 内容にアクセスすることができます、<xref:System.Data.DataTable>を使用して、**行**と**列**のコレクション、 **DataTable**です。 使用することも、<xref:System.Data.DataTable.Select%2A>内のデータのサブセットを返すメソッド、 **DataTable**のような検索条件の基準に従って並べ替え順序、および行の状態。 また、使用することができます、<xref:System.Data.DataRowCollection.Find%2A>のメソッド、 **DataRowCollection**主キーの値を使用して特定の行を検索するとき。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 12/22/2017
 |**追加**|新しい行。|  
 |**None**|なし。|  
 |**OriginalRows**|変更されていない行および削除された行を含む元の行。|  
-|**変更されません。**|変更されていない行。|  
+|**Unchanged**|変更されていない行。|  
   
  次の例で、**データセット**オブジェクトはフィルター処理のみを使用する行が**DataViewRowState**に設定されている**CurrentRows**です。  
   

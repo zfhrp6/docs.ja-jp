@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d578c36500af6f388e63ad921a4dbb8acac225f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2f1eb878bcc38d8bbeed42638cc5ccda230f60f1
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>DataView によるフィルター処理 (LINQ to DataSet)
 特定の条件に基づいてデータをフィルター処理し、UI コントロールを介してそのデータをクライアントに提供する機能は、データ バインディングの重要な特徴です。 <xref:System.Data.DataView> は、データにフィルターを適用し、特定のフィルター条件を満たすデータ行のサブセットを返す方法をいくつか提供します。 フィルタ リング機能だけでなく、文字列ベース<xref:System.Data.DataView>を使用する機能も提供[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]フィルター処理条件式。 [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]式を使用する、文字列ベースのフィルター処理よりもはるかに複雑で強力なのフィルター処理します。  

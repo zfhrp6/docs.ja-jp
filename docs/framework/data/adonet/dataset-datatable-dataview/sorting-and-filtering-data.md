@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f514095e551967928d610451cfcaa9a829c0989f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2411307623c714ae521d00dcffca05d3569a656e
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sorting-and-filtering-data"></a>データの並べ替えとフィルター処理
 <xref:System.Data.DataView> には、<xref:System.Data.DataTable> のデータの並べ替えとフィルター処理を行うさまざまな方法が用意されています。  
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/22/2017
     |**ModifiedOriginal**|**元**行バージョンのすべて**Modified**行です。|  
     |**None**|行がありません。|  
     |**OriginalRows**|**元**行バージョンのすべて**Unchanged**、 **Modified**、および**Deleted**行です。|  
-    |**変更されません。**|**現在**行バージョンのすべて**Unchanged**行です。|  
+    |**Unchanged**|**現在**行バージョンのすべて**Unchanged**行です。|  
   
  行の状態と行のバージョンの詳細については、次を参照してください。[行の状態と行のバージョン](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)します。  
   

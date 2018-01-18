@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6166cae86d2956ae3eec28b98fe0af864f6b708b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 81cf30367808a3f198514c0d72fa86a617a5ff13
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="diffgrams"></a>DiffGrams
 DiffGram は、データ要素の現在のバージョンと元のバージョンを識別する XML 形式です。 <xref:System.Data.DataSet> では、 の内容を読み込んで永続化するため、およびネットワーク接続経由で転送する場合にこの内容をシリアル化するために、DiffGram 形式が使用されます。 ときに、<xref:System.Data.DataSet>正確を再作成する内容、ただし、スキーマのすべての必要な情報を DiffGram に格納を DiffGram として書き込まれますが、 <xref:System.Data.DataSet>、両方の列の値を含む、**元**と**現在**行のバージョン、行エラー情報、および行の順序。  
@@ -81,10 +81,10 @@ DiffGram は、データ要素の現在のバージョンと元のバージョ�
  **\<**  ***DataInstance***  **>**  
  この要素の名前***DataInstance***、このドキュメントでは説明のために使用します。 A ***DataInstance***要素を表します、<xref:System.Data.DataSet>の行または、<xref:System.Data.DataTable>です。 代わりに*DataInstance*、要素の名前には、<xref:System.Data.DataSet>または<xref:System.Data.DataTable>です。 DiffGram 形式のこのブロックには現在のデータが含まれています。現在のデータは、変更されている場合と未変更の場合があります。 要素、または変更された行が付いた、 **diffgr:hasChanges**注釈。  
   
- **\<diffgr: する前に >**  
+ **\<diffgr:before>**  
  DiffGram 形式のこのブロックには、行の元の内容が含まれています。 このブロック内の要素が要素に一致する、 ***DataInstance***ブロックを使用して、 **diffgr:id**注釈。  
   
- **\<diffgr:errors >**  
+ **\<diffgr:errors>**  
  DiffGram 形式のこのブロックには、特定の行のエラー情報が含まれています、 ***DataInstance***ブロックします。 このブロック内の要素が要素に一致する、 ***DataInstance***ブロックを使用して、 **diffgr:id**注釈。  
   
 ## <a name="diffgram-annotations"></a>DiffGram 注釈  
@@ -96,7 +96,7 @@ DiffGram は、データ要素の現在のバージョンと元のバージョ�
 |----------------|-----------------|  
 |**ID**|内の要素を組み合わせるために使用、  **\<diffgr: する前に >**と **\<diffgr:errors >**ブロック内の要素を **\<** ***DataInstance***  **>** ブロックします。 値を使った、 **diffgr:id**注釈は、形式で*[TableName] [RowIdentifier]*です。 たとえば、`<Customers diffgr:id="Customers1">` のように指定します。|  
 |**parentId**|要素を識別、  **\<**  ***DataInstance***  **>** ブロックは、現在の要素の親要素です。 値を使った、 **diffgr:parentId**注釈は、形式で*[TableName] [RowIdentifier]*です。 たとえば、`<Orders diffgr:parentId="Customers1">` のように指定します。|  
-|**hasChanges**|内の行を識別、  **\<**  ***DataInstance***  **>** 変更をブロックします。 **HasChanges**注釈は、次の 2 つの値のいずれかを持つことができます。<br /><br /> **挿入**<br /> 識別、 **Added**行です。<br /><br /> **変更されました。**<br /> 識別、 **Modified**を含む行、**元**で行のバージョン、  **\<diffgr: する前に >**ブロックします。 注意してください**Deleted**の行、**元**で行のバージョン、  **\<diffgr: する前に >**ブロックが存在しません、注釈付き要素**\<**  ***DataInstance***  **>** ブロックします。|  
+|**hasChanges**|内の行を識別、  **\<**  ***DataInstance***  **>** 変更をブロックします。 **HasChanges**注釈は、次の 2 つの値のいずれかを持つことができます。<br /><br /> **inserted**<br /> 識別、 **Added**行です。<br /><br /> **modified**<br /> 識別、 **Modified**を含む行、**元**で行のバージョン、  **\<diffgr: する前に >**ブロックします。 注意してください**Deleted**の行、**元**で行のバージョン、  **\<diffgr: する前に >**ブロックが存在しません、注釈付き要素**\<**  ***DataInstance***  **>** ブロックします。|  
 |**hasErrors**|内の行を識別、  **\<**  ***DataInstance***  **>** ブロックを**RowError**です。 エラー要素を配置している、  **\<diffgr:errors >**ブロックします。|  
 |**エラー**|テキストを含む、 **RowError**で特定の要素に対して、  **\<diffgr:errors >**ブロックします。|  
   
@@ -105,7 +105,7 @@ DiffGram は、データ要素の現在のバージョンと元のバージョ�
 |注釈|説明|  
 |----------------|-----------------|  
 |**RowOrder**|元のデータの行順序を保持し、特定の <xref:System.Data.DataTable> の行のインデックスを識別します。|  
-|**非表示**|持つものとして列を識別、 **ColumnMapping**プロパティに設定**MappingType.Hidden**です。 属性は、の形式で記述された**msdata: 隠し** *[ColumnName]*="*値*"です。 たとえば、`<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">` のように指定します。<br /><br /> データが格納されている隠し列だけが DiffGram 属性として書き込まれます。 それ以外の場合は無視されます。|  
+|**Hidden**|持つものとして列を識別、 **ColumnMapping**プロパティに設定**MappingType.Hidden**です。 属性は、の形式で記述された**msdata: 隠し** *[ColumnName]*="*値*"です。 たとえば、`<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">` のように指定します。<br /><br /> データが格納されている隠し列だけが DiffGram 属性として書き込まれます。 それ以外の場合は無視されます。|  
   
 ## <a name="sample-diffgram"></a>DiffGram のサンプル  
  DiffGram 形式の例を次に示します。 この例では、変更のコミット前のテーブル内の行に対する更新結果が示されています。 CustomerID の "ALFKI" である行は変更されていますが、更新されていません。 その結果は、**現在**で行の**diffgr:id** "Customers1"での **\<**  ***DataInstance***  **>** ブロック、および**元**で行の**diffgr:id** "Customers1"での **\<diffgr: する前に >**ブロックします。 Customerid が"ANATR"の行が含まれています、 **RowError**で注釈が付いているため、`diffgr:hasErrors="true"`に関連する要素が存在しないと、  **\<diffgr:errors >**ブロックします。  

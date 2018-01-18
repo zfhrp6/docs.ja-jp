@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: b7b64874-c3c8-4bdb-862c-89a168d07827
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: b2673e02eff8390b1020850d59f2005c6cb2e574
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8c88e8c853c43c40950089b538ebf44b6d5a67aa
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="method-based-query-syntax-examples-partitioning"></a>メソッド ベースのクエリ構文例: パーティション分割
 このトピックの例を使用する方法を示します、 <xref:System.Linq.Enumerable.Skip%2A>、および<xref:System.Linq.Enumerable.Take%2A>を照会する方法、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)クエリ式の構文を使用します。 これらの例で使用されている、AdventureWorks Sales Model は、AdventureWorks サンプル データベースの Contact、Address、Product、SalesOrderHeader、SalesOrderDetail の各テーブルから作成されています。  
