@@ -13,14 +13,15 @@ ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 166d61339d2b74f378b50ade4b78fd41e9692f76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 45bb0174bd4c757b6e51621f36b25eb5f4354c94
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>.NET Framework のバージョンの互換性
-下位互換とは、プラットフォームの特定のバージョンで開発されたアプリが、そのプラットフォームの新しいバージョンでも実行できることを意味します。 .NET Framework では、下位互換性が最大限に高められています。.NET Framework のあるバージョンで記述されたソース コードは、.NET Framework の新しいバージョンでコンパイルでき、.NET Framework のあるバージョンで実行されるバイナリは、新しいバージョンの .NET Framework でも同じように動作します。  
+下位互換とは、プラットフォームの特定のバージョンで開発されたアプリが、そのプラットフォームの新しいバージョンでも実行できることを意味します。 .NET Framework では、下位互換性が最大限に高められています。 .NET Framework のあるバージョンで記述されたソース コードは、.NET Framework の新しいバージョンでコンパイルでき、.NET Framework のあるバージョンで実行されるバイナリは、新しいバージョンの .NET Framework でも同じように動作します。  
   
 <a name="Apps"></a>   
 ## <a name="version-compatibility-for-apps"></a>アプリのバージョンの互換性  
@@ -45,21 +46,21 @@ ms.lasthandoff: 11/21/2017
  この制限のため、互換性の保証は、コンポーネントにとって特に重要です。 .NET Framework 4 以降、コンポーネントに <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=nameWithType> 属性を適用することにより、複数のバージョンで想定されるコンポーネントの互換性の程度を指定できるようになりました。 ツールは、この属性を使用して、コンポーネントの将来のバージョンでの互換性保証の潜在的な違反を検出できます。  
   
 ## <a name="backward-compatibility-and-the-net-framework-45"></a>下位互換性と .NET Framework 4.5  
- .NET Framework 4.5 およびそれ以降のバージョンは、旧バージョンと互換性のある以前のバージョンの .NET Framework でビルドされたアプリを使用しています。 つまり、アプリと以前のバージョンでビルドされたコンポーネントは動作変更しなくても、.NET Framework 4.5 とそれ以降のバージョンにします。 ただし、既定では、アプリ実行対象の開発に、共通言語ランタイムのバージョンのため、.NET Framework 4.5 またはそれ以降のバージョンで実行するアプリを有効にする構成ファイルを提供する必要があります。 詳細については、この記事の前半に記載した「[アプリのバージョンの互換性](#Apps)」を参照してください。  
+ .NET Framework 4.5 およびそれ以降のバージョンは、以前のバージョンの .NET Framework でビルドされたアプリと下位互換性があります。 つまり、旧バージョンの .NET Framework でビルドしたアプリとコンポーネントは、.NET Framework 4.5 およびそれ以降のバージョンを変更せずに動作します。 ただし、既定では、アプリは、開発された共通言語ランタイムのバージョンで動作するため、アプリを .NET Framework 4.5 以降のバージョンで実行するには構成ファイルを提供する必要がある場合があります。 詳細については、この記事の前半に記載した「[アプリのバージョンの互換性](#Apps)」を参照してください。  
   
  現実的には、この互換性は、.NET Framework のわずかな変更やプログラミング技法の変化によって損なわれている可能性があります。 たとえば、.NET Framework 4.5 でのパフォーマンスの向上によって、旧バージョンでは発生しなかった競合状態が顕在化する可能性があります。 同様に、.NET Framework アセンブリへのハードコーディングされたパスの使用、.NET Framework の特定のバージョンでの等値比較の実行、およびリフレクションの使用によるプライベート フィールドの値の取得は、下位互換性のない動作です。 さらに、各バージョンの .NET Framework には、バグの修正とセキュリティに関連する変更が含まれており、これらが一部のアプリとコンポーネントの互換性に影響する可能性があります。  
   
- アプリまたはコンポーネントが機能しない場合、.NET Framework 4.5 で期待どおりに (そのポイント リリースを含む、 [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]4.5.2、4.6、4.6.1、4.6.2、4.7、または 4.7.1 は、次のチェックリストを使用します。  
+ アプリまたはコンポーネントが .NET Framework 4.5 (ポイント リリースである [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、4.6、4.6.1、4.6.2、4.7 または 4.7.1 を含む) で期待どおりに動作しない場合は、次のチェックリストを参考にしてください。  
   
--  場合は、アプリが .NET Framework 4.0 以降、.NET Framework のすべてのバージョンで実行しを参照してくださいに開発された[、.NET Framework アプリケーションの互換性](application-compatibility.md)を対象となる .NET Framework のバージョン間の変更の一覧を生成するにはアプリが実行されているバージョン。  
+-  アプリが .NET Framework 4.0 以降の任意の .NET Framework バージョンで実行できるように開発されている場合、「[.NET Framework のアプリケーションの互換性](application-compatibility.md)」を参照し、ターゲットの .NET Framework バージョンとアプリを実行しているバージョン間の違いの一覧を作成します。  
 
-- .NET Framework 3.5 アプリがある場合も表示[.NET Framework 4 の移行に関する問題](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)です。
+- .NET Framework 3.5 のアプリがある場合、「[.NET Framework 4 の移行に関する問題](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)」も参照してください。
 
-- .NET Framework 2.0 アプリケーションがある場合も表示[.NET Framework 3.5 SP1 の変更](http://go.microsoft.com/fwlink/?LinkId=186989)です。
+- .NET Framework 2.0 のアプリがある場合、「[.NET Framework 3.5 SP1 の変更点](http://go.microsoft.com/fwlink/?LinkId=186989)」も参照してください。
 
-- .NET Framework 1.1 アプリがある場合も表示[.NET Framework 2.0 で変更](http://go.microsoft.com/fwlink/?LinkID=125263)です。  
+- .NET Framework 1.1 アプリがある場合、「[.NET Framework 2.0 の互換性に影響する変更点](http://go.microsoft.com/fwlink/?LinkID=125263)」も参照してください。  
   
--   を実行する .NET Framework 4.5 またはそのポイント リリースでは、既存のソース コードを再コンパイルする場合、または、アプリまたはコンポーネントを対象とするの新しいバージョンを開発している場合、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]またはそのポイントは、既存のソース コード ベース、チェックからリリース[クラス ライブラリに残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)旧式の型およびメンバー、および説明されている回避策を適用します。 (コンパイル済みのコードは、互換性のために残されている旧式の型とメンバーに対して引き続き実行されます)。  
+-   .NET Framework 4.5 またはそのポイント リリースで実行するために既存のソース コードを再コンパイルする場合、または [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] またはそのポイント リリースをターゲットとするアプリまたはコンポーネントの新しいバージョンを既存のソース コード ベースから開発する場合は、「[クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)」で廃止された型とメンバーを確認し、説明されている回避策を適用してください。 (コンパイル済みのコードは、互換性のために残されている旧式の型とメンバーに対して引き続き実行されます)。  
   
 -   アプリが正常に動作しない原因が [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] での変更によるものとわかった場合は、「[ランタイム設定スキーマ](../../../docs/framework/configure-apps/file-schema/runtime/index.md)」を参照して、アプリの構成ファイルのランタイム設定を使用して以前の動作を復元できるかどうかを確認してください。  
   
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compatibility-and-side-by-side-execution"></a>互換性と side-by-side 実行  
  問題の適切な解決策が見つからない場合は、.NET Framework 4.5 (またはそのポイント リリース) は Version 1.1、2.0、3.5 と side-by-side で実行でき、Version 4 に置き換わるインプレース更新であることを思い出してください。 Version 1.1、2.0、3.5 を対象とするアプリでは、適切なバージョンの .NET Framework を対象コンピューターにインストールして、アプリを最良の環境で実行できます。 side-by-side 実行について詳しくは、[side-by-side 実行](../../../docs/framework/deployment/side-by-side-execution.md)に関するページを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [新機能](../../../docs/framework/whats-new/index.md)  
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)  
  [アプリケーションの互換性](../../../docs/framework/migration-guide/application-compatibility.md)  
