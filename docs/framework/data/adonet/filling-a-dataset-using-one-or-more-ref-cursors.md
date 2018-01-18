@@ -11,18 +11,18 @@ ms.topic: article
 dev_langs: vb
 ms.assetid: 99863e79-5b00-467e-a105-4ffa42de3ff7
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d06889144edd9c2c5d93292e3513f92be55ea035
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 56284888f681434635f8ea320f4ab99b12854fc5
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="filling-a-dataset-using-one-or-more-ref-cursors"></a><span data-ttu-id="fd28e-102">1 つまたは複数の REF CURSOR を使用した DataSet の値の設定</span><span class="sxs-lookup"><span data-stu-id="fd28e-102">Filling a DataSet Using One or More REF CURSORs</span></span>
-<span data-ttu-id="fd28e-103">この Microsoft Visual Basic の例では、2 つの REF CURSOR パラメーターを返し、返された行を <xref:System.Data.DataSet> に入力する、PL/SQL ストアド プロシージャを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="fd28e-103">This Microsoft Visual Basic example executes a PL/SQL stored procedure that returns two REF CURSOR parameters, and fills a <xref:System.Data.DataSet> with the rows that are returned.</span></span>  
+# <a name="filling-a-dataset-using-one-or-more-ref-cursors"></a><span data-ttu-id="542f4-102">1 つまたは複数の REF CURSOR を使用した DataSet の値の設定</span><span class="sxs-lookup"><span data-stu-id="542f4-102">Filling a DataSet Using One or More REF CURSORs</span></span>
+<span data-ttu-id="542f4-103">この Microsoft Visual Basic の例では、2 つの REF CURSOR パラメーターを返し、返された行を <xref:System.Data.DataSet> に入力する、PL/SQL ストアド プロシージャを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="542f4-103">This Microsoft Visual Basic example executes a PL/SQL stored procedure that returns two REF CURSOR parameters, and fills a <xref:System.Data.DataSet> with the rows that are returned.</span></span>  
   
 ```vb  
 Private Sub Button1_Click(ByVal sender As Object, _  
@@ -56,6 +56,6 @@ Private Sub Button1_Click(ByVal sender As Object, _
   End Using  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="fd28e-104">参照</span><span class="sxs-lookup"><span data-stu-id="fd28e-104">See Also</span></span>  
- [<span data-ttu-id="fd28e-105">Oracle REF CURSOR</span><span class="sxs-lookup"><span data-stu-id="fd28e-105">Oracle REF CURSORs</span></span>](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
- [<span data-ttu-id="fd28e-106">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="fd28e-106">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="542f4-104">参照</span><span class="sxs-lookup"><span data-stu-id="542f4-104">See Also</span></span>  
+ [<span data-ttu-id="542f4-105">Oracle REF CURSOR</span><span class="sxs-lookup"><span data-stu-id="542f4-105">Oracle REF CURSORs</span></span>](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
+ [<span data-ttu-id="542f4-106">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="542f4-106">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

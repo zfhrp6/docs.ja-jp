@@ -13,26 +13,26 @@ dev_langs:
 - vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d982964b596528b091f5367edd38e0cee5f923c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c622dde5e73c84c3b317ffc2652c79632be89e2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="getschema-and-schema-collections"></a><span data-ttu-id="3c83c-102">GetSchema およびスキーマ コレクション</span><span class="sxs-lookup"><span data-stu-id="3c83c-102">GetSchema and Schema Collections</span></span>
-<span data-ttu-id="3c83c-103">**接続**各 .NET Framework マネージ プロバイダーの実装のクラス、 **GetSchema**メソッドが現在接続されているデータベースに関するスキーマ情報を取得するために使用し、返されるスキーマ情報、 **GetSchema**メソッドは、の形式では、<xref:System.Data.DataTable>です。</span><span class="sxs-lookup"><span data-stu-id="3c83c-103">The **Connection** classes in each of the .NET Framework managed providers implement a **GetSchema** method which is used to retrieve schema information about the database that is currently connected, and the schema information returned from the **GetSchema** method comes in the form of a <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="3c83c-104">**GetSchema**メソッドが戻るには、スキーマ コレクションを指定し、返される情報の量を制限するための省略可能なパラメーターを提供するオーバー ロードされたメソッドです。</span><span class="sxs-lookup"><span data-stu-id="3c83c-104">The **GetSchema** method is an overloaded method that provides optional parameters for specifying the schema collection to return, and restricting the amount of information returned.</span></span>  
+# <a name="getschema-and-schema-collections"></a><span data-ttu-id="e3526-102">GetSchema およびスキーマ コレクション</span><span class="sxs-lookup"><span data-stu-id="e3526-102">GetSchema and Schema Collections</span></span>
+<span data-ttu-id="e3526-103">**接続**各 .NET Framework マネージ プロバイダーの実装のクラス、 **GetSchema**メソッドが現在接続されているデータベースに関するスキーマ情報を取得するために使用し、返されるスキーマ情報、 **GetSchema**メソッドは、の形式では、<xref:System.Data.DataTable>です。</span><span class="sxs-lookup"><span data-stu-id="e3526-103">The **Connection** classes in each of the .NET Framework managed providers implement a **GetSchema** method which is used to retrieve schema information about the database that is currently connected, and the schema information returned from the **GetSchema** method comes in the form of a <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="e3526-104">**GetSchema**メソッドが戻るには、スキーマ コレクションを指定し、返される情報の量を制限するための省略可能なパラメーターを提供するオーバー ロードされたメソッドです。</span><span class="sxs-lookup"><span data-stu-id="e3526-104">The **GetSchema** method is an overloaded method that provides optional parameters for specifying the schema collection to return, and restricting the amount of information returned.</span></span>  
   
-## <a name="specifying-the-schema-collections"></a><span data-ttu-id="3c83c-105">スキーマ コレクションの指定</span><span class="sxs-lookup"><span data-stu-id="3c83c-105">Specifying the Schema Collections</span></span>  
- <span data-ttu-id="3c83c-106">最初の省略可能なパラメーター、 **GetSchema**メソッドは、文字列として指定されるコレクションの名前。</span><span class="sxs-lookup"><span data-stu-id="3c83c-106">The first optional parameter of the **GetSchema** method is the collection name which is specified as a string.</span></span> <span data-ttu-id="3c83c-107">スキーマ コレクションには 2 種類あります。すべてのプロバイダーに共通している一般的なスキーマ コレクションと、各プロバイダーによって固有のスキーマ コレクションです。</span><span class="sxs-lookup"><span data-stu-id="3c83c-107">There are two types of schema collections: common schema collections that are common to all providers, and specific schema collections which are specific to each provider.</span></span>  
+## <a name="specifying-the-schema-collections"></a><span data-ttu-id="e3526-105">スキーマ コレクションの指定</span><span class="sxs-lookup"><span data-stu-id="e3526-105">Specifying the Schema Collections</span></span>  
+ <span data-ttu-id="e3526-106">最初の省略可能なパラメーター、 **GetSchema**メソッドは、文字列として指定されるコレクションの名前。</span><span class="sxs-lookup"><span data-stu-id="e3526-106">The first optional parameter of the **GetSchema** method is the collection name which is specified as a string.</span></span> <span data-ttu-id="e3526-107">スキーマ コレクションには 2 種類あります。すべてのプロバイダーに共通している一般的なスキーマ コレクションと、各プロバイダーによって固有のスキーマ コレクションです。</span><span class="sxs-lookup"><span data-stu-id="e3526-107">There are two types of schema collections: common schema collections that are common to all providers, and specific schema collections which are specific to each provider.</span></span>  
   
- <span data-ttu-id="3c83c-108">呼び出すことによってサポートされるスキーマ コレクションの一覧を特定の .NET Framework マネージ プロバイダーを照会することができます、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。</span><span class="sxs-lookup"><span data-stu-id="3c83c-108">You can query a .NET Framework managed provider to determine the list of supported schema collections by calling the **GetSchema** method with no arguments, or with the schema collection name "MetaDataCollections".</span></span> <span data-ttu-id="3c83c-109">これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。</span><span class="sxs-lookup"><span data-stu-id="3c83c-109">This will return a <xref:System.Data.DataTable> with a list of the supported schema collections, the number of restrictions that they each support, and the number of identifier parts that they use.</span></span>  
+ <span data-ttu-id="e3526-108">呼び出すことによってサポートされるスキーマ コレクションの一覧を特定の .NET Framework マネージ プロバイダーを照会することができます、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。</span><span class="sxs-lookup"><span data-stu-id="e3526-108">You can query a .NET Framework managed provider to determine the list of supported schema collections by calling the **GetSchema** method with no arguments, or with the schema collection name "MetaDataCollections".</span></span> <span data-ttu-id="e3526-109">これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。</span><span class="sxs-lookup"><span data-stu-id="e3526-109">This will return a <xref:System.Data.DataTable> with a list of the supported schema collections, the number of restrictions that they each support, and the number of identifier parts that they use.</span></span>  
   
-### <a name="retrieving-schema-collections-example"></a><span data-ttu-id="3c83c-110">スキーマ コレクションの取得例</span><span class="sxs-lookup"><span data-stu-id="3c83c-110">Retrieving Schema Collections Example</span></span>  
- <span data-ttu-id="3c83c-111">次の例を使用する方法を示します、<xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>の .NET Framework Data Provider for SQL Server メソッド<xref:System.Data.SqlClient.SqlConnection>に関する、すべてのテーブルに含まれているスキーマ情報を取得するクラス、 **AdventureWorks**サンプル データベース。</span><span class="sxs-lookup"><span data-stu-id="3c83c-111">The following examples demonstrate how to use the <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> method of the .NET Framework Data Provider for the SQL Server <xref:System.Data.SqlClient.SqlConnection> class to retrieve schema information about all of the tables contained in the **AdventureWorks** sample database:</span></span>  
+### <a name="retrieving-schema-collections-example"></a><span data-ttu-id="e3526-110">スキーマ コレクションの取得例</span><span class="sxs-lookup"><span data-stu-id="e3526-110">Retrieving Schema Collections Example</span></span>  
+ <span data-ttu-id="e3526-111">次の例を使用する方法を示します、<xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>の .NET Framework Data Provider for SQL Server メソッド<xref:System.Data.SqlClient.SqlConnection>に関する、すべてのテーブルに含まれているスキーマ情報を取得するクラス、 **AdventureWorks**サンプル データベース。</span><span class="sxs-lookup"><span data-stu-id="e3526-111">The following examples demonstrate how to use the <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> method of the .NET Framework Data Provider for the SQL Server <xref:System.Data.SqlClient.SqlConnection> class to retrieve schema information about all of the tables contained in the **AdventureWorks** sample database:</span></span>  
   
 ```vb  
 Imports System.Data.SqlClient  
@@ -115,6 +115,6 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3c83c-112">参照</span><span class="sxs-lookup"><span data-stu-id="3c83c-112">See Also</span></span>  
- [<span data-ttu-id="3c83c-113">データベース スキーマ情報の取得</span><span class="sxs-lookup"><span data-stu-id="3c83c-113">Retrieving Database Schema Information</span></span>](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [<span data-ttu-id="3c83c-114">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="3c83c-114">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="e3526-112">参照</span><span class="sxs-lookup"><span data-stu-id="e3526-112">See Also</span></span>  
+ [<span data-ttu-id="e3526-113">データベース スキーマ情報の取得</span><span class="sxs-lookup"><span data-stu-id="e3526-113">Retrieving Database Schema Information</span></span>](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [<span data-ttu-id="e3526-114">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="e3526-114">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

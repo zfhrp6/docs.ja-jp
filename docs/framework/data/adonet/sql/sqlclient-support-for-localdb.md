@@ -10,44 +10,44 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
 caps.latest.revision: "14"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 99845420549393829582ade11f38b75e3ebff484
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a3d643ac386aebf51673f937b3f47e73c749b78f
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="sqlclient-support-for-localdb"></a><span data-ttu-id="99974-102">SqlClient による LocalDB のサポート</span><span class="sxs-lookup"><span data-stu-id="99974-102">SqlClient Support for LocalDB</span></span>
-<span data-ttu-id="99974-103">コード名 Denali 以降の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、LocalDB という軽量バージョンの [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]を使用できます。</span><span class="sxs-lookup"><span data-stu-id="99974-103">Beginning in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] code name Denali, a lightweight version of [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], called LocalDB, will be available.</span></span> <span data-ttu-id="99974-104">このトピックでは、LocalDB データベースに接続する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="99974-104">This topic discusses how to connect to a LocalDB database.</span></span>  
+# <a name="sqlclient-support-for-localdb"></a><span data-ttu-id="d849a-102">SqlClient による LocalDB のサポート</span><span class="sxs-lookup"><span data-stu-id="d849a-102">SqlClient Support for LocalDB</span></span>
+<span data-ttu-id="d849a-103">コード名 Denali 以降の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、LocalDB という軽量バージョンの [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]を使用できます。</span><span class="sxs-lookup"><span data-stu-id="d849a-103">Beginning in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] code name Denali, a lightweight version of [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], called LocalDB, will be available.</span></span> <span data-ttu-id="d849a-104">このトピックでは、LocalDB データベースに接続する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d849a-104">This topic discusses how to connect to a LocalDB database.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="99974-105">解説</span><span class="sxs-lookup"><span data-stu-id="99974-105">Remarks</span></span>  
- <span data-ttu-id="99974-106">LocalDB をインストールする方法と LocalDB インスタンスを構成する方法を含む LocalDB の詳細については、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="99974-106">For more information about LocalDB, including how to install LocalDB and configure your LocalDB instance, see [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Books Online.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d849a-105">解説</span><span class="sxs-lookup"><span data-stu-id="d849a-105">Remarks</span></span>  
+ <span data-ttu-id="d849a-106">LocalDB をインストールする方法と LocalDB インスタンスを構成する方法を含む LocalDB の詳細については、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="d849a-106">For more information about LocalDB, including how to install LocalDB and configure your LocalDB instance, see [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Books Online.</span></span>  
   
- <span data-ttu-id="99974-107">LocalDB の主な機能の概要</span><span class="sxs-lookup"><span data-stu-id="99974-107">To summarize what you can do with LocalDB:</span></span>  
+ <span data-ttu-id="d849a-107">LocalDB の主な機能の概要</span><span class="sxs-lookup"><span data-stu-id="d849a-107">To summarize what you can do with LocalDB:</span></span>  
   
--   <span data-ttu-id="99974-108">sqllocaldb.exe または app.config ファイルを使用して LocalDB インスタンスを作成および開始する。</span><span class="sxs-lookup"><span data-stu-id="99974-108">Create and start LocalDB instances with sqllocaldb.exe or your app.config file.</span></span>  
+-   <span data-ttu-id="d849a-108">sqllocaldb.exe または app.config ファイルを使用して LocalDB インスタンスを作成および開始する。</span><span class="sxs-lookup"><span data-stu-id="d849a-108">Create and start LocalDB instances with sqllocaldb.exe or your app.config file.</span></span>  
   
--   <span data-ttu-id="99974-109">sqlcmd.exe を使用して LocalDB インスタンスにデータベースを追加および変更する。</span><span class="sxs-lookup"><span data-stu-id="99974-109">Use sqlcmd.exe to add and modify databases in a LocalDB instance.</span></span> <span data-ttu-id="99974-110">たとえば、 `sqlcmd -S (localdb)\myinst`のようにします。</span><span class="sxs-lookup"><span data-stu-id="99974-110">For example, `sqlcmd -S (localdb)\myinst`.</span></span>  
+-   <span data-ttu-id="d849a-109">sqlcmd.exe を使用して LocalDB インスタンスにデータベースを追加および変更する。</span><span class="sxs-lookup"><span data-stu-id="d849a-109">Use sqlcmd.exe to add and modify databases in a LocalDB instance.</span></span> <span data-ttu-id="d849a-110">たとえば、 `sqlcmd -S (localdb)\myinst`のようにします。</span><span class="sxs-lookup"><span data-stu-id="d849a-110">For example, `sqlcmd -S (localdb)\myinst`.</span></span>  
   
--   <span data-ttu-id="99974-111">`AttachDBFilename` 接続文字列キーワードを使用して LocalDB インスタンスにデータベースを追加する。</span><span class="sxs-lookup"><span data-stu-id="99974-111">Use the `AttachDBFilename` connection string keyword to add a database to your LocalDB instance.</span></span> <span data-ttu-id="99974-112">`AttachDBFilename`を使用していて、 `Database` 接続文字列キーワードでデータベースの名前を指定しない場合、アプリケーションを閉じると、データベースは LocalDB インスタンスから削除されます。</span><span class="sxs-lookup"><span data-stu-id="99974-112">When using `AttachDBFilename`, if you do not specify the name of the database with the `Database` connection string keyword, the database will be removed from the LocalDB instance when the application closes.</span></span>  
+-   <span data-ttu-id="d849a-111">`AttachDBFilename` 接続文字列キーワードを使用して LocalDB インスタンスにデータベースを追加する。</span><span class="sxs-lookup"><span data-stu-id="d849a-111">Use the `AttachDBFilename` connection string keyword to add a database to your LocalDB instance.</span></span> <span data-ttu-id="d849a-112">`AttachDBFilename`を使用していて、 `Database` 接続文字列キーワードでデータベースの名前を指定しない場合、アプリケーションを閉じると、データベースは LocalDB インスタンスから削除されます。</span><span class="sxs-lookup"><span data-stu-id="d849a-112">When using `AttachDBFilename`, if you do not specify the name of the database with the `Database` connection string keyword, the database will be removed from the LocalDB instance when the application closes.</span></span>  
   
--   <span data-ttu-id="99974-113">接続文字列に LocalDB インスタンスを指定する。</span><span class="sxs-lookup"><span data-stu-id="99974-113">Specify a LocalDB instance in your connection string.</span></span> <span data-ttu-id="99974-114">たとえば、インスタンス名が `myInstance`の場合、接続文字列には次の行が含まれます。</span><span class="sxs-lookup"><span data-stu-id="99974-114">For example, your instance name is `myInstance`, the connection string would include:</span></span>  
+-   <span data-ttu-id="d849a-113">接続文字列に LocalDB インスタンスを指定する。</span><span class="sxs-lookup"><span data-stu-id="d849a-113">Specify a LocalDB instance in your connection string.</span></span> <span data-ttu-id="d849a-114">たとえば、インスタンス名が `myInstance`の場合、接続文字列には次の行が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d849a-114">For example, your instance name is `myInstance`, the connection string would include:</span></span>  
   
     ```  
     server=(localdb)\\myInstance  
     ```  
   
- <span data-ttu-id="99974-115">`User Instance=True` は LocalDB データベースに接続するときに使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="99974-115">`User Instance=True` is not allowed when connecting to a LocalDB database.</span></span>  
+ <span data-ttu-id="d849a-115">`User Instance=True` は LocalDB データベースに接続するときに使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="d849a-115">`User Instance=True` is not allowed when connecting to a LocalDB database.</span></span>  
   
- <span data-ttu-id="99974-116">LocalDB は [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065)からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="99974-116">You can download LocalDB from [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065).</span></span> <span data-ttu-id="99974-117">LocalDB インスタンスのデータを変更するために sqlcmd.exe を使用する場合は、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 の sqlcmd が必要です。これも、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Feature Pack から取得できます。</span><span class="sxs-lookup"><span data-stu-id="99974-117">If you will use sqlcmd.exe to modify data in your LocalDB instance, you will need sqlcmd from [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012, which you can also get from the [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Feature Pack.</span></span>  
+ <span data-ttu-id="d849a-116">LocalDB は [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065)からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="d849a-116">You can download LocalDB from [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065).</span></span> <span data-ttu-id="d849a-117">LocalDB インスタンスのデータを変更するために sqlcmd.exe を使用する場合は、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 の sqlcmd が必要です。これも、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Feature Pack から取得できます。</span><span class="sxs-lookup"><span data-stu-id="d849a-117">If you will use sqlcmd.exe to modify data in your LocalDB instance, you will need sqlcmd from [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012, which you can also get from the [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Feature Pack.</span></span>  
   
-## <a name="programmatically-create-a-named-instance"></a><span data-ttu-id="99974-118">名前付きインスタンスをプログラムによって作成する</span><span class="sxs-lookup"><span data-stu-id="99974-118">Programmatically Create a Named Instance</span></span>  
- <span data-ttu-id="99974-119">アプリケーションは、次のように名前付きインスタンスを作成してデータベースを指定できます。</span><span class="sxs-lookup"><span data-stu-id="99974-119">An application can create a named instance and specify a database as follows:</span></span>  
+## <a name="programmatically-create-a-named-instance"></a><span data-ttu-id="d849a-118">名前付きインスタンスをプログラムによって作成する</span><span class="sxs-lookup"><span data-stu-id="d849a-118">Programmatically Create a Named Instance</span></span>  
+ <span data-ttu-id="d849a-119">アプリケーションは、次のように名前付きインスタンスを作成してデータベースを指定できます。</span><span class="sxs-lookup"><span data-stu-id="d849a-119">An application can create a named instance and specify a database as follows:</span></span>  
   
--   <span data-ttu-id="99974-120">app.config ファイルに作成するための LocalDB インスタンスを次のように指定する。</span><span class="sxs-lookup"><span data-stu-id="99974-120">Specify the LocalDB instances to create in the app.config file, as follows.</span></span>  <span data-ttu-id="99974-121">インスタンスのバージョン番号は LocalDB インストールのバージョン番号と同じである必要があります。</span><span class="sxs-lookup"><span data-stu-id="99974-121">The version number of the instance should be the same as the version number of your LocalDB installation.</span></span>  
+-   <span data-ttu-id="d849a-120">app.config ファイルに作成するための LocalDB インスタンスを次のように指定する。</span><span class="sxs-lookup"><span data-stu-id="d849a-120">Specify the LocalDB instances to create in the app.config file, as follows.</span></span>  <span data-ttu-id="d849a-121">インスタンスのバージョン番号は LocalDB インストールのバージョン番号と同じである必要があります。</span><span class="sxs-lookup"><span data-stu-id="d849a-121">The version number of the instance should be the same as the version number of your LocalDB installation.</span></span>  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -65,10 +65,10 @@ ms.lasthandoff: 12/22/2017
     </configuration>  
     ```  
   
--   <span data-ttu-id="99974-122">`server` 接続文字列キーワードを使用してインスタンス名を指定する。</span><span class="sxs-lookup"><span data-stu-id="99974-122">Specify the name of the instance using the `server` connection string keyword.</span></span>  <span data-ttu-id="99974-123">`server` 接続文字列キーワードで指定されたインスタンス名は app.config ファイルで指定された名前と一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="99974-123">The instance name specified in the `server` connection string keyword must match the name specified in the app.config file.</span></span>  
+-   <span data-ttu-id="d849a-122">`server` 接続文字列キーワードを使用してインスタンス名を指定する。</span><span class="sxs-lookup"><span data-stu-id="d849a-122">Specify the name of the instance using the `server` connection string keyword.</span></span>  <span data-ttu-id="d849a-123">`server` 接続文字列キーワードで指定されたインスタンス名は app.config ファイルで指定された名前と一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d849a-123">The instance name specified in the `server` connection string keyword must match the name specified in the app.config file.</span></span>  
   
--   <span data-ttu-id="99974-124">.MDF ファイルを指定するには、 `AttachDBFilename` 接続文字列キーワードを使用する。</span><span class="sxs-lookup"><span data-stu-id="99974-124">Use the `AttachDBFilename` connection string keyword to specify the .MDF file.</span></span>  
+-   <span data-ttu-id="d849a-124">.MDF ファイルを指定するには、 `AttachDBFilename` 接続文字列キーワードを使用する。</span><span class="sxs-lookup"><span data-stu-id="d849a-124">Use the `AttachDBFilename` connection string keyword to specify the .MDF file.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="99974-125">参照</span><span class="sxs-lookup"><span data-stu-id="99974-125">See Also</span></span>  
- [<span data-ttu-id="99974-126">SQL Server の機能と ADO.NET</span><span class="sxs-lookup"><span data-stu-id="99974-126">SQL Server Features and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
- [<span data-ttu-id="99974-127">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="99974-127">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="d849a-125">参照</span><span class="sxs-lookup"><span data-stu-id="d849a-125">See Also</span></span>  
+ [<span data-ttu-id="d849a-126">SQL Server の機能と ADO.NET</span><span class="sxs-lookup"><span data-stu-id="d849a-126">SQL Server Features and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
+ [<span data-ttu-id="d849a-127">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="d849a-127">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

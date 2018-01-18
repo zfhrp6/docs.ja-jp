@@ -10,20 +10,20 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c0b61572-ecee-41eb-9d7f-74132ec8a26c
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e4ef6edfc56fe73cd509d466fcc26cdb24069c9f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4321c5fd3f173b209d99e096ec0ebf8788437c3d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="order-by-entity-sql"></a><span data-ttu-id="fbc36-102">ORDER BY (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="fbc36-102">ORDER BY (Entity SQL)</span></span>
-<span data-ttu-id="fbc36-103">SELECT ステートメントで返されるオブジェクトで使用される並べ替え順を指定します。</span><span class="sxs-lookup"><span data-stu-id="fbc36-103">Specifies the sort order used on objects returned in a SELECT statement.</span></span>  
+# <a name="order-by-entity-sql"></a><span data-ttu-id="191cb-102">ORDER BY (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="191cb-102">ORDER BY (Entity SQL)</span></span>
+<span data-ttu-id="191cb-103">SELECT ステートメントで返されるオブジェクトで使用される並べ替え順を指定します。</span><span class="sxs-lookup"><span data-stu-id="191cb-103">Specifies the sort order used on objects returned in a SELECT statement.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fbc36-104">構文</span><span class="sxs-lookup"><span data-stu-id="fbc36-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="191cb-104">構文</span><span class="sxs-lookup"><span data-stu-id="191cb-104">Syntax</span></span>  
   
 ```  
 [ ORDER BY   
@@ -36,33 +36,33 @@ ms.lasthandoff: 12/22/2017
 ]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="fbc36-105">引数</span><span class="sxs-lookup"><span data-stu-id="fbc36-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="191cb-105">引数</span><span class="sxs-lookup"><span data-stu-id="191cb-105">Arguments</span></span>  
  `order_by_expression`  
- <span data-ttu-id="fbc36-106">並べ替えるプロパティを指定する有効なクエリ式。</span><span class="sxs-lookup"><span data-stu-id="fbc36-106">Any valid query expression specifying a property on which to sort.</span></span> <span data-ttu-id="fbc36-107">並べ替えのキーとなる式を複数指定できます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-107">Multiple sort expressions can be specified.</span></span> <span data-ttu-id="fbc36-108">ORDER BY 句内に記述するキー式の並び順によって、並べ替えられた結果セットの構成が決まります。</span><span class="sxs-lookup"><span data-stu-id="fbc36-108">The sequence of the sort expressions in the ORDER BY clause defines the organization of the sorted result set.</span></span>  
+ <span data-ttu-id="191cb-106">並べ替えるプロパティを指定する有効なクエリ式。</span><span class="sxs-lookup"><span data-stu-id="191cb-106">Any valid query expression specifying a property on which to sort.</span></span> <span data-ttu-id="191cb-107">並べ替えのキーとなる式を複数指定できます。</span><span class="sxs-lookup"><span data-stu-id="191cb-107">Multiple sort expressions can be specified.</span></span> <span data-ttu-id="191cb-108">ORDER BY 句内に記述するキー式の並び順によって、並べ替えられた結果セットの構成が決まります。</span><span class="sxs-lookup"><span data-stu-id="191cb-108">The sequence of the sort expressions in the ORDER BY clause defines the organization of the sorted result set.</span></span>  
   
- <span data-ttu-id="fbc36-109">COLLATE {collation_name}</span><span class="sxs-lookup"><span data-stu-id="fbc36-109">COLLATE {collation_name}</span></span>  
- <span data-ttu-id="fbc36-110">ORDER BY 操作が `collation_name`で指定された照合順序に従って実行されることを指定します。</span><span class="sxs-lookup"><span data-stu-id="fbc36-110">Specifies that the ORDER BY operation should be performed according to the collation specified in `collation_name`.</span></span> <span data-ttu-id="fbc36-111">COLLATE は文字列式にのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-111">COLLATE is applicable only for string expressions.</span></span>  
+ <span data-ttu-id="191cb-109">COLLATE {collation_name}</span><span class="sxs-lookup"><span data-stu-id="191cb-109">COLLATE {collation_name}</span></span>  
+ <span data-ttu-id="191cb-110">ORDER BY 操作が `collation_name`で指定された照合順序に従って実行されることを指定します。</span><span class="sxs-lookup"><span data-stu-id="191cb-110">Specifies that the ORDER BY operation should be performed according to the collation specified in `collation_name`.</span></span> <span data-ttu-id="191cb-111">COLLATE は文字列式にのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="191cb-111">COLLATE is applicable only for string expressions.</span></span>  
   
- <span data-ttu-id="fbc36-112">ASC</span><span class="sxs-lookup"><span data-stu-id="fbc36-112">ASC</span></span>  
- <span data-ttu-id="fbc36-113">指定したプロパティの値が昇順、つまり小さい値から大きい値へと並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-113">Specifies that the values in the specified property should be sorted in ascending order, from lowest value to highest value.</span></span> <span data-ttu-id="fbc36-114">既定値です。</span><span class="sxs-lookup"><span data-stu-id="fbc36-114">This is the default.</span></span>  
+ <span data-ttu-id="191cb-112">ASC</span><span class="sxs-lookup"><span data-stu-id="191cb-112">ASC</span></span>  
+ <span data-ttu-id="191cb-113">指定したプロパティの値が昇順、つまり小さい値から大きい値へと並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="191cb-113">Specifies that the values in the specified property should be sorted in ascending order, from lowest value to highest value.</span></span> <span data-ttu-id="191cb-114">既定値です。</span><span class="sxs-lookup"><span data-stu-id="191cb-114">This is the default.</span></span>  
   
- <span data-ttu-id="fbc36-115">DESC</span><span class="sxs-lookup"><span data-stu-id="fbc36-115">DESC</span></span>  
- <span data-ttu-id="fbc36-116">指定したプロパティの値が降順、つまり大きい値から小さい値へと並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-116">Specifies that the values in the specified property should be sorted in descending order, from highest value to lowest value.</span></span>  
+ <span data-ttu-id="191cb-115">DESC</span><span class="sxs-lookup"><span data-stu-id="191cb-115">DESC</span></span>  
+ <span data-ttu-id="191cb-116">指定したプロパティの値が降順、つまり大きい値から小さい値へと並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="191cb-116">Specifies that the values in the specified property should be sorted in descending order, from highest value to lowest value.</span></span>  
   
- <span data-ttu-id="fbc36-117">LIMIT `n`</span><span class="sxs-lookup"><span data-stu-id="fbc36-117">LIMIT `n`</span></span>  
- <span data-ttu-id="fbc36-118">最初の `n` 個の項目のみが選択されます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-118">Only the first `n` items will be selected.</span></span>  
+ <span data-ttu-id="191cb-117">LIMIT `n`</span><span class="sxs-lookup"><span data-stu-id="191cb-117">LIMIT `n`</span></span>  
+ <span data-ttu-id="191cb-118">最初の `n` 個の項目のみが選択されます。</span><span class="sxs-lookup"><span data-stu-id="191cb-118">Only the first `n` items will be selected.</span></span>  
   
- <span data-ttu-id="fbc36-119">SKIP `n`</span><span class="sxs-lookup"><span data-stu-id="fbc36-119">SKIP `n`</span></span>  
- <span data-ttu-id="fbc36-120">最初の `n` 個の項目をスキップします。</span><span class="sxs-lookup"><span data-stu-id="fbc36-120">Skips the first `n` items.</span></span>  
+ <span data-ttu-id="191cb-119">SKIP `n`</span><span class="sxs-lookup"><span data-stu-id="191cb-119">SKIP `n`</span></span>  
+ <span data-ttu-id="191cb-120">最初の `n` 個の項目をスキップします。</span><span class="sxs-lookup"><span data-stu-id="191cb-120">Skips the first `n` items.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="fbc36-121">コメント</span><span class="sxs-lookup"><span data-stu-id="fbc36-121">Remarks</span></span>  
- <span data-ttu-id="fbc36-122">ORDER BY 句は、SELECT 句の結果に論理的に適用されます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-122">The ORDER BY clause is logically applied to the result of the SELECT clause.</span></span> <span data-ttu-id="fbc36-123">ORDER BY 句では、別名を使用して選択リストの項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-123">The ORDER BY clause can reference items in the select list by using their aliases.</span></span> <span data-ttu-id="fbc36-124">ORDER BY 句は、現在スコープ内にあるその他の変数も参照できます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-124">The ORDER BY clause can also reference other variables that are currently in-scope.</span></span> <span data-ttu-id="fbc36-125">ただし、SELECT 句が DISTINCT 修飾子で指定されている場合は、ORDER BY 句は SELECT 句の別名のみを参照できます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-125">However, if the SELECT clause has been specified with a DISTINCT modifier, the ORDER BY clause can only reference aliases from the SELECT clause.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="191cb-121">コメント</span><span class="sxs-lookup"><span data-stu-id="191cb-121">Remarks</span></span>  
+ <span data-ttu-id="191cb-122">ORDER BY 句は、SELECT 句の結果に論理的に適用されます。</span><span class="sxs-lookup"><span data-stu-id="191cb-122">The ORDER BY clause is logically applied to the result of the SELECT clause.</span></span> <span data-ttu-id="191cb-123">ORDER BY 句では、別名を使用して選択リストの項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="191cb-123">The ORDER BY clause can reference items in the select list by using their aliases.</span></span> <span data-ttu-id="191cb-124">ORDER BY 句は、現在スコープ内にあるその他の変数も参照できます。</span><span class="sxs-lookup"><span data-stu-id="191cb-124">The ORDER BY clause can also reference other variables that are currently in-scope.</span></span> <span data-ttu-id="191cb-125">ただし、SELECT 句が DISTINCT 修飾子で指定されている場合は、ORDER BY 句は SELECT 句の別名のみを参照できます。</span><span class="sxs-lookup"><span data-stu-id="191cb-125">However, if the SELECT clause has been specified with a DISTINCT modifier, the ORDER BY clause can only reference aliases from the SELECT clause.</span></span>  
   
  `SELECT c AS c1 FROM cs AS c ORDER BY c1.e1, c.e2`  
   
- <span data-ttu-id="fbc36-126">ORDER BY 句内の各式は、順序付けられた不等号 (より小さい、より大きいなど) について比較できる型として評価される必要があります。</span><span class="sxs-lookup"><span data-stu-id="fbc36-126">Each expression in the ORDER BY clause must evaluate to some type that can be compared for ordered inequality (less than or greater than, and so on).</span></span> <span data-ttu-id="fbc36-127">通常、これらの型は数値、文字列、日付などのスカラー プリミティブです。</span><span class="sxs-lookup"><span data-stu-id="fbc36-127">These types are generally scalar primitives such as numbers, strings, and dates.</span></span> <span data-ttu-id="fbc36-128">比較できる型の RowType は順序も比較できます。</span><span class="sxs-lookup"><span data-stu-id="fbc36-128">RowTypes of comparable types are also order comparable.</span></span>  
+ <span data-ttu-id="191cb-126">ORDER BY 句内の各式は、順序付けられた不等号 (より小さい、より大きいなど) について比較できる型として評価される必要があります。</span><span class="sxs-lookup"><span data-stu-id="191cb-126">Each expression in the ORDER BY clause must evaluate to some type that can be compared for ordered inequality (less than or greater than, and so on).</span></span> <span data-ttu-id="191cb-127">通常、これらの型は数値、文字列、日付などのスカラー プリミティブです。</span><span class="sxs-lookup"><span data-stu-id="191cb-127">These types are generally scalar primitives such as numbers, strings, and dates.</span></span> <span data-ttu-id="191cb-128">比較できる型の RowType は順序も比較できます。</span><span class="sxs-lookup"><span data-stu-id="191cb-128">RowTypes of comparable types are also order comparable.</span></span>  
   
- <span data-ttu-id="fbc36-129">順序付けされたセットで、最上位の投影を除きコードが反復処理を行う場合、出力でその順序が維持されることは保証されません。</span><span class="sxs-lookup"><span data-stu-id="fbc36-129">If your code iterates over an ordered set, other than for a top-level projection, the output is not guaranteed to have its order preserved.</span></span>  
+ <span data-ttu-id="191cb-129">順序付けされたセットで、最上位の投影を除きコードが反復処理を行う場合、出力でその順序が維持されることは保証されません。</span><span class="sxs-lookup"><span data-stu-id="191cb-129">If your code iterates over an ordered set, other than for a top-level projection, the output is not guaranteed to have its order preserved.</span></span>  
   
 ```  
 -- In the following sample, order is guaranteed to be preserved:  
@@ -79,7 +79,7 @@ SELECT C2.FirstName, C2.LastName
         ORDER BY C1.LastName) as C2  
 ```  
   
- <span data-ttu-id="fbc36-130">UNION、UNION ALL、EXCEPT、または INTERSECT 操作を順序付けするには、次のパターンを使用してください。</span><span class="sxs-lookup"><span data-stu-id="fbc36-130">To have an ordered UNION, UNION ALL, EXCEPT, or INTERSECT operation, use the following pattern:</span></span>  
+ <span data-ttu-id="191cb-130">UNION、UNION ALL、EXCEPT、または INTERSECT 操作を順序付けするには、次のパターンを使用してください。</span><span class="sxs-lookup"><span data-stu-id="191cb-130">To have an ordered UNION, UNION ALL, EXCEPT, or INTERSECT operation, use the following pattern:</span></span>  
   
 ```  
 SELECT ...  
@@ -87,29 +87,29 @@ FROM ( UNION/EXCEPT/INTERSECT operation )
 ORDER BY ...  
 ```  
   
-## <a name="restricted-keywords"></a><span data-ttu-id="fbc36-131">制限付きのキーワード</span><span class="sxs-lookup"><span data-stu-id="fbc36-131">Restricted keywords</span></span>  
- <span data-ttu-id="fbc36-132">次のキーワードは `ORDER BY` 句で使用する場合には、引用符で囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="fbc36-132">The following keywords must be enclosed in quotation marks when used in an `ORDER BY` clause:</span></span>  
+## <a name="restricted-keywords"></a><span data-ttu-id="191cb-131">制限付きのキーワード</span><span class="sxs-lookup"><span data-stu-id="191cb-131">Restricted keywords</span></span>  
+ <span data-ttu-id="191cb-132">次のキーワードは `ORDER BY` 句で使用する場合には、引用符で囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="191cb-132">The following keywords must be enclosed in quotation marks when used in an `ORDER BY` clause:</span></span>  
   
--   <span data-ttu-id="fbc36-133">CROSS</span><span class="sxs-lookup"><span data-stu-id="fbc36-133">CROSS</span></span>  
+-   <span data-ttu-id="191cb-133">CROSS</span><span class="sxs-lookup"><span data-stu-id="191cb-133">CROSS</span></span>  
   
--   <span data-ttu-id="fbc36-134">FULL</span><span class="sxs-lookup"><span data-stu-id="fbc36-134">FULL</span></span>  
+-   <span data-ttu-id="191cb-134">FULL</span><span class="sxs-lookup"><span data-stu-id="191cb-134">FULL</span></span>  
   
--   <span data-ttu-id="fbc36-135">KEY</span><span class="sxs-lookup"><span data-stu-id="fbc36-135">KEY</span></span>  
+-   <span data-ttu-id="191cb-135">KEY</span><span class="sxs-lookup"><span data-stu-id="191cb-135">KEY</span></span>  
   
--   <span data-ttu-id="fbc36-136">左方向 (←) キー</span><span class="sxs-lookup"><span data-stu-id="fbc36-136">LEFT</span></span>  
+-   <span data-ttu-id="191cb-136">左方向 (←) キー</span><span class="sxs-lookup"><span data-stu-id="191cb-136">LEFT</span></span>  
   
--   <span data-ttu-id="fbc36-137">ORDER</span><span class="sxs-lookup"><span data-stu-id="fbc36-137">ORDER</span></span>  
+-   <span data-ttu-id="191cb-137">ORDER</span><span class="sxs-lookup"><span data-stu-id="191cb-137">ORDER</span></span>  
   
--   <span data-ttu-id="fbc36-138">OUTER</span><span class="sxs-lookup"><span data-stu-id="fbc36-138">OUTER</span></span>  
+-   <span data-ttu-id="191cb-138">OUTER</span><span class="sxs-lookup"><span data-stu-id="191cb-138">OUTER</span></span>  
   
--   <span data-ttu-id="fbc36-139">右方向 (→) キー</span><span class="sxs-lookup"><span data-stu-id="fbc36-139">RIGHT</span></span>  
+-   <span data-ttu-id="191cb-139">右方向 (→) キー</span><span class="sxs-lookup"><span data-stu-id="191cb-139">RIGHT</span></span>  
   
--   <span data-ttu-id="fbc36-140">ROW</span><span class="sxs-lookup"><span data-stu-id="fbc36-140">ROW</span></span>  
+-   <span data-ttu-id="191cb-140">ROW</span><span class="sxs-lookup"><span data-stu-id="191cb-140">ROW</span></span>  
   
--   <span data-ttu-id="fbc36-141">VALUE</span><span class="sxs-lookup"><span data-stu-id="fbc36-141">VALUE</span></span>  
+-   <span data-ttu-id="191cb-141">VALUE</span><span class="sxs-lookup"><span data-stu-id="191cb-141">VALUE</span></span>  
   
-## <a name="ordering-nested-queries"></a><span data-ttu-id="fbc36-142">入れ子になったクエリの順序</span><span class="sxs-lookup"><span data-stu-id="fbc36-142">Ordering Nested Queries</span></span>  
- <span data-ttu-id="fbc36-143">Entity Framework では、入れ子になった式をクエリ内の任意の場所に配置できるため、入れ子になったクエリの順序は維持されません。</span><span class="sxs-lookup"><span data-stu-id="fbc36-143">In the Entity Framework, a nested expression can be placed anywhere in the query; the order of a nested query is not preserved.</span></span>  
+## <a name="ordering-nested-queries"></a><span data-ttu-id="191cb-142">入れ子になったクエリの順序</span><span class="sxs-lookup"><span data-stu-id="191cb-142">Ordering Nested Queries</span></span>  
+ <span data-ttu-id="191cb-143">Entity Framework では、入れ子になった式をクエリ内の任意の場所に配置できるため、入れ子になったクエリの順序は維持されません。</span><span class="sxs-lookup"><span data-stu-id="191cb-143">In the Entity Framework, a nested expression can be placed anywhere in the query; the order of a nested query is not preserved.</span></span>  
   
 ```  
 -- The following query will order the results by the last name.  
@@ -126,18 +126,18 @@ SELECT C2.FirstName, C2.LastName
         ORDER BY C1.LastName) as C2  
 ```  
   
-## <a name="example"></a><span data-ttu-id="fbc36-144">例</span><span class="sxs-lookup"><span data-stu-id="fbc36-144">Example</span></span>  
- <span data-ttu-id="fbc36-145">次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリでは、SELECT ステートメントで返されたオブジェクトの並べ替え順序の指定に ORDER BY 演算子を使用します。</span><span class="sxs-lookup"><span data-stu-id="fbc36-145">The following [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query uses the ORDER BY operator to specify the sort order used on objects returned in a SELECT statement.</span></span> <span data-ttu-id="fbc36-146">このクエリは、AdventureWorks Sales Model に基づいています。</span><span class="sxs-lookup"><span data-stu-id="fbc36-146">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="fbc36-147">このクエリをコンパイルして実行するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="fbc36-147">To compile and run this query, follow these steps:</span></span>  
+## <a name="example"></a><span data-ttu-id="191cb-144">例</span><span class="sxs-lookup"><span data-stu-id="191cb-144">Example</span></span>  
+ <span data-ttu-id="191cb-145">次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリでは、SELECT ステートメントで返されたオブジェクトの並べ替え順序の指定に ORDER BY 演算子を使用します。</span><span class="sxs-lookup"><span data-stu-id="191cb-145">The following [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query uses the ORDER BY operator to specify the sort order used on objects returned in a SELECT statement.</span></span> <span data-ttu-id="191cb-146">このクエリは、AdventureWorks Sales Model に基づいています。</span><span class="sxs-lookup"><span data-stu-id="191cb-146">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="191cb-147">このクエリをコンパイルして実行するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="191cb-147">To compile and run this query, follow these steps:</span></span>  
   
-1.  <span data-ttu-id="fbc36-148">「 [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="fbc36-148">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
+1.  <span data-ttu-id="191cb-148">「 [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="191cb-148">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
   
-2.  <span data-ttu-id="fbc36-149">次のクエリを引数として `ExecuteStructuralTypeQuery` メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="fbc36-149">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
+2.  <span data-ttu-id="191cb-149">次のクエリを引数として `ExecuteStructuralTypeQuery` メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="191cb-149">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#ORDERBY](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#orderby)]  
   
-## <a name="see-also"></a><span data-ttu-id="fbc36-150">参照</span><span class="sxs-lookup"><span data-stu-id="fbc36-150">See Also</span></span>  
- [<span data-ttu-id="fbc36-151">クエリ式</span><span class="sxs-lookup"><span data-stu-id="fbc36-151">Query Expressions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)  
- [<span data-ttu-id="fbc36-152">Entity SQL リファレンス</span><span class="sxs-lookup"><span data-stu-id="fbc36-152">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [<span data-ttu-id="fbc36-153">SKIP</span><span class="sxs-lookup"><span data-stu-id="fbc36-153">SKIP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)  
- [<span data-ttu-id="fbc36-154">LIMIT</span><span class="sxs-lookup"><span data-stu-id="fbc36-154">LIMIT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)  
- [<span data-ttu-id="fbc36-155">TOP</span><span class="sxs-lookup"><span data-stu-id="fbc36-155">TOP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
+## <a name="see-also"></a><span data-ttu-id="191cb-150">参照</span><span class="sxs-lookup"><span data-stu-id="191cb-150">See Also</span></span>  
+ [<span data-ttu-id="191cb-151">クエリ式</span><span class="sxs-lookup"><span data-stu-id="191cb-151">Query Expressions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)  
+ [<span data-ttu-id="191cb-152">Entity SQL リファレンス</span><span class="sxs-lookup"><span data-stu-id="191cb-152">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
+ [<span data-ttu-id="191cb-153">SKIP</span><span class="sxs-lookup"><span data-stu-id="191cb-153">SKIP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)  
+ [<span data-ttu-id="191cb-154">LIMIT</span><span class="sxs-lookup"><span data-stu-id="191cb-154">LIMIT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)  
+ [<span data-ttu-id="191cb-155">TOP</span><span class="sxs-lookup"><span data-stu-id="191cb-155">TOP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
