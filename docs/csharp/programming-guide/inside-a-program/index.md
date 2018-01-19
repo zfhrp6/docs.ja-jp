@@ -11,33 +11,33 @@ ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
 caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 824ce9ce5cb98805acb1d75bf28a4bca45077d6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 441099f4e6dedc1531ef738401fa4d23c919991f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="inside-a-c-program"></a><span data-ttu-id="4a996-102">インサイド C# プログラム</span><span class="sxs-lookup"><span data-stu-id="4a996-102">Inside a C# Program</span></span>
-<span data-ttu-id="4a996-103">このセクションでは C# プログラムの一般的な構造について説明し、標準的な "Hello, World!" の</span><span class="sxs-lookup"><span data-stu-id="4a996-103">The section discusses the general structure of a C# program, and includes the standard "Hello, World!"</span></span> <span data-ttu-id="4a996-104">例を示します。</span><span class="sxs-lookup"><span data-stu-id="4a996-104">example.</span></span>  
+# <a name="inside-a-c-program"></a><span data-ttu-id="6426e-102">インサイド C# プログラム</span><span class="sxs-lookup"><span data-stu-id="6426e-102">Inside a C# Program</span></span>
+<span data-ttu-id="6426e-103">このセクションでは C# プログラムの一般的な構造について説明し、標準的な "Hello, World!" の</span><span class="sxs-lookup"><span data-stu-id="6426e-103">The section discusses the general structure of a C# program, and includes the standard "Hello, World!"</span></span> <span data-ttu-id="6426e-104">例を示します。</span><span class="sxs-lookup"><span data-stu-id="6426e-104">example.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4a996-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="4a996-105">In This Section</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="6426e-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6426e-105">In This Section</span></span>  
   
--   [<span data-ttu-id="4a996-106">Hello World -- 最初のプログラム</span><span class="sxs-lookup"><span data-stu-id="4a996-106">Hello World -- Your First Program</span></span>](../../../csharp/programming-guide/inside-a-program/hello-world-your-first-program.md)  
+-   [<span data-ttu-id="6426e-106">Hello World -- 最初のプログラム</span><span class="sxs-lookup"><span data-stu-id="6426e-106">Hello World -- Your First Program</span></span>](../../../csharp/programming-guide/inside-a-program/hello-world-your-first-program.md)  
   
--   [<span data-ttu-id="4a996-107">C# プログラムの一般構造</span><span class="sxs-lookup"><span data-stu-id="4a996-107">General Structure of a C# Program</span></span>](../../../csharp/programming-guide/inside-a-program/general-structure-of-a-csharp-program.md)  
+-   [<span data-ttu-id="6426e-107">C# プログラムの一般構造</span><span class="sxs-lookup"><span data-stu-id="6426e-107">General Structure of a C# Program</span></span>](../../../csharp/programming-guide/inside-a-program/general-structure-of-a-csharp-program.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="4a996-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="4a996-108">Related Sections</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="6426e-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="6426e-108">Related Sections</span></span>  
   
--   [<span data-ttu-id="4a996-109">C# の概要</span><span class="sxs-lookup"><span data-stu-id="4a996-109">Getting Started with C#</span></span>](../../../csharp/getting-started/index.md)  
+-   [<span data-ttu-id="6426e-109">C# の概要</span><span class="sxs-lookup"><span data-stu-id="6426e-109">Getting Started with C#</span></span>](../../../csharp/getting-started/index.md)  
   
--   [<span data-ttu-id="4a996-110">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="4a996-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+-   [<span data-ttu-id="6426e-110">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="6426e-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
   
--   [<span data-ttu-id="4a996-111">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="4a996-111">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+-   [<span data-ttu-id="6426e-111">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="6426e-111">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
   
--   [<span data-ttu-id="4a996-112">\<paveover>C# サンプル アプリケーション</span><span class="sxs-lookup"><span data-stu-id="4a996-112">\<paveover>C# Sample Applications</span></span>](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
+-   [<span data-ttu-id="6426e-112">\<paveover>C# サンプル アプリケーション</span><span class="sxs-lookup"><span data-stu-id="6426e-112">\<paveover>C# Sample Applications</span></span>](http://msdn.microsoft.com/library/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
   
-## <a name="c-language-specification"></a><span data-ttu-id="4a996-113">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="4a996-113">C# Language Specification</span></span>  
+## <a name="c-language-specification"></a><span data-ttu-id="6426e-113">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="6426e-113">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="4a996-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="4a996-114">See Also</span></span>  
- [<span data-ttu-id="4a996-115">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="4a996-115">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a><span data-ttu-id="6426e-114">参照</span><span class="sxs-lookup"><span data-stu-id="6426e-114">See Also</span></span>  
+ [<span data-ttu-id="6426e-115">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="6426e-115">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
