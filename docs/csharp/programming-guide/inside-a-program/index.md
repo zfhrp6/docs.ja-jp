@@ -11,11 +11,11 @@ ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
 caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 824ce9ce5cb98805acb1d75bf28a4bca45077d6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 441099f4e6dedc1531ef738401fa4d23c919991f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="inside-a-c-program"></a>インサイド C# プログラム
 このセクションでは C# プログラムの一般的な構造について説明し、標準的な "Hello, World!" の 例を示します。  
@@ -34,10 +34,10 @@ ms.lasthandoff: 10/18/2017
   
 -   [C# リファレンス](../../../csharp/language-reference/index.md)  
   
--   [\<paveover>C# サンプル アプリケーション](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
+-   [\<paveover>C# サンプル アプリケーション](http://msdn.microsoft.com/library/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
