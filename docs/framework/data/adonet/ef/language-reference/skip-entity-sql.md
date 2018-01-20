@@ -14,40 +14,40 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1578a5817e43943d5b4257e76c7706155504fc86
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 0dd0754158000642dd078f00033c9ddc2f78686d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="skip-entity-sql"></a><span data-ttu-id="32531-102">SKIP (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="32531-102">SKIP (Entity SQL)</span></span>
-<span data-ttu-id="32531-103">物理的なページングは、ORDER BY 句の SKIP サブ句を使用して実行できます。</span><span class="sxs-lookup"><span data-stu-id="32531-103">You can perform physical paging by using the SKIP sub-clause in the ORDER BY clause.</span></span> <span data-ttu-id="32531-104">SKIP を ORDER BY 句と切り離して使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="32531-104">SKIP cannot be used separately from the ORDER BY clause.</span></span>  
+# <a name="skip-entity-sql"></a><span data-ttu-id="2cb21-102">SKIP (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="2cb21-102">SKIP (Entity SQL)</span></span>
+<span data-ttu-id="2cb21-103">物理的なページングは、ORDER BY 句の SKIP サブ句を使用して実行できます。</span><span class="sxs-lookup"><span data-stu-id="2cb21-103">You can perform physical paging by using the SKIP sub-clause in the ORDER BY clause.</span></span> <span data-ttu-id="2cb21-104">SKIP を ORDER BY 句と切り離して使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="2cb21-104">SKIP cannot be used separately from the ORDER BY clause.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="32531-105">構文</span><span class="sxs-lookup"><span data-stu-id="32531-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2cb21-105">構文</span><span class="sxs-lookup"><span data-stu-id="2cb21-105">Syntax</span></span>  
   
 ```  
 [ SKIP n ]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="32531-106">引数</span><span class="sxs-lookup"><span data-stu-id="32531-106">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="2cb21-106">引数</span><span class="sxs-lookup"><span data-stu-id="2cb21-106">Arguments</span></span>  
  `n`  
- <span data-ttu-id="32531-107">スキップするアイテムの数。</span><span class="sxs-lookup"><span data-stu-id="32531-107">The number of items to skip.</span></span>  
+ <span data-ttu-id="2cb21-107">スキップするアイテムの数。</span><span class="sxs-lookup"><span data-stu-id="2cb21-107">The number of items to skip.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="32531-108">コメント</span><span class="sxs-lookup"><span data-stu-id="32531-108">Remarks</span></span>  
- <span data-ttu-id="32531-109">SKIP 式のサブ句が ORDER BY 句に存在する場合、結果は並べ替え順序に従って並べ替えられ、結果セットには SKIP 式の直後の行から始まる行が含まれます。</span><span class="sxs-lookup"><span data-stu-id="32531-109">If a SKIP expression sub-clause is present in an ORDER BY clause, the results will be sorted according the sort specification and the result set will include rows starting from the next row immediately after the SKIP expression.</span></span> <span data-ttu-id="32531-110">たとえば、SKIP 5 は、先頭の 5 行をスキップし、6 行目以降を返します。</span><span class="sxs-lookup"><span data-stu-id="32531-110">For example, SKIP 5 will skip the first five rows and return from the sixth row forward.</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="32531-111">TOP 修飾子と SKIP サブ句が同じクエリ式内に存在する場合、 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリは無効です。</span><span class="sxs-lookup"><span data-stu-id="32531-111">An [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query is invalid if both the TOP modifier and the SKIP sub-clause are present in the same query expression.</span></span> <span data-ttu-id="32531-112">TOP 式を LIMIT 式に変更してクエリを記述し直す必要があります。</span><span class="sxs-lookup"><span data-stu-id="32531-112">The query should be rewritten by changing the TOP expression to the LIMIT expression.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2cb21-108">コメント</span><span class="sxs-lookup"><span data-stu-id="2cb21-108">Remarks</span></span>  
+ <span data-ttu-id="2cb21-109">SKIP 式のサブ句が ORDER BY 句に存在する場合、結果は並べ替え順序に従って並べ替えられ、結果セットには SKIP 式の直後の行から始まる行が含まれます。</span><span class="sxs-lookup"><span data-stu-id="2cb21-109">If a SKIP expression sub-clause is present in an ORDER BY clause, the results will be sorted according the sort specification and the result set will include rows starting from the next row immediately after the SKIP expression.</span></span> <span data-ttu-id="2cb21-110">たとえば、SKIP 5 は、先頭の 5 行をスキップし、6 行目以降を返します。</span><span class="sxs-lookup"><span data-stu-id="2cb21-110">For example, SKIP 5 will skip the first five rows and return from the sixth row forward.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="32531-113">[!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)]では、キー以外の列で ORDER BY と共に SKIP を使用すると、不適切な結果が返される場合があります。</span><span class="sxs-lookup"><span data-stu-id="32531-113">In [!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)], using SKIP with ORDER BY on non-key columns might return incorrect results.</span></span> <span data-ttu-id="32531-114">キー以外の列に重複するデータが存在する場合、指定された数を超える行はスキップされます。</span><span class="sxs-lookup"><span data-stu-id="32531-114">More than the specified number of rows might be skipped if the non-key column has duplicate data in it.</span></span> <span data-ttu-id="32531-115">これは、 [!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)]用に SKIP が変換される方法によるものです。</span><span class="sxs-lookup"><span data-stu-id="32531-115">This is due to how SKIP is translated for [!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)].</span></span> <span data-ttu-id="32531-116">たとえば、次のコードでは、 `E.NonKeyColumn` に重複値が存在する場合、5 行を超える行はスキップされます。</span><span class="sxs-lookup"><span data-stu-id="32531-116">For example, in the following code more than five rows might be skipped if `E.NonKeyColumn` has duplicate values:</span></span>  
+>  <span data-ttu-id="2cb21-111">TOP 修飾子と SKIP サブ句が同じクエリ式内に存在する場合、 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリは無効です。</span><span class="sxs-lookup"><span data-stu-id="2cb21-111">An [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query is invalid if both the TOP modifier and the SKIP sub-clause are present in the same query expression.</span></span> <span data-ttu-id="2cb21-112">TOP 式を LIMIT 式に変更してクエリを記述し直す必要があります。</span><span class="sxs-lookup"><span data-stu-id="2cb21-112">The query should be rewritten by changing the TOP expression to the LIMIT expression.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="2cb21-113">[!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)]では、キー以外の列で ORDER BY と共に SKIP を使用すると、不適切な結果が返される場合があります。</span><span class="sxs-lookup"><span data-stu-id="2cb21-113">In [!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)], using SKIP with ORDER BY on non-key columns might return incorrect results.</span></span> <span data-ttu-id="2cb21-114">キー以外の列に重複するデータが存在する場合、指定された数を超える行はスキップされます。</span><span class="sxs-lookup"><span data-stu-id="2cb21-114">More than the specified number of rows might be skipped if the non-key column has duplicate data in it.</span></span> <span data-ttu-id="2cb21-115">これは、 [!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)]用に SKIP が変換される方法によるものです。</span><span class="sxs-lookup"><span data-stu-id="2cb21-115">This is due to how SKIP is translated for [!INCLUDE[ssVersion2000](../../../../../../includes/ssversion2000-md.md)].</span></span> <span data-ttu-id="2cb21-116">たとえば、次のコードでは、 `E.NonKeyColumn` に重複値が存在する場合、5 行を超える行はスキップされます。</span><span class="sxs-lookup"><span data-stu-id="2cb21-116">For example, in the following code more than five rows might be skipped if `E.NonKeyColumn` has duplicate values:</span></span>  
 >   
 >  `SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP 5L`  
   
- <span data-ttu-id="32531-117">[!INCLUDE[esql](../../../../../../includes/esql-md.md)] この [例の中の](https://msdn.microsoft.com/library/bb738702\(v=vs.100\).aspx#_ESQL) クエリでは、SELECT ステートメントで返されたオブジェクトの並べ替え順序の指定に ORDER BY 演算子を SKIP と共に使用します。</span><span class="sxs-lookup"><span data-stu-id="32531-117">The  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query in [this](https://msdn.microsoft.com/library/bb738702\(v=vs.100\).aspx#_ESQL) example uses the ORDER BY operator with SKIP to specify the sort order used on objects returned in a SELECT statement.</span></span>  
+ <span data-ttu-id="2cb21-117">[!INCLUDE[esql](../../../../../../includes/esql-md.md)] この [例の中の](https://msdn.microsoft.com/library/bb738702\(v=vs.100\).aspx#_ESQL) クエリでは、SELECT ステートメントで返されたオブジェクトの並べ替え順序の指定に ORDER BY 演算子を SKIP と共に使用します。</span><span class="sxs-lookup"><span data-stu-id="2cb21-117">The  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query in [this](https://msdn.microsoft.com/library/bb738702\(v=vs.100\).aspx#_ESQL) example uses the ORDER BY operator with SKIP to specify the sort order used on objects returned in a SELECT statement.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="32531-118">参照</span><span class="sxs-lookup"><span data-stu-id="32531-118">See Also</span></span>  
- [<span data-ttu-id="32531-119">ORDER BY</span><span class="sxs-lookup"><span data-stu-id="32531-119">ORDER BY</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)  
- [<span data-ttu-id="32531-120">方法: 結果をクエリ ページング</span><span class="sxs-lookup"><span data-stu-id="32531-120">How to: Page Through Query Results</span></span>](http://msdn.microsoft.com/en-us/ffc0f920-e7de-42e0-9b12-ef356421d030)  
- [<span data-ttu-id="32531-121">ページング</span><span class="sxs-lookup"><span data-stu-id="32531-121">Paging</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)  
- [<span data-ttu-id="32531-122">TOP</span><span class="sxs-lookup"><span data-stu-id="32531-122">TOP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
+## <a name="see-also"></a><span data-ttu-id="2cb21-118">参照</span><span class="sxs-lookup"><span data-stu-id="2cb21-118">See Also</span></span>  
+ [<span data-ttu-id="2cb21-119">ORDER BY</span><span class="sxs-lookup"><span data-stu-id="2cb21-119">ORDER BY</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)  
+ [<span data-ttu-id="2cb21-120">方法: 結果をクエリ ページング</span><span class="sxs-lookup"><span data-stu-id="2cb21-120">How to: Page Through Query Results</span></span>](http://msdn.microsoft.com/library/ffc0f920-e7de-42e0-9b12-ef356421d030)  
+ [<span data-ttu-id="2cb21-121">ページング</span><span class="sxs-lookup"><span data-stu-id="2cb21-121">Paging</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)  
+ [<span data-ttu-id="2cb21-122">TOP</span><span class="sxs-lookup"><span data-stu-id="2cb21-122">TOP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)

@@ -14,26 +14,26 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e6c494354532ffdeffdc714f748c5b009511443a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 6d0d1a4a604549f18e48d690753451be4c98f280
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="development-and-deployment-considerations"></a><span data-ttu-id="7cfd9-102">開発および配置に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="7cfd9-102">Development and Deployment Considerations</span></span>
-<span data-ttu-id="7cfd9-103">このセクションのトピックでは、ADO.NET Entity Framework に基づくアプリケーションを開発または配置する際に考慮する必要のある問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="7cfd9-103">Topics in this section address issues to consider when developing or deploying an application that is based on the ADO.NET Entity Framework.</span></span>  
+# <a name="development-and-deployment-considerations"></a><span data-ttu-id="ca9f3-102">開発および配置に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="ca9f3-102">Development and Deployment Considerations</span></span>
+<span data-ttu-id="ca9f3-103">このセクションのトピックでは、ADO.NET Entity Framework に基づくアプリケーションを開発または配置する際に考慮する必要のある問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="ca9f3-103">Topics in this section address issues to consider when developing or deploying an application that is based on the ADO.NET Entity Framework.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="7cfd9-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7cfd9-104">In This Section</span></span>  
- [<span data-ttu-id="7cfd9-105">セキュリティの考慮事項</span><span class="sxs-lookup"><span data-stu-id="7cfd9-105">Security Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/security-considerations.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ca9f3-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="ca9f3-104">In This Section</span></span>  
+ [<span data-ttu-id="ca9f3-105">セキュリティの考慮事項</span><span class="sxs-lookup"><span data-stu-id="ca9f3-105">Security Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/security-considerations.md)  
   
- [<span data-ttu-id="7cfd9-106">パフォーマンスに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="7cfd9-106">Performance Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/performance-considerations.md)  
+ [<span data-ttu-id="ca9f3-106">パフォーマンスに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="ca9f3-106">Performance Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/performance-considerations.md)  
   
- [<span data-ttu-id="7cfd9-107">移行に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="7cfd9-107">Migration Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)  
+ [<span data-ttu-id="ca9f3-107">移行に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="ca9f3-107">Migration Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)  
   
- [<span data-ttu-id="7cfd9-108">配置に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="7cfd9-108">Deployment Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
+ [<span data-ttu-id="ca9f3-108">配置に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="ca9f3-108">Deployment Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
   
-## <a name="see-also"></a><span data-ttu-id="7cfd9-109">参照</span><span class="sxs-lookup"><span data-stu-id="7cfd9-109">See Also</span></span>  
- [<span data-ttu-id="7cfd9-110">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="7cfd9-110">ADO.NET Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/index.md)  
- [<span data-ttu-id="7cfd9-111">Entity Framework の概要</span><span class="sxs-lookup"><span data-stu-id="7cfd9-111">Entity Framework Overview</span></span>](../../../../../docs/framework/data/adonet/ef/overview.md)  
- [<span data-ttu-id="7cfd9-112">はじめに</span><span class="sxs-lookup"><span data-stu-id="7cfd9-112">Getting Started</span></span>](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
- [<span data-ttu-id="7cfd9-113">ADO.NET Entity Data Model ツール</span><span class="sxs-lookup"><span data-stu-id="7cfd9-113">ADO.NET Entity Data Model  Tools</span></span>](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)
+## <a name="see-also"></a><span data-ttu-id="ca9f3-109">参照</span><span class="sxs-lookup"><span data-stu-id="ca9f3-109">See Also</span></span>  
+ [<span data-ttu-id="ca9f3-110">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="ca9f3-110">ADO.NET Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/index.md)  
+ [<span data-ttu-id="ca9f3-111">Entity Framework の概要</span><span class="sxs-lookup"><span data-stu-id="ca9f3-111">Entity Framework Overview</span></span>](../../../../../docs/framework/data/adonet/ef/overview.md)  
+ [<span data-ttu-id="ca9f3-112">はじめに</span><span class="sxs-lookup"><span data-stu-id="ca9f3-112">Getting Started</span></span>](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
+ [<span data-ttu-id="ca9f3-113">ADO.NET Entity Data Model ツール</span><span class="sxs-lookup"><span data-stu-id="ca9f3-113">ADO.NET Entity Data Model  Tools</span></span>](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)
