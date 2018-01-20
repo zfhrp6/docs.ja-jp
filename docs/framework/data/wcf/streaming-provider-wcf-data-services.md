@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fc3e7d545a502c040e7e3ee5140d385b60e82d5c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f965bc46c62742c0e2ffb0a7f8ae2e09eca5dc1c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="streaming-provider-wcf-data-services"></a>ストリーミング プロバイダー (WCF Data Services)
 データ サービスは、ラージ オブジェクトのバイナリ データを公開できます。 このバイナリ データは、ビデオ ストリームとオーディオ ストリーム、画像、ドキュメント ファイル、またはその他の種類のバイナリのメディアを表すことができます。 データ モデルのエンティティに 1 つ以上のバイナリ プロパティが含まれている場合、データ サービスは、このバイナリ データを応答フィードのエントリ内に Base-64 としてエンコードして返します。 読み込みと、この方法で大きなバイナリ データをシリアル化するには、パフォーマンスに影響するので、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]が所属するエンティティの独立したバイナリ データを取得するためのメカニズムを定義します。 これは、バイナリ データとエンティティを分離して 1 つ以上のデータ ストリームを生成することで実現されます。  
@@ -100,7 +100,7 @@ ms.lasthandoff: 12/22/2017
   
  詳細については、次を参照してください。[メッセージ転送ストリーミング](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md)と[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。  
   
- また、既定では、インターネット インフォメーション サービス (IIS) でも要求のサイズが 4 MB に制限されます。 IIS で実行されているときに、4 MB より大きいストリームを受信するデータ サービスを有効にするを設定する必要も、`maxRequestLength`の属性、 [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/e9b81350-8aaf-47cc-9843-5f7d0c59f369)で、`<system.web />`構成セクションとして次の例に示します。  
+ また、既定では、インターネット インフォメーション サービス (IIS) でも要求のサイズが 4 MB に制限されます。 IIS で実行されているときに、4 MB より大きいストリームを受信するデータ サービスを有効にするを設定する必要も、`maxRequestLength`の属性、 [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369)で、`<system.web />`構成セクションとして次の例に示します。  
   
   
   
@@ -130,7 +130,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A> メソッド、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A> メソッド、または <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> メソッドを実装する場合は、メソッドのパラメーターとして指定される eTag 値および Content-Type 値を使用する必要があります。 <xref:System.Data.Services.Providers.IDataServiceStreamProvider> プロバイダーの実装には、eTag ヘッダーまたは Content-Type ヘッダーを設定しないでください。  
   
--   既定では、クライアントはチャンクされた HTTP Transfer-Encoding を使用して、大きなバイナリ ストリームを送信します。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]開発サーバーはこの種類のエンコーディングをサポートしていません、この Web サーバーを使用して、大きなバイナリ ストリームを受け入れる必要があります、ストリーミング データ サービスをホストすることはできません。 詳細については[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]開発サーバーを参照してください[ASP.NET Web プロジェクト用の Visual Studio で Web サーバー](http://msdn.microsoft.com/en-us/31d4f588-df59-4b7e-b9ea-e1f2dd204328)です。  
+-   既定では、クライアントはチャンクされた HTTP Transfer-Encoding を使用して、大きなバイナリ ストリームを送信します。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]開発サーバーはこの種類のエンコーディングをサポートしていません、この Web サーバーを使用して、大きなバイナリ ストリームを受け入れる必要があります、ストリーミング データ サービスをホストすることはできません。 詳細については[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]開発サーバーを参照してください[ASP.NET Web プロジェクト用の Visual Studio で Web サーバー](http://msdn.microsoft.com/library/31d4f588-df59-4b7e-b9ea-e1f2dd204328)です。  
   
 <a name="versioning"></a>   
 ## <a name="versioning-requirements"></a>バージョン管理の要件  

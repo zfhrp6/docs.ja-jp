@@ -20,11 +20,11 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 39645de71913baeaa39524e1cae081de9cac3442
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4447f648277576169c9004d1880283728639c8f3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="coropenflags-enumeration"></a>CorOpenFlags 列挙型
 マニフェスト ファイルを開くときにメタデータの動作を制御するフラグ値を含めます。  
@@ -62,7 +62,7 @@ typedef enum CorOpenFlags
 |`ofCacheImage`|互換性のために残されています。 このフラグは無視されます。|  
 |`ofManifestMetadata`|互換性のために残されています。 このフラグは無視されます。|  
 |`ofReadOnly`|読み取り用にファイルが開かれることを示すへの呼び出し`QueryInterface`の[IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)にすることはできません。|  
-|`ofTakeOwnership`|呼び出しを使用してメモリが割り当てられたことを示す[CoTaskMemAlloc](http://msdn.microsoft.com/en-us/c4cb588d-9482-4f90-a92e-75b604540d5c)メタデータによって解放されるとします。|  
+|`ofTakeOwnership`|呼び出しを使用してメモリが割り当てられたことを示す[CoTaskMemAlloc](http://msdn.microsoft.com/library/c4cb588d-9482-4f90-a92e-75b604540d5c)メタデータによって解放されるとします。|  
 |`ofNoTypeLib`|互換性のために残されています。 このフラグは無視されます。|  
 |`ofNoTransform`|.winmd ファイルの自動変換を無効にする必要があることを示します。 つまり、Windows Runtime タイプから .NET Framework タイプへの投射は無効になります。 詳細については、次を参照してください。[内部での .NET and Windows Runtime](http://msdn.microsoft.com/magazine/jj651569.aspx)です。|  
 |`ofReserved1`|内部使用のために予約されています。|  

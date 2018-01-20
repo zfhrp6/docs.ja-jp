@@ -11,11 +11,11 @@ ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
 caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f554893858b9475b3d94a669a094206be6a5c3fa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e4ba86f15e51fdceb09c7e005e2af4fa0f9f592f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic コンパイラ オプション一覧 (カテゴリ別)
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) 内からプログラムをコンパイルする方法の代替手段として提供されています。 機能のカテゴリ順に並べ替えた [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
@@ -105,7 +105,7 @@ ms.lasthandoff: 11/21/2017
 |[/win32icon](../../../visual-basic/reference/command-line-compiler/win32icon.md)|.ico ファイルを出力ファイルに挿入します。|  
 |[/win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md)|Win32 リソースを出力ファイルに挿入します。|  
   
-## <a name="miscellaneous"></a>その他の指定  
+## <a name="miscellaneous"></a>その他  
   
 |オプション|目的|  
 |---|---|  
@@ -127,8 +127,8 @@ ms.lasthandoff: 11/21/2017
 |`/parallel[+&#124;-]`|同時実行ビルドを使用する (+) かどうかを指定します。|  
 |`/checksumalgorithm:<alg>`|PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。  サポートされる値は、SHA1 (既定値) または SHA256 です。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic コンパイラ オプション一覧 (アルファベット順)](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
- [プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
+ [プロジェクト デザイナーの概要](http://msdn.microsoft.com/library/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
  [アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
  [カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)

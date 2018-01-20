@@ -17,11 +17,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 1bd25dd0444c428e000371abe494e62b258eaa63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d2593df04b93db17f9ca61a98b21aaec1d534d46
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>アセンブリ バインディング リダイレクトのセキュリティ アクセス許可
 アプリケーション構成ファイルで明示的にアセンブリ バインディングをリダイレクトするには、セキュリティ アクセス許可が必要です。 これは、.NET Framework アセンブリおよびサードパーティ製アセンブリに適用されます。 許可を設定して、<xref:System.Security.Permissions.SecurityPermissionFlag>フラグを<xref:System.Security.Permissions.SecurityPermission>です。 マネージ アセンブリは、既定ではアクセス許可を持っていません。  
@@ -36,12 +36,12 @@ ms.lasthandoff: 12/22/2017
 |----------|-----------------------------------|  
 |信頼済みゾーン (ローカル コンピューター)|**ON**|  
 |イントラネット ゾーン|**ON**|  
-|インターネット ゾーン|**オフ**|  
-|信頼されていないゾーン|**オフ**|  
+|インターネット ゾーン|**OFF**|  
+|信頼されていないゾーン|**OFF**|  
   
  管理者は、これらのセキュリティ設定をサポートしたり、特定のコンピューターで特定のシナリオの制限を変更できます。 変更するためのツールがない、**すること**フラグです。 既定値の設定、管理者はユーザーのコンピューターに Security.config ファイルを編集してする必要があります手動でします。  
   
 ## <a name="see-also"></a>参照  
- [発行者ポリシー ファイルとサイド バイ サイド実行](http://msdn.microsoft.com/en-us/97a042be-4d72-40c3-91c0-76fd36bdf133)  
+ [発行者ポリシー ファイルとサイド バイ サイド実行](http://msdn.microsoft.com/library/97a042be-4d72-40c3-91c0-76fd36bdf133)  
  [方法: 自動バインディング リダイレクトを有効/無効にする](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)  
  [side-by-side 実行](../../../docs/framework/deployment/side-by-side-execution.md)

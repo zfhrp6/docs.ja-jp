@@ -14,11 +14,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: 254cc241edf2d1c53ce9dd14eee41cd8bf6eaa76
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2604b9dacf11b9971b10d23d9a807092ddf07830
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-secure-messages-within-reliable-sessions"></a>方法 : 信頼できるセッション内でメッセージをセキュリティで保護する
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 12/22/2017
 
 1. サービスに対する認証時にクライアントが使用する必要があるクライアント資格情報を指定します。
 
-エンドポイント構成要素を含む最初のタスクで重要な`bindingConfiguration`に (この例の) という名前のバインディング構成を参照する属性を`MessageSecurity`です。 [ **\<バインディング >** ](../../../../docs/framework/misc/binding.md)構成要素を設定して、信頼できるセッションを有効にするには、この名前を参照し、`enabled`の属性、 [  **\<reliableSession >** ](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)要素を`true`です。 信頼できるセッション内で使用できる順序付き配信の保証は、`ordered` 属性を `true` に設定することによって要求できます。
+エンドポイント構成要素を含む最初のタスクで重要な`bindingConfiguration`に (この例の) という名前のバインディング構成を参照する属性を`MessageSecurity`です。 [ **\<バインディング >** ](../../../../docs/framework/misc/binding.md)構成要素を設定して、信頼できるセッションを有効にするには、この名前を参照し、`enabled`の属性、 [  **\<reliableSession >** ](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)要素を`true`です。 信頼できるセッション内で使用できる順序付き配信の保証は、`ordered` 属性を `true` に設定することによって要求できます。
 
 この構成手順を基になる例の元のコピーを次を参照してください。、 [WS 信頼できるセッション](../../../../docs/framework/wcf/samples/ws-reliable-session.md)です。
 

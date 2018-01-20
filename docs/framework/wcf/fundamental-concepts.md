@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0c05aa44a46b934a78af38c33ee34dd03f69e56d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 651515095a0c9f9e970fff2d77421cfa804fa701
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Windows Communication Foundation の基本概念
 このトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アーキテクチャの概要について説明します。 ここでは、主要概念およびこれらの概念がどのように組み合わされているかについて説明します。 最も単純なバージョンの作成に関するチュートリアルについては、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスとクライアントを参照してください[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。 学習する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]プログラミングを参照してください[基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)です。  
@@ -166,4 +166,4 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 ## <a name="see-also"></a>参照  
  [Windows Communication Foundation とは](../../../docs/framework/wcf/whats-wcf.md)  
  [Windows Communication Foundation のアーキテクチャ](../../../docs/framework/wcf/architecture.md)  
- [セキュリティ アーキテクチャ](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)
+ [セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

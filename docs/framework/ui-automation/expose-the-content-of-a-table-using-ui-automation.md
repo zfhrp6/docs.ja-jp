@@ -21,11 +21,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: acc6bee115548ca1f3ba676c4d09b83d4f40e52e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1fcd56e1563b1fcd400d3c1d68b2675efaac3200
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>UI オートメーションを使用したテーブルの内容の公開
 > [!NOTE]
@@ -37,7 +37,7 @@ ms.lasthandoff: 12/22/2017
  次のコード例を取得する方法を示しています、<xref:System.Windows.Automation.AutomationElement>テーブル セルの内容を表す; 行および列のインデックス、行と列の範囲、および行および列のヘッダー情報などのセルのプロパティも取得します。 この例では、フォーカス変更イベント ハンドラーを使用して、キーボードの走査を実装する表形式のコントロールをシミュレートする[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]です。 フォーカス変更イベントには、各テーブルの項目の情報が公開します。  
   
 > [!NOTE]
->  フォーカスの変更がグローバル デスクトップ イベントであるため、テーブルの外部のフォーカス変更イベントをフィルター処理する必要があります。 参照してください、 [TrackFocus サンプル](http://msdn.microsoft.com/en-us/4a91c0af-6bb5-4d38-a743-cf136f268fc9)関連の実装です。  
+>  フォーカスの変更がグローバル デスクトップ イベントであるため、テーブルの外部のフォーカス変更イベントをフィルター処理する必要があります。 参照してください、 [TrackFocus サンプル](http://msdn.microsoft.com/library/4a91c0af-6bb5-4d38-a743-cf136f268fc9)関連の実装です。  
   
  [!code-csharp[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#starttarget)]
  [!code-vb[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#starttarget)]  

@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: db68fba51cd7ef9bad9ba6f7c4ba8d05a31c4371
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7cca363be57e5c5022c70c62d876f62cebc6e9c0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>方法 : Windows フォーム コントロールのスレッド セーフな呼び出しを行う
 マルチスレッドを使用して Windows フォーム アプリケーションのパフォーマンスを向上させる場合は、必ずスレッド セーフな方法でコントロールを呼び出してください。  
@@ -415,7 +415,7 @@ private:
  次のコード例は、3 つのボタンと 1 つのテキスト ボックスを持つフォームで構成される、完全な Windows フォーム アプリケーションです。 最初のボタンは安全でないスレッド間アクセスを示し、2 番目のボタンは <xref:System.Windows.Forms.Control.Invoke%2A>を使用した安全なアクセスを示し、3 番目のボタンは <xref:System.ComponentModel.BackgroundWorker>を使用した安全なアクセスを示します。  
   
 > [!NOTE]
->  この例の実行方法については、「 [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/en-us/cc447f7e-4c3b-4397-9d05-aeba3ca49416)」を参照してください。 この例では、System.Drawing アセンブリと System.Windows.Forms アセンブリへの参照が必要です。  
+>  例を実行する方法の手順は「[方法: 完成した Windows フォーム コードの例を Visual Studio を使ってコンパイルして実行する](http://msdn.microsoft.com/library/cc447f7e-4c3b-4397-9d05-aeba3ca49416)」を参照してください。 この例では、System.Drawing アセンブリと System.Windows.Forms アセンブリへの参照が必要です。  
   
 ```csharp  
 using System;  

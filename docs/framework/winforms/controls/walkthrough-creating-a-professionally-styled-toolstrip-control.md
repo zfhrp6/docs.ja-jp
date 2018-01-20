@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f3d47f285643f0b989db9419392eed736d0efbea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ab9adb72a174da25298b6ea104b002914de0cc40
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a>チュートリアル : プロフェッショナル スタイルの ToolStrip コントロールの作成
 アプリケーションを移すことができる<xref:System.Windows.Forms.ToolStrip>から派生した独自のクラスを記述して、プロフェッショナルな外観と動作を制御、<xref:System.Windows.Forms.ToolStripProfessionalRenderer>型です。  
@@ -44,7 +44,7 @@ ms.lasthandoff: 12/22/2017
  このトピックの「単一のリストとしてコードをコピーするに、を参照してください。[する方法: プロフェッショナル スタイルの ToolStrip コントロールを作成](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
@@ -60,7 +60,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  **ソリューション エクスプ ローラー**、選択した言語に応じて"UserControl1.cs"または"UserControl1.vb"をという名前のソース ファイルを削除して、プロジェクトの既定のコントロールを削除します。  
   
-     詳細については、次を参照してください。 [NIB: 方法:: 削除、削除、および項目の除外](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)です。  
+     詳細については、次を参照してください。 [NIB: 方法:: 削除、削除、および項目の除外](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)です。  
   
 3.  新しい<xref:System.Windows.Forms.UserControl>項目を**StackViewLibrary**プロジェクト。 新しいソース ファイルの基本の名前を付けます`StackView`です。  
   
@@ -132,7 +132,7 @@ ms.lasthandoff: 12/22/2017
   
 8.  名前を変更、`mailStackButton_Click`イベント ハンドラーを`stackButton_Click`です。  
   
-     詳細については、次を参照してください。[する方法: 識別子 (Visual Basic) の名前を変更](http://msdn.microsoft.com/en-us/e5a5edf8-3dba-4119-81f4-fc2aba180e0c)です。  
+     詳細については、次を参照してください。[する方法: 識別子 (Visual Basic) の名前を変更](http://msdn.microsoft.com/library/e5a5edf8-3dba-4119-81f4-fc2aba180e0c)です。  
   
 9. 次のコードを挿入、`stackButton_Click`イベント ハンドラー。  
   
@@ -146,7 +146,7 @@ ms.lasthandoff: 12/22/2017
 12. 手順 10 および 11 for、`contactsStackButton`と`tasksStackButton`コントロール。  
   
 ## <a name="defining-icons"></a>アイコンの定義  
- 各`StackView`ボタンに関連付けられているアイコンがあります。 便宜上、各アイコンとして表されます、Base64 でエンコードされた文字列の前に逆シリアル化する、<xref:System.Drawing.Bitmap>から作成します。 実稼働環境でのリソースとしてビットマップ データを格納して、アイコン、Windows フォーム デザイナーに表示されます。 詳細については、次を参照してください。[する方法: Windows フォームの背景画像の追加](http://msdn.microsoft.com/en-us/7a509ba2-055c-4ae6-b88a-54625c6d9aff)です。  
+ 各`StackView`ボタンに関連付けられているアイコンがあります。 便宜上、各アイコンとして表されます、Base64 でエンコードされた文字列の前に逆シリアル化する、<xref:System.Drawing.Bitmap>から作成します。 実稼働環境でのリソースとしてビットマップ データを格納して、アイコン、Windows フォーム デザイナーに表示されます。 詳細については、次を参照してください。[する方法: Windows フォームの背景画像の追加](http://msdn.microsoft.com/library/7a509ba2-055c-4ae6-b88a-54625c6d9aff)です。  
   
 #### <a name="to-define-icons"></a>アイコンを定義する  
   

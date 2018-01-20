@@ -23,11 +23,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ac4b6fc2ae36d848306178f281cceeeb0654ec03
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5cee99346d19c632739bcc6540c43f1a35217a2f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>チュートリアル : 拡張性のあるアプリケーションの作成
 このチュートリアルでは、簡単な電卓の機能を実行するアドイン用のパイプラインを作成する方法について説明します。 実際のシナリオでは; は示しません代わりに、パイプラインとどのように追加のサービスを提供できるホストの基本機能を示します。  
@@ -52,11 +52,11 @@ ms.lasthandoff: 12/22/2017
   
 -   ホスト アプリケーションを実行します。  
   
- このパイプラインは、シリアル化できる型のみを渡します (<xref:System.Double>と<xref:System.String>)、ホストとアドインの間です。 例については複雑なデータ型のコレクションを渡す方法を示す、次を参照してください。[チュートリアル: コレクションのホスト間で渡すとアドイン](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)です。  
+ このパイプラインは、シリアル化できる型のみを渡します (<xref:System.Double>と<xref:System.String>)、ホストとアドインの間です。 例については複雑なデータ型のコレクションを渡す方法を示す、次を参照してください。[チュートリアル: コレクションのホスト間で渡すとアドイン](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)です。  
   
  このパイプラインのコントラクトは、次の 4 つの算術演算のオブジェクト モデルを定義します。 追加、減算、乗算、および除算します。 ホストから、アドイン + 2 + 2 などを計算する数式れ、アドインのホストに結果を返します。  
   
- バージョン 2 の電卓を追加より高度を提供し、バージョン管理を示します。 説明されている、[チュートリアル: 変更のホストとしての旧バージョンとの互換性を有効にすると](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)です。  
+ バージョン 2 の電卓を追加より高度を提供し、バージョン管理を示します。 説明されている、[チュートリアル: 変更のホストとしての旧バージョンとの互換性を有効にすると](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)です。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
@@ -73,7 +73,7 @@ ms.lasthandoff: 12/22/2017
 2.  ソリューションの名前を付けます`CalculatorV1`です。  
   
 ## <a name="creating-the-pipeline-directory-structure"></a>パイプライン ディレクトリ構造を作成します。  
- アドイン モデルでは、指定したディレクトリ構造に配置するのにパイプライン セグメントのアセンブリが必要です。 パイプラインの構造に関する詳細については、次を参照してください。[パイプラインの開発要件](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
+ アドイン モデルでは、指定したディレクトリ構造に配置するのにパイプライン セグメントのアセンブリが必要です。 パイプラインの構造に関する詳細については、次を参照してください。[パイプラインの開発要件](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
   
 #### <a name="to-create-the-pipeline-directory-structure"></a>パイプライン ディレクトリ構造を作成するには  
   
@@ -92,10 +92,10 @@ ms.lasthandoff: 12/22/2017
       HostSideAdapters  
     ```  
   
-     アプリケーション フォルダーにパイプラインのフォルダー構造を配置する必要はありません。関数は、のみ、便宜上、ここで呼び出されます。 該当の手順では、このチュートリアルは、パイプラインのフォルダー構造が別の場所である場合は、コードを変更する方法を説明します。 パイプライン ディレクトリの必要条件の説明を参照して[パイプラインの開発要件](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
+     アプリケーション フォルダーにパイプラインのフォルダー構造を配置する必要はありません。関数は、のみ、便宜上、ここで呼び出されます。 該当の手順では、このチュートリアルは、パイプラインのフォルダー構造が別の場所である場合は、コードを変更する方法を説明します。 パイプライン ディレクトリの必要条件の説明を参照して[パイプラインの開発要件](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
   
     > [!NOTE]
-    >  `CalcV2`フォルダーは、このチュートリアルでは使用されません。 のプレース ホルダーは[チュートリアル: 変更のホストとしての旧バージョンとの互換性を有効にすると](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)です。  
+    >  `CalcV2`フォルダーは、このチュートリアルでは使用されません。 のプレース ホルダーは[チュートリアル: 変更のホストとしての旧バージョンとの互換性を有効にすると](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)です。  
   
 ## <a name="creating-the-contract-and-views"></a>コントラクトとビューの作成  
  このパイプラインのコントラクト セグメントの定義、`ICalc1Contract`を 4 つのメソッドを定義するインターフェイス: `add`、 `subtract`、 `multiply`、および`divide`です。  
@@ -204,7 +204,7 @@ ms.lasthandoff: 12/22/2017
   
  このパイプラインのアドインのホストと型フローにサービスをアドインをホストから提供します。 型が、アドインをホストからフローないため、ビューからコントラクトのアダプターが含まするはありません。  
   
- 有効期間の管理を実装するには、使用、<xref:System.AddIn.Pipeline.ContractHandle>コントラクトに有効期間トークンをアタッチするオブジェクト。 有効期間の管理が機能するために、このハンドルへの参照を維持する必要があります。 トークンが適用されると、追加のプログラミングは必要ありませんが使用されていないガベージ コレクションで利用できるようにすると、アドイン システムがオブジェクトの破棄できます。 詳細については、「 [有効期間管理](http://msdn.microsoft.com/en-us/57a9c87e-394c-4fef-89f2-aa4223a2aeb5)」を参照してください。  
+ 有効期間の管理を実装するには、使用、<xref:System.AddIn.Pipeline.ContractHandle>コントラクトに有効期間トークンをアタッチするオブジェクト。 有効期間の管理が機能するために、このハンドルへの参照を維持する必要があります。 トークンが適用されると、追加のプログラミングは必要ありませんが使用されていないガベージ コレクションで利用できるようにすると、アドイン システムがオブジェクトの破棄できます。 詳細については、次を参照してください。[継続時間管理](http://msdn.microsoft.com/library/57a9c87e-394c-4fef-89f2-aa4223a2aeb5)です。  
   
 #### <a name="to-create-the-host-side-adapter"></a>ホスト側のアダプターを作成するには  
   
@@ -339,7 +339,7 @@ ms.lasthandoff: 12/22/2017
     |Calc1HVA|MyApp|  
   
     > [!NOTE]
-    >  パイプライン フォルダー構造をアプリケーション フォルダー以外の場所に配置することを決定する場合は、それに応じて、テーブルのパスを変更する必要があります。 パイプライン ディレクトリの必要条件の説明を参照して[パイプラインの開発要件](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
+    >  パイプライン フォルダー構造をアプリケーション フォルダー以外の場所に配置することを決定する場合は、それに応じて、テーブルのパスを変更する必要があります。 パイプライン ディレクトリの必要条件の説明を参照して[パイプラインの開発要件](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
   
 2.  Visual Studio ソリューションをビルドします。  
   
@@ -348,7 +348,7 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  変更しなかった場合**ローカル コピー**に**False**の`Calc1AddInView`プロジェクトの参照、`AddInCalcV1`プロジェクト、ローダー コンテキストの問題により、アドインを配置されているからです。  
   
-     パイプラインを展開する方法の詳細については、次を参照してください。[パイプラインの開発要件](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
+     パイプラインを展開する方法の詳細については、次を参照してください。[パイプラインの開発要件](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)です。  
   
 ## <a name="running-the-host-application"></a>ホスト アプリケーションの実行  
  ホストを実行し、アドインを操作する準備が整いました。  
@@ -364,8 +364,8 @@ ms.lasthandoff: 12/22/2017
 4.  型**終了**キーを押すと、 **Enter**アプリケーションを閉じるにはキー。  
   
 ## <a name="see-also"></a>参照  
- [チュートリアル: ホスト変更時の旧バージョンとの互換性を有効にします。](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
- [チュートリアル: アドインとホスト間でのコレクションの受け渡し](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)  
- [パイプラインの開発要件](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
- [コントラクト、ビュー、およびアダプター](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c)  
+ [チュートリアル: ホスト変更時の旧バージョンとの互換性を有効にします。](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
+ [チュートリアル: アドインとホスト間でのコレクションの受け渡し](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)  
+ [パイプラインの開発要件](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
+ [コントラクト、ビュー、およびアダプター](http://msdn.microsoft.com/library/a6460173-9507-4b87-8c07-d4ee245d715c)  
  [パイプライン開発](../../../docs/framework/add-ins/pipeline-development.md)

@@ -15,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a2af80ddb558959171c255a61fae460729306e0e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 649936abfe149371445c77802bda2e72f558a41d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="marshaling-data-with-com-interop"></a>COM 相互運用機能によるデータのマーシャリング
 COM 相互運用は、マネージ コードから COM オブジェクトを使用すること、およびマネージ オブジェクトを COM に公開することの、両方の操作をサポートします。 COM との間でデータをマーシャリングする操作のサポートは広範で、ほとんどの場合、正しいマーシャリング動作が提供されます。  
@@ -40,23 +40,23 @@ COM 相互運用は、マネージ コードから COM オブジェクトを使�
  最も安全なソリューションのマネージ DCOM コードを WCF に移行する方法について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [COM のデータ型](https://msdn.microsoft.com/en-us/library/sak564ww(v=vs.100).aspx)  
+ [COM のデータ型](https://msdn.microsoft.com/library/sak564ww(v=vs.100).aspx)  
  対応するマネージとアンマネージのデータ型を提供します。  
   
- [COM 呼び出し可能ラッパーのカスタマイズ](https://msdn.microsoft.com/en-us/library/3bwc828w(v=vs.100).aspx)  
+ [COM 呼び出し可能ラッパーのカスタマイズ](https://msdn.microsoft.com/library/3bwc828w(v=vs.100).aspx)  
  使用してデータ型を明示的にマーシャ リングする方法について説明します、<xref:System.Runtime.InteropServices.MarshalAsAttribute>デザイン時の属性です。  
   
- [ランタイム呼び出し可能ラッパーのカスタマイズ](https://msdn.microsoft.com/en-us/library/e753eftz(v=vs.100).aspx)  
+ [ランタイム呼び出し可能ラッパーのカスタマイズ](https://msdn.microsoft.com/library/e753eftz(v=vs.100).aspx)  
  相互運用アセンブリで型のマーシャリング動作を調整する方法、および COM 型を手動で定義する方法について説明します。  
   
- [高度な COM 相互運用性](https://msdn.microsoft.com/en-us/library/bd9cdfyx(v=vs.100).aspx)  
+ [高度な COM 相互運用性](https://msdn.microsoft.com/library/bd9cdfyx(v=vs.100).aspx)  
  .NET Framework アプリケーションに COM コンポーネントを組み込む方法についての詳細情報へのリンクを示します。  
   
- [アセンブリからタイプ ライブラリへの変換の要約](https://msdn.microsoft.com/en-us/library/xk1120c3(v=vs.100).aspx)  
+ [アセンブリからタイプ ライブラリへの変換の要約](https://msdn.microsoft.com/library/xk1120c3(v=vs.100).aspx)  
  アセンブリからタイプ ライブラリにエクスポート変換するプロセスについて説明します。  
   
- [タイプ ライブラリからアセンブリへの変換の要約](https://msdn.microsoft.com/en-us/library/k83zzh38(v=vs.100).aspx)  
+ [タイプ ライブラリからアセンブリへの変換の要約](https://msdn.microsoft.com/library/k83zzh38(v=vs.100).aspx)  
  タイプ ライブラリからアセンブリにインポート変換するプロセスについて説明します。  
   
- [ジェネリック型を使用する相互運用](https://msdn.microsoft.com/en-us/library/ms229590(v=vs.100).aspx)  
+ [ジェネリック型を使用する相互運用](https://msdn.microsoft.com/library/ms229590(v=vs.100).aspx)  
  COM 相互運用性のジェネリック型を使用するとき、どのアクションがサポートされるかについて説明します。

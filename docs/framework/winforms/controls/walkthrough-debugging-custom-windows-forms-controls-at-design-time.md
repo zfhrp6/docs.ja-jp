@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7fd38f6246d44bd24753d9c86a5b0b08819d3db7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4dfdc102a5aeb2e3eaccde28a8ce57a1878141e4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>チュートリアル : カスタム Windows フォーム コントロールのデザイン時のデバッグ
 カスタム コントロールを作成するときに、多くの場合、必要な場合が、デザイン時の動作をデバッグします。 これは、カスタム コントロールのカスタム デザイナーを作成している場合に特に当てはまります。 詳細については、「[チュートリアル:、Windows フォーム コントロール利用の Visual Studio デザイン時の機能を作成する](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)です。  
@@ -55,14 +55,14 @@ ms.lasthandoff: 12/22/2017
  完了したら、カスタム コントロールのデザイン時の動作をデバッグするために必要なタスクについて理解があります。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ## <a name="creating-the-project"></a>プロジェクトの作成  
  最初の手順では、アプリケーション プロジェクトを作成します。 このプロジェクトを使用するカスタム コントロールをホストするアプリケーションをビルドします。  
   
 #### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
--   "DebuggingExample"と呼ばれる Windows アプリケーション プロジェクトを作成します。 詳細については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+-   "DebuggingExample"と呼ばれる Windows アプリケーション プロジェクトを作成します。 詳細については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
   
 ## <a name="creating-a-control-library-project"></a>コントロール ライブラリ プロジェクトを作成します。  
  次の手順では、コントロール ライブラリ プロジェクトを作成し、カスタム コントロールを設定します。  
@@ -71,9 +71,9 @@ ms.lasthandoff: 12/22/2017
   
 1.  追加、 **Windows コントロール ライブラリ**プロジェクトがソリューションにします。  
   
-2.  新しい**UserControl** DebugControlLibrary プロジェクト項目です。 詳細については、「 [NIB: 方法: 新しいプロジェクト項目の追加](http://msdn.microsoft.com/en-us/63d3e16b-de6e-4bb5-a0e3-ecec762201ce)です。 新しいソース ファイルに「タブ」の基本の名前を付けます。  
+2.  新しい**UserControl** DebugControlLibrary プロジェクト項目です。 詳細については、「 [NIB: 方法: 新しいプロジェクト項目の追加](http://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce)です。 新しいソース ファイルに「タブ」の基本の名前を付けます。  
   
-3.  使用して、**ソリューション エクスプ ローラー**の基本名を持つコード ファイルを削除することによって、プロジェクトの既定のコントロールを削除する"`UserControl1`"です。 詳細については、「 [NIB: 方法:: 削除、削除、および項目の除外](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)です。  
+3.  使用して、**ソリューション エクスプ ローラー**の基本名を持つコード ファイルを削除することによって、プロジェクトの既定のコントロールを削除する"`UserControl1`"です。 詳細については、「 [NIB: 方法:: 削除、削除、および項目の除外](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)です。  
   
 4.  ソリューションをビルドします。  
   
@@ -186,4 +186,4 @@ ms.lasthandoff: 12/22/2017
 ## <a name="see-also"></a>参照  
  [チュートリアル: Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
  [方法: デザイン時のサービスにアクセス](http://msdn.microsoft.com/library/c186c4b6-076c-438d-9ed3-f13da29c8c1f)  
- [方法: Windows フォームでのデザイン時サポートのアクセス](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)
+ [方法: Windows フォームでデザイン時サポートにアクセスする](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)

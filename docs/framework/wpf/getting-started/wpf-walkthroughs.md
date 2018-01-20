@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c24b5beae2a10720ee4d89b9d2d60306978d2628
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6407ccb093d6bdba4e3953ffa1117cf4b56c119
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-walkthroughs"></a>WPF のチュートリアル
 チュートリアルでは、一般的なシナリオの手順を説明します。 このため、製品や特定の機能領域について知るための最初のステップとして適しています。  
@@ -32,11 +32,11 @@ ms.lasthandoff: 12/22/2017
   
 |タイトル|説明|  
 |-----------|-----------------|  
-|[チュートリアル: WPF デザイナーでの単純な WPF アプリケーションの作成](http://msdn.microsoft.com/en-us/2d412231-dbdf-4e69-b060-4f2b246c2027)|単純な WPF アプリケーションをビルドする方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]です。|  
-|[チュートリアル: 動的なレイアウトを構築します。](http://msdn.microsoft.com/en-us/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|使用して動的なレイアウトを作成する方法を示します、<xref:System.Windows.Controls.Grid>コントロールのパネルです。|  
-|[チュートリアル: WPF デザイナーを使用して、サイズ変更可能なアプリケーションを作成します。](http://msdn.microsoft.com/en-us/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|実行時に、ユーザーがサイズ変更できるウィンドウ レイアウトを作成する方法を示します。|  
-|[チュートリアル: データ WPF デザイナーを使用してバインディングの作成](http://msdn.microsoft.com/en-us/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|使用する方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]コントロールにデータを接続しているデータ バインディングを作成します。|  
-|[チュートリアル: デザイナーでのデータにバインドする、DesignInstance の使用](http://msdn.microsoft.com/en-us/a4d3747a-bd43-42bc-b66d-477856a6769c)|使用する方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]実行時に割り当てられているデータ コンテキストのデザイン時にデータ バインディングを作成します。|  
+|[チュートリアル: WPF デザイナーでの単純な WPF アプリケーションの作成](http://msdn.microsoft.com/library/2d412231-dbdf-4e69-b060-4f2b246c2027)|単純な WPF アプリケーションをビルドする方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]です。|  
+|[チュートリアル: 動的なレイアウトを構築します。](http://msdn.microsoft.com/library/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|使用して動的なレイアウトを作成する方法を示します、<xref:System.Windows.Controls.Grid>コントロールのパネルです。|  
+|[チュートリアル: WPF デザイナーを使用して、サイズ変更可能なアプリケーションを作成します。](http://msdn.microsoft.com/library/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|実行時に、ユーザーがサイズ変更できるウィンドウ レイアウトを作成する方法を示します。|  
+|[チュートリアル: データ WPF デザイナーを使用してバインディングの作成](http://msdn.microsoft.com/library/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|使用する方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]コントロールにデータを接続しているデータ バインディングを作成します。|  
+|[チュートリアル: デザイナーでのデータにバインドする、DesignInstance の使用](http://msdn.microsoft.com/library/a4d3747a-bd43-42bc-b66d-477856a6769c)|使用する方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]実行時に割り当てられているデータ コンテキストのデザイン時にデータ バインディングを作成します。|  
   
 ## <a name="wpf-walkthroughs"></a>WPF のチュートリアル  
   
@@ -61,4 +61,4 @@ ms.lasthandoff: 12/22/2017
   
 |タイトル|説明|  
 |-----------|-----------------|  
-|[Visual Studio のチュートリアル](http://msdn.microsoft.com/en-us/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Visual Studio でのプログラミングのすべての領域には、チュートリアルの関連する一覧を表示します。|
+|[Visual Studio のチュートリアル](http://msdn.microsoft.com/library/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Visual Studio でのプログラミングのすべての領域には、チュートリアルの関連する一覧を表示します。|

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 3a3701ea-4308-4fa1-9b5c-b955c470f17a
-ms.openlocfilehash: f5ade1db39431d99f10eb6967f02335123b83d34
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 478ab74ad32cc6e53daffd1bd6229729149d2a1e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="records"></a>レコード
 
@@ -122,13 +122,13 @@ Point is at (10.000000, 0.000000, -1.000000).
 
 レコードに等しいかどうかを参照する必要がある場合、属性を追加`[<ReferenceEquality>]`レコード上。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [F# の型](fsharp-types.md)
 
 [クラス](classes.md)
 
 [F# 言語リファレンス](index.md)
 
-[参照の等価性](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
+[参照の等価性](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
 
 [パターン一致](pattern-matching.md)

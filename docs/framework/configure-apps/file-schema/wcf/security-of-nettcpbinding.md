@@ -14,20 +14,20 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: 08e9f1f3b2145d94f491933639211a6eabd3c9fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bf42da647e598ad698bc36e6abff0d31350f3d96
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltsecuritygt-of-ltnettcpbindinggt"></a>&lt;netTcpBinding&gt; の &lt;security&gt;
 バインディングのセキュリティ設定を定義します。  
   
- \<システムです。ServiceModel >  
-\<バインド >  
-\<netTcpBinding >  
-\<バインド >  
-\<セキュリティ >  
+ \<system.ServiceModel>  
+\<bindings>  
+\<netTcpBinding>  
+\<binding>  
+\<security>  
   
 ## <a name="syntax"></a>構文  
   
@@ -64,8 +64,8 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<トランスポート >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)|トランスポートのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.TcpTransportSecurityElement> 型です。|  
-|[\<メッセージ >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)|メッセージのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement> 型です。|  
+|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)|トランスポートのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.TcpTransportSecurityElement> 型です。|  
+|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)|メッセージのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement> 型です。|  
   
 ### <a name="parent-elements"></a>親要素  
   
@@ -88,5 +88,5 @@ ms.lasthandoff: 12/22/2017
  [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<バインド >](../../../../../docs/framework/misc/binding.md)
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<binding>](../../../../../docs/framework/misc/binding.md)

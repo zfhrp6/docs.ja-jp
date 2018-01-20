@@ -21,21 +21,21 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d9075c93181b68828a307924259a9170c046baa6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ab92f7a56173ec71642d0cc09f3f81e9859533b4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>方法 : Windows フォームにコントロールを追加する
 ほとんどのフォームは、フォームのサーフェイスにコントロールを追加してユーザー インターフェイス (UI) を定義するよう設計されています。 A*コントロール*情報の表示や、ユーザー入力をそのまま使用するために使用するフォームのコンポーネントは、します。 コントロールの詳細については、次を参照してください。 [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ### <a name="to-draw-a-control-on-a-form"></a>フォーム上のコントロールを描画するには  
   
-1.  フォームを開きます。 詳細については、次を参照してください。[する方法: デザイナーでの Windows フォームの表示](http://msdn.microsoft.com/en-us/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)です。  
+1.  フォームを開きます。 詳細については、次を参照してください。[する方法: デザイナーでの Windows フォームの表示](http://msdn.microsoft.com/library/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)です。  
   
 2.  **ツールボックス**フォームに追加するコントロールをクリックします。  
   
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-drag-a-control-to-a-form"></a>コントロールをフォームにドラッグするには  
   
-1.  フォームを開きます。 詳細については、次を参照してください。[する方法: デザイナーでの Windows フォームの表示](http://msdn.microsoft.com/en-us/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)です。  
+1.  フォームを開きます。 詳細については、次を参照してください。[する方法: デザイナーでの Windows フォームの表示](http://msdn.microsoft.com/library/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)です。  
   
 2.  **ツールボックス**フォームにドラッグしてコントロールをクリックします。  
   

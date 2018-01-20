@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: eb84ce5bec2808b0149a5ca44b05a9c99143d580
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b899ed162fa626f8c378923907f275cebf9a7db4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="com-wrappers"></a>COM ラッパー
 COM は、次のいくつかの重要な点で、.NET Framework オブジェクト モデルとは異なります。  
@@ -44,8 +44,8 @@ COM ラッパーの概要
  ほとんどの場合、ランタイムによって生成される標準の RCW または CCW は、COM と .NET Framework の境界をまたがる呼び出しに対して適切なマーシャリングを提供します。 カスタム属性を使用することにより、必要に応じて、ランタイムがマネージ コードおよびアンマネージ コードを表わす方法を調整できます。  
   
 ## <a name="see-also"></a>参照  
- [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
+ [高度な COM 相互運用性](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  [ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md)  
  [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)  
- [標準ラッパーのカスタマイズ](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
- [方法 : ランタイム呼び出し可能ラッパーをカスタマイズする](http://msdn.microsoft.com/en-us/4a4bb3da-4d60-4517-99f2-78d46a681732)
+ [標準ラッパーのカスタマイズ](http://msdn.microsoft.com/library/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
+ [方法 : ランタイム呼び出し可能ラッパーをカスタマイズする](http://msdn.microsoft.com/library/4a4bb3da-4d60-4517-99f2-78d46a681732)

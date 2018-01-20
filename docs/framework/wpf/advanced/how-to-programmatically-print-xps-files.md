@@ -20,16 +20,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 402568a78ccb2f56c6adb108536edfb121440642
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b58e617fb04ecaba45ed655dc650459e89453dd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>方法 : XPS ファイルをプログラムにより印刷する
 1 つのオーバー ロードを使用することができます、<xref:System.Printing.PrintQueue.AddJob%2A>を印刷するメソッド[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]ファイルを開かず、<xref:System.Windows.Controls.PrintDialog>または原則として、任意[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]まったくです。  
   
- 印刷することも[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]多くを使用してファイル<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>と<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>のメソッド、<xref:System.Windows.Xps.XpsDocumentWriter>です。 この詳細については、「[XPS ドキュメントの印刷](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c)」を参照してください。  
+ 印刷することも[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]多くを使用してファイル<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>と<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>のメソッド、<xref:System.Windows.Xps.XpsDocumentWriter>です。 この詳細については、「[XPS ドキュメントの印刷](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c)」を参照してください。  
   
  別の印刷方法[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]を使用して、<xref:System.Windows.Controls.PrintDialog.PrintDocument%2A>または<xref:System.Windows.Controls.PrintDialog.PrintVisual%2A>のメソッド、<xref:System.Windows.Controls.PrintDialog>コントロール。 [印刷ダイアログ ボックスの呼び出し](../../../../docs/framework/wpf/advanced/how-to-invoke-a-print-dialog.md)に関するページをご覧ください。  
   
@@ -75,8 +75,8 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Threading.ApartmentState>  
  <xref:System.STAThreadAttribute>  
  [XPS](http://www.microsoft.com/xps)  
- [XPS ドキュメントの印刷](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c)  
- [マネージ コードとアンマネージ スレッド処理](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5)  
+ [XPS ドキュメントの印刷](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c)  
+ [マネージ コードとアンマネージ スレッド処理](http://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5)  
  [isXPS.exe (isXPS 適合性ツール)](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3)  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)

@@ -14,11 +14,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: 2000ae86f38ff2fd06dbe7424cbfdd74781c6c3c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1345df57799f9c0959fd18fbbe41db149d0895a5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-identity-foundation-configuration-schema"></a>Windows Identity Foundation 構成スキーマ
 このセクションのトピックでは、Windows Identity Foundation (WIF) の構成スキーマに関する情報を提供します。 フレームワークによって公開されたクラスを介して WIF を使用するようにアプリケーションを構成することもできます。 これらのクラスは、スキーマ内の関連要素を処理するセクションに記載されています。 次に示すのは、WIF 構成スキーマによって公開された基本的な XML タグ構造です。 属性は省略されています。 強調表示したコメントは、スキーマの主要なコンポーネントを示しています。  
@@ -122,4 +122,4 @@ ms.lasthandoff: 12/22/2017
  [\<system.identityModel.services>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) WIF を使用するパッシブなフェデレーションの構成を指定します。 セッション認証モジュール (SAM) とフェデレーション認証モジュール (WSFAM) を構成します。  
   
 ## <a name="related-sections"></a>関連項目  
- [構成と管理](http://msdn.microsoft.com/en-us/1e03c389-de2c-4096-aaff-86b087e1bea0) WIF アプリケーションおよびサービスを構成および管理する方法について説明します。
+ [構成と管理](http://msdn.microsoft.com/library/1e03c389-de2c-4096-aaff-86b087e1bea0) WIF アプリケーションおよびサービスを構成および管理する方法について説明します。

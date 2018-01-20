@@ -18,14 +18,14 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9361de4726b1dc58238db5ca7b5605f2cc75485d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d7cbef9247b82268b8006d640b967ffd03ae6717
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>.NET Framework への COM コンポーネントの公開
-このセクションでは、既存の COM コンポーネントをマネージ コードに公開するために必要なプロセスをまとめています。 .NET Framework と緊密に統合される COM サーバーの詳細については、「[Design Considerations for Interoperation](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)」(相互運用のためのデザインの考慮事項) を参照してください。  
+このセクションでは、既存の COM コンポーネントをマネージ コードに公開するために必要なプロセスをまとめています。 .NET Framework と緊密に統合される COM サーバーの詳細については、「[Design Considerations for Interoperation](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689)」(相互運用のためのデザインの考慮事項) を参照してください。  
   
  既存の COM コンポーネントは、中間層のビジネス アプリケーション、または独立した機能として、マネージ コードでの貴重なリソースです。 理想的なコンポーネントは、プライマリ相互運用機能アセンブリがあり、COM で課せられるプログラミング標準に厳密に準拠しています。  
   
@@ -35,7 +35,7 @@ ms.lasthandoff: 12/22/2017
   
      共通言語ランタイムでは、COM 型を含め、すべてのタイプにメタデータが必要です。 メタデータとしてインポートされた COM 型を含むアセンブリを取得するには、複数の方法があります。  
   
-2.  [マネージ コードで COM 型を作成する](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)。  
+2.  [マネージ コードで COM 型を作成する](http://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)。  
   
      任意のマネージ型で行うのと同じ方法で、COM オブジェクトで COM 型の検査、インスタンスのアクティブ化、およびメソッドの呼び出しができます。  
   
@@ -49,7 +49,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  [アンマネージ コードとの相互運用](../../../docs/framework/interop/index.md)  
- [相互運用のためのデザインの考慮事項](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)  
+ [相互運用のためのデザインの考慮事項](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689)  
  [COM 相互運用機能のサンプル: .NET クライアントおよび COM サーバー](../../../docs/framework/interop/com-interop-sample-net-client-and-com-server.md)  
  [言語への非依存性、および言語非依存コンポーネント](../../../docs/standard/language-independence-and-language-independent-components.md)  
  [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)

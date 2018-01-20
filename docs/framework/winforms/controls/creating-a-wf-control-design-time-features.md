@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f7c875721436f0d6fe3f0cc57140a275e8d218f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a4e84c665897159d08cec36b0f35b4f5f2674445
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>チュートリアル : Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成
 関連付けられているカスタム デザイナーを作成して、カスタム コントロールのデザイン時機能を拡張できます。  
@@ -74,7 +74,7 @@ ms.lasthandoff: 12/22/2017
  完全なコード リストを参照してください。[する方法:、Windows フォーム コントロールを受け取る利点のデザイン時機能の作成](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
@@ -86,7 +86,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
--   「ためです」と呼ばれる Windows フォーム アプリケーション プロジェクトを作成します。 詳細については、「 [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+-   「ためです」と呼ばれる Windows フォーム アプリケーション プロジェクトを作成します。 詳細については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
   
 ## <a name="creating-a-control-library-project"></a>コントロール ライブラリ プロジェクトを作成します。  
  次の手順では、コントロール ライブラリ プロジェクトを作成します。 新しいカスタム コントロールとその対応するカスタム デザイナーを作成します。  
@@ -95,11 +95,11 @@ ms.lasthandoff: 12/22/2017
   
 1.  Windows フォーム コントロール ライブラリ プロジェクトをソリューションに追加します。 プロジェクト「に」の名前します。  
   
-2.  使用して**ソリューション エクスプ ローラー**、選択した言語に応じて"UserControl1.cs"または"UserControl1.vb"をという名前のソース ファイルを削除して、プロジェクトの既定のコントロールを削除します。 詳細については、次を参照してください。 [NIB: 方法:: 削除、削除、および項目の除外](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)です。  
+2.  使用して**ソリューション エクスプ ローラー**、選択した言語に応じて"UserControl1.cs"または"UserControl1.vb"をという名前のソース ファイルを削除して、プロジェクトの既定のコントロールを削除します。 詳細については、次を参照してください。 [NIB: 方法:: 削除、削除、および項目の除外](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)です。  
   
 3.  新しい<xref:System.Windows.Forms.UserControl>項目を`MarqueeControlLibrary`プロジェクト。 新しいソース ファイル"MarqueeControl"の基本の名前を付けます  
   
-4.  使用して**ソリューション エクスプ ローラー**で新しいフォルダーを作成、`MarqueeControlLibrary`プロジェクト。 詳細については、次を参照してください。 [NIB: 方法: 新しいプロジェクト項目の追加](http://msdn.microsoft.com/en-us/63d3e16b-de6e-4bb5-a0e3-ecec762201ce)です。 新しいフォルダーの名前を""設計します。  
+4.  使用して**ソリューション エクスプ ローラー**で新しいフォルダーを作成、`MarqueeControlLibrary`プロジェクト。 詳細については、次を参照してください。 [NIB: 方法: 新しいプロジェクト項目の追加](http://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce)です。 新しいフォルダーの名前を""設計します。  
   
 5.  右クリックし、**デザイン**フォルダーと、新しいクラスを追加します。 ソース ファイル「ここでします」の基本の名前を付けます  
   

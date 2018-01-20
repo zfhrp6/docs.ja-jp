@@ -11,11 +11,11 @@ ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
 caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: aac9ed655982ff4618e0bdb7fd2af16aaa546719
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d0ea3b45803bc37f35d516260a57db422827f1e1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="collections-visual-basic"></a>コレクション (Visual Basic)
 多くのアプリケーションで、関連するオブジェクトのグループの作成および管理が必要になります。 オブジェクトをグループ化するには、オブジェクトの配列を作成する方法と、オブジェクトのコレクションを作成する方法があります。  
@@ -470,7 +470,7 @@ End Class
   
 <a name="BKMK_CustomCollection"></a> 
 ## <a name="defining-a-custom-collection"></a>カスタム コレクションを定義する  
- <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.IEnumerable> のインターフェイスを実装してコレクションを定義できます。 詳細については、次を参照してください。[コレクションを列挙して](http://msdn.microsoft.com/en-us/71807ea7-9180-48a6-916f-35a5251d477f)です。  
+ <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.IEnumerable> のインターフェイスを実装してコレクションを定義できます。 詳細については、次を参照してください。[コレクションを列挙して](http://msdn.microsoft.com/library/71807ea7-9180-48a6-916f-35a5251d477f)です。  
   
  カスタム コレクションを定義できますが、通常は、.NET Framework に含まれるコレクションを使用することが推奨されます。これについては、このトピックの[コレクションの種類](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)で既に説明されています。  
   
@@ -547,7 +547,7 @@ End Class
 ```  
   
 <a name="BKMK_Iterators"></a>
-##  <a name="iterators"></a>反復子  
+##  <a name="iterators"></a>Iterators  
  *反復子*は、コレクションに対するカスタム イテレーションを実行するために使用されます。 反復子は、メソッドまたは `get` アクセサーのいずれかです。 反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)ステートメントを一度にいずれかのコレクションの各要素を返します。  
   
  使用して、反復子を呼び出す、[ごとにしています.[次へ]](../../../visual-basic/language-reference/statements/for-each-next-statement.md)ステートメントです。 `For Each` ループの各イテレーションは、反復子を呼び出します。 `Yield` ステートメントが反復子に到達すると、式が戻され、コードの現在の位置が保持されます。 次回、反復子が呼び出されると、この位置から実行が再開されます。  
@@ -578,14 +578,14 @@ As IEnumerable(Of Integer)
 End Function  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [コレクション初期化子](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
  [プログラミングの概念 (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)  
  [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
  [コレクションとデータ構造体](../../../standard/collections/index.md)  
- [作成して、コレクションの操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [作成して、コレクションの操作](http://msdn.microsoft.com/library/2065398e-eb1a-4821-9188-75f16e42e069)  
  [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)  
  [コレクション内での比較と並べ替え](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
  [ジェネリック コレクションを使用する状況](../../../standard/collections/when-to-use-generic-collections.md)

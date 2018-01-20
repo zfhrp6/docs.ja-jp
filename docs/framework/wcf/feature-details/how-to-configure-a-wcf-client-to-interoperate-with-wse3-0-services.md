@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 214e0de13ba362bf4f101a665e943a424c56363c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea71737e1e214aa1a035739901bf79f8ef4a9c7a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>方法 : WCF クライアントと WSE3.0 サービスを相互運用するために構成する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントが WS-Addressing 仕様の 2004 年 8 月版を使用して構成されている場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは Microsoft .NET サービスの WSE (Web サービス拡張) 3.0 とネットワーク レベルで互換性があります。  
@@ -36,7 +36,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  WSE 3.0 Web サービスと通信できるバインディングを表すクラスを作成します。  
   
-     次のクラスの一部である、 [WSE との相互運用](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41)サンプルです。  
+     次のクラスの一部である、 [WSE との相互運用](http://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41)サンプルです。  
   
     1.  <xref:System.ServiceModel.Channels.Binding> クラスから派生するクラスを作成します。  
   
@@ -75,4 +75,4 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.Channels.Binding>  
- [WSE との相互運用](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41)
+ [WSE との相互運用](http://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41)

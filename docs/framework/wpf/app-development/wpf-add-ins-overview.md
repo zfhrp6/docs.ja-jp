@@ -24,11 +24,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 76a836e2699617803b78f76f90b27452bd0cdd0f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffd45957b41cdfd8488aedd865aa70ef5b2634b2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-add-ins-overview"></a>WPF アドインの概要
 <a name="Introduction"></a> [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] には、開発者がアドイン機能拡張をサポートするアプリケーションの作成に使用できるアドイン モデルが用意されています。 このアドイン モデルを使用することで、アプリケーション機能に統合され、アプリケーション機能を拡張するアドインを作成できます。 一部のシナリオでは、アドインが提供する [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] をアプリケーションで表示する必要があります。このトピックでは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] が [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アドイン モデルを強化してこうしたシナリオを実現するしくみ、背後にあるアーキテクチャ、その利点、および制限事項について説明します。  
@@ -111,7 +111,7 @@ ms.lasthandoff: 12/22/2017
 -   <xref:System.SerializableAttribute>属性を適用します。  
   
 > [!NOTE]
->  リモート処理可能な [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトの作成の詳細については、「[オブジェクトをリモート処理可能にする](http://msdn.microsoft.com/en-us/01197253-3f13-43b7-894d-9683e431192a)」を参照してください。  
+>  リモート処理可能な [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトの作成の詳細については、「[オブジェクトをリモート処理可能にする](http://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a)」を参照してください。  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 型は、リモート処理可能ではありません。 この問題を解決するため、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アドイン モデルを拡張して、アドインによって作成される [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] をホスト アプリケーションで表示できるようにします。 このサポートによって提供されます[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]によって 2 つの種類:<xref:System.AddIn.Contract.INativeHandleContract>インターフェイスとによって実装される 2 つの静的メソッド、<xref:System.AddIn.Pipeline.FrameworkElementAdapters>クラス:<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>と<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>です。 大まかに、これらの型とメソッドは次のように使用されます。  
   
@@ -297,6 +297,6 @@ ms.lasthandoff: 12/22/2017
  <xref:System.LoaderOptimizationAttribute>  
  [アドインおよび拡張機能](../../../../docs/framework/add-ins/index.md)  
  [アプリケーション ドメイン](../../../../docs/framework/app-domains/application-domains.md)  
- [.NET framework リモート処理の概要](http://msdn.microsoft.com/en-us/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)  
- [オブジェクトをリモート処理可能](http://msdn.microsoft.com/en-us/01197253-3f13-43b7-894d-9683e431192a)  
+ [.NET framework リモート処理の概要](http://msdn.microsoft.com/library/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)  
+ [オブジェクトをリモート処理可能](http://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a)  
  [方法トピック](../../../../docs/framework/wpf/app-development/how-to-topics.md)

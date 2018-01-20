@@ -19,11 +19,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5014bcc0696a8650bed1d00d1224c892660c041e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11739d35d3a6d845feb1f6d9544f6ea347a9942d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="copying-and-pinning"></a>コピーと固定
 データをマーシャリングするときに、相互運用マーシャラーはマーシャリングされるデータをコピーまたは固定できます。 データをコピーすると、あるメモリ位置のデータのコピーが別のメモリ位置に配置されます。 マネージ メモリからアンマネージ メモリへの値型のコピーと、参照渡しされる型のコピーの違いを次の図に示します。  
@@ -88,6 +88,6 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [相互運用マーシャラーによるメモリ管理](http://msdn.microsoft.com/en-us/417206ce-ee3e-4619-9529-0c0b686c7bee)  
- [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
+ [相互運用マーシャラーによるメモリ管理](http://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee)  
+ [方向属性](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)

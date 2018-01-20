@@ -21,11 +21,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fe3f0caa8f23a3b68f1017254a770af766f83f81
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7cc7b09211bc9168bbab85105a0574dc142542ba
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="annotations-overview"></a>注釈の概要
 用紙にメモやコメントを書くことは普通の行為であり、人はそれを当たり前のことと思っています。 そのようなメモやコメントが "注釈" です。注釈をドキュメントに追加することで情報に目印を付け、興味のある内容を強調表示し、後で参照します。 印刷したドキュメントにメモを書くことは簡単で一般的な行為ですが、電子ドキュメントに個人的なコメントを追加する機能は利用できるとしても一般的に非常に限定されています。  
@@ -86,4 +86,4 @@ ms.lasthandoff: 12/22/2017
  [ContextMenu の概要](../../../../docs/framework/wpf/controls/contextmenu-overview.md)  
  [コマンド実行の概要](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
  [フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [方法: メニュー アイテムにコマンドを追加する](http://msdn.microsoft.com/en-us/013d68a0-5373-4a68-bd91-5de574307370)
+ [方法: メニュー アイテムにコマンドを追加する](http://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)

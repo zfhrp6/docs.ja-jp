@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0db7b9677b5c8c415b6d0b3f49bd149c06843a33
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 030183e77a141036416a3bcb8a4c4018df0a7e65
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>チュートリアル : ElementHost コントロールを使用したプロパティの割り当て
 このチュートリアルで使用する方法、<xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>プロパティにマップする[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]、ホスト型に対応するプロパティをプロパティ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]要素。  
@@ -52,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
-1.  作成、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]という名前のアプリケーション プロジェクト`PropertyMappingWithElementHost`です。 詳細については、「 [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+1.  作成、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]という名前のアプリケーション プロジェクト`PropertyMappingWithElementHost`です。 詳細については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
   
 2.  ソリューション エクスプ ローラーで、次の参照を追加[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アセンブリ。  
   
@@ -71,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
 4.  Windows フォーム デザイナーで `Form1` を開きます。 イベント ハンドラーの追加フォームをダブルクリックして、<xref:System.Windows.Forms.Form.Load>イベント。  
   
-5.  Windows フォーム デザイナーに戻るし、フォームのイベント ハンドラーを追加<xref:System.Windows.Forms.Control.Resize>イベント。 詳細については、次を参照してください。[する方法: イベント ハンドラーを使用して作成デザイナー](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2)です。  
+5.  Windows フォーム デザイナーに戻るし、フォームのイベント ハンドラーを追加<xref:System.Windows.Forms.Control.Resize>イベント。 詳細については、次を参照してください。[する方法: イベント ハンドラーを使用して作成デザイナー](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2)です。  
   
 6.  宣言、<xref:System.Windows.Forms.Integration.ElementHost>フィールドで、`Form1`クラスです。  
   
@@ -153,5 +153,5 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [Windows フォームと WPF プロパティの割り当て](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)  
- [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [WPF デザイナー](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  [チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

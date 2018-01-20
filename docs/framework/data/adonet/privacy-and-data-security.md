@@ -14,17 +14,17 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5c645b493a1ffb99f4d60f8011bc05f275b5d10f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 002d4411e4fee10044ea5dc1d04d7a29cdcd6584
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="privacy-and-data-security"></a>プライバシーとデータ セキュリティ
 ADO.NET アプリケーションにおける機密情報の保護と管理は、基になる製品および作成に使用されたテクノロジに依存します。 ADO.NET そのものは、データを保護したり暗号化したりするためのサービスを提供しません。  
   
 ## <a name="cryptography-and-hash-codes"></a>暗号化とハッシュ コード  
- ADO.NET アプリケーションから .NET Framework <xref:System.Security.Cryptography> 名前空間のクラスを使用すると、認証されていない第三者によるデータの読み取りや変更を防止できます。 クラスには、アンマネージ Microsoft CryptoAPI 用のラッパーもあれば、マネージ実装もあります。 [Cryptographic Services](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781)トピックでは、.NET Framework での暗号化の概要を示します、暗号の実装方法と、特定の暗号タスクを実行する方法について説明します。  
+ ADO.NET アプリケーションから .NET Framework <xref:System.Security.Cryptography> 名前空間のクラスを使用すると、認証されていない第三者によるデータの読み取りや変更を防止できます。 クラスには、アンマネージ Microsoft CryptoAPI 用のラッパーもあれば、マネージ実装もあります。 [Cryptographic Services](http://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781)トピックでは、.NET Framework での暗号化の概要を示します、暗号の実装方法と、特定の暗号タスクを実行する方法について説明します。  
   
  暗号化ではデータを暗号化した後に復号化を行いますが、データのハッシュは不可逆性の処理です。 データのハッシュは、データが変更されていないことを確認することによって改ざんを防止する場合に役立ちます。ハッシュ アルゴリズムは、同一内容の入力文字列に対して、容易に比較できる同一内容の短い値を出力します。 [ハッシュ コードによるデータの整合性を確保する](../../../../docs/standard/security/ensuring-data-integrity-with-hash-codes.md)を生成し、ハッシュ値を確認する方法について説明します。  
   

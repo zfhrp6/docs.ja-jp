@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f1d3f7ed4ebde0f607b3c86cf9879d219af85b20
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eb5d0f51fbbb6c8bad9bfbbfd9977368fdbd0666
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="queues-overview"></a>キューの概要
 ここでは、キューを使った通信の概要とその基本概念を解説します。 後の各セクションでは、キューの概念がどのように [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に活かされているかを詳しく説明します。  
@@ -91,6 +91,6 @@ ms.lasthandoff: 12/22/2017
  [揮発性キューによる通信](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)  
  [Windows Communication Foundation でのメッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
  [メッセージ キュー (MSMQ) のインストール](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
- [メッセージ キュー統合バインディングのサンプル](http://msdn.microsoft.com/en-us/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)  
+ [メッセージ キュー統合バインディングのサンプル](http://msdn.microsoft.com/library/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)  
  [Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
  [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

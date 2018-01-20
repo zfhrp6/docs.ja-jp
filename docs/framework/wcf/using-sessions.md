@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 14b7691b1c105ceb3e209c5d86bda455657a4198
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f5f6df22918dedf32738a8cb9d73af2e625923a4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-sessions"></a>セッションの使用
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションでは、 *"セッション"* がメッセージのグループを相互に関連付けて通信を行います。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] セッションは、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションで使用できるセッション オブジェクトとは異なるものであり、サポートされる動作と制御する方法が異なります。 ここでは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのセッションで有効になる諸機能とそれらの使用方法について説明します。  
@@ -147,7 +147,7 @@ ms.lasthandoff: 12/22/2017
  コントラクト内の <xref:System.ServiceModel.SessionMode> 列挙と、チャネルと特定のサービス オブジェクト間の関連付けを制御する <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティの間には相互作用があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][セッション、インスタンス化、および同時実行](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
   
 ### <a name="sharing-instancecontext-objects"></a>InstanceContext オブジェクトの共有  
- ユーザーが自ら関連付けを行うことにより、どの <xref:System.ServiceModel.InstanceContext> オブジェクトに、どのセッション ベースのチャネルまたは呼び出しを関連付けるかを制御することもできます。 コード例全体については、「 [InstanceContextSharing](http://msdn.microsoft.com/en-us/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230)」を参照してください。  
+ ユーザーが自ら関連付けを行うことにより、どの <xref:System.ServiceModel.InstanceContext> オブジェクトに、どのセッション ベースのチャネルまたは呼び出しを関連付けるかを制御することもできます。 完全な例では、次を参照してください。 [InstanceContextSharing](http://msdn.microsoft.com/library/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230)です。  
   
 ## <a name="sessions-and-streaming"></a>セッションとストリーミング  
  大量のデータを転送する場合、メッセージ全体をメモリ内でバッファー化および処理するという既定動作の代わりに、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のストリーミング転送モードを使用することができます。 セッション ベースのバインディングでストリーミングを呼び出すと、予期しない動作を引き起こすことがあります。 すべてのストリーミング呼び出しは単一のチャネル (データグラム チャネル) を通じて行われますが、このチャネルは使用されるバインディングがセッションを使用するように構成されている場合であっても、セッションをサポートしません。 セッション ベースのバインディングによって複数のクライアントが同一のサービス オブジェクトに対してストリーミング呼び出しを行う場合、このサービス オブジェクトの同時実行モードが単一に設定され、インスタンス コンテキスト モードが `PerSession`に設定されていると、すべての呼び出しがこのデータグラム チャネルを通過する必要があるため、同時に処理される呼び出しは 1 つに限られることになります。 そのため、1 つ以上のクライアントがタイムアウトとなる可能性があります。サービス オブジェクトの `InstanceContextMode` を `PerCall` に設定するか、または同時実行モードを複数に設定することで、この問題を回避できます。  

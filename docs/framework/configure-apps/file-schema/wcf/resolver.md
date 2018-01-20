@@ -1,5 +1,5 @@
 ---
-title: "&lt;競合回避モジュール&gt;"
+title: '&lt;resolver&gt;'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,20 +14,20 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fc6e919600fbea15937a61eaa65299b3a372caaf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db95b6f9a988c133a6b4afd55849fc6fb650c24c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="ltresolvergt"></a>&lt;競合回避モジュール&gt;
+# <a name="ltresolvergt"></a>&lt;resolver&gt;
 ピア メッシュ ID を解決してメッシュに参加する複数ノードを表すピア アドレス セットを取得するためにピア リゾルバーを指定します。  
   
- \<システムです。ServiceModel >  
-\<バインド >  
-\<netPeerBinding >  
-\<バインド >  
-\<競合回避モジュール >  
+ \<system.ServiceModel>  
+\<bindings>  
+\<netPeerBinding>  
+\<binding>  
+\<resolver>  
   
 ## <a name="syntax"></a>構文  
   
@@ -51,13 +51,13 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<ヘッダー >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|ユーザー設定のピア リゾルバー サービスの設定を指定します。|  
+|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|ユーザー設定のピア リゾルバー サービスの設定を指定します。|  
   
 ### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/misc/binding.md)|すべてのバインド機能を定義、 [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md)です。|  
+|[\<binding>](../../../../../docs/framework/misc/binding.md)|すべてのバインド機能を定義、 [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md)です。|  
   
 ## <a name="remarks"></a>コメント  
  ピア名リゾルバーは、ピア メッシュに参加するピア ノードを検索するためにピア チャネルにより使用される探索サービスです。 またピア名リゾルバーは、ノードをピア メッシュに登録するために使用されます。ピア メッシュは、ピア メッシュからピア ノードを認識し、使用可能にするための機構です。 ピア リゾルバーの詳細については、次を参照してください。[ピア リゾルバー](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)です。  
@@ -69,4 +69,4 @@ ms.lasthandoff: 12/22/2017
  <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement.Resolver%2A>  
  <xref:System.ServiceModel.Configuration.PeerResolverElement>  
  [ピア リゾルバー](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)  
- [PeerChannel アプリケーションにカスタム競合回避モジュールを追加します。](http://msdn.microsoft.com/en-us/12aa3787-2962-439c-ad27-46523c8b0419)
+ [PeerChannel アプリケーションにカスタム競合回避モジュールを追加します。](http://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419)

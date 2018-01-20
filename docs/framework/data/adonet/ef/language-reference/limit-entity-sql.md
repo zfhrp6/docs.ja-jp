@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f6933c7e3d5b3e7ed5fd4b55974e5869ab83a982
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c0b2a421b1187fcf88278b66f3225133330a3033
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="limit-entity-sql"></a>LIMIT (Entity SQL)
 物理的なページングは、ORDER BY 句の LIMIT サブ句を使用して実行できます。 LIMIT は ORDER BY 句と切り離して使用することはできません。  
@@ -49,6 +49,6 @@ ms.lasthandoff: 01/17/2018
   
 ## <a name="see-also"></a>参照  
  [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)  
- [方法: 結果をクエリ ページング](http://msdn.microsoft.com/en-us/ffc0f920-e7de-42e0-9b12-ef356421d030)  
+ [方法: 結果をクエリ ページング](http://msdn.microsoft.com/library/ffc0f920-e7de-42e0-9b12-ef356421d030)  
  [ページング](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)  
  [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)

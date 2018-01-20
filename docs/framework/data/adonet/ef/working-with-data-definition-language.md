@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 8b363105f0dd6978d4e59678fb7cd1b3f1d721df
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: dc2642df7cfe0f0a4b56537d0b2ebeae34304145
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="working-with-data-definition-language"></a>データ定義言語の操作
 以降で、[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]バージョン 4、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]データ定義言語 (DDL) をサポートしています。 これにより、接続文字列、およびストレージ (SSDL) モデルのメターデータに基づいて、データベース インスタンスを作成または削除できます。  
@@ -51,11 +51,11 @@ ms.lasthandoff: 01/17/2018
   
 2.  既存のモデルをアプリケーションに追加します。  
   
-    1.  空のモデル名を追加`SchoolModel`です。 空のモデルを作成するを参照してください。、[する方法: 新しい .edmx ファイルを作成する](http://msdn.microsoft.com/en-us/beb8189e-e51c-4051-839c-9902c224abf2)トピックです。  
+    1.  空のモデル名を追加`SchoolModel`です。 空のモデルを作成するを参照してください。、[する方法: 新しい .edmx ファイルを作成する](http://msdn.microsoft.com/library/beb8189e-e51c-4051-839c-9902c224abf2)トピックです。  
   
      SchoolModel.edmx ファイルがプロジェクトに追加されます。  
   
-    1.  概念、記憶域をコピーしてから School モデルのコンテンツのマッピング、 [School モデル](http://msdn.microsoft.com/en-us/859a9587-81ea-4a45-9bc0-f8d330e1adac)トピックです。  
+    1.  概念、記憶域をコピーしてから School モデルのコンテンツのマッピング、 [School モデル](http://msdn.microsoft.com/library/859a9587-81ea-4a45-9bc0-f8d330e1adac)トピックです。  
   
     2.  SchoolModel.edmx ファイルを開き、`edmx:Runtime` タグ内にその内容を貼り付けます。  
   

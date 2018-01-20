@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 211a52288010adabb712618cee40dbdd9d8b5262
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8a3504e275c2c5c5f9b98d4a78e08f718f8875b8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-simplification-features"></a>WCF の単純化機能
 ここでは、WCF アプリケーションの作成を容易にする新機能について説明します。  
@@ -103,9 +103,9 @@ ms.lasthandoff: 12/22/2017
 |--------------|--------|-----------------|----------------------|  
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|このプロパティは、.Net Framing プロトコルを使用して TCP 接続がそれ自体の認証にかかる時間を決定します。 クライアントは、サーバーが認証を実行するための十分な情報を得る前に初期データを送信する必要があります。 このタイムアウトは意図的に ReceiveTimeout (10 分) よりも小さい値に設定されます。これにより、悪意のある認証されていないクライアントは、長時間にわたってサーバーへの接続を保持できません。 既定値は 30 秒です。 [!INCLUDE[crdefault](../../../includes/crabout-md.md)] <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|  
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * プロセッサの数|このソケット レベルのプロパティは、キューに入れられる "受入保留中の" 要求の数を示します。 リッスン バックログ キューがいっぱいになると、新しいソケット要求は拒否されます。 [!INCLUDE[crdefault](../../../includes/crabout-md.md)] <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|  
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * トランスポート用のプロセッサの数<br /><br /> 4 \* SMSvcHost.exe 用のプロセッサの数|このプロパティは、サーバーがリスナーで待機できるチャネルの数を制限します。 MaxPendingAccepts が小さすぎると、待機しているすべてのチャネルが接続のサービスを開始する間隔が小さくなりますが、新しいチャネルがリッスンを開始できなくなります。 接続がこの間に到着した場合、サーバー上でこの接続を待機しているものがないため、接続は失敗します。 このプロパティは、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> プロパティを大きな値に設定することで構成できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A>と[Net.TCP ポート共有サービスを構成します。](http://msdn.microsoft.com/en-us/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * トランスポート用のプロセッサの数<br /><br /> 4 \* SMSvcHost.exe 用のプロセッサの数|このプロパティは、サーバーがリスナーで待機できるチャネルの数を制限します。 MaxPendingAccepts が小さすぎると、待機しているすべてのチャネルが接続のサービスを開始する間隔が小さくなりますが、新しいチャネルがリッスンを開始できなくなります。 接続がこの間に到着した場合、サーバー上でこの接続を待機しているものがないため、接続は失敗します。 このプロパティは、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> プロパティを大きな値に設定することで構成できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A>と[Net.TCP ポート共有サービスを構成します。](http://msdn.microsoft.com/library/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * プロセッサの数|このプロパティは、トランスポートが受け入れたにもかかわらず ServiceModel ディスパッチャーによって取得されていない接続の数を制御します。 この値を設定するには、バインドの `MaxConnections` を使用するか、またはバインド要素の `maxOutboundConnectionsPerEndpoint` を使用してください。 [!INCLUDE[crdefault](../../../includes/crabout-md.md)] <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|  
-|receiveTimeout|SMSvcHost.exe|30 秒|このプロパティは、TCP フレーム データを読み取り、基になる接続からディスパッチする接続を実行するためのタイムアウトを指定します。 これは、SMSvcHost.exe サービスで受信接続からの前文データの読み取り操作を行う時間に制限を設定するために使用されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Net.TCP ポート共有サービスを構成する](http://msdn.microsoft.com/en-us/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)です。|  
+|receiveTimeout|SMSvcHost.exe|30 秒|このプロパティは、TCP フレーム データを読み取り、基になる接続からディスパッチする接続を実行するためのタイムアウトを指定します。 これは、SMSvcHost.exe サービスで受信接続からの前文データの読み取り操作を行う時間に制限を設定するために使用されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Net.TCP ポート共有サービスを構成する](http://msdn.microsoft.com/library/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)です。|  
   
 > [!NOTE]
 >  これらの新しい既定値は、.NET Framework 4.5 がインストールされているコンピューターに WCF サービスを配置する場合のみ使用されます。 .NET Framework 4.0 がインストールされているコンピューターに同じサービスを配置すると、.NET Framework 4.0 の既定値が使用されます。 このような場合は、これらの設定を明示的に構成することをお勧めします。  

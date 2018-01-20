@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f66f773551f45f9e4c5978ef09bbe4061a3326bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2d0172b91393e4e9e373a247c33be938a3160e14
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation のプライバシー情報
 マイクロソフトは、エンド ユーザーのプライバシー保護に力を入れています。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] (バージョン 3.0) を使用してアプリケーションを作成した場合、アプリケーションがエンド ユーザーのプライバシーに影響する可能性があります。 たとえば、アプリケーションが明示的にユーザーの連絡先情報を収集することがあります。つまり、アプリケーションがインターネットを経由して Web サイトに情報を要求したり、情報を送信したりすることがあります。 マイクロソフトの技術をアプリケーションに組み込んでいる場合、その技術にプライバシーに影響を与える可能性がある独自の動作が存在することがあります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、アプリケーションの作成者またはエンド ユーザーが選択しない限り、アプリケーションからマイクロソフトに情報を送信することはありません。  
@@ -138,7 +138,7 @@ ms.lasthandoff: 12/22/2017
   
  削除されるキー :  
   
- \-Xmlns:wst ="http://schemas.xmlsoap.org/ws/2004/04/trust"および xmlns:wst ="http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- For xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" and xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst:BinarySecret  
   
@@ -158,7 +158,7 @@ ms.lasthandoff: 12/22/2017
   
  wsse:BinarySecurityToken  
   
- \-Xmlns:saml ="urn: oasis: 名前: tc: SAML:1.0:assertion"(下記) 太字の項目が削除されます。  
+ \- For xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" the items in bold (below) are removed:  
   
  \<アサーション  
   
@@ -176,13 +176,13 @@ ms.lasthandoff: 12/22/2017
   
  \<条件で NotBefore"[dateTime]"NotOnOrAfter を = ="[dateTime]">  
   
- \<AudienceRestrictionCondition >  
+ \<AudienceRestrictionCondition>  
   
  \<Audience > [uri]\</Audience > +  
   
- \</AudienceRestrictionCondition > *  
+ \</AudienceRestrictionCondition>*  
   
- \<DoNotCacheCondition/> *  
+ \<DoNotCacheCondition />*  
   
  <\!-基本型を抽象化  
   
@@ -190,7 +190,7 @@ ms.lasthandoff: 12/22/2017
   
  -->  
   
- \</条件 > ですか?  
+ \</Conditions>?  
   
  \<アドバイス >  
   
@@ -200,13 +200,13 @@ ms.lasthandoff: 12/22/2017
   
  [any]*  
   
- \</アドバイス > ですか?  
+ \</Advice>?  
   
  <\!--抽象基本型  
   
  \<ステートメント/> *  
   
- \<SubjectStatement >  
+ \<SubjectStatement>  
   
  \<サブジェクト >  
   
@@ -222,19 +222,19 @@ ms.lasthandoff: 12/22/2017
   
  `</NameIdentifier>?`  
   
- \<SubjectConfirmation >  
+ \<SubjectConfirmation>  
   
  \<ConfirmationMethod > [anyUri]\</ConfirmationMethod > +  
   
  \<SubjectConfirmationData > [すべて]\</SubjectConfirmationData > ですか?  
   
- \<ds:KeyInfo >.\</ds:KeyInfo > ですか?  
+ \<ds:KeyInfo>...\</ds:KeyInfo>?  
   
  \</SubjectConfirmation > ですか?  
   
- \</件名 >  
+ \</Subject>  
   
- \</SubjectStatement > *  
+ \</SubjectStatement>*  
   
  -->  
   
@@ -266,9 +266,9 @@ ms.lasthandoff: 12/22/2017
   
  />*  
   
- \</AuthenticationStatement > *  
+ \</AuthenticationStatement>*  
   
- \<AttributeStatement >  
+ \<AttributeStatement>  
   
  [Subject]  
   
@@ -282,15 +282,15 @@ ms.lasthandoff: 12/22/2017
   
  `<AttributeValue>[any]</AttributeValue>+`  
   
- \</属性 > +  
+ \</Attribute>+  
   
- \</AttributeStatement > *  
+ \</AttributeStatement>*  
   
  \<AuthorizationDecisionStatement  
   
  Resource="[uri]"  
   
- 意思決定 ="[許可 &#124; 拒否 &#124; 不確定]"  
+ Decision="[Permit&#124;Deny&#124;Indeterminate]"  
   
  >  
   
@@ -298,17 +298,17 @@ ms.lasthandoff: 12/22/2017
   
  \<アクション Namespace ="[uri]"> [文字列]\</Action > +  
   
- \<証拠 >  
+ \<Evidence>  
   
  \<AssertionIDReference > [ID]\</AssertionIDReference > +  
   
  \<アサーション > [アサーション]\</Assertion > +  
   
- \</証拠 > ですか?  
+ \</Evidence>?  
   
- \</AuthorizationDecisionStatement > *  
+ \</AuthorizationDecisionStatement>*  
   
- \</アサーション >  
+ \</Assertion>  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>復号化されたまたは暗号化されていないメッセージをログに記録するときにメッセージ本文から削除される情報  
  前述のとおり、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、復号化されたまたは暗号化されていないメッセージをログに記録する場合、キーと既知の可能性がある個人情報をメッセージ ヘッダーから削除します。 それに加えて、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、次のリストに示す、キー交換に関係するセキュリティ メッセージを記述する本文要素とアクションについて、キーと既知の可能性がある個人情報をメッセージ本文から削除します。  
@@ -413,5 +413,5 @@ ms.lasthandoff: 12/22/2017
  Web サービス記述言語 (WSDL) には、ポートの定義が入ります。 各ポートには、エンドポイント アドレス、およびアプリケーションが使用するサービスを表すバインディングがあります。 WSDL の公開は、構成を使用して無効にできます。 コンピューターに保持される情報はありません。  
   
 ## <a name="see-also"></a>参照  
- [Windows Communication Foundation](http://msdn.microsoft.com/en-us/fd327ade-0260-4c40-adbe-b74645ba3277)  
+ [Windows Communication Foundation](http://msdn.microsoft.com/library/fd327ade-0260-4c40-adbe-b74645ba3277)  
  [セキュリティ](../../../docs/framework/wcf/feature-details/security.md)

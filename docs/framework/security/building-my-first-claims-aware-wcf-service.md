@@ -14,11 +14,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: af39c3c5788db95eaee248ca8454534022cab659
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 791c86b8f833c6b1a8acb6da3b03cfccdafca0e5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>クレーム対応の WCF サービスを初めて構築する
 ## <a name="applies-to"></a>対象  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  AD FS 2.0 は、Windows Server R2 に含まれており、設置型シナリオの STS として使用できます。 Azure Active Directory アクセス制御 (Access Control Service または ACS とも呼ばれます) は、Microsoft Azure の一部として提供されるクラウド サービスです。 テストまたは学習の目的で、他の STS を使用して、クレーム対応アプリケーションをビルドすることもできます。 たとえば、オンラインで自由に入手できる [Identity and Access Tool for Visual Studio](http://go.microsoft.com/fwlink/?LinkID=245849) (http://go.microsoft.com/fwlink/?LinkID=245849) に含まれる、ローカル開発用 STS を使用できます。  
   
- WIF を使用して初めてのクレーム対応 WCF サービスをビルドするには、「[方法: WIF を使用してクレーム対応 WCF サービスをビルドする](http://msdn.microsoft.com/en-us/431e6415-62ed-4a9f-af03-f14d2b4dfe6d)」を参照してください。  
+ WIF を使用して初めてのクレーム対応 WCF サービスをビルドするには、「[方法: WIF を使用してクレーム対応 WCF サービスをビルドする](http://msdn.microsoft.com/library/431e6415-62ed-4a9f-af03-f14d2b4dfe6d)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
  [WIF の概要](../../../docs/framework/security/getting-started-with-wif.md)

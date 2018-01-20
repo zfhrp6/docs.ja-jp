@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 75723b03468c2e7aeda765f2dabfc30e394c8c88
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2bb195af180ab9d840f91fe82f9f643119663374
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-visual-studio-templates"></a>WCF Visual Studio テンプレート
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] サービスや周辺アプリケーションをすばやく構築するために [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] で使用できる、定義済みのプロジェクト テンプレートと項目テンプレートです。  
@@ -70,7 +70,7 @@ ms.lasthandoff: 12/22/2017
  既存のプロジェクトが Web プロジェクトの場合は、サービス ホスト ファイル (service1.svc) も作成されます。  
   
 ### <a name="wcf-wf-service-project-and-item-template"></a>WCF WF サービス プロジェクト/項目テンプレート  
- これらのテンプレートは、ワークフロー サービスをホストする [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを作成します。ワークフロー サービスは、Web サービスのようにアクセスできるワークフローです。 この他に、XAML プログラミング モデルや命令型プログラミング モデルのテンプレートも用意されています。 これらのテンプレートを使用すると、シーケンシャル ワークフローやステート マシン ワークフローを作成できます。 これらの種類のワークフローの詳細については、次を参照してください。 [Windows Workflow Foundation チュートリアル](http://msdn.microsoft.com/en-us/e9705654-bd96-4b56-8d98-f1f118112d97)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]ワークフロー プロジェクトを作成するを参照してください[従来のワークフロー プロジェクトを作成する](/visualstudio/workflow-designer/creating-legacy-workflow-projects)です。  
+ これらのテンプレートは、ワークフロー サービスをホストする [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを作成します。ワークフロー サービスは、Web サービスのようにアクセスできるワークフローです。 この他に、XAML プログラミング モデルや命令型プログラミング モデルのテンプレートも用意されています。 これらのテンプレートを使用すると、シーケンシャル ワークフローやステート マシン ワークフローを作成できます。 これらの種類のワークフローの詳細については、次を参照してください。 [Windows Workflow Foundation チュートリアル](http://msdn.microsoft.com/library/e9705654-bd96-4b56-8d98-f1f118112d97)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]ワークフロー プロジェクトを作成するを参照してください[従来のワークフロー プロジェクトを作成する](/visualstudio/workflow-designer/creating-legacy-workflow-projects)です。  
   
  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] デザイナーでは、コード ベースのワークフローではなく XOML 型のワークフローを使用すると応答性が向上します。 XOML ワークフローは、既定で作成されるワークフロー型です。  
   

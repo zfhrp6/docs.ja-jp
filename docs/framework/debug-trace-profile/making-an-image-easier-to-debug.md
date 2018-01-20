@@ -18,11 +18,11 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 86dd0c4349dce8dd9e50fdd44c38a08ec39d90bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e05af51010e92586a9f1de423f6304ea8db78168
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="making-an-image-easier-to-debug"></a>イメージのデバッグの簡略化
 アンマネージ コードをコンパイルするときは、IDE スイッチまたはコマンド ライン オプションを使用して、デバッグ用の実行可能イメージを構成できます。 たとえば、Visual C++ で /**Zi** コマンド ライン オプションを使用すると、デバッグ シンボル ファイル (拡張子 .pdb) が生成されます。 同様に、/**Od** コマンド ライン オプションを使用すると、コンパイラは最適化処理を無効にします。 出力されるコードの処理速度は低下しますが、デバッグは簡単になるため、デバッグ時にはこれらのオプションを指定することをお勧めします。  
@@ -67,4 +67,4 @@ AllowOptimize=0
 ## <a name="see-also"></a>参照  
  [デバッグ、トレース、およびプロファイリング](../../../docs/framework/debug-trace-profile/index.md)  
  [JIT アタッチ デバッグの有効化](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
- [プロファイルの有効化](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)
+ [プロファイルの有効化](http://msdn.microsoft.com/library/3b669676-f0e0-4ebf-8674-68986dd2020d)

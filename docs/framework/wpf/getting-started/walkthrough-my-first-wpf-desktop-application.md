@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3667d507f4c35174c1e888c9781b5f74ffd496a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 16ed99181f8462e805638b5d3881464b16f21177
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>チュートリアル: 最初 WPF デスクトップ アプリケーション
 このチュートリアルでは、開発の概要については、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]多くに共通要素を含むアプリケーション[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーション:[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]マークアップ、分離コード、アプリケーション定義、コントロール、レイアウト、データ バインディング、およびスタイル。 
@@ -56,7 +56,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
 ## <a name="creating-the-application-project"></a>アプリケーション プロジェクトの作成  
  このセクションでは、アプリケーション定義、2 つのページ、および 1 つのイメージが含まれる、アプリケーション インフラストラクチャを作成します。 
   
-1. Visual Basic または Visual c# のという名前の新しい WPF アプリケーション プロジェクトを作成する`ExpenseIt`です。 詳細については、次を参照してください。[する方法: 新しい WPF アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)です。 
+1. Visual Basic または Visual c# のという名前の新しい WPF アプリケーション プロジェクトを作成する`ExpenseIt`です。 詳細については、次を参照してください。[する方法: 新しい WPF アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)です。 
   
     > [!NOTE]
     >  このチュートリアルでは、 <xref:System.Windows.Controls.DataGrid> .NET Framework 4 で使用可能なコントロールです。 プロジェクトの対象 .NET Framework 4 であることを確認して以降であります。 詳細については、次を参照してください。[する方法: .NET Framework のバージョンを対象に](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)です。 
@@ -115,7 +115,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
 ## <a name="adding-files-to-the-application"></a>ファイルをアプリケーションに追加します。  
  このセクションでは、アプリケーションに 2 つのページと 1 つのイメージを追加します。 
   
-1. という名前のプロジェクトに新しいページ (WPF) を追加`ExpenseItHome.xaml`です。 詳細については、次を参照してください。[する方法: WPF プロジェクトに新しい項目の追加](http://msdn.microsoft.com/en-us/17e6b238-fc32-4385-98ef-2f66ca09d9ad)です。 
+1. という名前のプロジェクトに新しいページ (WPF) を追加`ExpenseItHome.xaml`です。 詳細については、次を参照してください。[する方法: WPF プロジェクトに新しい項目の追加](http://msdn.microsoft.com/library/17e6b238-fc32-4385-98ef-2f66ca09d9ad)です。 
   
      このページが、アプリケーションの起動時に表示される最初のページになります。 ここに個人の一覧が表示され、ユーザーは経費報告書の表示対象となる個人を選択できます。 
   
@@ -171,7 +171,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
     [!code-csharp[ExpenseIt#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml.cs#5)]
     [!code-vb[ExpenseIt#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]  
   
-10. watermark.png という名前のイメージをプロジェクトに追加します。 独自のイメージを作成することも、サンプル コードからファイルをコピーすることもできます。 詳細については、次を参照してください。 [NIB: 方法: 既存の項目をプロジェクトに追加](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。 
+10. watermark.png という名前のイメージをプロジェクトに追加します。 独自のイメージを作成することも、サンプル コードからファイルをコピーすることもできます。 詳細については、次を参照してください。 [NIB: 方法: 既存の項目をプロジェクトに追加](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。 
 
 ## <a name="building-and-running-the-application"></a>ビルドおよびアプリケーションの実行  
  このセクションでは、アプリケーションをビルドして実行します。 
@@ -280,7 +280,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
   
 1. ExpenseItHome.xaml を開きます。 
   
-2. 追加、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント ハンドラーを<xref:System.Windows.Controls.Button>要素。 詳細については、次を参照してください。[する方法: 単純なイベント ハンドラーを作成する](http://msdn.microsoft.com/en-us/b1456e07-9dec-4354-99cf-18666b64f480)です。 
+2. 追加、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント ハンドラーを<xref:System.Windows.Controls.Button>要素。 詳細については、次を参照してください。[する方法: 単純なイベント ハンドラーを作成する](http://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480)です。 
   
     [!code-xaml[ExpenseIt#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]  
   

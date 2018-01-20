@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 27e9391b72ccb65e50ce3154cf7a1c97d796ebd7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfeacc0d4fb736c523538896246b0f406f995fa7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>.NET Framework におけるデータとモデリング
 ここでは、ADO.NET、統合言語クエリ (LINQ: Language-Integrated Query)、WCF Data Services、および XML を使用してデータにアクセスする方法について説明します。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 12/22/2017
  [ADO.NET](../../../docs/framework/data/adonet/index.md)  
  ADO.NET のアーキテクチャについて説明します。また、ADO.NET のクラスを使用してアプリケーション データを管理し、データ ソース (Microsoft SQL Server、OLE DB データ ソース、および XML を含む) とやり取りする方法についても説明します。  
   
- [LINQ ポータル](http://msdn.microsoft.com/en-us/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
+ [LINQ ポータル](http://msdn.microsoft.com/library/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
  統合言語クエリ (LINQ) に関連するドキュメントへのリンクを示します。  
   
  [トランザクション処理](../../../docs/framework/data/transactions/index.md)  
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/22/2017
  [XML ドキュメントと XML データ](../../../docs/standard/data/xml/index.md)  
  .NET Framework で XML ドキュメントおよびデータを処理するための、統合された包括的な一連のクラスについて概説します。  
   
- [XML 標準のリファレンス](http://msdn.microsoft.com/en-us/79c78508-c9d0-423a-a00f-672e855de401)  
+ [XML 標準のリファレンス](http://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
  Microsoft がサポートする XML 標準に関するリファレンス情報を提供します。  
   
 ## <a name="related-sections"></a>関連項目  

@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7ee0f555fc1e3412032e0a7dda3a747bbfef6f4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 01bc858aeeff750baa3f54e813dea5c9779143f8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltwebsocketsettingsgt"></a>&lt;webSocketSettings&gt;
 Web ソケット設定を指定するために使用される構成要素。  
   
-\<システムです。ServiceModel >  
-\<バインド >  
-\<netHttpBinding >  
+\<system.ServiceModel>  
+\<bindings>  
+\<netHttpBinding>  
   
 ## <a name="syntax"></a>構文  
   
@@ -75,7 +75,7 @@ Web ソケット設定を指定するために使用される構成要素。
   
 |要素|説明|  
 |-------------|-----------------|  
-|\<netHttpBinding >|NetHttpBinding を指定します。|  
+|\<netHttpBinding>|NetHttpBinding を指定します。|  
   
 ## <a name="example"></a>例  
  次の例を使用する方法を示しています、 \<webSocketSettings > 要素。  
@@ -103,5 +103,5 @@ Web ソケット設定を指定するために使用される構成要素。
  <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<バインド >](../../../../../docs/framework/misc/binding.md)
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<binding>](../../../../../docs/framework/misc/binding.md)

@@ -21,11 +21,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 969ab4f3c63571488c66c8a505df3969fcd788e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fdd26f335fb2f9b8072103def5b00d91a6740817
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="use-the-automationid-property"></a>AutomationID プロパティの使用
 > [!NOTE]
@@ -56,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="use-a-persistent-path-to-return-to-a-previously-identified-automationelement"></a>永続的なパスを使用して、既に特定されている AutomationElement に戻る  
   
--   クライアント アプリケーションは (単純なテスト スクリプトから、堅牢な記録と再生のためのユーティリティまで)、ファイルを開くダイアログやメニュー項目など、現在インスタンス化されていないために UI オートメーション ツリーに存在しない要素にアクセスしなければならないことがあります。 これらの要素をインスタンス化するには、AutomationID、コントロール パターンとイベント リスナーなどの [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] プロパティを使用することで、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] アクションの特定のシーケンスを再現または「再生」する必要があります。 参照してください[スクリプト ジェネレーターのサンプルのテスト](http://msdn.microsoft.com/en-us/028467fd-2980-4691-9522-0131dcef23a0)を使用する例については[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]との対話をユーザーに基づくテスト スクリプトを生成する、[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]です。  
+-   クライアント アプリケーションは (単純なテスト スクリプトから、堅牢な記録と再生のためのユーティリティまで)、ファイルを開くダイアログやメニュー項目など、現在インスタンス化されていないために UI オートメーション ツリーに存在しない要素にアクセスしなければならないことがあります。 これらの要素をインスタンス化するには、AutomationID、コントロール パターンとイベント リスナーなどの [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] プロパティを使用することで、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] アクションの特定のシーケンスを再現または「再生」する必要があります。 参照してください[スクリプト ジェネレーターのサンプルのテスト](http://msdn.microsoft.com/library/028467fd-2980-4691-9522-0131dcef23a0)を使用する例については[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]との対話をユーザーに基づくテスト スクリプトを生成する、[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]です。  
   
  [!code-csharp[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAAutomationID_snip/CSharp/FindByAutomationID.xaml.cs#uiaworkerthread)]
  [!code-vb[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAAutomationID_snip/VisualBasic/FindByAutomationID.xaml.vb#uiaworkerthread)]  

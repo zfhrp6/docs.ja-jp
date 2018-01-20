@@ -24,11 +24,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7e4d336992be216178b1237c9f43bffb3de61fba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 030b84245a5cec09dac3133b04235c65f7bb2d80
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="add-ins-and-extensibility"></a>アドインおよび拡張機能
 <a name="top"></a> アドインには、ホスト アプリケーションのための拡張機能またはサービスが用意されています。 開発者は、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のプログラミング モデルを使用してアドインを開発し、ホスト アプリケーションでそれらをアクティブ化できます。 こうした機能は、このモデルで、ホストとアドインの間に通信パイプラインを構築することによって実現します。 このモデルは、 <xref:System.AddIn>、 <xref:System.AddIn.Hosting>、 <xref:System.AddIn.Pipeline>、 <xref:System.AddIn.Contract> の各名前空間の型を使用することによって実装されます。  
@@ -81,7 +81,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="discovery-and-activation"></a>探索とアクティブ化  
  情報ストアに格納されている、アドインを表すコレクション内のトークンを使用して、アドインをアクティブにすることができます。 アドインは、アドインのホストのビューを定義する型によって検索されます。 アドインを定義する型によって、特定のアドインを検索することもできます。 情報ストアは、パイプライン ストアとアドイン ストアの 2 つのキャッシュ ファイルで構成されます。  
   
- 情報ストアの更新とリビルドの詳細については、「 [アドイン探索](http://msdn.microsoft.com/en-us/5d268dde-11df-4c4d-a022-f58d88bbc421)」を参照してください。 アドインのアクティブ化の詳細については、「 [アドインのアクティブ化](http://msdn.microsoft.com/en-us/bedcbcdf-5964-4215-b5f3-3299798b2b3f) 」および「 [方法: さまざまな分離とセキュリティに合わせてアドインをアクティブにする](http://msdn.microsoft.com/en-us/7afe7ec8-5158-4350-9119-5df0ecab8aa5)」を参照してください。  
+ 更新およびインフォメーション ストアを再構築する方法については、次を参照してください。[アドイン探索](http://msdn.microsoft.com/library/5d268dde-11df-4c4d-a022-f58d88bbc421)です。 アドインをアクティブ化する方法については、次を参照してください。[アドインをアクティブ化](http://msdn.microsoft.com/library/bedcbcdf-5964-4215-b5f3-3299798b2b3f)と[する方法: 別の分離とセキュリティには、アドインをアクティブ化](http://msdn.microsoft.com/library/7afe7ec8-5158-4350-9119-5df0ecab8aa5)です。  
   
 ### <a name="isolation-levels-and-external-processes"></a>分離レベルと外部プロセス  
  アドイン モデルでは、アドインとホスト間、アドインと他のアドイン間について、複数の分離レベルがサポートされます。分離レベルの低いものから順に、次のレベルがあります。  
@@ -96,10 +96,10 @@ ms.lasthandoff: 12/22/2017
   
 -   外部プロセスの専用のアプリケーション ドメインに、それぞれのアドインが排他的に読み込まれる。 これが最も分離レベルの高いシナリオです。  
   
- 外部プロセスの使用の詳細については、「 [方法: さまざまな分離とセキュリティに合わせてアドインをアクティブにする](http://msdn.microsoft.com/en-us/7afe7ec8-5158-4350-9119-5df0ecab8aa5)」を参照してください。  
+ 詳細については、外部プロセスを使用して、次を参照してください。[する方法: 別の分離とセキュリティには、アドインをアクティブ化](http://msdn.microsoft.com/library/7afe7ec8-5158-4350-9119-5df0ecab8aa5)です。  
   
 ### <a name="lifetime-management"></a>有効期間管理  
- アドイン モデルはアプリケーション ドメインとプロセス境界を横断するため、オブジェクトの解放と再要求を実行するにはガベージ コレクションだけでは不十分です。 アドイン モデルには、トークンと参照カウントを使用した有効期間管理機能があるため、通常は追加のプログラミングは必要ありません。 詳細については、「 [有効期間管理](http://msdn.microsoft.com/en-us/57a9c87e-394c-4fef-89f2-aa4223a2aeb5)」を参照してください。  
+ アドイン モデルはアプリケーション ドメインとプロセス境界を横断するため、オブジェクトの解放と再要求を実行するにはガベージ コレクションだけでは不十分です。 アドイン モデルには、トークンと参照カウントを使用した有効期間管理機能があるため、通常は追加のプログラミングは必要ありません。 詳細については、次を参照してください。[継続時間管理](http://msdn.microsoft.com/library/57a9c87e-394c-4fef-89f2-aa4223a2aeb5)です。  
   
  [ページのトップへ](#top)  
   
@@ -115,7 +115,7 @@ ms.lasthandoff: 12/22/2017
 |タイトル|説明|  
 |-----------|-----------------|  
 |[Pipeline Development](../../../docs/framework/add-ins/pipeline-development.md)|ホスト アプリケーションからアドインへのセグメントの通信パイプラインについて説明します。 チュートリアルのトピックでは、コード例を示して、パイプラインの構築方法と、 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]のパイプラインへのセグメントの配置方法について説明しています。|  
-|[アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)|セキュリティ、信頼性、バージョン管理、およびアセンブリのための分離の境界を提供するアプリケーション ドメイン間の関係について説明します。|  
+|[アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)|セキュリティ、信頼性、バージョン管理、およびアセンブリのための分離の境界を提供するアプリケーション ドメイン間の関係について説明します。|  
   
  [ページのトップへ](#top)  
   

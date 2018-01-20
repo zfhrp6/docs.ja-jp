@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: accbc05018644e3ead4ee0c08f44ec39cad8f036
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c43c195411b07467f1041ecc5ed55239a1327dc
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-data-services-resources"></a>WCF Data Services リソース
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の概要に関するトピックは次のとおりです。 これらのトピックの多くには、詳細情報が記載された関連トピックへのリンクも含まれています。  
@@ -33,7 +33,7 @@ ms.lasthandoff: 12/22/2017
  [アプリケーション シナリオ](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
  作成するためのタスク ベースのアプローチを提供[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]およびアプリケーションへのアクセスを[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。  
   
- [Visual Studio と .NET Framework 用語集](http://msdn.microsoft.com/en-us/6529d7c6-7e25-4426-a120-d57b239ca4eb)  
+ [Visual Studio と .NET Framework 用語集](http://msdn.microsoft.com/library/6529d7c6-7e25-4426-a120-d57b239ca4eb)  
  使用される用語が含まれています[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]と[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]ドキュメント。  
   
 ## <a name="external-resources"></a>外部リソース  

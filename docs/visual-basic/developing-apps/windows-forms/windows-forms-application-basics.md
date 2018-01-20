@@ -12,11 +12,11 @@ ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 42ed9866f168c06e8641ace712da58e953951676
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 7872d3c7b19ec9cd7059cccf41e5fab50d85123b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Windows フォーム アプリケーションの基礎 (Visual Basic)
 重要な部分[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ユーザーのコンピューターでローカルに実行する Windows フォーム アプリケーションを作成する機能です。 Visual Studio を使用して、Windows フォームを使用して、アプリケーションとユーザー インターフェイスを作成することができます。 Windows フォーム アプリケーションからのクラスをベースに構築、<xref:System.Windows.Forms>名前空間。  
@@ -50,9 +50,9 @@ ms.lasthandoff: 12/21/2017
   
  これらの機能の使用に関する詳細な手順については、次のヘルプ トピックを参照してください。  
   
-|目的|参照トピック|  
+|終了|解決方法については、|  
 |--------|---------|  
-|使用して新しい Windows フォーム アプリケーションを作成します。[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/en-us/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|使用して新しい Windows フォーム アプリケーションを作成します。[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
 |フォーム上のコントロールを使用します。|[方法: Windows フォームにコントロールを追加する](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
 |使用してグラフィックスを作成します。<xref:System.Drawing>|[グラフィックス プログラミングについて](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |カスタム コントロールを作成します。|[方法: UserControl クラスを継承する](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
@@ -70,7 +70,7 @@ ms.lasthandoff: 12/21/2017
   
  これらの機能の使用に関する詳細な手順については、次のヘルプ トピックを参照してください。  
   
-|目的|参照トピック|  
+|終了|解決方法については、|  
 |--------|---------|  
 |使用して、<xref:System.Windows.Forms.BindingSource>コンポーネント|[方法: デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
 |扱う[!INCLUDE[vstecado](~/includes/vstecado-md.md)]データ ソース|[方法: Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する](https://msdn.microsoft.com/library/ya3sah92.aspx)|  
@@ -85,7 +85,7 @@ ms.lasthandoff: 12/21/2017
   
  [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] の概要については、「[ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)」を参照してください。 これらの機能の使用に関する詳細な手順については、次のヘルプ トピックを参照してください。  
   
-|目的|参照トピック|  
+|終了|解決方法については、|  
 |--------|---------|  
 |アプリケーションを展開します。[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行する](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [チュートリアル : ClickOnce アプリケーションを手動で配置する](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
 |更新プログラム、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開|[方法 : ClickOnce アプリケーションの更新プログラムを管理する](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
@@ -96,7 +96,7 @@ ms.lasthandoff: 12/21/2017
   
  これらの機能の使用に関する詳細な手順については、次のヘルプ トピックを参照してください。  
   
-|目的|参照トピック|  
+|終了|解決方法については、|  
 |--------|---------|  
 |フォームの内容を印刷します。|[方法: Windows フォームでグラフィックスを印刷する](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
 |Windows フォームのセキュリティについての詳細|[Windows フォームのセキュリティの概要](../../../framework/winforms/security-in-windows-forms-overview.md)|  

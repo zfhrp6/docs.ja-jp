@@ -14,14 +14,14 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 82bb3ca8bd5ef0659bbb222753b3225288fcbcfc
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 0782d75aa44557ef87f1d59757b0d60873d8a949
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="modeling-and-mapping"></a>モデリングとマッピング
-[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、概念モデル、ストレージ モデル、およびこの 2 つのモデル間のマッピングをアプリケーションに最適な方法で定義できます。 Entity Data Model ツール[!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)]を作成することは、[ 。edmx ファイル](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)データベースまたはグラフィカルなモデルと、更新データベースまたはモデルのいずれかが変更されたときにこのファイルからです。  
+[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、概念モデル、ストレージ モデル、およびこの 2 つのモデル間のマッピングをアプリケーションに最適な方法で定義できます。 Entity Data Model ツール[!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)]を作成することは、[ 。edmx ファイル](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)データベースまたはグラフィカルなモデルと、更新データベースまたはモデルのいずれかが変更されたときにこのファイルからです。  
   
  Entity Framework 4.1 以降では、Code First の開発を使用してモデルをプログラムで作成することもできます。 Code First の開発に対しては、2 つの異なるシナリオがあります。 どちらの場合でも、開発者は .NET Framework のクラス定義をコーディングしてモデルを定義し、データ注釈または Fluent API を使用してオプションで追加のマッピングまたは構成を指定します。  
   

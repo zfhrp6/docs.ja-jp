@@ -33,11 +33,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 283faabf0f23df2650f8d87fdebae1102b83235d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4af28280de24f3e25362f18985c209b1a2f29523
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>.NET Framework の構成ファイル スキーマ
 
@@ -86,10 +86,10 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="related-sections"></a>関連項目
 
-[リモート処理設定スキーマ](http://msdn.microsoft.com/en-us/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) リモート処理を実装するクライアント アプリケーションとサーバー アプリケーションを構成する要素について説明します。
+[リモート処理設定スキーマ](http://msdn.microsoft.com/library/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) リモート処理を実装するクライアント アプリケーションとサーバー アプリケーションを構成する要素について説明します。
 
 [ASP.NET の設定スキーマ](http://msdn.microsoft.com/library/b5ysx397\(v=vs.100\).aspx) ASP.NET Web アプリケーションの動作を制御する要素について説明します。
 
-[Web サービス設定スキーマ](http://msdn.microsoft.com/en-us/f84d6d55-1add-4eb7-ae46-33df5833ea2e) ASP.NET Web サービス、およびそれらのクライアントの動作を制御する要素について説明します。
+[Web サービス設定スキーマ](http://msdn.microsoft.com/library/f84d6d55-1add-4eb7-ae46-33df5833ea2e) ASP.NET Web サービス、およびそれらのクライアントの動作を制御する要素について説明します。
 
-[.NET Framework アプリの構成](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42) セキュリティ、アセンブリのバインディング、および .NET Framework のリモート処理を構成する方法について説明します。
+[.NET Framework アプリの構成](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42) セキュリティ、アセンブリのバインディング、および .NET Framework のリモート処理を構成する方法について説明します。

@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a3dee3d94063a94869869a9d94ab3cc2bc0a26fb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7c945d23def3bbf6284e7e0db95d391066256df6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="tooltip-overview"></a>ToolTip の概要
 ツールヒントは、ユーザーなどを超えると、要素の上にマウス ポインターを置いたときに表示される小さいポップアップ ウィンドウ、<xref:System.Windows.Controls.Button>です。 このトピックでは、ツールヒントを紹介し、ツールヒントの内容を作成およびカスタマイズする方法について説明します。  
@@ -78,7 +78,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="using-the-time-interval-properties-of-tooltipservice"></a>ToolTipService の時間間隔プロパティの使用  
  <xref:System.Windows.Controls.ToolTipService> 、次のプロパティにツールヒントを設定する時刻を表示するクラスが用意されています: <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>、 <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>、および<xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>です。  
   
- 使用して、<xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>と<xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>プロパティで、遅延を指定する通常の簡単な前に、<xref:System.Windows.Controls.ToolTip>が表示されますおよび期間を指定にも、<xref:System.Windows.Controls.ToolTip>表示されたままです。 詳細については、「[ How to: Delay the Display of a ToolTip](http://msdn.microsoft.com/en-us/618e05ef-f2bf-4a53-a0f4-aacb49918bd7)」を参照してください。  
+ 使用して、<xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>と<xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>プロパティで、遅延を指定する通常の簡単な前に、<xref:System.Windows.Controls.ToolTip>が表示されますおよび期間を指定にも、<xref:System.Windows.Controls.ToolTip>表示されたままです。 詳細については、「[ How to: Delay the Display of a ToolTip](http://msdn.microsoft.com/library/618e05ef-f2bf-4a53-a0f4-aacb49918bd7)」を参照してください。  
   
  <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>プロパティ間にマウス ポインターをすばやく移動するときに初期遅延なしのさまざまなコントロールのツールヒントが表示されるかどうかがします。 詳細については、<xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>プロパティを参照してください[BetweenShowDelay プロパティを使用して](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)です。  
   

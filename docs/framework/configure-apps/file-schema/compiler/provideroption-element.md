@@ -19,17 +19,17 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 1f91b9fcd7ef9c9c616a7a41ced6be1cda365509
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f28b7b43f2f782744a0dbc81bd0b91bbbcd8abba
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltprovideroptiongt-element"></a>&lt;providerOption&gt;要素
 言語プロバイダーのコンパイラ バージョン属性を指定します。  
   
  \<構成要素 >  
-\<system.codedom 要素 >  
+\<system.codedom Element>  
 \<コンパイラ要素 >  
 \<コンパイラ > 要素  
 \<providerOption > 要素  
@@ -61,7 +61,7 @@ ms.lasthandoff: 12/22/2017
 |要素|説明|  
 |-------------|-----------------|  
 |[\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|[\<system.codedom > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|使用可能な言語プロバイダーのコンパイラ構成設定を指定します。|  
+|[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|使用可能な言語プロバイダーのコンパイラ構成設定を指定します。|  
 |[\<コンパイラ > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラ構成要素のコンテナー0 個以上含む`<compiler>`要素。|  
 |[\<compiler> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|言語プロバイダーのコンパイラ構成属性を指定します。|  
   
@@ -105,4 +105,4 @@ ms.lasthandoff: 12/22/2017
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<コンパイラ > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
  [完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
- [コンパイル (ASP.NET 設定スキーマ) のコンパイラのコンパイラ要素](http://msdn.microsoft.com/en-us/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)
+ [コンパイル (ASP.NET 設定スキーマ) のコンパイラのコンパイラ要素](http://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d1d85e85079504e28a5b0ae78dc8be3a4b928ea3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 364362e8377f02b5d6518e6ae4d71b6dd1eafc02
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="drawing-formatted-text"></a>書式設定されたテキストの描画
 このトピックの機能の概要を示します、<xref:System.Windows.Media.FormattedText>オブジェクト。 このオブジェクトは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでのテキストの描画に対する低レベルの制御を提供します。  
@@ -96,7 +96,7 @@ FormattedText オブジェクトを使用して表示されるテキスト
  ![テキストのパス ジオメトリに続く球](../../../../docs/framework/wpf/advanced/media/textpathgeometry01.gif "TextPathGeometry01")  
 テキストのパス ジオメトリに続く球  
   
- 詳細については、「[How to: Create a PathGeometry Animation for Text](http://msdn.microsoft.com/en-us/29f8051e-798a-463f-a926-a099a99e9c67)」(方法: テキストの PathGeometry アニメーションを作成する) を参照してください。  
+ 詳細については、「[How to: Create a PathGeometry Animation for Text](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67)」(方法: テキストの PathGeometry アニメーションを作成する) を参照してください。  
   
  その他の興味深い使用の書式設定されたテキストを作成するに変換された後、<xref:System.Windows.Media.PathGeometry>オブジェクト。 たとえば、ビデオをクリップしてテキスト内に表示することができます。  
   
@@ -139,4 +139,4 @@ FormattedText オブジェクトを使用して表示されるテキスト
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
  [中抜きの文字列を作成する](../../../../docs/framework/wpf/advanced/how-to-create-outlined-text.md)  
- [方法: テキストの PathGeometry アニメーションを作成する](http://msdn.microsoft.com/en-us/29f8051e-798a-463f-a926-a099a99e9c67)
+ [方法: テキストの PathGeometry アニメーションを作成する](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67)

@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 60a2537f1ddc4563c1514032f7df4894f6ef47af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3c77cae35abacb780aec86750c37c6ecd91ff370
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-control-service-instancing"></a>方法 : サービスのインスタンス化を制御する
 サービスのインスタンス モードを設定することにより、<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> (およびそのユーザー定義のサービス オブジェクト) をいつ生成するかを指定できます。 設定できるモードについては、<xref:System.ServiceModel.InstanceContextMode> 列挙体を参照してください。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]動作を参照してください[を構成して、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。 実施例については、次を参照してください。[動作](../../../../docs/framework/wcf/samples/behaviors.md)です。  
@@ -45,4 +45,4 @@ ms.lasthandoff: 12/22/2017
  <xref:System.ServiceModel.ServiceBehaviorAttribute>  
  <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>  
  <xref:System.ServiceModel.InstanceContextMode>  
- [サービス: 動作のサンプル](http://msdn.microsoft.com/en-us/4e3c6513-a7ff-4b35-8dcf-b5506c6f39a7)
+ [サービス: 動作のサンプル](http://msdn.microsoft.com/library/4e3c6513-a7ff-4b35-8dcf-b5506c6f39a7)

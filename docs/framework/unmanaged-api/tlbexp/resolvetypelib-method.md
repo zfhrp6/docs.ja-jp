@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b668610f50c32373790130def17928b8b3b3d8b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 72d1cedbfc1a1ec6c3588a7b0be9cf657d7369fd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib メソッド
 完全修飾パスを返すことによって、タイプ ライブラリの簡易名を解決します。  
@@ -45,7 +45,7 @@ HRESULT ResolveTypeLib(
   
 #### <a name="parameters"></a>パラメーター  
  `bstrSimpleName`  
- [in]A [BSTR](http://msdn.microsoft.com/en-us/1b2d7d2c-47af-4389-a6b6-b01b7e915228)タイプ ライブラリの簡易名を格納しています。  
+ [in]A [BSTR](http://msdn.microsoft.com/library/1b2d7d2c-47af-4389-a6b6-b01b7e915228)タイプ ライブラリの簡易名を格納しています。  
   
  `tlbid`  
  [in]レジストリでタイプ ライブラリに割り当てられた GUID です。  
@@ -60,15 +60,15 @@ HRESULT ResolveTypeLib(
  [in]タイプ ライブラリのマイナー バージョン番号。 たとえば、バージョン*x.y*、マイナー バージョン番号は*y*です。  
   
  `syskind`  
- [in]A [SYSKIND](http://msdn.microsoft.com/en-us/662048b2-59a8-48ca-9e4f-2f9a5306faa1)を運用環境を識別するフラグ。 一般的な値は、SYS_WIN32 SYS_WIN64 です。  
+ [in]A [SYSKIND](http://msdn.microsoft.com/library/662048b2-59a8-48ca-9e4f-2f9a5306faa1)を運用環境を識別するフラグ。 一般的な値は、SYS_WIN32 SYS_WIN64 です。  
   
  `pbstrResolvedTlbName`  
- [out]ポインター、 [BSTR](http://msdn.microsoft.com/en-us/1b2d7d2c-47af-4389-a6b6-b01b7e915228)という名前で、タイプ ライブラリの完全なパスを含む、`bstrSimpleName`パラメーター。  
+ [out]ポインター、 [BSTR](http://msdn.microsoft.com/library/1b2d7d2c-47af-4389-a6b6-b01b7e915228)という名前で、タイプ ライブラリの完全なパスを含む、`bstrSimpleName`パラメーター。  
   
 ## <a name="remarks"></a>コメント  
  `ResolveTypeLib`メソッドによって呼び出されます、 [LoadTypeLibWithResolver 関数](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md)中に[Tlbexp.exe (タイプ ライブラリ エクスポーター)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)を処理します。  
   
- このインターフェイスのカスタム実装を返す必要があります、 [BSTR](http://msdn.microsoft.com/en-us/1b2d7d2c-47af-4389-a6b6-b01b7e915228)という名前で、タイプ ライブラリの完全なパスを含む、`bstrSimpleName`パラメーター。  
+ このインターフェイスのカスタム実装を返す必要があります、 [BSTR](http://msdn.microsoft.com/library/1b2d7d2c-47af-4389-a6b6-b01b7e915228)という名前で、タイプ ライブラリの完全なパスを含む、`bstrSimpleName`パラメーター。  
   
 ## <a name="requirements"></a>必要条件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
@@ -81,4 +81,4 @@ HRESULT ResolveTypeLib(
   
 ## <a name="see-also"></a>参照  
  [Tlbexp ヘルパー関数](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
- [LoadTypeLibEx](http://msdn.microsoft.com/en-us/56a7f9e1-810b-4a42-aa4d-691f4304f5ef)
+ [LoadTypeLibEx](http://msdn.microsoft.com/library/56a7f9e1-810b-4a42-aa4d-691f4304f5ef)

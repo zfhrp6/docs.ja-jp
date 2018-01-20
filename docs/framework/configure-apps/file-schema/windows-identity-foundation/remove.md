@@ -14,19 +14,19 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: 15c2561487eecb44cf3542768de0a77d1dd6713d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb62bbe8b52032708dddd62dd895e61ba8c1c5e9
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltremovegt"></a>&lt;remove&gt;
 トークン ハンドラー コレクションから指定したセキュリティ トークン ハンドラーを削除します。  
   
- \<system.identityModel >  
-\<identityConfiguration >  
-\<securityTokenHandlers >  
-\<削除 >  
+ \<system.identityModel>  
+\<identityConfiguration>  
+\<securityTokenHandlers>  
+\<remove>  
   
 ## <a name="syntax"></a>構文  
   
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|型|削除するトークン ハンドラーの CLR 型名。 指定する方法について、`type`属性は、「[カスタム型の参照](http://msdn.microsoft.com/en-us/7286d2e3-c63d-49fd-abdc-ce2705f22c24)です。 必須。|  
+|型|削除するトークン ハンドラーの CLR 型名。 指定する方法について、`type`属性は、「[カスタム型の参照](http://msdn.microsoft.com/library/7286d2e3-c63d-49fd-abdc-ce2705f22c24)です。 必須。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  
@@ -57,7 +57,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|エンドポイントに登録されているセキュリティ トークン ハンドラーのコレクションを指定します。|  
+|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|エンドポイントに登録されているセキュリティ トークン ハンドラーのコレクションを指定します。|  
   
 ## <a name="example"></a>例  
  次の XML の使用方法を示します、`<add>`と`<remove>`に既定のセッション トークン ハンドラーをカスタム セッション トークン ハンドラーに置き換える要素。 XML を取得、`ClaimsAwareWebFarm`サンプルです。  

@@ -15,17 +15,17 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 59c1c6be1f02477c7ad2d4c90d09173f9296d1e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0715952077db755386a0381f68ccc6e33705a031
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltmsmqintegrationbindinggt"></a>&lt;msmqIntegrationBinding&gt;
 MSMQ を介してメッセージをルーティングすることでキューのサポートを提供するバインディングを定義します。  
   
- \<システムです。ServiceModel >  
-\<バインド >  
+ \<system.ServiceModel>  
+\<bindings>  
 msmqIntegrationBinding  
   
 ## <a name="syntax"></a>構文  
@@ -96,13 +96,13 @@ msmqIntegrationBinding
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<セキュリティ >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|バインディングのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement> 型です。|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|バインディングのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement> 型です。|  
   
 ### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインドのコレクションが保持されます。|  
   
 ## <a name="remarks"></a>コメント  
  このバインド要素は、Windows Communication Foundation (WCF) アプリケーションにメッセージを送信し、COM、MSMQ ネイティブ Api、またはで定義された型のいずれかを使用する既存の MSMQ アプリケーションからメッセージを受信できるようにするために使用できる、<xref:System.Messaging?displayProperty=nameWithType>名前空間をメッセージを永続的に格納する必要があるかどうか、キュー、転送保証に対処する方法を指定するには、この構成要素とメッセージを保護および認証する方法を使用できます。 詳細については、次を参照してください。[する方法: WCF エンドポイントとメッセージ キュー アプリケーションとメッセージを交換](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)です。  
@@ -144,8 +144,8 @@ msmqIntegrationBinding
  <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>  
  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>  
  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>  
- [\<バインド >](../../../../../docs/framework/misc/binding.md)  
+ [\<binding>](../../../../../docs/framework/misc/binding.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [WCF のキュー](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)

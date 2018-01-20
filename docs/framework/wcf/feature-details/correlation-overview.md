@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 094c962e2576653fc8c9de4c0dece912fcaa07f1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a29f761b4a3718293c1786d23d425265603f8c84
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="correlation-overview"></a>相関関係の概要
 相関関係とは、ワークフロー サービス メッセージを互いに関連付ける、最初の要求への応答などのアプリケーションのインスタンス状態と関連付ける、または特定の注文 ID を注文処理ワークフローの永続化された状態に関連付けるためのしくみです。 ここでは、相関関係の概要について説明します。 このセクションの他のトピックでは、相関関係の各種類についての追加情報を提供します。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="protocol-based-correlation"></a>プロトコル ベースの相関関係  
  プロトコル ベースの相関関係では、メッセージを相互に関連付け、該当するインスタンスと関連付けるために、トランスポート機構が使用されます。 システムで提供される一部のプロトコル相関関係には、要求/応答の相関関係とコンテキスト ベースの相関関係が含まれます。 要求/応答の相関関係を使用して、メッセージング アクティビティの 1 つのペアが関連付けられ、<xref:System.ServiceModel.Activities.Send> と <xref:System.ServiceModel.Activities.ReceiveReply> のペアや、<xref:System.ServiceModel.Activities.Receive> と <xref:System.ServiceModel.Activities.SendReply> のペアなどの双方向の操作が形成されます。 また、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ワークフロー デザイナーには、このパターンに迅速に実装できるアクティビティ テンプレートのセットが用意されています。 コンテキスト ベースの相関関係はで説明されているコンテキスト交換機構に基づいて、 [.NET コンテキスト交換プロトコルの仕様](http://go.microsoft.com/fwlink/?LinkID=166059)です。 コンテキスト ベースの相関関係を使用するには、<xref:System.ServiceModel.BasicHttpContextBinding>、<xref:System.ServiceModel.WSHttpContextBinding>、または <xref:System.ServiceModel.NetTcpContextBinding> などのコンテキスト ベースのバインディングがエンドポイントで使用される必要があります。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]プロトコルの相関関係は、「[コンテキスト交換](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)、[永続的な二重](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md)、および[要求/応答](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]使用して、 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] 、ワークフロー デザイナーのアクティビティ テンプレートを参照してください[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。 サンプル コードについては、[永続的な二重 &#91;WF のサンプル &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)と[NetContextExchangeCorrelation](http://msdn.microsoft.com/en-us/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)サンプルです。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]プロトコルの相関関係は、「[コンテキスト交換](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)、[永続的な二重](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md)、および[要求/応答](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]使用して、 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] 、ワークフロー デザイナーのアクティビティ テンプレートを参照してください[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。 サンプル コードについては、[永続的な二重 &#91;WF のサンプル &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)と[NetContextExchangeCorrelation](http://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)サンプルです。  
   
 ## <a name="content-based-correlation"></a>コンテンツ ベースの相関関係  
  コンテンツ ベースの相関関係では、メッセージ内の一部の情報を特定のインスタンスとの関連付けに使用します。 プロトコル ベースの相関関係と異なり、コンテンツ ベースの相関関係では、各関連メッセージ内のこの情報がある場所に、アプリケーションの作成者が明示的に記述されている必要があります。 コンテンツ ベースの相関関係を使用するアクティビティでは、<xref:System.ServiceModel.MessageQuerySet> を使用して、このメッセージ データを指定します。 コンテンツ ベースの相関関係は、<xref:System.ServiceModel.BasicHttpContextBinding> などのコンテキスト バインディングの 1 つを使用しないサービスと通信する場合に便利です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コンテンツ ベースの相関関係を参照してください[コンテンツ ベース](../../../../docs/framework/wcf/feature-details/content-based-correlation.md)です。 サンプル コードについては、[コンテンツ ベースの相関関係](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)と[相関電卓](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)サンプルです。  
@@ -40,4 +40,4 @@ ms.lasthandoff: 12/22/2017
  [コンテンツ ベースの相関関係](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
  [相関電卓](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)  
  [永続的な二重 &#91;WF のサンプル &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
- [NetContextExchangeCorrelation](http://msdn.microsoft.com/en-us/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)
+ [NetContextExchangeCorrelation](http://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)

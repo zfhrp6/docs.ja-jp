@@ -18,11 +18,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 5f79ed7af91f2e54edbc2174da2afa1b3cb56557
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4cfe8752ce3a562e1e4b576c63b56ff56255ff62
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="specifying-an-assembly39s-location"></a>アセンブリ &#39; の指定の場所
 これにはアセンブリの場所を指定する 2 つの方法があります。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 -   使用して、 [ \<probing >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md)要素。  
   
- 使用することも、 [.NET Framework 構成ツール (Mscorcfg.msc)](http://msdn.microsoft.com/en-us/a7106c52-68da-490e-b129-971b2c743764)をアセンブリの場所を指定するか、共通言語ランタイム アセンブリを探すための場所を指定します。  
+ 使用することも、 [.NET Framework 構成ツール (Mscorcfg.msc)](http://msdn.microsoft.com/library/a7106c52-68da-490e-b129-971b2c743764)をアセンブリの場所を指定するか、共通言語ランタイム アセンブリを探すための場所を指定します。  
   
 ## <a name="using-the-codebase-element"></a>使用して、 \<codeBase > 要素  
  使用することができます、  **\<codeBase >**のみマシン構成ファイルまたはパブリッシャー ポリシー ファイルでもアセンブリのバージョンをリダイレクトする要素。 ランタイムは、使用するアセンブリ バージョンを判断した場合は、バージョンを決定する、ファイルからコード ベース設定が適用されます。 コード ベースが指定されていない場合、ランタイムは、通常の方法で、アセンブリをプローブします。 詳細については、「[ランタイム アセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)です。  
@@ -54,7 +54,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
- **バージョン**属性が必要ですがすべて厳密な名前のアセンブリのアセンブリの厳密な名前が付いていない場合は省略されます。  **\<CodeBase >**要素が必要です、 **href**属性。 バージョン範囲を指定することはできません、  **\<codeBase >**要素。  
+ **バージョン**属性が必要ですがすべて厳密な名前のアセンブリのアセンブリの厳密な名前が付いていない場合は省略されます。 **\<CodeBase >**要素が必要です、 **href**属性。 バージョン範囲を指定することはできません、  **\<codeBase >**要素。  
   
 > [!NOTE]
 >  厳密な名前ではないアセンブリ コード ベースのヒントを指定している場合、ヒントは、アプリケーション ベースまたはアプリケーション ベース ディレクトリのサブディレクトリを指す必要があります。  
@@ -80,4 +80,4 @@ ms.lasthandoff: 12/22/2017
  [共通言語ランタイムのアセンブリ](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [.NET Framework アプリの構成](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)
+ [.NET Framework アプリの構成](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)

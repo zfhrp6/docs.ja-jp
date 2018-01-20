@@ -15,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 6ba7ca9941dc148444a4c605fecc8aaf150e8601
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f53ee18345347f506a404a22bf5bfea6af037463
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getdemultiplexedstub-function"></a>GetDemultiplexedStub 関数
 Windows の管理から非同期呼び出しの受信をクライアントを支援するためには、オブジェクト転送シンクを作成します。
@@ -39,7 +39,7 @@ HRESULT GetDemultiplexedStub (
 ## <a name="parameters"></a>パラメーター
 
 `pObject`  
-[in]クライアントのインプロセス実装へのポインター [IWbemObjectSink](https://msdn.microsoft.com/en-us/library/aa391787(v=vs.85).aspx)です。
+[in]クライアントのインプロセス実装へのポインター [IWbemObjectSink](https://msdn.microsoft.com/library/aa391787(v=vs.85).aspx)です。
 
 `isLocal`  
 [in]イベントがローカルかどうかを示すフラグ (`true`)、それ以外の`false`します。

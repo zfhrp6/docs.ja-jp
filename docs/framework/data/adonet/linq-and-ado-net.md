@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d55185153e3d03ddb2b1726ed25566d6b5f396ae
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b020b3df627fcb220f4227d76fdf8eb3d60e80e4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ と ADO.NET
 今日、ビジネス アプリケーション開発者の多くは、2 つ (またはそれ以上) のプログラミング言語を使ってアプリケーションを開発しています。ビジネス ロジックやプレゼンテーション層には高級言語 ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] など) が、データベースとの対話にはクエリ言語 ([!INCLUDE[tsql](../../../../includes/tsql-md.md)] など) が使用されています。 開発者は実質的に複数の言語に精通していることが要求され、開発環境における言語の不整合が生じる原因にもなっています。 たとえば、データ アクセス API を使用してデータベースを照会するアプリケーションでは、クエリは文字列リテラルとして引用符で囲んで指定する必要があります。 コンパイラはこのクエリ文字列を認識できないため、エラー (無効な構文、参照されている列または行が実際に存在するかどうかなど) のチェック機構が働きません。 クエリ パラメーターの型チェックや `IntelliSense` のサポートもありません。  
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/17/2018
   
  ![LINQ to ADO.NET の概要](../../../../docs/framework/data/adonet/media/dpue-linqtoadonetoverview-bpuedev11.gif "DPUE_LinqToAdoNetOverview_bpuedev11")  
   
- LINQ の言語機能の概要については、次を参照してください。 [LINQ の概要](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e)です。 アプリケーションでの LINQ の使用については、次を参照してください。、[ビルド内にありません: LINQ の一般的なプログラミング ガイド](http://msdn.microsoft.com/en-us/609c7a6b-cbdd-429d-99f3-78d13d3bc049)、LINQ テクノロジを使用する方法についての詳細が含まれています。  
+ LINQ の言語機能の概要については、次を参照してください。 [LINQ の概要](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e)です。 アプリケーションでの LINQ の使用については、次を参照してください。、[ビルド内にありません: LINQ の一般的なプログラミング ガイド](http://msdn.microsoft.com/library/609c7a6b-cbdd-429d-99f3-78d13d3bc049)、LINQ テクノロジを使用する方法についての詳細が含まれています。  
   
  以降のセクションで、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]、[!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)]、および [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)] について詳しく説明します。  
   

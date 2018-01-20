@@ -17,18 +17,18 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 510896c6993008f30e7eacf2628ae4cceadea7e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dcead28d7bf66e0626a0108015add4f22c5fa476
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltgccpugroupgt-element"></a>&lt;GCCpuGroup&gt;要素
 ガベージ コレクションが複数の CPU グループをサポートするかどうかを指定します。  
   
  \<configuration>  
-\<ランタイム >  
-\<GCCpuGroup >  
+\<runtime>  
+\<GCCpuGroup>  
   
 ## <a name="syntax"></a>構文  
   
@@ -84,5 +84,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="see-also"></a>参照  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [方法: 同時実行ガベージ コレクションを無効にします。](http://msdn.microsoft.com/en-us/ba2c6c67-5778-497c-9fac-5f793b5500c7)  
+ [方法: 同時実行ガベージ コレクションを無効にします。](http://msdn.microsoft.com/library/ba2c6c67-5778-497c-9fac-5f793b5500c7)  
  [ワークステーションとサーバーのガベージ コレクション](../../../../../docs/standard/garbage-collection/fundamentals.md#workstation_and_server_garbage_collection)

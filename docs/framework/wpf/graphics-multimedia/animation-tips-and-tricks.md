@@ -26,11 +26,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 4fceebbd3da7a0643e744d80a55cb1c953eba3bb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 210f8ff8840f579d352cc579f80f38488b998c5a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="animation-tips-and-tricks"></a>アニメーションのヒントとテクニック
 アニメーションを使用するときに[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]がいくつかのヒント、およびアニメーションできるようにするトリックはパフォーマンスを向上させ、苛立ちを保存します。  
@@ -116,7 +116,7 @@ ms.lasthandoff: 12/22/2017
   
  アニメーションを削除する別の方法もあります。 属するアニメーションを削除する、次の手法を使用できます、<xref:System.Windows.Media.Animation.Storyboard>です。  
   
--   削除する、<xref:System.Windows.Media.Animation.Storyboard>イベント トリガーを開始してを参照してください[する方法: ストーリー ボードを削除する](http://msdn.microsoft.com/en-us/7fe39531-de2f-46a0-a69f-b783d04235ee)です。  
+-   削除する、<xref:System.Windows.Media.Animation.Storyboard>イベント トリガーを開始してを参照してください[する方法: ストーリー ボードを削除する](http://msdn.microsoft.com/library/7fe39531-de2f-46a0-a69f-b783d04235ee)です。  
   
 -   コードを使用して削除する、<xref:System.Windows.Media.Animation.Storyboard>を参照してください、<xref:System.Windows.Media.Animation.Storyboard.Remove%2A>メソッドです。  
   

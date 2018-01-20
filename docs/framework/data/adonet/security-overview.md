@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 70f8b00ca0f57d4d6bf9fc49ab12443f0a8c9b83
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c952a79b70314ff9de195da322efd78d54176201
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="security-overview"></a>セキュリティの概要
 アプリケーションのセキュリティ保護は継続的なプロセスとして行う必要があります。 開発者は、アプリケーションがあらゆる攻撃に対して安全であることを常に保証できるわけではありません。これは、新しい技術がもたらす未知の攻撃を予測することが不可能なためです。 反対に、システムに欠陥が発見 (または公開) されていない場合も、そのシステムに欠陥がないとは限りません。 プロジェクトの設計フェーズでセキュリティを考慮することはもちろんのこと、アプリケーションの使用期間を通じてセキュリティをいかに確保してゆくかを計画しておく必要があります。  
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/17/2018
 |リソース|説明|  
 |--------------|-----------------|  
 |[コード アクセス セキュリティと ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|ADO.NET アプリケーションの観点から、コード アクセス セキュリティ、ロール ベース セキュリティ、および部分信頼環境間の相互作用について説明します。|  
-|[コード アクセス セキュリティ](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)|.NET Framework の CAS について説明する追加のトピックへのリンクが含まれています。|  
+|[コード アクセス セキュリティ](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)|.NET Framework の CAS について説明する追加のトピックへのリンクが含まれています。|  
   
 ## <a name="database-security"></a>データベース セキュリティ  
  最小特権の原則はデータ ソースにも適用されます。 データベース セキュリティの一般的なガイドラインは次のとおりです。  
@@ -100,7 +100,7 @@ ms.lasthandoff: 01/17/2018
 |リソース|説明|  
 |--------------|-----------------|  
 |[SQL Server のセキュリティ](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|SQL Server のセキュリティの概要を説明します。アプリケーションのシナリオを交えながら、SQL Server を対象とした安全な ADO.NET アプリケーションを作成するための指針を提供します。|  
-|[データ アクセスに関する推奨事項](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|データへのアクセスおよびデータベース操作の実行に関連した推奨事項について説明します。|  
+|[データ アクセスに関する推奨事項](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|データへのアクセスおよびデータベース操作の実行に関連した推奨事項について説明します。|  
   
 ## <a name="security-policy-and-administration"></a>セキュリティ ポリシーと管理  
  コード アクセス セキュリティ (CAS) ポリシーの管理が不適切だと、セキュリティの脆弱性を招く可能性があります。 アプリケーションを展開した後は、セキュリティ監視技法を適用し、新しい脅威が現れた際はそのリスクを評価する必要があります。  
@@ -109,11 +109,11 @@ ms.lasthandoff: 01/17/2018
   
 |リソース|説明|  
 |--------------|-----------------|  
-|[NIB: セキュリティ ポリシーの管理](http://msdn.microsoft.com/en-us/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|セキュリティ ポリシーの作成と管理について説明します。|  
-|[NIB: セキュリティ ポリシーのベスト プラクティス](http://msdn.microsoft.com/en-us/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|セキュリティ ポリシーの管理方法について説明したトピックへのリンクを提供します。|  
+|[NIB: セキュリティ ポリシーの管理](http://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|セキュリティ ポリシーの作成と管理について説明します。|  
+|[NIB: セキュリティ ポリシーのベスト プラクティス](http://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|セキュリティ ポリシーの管理方法について説明したトピックへのリンクを提供します。|  
   
 ## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [ネイティブ コードと .NET Framework コードのセキュリティ](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  
+ [ネイティブ コードと .NET Framework コードのセキュリティ](http://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
  [SQL Server のセキュリティ](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -19,11 +19,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 182882d33772054c7ac4208ca9571fa8018c2a07
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4ccd490f6d31ad1d20128497e5115147eddb3df4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-publisher-policy"></a>方法: 発行者ポリシーを作成する
 アプリケーションがアップグレード済みのアセンブリに発行者ポリシー ファイルを含めることによって、新しいバージョンのアセンブリを使用するアセンブリの販売元の状態のことができます。 発行者ポリシー ファイルは、アセンブリのリダイレクトやコード ベース設定を指定し、アプリケーション構成ファイルと同じフォーマットを使用します。 発行者ポリシー ファイルがアセンブリにコンパイルされ、グローバル アセンブリ キャッシュに配置します。  
@@ -64,7 +64,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  コマンド プロンプトで次のコマンドを入力します。  
   
-     **al/link:** *publisherPolicyFile* **/out:** *publisherPolicyAssemblyFile* **/keyfile:** *keyPairFile* **/platform:** *processorArchitecture*  
+     **al /link:** *publisherPolicyFile* **/out:** *publisherPolicyAssemblyFile* **/keyfile:** *keyPairFile* **/platform:** *processorArchitecture*  
   
      このコマンドでは。  
   
@@ -72,7 +72,7 @@ ms.lasthandoff: 12/22/2017
   
     -   *PublisherPolicyAssemblyFile*引数は、このコマンドを実行した結果、発行者ポリシー アセンブリの名前。 アセンブリ ファイル名は、形式に従う必要があります。  
   
-         **ポリシー。** *majorNumber* **です。** *minorNumber* **です。** *mainAssemblyName* **.dll**  
+         **policy.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
   
     -   *KeyPairFile*引数は、キーのペアを含むファイルの名前。 アセンブリと同じキー ペアと発行者ポリシー アセンブリを署名する必要があります。  
   
@@ -100,7 +100,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  コマンド プロンプトで次のコマンドを入力します。  
   
-     **gacutil/i***publisherPolicyAssemblyFile*   
+     **gacutil /i**  *publisherPolicyAssemblyFile*  
   
      次のコマンドは、追加`policy.1.0.myAssembly.dll`グローバル アセンブリ キャッシュにします。  
   
@@ -115,7 +115,7 @@ ms.lasthandoff: 12/22/2017
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [アプリの構成](../../../docs/framework/configure-apps/index.md)  
- [.NET Framework アプリの構成](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
+ [.NET Framework アプリの構成](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
  [ランタイム設定スキーマ](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリ バージョンのリダイレクト](../../../docs/framework/configure-apps/redirect-assembly-versions.md)
