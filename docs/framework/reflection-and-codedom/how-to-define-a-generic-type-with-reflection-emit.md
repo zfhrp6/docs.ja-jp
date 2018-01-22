@@ -22,11 +22,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e10f0f4ad1552c7b8ba7e6bc5175ffe7576ec986
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d6096a54c6a530035bd32c24d427ba047f905476
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>方法: リフレクション出力を使用してジェネリック型を定義する
 このトピックでは、2 種類のパラメーターを持つ単純なジェネリック型を作成する方法、クラス制約、インターフェイス制約、特殊な制約をパラメーターに適用する方法、パラメーターの型や戻り値の型としてクラスの型パラメーターを使用するメンバーを作成する方法を紹介します。  
@@ -146,5 +146,5 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  <xref:System.Reflection.Emit.GenericTypeParameterBuilder>  
- [リフレクション出力の使用](http://msdn.microsoft.com/en-us/ccc6540d-0e2c-4d89-b456-eb7353f9e9ac)  
- [リフレクション出力による動的アセンブリのシナリオ](http://msdn.microsoft.com/en-us/e1cc6750-e20f-473b-bb4e-f43bc66aecce)
+ [リフレクション出力の使用](http://msdn.microsoft.com/library/ccc6540d-0e2c-4d89-b456-eb7353f9e9ac)  
+ [リフレクション出力による動的アセンブリのシナリオ](http://msdn.microsoft.com/library/e1cc6750-e20f-473b-bb4e-f43bc66aecce)

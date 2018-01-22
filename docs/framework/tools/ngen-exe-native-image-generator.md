@@ -30,11 +30,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b13da21709bb85ddf376f84df4fe2c7ae9f1a513
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: 20c120323356171d78da35a490488f4654baece6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (ネイティブ イメージ ジェネレーター)
 ネイティブ イメージ ジェネレーター (Ngen.exe) は、マネージ アプリケーションのパフォーマンスを向上するツールです。 Ngen.exe は、コンパイルされたプロセッサ固有のマシン コードを含むファイルであるネイティブ イメージを作成してローカル コンピューターのネイティブ イメージ キャッシュにインストールします。 ランタイムは、Just-In-Time (JIT) コンパイラを使用してオリジナルのアセンブリをコンパイルする代わりに、キャッシュにあるネイティブ イメージを使用できます。  
@@ -57,12 +57,12 @@ ms.lasthandoff: 01/06/2018
   
 -   イメージを無効化する原因の一部が解決されました。  
   
- Windows 8 の場合、「[ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)」を参照してください。  
+ Windows 8 の場合、「[ネイティブ イメージ タスク](http://msdn.microsoft.com/library/9b1f7590-4e0d-4737-90ef-eaf696932afb)」を参照してください。  
   
  Ngen.exe とネイティブ イメージ サービスの使用に関する追加情報については、「[ネイティブ イメージ サービス][Native Image Service]」を参照してください。  
   
 > [!NOTE]
->  .NET Framework バージョン 1.0 とバージョン 1.1 の Ngen.exe 構文は、「[ネイティブ イメージ ジェネレーター (Ngen.exe) のレガシ構文](http://msdn.microsoft.com/en-us/5a69fc7a-103f-4afc-8ab4-606adcb46324)」に記されています。  
+>  .NET Framework バージョン 1.0 とバージョン 1.1 の Ngen.exe 構文は、「[ネイティブ イメージ ジェネレーター (Ngen.exe) のレガシ構文](http://msdn.microsoft.com/library/5a69fc7a-103f-4afc-8ab4-606adcb46324)」に記されています。  
   
  このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
@@ -523,7 +523,7 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
  ネイティブ イメージ サービスに関連する例については、「[ネイティブ イメージ サービス][Native Image Service]」を参照してください。  
   
 ## <a name="native-image-task"></a>ネイティブ イメージ タスク  
- ネイティブ イメージ タスクは、ネイティブ イメージを生成および保持する Windows タスクです。 ネイティブ イメージ タスクは、サポートされるシナリオでネイティブ イメージを自動的に生成し、解放します。 (「[ネイティブ イメージの作成](http://msdn.microsoft.com/en-us/2bc8b678-dd8d-4742-ad82-319e9bf52418)」を参照してください)。また、インストーラーが、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して、遅延時にネイティブ イメージを生成および更新できるようにします。  
+ ネイティブ イメージ タスクは、ネイティブ イメージを生成および保持する Windows タスクです。 ネイティブ イメージ タスクは、サポートされるシナリオでネイティブ イメージを自動的に生成し、解放します。 (「[ネイティブ イメージの作成](http://msdn.microsoft.com/library/2bc8b678-dd8d-4742-ad82-319e9bf52418)」を参照してください)。また、インストーラーが、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して、遅延時にネイティブ イメージを生成および更新できるようにします。  
   
  各アーキテクチャを対象とするアプリケーションのコンパイルを許可するために、ネイティブ イメージ タスクはコンピューターでサポートされる CPU アーキテクチャごとに一度登録されます。  
   

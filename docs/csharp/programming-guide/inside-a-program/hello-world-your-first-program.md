@@ -14,11 +14,11 @@ ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
 caps.latest.revision: "39"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c17dcce921f3a6ff1a9c547c5ff5d34c3dbbf28d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1b6511394e69edd344c4f4a1bbc9da549a1a2a17
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World -- 最初のプログラム (C# プログラミング ガイド)
 次の手順では、従来の "Hello World!" プログラムの C# バージョンを 作成します。 このプログラムでは `Hello World!` という文字列を表示します。  
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/21/2017
   
      [!code-csharp[csProgGuideMain#19](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_6.cs)]  
   
-     または  
+     - または -  
   
      [!code-csharp[csProgGuideMain#18](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_7.cs)]  
   
@@ -131,11 +131,11 @@ ms.lasthandoff: 11/21/2017
   
  C# コンパイラとそのオプションの詳細については、「[C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)」を参照してください。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [インサイド C# プログラム](../../../csharp/programming-guide/inside-a-program/index.md)  
  [文字列](../../../csharp/programming-guide/strings/index.md)  
- [\<paveover>C# サンプル アプリケーション](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
+ [\<paveover>C# サンプル アプリケーション](http://msdn.microsoft.com/library/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [Main() とコマンド ライン引数](../../../csharp/programming-guide/main-and-command-args/index.md)  
  [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)

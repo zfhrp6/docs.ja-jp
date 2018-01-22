@@ -32,11 +32,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0bb3ab57d78e1a7b6d53261af50d4698ab1a4ff2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2cd2b8e8ecb0e5d451ebf3c6823144e4a90e0d79
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-the-codedom"></a>CodeDOM の使用方法
 CodeDOM には一般的なさまざま種類のソース コード要素を表す型が用意されています。 オブジェクト グラフをアセンブルする CodeDOM 要素を使用すると、ソース コード モデルを構築するプログラムをデザインできます。 このオブジェクト グラフは、サポートされているプログラミング言語用の CodeDOM コード ジェネレーターを使用して、ソース コードとしてレンダリングできます。 また、CodeDOM を使用して、ソース コードをバイナリ アセンブリにコンパイルすることもできます。  
@@ -136,4 +136,4 @@ CodeDOM には一般的なさまざま種類のソース コード要素を表�
   
  CodeDOM のそれぞれの型については、<xref:System.CodeDom> 名前空間の説明を参照してください。  
   
- 特定の種類のコード要素を表す CodeDOM 要素を探すための一覧については、「[CodeDOM Quick Reference](http://msdn.microsoft.com/en-us/c77b8bfd-0a32-4e36-b59a-4f687f32c524)」(CodeDOM クイック リファレンス) を参照してください。
+ 特定の種類のコード要素を表す CodeDOM 要素を探すための一覧については、「[CodeDOM Quick Reference](http://msdn.microsoft.com/library/c77b8bfd-0a32-4e36-b59a-4f687f32c524)」(CodeDOM クイック リファレンス) を参照してください。

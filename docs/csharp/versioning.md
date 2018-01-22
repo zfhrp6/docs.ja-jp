@@ -10,11 +10,11 @@ ms.prod: visual-studio-dev-14
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 0b671333019c00abafcfb72533e30936f8fc6ad7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 153e7d115b34e6659f6a8ca23014441b86847796
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="versioning-in-c"></a>C# でのバージョン管理 #
 
@@ -57,7 +57,7 @@ SemVer に対する最も基本的なアプローチは、3 コンポーネン�
 
 ### <a name="application-configuration-file"></a>アプリケーション構成ファイル
 
-.NET 開発者の皆さんは、ほとんどのタイプのプロジェクトで [`app.config` ファイル](https://msdn.microsoft.com/en-us/library/1fk1t1t0(v=vs.110).aspx)を使用しているのではないでしょうか。
+.NET 開発者の皆さんは、ほとんどのタイプのプロジェクトで [`app.config` ファイル](https://msdn.microsoft.com/library/1fk1t1t0(v=vs.110).aspx)を使用しているのではないでしょうか。
 このシンプルな構成ファイルは、新しい更新プログラムのロールアウトをスムーズにするうえで大いに役立ちます。 通常、ライブラリを設計する際には、定期的に変更される可能性が高い情報を `app.config` ファイルに保存します。そうすれば、それらの情報が更新された際にも、ライブラリの再コンパイルを行うことなく、旧バージョンの構成ファイルを新しいバージョンに置き換えるだけで済みます。
 
 ## <a name="consuming-libraries"></a>ライブラリの使用
@@ -68,7 +68,7 @@ SemVer に対する最も基本的なアプローチは、3 コンポーネン�
 
 ### <a name="assembly-binding-redirection"></a>アセンブリ バインド リダイレクト
 
-`app.config` ファイルを使用して、アプリで使用するライブラリのバージョンを更新できます。 [*バインド リダイレクト*](https://msdn.microsoft.com/en-us/library/7wd6ex19(v=vs.110).aspx)というものを追加することで、 アプリを再コンパイルしなくても、新しいライブラリ バージョンを使用することができます。 次の例は、アプリの `app.config` ファイルを更新して、当初のコンパイルに使用された `1.0.0` バージョンではなく、`1.0.1` パッチ バージョンの `ReferencedLibrary` が使用されるようにする方法を示しています。
+`app.config` ファイルを使用して、アプリで使用するライブラリのバージョンを更新できます。 [*バインド リダイレクト*](https://msdn.microsoft.com/library/7wd6ex19(v=vs.110).aspx)というものを追加することで、 アプリを再コンパイルしなくても、新しいライブラリ バージョンを使用することができます。 次の例は、アプリの `app.config` ファイルを更新して、当初のコンパイルに使用された `1.0.0` バージョンではなく、`1.0.1` パッチ バージョンの `ReferencedLibrary` が使用されるようにする方法を示しています。
 
 ```xml
 <dependentAssembly>

@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1450acd6c4b68be79ad769106dfebc7d89484525
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ec4ac8d89d2d3a7d0dce11e5057db80190e7b963
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)
 MageUI.exe でサポートされている機能は、コマンド ライン ツール Mage.exe の機能と同じですが、MageUI.exe には、Windows ベースのユーザー インターフェイス (UI) があります。 このツールを使用すると、配置マニフェストおよびアプリケーション マニフェストを作成および編集でき、これらのマニフェストに署名することができます。 MageUI.exe で作成される新しいマニフェストは、[!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] を対象とします。 以前のバージョンの .NET Framework を対象にするには、以前のバージョンの MageUI.exe を使用する必要があります。 マニフェストに対してアセンブリの追加または削除を実行しても、既存のマニフェストに再署名しても、MageUI.exe は [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] を対象にするようにマニフェストを更新しません。 詳しくは、「[Mage.exe (マニフェストの生成および編集ツール)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)」をご覧ください。  
@@ -138,7 +138,7 @@ MageUI.exe でサポートされている機能は、コマンド ライン ツ�
   
 |UI 要素|説明|  
 |----------------|-----------------|  
-|**アクセス許可セットの種類**|‏このアプリケーションをクライアントで実行するために必要な、最小のアクセス許可セットです。 これらのアクセス許可セットおよび必要なアクセス許可については、「[NIB: 名前付きアクセス許可セット](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)」を参照してください。|  
+|**アクセス許可セットの種類**|‏このアプリケーションをクライアントで実行するために必要な、最小のアクセス許可セットです。 これらのアクセス許可セットおよび必要なアクセス許可については、「[NIB: 名前付きアクセス許可セット](http://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)」を参照してください。|  
 |**詳細**|アクセス許可セットを表すために作成された、アプリケーション マニフェスト用の XML です。 アプリケーション マニフェストの XML 形式に精通している場合を除き、この XML を手動で編集しないでください。 詳細については、「[ClickOnce アプリケーション マニフェスト](/visualstudio/deployment/clickonce-application-manifest)」を参照してください。|  
   
 ### <a name="deployment-manifest-tab"></a>[配置マニフェスト] タブ  

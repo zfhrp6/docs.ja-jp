@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-ms.openlocfilehash: ac19d4208da4f8ee6dd3e071ab70dbc41a0cd065
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b6b3ce53a08cfacfacb19266b0be216a40633352
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="string-interpolation-in-c"></a>C# における文字列補間 #
 
@@ -31,7 +31,7 @@ echo "My name is $name.";
 C# 6 でついに、この形式の文字列補間ができるようになりました。 文字列の前に `$` を使用して、それらの値の変数または式に置き換えると示すことができます。
 
 ## <a name="prerequisites"></a>必須コンポーネント
-お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの指示については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。
+お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。
 このアプリケーションは、Windows、Ubuntu Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 
 ## <a name="create-the-application"></a>アプリケーションを作成する
@@ -78,7 +78,7 @@ This is line number 5
 
 ## <a name="how-string-interpolation-works"></a>文字列補間の動作
 
-背後では、この文字列補間の構文はコンパイラによって String.Format に変換されます。 そのため、[前に String.Format で実行したのと同様のこと](https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx)ができます。
+背後では、この文字列補間の構文はコンパイラによって String.Format に変換されます。 そのため、[前に String.Format で実行したのと同様のこと](https://msdn.microsoft.com/library/dwhawy9k(v=vs.110).aspx)ができます。
 
 たとえば、パディングと数値の書式設定を追加できます。
 

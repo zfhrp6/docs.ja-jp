@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a76d85fa19fc7869ff4298867286592583e86a12
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 47710b81de79a9dfbb6bddd39035be2986350b0e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (タイプ ライブラリ エクスポーター)
 タイプ ライブラリ エクスポーターは、共通言語ランタイム アセンブリで定義されている型を記述するタイプ ライブラリを生成します。  
@@ -99,7 +99,7 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
   
  Tlbexp.exe は <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType> フィールドを無視することに注意してください。  
   
- アセンブリ内にあるすべての情報をタイプ ライブラリに含めることはできないので、エクスポート プロセス中、Tlbexp.exe によって一部のデータが破棄される場合があります。 変換処理、およびタイプ ライブラリに出力される各情報のソースの識別については、「[アセンブリからタイプ ライブラリへの変換の要約](http://msdn.microsoft.com/en-us/3a37eefb-a76c-4000-9080-7dbbf66a4896)」を参照してください。  
+ アセンブリ内にあるすべての情報をタイプ ライブラリに含めることはできないので、エクスポート プロセス中、Tlbexp.exe によって一部のデータが破棄される場合があります。 変換処理、およびタイプ ライブラリに出力される各情報のソースの識別については、「[アセンブリからタイプ ライブラリへの変換の要約](http://msdn.microsoft.com/library/3a37eefb-a76c-4000-9080-7dbbf66a4896)」を参照してください。  
   
  タイプ ライブラリ エクスポーターは、<xref:System.TypedReference> オブジェクトがアンマネージ コードで意味を持たない場合でも、`VARIANT` パラメーターが <xref:System.TypedReference> であるメソッドをエクスポートします。 <xref:System.TypedReference> パラメーターを持つメソッドをエクスポートしても、タイプ ライブラリ エクスポーターは警告やエラーを生成しません。作成されたタイプ ライブラリを使用するアンマネージ コードは、正しく動作しません。  
   
@@ -142,6 +142,6 @@ tlbexp Sample.dll
  <xref:System.Runtime.InteropServices.TypeLibExporterFlags>  
  [ツール](../../../docs/framework/tools/index.md)  
  [Regasm.exe (アセンブリ登録ツール)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)  
- [アセンブリからタイプ ライブラリへの変換の要約](http://msdn.microsoft.com/en-us/3a37eefb-a76c-4000-9080-7dbbf66a4896)  
+ [アセンブリからタイプ ライブラリへの変換の要約](http://msdn.microsoft.com/library/3a37eefb-a76c-4000-9080-7dbbf66a4896)  
  [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
  [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

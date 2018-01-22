@@ -12,18 +12,18 @@ ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
 caps.latest.revision: "35"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 34a80e4bf129c6104d50a8a0877271136c0c4198
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 4c94e6cd2894959d64fe463c85b4460893f2bf96
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="extension-methods-c-programming-guide"></a>拡張メソッド (C# プログラミング ガイド)
 拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。 拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。 C#、F#、および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。  
   
  最も一般的な拡張メソッドは、既存の [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] 型および <xref:System.Collections.IEnumerable?displayProperty=nameWithType> 型にクエリ機能を追加する <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 標準クエリ演算子です。 この標準クエリ演算子を使用するには、まず `using System.Linq` ディレクティブを使用して、スコープに含めます。 <xref:System.Collections.Generic.IEnumerable%601> を実装するすべての型は、<xref:System.Linq.Enumerable.GroupBy%2A>、<xref:System.Linq.Enumerable.OrderBy%2A>、<xref:System.Linq.Enumerable.Average%2A> などのインスタンス メソッドを持っていると考えられます。 <xref:System.Collections.Generic.List%601>、<xref:System.Array> などの <xref:System.Collections.Generic.IEnumerable%601> 型のインスタンスの後に "ドット" を入力すると、IntelliSense により、ステートメントの入力候補としてこれらの追加メソッドが表示されます。  
   
- 整数の配列において、標準クエリ演算子の `OrderBy` メソッドを呼び出す方法を次の例に示します。 かっこ内の式はラムダ式です。 標準クエリ演算子の多くはパラメーターとしてラムダ式を受け取りますが、拡張メソッドでは、これは必須ではありません。 詳しくは、「[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」をご覧ください。  
+ 整数の配列において、標準クエリ演算子の `OrderBy` メソッドを呼び出す方法を次の例に示します。 かっこ内の式はラムダ式です。 標準クエリ演算子の多くはパラメーターとしてラムダ式を受け取りますが、拡張メソッドでは、これは必須ではありません。 詳細については、「[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」を参照してください。  
   
  [!code-csharp[csProgGuideExtensionMethods#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_1.cs)]  
   
@@ -86,12 +86,12 @@ using System.Linq;
   
  実装したクラス ライブラリでは、アセンブリのバージョン番号のインクリメントを避けるために、拡張メソッドは使用しないでください。 ソース コードを所有するライブラリに重要な機能を追加する場合は、アセンブリのバージョン管理について標準の .NET Framework ガイドラインに従う必要があります。 詳細については、「[アセンブリのバージョン管理](../../../../docs/framework/app-domains/assembly-versioning.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [並列プログラミングのサンプル (拡張メソッドの例が多数掲載されています)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
  [ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
  [標準クエリ演算子の概要](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
- [インスタンス パラメーターの変換規則とその影響](http://go.microsoft.com/fwlink/?LinkId=112385)  
- [拡張メソッドの言語間での相互運用性](http://go.microsoft.com/fwlink/?LinkId=112386)  
- [拡張メソッドとカリー化デリゲート](http://go.microsoft.com/fwlink/?LinkId=112387)  
- [バインディングとエラー報告に関する拡張メソッド](http://go.microsoft.com/fwlink/?LinkId=112388)
+ [インスタンス パラメーターの変換規則とその影響](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/conversion-rules-for-instance-parameters-and-their-impact)  
+ [拡張メソッドの言語間での相互運用性](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/extension-methods-interoperability-between-languages)  
+ [拡張メソッドとカリー化デリゲート](https://blogs.msdn.microsoft.com/sreekarc/2007/05/01/extension-methods-and-curried-delegates)  
+ [バインディングとエラー報告に関する拡張メソッド](https://blogs.msdn.microsoft.com/sreekarc/2007/04/26/extension-method-binding-and-error-reporting)

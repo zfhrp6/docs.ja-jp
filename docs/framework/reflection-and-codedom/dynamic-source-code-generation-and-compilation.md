@@ -22,11 +22,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a74d25372b83c848621a44f6ea32a455a0f18ccf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 535a60aa1a174319a4db3403a64c3998784bbb58
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>動的なソース コードの生成とコンパイル
 .NET Framework には、CodeDOM (Code Document Object Model) と呼ばれるメカニズムが備わっています。CodeDOM を使用すると、ソース コードを出力するプログラム開発者は、レンダリング対象となるコードを表す単一のモデルに基づいて、実行時に複数のプログラミング言語でソース コードを生成することができます。  
@@ -60,5 +60,5 @@ ms.lasthandoff: 12/22/2017
  実行時にコードを生成およびコンパイルするためのインターフェイスを定義します。  
   
 ## <a name="related-sections"></a>関連項目  
- [CodeDOM クイック リファレンス](http://msdn.microsoft.com/en-us/c77b8bfd-0a32-4e36-b59a-4f687f32c524)  
+ [CodeDOM クイック リファレンス](http://msdn.microsoft.com/library/c77b8bfd-0a32-4e36-b59a-4f687f32c524)  
  ソース コードの要素を表す CodeDOM 要素を簡単に検索するための方法が用意されています。

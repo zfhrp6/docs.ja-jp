@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 545ac4d3a14f083dc4513f12b018cda5c7833b21
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 55c166b4d996eb96b284ea8c78fd2df98431187f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-load-assemblies-into-an-application-domain"></a>方法 : アプリケーション ドメインにアセンブリを読み込む
 アプリケーション ドメインにアセンブリを読み込むには、いくつかの方法があります。 推奨されているのは、<xref:System.Reflection.Assembly?displayProperty=nameWithType> クラスの `static` (Visual Basic では `Shared`) <xref:System.Reflection.Assembly.Load%2A> メソッドを使用する方法です。 それ以外には、以下の方法でアセンブリを読み込むことができます。  
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  .NET Framework Version 2.0 以降では、現在読み込まれているランタイムよりもバージョン番号が新しい .NET Framework のバージョンでコンパイルされたアセンブリは、ランタイムに読み込まれないようになりました。 これはメジャー コンポーネントとマイナー コンポーネントの組み合わせたバージョン番号に適用されます。  
   
- 読み込まれたアセンブリの Just-In-Time (JIT) コンパイル コードがアプリケーション ドメイン間で共有される方法を指定できます。 詳細については、「[アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)」を参照してください。  
+ 読み込まれたアセンブリの Just-In-Time (JIT) コンパイル コードがアプリケーション ドメイン間で共有される方法を指定できます。 詳細については、「[アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)」を参照してください。  
   
 ## <a name="example"></a>例  
  次に示すコードは、"example.exe" または "example.dll" という名前のアセンブリを現在のアプリケーション ドメインに読み込み、アセンブリから `Example` という型を取得します。さらに、その型に使用する `MethodA` というパラメーターを持たないメソッドを取得して、そのメソッドを実行します。 読み込まれたアセンブリから情報を取得する方法の詳細については、「[型の動的な読み込みおよび使用](../../../docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md)」を参照してください。  
@@ -57,8 +57,8 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>  
- [アプリケーション ドメインを使用したプログラミング](http://msdn.microsoft.com/en-us/bd36055b-56bd-43eb-b4d8-820c37172131)  
+ [アプリケーション ドメインを使用したプログラミング](http://msdn.microsoft.com/library/bd36055b-56bd-43eb-b4d8-820c37172131)  
  [リフレクション](../../../docs/framework/reflection-and-codedom/reflection.md)  
  [アプリケーション ドメインの使用](../../../docs/framework/app-domains/use.md)  
  [方法: リフレクションのみのコンテキストにアセンブリを読み込む](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)  
- [アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)
+ [アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)

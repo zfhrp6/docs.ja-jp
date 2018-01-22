@@ -12,16 +12,16 @@ ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
 caps.latest.revision: "34"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: a453699591397224435fba1e602c305f18e84a11
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: fc3c0f6910238ba20582280426b4a40e68b95dd8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>方法: Office プログラミングで名前付き引数と省略可能な引数を使用する (C# プログラミング ガイド)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] で導入された名前付き引数と省略可能な引数を使うと、C# プログラミングの便利さ、柔軟性、読みやすさが向上します。 さらに、Microsoft Office オートメーション API などの COM インターフェイスへのアクセスが大幅に楽になります。  
   
- 次の例の [ConvertToTable](http://go.microsoft.com/fwlink/?LinkId=145378) メソッドには、列と行の数、書式設定、罫線、フォント、色など、テーブルの特性を表す 16 個のパラメーターがあります。 ほとんどの場合はこれらすべての特性に具体的な値を指定することはないので、16 個のパラメーターはすべて省略可能です。 しかし、名前付きの省略可能な引数を使わないと、各パラメーターに値またはプレースホルダー値を指定する必要があります。 名前付きの省略可能な引数を使うと、プロジェクトに必要なパラメーターの値だけを指定できます。  
+ 次の例の [ConvertToTable](https://msdn.microsoft.com/library/bb216993.aspx) メソッドには、列と行の数、書式設定、罫線、フォント、色など、テーブルの特性を表す 16 個のパラメーターがあります。 ほとんどの場合はこれらすべての特性に具体的な値を指定することはないので、16 個のパラメーターはすべて省略可能です。 しかし、名前付きの省略可能な引数を使わないと、各パラメーターに値またはプレースホルダー値を指定する必要があります。 名前付きの省略可能な引数を使うと、プロジェクトに必要なパラメーターの値だけを指定できます。  
   
  以下の手順を行うには、Microsoft Office Word がコンピューターにインストールされている必要があります。  
   
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/18/2017
   
 6.  **[名前]** フィールドに、プロジェクトの名前を入力します。  
   
-7.  **[OK]** をクリックします。  
+7.  **[OK]**をクリックします。  
   
      **ソリューション エクスプローラー**に新しいプロジェクトが表示されます。  
   
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/18/2017
   
 2.  **[.NET]** ページの **[コンポーネント名]** の一覧で、**Microsoft.Office.Interop.Word** を選びます。  
   
-3.  **[OK]** をクリックします。  
+3.  **[OK]**をクリックします。  
   
 ### <a name="to-add-necessary-using-directives"></a>ディレクティブを使用して必要なものを追加するには  
   
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/18/2017
   
 ### <a name="to-display-text-in-a-word-document"></a>Word 文書にテキストを表示するには  
   
-1.  Program.cs の `Program` クラスに、Word アプリケーションと Word 文書を作成する次のメソッドを追加します。 [Add](http://go.microsoft.com/fwlink/?LinkId=145381) メソッドには、4 つの省略可能なパラメーターがあります。 この例では、それらの既定値を使います。 そのため、呼び出しステートメントに引数は必要ありません。  
+1.  Program.cs の `Program` クラスに、Word アプリケーションと Word 文書を作成する次のメソッドを追加します。 [Add](https://msdn.microsoft.com/library/microsoft.office.interop.word.documents.add.aspx) メソッドには、4 つの省略可能なパラメーターがあります。 この例では、それらの既定値を使います。 そのため、呼び出しステートメントに引数は必要ありません。  
   
      [!code-csharp[csProgGuideNamedAndOptional#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_2.cs)]  
   
@@ -102,7 +102,7 @@ ConvertToTable のパラメーター
   
      [!code-csharp[csProgGuideNamedAndOptional#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_7.cs)]  
   
-2.  テーブルに対して定義済みの書式を指定するには、`DisplayInWord` の最後の行を次のステートメントに置き換えてから、Ctrl + F5 キーを押します。 書式には、[WdTableFormat](http://go.microsoft.com/fwlink/?LinkId=145382) 定数のどれでも指定できます。  
+2.  テーブルに対して定義済みの書式を指定するには、`DisplayInWord` の最後の行を次のステートメントに置き換えてから、Ctrl + F5 キーを押します。 書式には、[WdTableFormat](https://msdn.microsoft.com/library/microsoft.office.interop.word.wdtableformat.aspx) 定数のどれでも指定できます。  
   
      [!code-csharp[csProgGuideNamedAndOptional#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_8.cs)]  
   
@@ -111,5 +111,5 @@ ConvertToTable のパラメーター
   
  [!code-csharp[csProgGuideNamedAndOptional#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_9.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [名前付き引数と省略可能な引数](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)

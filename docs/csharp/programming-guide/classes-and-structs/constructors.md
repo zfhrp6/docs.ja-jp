@@ -12,11 +12,11 @@ ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
 caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 65c50311548667ab5fdc685b70b6ab9e88376067
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5897dd1c843633d38707112850a4be1151626185
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="constructors-c-programming-guide"></a>コンストラクター (C# プログラミング ガイド)
 [クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)を作成するたびに、コンストラクターが呼び出されます。 クラスまたは構造体には、異なる引数を取るコンストラクターが複数含まれていることがあります。 プログラマーはコンストラクターを利用することで、既定値を設定したり、インスタンス化を制限したり、柔軟で読みやすいコードを記述したりできます。 詳細と例については、「[コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)」と「[インスタンス コンストラクター](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)」を参照してください。  
@@ -60,9 +60,9 @@ ms.lasthandoff: 11/21/2017
   
  [方法: コピー コンストラクターを記述する](../../../csharp/programming-guide/classes-and-structs/how-to-write-a-copy-constructor.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
  [static](../../../csharp/language-reference/keywords/static.md)  
- [初期化子がコンストラクターとは反対の順序で実行される理由その 1](http://go.microsoft.com/fwlink/?LinkId=112374)
+ [初期化子がコンストラクターとは反対の順序で実行される理由その 1](https://blogs.msdn.microsoft.com/ericlippert/2008/02/15/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)

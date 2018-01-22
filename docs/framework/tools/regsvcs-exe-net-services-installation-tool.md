@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: dd7f50d591232feda0259ecefdb5b9e39514ccb2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bfe7c3e34c2ceaf01f89c1e54f930991ee7e0a2b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (.NET サービス インストール ツール)
 .NET サービス インストール ツールは、次のアクションを実行します。  
@@ -76,7 +76,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="remarks"></a>コメント  
  Regsvcs.exe には、*assemblyFile.dll* で指定されているソース アセンブリ ファイルが必要です。 このアセンブリは、厳密な名前で署名する必要があります。 厳密な名前での署名について詳しくは、「[厳密な名前でのアセンブリへの署名](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)」をご覧ください。 対象アプリケーションおよびタイプ ライブラリの名前は、オプションです。 引数 *applicationName* はソース アセンブリ ファイルから生成できます。存在しない場合は、Regsvcs.exe によって作成されます。 引数 *typelibraryfile* にはタイプ ライブラリ名を指定できます。 タイプ ライブラリ名を指定しない場合、Regsvcs.exe は既定値としてアセンブリ名を使用します。  
   
- Regsvcs.exe がコンポーネントのメソッドを登録する場合は、それらのメソッドに対する[確認要求](http://msdn.microsoft.com/en-us/e5283e28-2366-4519-b27d-ef5c1ddc1f48)と[リンク確認要求](../../../docs/framework/misc/link-demands.md)の影響を受けます。 このツールは完全に信頼された環境で実行されるため、アクセス許可に対するほとんどの確認要求は成功します。 ただし、Regsvcs.exe では、<xref:System.Security.Permissions.StrongNameIdentityPermission> または <xref:System.Security.Permissions.PublisherIdentityPermission> に対する確認要求やリンク確認要求によって保護されたメソッドを含むコンポーネントを登録することはできません。  
+ Regsvcs.exe がコンポーネントのメソッドを登録する場合は、それらのメソッドに対する[確認要求](http://msdn.microsoft.com/library/e5283e28-2366-4519-b27d-ef5c1ddc1f48)と[リンク確認要求](../../../docs/framework/misc/link-demands.md)の影響を受けます。 このツールは完全に信頼された環境で実行されるため、アクセス許可に対するほとんどの確認要求は成功します。 ただし、Regsvcs.exe では、<xref:System.Security.Permissions.StrongNameIdentityPermission> または <xref:System.Security.Permissions.PublisherIdentityPermission> に対する確認要求やリンク確認要求によって保護されたメソッドを含むコンポーネントを登録することはできません。  
   
  Regsvcs.exe を使用するには、ローカル コンピューターの管理特権が必要です。  
   

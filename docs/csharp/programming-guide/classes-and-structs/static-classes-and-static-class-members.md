@@ -14,11 +14,11 @@ ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
 caps.latest.revision: "49"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: cf2517dd5989d36341b840ffcb476cbeb14baf54
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b1e7366d8d82ca99a8d779dda1e194dcc8c2ab6e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>静的クラスと静的クラス メンバー (C# プログラミング ガイド)
 [静的](../../../csharp/language-reference/keywords/static.md)クラスは基本的には非静的クラスと同じですが、静的クラスはインスタンス化できないという点が異なります。 つまり、[new](../../../csharp/language-reference/keywords/new.md) キーワードを使用して、そのクラス型の変数を作成することはできません。 インスタンス変数がないため、静的クラスのメンバーにアクセスするには、クラス名自体を使用します。 たとえば、`UtilityClass` という静的クラスがあり、`MethodA` というパブリック メソッドが定義されている場合、このメソッドを呼び出すには次の例のようにします。  
@@ -44,7 +44,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  すべてのクラス型の場合と同様に、静的クラスの型情報は、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] の共通言語ランタイム (CLR) によって、そのクラスを参照しているプログラムが読み込まれるときに読み込まれます。 プログラムでは、クラスが読み込まれるタイミングを正確に指定することはできません。 ただし、クラスがプログラム内で最初に参照される前に、そのクラスが読み込まれ、そのフィールドが初期化され、その静的コンストラクターが呼び出されることが保証されます。 静的コンストラクターは一度だけ呼び出され、静的クラスは、プログラムが存在するアプリケーション ドメインの有効期間にわたってメモリに保持されます。  
   
 > [!NOTE]
->  インスタンスの作成を 1 つしか許可しない非静的クラスを作成する場合は、「[C# でのシングルトンの実装](http://go.microsoft.com/fwlink/?LinkID=100567)」を参照してください。  
+>  インスタンスの作成を 1 つしか許可しない非静的クラスを作成する場合は、「[C# でのシングルトンの実装](https://msdn.microsoft.com/library/ms998558.aspx)」を参照してください。  
   
  静的クラスの主な特徴を以下に示します。  
   
@@ -91,7 +91,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [static](../../../csharp/language-reference/keywords/static.md)  
  [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)  

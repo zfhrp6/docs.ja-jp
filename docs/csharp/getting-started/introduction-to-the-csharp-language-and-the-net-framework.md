@@ -4,7 +4,7 @@ description: "C# と .NET の基本を説明します。 C# 言語および .NET
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology: devlang-csharp
-ms.topic: article
+ms.topic: get-started-article
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
@@ -12,11 +12,11 @@ ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
 caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2bc7dfbca102a5d2e891b48b676347822eae56f7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b2ffb641f436a41c97a94a6ec117f6087851d482
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 言語と .NET Framework の概要
 C# は、タイプ セーフで洗練されたオブジェクト指向言語です。C# を使用すると、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] で稼働する、安全で信頼性の高いさまざまなアプリケーションを構築できます。 C# を使用すると、Windows クライアント アプリケーション、XML Web サービス、分散コンポーネント、クライアント/サーバー アプリケーション、データベース アプリケーションなど、さまざまなアプリケーションを作成できます。 Visual C# には、高度なコード エディター、便利なユーザー インターフェイス デザイナー、統合デバッガーなど、C# 言語と [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] に基づいたアプリケーション開発をより簡単にする多数のツールが用意されています。  
@@ -68,5 +68,5 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
  .NET Framework の詳細については、[Microsoft .NET Framework の概要](../../framework/get-started/overview.md)に関する記事を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C#](../../csharp/index.md) [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)

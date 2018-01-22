@@ -22,11 +22,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f5d9adcfe701b5897c434dc1479b9692448d8b98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5acb6da7c68f899daa4144e897e9ec31fcfa868a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (PEVerify ツール)
 PEVerify ツールは、Microsoft Intermediate Language (MSIL) を生成する開発者 (コンパイラの作成者、スクリプト エンジンの開発者など) が、生成する MSIL コードと関連メタデータがタイプ セーフ要件を満たしているかどうかを確認する場合に役立ちます。 一部のコンパイラでは、特定の言語構成を使用しなかった場合にだけ、検査可能でタイプ セーフなコードが生成されます。 このようなコンパイラを使用している場合、生成したコードがタイプ セーフかどうかを確認する必要があると思う開発者もいるはずです。 そのような場合は、ファイルに対して PEVerify ツールを実行し、MSIL とメタデータを検査できます。  
@@ -66,7 +66,7 @@ peverify filename [options]
 |**/?**|このツールのコマンド構文とオプションを表示します。|  
   
 ## <a name="remarks"></a>コメント  
- 共通言語ランタイムは、セキュリティ機構や分離機構の実施を簡単にするために、アプリケーション コードがタイプ セーフに実行されることに依存しています。 通常、[検査可能でタイプ セーフ](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)なコード以外のコードは実行できません。しかし、信頼できるが検査を実行できないコードを実行可能にするセキュリティ ポリシーを設定することはできます。  
+ 共通言語ランタイムは、セキュリティ機構や分離機構の実施を簡単にするために、アプリケーション コードがタイプ セーフに実行されることに依存しています。 通常、[検査可能でタイプ セーフ](http://msdn.microsoft.com/library/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)なコード以外のコードは実行できません。しかし、信頼できるが検査を実行できないコードを実行可能にするセキュリティ ポリシーを設定することはできます。  
   
  **/md** と **/il** のいずれのオプションも指定しない場合は、両方の種類の検査が実行されます。 まず、**/md** オプションによる検査が実行されます。 エラーが検出されない場合は、**/il** オプションによる検査が実行されます。 **/md** と **/il** の両方のオプションを指定した場合は、メタデータの検査でエラーが検出された場合でも、**/il** オプションによる検査が実行されます。 つまり、メタデータの検査でエラーが検出されないときは、**peverify** *filename* と **peverify** *filename* **/md** **/il** のいずれを指定しても同じ検査が実行されます。  
   
@@ -131,6 +131,6 @@ peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp
   
 ## <a name="see-also"></a>参照  
  [ツール](../../../docs/framework/tools/index.md)  
- [NIB: 検証可能なタイプ セーフ コードの作成](http://msdn.microsoft.com/en-us/d18f10ef-3b48-4f47-8726-96714021547b)  
- [タイプ セーフとセキュリティ](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)  
+ [NIB: 検証可能なタイプ セーフ コードの作成](http://msdn.microsoft.com/library/d18f10ef-3b48-4f47-8726-96714021547b)  
+ [タイプ セーフとセキュリティ](http://msdn.microsoft.com/library/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)  
  [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

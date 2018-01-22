@@ -13,19 +13,19 @@ ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
 caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4a6dca6e62dbf69783babf2e16dc4e7c36c6705c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5f1d06bf408f13a78df503ab10fe3c57b4ff68a3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="main-c-compiler-options"></a>/main (C# コンパイラ オプション)
+# <a name="-main-c-compiler-options"></a>-main (C# コンパイラ オプション)
 このオプションは、**Main** メソッドを含むクラスが複数ある場合に、プログラムへのエントリ ポイントを含むクラスを指定します。  
   
 ## <a name="syntax"></a>構文  
   
 ```console  
-/main:class  
+-main:class  
 ```  
   
 ## <a name="arguments"></a>引数  
@@ -51,9 +51,9 @@ ms.lasthandoff: 11/21/2017
  **Main** メソッドが`Test2` にあることを指定して、`t2.cs` と `t3.cs` をコンパイルします。  
   
 ```console  
-csc t2.cs t3.cs /main:Test2  
+csc t2.cs t3.cs -main:Test2  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)

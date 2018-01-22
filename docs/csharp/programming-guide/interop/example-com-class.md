@@ -11,14 +11,14 @@ ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
 caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: ad14b414c037d38da55ce0ec82685b790cc46d2f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 01b0a5b857171a1354a7dd6b518a7e151073ca32
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="example-com-class-c-programming-guide"></a>COM クラスの例 (C# プログラミング ガイド)
-ここでは、COM オブジェクトとして公開されるクラスの例を紹介します。 このコードを .cs ファイルに保存して、プロジェクトに追加したあと、**[COM の相互運用機能に登録]** プロパティを **[True]** に設定します。 詳細については、「[NIB: 方法: コンポーネントを COM 相互運用機能に登録する](http://msdn.microsoft.com/en-us/4de7d474-56e8-4027-994d-d47ca4725c5e)」を参照してください。  
+ここでは、COM オブジェクトとして公開されるクラスの例を紹介します。 このコードを .cs ファイルに保存して、プロジェクトに追加したあと、**[COM の相互運用機能に登録]** プロパティを **[True]** に設定します。 詳細については、「[NIB: 方法: コンポーネントを COM 相互運用機能に登録する](http://msdn.microsoft.com/library/4de7d474-56e8-4027-994d-d47ca4725c5e)」を参照してください。  
   
  Visual C# オブジェクトを COM に公開するには、クラス インターフェイス、イベント インターフェイス (必要な場合)、クラス自体を宣言する必要があります。 クラスのメンバーを COM で参照するには、次の規則に従う必要があります。  
   
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="example"></a>例  
  [!code-csharp[csProgGuideInterop#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/example-com-class_1.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [相互運用性](../../../csharp/programming-guide/interop/index.md)  
  [[ビルド] ページ (プロジェクト デザイナー) (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)

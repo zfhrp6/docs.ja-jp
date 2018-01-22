@@ -15,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7aaac046a6f5022e4b903faacd609748092d2809
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d7950ae39ada3e1e0e070967f8d578fc3371126
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="net-framework-development-guide"></a>.NET Framework の開発ガイド
 ここでは、.NET Framework アプリの作成、構成、デバッグ、保護、および配置を行う方法について説明します。 また、動的プログラミング、相互運用性、拡張性、メモリ管理、スレッド処理などの技術領域に関する情報も提供します。  
@@ -73,7 +73,7 @@ ms.lasthandoff: 12/22/2017
  [パフォーマンス](../../docs/framework/performance/index.md)  
  キャッシュ、遅延初期化、信頼性、および ETW イベントについて説明します。  
   
- <!--zz [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/en-us/faae8083-fecb-4514-b133-b0a5a32a7c3c)  
+ <!--zz [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)  
  Provides information about advanced development tasks and techniques in the .NET Framework, including extensibility, interoperability, and reflection. Also includes the reference topics for unmanaged APIs that can be used by managed apps, such as runtime hosts, compilers, disassemblers, debuggers, and profilers.  --> 
   
 ## <a name="reference"></a>参照  
@@ -90,5 +90,5 @@ ms.lasthandoff: 12/22/2017
  [ツール](../../docs/framework/tools/index.md)  
  .NET Framework テクノロジを使ってアプリを開発、構成、配置するのに役立つツールについて説明します。  
   
- [.NET Framework のサンプル](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
+ [.NET Framework のサンプル](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
  .NET Framework のテクノロジを紹介するサンプル アプリを参照できる MSDN コード サンプル ギャラリーへのリンクです。

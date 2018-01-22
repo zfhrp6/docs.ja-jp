@@ -14,11 +14,11 @@ ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
 caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: b24a367eaf78ef520cc2dd54db6ad58b215179ad
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 7e4bc1814ed5c86660b4333542a3dc4eb7462e89
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>相互運用性の概要 (C# プログラミング ガイド)
 C# マネージ コードとアンマネージ コード間で相互運用を可能にする方法について説明します。  
@@ -62,10 +62,10 @@ C# マネージ コードとアンマネージ コード間で相互運用を可
   
  詳細については、「[COM への .NET Framework コンポーネントの公開](http://msdn.microsoft.com/library/e42a65f7-1e61-411f-b09a-aca1bbce24c6)」と「[COM クラスの例](../../../csharp/programming-guide/interop/example-com-class.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [相互運用パフォーマンスの向上](http://go.microsoft.com/fwlink/?LinkId=99564)  
  [COM 相互運用の概要](http://go.microsoft.com/fwlink/?LinkId=112406)  
  [マネージ コードとアンマネージ コード間でのマーシャリング](http://go.microsoft.com/fwlink/?LinkId=112398)  
  [アンマネージ コードとの相互運用](../../../../docs/framework/interop/index.md)  
- [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
+ [高度な COM 相互運用性](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)

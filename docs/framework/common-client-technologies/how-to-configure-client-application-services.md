@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d28f55ddd550e95d9859258d89b4910cf320e3cd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bac21a0c9535326becfe94610db33869da89c471
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-configure-client-application-services"></a>方法 : クライアント アプリケーション サービスを構成する
 このトピックでは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **プロジェクト デザイナー**を使用して、クライアント アプリケーション サービスを有効にし、構成する方法について説明します。 クライアント アプリケーション サービスを使用してユーザーを検証し、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスからユーザーのロールおよび設定を取得することができます。 構成した後に、「[クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)」に記載されているように、アプリケーション コード内で有効にされているサービスにアクセスできます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスの詳細については、「[ASP.NET アプリケーション サービスの概要](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)」を参照してください。  
@@ -75,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  **[オフラインでログインできるようにパスワードのハッシュをローカルに保存する]** をオンまたはオフにします。 このオプションを選択すると、ユーザーのパスワードの暗号化された形式がローカルでキャッシュされます。 これは、アプリケーションにオフライン モードを実装する場合に便利です。 このオプションを選択すると、<xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> プロパティが `true` に設定されている場合でもユーザーを検証できます。  
   
-3.  **[サーバー Cookie の期限が切れた場合は常に再度ログオンすることをユーザーに要求する]** をオンまたはオフにします。 認証 Cookie はリモート サービスで構成され、ユーザーのログインがアクティブであり続ける期間を示します。 Cookie を構成する方法の詳細については、「[authentication の forms 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/8163b8b5-ea6c-46c8-b5a9-c4c3de31c0b3)」の「`timeout` 属性」を参照してください。  
+3.  **[サーバー Cookie の期限が切れた場合は常に再度ログオンすることをユーザーに要求する]** をオンまたはオフにします。 認証 Cookie はリモート サービスで構成され、ユーザーのログインがアクティブであり続ける期間を示します。 Cookie を構成する方法の詳細については、「[authentication の forms 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/library/8163b8b5-ea6c-46c8-b5a9-c4c3de31c0b3)」の「`timeout` 属性」を参照してください。  
   
      このオプションを選択した場合、認証 Cookie の有効期限が切れた後にリモート ロールまたは Web 設定サービスにアクセスしようとすると、<xref:System.Net.WebException> がスローされます。 この例外を処理し、ログイン ダイアログ ボックスを表示して、ユーザーを再検証することができます。 この動作の例は、「[チュートリアル: クライアント アプリケーション サービスの使用](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)」を参照してください。 このオプションは、公共の場所に配置されたアプリケーションで、使用後にアプリケーションを実行中のままにしているユーザーが無期限に認証されないようにするのに便利です。  
   
