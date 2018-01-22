@@ -14,62 +14,62 @@ ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7090142f940ae42f554fc0ba16bcc80d8537e38a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0c36cdcaf8d2db0b08e262d6ba8ff2bb774fb233
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="bugreport"></a><span data-ttu-id="7b720-102">/bugreport</span><span class="sxs-lookup"><span data-stu-id="7b720-102">/bugreport</span></span>
-<span data-ttu-id="7b720-103">バグのレポートをファイルするときに使用できるファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="7b720-103">Creates a file that you can use when you file a bug report.</span></span>  
+# <a name="bugreport"></a><span data-ttu-id="b421a-102">/bugreport</span><span class="sxs-lookup"><span data-stu-id="b421a-102">/bugreport</span></span>
+<span data-ttu-id="b421a-103">バグのレポートをファイルするときに使用できるファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="b421a-103">Creates a file that you can use when you file a bug report.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7b720-104">構文</span><span class="sxs-lookup"><span data-stu-id="7b720-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b421a-104">構文</span><span class="sxs-lookup"><span data-stu-id="b421a-104">Syntax</span></span>  
   
 ```  
 /bugreport:file  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="7b720-105">引数</span><span class="sxs-lookup"><span data-stu-id="7b720-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="b421a-105">引数</span><span class="sxs-lookup"><span data-stu-id="b421a-105">Arguments</span></span>  
   
-|<span data-ttu-id="7b720-106">用語</span><span class="sxs-lookup"><span data-stu-id="7b720-106">Term</span></span>|<span data-ttu-id="7b720-107">定義</span><span class="sxs-lookup"><span data-stu-id="7b720-107">Definition</span></span>|  
+|<span data-ttu-id="b421a-106">用語</span><span class="sxs-lookup"><span data-stu-id="b421a-106">Term</span></span>|<span data-ttu-id="b421a-107">定義</span><span class="sxs-lookup"><span data-stu-id="b421a-107">Definition</span></span>|  
 |---|---|  
-|`file`|<span data-ttu-id="7b720-108">必須です。</span><span class="sxs-lookup"><span data-stu-id="7b720-108">Required.</span></span> <span data-ttu-id="7b720-109">バグのレポートを格納するファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="7b720-109">The name of the file that will contain your bug report.</span></span> <span data-ttu-id="7b720-110">ファイル名を引用符で囲みます ("")、名前にスペースが含まれている場合。</span><span class="sxs-lookup"><span data-stu-id="7b720-110">Enclose the file name in quotation marks (" ") if the name contains a space.</span></span>|  
+|`file`|<span data-ttu-id="b421a-108">必須。</span><span class="sxs-lookup"><span data-stu-id="b421a-108">Required.</span></span> <span data-ttu-id="b421a-109">バグのレポートを格納するファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="b421a-109">The name of the file that will contain your bug report.</span></span> <span data-ttu-id="b421a-110">ファイル名を引用符で囲みます ("")、名前にスペースが含まれている場合。</span><span class="sxs-lookup"><span data-stu-id="b421a-110">Enclose the file name in quotation marks (" ") if the name contains a space.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7b720-111">コメント</span><span class="sxs-lookup"><span data-stu-id="7b720-111">Remarks</span></span>  
- <span data-ttu-id="7b720-112">次の情報に追加されます`file`:</span><span class="sxs-lookup"><span data-stu-id="7b720-112">The following information is added to `file`:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b421a-111">コメント</span><span class="sxs-lookup"><span data-stu-id="b421a-111">Remarks</span></span>  
+ <span data-ttu-id="b421a-112">次の情報に追加されます`file`:</span><span class="sxs-lookup"><span data-stu-id="b421a-112">The following information is added to `file`:</span></span>  
   
--   <span data-ttu-id="7b720-113">コンパイルですべてのソース コード ファイルのコピー。</span><span class="sxs-lookup"><span data-stu-id="7b720-113">A copy of all source-code files in the compilation.</span></span>  
+-   <span data-ttu-id="b421a-113">コンパイルですべてのソース コード ファイルのコピー。</span><span class="sxs-lookup"><span data-stu-id="b421a-113">A copy of all source-code files in the compilation.</span></span>  
   
--   <span data-ttu-id="7b720-114">コンパイルで使用するコンパイラ オプションの一覧。</span><span class="sxs-lookup"><span data-stu-id="7b720-114">A list of the compiler options used in the compilation.</span></span>  
+-   <span data-ttu-id="b421a-114">コンパイルで使用するコンパイラ オプションの一覧。</span><span class="sxs-lookup"><span data-stu-id="b421a-114">A list of the compiler options used in the compilation.</span></span>  
   
--   <span data-ttu-id="7b720-115">コンパイラ、共通言語ランタイム、およびオペレーティング システムのバージョン情報。</span><span class="sxs-lookup"><span data-stu-id="7b720-115">Version information about your compiler, common language runtime, and operating system.</span></span>  
+-   <span data-ttu-id="b421a-115">コンパイラ、共通言語ランタイム、およびオペレーティング システムのバージョン情報。</span><span class="sxs-lookup"><span data-stu-id="b421a-115">Version information about your compiler, common language runtime, and operating system.</span></span>  
   
--   <span data-ttu-id="7b720-116">コンパイラの出力 (指定されている場合)。</span><span class="sxs-lookup"><span data-stu-id="7b720-116">Compiler output, if any.</span></span>  
+-   <span data-ttu-id="b421a-116">コンパイラの出力 (指定されている場合)。</span><span class="sxs-lookup"><span data-stu-id="b421a-116">Compiler output, if any.</span></span>  
   
--   <span data-ttu-id="7b720-117">対象のされたら、問題の説明です。</span><span class="sxs-lookup"><span data-stu-id="7b720-117">A description of the problem, for which you are prompted.</span></span>  
+-   <span data-ttu-id="b421a-117">対象のされたら、問題の説明です。</span><span class="sxs-lookup"><span data-stu-id="b421a-117">A description of the problem, for which you are prompted.</span></span>  
   
--   <span data-ttu-id="7b720-118">問題を検討する方法の説明は修正する必要があります、するように求められます。</span><span class="sxs-lookup"><span data-stu-id="7b720-118">A description of how you think the problem should be fixed, for which you are prompted.</span></span>  
+-   <span data-ttu-id="b421a-118">問題を検討する方法の説明は修正する必要があります、するように求められます。</span><span class="sxs-lookup"><span data-stu-id="b421a-118">A description of how you think the problem should be fixed, for which you are prompted.</span></span>  
   
- <span data-ttu-id="7b720-119">すべてのソース コード ファイルのコピーが含まれているため`file`、できるだけ小さなプログラムに思われるコードの障害を再現することがあります。</span><span class="sxs-lookup"><span data-stu-id="7b720-119">Because a copy of all source-code files is included in `file`, you may want to reproduce the (suspected) code defect in the shortest possible program.</span></span>  
+ <span data-ttu-id="b421a-119">すべてのソース コード ファイルのコピーが含まれているため`file`、できるだけ小さなプログラムに思われるコードの障害を再現することがあります。</span><span class="sxs-lookup"><span data-stu-id="b421a-119">Because a copy of all source-code files is included in `file`, you may want to reproduce the (suspected) code defect in the shortest possible program.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="7b720-120">`/bugreport`オプションは、機密性の高い情報を含むファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="7b720-120">The `/bugreport` option produces a file that contains potentially sensitive information.</span></span> <span data-ttu-id="7b720-121">これにより、現在の時刻、コンパイラのバージョンが含まれます。[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョン、オペレーティング システムのバージョン、ユーザー名、コマンドライン引数を、コンパイラが実行された、すべてのソース コードでは、参照されるアセンブリのいずれかのバイナリ形式です。</span><span class="sxs-lookup"><span data-stu-id="7b720-121">This includes current time, compiler version, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] version, OS version, user name, the command-line arguments with which the compiler was run, all source code, and the binary form of any referenced assembly.</span></span> <span data-ttu-id="7b720-122">このオプションは、Web.config ファイルのサーバー側のコンパイルでのコマンド ライン オプションを指定することによってアクセスできる、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="7b720-122">This option can be accessed by specifying command-line options in the Web.config file for a server-side compilation of an [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] application.</span></span> <span data-ttu-id="7b720-123">これを回避するには、ユーザーがサーバーでのコンパイルが行われないよう、Machine.config ファイルを変更します。</span><span class="sxs-lookup"><span data-stu-id="7b720-123">To prevent this, modify the Machine.config file to disallow users from compiling on the server.</span></span>  
+>  <span data-ttu-id="b421a-120">`/bugreport`オプションは、機密性の高い情報を含むファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="b421a-120">The `/bugreport` option produces a file that contains potentially sensitive information.</span></span> <span data-ttu-id="b421a-121">これにより、現在の時刻、コンパイラのバージョンが含まれます。[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョン、オペレーティング システムのバージョン、ユーザー名、コマンドライン引数を、コンパイラが実行された、すべてのソース コードでは、参照されるアセンブリのいずれかのバイナリ形式です。</span><span class="sxs-lookup"><span data-stu-id="b421a-121">This includes current time, compiler version, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] version, OS version, user name, the command-line arguments with which the compiler was run, all source code, and the binary form of any referenced assembly.</span></span> <span data-ttu-id="b421a-122">このオプションは、Web.config ファイルのサーバー側のコンパイルでのコマンド ライン オプションを指定することによってアクセスできる、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="b421a-122">This option can be accessed by specifying command-line options in the Web.config file for a server-side compilation of an [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] application.</span></span> <span data-ttu-id="b421a-123">これを回避するには、ユーザーがサーバーでのコンパイルが行われないよう、Machine.config ファイルを変更します。</span><span class="sxs-lookup"><span data-stu-id="b421a-123">To prevent this, modify the Machine.config file to disallow users from compiling on the server.</span></span>  
   
- <span data-ttu-id="7b720-124">このオプションを使用する場合`/errorreport:prompt`、 `/errorreport:queue`、または`/errorreport:send`、アプリケーションでの情報は、内部コンパイラ エラーが発生して`file`がマイクロソフトに送信します。</span><span class="sxs-lookup"><span data-stu-id="7b720-124">If this option is used with `/errorreport:prompt`, `/errorreport:queue`, or `/errorreport:send`, and your application encounters an internal compiler error, the information in `file` is sent to Microsoft Corporation.</span></span> <span data-ttu-id="7b720-125">この情報はマイクロソフトのエンジニアが、エラーの原因を特定し、次のリリースの改善に役立てます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="7b720-125">That information will help Microsoft engineers identify the cause of the error and may help improve the next release of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span> <span data-ttu-id="7b720-126">既定では、Microsoft に情報は送信されません。</span><span class="sxs-lookup"><span data-stu-id="7b720-126">By default, no information is sent to Microsoft.</span></span> <span data-ttu-id="7b720-127">ただしを使用してアプリケーションをコンパイルするときに`/errorreport:queue`、既定で有効にする、アプリケーションがエラー レポートを収集します。</span><span class="sxs-lookup"><span data-stu-id="7b720-127">However, when you compile an application by using `/errorreport:queue`, which is enabled by default, the application collects its error reports.</span></span> <span data-ttu-id="7b720-128">次に、コンピューターの管理者がログインすると、エラー レポート システムにより、管理者は、ログオン以降に発生したすべてのエラー レポートを Microsoft に転送するポップアップ ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7b720-128">Then, when the computer's administrator logs in, the error reporting system displays a pop-up window that enables the administrator to forward to Microsoft any error reports that occurred since the logon.</span></span>  
+ <span data-ttu-id="b421a-124">このオプションを使用する場合`/errorreport:prompt`、 `/errorreport:queue`、または`/errorreport:send`、アプリケーションでの情報は、内部コンパイラ エラーが発生して`file`がマイクロソフトに送信します。</span><span class="sxs-lookup"><span data-stu-id="b421a-124">If this option is used with `/errorreport:prompt`, `/errorreport:queue`, or `/errorreport:send`, and your application encounters an internal compiler error, the information in `file` is sent to Microsoft Corporation.</span></span> <span data-ttu-id="b421a-125">この情報はマイクロソフトのエンジニアが、エラーの原因を特定し、次のリリースの改善に役立てます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="b421a-125">That information will help Microsoft engineers identify the cause of the error and may help improve the next release of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span> <span data-ttu-id="b421a-126">既定では、Microsoft に情報は送信されません。</span><span class="sxs-lookup"><span data-stu-id="b421a-126">By default, no information is sent to Microsoft.</span></span> <span data-ttu-id="b421a-127">ただしを使用してアプリケーションをコンパイルするときに`/errorreport:queue`、既定で有効にする、アプリケーションがエラー レポートを収集します。</span><span class="sxs-lookup"><span data-stu-id="b421a-127">However, when you compile an application by using `/errorreport:queue`, which is enabled by default, the application collects its error reports.</span></span> <span data-ttu-id="b421a-128">次に、コンピューターの管理者がログインすると、エラー レポート システムにより、管理者は、ログオン以降に発生したすべてのエラー レポートを Microsoft に転送するポップアップ ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b421a-128">Then, when the computer's administrator logs in, the error reporting system displays a pop-up window that enables the administrator to forward to Microsoft any error reports that occurred since the logon.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="7b720-129">`/bugreport`オプションは、Visual Studio 開発環境からは利用できません。 使用可能なコマンドラインからコンパイルするときにのみです。</span><span class="sxs-lookup"><span data-stu-id="7b720-129">The `/bugreport` option is not available from within the Visual Studio development environment; it is available only when you compile from the command line.</span></span>  
+>  <span data-ttu-id="b421a-129">`/bugreport`オプションは、Visual Studio 開発環境からは利用できません。 使用可能なコマンドラインからコンパイルするときにのみです。</span><span class="sxs-lookup"><span data-stu-id="b421a-129">The `/bugreport` option is not available from within the Visual Studio development environment; it is available only when you compile from the command line.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7b720-130">例</span><span class="sxs-lookup"><span data-stu-id="7b720-130">Example</span></span>  
- <span data-ttu-id="7b720-131">次の例をコンパイル`T2.vb`ファイルにバグ レポートのすべての情報を格納`Problem.txt`です。</span><span class="sxs-lookup"><span data-stu-id="7b720-131">The following example compiles `T2.vb` and puts all bug-reporting information in the file `Problem.txt`.</span></span>  
+## <a name="example"></a><span data-ttu-id="b421a-130">例</span><span class="sxs-lookup"><span data-stu-id="b421a-130">Example</span></span>  
+ <span data-ttu-id="b421a-131">次の例をコンパイル`T2.vb`ファイルにバグ レポートのすべての情報を格納`Problem.txt`です。</span><span class="sxs-lookup"><span data-stu-id="b421a-131">The following example compiles `T2.vb` and puts all bug-reporting information in the file `Problem.txt`.</span></span>  
   
 ```  
 vbc /bugreport:problem.txt t2.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7b720-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="7b720-132">See Also</span></span>  
- [<span data-ttu-id="7b720-133">Visual Basic のコマンド ライン コンパイラ</span><span class="sxs-lookup"><span data-stu-id="7b720-133">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)  
- [<span data-ttu-id="7b720-134">/debug (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7b720-134">/debug (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/debug.md)  
- [<span data-ttu-id="7b720-135">/errorreport</span><span class="sxs-lookup"><span data-stu-id="7b720-135">/errorreport</span></span>](../../../visual-basic/reference/command-line-compiler/errorreport.md)  
- [<span data-ttu-id="7b720-136">コンパイル コマンド ラインのサンプル</span><span class="sxs-lookup"><span data-stu-id="7b720-136">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- [<span data-ttu-id="7b720-137">securityPolicy (ASP.NET 設定スキーマ) の trustLevel 要素</span><span class="sxs-lookup"><span data-stu-id="7b720-137">trustLevel Element for securityPolicy (ASP.NET Settings Schema)</span></span>](http://msdn.microsoft.com/en-us/729ab04c-03da-4ee5-86b1-be9d08a09369)
+## <a name="see-also"></a><span data-ttu-id="b421a-132">参照</span><span class="sxs-lookup"><span data-stu-id="b421a-132">See Also</span></span>  
+ [<span data-ttu-id="b421a-133">Visual Basic のコマンド ライン コンパイラ</span><span class="sxs-lookup"><span data-stu-id="b421a-133">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [<span data-ttu-id="b421a-134">/debug (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b421a-134">/debug (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/debug.md)  
+ [<span data-ttu-id="b421a-135">/errorreport</span><span class="sxs-lookup"><span data-stu-id="b421a-135">/errorreport</span></span>](../../../visual-basic/reference/command-line-compiler/errorreport.md)  
+ [<span data-ttu-id="b421a-136">コンパイル コマンド ラインのサンプル</span><span class="sxs-lookup"><span data-stu-id="b421a-136">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
+ [<span data-ttu-id="b421a-137">securityPolicy (ASP.NET 設定スキーマ) の trustLevel 要素</span><span class="sxs-lookup"><span data-stu-id="b421a-137">trustLevel Element for securityPolicy (ASP.NET Settings Schema)</span></span>](http://msdn.microsoft.com/library/729ab04c-03da-4ee5-86b1-be9d08a09369)

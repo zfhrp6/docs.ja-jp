@@ -18,30 +18,30 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a013eac5b3306339c82abaa62f97e4aad7d8ed76
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 35be6df4f31c30c738aebdba95daf0e3b38c651b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="audio-and-video-how-to-topics"></a><span data-ttu-id="f5d4b-102">オーディオとビデオに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="f5d4b-102">Audio and Video How-to Topics</span></span>
-<span data-ttu-id="f5d4b-103">次のトピックを使用する方法を示します、<xref:System.Windows.Controls.MediaElement>アプリケーションでのオーディオおよびビデオ コンテンツを統合します。</span><span class="sxs-lookup"><span data-stu-id="f5d4b-103">The following topics demonstrate how to use the <xref:System.Windows.Controls.MediaElement> to integrate audio and video content in your applications.</span></span>  
+# <a name="audio-and-video-how-to-topics"></a><span data-ttu-id="cae92-102">オーディオとビデオに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="cae92-102">Audio and Video How-to Topics</span></span>
+<span data-ttu-id="cae92-103">次のトピックを使用する方法を示します、<xref:System.Windows.Controls.MediaElement>アプリケーションでのオーディオおよびビデオ コンテンツを統合します。</span><span class="sxs-lookup"><span data-stu-id="cae92-103">The following topics demonstrate how to use the <xref:System.Windows.Controls.MediaElement> to integrate audio and video content in your applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f5d4b-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="f5d4b-104">In This Section</span></span>  
- [<span data-ttu-id="f5d4b-105">方法: 要素を動的に追加します。</span><span class="sxs-lookup"><span data-stu-id="f5d4b-105">How to: Add an Element Dynamically</span></span>](http://msdn.microsoft.com/en-us/d00f258a-7973-4de7-bc54-a3fc1f638419)  
- [<span data-ttu-id="f5d4b-106">MediaElement (再生、一時停止、停止、ボリューム、および速度) を制御する</span><span class="sxs-lookup"><span data-stu-id="f5d4b-106">Control a MediaElement (Play, Pause, Stop, Volume, and Speed)</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
- [<span data-ttu-id="f5d4b-107">ストーリーボードを使用して MediaElement を制御する</span><span class="sxs-lookup"><span data-stu-id="f5d4b-107">Control a MediaElement by Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md)  
- [<span data-ttu-id="f5d4b-108">ユーザー イベントによってメディアの再生をトリガーする</span><span class="sxs-lookup"><span data-stu-id="f5d4b-108">Trigger Media Playback with a User Event</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-media-playback-with-a-user-event.md)  
- [<span data-ttu-id="f5d4b-109">メディアの再生を反復する</span><span class="sxs-lookup"><span data-stu-id="f5d4b-109">Repeat Media Playback</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-media-playback.md)  
- [<span data-ttu-id="f5d4b-110">アニメーションを使用してメディアを再生する</span><span class="sxs-lookup"><span data-stu-id="f5d4b-110">Play Media with Animations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-with-animations.md)  
- [<span data-ttu-id="f5d4b-111">MediaElement で変換を使用する</span><span class="sxs-lookup"><span data-stu-id="f5d4b-111">Use Transforms on a MediaElement</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-transforms-on-a-mediaelement.md)  
+## <a name="in-this-section"></a><span data-ttu-id="cae92-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="cae92-104">In This Section</span></span>  
+ [<span data-ttu-id="cae92-105">方法: 要素を動的に追加します。</span><span class="sxs-lookup"><span data-stu-id="cae92-105">How to: Add an Element Dynamically</span></span>](http://msdn.microsoft.com/library/d00f258a-7973-4de7-bc54-a3fc1f638419)  
+ [<span data-ttu-id="cae92-106">MediaElement (再生、一時停止、停止、ボリューム、および速度) を制御する</span><span class="sxs-lookup"><span data-stu-id="cae92-106">Control a MediaElement (Play, Pause, Stop, Volume, and Speed)</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
+ [<span data-ttu-id="cae92-107">ストーリーボードを使用して MediaElement を制御する</span><span class="sxs-lookup"><span data-stu-id="cae92-107">Control a MediaElement by Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md)  
+ [<span data-ttu-id="cae92-108">ユーザー イベントによってメディアの再生をトリガーする</span><span class="sxs-lookup"><span data-stu-id="cae92-108">Trigger Media Playback with a User Event</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-media-playback-with-a-user-event.md)  
+ [<span data-ttu-id="cae92-109">メディアの再生を反復する</span><span class="sxs-lookup"><span data-stu-id="cae92-109">Repeat Media Playback</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-media-playback.md)  
+ [<span data-ttu-id="cae92-110">アニメーションを使用してメディアを再生する</span><span class="sxs-lookup"><span data-stu-id="cae92-110">Play Media with Animations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-with-animations.md)  
+ [<span data-ttu-id="cae92-111">MediaElement で変換を使用する</span><span class="sxs-lookup"><span data-stu-id="cae92-111">Use Transforms on a MediaElement</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-transforms-on-a-mediaelement.md)  
   
-## <a name="reference"></a><span data-ttu-id="f5d4b-112">参照</span><span class="sxs-lookup"><span data-stu-id="f5d4b-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="cae92-112">参照</span><span class="sxs-lookup"><span data-stu-id="cae92-112">Reference</span></span>  
  <xref:System.Windows.Controls.MediaElement>  
   
  <xref:System.Windows.Media.MediaPlayer>  
   
  <xref:System.Windows.Media.MediaTimeline>  
   
-## <a name="related-sections"></a><span data-ttu-id="f5d4b-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="f5d4b-113">Related Sections</span></span>  
- [<span data-ttu-id="f5d4b-114">グラフィックスとマルチメディア</span><span class="sxs-lookup"><span data-stu-id="f5d4b-114">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="related-sections"></a><span data-ttu-id="cae92-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="cae92-113">Related Sections</span></span>  
+ [<span data-ttu-id="cae92-114">グラフィックスとマルチメディア</span><span class="sxs-lookup"><span data-stu-id="cae92-114">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)

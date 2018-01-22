@@ -18,22 +18,22 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0717e3b7f4dc72c2e5a75149b88f1f1d1285dad1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0969a9e88dee4a8d7e298ff4510211f49e8a6e35
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="combobox"></a><span data-ttu-id="9e934-102">ComboBox</span><span class="sxs-lookup"><span data-stu-id="9e934-102">ComboBox</span></span>
-<span data-ttu-id="9e934-103"><xref:System.Windows.Controls.ComboBox>コントロール オプションの一覧をユーザーに対して表示します。</span><span class="sxs-lookup"><span data-stu-id="9e934-103">The <xref:System.Windows.Controls.ComboBox> control presents users with a list of options.</span></span> <span data-ttu-id="9e934-104">一覧が表示され、コントロールの展開または折りたたむと非表示になります。</span><span class="sxs-lookup"><span data-stu-id="9e934-104">The list is shown and hidden as the control expands and collapses.</span></span> <span data-ttu-id="9e934-105">既定の状態で一覧が折りたたまれている、のみ 1 つの選択肢を表示します。</span><span class="sxs-lookup"><span data-stu-id="9e934-105">In its default state, the list is collapsed, displaying only one choice.</span></span> <span data-ttu-id="9e934-106">オプションの完全な一覧を表示するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9e934-106">The user clicks a button to see the complete list of options.</span></span>  
+# <a name="combobox"></a><span data-ttu-id="65763-102">ComboBox</span><span class="sxs-lookup"><span data-stu-id="65763-102">ComboBox</span></span>
+<span data-ttu-id="65763-103"><xref:System.Windows.Controls.ComboBox>コントロール オプションの一覧をユーザーに対して表示します。</span><span class="sxs-lookup"><span data-stu-id="65763-103">The <xref:System.Windows.Controls.ComboBox> control presents users with a list of options.</span></span> <span data-ttu-id="65763-104">一覧が表示され、コントロールの展開または折りたたむと非表示になります。</span><span class="sxs-lookup"><span data-stu-id="65763-104">The list is shown and hidden as the control expands and collapses.</span></span> <span data-ttu-id="65763-105">既定の状態で一覧が折りたたまれている、のみ 1 つの選択肢を表示します。</span><span class="sxs-lookup"><span data-stu-id="65763-105">In its default state, the list is collapsed, displaying only one choice.</span></span> <span data-ttu-id="65763-106">オプションの完全な一覧を表示するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="65763-106">The user clicks a button to see the complete list of options.</span></span>  
   
- <span data-ttu-id="9e934-107">次の図は、<xref:System.Windows.Controls.ComboBox>さまざまな状態にします。</span><span class="sxs-lookup"><span data-stu-id="9e934-107">The following illustration shows a <xref:System.Windows.Controls.ComboBox> in different states.</span></span>  
+ <span data-ttu-id="65763-107">次の図は、<xref:System.Windows.Controls.ComboBox>さまざまな状態にします。</span><span class="sxs-lookup"><span data-stu-id="65763-107">The following illustration shows a <xref:System.Windows.Controls.ComboBox> in different states.</span></span>  
   
- <span data-ttu-id="9e934-108">![コンボ ボックスの 既定と押された状態](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span><span class="sxs-lookup"><span data-stu-id="9e934-108">![Combo boxes in default and pressed states](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span></span>  
-<span data-ttu-id="9e934-109">展開し、折りたたみ</span><span class="sxs-lookup"><span data-stu-id="9e934-109">Collapsed and expanded</span></span>  
+ <span data-ttu-id="65763-108">![コンボ ボックスの 既定と押された状態](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span><span class="sxs-lookup"><span data-stu-id="65763-108">![Combo boxes in default and pressed states](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span></span>  
+<span data-ttu-id="65763-109">展開し、折りたたみ</span><span class="sxs-lookup"><span data-stu-id="65763-109">Collapsed and expanded</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="9e934-110">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="9e934-110">In This Section</span></span>  
- [<span data-ttu-id="9e934-111">方法: ComboBoxItem の取得</span><span class="sxs-lookup"><span data-stu-id="9e934-111">How to: Get a ComboBoxItem</span></span>](http://msdn.microsoft.com/en-us/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
+## <a name="in-this-section"></a><span data-ttu-id="65763-110">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="65763-110">In This Section</span></span>  
+ [<span data-ttu-id="65763-111">方法: ComboBoxItem の取得</span><span class="sxs-lookup"><span data-stu-id="65763-111">How to: Get a ComboBoxItem</span></span>](http://msdn.microsoft.com/library/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
   
-## <a name="reference"></a><span data-ttu-id="9e934-112">参照</span><span class="sxs-lookup"><span data-stu-id="9e934-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="65763-112">参照</span><span class="sxs-lookup"><span data-stu-id="65763-112">Reference</span></span>  
  <xref:System.Windows.Controls.ComboBox>
