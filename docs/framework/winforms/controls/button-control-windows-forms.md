@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 085ef918b2828dc754f5b91e0ad61262ce7d8c60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e4f9720f26458f3dd9cb2411d123fa830b20f3fd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="button-control-windows-forms"></a>Button コントロール (Windows フォーム)
 Windows フォームの `Button` コントロールを使用すると、ユーザーはそれをクリックしてアクションを実行できます。 `Button` コントロールには、テキストとイメージの両方を表示できます。 ボタンをクリックすると、ボタンを実際に押して離したかのように表示されます。  
@@ -52,4 +52,4 @@ Windows フォームの `Button` コントロールを使用すると、ユー�
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。  
   
- 参照してください[ダイアログ ボックスにユーザー入力](http://msdn.microsoft.com/en-us/63ad8645-6842-45e8-b215-73f778e29a55)と[する方法: ダイアログ ボックスを閉じて、ユーザー入力を保持する](http://msdn.microsoft.com/en-us/9e118fad-3bf4-4f70-a3de-a0cda2b0229d)です。
+ 参照してください[ダイアログ ボックスにユーザー入力](http://msdn.microsoft.com/library/63ad8645-6842-45e8-b215-73f778e29a55)と[する方法: ダイアログ ボックスを閉じて、ユーザー入力を保持する](http://msdn.microsoft.com/library/9e118fad-3bf4-4f70-a3de-a0cda2b0229d)です。

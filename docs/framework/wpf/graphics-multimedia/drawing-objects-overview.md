@@ -21,11 +21,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: abdc98a6fbf48a30f2f5702e7c2d78396381de6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c9b77b47a3f3ade27f2ba86304b1868a8d388482
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="drawing-objects-overview"></a>Drawing オブジェクトの概要
 このトピックで紹介<xref:System.Windows.Media.Drawing>オブジェクトし、図形、ビットマップ、文字列、およびメディアを効率的に描画に使用する方法について説明します。 使用して<xref:System.Windows.Media.Drawing>で描画します。 オブジェクト クリップアートを作成するときに、 <xref:System.Windows.Media.DrawingBrush>、使用または<xref:System.Windows.Media.Visual>オブジェクト。  
@@ -191,12 +191,12 @@ DrawingGroup の操作の順序
   
 |プロパティ|説明|図|  
 |--------------|-----------------|------------------|  
-|<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>|選択した部分の不透明度を変更、<xref:System.Windows.Media.DrawingGroup>内容。 例については、「[How to: Control the Opacity of a Drawing](http://msdn.microsoft.com/en-us/68580652-7d32-4d27-93cc-a5148cf4d5ee)」(方法: 描画の不透明度を制御する) をご覧ください。|![不透明マスクを含む DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opmask.png "graphicsmm_opmask")|  
-|<xref:System.Windows.Media.DrawingGroup.Opacity%2A>|一様に分布の不透明度を変更、<xref:System.Windows.Media.DrawingGroup>内容。 このプロパティを使用して、<xref:System.Windows.Media.Drawing>透明または部分的にします。 例については、「[How to: Apply an Opacity Mask to a Drawing](http://msdn.microsoft.com/en-us/d77b420b-9be2-479c-a45e-82f4da30eb9f)」(方法: 不透明マスクを描画に適用する) をご覧ください。|![不透明度の設定が異なる DrawingGroups](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opacity.png "graphicsmm_opacity")|  
-|<xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>|適用される、<xref:System.Windows.Media.Effects.BitmapEffect>を<xref:System.Windows.Media.DrawingGroup>内容。 例については、「[How to: Apply a BitmapEffect to a Drawing](http://msdn.microsoft.com/en-us/c5b1de83-8d09-47fb-96db-5f174471f4b5)」(方法: BitmapEffect を描画に適用する) をご覧ください。|![BlurBitmapEffect のある DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-bitmap.png "graphicsmm_bitmap")|  
-|<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>|クリップ、<xref:System.Windows.Media.DrawingGroup>を使用してを記述する内容領域を<xref:System.Windows.Media.Geometry>です。 例については、「[How to: Clip a Drawing](http://msdn.microsoft.com/en-us/1f7d8a2c-c3c2-42cb-a542-e6796f9fb058)」(方法: 描画をクリッピングする) をご覧ください。|![クリップ領域が定義された DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clipgeom.png "graphicsmm_clipgeom")|  
+|<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>|選択した部分の不透明度を変更、<xref:System.Windows.Media.DrawingGroup>内容。 例については、「[How to: Control the Opacity of a Drawing](http://msdn.microsoft.com/library/68580652-7d32-4d27-93cc-a5148cf4d5ee)」(方法: 描画の不透明度を制御する) をご覧ください。|![不透明マスクを含む DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opmask.png "graphicsmm_opmask")|  
+|<xref:System.Windows.Media.DrawingGroup.Opacity%2A>|一様に分布の不透明度を変更、<xref:System.Windows.Media.DrawingGroup>内容。 このプロパティを使用して、<xref:System.Windows.Media.Drawing>透明または部分的にします。 例については、「[How to: Apply an Opacity Mask to a Drawing](http://msdn.microsoft.com/library/d77b420b-9be2-479c-a45e-82f4da30eb9f)」(方法: 不透明マスクを描画に適用する) をご覧ください。|![不透明度の設定が異なる DrawingGroups](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opacity.png "graphicsmm_opacity")|  
+|<xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>|適用される、<xref:System.Windows.Media.Effects.BitmapEffect>を<xref:System.Windows.Media.DrawingGroup>内容。 例については、「[How to: Apply a BitmapEffect to a Drawing](http://msdn.microsoft.com/library/c5b1de83-8d09-47fb-96db-5f174471f4b5)」(方法: BitmapEffect を描画に適用する) をご覧ください。|![BlurBitmapEffect のある DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-bitmap.png "graphicsmm_bitmap")|  
+|<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>|クリップ、<xref:System.Windows.Media.DrawingGroup>を使用してを記述する内容領域を<xref:System.Windows.Media.Geometry>です。 例については、「[How to: Clip a Drawing](http://msdn.microsoft.com/library/1f7d8a2c-c3c2-42cb-a542-e6796f9fb058)」(方法: 描画をクリッピングする) をご覧ください。|![クリップ領域が定義された DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clipgeom.png "graphicsmm_clipgeom")|  
 |<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>|デバイスに依存しないピクセルを、指定したガイドラインに沿ったデバイス ピクセルにスナップします。 このプロパティは、低解像度ディスプレイで、非常に詳細なグラフィックスがはっきりとレンダリングされるようにするのに便利です。 例については、「[方法 : 描画に GuidelineSet を適用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-guidelineset-to-a-drawing.md)」をご覧ください。|![GuidelineSet が有効/無効な DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-drawinggroup-guidelineset.png "graphicsmm_drawinggroup_guidelineset")|  
-|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|変換、<xref:System.Windows.Media.DrawingGroup>内容。 例については、「[How to: Apply a Transform to a Drawing](http://msdn.microsoft.com/en-us/0d525f2b-682d-4d67-9660-cf46929fbabd)」(方法: 変換を描画に適用する) をご覧ください。|![回転された DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rotate.png "graphicsmm_rotate")|  
+|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|変換、<xref:System.Windows.Media.DrawingGroup>内容。 例については、「[How to: Apply a Transform to a Drawing](http://msdn.microsoft.com/library/0d525f2b-682d-4d67-9660-cf46929fbabd)」(方法: 変換を描画に適用する) をご覧ください。|![回転された DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rotate.png "graphicsmm_rotate")|  
   
 <a name="usingimagedrawing"></a>   
 ## <a name="display-a-drawing-as-an-image"></a>描画をイメージとして表示する  

@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: fd0812125c63a5a89cf8a87f0ca72cf9a9f168d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4a61c1c4aeba63baee3c5e2ba5110710ed9f45f2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-transactional-service"></a>方法 : トランザクション サービスを作成する
 このサンプルでは、トランザクション サービスを作成する際のさまざまな側面と、サービス操作を調整するためにクライアントが起動するトランザクションの使用について説明します。  
@@ -76,7 +76,7 @@ ms.lasthandoff: 12/22/2017
     }  
     ```  
   
-3.  構成ファイルでバインディングを構成して、トランザクション コンテキストのフローを指定し、そのとき使用されるプロトコルを指定します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ServiceModel トランザクションの構成](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md)です。 具体的には、エンドポイント要素の `binding` 属性でバインド型を指定します。 [\<エンドポイント >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素が含まれています、`bindingConfiguration`という名前のバインディング構成を参照する属性を`transactionalOleTransactionsTcpBinding`のサンプル構成を次に示すようにします。  
+3.  構成ファイルでバインディングを構成して、トランザクション コンテキストのフローを指定し、そのとき使用されるプロトコルを指定します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ServiceModel トランザクションの構成](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md)です。 具体的には、エンドポイント要素の `binding` 属性でバインド型を指定します。 [\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素が含まれています、`bindingConfiguration`という名前のバインディング構成を参照する属性を`transactionalOleTransactionsTcpBinding`のサンプル構成を次に示すようにします。  
   
     ```xml  
     <service name="CalculatorService">  

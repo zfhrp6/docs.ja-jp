@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 182e82eec107c170a793d0d48bcfe5493c04d618
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 74a322730c5e9fc205097da310a8db1fd7c50f82
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-tutorial"></a>チュートリアル入門
 このセクションの各トピックで、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のプログラミング方法について簡単に説明します。 これらは、このトピックに記載されているリストの順番どおりに完了するように設計されています。 このチュートリアルを通じて [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアント アプリケーションの作成に必要な手順について理解することができます。 サービスは 1 つ以上のエンドポイントを公開し、それぞれのエンドポイントは 1 つ以上のサービス操作を公開します。 *エンドポイント*サービスのアドレス、サービスがある、クライアントは、サービスと機能を定義するコントラクトと通信する必要がある方法を説明する情報を含んでいるバインディングを指定します。クライアントにサービスによって提供されます。  
@@ -36,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  実行する場合は[!INCLUDE[wv](../../../includes/wv-md.md)]または開始する必要があります以降のバージョンの Windows オペレーティング システムでは、[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)]しようとして、[スタート] メニュー、Visual Studio 2011 を右クリックしを選択して**管理者として実行**です。 ショートカットを作成のショートカットを右クリックして、プロパティを選択して、選択、管理者として Visual Studio 2011 を常に起動する、**互換性**タブをクリックし、確認、 **管理者としてこのプログラムを実行**チェック ボックスをオンします。 このショートカットで Visual Studio 2011 を起動すると、常に管理者として実行されます。  
   
- ハード_ディスクにダウンロードできますして実行する場合は、トピックを参照して、サンプル アプリケーションの[Windows Communication Foundation サンプル](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)です。 このトピックを参照してください、具体的には、[作業の開始](../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
+ ハード_ディスクにダウンロードできますして実行する場合は、トピックを参照して、サンプル アプリケーションの[Windows Communication Foundation サンプル](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)です。 このトピックを参照してください、具体的には、[作業の開始](../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
   
  サービスとクライアントの作成に関する詳細の詳細については、次を参照してください。[基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
@@ -65,7 +65,7 @@ ms.lasthandoff: 12/22/2017
  <xref:System.ServiceModel.OperationContractAttribute>  
   
 ## <a name="related-sections"></a>関連項目  
- [Windows Communication Foundation サンプル](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
+ [Windows Communication Foundation サンプル](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
   
  [基本的なプログラミング ライフサイクル](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
   

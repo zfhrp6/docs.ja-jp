@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9c739db4db5afad8fc379a5da4764cb9ab6804fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7526f5cda302618b2f240e5ae1c126e60b9ab5e6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>サービス トレース ビューアー ツール (SvcTraceViewer.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のサービス トレース ビューアー ツールは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] によって生成される診断トレースの分析に役立ちます。 サービス トレース ビューアーを使用すると、ログのトレース メッセージを容易にマージ、表示、およびフィルター処理できるため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの問題を診断、修復、および検証できます。  
@@ -437,7 +437,7 @@ ms.lasthandoff: 12/22/2017
   
 |アイコン|説明|  
 |----------|-----------------|  
-|![アクティビティ](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Activity: 現在のアクティビティが一般的なアクティビティであることを示します。|  
+|![Activity](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Activity: 現在のアクティビティが一般的なアクティビティであることを示します。|  
 |![ルート アクティビティ](../../../docs/framework/wcf/media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Root アクティビティ: プロセスのルート アクティビティを示します。|  
   
 ### <a name="wcf-activities"></a>WCF アクティビティ  
@@ -463,4 +463,4 @@ ms.lasthandoff: 12/22/2017
 ## <a name="see-also"></a>参照  
  [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [トレースの構成](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [アクティビティ トレースと伝達のエンド ツー エンド トレースの相関関係](http://msdn.microsoft.com/en-us/2c11a905-64f8-47b5-bae5-a74fc666137e)
+ [アクティビティ トレースと伝達のエンド ツー エンド トレースの相関関係](http://msdn.microsoft.com/library/2c11a905-64f8-47b5-bae5-a74fc666137e)

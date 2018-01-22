@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1ed9669479a3854c843716a1aeb37f7701ea7d7b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 121cbc1c07ea8f6458df81d861aea3f8e1f91086
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する
 このトピックは、[スタートアップ] ウィンドウを追加する方法を示しますまたは*スプラッシュ スクリーン*、Windows Presentation Foundation (WPF) アプリケーションにします。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  スプラッシュ スクリーンを使用するイメージを作成または選択します。 Windows イメージング コンポーネント (WIC) ではサポートされているすべてのイメージ形式を使用することができます。 たとえば、BMP、GIF、JPEG、PNG、または TIFF の形式を使用することができます。  
   
-2.  WPF アプリケーション プロジェクトにイメージ ファイルを追加します。 詳細については、次を参照してください。 [NIB: 方法: 既存の項目をプロジェクトに追加](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。  
+2.  WPF アプリケーション プロジェクトにイメージ ファイルを追加します。 詳細については、次を参照してください。 [NIB: 方法: 既存の項目をプロジェクトに追加](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。  
   
 3.  ソリューション エクスプ ローラーで、イメージを選択します。  
   
@@ -61,4 +61,4 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  <xref:System.Windows.SplashScreen>  
- [NIB: 方法: 既存の項目をプロジェクトに追加します。](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)
+ [NIB: 方法: 既存の項目をプロジェクトに追加します。](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)

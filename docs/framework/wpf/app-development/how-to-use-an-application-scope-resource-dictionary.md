@@ -21,17 +21,17 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ece6a5d2123bb118f11940081e3c1d939815a8ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 04dbcfb0fa16ceb4d6778ef611e926894d7840e9
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-use-an-application-scope-resource-dictionary"></a>方法 : アプリケーション スコープのリソース ディクショナリを使用する
 この例では、アプリケーション スコープのカスタム リソース ディクショナリを定義して、使用する方法を示します。  
   
 ## <a name="example"></a>例  
- <xref:System.Windows.Application>共有リソースのアプリケーション スコープのストアを公開:<xref:System.Windows.Application.Resources%2A>です。 既定では、<xref:System.Windows.Application.Resources%2A>プロパティは、のインスタンスを初期化、<xref:System.Windows.ResourceDictionary>型です。 Get を使用してアプリケーション スコープのプロパティを設定すると、このインスタンスを使用する<xref:System.Windows.Application.Resources%2A>です。 詳細については、次を参照してください。[する方法: を取得し、アプリケーション スコープ リソース設定](http://msdn.microsoft.com/en-us/39e0420c-c9fc-47dc-8956-fdd95b214095)です。
+ <xref:System.Windows.Application>共有リソースのアプリケーション スコープのストアを公開:<xref:System.Windows.Application.Resources%2A>です。 既定では、<xref:System.Windows.Application.Resources%2A>プロパティは、のインスタンスを初期化、<xref:System.Windows.ResourceDictionary>型です。 Get を使用してアプリケーション スコープのプロパティを設定すると、このインスタンスを使用する<xref:System.Windows.Application.Resources%2A>です。 詳細については、次を参照してください。[する方法: を取得し、アプリケーション スコープ リソース設定](http://msdn.microsoft.com/library/39e0420c-c9fc-47dc-8956-fdd95b214095)です。
   
  複数のリソースを使用して設定する必要がある場合<xref:System.Windows.Application.Resources%2A>、それらのリソースを格納および設定する代わりに、カスタム リソース ディクショナリを使用できます<xref:System.Windows.Application.Resources%2A>して代わりにします。 XAML を使用して、カスタム リソース ディクショナリを宣言する方法を次に示します。
   

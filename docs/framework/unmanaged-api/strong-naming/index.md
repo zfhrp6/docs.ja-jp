@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 2127cdb1178da37bcfe77a0e1a02ccd34be2d800
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ce89e27089ea2f0c918d0fe37c4eea141698f9be
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>厳密な名前付け (アンマネージ API リファレンス)
 厳密な名前付け API では、クライアントが厳密な名前のアセンブリの署名を管理できるようにします。  
@@ -30,7 +30,7 @@ ms.lasthandoff: 12/22/2017
  厳密な名前を使用してアセンブリに署名すると、アセンブリ マニフェストを格納しているファイルに公開キー暗号化が追加されます。 厳密な名前の署名には、名前の一意性を確認するのに役立ち、名前の悪用を防止し、参照が解決されたときに、一意の id を持つ呼び出し元を提供します。 ただし、信頼レベルが関連付けられていない、厳密な名前です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [厳密な名前付けグローバル静的関数](http://msdn.microsoft.com/en-us/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)  
+ [厳密な名前付けグローバル静的関数](http://msdn.microsoft.com/library/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)  
  厳密な名前付け API で使用されるアンマネージ グローバル静的関数をについて説明します。  
   
 > [!NOTE]
@@ -114,7 +114,7 @@ ms.lasthandoff: 12/22/2017
  [StrongNameTokenFromPublicKey 関数](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md)  
  公開キーを表すトークンを取得します。 推奨されなくなった、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]です。  
   
- [厳密な名前付け構造体](http://msdn.microsoft.com/en-us/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
+ [厳密な名前付け構造体](http://msdn.microsoft.com/library/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
  厳密な名前のアセンブリの署名を管理する厳密な名前付け API を使用するアンマネージ構造体について説明します。  
   
  [PublicKeyBlob 構造体](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  

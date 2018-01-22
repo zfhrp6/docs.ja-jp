@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9ccf386acd50338f1743bbf8f6be38b3267a7103
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 48b7c47a14f27439c60280a5c4202e9f4af76397
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>方法 : UserControl の実行時の動作をテストする
 開発する際に、<xref:System.Windows.Forms.UserControl>実行時の動作をテストする必要があります。 個別の Windows ベースのアプリケーション プロジェクトを作成し、テスト フォームにコントロールを配置することができますが、この手順は便利ではありません。 高速で簡単には、 **UserControl テスト コンテナー** Visual Studio が提供されます。 このテスト コンテナーは、Windows コントロール ライブラリ プロジェクトから直接起動します。  
@@ -33,14 +33,14 @@ ms.lasthandoff: 12/22/2017
 >  テスト コンテナーを読み込む、<xref:System.Windows.Forms.UserControl>コントロールは、少なくとも 1 つのパブリック コンス トラクターをいる必要があります。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 > [!NOTE]
 >  使用して Visual C のコントロールをテストすることはできません、 **UserControl テスト コンテナー**です。  
   
 ### <a name="to-test-the-run-time-behavior-of-a-usercontrol"></a>UserControl の実行時の動作をテストするには  
   
-1.  呼ばれる Windows コントロール ライブラリ プロジェクトを作成**ファイルを開く**です。 詳細については、「 [Windows コントロール ライブラリ テンプレート](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4)です。  
+1.  呼ばれる Windows コントロール ライブラリ プロジェクトを作成**ファイルを開く**です。 詳細については、「 [Windows コントロール ライブラリ テンプレート](http://msdn.microsoft.com/library/722f4e2d-1310-4ed5-8f33-593337ab66b4)です。  
   
 2.  **Windows フォーム デザイナー**、ドラッグ、<xref:System.Windows.Forms.Label>から制御、**ツールボックス**コントロールのデザイン サーフェイスにします。  
   
@@ -52,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 6.  テスト コンテナーを閉じます。  
   
-7.  別のユーザー コントロールを追加して、**ファイルを開く**プロジェクト。 詳細については、「 [NIB: 方法: 既存項目プロジェクトに追加](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。  
+7.  別のユーザー コントロールを追加して、**ファイルを開く**プロジェクト。 詳細については、「 [NIB: 方法: 既存項目プロジェクトに追加](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。  
   
 8.  **Windows フォーム デザイナー**、ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**コントロールのデザイン サーフェイスにします。  
   
@@ -65,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-test-user-controls-from-another-project"></a>別のプロジェクトからユーザー コントロールをテストするには  
   
-1.  呼ばれる Windows コントロール ライブラリ プロジェクトを作成**TestContainerExample2**です。 詳細については、「 [Windows コントロール ライブラリ テンプレート](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4)です。  
+1.  呼ばれる Windows コントロール ライブラリ プロジェクトを作成**TestContainerExample2**です。 詳細については、「 [Windows コントロール ライブラリ テンプレート](http://msdn.microsoft.com/library/722f4e2d-1310-4ed5-8f33-593337ab66b4)です。  
   
 2.  **Windows フォーム デザイナー**、ドラッグ、<xref:System.Windows.Forms.RadioButton>から制御、**ツールボックス**コントロールのデザイン サーフェイスにします。  
   
@@ -82,4 +82,4 @@ ms.lasthandoff: 12/22/2017
  [方法: 複合コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)  
  [チュートリアル : Visual Basic による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
  [チュートリアル: Visual C# による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
- [ユーザー コントロール デザイナー](http://msdn.microsoft.com/en-us/2abb9eec-ba32-45cb-b73d-8b52a8bd6bf1)
+ [ユーザー コントロール デザイナー](http://msdn.microsoft.com/library/2abb9eec-ba32-45cb-b73d-8b52a8bd6bf1)

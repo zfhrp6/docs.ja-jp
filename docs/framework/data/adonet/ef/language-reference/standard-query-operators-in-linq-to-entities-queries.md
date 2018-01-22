@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d61dbe2051109273a8616336e0efb46f7bd20864
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 94a024081acfcf4b1926f485c6dbfc2f394b418c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>LINQ to Entities クエリの標準クエリ演算子
 クエリでは、データ ソースから取得する情報を指定できます。 また、並べ替え、グループ化、整形方法を指定して情報を取得することもできます。 LINQ には、クエリで使用できる一連の標準クエリ メソッドが用意されています。 これらのメソッドのほとんどの操作のシーケンスです。このコンテキストで、シーケンスがの型を実装するオブジェクト、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスまたは<xref:System.Linq.IQueryable%601>インターフェイスです。 標準クエリ演算子のクエリ機能には、フィルター処理、投影、集計、並べ替え、グループ化、ページングなどがあります。 よく使用される標準クエリ演算子の中には、クエリ式構文を使用することで呼び出しが可能になるように、専用のキーワード構文のあるものもあります。 クエリ式はメソッド ベースの方法とは異なり、読み取りやすくクエリを表現できます。 クエリ式の句は、コンパイル時にクエリ メソッドへの呼び出しに変換されます。 等価のクエリ式の句を持つ標準クエリ演算子の一覧は、次を参照してください。[標準クエリ演算子の概要](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)です。  
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/17/2018
 |`Sum`|null を返します。|null を返します。|シーケンス内の null 以外の値の合計を返します。|数値のシーケンスの合計を計算します。|  
   
 ## <a name="type-methods"></a>型メソッド  
- [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] のコンテキストでは、型変換と判定を処理する 2 つの LINQ メソッドがサポートされます。 つまり、サポートされる型は、適切な [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] 型にマップされる型のみです。 これらの型の一覧は、次を参照してください。[概念モデル型 (CSDL)](http://msdn.microsoft.com/en-us/987b995f-e429-4569-9559-b4146744def4)です。 型メソッドは、`Convert` と `OfType` です。  
+ [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] のコンテキストでは、型変換と判定を処理する 2 つの LINQ メソッドがサポートされます。 つまり、サポートされる型は、適切な [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] 型にマップされる型のみです。 これらの型の一覧は、次を参照してください。[概念モデル型 (CSDL)](http://msdn.microsoft.com/library/987b995f-e429-4569-9559-b4146744def4)です。 型メソッドは、`Convert` と `OfType` です。  
   
  エンティティ型では、`OfType` がサポートされます。 概念モデル プリミティブ型では、`Convert` がサポートされます。  C# の `is` および `as` メソッドもサポートされます。  
   

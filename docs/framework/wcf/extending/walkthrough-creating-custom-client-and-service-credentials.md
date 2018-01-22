@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3a56a3fa5ed8d470216e9c96b53e1ea21762bd2a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 99ee624ef6198ed67141d3d92e63fb9ba815c4fd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する
 このトピックでは、クライアントおよびサービスにカスタム資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.ServiceModel.Description.ClientCredentials> クラスと <xref:System.ServiceModel.Description.ServiceCredentials> クラスは、どちらも <xref:System.ServiceModel.Security.SecurityCredentialsManager> を返すためのコントラクトを定義する <xref:System.IdentityModel.Selectors.SecurityTokenManager> 抽象クラスから継承されます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]資格情報クラスとにどのように適合する、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティ アーキテクチャを参照してください[セキュリティ アーキテクチャ](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]資格情報クラスとにどのように適合する、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティ アーキテクチャを参照してください[セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)です。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供される既定の実装では、システム指定の資格情報の種類をサポートし、これらの資格情報の種類を処理できるセキュリティ トークン マネージャーを作成します。  
   

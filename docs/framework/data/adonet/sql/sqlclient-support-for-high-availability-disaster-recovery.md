@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d2a444440af9dfaa2b084a55db9348fa48df7b54
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 4f6ede253f52682cfe5a698cf4fb02841dc4c1e0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>高可用性障害復旧のための SqlClient サポート
 このトピックでは、高可用性、ディザスター リカバリーのための SqlClient サポート ([!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] に追加) である AlwaysOn 可用性グループについて説明します。  AlwaysOn 可用性グループの機能は [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 に追加されています。 AlwaysOn 可用性グループの詳細については、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックを参照してください。  
@@ -41,6 +41,9 @@ ms.lasthandoff: 01/17/2018
 1.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationIntent%2A>  
   
 2.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
+
+> [!NOTE]
+>  設定`MultiSubnetFailover`に`true`で不要な[!INCLUDE[net_v461](../../../../../includes/net-v461-md.md)]) またはそれ以降のバージョン。
   
 ## <a name="connecting-with-multisubnetfailover"></a>MultiSubnetFailover を使用した接続  
  `MultiSubnetFailover=True` 2012 可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続する場合は、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] を必ず指定します。 `MultiSubnetFailover` を使用すると、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 のすべての可用性グループやフェールオーバー クラスター インスタンスのより高速なフェールオーバーが可能になるため、単一または複数のサブネットの AlwaysOn トポロジのフェールオーバー時間が削減されます。 複数のサブネットのフェールオーバーでは、クライアントは並列接続を試みます。 サブネットのフェールオーバー中に、積極的に TCP 接続を再試行します。  

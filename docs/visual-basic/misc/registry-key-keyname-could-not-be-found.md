@@ -8,11 +8,11 @@ ms.assetid: ca4eb74f-8303-48fc-9ea8-d792fa4c810b
 caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1250c0e7808694a803c12606044e4217e6ac1408
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 07361a2016723bee63d32bf423d04732d848de74
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="registry-key-39ltkeynamegt39-could-not-be-found"></a>レジストリ キー &#39;&lt;keyname&gt;&#39; に見つかりませんでした
 レジストリ キーが見つかりません。  
@@ -23,6 +23,6 @@ ms.lasthandoff: 11/21/2017
   
 2.  キーにアクセスするために必要なセキュリティ アクセス許可があることを確認します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [レジストリの概要](../../visual-basic/language-reference/keywords/registry-summary.md)  
- [Visual Basic .NET でレジストリ アクセスの変更](http://msdn.microsoft.com/en-us/b58f7687-f4db-448a-a865-07f62fd16fb2)
+ [Visual Basic .NET でレジストリ アクセスの変更](http://msdn.microsoft.com/library/b58f7687-f4db-448a-a865-07f62fd16fb2)

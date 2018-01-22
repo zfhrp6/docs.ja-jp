@@ -21,14 +21,14 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 947ac4f8783b388135cf9e8147bb48eda93cfa08
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 446e0f830e916e7f4118a7374c66f238a60fda02
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-provide-a-toolbox-bitmap-for-a-control"></a>方法 : コントロールにツールボックス ビットマップを指定する
-コントロールの特別なアイコンが表示する場合、**ツールボックス**を使用して特定のイメージを指定することができます、<xref:System.Drawing.ToolboxBitmapAttribute>です。 このクラスは "*属性*" であり、他のクラスに追加できる特殊なクラスです。 属性の詳細については、[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] の場合は [Visual Basic での属性の概要](http://msdn.microsoft.com/en-us/0d0cff64-892d-4f57-83bd-bef388553d4f)に関するページを、[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] の場合は[属性](http://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205)に関するページを参照してください。  
+コントロールの特別なアイコンが表示する場合、**ツールボックス**を使用して特定のイメージを指定することができます、<xref:System.Drawing.ToolboxBitmapAttribute>です。 このクラスは "*属性*" であり、他のクラスに追加できる特殊なクラスです。 属性の詳細については、[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] の場合は [Visual Basic での属性の概要](http://msdn.microsoft.com/library/0d0cff64-892d-4f57-83bd-bef388553d4f)に関するページを、[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] の場合は[属性](http://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205)に関するページを参照してください。  
   
  使用して、 <xref:System.Drawing.ToolboxBitmapAttribute>16 で 16 ピクセルのビットマップのパスとファイル名を示す文字列を指定できます。 コントロールを**ツールボックス**に追加すると、このビットマップがコントロールの横に表示されます。 指定することも、 <xref:System.Type>、その種類に関連付けられたビットマップが読み込まれている場合。 両方を指定する場合、<xref:System.Type>文字列、コントロールを検索対象のイメージ リソースで指定された型を含むアセンブリの文字列パラメーターで指定された名前を持つ、<xref:System.Type>パラメーター。  
   

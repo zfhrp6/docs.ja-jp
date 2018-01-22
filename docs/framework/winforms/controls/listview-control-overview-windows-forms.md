@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9bc0f887743e9e129319ca9241203905670334cf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b79fecb0a537f4c568b4a57e9ce2bfab8d8e1005
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="listview-control-overview-windows-forms"></a>ListView コントロールの概要 (Windows フォーム)
 Windows フォーム <xref:System.Windows.Forms.ListView> コントロールにはアイコン表示で項目の一覧が表示されます。 リスト ビューを使用すると、Windows エクスプローラーの右側のペインのようなユーザー インターフェイスを作成することができます。 コントロールが 4 つの表示モード: LargeIcon、SmallIcon、リスト、および詳細。  
@@ -55,7 +55,7 @@ Windows フォーム <xref:System.Windows.Forms.ListView> コントロールに�
   
  <xref:System.Windows.Forms.ListView.Activation%2A>プロパティは、アクションの種類、ユーザーは、リスト内の項目をアクティブに実行する必要がありますを決定します。 オプションは、 <xref:System.Windows.Forms.ItemActivation.Standard>、 <xref:System.Windows.Forms.ItemActivation.OneClick>、と<xref:System.Windows.Forms.ItemActivation.TwoClick>。 <xref:System.Windows.Forms.ItemActivation.OneClick>アクティブ化には、シングル クリックで項目をアクティブ化が必要です。 <xref:System.Windows.Forms.ItemActivation.TwoClick>アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要です。1 回のクリックでは、項目のテキストの色を変更します。 <xref:System.Windows.Forms.ItemActivation.Standard>アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要ですが、アイテムの外観は変わりません。  
   
- <xref:System.Windows.Forms.ListView>コントロールもサポートしている visual スタイルと使用できるその他の機能グループ化、並べて表示ビュー、および挿入マークを含む、Windows XP のプラットフォームでします。 詳細については、次を参照してください。 [Windows XP の機能と Windows フォーム コントロール](http://msdn.microsoft.com/en-us/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)です。  
+ <xref:System.Windows.Forms.ListView>コントロールもサポートしている visual スタイルと使用できるその他の機能グループ化、並べて表示ビュー、および挿入マークを含む、Windows XP のプラットフォームでします。 詳細については、次を参照してください。 [Windows XP の機能と Windows フォーム コントロール](http://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)です。  
   
 ## <a name="see-also"></a>参照  
  <xref:System.Windows.Forms.ListView>  

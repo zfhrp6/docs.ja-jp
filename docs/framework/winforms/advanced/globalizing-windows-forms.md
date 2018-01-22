@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 2337de6889a92b295e0a4f3a88d2a5039e583508
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fa21433979d955603c67bc2822676f56e855d098
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="globalizing-windows-forms"></a>Windows フォームのグローバル化
 *グローバリゼーション*は、プロセスをデザインおよび複数カルチャ機能を持つソフトウェア製品を開発します。  
@@ -53,7 +53,7 @@ ms.lasthandoff: 12/22/2017
   
 -   [チュートリアル: Windows フォームのローカリゼーション](http://msdn.microsoft.com/library/y99d1cd3\(v=vs.110\))  
   
--   [チュートリアル: のローカライズ用割合が調整されるレイアウトの作成](http://msdn.microsoft.com/en-us/library/7k9fa71y\(v=vs.110\))  
+-   [チュートリアル: のローカライズ用割合が調整されるレイアウトの作成](http://msdn.microsoft.com/library/7k9fa71y\(v=vs.110\))  
   
 -   [方法: 双方向 Windows フォームのメッセージ ボックスを作成します。](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))  
   

@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d8d47b578d60d2c53aaa4b1f47e86430d3495ed1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 2bfccccbcfa41f8ed67cb309a0e4a3dd9dda6b90
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="entity-framework-overview"></a>Entity Framework の概要
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は、データ指向のソフトウェア アプリケーション開発をサポートする ADO.NET のテクノロジ セットです。 データ指向のアプリケーションの設計者と開発者はこれまで、2 つの大きく異なる目的を達成するために苦労してきました。 解決すべきビジネス上の問題のエンティティ、リレーションシップ、およびロジックをモデル化する一方で、データの格納と取得に使用するデータ エンジンに取り組む必要もあるからです。 データは複数のストレージ システムにまたがる場合があり、それぞれに独自のプロトコルが存在します。単一のストレージ システムを使用するアプリケーションであっても、ストレージ システムの要件と効率的で保守しやすいアプリケーション コードの記述要件のバランスを取る必要があります。  
@@ -98,7 +98,7 @@ ms.lasthandoff: 01/17/2018
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] の詳細については、次のトピックを参照してください。  
   
  [はじめに](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
- 取得する方法に関する情報を提供し、使用して迅速に実行されている、[クイック スタート](http://msdn.microsoft.com/en-us/0bc534be-789f-4819-b9f6-76e51d961675)、単純なを作成する方法を示す[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]アプリケーションです。  
+ 取得する方法に関する情報を提供し、使用して迅速に実行されている、[クイック スタート](http://msdn.microsoft.com/library/0bc534be-789f-4819-b9f6-76e51d961675)、単純なを作成する方法を示す[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]アプリケーションです。  
   
  [Entity Framework の用語](../../../../../docs/framework/data/adonet/ef/terminology.md)  
  Entity Data Model と [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] で使用されている用語や [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] のドキュメントで使用されている用語を多数定義しています。  

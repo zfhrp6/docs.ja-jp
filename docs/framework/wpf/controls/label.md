@@ -18,23 +18,23 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1ffb1a826bb37bddeefae9862e34f59096826685
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8f8e38dc9560e2e5a35c709572333d0f84f38cda
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="label"></a>group1
 <xref:System.Windows.Controls.Label>コントロールが通常の情報を提供して、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。  従来、<xref:System.Windows.Controls.Label>テキストのみが格納されているが、<xref:System.Windows.Controls.Label>に付属している[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]は、 <xref:System.Windows.Controls.ContentControl>、いずれかのテキストを含めることができます、または<xref:System.Windows.UIElement>です。  
   
  A<xref:System.Windows.Controls.Label>アクセス キーの機能や外観の両方のサポートを提供します。 アクセスを有効にクイック キーボード コントロールなどでよく使用される、<xref:System.Windows.Controls.TextBox>です。 割り当てる、<xref:System.Windows.Controls.Label>を<xref:System.Windows.Controls.Control>、設定されて、<xref:System.Windows.Controls.Label.Target%2A?displayProperty=nameWithType>プロパティをコントロールをユーザーがアクセス キーを押すとフォーカスを取得する必要があります。  
   
- 次の図は、 <xref:System.Windows.Controls.Label> 「テーマ」を対象とする、<xref:System.Windows.Controls.ComboBox>です。  ユーザーが押すと、<xref:System.Windows.Controls.ComboBox>がフォーカスを取得します。  詳細については、次を参照してください。[する方法: ラベルのターゲット プロパティを設定](http://msdn.microsoft.com/en-us/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)です。  
+ 次の図は、 <xref:System.Windows.Controls.Label> 「テーマ」を対象とする、<xref:System.Windows.Controls.ComboBox>です。  ユーザーが押すと、<xref:System.Windows.Controls.ComboBox>がフォーカスを取得します。  詳細については、次を参照してください。[する方法: ラベルのターゲット プロパティを設定](http://msdn.microsoft.com/library/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)です。  
   
  ![使用してラベルの付いた表示プロパティを示しています](../../../../docs/framework/wpf/controls/media/labeledby.JPG "LabeledBy")  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [方法: ラベルのターゲット プロパティを設定する](http://msdn.microsoft.com/en-us/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)  
+ [方法: ラベルのターゲット プロパティを設定する](http://msdn.microsoft.com/library/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)  
   
 ## <a name="reference"></a>参照  
  <xref:System.Windows.Controls.Label>

@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1a63a79b298a45b4efd6d1cbd439d208744358ea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6022f4a521fa64246a24b7aab21c368f5f72af8d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-define-a-groupbox-template"></a>方法 : GroupBox テンプレートを定義する
 この例のテンプレートを作成する方法を示しています、<xref:System.Windows.Controls.GroupBox>コントロール。  
@@ -33,4 +33,4 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.GroupBox>  
- [GroupBox 操作方法に関するトピック](http://msdn.microsoft.com/en-us/7692e155-a4c6-428c-b7e0-64b3740daca7)
+ [GroupBox 操作方法に関するトピック](http://msdn.microsoft.com/library/7692e155-a4c6-428c-b7e0-64b3740daca7)

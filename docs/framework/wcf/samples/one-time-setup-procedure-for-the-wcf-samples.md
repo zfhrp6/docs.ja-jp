@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7ffc74fdbec204b798ee93a8ee2c91db992a83cb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bab723e4e52db9936e635f1348dff86d75de274d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Windows Communication Foundation サンプルの 1 回限りのセットアップの手順
 ほとんどの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルは、インターネット インフォメーション サービス (IIS) でホストされ、共通の仮想ディレクトリから実行されます。 この 1 回限りのセットアップの手順では、ディスクにフォルダーを作成します。という名前の iis 仮想ディレクトリも追加**ServiceModelSamples**です。  
@@ -36,7 +36,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  場合[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]がインストールされていないオペレーティング システムが Windows Server 2008 SP2 または後で、インストールと[修正プログラム 251798](http://go.microsoft.com/fwlink/?LinkId=184693)です。  
   
-4.  次のコマンドを実行します。 これらのコマンドを実行する必要があります理由の詳細については、次を参照してください。 [IIS ホストされるサービスが失敗した](http://msdn.microsoft.com/en-us/ee5499fc-1b10-4cda-a9b1-13dba70f05f8)です。  
+4.  次のコマンドを実行します。 これらのコマンドを実行する必要があります理由の詳細については、次を参照してください。 [IIS ホストされるサービスが失敗した](http://msdn.microsoft.com/library/ee5499fc-1b10-4cda-a9b1-13dba70f05f8)です。  
   
     > [!WARNING]
     >  IIS を再インストールした場合は、次のコマンドを再実行します。  

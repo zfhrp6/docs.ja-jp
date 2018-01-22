@@ -14,16 +14,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7ece2585287f6e2767e64c2ec03c75adcfe161c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 75b594d01c8a9297f3383c2648b3853c2c024b9b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="client-configuration"></a>クライアント構成
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント構成は、クライアント エンドポイントのアドレス (Address)、バインディング (Binding)、動作 (Behavior)、およびコントラクト (Contract) の各プロパティ (頭文字を取って "ABC" プロパティと呼ばれます) を指定するために使用されます。また、これらのプロパティは、クライアントがサービス エンドポイントに接続するために使用されます。 [\<クライアント >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md)要素には、 [\<エンドポイント >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素の属性を持つエンドポイントの abc プロパティの構成に使用します。 これらの属性については、このトピックの「エンドポイントの構成」で説明します。  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント構成は、クライアント エンドポイントのアドレス (Address)、バインディング (Binding)、動作 (Behavior)、およびコントラクト (Contract) の各プロパティ (頭文字を取って "ABC" プロパティと呼ばれます) を指定するために使用されます。また、これらのプロパティは、クライアントがサービス エンドポイントに接続するために使用されます。 [\<クライアント >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md)要素には、 [\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素の属性を持つエンドポイントの abc プロパティの構成に使用します。 これらの属性については、このトピックの「エンドポイントの構成」で説明します。  
   
- [\<エンドポイント >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素も含まれています、 [\<メタデータ >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)要素のインポートとエクスポートのメタデータの設定を指定するために使用する[ \<ヘッダー >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)カスタムのアドレス ヘッダーのコレクションを格納する要素と[ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素を他のエンドポイントによるエンドポイントの認証を有効にします。メッセージを交換します。 [\<ヘッダー >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)と[ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素の一部である、<xref:System.ServiceModel.EndpointAddress>で説明されているが、[アドレス](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)トピックです。 メタデータ拡張の使用法に関するトピックへのリンクは、このトピックの「メタデータの構成」にあります。  
+ [\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素も含まれています、 [\<メタデータ >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)要素のインポートとエクスポートのメタデータの設定を指定するために使用する[ \<ヘッダー >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)カスタムのアドレス ヘッダーのコレクションを格納する要素と[ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素を他のエンドポイントによるエンドポイントの認証を有効にします。メッセージを交換します。 [\<ヘッダー >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)と[ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素の一部である、<xref:System.ServiceModel.EndpointAddress>で説明されているが、[アドレス](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)トピックです。 メタデータ拡張の使用法に関するトピックへのリンクは、このトピックの「メタデータの構成」にあります。  
   
 ## <a name="configuring-endpoints"></a>エンドポイントの構成  
  クライアントの構成が 1 つ指定するクライアントを許可するように設計されていますか、それぞれ独自の名前、複数のエンドポイント アドレス、およびコントラクトを各参照と、 [\<バインド >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)と[ \<ビヘイビアー >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)そのエンドポイントを構成するために使用するクライアント構成内の要素。 クライアント構成ファイルには、"App.config" という名前を付ける必要があります。これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムが想定している名前です。 クライアント構成ファイルの例を次に示します。  

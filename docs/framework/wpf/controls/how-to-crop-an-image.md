@@ -20,16 +20,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 084e3dc7fad2bcb3b7ab787302f55c824ff3739d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11f5b280635d2fe7b83d8c4496606ed02bc44149
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-crop-an-image"></a>方法 : イメージをトリミングする
 この例では、イメージを使用して、トリミング<xref:System.Windows.Media.Imaging.CroppedBitmap>です。  
   
- <xref:System.Windows.Media.Imaging.CroppedBitmap>主にエンコードに使用、イメージのトリミングされたバージョンをファイルに保存します。 表示目的では、「イメージをトリミングするには、[クリップ領域を作成する](http://msdn.microsoft.com/en-us/56e4bed6-78d7-4292-b917-d72d0b3e4376)トピックです。  
+ <xref:System.Windows.Media.Imaging.CroppedBitmap>主にエンコードに使用、イメージのトリミングされたバージョンをファイルに保存します。 表示目的では、「イメージをトリミングするには、[クリップ領域を作成する](http://msdn.microsoft.com/library/56e4bed6-78d7-4292-b917-d72d0b3e4376)トピックです。  
   
 ## <a name="example"></a>例  
  次[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]以下のサンプル内で使用されるリソースを定義します。  
@@ -51,4 +51,4 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[imageelementexample#CroppedCSharp2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample/VB/CroppedImageExample.xaml.vb#croppedcsharp2)]  
   
 ## <a name="see-also"></a>参照  
- [クリップ領域を作成します。](http://msdn.microsoft.com/en-us/56e4bed6-78d7-4292-b917-d72d0b3e4376)
+ [クリップ領域を作成します。](http://msdn.microsoft.com/library/56e4bed6-78d7-4292-b917-d72d0b3e4376)

@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5bfd5ca9d42c654882c77efafed82aec7e4f0c9b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17638390a07f752a7101209e5635752bc0511d1d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="interop-marshaling"></a>相互運用マーシャリング
 <a name="top"></a> 相互運用マーシャリングは、メソッド引数と戻り値によって、呼び出し中にマネージ メモリとアンマネージ メモリの間でデータを渡す方法を制御します。 相互運用マーシャリングは、共通言語ランタイムのマーシャリング サービスによって実行される、ランタイム アクティビティです。  
@@ -105,7 +105,7 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  C# クライアントのスレッドを STA に設定すると、MTA COM コンポーネントへの呼び出しにはアパートメント間のマーシャリングが必要となります。  
   
- アパートメント モデルを明示的に選択する方法については、「[マネージとアンマネージ スレッド](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5)」を参照してください。  
+ アパートメント モデルを明示的に選択する方法については、「[マネージとアンマネージ スレッド](http://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5)」を参照してください。  
   
  [ページのトップへ](#top)  
   
@@ -145,7 +145,7 @@ ms.lasthandoff: 12/22/2017
  ![SOAP または TcpChannel](../../../docs/framework/interop/media/interopremotesoap.gif "interopremotesoap")  
 SOAP または TcpChannel クラスを使用するファイアウォールを越えたリモート呼び出し  
   
- [サービス コンポーネント](http://msdn.microsoft.com/en-us/f109ee24-81ad-4d99-9892-51ac6f34978c)と COM の間の呼び出しなど、一部のアンマネージ呼び出しは SOAP を介して伝達できます。  
+ [サービス コンポーネント](http://msdn.microsoft.com/library/f109ee24-81ad-4d99-9892-51ac6f34978c)と COM の間の呼び出しなど、一部のアンマネージ呼び出しは SOAP を介して伝達できます。  
   
  [ページのトップへ](#top)  
   
@@ -159,10 +159,10 @@ SOAP または TcpChannel クラスを使用するファイアウォールを越
 |[COM 相互運用機能によるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-com-interop.md)|COM ラッパーをカスタマイズしてマーシャリング動作を変更する方法について説明します。|  
 |[方法: マネージ コード DCOM を WCF に移行する](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)|DCOM から WCF に移行する方法について説明します。|  
 |[方法: HRESULT に例外を割り当てる](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)|HRESULT にカスタム例外をマップする方法について説明し、各 HRESULT から .NET Framework での同等の例外クラスへの完全なマッピングを示します。|  
-|[ジェネリック型を使用する相互運用](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58)|COM 相互運用性のジェネリック型を使用するとき、どのアクションがサポートされるかについて説明します。|  
+|[ジェネリック型を使用する相互運用](http://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58)|COM 相互運用性のジェネリック型を使用するとき、どのアクションがサポートされるかについて説明します。|  
 |[アンマネージ コードとの相互運用](../../../docs/framework/interop/index.md)|共通言語ランタイムが提供する相互運用サービスについて説明します。|  
-|[高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|.NET Framework アプリケーションに COM コンポーネントを組み込む方法についての詳細情報へのリンクを示します。|  
-|[相互運用のためのデザインの考慮事項](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)|統合 COM コンポーネントを記述するためのヒントを示します。|  
+|[高度な COM 相互運用性](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|.NET Framework アプリケーションに COM コンポーネントを組み込む方法についての詳細情報へのリンクを示します。|  
+|[相互運用のためのデザインの考慮事項](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689)|統合 COM コンポーネントを記述するためのヒントを示します。|  
   
  [ページのトップへ](#top)  
   

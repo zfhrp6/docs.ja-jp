@@ -22,11 +22,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 5198de558d24770c8fdd4bfc10ce4a9199eeff47
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb33d3175cf9e43797125b47c811042771e45782
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ui-automation-and-screen-scaling"></a>UI オートメーションおよび画面の拡大縮小
 > [!NOTE]
@@ -74,7 +74,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[Highlighter#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/Highlighter/CSharp/NativeMethods.cs#101)]
      [!code-vb[Highlighter#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Highlighter/VisualBasic/NativeMethods.vb#101)]  
   
-     この関数は、プロセス全体を [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]対応にします。つまり、プロセスに属するすべてのウィンドウは拡大縮小されません。 [蛍光ペンのサンプル](http://msdn.microsoft.com/en-us/19ba4577-753e-4efd-92cc-c02ee67c1b69)、たとえば、強調表示の四角形を構成する 4 つのウィンドウはから取得した物理座標にある[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]、論理座標ではありません。 この例が [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]非対応だったなら、強調表示はデスクトップ上の論理座標で描画されるため、96 [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] 以外の環境では誤った位置に配置されることになります。  
+     この関数は、プロセス全体を [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]対応にします。つまり、プロセスに属するすべてのウィンドウは拡大縮小されません。 [蛍光ペンのサンプル](http://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)、たとえば、強調表示の四角形を構成する 4 つのウィンドウはから取得した物理座標にある[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]、論理座標ではありません。 この例が [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]非対応だったなら、強調表示はデスクトップ上の論理座標で描画されるため、96 [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] 以外の環境では誤った位置に配置されることになります。  
   
 2.  カーソルの座標を取得するには、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] 関数 `GetPhysicalCursorPos`を呼び出します。 次の例に、この関数を宣言して使用する方法を示します。  
   
@@ -87,4 +87,4 @@ ms.lasthandoff: 12/22/2017
  アプリケーションが [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]非対応のアプリケーションと直接プロセス間通信を行う場合は、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] 関数 `PhysicalToLogicalPoint` および `LogicalToPhysicalPoint`を使用して、論理座標と物理座標を互いに変換できます。  
   
 ## <a name="see-also"></a>参照  
- [Highlighter Sample](http://msdn.microsoft.com/en-us/19ba4577-753e-4efd-92cc-c02ee67c1b69)
+ [蛍光ペンのサンプル](http://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)

@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 11229a5677341db05223116c932f13b1f567e712
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 93dc8119e76f5c9cbff5c91a7e5d0cde3b0072f2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>構成ファイルを使用してサービスを構成する方法
 構成ファイルを使用して [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを構成すると、デザイン時ではなく配置時にエンドポイントとサービス動作のデータを指定できるという柔軟性が生まれます。 ここでは使用可能な主要な技術について説明します。  
@@ -79,7 +79,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="the-services-element"></a>\<Services > 要素  
  `services` 要素には、アプリケーションによってホストされるすべてのサービスの仕様が入ります。 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]の簡略化された構成モデル以降の場合、このセクションは省略可能です。  
   
- [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
+ [\<services>](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
   
 ### <a name="the-service-element"></a>\<Service > 要素  
  各サービスには次の属性があります。  
@@ -88,7 +88,7 @@ ms.lasthandoff: 12/22/2017
   
 -   `behaviorConfiguration`。 - `behavior` 要素に存在するいずれかの `behaviors` 要素の名前を指定します。 指定された動作は、サービスが偽装を許可するかどうかなどのアクションを制御します。 その値が空の名前であるか、または `behaviorConfiguration` が指定されていない場合、サービスの動作の既定のセットがサービスに追加されます。  
   
--   [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+-   [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
   
 ### <a name="the-endpoint-element"></a>\<Endpoint > 要素  
  各エンドポイントには、次の属性で表されるアドレス、バインディング、およびコントラクトが必要です。  
@@ -101,29 +101,29 @@ ms.lasthandoff: 12/22/2017
   
 -   `contract`。 コントラクトを定義するインターフェイスを指定します。 これは `name` 要素の `service` 属性で指定された共通言語ランタイム (CLR) 型で実装されたインターフェイスです。  
   
--   [\<endpoint > 要素のリファレンス](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
+-   [\<endpoint > 要素のリファレンス](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
   
 ### <a name="the-bindings-element"></a>\<バインド > 要素  
  `bindings` 要素には、任意のサービスで定義される任意のエンドポイントによって使用できるすべてのバインディングに関する仕様が入ります。  
   
- [\<バインド >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
+ [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
   
 ### <a name="the-binding-element"></a>\<バインディング > 要素  
  `binding`に含まれる要素の`bindings`要素は、システム指定のバインディングのいずれかを指定できます (を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)) またはカスタム バインディング (を参照してください[カスタム バインド](../../../docs/framework/wcf/extending/custom-bindings.md))。 `binding` 要素には、バインディングを `name` 要素の `bindingConfiguration` 属性で指定されたエンドポイントと関連付ける `endpoint` 属性があります。 名前を指定しない場合、バインディングは、バインディングの既定の種類に対応します。  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)。  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]サービスとクライアントを構成するを参照してください[Windows Communication Foundation アプリケーションを構成する](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)です。  
   
- [\<バインド >](../../../docs/framework/misc/binding.md)  
+ [\<binding>](../../../docs/framework/misc/binding.md)  
   
 ### <a name="the-behaviors-element"></a>\<動作 > 要素  
  これは、サービスの動作を定義する `behavior` 要素のコンテナー要素です。  
   
- [\<ビヘイビアー >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
+ [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
   
 ### <a name="the-behavior-element"></a>\<動作 > 要素  
  各 `behavior` 要素は、`name` 属性によって識別され、<`throttling`> などのシステム指定の動作またはカスタム動作のいずれかを定義します。 名前を指定しない場合、動作要素は、既定のサービスまたはエンドポイント動作に対応します。  
   
- [\<動作 >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
+ [\<behavior>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
 ## <a name="how-to-use-binding-and-behavior-configurations"></a>バインディングと動作の構成を使用する方法  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、構成で参照システムを使用することによって、エンドポイント間で構成を簡単に共有できます。 構成値を直接エンドポイントに割り当てるのではなく、バインディング関連の構成値を `bindingConfiguration` セクションの `<binding>` 要素にグループ化します。 バインディング構成とは、バインディングの設定の名前付きグループです。 エンドポイントは、名前によって `bindingConfiguration` を参照できます。  
@@ -274,6 +274,6 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>参照  
  [簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)  
- [Windows Communication Foundation アプリケーションの構成](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
- [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
- [\<バインド >](../../../docs/framework/misc/binding.md)
+ [Windows Communication Foundation アプリケーションの構成](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
+ [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+ [\<binding>](../../../docs/framework/misc/binding.md)

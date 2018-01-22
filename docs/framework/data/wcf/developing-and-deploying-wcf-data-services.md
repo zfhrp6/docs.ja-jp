@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 34fd9bc3bf16446505caf12c6cfa4192ffb391c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8abe23aebefadc68268aa1dada8474336b1f87e7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>WCF Data Services の開発と配置
 このトピックでは、 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]の開発と配置について説明します。 複数の基本情報については[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を参照してください[作業の開始](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)と[概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)です。  
@@ -63,7 +63,7 @@ ms.lasthandoff: 12/22/2017
   
     -   このサーバーにはローカル コンピューター上でしかアクセスできません。  
   
-    -   このサーバーは、HTTP メッセージの既定のポートであるポート 80 ではなく、 `localhost` および特定のポートでリッスンします。 詳細については、「 [ASP.NET Web プロジェクト用の Visual Studio の Web サーバー](http://msdn.microsoft.com/en-us/31d4f588-df59-4b7e-b9ea-e1f2dd204328)」を参照してください。  
+    -   このサーバーは、HTTP メッセージの既定のポートであるポート 80 ではなく、 `localhost` および特定のポートでリッスンします。 詳細については、「 [ASP.NET Web プロジェクト用の Visual Studio の Web サーバー](http://msdn.microsoft.com/library/31d4f588-df59-4b7e-b9ea-e1f2dd204328)」を参照してください。  
   
     -   このサーバーでは、現在のユーザー アカウントのコンテキストでデータ サービスが実行されます。 たとえば、管理者レベルのユーザーとして実行する場合、 [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] 開発サーバーで実行されるデータ サービスは、管理者レベルの特権を持ちます。 そのため、データ サービスは、IIS サーバーに配置されたときにはアクセスする権限を持たないリソースにも、アクセスできることになります。  
   
@@ -89,7 +89,7 @@ ms.lasthandoff: 12/22/2017
   
 -   データ サービスのデバッグ時は、通常の操作時以上に、データ サービスの詳細なエラー情報が必要になることがあります。 データ サービスから詳細なエラー情報を取得するには、 <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> の <xref:System.Data.Services.DataServiceConfiguration> プロパティを `true` に設定し、データ サービス クラスの <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> 属性の <xref:System.ServiceModel.Description.ServiceDebugBehavior> プロパティを `true`に設定します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]投稿[WCF Data Services のデバッグ](http://go.microsoft.com/fwlink/?LinkId=201868)です。 また、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でトレースを有効にして、HTTP メッセージング レイヤーで発生した例外を表示することもできます。 詳細については、「 [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  
   
--   データ サービスは、通常、 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーション プロジェクトとして開発されますが、 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] の [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]Web サイト プロジェクトとしてデータ サービスを作成することもできます。 この 2 種類のプロジェクトの違いについては、「 [Web Application Projects versus Web Site Projects in Visual Studio (Visual Studio での Web アプリケーション プロジェクトと Web サイト プロジェクト)](http://msdn.microsoft.com/en-us/2861815e-f5a2-4378-a2f8-b8a86dc012f5)」を参照してください。  
+-   データ サービスは、通常、 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーション プロジェクトとして開発されますが、 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] の [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]Web サイト プロジェクトとしてデータ サービスを作成することもできます。 2 種類のプロジェクト間の相違点については、次を参照してください。 [NIB: Web アプリケーション プロジェクトと Visual Studio での Web サイト プロジェクト](http://msdn.microsoft.com/library/2861815e-f5a2-4378-a2f8-b8a86dc012f5)です。  
   
 -   **の** [新しい項目の追加] [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]ダイアログ ボックスを使用してデータ サービスを作成すると、そのデータ サービスは IIS の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] でホストされます。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] と IIS がデータ サービスの既定のホストですが、その他のホスト オプションもサポートされています。 詳細については、次を参照してください。[データ サービスのホスティング](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)です。  
   
@@ -102,9 +102,9 @@ ms.lasthandoff: 12/22/2017
   
     -   **ASP.NET Web アプリケーション用の配置テクノロジ**  
   
-        -   [Web 配置パッケージ](http://msdn.microsoft.com/en-us/1f9713c8-9540-494c-b80d-9893b970ad6f)  
+        -   [Web 配置パッケージ](http://msdn.microsoft.com/library/1f9713c8-9540-494c-b80d-9893b970ad6f)  
   
-        -   [ワンクリック発行機能](http://msdn.microsoft.com/en-us/59226246-99ad-4aec-975d-7c61e8a8911c)  
+        -   [ワンクリック発行機能](http://msdn.microsoft.com/library/59226246-99ad-4aec-975d-7c61e8a8911c)  
   
     -   **ASP.NET Web サイト用の配置テクノロジ**  
   
@@ -114,7 +114,7 @@ ms.lasthandoff: 12/22/2017
   
         -   [XCopy](http://msdn.microsoft.com/library/4312c651-2119-49be-bbeb-ee28bdbfe71e)  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] アプリケーションの配置オプションの [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] については、「 [Web Deployment Overview for Visual Studio and ASP.NET (Visual Studio と ASP.NET の Web 配置の概要)](http://msdn.microsoft.com/en-us/99bd1927-b59f-4e02-87b4-55c6ba2adbc3)」を参照してください。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]オプションは、展開、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]アプリケーションを参照してください[for Visual Studio と ASP.NET Web 配置の概要](http://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3)です。  
   
     > [!TIP]
     >  データ サービスを IIS に配置する前に、IIS を実行している Web サーバーへの配置をテストしておく必要があります。 詳細については、「 [How to: Develop a WCF Data Service Running on IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md)」を参照してください。  
@@ -126,7 +126,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="deployment-considerations"></a>配置に関する注意事項  
  データ サービスを配置する際は、次の点を考慮してください。  
   
--   [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] プロバイダーを使用して SQL Server データベースにアクセスするデータ サービスを配置する場合、データ サービスの配置でのデータ構造、データ、またはその両方の反映も必要になることがあります。 [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] では対象データベースでこの操作を行うスクリプト (.sql ファイル) を自動的に作成することができ、これらのスクリプトを [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーションの Web 配置パッケージに含めることができます。 詳細については、「 [方法: Web アプリケーション プロジェクトと共にデータベースを配置する](http://msdn.microsoft.com/en-us/683b33f1-8a3d-45cf-af6e-61ab50fc518b)」を参照してください。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サイトの場合は、 **の** [データベースの発行] [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]ウィザードを使用してこの操作を実行できます。 詳細については、「 [Deploying a Database by Using the Database Publishing Wizard](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7)」を参照してください。  
+-   [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] プロバイダーを使用して SQL Server データベースにアクセスするデータ サービスを配置する場合、データ サービスの配置でのデータ構造、データ、またはその両方の反映も必要になることがあります。 [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] では対象データベースでこの操作を行うスクリプト (.sql ファイル) を自動的に作成することができ、これらのスクリプトを [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーションの Web 配置パッケージに含めることができます。 詳細については、次を参照してください。 [NIB: 方法: Web アプリケーション プロジェクトでのデータベースを配置](http://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b)です。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サイトの場合は、 **の** [データベースの発行] [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]ウィザードを使用してこの操作を実行できます。 詳細については、「 [Deploying a Database by Using the Database Publishing Wizard](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7)」を参照してください。  
   
 -   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の実装が含まれているので、Windows Server AppFabric を使用して、Windows Server で実行されている IIS に配置されたデータ サービスを監視できます。 Server AppFabric を使用したデータ サービスの監視の[!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、ブログの記事「 [Tracking WCF Data Services with Windows Server AppFabric (Windows Server AppFabric による WCF Data Services の追跡)](http://go.microsoft.com/fwlink/?LinkID=202005)」を参照してください。  
   

@@ -17,18 +17,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c14da85b377b3ef80d6accbc8b0319959a75bcd5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5e616019d53648058d51a3d0df457b1380aaf3b1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-wpf-controls"></a>WPF コントロールの使用
 Windows フォーム ベースのアプリケーションでは、Windows Presentation Foundation (WPF) コントロールを使用できます。 これらは、次の 2 つの異なるビュー テクノロジが、相互運用スムーズに動作します。  
   
  Windows フォーム デザイナーでは、Windows Presentation Foundation コントロールをホストするためのビジュアル デ ザイン環境を提供します。 WPF コントロールがという名前を特別な Windows フォーム コントロールでホストされている<xref:System.Windows.Forms.Integration.ElementHost>です。 このコントロールは、フォームのレイアウトに参加して、キーボードとマウスのメッセージを受信する WPF コントロールを使用します。 デザイン時に配置することができます、<xref:System.Windows.Forms.Integration.ElementHost>同様の Windows フォーム コントロールを制御します。  
   
- また、WPF ベースのアプリケーションで Windows フォーム コントロールを使用することができます。 詳細については、次を参照してください。 [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)です。  
+ また、WPF ベースのアプリケーションで Windows フォーム コントロールを使用することができます。 詳細については、次を参照してください。 [WPF デザイナー](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法: デザイン時に ElementHost コントロールをコピーして貼り付ける](../../../../docs/framework/winforms/advanced/how-to-copy-and-paste-an-elementhost-control-at-design-time.md)  
@@ -63,5 +63,5 @@ Windows フォーム ベースのアプリケーションでは、Windows Presen
  [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
  Windows Presentation Foundation と Windows フォームの技術間の相互運用を説明します。  
   
- [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [WPF デザイナー](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  Windows Presentation Foundation コントロールをデザインする方法について説明[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]です。

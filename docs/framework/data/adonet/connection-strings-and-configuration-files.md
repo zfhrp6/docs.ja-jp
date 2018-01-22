@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 358bc0428a53817e85d5a5e278d8da4e1a8b6927
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 447b2d6c0e5eeafeaff89aa1d6430eec72d59a4d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="connection-strings-and-configuration-files"></a>接続文字列と構成ファイル
 接続文字列をアプリケーションのコードに組み込むと、セキュリティ上の脆弱性やメンテナンスの問題を引き起こす可能性があります。 使用して、アプリケーションのソース コードにコンパイルされ暗号化されていない接続文字列を表示できます、 [Ildasm.exe (IL 逆アセンブラー)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md)ツールです。 さらに、接続文字列が変わるたびにアプリケーションを再コンパイルする必要性が生じます。 そのため、接続文字列はアプリケーション構成ファイルに保存することをお勧めします。  
@@ -156,7 +156,7 @@ ms.lasthandoff: 01/17/2018
  <xref:System.Configuration> 名前空間には、構成設定をプログラムから行うためのクラスが存在します。 <xref:System.Configuration.ConfigurationManager> クラスは、コンピューター、アプリケーション、ユーザーの各構成ファイルへのアクセスを提供します。 使用することができます、ASP.NET アプリケーションを作成する場合、<xref:System.Web.Configuration.WebConfigurationManager>内で検索できるなどの ASP.NET アプリケーションに固有の設定にアクセスすることもできます、同じ機能を提供するクラス **\<system.web >**です。  
   
 > [!NOTE]
->  <xref:System.Security.Cryptography> 名前空間には、データの暗号化と復号化に関連した補足的なオプションを提供するクラスが存在します。 これらのクラスは、保護構成では利用できない暗号化サービスが必要な場合に使用します。 これらのクラスは必ずしも純粋なマネージ実装とは限らず、アンマネージ Microsoft CryptoAPI 用のラッパーもあります。 詳細については、「[暗号サービス](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781)」をご覧ください。  
+>  <xref:System.Security.Cryptography> 名前空間には、データの暗号化と復号化に関連した補足的なオプションを提供するクラスが存在します。 これらのクラスは、保護構成では利用できない暗号化サービスが必要な場合に使用します。 これらのクラスは必ずしも純粋なマネージ実装とは限らず、アンマネージ Microsoft CryptoAPI 用のラッパーもあります。 詳細については、「[暗号サービス](http://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781)」をご覧ください。  
   
 ### <a name="appconfig-example"></a>App.config の例  
  この例では、暗号化を切り替える、 **connectionStrings** 」の「、 **app.config** Windows アプリケーション用のファイルです。 この例に示したプロシージャは、MyApplication.exe など、アプリケーションの名前を引数として受け取ります。 **App.config**ファイルが、暗号化および MyApplication.exe.config という名前で実行可能ファイルが含まれているフォルダーにコピーします。  
@@ -178,7 +178,7 @@ ms.lasthandoff: 01/17/2018
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- ASP.NET アプリケーションのセキュリティ保護の詳細については、次を参照してください。 [NIB: ASP.NET セキュリティ](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d)と[一目で ASP.NET 2.0 セキュリティ プラクティス](http://go.microsoft.com/fwlink/?LinkId=59997)ASP.NET デベロッパー センターにします。  
+ ASP.NET アプリケーションのセキュリティ保護の詳細については、次を参照してください。 [NIB: ASP.NET セキュリティ](http://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d)と[一目で ASP.NET 2.0 セキュリティ プラクティス](http://go.microsoft.com/fwlink/?LinkId=59997)ASP.NET デベロッパー センターにします。  
   
 ## <a name="see-also"></a>参照  
  [接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)  

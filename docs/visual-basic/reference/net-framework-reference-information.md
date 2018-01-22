@@ -12,11 +12,11 @@ ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b52323cb5c7049f87b27c24a987fcb7ba1834b6a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 320d9c88bde76ec27fa23c97de78122d88cb6824
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>.NET Framework の参照情報 (Visual Basic)
 このトピックを使用する方法に関する情報へのリンクを提供、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]クラス ライブラリです。  
@@ -34,7 +34,7 @@ ms.lasthandoff: 12/21/2017
  [ツール](../../framework/tools/index.md)  
  開発、構成、および .NET Framework テクノロジを使用してアプリケーションの展開に使用できるツールについて説明します。  
   
- [.NET Framework のサンプル](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
+ [.NET Framework のサンプル](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
  .NET Framework テクノロジを紹介するサンプル アプリケーションへのリンクを提供します。  
   
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  

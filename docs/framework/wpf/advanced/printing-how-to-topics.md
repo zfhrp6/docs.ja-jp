@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: dd76921059222c9c5b8958ce8e1761a3f04cb037
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9647ce04528df390620dba67619a538d96aa7068
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="printing-how-to-topics"></a>印刷に関する「方法」トピック
 このセクションのトピックでは、印刷を使用する方法を示す、印刷システム管理機能を含む、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]だけでなく、新しい[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]印刷パス。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 12/22/2017
  [印刷キューのサブセットを列挙する](../../../../docs/framework/wpf/advanced/how-to-enumerate-a-subset-of-print-queues.md)  
  特定の特性を持つプリンターの一覧を生成するための手順です。  
   
- [ビルド内にありません: 方法: 印刷スキーマを拡張し、新しい印刷システム クラスを作成します。](http://msdn.microsoft.com/en-us/a3600218-1ea5-478a-9853-6560464f2885)  
+ [ビルド内にありません: 方法: 印刷スキーマを拡張し、新しい印刷システム クラスを作成します。](http://msdn.microsoft.com/library/a3600218-1ea5-478a-9853-6560464f2885)  
  マネージ コードをプログラマが専門的な印刷デバイスまたは新機能や一般的でない機能をサポートするプリンターに印刷スキーマを拡張できる拡張について説明します。  
   
  [リフレクションを使用せずに印刷システム オブジェクトのプロパティを取得する](../../../../docs/framework/wpf/advanced/how-to-get-print-system-object-properties-without-reflection.md)  

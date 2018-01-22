@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 31dd8d636a64b54c914d48b4faee95f82de680fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4375803ab51b139a66ac789f0670fce1e5f64682
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="richtextbox-how-to-topics"></a>RichTextBox に関する「方法」トピック
 このセクションで説明を使用した共通タスクを実行する方法を示す例について、<xref:System.Windows.Controls.RichTextBox>コントロール。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 12/22/2017
  [プログラムによる RichTextBox での選択の変更](../../../../docs/framework/wpf/controls/change-selection-in-a-richtextbox-programmatically.md)  
  [RichTextBox コンテンツの保存、読み込み、および印刷](../../../../docs/framework/wpf/controls/how-to-save-load-and-print-richtextbox-content.md)  
  [カスタム コンテキスト メニューを RichTextBox に配置する](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)  
- [方法: RichTextBox の既定のコンテンツ ホストの置換](http://msdn.microsoft.com/en-us/dec1b2ce-9ca5-4bb2-bf54-f8a80a3c8beb)  
+ [方法: RichTextBox の既定のコンテンツ ホストの置換](http://msdn.microsoft.com/library/dec1b2ce-9ca5-4bb2-bf54-f8a80a3c8beb)  
   
 ## <a name="see-also"></a>参照  
  <xref:System.Windows.Controls.TextBox>  

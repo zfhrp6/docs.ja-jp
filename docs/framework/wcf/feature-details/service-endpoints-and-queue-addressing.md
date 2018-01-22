@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5605c90d5f63e0ed80ac5a47b36781c45b687cba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8488e802ee191c261b65388d48bd26aa37d18206
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>サービス エンドポイントとキューのアドレス指定
 ここでは、キューから読み取るサービスをクライアントがアドレス指定するしくみと、サービス エンドポイントがキューにマップされるしくみについて説明します。 キューに置かれた [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションの標準的な配置を次の図に示します。  
@@ -41,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でのキューのアドレス指定は、次のパターンに基づきます。  
   
- net.msmq:// \<*ホスト名*>/[プライベート/] \<*キュー名*>  
+ net.msmq: // \<*host-name*> / [private/] \<*queue-name*>  
   
  それぞれの文字について以下に説明します。  
   
@@ -57,7 +57,7 @@ ms.lasthandoff: 12/22/2017
   
  キュー アドレスは、メッセージを読み取るリスナーにより、リッスン URI として使用されます。 つまり、キュー アドレスは TCP ソケットのリッスン ポートと同じです。  
   
- キューから読み取りを行うエンドポイントは、ServiceHost を開いたときにあらかじめ指定されているスキームと同じスキームを使用して、キューのアドレスを指定する必要があります。 例については、次を参照してください。[ネット MSMQ バインディング](../../../../docs/framework/wcf/samples/net-msmq-binding.md)と[メッセージ キュー統合バインディング サンプル](http://msdn.microsoft.com/en-us/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)です。  
+ キューから読み取りを行うエンドポイントは、ServiceHost を開いたときにあらかじめ指定されているスキームと同じスキームを使用して、キューのアドレスを指定する必要があります。 例については、次を参照してください。[ネット MSMQ バインディング](../../../../docs/framework/wcf/samples/net-msmq-binding.md)と[メッセージ キュー統合バインディング サンプル](http://msdn.microsoft.com/library/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)です。  
   
 ### <a name="multiple-contracts-in-a-queue"></a>キュー内の複数のコントラクト  
  キュー内のメッセージは、さまざまなコントラクトを実装している可能性があります。 この場合、すべてのメッセージを正常に読み取って処理するためには、次のいずれかの処置を行う必要があります。  
@@ -83,9 +83,9 @@ ms.lasthandoff: 12/22/2017
   
 |WCF の URI ベースのキュー アドレス|UseActiveDirectory プロパティ|QueueTransferProtocol プロパティ|結果の MSMQ 形式名|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
-|Net.msmq://\<マシン名 >/プライベート/abc|False (既定値)|Native (既定値)|DIRECT=OS:machine-name\private$\abc|  
-|Net.msmq://\<マシン名 >/プライベート/abc|False|SRMP|DIRECT=http://machine/msmq/private$/abc|  
-|Net.msmq://\<マシン名 >/プライベート/abc|True|ネイティブ|PUBLIC=some-guid (キューの GUID)|  
+|Net.msmq://\<machine-name>/private/abc|False (既定値)|Native (既定値)|DIRECT=OS:machine-name\private$\abc|  
+|Net.msmq://\<machine-name>/private/abc|False|SRMP|DIRECT=http://machine/msmq/private$/abc|  
+|Net.msmq://\<machine-name>/private/abc|True|ネイティブ|PUBLIC=some-guid (キューの GUID)|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>配信不能キューまたは有害メッセージ キューからのメッセージの読み取り  
  ターゲット キューのサブキューである有害メッセージ キューからメッセージを読み取るには、サブキューのアドレスを使用して `ServiceHost` を開きます。  
@@ -98,14 +98,14 @@ ms.lasthandoff: 12/22/2017
   
  カスタムの配信不能キューを使用する場合は、配信不能キューをローカル コンピューターに配置する必要があります。 そのため、配信不能キューの URI は次の形式に限定されます。  
   
- net.msmq://localhost/[プライベート/] \<*カスタムの配信不能文字-キュー-名*>。  
+ net.msmq: //localhost/ [private/]  \<*custom-dead-letter-queue-name*>.  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、受信するすべてのメッセージが、リッスンしている特定のキューにアドレス指定されているかどうかを確認します。 メッセージの送信先キューとメッセージが置かれているキューが一致しない場合、サービスはメッセージを処理しません。 この問題には、配信不能キューをリッスンしているサービスが対処する必要があります。これは、配信不能キューにあるメッセージが、他の場所に配信されることになっていたメッセージであるためです。 配信不能キューや有害メッセージ キューからメッセージを読み取るには、`ServiceBehavior` パラメーターが設定された <xref:System.ServiceModel.AddressFilterMode.Any> を使用する必要があります。 例については、次を参照してください。[配信不能キュー](../../../../docs/framework/wcf/samples/dead-letter-queues.md)です。  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding とサービスのアドレス指定  
  `MsmqIntegrationBinding` は、従来の MSMQ アプリケーションとの通信に使用されます。 既存の MSMQ アプリケーションとの相互運用を容易にするために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は形式名のアドレス指定のみをサポートしています。 そのため、このバインディングを使用して送信されるメッセージは、次の URI スキームに従う必要があります。  
   
- msmq.formatname:\<*MSMQ 形式名*>>  
+ msmq.formatname:\<*MSMQ-format-name*>>  
   
  MSMQ によって指定されたフォームの MSMQ 形式名は、[メッセージがキューに関する](http://go.microsoft.com/fwlink/?LinkId=94837)です。  
   

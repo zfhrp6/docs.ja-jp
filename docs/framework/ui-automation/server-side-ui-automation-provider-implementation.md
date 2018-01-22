@@ -18,11 +18,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 03ebb5a8193d3376d40fa830f13ab9324846ba2c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d25f561444cd672e8842711025f4299c375d6bb4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>サーバー側 UI オートメーション プロバイダーの実装
 > [!NOTE]
@@ -59,7 +59,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="provider-interfaces"></a>プロバイダーのインターフェイス  
  すべての [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロバイダーは、次のインターフェイスのいずれかを実装する必要があります。  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |<xref:System.Windows.Automation.Provider.IRawElementProviderSimple>|コントロール パターンやプロパティのサポートを含む、ウィンドウでホストされる単純なコントロールの機能を提供します。|  
 |<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|<xref:System.Windows.Automation.Provider.IRawElementProviderSimple>から継承します。 フラグメント内のナビゲーション、フォーカスの設定、要素の四角形領域の復帰などを含む、複雑なコントロールの要素の機能を追加します。|  
@@ -67,7 +67,7 @@ ms.lasthandoff: 12/22/2017
   
  次のインターフェイスは追加機能を提供しますが、実装する必要はありません。  
   
-|インターフェイス|説明|  
+|Interface|説明|  
 |---------------|-----------------|  
 |<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|プロバイダーがイベントの要求を追跡できるようにします。|  
 |<xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride>|フラグメントの [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー内のウィンドウ ベースの要素の位置を変更できるようにします。|  
@@ -187,5 +187,5 @@ ms.lasthandoff: 12/22/2017
  [UI オートメーション プロバイダーからのイベントの発生](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
  [UI オートメーション フラグメント プロバイダーでのナビゲーションの有効化](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
  [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [単純なプロバイダーのサンプル](http://msdn.microsoft.com/en-us/c10a6255-e8dc-494b-a051-15111b47984a)  
- [フラグメント プロバイダーのサンプル](http://msdn.microsoft.com/en-us/778ef1bc-8610-4bc9-886e-aeff94a8a13e)
+ [単純なプロバイダーのサンプル](http://msdn.microsoft.com/library/c10a6255-e8dc-494b-a051-15111b47984a)  
+ [フラグメント プロバイダーのサンプル](http://msdn.microsoft.com/library/778ef1bc-8610-4bc9-886e-aeff94a8a13e)

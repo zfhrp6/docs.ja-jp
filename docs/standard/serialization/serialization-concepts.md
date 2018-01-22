@@ -11,11 +11,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 76946ed1b714ba0bd01c79bb772524c84cf8b2ca
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 84bb6b4d80d59a09a1daa808cbfed60c2464ec19
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="serialization-concepts"></a>シリアル化の概念
 シリアル化が必要となる理由について考えてみます。 最も重要な理由として、オブジェクトの状態をストレージ メディアに保持し、後の段階で同一コピーを再作成できるようにすることと、アプリケーション ドメイン間でオブジェクトを値渡しで送信することの 2 つが挙げられます。 たとえば、シリアル化は ASP.NET でのセッション状態を保存したり、オブジェクトを Windows フォームのクリップボードにコピーしたりするために使用されます。 また、リモート処理でオブジェクトを 1 つのアプリケーション ドメインから別のアプリケーション ドメインに値渡しするためにも使用されます。
@@ -38,7 +38,7 @@ ms.lasthandoff: 12/23/2017
  [バイナリ シリアル化](../../../docs/standard/serialization/binary-serialization.md)  
  共通言語ランタイムに付属しているバイナル シリアル化機構について説明します。  
   
- [リモート オブジェクト](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58)  
+ [リモート オブジェクト](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)  
  .NET Framework でリモート通信に利用できるさまざまな通信方法について説明します。  
   
  [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)  

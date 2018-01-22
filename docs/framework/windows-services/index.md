@@ -22,11 +22,11 @@ author: ghogen
 ms.author: ghogen
 manager: douge
 ms.workload: dotnet
-ms.openlocfilehash: 17d4c5908929f02077b1eb48932a50e83f48d076
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 325e43f4b1734bc6ab8753285e5069f36b0fda51
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="developing-windows-service-applications"></a>Windows サービス アプリケーションの開発
 Microsoft[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]または Microsoft [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] SDK、簡単にサービスを作成できますが、サービスとしてインストールされているアプリケーションを作成しています。 この種類のアプリケーションには、Windows サービスが呼び出されます。 フレームワーク機能を使用することができますサービスを作成、したり、インストールし、開始、停止、および動作を制御します。  
@@ -57,5 +57,5 @@ Microsoft[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]または Microsoft [
  <xref:System.ServiceProcess.ServiceInstaller>  
  機能について説明します、<xref:System.ServiceProcess.ServiceInstaller>と共に使用されるクラス、<xref:System.ServiceProcess.ServiceProcessInstaller>クラスをインストールおよびサービスをアンインストールします。  
   
- [NIB テンプレートからプロジェクトの作成](http://msdn.microsoft.com/en-us/7c36d86a-6b79-4480-8228-0f925f1204b2)  
+ [NIB テンプレートからプロジェクトの作成](http://msdn.microsoft.com/library/7c36d86a-6b79-4480-8228-0f925f1204b2)  
  プロジェクトをについて説明します。 この章でし、それらの間を選択する方法で使用される型。

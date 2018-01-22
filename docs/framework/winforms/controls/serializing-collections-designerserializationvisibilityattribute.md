@@ -23,11 +23,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 060f411dfc7c3153fdf0e0d6e19781f0d60b141b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0267020f7e7a52e92b05a0bda0ee397e5c3393fc
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-serializing-collections-of-standard-types-with-the-designerserializationvisibilityattribute"></a>チュートリアル: DesignerSerializationVisibilityAttribute を使用した、標準データ型のコレクションのシリアル化
 カスタム コントロールは、プロパティとして、コレクションを公開して場合があります。 このチュートリアルを使用する方法を示します、<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>クラスをデザイン時にコレクションをシリアル化する方法を制御します。 適用する、<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content>値をコレクション プロパティにより、プロパティをシリアル化することです。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 12/22/2017
  このトピックの「単一のリストとしてコードをコピーするに、を参照してください。[する方法: シリアル化するコレクションの標準の型、designerserializationvisibilityattribute を](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
@@ -47,9 +47,9 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-a-control-with-a-serializable-collection"></a>シリアル化可能なコレクションを使用してコントロールを作成するには  
   
-1.  いう Windows コントロール ライブラリ プロジェクトを作成する`SerializationDemoControlLib`です。 詳細については、次を参照してください。 [Windows コントロール ライブラリ テンプレート](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4)です。  
+1.  いう Windows コントロール ライブラリ プロジェクトを作成する`SerializationDemoControlLib`です。 詳細については、次を参照してください。 [Windows コントロール ライブラリ テンプレート](http://msdn.microsoft.com/library/722f4e2d-1310-4ed5-8f33-593337ab66b4)です。  
   
-2.  名前を変更`UserControl1`に`SerializationDemoControl`です。 詳細については、次を参照してください。[する方法: 識別子の名前を変更](http://msdn.microsoft.com/en-us/2430f732-2b70-4516-8cf6-a7bb71cc9724)です。  
+2.  名前を変更`UserControl1`に`SerializationDemoControl`です。 詳細については、次を参照してください。[する方法: 識別子の名前を変更](http://msdn.microsoft.com/library/2430f732-2b70-4516-8cf6-a7bb71cc9724)です。  
   
 3.  **プロパティ**ウィンドウで、設定の値、<xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType>プロパティを`10`です。  
   
@@ -61,7 +61,7 @@ ms.lasthandoff: 12/22/2017
     |--------------|---------------|  
     |**Multiline**|`true`|  
     |**ドッキング ステーション**|<xref:System.Windows.Forms.DockStyle.Fill>|  
-    |**スクロール バー**|<xref:System.Windows.Forms.ScrollBars.Vertical>|  
+    |**ScrollBars**|<xref:System.Windows.Forms.ScrollBars.Vertical>|  
     |**ReadOnly**|`true`|  
   
 6.  **コード エディター**、という名前の文字列配列フィールドは宣言`stringsValue`で`SerializationDemoControl`です。  

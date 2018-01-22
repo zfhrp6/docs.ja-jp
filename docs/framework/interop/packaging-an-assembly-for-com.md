@@ -28,11 +28,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 72b9237a8abeee936070799c5087abc6b45ff3b5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 79c0d8ff3d6f66ad3abf23cd371f86bb74edf78e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="packaging-an-assembly-for-com"></a>COM 用のアセンブリのパッケージ化
 COM 開発者がアプリケーションに組み込むときに役立つ、マネージ型に関する情報を次に示します。  
@@ -47,7 +47,7 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
   
      クラス インターフェイス (COM 相互運用機能により生成されたインターフェイス) を実装したマネージ クラスには、バージョン管理に関する制約が生じる場合があります。  
   
-     クラス インターフェイスの使用に関するガイドラインについては、「[クラス インターフェイスの概要](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)」を参照してください。  
+     クラス インターフェイスの使用に関するガイドラインについては、「[クラス インターフェイスの概要](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024)」を参照してください。  
   
 -   配置に関する注意事項  
   
@@ -69,7 +69,7 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
   
      どの機構を選択した場合でも、提供するアセンブリ内で定義されたパブリック型だけが、生成されるタイプ ライブラリに含まれます。  
   
-     タイプ ライブラリは、個別のファイルとしてパッケージ化することも、.NET ベースのアプリケーションに Win32 リソースとして埋め込むこともできます。 Microsoft Visual Basic 6.0 ではこの作業は自動的に実行されますが、[!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] を使用する場合は、手動でタイプ ライブラリを埋め込む必要があります。 手順については、「[How to: Embed Type Libraries as Win32 Resources in .NET-Based Applications](http://msdn.microsoft.com/en-us/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)」(方法: タイプ ライブラリを Win32 リソースとして .NET ベースのアプリケーションに埋め込む) を参照してください。  
+     タイプ ライブラリは、個別のファイルとしてパッケージ化することも、.NET ベースのアプリケーションに Win32 リソースとして埋め込むこともできます。 Microsoft Visual Basic 6.0 ではこの作業は自動的に実行されますが、[!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] を使用する場合は、手動でタイプ ライブラリを埋め込む必要があります。 手順については、「[How to: Embed Type Libraries as Win32 Resources in .NET-Based Applications](http://msdn.microsoft.com/library/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)」(方法: タイプ ライブラリを Win32 リソースとして .NET ベースのアプリケーションに埋め込む) を参照してください。  
   
 <a name="cpconpackagingassemblyforcomanchor1"></a>   
 ## <a name="type-library-exporter"></a>タイプ ライブラリ エクスポーター  
@@ -94,8 +94,8 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
  <xref:System.Runtime.InteropServices.ITypeLibConverter>  
  [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  [要件 (相互運用のための .NET 型の)](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
- [クラス インターフェイスの概要](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)  
+ [クラス インターフェイスの概要](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024)  
  [アセンブリのセキュリティに関する考慮事項](../../../docs/framework/app-domains/assembly-security-considerations.md)  
  [Tlbexp.exe (タイプ ライブラリ エクスポーター)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
  [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)  
- [方法: タイプ ライブラリを Win32 リソースとしてアプリケーションに埋め込む](http://msdn.microsoft.com/en-us/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)
+ [方法: タイプ ライブラリを Win32 リソースとしてアプリケーションに埋め込む](http://msdn.microsoft.com/library/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)
