@@ -11,11 +11,11 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
 ms.workload: dotnetcore
-ms.openlocfilehash: f5815e1ad2a36a8ef3279f6ff83465dba9ec5d50
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cf65dc80f135badcb1580726a12a9ae9d94ae3d7
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -58,43 +58,43 @@ dotnet new [-h|--help]
 
 このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -l` を使います。 次の表は、.NET Core 2.0 SDK にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
 
-|テンプレートの説明                          | テンプレート名  | 言語     |
-|----------------------------------------------|----------------|---------------|
-| コンソール アプリケーション                          | コンソール        | [C#], F#, VB  |
-| クラス ライブラリ                                | classlib       | [C#], F#, VB  |
-| 単体テスト プロジェクト                            | mstest         | [C#], F#, VB  |
-| xUnit テスト プロジェクト                           | xunit          | [C#], F#, VB  |
-| ASP.NET Core 空                           | Web            | [C#], F#      |
-| ASP.NET Core Web アプリ (モデル ビュー コントローラー) | mvc            | [C#], F#      |
-| ASP.NET Core Web アプリ                         | razor          | [C#]          |
-| Angular 付きの ASP.NET Core                    | angular        | [C#]          |
-| React.js 付きの ASP.NET Core                   | react          | [C#]          |
-| React.js および Redux 付きの ASP.NET Core         | reactredux     | [C#]          |
-| ASP.NET Core Web API                         | webapi         | [C#], F#      |
-| global.json file                             | globaljson     |               |
-| Nuget 構成                                 | nugetconfig    |               |
-| Web 構成                                   | webconfig      |               |
-| ソリューション ファイル                                | sln            |               |
-| Razor ページ                                   | ページ           |               |
-| MVC/ViewImports                              | viewimports    |               |
-| MVC ViewStart                                | viewstart      |               |
+|テンプレートの説明                          | テンプレート名 | 言語     |
+|----------------------------------------------|---------------|---------------|
+| コンソール アプリケーション                          | `console`     | [C#], F#, VB  |
+| クラス ライブラリ                                | `classlib`    | [C#], F#, VB  |
+| 単体テスト プロジェクト                            | `mstest`      | [C#], F#, VB  |
+| xUnit テスト プロジェクト                           | `xunit`       | [C#], F#, VB  |
+| ASP.NET Core 空                           | `web`         | [C#], F#      |
+| ASP.NET Core Web アプリ (モデル ビュー コントローラー) | `mvc`         | [C#], F#      |
+| ASP.NET Core Web アプリ                         | `razor`       | [C#]          |
+| Angular 付きの ASP.NET Core                    | `angular`     | [C#]          |
+| React.js 付きの ASP.NET Core                   | `react`       | [C#]          |
+| React.js および Redux 付きの ASP.NET Core         | `reactredux`  | [C#]          |
+| ASP.NET Core Web API                         | `webapi`      | [C#], F#      |
+| global.json file                             | `globaljson`  |               |
+| Nuget 構成                                 | `nugetconfig` |               |
+| Web 構成                                   | `webconfig`   |               |
+| ソリューション ファイル                                | `sln`         |               |
+| Razor ページ                                   | `page`        |               |
+| MVC/ViewImports                              | `viewimports` |               |
+| MVC ViewStart                                | `viewstart`   |               |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -all` を使います。 次の表は、.NET Core 1.x SDK にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
 
-|テンプレートの説明  | テンプレート名  | 言語 |
-|----------------------|----------------|-----------|
-| コンソール アプリケーション  | コンソール        | [C#], F#  |
-| クラス ライブラリ        | classlib       | [C#], F#  |
-| 単体テスト プロジェクト    | mstest         | [C#], F#  |
-| xUnit テスト プロジェクト   | xunit          | [C#], F#  |
-| ASP.NET Core 空   | Web            | [C#]      |
-| ASP.NET Core Web アプリ | mvc            | [C#], F#  |
-| ASP.NET Core Web API | webapi         | [C#]      |
-| Nuget 構成         | nugetconfig    |           |
-| Web 構成           | webconfig      |           |
-| ソリューション ファイル        | sln            |           |
+|テンプレートの説明  | テンプレート名 | 言語 |
+|----------------------|---------------|-----------|
+| コンソール アプリケーション  | `console`     | [C#], F#  |
+| クラス ライブラリ        | `classlib`    | [C#], F#  |
+| 単体テスト プロジェクト    | `mstest`      | [C#], F#  |
+| xUnit テスト プロジェクト   | `xunit`       | [C#], F#  |
+| ASP.NET Core 空   | `web`         | [C#]      |
+| ASP.NET Core Web アプリ | `mvc`         | [C#], F#  |
+| ASP.NET Core Web API | `webapi`      | [C#]      |
+| Nuget 構成         | `nugetconfig` |           |
+| Web 構成           | `webconfig`   |           |
+| ソリューション ファイル        | `sln`         |           |
 
 ---
 
@@ -310,7 +310,7 @@ dotnet new [-h|--help]
 
 `dotnet new classlib -lang VB -o MyLibrary`
 
-現在のディレクトリに新しい ASP.NET Core C# MVC アプリケーション プロジェクトを作成します。 .NET Core 2.0 を対象にする認証はありません。
+現在のディレクトリに新しい ASP.NET Core C# MVC アプリケーション プロジェクトを作成します。.NET Core 2.0 を対象にする認証はありません。
 
 `dotnet new mvc -au None -f netcoreapp2.0`
 
