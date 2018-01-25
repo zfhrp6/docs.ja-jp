@@ -151,6 +151,9 @@
 ##### [dotnet add package](core/tools/dotnet-add-package.md)
 ##### [dotnet remove package](core/tools/dotnet-remove-package.md)
 ### [global.json](core/tools/global-json.md)
+## [.NET Core の追加ツール](core/additional-tools/index.md)
+### [WCF Web サービス リファレンス プロバイダー](core/additional-tools/wcf-web-service-reference-guide.md)
+### [XML シリアライザー ジェネレーター](core/additional-tools/xml-serializer-generator.md)
 ## [.NET Framework からの移植](core/porting/index.md)
 ### [.NET Core のプロジェクトの整理](core/porting/project-structure.md)
 ### [サードパーティの依存関係の分析](core/porting/third-party-deps.md)
@@ -259,6 +262,7 @@
 ### [バージョン管理](csharp/versioning.md)
 ## [C# に関するトピック](csharp/how-to/index.md)
 ### [方法: `String.Split` を使用して文字列を解析する](csharp/how-to/parse-strings-using-split.md)
+### [文字列を連結する方法](csharp/how-to/concatenate-multiple-strings.md)
 <!-- End of C# Concepts section -->
 ## [.NET Compiler Platform SDK (Roslyn API)](csharp/roslyn-sdk/)
 ## [C# プログラミング ガイド](csharp/programming-guide/)
