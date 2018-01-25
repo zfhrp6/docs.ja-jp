@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: da287ea76e2300abf1b00f3bbab5897520eb0828
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
-ms.translationtype: HT
+ms.openlocfilehash: 8e4c1b06e5a3a7717b99379fd9bca2c5a8a14a6a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migration-considerations-entity-framework"></a>移行に関する注意事項 (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework には、既存のアプリケーションにとっていくつかの利点があります。 特に重要な利点の 1 つが、概念モデルを使用して、アプリケーションで使用するデータ構造をデータ ソースのスキーマから分離できることです。 これにより、ストレージ モデルやデータ ソース自体の将来の変更が容易になり、その変更を補うための変更をアプリケーションに加える必要がなくなります。 使用する利点の詳細についての[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]を参照してください[Entity Framework の概要](../../../../../docs/framework/data/adonet/ef/overview.md)と[Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md)です。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/17/2018
  既存アプリケーションの [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] への移行パスは、アプリケーションの種類と既存のデータ アクセス計画の両方に依存します。 ただし、以下の作業は、既存のアプリケーションを [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] に移行する際に常に実行する必要があります。  
   
 > [!NOTE]
->  [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)] 以降で Entity Data Model ツールを使用すると、これらの作業はすべて自動的に実行されます。 詳細については、次を参照してください。[する方法: Entity Data Model ウィザードを使用して](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d)です。  
+>  [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)] 以降で Entity Data Model ツールを使用すると、これらの作業はすべて自動的に実行されます。 詳細については、次を参照してください。[する方法: Entity Data Model ウィザードを使用して](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d)です。  
   
 1.  アプリケーションをアップグレードします。  
   
@@ -48,12 +48,12 @@ ms.lasthandoff: 01/17/2018
   
 2.  モデルおよびマッピングを定義します。  
   
-     モデル ファイルとマッピング ファイルでは、概念モデルのエンティティ、データ ソースの構造 (テーブル、ストアド プロシージャ、ビューなど)、およびエンティティとデータ ソース構造との間のマッピングを定義します。 詳細については、次を参照してください。[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
+     モデル ファイルとマッピング ファイルでは、概念モデルのエンティティ、データ ソースの構造 (テーブル、ストアド プロシージャ、ビューなど)、およびエンティティとデータ ソース構造との間のマッピングを定義します。 詳細については、次を参照してください。[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/library/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
   
-     ストレージ モデルに定義されている型は、データ ソースのオブジェクトと名前が一致している必要があります。 また、既存のアプリケーションでデータがオブジェクトとして公開されている場合は、概念モデルに定義するエンティティおよびプロパティの名前を既存のデータ クラスおよびプロパティの名前に一致させる必要があります。 詳細については、次を参照してください。[する方法: モデリングをカスタマイズし、カスタム オブジェクトを操作するマッピング ファイル](http://msdn.microsoft.com/en-us/bb40c4db-0121-4e45-a167-8fb06707a708)です。  
+     ストレージ モデルに定義されている型は、データ ソースのオブジェクトと名前が一致している必要があります。 また、既存のアプリケーションでデータがオブジェクトとして公開されている場合は、概念モデルに定義するエンティティおよびプロパティの名前を既存のデータ クラスおよびプロパティの名前に一致させる必要があります。 詳細については、次を参照してください。[する方法: モデリングをカスタマイズし、カスタム オブジェクトを操作するマッピング ファイル](http://msdn.microsoft.com/library/bb40c4db-0121-4e45-a167-8fb06707a708)です。  
   
     > [!NOTE]
-    >  Entity Data Model デザイナーを使用すると、概念モデルのエンティティの名前を既存のオブジェクトに合わせて変更できます。 詳細については、次を参照してください。 [Entity Data Model Designer](http://msdn.microsoft.com/en-us/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf)です。  
+    >  Entity Data Model デザイナーを使用すると、概念モデルのエンティティの名前を既存のオブジェクトに合わせて変更できます。 詳細については、次を参照してください。 [Entity Data Model Designer](http://msdn.microsoft.com/library/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf)です。  
   
 3.  接続文字列を定義します。  
   
@@ -61,10 +61,10 @@ ms.lasthandoff: 01/17/2018
   
 4.  [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] プロジェクトを構成します。  
   
-     [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] アセンブリへの参照とモデル ファイルおよびマッピング ファイルを [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] プロジェクトに追加する必要があります。 これらのマッピング ファイルをプロジェクトに追加することで、接続文字列で指定された場所にアプリケーションと共に配置されるようにすることができます。 詳細については、次を参照してください。[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)です。  
+     [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] アセンブリへの参照とモデル ファイルおよびマッピング ファイルを [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] プロジェクトに追加する必要があります。 これらのマッピング ファイルをプロジェクトに追加することで、接続文字列で指定された場所にアプリケーションと共に配置されるようにすることができます。 詳細については、次を参照してください。[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)です。  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>既存のオブジェクトを含むアプリケーションの注意点  
- [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4 以降では、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は POCO ("plain old" CLR object、永続化非依存オブジェクトとも呼ばれます) をサポートしています。 ほとんどの場合、既存のオブジェクトを少し変更すれば [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] で使用できます。 詳細については、次を参照してください。 [POCO エンティティの操作](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。 アプリケーションを移行することも、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]し、Entity Framework ツールによって生成されるデータ クラスを使用します。 詳細については、次を参照してください。[する方法: Entity Data Model ウィザードを使用して](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d)です。  
+ [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4 以降では、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は POCO ("plain old" CLR object、永続化非依存オブジェクトとも呼ばれます) をサポートしています。 ほとんどの場合、既存のオブジェクトを少し変更すれば [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] で使用できます。 詳細については、次を参照してください。 [POCO エンティティの操作](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。 アプリケーションを移行することも、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]し、Entity Framework ツールによって生成されるデータ クラスを使用します。 詳細については、次を参照してください。[する方法: Entity Data Model ウィザードを使用して](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d)です。  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>ADO.NET プロバイダーを使用するアプリケーションの注意点  
  [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]SqlClient などのプロバイダーを使用すると、表形式のデータを返すためのデータ ソースをクエリできます。 データを読み込むことも、[!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]データセット。 以下は、既存の [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] プロバイダーを使用するアプリケーションをアップグレードする場合の注意点です。  
@@ -85,7 +85,7 @@ ms.lasthandoff: 01/17/2018
   
  クエリの結果を列挙して、データ バインドをサポートする <xref:System.Windows.Forms.DataGridView> などのコントロールにデータを表示するアプリケーションは、そのコントロールを <xref:System.Data.Objects.ObjectQuery%601> の結果にバインドするように変更できます。  
   
- 詳細については、次を参照してください。[コントロールへのバインド オブジェクト](http://msdn.microsoft.com/en-us/2fd34855-929b-4303-a91e-4bb69d958f2b)です。  
+ 詳細については、次を参照してください。[コントロールへのバインド オブジェクト](http://msdn.microsoft.com/library/2fd34855-929b-4303-a91e-4bb69d958f2b)です。  
   
  [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] データ ソース コントロール  
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]でのデータ バインディングを簡略化するためのデータ ソース コントロールが含まれています[!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Web アプリケーションです。 詳細については、次を参照してください。 [Entity Framework データ ソース コントロール](http://msdn.microsoft.com/library/1f09af00-9578-4744-a029-765710a3c83f)です。  
@@ -94,17 +94,17 @@ ms.lasthandoff: 01/17/2018
  以下は、特定の種類のアプリケーションを Entity Framework に移行する場合の注意点です。  
   
  データ サービスを公開するアプリケーション  
- Windows Communication Foundation (WCF) をベースとする Web サービスやアプリケーションは、XML 要求/応答メッセージ形式を使用して基になるデータ ソースのデータを公開します。 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、バイナリ、XML、または WCF データ コントラクトのシリアル化を使用してエンティティ オブジェクトをシリアル化できます。 バイナリ シリアル化と WCF シリアル化ではオブジェクト グラフの完全なシリアル化がサポートされています。 詳細については、次を参照してください。 [N 層アプリケーションの構築](http://msdn.microsoft.com/en-us/9439d2ba-6b5f-44e8-be65-8a442d922cbb)です。  
+ Windows Communication Foundation (WCF) をベースとする Web サービスやアプリケーションは、XML 要求/応答メッセージ形式を使用して基になるデータ ソースのデータを公開します。 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、バイナリ、XML、または WCF データ コントラクトのシリアル化を使用してエンティティ オブジェクトをシリアル化できます。 バイナリ シリアル化と WCF シリアル化ではオブジェクト グラフの完全なシリアル化がサポートされています。 詳細については、次を参照してください。 [N 層アプリケーションの構築](http://msdn.microsoft.com/library/9439d2ba-6b5f-44e8-be65-8a442d922cbb)です。  
   
  XML データを使用するアプリケーション  
  オブジェクトのシリアル化では、作成することができます[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]データ サービス。 XML データを使用するアプリケーション (AJAX ベースのインターネット アプリケーションなど) にデータを提供する  データ サービスを作成できます。 このような場合は [!INCLUDE[ssAstoria](../../../../../includes/ssastoria-md.md)] の使用を検討してください。 これらのデータ サービスは、Entity Data Model に基づいている、標準の Representational State Transfer (REST) HTTP アクションを使用してエンティティ データへの動的アクセスを提供およびなど、GET、PUT、および投稿をします。 詳細については、次を参照してください。 [WCF データ サービス 4.5](../../../../../docs/framework/data/wcf/index.md)です。  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] はネイティブ XML データ型をサポートしていません。 そのため、XML 列を持つテーブルにエンティティをマップすると、その XML 列に対応するエンティティ プロパティは文字列になります。 このような場合は、オブジェクトを切断して XML としてシリアル化することができます。 詳細については、次を参照してください。[オブジェクトのシリアル化](http://msdn.microsoft.com/en-us/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99)です。  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] はネイティブ XML データ型をサポートしていません。 そのため、XML 列を持つテーブルにエンティティをマップすると、その XML 列に対応するエンティティ プロパティは文字列になります。 このような場合は、オブジェクトを切断して XML としてシリアル化することができます。 詳細については、次を参照してください。[オブジェクトのシリアル化](http://msdn.microsoft.com/library/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99)です。  
   
  アプリケーションで XML データのクエリ機能が必要な場合も、LINQ to XML を使用して LINQ クエリを活用することができます。 詳細については、次を参照してください。 [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)です。  
   
  状態を保持するアプリケーション  
- [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Web アプリケーションは、Web ページまたはユーザー セッションの状態を維持頻繁にする必要があります。 内のオブジェクト、<xref:System.Data.Objects.ObjectContext>インスタンスまたはサーバーで、セッション状態のクライアント ビュー ステートに格納し、後で取得して新しいオブジェクト コンテキストに再アタッチします。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+ [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Web アプリケーションは、Web ページまたはユーザー セッションの状態を維持頻繁にする必要があります。 内のオブジェクト、<xref:System.Data.Objects.ObjectContext>インスタンスまたはサーバーで、セッション状態のクライアント ビュー ステートに格納し、後で取得して新しいオブジェクト コンテキストに再アタッチします。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
   
 ## <a name="see-also"></a>参照  
  [配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  

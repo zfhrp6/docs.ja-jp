@@ -13,19 +13,19 @@ ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
 caps.latest.revision: "33"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7d3d59f63102ccf3c1d54e4028635c8daad56164
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: 11aab223ee70ff69d8c3470e747738bfe44540ea
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="langversion-c-compiler-options"></a>/langversion (C# コンパイラ オプション)
+# <a name="-langversion-c-compiler-options"></a>-langversion (C# コンパイラ オプション)
 コンパイラが、選択した C# 言語仕様に含まれている構文のみを受け入れるようにします。  
   
 ## <a name="syntax"></a>構文  
   
 ```console  
-/langversion:option  
+-langversion:option  
 ```  
   
 ## <a name="arguments"></a>引数  
@@ -52,13 +52,13 @@ ms.lasthandoff: 12/06/2017
 
   
 ## <a name="remarks"></a>コメント  
- C# アプリケーションで参照されるメタデータは、**/langversion** コンパイラ オプションの対象になりません。  
+ C# アプリケーションで参照されるメタデータは、**-langversion** コンパイラ オプションの対象になりません。  
   
- C# コンパイラのバージョンごとに言語仕様の拡張機能が含まれているため、**/langversion** は、コンパイラの以前のバージョンと同じ機能を提供しません。  
+ C# コンパイラのバージョンごとに言語仕様の拡張機能が含まれているため、**-langversion** は、コンパイラの以前のバージョンと同じ機能を提供しません。  
  
  さらに、C# バージョンの更新は、一般的に主要な .Net Framework のリリースと一致しますが、新しい構文および機能は必ずしも特定のフレームワーク バージョンに関連付けられていません。 新機能では、C# リビジョンと共にリリースされる新しいコンパイラの更新プログラムを確実に必要としますが、各特定機能には、独自の最小の .Net API または共通言語ランタイムの要件があり、この要件によって、NuGet パッケージやその他のライブラリを含めることで下位レベルのフレームワークで実行できるようになります。
   
- 使用する **/langversion** の設定に関係なく、現在のバージョンの共通言語ランタイムを使用して .exe や .dll を作成します。 1 つの例外は、**/langversion:ISO-1** の下で機能する、フレンド アセンブリと [/moduleassemblyname (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md) です。  
+ 使用する **-langversion** の設定に関係なく、現在のバージョンの共通言語ランタイムを使用して .exe や .dll を作成します。 1 つの例外は、**-langversion:ISO-1** の下で機能する、フレンド アセンブリと [-moduleassemblyname (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md) です。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -72,7 +72,7 @@ ms.lasthandoff: 12/06/2017
   
  このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.LanguageVersion%2A>」を参照してください。  
     
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)  
  

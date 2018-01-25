@@ -13,27 +13,27 @@ ms.assetid: fb7475d3-e6a6-4e6d-b86c-69e7a74c854b
 caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e02f82bb0dd2952bd2f192af7ff233194a045619
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c0a8cc66609fe542fc7db166cd208cfcedb204b8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="checked-c-compiler-options"></a>/checked (C# コンパイラ オプション)
-**/checked** オプションは、データ型の範囲外の値になる整数の算術ステートメントと、[checked](../../../csharp/language-reference/keywords/checked.md) または [unchecked](../../../csharp/language-reference/keywords/unchecked.md) キーワードのスコープ内に含まれない整数の算術ステートメントで、ランタイム例外が発生するかどうかを指定します。  
+# <a name="-checked-c-compiler-options"></a>-checked (C# コンパイラ オプション)
+**-checked** オプションは、データ型の範囲外の値になる整数の算術ステートメントと、[checked](../../../csharp/language-reference/keywords/checked.md) または [unchecked](../../../csharp/language-reference/keywords/unchecked.md) キーワードのスコープ内に含まれない整数の算術ステートメントで、ランタイム例外が発生するかどうかを指定します。  
   
 ## <a name="syntax"></a>構文  
   
 ```console  
-/checked[+ | -]  
+-checked[+ | -]  
 ```  
   
 ## <a name="remarks"></a>コメント  
- `checked` または `unchecked` キーワードのスコープ内に含まれる整数の算術ステートメントは、**/checked** オプションの作用の対象になりません。  
+ `checked` または `unchecked` キーワードのスコープ内に含まれる整数の算術ステートメントは、**-checked** オプションの作用の対象になりません。  
   
- `checked` または `unchecked` キーワードのスコープ内に含まれない整数の算術ステートメントがデータ型の範囲外の値になり、**/checked+** (**/checked**) がコンパイル時に使用されている場合は、そのステートメントでランタイム例外が発生します。 **/checked-** がコンパイル時に使用された場合、そのステートメントでランタイム例外は発生しません。  
+ `checked` または `unchecked` キーワードのスコープ内に含まれない整数の算術ステートメントがデータ型の範囲外の値になり、**-checked+** (**-checked**) がコンパイル時に使用されている場合は、そのステートメントでランタイム例外が発生します。 **-checked-** がコンパイル時に使用された場合、そのステートメントでランタイム例外は発生しません。  
   
- このオプションの既定値は **/checked-** です。 **/checked-** を使用する 1 つのシナリオとして、大規模なアプリケーションをビルドする場合があります。 場合によって、このようなアプリケーションのビルドには自動化ツールが使用されます。そのようなツールで **/checked** が自動的に + に設定されることがあります。 **/checked-**を指定することにより、ツールのグローバルな既定値を無視することができます。  
+ このオプションの既定値は **-checked-** です。 **-checked-** を使用する 1 つのシナリオとして、大規模なアプリケーションをビルドする場合があります。 場合によって、このようなアプリケーションのビルドには自動化ツールが使用されます。そのようなツールで **-checked** が自動的に + に設定されることがあります。 **-checked-** を指定することにより、ツールのグローバルな既定値を無視することができます。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -48,12 +48,12 @@ ms.lasthandoff: 11/21/2017
  プログラムによってこのコンパイラ オプションにアクセスする方法については、<xref:VSLangProj80.CSharpProjectConfigurationProperties3.CheckForOverflowUnderflow%2A> に関する記事をご覧ください。  
   
 ## <a name="example"></a>例  
- 次のコマンドは `t2.cs` をコンパイルします。 コマンドで使用されている `/checked` は、ファイル内の整数の算術ステートメントのうち、`checked` または `unchecked` キーワードのスコープ内に含まれず、データ型の範囲外の値になるステートメントで、ランタイム例外が発生することを指定します。  
+ 次のコマンドは `t2.cs` をコンパイルします。 コマンドで使用されている `-checked` は、ファイル内の整数の算術ステートメントのうち、`checked` または `unchecked` キーワードのスコープ内に含まれず、データ型の範囲外の値になるステートメントで、ランタイム例外が発生することを指定します。  
   
 ```console  
-csc t2.cs /checked  
+csc t2.cs -checked  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)  
