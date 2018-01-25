@@ -1,12 +1,8 @@
 ---
 title: "動的言語ランタイムの概要 | Microsoft Docs"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - dynamic language runtime
@@ -19,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 78de2016e02c242fcf6ec454a56a4beff41c2d12
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 54ea1f9f071d749058450487d25bdff13ca04549
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="dynamic-language-runtime-overview"></a>動的言語ランタイムの概要
 *動的言語ランタイム* (DLR) とは、動的言語の一連のサービスを共通言語ランタイム (CLR) に追加するランタイム環境です。 DLR により、.NET Framework 上で実行される動的言語の開発や、静的に型指定された言語への動的機能の追加が簡単になります。  
@@ -52,10 +48,10 @@ ms.lasthandoff: 12/22/2017
   
  `scriptobj.Count += 1;`  
   
- CLR と同様に、DLR は .NET Framework の一部であり、.NET Framework および Visual Studio のインストール パッケージに付属しています。 オープン ソース バージョンの DLR は、[CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028) の Web サイトからダウンロードすることもできます。  
+ CLR と同様に、DLR は .NET Framework の一部であり、.NET Framework および Visual Studio のインストール パッケージに付属しています。 オープン ソース バージョンの DLR は、GitHub の [IronLanguages/dlr](https://github.com/IronLanguages/dlr) リポジトリからダウンロードすることもできます。  
   
 > [!NOTE]
->  オープン ソース バージョンの DLR には、Visual Studio および .NET Framework に含まれている DLR の機能がすべて組み込まれています。 また、言語実装者向けの追加サポートも用意されています。 詳細については、[CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028) の Web サイトのドキュメントを参照してください。  
+>  オープン ソース バージョンの DLR には、Visual Studio および .NET Framework に含まれている DLR の機能がすべて組み込まれています。 また、言語実装者向けの追加サポートも用意されています。 詳細については、GitHub の [IronLanguages/dlr](https://github.com/IronLanguages/dlr) リポジトリのドキュメントを参照してください。 
   
  以下は、DLR を使用して開発された言語の例です。  
   
@@ -98,7 +94,7 @@ DLR のアーキテクチャ
  DLR では、呼び出しサイトのバインダーを使用して、.NET Framework だけでなく、Silverlight や COM などの他のインフラストラクチャやサービスとも通信します。 バインダーは、言語のセマンティクスをカプセル化し、式ツリーを使用して呼び出しサイトの操作を実行する方法を指定します。 これにより、DLR を使用する動的言語および静的に型指定された言語で、ライブラリを共有し、DLR がサポートするすべてのテクノロジを利用できるようになります。  
   
 ## <a name="dlr-documentation"></a>DLR に関するドキュメント  
- 言語に動的な動作を追加するためにオープン ソース バージョンの DLR を使用する方法、および .NET Framework で動的言語の使用を有効にする方法については、[CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028) の Web サイトを参照してください。  
+ 言語に動的な動作を追加するためにオープン ソース バージョンの DLR を使用する方法、または .NET Framework で動的言語の使用を有効にする方法については、GitHub の [IronLanguages/dlr](https://github.com/IronLanguages/dlr/tree/master/Docs) のドキュメントを参照してください。  
   
 ## <a name="see-also"></a>参照  
  <xref:System.Dynamic.ExpandoObject>  

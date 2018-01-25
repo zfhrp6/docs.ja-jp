@@ -1,25 +1,20 @@
 ---
 title: "拡張可能オブジェクト"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords: extensible objects [WCF]
 ms.assetid: bc88cefc-31fb-428e-9447-6d20a7d452af
-caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e7d7b5245130a7581efbf9badb0699f57a6743dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a1bb341d9e164b1ce232f238f8ddf4a0cf807363
+ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="extensible-objects"></a>拡張可能オブジェクト
 拡張可能オブジェクト パターンは、既存のランタイム クラスに新しい機能を付加して拡張したり、オブジェクトに新しい状態を追加するために使用します。 このようなオブジェクトを実際に拡張することにより、処理の段階に応じて、共通の拡張可能オブジェクトに定義された共有の状態や機能にアクセスすることができます。  
@@ -48,15 +43,15 @@ where T : IExtensibleObject<T>
   
  拡張機能は、このコレクションに追加されたときに<xref:System.ServiceModel.IExtension%601.Attach%2A>コレクションに入る前と呼びます。 拡張機能は、コレクションから削除されたときに<xref:System.ServiceModel.IExtension%601.Detach%2A>は、削除された後に呼び出されます。 (該当する同期されている場合) ことを意味の拡張機能にのみ、その中にコレクション内で見つかったにカウントできるこの間隔は<xref:System.ServiceModel.IExtension%601.Attach%2A>と<xref:System.ServiceModel.IExtension%601.Detach%2A>です。  
   
- <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> や <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> に渡すオブジェクトは、<xref:System.ServiceModel.IExtension%601> である必要はなく、任意のオブジェクトを渡すことができますが、返される拡張は <xref:System.ServiceModel.IExtension%601> です。  
+ <xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> や <xref:System.ServiceModel.IExtensionCollection%601.Find%2A> に渡すオブジェクトは、<xref:System.ServiceModel.IExtension%601> である必要はなく、任意のオブジェクトを渡すことができますが、返される拡張は <xref:System.ServiceModel.IExtension%601> です。  
   
- コレクション内の拡張機能がない場合、 <xref:System.ServiceModel.IExtension%601>、<xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A>は null を返しますと<xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A>空のコレクションを返します。 複数の拡張機能を実装する場合<xref:System.ServiceModel.IExtension%601>、<xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A>それらのいずれかを返します。 <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> から返される値はスナップショットです。  
+ コレクション内の拡張機能がない場合、 <xref:System.ServiceModel.IExtension%601>、<xref:System.ServiceModel.IExtensionCollection%601.Find%2A>は null を返しますと<xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A>空のコレクションを返します。 複数の拡張機能を実装する場合<xref:System.ServiceModel.IExtension%601>、<xref:System.ServiceModel.IExtensionCollection%601.Find%2A>それらのいずれかを返します。 <xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> から返される値はスナップショットです。
   
  主な使い方として、次の 2 つのシナリオが考えられます。 1 つ目のシナリオでは、型ベースのディクショナリとして <xref:System.ServiceModel.IExtensibleObject%601.Extensions%2A> プロパティを使用し、オブジェクトに状態を追加します。これは、別のコンポーネントが型に基づいて検索できます。  
   
  2 つ目のシナリオでは、<xref:System.ServiceModel.IExtension%601.Attach%2A> プロパティおよび <xref:System.ServiceModel.IExtension%601.Detach%2A> プロパティを使用し、イベントへの登録や、状態の遷移の監視など、カスタムの動作にオブジェクトを参加させます。  
   
- <xref:System.ServiceModel.IExtensionCollection%601> インターフェイスは、型を基準にした <xref:System.ServiceModel.IExtension%601> の取得を可能にする <xref:System.ServiceModel.IExtension%601> オブジェクトのコレクションです。 <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A?displayProperty=nameWithType> は、指定された型の <xref:System.ServiceModel.IExtension%601> オブジェクトのうち、最も新しく追加されたものを返します。  
+ <xref:System.ServiceModel.IExtensionCollection%601> インターフェイスは、型を基準にした <xref:System.ServiceModel.IExtension%601> の取得を可能にする <xref:System.ServiceModel.IExtension%601> オブジェクトのコレクションです。 <xref:System.ServiceModel.IExtensionCollection%601.Find%2A?displayProperty=nameWithType> は、指定された型の <xref:System.ServiceModel.IExtension%601> オブジェクトのうち、最も新しく追加されたものを返します。  
   
 ### <a name="extensible-objects-in-windows-communication-foundation"></a>Windows Communication Foundation の拡張可能オブジェクト  
  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には次の 4 つの拡張可能オブジェクトが組み込まれています。  

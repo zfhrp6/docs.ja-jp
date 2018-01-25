@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 4443609c9494ca93cbc5934dd62fedf434599962
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.openlocfilehash: 7847d21e3529de1a84ef17486710d10256003ce9
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="c-quick-starts"></a>C# クイック スタート #
 
@@ -36,9 +36,15 @@ Hello World レッスンに続くすべてのクイック スタートは、オ�
 
 ## <a name="branches-and-loopsbranches-and-loopsyml"></a>[分岐とループ](branches-and-loops.yml)
 
-「[分岐とループ](branches-and-loops.yml)」クイック スタートでは、変数に格納された値に基づいて、コード実行のさまざまなパスを選択する作業の基礎を説明します。 プログラムが決定して異なる操作を選択する上で基本となる、制御フローの基礎を学習します。 このクイック スタートも[コンピューターでローカルで実行するために](branches-and-loops-local.md)使用できます。
+「[分岐とループ](branches-and-loops.yml)」クイック スタートでは、変数に格納された値に基づいて、コード実行のさまざまなパスを選択する作業の基礎について説明します。 プログラムが決定して異なる操作を選択する上で基本となる、制御フローの基礎を学習します。 このクイック スタートも[コンピューターでローカルで実行するために](branches-and-loops-local.md)使用できます。
 
 この入門レッスンでは、「[Hello World](hello-world.yml)」および「[C# における数値](numbers-in-csharp.yml)」の各レッスンが終了していることを前提としています。
+
+## <a name="interpolated-stringsinterpolated-stringsyml"></a>[補間文字列](interpolated-strings.yml)
+
+[補間文字列](interpolated-strings.yml)クイック スタートでは、大きな文字列に式を挿入する方法を示します。 補間式を定義する方法、1 つ以上の補間式を含む補間文字列から結果文字列を作成する方法、結果文字列に含まれる式の書式設定、列の幅、および配置を制御する方法を学習します。 
+
+この入門レッスンでは、「[Hello World](hello-world.yml)」、「[C# における数値](numbers-in-csharp.yml)」、および「[分岐とループ](branches-and-loops.yml)」の各レッスンが終了していることを前提としています。
 
 ## <a name="list-collectionlist-collectionyml"></a>[リスト コレクション](list-collection.yml)
 

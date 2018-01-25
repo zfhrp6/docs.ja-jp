@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 4e3d86153d4192e04e55fb9e99ef588b45511560
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 823edadf7d387d1a509edbdf839ac6eeece5d41f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-service-publishing"></a>WCF サービス発行
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントで構成される初期の開発環境から、テストの目的でアプリケーションを実際に実稼働環境に配置する場合に役立ちます。 最終的な配置計画を確定する前に、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行を使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスが正しく動作し、発行の準備ができていることを確認できます。 また、テスト用のさまざまなターゲットの場所に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを配置することもできます。  
@@ -30,7 +30,7 @@ ms.lasthandoff: 12/22/2017
   
 -   配信サービス ライブラリ  
   
- これらのサービス テンプレートを検索するを選択する**ファイル** -> **新しいプロジェクト** -> **Visual Basic**または**Visual c#**  ->  **WCF**です。 この場所 (WCF ワークフロー サービス アプリケーションと WCF サービス アプリケーションを含む) では、他の WCF テンプレートの使用を発行できます[ワンクリックで web アプリケーションの発行](https://msdn.microsoft.com/en-us/library/dd465337\(v=vs.110\).aspx)です。  
+ これらのサービス テンプレートを検索するを選択する**ファイル** -> **新しいプロジェクト** -> **Visual Basic**または**Visual c#**  ->  **WCF**です。 この場所 (WCF ワークフロー サービス アプリケーションと WCF サービス アプリケーションを含む) では、他の WCF テンプレートの使用を発行できます[ワンクリックで web アプリケーションの発行](https://msdn.microsoft.com/library/dd465337\(v=vs.110\).aspx)です。  
   
  サービスは、次のターゲットの場所に発行できます。  
   
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  サービス プロジェクトを開き、選択**ビルド**->**発行\<プロジェクト名 >** メイン メニュー でプロジェクトを右クリックしてまたは**ソリューション エクスプ ローラー** をクリック**発行**です。  
   
-3.  **発行**ウィンドウが表示されます。 クリックして、**しています.**. サービスの配置先にするターゲットの場所を指定します。 ローカルの IIS、ファイル システム、または FTP サイトにアプリケーションを配置するを選択することができます。 ローカル IIS にアプリケーションを配置する場合、web サイトを選択してクリックして、その下にある web アプリケーションを作成、、**新しい Web アプリケーションの作成**右上隅にあるアイコン。  
+3.  **発行**ウィンドウが表示されます。 クリックして、**しています**. サービスの配置先にするターゲットの場所を指定します。 ローカルの IIS、ファイル システム、または FTP サイトにアプリケーションを配置するを選択することができます。 ローカル IIS にアプリケーションを配置する場合、web サイトを選択してクリックして、その下にある web アプリケーションを作成、、**新しい Web アプリケーションの作成**右上隅にあるアイコン。  
   
 4.  クリックした後**発行**メイン ウィンドウで、Visual Studio が、指定したターゲットの場所にアプリケーションが配置され、Web.config、.svc、およびアセンブリ ファイルをコピー先のディレクトリにコピーします。 である必要があります。 .Svc ファイルの名前は"projectname.servicename.svc"です。 サービスが正常にパブリッシュされた後、Visual Studio の出力 ウィンドウで、「ハイパーリンク"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName... に接続する」のようなホットリンクが表示されます。 Ctrl キーを押しながらリンクをクリックすると、Visual Studio の内側にブラウザー ページが開き、サービス ディレクトリ構造が表示されます。  
   

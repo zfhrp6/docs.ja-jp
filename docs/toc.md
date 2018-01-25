@@ -258,6 +258,7 @@
 ### [コードのドキュメントの作成](csharp/codedoc.md)
 ### [バージョン管理](csharp/versioning.md)
 ## [C# に関するトピック](csharp/how-to/index.md)
+### [方法: `String.Split` を使用して文字列を解析する](csharp/how-to/parse-strings-using-split.md)
 <!-- End of C# Concepts section -->
 ## [.NET Compiler Platform SDK (Roslyn API)](csharp/roslyn-sdk/)
 ## [C# プログラミング ガイド](csharp/programming-guide/)

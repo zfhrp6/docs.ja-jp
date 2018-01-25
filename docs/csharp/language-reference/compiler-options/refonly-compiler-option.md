@@ -8,22 +8,23 @@ f1_keywords: /refonly
 helpviewer_keywords:
 - /refonly compiler option [C#]
 - -refonly compiler option [C#]
+- refonly compiler option [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c4c745416bda56f5f1b1b4ab8267274d972a990d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 25b0f6e024e194dff641fd5069755d0ea112a50b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="refonly-c-compiler-options"></a>/refonly (C# コンパイラ オプション)
+# <a name="-refonly-c-compiler-options"></a>-refonly (C# コンパイラ オプション)
 
-**/Refonly**オプションは、参照アセンブリをプライマリ出力として、実装アセンブリではなく出力をすることを示します。 `/refonly` パラメーターは、参照アセンブリを実行できない場合に、PDB の出力を暗黙的に無効にします。
+**-refonly** オプションは、実装アセンブリではなく、参照アセンブリをプライマリ出力として出力することを示します。 `-refonly` パラメーターは、参照アセンブリを実行できない場合に、PDB の出力を暗黙的に無効にします。
 
 ## <a name="syntax"></a>構文
 
 ```console
-/refonly
+-refonly
 ```
 
 ## <a name="remarks"></a>コメント
@@ -40,7 +41,7 @@ ms.lasthandoff: 11/21/2017
 - すべての仮想メソッドが保持されます。 明示的なインターフェイスの実装が保持されます。 明示的に実装されたプロパティとイベントが保持されます (これらのアクセサーが仮想のため保持されます)。
 - 構造体のすべてのフィールドが保持されます  (これは、post-C#-7.1 絞り込みの候補です)。
 
-`/refonly` オプションと [`/refout`](refout-compiler-option.md) オプションは同時に指定できません。
+`-refonly` オプションと [`-refout`](refout-compiler-option.md) オプションは同時に指定できません。
 
 ## <a name="see-also"></a>関連項目
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  

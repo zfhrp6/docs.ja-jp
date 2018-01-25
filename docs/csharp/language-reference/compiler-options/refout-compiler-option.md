@@ -11,20 +11,20 @@ helpviewer_keywords:
 - -refout compiler option [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: dc78165fc8f273948111c174ae0bf0af6591a8ab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fbae6f461304c37ba2ef10da16b5d520377bb225
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="refout-c-compiler-options"></a>/refout (C# コンパイラ オプション)
+# <a name="-refout-c-compiler-options"></a>/refout (C# コンパイラ オプション)
 
-**/refout** オプションは、参照アセンブリを出力するファイル パスを指定します。 Emit API では、これを `metadataPeStream` に変換します。
+**-refout** オプションは、参照アセンブリを出力するファイル パスを指定します。 Emit API では、これを `metadataPeStream` に変換します。
 
 ## <a name="syntax"></a>構文
 
 ```console
-/refout:filepath
+-refout:filepath
 ```
 
 ## <a name="arguments"></a>引数
@@ -45,8 +45,8 @@ ms.lasthandoff: 11/21/2017
 - すべての仮想メソッドが保持されます。 明示的なインターフェイスの実装が保持されます。 明示的に実装されたプロパティとイベントが保持されます (これらのアクセサーが仮想のため保持されます)。
 - 構造体のすべてのフィールドが保持されます  (これは、post-C#-7.1 絞り込みの候補です)。
 
-`/refout` オプションと [`/refonly`](refonly-compiler-option.md) オプションは同時に指定できません。
+`-refout` オプションと [`-refonly`](refonly-compiler-option.md) オプションは同時に指定できません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)

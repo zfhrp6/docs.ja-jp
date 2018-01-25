@@ -13,19 +13,19 @@ ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 caps.latest.revision: "46"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5d35a91805f6189f60803056c541ce8344c024f0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6a7a505f955f1faf73198b3670754dbb492ff638
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="platform-c-compiler-options"></a>/platform (C# コンパイラ オプション)
+# <a name="-platform-c-compiler-options"></a>-platform (C# コンパイラ オプション)
 アセンブリを実行できる共通言語ランタイム (CLR) のバージョンを指定します。  
   
 ## <a name="syntax"></a>構文  
   
 ```console  
-/platform:string  
+-platform:string  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -48,13 +48,13 @@ ms.lasthandoff: 12/23/2017
   
  64 ビット Windows オペレーティング システムの場合:  
   
--   **/platform:x86** でコンパイルされたアセンブリは、WOW64 の下で動作する 32 ビット CLR で実行されます。  
+-   **-platform:x86** でコンパイルされたアセンブリは、WOW64 の下で動作する 32 ビット CLR で実行されます。  
   
--   **/platform:anycpu** でコンパイルでされた DLL は、ロード先のプロセスと同じ CLR で実行されます。  
+-   **-platform:anycpu** でコンパイルでされた DLL は、ロード先のプロセスと同じ CLR で実行されます。  
   
--   **/platform:anycpu** でコンパイルされた実行可能ファイルは、64 ビット CLR で実行されます。  
+-   **-platform:anycpu** でコンパイルされた実行可能ファイルは、64 ビット CLR で実行されます。  
   
--   **/platform:anycpu32bitpreferred** でコンパイルされた実行可能ファイルは、32 ビット CLR で実行されます。  
+-   **-platform:anycpu32bitpreferred** でコンパイルされた実行可能ファイルは、32 ビット CLR で実行されます。  
   
  **anycpu32bitpreferred** 設定は、実行可能 (.EXE) ファイルに対してのみ有効で、.NET Framework 4.5 が必要です。  
   
@@ -68,15 +68,15 @@ ms.lasthandoff: 12/23/2017
   
 3.  **プラットフォーム ターゲット** プロパティを変更し、.NET Framework 4.5 を対象とするプロジェクトでは、**[32 ビットを優先]** チェック ボックスをオンまたはオフにします。  
   
- **注 /platform** は、Visual C# Express では開発環境で使用できません。  
+ **注 -platform** は、Visual C# Express では開発環境で使用できません。  
   
  このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>」をご覧ください。  
   
 ## <a name="example"></a>例  
- 次の例では、**/platform** オプションを使用して、Windows 64 ビット オペレーティング システムで 64 ビット CLR によりアプリケーションを実行することを指定する方法を示します。  
+ 次の例では、**-platform** オプションを使用して、Windows 64 ビット オペレーティング システムで 64 ビット CLR によりアプリケーションを実行することを指定する方法を示します。  
   
 ```console  
-csc /platform:anycpu filename.cs  
+csc -platform:anycpu filename.cs  
 ```  
   
 ## <a name="see-also"></a>参照  

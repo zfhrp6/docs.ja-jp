@@ -13,19 +13,19 @@ ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
 caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d1341383d48a28966a0873f3124cdc3567ec3f76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d2a6c27454cc8f95b9662d6ae688471849c5cee0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="bugreport-c-compiler-options"></a>/bugreport (C# コンパイラ オプション)
+# <a name="-bugreport-c-compiler-options"></a>-bugreport (C# コンパイラ オプション)
 後で分析を実行できるように、デバッグ情報をファイルに出力するよう指定します。  
   
 ## <a name="syntax"></a>構文  
   
 ```console  
-/bugreport:file  
+-bugreport:file  
 ```  
   
 ## <a name="arguments"></a>引数  
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/21/2017
  バグ レポートを作成するファイルの名前。  
   
 ## <a name="remarks"></a>コメント  
- **/bugreport** オプションを指定すると、次の情報が `file` に出力されます。  
+ **-bugreport** オプションを指定すると、次の情報が `file` に出力されます。  
   
 -   コンパイルのすべてのソース コード ファイルのコピー。  
   
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/21/2017
   
 -   問題点の修正方法の説明。プロンプトが表示されます。  
   
- このオプションに **/errorreport:prompt** または **/errorreport:send** を指定すると、ファイルに保存される情報が Microsoft Corporation に送信されます。  
+ このオプションに **-errorreport:prompt** または **-errorreport:send** を指定すると、ファイルに保存される情報が Microsoft Corporation に送信されます。  
   
  すべてのソース コード ファイルのコピーが `file` に出力されるため、問題があると思われるコードは、できるだけ小さなプログラムで再生成することをお勧めします。  
   
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/21/2017
   
  生成されたファイルの内容によってソース コードが公開され、意図しない情報開示につながる場合があることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
- [/errorreport (c# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)  
+ [-errorreport (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)

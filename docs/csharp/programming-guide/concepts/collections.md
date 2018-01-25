@@ -8,11 +8,11 @@ ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
 caps.latest.revision: "6"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4955b3d7048b4dfee23fbcf6eeaed995ebf4f1be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 271939b869433742f8b5720ba05955169ea5c410
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="collections-c"></a>コレクション (C#)
 多くのアプリケーションで、関連するオブジェクトのグループの作成および管理が必要になります。 オブジェクトをグループ化するには、オブジェクトの配列を作成する方法と、オブジェクトのコレクションを作成する方法があります。  
@@ -184,7 +184,7 @@ public class Galaxy
 ## <a name="kinds-of-collections"></a>コレクションの種類 
  .NET Framework は、多くの共通のコレクションを提供します。 各コレクションの型は、固有の目的に合わせてデザインされています。  
   
- このセクションでは、次の共通のコレクション クラスをいつくか説明します:  
+ このセクションでは、次の共通のコレクション クラスをいくつか説明します:  
   
 -   <xref:System.Collections.Generic> クラス  
   
@@ -546,7 +546,7 @@ public class Color
 ```  
 
 <a name="BKMK_Iterators"></a> 
-##  <a name="iterators"></a>反復子  
+##  <a name="iterators"></a>Iterators  
  *反復子*は、コレクションに対するカスタム イテレーションを実行するために使用されます。 反復子は、メソッドまたは `get` アクセサーのいずれかです。 反復子は、[yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントを使用して、コレクションの各要素を 1 回に 1 つ返します。  
   
  [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して、反復子を呼び出します。 `foreach` ループの各イテレーションは、反復子を呼び出します。 `yield return` ステートメントが反復子に到達すると、式が戻され、コードの現在の位置が保持されます。 次回、反復子が呼び出されると、この位置から実行が再開されます。  
@@ -580,14 +580,14 @@ private static IEnumerable<int> EvenSequence(
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
  [プログラミングの概念 (C#)](../../../csharp/programming-guide/concepts/index.md)  
  [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
  [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
  [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
  [コレクションとデータ構造体](../../../standard/collections/index.md)  
- [作成して、コレクションの操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [コレクションの作成と操作](http://msdn.microsoft.com/library/2065398e-eb1a-4821-9188-75f16e42e069)  
  [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)  
  [コレクション内での比較と並べ替え](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
  [ジェネリック コレクションを使用する状況](../../../standard/collections/when-to-use-generic-collections.md)  

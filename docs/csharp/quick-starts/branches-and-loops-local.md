@@ -4,16 +4,16 @@ description: "分岐とループに関するこのクイック スタートで�
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/31/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 7954475616b122f8bb96ad00d05b476b3beeb52c
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.openlocfilehash: 609c8625b19025a20c1da1e767870eafbab4c4a0
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/20/2018
 ---
 # <a name="branches-and-loops"></a>分岐とループ
 
@@ -254,7 +254,7 @@ C# 言語における `if` ステートメントとループ構造を見てき�
 
 これで "分岐とループ" に関するクイック スタートは終了です。
 
-続けて独自の開発環境で[配列とコレクション](arrays-and-collections.md)のクイック スタートに進むことができます。
+続けて独自の開発環境で[挿入文字列](interpolated-strings-local.md)のクイック スタートに進むことができます。
 
 次のトピックでこれらの概念の詳細を学習できます。
 

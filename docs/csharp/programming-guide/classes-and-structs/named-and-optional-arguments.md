@@ -19,11 +19,11 @@ ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
 caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e6fceb569a79b5988171f06ae6c09d86b5fc667d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e4c57efa4027af5dd6b0476eb65845a39fc0b691
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>名前付き引数と省略可能な引数 (C# プログラミング ガイド)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] では、名前付き引数と省略可能な引数が導入されています。 *名前付き引数*を使用すると、パラメーター リストのパラメーターの位置ではなく、パラメーター名に引数を関連付けることによって、特定のパラメーターの引数を指定できます。 *省略可能な引数*を使用すると、一部のパラメーターの引数を省略できます。 両方の手法をメソッド、インデクサー、コンストラクター、デリゲートで使用できます。  
@@ -33,29 +33,29 @@ ms.lasthandoff: 11/21/2017
  名前付きパラメーターと省略可能なパラメーターを併用する場合、省略可能なパラメーターのリストにあるパラメーターのうち、ごく一部のパラメーターに対してのみ引数を指定できます。 この機能により、Microsoft Office オートメーション API などの COM インターフェイスの呼び出しが大幅に円滑化します。  
   
 ## <a name="named-arguments"></a>名前付き引数  
- 名前付き引数を使用すると、呼び出されたメソッドのパラメーター リストに記述されているパラメーターの順序を記憶したり、検索したりする必要がなくなります。 各引数のパラメーターはパラメーター名で指定できます。 たとえば、注文の詳細を出力する関数 (など、販売者名、注文数と製品名) 関数によって定義された順序で、位置による引数を送信することによって、標準の方法で呼び出すことができます。
+ 名前付き引数を使用すると、呼び出されたメソッドのパラメーター リストに記述されているパラメーターの順序を記憶したり、検索したりする必要がなくなります。 各引数のパラメーターはパラメーター名で指定できます。 たとえば、注文の詳細 (販売者の名前、注文番号、製品名など) を出力する関数は標準的な方法で呼び出すことができます。その関数で定義されている順序で、引数を位置によって渡します。
   
  `PrintOrderDetails("Gift Shop", 31, "Red Mug");`
   
- パラメーターの順序を覚えていないの名前を把握する場合は、任意の順序で引数を送信することができます。  
+ パラメーターの順序を覚えていなくても、パラメーターの名前がわかっていれば、任意の順序で引数を渡すことができます。  
   
  `PrintOrderDetails(orderNum: 31, productName: "Red Mug", sellerName: "Gift Shop");`
   
  `PrintOrderDetails(productName: "Red Mug", sellerName: "Gift Shop", orderNum: 31);`
   
- また、名前付き引数を使用すると、各引数が表すものが識別しやすくなり、コードが読みやすくなります。 次のメソッドの例で、 `sellerName` null または空白にすることはできません。 両方と`sellerName`と`productName`文字列型の場合は、位置による引数を送信する、代わりにすると良い名前付き引数を使用して、2 つのあいまいさを解消し、コードを読むすべてのユーザーの混乱を削減します。
+ また、名前付き引数を使用すると、各引数が表すものが識別しやすくなり、コードが読みやすくなります。 次のメソッド例では、`sellerName` は null にしたり、空白にしたりできません。 `sellerName` と `productName` はいずれも文字列型であり、引数を位置によって渡すより、名前付き引数を使用するほうが合理的です。2 つのあいまいさが取り除かれ、コードを読む人の混乱が少なくなります。
   
- 有効な名前付き引数の位置指定引数を使用すると、限り 
+ 名前付き引数は、位置引数と共に使用するとき、次の場合において有効となります 
 
-- 位置指定引数を受け取らず、している従わないまたは
+- 後ろに位置引数が続かない。
 
  `PrintOrderDetails("Gift Shop", 31, productName: "Red Mug");`
 
-- _以降で c# 7.2_、正しい位置で使用されています。 次の例で、パラメーターで`orderNum`正しい位置にあるが、明示的に指定されていません。
+- _C# 7.2 以降_。正しい位置で使用されます。 下の例では、パラメーター `orderNum` は正しい位置にありますが、明示的に名前が付けられていません。
 
  `PrintOrderDetails(sellerName: "Gift Shop", 31, productName: "Red Mug");`
   
- ただし、順序不定な名前付き引数は、位置指定引数が続いている場合に有効ではありません。
+ 後ろに位置引数が続く場合、順序が正しくない名前付き引数は無効になります。
 
  ```csharp
  // This generates CS1738: Named argument specifications must appear after all fixed arguments have been specified.
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/21/2017
  ```
   
 ## <a name="example"></a>例  
- 次のコードでは、いくつかの追加機能と共に、このセクションの例を実装します。  
+ 次のコードでは、このセクションの例の実装し、さらにいくつかのプログラミングを追加しています。  
   
  [!code-csharp[csProgGuideNamedAndOptional#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_1.cs)]  
   
@@ -106,7 +106,7 @@ ExampleMethod の省略可能なパラメーター
 ## <a name="com-interfaces"></a>COM インターフェイス  
  名前付き引数と省略可能な引数を動的オブジェクトやその他の拡張機能のサポートと併用すると、Office オートメーション API などの COM API との相互運用性が大幅に向上します。  
   
- たとえば、Microsoft Office Excel [Range](http://go.microsoft.com/fwlink/?LinkId=148196) インターフェイスの [AutoFormat](http://go.microsoft.com/fwlink/?LinkId=148201) メソッドには 7 つのパラメーターがあります。それらはすべて省略可能です。 これらのパラメーターを次の例に示します。  
+ たとえば、Microsoft Office Excel [Range](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range(v=office.15).aspx) インターフェイスの [AutoFormat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.autoformat(v=office.15).aspx) メソッドには 7 つのパラメーターがあります。それらはすべて省略可能です。 これらのパラメーターを次の例に示します。  
   
  ![AutoFormat メソッドについての IntelliSense によるクイック ヒント](../../../csharp/programming-guide/classes-and-structs/media/autoformat_parameters.png "AutoFormat_Parameters")  
 AutoFormat パラメーター  
@@ -133,7 +133,7 @@ AutoFormat パラメーター
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: Office プログラミングで名前付き引数と省略可能な引数を使用する](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)  
  [dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)  
  [コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)  

@@ -13,29 +13,29 @@ ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 28c2cdc26d32d98e617a0c4b8cd282d2fbc87f4d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0127f8982d4b8c487a7e243025052e3eb9a5ff75
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="warnaserror-c-compiler-options"></a>/warnaserror (C# コンパイラ オプション)
-**/warnaserror+** オプションは、すべての警告をエラーとして扱います  
+# <a name="-warnaserror-c-compiler-options"></a>-warnaserror (C# コンパイラ オプション)
+**-warnaserror+** オプションは、すべての警告をエラーとして扱います  
   
 ## <a name="syntax"></a>構文  
   
 ```console  
-/warnaserror[<U>+</U> | -][:warning-list]  
+-warnaserror[<U>+</U> | -][:warning-list]  
 ```  
   
 ## <a name="remarks"></a>コメント  
  通常は警告として報告されるすべてのメッセージが、代わりにエラーとして報告され、ビルド プロセスが停止します (出力ファイルはビルドされません)。  
   
- 既定では、**/warnaserror-** が有効になっているため、警告により出力ファイルの生成が妨げられることはありません。 **/warnaserror** は **/warnaserror+** と同じで、警告がエラーとして扱われます。  
+ 既定では、**-warnaserror-** が有効になっているため、警告により出力ファイルの生成が妨げられることはありません。 **-warnaserror** は **-warnaserror+** と同じで、警告がエラーとして扱われます。  
   
  必要に応じて、いくつかの特定の警告のみをエラーとして扱う場合は、エラーとして扱う警告番号のコンマ区切りのリストを指定できます。  
   
- コンパイラで表示する警告のレベルを指定するには、[/warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) を使用します。 特定の警告を無効にするには、[/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) を使用します。  
+ コンパイラで表示する警告のレベルを指定するには、[-warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) を使用します。 特定の警告を無効にするには、[-nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) を使用します。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
@@ -51,10 +51,10 @@ ms.lasthandoff: 11/21/2017
  `in.cs` をコンパイルして、コンパイラで警告を表示させないようにします。  
   
 ```console  
-csc /warnaserror in.cs  
-csc /warnaserror:642,649,652 in.cs  
+csc -warnaserror in.cs  
+csc -warnaserror:642,649,652 in.cs  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
