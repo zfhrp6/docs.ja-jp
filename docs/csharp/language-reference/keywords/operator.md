@@ -12,27 +12,27 @@ ms.assetid: 59218cce-e90e-42f6-a6bb-30300981b86a
 caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8fae5487d5daa5ada52d45919598d1abd217aee9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1d035319318a710ccee62a0c64ce5981767a21ca
+ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/20/2018
 ---
-# <a name="operator-c-reference"></a><span data-ttu-id="6a6b8-102">operator (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="6a6b8-102">operator (C# Reference)</span></span>
-<span data-ttu-id="6a6b8-103">`operator` キーワードを使用して、組み込みの演算子をオーバーロードしたり、クラスまたは構造体宣言内でユーザー定義の変換を行ったりすることができます。</span><span class="sxs-lookup"><span data-stu-id="6a6b8-103">Use the `operator` keyword to overload a built-in operator or to provide a user-defined conversion in a class or struct declaration.</span></span>  
+# <a name="operator-c-reference"></a><span data-ttu-id="dcd1a-102">operator (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="dcd1a-102">operator (C# Reference)</span></span>
+<span data-ttu-id="dcd1a-103">`operator` キーワードを使用して、組み込みの演算子をオーバーロードしたり、クラスまたは構造体宣言内でユーザー定義の変換を行ったりすることができます。</span><span class="sxs-lookup"><span data-stu-id="dcd1a-103">Use the `operator` keyword to overload a built-in operator or to provide a user-defined conversion in a class or struct declaration.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6a6b8-104">例</span><span class="sxs-lookup"><span data-stu-id="6a6b8-104">Example</span></span>  
- <span data-ttu-id="6a6b8-105">小数を処理する非常に簡単なクラスを次に示します。</span><span class="sxs-lookup"><span data-stu-id="6a6b8-105">The following is a very simplified class for fractional numbers.</span></span> <span data-ttu-id="6a6b8-106">このクラスは、小数の加算および乗算を実行するために + 演算子および * 演算子をオーバーロードします。また、小数型を倍精度浮動小数点型に変換する変換演算子も提供します。</span><span class="sxs-lookup"><span data-stu-id="6a6b8-106">It overloads the + and * operators to perform fractional addition and multiplication, and also provides a conversion operator that converts a Fraction type to a double type.</span></span>  
+## <a name="example"></a><span data-ttu-id="dcd1a-104">例</span><span class="sxs-lookup"><span data-stu-id="dcd1a-104">Example</span></span>  
+ <span data-ttu-id="dcd1a-105">小数を処理する非常に簡単なクラスを次に示します。</span><span class="sxs-lookup"><span data-stu-id="dcd1a-105">The following is a very simplified class for fractional numbers.</span></span> <span data-ttu-id="dcd1a-106">このクラスは、小数の加算および乗算を実行するために `+` 演算子および `*` 演算子をオーバーロードします。また、`Fraction` 型を `double` 型に変換する変換演算子も提供します。</span><span class="sxs-lookup"><span data-stu-id="dcd1a-106">It overloads the `+` and `*` operators to perform fractional addition and multiplication, and also provides a conversion operator that converts a `Fraction` type to a `double` type.</span></span>  
   
  [!code-csharp[csrefKeywordsConversion#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/operator_1.cs)]  
   
-## <a name="c-language-specification"></a><span data-ttu-id="6a6b8-107">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="6a6b8-107">C# Language Specification</span></span>  
+## <a name="c-language-specification"></a><span data-ttu-id="dcd1a-107">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="dcd1a-107">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="6a6b8-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="6a6b8-108">See Also</span></span>  
- [<span data-ttu-id="6a6b8-109">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="6a6b8-109">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
- [<span data-ttu-id="6a6b8-110">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="6a6b8-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="6a6b8-111">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="6a6b8-111">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
- [<span data-ttu-id="6a6b8-112">implicit</span><span class="sxs-lookup"><span data-stu-id="6a6b8-112">implicit</span></span>](../../../csharp/language-reference/keywords/implicit.md)  
- [<span data-ttu-id="6a6b8-113">explicit</span><span class="sxs-lookup"><span data-stu-id="6a6b8-113">explicit</span></span>](../../../csharp/language-reference/keywords/explicit.md)  
- [<span data-ttu-id="6a6b8-114">方法: 構造体間にユーザー定義の変換を実装する</span><span class="sxs-lookup"><span data-stu-id="6a6b8-114">How to: Implement User-Defined Conversions Between Structs</span></span>](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
+## <a name="see-also"></a><span data-ttu-id="dcd1a-108">参照</span><span class="sxs-lookup"><span data-stu-id="dcd1a-108">See Also</span></span>  
+ [<span data-ttu-id="dcd1a-109">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="dcd1a-109">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="dcd1a-110">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="dcd1a-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="dcd1a-111">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="dcd1a-111">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+ [<span data-ttu-id="dcd1a-112">implicit</span><span class="sxs-lookup"><span data-stu-id="dcd1a-112">implicit</span></span>](../../../csharp/language-reference/keywords/implicit.md)  
+ [<span data-ttu-id="dcd1a-113">explicit</span><span class="sxs-lookup"><span data-stu-id="dcd1a-113">explicit</span></span>](../../../csharp/language-reference/keywords/explicit.md)  
+ [<span data-ttu-id="dcd1a-114">方法: 構造体間にユーザー定義の変換を実装する</span><span class="sxs-lookup"><span data-stu-id="dcd1a-114">How to: Implement User-Defined Conversions Between Structs</span></span>](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
