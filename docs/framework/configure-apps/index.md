@@ -35,11 +35,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: cb98b4d7bbc70fd54e8928c741aa444a6b832046
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 74b5bce3191b2d40e5b37d64b3d1eee24395ce4c
+ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>構成ファイルを使用してアプリを構成する方法
 .NET Framework を使用すると、開発者および管理者は、構成ファイルを使用することにより、アプリケーションの実行方法を制御し、アプリケーションの実行に柔軟性を持たせることができます。 構成ファイルは XML ファイルで、必要に応じて変更できます。 管理者は、アプリケーションからアクセスできるプロテクト リソース、アプリケーションが使用するアセンブリのバージョン、およびリモート アプリケーションやオブジェクトの配置場所を制御できます。 開発者は、構成ファイル内に設定を格納できます。これにより、設定変更のたびにアプリケーションを再コンパイルする必要がなくなります。 このセクションでは、設定できる内容と、アプリケーションを設定することが有益である理由を説明します。  
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/19/2018
  ここでは、構成ファイルの構文を説明し、3 種類の構成ファイル (マシン構成ファイル、アプリケーション構成ファイル、およびセキュリティ構成ファイル) について情報を提供します。  
   
 ## <a name="configuration-file-format"></a>構成ファイルの形式  
- 構成ファイルには、構成情報を設定する論理データ構造体である要素が含まれます。 構成ファイル内では、タグを使用して、それらの要素の先頭と末尾を示します。 たとえば、`<runtime>` 要素は `<runtime>`*child elements*`</runtime>` で構成されます。 空の要素は `<runtime/>` または `<runtime>``</runtime>` として書き込まれます。  
+ 構成ファイルには、構成情報を設定する論理データ構造体である要素が含まれます。 構成ファイル内では、タグを使用して、それらの要素の先頭と末尾を示します。 たとえば、`<runtime>` 要素は `<runtime>`*child elements*`</runtime>` で構成されます。 空の要素は `<runtime/>` または `<runtime></runtime>` として書き込まれます。  
   
  XML ファイルと同様に、構成ファイル内の構文では、大文字と小文字が区別されます。  
   
