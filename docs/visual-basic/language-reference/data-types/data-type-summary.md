@@ -60,14 +60,14 @@ ms.lasthandoff: 11/21/2017
 |[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) (単一の文字)|<xref:System.Char>|2 バイト|0 ~ 65535 (符号なし)|  
 |[Date](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|8 バイト|0:00:00 (深夜) から 9999 年 12 月 31 日の 11時 59分: 59 PM 0001 年 1 月 1 日|  
 |[Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|16 バイト|79,228,162,514,264,337,593,543,950,335 +/-0 ~ (7.9... +/-E + 28) <sup>†</sup>なしで、小数点以下の桁数の右側の桁数が 28 数値 +/-0 ~; 10 進数のポイント<br /><br /> 0 以外の最小数は、(1 e ~ 28) +/-+/-0.0000000000000000000000000001 <sup>†</sup>|  
-|[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)(倍精度浮動小数点数)|<xref:System.Double>|8 バイト|-- を 4.94065645841246544E-324 <sup>†</sup>負の値です。<br /><br /> 4.94065645841246544E-324 1.79769313486231570 e + 308 ~ <sup>†</sup>正の値|  
-|[Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 バイト|-2,147, 483,648 ~ 2,147, 483,647 (署名)|  
-|[長い](../../../visual-basic/language-reference/data-types/long-data-type.md)(長整数)|<xref:System.Int64>|8 バイト|9,223,372,036,854,775,807 を通じて-9,223,372,036,854,775,808 (9.2... E + 18 <sup>†</sup>) (署名)|  
-|[オブジェクト](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object>(クラス)|32 ビット プラットフォームでは 4 バイト<br /><br /> 64 ビット プラットフォームでは 8 バイト|型の変数に格納できる任意の型`Object`|  
-|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 バイト|-128 ~ 127 (署名)|  
-|[短い](../../../visual-basic/language-reference/data-types/short-data-type.md)(短整数型)|<xref:System.Int16>|2 バイト|-32,768 ~ 32,767 (署名)|  
-|[1 つ](../../../visual-basic/language-reference/data-types/single-data-type.md)(単精度浮動小数点数)|<xref:System.Single>|4 バイト|-3.4028235 e + 38 ~ - 1.401298E-45 <sup>†</sup>負の値です。<br /><br /> 1.401298E-45 3.4028235 e + 38 ~ <sup>†</sup>正の値|  
-|[文字列](../../../visual-basic/language-reference/data-types/string-data-type.md)(可変長)|<xref:System.String>(クラス)|プラットフォームの実装によって異なります|約 20億 Unicode 文字に 0|  
+|[Double](../../../visual-basic/language-reference/data-types/double-data-type.md)(倍精度浮動小数点数)|<xref:System.Double>|8 バイト|-- を 4.94065645841246544E-324 <sup>†</sup>負の値です。<br /><br /> 4.94065645841246544E-324 1.79769313486231570 e + 308 ~ <sup>†</sup>正の値|  
+|[Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 バイト|-2,147, 483,648 ~ 2,147, 483,647 (符号あり)|  
+|[Long](../../../visual-basic/language-reference/data-types/long-data-type.md)(長整数)|<xref:System.Int64>|8 バイト|9,223,372,036,854,775,807 を通じて-9,223,372,036,854,775,808 (9.2... E + 18 <sup>†</sup>) (符号あり)|  
+|[Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object>(クラス)|32 ビット プラットフォームでは 4 バイト<br /><br /> 64 ビット プラットフォームでは 8 バイト|型の変数に格納できる任意の型`Object`|  
+|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 バイト|-128 ~ 127 (符号あり)|  
+|[Short](../../../visual-basic/language-reference/data-types/short-data-type.md)(短整数型)|<xref:System.Int16>|2 バイト|-32,768 ~ 32,767 (符号あり)|  
+|[Single](../../../visual-basic/language-reference/data-types/single-data-type.md)(単精度浮動小数点数)|<xref:System.Single>|4 バイト|-3.4028235 e + 38 ~ - 1.401298E-45 <sup>†</sup>負の値です。<br /><br /> 1.401298E-45 3.4028235 e + 38 ~ <sup>†</sup>正の値|  
+|[String](../../../visual-basic/language-reference/data-types/string-data-type.md)(可変長)|<xref:System.String>(クラス)|プラットフォームの実装によって異なります|約 20億 Unicode 文字に 0|  
 |[UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|4 バイト|0 ~ 4,294,967,295 (符号なし)|  
 |[ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|8 バイト|0 ~ 18,446,744,073,709,551,615 (1.8... E + 19 <sup>†</sup>) (符号なし)|  
 |[ユーザー定義](../../../visual-basic/language-reference/data-types/user-defined-data-type.md)(構造)|(から継承<xref:System.ValueType>)|プラットフォームの実装によって異なります|構造体の各メンバーにによって決まり、そのデータ型と他のメンバーの範囲に依存しない範囲|  
