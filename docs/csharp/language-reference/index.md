@@ -2,7 +2,8 @@
 title: "C# リファレンス"
 ms.date: 02/14/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - Visual C#, language reference
@@ -11,7 +12,7 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-caps.latest.revision: "43"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6f885dcf17bb1e6d6cf4ba628b586f2107675c4a
@@ -21,7 +22,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="c-reference"></a>C# リファレンス
-このセクションでは、C# のキーワード、演算子、特殊文字、プリプロセッサ ディレクティブ、コンパイラ オプション、およびコンパイラのエラーと警告ン関する参考資料を紹介します。  
+このセクションでは、C# のキーワード、演算子、特殊文字、プリプロセッサ ディレクティブ、コンパイラ オプション、およびコンパイラのエラーと警告に関する参考資料を紹介します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [C# のキーワード](../../csharp/language-reference/keywords/index.md)  
