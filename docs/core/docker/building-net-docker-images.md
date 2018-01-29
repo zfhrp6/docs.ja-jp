@@ -12,12 +12,13 @@ ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 ms.custom: mvc
 manager: wpickett
-ms.workload: dotnetcore
-ms.openlocfilehash: cb438957a6519cf503e5bcaf85f2bc82fa18a047
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 2b1a57fe264eda0a4d3186c7be8b0de01bd5f0a9
+ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>.NET Core アプリケーションの Docker イメージのビルド
 
@@ -101,7 +102,7 @@ ms.lasthandoff: 12/23/2017
 * **より大きな** ASP.NET Core Build Docker ベース イメージに基づき、コンテナーでサンプルをビルドする 
 * **より小さい** ASP.NET Core Docker Runtime ベース イメージに基づき、最終的なビルド結果を Docker イメージにコピーする
 
-> [!Note]
+> [!NOTE]
 > このビルド イメージには、アプリケーションのビルドに必要なツールが含まれています。ランタイム イメージにはそれが含まれていません。
 
 ### <a name="prerequisites"></a>必須コンポーネント
@@ -174,7 +175,8 @@ docker build -t aspnetapp .
 docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 ```
 
-> [!Note] `docker run` '-p' 引数は、コンピューターのポート 5000 をコンテナーのポート 80 にマッピングします (ポート マッピングの形式は `host:container` です)。 詳細については、コマンドライン パラメーターの [docker run](https://docs.docker.com/engine/reference/commandline/exec/) 参照をご覧ください。
+> [!NOTE]
+> `docker run` '-p' 引数は、コンピューターのポート 5000 をコンテナーのポート 80 にマッピングします (ポート マッピングの形式は `host:container` です)。 詳細については、コマンドライン パラメーターの [docker run](https://docs.docker.com/engine/reference/commandline/exec/) 参照をご覧ください。
 
 アプリケーションが起動したら、お使いの Web ブラウザーで **http://localhost:5000** にアクセスします。
 
@@ -196,7 +198,7 @@ docker run -it --rm --name aspnetcore_sample aspnetapp
 * `docker exec aspnetcore_sample ipconfig` を実行します。
 * コンテナー IP アドレスをコピーし、ブラウザーに貼り付けます (たとえば、172.29.245.43)。
 
-> [!Note]
+> [!NOTE]
 > Docker exec は、名前やハッシュでコンテナーを識別できます。 今回のサンプルでは名前 (aspnetcore_sample) が使用されています。
 
 次の例では、実行中の Windows コンテナーの IP アドレスを取得する方法を確認できます。
@@ -215,7 +217,7 @@ Ethernet adapter Ethernet:
    Default Gateway . . . . . . . . . : 172.29.240.1
 ```
 
-> [!Note]
+> [!NOTE]
 > Docker exec は、実行中のコンテナーで新しいコマンドを実行します。 詳細については、コマンドライン パラメーターの [docker exec 参照](https://docs.docker.com/engine/reference/commandline/exec/)をご覧ください。
 
 [dotnet publish](../tools/dotnet-publish.md) コマンドを利用し、運用環境にローカル展開できるアプリケーションを生成できます。
@@ -224,7 +226,7 @@ Ethernet adapter Ethernet:
 dotnet publish -c release -o published
 ```
 
-> [!Note]
+> [!NOTE]
 > -c リリース引数はリリース モードでアプリケーションをビルドします (既定はデバッグ モードです)。 詳細については、コマンドライン パラメーターの [dotnet run 参照](../tools/dotnet-run.md)をご覧ください。
 
 次のコマンドを利用し、**Windows** でアプリケーションを実行できます。
@@ -265,5 +267,5 @@ dotnet published/aspnetapp.dll
 * [クラウドにおける Visual Studio for Mac、コンテナー、サーバーレス コードの入門](https://blogs.msdn.microsoft.com/visualstudio/2017/08/31/hands-on-with-visual-studio-for-mac-containers-serverless-code-in-the-cloud/#comments)
 * [Docker と Visual Studio for Mac の入門ラボ](https://github.com/Microsoft/vs4mac-labs/tree/master/Docker/Getting-Started)
 
-> [!Note]
+> [!NOTE]
 > Azure サブスクリプションをお持ちでない場合は、[今すぐサインアップ](https://azure.microsoft.com/free/?b=16.48)して 30 日間の無料アカウントと 200 ドル分の Azure クレジットを取得し、お好きな Azure サービスの組み合わせを試しましょう。

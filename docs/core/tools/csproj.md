@@ -1,5 +1,5 @@
 ---
-title: "csproj リファレンス"
+title: ".NET Core の csproj 形式に追加されたもの"
 description: "既存の csproj ファイルと .NET Core の csproj ファイルの違いについて説明します"
 keywords: "リファレンス, csproj, .NET Core"
 author: blackdwarf
@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdc29497-64f2-4d11-a21b-4097e0bdf5c9
-ms.workload: dotnetcore
-ms.openlocfilehash: 329a74cf083819896aafd7fc7993fa0e8ac8f8c2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: d2a318f099eaa67912c2cecd1c67ceebaee8629e
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core の csproj 形式に追加されたもの
 
@@ -199,7 +200,7 @@ MSbuild への移行に伴い、*project.json* ファイルから *csproj* フ�
 ### <a name="authors"></a>Authors
 nuget.org のプロファイル名と一致するパッケージ作成者をセミコロンで区切った一覧。これらは nuget.org の NuGet ギャラリーに表示され、同じ作成者によるパッケージの相互参照に使用されます。
 
-### <a name="description"></a>Description
+### <a name="description"></a>説明
 UI 画面用のパッケージの長い説明。
 
 ### <a name="copyright"></a>Copyright
