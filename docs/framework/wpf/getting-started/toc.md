@@ -1,5 +1,5 @@
 # [はじめに](index.md)
-## [Visual Studio 2015 での WPF の概要](introduction-to-wpf-in-vs.md)
+## [Visual Studio での WPF の概要](introduction-to-wpf-in-vs.md)
 ## [WPF Version 4.5 の新機能](whats-new.md)
 ## [チュートリアル: 初めての WPF デスクトップ アプリケーション](walkthrough-my-first-wpf-desktop-application.md)
 ## [WPF のチュートリアル](wpf-walkthroughs.md)
