@@ -2,7 +2,8 @@
 title: "アルファベット順の C# コンパイラ オプションの一覧"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - compiler options [C#], listed alpabetically
@@ -10,14 +11,14 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 07ca6b9473a4a3401742d05aa7c880da5ac43ad0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f4d7f1b122d3481dc8c3c5256ee361965846a830
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>アルファベット順の C# コンパイラ オプションの一覧
 次のコンパイラ オプションは、アルファベット順に並んでいます。 カテゴリ別の一覧については、「[カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)」をご覧ください。  
@@ -28,10 +29,10 @@ ms.lasthandoff: 01/19/2018
 |[-?](../../../csharp/language-reference/compiler-options/help-compiler-option.md)|使用法に関する説明を標準出力に表示します。|  
 |-additionalfile|コードの生成に直接影響はないが、エラーまたは警告を生成するためにアナライザーが使用できる追加のファイルを指定します。|  
 |[-addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md)|指定されたモジュールをこのアセンブリにリンクします。|  
-|-analyzer|このアセンブリからアナライザーを実行します (短縮形: /a)。|  
+|-analyzer|このアセンブリからアナライザーを実行します (短縮形: -a)。|  
 |[/appconfig](../../../csharp/language-reference/compiler-options/appconfig-compiler-option.md)|アセンブリのバインド時に app.config の場所を指定します。|  
 |[-baseaddress](../../../csharp/language-reference/compiler-options/baseaddress-compiler-option.md)|ビルドするライブラリのベース アドレスを指定します。|  
-|[-bugreport](../../../csharp/language-reference/compiler-options/bugreport-compiler-option.md)|"障害報告" ファイルを作成します。 /errorreport:prompt または /errorreport:send と組み合わせて使用した場合、このファイルがクラッシュ情報と共に送信されます。|  
+|[-bugreport](../../../csharp/language-reference/compiler-options/bugreport-compiler-option.md)|"障害報告" ファイルを作成します。 -errorreport:prompt または -errorreport:send と組み合わせて使用した場合、このファイルがクラッシュ情報と共に送信されます。|  
 |[/checked](../../../csharp/language-reference/compiler-options/checked-compiler-option.md)|オーバーフロー チェックを生成するようコンパイラに指示します。|  
 |-checksumalgorithm:\<alg>|PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。  サポートされる値は、SHA1 (既定値) または SHA256 です。|  
 |[-codepage](../../../csharp/language-reference/compiler-options/codepage-compiler-option.md)|ソース ファイルを開くときに使用するコードページを指定します。|  

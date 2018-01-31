@@ -2,22 +2,24 @@
 title: "-debug (C# コンパイラ オプション)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /debug
+f1_keywords:
+- /debug
 helpviewer_keywords:
 - debug compiler option [C#]
 - -debug compiler option [C#]
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: be1b6379080b2af799990c43e5339a9a548eb067
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d67d53e679a2d1255e87cfa426bf844089481061
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="-debug-c-compiler-options"></a>-debug (C# コンパイラ オプション)
 **-debug** オプションを指定すると、コンパイラによってデバッグ情報が生成され、出力ファイルに格納されます。  
@@ -46,7 +48,7 @@ ms.lasthandoff: 01/19/2018
   
  アプリケーションのデバッグ パフォーマンスを構成する方法については、「[イメージのデバッグの簡略化](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md)」を参照してください。  
   
- .pdb ファイルの場所を変更する方法については、「[/pdb (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md)」を参照してください。  
+ .pdb ファイルの場所を変更する方法については、「[-pdb (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md)」を参照してください。  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   

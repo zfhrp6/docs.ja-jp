@@ -2,21 +2,23 @@
 title: "enum (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - enum
 - enum_CSharpKeyword
-helpviewer_keywords: enum keyword [C#]
+helpviewer_keywords:
+- enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 00ae9b555ae73db445fe4a4facf00753bf8c759a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 36d33387dda68270e0490eaa6c792f95d058651e
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="enum-c-reference"></a>enum (C# リファレンス)
 `enum` キーワードは、列挙型を宣言するために使用されます。列挙型は、列挙子リストと呼ばれる名前付き定数の集まりで構成される固有の型です。  
@@ -26,26 +28,26 @@ ms.lasthandoff: 11/21/2017
  既定では、最初の列挙子の値は 0 で、後続の列挙子の値は 1 ずつ増加していきます。 たとえば、次の列挙型では、 `Sat` は `0`、 `Sun` は `1`、 `Mon` は `2`などとなります。  
   
 ```  
-enum Days {Sat, Sun, Mon, Tue, Wed, Thu, Fri};  
+enum Day {Sat, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
  列挙型では、次の例に示すように、初期化子を使用して既定値をオーバーライドできます。  
   
 ```  
-enum Days {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
+enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
- この列挙型では、要素の並びは `0` からではなく、 `1` から開始します。 ただし、列挙型には値が 0 となる定数を含めておくことをお勧めします。 詳細については、[列挙型](../../../csharp/programming-guide/enumeration-types.md)を参照してください。  
+ この列挙型では、要素の並びは `1` からではなく、 `0`から開始します。 ただし、列挙型には値が 0 となる定数を含めておくことをお勧めします。 詳細については、[列挙型](../../../csharp/programming-guide/enumeration-types.md)を参照してください。  
   
  すべての列挙型には基になる型があり、基になる型には [char](../../../csharp/language-reference/keywords/char.md) 以外の任意の整数型を指定できます。 列挙要素の基になる既定の型は [int](../../../csharp/language-reference/keywords/int.md)です。[byte](../../../csharp/language-reference/keywords/byte.md)など、他の整数型の列挙型を宣言するには、次の例に示すように、識別子に続けてコロンを使用し、その後に型を記述します。  
   
 ```  
-enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
+enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
- 列挙型で許容される型は、 `byte`、 [sbyte](../../../csharp/language-reference/keywords/sbyte.md)、 [short](../../../csharp/language-reference/keywords/short.md)、 [ushort](../../../csharp/language-reference/keywords/ushort.md)、 [int](../../../csharp/language-reference/keywords/int.md)、 [uint](../../../csharp/language-reference/keywords/uint.md)、 [long](../../../csharp/language-reference/keywords/long.md)、または [ulong](../../../csharp/language-reference/keywords/ulong.md)です。  
+ 列挙型で許容される型は、[byte](../../../csharp/language-reference/keywords/byte.md)、[sbyte](../../../csharp/language-reference/keywords/sbyte.md)、[short](../../../csharp/language-reference/keywords/short.md)、[ushort](../../../csharp/language-reference/keywords/ushort.md)、[int](../../../csharp/language-reference/keywords/int.md)、[uint](../../../csharp/language-reference/keywords/uint.md)、[long](../../../csharp/language-reference/keywords/long.md)、または [ulong](../../../csharp/language-reference/keywords/ulong.md) です。  
   
- 型 `Days` の変数には、基になる型の範囲内の任意の値を割り当てることができます。値は名前付き定数に限定されません。  
+ 型 `Day` の変数には、基になる型の範囲内の任意の値を割り当てることができます。値は名前付き定数に限定されません。  
   
  `enum E` の既定値は、式 `(E)0`によって算出された値です。  
   
@@ -55,7 +57,7 @@ enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
  基になる型は、列挙子ごとに割り当てるストレージの大きさを指定します。 ただし、 `enum` 型を整数型に変換するには、明示的なキャストが必要です。 たとえば、次のステートメントでは `enum` 型から [int](../../../csharp/language-reference/keywords/int.md) 型へのキャストを使用することで、列挙子 `Sun` を `int` 型の変数に代入します。  
   
 ```  
-int x = (int)Days.Sun;  
+int x = (int)Day.Sun;  
 ```  
   
  ビット単位の `OR` 演算と組み合わせることができる要素を含む列挙型に <xref:System.FlagsAttribute?displayProperty=nameWithType> を適用すると、一部のツールを使用したときに、 `enum` の動作に属性が反映されます。 このような変更は、 <xref:System.Console> クラス メソッドや式エバリュエーターなどのツールを使用して確認できます。 (3 番目の使用例をご参照ください。)  
@@ -68,7 +70,7 @@ int x = (int)Days.Sun;
  作成したコードが他の開発者によって使用される場合は、新しい要素を `enum` 型に追加したときのコードの反応を規定するガイドラインを用意しておく必要があります。  
   
 ## <a name="example"></a>例  
- 次の例では、列挙型 `Days`を宣言しています。 2 つの列挙子は明示的に整数に変換され、整数変数に代入されます。  
+ 次の例では、列挙型 `Day`を宣言しています。 2 つの列挙子は明示的に整数に変換され、整数変数に代入されます。  
   
  [!code-csharp[csrefKeywordsTypes#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/enum_1.cs)]  
   
@@ -92,11 +94,12 @@ int x = (int)Days.Sun;
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [列挙型](../../../csharp/programming-guide/enumeration-types.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
  [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)  
  [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)  
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
- [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+ [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
+ [列挙型の名前付け規則](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations)

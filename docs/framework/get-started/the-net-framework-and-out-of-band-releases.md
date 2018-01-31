@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c79326634a24ddcc9aed71fca018c69c36c94db0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 83c3688afb3fe509d9a57eba8765cbd13bf581c8
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a>.NET Framework および特別なリリース
 .NET Framework は、従来のデスクトップ アプリや Web アプリに加えて、Windows Phone や Windows ストア アプリなど、さまざまなプラットフォームに対応し、コードを最大限に再利用できるように発展しています。 通常の .NET Framework のリリースに加えて、クロスプラットフォームでの開発の強化や新機能の導入を目的として、新しい機能をアウトオブバンド (OOB) リリースによって提供しています。 ここでは、.NET Framework および OOB リリースの将来の方向性について説明します。  
@@ -61,7 +63,7 @@ ms.lasthandoff: 12/22/2017
   
  リリース前のパッケージと安定版パッケージの両方を検索するには、NuGet パッケージ マネージャーで **[リリース前のパッケージを含める]** を選択してください。  
   
- 安定版パッケージのリリースについて通知を受ける場合は、[the .NET Framework のフィード](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/)を受信登録してください。  
+ 安定版パッケージのリリースについて通知を受ける場合は、[.NET Framework フィード](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/)を受信登録してください。  
   
 ## <a name="see-also"></a>参照  
  [はじめに](../../../docs/framework/get-started/index.md)

@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: bc74b644f432071dc2483e8df3e0938c9e9ee025
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.openlocfilehash: 6b0f3acc3a6dbed4f44497d92d3c518ee5a5d2a7
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="rest-client"></a>REST クライアント
 
@@ -33,17 +33,17 @@ GitHub 上の REST サービスに対して HTTP 要求を発行するアプリ�
 
 このトピックの[最終的なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)も参照したい方は、ダウンロードできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>必須コンポーネント
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 ## <a name="create-the-application"></a>アプリケーションを作成する
 最初に新しいアプリケーションを作成します。 コマンド プロンプトを開き、アプリケーション用の新しいディレクトリを作成します。 それを、現在のディレクトリとしてください。 コマンド プロンプトで `dotnet new console` のコマンドを入力します。 これで、基本的な "Hello World" アプリケーションのスターター ファイルが作成されます。
 
-変更を加える前に、このシンプルな Hello World アプリケーションを実行する手順を見ていきましょう。 アプリケーションを作成すると、次のように入力します。 `dotnet restore` ([注を参照してください](#dotnet-restore-note)) コマンド プロンプトでします。 このコマンドにより、NuGet パッケージの復元処理が実行されます。 NuGet は .NET パッケージ マネージャーです。 このコマンドにより、プロジェクトの依存関係のうち欠落しているものがすべてダウンロードされます。 これは新しいプロジェクトなので、依存関係は何もなく、最初の実行で .NET Core フレームワークがダウンロードされます。 この初期手順の後にのみ必要を実行する`dotnet restore`([注を参照してください](#dotnet-restore-note)) 新しいの依存パッケージを追加または依存関係のいずれかのバージョンを更新する場合。  
+変更を加える前に、このシンプルな Hello World アプリケーションを実行する手順を見ていきましょう。 アプリケーション作成後、コマンド プロンプトで「`dotnet restore`」 ([注記を参照](#dotnet-restore-note)) と入力します。 このコマンドにより、NuGet パッケージの復元処理が実行されます。 NuGet は .NET パッケージ マネージャーです。 このコマンドにより、プロジェクトの依存関係のうち欠落しているものがすべてダウンロードされます。 これは新しいプロジェクトなので、依存関係は何もなく、最初の実行で .NET Core フレームワークがダウンロードされます。 この最初の手順の後は、新しい依存パッケージを追加するときに `dotnet restore` ([注記を参照](#dotnet-restore-note)) を実行するか、依存関係のいずれかのバージョンを更新する必要があるだけです。  
 
 パッケージを復元したら、`dotnet build` を実行します。 これにより、ビルド エンジンが実行され、アプリケーションが作成されます。 最後に、`dotnet run` を実行してアプリケーションを実行します。
 
 ## <a name="adding-new-dependencies"></a>新しい依存関係を追加する
-.NET Core の重要な設計目標の 1 つは、.NET Framework のインストール サイズを最小限に抑えることです。 .NET Core アプリケーション フレームワークには、.NET Framework の最も一般的な要素だけが含まれています。 C# プロジェクトには、これらの依存関係を追加するアプリケーションは、その機能の一部で、追加のライブラリを必要とする場合 (\*.csproj) ファイル。 ここで示す例の場合は、`System.Runtime.Serialization.Json` パッケージを追加して、アプリケーションが JSON 応答を処理できるようにする必要があります。
+.NET Core の重要な設計目標の 1 つは、.NET Framework のインストール サイズを最小限に抑えることです。 .NET Core アプリケーション フレームワークには、.NET Framework の最も一般的な要素だけが含まれています。 その一部の機能のための追加ライブラリがアプリケーションで必要な場合は、C# プロジェクト (\*.csproj) ファイルにそれらの依存関係を追加します。 ここで示す例の場合は、`System.Runtime.Serialization.Json` パッケージを追加して、アプリケーションが JSON 応答を処理できるようにする必要があります。
 
 `csproj` プロジェクト ファイルを開きます。 ファイルの最初の行は次のように表示されます。
 
@@ -60,7 +60,7 @@ GitHub 上の REST サービスに対して HTTP 要求を発行するアプリ�
 ```
 ほとんどのコード エディターでは、これらのライブラリの複数のバージョンの入力候補が表示されます。 通常は、追加するパッケージの最新バージョンを使用します。 ただし、すべてのパッケージのバージョンが一致しており、.NET Core アプリケーション フレームワークのバージョンとも一致していることを確認してください。
 
-これらの変更を行った後に実行して`dotnet restore`([注を参照してください](#dotnet-restore-note)) 再度システムにパッケージをインストールできるようにします。
+これらの変更を加えた後で、`dotnet restore` ([注記を参照](#dotnet-restore-note)) をもう一度実行して、システムにパッケージがインストールされるようにします。
 
 ## <a name="making-web-requests"></a>Web 要求を作成する
 Web サイトからデータの取得を開始する準備ができました。 このアプリケーションでは、[GitHub API](https://developer.github.com/v3/) から情報を読み取ります。 [.NET Foundation](http://www.dotnetfoundation.org/) にあるプロジェクトに関する情報を読み取ります。 最初に、プロジェクトに関する情報を取得する GitHub API に対する要求を作成します。 使用するエンドポイントは、[https://api.github.com/orgs/dotnet/repos](https://api.github.com/orgs/dotnet/repos) です。 HTTP GET 要求を使用して、これらのプロジェクトに関する情報をすべて取得します。
@@ -95,12 +95,30 @@ public static void Main(string[] args)
 }
 ```
 
-これで、何も実行せず、非同期的に実行されるプログラムの準備ができました。 `ProcessRepositories` メソッドに戻って、最初のバージョンのプログラムを記述します。
+これで、何も実行せず、非同期的に実行されるプログラムの準備ができました。 これを改善しましょう。
+
+まず、Web からデータを取得できるオブジェクトが必要です。この条件に合うものとして、<xref:System.Net.Http.HttpClient> を使用できます。 このオブジェクトは要求と応答を処理します。 Program.cs ファイル内の `Program` クラスで該当する型の単一のインスタンスをインスタンス化します。
+
+```csharp
+namespace WebAPIClient
+{
+    class Program
+    {
+        private static readonly HttpClient client = new HttpClient();
+
+        static void Main(string[] args)
+        {
+            //...
+        }
+    }
+}
+```
+
+ `ProcessRepositories` メソッドに戻って、最初のバージョンのプログラムを記述します。
 
 ```csharp
 private static async Task ProcessRepositories()
 {
-    var client = new HttpClient();
     client.DefaultRequestHeaders.Accept.Clear();
     client.DefaultRequestHeaders.Accept.Add(
         new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
@@ -120,7 +138,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 ```
 
-この最初のバージョンでは、.NET Foundation にあるすべてのリポジトリのリストを読み取る Web 要求を作成します  (.NET Foundation の gitHub ID は "dotnet" です)。 最初に、新しい <xref:System.Net.Http.HttpClient> を作成します。 このオブジェクトは要求と応答を処理します。 次の数行では、この要求の <xref:System.Net.Http.HttpClient> を設定します。 最初は、GitHub の JSON 応答を受け入れるように構成されます。
+この最初のバージョンでは、.NET Foundation にあるすべてのリポジトリのリストを読み取る Web 要求を作成します  (.NET Foundation の gitHub ID は "dotnet" です)。 最初の数行では、この要求の <xref:System.Net.Http.HttpClient> を設定します。 最初は、GitHub の JSON 応答を受け入れるように構成されます。
 この形式は単なる JSON です。 次の行では、このオブジェクトからのすべての要求にユーザー エージェント ヘッダーを追加します。 これらの 2 つのヘッダーは、GitHub サーバー コードによってチェックされ、GitHub から情報を取得するために必要です。
 
 <xref:System.Net.Http.HttpClient> を構成したら、Web 要求を作成して応答を取得します。 この最初のバージョンでは、<xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=nameWithType> 簡易メソッドを使います。 この簡易メソッドは、Web 要求を作成するタスクを開始し、要求が返されると応答ストリームを読み取って、ストリームからコンテンツを抽出します。 応答の本文は <xref:System.String> として返されます。 この文字列は、タスクが完了すると使用できます。 
@@ -163,16 +181,16 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Json;
 ```
 
-次に、シリアライザーを使用して、JSON を C# オブジェクトに変換します。 呼び出しを置き換える<xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>で、`ProcessRepositories`次の 2 行を持つメソッド。
+次に、シリアライザーを使用して、JSON を C# オブジェクトに変換します。 `ProcessRepositories` メソッド内の <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> の呼び出しを次の 2 行に置き換えます。
 
 ```csharp
 var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
 var repositories = serializer.ReadObject(await streamTask) as List<repo>;
 ```
 
-使用しているようになりましたことを確認<xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)>の代わりに<xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>です。 シリアライザーは、文字列の代わりにストリームをソースとして使用します。 上記の 2 行目で使用されている C# 言語のいくつかの機能について説明します。 引数に<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)>は、`await`式。 await 式は、コード内のほとんどの場所に表示される可能性があります (これまでは代入ステートメントの一部としてしか表示されていませんでした)。
+<xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> ではなく、<xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)> が使用されていることをご確認ください。 シリアライザーは、文字列の代わりにストリームをソースとして使用します。 上記の 2 行目で使用されている C# 言語のいくつかの機能について説明します。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> への引数は `await` 式です。 await 式は、コード内のほとんどの場所に表示される可能性があります (これまでは代入ステートメントの一部としてしか表示されていませんでした)。
 
-次に、`as` 演算子がコンパイル時の型である `object` を `List<repo>` に変換します。 宣言<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)>型のオブジェクトが返されることを宣言<xref:System.Object?displayProperty=nameWithType>です。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)>作成したときに指定した型を返す (`List<repo>`このチュートリアルでは)。 変換が成功しなかった場合、`as` 演算子は例外をスローする代わりに `null` と評価します。
+次に、`as` 演算子がコンパイル時の型である `object` を `List<repo>` に変換します。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> の宣言は、<xref:System.Object?displayProperty=nameWithType> 型のオブジェクトが返されることを宣言しています。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> は、構成時に指定した型 (このチュートリアルでは `List<repo>`) を返します。 変換が成功しなかった場合、`as` 演算子は例外をスローする代わりに `null` と評価します。
 
 このセクションでの作業はほぼ完了です。 JSON を C# オブジェクトに変換したので、次は各リポジトリの名前を表示します。 次の行があるとします。
 
@@ -200,7 +218,7 @@ foreach (var repo in repositories)
 <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
 ```
 
-ファイルを保存した後に実行`dotnet restore`([注を参照してください](#dotnet-restore-note)) をこのパッケージを取得します。
+ファイルを保存したら、`dotnet restore` ([注記を参照](#dotnet-restore-note))を実行してこのパッケージを取得します。
 
 次に、`repo.cs` ファイルを開きます。 パスカル ケースを使用するように名前を変更し、`Repository` という名前を記述します。 この型に JSON の "repo" ノードをマップするために、クラス宣言に `DataContract` 属性を追加する必要があります。 属性の `Name` プロパティを、この型にマップする JSON ノードの名前に設定します。
 
@@ -335,7 +353,7 @@ foreach (var repo in repositories)
 private string JsonDate { get; set; }
 ```
 
-`DataMember` 属性は、このプロパティがパブリック メンバーでないとしても処理する必要があることをシリアライザーに通知します。 次に、有効な文字列を変換するパブリック読み取り専用プロパティを記述する必要があります<xref:System.DateTime>オブジェクトを結果を返します<xref:System.DateTime>:
+`DataMember` 属性は、このプロパティがパブリック メンバーでないとしても処理する必要があることをシリアライザーに通知します。 次に、文字列を有効な <xref:System.DateTime> オブジェクトに変換してその <xref:System.DateTime> を返す読み取り専用のパブリック プロパティを記述する必要があります。
 
 ```csharp
 [IgnoreDataMember]
@@ -348,7 +366,7 @@ public DateTime LastPush
 }
 ```
 
-上記の新しいコンストラクトについて詳しく見てみましょう。 `IgnoreDataMember` 属性は、JSON オブジェクトとの間でこの型の読み取りまたは書き込みを行わないようにシリアライザーに指示します。 このプロパティには `get` アクセサーだけが含まれています。 `set` アクセサーがない。 C# では、この方法で "*読み取り専用*" プロパティを定義します  (C# では "*書き込み専用*" プロパティを作成できますが、その値は制限されています)。<xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider)>メソッドは、文字列を解析し、作成、<xref:System.DateTime>オブジェクトの指定した日付形式を使用し、追加のメタデータを追加、`DateTime`を使用して、`CultureInfo`オブジェクト。 解析操作が失敗した場合、プロパティのアクセサーは例外をスローします。
+上記の新しいコンストラクトについて詳しく見てみましょう。 `IgnoreDataMember` 属性は、JSON オブジェクトとの間でこの型の読み取りまたは書き込みを行わないようにシリアライザーに指示します。 このプロパティには `get` アクセサーだけが含まれています。 `set` アクセサーがない。 C# では、この方法で "*読み取り専用*" プロパティを定義します  (C# では "*書き込み専用*" プロパティを作成できますが、その値は制限されています)。<xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider)> メソッドは、指定された日付形式を使用して文字列を解析し、<xref:System.DateTime> オブジェクトを作成します。次に、`CultureInfo` オブジェクトを使用して `DateTime` にメタデータを追加します。 解析操作が失敗した場合、プロパティのアクセサーは例外をスローします。
 
 <xref:System.Globalization.CultureInfo.InvariantCulture> を使用するには、`repo.cs` 内の `using` ステートメントに <xref:System.Globalization> 名前空間を追加する必要があります。
 
