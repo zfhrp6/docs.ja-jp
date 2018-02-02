@@ -25,7 +25,9 @@
 ### [クラス ライブラリの概要](standard/class-library-overview.md)
 ### [基本データ型](standard/base-types/)
 ## [.NET クラス ライブラリ](standard/class-libraries.md)
-## [移植性アナライザー](standard/portability-analyzer.md)
+## アナライザー
+### [API アナライザー](standard/analyzers/api-analyzer.md) 
+### [移植性アナライザー](standard/analyzers/portability-analyzer.md)
 ## [例外の処理とスロー](standard/exceptions/)
 ## [.NET アセンブリ ファイルの形式](standard/assembly-format.md)
 ## [ガベージ コレクション](standard/garbage-collection/)
@@ -282,7 +284,6 @@
 <!--## [Tutorials](fsharp/tutorials/index.md)-->
 ## チュートリアル
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
-#### [F# Interactive オプション](fsharp/tutorials/fsharp-interactive/fsharp-interactive-options.md)
 ### [型プロバイダー](fsharp/tutorials/type-providers/index.md)
 #### [型プロバイダーを使用した SQL Database へのアクセス](fsharp/tutorials/type-providers/accessing-a-sql-database.md)
 #### [型プロバイダーおよびエンティティを使用した SQL Database へのアクセス](fsharp/tutorials/type-providers/accessing-a-sql-database-entities.md)
@@ -408,6 +409,7 @@
 ### [固定キーワード](fsharp/language-reference/fixed.md)
 ### [コンパイラ ディレクティブ](fsharp/language-reference/compiler-directives.md)
 ### [コンパイラ オプション](fsharp/language-reference/compiler-options.md)
+### [F# Interactive オプション](fsharp/language-reference/fsharp-interactive-options.md)
 ### [ソース行、ファイル、およびパスの識別子](fsharp/language-reference/source-line-file-path-identifiers.md)
 ### [呼び出し元情報](fsharp/language-reference/caller-information.md)
 ### [冗語構文](fsharp/language-reference/verbose-syntax.md)
