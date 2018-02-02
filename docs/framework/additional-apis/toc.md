@@ -4,8 +4,12 @@
 #### [m_WriteList フィールド](m_writelist.md)
 ### [ConnectionGroup クラス](connectiongroup.md)
 #### [m_ConnectionList フィールド](m_connectionlist.md)
+### [CoreResponseData クラス](coreresponsedata.md)
+#### [m_ResponseHeaders フィールド](coreresponsedata_m_responseheaders.md)
+#### [m_StatusCode フィールド](coreresponsedata_m_statuscode.md)
 ### HttpWebRequest クラス
 #### [_AutoRedirects フィールド](_autoredirects.md)
+#### [_CoreResponse フィールド](httpwebrequest__coreresponse.md)
 #### [_HttpResponse フィールド](_httpresponse.md)
 ### ServicePoint クラス
 #### [m_ConnectionGroupList フィールド](m_connectiongrouplist.md)
