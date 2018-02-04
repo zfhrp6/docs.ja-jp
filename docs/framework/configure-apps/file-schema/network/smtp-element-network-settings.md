@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,24 +16,25 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 598fe3dc2a49187e923cd689f863d0a3327e735f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f5b2a3b7eec17fbdd12181c29f610d2b2ad32bd4
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="ltsmtpgt-element-network-settings"></a>&lt;smtp&gt;要素 (ネットワーク設定)
-電子メール送信の配信形式、配信方法、および差出人アドレスを設定します。  
+配信形式、配信方法を構成し、電子メールを送信するためのアドレスからです。  
   
  \<configuration>  
-\<system.net >  
-\<mailSettings >  
-\<smtp >  
+\<system.net>  
+\<mailSettings>  
+\<smtp>  
   
 ## <a name="syntax"></a>構文  
   
@@ -53,9 +55,9 @@ ms.lasthandoff: 12/22/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|`deliveryFormat`|送信する電子メールの配信形式を指定します。 指定できる値は SevenBit および International です。|  
+|`deliveryFormat`|発信メールの配信形式を指定します。 指定できる値は SevenBit および International です。|  
 |`deliveryMethod`|電子メールの配信方法を指定します。 指定できる値は、network、pickupDirectoryFromIis、および specifiedPickupDirectory です。|  
-|`from`|送信する電子メールの差出人アドレスを指定します。|  
+|`from`|指定、出力方向の電子メールの差出人アドレスです。|  
   
 ### <a name="child-elements"></a>子要素  
   

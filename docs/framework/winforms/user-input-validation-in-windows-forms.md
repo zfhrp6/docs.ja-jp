@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - user input [Windows Forms], validating in Windows Forms
 - validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1eba92d764e73360b1cd58957ea5318c5b263b8b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1d0e3ec867e44c4f01b239e8e243259d7c951d96
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Windows フォームでのユーザー入力の検証
 ユーザーがアプリケーションにデータを入力する場合、アプリケーションがそれを使用する前に、データが有効であることを確認します。 特定のテキスト フィールドにならないこと長さがゼロでフィールドが、電話番号などの適切な形式のデータの型として書式設定されること、または文字列がデータベースのセキュリティを侵害するために使用できる任意の安全でない文字を含まないことを要求することがあります。 Windows フォームでは、アプリケーションで入力を検証するためのいくつかの方法を提供します。  
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Windows.Forms.Control.Validating>イベントが指定された型のオブジェクト<xref:System.ComponentModel.CancelEventArgs>です。 取り消すことができますが、コントロールのデータが無効であると判断した場合、<xref:System.Windows.Forms.Control.Validating>するには、このオブジェクトのイベント<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 設定しない場合、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティ、Windows フォームは、そのコントロールが正常に検証するいると仮定させて、<xref:System.Windows.Forms.Control.Validated>イベント。  
   
- 内の電子メール アドレスを検証するコード例については、<xref:System.Windows.Controls.TextBox>を参照してください<xref:System.Windows.Forms.Control.Validating>です。  
+ 電子メール アドレスを検証するコード例については、<xref:System.Windows.Controls.TextBox>を参照してください<xref:System.Windows.Forms.Control.Validating>です。  
   
 ### <a name="data-binding-and-event-driven-validation"></a>データ バインディングとイベント ドリブンの検証  
  検証は、データベース テーブルなどのデータ ソースにコントロールがバインドされているときに非常に便利です。 確認することができます、検証を使用して、コントロールのデータがデータ ソースで必要な形式を満たす、そのことにはない引用符などの特殊文字を含めるとできない可能性がありますセーフであります。  

@@ -21,23 +21,24 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 77f115afab9c0ad4b53a38d8cdb3683616738b1d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 31c8a3d22e6a7fa074eae18de8f9b2a9903457c1
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="using-secure-sockets-layer"></a>Secure Sockets Layerの使用
 <xref:System.Net> クラスは、Secure Sockets Layer (SSL) を使用して、複数のネットワーク プロトコルの接続を暗号化します。  
   
  HTTP 接続の場合、<xref:System.Net.WebRequest> クラスと <xref:System.Net.WebResponse> クラスは SSL を使用して、SSL をサポートする Web ホストと通信します。 SSL の使用は、指定された URI に基づいて <xref:System.Net.WebRequest> クラスで決定されます。 URI が "https:" で始まる場合は SSL が使用されます。URI が "http:" で始まる場合は、暗号化されていない接続が使用されます。  
   
- ファイル転送プロトコル (FTP) で SSL を使用するには、<xref:System.Net.FtpWebRequest.EnableSsl> プロパティを true に設定してから <xref:System.Net.FtpWebRequest.GetResponse> を呼び出します。 同様に、簡易メール転送プロトコル (SMTP) を使用するには、<xref:System.Net.Mail.SmtpClient.EnableSsl> プロパティを true に設定してから電子メールを送信します。  
+ ファイル転送プロトコル (FTP) で SSL を使用するには、<xref:System.Net.FtpWebRequest.EnableSsl> プロパティを true に設定してから <xref:System.Net.FtpWebRequest.GetResponse> を呼び出します。 同様に、簡易メール転送プロトコル (SMTP) で SSL を使用する次のように設定します。、<xref:System.Net.Mail.SmtpClient.EnableSsl>プロパティを、電子メールを送信する前に true にします。  
   
  <xref:System.Net.Security.SslStream> クラスは、SSL のストリームベースの抽象化を提供します。また、SSL ハンドシェイクを構成する方法が多く用意されています。  
   

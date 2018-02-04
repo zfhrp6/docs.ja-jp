@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - .NET Framework, extensibility
 - versioning [.NET Framework], add-ins
 ms.assetid: 8dd45b02-7218-40f9-857d-40d7b98b850b
-caps.latest.revision: "42"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 030b84245a5cec09dac3133b04235c65f7bb2d80
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4d288d321063512f91ad94b417bb1a6bf38c9ef9
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="add-ins-and-extensibility"></a>アドインおよび拡張機能
 <a name="top"></a> アドインには、ホスト アプリケーションのための拡張機能またはサービスが用意されています。 開発者は、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のプログラミング モデルを使用してアドインを開発し、ホスト アプリケーションでそれらをアクティブ化できます。 こうした機能は、このモデルで、ホストとアドインの間に通信パイプラインを構築することによって実現します。 このモデルは、 <xref:System.AddIn>、 <xref:System.AddIn.Hosting>、 <xref:System.AddIn.Pipeline>、 <xref:System.AddIn.Contract> の各名前空間の型を使用することによって実装されます。  
@@ -105,7 +107,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="distinguishing_between_addins_and_hosts"></a>   
 ## <a name="distinguishing-between-add-ins-and-hosts"></a>アドインとホストの違い  
- アドインとホストの違いは、アドインをアクティブにするものがホストであるということのみです。 ホストは、2 つのうち大きな方であることもあれば (ワード プロセッシング アプリケーションとスペル チェック機能の場合など)、小さな方であることもあります (メディア プレーヤーを埋め込んだインスタント メッセージング クライアントの場合など)。 アドイン モデルでは、クライアントとサーバーの両方のシナリオでアドインがサポートされます。 サーバー アドインの例としては、電子メール サーバーにウイルス スキャン、スパム フィルター、IP 保護を適用するアドインなどがあります。 クライアント アドインの例としては、ワード プロセッサ向けの参照アドイン、グラフィック プログラムやゲームなどの特殊機能、ローカルの電子メール クライアント用のウイルス スキャン機能などがあります。  
+ アドインとホストの違いは、アドインをアクティブにするものがホストであるということのみです。 ホストは、2 つのうち大きな方であることもあれば (ワード プロセッシング アプリケーションとスペル チェック機能の場合など)、小さな方であることもあります (メディア プレーヤーを埋め込んだインスタント メッセージング クライアントの場合など)。 アドイン モデルでは、クライアントとサーバーの両方のシナリオでアドインがサポートされます。 サーバー アドインの例としては、電子メール サーバーにウイルス スキャン、スパム フィルター、IP 保護を適用するアドインなどがあります。 クライアント アドインの例には、ワード プロセッサでは、グラフィック プログラムやゲームなど、ローカルの電子メール クライアント用のウイルス スキャンに特化した機能の参照のアドインが含まれます。  
   
  [ページのトップへ](#top)  
   

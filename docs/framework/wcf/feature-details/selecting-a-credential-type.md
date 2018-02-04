@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 629d5c55bd679539220566db17401151a1339d18
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9e6b3d84db619ba1b4b5785b134cfe87d1b15cdc
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="selecting-a-credential-type"></a>資格情報の種類の選択
 *資格情報*データ[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クレームされた id または機能のいずれかを確立するために使用します。 たとえば、パスポートは、政府によって発行される、国籍または地域籍を証明するための資格情報です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名トークンや X.509 証明書など多数の形式を資格情報に使用できます。 ここでは、資格情報について説明し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で資格情報を使用する方法およびアプリケーションに適切な資格情報を選択する方法についても説明します。  
@@ -64,7 +66,7 @@ ms.lasthandoff: 12/22/2017
 >  SSL セキュリティを .NET Framework 3.5 以降と共に使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは、証明書ストア内の中間証明書と SSL ネゴシエーション中に受信した中間証明書の両方を使用して、サービスの証明書に対して証明書チェーンの検証を実行します。 .NET Framework 3.0 では、ローカルの証明書ストアにインストールされている中間証明書のみが使用されます。  
   
 #### <a name="out-of-band-negotiation"></a>帯域外ネゴシエーション  
- 自動ネゴシエーションを無効にした場合、サービスにメッセージを送信する前にクライアント側にサービス資格情報が準備されている必要があります。 これとも呼ばれる、*帯域外の*プロビジョニングします。 たとえば、指定された資格情報の種類が証明書で、自動ネゴシエーションが無効の場合、クライアントはサービス所有者に連絡し、証明書を受け取って、クライアント アプリケーションを実行しているコンピューターにインストールする必要があります。 この方法は、たとえば B2B シナリオで、サービスにアクセスできるクライアントを厳密に制御することが必要な場合に使用される可能性があります。 この帯域外ネゴシエーションは、電子メールで実行できます。X.509 証明書は、Microsoft 管理コンソール (MMC) の証明書スナップインなどのツールを使用して、Windows 証明書ストアに格納します。  
+ 自動ネゴシエーションを無効にした場合、サービスにメッセージを送信する前にクライアント側にサービス資格情報が準備されている必要があります。 これとも呼ばれる、*帯域外の*プロビジョニングします。 たとえば、指定された資格情報の種類が証明書で、自動ネゴシエーションが無効の場合、クライアントはサービス所有者に連絡し、証明書を受け取って、クライアント アプリケーションを実行しているコンピューターにインストールする必要があります。 この方法は、たとえば B2B シナリオで、サービスにアクセスできるクライアントを厳密に制御することが必要な場合に使用される可能性があります。 メールは、この出力の-域外ネゴシエーションを行うことができ、X.509 証明書は、Microsoft 管理コンソール (MMC) の証明書スナップインなどのツールを使用して Windows 証明書ストアに格納します。  
   
 > [!NOTE]
 >  <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> プロパティを使用して、帯域外ネゴシエーションによって取得した証明書をサービスに提供します。 バインディングでは自動ネゴシエーションが許可されないので、<xref:System.ServiceModel.BasicHttpBinding> クラスを使用するときはこの操作が必要になります。 このプロパティは、相関関係のない双方向シナリオでも使用します。 このシナリオでは、クライアントが先にサーバーへの要求を送信する必要がなく、サーバーからクライアントにメッセージが送信されます。 サーバーにはクライアントからの要求がないので、サーバーはクライアントの証明書を使用して、クライアントへのメッセージを暗号化する必要があります。  
@@ -106,7 +108,7 @@ ms.lasthandoff: 12/22/2017
 > [!IMPORTANT]
 >  ID の切り替えができないこと (つまり、セキュリティ コンテキストを確立する場合の既定の動作) について、注意が必要な状況があります。 別のサービスと通信するサービスを作成する場合、この 2 番目のサービスに対して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開くために使用した ID は変更できません。 これは、複数のクライアントが最初のサービスを使用できる状況で、2 番目のサービスにアクセスするときに最初のサービスがクライアントを偽装する場合、問題になります。 サービスがすべての呼び出し元に対して同じクライアントを再利用する場合、2 番目のサービスへの呼び出しはすべて、2 番目のサービスに対してクライアントを開くために使用した最初の呼び出し元の ID によって実行されます。 つまり、このサービスでは、すべてのクライアントが 2 番目のサービスと通信できるように、最初のクライアントの ID が使用されます。 これによって、権限の昇格が発生する可能性があります。 これがサービスの目的の動作でない場合、各呼び出し元を追跡し、その呼び出し元ごとに 2 番目のサービスに対する新しいクライアントを作成する必要があります。これによって、適切な呼び出し元が 2 番目のサービスと通信するために、サービスは適切なクライアントだけを使用できます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]資格情報とセキュリティで保護されたセッションを参照してください。[セキュリティで保護されたセッションに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 資格情報とセキュリティで保護されたセッションを参照してください。[セキュリティで保護されたセッションに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)です。  
   
 ## <a name="see-also"></a>参照  
  <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  

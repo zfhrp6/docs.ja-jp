@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 187927a9e75348454f5832c2a34bf780e48e4358
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e9551fcf4f302be899dcee8737b3bcfad15f1210
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="large-data-and-streaming"></a>大規模データとストリーミング
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、XML ベースの通信インフラストラクチャです。 XML データがで定義されている標準のテキスト形式でエンコードされたよくあるため、 [XML 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=94838)接続されている、システムの開発者と設計者が通常懸念送信されたメッセージのワイヤのフット プリント (またはサイズ) 間でネットワーク、および XML のテキストに基づくエンコーディングのバイナリ データの効率的な転送特殊な課題を招きます。  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] XML ベースの通信インフラストラクチャです。 XML データがで定義されている標準のテキスト形式でエンコードされたよくあるため、 [XML 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=94838)接続されている、システムの開発者と設計者が通常懸念送信されたメッセージのワイヤのフット プリント (またはサイズ) 間でネットワーク、および XML のテキストに基づくエンコーディングのバイナリ データの効率的な転送特殊な課題を招きます。  
   
 ## <a name="basic-considerations"></a>基本的な考慮事項  
  後で示される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の情報に関する背景情報として、接続されたシステムのインフラストラクチャ全般に当てはまる、エンコーディング、バイナリ データ、およびストリーミングに関する一般的な注意点や考慮事項から説明します。  
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  Base64 でエンコードされた文字列では、各文字で元の 8 ビット データのうち 6 ビット分を表すので、その結果、Base64 ではエンコーディングとオーバーヘッドの比率が 4:3 になります。このとき、通常追加される書式設定文字 (復帰とライン フィード) は計算に入れていません。 XML エンコーディングとバイナリ エンコーディングとの間の相違の大きさは、通常、シナリオによって異なりますが、500 MB のペイロードを送信するときにサイズの増加率が 33% を超えることは、受け入れられません。  
   
- このようなエンコーディングのオーバーヘッドを回避するには、MTOM (Message Transmission Optimization Mechanism) 規格を使用すると、特別なエンコーディングを行うことなく、メッセージに含まれている大きいデータ要素を外部化し、それをバイナリ データとしてメッセージと共に送信できます。 MTOM でメッセージを交換する方法は、添付ファイルや埋め込みコンテンツ (写真やその他の埋め込みコンテンツ) が付属している簡易メール転送プロトコル (SMTP) 電子メール メッセージを交換する方法と似ています。MTOM メッセージは multipart/related MIME シーケンスとしてパッケージ化され、ルート パートが実際の SOAP メッセージになります。  
+ このようなエンコーディングのオーバーヘッドを回避するには、MTOM (Message Transmission Optimization Mechanism) 規格を使用すると、特別なエンコーディングを行うことなく、メッセージに含まれている大きいデータ要素を外部化し、それをバイナリ データとしてメッセージと共に送信できます。 添付ファイルや埋め込みコンテンツ (写真やその他の埋め込みコンテンツ); の簡易メール転送プロトコル (SMTP) 電子メール メッセージに同様の方法で mtom でメッセージの交換します。MTOM メッセージは、ルート パートが実際の SOAP メッセージ multipart/related MIME シーケンスとしてパッケージ化します。  
   
  MTOM SOAP メッセージが、エンコードされていないバージョンと異なるのは、メッセージ内でバイナリ データを含んでいた元の要素の代わりに、それぞれの MIME パートを参照している特別な要素タグが配置される点です。 つまり SOAP メッセージでは、メッセージと共に送信される MIME パートを指すことによってバイナリ コンテンツが参照されますが、含まれているのは XML テキスト データのみです。 このモデルは、広く確立している SMTP モデルに厳密に適合するように作成されています。このため、さまざまなプラットフォームで、MTOM メッセージをエンコードまたはデコードするための幅広いツール サポートが提供され、きわめて高い相互運用性が確保されています。  
   
@@ -72,7 +74,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="encodings"></a>エンコーディング  
  *エンコード*に、ネットワーク上でメッセージを表示する方法についてのルール セットを定義します。 *エンコーダー*このようなエンコーディングを実装し、担当、送信者側でオンにする、<xref:System.ServiceModel.Channels.Message>メモリ内のメッセージのバイト ストリームまたはバイト バッファー、ネットワーク経由で送信されることができます。 受信側では、バイト シーケンスがエンコーダーによってメモリ内メッセージに変換されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、3 つのエンコーダーが用意されています。開発者は、必要に応じて独自のエンコーダーを作成してプラグインすることもできます。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 3 つのエンコーダーが含まれていて、必要な場合に使用すると、作成して独自のエンコーダーをプラグインします。  
   
  個々の標準バインディングには、構成済みのエンコーダーが含まれています。Net* プレフィックスで始まるバインディングでは、(<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> クラスを含めることで) バイナリ エンコーダーが使用されるのに対し、<xref:System.ServiceModel.BasicHttpBinding> クラスと <xref:System.ServiceModel.WSHttpBinding> クラスでは、既定で (<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> クラスを含めることで) テキスト メッセージ エンコーダーが使用されます。  
   

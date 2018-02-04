@@ -8,16 +8,17 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b483139a-39bb-4560-8003-8969a8fc2cd1
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f6974c7bb281aa6685725b65edd06bb40a907559
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 60e3b65851dba68b4d01d6e4195b5faf99b583de
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="absolute-delay"></a>絶対遅延
 このサンプルの主要なシナリオは、ワークフロー アプリケーションで永続的なタイマーを使用して、指定した <xref:System.DateTime> まで遅延することです。 これは、特定の <xref:System.Activities.Statements.Delay> (または分数/秒数) の遅延のみ行うことができるため、組み込みの <xref:System.TimeSpan> アクティビティの使用とは異なります。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
  このサンプルは、<xref:System.Activities.WorkflowApplication> の永続性をオンにする方法も示しています。 このサンプルでは、タイマーの時間切れを待機している間のアイドル時間中にワークフロー データが永続性データベースにアンロードされる永続的なタイマーを使用します。 この実装は、他の永続性アクションにも使用できます。 このサンプルは、SQL Server で永続性接続文字列を設定する方法、およびワークフロー インスタンスのデータを永続化するためにインスタンス ストアを作成する方法を示しています。 ワークフロー インスタンスを実行可能にするイベントが発生した後でワークフローを再開する方法に関するロジックも提供されています。  
   
- このサンプルをステップ実行すると、電子メール メッセージが送信される原因となる組み込みの遅延が開始および完了する時刻が表示されます。 ここから、AbsoluteDelay アクティビティは指定した <xref:System.DateTime> まで (または <xref:System.DateTime> を経過している場合は 0 秒間) 停止します。時間切れになると、電子メールが送信されます。 これは、組み込みの <xref:System.Activities.Statements.Delay> 機能と AbsoluteDelay アクティビティの使用の 2 つの異なるユース ケースを示します。  
+ このサンプルをステップ実行するを組み込みの待機時間を開始および完了に時間がかかると送信される電子メール メッセージが表示されます。 ここから、AbsoluteDelay アクティビティは指定した <xref:System.DateTime> まで (または <xref:System.DateTime> を経過している場合は 0 秒間) 停止します。時間切れになると、電子メールが送信されます。 これは、組み込みの <xref:System.Activities.Statements.Delay> 機能と AbsoluteDelay アクティビティの使用の 2 つの異なるユース ケースを示します。  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   

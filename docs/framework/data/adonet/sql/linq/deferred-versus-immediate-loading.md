@@ -5,28 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d7247f-a3b7-460b-b342-5c1a2365aa1a
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f40f6c3d94aeeae41c4cce00bac8de863226f287
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8a4fa1574b8e25a5d98f9547ad916a3c84f10b01
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="deferred-versus-immediate-loading"></a>遅延読み込みと即時読み込み
 オブジェクトに対してクエリを実行すると、要求したオブジェクトだけが実際に取得されます。 *関連*オブジェクトは自動的に同時にフェッチされません。 (詳細については、次を参照してください[リレーションシップ間でクエリを実行する](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md)。)。ただし、関連オブジェクトにアクセスしようとすると、それらを取得する要求が生成されるため、関連オブジェクトがまだ読み込まれていない状態を識別することはできません。  
   
- たとえば、特定の注文のセットを取得するクエリを実行し、ときおり特定の顧客に電子メール通知を送信しようとしているとします。 最初から注文ごとにすべての顧客データを取得する必要はありません。 遅延読み込みを使用すると、関連情報が実際に必要になるまで、その情報の取得を遅らせることができます。 次に例を示します。  
+ たとえば、注文の特定のセットに対してクエリを実行し、特定の顧客に電子メール通知を送信し、頻度が低いことができます。 最初から注文ごとにすべての顧客データを取得する必要はありません。 遅延読み込みを使用すると、関連情報が実際に必要になるまで、その情報の取得を遅らせることができます。 次に例を示します。  
   
  [!code-csharp[DLinqQueryConcepts#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#1)]
  [!code-vb[DLinqQueryConcepts#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#1)]  

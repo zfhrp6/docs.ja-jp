@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,21 +14,22 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: d63871f45fc8e209eb562fec7b208b10f67414b1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 352615238d95cf02788cf88ef412a11ffd2faf37
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="wcf-security-terminology"></a>WCF セキュリティ用語
 セキュリティについて説明するときに使用する用語の中には、だれもが知っているとは限らないものもあります。 ここでは、セキュリティ用語の一部を簡単に説明します。このトピックは、すべての項目について詳細に説明することを目的としたものではありません。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]使用される用語[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ドキュメントについてを参照してください[基本的な Windows Communication Foundation 概念](../../../../docs/framework/wcf/fundamental-concepts.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 使用される用語[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ドキュメントについてを参照してください[基本的な Windows Communication Foundation 概念](../../../../docs/framework/wcf/fundamental-concepts.md)です。  
   
  アクセス制御リスト (ACL: Access Control List)  
  オブジェクトに適用されるセキュリティ保護のリスト。 オブジェクトには、ファイル、プロセス、イベント、またはセキュリティ記述子を持つすべてのものが含まれます。ACL 内のエントリは、アクセス制御エントリ (ACE: Access Control Entry) と呼ばれます。 ACL には、随意 ACL とシステム ACL の 2 種類があります。  
@@ -184,7 +186,7 @@ ms.lasthandoff: 12/22/2017
  指定されたファイルが信頼できるものかどうかを判断するソフトウェア。 この判断は、そのファイルに関連付けられている証明書に基づいて行われます。  
   
  ユーザー プリンシパル名 (UPN)  
- ユーザー アカウント名 (とも呼ば、*ユーザー ログオン名*) と、ユーザー アカウントが配置されているドメインを識別するドメイン名です。 これは、Windows ドメインにログオンするための標準的使用方法です。 形式: someone@example.com (電子メール アドレス) です。  
+ ユーザー アカウント名 (とも呼ば、*ユーザー ログオン名*) と、ユーザー アカウントが配置されているドメインを識別するドメイン名です。 これは、Windows ドメインにログオンするための標準的使用方法です。 形式:someone@example.comです (の場合、電子メール アドレスなど)。  
   
 > [!NOTE]
 >  標準の UPN 形式に加え、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、cohowinery.com\someone のような下位レベル形式の UPN も受け入れます。  

@@ -8,19 +8,20 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8a6d0338b7c460d7053af9264527a6cd6d263673
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6086ca0ccb31603874feda6df1384b9346adb49d
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="sendmail-custom-activity"></a>SendMail カスタム アクティビティ
-このサンプルでは、<xref:System.Activities.AsyncCodeActivity> から派生するカスタム アクティビティを作成して、SMTP を使用して電子メールを送信し、ワークフロー アプリケーション内で使用する方法を示します。 カスタム アクティビティは <xref:System.Net.Mail.SmtpClient> の機能を使用して、電子メールを非同期的に送信したり、電子メールを認証付きで送信します。 また、テスト モード、トークン置換、ファイル テンプレート、テスト ドロップ パスなどのエンドユーザーの機能も提供しています。  
+このサンプルでは、<xref:System.Activities.AsyncCodeActivity> から派生するカスタム アクティビティを作成して、SMTP を使用して電子メールを送信し、ワークフロー アプリケーション内で使用する方法を示します。 カスタム アクティビティの機能を使用して<xref:System.Net.Mail.SmtpClient>電子メールを非同期的に送信して、認証を使用してメールを送信します。 また、テスト モード、トークン置換、ファイル テンプレート、テスト ドロップ パスなどのエンドユーザーの機能も提供しています。  
   
  次の表で、`SendMail` アクティビティの引数の詳細を説明します。  
   
@@ -31,17 +32,17 @@ ms.lasthandoff: 12/22/2017
 |EnableSsl|bool|<xref:System.Net.Mail.SmtpClient> が、接続を暗号化するために SSL (Secure Sockets Layer) を使用するかどうかを指定します。|  
 |UserName|String|差出人の <xref:System.Net.Mail.SmtpClient.Credentials%2A> プロパティを認証する資格情報を設定するユーザー名。|  
 |[Password]|String|差出人の <xref:System.Net.Mail.SmtpClient.Credentials%2A> プロパティを認証する資格情報を設定するパスワード。|  
-|Subject|<xref:System.Activities.InArgument%601>\<文字列 >|メッセージの件名。|  
-|本文|<xref:System.Activities.InArgument%601>\<文字列 >|メッセージの本文。|  
-|Attachments|<xref:System.Activities.InArgument%601>\<文字列 >|この電子メール メッセージに添付されるデータの格納に使用される添付データのコレクション。|  
-|変換前|<xref:System.Net.Mail.MailAddress>|この電子メール メッセージの差出人アドレス。|  
+|Subject|<xref:System.Activities.InArgument%601>\<string>|メッセージの件名。|  
+|本文|<xref:System.Activities.InArgument%601>\<string>|メッセージの本文。|  
+|Attachments|<xref:System.Activities.InArgument%601>\<string>|添付ファイルのコレクションがこの電子メール メッセージに添付されたデータを格納するために使用します。|  
+|From|<xref:System.Net.Mail.MailAddress>|この電子メール メッセージのアドレス。|  
 |終了|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|この電子メール メッセージの受信者を格納するアドレスのコレクション。|  
-|CC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|この電子メール メッセージの CC (carbon copy) 受信者を格納するアドレスのコレクション。|  
-|BCC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|この電子メール メッセージの BCC (blind carbon copy) 受信者を格納するアドレスのコレクション。|  
+|CC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|この電子メール メッセージの carbon copy (CC) 受信者を格納しているコレクションに対応します。|  
+|BCC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|この電子メール メッセージのブラインド カーボン コピー (BCC) 受信者を格納するアドレスのコレクション。|  
 |トークン|<xref:System.Activities.InArgument%601>< IDictionary\<, string >>|本文で置換するトークン。 この機能を使用すると、本文にいくつかの値を指定した後、このプロパティを使用して提供されるトークンで置換できます。|  
 |BodyTemplateFilePath|String|本文のテンプレートのパス。 `SendMail` アクティビティは、このファイルの内容をその body プロパティにコピーします。<br /><br /> テンプレートは、tokens プロパティの内容によって置き換えられるトークンを含めることができます。|  
-|TestMailTo|<xref:System.Net.Mail.MailAddress>|このプロパティを設定すると、すべての電子メールがそのプロパティで指定されているアドレスに送信されます。<br /><br /> このプロパティは、ワークフローをテストするときに使用するためのものです。 たとえば、実際の受信者に送信せずに、すべての電子メールが送信されることを確認します。|  
-|TestDropPath|String|このプロパティを設定すると、すべての電子メールが指定したファイルにも保存されます。<br /><br /> このプロパティは、ワークフローのテストやデバッグを行うときに使用したり、送信する電子メールの形式や内容が適切であることを確認するためのものです。|  
+|TestMailTo|<xref:System.Net.Mail.MailAddress>|このプロパティが設定されている場合は、すべての電子メールが指定されているアドレスに送信されます。<br /><br /> このプロパティは、ワークフローをテストするときに使用するためのものです。 たとえば、ことを確認する場合は、すべての電子メールが、実際の受信者に送信せず送信されます。|  
+|TestDropPath|String|このプロパティが設定されている場合、すべての電子メールは指定したファイルにも保存されます。<br /><br /> このプロパティは、テストしたり、送信メールの内容と形式が適切であるかどうかを確認する、ワークフローをデバッグするときに使用するためのものです。|  
   
 ## <a name="solution-contents"></a>ソリューションのコンテンツ  
  ソリューションには、次の 2 つのプロジェクトが含まれています。  
@@ -115,7 +116,7 @@ new SendMail
 ## <a name="set-up-instructions"></a>セットアップ手順  
  このサンプルでは SMTP サーバーにアクセスする必要があります。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]SMTP サーバーをセットアップすると、次のリンクが表示されます。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] SMTP サーバーをセットアップすると、次のリンクが表示されます。  
   
 -   [Microsoft Technet](http://go.microsoft.com/fwlink/?LinkId=166060)  
   
@@ -133,9 +134,9 @@ new SendMail
   
 2.  有効な SMTP サーバーへのアクセス権があることを確認してください。 セットアップ手順を参照してください。  
   
-3.  サーバー アドレスと電子メールの差出人アドレスおよび宛先アドレスを使用してプログラムを構成します。  
+3.  サーバーのアドレス、およびからと電子メール アドレスにプログラムを構成します。  
   
-     このサンプルを正しく実行するには、電子メールの差出人アドレスおよび宛先アドレスの値と Program.cs および Sequence.xaml の SMTP サーバーのアドレスを設定する必要がある場合があります。 プログラムでは電子メールが 2 つの方法で送信されるため、両方の場所でアドレスを変更する必要があります。  
+     このサンプルを正しく実行するには、Program.cs および Sequence.xaml の値からその電子メール アドレス、SMTP サーバーのアドレスを構成する必要があります。 プログラムでは電子メールが 2 つの方法で送信されるため、両方の場所でアドレスを変更する必要があります。  
   
 4.  ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。  
   

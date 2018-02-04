@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -22,21 +23,22 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a28f8994c8cffdad69272322575df37c437b8b6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 04a46e30256b3b6df3de51346924cbb5fa057837
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="code-access-security"></a>コード アクセス セキュリティ
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- 複雑にリンクされた現在のコンピューター システムには、多種多様な、多くの場合は不明なソースからコードが送信されてきます。 このようなコードは、電子メールに添付されていたり、文書に含まれていたり、インターネットからダウンロードされたりします。 ウイルスやワームのような悪意のあるコードによってコンピューター上のデータを破損または破壊され、時間的にも金銭的にも直接の被害を受けた経験のあるユーザーは少なくありません。  
+ 複雑にリンクされた現在のコンピューター システムには、多種多様な、多くの場合は不明なソースからコードが送信されてきます。 コードの電子メールに接続されている、ドキュメントに含まれているまたはインターネットを経由してダウンロードします。 ウイルスやワームのような悪意のあるコードによってコンピューター上のデータを破損または破壊され、時間的にも金銭的にも直接の被害を受けた経験のあるユーザーは少なくありません。  
   
  ほとんどのセキュリティ機構では、ログオン資格情報 (通常はパスワード) に基づいてユーザーに権限を与え、そのユーザーがアクセスできるリソース (多くの場合はディレクトリとファイル) を制限しています。 しかし、この方法では対処できないさまざまな問題が存在します。たとえば、ユーザーはさまざまなソースからコードを入手しますが、中には信頼できない入手先もあります。コードに、悪意のあるコードからねらわれやすいバグがあったり、脆弱性が潜んでいる可能性もあります。また、コードがユーザーの予期しない動作をする場合もあります。 これらの結果、ユーザーが慎重で信頼できるとしても、実行したソフトウェアが悪意のあるソフトウェアやエラーを含むソフトウェアであった場合は、コンピューター システムが損害を受けたり、機密データが漏洩したりする可能性があります。 多くのオペレーティング システムのセキュリティ機構では、Web ページ上のスクリプトなどの場合を除き、コードを実行するためには、その細部にわたるまで完全に信頼されていることが要求されます。 そのため、信頼関係のないコンピューター システム間でも、一方のシステムから送信されたコードをもう一方のシステムで安全に実行できるようにするための、幅広く適用できるセキュリティ機構が必要になります。  
   
@@ -77,7 +79,7 @@ ms.lasthandoff: 12/22/2017
 |-----------|-----------------|  
 |[コード アクセス セキュリティの基礎](../../../docs/framework/misc/code-access-security-basics.md)|コード アクセス セキュリティとその最も一般的な使用方法について説明します。|  
 |[透過的セキュリティ コード、レベル 2](../../../docs/framework/misc/security-transparent-code-level-2.md)|[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] のセキュリティ透過モデルについて説明します。|  
-|[部分信頼コードからライブラリを使用します。](../../../docs/framework/misc/using-libraries-from-partially-trusted-code.md)|ライブラリを有効にしてアンマネージ コードと共に使用できるようにする方法と、アンマネージ コードからライブラリを使用する方法について説明します。|  
+|[部分信頼コードからのライブラリの使用](../../../docs/framework/misc/using-libraries-from-partially-trusted-code.md)|ライブラリを有効にしてアンマネージ コードと共に使用できるようにする方法と、アンマネージ コードからライブラリを使用する方法について説明します。|  
 |[セキュリティの基本概念](../../../docs/standard/security/key-security-concepts.md)|.NET Framework セキュリティ システムで使用されるさまざまな重要用語と概念について、概要を示します。|  
 |[ロール ベースのセキュリティ](../../../docs/standard/security/role-based-security.md)|ロールに基づいて、セキュリティを組み込む方法について説明します。|  
 |[Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)|アプリケーションに暗号を組み込む方法について説明します。|

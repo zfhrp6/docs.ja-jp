@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 36af8d1b-dc08-4a37-9497-d23c0a0ac11c
-ms.openlocfilehash: bcf3fe052f305f29ae4cf618d93759bd911e0078
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a18f339d898374a59858cd774154b3846594d183
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="interactive-programming-with-f"></a>F# による対話型プログラミング #
 
@@ -26,7 +26,7 @@ API リファレンスのリンクをクリックすると MSDN に移動しま�
 
 F# Interactive (fsi.exe) は、コンソールで F# コードを対話形式で実行したり、F# スクリプトを実行したりするために使用します。 つまり、F# Interactive は、F# 言語の REPL (Read、Evaluate、Print Loop) を実行します。
 
-コンソールから F# Interactive を実行するには、fsi.exe を実行します。  Fsi.exe が表示されます"c:\Program Files (x86) \Microsoft SDKs\F#\<バージョン > \Framework\<バージョン >\"です。 使用できるコマンド ライン オプションについては、「[F# Interactive Options](fsharp-interactive-options.md)」 (F# Interactive オプション) を参照してください。
+コンソールから F# Interactive を実行するには、fsi.exe を実行します。  Fsi.exe が表示されます"c:\Program Files (x86) \Microsoft SDKs\F#\<バージョン > \Framework\<バージョン >\"です。 使用できるコマンド ライン オプションについては、「[F# Interactive Options](../../language-reference/fsharp-interactive-options.md)」 (F# Interactive オプション) を参照してください。
 
 Visual Studio で F# Interactive を実行するには、ツール バーの **[F# Interactive]** というボタンをクリックするか、**Ctrl + Alt + F** キーを使用します。 この操作により、対話形式のウィンドウが開きます。このウィンドウは、F# Interactive セッションを実行するツール ウィンドウです 対話形式のウィンドウで実行するコードを選択し、**Alt + Enter** キーの組み合わせを押す方法もあります。 F# インタラクティブが **[F# Interactive]** というツール ウィンドウで開始されます。 このショートカット キーを使用するときは、エディター ウィンドウにフォーカスがあることを確認します。
 
@@ -98,5 +98,5 @@ test
 
 |タイトル|説明|
 |-----|-----------|
-|[F# Interactive オプション](fsharp-interactive-options.md)|F# Interactive (fsi.exe) のコマンド ラインの構文やオプションについて説明します。|
+|[F# Interactive オプション](../../language-reference/fsharp-interactive-options.md)|F# Interactive のコマンドライン構文とオプションについて説明します fsi.exe です。|
 |[F# Interactive ライブラリ リファレンス](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|F# Interactive でコードを実行するときに使用できるライブラリ機能について説明します。|
