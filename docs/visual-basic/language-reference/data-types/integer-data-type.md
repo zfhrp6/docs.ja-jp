@@ -1,9 +1,10 @@
 ---
 title: "整数型 (Integer) (Visual Basic)"
-ms.date: 04/20/2017
+ms.date: 01/31/2018
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Integer
@@ -27,11 +28,11 @@ helpviewer_keywords:
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 69c7fb6caf5d9a10c7d033d1ba0a05c9230d472c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ba700cac58c96b3d6d2f5ed3c74fdd7e95761352
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="integer-data-type-visual-basic"></a>整数データ型 (Visual Basic)
 -2,147,483,648 から 2,147,483,647 までの符号付き 32 ビット (4 バイト) の整数を保持します。  
@@ -56,10 +57,18 @@ Visual Basic 2017 から始めて、使用することできますもアンダ�
 
 [!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#IntS)]  
 
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+
+```vb
+Dim number As Integer = &H_C305_F860
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
+
 数値リテラルを含めることも、 `I` [文字入力](../../programming-guide\language-features\data-types/type-characters.md)を示すために、`Integer`データ型は、次の例のようにします。
 
 ```vb
-Dim number = &H035826I
+Dim number = &H_035826I
 ```
 
 ## <a name="programming-tips"></a>プログラミングのヒント

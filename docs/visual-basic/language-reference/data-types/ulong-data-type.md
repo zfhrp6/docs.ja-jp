@@ -1,11 +1,13 @@
 ---
 title: "ULong 型 (Visual Basic)"
-ms.date: 04/20/2017
+ms.date: 01/31/2018
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.ulong
+f1_keywords:
+- vb.ulong
 helpviewer_keywords:
 - numbers [Visual Basic], whole
 - whole numbers
@@ -19,14 +21,13 @@ helpviewer_keywords:
 - ULong data type
 - UL literal type characters [Visual Basic]
 ms.assetid: 017e0702-774e-44ae-bedc-786b424ca84e
-caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: afc52bfd16541feed599d5445adad7aba04f8e9d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 606e0ef87b209bb2e75e28223f27d081713c1b7e
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="ulong-data-type-visual-basic"></a>ULong データ型 (Visual Basic)
 
@@ -53,10 +54,18 @@ Visual Basic 2017 から始めて、使用することできますもアンダ�
 
 [!code-vb[ULong](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#LongS)]
 
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+
+```vb
+Dim number As ULong = &H_F9AC_0326_1489_D68C
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
+
 数値リテラルを含めることも、`UL`または`ul`[文字入力](../../programming-guide\language-features\data-types/type-characters.md)を示すために、`ULong`データ型は、次の例のようにします。
 
 ```vb
-Dim number = &H00_00_0A_96_2F_AC_14_D7ul
+Dim number = &H_00_00_0A_96_2F_AC_14_D7ul
 ```
 
 ## <a name="programming-tips"></a>プログラミングのヒント

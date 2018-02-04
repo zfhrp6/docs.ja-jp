@@ -1,11 +1,12 @@
 ---
 title: "型文字 (Visual Basic)"
 ms.custom: 
-ms.date: 07/20/2015
+ms.date: 01/31/2018
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - '&H prefix for hexadecimal values'
@@ -42,14 +43,14 @@ helpviewer_keywords:
 - UL literal type characters [Visual Basic]
 - literal types [Visual Basic], default
 ms.assetid: 6353cb9b-6ee4-4af6-a5a8-88ce39f90cc5
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2bd017db40fc28c78e960a889947cc7323e3e156
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: rpetrusha
+ms.author: ronpet
+ms.manager: wpickett
+ms.openlocfilehash: bdb675b9605d03829c95897382daa6d03cf1b041
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="type-characters-visual-basic"></a>文字 (Visual Basic)
 
@@ -61,7 +62,7 @@ ms.lasthandoff: 11/21/2017
 
 Visual Basic のセットを提供する*識別子の型文字*変数または定数のデータ型を指定する宣言で使用できます。 次の表は、使用状況の例で使用できる識別子の型文字を示します。
   
-|識別子の型文字|データ型|例|  
+|識別子の型文字|データの種類|例|  
 |-------------------------------|---------------|-------------|  
 |`%`|`Integer`|`Dim L%`|  
 |`&`|`Long`|`Dim M&`|  
@@ -96,7 +97,7 @@ A*リテラル*データ型の特定の値のテキスト表現です。
 
 Visual Basic のセットを提供する*リテラルの型文字*、もの以外のデータ型にそのフォームを想定するリテラルを強制的に使用できることを示します。 リテラルの末尾に文字を追加して行います。 次の表は、使用状況の例で使用可能なリテラルの型文字を示します。
   
-|リテラルの型文字|データ型|例|  
+|リテラルの型文字|データの種類|例|  
 |----------------------------|---------------|-------------|  
 |`S`|`Short`|`I = 347S`|
 |`I`|`Integer`|`J = 347I`|
@@ -140,7 +141,15 @@ Dim flags As UShort = &H8000US
 
 前の例では、 `counter` -32768 の 10 進値を持つと`flags`+32768 の 10 進値を持つファイルです。
 
-## <a name="see-also"></a>関連項目
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+
+```vb
+Dim number As Integer = &H_C305_F860
+```
+
+[!INCLUDE [supporting-underscores](../../../../../includes/vb-separator-langversion.md)]
+
+## <a name="see-also"></a>参照
 
  [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
  [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  

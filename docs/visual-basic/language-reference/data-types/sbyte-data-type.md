@@ -3,9 +3,11 @@ title: "SByte 型 (Visual Basic)"
 ms.date: 04/20/2017
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.sbyte
+f1_keywords:
+- vb.sbyte
 helpviewer_keywords:
 - numbers [Visual Basic], whole
 - whole numbers
@@ -17,14 +19,14 @@ helpviewer_keywords:
 - data types [Visual Basic], integral
 - SByte data type
 ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2bcd00665ec5b8651089811a61212bfa302fe95d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d391d7eea27ec7696dbb4c28da8916c744712f32
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte データ型 (Visual Basic)
 
@@ -50,6 +52,14 @@ ms.lasthandoff: 11/21/2017
 Visual Basic 2017 から始めて、使用することできますもアンダー スコア文字`_`、読みやすさを強化するために、桁区切り記号として次の例として示します。
 
 [!code-vb[SByteSeparator](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#SByteS)]  
+
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+
+```vb
+Dim number As SByte = &H_F9
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
 整数リテラルが `SByte` の範囲外にある場合 (つまり、<xref:System.SByte.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.SByte.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。 整数リテラルには、サフィックスがあるない場合に、[整数](integer-data-type.md)推論されます。 整数リテラルは、範囲の場合、`Integer`型、[長い](long-data-type.md)推論されます。 つまり、前の例では、数値リテラルで`0x9A`と`0b10011010`が 32 ビット符号付き整数を超える 156 の値として解釈される<xref:System.SByte.MaxValue?displayProperty=nameWithType>です。 正常にコンパイルする 10 進数以外の整数を代入するこのようなコードを`SByte`次のいずれかを行うことができます。
 

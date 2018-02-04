@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 600a1bd57015c6a64a51bf99f3ded35a375e62fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 75a39fa1d0301a48cec7ad61c968ee3fc82d189c
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="messaging-protocols"></a>メッセージング プロトコル
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] チャネル スタックは、エンコーディングとトランスポート チャネルを使用して、内部メッセージ表現をワイヤ形式に変換し、特定のトランスポートを使用して送信します。 Web サービスの相互運用性を確保するために、最も一般的に使用されるトランスポートは HTTP です。また、Web サービスが使用する最も一般的なエンコーディングは、XML ベースの SOAP 1.1、SOAP 1.2、および MTOM (Message Transmission Optimization Mechanism) です。  
@@ -68,17 +70,17 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
 |wsaw10|http://www.w3.org/2006/05/addressing/wsdl|  
 |xop|http://www.w3.org/2004/08/xop/include|  
 |xmime|http://www.w3.org/2004/06/xmlmime<br /><br /> http://www.w3.org/2005/05/xmlmime|  
-配布ポイント|http://schemas.microsoft.com/net/2006/06/duplex|  
+dp|http://schemas.microsoft.com/net/2006/06/duplex|  
   
 ## <a name="soap-11-and-soap-12"></a>SOAP 1.1 と SOAP 1.2  
   
 ### <a name="envelope-and-processing-model"></a>エンベロープと処理モデル  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、Basic Profile 1.1 (BP11) および Basic Profile 1.0 (SSBP10) に従って、SOAP 1.1 エンベロープの処理を実装しています。 SOAP 1.2 エンベロープの処理は、SOAP12-Part1 に従って実装されます。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 次の Basic Profile 1.1 (BP11) および Basic Profile 1.0 (ssbp10) に従って、SOAP 1.1 エンベロープの処理を実装します。 SOAP 1.2 エンベロープの処理は、SOAP12-Part1 に従って実装されます。  
   
  このセクションでは、BP11 および SOAP12-Part1 に関して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で選択されている一部の実装について説明します。  
   
 #### <a name="mandatory-header-processing"></a>必須のヘッダー処理  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、SOAP 1.1 仕様と SOAP 1.2 仕様に記載されたルールに従って、`mustUnderstand` としてマークされたヘッダーを次のように処理します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] マークされたヘッダーの処理規則に従います`mustUnderstand`次のように、SOAP 1.1 と SOAP 1.2 の仕様で説明します。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル スタックに入ったメッセージは、関連付けられたバインド要素 (テキスト メッセージ エンコーディング、セキュリティ、信頼できるメッセージング、トランザクションなど) によって構成された個々のチャネルで処理されます。 各チャネルは、関連付けられた名前空間からヘッダーを認識し、認識済みとしてマークします。 メッセージがディスパッチャーに入ると、操作フォーマッタは対応するメッセージ コントラクトと操作コントラクトで想定されたヘッダーを読み取り、認識済みとしてマークします。 次に、ディスパッチャーは、`mustUnderstand` としてマークされているにもかかわらず、認識されていないヘッダーが残っていないかどうかを検証し、例外をスローします。 受信者を対象とする `mustUnderstand` ヘッダーが含まれたメッセージが、受信者のアプリケーション コードで処理されることはありません。  
   
@@ -100,14 +102,14 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
 ### <a name="http-binding"></a>HTTP バインディング  
   
 #### <a name="soap-11-http-binding"></a>SOAP 1.1 HTTP バインディング  
- 次に説明するように、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、Basic Profile 1.1 仕様のセクション 3.4 に従って、SOAP1.1 HTTP バインディングを実装しています。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Basic Profile 1.1 仕様の次に説明セクション 3.4 に従って、SOAP1.1 HTTP バインディングを実装します。  
   
 -   B2211 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、HTTP POST 要求のリダイレクトを実装していません。  
   
 -   B2212 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは、セクション 3.4.8 に従って HTTP クッキーをサポートします。  
   
 #### <a name="soap-12-http-binding"></a>SOAP 1.2 HTTP バインディング  
- 次に説明するように、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、SOAP 1.2-part 2 (SOAP12Part2) 仕様に従って、SOAP 1.2 HTTP バインディングを実装しています。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] SOAP 1.2-part 2 (SOAP12Part2) 仕様次に説明」の説明に従って、SOAP 1.2 HTTP バインディングを実装します。  
   
  SOAP 1.2 では、`application/soap+xml` メディア タイプの省略可能なアクション パラメーターが導入されました。 このパラメーターは、WS-Addressing を使用していない場合に、SOAP メッセージの本文を解析する必要なく、メッセージ ディスパッチを最適化する際に役立ちます。  
   
@@ -118,7 +120,7 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
  WS-Addressing が無効になっているときに、受信要求にアクション パラメーターが含まれていない場合、メッセージの `Action` は指定されていないものと見なされます。  
   
 ## <a name="ws-addressing"></a>WS-Addressing  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、WS-Addressing の次の 3 つのバージョンを実装しています。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Ws-addressing の 3 つのバージョンを実装します。  
   
 -   WS-Addressing 2004/08  
   
@@ -130,7 +132,7 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で実装されている WS-Addressing のすべてのバージョンでは、エンドポイント参照を使用してエンドポイントを記述します。  
   
 #### <a name="endpoint-references-and-ws-addressing-versions"></a>エンドポイント参照と WS-Addressing のバージョン  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、特に `EndpointReference` 要素と `W3C.WsAddressing.EndpointReferenceType` クラスで WS-Addressing を使用する多数のインフラストラクチャ プロトコルを実装しています (WS-ReliableMessaging、WS-SecureConversation、WS-Trust など)。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、いずれかのバージョンの WS-Addressing を他のインフラストラクチャ プロトコルと共に使用できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントは、エンドポイントごとに WS-Addressing の 1 つのバージョンをサポートします。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Ws-addressing を使用するインフラストラクチャ プロトコルの特定の数を実装して、`EndpointReference`要素および`W3C.WsAddressing.EndpointReferenceType`クラス (Ws-reliablemessaging、Ws-secureconversation、Ws-trust など)。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、いずれかのバージョンの WS-Addressing を他のインフラストラクチャ プロトコルと共に使用できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントは、エンドポイントごとに WS-Addressing の 1 つのバージョンをサポートします。  
   
  R3111 では、`EndpointReference` エンドポイントと交換されるメッセージで使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 要素または型の名前空間は、そのエンドポイントで実装されている WS-Addressing のバージョンに適合する必要があります。  
   
@@ -174,7 +176,7 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションとやり取りするアプリケーションは、これらのメッセージ ヘッダーを追加できます。追加されたヘッダーは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって適切に処理されます。  
   
 #### <a name="reference-parameters-and-properties"></a>参照パラメーターと参照プロパティ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、それぞれの仕様に従って、エンドポイントの参照パラメーターと  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント参照のパラメーターと参照 p の処理の実装  
   
  参照プロパティの処理を実装しています。  
   
@@ -232,7 +234,7 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
 ### <a name="wsdl-11-binding-and-ws-policy-assertions"></a>WSDL 1.1 バインディングと WS-Policy アサーション  
   
 #### <a name="indicating-use-of-ws-addressing"></a>WS-Addressing の使用の提示  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ポリシー アサーションを使用して、エンドポイントが WS-Addressing の特定のバージョンをサポートすることを示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ポリシー アサーションを使用して、特定の Ws-addressing のバージョンのエンドポイントのサポートを示します。  
   
  次のポリシー アサーションには、エンドポイント ポリシー サブジェクト [WS-PA] が含まれており、そのエンドポイントで送受信されるメッセージでは WS-Addressing 2004/08 を使用する必要があることを示しています。  
   
@@ -276,7 +278,7 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
   
  ただし、リクエスターとレスポンダー間で 2 つの独立した逆方向の HTTP 接続を確立することによってメリットのあるメッセージ交換パターンがあります。たとえば、レスポンダーによって送信される要求されていない一方向のメッセージなどです。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、基になる 2 つのトランスポート チャネルで、一方のチャネルを入力メッセージに使用し、もう一方を出力メッセージに使用する複合二重チャネルを形成できる機能が用意されています。 HTTP トランスポートの場合、複合二重によって 2 つの逆方向の HTTP 接続が実現します。 一方の接続はリクエスターがレスポンダーにメッセージを送信するために使用し、もう一方はレスポンダーがリクエスターにメッセージを返すために使用します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 複合二重チャネル、入力メッセージの 1 つのチャネルを使用して、出力メッセージの使用は、他の場所を基になる 2 つのトランスポート チャネルから形成できる機能を提供します。 HTTP トランスポートの場合、複合二重によって 2 つの逆方向の HTTP 接続が実現します。 一方の接続はリクエスターがレスポンダーにメッセージを送信するために使用し、もう一方はレスポンダーがリクエスターにメッセージを返すために使用します。  
   
  個別の HTTP 要求を使用して送信された応答の場合、WS-AM アサーションは次のようになります。  
   
@@ -519,11 +521,11 @@ Content-Length: 0
 msg-id    =       [CFWS] "<" id-left "@" id-right ">" [CFWS]  
 ```  
   
- 効果的に電子メール アドレスで囲まれますと"\<"と">"です。 `[CFWS]` プレフィックスとサフィックスは、コメントを伝達するために RFC 2822 で追加されたものですが、相互運用性を維持する場合は、使用しないことをお勧めします。  
+ 実質的に、電子メール アドレスで囲まれたと"\<"と">"です。 `[CFWS]` プレフィックスとサフィックスは、コメントを伝達するために RFC 2822 で追加されたものですが、相互運用性を維持する場合は、使用しないことをお勧めします。  
   
  R4143 : Infoset MIME パートの Content-ID ヘッダーの値は、RFC 2822 の `msg-id` の定義内容から `[CFWS]` プレフィックスとサフィックスの部分を省略した形式に従う必要があります。  
   
- 多くの MIME 実装で囲まれた値の要件が緩和"\<"と">"は電子メール アドレスと使用`absoluteURI`で囲まれた"\<"、">"電子メール アドレス以外にします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のこのバージョンでは、次の形式の Content-ID MIME ヘッダーの値を使用します。  
+ 多くの MIME 実装で囲まれた値の要件が緩和"\<"と">"は電子メール アドレスを使用して`absoluteURI`で囲まれた"\<"、">"電子メール アドレス以外に、します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のこのバージョンでは、次の形式の Content-ID MIME ヘッダーの値を使用します。  
   
 ```  
 Content-ID: <http://tempuri.org/0>   
@@ -574,7 +576,7 @@ mail-address   =     id-left "@" id-right
  MTOM を使用するように構成された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントは、常に MTOM でエンコードされたメッセージを送信します。 必要な条件を満たすパートがない場合でも、メッセージは MTOM でエンコードされます (SOAP エンベロープを含む単一の MIME パートを持つ MIME パッケージとしてシリアル化されます)。  
   
 ### <a name="ws-policy-assertion-for-mtom"></a>MTOM の WS-Policy アサーション  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、次のポリシー アサーションを使用して、エンドポイントによる MTOM の使用方法を示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 次のポリシー アサーションを使用して、エンドポイントで MTOM の使用方法を指定します。  
   
 ```xml  
 <wsoma:OptimizedMimeSerialization ... />  

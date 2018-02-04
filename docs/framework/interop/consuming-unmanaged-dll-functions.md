@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -20,21 +21,22 @@ helpviewer_keywords:
 - platform invoke
 - DLL functions
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dd1e5f4fc03da2310022efdeb4530440b5e07f3d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4133cfbdf4c9f164ae9ba42a6bbba94ce019e0be
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>アンマネージ DLL 関数の処理
-プラットフォーム呼び出しは、マネージ コードがダイナミック リンク ライブラリ (DLL) に実装されたアンマネージ関数 (Win32 API に含まれているものなど) を呼び出すことを可能にするサービスです。 これはエクスポートされた関数を見つけて呼び出し、必要に応じて相互運用の境界を越えて、その引数 (整数、文字列、配列、構造体、その他) をマーシャリングします。 このサービスの詳細については、「[プラットフォーム呼び出しの詳細](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)」を参照してください。  
+プラットフォーム呼び出しは、マネージ コードがダイナミック リンク ライブラリ (DLL) に実装されたアンマネージ関数 (Win32 API に含まれているものなど) を呼び出すことを可能にするサービスです。 これはエクスポートされた関数を見つけて呼び出し、必要に応じて相互運用の境界を越えて、その引数 (整数、文字列、配列、構造体、その他) をマーシャリングします。  
   
- このセクションでは、アンマネージ DLL 関数の使用に関連するいくつかのタスクについて説明します。 以下のタスクに加えて、一般的な考慮事項、および追加情報や例を提供するリンクがあります。  
+ このセクションでは、アンマネージ DLL 関数の使用に関連するタスクを紹介し、詳細については、プラットフォーム呼び出しを提供します。 以下のタスクに加えて、一般的な考慮事項、および追加情報や例を提供するリンクがあります。  
   
 #### <a name="to-consume-exported-dll-functions"></a>エクスポートされた DLL 関数を使用するには  
   
@@ -85,4 +87,3 @@ ms.lasthandoff: 01/19/2018
  [アンマネージ コードとの相互運用](../../../docs/framework/interop/index.md)  
  [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)  
- [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)

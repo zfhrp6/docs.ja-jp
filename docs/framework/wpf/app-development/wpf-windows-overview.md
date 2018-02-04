@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -35,16 +36,17 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-caps.latest.revision: "65"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1f9822c61f454f0dd166cfdad7f26798790a5f23
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 594bb21983f51f3c0698c43d0f6ea39594b72705
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="wpf-windows-overview"></a>WPF ウィンドウの概要
 ユーザーは、ウィンドウをとおして、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] スタンドアロン アプリケーションとやり取りします。 ウィンドウの主な目的は、データを視覚化してユーザーがデータと対話できるコンテンツをホストすることです。 スタンドアロン[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションを使用して、独自の windows を提供する、<xref:System.Windows.Window>クラスです。 このトピックで紹介<xref:System.Windows.Window>を作成して、スタンドアロン アプリケーションで windows の管理の基礎を紹介します。  
@@ -120,7 +122,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="configuring-a-window-definition-for-msbuild"></a>MSBuild 用のウィンドウ定義の構成  
  構成方法、ウィンドウを実装する方法を決定[!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]です。 両方を使用して定義されているウィンドウの[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]マークアップと分離コード。  
   
--   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]として構成されているマークアップ ファイル[!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`Page`項目。  
+-   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] として構成されているマークアップ ファイル[!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`Page`項目。  
   
 -   分離コード ファイルとして構成されている[!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`Compile`項目。  
   
@@ -193,7 +195,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Preventing"></a>   
 #### <a name="preventing-window-activation"></a>ウィンドウのアクティブ化の防止  
- 表示されてもアクティブにしないことが適切なウィンドウもあります。インターネット メッセンジャーのようなアプリケーションの対話ウィンドウや、電子メール アプリケーションの通知ウィンドウなどです。  
+ ここで windows アクティブにしないインターネット messenger スタイル アプリケーションのメッセージ交換の windows または電子メール アプリケーションの通知ウィンドウなど、表示されるとシナリオがあります。  
   
  設定することができます、アプリケーションに表示されるとアクティブ化することはできません、ウィンドウがある場合は、その<xref:System.Windows.Window.ShowActivated%2A>プロパティを`false`呼び出す前に、<xref:System.Windows.Window.Show%2A>が最初にメソッドです。 結果は次のようになります。  
   

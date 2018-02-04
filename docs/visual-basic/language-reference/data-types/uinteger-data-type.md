@@ -1,11 +1,13 @@
 ---
 title: "UInteger 型"
-ms.date: 04/20/2017
+ms.date: 01/31/2018
 ms.prod: .net
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.uinteger
+f1_keywords:
+- vb.uinteger
 helpviewer_keywords:
 - numbers [Visual Basic], whole
 - UInteger data type
@@ -19,14 +21,13 @@ helpviewer_keywords:
 - UI literal type characters [Visual Basic]
 - data types [Visual Basic], integral
 ms.assetid: db7ddd34-4f23-46f5-84dd-8b0f83bb8729
-caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f3852bd56d11c19e327e6c2f3e23cfb082a54e0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ea6d42a604e5a50fab62644034afc82e089792c7
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="uinteger-data-type"></a>UInteger データ型
 
@@ -53,10 +54,18 @@ Visual Basic 2017 から始めて、使用することできますもアンダ�
 
 [!code-vb[UInteger](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UIntS)]  
 
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+
+```vb
+Dim number As UInteger = &H_0F8C_0326
+```
+
+[!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
+
 数値リテラルを含めることも、`UI`または`ui`[文字入力](../../programming-guide\language-features\data-types/type-characters.md)を示すために、`UInteger`データ型は、次の例のようにします。
 
 ```vb
-Dim number = &H0FAC14D7ui
+Dim number = &H_0FAC_14D7ui
 ```
 
 ## <a name="programming-tips"></a>プログラミングのヒント
@@ -75,7 +84,7 @@ Dim number = &H0FAC14D7ui
   
 -   **Framework の型。** .NET Framework において対応する型は、<xref:System.UInt32?displayProperty=nameWithType> 構造体です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.UInt32>  
  [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
