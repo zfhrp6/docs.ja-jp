@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: a897a599-ffd1-43f9-8807-e58c8a7194cd
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 44ce1337e347020926fe2dee29d70fe226ad087a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b11fc10128807dfbd0082bbc1884068c5cde7d32
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-object-model-som"></a>XML スキーマ オブジェクト モデル (SOM)
 XML スキーマは、XML ドキュメント準拠の構造を作成し検証する、強力な複合ツールです。 リレーショナル データベースのデータ モデリングと同様に、スキーマでは XML ドキュメントの構造を定義する方法を提供しています。これは、ドキュメントで使用する要素と、これらの要素に固有のスキーマを有効にするために準拠する構造や型を指定することによって実現します。  
@@ -40,5 +43,5 @@ XML スキーマは、XML ドキュメント準拠の構造を作成し検証す
  [XML スキーマの編集](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
  XML スキーマを編集する方法を説明します。  
   
- [インクルードまたは XML スキーマのインポート](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
+ [XML スキーマのインクルードまたはインポート](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
  他の XML スキーマをインクルードまたはインポートして、インクルードまたはインポートするスキーマの構造を補足する方法を説明します。

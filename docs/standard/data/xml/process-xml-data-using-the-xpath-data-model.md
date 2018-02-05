@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 536c6fce-1453-4654-9c72-bca54d47e081
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3d2c8db03d494be13a93df06a359e4e4294c22a2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9992efa209773a6e9f74050183260346f7f1f0ed
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="process-xml-data-using-the-xpath-data-model"></a>XPath データ モデルを使用した XML データの処理
 <xref:System.Xml?displayProperty=nameWithType> 名前空間は、<xref:System.Xml.XmlDocument> または <xref:System.Xml.XPath.XPathDocument> クラスを使用して、メモリ内の XML ドキュメント、フラグメント、ノード、またはノードセットのプログラム表現を提供します。  
@@ -27,23 +30,23 @@ ms.lasthandoff: 11/21/2017
  以下では、<xref:System.Xml.XPath.XPathNavigator> クラスの機能を、それを返すクラスに基づいて説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [XPathDocument および XmlDocument を使用して XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
+ [XPathDocument および XmlDocument を使用した XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
  XML ドキュメントを読むために読み取り専用の <xref:System.Xml.XPath.XPathDocument> クラス オブジェクトを作成する方法、および XML ドキュメントを読み込んで編集するために編集可能な <xref:System.Xml.XmlDocument> クラス オブジェクトを作成する方法について説明します。 このトピックでは、各クラスから <xref:System.Xml.XPath.XPathNavigator> オブジェクトを返して、XML ドキュメント内を移動して編集する方法について説明します。  
   
- [選択、評価、および XPathNavigator を使用して、一致する XML データ](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
+ [XPathNavigator を使用した XML データの選択、評価、および照合](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
  XPath クエリによる <xref:System.Xml.XPath.XPathNavigator> または <xref:System.Xml.XPath.XPathDocument> オブジェクト内のノードの選択、XPath 式の結果の評価と検査、および XML ドキュメントのノードが指定された XPath 式に一致するかどうかの判定に使用される <xref:System.Xml.XmlDocument> クラスのメソッドについて説明します。  
   
- [XPathNavigator による XML データにアクセスします。](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+ [XPathNavigator による XML データへのアクセス](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
  <xref:System.Xml.XPath.XPathNavigator> オブジェクトまたは <xref:System.Xml.XPath.XPathDocument> オブジェクト内で、ノード間の移動、XML データの抽出、および厳密に型指定された XML データへのアクセスに使用される <xref:System.Xml.XmlDocument> クラスのメソッドについて説明します。  
   
  [XPathNavigator による XML データの編集](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
  <xref:System.Xml.XPath.XPathNavigator> オブジェクトに含まれる XML ドキュメントでノードと値の挿入、変更、および削除に使用される <xref:System.Xml.XmlDocument> クラスのメソッドについて説明します。  
   
- [XPathNavigator を使用するスキーマの検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
+ [XPathNavigator を使用したスキーマ検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
  <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクトに含まれる XML コンテンツの検証方法について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
- [DOM モデルを使用して XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
+ [DOM モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)

@@ -8,17 +8,21 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: parallel programming, debugging and profiling tools
+helpviewer_keywords:
+- parallel programming, debugging and profiling tools
 ms.assetid: 38f7302a-ddf6-4179-ba19-f49e00395b9f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ad6875d4937ab0ee68dcb9c6d6f51d079851cdc5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4ed0b3991b08eceb950aa1a3aa1704529700feb3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="parallel-diagnostic-tools"></a>並列診断ツール
 [!INCLUDE[vs_dev10_ext](../../../includes/vs-dev10-ext-md.md)] は、マルチ スレッド アプリケーションのデバッグおよびプロファイリングを広範にサポートします。  
@@ -35,5 +39,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="profiling"></a>プロファイル  
  同時実行ビジュアライザーのレポート ビューを使用すると、並列プログラム内のスレッドどうし、または同じシステム上の他のプロセスのスレッドとのやり取りを視覚化することができます。 詳細については、「[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列プログラミング](../../../docs/standard/parallel-programming/index.md)

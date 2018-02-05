@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f236296d604bc465973d17d63883e7b212b7f02d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d14c4338290856c09ca1d23ec6acc895450f83ea
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>方法 : アセンブリを使用して XSLT 変換を実行する
 XSLT コンパイラ (xsltc.exe) は、XSLT スタイル シートをコンパイルしてアセンブリを生成します。 このアセンブリを <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> メソッドに直接渡すことができます。  
@@ -180,7 +183,7 @@ xsltc /settings:script+ /class:Transform Transform.xsl
 xslt.Load(typeof(Transform))  
 ```  
   
- with  
+ 代入  
   
 ```  
 xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))  
@@ -188,7 +191,7 @@ xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))
   
  に置き換えます。 Assembly.Load メソッドの詳細については、「<xref:System.Reflection.Assembly.Load%2A>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Xsl.XslCompiledTransform>  
  [XSLT コンパイラ (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
  [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)  

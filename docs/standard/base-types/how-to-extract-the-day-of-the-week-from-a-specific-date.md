@@ -28,15 +28,18 @@ helpviewer_keywords:
 - DateTimeOffset.ToString method
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3accb01eb8c5edb8b3e245020b43c5a94a8bb4cd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e0628dfefb8da5c11e9927ab5ec98c2feb3fe89f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>方法 : 特定の日付から曜日を抽出する
 .NET Framework では、特定の日付が週の何日目であるかを容易に判別でき、また特定の日付のローカライズされた曜日名を表示できます。 特定の日付に対応する曜日を示す列挙値は、<xref:System.DateTime.DayOfWeek%2A> または <xref:System.DateTimeOffset.DayOfWeek%2A> プロパティから取得できます。 対照的に、曜日名の取得は、書式指定メソッド （日付と時刻の値の `ToString` メソッドや <xref:System.String.Format%2A?displayProperty=nameWithType> メソッドなど） を呼び出して実行できる書式指定操作です。 このトピックでは、このような書式指定操作を実行する方法について説明します。  
@@ -107,7 +110,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Formatting.HowTo.WeekdayName#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/Howto1.cs#8)]
  [!code-vb[Formatting.HowTo.WeekdayName#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/Howto1.vb#8)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)  
  [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
  [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)

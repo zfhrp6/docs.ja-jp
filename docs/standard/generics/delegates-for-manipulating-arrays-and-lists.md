@@ -16,15 +16,18 @@ helpviewer_keywords:
 - lists [.NET Framework], generic delegates
 - generics [.NET Framework], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 905f30d8b7e6d7c10a0e2b32109076e2950a99ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2b82943a2382fd18a2ddbcee69707a02b97661ef
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>配列とリストの操作に使用する汎用デリゲート
 ここでは、配列またはコレクションの要素に対して実行される変換、検索述語、およびアクションの汎用デリゲートの概要について説明します。  
@@ -48,7 +51,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="chaining-delegates"></a>デリゲートのチェーン  
  これらのデリゲートを使用するメソッドの多くは、別のメソッドに渡すことのできる配列またはリストを返します。 たとえば、配列の特定の要素を選択して新しい型に変換し、新しい配列に保存すると、<xref:System.Array.FindAll%2A> ジェネリック メソッドによって返される配列を <xref:System.Array.ConvertAll%2A> ジェネリック メソッドに渡すことができます。 新しい要素の型にネイティブな並べ替え順序がない場合は、<xref:System.Array.ConvertAll%2A> ジェネリック メソッドによって返された配列を <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29> ジェネリック メソッドに渡すことができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Generic?displayProperty=nameWithType>  
  <xref:System.Collections.ObjectModel?displayProperty=nameWithType>  
  [ジェネリック](../../../docs/standard/generics/index.md)  

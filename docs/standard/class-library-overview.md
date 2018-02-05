@@ -41,15 +41,18 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 05af1b2a881cabb418adcaaee44a819ae323e62a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 607ef0020e15581c6ccca8f232eaea6be547f63b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-framework-class-library-overview"></a>.NET Framework クラス ライブラリの概要
 [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] には、開発プロセスを高速化および最適化し、システム機能へのアクセスを提供する、クラス、インターフェイス、および値型があります。 言語間での相互運用性を確保するために、.NET Framework のほとんどの型は共通言語仕様 (CLS: Common Language Specification) に準拠しています。このため、コンパイラが CLS に準拠しているすべてのプログラミング言語でこれらの型を使用できます。  
@@ -91,12 +94,12 @@ ms.lasthandoff: 11/21/2017
 |カテゴリ|クラス名|説明|Visual Basic のデータ型|C# のデータ型|C++ データ型|JScript のデータ型|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
 |整数型|<xref:System.Byte>|8 ビット符号なし整数。|**Byte**|**byte**|**unsigned char**|**Byte**|  
-||<xref:System.SByte>|8 ビット符号付き整数。<br /><br /> 非 CLS 準拠|**SByte**|**sbyte**|**char**<br /><br /> または<br /><br /> **signed** **char**|**SByte**|  
+||<xref:System.SByte>|8 ビット符号付き整数。<br /><br /> 非 CLS 準拠|**SByte**|**sbyte**|**char**<br /><br /> - または -<br /><br /> **signed** **char**|**SByte**|  
 ||<xref:System.Int16>|16 ビット符号付き整数。|**Short**|**short**|**short**|**short**|  
-||<xref:System.Int32>|32 ビット符号付き整数。|**Integer**|**int**|**int**<br /><br /> または<br /><br /> **long**|**int**|  
+||<xref:System.Int32>|32 ビット符号付き整数。|**Integer**|**int**|**int**<br /><br /> - または -<br /><br /> **long**|**int**|  
 ||<xref:System.Int64>|64 ビット符号付き整数。|**Long**|**long**|**__int64**|**long**|  
 ||<xref:System.UInt16>|16 ビット符号なし整数。<br /><br /> 非 CLS 準拠|**UShort**|**ushort**|**unsigned short**|**UInt16**|  
-||<xref:System.UInt32>|32 ビット符号なし整数<br /><br /> 非 CLS 準拠|**UInteger**|**uint**|**unsigned int**<br /><br /> または<br /><br /> **unsigned long**|**UInt32**|  
+||<xref:System.UInt32>|32 ビット符号なし整数<br /><br /> 非 CLS 準拠|**UInteger**|**uint**|**unsigned int**<br /><br /> - または -<br /><br /> **unsigned long**|**UInt32**|  
 ||<xref:System.UInt64>|64 ビット符号なし整数。<br /><br /> 非 CLS 準拠|**ULong**|**ulong**|**unsigned __int64**|**UInt64**|  
 |浮動小数点数|<xref:System.Single>|単精度 (32 ビット) 浮動小数点数|**Single**|**float**|**float**|**float**|  
 ||<xref:System.Double>|倍精度 (64 ビット) 浮動小数点数|**Double**|**double**|**double**|**double**|  
@@ -112,7 +115,7 @@ ms.lasthandoff: 11/21/2017
   
  名前空間の詳細については、「[.NET Framework クラス ライブラリ リファレンス](http://go.microsoft.com/fwlink/?LinkID=227195)」を参照してください。 参照ドキュメントには、各名前空間の簡単な概要と、各型とそのメンバーについての説明が記載されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [共通型システム](../../docs/standard/base-types/common-type-system.md)  
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
  [概要](../../docs/framework/get-started/overview.md)

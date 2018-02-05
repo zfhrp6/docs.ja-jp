@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
-ms.openlocfilehash: 9c2cc090dfd5405def0cd6ab9ec1771be4a332a5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d7626b0a6a902465416187b2c09d624dfe9a9773
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="common-type-system--common-language-specification"></a>共通型システムと共通言語仕様
 
@@ -41,7 +44,7 @@ CTS では、いくつかの型のカテゴリが定義され、それぞれに�
 
 *   クラス
 *   構造体
-*   列挙型
+*   列挙体
 *   インターフェイス
 *   デリゲート
 
@@ -57,5 +60,5 @@ CMS のすべての機能の概要については、下の「[その他のリソ
 
 ## <a name="more-resources"></a>その他のリソース
 
-*   [共通型システム](https://msdn.microsoft.com/library/zcx1eb1e.aspx)
-*   [共通言語仕様](https://msdn.microsoft.com/library/12a7a7h3.aspx)
+*   [共通型システム](./base-types/common-type-system.md)
+*   [共通言語仕様](language-independence-and-language-independent-components.md)

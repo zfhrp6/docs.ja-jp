@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 34fe3d74adc94930710cf7ee55013b471a2bd43c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 836702a3200a21c6a9830bdcd1f74a78129b5a6c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>XPath ナビゲーションによるノードの選択
 XML ドキュメント オブジェクト モデル (DOM) には、DOM 内の情報を照会するための XPath (XML Path Language) ナビゲーションに使用できるメソッドが含まれています。 XPath を使用すると、特定の単一ノードを見つけたり、条件に一致するすべてのノードを検索したりできます。  
@@ -169,5 +172,5 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
 </bookstore>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

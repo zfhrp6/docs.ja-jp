@@ -13,15 +13,18 @@ helpviewer_keywords:
 - asynchronous programming, design patterns
 - asynchronous programming
 ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0b5f242b9586c4ea3b045daf8f10b84127b81085
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2a83d638255d27317ba5d566ab46b83526659365
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>イベント ベースの非同期パターン (EAP)
 非同期機能をクライアント コードに公開する方法は数多くあります。 イベント ベースの非同期パターンは、クラスが非同期動作を示す 1 つの方法を規定します。  
@@ -68,7 +71,7 @@ ms.lasthandoff: 11/21/2017
  [スレッド化](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)  
  C# 言語と Visual Basic 言語のマルチスレッド機能について説明します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ スレッド処理の実施](../../../docs/standard/threading/managed-threading-best-practices.md)  
  [イベント](../../../docs/standard/events/index.md)  
  [コンポーネントのマルチスレッド](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  

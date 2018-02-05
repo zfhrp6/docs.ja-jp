@@ -11,17 +11,21 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: BlockingCollection, overview
+helpviewer_keywords:
+- BlockingCollection, overview
 ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6dc6729bf4627164fbcde5980d4fcccd41b67645
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5e2235c1a5bbe4a39cf029059290268faa5be154
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection の概要
 <xref:System.Collections.Concurrent.BlockingCollection%601> は、次の機能を提供するスレッド セーフなコレクション クラスです。  
@@ -86,7 +90,7 @@ BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag
 ## <a name="using-many-blockingcollections-as-one"></a>多数の BlockingCollection を 1 つとして使用する  
  consumer が複数のコレクションから同時に項目を取得する必要のあるシナリオでは、<xref:System.Collections.Concurrent.BlockingCollection%601> の配列を作成し、<xref:System.Collections.Concurrent.BlockingCollection%601.TakeFromAny%2A> や <xref:System.Collections.Concurrent.BlockingCollection%601.AddToAny%2A> などの静的メソッドを使用できます。これらのメソッドでは、配列内の任意のコレクションを対象に追加または取得の操作を実行できます。 いずれかのコレクションがブロックしている場合、メソッドはすぐに別のコレクションを試します。これは、操作を実行できるコレクションが見つかるまで続行されます。 詳細については、「[方法: パイプラインでブロッキング コレクションの配列を使用する](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
  [コレクションとデータ構造体](../../../../docs/standard/collections/index.md)  
  [スレッドセーフなコレクション](../../../../docs/standard/collections/thread-safe/index.md)

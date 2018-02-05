@@ -23,15 +23,18 @@ helpviewer_keywords:
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d8a461d79ecdcadc3f880f6a813918cf891abd45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ff9ae65e47a35f4acfade1d06c703f9e1f5f6bee
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="asynchronous-file-io"></a>非同期ファイル I/O
 非同期操作では、メイン スレッドをブロックすることなくリソース使用量の多い I/O 操作を実行できます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリまたは [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)] アプリで特に重要です。  
@@ -65,7 +68,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-xaml[System.IO.WindowsRuntimeStorageExtensions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestorageextensions/cs/blankpage.xaml#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.Stream>  
  [ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)  
  [Async および Await を使用した非同期プログラミング](http://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)

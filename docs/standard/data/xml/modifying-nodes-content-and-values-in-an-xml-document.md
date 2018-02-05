@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 761773e0-db72-4986-b9f5-a522213d8397
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 00b923edb95852d9434db1b393df68fd9d0c8a1a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 72039faef3bcde4db830d110938266c63689219e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="modifying-nodes-content-and-values-in-an-xml-document"></a>XML ドキュメントのノード、コンテンツ、値の変更
 ドキュメントのノードおよびコンテンツを変更するには、さまざまな方法があります。 次の操作を行うことができます。  
@@ -40,7 +43,7 @@ ms.lasthandoff: 10/18/2017
 |CDATASection|CDATASection のコンテンツ。|  
 |コメント|コメントの内容。|  
 |ProcessingInstruction|ターゲットを除くコンテンツ。|  
-|Text|テキストのコンテンツ。|  
+|テキスト|テキストのコンテンツ。|  
 |XmlDeclaration|`<?xml` と `?>` のマークアップを除く、宣言のコンテンツ。|  
 |Whitespace|空白の値。 この値は、スペース、タブ、CR、LF という 4 つの認識可能 XML 空白文字のいずれかに設定できます。|  
 |SignificantWhitespace|有意の空白の値。 この値は、スペース、タブ、CR、LF という 4 つの認識可能 XML 空白文字のいずれかに設定できます。|  
@@ -53,5 +56,5 @@ ms.lasthandoff: 10/18/2017
   
  編集可能なノードに読み取り専用の子を追加したり、削除したりするのは有効な操作です。 しかし、読み取り専用のノードそのものを変更しようとすると、<xref:System.InvalidOperationException> がスローされます。 この一例として、<xref:System.Xml.XmlEntityReference> ノードの子を変更しようとした場合が当てはまります。 このノードの子は読み取り専用であり、変更できません。 それらを変更しようとすると、<xref:System.InvalidOperationException> がスローされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

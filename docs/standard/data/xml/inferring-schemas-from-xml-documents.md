@@ -13,15 +13,18 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: f3d97d53-614d-4a04-a174-87965b7405f6
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: aa4d6d2758392fc48969b08db30b91bdfe0eeaa1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8085ecb86018460f14a2532b55907472988b67b2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>XML ドキュメントからのスキーマの推論
 このトピックでは、<xref:System.Xml.Schema.XmlSchemaInference> クラスを使用して、XML ドキュメントの構造から XML スキーマ定義言語 (XSD) スキーマを推論する方法を説明します。  
@@ -89,9 +92,9 @@ ms.lasthandoff: 11/21/2017
 ## <a name="schemas-that-cannot-be-refined"></a>限定できないスキーマ  
  限定を目的として型を渡されたときに、XML スキーマ定義言語 (XSD) スキーマの <xref:System.Xml.Schema.XmlSchemaInference> プロセスが処理できず、例外をスローする W3C XML スキーマ構造があります。 最上位のコンポジターがシーケンス以外のものである複合型がその例です。 スキーマ オブジェクト モデル (SOM) では、<xref:System.Xml.Schema.XmlSchemaComplexType> プロパティが <xref:System.Xml.Schema.XmlSchemaComplexType.Particle%2A> のインスタンスでない <xref:System.Xml.Schema.XmlSchemaSequence> がそれに相当します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Schema.XmlSchemaInference>  
  [XML スキーマ オブジェクト モデル (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
  [XML スキーマの推論](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
- [スキーマのノード型と構造を推論するときの規則](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)  
+ [スキーマのノード型および構造を推論するときの規則](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)  
  [単純型を推論するときの規則](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)

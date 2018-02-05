@@ -16,15 +16,18 @@ helpviewer_keywords:
 - hash function
 - collections [.NET Framework], Hashtable collection type
 ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: aa2392775f0bd2d68c0aeb28aa0654b690b11808
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5ab3a6bb2128a3753cb80a60836a781d987ca253
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Hashtable コレクション型と Dictionary コレクション型
 <xref:System.Collections.Hashtable?displayProperty=nameWithType> クラス、および <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> と <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> ジェネリック クラスは、<xref:System.Collections.IDictionary?displayProperty=nameWithType> インターフェイスを実装します。 <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスも <xref:System.Collections.Generic.IDictionary%602> ジェネリック インターフェイスを実装します。 そのため、これらのコレクション内の各要素は、キーと値のペアになります。  
@@ -43,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Collections.Generic.Dictionary%602> および <xref:System.Collections.Concurrent.ConcurrentDictionary%602> クラスには、<xref:System.Collections.Hashtable> クラスと同じ機能があります。 特定の型 (<xref:System.Object> を除く) の<xref:System.Collections.Generic.Dictionary%602> は、値型の <xref:System.Collections.Hashtable> よりも優れたパフォーマンスを実現します。 これは、<xref:System.Collections.Hashtable> の要素の型が <xref:System.Object> であるため、値型を格納したり取得したりすると、ボックス化とボックス化解除が通常発生するためです。 複数のスレッドが同時にコレクションにアクセスするときには、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> クラスを使用する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Hashtable>  
  <xref:System.Collections.IDictionary>  
  <xref:System.Collections.IHashCodeProvider>  

@@ -18,15 +18,18 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-caps.latest.revision: "29"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ff8ae4475bde934258e4d3f97451e598a53fb6c5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cdc4e0660c5eae0a9550cf73d273d394ed71b823
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="commonly-used-collection-types"></a>一般的に使用されるコレクション型
 コレクション型は、ハッシュ テーブル、キュー、スタック、バッグ、ディクショナリ、リストなど、一般的な種類のデータ コレクションです。  
@@ -41,7 +44,7 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[コレクションとデータ構造体](../../../docs/standard/collections/index.md)|スタック、キュー、リスト、配列、ディクショナリなど、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] で利用できるさまざまなコレクション型について説明します。|  
 |[Hashtable コレクション型と Dictionary コレクション型](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|ジェネリックと非ジェネリックのハッシュ ベースのディクショナリ型の機能について説明します。|  
