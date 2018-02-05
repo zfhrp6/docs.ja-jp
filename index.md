@@ -1,13 +1,13 @@
 ---
 layout: HubPage
-hide_bc: True
+hide_bc: 
 title: ".NET ドキュメント"
 description: ".NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。"
-ms.openlocfilehash: 6817628e110d59b3d5b7c8e52fa2d5cc7cac4cd7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: 623f281c3f348c6e3c52f28b263ac06e0e864870
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 02/01/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -168,7 +168,7 @@ ms.lasthandoff: 12/02/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/csharp">C# のガイド</a></h3>
-                                                <p><a href="/dotnet/csharp/quick-starts">クイック スタート</a></p>
+                                                <p><a href="/dotnet/csharp/quick-starts">クイックスタート</a></p>
                                                 <p><a href="/dotnet/csharp/getting-started">開始するには</a></p>
                                                 <p><a href="/dotnet/csharp/tour-of-csharp">C# のツアー</a></p>
                                                 <p><a href="/dotnet/csharp/language-reference">C# 言語リファレンス</a></p>
@@ -413,7 +413,7 @@ ms.lasthandoff: 12/02/2017
                                             </div>
                                             <div class="cardText">
                                                 <a href="https://docs.microsoft.com/azure/storage/">
-                                                    <h3>Azure Storage</h3>
+                                                    <h3>Azure ストレージ</h3>
                                                     <p>Azure Storage と、Azure BLOB、テーブル、キュー、ファイルを使用したアプリケーションの作成方法を説明します。</p>
                                                 </a>
                                             </div>

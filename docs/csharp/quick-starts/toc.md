@@ -1,4 +1,4 @@
-# [クイック スタート](index.md)
+# [クイックスタート](index.md)
 ## [Hello World](hello-world.yml)
 ## [C# における数値](numbers-in-csharp.yml)
 ## [分岐とループ](branches-and-loops.yml)
