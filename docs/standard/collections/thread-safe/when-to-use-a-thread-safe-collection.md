@@ -8,17 +8,21 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: thread-safe collections, when to upgrade
+helpviewer_keywords:
+- thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0bfb5ef2679c4e20e99a10dcf82a251673811b41
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 61444afd5afe52cbcb0f64074ec4479bd6252358
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>スレッド セーフなコレクションを使用する状況
 [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] は、マルチ スレッドの追加および削除の操作をサポートするために特別に設計されている、5 つの新しいコレクション型です。 スレッド セーフを確保するために、これらの新しい型では、さまざまな種類の効率的なロック同期機構とロック制御の不要な同期機構が使用されます。 同期を行うと、操作にオーバーヘッドが追加されます。 オーバーヘッドの量は、使用する同期の種類、実行する操作の種類、およびその他の要因 (コレクションに同時にアクセスしようとするスレッドの数など) によって異なります。  
@@ -68,7 +72,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="blockingcollection"></a>BlockingCollection  
  境界ブロッキング セマンティクスが必要な場合は、<xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> の方がカスタム実装よりもパフォーマンスの点で優れると考えられます。 この型では、高度なキャンセル、列挙、および例外処理もサポートされます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
  [スレッドセーフなコレクション](../../../../docs/standard/collections/thread-safe/index.md)  
  [並列プログラミング](../../../../docs/standard/parallel-programming/index.md)

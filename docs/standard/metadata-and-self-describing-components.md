@@ -21,15 +21,18 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8fcb5ea90cc16d62fee5b8e95b03bfe53c3a6793
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ac08dcf305e8cc0c1a3be3b8300ed9981e7d84d4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="metadata-and-self-describing-components"></a>メタデータと自己言及的なコンポーネント
 以前は、ある 1 つの言語で記述されたソフトウェア コンポーネント (.exe または .dll) で、別の言語で記述されたコンポーネントを使用するのは簡単ではありませんでした。 COM により、この問題が解決するための手段が提供されるようになりました。 .NET Framework では、コンパイラからすべてのモジュールやアセンブリに追加の宣言情報を挿入できるようになり、コンポーネントの相互運用性が大幅に強化されています。 メタデータと呼ばれるこの情報により、コンポーネント間のシームレスな相互作用がサポートされます。  
@@ -161,11 +164,11 @@ IL_000d:  call int32 ConsoleApplication.MyApp::Add(int32,int32) /* 06000003 */
   
  **メソッドが記述されているメタデータ トークンによって参照される、**MethodDef`Add` テーブルの一部の例を次の表に示します。 このアセンブリにはほかにもメタデータ テーブルが存在し、それぞれ独自の値を持っていますが、ここでは、このテーブルだけを参照します。  
   
-|行|Relative Virtual Address (RVA)|ImplFlags|フラグ|名前<br /><br /> (文字列ヒープを指す)|Signature (BLOB ヒープを指す)|  
+|行|Relative Virtual Address (RVA)|ImplFlags|フラグ|name<br /><br /> (文字列ヒープを指す)|Signature (BLOB ヒープを指す)|  
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|  
-|1|0x00002050|IL<br /><br /> マネージ|パブリック<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> .ctor|.ctor (コンストラクター)||  
-|2|0x00002058|IL<br /><br /> マネージ|パブリック<br /><br /> スタティック<br /><br /> ReuseSlot|Main|文字列|  
-|3|0x0000208c|IL<br /><br /> マネージ|パブリック<br /><br /> スタティック<br /><br /> ReuseSlot|追加|int, int, int|  
+|1|0x00002050|IL<br /><br /> マネージ|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> .ctor|.ctor (コンストラクター)||  
+|2|0x00002058|IL<br /><br /> マネージ|Public<br /><br /> スタティック<br /><br /> ReuseSlot|Main|String|  
+|3|0x0000208c|IL<br /><br /> マネージ|Public<br /><br /> スタティック<br /><br /> ReuseSlot|追加|int, int, int|  
   
  このテーブルの各列には、コードについての重要な情報が格納されています。 ランタイムは **RVA** 列を使用して、このメソッドを定義する MSIL の開始メモリ アドレスを計算します。 **ImplFlags** および **Flags** 列には、このメソッドを記述するビットマスク (たとえば、メソッドがパブリックかプライベートかを記述するビットマスク) が格納されています。 **Name** 列は、文字列ヒープからメソッドの名前へのインデックスとなります。 **Signature** 列は、BLOB ヒープ内のメソッドのシグネチャ定義へのインデックスとなります。  
   
@@ -175,6 +178,6 @@ IL_000d:  call int32 ConsoleApplication.MyApp::Add(int32,int32) /* 06000003 */
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[属性](../../docs/standard/attributes/index.md)|属性の適用方法、カスタム属性の記述方法、および属性に格納されている情報の取得方法を説明します。|

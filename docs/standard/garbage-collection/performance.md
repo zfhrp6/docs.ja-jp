@@ -12,15 +12,18 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 13f89749a4df3496b8c169e67c2f221a940568bf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e1cf3475ded3582cdf0754e68d13c97bd87b06a8
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="garbage-collection-and-performance"></a>ガベージ コレクションとパフォーマンス
 <a name="top"></a> ここでは、ガベージ コレクションおよびメモリ使用に関連する問題について説明します。 マネージ ヒープに関する問題について取り上げ、ガベージ コレクションによるアプリケーションに対する影響を最小限に抑える方法を説明します。 問題を調査するために使用できる手順のリンクを問題ごとに示してあります。  
@@ -45,7 +48,7 @@ ms.lasthandoff: 10/18/2017
   
 <a name="sos"></a>   
 ### <a name="debugging-with-sos"></a>SOS キーを使ったデバッグ  
- [Windows デバッガー (WinDbg)](http://go.microsoft.com/fwlink/?LinkId=186482) を使用して、マネージ ヒープのオブジェクトを検査できます。  
+ [Windows デバッガー (WinDbg)](/windows-hardware/drivers/debugger/index) を使用して、マネージ ヒープのオブジェクトを検査できます。  
   
  WinDbg をインストールするには、[WDK および開発者用ツールの Web サイト](http://go.microsoft.com/fwlink/?LinkID=103787)から Windows 用デバッグ ツールをインストールします。  
   
@@ -330,7 +333,7 @@ ms.lasthandoff: 10/18/2017
   
      この例では、最も大きな空き領域のサイズは約 24000 KB (16 進形式では 3A980) です。 これは、ガベージ コレクターのセグメントに必要なサイズよりはるかに小さいサイズです。  
   
-     または  
+     - または -  
   
 -   **vmstat** コマンドを使用します。  
   
@@ -422,7 +425,7 @@ ms.lasthandoff: 10/18/2017
   
      **dumpheap** は、マネージ ヒープが大きいと完了までにしばらくかかります。  
   
-     最も多くの領域を使用しているオブジェクトは出力の最後の数行に表示されるため、そこを分析します。 次に例を示します。  
+     最も多くの領域を使用しているオブジェクトは出力の最後の数行に表示されるため、そこを分析します。 例:  
   
     ```  
     2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo  
@@ -785,5 +788,5 @@ ms.lasthandoff: 10/18/2017
   
      `% Time in GC` の値と処理時間が同時に急激に増加している場合は、CPU の使用率が高いのはガベージ コレクションのためです。 それ以外の場合は、アプリケーションのプロファイリングを実行して、使用率の高い箇所を見つけます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ガベージ コレクション](../../../docs/standard/garbage-collection/index.md)

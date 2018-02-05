@@ -21,11 +21,14 @@ ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dc103d1fc853cd98f899e75d08dbfaf4dd9230d0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4aa9a6d37a52d5f15643e9179060450a2d7a34c4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="common-language-runtime-clr"></a>共通言語ランタイム (CLR)
 .NET Framework には、共通言語ランタイムと呼ばれるランタイム環境が用意されています。共通言語ランタイムは、コードを実行し、開発プロセスを支援するサービスを提供します。  
@@ -33,7 +36,7 @@ ms.lasthandoff: 10/18/2017
  コンパイラとツールにより、共通言語ランタイムの機能が公開されることによって、このマネージ実行環境の利点を活用するコードを記述できるようになります。 このような共通言語ランタイムに対応した言語コンパイラを使用して作成したコードはマネージ コードと呼ばれます。マネージ コードは、言語間の統合、言語間の例外処理、強化されたセキュリティ、バージョン管理と配置のサポート、コンポーネント間の対話の簡易モデル、デバッグ サービスとプロファイル サービスなど、さまざまな機能を利用できます。  
   
 > [!NOTE]
->  型システム、メタデータの書式、およびランタイム環境 (仮想実行システム) はすべて公的な標準規格の ECMA 共通言語基盤仕様により定義されているため、コンパイラおよびツールは共通言語ランタイムが使用できる出力を生成できます。 詳細については、「[ECMA C# and Common Language Infrastructure Specifications (ECMA C# および共通言語基盤の仕様)](http://go.microsoft.com/fwlink/?LinkId=99212)」を参照してください。  
+>  型システム、メタデータの書式、およびランタイム環境 (仮想実行システム) はすべて公的な標準規格の ECMA 共通言語基盤仕様により定義されているため、コンパイラおよびツールは共通言語ランタイムが使用できる出力を生成できます。 詳細については、「[ECMA C# and Common Language Infrastructure Specifications (ECMA C# および共通言語基盤の仕様)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/)」を参照してください。  
   
  マネージ コードが共通言語ランタイムからサービスを受けられるようにするために、言語コンパイラは、そのコード内の型、メンバー、および参照を記述したメタデータを生成する必要があります。 メタデータはコード内に格納されます。つまり、共通言語ランタイムの読み込み可能なすべてのポータブル実行可能 (PE) ファイルには、メタデータが含まれていることになります。 共通言語ランタイムは、クラスの検索と読み込み、メモリ内でのインスタンスのレイアウト、メソッドの呼び出しの解決、ネイティブ コードの生成、セキュリティの強化、およびランタイムのコンテキスト境界の設定にメタデータを使用します。  
   
@@ -68,7 +71,7 @@ ms.lasthandoff: 10/18/2017
   
 |.NET Framework のバージョン|含まれている CLR のバージョン|  
 |----------------------------|--------------------------|  
-|1.0|1.0|  
+|1|1|  
 |1.1|1.1|  
 |2.0|2.0|  
 |3.0|2.0|  
@@ -80,12 +83,12 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[マネージ実行プロセス](../../docs/standard/managed-execution-process.md)|共通言語ランタイム利用するために必要な手順について説明します。|  
 |[自動メモリ管理](../../docs/standard/automatic-memory-management.md)|ガベージ コレクターによるメモリの割り当て方法および解放方法について説明します。|  
-|[.NET Framework の概要](http://msdn.microsoft.com/en-us/ea38ac1e-92af-4d1b-8db1-e8a5ea10ed85)|共通型システム、言語間での相互運用性、マネージ実行、アプリケーション ドメイン、アセンブリなどの .NET Framework の主要な概念について説明します。|  
+|[.NET Framework の概要](http://msdn.microsoft.com/library/ea38ac1e-92af-4d1b-8db1-e8a5ea10ed85)|共通型システム、言語間での相互運用性、マネージ実行、アプリケーション ドメイン、アセンブリなどの .NET Framework の主要な概念について説明します。|  
 |[共通型システム](../../docs/standard/base-types/common-type-system.md)|言語間の統合をサポートするために共通言語ランタイムで型を宣言、使用、および管理する方法について説明します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [バージョンおよび依存関係](../../docs/framework/migration-guide/versions-and-dependencies.md)

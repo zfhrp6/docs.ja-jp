@@ -19,15 +19,18 @@ helpviewer_keywords:
 - one-way communication [.NET Framework]
 - local computer communication [.NET Framework], pipes
 ms.assetid: e7773c77-c646-4a01-8a96-a003d59fc4c9
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f457cc91e6fbfc118e5363d1b0a8e8c2ad800748
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0679e09a52fab68d8da83863afde1568794ba561
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-anonymous-pipes-for-local-interprocess-communication"></a>方法: ローカルのプロセス間通信で匿名パイプを使用する
 匿名パイプは、ローカル コンピューターでのプロセス間通信を実現します。 名前付きパイプと比較して提供する機能は少なくなりますが、オーバーヘッドも小さくなります。 匿名パイプを使用して、ローカル コンピューター上で容易にプロセス間通信を実行できます。 匿名パイプを使用してネットワーク経由の通信を行うことはできません。  
@@ -52,6 +55,6 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[System.IO.Pipes.AnonymousPipeClientStream_Sample#01](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeClientStream_Sample/cs/Program.cs#01)]
  [!code-vb[System.IO.Pipes.AnonymousPipeClientStream_Sample#01](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeClientStream_Sample/vb/program.vb#01)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [パイプ](../../../docs/standard/io/pipe-operations.md)  
  [方法: ネットワークのプロセス間通信で名前付きパイプを使用する](../../../docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md)

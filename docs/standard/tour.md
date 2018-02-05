@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 809f0eaddf298b0d6a57e217c2bcf5450675c3e9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9dca33f01c119c185717efa0666146191503f577
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="tour-of-net"></a>.NET のツアー
 
@@ -124,7 +127,7 @@ LINQ は、データ操作のための単純な宣言型コードを記述でき
 
 どのオペレーティング システムにも、システム サービスを提供するアプリケーション プログラミング インターフェイス (API) が含まれています。 .NET には、その API を呼び出すためのいくつかの方法が用意されています。
 
-ネイティブの相互運用を行う主な方法が、"プラットフォーム呼び出し" (略して P/Invoke) を使用するものです。これは、Linux および Windows のプラットフォームに渡ってサポートされています。 Windows 限定でネイティブの相互運用を行う方法が "COM 相互運用" です。これは、マネージ コードで [COM コンポーネント](https://msdn.microsoft.com/library/bwa2bx93.aspx)を操作する場合に使用します。 これは、P/Invoke インフラストラクチャ上に構築されますが、動作は少し異なります。
+ネイティブの相互運用を行う主な方法が、"プラットフォーム呼び出し" (略して P/Invoke) を使用するものです。これは、Linux および Windows のプラットフォームに渡ってサポートされています。 Windows 限定でネイティブの相互運用を行う方法が "COM 相互運用" です。これは、マネージ コードで [COM コンポーネント](/cpp/atl/introduction-to-com)を操作する場合に使用します。 これは、P/Invoke インフラストラクチャ上に構築されますが、動作は少し異なります。
 
 Java および Objective-C に対する Mono (つまり Xamarin) の相互運用性サポートの多くが同じようにして構築されています。つまり、同じ原則を使用しているということです。
 
@@ -138,7 +141,7 @@ Java および Objective-C に対する Mono (つまり Xamarin) の相互運用
 
 [!code-csharp[Unsafe](../../samples/csharp/snippets/tour/Unsafe.csx)]
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 C# の機能については、「[C# のツアー](../csharp/tour-of-csharp/index.md)」をご覧ください。
 

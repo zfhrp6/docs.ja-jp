@@ -17,15 +17,18 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6090f198815f1149e212c7a57b40187ded9264f4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: bd55b127f73fe1cefce9724f3a74400b5fe7488f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="numerics-in-the-net-framework"></a>.NET Framework における数値
 .NET Framework は、標準の数値整数と浮動小数点型のプリミティブをサポートしています。さらに、理論上の上限や下限のない整数型の <xref:System.Numerics.BigInteger>、複素数を表す型の <xref:System.Numerics.Complex>、<xref:System.Numerics> 名前空間の SIMD が有効なベクター型のセットもサポートしています。  
@@ -40,11 +43,11 @@ ms.lasthandoff: 10/18/2017
 |<xref:System.Byte?displayProperty=nameWithType>|符号なし|1|0|255|  
 |<xref:System.Int16?displayProperty=nameWithType>|符号付き|2|-32,768|32,767|  
 |<xref:System.Int32?displayProperty=nameWithType>|符号付き|4|-2,147,483,648|2,147,483,647|  
-|<xref:System.Int64?displayProperty=nameWithType>|符号付き|9|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
+|<xref:System.Int64?displayProperty=nameWithType>|符号付き|8|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
 |<xref:System.SByte?displayProperty=nameWithType>|符号付き|1|-128|127|  
 |<xref:System.UInt16?displayProperty=nameWithType>|符号なし|2|0|65,535|  
 |<xref:System.UInt32?displayProperty=nameWithType>|符号なし|4|0|4,294,967,295|  
-|<xref:System.UInt64?displayProperty=nameWithType>|符号なし|9|0|18,446,744,073,709,551,615|  
+|<xref:System.UInt64?displayProperty=nameWithType>|符号なし|8|0|18,446,744,073,709,551,615|  
   
  各整数型は、算術、比較、等価、明示的な変換、および暗黙的な変換の演算子の標準セットをサポートします。 各整数には、等価比較と相対比較、数値の文字列形式から整数への変換、および整数から文字列形式への変換を実行するメソッドも含まれています。 丸め処理や 2 つの整数のより小さいか大きい値の識別など、標準の演算子によって処理される上記以外の数値演算は、<xref:System.Math> クラスから使用可能です。 <xref:System.BitConverter> クラスを使用して、整数値の個々 のビットを操作することもできます。  
   
@@ -55,7 +58,7 @@ ms.lasthandoff: 10/18/2017
   
 |型|サイズ (バイト単位)|最小要件|最大|  
 |----------|-----------------------|-------------|-------------|  
-|<xref:System.Double?displayProperty=nameWithType>|9|-1.79769313486232e308|1.79769313486232e308|  
+|<xref:System.Double?displayProperty=nameWithType>|8|-1.79769313486232e308|1.79769313486232e308|  
 |<xref:System.Single?displayProperty=nameWithType>|4|-3.402823e38|3.402823e38|  
 |<xref:System.Decimal?displayProperty=nameWithType>|16|-79,228,162,514,264,337,593,543,950,335|79,228,162,514,264,337,593,543,950,335|  
   
@@ -84,5 +87,5 @@ ms.lasthandoff: 10/18/2017
   
  SIMD は [NuGet パッケージ](http://www.nuget.org/packages/System.Numerics.Vectors)としてもダウンロードできます。  NuGET パッケージには、ジェネリック <xref:System.Numerics.Vector%601> 構造体も含まれています。この構造体を使用すると、任意のプリミティブな数値型のベクターを作成できます。 (プリミティブな数値型には、<xref:System.Decimal> を除く <xref:System> 名前空間のすべての数値型が含まれます。)さらに、<xref:System.Numerics.Vector%601> 構造体は、ベクターを使用しているときに呼び出すことのできる便利なメソッドのライブラリを提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アプリケーションの基本事項](../../docs/standard/application-essentials.md)

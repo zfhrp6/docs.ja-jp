@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a315b111-8e48-446c-ab19-acb6405894a7
-ms.openlocfilehash: 08b8de2fe17a0032a1c1180667f39b1d6ce0feb6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f36bae495631db68afb1404398cbf43e890d4f33
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generic-types-generics-overview"></a>ジェネリック型 (ジェネリック) の概要
 
@@ -22,7 +25,7 @@ ms.lasthandoff: 10/18/2017
 
 .NET Framework 2.0 で最初に導入されたジェネリックには、C# 言語と共通言語ランタイム (CLR) の両方に関連する変更が含まれました。 **ジェネリック**は本質的に "コード テンプレート" であり、開発者は実際のデータ型をいじらずに[タイプ セーフな](https://msdn.microsoft.com/library/hbzz1a9a.aspx)データ構造を定義できます。 たとえば、`List<T>` は[ジェネリック コレクション](xref:System.Collections.Generic)であり、`List<int>`、`List<string>`、`List<Person>` などの任意の型で宣言および使用できます。
 
-重点および ジェネリックの有用性を 理解するためには、ジェネリックを追加する前と後の特定のクラスを調べる必要があります。 `ArrayList` を見てみます。 C# 1.0 では、`ArrayList` 要素は `object` 型でした。 これは、追加されたすべての要素は暗黙的に `object` に変換されることを意味します。リストから要素を読み取るときも同じです (この処理はそれぞれ、[ボックス化](https://msdn.microsoft.com/library/yz2be5wk.aspx)およびボックス化解除と呼ばれます)。 ボックス化とボックス化解除はパフォーマンスに影響を与えます。 そうはいっても、コンパイル時にリスト内のデータの実際の型を確認する方法はありません。 これは脆弱なコードを助長します。 ジェネリックは、リストの各インスタンスに含まれるデータの型の追加情報を提供することによってこの問題を解決します。 簡単に言うと、`List<int>` には整数だけを追加でき、`List<Person>` には Persons だけを追加できます。
+重点および ジェネリックの有用性を 理解するためには、ジェネリックを追加する前と後の特定のクラスを調べる必要があります。 `ArrayList` を見てみます。 C# 1.0 では、`ArrayList` 要素は `object` 型でした。 これは、追加されたすべての要素は暗黙的に `object` に変換されることを意味します。リストから要素を読み取るときも同じです (この処理はそれぞれ、[ボックス化](../../docs/csharp/programming-guide/types/boxing-and-unboxing.md)およびボックス化解除と呼ばれます)。 ボックス化とボックス化解除はパフォーマンスに影響を与えます。 そうはいっても、コンパイル時にリスト内のデータの実際の型を確認する方法はありません。 これは脆弱なコードを助長します。 ジェネリックは、リストの各インスタンスに含まれるデータの型の追加情報を提供することによってこの問題を解決します。 簡単に言うと、`List<int>` には整数だけを追加でき、`List<Person>` には Persons だけを追加できます。
 
 ジェネリックは、実行時または**具体化**にも使用できます。 これは、使用されているデータ構造の型をランタイムが認識し、より効率的メモリに格納できることを意味します。
 
@@ -72,4 +75,4 @@ Non-Generic Sort: System.Collections.ArrayList Time taken: 2.4324ms
 ## <a name="further-reading-and-resources"></a>参考資料とリソース
 
 *   [C# のジェネリックの概要](https://msdn.microsoft.com/library/ms379564.aspx)
-*   [ジェネリック (C# プログラミング ガイド)](https://msdn.microsoft.com/library/512aeb7t.aspx)
+*   [ジェネリック (C# プログラミング ガイド)](../../docs/csharp/programming-guide/generics/index.md)

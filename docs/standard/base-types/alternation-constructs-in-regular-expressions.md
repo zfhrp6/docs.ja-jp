@@ -20,15 +20,18 @@ helpviewer_keywords:
 - constructs, alternation
 - .NET Framework regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6ad632130b6f111ff863648b8b1a3b2835c27660
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8e565d029096b88d304b9cfc241807084873e735
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>正規表現での代替構成体
 <a name="top"></a> 代替構成体は、択一条件または条件一致を有効にするように正規表現を変更します。 .NET では、次の 3 つの代替構成体がサポートされています。  
@@ -76,7 +79,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="conditional-matching-with-an-expression"></a>式を使用した条件一致  
  この言語要素では、最初のパターンに一致するかどうかに応じて、2 つのパターンのいずれかの照合を実行します。 構文は次のとおりです。  
   
- `(?(` *式* `)` *可* `|` *no* `)`  
+ `(?(` *expression* `)` *yes* `|` *no* `)`  
   
  ここで、 *expression* は照合する最初のパターン、 *yes* は *expression* が一致した場合に照合するパターン、 *no* は *expression* が一致しなかった場合に照合するパターン (省略可能) です。 *expression* は正規表現エンジンによってゼロ幅アサーションとして処理されるので、 *expression*が評価された後、正規表現エンジンによる入力ストリーム内の評価位置は前に進みません。 そのため、この構成体は次の構成体と同じです。  
   
@@ -134,10 +137,10 @@ ms.lasthandoff: 10/18/2017
 |<code>&#124;\d{3}-\d{2}-\d{4}</code>|`n2` が一致しなかった場合は、「3 桁の 10 進数、ハイフン、2 桁の 10 進数、もう 1 つのハイフン、および 4 桁の 10 進数」を照合します。|  
 |`\b`|ワード境界に一致します。|  
   
- この例を少し変更して、名前付きグループではなく番号付きグループを使用する例を次に示します。 正規表現パターンは `\b(\d{2}-)*(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b` です。  
+ この例を少し変更して、名前付きグループではなく番号付きグループを使用する例を次に示します。 正規表現パターンは `\b(\d{2}-)*(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b`です。  
   
  [!code-csharp[RegularExpressions.Language.Alternation#5](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation5.cs#5)]
  [!code-vb[RegularExpressions.Language.Alternation#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation5.vb#5)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

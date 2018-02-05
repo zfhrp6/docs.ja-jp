@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 1478b5dc5844cef0abfea44eba88a12801d32bd4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: eb9bc30c31ab02df7c04c885f59cadfcc1f00253
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (統合言語クエリ)
 
@@ -80,7 +83,7 @@ public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement docume
 
 コードを記述して XML ドキュメントを手動でスキャンし、このタスクを実行するのはとても難しいことです。
 
-XML との対話が、LINQ プロバイダーでできる唯一のことではありません。 [Linq to SQL](https://msdn.microsoft.com/library/bb386976.aspx) は、MSSQL Server データベースの必要最低限のオブジェクト リレーショナル マッパー (ORM) です。 [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) ライブラリでは、LINQ を使用して効率的に JSON ドキュメントをトラバースできます。 さらに、必要な作業を行うライブラリがない場合は、[独自の LINQ プロバイダーを記述する](https://msdn.microsoft.com/library/Bb546158.aspx)こともできます。
+XML との対話が、LINQ プロバイダーでできる唯一のことではありません。 [Linq to SQL](../../docs/framework/data/adonet/sql/linq/index.md) は、MSSQL Server データベースの必要最低限のオブジェクト リレーショナル マッパー (ORM) です。 [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) ライブラリでは、LINQ を使用して効率的に JSON ドキュメントをトラバースできます。 さらに、必要な作業を行うライブラリがない場合は、[独自の LINQ プロバイダーを記述する](https://msdn.microsoft.com/library/Bb546158.aspx)こともできます。
 
 ## <a name="why-use-the-query-syntax"></a>クエリ構文を使用する理由
 
@@ -254,7 +257,7 @@ public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> fa
 
 ![PLINQ の図](./media/using-linq/plinq-diagram.png)
 
-LINQ で簡単に表すことができる (つまり、純粋関数で副作用のない) 並列化可能な CPU 制約のあるジョブは、PLINQ の候補として最適です。 副作用の_ある_ジョブの場合は、[タスク並列ライブラリ](https://msdn.microsoft.com/library/dd460717.aspx)の使用を検討してください。
+LINQ で簡単に表すことができる (つまり、純粋関数で副作用のない) 並列化可能な CPU 制約のあるジョブは、PLINQ の候補として最適です。 副作用の_ある_ジョブの場合は、[タスク並列ライブラリ](./parallel-programming/task-parallel-library-tpl.md)の使用を検討してください。
 
 ## <a name="further-resources"></a>他のリソース:
 

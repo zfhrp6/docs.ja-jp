@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.openlocfilehash: 263662c1c7f22c84e0de14c6480fa9807b46b2f2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ca2ae076229a1726d3a25a84e358f9cfb623a297
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="what-is-managed-code"></a>"マネージ コード" とは
 
@@ -43,5 +46,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="more-resources"></a>その他のリソース
 
 *   [.NET framework の概念の概要](https://msdn.microsoft.com/library/zw4w595w.aspx)
-*   [アンセーフ コードとポインター](https://msdn.microsoft.com/library/t2yzs44b.aspx)
+*   [アンセーフ コードとポインター](../../docs/csharp/programming-guide/unsafe-code-pointers/index.md)
 *   [相互運用性 (C# プログラミング ガイド)](https://msdn.microsoft.com/library/ms173184.aspx)

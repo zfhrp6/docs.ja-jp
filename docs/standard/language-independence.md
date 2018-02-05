@@ -13,11 +13,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: ed48191ee397bb5f892a7afba6dfbfa2d06e1045
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0a7a37b1c8eed81866035dc6fb55db89391f25aa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 
@@ -157,7 +160,7 @@ End Class
 
 CLS 準拠の規則を次の表に示します。 この規則は、「[ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) からの引用で、Ecma International が 2012 年の著作権を保有しています。 これらの規則の詳細については、以降のセクションを参照してください。 
 
-カテゴリ | 参照トピック | ルール | 規則番号
+カテゴリ | 解決方法については、 | ルール | 規則番号
 -------- | --- | ---- | -----------
 ユーザー補助 | [メンバーのアクセシビリティ](#member-accessibility) | 継承されたメソッドをオーバーライドする場合、アクセシビリティは変更してはいけない。ただし、別のアセンブリから継承されたメソッドをアクセシビリティ `family-or-assembly` でオーバーライドする場合は除く。 この場合、アクセシビリティは `family` にすること。 | 10
 ユーザー補助 | [メンバーのアクセシビリティ](#member-accessibility) | 型およびメンバーの可視性およびアクセシビリティについて、メンバーのシグネチャに指定されている型は、そのメンバーが可視でアクセス可能な場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるパブリックなメソッドには、アセンブリ内部でだけ可視である型が引数として含まれていてはいけない。 メンバーのシグネチャに使用されているジェネリック型のインスタンスを構成する型の可視性およびアクセシビリティは、メンバーが可視でアクセス可能の場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるメンバーのシグネチャに指定されているジェネリック型のインスタンスに、アセンブリ内部でだけ可視である型の汎用引数が含まれていてはいけない。 | 12
@@ -167,9 +170,9 @@ CLS 準拠の規則を次の表に示します。 この規則は、「[ECMA-335
 属性 | [属性](#attributes) | CLS では、公開参照される必須の修飾子 (`modreq`、第 2 部を参照) は使用できない。ただし、認識しないオプションの修飾子 (`modopt`、第 2 部を参照) は使用できる。 | 35
 コンストラクター | [コンストラクター](#constructors) | オブジェクト コンストラクターでは、継承しているインスタンス データへのアクセスが発生する前に、基底クラスのインスタンス コンストラクターを呼び出さなければいけない (コンストラクターが不要である値型は除く)。  | 21
 コンストラクター | [コンストラクター](#constructors) | オブジェクト コンストラクターがオブジェクトの作成時以外で呼び出されてはならず、またオブジェクトが 2 度初期化されてもいけない。 | 22
-列挙型 | [列挙型](#enumerations) | enum の基になる型は組み込みの CLS 整数型、フィールド名は "value__" であり、そのフィールドには `RTSpecialName` のマークが付けられる。 |  7
-列挙型 | [列挙型](#enumerations) | enum には 2 種類あり、[System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。 片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。 `enum` の値は、指定した値に限定されない。 |  9
-列挙型 | [列挙型](#enumerations) | enum のリテラルな静的フィールドの型は、その enum 自体の型である。 |  9
+列挙 | [列挙型](#enumerations) | enum の基になる型は組み込みの CLS 整数型、フィールド名は "value__" であり、そのフィールドには `RTSpecialName` のマークが付けられる。 |  7
+列挙型 | [列挙型](#enumerations) | enum には 2 種類あり、[System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。 片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。 `enum` の値は、指定した値に限定されない。 |  8
+列挙 | [列挙型](#enumerations) | enum のリテラルな静的フィールドの型は、その enum 自体の型である。 |  9
 イベント | [イベント](#events) | イベントを実装するメソッドは、メタデータ内で `SpecialName` のマークが付けられる。 |29
 イベント | [イベント](#events) | イベントとイベントのアクセサーのアクセシビリティは同一である。 |30
 イベント | [イベント](#events) | イベントの `add` メソッドおよび `remove` メソッドは、どちらもあってもなくてもよい。 |31
@@ -1254,7 +1257,7 @@ End Module
 '       Temperature in Fahrenheit: 212.0 degrees
 ```
 
-### <a name="enumerations"></a>列挙体
+### <a name="enumerations"></a>列挙
 
 CLS 準拠の列挙型は、次の規則に従う必要があります。 
 

@@ -13,15 +13,18 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 51ca7b5d18e4b664fcc5a56f7de004c42cb95c9e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 716e9baca52e9f5b7f4f24821e50b6a16aef9136
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>DOM における XML ドキュメントの検証
 既定では、<xref:System.Xml.XmlDocument> クラスは、ドキュメント オブジェクト モデル (DOM) 内の XML ドキュメントを XML スキーマ定義言語 (XSD) スキーマまたはドキュメント型定義 (DTD) に対して検証しません。XML が整形式であることだけが検証されます。  
@@ -89,10 +92,10 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Xml.Schema.ValidationEventHandler> を説明する例については、上記の「DOM への読み込み時の XML ドキュメントの検証」と「DOM における XML ドキュメントの検証」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XmlReader>  
  <xref:System.Xml.Schema.ValidationEventHandler>  
  <xref:System.Xml.XmlReaderSettings>  
- [DOM モデルを使用して XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
- [XML スキーマの操作](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+ [DOM モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
+ [XML スキーマの使用](../../../../docs/standard/data/xml/working-with-xml-schemas.md)

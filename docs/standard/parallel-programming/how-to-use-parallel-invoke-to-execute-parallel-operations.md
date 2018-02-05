@@ -15,15 +15,18 @@ helpviewer_keywords:
 - task parallelism in .NET
 - parallel programming, task parallelism
 ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8a51f180a394c1baa2ecb0620279ea15c62e1edc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 942ba120fa5273f84ac3d0a51e276223de5f5484
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>方法: Parallel.Invoke を使用して並列操作を実行する
 この例では、タスク並列ライブラリの <xref:System.Threading.Tasks.Parallel.Invoke%2A> を使用して操作を並列化する方法を示します。 共有データ ソースで 3 つの操作が実行されます。 操作によってソースが変更されるわけではないため、簡単に並列実行できます。  
@@ -43,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
 -   この例の全体をコピーして、Microsoft Visual Studio 2010 プロジェクトに貼り付けて F5 キーを押します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列プログラミング](../../../docs/standard/parallel-programming/index.md)  
  [方法: タスクとその子を取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
