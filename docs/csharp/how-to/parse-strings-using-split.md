@@ -15,11 +15,11 @@ ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 author: BillWagner
 ms.author: wiwagn
 ms.custom: mvc
-ms.openlocfilehash: 9dd5b1204986bd9b181c033d254bb41e8cc894da
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.openlocfilehash: 5143fed04148fb17697bd5d040ad23b762505db4
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>方法: String.Split を使用して文字列を解析する (C# ガイド)
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/29/2018
 
 この動作により、コンマ区切り値 (CSV) ファイルなどの形式で表形式データを簡単に表すことができます。 連続するコンマは空の列を表します。
 
-任意の <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=fullName> パラメーターを渡し、返される配列で空の文字列を除外できます。 返されるコレクションの処理が複雑な場合、[LINQ](../programming-guide/concepts/linq/index.md) を使用し、結果のシーケンスを操作できます。    
+任意の <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> パラメーターを渡し、返される配列で空の文字列を除外できます。 返されるコレクションの処理が複雑な場合、[LINQ](../programming-guide/concepts/linq/index.md) を使用し、結果のシーケンスを操作できます。    
 
 <xref:System.String.Split%2A?displayProperty=nameWithType> では、複数の区切り文字を使用できます。 次の例ではスペース、コンマ、ピリオド、コロン、タブを使用しています。すべて、これらの区切り文字を格納した配列で <xref:System.String.Split%2A> に渡されます。  コードの一番下にあるループは、返される配列の各単語を表示します。  
 

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: fa3b7af871380d4f18ebe7ef4f5bc5963cc247c4
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 09d07e6257ad7d32d75328a8c1850888b4d0b937
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="work-with-syntax"></a>構文の使用
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="kinds"></a>種類
 
-ノード、トークン、またはトリビアにはそれぞれ、表される正確な構文要素を識別する <xref:System.Int32?displayProperty=fullName> 型の <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> プロパティがあります。 この値は、言語固有の列挙型にキャストすることができます。C# または VB の各言語には、文法で可能なすべてのノード、トークン、およびトリビア要素を一覧表示する、1 つの `SyntaxKind` 列挙型 (それぞれ <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=fullName> と <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=fullName>) があります。 この変換は、<xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> または <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType> 拡張メソッドにアクセスすることで自動的に実行することができます。
+ノード、トークン、またはトリビアにはそれぞれ、表される正確な構文要素を識別する <xref:System.Int32?displayProperty=nameWithType> 型の <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> プロパティがあります。 この値は、言語固有の列挙型にキャストすることができます。C# または VB の各言語には、文法で可能なすべてのノード、トークン、およびトリビア要素を一覧表示する、1 つの `SyntaxKind` 列挙型 (それぞれ <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> と <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>) があります。 この変換は、<xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> または <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType> 拡張メソッドにアクセスすることで自動的に実行することができます。
 
 <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> プロパティは、同じノード クラスを共有する構文ノード型の簡単なあいまいさ排除を可能にします。 トークンとトリビアでは、このプロパティは要素の型を区別するための唯一の方法です。 
 

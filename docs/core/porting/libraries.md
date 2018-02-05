@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
-ms.workload: dotnetcore
-ms.openlocfilehash: c2cc62d1f7babb09eeccf0422bb4b3022d77ce02
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 24c74f0396dd7bfdf19fc0e11a29110fdbf27173
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="porting-to-net-core---libraries"></a>.NET Core への移植 - ライブラリ
 
@@ -123,7 +124,7 @@ Visual Studio 2017 でライブラリを読み込み、次の手順を行うこ�
 
 次の手順では、API Portability Analyzer (ApiPort) を実行して、分析用の移植性レポートを生成します。
 
-[API Portability Analyzer (ApiPort)](~/docs/standard/portability-analyzer.md) を理解し、.NET Core をターゲットとする移植性レポートを生成する方法を理解している必要があります。 その方法は、ニーズと個人の好みによって変わります。 以下に、異なるアプローチをいくつか示します。 コードの構成内容によっては、これらのアプローチの手順を組み合わせて使用していることに気付くかもしれません。
+[API Portability Analyzer (ApiPort)](../../standard/analyzers/portability-analyzer.md) を理解し、.NET Core をターゲットとする移植性レポートを生成する方法を理解している必要があります。 その方法は、ニーズと個人の好みによって変わります。 以下に、異なるアプローチをいくつか示します。 コードの構成内容によっては、これらのアプローチの手順を組み合わせて使用していることに気付くかもしれません。
 
 ### <a name="dealing-primarily-with-the-compiler"></a>主にコンパイラを使用して対処する
 
