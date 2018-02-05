@@ -209,7 +209,7 @@
 <!-- Start of C# Content -->
 # [C# のガイド](csharp/index.md)
 ## [開始するには](csharp/getting-started/)
-## [クイック スタート](csharp/quick-starts/)
+## [クイックスタート](csharp/quick-starts/)
 ## [チュートリアル](csharp/tutorials/)
 ## [C# のツアー](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
