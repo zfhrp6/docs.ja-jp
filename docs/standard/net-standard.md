@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: ccb44b94f1b3ce2fb369de368454679b25ed351f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9c0d375f160b886b104daeb68b88c25264e3e78f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -55,7 +58,7 @@ ms.lasthandoff: 10/18/2017
 
 バージョン管理規則は主に 2 つあります。
 
-- 追加式。.NET Standard バージョンは論理的に同心円形です。高位のバージョンには、旧バージョンのすべての API が組み込まれています。 バージョン間に互換性に影響する変更はありません。
+- 追加式。 .NET Standard バージョンは論理的に同心円形です。高位のバージョンには、旧バージョンのすべての API が組み込まれています。 バージョン間に互換性に影響する変更はありません。
 - 不変。 出荷後、.NET Standard のバージョンは固定されます。 新しい API は、特定の .NET 実装 (.NET Core など) でまず使用できるようになります。 .NET Standard の審査会が、新しい API を全ユーザーに使用できるようにした方がよいと判断すると、新しい .NET Standard バージョンに追加されます。
 
 ## <a name="comparison-to-portable-class-libraries"></a>ポータブル クラス ライブラリとの比較
@@ -80,7 +83,7 @@ ms.lasthandoff: 10/18/2017
 
 ### <a name="official-artifacts"></a>正式な成果物
 
-正式な仕様は標準に含まれる API を定義する一連の .cs ファイルです。 [dotnet/standard リポジトリ](https://github.com/dotnet/corefx/tree/master/src)の [ref](https://github.com/dotnet/standard/tree/master/netstandard/ref) ディレクトリに.NET Standard API が定義されています。
+正式な仕様は標準に含まれる API を定義する一連の .cs ファイルです。 [dotnet/standard リポジトリ](https://github.com/dotnet/standard)の [ref](https://github.com/dotnet/standard/tree/master/netstandard/ref) ディレクトリに.NET Standard API が定義されています。
 
 [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) メタパッケージ ([ソース](https://github.com/dotnet/standard/blob/master/netstandard/pkg/NETStandard.Library.dependencies.props)) は、1 つ以上の .NET Standard のバージョンを定義する (一部) ライブラリのセットについて説明しています。
 
@@ -132,16 +135,16 @@ NuGet パッケージは 1 つまたは複数の[フレームワーク](framewor
 | PCL プロファイル | .NET Standard | PCL プラットフォーム
 |:-----------:|:-------------:|------------------------------------------------------------------------------
 | Profile7    | 1.1           | .NET Framework 4.5、Windows 8
-| Profile31   | 1.0           | Windows 8.1、Windows Phone Silverlight 8.1
+| Profile31   | 1           | Windows 8.1、Windows Phone Silverlight 8.1
 | Profile32   | 1.2           | Windows 8.1、Windows Phone 8.1
 | Profile44   | 1.2           | .NET Framework 4.5.1、Windows 8.1
-| Profile49   | 1.0           | .NET Framework 4.5、Windows Phone Silverlight 8
+| Profile49   | 1           | .NET Framework 4.5、Windows Phone Silverlight 8
 | Profile78   | 1.0           | .NET Framework 4.5、Windows 8、Windows Phone Silverlight 8
-| Profile84   | 1.0           | Windows Phone 8.1、Windows Phone Silverlight 8.1
+| Profile84   | 1           | Windows Phone 8.1、Windows Phone Silverlight 8.1
 | Profile111  | 1.1           | .NET Framework 4.5、Windows 8、Windows Phone 8.1
 | Profile151  | 1.2           | .NET Framework 4.5.1、Windows 8.1、Windows Phone 8.1
-| Profile157  | 1.0           | Windows 8.1、Windows Phone 8.1、Windows Phone Silverlight 8.1
-| Profile259  | 1.0           | .NET Framework 4.5、Windows 8、Windows Phone 8.1、Windows Phone Silverlight 8
+| Profile157  | 1           | Windows 8.1、Windows Phone 8.1、Windows Phone Silverlight 8.1
+| Profile259  | 1           | .NET Framework 4.5、Windows 8、Windows Phone 8.1、Windows Phone Silverlight 8
 
 
 ## <a name="targeting-net-standard"></a>.NET Standard を対象とする
