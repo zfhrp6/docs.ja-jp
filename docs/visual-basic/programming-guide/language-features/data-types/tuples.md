@@ -5,17 +5,19 @@ ms.date: 04/23/2017
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-helpviewer_keywords: tuples [Visual Basic]
+helpviewer_keywords:
+- tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: be50b22e9acca9ff8cfbde798d78869ee1c72634
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 2653b9dc8a6ecbcb718c20be8bd6275edf4cfb6e
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="tuples-visual-basic"></a>タプル (Visual Basic)
 
@@ -44,58 +46,87 @@ Visual Basic の組のフィールドには、読み取り/書き込みです。
 
 [!code-vb[Instantiate](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple1.vb#4)]
 
-## <a name="tuples-versus-structures"></a>組構造体との比較
+## <a name="inferred-tuple-element-names"></a>推論されたタプル要素の名前
 
-Visual Basic の組が値型の 1 つのインスタンスでは、 **System.ValueTuple**ジェネリック型です。 たとえば、`holiday`前の例で定義される組がのインスタンス、<xref:System.ValueTuple%603>構造体。 軽量のデータ コンテナーに設計されています。 組の目的は、複数のデータ項目を含むオブジェクトを作成するが簡単に、ため、可能性のあるカスタム構造機能の一部が不足しています。 以下に例を示します。
+Visual Basic 15.3 から始めて、Visual Basic はタプル要素の名前を推論できます。明示的に割り当てる必要はありません。 推論される組の名前は、変数のセットから組を初期化して、タプルの要素名、変数名と同じであるをする場合に便利です。 
 
-- 顧客メンバー。 独自のプロパティ、メソッド、または組のイベントを定義することはできません。
+次の例を作成、`stateInfo`を明示的に 3 つを含むタプル要素を名前付き`state`、 `stateName`、および`capital`です。 なお、要素の名前付けで、タプルの初期化ステートメントが同じ名前の変数の値だけで名前付きの要素に割り当てられます。
 
-- 検証します。 フィールドに割り当てられているデータを検証することはできません。
+[!code-vb[ExplicitlyNamed](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#1)]
+ 
+要素と変数は、同じ名前であるために、Visual Basic コンパイラは、次の例のように、フィールドの名前を推測できます。
 
-- 不変性。 Visual Basic の組は変更可能です。 これに対し、カスタムの構造を制御できますインスタンスには変更可能なと変更できないかどうか。
+[!code-vb[ExplicitlyNamed](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
-カスタム メンバー、プロパティとフィールドの検証、または変更不可が重要な場合は、Visual Basic を使用する必要があります[構造](../../../language-reference/statements/structure-statement.md)をカスタム値の型を定義するステートメント。
+Interred タプル要素の名前を有効にするには、Visual Basic プロジェクトで使用する Visual Basic コンパイラのバージョンを定義する必要があります (\*.vbproj) ファイル。 
 
-Visual Basic の組のメンバーを継承してその**ValueTuple**型です。 そのフィールドに加え、次のメソッドが含まれます。
+```xml 
+<PropertyGroup> 
+  <LangVersion>15.3</LangVersion> 
+</PropertyGroup> 
 
-| メンバー | 説明 |
+The version number can be any version of the Visual Basic compiler starting with 15.3. Rather than hard-coding a specific compiler version, you can also specify "Latest" as the value of `LangVersion` to compile with the most recent version of the Visual Basic compiler installed on your system.
+
+In some cases, the Visual Basic compiler cannot infer the tuple element name from the candidate name, and the tuple field can only be referenced using its default name, such as `Item1`, `Item2`, etc. These include:
+
+- The candidate name is the same as the name of a tuple member, such as `Item3`, `Rest`, or `ToString`.
+
+- The candidate name is duplicated in the tuple.
+ 
+When field name inference fails, Visual Basic does not generate a compiler error, nor is an exception thrown at runtime. Instead, tuple fields must be referenced by their predefined names, such as `Item1` and `Item2`. 
+  
+## Tuples versus structures
+
+A Visual Basic tuple is a value type that is an instance of one of the a **System.ValueTuple** generic types. For example, the `holiday` tuple defined in the previous example is an instance of the <xref:System.ValueTuple%603> structure. It is designed to be a lightweight container for data. Since the tuple aims to make it easy to create an object with multiple data items, it lacks some of the features that a custom structure might have. These include:
+
+- Customer members. You cannot define your own properties, methods, or events for a tuple.
+
+- Validation. You cannot validate the data assigned to fields.
+
+- Immutability. Visual Basic tuples are mutable. In contrast, a custom structure allows you to control whether an instance is mutable or immutable.
+
+If custom members, property and field validation, or immutability are important, you should use the Visual Basic [Structure](../../../language-reference/statements/structure-statement.md) statement to define a custom value type.
+
+A Visual Basic tuple does inherit the members of its **ValueTuple** type. In addition to its fields, these include the following methods:
+
+| Member | Description |
 | ---|---|
-| CompareTo | 同じ数の要素を持つ別のタプルに現在の組を比較します。 |
-| 次の値に等しい | 現在の組が別の組またはオブジェクトに等しいかどうかを判断します。 |
-| GetHashCode | 現在のインスタンスのハッシュ コードを計算します。 |
-| ToString | この組は、の形式の文字列表現を返します`(Item1, Item2...)`ここで、`Item1`と`Item2`組のフィールドの値を表します。 |
+| CompareTo | Compares the current tuple to another tuple with the same number of elements. |
+| Equals | Determines whether the current tuple is equal to another tuple or object. |
+| GetHashCode | Calculates the hash code for the current instance. |
+| ToString | Returns the string representation of this tuple, which takes the form `(Item1, Item2...)`, where `Item1` and `Item2` represent the values of the tuple's fields. |
 
-さらに、 **ValueTuple**型実装<xref:System.Collections.IStructuralComparable>と<xref:System.Collections.IStructuralEquatable>インターフェイスで、顧客の比較子を定義することです。
+In addition, the **ValueTuple** types implement <xref:System.Collections.IStructuralComparable> and <xref:System.Collections.IStructuralEquatable> interfaces, which allow you to define customer comparers.
 
-## <a name="assignment-and-tuples"></a>割り当てとタプル
+## Assignment and tuples
 
-Visual Basic では、同じ数のフィールドを持つタプル型間での割り当てをサポートします。 次のいずれかが true の場合、フィールドの型を変換できます。
+Visual Basic supports assignment between tuple types that have the same number of fields. The field types can be converted if one of the following is true:
 
-- ソースとターゲットのフィールドでは、同じ型です。
+- The source and target field are of the same type.
 
-- 対象の型に、元の型の拡大 (または暗黙的な) 変換が定義されます。 
+- A widening (or implicit) conversion of the source type to the target type is defined. 
 
-- `Option Strict``On`対象の型に、元の型の縮小 (または明示的な) 変換が定義されているとします。 この変換は、元の値がターゲット型の範囲外の場合、例外をスローできます。
+- `Option Strict` is `On`, and a narrowing (or explicit) conversion of the source type to the target type is defined. This conversion can throw an exception if the source value is outside the range of the target type.
 
-他の変換は、割り当てでは考慮されません。 タプル型間で許可されている割り当ての種類を見てみましょう。
+Other conversions are not considered for assignments. Let's look at the kinds of assignments that are allowed between tuple types.
 
-以降の例で使用されている変数について考えます。
+Consider these variables used in the following examples:
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#1)]
 
-最初の 2 つの変数では、`unnamed`と`anonymous`フィールドのセマンティックの名がありません。 フィールド名は、既定`Item1`と`Item2`です。 最後の 2 つの変数では、`named`と`differentName`セマンティック フィールド名があります。 この 2 つのタプルでは、フィールド名が異なっていることに注意してください。
+The first two variables, `unnamed` and `anonymous`, do not have semantic names provided for the fields. Their field names are the default `Item1` and `Item2`. The last two variables, `named` and `differentName` have semantic field names. Note that these two tuples have different names for the fields.
 
-これらの組の 4 つすべては同じ数のフィールド (呼ば 'アリティ') を持ち、これらのフィールドの型が同一です。 このため、これらの割り当てはすべて機能します。
+All four of these tuples have the same number of fields (referred to as 'arity'), and the types of those fields are identical. Therefore, all of these assignments work:
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#2)]
 
-タプルの名前が割り当てられていないことに注意してください。 フィールドの値は、タプルのフィールドの順序に従って割り当てられます。
+Notice that the names of the tuples are not assigned. The values of the fields are assigned following the order of the fields in the tuple.
 
-最後は割り当てることができますに注意してください、`named`タプル、`conversion`タプル、にもかかわらずの最初のフィールド`named`は、`Integer`との最初のフィールド`conversion`は、`Long`です。 変換するため、この割り当てが成功、`Integer`を`Long`拡大変換は、します。
+Finally, notice that we can assign the `named` tuple to the `conversion` tuple, even though the first field of `named` is an `Integer`, and the first field of `conversion` is a `Long`. This assignment succeeds because converting an `Integer` to a `Long` is a widening conversion.
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#3)]
 
-フィールドの数が異なるとの組に割り当てることはできません。
+Tuples with different numbers of fields are not assignable:
 
 ```vb
 ' Does not compile.

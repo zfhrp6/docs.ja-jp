@@ -14,25 +14,25 @@ helpviewer_keywords:
 - assemblies [.NET Framework], names
 - DLLs, names
 ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
-caps.latest.revision: "11"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 76584e0d22b6e651dfd851675a72d1f0cb70feb1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f74c37821d730ec8dcaa74763967c662bafd6699
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="names-of-assemblies-and-dlls"></a>アセンブリと DLL の名前
 アセンブリは、展開とマネージ コード アプリケーションの id の単位です。 アセンブリは、1 つまたは複数のファイルにまたがることができますが通常アセンブリは一対一、DLL にマップされます。 そのため、このセクションでは、のみ DLL の名前付け規則、アセンブリの名前付け規則にマップすることができますがについて説明します。  
   
  **✓ しないで**アセンブリ System.Data などの機能の大きなチャンクを提案する Dll の名前を選択します。  
   
- アセンブリ名と DLL 名を名前空間の名前に対応する必要はありませんが、これはアセンブリの名前を付けるときは、名前空間の名前を次に適切です。 適切な経験則では、アセンブリに含まれるアセンブリの共通のプレフィックスに基づく DLL の名前です。 たとえば、2 つの名前空間を持つアセンブリ`MyCompany.MyTechnology.FirstFeature`と`MyCompany.MyTechnology.SecondFeature`、呼び出すことが`MyCompany.MyTechnology.dll`です。  
+ アセンブリ名と DLL 名を名前空間の名前に対応する必要はありませんが、これはアセンブリの名前を付けるときは、名前空間の名前を次に適切です。 適切な経験則では、一般的なアセンブリに含まれている名前空間のプレフィックスに基づく DLL の名前です。 たとえば、2 つの名前空間を持つアセンブリ`MyCompany.MyTechnology.FirstFeature`と`MyCompany.MyTechnology.SecondFeature`、呼び出すことが`MyCompany.MyTechnology.dll`です。  
   
  **✓ を検討してください**Dll を次のパターンに従って名前付け。  
   
@@ -42,7 +42,7 @@ ms.lasthandoff: 12/23/2017
   
  `Litware.Controls.dll`。  
   
- *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
+ *Portions © 2005, 2009 Microsoft Corporation.All rights reserved.*  
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
