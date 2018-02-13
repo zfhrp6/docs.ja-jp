@@ -2,14 +2,16 @@
 title: "sizeof (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - sizeof_CSharpKeyword
 - sizeof
-helpviewer_keywords: sizeof keyword [C#]
+helpviewer_keywords:
+- sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0148ae8381804ca9286315251582c8ab40778369
@@ -47,7 +49,7 @@ int intSize = sizeof(int);
 |`sizeof(ushort)`|2|  
 |`sizeof(int)`|4|  
 |`sizeof(uint)`|4|  
-|`sizeof(long)`|9|  
+|`sizeof(long)`|8|  
 |`sizeof(ulong)`|8|  
 |`sizeof(char)`|2 (Unicode)|  
 |`sizeof(float)`|4|  

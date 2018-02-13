@@ -2,7 +2,8 @@
 title: "型 (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - value types [C#]
@@ -14,18 +15,18 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-caps.latest.revision: "53"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1352d817241ad4dd42747dcd3a6bfbaf71f9cf25
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9fe933760fd1ff0d730bf142707f03cf85b886b2
+ms.sourcegitcommit: 70dcc89737127e4d5f20500242409b687e51b07e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="types-c-programming-guide"></a>型 (C# プログラミング ガイド)
 ## <a name="types-variables-and-values"></a>型、変数、および値  
- C# は、厳密に型指定された言語です。 すべての変数および定数は、値に評価されるすべての式がそうであるように、型を持ちます。 すべてのメソッド シグネチャで、各入力パラメーターの型と戻り値の型が指定されます。 .NET Framework クラス ライブラリでは、一連の組み込みの数値型が定義され、さらにファイル システム、ネットワーク接続、オブジェクトのコレクション、オブジェクトの配列、日付など、さまざまな論理構造を表すより複雑な型も定義されています。 一般的な C# プログラムでは、クラス ライブラリで定義されている型と、そのプログラムの問題領域に固有の概念をモデル化するユーザー定義の型が使用されます。  
+ C# は、厳密に型指定された言語です。 すべての変数および定数は、値に評価されるすべての式がそうであるように、型を持ちます。 すべてのメソッド シグネチャで、各入力パラメーターの型と戻り値の型が指定されます。 .NET クラス ライブラリでは、一連の組み込みの数値型が定義され、さらにファイル システム、ネットワーク接続、オブジェクトのコレクション、オブジェクトの配列、日付など、さまざまな論理構造を表すより複雑な型も定義されています。 一般的な C# プログラムでは、クラス ライブラリで定義されている型と、そのプログラムの問題領域に固有の概念をモデル化するユーザー定義の型が使用されます。  
   
  型には、次のような情報が保存されます。  
   
@@ -67,14 +68,14 @@ ms.lasthandoff: 11/21/2017
  C# には、整数、浮動小数点値、ブール式、テキスト文字、10 進数値などのデータを表現するための標準的な組み込みの数値型が用意されています。 また、組み込みの `string` 型や `object` 型もあります。 これらの型は、すべての C# プログラムで使用できます。 組み込み型の詳細については、「[型のリファレンス表](../../../csharp/language-reference/keywords/reference-tables-for-types.md)」を参照してください。  
   
 ## <a name="custom-types"></a>カスタム型  
- 独自のカスタム型を作成するには、[struct](../../../csharp/language-reference/keywords/struct.md)、[class](../../../csharp/language-reference/keywords/class.md)、[interface](../../../csharp/language-reference/keywords/interface.md)、および [enum](../../../csharp/language-reference/keywords/enum.md) の各構造体を使用します。 .NET Framework のクラス ライブラリ自体が、マイクロソフトによって提供された、ユーザーが独自のアプリケーションで使用できるカスタムの型のコレクションです。 既定では、クラス ライブラリで最も頻繁に使用される型は任意の C# プログラムで使用可能になっています。 その他の型は、その型が定義されているアセンブリへのプロジェクト参照を明示的に追加した場合にのみ使用可能になります。 コンパイラがアセンブリを参照できるようになると、そのアセンブリ内で宣言されている型の変数 (および定数) をソース コード内で宣言できるようになります。 詳細については、「[.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=217856)」を参照してください。  
+ 独自のカスタム型を作成するには、[struct](../../../csharp/language-reference/keywords/struct.md)、[class](../../../csharp/language-reference/keywords/class.md)、[interface](../../../csharp/language-reference/keywords/interface.md)、および [enum](../../../csharp/language-reference/keywords/enum.md) の各構造体を使用します。 .NET クラス ライブラリ自体が、マイクロソフトによって提供された、ユーザーが独自のアプリケーションで使用できるカスタムの型のコレクションです。 既定では、クラス ライブラリで最も頻繁に使用される型は任意の C# プログラムで使用可能になっています。 その他の型は、その型が定義されているアセンブリへのプロジェクト参照を明示的に追加した場合にのみ使用可能になります。 コンパイラがアセンブリを参照できるようになると、そのアセンブリ内で宣言されている型の変数 (および定数) をソース コード内で宣言できるようになります。 詳細については、「[.NET クラス ライブラリ](../../../standard/class-library-overview.md)」を参照してください。  
   
 ## <a name="the-common-type-system"></a>共通型システム  
- [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] で型システムを使用する場合は、次の 2 つの基本事項を理解しておく必要があります。  
+ .NET で型システムを使用する場合は、次の 2 つの基本事項を理解しておく必要があります。  
   
 -   継承の原則がサポートされています。 他の型から型を派生させることができます。派生元の型は "*基本型*" と呼ばれます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 <xref:System.Int32?displayProperty=nameWithType> (C# のキーワードは [int](../../../csharp/language-reference/keywords/int.md)) などの組み込み数値型を含むすべての型は、最終的に <xref:System.Object?displayProperty=nameWithType> (C# のキーワードは [object](../../../csharp/language-reference/keywords/object.md)) という単一の基本型から派生します。 この一元化された型階層は、[共通型システム](../../../standard/base-types/common-type-system.md) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
   
--   CTS の各型は、"*値型*" または "*参照型*" として定義されます。 これは、.NET Framework クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 [struct](../../../csharp/language-reference/keywords/struct.md) キーワードを使用して定義した型は値型であり、すべての組み込み数値型は `structs` です。 [class](../../../csharp/language-reference/keywords/class.md) キーワードを使用して定義した型は、参照型です。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。  
+-   CTS の各型は、"*値型*" または "*参照型*" として定義されます。 これは、.NET クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 [struct](../../../csharp/language-reference/keywords/struct.md) キーワードを使用して定義した型は値型であり、すべての組み込み数値型は `structs` です。 [class](../../../csharp/language-reference/keywords/class.md) キーワードを使用して定義した型は、参照型です。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。  
   
  次の図は、CTS における値型と参照型の関係を示しています。  
   
@@ -104,15 +105,15 @@ int i = 5;
 char c = 'Z';  
 ```  
   
- 値型は、"*シール*" されています。たとえば <xref:System.Int32?displayProperty=nameWithType> から値型を派生させることはできません。構造体は <xref:System.ValueType?displayProperty=nameWithType> からしか継承できないため、任意のユーザー定義型または構造体を継承する構造体を定義することはできません。 ただし、構造体は 1 つ以上のインターフェイスを実装できます。 構造体型は、インターフェイス型にキャストできます。これを行うと、"*ボックス化操作*" によって、構造体がマネージ ヒープ上の参照型オブジェクト内にラップされます。 ボックス化操作が発生するのは、入力パラメーターとして <xref:System.Object?displayProperty=nameWithType> を受け取るメソッドに値型を渡した場合です。 詳しくは、「[ボックス化とボックス化解除](../../../csharp/programming-guide/types/boxing-and-unboxing.md)」をご覧ください。  
+ 値型は、"*シール*" されています。たとえば <xref:System.Int32?displayProperty=nameWithType> から値型を派生させることはできません。構造体は <xref:System.ValueType?displayProperty=nameWithType> からしか継承できないため、任意のユーザー定義型または構造体を継承する構造体を定義することはできません。 ただし、構造体は 1 つ以上のインターフェイスを実装できます。 構造体型は、インターフェイス型にキャストできます。これを行うと、"*ボックス化*" 操作によって、構造体がマネージ ヒープ上の参照型オブジェクト内にラップされます。 ボックス化操作が発生するのは、入力パラメーターとして <xref:System.Object?displayProperty=nameWithType> を受け取るメソッドに値型を渡した場合です。 詳細については、「[ボックス化とボックス化解除](../../../csharp/programming-guide/types/boxing-and-unboxing.md)」を参照してください。  
   
  独自のカスタム値型を作成するには、[struct](../../../csharp/language-reference/keywords/struct.md) キーワードを使用します。 通常、構造体は、次の例に示すように、少数の関連する変数のコンテナーとして使用します。  
   
  [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_4.cs)]  
   
- 構造体の詳細については、「[Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)」を参照してください。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] における値の型の詳細については、「[共通型システム](../../../standard/base-types/common-type-system.md)」を参照してください。  
+ 構造体の詳細については、「[Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)」を参照してください。 .NET における値型の詳細については、「[値型](../../../csharp/language-reference/keywords/value-types.md)」を参照してください。  
   
- 別の種類の値型として、[列挙体](../../../csharp/language-reference/keywords/enum.md)があります。 列挙体は、一連の名前付き整数定数を定義します。 たとえば、.NET Framework クラス ライブラリの <xref:System.IO.FileMode?displayProperty=nameWithType> 列挙体には、ファイルを開く方法を指定する一連の名前付き整数定数が格納されています。 これは、次の例のように定義されます。  
+ 別の種類の値型として、[列挙体](../../../csharp/language-reference/keywords/enum.md)があります。 列挙体は、一連の名前付き整数定数を定義します。 たとえば、.NET クラス ライブラリの <xref:System.IO.FileMode?displayProperty=nameWithType> 列挙体には、ファイルを開く方法を指定する一連の名前付き整数定数が格納されています。 これは、次の例のように定義されます。  
  
  [!code-csharp[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
   
@@ -121,7 +122,7 @@ char c = 'Z';
  すべての列挙体は、<xref:System.Enum?displayProperty=nameWithType> の派生型である <xref:System.ValueType?displayProperty=nameWithType> から派生します。 構造体に適用されるすべての規則が、列挙体にも適用されます。 詳細については、「[ 列挙型](../../../csharp/programming-guide/enumeration-types.md)」を参照してください。  
   
 ### <a name="reference-types"></a>参照型  
- [class](../../../csharp/language-reference/keywords/class.md)、[delegate](../../../csharp/language-reference/keywords/delegate.md)、配列、または [interface](../../../csharp/language-reference/keywords/interface.md) として定義された型は、"*参照型*" です。 参照型の変数を宣言した場合、実行時には、[new](../../../csharp/language-reference/keywords/new.md) 演算子によってオブジェクトのインスタンスが明示的に作成されるまで、この変数には [null](../../../csharp/language-reference/keywords/null.md) が格納されます。または、次の例に示すように `new` を使用して、別の場所で作成されたオブジェクトを割り当てることもできます。
+ [class](../../../csharp/language-reference/keywords/class.md)、[delegate](../../../csharp/language-reference/keywords/delegate.md)、配列、または [interface](../../../csharp/language-reference/keywords/interface.md) として定義された型は、"*参照型*" です。 参照型の変数を宣言した場合、実行時には、[new](../../../csharp/language-reference/keywords/new.md) 演算子によってオブジェクトが明示的に作成されるまで、この変数には [null](../../../csharp/language-reference/keywords/null.md) が格納されます。または、次の例に示すように `new` を使用して、別の場所で作成されたオブジェクトを割り当てることもできます。
   
 ```csharp  
 MyClass mc = new MyClass();  
@@ -149,7 +150,7 @@ IMyInterface iface = new MyClass();
  [!code-csharp[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
   
 ## <a name="generic-types"></a>ジェネリック型  
- クライアント コードが型のインスタンスを作成したときに提供される実際の型 ("*具象型*") のプレースホルダーとして使用される 1 つまたは複数の "*型パラメーター*" で、型を宣言することもできます。 このような型は、"*ジェネリック型*" と呼ばれます。 たとえば、.NET Framework の型 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
+ クライアント コードが型のインスタンスを作成したときに提供される実際の型 ("*具象型*") のプレースホルダーとして使用される 1 つまたは複数の "*型パラメーター*" で、型を宣言することもできます。 このような型は、*ジェネリック型*と呼ばれます。 たとえば、.NET の型 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
  
 ```csharp
 List<string> stringList = new List<string>();
@@ -157,7 +158,7 @@ stringList.Add("String example");
 // compile time error adding a type other than a string:
 stringList.Add(4);
 ```
- 型パラメーターを使用することで、同じクラスを再利用して任意の型の要素を格納できます。このとき、各要素を[オブジェクト](../../../csharp/language-reference/keywords/object.md)に変換する必要はありません。 ジェネリック コレクション クラスが "*厳密に型指定されたコレクション*" と呼ばれるのは、コレクションの要素の固有の型をコンパイラが認識しているためで、たとえば、前の例の `strings` オブジェクトに整数を追加しようとすると、コンパイル時にエラーが発生します。 詳細については、「[ジェネリック](../../../csharp/programming-guide/generics/index.md)」を参照してください。  
+ 型パラメーターを使用することで、同じクラスを再利用して任意の型の要素を格納できます。このとき、各要素を[オブジェクト](../../../csharp/language-reference/keywords/object.md)に変換する必要はありません。 ジェネリック コレクション クラスが "*厳密に型指定されたコレクション*" と呼ばれるのは、コレクションの要素の固有の型をコンパイラが認識しているためで、たとえば、前の例の `stringList` オブジェクトに整数を追加しようとすると、コンパイル時にエラーが発生します。 詳細については、「[ジェネリック](../../../csharp/programming-guide/generics/index.md)」を参照してください。  
   
 ## <a name="implicit-types-anonymous-types-and-nullable-types"></a>暗黙の型、匿名型、および Null 許容型  
  前にも説明したとおり、ローカル変数 (クラスのメンバーではない) の型を暗黙的に指定するには、[var](../../../csharp/language-reference/keywords/var.md) キーワードを使用します。 変数の型はコンパイル時に決定されますが、その型はコンパイラによって指定されます。 詳細については、「[暗黙的に型指定されるローカル変数](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」を参照してください。  
@@ -188,7 +189,7 @@ stringList.Add(4);
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [XML データ型の変換](../../../standard/data/xml/conversion-of-xml-data-types.md)  
