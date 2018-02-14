@@ -2,7 +2,8 @@
 title: "チュートリアル: 動的オブジェクトの作成と使用 (C# および Visual Basic)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 dev_langs:
 - csharp
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: ab1e245ed806cf0ea6346c76c6ade83273eed7be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: eca6da96d3bf9c5c25216e442999be77a332b5c9
+ms.sourcegitcommit: 70dcc89737127e4d5f20500242409b687e51b07e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>チュートリアル: 動的オブジェクトの作成と使用 (C# および Visual Basic)
 
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
 -   `IronPython` ライブラリを使用するプロジェクトを作成する。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
-必要がある[IronPython](http://ironpython.net/)このチュートリアルを完了する、.NET 用です。 移動してその[ダウンロード ページ](http://ironpython.net/download/)を最新バージョンを取得します。
+このチュートリアルを実行するには、[IronPython](http://ironpython.net/) for .NET が必要です。 最新バージョンを取得するには、[ダウンロード ページ](http://ironpython.net/download/)に移動します。
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -172,10 +173,10 @@ ms.lasthandoff: 11/21/2017
   
 9. ファイルを保存し、Ctrl キーを押しながら F5 キーを押してアプリケーションをビルドし、実行します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Dynamic?displayProperty=nameWithType>  
  <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>  
  [dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)  
  [事前バインディングと遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
  [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
- [動的インターフェイスを実装する (外部ブログ)](http://go.microsoft.com/fwlink/?LinkId=230895)
+ [動的なインターフェイスの実装 (Microsoft TechNet からダウンロードできる PDF)](http://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/implementing-dynamic-interfaces.pdf)
