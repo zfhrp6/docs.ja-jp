@@ -1,4 +1,4 @@
-# [WCF の拡張](extending-wcf.md)
+# [WCF の拡張](index.md)
 ## [ServiceHost とサービス モデル レイヤーの拡張](extending-servicehost-and-the-service-model-layer.md)
 ### [クライアントの拡張](extending-clients.md)
 #### [方法 : クライアントのメッセージを検査または変更する](how-to-inspect-or-modify-messages-on-the-client.md)
