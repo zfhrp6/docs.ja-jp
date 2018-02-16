@@ -12,18 +12,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5412c90f-2703-4aa8-a9c4-1b8a35183c37
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 13d3077b1536d4e96cb9e4f1f09313dd793a906e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 780af689f6aff86e2e96738c356df4a81128f4ef
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="ordered-node-retrieval-by-index"></a>インデックスによる順序付けられたノードの取得
-World Wide Web Consortium (W3C) XML ドキュメント オブジェクト モデル (DOM) nodelist も、によって処理される順序なしのセットではなく、ノードの順序付きリストを処理することのできる、 **XmlNamedNodeMap**です。 Microsoft .NET Framework の NodeList が呼び出された**XmlNodeList**です。 メソッドとプロパティを返す、 **XmlNodeList**は。  
+W3C (World Wide Web Consortium) の XML ドキュメント オブジェクト モデル (DOM) では、**XmlNamedNodeMap** によって処理される順序付けられていないノード セットとは対照的に、順序付けられたノードのリストを処理する機能を持った NodeList も定義しています。 Microsoft .NET Framework の NodeList は **XmlNodeList** と呼ばれています。 **XmlNodeList** を返すメソッドとプロパティは次のとおりです。  
   
 -   XmlNode.ChildNodes  
   
@@ -33,7 +36,7 @@ World Wide Web Consortium (W3C) XML ドキュメント オブジェクト モデ
   
 -   XmlNode.SelectNodes  
   
- **XmlNodeList**が、**カウント**内のノードを反復処理するループを記述するために使用できるプロパティ、 **XmlNodeList**次のコード例のように。  
+ **XmlNodeList** には **Count** プロパティがあり、次のコード サンプルに示すように、ループを記述して **XmlNodeList** のノードを反復処理するために使用できます。  
   
 ```vb  
 Dim doc as XmlDocument = new XmlDocument()  
@@ -62,7 +65,7 @@ for (int i=0; i < elemList.Count; i++)
 }   
 ```  
   
- 加え、**カウント**プロパティがある、 **GetEnumerator**メソッドを提供する、`foreach`スタイルの反復処理内のノードのコレクションを**XmlNodeList**. `foreach` ステートメントの使用方法を次のコード サンプルに示します。  
+ **Count** プロパティの他に、**XmlNodeList** 内のノード コレクションに対して `foreach` スタイルの反復処理を実行する **GetEnumerator** メソッドがあります。 `foreach` ステートメントの使用方法を次のコード サンプルに示します。  
   
 ```vb  
 Dim doc As New XmlDocument()  
@@ -99,7 +102,7 @@ End While
   }  
 ```  
   
- 詳細については、メソッドとプロパティで使用できる、 **XmlNodeList**を参照してください<xref:System.Xml.XmlNodeList>です。  
+ **XmlNodeList** で利用可能なメソッドとプロパティの詳細については、「<xref:System.Xml.XmlNodeList>」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
