@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: f9f3e39b-ce6c-41ff-991f-0625f46441ae
-ms.openlocfilehash: 0fc369993b3ee4c8a9139e4a365330197fe66946
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: f0a8893abca0435307907aa9c169646bf3dec2d5
+ms.sourcegitcommit: adcf9bdafeaa6bc243af7bf70b45f3df954f256a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="f-interactive-options"></a>F# Interactive オプション
 
@@ -42,9 +42,11 @@ F# Interactive オプションの引数でリストを指定する場合は、�
 |**--**|F# Interactive コマンドライン引数として f# のプログラムまたはスクリプトでは、リストを使用してコードでアクセスできる残りの引数を処理するように指示するために使用**fsi.CommandLineArgs**です。|
 |**--checked**[**+**&#124;**-**]|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
 |**--codepage:&lt;int&gt;**|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
+|**--consolecolors**[**+**&#124;**-**]|警告の出力とエラー メッセージを色付きでします。|
 |**--crossoptimize**[**+**&#124;**-**]|モジュール間の最適化を有効または無効にします。|
-|**--debug**[**+**&#124;**-**]<br /><br />**--debug:**[**full**&#124;**pdbonly**]<br /><br />**-g**[**+**&#124;**-**]<br /><br />**-g:**[**full**&#124;**pdbonly**]|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
+|**--debug**[**+**&#124;**-**]<br /><br />**--debug:**[**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]<br /><br />**-g**[**+**&#124;**-**]<br /><br />**-g:**[**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
 |**--define:&lt;string&gt;**|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
+|**--deterministic**[**+**&#124;**-**]|(モジュールのバージョン GUID とタイムスタンプを含む)、決定的なアセンブリを生成します。|
 |**--exec**|ファイルを読み込んだ後、またはコマンド ラインで指定したスクリプトを実行した後に F# Interactive を終了するように指示します。|
 |**--fullpaths**|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
 |**--gui**[**+**&#124;**-**]|Windows フォーム イベントのループを有効または無効にします。 既定ではオンです。|
@@ -61,7 +63,10 @@ F# Interactive オプションの引数でリストを指定する場合は、�
 |**--quotations-debug**|追加のデバッグ情報が F# 引用符リテラルとリフレクション定義から派生した式に対して生成されるように指定します。 デバッグ情報は F# 式ツリー ノードのカスタム属性に追加されます。 参照してください[コード クォート](code-quotations.md)と[Expr.CustomAttributes](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3)です。|
 |**--readline**[**+**&#124;**-**]|対話モードでのタブ補完を有効または無効にします。|
 |**--reference:&lt;filename&gt;**<br /><br />**-r:&lt;filename&gt;**|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
+|**--shadowcopyreferences**[**+**&#124;**-**]|F# Interactive のプロセスによってロックされている参照をしないようにします。|
+|**--simpleresolution**|MSBuild の解決方法ではなくディレクトリ ベースのルールを使用してアセンブリ参照を解決します。|
 |**--tailcalls**[**+**&#124;**-**]|tail IL 命令の使用を有効または無効にします。有効にすると、スタック フレームが tail 再帰関数で再利用されます。 既定では、このオプションは有効になっています。|
+|**--targetprofile:&lt;string&gt;**|このアセンブリのターゲット フレームワーク プロファイルを指定します。 有効な値は mscorlib、netcore または netstandard です。  既定値は、mscorlib です。|
 |**--use:&lt;filename&gt;**|指定したファイルを起動時に最初の入力として使用するよう、インタープリターに指示します。|
 |**--utf8output**|fsc.exe コンパイラ オプションと同じです。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
 |**-警告:&lt;警告レベル&gt;**|同じ、 **fsc.exe**コンパイラ オプション。 詳細については、「[コンパイラ オプション](compiler-options.md)」を参照してください。|
