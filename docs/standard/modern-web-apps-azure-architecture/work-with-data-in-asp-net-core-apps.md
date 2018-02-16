@@ -6,11 +6,14 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: bcb8f7bbfa83db9c86cd1278a89750b9f02061d9
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 648e0a4cdd388cf4a322f0fc049d5dcfca53d54b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>ASP.NET Core アプリケーションのデータの操作
 
@@ -18,7 +21,7 @@ ms.lasthandoff: 11/23/2017
 
 Tim Berners-lee
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 データ アクセスは、ほぼすべてのソフトウェア アプリケーションの重要な部分です。 ASP.NET Core では、さまざまなデータ アクセス オプション、Entity Framework Core (と同様に、Entity Framework 6) を含むをサポートし、任意の .NET データ アクセス フレームワークを使用できます。 データ アクセス フレームワークを使用する選択は、アプリケーションのニーズによって異なります。 抽象化して、ApplicationCore および UI プロジェクトから、これらの選択肢とインフラストラクチャでの実装の詳細をカプセル化は、疎結合、テスト可能なソフトウェアを生成するために役立ちます。
 

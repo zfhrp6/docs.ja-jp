@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: c5b74a4f-dcd1-4849-930c-904b6c8a04e1
-ms.openlocfilehash: 92e26aff605d3bed89e388dd3616a2a9a3a96081
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 9011bdceabd1b5e0541ecb94f3e812871688025b
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>F# を使用して Azure Blob ストレージの概要します。 #
 
@@ -111,10 +111,10 @@ Azure Blob ストレージには、ブロック blob とページ blob がサポ
 *photo1.jpg*
 *2015/architecture/description.txt*
 *2015/architecture/photo3.jpg*
-*2015/アーキテクチャ/photo4.jpg*
+*2015/architecture/photo4.jpg*
 *2016/architecture/photo5.jpg*
-*2016/architecture/photo6.jpg* 
- *2016/architecture/description.txt*
+*2016/architecture/photo6.jpg*
+*2016/architecture/description.txt*
 *2016/photo7.jpg*
 
 呼び出すと`ListBlobs`(上記のサンプル) のように、コンテナー階層の一覧が返されます。 両方が含まれている場合`CloudBlobDirectory`と`CloudBlockBlob`結果の出力は次のように検索し、ディレクトリと、コンテナー内の blob をそれぞれ表すオブジェクト。
@@ -231,7 +231,7 @@ Azure ストレージでは、クライアントとサーバーの両方の blob
 
 Blob データの暗号化の詳細については、「[暗号化を blob ストレージのセクションでは、.NET ガイド](/azure/storage/storage-dotnet-how-to-use-blobs#encrypting-blob-data)です。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 これで、Blob ストレージの基本を学習した次の詳細については、これらのリンク。
 
@@ -242,12 +242,13 @@ Blob データの暗号化の詳細については、「[暗号化を blob ス�
 
 ### <a name="blob-storage-reference"></a>Blob ストレージのリファレンス
 
-- [参照を .NET 用 storage クライアント ライブラリ](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
-- [REST API リファレンス](http://msdn.microsoft.com/library/azure/dd179355)
+- [.NET 用 azure ストレージ Api](/dotnet/api/overview/azure/storage)
+- [Azure ストレージ サービス REST API リファレンス](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)
 
 ### <a name="related-guides"></a>関連ガイド
 
 - [C# での Azure Blob ストレージの概要](https://azure.microsoft.com/documentation/samples/storage-blob-dotnet-getting-started/)
-- [AzCopy コマンド ライン ユーティリティを使用してデータを転送します。](/azure/storage/storage-use-azcopy)
-- [接続文字列を構成します。](http://msdn.microsoft.com/library/azure/ee758697.aspx)
+- [Windows 上の AzCopy コマンド ライン ユーティリティでのデータを転送します。](/azure/storage/common/storage-use-azcopy)
+- [Linux 上の AzCopy コマンド ライン ユーティリティでのデータを転送します。](/azure/storage/common/storage-use-azcopy-linux)
+- [Azure ストレージ接続文字列を構成します。](/azure/storage/common/storage-configure-connection-string)
 - [Azure ストレージ チーム ブログ](http://blogs.msdn.com/b/windowsazurestorage/)

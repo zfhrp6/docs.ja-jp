@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 9ff9380b318457a842dec4e41b9b74dcddcda3d3
-ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ecef23870ac547f4b4066628da71f8af98c91b27
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="characteristics-of-modern-web-applications"></a>最新の Web アプリケーションの特性
 
 > "… 適切な設計は、機能には、安価です。 このアプローチは骨の折れるを成功させるのには続行されます。"  
-> _\-Dennis Ritchie_
+> _\- Dennis Ritchie_
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 最新の web アプリケーションは、上位のユーザーの期待とこれまでよりも大きい要求があります。 現在の web アプリケーションが使用可能な 24/7 からほぼすべてのデバイスから使用できるようにし、どこにあっても、または画面のサイズが必要です。 Web アプリケーションは、セキュリティで保護された、柔軟性が高く、およびオンデマンドの急激な増加に対応できる拡張性にする必要があります。 ますます、複雑なシナリオは、JavaScript を使用して、web Api 経由で効率的に通信するクライアント上に構築された豊富なユーザー エクスペリエンスで処理される必要があります。
 
@@ -41,7 +44,7 @@ ASP.NET Core は、メモリ不足と高いスループットになっている�
 
 ## <a name="cross-platform"></a>クロス プラットフォーム
 
-ASP.NET Core は、プラットフォーム間で Linux MacOS と Windows 上で実行できます。 これは、開発と ASP.NET Core でビルドされたアプリの展開の両方の多くの新しいオプションが表示されます。 Docker コンテナーは、通常 Linux を現在実行して、ASP.NET Core アプリケーションの利点を活用することをホストできる[コンテナーおよび microservices](../microservices-architecture)です。
+ASP.NET Core は、プラットフォーム間で Linux MacOS と Windows 上で実行できます。 これは、開発と ASP.NET Core でビルドされたアプリの展開の両方の多くの新しいオプションが表示されます。 Docker コンテナーは、通常 Linux を現在実行して、ASP.NET Core アプリケーションの利点を活用することをホストできる[コンテナーおよび microservices](../microservices-architecture/index.md)です。
 
 ## <a name="modular-and-loosely-coupled"></a>モジュール化し、疎結合
 

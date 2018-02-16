@@ -6,11 +6,14 @@ ms.author: wiwagn
 ms.date: 10/08/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: e676c1225f7d11381808040cf101e897e0726ad4
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 576a717cbdcb8cf465e8cb7b4898df1df7447aa7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="development-process-for-azure"></a>Azure の開発プロセス
 
@@ -27,7 +30,7 @@ ms.lasthandoff: 10/21/2017
 
 かどうか完全かつ強力な IDE または軽量とアジャイル エディターについて、必要に応じて、Microsoft ASP.NET Core アプリケーションの開発時に対応します。
 
-**Visual Studio 2017 です。** 使用する場合*Visual Studio 2017* ASP.NET Core アプリケーションを構築できますがある限り、 *.NET Core クロスプラット フォーム開発*ワークロードがインストールされています。 図 10-1 では、Visual Studio 2017 の [設定] ダイアログ ボックスで、必要なワークロードを示しています。
+**Visual Studio 2017.** 使用する場合*Visual Studio 2017* ASP.NET Core アプリケーションを構築できますがある限り、 *.NET Core クロスプラット フォーム開発*ワークロードがインストールされています。 図 10-1 では、Visual Studio 2017 の [設定] ダイアログ ボックスで、必要なワークロードを示しています。
 
 ![](./media/image10-1.png)
 
@@ -99,7 +102,7 @@ Azure への展開用 ASP.NET Core アプリケーションの開発は、それ
 
 1 回、ビルドが成功したように、CD 処理を引き継ぎますビルド成果物を生成します。 Web は、このパッケージを展開します。 Azure App Service、既存のサービスを新しく作成されたものに置き換えるには、ビルド サーバーはこのパッケージを展開します。 通常この手順は、ステージング環境を対象が、一部のアプリケーションが直接 CD プロセスには、実稼働環境に展開します。
 
-#### <a name="step-5-azure-app-service-web-app"></a>手順 5. Azure App Service。 Web アプリです。
+#### <a name="step-5-azure-app-service-web-app"></a>手順 5. Azure App Service。 Web App.
 
 展開した後は、Azure App Service Web アプリのコンテキスト内で ASP.NET Core アプリケーションが実行されます。 この Web アプリは、監視することができ、さらに、Azure ポータルを使用するように構成します。
 

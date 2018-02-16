@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: dc82a932-5401-4d19-9fb3-92c50d8db514
-ms.openlocfilehash: 770d405921758eeb7e8d7ea98b95c29c99631475
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e0e78e06fa1129ba5eeb73bc36c14343c93d6927
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="walkthrough-accessing-a-sql-database-by-using-type-providers-and-entities"></a>チュートリアル : 型プロバイダーおよびエンティティを使用した SQL データベースへのアクセス
 
@@ -66,7 +66,7 @@ SQL Server を実行している、管理者アクセス権を持つ任意のサ
 3. 新しい接続ノードのショートカット メニューを開き、選択**新しいクエリ**です。
 <br />
 
-4. 開いている[School サンプル データベースを作成する](http://go.microsoft.com/fwlink/?LinkID=237278)Microsoft web サイトをコピーして貼り付けにデータベース スクリプトを作成する、受講者データベース エディター ウィンドウにします。
+4. 開いている[School サンプル データベースを作成する](https://msdn.microsoft.com/library/bb399731(v=vs.100).aspx)Microsoft web サイトをコピーして貼り付けにデータベース スクリプトを作成する、School データベースをエディター ウィンドウにします。
 <br />
 
 
@@ -239,15 +239,10 @@ deleteInstructor("Parker", "Darren")
 使用できるクエリ演算子を確認することでその他のクエリ オプションを探索[クエリ式](../../language-reference/query-expressions.md)も確認し、 [ADO.NET Entity Framework](https://msdn.microsoft.com/library/bb399572)をどのような機能が使用するときに理解するにはこの型プロバイダーを使用するとします。
 
 
-## <a name="see-also"></a>関連項目
-[型プロバイダー](index.md)
-
-[SqlEntityConnection 型プロバイダー](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)
-
-[チュートリアル: EDMX スキーマ ファイルからの f# 型の生成](generating-fsharp-types-from-edmx.md)
-
-[ADO.NET Entity Framework](https://msdn.microsoft.com/library/bb399572)
-
-[.edmx ファイルの概要](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)
-
-[EDM ジェネレーター &#40;です。EdmGen.exe &#41;](https://msdn.microsoft.com/library/bb387165)
+## <a name="see-also"></a>参照
+[型プロバイダー](index.md)  
+[SqlEntityConnection 型プロバイダー](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)  
+[チュートリアル: EDMX スキーマ ファイルからの f# 型の生成](generating-fsharp-types-from-edmx.md)  
+[ADO.NET Entity Framework](https://msdn.microsoft.com/library/bb399572)  
+[.edmx ファイルの概要](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+[EDM ジェネレーター &#40;です。EdmGen.exe &#41;](https://msdn.microsoft.com/library/bb387165)  

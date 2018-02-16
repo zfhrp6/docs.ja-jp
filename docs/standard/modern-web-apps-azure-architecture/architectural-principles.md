@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 20524c8aa0e64fd40a1a4a6811063557f74074d2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: bdb215d64253fb7d22ae2c5648030336850006b5
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/29/2018
 ---
-#<a name="architectural-principles"></a>アーキテクチャの原則
+# <a name="architectural-principles"></a>アーキテクチャの原則
 
 > "ビルダー建物をビルドする場合は方法プログラマは、プログラムを記述しに付属している最初の woodpecker は文明を破棄します。"  
-> _\-ジェラルド Weinberg_
+> _\- ジェラルド Weinberg_
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 設計し、保守容易性を念頭にソフトウェア ソリューションを設計する必要があります。 このセクションで説明した原則進めることができます、クリーンで保守性の高いアプリケーションの原因となるアーキテクチャ上の決定に向けたです。 一般に、これらの原則に従って、アプリケーションの他の部分に密結合されていないが、明示的なインターフェイス経由で通信ではなく、独立したコンポーネントからアプリケーションを構築またはメッセージング システムの方向。
 
@@ -41,7 +44,7 @@ ms.lasthandoff: 11/21/2017
 
 ![](./media/image4-1.png)
 
-**図 4-1。** 直接の依存関係グラフ。
+**図 4-1** 直接の依存関係グラフ。
 
 依存関係の逆転原則を適用する許可できるようにする A に B を呼び出し、実行時に、B を実装する抽象型でメソッドを呼び出す A が b をインターフェイスに依存するによって制御 A コンパイル時に (つまり、*反転*一般的なコンパイル時の依存関係)。 実行時に、プログラムの実行フローが変更されないが、インターフェイスの概要では、これらのインターフェイスのさまざまな実装簡単に接続することを意味します。
 
@@ -103,16 +106,16 @@ ms.lasthandoff: 11/21/2017
 少なくとも、個々 の web アプリケーションは必要があるデータベースを共有する他のアプリケーションとのではなく、そのビジネス モデルの独自の永続化ストアで、独自の境界のあるコンテキストに努めています。 これにより、ビジネス ロジックの共有データベースではなくプログラム インターフェイスは、使用に範囲指定されたコンテキスト間の通信が発生しをイベントが行われる変更に合わせて配置します。 また、独自の個々 の境界のあるコンテキストとして実装されることをお勧め microservices にコンテキストのマップを密接に制限されます。
 
 > ### <a name="references--modern-web-applications"></a>参照: 最新の Web アプリケーション
-> - **関心の分離**  
+> - 関心の分離  
 > <http://deviq.com/separation-of-concerns/>
-> - **カプセル化** <http://deviq.com/encapsulation/>
+> - **Encapsulation** <http://deviq.com/encapsulation/>
 > - **依存関係の逆転原則**  
 > <http://deviq.com/dependency-inversion-principle/>
 > - **明示的な依存関係の原則**  
 > <http://deviq.com/explicit-dependencies-principle/>
 > - **自分で繰り返さない**  
 > <http://deviq.com/don-t-repeat-yourself/>
-> - **永続性の無視**  
+> - 永続性の無視  
 > <http://deviq.com/persistence-ignorance/>
 > - **範囲指定されたコンテキスト**  
 > <https://martinfowler.com/bliki/BoundedContext.html>

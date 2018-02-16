@@ -1,19 +1,22 @@
 ---
 title: "Docker アプリ用の内部ループ開発ワークフロー"
-description: "Microsoft プラットフォームとツールが、Docker のコンテナー化アプリケーションのライフ サイクル"
+description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 30c10b2407ab643e04eb44c00ddf4a89d369a025
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3605a6cd53db695de3af015a777e3c1a0e92af58
+ms.sourcegitcommit: 672c9cd122c13c9813f57f022c86ebdf6dd69b4f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Docker アプリ用の内部ループ開発ワークフロー
 
-サイクル全体の DevOps のまたがりメモリ割り当て、外側のループ ワークフローをトリガーする前に、各開発者のコンピューターで、アプリ自体をコーディング、自分の言語またはプラットフォームを使用して、およびローカルでテスト (図 4-14) はすべて開始します。 すべてのケースでする必要が非常に重要なポイント共通に、選択した言語、フレームワーク、またはプラットフォームに関係なく。 この特定のワークフローで常に開発およびテストして、Docker コンテナーなくローカルです。
+サイクル全体の DevOps のまたがりメモリ割り当て、外側のループ ワークフローをトリガーする前に、各開発者のコンピューターで、アプリ自体をコーディング、言語またはプラットフォームを使用して、およびそれをローカルでのテスト (図 4-14) はすべて開始します。 すべてのケースでする必要が非常に重要なポイント共通に、選択した言語、フレームワーク、またはプラットフォームに関係なく。 この特定のワークフローで常に開発およびテストして、Docker コンテナーなくローカルです。
 
 ![](./media/image18.png)
 
@@ -233,7 +236,7 @@ Docker を実行した後に作成、展開するアプリケーションとそ�
 
 サービスに移動する localhost が有効でない場合は、このコマンドを使用して、マシンの IP アドレスを検出します。
 
-docker マシン ip*コンテナー名*
+docker-machine ip *your-container-name*
 
 Docker ホストのブラウザーを開き、およびそのサイトに移動図 4-23 に示すようにを実行しているアプリ/サービスが表示されます。
 
@@ -255,7 +258,7 @@ Visual Studio のコードは、Node.js と .NET Core コンテナーのよう�
 
 デバッグすることもできます Docker でコンテナーを .NET Core、Visual Studio を使用する場合、次のセクションで説明されているようです。
 
-**詳細情報:** Node.js Docker コンテナーのデバッグに関する詳細については、するには<https://blog.docker.com/2016/07/live-debugging-docker/>と[https://blogs.msdn.microsoft.com/\ ユーザー\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/)です。
+**詳細情報:** Node.js Docker コンテナーのデバッグに関する詳細については、するには<https://blog.docker.com/2016/07/live-debugging-docker/>と[https://blogs.msdn.microsoft.com/\ユーザー\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/)です。
 
 
 >[!div class="step-by-step"]

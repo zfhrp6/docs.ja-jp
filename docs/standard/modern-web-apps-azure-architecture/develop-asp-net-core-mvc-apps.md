@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 54e7ed6fff9ac709e411d0ac1e345c63fd753201
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c10bf66dd37f0d99c038db7f95999d84986152fa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>ASP.NET Core MVC アプリを開発します。
 
 > "重要ではありませんが、正しく理解する最初の時間です。 これはさせるために、前回の非常に重要です。"  
 > _-Andrew 狩猟と David Thomas_
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 ASP.NET Core は、最新のクラウドに最適化された web アプリケーションを構築するためのプラットフォーム間、オープン ソース フレームワークです。 ASP.NET Core アプリケーションは、軽量なテストの容易性と保守容易性の向上で有効にすると、依存関係の挿入の組み込みサポートを備えた、モジュール型です。 MVC で、ビュー ベースのアプリだけでなく最新の web Api の構築をサポートするには、組み合わせる ASP.NET Core は、エンタープライズ web アプリケーションのビルドに使用する強力なフレームワークです。
 
@@ -204,11 +207,11 @@ services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 
 ASP.NET Core MVC は、ビューの場所にも、規則を使用します。 ビューは、(上、FeatureConvention によって提供される機能名を使用)、機能のフォルダーで見つかることができるように、カスタム規則を含むメソッドをオーバーライドできます。 この方法の詳細し、MSDN の記事から実際のサンプルをダウンロードできます[ASP.NET Core MVC 用機能スライス](https://msdn.microsoft.com/magazine/mt763233.aspx)です。
 
-### <a name="cross-cutting-concerns"></a>横断的関心事
+### <a name="cross-cutting-concerns"></a>横断的な問題
 
 アプリケーションが増すにつれて、重複を排除し、整合性を維持する横断的関心事取り出しをますます重要になります。 横断的関心事 ASP.NET Core アプリケーションでの例は、その他の多くを使用する必要がある場合、認証、モデルの検証規則、出力キャッシュ、およびエラー処理を示します。 ASP.NET Core MVC[フィルター](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters)にする前に、または要求処理パイプライン内の特定の手順の後にコードを実行できるようにします。 たとえば、フィルターでは、前におよび、操作の実行後、または前後にアクションの結果、モデル バインディングの前後を実行できます。 また、パイプラインの残りの部分へのアクセスを制御するのに承認フィルターを使用することができます。 図 7-2 に示します要求方法の実行フローのフィルターを構成されている場合。
 
-![要求は、承認フィルター、リソースのフィルター、モデル バインド、アクション フィルター、アクションの実行とアクション結果の変換、例外フィルター、結果のフィルター、およびを介して結果実行処理されます。 途中ではのみによって要求が処理結果のフィルターとリソースのフィルターをクライアントに送信された応答になる前にします。](./media/image7-2.png)
+![要求は、承認フィルター、リソース フィルター、モデル バインド、アクション フィルター、アクションの実行とアクション結果の変換、例外フィルター、結果フィルター、結果の実行を介して処理されます。 終了間際に、要求は結果フィルターとリソース フィルターのみで処理されてから、クライアントに送信される応答になります。](./media/image7-2.png)
 
 フィルターと要求パイプラインを介して図 7-2 要求の実行。
 

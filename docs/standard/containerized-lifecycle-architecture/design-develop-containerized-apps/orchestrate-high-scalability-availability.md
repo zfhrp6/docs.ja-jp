@@ -1,15 +1,18 @@
 ---
 title: "Microservices および multicontainer アプリケーション高いスケーラビリティと可用性を調整すること"
-description: "Microsoft プラットフォームとツールが、Docker のコンテナー化アプリケーションのライフ サイクル"
+description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/19/2017
-ms.openlocfilehash: ea492de1c4709eb7bafe65fcf288482da9855240
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4345fe8f36ecc32a7dd8e72fce5338bff308ffdf
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Microservices および multicontainer アプリケーション高いスケーラビリティと可用性を調整すること
 

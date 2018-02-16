@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 70dc554c-8f4d-42a7-8e2a-6438657d012a
-ms.openlocfilehash: f5ebdb3f3b50996a397c8420b773178493744d70
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8ec4652bab591dedc687d22c617b9466bc351f10
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>F# を使用して Azure キュー ストレージの概要します。 #
 
@@ -138,12 +138,12 @@ Azure 構成マネージャーを使用することはオプションです。 .
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L112-L113)]
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 キュー ストレージの基本を学習したようになりましたことはより複雑な記憶域タスクについて学習するこれらのリンクに従います。
 
-- [参照を .NET 用 storage クライアント ライブラリ](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+- [.NET 用 azure ストレージ Api](/dotnet/api/overview/azure/storage)
 - [Azure ストレージの型プロバイダー](https://github.com/fsprojects/AzureStorageTypeProvider)
 - [Azure ストレージ チーム ブログ](http://blogs.msdn.com/b/windowsazurestorage/)
-- [接続文字列を構成します。](http://msdn.microsoft.com/library/azure/ee758697.aspx)
-- [REST API リファレンス](http://msdn.microsoft.com/library/azure/dd179355)
+- [Azure ストレージ接続文字列を構成します。](/azure/storage/common/storage-configure-connection-string)
+- [Azure ストレージ サービス REST API リファレンス](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

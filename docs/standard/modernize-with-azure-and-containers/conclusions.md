@@ -4,17 +4,20 @@ description: "Azure のクラウドと Windows コンテナーの既存の .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 0bcc330a5970ab923b48d8790c4de93171283d94
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6e2f776b71fda9074605f072335a6e95366d2a97
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="conclusions"></a>まとめ
 
 -   最終的には、コンテナー ベースのソリューションには、コスト節約の利点があります。 コンテナーは、実稼働環境での依存関係が存在しない場合の原因となった摩擦を削除するために、展開に関する問題の解決策です。 これらの問題を削除すると、その開発/テスト、DevOps および運用操作大幅に向上します。
 
--   Docker コンテナーには、サーバー ベースのアプリケーションまたはサービスの配置の標準的な単位が高まっています。
+-   Docker コンテナーは、サーバー ベースのアプリケーションまたはサービスの配置の標準的な単位になっています。
 
 -   運用環境でのスケーラブルな Windows コンテナー ベースのアプリケーションをホストするオーケストレーター (Service Fabric Kubernetes など) を使用してください。
 

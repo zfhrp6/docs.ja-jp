@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/08/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 4611ffa8334e124946e849306d3281b695830eb1
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d23d0accc33fb8335dff602d6e1d6c8689972906
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC アプリをテストします。
 
 > _「単体テスト、製品がたくない場合ほとんどの場合、お客様はありませんしたいか、テストして、。」_
 > _-匿名-
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 複雑なソフトウェアの変更に応答で予期しない方法で失敗します。 したがって、テストを変更した後が最も単純な (またはそれ以上、重要) のアプリケーションを除くすべての必要です。 手動テストは、ソフトウェアをテストする最も時間のかかる、最も信頼性の低いで最も負荷の高い方法です。 残念ながら、アプリケーションがあるテストが容易な設計されていません唯一の手段があることができます。 章 X で次のアーキテクチャの原則のレイアウトを記述されたアプリケーションは、単体テストが容易なをする必要があり、ASP.NET Core アプリケーションは自動統合および機能テストもサポートします。
 

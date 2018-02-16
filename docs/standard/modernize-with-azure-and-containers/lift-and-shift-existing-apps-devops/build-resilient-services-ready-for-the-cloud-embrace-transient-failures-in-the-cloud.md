@@ -4,11 +4,14 @@ description: "コンテナーの .NET アプリケーションの .NET Microserv
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 9c21ae37ad2e4fc318eb4b206069db7662bfc5d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: aaf1ef968600a56d91267c6c12efa90d99446dd7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>クラウドの準備が整って回復力のあるサービスを構築しますクラウド内の一時的な障害を受け入れる。 
 
@@ -48,13 +51,13 @@ HTTP リソースとデータベース リソースの両方には、これら�
 
 -   **Entity Framework 接続回復性と再試行ロジック (バージョン 6 以降)**
 
-    [https://msdn.microsoft.com/en-us/library/dn456835 (v=vs.113).aspx](https://msdn.microsoft.com/en-us/library/dn456835(v=vs.113).aspx)
+    [https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx](https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx)
 
 -   **Transient Fault Handling Application Block**
 
 <!-- -->
 
--   [https://msdn.microsoft.com/en-us/library/hh680934 (v=pandp.50).aspx](https://msdn.microsoft.com/en-us/library/hh680934(v=pandp.50).aspx)
+-   [https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx](https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx)
 
 -   **回復力のある HTTP 通信のポリー ライブラリ**
 

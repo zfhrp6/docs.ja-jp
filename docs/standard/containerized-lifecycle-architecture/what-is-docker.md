@@ -1,15 +1,18 @@
 ---
 title: "Docker とは何ですか。"
-description: "Microsoft プラットフォームとツールが、Docker のコンテナー化アプリケーションのライフ サイクル"
+description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: 7b429f84f7714454d49be1cfa4f450d99fc47f66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c75b2fa87e5aad93693c76c3bbd135044b36525f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="what-is-docker"></a>Docker とは何ですか。
 
@@ -25,13 +28,13 @@ Docker イメージ コンテナーは、Linux と Windows 上でネイティブ
 
 Docker が付属する開発環境でコンテナーをホストし、その他の開発者向けのツールを提供、 [Docker Community Edition (CE)](https://www.docker.com/community-edition) Windows または macOS です。 これらの製品では、必要な VM のコンテナーをホストする (、Docker ホスト) をインストールします。 Docker も使用できるように[Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition)エンタープライズ開発のために設計されていますが、IT チームがビルドによって使用されますが、出荷、および実稼働環境で大規模な基幹業務アプリケーションを実行します。
 
-実行する[Windows コンテナー](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview)ランタイムの 2 種類があります。
+実行する[Windows コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)ランタイムの 2 種類があります。
 
 -   **Windows Server コンテナー** このランタイムには、プロセスと名前空間の分離テクノロジによる分離をアプリケーションが用意されています。 Windows Server コンテナーは、コンテナー ホストとホストで実行されているすべてのコンテナーに、カーネルを共有します。
 
 -   **HYPER-V コンテナー** で各コンテナーを大幅に最適化された VM で実行されている Windows Server コンテナーによって提供される分離性を展開します。 コンテナーでは、HYPER-V、分離性を提供することは、この構成では、コンテナー ホストのカーネルを共有されません。
 
-これらのコンテナーのイメージは同じ方法で作成され、同じように機能します。 イメージからコンテナーを作成する方法に違いが、HYPER-V コンテナーの実行で追加のパラメーターが必要です。 詳細については、「 [Hyper-v コンテナー](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview)です。
+これらのコンテナーのイメージは同じ方法で作成され、同じように機能します。 イメージからコンテナーを作成する方法に違いが、HYPER-V コンテナーの実行で追加のパラメーターが必要です。 詳細については、「 [Hyper-v コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)です。
 
 ## <a name="comparing-docker-containers-with-vms"></a>Vm での Docker コンテナーの比較
 

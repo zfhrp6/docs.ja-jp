@@ -15,18 +15,18 @@ helpviewer_keywords:
 - customizing Dispose method name
 - Finalize method
 ms.assetid: 31a6c13b-d6a2-492b-9a9f-e5238c983bcb
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 86fef5b18ac2c1c1b1dfee385b726484191fe714
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e0c2e74afea8a0cb5a0e187f05511eabe0527b90
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="dispose-pattern"></a>Dispose パターン
 すべてのプログラムは、それらの実行の進行中にメモリ、システムのハンドル、またはデータベース接続など、1 つまたは複数のシステム リソースを取得します。 開発者は、取得し、使用後に解放する必要があるためには、このようなシステム リソースを使用する場合は注意が必要があります。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 12/23/2017
   
  残念ながら、マネージ メモリは、さまざまな種類のシステム リソースの 1 つです。 ただし、マネージ メモリ以外のリソースは明示的に解放する必要あるし、アンマネージ リソースと呼びます。 GC が具体的には想定していません、このようなアンマネージ リソースを管理するには、開発者の手にアンマネージ リソースを管理する責任があることを意味します。  
   
- CLR では、アンマネージ リソースを解放するときにいくつかのヘルプを提供します。 <xref:System.Object?displayProperty=nameWithType>仮想メソッドを宣言<xref:System.Object.Finalize%2A>(ファイナライザーとも呼ばれます) 前に、オブジェクトのメモリ GC によって解放され、アンマネージ リソースを解放するをオーバーライドすることができます、GC によって呼び出されます。 ファイナライザーをオーバーライドする型は、ファイナライズ可能な型と呼ばれます。  
+ CLR では、アンマネージ リソースを解放するときにいくつかのヘルプを提供します。 <xref:System.Object?displayProperty=nameWithType> 仮想メソッドを宣言<xref:System.Object.Finalize%2A>(ファイナライザーとも呼ばれます) 前に、オブジェクトのメモリ GC によって解放され、アンマネージ リソースを解放するをオーバーライドすることができます、GC によって呼び出されます。 ファイナライザーをオーバーライドする型は、ファイナライズ可能な型と呼ばれます。  
   
  ファイナライザーは、一部のクリーンアップのシナリオで効果的なは、2 つの重要な欠点があります。  
   
@@ -95,7 +95,7 @@ public class DisposableResourceHolder : IDisposable {
   
  また、このセクションでは、Dispose パターンが実装していません基数を持つクラスに適用されます。 オーバーライドするだけで既にパターンを実装するクラスから継承している場合、`Dispose(bool)`追加のリソースのクリーンアップ ロジックを提供します。  
   
- **✓ しないで**保護された仮想 void を宣言`Dispose(bool disposing)`アンマネージ リソースの解放に関連するすべてのロジックを集中管理するメソッド。  
+ **✓ しないで**宣言、`protected virtual void Dispose(bool disposing)`アンマネージ リソースの解放に関連するすべてのロジックを集中管理するメソッド。  
   
  すべてのリソースのクリーンアップは、このメソッドで発生する必要があります。 両方のファイナライザーからメソッドを呼び出したと`IDisposable.Dispose`メソッドです。 パラメーターは、ファイナライザーの内部から呼び出されている場合は false になります。 終了処理中に実行されるコードがファイナライズ可能なその他のオブジェクトにアクセスしていないことを確認することを使用してください。 ファイナライザーの実装の詳細については、次のセクションで説明します。  
   
@@ -138,7 +138,7 @@ public class DisposableResourceHolder : IDisposable {
   
  **X しないで**のすべてのオーバー ロードを宣言、`Dispose`以外のメソッド`Dispose()`と`Dispose(bool)`です。  
   
- `Dispose`このパターンを体系化し、実装、ユーザー、およびコンパイラの間での混乱を回避するために予約語を考慮ください。 一部の言語は、特定の種類に自動的にこのパターンを実装することもできます。  
+ `Dispose` このパターンを体系化し、実装、ユーザー、およびコンパイラの間での混乱を回避するために予約語を考慮ください。 一部の言語は、特定の種類に自動的にこのパターンを実装することもできます。  
   
  **✓ しないで**を許可する、`Dispose(bool)`に複数回呼び出されるメソッド。 メソッドは、最初の呼び出し後に何もすることもできます。  
   
@@ -285,7 +285,7 @@ public class ComplexResourceHolder : IDisposable {
   
  **✓ を検討してください**を作成して、重要なファイナライズ可能なオブジェクトを使用して (を含む型階層を持つ型<xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject>) の状況でファイナライザーどうしても必要があります実行発生した場合でも強制アプリケーション ドメインのアンロード スレッド中止します。  
   
- *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
+ *Portions © 2005, 2009 Microsoft Corporation.All rights reserved.*  
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   

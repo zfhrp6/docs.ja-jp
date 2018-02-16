@@ -4,11 +4,14 @@ description: "コンテナーの .NET アプリケーションの .NET Microserv
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 87aa05895857a425f11820a564f2a249c77f98e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f9a30605313c06542fabf9689f700ed726445f57
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Windows コンテナーとして既存の .NET アプリを展開します。
 
@@ -92,14 +95,14 @@ For Linux ディストリビューションの場合は複数、使用可能な 
 
 Dockerfile は、ファイルをイメージ名を追加する場合は、.NET Framework ベースの Windows コンテナー イメージの次の例のように、タグを使用して、オペレーティング システムとバージョンを選択できます。
 
-> | **タグ** | **システムとバージョン** |
+> | タグ | **システムとバージョン** |
 > |---|---|
 > | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET framework 4.x を Windows Server Core |
 > | **microsoft/aspnet:4.x-windowsservercore** | .NET framework 4.x で Windows Server Core での他の ASP.NET カスタマイズ |
 
 .NET core (Linux と Windows はクロス プラットフォーム)、タグは次のようになります。
 
-> | **タグ** | **システムとバージョン**
+> | タグ | **システムとバージョン**
 > |---|---|
 > | **microsoft/dotnet:2.0.0-runtime** | .NET core 2.0 Linux 上のランタイムのみ |
 > | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET core 2.0 Windows Nano Server でのランタイムのみ |

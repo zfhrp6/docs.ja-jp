@@ -1,15 +1,18 @@
 ---
 title: "コンテナー化アプリケーションのサービスを監視します。"
-description: "Microsoft プラットフォームとツールが、Docker のコンテナー化アプリケーションのライフ サイクル"
+description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 3e4a78eb47d0e6712919c89b6f52ec8e4248fb23
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 58bf96dfa06a78892563698200e6f4df5f371346
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="monitor-containerized-application-services"></a>コンテナー化アプリケーションのサービスを監視します。
 
@@ -42,7 +45,7 @@ Application Insights リソースを作成するには、下記の一覧に表�
 -   **Application Insights での Docker アプリケーションの監視:**[https://docs.microsoft.com/azure/application-insights/app-insights-docker  ](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
 
 -   **Docker Hub、Github にあるアプリケーション Insights Docker イメージ:**  
-[https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/)と<https://github.com/Microsoft/ApplicationInsights-Docker>
+[https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) and <https://github.com/Microsoft/ApplicationInsights-Docker>
 
 -   **ASP.NET の Application Insights を設定します。**  
 [https://docs.microsoft.com/azure/application-insights/app-insights-asp-net](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net)
@@ -56,7 +59,7 @@ Application Insights リソースを作成するには、下記の一覧に表�
 
 ### <a name="operations-management-suitehttpmicrosoftcomoms-container-solution-for-docker"></a>[Operations Management Suite](http://microsoft.com/oms) Docker のコンテナー ソリューション
 
-自身で有益なサービスを提供することだけでなく、Operations Management Suite コンテナー ソリューション管理および監視できます Docker ホストとコンテナー、コンテナーとコンテナー ホストである、に関する情報を表示することによってコンテナーが実行されています。障害が発生した、または、Docker デーモンとコンテナーでのログに送信される*stdout*と*stderr*です。 また、CPU、メモリ、ネットワーク、およびコンテナーおよびトラブルシューティングを行うし、ノイズの多い近隣ノードとコンテナーを検索に役立つホストの記憶域などのパフォーマンス メトリックを示します。
+自身で有益なサービスを提供することだけでなく、Operations Management Suite コンテナー ソリューション管理および監視できます Docker ホストとコンテナー、コンテナーとコンテナー ホストである、に関する情報を表示することによってコンテナーが実行されています。障害が発生した、または、Docker デーモンとコンテナーでのログに送信される*stdout*と*stderr*です。 また、CPU、メモリ、ネットワーク、コンテナーとホストのストレージなどのパフォーマンス メトリックを表示し、トラブルシューティングやノイズの多い近隣のコンテナーの検出に役立てることもできます。
 
 ![](./media/image2.png)
 
@@ -88,13 +91,13 @@ Operations Management Suite コンテナー ソリューションでは、次の
 
 型のようにクエリを実行するパフォーマンスの情報を表示する図 6-3 に示すように、パフォーマンスを = です。
 
-![DockerPerfMetricsView](./media/image3.png){幅高さ"5.78625 in"を = ="3.25"}
+![DockerPerfMetricsView](./media/image3.png){width="5.78625in" height="3.25in"}
 
 Operations Management Suite で示すように Docker ホストのパフォーマンス メトリックを図 6-3:
 
 Operations Management Suite での標準機能ではまたクエリを保存できると便利ですが増えるし、システム内の傾向を検出、クエリを保持します。
 
-**詳細については** でコンテナー ソリューションをインストールして、Docker の構成に関する情報を検索する[Operations Management Suite](http://microsoft.com/oms)に進み、 <https://docs.microsoft.com/azure/ログの分析/ログの分析-コンテナー>です。
+**詳細については** でコンテナー ソリューションをインストールして、Docker の構成に関する情報を検索する[Operations Management Suite](http://microsoft.com/oms)に進み、 <https://docs.microsoft.com/azure/log-analytics/log-analytics-containers>です。
 
 >[!div class="step-by-step"]
 [前](管理、運用の docker-environments.md) [次へ] (../key-takeaways/index.md)

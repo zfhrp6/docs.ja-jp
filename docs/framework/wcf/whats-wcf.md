@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,19 +14,20 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-caps.latest.revision: "51"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5ae43f65c104376ea1e7cfc036a57c728c90ac12
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7aecddc617afcaf197aa212e8eea7e1342c029fa
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Windows Communication Foundation とは
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、サービス指向アプリケーションを構築するためのフレームワークです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を使用すると、1 つのサービス エンドポイントから別のサービス エンドポイントに非同期メッセージとしてデータを送信できます。 サービス エンドポイントには、IIS でホストされている、継続的に使用可能なサービスの一部を使用したり、アプリケーションでホストされているサービスを使用できます。 エンドポイントには、サービス エンドポイントからデータを要求するサービスのクライアントを使用できます。 メッセージは XML として送信された 1 文字または 1 語の簡単なものでも、バイナリ データのストリームのような複雑なものでも構いません。 サンプル シナリオをいくつか挙げます。  
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス指向アプリケーションを構築するためのフレームワークです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を使用すると、1 つのサービス エンドポイントから別のサービス エンドポイントに非同期メッセージとしてデータを送信できます。 サービス エンドポイントには、IIS でホストされている、継続的に使用可能なサービスの一部を使用したり、アプリケーションでホストされているサービスを使用できます。 エンドポイントには、サービス エンドポイントからデータを要求するサービスのクライアントを使用できます。 メッセージは XML として送信された 1 文字または 1 語の簡単なものでも、バイナリ データのストリームのような複雑なものでも構いません。 サンプル シナリオをいくつか挙げます。  
   
 -   ビジネス トランザクションを処理するセキュリティ保護サービス。  
   
@@ -42,7 +44,7 @@ ms.lasthandoff: 01/19/2018
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]が登場する前もそのようなアプリケーションの作成は可能でしたが、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] によってエンドポイントの開発が一段と簡単になりました。 要約すると、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は Web サービスと Web サービス クライアントを作成するための管理しやすいアプローチを提供するように設計されています。  
   
 ## <a name="features-of-wcf"></a>WCF の機能  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には次の機能セットがあります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF Feature Details](../../../docs/framework/wcf/feature-details/index.md)。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 次の機能セットが含まれます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF Feature Details](../../../docs/framework/wcf/feature-details/index.md)。  
   
 -   **サービス指向**  
   
@@ -50,7 +52,7 @@ ms.lasthandoff: 01/19/2018
   
 -   **相互運用性**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は、Web サービスの相互運用性を図るために、最新の業界標準を実装しています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Interoperability and Integration](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)。  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Web サービスの相互運用性の最新の業界標準を実装します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Interoperability and Integration](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)。  
   
 -   **複数のメッセージ パターン**  
   
@@ -58,7 +60,7 @@ ms.lasthandoff: 01/19/2018
   
 -   **サービス メタデータ**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、WSDL、XML スキーマ、WS-Policy などの業界標準で指定された形式を使用するサービス メタデータの公開をサポートしています。 このメタデータを使用して、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスするためのクライアントを自動生成および構成できます。 メタデータは HTTP や HTTPS 上で、または Web サービス メタデータ交換標準を使用して公開できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Metadata](../../../docs/framework/wcf/feature-details/metadata.md)。  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] WSDL、XML スキーマ、Ws-policy などの業界標準で指定された形式を使用してサービス メタデータの公開をサポートします。 このメタデータを使用して、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスするためのクライアントを自動生成および構成できます。 メタデータは HTTP や HTTPS 上で、または Web サービス メタデータ交換標準を使用して公開できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Metadata](../../../docs/framework/wcf/feature-details/metadata.md)。  
   
 -   **データ コントラクト**  
   
@@ -70,11 +72,11 @@ ms.lasthandoff: 01/19/2018
   
 -   **複数のトランスポートとエンコーディング**  
   
-     メッセージは複数の組み込みトランスポート プロトコルおよびエンコーディングのいずれかを使用して送信できます。 最も一般的なプロトコルとエンコーディングは、World Wide Web で HTTP (ハイパーテキスト転送プロトコル) を使用して、テキスト エンコードされた SOAP メッセージを送信するものです。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、TCP、名前付きパイプ、MSMQ でメッセージを送信することもできます。 これらのメッセージはテキストとしてエンコードするか、最適化されたバイナリ形式を使用することができます。  バイナリ データは MTOM 標準を使用することで効率的に送信できます。 提供されているトランスポートまたはエンコーディングのいずれもニーズを満たさない場合は、独自のカスタム トランスポートまたはエンコーディングを作成できます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]トランスポートとエンコーディングでサポートされている[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を参照してください[トランスポート](../../../docs/framework/wcf/feature-details/transports.md)です。  
+     メッセージは複数の組み込みトランスポート プロトコルおよびエンコーディングのいずれかを使用して送信できます。 最も一般的なプロトコルとエンコーディングは、World Wide Web で HTTP (ハイパーテキスト転送プロトコル) を使用して、テキスト エンコードされた SOAP メッセージを送信するものです。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、TCP、名前付きパイプ、MSMQ でメッセージを送信することもできます。 これらのメッセージはテキストとしてエンコードするか、最適化されたバイナリ形式を使用することができます。  バイナリ データは MTOM 標準を使用することで効率的に送信できます。 提供されているトランスポートまたはエンコーディングのいずれもニーズを満たさない場合は、独自のカスタム トランスポートまたはエンコーディングを作成できます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] トランスポートとエンコーディングでサポートされている[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を参照してください[トランスポート](../../../docs/framework/wcf/feature-details/transports.md)です。  
   
 -   **キューに置かれた信頼性のあるメッセージ**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、WS-Reliable Messaging 経由で MSMQ を使用して実装された、信頼性の高いセッションで信頼性の高いメッセージ交換をサポートしています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] でサポートされている、キューに置かれた信頼性の高いメッセージングの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [Queues and Reliable Sessions](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)。  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Ws-reliable Messaging 経由で実装され、MSMQ を使用して、信頼できるセッションを使用した信頼性の高いメッセージ交換をサポートしています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] でサポートされている、キューに置かれた信頼性の高いメッセージングの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [Queues and Reliable Sessions](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)。  
   
 -   **非揮発性メッセージ**  
   
@@ -90,10 +92,10 @@ ms.lasthandoff: 01/19/2018
   
 -   **機能拡張**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アーキテクチャーには多数の機能拡張ポイントがあります。 追加の機能が必要になった場合、サービスの動作をカスタマイズできる多数のエントリ ポイントがあります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Extending WCF](../../../docs/framework/wcf/extending/extending-wcf.md)。  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アーキテクチャーには多数の機能拡張ポイントがあります。 追加の機能が必要になった場合、サービスの動作をカスタマイズできる多数のエントリ ポイントがあります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 使用可能な機能拡張ポイントを参照してください[WCF の拡張](../../../docs/framework/wcf/extending/index.md)です。  
   
 ## <a name="wcf-integration-with-other-microsoft-technologies"></a>WCF と他のマイクロソフト テクノロジと統合  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は柔軟性の高いプラットフォームです。 この柔軟性を活かして、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は他のいくつかの Microsoft 製品でも使用されています。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の基本を理解することで、これらの製品を使用するときにもすぐにこの利点を活用できます。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 柔軟なプラットフォームです。 この柔軟性を活かして、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は他のいくつかの Microsoft 製品でも使用されています。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の基本を理解することで、これらの製品を使用するときにもすぐにこの利点を活用できます。  
   
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] とペアを組んでいる最初のテクノロジは、Windows Workflow Foundation (WF) です。 ワークフロー「アクティビティ」としてワークフローの手順をカプセル化することによってアプリケーションの開発を簡略化します。 [!INCLUDE[wf2](../../../includes/wf2-md.md)]の最初のバージョンでは、開発者がワークフローのホストを作成する必要がありました。 次のバージョンの [!INCLUDE[wf2](../../../includes/wf2-md.md)] は [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]と統合されました。 これにより、任意のワークフローを簡単に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスでホストできるようになりました。これは [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]で WF/WCF のプロジェクトの種類を自動的に選択して実行できます。  
   

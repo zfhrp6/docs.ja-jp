@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 1084aee3d81a5df6ac99d6ec0e2ef647b4173c24
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e8e156552fd4aa733594c01845fb7ed1643b4aef
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="common-client-side-web-technologies"></a>一般的なクライアント側の Web テクノロジ
 
 > 「Web サイトを内部から適切に表示し、アウトします。」  
 > _-Paul Cookson_
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 ASP.NET Core アプリケーションは、web アプリケーションと、HTML、CSS、および JavaScript のようなクライアント側の web テクノロジに通常依存しています。 区切ってページ (HTML) のコンテンツのレイアウトとスタイル設定 (CSS) とその動作 (JavaScript) を使用してから、複雑な web アプリは、関心の分離の原則を利用できます。 構造体、デザイン、またはアプリケーションの動作に変更を加えてできる詳細簡単にこれらの問題については取り上げていませんときです。
 
@@ -67,7 +70,7 @@ JavaScript フレームワーク標準古代、jQuery 引き続き HTML と CSS 
 
 ### <a name="jquery-vs-a-spa-framework"></a>jQuery vs SPA フレームワーク
 
-| **要素** | **jQuery** | **Angular**|
+| **Factor** | **jQuery** | **angular**|
 |--------------------------|------------|-------------|
 | DOM を抽象化します。 | **はい** | **はい** |
 | AJAX のサポート | **はい** | **はい** |
@@ -146,7 +149,7 @@ Breakneck 速度で進化する JavaScript フレームワークを続行しま�
 > ### <a name="references--client-web-technologies"></a>参照: クライアントの Web テクノロジ
 > - **HTML および CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
-> - **Sass vs です。小さい**  
+> - **Sass vs です。LESS**  
 > <https://www.keycdn.com/blog/sass-vs-less/>
 > - **少ないリソースでの ASP.NET Core アプリケーションや Sass、優れたフォントのスタイルを設定**  
 > <https://docs.microsoft.com/aspnet/core/client-side/less-sass-fa>
@@ -156,9 +159,9 @@ Breakneck 速度で進化する JavaScript フレームワークを続行しま�
 > <https://jquery.com/>
 > - **jQuery vs AngularJS**  
 > <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
-> - **Angular**  
+> - **angular**  
 > <https://angular.io/>
-> - **対処**  
+> - 対処  
 > <https://facebook.github.io/react/>
 > - **Slingshot を反応します。**  
 > <https://github.com/coryhouse/react-slingshot>

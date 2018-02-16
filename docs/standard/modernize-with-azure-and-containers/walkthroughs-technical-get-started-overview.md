@@ -4,11 +4,14 @@ description: "Azure のクラウドと Windows コンテナーの既存の .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: e78dd4a324ca9fc973f1aa0d8e6a9abe1341876c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ead28fe1ffe1e002af73642a1c3b2e72479520f4
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>チュートリアルと技術は、開始の概要を取得します。 
 
@@ -72,7 +75,7 @@ ms.lasthandoff: 11/21/2017
 
 このチュートリアルのメリットは、単純な: だけに慣れれば、コードとアプリケーションの構成、依存関係の挿入に基づいています。 その後、containerize および今後の複数の環境に展開するときに、この方法で試すことができます。
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>次の手順
 
 GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。
 
@@ -84,7 +87,7 @@ GitHub wiki 上には、このコンテンツをさらに詳しい情報を表�
 
 技術的なチュートリアルは、eShopModernizing GitHub リポジトリの wiki で入手できます。
 
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerized-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerized-the-.NET-Framework-web-apps-with-Windows-Containers-and-DockerTBD)
+[https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
 
 ### <a name="overview"></a>概要
 
@@ -120,9 +123,9 @@ Windows コンテナーの MVC、Web フォーム、または WCF、運用、開
 
 コンテナリゼーション、理想的な状況では、アプリケーション コードに変更を加える必要ありません (C\#)。 ほとんどのシナリオでは、Docker の展開のメタデータ ファイル (Dockerfile と Docker Compose ファイル) だけができます。
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>次の手順
 
-GitHub wiki 上でこのコンテンツをさらに詳しい情報を表示: [https://https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerized-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerized-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
+GitHub wiki 上でこのコンテンツをさらに詳しい情報を表示: [https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
 
 ## <a name="walkthrough-3-deploy-your-windows-containers-based-app-to-azure-vms"></a>チュートリアル 3: Azure Vm を Windows コンテナー ベースのアプリを展開します。
 
@@ -172,7 +175,7 @@ Azure は、という名前の VM を現在提供**コンテナーと Windows Se
 
 Windows コンテナーは、Azure にデプロイするときに、内部設置型 Windows Server 2016 の Vm を配置できますが、すぐに使用できる Windows Server コンテナーの Vm で、作業を開始する簡単な方法を取得します。 また、テスト担当者、および Azure の仮想マシン スケール セットによる自動スケーラビリティにアクセスできる一般的なオンラインの場所を取得します。
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>次の手順
 
 GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。
 
@@ -234,7 +237,7 @@ Kubernetes と開発者は他のユーザー間で、次の機能を容易にす
 
 -   アプリケーションの正常性チェック
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 GitHub wiki 上でこのコンテンツをさらに詳しい情報を表示: [https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD))
 
@@ -306,7 +309,7 @@ Service Fabric で開発者は他のユーザー間で、次の機能を容易�
 
 -   高度なローリング更新プログラムとの正常性チェックします。
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>次の手順
 
 GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。
 

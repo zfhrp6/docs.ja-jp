@@ -1,15 +1,18 @@
 ---
 title: "実稼働環境で構成される microservices ベースのアプリケーションを実行します。"
-description: "Microsoft プラットフォームとツールが、Docker のコンテナー化アプリケーションのライフ サイクル"
+description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: e7a2788098aa731699cbb201c7177e7578907673
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0d7611d07c9995984269e3f7b071154d9b861367
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>実稼働環境で構成される microservices ベースのアプリケーションを実行します。
 

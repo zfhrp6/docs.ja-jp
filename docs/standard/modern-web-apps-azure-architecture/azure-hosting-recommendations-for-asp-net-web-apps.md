@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: c361a28321ec9dcbfee1db8036757632a5d81f7c
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 868f1b7ce452be9e29b921888f90d128e074ba13
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>ASP.NET Core Web アプリ用の推奨事項をホストしている azure
 
 > "基幹業務リーダー everywhere がクラウド (別名 SaaS) からアプリケーションを取得すると共に、IT 部門のバイパスと支払いそれらの雑誌の講読と同じようにします。 左上隅にある未使用ありません装置と、サブスクリプションを取り消すことができます、サービスが必要でなくなったときにします。"  
-> _\-Daryl Plummer、Gartner アナリスト_
+> _\- Daryl Plummer、Gartner アナリスト_
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 これは、アプリケーションのニーズとアーキテクチャ、Windows Azure でサポートできます。 ホスティングのニーズは非常に高度なアプリケーション数十個サービスの構成に静的な web サイトと同じくらい簡単にできます。 ASP.NET Core モノリシックな web アプリケーションおよびサポート サービスでは、推奨されるいくつかのよく知られている構成があります。 次の推奨事項は、ホストされているかどうか完全なアプリケーション、個別のプロセス、またはデータをリソースの種類に従ってグループ化されます。
 
@@ -75,18 +78,18 @@ App Service または Service Fabric で実行するの大幅な変更が必要�
 
 | App Service を機能します。 | Service Fabric | 仮想マシン |
 |---------|----------|----------|
-| ほぼ即時の配置 | X | X | |
-| 再配置することがなく大型のコンピューターにスケール アップ | X | X | |
-| インスタンスを共有コンテンツと構成です。再展開または拡張するときに再構成する必要はありません。 | X | X | |
-| 複数のデプロイ環境 (運用環境、ステージング) | X | X | |
-| OS の自動更新の管理 | X | | |
-| シームレスな 32/64 ビットのプラットフォーム間の切り替え | X | | |
-| Git、FTP によるコードを配置します。 | X | | X |
-| Web Deploy によるコードを配置します。 | X | | X |
-| TFS によるコードを配置します。 | X | X | X |
-| ホスト web または多層アーキテクチャの web サービス層 | X | X | X |
-| Service Bus、Storage、SQL データベースのような Azure サービスへのアクセスします。 | X | X | X |
-| 任意のカスタム MSI をインストールします。 | | X | X |
+| ほぼ即時の配置 | x | x | |
+| 再配置することがなく大型のコンピューターにスケール アップ | x | x | |
+| インスタンスを共有コンテンツと構成です。再展開または拡張するときに再構成する必要はありません。 | x | x | |
+| 複数のデプロイ環境 (運用環境、ステージング) | x | x | |
+| OS の自動更新の管理 | x | | |
+| シームレスな 32/64 ビットのプラットフォーム間の切り替え | x | | |
+| Git、FTP によるコードを配置します。 | x | | x |
+| Web Deploy によるコードを配置します。 | x | | x |
+| TFS によるコードを配置します。 | x | X | x |
+| ホスト web または多層アーキテクチャの web サービス層 | x | X | x |
+| Service Bus、Storage、SQL データベースのような Azure サービスへのアクセスします。 | x | X | x |
+| 任意のカスタム MSI をインストールします。 | | x | x |
 
 ## <a name="logical-processes"></a>論理プロセス
 
