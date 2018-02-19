@@ -70,7 +70,7 @@ JavaScript フレームワーク標準古代、jQuery 引き続き HTML と CSS 
 
 ### <a name="jquery-vs-a-spa-framework"></a>jQuery vs SPA フレームワーク
 
-| **Factor** | **jQuery** | **angular**|
+| **Factor** | **jQuery** | angular|
 |--------------------------|------------|-------------|
 | DOM を抽象化します。 | **はい** | **はい** |
 | AJAX のサポート | **はい** | **はい** |
@@ -159,7 +159,7 @@ Breakneck 速度で進化する JavaScript フレームワークを続行しま�
 > <https://jquery.com/>
 > - **jQuery vs AngularJS**  
 > <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
-> - **angular**  
+> - angular  
 > <https://angular.io/>
 > - 対処  
 > <https://facebook.github.io/react/>

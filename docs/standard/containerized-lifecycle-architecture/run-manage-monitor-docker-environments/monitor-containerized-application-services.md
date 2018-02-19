@@ -42,7 +42,7 @@ Docker に関連してライフ サイクル イベントおよび Application I
 
 Application Insights リソースを作成するには、下記の一覧に表示される記事は、設定を指示します。 Azure ポータルを必要なスクリプトを作成します。
 
--   **Application Insights での Docker アプリケーションの監視:**[https://docs.microsoft.com/azure/application-insights/app-insights-docker  ](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
+-   **Application Insights での Docker アプリケーションの監視:**[https://docs.microsoft.com/azure/application-insights/app-insights-docker](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
 
 -   **Docker Hub、Github にあるアプリケーション Insights Docker イメージ:**  
 [https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) and <https://github.com/Microsoft/ApplicationInsights-Docker>

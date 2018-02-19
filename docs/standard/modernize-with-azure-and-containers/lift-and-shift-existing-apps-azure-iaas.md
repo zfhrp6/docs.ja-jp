@@ -89,7 +89,7 @@ Azure の移行では、信頼度のワークロードが業務に影響を最�
 
     [https://aka.ms/azuremigration\_datasheet](https://aka.ms/azuremigration\_datasheet)
 
--   **Azure を移行します。**
+-   Azure を移行します。
 
     [http://azuremigrationcenter.com/](http://azuremigrationcenter.com/)
 

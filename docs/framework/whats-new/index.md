@@ -17,11 +17,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8d540e3201f0a310641005d95d9c3c0f3dc1d501
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: 86f1884749b5fdf93254985ab3e163dca0562648
+ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>.NET Framework の新機能
 <a name="introduction"></a> この記事では、.NET Framework の次のバージョンにおける主な新機能と機能強化の概要を示します。  
@@ -100,12 +100,6 @@ ms.lasthandoff: 02/05/2018
 
 .NET Framework 4.7.1 のガベージ コレクション (GC) への変更は、特に大きなオブジェクト ヒープ (LOH) の割り当ての場合の全体的なパフォーマンスを向上させます。 .NET Framework 4.7.1 では、小さなオブジェクト ヒープ (SOH) と LOH の割り当てに個別のロックを使用します。これにより、バックグラウンドの GC (BGC) が SOH をスイープするときに LOH の割り当てが許可されます。 その結果、多数の LOH の割り当てを行うアプリケーションでは、割り当てのロックの競合が減少し、パフォーマンスが向上します。 詳細については、「[.NET Framework 4.7.1 Runtime and Compiler Features](https://blogs.msdn.microsoft.com/dotnet/2017/09/28/net-framework-4-7-1-runtime-and-compiler-features/)」(.NET Framework 4.7.1 ランタイムとコンパイラの機能) ブログ投稿の「Runtime -- GC Performance Improvements」(ランタイム - GC のパフォーマンスの向上) セクションを参照してください。 
 
-**移植可能 PDB のサポート**
-
-バージョン 4.7.1 以降の .NET Framework は、移植可能な PDB をサポートしています。 標準の PDB ファイルは Windows のみですが、移植可能な PDB ファイルはすべてのプラットフォームで作成および読み取り可能です。 ほとんどの場合は、ファイル形式は、特定の .NET 実装で実行されているアプリケーションに対して透過的です。 例外は、実行時にアセンブリを動的に生成するアプリケーションです。この場合、移植可能な PDB を生成する機能は、パフォーマンスを向上させ、アプリケーションのメモリ使用量を削減できます。 
-
-アセンブリを生成する前に文字列 "PortablePdb" を <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported(System.String)?displayProperty=nameWithType> メソッドに渡すことによって、移植可能な PDB が現在の .NET の実装でサポートされているかどうかを判断することができます。  
- 
 <a name="net471"/>
 #### <a name="networking"></a>ネットワーキング
 
