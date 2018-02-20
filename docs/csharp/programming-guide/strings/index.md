@@ -2,20 +2,21 @@
 title: "文字列 (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-caps.latest.revision: "41"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 45dd48a53d3fae58596d9328ef8daba566b2ded1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 24a030bb43d49615a7487ce10ad2347fdfd8a290
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="strings-c-programming-guide"></a>文字列 (C# プログラミング ガイド)
 文字列は、値がテキストの <xref:System.String> 型のオブジェクトです。 内部では、テキストは <xref:System.Char> オブジェクトの順次読み取り専用コレクションとして格納されます。 C# の文字列の末尾には null 終端文字はありません。したがって、C# の文字列には任意の数の null 文字 ('\0') を埋め込むことができます。 文字列の <xref:System.String.Length%2A> プロパティは、Unicode 文字の数ではなく、文字列に含まれている `Char` オブジェクトの数を表します。 文字列内の個別の Unicode コード ポイントにアクセスするには、<xref:System.Globalization.StringInfo> オブジェクトを使用します。  
@@ -125,7 +126,7 @@ string s = String.Empty;
 |[方法: 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)|文字列の内容を変更するコード例を紹介します。|  
 |[方法: 複数の文字列を連結する](../../../csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md)|`+` 演算子と `Stringbuilder` クラスを使用して、コンパイル時および実行時に文字列を結合する方法について説明します。|  
 |[方法: 文字列を比較する](../../../csharp/programming-guide/strings/how-to-compare-strings.md)|文字列の序数比較を実行する方法を示します。|  
-|[方法: String.Split を使用して文字列を解析する](../../../csharp/programming-guide/strings/how-to-parse-strings-using-string-split.md)|`String.Split` メソッドを使用して文字列を解析するコード例を紹介します。|  
+|[方法: String.Split を使用して文字列を解析する](../../how-to/parse-strings-using-split.md)|`String.Split` メソッドを使用して文字列を解析するコード例を紹介します。|  
 |[方法: String のメソッドを使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md)|特定のメソッドを使用して文字列を検索する方法について説明します。|  
 |[方法: 正規表現を使用して文字列を検索する](../../../csharp/programming-guide/strings/how-to-search-strings-using-regular-expressions.md)|正規表現を使用して文字列を検索する方法について説明します。|  
 |[方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|文字列を安全に解析して、有効な数値があるかどうかを確認する方法を示します。|  
