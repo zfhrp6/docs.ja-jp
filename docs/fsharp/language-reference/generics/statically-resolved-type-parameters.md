@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: b3797415-3e49-4f8a-a8ee-fa614c5721aa
-ms.openlocfilehash: 88b4590a4323e75949c1915503b51793283792de
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 14c629d6223584113af47636495be61decca02ad
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="statically-resolved-type-parameters"></a>静的に解決される型パラメーター
 
@@ -34,7 +34,7 @@ F# 言語には、異なる 2 種類の型パラメーターがあります。 1
 
 2 種類の型パラメーターの類似点と相違点の概要を次の表に示します。
 
-|特性|ジェネリック|静的に解決される|
+|機能|ジェネリック|静的に解決される|
 |-------|-------|-------------------|
 |構文|`'T`, `'U`|`^T`, `^U`|
 |解決時期|実行時|コンパイル時|
@@ -53,8 +53,8 @@ F# 言語には、異なる 2 種類の型パラメーターがあります。 1
 
 ```fsharp
 ^a -> ^c -> ^d
-when (^a or ^b) : (static member (+) : ^a * ^b -> ^d) and
-(^a or ^c) : (static member (+) : ^a * ^c -> ^b)
+when (^a or ^b) : (static member ( + ) : ^a * ^b -> ^d) and
+(^a or ^c) : (static member ( * ) : ^a * ^c -> ^b)
 ```
 
 出力は次のとおりです。
@@ -90,7 +90,7 @@ let inline replace (a: ^a) (f: ^b): ^a0 when (CFunctor or  ^b): (static member r
     replace_instance<CFunctor, _, _, _> (a, f)
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [ジェネリック](index.md)
 
 [型推論](../type-inference.md)
