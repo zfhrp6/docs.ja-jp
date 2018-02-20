@@ -35,7 +35,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  すべての操作に対する応答アクションを WSDL で指定していない場合、生成後の操作コントラクトでは、<xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> プロパティがワイルドカード文字 (*) に設定される場合があります。 このプロパティの設定を削除します。 削除しない場合は、サービス コントラクト メタデータを実装するときに、それらの操作のメタデータをエクスポートできません。  
   
-4.  クラスにインターフェイスを実装してサービスをホストします。 例については、次を参照してください。[する方法: サービス コントラクトを実装する](../../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)、または例」のセクションで以下の簡単な実装を参照してください。  
+4.  クラスにインターフェイスを実装してサービスをホストします。 実装例は [方法: サービス コントラクトを実装する](../../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md) を参照するか、または下記例のセクションにあるシンプルな実装を参照してください。
   
 5.  クライアントの構成ファイルを[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成、変更、 [\<クライアント >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md)構成セクションの[ \<services >](../../../../docs/framework/configure-apps/file-schema/wcf/services.md)構成セクション。 (生成されたクライアント アプリケーション構成ファイルの例については、次の例を参照してください)。  
   
