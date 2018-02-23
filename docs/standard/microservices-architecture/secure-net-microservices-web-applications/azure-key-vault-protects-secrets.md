@@ -1,6 +1,6 @@
 ---
-title: "Azure Key Vault を使用して、実稼働時に機密データを保護するには"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Azure Key Vault を使用して、実稼働時に機密データを保護するには"
+title: "実稼働時に機密情報を保護するために Azure Key Vault を使用する"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 実稼働時に機密情報を保護するために Azure Key Vault を使用する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: mjrousos
 ms.author: wiwagn
@@ -8,32 +8,35 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 7f922997e8d0c63e206cd68f4efda14985c86b72
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cb289c7361362c225eac8b9898bac276c4b623b4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="using-azure-key-vault-to-protect-secrets-at-production-time"></a>Azure Key Vault を使用して、実稼働時に機密データを保護するには
+# <a name="using-azure-key-vault-to-protect-secrets-at-production-time"></a>実稼働時に機密情報を保護するために Azure Key Vault を使用する
 
-環境変数として保存またはシークレット マネージャー ツールによって保存された機密情報がまだローカルに保存され、コンピューターに暗号化されていません。 機密情報を格納するためのより安全なオプションは[Azure Key Vault](https://azure.microsoft.com/services/key-vault/)キーとシークレットを格納するためのセキュリティで保護された、中央の場所を提供します。
+環境変数として保存されているシークレットまたは Secret Manager ツールによって保存されたシークレットは、マシンのローカルに暗号化されていない状態で保存されています。 シークレットを保存する上でより安全な選択肢として [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) があります。Azure Key Vault には、キーとシークレットを保存するためのセキュリティで保護された中央の場所が用意されています。
 
-Microsoft.Extensions.Configuration.AzureKeyVault パッケージには、Azure Key Vault から構成情報を読み取る ASP.NET Core アプリケーションができます。 Azure Key Vault からシークレットを使用するを起動するには、次の手順に従います。
+Microsoft.Extensions.Configuration.AzureKeyVault パッケージを使用すると、ASP.NET Core アプリケーションから Azure Key Vault の構成情報を読み取ることができます。 Azure Key Vault のシークレットを初めて使用する場合は、次の手順を実行します。
 
-最初に、Azure AD アプリケーションとして、アプリケーションを登録します。 (キー コンテナーへのアクセスは、Azure AD によって管理されます)。これにより、Azure 管理ポータルででしょう。
+まず、アプリケーションを Azure AD アプリケーションとして登録します (キー コンテナーへのアクセスは Azure AD で管理されます)。この操作は、Azure 管理ポータルで実行できます。
 
-代わりに、パスワードまたはクライアント シークレットではなく、証明書を使用して認証をアプリにする場合を使えば、[新規 AzureRmADApplication](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/new-azurermadapplication) PowerShell コマンドレット。 証明書を Azure Key Vault に登録するには、公開キーのみが必要があります。 (アプリケーションは、秘密キーを使用します)
+アプリケーションでパスワードまたはクライアント シークレットの代わりに証明書を使用して認証する場合は、[New-AzureRmADApplication](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/new-azurermadapplication) PowerShell コマンドレットを使用できます。 Azure Key Vault に登録する証明書には、公開キーのみが必要です (アプリケーションでは秘密キーが使用されます)。
 
-新しいサービス プリンシパルを作成することで、キーの資格情報コンテナーに登録済みのアプリケーション アクセス権を付与第二に、します。 これを行う次の PowerShell コマンドを使用します。
+次に、新しいサービス プリンシパルを作成して、登録されたアプリケーションにキー コンテナーへのアクセス権を付与します。 この処理を実行するには、次の PowerShell コマンドを使用します。
 
 ```powershell
 $sp = New-AzureRmADServicePrincipal -ApplicationId "<Application ID guid>"
 Set-AzureRmKeyVaultAccessPolicy -VaultName "<VaultName>" -ServicePrincipalName $sp.ServicePrincipalNames[0] -PermissionsToSecrets all -ResourceGroupName "<KeyVault Resource Group>"
 ```
 
-IConfigurationRoot インスタンスを作成するときに、IConfigurationBuilder.AddAzureKeyVault 拡張メソッドを呼び出すことによって、アプリケーションの構成ソースとしては、key vault には第三が含まれます。 AddAzureKeyVault を呼び出すことを必要とするアプリケーション ID が登録され、前の手順で、key vault へのアクセス許可を注意してください。
+次に、IConfigurationRoot インスタンスを作成するときに IConfigurationBuilder.AddAzureKeyVault 拡張メソッドを呼び出して、アプリケーションの構成ソースとしてキー コンテナーを含めます。 AddAzureKeyVault を呼び出すには、前の手順で登録し、キー コンテナーへのアクセス権が付与されたアプリケーション ID が必要です。
 
-  現時点では、.NET 標準と .NET Core をサポートして、Azure Key Vault から構成情報を取得するクライアント ID およびクライアント シークレットを使用します。 .NET framework アプリケーションでは、クライアント シークレットの代わりに、証明書を受け取る IConfigurationBuilder.AddAzureKeyVault のオーバー ロードを使用できます。 このドキュメントの作成時点では、[進行中の](https://github.com/aspnet/Configuration/issues/605).NET 標準と .NET Core でそのオーバー ロードを使用できるようにします。 AddAzureKeyVault オーバー ロードを受け付ける、証明書が使用可能なまで ASP.NET Core アプリケーションは、次の例に示すように、KeyVaultClient オブジェクトを明示的に作成して証明書ベースの認証の Azure Key Vault をアクセスできます。
+  現在、.NET Standard と .NET Core は、クライアント ID とクライアント シークレットを使用して Azure Key Vault から構成情報を取得する処理をサポートしています。 .NET Framework アプリケーションでは、クライアント シークレットの代わりに証明書を取得する IConfigurationBuilder.AddAzureKeyVault のオーバーロードを使用できます。 この記事の執筆時点で、.NET Standard および .NET Core でこのオーバーロードを利用できるようにする作業が[進行中](https://github.com/aspnet/Configuration/issues/605)です。 証明書を受け付ける AddAzureKeyVault オーバーロードを利用できるようになるまでは、次の例に示すように、ASP.NET Core アプリケーションは、明示的に KeyVaultClient オブジェクトを作成することで、証明書ベースの認証を使用して Azure Key Vault にアクセスできます。
 
 ```csharp
 // Configure Key Vault client
@@ -58,24 +61,24 @@ var kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(asyn
         new DefaultKeyVaultSecretManager());
 ```
 
-この例では、AddAzureKeyVault への呼び出しは、構成プロバイダーの登録の末尾には提供されます。 以前のプロバイダーからの構成値を上書きする機会があるほか、ように他のソースから構成値をオーバーライドなし key vault から最後の構成プロバイダーとして Azure Key Vault を登録することをお勧めします。
+この例では、構成プロバイダーの登録処理の末尾で AddAzureKeyVault が呼び出されます。 前のプロバイダーの構成値を上書きし、他のソースの構成値でキー コンテナーの構成値が上書きされないようにするために、最後の構成プロバイダーとして Azure Key Vault を登録することをお勧めします。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Azure Key Vault を使用して、アプリケーションの機密データを保護する**
+-   **Azure Key Vault を使用したアプリケーション シークレットの保護**
     [*https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault*](https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault)
 
--   **アプリ シークレットは、開発中の安全な保管**
+-   **開発時のアプリ シークレットの安全な保存**
     [*https://docs.microsoft.com/aspnet/core/security/app-secrets*](https://docs.microsoft.com/aspnet/core/security/app-secrets)
 
--   **データ保護を構成する**
+-   **データ保護の構成**
     [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview*](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview)
 
 -   **キーの管理と有効期間**
-    [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings\#データ保護の既定設定*](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings#data-protection-default-settings)
+    [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings\#data-protection-default-settings*](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings#data-protection-default-settings)
 
--   **Microsoft.Extensions.Configuration.DockerSecrets です。** GitHub のリポジトリ。
+-   **Microsoft.Extensions.Configuration.DockerSecrets.** GitHub リポジトリ。
     [*https://github.com/aspnet/Configuration/tree/dev/src/Microsoft.Extensions.Configuration.DockerSecrets*](https://github.com/aspnet/Configuration/tree/dev/src/Microsoft.Extensions.Configuration.DockerSecrets)
 
 >[!div class="step-by-step"]
-[前](開発者向けのアプリのシークレット-storage.md) [次へ] (../キー takeaways.md)
+[前へ] (developer-app-secrets-storage.md) [次へ] (../key-takeaways.md)

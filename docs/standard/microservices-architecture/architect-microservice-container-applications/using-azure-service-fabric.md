@@ -1,6 +1,6 @@
 ---
-title: "Azure Service Fabric を使用します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Azure Service Fabric を使用します。"
+title: "Azure Service Fabric の使用"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Azure Service Fabric の使用"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,88 +8,91 @@ ms.date: 10/18/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: aa15f9cf9bc60e9e70607da921f2ce2c75e39ec2
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9480a3f67e9d0a61d0669bf34be4b66208f5e9ce
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="using-azure-service-fabric"></a>Azure Service Fabric を使用します。
+# <a name="using-azure-service-fabric"></a>Azure Service Fabric の使用
 
-サービスを提供することをスタイルで通常モノリシック個、ボックス製品を提供するから移行する Microsoft の azure Service Fabric が発生しました。 構築し、規模では、Azure SQL Database、Azure Cosmos DB、Azure Service Bus、Cortana のバックエンドなどの大規模なサービスを運用環境では、Service Fabric を形です。 プラットフォームはますます多くのサービスで採用して時間の経過と共に進歩しました。 重要なは、Service Fabric は、Azure では、スタンドアロン Windows Server の展開でもを実行する必要があります。
+Azure Service Fabric は、一般的にモノリシックなスタイルのボックス製品の提供からサービスの提供へというマイクロソフトの変換から生まれました。 Azure SQL データベース、Azure Cosmos DB、Azure Service Bus、Cortana のバックエンド、成形された Service Fabric. などの規模なサービスの構築と運用の経験。 プラットフォームは時間をかけてより多くのサービスを採用するように進化しました。 重要なのは、Service Fabric は、Azure 内だけでなく、スタンドアロン Windows Server の展開でも実行する必要があることです。
 
-Service Fabric の目的は、チームが microservices アプローチを使用するビジネス上の問題を解決できるようにを構築およびサービスを実行してインフラストラクチャ リソースを効率的に活用して困難な問題を解決するために、します。
+Service Fabric の目的は、サービスの構築と実行、インフラストラクチャ リソースの効率的な使用に関連する困難な問題を解決し、チームがマイクロサービス アプローチを使用してビジネスの問題を解決できるようにすることです。
 
-Service Fabric は、microservices アプローチを使用するアプリケーションを構築するための 2 つの広範な領域を提供します。
+Service Fabric は、マイクロサービス アプローチを使用するアプリケーションの構築に役立つ 2 つの広範な領域を提供します。
 
--   システム サービスを展開、拡張、アップグレード、検出すると、および失敗したサービスを再起動して、サービスの場所を検出、状態を管理、および正常性を監視を提供するプラットフォームです。 有効で、これらのシステム サービスでは、前に説明した microservices の特性を数多く有効にします。
+-   展開、拡張、アップグレード、検出のためのシステム サービス、失敗したサービスの再起動、サービスの場所の検出、状態の管理、正常性の監視を提供するプラットフォーム。 これらのシステム サービスによって、前に説明したマイクロサービスの特性の多くが実質的に有効になります。
 
--   プログラミング Api、またはフレームワーク、microservices としてアプリケーションを構築できるようにする:[信頼性の高いアクターと信頼性の高いサービス](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework)です。 もちろん、マイクロ サービスを構築するためのコードを選択できますが、これらの Api ジョブさらにわかりやすい行い深いレベルでプラットフォームと統合します。 正常性と診断情報を取得するこの方法では、信頼性の高い状態管理を利用できます。
+-   アプリケーションをマイクロサービスとして構築するために役立つプログラミング API またはフレームワーク: [Reliable Actors と Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework)。 もちろん、マイクロサービスを構築するための任意のコードを選択できますが、これらの API によってジョブがさらにわかりやすくなり、より深いレベルでプラットフォームと統合されます。 この方法で正常性情報と診断情報を取得し、信頼できる状態管理を利用することができます。
 
-Service Fabric は、サービスを構築する方法に関して依存しないと、任意のテクノロジを使用することができます。 ただし、microservices をビルドしやすく組み込みのプログラミング Api を提供します。
+Service Fabric は、サービスの構築方法に依存しないので、任意のテクノロジを使用することができます。 ただし、マイクロサービスをビルドしやすくする組み込みのプログラミング API を提供します。
 
-図 4-26 を示すようにすることができますで作成および実行 microservices Service Fabric 簡単なプロセス、または Docker のコンテナーとして。 同じ Service Fabric クラスター内のプロセスに基づく microservices でコンテナー ベース microservices を混在させることもできます。
+図 4-26 に示すように、単純なプロセスまたは Docker コンテナーとして、Service Fabric 内でマイクロサービスを作成して実行することができます コンテナーベースのマイクロサービスとプロセッサーベースのマイクロサービスを同じ Service Fabric クラスター内に混在させることもできます。
 
 ![](./media/image30.png)
 
-**図 4-26**です。 プロセス、または Azure Service Fabric 内のコンテナーとして microservices を展開します。
+**図 4-26** Azure Service Fabric 内のプロセッサーまたはコンテナーとしてマイクロサービスを展開する
 
-Linux と Windows のホストに基づいて Service Fabric クラスター Docker Linux コンテナーと Windows コンテナーをそれぞれ実行することができます。
+Linux と Windows のホストに基づく Service Fabric クラスターは、Docker Linux コンテナーと Windows コンテナーをそれぞれ実行することができます。
 
-Azure Service Fabric でのコンテナーのサポートの最新の状態については、次を参照してください。 [Service Fabric とコンテナー](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview)です。
+Azure Service Fabric でのコンテナーのサポートの最新情報については、「[Service Fabric とコンテナー](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview)」を参照してください。
 
-Service Fabric は、プラットフォームの良い例は異なる論理アーキテクチャ (ビジネス microservices または範囲指定されたコンテキスト) で導入された物理的な実装を定義することができます、[物理と論理アーキテクチャアーキテクチャ](#logical-architecture-versus-physical-architecture)セクションです。 実装する場合など、[ステートフル Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction)で[Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview)のセクションで導入されたを[ステートレスとステートフル microservices](#stateless-versus-stateful-microservices)後で、複数の物理サービスを含むビジネス マイクロ サービスの概念ことができます。
+Service Fabric は、「[論理アーキテクチャと物理アーキテクチャ](#logical-architecture-versus-physical-architecture)」のセクションで紹介されている物理的な実装とは異なる論理アーキテクチャ (ビジネス マイクロサービスまたは境界指定されたコンテキスト) を定義できるプラットフォームの良い例です。 たとえば、後で「[ステートレス マイクロサービスとステートフル マイクロサービスの比較](#stateless-versus-stateful-microservices)」で紹介する [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) で[ステートフル Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) を実装する場合、複数の物理的なサービスと共にビジネス マイクロサービスの概念を使用できます。
 
-図 4-27、および Service Fabric ステートフルの信頼性の高いサービスを実装する場合、論理/ビジネス マイクロ サービスの観点から考えることに示す、通常必要がありますを 2 層のサービスを実装します。 最初は、バック エンド ステートフルな信頼性の高いサービス、(各パーティションは、ステートフルなサービスを) 複数のパーティションを処理します。 2 つ目は、フロント エンド サービスは、または複数のパーティションまたはステートフルなサービス インスタンス間のルーティングとデータの集計を担当する、ゲートウェイ サービスです。 そのゲートウェイ サービスは、再試行のループがバックエンド サービスにアクセスするクライアント側の通信を処理します。
-カスタム サービス、またはボックスの Service Fabric を使用することもできます。 alternatevely を実装する場合に、ゲートウェイ サービスが呼び出された[リバース プロキシ サービス](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy)です。
+図 4-27 に示すように、論理的/ビジネス マイクロサービスの観点から考えると、Service Fabric ステートフル Reliable Service を実装するときには、通常 2 層のサービスを実装する必要があります。 1 つ目は、バックエンド ステートフル Reliable Service で、複数のパーティションを処理します (各パーティションはステートフル サービスです)。 2 つ目は、フロントエンド サービスまたはゲートウェイ サービスで、複数のパーティションまたはステートフル サービス インスタンス間のルーティングとデータの集計を担当します。 そのゲートウェイ サービスは、バックエンド サービスにアクセスする際の再試行のループを含むクライアント側の通信を処理します。
+カスタム サービスを実装している場合は、ゲートウェイ サービスと呼ばれます。または、すぐに利用できる Service Fabric である[リバース プロキシ サービス](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy)を使用することもできます。
 
 ![](./media/image31.png)
 
-**図 4-27**です。 いくつかのステートフルなサービス インスタンスとフロント エンドのカスタムのゲートウェイのビジネス マイクロ サービス
+**図 4-27** いくつかのステートフルなサービス インスタンスとカスタム ゲートウェイ フロントエンドを含むビジネス マイクロサービス
 
-いずれの場合は、Service Fabric ステートフル Reliable Services を使用する場合もがある場合、論理またはビジネス マイクロ サービス (範囲指定されたコンテキスト) 複数の物理サービスで構成される通常します。 それぞれに、ゲートウェイ サービスおよびパーティションのサービスのアドレスは、図 4-26 を示すように、ASP.NET Web API サービスとして実装できます。
+いずれの場合でも、Service Fabric ステートフル Reliable Services を使用する場合、通常は複数の物理サービスで構成される論理的/ビジネス マイクロサービス (境界指定されたコンテキスト) も使用できます。 図 4-26 に示すように、それぞれにゲートウェイ サービスおよびパーティションのサービスを ASP.NET Web API サービスとして実装できます。
 
-Service Fabric でグループ化し、としてのサービスのグループを展開、 [Service Fabric アプリケーション](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model)、これはパッケージ化と、orchestrator またはクラスターの配置の単位。 そのため、Service Fabric アプリケーション マップすることもこの自律的なビジネスおよび論理マイクロ サービス境界または範囲指定のコンテキストでは、同様に、ため、これらのサービスは自律的に展開する可能性があります。
+Service Fabric では、サービスをグループ化して、サービスのグループを [Service Fabric アプリケーション](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model)として展開することができます。これは、オーケストレーターおよびクラスター用のパッケージ化および展開の単位です。 そのため、Service Fabric アプリケーションをこの自律的なビジネスおよび論理マイクロサービス境界または境界指定されたコンテキストにマッピングすることができ、さらにこれらのサービスを自律的に展開することもできます。
 
 ## <a name="service-fabric-and-containers"></a>Service Fabric とコンテナー
 
-サービス ファブリック内のコンテナー、に関して、Service Fabric クラスター内のコンテナー イメージのサービスを展開することもできます。 図 4-28 では、ほとんどの場合のみありますサービスごとの 1 つのコンテナー。
+Service Fabric 内のコンテナーに関して、Service Fabric クラスター内のコンテナー イメージにサービスを展開することもできます。 図 4-28 に示すように、ほとんどの場合、サービスごとに 1 つのコンテナーのみがあります。
 
 ![](./media/image32.png)
 
-**図 4-28**です。 Service Fabric でいくつかのサービス (コンテナー) を使ってビジネス マイクロ サービス
+**図 4-28** Service Fabric 内に複数のサービス (コンテナー) を持つビジネス マイクロサービス
 
-ただし、いわゆる「サイドカー」コンテナー (論理サービスの一部としてまとめて配置する必要のある 2 つのコンテナー) が Service Fabric 可能もです。 重要な点は、ビジネス マイクロ サービスがいくつかのまとまりのある要素を囲む論理的な境界でことです。 多くの場合、1 つのデータ モデルを含む 1 つのサービスかもしれませんが、場合によっては他の物理的ないくつかのサービスもする必要があります。
+ただし、いわゆる "サイドカー" コンテナー (論理サービスの一部としてまとめて展開する必要がある 2 つのコンテナー) は Service Fabric でも可能です。 重要な点は、ビジネス マイクロサービスが、いくつかのまとまりのある要素を囲む論理的な境界であることです。 多くの場合、1 つのデータ モデルを含む 1 つのサービスかもしれませんが、場合によっては物理的な複数のサービスも含まれます。
 
-Mid 2017 時点で Service Fabric でできませんサービスを配置する SF 信頼性の高いステートフル コンテナーに対する — ステートレスなサービスとアクター サービス コンテナーにのみ展開できます。 図 4-29 のように、同じ Service Fabric アプリケーション内のコンテナーでのプロセスでのサービスとサービスを混在させることがある注意してください。
+2017 の中間時点で、Service Fabric では、SF Reliable ステートフル サービスをコンテナー上に展開することができません。ステートレス サービスおよびアクター サービスのみをコンテナーに展開できます。 図 4-29 に示すように、同じ Service Fabric アプリケーションにプロセス内のサービスとコンテナー内のサービスを混在させることができることに注意してください。
 
 ![](./media/image33.png)
 
-**図 4-29**です。 コンテナーとステートフル サービスの Service Fabric アプリケーションにマップされているビジネス マイクロ サービス
+**図 4-29** コンテナーとステートフル サービスを含む Service Fabric アプリケーションにマップされているビジネス マイクロサービス
 
-Azure Service Fabric でのコンテナーのサポートの詳細については、次を参照してください。 [Service Fabric とコンテナー](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview)です。
+Azure Service Fabric でのコンテナーのサポートの詳細については、「[Service Fabric とコンテナー](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview)」を参照してください。
 
-## <a name="stateless-versus-stateful-microservices"></a>ステートレスとステートフル microservices
+## <a name="stateless-versus-stateful-microservices"></a>ステートレス マイクロサービスとステートフル マイクロサービスの比較
 
-前述のように、各マイクロ サービス (論理範囲指定されたコンテキスト) は、ドメイン モデル (データとロジック) を所有する必要があります。 ステートレス microservices の場合、データベースは、外部、SQL Server のようなリレーショナル オプションまたは MongoDB や Azure Cosmos DB などの NoSQL オプションを採用することになります。
+前述のように、各マイクロサービス (論理的な境界指定されたコンテキスト) は、ドメイン モデル (データとロジック) を所有している必要があります。 ステートレス マイクロ サービスの場合、データベースはサービス外部に用意することになります。このデータベースは、SQL Server などのリレーショナル データベースでも、MongoDB、Azure Cosmos DB などの NoSQL データベースでもかまいません。
 
-サービス自体は、マイクロ サービス内でデータが格納されていることを意味する Service Fabric でステートフルなすることもできます。 このデータはだけでなく、同じサーバーがメモリ内のマイクロ サービス プロセス内で可能性がありますが存在してハード ドライブ上に保存し、その他のノードにレプリケートします。 図 4-30 では、別の方法を示します。
+Service Fabric でサービス自体もステートフルにして、データをマイクロサービス内に常駐させることもできます。 このデータは、同じサーバー上に存在できるだけでなく、マイクロサービスのプロセス内であれば、メモリ内に存在することも、ハード ドライブに保存することも、他のノードにレプリケートすることもできます。 図 4-30 では、別の方法を示します。
 
 ![](./media/image34.png)
 
-**図 4-30**します。 ステートレスとステートフル microservices
+**図 4-30** ステートレス マイクロサービスとステートフル マイクロサービスの比較
 
-ステートレスな方法は、完全に有効なアプローチは、従来の既知のパターンに似ていますので、ステートフルの microservices よりも実装する方が簡単。 ステートレス microservices プロセスおよびデータ ソース間の待機時間を強制します。 それに伴うより移動の個追加のキャッシュとキューのパフォーマンスを改善しようとします。 結果は、多数の階層のある複雑なアーキテクチャを持つ終了できます。
+ステートレス アプローチは、完全に有効で、従来の既知のパターンに似ているので、ステートフルなマイクロサービスよりも容易に実装できます。 ステートレス マイクロサービスは、プロセスおよびデータ ソース間の遅延を強制します。 追加のキャッシュとキューを使用してパフォーマンスを改善しようとしている場合は、含まれる移動する部分が増加します。 結果として、階層の数が多すぎる複雑なアーキテクチャになる可能性があります。
 
-これに対し、[ステートフル microservices](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)ドメイン ロジックとデータ間の待機時間がないために、高度なシナリオは、excel ことができます。 大量のデータ処理、戻るゲームが終了をサービスとしてのデータベースとすべて他の低待機時間シナリオがステートフルなサービスは、ローカル アクセスの状態を高速化を有効に活用できます。
+一方、[ステートフルなマイクロサービス](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)は、ドメイン ロジックとデータの間に遅延が生じないため、高度なシナリオに優れています。 負荷の高いデータ処理、ゲームのバックエンド、サービスとしてのデータベースなど、あまり遅延が許されないシナリオでは、ローカルな状態で高速にアクセスできるステートフル サービスのメリットを生かすことができます。
 
-ステートレスおよびステートフルなサービスは、相互に補完します。 たとえば、ステートフルなサービスに複数のパーティション分割することで右側の図では、図 4-30 を確認できます。 それらのパーティションにアクセスするには、パーティション キーに基づく各パーティションに対処する方法を知っているゲートウェイ サービスとして動作するステートレスなサービスを必要があります。
+ステートレス サービスおよびステートフル サービスは相互に補完します。 たとえば、図 4-30 でわかるように、右側の図では、ステートフル サービスを複数のパーティション分割することができます。 それらのパーティションにアクセスするには、パーティション キーに基づく各パーティションへのアドレス指定方法を知っているゲートウェイ サービスとして、ステートレス サービスが動作する必要があります。
 
-ステートフルなサービスでは、欠点がします。 スケール アウトでは、複雑さのレベルをかけます。外部データベース システムで実装する場合と通常の機能は、ステートフルな microservices とデータのパーティション分割の間でデータのレプリケーションなどのタスクの対処をする必要があります。 ただし、これは、orchestrator のような領域の 1 つ[Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture)でその[ステートフルな信頼性の高いサービス](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)最も役立つことができます: 開発とステートフルのライフ サイクルを簡略化microservices を使用して、 [Services API の信頼性の高い](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections)と[Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction)です。
+ステートフル サービスには欠点があります。 スケール アウト可能なある程度の複雑さを強制します。通常外部データベース システムによって実装される機能は、ステートフル マイクロサービスにまたがるレプリケーションや、データのパーティション分割などの機能として対処する必要があります。 ただし、[Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture) などのオーケストレーターとその[ステートフル Reliable Service](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) が最も役立つ領域の 1 つです。これにより、[Reliable Services API](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections) と [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction) を使用するステートフル マイクロサービスの開発とライフサイクルが簡素化されます。
 
-他のステートフルなサービス、Actor パターンをサポートして、フォールト トレランスとビジネス ロジックとデータ間の待機時間を向上できるようにするマイクロ サービス フレームワークは Microsoft [Orleans](https://github.com/dotnet/orleans)、Microsoft Research とから[Akka.NET](http://getakka.net/)です。 両方のフレームワークは、現在 Docker のサポートを向上させます。
+ステートフル サービスを許可し、Actor パターンをサポートし、ビジネス ロジックとデータ間のフォールト トレランスと遅延を改善する他のマイクロサービス フレームワークは、Microsoft [Orleans](https://github.com/dotnet/orleans)、Microsoft Research、および [Akka.NET](http://getakka.net/) です。 両方のフレームワークは、現在 Docker のサポートを向上させています。
 
-Docker コンテナーは自身のステートレスなことに注意してください。 ステートフルなサービスを実装する場合は、前に説明した追加の規範的な高度なフレームワークの 1 つ必要があります。 
+Docker コンテナーはそれ自身ステートレスなことに注意してください。 ステートフル サービスを実装する場合は、前に説明した追加の規範的で高度なフレームワークの 1 つが必要です。 
 
 >[!div class="step-by-step"]
-[前](scalable-available-multi-container-microservice-applications.md) [次へ] (../docker-application-development-process/index.md)
+[Previous] (scalable-available-multi-container-microservice-applications.md) [Next] (../docker-application-development-process/index.md)

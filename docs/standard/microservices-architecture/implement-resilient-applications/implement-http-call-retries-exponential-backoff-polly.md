@@ -1,6 +1,6 @@
 ---
-title: "ポリーを指数バックオフによる HTTP 呼び出しの再試行を実装します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |ポリーを指数バックオフによる HTTP 呼び出しの再試行を実装します。"
+title: "Polly で指数のバックオフを含む HTTP 呼び出しの再試行を実装する"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Polly で指数のバックオフを含む HTTP 呼び出しの再試行を実装する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,19 +8,22 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 1ed48142546403ea710f4c132e038521232c20ed
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 122f617874188d3bffe689d6b3cf7d7249c59c3b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-http-call-retries-with-exponential-backoff-with-polly"></a>ポリーを指数バックオフによる HTTP 呼び出しの再試行を実装します。
+# <a name="implementing-http-call-retries-with-exponential-backoff-with-polly"></a>Polly で指数のバックオフを含む HTTP 呼び出しの再試行を実装する
 
-指数バックオフによる再試行をお勧め活用するために .NET ライブラリの高度なオープン ソースのような[ポリー](https://github.com/App-vNext/Polly)ライブラリです。
+指数のバックオフでの再試行のためのアプローチとしては、オープン ソースである [Polly](https://github.com/App-vNext/Polly) ライブラリのような高度な .NET ライブラリを利用することをお勧めします。
 
-ポリーは、回復力と一時的なエラー処理機能を提供する .NET ライブラリです。 再試行、遮断器、バルクヘッド分離、タイムアウト、およびフォールバックなどポリー ポリシーを適用することで、それらの機能を簡単に実装できます。 ポリー対象 .NET 4.x および .NET の標準のバージョン 1.0 (.NET Core をサポートしています)。
+Polly とは、回復機能と一時的な障害処理の機能を提供する .NET ライブラリです。 このような機能は、再試行、遮断器、バルクヘッド分離、タイムアウト、フォールバックなどの Polly ポリシーを適用することで簡単に実装できます。 Polly は .NET 4.x および .NET Standard バージョン 1.0 (.NET Core をサポート) を対象にしています。
 
-ポリーの再試行ポリシーは、HTTP 再試行を実装する場合、eShopOnContainers で使用される方法です。 HttpClient の標準的な機能または使用するどのような再試行ポリシーの構成に応じてポリーを使用する HttpClient の回復力のあるバージョンのいずれかを挿入できるように、インターフェイスを実装することができます。
+Polly の再試行ポリシーは、HTTP の再試行を実装する場合に eShopOnContainers で使用されるアプローチです。 使用する再試行ポリシーの構成に応じて、標準的な HttpClient 機能か、または Polly を使用した HttpClient の回復バージョンを挿入できるように、インターフェイスを実装することができます。
 
 次の例では、eShopOnContainers で実装されたインターフェイスを示します。
 
@@ -41,7 +44,7 @@ public interface IHttpClient
 }
 ```
 
-開発または簡単な方法をテストするとき、として、回復力のあるメカニズムを使用したくない場合は、標準の実装を使用することができます。 次のコードは、省略可能なケースとして、標準 HttpClient の実装できるようにする要求の認証トークンを使用を示します。
+簡単なアプローチを開発またはテストするときのように、回復メカニズムを使用したくない場合は、標準の実装を使用することができます。 次のコードは、省略可能なケースとして認証トークンを使用した要求を許可する標準的な HttpClient 実装を示しています。
 
 ```csharp
 public class StandardHttpClient : IHttpClient
@@ -76,7 +79,7 @@ public class StandardHttpClient : IHttpClient
         // Rest of the code and other Http methods ...
 ```
 
-同様、別のクラスが使用する回復力のあるメカニズムを実装するポリーを使用してコードを興味深い実装が、次の例では、指数バックオフによる再試行です。
+興味深い実装は類似した別のクラスをコード化することですが、使用する回復メカニズム (次の例では、指数のバックオフでの再試行) を実装するには Polly を使用します。
 
 ```csharp
 public class ResilientHttpClient : IHttpClient
@@ -118,11 +121,11 @@ public class ResilientHttpClient : IHttpClient
 }
 ```
 
-ポリーでの再試行、指数バックオフ構成、およびエラーの記録など、HTTP 例外がある場合に実行されるアクションの数と再試行ポリシーを定義します。 ここはしようとする、指定された回数、IoC コンテナー内の型を登録するときに、ポリシーを設定します。 指数バックオフ構成のため、コードが、HttpRequest 例外を検出するたびに、Http 要求を再試行ポリシーの構成方法によっては指数関数的に増加するまでの時間が待機した後にします。
+Polly では、再試行回数を指定した再試行ポリシー、指数のバックオフの構成、および HTTP 例外が発生した場合に実行するアクション (エラーの記録など) を定義します。 この場合は、IoC コンテナーでの種類の登録時に指定した回数が試行されるように、ポリシーを構成します。 指数のバックオフ構成であるために、コードは HttpRequest 例外を検出するたびに、ポリシーが構成されている方法に応じて指数関数的に増加する時間を待機してから Http 要求を再試行します。
 
-重要なメソッドです HttpInvoker、ため、このユーティリティ クラス全体での HTTP 要求。 メソッドが HTTP 要求が内部でが実行される\_policyWrapper.ExecuteAsync で、再試行ポリシーを考慮します。
+重要なメソッドは HttpInvoker です。これは、このユーティリティ クラス全体にわたって HTTP 要求を行うメソッドです。 そのメソッドは、\_policyWrapper.ExecuteAsync が指定された HTTP 要求を内部で実行します。これにより再試行ポリシーが考慮されます。
 
-EShopOnContainers でポリシーを指定するポリーから次のコードのように、IoC コンテナーの種類を登録するときに、 [MVC web アプリケーション、startup.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Web/WebMVC/Startup.cs)クラスです。
+eShopOnContainers では、次に示した [MVC Web アプリの startup.cs クラス](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Web/WebMVC/Startup.cs)のコードのように、IoC コンテナーで種類を登録するときに Polly ポリシーを指定します。
 
 ```csharp
 // Startup.cs class
@@ -141,9 +144,9 @@ else
 }
 ```
 
-サービスでの TCP 接続を効率的に使用できるように、一時的なものとしての代わりにシングルトンとして IHttpClient オブジェクトがインスタンス化に注意してください、[ソケットを使用して問題](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/)は行われません。
+TCP 接続がサービスによって効率的に使用され、[ソケットでの問題](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/)が発生しなくなるように、IHttpClient オブジェクトは一時的なものとしてではなく、シングルトンとしてインスタンス化されることに注意してください。
 
-回復性に関する重要な点が CreateResilientHttpClient メソッドで ResilientHttpClientFactory 内ポリー WaitAndRetryAsync ポリシーを適用すること、次のコードに示すように。
+ただし、回復性に関して重要な点は、次のコードに示すように、CreateResilientHttpClient メソッドの ResilientHttpClientFactory 内で Polly の WaitAndRetryAsync ポリシーを適用することです。
 
 ```csharp
 public ResilientHttpClient CreateResilientHttpClient()
@@ -174,4 +177,4 @@ private Policy[] CreatePolicies()
 
 
 >[!div class="step-by-step"]
-[前](implement-custom-http-call-retries-exponential-backoff.md) [次へ] (実装の回線のブレーカー-pattern.md)
+[Previous] (implement-custom-http-call-retries-exponential-backoff.md) [Next] (implement-circuit-breaker-pattern.md)

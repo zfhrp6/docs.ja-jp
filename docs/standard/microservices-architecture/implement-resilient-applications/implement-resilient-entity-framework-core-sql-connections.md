@@ -1,6 +1,6 @@
 ---
-title: "回復力のある Entity Framework の主要な SQL 接続の実装"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |回復力のある Entity Framework の主要な SQL 接続の実装"
+title: "回復力の高い Entity Framework Core SQL 接続の実装"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 回復力の高い Entity Framework Core SQL 接続の実装"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,17 +8,20 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 8600625c2022d69ebaa2645c2a8159a848b12ff0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b37d2c5683aff44165d0330c8d42fc881effbb76
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-resilient-entity-framework-core-sql-connections"></a>回復力のある Entity Framework の主要な SQL 接続の実装
+# <a name="implementing-resilient-entity-framework-core-sql-connections"></a>回復力の高い Entity Framework Core SQL 接続の実装
 
-Azure SQL DB、Entity Framework のコアには、既に内部データベース接続の回復性と再試行ロジックが用意されています。 する場合は、DbContext 接続ごとに、Entity Framework の実行方法を有効にする必要がありますが、[回復力のある EF コア接続](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)です。
+Azure SQL DB の場合、Entity Framework Core に内部データベース接続の復元機能と再試行ロジックが既に用意されています。 ただし、[回復力のある EF Core 接続](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)を使用する場合は、各 DbContext 接続に対して Entity Framework 実行戦略を有効にする必要があります。
 
-たとえば、EF コア接続レベルでは、次のコードは、接続に失敗した場合に再試行回復力のある SQL 接続を有効します。
+たとえば、EF Core 接続レベルで次のコードを実行すると、接続が失敗した場合に再試行される回復力のある SQL 接続が有効になります。
 
 ```csharp
 // Startup.cs from any ASP.NET Core Web API
@@ -44,15 +47,15 @@ public class Startup
 }
 ```
 
-## <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>実行方法と BeginTransaction と複数 DbContexts を使用して明示的なトランザクション
+## <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>BeginTransaction と複数の DbContext を使用した実行戦略と明示的なトランザクション
 
-EF コア接続では、再試行が有効な場合、EF コアを使用して実行する各操作は、独自の再試行可能な操作になります。 一時的なエラーが発生した場合、各クエリおよび SaveChanges に対する各呼び出しが単位として再試行されます。
+EF Core 接続で再試行を有効にすると、EF Core を使用して実行する各操作は、独自の再試行可能な操作になります。 一時的なエラーが発生した場合、SaveChanges への各クエリと各呼び出しは 1 つのユニットとして再試行されます。
 
-ただし、コードでは、BeginTransaction を使用してトランザクションを開始する場合は、ユニットとして扱われる必要のある操作のグループを定義する — 障害が発生した場合に、トランザクション内のすべてロールバックされます。 EF の実行方法 (再試行ポリシー) を使用する場合は、そのトランザクションを実行しようとして、トランザクションに複数の DbContexts からいくつかの SaveChanges 呼び出しを含める場合、次のような例外が表示されます。
+一方、BeginTransaction を使用してトランザクションを開始するコードの場合、1 ユニットとして扱う必要のある独自の操作グループを定義しています。エラーが発生した場合、トランザクション内のすべてがロールバックされます。 EF 実行戦略 (再試行ポリシー) を使用し、複数の DbContext からの SaveChanges 呼び出しをいくつかトランザクションに含める場合、そのトランザクションを実行しようとすると、次のような例外が表示されます。
 
-> System.invalidoperationexception: 構成済みの実行方法 'SqlServerRetryingExecutionStrategy' はユーザーが開始したトランザクションをサポートしていません。 'DbContext.Database.CreateExecutionStrategy()' によって返される実行方法を使用して、再試行可能な単位としてトランザクション内のすべての操作を実行します。
+> System.InvalidOperationException: 構成された実行戦略 'SqlServerRetryingExecutionStrategy' は、ユーザーが開始したトランザクションをサポートしていません。 'DbContext.Database.CreateExecutionStrategy()' から返された実行戦略を使用して、再試行可能なユニットとしてトランザクション内のすべての操作を実行します。
 
-ソリューションでは、手動で実行する必要があるすべてのものを表すデリゲートを使用して EF の実行方法を呼び出します。 一時的な障害が発生した場合、実行方法は、デリゲートをもう一度呼び出されます。 たとえば、次のコードは、2 つ eShopOnContainers での実装方法を表示複数 DbContexts (\_catalogContext と、IntegrationEventLogContext) 製品とし、保存を更新するときに、ProductPriceChangedIntegrationEvent オブジェクトには、さまざまな DbContext を使用する必要があります。
+この解決策では、実行する必要があるすべてを表すデリゲートを使用して EF 実行戦略を手動で呼び出します。 一時的なエラーが発生した場合、実行戦略によってデリゲートが再び呼び出されます。 たとえば、次のコードは、製品を更新し、別の DbContext を使用する必要がある ProductPriceChangedIntegrationEvent オブジェクトを保存するときに、2 つの DbContext (\_catalogContext と IntegrationEventLogContext) を使用して eShopOnContainers で実装する方法を示しています。
 
 ```csharp
 public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem
@@ -84,16 +87,16 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem
 }
 ```
 
-First DbContext は\_内では、DbContext catalogContext と 2 番目、 \_integrationEventLogService オブジェクト。 EF の実行方法を使用して複数の DbContexts 間で、コミット操作が実行されます。
+最初の DbContext は \_catalogContext で、2 つ目の DbContext\_ は integrationEventLogService オブジェクト内にあります。 Commit アクションは、EF 実行戦略を使用して複数の DbContext 全体で実行されます。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **接続の回復と、Entity Framework とコマンド インターセプト**
+-   **Entity Framework による接続の回復性とコマンドのインターセプト**
     [*https://docs.microsoft.com/azure/architecture/patterns/category/resiliency*](https://docs.microsoft.com/azure/architecture/patterns/category/resiliency)
 
--   **Cesar de la Torre。回復力のある Entity Framework Core Sql 接続とトランザクションを使用して**
+-   **Cesar de la Torre。回復力のある Entity Framework Core SQL の接続とトランザクションの使用**
     <https://blogs.msdn.microsoft.com/cesardelatorre/2017/03/26/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
 
 
 >[!div class="step-by-step"]
-[前](実装の再試行-指数-backoff.md) [次へ] (implement-custom-http-call-retries-exponential-backoff.md)
+[Previous] (implement-retries-exponential-backoff.md) [Next] (implement-custom-http-call-retries-exponential-backoff.md)

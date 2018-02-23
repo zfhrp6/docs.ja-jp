@@ -1,6 +1,6 @@
 ---
-title: "Visual UI 図形および複数 microservices によって生成されたレイアウトを含む microservices に基づく複合 UI の作成"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Visual UI 図形および複数 microservices によって生成されたレイアウトを含む microservices に基づく複合 UI の作成"
+title: "複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,57 +8,60 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 4b32fed5eb0de02b01665efa4368eb83e3fda08d
-ms.sourcegitcommit: e99dfadbca1992c187179b6a3b42bef44534ebb6
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 12b170e9d4c46fbb697f988596af6566d33099a4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="creating-composite-ui-based-on-microservices-including-visual-ui-shape-and-layout-generated-by-multiple-microservices"></a>Visual UI 図形および複数 microservices によって生成されたレイアウトを含む microservices に基づく複合 UI の作成
+# <a name="creating-composite-ui-based-on-microservices-including-visual-ui-shape-and-layout-generated-by-multiple-microservices"></a>複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する
 
-Microservices アーキテクチャは、多くの場合、サーバー側のデータおよびロジックの処理を開始します。 ただしより高度な手法は、UI が microservices もに基づいてアプリケーションを設計します。 Microservices、サーバーと使用、microservices モノリシック クライアント アプリではなく、microservices によって生成される複合 UI を持つためです。 この方法でビルドする microservices はロジックおよび視覚的表現の両方を備えたすることはできます。
+マイクロサービス アーキテクチャは、多くの場合、データおよびロジックを処理するサーバー側から始まります。 ただし、より高度なアプローチとして、マイクロサービスに基づいたアプリケーション UI を設計する方法もあります。 これは、サーバー上にマイクロサービスが置かれモノリシック クライアント アプリのみでマイクロサービスが利用されるというのでなく、マイクロサービスによって複合 UI が生成されることを意味します。 このアプローチの場合、ビルドするマイクロサービスは、ロジックおよび視覚的表現の両方を備えることができます。
 
-図 4-20 モノリシックなクライアント アプリケーションから microservices を消費だけの簡単な方法を示しています。 もちろん、JavaScript と HTML を生成する間、ASP.NET MVC サービスことができます。 図は、1 つの (モノリシック) クライアントだけ専念ロジックとデータ (HTML および JavaScript) の UI 図形ではなくなると、microservices を使用する UI があることを強調表示するための簡略化します。
+図 4-20 に、モノリシック クライアント アプリケーションからマイクロサービスを利用するだけの簡単なアプローチを示します。 当然ながら、HTML および JavaScript の生成の間に ASP.NET MVC サービスを含めることが可能です。 図は簡単なものであり、マイクロサービスを利用している単一 (モノリシック) のクライアント UI が強調表示されています。またこれらのマイクロサービスでは、UI シェイプ (HTML および JavaScript) ではなく、ロジックとデータにのみ焦点を当てています。
 
 ![](./media/image20.png)
 
-**図 4-20**です。 バック エンド microservices を消費するモノリシック UI アプリケーション
+**図 4-20** バックエンド マイクロサービスを利用するモノリシック UI アプリケーション
 
-これに対し、複合 UI は正確に生成され microservices 自体で構成します。 UI の特定の領域のビジュアルの図形のドライブ、microservices の一部です。 主な違いは、テンプレートに基づいてクライアントの UI コンポーネント (たとえば TS クラス) があり、そのデータの整形 UI ViewModel、それらのテンプレートは各マイクロ サービスから取得します。
+これに対し、複合 UI は正確に生成され、マイクロサービス自体で構成されます。 一部のマイクロサービスでは、UI の特定の領域のビジュアル シェイプをドライブしています。 その場合の主な違いは、クライアント UI コンポーネント (TS クラスなど) がテンプレートに基づいており、それらのテンプレートのデータ シェイプ UI ViewModel が各マイクロサービスから取得されるということです。
 
-クライアント アプリケーションのスタートアップ時に各クライアントの UI コンポーネント (TypeScript のクラスの例) は自身に登録、特定のシナリオ ViewModels を提供できるインフラストラクチャ マイクロ サービス。 マイクロ サービスは、図形を変更する場合、UI も変更します。
+クライアント アプリケーションの起動時、各クライアント UI コンポーネント (TypeScript クラスなど) は、特定のシナリオで ViewModels を提供できるインフラストラクチャ マイクロサービスに自らを登録します。 マイクロサービスがシェイプを変更すると、UI も変わります。
 
-図 4-21 は、この複合 UI アプローチのバージョンを示しています。 これは、簡体字、その他の microservices 細分化された部分がさまざまな手法に基づいて集計をする必要がありますので、従来の web 手法 (ASP.NET MVC) など、SPA (Single Page Application) を作成するかどうかによって異なります。
+図 4-21 に、この複合 UI アプローチのバージョンを示します。 これは簡略化した図です。従来の Web アプローチ (ASP.NET MVC) または SPA (Single Page Application) をビルドする場所によっては、さまざまな手法に基づいて細分化された部分を集計するマイクロサービスが他に存在する場合もあるからです。
 
 ![](./media/image21.png)
 
-**図 4-21**です。 バック エンド microservices によって形作ら複合 UI アプリケーションの例
+**図 4-21** バックエンド マイクロサービスによって成形された複合 UI アプリケーションの例
 
-これらの UI コンポジション microservices の各するようになります小さな API ゲートウェイ。 ここでは各小さな UI 領域を担当します。
+これらの UI コンポジション マイクロサービスのそれぞれは、小規模な API ゲートウェイに似ています。 ただし、この場合、それぞれが小規模な UI 領域を担当します。
 
-小さいため、どのような UI テクノロジに応じて使用しているまたは microservices によって駆動される複合 UI アプローチがより困難できます。 インスタンスは使用しませんのと同じ手法、SPA を構築するため、またはネイティブ モバイル アプリを使用する従来の web アプリケーションを構築するため (このアプローチのより困難になることができます、Xamarin アプリを開発する際に同様)。
+マイクロサービスによってドライブされる複合 UI アプローチは、使用する UI テクノロジに応じて、直面する困難の度合いが異なる可能性があります。 たとえば、SPA またはネイティブ モバイル アプリをビルドするために使用する技法 (Xamarin アプリを開発する場合などで、このアプローチの場合は困難の度合いが大きい) が従来の Web アプリケーションをビルドするために使用する技法と異なる場合があります。
 
-[EShopOnContainers](http://aka.ms/MicroservicesArchitecture)サンプル アプリケーションでは、複数の理由によりモノリシック UI アプローチを使用します。 まず、microservices とコンテナーの概要です。 複合 UI より高度なさらに複雑なデザインおよび UI を開発するときにもが必要です。 次に、eShopOnContainers でもありより複雑な C クライアントで Xamarin に基づいてネイティブ モバイル アプリが提供\#側です。
+[eShopOnContainers](http://aka.ms/MicroservicesArchitecture) サンプル アプリケーションでは複数の理由からモノリシック UI アプローチを使用します。 まず、マイクロサービスとコンテナーの場合です。 複合 UI は高度な技法であり、UI の設計および開発するときには複雑な処理も求められます。 次に、eShopOnContainers でも Xamarin に基づいたネイティブ モバイル アプリが実現されます。この場合は、クライアント C\# 側での処理がより複雑になります。
 
-ただし、複合 microservices に基づいて、UI に関する詳細については、次の参照を使用することをお勧めします。
+次の参照情報を使用してマイクロサービスに基づく複合 UI に関する知識を深めることをお勧めします。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET (特定のワーク ショップ) を使用して複合 UI**
+-   **ASP.NET を使用した複合 UI (特定のワーク ショップ)**
     [*http://go.particular.net/workshop-composite-ui-demo*](http://go.particular.net/workshop-composite-ui-demo)
 
--   **Ruben Oostinga です。Microservices アーキテクチャでモノリシック フロント エンド**
+-   **Ruben Oostinga。マイクロサービス アーキテクチャでのモノリシック フロントエンド**
     [*http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/*](http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/)
 
--   **Mauro Servienti です。優れた UI コンポジションのシークレット**
+-   **Mauro Servienti。優れた UI コンポジションのシークレット**
     [*https://particular.net/blog/secret-of-better-ui-composition*](https://particular.net/blog/secret-of-better-ui-composition)
 
--   **Viktor Farcic です。Microservices にフロント エンド Web コンポーネントを含む**
+-   **Viktor Farcic。マイクロサービスへのフロントエンド Web コンポーネントの取り込み**
     [*https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/*](https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/)
 
--   **Microservices アーキテクチャでは、フロント エンドを管理します。**\
+-   **マイクロサービス アーキテクチャでのフロントエンドの管理**\
     [*http://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html*](http://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
 
 
 >[!div class="step-by-step"]
-[前](microservices-addressability-サービス-registry.md) [次へ] (回復力の高い-可用性-microservices.md)
+[Previous] (microservices-addressability-service-registry.md) [Next] (resilient-high-availability-microservices.md)

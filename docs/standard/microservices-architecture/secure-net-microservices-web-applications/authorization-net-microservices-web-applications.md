@@ -1,6 +1,6 @@
 ---
-title: ".NET microservices と web アプリケーションでの承認について"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |.NET microservices と web アプリケーションでの承認について"
+title: ".NET マイクロサービスと Web アプリケーションでの承認について"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | .NET マイクロサービスと Web アプリケーションでの承認について"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: mjrousos
 ms.author: wiwagn
@@ -8,17 +8,20 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 51adda4f5bdb28154f17b9a988ee2d887bf1d461
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6cd7be9bc8216aecf85f99a76e859b411a8735b0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="about-authorization-in-net-microservices-and-web-applications"></a>.NET microservices と web アプリケーションでの承認について
+# <a name="about-authorization-in-net-microservices-and-web-applications"></a>.NET マイクロサービスと Web アプリケーションでの承認について
 
-認証の後に、ASP.NET Core Web Api は、アクセスを承認する必要があります。 これにより、サービス Api によって認証されたユーザーに利用可能なすべてではなくにされます。 [承認](https://docs.microsoft.com/aspnet/core/security/authorization/introduction)ユーザーのロールに基づいて行われますか、信頼性情報またはその他のヒューリスティックを調べることなどを含むカスタム ポリシーに基づくことができます。
+認証の後に、ASP.NET Core Web API がアクセスを承認する必要があります。 このプロセスによって、サービスが一部の認証ユーザーに API を提供できますが、すべてのユーザーではありません。 [承認](https://docs.microsoft.com/aspnet/core/security/authorization/introduction)は、ユーザーのロールまたはカスタム ポリシーに基づいて行われ、要求またはその他のヒューリスティックの調査が含まれる場合があります。
 
-ASP.NET Core MVC ルートへのアクセス制限は、アクション メソッドに (またはコント ローラーのアクションで承認が必要な場合は、コント ローラーのクラスを)、承認属性を適用する例を次に示すとして同じくらい簡単です。
+次の例に示すように、ASP.NET Core MVC ルートへのアクセス制限は、アクション メソッド (またはすべてのコントローラーのアクションで承認が必要な場合は、コントローラーのクラス) に Authorize 属性を適用するのと同じくらい簡単です。
 
 ```csharp
 public class AccountController : Controller
@@ -34,13 +37,13 @@ public class AccountController : Controller
 }
 ```
 
-既定では、パラメーターなしの承認属性を追加することは、そのコント ローラーまたはアクションの認証されたユーザーへのアクセスに制限されます。 特定のユーザーだけに利用できる API をさらに制限するには、必要な役割またはユーザーが満たす必要があるポリシーを指定する属性を展開することができます。
+既定では、パラメーターなしの Authorize 属性を追加すると、そのコントローラーまたはアクションの認証されたユーザーへのアクセスが制限されます。 特定のユーザーだけに利用できる API をさらに制限するには、ユーザーが満たす必要がある必要なロールまたはポリシーを指定するように属性を拡張することができます。
 
-## <a name="implementing-role-based-authorization"></a>ロールベースの承認を実装します。
+## <a name="implementing-role-based-authorization"></a>ロール ベースの承認の実装
 
-ASP.NET Core Id は、役割の組み込みの概念を持っています。 ユーザー以外は、ASP.NET Core Id はアプリケーションによって使用されるさまざまなロールに関する情報を格納し、どのロールに割り当てるユーザーの追跡します。 これらの割り当ては、RoleManager の種類 (更新プログラムの永続化された記憶域内のロール) および (を割り当てる、またはロールからユーザーの割り当てを解除できます) UserManager 型を持つプログラムで変更できます。
+ASP.NET Core ID には、ロールの概念が組み込まれています。 ユーザーに加えて、ASP.NET Core ID は、アプリケーションによって使用されるさまざまなロールに関する情報を格納し、どのユーザーがどのロールに割り当てられているかを追跡します。 これらの割り当ては、RoleManager の種類 (永続化された記憶域内のロールを更新します) および UserManager の種類 (ロールにユーザーを割り当てるかまたはロールからユーザーの割り当てを解除できます) によってプログラムで変更できます。
 
-JWT ベアラ トークンによる認証を行う場合、ASP.NET Core JWT ベアラ認証ミドルウェアは、トークンに見つかりませんロール クレームに基づくユーザーのロールを設定します。 MVC アクションまたはコント ローラーが特定のロールのユーザーへのアクセスを制限するための次の例に示すように、承認ヘッダーにロール パラメーターを含めることができます。
+JWT ベアラ トークンによる認証を行う場合、ASP.NET Core JWT ベアラ認証ミドルウェアは、トークンで見つかったロール要求に基づいてユーザーのロールを入力します。 MVC アクションまたはコントローラーへのアクセスを特定のロールのユーザーに制限するために、次の例に示すように、Authorize ヘッダーに Roles パラメーターを含めることができます。
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -57,9 +60,9 @@ public class ControlPanelController : Controller
 }
 ```
 
-この例では、管理者または PowerUser ロールのユーザーのみ (SetTime 操作を実行して) など、コントロール パネルの コント ローラーの Api にアクセスできます。 シャット ダウン API は、管理者ロールにユーザーにのみアクセスを許可するさらに制限します。
+この例では、Administrator または PowerUser ロールのユーザーのみが、ControlPanel コントローラーの API (SetTime アクションの実行など) にアクセスできます。 ShutDown API は、Administrator ロールのユーザーのみにアクセスを許可するようにさらに制限します。
 
-複数の役割であることが必要な次の例で示すように、複数の承認属性を使用します。
+ユーザーに複数のロールが割り当てられていることを必須にするには、次の例で示すように、複数の Authorize 属性を使用します。
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -70,19 +73,19 @@ public ActionResult API1 ()
 }
 ```
 
-この例では呼び出す API1、ユーザーが必要です。
+この例では、API1 を呼び出すために、ユーザーは次の条件を満たす必要があります。
 
--   管理者である*または*PowerUser ロール*と*
+-   Adminstrator *または* PowerUser ロールであり、*かつ*
 
--   RemoteEmployee ロールである*と*
+-   RemoteEmployee ロールであり、*かつ*
 
--   CustomPolicy 承認のためのカスタム ハンドラーを満たします。
+-   CustomPolicy 承認のためのカスタム ハンドラーを満たしている。
 
-## <a name="implementing-policy-based-authorization"></a>ポリシー ベースの承認を実装します。
+## <a name="implementing-policy-based-authorization"></a>ポリシー ベースの承認の実装
 
-使用してカスタム承認規則を記述することができますも[承認ポリシー](https://docs.asp.net/en/latest/security/authorization/policies.html)です。 このセクションでは、概要を説明します。 詳細については、オンラインで使用できる[ASP.NET 承認ワーク ショップ](https://github.com/blowdart/AspNetAuthorizationWorkshop)です。
+カスタム承認規則も[承認ポリシー](https://docs.asp.net/en/latest/security/authorization/policies.html)を使用して記述できます。 このセクションでは、概要を説明します。 詳細については、オンラインの「[ASP.NET Authorization Workshop](https://github.com/blowdart/AspNetAuthorizationWorkshop)」(ASP.NET 承認ワークショップ) を参照してください。
 
-カスタム承認ポリシーは、サービスを使用して、Startup.ConfigureServices メソッドで登録されます。AddAuthorization メソッドです。 このメソッドは、AuthorizationOptions 引数を構成するデリゲートを受け取ります。
+カスタム承認ポリシーは、service.AddAuthorization メソッドを使用して、Startup.ConfigureServices メソッドに登録されます。 このメソッドは、AuthorizationOptions 引数を構成するデリゲートを受け取ります。
 
 ```csharp
 services.AddAuthorization(options =>
@@ -96,23 +99,23 @@ services.AddAuthorization(options =>
 });
 ```
 
-例のように、ポリシーがさまざまな種類の要件の関連付けることができます。 ポリシーは、登録後に適用できますアクションまたはコント ローラーに Authorize attribute のポリシーの引数として、ポリシーの名前を渡すことで (たとえば、 \[Authorize(Policy="EmployeesOnly")\]) ポリシーを持つことができます複数の要件だけでなく 1 つに示すようにこれらの例)。
+例に示すように、ポリシーをさまざまな種類の要件に関連付けることができます。 ポリシーが登録された後に、ポリシーの名前を Authorize 属性の Policy 引数として渡すことで、アクションまたはコントローラーにポリシーを適用できます (たとえば、\[Authorize(Policy="EmployeesOnly")\])。ポリシーは、これらの例に示すように 1 つだけでなく複数の要件を持つことができます。
 
-前の例では、AddPolicy の最初の呼び出しは、ロールによって承認する方法でもです。 場合\[Authorize(Policy="AdministratorsOnly")\]管理者ロールのユーザーがアクセスできる専用の API に適用されます。
+前の例では、AddPolicy の最初の呼び出しは、ロールによる承認の代替の方法です。 \[Authorize(Policy="AdministratorsOnly")\] が API に適用される場合、Administrator ロールのユーザーのみがアクセスできます。
 
-2 番目の AddPolicy 呼び出しでは、特定のクレームが存在する必要がありますを必要とする簡単な方法を示します。 RequireClaim メソッドは、また、必要に応じて、クレームの予期される値を受け取ります。 値を指定する場合、ユーザーがある両方の正しい種類のクレームと、指定された値のいずれかの場合にのみこの要件を満たします。 JWT ベアラ認証ミドルウェアを使用している場合、すべての JWT プロパティはユーザーの信頼性情報として使用可能になります。
+2 番目の AddPolicy の呼び出しは、特定の要求をユーザーに提示することをユーザーに義務付けるための簡単な方法を示しています。 RequireClaim メソッドは、また、必要に応じて、要求の予期される値を受け取ります。 値を指定する場合、ユーザーが正しい種類の要求と、指定された値のいずれかの両方を持っている場合にのみこの要件を満たします。 JWT ベアラ認証ミドルウェアを使用している場合、すべての JWT プロパティはユーザーの要求として使用可能になります。
 
-ここで示すように、最も注目すべきポリシーは、3 番目の AddPolicy メソッドではカスタム承認要件を使用しているためです。 カスタム承認要件を使用すると、承認を実行する方法を細かく制御が大幅に向上ことができます。 これを行うには、これらの型を実装する必要があります。
+ここで示す最も注目すべきポリシーは、カスタム承認要件を使用している 3 番目の AddPolicy メソッドです。 カスタム承認要件を使用すると、承認を実行する方法を細かく制御することができます。 これを機能させるには、次の種類を実装する必要があります。
 
--   IAuthorizationRequirement から派生して、要件の詳細を指定するフィールドを格納している必要条件の種類。 例では、これは、サンプル MinimumAgeRequirement タイプの時効フィールドです。
+-   IAuthorizationRequirement から派生し、要件の詳細を指定するフィールドを格納している要件の種類。 例では、これはサンプル MinimumAgeRequirement タイプの年齢フィールドです。
 
--   AuthorizationHandler を実装するハンドラー&lt;T&gt;ここで T は、ハンドラーが満たすことができる IAuthorizationRequirement の型。 ハンドラーには、ユーザーに関する情報を格納している指定されたコンテキストが要件を満たすかどうかをチェックする HandleRequirementAsync メソッドを実装する必要があります。
+-   AuthorizationHandler&lt;T&gt; を実装するハンドラー。T は、ハンドラーが満たすことができる IAuthorizationRequirement の種類です。 このハンドラーは、ユーザーに関する情報を格納している指定されたコンテキストが要件を満たすかどうかをチェックする HandleRequirementAsync メソッドを実装する必要があります。
 
-場合は、ユーザーは、コンテキストへの呼び出しの要件を満たしています。成功は、ユーザーを承認することを示すです。 複数の方法で、ユーザーが承認要件を満たすことがありますがある場合は、複数のハンドラーを作成することができます。
+ユーザーが要件を満たす場合、context.Succeed への呼び出しが、ユーザーを承認されていることを示します。 ユーザーが承認要件を満たす方法が複数ある場合、複数のハンドラーを作成することができます。
 
-カスタム ポリシーの要件を AddPolicy 呼び出しに登録すると、に加えて必要もあります (サービス依存関係の挿入を使用してカスタム要求ハンドラーを登録します。AddTransient&lt;IAuthorizationHandler、MinimumAgeHandler&gt;())。
+カスタム ポリシーの要件の AddPolicy 呼び出しへの登録に加えて、依存関係の挿入を使用してカスタム要件ハンドラーも登録する必要があります (services.AddTransient&lt;IAuthorizationHandler, MinimumAgeHandler&gt;())。
 
-カスタム承認要件と、ユーザーの年齢を (DateOfBirth クレームに基づく) をチェックするためのハンドラーの例は、ASP.NET Core で使用できる[承認ドキュメント](https://docs.asp.net/en/latest/security/authorization/policies.html)です。
+カスタム承認要件およびユーザーの年齢 (DateOfBirth 要求に基づく) をチェックするハンドラーの例については、ASP.NET Core [承認ドキュメント](https://docs.asp.net/en/latest/security/authorization/policies.html)を参照してください。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
@@ -122,14 +125,14 @@ services.AddAuthorization(options =>
 -   **ASP.NET Core 承認**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/introduction*](https://docs.microsoft.com/aspnet/core/security/authorization/introduction)
 
--   **ロール ベースの承認**
+-   **ロールベースの承認**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/roles*](https://docs.microsoft.com/aspnet/core/security/authorization/roles)
 
--   **カスタムのポリシー ベースの承認**
+-   **カスタム ポリシーベースの承認**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/policies*](https://docs.microsoft.com/aspnet/core/security/authorization/policies)
 
 
 
 
 >[!div class="step-by-step"]
-[前](index.md) [次へ] (開発者向けのアプリのシークレット-storage.md)
+[Previous] (index.md) [Next] (developer-app-secrets-storage.md)

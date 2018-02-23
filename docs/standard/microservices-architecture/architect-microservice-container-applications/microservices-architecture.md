@@ -1,6 +1,6 @@
 ---
 title: "マイクロサービス アーキテクチャ"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Microservices アーキテクチャ"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービス アーキテクチャ"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,62 +8,65 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 5ede1f0ad19270ca6b7556ff1bb7e4cf8ccf7cbe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 453f8a22157eee9601f2586d49d872d90634bb61
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="microservices-architecture"></a>マイクロサービス アーキテクチャ
 
-名前からわかるように、microservices アーキテクチャは、一連の小さなサービスとしてのサーバー アプリケーションを構築する方法です。 各サービスが、独自のプロセスで実行され、HTTP、HTTPS、Websocket などのプロトコルを使用して他のプロセスと通信するか、 [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol)です。 各マイクロ サービスは、特定のエンド ツー エンドのドメインまたは特定のコンテキストの境界内でのビジネス機能を実装および各自律的に開発する必要があります個別に配置されます。 最後に、各マイクロ サービスでは、その関連するドメインのデータ モデルと別のデータ記憶域テクノロジ (SQL、NoSQL) と異なるプログラミング言語に基づくドメイン ロジック (に対しておよび分散データ管理) を所有する必要があります。
+名前が示すように、マイクロサービス アーキテクチャは、一連の小さなサービスとしてサーバー アプリケーションを構築するアプローチです。 各サービスは独自のプロセスで実行され、HTTP/HTTPS、WebSockets、[AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) などのプロトコルを使用して他のプロセスと通信します。 各マイクロサービスは、特定のコンテキスト境界内で特定のエンドツーエンドのドメインまたはビジネス機能を実装します。個々のマイクロサービスを自律的に開発し、独立して展開可能にする必要があります。 最後に、さまざまなデータ ストレージ テクノロジ (SQL、NoSQL) とさまざまなプログラミング言語に基づいて、各マイクロサービスは関連するドメイン データ モデルとドメイン ロジック (主権と分散データ管理) を所有する必要があります。
 
-どのようなサイズ、マイクロ サービスべきでしょうか。 マイクロ サービスを開発するときに、サイズは、重要なポイントにすることはできません。 代わりに、重要な点は、疎を作成するにはサービスを開発、配置、および各サービスのスケールの自律性があるように結合する必要があります。 もちろんとを識別する microservices を設計、、ようにできるだけ小さくとその他の microservices が多すぎます直接的な依存関係があるない限り、しようとする必要があります。 ほど重要、マイクロ サービスのサイズは必要があります内部凝集度とその他のサービスから独立します。
+マイクロサービスはどのくらいのサイズにすべきでしょうか。 マイクロサービスを開発する場合、サイズは重要なポイントではありません。 その代わり、弱く結合されたサービスを作成して、サービスごとに開発、展開、およびスケールの自律性を持たせることが重要です。 当然ながら、マイクロサービスを特定して設計する場合は、他のマイクロサービスとの直接の依存関係が多くなりすぎない限り、できるだけマイクロサービスを小さくするようにします。 マイクロサービスのサイズよりも重要な点は、必要な内部の凝集度と、他のサービスからの独立性です。
 
-なぜ microservices アーキテクチャしますか? つまり、長期的な機敏性を提供します。 Microservices は、細かいおよび自律的なライフ サイクルがあるとは別に配置可能なサービスの多くに基づくアプリケーションを作成することで複雑な大規模な拡張性の高いシステムで保守性の向上を有効にします。
+マイクロサービス アーキテクチャを選ぶ理由は何でしょうか。 短く説明すると、長期的な機敏性を実現するためです。 マイクロサービスを使用すると、個々が細かい自律的なライフサイクルを持つ、多数の独立して展開可能なサービスに基づいてアプリケーションを作成できるので、複雑で大規模で高度にスケーラブルなシステムの保守性を向上することができます。
 
-追加のメリットとして microservices ことができますを個別に拡張します。 単位としてスケール アウトする必要がありますを単一のモノリシックなアプリケーションはなく、代わりにスケール アウトできます microservices を特定します。 このようにより多くの処理電源やネットワーク帯域幅のスケール アウトを拡張する必要がないアプリケーションの他の領域ではなく、要求をサポートするために必要な機能領域だけを拡張できます。 コストの節約は、ハードウェアが必要なのでを意味します。
+また、個別にスケールアウトできることもマイクロサービスのメリットです。 1 つのモノリシックなアプリケーションを 1 ユニットとしてスケールアウトするのではなく、特定のマイクロサービスをスケールアウトできます。 その結果、需要に応えるために多くの処理能力やネットワーク帯域幅を必要とする機能領域だけをスケールアウトでき、スケールアウトする必要のない機能領域までスケールアウトすることはありません。 つまり、必要なハードウェア数が少ないため、コストを削減できます。
 
 ![](./media/image6.png)
 
-**図 4. ~ 6.**です。 モノリシックな展開と microservices アプローチ
+**図 4-6** モノリシック展開とマイクロサービス アプローチ
 
-図 4 ~ 6 に示す microservices アプローチで複雑な大規模なおよびスケーラブルなアプリケーションの特定、小さな領域を変更できるためアジャイル変更し、各マイクロ サービスの迅速な反復処理ができます。
+図 4-6 に示すように、マイクロサービス アプローチを使用すると、複雑で大規模でスケーラブルなアプリケーションの特定の小さな領域を変更できるため、各マイクロサービスの柔軟な変更と迅速な繰り返しが可能になります。
 
-粒度の細かい microservices ベースのアプリケーションで有効に継続的インテグレーションと継続的配信のプラクティスを構築します。 また、アプリケーションに新しい関数の配信も向上します。 アプリケーションの粒度の細かいコンポジションを実行し、分離で microservices をテストして、それらの間のクリアのコントラクトを維持しながら自律的に進化させることができます。 インターフェイスまたはコントラクトを変更しない限り、任意のマイクロ サービスの内部実装を変更したりその他の microservices を分断することがなく新しい機能を追加できます。
+細かいマイクロサービスベースのアプリケーションを設計することで、継続的な統合と継続的な配信方法を実現できます。 また、短期間でアプリケーションに新しい関数を配信できるようになります。 細かいアプリケーションの構成にすることで、マイクロサービスを単独で実行してテストし、マイクロサービス間の明確なコントラクトを維持しながら自律的に進化させることもできます。 インターフェイスまたはコントラクトを変更しない限り、任意のマイクロサービスの内部実装を変更することや、他のマイクロサービスを中断することなく新機能を追加することができます。
 
-Microservices ベースのシステムで実稼働に移行の成功を有効にする重要な側面を次に示します。
+マイクロサービスベースのシステムを含む実稼働環境への移行を成功させるには、次の点が重要です。
 
--   サービスとインフラストラクチャの監視および正常性チェックします。
+-   サービスとインフラストラクチャの監視と正常性検査。
 
--   (つまり、クラウド、orchestrators) サービスのスケーラブルなインフラストラクチャです。
+-   サービス (つまり、クラウドとオーケストレーター) のスケーラブルなインフラストラクチャ。
 
--   セキュリティの設計と実装を複数のレベルで: 認証、承認、機密情報の管理、セキュリティで保護された通信などです。
+-   複数レベルのセキュリティ設計と実装: 認証、承認、シークレット管理、セキュリティで保護された通信など。
 
--   通常はチームごとに異なる microservices に焦点を当てたと共にアプリケーションの迅速な配信します。
+-   高速なアプリケーション配信。通常は、チームによって異なるマイクロサービスに集中します。
 
--   DevOps と CI/CD のプラクティスおよびインフラストラクチャです。
+-   DevOps および CI/CD のプラクティスとインフラストラクチャ。
 
-、これらの最初の 3 つのみが対象か、このガイドで導入されました。 最後の 2 つのポイントは、アプリケーションのライフ サイクルに関連する、については、「その他[Microsoft プラットフォームとツールと Docker アプリケーションのライフ サイクルのコンテナー](https://aka.ms/dockerlifecycleebook)電子書籍します。
+このガイドでは最初の 3 つのみを扱い、紹介しています。 アプリケーションのライフサイクルに関連する残り 2 つの点については、「[Containerized Docker Application Lifecycle with Microsoft Platform and Tools](https://aka.ms/dockerlifecycleebook)」(Microsoft プラットフォームとツールを使用してコンテナー化された Docker アプリケーションのライフサイクル) の電子書籍を参照してください。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Mark Russinovich です。Microservices: アプリケーション revolution クラウドから電力を得て**
+-   **Mark Russinovich。マイクロサービス: クラウド原動力にするアプリケーション革命**
     [*https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/*](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/)
 
--   **Martin Fowler。Microservices**
+-   **Martin Fowler。マイクロサービス**
     [*http://www.martinfowler.com/articles/microservices.html*](http://www.martinfowler.com/articles/microservices.html)
 
--   **Martin Fowler。マイクロ サービスの前提条件**
+-   **Martin Fowler。マイクロサービスの前提条件**
     [*http://martinfowler.com/bliki/MicroservicePrerequisites.html*](http://martinfowler.com/bliki/MicroservicePrerequisites.html)
 
--   **Jimmy Nilsson。チャンクのクラウド コンピューティング**
+-   **Jimmy Nilsson。チャンク クラウド コンピューティング**
     [*https://www.infoq.com/articles/CCC-Jimmy-Nilsson*](https://www.infoq.com/articles/CCC-Jimmy-Nilsson)
 
--   **Cesar de la Torre。Microsoft プラットフォームとツールのアプリケーションのライフ サイクルの Docker のコンテナー** (ダウンロード可能な電子書籍) [ *https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+-   **Cesar de la Torre。Microsoft のプラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な電子ブック) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
 
 
 
 >[!div class="step-by-step"]
-[前](サービス-指向-architecture.md) [次へ] (データ-に対して-あたり-microservice.md)
+[Previous] (service-oriented-architecture.md) [Next] (data-sovereignty-per-microservice.md)

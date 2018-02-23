@@ -1,28 +1,33 @@
 ---
-title: "列挙型ではなく列挙型クラスを使用します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |列挙型ではなく列挙型クラスを使用します。"
+title: "列挙型ではなく列挙型クラスを使用する"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 列挙型ではなく列挙型クラスを使用する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 1745198720fd12a9d26aab2d2afb2c5dd6b6b49d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4b190ee9dde5628bf16fe9c483d3636539c29361
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="using-enumeration-classes-instead-of-enum-types"></a>列挙型ではなく列挙型クラスを使用します。
+# <a name="using-enumeration-classes-instead-of-enum-types"></a>列挙型ではなく列挙型クラスを使用する
 
-[列挙体](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)(*列挙型*を短い) は整数型のラッパー シン言語。 閉じられた一連の値から 1 つの値を格納する場合に、使用を制限する可能性があります。 性別 (たとえば、male, female、不明な)、またはサイズ (S、M、L、XL) に基づく分類は、良い例です。 制御フローまたはより堅牢な抽象化の列挙型を使用することができます、[コードの匂い](http://deviq.com/code-smells/)です。 この種類の使用状況は、多くの制御フロー ステートメントの列挙型の値のチェックで脆弱なコードにつながります。
+[列挙型](../../../../docs/csharp/language-reference/keywords/enum.md) (省略形も同じ *列挙型*) は、整数型を包む薄い言語ラッパーです。 閉じた値のセットから 1 つの値を格納するときに、列挙型の使用を制限することができます。 性別 (男性、女性、不明など) やサイズ (小、中、大) に基づく分類は良い例です。 制御フローまたはより堅牢な抽象化のために列挙型を使用すると、[コードの臭い](http://deviq.com/code-smells/)になることがあります。 このような用法は、列挙型の値を検査する多くの制御フロー ステートメントでは脆弱なコードにつながります。
 
-代わりに、オブジェクト指向言語のすべての機能豊富な機能を有効にする列挙型クラスを作成できます。 ただし、これは重大な問題ではありません多くの場合、わかりやすくするため、することができますもを使用して標準列挙型、基本設定である場合。
+代わりに、オブジェクト指向言語の豊富な機能をすべて使用できる列挙型クラスを作成する方法があります。
 
-## <a name="implementing-enumeration-classes"></a>列挙型クラスの実装
+ただし、これは重要な話題ではなく、多くの場合は、好みに応じてわかりやすくするために通常の[列挙型](../../../../docs/csharp/language-reference/keywords/enum.md)を使用することができます。
 
-EShopOnContainers で順序付けマイクロ サービスは、次の例で示すようにサンプル列挙基本クラスの実装を示します。
+## <a name="implementing-an-enumeration-base-class"></a>列挙型基底クラスの実装
+
+eShopOnContainers 内の注文マイクロサービスは、次の例のように、列挙型基底クラスの実装サンプルを提供しています。
 
 ```csharp
 public abstract class Enumeration : IComparable
@@ -83,7 +88,7 @@ public abstract class Enumeration : IComparable
 }
 ```
 
-このクラスは、次の CardType 列挙型クラスに関する、エンティティまたは値オブジェクト内の型として使用できます。
+次の CardType 列挙型クラスと同様に、このクラスを任意のエンティティまたは値オブジェクトの型として使用できます。
 
 ```csharp
 public class CardType : Enumeration
@@ -99,7 +104,6 @@ public class CardType : Enumeration
     {
     }
 
-
     public static IEnumerable<CardType> List()
     {
         return new[] { Amex, Visa, MasterCard };
@@ -110,23 +114,23 @@ public class CardType : Enumeration
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **列挙型の evil-更新**
+-   **列挙型は悪 — 更新**
     [*http://www.planetgeek.ch/2009/07/01/enums-are-evil/*](http://www.planetgeek.ch/2009/07/01/enums-are-evil/)
 
--   **Daniel Hardman です。列挙型マップする方法病気 — これを解決する方法と**
+-   **Daniel Hardman。列挙型で広がる病気 — そしてその治療方法**
     [*https://codecraft.co/2012/10/29/how-enums-spread-disease-and-how-to-cure-it/*](https://codecraft.co/2012/10/29/how-enums-spread-disease-and-how-to-cure-it/)
 
--   **Jimmy Bogard。列挙クラス**
+-   **Jimmy Bogard。列挙型クラス**
     [*https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/*](https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/)
 
--   **Steve Smith です。C# での Enum 代替**
+-   **Steve Smith。C# の列挙型の代替**
     [*http://ardalis.com/enum-alternatives-in-c*](http://ardalis.com/enum-alternatives-in-c)
 
--   **Enumeration.cs です。** 基本 eShopOnContainers で列挙型クラス[ *https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs*](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs)
+-   **Enumeration.cs。** eShopOnContainers の基底列挙型クラス[*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs*](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs)
 
--   **CardType.cs**です。 EShopOnContainers サンプル列挙型クラス。
+-   **CardType.cs**。 eShopOnContainers のサンプル列挙型クラス。
     [*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs*](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs)
 
 
 >[!div class="step-by-step"]
-[前](実装の値-objects.md) [次へ] (ドメインのモデルのレイヤー-validations.md)
+[Previous] (implement-value-objects.md) [Next] (domain-model-layer-validations.md)

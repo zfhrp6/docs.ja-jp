@@ -1,36 +1,39 @@
 ---
-title: "永続化インフラストラクチャとして NoSQL データベースを使用します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |永続化インフラストラクチャとして NoSQL データベースを使用します。"
+title: "永続インフラストラクチャとして NoSQL データベースを使用する"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 永続インフラストラクチャとして NoSQL データベースを使用する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: e4b63511069b89cc5761ce7ed64f09e9035a56a3
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9cb9cc231396f9de5fba0e04d1671865ea645873
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="using-nosql-databases-as-a-persistence-infrastructure"></a>永続化インフラストラクチャとして NoSQL データベースを使用します。
+# <a name="using-nosql-databases-as-a-persistence-infrastructure"></a>永続インフラストラクチャとして NoSQL データベースを使用する
 
-インフラストラクチャと、データ層の NoSQL データベースを使用するときに通常使用しない、ORM Entity Framework Core と同様にします。 代わりに、Azure Cosmos DB、MongoDB、Cassandra、RavenDB、CouchDB、または Azure ストレージ テーブルなどの NoSQL エンジンによって提供される API を使用します。
+インフラストラクチャ データ層に NoSQL データベースを使用する場合、通常は Entity Framework Core のような ORM は使用しません。 代わりに、Azure Cosmos DB、MongoDB、Cassandra、RavenDB、CouchDB、または Azure Storage Table などの NoSQL エンジンによって提供される API を使用します。
 
-ただし、NoSQL データベース、特に、ドキュメント指向データベース Azure Cosmos DB、CouchDB、RavenDB などを使用するときに DDD 集計でモデルを設計する方法に似ていますが部分的にどのようにできますで行うこと EF コアの id に関連集計ルート、子エンティティ クラス、および値オブジェクトのクラスです。 ただし、最終的には、データベースの選択が影響を与える、設計にあります。
+ただし、NoSQL データベース、特にドキュメント指向データベース (Azure Cosmos DB、CouchDB、RavenDB など) を使用する場合、集計ルート、子エンティティ クラス、および値オブジェクト クラスに関しては、DDD 集計を使用してモデルを設計する方法は、EF Core での方法と部分的に似ています。 しかし、最終的には、データベースの選択が設計に影響を与えます。
 
-ドキュメント指向データベースを使用する場合は、JSON または別の形式でシリアル化された 1 つのドキュメントとして集計を実装します。 ただし、データベースの使用は、ドメイン モデルのコードの観点からは透過的です。 NoSQL データベースを使用する場合も使用しているエンティティ クラスと、集計のルート クラスが、ために EF コアを使用する、ときよりも高い柔軟性を永続化はリレーショナルありません。
+ドキュメント指向データベースを使用する場合は、JSON または別の形式でシリアル化された 1 つのドキュメントとして集計を実装します。 ただし、データベースの使用は、ドメイン モデルのコードの観点からは透過的です。 NoSQL データベースを使用する場合も、エンティティ クラスと集計ルート クラスを引き続き使用しますが、永続化がリレーショナルではないため、EF Core を使用するときよりも高い柔軟性が得られます。
 
-そのモデルを永続化する方法が違います。 POCO エンティティ クラスに基づく、ドメイン モデルを実装する場合、インフラストラクチャの永続性に依存しない、可能性がありますように見えます。 NoSQL にリレーショナルからでも、別の永続化インフラストラクチャに移動する可能性があります。 ただし、目的のできませんをする必要があります。 常に、異なるデータベース内の制約をプッシュする元に戻すのモデルが同じにできないリレーショナルまたは NoSQL データベース。 永続化モデルの変更はできません、単純なトランザクションと永続化操作が非常に異なるため。
+違いは、そのモデルを永続化する方法にあります。 インフラストラクチャの永続性に依存しない、POCO エンティティ クラスに基づいてドメイン モデルを実装した場合、リレーショナルから NoSQL に移行しても、別の永続化インフラストラクチャに移行したように見える場合があります。 しかし、これを目標とはしないでください。 異なるデータベースに常にある制約によって元に戻されるため、リレーショナルまたは NoSQL データベースに同じモデルを持つことはできません。 永続化モデルの変更は、トランザクションと永続化の操作がかなり異なるため、簡単にいかない場合があります。
 
-たとえば、ドキュメント指向のデータベースが、集計のルートを持つ複数の子コレクション プロパティの。 リレーショナル データベースの複数の子コレクション プロパティのクエリは、共用体のすべての SQL ステートメントを戻す EF から取得するためです。 リレーショナル データベースまたは NoSQL データベースを同じドメイン モデルを持つことは簡単ではありませんしようとしてする必要がありますいないこと。 実際をそれぞれ特定のデータベースで使用するデータを移動する方法の概要と、モデルを設計する必要があるとします。
+たとえば、ドキュメント指向のデータベースでは、複数の子コレクション プロパティを持つためにルートを集計することができます。 リレーショナル データベースでは、複数の子コレクション プロパティをクエリ実行すると、UNION ALL SQL ステートメントが EF から返されるため、大変なことになります。 リレーショナル データベースと NoSQL データベースに対して同じドメイン モデルを持つのは単純なことではないので、行わないでください。 データがそれぞれ特定のデータベースでどのように使用されるかを理解したうえで、モデルを設計する必要があります。
 
-NoSQL データベースを使用する場合の利点は、エンティティより非正規化テーブルのマッピングを設定しないためです。 ドメイン モデルをリレーショナル データベースを使用する場合よりも柔軟に指定できます。
+NoSQL データベースを使用する場合の利点は、エンティティがより非正規化されるため、テーブル マッピングを設定しなくてもよい点です。 リレーショナル データベースを使用するときよりも、ドメイン モデルに柔軟性を持たせることができます。
 
-集計に基づいてドメイン モデルをデザインすると、NoSQL への移動とドキュメント指向データベースがあります、リレーショナル データベースを使用するよりも簡単にデザインする集計と似ています、ドキュメント指向データベース内のドキュメントをシリアル化されます。 その集計に必要なすべての情報を「バッグ」に含めるとことができます。
+集計に基づいてドメイン モデルを設計すると、NoSQL とドキュメント指向データベースへの移行が、リレーショナル データベースを使用するよりもさらに簡単になる場合があります。これは、設計する集計が、ドキュメント指向データベース内のシリアル化されたドキュメントと似ているからです。 その後、これらの "バッグ" にその集計に必要なすべての情報を含めることができます。
 
-たとえば、次の JSON コードは、ドキュメント指向データベースを使用するときに、順序集計のサンプル実装です。 下にある EF コアを使用せずに eShopOnContainers サンプルを実装しましたの集計の順序に似ています。
+たとえば、次の JSON コードは、ドキュメント指向データベースを使用するときの、注文集計のサンプル実装です。 これは、eShopOnContainers サンプルで実装した注文集計と似ていますが、下に EF Core を使用していません。
 
 ```json
 {
@@ -55,15 +58,21 @@ NoSQL データベースを使用する場合の利点は、エンティティ�
 }
 ```
 
-C を使用すると\#Cosmos DB、Azure SDK、集計のようなものによって使用される集計を実装するモデルは、C のような\#POCO クラス EF コアと共に使用します。 次のコードのように、アプリケーションとインフラストラクチャのレイヤーからそれらを使用するための方法が違います。
+## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Azure Cosmos DB とネイティブ Cosmos DB API の概要
+
+[Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) は、ミッション クリティカルなアプリケーションのために、世界各地に分散された Microsoft のデータベース サービスです。 Azure Cosmos DB では、[ターン キー グローバル配布](https://docs.microsoft.com/en-us/azure/cosmos-db/distribute-data-globally)、世界規模での[スループットとストレージのエラスティック スケーリング](https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data)、99 パーセンタイルで 10 ミリ秒未満の待機時間、[5 つの明確に定義された整合性レベル](https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels)、および保証された高可用性を提供しており、これらすべてが[業界トップの SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/) でサポートされています。 Azure Cosmos DB により、[データが自動的にインデックス付けされる](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)ため、スキーマとインデックスの管理に対処する必要がなくなります。 これはマルチモデルで、ドキュメント、キー値、グラフ、および列指向データ モデルをサポートします。
+
+![](./media/image19.1.png)図 9-19 Azure Cosmos DB のグローバル配布
+
+C\# モデルを使用して Azure Cosmos DB API で使用される集計を実装すると、集計が EF Core で使用される C\# POCO クラスと同じようになる場合があります。 違いは、次のコードのように、それらをアプリケーション層とインフラストラクチャ層から使用する方法にあります。
 
 ```csharp
-// C# EXAMPLE OF AN ORDER AGGREGATE BEING PERSISTED WITH DOCUMENTDB API
+// C# EXAMPLE OF AN ORDER AGGREGATE BEING PERSISTED WITH AZURE COSMOS DB API
 // *** Domain Model Code ***
 // Aggregate: Create an Order object with its child entities and/or value objects.
 // Then, use AggregateRoot’s methods to add the nested objects so invariants and
 // logic is consistent across the nested properties (value objects and entities).
-// This can be saved as JSON as is without converting into rows/columns.
+
 Order orderAggregate = new Order
 {
     Id = "2017001",
@@ -82,6 +91,7 @@ Address address = new Address
 }
 
 orderAggregate.UpdateAddress(address);
+
 OrderItem orderItem1 = new OrderItem
 {
     Id = 20170011,
@@ -92,22 +102,11 @@ OrderItem orderItem1 = new OrderItem
     Discount = 0;
 };
 
-OrderItem orderItem2 = new OrderItem
-{
-    Id = 20170012,
-    ProductId = "123457",
-    ProductName = ".NET Mug",
-    UnitPrice = 15,
-    Units = 1,
-    Discount = 0;
-};
-
 //Using methods with domain logic within the entity. No anemic-domain model
 orderAggregate.AddOrderItem(orderItem1);
 orderAggregate.AddOrderItem(orderItem2);
-
 // *** End of Domain Model Code ***
-//...
+
 // *** Infrastructure Code using Cosmos DB Client API ***
 Uri collectionUri = UriFactory.CreateDocumentCollectionUri(databaseName,
     collectionName);
@@ -120,21 +119,221 @@ Order2 newOrder = GetOrderV2Sample("IdForSalesOrder2");
 await client.CreateDocumentAsync(collectionUri, newOrder);
 ```
 
-ドメイン モデルを操作する方法をインフラストラクチャは、EF ときに、ドメイン モデル レイヤーで使用するのと同様にできることを確認できます。 でも、集計ルートと同じメソッドを使用するには、インバリアント、し、集計内での検証では、整合性を確認します。
+ドメイン モデルを操作する方法が、インフラストラクチャが EF のときにドメイン モデル レイヤーで使用するのと同様の方法になる可能性があることがわかります。 集計内の整合性、インバリアント、および検証を確認するため、同じ集計ルート メソッドを引き続き使用します。
 
-ただし、ときに永続化する、モデル、NoSQL データベース、コードと EF コア コードと比較して大幅に API の変更またはリレーショナル データベースに関連するその他のコードにします。
+ただし、モデルを NoSQL データベースに永続化する場合は、EF Core コードやリレーショナル データベースに関連するその他のコードと比べて、コードと API は劇的に変わります。
+
+## <a name="implementing-net-code-targeting-mongodb-and-azure-cosmos-db"></a>MongoDB と Azure Cosmos DB をターゲットとする .NET コードを実装する
+
+### <a name="using-azure-cosmos-db-from-net-containers"></a>.NET コンテナーから Azure Cosmos DB を使用する
+
+他の .NET アプリケーションからアクセスする場合と同じように、コンテナーで実行されている .NET コードから Azure Cosmos DB データベースにアクセスできます。 たとえば、eShopOnContainers の Locations.API と Marketing.API のマイクロサービスは、Azure Cosmos DB データベースを使用できるように実装されています。
+
+ただし、Docker 開発環境の観点から、Azure Cosmos DB には制限があります。 2017 年末時点では、ローカルの開発マシン (PC など) で実行できるオンプレミスの [Azure Cosmos DB エミュレーター](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)がある場合でも、Linux ではなく、Windows がサポートされます。 
+
+また、このエミュレーターを Docker で実行する可能性がありますが、Windows コンテナーのみでり、Linux コンテナーではありません。 現在、Docker for Windows に Linux コンテナーと Windows コンテナーを同時に展開することはできないため、アプリケーションを Linux コンテナーとして展開する場合、これが開発環境にとって最初のハンディキャップとなります。 展開されるすべてのコンテナーは、Linux または Windows 用のどちらかにする必要があります。  
+
+開発およびテスト ソリューションにとって理想的でより簡単な展開は、開発およびテスト環境に常に整合性を持たせるために、データベース システムをカスタム コンテナーと共にコンテナーとして展開できることです。
+
+### <a name="use-mongodb-api-for-local-devtest-linuxwindows-containers-plus-azure-cosmos-db"></a>Linux/Windows コンテナーと Azure Cosmos DB のローカル開発/テストに MongoDB API を使用する
+
+Cosmos DB データベースでは、.NET とネイティブ MongoDB ワイヤ プロトコルのために MongoDB API をサポートしています。 つまり、既存のドライバーを使用することで、図 9-20 に示すように、MongoDB 用に記述されたアプリケーションで Cosmos DB と通信し、MongoDB データベースの代わりに Cosmos DB データベースを使用できるようになります。
+
+![](./media/image19.2.png) 図 9-20 MongoDB API とプロトコルを使用して Azure Cosmos DB にアクセスする
+
+[MongoDB Docker イメージ](https://hub.docker.com/r/_/mongo/)は、Docker Linux コンテナーと Docker Windows コンテナーをサポートするマルチアーキテクチャ イメージなので、これは Linux コンテナーを使用する Docker 環境での概念実証にとって非常に便利な方法です。
+
+図 9-21 に示すように、MongoDB API を使用することで、eShopOnContainers でローカル開発環境に対して MongoDB Linux コンテナーと Windows コンテナーの両方がサポートされますが、その後、[MongoDB の接続文字列を Azure Cosmos DB をポイントするように変更](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)するだけで、Azure Cosmos DB と同じようなスケーラブルな PaaS クラウド ソリューションに移行できます。 
+
+![](./media/image20-bis.png) 図 9-21 開発環境に MongoDB コンテナーまたは運用に Azure Cosmos DB を使用する eShopOnContainers
+
+実稼働の Azure Cosmos DB は、PaaS およびスケーラブルなサービスとして Azure のクラウドで実行されます。
+
+.NET Core のカスタム コンテナーは、(Windows 10 コンピューターで Docker for Windows を使用して) ローカルの Docker の開発用ホストで実行することも、Azure AKS または Azure Service Fabric での Kubernetes のように、運用環境に展開することもできます。 この 2 つ目の環境では、稼働中のデータを処理するため、クラウド内で Azure Cosmos DB を使用しているため、.NET Core のカスタム コンテナーのみを展開し、MongoDB コンテナーは展開しません。
+
+MongoDB API を使用することの明らかな利点は、MongoDB と Azure Cosmos DB の両方のデータベース エンジンでソリューションを実行できるため、異なる環境への移行が容易になることです。 ただし、特定のデータベース エンジンの機能をフル活用するために、ネイティブ API (ネイティブ Cosmos DB API) を使用することには意義がある場合があります。
+
+単純に MongoDB を使用することとクラウドでの Cosmos DB との詳しい比較については、[Azure Cosmos DB を使用する利点に関するページ](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)を参照してください。 
+
+
+### <a name="analyze-your-approach-for-production-applications-mongodb-api-vs-cosmos-db-api"></a>実稼働アプリケーションのアプローチを分析する: MongoDB API とCosmos DB API
+
+Microsoft の優先度が根本的に Azure Cosmos DB でも動作する NoSQL データベースを使用して一貫性のある開発/テスト環境を持つことだったため、eShopOnContainers では MongoDB API を使用しています。
+
+ただし、MongoDB API を使用して、実稼働アプリケーションの Azure で Azure Cosmos DB にアクセスするように計画している場合は、ネイティブ Azure Cosmos DB API を使用した場合と比較して、MongoDB API を使用して Azure Cosmos DB データベースにアクセスした場合の機能とパフォーマンスの違いを分析する必要があります。 同様の場合は、MongoDB API を使用でき、同時に 2 つの NoSQL データベース エンジンをサポートするという利点が得られます。 
+
+また、[MongoDB Azure Service](https://www.mongodb.com/scale/mongodb-azure-service) を使用して、MongoDB クラスターを Azure のクラウドで運用データベースとして使用することもできます。 ただしこれは、Microsoft が提供している PaaS サービスではありません。 このケースでは、Azure は MongoDB からのそのソリューションをホスティングしているだけです。
+
+基本的にこれは、Azure Cosmos DB に対して MongoDB API を常に使用しないように記述している単なる免責事項です。eShopOnContainers ではそのようにしましたが、Linux コンテナーにとってはそれが便利な選択だったからです。 決定は、特定のニーズと、実稼働アプリケーションに対して行う必要があるテストに基づいて行う必要があります。  
+
+### <a name="the-code-using-mongodb-api-in-net-core-applications"></a>コード: .NET Core アプリケーションで MongoDB API を使用する
+
+.NET の MongoDB API は、図 9-22 で示されている Locations.API のような、プロジェクトに追加する必要がある NuGet パッケージに基づいています。
+
+![](./media/image21-bis.png) 図 9-22 .NET Core プロジェクト内の MongoDB API NuGet パッケージの参照
+
+次のセクションでは、コードを調査しましょう。
+
+#### <a name="a-model-used-by-mongodb-api"></a>MongoDB API によって使用されるモデル
+
+最初に、データベースから取得したデータをアプリケーションのメモリ領域で保持するモデルを定義する必要があります。 eShopOnContainers で Locations に使用するモデルの例を次に示します。
+
+```csharp
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver.GeoJsonObjectModel;
+using System.Collections.Generic;
+
+public class Locations
+{
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
+    public int LocationId { get; set; }
+    public string Code { get; set; }
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Parent_Id { get; set; }
+    public string Description { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
+    public GeoJsonPoint<GeoJson2DGeographicCoordinates> Location 
+                                                             { get; private set; }
+    public GeoJsonPolygon<GeoJson2DGeographicCoordinates> Polygon 
+                                                             { get; private set; }
+    public void SetLocation(double lon, double lat) => SetPosition(lon, lat);
+    public void SetArea(List<GeoJson2DGeographicCoordinates> coordinatesList) 
+                                                    => SetPolygon(coordinatesList);
+
+    private void SetPosition(double lon, double lat)
+    {
+        Latitude = lat;
+        Longitude = lon;
+        Location = new GeoJsonPoint<GeoJson2DGeographicCoordinates>(
+            new GeoJson2DGeographicCoordinates(lon, lat));
+    }
+
+    private void SetPolygon(List<GeoJson2DGeographicCoordinates> coordinatesList)
+    {
+        Polygon = new GeoJsonPolygon<GeoJson2DGeographicCoordinates>(
+                  new GeoJsonPolygonCoordinates<GeoJson2DGeographicCoordinates>(
+                  new GeoJsonLinearRingCoordinates<GeoJson2DGeographicCoordinates>(
+                                                                 coordinatesList)));
+    }
+}
+```
+
+MongoDB NuGet パッケージから取得されるいくつかの属性と型があることがわかります。
+
+NoSQL データベースは、通常、非リレーショナルの階層データを操作するのに非常に適しています。 この例では、`GeoJson2DGeographicCoordinates` のように、特に地理上の位置のために作成された MongoDB 型を使用しています。
+
+#### <a name="retrieve-the-database-and-the-collection"></a>データベースとコレクションを取得する
+
+eShopOnContainers では、次のコードのように、コードを実装してデータベースと MongoCollections を取得する、カスタムのデータベース コンテキストを作成しました。
+
+```csharp
+public class LocationsContext
+{
+    private readonly IMongoDatabase _database = null;
+
+    public LocationsContext(IOptions<LocationSettings> settings)
+    {
+        var client = new MongoClient(settings.Value.ConnectionString);
+        if (client != null)
+            _database = client.GetDatabase(settings.Value.Database);
+    }
+
+    public IMongoCollection<Locations> Locations
+    {
+        get
+        {
+            return _database.GetCollection<Locations>("Locations");
+        }
+    }       
+}
+```
+
+#### <a name="retrieve-the-data"></a>データを取得する
+
+C# コードでは、Web API コントローラーやカスタム リポジトリの実装のように、MongoDB API からクエリを実行するときに、次のようなコードを記述できます。 `_context` オブジェクトは以前の `LocationsContext` クラスのインスタンスであることに注意してください。
+
+```csharp
+public async Task<Locations> GetAsync(int locationId)
+{
+    var filter = Builders<Locations>.Filter.Eq("LocationId", locationId);
+    return await _context.Locations
+                            .Find(filter)
+                            .FirstOrDefaultAsync();
+}
+```
+
+#### <a name="use-an-env-var-in-the-docker-composeoverrideyml-file-for-the-mongodb-connection-string"></a>MongoDB の接続文字列に対して docker-compose.override.yml ファイル内の環境変数を使用する
+
+MongoClient オブジェクトを作成するときには、正確に適切なデータベースをポイントしている `ConnectionString` パラメーターと同じ、基本的なパラメーターが必要です。 eShopOnContainers の場合、接続文字列はローカル MongoDB Docker コンテナーまたは "実稼働の" Azure Cosmos DB データベースをポイントすることができます。  次の yml コードにあるように、その接続文字列は、docker-compose または Visual Studio を使用して展開するときに使用される、`docker-compose.override.yml` ファイルで定義されている環境変数から取得されます。
+
+```yml
+# docker-compose.override.yml
+version: '3'
+services:
+  # Other services
+  locations.api:
+    environment:
+      # Other settings
+      - ConnectionString=${ESHOP_AZURE_COSMOSDB:-mongodb://nosql.data}
+
+```
+
+`ConnectionString` 環境変数はこの方法で解決されます: `ESHOP_AZURE_COSMOSDB` グローバル変数が Azure Cosmos DB 接続文字列を使用して `.env` ファイルで定義されている場合、そのグローバル変数を使用してクラウド内の Azure Cosmos DB データベースにアクセスします。 
+
+次のコードは、eShopOnContainers に実装されているように、Azure Cosmos DB グローバル環境変数を持つ `.env` ファイルを示しています。
+
+```yml
+# .env file, in eShopOnContainers root folder
+# Other Docker environment variables
+
+ESHOP_EXTERNAL_DNS_NAME_OR_IP=localhost
+ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
+
+#ESHOP_AZURE_COSMOSDB=<YourAzureCosmosDBConnData>
+
+#Other environment variables for additional Azure infrastructure assets
+#ESHOP_AZURE_REDIS_BASKET_DB=<YourAzureRedisBasketInfo>
+#ESHOP_AZURE_STORAGE_CATALOG_URL=<YourAzureStorage_Catalog_BLOB_URL>
+#ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
+```
+
+「[Azure Cosmos DB への MongoDB アプリケーションの接続](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)」で説明したように、ESHOP_AZURE_COSMOSDB 行をコメント解除し、Azure Portal から取得した Azure Cosmos DB 接続文字列を使用してそれを更新する必要があります。
+
+`ESHOP_AZURE_COSMOSDB` グローバル変数が空、つまり、`.env` ファイル内でコメント アウトされている場合、次の .yml コードに示されているように、`nosql.data` という名前の eShopOnContainers で展開されているローカルの MongoDB コンテナーをポイントする既定の MongoDB 接続文字列がコンテナーで使用されます。 
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **DocumentDB 内のデータをモデリング**
-    [*https://docs.microsoft.com/azure/documentdb/documentdb-modeling-data*](https://docs.microsoft.com/azure/documentdb/documentdb-modeling-data)
+-   **NoSQL データベースのドキュメント データのモデル化**
+    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
 
--   **Vaughn Vernon。理想的なドメインに基づくデザイン集計ストアしますか。** 
-     [ *https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
+-   **Vaughn Vernon。理想的なドメイン駆動設計集計ストアとは?**
+    [*https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
 
--   **永続化とらわれない for .NET イベント ストアです。** GitHub のリポジトリ。
-    [*https://github.com/NEventStore/NEventStore*](https://github.com/NEventStore/NEventStore)
+-   **Azure Cosmos DB の概要: MongoDB 用 API** 
+    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
+
+-   **Azure Cosmos DB: .NET と Azure Portal による MongoDB API Web アプリの構築** 
+    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
+
+-   **ローカルの開発とテストでの Azure Cosmos DB Emulator の使用** 
+    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
+
+-   **Azure Cosmos DB への MongoDB アプリケーションの接続** 
+    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
+
+-   **Cosmos DB エミュレーター Docker イメージ (Windows コンテナー)** 
+    [*https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/*](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
+
+-   **MongoDB Docker イメージ (Linux と Windows コンテナー)** 
+    [*https://hub.docker.com/r/_/mongo/*](https://hub.docker.com/r/_/mongo/)
+
+-   **Azure Cosmos DB: MongoDB API アカウントでの Studio 3T の使用** 
+    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef)
 
 
 >[!div class="step-by-step"]
-[前](infrastructure-persistence-layer-implemenation-entity-framework-core.md) [次へ] (microservice-application-layer-web-api-design.md)
+[前へ](infrastructure-persistence-layer-implemenation-entity-framework-core.md) [次へ] (microservice-application-layer-web-api-design.md)

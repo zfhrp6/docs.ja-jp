@@ -1,30 +1,35 @@
 ---
-title: "開発またはテスト環境の RabbitMQ と、イベント バスを実装します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |開発またはテスト環境の RabbitMQ と、イベント バスを実装します。"
+title: "開発環境またはテスト環境の RabbitMQ でイベント バスを実装する"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 開発環境またはテスト環境の RabbitMQ でイベント バスを実装する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: f58d355b6f5fd31a21791d3b072c77f70f90c387
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3505cb993c736165d4aff4ce8fad38cfa14ed417
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>開発またはテスト環境の RabbitMQ と、イベント バスを実装します。
+# <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>開発環境またはテスト環境の RabbitMQ でイベント バスを実装する
 
-EShopOnContainers アプリケーションなど、コンテナーで実行されている RabbitMQ に基づいて、カスタム イベント バスを作成する場合を使用することのみの開発およびテスト環境を言うことにより開始する必要があります。 必要がありますを使用しないこと、実稼働環境では、運用環境で service bus の一部として作成する場合を除き、します。 単純なカスタム イベント バスには、商用サービス バスには多くの運用環境で重要な機能が不足している可能性があります。
+eShopOnContainers アプリケーションの場合のようにコンテナーで実行される RabbitMQ に基づいてカスタム イベント バスを作成した場合、その使用は開発環境およびテスト環境に限定する必要があるということを述べることから始めます。 カスタム イベント バスについては、実働可能なサービス バスの一部として作成していない限り、運用環境で使用すべきではありません。 単純なカスタム イベント バスには、商用サービス バスが備えている重要な実働可能機能の多くが不足している可能性があります。
 
-イベント バスの eShopOnContainers のカスタム実装は、基本的に RabbitMQ API を使用してライブラリです。 実装では図 8-21 を示すように microservices イベントにサブスクライブする、イベントを発行、および、イベントを受け取ることができます。
+eShopOnContainers でのイベント バスのカスタム実装の 1 つは基本的には RabbitMQ API を使用するライブラリです (Azure Service Bus に基づく別の実装もあります)。 
+
+図 8-21 に示すように、RabbitMQ でのイベント バスの実装により、マイクロサービスはイベントのサブスクライブ、イベントの発行、およびイベントの受け取りを行うことができます。
 
 ![](./media/image22.png)
 
-**図 8-21 です。** イベント バスの RabbitMQ 実装
+**図 8-21** イベント バスの RabbitMQ 実装
 
-コードでは、EventBusRabbitMQ クラスは、ジェネリック IEventBus インターフェイスを実装します。 これは、この開発/テスト バージョンから実稼働バージョンに切り替えられるように、依存関係の挿入に基づいています。
+コードの中で、EventBusRabbitMQ クラスは汎用的な IEventBus インターフェイスを実装します。 これは、この開発/テスト バージョンから運用環境バージョンに切り替えられるように、依存関係挿入に基づいて行われます。
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -33,11 +38,11 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
     //...
 ```
 
-サンプル開発/テスト イベント バスの RabbitMQ 実装は、定型的なコードです。 RabbitMQ サーバーへの接続を処理し、キューにメッセージ イベントを公開するためのコードを提供する必要があるとします。 各イベントの種類です。 統合イベントのハンドラーのコレクションの辞書を実装する必要があるもこれらのイベント タイプには、図 8-21 を示すように別のインスタンス化し、各受信者のマイクロ サービスの各サブスクリプションを持つことができます。
+サンプルの開発/テスト イベント バスの RabbitMQ 実装は定型的なコードです。 これは、RabbitMQ サーバーへの接続を処理し、メッセージ イベントをキューに発行するためのコードを提供します。 また、イベントの種類ごとに統合イベント ハンドラーのコレクションから成る辞書を実装する必要があります。このようなイベントの種類では、図 8-21 に示すように、受信側のマイクロサービスごとに、インスタンス化したものが異なり、さまざまなサブスクリプションが存在する場合があります。
 
-## <a name="implementing-a-simple-publish-method-with-rabbitmq"></a>RabbitMQ を持つメソッドを公開する単純なを実装します。
+## <a name="implementing-a-simple-publish-method-with-rabbitmq"></a>RabbitMQ で単純な発行方法を実装する
 
-次のコードは通常必要はありませんの機能強化を行っている場合を除き、そのコードを記述するための RabbitMQ の eShopOnContainers イベント バス実装の一部です。 コード接続と RabbitMQ へのチャネルを取得するには、メッセージが作成およびキューにメッセージを公開します。
+次のコードは RabbitMQ 用の簡略化されたイベント バスの実装です。eShopOnContainers の[実際のコード](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs)では機能が強化されます。 通常、機能強化を行うのでなければ、このコードを変更する必要はありません。 このコードでは、RabbitMQ への接続とチャネルを取得し、メッセージを作成し、キューにメッセージを発行します。
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -65,45 +70,51 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 }
 ```
 
-[実際のコード](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs)eShopOnContainers アプリケーション内のメソッドの向上を使用して、publish、[ポリー](https://github.com/App-vNext/Polly)再試行ポリシーで、RabbitMQ コンテナーがある場合は、数時間にタスクを再試行準備ができていません。 これは、発生時の docker 構成を開始して、コンテナーたとえば、RabbitMQ コンテナーはまず他のコンテナーより緩やかに変化します。
+eShopOnContainers アプリケーションの Publish メソッドの[実際のコード](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs)は、[Polly](https://github.com/App-vNext/Polly) 再試行ポリシーで機能強化されています。このポリシーでは、RabbitMQ コンテナーが準備完了状態にない場合にタスクが特定の回数試行されます。 これは docker-compose がコンテナーを開始する場合に発生する可能性があります。たとえば、RabbitMQ コンテナーは他のコンテナーより緩やかに開始します。
 
-前述のようがある RabbitMQ で利用可能な多くの構成のためこのコードを開発およびテスト環境にのみ使用する必要があります。
+前述したように、RabbitMQ には可能な構成が多数存在するため、このコードは開発環境およびテスト環境でのみの使用に限定する必要があります。
 
-## <a name="implementing-the-subscription-code-with-the-rabbitmq-api"></a>サブスクリプションを RabbitMQ API を使用してコードを実装します。
+## <a name="implementing-the-subscription-code-with-the-rabbitmq-api"></a>RabbitMQ API でサブスクリプション コードを実装する
 
-発行コードと同様、次のコードは、RabbitMQ のイベントのバス実装の一部の簡素化。 もう一度、する通常必要はありませんを向上させている場合を除き、これを変更します。
+発行コードの場合と同様に、次のコードも RabbitMQ 用のイベント バス実装の一部を簡略化したものです。 繰り返しますが、機能強化を行うのでなければ、これを変更する必要はありません。
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
 {
     // Member objects and other methods ...
     // ...
-    public void Subscribe<T>(IIntegrationEventHandler<T> handler)
+
+    public void Subscribe<T, TH>()
         where T : IntegrationEvent
+        where TH : IIntegrationEventHandler<T>
     {
-        var eventName = typeof(T).Name;
-        if (_handlers.ContainsKey(eventName))
+        var eventName = _subsManager.GetEventKey<T>();
+        
+        var containsKey = _subsManager.HasSubscriptionsForEvent(eventName);
+        if (!containsKey)
         {
-            _handlers[eventName].Add(handler);
+            if (!_persistentConnection.IsConnected)
+            {
+                _persistentConnection.TryConnect();
+            }
+
+            using (var channel = _persistentConnection.CreateModel())
+            {
+                channel.QueueBind(queue: _queueName,
+                                    exchange: BROKER_NAME,
+                                    routingKey: eventName);
+            }
         }
-        else
-        {
-            var channel = GetChannel();
-            channel.QueueBind(queue: _queueName,
-                exchange: _brokerName,
-                routingKey: eventName);
-            _handlers.Add(eventName, new List<IIntegrationEventHandler>());
-            _handlers[eventName].Add(handler);
-            _eventTypes.Add(typeof(T));
-        }
+
+        _subsManager.AddSubscription<T, TH>();
     }
 }
 ```
 
-各イベントの種類が、関連チャネル RabbitMQ からイベントを取得します。 必要に応じて、チャネルとイベントの種類ごとに多数のイベント ハンドラー、ことができます。
+各種のイベントには、RabbitMQ からイベントを取得ための関連チャネルがあります。 チャネルとイベントの種類ごとにイベント ハンドラーを必要な数だけ使用することができます。
 
-Subscribe メソッドは、現在マイクロ サービスのコールバック メソッドのようには、IIntegrationEventHandler オブジェクト、およびその関連 IntegrationEvent オブジェクトを受け入れます。 コードは、クライアント マイクロ サービスごとに各統合イベントの種類が持つことができるイベント ハンドラーの一覧にし、そのイベント ハンドラーを追加します。 クライアント コードがイベントに既にサブスクライブされていない場合、コードは、そのイベントがその他のサービスから発行されたときに RabbitMQ プッシュ スタイルでイベントを受信できるように、イベントの種類のチャネルを作成します。
+Subscribe メソッドは IIntegrationEventHandler オブジェクト (現在のマイクロサービスでのコールバック メソッドに似ている) に加えて、それに関連する IntegrationEvent オブジェクトを受け入れます。 コードは次にそのイベント ハンドラーを、各種の統合イベントがクライアント マイクロサービスごとに保持できるイベント ハンドラーの一覧に追加します。 クライアント コードがまだサブスクライブしていないイベントがある場合、コードは該当するイベントの種類に対してチャネルを作成します。これにより、そのイベントが他のサービスから発行されたときに RabbitMQ からプッシュ スタイルでイベントを受け取ることができます。
 
 
 >[!div class="step-by-step"]
-[前](統合-イベント-ベースのマイクロ サービス-communications.md) [次へ] (サブスクライブ events.md)
+[Previous] (integration-event-based-microservice-communications.md) [Next] (subscribe-events.md)

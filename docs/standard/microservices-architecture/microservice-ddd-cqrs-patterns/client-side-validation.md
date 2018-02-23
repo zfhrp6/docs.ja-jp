@@ -1,6 +1,6 @@
 ---
 title: "クライアント側の検証 (プレゼンテーション層での検証)"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |クライアント側の検証 (プレゼンテーション層での検証)"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | クライアント側の検証 (プレゼンテーション層での検証)"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,64 +8,67 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: db88a3b5c95afdc8d5a20094105f1f5991483ed6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 273aa0a8ceb7f683999f1074faae0a6aa303f9be
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>クライアント側の検証 (プレゼンテーション層での検証)
 
-実際のソースは、ドメイン モデルと、最終的にする必要があります検証ドメイン モデル レベルで場合でも検証は、ドメイン モデル レベル (サーバー側) と、クライアント側の両方でまだ処理できます。
+実際のソースがドメイン モデルで、最終的にドメイン モデル レベルで検証が必要な場合でも、検証はドメイン モデル レベル (サーバー側) とクライアント側の両方で処理できます。
 
-クライアント側の検証は、ユーザーにとって非常に便利です。 保存されますがそれ以外の場合に費やす時間のラウンド トリップを待つ妥当性確認エラーを返す可能性のあるサーバーです。 ビジネス用語では、何百もの時間を乗算した値の秒の小数部をもいくつかは、多数の時間、経費、およびストレスへ追加します。 簡単かつ迅速検証より効率的に作業しより優れた品質の入力し、出力を生成することができます。
+クライアント側の検証は、ユーザーにとって非常に便利です。 他の方法では、検証エラーが返される可能性のあるサーバーへのラウンド トリップを待つために必要な時間を節約できます。 ビジネス的に表現すると、1 回だけ見ればわずかな時間でも、それが毎日何百回も積み重なると、膨大な時間、費用、フラストレーションになります。 簡単かつ迅速な検証は、ユーザーの作業をいっそう効率的にし、入力と出力の品質が向上します。
 
-ビュー モデルとドメイン モデルが異なる場合と同様ビュー モデルの検証およびドメイン モデル可能性がありますのようになりますが、別の目的に使用します。 問題がある場合はドライ (しないことを繰り返さない原則)、ここではコードの再利用には、結合が可能性がありますもと、エンタープライズ アプリケーションにすることがより重要いないドライの原則に従うにより、クライアント側に、サーバー側を結合することを検討してください。
+ビュー モデルとドメイン モデルが異なる場合と同様に、ビュー モデルの検証とドメイン モデルの検証は似ていても目的は異なる場合があります。 DRY (Don’t Repeat Yourself) の原則を念頭に置いている場合は、コードの再利用はカップリングを意味することもある点を考慮してください。エンタープライズ アプリケーションでは、DRY 原則に従うよりも、サーバー側とクライアント側をカップリングしないことの方が重要です。
 
-でもクライアント側の検証を使用する場合必要があります常にまたは検証すること、コマンドをサーバー Api が可能な攻撃ベクトルであるために、サーバー コードで dtos の使用を入力します。 通常は、両方を行って、最善の方法のためプロアクティブでき、ユーザーが無効な情報を入力することをお勧め UX の観点からのクライアント アプリケーションがある場合です。
+クライアント側の検証を使用する場合でも、サーバー API が攻撃ベクトルになる可能性があるため、サーバー コードに含まれるコマンドまたは入力 DTO を常に検証する必要があります。 通常、両方を実行するのが最善の方法です。なぜなら、クライアント アプリケーションがある場合、UX の観点から、事前対応型にして、ユーザーに無効な情報を入力させない方法が最善のためです。
 
-そのため、クライアント側のコードで通常を検証する、ViewModels です。 クライアントを検証することもできます。 サービスに送信する前に、dtos の使用またはコマンドを出力します。
+したがって、通常、クライアント側のコードでは ViewModel を検証します。 サービスに送信する前に、クライアントの出力 DTO またはコマンドを検証することもできます。
 
-クライアント側の検証の実装は、構築してクライアント アプリケーションの種類によって異なります。 .NET では、JavaScript または TypeScript でコーディングされていることの検証で SPA web アプリケーション コードのほとんどで web MVC web アプリケーションでデータを検証している場合は別になりますまたはモバイル アプリを Xamarin と C# でコード化された\#です。
+クライアント側の検証の実装は、構築するクライアント アプリケーションの種類によって変わります。 実装は、検証対象のデータが、ほとんどのコードが .NET の Web MVC Web アプリケーションか、検証が JavaScript または TypeScript でコーディングされている SPA Web アプリケーションか、Xamarin と C\# でコーディングされているモバイル アプリかによって変わります。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
-### <a name="validation-in-xamarin-mobile-apps"></a>Xamarin のモバイル アプリでの検証
+### <a name="validation-in-xamarin-mobile-apps"></a>Xamarin モバイル アプリの検証
 
--   **テキストを入力し、エラーの表示の検証**
-    [*https://developer.xamarin.com/recipes/ios/standard\_コントロール]、[テキスト\_フィールド/検証\_入力/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
+-   **テキスト入力の検証とエラーの表示**
+    [*https://developer.xamarin.com/recipes/ios/standard\_controls/text\_field/validate\_input/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
 
 -   **検証コールバック**
     [*https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/*](https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/)
 
-### <a name="validation-in-aspnet-core-apps"></a>ASP.NET Core アプリでの検証
+### <a name="validation-in-aspnet-core-apps"></a>ASP.NET Core アプリの検証
 
 -   **Rick Anderson の 検証の追加**
     [*https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation*](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation)
 
-### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>SPA での検証の Web アプリ (角度 2、TypeScript では、JavaScript)
+### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>SPA Web アプリの検証 (Angular 2、TypeScript、JavaScript)
 
--   **Ado Kukic です。Angular 2 フォーム検証** **
-     ** [ *https://scotch.io/tutorials/angular-2-form-validation*](https://scotch.io/tutorials/angular-2-form-validation)
+-   **Ado Kukic。Angular 2 フォームの検証** **
+    **[*https://scotch.io/tutorials/angular-2-form-validation*](https://scotch.io/tutorials/angular-2-form-validation)
 
--   **検証をフォーム**
+-   **フォームの検証**
     [*https://angular.io/docs/ts/latest/cookbook/form-validation.html*](https://angular.io/docs/ts/latest/cookbook/form-validation.html)
 
--   **検証します。** ドキュメントをとても簡単です。
+-   **検証。** Breeze ドキュメント。
     [*http://breeze.github.io/doc-js/validation.html*](http://breeze.github.io/doc-js/validation.html)
 
-概要、これらは、検証において最も重要な概念を示します。
+要約すると、検証に関する最も重要な概念は次のとおりです。
 
--   エンティティと集計を独自の整合性を適用し、「常に有効な」します。 集計のルートは、同じ集計内で複数のエンティティの整合性を担当します。
+-   エンティティと集計は、独自の一貫性を強制し、"常に有効" である必要があります。 集計ルートが、同じ集計内の複数エンティティの一貫性を担います。
 
--   エンティティが無効な状態を入力する必要があると思われる場合は、別のオブジェクト モデルを使用することを検討してください: 最後のドメイン エンティティを作成するまでに、一時 DTO をなどを使用します。
+-   エンティティで無効な状態を入力する必要があると考えられる場合は、最終的なドメイン エンティティを作成するまで一時的な DTO を使用するなど、別のオブジェクト モデルの使用を検討してください。
 
--   する場合に、集計など、いくつかの関連オブジェクトを作成する必要があり、のみ有効なそれらのすべてを作成した後、ファクトリ パターンの使用を検討してください。
+-   集計などの複数の関連オブジェクトを作成する必要があり、すべてのオブジェクトが作成された後にのみ有効になる場合は、ファクトリ パターンの使用を検討してください。
 
--   検証フレームワークは最も多く使用プレゼンテーション層またはアプリケーション/サービス レイヤーなど、特定のレイヤーで通常ではなく、ドメイン モデル レイヤー、インフラストラクチャ フレームワークで強力な依存関係を実行する必要があるためです。
+-   検証フレームワークは、プレゼンテーション レイヤーやアプリケーション/サービス レイヤーなどの特定のレイヤーで最もよく使用されますが、インフラストラクチャ フレームワークに強く依存する必要があるため、通常はドメイン モデル レイヤーでは使用されません。
 
--   ほとんどの場合である冗長検証、クライアント側では、適切なアプリケーションを事前に指定できます。
+-   ほとんどの場合、クライアント側で冗長な検証を行うことをお勧めします。これは、アプリケーションを事前対応型にすることができるためです。
 
 
 >[!div class="step-by-step"]
-[前](ドメインのモデルのレイヤー-validations.md) [次へ] (ドメインのイベントの設計の implementation.md)
+[Previous] (domain-model-layer-validations.md) [Next] (domain-events-design-implementation.md)
