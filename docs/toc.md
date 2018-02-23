@@ -265,6 +265,7 @@
 ## [C# に関するトピック](csharp/how-to/index.md)
 ### [方法: `String.Split` を使用して文字列を解析する](csharp/how-to/parse-strings-using-split.md)
 ### [文字列を連結する方法](csharp/how-to/concatenate-multiple-strings.md)
+### [方法 文字列を DateTime に変換する](standard/base-types/parsing-datetime.md)
 <!-- End of C# Concepts section -->
 ## [.NET Compiler Platform SDK (Roslyn API)](csharp/roslyn-sdk/)
 ## [C# プログラミング ガイド](csharp/programming-guide/)
