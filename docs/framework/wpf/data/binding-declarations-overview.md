@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-caps.latest.revision: "34"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2fc90769b1524ec93fd3df6a9b8be3eb28de8195
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 615b92d264b91ab5b267d5e79ab829b8afa489cd
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="binding-declarations-overview"></a>バインディング宣言の概要
 このトピックでは、バインディングを宣言するさまざまな方法について説明します。  
@@ -51,7 +53,7 @@ ms.lasthandoff: 12/22/2017
   
  マークアップでバインディング宣言文字列を作成する場合、この文字列はターゲット オブジェクトの特定の依存関係プロパティにアタッチする必要があります。 次の例は、バインドする方法を示しています、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>プロパティを指定することをバインド拡張機能を使用して、<xref:System.Windows.Data.Binding.Source%2A>と<xref:System.Windows.Data.Binding.Path%2A>プロパティです。  
   
- [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ [!code-xaml[SimpleBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#L37-L37)]  
   
  ほとんどのプロパティを指定することができます、<xref:System.Windows.Data.Binding>クラスのこのようにします。 バインディング拡張は、の一覧の場合と同様の詳細については<xref:System.Windows.Data.Binding>バインド拡張機能を使用して設定することはできませんのプロパティを参照してください、[バインディング マークアップ拡張](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)の概要です。  
   
@@ -69,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="MBandPB"></a>   
 ### <a name="multibinding-and-prioritybinding"></a>MultiBinding と PriorityBinding  
- <xref:System.Windows.Data.MultiBinding>および<xref:System.Windows.Data.PriorityBinding>XAML 拡張構文をサポートしていません。 宣言する場合はオブジェクト要素の構文を使用する必要がありますそのため、<xref:System.Windows.Data.MultiBinding>または<xref:System.Windows.Data.PriorityBinding>XAML でします。  
+ <xref:System.Windows.Data.MultiBinding> および<xref:System.Windows.Data.PriorityBinding>XAML 拡張構文をサポートしていません。 宣言する場合はオブジェクト要素の構文を使用する必要がありますそのため、<xref:System.Windows.Data.MultiBinding>または<xref:System.Windows.Data.PriorityBinding>XAML でします。  
   
 <a name="BindinginCode"></a>   
 ## <a name="creating-a-binding-in-code"></a>コードでバインディングを作成する方法  
@@ -77,8 +79,6 @@ ms.lasthandoff: 12/22/2017
   
  [!code-csharp[BindConversion#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
  [!code-vb[BindConversion#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
-[!code-csharp[BindConversion#end1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#end1)]
-[!code-vb[BindConversion#end1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#end1)]  
   
  バインドするオブジェクトがある場合、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>呼び出すことができます、`SetBinding`メソッドを使用せずに直接オブジェクトを<xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>です。 例については、「[Create a Binding in Code](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)」を参照してください。  
   

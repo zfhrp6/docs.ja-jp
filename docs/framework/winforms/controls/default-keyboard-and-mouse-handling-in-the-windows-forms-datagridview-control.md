@@ -1,12 +1,9 @@
 ---
-title: "Windows フォーム DataGridView コントロールの既定のキーボード処理とマウス処理"
-ms.custom: 
-ms.date: 03/30/2017
+title: "既定のキーボードとマウスの Windows フォームの DataGridView コントロールでの処理"
+ms.date: 02/13/2018
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-winforms
 ms.topic: article
 helpviewer_keywords:
 - data grids [Windows Forms], mouse handling
@@ -17,18 +14,19 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], mouse handling
 - navigation keys [Windows Forms], DataGridView control
 ms.assetid: 4519b928-bfc8-4e8b-bb9c-b1e76a0ca552
-caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 627784f3d68ddf03f1f6c94975405dded3163c06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 29e8afaefd35951288a4d8f5e5df2e3b5fbc4356
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
-# <a name="default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールの既定のキーボード処理とマウス処理
+# <a name="default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control"></a>既定のキーボードとマウスの Windows フォームの DataGridView コントロールでの処理
+
 次の表とユーザーの対話方法について説明する、<xref:System.Windows.Forms.DataGridView>キーボードとマウスを制御します。  
   
 > [!NOTE]
@@ -56,7 +54,8 @@ ms.lasthandoff: 12/22/2017
 |CTRL + HOME|コントロール内の最初のセルにフォーカスを移動します。|  
 |CTRL キーを押しながら END キー|コントロール内の最後のセルにフォーカスを移動します。|  
 |CTRL + ページ上/下|PAGE down キーまたはページの上と同じです。|  
-|F2|場合、セルの編集モードに現在のセルを挿入、<xref:System.Windows.Forms.DataGridView.EditMode%2A>プロパティの値が<xref:System.Windows.Forms.DataGridViewEditMode.EditOnF2>または<xref:System.Windows.Forms.DataGridViewEditMode.EditOnKeystrokeOrF2>です。|  
+|F2|場合、セルの編集モードに現在のセルを挿入、<xref:System.Windows.Forms.DataGridView.EditMode%2A>プロパティの値が<xref:System.Windows.Forms.DataGridViewEditMode.EditOnF2>または<xref:System.Windows.Forms.DataGridViewEditMode.EditOnKeystrokeOrF2>です。|
+|F3|場合は、現在の列を並べ替え、<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>プロパティの値が<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>です。 現在の列ヘッダーをクリックした場合と同じです。 .NET Framework 4.7.2 以降で使用可能です。 この機能を有効にするには、は、アプリケーションは .NET Framework 4.7.2 またはそれ以降のバージョンを対象とまたは AppContext スイッチを使用してユーザー補助機能強化を明示的に選択する必要があります。|  
 |F4|現在のセルがある場合、<xref:System.Windows.Forms.DataGridViewComboBoxCell>セルが編集モードに、ドロップダウン リストが表示されます。|  
 |ALT キーを押しながら上/下方向|現在のセルがある場合、<xref:System.Windows.Forms.DataGridViewComboBoxCell>セルが編集モードに、ドロップダウン リストが表示されます。|  
 |Space|現在のセルがある場合、 <xref:System.Windows.Forms.DataGridViewButtonCell>、 <xref:System.Windows.Forms.DataGridViewLinkCell>、または<xref:System.Windows.Forms.DataGridViewCheckBoxCell>を生成、<xref:System.Windows.Forms.DataGridView.CellClick>と<xref:System.Windows.Forms.DataGridView.CellContentClick>イベント。 現在のセルがある場合、 <xref:System.Windows.Forms.DataGridViewButtonCell>、また、ボタンを押します。 現在のセルがある場合、<xref:System.Windows.Forms.DataGridViewCheckBoxCell>もチェックの状態を変更します。|  
@@ -67,7 +66,8 @@ ms.lasthandoff: 12/22/2017
 |Ctrl + Enter|現在のセルにフォーカスを移動せず変更をコミットします。 コントロールが編集または仮想モードをサポートするデータ ソースにバインドされている場合は、現在の行への変更が実装されてコミット行レベルのコミットのスコープ。|  
 |Ctrl + 0|入力した、<xref:System.DBNull.Value?displayProperty=nameWithType>セルを編集する場合は、現在のセルに値します。 既定では、表示の値を<xref:System.DBNull>セル値がの値、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewCellStyle>現在のセルに対して有効です。|  
   
-### <a name="selection-keys"></a>選択キー  
+### <a name="selection-keys"></a>選択キー
+
  場合、<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>プロパティに設定されている`false`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>、新しいセルに、選択範囲を変更するナビゲーション キーを使用して、現在のセルを変更します。 Shift キーを押し、CTRL、ALT の各キーは、この動作は影響しません。  
   
  場合、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>、同じ動作が発生したが、次の項目を追加します。  
@@ -83,9 +83,9 @@ ms.lasthandoff: 12/22/2017
   
  場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`true`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>、アンカー セルと現在のセルの動作は同じですが、完全行や列だけになる選択または選択解除しました。  
   
-## <a name="default-mouse-handling"></a>既定のマウス処理  
+## <a name="default-mouse-handling"></a>既定のマウス処理
   
-### <a name="basic-mouse-handling"></a>基本的なマウス処理  
+### <a name="basic-mouse-handling"></a>基本的なマウス処理
   
 > [!NOTE]
 >  マウスの左ボタンを含むセルをクリックすると、常に現在のセルを変更します。 マウスの右ボタンを含むセルをクリックすると 1 つが利用可能なときに、ショートカット メニューが開きます。  
@@ -97,7 +97,8 @@ ms.lasthandoff: 12/22/2017
 |マウスの左ボタンをクリックします。|発生させる、<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataGridView.CellMouseClick?displayProperty=nameWithType>イベント|  
 |マウスの左ボタンを押す、および列ヘッダー セルにドラッグ|場合、<xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType>プロパティは`true`の新しい場所に削除できるように、列を移動します。|  
   
-### <a name="mouse-selection"></a>マウスの選択  
+### <a name="mouse-selection"></a>マウスの選択
+
  選択の動作は、マウスの中央ボタンやマウス ホイールを関連付けではありません。  
   
  場合、<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>プロパティに設定されている`false`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>、次の動作が発生します。  
@@ -121,6 +122,7 @@ ms.lasthandoff: 12/22/2017
   
  場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`true`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>そののみ完全行を除くと同様の動作、SHIFT または CTRL を押しながら、セルをクリックすると、および列には影響します。  
   
-## <a name="see-also"></a>参照  
- <xref:System.Windows.Forms.DataGridView>  
+## <a name="see-also"></a>関連項目
+
+<xref:System.Windows.Forms.DataGridView>  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

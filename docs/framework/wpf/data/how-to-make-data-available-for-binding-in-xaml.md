@@ -1,11 +1,12 @@
 ---
 title: "方法 : XAML でデータをバインディング可能にする"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 01/29/2018
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -15,37 +16,33 @@ helpviewer_keywords:
 - data binding [WPF], making data available for binding
 - binding data [WPF], making data available for
 ms.assetid: 7103c2e8-0e31-4a13-bf12-ca382221a8d5
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0c342f0d635a9220a88a2af79c76e2c1580dee2f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4f4e8e785b246e191ae8052f676331ea116b8c0d
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="how-to-make-data-available-for-binding-in-xaml"></a>方法 : XAML でデータをバインディング可能にする
 このトピックで使用できるようにデータのバインドでさまざまな方法について説明します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]アプリケーションのニーズに応じて、します。  
   
 ## <a name="example"></a>例  
- ある場合、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]オブジェクトにバインドするには[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、使用できるように、オブジェクトのバインディングでは、リソースとして定義し、1 つの方法、`x:Key`です。 次の例で必要がある、`Person`という名前の文字列プロパティを持つオブジェクト`PersonName`です。 `Person`オブジェクトがという名前空間で定義されている`SDKSample`です。  
+ ある場合、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]オブジェクトにバインドするには[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、使用できるように、オブジェクトのバインディングでは、リソースとして定義し、1 つの方法、`x:Key`です。 次の例で必要がある、`Person`という名前の文字列プロパティを持つオブジェクト`PersonName`です。 `Person`強調表示されたを含む行で示されているオブジェクト、`<src>`と呼ばれる、名前空間に要素が定義されている`SDKSample`です。  
   
- [!code-xaml[SimpleBinding#Instantiation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#instantiation)]  
-[!code-xaml[SimpleBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#2)]  
+ [!code-xaml[SimpleBinding#Instantiation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml?highlight=9,37)]  
   
- 内のオブジェクトにバインドすることができますし、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の次の例に示すようにします。  
+ バインドできます、<xref:System.Windows.Controls.TextBlock>コントロール内のオブジェクトを[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]で強調表示された行が含まれています、`<TextBlock>`要素に示します。 
   
- [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ また、使用することができます、<xref:System.Windows.Data.ObjectDataProvider>次の例のように、クラス。  
   
- また、使用することができます、<xref:System.Windows.Data.ObjectDataProvider>クラスは、次の例のようにします。  
+ [!code-xaml[ObjectDataProvider}](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Page1.xaml?highlight=10-14,42)]  
   
- [!code-xaml[SimpleBinding#ODPCP](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Page1.xaml#odpcp)]  
-  
- バインディングを定義すると同じ方法。  
-  
- [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ バインディングを定義する、強調表示された行を含むと同じよう、`<TextBlock>`要素に示します。  
   
  結果では、この例では、同じ: がある、<xref:System.Windows.Controls.TextBlock>テキスト コンテンツ付き`Joe`します。 ただし、<xref:System.Windows.Data.ObjectDataProvider>クラス、メソッドの結果にバインドする機能などの機能を提供します。 使用することができます、<xref:System.Windows.Data.ObjectDataProvider>クラスの場合は、機能を提供する必要があります。  
   

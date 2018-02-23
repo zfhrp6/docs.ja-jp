@@ -5,29 +5,32 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: authentication [WCF], specifying the identity of a service
+helpviewer_keywords:
+- authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b741e421a8773e1a4b2d2ab7da5e119073e861ed
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 579f41a213564dd18dae719a14170100903efd92
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="service-identity-and-authentication"></a>サービス ID と認証
 サービスの*エンドポイント id*サービス Web サービス記述言語 (WSDL) から生成された値です。 この値は、すべてのクライアントに反映され、サービスの認証に使用されます。 クライアントがエンドポイントとの通信を開始し、サービスがクライアントに対して認証を行った後に、クライアントは、エンドポイント ID 値とエンドポイントの認証プロセスから返された実際の値を比較します。 この 2 つの値が一致した場合、クライアントは要求したサービス エンドポイントに接続していることを確認できます。 これは、関数は、保護として*フィッシング*クライアントが悪意のあるサービスによってホストされているエンドポイントにリダイレクトされるようにすることで。  
   
- Id 設定を示すサンプル アプリケーションを参照してください。[サービス Id サンプル](../../../../docs/framework/wcf/samples/service-identity-sample.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]エンドポイントとエンドポイント アドレスを参照してください。[アドレス](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)です。  
+ Id 設定を示すサンプル アプリケーションを参照してください。[サービス Id サンプル](../../../../docs/framework/wcf/samples/service-identity-sample.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] エンドポイントとエンドポイント アドレスを参照してください。[アドレス](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)です。  
   
 > [!NOTE]
 >  認証に NTLM (NT LanMan) を使用する場合、NTLM ではクライアントがサーバーを認証できないため、サービス ID はチェックされません。 NTLM はコンピューターが Windows ワークグループの一部である場合、または Kerberos 認証をサポートしていない古いバージョンの Windows が実行されている場合に使用されます。  
@@ -45,22 +48,22 @@ ms.lasthandoff: 12/22/2017
  <xref:System.ServiceModel.EndpointAddress.Identity%2A> クラスの <xref:System.ServiceModel.EndpointAddress> プロパティは、クライアントによって呼び出されるサービスの ID を表します。 サービスはこの <xref:System.ServiceModel.EndpointAddress.Identity%2A> をサービスのメタデータ内に公開します。 クライアントの開発者が実行されるとき、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス エンドポイントに対して生成された構成がサービスの値を含む<xref:System.ServiceModel.EndpointAddress.Identity%2A>プロパティです。 (セキュリティが構成されている場合) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは、サービスが指定された ID を所有しているかどうかを検査します。  
   
 > [!IMPORTANT]
->  メタデータには、サービスに要求される ID が含まれています。したがって、安全な方法 (サービスの HTTPS エンドポイントを作成するなど) でサービス メタデータを公開することをお勧めします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: メタデータ エンドポイントをセキュリティで保護された](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)です。  
+>  メタデータには、サービスに要求される ID が含まれています。したがって、安全な方法 (サービスの HTTPS エンドポイントを作成するなど) でサービス メタデータを公開することをお勧めします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法: メタデータ エンドポイントをセキュリティで保護された](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)です。  
   
 ## <a name="identity-types"></a>ID の種類  
- サービスが提供できる ID は 5 種類あります。 ID の各種類は、構成内の `<identity>` 要素に含めることのできる要素に対応します。 使用する ID の種類は、シナリオとサービスのセキュリティ要件によって異なります。 ID の各種類の説明を次の表に示します。  
+ サービスは、id の 6 つの種類を提供できます。 ID の各種類は、構成内の `<identity>` 要素に含めることのできる要素に対応します。 使用する ID の種類は、シナリオとサービスのセキュリティ要件によって異なります。 ID の各種類の説明を次の表に示します。  
   
 |ID の種類|説明|一般的なシナリオ|  
 |-------------------|-----------------|----------------------|  
 |ドメイン ネーム システム (DNS)|この要素は X.509 証明書または Windows アカウントと一緒に使用します。 資格情報に指定されている DNS 名とこの要素で指定されている値とが比較されます。|DNS チェックを行うことにより、DNS 名またはサブジェクト名を含む証明書を使用できます。 同じ DNS 名またはサブジェクト名を使用して証明書が再発行された場合、ID 検査は引き続き有効になります。 証明書を再発行すると、新しい RSA キーが取得されますが、同じ DNS 名またはサブジェクト名が保持されます。 つまり、クライアントはサービスの ID 情報を更新する必要がありません。|  
-|証明書。 `ClientCredentialType` が Certificate に設定されている場合の既定値です。|この要素は、クライアントと比較するための Base64 でエンコードされた X.509 証明書の値を指定します。<br /><br /> サービスを認証するときの資格情報として [!INCLUDE[infocard](../../../../includes/infocard-md.md)] を使用する場合にも、この要素が使用されます。|この要素は、証明書の拇印の値に基づいて、認証を 1 つの証明書に制限します。 拇印の値は一意であるため、この制限によってより厳密な認証が可能になります。 同じサブジェクト名を使用して証明書が再発行された場合、証明書には新しい拇印が含まれることになるので注意が必要です。 つまり、新しい拇印が認識されていない場合、クライアントはサービスを検証できなくなります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]証明書の拇印を検索するを参照してください[する方法: 証明書のサムプリントを取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)です。|  
+|証明書。 `ClientCredentialType` が Certificate に設定されている場合の既定値です。|この要素は、クライアントと比較するための Base64 でエンコードされた X.509 証明書の値を指定します。<br /><br /> サービスを認証するときの資格情報として [!INCLUDE[infocard](../../../../includes/infocard-md.md)] を使用する場合にも、この要素が使用されます。|この要素は、証明書の拇印の値に基づいて、認証を 1 つの証明書に制限します。 拇印の値は一意であるため、この制限によってより厳密な認証が可能になります。 同じサブジェクト名を使用して証明書が再発行された場合、証明書には新しい拇印が含まれることになるので注意が必要です。 つまり、新しい拇印が認識されていない場合、クライアントはサービスを検証できなくなります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 証明書の拇印を検索するを参照してください[する方法: 証明書のサムプリントを取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)です。|  
 |証明書参照|前述の証明書オプションと同じです。 ただし、この要素を使用すると、証明書の名前と証明書を取得するストアの場所を指定できます。|前述の証明書のシナリオと同じです。<br /><br /> 利点は、証明書ストアの場所を変更できることです。|  
 |RSA|この要素は、クライアントと比較するための RSA キーの値を指定します。 これは証明書オプションに似ていますが、証明書の拇印を使用するのではなく、証明書の RSA キーを使用します。|RSA チェックを行うと、証明書の RSA キーに基づいて、単一の証明書に基づく認証に明確に制限できます。 これにより、RSA キーが変更された場合に既存のクライアントでサービスが使用できなくなるのと引き換えに、特定の RSA キーをより厳しく認証できます。|  
 |ユーザー プリンシパル名 (UPN)。 `ClientCredentialType` が Windows に設定されており、サービス プロセスがシステム アカウントのいずれかで実行されていない場合の既定値です。|この要素は、サービスを実行中の UPN を指定します。 参照してください、Kerberos プロトコルと Id の[認証サービスの Id をオーバーライドする](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)です。|この設定では、サービスが特定の Windows ユーザー アカウントで実行されていることを確認します。 このユーザー アカウントは、現在ログオンしているユーザーである場合もあれば、特定のユーザー アカウントで実行されているサービスである場合もあります。<br /><br /> サービスが Active Directory 環境のドメイン アカウントで実行されている場合、この設定では Windows Kerberos セキュリティを利用します。|  
 |サービス プリンシパル名 (SPN)。 `ClientCredentialType` が Windows に設定されており、サービス プロセスがシステム アカウント (LocalService、LocalSystem、または NetworkService) のいずれかで実行されている場合の既定値です。|この要素は、サービスのアカウントに関連付けられている SPN を指定します。 参照してください、Kerberos プロトコルと Id の[認証サービスの Id をオーバーライドする](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)です。|これにより、SPN と SPN に関連付けられた特定の Windows アカウントによってサービスが識別されます。<br /><br /> Setspn.exe ツールを使用すると、サービスのユーザー アカウントに対してコンピューター アカウントを関連付けることができます。<br /><br /> サービスがシステム アカウントのいずれか、または SPN 名に関連付けられたドメイン アカウントで実行されており、コンピューターが Active Directory 環境のドメインのメンバーである場合、この設定では Windows Kerberos セキュリティを利用します。|  
   
 ## <a name="specifying-identity-at-the-service"></a>サービスでの ID の指定  
- クライアント資格情報の種類を選択すると、サービス メタデータで公開される ID の種類が指定されるため、通常、サービスで ID を設定する必要はありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]オーバーライドし、サービス id を指定または参照してください方法[認証サービスの Id をオーバーライドする](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)です。  
+ クライアント資格情報の種類を選択すると、サービス メタデータで公開される ID の種類が指定されるため、通常、サービスで ID を設定する必要はありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] オーバーライドし、サービス id を指定または参照してください方法[認証サービスの Id をオーバーライドする](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)です。  
   
 ## <a name="using-the-identity-element-in-configuration"></a>使用して、 \<identity > 構成内の要素  
  上記の例で示したバインディングのクライアント資格情報の種類を `Certificate,` に変更すると、次のコードに示すように、生成される WSDL には、Base64 でシリアル化された、ID 値用の X.509 証明書が含まれます。 これは、Windows 以外のすべてのクライアント資格情報の種類の既定値です。  
@@ -120,7 +123,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[C_Identity#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#8)]
  [!code-vb[C_Identity#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#8)]  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]スタックのバインド要素、カスタム バインドを正しく参照してください方法[ユーザー定義バインディング](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]使用するカスタム バインディングを作成する、<xref:System.ServiceModel.Channels.SecurityBindingElement>を参照してください[する方法: 指定された認証モードでは、SecurityBindingElement を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] スタックのバインド要素、カスタム バインドを正しく参照してください方法[ユーザー定義バインディング](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 使用するカスタム バインディングを作成する、<xref:System.ServiceModel.Channels.SecurityBindingElement>を参照してください[する方法: 指定された認証モードでは、SecurityBindingElement を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)です。  
   
 ## <a name="see-also"></a>参照  
  [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  

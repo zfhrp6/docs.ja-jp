@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 164b4e3bff3e327b82c78c403a0e65ec8db744ff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ce70b8bca923645ea1e00a55ec4d41903d828a99
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>バインディングでのタイムアウト値の構成
 WCF バインディングには、さまざまなタイムアウト設定が用意されています。 これらのタイムアウト設定を正しく行うことによって、サービスのパフォーマンスが向上するだけでなく、サービスの操作性とセキュリティにも役立ちます。 WCF バインディングで使用できるタイムアウトは次のとおりです。  
@@ -90,15 +92,15 @@ public static void Main()
   
 1.  SendTimeout: OperationTimeout の初期化に使用します。要求/応答サービス操作の応答メッセージの受信を含め、メッセージの送信プロセス全体を制御します。 このタイムアウトは、コールバック コントラクト メソッドから応答メッセージを送信するときにも適用されます。  
   
-2.  OpenTimeout: 明示的なタイムアウト値が指定されていない場合、チャネルを開くときに使用します。  
+2.  OpenTimeout: 明示的なタイムアウト値が指定されていない場合は、チャネルを開くときに使用します。  
   
-3.  CloseTimeout: 明示的なタイムアウト値が指定されていない場合、チャネルを閉じるときに使用します。  
+3.  CloseTimeout: 明示的なタイムアウト値が指定されていない場合は、チャネルを閉じるときに使用します。  
   
-4.  ReceiveTimeout: 使用されません。  
+4.  ReceiveTimeout: は使用されません。  
   
 ### <a name="service-side-timeouts"></a>サービス側のタイムアウト  
  サービス側のタイムアウトは次のとおりです。  
   
-1.  SendTimeout、OpentTimeout、CloseTimeout は、クライアント側と同じです。  
+1.  SendTimeout、OpenTimeout、CloseTimeout は、クライアント上と同じです。  
   
 2.  ReceiveTimeout: セッションがタイムアウトするまでのアイドル状態の時間を制御するセッション アイドル タイムアウトを初期化するために Service Framework Layer で使用します。

@@ -24,11 +24,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 30fff79b163136b4405b8fe7a5dfffeda532525d
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: fc62422125d6a9a17aa353cccec6ab23eca2008b
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="control-styles-and-templates"></a>コントロールのスタイルとテンプレート
 Windows Presentation Foundation (WPF) コントロールがある、<xref:System.Windows.Controls.ControlTemplate>そのコントロールのビジュアル ツリーを格納しています。 変更することにより、構造体とコントロールの外観を変更することができます、<xref:System.Windows.Controls.ControlTemplate>を制御するのです。 コントロールのビジュアル ツリーの一部のみを置換する方法はありません。設定する必要があります、コントロールのビジュアル ツリーを変更する、 <xref:System.Windows.Controls.Control.Template%2A> 、新規および完了するコントロールのプロパティ<xref:System.Windows.Controls.ControlTemplate>です。  
@@ -63,10 +63,10 @@ Windows Presentation Foundation (WPF) コントロールがある、<xref:System
  [ListView のスタイルとテンプレート](../../../../docs/framework/wpf/controls/listview-styles-and-templates.md)  
  [メニューのスタイルとテンプレート](../../../../docs/framework/wpf/controls/menu-styles-and-templates.md)  
  [NavigationWindow のスタイルとテンプレート](../../../../docs/framework/wpf/controls/navigationwindow-styles-and-templates.md)  
- [PasswordBox のスタイルとテンプレート](../../../../docs/framework/wpf/controls/passwordbox-syles-and-templates.md)  
+ [PasswordBox スタイルとテンプレート](../../../../docs/framework/wpf/controls/passwordbox-syles-and-templates.md)  
  [ProgressBar のスタイルとテンプレート](../../../../docs/framework/wpf/controls/progressbar-styles-and-templates.md)  
  [RadioButton のスタイルとテンプレート](../../../../docs/framework/wpf/controls/radiobutton-styles-and-templates.md)  
- [RepeatButton のスタイルとテンプレート](../../../../docs/framework/wpf/controls/repeatbutton-syles-and-templates.md)  
+ [RepeatButton スタイルとテンプレート](../../../../docs/framework/wpf/controls/repeatbutton-syles-and-templates.md)  
  [ScrollBar のスタイルとテンプレート](../../../../docs/framework/wpf/controls/scrollbar-styles-and-templates.md)  
  [ScrollViewer のスタイルとテンプレート](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)  
  [スライダーのスタイルとテンプレート](../../../../docs/framework/wpf/controls/slider-styles-and-templates.md)  
@@ -74,7 +74,7 @@ Windows Presentation Foundation (WPF) コントロールがある、<xref:System
  [TabControl のスタイルとテンプレート](../../../../docs/framework/wpf/controls/tabcontrol-styles-and-templates.md)  
  [TextBox のスタイルとテンプレート](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)  
  [つまみのスタイルとテンプレート](../../../../docs/framework/wpf/controls/thumb-syles-and-templates.md)  
- [ToggleButton のスタイルとテンプレート](../../../../docs/framework/wpf/controls/togglebutton-syles-and-templates.md)  
+ [トグル ボタンのスタイルとテンプレート](../../../../docs/framework/wpf/controls/togglebutton-syles-and-templates.md)  
  [ToolBar のスタイルとテンプレート](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md)  
  [ToolTip のスタイルとテンプレート](../../../../docs/framework/wpf/controls/tooltip-styles-and-templates.md)  
  [TreeView のスタイルとテンプレート](../../../../docs/framework/wpf/controls/treeview-styles-and-templates.md)  

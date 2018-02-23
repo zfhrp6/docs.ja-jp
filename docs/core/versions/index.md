@@ -3,17 +3,18 @@ title: ".NET Core バージョン管理"
 description: ".NET Core でのバージョン管理のしくみについて説明します。"
 author: bleroy
 ms.author: mairaw
-ms.date: 08/25/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
-ms.workload: dotnetcore
-ms.openlocfilehash: 369d280268123a69ae9458a2c47e45396728deb5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 70c7f179f3451e51d5ab383cde80959a69f959a1
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="net-core-versioning"></a>.NET Core バージョン管理
 
@@ -23,9 +24,13 @@ ms.lasthandoff: 12/23/2017
 
 .NET Core には個別にバージョン管理される多くの移動するパーツがあります。 ただし、.NET Core 2.0 以降では、すべてのユーザーが ".NET Core" 全体のバージョンとして理解する簡単に理解できる最上位*レベ*ルのバージョンがあります。 このドキュメントの残りの部分は、これらすべてのパーツのバージョン管理の詳細について説明します。 たとえばパッケージ マネージャーの場合は、これらの詳細が重要になる可能性があります。
 
+> [!IMPORTANT]
+> このトピックで説明されているバージョン管理の詳細は、.NET Core SDK ランタイムの現在のバージョンには適用されません。
+> バージョン スキームは将来のリリースで変更されます。 [dotnet/designs](https://github.com/dotnet/designs/pull/29) リポジトリで現在の提案を表示できます。
+
 ## <a name="versioning-details"></a>バージョン管理の詳細
 
-.NET Core 2.0 以降では、ダウンロードは、ファイル名に 1 つのバージョン番号が表示されます。 次のバージョン番号が統合されました。
+.NET Core 2.0 では、ダウンロードは、ファイル名に 1 つのバージョン番号が表示されます。 次のバージョン番号が統合されました。
 
 * 共有のフレームワークおよび関連付けられているランタイム。
 * .NET Core SDK および関連付けられた .NET Core CLI。
@@ -35,7 +40,7 @@ ms.lasthandoff: 12/23/2017
 
 ### <a name="installers"></a>インストーラー
 
-.NET Core 2.0 以降、[日次のビルド](https://github.com/dotnet/core-setup#daily-builds)と[リリース](https://www.microsoft.com/net/download/core)は、理解しやすい新しい名前付けスキームに従います。
+.NET Core 2.0 では、[日次のビルド](https://github.com/dotnet/core-setup#daily-builds)と[リリース](https://www.microsoft.com/net/download/core)は、理解しやすい新しい名前付けスキームに従います。
 これらのダウンロードのインストーラー UI も、インストールされているコンポーネントの名前とバージョンを明確に表示するように変更されました。 具体的には、タイトルは、ダウンロードのファイル名に含まれるものと同じバージョン番号を表示するようになりました。
 
 #### <a name="file-name-format"></a>ファイル名の形式
@@ -88,7 +93,7 @@ dotnet-sdk-2.0.4-ubuntu.16.04-x64.deb               # SDK tools
 #### <a name="minimum-package-set"></a>最小パッケージ セット
 
 * `dotnet-runtime-[major].[minor]`: 指定したバージョンのランタイム (パッケージ マネージャーでは、指定したメジャーとマイナーの組み合わせからなる最新パッチ バージョンのみ使用可能)。 新しいパッチ バージョンでパッケージを更新しますが、新しいマイナーまたはメジャー バージョンは別のパッケージとなります。
- 
+
   **依存関係**: `dotnet-host`
 
 * `dotnet-sdk`: 最新の SDK `update` がメジャー、マイナー、およびパッチ バージョンをロール フォワードします。
@@ -118,7 +123,7 @@ dotnet-sdk-2.0.4-ubuntu.16.04-x64.deb               # SDK tools
 
 ランタイムではなく、SDK のバージョンを表すように SDK のタグを更新する必要があります。
 
-.NET Core ツールの修正が必要な可能性もありますが、既存のランタイムを再配布します。 この場合、SDK のバージョンが増加し (たとえば 2.1.2 になり)、ランタイムは次回の配布時に更新されます (たとえば、ランタイムと SDK の両方が次回に 2.1.3 として配布されます)。
+.NET Core CLI ツール (SDK に含まれる) が修正される可能性がありますが、既存のランタイムとともに再出荷されます。 この場合、SDK のバージョンが増加し (たとえば 2.1.2 になり)、ランタイムは次回の配布時に更新されます (たとえば、ランタイムと SDK の両方が次回に 2.1.3 として配布されます)。
 
 ## <a name="semantic-versioning"></a>セマンティック バージョン管理
 
@@ -133,21 +138,24 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 ### <a name="how-version-numbers-are-incremented"></a>バージョン番号はどのように増分されますか?
 
 `MAJOR` は次のときに増分されます。
-  - 古いバージョンがサポート対象から除外された。
-  - 既存の依存関係の新しい `MAJOR` バージョンが採用された。
-  - 互換性特性の既定の設定が "オフ" に変更された。
+
+- 古いバージョンがサポート対象から除外された。
+- 既存の依存関係の新しい `MAJOR` バージョンが採用された。
+- 互換性特性の既定の設定が "オフ" に変更された。
 
 `MINOR` は次のときに増分されます。
-  - パブリック API アクセス領域が追加された。
-  - 新しい動作が追加された。
-  - 既存の依存関係の新しい `MINOR` バージョンが採用された。
-  - 新しい依存関係が導入された。
-  
+
+- パブリック API アクセス領域が追加された。
+- 新しい動作が追加された。
+- 既存の依存関係の新しい `MINOR` バージョンが採用された。
+- 新しい依存関係が導入された。
+
 `PATCH` は次のときに増分されます。
-  - バグの修正が行われた。
-  - より新しいプラットフォームのサポートが追加された。
-  - 既存の依存関係の新しい `PATCH` バージョンが採用された。
-  - 前のケースのいずれかに一致しない他の変更。
+
+- バグの修正が行われた。
+- より新しいプラットフォームのサポートが追加された。
+- 既存の依存関係の新しい `PATCH` バージョンが採用された。
+- 前のケースのいずれかに一致しない他の変更。
 
 複数の変更が存在する場合、個々の変更によって影響を受ける最高位置の要素が増分され、それに続く要素はゼロにリセットされます。 たとえば、`MAJOR` が増分され、`MINOR` と `PATCH` はゼロにリセットされます。 `MINOR` が増分されるときには、`PATCH` はゼロにリセットされますが、`MAJOR` は変更されません。
 
@@ -176,7 +184,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 .NET Core は、次の部分で構成されます。
 
-- ホスト (muxer とも呼ばれます): `dotnet.exe` と `hostfxr` ポリシー ライブラリ。
+- ホスト: フレームワークに依存するアプリケーション用の *dotnet.exe*、または自己完結型アプリケーション用の *\<appname > .exe* です。
 - SDK (実稼働環境ではなく開発者のマシンに必要な一連のツール)。
 - ランタイム。
 - パッケージとして配布される共有フレームワークの実装。 特に修正プログラムのバージョン管理において、各パッケージは個別にバージョン管理されます。
@@ -188,7 +196,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 .NET Standard では、`MAJOR.MINOR` バージョン管理スキームを使用しています。 `PATCH` レベルは、.NET Standard では使用できません。これは、あまり頻繁に反復処理されないコントラクトのセットを表し、実際の実装と同じバージョン管理の要件を表さないためです。
 
-.NET Standard バージョンと .NET Core のバージョンの間に実際の結合はありません。 .NET Core 2.0 は .NET Standard 2.0 を実装する場合がありますが、.NET Core の将来のバージョンが同じ .NET Standard のバージョンにマッピングされるという保証はありません。 .NET Core は、.NET Standard で定義されていない API を配布することができるので、新しい .NET Standard を必要とせずに新しバージョンを配布する場合があります。 .NET Standard は、たとえその始まりが .NET Core と同時に起こったとしても、.NET Framework や Mono などの他のターゲットに適用される概念でもあります。
+.NET Standard バージョンと .NET Core のバージョンの間に実際の結合はありません。 .NET Core 2.0 は .NET Standard 2.0 を実装する場合がありますが、.NET Core の将来のバージョンが同じ .NET Standard のバージョンにマッピングされるという保証はありません。 .NET Core は、.NET Standard で定義されていない API を配布することができるので、新しい .NET Standard を必要とせずに新しいバージョンを配布する場合があります。 .NET Standard は、たとえその始まりが .NET Core と同時に起こったとしても、.NET Framework や Mono などの他のターゲットに適用される概念でもあります。
 
 ### <a name="packages"></a>パッケージ
 
@@ -204,7 +212,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 たとえば、.NET Core 2.1.3 のメタパッケージの `MAJOR` と `MINOR` のバージョン番号はすべて 2.1 になります。
 
-メタパッケージの修正プログラムのバージョンは、参照されるパッケージが更新されるたびに増分されます。 修正プログラムのバージョンには、更新されたフレームワークのバージョンは含まれません。 したがって、メタパッケージは、厳密には SemVer 準拠であると言えません。そのバージョン管理スキームが、基になるパッケージでの変更の度合いを表さず、主に API レベルであるためです。 
+メタパッケージの修正プログラムのバージョンは、参照されるパッケージが更新されるたびに増分されます。 修正プログラムのバージョンには、更新されたフレームワークのバージョンは含まれません。 したがって、メタパッケージは、厳密には SemVer 準拠であると言えません。そのバージョン管理スキームが、基になるパッケージでの変更の度合いを表さず、主に API レベルであるためです。
 
 .NET Core には、現在、次の 2 の主なメタパッケージがあります。
 
@@ -251,7 +259,8 @@ GitHub の .NET Core リポジトリでは、コミットおよびプル要求�
 更新された .NET Core ライブラリ パッケージを参照するように、さまざまなメタパッケージが更新されます。 [ `Microsoft.NETCore.App` ](https://www.nuget.org/packages/Microsoft.NETCore.App) メタパッケージおよび `netcore` ターゲット フレームワークは、新しいリリースの `MAJOR` バージョン番号と一致するメジャー更新プログラムとしてバージョン管理されます。
 
 ## <a name="see-also"></a>関連項目
-[ターゲット フレームワーク](../../standard/frameworks.md)   
-[.NET Core の配布パッケージ](../build/distribution-packaging.md)   
-[.NET Core サポート ライフサイクルのファクト シート](https://www.microsoft.com/net/core/support)   
-[.NET core 2 + バージョン バインディング](https://github.com/dotnet/designs/issues/3)   
+
+[ターゲット フレームワーク](../../standard/frameworks.md)  
+[.NET Core の配布パッケージ](../build/distribution-packaging.md)  
+[.NET Core サポート ライフサイクルのファクト シート](https://www.microsoft.com/net/core/support)  
+[.NET core 2 + バージョン バインディング](https://github.com/dotnet/designs/issues/3)  

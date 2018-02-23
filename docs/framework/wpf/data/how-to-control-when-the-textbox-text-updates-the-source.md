@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - data binding [WPF], timing of source updates
 - timing of source updates [WPF]
 ms.assetid: ffb7b96a-351d-4c68-81e7-054033781c64
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9c503eb3300aba4a44c5a013c62942e7a171ae96
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 00fc64938e6a063ffbda77961f967e08c169ebd7
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>方法 : TextBox テキストでソースを更新するタイミングを制御する
 このトピックを使用する方法について説明、<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>バインディング ソースを更新するタイミングを制御するプロパティです。 トピックを使用して、<xref:System.Windows.Controls.TextBox>例と同様に制御します。  
@@ -33,9 +35,9 @@ ms.lasthandoff: 12/22/2017
 ## <a name="example"></a>例  
  <xref:System.Windows.Controls.TextBox>.<xref:System.Windows.Controls.TextBox.Text%2A>プロパティは、既定値を持つ<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>の値<xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>です。 つまり、アプリケーション、<xref:System.Windows.Controls.TextBox>データ バインドで<xref:System.Windows.Controls.TextBox>.<xref:System.Windows.Controls.TextBox.Text%2A>プロパティに入力したテキスト、<xref:System.Windows.Controls.TextBox>までソースを更新できません、<xref:System.Windows.Controls.TextBox>がフォーカスを失った (たとえばをクリックすると、から離れた場所<xref:System.Windows.Controls.TextBox>).  
   
- 入力する場合は、ソースとして更新されるを設定、<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>へのバインドの<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>します。 次の例で、`Text`両方のプロパティ、<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.TextBlock>同じソース プロパティにバインドします。 <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>のプロパティ、<xref:System.Windows.Controls.TextBox>に設定されているバインド<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>です。  
+ 入力と同時に更新するのには、ソースにする場合は、設定、<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>へのバインドの<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>します。 次の例では、コードの強調表示された行を表示する、`Text`両方のプロパティ、<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.TextBlock>同じソース プロパティにバインドします。 <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>のプロパティ、<xref:System.Windows.Controls.TextBox>に設定されているバインド<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>です。  
   
- [!code-xaml[SimpleBinding#USTHowTo](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Page1.xaml#usthowto)]  
+ [!code-xaml[SimpleBinding#USTHowTo](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Page1.xaml?highlight=33-39,41-42)]  
   
  その結果、<xref:System.Windows.Controls.TextBlock>にテキストを入力すると (変更) ために、同じテキストを示しています、<xref:System.Windows.Controls.TextBox>サンプルの次のスクリーン ショットに示すように、します。  
   
