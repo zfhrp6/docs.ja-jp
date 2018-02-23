@@ -4,4 +4,3 @@
 ## [方法: String のメソッドを使用して文字列を検索する](how-to-search-strings-using-string-methods.md)
 ## [方法: 正規表現を使用して文字列を検索する](how-to-search-strings-using-regular-expressions.md)
 ## [方法: 文字列が数値を表しているかどうかを確認する](how-to-determine-whether-a-string-represents-a-numeric-value.md)
-## [方法: 文字列を DateTime に変換する](how-to-convert-a-string-to-a-datetime.md)

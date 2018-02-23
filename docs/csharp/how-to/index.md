@@ -7,11 +7,11 @@ ms.date: 12/20/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: d1bef5813df40fb5c6e6b96e0042a682022beb8d
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.openlocfilehash: 918dfeceb0bfd8ee808e5615df014973dedf5cc1
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="how-to-c"></a>方法 (C#)
 
@@ -68,7 +68,7 @@ C# の開発者には常識といえるヒントやコツがいくつかあり�
 
 - [文字列が数値を表すかどうかを判断する](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)。
 - [16 進数を表す文字列と数値を変換する](../programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md)。
-- [文字列を <xref:System.DateTime> に変換する](../programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)。
+- [文字列を `DateTime` に変換する](../../standard/base-types/parsing-datetime.md)。
 - [バイト配列を int に変換する](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md)。
 - [文字列を数値に変換する](../programming-guide/types/how-to-convert-a-string-to-a-number.md)。
 - [`as` と `is` を使用して異なる型に安全にキャストする](../programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)。
