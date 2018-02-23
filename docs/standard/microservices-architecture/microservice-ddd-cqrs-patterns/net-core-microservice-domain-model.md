@@ -1,85 +1,97 @@
 ---
-title: ".NET Core のマイクロ サービス ドメイン モデルを実装します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |.NET Core のマイクロ サービス ドメイン モデルを実装します。"
+title: ".NET Core でマイクロサービス ドメイン モデルを実装する"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | .NET Core でマイクロサービス ドメイン モデルを実装する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 11/09/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 26c480a82ad7bb806734decebdfbe5b4a07998e6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 07a79f3d52db400d1539fb4172166cccf8905fb8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-a-microservice-domain-model-with-net-core"></a><span data-ttu-id="4b265-104">.NET Core のマイクロ サービス ドメイン モデルを実装します。</span><span class="sxs-lookup"><span data-stu-id="4b265-104">Implementing a microservice domain model with .NET Core</span></span> 
+# <a name="implementing-a-microservice-domain-model-with-net-core"></a><span data-ttu-id="15b7e-104">.NET Core でマイクロサービス ドメイン モデルを実装する</span><span class="sxs-lookup"><span data-stu-id="15b7e-104">Implementing a microservice domain model with .NET Core</span></span> 
 
-<span data-ttu-id="4b265-105">前のセクションで、基本的なデザインの原則とドメイン モデルをデザインするためのパターンがについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4b265-105">In the previous section, the fundamental design principles and patterns for designing a domain model were explained.</span></span> <span data-ttu-id="4b265-106">では、.NET Core を使用してドメイン モデルを実装する方法を検討する時間 (plain C\#コード) と EF コアです。</span><span class="sxs-lookup"><span data-stu-id="4b265-106">Now it is time to explore possible ways to implement the domain model by using .NET Core (plain C\# code) and EF Core.</span></span> <span data-ttu-id="4b265-107">ドメイン モデルは単に、コードから構成することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="4b265-107">Note that your domain model will be composed simply of your code.</span></span> <span data-ttu-id="4b265-108">EF の EF 中核となるモデルの要件がない実際の依存関係だけがあります。</span><span class="sxs-lookup"><span data-stu-id="4b265-108">It will have just the EF Core model requirements, but not real dependencies on EF.</span></span> <span data-ttu-id="4b265-109">ドメイン モデルのハード依存関係または EF コアまたはその他の任意の ORM への参照をことはできません。</span><span class="sxs-lookup"><span data-stu-id="4b265-109">You should not have hard dependencies or references to EF Core or any other ORM in your domain model.</span></span>
+<span data-ttu-id="15b7e-105">前のセクションでは、ドメイン モデルの基本的な設計原則と設計パターンを説明しました。</span><span class="sxs-lookup"><span data-stu-id="15b7e-105">In the previous section, the fundamental design principles and patterns for designing a domain model were explained.</span></span> <span data-ttu-id="15b7e-106">ここでは、.NET Core (プレーンな C\# コード) と EF Core を使用してドメイン モデルを実装するために可能な手段を調べます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-106">Now it is time to explore possible ways to implement the domain model by using .NET Core (plain C\# code) and EF Core.</span></span> <span data-ttu-id="15b7e-107">ドメイン モデルを構成するのは自分が書くコードだけであることにご注目ください。</span><span class="sxs-lookup"><span data-stu-id="15b7e-107">Note that your domain model will be composed simply of your code.</span></span> <span data-ttu-id="15b7e-108">EF Core モデルの要件があるだけで、EF に対する実際の依存関係は存在しません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-108">It will have just the EF Core model requirements, but not real dependencies on EF.</span></span> <span data-ttu-id="15b7e-109">ドメイン モデルには EF Core または他の ORM への緊密な依存関係や参照を含めないでください。</span><span class="sxs-lookup"><span data-stu-id="15b7e-109">You should not have hard dependencies or references to EF Core or any other ORM in your domain model.</span></span>
 
-## <a name="domain-model-structure-in-a-custom-net-standard-library"></a><span data-ttu-id="4b265-110">カスタム .NET 標準ライブラリ内のドメイン モデルの構造</span><span class="sxs-lookup"><span data-stu-id="4b265-110">Domain model structure in a custom .NET Standard library</span></span>
+## <a name="domain-model-structure-in-a-custom-net-standard-library"></a><span data-ttu-id="15b7e-110">カスタム .NET Standard ライブラリにおけるドメイン モデル構成</span><span class="sxs-lookup"><span data-stu-id="15b7e-110">Domain model structure in a custom .NET Standard library</span></span>
 
-<span data-ttu-id="4b265-111">EShopOnContainers 参照アプリケーションの使用フォルダー組織では、アプリケーションの DDD モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4b265-111">The folder organization used for the eShopOnContainers reference application demonstrates the DDD model for the application.</span></span> <span data-ttu-id="4b265-112">別のフォルダーの組織は、アプリケーションに対して行われた設計の選択肢をより明確に通信することがあります。</span><span class="sxs-lookup"><span data-stu-id="4b265-112">You might find that a different folder organization more clearly communicates the design choices made for your application.</span></span> <span data-ttu-id="4b265-113">図 9-10 がわかるように順序ドメイン モデルでは 2 つの集計、順序集計および buyer 集計。</span><span class="sxs-lookup"><span data-stu-id="4b265-113">As you can see in Figure 9-10, in the ordering domain model there are two aggregates, the order aggregate and the buyer aggregate.</span></span> <span data-ttu-id="4b265-114">各集計は、集計も (集計ルートまたはルート エンティティ) は、1 つのドメイン エンティティで構成する必要でしたが、ドメイン エンティティおよび値オブジェクトのグループです。</span><span class="sxs-lookup"><span data-stu-id="4b265-114">Each aggregate is a group of domain entities and value objects, although you could have an aggregate composed of a single domain entity (the aggregate root or root entity) as well.</span></span>
+<span data-ttu-id="15b7e-111">eShopOnContainers 参照アプリケーションに使用されているフォルダー編成は、このアプリケーションの DDD モデルを示しています。</span><span class="sxs-lookup"><span data-stu-id="15b7e-111">The folder organization used for the eShopOnContainers reference application demonstrates the DDD model for the application.</span></span> <span data-ttu-id="15b7e-112">アプリケーションによっては、別のフォルダー編成の方が、選択する設計をより明確に表現できる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-112">You might find that a different folder organization more clearly communicates the design choices made for your application.</span></span> <span data-ttu-id="15b7e-113">図 9-10 に示されているように、注文ドメイン モデルには、注文集計と購入者集計という 2 つの集計があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-113">As you can see in Figure 9-10, in the ordering domain model there are two aggregates, the order aggregate and the buyer aggregate.</span></span> <span data-ttu-id="15b7e-114">それぞれの集計はドメイン エンティティと値オブジェクトから成るグループですが、単一のドメイン エンティティ (集計ルートまたはルート エンティティ) で集計を構成することもできます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-114">Each aggregate is a group of domain entities and value objects, although you could have an aggregate composed of a single domain entity (the aggregate root or root entity) as well.</span></span>
 
 ![](./media/image11.png)
 
-<span data-ttu-id="4b265-115">**図 9-10**です。</span><span class="sxs-lookup"><span data-stu-id="4b265-115">**Figure 9-10**.</span></span> <span data-ttu-id="4b265-116">EShopOnContainers で順序付けマイクロ サービスのドメイン モデルの構造</span><span class="sxs-lookup"><span data-stu-id="4b265-116">Domain model structure for the ordering microservice in eShopOnContainers</span></span>
+<span data-ttu-id="15b7e-115">**図 9-10**。</span><span class="sxs-lookup"><span data-stu-id="15b7e-115">**Figure 9-10**.</span></span> <span data-ttu-id="15b7e-116">eShopOnContainers の注文マイクロサービスのドメイン モデル構造</span><span class="sxs-lookup"><span data-stu-id="15b7e-116">Domain model structure for the ordering microservice in eShopOnContainers</span></span>
 
-<span data-ttu-id="4b265-117">さらに、ドメイン モデル レイヤーには、ドメイン モデルのインフラストラクチャの要件は、リポジトリ コントラクト (インターフェイス) が含まれています。</span><span class="sxs-lookup"><span data-stu-id="4b265-117">Additionally, the domain model layer includes the repository contracts (interfaces) that are the infrastructure requirements of your domain model.</span></span> <span data-ttu-id="4b265-118">つまり、これらのインターフェイスがどのようなリポジトリ インフラストラクチャ レイヤーを実装する必要がありますを express とどのようにします。</span><span class="sxs-lookup"><span data-stu-id="4b265-118">In other words, these interfaces express what repositories the infrastructure layer must implement and how.</span></span> <span data-ttu-id="4b265-119">すべてのユーザーをドメイン モデル層がない「感染」API または Entity Framework などのインフラストラクチャ テクノロジからのクラスによってように、インフラストラクチャ レイヤー ライブラリで、ドメイン モデル レイヤーの外側に配置リポジトリの実装が重要です。</span><span class="sxs-lookup"><span data-stu-id="4b265-119">It is critical that the implementation of the repositories be placed outside of the domain model layer, in the infrastructure layer library, so the domain model layer is not “contaminated” by API or classes from infrastructure technologies, like Entity Framework.</span></span>
+<span data-ttu-id="15b7e-117">また、このドメイン モデル レイヤーには、ドメイン モデルのインフラストラクチャ要件ともなっているリポジトリ コントラクト (インターフェイス) も含まれています。</span><span class="sxs-lookup"><span data-stu-id="15b7e-117">Additionally, the domain model layer includes the repository contracts (interfaces) that are the infrastructure requirements of your domain model.</span></span> <span data-ttu-id="15b7e-118">つまり、これらのインターフェイスによって、インフラストラクチャ レイヤーで実装しなければならないリポジトリとその方法が示されます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-118">In other words, these interfaces express what repositories the infrastructure layer must implement and how.</span></span> <span data-ttu-id="15b7e-119">リポジトリの実装はドメイン モデル レイヤーの外側、インフラストラクチャ レイヤー ライブラリ内に配置することが重要です。そのようにすることによって、ドメイン モデル レイヤーは、Entity Framework などのインフラストラクチャ テクノロジの API やクラスに "汚染" されずに済みます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-119">It is critical that the implementation of the repositories be placed outside of the domain model layer, in the infrastructure layer library, so the domain model layer is not “contaminated” by API or classes from infrastructure technologies, like Entity Framework.</span></span>
 
-<span data-ttu-id="4b265-120">表示することも、 [SeedWork](https://martinfowler.com/bliki/Seedwork.html)ドメイン エンティティと値のベースとして使用できるカスタムの基本クラスが含まれているフォルダーのオブジェクト、ため、各ドメインのオブジェクト クラスで、冗長なコードはありません。</span><span class="sxs-lookup"><span data-stu-id="4b265-120">You can also see a [SeedWork](https://martinfowler.com/bliki/Seedwork.html) folder that contains custom base classes that you can use as a base for your domain entities and value objects, so you do not have redundant code in each domain’s object class.</span></span>
+<span data-ttu-id="15b7e-120">また、[SeedWork](https://martinfowler.com/bliki/Seedwork.html) フォルダーも参照できます。このフォルダーには、ドメイン エンティティと値オブジェクトの基礎として使用できるカスタム基底クラスが含まれるため、各ドメインのオブジェクト クラスで冗長コードをなくすことができます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-120">You can also see a [SeedWork](https://martinfowler.com/bliki/Seedwork.html) folder that contains custom base classes that you can use as a base for your domain entities and value objects, so you do not have redundant code in each domain’s object class.</span></span>
 
-## <a name="structuring-aggregates-in-a-custom-net-standard-library"></a><span data-ttu-id="4b265-121">カスタム .NET 標準ライブラリでの集計の構築</span><span class="sxs-lookup"><span data-stu-id="4b265-121">Structuring aggregates in a custom .NET Standard library</span></span>
+## <a name="structuring-aggregates-in-a-custom-net-standard-library"></a><span data-ttu-id="15b7e-121">カスタム .NET Standard ライブラリで集計を構築する</span><span class="sxs-lookup"><span data-stu-id="15b7e-121">Structuring aggregates in a custom .NET Standard library</span></span>
 
-<span data-ttu-id="4b265-122">集計は、トランザクションの一貫性を一致するように一緒にグループ化されたドメイン オブジェクトのクラスターを指します。</span><span class="sxs-lookup"><span data-stu-id="4b265-122">An aggregate refers to a cluster of domain objects grouped together to match transactional consistency.</span></span> <span data-ttu-id="4b265-123">これらのオブジェクトには、さらに、追加の値のオブジェクト (一方が集計ルートまたはルート エンティティ) のエンティティのインスタンス可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4b265-123">Those objects could be instances of entities (one of which is the aggregate root or root entity) plus any additional value objects.</span></span>
+<span data-ttu-id="15b7e-122">集計とは、トランザクションの整合性を保つためにグループ化される、ドメイン オブジェクトのクラスターのことです。</span><span class="sxs-lookup"><span data-stu-id="15b7e-122">An aggregate refers to a cluster of domain objects grouped together to match transactional consistency.</span></span> <span data-ttu-id="15b7e-123">こうしたオブジェクトは、(集計ルートやルート エンティティなどの) エンティティ インスタンスに、追加の値オブジェクトを付加したものとなる場合があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-123">Those objects could be instances of entities (one of which is the aggregate root or root entity) plus any additional value objects.</span></span>
 
-<span data-ttu-id="4b265-124">トランザクションの一貫性は、集計は確実に一貫性があり、ビジネス アクションの末尾に最新の状態を意味します。</span><span class="sxs-lookup"><span data-stu-id="4b265-124">Transactional consistency means that an aggregate is guaranteed to be consistent and up to date at the end of a business action.</span></span> <span data-ttu-id="4b265-125">たとえば、図 9-11 ようにマイクロ サービス ドメイン モデルを順序付け eShopOnContainers から注文集計が構成されます。</span><span class="sxs-lookup"><span data-stu-id="4b265-125">For example, the order aggregate from the eShopOnContainers ordering microservice domain model is composed as shown in Figure 9-11.</span></span>
+<span data-ttu-id="15b7e-124">トランザクションの整合性とは、ビジネス アクションの最後の時点で集計が一貫した状態になり、なおかつ最新状態になることを保証することです。</span><span class="sxs-lookup"><span data-stu-id="15b7e-124">Transactional consistency means that an aggregate is guaranteed to be consistent and up to date at the end of a business action.</span></span> <span data-ttu-id="15b7e-125">たとえば、eShopOnContainers 注文マイクロサービス ドメイン モデルの注文集計は、図 9-11 のように構成されています。</span><span class="sxs-lookup"><span data-stu-id="15b7e-125">For example, the order aggregate from the eShopOnContainers ordering microservice domain model is composed as shown in Figure 9-11.</span></span>
 
 ![](./media/image12.png)
 
-<span data-ttu-id="4b265-126">**図 9-11**です。</span><span class="sxs-lookup"><span data-stu-id="4b265-126">**Figure 9-11**.</span></span> <span data-ttu-id="4b265-127">Visual Studio ソリューションで集計の順序</span><span class="sxs-lookup"><span data-stu-id="4b265-127">The order aggregate in Visual Studio solution</span></span>
+<span data-ttu-id="15b7e-126">**図 9-11**。</span><span class="sxs-lookup"><span data-stu-id="15b7e-126">**Figure 9-11**.</span></span> <span data-ttu-id="15b7e-127">Visual Studio ソリューションにおける注文集計</span><span class="sxs-lookup"><span data-stu-id="15b7e-127">The order aggregate in Visual Studio solution</span></span>
 
-<span data-ttu-id="4b265-128">Aggregate フォルダー内のすべてのファイルを開く、表示できますエンティティまたは値のオブジェクトと同様に、インターフェイスまたはカスタムの基本クラスとしてマークされている方法で実装されている、 [Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork)フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="4b265-128">If you open any of the files in an aggregate folder, you can see how it is marked as either a custom base class or interface, like entity or value object, as implemented in the [Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) folder.</span></span>
+<span data-ttu-id="15b7e-128">集計フォルダーのいずれかのファイルを開くと、[Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) フォルダーで実装されるエンティティまたは値オブジェクトの場合と同じように、それがカスタム基底クラスとインターフェイスのいずれかとしてマークされている様子を確認できます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-128">If you open any of the files in an aggregate folder, you can see how it is marked as either a custom base class or interface, like entity or value object, as implemented in the [Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) folder.</span></span>
 
-## <a name="implementing-domain-entities-as-poco-classes"></a><span data-ttu-id="4b265-129">POCO クラスとして実装のドメイン エンティティ</span><span class="sxs-lookup"><span data-stu-id="4b265-129">Implementing domain entities as POCO classes</span></span>
+## <a name="implementing-domain-entities-as-poco-classes"></a><span data-ttu-id="15b7e-129">POCO クラスとしてドメイン エンティティを実装する</span><span class="sxs-lookup"><span data-stu-id="15b7e-129">Implementing domain entities as POCO classes</span></span>
 
-<span data-ttu-id="4b265-130">.NET のドメイン モデルを実装するには、ドメイン エンティティを実装する POCO クラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="4b265-130">You implement a domain model in .NET by creating POCO classes that implement your domain entities.</span></span> <span data-ttu-id="4b265-131">次の例では、エンティティおよび集計ルートとしても Order クラスが定義されています。</span><span class="sxs-lookup"><span data-stu-id="4b265-131">In the following example, the Order class is defined as an entity and also as an aggregate root.</span></span> <span data-ttu-id="4b265-132">Order クラスは、エンティティの基本クラスから派生する、ので、エンティティに関連する一般的なコードを再利用することができます。</span><span class="sxs-lookup"><span data-stu-id="4b265-132">Because the Order class derives from the Entity base class, it can reuse common code related to entities.</span></span> <span data-ttu-id="4b265-133">これらの基本クラスとインターフェイスがで定義されているユーザーがドメイン モデル プロジェクトので、コード、EF と同様に、ORM からインフラストラクチャ コードではなく念頭に置いてください。</span><span class="sxs-lookup"><span data-stu-id="4b265-133">Bear in mind that these base classes and interfaces are defined by you in the domain model project, so it is your code, not infrastructure code from an ORM like EF.</span></span>
+<span data-ttu-id="15b7e-130">ドメイン エンティティを実装する POCO クラスを作成して、.NET でドメイン モデルを実装します。</span><span class="sxs-lookup"><span data-stu-id="15b7e-130">You implement a domain model in .NET by creating POCO classes that implement your domain entities.</span></span> <span data-ttu-id="15b7e-131">次の例では、Order クラスがエンティティとして、さらには集計ルートとしても定義されています。</span><span class="sxs-lookup"><span data-stu-id="15b7e-131">In the following example, the Order class is defined as an entity and also as an aggregate root.</span></span> <span data-ttu-id="15b7e-132">Order クラスは Entity 基底クラスから派生しているため、エンティティに関連する共通コードを再利用できます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-132">Because the Order class derives from the Entity base class, it can reuse common code related to entities.</span></span> <span data-ttu-id="15b7e-133">これらの基底クラスとインターフェイスはドメイン モデル プロジェクト内で自分で定義するため、EF などの ORM のインフラストラクチャ コードではなくユーザー コードです。</span><span class="sxs-lookup"><span data-stu-id="15b7e-133">Bear in mind that these base classes and interfaces are defined by you in the domain model project, so it is your code, not infrastructure code from an ORM like EF.</span></span>
 
 ```csharp
-// COMPATIBLE WITH ENTITY FRAMEWORK CORE 1.0
+// COMPATIBLE WITH ENTITY FRAMEWORK CORE 2.0
 // Entity is a custom base class with the ID
 public class Order : Entity, IAggregateRoot
 {
-    public int BuyerId { get; private set; }
-    public DateTime OrderDate { get; private set; }
-    public int StatusId { get; private set; }
-    public ICollection<OrderItem> OrderItems { get; private set; }
-    public Address ShippingAddress { get; private set; }
-    public int PaymentId { get; private set; }
-    protected Order() { } //Design constraint needed only by EF Core
-    public Order(int buyerId, int paymentId)
+    private DateTime _orderDate;
+    public Address Address { get; private set; }
+    private int? _buyerId;
+
+    public OrderStatus OrderStatus { get; private set; }
+    private int _orderStatusId;
+
+    private string _description;
+    private int? _paymentMethodId;
+
+    private readonly List<OrderItem> _orderItems;
+    public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
+  
+    public Order(string userId, Address address, int cardTypeId, string cardNumber, string cardSecurityNumber,
+            string cardHolderName, DateTime cardExpiration, int? buyerId = null, int? paymentMethodId = null)
     {
-        BuyerId = buyerId;
-        PaymentId = paymentId;
-        StatusId = OrderStatus.InProcess.Id;
-        OrderDate = DateTime.UtcNow;
-        OrderItems = new List<OrderItem>();
+        _orderItems = new List<OrderItem>();
+        _buyerId = buyerId;
+        _paymentMethodId = paymentMethodId;
+        _orderStatusId = OrderStatus.Submitted.Id;
+        _orderDate = DateTime.UtcNow;
+        Address = address;
+
+        // ...Additional code ...
     }
 
-    public void AddOrderItem(productName,
-        pictureUrl,
-        unitPrice,
-        discount,
-        units)
+    public void AddOrderItem(int productId, string productName, 
+                            decimal unitPrice, decimal discount, 
+                            string pictureUrl, int units = 1)
     {
         //...
         // Domain rules/logic for adding the OrderItem to the order
         // ...
-        OrderItem item = new OrderItem(this.Id, ProductId, productName,
-            pictureUrl, unitPrice, discount, units);
+
+        var orderItem = new OrderItem(productId, productName, unitPrice, discount, pictureUrl, units);
+        
+        _orderItems.Add(orderItem);
   
-        OrderItems.Add(item);
     }
     // ...
     // Additional methods with domain rules/logic related to the Order aggregate
@@ -87,15 +99,21 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-<span data-ttu-id="4b265-134">これは、POCO クラスとして実装されているドメイン エンティティであることに注意してくださいに重要です。</span><span class="sxs-lookup"><span data-stu-id="4b265-134">It is important to note that this is a domain entity implemented as a POCO class.</span></span> <span data-ttu-id="4b265-135">Entity Framework のコアの直接的な依存関係またはその他のインフラストラクチャ フレームワークはありません。</span><span class="sxs-lookup"><span data-stu-id="4b265-135">It does not have any direct dependency on Entity Framework Core or any other infrastructure framework.</span></span> <span data-ttu-id="4b265-136">この実装は必要があります、C だけ\#ドメイン モデルを実装するコードです。</span><span class="sxs-lookup"><span data-stu-id="4b265-136">This implementation is as it should be, just C\# code implementing a domain model.</span></span>
+<span data-ttu-id="15b7e-134">重要なこととして、これが POCO クラスとして実装されるドメイン エンティティである点にご注意ください。</span><span class="sxs-lookup"><span data-stu-id="15b7e-134">It is important to note that this is a domain entity implemented as a POCO class.</span></span> <span data-ttu-id="15b7e-135">Entity Framework Core または他のインフラストラクチャ フレームワークへの直接の依存関係はありません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-135">It does not have any direct dependency on Entity Framework Core or any other infrastructure framework.</span></span> <span data-ttu-id="15b7e-136">この実装は、DDD の場合と同様に、ドメイン モデルを実装する C\# コードに過ぎません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-136">This implementation is as it should be in DDD, just C\# code implementing a domain model.</span></span>
 
-<span data-ttu-id="4b265-137">さらに、クラスは、IAggregateRoot をという名前のインターフェイスで装飾されています。</span><span class="sxs-lookup"><span data-stu-id="4b265-137">In addition, the class is decorated with an interface named IAggregateRoot.</span></span> <span data-ttu-id="4b265-138">そのインターフェイスとも呼ばれる、空のインターフェイスは、*マーカー インターフェイスに*、それがあることを示すこのエンティティ クラスも集計ルートにだけ使用します。</span><span class="sxs-lookup"><span data-stu-id="4b265-138">That interface is an empty interface, sometimes called a *marker interface*, that is used just to indicate that this entity class is also an aggregate root.</span></span>
+<span data-ttu-id="15b7e-137">また、このクラスは IAggregateRoot というインターフェイスで修飾されます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-137">In addition, the class is decorated with an interface named IAggregateRoot.</span></span> <span data-ttu-id="15b7e-138">このインターフェイスは、このエンティティ クラスが集計ルートでもあることを示すためだけに使用される空のインターフェイスであり、*マーカー インターフェイス*と呼ばれることもあります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-138">That interface is an empty interface, sometimes called a *marker interface*, that is used just to indicate that this entity class is also an aggregate root.</span></span>
 
-<span data-ttu-id="4b265-139">マーカー インターフェイスには、アンチ パターンとしてと見なされることただし、そのインターフェイスが変化し続ける可能性がある場合は特に、クラスをマークする明確な方法ではもです。</span><span class="sxs-lookup"><span data-stu-id="4b265-139">A marker interface is sometimes considered as an anti-pattern; however, it is also a clean way to mark a class, especially when that interface might be evolving.</span></span> <span data-ttu-id="4b265-140">属性は、マーカーの他の選択肢になる可能性がありますが、クラス上にある、集計 attribute マーカーを設定する代わりに、IAggregate インターフェイスの横にある基本クラス (エンティティ) を参照する方が手軽です。</span><span class="sxs-lookup"><span data-stu-id="4b265-140">An attribute could be the other choice for the marker, but it is quicker to see the base class (Entity) next to the IAggregate interface instead of putting an Aggregate attribute marker above the class.</span></span> <span data-ttu-id="4b265-141">いずれの場合、基本設定の metter であります。</span><span class="sxs-lookup"><span data-stu-id="4b265-141">It is a metter of preferences, in any case.</span></span>
+<span data-ttu-id="15b7e-139">マーカー インターフェイスはアンチ パターンと見なされることもありますが、このインターフェイスが進化していく可能性がある場合には特に、クラスをマークするためのわかりやすい方法ともなります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-139">A marker interface is sometimes considered as an anti-pattern; however, it is also a clean way to mark a class, especially when that interface might be evolving.</span></span> <span data-ttu-id="15b7e-140">属性はマーカーのもう 1 つの選択肢ですが、クラスの上に集計属性マーカーを配置するよりも、IAggregate インターフェイスの隣に基底クラス (Entity) を配置する方がより迅速に確認できます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-140">An attribute could be the other choice for the marker, but it is quicker to see the base class (Entity) next to the IAggregate interface instead of putting an Aggregate attribute marker above the class.</span></span> <span data-ttu-id="15b7e-141">いずれにせよ、これは好みの問題です。</span><span class="sxs-lookup"><span data-stu-id="15b7e-141">It is a metter of preferences, in any case.</span></span>
 
-<span data-ttu-id="4b265-142">整合性に関連するほとんどのコードと、集計のエンティティのビジネス ルールを Order 集計ルート クラス (たとえば、AddOrderItem の集計に OrderItem オブジェクトを追加する場合) 内のメソッドとして実装する集計ルートを持つ.</span><span class="sxs-lookup"><span data-stu-id="4b265-142">Having an aggregate root means that most of the code related to consistency and business rules of the aggregate’s entities should be implemented as methods in the Order aggregate root class (for example, AddOrderItem when adding an OrderItem object to the aggregate).</span></span> <span data-ttu-id="4b265-143">作成または個別にも直接に OrderItems オブジェクトを更新する必要がありますされません。AggregateRoot クラスには、コントロールとその子エンティティに対して更新操作の一貫性を維持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b265-143">You should not create or update OrderItems objects independently or directly; the AggregateRoot class must keep control and consistency of any update operation against its child entities.</span></span>
+<span data-ttu-id="15b7e-142">集計ルートを設けるということは、その集計のエンティティの整合性やビジネス ルールに関連するコードのほとんどを注文集計ルート クラスでメソッドとして実装する必要があることを意味します (たとえば、OrderItem オブジェクトを集計に追加する場合の AddOrderItem など)。</span><span class="sxs-lookup"><span data-stu-id="15b7e-142">Having an aggregate root means that most of the code related to consistency and business rules of the aggregate’s entities should be implemented as methods in the Order aggregate root class (for example, AddOrderItem when adding an OrderItem object to the aggregate).</span></span> <span data-ttu-id="15b7e-143">独立的にであれ、直接的にであれ、OrderItems オブジェクトを作成も更新もしないでください。AggregateRoot クラスが、その子エンティティに対するすべての更新操作を制御し、整合性を保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-143">You should not create or update OrderItems objects independently or directly; the AggregateRoot class must keep control and consistency of any update operation against its child entities.</span></span>
 
-<span data-ttu-id="4b265-144">たとえば、する必要があります*いない*コマンド ハンドラー メソッドまたはアプリケーション レイヤーのクラスから次の操作します。</span><span class="sxs-lookup"><span data-stu-id="4b265-144">For example, you should *not* do the following from any command handler method or application layer class:</span></span>
+## <a name="encapsulating-data-in-the-domain-entities"></a><span data-ttu-id="15b7e-144">ドメイン エンティティのデータをカプセル化する</span><span class="sxs-lookup"><span data-stu-id="15b7e-144">Encapsulating data in the Domain Entities</span></span>
+
+<span data-ttu-id="15b7e-145">エンティティ モデルでよくある問題として、コレクションのナビゲーション プロパティが一般にアクセス可能なリスト型として公開されることがあります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-145">A common problem in entity models is that they expose collection navigation properties as publicly accessible list types.</span></span> <span data-ttu-id="15b7e-146">そうすると、コラボレーターの開発者が誰でもこれらのコレクション型のコンテンツを操作できるようになり、結果として、コレクションに関連する重要なビジネス ルールがバイパスされ、オブジェクトが無効な状態のままになる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-146">This allows any collaborator developer to manipulate the contents of these collection types, which may bypass important business rules related to the collection, possibly leaving the object in an invalid state.</span></span> <span data-ttu-id="15b7e-147">これに対する解決策は、関連するコレクションへの読み取り専用アクセスを公開することと、クライアントがこれらのコレクションを操作する方法を定義したメソッドを明示的に提供することです。</span><span class="sxs-lookup"><span data-stu-id="15b7e-147">The solution to this is to expose read-only access to related collections and explicitly provide methods that define ways in which clients can manipulate them.</span></span>
+
+<span data-ttu-id="15b7e-148">前のコードでは、多くの属性が読み取り専用かプライベートであり、クラス メソッドによってでなければ更新できないことにご注意ください。そのため、更新はどれもビジネス ドメインの不変条件と、クラス メソッドに指定されたロジックを考慮に入れたものとなります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-148">In the previous code, note that many attributes are read-only or private and are only updatable by the class methods, so any update takes into account business domain invariants and logic specified within the class methods.</span></span>
+
+<span data-ttu-id="15b7e-149">たとえば、DDD パターンに従い、コマンド ハンドラー メソッドやアプリケーション レイヤー クラスから以下を実行すべきでは*ありません*。</span><span class="sxs-lookup"><span data-stu-id="15b7e-149">For example, following DDD patterns, you should *not* do the following from any command handler method or application layer class:</span></span>
 
 ```csharp
 // WRONG ACCORDING TO DDD PATTERNS – CODE AT THE APPLICATION LAYER OR
@@ -110,17 +128,17 @@ myOrder.OrderItems.Add(myNewOrderItem);
 //...
 ```
 
-<span data-ttu-id="4b265-145">この例では、Add メソッドは OrderItems コレクションに直接アクセスできる、データを追加する操作のみです。</span><span class="sxs-lookup"><span data-stu-id="4b265-145">In this case, the Add method is purely an operation to add data, with direct access to the OrderItems collection.</span></span> <span data-ttu-id="4b265-146">そのため、ドメイン ロジック、ルール、または検証のほとんどに関連するアプリケーション層 (コマンド ハンドラーおよび Web API コント ローラー) は、子エンティティと操作に分散することです。</span><span class="sxs-lookup"><span data-stu-id="4b265-146">Therefore, most of the domain logic, rules, or validations related to that operation with the child entities will be spread across the application layer (command handlers and Web API controllers).</span></span>
+<span data-ttu-id="15b7e-150">この場合、Add メソッドは、単に OrderItems コレクションに直接アクセスしてデータを追加する操作に過ぎません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-150">In this case, the Add method is purely an operation to add data, with direct access to the OrderItems collection.</span></span> <span data-ttu-id="15b7e-151">そのため、子エンティティに対するその操作に関連するドメイン ロジック、ルール、検証の大部分は、アプリケーション レイヤー (コマンド ハンドラーと Web API コントローラー) が担当します。</span><span class="sxs-lookup"><span data-stu-id="15b7e-151">Therefore, most of the domain logic, rules, or validations related to that operation with the child entities will be spread across the application layer (command handlers and Web API controllers).</span></span>
 
-<span data-ttu-id="4b265-147">集計のルートを移動する場合、集計のルートは、不変条件や、その有効性の一貫性を保証できません。</span><span class="sxs-lookup"><span data-stu-id="4b265-147">If you go around the aggregate root, the aggregate root cannot guarantee its invariants, its validity, or its consistency.</span></span> <span data-ttu-id="4b265-148">最終的に整然としたプログラムまたはトランザクション スクリプト コードがあります。</span><span class="sxs-lookup"><span data-stu-id="4b265-148">Eventually you will have spaghetti code or transactional script code.</span></span>
+<span data-ttu-id="15b7e-152">集計ルートで処理する場合、集計ルートでは不変条件、有効性、整合性を保証できません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-152">If you go around the aggregate root, the aggregate root cannot guarantee its invariants, its validity, or its consistency.</span></span> <span data-ttu-id="15b7e-153">結果として、解読困難なコードやトランザクション スクリプト コードとなります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-153">Eventually you will have spaghetti code or transactional script code.</span></span>
 
-<span data-ttu-id="4b265-149">DDD パターンに従うと、エンティティには、すべてのエンティティのプロパティでパブリック setter がない必要です。</span><span class="sxs-lookup"><span data-stu-id="4b265-149">To follow DDD patterns, entities must not have public setters in any entity property.</span></span> <span data-ttu-id="4b265-150">エンティティの変更は、エンティティで実行している変更に関する明確なユビキタス言語を持つ明示的なメソッドによって推進する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b265-150">Changes in an entity should be driven by explicit methods with explicit ubiquitous language about the change they are performing in the entity.</span></span>
+<span data-ttu-id="15b7e-154">DDD パターンに従うには、エンティティのどのエンティティ プロパティにもパブリック セッターがあってはなりません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-154">To follow DDD patterns, entities must not have public setters in any entity property.</span></span> <span data-ttu-id="15b7e-155">エンティティ内の変更は、エンティティ内で実行する変更に関する明示的なユビキタス言語を使った、明示的なメソッドにより駆動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-155">Changes in an entity should be driven by explicit methods with explicit ubiquitous language about the change they are performing in the entity.</span></span>
 
-<span data-ttu-id="4b265-151">さらに、(、注文項目など)、エンティティ内にコレクションが読み取り専用プロパティをする必要があります (されましたメソッドは後で説明します)。</span><span class="sxs-lookup"><span data-stu-id="4b265-151">Furthermore, collections within the entity (like the order items) should be read-only properties (the AsReadOnly method explained later).</span></span> <span data-ttu-id="4b265-152">集計のルート クラスのメソッドや子エンティティ メソッド内からのみ更新することができます。</span><span class="sxs-lookup"><span data-stu-id="4b265-152">You should be able to update it only from within the aggregate root class methods or the child entity methods.</span></span>
+<span data-ttu-id="15b7e-156">また、(注文項目などの) エンティティ内のコレクションは読み取り専用プロパティでなければなりません (AsReadOnly メソッドについて後ほど説明します)。</span><span class="sxs-lookup"><span data-stu-id="15b7e-156">Furthermore, collections within the entity (like the order items) should be read-only properties (the AsReadOnly method explained later).</span></span> <span data-ttu-id="15b7e-157">集計ルート クラス メソッドか子エンティティ メソッドの中からでなければ、それを更新できないようになっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-157">You should be able to update it only from within the aggregate root class methods or the child entity methods.</span></span>
 
-<span data-ttu-id="4b265-153">順序集計ルート用のコードに示すように、すべての set アクセス操作子する必要がありますプライベートまたは読み取り専用には、少なくとも外部で、エンティティのデータまたはその子エンティティに対して操作が、そのエンティティ クラスのメソッドによって実行されるがあるできるようにします。</span><span class="sxs-lookup"><span data-stu-id="4b265-153">As you can see in the code for the Order aggregate root, all setters should be private or at least read-only externally, so that any operation against the entity’s data or its child entities has to be performed through methods in the entity class.</span></span> <span data-ttu-id="4b265-154">これにより、トランザクション スクリプト コードを実装する代わりに制御およびオブジェクト指向の方法で一貫性が維持されます。</span><span class="sxs-lookup"><span data-stu-id="4b265-154">This maintains consistency in a controlled and object-oriented way instead of implementing transactional script code.</span></span>
+<span data-ttu-id="15b7e-158">Order 集計ルートのコードに示されているように、すべてのセッターはプライベートにするか、少なくとも外部的に読み取り専用とする必要があります。こうして、エンティティのデータまたはその子エンティティに対するあらゆる操作がエンティティ クラスのメソッドをとおして実行されなければならなくなります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-158">As you can see in the code for the Order aggregate root, all setters should be private or at least read-only externally, so that any operation against the entity’s data or its child entities has to be performed through methods in the entity class.</span></span> <span data-ttu-id="15b7e-159">その結果、整合性は制御された、オブジェクト指向の方法で確保され、トランザクション スクリプト コードを実装する必要はなくなります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-159">This maintains consistency in a controlled and object-oriented way instead of implementing transactional script code.</span></span>
 
-<span data-ttu-id="4b265-155">次のコード スニペットは、注文の集計に OrderItem オブジェクトを追加するタスクを記述する適切な方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="4b265-155">The following code snippet shows the proper way to code the task of adding an OrderItem object to the Order aggregate.</span></span>
+<span data-ttu-id="15b7e-160">次のコード スニペットは、OrderItem オブジェクトを Order 集計に追加するタスクをコーディングするための適切な方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="15b7e-160">The following code snippet shows the proper way to code the task of adding an OrderItem object to the Order aggregate.</span></span>
 
 ```csharp
 // RIGHT ACCORDING TO DDD--CODE AT THE APPLICATION LAYER OR COMMAND HANDLERS
@@ -134,106 +152,40 @@ myOrder.AddOrderItem(productId, productName, pictureUrl, unitPrice, discount, un
 //...
 ```
 
-<span data-ttu-id="4b265-156">このスニペットでほとんどの検証または OrderItem オブジェクトの作成に関連するロジックなります順序集計ルートの制御下-AddOrderItem メソッドで — 特に検証とロジックに関連するその他の要素、集計します。</span><span class="sxs-lookup"><span data-stu-id="4b265-156">In this snippet, most of the validations or logic related to the creation of an OrderItem object will be under the control of the Order aggregate root—in the AddOrderItem method—especially validations and logic related to other elements in the aggregate.</span></span> <span data-ttu-id="4b265-157">たとえば、AddOrderItem が複数の呼び出しの結果として同じ製品品目をする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4b265-157">For instance, you might get the same product item as the result of multiple calls to AddOrderItem.</span></span> <span data-ttu-id="4b265-158">そのメソッドでは、製品のアイテムは検証し、いくつかの単位である単一の OrderItem オブジェクトに同じ製品品目を統合するでした。</span><span class="sxs-lookup"><span data-stu-id="4b265-158">In that method, you could examine the product items and consolidate the same product items into a single OrderItem object with several units.</span></span> <span data-ttu-id="4b265-159">また、さまざまな割引金額があるが、製品 ID は同じ場合に、割引率が高いを適用可能性がありますはします。</span><span class="sxs-lookup"><span data-stu-id="4b265-159">Additionally, if there are different discount amounts but the product ID is the same, you would likely apply the higher discount.</span></span> <span data-ttu-id="4b265-160">この原則は、OrderItem オブジェクトの他のドメイン ロジックを適用します。</span><span class="sxs-lookup"><span data-stu-id="4b265-160">This principle applies to any other domain logic for the OrderItem object.</span></span>
+<span data-ttu-id="15b7e-161">このスニペットでは、OrderItem オブジェクトの作成に関連するほとんどの検証またはロジックが Order 集計ルートの AddOrderItem メソッドの制御下に置かれます。集計の他の要素に関連する検証とロジックは特にそう言えます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-161">In this snippet, most of the validations or logic related to the creation of an OrderItem object will be under the control of the Order aggregate root—in the AddOrderItem method—especially validations and logic related to other elements in the aggregate.</span></span> <span data-ttu-id="15b7e-162">たとえば、AddOrderItem に対して複数の呼び出しを実行した結果として、同じ製品項目を取得できます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-162">For instance, you might get the same product item as the result of multiple calls to AddOrderItem.</span></span> <span data-ttu-id="15b7e-163">そのメソッドでは、製品項目を検証し、同じ製品項目を、いくつかの単位で構成される単一の OrderItem オブジェクトに統合できます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-163">In that method, you could examine the product items and consolidate the same product items into a single OrderItem object with several units.</span></span> <span data-ttu-id="15b7e-164">さらに、複数の割引額があるものの製品 ID が同じである場合、大きい方の割り引きを適用したいと思うかもしれません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-164">Additionally, if there are different discount amounts but the product ID is the same, you would likely apply the higher discount.</span></span> <span data-ttu-id="15b7e-165">この原則を、OrderItem オブジェクトの他のドメイン ロジックに適用します。</span><span class="sxs-lookup"><span data-stu-id="15b7e-165">This principle applies to any other domain logic for the OrderItem object.</span></span>
 
-<span data-ttu-id="4b265-161">さらに、新しい OrderItem(params) 操作も管理対象し、する注文集計ルートから AddOrderItem メソッドによって実行されます。</span><span class="sxs-lookup"><span data-stu-id="4b265-161">In addition, the new OrderItem(params) operation will also be controlled and performed by the AddOrderItem method from the Order aggregate root.</span></span> <span data-ttu-id="4b265-162">そのため、ほとんどのロジックおよび検証に関連する操作 (特に他の子エンティティ間の一貫性に影響を与えるもの) が、集計のルート内の 1 つの場所に含まれます。</span><span class="sxs-lookup"><span data-stu-id="4b265-162">Therefore, most of the logic or validations related to that operation (especially anything that impacts the consistency between other child entities) will be in a single place within the aggregate root.</span></span> <span data-ttu-id="4b265-163">集計のルート パターンの最終的な目的です。</span><span class="sxs-lookup"><span data-stu-id="4b265-163">That is the ultimate purpose of the aggregate root pattern.</span></span>
+<span data-ttu-id="15b7e-166">さらに、新しい OrderItem(params) 操作も、Order 集計ルートの AddOrderItem メソッドにより制御され、実行されます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-166">In addition, the new OrderItem(params) operation will also be controlled and performed by the AddOrderItem method from the Order aggregate root.</span></span> <span data-ttu-id="15b7e-167">そのため、この操作に関連するほとんどのロジックまたは検証 (特に、他の子エンティティ間の整合性に影響を与えるあらゆるもの) は、集計ルート内の 1 か所に配置されます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-167">Therefore, most of the logic or validations related to that operation (especially anything that impacts the consistency between other child entities) will be in a single place within the aggregate root.</span></span> <span data-ttu-id="15b7e-168">これが、集計ルート パターンの最終目的です。</span><span class="sxs-lookup"><span data-stu-id="15b7e-168">That is the ultimate purpose of the aggregate root pattern.</span></span>
 
-<span data-ttu-id="4b265-164">Entity Framework 1.1 を使用して、DDD エンティティより表現できることができるエンティティ フレームワークのコア 1.1 の新機能の 1 つが[フィールドへのマッピング](https://docs.microsoft.com/ef/core/modeling/backing-field)プロパティだけでなくです。</span><span class="sxs-lookup"><span data-stu-id="4b265-164">When you use Entity Framework 1.1, a DDD entity can be better expressed because one of the new features of Entity Framework Core 1.1 is that it allows [mapping to fields](https://docs.microsoft.com/ef/core/modeling/backing-field) in addition to properties.</span></span> <span data-ttu-id="4b265-165">これは、機能は、子エンティティや値のオブジェクトのコレクションを保護するときに便利です。</span><span class="sxs-lookup"><span data-stu-id="4b265-165">This is useful when protecting collections of child entities or value objects.</span></span> <span data-ttu-id="4b265-166">この拡張機能プロパティの代わりに単純なプライベート フィールドを使用することができ、パブリック メソッドのフィールド コレクションに、更新プログラムを実装し、されましたメソッドを介して読み取り専用アクセスを提供することができます。</span><span class="sxs-lookup"><span data-stu-id="4b265-166">With this enhancement, you can use simple private fields instead of properties and you can implement any update to the field collection in public methods and provide read-only access through the AsReadOnly method.</span></span>
+<span data-ttu-id="15b7e-169">Entity Framework Core 1.1 以降を使用する場合、DDD エンティティをより優れた方法で表すことができます。プロパティに加えて、[フィールドへのマッピング](https://docs.microsoft.com/ef/core/modeling/backing-field)が行えるためです。</span><span class="sxs-lookup"><span data-stu-id="15b7e-169">When you use Entity Framework Core 1.1 or later, a DDD entity can be better expressed because it allows [mapping to fields](https://docs.microsoft.com/ef/core/modeling/backing-field) in addition to properties.</span></span> <span data-ttu-id="15b7e-170">これは、子エンティティや値オブジェクトのコレクションを保護する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-170">This is useful when protecting collections of child entities or value objects.</span></span> <span data-ttu-id="15b7e-171">この機能拡張によって、プロパティではなく簡単なプライベート フィールドを使用できます。また、パブリック メソッドでフィールド コレクションへの更新を実装し、AsReadOnly メソッドを使用して読み取り専用アクセスを提供できます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-171">With this enhancement, you can use simple private fields instead of properties and you can implement any update to the field collection in public methods and provide read-only access through the AsReadOnly method.</span></span>
 
-<span data-ttu-id="4b265-167">DDD では、任意の不変性とデータの整合性を制御するために、エンティティ (または、コンス トラクター) メソッドによってのみ、エンティティを更新する、ためのプロパティが定義されている get アクセサーでのみです。</span><span class="sxs-lookup"><span data-stu-id="4b265-167">In DDD you want to update the entity only through methods in the entity (or the constructor) in order to control any invariant and the consistency of the data, so properties are defined only with a get accessor.</span></span> <span data-ttu-id="4b265-168">プロパティは、プライベート フィールドでサポートされます。</span><span class="sxs-lookup"><span data-stu-id="4b265-168">The properties are backed by private fields.</span></span> <span data-ttu-id="4b265-169">プライベート メンバーは、クラス内からのみアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="4b265-169">Private members can only be accessed from within the class.</span></span> <span data-ttu-id="4b265-170">ただし、ある 1 つの例外: EF コアは、これらのフィールドも設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b265-170">However, there one exception: EF Core needs to set these fields as well.</span></span>
+<span data-ttu-id="15b7e-172">DDD では、エンティティのメソッド (またはコンストラクター) だけをとおしてエンティティを更新して、不変条件とデータの整合性を制御し、こうしてプロパティが get アクセサーによってのみ定義されることが望まれます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-172">In DDD you want to update the entity only through methods in the entity (or the constructor) in order to control any invariant and the consistency of the data, so properties are defined only with a get accessor.</span></span> <span data-ttu-id="15b7e-173">プロパティは、プライベート フィールドによってサポートされます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-173">The properties are backed by private fields.</span></span> <span data-ttu-id="15b7e-174">プライベート メンバーには、クラス内からのみアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-174">Private members can only be accessed from within the class.</span></span> <span data-ttu-id="15b7e-175">ただし例外があり、EF Core はこれらのフィールドも設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-175">However, there one exception: EF Core needs to set these fields as well.</span></span>
 
-```csharp
-// ENTITY FRAMEWORK CORE 1.1 OR LATER
-// Entity is a custom base class with the ID
-public class Order : Entity, IAggregateRoot
-{
-    // DDD Patterns comment
-    // Using private fields, allowed since EF Core 1.1, is a much better
-    // encapsulation aligned with DDD aggregates and domain entities (instead of
-    // properties and property collections)
-    private bool _someOrderInternalState;
-    private DateTime _orderDate;
-    public Address Address { get; private set; }
-    public Buyer Buyer { get; private set; }
-    private int _buyerId;
-    public OrderStatus OrderStatus { get; private set; }
-    private int _orderStatusId;
 
-    // DDD patterns comment
-    // Using a private collection field is better for DDD aggregate encapsulation.
-    // OrderItem objects cannot be added from outside the aggregate root
-    // directly to the collection, but only through the
-    // OrderAggrergateRoot.AddOrderItem method, which includes behavior.
-    private readonly List<OrderItem> _orderItems;
-    public IEnumerable<OrderItem> OrderItems => _orderItems.AsReadOnly();
-    // Using List<>.AsReadOnly()
-    // This will create a read-only wrapper around the private list so it is
-    // protected against external updates. It's much cheaper than .ToList(),
-    // because it will not have to copy all items in a new collection.
-    // (Just one heap alloc for the wrapper instance)
-    // https://msdn.microsoft.com/en-us/library/e78dcd75(v=vs.110).aspx
-    public PaymentMethod PaymentMethod { get; private set; }
-    private int _paymentMethodId;
+### <a name="mapping-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a><span data-ttu-id="15b7e-176">get アクセサーのみでプロパティをデータベース テーブル内のフィールドにマッピングする</span><span class="sxs-lookup"><span data-stu-id="15b7e-176">Mapping properties with only get accessors to the fields in the database table</span></span>
 
-    protected Order() { }
+<span data-ttu-id="15b7e-177">プロパティをデータベース テーブル列にマッピングすることはドメインの責任ではなく、インフラストラクチャと永続レイヤーの役割です。</span><span class="sxs-lookup"><span data-stu-id="15b7e-177">Mapping properties to database table columns is not a domain responsibility but part of the infrastructure and persistence layer.</span></span> <span data-ttu-id="15b7e-178">ここでこれに言及するのは、エンティティをモデル化する方法に関係する EF Core 1.1 以降の新機能をお知らせするために過ぎません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-178">We mention this here just so you are aware of the new capabilities in EF Core 1.1 or later related to how you can model entities.</span></span> <span data-ttu-id="15b7e-179">このトピックに関するその他の詳細情報については、インフラストラクチャと永続化に関するセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="15b7e-179">Additional details on this topic are explained in the infrastructure and persistence section.</span></span>
 
-    public Order(int buyerId, int paymentMethodId, Address address)
-    {
-        _orderItems = new List<OrderItem>();
-        _buyerId = buyerId;
-        _paymentMethodId = paymentMethodId;
-        _orderStatusId = OrderStatus.InProcess.Id;
-        _orderDate = DateTime.UtcNow;
-        Address = address;
-    }
+<span data-ttu-id="15b7e-180">EF Core 1.0 を使用する場合、DbContext で、ゲッターによってのみ定義されるプロパティを、データベース テーブルの実際のフィールドにマップする必要があります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-180">When you use EF Core 1.0, within the DbContext you need to map the properties that are defined only with getters to the actual fields in the database table.</span></span> <span data-ttu-id="15b7e-181">これは、PropertyBuilder クラスの HasField メソッドを使用して行います。</span><span class="sxs-lookup"><span data-stu-id="15b7e-181">This is done with the HasField method of the PropertyBuilder class.</span></span>
 
-    // DDD patterns comment
-    // The Order aggregate root method AddOrderitem() should be the only way
-    // to add items to the Order object, so that any behavior (discounts, etc.)
-    // and validations are controlled by the aggregate root in order to
-    // maintain consistency within the whole aggregate.
-    public void AddOrderItem(int productId, string productName, decimal unitPrice,
-        decimal discount, string pictureUrl, int units = 1)
-    {
-        // ...
-        // Domain rules/logic here for adding OrderItem objects to the order
-        // ...
-        OrderItem item = new OrderItem(this.Id, productId, productName,
-            pictureUrl, unitPrice, discount, units);
-        OrderItems.Add(item);
-    }
+### <a name="mapping-fields-without-properties"></a><span data-ttu-id="15b7e-182">プロパティを使用しないでフィールドをマッピングする</span><span class="sxs-lookup"><span data-stu-id="15b7e-182">Mapping fields without properties</span></span>
 
-    // ...
-    // Additional methods with domain rules/logic related to the Order aggregate
-    // ...
-}
-```
+<span data-ttu-id="15b7e-183">EF Core 1.1 以降の機能で列をフィールドにマップすれば、プロパティを使用しないで済ませることもできます。</span><span class="sxs-lookup"><span data-stu-id="15b7e-183">With the feature in EF Core 1.1 or later to map columns to fields, it is also possible to not use properties.</span></span> <span data-ttu-id="15b7e-184">代わりに、テーブルからフィールドに列をマップするだけです。</span><span class="sxs-lookup"><span data-stu-id="15b7e-184">Instead, you can just map columns from a table to fields.</span></span> <span data-ttu-id="15b7e-185">この方法の一般的なユース ケースとしては、エンティティの外部からアクセスする必要のない、内部状態用のプライベート フィールドがあります。</span><span class="sxs-lookup"><span data-stu-id="15b7e-185">A common use case for this is private fields for an internal state that does not need to be accessed from outside the entity.</span></span>
 
-### <a name="mapping-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a><span data-ttu-id="4b265-171">のみとマッピングのプロパティの get アクセサーのフィールドに、データベース テーブル</span><span class="sxs-lookup"><span data-stu-id="4b265-171">Mapping properties with only get accessors to the fields in the database table</span></span>
+<span data-ttu-id="15b7e-186">たとえば、前述の OrderAggregate コード例の場合、`_paymentMethodId` フィールドなどのいくつかのプライベート フィールドがあり、これにはセッターやゲッターに関連するプロパティがあません。</span><span class="sxs-lookup"><span data-stu-id="15b7e-186">For example, in the preceding OrderAggregate code example, there are several private fields, like the the  `_paymentMethodId` field, that have no related property for either a setter or getter.</span></span> <span data-ttu-id="15b7e-187">このフィールドは注文のビジネス ロジック内で計算でき、注文のメソッドから使用できますが、データベース内に保存することも必要です。</span><span class="sxs-lookup"><span data-stu-id="15b7e-187">That field could also be calculated within the order’s business logic and used from the order’s methods, but it needs to be persisted in the database as well.</span></span> <span data-ttu-id="15b7e-188">そのため EF Core (v1.1 以降) では、関連プロパティを使用しないでデータベース内の列にフィールドをマップする方法が備わっています。</span><span class="sxs-lookup"><span data-stu-id="15b7e-188">So in EF Core (since v1.1) there is a way to map a field without a related property to a column in the database.</span></span> <span data-ttu-id="15b7e-189">これは、このガイドの[インフラストラクチャ レイヤー](#the-infrastructure-layer)に関するセクションでも説明されています。</span><span class="sxs-lookup"><span data-stu-id="15b7e-189">This is also explained in the [Infrastructure layer](#the-infrastructure-layer) section of this guide.</span></span>
 
-<span data-ttu-id="4b265-172">プロパティをデータベース テーブルの列にマップはなく、ドメイン責任インフラストラクチャと持続性層の一部です。</span><span class="sxs-lookup"><span data-stu-id="4b265-172">Mapping properties to the database table columns is not a domain responsibility, but part of the infrastructure and persistence layer.</span></span> <span data-ttu-id="4b265-173">記述されてこのだけエンティティをモデル化する方法に関連する EF 1.1 の新機能に注意してください。</span><span class="sxs-lookup"><span data-stu-id="4b265-173">We mention this here just so you are aware of the new capabilities in EF 1.1 related to how you can model entities.</span></span> <span data-ttu-id="4b265-174">このトピックの詳細については、インフラストラクチャおよび永続化のセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="4b265-174">Additional details on this topic are explained in the infrastructure and persistence section.</span></span>
+### <a name="additional-resources"></a><span data-ttu-id="15b7e-190">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="15b7e-190">Additional resources</span></span>
 
-<span data-ttu-id="4b265-175">データベース テーブルの実際のフィールドに get アクセス操作子でのみ定義されているプロパティをマップする必要があります。 DbContext 内の EF 1.0 を使用する場合。</span><span class="sxs-lookup"><span data-stu-id="4b265-175">When you use EF 1.0, within the DbContext you need to map the properties that are defined only with getters to the actual fields in the database table.</span></span> <span data-ttu-id="4b265-176">これは PropertyBuilder クラスの HasField メソッドを使用して行われます。</span><span class="sxs-lookup"><span data-stu-id="4b265-176">This is done with the HasField method of the PropertyBuilder class.</span></span>
+-   <span data-ttu-id="15b7e-191">**Vaughn Vernon。DDD および Entity Framework による集計のモデル化。**</span><span class="sxs-lookup"><span data-stu-id="15b7e-191">**Vaughn Vernon. Modeling Aggregates with DDD and Entity Framework.**</span></span> <span data-ttu-id="15b7e-192">これは、Entity Framework Core では*ない*ことにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="15b7e-192">Note that this is *not* Entity Framework Core.</span></span>
+    [<span data-ttu-id="15b7e-193">*https://vaughnvernon.co/?p=879*</span><span class="sxs-lookup"><span data-stu-id="15b7e-193">*https://vaughnvernon.co/?p=879*</span></span>](https://vaughnvernon.co/?p=879)
 
-### <a name="mapping-fields-without-properties"></a><span data-ttu-id="4b265-177">プロパティのないフィールドのマッピング</span><span class="sxs-lookup"><span data-stu-id="4b265-177">Mapping fields without properties</span></span>
-
-<span data-ttu-id="4b265-178">列フィールドをマップする EF コア 1.1 の新機能を使用可能であればもプロパティを使用しないようにします。</span><span class="sxs-lookup"><span data-stu-id="4b265-178">With the new feature in EF Core 1.1 to map columns to fields, it is also possible to not use properties.</span></span> <span data-ttu-id="4b265-179">代わりに、フィールドに、テーブルの列にのみマップできます。</span><span class="sxs-lookup"><span data-stu-id="4b265-179">Instead, you can just map columns from a table to fields.</span></span> <span data-ttu-id="4b265-180">この一般的なユース ケースは、エンティティの外部からアクセスする必要はありませんを内部の状態のプライベート フィールドです。</span><span class="sxs-lookup"><span data-stu-id="4b265-180">A common use case for this is private fields for an internal state that does not need to be accessed from outside the entity.</span></span>
-
-<span data-ttu-id="4b265-181">たとえば、前のコード例で、 \_someOrderInternalState フィールドには、setter または getter 用に関連するプロパティがありません。</span><span class="sxs-lookup"><span data-stu-id="4b265-181">For example, in the preceding code example, the \_someOrderInternalState field has no related property for either a setter or getter.</span></span> <span data-ttu-id="4b265-182">そのフィールドは注文のビジネス ロジック内で計算され、注文の方法を使用するもデータベースに保存される必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b265-182">That field will also be calculated within the order’s business logic and used from the order’s methods, but it needs to be persisted in the database as well.</span></span> <span data-ttu-id="4b265-183">そのため、EF 1.1 では、データベース内の列に関連するプロパティを持たないフィールドをマップする方法です。</span><span class="sxs-lookup"><span data-stu-id="4b265-183">So, in EF 1.1 there is a way to map a field without a related property to a column in the database.</span></span> <span data-ttu-id="4b265-184">これで説明しても、[インフラストラクチャ レイヤー](#the-infrastructure-layer)このガイドの「します。</span><span class="sxs-lookup"><span data-stu-id="4b265-184">This is also explained in the [Infrastructure layer](#the-infrastructure-layer) section of this guide.</span></span>
-
-### <a name="additional-resources"></a><span data-ttu-id="4b265-185">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="4b265-185">Additional resources</span></span>
-
--   <span data-ttu-id="4b265-186">**Vaughn Vernon。DDD および Entity Framework では集計をモデリングです。**</span><span class="sxs-lookup"><span data-stu-id="4b265-186">**Vaughn Vernon. Modeling Aggregates with DDD and Entity Framework.**</span></span> <span data-ttu-id="4b265-187">これは*いない*エンティティ フレームワークのコアです。</span><span class="sxs-lookup"><span data-stu-id="4b265-187">Note that this is *not* Entity Framework Core.</span></span>
-    [<span data-ttu-id="4b265-188">*https://vaughnvernon.co/?p=879*</span><span class="sxs-lookup"><span data-stu-id="4b265-188">*https://vaughnvernon.co/?p=879*</span></span>](https://vaughnvernon.co/?p=879)
-
--   <span data-ttu-id="4b265-189">**Julie Lerman です。ドメイン ベースのデザインのコーディング: データに重点を置いた開発者用ヒント**
-    [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)</span><span class="sxs-lookup"><span data-stu-id="4b265-189">**Julie Lerman. Coding for Domain-Driven Design: Tips for Data-Focused Devs**
+-   <span data-ttu-id="15b7e-194">**Julie Lerman。ドメイン駆動設計のコーディング: データを重視する開発者のためのヒント**
+    [*https://msdn.microsoft.com/ja-JP/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)</span><span class="sxs-lookup"><span data-stu-id="15b7e-194">**Julie Lerman. Coding for Domain-Driven Design: Tips for Data-Focused Devs**
 [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)</span></span>
 
--   <span data-ttu-id="4b265-190">**Udi Dahan です。ドメイン モデルが完全に作成する方法にカプセル化された**
-    [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)</span><span class="sxs-lookup"><span data-stu-id="4b265-190">**Udi Dahan. How to create fully encapsulated Domain Models**
+-   <span data-ttu-id="15b7e-195">**Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法**
+    [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)</span><span class="sxs-lookup"><span data-stu-id="15b7e-195">**Udi Dahan. How to create fully encapsulated Domain Models**
 [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)</span></span>
 
 
 >[!div class="step-by-step"]
-<span data-ttu-id="4b265-191">[前](マイクロ サービスのドメイン-model.md) [次へ] (seedwork-domain-model-base-classes-interfaces.md)</span><span class="sxs-lookup"><span data-stu-id="4b265-191">[Previous] (microservice-domain-model.md) [Next] (seedwork-domain-model-base-classes-interfaces.md)</span></span>
+<span data-ttu-id="15b7e-196">[前へ] (microservice-domain-model.md) [次へ] (seedwork-domain-model-base-classes-interfaces.md)</span><span class="sxs-lookup"><span data-stu-id="15b7e-196">[Previous] (microservice-domain-model.md) [Next] (seedwork-domain-model-base-classes-interfaces.md)</span></span>
