@@ -1,60 +1,69 @@
 ---
-title: "CQRS マイクロ サービスでの読み取り]、[クエリの実装"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |CQRS マイクロ サービスでの読み取り]、[クエリの実装"
+title: "CQRS マイクロサービスに読み取り/クエリを実装する"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | CQRS マイクロサービスに読み取り/クエリを実装する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 11/02/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: e017aaaa701d8033110be8d6244d3e1120fc4fd9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ca9bcefb317d2b3c7c225b773918ca4a2484cb8f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-readsqueries-in-a-cqrs-microservice"></a><span data-ttu-id="1b9b2-104">CQRS マイクロ サービスでの読み取り]、[クエリの実装</span><span class="sxs-lookup"><span data-stu-id="1b9b2-104">Implementing reads/queries in a CQRS microservice</span></span>
+# <a name="implementing-readsqueries-in-a-cqrs-microservice"></a><span data-ttu-id="e60e3-104">CQRS マイクロサービスに読み取り/クエリを実装する</span><span class="sxs-lookup"><span data-stu-id="e60e3-104">Implementing reads/queries in a CQRS microservice</span></span>
 
-<span data-ttu-id="1b9b2-105">読み取り/クエリでは、eShopOnContainers の参照をアプリケーションから順序マイクロ サービスは DDD モデルと領域をトランザクションから独立してクエリを実装します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-105">For reads/queries, the ordering microservice from the eShopOnContainers reference application implements the queries independently from the DDD model and transactional area.</span></span> <span data-ttu-id="1b9b2-106">これは、クエリおよびトランザクションの要求が大幅に異なるため、主にします。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-106">This was done primarily because the demands for queries and for transactions are drastically different.</span></span> <span data-ttu-id="1b9b2-107">書き込みは、ドメイン ロジックに準拠する必要があるトランザクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-107">Writes execute transactions that must be compliant with the domain logic.</span></span> <span data-ttu-id="1b9b2-108">クエリ、その一方で、べき等なので、ドメイン ルールから分離できます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-108">Queries, on the other hand, are idempotent and can be segregated from the domain rules.</span></span>
+<span data-ttu-id="e60e3-105">読み取り/クエリの場合、eShopOnContainers 参照アプリケーションのオーダリング マイクロサービスでは、DDD モデルおよびトランザクション領域とは別にクエリを実装します。</span><span class="sxs-lookup"><span data-stu-id="e60e3-105">For reads/queries, the ordering microservice from the eShopOnContainers reference application implements the queries independently from the DDD model and transactional area.</span></span> <span data-ttu-id="e60e3-106">この主な理由は、クエリとトランザクションの要求が大幅に異なるためです。</span><span class="sxs-lookup"><span data-stu-id="e60e3-106">This was done primarily because the demands for queries and for transactions are drastically different.</span></span> <span data-ttu-id="e60e3-107">書き込みでは、ドメイン ロジックに準拠する必要があるトランザクションが実行されます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-107">Writes execute transactions that must be compliant with the domain logic.</span></span> <span data-ttu-id="e60e3-108">一方、クエリはべき等であり、ドメイン ルールから分離することができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-108">Queries, on the other hand, are idempotent and can be segregated from the domain rules.</span></span>
 
-<span data-ttu-id="1b9b2-109">アプローチは、図 9-3 に示すように単純です。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-109">The approach is simple, as shown in Figure 9-3.</span></span> <span data-ttu-id="1b9b2-110">Web API コント ローラー (micro Dapper などの ORM) などの任意のインフラストラクチャを使用し、UI アプリケーションのニーズに応じて動的 ViewModels を返すことによって、API インターフェイスが実装されます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-110">The API interface is implemented by the Web API controllers using any infrastructure (such as a micro ORM like Dapper) and returning dynamic ViewModels depending on the needs of the UI applications.</span></span>
+<span data-ttu-id="e60e3-109">図 9-3 に示すように、方法は単純です。</span><span class="sxs-lookup"><span data-stu-id="e60e3-109">The approach is simple, as shown in Figure 9-3.</span></span> <span data-ttu-id="e60e3-110">API インターフェイスは、Dapper のようなマイクロ オブジェクト リレーショナル マッパー (ORM) などの任意のインフラストラクチャを使用して、UI アプリケーションのニーズに応じて動的な ViewModel を返すことで Web API コントローラーによって実装されます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-110">The API interface is implemented by the Web API controllers using any infrastructure, such as a micro Object Relational Mapper (ORM) like Dapper, and returning dynamic ViewModels depending on the needs of the UI applications.</span></span>
 
 ![](./media/image3.png)
 
-<span data-ttu-id="1b9b2-111">**図 9-3**です。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-111">**Figure 9-3**.</span></span> <span data-ttu-id="1b9b2-112">CQRS マイクロ サービスでのクエリの最も簡単な方法</span><span class="sxs-lookup"><span data-stu-id="1b9b2-112">The simplest approach for queries in a CQRS microservice</span></span>
+<span data-ttu-id="e60e3-111">**図 9-3**</span><span class="sxs-lookup"><span data-stu-id="e60e3-111">**Figure 9-3**.</span></span> <span data-ttu-id="e60e3-112">CQRS マイクロサービスでのクエリの最も単純な方法</span><span class="sxs-lookup"><span data-stu-id="e60e3-112">The simplest approach for queries in a CQRS microservice</span></span>
 
-<span data-ttu-id="1b9b2-113">これは、クエリの最も簡単な方法をも考えられます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-113">This is the simplest possible approach for queries.</span></span> <span data-ttu-id="1b9b2-114">クエリの定義は、データベースを照会し、各クエリに対してその場で構築された動的 ViewModel を返します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-114">The query definitions query the database and return a dynamic ViewModel built on the fly for each query.</span></span> <span data-ttu-id="1b9b2-115">クエリでは、べき等であるため、クエリを実行する回数に関係なく、データは変更されません。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-115">Since the queries are idempotent, they will not change the data no matter how many times you run a query.</span></span> <span data-ttu-id="1b9b2-116">したがって、集計およびその他のパターンと同様に、トランザクションの側で使用される任意の DDD パターンにより制限を適用する必要はありません、ため、クエリは、トランザクション領域から区切られます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-116">Therefore, you do not need to be restricted by any DDD pattern used in the transactional side, like aggregates and other patterns, and that is why queries are separated from the transactional area.</span></span> <span data-ttu-id="1b9b2-117">単に、UI が必要なデータをデータベースに照会し、静的にする必要のない動的 ViewModel で定義されている任意の場所 (、ViewModels のクラスを持たない) を除く SQL ステートメント自体を返します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-117">You simply query the database for the data that the UI needs and return a dynamic ViewModel that does not need to be statically defined anywhere (no classes for the ViewModels) except in the SQL statements themselves.</span></span>
+<span data-ttu-id="e60e3-113">これがクエリの最も単純な方法と考えられます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-113">This is the simplest possible approach for queries.</span></span> <span data-ttu-id="e60e3-114">クエリ定義ではデータベースをクエリし、各クエリに対してオンザフライでビルドされた動的な ViewModel を返します。</span><span class="sxs-lookup"><span data-stu-id="e60e3-114">The query definitions query the database and return a dynamic ViewModel built on the fly for each query.</span></span> <span data-ttu-id="e60e3-115">クエリはべき等であるため、クエリの実行回数に関係なく、データが変更されることはありません。</span><span class="sxs-lookup"><span data-stu-id="e60e3-115">Since the queries are idempotent, they won't change the data no matter how many times you run a query.</span></span> <span data-ttu-id="e60e3-116">したがって、トランザクション側で使用される DDD パターン (集計などのパターン) によって制限される必要はありません。これが、クエリがトランザクション領域から分離される理由です。</span><span class="sxs-lookup"><span data-stu-id="e60e3-116">Therefore, you don't need to be restricted by any DDD pattern used in the transactional side, like aggregates and other patterns, and that is why queries are separated from the transactional area.</span></span> <span data-ttu-id="e60e3-117">UI に必要なデータについてデータベースをクエリし、SQL ステートメント自体を除く、任意の場所 (ViewModel のクラスがない) で静的に定義する必要のない動的な ViewModel を返すだけです。</span><span class="sxs-lookup"><span data-stu-id="e60e3-117">You simply query the database for the data that the UI needs and return a dynamic ViewModel that does not need to be statically defined anywhere (no classes for the ViewModels) except in the SQL statements themselves.</span></span>
 
-<span data-ttu-id="1b9b2-118">クエリ側のコードに必要なので、これは、単純な方法で (などの ORM マイクロを使用してコードをなど[Dapper](https://github.com/StackExchange/Dapper)) を実装する[同じ Web API プロジェクト内で](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs)です。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-118">Since this is a simple approach, the code required for the queries side (such as code using a micro ORM like [Dapper](https://github.com/StackExchange/Dapper)) can be implemented [within the same Web API project](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs).</span></span> <span data-ttu-id="1b9b2-119">図 9-4 では、これを示します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-119">Figure 9-4 shows this.</span></span> <span data-ttu-id="1b9b2-120">クエリが定義されている、 **Ordering.API** eShopOnContainers ソリューション内のマイクロ サービスのプロジェクトです。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-120">The queries are defined in the **Ordering.API** microservice project within the eShopOnContainers solution.</span></span>
+<span data-ttu-id="e60e3-118">これは単純な方法であるため、クエリ側で必要なコード ([Dapper](https://github.com/StackExchange/Dapper) のようなマイクロ ORM を使用するコードなど) を[同じ Web API プロジェクト内で](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs)実装することができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-118">Since this is a simple approach, the code required for the queries side (such as code using a micro ORM like [Dapper](https://github.com/StackExchange/Dapper)) can be implemented [within the same Web API project](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs).</span></span> <span data-ttu-id="e60e3-119">これは図 9-4 に示されています。</span><span class="sxs-lookup"><span data-stu-id="e60e3-119">Figure 9-4 shows this.</span></span> <span data-ttu-id="e60e3-120">クエリは eShopOnContainers 内の **Ordering.API** マイクロサービス プロジェクトで定義されています。</span><span class="sxs-lookup"><span data-stu-id="e60e3-120">The queries are defined in the **Ordering.API** microservice project within the eShopOnContainers solution.</span></span>
 
 ![](./media/image4.png)
 
-<span data-ttu-id="1b9b2-121">**図 9-4**です。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-121">**Figure 9-4**.</span></span> <span data-ttu-id="1b9b2-122">EShopOnContainers で順序付けマイクロ サービス内のクエリ</span><span class="sxs-lookup"><span data-stu-id="1b9b2-122">Queries in the Ordering microservice in eShopOnContainers</span></span>
+<span data-ttu-id="e60e3-121">**図 9-4**</span><span class="sxs-lookup"><span data-stu-id="e60e3-121">**Figure 9-4**.</span></span> <span data-ttu-id="e60e3-122">eShopOnContainers でのオーダリング マイクロサービスのクエリ</span><span class="sxs-lookup"><span data-stu-id="e60e3-122">Queries in the Ordering microservice in eShopOnContainers</span></span>
 
-## <a name="using-viewmodels-specifically-made-for-client-apps-independent-from-domain-model-constraints"></a><span data-ttu-id="1b9b2-123">具体的には、ドメイン モデルの制約から独立してクライアント アプリに対して行われた ViewModels を使用します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-123">Using ViewModels specifically made for client apps, independent from domain model constraints</span></span>
+## <a name="using-viewmodels-specifically-made-for-client-apps-independent-from-domain-model-constraints"></a><span data-ttu-id="e60e3-123">ドメイン モデル制約とは別の、クライアント アプリ専用の ViewModel の使用</span><span class="sxs-lookup"><span data-stu-id="e60e3-123">Using ViewModels specifically made for client apps, independent from domain model constraints</span></span>
 
-<span data-ttu-id="1b9b2-124">クライアント アプリケーションで必要なデータを取得するためには、クエリが実行、ので、クエリによって返されるデータに基づいて、クライアントの戻り値の型を具体的には作成できます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-124">Since the queries are performed to obtain the data needed by the client applications, the returned type can be specifically made for the clients, based on the data returned by the queries.</span></span> <span data-ttu-id="1b9b2-125">これらのモデル、またはデータ転送オブジェクト (Dto) は、ViewModels と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-125">These models, or Data Transfer Objects (DTOs), are called ViewModels.</span></span>
+<span data-ttu-id="e60e3-124">クエリはクライアント アプリケーションで必要なデータを取得するために実行されるため、戻り値の型は、クエリによって返されるデータに基づいて、クライアント専用に作成することができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-124">Since the queries are performed to obtain the data needed by the client applications, the returned type can be specifically made for the clients, based on the data returned by the queries.</span></span> <span data-ttu-id="e60e3-125">これらのモデル、またはデータ転送オブジェクト (DTO)、は ViewModel と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-125">These models, or Data Transfer Objects (DTOs), are called ViewModels.</span></span>
 
-<span data-ttu-id="1b9b2-126">返されるデータ (ViewModel) は、データベース、またはトランザクションの領域のドメイン モデルで定義されている複数の集計が異なる場合でも、複数のエンティティまたはテーブルからデータを結合する結果を指定できます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-126">The returned data (ViewModel) can be the result of joining data from multiple entities or tables in the database, or even across multiple aggregates defined in the domain model for the transactional area.</span></span> <span data-ttu-id="1b9b2-127">ここでは、クエリを作成するドメイン モデルに依存して、ため、集計の境界と制約はすべて無視され、自由にクエリをテーブルと列にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-127">In this case, because you are creating queries independent of the domain model, the aggregates boundaries and constraints are completely ignored and you are free to query any table and column you might need.</span></span> <span data-ttu-id="1b9b2-128">この方法は、作成またはクエリを更新する開発者向けの優れた柔軟性と生産性を提供します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-128">This approach provides great flexibility and productivity for the developers creating or updating the queries.</span></span>
+<span data-ttu-id="e60e3-126">返されるデータ (ViewModel) は、データベースの複数のエンティティまたはテーブルからの、あるいはトランザクション領域のドメイン モデルで定義されている複数の集計全体のデータの結合結果である場合があります。</span><span class="sxs-lookup"><span data-stu-id="e60e3-126">The returned data (ViewModel) can be the result of joining data from multiple entities or tables in the database, or even across multiple aggregates defined in the domain model for the transactional area.</span></span> <span data-ttu-id="e60e3-127">ここでは、ドメイン モデルには依存しないクエリを作成するため、集計の境界と制約は完全に無視され、必要になる可能性のあるテーブルと列をクエリするのは自由です。</span><span class="sxs-lookup"><span data-stu-id="e60e3-127">In this case, because you are creating queries independent of the domain model, the aggregates boundaries and constraints are completely ignored and you're free to query any table and column you might need.</span></span> <span data-ttu-id="e60e3-128">この方法では、開発者がクエリの作成または更新を行う場合に優れた柔軟性と生産性が提供されます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-128">This approach provides great flexibility and productivity for the developers creating or updating the queries.</span></span>
 
-<span data-ttu-id="1b9b2-129">ViewModels には、クラスで定義された静的な型を指定できます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-129">The ViewModels can be static types defined in classes.</span></span> <span data-ttu-id="1b9b2-130">または、作成できます (に実装されている順序マイクロ サービス) を実行して、クエリに基づいて動的に開発者にとって非常にアジャイルであります。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-130">Or they can be created dynamically based on the queries performed (as is implemented in the ordering microservice), which is very agile for developers.</span></span>
+<span data-ttu-id="e60e3-129">ViewModel として、クラスで定義されている静的な型を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-129">The ViewModels can be static types defined in classes.</span></span> <span data-ttu-id="e60e3-130">または、実行 (オーダリング マイクロサービスで実装) されたクエリに基づいて動的に作成することもできます。これは、開発者にとって非常にアジャイルな方法です。</span><span class="sxs-lookup"><span data-stu-id="e60e3-130">Or they can be created dynamically based on the queries performed (as is implemented in the ordering microservice), which is very agile for developers.</span></span>
 
-## <a name="using-dapper-as-a-micro-orm-to-perform-queries"></a><span data-ttu-id="1b9b2-131">マイクロ ORM として Dapper を使用してクエリを実行するには</span><span class="sxs-lookup"><span data-stu-id="1b9b2-131">Using Dapper as a micro ORM to perform queries</span></span> 
+## <a name="using-dapper-as-a-micro-orm-to-perform-queries"></a><span data-ttu-id="e60e3-131">クエリを実行するためのマイクロ ORM としての Dapper の使用</span><span class="sxs-lookup"><span data-stu-id="e60e3-131">Using Dapper as a micro ORM to perform queries</span></span>
 
-<span data-ttu-id="1b9b2-132">任意のマイクロ ORM、エンティティ フレームワークのコアまたはでもプレーンな ADO.NET を使用するを照会するためです。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-132">You can use any micro ORM, Entity Framework Core, or even plain ADO.NET for querying.</span></span> <span data-ttu-id="1b9b2-133">サンプル アプリケーションで一般的なマイクロ ORM の好例として eShopOnContainers で順序付けマイクロ サービス用 Dapper に選択しました。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-133">In the sample application, we selected Dapper for the ordering microservice in eShopOnContainers as a good example of a popular micro ORM.</span></span> <span data-ttu-id="1b9b2-134">非常に小さいフレームワークになっているために、優れたパフォーマンスは、プレーンな SQL クエリで実行できます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-134">It can run plain SQL queries with great performance, because it is a very light framework.</span></span> <span data-ttu-id="1b9b2-135">Dapper を使用すると、複数のテーブルを結合およびアクセスできる SQL クエリを記述できます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-135">Using Dapper, you can write a SQL query that can access and join multiple tables.</span></span>
+<span data-ttu-id="e60e3-132">クエリでは、任意のマイクロ ORM、Entity Framework Core、またはプレーン ADO.NET を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-132">You can use any micro ORM, Entity Framework Core, or even plain ADO.NET for querying.</span></span> <span data-ttu-id="e60e3-133">サンプル アプリケーションでは、一般的なマイクロ ORM の良い例として、eShopOnContainers でのオーダリング マイクロサービスに対して Dapper が選択されました。</span><span class="sxs-lookup"><span data-stu-id="e60e3-133">In the sample application, Dapper was selected for the ordering microservice in eShopOnContainers as a good example of a popular micro ORM.</span></span> <span data-ttu-id="e60e3-134">これは非常に軽量なフレームワークであるため、パフォーマンスの優れたプレーン SQL クエリを実行できます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-134">It can run plain SQL queries with great performance, because it's a very light framework.</span></span> <span data-ttu-id="e60e3-135">Dapper を使用することで、複数のテーブルのアクセスと結合が可能な SQL クエリを記述できます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-135">Using Dapper, you can write a SQL query that can access and join multiple tables.</span></span>
 
-<span data-ttu-id="1b9b2-136">Dapper オープン ソース プロジェクト (Sam Saffron によって作成された)、元で使用される構成要素の一部[スタック オーバーフロー](https://stackoverflow.com/)です。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-136">Dapper is an open source project (original created by Sam Saffron), and is part of the building blocks used in [Stack Overflow](https://stackoverflow.com/).</span></span> <span data-ttu-id="1b9b2-137">使用するには Dapper だけインストールする必要がを通じて、[口ひげ NuGet パッケージ](https://www.nuget.org/packages/Dapper)次の図に示すように、します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-137">To use Dapper, you just need to install it through the [Dapper NuGet package](https://www.nuget.org/packages/Dapper), as shown in the following figure.</span></span>
+<span data-ttu-id="e60e3-136">Dapper はオープンソースのプロジェクト (Sam Saffron によって最初に作成された) であり、[スタック オーバーフロー](https://stackoverflow.com/)で使用される構成要素の一部です。</span><span class="sxs-lookup"><span data-stu-id="e60e3-136">Dapper is an open-source project (original created by Sam Saffron), and is part of the building blocks used in [Stack Overflow](https://stackoverflow.com/).</span></span> <span data-ttu-id="e60e3-137">Dapper を使用するために必要になるのは、次の図に示すように、[Dapper NuGet パッケージ](https://www.nuget.org/packages/Dapper)を使用してインストールすることだけです。</span><span class="sxs-lookup"><span data-stu-id="e60e3-137">To use Dapper, you just need to install it through the [Dapper NuGet package](https://www.nuget.org/packages/Dapper), as shown in the following figure:</span></span>
 
-![](./media/image5.png)
+![](./media/image4.1.png)
 
-<span data-ttu-id="1b9b2-138">使用して、追加する必要がありますもステートメント、コードがある口ひげ拡張メソッドにアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-138">You will also need to add a using statement so your code has access to the Dapper extension methods.</span></span>
+<span data-ttu-id="e60e3-138">コードで Dapper 拡張メソッドにアクセスできるようにするために、ステートメントを追加する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="e60e3-138">You also need to add a using statement so your code has access to the Dapper extension methods.</span></span>
 
-<span data-ttu-id="1b9b2-139">コードで Dapper を使用するときに直接クラスを使用する SqlClient System.Data.SqlClient 名前空間で使用できます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-139">When you use Dapper in your code, you directly use the SqlClient class available in the System.Data.SqlClient namespace.</span></span> <span data-ttu-id="1b9b2-140">QueryAsync メソッドと、SqlClient クラスを拡張する他の拡張メソッドでは、単に簡単でパフォーマンスの高い方法でクエリを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-140">Through the QueryAsync method and other extension methods which extend the SqlClient class, you can simply run queries in a straightforward and performant way.</span></span>
+<span data-ttu-id="e60e3-139">コードで Dapper を使用する場合は、<xref:System.Data.SqlClient> 名前空間で使用可能な <xref:System.Data.SqlClient.SqlConnection> クラスを直接使用します。</span><span class="sxs-lookup"><span data-stu-id="e60e3-139">When you use Dapper in your code, you directly use the <xref:System.Data.SqlClient.SqlConnection> class available in the <xref:System.Data.SqlClient> namespace.</span></span> <span data-ttu-id="e60e3-140">QueryAsync メソッドと、<xref:System.Data.SqlClient.SqlConnection> クラスを拡張するその他の拡張メソッドを使用して、簡単でパフォーマンスの高い方法でクエリを実行するだけで済みます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-140">Through the QueryAsync method and other extension methods that extend the <xref:System.Data.SqlClient.SqlConnection> class, you can simply run queries in a straightforward and performant way.</span></span>
 
-## <a name="dynamic-and-static-viewmodels"></a><span data-ttu-id="1b9b2-141">動的および静的 ViewModels</span><span class="sxs-lookup"><span data-stu-id="1b9b2-141">Dynamic and static ViewModels</span></span>
+## <a name="dynamic-versus-static-viewmodels"></a><span data-ttu-id="e60e3-141">動的な ViewModel と静的な ViewModel</span><span class="sxs-lookup"><span data-stu-id="e60e3-141">Dynamic versus static ViewModels</span></span>
 
-<span data-ttu-id="1b9b2-142">クエリによって返される ViewModels のほとんどとして実装される順序マイクロ サービスから次のコードに示すように、*動的*です。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-142">As shown in the following code from the ordering microservice, most of the ViewModels returned by the queries are implemented as *dynamic*.</span></span> <span data-ttu-id="1b9b2-143">返される属性のサブセットをクエリ自体に基づいているためです。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-143">That means that the subset of attributes to be returned is based on the query itself.</span></span> <span data-ttu-id="1b9b2-144">クエリまたは結合する新しい列を追加する場合、そのデータは返された ViewModel に動的に追加します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-144">If you add a new column to the query or join, that data is dynamically added to the returned ViewModel.</span></span> <span data-ttu-id="1b9b2-145">この方法は、基になるデータ モデルがこの設計手法より柔軟で将来の変更に対応する更新プログラムへの応答でクエリを変更する必要性を軽減します。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-145">This approach reduces the need to modify queries in response to updates to the underlying data model, making this design approach more flexible and tolerant of future changes.</span></span>
+<span data-ttu-id="e60e3-142">ViewModel をサーバー側からクライアント アプリに返す場合、エンティティ モデルの内部ドメイン エンティティとは異なる可能性のある DTO として ViewModel について考えることができます。これは、ViewModel がクライアント アプリで必要な方法でデータを保持するためです。</span><span class="sxs-lookup"><span data-stu-id="e60e3-142">When returning ViewModels from the server-side to client apps, you can think about those ViewModels as DTOs that can be different to the internal domain entities of your entity model because the ViewModels hold the data the way the client app needs.</span></span> <span data-ttu-id="e60e3-143">したがって、多くの場合、複数のドメイン エンティティからのデータを集計し、クライアント アプリでそのデータがいかに必要であるかに従って ViewModel を正確に構成できます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-143">Therefore, in many cases, you can aggregate data coming from multiple domain entities and compose the ViewModels precisely according to how the client app needs that data.</span></span>
+
+<span data-ttu-id="e60e3-144">これらの ViewModel または DTO は、後述のコード スニペットで示す [OrderSummary](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Queries/OrderViewModel.cs) クラスと同様に (データ ホルダー クラスとして) 明示的に定義できます。あるいは、`dynamic` 型として、クエリによって返される属性に基づいて、単に動的な ViewModel または動的な DTO を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-144">Those ViewModels or DTOs can be defined explicitly (as data holder classes) like the [OrderSummary](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Queries/OrderViewModel.cs) class shown in a later code snippet, or you could just return dynamic ViewModels or dynamic DTOs simply based on the attributes returned by your queries, as a `dynamic` type.</span></span>
+
+### <a name="viewmodel-as-dynamic-type"></a><span data-ttu-id="e60e3-145">動的な型としての ViewModel</span><span class="sxs-lookup"><span data-stu-id="e60e3-145">ViewModel as dynamic type</span></span>
+
+<span data-ttu-id="e60e3-146">次のコードに示すように、ViewModel は、内部的にクエリによって返される属性に基づく動的な型を返すことで、クエリで直接返すことができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-146">As shown in the following code, a ViewModel can be directly returned by the queries by returning a dynamic type that internally is based on the attributes returned by a query.</span></span> <span data-ttu-id="e60e3-147">これは、返される属性のサブセットがクエリ自体に基づいていることを意味します。</span><span class="sxs-lookup"><span data-stu-id="e60e3-147">That means that the subset of attributes to be returned is based on the query itself.</span></span> <span data-ttu-id="e60e3-148">そのため、クエリまたは結合に新しい列を追加する場合、そのデータは返される ViewModel に動的に追加されます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-148">Therefore, if you add a new column to the query or join, that data is dynamically added to the returned ViewModel.</span></span>
 
 ```csharp
 using Dapper;
@@ -80,24 +89,121 @@ LEFT JOIN[ordering].[orderitems] oi ON o.Id = oi.orderid
 LEFT JOIN[ordering].[orderstatus] os on o.OrderStatusId = os.Id
 GROUP BY o.[Id], o.[OrderDate], os.[Name]");
         }
-  }
+    }
 }
 ```
 
-<span data-ttu-id="1b9b2-146">重要な点を動的な型を使用すると、返されるデータのコレクションは動的としてアセンブル、ViewModel です。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-146">The important point is that by using a dynamic type, the returned collection of data will be dynamically assembled as the ViewModel.</span></span>
+<span data-ttu-id="e60e3-149">重要な点は、動的な型を使用することで、返されるデータ コレクションが ViewModel として動的にアセンブルされることです。</span><span class="sxs-lookup"><span data-stu-id="e60e3-149">The important point is that by using a dynamic type, the returned collection of data is dynamically assembled as the ViewModel.</span></span>
 
-<span data-ttu-id="1b9b2-147">ほとんどのクエリは簡単で生産性の高いコーディングすることにより、DTO または ViewModel クラスを事前に定義する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-147">For most queries, you do not need to predefine a DTO or ViewModel class, which makes coding them straightforward and productive.</span></span> <span data-ttu-id="1b9b2-148">ただし、事前に定義できます (定義済み DTOs) のような ViewModels ViewModels にコントラクトとしてより制限された定義を使用する場合。</span><span class="sxs-lookup"><span data-stu-id="1b9b2-148">However, you can predefine ViewModels (like predefined DTOs) if you want to have ViewModels with a more restricted definition as contracts.</span></span>
+<span data-ttu-id="e60e3-150">*長所:* この方法では、クエリの SQL 文を更新するたびに静的な ViewModel クラスを変更する必要性が低くなります。したがって、この設計方法は非常にアジャイルなコーディング方法であり、簡単で、将来の変更に合わせてすばやく進化します。</span><span class="sxs-lookup"><span data-stu-id="e60e3-150">*Pros:* This approach reduces the need to modify static ViewModel classes whenever you update the SQL sentence of a query, making this design approach pretty agile when coding, straightforward, and quick to evolve in regard to future changes.</span></span>
 
-#### <a name="additional-resources"></a><span data-ttu-id="1b9b2-149">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="1b9b2-149">Additional resources</span></span>
+<span data-ttu-id="e60e3-151">*短所:* 長期的に見ると、動的な型は明確性に悪影響を与える可能性があり、また、クライアント アプリとのサービスの互換性に影響する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e60e3-151">*Cons:* In the long term, dynamic types can impact negatively the clarity and impact the compatibility of a service with client apps.</span></span> <span data-ttu-id="e60e3-152">さらに、Swagger のようなミドルウェア ソフトウェアでは、動的な型を使用する場合に戻り値の型で同じレベルのドキュメントを提供できません。</span><span class="sxs-lookup"><span data-stu-id="e60e3-152">In addition, middleware software like Swagger cannot provide the same level of documentation on returned types if using dynamic types.</span></span>
 
--   <span data-ttu-id="1b9b2-150">**口ひげ**
-    [*https://github.com/StackExchange/dapper-dot-net*](https://github.com/StackExchange/dapper-dot-net)</span><span class="sxs-lookup"><span data-stu-id="1b9b2-150">**Dapper**
+### <a name="viewmodel-as-predefined-dto-classes"></a><span data-ttu-id="e60e3-153">定義済み DTO クラスとしての ViewModel</span><span class="sxs-lookup"><span data-stu-id="e60e3-153">ViewModel as predefined DTO classes</span></span>
+
+<span data-ttu-id="e60e3-154">*長所:* 明示的な DTO クラスに基づく "コントラクト" のように、静的な定義済み ViewModel クラスを使用することは、パブリック API だけでなく、長期的なマイクロサービスでも確実に適しています。同じアプリケーションでのみ使用される場合でも同様です。</span><span class="sxs-lookup"><span data-stu-id="e60e3-154">*Pros:* Having static predefined ViewModel classes, like "contracts" based on explicit DTO classes, is definitely better for public APIs but also for long term microservices, even if they are only used by the same application.</span></span>
+
+<span data-ttu-id="e60e3-155">Swagger の応答型を指定する場合は、戻り値の型として明示的な DTO クラスを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e60e3-155">If you want to specify response types for swagger, you need to use explicit DTO classes as the return type.</span></span> <span data-ttu-id="e60e3-156">したがって、定義済み DTO クラスを使用すれば、Swagger からより豊富な情報を提供することができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-156">Therefore, predefined DTO classes allow you to offer richer information from Swagger.</span></span> <span data-ttu-id="e60e3-157">これにより、API 利用時の API のドキュメントと互換性が改善されます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-157">That improves the API documentation and compatibility when consuming an API.</span></span>
+
+<span data-ttu-id="e60e3-158">*短所:* 前述のとおり、コードを更新する場合、DTO クラスを更新するためにさらにいくつかの手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="e60e3-158">*Cons:* As mentioned earlier, when updating the code, it takes some more steps to update the DTO classes.</span></span>
+
+<span data-ttu-id="e60e3-159">*経験に基づくヒント:* eShopOnContainers のオーダリング マイクロサービスで実装されたクエリでは、初期の開発段階において非常に簡単でアジャイルであるため、動的な ViewModel を使用して開発を開始しました。</span><span class="sxs-lookup"><span data-stu-id="e60e3-159">*Tip based on our experience:* In the queries implemented at the Ordering microservice in eShopOnContainers, we started developing by using dynamic ViewModels as it was very straightforward and agile on the early development stages.</span></span> <span data-ttu-id="e60e3-160">しかし、開発が安定した後で、API をリファクタリングし、ViewModel に静的な、または定義済みの DTO を使用することにしました。これは、マイクロサービスのコンシューマーが、"コントラクト" として使用される、明示的な DTO 型を認識しやすいためです。</span><span class="sxs-lookup"><span data-stu-id="e60e3-160">But, once the development was stabilized, we chose to refactor the APIs and use static or pre-defined DTOs for the ViewModels, because it is clearer for the microservice’s consumers to know explicit DTO types, used as "contracts".</span></span>
+
+<span data-ttu-id="e60e3-161">次の例では、明示的な ViewModel DTO クラスである OrderSummary クラスを使用して、クエリでどのようにデータが返されるかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-161">In the following example, you can see how the query is returning data by using an explicit ViewModel DTO class: the OrderSummary class.</span></span>
+
+```csharp
+using Dapper;
+using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
+using System.Dynamic;
+using System.Collections.Generic;
+
+public class OrderQueries : IOrderQueries
+{
+  public async Task<IEnumerable<OrderSummary>> GetOrdersAsync()
+    {
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+            var result = await connection.QueryAsync<dynamic>(
+                  @"SELECT o.[Id] as ordernumber, 
+                  o.[OrderDate] as [date],os.[Name] as [status], 
+                  SUM(oi.units*oi.unitprice) as total
+                  FROM [ordering].[Orders] o
+                  LEFT JOIN[ordering].[orderitems] oi ON  o.Id = oi.orderid 
+                  LEFT JOIN[ordering].[orderstatus] os on o.OrderStatusId = os.Id
+                  GROUP BY o.[Id], o.[OrderDate], os.[Name]
+                  ORDER BY o.[Id]");
+        }
+    } 
+}
+```
+
+#### <a name="describing-response-types-of-web-apis"></a><span data-ttu-id="e60e3-162">Web API の応答型の説明</span><span class="sxs-lookup"><span data-stu-id="e60e3-162">Describing response types of Web APIs</span></span>
+
+<span data-ttu-id="e60e3-163">Web API とマイクロサービスを利用する開発者は、何が返されるか (具体的には、応答型とエラー コード (標準以外の場合)) を最も考慮します。</span><span class="sxs-lookup"><span data-stu-id="e60e3-163">Developers consuming web APIs and microservices are most concerned with what is returned — specifically response types and error codes (if not standard).</span></span> <span data-ttu-id="e60e3-164">これらは、XML のコメントおよびデータ注釈で処理されます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-164">These are handled in the XML comments and data annotations.</span></span>
+
+<span data-ttu-id="e60e3-165">Swagger UI に適切なドキュメントがないと、コンシューマーは返される型や返される可能性のある HTTP コードを認識できません。</span><span class="sxs-lookup"><span data-stu-id="e60e3-165">Without proper documentation in the Swagger UI, the consumer lacks knowledge of what types are being returned or what HTTP codes can be returned.</span></span> <span data-ttu-id="e60e3-166">この問題は <xref:Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute?displayProperty=nameWithType> を追加することで解決されるため、次のコードに示すように、Swagger は API の戻りモデルと値に関するより豊富な情報を生成することができます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-166">That problem is fixed by adding the <xref:Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute?displayProperty=nameWithType>, so Swagger can generate richer information about the API return model and values, as shown in the following code:</span></span>
+
+```csharp
+namespace Microsoft.eShopOnContainers.Services.Ordering.API.Controllers
+{
+    [Route("api/v1/[controller]")]
+    [Authorize]
+    public class OrdersController : Controller
+    {
+       //Additional code...
+       [Route("")]
+       [HttpGet]
+       [ProducesResponseType(typeof(IEnumerable<OrderSummary>),
+                             (int)HttpStatusCode.OK)]
+       public async Task<IActionResult> GetOrders()
+       {
+           var orderTask = _orderQueries.GetOrdersAsync();
+           var orders = await orderTask;
+           return Ok(orders);
+        }
+    }
+}
+```
+
+<span data-ttu-id="e60e3-167">ただし、`ProducesResponseType` 属性では型として動的な型を使用できず、次の例に示すように、`OrderSummary` ViewModel DTO などの明示的な型を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e60e3-167">However, the `ProducesResponseType` attribute cannot use dynamic as a type but requires to use explicit types, like the `OrderSummary` ViewModel DTO, shown in the following example:</span></span>
+
+```csharp
+public class OrderSummary
+{
+    public int ordernumber { get; set; }
+    public DateTime date { get; set; }
+    public string status { get; set; }
+    public double total { get; set; }
+}
+```
+
+<span data-ttu-id="e60e3-168">これが、長期的に見ると、明示的な戻り値の型が動的な型より適しているもう 1 つの理由です。</span><span class="sxs-lookup"><span data-stu-id="e60e3-168">This is another reason why explicit returned types are better than dynamic types, in the long term.</span></span>
+<span data-ttu-id="e60e3-169">`ProducesResponseType` 属性を使用する場合、考えられる HTTP エラー/コード (200、400 など) について予期される結果を指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-169">When using the `ProducesResponseType` attribute, you can also specify what is the expected outcome in regards possible HTTP errors/codes, like 200,400, etc.</span></span>
+
+<span data-ttu-id="e60e3-170">次のイメージで、Swagger UI にどのように ResponseType 情報が表示されるかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-170">In the following image, you can see how Swagger UI shows the ResponseType information.</span></span>
+
+![](./media/image5.png)
+
+<span data-ttu-id="e60e3-171">**図 9-5**</span><span class="sxs-lookup"><span data-stu-id="e60e3-171">**Figure 9-5**.</span></span> <span data-ttu-id="e60e3-172">Web API からの応答型と考えられる HTTP ステータス コードを示す Swagger UI</span><span class="sxs-lookup"><span data-stu-id="e60e3-172">Swagger UI showing response types and possible HTTP status codes from a Web API</span></span>
+
+<span data-ttu-id="e60e3-173">上のイメージでは、ViewModel 型に基づくいくつかの値の例と、返される可能性のある HTTP ステータス コードを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e60e3-173">You can see in the image above some example values based on the ViewModel types plus the possible HTTP status codes that can be returned.</span></span>
+
+## <a name="additional-resources"></a><span data-ttu-id="e60e3-174">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="e60e3-174">Additional resources</span></span>
+
+-   <span data-ttu-id="e60e3-175">**Dapper**
+    [*https://github.com/StackExchange/dapper-dot-net*](https://github.com/StackExchange/dapper-dot-net)</span><span class="sxs-lookup"><span data-stu-id="e60e3-175">**Dapper**
 [*https://github.com/StackExchange/dapper-dot-net*](https://github.com/StackExchange/dapper-dot-net)</span></span>
 
--   <span data-ttu-id="1b9b2-151">**Julie Lerman です。データ ポイント - 口ひげ、Entity Framework とのハイブリッド アプリ (MSDN Mag. 記事)**</span><span class="sxs-lookup"><span data-stu-id="1b9b2-151">**Julie Lerman. Data Points - Dapper, Entity Framework and Hybrid Apps (MSDN Mag. article)**</span></span>
+-   <span data-ttu-id="e60e3-176">**Julie Lerman。データ ポイント - Dapper、Entity Framework、およびハイブリッド アプリ (MSDN マガジンの記事)**</span><span class="sxs-lookup"><span data-stu-id="e60e3-176">**Julie Lerman. Data Points - Dapper, Entity Framework and Hybrid Apps (MSDN Mag. article)**</span></span>
 
-    <span data-ttu-id="1b9b2-152">*https://msdn.microsoft.com/en-us/magazine/mt703432.aspx*</span><span class="sxs-lookup"><span data-stu-id="1b9b2-152">*https://msdn.microsoft.com/en-us/magazine/mt703432.aspx*</span></span>
+    <span data-ttu-id="e60e3-177">*https://msdn.microsoft.com/magazine/mt703432.aspx*</span><span class="sxs-lookup"><span data-stu-id="e60e3-177">*https://msdn.microsoft.com/magazine/mt703432.aspx*</span></span>
 
+-   <span data-ttu-id="e60e3-178">**Swagger を使用する ASP.NET Core Web API のヘルプ ページ**</span><span class="sxs-lookup"><span data-stu-id="e60e3-178">**ASP.NET Core Web API Help Pages using Swagger**</span></span>
+
+    <span data-ttu-id="e60e3-179">*https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio*</span><span class="sxs-lookup"><span data-stu-id="e60e3-179">*https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio*</span></span>
 
 >[!div class="step-by-step"]
-<span data-ttu-id="1b9b2-153">[前](eshoponcontainers-cqrs-ddd-microservice.md) [次へ] (ddd-指向-microservice.md)</span><span class="sxs-lookup"><span data-stu-id="1b9b2-153">[Previous] (eshoponcontainers-cqrs-ddd-microservice.md) [Next] (ddd-oriented-microservice.md)</span></span>
+<span data-ttu-id="e60e3-180">[Previous] (eshoponcontainers-cqrs-ddd-microservice.md) [Next] (ddd-oriented-microservice.md)</span><span class="sxs-lookup"><span data-stu-id="e60e3-180">[Previous] (eshoponcontainers-cqrs-ddd-microservice.md) [Next] (ddd-oriented-microservice.md)</span></span>

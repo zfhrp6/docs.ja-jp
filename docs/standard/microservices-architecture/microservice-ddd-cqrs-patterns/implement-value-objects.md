@@ -1,48 +1,51 @@
 ---
-title: "値オブジェクトを実装します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |値オブジェクトを実装します。"
+title: "値オブジェクトの実装"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 値オブジェクトの実装"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: c20bc80d2ddb864a3a0172beb211974426a278a8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2b7b85d2aa3c563fbd4c7cf89336827d25f22c0e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-value-objects"></a><span data-ttu-id="59fa0-104">値オブジェクトを実装します。</span><span class="sxs-lookup"><span data-stu-id="59fa0-104">Implementing value objects</span></span>
+# <a name="implementing-value-objects"></a><span data-ttu-id="44ba7-104">値オブジェクトの実装</span><span class="sxs-lookup"><span data-stu-id="44ba7-104">Implementing value objects</span></span>
 
-<span data-ttu-id="59fa0-105">エンティティと集計については、前のセクションで既に説明した、id はエンティティの基本的なです。</span><span class="sxs-lookup"><span data-stu-id="59fa0-105">As discussed in earlier sections about entities and aggregates, identity is fundamental for entities.</span></span> <span data-ttu-id="59fa0-106">ただし、多数のオブジェクトとデータ項目にある、id、および値オブジェクトなど、追跡 id を必要としないシステムです。</span><span class="sxs-lookup"><span data-stu-id="59fa0-106">However, there are many objects and data items in a system that do not require an identity and identity tracking, such as value objects.</span></span>
+<span data-ttu-id="44ba7-105">これまでのエンティティと集計に関するセクションで説明したように、ID はエンティティの基礎です。</span><span class="sxs-lookup"><span data-stu-id="44ba7-105">As discussed in earlier sections about entities and aggregates, identity is fundamental for entities.</span></span> <span data-ttu-id="44ba7-106">一方、システムには、ID と ID の追跡を必要としないオブジェクトとデータ項目が多数あります。たとえば、値オブジェクトなどです。</span><span class="sxs-lookup"><span data-stu-id="44ba7-106">However, there are many objects and data items in a system that do not require an identity and identity tracking, such as value objects.</span></span>
 
-<span data-ttu-id="59fa0-107">値オブジェクトには、他のエンティティを参照できます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-107">A value object can reference other entities.</span></span> <span data-ttu-id="59fa0-108">など、1 つのポイントから取得する方法について説明するルートを生成するアプリケーションでそのルート オブジェクトの値になります。</span><span class="sxs-lookup"><span data-stu-id="59fa0-108">For example, in an application that generates a route that describes how to get from one point to another, that route would be a value object.</span></span> <span data-ttu-id="59fa0-109">特定のルート上のポイントのスナップショットになりますが、内部的に参照するエンティティと市区町村、道路などもこの提案されたルートは、id はありません。</span><span class="sxs-lookup"><span data-stu-id="59fa0-109">It would be a snapshot of points on a specific route, but this suggested route would not have an identity, even though internally it might refer to entities like City, Road, etc.</span></span>
+<span data-ttu-id="44ba7-107">値オブジェクトは他のエンティティを参照できます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-107">A value object can reference other entities.</span></span> <span data-ttu-id="44ba7-108">たとえば、あるポイントから別のポイントに到達する方法を示すルートを生成するアプリケーションの場合、そのルートが値オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="44ba7-108">For example, in an application that generates a route that describes how to get from one point to another, that route would be a value object.</span></span> <span data-ttu-id="44ba7-109">これは特定のルート上にあるポイントのスナップショットですが、内部的には City、Road などのエンティティを参照していても、この提案されるルートに ID はありません。</span><span class="sxs-lookup"><span data-stu-id="44ba7-109">It would be a snapshot of points on a specific route, but this suggested route would not have an identity, even though internally it might refer to entities like City, Road, etc.</span></span>
 
-<span data-ttu-id="59fa0-110">図 9. ~ 13. では、注文集計内のアドレス値オブジェクトを示します。</span><span class="sxs-lookup"><span data-stu-id="59fa0-110">Figure 9-13 shows the Address value object within the Order aggregate.</span></span>
+<span data-ttu-id="44ba7-110">図 9-13 は、Order 集計内の Address 値オブジェクトを示しています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-110">Figure 9-13 shows the Address value object within the Order aggregate.</span></span>
 
 ![](./media/image14.png)
 
-<span data-ttu-id="59fa0-111">**図 9. ~ 13.**です。</span><span class="sxs-lookup"><span data-stu-id="59fa0-111">**Figure 9-13**.</span></span> <span data-ttu-id="59fa0-112">順序の集計内のオブジェクトの値に対応します。</span><span class="sxs-lookup"><span data-stu-id="59fa0-112">Address value object within the Order aggregate</span></span>
+<span data-ttu-id="44ba7-111">**図 9-13**.</span><span class="sxs-lookup"><span data-stu-id="44ba7-111">**Figure 9-13**.</span></span> <span data-ttu-id="44ba7-112">Order 集計内の Address 値オブジェクト</span><span class="sxs-lookup"><span data-stu-id="44ba7-112">Address value object within the Order aggregate</span></span>
 
-<span data-ttu-id="59fa0-113">図 9-13 に示すように、複数の属性はエンティティが通常で構成されます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-113">As shown in Figure 9-13, an entity is usually composed of multiple attributes.</span></span> <span data-ttu-id="59fa0-114">たとえば、順序を id を持つエンティティとしてモデル化し、OrderId、OrderDate、OrderItems などの属性のセットの内部で構成されます。しかし、アドレスは、複合型の値だけから成る国、番地、市区町村などのモデル化し、値のオブジェクトとして扱われます必要があります。</span><span class="sxs-lookup"><span data-stu-id="59fa0-114">For example, Order can be modeled as an entity with an identity and composed internally of a set of attributes such as OrderId, OrderDate, OrderItems, etc. But the address, which is simply a complex value composed of country, street, city, etc. must be modeled and treated as a value object.</span></span>
+<span data-ttu-id="44ba7-113">図 9-13 に示すように、通常、エンティティは複数の属性で構成されます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-113">As shown in Figure 9-13, an entity is usually composed of multiple attributes.</span></span> <span data-ttu-id="44ba7-114">たとえば、`Order` エンティティは、ID があるエンティティとしてモデル化し、内部的に OrderId、OrderDate、OrderItems などの一連の属性で構成することができます。ただし、住所は、単に国、市区町村、番地などで構成された複合値であり、このドメイン内に ID はないため、値をモデル化し、値オブジェクトとして扱う必要があります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-114">For example, the `Order` entity can be modeled as an entity with an identity and composed internally of a set of attributes such as OrderId, OrderDate, OrderItems, etc. But the address, which is simply a complex value composed of country, street, city, etc. and has no identity in this domain,  must be modeled and treated as a value object.</span></span>
 
-## <a name="important-characteristics-of-value-objects"></a><span data-ttu-id="59fa0-115">値オブジェクトの重要な特性</span><span class="sxs-lookup"><span data-stu-id="59fa0-115">Important characteristics of value objects</span></span>
+## <a name="important-characteristics-of-value-objects"></a><span data-ttu-id="44ba7-115">値オブジェクトの重要な特性</span><span class="sxs-lookup"><span data-stu-id="44ba7-115">Important characteristics of value objects</span></span>
 
-<span data-ttu-id="59fa0-116">値オブジェクトの 2 つの主な特徴があります。</span><span class="sxs-lookup"><span data-stu-id="59fa0-116">There are two main characteristics for value objects:</span></span>
+<span data-ttu-id="44ba7-116">値オブジェクトには主に 2 つの特性があります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-116">There are two main characteristics for value objects:</span></span>
 
--   <span data-ttu-id="59fa0-117">Id があるありません。</span><span class="sxs-lookup"><span data-stu-id="59fa0-117">They have no identity.</span></span>
+-   <span data-ttu-id="44ba7-117">ID がない。</span><span class="sxs-lookup"><span data-stu-id="44ba7-117">They have no identity.</span></span>
 
--   <span data-ttu-id="59fa0-118">変更可能なことはできません。</span><span class="sxs-lookup"><span data-stu-id="59fa0-118">They are immutable.</span></span>
+-   <span data-ttu-id="44ba7-118">不変である。</span><span class="sxs-lookup"><span data-stu-id="44ba7-118">They are immutable.</span></span>
 
-<span data-ttu-id="59fa0-119">1 番目の特性は既に説明しました。</span><span class="sxs-lookup"><span data-stu-id="59fa0-119">The first characteristic was already discussed.</span></span> <span data-ttu-id="59fa0-120">不変性は、重要な要件です。</span><span class="sxs-lookup"><span data-stu-id="59fa0-120">Immutability is an important requirement.</span></span> <span data-ttu-id="59fa0-121">値オブジェクトの値、オブジェクトを作成した後に変更可能なことがあります。</span><span class="sxs-lookup"><span data-stu-id="59fa0-121">The values of a value object must be immutable once the object is created.</span></span> <span data-ttu-id="59fa0-122">そのため、オブジェクトを作成するとき、必要な値を指定する必要がありますが、オブジェクトの有効期間中に変更することを許可する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="59fa0-122">Therefore, when the object is constructed, you must provide the required values, but you must not allow them to change during the object’s lifetime.</span></span>
+<span data-ttu-id="44ba7-119">1 つ目の特性については既に説明しました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-119">The first characteristic was already discussed.</span></span> <span data-ttu-id="44ba7-120">不変性は重要な要件です。</span><span class="sxs-lookup"><span data-stu-id="44ba7-120">Immutability is an important requirement.</span></span> <span data-ttu-id="44ba7-121">値オブジェクトが作成された後は、その値を不変にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-121">The values of a value object must be immutable once the object is created.</span></span> <span data-ttu-id="44ba7-122">そのため、オブジェクトの構築時に必要な値を指定する必要がありますが、オブジェクトの有効期間中は変更を許可しない必要があります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-122">Therefore, when the object is constructed, you must provide the required values, but you must not allow them to change during the object’s lifetime.</span></span>
 
-<span data-ttu-id="59fa0-123">値オブジェクトを使用すると、変更できない性質により、パフォーマンスの特定のテクニックを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-123">Value objects allow you to perform certain tricks for performance, thanks to their immutable nature.</span></span> <span data-ttu-id="59fa0-124">これは、システムで特に同じ値を持つたくさんある数千の値のオブジェクトのインスタンス、します。</span><span class="sxs-lookup"><span data-stu-id="59fa0-124">This is especially true in systems where there may be thousands of value object instances, many of which have the same values.</span></span> <span data-ttu-id="59fa0-125">変更できない、本来を再利用できること。その値が同じでありの id がないために、交換可能なオブジェクトが存在することができます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-125">Their immutable nature allows them to be reused; they can be interchangeable objects, since their values are the same and they have no identity.</span></span> <span data-ttu-id="59fa0-126">この最適化の種類にできるの違いは、実行速度が遅いソフトウェアとソフトウェア良好なパフォーマンスをことがあります。</span><span class="sxs-lookup"><span data-stu-id="59fa0-126">This type of optimization can sometimes make a difference between software that runs slowly and software with good performance.</span></span> <span data-ttu-id="59fa0-127">もちろん、このような場合は、アプリケーション環境と展開のコンテキストに依存します。</span><span class="sxs-lookup"><span data-stu-id="59fa0-127">Of course, all these cases depend on the application environment and deployment context.</span></span>
+<span data-ttu-id="44ba7-123">値オブジェクトを使用すると、不変の性質がパフォーマンスのために役立つことがあります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-123">Value objects allow you to perform certain tricks for performance, thanks to their immutable nature.</span></span> <span data-ttu-id="44ba7-124">特に、何千もの値オブジェクト インスタンスが存在する可能性があり、インスタンスの多くが同じ値を持つシステムで役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-124">This is especially true in systems where there may be thousands of value object instances, many of which have the same values.</span></span> <span data-ttu-id="44ba7-125">不変の性質なので、再利用することができます。値が同じで、ID を持たないので、相互に交換可能なオブジェクトにすることができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-125">Their immutable nature allows them to be reused; they can be interchangeable objects, since their values are the same and they have no identity.</span></span> <span data-ttu-id="44ba7-126">このような最適化で、低速で実行されるソフトウェアとパフォーマンスが良好なソフトウェアの間で違いが生じる場合があります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-126">This type of optimization can sometimes make a difference between software that runs slowly and software with good performance.</span></span> <span data-ttu-id="44ba7-127">当然ながら、このようないずれの場合でも、アプリケーション環境と展開コンテキストによって変わります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-127">Of course, all these cases depend on the application environment and deployment context.</span></span>
 
-## <a name="value-object-implementation-in-c"></a><span data-ttu-id="59fa0-128">C では値オブジェクトの実装\#</span><span class="sxs-lookup"><span data-stu-id="59fa0-128">Value object implementation in C\#</span></span>
+## <a name="value-object-implementation-in-c"></a><span data-ttu-id="44ba7-128">C\# での値オブジェクトの実装</span><span class="sxs-lookup"><span data-stu-id="44ba7-128">Value object implementation in C\#</span></span>
 
-<span data-ttu-id="59fa0-129">実装では、観点から (からのオブジェクトの値は、id に基づいている必要がありますいない) すべての属性とその他の基本的な特性の比較に基づいてに等しいかどうかのような基本的なユーティリティ メソッドを持つ値オブジェクトの基本クラスことができます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-129">In terms of implementation, you can have a value object base class that has basic utility methods like equality based on comparison between all the attributes (since a value object must not be based on identity) and other fundamental characteristics.</span></span> <span data-ttu-id="59fa0-130">次の例では、eShopOnContainers から順序マイクロ サービスで使用される、値オブジェクトの基本クラスを示します。</span><span class="sxs-lookup"><span data-stu-id="59fa0-130">The following example shows a value object base class used in the ordering microservice from eShopOnContainers.</span></span>
+<span data-ttu-id="44ba7-129">実装の観点からは、(値オブジェクトは ID に基づいてはならないので) すべての属性と他の基本的な特性の比較に基づいて、等値などの基本的なユーティリティ メソッドを持つ値オブジェクトの基底クラスを持つことができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-129">In terms of implementation, you can have a value object base class that has basic utility methods like equality based on comparison between all the attributes (since a value object must not be based on identity) and other fundamental characteristics.</span></span> <span data-ttu-id="44ba7-130">次の例は、eShopOnContainers の注文マイクロサービスで使用される値オブジェクトの基底クラスを示しています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-130">The following example shows a value object base class used in the ordering microservice from eShopOnContainers.</span></span>
 
 ```csharp
 public abstract class ValueObject
@@ -93,7 +96,7 @@ public abstract class ValueObject
 }
 ```
 
-<span data-ttu-id="59fa0-131">次の例に示すように、アドレス値オブジェクトと同様、実際の値オブジェクトを実装するときにこのクラスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-131">You can use this class when implementing your actual value object, as with the Address value object shown in the following example:</span></span>
+<span data-ttu-id="44ba7-131">次の例に示す Address 値オブジェクトと同様に、実際の値オブジェクトを実装するときにこのクラスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-131">You can use this class when implementing your actual value object, as with the Address value object shown in the following example:</span></span>
 
 ```csharp
 public class Address : ValueObject
@@ -104,8 +107,9 @@ public class Address : ValueObject
     public String Country { get; private set; }
     public String ZipCode { get; private set; }
 
-    public Address(string street, string city, string state,
-        string country, string zipcode)
+    private Address() { }
+
+    public Address(string street, string city, string state, string country, string zipcode)
     {
         Street = street;
         City = city;
@@ -116,6 +120,7 @@ public class Address : ValueObject
 
     protected override IEnumerable<object> GetAtomicValues()
     {
+        // Using a yield return statement to return each element one at a time
         yield return Street;
         yield return City;
         yield return State;
@@ -125,48 +130,201 @@ public class Address : ValueObject
 }
 ```
 
-## <a name="hiding-the-identity-characteristic-when-using-ef-core-to-persist-value-objects"></a><span data-ttu-id="59fa0-132">EF コアを使用して値オブジェクトを保持する場合、識別特性を非表示にします。</span><span class="sxs-lookup"><span data-stu-id="59fa0-132">Hiding the identity characteristic when using EF Core to persist value objects</span></span>
+## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20"></a><span data-ttu-id="44ba7-132">EF Core 2.0 でデータベース内の値オブジェクトを永続化する方法</span><span class="sxs-lookup"><span data-stu-id="44ba7-132">How to persist value objects in the database with EF Core 2.0</span></span>
 
-<span data-ttu-id="59fa0-133">現在のバージョン (EF コア 1.1) では使用できないことを EF コアを使用する場合、制限[複合型](https://docs.microsoft.com/de-de/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7)EF で定義されている 6.x です。</span><span class="sxs-lookup"><span data-stu-id="59fa0-133">A limitation when using EF Core is that in its current version (EF Core 1.1) you cannot use [complex types](https://docs.microsoft.com/de-de/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7) as defined in EF 6.x.</span></span> <span data-ttu-id="59fa0-134">そのため、EF エンティティとして、オブジェクトの値を格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="59fa0-134">Therefore, you must store your value object as an EF entity.</span></span> <span data-ttu-id="59fa0-135">ただし、クリア、id がオブジェクトの値が含まれるモデルで重要でないことを行うようには、その ID を非表示にできます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-135">However, you can hide its ID so you make clear that the identity is not important in the model that the value object is part of.</span></span> <span data-ttu-id="59fa0-136">ID を非表示にする、シャドウ プロパティとして、ID を使用することです。</span><span class="sxs-lookup"><span data-stu-id="59fa0-136">You hide the ID is by using the ID as a shadow property.</span></span> <span data-ttu-id="59fa0-137">その構成モデルの ID を非表示に設定されているためインフラストラクチャ レベルで、ドメイン モデルに対して透過的になり、インフラストラクチャ実装は、今後変更可能性があります。</span><span class="sxs-lookup"><span data-stu-id="59fa0-137">Since that configuration for hiding the ID in the model is set up in the infrastructure level, it will be transparent for your domain model, and its infrastructure implementation could change in the future.</span></span>
+<span data-ttu-id="44ba7-133">ここまでは、ドメイン モデルで値オブジェクトを定義する方法について説明しました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-133">You just saw how to define a value object in your domain model.</span></span> <span data-ttu-id="44ba7-134">それでは、通常は ID のあるエンティティをターゲットとする Entity Framework (EF) Core を使用して、データベースに永続化するにはどうすればよいでしょうか。</span><span class="sxs-lookup"><span data-stu-id="44ba7-134">But, how can you actually persist it into the database through Entity Framework (EF) Core which usually targets entities with identity?</span></span>
 
-<span data-ttu-id="59fa0-138">EShopOnContainers での EF のコア インフラストラクチャで必要な非表示の ID インフラストラクチャ プロジェクトで Fluent API を使用して DbContext レベルでは、次のように実装されます。</span><span class="sxs-lookup"><span data-stu-id="59fa0-138">In eShopOnContainers, the hidden ID needed by EF Core infrastructure is implemented in the following way in the DbContext level, using Fluent API at the infrastructure project.</span></span>
+### <a name="background-and-older-approaches-using-ef-core-11"></a><span data-ttu-id="44ba7-135">EF Core 1.1 を使用する背景と以前のアプローチ</span><span class="sxs-lookup"><span data-stu-id="44ba7-135">Background and older approaches using EF Core 1.1</span></span>
+
+<span data-ttu-id="44ba7-136">背景として、EF Core 1.0 と 1.1 を使用する場合、従来の .NET Framework で EF 6.x で定義されているような[複合型](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7)を使用できないという制限がありました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-136">As background, a limitation when using EF Core 1.0 and 1.1 was that you cannot use  [complex types](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7) as defined in EF 6.x in the traditional .NET Framework.</span></span> <span data-ttu-id="44ba7-137">そのため、EF Core 1.0 または 1.1 を使用する場合、値オブジェクトを ID フィールドを持つ EF エンティティとして格納する必要がありました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-137">Therefore, if using EF Core 1.0 or 1.1, you needed to store your value object as an EF entity with an ID field.</span></span> <span data-ttu-id="44ba7-138">そこで、ID を持たない値オブジェクトのように見えるように、ID を非表示にすることがありました。これで、値オブジェクトの ID がドメイン モデルで重要ではないことがはっきりします。</span><span class="sxs-lookup"><span data-stu-id="44ba7-138">Then, so it looked more like a value object with no identity, you could hide its ID so you make clear that the identity of a value object is not important in the domain model.</span></span> <span data-ttu-id="44ba7-139">この ID を非表示にするには、[シャドウ プロパティ](https://docs.microsoft.com/ef/core/modeling/shadow-properties )として ID を使用します。</span><span class="sxs-lookup"><span data-stu-id="44ba7-139">You could hide that ID by using the ID as a [shadow property](https://docs.microsoft.com/ef/core/modeling/shadow-properties ).</span></span> <span data-ttu-id="44ba7-140">モデル内の ID を非表示にする構成は EF インフラストラクチャ レベルで設定されるため、ドメイン モデルでも透過的になります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-140">Since that configuration for hiding the ID in the model is set up in the EF infrastructure level, it would be kind of transparent for your domain model.</span></span>
+
+<span data-ttu-id="44ba7-141">eShopOnContainers の初期バージョン (.NET Core 1.1) では、EF Core インフラストラクチャに必要な非表示の ID は、次のように、インフラストラクチャ プロジェクトで Fluent API を使用して DbContext レベルで実装されていました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-141">In the initial version of eShopOnContainers (.NET Core 1.1), the hidden ID needed by EF Core infrastructure was implemented in the following way in the DbContext level, using Fluent API at the infrastructure project.</span></span> <span data-ttu-id="44ba7-142">そのため、ID はドメイン モデルの観点からは非表示でしたが、インフラストラクチャには存在していました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-142">Therefore, the ID was hidden from the domain model point of view, but still present in the infrastructure.</span></span>
 
 ```csharp
-// Fluent API within the OrderingContext:DbContext in the
-// Ordering.Infrastructure project
-
-void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
+// Old approach with EF Core 1.1
+// Fluent API within the OrderingContext:DbContext in the Infrastructure project
+void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration) 
 {
-    addressConfiguration.ToTable("address", DEFAULT_SCHEMA);
-    addressConfiguration.Property<int>("Id").IsRequired();
-    addressConfiguration.HasKey("Id");
+    addressConfiguration.ToTable("address", DEFAULT_SCHEMA); 
+
+    addressConfiguration.Property<int>("Id")  // Id is a shadow property
+        .IsRequired();
+    addressConfiguration.HasKey("Id");   // Id is a shadow property
 }
 ```
 
-<span data-ttu-id="59fa0-139">そのため、ID が、ドメイン モデルの観点から、非表示、今後は、値オブジェクトのインフラストラクチャでしたも実装する複合型または別の方法として。</span><span class="sxs-lookup"><span data-stu-id="59fa0-139">Therefore, the ID is hidden from the domain model point of view, and in the future, the value object infrastructure could also be implemented as a complex type or another way.</span></span>
+<span data-ttu-id="44ba7-143">ただし、その値オブジェクトのデータベースへの永続化は、別のテーブルの通常のエンティティと同様に実行されていました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-143">However, the persistence of that value object into the database was performed like a regular entity in a different table.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="59fa0-140">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="59fa0-140">Additional resources</span></span>
+<span data-ttu-id="44ba7-144">EF Core 2.0 には、値オブジェクトを永続化するための新しく優れた方法があります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-144">With EF Core 2.0, there are new and better ways to persist value objects.</span></span>
 
--   <span data-ttu-id="59fa0-141">**Martin Fowler。ValueObject パターン**
-    [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)</span><span class="sxs-lookup"><span data-stu-id="59fa0-141">**Martin Fowler. ValueObject pattern**
+## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20"></a><span data-ttu-id="44ba7-145">EF Core 2.0 で所有エンティティ型として値オブジェクトを永続化する</span><span class="sxs-lookup"><span data-stu-id="44ba7-145">Persist value objects as owned entity types in EF Core 2.0</span></span>
+
+<span data-ttu-id="44ba7-146">DDD の標準の値オブジェクト パターンと EF Core の所有エンティティ型の間にいくつかのギャップがあるとしても、現在は EF Core 2.0 を使用して値オブジェクトを永続化する方法が最善です。</span><span class="sxs-lookup"><span data-stu-id="44ba7-146">Even with some gaps between the canonical value object pattern in DDD and the owned entity type in EF Core, it's currently the best way to persist value objects with EF Core 2.0.</span></span> <span data-ttu-id="44ba7-147">制限事項については、このセクションの末尾を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44ba7-147">You can see limitations at the end of this section.</span></span>
+
+<span data-ttu-id="44ba7-148">所有エンティティ型の機能は、EF Core バージョン 2.0 以降に追加されました。</span><span class="sxs-lookup"><span data-stu-id="44ba7-148">The owned entity type feature was added to EF Core since version 2.0.</span></span>
+
+<span data-ttu-id="44ba7-149">所有エンティティ型を使用すると、ドメイン モデルで明示的に定義された独自の ID を持たない型をマップし、任意のエンティティ内で値オブジェクトなどのプロパティとして使用することができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-149">An owned entity type allows you to map types that do not have their own identity explicitely defined in the domain model and are used as properties, such as a value object, within any of your entities.</span></span> <span data-ttu-id="44ba7-150">所有エンティティ型は、同じ CLR 型を別のエンティティ型と共有します。</span><span class="sxs-lookup"><span data-stu-id="44ba7-150">An owned entity type shares the same CLR type with another entity type.</span></span> <span data-ttu-id="44ba7-151">定義となるナビゲーションを含むエンティティは、所有者エンティティです。</span><span class="sxs-lookup"><span data-stu-id="44ba7-151">The entity containing the defining navigation is the owner entity.</span></span> <span data-ttu-id="44ba7-152">所有者のクエリを実行すると、所有型が既定で含まれます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-152">When querying the owner, the owned types are included by default.</span></span>
+
+<span data-ttu-id="44ba7-153">ドメイン モデルのみを見ると、所有型には ID がないように見えます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-153">Just by looking at the domain model, an owned type looks like it doesn’t have any identity.</span></span>
+<span data-ttu-id="44ba7-154">実際には所有型に ID はありますが、所有者ナビゲーション プロパティはこの ID の一部です。</span><span class="sxs-lookup"><span data-stu-id="44ba7-154">However, under the covers, owned types do have identity, but the owner navigation property is part of this identity.</span></span>
+
+<span data-ttu-id="44ba7-155">所有型のインスタンスの ID は、完全に独自のものではありません。</span><span class="sxs-lookup"><span data-stu-id="44ba7-155">The identity of instances of own types is not completely their own.</span></span> <span data-ttu-id="44ba7-156">この ID は 3 つのコンポーネントで構成されています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-156">It consists of three components:</span></span> 
+
+- <span data-ttu-id="44ba7-157">所有者の ID</span><span class="sxs-lookup"><span data-stu-id="44ba7-157">The identity of the owner</span></span>
+
+- <span data-ttu-id="44ba7-158">これらを指すナビゲーション プロパティ</span><span class="sxs-lookup"><span data-stu-id="44ba7-158">The navigation property pointing to them</span></span>
+
+- <span data-ttu-id="44ba7-159">所有型のコレクションの場合は、独立したコンポーネント (EF Core 2.0 ではまだサポートされていません)。</span><span class="sxs-lookup"><span data-stu-id="44ba7-159">In the case of collections of owned types, an independent component (not yet supported in EF Core 2.0).</span></span>
+
+<span data-ttu-id="44ba7-160">たとえば、eShopOnContainers の Ordering ドメイン モデルでは、Order エンティティの一部である Address 値オブジェクトは、所有者エンティティ (Order エンティティ) 内の所有エンティティ型として実装されます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-160">For example, in the Ordering domain model at eShopOnContainers, as part of the Order entity, the Address value object is implemented as an owned entity type within the owner entity, which is the Order entity.</span></span> <span data-ttu-id="44ba7-161">Address は、ドメイン モデルに定義されている ID プロパティのない型です。</span><span class="sxs-lookup"><span data-stu-id="44ba7-161">Address is a type with no identity property defined in the domain model.</span></span> <span data-ttu-id="44ba7-162">特定の注文の配送先住所を指定するために、Order 型のプロパティとして使用されます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-162">It is used as a property of the Order type to specify the shipping address for a particular order.</span></span>
+
+<span data-ttu-id="44ba7-163">規約によって、所有されている型に対してシャドウ主キーが作成され、テーブル分割を利用し、同じテーブルに所有者としてマップされます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-163">By convention, a shadow primary key is created for the owned type and it will be mapped to the same table as the owner by using table splitting.</span></span> <span data-ttu-id="44ba7-164">そのため、従来の .NET Framework の EF6 で複合型を使用する方法と同様に所有型を使用できます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-164">This allows to use owned types similarly to how complex types are used in EF6 in the traditional .NET Framework.</span></span>
+
+<span data-ttu-id="44ba7-165">EF Core の規約で所有型が検出されることはないので、明示的に宣言する必要がある点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="44ba7-165">It is important to note that owned types are never discovered by convention in EF Core, so you have to declare them explicitly.</span></span>
+
+<span data-ttu-id="44ba7-166">eShopOnContainers では、OnModelCreating() メソッド内の OrderingContext.cs に複数のインフラストラクチャ構成が適用されています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-166">In eShopOnContainers, at the OrderingContext.cs, within the OnModelCreating() method, there are multiple infrastructure configuration being applied.</span></span> <span data-ttu-id="44ba7-167">そのうちの 1 つが Order エンティティに関連しています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-167">One of them is related to the Order entity.</span></span>
+
+```csharp
+// Part of the OrderingContext.cs class at the Ordering.Infrastructure project
+// 
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.ApplyConfiguration(new ClientRequestEntityTypeConfiguration());
+    modelBuilder.ApplyConfiguration(new PaymentMethodEntityTypeConfiguration());
+    modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
+    modelBuilder.ApplyConfiguration(new OrderItemEntityTypeConfiguration());
+    //...Additional type configurations
+}
+```
+
+<span data-ttu-id="44ba7-168">次のコードでは、Order エンティティについて永続化インフラストラクチャが定義されています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-168">In the following code, the persistence infrastructure is defined for the Order entity:</span></span>
+
+```csharp
+// Part of the OrderEntityTypeConfiguration.cs class 
+// 
+public void Configure(EntityTypeBuilder<Order> orderConfiguration)
+{
+    orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
+    orderConfiguration.HasKey(o => o.Id);
+    orderConfiguration.Ignore(b => b.DomainEvents);
+    orderConfiguration.Property(o => o.Id)
+        .ForSqlServerUseSequenceHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
+
+    //Address value object persisted as owned entity in EF Core 2.0
+    orderConfiguration.OwnsOne(o => o.Address);
+
+    orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
+    
+    //...Additional validations, constraints and code...
+    //...
+}
+```
+
+<span data-ttu-id="44ba7-169">前のコードでは、`orderConfiguration.OwnsOne(o => o.Address)` メソッドは、`Address` プロパティが `Order` 型の所有エンティティであることを指定しています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-169">In the previous code, the `orderConfiguration.OwnsOne(o => o.Address)` method specifies that the `Address` property is an owned entity of the `Order` type.</span></span>
+
+<span data-ttu-id="44ba7-170">既定の EF Core 規約では、所有エンティティ型のプロパティのデータベース列に `EntityProperty_OwnedEntityProperty` と名前が付けられます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-170">By default, EF Core conventions name the database columns for the properties of the owned entity type as `EntityProperty_OwnedEntityProperty`.</span></span> <span data-ttu-id="44ba7-171">そのため、`Address` の内部プロパティは、`Orders` テーブルで `Address_Street`、`Address_City` (`State`、`Country`、`ZipCode` など) という名前で表示されます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-171">Therefore, the internal properties of `Address` will appear in the `Orders` table with the names `Address_Street`, `Address_City` (and so on for `State`, `Country` and `ZipCode`).</span></span>
+
+<span data-ttu-id="44ba7-172">`Property().HasColumnName()` fluent メソッドを付加して、これらの列の名前を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-172">You can append the `Property().HasColumnName()` fluent method to rename those columns.</span></span> <span data-ttu-id="44ba7-173">`Address` がパブリック プロパティの場合、マッピングは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="44ba7-173">In the case where `Address` is a public property, the mappings would be like the following:</span></span>
+
+```csharp
+orderConfiguration.OwnsOne(p => p.Address)
+                            .Property(p=>p.Street).HasColumnName("ShippingStreet");
+
+orderConfiguration.OwnsOne(p => p.Address)
+                            .Property(p=>p.City).HasColumnName("ShippingCity");
+```
+
+<span data-ttu-id="44ba7-174">fluent マッピングでは、`OwnsOne` メソッドを連鎖させることができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-174">It is possible to chain the `OwnsOne` method in a fluent mapping.</span></span> <span data-ttu-id="44ba7-175">次の仮定例では、`OrderDetails` が `BillingAddress` と `ShippingAddress` を所有しています (いずれも `Address` 型です)。</span><span class="sxs-lookup"><span data-stu-id="44ba7-175">In the following hypothetical example, `OrderDetails` owns `BillingAddress` and `ShippingAddress`, which are both `Address` types.</span></span> <span data-ttu-id="44ba7-176">また、`OrderDetails` は `Order` 型に所有されています。</span><span class="sxs-lookup"><span data-stu-id="44ba7-176">Then `OrderDetails` is owned by the `Order` type.</span></span>
+
+```csharp
+orderConfiguration.OwnsOne(p => p.OrderDetails, cb =>
+    {
+        cb.OwnsOne(c => c.BillingAddress);
+        cb.OwnsOne(c => c.ShippingAddress);
+    });
+//...
+//...
+public class Order
+{
+    public int Id { get; set; }
+    public OrderDetails OrderDetails { get; set; }
+}
+
+public class OrderDetails
+{
+    public StreetAddress BillingAddress { get; set; }
+    public StreetAddress ShippingAddress { get; set; }
+}
+
+public class Address
+{
+    public string Street { get; set; }
+    public string City { get; set; }
+}
+```
+
+### <a name="additional-details-on-owned-entity-types"></a><span data-ttu-id="44ba7-177">所有エンティティ型に関するその他の詳細情報</span><span class="sxs-lookup"><span data-stu-id="44ba7-177">Additional details on owned entity types</span></span>
+
+<span data-ttu-id="44ba7-178">•   所有型は、OwnsOne fluent API を使用してナビゲーション プロパティを特定の型に構成するときに定義されます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-178">•   Owned types are defined when you configure a navigation property to a particular type using the OwnsOne fluent API.</span></span>
+
+<span data-ttu-id="44ba7-179">•   メタデータ モデルの所有型の定義は、所有者型、ナビゲーション プロパティ、所有型の CLR 型のコンポジットです。</span><span class="sxs-lookup"><span data-stu-id="44ba7-179">•   The definition of an owned type in our metadata model is a composite of: the owner type, the navigation property, and the CLR type of the owned type.</span></span>
+
+<span data-ttu-id="44ba7-180">•   スタック内の所有型インスタンスの ID (キー) は、所有者型の ID と所有型の定義のコンポジットです。</span><span class="sxs-lookup"><span data-stu-id="44ba7-180">•   The identity (key) of an owned type instance in our stack is a composite of the identity of the owner type and the definition of the owned type.</span></span>
+
+#### <a name="owned-entities-capabilities"></a><span data-ttu-id="44ba7-181">所有エンティティの機能:</span><span class="sxs-lookup"><span data-stu-id="44ba7-181">Owned entities capabilities:</span></span>
+
+<span data-ttu-id="44ba7-182">•   所有型は、他の所有 (入れ子にされた所有型) エンティティまたは非所有 (他のエンティティに対する通常の参照ナビゲーション プロパティ) エンティティを参照できます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-182">•   Owned type can reference other entities, either owned (nested owned types) or non-owned (regular reference navigation properties to other entities).</span></span>
+
+<span data-ttu-id="44ba7-183">•   同じ所有者エンティティの同じ CLR 型を、個別のナビゲーション プロパティを使用して異なる所有型としてマップすることができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-183">•   You can map the same CLR type as different owned types in the same owner entity through separate navigation properties.</span></span>
+
+<span data-ttu-id="44ba7-184">•   テーブル分割は規約で設定されますが、ToTable を使用して所有型を別のテーブルにマップすることでオプト アウトすることができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-184">•   Table splitting is setup by convention, but you can opt out by mapping the owned type to a different table using ToTable.</span></span>
+
+<span data-ttu-id="44ba7-185">•   Eager の読み込みは、所有型に対して自動的に実行されます。つまり、クエリで Include () を呼び出す必要はありません。</span><span class="sxs-lookup"><span data-stu-id="44ba7-185">•   Eager loading is performed automatically on owned types, i.e. no need to call Include() on the query.</span></span>
+
+#### <a name="owned-entities-limitations"></a><span data-ttu-id="44ba7-186">所有エンティティの制限事項:</span><span class="sxs-lookup"><span data-stu-id="44ba7-186">Owned entities limitations:</span></span>
+
+<span data-ttu-id="44ba7-187">•   所有型の DbSet<T> を作成することはできません (仕様)。</span><span class="sxs-lookup"><span data-stu-id="44ba7-187">•   You cannot create a DbSet<T> of an owned type (by design).</span></span>
+
+<span data-ttu-id="44ba7-188">•   所有型に対して ModelBuilder.Entity<T>() を呼び出すことはできません (現時点では仕様)。</span><span class="sxs-lookup"><span data-stu-id="44ba7-188">•   You cannot call ModelBuilder.Entity<T>() on owned types (currently by design).</span></span>
+
+<span data-ttu-id="44ba7-189">•   所有型のコレクションはまだありません (ただし、EF Core 2.0 の後のバージョンではサポートされる予定です)。</span><span class="sxs-lookup"><span data-stu-id="44ba7-189">•   No collections of owned types yet (but they will be supported in versions after EF Core 2.0).</span></span>
+
+<span data-ttu-id="44ba7-190">•   属性を介した構成はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="44ba7-190">•   No support for configuring them via an attribute.</span></span>
+
+<span data-ttu-id="44ba7-191">•   同じテーブル内の所有者とマップされている (つまり、テーブル分割を使用している) 省略可能な (つまり、null を許容する) 所有型はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="44ba7-191">•   No support for optional (i.e. nullable) owned types that are mapped with the owner in the same table (i.e. using table splitting).</span></span> <span data-ttu-id="44ba7-192">これは、null の場合に個別の監視機能を持たないためです。</span><span class="sxs-lookup"><span data-stu-id="44ba7-192">This is because we don't have a separate sentinel for the null.</span></span>
+
+<span data-ttu-id="44ba7-193">•   所有型の継承マッピングはサポートされていませんが、異なる所有型と同じ継承階層の 2 つのリーフ型をマップすることはできます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-193">•   No inheritance mapping support for owned types, but you should be able to map two leaf types of the same inheritance hierarchies as different owned types.</span></span> <span data-ttu-id="44ba7-194">EF Core は、同じ階層に属することの理由にはなりません。</span><span class="sxs-lookup"><span data-stu-id="44ba7-194">EF Core will not reason about the fact that they are part of the same hierarchy.</span></span>
+
+#### <a name="main-differences-with-ef6s-complex-types"></a><span data-ttu-id="44ba7-195">EF6 の複合型との主な違い</span><span class="sxs-lookup"><span data-stu-id="44ba7-195">Main differences with EF6's complex types</span></span>
+
+<span data-ttu-id="44ba7-196">•   テーブル分割は省略可能です。つまり、所有型のまま、必要に応じて別のテーブルにマップすることができます。</span><span class="sxs-lookup"><span data-stu-id="44ba7-196">•   Table splitting is optional, i.e. they can optionally be mapped to a separate table and still be owned types.</span></span>
+
+<span data-ttu-id="44ba7-197">•   他のエンティティを参照することができます (つまり、他の非所有型との関係で依存側として機能することができます)。</span><span class="sxs-lookup"><span data-stu-id="44ba7-197">•   They can reference other entities (i.e. they can act as the dependent side on relationships to other non-owned types).</span></span>
+
+
+## <a name="additional-resources"></a><span data-ttu-id="44ba7-198">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="44ba7-198">Additional resources</span></span>
+
+-   <span data-ttu-id="44ba7-199">**Martin Fowler。値オブジェクト パターン**
+    [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)</span><span class="sxs-lookup"><span data-stu-id="44ba7-199">**Martin Fowler. ValueObject pattern**
 [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)</span></span>
 
--   <span data-ttu-id="59fa0-142">**Eric Evans。ドメインに基づく設計: は Tackling Complexity in the Heart of Software です。**</span><span class="sxs-lookup"><span data-stu-id="59fa0-142">**Eric Evans. Domain-Driven Design: Tackling Complexity in the Heart of Software.**</span></span> <span data-ttu-id="59fa0-143">(予約値オブジェクトの説明を含む)。[ *https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)</span><span class="sxs-lookup"><span data-stu-id="59fa0-143">(Book; includes a discussion of value objects) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)</span></span>
+-   <span data-ttu-id="44ba7-200">**Eric Evans。ドメイン駆動型設計: ソフトウェアの心臓部にある複雑さへの取り組み**</span><span class="sxs-lookup"><span data-stu-id="44ba7-200">**Eric Evans. Domain-Driven Design: Tackling Complexity in the Heart of Software.**</span></span> <span data-ttu-id="44ba7-201">(書籍、値オブジェクトについての記載あり) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)</span><span class="sxs-lookup"><span data-stu-id="44ba7-201">(Book; includes a discussion of value objects) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)</span></span>
 
--   <span data-ttu-id="59fa0-144">**Vaughn Vernon。ドメインに基づく設計の実装です。**</span><span class="sxs-lookup"><span data-stu-id="59fa0-144">**Vaughn Vernon. Implementing Domain-Driven Design.**</span></span> <span data-ttu-id="59fa0-145">(予約値オブジェクトの説明を含む)。[ *https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)</span><span class="sxs-lookup"><span data-stu-id="59fa0-145">(Book; includes a discussion of value objects) [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)</span></span>
+-   <span data-ttu-id="44ba7-202">**Vaughn Vernon。ドメイン駆動型設計の実装**</span><span class="sxs-lookup"><span data-stu-id="44ba7-202">**Vaughn Vernon. Implementing Domain-Driven Design.**</span></span> <span data-ttu-id="44ba7-203">(書籍、値オブジェクトについての記載あり) [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)</span><span class="sxs-lookup"><span data-stu-id="44ba7-203">(Book; includes a discussion of value objects) [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)</span></span>
 
--   <span data-ttu-id="59fa0-146">**プロパティをシャドウ**
-    [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)</span><span class="sxs-lookup"><span data-stu-id="59fa0-146">**Shadow Properties**
+-   <span data-ttu-id="44ba7-204">**シャドウ プロパティ**
+    [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)</span><span class="sxs-lookup"><span data-stu-id="44ba7-204">**Shadow Properties**
 [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)</span></span>
 
--   <span data-ttu-id="59fa0-147">**複合型および値オブジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="59fa0-147">**Complex types and/or value objects**.</span></span> <span data-ttu-id="59fa0-148">EF コア GitHub リポジトリ ([問題] タブ) でディスカッション[ *https://github.com/aspnet/EntityFramework/issues/246*](https://github.com/aspnet/EntityFramework/issues/246)</span><span class="sxs-lookup"><span data-stu-id="59fa0-148">Discussion in the EF Core GitHub repo (Issues tab) [*https://github.com/aspnet/EntityFramework/issues/246*](https://github.com/aspnet/EntityFramework/issues/246)</span></span>
+-   <span data-ttu-id="44ba7-205">**複合型と値オブジェクト**。</span><span class="sxs-lookup"><span data-stu-id="44ba7-205">**Complex types and/or value objects**.</span></span> <span data-ttu-id="44ba7-206">EF Core GitHub リポジトリのディスカッション ([問題] タブ) [*https://github.com/aspnet/EntityFramework/issues/246*](https://github.com/aspnet/EntityFramework/issues/246)</span><span class="sxs-lookup"><span data-stu-id="44ba7-206">Discussion in the EF Core GitHub repo (Issues tab) [*https://github.com/aspnet/EntityFramework/issues/246*](https://github.com/aspnet/EntityFramework/issues/246)</span></span>
 
--   <span data-ttu-id="59fa0-149">**ValueObject.cs です。**</span><span class="sxs-lookup"><span data-stu-id="59fa0-149">**ValueObject.cs.**</span></span> <span data-ttu-id="59fa0-150">オブジェクト クラスを基本値 eShopOnContainers にします。</span><span class="sxs-lookup"><span data-stu-id="59fa0-150">Base value object class in eShopOnContainers.</span></span>
-    [<span data-ttu-id="59fa0-151">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs*</span><span class="sxs-lookup"><span data-stu-id="59fa0-151">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs*</span></span>](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs)
+-   <span data-ttu-id="44ba7-207">**ValueObject.cs.**</span><span class="sxs-lookup"><span data-stu-id="44ba7-207">**ValueObject.cs.**</span></span> <span data-ttu-id="44ba7-208">eShopOnContainers の基底値オブジェクト クラス。</span><span class="sxs-lookup"><span data-stu-id="44ba7-208">Base value object class in eShopOnContainers.</span></span>
+    [<span data-ttu-id="44ba7-209">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs*</span><span class="sxs-lookup"><span data-stu-id="44ba7-209">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs*</span></span>](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs)
 
--   <span data-ttu-id="59fa0-152">**クラスに対応します。**</span><span class="sxs-lookup"><span data-stu-id="59fa0-152">**Address class.**</span></span> <span data-ttu-id="59fa0-153">サンプル値のオブジェクト クラス eShopOnContainers です。</span><span class="sxs-lookup"><span data-stu-id="59fa0-153">Sample value object class in eShopOnContainers.</span></span>
-    [<span data-ttu-id="59fa0-154">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs*</span><span class="sxs-lookup"><span data-stu-id="59fa0-154">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs*</span></span>](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs)
+-   <span data-ttu-id="44ba7-210">**Address クラス。**</span><span class="sxs-lookup"><span data-stu-id="44ba7-210">**Address class.**</span></span> <span data-ttu-id="44ba7-211">eShopOnContainers の値オブジェクト クラスのサンプル。</span><span class="sxs-lookup"><span data-stu-id="44ba7-211">Sample value object class in eShopOnContainers.</span></span>
+    [<span data-ttu-id="44ba7-212">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs*</span><span class="sxs-lookup"><span data-stu-id="44ba7-212">*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs*</span></span>](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs)
+
 
 
 >[!div class="step-by-step"]
-<span data-ttu-id="59fa0-155">[前](seedwork-domain-model-base-classes-interfaces.md) [次へ] (列挙型のクラスの over-enum-types.md)</span><span class="sxs-lookup"><span data-stu-id="59fa0-155">[Previous] (seedwork-domain-model-base-classes-interfaces.md) [Next] (enumeration-classes-over-enum-types.md)</span></span>
+<span data-ttu-id="44ba7-213">[前へ] (seedwork-domain-model-base-classes-interfaces.md) [次へ] (enumeration-classes-over-enum-types.md)</span><span class="sxs-lookup"><span data-stu-id="44ba7-213">[Previous] (seedwork-domain-model-base-classes-interfaces.md) [Next] (enumeration-classes-over-enum-types.md)</span></span>

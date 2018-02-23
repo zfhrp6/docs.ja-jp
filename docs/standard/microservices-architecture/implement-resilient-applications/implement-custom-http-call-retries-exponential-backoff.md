@@ -1,6 +1,6 @@
 ---
-title: "指数バックオフによるカスタムの HTTP 呼び出しの再試行を実装します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |指数バックオフによるカスタムの HTTP 呼び出しの再試行を実装します。"
+title: "指数のバックオフを含むカスタムの HTTP 呼び出しの再試行を実装する"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 指数のバックオフを含むカスタムの HTTP 呼び出しの再試行を実装する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,19 +8,22 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 4449e5d7e0ca3c81aead26fac653de3ba2187a92
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 477b77f4c4768ed98f730b0f5360761b0b54b10c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-custom-http-call-retries-with-exponential-backoff"></a><span data-ttu-id="ef935-104">指数バックオフによるカスタムの HTTP 呼び出しの再試行を実装します。</span><span class="sxs-lookup"><span data-stu-id="ef935-104">Implementing custom HTTP call retries with exponential backoff</span></span>
+# <a name="implementing-custom-http-call-retries-with-exponential-backoff"></a><span data-ttu-id="b7394-104">指数のバックオフを含むカスタムの HTTP 呼び出しの再試行を実装する</span><span class="sxs-lookup"><span data-stu-id="b7394-104">Implementing custom HTTP call retries with exponential backoff</span></span>
 
-<span data-ttu-id="ef935-105">回復力のある microservices を作成するのには、可能な HTTP エラーのシナリオを処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef935-105">In order to create resilient microservices, you need to handle possible HTTP failure scenarios.</span></span> <span data-ttu-id="ef935-106">そのために、指数バックオフによる再試行の独自の実装を作成できます。</span><span class="sxs-lookup"><span data-stu-id="ef935-106">For that purpose, you could create your own implementation of retries with exponential backoff.</span></span>
+<span data-ttu-id="b7394-105">回復力のあるマイクロサービスを作成するには、考えられる HTTP 障害シナリオに対処する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b7394-105">In order to create resilient microservices, you need to handle possible HTTP failure scenarios.</span></span> <span data-ttu-id="b7394-106">そのために、指数バックオフによる再試行の実装を独自に作成することが可能です。</span><span class="sxs-lookup"><span data-stu-id="b7394-106">For that purpose, you could create your own implementation of retries with exponential backoff.</span></span>
 
-<span data-ttu-id="ef935-107">一時的なリソースが使用できなくなるを処理するだけでなく指数バックオフ必要もあります考慮するために、クラウド プロバイダーが使用状況のオーバー ロードを防ぐためにリソースの可用性をスロットル可能性。</span><span class="sxs-lookup"><span data-stu-id="ef935-107">In addition to handling temporal resource unavailability, the exponential backoff also needs to take into account that the cloud provider might throttle availability of resources to prevent usage overload.</span></span> <span data-ttu-id="ef935-108">たとえば、非常に高速接続要求が多すぎるを作成する場合がありますと見なすサービス拒否 ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack))、クラウド プロバイダーによる攻撃。</span><span class="sxs-lookup"><span data-stu-id="ef935-108">For example, creating too many connection requests very quickly might be viewed as a Denial of Service ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) attack by the cloud provider.</span></span> <span data-ttu-id="ef935-109">その結果、容量のしきい値が発生した場合、接続要求を拡張するためのメカニズムを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef935-109">As a result, you need to provide a mechanism to scale back connection requests when a capacity threshold has been encountered.</span></span>
+<span data-ttu-id="b7394-107">指数バックオフでは、テンポラル リソースの非可用性を処理することに加えて、クラウド プロバイダーが使用状況のオーバー ロードを防ぐためにリソースの可用性を調整する場合があるということも考慮に入れる必要があります。</span><span class="sxs-lookup"><span data-stu-id="b7394-107">In addition to handling temporal resource unavailability, the exponential backoff also needs to take into account that the cloud provider might throttle availability of resources to prevent usage overload.</span></span> <span data-ttu-id="b7394-108">たとえば、過剰な接続要求を高い頻度で作成した場合、クラウド プロバイダーがこれをサービス拒否攻撃 ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) 攻撃と見なす場合があります。</span><span class="sxs-lookup"><span data-stu-id="b7394-108">For example, creating too many connection requests very quickly might be viewed as a Denial of Service ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) attack by the cloud provider.</span></span> <span data-ttu-id="b7394-109">したがって、容量のしきい値に達した場合に接続要求を縮小するメカニズムを用意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b7394-109">As a result, you need to provide a mechanism to scale back connection requests when a capacity threshold has been encountered.</span></span>
 
-<span data-ttu-id="ef935-110">初期の探索、として独自のコードとして指数バックオフのユーティリティ クラスを実装するでした[RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260)、さらに、次のようなコード (に収録されても、 [GitHub リポジトリ](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).</span><span class="sxs-lookup"><span data-stu-id="ef935-110">As an initial exploration, you could implement your own code with a utility class for exponential backoff as in [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus code like the following (which is also available on a [GitHub repo](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).</span></span>
+<span data-ttu-id="b7394-110">最初の考察として、[RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260) にあるような指数バックオフ用のユーティリティ クラスを使用した独自のコードに加えて、次に示すようなコード ([GitHub リポジトリ](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)でも提供されています) を実装することも可能です。</span><span class="sxs-lookup"><span data-stu-id="b7394-110">As an initial exploration, you could implement your own code with a utility class for exponential backoff as in [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus code like the following (which is also available on a [GitHub repo](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).</span></span>
 
 ```csharp
 public sealed class RetryWithExponentialBackoff
@@ -93,7 +96,7 @@ public struct ExponentialBackoff
 }
 ```
 
-<span data-ttu-id="ef935-111">C クライアントでこのコードを使用して\#アプリケーション (別の Web API クライアント マイクロ サービス、ASP.NET MVC アプリケーション、または C も\#Xamarin アプリケーション) は簡単です。</span><span class="sxs-lookup"><span data-stu-id="ef935-111">Using this code in a client C\# application (another Web API client microservice, an ASP.NET MVC application, or even a C\# Xamarin application) is straightforward.</span></span> <span data-ttu-id="ef935-112">例を次に、HttpClient クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="ef935-112">The following example shows how, using the HttpClient class.</span></span>
+<span data-ttu-id="b7394-111">クライアント C\# アプリケーション (別の Web API クライアント マイクロサービス、ASP.NET MVC アプリケーション、または C\# Xamarin アプリケーション) でこのコードを使用することは簡単です。</span><span class="sxs-lookup"><span data-stu-id="b7394-111">Using this code in a client C\# application (another Web API client microservice, an ASP.NET MVC application, or even a C\# Xamarin application) is straightforward.</span></span> <span data-ttu-id="b7394-112">次の例は、HttpClient クラスの使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="b7394-112">The following example shows how, using the HttpClient class.</span></span>
 
 ```csharp
 public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? type)
@@ -116,8 +119,8 @@ public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? t
 }
 ```
 
-<span data-ttu-id="ef935-113">ただし、このコードは、概念実証としてのみ適しています。</span><span class="sxs-lookup"><span data-stu-id="ef935-113">However, this code is suitable only as a proof of concept.</span></span> <span data-ttu-id="ef935-114">次のトピックより高度な実績のあるライブラリを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ef935-114">The next topic explains how to use more sophisticated and proven libraries.</span></span>
+<span data-ttu-id="b7394-113">ただし、このコードは概念の実証用にのみ使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b7394-113">However, this code is suitable only as a proof of concept.</span></span> <span data-ttu-id="b7394-114">次のトピックでは、より高度で実績のあるライブラリの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b7394-114">The next topic explains how to use more sophisticated and proven libraries.</span></span>
 
 
 >[!div class="step-by-step"]
-<span data-ttu-id="ef935-115">[前](implement-resilient-entity-framework-core-sql-connections.md) [次へ] (implement-http-call-retries-exponential-backoff-polly.md)</span><span class="sxs-lookup"><span data-stu-id="ef935-115">[Previous] (implement-resilient-entity-framework-core-sql-connections.md) [Next] (implement-http-call-retries-exponential-backoff-polly.md)</span></span>
+<span data-ttu-id="b7394-115">[Previous] (implement-resilient-entity-framework-core-sql-connections.md) [Next] (implement-http-call-retries-exponential-backoff-polly.md)</span><span class="sxs-lookup"><span data-stu-id="b7394-115">[Previous] (implement-resilient-entity-framework-core-sql-connections.md) [Next] (implement-http-call-retries-exponential-backoff-polly.md)</span></span>
