@@ -1,6 +1,6 @@
 ---
-title: "Docker コンテナーを .NET Framework を選択します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Docker コンテナーを .NET Framework を選択します。"
+title: "Docker コンテナー用 .NET Framework を選択するタイミング"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker コンテナー用 .NET Framework を選択するタイミング"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,57 +8,60 @@ ms.date: 10/18/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 1bf1f055f040e7f3dc575b7a04140ebf0c599f98
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: fcfb78bf521107b14d7796235f52c836f48f41fe
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="when-to-choose-net-framework-for-docker-containers"></a>Docker コンテナーを .NET Framework を選択します。
+# <a name="when-to-choose-net-framework-for-docker-containers"></a>Docker コンテナー用 .NET Framework を選択するタイミング
 
-.NET Core では、新しいアプリケーションおよびアプリケーションのパターンの重要な利点が用意されています、.NET Framework は引き続きなります多くの既存のシナリオに適してします。
+.NET Core は新しいアプリケーションとアプリケーション パターンには大きな利点がありますが、既存の多くのシナリオでは引き続き .NET Framework が適切な選択肢となります。
 
-## <a name="migrating-existing-applications-directly-to-a-windows-server-container"></a>Windows Server のコンテナーに直接既存のアプリケーションを移行します。
+## <a name="migrating-existing-applications-directly-to-a-windows-server-container"></a>既存アプリケーションを Windows Server コンテナーに直接移行する
 
-Microservices を作成していない場合でも、だけ展開を簡略化、Docker コンテナーを使用する場合があります。 たとえば、Docker を使用した DevOps ワークフローを向上させたいおそらく — コンテナーがより分離されたテスト環境を移すことができるし、実稼働環境に移動すると、依存関係の欠落による配置の問題を回避できますも。 上記のような場合は、単体のアプリケーションを配置する場合でも理にかなって Docker と Windows コンテナーを使用して、現在の .NET Framework アプリケーション用にします。
+マイクロサービスを作成していない場合は、デプロイメントを簡略にするためだけでも Docker コンテナーを使用できます。 たとえば、Docker に対する DevOps ワークフローを改善したいとします。コンテナーを使用すると、適切に分離されたテスト環境を確保でき、運用環境に移行したときに依存関係が失われて生じるデプロイメントの問題も解消できます。 このようなケースでは、単体のアプリケーションをデプロイする場合でも、現在の .NET Framework アプリケーションのために Docker および Windows コンテナーを使用するメリットがあります。
 
-このシナリオのほとんどの場合、必要はありません、既存のアプリケーションを .NET Core; を移行するにはDocker コンテナーを含む従来の .NET Framework を使用することができます。 ただし、推奨される方法では、ASP.NET Core で新しいサービスを作成するなど、既存のアプリケーションを拡張するように、.NET Core を使用します。
+このシナリオのほとんどのケースでは、既存アプリケーションを .NET Core に移行する必要は生じません。従来の .NET Framework を含む Docker コンテナーを使用できます。 ただし、ASP.NET Core で新しいサービスを作成するなど、既存のアプリケーションを拡張する際には、代わりに .NET Core を使用することをお勧めします。
 
-## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>.NET ライブラリのサード パーティ製または NuGet パッケージのない .NET Core を使用します。
+## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>NET Core で使用できないサードパーティ製の .NET ライブラリや NuGet パッケージを使用する
 
-サードパーティ製のライブラリが採用すばやく、 [.NET 標準](https://docs.microsoft.com/dotnet/standard/net-standard)コードを .NET Core を含む、すべての .NET フレーバー間で共有できます。 .NET 標準ライブラリ 2.0 以降の API サーフェスさまざまなフレームワークの間で互換性が大きくなり、.NET Core 2.0 のアプリケーションは直接も既存の .NET Framework ライブラリを参照 (を参照してください[compatshim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work))。
+サードパーティ ライブラリでは [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) の採用が迅速に進められています。これにより、.NET Core を含むすべての種類の .NET でコードを共有できるようになります。 .NET Standard Library 2.0 以上では、異なるフレームワーク間での API サーフェスの互換性はかなり高くなっています。また、.NET Core 2.0 では、アプリケーションは既存の .NET Framework ライブラリを直接参照することもできます (「[compat shim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work)」を参照)。
 
-ただし、その例外的な進行している .NET 標準 2.0 と .NET Core 2.0 以降を使用する場合でも場合もあります一部の NuGet パッケージが Windows を実行する必要があるし、.NET Core をサポートしていない可能性。 これらのパッケージが、アプリケーションの重要な場合は、Windows コンテナーを .NET Framework を使用する必要があります。
+ただし、.NET Standard 2.0 および .NET Core 2.0 以降の進歩が並外れているとしても、特定の NuGet パッケージが実行に Windows を必要とし、.NET Core をサポートしていないというケースはあります。 これらのパッケージがアプリケーションに不可欠な場合は、Windows コンテナー上で .NET Framework を使用する必要があります。
 
-## <a name="usingnet-technologies-not-available-for-net-core"></a>.NET Core では利用できません Using.NET テクノロジ 
+## <a name="using-net-technologies-not-available-for-net-core"></a>.NET Core で使用できない .NET テクノロジを使用する 
 
-一部の .NET Framework テクノロジは、.NET Core (このドキュメントの作成時点でバージョン 2.0) の現在のバージョンでご利用いただけません。 .NET Core の今後のリリースで利用可能なそれらの一部になります (.NET Core 2.x)、その他のユーザーのパターンは、.NET Core の対象となるし、利用できない可能性があります、新しいアプリケーションには適用されません。
+一部の .NET Framework テクノロジは現在の .NET Core バージョン (このドキュメント作成時点のバージョン 2.0) では利用できません。 .NET Core の今後のリリース (.NET Core 2.x) で使用可能になるものもありますが、それ以外は .NET Core の対象となる新しいアプリケーション パターンには適用されず、使用可能にならない可能性があります。
 
-.NET Core 2.0 では使用できない、テクノロジのほとんどを次に示します。
+.NET Core 2.0 で利用できないテクノロジのほとんどを次に示します。
 
--   ASP.NET Web フォームです。 このテクノロジは、.NET Framework をできるだけです。 現時点では、ASP.NET Web フォームを .NET Core で使用できるようにする予定はありません。
+-   ASP.NET Web フォーム。 このテクノロジは .NET Framework のみで利用できます。 現時点では、ASP.NET Web フォームを .NET Core で使用できるようにする予定はありません。
 
--   WCF サービス。 場合でも、 [WCF クライアント ライブラリ](https://github.com/dotnet/wcf).NET Core から WCF サービスを利用することはできます。 mid 2017 時点での WCF サーバーの実装は .NET Framework で使用できるのみです。 このシナリオは、.NET Core の将来のリリースについて検討する可能性があります。
+-   WCF サービス。 [WCF クライアント ライブラリ](https://github.com/dotnet/wcf)を使用して .NET Core の WCF サービスを利用できる場合でも、 2017 年中頃の時点では、WCF サーバーは .NET Framework のみに実装できます。 このシナリオは、.NET Core の将来のリリースで検討される可能性があります。
 
--   ワークフローに関連するサービスです。 Windows Workflow Foundation (WF)、(WCF + 1 つのサービスでの WF) ワークフロー サービスと WCF データ サービス (旧称 ADO.NET Data Services) では、.NET Framework で使用できるのみです。 現在のプランを .NET Core にするためにはありません。
+-   ワークフロー関連サービス。 Windows Workflow Foundation (WF)、ワークフロー サービス (1 つのサービスに WCF と WF) および WCF Data Services (旧称: ADO.NET Data Services) は、NET Framework でのみ使用できます。 現在、この機能を .NET Core に含める計画はありません。
 
-公式に一覧表示、テクノロジだけでなく[.NET Core ロードマップ](https://github.com/aspnet/Home/wiki/Roadmap)、その他の機能は、.NET Core に移植する場合があります。 完全な一覧を参照としてタグ付けされたアイテム[ポートからコア](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core)CoreFX GitHub サイトです。 この一覧は、.NET Core をこれらのコンポーネントをさせる Microsoft からのコミットメントを表さない注: 項目は単に、コミュニティからの要求をキャプチャします。 上に示したコンポーネントについて注意する場合は、自分の声が聞こえるようには、GitHub のディスカッションに参加していることを検討します。 また、何か足りないと感じた場合は、[CoreFX リポジトリで新しい案件を作成](https://github.com/dotnet/corefx/issues/new)してください。
+公式の [.NET Core ロードマップ](https://github.com/aspnet/Home/wiki/Roadmap)に記載されているテクノロジに加え、他の機能が .NET Core に移植される可能性があります。 完全な一覧については、CoreFX GitHub サイトで [port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core) のタグが付いた項目をご覧ください。 この一覧は Microsoft がこれらのコンポーネントを .NET Core に提供することを約束するものではなく、単にコミュニティの要望に応じた項目であることに注意してください。 前述のコンポーネントが気になる場合には、GitHub でのディスカッションに参加して意見を述べることを検討してください。 また、何か足りないと感じた場合は、[CoreFX リポジトリで新しい案件を作成](https://github.com/dotnet/corefx/issues/new)してください。
 
-## <a name="using-a-platform-or-api-that-does-not-support-net-core"></a>プラットフォームまたは .NET Core をサポートしていない API を使用
+## <a name="using-a-platform-or-api-that-does-not-support-net-core"></a>.NET Core をサポートしていないプラットフォームまたは API を使用する
 
-一部の Microsoft またはサード パーティのプラットフォームでは、.NET Core をサポートしていません。 たとえば、一部の Azure サービスは、されていない .NET Core で利用できるよう SDK を提供します。 これは、機能は、すべての Azure サービスの .NET Core を最終的に使用するため、一時的なです。 など、 [Azure DocumentDB の SDK for .NET Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.2.1) 2016 年 11 月 16 日でプレビューとしてリリースされましたが安定したバージョンとして一般公開 (GA) ではようになりました。
+Microsoft やサードパーティ製のプラットフォームの中には、.NET Core をサポートしないものもあります。 たとえば、一部の Azure サービスでは、.NET Core ではまだ使用できない SDK が提供されます。 すべての Azure サービスはいずれは .NET Core を使用するようになるため、これは一時的な状態です。 たとえば、[Azure DocumentDB SDK for .NET Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.2.1) は、2016 年 11 月 16 日にプレビューとしてリリースされましたが、現在は安定したバージョンである一般公開 (GA) になっています。
 
-その間は、任意のプラットフォームまたは Azure のサービスもサポートしていない場合 .NET Core そのクライアント API と、.NET Framework での Azure サービスまたはクライアント SDK から同等の REST API を使用できます。
+この間、Azure のプラットフォームまたはサービスがクライアント API で .NET Core をまだサポートしていない場合は、Azure サービスまたはクライアント SDK の同等の REST API を .NET Framework で使用できます。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **.NET core ガイド**
+-   **.NET Core ガイド**
     [*https://docs.microsoft.com/dotnet/core/index*](https://docs.microsoft.com/dotnet/core/index)
 
 -   **.NET Framework から .NET Core への移植**
     [*https://docs.microsoft.com/dotnet/core/porting/index*](https://docs.microsoft.com/dotnet/core/porting/index)
 
--   **Docker のガイドに .NET framework**
+-   **Docker 上の .NET Framework ガイド**
     [*https://docs.microsoft.com/dotnet/framework/docker/*](https://docs.microsoft.com/dotnet/framework/docker/)
 
 -   **.NET コンポーネントの概要**
@@ -68,4 +71,4 @@ Microservices を作成していない場合でも、だけ展開を簡略化、
 
 
 >[!div class="step-by-step"]
-[前](net-コア-コンテナーの scenarios.md) [次へ] (コンテナーのフレームワークの選択-factors.md)
+[前へ] (net-core-container-scenarios.md) [次へ] (container-framework-choice-factors.md)

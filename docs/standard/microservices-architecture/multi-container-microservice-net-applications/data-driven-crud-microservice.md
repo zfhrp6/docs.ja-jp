@@ -1,76 +1,72 @@
 ---
-title: "単純なデータ ドリブン CRUD マイクロ サービスを作成します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |単純なデータ ドリブン CRUD マイクロ サービスを作成します。"
+title: "単純なデータ ドリブン CRUD マイクロサービスの作成"
+description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 単純なデータ ドリブン CRUD マイクロサービスの作成"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: b814d344f2c78e7cf57f9e2896cf1d6b52db38d9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: be8644e45be8db88c99332476e74c5c968764c74
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
-# <a name="creating-a-simple-data-driven-crud-microservice"></a>単純なデータ ドリブン CRUD マイクロ サービスを作成します。
+# <a name="creating-a-simple-data-driven-crud-microservice"></a>単純なデータ ドリブン CRUD マイクロサービスの作成
 
-このセクションのアウトライン方法、単純なを作成するを実行するマイクロ サービスを作成、読み取り、更新、およびデータ ソースの削除 (CRUD) 操作です。
+このセクションでは、データ ソースに対して作成、読み取り、更新、削除 (CRUD) 操作を実行する単純なマイクロサービスの作成方法について概説します。
 
-## <a name="designing-a-simple-crud-microservice"></a>単純な CRUD マイクロ サービスの設計
+## <a name="designing-a-simple-crud-microservice"></a>単純な CRUD マイクロサービスの設計
 
-設計の観点からは、この種類のコンテナー化マイクロ サービスは非常に単純です。 解決する問題は単純な場合、おそらくかおそらく実装では、概念実証のみ。
+設計の観点からは、この種類のコンテナー化されたマイクロサービスはとても単純です。 おそらく、解決する問題は単純であるか、実装は概念実証のみです。
 
 ![](./media/image4.png)
 
-**図 8-4**です。 単純な CRUD microservices の内部設計
+**図 8-4** 単純な CRUD マイクロサービスの内部設計
 
-この種の単純なデータ ドライブのサービスの例は、eShopOnContainers サンプル アプリケーションからカタログ マイクロ サービスです。 この種類のサービスでは、そのデータ モデル、そのビジネス ロジック、およびそのデータ アクセス コードのクラスを含む 1 つの ASP.NET Core Web API プロジェクト内のすべての機能を実装します。 (別のコンテナーとして開発/テスト目的で)、SQL Server で実行されているデータベースに関連するデータを保存もある場合も、通常の SQL Server ホスト図 8-5 に示すようにします。
+この種の単純なデータ ドリブン サービスの例として、eShopOnContainers サンプル アプリケーションのカタログ マイクロサービスがあります。 この種類のサービスでは、そのデータ モデル、ビジネス ロジック、データ アクセス コードのクラスを含む 1 つの ASP.NET Core Web API プロジェクト内のすべての機能が実装されます。 また、関連データは (開発/テストが目的の別のコンテナーとして) SQL Server で実行されているデータベース内に格納されますが、図 8-5 に示すように、通常の SQL Server ホストにすることもできます。
 
 ![](./media/image5.png)
 
-**図 8-5**です。 単純なデータ ドリブン/CRUD マイクロ サービスの設計
+**図 8-5** 単純なデータ ドリブン/CRUD マイクロサービスの設計
 
-この種のサービスを開発するときに必要なだけ[ASP.NET Core](https://docs.microsoft.com/aspnet/core/)などのデータ アクセス API または ORM および[Entity Framework Core](https://docs.microsoft.com/ef/core/index)です。 生成することも[Swagger](http://swagger.io/)メタデータを使用して自動的に[Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)次のセクションで説明したように、サービスの提供の説明を入力します。
+この種のサービスを開発するときに必要なのは、[ASP.NET Core](https://docs.microsoft.com/aspnet/core/) と、データ アクセス API または [Entity Framework Core](https://docs.microsoft.com/ef/core/index) のような ORM だけです。 次のセクションで説明するように、[Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) を通じて [Swagger](http://swagger.io/) メタデータを自動的に生成して、サービスが提供する内容の説明を提供することもできます。
 
-すべての依存関係を持てないため、Docker コンテナー内の SQL Server の開発環境に適したようなデータベース サーバーを実行して、クラウドまたは内部設置型データベースをプロビジョニングすることがなく実行されていることに注意してください。 これは、機能は、テストの統合を実行している場合に非常に便利です。 ただし、実稼働環境では、データベース サーバーをコンテナーで実行されているはお勧めしません、通常、高可用性アプローチと取得できません。 Azure で実稼働環境では、Azure SQL DB、または高可用性と高スケーラビリティを提供できるその他のデータベース テクノロジを使用することをお勧めします。 たとえば、NoSQL のアプローチの可能性があります、DocumentDB を選択します。
+クラウドまたはオンプレミスでデータベースをプロビジョニングしなくてもすべての依存関係を稼働させることができるので、Docker コンテナー内の SQL Server のようなデータベース サーバーの実行は開発環境に適しています。 これは、統合テストの実行時にとても便利です。 ただし運用環境では、コンテナーでデータベース サーバーを実行すると、通常は高可用性が実現されないため、このアプローチはお勧めしません。 Azure の運用環境では、Azure SQL DB、または高可用性と高スケーラビリティを提供できるその他のデータベース テクノロジを使用することをお勧めします。 たとえば、NoSQL アプローチでは、DocumentDB を選択できます。
 
-最後に、Dockerfile と docker compose.yml メタデータ ファイルを編集するを構成できますが、このコンテナーのイメージの作成方法: どのような基本イメージを使用するし、内部および外部の名前と TCP ポート番号などの設定を設計はします。 
+最後に、Dockerfile と docker-compose.yml メタデータ ファイルを編集して、このコンテナーのイメージの作成方法 (使用される基本イメージに加えて、内部および外部の名前と TCP ポートなどの設計設定) を構成できます。 
 
-## <a name="implementing-a-simple-crud-microservice-with-aspnet-core"></a>ASP.NET Core を単純な CRUD マイクロ サービスを実装します。
+## <a name="implementing-a-simple-crud-microservice-with-aspnet-core"></a>ASP.NET Core での単純な CRUD マイクロサービスの実装
 
-.NET Core と Visual Studio を使用して、単純な CRUD マイクロ サービスを実装するには、開始する (で実行されている .NET Core Linux Docker ホスト上で実行できるように)、単純な ASP.NET Core Web API プロジェクトを作成することでとして図 8-6。
+.NET Core と Visual Studio を使用して単純な CRUD マイクロサービスを実装するには、図 8-6 に示すように、まず単純な ASP.NET Core Web API プロジェクトを作成します (.NET Core で稼働するため Linux Docker ホスト上で実行できます)。
 
   ------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------
   ![](./media/image6.png)   ![](./media/image7.png)
   ------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------
 
-**図 8-6**です。 Visual Studio での ASP.NET Core Web API プロジェクトの作成
+**図 8-6** Visual Studio での ASP.NET Core Web API プロジェクトの作成
 
-プロジェクトを作成した後は、エンティティ フレームワーク API またはその他の API を使用して、他の Web API プロジェクトの場合ほど、MVC コント ローラーを実装できます。 EShopOnContainers.Catalog.API プロジェクトで確認できますをそのマイクロ サービスの主な依存関係は、だけ ASP.NET Core 自体、Entity Framework と Swashbuckle、図 8-7 に示すようにします。
+プロジェクトを作成した後、Entity Framework API またはその他の API を使用して、他の Web API プロジェクトの場合と同様に MVC コントローラーを実装できます。 新しい Web API プロジェクトでは、そのマイクロサービスの依存関係が ASP.NET Core 自体のみにあることがわかります。 内部的には、`Microsoft.AspNetCore.All` 依存関係内で、図 8-7 に示すように Entity Framework やその他の多くの .NET Core Nuget パッケージを参照しています。
 
 ![](./media/image8.PNG)
 
-**図 8-7**です。 単純な Web API の CRUD マイクロ サービス内の依存関係
+**図 8-7** 単純な CRUD Web API マイクロサービス内の依存関係
 
-### <a name="implementing-crud-web-api-services-with-entity-framework-core"></a>Entity Framework のコアでの CRUD Web API サービスを実装します。
+### <a name="implementing-crud-web-api-services-with-entity-framework-core"></a>Entity Framework Core での CRUD Web API サービスの実装
 
-Entity Framework (EF) のコアは軽量で拡張性があると、クロスプラット フォームのバージョンの人気のある Entity Framework データ アクセス テクノロジです。 EF Core とは、.NET 開発者は .NET オブジェクトを使用してデータベースを使用するオブジェクト リレーショナル マッパー (ORM) です。
+Entity Framework (EF) Core は人気の Entity Framework データ アクセス テクノロジの軽量版であり、拡張性に優れ、プラットフォームに依存しません。 EF Core はオブジェクト リレーショナル マッパー (ORM) であり、.NET 開発者は .NET オブジェクトを利用してデータベースを操作できます。
 
-カタログ マイクロ サービスは、そのデータベースが Linux Docker イメージ用の SQL Server のコンテナーで実行されて、EF と SQL Server プロバイダーを使用します。 ただし、データベースは、Windows、オンプレミスまたは Azure SQL DB など、任意の SQL Server に展開できます。 変更する必要は唯一の機能は、ASP.NET Web API マイクロ サービス内の接続文字列です。
+カタログ マイクロサービスは、そのデータベースが Linux Docker イメージ用の SQL Server を持つコンテナーで実行されているため、EF と SQL Server プロバイダーを使用します。 ただし、データベースは、Windows オンプレミスや Azure SQL DB など、任意の SQL Server にデプロイできます。 変更が必要なのは、ASP.NET Web API マイクロサービス内の接続文字列だけです。
 
-#### <a name="add-entity-framework-core-to-your-dependencies"></a>依存関係に Entity Framework のコアを追加します。
-
-使用して、この場合は、SQL Server から、Visual Studio IDE 内、または NuGet コンソールを使用するデータベース プロバイダーの NuGet パッケージをインストールすることができます。 次のコマンドを使用します。
-
-```
-  Install-Package Microsoft.EntityFrameworkCore.SqlServer
-```
 
 #### <a name="the-data-model"></a>データ モデル
 
-EF コアでデータ アクセスは、モデルを使用して実行されます。 モデルは、エンティティ クラスと派生コンテキストを表すクエリを実行し、データを保存することができます、データベースとのセッションの構成されます。 既存のデータベースからモデルを生成、手動でのデータベースに一致するモデルのコードまたは EF の移行を使用して、モデルからデータベースを作成 (および時間の経過と共に変更では、モデルの進化) をします。 カタログ マイクロ サービスを最後のアプローチを使用します。 次のコード例では、単純な Plain Old CLR Object CatalogItem エンティティ クラスの例を見ることができます ([POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) エンティティ クラスです。
+EF Core では、データ アクセスはモデルを利用して実行されます。 モデルはエンティティ クラスと、データベースとのセッションを表す、派生コンテキストから構成されます。このセッションにより、データのクエリと保存が可能になります。 既存データベースからモデルを生成したり、自分のデータベースに合わせてモデルのコードを手動で記述したり、EF 移行を利用してモデルからデータベースを作成したり (モデルが時間の経過と共に変化するのに合わせ、進化させたり) できます。 カタログ マイクロサービスでは、最後のアプローチを使用しています。 次のコード例には、CatalogItem エンティティ クラスの例があります。これは単純な従来の CLR オブジェクト ([POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) エンティティ クラスです。
 
 ```csharp
 public class CatalogItem
@@ -79,16 +75,24 @@ public class CatalogItem
     public string Name { get; set; }
     public string Description { get; set; }
     public decimal Price { get; set; }
+    public string PictureFileName { get; set; }
     public string PictureUri { get; set; }
     public int CatalogTypeId { get; set; }
     public CatalogType CatalogType { get; set; }
     public int CatalogBrandId { get; set; }
     public CatalogBrand CatalogBrand { get; set; }
+    public int AvailableStock { get; set; }
+    public int RestockThreshold { get; set; }
+    public int MaxStockThreshold { get; set; }
+
+    public bool OnReorder { get; set; }
     public CatalogItem() { }
+
+    // Additional code ...
 }
 ```
 
-データベースとのセッションを表す DbContext 必要もあります。 カタログ マイクロ サービスの CatalogContext クラスの派生元 DbContext 基底クラスでは、次の例で示すようにします。
+データベースとのセッションを表す DbContext も必要です。 カタログ マイクロサービスでは、CatalogContext クラスは次の例で示すように DbContext 基底クラスから派生します。
 
 ```csharp
 public class CatalogContext : DbContext
@@ -96,7 +100,6 @@ public class CatalogContext : DbContext
     public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
     {
     }
-
     public DbSet<CatalogItem> CatalogItems { get; set; }
     public DbSet<CatalogBrand> CatalogBrands { get; set; }
     public DbSet<CatalogType> CatalogTypes { get; set; }
@@ -106,13 +109,11 @@ public class CatalogContext : DbContext
 }
 ```
 
-DbContext 実装でコードを追加ことができます。 たとえば、サンプル アプリケーションでお OnModelCreating メソッド クラスにある CatalogContext データベースにアクセスしようとすると、最初にサンプル データを自動的に設定します。 このメソッドは、デモのデータに役立ちます。 その他多数のオブジェクトまたはデータベース エンティティのマッピングをカスタマイズする OnModelCreating メソッドを使用することもできます。 [EF 機能拡張ポイント](https://blogs.msdn.microsoft.com/dotnet/2016/09/29/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/)です。
+追加の `DbContext` 実装も使用できます。 たとえば、サンプルの Catalog.API マイクロサービスには `CatalogContextSeed` という名前の 2 番目の `DbContext` があり、データベースに初めてアクセスしようとしたときにサンプル データが自動的に設定されます。 このメソッドは、デモ データと自動テストのシナリオにも役立ちます。 `DbContext` 内で、`OnModelCreating` メソッドを使用して、オブジェクト/データベース エンティティのマッピングおよびその他の [EF 機能拡張ポイント](https://blogs.msdn.microsoft.com/dotnet/2016/09/29/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/)をカスタマイズします。
 
-OnModelCreating に関する詳細をさらに確認できます、[の Entity Framework のコア インフラストラクチャの永続性レイヤーの実装](#implementing_infrastructure_persistence)このドキュメントで後述する「します。
+##### <a name="querying-data-from-web-api-controllers"></a>Web API コントローラーからのデータのクエリ
 
-##### <a name="querying-data-from-web-api-controllers"></a>Web API コント ローラーからデータを照会します。
-
-エンティティ クラスのインスタンスは、次の例で示すように通常言語統合クエリ (LINQ) を使用して、データベースから取得されます。
+エンティティ クラスのインスタンスは、次の例に示すように、通常は統合言語クエリ (LINQ) を利用してデータベースから取得されます。
 
 ```csharp
 [Route("api/v1/[controller]")]
@@ -122,13 +123,13 @@ public class CatalogController : ControllerBase
     private readonly CatalogSettings _settings;
     private readonly ICatalogIntegrationEventService _catalogIntegrationEventService;
 
-    public CatalogController(CatalogContext context,
-        IOptionsSnapshot<CatalogSettings> settings,
-        ICatalogIntegrationEventService catalogIntegrationEventService)
+    public CatalogController(CatalogContext context, 
+                             IOptionsSnapshot<CatalogSettings> settings,
+                             ICatalogIntegrationEventService catalogIntegrationEventService)
     {
         _catalogContext = context ?? throw new ArgumentNullException(nameof(context));
-        _catalogIntegrationEventService = catalogIntegrationEventService ??
-           throw new ArgumentNullException(nameof(catalogIntegrationEventService));
+        _catalogIntegrationEventService = catalogIntegrationEventService ?? throw new ArgumentNullException(nameof(catalogIntegrationEventService));
+
         _settings = settings.Value;
         ((DbContext)context).ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
     }
@@ -136,46 +137,53 @@ public class CatalogController : ControllerBase
     // GET api/v1/[controller]/items[?pageSize=3&pageIndex=10]
     [HttpGet]
     [Route("[action]")]
-    public async Task<IActionResult> Items([FromQuery]int pageSize = 10,
-    [FromQuery]int pageIndex = 0)
+    [ProducesResponseType(typeof(PaginatedItemsViewModel<CatalogItem>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> Items([FromQuery]int pageSize = 10, 
+                                           [FromQuery]int pageIndex = 0)
+
     {
         var totalItems = await _catalogContext.CatalogItems
             .LongCountAsync();
+
         var itemsOnPage = await _catalogContext.CatalogItems
             .OrderBy(c => c.Name)
             .Skip(pageSize * pageIndex)
             .Take(pageSize)
             .ToListAsync();
+
         itemsOnPage = ChangeUriPlaceholder(itemsOnPage);
+
         var model = new PaginatedItemsViewModel<CatalogItem>(
             pageIndex, pageSize, totalItems, itemsOnPage);
+
         return Ok(model);
     } 
-
     //...
 }
 ```
 
 ##### <a name="saving-data"></a>データの保存
 
-データが作成、削除、およびエンティティ クラスのインスタンスを使用してデータベースで変更されました。 次のようハード コーディングされた (モック データ、ここでは)、Web API コント ローラーにコードを追加できます。
+データはエンティティ クラスのインスタンスを利用し、データベース内で作成、削除、変更されます。 次のハード コーディングされた例のようなコード (この場合はモック データ) を Web API コントローラーに追加できます。
 
 ```csharp
 var catalogItem = new CatalogItem() {CatalogTypeId=2, CatalogBrandId=2,
-   Name="Roslyn T-Shirt", Price = 12};
+                                     Name="Roslyn T-Shirt", Price = 12};
 _context.Catalog.Add(catalogItem);
 _context.SaveChanges();
 ```
 
-##### <a name="dependency-injection-in-aspnet-core-and-web-api-controllers"></a>ASP.NET Core および Web API コント ローラーで依存関係の挿入
+##### <a name="dependency-injection-in-aspnet-core-and-web-api-controllers"></a>ASP.NET Core と Web API コントローラーでの依存関係の挿入
 
-ASP.NET Core では、すぐ依存関係の挿入 (DI) を使用できます。 場合は、ASP.NET Core インフラストラクチャに優先 IoC コンテナーをプラグインすることができますが、サード パーティ製の制御の反転 (IoC) コンテナーを設定する必要はありません。 この場合、必須の EF DBContext またはコント ローラーのコンス トラクターの追加のリポジトリを挿入できます直接ことを意味します。 CatalogController クラスの上記の例では、CatalogContext 型のオブジェクトとその他のオブジェクト CatalogController コンス トラクターを提供します。
+ASP.NET Core では、既定の依存関係の挿入 (DI) を使用できます。 優先 IoC コンテナーを ASP.NET Core インフラストラクチャに接続することもできますが、サード パーティ製の制御の反転 (IoC) コンテナーを設定する必要はありません。 この場合、必須の EF DBContext またはコントローラー コンストラクターを通じた追加のリポジトリを直接挿入できることを意味します。 上記の `CatalogController` クラスの例では、`CatalogController()` コンストラクターを通じて `CatalogContext` 型のオブジェクトやその他のオブジェクトを挿入しています。
 
-Web API プロジェクトを設定する構成の重要なは、DbContext クラスをサービスの IoC コンテナーに登録します。 通常これを行うスタートアップ クラスでサービスを呼び出すことによってです。次の例のように、ConfigureServices メソッドの内部 AddDbContext メソッド:
+Web API プロジェクトを設定するための重要な構成は、サービスの IoC コンテナーへの DbContext クラスの登録です。 通常この操作は、次の例で示すように `ConfigureServices()` メソッド内で `services.AddDbContext<DbContext>()` メソッドを呼び出して `Startup` クラス内で行います。
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
+    // Additional code...
+
     services.AddDbContext<CatalogContext>(options =>
     {
         options.UseSqlServer(Configuration["ConnectionString"],
@@ -183,10 +191,10 @@ public void ConfigureServices(IServiceCollection services)
         {
            sqlOptions.
                MigrationsAssembly(
-               typeof(Startup).
-               GetTypeInfo().
-               Assembly.
-               GetName().Name);
+                   typeof(Startup).
+                    GetTypeInfo().
+                     Assembly.
+                      GetName().Name);
 
            //Configuring Connection Resiliency:
            sqlOptions.
@@ -209,7 +217,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **データを照会する**
+-   **データのクエリ**
     [*https://docs.microsoft.com/ef/core/querying/index*](https://docs.microsoft.com/ef/core/querying/index)
 
 -   **データの保存**
@@ -217,7 +225,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="the-db-connection-string-and-environment-variables-used-by-docker-containers"></a>Docker コンテナーで使用される DB 接続文字列と環境変数
 
-次の例のように、settings.json ファイルに ConnectionString プロパティを追加および ASP.NET Core 設定を使用することができます。
+次の例に示すように、ASP.NET Core 設定を使用でき、ConnectionString プロパティを settings.json ファイルに追加できます。
 
 ```csharp
 {
@@ -234,9 +242,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Settings.json ファイルには、ConnectionString プロパティや、他のプロパティの既定値を持つことができます。 ただし、これらのプロパティは、docker compose.override.yml ファイルで指定した環境変数の値によってオーバーライドされます。
+settings.json ファイルには、ConnectionString プロパティやその他のプロパティの既定値を格納できます。 ただし、Docker を使用する場合、これらのプロパティは docker-compose.override.yml ファイルで指定した環境変数の値でオーバーライドされます。
 
-Docker compose.yml または docker compose.override.yml ファイルから初期化できますそれらの環境変数のため、その Docker、それらの設定が OS に環境変数として、次の docker compose.override.yml ファイル (接続のようにこの例では文字列とその他の行を折り返すが独自のファイルに折り返すことができませんが)。
+次の docker-compose.override.yml ファイルに示すように、docker-compose.yml または docker-compose.override.yml ファイルからこれらの環境変数を初期化して、Docker がそれらを OS 環境変数として設定するようにすることができます (この例では接続文字列とその他の行が折り返されていますが、実際のコード ファイルでは折り返されません)。
 
 ```yml
 # docker-compose.override.yml
@@ -245,36 +253,34 @@ Docker compose.yml または docker compose.override.yml ファイルから初�
 catalog.api:
   environment:
     - ConnectionString=Server=sql.data;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word
-    - ExternalCatalogBaseUrl=http://10.0.75.1:5101
-    #- ExternalCatalogBaseUrl=http://dockerhoststaging.westus.cloudapp.azure.com:5101
-  
+    # Additional environment variables for this service
   ports:
-    - "5101:5101"
+    - "5101:80"
 ```
 
-Docker compose.yml ファイル、ソリューション レベルでのみ構成ファイル、プロジェクトまたはマイクロ サービス レベルより柔軟なはないものより安全な。 検討ファイル、バイナリ ファイルと、Dockerfile を含む各マイクロ サービスの構成ファイルのみ、Docker イメージあたりマイクロ サービスをビルドするには、docker compose.yml が含まれていないこと。 Docker compose.yml ファイルが、アプリケーションと共に配置されません。展開時にのみ使用されます。 そのため、(しなくても、値を暗号化)、それらの docker compose.yml ファイル環境変数の値を配置することは、コード内に配置されている通常の .NET 構成ファイルでそれらの値を配置するより安全です。
+ソリューション レベルでの docker-compose.yml ファイルは、プロジェクトまたはマイクロサービス レベルの構成ファイルよりも柔軟性が高いだけでなく、docker-compose ファイルで宣言されている環境変数を VSTS Docker デプロイ タスクからの値のようなデプロイ ツールで設定された値でオーバーライドするとセキュリティが向上します。 
 
-構成を使用して、コードからその値を取得する最後に、\["ConnectionString"\]ConfigureServices メソッド前のコード例に示すように、します。
+最後に、前のコード例の ConfigureServices メソッドで示されているように、構成 \["ConnectionString"\] を使用してコードから値を取得できます。
 
-ただし、実稼働環境では、エクスプ ローラーの接続文字列などの機密情報を格納する方法の他の方法をする可能性があります。 通常をで管理される、選択した orchestrator で実行できるように[シークレットの管理の Docker Swarm](https://docs.docker.com/engine/swarm/secrets/)です。
+ただし運用環境では、接続文字列などのシークレットを格納する方法について、追加の方法を調べることが必要な場合があります。 通常は、[Docker Swarm シークレットの管理](https://docs.docker.com/engine/swarm/secrets/)で行えるのと同様に、選択したオーケストレーターで管理されます。
 
-### <a name="implementing-versioning-in-aspnet-web-apis"></a>ASP.NET Web Api のバージョン管理を実装します。
+### <a name="implementing-versioning-in-aspnet-web-apis"></a>ASP.NET Web API でのバージョン管理の実装
 
-ビジネス要件を変更すると、リソースの新しいコレクションを追加することがあります、リソース間のリレーションシップを変更する可能性があります、およびリソース内のデータの構造を修正できる可能性があります。 新しい要件を処理する Web API の更新はプロセスは比較的簡単ですが、このような変更がある Web API を使用するクライアント アプリケーションに影響を考慮する必要があります。 開発者向けの設計と Web API を実装するには、その API を完全に制御が、開発者は同程度のサードパーティの組織でのリモート オペレーティングによって構築されているクライアント アプリケーションに制御がありません。
+ビジネス要件が変わると、リソースの新しいコレクションが追加され、リソース間の関係が変更され、リソース内のデータの構造が修正される可能性があります。 新しい要件を処理する Web API の更新は比較的簡単なプロセスですが、このような変更が Web API を使用するクライアント アプリケーションに与える影響を考慮する必要があります。 Web API を設計および実装する開発者はその API を完全に制御できますが、遠隔地で操業しているサード パーティ組織が構築した可能性のあるクライアント アプリケーションを同じように制御することはできません。
 
-バージョン管理は、機能と表示されているリソースを示すために Web API を使用します。 クライアント アプリケーションは、特定のバージョンの機能やリソースへの要求を送信し、できます。 バージョン管理を実装する方法はいくつかあります。
+バージョン管理によって、Web API が公開する機能とリソースを指定することができます。 クライアント アプリケーションは、特定のバージョンの機能やリソースに要求を送信できます。 バージョン管理を実装するアプローチはいくつかあります。
 
--   URI のバージョン管理
+-   URI バージョン管理
 
--   クエリ文字列のバージョン管理
+-   クエリ文字列バージョン管理
 
--   ヘッダーのバージョン管理
+-   ヘッダー バージョン管理
 
-クエリ文字列と URI のバージョン管理は、実装する最も簡単なのです。 ヘッダーのバージョン管理は、適切なアプローチです。 ただし、ヘッダーのバージョン管理と明示的なされず、URI のバージョン管理するように単純です。 URL のバージョン管理は最も単純で最も明示的なので、eShopOnContainers サンプル アプリケーションは、URI のバージョン管理を使用します。
+クエリ文字列および URI バージョン管理は、実装するのが最も簡単です。 ヘッダー バージョン管理は適切なアプローチです。 ただし、ヘッダー バージョン管理は URI バージョン管理ほど明示的でも簡単でもありません。 URL バージョン管理は最も単純で最も明示的なので、eShopOnContainers サンプル アプリケーションでは URI バージョン管理を使用します。
 
-EShopOnContainers サンプル アプリケーションと同様に、URI のバージョン管理に Web API を変更したり、リソースのスキーマを変更する追加するたびにバージョン番号を各リソースの URI。 既存の Uri は、前述のように、要求されたバージョンに対応するスキーマに準拠しているリソースを返す動作を続行する必要があります。
+eShopOnContainers サンプル アプリケーションのように、URI バージョン管理では、Web API を変更したりリソースのスキーマを変更したりするたびに、各リソースの URI にバージョン番号が追加されます。 既存の URI はそれまでと同様に動作を続け、要求されたバージョンに対応するスキーマに準拠したリソースを返します。
 
-これにより、バージョンを URI に明示的な Web API のルート属性を使用して、バージョンを設定することができます次のコード例に示すように、(このケースで v1)。
+次のコード例に示すように、バージョンは Web API の Route 属性を使用して設定でき、これにより URI でバージョン (このケースでは v1) が明示的になります。
 
 ```csharp
 [Route("api/v1/[controller]")]
@@ -283,71 +289,66 @@ public class CatalogController : ControllerBase
     // Implementation ...
 ```
 
-このバージョン管理メカニズムは単純な適切なエンドポイントに要求をルーティング サーバーによって異なります。 ただしより高度なバージョン管理と REST を使用するときに最適な方法は、する必要があります hypermedia を使用して実装した[HATEOAS (エンジンのアプリケーションの状態とハイパー テキスト)](https://docs.microsoft.com/azure/architecture/best-practices/api-design#using-the-hateoas-approach-to-enable-navigation-to-related-resources)です。
+このバージョン管理メカニズムは単純で、要求を適切なエンドポイントにルーティングするサーバーに依存します。 ただし、より高度なバージョン管理と REST を使用するときに最適な方法としては、ハイパーメディアを使用し、[HATEOAS (Hypertext as the Engine of Application State)](https://docs.microsoft.com/azure/architecture/best-practices/api-design#using-the-hateoas-approach-to-enable-navigation-to-related-resources) を実装する必要があります。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Scott Hanselman です。ASP.NET Core RESTful Web API のバージョン管理が簡単に作成**
+-   **Scott Hanselman。ASP.NET Core RESTful Web API バージョン管理で簡単に**
     [*http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
--   **RESTful web API のバージョン管理**
-
+-   **RESTful Web API のバージョン管理**
     [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
--   **者を務める Roy Fielding です。バージョン管理、Hypermedia、および REST**
+-   **Roy Fielding。バージョン管理、ハイパーメディア、REST**
     [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
 
-## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>ASP.NET Core Web API から Swagger 説明メタデータを生成します。 
+## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>ASP.NET Core Web API からの Swagger 記述メタデータの生成 
 
-[Swagger](http://swagger.io/)一般的に使用されるオープン ソース フレームワークは、設計、構築、ドキュメント、際に役立つツールの大規模なエコシステムによってサポートされ、RESTful Api を使用します。 これにより、Api の説明のメタデータのドメインの標準が高まっています。 マイクロ サービス、データ ドリブン microservices または (次のセクションで説明されている) と、ドメインに基づく microservices を高度な複数の種類を問わず Swagger 説明のメタデータを含める必要があります。
+[Swagger](http://swagger.io/) は一般に使用されるオープン ソース フレームワークであり、RESTful API の設計、構築、文書化、使用に役立つツールの大規模なエコシステムによってサポートされています。 API 記述メタデータ ドメインの標準になりつつあります。 Swagger 記述メタデータを任意の種類のマイクロサービス (次のセクションで説明するデータ ドリブン マイクロサービスまたはより高度なドメイン ドリブン マイクロサービス) と共に含める必要があります。
 
-Swagger の中心となるは、API の説明ファイル内のメタデータ、JSON または YAML が Swagger の仕様です。 仕様では、すべてのリソースと容易に開発、探索、および統合の両方を人間と machine readable 形式の処理の詳細を示す、API の RESTful コントラクトを作成します。
+Swagger の中心となるのは、JSON または YAML ファイル内の API 記述メタデータである Swagger 仕様です。 仕様では、API の RESTful コントラクトを作成し、開発、検出、統合を簡単にするためにすべてのリソースと操作を人間とマシンの両方が判読できる形式で詳しく記述します。
 
-仕様では、OpenAPI 仕様 (OAS) の基になるし、RESTful インターフェイスを定義する方法を標準化するために、開いている、透過的なおよび共同作業コミュニティで開発されました。
+仕様は、OpenAPI 仕様 (OAS) の基盤であり、RESTful インターフェイスを定義する方法を標準化するためにオープンで透過的なコラボレーション コミュニティで開発されています。
 
-仕様では、サービスの検出方法と、そのような機能の理解、構造体を定義します。 詳細については、web エディターおよび Spotify、Uber、余裕期間、および、Microsoft などの企業から Swagger 仕様の例を含むサイトを参照して、Swagger (<http://swagger.io>)。
+仕様では、サービスの検出方法とその機能を理解する方法に関する構造体を定義します。 Web エディターや、Spotify、Uber、Slack、Microsoft などの企業の Swagger 仕様の例について詳しくは、Swagger のサイト (<http://swagger.io>) をご覧ください。
 
 ### <a name="why-use-swagger"></a>Swagger を使用する理由
 
-独自の Api は、次の Swagger メタデータを生成する主な理由です。
+API 用の Swagger メタデータを生成する主な理由は次のとおりです。
 
-**自動的に使用し、独自の Api を統合するには、他の製品の機能**します。 数十個の製品と[商用ツール](http://swagger.io/commercial-tools/)と多[ライブラリ、およびフレームワーク](http://swagger.io/open-source-integrations/)Swagger をサポートします。 Microsoft では、高度な製品と、次のような Swagger ベースの Api が自動的に使用できるツールがあります。
+**他の製品が API を自動的に使用して統合できる**。 数十個の製品と[商用ツール](http://swagger.io/commercial-tools/)、多くの[ライブラリとフレームワーク](http://swagger.io/open-source-integrations/)で Swagger がサポートされます。 Microsoft には、Swagger ベースの API を自動的に使用できる次のような高度な製品とツールがあります。
 
--   [AutoRest](https://github.com/Azure/AutoRest)です。 Swagger を呼び出すための .NET クライアント クラスを自動的に生成することができます。 This
+-   [AutoRest](https://github.com/Azure/AutoRest)。 Swagger を呼び出すための .NET クライアント クラスを自動的に生成することができます。 このツールは CLI から使用することができ、GUI から簡単に使用できるように Visual Studio とも統合されています。
 
--   CLI からツールを使用してそのも統合 Visual Studio の GUI から使用を容易にします。
+-   [Microsoft Flow](https://flow.microsoft.com/en-us/)。 自動的に [API 使用し、高レベルの Microsoft Flow ワークフローと統合](https://flow.microsoft.com/en-us/blog/integrating-custom-api/)できます。プログラミング スキルは不要です。
 
--   [Microsoft Flow](https://flow.microsoft.com/en-us/)です。 自動的に実行できます[を使用し、API の統合](https://flow.microsoft.com/en-us/blog/integrating-custom-api/)なしでプログラミングに必要なスキルを高レベルの Microsoft Flow ワークフローにします。
+-   [Microsoft PowerApps](https://powerapps.microsoft.com/en-us/)。 [PowerApps Studio](https://powerapps.microsoft.com/en-us/guided-learning/learning-powerapps-parts/) で作成された [PowerApps モバイル アプリ](https://powerapps.microsoft.com/en-us/blog/register-and-use-custom-apis-in-powerapps/)から API を自動的に使用できます。プログラミング スキルは不要です。
 
--   [Microsoft PowerApps](https://powerapps.microsoft.com/en-us/)です。 API を使用できる自動的に[PowerApps モバイル アプリ](https://powerapps.microsoft.com/en-us/blog/register-and-use-custom-apis-in-powerapps/)でビルドされた[PowerApps Studio](https://powerapps.microsoft.com/en-us/guided-learning/learning-powerapps-parts/)、ありませんプログラミング技能を必要とします。
+-   [Azure App Service Logic Apps](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-what-are-logic-apps)。 自動的に [API を使用でき、Azure App Service Logic App に統合](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-custom-hosted-api)できます。プログラミング スキルは不要です。
 
--   [Azure App Service の Logic Apps](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-what-are-logic-apps)です。 自動的に実行できます[を使用し、Azure App Service の Logic App に API を統合](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-custom-hosted-api)、ありませんプログラミング技能を必要とします。
+**API のドキュメントを自動的に生成できる**。 複雑なマイクロサービス ベースのアプリケーションなど、大規模な RESTful API を作成する場合は、要求と応答のペイロードで使用されるさまざまなデータ モデルで多数のエンドポイントを処理する必要があります。 Swagger で利用できるような適切なドキュメントと堅牢な API Explorer があることは、API の成功と開発者による採用の鍵となります。
 
-**API のドキュメントを自動的に生成する機能**します。 複雑なマイクロ サービス ベースのアプリケーションなど、大規模な RESTful Api を作成するときに、要求と応答のペイロードで使用されるさまざまなデータ モデルに多数のエンドポイントに対応する必要があります。 適切なドキュメントを持つ、純色の API explorer Swagger をポイントするとは、API を開発者が導入の成功のためのキーです。
+Swagger のメタデータは、Microsoft Flow、PowerApps、Azure Logic Apps が API の使用方法と API への接続方法を理解するために使用するものです。
 
-Swagger のメタデータは Microsoft Flow、PowerApps、および Azure Logic Apps 際に使用する Api を使用して接続する方法を理解します。
+### <a name="how-to-automate-api-swagger-metadata-generation-with-the-swashbuckle-nuget-package"></a>Swashbuckle NuGet パッケージで API Swagger メタデータの生成を自動化する方法
 
-### <a name="how-to-automate-api-swagger-metadata-generation-with-the-swashbuckle-nuget-package"></a>Swashbuckle NuGet パッケージと API の Swagger メタデータの生成を自動化する方法
+手動での (JSON または YAML ファイルでの) Swagger メタデータの生成は面倒な作業となる場合があります。 ただし、[Swashbuckle NuGet パッケージ](http://aka.ms/swashbuckledotnetcore)を使用して Swagger API メタデータを動的に生成して、ASP.NET Web API サービスの API 検出を自動化することができます。
 
-手動で (JSON または YAML ファイル) での Swagger メタデータを生成すると、面倒な作業を指定できます。 ただしを使用して ASP.NET Web API サービスの API の検出を自動化することができます、 [Swashbuckle NuGet パッケージ](http://aka.ms/swashbuckledotnetcore)API の Swagger メタデータを動的に生成します。
+Swashbuckle では、ASP.NET Web API プロジェクトの Swagger メタデータが自動的に生成されます。 ASP.NET Core Web API プロジェクトと従来の ASP.NET Web API、さらに Azure API アプリ、Azure Mobile App、ASP.NET に基づく Azure Service Fabric マイクロサービスなどのその他のフレーバーがサポートされます。 また、参照アプリケーションの場合と同様に、コンテナーにデプロイされている単純な Web API もサポートされます。
 
-Swashbuckle には、ASP.NET Web API プロジェクトの Swagger メタデータが自動的に生成されます。 ASP.NET Core Web API プロジェクトと従来の ASP.NET Web API と、Azure API アプリを Azure のモバイル アプリ、ASP.NET に基づく Azure Service Fabric microservices などその他のフレーバーをサポートします。 また、プレーンの Web API の参照をアプリケーションのように、コンテナー上に展開をサポートします。
+Swashbuckle は API Explorer と Swagger または [swagger-ui](https://github.com/swagger-api/swagger-ui) を結合して API コンシューマーに充実した検出およびドキュメント エクスペリエンスを提供します。 Swagger メタデータ ジェネレーター エンジンに加えて、Swashbuckle には、Swashbuckle のインストール後に自動的に提供される埋め込みバージョンの swagger-ui も含まれています。
 
-Swashbuckle は API Explorer と Swagger 結合または[swagger ui](https://github.com/swagger-api/swagger-ui)豊富な検出およびドキュメントは、API のコンシューマーのエクスペリエンスを提供します。 Swagger メタデータ ジェネレーター エンジンに加えて Swashbuckle には、埋め込みのバージョンに自動的になるを Swashbuckle がインストールされる swagger ui のも含まれています。
-
-これは、nice 探索 API を使用する開発者を支援するための UI と API を補完することを意味します。 これは自動的に生成されるため、API の構築に専念することができます、非常に少量のコードとメンテナンスが必要です。 API エクスプ ローラーの結果は、図 8-8 などを検索します。
+これは、優れた検出 UI で API を補完し、開発者による API の使用を支援できることを意味します。 これは自動的に生成されるため、必要なコードとメンテナンスの量がとても少なく、API の構築に専念することができます。 API Explorer の結果は、図 8-8 のようになります。
 
 ![](./media/image9.png)
 
-**図 8-8**です。 Swagger メタデータに基づいて Swashbuckle API Explorer — eShopOnContainers カタログ マイクロ サービス
+**図 8-8** Swagger メタデータに基づく Swashbuckle API Explorer - eShopOnContainers カタログ マイクロサービス
 
-API エクスプ ローラーは、最も重要な点は、ここではありません。 Swagger メタデータで自己記述できますを Web API を作成したら、API が多くのプラットフォームを対象とするクライアント プロキシ クラスのコード ジェネレーターを含む、Swagger ベースのツールからシームレスに使用できます。 たとえば、説明したように、 [AutoRest](https://github.com/Azure/AutoRest) .NET クライアント クラスが自動的に生成されます。 などの他のツールが、 [swagger codegen](https://github.com/swagger-api/swagger-codegen)も使用できるようにする API のクライアントのコード生成ライブラリ、サーバーのスタブ、およびドキュメントに自動的にします。
+API Explorer は、ここで最も重要なものではありません。 Swagger メタデータで自身を記述できる Web API があると、多くのプラットフォームを対象とするクライアント プロキシ クラス コード ジェネレーターなど、Swagger ベースのツールから API をシームレスに使用できます。 たとえば、前に説明したように、[AutoRest](https://github.com/Azure/AutoRest) では .NET クライアント クラスが自動的に生成されます。 ただし、API クライアント ライブラリ、サーバー スタブ、ドキュメントのコード生成を自動化できる [swagger-codegen](https://github.com/swagger-api/swagger-codegen) のようなツールも利用できます。
 
-現在、Swashbuckle から成る 2 つの NuGet パッケージ: Swashbuckle.SwaggerGen と Swashbuckle.SwaggerUi です。 前者は、1 つ以上の Swagger ドキュメントから直接生成 API の実装および JSON エンドポイントとして公開する機能を提供します。 後者は、埋め込みのバージョンのアプリケーションによって処理および API を記述する Swagger ドキュメントを生成して電源できる swagger ui ツールを提供します。 ただし、Swashbuckle の最新バージョンでは、これら Swashbuckle.AspNetCore metapackage をラップします。
+現時点では、Swashbuckle は、ASP.NET Core アプリケーション用の [Swashbuckle.Swashbuckle.AspNetCoreSwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore/) バージョン 1.0.0 以降のハイレベルなメタ パッケージ下の 2 つの内部 NuGet パッケージから構成されます。
 
-.NET Core の Web API プロジェクトに対して指定する必要を使用する[Swashbuckle.AspNetCore](https://www.nuget.org/packages/Swashbuckle.AspNetCore/1.0.0)バージョン 1.0.0 またはそれ以降。
-
-Web API プロジェクトでこれらの NuGet パッケージをインストールした後は、スタートアップ クラスで、次のコードのように、Swagger を構成する必要があります。
+Web API プロジェクトでこれらの NuGet パッケージをインストールした後、次のコードのように、Startup クラスで Swagger を構成する必要があります。
 
 ```csharp
 public class Startup
@@ -358,18 +359,20 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         // Other ConfigureServices() code...
-        services.AddSwaggerGen();
-        services.ConfigureSwaggerGen(options =>
+
+        // Add framework services.
+        services.AddSwaggerGen(options =>
         {
             options.DescribeAllEnumsAsStrings();
-            options.SingleApiVersion(new Swashbuckle.Swagger.Model.Info()
+            options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
             {
                 Title = "eShopOnContainers - Catalog HTTP API",
                 Version = "v1",
-                Description = "The Catalog Microservice HTTP API",
-                TermsOfService = "eShopOnContainers terms of service"
+                Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
+                TermsOfService = "Terms Of Service"
             });
         });
+
         // Other ConfigureServices() code...
     }
 
@@ -380,38 +383,41 @@ public class Startup
         // Other Configure() code...
         // ...
         app.UseSwagger()
-            .UseSwaggerUi();
+            .UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
     }
 }
 ```
 
-これを完了すると、アプリケーションを起動し、上記のような Url を使用して次の Swagger JSON と UI のエンドポイントを参照することができます。
+これが完了したら、アプリケーションを起動し、次のような URL を使用して次の Swagger JSON および UI エンドポイントを参照することができます。
 
 ```json
   http://<your-root-url>/swagger/v1/swagger.json
   
-  http://<your-root-url>/swagger/ui
+  http://<your-root-url>/swagger/
 ```
 
-生成された UI Swashbuckle によって http:// ような URL の作成に紹介した&lt;、ルート url&gt;swagger/ui。 図 8-9 にも表示 API メソッドをテストする方法です。
+http://&lt;your-root-url&gt;/swagger/ui のような URL に対して Swashbuckle で作成された生成済みの UI を前に参照しました。 図 8-9 では、API メソッドをテストする方法も確認できます。
 
 ![](./media/image10.png)
 
-**図 8-9**です。 カタログ アイテム/API メソッドをテスト Swashbuckle UI
+**図 8-9** カタログ/アイテム API メソッドをテストする Swashbuckle UI
 
-図 8-10 eShopOnContainers マイクロ サービスから生成された JSON の Swagger メタデータを示しています (これは、ツールの使用を下にある) を要求すると&lt;、ルート url&gt;/swagger/v1/swagger.json を使用して[Postman](https://www.getpostman.com/).
+図 8-10 は、[Postman](https://www.getpostman.com/) を使用して &lt;your-root-url&gt;/swagger/v1/swagger.json を要求したときに eShopOnContainers マイクロサービス (これは、ツールが下で使用するものです) から生成された Swagger JSON メタデータを示しています。
 
 ![](./media/image11.png)
 
-**図 8-10**です。 Swagger JSON メタデータ
+**図 8-10** Swagger JSON メタデータ
 
-これは簡単です。 API をより多くの機能を追加する場合に、Swagger メタデータが拡張されますが自動的に生成されるためです。
+これは単純です。 自動的に生成されるため、API に機能を追加すると Swagger メタデータが拡張されます。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET Web API のヘルプを使用してページ Swagger**
+-   **Swagger を使用する ASP.NET Web API のヘルプ ページ**
     [*https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger*](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger)
 
 
 >[!div class="step-by-step"]
-[前](マイクロ サービス-アプリケーション-design.md) [次へ] (マルチ-container-アプリケーション-docker-compose.md)
+[前] (microservice-application-design.md) [次] (multi-container-applications-docker-compose.md)

@@ -1,91 +1,95 @@
 ---
-title: "ドメインのイベントです。 設計と実装"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |ドメインのイベント、設計と実装"
+title: "ドメイン イベント:  設計と実装"
+description: "コンテナー化された .NET アプリケーション向けの .NET マイクロサービス アーキテクチャ | ドメイン イベントの設計と実装"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/11/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 2d98b302be4ee72d8225526944fc3e41cbadcb5f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5840c2f7692d81f193c7d659aea6eb42a431369e
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/29/2018
 ---
-# <a name="domain-events-design-and-implementation"></a>ドメインのイベント: 設計と実装
+# <a name="domain-events-design-and-implementation"></a>ドメイン イベント: 設計と実装
 
-ドメイン内で変更の副作用を明示的に実装するのにには、ドメインのイベントを使用します。 その他の語と DDD 用語を使用して、複数の集計の間での副作用を明示的に実装するのにドメイン イベントを使用します。 必要に応じて、スケーラビリティが向上し、データベースのロックの影響を軽減は、同じドメイン内の集計の間で最終的整合性を使用します。
+ドメイン内での変更の副作用を明示的に実装するには、ドメイン イベントを使います。 DDD の用語を使って言い換えるなら、複数の集計に副作用を明示的に実装するには、ドメイン イベントを使います。 また、スケーラビリティを向上させ、データベース ロックの影響を小さくする必要がある場合は、同じドメイン内の集計の間の最終的な整合性を使います。
 
-## <a name="what-is-a-domain-event"></a>ドメインのイベントとは何ですか。
+## <a name="what-is-a-domain-event"></a>ドメイン イベントとは
 
-イベントは、過去に発生したものです。 ドメインのイベントは、論理的には、特定のドメインで発生した、同じドメイン (インプロセス) を認識し、潜在的に対応するための他の部分を何かたいとします。
+イベントとは、過去に発生した出来事です。 ドメイン イベントは、論理的には、特定のドメインにおいて発生した出来事であり、同じドメイン (インプロセス) の他の部分がそれを認識し、必要に応じて対応する必要のあることです。
 
-ドメインのイベントの重要な利点は、暗黙的にではなく副作用後、ドメインに問題が発生しましたを明示的に表現することができます。 効果必要があります一貫性のある、すべての操作、ビジネス タスクに関連する発生する可能性がそれらの側かのいずれかにします。 さらに、ドメインのイベントには、同じドメイン内のクラス間で問題の分離を強化しが有効にします。
+ドメイン イベントの重要な利点は、ドメイン内で何かが発生した後の副作用を、暗黙的にではなく明示的に表現できることです。 ビジネス タスクに関連するすべての操作が行われるか、またはまったく行われないように、これらの副作用は一貫している必要があります。 さらに、ドメイン イベントを使うことにより、同じドメイン内のクラス間で問題をよりはっきりと分離することができます。
 
-たとえば、ユース ケースによって生じる副作用である必要がある場合にだけ、Entity Framework とエンティティまたは偶数の集計だけを使用する場合、ものとして実装されます、結合されたコードでの暗黙的な概念後、問題が発生しました。 ただし、のみが表示コードをわからない場合があります (副作用) そのコードがメインの操作の一部である場合、または副作用ですか。 その一方で、ドメインのイベントを使用して、概念明示的なとユビキタス言語の一部。 たとえば、eShopOnContainers アプリケーションで注文を作成するはほぼ順序です。更新またはユーザーにないため、購入者に注文があるまで、元のユーザーに基づく buyer の集計を作成します。 ドメインのイベントを使用する場合は、ドメインの専門家によって提供されるユビキタス言語に基づく、ドメイン ルールを明示的に表現できます。
+たとえば、Entity Framework とエンティティまたは集計だけを使っているとすると、ユース ケースによってある副作用を発生させる必要がある場合、そのような副作用は、何かが発生した後の結合されたコードでの暗黙的な概念として実装されます。 しかし、そのコードを見ただけでは、そのコード (副作用) がメインの操作の一部なのか、それとも副作用なのかが、わからない場合があります。 一方、ドメイン イベントを使うと、概念が明確になり、ユビキタス言語の一部になります。 たとえば、eShopOnContainers アプリケーションでは、注文の作成は注文だけに関係しているわけではありません。注文が行われるまでユーザーは購入者ではないので、注文の作成により、元のユーザーに基づいて購入者の集計が更新または作成されます。 ドメイン イベントを使う場合、ドメインの専門家によって提供されるユビキタス言語に基づいて、ドメイン ルールを明示的に表現できます。
 
-ドメイン イベントは、1 つの重要な相違点のメッセージング スタイルのイベントに似ています。 実際のメッセージング、メッセージ キュー、メッセージ ブローカーまたは AMPQ を使用して、サービス バス、メッセージは常に非同期的に送信し、プロセスとマシンの間で通信します。 これは、複数のコンテキストの境界を付けられた、microservices、または別のアプリケーションを統合するために役立ちます。 ただし、ドメインのイベント、現在実行しているドメイン操作からイベントを発生するが、同じドメイン内に発生するすべての副作用をします。
+ドメイン イベントはメッセージング スタイルのイベントに似ていますが、重要な相違点が 1 つあります。 実際のメッセージング、メッセージ キュー、メッセージ ブローカー、または AMPQ を使うサービス バスでは、メッセージは常に非同期に送信され、プロセスとマシンの間で通信されます。 これは、複数の境界コンテキスト、マイクロサービス、または異なるアプリケーションを統合する場合に役立ちます。 一方、ドメイン イベントでは、現在実行しているドメイン操作からイベントが生成されて、同じドメイン内で副作用が発生することが望まれます。
 
-ドメインのイベントとその副作用 (実行されたアクション後のイベント ハンドラーで管理されている) をほぼ即座に実行する通常のプロセス、および同じドメイン内で。 したがって、ドメインのイベントは、同期または非同期可能性があります。 統合イベント、ただしは常に非同期です。
+ドメイン イベントとその副作用 (その後にトリガーされる、イベント ハンドラーによって管理されるアクション) は、ほぼ瞬時に (通常はインプロセス) 同じドメイン内で発生する必要があります。 したがって、ドメイン イベントは同期でも非同期でもかまいません。 ただし、統合イベントは常に非同期でなければなりません。
 
-## <a name="domain-events-versus-integration-events"></a>統合イベントではなくドメイン イベント
+## <a name="domain-events-versus-integration-events"></a>統合イベントとドメイン イベント
 
-ドメインとの統合のイベントは、同じことを意味します。 だけ発生した問題に関する通知。 ただし、その実装は異なる必要があります。 ドメインのイベントは、IoC コンテナーまたはその他のメソッドに基づくメモリの媒介として実装される可能性がありますドメインのイベント ディスパッチャーにプッシュされただけのメッセージです。
+意味としては、ドメイン イベントと統合イベントは同じものであり、発生したばかりのことに関する通知です。 しかし、それらの実装は異なっている必要があります。 ドメイン イベントはドメイン イベント ディスパッチャーにプッシュされるメッセージでしかなく、IoC コンテナーまたは他の何らかの方法に基づくインメモリ メディエーターとして実装できます。
 
-その一方で、統合イベントの目的は、や他の microservices、範囲指定されたコンテキストでも外部アプリケーションでかどうかにコミットされたトランザクションとその他のサブシステムへの更新が反映されるまでです。 それらを実行するため、エンティティが正常に保存されている場合から多くのシナリオでこれが失敗した場合は、操作全体効果的がなかったかのみです。
+一方、統合イベントの目的は、コミットされたトランザクションや更新を他のサブシステムに伝達することです。サブシステムは、他のマイクロサービス、境界コンテキスト、さらには外部アプリケーションのいずれでもかまいません。 したがって、多くのシナリオではこれが失敗した場合は操作全体が実質的に発生しなかったことになるので、統合イベントはエンティティが正常に保存された場合にのみ発生する必要があります。
 
-説明したように、統合とさらに、イベントを複数の microservices (他の境界を付けられたコンテキスト) またはも外部システムとアプリケーション間の非同期通信に基づいている必要があります。 したがって、イベント バス インターフェイスには、プロセス間では、可能性のあるリモート サービスの間の通信を分散するインフラストラクチャの一部が必要があります。 商用サービス バス、キュー、メールボックスとして使用される共有データベースまたはその他の分散に基づくことができ、理想的にはベースのメッセージング システムをプッシュします。
+さらに、説明したように、統合イベントは、複数のマイクロサービス (他の境界コンテキスト) 間または外部システム/アプリケーション間の非同期通信に基づいている必要があります。 したがって、イベント バス インターフェイスには、場合によってはリモート サービス間でのプロセス間分散通信を可能にする何らかのインフラストラクチャが必要です。 商用のサービス バス、キュー、メールボックスとして使われる共有データベース、またはその他の分散で、できればプッシュ ベースのメッセージング システムのいずれが基になっていてもかまいません。
 
-## <a name="domain-events-as-a-preferred-way-to-trigger-side-effects-across-multiple-aggregates-within-the-same-domain"></a>同じドメイン内の複数の集計の間での副作用をトリガーする方法をお勧めとしてドメイン イベント
+## <a name="domain-events-as-a-preferred-way-to-trigger-side-effects-across-multiple-aggregates-within-the-same-domain"></a>同じドメイン内の複数の集計間で副作用をトリガーする望ましい方法としてのドメイン イベント
 
-集計インスタンスには、1 つまたは複数の他の集計で実行する追加のドメイン ルールが必要です。 いずれかに関連するコマンドを実行している場合は、設計およびドメインのイベントによってトリガーされるこれらの副作用を実装する必要があります。 図 9-14 に示すように、最も重要なの 1 つとしてユース ケース、ドメイン イベントは、同じドメイン モデル内の複数の集計の状態の変更を伝達するために使用する必要があります。
+ある集計インスタンスに関係のあるコマンドを実行するために、1 つ以上の他の集計で他のドメイン ルールを実行する必要がある場合は、このような副作用がドメイン イベントによってトリガーされるように設計および実装する必要があります。 図 9-14 で示すように、最も重要なユース ケースの 1 つとして、ドメイン イベントを使って、同じドメイン モデル内の複数の集計の間で状態の変化を伝達する必要があります。
 
 ![](./media/image15.png)
 
-**図 9-14**です。 同じドメイン内の複数の集計の間の整合性のためにドメイン イベント
+**図 9-14**:  同じドメイン内の複数の集計の間に整合性を適用するためのドメイン イベント
 
-図では、ユーザーは、注文を開始したときに、OrderStarted ドメイン イベントは情報と共に、CreateOrder コマンドで identity マイクロ サービスから元のユーザー情報に基づく順序マイクロ サービスの購入者オブジェクトの作成をトリガーします。 ドメインのイベントは、最初の場所の作成時に、順序集計によって生成されます。
+図では、ユーザーが注文を開始すると、OrderStarted ドメイン イベントによって、ID マイクロサービスからの元のユーザー情報 (および、CreateOrder コマンドで提供された情報) を基にした、注文マイクロサービスでの Buyer オブジェクトの作成がトリガーされます。 ドメイン イベントは、注文集計が最初の場所で作成されたときに生成されます。
 
-代わりに、その集計 (子エンティティ) のメンバーによって発生するイベントを定期受信されている集計ルートを持つことができます。 たとえば、各 OrderItem 子エンティティは、品目の価格は、特定の容量を超えた場合、または製品品目の量が高すぎるとに、イベントを発生させることができます。 集計のルートは、これらのイベントを受信し、グローバルの計算または集計を実行します。
+または、集計ルートを作成し、その集計 (子エンティティ) のメンバーによって生成されるイベントをサブスクライブすることもできます。 たとえば、OrderItem の各子エンティティは、品目の価格が指定された金額より高いとき、または製品品目の量が高すぎるとに、イベントを発生させることができます。 集計ルートは、これらのイベントを受け取って、グローバルな計算または集計を実行できます。
 
-このイベント ベースの通信が; 集計内で直接実装していないことを理解することが重要ドメインのイベント ハンドラーを実装する必要があります。 イベントを処理するドメインは、アプリケーション問題です。 ドメイン モデル レイヤーが、ドメイン ロジックに専念する必要がありますのみ — ドメインの専門家が理解できるようにすること、ハンドラーおよびリポジトリを使用して、副作用が永続性アクションなど、アプリケーション インフラストラクチャされません。 したがって、アプリケーション層のレベルは、ドメインのイベントが発生したときにアクションをトリガーするドメインのイベント ハンドラーを持つ必要があります。
+このイベント ベースの通信は集計内に直接実装されないことを理解しておくことが重要です。ドメイン イベント ハンドラーを実装する必要があります。 ドメイン イベントの処理は、アプリケーションの問題です。 ドメイン モデル レイヤーでは、ハンドラーやリポジトリを使った副作用の永続化アクションといったアプリケーション インフラストラクチャに関することではなく、ドメインの専門家が理解しているドメインのロジックだけに注目する必要があります。 したがって、ドメイン イベントが発生したときのドメイン イベント ハンドラー トリガー アクションは、アプリケーション レイヤー レベルで行う必要があります。
 
-ドメインのイベントは、任意の数のアプリケーションのアクションをトリガーするも使用できより重要な数を増やすにその後で、分離された方法で開く必要があります。 たとえば、順序が開始されると、ことができますをその他の集計には、その情報を伝達する、または通知のようにアプリケーションのアクションを発生させる場合にもドメイン イベントを公開します。
+また、ドメイン イベントを使って、任意の数のアプリケーション アクションをトリガーすることができます。さらに重要なことは、後でその数を他に影響を与えない方法で増やすことができる必要があります。 たとえば、注文が開始されたら、ドメイン イベントを発行してその情報を他の集計に伝達したり、通知などのアプリケーション アクションを発生させたりすることができます。
 
-重要な点は、ドメインのイベントが発生したときに実行されるアクションの開いている数です。 最終的には、アクションと、ドメインおよびアプリケーション内のルールが大きくなります。 複雑さや問題が起こったときに副作用がアクションの数が増大、コードが「グルー」を伴う場合は (つまり、C では、new キーワードを持つオブジェクトをインスタンス化だけ\#)、たびに、新しいアクションを追加する必要とする必要があります。元のコードを変更します。 これは、結果、新しいバグは、各新しい要件が必要になる元のコードのフロー方向を変更します。 これには、に対して、[開く/解決済みの原則](https://en.wikipedia.org/wiki/Open/closed_principle)から[ソリッド](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design))です。 それだけでなく、操作を対象に調整された元のクラスは拡張し、拡大、に対してに出向いて、[単一責任原則 (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle)です。
+重要な点は、ドメイン イベントが発生したときに実行されるアクションの数が開放されていることです。 いずれ、ドメインおよびアプリケーション内のアクションとルールは増えていきます。 何かが発生したときの副作用の複雑さや数は上昇しますが、コードが "接着剤" で結合されていると (つまり、C\# で new キーワードを使ってオブジェクトをインスタンス化するだけ)、新しいアクションを追加する必要があるたびに、元のコードを変更する必要があります。 これでは、新しい要件が出てくるたびに元のコード フローを変更する必要があるので、新しいバグが発生する可能性があります。 これは、[SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) の[開放/閉鎖原則](https://en.wikipedia.org/wiki/Open/closed_principle)に反しています。 それだけでなく、操作を調整していた元のクラスが拡大を重ね、[単一責任原則 (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle) に反するようになります。
 
-その一方で、ドメインのイベントを使用する場合は、このアプローチを使用する責任を隔離することによって粒度の細かいと分離の実装を作成することができます。
+これに対し、ドメイン イベントでは、以下のアプローチを使って責任を隔離することにより、粒度が細かく分離された実装を作成することができます。
 
-1.  コマンド (たとえば、CreateOrder) を送信します。
-2.  コマンド ハンドラーで、コマンドを受信します。
+1.  コマンドを送信します (例: CreateOrder)。
+2.  コマンド ハンドラーでコマンドを受信します。
     -   1 つの集計のトランザクションを実行します。
-    -   (省略可能)副作用 (たとえば、OrderStartedDomainDvent) のドメインのイベントを発生させます。
-1.  ハンドル ドメイン (現在のプロセス) 内のイベント thast は複数の集計またはアプリケーションのアクションの副作用のオープンの数を実行します。 例:
-    -   確認するか、購入者および支払方法を作成します。
-    -   作成し、購入者に電子メールを送信するように microservices またはトリガーの外部アクション間で状態を反映する、イベント バスに関連する統合イベントを送信します。
-    -   その他の副作用を処理します。
+    -   (省略可能) 副作用のドメイン イベントを発生させます (例: OrderStartedDomainEvent)。
+1.  複数の集計またはアプリケーション アクションにおいて開放された数の副作用を実行する (現在のプロセス内の) ドメイン ベントを処理します。 例:
+    -   購入者および支払方法を確認または作成します。
+    -   関連する統合イベントを作成してイベント バスに送信し、複数のマイクロサービスに状態を伝達するか、購入者へのメール送信のような外部アクションをトリガーします。
+    -   他の副作用を処理します。
 
-図 9-15 を示すように、同じドメインのイベントから開始処理すること、ドメインまたは統合イベントおよびイベント バスに接続する microservices 全体を実行する必要があります。 追加のアプリケーション操作には、その他の集計に関連する複数のアクション。
+図 9-15 で示すように、同じドメイン イベントから開始して、統合イベントおよびイベント バスによって接続されている複数のマイクロサービスを実行するために必要な、ドメイン内の他の集計に関連する複数のアクションまたは他のアプリケーション アクションを処理できます。
 
 ![](./media/image16.png)
 
-**図 9-15**です。 ドメインごとの複数のアクションの処理
+**図 9-15**:  ドメインごとに複数のアクションの処理
 
-イベント ハンドラーは通常、アプリケーション レイヤーでマイクロ サービスの動作のリポジトリまたはアプリケーションの API などのインフラストラクチャ オブジェクトを使用するためです。 その意味で、イベント ハンドラーは、どちらも、アプリケーション層の一部であるためコマンド ハンドラーに似ています。 重要な相違点は、コマンドを 1 回だけ処理する必要があります。 ドメイン イベント可能性がありますゼロを処理または *n* ためにがタイムアウトと場合、によって複数の受信器または各ハンドラーに対して別の目的でイベント ハンドラーを受信することができます。
+マイクロサービスの動作にはリポジトリやアプリケーション API などのインフラストラクチャ オブジェクトを使うため、通常、イベント ハンドラーはアプリケーション レイヤーにあります。 どちらもアプリケーション レイヤーの一部であるという意味で、イベント ハンドラーはコマンド ハンドラーに似ています。 重要な相違点は、コマンドは 1 回だけ処理する必要があることです。 ドメイン イベントは、それぞれが異なる用途を持つ複数のレシーバーまたはイベント ハンドラーで受信できるため、ドメイン イベントはゼロ回または *n* 回処理される可能性があります。
 
-数が開いている各ドメインのイベント ハンドラーの可能性には、現在コードに影響を与えずに多くのドメイン ルールを追加することができます。 たとえば、右側に発生するイベントの後に次のビジネス ルールを実装するが、いくつかのイベント ハンドラー (または 1 つのみでも) を追加することと同じくらい簡単可能性があります。
+ドメイン イベントあたりのハンドラーの数を開放できるため、現在のコードに影響を与えずにさらに多くのドメイン ルールを追加することができます。 たとえば、イベントの直後に発生する必要のある次のビジネス ルールは、いくつかのイベント ハンドラー (またはたった 1 つ) を追加するだけで簡単に実装できます。
 
-任意の数、注文の間で、ストアで顧客が購入合計金額が $6,000 を超える場合は、割引は 10% をすべて新しい注文に適用され、そのに割引された料金未来の注文に関する電子メールを顧客に通知します。
+顧客がストアで行った任意の数の注文の合計購入金額が $6,000 を超える場合、すべての新規注文に 10% の割引を適用し、将来の注文に対するその割引のことをメールで顧客に通知します。
 
-## <a name="implementing-domain-events"></a>ドメインのイベントを実装します。
+## <a name="implementing-domain-events"></a>ドメイン イベントの実装
 
-C# の場合は、ドメイン イベントだけで、データを保持構造体またはクラスでは、次の例で示すように、ドメインでの発生に関連するすべての情報を DTO と同様に。
+C# のドメイン イベントは、ドメインで発生したことに関連するすべての情報を含む、DTO のようなデータ保持構造体またはクラスです。次にその例を示します。
 
 ```csharp
-public class OrderStartedDomainEvent : IAsyncNotification
+public class OrderStartedDomainEvent : INotification
 {
+    public string UserId { get; private set; }
     public int CardTypeId { get; private set; }
     public string CardNumber { get; private set; }
     public string CardSecurityNumber { get; private set; }
@@ -94,9 +98,9 @@ public class OrderStartedDomainEvent : IAsyncNotification
     public Order Order { get; private set; }
 
     public OrderStartedDomainEvent(Order order,
-        int cardTypeId, string cardNumber,
-        string cardSecurityNumber, string cardHolderName,
-        DateTime cardExpiration)
+                                   int cardTypeId, string cardNumber,
+                                   string cardSecurityNumber, string cardHolderName,
+                                   DateTime cardExpiration)
     {
         Order = order;
         CardTypeId = cardTypeId;
@@ -110,40 +114,40 @@ public class OrderStartedDomainEvent : IAsyncNotification
 
 これは、本質的に OrderStarted イベントに関連するすべてのデータを保持するクラスです。
 
-ドメインの場所を問わず、言語の観点から イベントは、以前は、発生したため、イベントのクラス名は、OrderStartedDomainEvent OrderShippedDomainEvent などの過去形動詞として表さ必要があります。 EShopOnContainers で順序付けマイクロ サービスでドメインのイベントを実装する方法です。
+ユビキタス言語の観点からは、イベントは過去に発生した事柄なので、イベントのクラス名は OrderStartedDomainEvent や OrderShippedDomainEvent のような過去形動詞として表される必要があります。 これは、eShopOnContainers の注文マイクロサービスでのドメイン イベントの実装方法です。
 
-触れましたが、イベントの重要な特性をイベントとは、変更しないでください、過去に発生したためです。 したがって、変更できないクラスである必要があります。 プロパティは読み取り専用からオブジェクトの外部で上記のコードで確認できます。 オブジェクトを更新する唯一の方法は、イベント オブジェクトを作成するときに、コンス トラクターです。
+前に説明したように、イベントの重要な特性は、イベントは過去に発生したことなので変更できない、ということです。 したがって、不変クラスである必要があります。 上のコードでは、プロパティがオブジェクトの外部からは読み取り専用であることがわかります。 オブジェクトを更新する唯一の方法は、イベント オブジェクトを作成するときにコンストラクターを使うことです。
 
-### <a name="raising-domain-events"></a>ドメインのイベントを発生させる
+### <a name="raising-domain-events"></a>ドメイン イベントの生成
 
-次の質問は、その関連するイベント ハンドラーに到達するためにドメイン イベントを発生させる方法を示します。 複数の方法を使用することができます。
+次に知りたいことは、関連するイベント ハンドラーに届くようにドメイン イベントを生成する方法です。 複数の方法があります。
 
-Udi Dahan が最初に提案された (など、複数の関連する投稿など[イベントのドメインを 2](http://udidahan.com/2008/08/25/domain-events-take-2/)) を管理して、イベントを発生させるため、静的クラスを使用します。 静的という名前のクラスがイベントを発生させるドメイン、呼び出された場合にすぐに DomainEvents DomainEvents.Raise (イベント myEvent) のような構文を使用してこのことがあります。 Jimmy Bogard 書いたブログ投稿 ([、ドメインの強化: ドメイン イベント](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/))、同様のアプローチすることをお勧めします。
+Udi Dahan がもともと提案しているのは (たとえば、「[Domain Events – Take 2](http://udidahan.com/2008/08/25/domain-events-take-2/)」(ドメイン イベント – テイク 2 などの複数の関連する投稿を参照))、イベントの管理と生成に静的クラスを使う方法です。 これには、呼び出されるとすぐにドメイン イベントを生成する DomainEvents という名前の静的クラスが含まれる場合があります (DomainEvents.Raise(Event myEvent) のような構文を使用)。 Jimmy Bogard も、ブログ投稿「[Strengthening your domain: Domain Events](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)」(ドメインの強化: ドメイン イベント) で同様のアプローチを推奨しています。
 
-ただし、ドメインのイベント クラスの静的な場合にもディスパッチ ハンドラーにすぐにします。 これにより、テストおよびデバッグが難しく、副作用のロジックを持つイベント ハンドラーは、イベントが発生した後すぐに実行されるためです。 フォーカスとだけ何が起こっているか、現在の集計クラスでするテスト、デバッグしているときに突然にリダイレクトするその他の集計またはアプリケーション ロジックに関連する副作用の他のイベント ハンドラーはしません。 これによっては他のアプローチが進化に伴い、理由は、次のセクションで説明したようです。
+ただし、ドメイン イベント クラスが静的である場合は、ハンドラーにもすぐにディスパッチにします。 これにより、副作用のロジックを含むイベント ハンドラーがイベント生成直後に実行されるため、テストとデバッグが難しくなります。 テストとデバッグを行うときは、現在の集計クラスで発生していることだけに注目する必要があります。他の集計やアプリケーション ロジックに関連する副作用に対する他のイベント ハンドラーに突然リダイレクトされるのは困ります。 このような理由から、次のセクションで説明する他のアプローチが考案されています。
 
-#### <a name="the-deferred-approach-for-raising-and-dispatching-events"></a>遅延を発生させると、イベントのディスパッチのアプローチ
+#### <a name="the-deferred-approach-for-raising-and-dispatching-events"></a>イベントの生成とディスパッチに対する遅延アプローチ
 
-ドメインのイベント ハンドラーにすぐにディスパッチなどではなくより適切な方法がイベントを追加する、ドメインのコレクションには、そのドメインのこれらのイベントをディスパッチするために*直前*または*右* *後*(EF に SaveChanges) と同様に、トランザクションをコミットします。 (このアプローチは、この投稿の Jimmy Bogard によって説明された[向上ドメインのイベント パターン](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/))。
+ドメイン イベント ハンドラーにすぐにディスパッチするよりよい方法は、ドメイン イベントをコレクションに追加した後、トランザクションを (EF の SaveChanges で) コミットする "*直前*" または "*直**後*" に、それらのドメイン イベントをディスパッチすることです (このアプローチについては、Jimmy Bogard の「[A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)」(よりよいドメイン イベント パターン) を参照)。
 
-ドメインのイベントを送信するかどうかを決定するトランザクションをコミットした後に右の前に、または右は重要ですが、または別のトランザクションで同じトランザクションの一部として、副作用を含めるかどうかを決定するためです。 後者の場合、複数の集計で最終的整合性に対処する必要があります。 このトピックは、次のセクションで説明しています。
+ドメイン イベントの送信をトランザクションのコミットの直前または直後のどちらにするかは、副作用を同じトランザクションまたは別のトランザクションのどちらに含めればよいかに影響するので、重要な決定です。 後者の場合は、複数の集計の間の最終的な整合性に対処する必要があります。 これについては、次のセクションで説明します。
 
-遅延のアプローチは、どのような eShopOnContainers 使用です。 最初に、コレクションまたはエンティティごとのイベントの一覧に、エンティティで行われているイベントを追加します。 その一覧には、次の例のように、エンティティ オブジェクトの一部またはさらに、基本エンティティ クラスの一部をする必要があります。
+eShopOnContainers では遅延アプローチを使っています。 最初に、エンティティで発生したイベントを、エンティティごとのコレクションまたはイベント リストに追加します。 このリストは、エンティティ オブジェクトの一部にする必要があり、さらによい方法は、次の Entity 基底クラスの例で示すように、基本エンティティ クラスの一部にすることです。
 
 ```csharp
 public abstract class Entity
 {
-    private List<IAsyncNotification> _domainEvents;
+     //... 
+    private List<INotification> _domainEvents;
+    public List<INotification> DomainEvents => _domainEvents;
 
-    public List<IAsyncNotification> DomainEvents => _domainEvents;
-
-    public void AddDomainEvent(IAsyncNotification eventItem)
+    public void AddDomainEvent(INotification eventItem)
     {
-        _domainEvents = _domainEvents ?? new List<IAsyncNotification>();
+        _domainEvents = _domainEvents ?? new List<INotification>();
         _domainEvents.Add(eventItem);
     }
 
-    public void RemoveDomainEvent(IAsyncNotification eventItem)
+    public void RemoveDomainEvent(INotification eventItem)
     {
         if (_domainEvents is null) return;
         _domainEvents.Remove(eventItem);
@@ -152,28 +156,29 @@ public abstract class Entity
 }
 ```
 
-イベントを発生させる場合は、単に追加するコードを次に示すように、集計 entity メソッド内に配置するイベントの収集。
+イベントを生成するときは、集計ルート エンティティの任意のメソッドのコードから、イベント コレクションにイベントを追加するだけです。
+
+次に示すコードの例は、[eShopOnContainers の Order 集計ルート](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs)の一部です。
 
 ```csharp
 var orderStartedDomainEvent = new OrderStartedDomainEvent(this, //Order object
-    cardTypeId,
-    cardNumber,
-    cardSecurityNumber,
-    cardHolderName,
-    cardExpiration);
+                                                          cardTypeId, cardNumber,
+                                                          cardSecurityNumber,
+                                                          cardHolderName,
+                                                          cardExpiration);
 this.AddDomainEvent(orderStartedDomainEvent);
 ```
 
-AddDomainEvent メソッドを行っていることだけが一覧に、イベントを追加することに注意してください。 イベントは生成されませんまだ、およびイベント ハンドラーは呼び出されませんまだです。
+AddDomainEvent メソッドで行われているのが、リストへのイベントの追加だけであることに注意してください。 イベントはまだディスパッチされておらず、イベント ハンドラーはまだ呼び出されていません。
 
-実際にするデータベースへのトランザクションをコミットする場合、後で、イベントをディスパッチします。 Entity Framework のコアを使用している場合は、次のコードと同様に、EF DbContext の SaveChanges メソッドでします。
+実際にイベントをディスパッチするのは、後でデータベースにトランザクションをコミットするときです。 Entity Framework Core を使っている場合は、次のコードのように、EF DbContext の SaveChanges メソッド内であることを意味します。
 
 ```csharp
 // EF Core DbContext
 public class OrderingContext : DbContext, IUnitOfWork
 {
     // ...
-    public async Task<int> SaveEntitiesAsync()
+    public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
     {
         // Dispatch Domain Events collection.
         // Choices:
@@ -182,8 +187,9 @@ public class OrderingContext : DbContext, IUnitOfWork
         // handlers that are using the same DbContext with Scope lifetime
         // B) Right AFTER committing data (EF SaveChanges) into the DB. This makes
         // multiple transactions. You will need to handle eventual consistency and
-        // compensatory actions in case of failures.
+        // compensatory actions in case of failures.        
         await _mediator.DispatchDomainEventsAsync(this);
+
         // After this line runs, all the changes (from the Command Handler and Domain
         // event handlers) performed through the DbContext will be commited
         var result = await base.SaveChangesAsync();
@@ -191,53 +197,53 @@ public class OrderingContext : DbContext, IUnitOfWork
 }
 ```
 
-このコードでは、それぞれのそれぞれのイベント ハンドラーにエンティティのイベントをディスパッチします。
+このコードでは、エンティティ イベントを対応するイベント ハンドラーにディスパッチします。
 
-全体の結果は、ことが分離 (単純なリストに追加のメモリに) ドメインのイベントの発生からイベント ハンドラーにディスパッチします。 さらに、ディスパッチャーの種類を使用することによって、同期または非同期でイベントをディスパッチでしたします。
+全体な結果として、ドメイン イベントの生成 (単にメモリ内のリストへの追加) がイベント ハンドラーへのディスパッチから切り離されます。 さらに、使っているディスパッチャーの種類によっては、同期または非同期にイベントをディスパッチできます。
 
-重要になっているトランザクションの境界をここで再生ことに注意してください。 作業時間とトランザクションの場合は、単位は、複数の集計をまたがることができる場合 (として EF コアおよびリレーショナル データベースを使用する場合)、うまくいかないことができます。 一貫性を実現するために追加の手順を実装するためにする場合は、トランザクションは、Azure DocumentDB のような NoSQL データベースを使用する場合などの集計をまたぐことはできません。 これは、永続性の無視がユニバーサル; 別の理由使用する記憶域システムによって異なります。
+ここでは、トランザクション境界が重要な意味を持つことに注意してください。 作業単位とトランザクションが複数の集計にまたがることができる場合 (EF Core とリレーショナル データベースを使っている場合など)、これはうまくいきます。 しかし、トランザクションが複数の集計にまたがることができない場合は (Azure DocumentDB のような NoSQL を使っている場合)、整合性を実現するための追加手順を実装する必要があります。 これは、永続性の無視がユニバーサルではないもう 1 つの理由であり、使っているストレージ システムに依存します。
 
-### <a name="single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates"></a>集計の集計で最終的整合性との間で 1 つのトランザクション
+### <a name="single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates"></a>複数の集計にまたがる 1 つのトランザクションと集計の間の最終的な整合性
 
-意見の分かれる最終的整合性の証明書利用者の間でのそれらの集計と集計の間で 1 つのトランザクションを実行するかどうかの質問はあります。 多くの DDD 作成者 Eric Evans と Vaughn カバー推奨規則を 1 つのトランザクションと同じように = 1 つの集計と集計の間で最終的整合性のためと主張します。 たとえば、著書で*ドメイン デザイン*は、Eric Evans:
+複数の集計にまたがる 1 つのトランザクションを実行する方がよいか、それともそれらの集計の間の最終的な整合性に依存する方がよいかは、難しい問題です。 Eric Evans や Vaughn Vernon などの多くの DDD 作成者は、1 トランザクション = 1 集計のルールを推奨しており、したがって集計間の最終的な整合性を主張しています。 たとえば、Eric Evans は『*Domain-Driven Design*』(ドメイン ドリブンの設計) で次のように書いています。
 
-集計にわたるすべてのルールは、常に最新の状態にする必要ありません。 イベント処理、バッチ処理、またはその他の更新メカニズム、を介して他の依存関係できます内に解決する特定の時刻。 (pg です。 128)
+複数の集計に関係するルールは、常に最新の状態であることを期待できません。 イベント処理、バッチ処理、または他の更新メカニズムにより、他の依存関係はある特定の時間内に解決できます。 (128 ページ)
 
-Vaughn カバーでは、次の質問[効果的な集計のデザインします。パート II: 行う集計作業まとめて](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
+Vaughn Vernon は、『[Effective Aggregate Design.Part II: Making Aggregates Work Together](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)』(効果的な集計設計パート II: 集計処理の連携) で次のように書いています。
 
-したがって、集計インスタンスは、1 つまたは複数の集計に関するその他のビジネス ルールを実行する必要がありますいずれかのコマンドを実行している場合を使用して最終的整合性\[しています.\]DDD モデルで最終的整合性をサポートするために実用的な方法があります。 集計メソッドは、1 つまたは複数の非同期サブスクライバーに配信された時間内にあるドメインのイベントを公開します。
+したがって、1 つの集計インスタンスでコマンドを実行するために、他のビジネス ルールを 1 つ以上の集計で実行する必要がある場合は、最終的な整合性を使います \[...\]。DDD モデルには最終的な整合性をサポートするための実用的な方法があります。 集計メソッドが発行したドメイン イベントは、1 つ以上の非同期サブスクライバーに時間内に配信されます。
 
-この論理的根拠は、多くの集計またはエンティティにまたがるトランザクションではなく詳細なトランザクションの採用に基づいています。 考え方としては、2 番目のケースでは、データベース ロックの数がかなり大きくなる場合高い拡張性のニーズを持つ大規模なアプリケーションで。 拡張性の高いアプリケーションでは、複数の集計の間のインスタントのトランザクションの一貫性があるない必要があるという事実を採用で最終的整合性の概念を受け入れることができます。 アトミックの変更がビジネスで必要な多くの場合であり、どのような場合に特定の操作にアトミック トランザクションが必要があるかどうかどうかと、ドメインの専門家の責任です。 常に、操作は、複数の集計の間でアトミックのトランザクションを必要とする場合は、集計が大規模なを指定するか、正しく意図していないかどうかを依頼する場合があります。
+この原理は、多数の集計またはエンティティにまたがるトランザクションではなく、粒度が細かいトランザクションの採用に基づいています。 考え方として、2 番目のケースでは、高いスケーラビリティが必要な大規模なアプリケーションではデータベース ロックの数がかなり多くなるということです。 拡張性の高いアプリケーションでは複数の集計間に即時のトランザクション整合性は必要ないという事実を考えると、最終的な整合性の概念を受け入れるのに役立ちます。 アトミックな変更はビジネスで必要ないことが多く、特定の操作にアトミックなトランザクションが必要かどうかを示すのは、常にドメイン専門家の責任です。 常に操作で複数の集計の間にアトミックなトランザクションが必要な場合は、集計をもっと大きくする必要があるかどうか、または集計が正しく設計されているか疑問に感じることがあります。
 
-ただし、他の開発者と Jimmy Bogard のように設計者は、単一のトランザクションにまたがる複数の集計の要件を満たして — のみとその他の集計に関連する同じ元のコマンドの副作用がします。 たとえば、[向上ドメインのイベント パターン](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)Bogard では。
+一方、Jimmy Bogard のような他の開発者や設計者は、単一のトランザクションが複数の集計にまたがってもかまわないと考えています。ただし、このような追加の集計が同じ元のコマンドの副作用に関係している場合だけです。 たとえば、Bogard は「[A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)」(よりよいドメイン イベント パターン) で次のように書いています。
 
-通常、ドメイン、同じ論理トランザクション内では必ずしもドメイン イベントを発生させるの同じスコープ内で発生するイベントの副作用したい\[しています.\]トランザクションをコミットする前にこのハンドラーにイベントをそれぞれをディスパッチします。
+通常はドメイン イベントの副作用は同じ論理トランザクション内で発生する必要がありますが、必ずしも同じドメイン イベント発生スコープ内である必要はありません \[...\]。トランザクションをコミットする直前に、対応するハンドラーにイベントをディスパッチします。
 
-右側のドメインのイベントをディスパッチする場合*する前に*元のトランザクションをコミットは、同じトランザクションに含まれるこれらのイベントの副作用をするためです。 たとえば、EF DbContext SaveChanges メソッドが失敗した場合、トランザクションがロールバック関連ドメインのイベント ハンドラーによって実装されているすべての副作用操作の結果を含む、すべての変更。 これは、DbContext ライフ スコープは、既定でとして定義されているため「スコープ設定されます。」 したがって、DbContext オブジェクトは、同じスコープまたはオブジェクト グラフ内でインスタンス化されている複数のリポジトリ オブジェクト間で共有されます。 これにより、Web API または MVC アプリケーションを開発するときに、HttpRequest スコープと一致します。
+元のトランザクションをコミットする "*直前*" にドメイン イベントをディスパッチする場合は、これらのイベントの副作用を同じトランザクションに含まれるようにするためです。 たとえば、EF DbContext SaveChanges メソッドが失敗した場合、トランザクションは、関連するドメイン イベント ハンドラーによって実装されているすべての副作用操作の結果を含む、すべての変更をロールバックします。 これは、DbContext の有効期間の範囲が、既定で "スコープ" と定義されているためです。 したがって、DbContext オブジェクトは、同じスコープ内またはオブジェクト グラフ内でインスタンス化されている複数のリポジトリ オブジェクト間で共有されます。 これは、Web API または MVC アプリを開発するときの HttpRequest スコープと一致します。
 
-実際には、(1 つのアトミック トランザクションと最終的整合性) の両方の方法を適切に指定できます。 これは、ドメインまたはビジネス要件と、どのドメインの専門家がわかります本当に依存します。 スケーラブルなどのようにする必要があるにはサービスによっても異なります (より詳細なトランザクションは、データベースのロックに関して以下の影響を与える)。 どの程度投資をしてもよい最終的整合性は、集計およびな補正アクションを実装する必要性の可能性のある不一致が検出するためにより複雑なコードを必要とするために、コードで行ったによって異なります。 元の集計およびその後、イベントがディスパッチされるときに変更をコミットする場合がある問題を考慮し、イベント ハンドラーは、副作用をコミットできません、不一致を集計する必要があります。
+実際には、どちらの方法 (単一のアトミック トランザクションと最終的な整合性) も適切な場合があります。 どちらがよいかは、ドメインまたはビジネスの要件と、ドメイン専門家の意見に依存します。 また、サービスに必要なスケーラビリティのレベルにも依存します (トランザクションの粒度が細かいほど、データベース ロックに関する影響は小さくなります)。 また、最終的な整合性では、集計間で可能性のある不整合を検出するためにより複雑なコードが必要であり、補正アクションを実装する必要があるため、コードにかけられる費用によっても左右されます。 元の集計に変更をコミットした後、イベントがディスパッチされるとき、問題があってイベント ハンドラーが副作用をコミットできない場合は、集計の間に不整合が発生することを考慮する必要があります。
 
-な補正アクションを許可する方法は、元のトランザクションの一部ができるように、ドメインのイベントをその他のデータベース テーブルに保存することです。 その後、バッチ処理の不整合を検出して、集計の現在の状態を持つイベントの一覧を比較することによってな補正アクションを実行することができます。 な補正アクションから、側では、ビジネス ユーザー、ドメインの専門家と説明が含まれています。 詳細な分析に必要な複雑なトピックの一部です。
+補正アクションを実装するには、ドメイン イベントを追加データベース テーブルに格納して、ドメイン インベントが元のトランザクションの一部になるようにします。 その後は、バッチ処理で、イベントのリストと集計の現在の状態を比較することによって不整合を検出し、補正アクションを実行することができます。 補正アクションは開発側からの詳細な分析が必要な複雑なトピックの一部であり、ビジネス ユーザーやドメイン専門家との検討が含まれます。
 
-いずれの場合は、必要があるアプローチを選択できます。 初期遅延アプローチしますが、-1 つのトランザクションを使用するように、コミットする前に、イベントを発生させる — EF コアやリレーショナル データベースを使用する最も簡単な方法は、します。 簡単に実装して多くのビジネス ケースでは有効であります。 EShopOnContainers で順序付けマイクロ サービスで使用するアプローチです。
+どのような場合でも、必要なアプローチを選ぶことができます。 ただし、EF Core とリレーショナル データベースを使うときは、初期遅延アプローチ (コミットの前にイベントを生成し、単一のトランザクションを使う) が最も簡単な方法です。 実装が簡単であり、多くのビジネス ケースで有効です。 eShopOnContainers の注文マイクロサービスでも、この方法が使われています。
 
-しかし、方法は実際にディスパッチするそれぞれのそれぞれのイベント ハンドラーにこれらのイベントか。 新機能、\_前の例を参照してください媒介オブジェクトしますか? 持つ手法および成果物のイベントとそのイベント ハンドラーの間でマップを使用することができます。
+しかし、これらのイベントを対応するイベント ハンドラーに実際にディスパッチするにはどうすればよいでしょう。 前の例で使われている \_mediator オブジェクトとはいったい何でしょうか。 これは、イベントとそのイベント ハンドラーの間をマップするために使うことができる手法および成果物に関係します。
 
-### <a name="the-domain-event-dispatcher-mapping-from-events-to-event-handlers"></a>ドメインのイベント ディスパッチャー: イベントからイベント ハンドラーへのマッピング
+### <a name="the-domain-event-dispatcher-mapping-from-events-to-event-handlers"></a>ドメイン イベント ディスパッチャー: イベントからイベント ハンドラーへのマッピング
 
-ディスパッチまたはイベントを発行することが、ある種の成果物ごとの関連するハンドラーを取得でき、プロセスの副作用は、そのイベントに基づくように、イベントを発行する必要があります。
+イベントをディスパッチまたは発行できるようになったら、関連するすべてのハンドラーがイベントを入手し、イベントに基づいて副作用を処理できるように、イベントを発行する何らかの種類の成果物が必要です。
 
-1 つの方法は、実際のメッセージング システムであっても、イベント バス、メモリ内のイベントではなく、サービス バスに基づく可能性があります。 ただし、最初のケースでは、実際のメッセージになりますだけ同一プロセス内のこれらのイベントを処理する必要があるために、ドメインのイベントを処理するための過剰 (つまり、同じドメインおよびアプリケーション レイヤー内)。
+1 つの方法は、おそらくインメモリ イベントではなくサービス バスに基づく、実際のメッセージング システムまたはイベント バスです。 ただし、最初のケースでは、必要なのは同じプロセス内でこれらのイベントを処理することだけなので (つまり、同じドメイン内および同じアプリケーション レイヤー内)、実際のメッセージングを使うのは過剰です。
 
-複数のイベント ハンドラーにイベントをマップする別の方法は、イベントをディスパッチする場所を動的に推論できるように、IoC コンテナー内の型の登録を使用して、です。 つまり、特定のイベントを取得する必要がイベント ハンドラーあるを把握する必要があります。 図 9 ~ 16 を簡略化した方法を示しています。
+イベントを複数のイベント ハンドラーにマップするもう 1 つの方法は、イベントをディスパッチする場所を動的に推論できるように、IoC コンテナーへの型の登録を使うことです。 つまり、特定のイベント ハンドラーで必要な特定のイベントを知る必要があります。 図 9-16 はこのアプローチの概要です。
 
 ![](./media/image17.png)
 
-**図 9 ~ 16**です。 IoC を使用してドメイン イベント ディスパッチャー
+**図 9-16**:  IoC を使ったドメイン イベント ディスパッチャー
 
-すべての組み込みおよびを自分でアプローチを実装する成果物をビルドすることができます。 ただし、使用可能なライブラリと同様に使用も[MediatR](https://github.com/jbogard/MediatR)、IoT コンテナー背後を使用します。 したがって直接使用できます、定義済みのインターフェイスと媒介オブジェクトのパブリッシュ/ディスパッチ メソッド。
+このアプローチを実装するためのすべての仕組みと成果物を自分で作成することができます。 ただし、[MediatR](https://github.com/jbogard/MediatR) のようなライブラリを使うこともできます。このライブラリは内部で IoC コンテナーを使っています。 したがって、定義済みのインターフェイスとメディエーター オブジェクトのパブリッシュ/ディスパッチ メソッドを直接使うことができます。
 
-コードでは、まず、IoC コンテナーで、種類のイベント ハンドラーを登録する次の例で示すように。
+コードでは最初に、イベント ハンドラーの型を IoC コンテナーに登録する必要があります。次に示す [eShopOnContainers の Ordering マイクロサービス](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/MediatorModule.cs)での例をご覧ください。
 
 ```csharp
 public class MediatorModule : Autofac.Module
@@ -245,122 +251,125 @@ public class MediatorModule : Autofac.Module
     protected override void Load(ContainerBuilder builder)
     {
         // Other registrations ...
-        // Register the DomainEventHandler classes (they implement
-        // IAsyncNotificationHandler<>) in assembly holding the Domain Events
-        builder.RegisterAssemblyTypes(
-            typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler)
-            .GetTypeInfo().Assembly)
-            .Where(t => t.IsClosedTypeOf(typeof(IAsyncNotificationHandler<>)))
-            .AsImplementedInterfaces();
+        // Register the DomainEventHandler classes (they implement IAsyncNotificationHandler<>)
+        // in assembly holding the Domain Events
+        builder.RegisterAssemblyTypes(typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler)
+                                       .GetTypeInfo().Assembly)
+                                         .AsClosedTypesOf(typeof(IAsyncNotificationHandler<>));
         // Other registrations ...
     }
 }
 ```
 
-コードは、まずアセンブリを指定します、ハンドラーのいずれかを保持するアセンブリを配置することにより、ドメインのイベント ハンドラーが含まれています (typeof(ValidateOrAddBuyerAggregateWhenXxxx)、ですが、使用することが選択したアセンブリを検索するその他のイベント ハンドラー)。 すべてのイベント ハンドラーは、IAsyncNotificationHandler インターフェイスを実装しては、型次のものだけを検索し、すべてのイベント ハンドラーを登録します。
+このコードは最初に、いずれかのハンドラーを保持するアセンブリを探すことによってドメイン イベント ハンドラーが含まれているアセンブリを特定します (typeof(ValidateOrAddBuyerAggregateWhenXxxx) を使いますが、他のイベント ハンドラーを選んでアセンブリを探してもかまいません)。 すべてのイベント ハンドラーは IAsyncNotificationHandler インターフェイスを実装しているので、次に、それらの型だけを検索してすべてのイベント ハンドラーを登録します。
 
-### <a name="how-to-subscribe-to-domain-events"></a>ドメインのイベントをサブスクライブする方法
+### <a name="how-to-subscribe-to-domain-events"></a>ドメイン イベントをサブスクライブする方法
 
-MediatR を使用する場合、各イベント ハンドラーでは、次のコードでわかるように IAsyncNotificationHandler インターフェイスのジェネリック パラメーターで提供されているイベントの種類に使用します。
+MediatR を使うときは、次のコードでわかるように、INotificationHandler インターフェイスのジェネリック パラメーターで提供されるイベントの型を、各イベント ハンドラーで使う必要があります。
 
 ```csharp
 public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
   : IAsyncNotificationHandler<OrderStartedDomainEvent>
 ```
 
-イベントと見なすことができます、サブスクリプション、イベント ハンドラー間のリレーションシップに基づく MediatR 成果物は各イベントのすべてのイベント ハンドラーを検出し、これらのイベント ハンドラーの各をトリガーします。
+イベントとイベント ハンドラーの間の関係 (これはサブスクリプションと考えることができます) に基づいて、MediatR の成果物は各イベントのすべてのイベント ハンドラーを検出し、それらの各イベント ハンドラーをトリガーすることができます。
 
-### <a name="how-to-handle-domain-events"></a>ドメインのイベントを処理する方法
+### <a name="how-to-handle-domain-events"></a>ドメイン イベントを処理する方法
 
-最後に、イベント ハンドラーでは、通常インフラストラクチャのリポジトリを使用して、必要なその他の集計を取得し、副作用としてドメイン ロジックを実行するアプリケーション層のコードを実装します。 次のコードは一例を示しています。
+最後になりますが、通常、イベント ハンドラーでは、インフラストラクチャのリポジトリを使って必要な他の集計を取得して副作用のドメイン ロジックを実行する、アプリケーション レイヤーのコードを実装します。 次に示すのは、[eShopOnContainers のドメイン イベント ハンドラーのコード](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/DomainEventHandlers/OrderStartedEvent/ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler.cs)での実装の例です。
 
 ```csharp
 public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
-    : IAsyncNotificationHandler<OrderStartedDomainEvent>
+                   : INotificationHandler<OrderStartedDomainEvent>
 {
     private readonly ILoggerFactory _logger;
     private readonly IBuyerRepository<Buyer> _buyerRepository;
     private readonly IIdentityService _identityService;
+
     public ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler(
         ILoggerFactory logger,
         IBuyerRepository<Buyer> buyerRepository,
         IIdentityService identityService)
     {
-        // Parameter validations
-        //...
+        // ...Parameter validations...
     }
 
     public async Task Handle(OrderStartedDomainEvent orderStartedEvent)
     {
-        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ?
-            orderStartedEvent.CardTypeId : 1;
+        var cardTypeId = (orderStartedEvent.CardTypeId != 0) ? orderStartedEvent.CardTypeId : 1;        
         var userGuid = _identityService.GetUserIdentity();
         var buyer = await _buyerRepository.FindAsync(userGuid);
         bool buyerOriginallyExisted = (buyer == null) ? false : true;
+
         if (!buyerOriginallyExisted)
         {
             buyer = new Buyer(userGuid);
         }
+
         buyer.VerifyOrAddPaymentMethod(cardTypeId,
-            $"Payment Method on {DateTime.UtcNow}",
-            orderStartedEvent.CardNumber,
-            orderStartedEvent.CardSecurityNumber,
-            orderStartedEvent.CardHolderName,
-            orderStartedEvent.CardExpiration,
-            orderStartedEvent.Order.Id);
-        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer) :
-        _buyerRepository.Add(buyer);
-        await _buyerRepository.UnitOfWork.SaveEntitiesAsync();
+                                       $"Payment Method on {DateTime.UtcNow}",
+                                       orderStartedEvent.CardNumber,
+                                       orderStartedEvent.CardSecurityNumber,
+                                       orderStartedEvent.CardHolderName,
+                                       orderStartedEvent.CardExpiration,
+                                       orderStartedEvent.Order.Id);
+
+        var buyerUpdated = buyerOriginallyExisted ? _buyerRepository.Update(buyer) 
+                                                                      : _buyerRepository.Add(buyer);
+
+        await _buyerRepository.UnitOfWork
+                .SaveEntitiesAsync();
+
         // Logging code using buyerUpdated info, etc.
     }
 }
 ```
 
-このイベント ハンドラーのコードがコードと見なされますアプリケーション レイヤー、インフラストラクチャのリポジトリを使用しているためインフラストラクチャ永続性レイヤーで、次のセクションで説明したようです。 イベント ハンドラーは、他のインフラストラクチャ コンポーネントを使用することもできます。
+このドメイン イベント ハンドラーのコードは、インフラストラクチャ永続レイヤーについて次のセクションで説明するように、インフラストラクチャのリポジトリを使っているので、アプリケーション レイヤーのコードと考えられます。 イベント ハンドラーは、他のインフラストラクチャ コンポーネントを使うこともできます。
 
-#### <a name="domain-events-can-generate-integration-events-to-be-published-outside-of-the-microservice-boundaries"></a>ドメインのイベントがマイクロ サービス境界の外部で発行する統合イベントを生成できます。
+#### <a name="domain-events-can-generate-integration-events-to-be-published-outside-of-the-microservice-boundaries"></a>ドメイン イベントは、マイクロサービス境界の外部で発行される統合イベントを生成できます。
 
-最後が複数 microservices のイベントに伝達するたい場合がありますは言うまでも重要です。 統合イベントの発生と見なされます、特定のドメインのイベント ハンドラーから、イベント バスを介して発行できました。
+最後に、重要なこととして、複数のマイクロサービスにイベントを伝達することが必要になる場合があります。 これは統合イベントと見なされ、任意の特定のドメイン イベント ハンドラーからイベント バスを介して発行できます。
 
-## <a name="conclusions-on-domain-events"></a>ドメインのイベントのまとめ 
+## <a name="conclusions-on-domain-events"></a>ドメイン イベントのまとめ
 
-説明したように、ドメイン内で変更の副作用を明示的に実装するのにドメインのイベントを使用します。 DDD 用語を使用するのには、1 つまたは複数の集計の間での副作用を明示的に実装するのにドメインのイベントを使用します。 さらに、およびスケーラビリティの向上とデータベースのロックの影響を軽減は、同じドメイン内の集計の間で最終的整合性を使用します。
+説明したように、ドメイン内での変更の副作用を明示的に実装するには、ドメイン イベントを使います。 DDD の用語では、1 つ以上の集計に副作用を明示的に実装するには、ドメイン イベントを使います。 さらに、スケーラビリティを向上させ、データベース ロックの影響を小さくする必要がある場合は、同じドメイン内の集計の間の最終的な整合性を使います。
 
-#### <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他の技術情報
 
--   **Greg Young です。ドメインのイベントとは何ですか。** 
-     [ *http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
+-   **Greg Young。ドメイン イベントとは**
+    [*http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
 
--   **年 1 月 Stenberg です。ドメインのイベントと最終的整合性**
+-   **Jan Stenberg。ドメイン イベントと最終的な整合性**
     [*https://www.infoq.com/news/2015/09/domain-events-consistency*](https://www.infoq.com/news/2015/09/domain-events-consistency)
 
--   **Jimmy Bogard。優れたドメインのイベント パターン**
+-   **Jimmy Bogard。よりよいドメイン イベント パターン**
     [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
--   **Vaughn Vernon。効果的な集計デザイン パート II: 行う作業を一緒に集計**
-    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_記事/カバー\_2011\_2. pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
+-   **Vaughn Vernon。効果的な集計設計パート II: 集計処理の連携**
+    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
 -   **Jimmy Bogard。ドメインの強化: ドメイン イベント**
-    *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/>*
+    *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
--   **Tony Truong です。ドメインのイベント パターン例**
+-   **Tony Truong。ドメイン イベント パターンの例**
     [*http://www.tonytruong.net/domain-events-pattern-example/*](http://www.tonytruong.net/domain-events-pattern-example/)
 
--   **Udi Dahan です。ドメイン モデルが完全に作成する方法にカプセル化された**
+-   **Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
--   **Udi Dahan です。イベントのドメインを 2**
+-   **Udi Dahan。ドメイン イベント – テイク 2**
     [*http://udidahan.com/2008/08/25/domain-events-take-2/*](http://udidahan.com/2008/08/25/domain-events-take-2/%20)
 
--   **Udi Dahan です。ドメインのイベントの救済**
+-   **Udi Dahan。ドメイン イベント – 救済**
     [*http://udidahan.com/2009/06/14/domain-events-salvation/*](http://udidahan.com/2009/06/14/domain-events-salvation/)
 
--   **年 1 月 Kronquist です。ドメインのイベントを公開表示しないで、それらが戻ります。** 
-     [ *https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
+-   **Jan Kronquist。ドメイン イベントを発行しないで返す**
+    [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
--   **Cesar de la Torre。ドメインのイベントとします。DDD および microservices アーキテクチャに統合イベント**
+-   **Cesar de la Torre。DDD およびマイクロサービス アーキテクチャでのドメイン イベントと統合イベント**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
 
 
 >[!div class="step-by-step"]
-[前](クライアント-側-validation.md) [次へ] (インフラストラクチャ-永続化のレイヤー-design.md)
+[前へ](client-side-validation.md) [次へ](infrastructure-persistence-layer-design.md)

@@ -1,6 +1,6 @@
 ---
-title: "Docker コンテナーを .NET Core を選択します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Docker コンテナーを .NET Core を選択します。"
+title: "Docker コンテナー用 .Net Core を選択するタイミング"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker コンテナー用 .Net Core を選択するタイミング"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -8,52 +8,55 @@ ms.date: 10/18/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: b7e2322bab7937c41d4659fefef11c8937d5eae7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5d809ecdbef465206015a103a14baab8dc0b49c7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="when-to-choose-net-core-for-docker-containers"></a>Docker コンテナーを .NET Core を選択します。
+# <a name="when-to-choose-net-core-for-docker-containers"></a>Docker コンテナー用 .Net Core を選択するタイミング
 
-.NET Core のモジュール性および軽量な性質により、コンテナーに最適です。 展開コンテナーを開始すると、そのイメージがよりも .NET Framework での .NET Core とはるかに小さくなります。 これに対しをコンテナーには、.NET Framework を使用して、行う必要があります、イメージは、Windows Nano Server または Linux イメージを .NET core を使用するよりもずっと高い負荷に対応する Windows Server Core イメージにします。
+.NET Core のモジュール性と軽量性はコンテナーに最適です。 コンテナーを展開して起動すると、そのイメージは .NET Framework の場合よりも .NET Core の方がはるかに小さくなります。 それに対して、コンテナーに .NET Framework を使用する場合、イメージを Windows Server Core イメージに基づいて作成する必要があります。このイメージは、.NET Core に使用する Windows Nano Server イメージや Linux イメージよりもはるかに重くなります。
 
-さらに、.NET Core はプラットフォーム間は、Linux または Windows のコンテナー イメージとサーバー アプリケーションを展開することができます。 ただし、従来の .NET Framework を使用している場合は、Windows Server Core のベース イメージをのみ展開できます。
+さらに、.NET Core はクロスプラットフォームなので、Linux または Windows のコンテナー イメージを使用してサーバー アプリケーションを展開できます。 ただし、従来の .NET Framework を使用している場合は、Windows Server Core に基づいてイメージを展開する必要があります。
 
-.NET Core を選択する理由の詳細な説明を次に示します。
+ここでは、.NET Core を選択する理由について詳しく説明します。
 
-## <a name="developing-and-deploying-cross-platform"></a>開発およびクロス プラットフォームを展開します。
+## <a name="developing-and-deploying-cross-platform"></a>クロスプラットフォームの開発と展開
 
-明らか、してが目的の場合は、.NET Framework には、Windows のみがサポートされるため、最適な選択肢を Docker (Linux と Windows 用) でサポートされている複数のプラットフォームで実行できるアプリケーション (web アプリケーションまたはサービス) .NET Core です。
+Docker (Linux と Windows) でサポートされている複数のプラットフォーム上で動作するアプリケーション (Web アプリケーションまたはサービス) を目標としている場合、.NET Framework は Windows のみをサポートしているので、明らかに .NET Core の方が適しています。
 
-.NET core は、開発プラットフォームとしても macOS をサポートします。 ただし、Docker ホストにコンテナーを展開するときにホストする必要があります (現在) に基づいて Linux または Windows です。 たとえば、開発環境でする可能性がありますを使用して mac で実行されている Linux VM
+.NET Core は開発プラットフォームとして macOS もサポートしています。 ただし、コンテナーを Docker ホストに展開する場合、(現時点で) ホストは Linux または Windows をベースにしている必要があります。 たとえば、開発環境では Mac 上で動作する Linux VM を使用できます。
 
-[Visual Studio](https://www.visualstudio.com/) Windows の統合開発環境 (IDE) を提供し、Docker の開発をサポートします。 
+[Visual Studio](https://www.visualstudio.com/) には Windows 用の統合開発環境 (IDE) が用意されています。また、Docker 開発をサポートしています。 
 
-[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) macOS で実行されている、Xamarin Studio の進展、IDE は 2017 中旬以降 Docker をサポートしています。
+[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) は macOS で動作する IDE であり、Xamarin Studio が進化したものです。2017 年中頃から Docker をサポートしています。
 
-使用することも[Visual Studio Code](https://code.visualstudio.com/) (VS Code) macOS、Linux、および Windows にします。 VS コードは、.NET Core、IntelliSense などのデバッグを完全にサポートします。 VS Code は軽量のエディターであるためには Docker CLI と組み合わせて、Mac 上のコンテナー化アプリケーションを開発するを使用できる、 [.NET Core コマンド ライン インターフェイス (CLI) ツール](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x)です。 .NET Core は Sublime テキスト、Emacs、vi、.NET 言語の IntelliSense サポートを提供した、オープン ソース OmniSharp プロジェクトなどのサードパーティ製エディターで対象することもできます。 Ide およびエディターで、に加えては、サポートされているすべてのプラットフォームの .NET Core CLI を使用できます。
+また、macOS、Linux、および Windows 上で [Visual Studio Code](https://code.visualstudio.com/) (VS Code) も使用できます。 VS Code は、IntelliSense、デバッグなどの .NET Core を完全にサポートしています。 VS Code は軽量なエディターなので、Docker CLI や [.NET Core コマンドライン インターフェイス (CLI) ツール](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x)と組み合わせて、コンテナー化されたアプリケーションを Mac 上で開発することができます。 Sublime Text、Emacs、vi、.NET 言語の IntelliSense サポートを提供するオープンソースの OmniSharp プロジェクトなど、ほとんどのサードパーティ製エディターで .NET Core を対象にすることもできます。 IDE とエディターだけでなく、サポートされているすべてのプラットフォームで .NET Core CLI を使用できます。
 
-## <a name="using-containers-for-new-green-field-projects"></a>(「緑フィールド」) の新しいプロジェクトのコンテナーの使用
+## <a name="using-containers-for-new-green-field-projects"></a>新しい ("グリーン フィールド") プロジェクトにコンテナーを使用する
 
-コンテナーは containerize web アプリまたはアーキテクチャのパターンに準拠するサービスを使用することもできますが、一般的 microservices アーキテクチャと組み合わせて使用します。 Windows コンテナーは、モジュールで .NET Framework を使用することができ、.NET Core の軽量な性質により、コンテナーおよび microservices アーキテクチャに最適です。 作成して、コンテナーを展開するときに、そのイメージよりも .NET Framework での .NET Core のはるかに小さくなります。
+一般的に、コンテナーはマイクロサービス アーキテクチャと併用されますが、アーキテクチャ パターンに従う Web アプリやサービスをコンテナー化するために使用することもできます。 Windows コンテナーで .NET Framework を使用できますが、モジュール性があり、軽量な .NET Core はコンテナーとマイクロサービス アーキテクチャに最適です。 コンテナーを作成して展開すると、そのイメージは .NET Framework の場合よりも .NET Core の方がはるかに小さくなります。
 
-## <a name="creating-and-deploying-microservices-on-containers"></a>作成とコンテナーの microservices の展開
+## <a name="creating-and-deploying-microservices-on-containers"></a>マイクロサービスの作成とコンテナーへの展開
 
-(コンテナー) なし microservices ベースのアプリケーションを構築するには、標準のプロセスを使用して、従来の .NET Framework を使用する可能性があります。 こうすれば、.NET Framework が既にインストールされ、プロセス間で共有されるのでプロセス薄い高速なを開始します。 ただし、コンテナーを使用している場合、従来の .NET Framework 用の画像もに基づいて Windows Server Core とをなります microservices-コンテナーのアプローチの大きなです。
+平易なプロセスを使用してマイクロサービス ベースのアプリケーション (コンテナーなし) を構築する場合は、従来の .NET Framework を使用できます。 この場合、.NET Framework は既にインストールされ、複数のプロセスで共有されているため、プロセスは軽量で起動も高速です。 ただし、コンテナーを使用している場合、従来の .NET Framework のイメージも Windows Server Core をベースにしているため、コンテナー上のマイクロサービスのアプローチには重くなりすぎます。
 
-これに対し、.NET Core は軽量なため、コンテナーに基づいている microservices 指向のシステムを採用は場合に、.NET Core は最適な候補です。 さらに、Linux イメージまたは Windows Nano イメージのいずれか、関連するコンテナー イメージは、リーンと小さいコンテナーのライトを行う起動を高速です。
+それに対し、.NET Core は軽量なので、コンテナーに基づくマイクロサービス指向のシステムを採用する場合は .NET Core が最適です。 さらに、関連するコンテナー イメージ (Linux イメージまたは Windows Nano イメージ) は軽量で小さいので、コンテナーも軽量で起動が高速になります。
 
-できるだけ小さくするものでは、マイクロ サービス: 明るい色にする回転しているときに、小さな範囲指定されたコンテキストに関連する要素の小さい領域を表すため、開始し、停止を高速にできるようにして、小さなフット プリントにします。 要件については、.NET Core コンテナー イメージのように小規模で高速のインスタンスのコンテナー イメージを使用するされます。
+マイクロサービスはできるだけ小さくなるように作られています。つまり、動作時には軽く、フットプリントは小さく、境界コンテキストは小さく、問題になる領域は小さく、開始と停止が高速になるように作られています。 このような要件を満たすには、.NET Core コンテナー イメージのような小型でインスタンス化が高速なコンテナー イメージを使用する必要があります。
 
-Microservices アーキテクチャを使用すると、サービス境界を越えてテクノロジを混在させることもできます。 これにより、他の microservices または Node.js、Python、Java、GoLang、またはその他のテクノロジで開発したサービスとの連携を新しい microservices の .NET Core を段階的な移行できます。
+マイクロサービス アーキテクチャでは、サービスの境界を越えて、複数のテクノロジを組み合わせて使用することもできます。 そのため、他のマイクロサービスまたは Node.js、Python、Java、GoLang などのテクノロジを使用して開発されたサービスと連携して動作する新しいマイクロサービスについて、.NET Core に徐々に移行することができます。
 
-## <a name="deploying-high-density-in-scalable-systems"></a>スケーラブルなシステムで高密度を展開します。
+## <a name="deploying-high-density-in-scalable-systems"></a>スケーラブルなシステムへの高密度の導入
 
-コンテナー ベースのシステムには、最適な密度、粒度、およびパフォーマンスが必要がある、.NET Core と ASP.NET Core は、最適なオプションです。 ASP.NET Core は、従来の .NET Framework には、ASP.NET よりも最大でその 10 倍高速と microservices、Java サーブレット、移動、および Node.js などの他の一般的な業界テクノロジを説明します。
+コンテナーベースのシステムで可能な限り最高の密度、粒度、パフォーマンスが必要な場合は、.NET Core と ASP.NET Core が最適です。 ASP.NET Core は、従来の.NET Framework 内の ASP.NET よりも最大 10 倍高速で、Java サーブレット、Go、Node.js など、マイクロサービス用の他の一般的な業界テクノロジをリードしています。
 
-これは特に microservices アーキテクチャでは、数百台 microservices (コンテナー) を実行しているがある可能性があります。 ASP.NET Core のイメージ (.NET Core ランタイムに基づく) では、Linux または Windows Nano 程度の数を減らすサーバーまたは Vm、最終的にはインフラストラクチャのコストを保存して、ホスティングを使用してシステムを実行することができます。
+これは、特に何百ものマイクロサービス (コンテナー) を実行している可能性があるマイクロサービス アーキテクチャに関連します。 Linux または Windows Nano 上の (.NET Core ランタイムに基づく) ASP.NET Core イメージを使用すると、はるかに少ない数のサーバーまたは VM でシステムを実行できるので、最終的にはインフラストラクチャとホスティングのコストを節約できます。
 
 
 >[!div class="step-by-step"]
-[前]([全般] guidance.md) [次へ] (net-framework ・ コンテナー ・ scenarios.md)
+[前へ] (general-guidance.md) [次へ] (net-framework-container-scenarios.md)
