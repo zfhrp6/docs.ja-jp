@@ -1,56 +1,59 @@
 ---
-title: "Entity Framework のコア インフラストラクチャの永続性レイヤーの実装"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Entity Framework のコア インフラストラクチャの永続性レイヤーの実装"
+title: "Entity Framework Core でインフラストラクチャの永続レイヤーを実装する"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Entity Framework Core でインフラストラクチャの永続レイヤーを実装する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 508d60d73eb7c0f0cc2cc909613cc4f8712b4aba
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 67f89b4ee42d896497f462b80d41afff6b347e05
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Entity Framework のコア インフラストラクチャの永続性レイヤーの実装
+# <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Entity Framework Core でインフラストラクチャの永続レイヤーを実装する
 
-SQL Server、Oracle、または PostgreSQL などのリレーショナル データベースを使用する場合、推奨される方法は、Entity Framework (EF) に基づく、永続性レイヤーを実装するがします。 EF は、LINQ をサポートしているし、モデルでは、できるだけでなく、データベースに簡略化された永続化する厳密に型指定されたオブジェクトを提供します。
+SQL Server、Oracle、PostgreSQL など、リレーショナル データベースを使用するとき、Entity Framework (EF) に基づいて永続レイヤーを実装することをお勧めします。 EF は LINQ 対応であり、厳密に型指定されたオブジェクトをモデルに与えます。また、データベースにシンプルな永続性が与えられます。
 
-Entity Framework では、.NET Framework の一部として長い歴史があります。 .NET Core を使用する場合も、.NET Core と同じ方法で Windows または Linux で実行するため、Entity Framework Core を使用してください。 EF Core とは、Entity Framework、フット プリントがはるかに小さいとパフォーマンスで重要な機能強化を使用して実装の完全な書き直しです。
+Entity Framework は長い間、.NET Framework の一部でした。 .NET Core を使用するとき、Entity Framework Core も使用してください。 .NET Core と同様に、Windows または Linux で実行されます。 EF Core は Entity Framework を完全に書き換えたものであり、フットプリントが大幅に少なくなっており、パフォーマンス面で重要な改善が行われています。
 
 ## <a name="introduction-to-entity-framework-core"></a>Entity Framework Core の概要
 
-Entity Framework (EF) のコアは軽量で拡張性があると、クロスプラット フォームのバージョンの人気のある Entity Framework データ アクセス テクノロジです。 これは、.NET Core の 2016 中旬で導入されました。
+Entity Framework (EF) Core は人気の Entity Framework データ アクセス テクノロジの軽量版であり、拡張性に優れ、プラットフォームに依存しません。 2016 年の中頃に .NET Core に導入されました。
 
-EF Core の概要については、Microsoft のドキュメントで使用可能なは既に、ためここで単に提供されていますその情報へのリンク。
+EF Core の概要は Microsoft ドキュメントで既に利用可能になっているので、ここではそのリンクのみを掲載しておきます。
 
 #### <a name="additional-resources"></a>その他の技術情報
 
 -   **Entity Framework Core**
     [*https://docs.microsoft.com/ef/core/*](https://docs.microsoft.com/ef/core/)
 
--   **ASP.NET Core と Visual Studio を使用して Entity Framework Core の概要**
+-   **Visual Studio を使用した ASP.NET Core と Entity Framework Core の概要**
     [*https://docs.microsoft.com/aspnet/core/data/ef-mvc/*](https://docs.microsoft.com/aspnet/core/data/ef-mvc/)
 
 -   **DbContext クラス**
     [*https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.dbcontext*](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.dbcontext)
 
--   **EF コア & EF6.x 比較**
+-   **EF Core と EF6.x を比較する**
     [*https://docs.microsoft.com/ef/efcore-and-ef6/index*](https://docs.microsoft.com/ef/efcore-and-ef6/index)
 
-## <a name="infrastructure-in-entity-framework-core-from-a-ddd-perspective"></a>DDD の観点からエンティティ フレームワークのコア インフラストラクチャ
+## <a name="infrastructure-in-entity-framework-core-from-a-ddd-perspective"></a>DDD の観点から見た Entity Framework Core のインフラストラクチャ
 
-DDD の観点から EF の重要な機能は、EF 用語では POCO とも呼ばれます、POCO ドメイン エンティティを使用する機能*コード優先エンティティ*です。 POCO ドメイン エンティティを使用する場合、ドメイン モデル クラスは永続化非依存、次の[持続性の無視が適用](http://deviq.com/persistence-ignorance/)と[インフラストラクチャの無視が適用](https://ayende.com/blog/3137/infrastructure-ignorance)原則です。
+DDD の観点から見ると、EF の重要な機能は、POCO ドメイン エンティティを使用できることです。EF 用語では、*POCO Code First エンティティ*と呼ばれています。 POCO ドメイン エンティティを使用する場合、ドメイン モデル クラスは永続性無視になります。[永続化の無視 (Persistence Ignorance)](http://deviq.com/persistence-ignorance/) の原則と[インフラストラクチャの無視 (Infrastructure Ignorance)](https://ayende.com/blog/3137/infrastructure-ignorance) の原則に従います。
 
-DDD パターンごとは任意のコレクションにアクセスするとき、検証、およびルールは不変制御できるようにドメインの動作とルール自体、エンティティ クラス内でカプセル化します。 したがって、ddd でエンティティまたはオブジェクトの値は、子のコレクションへのパブリック アクセスを許可することはお勧めできません。 代わりに、その場合に制御する方法とタイミング、フィールドやプロパティ コレクションを更新できるメソッドとどのような動作と操作を実行するを公開します。
+DDD パターンごとに、エンティティ クラス自体の中にドメインの動作とルールをカプセル化してください。そうすることで、エンティティ クラス自体でコレクションにアクセスするとき、インバリアント、検証、ルールを制御できます。 そのため、子エンティティや値オブジェクトのコレクションにパブリック アクセスを許可することは、DDD ではお勧めされません。 それよりも、フィールドとプロパティのコレクションを更新する方法とタイミング、更新時のビヘイビアーとアクションを制御するメソッドを公開することをお勧めします。
 
-DDD 要件を満たすために EF コア 1.1 でにパブリックおよびプライベートの setter のプロパティではなく、エンティティ内プレーンなフィールドを持つことができます。 外部からアクセスできるようにエンティティ フィールドしたくない場合は、属性またはプロパティではなくフィールドだけ作成できます。 クリーナーこうしたい場合は、プライベート set アクセス操作子を使用する必要はありません。
+EF Core 1.1 以降、このような DDD 要件を満たすために、パブリック プロパティの代わりに、エンティティにプレーン フィールドを含めることができます。 エンティティ フィールドに外部からアクセスできるようにする場合、プロパティの代わりに、属性やフィールドを作成できます。 プライベート プロパティの設定機能を利用することもできます。
 
-同様の方法で保持できますコレクションへのアクセスの読み取り専用 IEnumerable として型指定されたパブリック プロパティを使用して&lt;T&gt;、コレクションのプライベート フィールドのメンバーで補助されている (リストと同様に&lt;&gt;) で、永続化の EF に依存するエンティティ。 Entity Framework の以前のバージョンには、ICollection をサポートするコレクションのプロパティが必要な&lt;T&gt;、親エンティティ クラスを使用してすべての開発者が追加またはそのプロパティのコレクションから項目を削除できなかったことです。 DDD で推奨されたパターンに対してその可能性になります。
+同様に、`IReadOnlyCollection<T>` として型指定されたパブリック プロパティを利用することで、コレクションに読み取り専用アクセスできるようになりました。この機能をサポートするのがエンティティのコレクションのプライベート フィールド メンバーです (`List<T>` など)。このメンバーは永続性を EF に依存します。 以前のバージョンの Entity Framework では、コレクション プロパティで `ICollection<T>` をサポートする必要がありました。つまり、開発者が親エンティティ クラスを利用するとき、そのプロパティ コレクションから項目を追加したり、削除したりできました。 その機能は DDD の推奨パターンに反する可能性がありました。
 
-次のコード例に示すように、読み取り専用の IEnumerable オブジェクトを公開する際プライベート コレクションを使用することができます。
+読み取り専用 `IReadOnlyCollection<T>` オブジェクトを公開するとき、プライベート コレクションを使用できます。次のコード例をご覧ください。
 
 ```csharp
 public class Order : Entity
@@ -58,9 +61,9 @@ public class Order : Entity
     // Using private fields, allowed since EF Core 1.1
     private DateTime _orderDate;
     // Other fields ...
-    private readonly List<OrderItem> _orderItems;
 
-    public IEnumerable<OrderItem> OrderItems => _orderItems.AsReadOnly();
+    private readonly List<OrderItem> _orderItems; 
+    public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
     protected Order() { }
 
@@ -70,44 +73,56 @@ public class Order : Entity
     }
 
     public void AddOrderItem(int productId, string productName,
-        decimal unitPrice, decimal discount,
-        string pictureUrl, int units = 1)
+                             decimal unitPrice, decimal discount,
+                             string pictureUrl, int units = 1)
     {
         // Validation logic...
-        var orderItem = new OrderItem(productId, productName, unitPrice, discount,
-            pictureUrl, units);
+
+        var orderItem = new OrderItem(productId, productName, 
+                                      unitPrice, discount,
+                                      pictureUrl, units);
         _orderItems.Add(orderItem);
     }
 }
 ```
 
-読み取り専用としてリストを使用して OrderItems プロパティにアクセスするだけことに注意してください&lt;&gt;です。AsReadOnly() です。 このメソッドは、外部データの更新に対して保護されているように、プライベートの一覧をラップする読み取り専用のラッパーを作成します。 新しいコレクションのすべてのアイテムのコピー先があるないため ToList メソッドを使用するよりもはるかに低コストでは、します。代わりに、ラッパーのインスタンスの 1 つのヒープ割り当て操作を実行します。
+`OrderItems` プロパティには `IReadOnlyCollection<OrderItem>` を利用して読み取り専用アクセスのみが可能となることに注意してください。 この型は読み取り専用であり、定期的な外部更新から守られます。 
 
-EF コアは、ドメイン モデルを行うことがなく、ドメイン モデルを物理データベースにマップする方法を提供します。 永続レイヤー、マップされた操作が実装されているために、純粋な .NET POCO、コードを勧めします。 そのマッピング操作では、データベースへのフィールド マッピングを構成する必要があります。 OnModelCreating メソッドの次の例では、強調表示されたコードは、そのフィールドを介して OrderItems プロパティにアクセスする EF コアを示します。
+EF Core では、ドメイン モデルを "汚染する" ことなく物理データベースにマッピングできます。 マッピング アクションは永続レイヤーで行われるため、純粋な .NET POCO コードになります。 そのマッピング アクションでは、フィールドとデータベースのマッピングを構成する必要があります。 次の OnModelCreating メソッド例で強調表示されているコードは、そのフィールドを介して OrderItems プロパティにアクセスするように EF Core に伝えます。
 
 ```csharp
+// At OrderingContext.cs from eShopOnContainers
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
-    // ...
-    modelBuilder.Entity<Order>(ConfigureOrder);
-    // Other entities ...
+   // ...
+   modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
+   // Other entities’ configuration ...
 }
 
-void ConfigureOrder(EntityTypeBuilder<Order> orderConfiguration)
+// At OrderEntityTypeConfiguration.cs from eShopOnContainers
+class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
-    // Other configuration ...
-    var navigation = orderConfiguration.Metadata.
-    FindNavigation(nameof(Order.OrderItems));
-    navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
-    // Other configuration ...
+    public void Configure(EntityTypeBuilder<Order> orderConfiguration)
+    {
+        orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
+        // Other configuration
+
+        var navigation = 
+              orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+
+        //EF access the OrderItem collection property through its backing field
+        navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+
+        // Other configuration
+    }
 }
 ```
 
-リストがあった場合と同様に、OrderItem エンティティが永続化プロパティの代わりにフィールドを使用するときに&lt;OrderItem&gt;プロパティです。 ただし、注文に新しい項目を追加するため、1 つのアクセサー (AddOrderItem メソッド) を公開します。 その結果、動作とデータが一緒に扱わし、ドメイン モデルを使用するアプリケーション コード全体に適用されます。
+プロパティの代わりにフィールドを使用するとき、List&lt;OrderItem&gt; プロパティが与えられているかのように OrderItem エンティティが永続化されます。 ただし、アクセサーが 1 つ公開されます。新しい項目を注文に追加する `AddOrderItem` メソッドです。 結果として、ビヘイビアーとデータが結び付けられ、ドメイン モデルを使用するアプリケーション コード全体で一貫性が与えられます。
 
-## <a name="implementing-custom-repositories-with-entity-framework-core"></a>Entity Framework のコアでカスタムのリポジトリを実装します。
+## <a name="implementing-custom-repositories-with-entity-framework-core"></a>Entity Framework Core でカスタム リポジトリを実装する
 
-実装レベルでは、リポジトリは単なるクラス (EF コアで DBContext) の作業単位によってコーディネートされたデータ永続化のコードでクラスを次に示すように、更新プログラムを実行するとき。
+実装レベルでは、リポジトリは、更新の実行時に作業単位 (EF Core の DBContext) で調整されるデータ永続化コードを持つクラスです。次のクラスをご覧ください。
 
 ```csharp
 // using statements...
@@ -116,7 +131,6 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.Infrastructure.Repositor
     public class BuyerRepository : IBuyerRepository
     {
         private readonly OrderingContext _context;
-
         public IUnitOfWork UnitOfWork
         {
             get
@@ -124,70 +138,67 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.Infrastructure.Repositor
                 return _context;
             }
         }
-    }
 
-    public BuyerRepository(OrderingContext context)
-    {
-        if (context == null)
+        public BuyerRepository(OrderingContext context)
         {
-            throw new ArgumentNullException(
-                nameof(context));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-        _context = context;
-    }
 
-    public Buyer Add(Buyer buyer)
-    {
-        return _context.Buyers.Add(buyer).Entity;
-    }
+        public Buyer Add(Buyer buyer)
+        {
+            return _context.Buyers.Add(buyer).Entity; 
+        }
 
-    public async Task<Buyer> FindAsync(string BuyerIdentityGuid)
-    {
-        var buyer = await _context.Buyers.Include(b => b.Payments)
-            .Where(b => b.FullName == BuyerIdentityGuid)
-            .SingleOrDefaultAsync();
-        return buyer;
+        public async Task<Buyer> FindAsync(string BuyerIdentityGuid)
+        {
+            var buyer = await _context.Buyers
+                .Include(b => b.Payments)
+                .Where(b => b.FullName == BuyerIdentityGuid)
+                .SingleOrDefaultAsync();
+
+            return buyer;
+        }
     }
 }
 ```
 
-ドメイン モデル層から IBuyerRepository インターフェイスを取得することを注意してください。 ただし、リポジトリの実装は、永続化とインフラストラクチャ レイヤーで行われます。
+IBuyerRepository インターフェイスは、コントラクトとしてのドメイン モデル レイヤーから取得されることに注意してください。 ただし、リポジトリ実装は永続化とインフラストラクチャのレイヤーで行われます。
 
-EF DbContext は、依存関係の挿入をコンス トラクターでは取得されます。 複数のリポジトリ、同じ HTTP 要求のスコープ内で、その既定の有効期間 (ServiceLifetime.Scoped) (これも明示的に設定できますサービス IoC コンテナーにご協力に感謝間で共有されます。AddDbContext&lt;&gt;)。
+EF DbContext は、依存関係の挿入により、コンストラクター経由で取得されます。 IoC コンテナー (services.AddDbContext&lt;&gt; で明示的に設定することもできます) にある既定の有効期間 (ServiceLifetime.Scoped) に起因し、同じ HTTP 要求範囲内の複数のリポジトリ間で強要されます。
 
-### <a name="methods-to-implement-in-a-repository-updates-or-transactions-versus-queries"></a>(更新プログラムまたはクエリではなくトランザクション) リポジトリに実装するメソッド
+### <a name="methods-to-implement-in-a-repository-updates-or-transactions-versus-queries"></a>リポジトリで実装するためのメソッド (更新またはトランザクションとクエリ)
 
-各リポジトリ クラス内では、その関連する集計が含まれるエンティティの状態を更新する永続化メソッドを配置する必要があります。 集計と、関連するリポジトリの間の一対一のリレーションシップがある注意してください。 集計ルート エンティティ オブジェクトが埋め込まれている、EF グラフ内の子エンティティを考慮します。 たとえば、購入者は、関連する子エンティティとして複数の支払方法があります。
+各リポジトリ クラス内に、関連集計に含まれるエンティティの状態を更新する永続性メソッドを置いてください。 集計とその関連リポジトリの間には一対一の関係があることに注意してください。 集計ルート エンティティ オブジェクトがその EF グラフ内に子エンティティを埋め込んでいる可能性を考慮してください。 たとえば、購入者には、関連する子エンティティとして複数の支払方法が与えられている可能性があります。
 
-EShopOnContainers で順序付けマイクロ サービスの実行方法については、CQS/CQRS に基づいても、ので、ほとんどのクエリでは、カスタム リポジトリで実装されていません。 開発者では、クエリと集計、集計、および DDD ごとのカスタムのリポジトリで一般に課せられる制限なしのプレゼンテーション層に必要な結合を作成する自由があります。 このガイドで提案されたカスタムのリポジトリのほとんどにいくつかの更新やトランザクション メソッドですが、クエリ メソッドだけを更新するデータを取得するために必要です。 たとえば、アプリケーションは、注文に関連する新しい buyer を作成する前に、特定の購入者が存在するかどうか知っておく必要があるために、BuyerRepository リポジトリは、FindAsync メソッドを実装します。
+eShopOnContainers でマイクロサービスを注文する手法も CQS/CQRS に基づいているため、クエリの多くはカスタム リポジトリで実装されません。 集計、集計別のカスタム リポジトリ、一般的な DDD によって課される制約なしで、開発者はプレゼンテーション レイヤーに必要なクエリや結合を自由に作成できます。 本ガイドで提案するカスタム リポジトリの多くには更新メソッドとトランザクション メソッドがいくつかあるが、更新するデータの取得に必要なクエリ メソッドに限られます。 たとえば、BuyerRepository リポジトリは FindAsync メソッドを実装します。アプリケーションでは、注文に関連する新しい購入者を作成する前に、特定の購入者が存在するかどうかを認識する必要があるためです。
 
-ただし、プレゼンテーション層またはクライアント アプリに送信するデータを取得する実際のクエリ メソッドが実装されて Dapper を使用して、柔軟なクエリに基づく CQRS クエリで、説明したようにします。
+ただし、前述のように、Dapper を利用するフレキシブル クエリに基づく CQRS クエリで、プレゼンテーション レイヤーまたはクライアント アプリに送信するデータを取得する真のクエリ メソッドが実装されます。
 
-### <a name="using-a-custom-repository-versus-using-ef-dbcontext-directly"></a>EF DbContext を直接使用するとカスタム リポジトリを使用します。
+### <a name="using-a-custom-repository-versus-using-ef-dbcontext-directly"></a>カスタム リポジトリの使用と EF DbContext の直接使用の違い
 
-Entity Framework DbContext クラスは、作業単位とリポジトリ パターンに基づいて、およびとして使用できます、コードから直接など、ASP.NET Core MVC コント ローラーからです。 つまり方法 eShopOnContainers で CRUD カタログ マイクロ サービスのように、最も単純なコードを作成することができます。 必要がある場合、最も単純なコード可能な場合 DbContext クラスを直接使用する多くの開発者と同様です。
+Entity Framework DbContext クラスは Unit of Work と Repository のパターンに基づきます。ASP.NET Core MVC コントローラーなど、コードから直接使用できます。 これで、eShopOnContainers の CRUD カタログ マイクロサービスのように、最も単純なコードを作成できます。 できるだけ単純なコードが必要であれば、DbContext クラスを直接使用することをお勧めします。多くの開発者がそうしています。
 
-ただし、カスタムのリポジトリを実装する複数の利点より複雑な microservices またはアプリケーションを実装する場合。 作業単位とリポジトリ パターンは、アプリケーション層とドメイン モデル層から切り離され、インフラストラクチャの永続性レイヤーをカプセル化するものです。 これらのパターンを実装すると、データベースへのアクセスをシミュレートするモック リポジトリの使用を容易にするためです。
+ただし、カスタム リポジトリを実装するのであれば、より複雑なマイクロサービスやアプリケーションを実装するとき、いくつかの利点があります。 Unit of Work と Repository のパターンは、インフラストラクチャの永続レイヤーのカプセル化を意図しています。アプリケーションとドメイン モデルのレイヤーから切り離されます。 これらのパターンを実装すると、データベースへのアクセスをシミュレートするモック リポジトリの使用が容易になります。
 
-図 9-18 でそのリポジトリのモック作成を簡単にするためのリポジトリを使用すると (EF DbContext を使用して直接) リポジトリを使用していない間の相違点を確認できます。
+図 9-18 では、リポジトリを使用しない (EF DbContext を直接使用する) 場合とリポジトリのモック (疑似) を簡単にするリポジトリを使用する場合の違いを確認できます。
 
 ![](./media/image19.png)
 
-**図 9 18**です。 プレーンな DbContext ではなくカスタムのリポジトリを使用します。
+**図 9-18**. カスタム リポジトリとプレーンな DbContext の使用の違い
 
-モックする場合は、複数の代替にはあります。 だけでリポジトリを模擬表示でしたか、全体の作業単位を模擬表示する可能性があります。 通常モック リポジトリだけであっても、および複雑さを抽象化し、全体の作業単位を模擬表示通常は必要ありません。
+モックにはさまざまな代替手法があります。 リポジトリだけをモックしたり、作業単位全体をモックしたりすることができます。 通常、リポジトリだけをモックする手法で十分です。作業単位全体を抽出し、モックする複雑な作業は通常は必要ありません。
 
-その後、アプリケーション層の説明とは、ASP.NET Core での依存関係の挿入のしくみし、リポジトリを使用する場合の実装方法がわかります。
+この後、アプリケーション レイヤーについて取り上げるとき、依存関係の挿入が ASP.NET Core でどのように機能するか、リポジトリを使用するとき、それがどのように実装されるか説明します。
 
-つまり、カスタム リポジトリを使用すると、データ層の状態の影響を受けない単体テストのコードをより簡単にテストできます。 また、Entity Framework で実際のデータベースにアクセスするテストを実行する場合はありません単体テストは統合テストがとても遅くなります。
+手短に言えば、カスタム リポジトリでは、データ層の状態の影響を受けない単体テストを利用し、より簡単にコードをテストできます。 Entity Framework 経由で実際のデータベースにもアクセスするテストを実行する場合、単体テストではなく統合テストになり、大幅に遅くなります。
 
-DbContext を直接を使用していた場合単体テストの予測可能なデータをメモリ内の SQL Server を使用して単体テストを実行する必要があります唯一の選択肢になります。 リポジトリ レベルと同様に、モック オブジェクトと偽のデータを制御することはできません。 もちろん、MVC コント ローラーを常にテストする可能性があります。
+DbContext を直接使用した場合、唯一の選択肢として与えられるのは、メモリ内 SQL Server と単体テスト用の予測可能データを使用して単体テストを実行することです。 リポジトリ レベルで、モック オブジェクトと偽データを同じように制御することはできません。 もちろん、MVC コント ローラーはいつでもテストできます。
 
-## <a name="ef-dbcontext-and-iunitofwork-instance-lifetime-in-your-ioc-container"></a>EF DbContext および IUnitOfWork インスタンスの有効期間、IoC コンテナー内
+## <a name="ef-dbcontext-and-iunitofwork-instance-lifetime-in-your-ioc-container"></a>IoC コンテナーの EF DbContext と IUnitOfWork のインスタンス有効期間
 
-(IUnitOfWork オブジェクトとして公開される) DbContext オブジェクトは、HTTP 要求のスコープ内の複数のリポジトリの間で共有する必要があります。 たとえば、これは、true の場合実行されている操作は複数の集計、または単に対処する必要がある複数のリポジトリを使用しているためです。 IUnitOfWork インターフェイスが EF 型ではなく、ドメインの一部であることは言うまでも重要です。
+DbContext object (IUnitOfWork オブジェクトとして公開) は、場合によっては、同じ HTTP 要求範囲内にある複数のリポジトリ間で共有する必要があります。 たとえば、実行する操作に複数の集計が伴うときに共有が必要になります。あるいは、複数のリポジトリ インスタンスを利用していると理由で共有が必要になります。 IUnitOfWork インターフェイスが EF Core タイプではなく、ドメイン レイヤーに含まれるということも重要です。
 
-これを実行するためには、DbContext オブジェクトのインスタンスに、そのサービスの有効期間を ServiceLifetime.Scoped に設定が必要です。 これは、サービスに DbContext を登録するときに既定の有効期間です。ASP.NET Core Web API プロジェクトに Startup.cs ファイルの ConfigureServices メソッドから IoC コンテナーで AddDbContext です。 次に例を示します。
+そのためには、DbContext オブジェクトのインスタンスのサービス有効期間を ServiceLifetime.Scoped に設定する必要があります。 これは、ASP.NET Core Web API プロジェクトの Startup.cs ファイルの ConfigureServices メソッドから IoC コンテナーの services.AddDbContext に DbContext を登録したときの既定の有効期間です。 次に例を示します。
 
 ```csharp
 public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -199,24 +210,24 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
     }).AddControllersAsServices();
 
     services.AddEntityFrameworkSqlServer()
-    .AddDbContext<OrderingContext>(options =>
-    {
-        options.UseSqlServer(Configuration["ConnectionString"],
-        sqlop => sqlop.MigrationsAssembly(typeof(Startup).GetTypeInfo().
-        Assembly.GetName().Name));
-    },
-    ServiceLifetime.Scoped // Note that Scoped is the default choice
-    // in AddDbContext. It is shown here only for
-    // pedagogic purposes.
-    );
+      .AddDbContext<OrderingContext>(options =>
+      {
+          options.UseSqlServer(Configuration["ConnectionString"],
+                               sqlOptions => sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().
+                                                                                    Assembly.GetName().Name));
+      },
+      ServiceLifetime.Scoped // Note that Scoped is the default choice
+                             // in AddDbContext. It is shown here only for
+                             // pedagogic purposes.
+      );
 }
 ```
 
-DbContext インスタンス化モードは、ServiceLifetime.Transient または ServiceLifetime.Singleton として構成する必要がありますされません。
+DbContext インスタンス化モードは ServiceLifetime.Transient または ServiceLifetime.Singleton に設定しないでください。
 
-## <a name="the-repository-instance-lifetime-in-your-ioc-container"></a>IoC コンテナーでリポジトリ インスタンスの有効期間
+## <a name="the-repository-instance-lifetime-in-your-ioc-container"></a>IoC コンテナーのリポジトリ インスタンスの有効期間
 
-同様の方法でリポジトリの有効期間が通常 (InstancePerLifetimeScope Autofac で) スコープとして設定する必要があります。 ある可能性もスコープを指定した有効期間を使用する場合に、サービスが一時的な (Autofac で InstancePerDependency) がにおいてはメモリ内で効率的であります。
+同様に、リポジトリの有効期間は通常、範囲として設定してください (InstancePerLifetimeScope in Autofac)。 一時的として設定することもできますが、範囲が指定された有効期間のほうがサービスのメモリが効率的になります。
 
 ```csharp
 // Registering a Repository in Autofac IoC container
@@ -225,158 +236,245 @@ builder.RegisterType<OrderRepository>()
     .InstancePerLifetimeScope();
 ```
 
-原因となる、リポジトリのシングルトン有効期間を使用する重大な同時実行の問題、DbContext に設定されているときに注意 (InstancePerLifetimeScope) 有効期間 (DBContext の既定の有効期間) のスコープ設定されます。
+DbContext の有効期間が範囲 (InstancePerLifetimeScope) として設定されているとき (DBContext の既定の有効期間)、リポジトリに単一の有効期間を使用すると、同時実行関連で重大な問題が発生する可能性があります。
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET MVC アプリケーションのリポジトリと作業パターンの単位を実装する**
+-   **ASP.NET MVC アプリケーションに Repository パターンと Unit of Work パターンを実装する**
     [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
--   **Jonathan Allen です。リポジトリの実装方法が口ひげ、Entity Framework でのパターンし、チェーン**
+-   **Jonathan Allen。Entity Framework、Dapper、Chain を利用して Repository パターンを実装する方法**
     [*https://www.infoq.com/articles/repository-implementation-strategies*](https://www.infoq.com/articles/repository-implementation-strategies)
 
--   **Cesar de la Torre。Autofac IoC コンテナー インスタンスのスコープを持つ ASP.NET Core IoC コンテナー サービスの有効期間を比較する**
+-   **Cesar de la Torre。ASP.NET Core IoC コンテナー サービスの有効期間と Autofac IoC コンテナー インスタンスの範囲を比較する**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
 
-## <a name="table-mapping"></a>テーブルのマッピング
+## <a name="table-mapping"></a>テーブル マッピング
 
-テーブル マッピングからクエリを実行するテーブルのデータを識別し、データベースに保存します。 以前ドメイン エンティティ (たとえば、製品または順序ドメイン) を使用して、関連するデータベース スキーマを生成する方法を説明します。 EF は強くという概念に設計された*規則*です。 「どのようなテーブルの名前になりますか。」のような規則アドレス質問 「どのようなプロパティは、主キー」または 規則は、従来の名前に基づく通常 — たとえばが、一般に、主キー id を持つ最後のプロパティ
+テーブル マッピングでは、データベースに問い合わせたり、保存したりするテーブル データが識別されます。 先に、ドメイン エンティティ (製品や注文のドメインなど) を利用し、関連データベース スキーマを生成する方法を確認しました。 EF は、*規則*という概念を中心に作られています。 規則は “テーブルの名前は何になるのか?” または “主キーはどのようなプロパティか?” のような質問に対処するものです。 規則は通常、慣例的な名前に基づきます。たとえば、主キーであれば、ID で終わるプロパティが一般的に与えられます。
 
-慣例により、各エンティティ設定されます、DbSet と同じ名前のテーブルにマップする&lt;TEntity&gt;派生のコンテキストにエンティティを公開するプロパティです。 場合ありません DbSet&lt;TEntity&gt;値が指定されたエンティティのクラス名を使用します。
+規則では、派生コンテキストでエンティティを公開する DbSet&lt;TEntity&gt; プロパティと同じ名前を持つテーブルにマッピングされるように各エンティティが設定されます。 所与のエンティティに DbSet&lt;TEntity&gt; 値が指定されない場合、クラス名が使用されます。
 
-### <a name="data-annotations-versus-fluent-api"></a>Fluent API ではなくデータ注釈
+### <a name="data-annotations-versus-fluent-api"></a>データの注釈と Fluent API の違い
 
-その他の多くの EF コア規則があり、それらのほとんどは、データ注釈または Fluent API、OnModelCreating メソッド内に実装を使用して変更できます。
+付加的な EF Core 規則がたくさん存在します。そのほとんどは、OnModelCreating メソッド内に実装されるデータの注釈か Fluent API を利用して変更できます。
 
-データ注釈は DDD の観点からより侵入的な方法は、これ自体、エンティティ モデルのクラスに使用する必要があります。 これは、インフラストラクチャのデータベースに関連するデータ注釈を使用したモデルを行うがあるためです。 その一方で、Fluent API は、完全であり、永続化インフラストラクチャから切り離されたエンティティ モデルが表示されるように、ほとんどの規則と、データの永続化インフラストラクチャ レイヤー内のマッピングを変更する便利な方法です。
+データの注釈はエンティティ モデル クラス自体で使用する必要があります。DDD の観点からは、侵入性が高い方法となります。 これはインフラストラクチャ データベースに関連するデータ注釈によってモデルに悪影響を及ぼしているためです。 一方、Fluent API は、データ永続性インフラストラクチャ レイヤー内でほとんどの規則やマッピングを変更するときに便利な方法となります。エンティティ モデルは汚染されず、永続性インフラストラクチャから切り離されます。
 
 ### <a name="fluent-api-and-the-onmodelcreating-method"></a>Fluent API と OnModelCreating メソッド
 
-前述のように、規則とのマッピングを変更するために使用できます OnModelCreating メソッドで DbContext クラス。 次の例では、方法を使う eShopOnContainers で順序付けマイクロ サービスを示します。
+前述のように、規則やマッピングを変更するために、DbContext クラスで OnModelCreating メソッドを使用できます。 
+
+eShopOnContainers の注文マイクロサービスでは、必要に応じて、明示的なマッピングと構成が実装されます。次のコードをご覧ください。
 
 ```csharp
+// At OrderingContext.cs from eShopOnContainers
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
-    //Other entities
-    modelBuilder.Entity<OrderStatus>(ConfigureOrderStatus);
-    //Other entities
+   // ...
+   modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
+   // Other entities’ configuration ...
 }
 
-void ConfigureOrder(EntityTypeBuilder<Order> orderConfiguration)
+// At OrderEntityTypeConfiguration.cs from eShopOnContainers
+class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
-    orderConfiguration.ToTable("orders", DEFAULT_SCHEMA);
-    orderConfiguration.HasKey(o => o.Id);
-    orderConfiguration.Property(o => o.Id).ForSqlServerUseSequenceHiLo("orderseq", DEFAULT_SCHEMA);
-    orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
-    orderConfiguration.Property<string>("Street").IsRequired();
-    orderConfiguration.Property<string>("State").IsRequired();
-    orderConfiguration.Property<string>("City").IsRequired();
-    orderConfiguration.Property<string>("ZipCode").IsRequired();
-    orderConfiguration.Property<string>("Country").IsRequired();
-    orderConfiguration.Property<int>("BuyerId").IsRequired();
-    orderConfiguration.Property<int>("OrderStatusId").IsRequired();
-    orderConfiguration.Property<int>("PaymentMethodId").IsRequired();
+    public void Configure(EntityTypeBuilder<Order> orderConfiguration)
+    {
+            orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
 
-    var navigation =
-    orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
-    // DDD Patterns comment:
-    // Set as Field (new since EF 1.1) to access
-    // the OrderItem collection property as a field
-    navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+            orderConfiguration.HasKey(o => o.Id);
 
-    orderConfiguration.HasOne(o => o.PaymentMethod)
-        .WithMany()
-        .HasForeignKey("PaymentMethodId")
-        .OnDelete(DeleteBehavior.Restrict);
-        orderConfiguration.HasOne(o => o.Buyer)
-        .WithMany()
-        .HasForeignKey("BuyerId");
-        orderConfiguration.HasOne(o => o.OrderStatus)
-        .WithMany()
-        .HasForeignKey("OrderStatusId");
+            orderConfiguration.Ignore(b => b.DomainEvents);
+
+            orderConfiguration.Property(o => o.Id)
+                .ForSqlServerUseSequenceHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
+
+            //Address Value Object persisted as owned entity type supported since EF Core 2.0
+            orderConfiguration.OwnsOne(o => o.Address);
+
+            orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
+            orderConfiguration.Property<int?>("BuyerId").IsRequired(false);
+            orderConfiguration.Property<int>("OrderStatusId").IsRequired();
+            orderConfiguration.Property<int?>("PaymentMethodId").IsRequired(false);
+            orderConfiguration.Property<string>("Description").IsRequired(false);
+
+            var navigation = orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+            
+            // DDD Patterns comment:
+            //Set as field (New since EF 1.1) to access the OrderItem collection property through its field
+            navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+
+            orderConfiguration.HasOne<PaymentMethod>()
+                .WithMany()
+                .HasForeignKey("PaymentMethodId")
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            orderConfiguration.HasOne<Buyer>()
+                .WithMany()
+                .IsRequired(false)
+                .HasForeignKey("BuyerId");
+
+            orderConfiguration.HasOne(o => o.OrderStatus)
+                .WithMany()
+                .HasForeignKey("OrderStatusId");
+    }
 }
 ```
 
-同じ OnModelCreating メソッド内のすべての Fluent API マッピングを設定する可能性がありますが、そのコードをパーティション分割を用意し、エンティティごとに 1 つ、複数の submethods ことをお勧めの例で示すようにします。 特に大規模なモデルは、指定してもかまいません別のエンティティの種類を構成する別のソース ファイル (静的クラス) を持つことをお勧めします。
+同じ OnModelCreating メソッド内ですべての Fluent API マッピングを設定できますが、そのコードを区切り、エンティティあたり 1 つで複数の構成クラスを与えることをお勧めします。例をご覧ください。 大規模なモデルでは特に、個別の構成クラスを与え、異なる種類のエンティティを構成することをお勧めします。
 
-コードの例では、明示的なです。 ただし、EF コア規則ので、同じことを実現するために作成することも、実際のコードが大幅に小さくなりますのほとんどは、自動的には。
+例のコードでは、明示的な宣言とマッピングをいくつか確認できます。 ただし、EF Core の規則では、これらのマッピングの多くが自動的に行われます。そのため、実際に必要になるコードはより小さくなります。
 
-### <a name="the-hilo-algorithm-in-ef-core"></a>EF コアでやあ/Lo アルゴリズム
 
-上記の例のコードでの特徴を使用する、[やあ/Lo アルゴリズム](https://vladmihalcea.com/2014/06/23/the-hilo-algorithm/)キーの生成方法として。
+### <a name="the-hilo-algorithm-in-ef-core"></a>EF Core の Hi/Lo アルゴリズム
 
-やあ/Lo アルゴリズムは、一意なキーが必要な場合に便利です。 概要、としては、やあ-Lo アルゴリズムは、中にないによっては、データベースに行を格納すると、すぐに、テーブルの行に一意の識別子を割り当てます。 これにより、正規シーケンシャル データベース Id とが発生するとすぐに、識別子の使用を開始できます。
+先の例のコードで興味深いところは、キーの生成方法として [Hi/Lo アルゴリズム](https://vladmihalcea.com/2014/06/23/the-hilo-algorithm/)が使用されていることです。
 
-やあ/Lo アルゴリズムでは、データベースではなく、クライアント側での安全な Id を生成するためのメカニズムについて説明します。 *安全な*このコンテキストでの競合なしことを意味します。 このアルゴリズムは、これらの理由から興味深い。
+Hi/Lo アルゴリズムは一意のキーが必要なときに便利です。 手短に言えば、Hi/Lo アルゴリズムでは、一意の識別子がテーブル行に割り当てられます。データベースにすぐに行を格納することには依存しません。 連続する通常のデータベース ID と同様に、識別子の使用をすぐに開始できます。
 
--   作業単位のパターンは中断されません。
+Hi/Lo アルゴリズムは、データベースではなく、クライアント側で安全な ID を生成するメカニズムです。 ここでの*安全*とは競合がないという意味です。 このアルゴリズムは次の理由から興味深いものになっています。
 
--   その他の Dbms で操作を行う方法のシーケンス ジェネレーターのラウンド トリップは不要です。
+-   Unit of Work パターンを壊しません。
 
--   Guid を使用する手法とは異なりの人間が判読できる id を生成します。
+-   その他の DBMS でシーケンス ジェネレーターが行うようなラウンド トリップが必要ありません。
 
-EF コアをサポートしている[HiLo](http://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) ForSqlServerUseSequenceHiLo メソッドで、前の例で示すようにします。
+-   GUID を利用する手法とは異なり、人間にわかりやすい識別子が生成されます。
 
-### <a name="mapping-fields-instead-of-properties"></a>プロパティではなくフィールドのマッピング
+EF Core は ForSqlServerUseSequenceHiLo メソッドで [HiLo](http://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) に対応しています。先の例をご覧ください。
 
-フィールドを列にマップする EF コア 1.1 の機能を使用可能であればエンティティ クラスの任意のプロパティを使用しないと、フィールドをテーブルから列をマップするだけです。 そのための一般的な用途を内部状態のプライベート フィールドをエンティティの外部からアクセスする必要がないとなります。
+### <a name="mapping-fields-instead-of-properties"></a>プロパティの代わりにフィールドをマッピングする
 
-EF 1.1 には、データベース内の列に関連するプロパティを持たないフィールドをマップする方法がサポートされています。 これを行う 1 つのフィールドを持つかコレクションでは、リストのようにも&lt;&gt;フィールドです。 このポイントが前述ドメイン モデル クラスをモデリングについて説明しましたが、前のコードで強調表示されている PropertyAccessMode.Field 構成でそのマッピングを実行する方法を確認できます。
+EF Core 1.1 以降で利用可能になったこの機能では、列をフィールドに直接マッピングできます。 エンティティ クラスのプロパティを使用せず、テーブルからフィールドに列をマッピングできます。 この方法の一般的な使用例に、エンティティの外部からアクセスする必要のない、内部状態用のプライベート フィールドがあります。 
 
-### <a name="using-shadow-properties-in-value-objects-for-hidden-ids-at-the-infrastructure-level"></a>インフラストラクチャ レベルで非表示の Id の値のオブジェクトでシャドウ プロパティの使用
+1 つのフィールドにマッピングすることも、`List<>` フィールドなど、コレクションにマッピングすることもできます。 この点については、ドメイン モデル クラスのモデリングについて説明したときにお伝えしました。ここでは、先のコードで強調表示されていた `PropertyAccessMode.Field` 構成でそのマッピングが実行されるしくみを確認できます。
 
-EF Core でシャドウ プロパティは、エンティティ クラス モデルに存在しないプロパティです。 値とこれらのプロパティの状態が純粋に保持されます、 [ChangeTracker](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker)インフラストラクチャ レベルでのクラスです。
+### <a name="using-shadow-properties-in-ef-core-hidden-at-the-infrastructure-level"></a>インフラストラクチャ レベルでは非表示のシャドウ プロパティを EF Core で使用する
 
-DDD の観点からは、シャドウ プロパティは、シャドウ プロパティの主キーと ID を非表示にして値オブジェクトを実装する便利な方法です。 これは、値オブジェクトの id のないため、重要な (少なくとも、する必要はありません ID ドメイン モデル レイヤーにおいて値オブジェクトを整形するときに)。 ここでのポイントは EF コアの現在のバージョンの時点で EF コアがないとして値オブジェクトを実装する方法[複合型](https://msdn.microsoft.com/library/jj680147(v=vs.113).aspx)EF で利用できるように、6.x です。 現在シャドウ プロパティとして設定隠し ID (主キー) を持つエンティティとして値オブジェクトを実装する必要があるためにです。
+EF Core のシャドウ プロパティは、エンティティ クラス モデルに存在しないプロパティです。 これらのプロパティの値と状態は、インフラストラクチャ レベルの [ChangeTracker](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) で汚染されないように保守管理されます。
 
-わかるように、[アドレス値オブジェクト](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs)eShopOnContainers でアドレス モデルに表示されない、ID:
+
+## <a name="implementing-the-specification-pattern"></a>仕様パターンを実装する
+
+先にデザイン セクションで紹介したように、仕様パターン (フルネームは Query-仕様パターン) は、任意の並べ替え/ページング ロジックと共にクエリの定義を置く場所として作られる Domain-Driven Design パターンです。 仕様パターンによって、オブジェクトのクエリが定義されます。 たとえば、製品を検索するページ クエリをカプセル化するために、必要な入力パラメーター (pageNumber、pageSize、filter など) を受け取る PagedProduct 仕様を作成できます。 その後、Repository のメソッド (usually a List() overload) は ISpecification を受け取り、その仕様に基づき、予想されるクエリを実行します。
+
+一般的な仕様インターフェイスの例として、[eShopOnweb](https://github.com/dotnet-architecture/eShopOnWeb) から抜粋した次のコードをご覧ください。 
 
 ```csharp
-public class Address : ValueObject
+// GENERIC SPECIFICATION INTERFACE
+// https://github.com/dotnet-architecture/eShopOnWeb 
+
+public interface ISpecification<T>
 {
-    public String Street { get; private set; }
-    public String City { get; private set; }
-    public String State { get; private set; }
-    public String Country { get; private set; }
-    public String ZipCode { get; private set; }
-    //Constructor initializing, etc
+    Expression<Func<T, bool>> Criteria { get; }
+    List<Expression<Func<T, object>>> Includes { get; }
+    List<string> IncludeStrings { get; }
 }
 ```
 
-背後でを行う必要が EF コアが、データベース テーブルには、このデータを永続化できるように、ID を入力します。 作業を行うことの ConfigureAddress メソッド内で、 [OrderingContext.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Infrastructure/OrderingContext.cs) EF インフラストラクチャ コードを使用してドメイン モデルを汚染おはないため、インフラストラクチャ レベルでのクラスです。
+一般的な仕様の基底クラスの実装は次のようになります。
 
 ```csharp
-void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
+// GENERIC SPECIFICATION IMPLEMENTATION (BASE CLASS)
+// https://github.com/dotnet-architecture/eShopOnWeb
+ 
+public abstract class BaseSpecification<T> : ISpecification<T>
 {
-    addressConfiguration.ToTable("address", DEFAULT_SCHEMA);
-    // DDD pattern comment:
-    // Implementing the Address ID as a shadow property, because the
-    // address is a value object and an identity is not required for a
-    // value object
-    // EF Core just needs the ID so it can store it in a database table
-    // See: https://docs.microsoft.com/ef/core/modeling/shadow-properties
-    addressConfiguration.Property<int>("Id").IsRequired();
-    addressConfiguration.HasKey("Id");
+    public BaseSpecification(Expression<Func<T, bool>> criteria)
+    {
+        Criteria = criteria;
+    }
+    public Expression<Func<T, bool>> Criteria { get; }
+
+    public List<Expression<Func<T, object>>> Includes { get; } = 
+                                           new List<Expression<Func<T, object>>>();
+
+    public List<string> IncludeStrings { get; } = new List<string>();
+ 
+    protected virtual void AddInclude(Expression<Func<T, object>> includeExpression)
+    {
+        Includes.Add(includeExpression);
+    }
+    
+    // string-based includes allow for including children of children
+    // e.g. Basket.Items.Product
+    protected virtual void AddInclude(string includeString)
+    {
+        IncludeStrings.Add(includeString);
+    }
 }
 ```
+
+次の仕様では、買い物かごの ID か買い物かごが属する購入者の ID が指定されると、買い物かごエンティティが 1 つ読み込まれます。 買い物かごの項目コレクションを[一括で読み込み](https://docs.microsoft.com/en-us/ef/core/querying/related-data)ます。
+
+```csharp
+// SAMPLE QUERY SPECIFICATION IMPLEMENTATION
+
+public class BasketWithItemsSpecification : BaseSpecification<Basket>
+{
+    public BasketWithItemsSpecification(int basketId)
+        : base(b => b.Id == basketId)
+    {
+        AddInclude(b => b.Items);
+    }
+    public BasketWithItemsSpecification(string buyerId)
+        : base(b => b.BuyerId == buyerId)
+    {
+        AddInclude(b => b.Items);
+    }
+}
+```
+
+最後になりますが、一般的 EF リポジトリでこのような仕様を利用し、指定されたエンティティ型 T に関連するデータにフィルターを適用し、一括で読み込むしくみを下の画像で確認してください。
+
+```csharp
+// GENERIC EF REPOSITORY WITH SPECIFICATION
+// https://github.com/dotnet-architecture/eShopOnWeb
+
+public IEnumerable<T> List(ISpecification<T> spec)
+{
+    // fetch a Queryable that includes all expression-based includes
+    var queryableResultWithIncludes = spec.Includes
+        .Aggregate(_dbContext.Set<T>().AsQueryable(),
+            (current, include) => current.Include(include));
+ 
+    // modify the IQueryable to include any string-based include statements
+    var secondaryResult = spec.IncludeStrings
+        .Aggregate(queryableResultWithIncludes,
+            (current, include) => current.Include(include));
+ 
+    // return the result of the query using the specification's criteria expression
+    return secondaryResult
+                    .Where(spec.Criteria)
+                    .AsEnumerable();
+}
+```
+この仕様はフィルタリング ロジックをカプセル化するだけでなく、データを入力するプロパティなど、返すデータのシェイプも指定できます。 
+
+リポジトリから IQueryable を返すことはお勧めされませんが、リポジトリ内で使用し、結果の集まりを作ることには何の問題もありません。 上の List メソッドでこの手法を確認できます。中間の IQueryable 式を利用してクエリのインクルード リストを作成し、それから最後の行にある仕様の基準に合わせてクエリを実行しています。
+
 
 #### <a name="additional-resources"></a>その他の技術情報
 
 -   **テーブル マッピング**
     [*https://docs.microsoft.com/ef/core/modeling/relational/tables*](https://docs.microsoft.com/ef/core/modeling/relational/tables)
 
--   **HiLo を使用して Entity Framework のコアを使用してキーを生成する**
+-   **HiLo を使用し、Entity Framework Core でキーを生成する**
     [*http://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/*](http://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/)
 
 -   **バッキング フィールド**
     [*https://docs.microsoft.com/ef/core/modeling/backing-field*](https://docs.microsoft.com/ef/core/modeling/backing-field)
 
--   **Steve Smith です。Entity Framework のコア内のコレクションをカプセル化された**
+-   **Steve Smith。Entity Framework Core のカプセル化されたコレクション**
     [*http://ardalis.com/encapsulated-collections-in-entity-framework-core*](http://ardalis.com/encapsulated-collections-in-entity-framework-core)
 
--   **プロパティをシャドウ**
+-   **シャドウ プロパティ**
     [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)
 
+-   **仕様パターン**
+    [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
+    
 
 >[!div class="step-by-step"]
-[前](インフラストラクチャ-永続化のレイヤー-design.md) [次へ] (nosql-データベースの永続化-infrastructure.md)
+[前] (infrastructure-persistence-layer-design.md) [次] (nosql-database-persistence-infrastructure.md)

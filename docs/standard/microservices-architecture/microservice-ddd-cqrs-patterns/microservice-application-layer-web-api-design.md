@@ -1,54 +1,57 @@
 ---
-title: "マイクロ サービスのアプリケーション層および Web API を設計します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |マイクロ サービスのアプリケーション層および Web API を設計します。"
+title: "マイクロサービス アプリケーション レイヤーと Web API を設計する"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | マイクロサービス アプリケーション レイヤーと Web API を設計する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 12/12/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 7509b470a30005dd48fa88eefa91f7ed241e4e09
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c166e0286d0769e24a6361037eb6c4694fb821ae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="designing-the-microservice-application-layer-and-web-api"></a>マイクロ サービスのアプリケーション層および Web API を設計します。
+# <a name="designing-the-microservice-application-layer-and-web-api"></a>マイクロサービス アプリケーション レイヤーと Web API を設計する
 
-## <a name="using-solid-principles-and-dependency-injection"></a>純色の基本原則と依存関係の挿入を使用します。
+## <a name="using-solid-principles-and-dependency-injection"></a>SOLID の原則と依存関係の挿入を使用する
 
-純色の原則は、DDD パターンを持つマイクロ サービスの開発など、モダンでミッション クリティカルなアプリケーションで使用する重要な手法です。 実線は頭字語を 5 つのグループの基本原則です。
+SOLID の原則は、最新のミッション クリティカル アプリケーション (DDD のパターンを使用したマイクロサービスの開発など) で使用する重要な技法です。 SOLID は、次の 5 つの基本原則をグループ化する頭文字で構成されています。
 
--   1 つの責任の原則
+-   単一責任 (Single Responsibility) の原則
 
--   開く/閉じる原則
+-   開放/閉鎖 (Open/closed) の原則
 
--   リスコフ置換原則
+-   リスコフの置換 (Liskov substitution) 原則
 
--   分離の逆転原則
+-   インターフェイス分離 (Inversion Segregation) の原則
 
--   依存関係の逆転原則
+-   依存関係逆転 (Dependency Inversion) の原則
 
-ソリッドは、およびそれらの間の依存関係を分離アプリケーションまたはマイクロ サービス内部レイヤーをデザインする方法に関する詳細があります。 ドメインは、アプリケーションの技術的なデザインには無関係です。 最後の原則に従って、依存関係の逆転 (DI) の原則に従ってには、これによりより分離の実装 DDD レイヤー、レイヤーの残りの部分から、インフラストラクチャ レイヤーを分離することができます。
+SOLID はむしろ、アプリケーションまたはマイクロサービス内部レイヤーの設計方法と、それらの間の依存関係の分離方法について述べています。 ドメインには無関係ですが、アプリケーションの技術的な設計には関係しています。 最後の原則、つまり依存関係逆転 (DI) 原則に従って、インフラストラクチャ レイヤーを他のレイヤーから分離できます。それにより、DDD レイヤーの優れた分離実装が可能になります。
 
-DI は、依存関係の反転の原則を実装する 1 つの方法です。 これは、オブジェクトとその依存関係間の疎結合を実現するための手法です。 、の共同作業者を直接インスタンス化または静的参照を使用して、ではなく、オブジェクト クラスがそのアクションを実行する必要があるに提供される (または「に挿入された」) クラス。 ほとんどの場合、クラスは、明示的な依存関係の原則に従うように、コンス トラクターを使用して、その依存関係を宣言します。 DI は、通常、特定の制御の反転 (IoC) コンテナーに基づきます。 ASP.NET Core の単純な組み込みの IoC コンテナーを提供しますが、Autofac または Ninject と同様に、お気に入り IoC コンテナーを使用することもできます。
+DI は、依存関係逆転原則を実装する 1 つの方法です。 オブジェクトとその依存関係の間の疎結合を実現するための手法です。 クラスがそのアクションを実行するために必要なオブジェクトは、コラボレーターを直接インスタンス化したり、静的参照を使ったりするのではなく、クラスに提供 (または「挿入」) されます。 ほとんどの場合、クラスはコンストラクターを使って依存関係を宣言することで、明示的な依存関係の原則に従うことができます。 通常、DI は特定の制御の反転 (Inversion of Control: IoC) コンテナーに基づきます。 ASP.NET Core には簡単な組み込み IoC コンテナーが備わっていますが、Autofac や Ninject などのお気に入りの IoC コンテナーを使用することもできます。
 
-純色の原則に従うと、によって、クラス傾向があります必然的に小さく、十分に考慮された、簡単にテストします。 どのように知ることができる多すぎる依存関係が、クラスに挿入されているかどうかですか。 DI コンス トラクターを使用する場合は、簡単に、コンス トラクターのパラメーターの数を調べるだけで検出されるがあります。 多すぎる依存関係がある場合は、これは、記号、通常 (、[コードの匂い](http://deviq.com/code-smells/)) クラスが多すぎる、実行しようとしは単一の責任の原則に違反する可能性があります。
+SOLID の原則に従うことで、クラスは必然的に小さく、十分に考慮された、簡単にテストできるものになる可能性が高くなります。 しかし、クラスに挿入されている依存関係が多すぎるかどうかはどのように把握できますか。 コンストラクターによって DI を使用している場合、コンストラクターのパラメーター数を確認するだけで簡単にわかります。 依存関係が多すぎる場合、一般に、クラスで行おうとしていることが多すぎるサイン ([コードのにおい](http://deviq.com/code-smells/)) であり、単一責任の原則に違反する可能性があります。
 
-実線を詳しく説明する他のガイドがかかります。 そのため、このガイドでは、するためにこれらのトピックの最小限のナレッジだけが必要です。
+SOLID の詳細を取り上げた別のガイドがあります。 そのため、このガイドで必要となるのは、これらのトピックに関する最小限の知識のみです。
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **実線: 基本的な OOP 原則**
+-   **SOLID: 基本的な OOP 原則**
     [*http://deviq.com/solid/*](http://deviq.com/solid/%20)
 
--   **コントロールのコンテナーと依存性の注入パターンの反転**
+-   **制御の反転コンテナーと依存関係挿入パターン**
     [*https://martinfowler.com/articles/injection.html*](https://martinfowler.com/articles/injection.html)
 
--   **Steve Smith です。新しいはグルー**
+-   **Steve Smith。New は接着剤**
     [*http://ardalis.com/new-is-glue*](http://ardalis.com/new-is-glue)
 
 
 >[!div class="step-by-step"]
-[前](nosql-データベースの永続化-infrastructure.md) [次へ] (microservice-application-layer-implementation-web-api.md)
+[前へ] (nosql-database-persistence-infrastructure.md) [次へ] (microservice-application-layer-implementation-web-api.md)
