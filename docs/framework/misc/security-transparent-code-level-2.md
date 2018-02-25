@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - security-transparent code
 - security-critical code
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-caps.latest.revision: "37"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ba7b6bca4618b8de7c1b5ce2ef45b8455ee71c5c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 66d3611117c02b60bcf4b3713cd2b5bd79856add
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="security-transparent-code-level-2"></a>透過的セキュリティ コード、レベル 2
 <a name="top"></a>
@@ -88,14 +90,14 @@ ms.lasthandoff: 12/22/2017
   
 -   `AllowPartiallyTrustedCallers` (レベル 2 のみ): すべてのコードが既定で透過的になります。 ただし、個々の型やメンバーに他の属性を設定することもできます。  
   
- レベル 2 とレベル 1 のアセンブリ レベルの動作の比較を次の表に示します。  
+ 次の表は、レベル 2 とレベル 1 のアセンブリ レベルの動作を比較します。  
   
 |Assembly 属性|レベル 2|レベル 1|  
 |------------------------|-------------|-------------|  
 |部分的に信頼されたアセンブリで属性なし|型およびメンバーは既定で透過的になりますが、セキュリティ クリティカルまたはセキュリティ セーフ クリティカルにすることもできます。|すべての型およびメンバーは透過的です。|  
 |属性なし|属性を指定しない場合、透過性規則は共通言語ランタイムによって自動的に判断されます。 すべての型およびメンバーはセキュリティ クリティカルになります (ただし、セキュリティ クリティカルになると継承ルールに違反する場所を除く)。|完全に信頼されたアセンブリ (グローバル アセンブリ キャッシュ内に存在するか、`AppDomain` で完全に信頼と指定されている) では、すべての型は透過的であり、すべてのメンバーはセキュリティ セーフ クリティカルです。|  
 |`SecurityTransparent`|すべての型およびメンバーは透過的です。|すべての型およびメンバーは透過的です。|  
-|`SecurityCritical(SecurityCriticalScope.Everything)`|該当しない。|すべての型およびメンバーはセキュリティ クリティカルです。|  
+|`SecurityCritical(SecurityCriticalScope.Everything)`|該当なし。|すべての型およびメンバーはセキュリティ クリティカルです。|  
 |`SecurityCritical`|このアセンブリ内の型によって導入されるすべてのコードはクリティカルになり、その他のすべてのコードは透過的になります。 仮想メソッドまたは抽象メソッドをオーバーライドしたり、インターフェイス メソッドを実装したりする場合は、メソッドに `SecurityCritical` または `SecuritySafeCritical` の注釈を明示的に付ける必要があります。|すべてのコードは既定で透過的になります。 ただし、個々の型やメンバーに他の属性を設定することもできます。|  
   
 ### <a name="type-and-member-annotation"></a>型およびメンバーの注釈  
@@ -183,7 +185,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="linkdemand-support"></a>LinkDemand のサポート  
  レベル 2 の透過性モデルでは、<xref:System.Security.Permissions.SecurityAction.LinkDemand> は <xref:System.Security.SecurityCriticalAttribute> 属性に置き換えられます。 レガシ (レベル 1) コードでは、<xref:System.Security.Permissions.SecurityAction.LinkDemand> は自動的 <xref:System.Security.Permissions.SecurityAction.Demand> として扱われます。  
   
-### <a name="reflection"></a>反射  
+### <a name="reflection"></a>リフレクション  
  クリティカル メソッドを呼び出したりクリティカル フィールドを読み取ったりすると、完全信頼の確認要求がトリガーされます (プライベート メソッドまたはプライベート フィールドを呼び出す場合と同様)。 したがって、完全に信頼されているコードではクリティカル メソッドを呼び出すことができるのに対し、部分的に信頼されたコードでは呼び出すことができません。  
   
  <xref:System.Reflection> 名前空間に追加された <xref:System.Type.IsSecurityCritical%2A>、<xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>、および <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A> の各プロパティを使用すると、型、メソッド、またはフィールドが `SecurityCritical`、`SecuritySafeCritical`、または `SecurityTransparent` のどれであるかを判断できます。 属性の存在を確認する代わりに、リフレクションを使用して透過性を判断するには、これらのプロパティを使用します。 透過性の規則は複雑なので、属性のチェックでは不十分なことがあります。  
