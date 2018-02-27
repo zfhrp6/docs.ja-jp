@@ -12,12 +12,13 @@ ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 manager: wpickett
 ms.custom: mvc
-ms.workload: dotnetcore
-ms.openlocfilehash: 8c6daabb3040998d3376ad022790c16b9629233f
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: dabc7c0c4a0afab8edf7d2bab410bb9635821936
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>.NET および Docker の概要
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 01/06/2018
 
 * [Windows ベースのコンテナー: エンタープライズ レベルの制御が可能な最新のアプリ開発。](https://www.youtube.com/watch?v=Ryx3o0rD5lY&feature=youtu.be)
 * [Docker の概要](https://docs.docker.com/engine/docker-overview/)
-* [Windows コンテナー上の Dockerfile](/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile.md)
+* [Windows コンテナー上の Dockerfile](/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)
 * [Dockerfile を記述するためのベスト プラクティス](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
 * [.NET Core アプリケーション用の Docker イメージのビルド](../docker/building-net-docker-images.md)
 
@@ -183,7 +184,7 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 * [DockerHub の Microsoft Azure Cosmos DB Emulator イメージ](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator) 
 
-* [Microsoft Azure Cosmos DB Emulator をローカルでの開発とテストに使用する](/azure/cosmos-db/local-emulator.md#developing-with-the-emulator)
+* [Microsoft Azure Cosmos DB Emulator をローカルでの開発とテストに使用する](/azure/cosmos-db/local-emulator#developing-with-the-emulator)
 
 ## <a name="exploring-the-rich-docker-development-ecosystem"></a>Docker 開発の豊かなエコシステムについて学習する
 
@@ -192,10 +193,10 @@ Docker プラットフォームとさまざまな Docker イメージについ�
 * [.NET と Docker を組み合わせて使用する](https://blogs.msdn.microsoft.com/dotnet/2017/05/25/using-net-and-docker-together/)
 * [複数コンテナーのマイクロサービス ベース .NET アプリケーションの設計と開発](../../standard/microservices-architecture/multi-container-microservice-net-applications/index.md)
 * [Visual Studio Code の Docker 拡張](https://code.visualstudio.com/docs/languages/dockerfile)
-* [Azure Service Fabric の使用方法を学習する](/azure/service-fabric/index.md)
+* [Azure Service Fabric の使用方法を学習する](/azure/service-fabric/index)
 * [Service Fabric の入門サンプル](https://azure.microsoft.com/resources/samples/service-fabric-dotnet-getting-started/)
-* [Windows コンテナーの利点](/virtualization/windowscontainers/about/index.md#video-overview)
-* [Visual Studio Docker ツールの使用](/aspnet/core/publishing/visual-studio-tools-for-docker/index.md)
+* [Windows コンテナーの利点](/virtualization/windowscontainers/about/index#video-overview)
+* [Visual Studio Docker ツールの使用](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker)
 * [Azure Container Registry から Azure Container Instances に Docker イメージを配置する](https://blogs.msdn.microsoft.com/stevelasker/2017/07/28/deploying-docker-images-from-the-azure-container-registry-to-azure-container-instances/)
 * [Visual Studio Code でのデバッグ](https://code.visualstudio.com/docs/nodejs/debugging-recipes#_nodejs-typescript-docker-container)
 * [クラウドにおける Visual Studio for Mac、コンテナー、サーバーレス コードの入門](https://blogs.msdn.microsoft.com/visualstudio/2017/08/31/hands-on-with-visual-studio-for-mac-containers-serverless-code-in-the-cloud/#comments)

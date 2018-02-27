@@ -1,10 +1,12 @@
 ---
 title: "方法 : Visual Studio のコマンドラインのための環境変数を設定する"
-ms.date: 09-29-2017
+ms.date: 09/29/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.build.commandline
+f1_keywords:
+- cs.build.commandline
 helpviewer_keywords:
 - csc.exe, command-line builds
 - Visual C#, command-line builds
@@ -17,14 +19,14 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: afab503719f67cf7ad1762370ed3062e12ad88e9
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: 298006629bedf33e4d2521a88c010fcce824585c
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>方法 : Visual Studio のコマンドラインのための環境変数を設定する
 
@@ -46,5 +48,5 @@ VsDevCmd.bat ファイルは、適切な環境変数を設定してコマンド 
     > [!CAUTION]
     >  VsDevCmd.bat の場所は、コンピューターによって異なる場合があります。 VsDevCmd.bat ファイルが見つからない場合や破損している場合でも、別のコンピューターの VsDevCmd.bat と置き換えないでください。 その場合は、セットアップ プログラムを再実行してファイルを置き換えてください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [csc.exe を使用したコマンド ラインからのビルド](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

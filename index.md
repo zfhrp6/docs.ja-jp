@@ -4,11 +4,11 @@ hide_bc:
 title: ".NET ドキュメント"
 description: ".NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。"
 ms.custom: updateeachrelease
-ms.openlocfilehash: 9e2ed008752d37d79cabc8c9d341e797a715294c
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: 65d0a7681c8210ee458112a5486f36ceac7f65e4
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/24/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -256,9 +256,9 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="/aspnet/core/">
-                                                    <h3>ASP.NET Core の使用</h3>
-                                                    <p>ASP.NET Core を使用して最新の Web アプリを構築する方法を説明します。</p>
+                                                <a href="/aspnet/core/tutorials/">
+                                                    <h3>ASP.NET Core チュートリアル</h3>
+                                                    <p>ASP.NET Core アプリケーションを開発する方法を学習できる、さまざまなステップ バイ ステップ ガイドがあります。</p>
                                                 </a>
                                             </div>
                                         </div>
@@ -275,7 +275,7 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://www.asp.net/learn">
+                                                <a href="/aspnet/overview">
                                                     <h3>ASP.NET とは何ですか?</h3>
                                                     <p>ASP.NET Web アプリケーションを構築する方法を説明します。</p>
                                                 </a>
@@ -296,7 +296,7 @@ ms.lasthandoff: 02/09/2018
                                             <div class="cardText">
                                                 <a href="/aspnet/core/tutorials/first-mvc-app/start-mvc">
                                                     <h3>Visual Studio での ASP.NET Core</h3>
-                                                    <p>Visual Studio 2015 を使用した、ASP.NET Core MVC Web アプリの構築の基礎について説明します。</p>
+                                                    <p>Visual Studio を使用した、ASP.NET Core MVC Web アプリの構築の基礎について説明します。</p>
                                                 </a>
                                             </div>
                                         </div>
@@ -313,9 +313,9 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="/dotnet/framework/docker/aspnetmvc">
-                                                    <h3>コンテナーでの ASP.NET アプリ</h3>
-                                                    <p>Docker を使用した ASP.NET アプリのデプロイ方法について説明します。</p>
+                                                <a href="/aspnet/mvc/overview/deployment/docker-aspnetmvc">
+                                                    <h3>Windows コンテナーの ASP.NET MVC アプリ</h3>
+                                                    <p>Docker を使用した ASP.NET MVC アプリのデプロイ方法について説明します。</p>
                                                 </a>
                                             </div>
                                         </div>
@@ -332,9 +332,9 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="/aspnet/core/tutorials/your-first-mac-aspnet">
-                                                    <h3>macOS 上の ASP.NET と Visual Studio Code</h3>
-                                                    <p>Visual Studio Code を使用して、macOS 上で ASP.NET Core アプリをセットアップ、ビルド、デプロイする方法を説明します。</p>
+                                                <a href="/aspnet/core/tutorials/xplat">
+                                                    <h3>ASP.NET Core のクロス プラットフォームのチュートリアル</h3>
+                                                    <p>ASP.NET Core を使用して Web アプリまたは Web API を構築する方法を説明します。</p>
                                                 </a>
                                             </div>
                                         </div>
@@ -356,8 +356,8 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://azure.microsoft.com/develop/net">
-                                                    <h3>.NET Azure ドキュメント</h3>
+                                                <a href="/dotnet/azure/">
+                                                    <h3>.NET 用 Azure のドキュメント</h3>
                                                     <p>Web Apps、WebJobs、Cloud Services、および VM などの Azure サービスについて説明します。</p>
                                                 </a>
                                             </div>
@@ -413,7 +413,7 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://docs.microsoft.com/azure/storage/">
+                                                <a href="/azure/storage/">
                                                     <h3>Azure ストレージ</h3>
                                                     <p>Azure Storage と、Azure BLOB、テーブル、キュー、ファイルを使用したアプリケーションの作成方法を説明します。</p>
                                                 </a>
@@ -519,7 +519,7 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://msdn.microsoft.com/library/ms754130.aspx">
+                                                <a href="/dotnet/framework/wpf/index">
                                                     <h3>Windows Presentation Foundation (WPF)</h3>
                                                     <p>WPF では、開発者が Windows でデスクトップ アプリケーションを構築するための XAML ベースのモデルが用意されています。</p>
                                                 </a>
@@ -538,7 +538,7 @@ ms.lasthandoff: 02/09/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://msdn.microsoft.com/library/dd30h2yb.aspx">
+                                                <a href="/dotnet/framework/winforms/index">
                                                     <h3>Windows フォーム</h3>
                                                     <p>Windows デスクトップ用の基幹業務アプリを迅速に開発できます。</p>
                                                 </a>
