@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ea42156f-e1b9-4535-9383-b45f46f3f7ca
-ms.openlocfilehash: 4378afebe6fd0d9317f734457576dc75d7488bf0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f3f73c4fe2197f1f3f2babbe6691ef6662d8f581
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="namespaces"></a>名前空間
 
@@ -77,7 +77,7 @@ Module2 5 6
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6408.fs)]
 
-##
+## <a name="recursive-namespaces"></a>再帰的な名前空間
 
 F# 4.1 には、再帰的に相互に含まれているすべてのコードでは、名前空間の概念が導入されています。  使用してこれを行う`namespace rec`です。  使用`namespace rec`タイプやモジュール間で相互に参照のコードを記述することはできませんに痛みがあるいくつかを減らすことができます。  この例を次に示します。
 
@@ -123,7 +123,7 @@ module BananaHelpers =
 
 この機能は使用できる最上位[モジュール](modules.md)f# 4.1 またはそれ以降。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [F# 言語リファレンス](index.md)
 
 [モジュール](modules.md)

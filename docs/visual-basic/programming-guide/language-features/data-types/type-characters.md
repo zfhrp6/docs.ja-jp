@@ -46,11 +46,11 @@ ms.assetid: 6353cb9b-6ee4-4af6-a5a8-88ce39f90cc5
 author: rpetrusha
 ms.author: ronpet
 ms.manager: wpickett
-ms.openlocfilehash: bdb675b9605d03829c95897382daa6d03cf1b041
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 20a9a30689fb62a6956987b06470e76eeb42ebab
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="type-characters-visual-basic"></a>文字 (Visual Basic)
 
@@ -88,7 +88,7 @@ A*リテラル*データ型の特定の値のテキスト表現です。
 |リテラルのテキストの形式|既定のデータ型|例|  
 |-----------------------------|-----------------------|-------------|  
 |数値いいえ小数部のあります。|`Integer`|`2147483647`|  
-|数値いいえ小数部のある、に対して大きすぎます`Integer`|`Long`|`2147483648`|  
+|数値いいえ小数部のある、に対して大きすぎます `Integer`|`Long`|`2147483648`|  
 |数値、小数部の一部|`Double`|`1.2`|  
 |二重引用符で囲まれました。|`String`|`"A"`|  
 |番号記号で囲まれました。|`Date`|`#5/17/1993 9:32 AM#`|  
@@ -123,7 +123,7 @@ Visual Basic のセットを提供する*リテラルの型文字*、もの以�
 |基本の数|プレフィックス|有効桁の値|例|
 |-----------------|------------|------------------------|-------------|
 |16 進数 (基数 16)。|`&H`|0 ~ 9 および A ~ F|`&HFFFF`|
-|バイナリ (基本 2)|`0B`|0-1|`&B01111100`|
+|バイナリ (基本 2)|`&B`|0-1|`&B01111100`|
 |8 進数 (基数 8)。|`&O`|0-7|`&O77`|
 
 Visual Basic 2017 以降、アンダー スコア文字を使用することができます (`_`) 整数リテラルの読みやすさを強化するために桁区切り記号として。 次の例では、`_`バイナリ リテラルを 8 ビットのグループにグループ化する文字。
