@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorDebugProcess.IsOSSuspended
-api_location: mscordbi.dll
-api_type: COM
-f1_keywords: ICorDebugProcess::IsOSSuspended
+api_name:
+- ICorDebugProcess.IsOSSuspended
+api_location:
+- mscordbi.dll
+api_type:
+- COM
+f1_keywords:
+- ICorDebugProcess::IsOSSuspended
 helpviewer_keywords:
 - IsOSSuspended method [.NET Framework debugging]
 - ICorDebugProcess::IsOSSuspended method [.NET Framework debugging]
 ms.assetid: 83406cb2-5797-4402-872d-89c9516aefec
-topic_type: apiref
-caps.latest.revision: "11"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 97c394e3084007227cf157c62a12df3f5cfac8e6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -44,7 +51,7 @@ HRESULT IsOSSuspended(
  <span data-ttu-id="b4c72-106">[in]対象のスレッドの ID。</span><span class="sxs-lookup"><span data-stu-id="b4c72-106">[in] The ID of thread in question.</span></span>  
   
  `pbSuspended`  
- <span data-ttu-id="b4c72-107">[out]ブール値へのポインター`true`中断です。 それ以外の場合、指定されたスレッドがあった場合 *`pbSuspended`は`false`します。</span><span class="sxs-lookup"><span data-stu-id="b4c72-107">[out] A pointer to a Boolean value that is `true` if the specified thread has been suspended; otherwise *`pbSuspended` is `false`.</span></span>  
+ <span data-ttu-id="b4c72-107">[out]ブール値へのポインター`true`中断です。 それ以外の場合、指定されたスレッドがあった場合 \*`pbSuspended`は`false`します。</span><span class="sxs-lookup"><span data-stu-id="b4c72-107">[out] A pointer to a Boolean value that is `true` if the specified thread has been suspended; otherwise \*`pbSuspended` is `false`.</span></span>  
   
 ## <a name="remarks"></a><span data-ttu-id="b4c72-108">コメント</span><span class="sxs-lookup"><span data-stu-id="b4c72-108">Remarks</span></span>  
  <span data-ttu-id="b4c72-109">デバッガーがこのプロセスを停止したため、指定されたスレッドが中断されたときに、指定されたスレッドの Win32 の中断カウントが 1 ずつインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="b4c72-109">When the specified thread has been suspended as a result of the debugger stopping this process, the specified thread's Win32 suspend count is incremented by one.</span></span> <span data-ttu-id="b4c72-110">デバッガー ユーザー インターフェイス (UI) がオペレーティング システムを表示する場合に、アカウントには、この情報を取得することがあります (OS) がユーザーに、スレッドの数を中断します。</span><span class="sxs-lookup"><span data-stu-id="b4c72-110">The debugger user interface (UI) may want to take this information into account if it displays the operating system (OS) suspend count of the thread to the user.</span></span>  

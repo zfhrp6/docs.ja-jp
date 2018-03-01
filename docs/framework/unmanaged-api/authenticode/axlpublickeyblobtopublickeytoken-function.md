@@ -5,18 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: _AxlPublicKeyBlobToPublicKeyToken
-api_location: clr.dll
-api_type: DLLExport
+api_name:
+- _AxlPublicKeyBlobToPublicKeyToken
+api_location:
+- clr.dll
+api_type:
+- DLLExport
 ms.assetid: 2d92a746-d68c-4f53-a16e-727f071a2d80
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7c9dfd42d0908032ed9a652f6f4f5736ba775ce8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -40,7 +45,7 @@ HRESULT _AxlPublicKeyBlobToPublicKeyToken (
  <span data-ttu-id="6b7bc-106">[in] CSP 公開キー BLOB。</span><span class="sxs-lookup"><span data-stu-id="6b7bc-106">[in] The CSP public key blob.</span></span>  
   
  `ppwszPublicKeyHash`  
- <span data-ttu-id="6b7bc-107">[out] 16 進エンコードされた公開キー ハッシュを受け取るための WCHAR * へのポインター。</span><span class="sxs-lookup"><span data-stu-id="6b7bc-107">[out] A pointer to WCHAR * to receive the hex-encoded public key hash.</span></span>  
+ <span data-ttu-id="6b7bc-107">[out] 16 進エンコードされた公開キー ハッシュを受け取るための WCHAR \* へのポインター。</span><span class="sxs-lookup"><span data-stu-id="6b7bc-107">[out] A pointer to WCHAR \* to receive the hex-encoded public key hash.</span></span>  
   
 ## <a name="return-value"></a><span data-ttu-id="6b7bc-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="6b7bc-108">Return Value</span></span>  
  <span data-ttu-id="6b7bc-109">関数が成功した場合は `S_OK`、それ以外の場合は `S_FALSE`。</span><span class="sxs-lookup"><span data-stu-id="6b7bc-109">`S_OK` if the function succeeds; otherwise `S_FALSE`.</span></span>  
