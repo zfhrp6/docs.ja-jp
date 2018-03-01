@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: message logging [WCF]
+helpviewer_keywords:
+- message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-caps.latest.revision: "40"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a867d5f85177ad9a19a5766c65a8f1f98c04cd17
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -97,7 +100,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <span data-ttu-id="7029c-157">記録するメッセージの最大数 (`maxMessagesToLog` 属性) : この値は、記録するメッセージの最大数を指定します。</span><span class="sxs-lookup"><span data-stu-id="7029c-157">Max messages to log (`maxMessagesToLog` attribute): This value specifies the maximum number of messages to log.</span></span> <span data-ttu-id="7029c-158">すべてのメッセージ (サービス メッセージ、トランスポート メッセージ、および不正メッセージ) が、このクォータに対してカウントされます。</span><span class="sxs-lookup"><span data-stu-id="7029c-158">All messages (service, transport, and malformed messages) are counted towards this quota.</span></span> <span data-ttu-id="7029c-159">クォータに達すると、トレースが出力され、それ以上メッセージは記録されません。</span><span class="sxs-lookup"><span data-stu-id="7029c-159">When the quota is reached, a trace is emitted and no additional message is logged.</span></span> <span data-ttu-id="7029c-160">既定値は 10000 です。</span><span class="sxs-lookup"><span data-stu-id="7029c-160">The default value is 10000.</span></span>  
   
--   <span data-ttu-id="7029c-161">記録するメッセージの最大サイズ (`maxSizeOfMessageToLog` 属性) : この値は、記録するメッセージの最大サイズをバイト単位で指定します。</span><span class="sxs-lookup"><span data-stu-id="7029c-161">Max size of message to log (`maxSizeOfMessageToLog` attribute): This value specifies the maximum size of messages to log in bytes.</span></span> <span data-ttu-id="7029c-162">サイズ制限を超えたメッセージは記録されず、そのメッセージに対して何の処理も実行されません。</span><span class="sxs-lookup"><span data-stu-id="7029c-162">Messages that exceed the size limit are not logged, and no other activity is performed for that message.</span></span> <span data-ttu-id="7029c-163">この設定は、すべてのトレース レベルに影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="7029c-163">This setting affects all trace levels.</span></span> <span data-ttu-id="7029c-164">ServiceModel トレースがオンの場合は、最初の記録ポイントで警告レベル トレース (ServiceModelSend* または TransportReceive) が出力され、ユーザーに通知します。</span><span class="sxs-lookup"><span data-stu-id="7029c-164">If ServiceModel tracing is on, a Warning level trace is emitted at the first logging point (ServiceModelSend* or TransportReceive) to notify the user.</span></span> <span data-ttu-id="7029c-165">サービス レベルとトランスポート レベルのメッセージの既定値は 256 K ですが、正しくないメッセージの既定値は 4 K です。</span><span class="sxs-lookup"><span data-stu-id="7029c-165">The default value for service level and transport level messages is 256K, while the default value for malformed messages is 4K.</span></span>  
+-   <span data-ttu-id="7029c-161">記録するメッセージの最大サイズ (`maxSizeOfMessageToLog` 属性) : この値は、記録するメッセージの最大サイズをバイト単位で指定します。</span><span class="sxs-lookup"><span data-stu-id="7029c-161">Max size of message to log (`maxSizeOfMessageToLog` attribute): This value specifies the maximum size of messages to log in bytes.</span></span> <span data-ttu-id="7029c-162">サイズ制限を超えたメッセージは記録されず、そのメッセージに対して何の処理も実行されません。</span><span class="sxs-lookup"><span data-stu-id="7029c-162">Messages that exceed the size limit are not logged, and no other activity is performed for that message.</span></span> <span data-ttu-id="7029c-163">この設定は、すべてのトレース レベルに影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="7029c-163">This setting affects all trace levels.</span></span> <span data-ttu-id="7029c-164">ServiceModel トレースがオンの場合は、最初の記録ポイントで警告レベル トレース (ServiceModelSend\* または TransportReceive) が出力され、ユーザーに通知します。</span><span class="sxs-lookup"><span data-stu-id="7029c-164">If ServiceModel tracing is on, a Warning level trace is emitted at the first logging point (ServiceModelSend\* or TransportReceive) to notify the user.</span></span> <span data-ttu-id="7029c-165">サービス レベルとトランスポート レベルのメッセージの既定値は 256 K ですが、正しくないメッセージの既定値は 4 K です。</span><span class="sxs-lookup"><span data-stu-id="7029c-165">The default value for service level and transport level messages is 256K, while the default value for malformed messages is 4K.</span></span>  
   
     > [!CAUTION]
     >  <span data-ttu-id="7029c-166">`maxSizeOfMessageToLog` と照合するために計算されるメッセージ サイズは、シリアル化される前のメモリ上でのメッセージ サイズです。</span><span class="sxs-lookup"><span data-stu-id="7029c-166">The message size that is computed to compare against `maxSizeOfMessageToLog` is the message size in memory before serialization.</span></span> <span data-ttu-id="7029c-167">このサイズは、記録されるメッセージ文字列の実際の長さとは異なります。実際のサイズよりも大きい場合がほとんどです。</span><span class="sxs-lookup"><span data-stu-id="7029c-167">This size can differ from the actual length of the message string that is being logged, and in many occasions is bigger than the actual size.</span></span> <span data-ttu-id="7029c-168">その結果、メッセージが記録されない場合があります。</span><span class="sxs-lookup"><span data-stu-id="7029c-168">As a result, messages may not be logged.</span></span> <span data-ttu-id="7029c-169">`maxSizeOfMessageToLog` 属性をメッセージの見積もりサイズよりも 10% 大きく設定することによって、この現象を回避することができます。</span><span class="sxs-lookup"><span data-stu-id="7029c-169">You can account for this fact by specifying the `maxSizeOfMessageToLog` attribute to be 10% larger than the expected message size.</span></span> <span data-ttu-id="7029c-170">また、不正メッセージを記録する場合は、メッセージ ログに使用する実際のディスク領域を、`maxSizeOfMessageToLog` で指定した値の最大 5 倍にすることができます。</span><span class="sxs-lookup"><span data-stu-id="7029c-170">In addition, if malformed messages are logged, the actual disk space utilized by the message logs can be up to 5 times the size of the value specified by `maxSizeOfMessageToLog`.</span></span>  

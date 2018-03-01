@@ -3,18 +3,26 @@ title: "GetDemultiplexedStub 関数 (アンマネージ API リファレンス)"
 description: "GetDemultiplexedStub 関数では、Windows の管理から非同期呼び出しの受信をクライアントを支援するためには、オブジェクト転送シンクを作成します。"
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: GetDemultiplexedStub
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: GetDemultiplexedStub
-helpviewer_keywords: GetDemultiplexedStub function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- GetDemultiplexedStub
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetDemultiplexedStub
+helpviewer_keywords:
+- GetDemultiplexedStub function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f53ee18345347f506a404a22bf5bfea6af037463
 ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT

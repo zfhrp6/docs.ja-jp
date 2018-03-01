@@ -3,18 +3,26 @@ title: "ExecNotificationQueryWmi 関数 (アンマネージ API リファレン�
 description: "ExecNotificationQueryWmi 関数は、イベントを受信するクエリを実行します。"
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: ExecNotificationQueryWmi
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: ExecNotificationQueryWmi
-helpviewer_keywords: ExecNotificationQueryWmi function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- ExecNotificationQueryWmi
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- ExecNotificationQueryWmi
+helpviewer_keywords:
+- ExecNotificationQueryWmi function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: d6dd0926d2262f8d0aa125b86755017a65a95a7f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

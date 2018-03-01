@@ -5,23 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: reference
-api_name: ICorProfilerInfo.GetModuleMetaData
-api_location: mscorwks.dll
-api_type: COM
-f1_keywords: ICorProfilerInfo::GetModuleMetaData
+api_name:
+- ICorProfilerInfo.GetModuleMetaData
+api_location:
+- mscorwks.dll
+api_type:
+- COM
+f1_keywords:
+- ICorProfilerInfo::GetModuleMetaData
 helpviewer_keywords:
 - GetModuleMetaData method [.NET Framework profiling]
 - ICorProfilerInfo::GetModuleMetaData method [.NET Framework profiling]
 ms.assetid: 7a439d92-348a-44dd-b60f-cad7cba56379
-topic_type: apiref
-caps.latest.revision: "15"
+topic_type:
+- apiref
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6ad52460bcd6eb320e970cd0ce2078f2e93df353
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -57,7 +64,7 @@ HRESULT GetModuleMetaData(
 ## <a name="remarks"></a><span data-ttu-id="c290c-112">コメント</span><span class="sxs-lookup"><span data-stu-id="c290c-112">Remarks</span></span>  
  <span data-ttu-id="c290c-113">読み取り/書き込みモードで開かれるメタデータを要求することがありますが、プログラムのメタデータ実行の速度が遅くなります、コンパイラから場合と同様に、メタデータを最適化することはできませんに変更が行われるためです。</span><span class="sxs-lookup"><span data-stu-id="c290c-113">You may ask for the metadata to be opened in read/write mode, but this will result in slower metadata execution of the program, because changes made to the metadata cannot be optimized as they were from the compiler.</span></span>  
   
- <span data-ttu-id="c290c-114">メタデータを所有している (リソースのモジュール) などの一部のモジュールはありません。</span><span class="sxs-lookup"><span data-stu-id="c290c-114">Some modules (such as resource modules) have no metadata.</span></span> <span data-ttu-id="c290c-115">ような場合、 `GetModuleMetaData` S_FALSE とに null 値の HRESULT 値を返す *`ppOut`です。</span><span class="sxs-lookup"><span data-stu-id="c290c-115">In those cases, `GetModuleMetaData` will return an HRESULT value of S_FALSE, and a null in *`ppOut`.</span></span>  
+ <span data-ttu-id="c290c-114">メタデータを所有している (リソースのモジュール) などの一部のモジュールはありません。</span><span class="sxs-lookup"><span data-stu-id="c290c-114">Some modules (such as resource modules) have no metadata.</span></span> <span data-ttu-id="c290c-115">ような場合、 `GetModuleMetaData` S_FALSE とに null 値の HRESULT 値を返す \*`ppOut`です。</span><span class="sxs-lookup"><span data-stu-id="c290c-115">In those cases, `GetModuleMetaData` will return an HRESULT value of S_FALSE, and a null in \*`ppOut`.</span></span>  
   
 ## <a name="requirements"></a><span data-ttu-id="c290c-116">必要条件</span><span class="sxs-lookup"><span data-stu-id="c290c-116">Requirements</span></span>  
  <span data-ttu-id="c290c-117">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="c290c-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  

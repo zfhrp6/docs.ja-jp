@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: hosting services [WCF], WAS
+helpviewer_keywords:
+- hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 40122670c84f87590a31b79f39695e9626ea9883
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -51,7 +54,7 @@ ms.lasthandoff: 12/22/2017
 |--------------|-------------------|----------------------|---------------------------|  
 |<span data-ttu-id="508af-129">HTTP のみ</span><span class="sxs-lookup"><span data-stu-id="508af-129">HTTP Only</span></span>|<span data-ttu-id="508af-130">http: *: 80。\*</span><span class="sxs-lookup"><span data-stu-id="508af-130">http: *:80:\*</span></span>|<span data-ttu-id="508af-131">/appTwo</span><span class="sxs-lookup"><span data-stu-id="508af-131">/appTwo</span></span>|<span data-ttu-id="508af-132">http://localhost/appTwo/</span><span class="sxs-lookup"><span data-stu-id="508af-132">http://localhost/appTwo/</span></span>|  
 |<span data-ttu-id="508af-133">HTTP と 非 HTTP の混在</span><span class="sxs-lookup"><span data-stu-id="508af-133">Both HTTP and Non-HTTP</span></span>|<span data-ttu-id="508af-134">http: *: 80。\*</span><span class="sxs-lookup"><span data-stu-id="508af-134">http: *:80:\*</span></span><br /><br /> <span data-ttu-id="508af-135">net.tcp: 808。\*</span><span class="sxs-lookup"><span data-stu-id="508af-135">net.tcp: 808:\*</span></span>|<span data-ttu-id="508af-136">/appTwo</span><span class="sxs-lookup"><span data-stu-id="508af-136">/appTwo</span></span>|<span data-ttu-id="508af-137">http://localhost/appTwo/</span><span class="sxs-lookup"><span data-stu-id="508af-137">http://localhost/appTwo/</span></span><br /><span data-ttu-id="508af-138">net.tcp://localhost/appTwo/</span><span class="sxs-lookup"><span data-stu-id="508af-138">net.tcp://localhost/appTwo/</span></span>|  
-|<span data-ttu-id="508af-139">非 HTTP のみ</span><span class="sxs-lookup"><span data-stu-id="508af-139">Non-HTTP only</span></span>|<span data-ttu-id="508af-140">net.pipe: *</span><span class="sxs-lookup"><span data-stu-id="508af-140">net.pipe: *</span></span>|<span data-ttu-id="508af-141">/appThree</span><span class="sxs-lookup"><span data-stu-id="508af-141">/appThree</span></span>|<span data-ttu-id="508af-142">net.pipe://appThree/</span><span class="sxs-lookup"><span data-stu-id="508af-142">net.pipe://appThree/</span></span>|  
+|<span data-ttu-id="508af-139">非 HTTP のみ</span><span class="sxs-lookup"><span data-stu-id="508af-139">Non-HTTP only</span></span>|<span data-ttu-id="508af-140">net.pipe: \*</span><span class="sxs-lookup"><span data-stu-id="508af-140">net.pipe: \*</span></span>|<span data-ttu-id="508af-141">/appThree</span><span class="sxs-lookup"><span data-stu-id="508af-141">/appThree</span></span>|<span data-ttu-id="508af-142">net.pipe://appThree/</span><span class="sxs-lookup"><span data-stu-id="508af-142">net.pipe://appThree/</span></span>|  
   
  <span data-ttu-id="508af-143">アプリケーション内のサービスとリソースにもアドレスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="508af-143">Services and resources within an application can also be addressed.</span></span> <span data-ttu-id="508af-144">アプリケーション内では、アプリケーション リソースにベース アプリケーション パスに対する相対アドレスが指定されます。</span><span class="sxs-lookup"><span data-stu-id="508af-144">Within an application, application resources are addressed relative to the base application path.</span></span> <span data-ttu-id="508af-145">たとえば、コンピューター名 contoso.com のサイトに HTTP と Net.TCP プロトコルの両方のサイト バインドがあるとします。</span><span class="sxs-lookup"><span data-stu-id="508af-145">For example, assume that a site on a machine name contoso.com has site bindings for both the HTTP and Net.TCP protocols.</span></span> <span data-ttu-id="508af-146">さらに、そのサイトには 1 つのアプリケーションが /Billing に格納されており、GetOrders.svc でサービスを公開しているとします。</span><span class="sxs-lookup"><span data-stu-id="508af-146">Also assume that the site contains one application located at /Billing, which exposes a service at GetOrders.svc.</span></span> <span data-ttu-id="508af-147">このとき、GetOrders.svc サービスで SecureEndpoint の相対アドレスを持つエンドポイントが公開されている場合、サービスのエンドポイントは次の 2 つの URI で公開されることになります。</span><span class="sxs-lookup"><span data-stu-id="508af-147">Then, if the GetOrders.svc service exposed an endpoint with a relative address of SecureEndpoint, the service endpoint would be exposed at the following two URIs:</span></span>  
   

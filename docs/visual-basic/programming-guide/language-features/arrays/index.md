@@ -3,9 +3,11 @@ title: "Visual Basic における配列"
 ms.custom: 
 ms.date: 12/06/2017
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vb.Array
+f1_keywords:
+- vb.Array
 helpviewer_keywords:
 - arrays [Visual Basic]
 - Visual Basic, arrays
@@ -173,7 +175,7 @@ Dim sales()() As Double = New Double(11)() {}
   
 ## <a name="array-size"></a><span data-ttu-id="7acca-202">配列のサイズ</span><span class="sxs-lookup"><span data-stu-id="7acca-202">Array Size</span></span>  
 
- <span data-ttu-id="7acca-203">配列のサイズは、そのすべての次元の長さの積です。</span><span class="sxs-lookup"><span data-stu-id="7acca-203">The size of an array is the product of the lengths of all its dimensions.</span></span> <span data-ttu-id="7acca-204">これは、現在配列に含まれている要素の総数を表します。</span><span class="sxs-lookup"><span data-stu-id="7acca-204">It represents the total number of elements currently contained in the array.</span></span>  <span data-ttu-id="7acca-205">たとえば、次の例では、各ディメンション内の 4 つの要素を持つ 2 次元配列を宣言します。</span><span class="sxs-lookup"><span data-stu-id="7acca-205">For example, the following example declares a 2-dimensional array with four elements in each dimension.</span></span> <span data-ttu-id="7acca-206">例の出力を示しています、配列のサイズは 16 (または (3 + 1) * (3 + 1)。</span><span class="sxs-lookup"><span data-stu-id="7acca-206">As the output from the example shows, the array's size is 16 (or (3 + 1) * (3 + 1).</span></span>
+ <span data-ttu-id="7acca-203">配列のサイズは、そのすべての次元の長さの積です。</span><span class="sxs-lookup"><span data-stu-id="7acca-203">The size of an array is the product of the lengths of all its dimensions.</span></span> <span data-ttu-id="7acca-204">これは、現在配列に含まれている要素の総数を表します。</span><span class="sxs-lookup"><span data-stu-id="7acca-204">It represents the total number of elements currently contained in the array.</span></span>  <span data-ttu-id="7acca-205">たとえば、次の例では、各ディメンション内の 4 つの要素を持つ 2 次元配列を宣言します。</span><span class="sxs-lookup"><span data-stu-id="7acca-205">For example, the following example declares a 2-dimensional array with four elements in each dimension.</span></span> <span data-ttu-id="7acca-206">例の出力を示しています、配列のサイズは 16 (または (3 + 1) \* (3 + 1)。</span><span class="sxs-lookup"><span data-stu-id="7acca-206">As the output from the example shows, the array's size is 16 (or (3 + 1) \* (3 + 1).</span></span>
 
  [!code-vb[array-size](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-size.vb)]  
 

@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: bindings [WCF], overview
+helpviewer_keywords:
+- bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 4bc4fc7559872a808c2de87e4926075614351030
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -44,7 +47,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <span data-ttu-id="48aa5-127"><xref:System.ServiceModel.BasicHttpBinding> : WS-I Basic Profile 仕様に準拠する Web サービス (ASP.NET Web サービス ベースのサービスなど) への接続に適した HTTP プロトコル バインディング。</span><span class="sxs-lookup"><span data-stu-id="48aa5-127"><xref:System.ServiceModel.BasicHttpBinding>: An HTTP protocol binding suitable for connecting to Web services that conforms to the WS-I Basic Profile specification (for example, ASP.NET Web services-based services).</span></span>  
   
--   <span data-ttu-id="48aa5-128"><xref:System.ServiceModel.WSHttpBinding> : WS-* プロトコルに準拠するエンドポイントへの接続に適した相互運用可能なバインディング。</span><span class="sxs-lookup"><span data-stu-id="48aa5-128"><xref:System.ServiceModel.WSHttpBinding>: An interoperable binding suitable for connecting to endpoints that conform to the WS-* protocols.</span></span>  
+-   <span data-ttu-id="48aa5-128"><xref:System.ServiceModel.WSHttpBinding> : WS-\* プロトコルに準拠するエンドポイントへの接続に適した相互運用可能なバインディング。</span><span class="sxs-lookup"><span data-stu-id="48aa5-128"><xref:System.ServiceModel.WSHttpBinding>: An interoperable binding suitable for connecting to endpoints that conform to the WS-\* protocols.</span></span>  
   
 -   <span data-ttu-id="48aa5-129"><xref:System.ServiceModel.NetNamedPipeBinding> : 同じコンピューター上の他の [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] エンドポイントへの接続に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用するバインディング。</span><span class="sxs-lookup"><span data-stu-id="48aa5-129"><xref:System.ServiceModel.NetNamedPipeBinding>: Uses the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] to connect to other [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] endpoints on the same machine.</span></span>  
   

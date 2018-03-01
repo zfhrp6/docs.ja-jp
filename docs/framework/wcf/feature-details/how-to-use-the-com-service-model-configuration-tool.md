@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: COM+ [WCF], using service model configuration tool
+helpviewer_keywords:
+- COM+ [WCF], using service model configuration tool
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: dd89a3333ab68b7d580c813a4b7741686b46c5b6
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -51,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
      <span data-ttu-id="64e7a-117">このコマンドは、Web サービスとして公開されるインターフェイスのセットに (OnlineStore COM+ アプリケーションの) `IFinances` コンポーネントの `ItemOrders.IFinancial` インターフェイスを追加します。</span><span class="sxs-lookup"><span data-stu-id="64e7a-117">The command adds the `IFinances` interface of the `ItemOrders.IFinancial` component (from the OnlineStore COM+ application) to the set of interfaces that will be exposed as Web services.</span></span> <span data-ttu-id="64e7a-118">サービスは COM+ ホスト モードを使用するため、アプリケーションを明示的にアクティブ化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="64e7a-118">The service uses the COM+ hosting mode and therefore requires explicit application activation.</span></span>  
   
-     <span data-ttu-id="64e7a-119">コンポーネントとインターフェイスにはアスタリスク (*) をワイルドカード文字として使用できますが、選択した機能だけを Web サービスとして公開する場合は使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="64e7a-119">While the wildcard asterisk (*) character can be used for the component and the interface, avoid using it because you might want to expose only selected functionality as a Web service.</span></span> <span data-ttu-id="64e7a-120">ワイルドカードを使用すると、このコンポーネントの将来のバージョンを使用して実行したときに、構成構文の決定時には存在しなかったインターフェイスが誤って公開される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="64e7a-120">If run with a future version of this component, using the wildcard may unintentionally expose interfaces that may not have been present when the configuration syntax was determined.</span></span>  
+     <span data-ttu-id="64e7a-119">コンポーネントとインターフェイスにはアスタリスク (\*) をワイルドカード文字として使用できますが、選択した機能だけを Web サービスとして公開する場合は使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="64e7a-119">While the wildcard asterisk (\*) character can be used for the component and the interface, avoid using it because you might want to expose only selected functionality as a Web service.</span></span> <span data-ttu-id="64e7a-120">ワイルドカードを使用すると、このコンポーネントの将来のバージョンを使用して実行したときに、構成構文の決定時には存在しなかったインターフェイスが誤って公開される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="64e7a-120">If run with a future version of this component, using the wildcard may unintentionally expose interfaces that may not have been present when the configuration syntax was determined.</span></span>  
   
      <span data-ttu-id="64e7a-121">/verbose オプションを指定すると、ツールは、エラーだけでなく警告も表示します。</span><span class="sxs-lookup"><span data-stu-id="64e7a-121">The /verbose option instructs the tool to display warnings in addition to any errors.</span></span>  
   

@@ -3,18 +3,26 @@ title: "CloneEnumWbemClassObject 関数 (アンマネージ API リファレン�
 description: "CloneEnumWbemClassObject 関数は、列挙子の論理コピーを作成します。"
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: CloneEnumWbemClassObject
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: CloneEnumWbemClassObject
-helpviewer_keywords: CloneEnumWbemClassObject function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- CloneEnumWbemClassObject
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- CloneEnumWbemClassObject
+helpviewer_keywords:
+- CloneEnumWbemClassObject function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 22bcf2731ff682bf538858fc66a7a94be7f5d7df
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

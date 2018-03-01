@@ -5,16 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: user-defined bindings [WCF]
+helpviewer_keywords:
+- user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fe9be6ed74569875fd26f9a4913756e0366d757a
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -49,10 +52,10 @@ ms.lasthandoff: 12/22/2017
 |<span data-ttu-id="b362f-135">信頼性</span><span class="sxs-lookup"><span data-stu-id="b362f-135">Reliability</span></span>|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType>|<span data-ttu-id="b362f-136">Ｘ</span><span class="sxs-lookup"><span data-stu-id="b362f-136">No</span></span>|  
 |<span data-ttu-id="b362f-137">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="b362f-137">Security</span></span>|<xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType>|<span data-ttu-id="b362f-138">Ｘ</span><span class="sxs-lookup"><span data-stu-id="b362f-138">No</span></span>|  
 |<span data-ttu-id="b362f-139">複合二重</span><span class="sxs-lookup"><span data-stu-id="b362f-139">Composite Duplex</span></span>|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement?displayProperty=nameWithType>|<span data-ttu-id="b362f-140">Ｘ</span><span class="sxs-lookup"><span data-stu-id="b362f-140">No</span></span>|  
-|<span data-ttu-id="b362f-141">エンコーディング</span><span class="sxs-lookup"><span data-stu-id="b362f-141">Encoding</span></span>|<span data-ttu-id="b362f-142">テキスト、バイナリ、MTOM、カスタム</span><span class="sxs-lookup"><span data-stu-id="b362f-142">Text, Binary, MTOM, Custom</span></span>|<span data-ttu-id="b362f-143">○*</span><span class="sxs-lookup"><span data-stu-id="b362f-143">Yes*</span></span>|  
+|<span data-ttu-id="b362f-141">エンコーディング</span><span class="sxs-lookup"><span data-stu-id="b362f-141">Encoding</span></span>|<span data-ttu-id="b362f-142">テキスト、バイナリ、MTOM、カスタム</span><span class="sxs-lookup"><span data-stu-id="b362f-142">Text, Binary, MTOM, Custom</span></span>|<span data-ttu-id="b362f-143">○\*</span><span class="sxs-lookup"><span data-stu-id="b362f-143">Yes\*</span></span>|  
 |<span data-ttu-id="b362f-144">Transport</span><span class="sxs-lookup"><span data-stu-id="b362f-144">Transport</span></span>|<span data-ttu-id="b362f-145">TCP、名前付きパイプ、HTTP、HTTPS、MSMQ、およびカスタム</span><span class="sxs-lookup"><span data-stu-id="b362f-145">TCP, Named Pipes, HTTP, HTTPS, MSMQ, Custom</span></span>|<span data-ttu-id="b362f-146">はい</span><span class="sxs-lookup"><span data-stu-id="b362f-146">Yes</span></span>|  
   
- <span data-ttu-id="b362f-147">*エンコーディングは各バインディングに必要であるため、エンコーディングが指定されていない場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は既定のエンコーディングを自動的に追加します。</span><span class="sxs-lookup"><span data-stu-id="b362f-147">*Because an encoding is required for each binding, if an encoding is not specified, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] adds a default encoding for you.</span></span> <span data-ttu-id="b362f-148">既定値は、HTTP および HTTPS トランスポートの場合はテキスト/XML、それ以外の場合はバイナリです。</span><span class="sxs-lookup"><span data-stu-id="b362f-148">The default is Text/XML for the HTTP and HTTPS transports, and Binary otherwise.</span></span>  
+ <span data-ttu-id="b362f-147">\*エンコーディングは各バインディングに必要であるため、エンコーディングが指定されていない場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は既定のエンコーディングを自動的に追加します。</span><span class="sxs-lookup"><span data-stu-id="b362f-147">\*Because an encoding is required for each binding, if an encoding is not specified, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] adds a default encoding for you.</span></span> <span data-ttu-id="b362f-148">既定値は、HTTP および HTTPS トランスポートの場合はテキスト/XML、それ以外の場合はバイナリです。</span><span class="sxs-lookup"><span data-stu-id="b362f-148">The default is Text/XML for the HTTP and HTTPS transports, and Binary otherwise.</span></span>  
   
 ## <a name="creating-a-new-binding-element"></a><span data-ttu-id="b362f-149">新しいバインド要素の作成</span><span class="sxs-lookup"><span data-stu-id="b362f-149">Creating a new Binding Element</span></span>  
  <span data-ttu-id="b362f-150"><xref:System.ServiceModel.Channels.BindingElement> が提供する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] から派生した型のほかに、独自のバインド要素を作成できます。</span><span class="sxs-lookup"><span data-stu-id="b362f-150">In addition to the types derived from <xref:System.ServiceModel.Channels.BindingElement> that are provided by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], you can create your own binding elements.</span></span> <span data-ttu-id="b362f-151">これにより、他のシステムが提供する型を使ってスタックに組み込むことのできる独自の <xref:System.ServiceModel.Channels.BindingElement> を作成して、バインディングのスタックを作成する方法や、バインディングのスタックに追加するコンポーネントをカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="b362f-151">This lets you customize the way the stack of bindings is created and the components that go in it by creating your own <xref:System.ServiceModel.Channels.BindingElement> that can be composed with the other system-provided types in the stack.</span></span>  
