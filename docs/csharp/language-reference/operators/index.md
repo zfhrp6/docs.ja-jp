@@ -2,9 +2,11 @@
 title: "C# 演算子"
 ms.date: 03/09/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: cs.operators
+f1_keywords:
+- cs.operators
 helpviewer_keywords:
 - boolean operators [C#]
 - expressions [C#], operators
@@ -20,7 +22,7 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-caps.latest.revision: "40"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 0ac5c6bfb129f0367c2d62ebf139e44b8eb60379
@@ -90,12 +92,12 @@ ms.lasthandoff: 11/21/2017
   
  <span data-ttu-id="e3ce6-144">[&x](../../../csharp/language-reference/operators/and-operator.md) – アドレス。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-144">[&x](../../../csharp/language-reference/operators/and-operator.md) – address of.</span></span>  
   
- <span data-ttu-id="e3ce6-145">[*x](../../../csharp/language-reference/operators/multiplication-operator.md) – 逆参照。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-145">[*x](../../../csharp/language-reference/operators/multiplication-operator.md) – dereferencing.</span></span>  
+ <span data-ttu-id="e3ce6-145">[\*x](../../../csharp/language-reference/operators/multiplication-operator.md) – 逆参照。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-145">[\*x](../../../csharp/language-reference/operators/multiplication-operator.md) – dereferencing.</span></span>  
   
 ## <a name="multiplicative-operators"></a><span data-ttu-id="e3ce6-146">乗算演算子</span><span class="sxs-lookup"><span data-stu-id="e3ce6-146">Multiplicative Operators</span></span>  
  <span data-ttu-id="e3ce6-147">これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-147">These operators have higher precedence than the next section and lower precedence than the previous section.</span></span>  <span data-ttu-id="e3ce6-148">各演算子をクリックすると、演算子の詳細と例が記載されたページに移動します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-148">NOTE, you can click on the operators to go the detailed pages with examples.</span></span>  
   
- <span data-ttu-id="e3ce6-149">[x * y](../../../csharp/language-reference/operators/multiplication-operator.md) – 乗算。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-149">[x * y](../../../csharp/language-reference/operators/multiplication-operator.md) – multiplication.</span></span>  
+ <span data-ttu-id="e3ce6-149">[x \* y](../../../csharp/language-reference/operators/multiplication-operator.md) – 乗算。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-149">[x \* y](../../../csharp/language-reference/operators/multiplication-operator.md) – multiplication.</span></span>  
   
  <span data-ttu-id="e3ce6-150">[x / y](../../../csharp/language-reference/operators/division-operator.md) – 除算。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-150">[x / y](../../../csharp/language-reference/operators/division-operator.md) – division.</span></span>  <span data-ttu-id="e3ce6-151">オペランドが整数の場合、結果は 0 に近い整数になるように切り捨てられます (例: `-7 / 2 is -3`)。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-151">If the operands are integers, the result is an integer truncated toward zero (for example, `-7 / 2 is -3`).</span></span>  
   
@@ -181,7 +183,7 @@ ms.lasthandoff: 11/21/2017
   
  <span data-ttu-id="e3ce6-227">[x -= y](../../../csharp/language-reference/operators/subtraction-assignment-operator.md) – デクリメント。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-227">[x -= y](../../../csharp/language-reference/operators/subtraction-assignment-operator.md) – decrement.</span></span>  <span data-ttu-id="e3ce6-228">`y` の値を `x` の値から減算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-228">Subtract the value of `y` from the value of `x`, store the result in `x`, and return the new value.</span></span>  <span data-ttu-id="e3ce6-229">`x` が `event` を指定した場合、`y` は、C# によってイベント ハンドラーとして削除される適切な関数である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-229">If `x` designates an `event`, then `y` must be an appropriate function that C# removes as an event handler</span></span>  
   
- <span data-ttu-id="e3ce6-230">[x *= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – 乗算代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-230">[x *= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – multiplication assignment.</span></span>  <span data-ttu-id="e3ce6-231">`y` の値を `x` の値に乗算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-231">Multiply the value of `y` to the value of `x`, store the result in `x`, and return the new value.</span></span>  
+ <span data-ttu-id="e3ce6-230">[x \*= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – 乗算代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-230">[x \*= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – multiplication assignment.</span></span>  <span data-ttu-id="e3ce6-231">`y` の値を `x` の値に乗算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-231">Multiply the value of `y` to the value of `x`, store the result in `x`, and return the new value.</span></span>  
   
  <span data-ttu-id="e3ce6-232">[x /= y](../../../csharp/language-reference/operators/division-assignment-operator.md) – 除算代入。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-232">[x /= y](../../../csharp/language-reference/operators/division-assignment-operator.md) – division assignment.</span></span>  <span data-ttu-id="e3ce6-233">`x` の値を `y` の値で除算した結果を `x` に格納し、新しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-233">Divide the value of `x` by the value of `y`, store the result in `x`, and return the new value.</span></span>  
   
@@ -200,7 +202,7 @@ ms.lasthandoff: 11/21/2017
  <span data-ttu-id="e3ce6-246">[=>](../../../csharp/language-reference/operators/lambda-operator.md) – ラムダ宣言。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-246">[=>](../../../csharp/language-reference/operators/lambda-operator.md) – lambda declaration.</span></span>  
   
 ## <a name="arithmetic-overflow"></a><span data-ttu-id="e3ce6-247">算術オーバーフロー</span><span class="sxs-lookup"><span data-stu-id="e3ce6-247">Arithmetic Overflow</span></span>  
- <span data-ttu-id="e3ce6-248">算術演算子 ([+](../../../csharp/language-reference/operators/addition-operator.md)、[-](../../../csharp/language-reference/operators/subtraction-operator.md)、[*](../../../csharp/language-reference/operators/multiplication-operator.md)、[/](../../../csharp/language-reference/operators/division-operator.md)) を実行すると、結果が数値型の有効な値の範囲を超えることがあります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-248">The arithmetic operators ([+](../../../csharp/language-reference/operators/addition-operator.md), [-](../../../csharp/language-reference/operators/subtraction-operator.md), [*](../../../csharp/language-reference/operators/multiplication-operator.md), [/](../../../csharp/language-reference/operators/division-operator.md)) can produce results that are outside the range of possible values for the numeric type involved.</span></span> <span data-ttu-id="e3ce6-249">詳細については、各演算子に関するセクションを参照してください。概要は、以下のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-249">You should refer to the section on a particular operator for details, but in general:</span></span>  
+ <span data-ttu-id="e3ce6-248">算術演算子 ([+](../../../csharp/language-reference/operators/addition-operator.md)、[-](../../../csharp/language-reference/operators/subtraction-operator.md)、[\*](../../../csharp/language-reference/operators/multiplication-operator.md)、[/](../../../csharp/language-reference/operators/division-operator.md)) を実行すると、結果が数値型の有効な値の範囲を超えることがあります。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-248">The arithmetic operators ([+](../../../csharp/language-reference/operators/addition-operator.md), [-](../../../csharp/language-reference/operators/subtraction-operator.md), [\*](../../../csharp/language-reference/operators/multiplication-operator.md), [/](../../../csharp/language-reference/operators/division-operator.md)) can produce results that are outside the range of possible values for the numeric type involved.</span></span> <span data-ttu-id="e3ce6-249">詳細については、各演算子に関するセクションを参照してください。概要は、以下のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-249">You should refer to the section on a particular operator for details, but in general:</span></span>  
   
 - <span data-ttu-id="e3ce6-250">整数の算術オーバーフローでは、<xref:System.OverflowException> がスローされるか、または結果の最上位ビットが破棄されます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-250">Integer arithmetic overflow either throws an <xref:System.OverflowException> or discards the most significant bits of the result.</span></span> <span data-ttu-id="e3ce6-251">0 による整数除算では、常に <xref:System.DivideByZeroException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="e3ce6-251">Integer division by zero always throws a <xref:System.DivideByZeroException>.</span></span>  
 
