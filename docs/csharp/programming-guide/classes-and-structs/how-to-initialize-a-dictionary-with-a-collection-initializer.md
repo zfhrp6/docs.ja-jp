@@ -2,11 +2,13 @@
 title: "方法 : コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: collection initializers [C#], with Dictionary
+helpviewer_keywords:
+- collection initializers [C#], with Dictionary
 ms.assetid: 25283922-f8ee-40dc-a639-fac30804ec71
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8b8de5fb85a839d52ad00ad552ef823d9817e9b7
@@ -16,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a><span data-ttu-id="994d4-102">方法 : コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="994d4-102">How to: Initialize a Dictionary with a Collection Initializer (C# Programming Guide)</span></span>
-<span data-ttu-id="994d4-103"><xref:System.Collections.Generic.Dictionary`2> contains a collection of key/value pairs. Its <xref:System.Collections.Generic.Dictionary`2.Add*> メソッドは、キー用と値用の 2 つのパラメーターを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="994d4-103">A <xref:System.Collections.Generic.Dictionary`2> contains a collection of key/value pairs. Its <xref:System.Collections.Generic.Dictionary`2.Add*> method takes two parameters, one for the key and one for the value.</span></span> <span data-ttu-id="994d4-104">複数のパラメーターを受け取る <xref:System.Collections.Generic.Dictionary`2>, or any collection whose `Add\` メソッドを初期化するには、次の例に示すように、各パラメーターのセットを中かっこで囲みます。</span><span class="sxs-lookup"><span data-stu-id="994d4-104">To initialize a <xref:System.Collections.Generic.Dictionary`2>, or any collection whose `Add\` method takes multiple parameters, enclose each set of parameters in braces as shown in the following example.</span></span>  
+<span data-ttu-id="994d4-103"><xref:System.Collections.Generic.Dictionary`2> contains a collection of key/value pairs. Its <xref:System.Collections.Generic.Dictionary`2.Add\*> メソッドは、キー用と値用の 2 つのパラメーターを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="994d4-103">A <xref:System.Collections.Generic.Dictionary`2> contains a collection of key/value pairs. Its <xref:System.Collections.Generic.Dictionary`2.Add\*> method takes two parameters, one for the key and one for the value.</span></span> <span data-ttu-id="994d4-104">複数のパラメーターを受け取る <xref:System.Collections.Generic.Dictionary`2>, or any collection whose `Add\` メソッドを初期化するには、次の例に示すように、各パラメーターのセットを中かっこで囲みます。</span><span class="sxs-lookup"><span data-stu-id="994d4-104">To initialize a <xref:System.Collections.Generic.Dictionary`2>, or any collection whose `Add\` method takes multiple parameters, enclose each set of parameters in braces as shown in the following example.</span></span>  
   
 ## <a name="example"></a><span data-ttu-id="994d4-105">例</span><span class="sxs-lookup"><span data-stu-id="994d4-105">Example</span></span>  
  <span data-ttu-id="994d4-106">次のコード例では、<xref:System.Collections.Generic.Dictionary`2> is initialized with instances of type `StudentName\`。</span><span class="sxs-lookup"><span data-stu-id="994d4-106">In the following code example, a <xref:System.Collections.Generic.Dictionary`2> is initialized with instances of type `StudentName\`.</span></span>  

@@ -2,14 +2,16 @@
 title: "*= 演算子 (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '*=_CSharpKeyword'
+f1_keywords:
+- '*=_CSharpKeyword'
 helpviewer_keywords:
 - '*= operator [C#]'
 - binary multiplication assignment operator (*=) [C#]
 ms.assetid: 2e472155-59db-4dbf-bb94-bcccfa1a794d
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: dc2201f78e1e05bd0ccdea04522896c00294bdd6
@@ -18,7 +20,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="5897a-102">*= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="5897a-102">*= Operator (C# Reference)</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="5897a-102">\*= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="5897a-102">\*= Operator (C# Reference)</span></span>
 <span data-ttu-id="5897a-103">二項乗算代入演算子です。</span><span class="sxs-lookup"><span data-stu-id="5897a-103">The binary multiplication assignment operator.</span></span>  
   
 ## <a name="remarks"></a><span data-ttu-id="5897a-104">コメント</span><span class="sxs-lookup"><span data-stu-id="5897a-104">Remarks</span></span>  
@@ -34,7 +36,7 @@ x *= y
 x = x * y  
 ```  
   
- <span data-ttu-id="5897a-107">ただし、`x` が評価されるのは 1 回だけです。</span><span class="sxs-lookup"><span data-stu-id="5897a-107">except that `x` is only evaluated once.</span></span> <span data-ttu-id="5897a-108">[* 演算子](../../../csharp/language-reference/operators/multiplication-operator.md)は、数値型の乗算のために事前定義されています。</span><span class="sxs-lookup"><span data-stu-id="5897a-108">The [* operator](../../../csharp/language-reference/operators/multiplication-operator.md) is predefined for numeric types to perform multiplication.</span></span>  
+ <span data-ttu-id="5897a-107">ただし、`x` が評価されるのは 1 回だけです。</span><span class="sxs-lookup"><span data-stu-id="5897a-107">except that `x` is only evaluated once.</span></span> <span data-ttu-id="5897a-108">[\* 演算子](../../../csharp/language-reference/operators/multiplication-operator.md)は、数値型の乗算のために事前定義されています。</span><span class="sxs-lookup"><span data-stu-id="5897a-108">The [\* operator](../../../csharp/language-reference/operators/multiplication-operator.md) is predefined for numeric types to perform multiplication.</span></span>  
   
  <span data-ttu-id="5897a-109">`*=` 演算子は直接オーバーロードできませんが、ユーザー定義型は [* 演算子](../../../csharp/language-reference/operators/multiplication-operator.md)をオーバーロードできます (「[operator](../../../csharp/language-reference/keywords/operator.md)」参照)。</span><span class="sxs-lookup"><span data-stu-id="5897a-109">The `*=` operator cannot be overloaded directly, but user-defined types can overload the [* operator](../../../csharp/language-reference/operators/multiplication-operator.md) (see [operator](../../../csharp/language-reference/keywords/operator.md)).</span></span>  
   

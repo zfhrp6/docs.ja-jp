@@ -2,14 +2,16 @@
 title: "* 演算子 (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: '*_CSharpKeyword'
+f1_keywords:
+- '*_CSharpKeyword'
 helpviewer_keywords:
 - multiplication operator (*) [C#]
 - '* operator [C#]'
 ms.assetid: abd9a5f0-9b24-431e-971a-09ee1c45c50e
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 64c32def0935f4347f9aaccc2865b9cd33dd8a70
@@ -18,7 +20,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="3b6bf-102">* 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="3b6bf-102">* Operator (C# Reference)</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="3b6bf-102">\* 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="3b6bf-102">\* Operator (C# Reference)</span></span>
 <span data-ttu-id="3b6bf-103">そのオペランドの積を計算する乗算演算子 (`*`)。</span><span class="sxs-lookup"><span data-stu-id="3b6bf-103">The multiplication operator (`*`), which computes the product of its operands.</span></span>  <span data-ttu-id="3b6bf-104">また、ポインターへの読み書きを可能にする逆参照演算子。</span><span class="sxs-lookup"><span data-stu-id="3b6bf-104">Also, the dereference operator, which allows reading and writing to a pointer.</span></span>  
   
 ## <a name="remarks"></a><span data-ttu-id="3b6bf-105">コメント</span><span class="sxs-lookup"><span data-stu-id="3b6bf-105">Remarks</span></span>  
