@@ -2,18 +2,19 @@
 title: Visual Basic
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38ccf61b488a40d100895d0dd2bb4bdecca7eba5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 96c7c93056b11c08ccdfa48a0d78f2996c2d86d4
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="visual-basic-guide"></a>Visual Basic のガイド
 
@@ -21,7 +22,7 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
   
  この世代の Visual Basic でも、これまでに続いてすばやく簡単な方法で .NET Framework ベースのアプリケーションを作成できます。  
   
- Visual Basic をまだお持ちでない場合は、Visual Basic が含まれている Visual Studio のバージョンを [Visual Studio](https://www.visualstudio.com/products/downloads) サイトから無料で入手することができます。  
+ Visual Basic をまだお持ちでない場合は、Visual Basic が含まれている Visual Studio のバージョンを [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) サイトから無料で入手することができます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [はじめに](../visual-basic/getting-started/index.md)  
@@ -51,7 +52,7 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
  一般的なシナリオでの詳細な操作手順へのリンクを示します。  
   
 ## <a name="related-sections"></a>関連項目  
- [Visual Studio を使用した開発の開始](/visualstudio/ide/get-started-developing-with-visual-studio)  
+ [Get Started Developing with Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)  
  Visual Studio の基本についての学習に役立つトピックへのリンクを示します。  
   
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  

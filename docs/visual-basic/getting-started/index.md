@@ -2,20 +2,21 @@
 title: "Visual Basic 入門"
 ms.date: 08/10/2017
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1593475bf5b4a34f854bc3e89be84d7720cd497b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 291065ae4c42cea741c4631923506076fcbc2f2e
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入門
 このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。  
@@ -44,7 +45,7 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
 [Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](../../core/tutorials/vb-library-with-visual-studio.md) 
 
 ## <a name="see-also"></a>関連項目
- [Visual Basic の取得](https://www.visualstudio.com/downloads/)  
+ [Visual Basic の取得](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)  
  Visual Basic のサポートを含む Visual Studio のバージョン (無料版など) のダウンロード リンクを提供します。  
 
  [超初心者向けの Visual Basic の基本](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)  
