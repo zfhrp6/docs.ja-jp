@@ -3,18 +3,26 @@ title: "ConnectServerWmi 関数 (アンマネージ API リファレンス)"
 description: "ConnectServerWmi 関数では、DCOM を使用して、WMI 名前空間への接続を作成します。"
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: ConnectServerWmi
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: ConnectServerWmi
-helpviewer_keywords: ConnectServerWmi function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- ConnectServerWmi
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- ConnectServerWmi
+helpviewer_keywords:
+- ConnectServerWmi function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: dc821bddf1d33ea1144fef0821b81cf027d8f92f
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT

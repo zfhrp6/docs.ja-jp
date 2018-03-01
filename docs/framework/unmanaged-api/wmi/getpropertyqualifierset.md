@@ -3,18 +3,26 @@ title: "GetPropertyQualifierSet 関数 (アンマネージ API リファレン�
 description: "GetPropertyQualifierSet 関数では、プロパティの設定、修飾子を取得します。"
 ms.date: 11/06/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: reference
-api_name: GetPropertyQualifierSet
-api_location: WMINet_Utils.dll
-api_type: DLLExport
-f1_keywords: GetPropertyQualifierSet
-helpviewer_keywords: GetPropertyQualifierSet function [.NET WMI and performance counters]
-topic_type: Reference
+api_name:
+- GetPropertyQualifierSet
+api_location:
+- WMINet_Utils.dll
+api_type:
+- DLLExport
+f1_keywords:
+- GetPropertyQualifierSet
+helpviewer_keywords:
+- GetPropertyQualifierSet function [.NET WMI and performance counters]
+topic_type:
+- Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7ca2981c8833abaafd5d206b66d6e91f34e2c91d
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
