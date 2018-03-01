@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: bf70bd5e79e962d8edaea2dc037f191707f4e047
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a5339e1d2d592f3ae2a2b5c0e4e96e2bff2df64c
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>完了時での複数の非同期タスクとプロセスの実行 (C#)
 <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> を使用すると、複数のタスクを、開始された順番に処理するのでなく、同時に開始して完了するごとに 1 つずつ処理できます。  
@@ -26,7 +27,7 @@ ms.lasthandoff: 11/21/2017
 >  この例を実行するには、Visual Studio 2012 以降および .NET Framework 4.5 以降が、コンピューターにインストールされている必要があります。  
   
 ## <a name="downloading-the-example"></a>例をダウンロードする  
- 完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。ダウンロード後、次の手順に従います。  
+ 完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」からダウンロードできます。ダウンロード後、次の手順に従います。  
   
 1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
   
@@ -88,14 +89,14 @@ IEnumerable<Task<int>> downloadTasksQuery =
  ダウンロードの長さが常に同じ順序では表示されないことを確認するために、プロジェクトを複数回実行します。  
   
 > [!CAUTION]
->  ループで `WhenAny` を使って、例に示すように、いくつかのタスクを格納する問題を解決できます。 ただし、多数のタスクが処理する場合、他のアプローチがより効率的です。 使用例を含む詳細については、「[Processing Tasks as they complete (完了したタスクを処理する)](http://go.microsoft.com/fwlink/?LinkId=260810)」を参照してください。  
+>  ループで `WhenAny` を使って、例に示すように、いくつかのタスクを格納する問題を解決できます。 ただし、多数のタスクが処理する場合、他のアプローチがより効率的です。 詳細と例については、「[Processing Tasks as they complete](https://blogs.msdn.microsoft.com/pfxteam/2012/08/02/processing-tasks-as-they-complete/)」 (完了したタスクを処理する) を参照してください。  
   
 ## <a name="complete-example"></a>コード例全体  
  次のコードは、この例での MainWindow.xaml.cs ファイルのテキスト全体です。 アスタリスクはこの例のために追加された要素を示しています。  
   
  <xref:System.Net.Http> の参照を追加する必要があることに注意してください。  
   
- このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。  
+ このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」からダウンロードできます。  
   
 ```csharp  
 using System;  
@@ -233,8 +234,8 @@ namespace ProcessTasksAsTheyFinish
 // Downloads complete.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.Tasks.Task.WhenAny%2A>  
  [非同期アプリケーションの微調整 (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
  [Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
- [非同期のサンプル: アプリケーションの微調整](http://go.microsoft.com/fwlink/?LinkId=255046)
+ [非同期のサンプル: アプリケーションの微調整](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

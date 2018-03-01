@@ -2,21 +2,23 @@
 title: "decimal (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - decimal_CSharpKeyword
 - decimal
-helpviewer_keywords: decimal keyword [C#]
+helpviewer_keywords:
+- decimal keyword [C#]
 ms.assetid: b6522132-b5ee-4be3-ad13-3adfdb7de7a1
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0e03ab24f5d22133e061be3872de00a143bbeca8
-ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.openlocfilehash: 0da001851c681fe4d698b920d9668b2f6b731e3a
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="decimal-c-reference"></a>decimal (C# リファレンス)
 `decimal` キーワードは、128 ビットのデータ型を示します。 `decimal` 型は、他の浮動小数点型よりも有効桁数が多く、範囲が狭いので、財務や金融の計算に適しています。 `decimal` 型の概算の範囲と有効桁数は、次のとおりです。  
@@ -25,7 +27,7 @@ ms.lasthandoff: 11/25/2017
 |----------|-----------------------|---------------|-------------------------|  
 |`decimal`|(-7.9 x 10<sup>28</sup> ～ 7.9 x 10<sup>28</sup>) / (10<sup>0</sup> ～ 10<sup>28</sup>)|有効桁数 28 ～ 29|<xref:System.Decimal?displayProperty=nameWithType>|  
 
-既定値、`decimal`が 0 の m です。
+`decimal` の既定値は 0m です。
   
 ## <a name="literals"></a>リテラル  
  実数値リテラルを `decimal` として扱うには、サフィックス m または M を使用します。次に例を示します。  
@@ -64,6 +66,7 @@ myMoney = (decimal)x;
  次の例では、[double](../../../csharp/language-reference/keywords/double.md) の変数と `decimal` の変数を加算しようとして、コンパイラ エラーが発生します。  
   
 ```csharp  
+decimal dec = 0m;
 double dub = 9;  
 // The following line causes an error that reads "Operator '+' cannot be applied to   
 // operands of type 'double' and 'decimal'"  
@@ -90,7 +93,7 @@ Console.WriteLine((double)dec + dub);
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Decimal>  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  

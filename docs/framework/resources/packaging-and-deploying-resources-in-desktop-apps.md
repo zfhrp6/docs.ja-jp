@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-bcl
+ms.technology:
+- dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -33,16 +34,17 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f170c3e7174b231153a9e201f617faa786291056
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3ab23b263d572a5573de5fc21f15b56e784a9a94
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>デスクトップ アプリケーションでのリソースのパッケージ化と配置
 アプリケーションは、<xref:System.Resources.ResourceManager> クラスによって表される .NET Framework リソース マネージャーに依存して、ローカライズされたリソースを取得します。 リソース マネージャーでは、リソースのパッケージ化と配置にハブ アンド スポーク モデルを使うことが想定されています。 ハブは、ローカライズできない実行可能コードと、ニュートラル カルチャまたは既定のカルチャと呼ばれる単一カルチャ用のリソースを含む、メイン アセンブリです。 既定のカルチャはアプリケーション用のフォールバック カルチャです。つまり、ローカライズされたリソースが見つからない場合に使われるリソースのカルチャです。 各スポークは、単一のカルチャ用のリソースを含むがコードは含まないサテライト アセンブリに接続します。  

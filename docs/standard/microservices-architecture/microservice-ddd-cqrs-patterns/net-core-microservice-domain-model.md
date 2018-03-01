@@ -1,85 +1,97 @@
 ---
-title: ".NET Core のマイクロ サービス ドメイン モデルを実装します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |.NET Core のマイクロ サービス ドメイン モデルを実装します。"
+title: ".NET Core でマイクロサービス ドメイン モデルを実装する"
+description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | .NET Core でマイクロサービス ドメイン モデルを実装する"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
+ms.date: 11/09/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 26c480a82ad7bb806734decebdfbe5b4a07998e6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0b954efffe2ee7e3e2bdaa49bd1057d72d69088c
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/19/2018
 ---
-# <a name="implementing-a-microservice-domain-model-with-net-core"></a>.NET Core のマイクロ サービス ドメイン モデルを実装します。 
+# <a name="implementing-a-microservice-domain-model-with-net-core"></a>.NET Core でマイクロサービス ドメイン モデルを実装する 
 
-前のセクションで、基本的なデザインの原則とドメイン モデルをデザインするためのパターンがについて説明します。 では、.NET Core を使用してドメイン モデルを実装する方法を検討する時間 (plain C\#コード) と EF コアです。 ドメイン モデルは単に、コードから構成することに注意してください。 EF の EF 中核となるモデルの要件がない実際の依存関係だけがあります。 ドメイン モデルのハード依存関係または EF コアまたはその他の任意の ORM への参照をことはできません。
+前のセクションでは、ドメイン モデルの基本的な設計原則と設計パターンを説明しました。 ここでは、.NET Core (プレーンな C\# コード) と EF Core を使用してドメイン モデルを実装するために可能な手段を調べます。 ドメイン モデルを構成するのは自分が書くコードだけであることにご注目ください。 EF Core モデルの要件があるだけで、EF に対する実際の依存関係は存在しません。 ドメイン モデルには EF Core または他の ORM への緊密な依存関係や参照を含めないでください。
 
-## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>カスタム .NET 標準ライブラリ内のドメイン モデルの構造
+## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>カスタム .NET Standard ライブラリにおけるドメイン モデル構成
 
-EShopOnContainers 参照アプリケーションの使用フォルダー組織では、アプリケーションの DDD モデルについて説明します。 別のフォルダーの組織は、アプリケーションに対して行われた設計の選択肢をより明確に通信することがあります。 図 9-10 がわかるように順序ドメイン モデルでは 2 つの集計、順序集計および buyer 集計。 各集計は、集計も (集計ルートまたはルート エンティティ) は、1 つのドメイン エンティティで構成する必要でしたが、ドメイン エンティティおよび値オブジェクトのグループです。
+eShopOnContainers 参照アプリケーションに使用されているフォルダー編成は、このアプリケーションの DDD モデルを示しています。 アプリケーションによっては、別のフォルダー編成の方が、選択する設計をより明確に表現できる場合もあります。 図 9-10 に示されているように、注文ドメイン モデルには、注文集計と購入者集計という 2 つの集計があります。 それぞれの集計はドメイン エンティティと値オブジェクトから成るグループですが、単一のドメイン エンティティ (集計ルートまたはルート エンティティ) で集計を構成することもできます。
 
 ![](./media/image11.png)
 
-**図 9-10**です。 EShopOnContainers で順序付けマイクロ サービスのドメイン モデルの構造
+**図 9-10**。 eShopOnContainers の注文マイクロサービスのドメイン モデル構造
 
-さらに、ドメイン モデル レイヤーには、ドメイン モデルのインフラストラクチャの要件は、リポジトリ コントラクト (インターフェイス) が含まれています。 つまり、これらのインターフェイスがどのようなリポジトリ インフラストラクチャ レイヤーを実装する必要がありますを express とどのようにします。 すべてのユーザーをドメイン モデル層がない「感染」API または Entity Framework などのインフラストラクチャ テクノロジからのクラスによってように、インフラストラクチャ レイヤー ライブラリで、ドメイン モデル レイヤーの外側に配置リポジトリの実装が重要です。
+また、このドメイン モデル レイヤーには、ドメイン モデルのインフラストラクチャ要件ともなっているリポジトリ コントラクト (インターフェイス) も含まれています。 つまり、これらのインターフェイスによって、インフラストラクチャ レイヤーで実装しなければならないリポジトリとその方法が示されます。 リポジトリの実装はドメイン モデル レイヤーの外側、インフラストラクチャ レイヤー ライブラリ内に配置することが重要です。そのようにすることによって、ドメイン モデル レイヤーは、Entity Framework などのインフラストラクチャ テクノロジの API やクラスに "汚染" されずに済みます。
 
-表示することも、 [SeedWork](https://martinfowler.com/bliki/Seedwork.html)ドメイン エンティティと値のベースとして使用できるカスタムの基本クラスが含まれているフォルダーのオブジェクト、ため、各ドメインのオブジェクト クラスで、冗長なコードはありません。
+また、[SeedWork](https://martinfowler.com/bliki/Seedwork.html) フォルダーも参照できます。このフォルダーには、ドメイン エンティティと値オブジェクトの基礎として使用できるカスタム基底クラスが含まれるため、各ドメインのオブジェクト クラスで冗長コードをなくすことができます。
 
-## <a name="structuring-aggregates-in-a-custom-net-standard-library"></a>カスタム .NET 標準ライブラリでの集計の構築
+## <a name="structuring-aggregates-in-a-custom-net-standard-library"></a>カスタム .NET Standard ライブラリで集計を構築する
 
-集計は、トランザクションの一貫性を一致するように一緒にグループ化されたドメイン オブジェクトのクラスターを指します。 これらのオブジェクトには、さらに、追加の値のオブジェクト (一方が集計ルートまたはルート エンティティ) のエンティティのインスタンス可能性があります。
+集計とは、トランザクションの整合性を保つためにグループ化される、ドメイン オブジェクトのクラスターのことです。 こうしたオブジェクトは、(集計ルートやルート エンティティなどの) エンティティ インスタンスに、追加の値オブジェクトを付加したものとなる場合があります。
 
-トランザクションの一貫性は、集計は確実に一貫性があり、ビジネス アクションの末尾に最新の状態を意味します。 たとえば、図 9-11 ようにマイクロ サービス ドメイン モデルを順序付け eShopOnContainers から注文集計が構成されます。
+トランザクションの整合性とは、ビジネス アクションの最後の時点で集計が一貫した状態になり、なおかつ最新状態になることを保証することです。 たとえば、eShopOnContainers 注文マイクロサービス ドメイン モデルの注文集計は、図 9-11 のように構成されています。
 
 ![](./media/image12.png)
 
-**図 9-11**です。 Visual Studio ソリューションで集計の順序
+**図 9-11**。 Visual Studio ソリューションにおける注文集計
 
-Aggregate フォルダー内のすべてのファイルを開く、表示できますエンティティまたは値のオブジェクトと同様に、インターフェイスまたはカスタムの基本クラスとしてマークされている方法で実装されている、 [Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork)フォルダーです。
+集計フォルダーのいずれかのファイルを開くと、[Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) フォルダーで実装されるエンティティまたは値オブジェクトの場合と同じように、それがカスタム基底クラスとインターフェイスのいずれかとしてマークされている様子を確認できます。
 
-## <a name="implementing-domain-entities-as-poco-classes"></a>POCO クラスとして実装のドメイン エンティティ
+## <a name="implementing-domain-entities-as-poco-classes"></a>POCO クラスとしてドメイン エンティティを実装する
 
-.NET のドメイン モデルを実装するには、ドメイン エンティティを実装する POCO クラスを作成します。 次の例では、エンティティおよび集計ルートとしても Order クラスが定義されています。 Order クラスは、エンティティの基本クラスから派生する、ので、エンティティに関連する一般的なコードを再利用することができます。 これらの基本クラスとインターフェイスがで定義されているユーザーがドメイン モデル プロジェクトので、コード、EF と同様に、ORM からインフラストラクチャ コードではなく念頭に置いてください。
+ドメイン エンティティを実装する POCO クラスを作成して、.NET でドメイン モデルを実装します。 次の例では、Order クラスがエンティティとして、さらには集計ルートとしても定義されています。 Order クラスは Entity 基底クラスから派生しているため、エンティティに関連する共通コードを再利用できます。 これらの基底クラスとインターフェイスはドメイン モデル プロジェクト内で自分で定義するため、EF などの ORM のインフラストラクチャ コードではなくユーザー コードです。
 
 ```csharp
-// COMPATIBLE WITH ENTITY FRAMEWORK CORE 1.0
+// COMPATIBLE WITH ENTITY FRAMEWORK CORE 2.0
 // Entity is a custom base class with the ID
 public class Order : Entity, IAggregateRoot
 {
-    public int BuyerId { get; private set; }
-    public DateTime OrderDate { get; private set; }
-    public int StatusId { get; private set; }
-    public ICollection<OrderItem> OrderItems { get; private set; }
-    public Address ShippingAddress { get; private set; }
-    public int PaymentId { get; private set; }
-    protected Order() { } //Design constraint needed only by EF Core
-    public Order(int buyerId, int paymentId)
+    private DateTime _orderDate;
+    public Address Address { get; private set; }
+    private int? _buyerId;
+
+    public OrderStatus OrderStatus { get; private set; }
+    private int _orderStatusId;
+
+    private string _description;
+    private int? _paymentMethodId;
+
+    private readonly List<OrderItem> _orderItems;
+    public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
+  
+    public Order(string userId, Address address, int cardTypeId, string cardNumber, string cardSecurityNumber,
+            string cardHolderName, DateTime cardExpiration, int? buyerId = null, int? paymentMethodId = null)
     {
-        BuyerId = buyerId;
-        PaymentId = paymentId;
-        StatusId = OrderStatus.InProcess.Id;
-        OrderDate = DateTime.UtcNow;
-        OrderItems = new List<OrderItem>();
+        _orderItems = new List<OrderItem>();
+        _buyerId = buyerId;
+        _paymentMethodId = paymentMethodId;
+        _orderStatusId = OrderStatus.Submitted.Id;
+        _orderDate = DateTime.UtcNow;
+        Address = address;
+
+        // ...Additional code ...
     }
 
-    public void AddOrderItem(productName,
-        pictureUrl,
-        unitPrice,
-        discount,
-        units)
+    public void AddOrderItem(int productId, string productName, 
+                            decimal unitPrice, decimal discount, 
+                            string pictureUrl, int units = 1)
     {
         //...
         // Domain rules/logic for adding the OrderItem to the order
         // ...
-        OrderItem item = new OrderItem(this.Id, ProductId, productName,
-            pictureUrl, unitPrice, discount, units);
+
+        var orderItem = new OrderItem(productId, productName, unitPrice, discount, pictureUrl, units);
+        
+        _orderItems.Add(orderItem);
   
-        OrderItems.Add(item);
     }
     // ...
     // Additional methods with domain rules/logic related to the Order aggregate
@@ -87,15 +99,21 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-これは、POCO クラスとして実装されているドメイン エンティティであることに注意してくださいに重要です。 Entity Framework のコアの直接的な依存関係またはその他のインフラストラクチャ フレームワークはありません。 この実装は必要があります、C だけ\#ドメイン モデルを実装するコードです。
+重要なこととして、これが POCO クラスとして実装されるドメイン エンティティである点にご注意ください。 Entity Framework Core または他のインフラストラクチャ フレームワークへの直接の依存関係はありません。 この実装は、DDD の場合と同様に、ドメイン モデルを実装する C\# コードに過ぎません。
 
-さらに、クラスは、IAggregateRoot をという名前のインターフェイスで装飾されています。 そのインターフェイスとも呼ばれる、空のインターフェイスは、*マーカー インターフェイスに*、それがあることを示すこのエンティティ クラスも集計ルートにだけ使用します。
+また、このクラスは IAggregateRoot というインターフェイスで修飾されます。 このインターフェイスは、このエンティティ クラスが集計ルートでもあることを示すためだけに使用される空のインターフェイスであり、*マーカー インターフェイス*と呼ばれることもあります。
 
-マーカー インターフェイスには、アンチ パターンとしてと見なされることただし、そのインターフェイスが変化し続ける可能性がある場合は特に、クラスをマークする明確な方法ではもです。 属性は、マーカーの他の選択肢になる可能性がありますが、クラス上にある、集計 attribute マーカーを設定する代わりに、IAggregate インターフェイスの横にある基本クラス (エンティティ) を参照する方が手軽です。 いずれの場合、基本設定の metter であります。
+マーカー インターフェイスはアンチ パターンと見なされることもありますが、このインターフェイスが進化していく可能性がある場合には特に、クラスをマークするためのわかりやすい方法ともなります。 属性はマーカーのもう 1 つの選択肢ですが、クラスの上に集計属性マーカーを配置するよりも、IAggregate インターフェイスの隣に基底クラス (Entity) を配置する方がより迅速に確認できます。 いずれにせよ、これは好みの問題です。
 
-整合性に関連するほとんどのコードと、集計のエンティティのビジネス ルールを Order 集計ルート クラス (たとえば、AddOrderItem の集計に OrderItem オブジェクトを追加する場合) 内のメソッドとして実装する集計ルートを持つ. 作成または個別にも直接に OrderItems オブジェクトを更新する必要がありますされません。AggregateRoot クラスには、コントロールとその子エンティティに対して更新操作の一貫性を維持する必要があります。
+集計ルートを設けるということは、その集計のエンティティの整合性やビジネス ルールに関連するコードのほとんどを注文集計ルート クラスでメソッドとして実装する必要があることを意味します (たとえば、OrderItem オブジェクトを集計に追加する場合の AddOrderItem など)。 独立的にであれ、直接的にであれ、OrderItems オブジェクトを作成も更新もしないでください。AggregateRoot クラスが、その子エンティティに対するすべての更新操作を制御し、整合性を保持する必要があります。
 
-たとえば、する必要があります*いない*コマンド ハンドラー メソッドまたはアプリケーション レイヤーのクラスから次の操作します。
+## <a name="encapsulating-data-in-the-domain-entities"></a>ドメイン エンティティのデータをカプセル化する
+
+エンティティ モデルでよくある問題として、コレクションのナビゲーション プロパティが一般にアクセス可能なリスト型として公開されることがあります。 そうすると、コラボレーターの開発者が誰でもこれらのコレクション型のコンテンツを操作できるようになり、結果として、コレクションに関連する重要なビジネス ルールがバイパスされ、オブジェクトが無効な状態のままになる可能性があります。 これに対する解決策は、関連するコレクションへの読み取り専用アクセスを公開することと、クライアントがこれらのコレクションを操作する方法を定義したメソッドを明示的に提供することです。
+
+前のコードでは、多くの属性が読み取り専用かプライベートであり、クラス メソッドによってでなければ更新できないことにご注意ください。そのため、更新はどれもビジネス ドメインの不変条件と、クラス メソッドに指定されたロジックを考慮に入れたものとなります。
+
+たとえば、DDD パターンに従い、コマンド ハンドラー メソッドやアプリケーション レイヤー クラスから以下を実行すべきでは*ありません*。
 
 ```csharp
 // WRONG ACCORDING TO DDD PATTERNS – CODE AT THE APPLICATION LAYER OR
@@ -110,17 +128,17 @@ myOrder.OrderItems.Add(myNewOrderItem);
 //...
 ```
 
-この例では、Add メソッドは OrderItems コレクションに直接アクセスできる、データを追加する操作のみです。 そのため、ドメイン ロジック、ルール、または検証のほとんどに関連するアプリケーション層 (コマンド ハンドラーおよび Web API コント ローラー) は、子エンティティと操作に分散することです。
+この場合、Add メソッドは、単に OrderItems コレクションに直接アクセスしてデータを追加する操作に過ぎません。 そのため、子エンティティに対するその操作に関連するドメイン ロジック、ルール、検証の大部分は、アプリケーション レイヤー (コマンド ハンドラーと Web API コントローラー) が担当します。
 
-集計のルートを移動する場合、集計のルートは、不変条件や、その有効性の一貫性を保証できません。 最終的に整然としたプログラムまたはトランザクション スクリプト コードがあります。
+集計ルートで処理する場合、集計ルートでは不変条件、有効性、整合性を保証できません。 結果として、解読困難なコードやトランザクション スクリプト コードとなります。
 
-DDD パターンに従うと、エンティティには、すべてのエンティティのプロパティでパブリック setter がない必要です。 エンティティの変更は、エンティティで実行している変更に関する明確なユビキタス言語を持つ明示的なメソッドによって推進する必要があります。
+DDD パターンに従うには、エンティティのどのエンティティ プロパティにもパブリック セッターがあってはなりません。 エンティティ内の変更は、エンティティ内で実行する変更に関する明示的なユビキタス言語を使った、明示的なメソッドにより駆動する必要があります。
 
-さらに、(、注文項目など)、エンティティ内にコレクションが読み取り専用プロパティをする必要があります (されましたメソッドは後で説明します)。 集計のルート クラスのメソッドや子エンティティ メソッド内からのみ更新することができます。
+また、(注文項目などの) エンティティ内のコレクションは読み取り専用プロパティでなければなりません (AsReadOnly メソッドについて後ほど説明します)。 集計ルート クラス メソッドか子エンティティ メソッドの中からでなければ、それを更新できないようになっている必要があります。
 
-順序集計ルート用のコードに示すように、すべての set アクセス操作子する必要がありますプライベートまたは読み取り専用には、少なくとも外部で、エンティティのデータまたはその子エンティティに対して操作が、そのエンティティ クラスのメソッドによって実行されるがあるできるようにします。 これにより、トランザクション スクリプト コードを実装する代わりに制御およびオブジェクト指向の方法で一貫性が維持されます。
+Order 集計ルートのコードに示されているように、すべてのセッターはプライベートにするか、少なくとも外部的に読み取り専用とする必要があります。こうして、エンティティのデータまたはその子エンティティに対するあらゆる操作がエンティティ クラスのメソッドをとおして実行されなければならなくなります。 その結果、整合性は制御された、オブジェクト指向の方法で確保され、トランザクション スクリプト コードを実装する必要はなくなります。
 
-次のコード スニペットは、注文の集計に OrderItem オブジェクトを追加するタスクを記述する適切な方法を示しています。
+次のコード スニペットは、OrderItem オブジェクトを Order 集計に追加するタスクをコーディングするための適切な方法を示しています。
 
 ```csharp
 // RIGHT ACCORDING TO DDD--CODE AT THE APPLICATION LAYER OR COMMAND HANDLERS
@@ -134,104 +152,38 @@ myOrder.AddOrderItem(productId, productName, pictureUrl, unitPrice, discount, un
 //...
 ```
 
-このスニペットでほとんどの検証または OrderItem オブジェクトの作成に関連するロジックなります順序集計ルートの制御下-AddOrderItem メソッドで — 特に検証とロジックに関連するその他の要素、集計します。 たとえば、AddOrderItem が複数の呼び出しの結果として同じ製品品目をする可能性があります。 そのメソッドでは、製品のアイテムは検証し、いくつかの単位である単一の OrderItem オブジェクトに同じ製品品目を統合するでした。 また、さまざまな割引金額があるが、製品 ID は同じ場合に、割引率が高いを適用可能性がありますはします。 この原則は、OrderItem オブジェクトの他のドメイン ロジックを適用します。
+このスニペットでは、OrderItem オブジェクトの作成に関連するほとんどの検証またはロジックが Order 集計ルートの AddOrderItem メソッドの制御下に置かれます。集計の他の要素に関連する検証とロジックは特にそう言えます。 たとえば、AddOrderItem に対して複数の呼び出しを実行した結果として、同じ製品項目を取得できます。 そのメソッドでは、製品項目を検証し、同じ製品項目を、いくつかの単位で構成される単一の OrderItem オブジェクトに統合できます。 さらに、複数の割引額があるものの製品 ID が同じである場合、大きい方の割り引きを適用したいと思うかもしれません。 この原則を、OrderItem オブジェクトの他のドメイン ロジックに適用します。
 
-さらに、新しい OrderItem(params) 操作も管理対象し、する注文集計ルートから AddOrderItem メソッドによって実行されます。 そのため、ほとんどのロジックおよび検証に関連する操作 (特に他の子エンティティ間の一貫性に影響を与えるもの) が、集計のルート内の 1 つの場所に含まれます。 集計のルート パターンの最終的な目的です。
+さらに、新しい OrderItem(params) 操作も、Order 集計ルートの AddOrderItem メソッドにより制御され、実行されます。 そのため、この操作に関連するほとんどのロジックまたは検証 (特に、他の子エンティティ間の整合性に影響を与えるあらゆるもの) は、集計ルート内の 1 か所に配置されます。 これが、集計ルート パターンの最終目的です。
 
-Entity Framework 1.1 を使用して、DDD エンティティより表現できることができるエンティティ フレームワークのコア 1.1 の新機能の 1 つが[フィールドへのマッピング](https://docs.microsoft.com/ef/core/modeling/backing-field)プロパティだけでなくです。 これは、機能は、子エンティティや値のオブジェクトのコレクションを保護するときに便利です。 この拡張機能プロパティの代わりに単純なプライベート フィールドを使用することができ、パブリック メソッドのフィールド コレクションに、更新プログラムを実装し、されましたメソッドを介して読み取り専用アクセスを提供することができます。
+Entity Framework Core 1.1 以降を使用する場合、DDD エンティティをより優れた方法で表すことができます。プロパティに加えて、[フィールドへのマッピング](https://docs.microsoft.com/ef/core/modeling/backing-field)が行えるためです。 これは、子エンティティや値オブジェクトのコレクションを保護する場合に役立ちます。 この機能拡張によって、プロパティではなく簡単なプライベート フィールドを使用できます。また、パブリック メソッドでフィールド コレクションへの更新を実装し、AsReadOnly メソッドを使用して読み取り専用アクセスを提供できます。
 
-DDD では、任意の不変性とデータの整合性を制御するために、エンティティ (または、コンス トラクター) メソッドによってのみ、エンティティを更新する、ためのプロパティが定義されている get アクセサーでのみです。 プロパティは、プライベート フィールドでサポートされます。 プライベート メンバーは、クラス内からのみアクセスできます。 ただし、ある 1 つの例外: EF コアは、これらのフィールドも設定する必要があります。
+DDD では、エンティティのメソッド (またはコンストラクター) だけをとおしてエンティティを更新して、不変条件とデータの整合性を制御し、こうしてプロパティが get アクセサーによってのみ定義されることが望まれます。 プロパティは、プライベート フィールドによってサポートされます。 プライベート メンバーには、クラス内からのみアクセスできます。 ただし例外があり、EF Core はこれらのフィールドも設定する必要があります。
 
-```csharp
-// ENTITY FRAMEWORK CORE 1.1 OR LATER
-// Entity is a custom base class with the ID
-public class Order : Entity, IAggregateRoot
-{
-    // DDD Patterns comment
-    // Using private fields, allowed since EF Core 1.1, is a much better
-    // encapsulation aligned with DDD aggregates and domain entities (instead of
-    // properties and property collections)
-    private bool _someOrderInternalState;
-    private DateTime _orderDate;
-    public Address Address { get; private set; }
-    public Buyer Buyer { get; private set; }
-    private int _buyerId;
-    public OrderStatus OrderStatus { get; private set; }
-    private int _orderStatusId;
 
-    // DDD patterns comment
-    // Using a private collection field is better for DDD aggregate encapsulation.
-    // OrderItem objects cannot be added from outside the aggregate root
-    // directly to the collection, but only through the
-    // OrderAggrergateRoot.AddOrderItem method, which includes behavior.
-    private readonly List<OrderItem> _orderItems;
-    public IEnumerable<OrderItem> OrderItems => _orderItems.AsReadOnly();
-    // Using List<>.AsReadOnly()
-    // This will create a read-only wrapper around the private list so it is
-    // protected against external updates. It's much cheaper than .ToList(),
-    // because it will not have to copy all items in a new collection.
-    // (Just one heap alloc for the wrapper instance)
-    // https://msdn.microsoft.com/en-us/library/e78dcd75(v=vs.110).aspx
-    public PaymentMethod PaymentMethod { get; private set; }
-    private int _paymentMethodId;
+### <a name="mapping-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>get アクセサーのみでプロパティをデータベース テーブル内のフィールドにマッピングする
 
-    protected Order() { }
+プロパティをデータベース テーブル列にマッピングすることはドメインの責任ではなく、インフラストラクチャと永続レイヤーの役割です。 ここでこれに言及するのは、エンティティをモデル化する方法に関係する EF Core 1.1 以降の新機能をお知らせするために過ぎません。 このトピックに関するその他の詳細情報については、インフラストラクチャと永続化に関するセクションで説明します。
 
-    public Order(int buyerId, int paymentMethodId, Address address)
-    {
-        _orderItems = new List<OrderItem>();
-        _buyerId = buyerId;
-        _paymentMethodId = paymentMethodId;
-        _orderStatusId = OrderStatus.InProcess.Id;
-        _orderDate = DateTime.UtcNow;
-        Address = address;
-    }
+EF Core 1.0 を使用する場合、DbContext で、ゲッターによってのみ定義されるプロパティを、データベース テーブルの実際のフィールドにマップする必要があります。 これは、PropertyBuilder クラスの HasField メソッドを使用して行います。
 
-    // DDD patterns comment
-    // The Order aggregate root method AddOrderitem() should be the only way
-    // to add items to the Order object, so that any behavior (discounts, etc.)
-    // and validations are controlled by the aggregate root in order to
-    // maintain consistency within the whole aggregate.
-    public void AddOrderItem(int productId, string productName, decimal unitPrice,
-        decimal discount, string pictureUrl, int units = 1)
-    {
-        // ...
-        // Domain rules/logic here for adding OrderItem objects to the order
-        // ...
-        OrderItem item = new OrderItem(this.Id, productId, productName,
-            pictureUrl, unitPrice, discount, units);
-        OrderItems.Add(item);
-    }
+### <a name="mapping-fields-without-properties"></a>プロパティを使用しないでフィールドをマッピングする
 
-    // ...
-    // Additional methods with domain rules/logic related to the Order aggregate
-    // ...
-}
-```
+EF Core 1.1 以降の機能で列をフィールドにマップすれば、プロパティを使用しないで済ませることもできます。 代わりに、テーブルからフィールドに列をマップするだけです。 この方法の一般的なユース ケースとしては、エンティティの外部からアクセスする必要のない、内部状態用のプライベート フィールドがあります。
 
-### <a name="mapping-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>のみとマッピングのプロパティの get アクセサーのフィールドに、データベース テーブル
-
-プロパティをデータベース テーブルの列にマップはなく、ドメイン責任インフラストラクチャと持続性層の一部です。 記述されてこのだけエンティティをモデル化する方法に関連する EF 1.1 の新機能に注意してください。 このトピックの詳細については、インフラストラクチャおよび永続化のセクションで説明します。
-
-データベース テーブルの実際のフィールドに get アクセス操作子でのみ定義されているプロパティをマップする必要があります。 DbContext 内の EF 1.0 を使用する場合。 これは PropertyBuilder クラスの HasField メソッドを使用して行われます。
-
-### <a name="mapping-fields-without-properties"></a>プロパティのないフィールドのマッピング
-
-列フィールドをマップする EF コア 1.1 の新機能を使用可能であればもプロパティを使用しないようにします。 代わりに、フィールドに、テーブルの列にのみマップできます。 この一般的なユース ケースは、エンティティの外部からアクセスする必要はありませんを内部の状態のプライベート フィールドです。
-
-たとえば、前のコード例で、 \_someOrderInternalState フィールドには、setter または getter 用に関連するプロパティがありません。 そのフィールドは注文のビジネス ロジック内で計算され、注文の方法を使用するもデータベースに保存される必要があります。 そのため、EF 1.1 では、データベース内の列に関連するプロパティを持たないフィールドをマップする方法です。 これで説明しても、[インフラストラクチャ レイヤー](#the-infrastructure-layer)このガイドの「します。
+たとえば、前述の OrderAggregate コード例の場合、`_paymentMethodId` フィールドなどのいくつかのプライベート フィールドがあり、これにはセッターやゲッターに関連するプロパティがあません。 このフィールドは注文のビジネス ロジック内で計算でき、注文のメソッドから使用できますが、データベース内に保存することも必要です。 そのため EF Core (v1.1 以降) では、関連プロパティを使用しないでデータベース内の列にフィールドをマップする方法が備わっています。 これは、このガイドの[インフラストラクチャ レイヤー](#the-infrastructure-layer)に関するセクションでも説明されています。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Vaughn Vernon。DDD および Entity Framework では集計をモデリングです。** これは*いない*エンティティ フレームワークのコアです。
+-   **Vaughn Vernon。DDD および Entity Framework による集計のモデル化。** これは、Entity Framework Core では*ない*ことにご注意ください。
     [*https://vaughnvernon.co/?p=879*](https://vaughnvernon.co/?p=879)
 
--   **Julie Lerman です。ドメイン ベースのデザインのコーディング: データに重点を置いた開発者用ヒント**
-    [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
+-   **Julie Lerman。ドメイン駆動設計のコーディング: データを重視する開発者のためのヒント**
+    [*https://msdn.microsoft.com/ja-JP/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
 
--   **Udi Dahan です。ドメイン モデルが完全に作成する方法にカプセル化された**
+-   **Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
 
 >[!div class="step-by-step"]
-[前](マイクロ サービスのドメイン-model.md) [次へ] (seedwork-domain-model-base-classes-interfaces.md)
+[前へ] (microservice-domain-model.md) [次へ] (seedwork-domain-model-base-classes-interfaces.md)

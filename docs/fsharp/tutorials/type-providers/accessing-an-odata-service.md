@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 0adae84c-b0fa-455f-994b-274ecdc6df30
-ms.openlocfilehash: 28c2e9a405670f4e5f9512e99e0e6c3e3082856c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 750407c36a989cece30c0c0654ff905c8eee3b33
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="walkthrough-accessing-an-odata-service-by-using-type-providers"></a>チュートリアル : 型プロバイダーを使用した OData サービスへのアクセス
 
 > [!NOTE]
-このガイドでは、f# 3.0 用に作成された、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](http://fsharp.github.io/FSharp.Data/) を参照してください。
+このガイドでは、f# 3.0 用に作成された、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](https://fsharp.github.io/FSharp.Data/) を参照してください。
 
 > [!NOTE]
 API リファレンス リンクで msdn を実行します。  docs.microsoft.com API リファレンスは完全ではありません。
@@ -69,7 +69,7 @@ OData (Open Data Protocol) は、インターネットでデータを転送す�
 open Microsoft.FSharp.Data.TypeProviders
 
 
-type Northwind = ODataService<"http://services.odata.org/Northwind/Northwind.svc/">
+type Northwind = ODataService<"https://services.odata.org/Northwind/Northwind.svc/">
 
 let db = Northwind.GetDataContext()
 let fullContext = Northwind.ServiceTypes.NorthwindEntities()
@@ -242,10 +242,10 @@ db.DataContext.SendingRequest.Add (fun eventArgs -> printfn "Requesting %A" even
 ```
 
 前のコードの出力は次のようになります。
-<br />`requesting http://services.odata.org/Northwind/Northwind.svc/Orders()?$orderby=ShippedDate&amp;$select=OrderID,ShippedDate`
+<br />`requesting https://services.odata.org/Northwind/Northwind.svc/Orders()?$orderby=ShippedDate&amp;$select=OrderID,ShippedDate`
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [クエリ式](../../language-reference/query-expressions.md)
 
 [LINQ に関する留意点 (WCF Data Services)](https://msdn.microsoft.com/library/ee622463.aspx)

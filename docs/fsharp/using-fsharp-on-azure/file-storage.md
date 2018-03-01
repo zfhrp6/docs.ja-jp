@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 5c26a0aa-186e-476c-9f87-e0191754579e
-ms.openlocfilehash: 66b2503744e9024deac3d6dabea57da4fd393bd8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5e1f6914acad5ae8c7148a7238e2d1d6a8ca5867
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>F# を使用して Azure File storage の概要します。 #
 
@@ -97,7 +97,7 @@ Azure 構成マネージャーを使用することはオプションです。 .
 
 ### <a name="set-the-maximum-size-for-a-file-share"></a>ファイル共有の最大サイズを設定します。
 
-次の例では、共有の現在の使用状況を確認する方法と、共有のクォータを設定する方法を示します。 `FetchAttributes`共有の設定を呼び出す必要があります`Properties`、および`SetProperties`Azure File storage にローカルの変更を反映します。
+次の例では、共有の現在の使用状況を確認する方法と、共有のクォータを設定する方法を示します。 `FetchAttributes` 共有の設定を呼び出す必要があります`Properties`、および`SetProperties`Azure File storage にローカルの変更を反映します。
 
 [!code-fsharp[FileStorage](../../../samples/snippets/fsharp/azure/file-storage.fsx#L62-L72)]
 
@@ -137,7 +137,7 @@ Azure Storage Analytics は、ファイル ストレージのメトリックを�
 
 [!code-fsharp[FileStorage](../../../samples/snippets/fsharp/azure/file-storage.fsx#L126-L140)]
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 Azure File storage の詳細については、これらのリンクを参照してください。
 
@@ -161,5 +161,5 @@ Azure File storage の詳細については、これらのリンクを参照し�
 
 - [Azure のファイル ストレージが一般的に使用できるようになりました](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
 - [Azure 内のファイル ストレージ](https://azure.microsoft.com/blog/inside-azure-file-storage/) 
-- [Microsoft Azure ファイル サービスの概要](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [Microsoft Azure ファイルへの接続を保持します。](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
+- [Microsoft Azure ファイル サービスの概要](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/12/introducing-microsoft-azure-file-service/)
+- [Microsoft Azure ファイルへの接続を保持します。](https://blogs.msdn.microsoft.com/windowsazurestorage/2014/05/26/persisting-connections-to-microsoft-azure-files/)

@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: get-started-article
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 85edc87bc8c5183f85618351034c0b043472b530
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 533cb4b342e3de3eb3143b001f5a26e36e4d79b9
+ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>チュートリアル: Async と Await を使用した Web へのアクセス (C#)
 async/await 機能を使用することで、非同期プログラムをより簡単かつ直感的に記述できます。 同期コードに似た非同期コードを記述し、通常の非同期コードが必要とする難しいコールバック関数や継続の処理をコンパイラに任せます。  
@@ -24,7 +25,7 @@ async/await 機能を使用することで、非同期プログラムをより�
   
  このチュートリアルは、Web サイトの一覧でのバイト数の合計を計算する同期 Windows Presentation Foundation (WPF) アプリケーションから開始します。 その後、新しい機能を使用して、アプリケーションを非同期ソリューションに変換します。  
   
- 自分でアプリケーションを作成しない場合は、[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=255191)のページから、"Async Sample: Accessing the Web Walkthrough (C# and Visual Basic) (非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic))" をダウンロードできます。  
+ 自分でアプリケーションを作成しない場合は、[非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) をダウンロードできます。  
   
  このチュートリアルでは、次のタスクを行います。  
   
@@ -52,8 +53,8 @@ async/await 機能を使用することで、非同期プログラムをより�
   
 -   [例](#BKMK_CompleteCodeExamples)  
   
-## <a name="prerequisites"></a>必須コンポーネント  
- お使いのコンピューターに、Visual Studio 2012 以降がインストールされている必要があります。 詳しくは、[Microsoft Web サイト](http://go.microsoft.com/fwlink/?LinkId=235233)をご覧ください。  
+> [!NOTE]
+>  この例を実行するには、コンピューターに Visual Studio 2012 以降および .NET Framework 4.5 以降がインストールされている必要があります。  
   
 ###  <a name="CreateWPFApp"></a> WPF アプリケーションを作成するには  
   
@@ -731,12 +732,12 @@ namespace AsyncExampleWPF
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [「Async Sample: Accessing the Web Walkthrough (c# および Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255191)  
+## <a name="see-also"></a>参照  
+ [非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)  
  [async](../../../../csharp/language-reference/keywords/async.md)  
  [await](../../../../csharp/language-reference/keywords/await.md)  
  [Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
  [非同期の戻り値の型 (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)  
- [タスク ベースの非同期プログラミング (TAP)](http://go.microsoft.com/fwlink/?LinkId=204847)  
+ [タスク ベースの非同期プログラミング (TAP)](https://www.microsoft.com/en-us/download/details.aspx?id=19957)  
  [方法: Task.WhenAll を使用して AsyncWalkthrough を拡張する (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)  
  [方法: async と await を使用して複数の Web 要求を並列実行する](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

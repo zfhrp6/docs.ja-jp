@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: 58003c88baf0f8aeea1a511334b99bd0295f8bf1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: c09f8abe4dd46453cb6cc5ed7dbb6f60dbf0ad98
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="tutorial-creating-a-type-provider"></a>チュートリアル: 型プロバイダーを作成します。
 
@@ -56,7 +56,7 @@ F# 3.0 には、インターネットやエンタープライズ データ サ�
 
 
 ## <a name="a-simple-type-provider"></a>単純な型プロバイダー
-このサンプルで Samples.HelloWorldTypeProvider、`SampleProviders\Providers`のディレクトリ、 [f# 3.0 のサンプル パック](http://fsharp3sample.codeplex.com)Codeplex web サイトです。 このプロバイダーは、次のコードが示すように、F# シグネチャ構文を使用して `Type1` 以外の詳細を省略することで、消去型 100 個を含む "型空間" を使用可能にします。 消去型の詳細については、次を参照してください。[の詳細については消去指定された型が](#details-about-erased-provided-types)このトピックで後述します。
+このサンプルで Samples.HelloWorldTypeProvider、`SampleProviders\Providers`のディレクトリ、 [f# 3.0 のサンプル パック](https://fsharp3sample.codeplex.com)Codeplex web サイトです。 このプロバイダーは、次のコードが示すように、F# シグネチャ構文を使用して `Type1` 以外の詳細を省略することで、消去型 100 個を含む "型空間" を使用可能にします。 消去型の詳細については、次を参照してください。[の詳細については消去指定された型が](#details-about-erased-provided-types)このトピックで後述します。
 
 ```fsharp
 namespace Samples.HelloWorldTypeProvider
@@ -499,7 +499,7 @@ let r = reg.Match("425-123-2345").Groups.["AreaCode"].Value //r equals "425"
 - 各名前付きグループは指定されたプロパティになり、プロパティにアクセスすると、パターン一致の `Groups` コレクションでインデクサーが使用されます。
 <br />
 
-次のコードはこのようなプロバイダーの実装におけるコア ロジックです。この例では指定された型へのすべてのメンバーの追加は省略されています。 それぞれの追加されたメンバーについては、このトピックの後半の該当するセクションを参照してください。 完全なコードからサンプルをダウンロード、 [f# 3.0 のサンプル パック](http://fsharp3sample.codeplex.com)Codeplex web サイトです。
+次のコードはこのようなプロバイダーの実装におけるコア ロジックです。この例では指定された型へのすべてのメンバーの追加は省略されています。 それぞれの追加されたメンバーについては、このトピックの後半の該当するセクションを参照してください。 完全なコードからサンプルをダウンロード、 [f# 3.0 のサンプル パック](https://fsharp3sample.codeplex.com)Codeplex web サイトです。
 
 ```fsharp
 namespace Samples.FSharp.RegexTypeProvider
@@ -1140,7 +1140,7 @@ let data = connection.Astronomy.Asteroids
 ```fsharp
 open Microsoft.FSharp.TypeProviders 
 
-type Service = ODataService<" http://services.odata.org/Northwind/Northwind.svc/">
+type Service = ODataService<" https://services.odata.org/Northwind/Northwind.svc/">
 ```
 
 F# 3.0 リリースに含まれている ProvidedTypes-0.2 ヘルパー コードは、生成された型を指定するためのサポートが限られています。 生成された型の定義は次の条件を満たす必要があります。
@@ -1196,10 +1196,10 @@ F# 3.0 リリースに含まれている ProvidedTypes-0.2 ヘルパー コー�
 開発過程では次のヒントが役立つことがあります。
 
 
-- `Run Two Instances of Visual Studio.`1 つのインスタンスで、型プロバイダーを開発およびテスト IDE が型プロバイダーがリビルドされることを防止する .dll ファイルのロックを取得するので、他のプロバイダーをテストできます。 したがって、最初のインスタンスでプロバイダーをビルドしている間は Visual Studio の 2 番目のインスタンスを閉じておき、プロバイダーがビルドされた後に、2 番目のインスタンスを再び開く必要があります。
+- `Run Two Instances of Visual Studio.` 1 つのインスタンスで、型プロバイダーを開発およびテスト IDE が型プロバイダーがリビルドされることを防止する .dll ファイルのロックを取得するので、他のプロバイダーをテストできます。 したがって、最初のインスタンスでプロバイダーをビルドしている間は Visual Studio の 2 番目のインスタンスを閉じておき、プロバイダーがビルドされた後に、2 番目のインスタンスを再び開く必要があります。
 <br />
 
-- `Debug type providers by using invocations of fsc.exe.`次のツールを使用して、型プロバイダーを呼び出すことができます。
+- `Debug type providers by using invocations of fsc.exe.` 次のツールを使用して、型プロバイダーを呼び出すことができます。
 <br />
   - fsc.exe (F# コマンド ライン コンパイラ)
 <br />
@@ -1221,5 +1221,5 @@ F# 3.0 リリースに含まれている ProvidedTypes-0.2 ヘルパー コー�
 <br />
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [型プロバイダー](index.md)

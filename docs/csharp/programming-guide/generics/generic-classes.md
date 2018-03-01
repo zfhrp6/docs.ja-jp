@@ -2,25 +2,26 @@
 title: "ジェネリック クラス (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c92efd63f7b24917dc50ca0864f1a132c5c2bf00
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: afeca9fc49221551470f90f6f57d1b40e0142521
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="generic-classes-c-programming-guide"></a>ジェネリック クラス (C# プログラミング ガイド)
 ジェネリック クラスは、特定のデータ型に固有ではない操作をカプセル化します。 ジェネリック クラスは最も一般的に、リンク リスト、ハッシュ テーブル、スタック、キュー、ツリーなどのコレクションと共に使用されます。 コレクションの項目を追加または削除するなどの操作は、保存されているデータの型に関係なく、基本的に同じように実行されます。  
   
- コレクション クラスを必要とするほとんどのシナリオで、.NET Framework クラス ライブラリで提供されているものを使用するという方法が推奨されます。 これらのクラスの詳細については、「[.NET Framework クラス ライブラリのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md)」を参照してください。  
+ コレクション クラスを必要とするほとんどのシナリオで、.NET クラス ライブラリで提供されているものを使用するという方法が推奨されます。 これらのクラスの使用の詳細については、「[.NET のジェネリック コレクション](../../../standard/generics/collections.md)」を参照してください。  
   
  通常、ジェネリック クラスを作成するには、既存の具象クラスから始め、汎用性と使いやすさの間で最適なバランスが取れるまで、一度に 1 つずつ型を型パラメーターに変更します。 独自のジェネリック クラスを作成するときの重要な考慮事項は次のとおりです。  
   
@@ -70,9 +71,9 @@ ms.lasthandoff: 11/21/2017
   
  ジェネリック クラスは変化しません。 言い換えると、入力パラメーターが `List<BaseClass>` を指定するとき、`List<DerivedClass>` を指定するとコンパイル時エラーが表示されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Generic>  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)  
- [列挙子の状態を保存](http://go.microsoft.com/fwlink/?LinkId=112390)  
- [継承パズル、パート 1](http://go.microsoft.com/fwlink/?LinkId=112380)
+ [列挙子の状態を保存する](https://blogs.msdn.microsoft.com/wesdyer/2006/01/13/saving-the-state-of-enumerators/)  
+ [継承パズル、パート 1](https://blogs.msdn.microsoft.com/ericlippert/2007/07/27/an-inheritance-puzzle-part-one/)

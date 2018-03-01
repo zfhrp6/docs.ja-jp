@@ -2,25 +2,24 @@
 title: "C# のコーディング規則 (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - coding conventions, C#
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 84ddc2b3cebb6bad95f5076889de11f12624b4de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4a8806ddb0a9cc62fe68dc9d558917ee2d532e7f
+ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>C# のコーディング規則 (C# プログラミング ガイド)
-[C# 言語仕様](http://go.microsoft.com/fwlink/?LinkId=199552)では、コーディング標準は定義されていません。 ただし、このトピックのガイドラインは、サンプルおよびドキュメントを開発するためにマイクロソフトによって使用されます。  
-  
  コーディング規則には、次の目的があります。  
   
 -   コードの見た目が統一されるため、コードを読むときに、レイアウトではなく内容に重点を置くことができます。  
@@ -30,6 +29,8 @@ ms.lasthandoff: 11/21/2017
 -   コードのコピー、変更、および保守が容易になります。  
   
 -   コーディング規約により、C# のベスト プラクティスがわかります。  
+
+ このトピックのガイドラインは、サンプルおよびドキュメントを開発するために Microsoft によって使用されます。  
   
 ## <a name="naming-conventions"></a>名前付け規則  
   
@@ -200,6 +201,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="security"></a>セキュリティ  
  「[安全なコーディングのガイドライン](../../../standard/security/secure-coding-guidelines.md)」のガイドラインに従ってください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic のコーディング規則](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)  
  [安全なコーディングのガイドライン](../../../standard/security/secure-coding-guidelines.md)

@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 49775139-082e-442f-b5a2-dd402399b5d2
-ms.openlocfilehash: 336316eaf474f4c10d63657f178ce4a336ad7a54
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 83099005074ea273eae5319edacd2e2ee0f7145f
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="getting-started-with-f-in-visual-studio-code-with-ionide"></a>Visual Studio コード Ionide で f# の概要
 
-F# で記述できます[Visual Studio Code](https://code.visualstudio.com)で、 [Ionide プラグイン](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)IntelliSense と基本的なコードのリファクタリングの優れたクロスプラット フォームで軽量な IDE エクスペリエンスを取得します。  参照してください[Ionide.io](http://ionide.io)をプラグイン スイートに関する詳しい情報を参照してください。
+F# で記述できます[Visual Studio Code](https://code.visualstudio.com)で、 [Ionide プラグイン](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)IntelliSense と基本的なコードのリファクタリングの優れたクロスプラット フォームで軽量な IDE エクスペリエンスを取得します。  参照してください[Ionide.io](https://ionide.io)をプラグイン スイートに関する詳しい情報を参照してください。
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
@@ -39,9 +39,9 @@ Visual Studio をインストールしないようにしたい場合は、次の
 2. OS の Windows SDK をインストールします。
 
     * [Windows 10 SDK](https://dev.windows.com/en-US/downloads/windows-10-sdk)
-    * [Windows 8.1 SDK](http://msdn.microsoft.com/windows/desktop/bg162891)
-    * [Windows 8 SDK](http://msdn.microsoft.com/windows/hardware/hh852363.aspx)
-    * [Windows 7 SDK](http://www.microsoft.com/download/details.aspx?id=8279)
+    * [Windows 8.1 SDK](https://developer.microsoft.com/windows/downloads/sdk-archive)
+    * [Windows 8 SDK](https://developer.microsoft.com/windows/downloads/sdk-archive)
+    * [Windows 7 SDK](https://www.microsoft.com/download/details.aspx?id=8279)
 
 3. インストール、 [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159)です。  インストールする必要がありますも[Microsoft ビルド ツールの 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40760)です。
 
@@ -65,9 +65,9 @@ C:\Program Files\Microsoft SDKs\F#\4.0\Framework\v4.0\fsiAnyCpu.exe
 
 コンパイラおよびツール、Ionide が自動的に検出しますが、何らかの理由がされていない場合 (たとえば、Visual f# Tools にインストールされた別のディレクトリ)、含まれているフォルダーを手動で追加することができます (`...\Microsoft SDKs\F#\4.0`) をパスにします。
 
-### <a name="macos"></a>MacOS
+### <a name="macos"></a>macOS
 
-Ionide を使用して、macos[モノラル](http://www.mono-project.com)です。  Macos モノラルをインストールする最も簡単な方法は、Homebrew を介してです。  単に、端末に、次を入力します。
+Ionide を使用して、macos[モノラル](https://www.mono-project.com)です。  Macos モノラルをインストールする最も簡単な方法は、Homebrew を介してです。  単に、端末に、次を入力します。
 
 ```
 brew install mono
@@ -75,7 +75,7 @@ brew install mono
 
 ### <a name="linux"></a>Linux
 
-Ionide Linux では、使用も[モノラル](http://www.mono-project.com)です。  Debian、Ubuntu またはの場合は、次の操作を行うこともできます。
+Ionide Linux では、使用も[モノラル](https://www.mono-project.com)です。  Debian、Ubuntu またはの場合は、次の操作を行うこともできます。
 
 ```
 sudo apt-get update
@@ -96,7 +96,7 @@ Visual Studio のコードからをインストールすることができます
 
     ![](media/getting-started-vscode/vscode-ext.png)
 
-Visual Studio のコードで、f# のサポートに必要なだけプラグイン[Ionide fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)です。  ただし、インストールすることも[Ionide FAKE](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-FAKE)を取得し、[偽](http://fsharp.github.io/FAKE/)サポートと[Ionide パケットを作成](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-Paket)を取得する[パケットを作成](https://fsprojects.github.io/Paket/)をサポートします。  偽のプロジェクトをビルドして、それぞれの依存関係を管理するその他 f# コミュニティ ツールは、パケットを作成します。
+Visual Studio のコードで、f# のサポートに必要なだけプラグイン[Ionide fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)です。  ただし、インストールすることも[Ionide FAKE](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-FAKE)を取得し、[偽](https://fake.build/)サポートと[Ionide パケットを作成](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-Paket)を取得する[パケットを作成](https://fsprojects.github.io/Paket/)をサポートします。  偽のプロジェクトをビルドして、それぞれの依存関係を管理するその他 f# コミュニティ ツールは、パケットを作成します。
 
 ## <a name="creating-your-first-project-with-ionide"></a>Ionide を初めてのプロジェクトを作成します。
 
@@ -121,7 +121,7 @@ Visual Studio のコードで、f# のサポートに必要なだけプラグイ
 
 ![](media/getting-started-vscode/vscode-proj-type.png)
 
-これにより、特定の種類のプロジェクト テンプレートが選択されます。  ここでは、非常に多くのオプションなどが、 [FsLab](http://fslab.org)データ サイエンス用のテンプレートまたは[Suave](https://suave.io) Web プログラミング用のテンプレートです。  この記事では、`classlib`テンプレートのため強調表示して、ヒット**Enter**です。  次の手順が到達してしまいます。
+これにより、特定の種類のプロジェクト テンプレートが選択されます。  ここでは、非常に多くのオプションなどが、 [FsLab](https://fslab.org)データ サイエンス用のテンプレートまたは[Suave](https://suave.io) Web プログラミング用のテンプレートです。  この記事では、`classlib`テンプレートのため強調表示して、ヒット**Enter**です。  次の手順が到達してしまいます。
 
 ![](media/getting-started-vscode/vscode-new-dir.png)
 
@@ -138,8 +138,8 @@ Visual Studio のコードで、f# のサポートに必要なだけプラグイ
 このテンプレートには、便利ですが見つかったら、いくつかの点が生成されます。
 
 1. F# プロジェクト自体には、下に、`ClassLibraryDemo`フォルダーです。
-2. 使用してパッケージを追加するための適切なディレクトリ構造[ `Paket`](http://fsprojects.github.io/Paket/)です。
-3. クロス プラットフォーム ビルド スクリプトを[ `FAKE`](http://fsharp.github.io/FAKE/)です。
+2. 使用してパッケージを追加するための適切なディレクトリ構造[ `Paket`](https://fsprojects.github.io/Paket/)です。
+3. クロス プラットフォーム ビルド スクリプトを[ `FAKE`](https://fake.build/)です。
 4. `paket.exe`実行可能ファイルのパッケージをフェッチして依存関係が解決することができます。
 5. A`.gitignore`ファイルのこのプロジェクトを Git ベースのソース管理に追加する場合。
 
@@ -263,7 +263,7 @@ val it : string = "appleyay"
 
 正常に完了  前に、同じ結果を取得することは、f# 実装ファイルから読み込まれるようになりました。  ここでの主な違いは、f# ソース ファイルが FSI 内だけでなく、どこにでも実行できるアセンブリにコンパイルされます。
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 この記事では次の内容を学習しました。
 
@@ -291,7 +291,7 @@ Ionide とは、構築および f# コミュニティのメンバーによって
 
 Ionide 開発者や f# でコミュニティからさらにヘルプを求めることも、 [Ionide Gitter チャネル](https://gitter.im/ionide/ionide-project)です。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 F# と言語の機能の詳細については、チェック アウト[ツアーの f#](../tour.md)です。
 

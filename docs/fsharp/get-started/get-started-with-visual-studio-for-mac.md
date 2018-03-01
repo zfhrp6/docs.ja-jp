@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 8db75596-19a9-4eda-b20d-a12d517c8cc1
-ms.openlocfilehash: beee874e3a549531b520d4ac2150bc10dcab7725
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 776a2ddf5563a954e462b3888ebf05da90241e4b
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-f-in-visual-studio-for-mac"></a>Mac 用 Visual Studio での f# の概要します。
 
-F# および Visual f# ツールは、Mac の IDE の Visual Studio でサポートされます。  作業を開始するには[Mac 用の Visual Studio のダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs)まだ行っていない場合は、します。  この記事 for Mac を Visual Studio コミュニティ 2017 を使用しますが、任意のバージョンの F# で使用することができます。
+F# および Visual f# ツールは、Mac の IDE の Visual Studio でサポートされます。  作業を開始するには[Mac 用の Visual Studio のダウンロード](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)まだ行っていない場合は、します。  この記事 for Mac を Visual Studio コミュニティ 2017 を使用しますが、任意のバージョンの F# で使用することができます。
 
 ## <a name="installing-f"></a>F# をインストールします。 #
 
@@ -38,8 +38,7 @@ Mac 用の Visual Studio での最も基本的なプロジェクトの 1 つは�
 
 4. プロジェクトの名前を指定し、アプリの必要なオプションを選択します。  プレビュー ウィンドウに作成されるディレクトリ構造を表示する画面の端に通知することは、選択したオプションに基づいています。  
 
-5. 
-              **[作成]**をクリックします。  ソリューション エクスプ ローラーで f# プロジェクトが表示されます。
+5. **[作成]**をクリックします。  ソリューション エクスプ ローラーで f# プロジェクトが表示されます。
 
 ## <a name="writing-your-code"></a>コードの記述
 
@@ -123,7 +122,7 @@ val it : bool = true
 
 これは、f# Interactive で行うことができますに glimpse のみです。  詳細については、チェック アウト[f# による対話型プログラミング](../tutorials/fsharp-interactive/index.md)です。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 まだの場合はチェック アウト、[ツアーの f#](../tour.md)、f# 言語のコア機能の一部をカバーします。  一部の f# では、機能の概要を知るされ for Mac を Visual Studio にコピーし、実行できる十分なコード サンプルを入力します。  使用できますが、いくつかの優れた外部リソースからの[f# ガイド](../index.md)です。
 

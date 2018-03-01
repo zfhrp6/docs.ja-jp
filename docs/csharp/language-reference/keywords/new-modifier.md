@@ -2,18 +2,20 @@
 title: "new 修飾子 (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-helpviewer_keywords: new modifier keyword [C#]
+helpviewer_keywords:
+- new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 28124c2f3ecef01fd4bc43fe7cfc975dd6466506
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4653cdc15415f0601d07cecb78d1c8e492994b11
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="new-modifier-c-reference"></a>new 修飾子 (C# リファレンス)
 `new` キーワードを宣言の修飾子として使用すると、基底クラスから継承されたメンバーを明示的に隠ぺいできます。 継承されたメンバーを隠ぺいすると、派生バージョンのメンバーで基底クラスのバージョンが置き換えられます。 `new` 修飾子を使わずにメンバーを隠ぺいすることもできますが、コンパイラ警告が表示されます。 メンバーを明示的に隠ぺいするために `new` を使用する場合は、この警告が抑制されます。  
@@ -26,7 +28,7 @@ ms.lasthandoff: 11/21/2017
   
  継承による名前の隠ぺいは、次のいずれかの形式で行われます。  
   
--   一般的に、定数、フィールド、プロパティ、型をクラスまたは構造体で使用すると、同じ名前を共有するすべての基底クラス メンバーが隠ぺいされます。  次のような特殊な状況があります。  たとえば、呼び出し可能ではない型を持つ `N` という名前の新しいフィールドを宣言し、基本型が `N` をメソッドとして宣言する場合は、新しいフィールドが呼び出し構文内で基本型の宣言を隠ぺいすることはありません。  参照してください、 [5.0 c# 言語仕様](http://go.microsoft.com/fwlink/?LinkId=199552)詳細については (セクション"Expressions"の「メンバーの照合」セクションを参照してください)。  
+-   一般的に、定数、フィールド、プロパティ、型をクラスまたは構造体で使用すると、同じ名前を共有するすべての基底クラス メンバーが隠ぺいされます。  次のような特殊な状況があります。  たとえば、呼び出し可能ではない型を持つ `N` という名前の新しいフィールドを宣言し、基本型が `N` をメソッドとして宣言する場合は、新しいフィールドが呼び出し構文内で基本型の宣言を隠ぺいすることはありません。  詳細については、[C# 5.0 の言語仕様](https://www.microsoft.com/download/details.aspx?id=7029) に関するページ ("式" セクション内の "メンバー ルックアップ" セクション) を参照してください。  
   
 -   メソッドをクラスまたは構造体で使用すると、基底クラスで同じ名前を共有するプロパティ、フィールド、型が隠ぺいされます。 また、同じシグネチャを持つすべての基底クラス メソッドも隠ぺいされます。  
   
@@ -55,7 +57,7 @@ The keyword new is required on 'MyDerivedC.x' because it hides inherited member 
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 9e5d6cea-a98c-461e-a5cc-75f1d154eafd
-ms.openlocfilehash: e003f537c6f0f85b3b0ba932655ae2a54c980bc5
-ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
+ms.openlocfilehash: 905374a60261b0c2a863edb956943d41ae80f04d
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-azure-table-storage-using-f"></a>F# を使用して Azure テーブル ストレージの概要します。 #
 
@@ -187,7 +187,7 @@ Azure 構成マネージャーを使用することはオプションです。 .
 これで、テーブル ストレージの基本を学習したより複雑な記憶域タスクについて学習するこれらのリンクに従います。
 
 - [.NET 用 azure ストレージ Api](/dotnet/api/overview/azure/storage)
-- [Azure ストレージの型プロバイダー](http://fsprojects.github.io/AzureStorageTypeProvider/)
-- [Azure ストレージ チーム ブログ](http://blogs.msdn.com/b/windowsazurestorage/)
+- [Azure ストレージの型プロバイダー](https://fsprojects.github.io/AzureStorageTypeProvider/)
+- [Azure ストレージ チーム ブログ](https://blogs.msdn.microsoft.com/b/windowsazurestorage/)
 - [Azure ストレージ接続文字列を構成します。](/azure/storage/common/storage-configure-connection-string)
 - [.NET で Azure テーブル ストレージの概要](https://azure.microsoft.com/documentation/samples/storage-table-dotnet-getting-started/)

@@ -10,11 +10,11 @@ ms.technology: dotnet-standard
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 08eeb08debdc2e71a85dbc18053bf1aac779069a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8a17d4c36d9c1942166b9ad889103a7942f1813d
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="net-architectural-components"></a>.NET アーキテクチャ コンポーネント
 
@@ -53,7 +53,7 @@ Microsoft が積極的に開発し保守している主要な .NET 実装とし�
 
 ### <a name="mono"></a>Mono
 
-Mono は、主に小規模なランタイムが必要な場合に使用される .NET 実装です。 Android、Mac、iOS、tvOS、および watchOS 上の Xamarin アプリケーションで利用されるランタイムで、フットプリントが小さいことに重点を置いています。
+Mono は、主に小規模なランタイムが必要な場合に使用される .NET 実装です。 Android、Mac、iOS、tvOS、および watchOS 上の Xamarin アプリケーションで利用されるランタイムで、フットプリントが小さいことに重点を置いています。 Mono は、Unity エンジンを使用して構築されたゲームでも利用されます。
 
 現在公開されているすべての .NET Standard バージョンをサポートしています。
 

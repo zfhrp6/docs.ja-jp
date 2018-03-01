@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ee2bb9bf-e04a-4fbe-bf58-46d07229e981
-ms.openlocfilehash: 425dbcbce06f183c81acb90993978c6dd9523de9
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: e1cbdb452c8f77d97a0231a5ec75d752a98d2ed6
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="asynchronous-workflows"></a>非同期ワークフロー
 
@@ -52,11 +52,11 @@ let! (result2 : byte[])  = stream.AsyncRead(bufferSize)
 
 ## <a name="asynchronous-primitives"></a>非同期プリミティブ
 
-1 つの非同期タスクを実行し、結果を返すメソッドが呼び出された、*非同期プリミティブ*で使用する専用に設計された、これらと`let!`です。 複数の非同期プリミティブは、f# コア ライブラリで定義されます。 Web アプリケーションのような 2 つのメソッドは、モジュールで定義されて[ `Microsoft.FSharp.Control.WebExtensions` ](https://msdn.microsoft.com/library/95ef17bc-ee3f-44ba-8a11-c90fcf4cf003): [ `WebRequest.AsyncGetResponse` ](https://msdn.microsoft.com/library/09a60c31-e6e2-4b5c-ad23-92a86e50060c)と[ `WebClient.AsyncDownloadString`](https://msdn.microsoft.com/library/8a85a9b7-f712-4cac-a0ce-0a797f8ea32a)です。 両方のプリミティブは、指定された URL の Web ページからデータをダウンロードします。 `AsyncGetResponse`生成、`System.Net.WebResponse`オブジェクト、および`AsyncDownloadString`を Web ページの HTML を表す文字列を生成します。
+1 つの非同期タスクを実行し、結果を返すメソッドが呼び出された、*非同期プリミティブ*で使用する専用に設計された、これらと`let!`です。 複数の非同期プリミティブは、f# コア ライブラリで定義されます。 Web アプリケーションのような 2 つのメソッドは、モジュールで定義されて[ `Microsoft.FSharp.Control.WebExtensions` ](https://msdn.microsoft.com/library/95ef17bc-ee3f-44ba-8a11-c90fcf4cf003): [ `WebRequest.AsyncGetResponse` ](https://msdn.microsoft.com/library/09a60c31-e6e2-4b5c-ad23-92a86e50060c)と[ `WebClient.AsyncDownloadString`](https://msdn.microsoft.com/library/8a85a9b7-f712-4cac-a0ce-0a797f8ea32a)です。 両方のプリミティブは、指定された URL の Web ページからデータをダウンロードします。 `AsyncGetResponse` 生成、`System.Net.WebResponse`オブジェクト、および`AsyncDownloadString`を Web ページの HTML を表す文字列を生成します。
 
 非同期 I/O 操作のいくつかのプリミティブに含まれる、 [ `Microsoft.FSharp.Control.CommonExtensions` ](https://msdn.microsoft.com/library/2edb67cb-6814-4a30-849f-b6dbdd042396)モジュール。 これらの拡張メソッドの`System.IO.Stream`クラスが[ `Stream.AsyncRead` ](https://msdn.microsoft.com/library/85698aaa-bdda-47e6-abed-3730f59fda5e)と[ `Stream.AsyncWrite`](https://msdn.microsoft.com/library/1b0a2751-e42a-47e1-bd27-020224adc618)です。
 
-使用可能なその他の非同期プリミティブ、 [f# パワー ツール](http://fsprojects.github.io/VisualFSharpPowerTools/)です。 完全な本体を持つが非同期ブロックで囲まれている関数を定義することで、独自の非同期プリミティブを記述することもできます。
+使用可能なその他の非同期プリミティブ、 [f# パワー ツール](https://fsprojects.github.io/VisualFSharpPowerTools/)です。 完全な本体を持つが非同期ブロックで囲まれている関数を定義することで、独自の非同期プリミティブを記述することもできます。
 
 返す、f# の関数を作成する f# 非同期プログラミング モデルとその他の非同期モデルのように設計されて .NET Framework での非同期のメソッドを使用する`Async`オブジェクト。 F# ライブラリでは、これを行うには簡単にできるようにする機能が備わっています。
 
@@ -72,7 +72,7 @@ let! (result2 : byte[])  = stream.AsyncRead(bufferSize)
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet8003.fs)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [F# 言語リファレンス](index.md)
 

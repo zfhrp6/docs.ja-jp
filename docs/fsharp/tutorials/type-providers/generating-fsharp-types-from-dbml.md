@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 6fbb6ccc-248f-4226-95e9-f6f99541dbe4
-ms.openlocfilehash: a919c2acb2b5b8c2ce93124f2f541bd092d15c35
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 3cd8df9becac0d1a8842eb22e2f772eee6307acf
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="walkthrough-generating-f-types-from-a-dbml-file"></a>チュートリアル : DBML ファイルからの F# 型の生成
 
 > [!NOTE]
-このガイドでは、f# 3.0 用に作成された、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](http://fsharp.github.io/FSharp.Data/) を参照してください。
+このガイドでは、f# 3.0 用に作成された、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](https://fsharp.github.io/FSharp.Data/) を参照してください。
 
 > [!NOTE]
 API リファレンス リンクで msdn を実行します。  docs.microsoft.com API リファレンスは完全ではありません。
@@ -154,7 +154,7 @@ let db = new dbml.MyDataContext(connectionString)
 その他のクエリ式を使用またはデータ コンテキストから、データベース接続を取得し、通常の ADO.NET データ操作を実行する続行することができます。 追加の手順を参照してください「のデータのクエリ」の後で[チュートリアル: 型プロバイダーを使用して SQL データベースへのアクセス](accessing-a-sql-database.md)です。
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [DbmlFile 型プロバイダー](https://msdn.microsoft.com/visualfsharpdocs/conceptual/dbmlfile-type-provider-%5bfsharp%5d)
 
 [型プロバイダー](index.md)

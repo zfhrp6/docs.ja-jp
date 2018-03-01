@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: f9196bfc-b8a8-4d33-8b53-0dcbd58a69d8
-ms.openlocfilehash: 23528d84d0f28283868a1ea316953543d0fd566a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c3fde46e804b7acac78d3ce5454a3c6f806e24e7
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="async-programming-in-f"></a>F# で非同期のプログラミング #
 
@@ -44,7 +44,7 @@ let fetchHtmlAsync url =
         return html
     }
 
-let html = "http://dotnetfoundation.org" |> fetchHtmlAsync |> Async.RunSynchronously
+let html = "https://dotnetfoundation.org" |> fetchHtmlAsync |> Async.RunSynchronously
 printfn "%s" html
 ```
 
@@ -52,11 +52,11 @@ printfn "%s" html
 
 注目すべきである、いくつかの構文構造があります。
 
-*   `let!`(を実行する別のコンテキストで) 非同期式の結果にバインドします。
-*   `use!`同様に動作します`let!`がスコープ外になったときにバインドされているリソースを破棄します。
-*   `do!`何も返さない非同期ワークフローが待機されます。
-*   `return`単に非同期式から結果を返します。
-*   `return!`別の非同期ワークフローを実行し、その戻り値をその結果を返します。
+*   `let!` (を実行する別のコンテキストで) 非同期式の結果にバインドします。
+*   `use!` 同様に動作します`let!`がスコープ外になったときにバインドされているリソースを破棄します。
+*   `do!` 何も返さない非同期ワークフローが待機されます。
+*   `return` 単に非同期式から結果を返します。
+*   `return!` 別の非同期ワークフローを実行し、その戻り値をその結果を返します。
 
 さらに、通常`let`、 `use`、および`do`キーワードは、通常の関数と同様、非同期バージョンと共に使用できます。
 
@@ -64,7 +64,7 @@ printfn "%s" html
 
 前述のように、非同期コードは、明示的に開始する必要がある別のコンテキストで実行する作業の仕様です。 これを実現する 2 つの主な方法を次に示します。
 
-1.  `Async.RunSynchronously`別のスレッドで非同期ワークフローを開始し、その結果を待機します。
+1.  `Async.RunSynchronously` 別のスレッドで非同期ワークフローを開始し、その結果を待機します。
 
 ```fsharp
 open System
@@ -79,13 +79,13 @@ let fetchHtmlAsync url =
     }
 
  // Execution will pause until fetchHtmlAsync finishes
- let html = "http://dotnetfoundation.org" |> fetchHtmlAsync |> Async.RunSynchronously
+ let html = "https://dotnetfoundation.org" |> fetchHtmlAsync |> Async.RunSynchronously
 
  // you actually have the result from fetchHtmlAsync now!
  printfn "%s" html
  ```
 
-2.  `Async.Start`別のスレッドで非同期ワークフローの開始し、は、**いない**結果を待機します。
+2.  `Async.Start` 別のスレッドで非同期ワークフローの開始し、は、**いない**結果を待機します。
 
 ```fsharp
 open System
@@ -98,7 +98,7 @@ let uploadDataAsync url data =
         webClient.UploadStringAsync(uri, data)
     }
 
-let workflow = uploadDataAsync "http://url-to-upload-to.com" "hello, world!"
+let workflow = uploadDataAsync "https://url-to-upload-to.com" "hello, world!"
 
 // Execution will continue after calling this!
 Async.Start(workflow)
@@ -114,7 +114,7 @@ printfn "%s" "uploadDataAsync is running in the background..."
 
 ## <a name="how-to-add-parallelism-to-async-code"></a>非同期コードを並列処理を追加する方法
 
-場合があります可能性があり、必要とする並列で複数の非同期ジョブを実行する、その結果を収集する何らかの方法で解釈します。 `Async.Parallel`これが行われます。 強制的に変換する必要があるタスク並列ライブラリを使用することなく実行できる`Task<'T>`と`Async<'T>`型です。
+場合があります可能性があり、必要とする並列で複数の非同期ジョブを実行する、その結果を収集する何らかの方法で解釈します。 `Async.Parallel` これが行われます。 強制的に変換する必要があるタスク並列ライブラリを使用することなく実行できる`Task<'T>`と`Async<'T>`型です。
 
 次の例を使用して`Async.Parallel`ダウンロードする HTML 並列で 4 つの人気のあるサイトからこれらのタスクを完了するまで待機し、ダウンロードされた、HTML を印刷します。
 
@@ -123,10 +123,10 @@ open System
 open System.Net
 
 let urlList = 
-    [ "http://www.microsoft.com"
-      "http://www.google.com"
-      "http://www.amazon.com"
-      "http://www.facebook.com" ]
+    [ "https://www.microsoft.com"
+      "https://www.google.com"
+      "https://www.amazon.com"
+      "https://www.facebook.com" ]
 
 let fetchHtmlAsync url = 
     async {
@@ -181,7 +181,7 @@ C #/vb の非同期モデルと f# の非同期モデルの間の基本的な違
 
 ### <a name="differences"></a>相違点
 
-*   入れ子になった`let!`は使用できませんとは異なり、入れ子になった`await`
+*   入れ子になった`let!`は使用できませんとは異なり、入れ子になった `await`
 
  異なり`await`が無期限に、入れ子にすることができます`let!`ことはできませんし、その結果を別の内部で使用する前にバインドされている必要があります`let!`、 `do!`、または`use!`です。
 
@@ -208,7 +208,7 @@ let uploadDataAsync url data =
         webClient.UploadStringAsync(uri, data)
     }
 
-let workflow = uploadDataAsync "http://url-to-upload-to.com" "hello, world!"
+let workflow = uploadDataAsync "https://url-to-upload-to.com" "hello, world!"
 
 let token = new CancellationTokenSource()
 Async.Start (workflow, token)
@@ -222,5 +222,5 @@ token.Cancel()
 ## <a name="further-resources"></a>他のリソースについて:
 
 *   [MSDN の非同期ワークフロー](https://msdn.microsoft.com/library/dd233250.aspx)
-*   [F# の非同期のシーケンス](http://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html)
+*   [F# の非同期のシーケンス](https://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html)
 *   [F# データ HTTP ユーティリティ](https://fsharp.github.io/FSharp.Data/library/Http.html)

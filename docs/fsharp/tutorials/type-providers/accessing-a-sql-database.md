@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 1c413eb0-16a5-4c1a-9a4e-ad6877e645d6
-ms.openlocfilehash: 7177eca33ded712308bbc6198040d833b7364d55
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: dbc5d889fb7883b4327180fdf34accf45bf519e7
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="walkthrough-accessing-a-sql-database-by-using-type-providers"></a>チュートリアル : 型プロバイダーを使用した SQL データベースへのアクセス
 
 > [!NOTE]
-このガイドでは、f# 3.0 用に作成された、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](http://fsharp.github.io/FSharp.Data/) を参照してください。
+このガイドでは、f# 3.0 用に作成された、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](https://fsharp.github.io/FSharp.Data/) を参照してください。
 
 > [!NOTE]
 API リファレンス リンクで msdn を実行します。  docs.microsoft.com API リファレンスは完全ではありません。
@@ -96,7 +96,7 @@ open Microsoft.FSharp.Linq
 
 #### <a name="to-set-up-the-type-provider-from-a-direct-database-connection"></a>データベースに直接接続から型プロバイダーを設定するには
 
-型プロバイダーを使用して SQL データベースの照会に使用できる型を作成するために必要なコードの 2 つの重要な線があります。 最初に、型プロバイダーがインスタンス化します。 これを行うには、作成、型の省略形の外観、`SqlDataConnection`静的ジェネリック パラメーターを使用します。 `SqlDataConnection`SQL 型のプロバイダーと混同しないで`SqlConnection`となる型 ADO.NET プログラミングで使用します。 、に接続するデータベースが存在して接続文字列がある場合は、次のコードを使用して、型プロバイダーを呼び出します。 指定された文字列の例の独自の接続文字列を置き換えてください。 たとえば、MYSERVER とデータベース インスタンスはインスタンス、データベース名が MyDatabase であり、データベース、接続文字列にアクセスする Windows 認証を使用する場合は、サーバーとなる場合は、次のコード例で指定します。
+型プロバイダーを使用して SQL データベースの照会に使用できる型を作成するために必要なコードの 2 つの重要な線があります。 最初に、型プロバイダーがインスタンス化します。 これを行うには、作成、型の省略形の外観、`SqlDataConnection`静的ジェネリック パラメーターを使用します。 `SqlDataConnection` SQL 型のプロバイダーと混同しないで`SqlConnection`となる型 ADO.NET プログラミングで使用します。 、に接続するデータベースが存在して接続文字列がある場合は、次のコードを使用して、型プロバイダーを呼び出します。 指定された文字列の例の独自の接続文字列を置き換えてください。 たとえば、MYSERVER とデータベース インスタンスはインスタンス、データベース名が MyDatabase であり、データベース、接続文字列にアクセスする Windows 認証を使用する場合は、サーバーとなる場合は、次のコード例で指定します。
 
 ```fsharp
 type dbSchema = SqlDataConnection<"Data Source=MYSERVER\INSTANCE;Initial Catalog=MyDatabase;Integrated Security=SSPI;">
@@ -449,7 +449,7 @@ INSERT INTO Table3 (Id, Name, Data)
 ```
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [型プロバイダー](index.md)
 
 [SqlDataConnection 型プロバイダー](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqldataconnection-type-provider-%5bfsharp%5d)

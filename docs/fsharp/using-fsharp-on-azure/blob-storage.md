@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: c5b74a4f-dcd1-4849-930c-904b6c8a04e1
-ms.openlocfilehash: 9011bdceabd1b5e0541ecb94f3e812871688025b
-ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
+ms.openlocfilehash: 5be948e100c496bc6613f1fdfb826ece5de6df8e
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>F# を使用して Azure Blob ストレージの概要します。 #
 
@@ -236,7 +236,7 @@ Blob データの暗号化の詳細については、「[暗号化を blob ス�
 これで、Blob ストレージの基本を学習した次の詳細については、これらのリンク。
 
 ### <a name="tools"></a>ツール
-- [F# AzureStorageTypeProvider](http://fsprojects.github.io/AzureStorageTypeProvider/)の f# 型プロバイダー Blob、テーブルおよびキューの Azure ストレージの資産を探索し、それらに対する CRUD 操作を簡単に適用するために使用できます。
+- [F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)の f# 型プロバイダー Blob、テーブルおよびキューの Azure ストレージの資産を探索し、それらに対する CRUD 操作を簡単に適用するために使用できます。
 - [FSharp.Azure.Storage](https://github.com/fsprojects/FSharp.Azure.Storage)用 Microsoft Azure テーブル ストレージ サービスを使用して、f# API
 - [Microsoft Azure ストレージ エクスプ ローラー (MASE)](/azure/vs-azure-tools-storage-manage-with-storage-explorer)は free、スタンドアロンのアプリから Microsoft Windows、OS X、Linux で、Azure ストレージのデータを視覚的に処理することができます。
 
@@ -251,4 +251,4 @@ Blob データの暗号化の詳細については、「[暗号化を blob ス�
 - [Windows 上の AzCopy コマンド ライン ユーティリティでのデータを転送します。](/azure/storage/common/storage-use-azcopy)
 - [Linux 上の AzCopy コマンド ライン ユーティリティでのデータを転送します。](/azure/storage/common/storage-use-azcopy-linux)
 - [Azure ストレージ接続文字列を構成します。](/azure/storage/common/storage-configure-connection-string)
-- [Azure ストレージ チーム ブログ](http://blogs.msdn.com/b/windowsazurestorage/)
+- [Azure ストレージ チーム ブログ](https://blogs.msdn.microsoft.com/windowsazurestorage/)

@@ -1,23 +1,25 @@
 ---
 title: "Visual Basic の新機能"
-ms.date: 04/27/2017
+ms.date: 02/15/2018
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: VB.StartPage.WhatsNew
+f1_keywords:
+- VB.StartPage.WhatsNew
 helpviewer_keywords:
 - new features, Visual Basic
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-caps.latest.revision: "145"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d26eb23aae6e5baec98e27a246d06af6b78e0802
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 4df9a34e078de9daeff85c894afbbf4d60501f6b
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
 
@@ -25,10 +27,13 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="current-version"></a>現在のバージョン
 
-Visual Basic / Visual Studio .NET 2017   
-新しい機能については、「[Visual Basic 2017](#visual-basic-2017)」を参照してください。
+Visual Basic 15.5   
+新しい機能については、「[Visual Basic 15.5](#visual-basic-155)」を参照してください。
 
 ## <a name="previous-versions"></a>以前のバージョン
+
+Visual Basic 15.3   
+新しい機能については、「[Visual Basic 15.3](#visual-basic-153)」を参照してください。
 
 Visual Basic / Visual Studio .NET 2015   
 新しい機能については、「[Visual Basic 14](#visual-basic-14)」を参照してください。
@@ -53,6 +58,41 @@ Visual Basic / Visual Studio .NET 2003
 
 Visual Basic / Visual Studio .NET 2002   
 Visual Basic .NET の最初のリリース
+
+## <a name="visual-basic-155"></a>Visual Basic 15.5
+
+[末尾以外の名前付き引数](../programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md#mixing-arguments-by-position-and-by-name)
+
+Visual Basic 15.3 以前のバージョンでは、位置と名前の両方による引数がメソッド呼び出しに含まれている場合、位置引数を名前付き引数より前に配置する必要がありました。 Visual Basic 15.5 以降では、最後の位置引数までのすべての引数が正しい位置にある限り、位置引数と名前付き引数を任意の順序で配置できます。 これは、コードを読みやすくするために名前付き引数を使用する場合に特に便利です。
+
+たとえば、次のメソッド呼び出しには、名前付き引数の間に 2 つの位置引数があります。 名前付き引数では、値 19 が年齢を表していることが明確になります。
+
+```vb
+StudentInfo.Display("Mary", age:=19, #9/21/1998#)
+```
+
+**先頭の 16 進数/2 進数/8 進数の区切り記号**
+
+Visual Basic 2017 では、桁区切り記号としてアンダースコア文字 (`_`) のサポートが追加されました。 Visual Basic 15.5 以降では、プレフィックスと 16 進数、2 進数、または 8 進数の間に先頭の区切り記号としてアンダースコア文字を使用することができます。 次の例では、3,271,948,384 を 16 進数として定義するために先頭の桁区切り記号を使用します。
+
+```vb
+Dim number As Integer = &H_C305_F860
+``` 
+アンダースコア文字を先頭の区切り記号として使用するには、以下の要素を Visual Basic プロジェクト (*.vbproj) ファイルに追加する必要があります。
+
+```xml
+<PropertyGroup>
+  <LangVersion>15.5</LangVersion>
+</PropertyGroup>
+```
+
+## <a name="visual-basic-153"></a>Visual Basic 15.3
+
+[名前付きタプルの推論](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
+
+変数からタプル要素の値を割り当てる場合、Visual Basic は対応する変数名からタプル要素の名前を推論します。ユーザーがタプル要素に明示的に名前を付ける必要はありません。 以下の例では、推論を使用して、`state`、`stateName`、`capital` という 3 つの名前付き要素のタプルを作成します。
+
+[!code-vb[Inferred tuple names](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
 ## <a name="visual-basic-2017"></a>Visual Basic 2017
 

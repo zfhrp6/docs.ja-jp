@@ -2,11 +2,13 @@
 title: "EscapeQuotes が True に設定されている場合、二重引用符は有効な区切り記号でないため、区切り記号で分けられたフィールドを読み取れません"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrTextFieldParser_IllegalDelimiter
+f1_keywords:
+- vbrTextFieldParser_IllegalDelimiter
 ms.assetid: ab8a0c3a-b89c-4617-9e31-7e81f5dca433
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 1b5ee30da2146d6fa9841a80cc0e841bd737961f

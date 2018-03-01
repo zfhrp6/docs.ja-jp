@@ -10,16 +10,16 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 25697ef6-465e-4248-9de5-1d199d4a8b59
-ms.openlocfilehash: 68462a24a9fbd1ee671d7e335f2774adf3476750
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f721b5b378bf70fb594cad66bd90bd96a0320ee2
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="type-providers"></a>型プロバイダー
 
 > [!NOTE]
-このガイドは、F# 3.0 から記述され、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](http://fsharp.github.io/FSharp.Data/) を参照してください。
+このガイドは、F# 3.0 から記述され、更新されます。  最新のクロスプラットフォームの型プロバイダーについては、[FSharp.Data](https://fsharp.github.io/FSharp.Data/) を参照してください。
 
 F# 型プロバイダーは、プログラムで使用する型、プロパティ、およびメソッドを指定するコンポーネントです。 型プロバイダーは、インフォメーションリッチ プログラミングに対する F# 3.0 のサポートにおいて重要な部分です。 インフォメーションリッチ プログラミングで重要になるのは、インターネットおよび最新エンタープライズ環境にある各種の情報ソースの利用に対する障壁を取り除くことです。 情報ソースをプログラムに含めることに対する 1 つの大きな障壁は、プログラミング言語環境で使用できるように情報を型、プロパティ、およびメソッドとして表す必要があることです。 これらの型を手動で記述するにはかなりの時間がかかり、保守も困難です。 一般的な代替策は、プロジェクトにファイルを追加するコード ジェネレーターを使用することです。ただし、コード生成の従来の型は、F# でサポートされているプログラミングの探索モードに統合されません。生成されたコードは、サービス参照が調整されるたびに置き換える必要があるためです。
 
@@ -47,7 +47,7 @@ F# には、インターネットやエンタープライズ データ サービ
 |[型プロバイダーのセキュリティ](type-provider-security.md)|型プロバイダーを開発する際のセキュリティ上の考慮事項について説明します。|
 |[型プロバイダーのトラブルシューティング](troubleshooting-type-providers.md)|型プロバイダーを使用する場合に生じる可能性のある一般的な問題について説明し、ソリューションを提案します。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [F# 言語リファレンス](../../language-reference/index.md)
 
 [Visual F#](../../index.md)

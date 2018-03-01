@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 8db75596-19a9-4eda-b20d-a12d517c8cc1
-ms.openlocfilehash: 944bbbba6a26634ace269d86cbbdde9ef9de7bcd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 818bf50507a88e1d765da8d0505ed8da4790b71f
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>F# では、Visual Studio での概要します。
 
-Visual Studio IDE では、f# および Visual f# ツールがサポートされます。  作業を開始するには[Visual Studio のダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs)まだ行っていない場合は、します。  この記事の内容が Visual Studio 2017 Community Edition を使用しますが、任意のバージョンの F# で使用することができます。
+Visual Studio IDE では、f# および Visual f# ツールがサポートされます。  作業を開始するには[Visual Studio のダウンロード](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)まだ行っていない場合は、します。  この記事の内容が Visual Studio 2017 Community Edition を使用しますが、任意のバージョンの F# で使用することができます。
 
 ## <a name="installing-f"></a>F# をインストールします。 #
 
@@ -26,7 +26,7 @@ Visual Studio IDE では、f# および Visual f# ツールがサポートされ
 
 次に、ワークロードの一覧を表示されます。 F# では、次のワークロードのを通じてにインストールできます。
 
-|ワークロード|操作|
+|ワークロード|アクション|
 |--------|------|
 | .NET Core クロスプラットフォームの開発 | 既定では、f# のアクションがインストールされていません |
 | ASP.NET と Web 開発 | 既定では、f# のアクションがインストールされていません |
@@ -132,7 +132,7 @@ val it : bool = true
 
 これは、f# Interactive で行うことができますに glimpse のみです。 詳細については、チェック アウト[f# による対話型プログラミング](../tutorials/fsharp-interactive/index.md)です。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 まだの場合はチェック アウト、[ツアーの f#](../tour.md)、f# 言語のコア機能の一部をカバーします。  一部の f# では、機能の概要を知るされ Visual Studio にコピーし、実行できる十分なコード サンプルを入力します。  使用できますが、いくつかの優れた外部リソースからの[f# ガイド](../index.md)です。
 
