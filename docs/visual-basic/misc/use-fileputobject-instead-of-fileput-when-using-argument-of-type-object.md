@@ -2,11 +2,13 @@
 title: "使用して &#39;FilePutObject &#39;代わりに &#39;です。FilePut &#39;型 &#39; オブジェクト &#39; の引数を使用する場合"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrUseFilePutObject
+f1_keywords:
+- vbrUseFilePutObject
 ms.assetid: d207b9b7-5898-4c13-8b03-9feefac5f726
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5612c2bd4dc08f767643d2cd865a2ba1a8210c15
