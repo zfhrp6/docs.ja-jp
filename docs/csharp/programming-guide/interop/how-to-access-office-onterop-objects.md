@@ -2,7 +2,8 @@
 title: "方法: Visual C# の機能を使用して Office 相互運用オブジェクトにアクセスする (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - optional parameters [C#], Office programming
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 25e83195d5f0d8a49e402a5a32e61940960b052a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 751e8240c9385f516315ff3b53221d1e1348ae58
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>方法: Visual C# の機能を使用して Office 相互運用オブジェクトにアクセスする (C# プログラミング ガイド)
 Visual C# には、Office API オブジェクトへのアクセスを容易にする機能があります。 新機能は、名前付き引数と省略可能な引数、`dynamic` と呼ばれる新しい型、値パラメーターの場合と同様に COM メソッドの参照パラメーターに引数を渡す機能などです。  
@@ -46,7 +47,7 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
 6.  **[名前]** フィールドに、プロジェクトの名前を入力します。  
   
-7.  **[OK]** をクリックします。  
+7.  **[OK]**をクリックします。  
   
      **ソリューション エクスプローラー**に新しいプロジェクトが表示されます。  
   
@@ -56,7 +57,7 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
 2.  **[アセンブリ]** ページの **[コンポーネント名]** 一覧で **[Microsoft.Office.Interop.Word]** を選択し、Ctrl キーを押しながら **[Microsoft.Office.Interop.Excel]** を選択します。  アセンブリが表示されない場合は、アセンブリがインストールされ、表示されることの確認が必要になることがあります (「[方法: Office のプライマリ相互運用機能アセンブリをインストールする](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)」を参照)。  
   
-3.  **[OK]** をクリックします。  
+3.  **[OK]**をクリックします。  
   
 ### <a name="to-add-necessary-using-directives"></a>ディレクティブを使用して必要なものを追加するには  
   
@@ -80,7 +81,7 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
 1.  次のメソッドを `Program` クラスに追加して、Excel ワークシートを設定します。  
   
-     [Add](http://go.microsoft.com/fwlink/?LinkId=210910) メソッドには、特定のテンプレートを指定する省略可能なパラメーターがあります。 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] の新機能であるオプションのパラメーターでは、パラメーターの既定値を使用する場合は、そのパラメーターの引数を省略することができます。 次のコードで引数が渡されないため、`Add` は、既定のテンプレートを使用して、新しいブックを作成します。 以前のバージョンの C# では、同等のステートメントには、プレースホルダーの引数 `ExcelApp.Workbooks.Add(Type.Missing)` が必要です。  
+     [Add](https://msdn.microsoft.com/library/microsoft.office.interop.excel.workbooks.add.aspx) メソッドには、特定のテンプレートを指定する省略可能なパラメーターがあります。 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] の新機能であるオプションのパラメーターでは、パラメーターの既定値を使用する場合は、そのパラメーターの引数を省略することができます。 次のコードで引数が渡されないため、`Add` は、既定のテンプレートを使用して、新しいブックを作成します。 以前のバージョンの C# では、同等のステートメントには、プレースホルダーの引数 `ExcelApp.Workbooks.Add(Type.Missing)` が必要です。  
   
      [!code-csharp[csProgGuideOfficeHowTo#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_4.cs)]  
   
@@ -96,11 +97,11 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
      [!code-csharp[csProgGuideOfficeHowTo#13](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_7.cs)]  
   
-     C# の以前のバージョンでは、`ExcelApp.Columns[1]` が `Object` を返し、`AutoFit` が Excel [Range](http://go.microsoft.com/fwlink/?LinkId=210911) メソッドであるため、これらの操作の明示的なキャストが必要です。 次の行にキャストを示します。  
+     C# の以前のバージョンでは、`ExcelApp.Columns[1]` が `Object` を返し、`AutoFit` が Excel [Range](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.aspx) メソッドであるため、これらの操作の明示的なキャストが必要です。 次の行にキャストを示します。  
   
      [!code-csharp[csProgGuideOfficeHowTo#14](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_8.cs)]  
   
-     [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] 以降のバージョンでは、アセンブリが [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) コンパイラ オプションで参照される場合、または同等に、Excel の **[相互運用機能型の埋め込み]** プロパティが true に設定されている場合は、返される `Object` が `dynamic` に自動的に変換されます。 このプロパティの既定値は true です。  
+     [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)]以降のバージョンでは、アセンブリが [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) コンパイラ オプションで参照される場合、または同等に、Excel の **[相互運用機能型の埋め込み]** プロパティが true に設定されている場合は、返される `Object` が `dynamic` に自動的に変換されます。 このプロパティの既定値は true です。  
   
 ### <a name="to-run-the-project"></a>プロジェクトを実行するには  
   
@@ -116,7 +117,7 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
 1.  [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] およびそれ以降のバージョンで Office プログラミングを強化するその他の方法を説明するために、次のコードでは、Word アプリケーションを開き、Excel ワークシートにリンクするアイコンを作成します。  
   
-     この手順の後半で提供されている `CreateIconInWordDoc` メソッドを `Program` クラスに貼り付けます。 [Add](http://go.microsoft.com/fwlink/?LinkId=210937) メソッドと [PasteSpecial](http://go.microsoft.com/fwlink/?LinkId=147099) メソッドの呼び出しに伴う複雑さが、`CreateIconInWordDoc` の名前付き引数と省略可能な引数によって軽減されます。 これらの呼び出しによって、[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] で導入された、参照パラメーターを持つ COM メソッドの呼び出しを簡略化する 2 つの他の新しい機能が組み込まれます。 第一に、値パラメーターの場合と同様に参照パラメーターに引数を渡すことができます。 つまり、参照パラメーターごとに変数を作成することなく値を直接渡すことができます。 コンパイラは引数の値を保持する一時変数を生成し、呼び出しから戻るときに変数を破棄します。 第二に、引数リスト内の `ref` キーワードを省略できます。  
+     この手順の後半で提供されている `CreateIconInWordDoc` メソッドを `Program` クラスに貼り付けます。 [Add](https://msdn.microsoft.com/library/microsoft.office.interop.word.documents.add.aspx) メソッドと [PasteSpecial](https://msdn.microsoft.com/library/microsoft.office.interop.word.selection.pastespecial.aspx) メソッドの呼び出しに伴う複雑さが、`CreateIconInWordDoc` の名前付き引数と省略可能な引数によって軽減されます。 これらの呼び出しによって、[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] で導入された、参照パラメーターを持つ COM メソッドの呼び出しを簡略化する 2 つの他の新しい機能が組み込まれます。 第一に、値パラメーターの場合と同様に参照パラメーターに引数を渡すことができます。 つまり、参照パラメーターごとに変数を作成することなく値を直接渡すことができます。 コンパイラは引数の値を保持する一時変数を生成し、呼び出しから戻るときに変数を破棄します。 第二に、引数リスト内の `ref` キーワードを省略できます。  
   
      `Add` メソッドには 4 つの参照パラメーターがあり、これらはすべてオプションです。 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] 以降のバージョンでは、既定値を使用する場合は、任意またはすべてのパラメーターの引数を省略できます。 [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] 以前のバージョンでは、各パラメーターの引数を提供する必要があり、パラメーターが参照パラメーターであるため、引数は変数である必要があります。  
   
@@ -162,11 +163,11 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
      [!code-csharp[csProgGuideOfficeHowTo#15](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_14.cs)]  
   
-     [AutoFormat](http://go.microsoft.com/fwlink/?LinkId=210948) メソッドには、7 つの値パラメーターがあり、これらはすべて省略可能です。 名前付き引数と省略可能な引数を使用すると、一部またはすべてのパラメーターに引数を指定することができます。引数を指定しないこともできます。 前のステートメントでは、1 つのパラメーター `Format` にのみ引数が指定されています。 `Format` はパラメーター リストの最初のパラメーターであるため、パラメーター名を指定する必要はありません。 ただし、次のコードに示すように、パラメーター名が含まれている場合、ステートメントがわかりやすい場合があります。  
+     [AutoFormat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.autoformat.aspx) メソッドには、7 つの値パラメーターがあり、これらはすべて省略可能です。 名前付き引数と省略可能な引数を使用すると、一部またはすべてのパラメーターに引数を指定することができます。引数を指定しないこともできます。 前のステートメントでは、1 つのパラメーター `Format` にのみ引数が指定されています。 `Format` はパラメーター リストの最初のパラメーターであるため、パラメーター名を指定する必要はありません。 ただし、次のコードに示すように、パラメーター名が含まれている場合、ステートメントがわかりやすい場合があります。  
   
      [!code-csharp[csProgGuideOfficeHowTo#16](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_15.cs)]  
   
-2.  Ctrl + F5 キーを押して結果を表示します。 その他の形式は、[XlRangeAutoFormat](http://go.microsoft.com/fwlink/?LinkId=210967) 列挙型のページに掲載されています。  
+2.  Ctrl + F5 キーを押して結果を表示します。 その他の形式は、[XlRangeAutoFormat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.xlrangeautoformat.aspx) 列挙型のページに掲載されています。  
   
 3.  手順 1 のステートメントと [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] 以前のバージョンで必要な引数が示されている次のコードを比較します。  
   
@@ -177,7 +178,7 @@ Visual C# には、Office API オブジェクトへのアクセスを容易に�
   
  [!code-csharp[csProgGuideOfficeHowTo#18](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_17.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Type.Missing?displayProperty=nameWithType>  
  [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
  [dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)  

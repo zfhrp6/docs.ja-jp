@@ -9,18 +9,21 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: d79fb295-ebc7-438d-ba1b-05be7d534834
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8c5cfcc9f35e4a07e9426a4dd24c1e2f04985f16
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b0d4589dc73b4effeff553e5b7bf5562a7602c2d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>ドキュメントに埋め込まれたスタイル シート ディレクティブ
-既存の XML に `<?xml:stylesheet?>` というスタイル シート ディレクティブが含まれていることがあります。 Microsoft Internet Explorer では、これを受け付ける代わりに、`<?xml-stylesheet?>`構文です。 次のように `<?xml:stylesheet?>` ディレクティブが含まれている XML データを XML ドキュメント オブジェクト モデル (DOM) に読み込もうとすると、例外がスローされます。  
+既存の XML に `<?xml:stylesheet?>` というスタイル シート ディレクティブが含まれていることがあります。 Microsoft Internet Explorer は、これを `<?xml-stylesheet?>` 構文に代わるものとして受け入れます。 次のように `<?xml:stylesheet?>` ディレクティブが含まれている XML データを XML ドキュメント オブジェクト モデル (DOM) に読み込もうとすると、例外がスローされます。  
   
 ```xml  
 <?xml version="1.0" ?>  
@@ -31,9 +34,9 @@ ms.lasthandoff: 10/18/2017
 </root>  
 ```  
   
- これは、ために発生、`<?xml:stylesheet?>`が無効と見なされます**ProcessingInstruction** DOM に どの**ProcessingInstruction**、namespaces in XML 』 仕様ではなく修飾名 (Qname)、コロンを含まない名前 (NCNames) を指定できますのみです。  
+ 例外が発生するのは、`<?xml:stylesheet?>` が DOM に対する無効な **ProcessingInstruction** と見なされるからです。 『Namespaces in XML』仕様によれば、**ProcessingInstruction** は、QNames (修飾名) ではなく、NCNames (コロンが含まれない名前) にする必要があります。  
   
- In XML 』 仕様、効果が得名前空間のセクション 6、**ロード**と**LoadXml**に準拠しているメソッドの仕様を文書内にあります。  
+ 『Namespaces in XML』仕様書のセクション 6 によると、**Load** メソッドと **LoadXml** メソッドをこの仕様に準拠させた場合の影響として、ドキュメントには次の規則が適用されることになります。  
   
 -   すべての要素型と属性名は、0 個または 1 個のコロンを含みます。  
   
@@ -43,5 +46,5 @@ ms.lasthandoff: 10/18/2017
   
  www.w3.org/TR/xml-stylesheet で公開されている W3C (World Wide Web Consortium) 勧告『Associating Style Sheets with XML documents Version 1.0』によれば、XSLT スタイル シートを XML ドキュメントに関連付ける処理命令は、コロンをダッシュに置き換えた `<?xml-stylesheet?>` です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

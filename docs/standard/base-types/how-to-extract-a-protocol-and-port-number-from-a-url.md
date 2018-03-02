@@ -19,21 +19,24 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: ab7f62b3-6d2c-4efb-8ac6-28600df5fd5c
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 10ab05ac8b24c0658be2f27809137c6b0bd4834f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 62931273acd41768d131c08510e14ff187d64296
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-extract-a-protocol-and-port-number-from-a-url"></a>方法 : URL からプロトコルとポート番号を抽出する
 次の例では、URL からプロトコルとポート番号を抽出します。  
   
 ## <a name="example"></a>例  
- この例では、<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>プロトコルを返すメソッドに続けてコロンの後にポート番号。  
+ 例では <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドを使用して、後にコロンとポート番号が続くプロトコルを返します。  
   
  [!code-csharp[RegularExpressions.Examples.Protocol#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/cs/Example.cs#1)]
  [!code-vb[RegularExpressions.Examples.Protocol#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/vb/Example.vb#1)]  
@@ -43,18 +46,18 @@ ms.lasthandoff: 10/18/2017
 |パターン|説明|  
 |-------------|-----------------|  
 |`^`|文字列の先頭から照合を開始します。|  
-|`(?<proto>\w+)`|1 つ以上の単語文字に一致します。 このグループの名前を付けます`proto`です。|  
+|`(?<proto>\w+)`|1 つ以上の単語文字に一致します。 このグループに `proto` と名前を付けます。|  
 |`://`|後に 2 つのスラッシュ記号が続くコロンと一致します。|  
 |`[^/]+?`|スラッシュ記号以外の任意の文字の 1 回以上の (ただし、可能な限り少ない) 出現と一致します。|  
-|`(?<port>:\d+)?`|後に 1 桁以上の文字が続くコロンの 0 回または 1 回の出現と一致します。 このグループの名前を付けます`port`です。|  
+|`(?<port>:\d+)?`|後に 1 桁以上の文字が続くコロンの 0 回または 1 回の出現と一致します。 このグループに `port` と名前を付けます。|  
 |`/`|スラッシュ記号に一致します。|  
   
- <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>メソッドを展開、`${proto}${port}`置換シーケンスは、正規表現パターン内でキャプチャされた 2 つの名前付きグループの値を連結します。 代わりに使用する明示的にによって返されるコレクション オブジェクトから取得された文字列を連結するのには、<xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>プロパティです。  
+ <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドは、正規表現パターンでキャプチャされた 2 つの名前付きグループの値を連結する、`${proto}${port}` 置換シーケンスを展開します。 これは、<xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> プロパティによって返されたコレクション オブジェクトから取得した文字列を明示的に連結するための便利な代替です。  
   
- この例では、 <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> 2 つの代替文字列を持つメソッド`${proto}`と`${port}`、出力文字列に、キャプチャされたグループを含める。 キャプチャされたグループを取得するにはパターン一致から<xref:System.Text.RegularExpressions.GroupCollection>オブジェクトの代わりに、コードを次に示します。  
+ 例では、<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドを 2 つの置換 `${proto}` と `${port}` とともに使用して、キャプチャされたグループを出力文字列に含めます。 代わりに、次のコードに示されているように、一致の <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトから、キャプチャされたグループを取得することができます。  
   
  [!code-csharp[RegularExpressions.Examples.Protocol#2](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/cs/example2.cs#2)]
  [!code-vb[RegularExpressions.Examples.Protocol#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Protocol/vb/example2.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET の正規表現](../../../docs/standard/base-types/regular-expressions.md)

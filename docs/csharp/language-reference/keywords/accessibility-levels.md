@@ -2,7 +2,8 @@
 title: "アクセシビリティ レベル (C# リファレンス)"
 ms.date: 12/06/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - access modifiers [C#], accessibility levels
@@ -10,24 +11,24 @@ helpviewer_keywords:
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 816ee0fab3fae21bff2ffbfcbfe39d04dcf95025
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: fed7d6d0eb3eda4d8d2e1847259dd8d23700d3e7
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="accessibility-levels-c-reference"></a>アクセシビリティ レベル (C# リファレンス)
 
-以下に示したのは、メンバーに適用されるアクセシビリティ レベルの宣言です。[public](../../../csharp/language-reference/keywords/public.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、[private](../../../csharp/language-reference/keywords/private.md) の各アクセス修飾子を使用して指定します。  
+以下に示したのは、メンバーに適用されるアクセシビリティ レベルの宣言です。`public`、`protected`、`internal`、`private` の各アクセス修飾子を使用して指定します。  
   
 |アクセシビリティの宣言|説明|  
 |----------------------------|-------------|  
-|`public`|アクセスは無制限です。|  
-|`protected`|コンテナーであるクラスまたはそこから派生した型にアクセスが限定されます。|  
-|`internal`|アクセスは現在のアセンブリに限定されます。|  
-|`protected internal`|現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが限定されます。|  
-|`private`|コンテナーである型にアクセスが限定されます。|  
-|`private protected`|現在のアセンブリ内の、コンテナーであるクラス、またはコンテナーであるクラスから派生した型にアクセスが制限されます。 C# 7.2 以降で使用可能です。 |  
+|[`public`](public.md)|アクセスは無制限です。|  
+|[`protected`](protected.md)|コンテナーであるクラスまたはそこから派生した型にアクセスが限定されます。|  
+|[`internal`](internal.md)|アクセスは現在のアセンブリに限定されます。|  
+|[`protected internal`](protected-internal.md)|現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが限定されます。|  
+|[`private`](private.md)|コンテナーである型にアクセスが限定されます。|  
+|[`private protected`](private-protected.md)|現在のアセンブリ内の、コンテナーであるクラス、またはコンテナーであるクラスから派生した型にアクセスが制限されます。 C# 7.2 以降で使用可能です。 |  
   
  `protected internal` または `private protected` の組み合わせを使う場合を除き、1 つのメンバーまたは 1 つの型に指定できるアクセス修飾子は 1 つだけです。  
   
@@ -51,7 +52,7 @@ ms.lasthandoff: 12/09/2017
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  

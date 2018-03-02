@@ -12,15 +12,18 @@ helpviewer_keywords:
 - garbage collection, intrusiveness
 - garbage collection, latency modes
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
-caps.latest.revision: "41"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 439fdd8fe78a0c0f0fda4ac7e759a4a780bb9b58
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d0ac0db376ad7cd4aa139ed0eb065a5ba33836c8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="latency-modes"></a>待機モード
 オブジェクトを再利用するには、ガベージ コレクターはアプリケーションで実行中のすべてのスレッドを停止する必要があります。 状況によっては、アプリケーションがデータの取得やコンテンツの表示を行うときなど、重要なときにフル ガベージ コレクションが発生し、パフォーマンスが低下することがあります。 ガベージ コレクターが作業に悪影響を与える度合いを調整するには、<xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> プロパティを <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> 値のいずれかに設定することができます。  
@@ -57,11 +60,11 @@ ms.lasthandoff: 11/21/2017
   
 -   割り当てられる可能性のあるスレッドに注意します。 <xref:System.Runtime.GCSettings.LatencyMode%2A> プロパティの設定はプロセス全体に適用されるため、割り当てられた他のスレッドで <xref:System.OutOfMemoryException> が発生する可能性があります。  
   
--   制約された実行領域で、待機時間の短いコードを折り返す (詳細については、次を参照してください。[制約された実行領域](../../../docs/framework/performance/constrained-execution-regions.md))。  
+-   待機時間の短いコードを制約された実行領域にラップします (詳細については、「[制約された実行領域](../../../docs/framework/performance/constrained-execution-regions.md)」を参照してください)。  
   
 -   待機時間を短くする期間中でも、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%29?displayProperty=nameWithType> メソッドを呼び出せばジェネレーション 2 のガベージ コレクションを強制できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.GC?displayProperty=nameWithType>  
  [発生したコレクション](../../../docs/standard/garbage-collection/induced.md)  
  [ガベージ コレクション](../../../docs/standard/garbage-collection/index.md)

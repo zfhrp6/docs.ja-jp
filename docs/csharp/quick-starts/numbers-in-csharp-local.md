@@ -1,5 +1,5 @@
 ---
-title: "クイック スタート - C# における数値 - C# ガイド"
+title: "C# における数値のチュートリアル - C# ローカル クイックスタート"
 description: "数値型とそのプロパティ、およびメソッドを詳しく見ていくことで C# について学習します。"
 author: billwagner
 ms.author: wiwagn
@@ -9,17 +9,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 9a7f061de23c632560f40ac5eb46defd4537da16
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 9a8b28d840d3c8ef63611e9f584e5984e1dcb1a3
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="numbers-in-c-quick-start"></a>C# における数値クイック スタート #
+# <a name="numbers-in-c-quickstart"></a>C# における数値クイックスタート
 
-このクイック スタートでは、対話形式で C# の数値型について説明します。 少量のコードを記述したら、そのコードをコンパイルして実行します。 このクイック スタートには、C# の数値と算術演算に関する一連のレッスンが含まれています。 これらのレッスンでは、C# 言語の基本を説明します。
+このクイックスタートでは、対話形式で C# の数値型について説明します。 少量のコードを記述したら、そのコードをコンパイルして実行します。 このクイックスタートには、C# の数値と算術演算に関する一連のレッスンが含まれています。 これらのレッスンでは、C# 言語の基本を説明します。
 
-このクイック スタートでは、開発用に使用できるマシンがあることを想定しています。 Mac、PC、または Linux 上でローカルの開発環境を設定する手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 使用するコマンドの概要を手短に確認するには、[ローカルでのクイック スタートの概要](local-environment.md)と詳細へのリンクをご覧ください。
+このクイックスタートでは、開発用に使用できるマシンがあることを想定しています。 Mac、PC、または Linux 上でローカルの開発環境を設定する手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 使用するコマンドの概要を手短に確認するには、[ローカルでのクイックスタートの概要](local-environment.md)と詳細へのリンクをご覧ください。
 
 ## <a name="explore-integer-math"></a>整数の演算の確認
 
@@ -319,7 +319,7 @@ decimal 型を使用した演算では、小数点の右側の桁数がより多
 
 お好みで他の数式を試してみてください。 
 
-これで "C# の数値" に関するクイック スタートは終了です。 続けて独自の開発環境で[分岐とループ](branches-and-loops-local.md)のクイック スタートに進むことができます。
+これで "C# の数値" に関するクイックスタートは終了です。 続けて独自の開発環境で[分岐とループ](branches-and-loops-local.md)のクイックスタートに進むことができます。
 
 C# の数値の詳細については、次のトピックで学習できます。
 

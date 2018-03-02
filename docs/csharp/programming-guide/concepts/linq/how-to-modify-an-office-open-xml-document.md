@@ -5,22 +5,23 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 481e0751c45054a9f99b8302ed3c2d12abc052ea
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a6bfa60cce332deef2a72da836f96dbe37e65d2a
+ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="how-to-modify-an-office-open-xml-document-c"></a>方法: Office Open XML ドキュメントを変更する (C#)
 このトピックでは、Office Open XML ドキュメントを開き、それを変更して保存する例について説明します。  
   
- Office Open XML の詳細については、[www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573) を参照してください。  
+ Office Open XML の詳細については、[Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) と [www.ericwhite.com](http://ericwhite.com/) を参照してください。  
   
 ## <a name="example"></a>例  
  この例では、ドキュメント内の最初の段落要素を検索します。 次に、段落からテキストを取得し、段落内のテキスト ランをすべて削除します。 また、大文字に変換された最初の段落のテキストから構成される新しいテキスト ランを作成します。 最後に、変更した XML を Open XML パッケージにシリアル化して閉じます。  
@@ -155,5 +156,5 @@ class Program
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [高度なクエリ手法 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

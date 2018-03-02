@@ -2,7 +2,8 @@
 title: "ラムダ式 (C# プログラミング ガイド)"
 ms.date: 03/03/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - lambda expressions [C#]
@@ -11,14 +12,14 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-caps.latest.revision: "64"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 9127cc5404fb85356f01cac26aa7b03a8ccd70da
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: df59647b803bff448a801374a325f07e4903a160
+ms.sourcegitcommit: 22a48b64a0150a60b00b4fc4d8c62cde7f1670c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>ラムダ式 (C# プログラミング ガイド)
 ラムダ式は、 [デリゲート](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) 型または [式ツリー](../../../csharp/programming-guide/delegates/using-delegates.md) 型を作成するために使用できる [匿名関数](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b) です。 ラムダ式を使用すると、引数として渡したり関数呼び出しの結果値として返すことができるローカル関数を記述できます。 ラムダ式は、LINQ クエリ式を記述する場合に特に便利です。  
@@ -274,13 +275,13 @@ class Test
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="featured-book-chapter"></a>参考書籍の該当する章  
- 『[C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers (C# 3.0 クックブック (第 3 版): C# 3.0 プログラマ向けの 250 以上のソリューション)](http://go.microsoft.com/fwlink/?LinkId=195369)』の「[Delegates, Events, and Lambda Expressions (デリゲート、イベント、およびラムダ式)](http://go.microsoft.com/fwlink/?LinkId=195395)」  
+ 『[C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers (C# 3.0 クックブック (第 3 版): C# 3.0 プログラマ向けの 250 以上のソリューション)](https://msdn.microsoft.com/library/orm-9780596516109-03.aspx)』の「[Delegates, Events, and Lambda Expressions (デリゲート、イベント、およびラムダ式)](https://msdn.microsoft.com/library/orm-9780596516109-03-09.aspx)」  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [統合言語クエリ (LINQ)](../../../csharp/programming-guide/concepts/linq/index.md)  
  [匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
  [is](../../../csharp/language-reference/keywords/is.md)  
- [式ツリー](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
- [Visual Studio 2008 c# Samples (「LINQ サンプル クエリでファイルと XQuery プログラム)](http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)  
- [Recursive lambda expressions (再帰的なラムダ式)](http://go.microsoft.com/fwlink/?LinkId=112395)
+ [式ツリー](../../../csharp/programming-guide/concepts/expression-trees/index.md)  
+ [Visual Studio 2008 C# Samples (Visual Studio 2008 の C# サンプル) (LINQ サンプル クエリ ファイルと XQuery プログラムを参照してください)](http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)  
+ [Recursive lambda expressions (再帰的なラムダ式)](https://blogs.msdn.microsoft.com/madst/2007/05/11/recursive-lambda-expressions/)

@@ -12,24 +12,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: dd6dc920-b011-418a-b3db-f1580a7d9251
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6970ffc38e900c9b47c58c8ae4b81b9551f5589b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4f3ae0c3db65fe7bda1bcc5bd247fea80a2a9c4e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="creating-new-attributes-for-elements-in-the-dom"></a>DOM の要素に対する新しい属性の作成
-新しい属性を作成するとは異なる属性、ノードではありませんが、要素ノードのプロパティし、に含まれるために、他のノード型の作成、 **XmlAttributeCollection**要素に関連付けられています。 属性を作成して要素に追加するには、次の 2 つの方法があります。  
+属性はノードではなく、要素ノードのプロパティであり、要素に関連付けられた **XmlAttributeCollection** に格納されるため、新しい属性を作成する方法は、他のノード型を作成する方法と異なります。 属性を作成して要素に追加するには、次の 2 つの方法があります。  
   
--   要素ノードを取得しを使用して**SetAttribute**その要素の属性コレクションに属性を追加します。  
+-   要素ノードを取得し、**SetAttribute** を使用してその要素の属性コレクションに属性を追加します。  
   
--   作成、 **XmlAttribute**ノードを使用して、 **CreateAttribute**メソッドは、要素ノードを取得しを使用して**SetAttributeNode**ノードをその属性のコレクションに追加するには要素。  
+-   **CreateAttribute** メソッドを使用して **XmlAttribute** ノードを作成します。要素ノードを取得し、**SetAttributeNode** を使用してその要素の属性コレクションにノードを追加します。  
   
- 次の例を使用して、要素に属性を追加する方法を示しています、 **SetAttribute**メソッドです。  
+ **SetAttribute** メソッドを使用して属性を要素に追加する方法を次の例に示します。  
   
 ```vb  
 Imports System  
@@ -79,7 +82,7 @@ public class Sample
   }  
 ```  
   
- 次の例は、新しい属性を使用して作成する、 **CreateAttribute**メソッドです。 属性の属性コレクションに追加し、表示、 **book**要素を使用して、 **SetAttributeNode**メソッドです。  
+ **CreateAttribute** メソッドを使用して新しい属性を作成する例を次に示します。 属性の作成後、**SetAttributeNode** メソッドを使用して、その属性を **book** 要素の属性コレクションに追加します。  
   
  次の XML を使用します。  
   
@@ -119,17 +122,17 @@ doc.DocumentElement.SetAttributeNode(attr);
 </book>  
 ```  
   
- 完全なコード サンプルはあります<xref:System.Xml.XmlDocument.CreateAttribute%2A>です。  
+ 完全なコード サンプルは <xref:System.Xml.XmlDocument.CreateAttribute%2A> にあります。  
   
- 作成することも、 **XmlAttribute**ノードと使用、 **InsertBefore**または**InsertAfter**コレクション内の適切な位置に配置する方法です。 同じ名前を持つ属性が既に既存の属性のコレクションである場合**XmlAttribute**からコレクションと新しいノードが削除された**XmlAttribute**ノードを挿入します。 同じように実行して、 **SetAttribute**メソッドです。 既存のノードを行うには参照ポイントとして、パラメーターとして、これらのメソッドを使用、 **InsertBefore**と**InsertAfter**です。 新しいノードでの既定値を挿入する位置を示す参照ノードを指定しない場合、 **InsertAfter**メソッドは、コレクションの先頭に新しいノードを挿入します。 既定の位置、 **InsertBefore**参照ノードが指定されていない場合、コレクションの末尾です。  
+ **XmlAttribute** ノードを作成した後、**InsertBefore** メソッドまたは **InsertAfter** メソッドを使用して、コレクション内の適切な位置にそのノードを配置することもできます。 同じ名前の属性が属性コレクションに既に含まれている場合、既存の **XmlAttribute** ノードはコレクションから削除され、新しい **XmlAttribute** ノードが挿入されます。 これは、**SetAttribute** メソッドで行われる処理と同じです。 これらのメソッドは、**InsertBefore** や **InsertAfter** を実行するときに、参照ポイントとなる既存のノードをパラメーターとして受け取ります。 新しいノードの挿入位置を示す参照ノードが指定されていないと、**InsertAfter** メソッドは、既定でコレクションの先頭に新しいノードを挿入します。 参照ノードが指定されなかった場合の **InsertBefore** の既定の挿入位置は、コレクションの末尾です。  
   
- 作成した場合、 **XmlNamedNodeMap**属性の名前を使用して属性を追加することができます、<xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A>です。 詳細については、次を参照してください。 [NamedNodeMaps と NodeLists のノード コレクション](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md)です。  
+ 属性の **XmlNamedNodeMap** を作成し、<xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A> を使用すると、名前を指定して属性を追加できます。 詳細については、「[NamedNodeMaps と NodeLists のノード コレクション](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md)」を参照してください。  
   
 ## <a name="default-attributes"></a>既定の属性  
  既定の属性を持つと宣言された要素を作成すると、既定値を持つ新しい既定の属性が XML ドキュメント オブジェクト モデル (DOM) によって作成され、その要素に割り当てられます。 既定の属性の子ノードも同時に作成されます。  
   
 ## <a name="attribute-child-nodes"></a>属性の子ノード  
- 属性ノードの値は、その属性の子ノードになります。 有効な子ノードの 2 つの種類があります: **XmlText**ノード、および**XmlEntityReference**ノード。 これらは、という意味で子ノードなどのメソッド**FirstChild**と**LastChild**子ノードとして処理します。 属性が子ノードを持つという点は、属性または属性の子ノードを削除するときに重要になります。 詳細については、次を参照してください。 [DOM の要素ノードからの属性の削除](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md)です。  
+ 属性ノードの値は、その属性の子ノードになります。 有効な子ノードの型は **XmlText** ノードと **XmlEntityReference** ノードの 2 つだけです。 これらのノードは、**FirstChild** や **LastChild** のようなメソッドが子ノードとして処理するという意味で、子ノードと見なされます。 属性が子ノードを持つという点は、属性または属性の子ノードを削除するときに重要になります。 詳細については、「[DOM の要素ノードからの属性の削除](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

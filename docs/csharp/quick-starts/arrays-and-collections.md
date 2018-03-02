@@ -1,7 +1,6 @@
 ---
-title: "クイック スタート - コレクション - C# ガイド"
-description: "このクイック スタートでは、リスト コレクションについて確認して C# を学習します。"
-keywords: "C#, 使用開始, チュートリアル, コレクション, リスト"
+title: "コレクションのチュートリアル - C# ローカル クイックスタート"
+description: "このチュートリアルでは、リスト コレクションについて確認して C# を学習します。"
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/13/2017
@@ -10,25 +9,25 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 44e79432c0a1970313cba21778e2bf439f8a4388
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 76b3baf0525c81e5b3058aa2ab6fd4ccd97d1916
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="c-quick-start-collections"></a>C# クイック スタート: コレクション #
+# <a name="c-quickstart-collections"></a>C# クイックスタート: コレクション
 
-このクイック スタートでは、C# 言語の概要と <xref:System.Collections.Generic.List%601> クラスの基本を説明します。
+このクイックスタートでは、C# 言語の概要と <xref:System.Collections.Generic.List%601> クラスの基本を説明します。
 
-このクイック スタートでは、開発用に使用できるマシンがあることを想定しています。 Mac、PC、または Linux 上でローカルの開発環境を設定する手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 使用するコマンドの概要を手短に確認するには、[ローカルでのクイック スタートの概要](local-environment.md)と詳細へのリンクをご覧ください。
+このクイックスタートでは、開発用に使用できるマシンがあることを想定しています。 Mac、PC、または Linux 上でローカルの開発環境を設定する手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 使用するコマンドの概要を手短に確認するには、[ローカルでのクイックスタートの概要](local-environment.md)と詳細へのリンクをご覧ください。
 
-## <a name="a-basic-list-example"></a>基本のリストの例。
+## <a name="a-basic-list-example"></a>基本のリストの例
 
 「**list-quickstart**」という名前のディレクトリを作成します。 それを現在のディレクトリとし、`dotnet new console` を実行します。
 
 > [!NOTE]
 > [10 分でわかる .NET の概要](https://www.microsoft.com/net)を完了したところであれば、先ほど作成した myApp アプリケーションを引き続き使用できます。
- 
+
 好みのエディターで **Program.cs** を開き、既存のコードを次のコードで置き換えます。
 
 ```csharp
@@ -53,16 +52,16 @@ namespace list_quickstart
 
 `<name>` をユーザー名で置き換えます。 **Program.cs** を保存します。 コンソール ウィンドウに「`dotnet run`」と入力して試します。
 
-文字列のリストを作成し、そのリストに 3 つの名前を追加し、それらの名前をすべて大文字で出力しました。 先のクイック スタートで学習した概念を使用して、リストをループしています。
+文字列のリストを作成し、そのリストに 3 つの名前を追加し、それらの名前をすべて大文字で出力しました。 先のクイックスタートで学習した概念を使用して、リストをループしています。
 
 名前を表示するコードは、**補間文字列**を使用します。  `string` の前に文字 `$` を配置すると、文字列宣言に C# コードを埋め込むことができます。 実際の文字列は、生成する値でその C# コードを置き換えます。 この例では、<xref:System.String.ToUpper%2A> メソッドを呼び出したため、文字列は `{name.ToUpper()}` をそれぞれの名前に置き換え、文字を大文字に変換しています。
 
 続けて確認していきましょう。
-    
+
 ## <a name="modify-list-contents"></a>リスト コンテンツを変更する
 
 作成したコレクションは <xref:System.Collections.Generic.List%601> 型を使用します。 この型は、要素のシーケンスを格納します。 要素の型を山かっこの内側で指定します。
-    
+
 この <xref:System.Collections.Generic.List%601> 型の重要な点は増減が可能で、要素を追加したり削除したりできることです。 `Main` メソッドの閉じかっこ `}` の前に、次のコードを追加します。
 
 ```csharp
@@ -77,7 +76,7 @@ foreach (var name in names)
 ```
 
 さらに 2 つの名前をリストの末尾に追加しました。 また、1 つを削除しました。 ファイルを保存し、「`dotnet run`」と入力して試します。
-    
+
 <xref:System.Collections.Generic.List%601> を使用すると、**インデックス**でも個々の項目を参照できます。 リスト名に続く `[` と `]` のトークンの間にインデックスを記述します。 C# では、初めのインデックスには 0 を使用します。 追加したコードのすぐ下に次のコードを追加して試します。
 
 ```csharp
@@ -91,9 +90,10 @@ Console.WriteLine($"I've added {names[2]} and {names[3]} to the list");
 Console.WriteLine($"The list has {names.Count} people in it");
  ```
 
-ファイルを保存し、もう一度「`dotnet run`」と入力して結果を確認します。    
+ファイルを保存し、もう一度「`dotnet run`」と入力して結果を確認します。
 
 ## <a name="search-and-sort-lists"></a>リストを検索して並び替える
+
 サンプルでは比較的小さいリストを使用していますが、ご利用のアプリケーションでは、より多くの (場合によっては何千もの) 要素が含まれるリストを作成することもよくあるかもしれません。 そうした大規模なコレクションの中から要素を見つけるには、別々の項目をリストで検索する必要があります。 <xref:System.Collections.Generic.List%601.IndexOf%2A> メソッドは項目を検索し、その項目のインデックスを返します。 `Main` メソッドの下部に次のコードを追加します。
 
 ```csharp
@@ -113,7 +113,7 @@ if (index == -1)
 } else
 {
     Console.WriteLine($"The name {names[index]} is at index {index}");
-    
+
 }
 ```
 
@@ -184,7 +184,7 @@ namespace list_quickstart
 
 ## <a name="lists-of-other-types"></a>その他の型のリスト
 
-ここまでは、リスト内で `string` 型を使用してきました。 別の型を使用して <xref:System.Collections.Generic.List%601> を作成してみましょう。 数値のセットを作成します。 
+ここまでは、リスト内で `string` 型を使用してきました。 別の型を使用して <xref:System.Collections.Generic.List%601> を作成してみましょう。 数値のセットを作成します。
 
 新しい `Main` メソッドの下部に次のコードを追加します。
 
@@ -204,12 +204,13 @@ foreach(var item in fibonacciNumbers)
     Console.WriteLine(item);
 ```
 
-ファイルを保存し、「`dotnet run`」と入力して結果を確認します。 
+ファイルを保存し、「`dotnet run`」と入力して結果を確認します。
 
 > [!TIP]
-> このセクションにだけ集中したいときは、`WorkingWithStrings();` を呼び出すコードはコメント アウトしてかまいません。 `// WorkingWithStrings();` のように、呼び出しの前に `/` 文字を 2 つ記述します。 
+> このセクションにだけ集中したいときは、`WorkingWithStrings();` を呼び出すコードはコメント アウトしてかまいません。 `// WorkingWithStrings();` のように、呼び出しの前に `/` 文字を 2 つ記述します。
 
 ## <a name="challenge"></a>課題
+
 このレッスンと以前のレッスンの中から、いくつかの概念を理解できているかどうかを確認してみましょう。 ここまでフィボナッチ数を使用して作成してきたコードを使ってください。 シーケンスの最初の 20 個の数を生成するコードを記述してみましょう。 (ヒント: フィボナッチ数の 20 番目の数は 6765 です。)
 
 ## <a name="complete-challenge"></a>課題完了
@@ -218,6 +219,6 @@ foreach(var item in fibonacciNumbers)
 
 ループの繰り返しごとに、リストの最後の 2 つの整数を取得して合計し、その値をリストに追加しています。 このループは、20 個の項目がリストに追加されるまで繰り返されます。
 
-おつかれさまでした。リストについてのクイック スタートはこれで終了です。 続けて独自の開発環境で[クラスの概要](introduction-to-classes.md)のクイック スタートに進むことができます。
+おつかれさまでした。リストについてのクイックスタートはこれで終了です。 続けて独自の開発環境で[クラスの概要](introduction-to-classes.md)のクイックスタートに進むことができます。
 
 `List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。

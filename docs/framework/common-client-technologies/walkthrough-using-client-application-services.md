@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - application services host [client application services]
 - client application services, walkthroughs
 ms.assetid: bb7c8950-4517-4dae-b705-b74a14059b26
-caps.latest.revision: "47"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 124c9321623fd6fe9c5414fc1eed2e41be1e75f3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 71eac85d07ac54cf15edcfcc3a86de58afef5004
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="walkthrough-using-client-application-services"></a>チュートリアル : クライアント アプリケーション サービスの使用
 このトピックでは、ユーザーを認証し、ユーザーのロールと設定を取得するクライアント アプリケーション サービスを使用する Windows アプリケーションを作成する方法について説明します。  
@@ -48,7 +50,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)]。  
+-   [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)]である必要があります。  
   
 ## <a name="creating-the-client-application"></a>クライアント アプリケーションの作成  
  最初に、Windows フォーム プロジェクトを作成します。 このチュートリアルでは Windows フォームを使用します。これはより多くの人が使い慣れているためです。しかし、プロセスは Windows Presentation Foundation (WPF) プロジェクトと類似しています。  
@@ -200,7 +202,7 @@ ms.lasthandoff: 12/22/2017
      成功のメッセージが表示されます。  
   
     > [!NOTE]
-    >  フォームでは **[電子メール]**、 **[秘密の質問]**、および **[秘密の答え]** の値が必要ですが、この例では使用しません。  
+    >  フォームでは **[電子メール]**、**[秘密の質問]**、**[秘密の答え]** の値が必要ですが、この例では使用しません。  
   
 13. **[続行]**をクリックします。  
   

@@ -17,32 +17,35 @@ helpviewer_keywords:
 - streams, writing characters to strings
 - I/O [.NET Framework], writing characters to strings
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 336a7fec5e64cc0c45566631c73928e0c1d40a5a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d409b9f9cada319c64c4b5a1315b8a5abbd731e9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-write-characters-to-a-string"></a>方法 : 文字列に文字を書き込む
-次のコード例は、文字を書き込む同期的および非同期的に文字配列から文字列にします。  
+次のコード例では、文字列の配列から同期および非同期的に文字が書き込まれます。  
   
 ## <a name="example"></a>例  
- 次の例の 5 文字に同期で書き込みます配列から文字列。  
+ 次の例では、配列から文字列へ 5 文字が同期的に書き込まれます。  
   
  [!code-csharp[Conceptual.StringBuilder#9](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/example2.cs#9)]
  [!code-vb[Conceptual.StringBuilder#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/example2.vb#9)]  
   
 ## <a name="example"></a>例  
- 次の例は、非同期的にからのすべての文字を読み取り、<xref:System.Windows.Controls.TextBox>を制御して、配列に格納します。 これは、後に非同期的に書き込みます各文字または空白文字後に改行を別々 の行に、<xref:System.Windows.Controls.TextBlock>コントロール。  
+ 次の例では、<xref:System.Windows.Controls.TextBox> コントロールから非同期的にすべての文字を読み取り、配列に格納します。 次に、<xref:System.Windows.Controls.TextBlock> コントロールへの改行が続く個別の行に、各文字または空白文字を非同期的に書き込みます。  
   
  [!code-csharp[Conceptual.StringReader#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.stringreader/cs/source2.cs#2)]
  [!code-vb[Conceptual.StringReader#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.stringreader/vb/source2.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.StringWriter>  
  <xref:System.IO.StringWriter.Write%2A?displayProperty=nameWithType>  
  <xref:System.Text.StringBuilder>  

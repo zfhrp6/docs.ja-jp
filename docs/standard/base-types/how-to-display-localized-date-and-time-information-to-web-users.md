@@ -16,106 +16,109 @@ helpviewer_keywords:
 - displaying date and time data
 - localized date displays [.NET Framework]
 ms.assetid: 377fe93c-32be-421a-a30a-be639a46ede8
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 21493e0e0c9e42cf5efc42d86c8f126fbae9b392
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b6c68ddd29b8221a073b00ade87e3b9d3dc870b8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>方法 : ローカライズされた日付/時刻情報を Web ユーザーに表示する
-(これは、Web サーバーのローカル カルチャの形式はほとんどの場合) 既定の形式に依存しないように解析して、日付と時刻の値を書式設定する操作、Web ページは、世界中のどこでも表示できます、ため、ユーザーと対話するときにします。 代わりに、Web フォームには、日付を処理し、ユーザーが入力した文字列を時間では、ユーザーの優先カルチャを使用して文字列を解析する必要があります。 同様に、日付と時刻のデータは、ユーザーのカルチャに準拠した形式でユーザーに表示する必要があります。 このトピックでは、その方法について説明します。  
+Web ページは世界中で表示されるため、ユーザーとの通信時の日時値の解析処理は、(通常は Web サーバーのローカル カルチャの形式である) 既定の形式には依存しないようにする必要があります。 代わりに、ユーザーが入力する日時文字列を処理する Web フォームで、ユーザーの優先カルチャで文字列が解析されるようにする必要があります。 同様に、日時データは、ユーザーのカルチャに準拠する形式でユーザーに表示されるようにする必要があります。 このトピックでは、その方法について説明します。  
   
-### <a name="to-parse-date-and-time-strings-input-by-the-user"></a>日付と時刻を解析するには、文字列をユーザー入力  
+### <a name="to-parse-date-and-time-strings-input-by-the-user"></a>ユーザー入力の日時を解析するには  
   
-1.  文字列の配列がによって返されるかどうかを判断、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティが設定されます。 そうでない場合は、手順 6 に進みます。  
+1.  <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> プロパティから返された文字列の配列に入力があるか判断します。 ない場合、手順 6 に進みます。  
   
-2.  文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが設定されると、その最初の要素を取得します。 最初の要素は、ユーザーの既定値または優先する言語と地域を示します。  
+2.  <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列に入力がある場合、最初の要素を取得します。 最初の要素は、ユーザーの既定または優先する言語および地域です。  
   
-3.  インスタンスを作成、 <xref:System.Globalization.CultureInfo> 、ユーザーを表すオブジェクトを呼び出してのカルチャの優先、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>コンス トラクターです。  
+3.  <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出して、ユーザーの優先するカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化します。  
   
-4.  いずれかを呼び出す、`TryParse`または`Parse`のメソッド、<xref:System.DateTime>または<xref:System.DateTimeOffset>型変換を試みます。 オーバー ロードを使用して、`TryParse`または`Parse`メソッドを`provider`パラメーター、させ、次のいずれか。  
+4.  変換の試行に <xref:System.DateTime> または <xref:System.DateTimeOffset> 型の `TryParse` または `Parse` メソッドのいずれかを呼び出します。 `provider` パラメーターを指定して、`TryParse` または `Parse` メソッドのオーバー ロードを使用し、次のいずれかを渡します。  
   
-    -   <xref:System.Globalization.CultureInfo>手順 3. で作成されたオブジェクト。  
+    -   手順 3 で作成した <xref:System.Globalization.CultureInfo> オブジェクト。  
   
-    -   <xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>のプロパティ、<xref:System.Globalization.CultureInfo>手順 3. で作成されたオブジェクト。  
+    -   手順 3 で作成した <xref:System.Globalization.CultureInfo> オブジェクトの <xref:System.Globalization.CultureInfo.DateTimeFormat%2A> プロパティによって返された <xref:System.Globalization.DateTimeFormatInfo> オブジェクト。  
   
-5.  変換が失敗した場合、手順 2. ~ 4. string 配列に残った各要素によって返される、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティです。  
+5.  変換に失敗する場合、<xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列内のそれぞれの残りの要素に対して、手順 2 から 4 を繰り返します。  
   
-6.  変換がまだ失敗する場合、または文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが空、によって返されるインバリアント カルチャを使用して、文字列の解析、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>プロパティです。  
+6.  それでも変換が失敗する場合や <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列が空の場合、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティによって返される、インバリアント カルチャを使用して文字列を解析します。  
   
-### <a name="to-parse-the-local-date-and-time-of-the-users-request"></a>ローカルの日付と時刻がユーザーの要求の解析  
+### <a name="to-parse-the-local-date-and-time-of-the-users-request"></a>ユーザーの要求内のローカルの日時を解析するには  
   
-1.  追加、<xref:System.Web.UI.WebControls.HiddenField>コントロールを Web フォームです。  
+1.  Web フォームに、<xref:System.Web.UI.WebControls.HiddenField> コントロールを追加します。  
   
-2.  処理する JavaScript 関数を作成、`onClick`のイベント、`Submit`ボタンから世界協定時刻 (UTC) に、現在の日付と時刻のローカル タイム ゾーンのオフセットを記述して、<xref:System.Web.UI.WebControls.HiddenField.Value%2A>プロパティです。 (セミコロン) などの区切り記号を使用して、文字列の 2 つのコンポーネントを区切ります。  
+2.  協定世界時 (UTC) の現在の日時とローカルのタイム ゾーンのオフセットを <xref:System.Web.UI.WebControls.HiddenField.Value%2A> プロパティに記述し、`Submit` ボタンの `onClick` イベントを処理する JavaScript 関数を作成します。 (セミコロンなどの) 区切り記号を使用して、文字列の 2 つのコンポーネントを区切ります。  
   
-3.  Web フォームを使用して<xref:System.Web.UI.Control.PreRender>HTML に関数を挿入するイベントを出力ストリームを使用するスクリプトのテキストを渡すことによって、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%28System.Type%2CSystem.String%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType>メソッドです。  
+3.  Web フォームの <xref:System.Web.UI.Control.PreRender> イベントを使用し、スクリプトのテキストを <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%28System.Type%2CSystem.String%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType> メソッドに渡して、関数を HTML 出力ストリームに挿入します。  
   
-4.  イベント ハンドラーへの接続、`Submit`ボタンの`onClick`イベントを JavaScript 関数の名前を提供することによって、`OnClientClick`の属性、`Submit`ボタンをクリックします。  
+4.  JavaScript 関数の名前を `Submit` ボタンの `OnClientClick` 属性に渡し、イベント ハンドラーを、`Submit` ボタンの `onClick` イベントに接続します。  
   
-5.  ハンドラーを作成、`Submit`ボタンの<xref:System.Web.UI.WebControls.Button.Click>イベント。  
+5.  `Submit` ボタンの <xref:System.Web.UI.WebControls.Button.Click> イベントのハンドラーを作成します。  
   
-6.  イベント ハンドラーで文字列の配列がによって返されるかどうかを判断、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティが設定されます。 そうでない場合は、手順 14. に進みます。  
+6.  イベント ハンドラーで、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> プロパティから返された文字列の配列に入力があるか判断します。 ない場合、手順 14 に進みます。  
   
-7.  文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが設定されると、その最初の要素を取得します。 最初の要素は、ユーザーの既定値または優先する言語と地域を示します。  
+7.  <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列に入力がある場合、最初の要素を取得します。 最初の要素は、ユーザーの既定または優先する言語および地域です。  
   
-8.  インスタンスを作成、 <xref:System.Globalization.CultureInfo> 、ユーザーを表すオブジェクトを呼び出してのカルチャの優先、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>コンス トラクターです。  
+8.  <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出して、ユーザーの優先するカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化します。  
   
-9. 割り当てられている文字列を渡す、<xref:System.Web.UI.WebControls.HiddenField.Value%2A>プロパティを<xref:System.String.Split%2A>別の配列要素内のユーザーのローカルの日付と時刻の文字列形式をおよびユーザーのローカル タイム ゾーン オフセットの文字列形式を格納する方法です。  
+9. <xref:System.Web.UI.WebControls.HiddenField.Value%2A> プロパティに割り当てられた文字列を <xref:System.String.Split%2A> メソッドに渡し、ユーザーの文字列形式のローカルの日時と文字列形式のユーザーのローカル タイム ゾーン オフセットを別の配列要素に格納します。  
   
-10. いずれかを呼び出す、<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>または<xref:System.DateTime.TryParse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTime%40%29?displayProperty=nameWithType>の日付と時刻に、ユーザーの要求を変換する方法、<xref:System.DateTime>値。 使用してメソッドのオーバー ロードを使用して、`provider`パラメーター、させ、次のいずれか。  
+10. <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> または <xref:System.DateTime.TryParse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTime%40%29?displayProperty=nameWithType> メソッドのいずれかを呼び出し、ユーザーの要求の日時を <xref:System.DateTime> 値に変換します。 `provider` パラメーターを指定してメソッドのオーバー ロードを使用し、次のいずれかを渡します。  
   
-    -   <xref:System.Globalization.CultureInfo>手順 8. で作成されたオブジェクト。  
+    -   手順 8 で作成した <xref:System.Globalization.CultureInfo> オブジェクト。  
   
-    -   <xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>のプロパティ、<xref:System.Globalization.CultureInfo>手順 8. で作成されたオブジェクト。  
+    -   手順 8 で作成した <xref:System.Globalization.CultureInfo> オブジェクトの <xref:System.Globalization.CultureInfo.DateTimeFormat%2A> プロパティによって返された <xref:System.Globalization.DateTimeFormatInfo> オブジェクト。  
   
-11. 手順 10 では、解析操作に失敗した場合は、手順 13 に進みます。 それ以外の場合、呼び出し、<xref:System.UInt32.Parse%28System.String%29?displayProperty=nameWithType>ユーザーのタイム ゾーン オフセットの文字列形式を整数に変換します。  
+11. 手順 10 の解析操作に失敗した場合は、手順 13 に進みます。 それ以外の場合、<xref:System.UInt32.Parse%28System.String%29?displayProperty=nameWithType> メソッドを呼び出し、文字列形式のユーザーのタイム ゾーン オフセットを整数に変換します。  
   
-12. インスタンスを作成、<xref:System.DateTimeOffset>を呼び出すことによって、ユーザーのローカル時刻を表す、<xref:System.DateTimeOffset.%23ctor%28System.DateTime%2CSystem.TimeSpan%29?displayProperty=nameWithType>コンス トラクターです。  
+12. <xref:System.DateTimeOffset.%23ctor%28System.DateTime%2CSystem.TimeSpan%29?displayProperty=nameWithType> コンストラクターを呼び出して、ユーザーのローカル時間を表す <xref:System.DateTimeOffset> をインスタンス化します。  
   
-13. 手順 10 で、変換が失敗した場合、手順 7 ~ 12 が string 配列に残った各要素によって返される、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティです。  
+13. 手順 10 で変換に失敗した場合、<xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列内のそれぞれの残りの要素に対して、手順 7 から 12 を繰り返します。  
   
-14. 変換がまだ失敗する場合、または文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが空、によって返されるインバリアント カルチャを使用して、文字列の解析、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>プロパティです。 手順 7 ~ 12 を繰り返します。  
+14. それでも変換が失敗する場合や <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列が空の場合、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティによって返される、インバリアント カルチャを使用して文字列を解析します。 次いで手順 7 ～ 12 を繰り返します。  
   
- 結果は、 <xref:System.DateTimeOffset> Web ページのユーザーのローカル時刻を表すオブジェクト。 同等の UTC を呼び出すことによって確認できます、<xref:System.DateTimeOffset.ToUniversalTime%2A>メソッドです。 確認することも、等価の日付と時刻、Web サーバーで呼び出すことによって、<xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType>メソッドと値を渡す<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>にかかる時間を変換先タイム ゾーンとします。  
+ 結果として、Web ページのユーザーのローカルの時間を表す <xref:System.DateTimeOffset> オブジェクトが生成されます。 その後、<xref:System.DateTimeOffset.ToUniversalTime%2A> メソッドを呼び出して、同等の UTC を判断することもできます。 <xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType> メソッドを呼び出し、時間を変換するタイム ゾーンとして <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> の値を渡すことにより、Web サーバーの同等の日時を判断することも可能です。  
   
 ## <a name="example"></a>例  
- 次の例には、HTML ソースと、日付と時刻の値を入力するユーザーを確認する ASP.NET Web フォームのコードの両方が含まれています。 クライアント側のスクリプトはまた、隠しフィールドを UTC からローカルの日付と、ユーザーの要求の時刻と、ユーザーのタイム ゾーンのオフセットの情報を書き込みます。 この情報は、ユーザーの入力を表示する Web ページを返すと、サーバーによって解析されます。 またの日付と時刻 (utc)、サーバーで、ユーザーのローカル時刻、期間を使用して、ユーザーの要求を表示します。  
+ 次の例には、ユーザーに日時の値の入力を求める、HTML ソースと ASP.NET Web フォームのコードの両方が含まれています。 クライアント側のスクリプトからも、ユーザー要求のローカルの日時と、ユーザーのタイム ゾーンのオフセットが、UTC から隠しフィールドに書き込まれます。 この情報は、その後サーバーによって解析され、ユーザー入力を表示する Web ページが返されます。 ユーザーのローカル時間、サーバーの時間、および UTC を使用して、ユーザーの要求の日時も表示されます。  
   
  [!code-aspx-csharp[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/cs/GetDateInfo.aspx#1)]
  [!code-aspx-vb[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/vb/GetDateInfo.aspx#1)]
   
- クライアント側スクリプトを呼び出す JavaScript`toLocaleString`メソッドです。 これには、これは、サーバー上で正常に解析される可能性が高く、ユーザーのロケールの書式指定規則に従う文字列が生成されます。  
+ クライアント側スクリプトは、JavaScript `toLocaleString` メソッドを呼び出します。 これにより、サーバー上で正常に解析される可能性が高い、ユーザーのロケールの書式指定規則に従う文字列が生成されます。  
   
- <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティに含まれているカルチャ名から取得されます`Accept-Language`HTTP 要求に含まれるヘッダー。 ただし、一部のブラウザーを含める`Accept-Language`ヘッダーを要求、およびユーザーでのヘッダーを完全に抑制もことができます。 これにより、ユーザー入力を解析するときに、フォールバック カルチャを理解しておくことができます。 によって返されるインバリアント カルチャをフォールバック カルチャが通常は<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>します。 ユーザーも指定できます Internet Explorer のカルチャ名を作成する可能性があるカルチャ名が無効であるテキスト ボックスに入力します。 これにより、インスタンス化するときに、例外処理を使用する重要な<xref:System.Globalization.CultureInfo>オブジェクト。  
+ <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> プロパティは、HTTP 要求に含まれる `Accept-Language` ヘッダーに含まれるカルチャ名から入力されます。 ただし、すべてのブラウザー要求には `Accept-Language` ヘッダーが含まれておらず、ユーザーがヘッダーを完全に抑制することも可能です。 これにより、ユーザー入力を解析するときに、フォールバック カルチャがあることが重要になります。 通常、フォールバック カルチャとは、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> によって返されるインバリアント カルチャです。 ユーザーが Internet Explorer のテキスト ボックスにカルチャ名を入力する場合もありますが、このとき、カルチャ名が無効である場合もあります。 これにより、<xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するとき、例外処理を使用することが重要になります。  
   
- Internet Explorer によって送信された HTTP 要求から取得されたときに、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>のユーザーの優先順位に従って配列を作成します。 配列の最初の要素には、ユーザーのプライマリのカルチャまたは地域の名前が含まれています。 配列には、追加項目が含まれている場合、Internet Explorer 任意に割り当てます品質指定子は、カルチャ名をセミコロンで区切られます。 たとえば、FR-FR カルチャのエントリがフォームをかかる場合があります`fr-FR;q=0.7`です。  
+ Internet Explorer が送信した HTTP 要求から取得した場合、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> 配列はユーザーの優先順位に従って入力されます。 配列の最初の要素には、ユーザーのプライマリ カルチャまたは地域名があります。 配列に追加項目が含まれている場合、Internet Explorer はそれらに任意の品質指定子を割り当てます (これは、カルチャ名とセミコロンで区切られています)。 たとえば、fr-FR カルチャのエントリの形式は `fr-FR;q=0.7` となるなどです。  
   
- 呼び出しの例、<xref:System.Globalization.CultureInfo.%23ctor%2A>を持つコンス トラクター、`useUserOverride`パラメーターに設定`false`新しい<xref:System.Globalization.CultureInfo>オブジェクト。 これにより、カルチャ名がサーバーで、既定のカルチャ名である場合、新しい<xref:System.Globalization.CultureInfo>クラスのコンス トラクターによって作成されたオブジェクトのカルチャの既定の設定が含まれています、サーバーを使用してオーバーライドされた設定が反映されない**地域と言語のオプション**アプリケーションです。 サーバーでオーバーライドされた設定値は、ユーザーのシステム上に存在するか、ユーザーの入力に反映させる可能性があります。  
+ この例は、`useUserOverride` パラメーターが `false` に設定された <xref:System.Globalization.CultureInfo.%23ctor%2A> コンストラクターを呼び出し、新しい <xref:System.Globalization.CultureInfo> オブジェクトを作成します。 これにより、カルチャ名がサーバーの既定のカルチャ名の場合、クラス コンストラクターによって作成される新しい <xref:System.Globalization.CultureInfo> オブジェクトにカルチャの既定の設定が含まれます。サーバーの **[地域と言語のオプション]** アプリケーションでオーバーライドされた設定は反映されません。 サーバーで設定がオーバーライドされた場合、その値がユーザーのシステムに残ったり、ユーザーの入力に反映されたりすることは通常はありえません。  
   
- 考えられるを定義するため、この例では、日付と時刻 (隠しフィールドに格納されている他のユーザーが 1 つの入力) の 2 つの文字列形式を解析、<xref:System.Globalization.CultureInfo>オブジェクトを事前に必要な可能性があります。 配列を作成、<xref:System.Globalization.CultureInfo>オブジェクトによって返される要素の数より大きい値の 1 つである、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティです。 インスタンス化し、<xref:System.Globalization.CultureInfo>の各言語/地域識別文字列、オブジェクトをインスタンス化も、<xref:System.Globalization.CultureInfo>を表すオブジェクト<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>です。  
+ この例では、日時の 2 つの文字列 (1 つはユーザー入力のものであり、他は隠しフィールドに格納されているもの) を解析するので、事前に必要な可能性のある <xref:System.Globalization.CultureInfo> オブジェクトを定義します。 これでは、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> プロパティによって返される要素数よりも 1 つ大きい、<xref:System.Globalization.CultureInfo> オブジェクトの配列が生成されます。 その後、各言語/地域識別文字列用に <xref:System.Globalization.CultureInfo> オブジェクトがインスタンス化され、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> を表す <xref:System.Globalization.CultureInfo> オブジェクトもインスタンス化されます。  
   
- コードは、いずれかを呼び出すことができます、<xref:System.DateTime.Parse%2A>または<xref:System.DateTime.TryParse%2A>メソッドは、ユーザーの文字列形式の日付に変換する時間を<xref:System.DateTime>値。 Parse メソッドを繰り返し呼び出す解析操作が 1 つ必要があります。 その結果、<xref:System.DateTime.TryParse%2A>返すためにのメソッドもよく`false`解析操作が失敗した場合。 これに対し、繰り返される例外を処理するによってスローされる可能性があります、<xref:System.DateTime.Parse%2A>メソッドは、Web アプリケーションで非常にコストがかかる処理をすることができます。  
+ ユーザーの日時の文字列表現を <xref:System.DateTime> 値に変換するには、コードで <xref:System.DateTime.Parse%2A> または <xref:System.DateTime.TryParse%2A> メソッドのいずれかを呼び出すことができます。 1 回の解析操作には、Parse メソッドへの呼び出しが複数回必要な場合もあります。 その結果、解析処理が失敗した場合、`false` が返されるので、<xref:System.DateTime.TryParse%2A> メソッドの方が優れています。 対照的に、1 つの Web アプリケーションで <xref:System.DateTime.Parse%2A> メソッドで何度もスローされる例外を処理することは、非常に不経済です。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- コードをコンパイルするには、作成、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]分離コードなしの Web ページ。 コピーして例では、Web ページ、既存のすべてのコードを置き換えます。 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページは、次のコントロールを含める必要があります。  
+ コードをコンパイルするには、コードビハインドなしに [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページを作成します。 次いで、すべての既存のコードが置換されるよう、例を Web ページにコピーします。 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページには、次のコントロールが含まれている必要があります。  
   
--   A<xref:System.Web.UI.WebControls.Label>コントロールで、コードで参照されていません。 設定の<xref:System.Web.UI.WebControls.TextBox.Text%2A>プロパティを"の数値を入力:"です。  
+-   コードで参照されない <xref:System.Web.UI.WebControls.Label> コントロール。 その <xref:System.Web.UI.WebControls.TextBox.Text%2A> プロパティを "Enter a Number:\(数字を入力:\)" に設定します。  
   
 -   `DateString` という名前の <xref:System.Web.UI.WebControls.TextBox> コントロール。  
   
--   `OKButton` という名前の <xref:System.Web.UI.WebControls.Button> コントロール。 設定の<xref:System.Web.UI.WebControls.Button.Text%2A>プロパティを"OK"です。  
+-   `OKButton` という名前の <xref:System.Web.UI.WebControls.Button> コントロール。 その <xref:System.Web.UI.WebControls.Button.Text%2A> プロパティを "OK" に設定します。  
   
 -   `DateInfo` という名前の <xref:System.Web.UI.WebControls.HiddenField> コントロール。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- ユーザーが HTML ストリームにスクリプトを挿入することを防ぐためにユーザー入力する必要がありますしない直接をエコーするサーバーの応答でします。 代わりを使用してエンコードする必要がある、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType>メソッドです。  
+ ユーザーが HTML ストリームにスクリプトを挿入することを防ぐには、ユーザー入力が直接サーバーにエコー バックされないようにする必要があります。 代わりに、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> メソッドを利用して暗号化されるようにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)  
  [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
  [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  

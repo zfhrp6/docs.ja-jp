@@ -12,95 +12,99 @@ dev_langs:
 - csharp
 - vb
 - cpp
-helpviewer_keywords: garbage collection, notifications
+helpviewer_keywords:
+- garbage collection, notifications
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 41a2ed9c5d239f1570955e87bb5b749e29830bc3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ac951ad1f89d058b06280bc176ca7928a1dc65bf
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="garbage-collection-notifications"></a>ガベージ コレクションの通知
-パフォーマンスは、共通言語ランタイムによるフル ガベージ コレクション (つまり、ジェネレーション 2 のコレクション) に悪影響を及ぼす場合があります。 これが特に大量の要求を処理するサーバーで問題になります。この例では、長時間のガベージ コレクションには、要求のタイムアウトを可能性があります。重要な期間中に発生するを防ぐためには、通知が可能フル ガベージ コレクションが近づいていると、ワークロードを別のサーバー インスタンスにリダイレクトするアクションを実行します。 できますも強制的に実行するコレクション、自分で提供する現在のサーバー インスタンスが要求を処理する必要はありません。  
+共通言語ランタイムによるフル ガベージ コレクション (つまり、ジェネレーション 2 のコレクション) がパフォーマンスに悪影響を及ぼす場合があります。 これは、特に要求を大量に処理するサーバーで問題となることがあります。この例では、長時間のガベージ コレクションによって、要求のタイムアウトが発生します。重要な期間にフル ガベージ コレクションが発生しないようにするには、フル ガベージ コレクションが近づいていることの通知を受けたら、ワークロードを別のサーバー インスタンスにリダイレクトするアクションを取ります。 現在のサーバー インスタンスで要求を処理する必要がない場合、自分でコレクションを強制実行することもできます。  
   
- <xref:System.GC.RegisterForFullGCNotification%2A>メソッドは、ランタイムは、フル ガベージ コレクションが近づいていることを検出するときに発生の通知を登録します。 この通知に 2 つの部分があります: フル ガベージ コレクションが近づいているときに、フル ガベージ コレクションが完了するとします。  
+ ランタイムがフル ガーベッジ コレクションが近づいていることを検出すると、<xref:System.GC.RegisterForFullGCNotification%2A> メソッドによって通知の発生が登録されます。 この通知には、フル ガベージ コレクションが近づいている場合と、フル ガベージ コレクションが完了した場合の 2 つがあります。  
   
 > [!WARNING]
->  唯一のブロッキング ガベージ コレクションは、通知を発生させます。 ときに、 [ \<gcConcurrent >](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)構成要素が有効になっている、バック グラウンド ガベージ コレクションでは、通知は発生しません。  
+>  通知は、ガベージ コレクションをブロックすることによってのみ発生します。 [\<gcConcurrent>](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) 構成要素が有効になっている場合、バック グラウンドのガベージ コレクションでは、通知は発生しません。  
   
- 調べるには、通知が発生したときに、使用、<xref:System.GC.WaitForFullGCApproach%2A>と<xref:System.GC.WaitForFullGCComplete%2A>メソッドです。 通常、これらのメソッドを使用して、`while`を継続的に取得するループ、<xref:System.GCNotificationStatus>通知の状態を列挙します。 その値が場合<xref:System.GCNotificationStatus.Succeeded>次を行うことができます。  
+ 通知が発生したことを判断するには、<xref:System.GC.WaitForFullGCApproach%2A> と <xref:System.GC.WaitForFullGCComplete%2A> メソッドを使用します。 通常、これらのメソッドは、通知の状態を示す <xref:System.GCNotificationStatus> 列挙体を継続的に取得する `while` ループで使用します。 その値が <xref:System.GCNotificationStatus.Succeeded> の場合、次を行うことができます。  
   
--   取得された通知に応答、<xref:System.GC.WaitForFullGCApproach%2A>メソッド、ワークロードをリダイレクトしたり、場合によって引き起こされるコレクション自分でします。  
+-   <xref:System.GC.WaitForFullGCApproach%2A> メソッドで取得した通知を受け、作業負荷をリダイレクトします。ガベージ コレクションを手動で強制的に実行することもできます。  
   
--   取得された通知に応答、<xref:System.GC.WaitForFullGCComplete%2A>方法、もう一度要求を処理に使用できる現在のサーバー インスタンスをすることができます。 情報を収集することもできます。 たとえば、使用することができます、<xref:System.GC.CollectionCount%2A>メソッドのコレクションの数を記録します。  
+-   <xref:System.GC.WaitForFullGCComplete%2A> メソッドで取得した通知を受け、現在のサーバー インスタンスで再度要求を処理できるようにします。 情報を収集することもできます。 たとえば、<xref:System.GC.CollectionCount%2A> メソッドを使用して、コレクションの数を記録することもできます。  
   
- <xref:System.GC.WaitForFullGCApproach%2A>と<xref:System.GC.WaitForFullGCComplete%2A>メソッドは連携して動作するように設計されています。 せず、他のいずれかを使用すると、不確定な結果が生成することができます。  
+ <xref:System.GC.WaitForFullGCApproach%2A> と <xref:System.GC.WaitForFullGCComplete%2A> メソッドは、連携して動作するように設計されています。 片方のみを使用する場合、結果が不正確になる場合があります。  
   
 ## <a name="full-garbage-collection"></a>フル ガベージ コレクション  
- ランタイムでは、次のシナリオのいずれかに当てはまる場合にフル ガベージ コレクションが発生します。  
+ ランタイムでは、次のいずれかのシナリオに当てはまる場合にフル ガベージ コレクションを実行します。  
   
--   十分なメモリが次のジェネレーション 2 のコレクションが発生する第 2 世代に昇格されました。  
+-   十分なメモリがジェネレーション 2 に昇格し、次のジェネレーション 2 のガベージ コレクションが発生する場合。  
   
--   十分なメモリが、次のジェネレーション 2 のコレクションが発生する大きなオブジェクト ヒープに昇格されました。  
+-   十分なメモリが、大きいオブジェクトのヒープに昇格し、次のジェネレーション 2 のガベージ コレクションが発生する場合。  
   
--   ジェネレーション 1 のガベージ コレクションは、その他の要因により第 2 世代のコレクションにエスカレートされます。  
+-   その他の要因により、ジェネレーション 1 のガベージ コレクションがジェネレーション 2 のガベージ コレクションにエスカレートする場合。  
   
- 指定したしきい値、<xref:System.GC.RegisterForFullGCNotification%2A>メソッドが最初の 2 つのシナリオに適用します。 ただし、最初のシナリオでしていない常に、通知を受け取る 2 つの理由を指定するしきい値の値に比例した時に。  
+ <xref:System.GC.RegisterForFullGCNotification%2A> メソッドに指定したしきい値は、最初の 2 つのシナリオに該当します。 ただし、最初のシナリオでは、以下の 2 つの理由から、指定したしきい値に比例したタイミングで常に通知を受け取るとは限りません。  
   
--   ランタイムは、パフォーマンス上の理由により) 各小さなオブジェクトの割り当てをチェックしません。  
+-   ランタイムは、パフォーマンス上の理由から、小さなオブジェクトの割り当てをチェックしません。  
   
--   のみジェネレーション 1 のガベージ コレクションのプロモート メモリ ジェネレーション 2 にします。  
+-   メモリがジェネレーション 2 に移動されるのは、ジェネレーション 1 のガベージ コレクションが実行された場合だけです。  
   
- 3 番目のシナリオは、通知を受信するときの不確実性にも作用します。 これではありませんが、保証は、この期間中に、要求をリダイレクトするか、ガベージ コレクション自分で、都合の良いときに、不適切なフル ガベージ コレクションの影響を軽減するために便利な方法である証明は。  
+ 3 番目のシナリオによっても、通知がいつあるかが不確実になります。 保証されるわけではないものの、この間要求をリダイレクトしたり、都合の良いときに自分でガベージ コレクションを強制的に実行したりして、タイミングの悪いフル ガベージ コレクションの影響を緩和することは有効な方法です。  
   
-## <a name="notification-threshold-parameters"></a>通知のしきい値のパラメーター  
- <xref:System.GC.RegisterForFullGCNotification%2A>メソッドが 2 つのパラメーターの第 2 世代のオブジェクトと、大きなオブジェクト ヒープのしきい値を指定します。 これらの値を満たしたときに、ガベージ コレクションの通知が発生する必要があります。 次の表では、これらのパラメーターについて説明します。  
+## <a name="notification-threshold-parameters"></a>通知しきい値パラメーター  
+ <xref:System.GC.RegisterForFullGCNotification%2A> メソッドには、ジェネレーション 2 のオブジェクトと大きなオブジェクトのヒープのしきい値を指定するパラメーターが 2 つあります。 これらの値を超えると、ガベージ コレクションの通知が発行されます。 次の表で、これらのパラメーターについて説明します。  
   
 |パラメーター|説明|  
 |---------------|-----------------|  
-|`maxGenerationThreshold`|通知を発行するタイミングを指定する、1 ~ 99 の数値は、ジェネレーション 2 に昇格されたオブジェクトに基づいています。|  
-|`largeObjectHeapThreshold`|通知を発行するタイミングを指定する、1 ~ 99 の数値は、大きなオブジェクト ヒープに割り当てられているオブジェクトに基づいています。|  
+|`maxGenerationThreshold`|ジェネレーション 2 に昇格したオブジェクト数に基づいて通知を発行するタイミングを指定する、1 ～ 99 の数値。|  
+|`largeObjectHeapThreshold`|大きなオブジェクトのヒープに割り当てられたオブジェクト数に基づいて通知を発行するタイミングを指定する、1 ～ 99 の数値。|  
   
- 大きすぎる値を指定する場合は、確率が高い、通知を受け取りますが、実行時にコレクションが発生する前に待機する長期間がある可能性があります。 強制的に実行するコレクション自分で、ランタイムでガベージ コレクションが解放は複数のオブジェクトを回収することがあります。  
+ 指定した値が高すぎる場合、通知を受け取る可能性は高くなりますが、ランタイムでコレクションが発生するまでに、長い時間がかかりります。 コレクションを自分で強制実行する場合、ランタイムによってコレクションが解放されるときよりも、より多くのオブジェクトを回収できます。  
   
- 小さすぎる値を指定するに通知するための十分な時間をかけてする前に、ランタイムは、コレクションをおそれがあります。  
+ 指定した値が小さすぎる場合、通知を受け取るのに十分な時間がない前に、ランタイムによってコレクションが実行されるおそれがあります。  
   
 ## <a name="example"></a>例  
   
 ### <a name="description"></a>説明  
- 次の例では、サーバーのグループは受信 Web 要求をサービスします。 バイト配列を追加する要求の処理のワークロードをシミュレートする、<xref:System.Collections.Generic.List%601>コレクション。 各サーバーのガベージ コレクションの通知を登録およびでスレッドを開始し、`WaitForFullGCProc`を継続的に監視するユーザーのメソッド、<xref:System.GCNotificationStatus>によって返される列挙型、<xref:System.GC.WaitForFullGCApproach%2A>と<xref:System.GC.WaitForFullGCComplete%2A>メソッドです。  
+ 次の例では、サーバーのグループが受信した Web 要求を処理します。 要求を処理するワークロードのシミュレートのため、バイト配列が <xref:System.Collections.Generic.List%601> コレクションに追加されています。 各サーバーはガベージ コレクションの通知を登録し、`WaitForFullGCProc`ユーザー メソッドでスレッドを開始して、<xref:System.GC.WaitForFullGCApproach%2A> メソッドと <xref:System.GC.WaitForFullGCComplete%2A> メソッドで返される <xref:System.GCNotificationStatus> 列挙型を継続的に監視します。  
   
- <xref:System.GC.WaitForFullGCApproach%2A>と<xref:System.GC.WaitForFullGCComplete%2A>メソッドは、通知が発生したときに、それぞれのイベント処理ユーザー メソッドを呼び出します。  
+ 通知が発生すると、<xref:System.GC.WaitForFullGCApproach%2A> および <xref:System.GC.WaitForFullGCComplete%2A> メソッドによって、それぞれのイベント処理ユーザー メソッドが呼び出されます。  
   
 -   `OnFullGCApproachNotify`  
   
-     このメソッドは、`RedirectRequests`サーバーへの要求をユーザーのメソッドは、要求キュー サーバの送信を中断するように指示します。 これは、クラス レベルの変数を設定してシミュレート`bAllocate`に`false`オブジェクトが割り当てられるようにします。  
+     このメソッドはユーザー メソッド `RedirectRequests`を呼び出し、要求をキューに格納するサーバーに対して、このサーバーへの要求の送信を一時停止するよう指示します。 これは、これ以上オブジェクトが割り当てられないように、クラスレベルの変数 `bAllocate` を `false` に設定することによってシミュレートできます。  
   
-     次に、`FinishExistingRequests`ユーザー メソッドが呼び出され、保留中のサーバー要求の処理を完了します。 これは、シミュレートをオフにして、<xref:System.Collections.Generic.List%601>コレクション。  
+     次に、`FinishExistingRequests` ユーザー メソッドが呼び出され、保留中のサーバー要求の処理が完了します。 これは、<xref:System.Collections.Generic.List%601> コレクションをクリアすることによってシミュレートできます。  
   
-     最後に、ワークロードが薄いあるため、ガベージ コレクションが誘発されます。  
+     最後に、作業負荷が軽いため、ガベージ コレクションが強制的に実行されます。  
   
 -   `OnFullGCCompleteNotify`  
   
-     このメソッドは、ユーザー`AcceptRequests`サーバーは、フル ガベージ コレクションを受けやすくなりますが不要になったために、要求の受け入れを再開します。 設定してこの操作をシミュレートした、`bAllocate`変数を`true`に追加されているオブジェクトを再開できるように、<xref:System.Collections.Generic.List%601>コレクション。  
+     サーバーがフル ガベージ コレクションの影響を受ける可能性が低くなったため、ユーザー メソッド `AcceptRequests` を呼び出し、要求の受付を再開します。 このアクションは、オブジェクトが <xref:System.Collections.Generic.List%601> コレクションに追加開始されるよう `bAllocate` 変数を `true` に設定することによってシミュレートできます。  
   
- 次のコードが含まれています、`Main`例のメソッドです。  
+ 次のコードには、この例の `Main` メソッドを含んでいます。  
   
  [!code-cpp[GCNotification#2](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#2)]
  [!code-csharp[GCNotification#2](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#2)]
  [!code-vb[GCNotification#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#2)]  
   
- 次のコードが含まれています、`WaitForFullGCProc`ガベージ コレクションの通知をチェックするループの中に継続的なを含む、ユーザー メソッドです。  
+ 次のコードは、ユーザー メソッド `WaitForFullGCProc` のコードであり、ガベージ コレクションの通知を継続的にチェックする while ループが含まれています。  
   
  [!code-cpp[GCNotification#8](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#8)]
  [!code-csharp[GCNotification#8](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#8)]
  [!code-vb[GCNotification#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#8)]  
   
- 次のコードが含まれています、`OnFullGCApproachNotify`メソッドから呼び出されると、  
+ 次のコードには、次から呼び出される `OnFullGCApproachNotify` メソッドを含んでいます。  
   
  `WaitForFullGCProc` メソッド  
   
@@ -108,7 +112,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[GCNotification#5](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#5)]
  [!code-vb[GCNotification#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#5)]  
   
- 次のコードが含まれています、`OnFullGCApproachComplete`メソッドから呼び出されると、  
+ 次のコードには、次から呼び出される `OnFullGCApproachComplete` メソッドを含んでいます。  
   
  `WaitForFullGCProc` メソッド  
   
@@ -116,17 +120,17 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[GCNotification#6](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#6)]
  [!code-vb[GCNotification#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#6)]  
   
- 次のコードにはから呼び出されるユーザー メソッドが含まれています、`OnFullGCApproachNotify`と`OnFullGCCompleteNotify`メソッドです。 ユーザー メソッドは、要求をリダイレクト、既存の要求を完了し、フル ガベージ コレクションが発生した後に要求を再開します。  
+ 次のコードには、`OnFullGCApproachNotify` および `OnFullGCCompleteNotify` メソッドから呼び出されるユーザー メソッドを含んでいます。 このユーザー メソッドは、要求のリダイレクト、既存の要求の終了、フル ガベージ コレクションの実行後の要求の受け付け再開を実行します。  
   
  [!code-cpp[GCNotification#9](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#9)]
  [!code-csharp[GCNotification#9](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#9)]
  [!code-vb[GCNotification#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#9)]  
   
- 完全なコード例は次のとおりです。  
+ コード全体のサンプルは次のとおりです。  
   
  [!code-cpp[GCNotification#1](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#1)]
  [!code-csharp[GCNotification#1](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#1)]
  [!code-vb[GCNotification#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ガベージ コレクション](../../../docs/standard/garbage-collection/index.md)

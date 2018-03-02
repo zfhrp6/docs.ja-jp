@@ -1,7 +1,7 @@
 ### YamlMime:Tutorial
 title: "C# のコレクション"
 metadata:
-  title: "C# のコレクション。 C# のシーケンスとコレクションの使用方法について説明します。"
+  title: "コレクションの対話形式チュートリアル - C# クイックスタート"
   description: "このチュートリアルでは、ブラウザーを使用して C# を対話形式で学習できます。 C# コードを記述し、ブラウザーで直接コードをコンパイルして、実行した結果を確認します。"
   audience: Developer
   ms.topic: get-started-article
@@ -11,17 +11,17 @@ metadata:
   interactive: csharp
   ms.prod: .net
   ms.technology: devlang-csharp
-  ms.openlocfilehash: 57cdf4e5c82c0e50de5422051df251db8ddb5d83
-  ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+  ms.openlocfilehash: 483b403b35eef4405b1c7debc52678aef19cb9b6
+  ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 01/20/2018
+  ms.lasthandoff: 02/01/2018
 items:
 - durationInMinutes: 1
-  content: "このクイック スタートでは C# を対話形式で学習できます。ブラウザーを使用して C# コードを記述し、コードをコンパイルして実行した結果を確認します。 このチュートリアルには、コレクションと配列を作成、変更、確認する一連のレッスンが含まれています。\n"
+  content: "このクイックスタートでは C# を対話形式で学習できます。ブラウザーを使用して C# コードを記述し、コードをコンパイルして実行した結果を確認します。 このチュートリアルには、コレクションと配列を作成、変更、確認する一連のレッスンが含まれています。\n"
 - title: "リストを作成する"
   durationInMinutes: 2
-  content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し (\"<name>\" を自分の名前に置き換えて)、**[実行]** をクリックします。\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\n文字列のリストを作成し、そのリストに 3 つの名前を追加し、それらの名前をすべて大文字で出力しました。 先のクイック スタートで学習した概念を使用して、リストをループしています。\n\n名前を表示するコードは、**補間文字列**を使用します。  `string` の前に文字 `$` を配置すると、文字列宣言に C# コードを埋め込むことができます。 実際の文字列は、生成する値でその C# コードを置き換えます。 この例では、<xref:System.String.ToUpper%2A> メソッドを呼び出したため、文字列は `{name.ToUpper()}` をそれぞれの名前に置き換え、文字を大文字に変換しています。\n\n続けて確認していきましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し (\"<name>\" を自分の名前に置き換えて)、**[実行]** をクリックします。\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\n文字列のリストを作成し、そのリストに 3 つの名前を追加し、それらの名前をすべて大文字で出力しました。 先のクイックスタートで学習した概念を使用して、リストをループしています。\n\n名前を表示するコードは、**補間文字列**を使用します。  `string` の前に文字 `$` を配置すると、文字列宣言に C# コードを埋め込むことができます。 実際の文字列は、生成する値でその C# コードを置き換えます。 この例では、<xref:System.String.ToUpper%2A> メソッドを呼び出したため、文字列は `{name.ToUpper()}` をそれぞれの名前に置き換え、文字を大文字に変換しています。\n\n続けて確認していきましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
 - title: "リスト コンテンツを変更する"
   durationInMinutes: 3
   content: "作成したコレクションは <xref:System.Collections.Generic.List%601> 型を使用します。 この型は、要素のシーケンスを格納します。 要素の型を山かっこの内側で指定します。\n\nこの <xref:System.Collections.Generic.List%601> 型の重要な点は増減が可能で、要素を追加したり削除したりできることです。 既に記述したコードの下に、次のコードを追加します。\n\n```csharp\nConsole.WriteLine();\nnames.Add(\"Maria\");\nnames.Add(\"Bill\");\nnames.Remove(\"Ana\");\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nさらに 2 つの名前をリストの末尾に追加しました。 また、1 つを削除しました。\n\n<xref:System.Collections.Generic.List%601> を使用すると、**インデックス**でも個々の項目を参照できます。 `[` と `]` のトークンを使用して項目にアクセスします。 既に記述したコードの下に、次のコードを追加して試してみます。\n\n```csharp\nConsole.WriteLine($\"My name is {names[0]}.\");\nConsole.WriteLine($\"I've added {names[2]} and {names[3]} to the list.\");\n```\n\nリストの末尾を越えてアクセスすることはできません。 <xref:System.Collections.Generic.List%601.Count%2A> プロパティを使用すれば、リストの長さを確認できます。 次のコードを追加して試してみます。\n\n```csharp\nConsole.WriteLine($\"The list has {names.Count} people in it\");\n```\n\nもう一度 **[実行]** をクリックして結果を確認します。 C# ではインデックスは 0 から始まるため、有効なインデックスの最大値はリスト内の項目の数より 1 小さくなります。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
@@ -37,4 +37,4 @@ items:
 - title: "課題完了"
   durationInMinutes: 3
   content: "コードは次のようになりましたか? \n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n\nwhile (fibonacciNumbers.Count < 20)\n{\n    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\n    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n    \n    fibonacciNumbers.Add(previous + previous2);\n}\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nループの繰り返しごとに、リストの最後の 2 つの整数を取得して合計し、その値をリストに追加しています。 このループは、20 個の項目がリストに追加されるまで繰り返されます。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- content: "リストのクイック スタートはこれで終了です。 このクイック スタートは、最後の対話型クイック スタートです。 これまでのクイック スタートを、ご自身の開発環境でも行ってください。 [ローカル開発](local-environment.md)の基本を学習してから、クイック スタートを選択してください。 これと同じ演習を試すことも、次のクイック スタートに直接移動することも、再度「[C# の数値](numbers-in-csharp-local.md)」クイック スタートから始めることもできます。\n\n`List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。\0"
+- content: "リストのクイックスタートはこれで終了です。 このクイックスタートは、最後の対話型クイックスタートです。 これまでのクイック スタートを、ご自身の開発環境でも使い続けることができます。 [ローカル開発](local-environment.md)の基本を学習してから、クイックスタートを選択してください。 これと同じ演習を試すことも、次のクイックスタートに直接移動することも、再度「[C# の数値](numbers-in-csharp-local.md)」クイックスタートから始めることもできます。\n\n`List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。\0"

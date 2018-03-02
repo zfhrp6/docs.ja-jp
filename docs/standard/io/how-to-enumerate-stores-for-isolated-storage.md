@@ -19,25 +19,28 @@ helpviewer_keywords:
 - isolated storage, enumerating stores
 - data stores, enumerating
 ms.assetid: 0fcf279a-f241-48f0-8034-2e3d331f1fcb
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8f8863f1d8b3c7f4ed8f65f8f8eb3e8af51b0405
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7c4fa63c5c7f966831a55c9103c9ba58cfa621d6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-enumerate-stores-for-isolated-storage"></a>方法 : 分離ストレージでストアを列挙する
-使用して、現在のユーザーのすべての分離ストアを列挙することができます、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType>静的メソッドです。 このメソッドは、<xref:System.IO.IsolatedStorage.IsolatedStorageScope>値を返す、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>列挙子。 ストアを列挙する必要があります、<xref:System.Security.Permissions.IsolatedStorageFilePermission>を指定するアクセス許可、<xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>値。 呼び出す場合は、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A>メソッドを<xref:System.IO.IsolatedStorage.IsolatedStorageScope.User>の配列を返します<xref:System.IO.IsolatedStorage.IsolatedStorageFile>現在のユーザーに対して定義されているオブジェクト。  
+<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> 静的メソッドを使用すると、現在のユーザー用の分離ストアをすべて列挙できます。 このメソッドは、<xref:System.IO.IsolatedStorage.IsolatedStorageScope> 値を取り、<xref:System.IO.IsolatedStorage.IsolatedStorageFile> 列挙子を返します。 ストアを列挙する場合、<xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser> 値を指定する <xref:System.Security.Permissions.IsolatedStorageFilePermission> のアクセス許可が必要です。 <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> 値を使用して <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> メソッドを呼び出す場合、現在のユーザーに対して定義された <xref:System.IO.IsolatedStorage.IsolatedStorageFile> オブジェクトの配列が返されます。  
   
 ## <a name="example"></a>例  
- 次のコード例は、ユーザーおよびアセンブリ別に分離されたいくつかのファイルを作成し、使用して、それらのファイルを取得するストアを取得、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A>メソッドです。  
+ 次のコード例は、ユーザーおよびアセンブリ別に分離されたストアを取得し、いくつかファイルを作成し、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> メソッドを使用してそれらのファイルを取得します。  
   
  [!code-csharp[Conceptual.IsolatedStorage#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source2.cs#2)]
  [!code-vb[Conceptual.IsolatedStorage#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source2.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
  [分離ストレージ](../../../docs/standard/io/isolated-storage.md)

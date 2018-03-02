@@ -19,65 +19,68 @@ helpviewer_keywords:
 - converting numeric user input to number
 - numbers [.NET Framework], converting numeric user input to number
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 92e28e3b303a7523b9da69b7eb283e0261fc681c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c93f1cda765b5f25fccddcfc27442b857262605f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>方法 : Web コントロールでの数値のユーザー入力を数値に変換する
-ユーザーに数値データを入力できる Web ページは、世界中のどこでも表示できます、ため、<xref:System.Web.UI.WebControls.TextBox>ほぼ無制限の数の形式で制御します。 その結果、ロケールと、Web ページのユーザーのカルチャを判別することが重要です。 ユーザー入力を解析する場合、ユーザーのロケールとカルチャによって定義された書式指定規則を適用することができます。  
+Web ページは世界中のあらゆる場所で表示され、利用者はほぼ無限の形式で <xref:System.Web.UI.WebControls.TextBox> コントロールに数値データを入力できます。 結果として、Web ページの利用者の住んでいる地域 (ロケール) や文化 (カルチャ) を判断することが非常に重要となります。 ユーザー入力を解析するとき、ユーザーのロケールとカルチャによって定義される書式設定規則を適用できます。  
   
-### <a name="to-convert-numeric-input-from-a-web-textbox-control-to-a-number"></a>Web のテキスト ボックス コントロールから数値の入力を数値に変換するには  
+### <a name="to-convert-numeric-input-from-a-web-textbox-control-to-a-number"></a>Web TextBox コントロールの数値入力を数字に変換するには  
   
-1.  文字列の配列がによって返されるかどうかを判断、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティが設定されます。 そうでない場合は、手順 6 に進みます。  
+1.  <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> プロパティから返された文字列の配列に入力があるか判断します。 ない場合、手順 6 に進みます。  
   
-2.  文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが設定されると、その最初の要素を取得します。 最初の要素は、ユーザーの既定値または優先する言語と地域を示します。  
+2.  <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列に入力がある場合、最初の要素を取得します。 最初の要素は、ユーザーの既定または優先する言語および地域です。  
   
-3.  インスタンスを作成、 <xref:System.Globalization.CultureInfo> 、ユーザーを表すオブジェクトを呼び出してのカルチャの優先、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>コンス トラクターです。  
+3.  <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出して、ユーザーの優先するカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化します。  
   
-4.  いずれかを呼び出す、`TryParse`または`Parse`にユーザーを変換する数値型のメソッドの入力します。 オーバー ロードを使用して、`TryParse`または`Parse`メソッドを`provider`パラメーター、させ、次のいずれか。  
+4.  ユーザーの入力の変換後の形となる数値型の `TryParse` または `Parse` メソッドを呼び出します。 `provider` パラメーターを指定して `TryParse` または `Parse` メソッドのオーバー ロードを使用し、次のいずれかを渡します。  
   
-    -   <xref:System.Globalization.CultureInfo>手順 3. で作成されたオブジェクト。  
+    -   手順 3 で作成した <xref:System.Globalization.CultureInfo> オブジェクト。  
   
-    -   <xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.NumberFormat%2A>のプロパティ、<xref:System.Globalization.CultureInfo>手順 3. で作成されたオブジェクト。  
+    -   手順 3 で作成した <xref:System.Globalization.CultureInfo> オブジェクトの <xref:System.Globalization.CultureInfo.NumberFormat%2A> プロパティによって返された <xref:System.Globalization.NumberFormatInfo> オブジェクト。  
   
-5.  変換が失敗した場合、手順 2. ~ 4. string 配列に残った各要素によって返される、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティです。  
+5.  変換に失敗する場合、<xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列内のそれぞれの残りの要素に対して、手順 2 から 4 を繰り返します。  
   
-6.  変換がまだ失敗する場合、または文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが空、によって返されるインバリアント カルチャを使用して、文字列の解析、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>プロパティです。  
+6.  それでも変換が失敗する場合や <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティから返された文字列の配列が空の場合、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティによって返される、インバリアント カルチャを使用して文字列を解析します。  
   
 ## <a name="example"></a>例  
- 次の例は数値で入力を求める Web フォームを完全な分離コード ページ、<xref:System.Web.UI.WebControls.TextBox>を制御し、数値に変換します。 その数が 2 倍になり、元の入力として同じ書式指定規則を使用して表示します。  
+ 次は Web フォームの完全な分離コード ページの例です。<xref:System.Web.UI.WebControls.TextBox> コントロールに (アルファベットではなく) 数値を入力するように求め、それを数字に変換します。 数字に変換された後、元の入力と同じ書式設定ルールを利用して倍精度にして表示されます。  
   
  [!code-csharp[Formatting.HowTo.ParseNumericInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseNumericInput/cs/NumericUserInput1.aspx.cs#1)]
  [!code-vb[Formatting.HowTo.ParseNumericInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseNumericInput/vb/NumericUserInput1.aspx.vb#1)]  
   
- <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティに含まれているカルチャ名から取得されます`Accept-Language`HTTP 要求に含まれるヘッダー。 ただし、一部のブラウザーを含める`Accept-Language`ヘッダーを要求、およびユーザーでのヘッダーを完全に抑制もことができます。 これにより、ユーザー入力を解析するときに、フォールバック カルチャを理解しておくことができます。 通常、によって返されるインバリアント カルチャは、フォールバック カルチャ<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>です。 ユーザーも指定できます Internet Explorer のカルチャ名を作成する可能性があるカルチャ名が無効であるテキスト ボックスに入力します。 これにより、インスタンス化するときに、例外処理を使用する重要な<xref:System.Globalization.CultureInfo>オブジェクト。  
+ <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> プロパティは、HTTP 要求に含まれる `Accept-Language` ヘッダーに含まれるカルチャ名から入力されます。 ただし、すべてのブラウザー要求には `Accept-Language` ヘッダーが含まれておらず、ユーザーがヘッダーを完全に抑制することも可能です。 これにより、ユーザー入力を解析するときに、フォールバック カルチャがあることが重要になります。 通常、フォールバック カルチャとは、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> によって返されるインバリアント カルチャです。 ユーザーが Internet Explorer のテキスト ボックスにカルチャ名を入力する場合もありますが、このとき、カルチャ名が無効である場合もあります。 これにより、<xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するとき、例外処理を使用することが重要になります。  
   
- Internet Explorer によって送信された HTTP 要求から取得されたときに、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>のユーザーの優先順位に従って配列を作成します。 配列の最初の要素には、ユーザーのプライマリのカルチャまたは地域の名前が含まれています。 配列には、追加項目が含まれている場合、Internet Explorer 任意に割り当てます品質指定子は、カルチャ名をセミコロンで区切られます。 たとえば、FR-FR カルチャのエントリがフォームをかかる場合があります`fr-FR;q=0.7`です。  
+ Internet Explorer が送信した HTTP 要求から取得した場合、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> 配列はユーザーの優先順位に従って入力されます。 配列の最初の要素には、ユーザーのプライマリ カルチャまたは地域名があります。 配列に追加項目が含まれている場合、Internet Explorer はそれらに任意の品質指定子を割り当てます (これは、カルチャ名とセミコロンで区切られています)。 たとえば、fr-FR カルチャのエントリの形式は `fr-FR;q=0.7` となるなどです。  
   
- 呼び出しの例、<xref:System.Globalization.CultureInfo.%23ctor%2A>を持つコンス トラクター、`useUserOverride`パラメーターに設定`false`新しい<xref:System.Globalization.CultureInfo>オブジェクト。 これにより、カルチャ名がサーバーで、既定のカルチャ名である場合、新しい<xref:System.Globalization.CultureInfo>クラスのコンス トラクターによって作成されたオブジェクトのカルチャの既定の設定が含まれています、サーバーを使用してオーバーライドされた設定が反映されない**地域と言語のオプション**アプリケーションです。 サーバーでオーバーライドされた設定値は、ユーザーのシステム上に存在するか、ユーザーの入力に反映させる可能性があります。  
+ この例は、`useUserOverride` パラメーターが `false` に設定された <xref:System.Globalization.CultureInfo.%23ctor%2A> コンストラクターを呼び出し、新しい <xref:System.Globalization.CultureInfo> オブジェクトを作成します。 これにより、カルチャ名がサーバーの既定のカルチャ名の場合、クラス コンストラクターによって作成される新しい <xref:System.Globalization.CultureInfo> オブジェクトにカルチャの既定の設定が含まれます。サーバーの **[地域と言語のオプション]** アプリケーションでオーバーライドされた設定は反映されません。 サーバーで設定がオーバーライドされた場合、その値がユーザーのシステムに残ったり、ユーザーの入力に反映されたりすることは通常はありえません。  
   
- コードは、いずれかを呼び出すことができます、`Parse`または`TryParse`ユーザーの入力を数値型のメソッドに変換されます。 Parse メソッドを繰り返し呼び出す解析操作が 1 つ必要があります。 その結果、`TryParse`返すためにのメソッドもよく、`false`解析操作が失敗した場合。 これに対し、繰り返される例外を処理するによってスローされる可能性があります、`Parse`メソッドは、Web アプリケーションで非常にコストがかかる処理をすることができます。  
+ コードは、ユーザーの入力の変換後の形となる数値型の `Parse` または `TryParse` メソッドを呼び出すことができます。 1 回の解析操作には、Parse メソッドへの呼び出しが複数回必要な場合もあります。 その結果、解析処理が失敗した場合、`false` が返されるので、`TryParse` メソッドの方が優れています。 対照的に、1 つの Web アプリケーションにおいて `Parse` メソッドで何度もスローされる例外を処理することは、非常に不経済的です。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- コードをコンパイルするをコピー、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]分離コード ページのため、その既存のすべてのコードで置き換えます。 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページは、次のコントロールを含める必要があります。  
+ コードをコンパイルするには、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] 分離コード ページにそれをコピーします。すべての既存コードが置換されます。 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web には、次のコントロールを含めてください。  
   
--   A<xref:System.Web.UI.WebControls.Label>コントロールで、コードで参照されていません。 設定の<xref:System.Web.UI.WebControls.TextBox.Text%2A>プロパティを"の数値を入力:"です。  
+-   <xref:System.Web.UI.WebControls.Label> コントロール。これはコードで参照されません。 その <xref:System.Web.UI.WebControls.TextBox.Text%2A> プロパティを "Enter a Number:\(数字を入力:\)" に設定します。  
   
 -   `NumericString` という名前の <xref:System.Web.UI.WebControls.TextBox> コントロール。  
   
--   `OKButton` という名前の <xref:System.Web.UI.WebControls.Button> コントロール。 設定の<xref:System.Web.UI.WebControls.Button.Text%2A>プロパティを"OK"です。  
+-   `OKButton` という名前の <xref:System.Web.UI.WebControls.Button> コントロール。 その <xref:System.Web.UI.WebControls.Button.Text%2A> プロパティを "OK" に設定します。  
   
- クラスの名前を変更`NumericUserInput`で定義されているクラスの名前に、`Inherits`の属性、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]ページの`Page`ディレクティブです。 名前を変更、`NumericInput`オブジェクトによって定義された名前への参照、`id`の属性、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]ページの`form`タグ。  
+ 名前を `NumericUserInput` から、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] ページの `Page` ディレクティブの `Inherits` 属性によって定義されるクラスの名前に変更します。 `NumericInput` オブジェクト参照の名前を、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] ページの `form` タグの `id` 属性によって定義される名前に変更します。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- ユーザーが HTML ストリームにスクリプトを挿入することを防ぐためにユーザー入力する必要がありますしない直接をエコーするサーバーの応答でします。 代わりを使用してエンコードする必要がある、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType>メソッドです。  
+ ユーザーが HTML ストリームにスクリプトを挿入する行為を防ぐために、サーバー応答でユーザー入力がエコーのように返されないようにしてください。 代わりに、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> メソッドを利用して暗号化されるようにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)  
  [数値文字列の解析](../../../docs/standard/base-types/parsing-numeric.md)

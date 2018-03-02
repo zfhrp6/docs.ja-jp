@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 920cfe3b-d525-4bb2-abf6-9431651f9cf9
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a5e84935f9fff1f993a677d408287cd775269f03
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 85176c45b768d1e8fe9efc408fd644bf33aa8c05
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="resolving-external-xslt-style-sheets-and-documents"></a>外部の XSLT スタイル シートとドキュメントの解決
 変換中には、外部リソースの解決が必要になるときがあります。  
@@ -42,22 +45,22 @@ ms.lasthandoff: 11/21/2017
 |--------------------------------------|-------------------|  
 |<xref:System.Xml.Xsl.XslTransform.Load%2A> メソッドの実行時におけるスタイル シートの検索。|スタイル シートが資格情報を必要とするリソース上にある場合は、<xref:System.Xml.Xsl.XslTransform.Load%2A> をパラメーターとして受け取るオーバーロードされた <xref:System.Xml.XmlResolver> メソッドを指定します。|  
 |<xref:System.Xml.Xsl.XslTransform.Load%2A> メソッドの実行時における `<xsl:include>` または `<xsl:import>` の解決。|<xref:System.Xml.Xsl.XslTransform.Load%2A> をパラメーターとして受け取るオーバーロードされた <xref:System.Xml.XmlResolver> メソッドを指定します。 <xref:System.Xml.XmlResolver> を使用して、`import` ステートメントまたは `include` ステートメントが参照しているスタイル シートを読み込みます。 `null` を渡すと、外部リソースは解決されません。|  
-|変換中のすべての `document()` 関数の解決。|指定して、<xref:System.Xml.XmlResolver>を使用して、変換中に、<xref:System.Xml.Xsl.XslTransform.Transform%2A>を受け取るメソッド、<xref:System.Xml.XmlResolver>引数。|  
+|変換中のすべての `document()` 関数の解決。|<xref:System.Xml.XmlResolver> 引数を受け取る <xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを使用して、変換中に <xref:System.Xml.XmlResolver> を指定します。|  
   
- `document()`関数の他の XML にリソースを取得、スタイル シートからさらに、入力ストリームで提供される XML 初期データ。 この関数には別の場所にある XML データを含めることができるため、<xref:System.Xml.XmlResolver> 値が設定された `null` を <xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドに渡すと、`document()` 関数は実行されません。 `document()` 関数を使用する場合は、適切なアクセス許可セットを取得したうえで、<xref:System.Xml.Xsl.XslTransform.Transform%2A> をパラメーターとして受け取る <xref:System.Xml.XmlResolver> メソッドを使用します。  
+ `document()` 関数は、入力ストリームで提供される XML 初期データの他に、スタイル シートから別の XML リソースを取得します。 この関数には別の場所にある XML データを含めることができるため、<xref:System.Xml.XmlResolver> 値が設定された `null` を <xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドに渡すと、`document()` 関数は実行されません。 `document()` 関数を使用する場合は、適切なアクセス許可セットを取得したうえで、<xref:System.Xml.Xsl.XslTransform.Transform%2A> をパラメーターとして受け取る <xref:System.Xml.XmlResolver> メソッドを使用します。  
   
  <xref:System.Xml.Xsl.XslTransform.Load%2A> メソッドと、このメソッドでの <xref:System.Xml.XmlResolver> の使い方の詳細については、「<xref:System.Xml.Xsl.XslTransform.Load%28System.String%2CSystem.Xml.XmlResolver%29?displayProperty=nameWithType>」を参照してください。  
   
  <xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを呼び出すと、読み込み時に指定された証拠に基づいてアクセス許可が計算され、そのアクセス許可セットが変換処理全体に割り当てられます。 `document()` 関数で、アクセス許可セットにないアクセス許可を必要とする処理を実行しようとすると、例外がスローされます。  
   
-## <a name="see-also"></a>関連項目  
- [XslTransform クラスによる XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
- [XslTransform クラスによる XSLT プロセッサ](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
+## <a name="see-also"></a>参照  
+ [XslTransform クラスを使用した XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [XslTransform クラスによる XSLT プロセッサの実装](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
  [XslTransform からの出力](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)  
  [異なるストアでの XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-over-different-stores.md)  
  [スタイル シート パラメーターと拡張オブジェクト用の XsltArgumentList](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)  
- [XSLT スタイル シートのスクリプトを使用して\<msxsl:script >](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)  
- [Msxsl:node-set() 関数のサポート](../../../../docs/standard/data/xml/support-for-the-msxsl-node-set-function.md)  
+ [\<msxsl:script> を使用した XSLT スタイルシートのスクリプト](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)  
+ [msxsl:node-set() 関数のサポート](../../../../docs/standard/data/xml/support-for-the-msxsl-node-set-function.md)  
  [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
  [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
  [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  

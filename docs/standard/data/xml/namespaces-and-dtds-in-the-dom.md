@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 1e9b55c4-76ad-4f54-8d96-7ce4b4cf1e05
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 87a03883622ba63a8d999907305356905b36bf1c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cf085cf866ea6034679230115e588024fcd79a11
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="namespaces-and-dtds-in-the-dom"></a>DOM における名前空間と DTD
 ドキュメント型定義 (DTD) によって名前空間のサポートは複雑になります。 たとえば、次の XML では、既定の属性の名前にコロンが含まれています。  
@@ -38,7 +41,7 @@ ms.lasthandoff: 10/18/2017
   
 -   ユーザーが DTD 検証を要求すると、ドキュメント全体に対する名前空間のサポートがオフになります。 これによって W3C DTD の読み込みが可能になり、結果は予測可能な動作になります。  
   
- Microsoft .NET Framework 内の XML では、最大の W3C 互換性のための 2 番目のオプションを実装します。  
+ Microsoft .NET Framework の XML には、W3C との互換性を最大限に保つための第 2 のオプションが実装されています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

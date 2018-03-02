@@ -1,6 +1,6 @@
 ---
-title: "クイック スタート - 挿入文字列- C# ガイド"
-description: "この挿入文字列に関するクイック スタートでは、C# コードを記述して、より大きな文字列に式の結果を含めます。"
+title: "挿入文字列のチュートリアル - C# ローカル クイックスタート"
+description: "この挿入文字列に関するクイックスタートでは、C# コードを記述して、より大きな文字列に式の結果を含めます。"
 author: rpetrusha
 ms.author: ronpet
 ms.date: 01/11/2018
@@ -9,17 +9,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 14185dd4e364f12756541ac6401d1c6ff3206fe9
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 3cd9fc23dba104f92255b031eef32f80cca915b0
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="interpolated-strings"></a>挿入文字列
 
-このクイック スタートでは、C# で挿入文字列を使用して、単一の出力文字列に値を挿入する方法を説明します。 C# コードを記述し、コードをコンパイルおよび実行して結果を確認します。 クイック スタートには、値を文字列に挿入し、それらの値の書式をさまざまな方法で設定する、一連のレッスンが含まれています。
+このクイックスタートでは、C# で挿入文字列を使用して、単一の出力文字列に値を挿入する方法を説明します。 C# コードを記述し、コードをコンパイルおよび実行して結果を確認します。 クイックスタートには、値を文字列に挿入し、それらの値の書式をさまざまな方法で設定する、一連のレッスンが含まれています。
 
-このクイック スタートでは、開発用に使用できるマシンがあることを想定しています。 Mac、PC、または Linux 上でローカルの開発環境を設定する手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 使用するコマンドの概要を手短に確認するには、[ローカルでのクイック スタートの概要](local-environment.md)と詳細へのリンクをご覧ください。 
+このクイックスタートでは、開発用に使用できるマシンがあることを想定しています。 Mac、PC、または Linux 上でローカルの開発環境を設定する手順については、.NET の [10 分でわかる概要](https://www.microsoft.com/net/core)に関するトピックに記載されています。 使用するコマンドの概要を手短に確認するには、[ローカルでのクイックスタートの概要](local-environment.md)と詳細へのリンクをご覧ください。 
 
 ## <a name="create-an-interpolated-string"></a>挿入文字列を作成する
 
@@ -162,9 +162,9 @@ Console.WriteLine($"{DateTime.Now,-20:d} Hour {DateTime.Now,-10:HH} {1063.342,15
 1/11/2018            Hour 09                1,063.34 feet
 ```
 
-挿入文字列のクイック スタートはこれで終了です。 
+挿入文字列のクイックスタートはこれで終了です。 
     
-続けて独自の開発環境で[配列とコレクション](arrays-and-collections.md)のクイック スタートに進むことができます。
+続けて独自の開発環境で[配列とコレクション](arrays-and-collections.md)のクイックスタートに進むことができます。
 
 挿入文字列の機能の詳細については、C# リファレンスの[挿入文字列](../language-reference/keywords/interpolated-strings.md)に関するトピックで学習できます。
 

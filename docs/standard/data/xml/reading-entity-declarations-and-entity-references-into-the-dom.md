@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 86dba977-5cc4-4567-964f-027ffabc47b2
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6370db06cbe7ff8d46258b0315059f5c37587fea
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 33b3b0589fb9d3cdf550b8d56d82a2bd999a59f6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>エンティティ宣言とエンティティ参照の DOM への読み込み
 エンティティとは、コンテンツやマークアップの代わりに XML で使われる名前を指定する宣言です。 エンティティを使用するには、2 つの手順が必要です。 まず、エンティティ宣言を使用して、置換するコンテンツに名前を結び付ける必要があります。 エンティティ宣言は、ドキュメント型定義 (DTD) または XML スキーマの中で、`<!ENTITY name "value">` 構文を使って作成します。 次に、エンティティ宣言で定義した名前を XML で使用します。 XML で使用するときは、エンティティ参照と呼ばれます。 たとえば、次のエンティティ宣言は、`publisher` という名前のエンティティを宣言し、それを "Microsoft Press" というコンテンツに関連付けます。  
@@ -53,13 +56,13 @@ ms.lasthandoff: 10/18/2017
   
  ![エンティティ型階層のフロー チャート](../../../../docs/standard/data/xml/media/entity-hierarchy.gif "Entity_hierarchy")  
   
- XML ドキュメント オブジェクト モデル (DOM) の Microsoft .NET Framework の実装の既定では、エンティティ参照を保持し、XML が読み込まれるときに、エンティティが展開されません。 このことは、DOM でドキュメントが読み込まれると、 **XmlEntityReference**参照変数を含むノード`&publisher;`が作成されると、DTD で宣言されているエンティティの内容を表すノードの子ノードをします。  
+ XML ドキュメント オブジェクト モデル (DOM) の Microsoft .NET Framework の実装では、XML の読み込み時に既定でエンティティ参照を保持し、エンティティを展開しません。 つまり、ドキュメントが DOM に読み込まれるときには、`&publisher;` という参照変数を含む **XmlEntityReference** ノードが作成され、その子ノードとして、DTD に宣言されたエンティティのコンテンツを表すノードが作成されます。  
   
- 使用して、`<!ENTITY publisher "Microsoft Press">`エンティティ宣言では、次の図は、 **XmlEntity**と**XmlText**この宣言により作成されたノード。  
+ `<!ENTITY publisher "Microsoft Press">` というエンティティ宣言を使用した場合に、この宣言によって作成される **XmlEntity** ノードと **XmlText** ノードを次の図に示します。  
   
  ![エンティティ宣言により作成されたノード](../../../../docs/standard/data/xml/media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
   
- エンティティ参照が展開されるかどうかによって、メモリの DOM ツリーに生成されるノードが変わります。 生成されるノードの違いは、トピックで説明[保持されるエンティティ参照](../../../../docs/standard/data/xml/entity-references-are-preserved.md)と[保持されずに展開されるエンティティ参照](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md)です。  
+ エンティティ参照が展開されるかどうかによって、メモリの DOM ツリーに生成されるノードが変わります。 生成されるノードの違いについては、「[保持されるエンティティ参照](../../../../docs/standard/data/xml/entity-references-are-preserved.md)」と「[保持されずに展開されるエンティティ参照](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md)」で説明しています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
