@@ -9,7 +9,6 @@
 ### [.NET Standard の新機能](standard/whats-new/whats-new-in-dotnet-standard.md)
 ## [ターゲット フレームワーク](standard/frameworks.md)
 ## [.NET 用語集](standard/glossary.md)
-## [mdoc を使用したドキュメントの構築](standard/mdoc/index.md)
 ## [アーキテクチャ ガイダンス](standard/guidance-architecture.md)
 ### [ASP.NET Core および Microsoft Azure での最新の Web アプリケーションの設計](standard/modern-web-apps-azure-architecture/)
 ### [Azure クラウドおよび Windows コンテナーで既存の .NET アプリケーションを最新にする](standard/modernize-with-azure-and-containers/)
@@ -25,9 +24,10 @@
 ### [クラス ライブラリの概要](standard/class-library-overview.md)
 ### [基本データ型](standard/base-types/)
 ## [.NET クラス ライブラリ](standard/class-libraries.md)
-## アナライザー
+## [アナライザー](standard/analyzers/index.md)
 ### [API アナライザー](standard/analyzers/api-analyzer.md) 
 ### [移植性アナライザー](standard/analyzers/portability-analyzer.md)
+### [フレームワーク アナライザー](standard/analyzers/framework-analyzer.md)
 ## [例外の処理とスロー](standard/exceptions/)
 ## [.NET アセンブリ ファイルの形式](standard/assembly-format.md)
 ## [ガベージ コレクション](standard/garbage-collection/)
@@ -266,6 +266,7 @@
 ### [方法: `String.Split` を使用して文字列を解析する](csharp/how-to/parse-strings-using-split.md)
 ### [文字列を連結する方法](csharp/how-to/concatenate-multiple-strings.md)
 ### [方法 文字列を DateTime に変換する](standard/base-types/parsing-datetime.md)
+### [文字列を検索する方法](csharp/how-to/search-strings.md)
 <!-- End of C# Concepts section -->
 ## [.NET Compiler Platform SDK (Roslyn API)](csharp/roslyn-sdk/)
 ## [C# プログラミング ガイド](csharp/programming-guide/)
