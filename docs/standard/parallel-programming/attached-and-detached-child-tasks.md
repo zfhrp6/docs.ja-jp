@@ -11,28 +11,32 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: tasks, child tasks
+helpviewer_keywords:
+- tasks, child tasks
 ms.assetid: c95788bf-90a6-4e96-b7bc-58e36a228cc5
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c1a0c664dffc2986d4d6985fd2b71cd8055bf2c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 298ccdc4628c840874d10832da29c10d6d496655
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="attached-and-detached-child-tasks"></a>アタッチされた子タスクとデタッチされた子タスク
-A*子タスク*(または*入れ子になったタスク*) は、<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>と呼ばれる別のタスクのユーザー デリゲートで作成されるインスタンス、*親タスク*です。 子タスクはデタッチまたはアタッチできます。 A*デタッチされた子タスク*がその親と独立して実行されるタスクです。 *アタッチされた子タスク*で作成される入れ子のタスクは、<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType>オプションがその親は明示的にも既定を禁止していないことが関連付けられているからです。 タスクでは、システム リソースが許す限り、任意の数のアタッチされた子タスクおよびデタッチされた子タスクを作成できます。  
+*子タスク* (または*入れ子のタスク*) は、*親タスク* と呼ばれる、別のタスクのユーザー デリゲートで作成された、<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> のインスタンスです。 子タスクはデタッチまたはアタッチできます。 *デタッチされた子タスク* は、親とは独立して実行されるタスクです。 *アタッチされた子タスク* は、<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> オプションで作成される入れ子のタスクです。その親は、明示的にも既定でも、子タスクがアタッチされることを禁止しません。 タスクでは、システム リソースが許す限り、任意の数のアタッチされた子タスクおよびデタッチされた子タスクを作成できます。  
   
  以下の表に、2 種類の子タスクの基本的な相違点を示します。  
   
 |カテゴリ|デタッチされた子タスク|アタッチされた子タスク|  
 |--------------|--------------------------|--------------------------|  
-|親は子タスクが完了するまで待機します。|いいえ|はい|  
-|親は子タスクによってスローされた例外を反映します。|いいえ|はい|  
-|親のステータスは子のステータスに依存します。|いいえ|はい|  
+|親は子タスクが完了するまで待機します。|×|[はい]|  
+|親は子タスクによってスローされた例外を反映します。|×|[はい]|  
+|親のステータスは子のステータスに依存します。|×|[はい]|  
   
  ほとんどの場合、デタッチされた子タスクを使用することをお勧めします。他のタスクとの関係は複雑度が低いためです。 こうした理由から、既定では親タスク内に作成されたタスクはデタッチされており、アタッチされた子タスクを作成する場合は <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> オプションを明示的に指定する必要があります。  
   
@@ -67,7 +71,7 @@ A*子タスク*(または*入れ子になったタスク*) は、<xref:System.Th
  タスクの取り消し処理は他の処理と連携して行われます。 つまり、キャンセル可能であるためには、すべてのアタッチされた子タスク、またはデタッチされた子タスクが、キャンセル トークンの状態を監視する必要があります。 1 つのキャンセル要求を使用して親とその子をすべて取り消す場合は、同じトークンをすべてのタスクに引数として渡し、各タスクの要求に応答するためのロジックを各タスクに提供します。 詳細については、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」および「[方法: タスクとその子を取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)」を参照してください。  
   
 ### <a name="when-the-parent-cancels"></a>親が取り消された場合  
- 子タスクが開始される前に親が取り消された場合、子は開始されません。 子タスクが既に開始された後に親が取り消された場合、子はそれ自体にキャンセル ロジックが適用されていない限り、完了まで実行されます。 詳細については、「 [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md)」を参照してください。  
+ 子タスクが開始される前に親が取り消された場合、子は開始されません。 子タスクが既に開始された後に親が取り消された場合、子はそれ自体にキャンセル ロジックが適用されていない限り、完了まで実行されます。 詳細については、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」をご覧ください。  
   
 ### <a name="when-a-detached-child-task-cancels"></a>デタッチされた子タスクが取り消された場合  
  デタッチされた子タスクが、そのタ親に渡されたのと同じトークンを使用して取り消された場合、親は子タスクを待機せず、例外も反映されません。例外は、他の処理と連携したキャセル処理として扱われるためです。 この動作は最上位のタスクと同じです。  
@@ -82,8 +86,8 @@ A*子タスク*(または*入れ子になったタスク*) は、<xref:System.Th
   
  子タスクが親タスクにアタッチされないようにするには、親の <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> または <xref:System.Threading.Tasks.Task> オブジェクトを作成するときに、<xref:System.Threading.Tasks.Task%601> オプションを指定します。 タスクがその親にアタッチしようとし、親が <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> オプションを指定する場合、子タスクは親にアタッチされず、<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> オプションが指定されなかったかのように実行されます。  
   
- 子タスクが適時に完了しない場合には、子タスクがその親にアタッチしないようにすることをお勧めします。 親タスクは、すべての子タスクが終了するまで完了しないため、長時間実行される子タスクによって、アプリケーション全体のパフォーマンスの低下を生じる場合があります。 例でタスクが親タスクにアタッチされないようにするアプリのパフォーマンスを向上させる方法については、次を参照してください。[する方法: 親からのアタッチされた子タスクを防ぐため](../../../docs/standard/parallel-programming/how-to-prevent-a-child-task-from-attaching-to-its-parent.md)です。  
+ 子タスクが適時に完了しない場合には、子タスクがその親にアタッチしないようにすることをお勧めします。 親タスクは、すべての子タスクが終了するまで完了しないため、長時間実行される子タスクによって、アプリケーション全体のパフォーマンスの低下を生じる場合があります。 タスクがその親タスクにアタッチしないようにすることにより、アプリケーションのパフォーマンスを向上させる方法の例については、「[方法: 子タスクがその親にアタッチしないようにする](../../../docs/standard/parallel-programming/how-to-prevent-a-child-task-from-attaching-to-its-parent.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列プログラミング](../../../docs/standard/parallel-programming/index.md)  
  [データの並列化](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)

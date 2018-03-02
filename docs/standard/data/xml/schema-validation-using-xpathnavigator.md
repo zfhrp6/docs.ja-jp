@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 91ad5c2e6f8af7f2c3709b9dff65bd728de08e5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d06b82998deba05abe0fca1d4e93cd5c5ea319eb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>XPathNavigator を使用したスキーマ検証
 <xref:System.Xml.XmlDocument> クラスを使用して、<xref:System.Xml.XmlDocument> オブジェクトに含まれる XML コンテンツを 2 つの方法で検証することができます。 最初の方法は、検証型 <xref:System.Xml.XmlReader> オブジェクトを使用して XML コンテンツを検証する方法で、2 番目の方法は、<xref:System.Xml.XmlDocument.Validate%2A> クラスの <xref:System.Xml.XmlDocument> メソッドを使用する方法です。 <xref:System.Xml.XPath.XPathDocument> クラスを使用して XML コンテンツの読み取り専用の検証を行うこともできます。  
@@ -357,21 +360,21 @@ class ValidatingReaderExample
   
  <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドを使用して行われた変更は、新しい値がノードのスキーマ型に照らして無効だったので、<xref:System.InvalidCastException> が発生しました。  
   
- 使用して値の変更の詳細については、<xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A>メソッドを参照してください、 [XPathNavigator を使用して変更の XML データ](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)トピックです。  
+ <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> メソッドを使用して値を変更する方法の詳細については、「[XpathNavigator による XML データの変更](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)」のトピックを参照してください。  
   
 ### <a name="read-only-validation"></a>読み取り専用の検証  
  <xref:System.Xml.XPath.XPathDocument> クラスは、XML ドキュメントの読み取り専用のメモリ内表現です。 <xref:System.Xml.XPath.XPathDocument> クラスと <xref:System.Xml.XmlDocument> クラスは両方とも、XML ドキュメントを編集しナビゲートするために <xref:System.Xml.XPath.XPathNavigator> オブジェクトを作成します。 <xref:System.Xml.XPath.XPathDocument> クラスは読み取り専用のクラスなので、<xref:System.Xml.XPath.XPathNavigator> オブジェクトから返された <xref:System.Xml.XPath.XPathDocument> オブジェクトは <xref:System.Xml.XPath.XPathDocument> オブジェクトに含まれる XML ドキュメントを編集できません。  
   
  このトピックで前述したように、検証の場合は、検証型 <xref:System.Xml.XPath.XPathDocument> オブジェクトを使用して <xref:System.Xml.XmlDocument> オブジェクトを作成したのと同様にして、<xref:System.Xml.XmlReader> オブジェクトを作成できます。 <xref:System.Xml.XPath.XPathDocument> オブジェクトは読み込みの際に XML ドキュメントを検証しますが、<xref:System.Xml.XPath.XPathDocument> オブジェクト内の XML データは編集できないので、XML ドキュメントの再検証はできません。  
   
- 読み取り専用で、編集の詳細については<xref:System.Xml.XPath.XPathNavigator>、オブジェクトを参照してください、 [XPathDocument および XmlDocument を使用して XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)トピックです。  
+ 読み取り専用および編集可能な <xref:System.Xml.XPath.XPathNavigator> オブジェクトについては、「[XPathDocument および XmlDocument を使用した XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)」のトピックを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
  [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [XPathDocument および XmlDocument を使用して XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
- [選択、評価、および XPathNavigator を使用して、一致する XML データ](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
- [XPathNavigator による XML データにアクセスします。](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+ [XPathDocument および XmlDocument を使用した XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
+ [XPathNavigator を使用した XML データの選択、評価、および照合](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
+ [XPathNavigator による XML データへのアクセス](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
  [XPathNavigator による XML データの編集](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)

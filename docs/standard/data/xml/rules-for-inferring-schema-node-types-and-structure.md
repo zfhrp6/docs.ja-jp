@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c28c0f21b03fe7db014f118251363230a6ffc591
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2f4a50fcd3e3ee56ded97edef08c2ee08f4a7233
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>スキーマのノード型および構造を推論するときの規則
 このトピックでは、スキーマ推論プロセスで、XML ドキュメント内のノード型を XML スキーマ定義言語 (XSD) 構造に変換する方法を説明します。  
@@ -44,12 +47,12 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  すべての `complexType` 宣言は匿名型として推論されます。 推論されるグローバル要素はルート要素だけであり、その他すべての要素はローカル要素です。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 ### <a name="simple-typed-element"></a>単純型要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、単純型要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -58,7 +61,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="empty-element"></a>空の要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、空要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -67,7 +70,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="empty-element-with-attributes"></a>属性を持つ空要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、属性を持つ空要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -76,7 +79,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="element-with-attributes-and-simple-content"></a>属性と単純内容を持つ要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、属性と単純内容を持つ要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -88,7 +91,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  要素が子要素を 1 つしか持っていない場合でも、子要素はシーケンスとして扱われます。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -100,7 +103,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  要素が子要素を 1 つしか持っていない場合でも、子要素はシーケンスとして扱われます。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -112,7 +115,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  `maxOccurs` 要素の `xs:choice` 属性は、推論されるスキーマでは `"unbounded"` に設定されます。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -124,7 +127,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  `maxOccurs` 要素の `xs:choice` 属性は、推論されるスキーマでは `"unbounded"` に設定されます。  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -151,11 +154,11 @@ ms.lasthandoff: 11/21/2017
 |ドキュメント型|無視されます。|  
 |名前空間|無視されます。|  
   
- スキーマ推論プロセスの詳細については、次を参照してください。 [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)です。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Schema.XmlSchemaInference>  
  [XML スキーマ オブジェクト モデル (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
  [XML スキーマの推論](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
- [XML ドキュメントからスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+ [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
  [単純型を推論するときの規則](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)

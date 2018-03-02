@@ -12,24 +12,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a2758f40-e497-4964-8d8d-1bb68af14dcd
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 627882efcbc41310ee177cba984e4add5b07bd15
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6db78e689b8529ef62a3b42c2cefb6a5b3d3f02f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="changing-namespace-declarations-in-an-xml-document"></a>XML ドキュメントの名前空間宣言の変更
-**XmlDocument**名前空間の宣言を公開および**xmlns**属性をドキュメント オブジェクト モデルの一部として使用します。 これらに保存されます、 **XmlDocument**ので、これらの属性の場所を維持して、ドキュメントを保存するときにします。 これらの属性を変更する影響を与えません、**名前**、 **NamespaceURI**、および**プレフィックス**ツリーに既に他のノードのプロパティです。 たとえば、次のドキュメントを読み込む場合、`test`要素には**NamespaceURI**`123.`  
+**XmlDocument** は、名前空間宣言と **xmlns** 属性をドキュメント オブジェクト モデルの一部として公開します。 名前空間宣言と xmlns 属性は **XmlDocument** に格納されるため、ドキュメントの保存時にはこれらの属性の場所を保持できます。 これらの属性を変更しても、ツリーに既に存在する別のノードの **Name**、**NamespaceURI**、**Prefix** プロパティは影響を受けません。 たとえば、次のドキュメントを読み込むと、`test` 要素の **NamespaceURI** は `123.` になります。  
   
 ```xml  
 <test xmlns="123"/>  
 ```  
   
- 削除する場合、`xmlns`次のように、属性、`test`要素がまだ、 **NamespaceURI**の`123`します。  
+ その後、次のように `xmlns` 要素を削除しても、`test` 要素の **NamespaceURI** は `123` のまま変わりません。  
   
 ```vb  
 doc.documentElement.RemoveAttribute("xmlns")  
@@ -39,7 +42,7 @@ doc.documentElement.RemoveAttribute("xmlns")
 doc.documentElement.RemoveAttribute("xmlns");  
 ```  
   
- 同様に、異なるを追加する場合`xmlns`属性を`doc`要素は、次のように、`test`要素がまだ**NamespaceURI** `123`です。  
+ 同様に、次のように別の `xmlns` 属性を `doc` 要素に追加しても、`test` 要素の **NamespaceURI** は `123` のまま変わりません。  
   
 ```vb  
 doc.documentElement.SetAttribute("xmlns","456");  
@@ -49,7 +52,7 @@ doc.documentElement.SetAttribute("xmlns","456");
 doc.documentElement.SetAttribute("xmlns","456");  
 ```  
   
- そのため、変更する`xmlns`属性効果がありませんを保存して再読み込みするまで、 **XmlDocument**オブジェクト。  
+ つまり、`xmlns` 属性を変更しても、**XmlDocument** オブジェクトを保存して再び読み込むまで、プロパティは影響を受けません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -22,26 +22,29 @@ helpviewer_keywords:
 - data stores, reading and writing to files
 - stores, reading and writing to files
 ms.assetid: f977ebdc-1b55-475a-bc3d-3376470b08ae
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8d733efc3d70070dd12f55c651033e97d1792c38
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cfb1500150d2dfb500a698713c0de6b8e5518010
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-read-and-write-to-files-in-isolated-storage"></a>方法 : 分離ストレージ内でファイルの読み取りと書き込みを行う
-データの読み取りまたは書き込み、分離ストア内のファイル、使用、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>ストリーム リーダーを持つオブジェクト (<xref:System.IO.StreamReader>オブジェクト) またはストリーム ライター (<xref:System.IO.StreamWriter>オブジェクト)。  
+分離ストアのファイルを読み取ったり、それに書き込んだりするには、ストリーム リーダー (<xref:System.IO.StreamReader> オブジェクト) またはストリーム ライター (<xref:System.IO.StreamWriter> オブジェクト) で <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> オブジェクトを使用します。  
   
 ## <a name="example"></a>例  
- 次のコード例では、分離ストアを取得し、TestStore.txt をという名前のファイルが、ストアに存在するかどうかを確認します。 存在しない場合、ファイルが作成され、「こんにちは分離ストレージ」をファイルに書き込みます。 TestStore.txt が既に存在する場合、コード例は、ファイルから読み取ります。  
+ 次のコード例では、分離ストアを取得し、ストア内に TestStore.txt をという名前のファイルが存在するかどうかが確認されます。 存在しない場合、ファイルが作成され、"Hello Isolated Storage" とファイルに書き込まれます。 TestStore.txt が既に存在する場合、コード例は、ファイルから読み取られます。  
   
  [!code-csharp[Conceptual.IsolatedStorage#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source5.cs#5)]
  [!code-vb[Conceptual.IsolatedStorage#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source5.vb#5)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>  
  <xref:System.IO.FileMode?displayProperty=nameWithType>  

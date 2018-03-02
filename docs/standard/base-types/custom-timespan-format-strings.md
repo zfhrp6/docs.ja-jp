@@ -19,18 +19,21 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - custom TimeSpan format strings
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7302b17beb5ce20ec2bd8865149fe2e0bae9cee4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f86aeab5a024c463dbfbf0a0d0ff198cef80f7ac
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="custom-timespan-format-strings"></a>カスタム TimeSpan 書式指定文字列
-<xref:System.TimeSpan> 書式指定文字列は、書式設定操作によって生成される <xref:System.TimeSpan> 値の文字列形式を定義します。 カスタム書式指定文字列は、1 つ以上のカスタム <xref:System.TimeSpan> 書式指定子と任意の数のリテラル文字で構成されます。 任意の文字列ではない、[標準 TimeSpan 書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)カスタムとして解釈されます<xref:System.TimeSpan>書式指定文字列。  
+<xref:System.TimeSpan> 書式指定文字列は、書式設定操作によって生成される <xref:System.TimeSpan> 値の文字列形式を定義します。 カスタム書式指定文字列は、1 つ以上のカスタム <xref:System.TimeSpan> 書式指定子と任意の数のリテラル文字で構成されます。 [標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)以外の文字列は、すべてカスタム <xref:System.TimeSpan> 書式指定文字列として解釈されます。  
   
 > [!IMPORTANT]
 >  カスタム <xref:System.TimeSpan> 書式指定子には、日と時間、時間と分、または秒と秒の小数部を区切る記号などのプレースホルダー区切り記号は含まれません。 これらの記号は、カスタム書式指定文字列にリテラル文字列として含まれている必要があります。 たとえば、`"dd\.hh\:mm"` は、ピリオド (.) を日と時間の間の区切り記号として定義し、コロンを時間と分の間の区切り記号として定義します。  
@@ -47,12 +50,12 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.TimeSpan.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customparseexample1.cs#2)]
  [!code-vb[Conceptual.TimeSpan.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customparseexample1.vb#2)]  
   
-<a name="table"></a>次の表は、カスタム日時書式指定子について説明します。  
+<a name="table"></a> カスタム日時書式指定子を次の表に示します。  
   
 |書式指定子|説明|例|  
 |----------------------|-----------------|-------------|  
 |"d" または "%d"|時間間隔の日数。<br /><br /> 詳細については、「["d" カスタム書式指定子](#dSpecifier)」を参照してください。|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%d` --&gt; "6"<br /><br /> `d\.hh\:mm` --&gt; "6.14:32"|  
-|"dd" ～ "dddddddd"|必要に応じて先行ゼロで埋められた、時間間隔の日数。<br /><br /> 詳細については: ["dd"-"dddddddd"カスタム書式指定子](#ddSpecifier)です。|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `ddd` --&gt; "006"<br /><br /> `dd\.hh\:mm` --&gt; "06.14:32"|  
+|"dd" ～ "dddddddd"|必要に応じて先行ゼロで埋められた、時間間隔の日数。<br /><br /> 詳細については、「["dd" ～ "dddddddd" カスタム書式指定子](#ddSpecifier)」を参照してください。|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `ddd` --&gt; "006"<br /><br /> `dd\.hh\:mm` --&gt; "06.14:32"|  
 |"h" または "%h"|日数の一部としてカウントされない、時間間隔の時間数。 1 桁の時間に先行ゼロは付きません。<br /><br /> 詳細については、「["h" カスタム書式指定子](#hSpecifier)」を参照してください。|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%h` --&gt; "14"<br /><br /> `hh\:mm` --&gt; "14:32"|  
 |"hh"|日数の一部としてカウントされない、時間間隔の時間数。 1 桁の時間には、先頭に 0 が付けられます。<br /><br /> 詳細については、「["hh" カスタム書式指定子](#hhSpecifier)」を参照してください。|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `hh` --&gt; "14"<br /><br /> `new TimeSpan(6, 8, 32, 17, 685):`<br /><br /> `hh` --&gt; 08|  
 |"m" または "%m"|時間数および日数のいずれの一部としても含まれない、時間間隔の分数。 1 桁の分に先行ゼロは付きません。<br /><br /> 詳細については、「["m" カスタム書式指定子](#mSpecifier)」を参照してください。|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `%m` --&gt; "8"<br /><br /> `h\:m` --&gt; "14:8"|  
@@ -60,7 +63,7 @@ ms.lasthandoff: 11/21/2017
 |"s" または "%s"|時間数、日数、および分数のいずれの一部としても含まれない、時間間隔の秒数。 1 桁の秒に先行ゼロは付きません。<br /><br /> 詳細については、「["s" カスタム書式指定子](#sSpecifier)」を参照してください。|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s` --&gt; 12<br /><br /> `s\.fff` --&gt; 12.965|  
 |"ss"|時間数、日数、および分数のいずれの一部としても含まれない、時間間隔の秒数。  1 桁の秒には、先頭に 0 が付きます。<br /><br /> 詳細については、「["ss" カスタム書式指定子](#ssSpecifier)」を参照してください。|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss` --&gt; 06<br /><br /> `ss\.fff` --&gt; 06.965|  
 |"f" または "%f"|時間間隔の秒部分の 1/10。<br /><br /> 詳細については、「["f" カスタム書式指定子](#fSpecifier)」を参照してください。|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f` --&gt; 8<br /><br /> `ss\.f` --&gt; 06.8|  
-|"ff"|時間間隔の秒部分の 1/100。<br /><br /> 詳細については:["ff"カスタム書式指定子](#ffSpecifier)です。|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff` --&gt; 89<br /><br /> `ss\.ff` --&gt; 06.89|  
+|"ff"|時間間隔の秒部分の 1/100。<br /><br /> 詳細については、「["ff" カスタム書式指定子](#ffSpecifier)」を参照してください。|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff` --&gt; 89<br /><br /> `ss\.ff` --&gt; 06.89|  
 |"fff"|時間間隔の秒部分の 1/1000。<br /><br /> 詳細については、「["fff" カスタム書式指定子](#f3Specifier)」を参照してください。|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff` --&gt; 895<br /><br /> `ss\.fff` --&gt; 06.895|  
 |"ffff"|時間間隔の秒部分の 1/10000。<br /><br /> 詳細については、「["ffff" カスタム書式指定子](#f4Specifier)」を参照してください。|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff` --&gt; 8954<br /><br /> `ss\.ffff` --&gt; 06.8954|  
 |"fffff"|時間間隔の秒部分の 1/100000。<br /><br /> 詳細については、「["fffff" カスタム書式指定子](#f5Specifier)」を参照してください。|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff` --&gt; 89543<br /><br /> `ss\.fffff` --&gt; 06.89543|  
@@ -73,9 +76,9 @@ ms.lasthandoff: 11/21/2017
 |"FFFFF"|時間間隔の秒部分の 1/100000。 小数の後続のゼロは含まれません。<br /><br /> 詳細については、「["FFFFF" カスタム書式指定子](#F5_Specifier)」を参照してください。|`TimeSpan.Parse("00:00:06.329179")`:<br /><br /> `FFFFF`: 32917<br /><br /> `TimeSpan.Parse("0:0:3.100009")`:<br /><br /> `ss\.FFFFF`: 03.1|  
 |"FFFFFF"|時間間隔の秒部分の 1/1000000。 小数の後続のゼロは表示されません。<br /><br /> 詳細については、「["FFFFFF" カスタム書式指定子](#F6_Specifier)」を参照してください。|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|  
 |"FFFFFFF"|時間間隔の秒部分の 1/10000000。 小数の後続のゼロは表示されません。また、7 桁のゼロも表示されません。<br /><br /> 詳細については、「["FFFFFFF" カスタム書式指定子](#F7_Specifier)」を参照してください。|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03.19|  
-|*' 文字列*'|リテラル文字列の区切り記号。<br /><br /> 詳細については:[その他の文字](#Other)です。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --&gt; "14:32:17"|  
-|\|エスケープ文字。<br /><br /> 詳細については:[その他の文字](#Other)です。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --&gt; "14:32:17"|  
-|その他の文字|エスケープされないその他の文字はすべて、カスタム書式指定子として解釈されます。<br /><br /> 詳細情報:[他の文字](#Other)です。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --&gt; "14:32:17"|  
+|*'string*'|リテラル文字列の区切り記号。<br /><br /> 詳細については、「[その他の文字](#Other)」を参照してください。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --&gt; "14:32:17"|  
+|\|エスケープ文字。<br /><br /> 詳細については、「[その他の文字](#Other)」を参照してください。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --&gt; "14:32:17"|  
+|その他の文字|エスケープされないその他の文字はすべて、カスタム書式指定子として解釈されます。<br /><br /> 詳細については、「[その他の文字](#Other)」を参照してください。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --&gt; "14:32:17"|  
   
 <a name="dSpecifier"></a>   
 ## <a name="the-d-custom-format-specifier"></a>"d" カスタム書式指定子  
@@ -145,7 +148,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="mSpecifier"></a>   
 ## <a name="the-m-custom-format-specifier"></a>"m" カスタム書式指定子  
- "m" カスタム書式指定子は、日の部分の一部としてカウントされない、時間間隔の分数を表す <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値を出力します。 1 桁の文字列値を返す場合の値、<xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType>プロパティは 0 ~ 9、および 2 桁の文字列値を返す場合の値、<xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType>プロパティの範囲は 10 ~ 59 です。  
+ "m" カスタム書式指定子は、日の部分の一部としてカウントされない、時間間隔の分数を表す <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値を出力します。 <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値が 0 ～ 9 の場合は 1 桁の文字列値を返し、<xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値が 10 ～ 59 の場合は 2 桁の文字列値を返します。  
   
  "m" カスタム書式指定子が単独で使用される場合は、誤って標準書式指定文字列として解釈されないように "%m" を指定します。 具体的な例を次に示します。  
   
@@ -182,7 +185,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="sSpecifier"></a>   
 ## <a name="the-s-custom-format-specifier"></a>"s" カスタム書式指定子  
- "s" カスタム書式指定子は、時間、日、および分の部分のいずれの一部としても含まれない、時間間隔の秒数を表す <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値を出力します。 1 桁の文字列値を返す場合の値、<xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType>プロパティは 0 ~ 9、および 2 桁の文字列値を返す場合の値、<xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType>プロパティの範囲は 10 ~ 59 です。  
+ "s" カスタム書式指定子は、時間、日、および分の部分のいずれの一部としても含まれない、時間間隔の秒数を表す <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値を出力します。 <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値が 0 ～ 9 の場合は 1 桁の文字列値を返し、<xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値が 10 ～ 59 の場合は 2 桁の文字列値を返します。  
   
  "s" カスタム書式指定子が単独で使用される場合は、誤って標準書式指定文字列として解釈されないように "%s" を指定します。 具体的な例を次に示します。  
   
@@ -383,7 +386,7 @@ ms.lasthandoff: 11/21/2017
   
 -   単一引用符 (リテラル文字列の区切り記号) で囲みます。  
   
--   円記号を付けます ("\\")、エスケープ文字として解釈されます。 このため、C# では、書式指定文字列に @-quoted、またはリテラル文字の前に追加の円記号が指定されている必要があります。  
+-   エスケープ文字として解釈される円記号 ("\\") を前に付けます。 このため、C# では、書式指定文字列に @-quoted、またはリテラル文字の前に追加の円記号が指定されている必要があります。  
   
      条件ロジックを使用してエスケープされたリテラルを書式指定文字列に含めることが必要になる場合もあります。 次の例では、条件ロジックを使用して負の時間間隔の符号を含めます。  
   
@@ -399,6 +402,6 @@ ms.lasthandoff: 11/21/2017
   
  [表のトップへ](#table)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)

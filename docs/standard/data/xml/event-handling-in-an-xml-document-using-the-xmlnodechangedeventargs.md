@@ -12,20 +12,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2bfd6eee5831b6bb92c0274fe5925184c80a92e2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cc74b13fd4771cc4f00500ff3253795f45db2b40
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>XmlNodeChangedEventArgs による XML ドキュメントのイベント処理
-**XmlNodeChangedEventArgs**に登録されたイベント ハンドラーに渡される引数をカプセル化、 **XmlDocument**イベントを処理するオブジェクト。 各イベントとその発生するタイミングを次の表に示します。  
+イベント処理のために **XmlDocument** オブジェクトに登録されたイベント ハンドラーでは、渡された引数が **XmlNodeChangedEventArgs** によってカプセル化されます。 各イベントとその発生するタイミングを次の表に示します。  
   
-|Event|発生するタイミング|  
+|event|発生するタイミング|  
 |-----------|-----------|  
 |<xref:System.Xml.XmlDocument.NodeInserting>|現在のドキュメントに属するノードが別のノードに挿入されるとき。|  
 |<xref:System.Xml.XmlDocument.NodeInserted>|現在のドキュメントに属するノードが別のノードに挿入されたとき。|  
@@ -35,7 +38,7 @@ ms.lasthandoff: 10/18/2017
 |<xref:System.Xml.XmlDocument.NodeChanged>|ノードの値が変更されたとき。|  
   
 > [!NOTE]
->  場合、 **XmlDataDocument**を使用する最適化が完全にメモリ使用量**データセット**、ストレージ、 **XmlDataDocument**の変更時に、上記のイベントを発生させません可能性があります基になるに加えられた**データセット**です。 これらのイベントを必要がある場合は、全体を走査する必要があります**XmlDocument**最適化が完全でないメモリ使用量を 1 回です。  
+>  **XmlDataDocument** のメモリの用途が **DataSet** ストレージの利用に完全に最適化されている場合は、基になる **DataSet** が変更された場合でも、**XmlDataDocument** では上に示したどのイベントも発生しない場合があります。 これらのイベントが必要な場合は、**XmlDocument** 全体を 1 回走査して、メモリ使用の最適化が完全でない状態にします。  
   
  イベント ハンドラーを定義する方法、およびイベント ハンドラーをイベントに追加する方法を次のコード サンプルに示します。  
   
@@ -80,9 +83,9 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
 }  
 ```  
   
- XML ドキュメント オブジェクト モデル (DOM) の操作の中には、複数のイベントが発生する複合操作があります。 たとえば、 **AppendChild**以前の親から追加するノードを削除することもできます。 この場合、表示、 **NodeRemoved**最初に、発生したイベントが続く、 **NodeInserted**イベント。 設定する操作など**InnerXml**複数のイベントが発生する可能性があります。  
+ XML ドキュメント オブジェクト モデル (DOM) の操作の中には、複数のイベントが発生する複合操作があります。 たとえば **AppendChild** では、追加されるノードを以前の親から削除する必要が生じることがあります。 この場合は、最初に **NodeRemoved** イベントが発生し、次に **NodeInserted** イベントが発生します。 **InnerXml** を設定する操作なども、複数のイベントが発生する結果になります。  
   
- イベント ハンドラーの作成との処理は、次のコード例を示しています、 **NodeInserted**イベント。  
+ イベント ハンドラーを作成する方法および **NodeInserted** イベントを処理する方法を次のコード サンプルに示します。  
   
 ```vb  
 Imports System  
@@ -215,5 +218,5 @@ public class Sample
   
  詳細については、<xref:System.Xml.XmlNodeChangedEventArgs> および <xref:System.Xml.XmlNodeChangedEventHandler> を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

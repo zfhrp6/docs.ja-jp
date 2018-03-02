@@ -13,15 +13,18 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 359b10eb-ec05-4cc6-ac96-c2b060afc4de
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a6cf857ccecbdac88453fd1fba6e93d609196b1a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 99e2f66a1aedafe316ab65ae302113ea553146ed
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemaset"></a>XmlSchemaSet による XML スキーマ (XSD) 検証
 XML ドキュメントは、<xref:System.Xml.Schema.XmlSchemaSet> の XML スキーマ定義言語 (XSD) スキーマを基準として検証できます。  
@@ -30,7 +33,7 @@ XML ドキュメントは、<xref:System.Xml.Schema.XmlSchemaSet> の XML スキ
  XML ドキュメントは、<xref:System.Xml.XmlReader.Create%2A> クラスの <xref:System.Xml.XmlReader> メソッドを使用して検証します。 XML ドキュメントを検証するには、XML ドキュメントの検証に使用する XML スキーマ定義言語 (XSD) スキーマを持つ <xref:System.Xml.XmlReaderSettings> オブジェクトを作成します。  
   
 > [!NOTE]
->  <xref:System.Xml.Schema>名前空間には、簡単に使用する場合に、XSD ファイルに対して XML ツリーを検証する拡張メソッドが含まれています。 [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)です。 LINQ to XML による XML ドキュメントの検証の詳細については、次を参照してください。[する方法: 検証を使用して XSD](http://msdn.microsoft.com/library/481a97fa-6e96-46f2-8c9a-415555fac33b)です。  
+>  [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) を使用する際、<xref:System.Xml.Schema> 名前空間に含まれる拡張メソッドによって、XSD ファイルを基準として XML ツリーを簡単に検証することができます。 LINQ to XML を使用した XML ドキュメントの検証に関する詳細については、「[方法: XSD を使用して検証する](http://msdn.microsoft.com/library/481a97fa-6e96-46f2-8c9a-415555fac33b)」を参照してください。  
   
  独立したスキーマまたはスキーマのセット (<xref:System.Xml.Schema.XmlSchemaSet> を使用) を <xref:System.Xml.Schema.XmlSchemaSet> に追加するには、そのどちらかを <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> の <xref:System.Xml.Schema.XmlSchemaSet> メソッドにパラメーターとして渡します。 ドキュメントを検証する際には、ドキュメントの対象名前空間がスキーマ セット内のスキーマの対象名前空間と一致している必要があります。  
   
@@ -50,6 +53,6 @@ XML ドキュメントは、<xref:System.Xml.Schema.XmlSchemaSet> の XML スキ
  [!code-csharp[XmlSchemaSetOverall Example#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaSetOverall Example/CS/xmlschemasetexample.cs#1)]
  [!code-vb[XmlSchemaSetOverall Example#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaSetOverall Example/VB/xmlschemasetexample.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
- [スキーマのコンパイルのための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
- [XML スキーマの操作](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+## <a name="see-also"></a>参照  
+ [スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+ [XML スキーマの使用](../../../../docs/standard/data/xml/working-with-xml-schemas.md)

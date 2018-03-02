@@ -15,42 +15,45 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ac5ddfb0ac7ae83537717e9bd0cd46eb629641fe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c574ab8ddf506802fb42f53b5212dcb4a3bd9d34
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="details-of-regular-expression-behavior"></a>正規表現の動作の詳細
-.NET Framework 正規表現エンジンは、バックトラッ キング正規表現マッチャー Perl、Python、Emacs、Tcl によって使用されているなどの従来の非決定的有限オートマトン (NFA) エンジンが組み込まれています。 このエンジンは、awk、egrep、または lex に見られるような、より高速であるが制限が多い、純粋な正規表現決定性有限オートマトン (DFA) エンジンとは異なります。 また、標準化されているが低速な POSIX NFA とも異なります。 次のセクションでは、正規表現エンジンは、の 3 つの種類について説明し、従来 NFA エンジンを使用して、.NET Framework の正規表現を実装する理由を説明します。  
+.NET Framework の正規表現エンジンはバックトラッキング型の正規表現マッチャーであり、Perl、Python、Emacs、および Tcl で使われているのと同じ従来型の非決定性有限オートマトン (NFA) エンジンを採用しています。 このエンジンは、awk、egrep、または lex に見られるような、より高速であるが制限が多い、純粋な正規表現決定性有限オートマトン (DFA) エンジンとは異なります。 また、標準化されているが低速な POSIX NFA とも異なります。 次のセクションでは、これら 3 種類の正規表現エンジンについて説明し、.NET Framework の正規表現が従来型 NFA エンジンを使って実装されている理由について説明します。  
   
 ## <a name="benefits-of-the-nfa-engine"></a>NFA エンジンの利点  
  DFA エンジンがパターン一致を実行する場合、その処理順序は入力文字列によって決定されます。 このエンジンは入力文字列の先頭で開始し、順番に進んで、次の文字が正規表現パターンと一致するかどうかを判断します。 このエンジンでは、想定され得る最長の文字列を確実に検索できます。 同じ文字が 2 回テストされることはないため、DFA エンジンはバックトラッキングをサポートしません。 ただし、DFA エンジンには有限状態しか含まれないため、前方参照を使用してパターンを検索することはできません。また、明示的な展開が作成されないため、部分式をキャプチャできません。  
   
- DFA エンジンとは異なり、従来型 NFA エンジンがパターン一致を実行する場合、その処理順序は正規表現パターンによって決定されます。 特定の言語要素を処理するときに、エンジンは最長一致を使用します。つまり、できるだけ多くの入力文字列と一致するようにします。 しかし、部分式の一致が見つかった後の状態も保存します。 最終的に一致が見つからなかった場合、エンジンは保存した状態に戻ることができるため、さらに照合を試行できます。 この正規表現内のそれ以降の言語要素が一致もできるように、部分式が成功した一致を放棄のプロセスと呼ばれる*バックトラッ キング*です。 NFA エンジンは、バックトラッキングを使用して、ある正規表現で可能なすべての展開を特定の順序でテストし、最初に一致した文字列を採用します。 従来型 NFA エンジンでは、見つかった一致文字列の正規表現に固有の展開が作成されるため、部分式に一致する文字列と、一致する前方参照をキャプチャできます。 しかし、従来型 NFA ではバックトラックが行われるため、1 つの状態に到達する経路が複数ある場合には、同じ状態に何度も到達する可能性があります。 その結果、最悪の場合には指数関数的に実行速度が遅くなることがあります。 従来型 NFA エンジンでは、最初に見つかった一致文字列が採用されるため、その他の (おそらく、より長い) 一致文字列が見つからないままになる場合もあります。  
+ DFA エンジンとは異なり、従来型 NFA エンジンがパターン一致を実行する場合、その処理順序は正規表現パターンによって決定されます。 特定の言語要素を処理するときに、エンジンは最長一致を使用します。つまり、できるだけ多くの入力文字列と一致するようにします。 しかし、部分式の一致が見つかった後の状態も保存します。 最終的に一致が見つからなかった場合、エンジンは保存した状態に戻ることができるため、さらに照合を試行できます。 正規表現の後の言語要素も照合できるようにするために、この見つかった部分式の一致を破棄するプロセスを "*バックトラッキング*" と呼びます。 NFA エンジンは、バックトラッキングを使用して、ある正規表現で可能なすべての展開を特定の順序でテストし、最初に一致した文字列を採用します。 従来型 NFA エンジンでは、見つかった一致文字列の正規表現に固有の展開が作成されるため、部分式に一致する文字列と、一致する前方参照をキャプチャできます。 しかし、従来型 NFA ではバックトラックが行われるため、1 つの状態に到達する経路が複数ある場合には、同じ状態に何度も到達する可能性があります。 その結果、最悪の場合には指数関数的に実行速度が遅くなることがあります。 従来型 NFA エンジンでは、最初に見つかった一致文字列が採用されるため、その他の (おそらく、より長い) 一致文字列が見つからないままになる場合もあります。  
   
  POSIX NFA エンジンは従来型 NFA エンジンと似ていますが、一致する最長の文字列が確実に見つかるまでバックトラックが継続される点が異なります。 その結果、POSIX NFA エンジンは従来型 NFA エンジンよりも実行速度が遅くなります。また、POSIX NFA エンジンを使用する場合は、バックトラッキング検索の順序を変更して、より短い一致文字列を長い一致文字列よりも優先させることはできません。  
   
  従来型 NFA エンジンは、DFA エンジンや POSIX NFA エンジンよりも文字列の一致をより厳密に制御するため、プログラマに人気があります。 NFA エンジンは、最悪の場合には実行速度が遅くなることもありますが、あいまいさを少なくし、バックトラッキングを制限するパターンを使用すると、一致する文字列を線形時間または多項式時間で見つけるように調整できます。 言い換えると、NFA エンジンはパフォーマンスと引き換えに能力と柔軟性を向上させますが、ほとんどの場合、正規表現が適切に記述されていれば十分に許容できるパフォーマンスを実現でき、バックトラッキングによってパフォーマンスが指数関数的に低下する状況は回避されます。  
   
 > [!NOTE]
->  パフォーマンスが低下し、過度なバックトラッ キング正規表現を作成する方法でそれらを回避する方法については、次を参照してください。[バックトラッ キング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)です。  
+>  過度なバックトラッキングによって発生するパフォーマンスの低下と、そのような問題を回避する正規表現の作成方法については、「[バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)」をご覧ください。  
   
 ## <a name="net-framework-engine-capabilities"></a>.NET Framework エンジンの機能  
- NFA エンジンを従来の利点を利用するには、.NET Framework 正規表現エンジンには、プログラマ、バックトラッ キングのエンジン調整を有効にする構成要素の完全なセットが含まれています。 それらの構成体を使用すると、高速検索を実行したり、他の展開よりも特定の展開を優先させたりできます。  
+ 従来型の NFA エンジンの長所を利用するために、.NET Framework の正規表現エンジンには、プログラマがバックトラッキング エンジンを調整できるようにするための構成体セットが組み込まれています。 それらの構成体を使用すると、高速検索を実行したり、他の展開よりも特定の展開を優先させたりできます。  
   
- .NET Framework の正規表現エンジンの他の機能を以下に示します。  
+ .NET Framework の正規表現エンジンのその他の機能は次のとおりです。  
   
--   限定的な量指定子: `??`、 `*?`、 `+?`、 `{`  *n*  `,` *m*`}?`です。 これらの構成体は、バックトラッキング エンジンに対し、繰り返しの回数が最も少ない文字列を最初に検索するように指示します。 逆に、通常の最長一致の量指定子は、繰り返しの回数が最も多い文字列を最初に検索しようとします。 2 つの量指定子の動作の違いを次の例に示します。 正規表現は、数字で終わる文を照合し、キャプチャ グループはその数字を抽出します。 正規表現 `.+(\d+)\.` には最長一致の量指定子 `.+` が含まれます。これにより、正規表現エンジンは数字の最後の桁のみをキャプチャします。 対照的に、正規表現 `.+?(\d+)\.` には最短一致の量指定子 `.+?` が含まれます。これにより、正規表現エンジンは数字全体をキャプチャします。  
+-   最短一致の量指定子: `??`、`*?`、`+?`、`{`*n*`,`*m*`}?`。 これらの構成体は、バックトラッキング エンジンに対し、繰り返しの回数が最も少ない文字列を最初に検索するように指示します。 逆に、通常の最長一致の量指定子は、繰り返しの回数が最も多い文字列を最初に検索しようとします。 2 つの量指定子の動作の違いを次の例に示します。 正規表現は、数字で終わる文を照合し、キャプチャ グループはその数字を抽出します。 正規表現 `.+(\d+)\.` には最長一致の量指定子 `.+` が含まれます。これにより、正規表現エンジンは数字の最後の桁のみをキャプチャします。 対照的に、正規表現 `.+?(\d+)\.` には最短一致の量指定子 `.+?` が含まれます。これにより、正規表現エンジンは数字全体をキャプチャします。  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lazy1.cs#1)]
      [!code-vb[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lazy1.vb#1)]  
   
-     この正規表現の最長一致と最短のバージョンは次の表に示すように定義されています '。  
+     この正規表現の最長一致バージョンと最短一致バージョンは、次の表に示すように定義されています。  
   
     |パターン|説明|  
     |-------------|-----------------|  
@@ -59,9 +62,9 @@ ms.lasthandoff: 10/18/2017
     |`(\d+)`|1 文字以上の数字と一致し、その文字を最初のキャプチャ グループに代入します。|  
     |`\.`|ピリオドと一致します。|  
   
-     限定的な量指定子の詳細については、次を参照してください。[量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)です。  
+     最短一致の量指定子について詳しくは、「[限定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」をご覧ください。  
   
--   肯定先読み: `(?=` *subexpression*`)`です。 この機能により、バックトラッキング エンジンは部分式と一致する文字列を見つけた後で、テキスト内の同じ位置に戻ることができます。 同じ位置から開始する複数のパターンを確認してテキスト全体を検索する場合に便利です。 また、エンジンは、一致するテキストに部分文字列を含めずに、一致文字列の末尾に部分文字列が存在することを検証できます。 次の例では、肯定先読みを使用して、後に区切り記号が続かない文中の単語を抽出します。  
+-   肯定先読み: `(?=`*subexpression*`)`。 この機能により、バックトラッキング エンジンは部分式と一致する文字列を見つけた後で、テキスト内の同じ位置に戻ることができます。 同じ位置から開始する複数のパターンを確認してテキスト全体を検索する場合に便利です。 また、エンジンは、一致するテキストに部分文字列を含めずに、一致文字列の末尾に部分文字列が存在することを検証できます。 次の例では、肯定先読みを使用して、後に区切り記号が続かない文中の単語を抽出します。  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookahead1.cs#2)]
      [!code-vb[Conceptual.RegularExpressions.Design#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookahead1.vb#2)]  
@@ -71,13 +74,13 @@ ms.lasthandoff: 10/18/2017
     |パターン|説明|  
     |-------------|-----------------|  
     |`\b`|ワード境界から照合を開始します。|  
-    |`[A-Z]+`|任意の英字と 1 回以上、一致します。 <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>メソッドが呼び出された、<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>オプション、比較では区別されません。|  
+    |`[A-Z]+`|任意の英字と 1 回以上、一致します。 <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドが <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> オプションを使って呼び出されているため、比較では大文字と小文字が区別されません。|  
     |`\b`|ワード境界で照合を終了します。|  
     |`(?=\P{P})`|先読みして次の文字が区切り記号かどうかを判定します。 区切り記号でない場合は、一致と見なされます。|  
   
-     肯定先読みアサーションの詳細については、次を参照してください。[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)です。  
+     肯定先読みアサーションについて詳しくは、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」をご覧ください。  
   
--   負の先読み: `(?!` *subexpression*`)`です。 この機能により、部分式に一致する文字列が見つからなかった場合にのみ、表現に一致できるようになります。 ある文字列を除外する表現の方が、含める表現よりも単純になることが多いため、この機能は検索を簡略化する場合に特に力を発揮します。 たとえば、"non" で始まらない単語を表す表現を記述するのは簡単ではありません。 次の例では、否定先読みを使用してこれらを除外します。  
+-   否定先読み: `(?!`*subexpression*`)`。 この機能により、部分式に一致する文字列が見つからなかった場合にのみ、表現に一致できるようになります。 ある文字列を除外する表現の方が、含める表現よりも単純になることが多いため、この機能は検索を簡略化する場合に特に力を発揮します。 たとえば、"non" で始まらない単語を表す表現を記述するのは簡単ではありません。 次の例では、否定先読みを使用してこれらを除外します。  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookahead2.cs#3)]
      [!code-vb[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookahead2.vb#3)]  
@@ -91,9 +94,9 @@ ms.lasthandoff: 10/18/2017
     |`(\w+)`|1 つ以上の単語文字に一致します。|  
     |`\b`|ワード境界で照合を終了します。|  
   
-     否定先読みアサーションの詳細については、次を参照してください。[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)です。  
+     否定先読みアサーションについて詳しくは、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」をご覧ください。  
   
--   条件の評価: `(?(`*式*`)`*はい*`|`*ありません*`)`と`(?(` *名前*`)`*はい*`|`*ありません*`)`ここで、*式*部分式は、一致させるのには、*名前*、キャプチャ グループの名前を指定*はい*場合に一致する文字列を指定*式*が一致または*名前*が有効で空のキャプチャ グループ、および*ありません*場合に一致する部分式は、*式*が一致しませんまたは*名前*空でない有効なキャプチャ グループではありません。 この機能により、エンジンは直前の部分式の一致結果またはゼロ幅アサーションの結果に従って、複数の代替パターンを使用した検索を実行できます。 そのため、より強力な前方参照が可能になります。たとえば、直前の部分式が一致したかどうかに基づいて部分式を照合できます。 次の例の正規表現は、パブリック使用と内部使用の両方を目的とした段落と一致します。 内部使用のみを目的とした段落は `<PRIVATE>` タグで始まります。 正規表現パターン `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` は、条件付き評価を使用して、パブリック使用と内部使用を目的とした段落の内容を別のキャプチャ グループに代入します。 これらの段落は、異なる方法で処理できます。  
+-   条件付き評価: `(?(`*expression*`)`*yes*`|`*no*`)` および`(?(`*name*`)`*yes*`|`*no*`)`。ここで、*expression* は照合する部分式、*name* はキャプチャ グループの名前、*yes* は、*expression* が一致するか、または *name* が空でない有効なキャプチャ グループである場合に照合する文字列、*no* は、*expression* が一致しないか、または *name* が空でない有効なキャプチャ グループではない場合に照合する部分式です。 この機能により、エンジンは直前の部分式の一致結果またはゼロ幅アサーションの結果に従って、複数の代替パターンを使用した検索を実行できます。 そのため、より強力な前方参照が可能になります。たとえば、直前の部分式が一致したかどうかに基づいて部分式を照合できます。 次の例の正規表現は、パブリック使用と内部使用の両方を目的とした段落と一致します。 内部使用のみを目的とした段落は `<PRIVATE>` タグで始まります。 正規表現パターン `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` は、条件付き評価を使用して、パブリック使用と内部使用を目的とした段落の内容を別のキャプチャ グループに代入します。 これらの段落は、異なる方法で処理できます。  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/conditional1.cs#4)]
      [!code-vb[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/conditional1.vb#4)]  
@@ -103,16 +106,16 @@ ms.lasthandoff: 10/18/2017
     |パターン|説明|  
     |-------------|-----------------|  
     |`^`|行の先頭から照合を開始します。|  
-    |`(?<Pvt>\<PRIVATE\>\s)?`|文字列 `<PRIVATE>` の後に空白文字が続くパターンの 0 回または 1 回の出現と一致します。 名前付きキャプチャ グループに、一致を割り当てる`Pvt`です。|  
+    |`(?<Pvt>\<PRIVATE\>\s)?`|文字列 `<PRIVATE>` の後に空白文字が続くパターンの 0 回または 1 回の出現と一致します。 一致文字列を `Pvt` という名前のキャプチャ グループに代入します。|  
     |`(?(Pvt)((\w+\p{P}?\s)+)`|`Pvt` キャプチャ グループが存在する場合は、1 個以上の単語文字の後に 0 個または 1 個の区切り記号と 1 つの空白文字が続くパターンの 1 回以上の出現と一致します。 部分文字列を最初のキャプチャ グループに代入します。|  
     |`&#124;((\w+\p{P}?\s)+))`|`Pvt` キャプチャ グループが存在しない場合は、1 個以上の単語文字の後に 0 個または 1 個の区切り記号と 1 つの空白文字が続くパターンの 1 回以上の出現と一致します。 部分文字列を 3 番目のキャプチャ グループに代入します。|  
     |`\r?$`|行末または文字列の末尾と一致します。|  
   
-     条件の評価の詳細については、次を参照してください。[代替構成体](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)です。  
+     条件付き評価について詳しくは、「[代替構成体](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)」をご覧ください。  
   
--   グループ定義の均等: `(?<` *name1*`-`*name2* `>` *subexpression*`)`です。 この機能により、正規表現エンジンは、かっこや左右の角かっこなどの入れ子になった構成体を追跡できます。 例については、次を参照してください。[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)です。  
+-   グループ定義の均等化: `(?<`*name1*`-`*name2*`>` *subexpression*`)`。 この機能により、正規表現エンジンは、かっこや左右の角かっこなどの入れ子になった構成体を追跡できます。 例については、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」をご覧ください。  
   
--   非バックトラッ キング部分式 (最長一致部分式とも呼ばれます): `(?>` *subexpression*`)`です。 この機能により、バックトラッキング エンジンは、部分式と最初に一致した文字列だけを確実に検索できるようになります。この場合、表現は、部分式を含む表現とは関係ないように処理されます。 この構成体を使用しない場合は、より大きな表現によるバックトラッキング検索時に、部分式の動作が変化する可能性があります。 たとえば、正規表現 `(a+)\w` は 1 つ以上の "a" 文字を、一連の "a" 文字に続く単語文字と共に照合し、一連の "a" 文字を最初のキャプチャ グループに代入します。ただし、入力文字列の最後の文字も "a" の場合は、`\w` 言語要素によって照合され、キャプチャ グループには含められません。  
+-   非バックトラッキング部分式 (別名: 最長一致部分式): `(?>`*subexpression*`)`。 この機能により、バックトラッキング エンジンは、部分式と最初に一致した文字列だけを確実に検索できるようになります。この場合、表現は、部分式を含む表現とは関係ないように処理されます。 この構成体を使用しない場合は、より大きな表現によるバックトラッキング検索時に、部分式の動作が変化する可能性があります。 たとえば、正規表現 `(a+)\w` は 1 つ以上の "a" 文字を、一連の "a" 文字に続く単語文字と共に照合し、一連の "a" 文字を最初のキャプチャ グループに代入します。ただし、入力文字列の最後の文字も "a" の場合は、`\w` 言語要素によって照合され、キャプチャ グループには含められません。  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking2.cs#7)]
      [!code-vb[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking2.vb#7)]  
@@ -122,16 +125,16 @@ ms.lasthandoff: 10/18/2017
      [!code-csharp[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking1.cs#8)]
      [!code-vb[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking1.vb#8)]  
   
-     非バックトラッ キング部分式の詳細については、次を参照してください。[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)です。  
+     非バックトラッキング部分式について詳しくは、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」をご覧ください。  
   
--   右から左一致する、指定することによって指定されている、<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType>オプションを<xref:System.Text.RegularExpressions.Regex>クラスのコンス トラクターまたは静的なインスタンスの一致するメソッド。 この機能は、左から右ではなく右から左に向かって検索する場合や、パターンの左側ではなく右側で検索を開始した方が効果的な場合に便利です。 次の例に示すように、右から左への一致を使用すると、最長一致の量指定子の動作を変更できます。 この例では、数字で終わる文に対して 2 つの検索を実行します。 最長一致の量指定子 `+` を使用する左から右への検索では、文中の 6 桁の数字の 1 つと一致しますが、右から左への検索では 6 桁の数字すべてと一致します。 正規表現パターンの説明については、このセクションで前に示した最短一致の量指定子の例を参照してください。  
+-   右から左への一致。<xref:System.Text.RegularExpressions.Regex> クラス コンストラクターまたは静的インスタンス一致メソッドに <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> オプションを設定すると指定されます。 この機能は、左から右ではなく右から左に向かって検索する場合や、パターンの左側ではなく右側で検索を開始した方が効果的な場合に便利です。 次の例に示すように、右から左への一致を使用すると、最長一致の量指定子の動作を変更できます。 この例では、数字で終わる文に対して 2 つの検索を実行します。 最長一致の量指定子 `+` を使用する左から右への検索では、文中の 6 桁の数字の 1 つと一致しますが、右から左への検索では 6 桁の数字すべてと一致します。 正規表現パターンの説明については、このセクションで前に示した最短一致の量指定子の例を参照してください。  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/rtl1.cs#6)]
      [!code-vb[Conceptual.RegularExpressions.Design#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/rtl1.vb#6)]  
   
      右から左への一致の詳細については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」をご覧ください。  
   
--   正と負の後読み: `(?<=` *subexpression* `)`の正の後読みと`(?<!` *subexpression* `)`の否定先読みです。 この機能は、このトピックで前に説明した先読みと同様です。 正規表現エンジンでは、完全な右から左への一致を実行できるため、正規表現では制限のない後読みが可能です。 肯定および否定後読みを使用して、入れ子になった部分式が外側の式のスーパーセットである場合に、入れ子の量指定子を回避することもできます。 そのような入れ子の量指定子を使用した正規表現は、多くの場合にパフォーマンスを低下させます。 たとえば、次の例では、文字列が英数字で始まって英数字で終わること、および文字列内の他の文字がより大きなサブセットの 1 つであることを検証します。 これは電子メール アドレスの検証に使用される正規表現の一部になります。詳細については、「[方法 : 文字列が有効な電子メール形式であるかどうかを検証する](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)」をご覧ください。  
+-   肯定および否定後読み: 肯定後読みの場合は `(?<=`*subexpression*`)`、否定後読みの場合は `(?<!`*subexpression*`)`。 この機能は、このトピックで前に説明した先読みと同様です。 正規表現エンジンでは、完全な右から左への一致を実行できるため、正規表現では制限のない後読みが可能です。 肯定および否定後読みを使用して、入れ子になった部分式が外側の式のスーパーセットである場合に、入れ子の量指定子を回避することもできます。 そのような入れ子の量指定子を使用した正規表現は、多くの場合にパフォーマンスを低下させます。 たとえば、次の例では、文字列が英数字で始まって英数字で終わること、および文字列内の他の文字がより大きなサブセットの 1 つであることを検証します。 これはメール アドレスの検証に使用される正規表現の一部になります。詳しくは、「[方法: 文字列が有効な電子メール形式であるかどうかを検証する](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)」をご覧ください。  
   
      [!code-csharp[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookbehind1.cs#5)]
      [!code-vb[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookbehind1.vb#5)]  
@@ -142,15 +145,15 @@ ms.lasthandoff: 10/18/2017
     |-------------|-----------------|  
     |`^`|文字列の先頭から照合を開始します。|  
     |`[A-Z0-9]`|任意の数字または英数字と一致します。 (比較では、大文字と小文字を区別しません。)|  
-    |`([-!#$%&'.*+/=?^`{}&#124;~\w])*`|任意の単語文字または、次の文字の 0 個以上の出現と一致:-、!、#、$、%、&、'、.、*、+、/、=、?、^、'、{、}、&#124;以外の場合は、または ~。|  
+    |`([-!#$%&'.*+/=?^`{}&#124;~\w])*`|任意の単語文字の 0 回以上の繰り返し、または次の文字のいずれかと一致します: -、!、#、$、%、&、'、.、*、+、/、=、?、^、`、{、}、&#124;、~。|  
     |`(?<=[A-Z0-9])`|前の文字を後読みします。これは数字または英数字である必要があります。 (比較では、大文字と小文字を区別しません。)|  
     |`$`|入力文字列の末尾で照合を終了します。|  
   
-     正と負の後読みの詳細については、次を参照してください。[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)です。  
+     肯定および否定後読みについて詳しくは、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」をご覧ください。  
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|正規表現のバックトラッキングを使用して、分岐処理によって別の一致を検索する方法について説明します。|  
 |[コンパイルと再利用](../../../docs/standard/base-types/compilation-and-reuse-in-regular-expressions.md)|パフォーマンスを向上させるための正規表現のコンパイルと再利用について説明します。|  

@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8f7b812d5d6f75e39e9eebcc003686ff88d009e9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e6ff5661a7e78f9b37f16acc86834561fc697bcc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="compiled-xpath-expressions"></a>コンパイルされた XPath 式
 <xref:System.Xml.XPath.XPathExpression> オブジェクトは、<xref:System.Xml.XPath.XPathExpression.Compile%2A> クラスの静的 <xref:System.Xml.XPath.XPathExpression> メソッドまたは <xref:System.Xml.XPath.XPathNavigator.Compile%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドから返されるコンパイル済み XPath クエリを表します。  
@@ -44,7 +47,7 @@ ms.lasthandoff: 11/21/2017
   
  次の表では、W3C XPath の戻り型、それに等価の Microsoft .NET Framework 型、および戻り型に応じて <xref:System.Xml.XPath.XPathExpression> オブジェクトで使用できるメソッドについて説明します。  
   
-|W3C XPath の戻り型|.NET Framework の等価の型|説明|メソッド|  
+|W3C XPath の戻り値の型|.NET Framework の等価の型|説明|メソッド|  
 |---------------------------|------------------------------------|-----------------|-------------|  
 |`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|重複がなく順序付けされていない、ドキュメント順に作成されたノードのコレクション。|<xref:System.Xml.XPath.XPathNavigator.Select%2A> または <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
 |`Boolean`|<xref:System.Boolean>|`true` または `false` の値。|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> または<br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  
@@ -124,15 +127,15 @@ Console.WriteLine(nodes.Current.Value);
   
  さらに、選択基準が単純な場合は <xref:System.Xml.XPath.XPathNavigator> クラスが提供するノード セット ナビゲーション メソッドは、<xref:System.Xml.XPath.XPathNavigator> クラスが提供する選択メソッドに比べてパフォーマンスが高いことがあります。 たとえば、現在のノードの最初の子を選択する場合、<xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> メソッドを使用した方が `child::*[1]` XPath 式と <xref:System.Xml.XPath.XPathNavigator.Select%2A> メソッドを使用するよりも高速です。  
   
- 詳細については、ノードのセットのナビゲーション メソッド、<xref:System.Xml.XPath.XPathNavigator>クラスを参照してください[ノード セット ナビゲーションを使用して XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)です。  
+ <xref:System.Xml.XPath.XPathNavigator> クラスのノード セット ナビゲーション メソッドの詳細については「[XPathNavigator を使用するノード セットのナビゲーション](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
  [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [XPathNavigator による XML データを選択します。](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
- [XPathNavigator による XPath 式を評価します。](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
+ [XPathNavigator を使用した XML データの選択](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
+ [XPathNavigator による XPath 式の評価](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
  [XPathNavigator によるノードの一致](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)  
  [XPath クエリで認識されるノード型](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)  
  [XPath クエリおよび名前空間](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)

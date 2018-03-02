@@ -6,11 +6,14 @@ ms.author: mairaw
 ms.date: 08/15/2016
 ms.topic: article
 ms.prod: .net
-ms.openlocfilehash: fa001492aa76c4690faca23cb2a1e0467a857a6d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2108125b9c01a2686d66b0ebd4e43e7ac863e223
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>サーバー アプリ用 .NET Core と .NET Framework の選択
 
@@ -39,7 +42,7 @@ ms.lasthandoff: 11/21/2017
 
 複数のプラットフォーム (Windows、Linux、macOS ) で実行する必要があるアプリケーション (Web/サービス) の場合は、.NET Core を使用します。
 
-.NET Core は、開発ワークステーションとして前述のオペレーティング システムをサポートしています。 Visual Studio では、Windows や macOS の統合開発環境 (IDE) を提供します。 また、macOS、Linux、および Windows 上で動作する Visual Studio Code も使用できます。 Visual Studio Code は、IntelliSense、デバッグなどの .NET Core をサポートしています。 Sublime、Emacs、VI など、ほとんどのサード パーティ製エディターは、.NET Core で動作します。 これらのサード パーティ製エディターでは、[Omnisharp](http://www.omnisharp.net/) を使用して、エディターを IntelliSense にします。 さらに、コード エディターをまったく使用せずに、サポートされているすべてのプラットフォームで利用可能な [.NET Core CLI ツール](../core/tools/index.md)を直接使用することもできます。
+.NET Core は、開発ワークステーションとして前述のオペレーティング システムをサポートしています。 Visual Studio では、Windows および macOS 用の統合開発環境 (IDE) が用意されています。 また、macOS、Linux、および Windows 上で動作する Visual Studio Code も使用できます。 Visual Studio Code は、IntelliSense、デバッグなどの .NET Core をサポートしています。 Sublime、Emacs、VI など、ほとんどのサード パーティ製エディターは、.NET Core で動作します。 これらのサード パーティ製エディターでは、[Omnisharp](http://www.omnisharp.net/) を使用して、エディターを IntelliSense にします。 さらに、コード エディターをまったく使用せずに、サポートされているすべてのプラットフォームで利用可能な [.NET Core CLI ツール](../core/tools/index.md)を直接使用することもできます。
 
 ### <a name="microservices-architecture"></a>マイクロサービス アーキテクチャ
 
@@ -106,7 +109,7 @@ Docker コンテナーは、オンプレミスの Linux または Windows イン
 Microsoft やサードパーティ製のプラットフォームの中には、.NET Core をサポートしないものもあります。 たとえば、Service Fabric のステートフル Reliable Services や Service Fabric Reliable Actors などのいくつかの Azure サービスでは .NET Framework が必要です。 他のいくつかのサービスでは、.NET Core ではまだ使用できない SDK が提供されます。 すべての Azure サービスでは .NET Core を使用しているために、これは過渡的な状況です。 その間、クライアント SDK の代わりに同等の REST API をいつでも使用できます。
 
 ## <a name="see-also"></a>関連項目
- [ASP.NET と ASP.NET Core を選択します。](/aspnet/core/choose-aspnet-framework)  
+ [ASP.NET と ASP.NET Core の選択](/aspnet/core/choose-aspnet-framework)  
  [.NET Core のガイド](../core/index.md)  
  [.NET Framework から .NET Core への移植](../core/porting/index.md)  
  [Docker 上の .NET Framework のガイド](../framework/docker/index.md)  

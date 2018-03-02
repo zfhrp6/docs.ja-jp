@@ -17,27 +17,30 @@ helpviewer_keywords:
 - log files, appending to
 - I/O [.NET Framework], log files
 ms.assetid: 74423362-1721-49cb-aa0a-e04005f72a06
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 60c31339231405a1cbbb98dae37d36ad3c3709c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 333b20adee4ea2826a1fc6795a39490dca1af843
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>方法 : ログ ファイルを開いて情報を追加する
-<xref:System.IO.StreamWriter>および<xref:System.IO.StreamReader>する文字の書き込みおよびストリームから文字を読み取る。 次のコード例が開き、`log.txt`入力には、ファイルまたはファイルの末尾に情報を追加し、既に存在しない場合は、ファイルを作成します。 ファイルの内容は表示するための標準出力に書き込まれます。 この例を代わりに、情報を 1 つの文字列または文字列の配列として格納でした、<xref:System.IO.File.WriteAllText%2A>または<xref:System.IO.File.WriteAllLines%2A>メソッドは、同じ機能を実現するを使用する可能性があります。  
+<xref:System.IO.StreamWriter> および <xref:System.IO.StreamReader> は、ストリームから文字の書き込んだり、読み取りを行います。 次のコード例は、入力用に `log.txt` ファイルを開くか、まだファイルがない場合、ファイルを作成し、ファイルの末尾に情報を追加します。 ファイルの内容は、その後表示用に標準出力に書き込まれます。 この例の代わりとして、情報を 1 つの文字列または文字列の配列として格納して、<xref:System.IO.File.WriteAllText%2A> または <xref:System.IO.File.WriteAllLines%2A> メソッドを使用して、同じ機能を実現することができます。  
   
 > [!NOTE]
->  メソッドおよびプロパティを使用する Visual Basic ユーザーは選択、<xref:Microsoft.VisualBasic.Logging.Log>クラスまたは<xref:Microsoft.VisualBasic.FileIO.FileSystem>作成またはログ ファイルに書き込むのためのクラスです。  
+>  Visual Basic を使用するユーザーは、ログ ファイルの作成またはログ ファイルへの書き込みのために、<xref:Microsoft.VisualBasic.Logging.Log> クラスまたは <xref:Microsoft.VisualBasic.FileIO.FileSystem> クラスによって提供されるメソッドまたはプロパティを使用することを選択できます。  
   
 ## <a name="example"></a>例  
  [!code-csharp[Conceptual.BasicIO.TextFiles#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source2.cs#2)]
  [!code-vb[Conceptual.BasicIO.TextFiles#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source2.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.StreamWriter>  
  <xref:System.IO.StreamReader>  
  <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType>  

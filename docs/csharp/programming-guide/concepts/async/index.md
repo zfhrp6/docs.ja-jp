@@ -9,11 +9,11 @@ ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: b845bf6f31ef84c78dcfd84832036ca2f2c4cae4
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 6822143df2d02c284d7506d180139c18cfbaf370
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Async および Await を使用した非同期プログラミング (C#)
 パフォーマンスのボトルネックを回避しアプリケーション全体の応答性を向上させるために、非同期プログラミングを使用できます。 ただ、非同期アプリケーションを作成する従来の方法は複雑で、プログラムの作成、デバッグ、保守が困難な場合があります。  
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/23/2018
  非同期ベースの方法は、非同期操作を設計する場合に選択できるオプションの一覧に、自動送信に相当するものを追加します。 つまり、開発者の少しの作業量で、従来の非同期プログラミングのすべての利点を取得できます。  
   
 ##  <a name="BKMK_HowtoWriteanAsyncMethod"></a>非同期メソッドの作成の簡素化  
- C# の [async](../../../../csharp/language-reference/keywords/async.md) キーワードと [await](../../../../csharp/language-reference/keywords/await.md) キーワードは、非同期プログラミングの中核です。 これら 2 つのキーワードを使用すると、同期メソッドの作成とほぼ同様の容易さで、.NET Framework、.NET Core または Windows ランタイムのリソースを使用して非同期メソッドを作成できます。 `async` および `await` を使用して定義する非同期メソッドは、*async メソッド*と呼ばれます。  
+ C# の [async](../../../../csharp/language-reference/keywords/async.md) キーワードと [await](../../../../csharp/language-reference/keywords/await.md) キーワードは、非同期プログラミングの中核です。 これら 2 つのキーワードを使用すると、同期メソッドの作成とほぼ同様の容易さで、.NET Framework、.NET Core または Windows ランタイムのリソースを使用して非同期メソッドを作成できます。 `async` キーワードを使用して定義する非同期メソッドは、"*async メソッド*" として参照されます。  
   
  async メソッドの例を次に示します。 コードのほとんどは、見たことのあるものと思います。 コメントは、非同期性を作成するために追加した機能を明示しています。  
   
@@ -92,21 +92,21 @@ string urlContents = await client.GetStringAsync();
   
 -   戻り値の型は次のいずれかになります:  
   
-    -   メソッドが、オペランドに TResult 型を持つステートメントを戻す場合、<xref:System.Threading.Tasks.Task%601>。  
+    -   メソッドが、オペランドに `TResult` 型を持つステートメントを戻す場合、<xref:System.Threading.Tasks.Task%601>。  
   
     -   メソッドがステートメントを戻さない、またはオペランドを持たないステートメントを戻す場合、<xref:System.Threading.Tasks.Task>。  
   
-    -   非同期のイベント ハンドラーを作成する場合、`Void`。  
+    -   非同期のイベント ハンドラーを作成する場合、`void`。  
 
     -   `GetAwaiter` メソッドがあるその他の任意の型 (C# 7 以降)。
   
-     詳細については、このトピックで後述する「戻り値の型およびパラメーター」を参照してください。  
+     詳細については、「[戻り値の型およびパラメーター](#BKMK_ReturnTypesandParameters)」セクションを参照してください。  
   
 -   メソッドには、通常は 1 つ以上の await 式があり、待機中の非同期操作が完了するまでメソッドを続行できないポイントをマークします。 この間メソッドは中断し、メソッドの呼び出し元にコントロールを戻します。 このトピックの次のセクションでは、中断ポイントで何が発生するかを説明します。  
   
  非同期のメソッドでは、指定のキーワードと型を使用して何を実行するかを示すと、コンパイラがその作業を引き継ぎます。作業には、中断されたメソッドの待機ポイントにコントロールが戻された場合に実行される作業を、継続的に追跡することも含まれます。 ループおよび例外処理など一部のルーチンのプロセスは、従来の非同期コードによる操作が困難な場合があります。 非同期のメソッドでは、同期ソリューションの場合と同様にこれらの要素を記述すると、問題が解決します。  
   
- .NET Framework の以前のバージョンでの非同期性の詳細については、「[TPL と従来の .NET Framework 非同期プログラミング](http://msdn.microsoft.com/library/e7b31170-a156-433f-9f26-b1fc7cd1776f)」を参照してください。  
+ .NET Framework の以前のバージョンでの非同期性の詳細については、「[TPL と従来の .NET Framework 非同期プログラミング](../../../../standard/parallel-programming/tpl-and-traditional-async-programming.md)」を参照してください。  
   
 ##  <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a>非同期メソッドでの動作  
  非同期プログラミングでは理解が必要な最も重要なことは、コントロール フローがどのようにメソッドからのメソッドに移動するかということです。 次の図は、このプロセスについて説明します。  
@@ -132,7 +132,7 @@ string urlContents = await client.GetStringAsync();
      そのため、`AccessTheWebAsync` は await 演算子を使用してその進行を中断し、`AccessTheWebAsync` を呼び出したメソッドにコントロールを戻します。 `AccessTheWebAsync` は呼び出し元に `Task<int>` を返します。 タスクは、ダウンロードされた文字列の長さの整数値を生成することの保証を表します。  
   
     > [!NOTE]
-    >  `GetStringAsync` (および、結果として `getStringTask`) が `AccessTheWebAsync` が待機する前に完了した場合、コントロールは `AccessTheWebAsync` に残ります。 `AccessTheWebAsync` を中断して後から戻ることは、呼び出された非同期プロセス (`getStringTask`) が既に完了していて、AccessTheWebSync が最終結果を待つ必要がない場合に、無駄になることがあります。  
+    >  `GetStringAsync` (および、結果として `getStringTask`) が `AccessTheWebAsync` が待機する前に完了した場合、コントロールは `AccessTheWebAsync` に残ります。 `AccessTheWebAsync` を中断して後から戻ることは、呼び出された非同期プロセス (`getStringTask`) が既に完了していて、`AccessTheWebSync` が最終結果を待つ必要がない場合に、無駄になることがあります。  
   
      呼び出し元 (この例ではイベント ハンドラー) の内部で、処理パターンが続行されます。 呼び出し元は `AccessTheWebAsync` からの結果に依存しない他の作業をすることもあり、または直ちに待機状態になることもあります。   イベント ハンドラーは `AccessTheWebAsync` を待機し、`AccessTheWebAsync` は、`GetStringAsync` を待機します。  
   
@@ -146,7 +146,7 @@ string urlContents = await client.GetStringAsync();
 ##  <a name="BKMK_APIAsyncMethods"></a> API の非同期メソッド  
  非同期のプログラミングをサポートする `GetStringAsync` などのメソッドがどこにあるのかということです。 .NET Framework 4.5 以降および .NET Core には、`async` および `await` で使用する多くのメンバーが含まれています。 メンバー名に付記されている "Async" というサフィックスと、その戻り値の型である <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> から識別できます。 たとえば、`System.IO.Stream` のクラスには、同期メソッドの <xref:System.IO.Stream.CopyTo%2A>、<xref:System.IO.Stream.Read%2A>、および <xref:System.IO.Stream.Write%2A> と共に、<xref:System.IO.Stream.CopyToAsync%2A>、<xref:System.IO.Stream.ReadAsync%2A> および <xref:System.IO.Stream.WriteAsync%2A> という同期メソッドが含まれています。  
   
- Windows ランタイムにも、Windows アプリの `async` と `await` で使用できる多くのメソッドが含まれています。 詳細およびサンプル メソッドについては、「[クイック スタート: await 演算子を使用した非同期プログラミング](/previous-versions/windows/apps/hh452713(v=win.10))」、「[非同期プログラミング (Windows ストア アプリ)](/previous-versions/windows/apps/hh464924(v=win.10))」、および「[WhenAny: .NET Framework と Windows ランタイム間のブリッジ](https://msdn.microsoft.com/library/jj635140(v=vs.120).aspx)」を参照してください。  
+ Windows ランタイムにも、Windows アプリの `async` と `await` で使用できる多くのメソッドが含まれています。 UWP 開発の詳細については、「[スレッド化と非同期プログラミング](/windows/uwp/threading-async/)」を参照してください。旧バージョンの Windows ランタイムを使用する場合は、「[非同期プログラミング (Windows ストア アプリ)](/previous-versions/windows/apps/hh464924(v=win.10))」および「[クイック スタート: await 演算子を使用した非同期プログラミング](/previous-versions/windows/apps/hh452713(v=win.10))」を参照してください。  
   
 ##  <a name="BKMK_Threads"></a>スレッド  
 非同期のメソッドは非ブロッキング操作を意図しています。 非同期のメソッドの `await` 式は、待機中のタスクの実行中に現在のスレッドをブロックしません。 代わりに、式はメソッドの残りの部分の継続を登録し、非同期のメソッドの呼び出し元にコントロールを戻します。  
@@ -158,7 +158,7 @@ string urlContents = await client.GetStringAsync();
 ##  <a name="BKMK_AsyncandAwait"></a>async と await  
  [async](../../../../csharp/language-reference/keywords/async.md) 修飾子を使用して、メソッドが非同期メソッドであることを指定すると、次の 2 つの機能が有効になります。  
   
--   マークされた非同期のメソッドは中断ポイントを示すために [await](../../../../csharp/language-reference/keywords/await.md) を使用できます。 await 演算子は、非同期のメソッドが、待機中の非同期のプロセスが完了するまでこのポイント以降を続行できないことを、コンパイラに指示します。 その間、コントロールは非同期のメソッドの呼び出し元に戻されます。  
+-   マークされた非同期のメソッドは中断ポイントを示すために [await](../../../../csharp/language-reference/keywords/await.md) を使用できます。 `await` 演算子は、非同期のメソッドが、待機中の非同期のプロセスが完了するまでこのポイント以降を続行できないことを、コンパイラに指示します。 その間、コントロールは非同期のメソッドの呼び出し元に戻されます。  
   
      非同期のメソッドの `await` 式での中断は、メソッドからの終了を意図するものではなく、`finally` ブロックは実行されません。  
   
@@ -232,8 +232,7 @@ Windows ランタイム プログラミングの非同期 API には、タスク
 -   <xref:Windows.Foundation.IAsyncActionWithProgress%601>  
   
 -   <xref:Windows.Foundation.IAsyncOperationWithProgress%602>  
-  
- 詳細およびサンプルついては、「[クイック スタート: 非同期プログラミングに await 演算子を使用する](/previous-versions/windows/apps/hh452713(v=win.10))」を参照してください。  
+   
   
 ##  <a name="BKMK_NamingConvention"></a>名前付け規則  
  慣例により、`async` 修飾子を持つメソッドの名前には、"Async" を追加します。  
@@ -340,6 +339,8 @@ namespace AsyncFirstExample
 // Length of the downloaded string: 41564.  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [async](../../../../csharp/language-reference/keywords/async.md)  
- [await](../../../../csharp/language-reference/keywords/await.md)
+ [await](../../../../csharp/language-reference/keywords/await.md)  
+ [非同期プログラミング](../../../../csharp/async.md)  
+ [非同期の概要](../../../../standard/async.md)  

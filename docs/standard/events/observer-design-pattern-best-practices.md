@@ -12,21 +12,24 @@ helpviewer_keywords:
 - observer design pattern [.NET Framework], best practices
 - best practices [.NET Framework], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0edba44efcaa46812f535b39364c2f5e4e3a1afe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: dc42ccd425b52719b2b69525d2bbbe4607a19982
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="observer-design-pattern-best-practices"></a>オブサーバー デザイン パターンのベスト プラクティス
 .NET Framework では、オブザーバー デザイン パターンは、一連のインターフェイスとして実装されます。 <xref:System.IObservable%601?displayProperty=nameWithType> インターフェイスはデータ プロバイダーを表し、データ プロバイダーはオブザーバーで通知のサブスクリプションを解除できるようにする <xref:System.IDisposable> 実装も提供します。 <xref:System.IObserver%601?displayProperty=nameWithType> インターフェイスはオブザーバーを表します。 このトピックでは、これらのインターフェイスを使用してオブザーバー デザイン パターンを実装するときに、開発者が適用することが望ましいベスト プラクティスについて説明します。  
   
 ## <a name="threading"></a>スレッド処理  
- 通常、プロバイダーは、何らかのコレクション オブジェクトで表されるサブスクライバー リストに特定のオブザーバーを追加することで、<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> メソッドを実装し、サブスクライバー リストから特定のオブザーバーを削除することで、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> メソッドを実装します。 オブザーバーは、これらのメソッドをいつでも呼び出すことができます。 また、プロバイダー/オブザーバーのコントラクトでは、<xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> コールバック メソッドの後にだれがサブスクリプションを解除するかが指定されていないため、プロバイダーとオブザーバーの両方で同じメンバーをリストから削除しようとする可能性があります。 このような可能性があるため、<xref:System.IObservable%601.Subscribe%2A> メソッドと <xref:System.IDisposable.Dispose%2A> メソッドはどちらもスレッド セーフである必要があります。 通常、この層を使用して、[同時実行コレクション](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)またはロックします。 非スレッド セーフの実装では、スレッド セーフではないことが明示的に記載されている必要があります。  
+ 通常、プロバイダーは、何らかのコレクション オブジェクトで表されるサブスクライバー リストに特定のオブザーバーを追加することで、<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> メソッドを実装し、サブスクライバー リストから特定のオブザーバーを削除することで、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> メソッドを実装します。 オブザーバーは、これらのメソッドをいつでも呼び出すことができます。 また、プロバイダー/オブザーバーのコントラクトでは、<xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> コールバック メソッドの後にだれがサブスクリプションを解除するかが指定されていないため、プロバイダーとオブザーバーの両方で同じメンバーをリストから削除しようとする可能性があります。 このような可能性があるため、<xref:System.IObservable%601.Subscribe%2A> メソッドと <xref:System.IDisposable.Dispose%2A> メソッドはどちらもスレッド セーフである必要があります。 通常、これには、[同時実行コレクション](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)またはロックの使用が必要です。 非スレッド セーフの実装では、スレッド セーフではないことが明示的に記載されている必要があります。  
   
  その他の保証は、プロバイダー/オブザーバーのコントラクトの最上部のレイヤーで指定されている必要があります。 実装側で要件を追加する場合には、ユーザーがオブザーバー コントラクトについて混乱しないように明確に示す必要があります。  
   
@@ -60,7 +63,7 @@ ms.lasthandoff: 11/21/2017
   
  1 つのオブザーバーを複数のプロバイダーにアタッチすることは可能ですが、推奨パターンは、<xref:System.IObserver%601> インスタンスを 1 つの <xref:System.IObservable%601> インスタンスにのみアタッチすることです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [オブサーバー デザイン パターン](../../../docs/standard/events/observer-design-pattern.md)  
  [方法: オブザーバーを実装する](../../../docs/standard/events/how-to-implement-an-observer.md)  
  [方法: プロバイダーを実装する](../../../docs/standard/events/how-to-implement-a-provider.md)

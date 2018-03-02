@@ -11,35 +11,39 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: PLINQ queries, sample data
+helpviewer_keywords:
+- PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f0e94fec1d1390c68808c06a8ff23f52556c6f74
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4b1aaa6f3027283ff20088d6122f9b4ec4bb1111
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="plinq-data-sample"></a>PLINQ データのサンプル
-このサンプルには、顧客、製品、Orders、Order Details のメモリ内コレクションに変換する方法と共に、.csv 形式でデータ例にはが含まれています。 PLINQ でさらに試すには、その他のトピックのコード例をこのトピックのコードに貼り付けるし、呼び出すことからすることができます、`Main`メソッドです。 PLINQ クエリでこのデータを使用することもできます。  
+このサンプルには、.csv 形式のデータ例と、データを顧客、製品、注文、その他の詳細のメモリ内コレクションに変換するメソッドが含まれています。 PLINQ でさらに試す場合は、他の特定のトピックのコード例をこのトピックのコードに貼り付けて、`Main` メソッドから呼び出すことができます。 また、独自の PLINQ クエリでこのデータを使用することもできます。  
   
- データは、Northwind データベースのサブセットを表します。 50 台の顧客レコードは、含まれる、すべてではなくフィールドです。 注文とすべての顧客に対応する Order_Detail データから行のサブセットが含まれます。 すべての製品が含まれます。  
+ データは、Northwind データベースのサブセットを表します。 50 の顧客レコードが含まれていますが、すべてのフィールドが含まれているわけではありません。 すべての顧客の注文および対応する Order_Detail データからの行のサブセットが含まれます。 製品はすべて含まれます。  
   
 > [!NOTE]
->  データ セットが、PLINQ はより高速 LINQ to Objects を含むクエリの基本を示すために十分な大きさ`where`と`select`句。 このような小さいデータセットで速度が向上を確認するには、データ セット内のすべての要素に対する計算コストが高い操作を含むクエリを使用します。  
+>  データ セットは、PLINQ が基本的な `where` 句と `select` 句のみを含むクエリの LINQ to Objects よりも高速であることを示すには十分な大きさではありません。 このような小さいデータ セットでの速度向上を確認するには、データ セットのすべての要素に対して負荷の大きい操作を含むクエリを使用します。  
   
 ### <a name="to-set-up-this-sample"></a>このサンプルをセットアップするには  
   
-1.  Visual Basic または Visual c# コンソール アプリケーション プロジェクトを作成します。  
+1.  Visual Basic または Visual C# コンソール アプリケーション プロジェクトを作成します。  
   
-2.  Module1.vb または Program.cs の内容を交換して、これらの手順を次のコードを使用してください。  
+2.  これらの手順の次に示すコードを使用して、Module1.vb または Program.cs のコンテンツを置き換えます。  
   
-3.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。 選択**テキスト ファイル** をクリックし、 **OK**です。 このトピックのデータをコピーし、新しいテキスト ファイルに貼り付けます。 **ファイル** メニューのをクリックして**保存**ファイル「Plinqdata.csv、名前、および、それをソース コード ファイルを含むフォルダーに保存します。  
+3.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。 **[テキスト ファイル]** を選択してから **[OK]** をクリックします。 このトピックのデータをコピーし、新しいテキスト ファイルに貼り付けます。 **[ファイル]** メニューで **[保存]** をクリックし、ファイルに Plinqdata.csv という名前を付けてから、ソース コード ファイルを含むフォルダーに保存します。  
   
-4.  F5 キーを押して、プロジェクトがビルドされ、正常に実行されることを確認してください。 次の出力がコンソール ウィンドウに表示されます。  
+4.  F5 キーを押し、プロジェクトが正常にビルドされ、実行されることを確認します。 次の出力がコンソール ウィンドウに表示されます。  
   
     ```  
     Customer count: 50  
@@ -868,5 +872,5 @@ PRODUCTS
 END PRODUCTS  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

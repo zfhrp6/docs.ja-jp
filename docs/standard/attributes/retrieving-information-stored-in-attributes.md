@@ -17,39 +17,42 @@ helpviewer_keywords:
 - multiple attribute instances
 - attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9d3fd9a5a49d65b37d2cdb5107e9c516a6df5847
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 146572fb060d1bd37d6eee5b5dce3c255b28f8b2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>属性に格納されている情報の取得
-簡単なプロセスは、カスタム属性を取得します。 最初に、取得する属性のインスタンスを宣言します。 次に、使用、<xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>新しい属性を取得する属性の値を初期化します。 新しい属性が初期化されると、単にそのプロパティを使用する値を取得します。  
+カスタム属性の取得は簡単なプロセスです。 まず、取得する属性のインスタンスを宣言します。 次に、<xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> メソッドを使用して、取得する属性の値に新しい属性を初期化します。 新しい属性が初期化されたら、そのプロパティを使用して値を取得できるようになります。  
   
 > [!IMPORTANT]
->  このトピックでは、実行コンテキストに読み込まれるコードの属性を取得する方法について説明します。 リフレクション専用コンテキストに読み込まれるコードの属性を取得するには、使用する必要があります、<xref:System.Reflection.CustomAttributeData>クラスのように[する方法: リフレクション コンテキストにアセンブリをロード](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)です。  
+>  このトピックでは、実行コンテキストに読み込まれるコードのカスタム属性を取得する方法について説明します。 リフレクションのみのコンテキストに読み込まれたコードの属性を取得するには、「[方法: リフレクションのみのコンテキストにアセンブリを読み込む](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)」で説明されているように、<xref:System.Reflection.CustomAttributeData> クラスを使用する必要があります。  
   
- このセクションでは、次の属性を取得する方法について説明します。  
+ このセクションでは、以下の属性の取得方法について説明します。  
   
--   [属性の 1 つのインスタンスを取得します。](#cpconretrievingsingleinstanceofattribute)  
+-   [属性の単一のインスタンスを取得する](#cpconretrievingsingleinstanceofattribute)  
   
--   [同じスコープに適用される属性の複数のインスタンスを取得します。](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
+-   [同じスコープに適用された属性の複数のインスタンスを取得する](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
   
--   [他のスコープに適用される属性の複数のインスタンスを取得します。](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
+-   [異なるスコープに適用された属性の複数のインスタンスを取得する](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
   
 <a name="cpconretrievingsingleinstanceofattribute"></a>   
-## <a name="retrieving-a-single-instance-of-an-attribute"></a>属性の 1 つのインスタンスを取得します。  
- 次の例で、 `DeveloperAttribute` (前のセクションで説明) に適用される、`MainApp`クラス レベルのクラスです。 `GetAttribute`メソッドを使用**されていて**に格納されている値を取得する`DeveloperAttribute`それらをコンソールに表示する前にクラス レベル上。  
+## <a name="retrieving-a-single-instance-of-an-attribute"></a>属性の単一のインスタンスを取得する  
+ 次の例では、(前のセクションで説明した) `DeveloperAttribute` がクラス レベルで `MainApp` クラスに適用されます。 `GetAttribute` メソッドは **GetCustomAttribute** を使用して、クラス レベルで `DeveloperAttribute` に格納されている値を取得してからコンソールに表示します。  
   
  [!code-cpp[Conceptual.Attributes.Usage#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#18)]
  [!code-csharp[Conceptual.Attributes.Usage#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#18)]
  [!code-vb[Conceptual.Attributes.Usage#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#18)]  
   
- このプログラムは、実行時に、次のテキストを表示します。  
+ このプログラムを実行すると、次のテキストが表示されます。  
   
 ```  
 The Name Attribute is: Joan Smith.  
@@ -57,41 +60,41 @@ The Level Attribute is: 42.
 The Reviewed Attribute is: True.  
 ```  
   
- 属性が見つからない場合、**されていて**メソッド初期化`MyAttribute`を null 値にします。 この例で確認`MyAttribute`このようなインスタンスの属性が見つからない場合、ユーザーに通知します。 場合、`DeveloperAttribute`はクラス スコープで、次のメッセージをコンソールに表示します。  
+ 属性が見つからない場合、**GetCustomAttribute** メソッドは `MyAttribute` を null 値に初期化します。 この例では、そのようなインスタンスの `MyAttribute` を確認し、属性が見つからない場合はユーザーに通知します。 クラス スコープ内に `DeveloperAttribute` 見つからない場合は、次のメッセージがコンソールに表示されます。  
   
 ```  
 The attribute was not found.   
 ```  
   
- この例では、属性の定義が、現在の名前空間にある前提としています。 現在の名前空間がない場合、属性の定義が存在する名前空間をインポートしてください。  
+ この例では、属性の定義が現在の名前空間にあると仮定しています。 属性の定義が現在の名前空間にない場合は、その定義が存在する名前空間を忘れずにインポートしてください。  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtosamescope"></a>   
-## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-the-same-scope"></a>同じスコープに適用される属性の複数のインスタンスを取得します。  
- 前の例では、検査するクラスとを検索する特定の属性に渡されるの<xref:System.Attribute.GetCustomAttribute%2A>します。 そのコードは、属性の 1 つのインスタンスは、クラス レベルで適用されても専用の場合は動作します。 ただし、同じクラス レベルでは、属性の複数のインスタンスが適用されている場合、**されていて**メソッドがすべての情報を取得できません。 使用できる場合は、同じ属性の複数のインスタンスが同じスコープに適用されます、<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>配列属性のすべてのインスタンスを配置します。 たとえば、次の 2 つのインスタンス`DeveloperAttribute`、同じクラスのクラス レベルで適用される、`GetAttribute`メソッドは、両方の属性に含まれる情報を表示するように変更できます。 ただし、同じレベルでは、複数の属性を適用すると属性を定義する必要があります、 **AllowMultiple**プロパティに設定**true**で、<xref:System.AttributeUsageAttribute>です。  
+## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-the-same-scope"></a>同じスコープに適用された属性の複数のインスタンスを取得する  
+ 前の例では、検査するクラスと検索する特定の属性が <xref:System.Attribute.GetCustomAttribute%2A> に渡されます。 このコードは、クラス レベルで属性のインスタンスが 1 つのみ適用される場合に動作します。 ただし、属性のインスタンスが同じクラス レベルに複数適用されている場合、**GetCustomAttribute** メソッドはすべての情報を取得しません。 同じ属性のインスタンスが同じスコープに複数適用されている場合、<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType> を使用して、属性のすべてのインスタンスを配列に配置することができます。 たとえば、同じクラスのクラス レベルで 2 インスタンスの `DeveloperAttribute` が適用された場合、両方の属性にある情報を表示するように `GetAttribute` メソッドを変更できます。 ただし、同じレベルで複数の属性を適用するには、<xref:System.AttributeUsageAttribute> で **AllowMultiple** プロパティを **true** に設定して属性を定義する必要があります。  
   
- 次のコード例を使用する方法を示しています、 **GetCustomAttributes**メソッドのすべてのインスタンスを参照している配列を作成する`DeveloperAttribute`いずれかでクラスを指定します。 すべての属性の値は、コンソールに表示されます。  
+ 次のコード例は、**GetCustomAttributes** メソッドを使用して、指定されたクラスで `DeveloperAttribute` のすべてのインスタンスを参照する配列を作成する方法を示しています。 すべての属性の値がコンソールに表示されます。  
   
  [!code-cpp[Conceptual.Attributes.Usage#19](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#19)]
  [!code-csharp[Conceptual.Attributes.Usage#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#19)]
  [!code-vb[Conceptual.Attributes.Usage#19](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#19)]  
   
- 属性が見つからない場合、このコードをユーザーに通知します。 両方のインスタンスにそれ以外の場合、情報が含まれている`DeveloperAttribute`が表示されます。  
+ このコードでは、属性が見つからない場合、ユーザーに警告されます。 それ以外の場合は、`DeveloperAttribute` の両方のインスタンスに含まれる情報が表示されます。  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes"></a>   
-## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-different-scopes"></a>他のスコープに適用される属性の複数のインスタンスを取得します。  
- <xref:System.Attribute.GetCustomAttributes%2A>と<xref:System.Attribute.GetCustomAttribute%2A>メソッドせずクラス全体を検索してそのクラスの属性のすべてのインスタンスを返します。 代わりが指定されたメソッドまたはメンバーを 1 つだけを同時に検索します。 すべてのメソッドまたはメンバーに個別に指定する必要がありますすべてのメンバーに適用される同じ属性を持つクラスがあるし、それらのメンバーに適用されるすべての属性の値を取得する、 **GetCustomAttributes**と**されていて**です。  
+## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-different-scopes"></a>異なるスコープに適用された属性の複数のインスタンスを取得する  
+ <xref:System.Attribute.GetCustomAttributes%2A> メソッドと <xref:System.Attribute.GetCustomAttribute%2A> メソッドは、クラス全体を検索し、そのクラスに含まれる属性のすべてのインスタンスを返す処理を行いません。 代わりに、指定されたメソッドまたはメンバーを一度に 1 つのみ検索します。 各メンバーに同じ属性が適用されているクラスがあり、それらのメンバーに適用されているすべての属性の値を取得する場合は、すべてのメソッドまたはメンバーを個別に **GetCustomAttributes** および **GetCustomAttribute** に渡す必要があります。  
   
- 次のコード例は、パラメーターとしてクラスを受け取りし、検索、 `DeveloperAttribute` (定義されている以前) とそのクラスの各メソッドはすべて、クラス レベルでします。  
+ 次のコード例では、クラスをパラメーターとして受け取り、クラス レベルとそのクラスの個々のメソッドごとに `DeveloperAttribute` (以前に定義) を検索します。  
   
  [!code-cpp[Conceptual.Attributes.Usage#20](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#20)]
  [!code-csharp[Conceptual.Attributes.Usage#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#20)]
  [!code-vb[Conceptual.Attributes.Usage#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#20)]  
   
- インスタンスがない場合、`DeveloperAttribute`メソッド レベルまたはクラス レベル上にある、`GetAttribute`メソッドは、属性が見つかりましたがないユーザーに通知し、メソッドまたは属性が含まれていないクラスの名前を表示します。 属性が見つかった場合、 `Name`、 `Level`、および`Reviewed`フィールドがコンソールに表示されます。  
+ メソッド レベルまたはクラス レベルで `DeveloperAttribute` のインスタンスが見つからない場合、`GetAttribute` メソッドは属性が見つからなかったことをユーザーに通知し、その属性を含まないメソッドまたはクラスの名前を表示します。 属性が見つかると、`Name`、`Level`、および `Reviewed` フィールドがコンソールに表示されます。  
   
- メンバーを使用することができます、<xref:System.Type>クラスを渡されたクラスで、個々 のメソッドとメンバーを取得します。 この例の最初のクエリ、**型**クラス レベルの属性情報を取得するオブジェクト。 次に、使用して<xref:System.Type.GetMethods%2A?displayProperty=nameWithType>を配列のすべてのメソッドのインスタンスを配置する<xref:System.Reflection.MemberInfo?displayProperty=nameWithType>メソッド レベルの属性情報を取得するオブジェクト。 使用することも、<xref:System.Type.GetProperties%2A?displayProperty=nameWithType>プロパティ レベルの属性を確認するメソッドまたは<xref:System.Type.GetConstructors%2A?displayProperty=nameWithType>コンス トラクターのレベルの属性を確認します。  
+ <xref:System.Type> クラスのメンバーを使用して、渡されたクラスの個々のメソッドとメンバーを取得できます。 この例では、まず **Type** オブジェクトに対してクエリを実行して、クラス レベルの属性情報を取得します。 次に、<xref:System.Type.GetMethods%2A?displayProperty=nameWithType> を使用してすべてのメソッドのインスタンスを <xref:System.Reflection.MemberInfo?displayProperty=nameWithType> オブジェクトの配列に配置し、メソッド レベルの属性情報を取得します。 <xref:System.Type.GetProperties%2A?displayProperty=nameWithType> メソッドを使用して、プロパティ レベルまたは <xref:System.Type.GetConstructors%2A?displayProperty=nameWithType> で属性を確認したり、コンストラクター レベルで属性を確認したりすることもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Type?displayProperty=nameWithType>  
  <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>  
  <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>  

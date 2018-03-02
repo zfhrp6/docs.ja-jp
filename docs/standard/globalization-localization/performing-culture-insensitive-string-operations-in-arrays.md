@@ -13,22 +13,25 @@ helpviewer_keywords:
 - arrays [.NET Framework], culture-insensitive string operations
 - comparer parameter
 ms.assetid: f12922e1-6234-4165-8896-63f0653ab478
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1b4e040ed379cdbf43fbe8b2c4379fdd4dc781f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d273fbaa792092f5ea56bfa59392794b6728ed67
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="performing-culture-insensitive-string-operations-in-arrays"></a>カルチャを認識しない配列の操作の実行
-オーバー ロードが、<xref:System.Array.Sort%2A?displayProperty=nameWithType>と<xref:System.Array.BinarySearch%2A?displayProperty=nameWithType>メソッドは、既定値を使用してカルチャに依存した並べ替えを実行、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>プロパティです。 これらのメソッドによって返されるカルチャに依存した結果は、並べ替え順序の違いによりカルチャごとに異なることができます。 カルチャに依存した動作を回避するを受け取るこのメソッドのオーバー ロードのいずれかの操作を使用して、`comparer`パラメーター。 `comparer`パラメーターを指定します、<xref:System.Collections.IComparer>配列内の要素を比較するときに使用する実装。 パラメーターには、指定を使用してカスタムのロケールに依存しない比較演算子クラス<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>です。 「SortedList クラスを使用して、」サブトピックでカスタム ロケールに依存しない比較子クラスの例が提供される、[コレクション内のカルチャを認識しない文字列操作の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md)トピックです。  
+<xref:System.Array.Sort%2A?displayProperty=nameWithType> メソッドと <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> メソッドのオーバーロードは、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> プロパティを使用して、カルチャを認識する並べ替えを既定で実行します。 これらのメソッドで返されたカルチャを認識した結果は、並べ替え順序の違いに起因し、カルチャによって異なる場合があります。 カルチャを認識した動作を回避するには、`comparer` パラメーターを受け入れる、このメソッドのいずれかのオーバーロードを使用します。 `comparer` パラメーターによって、配列の要素を比較するときに使用する <xref:System.Collections.IComparer> 実装が指定されます。 このパラメーターには、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> を使用するカスタム invariant comparer クラスを指定してください。 カスタム invariant comparer クラスの例は、「[カルチャを認識しないコレクションの操作の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md)」トピックのサブトピック「SortedList クラスの使用」にあります。  
   
- **注**渡す**CultureInfo.InvariantCulture**を比較するメソッドは、カルチャに依存しない比較を実行します。 ただし、これによって、ファイル パス、レジストリ キー、環境変数などで、非言語的な比較が行われることはありません。 また、比較結果に基づいたセキュリティに関する決定もサポートされません。 非言語的な比較または結果ベースのセキュリティを決定するためのサポートは、アプリケーション メソッドを使用して、比較を受け付ける、<xref:System.StringComparison>値。 アプリケーションに渡す必要があります、<xref:System.StringComparison.Ordinal>です。  
+ **注** **CultureInfo.InvariantCulture** を比較メソッドに渡すと、カルチャを認識しない比較が実行されます。 ただし、これによって、ファイル パス、レジストリ キー、環境変数などで、非言語的な比較が行われることはありません。 また、比較結果に基づいたセキュリティに関する決定もサポートされません。 非言語的な比較や、結果に基づくセキュリティに関する決定については、アプリケーションは <xref:System.StringComparison> 値を受け入れる比較メソッドを使用する必要があります。 アプリケーションは <xref:System.StringComparison.Ordinal> を渡します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Array.Sort%2A?displayProperty=nameWithType>  
  <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType>  
  <xref:System.Collections.IComparer>  

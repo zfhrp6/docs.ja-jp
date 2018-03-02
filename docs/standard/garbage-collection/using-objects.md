@@ -16,19 +16,22 @@ helpviewer_keywords:
 - try/finally block
 - garbage collection, encapsulating resources
 ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fd78c2f99ca5c8ffe3c753e158ceba3e0c458c5b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 47ff64cab098425c5369773f792d586b65658d0f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-objects-that-implement-idisposable"></a>IDisposable を実装するオブジェクトの使用
 
-共通言語ランタイムのガベージ コレクターがマネージ オブジェクトによって使用されるメモリを解放がアンマネージ リソースを使用する型を実装、<xref:System.IDisposable>インターフェイスが解放されるアンマネージ リソースに割り当てられたメモリを有効にします。 <xref:System.IDisposable> を実装するオブジェクトを使い終わったら、オブジェクトの <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> の実装を呼び出す必要があります。 2 つの方法のいずれかでこれを行うことができます。  
+共通言語ランタイムのガベージ コレクターは、アンマネージ オブジェクトによって使用されているメモリを解放しますが、アンマネージ リソースを使用する型は、これらのアンマネージ リソースに割り当てられたメモリが解放されるように <xref:System.IDisposable> インターフェイスを実装しています。 <xref:System.IDisposable> を実装するオブジェクトを使い終わったら、オブジェクトの <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> の実装を呼び出す必要があります。 2 つの方法のいずれかでこれを行うことができます。  
   
 * C# の `using` ステートメントまたは Visual Basic の `Using` ステートメントを使用します。  
   
@@ -48,7 +51,7 @@ C# の `using` ステートメントおよび Visual Basic の `Using` ステー
 [!code-csharp[Conceptual.Disposable#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/using3.cs#3)]
 [!code-vb[Conceptual.Disposable#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/using3.vb#3)]  
   
-C#`using`ステートメントでは入れ子に内部的には 1 つのステートメントで複数のリソースを取得することもできます`using`ステートメントです。 次の例では、2 つの異なるファイルの内容を読み取るために、<xref:System.IO.StreamReader> の 2 つのオブジェクトをインスタンス化します。  
+また、C# の `using` ステートメントでは、単一のステートメントで複数のリソースを取得できます。そのようなステートメントは、内部的には複数の `using` ステートメントを入れ子にした場合と同等です。 次の例では、2 つの異なるファイルの内容を読み取るために、<xref:System.IO.StreamReader> の 2 つのオブジェクトをインスタンス化します。  
   
 [!code-csharp[Conceptual.Disposable#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/using4.cs#4)]
 
@@ -60,15 +63,15 @@ C#`using`ステートメントでは入れ子に内部的には 1 つのステ�
   
 * 宣言されたブロックに対してスコープがローカルでない <xref:System.IDisposable> を実装するオブジェクトをインスタンス化するため。  
   
-使用する点を除いて、次の例は、前の例に似ています、`try/catch/finally`のインスタンスを作成、使用、および破棄するブロック、<xref:System.IO.StreamReader>オブジェクト、およびによってスローされる例外を処理できる、<xref:System.IO.StreamReader>コンス トラクターと、その<xref:System.IO.StreamReader.ReadToEnd%2A>メソッドです。 `finally` メソッドを呼び出す前に <xref:System.IDisposable> を実装するオブジェクトが `null` でないことを <xref:System.IDisposable.Dispose%2A> ブロックのコードがチェックしていることに注意してください。 これを行わない場合、実行時に <xref:System.NullReferenceException> 例外が発生する可能性があります。  
+次の例は前の例に似ていますが、`try/catch/finally` ブロックを使用して、<xref:System.IO.StreamReader> オブジェクトのインスタンス化、使用、破棄を実行し、<xref:System.IO.StreamReader> コンストラクターと <xref:System.IO.StreamReader.ReadToEnd%2A> メソッドによってスローされた例外を処理しています。 `finally` メソッドを呼び出す前に <xref:System.IDisposable> を実装するオブジェクトが `null` でないことを <xref:System.IDisposable.Dispose%2A> ブロックのコードがチェックしていることに注意してください。 これを行わない場合、実行時に <xref:System.NullReferenceException> 例外が発生する可能性があります。  
   
 [!code-csharp[Conceptual.Disposable#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/using5.cs#6)]
 [!code-vb[Conceptual.Disposable#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/using5.vb#6)]  
   
-実装するか、実装する必要がある場合は、この基本的なパターンを行うことができる、`try/finally`ブロックを使用するプログラミング言語をサポートしていないため、`using`ステートメントを直接呼び出すことを許可、<xref:System.IDisposable.Dispose%2A>メソッドです。 
+この基本パターンを利用できるのは、プログラミング言語で `using` ステートメントがサポートされていないが、<xref:System.IDisposable.Dispose%2A> メソッドを直接呼び出すことはできるため、`try/finally` ブロックの実装を選択した場合、または実装する必要がある場合です。 
   
 ## <a name="see-also"></a>関連項目
 
 [アンマネージ リソースのクリーンアップ](../../../docs/standard/garbage-collection/unmanaged.md)   
-[using ステートメント (c# リファレンス)](~/docs/csharp/language-reference/keywords/using-statement.md)   
+[using ステートメント (C# リファレンス)](~/docs/csharp/language-reference/keywords/using-statement.md)   
 [Using ステートメント (Visual Basic)](~/docs/visual-basic/language-reference/statements/using-statement.md)

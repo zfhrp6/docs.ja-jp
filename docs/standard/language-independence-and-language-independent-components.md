@@ -19,15 +19,18 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bc43226a508dfd0286c7667c02bdc2543346be9c
-ms.sourcegitcommit: 9c4b8d457ffb8d134c9d55c6d7682a0f22e2b9a8
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ec6f7df4cc42b71ab9c61e84b71a81f641a1d0b3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 .NET Framework は言語に依存しません。 つまり、C++/CLI、Eiffel、F#、IronPython、IronRuby、PowerBuilder、Visual Basic、Visual COBOL、Windows PowerShell など、.NET Framework を対象とする多くの言語の 1 つを開発に使用できます。 .NET Framework 用に開発されたクラス ライブラリの型とメンバーには、最初に記述された言語を知らなくてもアクセスできます。元の言語の規則に従う必要もありません。 コンポーネントを開発しているのであれば、コンポーネントの言語にかかわらず、すべての .NET Framework アプリからそのコンポーネントにアクセスできます。  
@@ -109,7 +112,7 @@ ms.lasthandoff: 10/20/2017
   
  CLS 準拠の規則を次の表に示します。 この規則は、「[ECMA-335 Standard: Common Language Infrastructure](http://go.microsoft.com/fwlink/?LinkID=116487)」(標準の ECMA-335: 共通言語基盤) からの引用で、Ecma International が 2012 年の著作権を保有しています。 これらの規則の詳細については、以降のセクションを参照してください。  
   
-|カテゴリ|参照トピック|ルール|規則番号|  
+|カテゴリ|解決方法については、|ルール|規則番号|  
 |--------------|---------|----------|-----------------|  
 |ユーザー補助|[メンバーのアクセシビリティ](#MemberAccess)|継承されたメソッドをオーバーライドする場合、アクセシビリティは変更してはいけない。ただし、別のアセンブリから継承されたメソッドをアクセシビリティ `family-or-assembly` でオーバーライドする場合は除く。 この場合、アクセシビリティは `family` にすること。|10|  
 |ユーザー補助|[メンバーのアクセシビリティ](#MemberAccess)|型およびメンバーの可視性およびアクセシビリティについて、メンバーのシグネチャに指定されている型は、そのメンバーが可視でアクセス可能な場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるパブリックなメソッドには、アセンブリ内部でだけ可視である型が引数として含まれていてはいけない。 メンバーのシグネチャに使用されているジェネリック型のインスタンスを構成する型の可視性およびアクセシビリティは、メンバーが可視でアクセス可能の場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるメンバーのシグネチャに指定されているジェネリック型のインスタンスに、アセンブリ内部でだけ可視である型の汎用引数が含まれていてはいけない。|12|  
@@ -119,9 +122,9 @@ ms.lasthandoff: 10/20/2017
 |属性|[属性](#attributes)|CLS では、公開参照される必須の修飾子 (`modreq`、第 2 部を参照) は使用できない。ただし、認識しないオプションの修飾子 (`modopt`、第 2 部を参照) は使用できる。|35|  
 |コンストラクター|[コンストラクター](#ctors)|オブジェクト コンストラクターでは、継承しているインスタンス データへのアクセスが発生する前に、基底クラスのインスタンス コンストラクターを呼び出さなければいけない (コンストラクターが不要である値型は除く)。|21|  
 |コンストラクター|[コンストラクター](#ctors)|オブジェクト コンストラクターがオブジェクトの作成時以外で呼び出されてはならず、またオブジェクトが 2 度初期化されてもいけない。|22|  
-|列挙型|[列挙型](#enums)|enum の基になる型は組み込みの CLS 整数型、フィールド名は "value__" であり、そのフィールドには `RTSpecialName` のマークが付けられる。|7|  
-|列挙型|[列挙型](#enums)|enum には 2 種類あり、<xref:System.FlagsAttribute?displayProperty=nameWithType> カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。 片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。 `enum` の値は、指定した値に限定されない。|9|  
-|列挙型|[列挙型](#enums)|enum のリテラルな静的フィールドの型は、その enum 自体の型である。|9|  
+|列挙|[列挙型](#enums)|enum の基になる型は組み込みの CLS 整数型、フィールド名は "value__" であり、そのフィールドには `RTSpecialName` のマークが付けられる。|7|  
+|列挙型|[列挙型](#enums)|enum には 2 種類あり、<xref:System.FlagsAttribute?displayProperty=nameWithType> カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。 片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。 `enum` の値は、指定した値に限定されない。|8|  
+|列挙|[列挙型](#enums)|enum のリテラルな静的フィールドの型は、その enum 自体の型である。|9|  
 |イベント|[イベント](#events)|イベントを実装するメソッドは、メタデータ内で `SpecialName` のマークが付けられる。|29|  
 |イベント|[イベント](#events)|イベントとイベントのアクセサーのアクセシビリティは同一である。|30|  
 |イベント|[イベント](#events)|イベントの `add` メソッドおよび `remove` メソッドは、どちらもあってもなくてもよい。|31|  
@@ -318,7 +321,7 @@ ms.lasthandoff: 10/20/2017
  [!code-vb[Conceptual.CLSCompliant#24](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/eii1.vb#24)]  
   
 <a name="enums"></a>   
-### <a name="enumerations"></a>列挙体  
+### <a name="enumerations"></a>列挙  
  CLS 準拠の列挙型は、次の規則に従う必要があります。  
   
 -   列挙体の基になる型は、組み込みの CLS 準拠の整数 (<xref:System.Byte>、<xref:System.Int16>、<xref:System.Int32>、または <xref:System.Int64>) である必要があります。 たとえば、次のコードでは、基になる型が <xref:System.UInt32> の列挙体を定義しようとしますが、コンパイラの警告が生成されます。  
@@ -512,7 +515,7 @@ ms.lasthandoff: 10/20/2017
 -   コンポーネント ライブラリのパブリック インターフェイスが CLS に準拠するプログラム要素のみを公開するように保証する。 要素が CLS 非準拠の場合は、通常、警告が表示されます。  
   
 > [!WARNING]
->  言語コンパイラでは、<xref:System.CLSCompliantAttribute> 属性が使用されているかどうかに関係なく、CLS 準拠の規則が適用される場合があります。 たとえば、インターフェイスの静的メンバーを定義すると CLS の規則に違反します。 この関係なく、定義した場合に、 `static` (C# の場合) または`Shared`(Visual Basic) のインターフェイスのメンバーは、両方、c# および Visual Basic コンパイラ エラー メッセージが表示され、アプリのコンパイルに失敗します。  
+>  言語コンパイラでは、<xref:System.CLSCompliantAttribute> 属性が使用されているかどうかに関係なく、CLS 準拠の規則が適用される場合があります。 たとえば、インターフェイスの静的メンバーを定義すると CLS の規則に違反します。 この点に関して、インターフェイスで `static` メンバー (C# の場合) または `Shared` メンバー (Visual Basic の場合) を定義すると、C# と Visual Basic の両方のコンパイラでエラー メッセージが表示され、アプリはコンパイルされません。  
   
  <xref:System.CLSCompliantAttribute> 属性は、値 <xref:System.AttributeUsageAttribute> が指定された <xref:System.AttributeTargets.All?displayProperty=nameWithType> 属性でマークされます。 この値を使用すると、<xref:System.CLSCompliantAttribute> 属性を、アセンブリ、モジュール、型 (クラス、構造体、列挙体、インターフェイス、およびデリゲート)、型パラメーター (コンストラクター、メソッド、プロパティ、フィールド、およびイベント)、パラメーター、ジェネリック パラメーター、戻り値など、すべてのプログラム要素に適用できます。 ただし、実際は、アセンブリ、型、および型メンバーだけに属性を適用することをお勧めします。 そうしないと、属性は、コンパイラによってライブラリのパブリック インターフェイスで非準拠パラメーター、ジェネリック パラメーター、または戻り値が検出されたときに必ず無視され、コンパイラ警告が引き続き生成されます。  
   
@@ -592,5 +595,5 @@ vbc example.vb /r:UtilityLib.dll
 csc example.cs /r:UtilityLib.dll  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.CLSCompliantAttribute>

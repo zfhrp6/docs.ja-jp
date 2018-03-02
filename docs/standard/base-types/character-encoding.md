@@ -1,7 +1,7 @@
 ---
-title: ".NET でのエンコードの文字"
+title: ".NET での文字エンコード"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 12/22/2017
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
@@ -16,29 +16,32 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ce7c8ff2154b8503b0ef73954464f380f520c3f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ac24e3a685c20445c473f0f5222ddba72b6b098c
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="character-encoding-in-net"></a>.NET でのエンコードの文字
+# <a name="character-encoding-in-net"></a>.NET での文字エンコード
 文字は、さまざまな方法で表現できる抽象エンティティです。 文字エンコーディングとは、サポートされている文字セットの各文字を、その文字を表す値と組み合わせる体系です。 たとえばモールス符号は、ローマ字の各文字を、電信線での送信に適したドットとダッシュのパターンと組み合わせる文字エンコーディングです。 コンピューターの文字エンコーディングは、サポートされている文字セットの各文字を、その文字を表す数値と組み合わせます。 文字エンコーディングには、次の 2 つの異なるコンポーネントがあります。  
   
 -   エンコーダー。文字シーケンスを数値 (バイト) シーケンスに変換します。  
   
 -   デコーダー。バイト シーケンスを文字シーケンスに変換します。  
   
- 文字エンコーディングは、エンコーダーとデコーダーの動作を決める規則を表します。 たとえば、 <xref:System.Text.UTF8Encoding> クラスは、1 ～ 4 バイトを使用して 1 つの Unicode 文字を表現する UTF-8 (8-bit Unicode Transformation Format) をエンコードおよびデコードするための規則を表します。 エンコードとデコードに検証を含めることもできます。 たとえば、<xref:System.Text.UnicodeEncoding> クラスは、すべてのサロゲートを検証して、有効なサロゲート ペアが構成されていることを確認します  (サロゲート ペアは、U+D800 ～ U+DBFF の範囲のコード ポイントを持つ文字と、それに続く U+DC00 ～ U+DFFF の範囲のコード ポイントを持つ文字で構成されます)。エンコーダーが無効な文字を処理する方法や、デコーダーが無効なバイトを処理する方法は、フォールバック ストラテジによって決まります。  
+ 文字エンコーディングは、エンコーダーとデコーダーの動作を決める規則を表します。 たとえば、 <xref:System.Text.UTF8Encoding> クラスは、1 ～ 4 バイトを使用して 1 つの Unicode 文字を表現する UTF-8 (8-bit Unicode Transformation Format) をエンコードおよびデコードするための規則を表します。 エンコードとデコードに検証を含めることもできます。 たとえば、 <xref:System.Text.UnicodeEncoding> クラスは、すべてのサロゲートを検証して、有効なサロゲート ペアが構成されていることを確認します (サロゲート ペアは、U+D800 ～ U+DBFF の範囲のコード ポイントを持つ文字と、それに続く U+DC00 ～ U+DFFF の範囲のコード ポイントを持つ文字で構成されます)。エンコーダーが無効な文字を処理する方法や、デコーダーが無効なバイトを処理する方法は、フォールバック ストラテジによって決まります。  
   
 > [!WARNING]
->  .NET のエンコーディング クラスは、格納および文字データを変換する方法を提供します。 バイナリ データを文字列形式で格納する目的では使用しないでください。 エンコーディング クラスを使用してバイナリ データを文字列形式に変換すると、使用されているエンコーディングによっては、予期しない動作が発生したり、不正確なデータや破損したデータが生成されたりする可能性があります。 バイナリ データを文字列形式に変換するには、<xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> メソッドを使用します。  
+>  .NET のエンコーディング クラスは、文字データを格納および変換するためのものです。 バイナリ データを文字列形式で格納する目的では使用しないでください。 エンコーディング クラスを使用してバイナリ データを文字列形式に変換すると、使用されているエンコーディングによっては、予期しない動作が発生したり、不正確なデータや破損したデータが生成されたりする可能性があります。 バイナリ データを文字列形式に変換するには、<xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> メソッドを使用します。  
   
- .NET は、utf-16 エンコードを使用 (によって表される、<xref:System.Text.UnicodeEncoding>クラス) の文字と文字列を表します。 共通言語ランタイムをターゲットとするアプリケーションは、エンコーダーを使用して、共通言語ランタイムによってサポートされている Unicode 文字表現を他のエンコーディング方式に変換し、 デコーダーを使用して、Unicode 以外のエンコーディングの文字を Unicode に変換します。  
+ .NET では (<xref:System.Text.UnicodeEncoding> クラスによって表される) UTF-16 エンコーディングを使って、文字と文字列を表します。 共通言語ランタイムをターゲットとするアプリケーションは、エンコーダーを使用して、共通言語ランタイムによってサポートされている Unicode 文字表現を他のエンコーディング方式に変換し、 デコーダーを使用して、Unicode 以外のエンコーディングの文字を Unicode に変換します。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -54,41 +57,41 @@ ms.lasthandoff: 11/21/2017
   
 <a name="Encodings"></a>   
 ## <a name="encodings-in-net"></a>.NET でのエンコード  
- .NET のエンコーディングのクラスから継承するすべての文字、<xref:System.Text.Encoding?displayProperty=nameWithType>クラスは、すべての文字エンコーディングに共通の機能を定義する抽象クラスです。 .NET に実装されている個々のエンコーディング オブジェクトにアクセスするには次の方法があります。  
+ .NET のすべての文字エンコーディング クラスは、すべての文字エンコーディングに共通の機能を定義する抽象クラスの <xref:System.Text.Encoding?displayProperty=nameWithType> クラスを継承します。 .NET に実装されている個々のエンコーディング オブジェクトにアクセスするには次の方法があります。  
   
--   静的プロパティを使用して、<xref:System.Text.Encoding>クラスは、オブジェクトを返す .NET (ASCII、utf-7、utf-8、utf-16、および utf-32) で利用できる標準の文字エンコーディングを表すです。 たとえば、<xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> プロパティは <xref:System.Text.UnicodeEncoding> オブジェクトを返します。 各オブジェクトでは、エンコードできない文字列とデコードできないバイトを処理するために、置換フォールバックが使用されます (詳しくは、「 [Replacement Fallback](../../../docs/standard/base-types/character-encoding.md#Replacement) 」セクションをご覧ください。)  
+-   <xref:System.Text.Encoding> クラスの静的プロパティを使います。これらのプロパティは、.NET で使用できる標準の文字エンコーディング (ASCII、UTF-7、UTF-8、UTF-16、および UTF-32) を表すオブジェクトを返します。 たとえば、<xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> プロパティは <xref:System.Text.UnicodeEncoding> オブジェクトを返します。 各オブジェクトでは、エンコードできない文字列とデコードできないバイトを処理するために、置換フォールバックが使用されます (詳しくは、「 [Replacement Fallback](../../../docs/standard/base-types/character-encoding.md#Replacement) 」セクションをご覧ください。)  
   
 -   エンコーディングのクラス コンストラクターを呼び出します。 ASCII、UTF-7、UTF-8、UTF-16、および UTF-32 の各エンコーディングのオブジェクトは、この方法でインスタンス化できます。 既定では、各オブジェクトはエンコードできない文字列とデコードできないバイトを処理するために置換フォールバックを使用します。ただし、代わりに例外がスローされるように指定することもできます (詳しくは、「 [Replacement Fallback](../../../docs/standard/base-types/character-encoding.md#Replacement) 」セクションおよび「 [Exception Fallback](../../../docs/standard/base-types/character-encoding.md#Exception) 」セクションをご覧ください。)  
   
 -   <xref:System.Text.Encoding.%23ctor%28System.Int32%29?displayProperty=nameWithType> コンストラクターを呼び出して、エンコーディングを表す整数を渡します。 エンコードできない文字列とデコードできないバイトの処理には、標準エンコーディングのエンコーディング オブジェクトでは置換フォールバックが、コード ページ エンコーディングと 2 バイト文字セット (DBCS) エンコーディングのエンコーディング オブジェクトでは最適フォールバックが使用されます (詳しくは、「 [Best-Fit Fallback](../../../docs/standard/base-types/character-encoding.md#BestFit) 」セクションをご覧ください。)  
   
--   呼び出す、<xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType>標準、コード ページ、または DBCS のエンコーディングを .NET で使用可能なを返すメソッド。 オーバーロードを使用すると、エンコーダーおよびデコーダーの両方のフォールバック オブジェクトを指定できます。  
+-   <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> メソッドを呼び出します。このメソッドは、.NET で使用できる任意のエンコーディング (標準、コード ページ、または DBCS) を返します。 オーバーロードを使用すると、エンコーダーおよびデコーダーの両方のフォールバック オブジェクトを指定できます。  
   
 > [!NOTE]
 >  Unicode 規格では、サポートされるすべてのスクリプトについて、各文字にコード ポイント (数値) と名前を割り当てています。 たとえば、文字 "A" は U+0041 というコード ポイントと、"LATIN CAPITAL LETTER A" という名前で表されます。 UTF (Unicode Transformation Format) エンコーディングは、そのコード ポイントを 1 つ以上のバイトのシーケンスにエンコードする方法を定義します。 Unicode エンコーディング方式を使用すると、任意の文字セットの文字を 1 つのエンコーディング方式で表現できるため、国際対応アプリケーションの開発が簡素化されます。 これにより、アプリケーション開発者が、特定の言語または書記体系の文字を表すために使用されるエンコーディング方式を追跡する必要はなくなります。また、データを破損することなく、各国のシステム間でデータを共有できます。  
 >   
->  .NET では、Unicode 規格によって定義されている UTF-8、UTF-16、および UTF-32 の 3 つのエンコーディングをサポートしています。 詳しくは、 [Unicode ホーム ページ](http://go.microsoft.com/fwlink/?LinkId=37123)の Unicode 標準をご覧ください。  
+>  .NET では、Unicode 規格によって定義されている UTF-8、UTF-16、および UTF-32 の 3 つのエンコーディングをサポートしています。 詳しくは、[Unicode ホーム ページ](http://www.unicode.org/)の Unicode 標準をご覧ください。  
   
- .NET で使用可能なすべてのエンコーディングに関する情報を取得するには呼び出すことによって、<xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType>メソッドです。 .NET でサポートされている文字エンコーディング システムを次の表に示します。  
+ .NET で使えるすべてのエンコーディングに関する情報を取得するには、<xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType> メソッドを呼び出します。 .NET でサポートされている文字エンコーディング システムを次の表に示します。  
   
 |エンコード|クラス|説明|長所/短所|  
 |--------------|-----------|-----------------|-------------------------------|  
 |ASCII|<xref:System.Text.ASCIIEncoding>|バイトの下位 7 ビットを使用して、限られた範囲の文字をエンコードします。|ASCII エンコーディングでは、U+0000 から U+007F までの文字値しかサポートされていないため、ほとんどの場合、国際対応アプリケーションでは ASCII エンコーディングの使用は不適切です。|  
-|UTF-7|<xref:System.Text.UTF7Encoding>|文字を 7 ビット ASCII 文字のシーケンスとして表します。 ASCII 以外の Unicode 文字は、ASCII 文字のエスケープ シーケンスによって表します。|UTF-7 は、電子メールやニュースグループなどのプロトコルをサポートします。 ただし、UTF-7 は特に安全でも堅牢でもありません。 場合によっては、1 ビットの変更により、UTF-7 文字列全体の解釈が完全に変わる場合があります。 他の場合には、異なる UTF-7 文字列がエンコードによって同じテキストになる可能性もあります。 ASCII 以外の文字を含むシーケンスの場合、UTF-7 は UTF-8 よりも多くの空間を必要とし、エンコードとデコードに時間がかかります。 したがって、可能であれば、UTF-7 ではなく UTF-8 を使用してください。|  
+|UTF-7|<xref:System.Text.UTF7Encoding>|文字を 7 ビット ASCII 文字のシーケンスとして表します。 ASCII 以外の Unicode 文字は、ASCII 文字のエスケープ シーケンスによって表します。|UTF-7 は、メールやニュースグループなどのプロトコルをサポートします。 ただし、UTF-7 は特に安全でも堅牢でもありません。 場合によっては、1 ビットの変更により、UTF-7 文字列全体の解釈が完全に変わる場合があります。 他の場合には、異なる UTF-7 文字列がエンコードによって同じテキストになる可能性もあります。 ASCII 以外の文字を含むシーケンスの場合、UTF-7 は UTF-8 よりも多くの空間を必要とし、エンコードとデコードに時間がかかります。 したがって、可能であれば、UTF-7 ではなく UTF-8 を使用してください。|  
 |UTF-8|<xref:System.Text.UTF8Encoding>|各 Unicode コード ポイントが、1 バイトから 4 バイトのシーケンスとして表現されます。|UTF-8 では、8 ビット データ サイズがサポートされており、既存の多くのオペレーティング システムに対応できます。 ASCII 範囲の文字については、UTF-8 は ASCII エンコーディングと一致し、より広範な文字を提供します。 ただし、CJK (中国語、日本語、韓国語) スクリプトでは、UTF-8 の各文字に 3 バイトが必要となることがあり、データ サイズが UTF-16 より大きくなる可能性があります。 ただし、CJK 範囲によるサイズの増加が HTML タグなどの ASCII データのサイズによって相殺されることもあります。|  
 |UTF-16|<xref:System.Text.UnicodeEncoding>|各 Unicode コード ポイントが、1 つまたは 2 つの 16 ビット整数のシーケンスとして表現されます。 ほとんどの一般的な Unicode 文字で必要とされる UTF-16 コード ポイントは 1 つだけです。ただし、Unicode の補助文字 (U+10000 以上) には 2 つの UTF-16 サロゲート コード ポイントが必要です。 リトル エンディアンとビッグ エンディアンの両方のバイト順をサポートしています。|UTF-16 エンコーディングは、共通言語ランタイムでは <xref:System.Char> および <xref:System.String> の値を表現するために、Windows オペレーティング システムでは `WCHAR` の値を表現するために使用されています。|  
 |UTF-32|<xref:System.Text.UTF32Encoding>|各 Unicode コード ポイントが 32 ビット整数として表現されます。 リトル エンディアンとビッグ エンディアンの両方のバイト順をサポートしています。|UTF-32 エンコーディングは、エンコードされた空白がきわめて重要な意味を持つオペレーティング システムで、アプリケーションが UTF-16 エンコーディングのサロゲート コード ポイント動作を回避する必要がある場合に使用します。 ディスプレイ上でレンダリングされる 1 つのグリフも複数の UTF-32 文字でエンコードされることがあります。|  
-|ANSI/ISO エンコーディング||さまざまなコード ページがサポートされています。 Windows オペレーティング システムでは、特定の言語または言語グループをサポートするためにコード ページが使用されます。 .NET でサポートされるコード ページを示す表を参照してください、<xref:System.Text.Encoding>クラスです。 特定のコード ページのエンコーディング オブジェクトを取得するには、<xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> メソッドを呼び出します。|コード ページには、0 から始まる 256 個のコード ポイントが含まれています。 コード ポイント 0 ～ 127 は、ほとんどのコード ページで ASCII 文字セットを表しますが、コード ポイント 128 ～ 255 が表す文字は、コード ページによって異なります。 たとえば、コード ページ 1252 には、英語、ドイツ語、フランス語などのラテン語書記体系の文字を表す文字コードが含まれています。 このコード ページ 1252 の最後の 128 個のコード ポイントには、アクセント記号付き文字が含まれています。 また、コード ページ 1253 には、ギリシャ語書記体系で必要とされる文字コードが含まれています。 このコード ページ 1253 の最後の 128 個のコード ポイントには、ギリシャ文字が含まれています。 このため、ANSI コード ページに依存するアプリケーションでギリシャ語とドイツ語を同じテキスト ストリームに格納する場合には、参照先コード ページを示す識別子を含める必要があります。|  
+|ANSI/ISO エンコーディング||さまざまなコード ページがサポートされています。 Windows オペレーティング システムでは、特定の言語または言語グループをサポートするためにコード ページが使用されます。 .NET でサポートされているコード ページの一覧表については、<xref:System.Text.Encoding> クラスを参照してください。 特定のコード ページのエンコーディング オブジェクトを取得するには、<xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> メソッドを呼び出します。|コード ページには、0 から始まる 256 個のコード ポイントが含まれています。 コード ポイント 0 ～ 127 は、ほとんどのコード ページで ASCII 文字セットを表しますが、コード ポイント 128 ～ 255 が表す文字は、コード ページによって異なります。 たとえば、コード ページ 1252 には、英語、ドイツ語、フランス語などのラテン語書記体系の文字を表す文字コードが含まれています。 このコード ページ 1252 の最後の 128 個のコード ポイントには、アクセント記号付き文字が含まれています。 また、コード ページ 1253 には、ギリシャ語書記体系で必要とされる文字コードが含まれています。 このコード ページ 1253 の最後の 128 個のコード ポイントには、ギリシャ文字が含まれています。 このため、ANSI コード ページに依存するアプリケーションでギリシャ語とドイツ語を同じテキスト ストリームに格納する場合には、参照先コード ページを示す識別子を含める必要があります。|  
 |2 バイト文字セット (DBCS) エンコーディング||中国語、日本語、韓国語など、256 個以上の文字から成る言語をサポートします。 DBCS では、コード ポイントのペア (2 バイト) が 1 つの文字を表します。 DBCS エンコーディングでは、<xref:System.Text.Encoding.IsSingleByte%2A?displayProperty=nameWithType> プロパティは `false` を返します。 特定の DBCS のエンコーディング オブジェクトを取得するには、<xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> メソッドを呼び出します。|DBCS では、コード ポイントのペア (2 バイト) が 1 つの文字を表します。 アプリケーションで DBCS データを処理する場合、DBCS 文字の最初のバイト (先頭バイト) は、その後に続く後続バイトと組み合わせて処理されます。 このスキームでは、日本語や中国語など、2 種類の言語を組み合わせて同じデータ ストリームで使用することはできません。これは、2 バイト コード ポイントのペアが表す文字が、コード ページによって異なるためです。|  
   
  これらのエンコーディングを使用することにより、Unicode 文字だけでなく、レガシ アプリケーションで最もよく使用されているエンコーディングにも対応できます。 また、 <xref:System.Text.Encoding> から派生するクラスを定義し、そのメンバーをオーバーライドして、カスタム エンコーディングを作成することもできます。  
   
 ### <a name="platform-notes-includenetcoreincludesnet-core-mdmd"></a>プラットフォームに関する注意事項: [!INCLUDE[net_core](../../../includes/net-core-md.md)]  
- 既定で、 [!INCLUDE[net_core](../../../includes/net-core-md.md)] では、コード ページ 28591 以外のコード ページ エンコーディングや Unicode エンコーディング (UTF-8 や UTF-16 など) を使用できません。 ただし、については、標準の Windows アプリにアプリをターゲットと .NET のコード ページ エンコーディングを追加することができます。 詳細については、「 <xref:System.Text.CodePagesEncodingProvider> 」のトピックを参照してください。  
+ 既定で、 [!INCLUDE[net_core](../../../includes/net-core-md.md)] では、コード ページ 28591 以外のコード ページ エンコーディングや Unicode エンコーディング (UTF-8 や UTF-16 など) を使用できません。 ただし、使うアプリに、.NET を対象とする標準の Windows アプリに含まれているコード ページ エンコーディングを追加できます。 詳細については、「 <xref:System.Text.CodePagesEncodingProvider> 」のトピックを参照してください。  
   
 <a name="Selecting"></a>   
 ## <a name="selecting-an-encoding-class"></a>エンコーディング クラスの選択  
- アプリケーションで使用するエンコーディングを選択できる場合は、Unicode エンコーディング (できれば <xref:System.Text.UTF8Encoding> または <xref:System.Text.UnicodeEncoding>) を使用するようにしてください (も .NET では、Unicode エンコーディングには、サポートしています<xref:System.Text.UTF32Encoding>)。  
+ アプリケーションで使用するエンコーディングを選択できる場合は、Unicode エンコーディング (できれば <xref:System.Text.UTF8Encoding> または <xref:System.Text.UnicodeEncoding>) を使用するようにしてください (.NET でサポートされている Unicode エンコーディングには、そのほかに <xref:System.Text.UTF32Encoding> もあります)。  
   
  ASCII エンコーディング (<xref:System.Text.ASCIIEncoding>) を使用しようとしている場合は、代わりに <xref:System.Text.UTF8Encoding> を選択してください。 この 2 つのエンコーディングは、ASCII 文字セットに対する動作は変わりませんが、 <xref:System.Text.UTF8Encoding> には次のような利点があります。  
   
@@ -149,9 +152,12 @@ ms.lasthandoff: 11/21/2017
  ターゲット エンコード内に厳密な一致がない文字について、エンコーダーは類似した文字へのマッピングを試みることができます (最適フォールバックは主にエンコード時の問題であり、デコード時の問題ではありません。 Unicode に正常にマッピングできない文字を含むコード ページはほとんどありません)。最適フォールバックは、<xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> および <xref:System.Text.Encoding.GetEncoding%28System.String%29?displayProperty=nameWithType> の各オーバーロードによって取得されるコード ページ エンコーディングと 2 バイト文字セット エンコーディングの既定のフォールバック ストラテジです。  
   
 > [!NOTE]
->  理論上は、Unicode エンコーディングで指定された .NET のクラス (<xref:System.Text.UTF8Encoding>、 <xref:System.Text.UnicodeEncoding>、および<xref:System.Text.UTF32Encoding>) 最適フォールバックの問題を回避するのに使用できるように、すべての文字セットのすべての文字をサポートします。  
+>  .NET の Unicode エンコーディング クラス (<xref:System.Text.UTF8Encoding>、<xref:System.Text.UnicodeEncoding>、および <xref:System.Text.UTF32Encoding>) では、理論上すべての文字セットのすべての文字がサポートされているため、これらのクラスを使用すると最適フォールバックの問題を解消できます。  
   
- 最適なストラテジはコード ページごとに異なるため、詳細には文書化されていません。 たとえば、全角のアルファベットがより一般的な半角のアルファベットにマッピングされるコード ページもあれば、 そのようなマッピングが行われないコード ページもあります。 積極的な最適ストラテジでも、一部のエンコーディングの一部の文字には可能な対応がない場合があります。 たとえば、中国語の漢字からコード ページ 1252 への適切なマッピングはありません。 その場合は、置換文字列が使用されます。 既定では、この文字列は単一の QUESTION MARK (疑問符) (U+003F) です。  
+ 最適なストラテジはコード ページごとに異なります。 たとえば、全角のアルファベットがより一般的な半角のアルファベットにマッピングされるコード ページもあれば、 そのようなマッピングが行われないコード ページもあります。 積極的な最適ストラテジでも、一部のエンコーディングの一部の文字には可能な対応がない場合があります。 たとえば、中国語の漢字からコード ページ 1252 への適切なマッピングはありません。 その場合は、置換文字列が使用されます。 既定では、この文字列は単一の QUESTION MARK (疑問符) (U+003F) です。  
+  
+> [!NOTE]
+>  最適なストラテジは、詳細には文書化されていません。 ただし、いくつかのコード ページは、[Unicode コンソーシアム](http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/)の Web サイトで文書化されています。 マッピング ファイルを解釈する方法について詳しくは、そのフォルダーの **readme.txt** ファイルをご覧ください。
   
  次の例では、コード ページ 1252 (西ヨーロッパ言語の Windows コード ページ) を使用して、最適マッピングとその欠点を示しています。 まず、<xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> メソッドを使用して、コード ページ 1252 のエンコーディング オブジェクトを取得します。 このエンコーディング オブジェクトは、サポートされていない Unicode 文字に対して既定で最適マッピングを使用します。 次に、スペースで区切られた 3 つの非 ASCII 文字 (CIRCLED LATIN CAPITAL LETTER S (U+24C8)、SUPERSCRIPT FIVE (U+2075)、および INFINITY (U+221E)) を含む文字列をインスタンス化します。 出力を見るとわかるように、この文字列をエンコードすると、スペースを除く元の 3 つの文字が、QUESTION MARK (U+003F)、DIGIT FIVE (U+0035)、および DIGIT EIGHT (U+0038) に置き換えられます。 DIGIT EIGHT は、サポートされていない INFINITY 文字の代替として最適とは言えません。QUESTION MARK は、元の文字に対応するマッピングがなかったことを示します。  
   
@@ -175,7 +181,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.Encoding#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.encoding/cs/replacementascii.cs#2)]
  [!code-vb[Conceptual.Encoding#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/replacementascii.vb#2)]  
   
- .NET を含む、<xref:System.Text.EncoderReplacementFallback>と<xref:System.Text.DecoderReplacementFallback>クラスで、置換文字列に置き換える文字が、エンコードまたはデコード操作で正確にマップされていない場合。 この置換文字列は、既定では疑問符ですが、クラス コンストラクターのオーバーロードを呼び出して別の文字列を選択することもできます。 通常は単一の文字を使用しますが、単一でなくてもかまいません。 次の例では、置換文字列としてアスタリスク (*) を使用する <xref:System.Text.EncoderReplacementFallback> オブジェクトをインスタンス化して、コード ページ 1252 のエンコーダーの動作を変更しています。  
+ .NET には、エンコード操作またはデコード操作で正確にマップできない文字を置換文字列に置き換える <xref:System.Text.EncoderReplacementFallback> クラスと <xref:System.Text.DecoderReplacementFallback> クラスが含まれています。 この置換文字列は、既定では疑問符ですが、クラス コンストラクターのオーバーロードを呼び出して別の文字列を選択することもできます。 通常は単一の文字を使用しますが、単一でなくてもかまいません。 次の例では、置換文字列としてアスタリスク (*) を使用する <xref:System.Text.EncoderReplacementFallback> オブジェクトをインスタンス化して、コード ページ 1252 のエンコーダーの動作を変更しています。  
   
  [!code-csharp[Conceptual.Encoding#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.encoding/cs/bestfit1a.cs#3)]
  [!code-vb[Conceptual.Encoding#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/bestfit1a.vb#3)]  
@@ -186,7 +192,7 @@ ms.lasthandoff: 11/21/2017
  置換文字列としては、QUESTION MARK (U+003F) のほか、特に Unicode 文字列に正しく変換できないバイト シーケンスをデコードする場合に、Unicode REPLACEMENT CHARACTER (U+FFFD) がよく使用されます。 ただし、置換文字列は自由に選択できます。置換文字列に複数の文字を含めることもできます。  
   
 <a name="Exception"></a>   
-### <a name="exception-fallback"></a>Exception Fallback  
+### <a name="exception-fallback"></a>例外フォールバック  
  最適フォールバックや置換文字列を提供する代わりに、エンコーダーで一連の文字をエンコードできない場合に <xref:System.Text.EncoderFallbackException> をスローしたり、デコーダーでバイト配列をデコードできない場合に <xref:System.Text.DecoderFallbackException> をスローしたりすることもできます。 エンコード操作およびデコード操作で例外をスローするには、<xref:System.Text.EncoderExceptionFallback> メソッドに <xref:System.Text.DecoderExceptionFallback> オブジェクトおよび <xref:System.Text.Encoding.GetEncoding%28System.String%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> オブジェクトを渡します。 次の例は、 <xref:System.Text.ASCIIEncoding> クラスによる例外フォールバックを示しています。  
   
  [!code-csharp[Conceptual.Encoding#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.encoding/cs/exceptionascii.cs#4)]
@@ -267,7 +273,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.Encoding#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.encoding/cs/custom1.cs#7)]
  [!code-vb[Conceptual.Encoding#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/custom1.vb#7)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Text.Encoder>  
  <xref:System.Text.Decoder>  
  <xref:System.Text.DecoderFallback>  

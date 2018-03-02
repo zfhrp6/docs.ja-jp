@@ -20,15 +20,18 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-caps.latest.revision: "92"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ca51c13a8c25575080c56b8d1ffe5723f34b539e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 55f8f6b544a3ade0ad9423e8253cc44e0fb5fec1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="standard-date-and-time-format-strings"></a>標準の日時書式指定文字列
 標準の日時書式指定文字列は、単一の書式指定子を使用して日付と時刻の値のテキスト表現を定義します。 空白を含む複数の文字で構成される日時書式指定文字列は、カスタム日時書式指定文字列として解釈されます。詳細については、「[カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)」をご覧ください。 標準またはカスタムの書式指定文字列には、次の 2 とおりの使用方法があります。  
@@ -44,7 +47,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="table"></a>標準日時書式指定子を次の表に示します。 特に明記されない限り、特定の標準日時書式指定子は、<xref:System.DateTime> 値で使用しても、<xref:System.DateTimeOffset> 値で使用してもまったく同じ文字列形式を生成します。 標準の日時書式指定文字列の使用方法については、「[メモ](#Notes)」をご覧ください。  
   
-|書式指定子|説明|例|  
+|書式指定子|説明|使用例|  
 |----------------------|-----------------|--------------|  
 |"d"|短い形式の日付パターン。<br /><br /> 詳細については、「[短い形式の日付 ("d") 書式指定子](#ShortDate)」を参照してください。|2009-06-15T13:45:30 -> 6/15/2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 (fr-FR)<br /><br /> 2009-06-15T13:45:30 -> 2009/06/15 (ja-JP)|  
 |"D"|長い形式の日付パターン。<br /><br /> 詳細については、「[長い形式の日付 ("D") 書式指定子](#LongDate)」を参照してください。|2009-06-15T13:45:30 -> Monday, June 15, 2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> 15 июня 2009 г. (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> Montag, 15. Juni 2009 (de-DE)|  
@@ -58,7 +61,7 @@ ms.lasthandoff: 11/21/2017
 |"s"|並べ替え可能な日付と時刻のパターン。<br /><br /> 詳細については、「[並べ替え可能な日付と時刻 ("s") 書式指定子](#Sortable)」を参照してください。|2009-06-15T13:45:30 (DateTimeKind.Local) -> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) -> 2009-06-15T13:45:30|  
 |"t"|短い形式の時刻パターン。<br /><br /> 詳細については、「[短い形式の時刻 ("t") 書式指定子](#ShortTime)」を参照してください。|2009-06-15T13:45:30 -> 1:45 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 13:45 (hr-HR)<br /><br /> 2009-06-15T13:45:30 -> 01:45 م (ar-EG)|  
 |"T"|長い形式の時刻パターン。<br /><br /> 詳細については、「[長い形式の時刻 ("T") 書式指定子](#LongTime)」を参照してください。|2009-06-15T13:45:30 -> 1:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR)<br /><br /> 2009-06-15T13:45:30 -> 01:45:30 م (ar-EG)|  
-|"u"|並べ替え可能な日付と時刻のパターン (世界時刻)。<br /><br /> 詳細については、「[世界共通の並べ替え可能な日付と時刻 ("u") 書式指定子](#UniversalSortable)」を参照してください。|<xref:System.DateTime>値: 2009-06--> 2009-06-15 を 15T13:45:30 13:45:30Z<br /><br /> <xref:System.DateTimeOffset>値: 2009-06--> 2009-06-15 を 15T13:45:30 20:45:30Z|  
+|"u"|並べ替え可能な日付と時刻のパターン (世界時刻)。<br /><br /> 詳細については、「[世界共通の並べ替え可能な日付と時刻 ("u") 書式指定子](#UniversalSortable)」を参照してください。|<xref:System.DateTime> 値の場合: 2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z<br /><br /> <xref:System.DateTimeOffset> 値の場合: 2009-06-15T13:45:30 -> 2009-06-15 20:45:30Z|  
 |"U"|完全な日付と時刻のパターン (世界時刻)。<br /><br /> 詳細については、「[世界共通の完全な日付と時刻 ("U") 書式指定子](#UniversalFull)」を参照してください。|2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)|  
 |"Y"、"y"|年月パターン。<br /><br /> 詳細については、「[年月 ("Y") 書式指定子](#YearMonth)」を参照してください。|2009-06-15T13:45:30 -> June, 2009 (en-US)<br /><br /> 2009-06-15T13:45:30 -> juni 2009 (da-DK)<br /><br /> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)|  
 |その他の 1 文字|未定義の指定子。|ランタイム <xref:System.FormatException> をスローします。|  
@@ -252,7 +255,7 @@ ms.lasthandoff: 11/21/2017
   
  "O" または "o" 標準書式指定子は、<xref:System.DateTime> 値の "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK" カスタム書式指定文字列と <xref:System.DateTimeOffset> 値の "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzzz" カスタム書式指定文字列に対応します。 この文字列の中で、個々の文字 (ハイフン、コロン、アルファベットの "T" など) を区切る一対の単一引用符は、各文字がリテラルであって変更できないことを示します。 アポストロフィは、出力された文字列には現れません。  
   
- 'O"または"o"標準書式指定子 (および"yyyy '-'MM'-'表記' HH': 'mm':'ss'.'ISO 8601 情報を表すタイム ゾーンを維持する 3 つの方法の fffffffK"カスタム書式指定文字列) を活用、<xref:System.DateTime.Kind%2A>プロパティ<xref:System.DateTime>値。  
+ "O" または "o" 標準書式指定子 (および "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK" カスタム書式指定文字列) は、<xref:System.DateTime.Kind%2A> 値の <xref:System.DateTime> プロパティを保持するため、ISO 8601 の 3 種類のタイム ゾーン情報表記形式を利用します。  
   
 -   <xref:System.DateTimeKind.Local?displayProperty=nameWithType> 日時値のタイム ゾーン コンポーネントは、UTC からのオフセットです (例:+01:00、-07:00)。 <xref:System.DateTimeOffset> のすべての値もこの形式で表記されます。  
   
@@ -408,17 +411,17 @@ ms.lasthandoff: 11/21/2017
  [表のトップへ](#table)  
   
 <a name="Notes"></a>   
-## <a name="notes"></a>ノート  
+## <a name="notes"></a>メモ  
   
 ### <a name="control-panel-settings"></a>コントロール パネルの設定  
  コントロール パネルの **[地域と言語のオプション]** での設定は、書式設定操作によって生成される結果の文字列に影響します。 これらの設定は、書式設定の制御に使用される値を提供する現在のスレッド カルチャに関連付けられた <xref:System.Globalization.DateTimeFormatInfo> オブジェクトを初期化するために使用されます。 コンピューターで使用する設定が異なる場合は、生成される文字列も異なります。  
   
- また、使用する場合、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType>新しいのインスタンスを作成するコンス トラクター<xref:System.Globalization.CultureInfo>を現在のシステム カルチャによって確立された任意のカスタマイズと同じカルチャを表すオブジェクト、**地域と言語のオプション**コントロール パネル では、新しいに適用される<xref:System.Globalization.CultureInfo>オブジェクト。 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。  
+ また、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> コンストラクターを使用して、現在のシステム カルチャと同じカルチャを表す新しい <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化した場合、コントロール パネルの **[地域と言語のオプション]** 項目で設定されたカスタマイズが新しい <xref:System.Globalization.CultureInfo> オブジェクトに適用されます。 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。  
   
 ### <a name="datetimeformatinfo-properties"></a>DateTimeFormatInfo のプロパティ  
  書式設定は、現在の <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのプロパティの影響を受けます。このオブジェクトは、現在のスレッド カルチャによって暗黙的に指定されるか、または書式設定を実行するメソッドの <xref:System.IFormatProvider> パラメーターによって明示的に指定されます。 <xref:System.IFormatProvider> パラメーターには、カルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトを指定するか、特定のカルチャの日時書式設定規則を表す <xref:System.Globalization.DateTimeFormatInfo> オブジェクトを指定する必要があります。 標準日時書式指定子の多くは、現在の <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのプロパティによって定義されている書式設定パターンのエイリアスです。 標準日時書式指定子によって生成される結果は、対応する <xref:System.Globalization.DateTimeFormatInfo> プロパティの、対応する日時形式パターンを変更することによって変えることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.DateTime?displayProperty=nameWithType>  
  <xref:System.DateTimeOffset?displayProperty=nameWithType>  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  

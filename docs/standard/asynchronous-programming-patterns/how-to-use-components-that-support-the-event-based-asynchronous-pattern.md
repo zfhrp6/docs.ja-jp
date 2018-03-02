@@ -24,32 +24,35 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 49e03a8d886ccd4ed6e4b2a19692c1874f5928ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c7fe7d0a959a490893fba2b2fc7faceedee03879
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>方法 : イベントベースの非同期パターンをサポートするコンポーネントを使用する
-多くのコンポーネントは、その作業を非同期的に実行した場合のオプションを提供します。 <xref:System.Media.SoundPlayer>と<xref:System.Windows.Forms.PictureBox>コンポーネント、たとえば、サウンドをロードして、メイン スレッドが中断されることがなく実行を止めずに"バック グラウンド"でイメージを有効にします。  
+多くのコンポーネントでは、非同期的に作業を実行するオプションが提供されます。 たとえば、<xref:System.Media.SoundPlayer> と <xref:System.Windows.Forms.PictureBox> コンポーネントでは、メイン スレッドが中断されることなく、実行され続ける間に、"バックグラウンドで" 音声とイメージを読み込むことができます。  
   
- 非同期メソッドをサポートするクラスを使用して、 [- イベント ベースの非同期パターンの概要](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)簡単に、コンポーネントのイベント ハンドラーをアタッチするのには、 *MethodName* `Completed`イベントだけ、他のイベントの場合と同様です。 呼び出すと、 *MethodName* `Async`メソッド、アプリケーションは引き続き実行するまで中断することがなく、 *MethodName* `Completed`イベントが発生します。 イベント ハンドラーで確認することができます、<xref:System.ComponentModel.AsyncCompletedEventArgs>パラメーター、非同期操作が正常に完了した場合、またはが取り消された場合を判断します。  
+ [イベントベースの非同期パターンの概要](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)をサポートするクラスで非同期メソッドを使用することは、別のイベントに対して行うように、イベント ハンドラーをコンポーネントの *MethodName***Completed** イベントにアタッチするのと同じくらい単純です。 *MethodName***Async** メソッドを呼び出すと、*MethodName***Completed** イベントが発生するまで、アプリケーションは中断されることなく実行され続けます。 イベント ハンドラーで、非同期操作が正常に完了するか、キャンセルされたかどうかを判断するには、<xref:System.ComponentModel.AsyncCompletedEventArgs> パラメーターを調べることができます。  
   
- 詳細については、イベント ハンドラーを使用して、次を参照してください。[イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)です。  
+ イベント ハンドラーの使用に関する詳細については、「[イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)」を参照してください。  
   
- 次の手順の非同期のイメージの読み込み機能を使用する方法を示しています、<xref:System.Windows.Forms.PictureBox>コントロール。  
+ 次の手順は、<xref:System.Windows.Forms.PictureBox> コントロールの非同期イメージ読み込み機能を使用する方法について示しています。  
   
-### <a name="to-enable-a-picturebox-control-to-asynchronously-load-an-image"></a>イメージを非同期的にロードする PictureBox コントロールを有効にするには  
+### <a name="to-enable-a-picturebox-control-to-asynchronously-load-an-image"></a>イメージを非同期的に読み込むために PictureBox コントロールを有効にするには  
   
-1.  インスタンスを作成、<xref:System.Windows.Forms.PictureBox>コンポーネントをフォームでします。  
+1.  フォームで <xref:System.Windows.Forms.PictureBox> コンポーネントのインスタンスを作成します。  
   
-2.  イベント ハンドラーを割り当てます、<xref:System.Windows.Forms.PictureBox.LoadCompleted>イベント。  
+2.  イベント ハンドラーを <xref:System.Windows.Forms.PictureBox.LoadCompleted> イベントに割り当てます。  
   
-     ここで、非同期のダウンロード中に発生したエラーを確認します。 これは、キャンセルをチェックする場所。  
+     非同期ダウンロード中に発生する可能性があるエラーをここで確認してください。 また、ここはキャンセルを確認するための場所でもあります。  
   
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#2](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#2](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#2)]  
@@ -57,7 +60,7 @@ ms.lasthandoff: 11/21/2017
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#5)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#5)]  
   
-3.  呼ばれる 2 つのボタンの追加`loadButton`と`cancelLoadButton`フォームにします。 追加<xref:System.Windows.Forms.Control.Click>イベント ハンドラーを起動し、ダウンロードをキャンセルします。  
+3.  `loadButton` と `cancelLoadButton` と呼ばれる 2 つのボタンをフォームに追加します。 ダウンロードの開始とキャンセルを行うために、<xref:System.Windows.Forms.Control.Click> イベント ハンドラーを追加します。  
   
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#3)]  
@@ -67,9 +70,9 @@ ms.lasthandoff: 11/21/2017
   
 4.  アプリケーションを実行します。  
   
-     イメージのダウンロードが進むにつれては、フォームを自由に移動して最小化、および最大化できます。  
+     イメージのダウンロードを進めるときに、フォームを自由に移動したり、最小化や最大化を行ったりすることができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [方法: バックグラウンドで操作を実行する](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
  [イベントベースの非同期パターンの概要](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
- [NOT IN BUILD: Visual Basic でのマルチ スレッド](http://msdn.microsoft.com/en-us/c731a50c-09c1-4468-9646-54c86b75d269)
+ [ビルド内にありません: Visual Basic でのマルチスレッド](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)

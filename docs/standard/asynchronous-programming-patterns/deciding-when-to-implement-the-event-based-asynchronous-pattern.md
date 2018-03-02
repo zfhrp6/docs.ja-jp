@@ -18,78 +18,81 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: a00046aa-785d-4f7f-a8e5-d06475ea50da
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 48de1b736c251a61a2ad34975c77bc2bca139626
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 111aaaa86877368ccbd0c9c11a26dff47b065698
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a>イベントベースの非同期パターンをいつ実装するかの決定
-イベント ベースの非同期パターンは、クラスの非同期動作を公開するため、パターンを提供します。 このパターンの導入に伴い、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]非同期動作を公開するための 2 つのパターンを定義します: 非同期パターンがに基づいて、<xref:System.IAsyncResult?displayProperty=nameWithType>インターフェイス、およびイベント ベースのパターン。 このトピックが両方のパターンを実装するための適切な場合について説明します。  
+イベント ベースの非同期パターンは、クラスの非同期動作を公開します。 このパターンを導入すると、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、非同期動作を公開する 2 つのパターンが定義されます。<xref:System.IAsyncResult?displayProperty=nameWithType> インターフェイスに基づく非同期パターンとイベント ベースのパターンです。 このトピックでは、両方のパターンをどのような状況で実装するべきか説明します。  
   
- 使用した非同期プログラミングの詳細については、<xref:System.IAsyncResult>インターフェイスを参照してください[イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)です。  
+ <xref:System.IAsyncResult> インターフェイスによる非同期プログラミングの詳細については、「[イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)」を参照してください。  
   
 ## <a name="general-principles"></a>一般原則  
- 一般に、- イベント ベースの非同期パターンが使用可能な限り非同期機能を公開する必要があります。 ただし、いくつかの要件を満たしていないイベント ベースのパターンがあります。 その場合を実装する必要があります、<xref:System.IAsyncResult>イベント ベースのパターンに加えてパターン。  
+ 一般的に、可能であれば、イベント ベースの非同期パターンを利用して非同期機能を公開してください。 ただし、イベント ベースのパターンでは満たせない要件もあります。 そのようなとき、場合によっては、イベント ベースのパターンに加え、<xref:System.IAsyncResult> パターンも実装する必要があります。  
   
 > [!NOTE]
->  これはまれであるため、<xref:System.IAsyncResult>も実装されているイベントに基づくパターンせずに実装するパターン。  
+>  イベント ベースのパターンを実装せずに <xref:System.IAsyncResult> パターンのみを実装することはまれです。  
   
 ## <a name="guidelines"></a>ガイドライン  
- 次に、イベント ベースの非同期パターンを実装する場合のガイドラインを説明します。  
+ 次の一覧は、イベント ベースの非同期パターンを実装するときのガイドラインをまとめたものです。  
   
--   既定 API とイベント ベースのパターンを使用して、クラスの非同期動作を公開します。  
+-   既定の API としてイベント ベースのパターンを使用し、クラスの非同期動作を公開します。  
   
--   公開しない、<xref:System.IAsyncResult>パターンをクラスは、主に、クライアント アプリケーションで Windows フォームなどの使用時にします。  
+-   クラスが主に、Windows フォームなど、クライアント アプリケーションで使用されるとき、<xref:System.IAsyncResult> パターンを公開しないでください。  
   
--   だけを公開、<xref:System.IAsyncResult>パターンを要件を満たすために必要な場合です。 たとえば、既存の API との互換性が必要がありますを公開する、<xref:System.IAsyncResult>パターン。  
+-   要件を満たすために必要なときにのみ、<xref:System.IAsyncResult> パターンを公開します。 たとえば、既存の API との互換性を得るために <xref:System.IAsyncResult> パターンを公開する必要がある場合です。  
   
--   公開しない、<xref:System.IAsyncResult>イベント ベースのパターンを公開せずパターン。  
+-   <xref:System.IAsyncResult> パターンを公開するときは、イベント ベースのパターンも公開してください。  
   
--   必要がありますを公開する場合、<xref:System.IAsyncResult>パターンは、高度なオプションとして。 たとえば、プロキシ オブジェクトを生成する場合、このイベント ベースのパターンを既定では、生成するオプションが生成、<xref:System.IAsyncResult>パターン。  
+-   <xref:System.IAsyncResult> パターンを公開する必要がある場合、詳細設定のオプションとしてそれを行います。 たとえば、プロキシ オブジェクトを生成する場合、既定でイベント ベースのパターンを生成し、<xref:System.IAsyncResult> パターンを生成するオプションを指定します。  
   
--   イベント ベースのパターンの実装の構築、<xref:System.IAsyncResult>パターンの実装です。  
+-   <xref:System.IAsyncResult> パターンの実装を基盤にしてイベント ベースのパターンを実装します。  
   
--   両方のイベント ベースのパターンを公開しないように、<xref:System.IAsyncResult>パターンは、同じクラスです。 「高レベル」のクラスでイベント ベースのパターンを公開し、<xref:System.IAsyncResult>パターンの「レベルを下げる」クラスです。 たとえば、イベント ベースのパターンと比較、<xref:System.Net.WebClient>コンポーネントを<xref:System.IAsyncResult>のパターン、<xref:System.Web.HttpRequest>クラスです。  
+-   同じクラスでイベント ベースのパターンと <xref:System.IAsyncResult> パターンの両方を公開することは避けます。 イベント ベースのパターンを "上位" クラスで公開し、<xref:System.IAsyncResult> パターンを "下位" クラスで公開します。 たとえば、<xref:System.Net.WebClient> コンポーネントのイベント ベースのパターンと <xref:System.Web.HttpRequest> クラスの <xref:System.IAsyncResult> パターンを比較します。  
   
-    -   イベント ベースのパターンを公開し、<xref:System.IAsyncResult>パターンは、互換性が必要とするときに、同じクラスです。 たとえばを使用する API が既に解放されている場合、<xref:System.IAsyncResult>パターンでは、保持する必要は、<xref:System.IAsyncResult>旧バージョンとの互換性のためのパターン。  
+    -   互換性のために必要なとき、イベント ベースのパターンと <xref:System.IAsyncResult> パターンを同じクラスで公開します。 たとえば、<xref:System.IAsyncResult> パターンを使用する API を既に公開している場合、後方互換性のために <xref:System.IAsyncResult> パターンを維持する必要があります。  
   
-    -   イベント ベースのパターンを公開し、<xref:System.IAsyncResult>オブジェクト モデルの結果として得られる複雑性が、実装を分離することの利点を上回る場合に、同じクラスのパターンします。 イベント ベースのパターンを公開することを避けるよりも 1 つのクラスで両方のパターンを公開することをお勧めします。  
+    -   最終的なオブジェクト モデルが複雑すぎて実装を分ける意味がなくなってしまう場合、イベント ベースのパターンと <xref:System.IAsyncResult> パターンを同じクラスで公開します。 イベント ベースのパターンを公開することを避けるより、1 つのクラスで両方のパターンを公開するほうが得策です。  
   
-    -   両方のイベント ベースのパターンを公開する必要がある場合と<xref:System.IAsyncResult>パターンは、1 つのクラスを使用して<xref:System.ComponentModel.EditorBrowsableAttribute>に設定<xref:System.ComponentModel.EditorBrowsableState.Advanced>をマークする、<xref:System.IAsyncResult>高度な機能としてのパターンの実装です。 など、デザイン環境に示すこの[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]を表示しないように、IntelliSense、<xref:System.IAsyncResult>プロパティとメソッド。 これらのプロパティとメソッドが完全に使用可能ではまだが IntelliSense によって、開発者が API の鮮明に表示します。  
+    -   イベント ベースのパターンと <xref:System.IAsyncResult> パターンを 1 つのクラスで公開する必要がある場合、<xref:System.ComponentModel.EditorBrowsableState.Advanced> に設定された <xref:System.ComponentModel.EditorBrowsableAttribute> を使用し、<xref:System.IAsyncResult> パターンの実装を高度な機能として設定します。 これで [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] IntelliSense のようなデザイン環境に、<xref:System.IAsyncResult> のプロパティやメソッドを表示しないように指示されます。 これらのプロパティとメソッドには完全な有用性がまだ与えられていませんが、IntelliSense で開発している開発者は API を詳しく理解できます。  
   
-## <a name="criteria-for-exposing-the-iasyncresult-pattern-in-addition-to-the-event-based-pattern"></a>イベント ベースのパターンに加えて IAsyncResult パターンを公開するための条件  
- イベント ベースの非同期パターンには、前述のシナリオで多くの利点がありますがいくつかの欠点は、パフォーマンスが最も重要な要件である場合に注意してください。  
+## <a name="criteria-for-exposing-the-iasyncresult-pattern-in-addition-to-the-event-based-pattern"></a>イベント ベースのパターンに加え、IAsyncResult パターンを公開する基準  
+ 前述のシナリオではイベント ベースの非同期パターンにさまざまな長所がありましたが、短所もあります。パフォーマンスが最も重要な要件であれば、その短所も考慮してください。  
   
- イベント ベースのパターンでは取り上げませんが 3 つのシナリオはだけでなく、<xref:System.IAsyncResult>パターン。  
+ イベント ベースのパターンで <xref:System.IAsyncResult> パターンも対処されないシナリオが 3 つあります。  
   
--   1 つで待機をブロック<xref:System.IAsyncResult>  
+-   1 つの <xref:System.IAsyncResult> に対する待機をブロックする  
   
--   多くの待機をブロックして<xref:System.IAsyncResult>オブジェクト  
+-   たくさんの <xref:System.IAsyncResult> オブジェクトに対する待機をブロックする  
   
--   完了のポーリング、<xref:System.IAsyncResult>  
+-   <xref:System.IAsyncResult> の完了に対するポーリング  
   
- イベント ベースのパターンを使用して、こうしたシナリオに対処することができますが、これは、使用するよりも煩雑、<xref:System.IAsyncResult>パターン。  
+ 以上のシナリオには、イベント ベースのパターンで対処できますが、<xref:System.IAsyncResult> パターンを使用する場合より面倒になります。  
   
- 開発者は多くの場合、使用して、<xref:System.IAsyncResult>通常非常に高いパフォーマンスの要件を設定しているサービスのパターン。 たとえば、完了のシナリオのポーリングは、高パフォーマンス サーバー手法です。  
+ 開発者は多くの場合、一般的にパフォーマンス要件が非常に高いサービスに <xref:System.IAsyncResult> パターンを使用します。 たとえば、完了のポーリング シナリオに該当するのが高性能サーバーを利用するときです。  
   
- さらに、イベント ベースのパターンより効率が下がります、<xref:System.IAsyncResult>特に複数のオブジェクトを作成するためのパターンを<xref:System.EventArgs>、およびスレッド間で同期するためです。  
+ また、イベント ベースのパターンは <xref:System.IAsyncResult> パターンと比べて効率性が劣ります。作成されるオブジェクトが多く (特に <xref:System.EventArgs>)、スレッド間で同期がとられるためです。  
   
- 次の一覧を使用する場合に実行する推奨事項を示しています、<xref:System.IAsyncResult>パターン。  
+ 次の一覧は、<xref:System.IAsyncResult> パターンを使用する場合の推奨事項をいくつか取り上げたものです。  
   
--   だけを公開、<xref:System.IAsyncResult>のサポートを特に必要とするときのパターンを<xref:System.Threading.WaitHandle>または<xref:System.IAsyncResult>オブジェクト。  
+-   <xref:System.Threading.WaitHandle> または <xref:System.IAsyncResult> オブジェクトのサポートが厳密に必要な場合にのみ <xref:System.IAsyncResult> パターンを公開します。  
   
--   だけを公開、<xref:System.IAsyncResult>パターンを使用する既存の API がある場合、<xref:System.IAsyncResult>パターン。  
+-   既存の API で <xref:System.IAsyncResult> パターンを使用している場合にのみ <xref:System.IAsyncResult> パターンを公開します。  
   
--   基づく既存の API がある場合、<xref:System.IAsyncResult>パターンも、イベント ベースのパターンで、次のリリースで公開することを検討してください。  
+-   既存の API が <xref:System.IAsyncResult> パターンに基づく場合、次のリリースでイベント ベースのパターンも公開することを検討します。  
   
--   だけを公開<xref:System.IAsyncResult>パターンを確認する高パフォーマンスの要件がある場合は、イベント ベースのパターンで満たすことができませんが、によって満たすことができます、<xref:System.IAsyncResult>パターン。  
+-   検証済みの高いパフォーマンス要件がイベント ベースのパターンでは満たせないが、<xref:System.IAsyncResult> パターンでは満たせる場合にのみ、<xref:System.IAsyncResult> パターンを公開します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル: イベントベースの非同期パターンをサポートするコンポーネントの実装](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)  
  [イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  
  [イベント ベースの非同期パターンを使用したマルチスレッド プログラミング](../../../docs/standard/asynchronous-programming-patterns/multithreaded-programming-with-the-event-based-asynchronous-pattern.md)  

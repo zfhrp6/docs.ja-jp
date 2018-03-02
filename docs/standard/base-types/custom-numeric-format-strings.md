@@ -22,27 +22,30 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-caps.latest.revision: "54"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a391ee54aaeaf007afcb6aacdb9376820950e89e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ec33a093e4f7f8ccda1992f26563bcd63853e634
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="custom-numeric-format-strings"></a>カスタム数値書式指定文字列
 1 つ以上のカスタム数値指定子で構成されるカスタム数値書式指定文字列を作成して、数値データの書式設定方法を定義できます。 カスタム数値書式指定文字列は、 [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)ではない任意の書式指定文字列です。  
   
- カスタム数値書式指定文字列は、すべての数値型の `ToString` メソッドの一部のオーバーロードでサポートされています。 たとえば、 <xref:System.Int32.ToString%28System.String%29> 型の <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドおよび <xref:System.Int32> メソッドに数値書式指定文字列を指定できます。 カスタム数値書式指定文字列もサポートしています、.NET[複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md)、いくつかによって使用される`Write`と`WriteLine`のメソッド、<xref:System.Console>と<xref:System.IO.StreamWriter>クラス、 <xref:System.String.Format%2A?displayProperty=nameWithType>メソッド、および<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>メソッドです。  
+ カスタム数値書式指定文字列は、すべての数値型の `ToString` メソッドの一部のオーバーロードでサポートされています。 たとえば、 <xref:System.Int32.ToString%28System.String%29> 型の <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドおよび <xref:System.Int32> メソッドに数値書式指定文字列を指定できます。 カスタム数値書式指定文字列は、.NET の[複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md)でもサポートされています。この機能を使用するメソッドには、<xref:System.Console> クラスおよび <xref:System.IO.StreamWriter> クラスの一部の `Write` メソッドと `WriteLine` メソッド、<xref:System.String.Format%2A?displayProperty=nameWithType> メソッド、<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> メソッドがあります。  
   
 > [!TIP]
 >  [書式指定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
   
 <a name="table"></a> 次の表に、カスタム数値書式指定子の説明および書式指定子ごとのサンプル出力を示します。 カスタム数値書式指定文字列の使用方法については、「 [メモ](#NotesCustomFormatting) 」を参照してください。それらを使用する包括的な例については、「 [例](#example) 」を参照してください。  
   
-|書式指定子|名前|説明|例|  
+|書式指定子|name|説明|使用例|  
 |----------------------|----------|-----------------|--------------|  
 |"0"|ゼロ プレースホルダー|対応する数字でゼロを置き換えます。置き換えが行われるのは、対応する数字が存在する場合です。それ以外の場合は、結果の文字列にはゼロが表示されます。<br /><br /> 詳細については、「 ["0" カスタム指定子](#Specifier0)」を参照してください。|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|  
 |"#"|桁プレースホルダー|対応する数字で "#" 記号を置き換えます。置き換えが行われるのは、対応する数字が存在する場合です。それ以外の場合は、結果の文字列に数字は表示されません。<br /><br /> 入力文字列の対応する数字が意味を持たない 0 の場合、結果の文字列に数字は表示されません。 たとえば、0003 ("####") -> 3 です。<br /><br /> 詳細については、「 ["#" カスタム指定子](#SpecifierD)」を参照してください。|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#.##", en-US) -> .46<br /><br /> 0.45678 ("#.##", fr-FR) -> ,46|  
@@ -51,7 +54,7 @@ ms.lasthandoff: 11/21/2017
 |"%"|パーセント プレースホルダー|数値に 100 を乗算し、結果の文字列に、ローカライズされたパーセント記号を挿入します。<br /><br /> 詳細については、「 ["%" カスタム指定子](#SpecifierPct)」を参照してください。|0.3697 ("%#0.00", en-US) -> %36.97<br /><br /> 0.3697 ("%#0.00", el-GR) -> %36,97<br /><br /> 0.3697 ("##.0 %", en-US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|  
 |"‰"|パーミル プレースホルダー|数値に 1000 を乗算し、結果の文字列にローカライズされたパーミル記号を挿入します。<br /><br /> 詳細については、「 ["‰" カスタム指定子](#SpecifierPerMille)」を参照してください。|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|  
 |"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "E0"<br /><br /> "E+0"<br /><br /> "E-0"|指数表記|後に 0 (ゼロ) が 1 つ以上続く場合に、指数表記を使用して結果の書式を設定します。 大文字 "E" と小文字 "e" は、結果の文字列の指数記号を大文字にするか小文字にするかを示します。 "E" 文字または "e" 文字の後に続くゼロの数によって、指数部の最小桁数が決まります。 正符号 (+) は、符号文字が指数部の前に常に挿入されることを示します。 負符号 (-) は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。<br /><br /> 詳細については、「 ["E" カスタム指定子と "e" カスタム指定子](#SpecifierExponent)」を参照してください。|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 ("0.0##e+00") -> 1.504e+03<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|  
-|"\\"|エスケープ文字|この文字の次の文字はカスタム書式指定子ではなくリテラルとして解釈されます。<br /><br /> 詳細については: [、"\\"エスケープ文字](#SpecifierEscape)です。|987654 ("\\###00\\#") -> #987654#|  
+|"\\"|エスケープ文字|この文字の次の文字はカスタム書式指定子ではなくリテラルとして解釈されます。<br /><br /> 詳細については、「["\\" エスケープ文字](#SpecifierEscape)」を参照してください。|987654 ("\\###00\\#") -> #987654#|  
 |'*文字列*'<br /><br /> "*文字列*"|リテラル文字列区切り記号|囲まれた文字列が結果の文字列にそのままコピーされることを示します。|68 ("#' degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|  
 |;|セクション区切り記号|正の数値、負の数値、およびゼロの数値に対して、別々の書式指定文字列を使用してセクションを定義します。<br /><br /> 詳細については、「 [";" セクション区切り記号](#SectionSeparator)」を参照してください。|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|  
 |その他|上記以外のすべての文字|文字が結果の文字列にそのままコピーされます。|68 ("# °") -> 68 °|  
@@ -171,7 +174,7 @@ ms.lasthandoff: 11/21/2017
  [表のトップへ](#table)  
   
 <a name="SpecifierEscape"></a>   
-## <a name="the--escape-character"></a>"\\"エスケープ文字  
+## <a name="the--escape-character"></a>"\\" エスケープ文字  
  書式指定文字列内の "#"、"0"、"."、","、"%"、"‰" の各記号は、リテラル文字ではなく書式指定子として解釈されます。 カスタム書式指定文字列内での位置によっては、大文字および小文字の "E"、および + 記号と - 記号も書式指定子として解釈されます。  
   
  文字が書式指定子として解釈されないようにするには、その文字の前に、エスケープ文字の円記号を付けます。 エスケープ文字は、その後に続く文字が、そのまま結果の文字列に含める必要がある文字リテラルであることを示します。  
@@ -181,7 +184,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  C++ コンパイラや C# コンパイラなど、一部のコンパイラでは、同様に、1 つの円記号がエスケープ文字として解釈されることがあります。 書式設定時に文字列が正しく解釈されるようにするには、C# では、逐語的文字列リテラル文字 (@ 文字) を文字列の前に使用します。また、C# および C++ では、円記号の前にもう 1 つ円記号を付ける方法もあります。 両方の方法を次の C# の例に示します。  
   
- 次の例は、書式設定操作「#」、「0」を解釈するを防ぐためにエスケープ文字を使用し、"\\"文字をエスケープ文字または書式指定子のいずれか。 この C# の例では、円記号をもう 1 つ付けて、円記号がリテラル文字として解釈されるようにしています。  
+ 次の例では、エスケープ文字を使用して、書式設定操作で "#"、"0"、"\\" の各文字がエスケープ文字としても書式指定子としても解釈されないようにします。 この C# の例では、円記号をもう 1 つ付けて、円記号がリテラル文字として解釈されるようにしています。  
   
  [!code-cpp[Formatting.Numeric.Custom#11](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/escape1.cpp#11)]
  [!code-csharp[Formatting.Numeric.Custom#11](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/escape1.cs#11)]
@@ -218,7 +221,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="control-panel-settings"></a>コントロール パネルの設定  
  コントロール パネルの **[地域と言語のオプション]** での設定は、書式設定操作によって生成される結果の文字列に影響します。 これらの設定は、現在のスレッド カルチャに関連付けられた <xref:System.Globalization.NumberFormatInfo> オブジェクトを初期化するために使用され、現在のスレッド カルチャから書式設定の制御に使用される値が提供されます。 コンピューターで使用する設定が異なる場合は、生成される文字列も異なります。  
   
- また、使用する場合、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType>新しいのインスタンスを作成するコンス トラクター<xref:System.Globalization.CultureInfo>を現在のシステム カルチャによって確立された任意のカスタマイズと同じカルチャを表すオブジェクト、**地域と言語のオプション**コントロール パネル では、新しいに適用される<xref:System.Globalization.CultureInfo>オブジェクト。 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。  
+ また、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> コンストラクターを使用して、現在のシステム カルチャと同じカルチャを表す新しい <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化した場合、コントロール パネルの **[地域と言語のオプション]** 項目で設定されたカスタマイズが新しい <xref:System.Globalization.CultureInfo> オブジェクトに適用されます。 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。  
   
 ### <a name="rounding-and-fixed-point-format-strings"></a>丸めと固定小数点の書式指定文字列  
  固定小数点の書式指定文字列 (つまり指数表記の書式指定文字を含まない書式指定文字列) の場合は、小数点以下の桁数が小数点の右側にある桁プレースホルダーの数と同じである数値に丸められます。 書式指定文字列に小数点が含まれていない場合には、最も近い整数に丸められます。 数値の桁数が、整数部の桁プレースホルダーの数よりも大きい場合には、桁プレースホルダーに収まらない桁が、結果の文字列の 1 番目の桁プレースホルダーの直前にコピーされます。  
@@ -235,7 +238,7 @@ ms.lasthandoff: 11/21/2017
   
  [表のトップへ](#table)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Globalization.NumberFormatInfo>  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)  

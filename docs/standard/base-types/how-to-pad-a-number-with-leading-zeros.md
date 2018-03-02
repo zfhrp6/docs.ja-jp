@@ -17,15 +17,18 @@ helpviewer_keywords:
 - number formatting [.NET Framework]
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6266807a01e8119ae1410a1ba09cab55c788b4d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7ea854f69e59c614d03f10ff546bd3181f5b51ff
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>方法: 数値に先行するゼロを埋め込む
 整数値に先行ゼロを追加するには、精度指定子と[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md) "D" を使用します。 整数値と浮動小数点数値の両方に先行ゼロを追加するには、[カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)を使用します。 このトピックでは、この両方の方法で数値に先行ゼロを埋め込む方法を説明します。  
@@ -36,11 +39,11 @@ ms.lasthandoff: 11/21/2017
   
 2.  整数値を 10 進数値と 16 進数値のどちらで表示するかを決定します。  
   
-    -   表示するには、整数、10 進値として呼び出すその`ToString(String)`メソッド、およびパス、文字列"D*n*"の値として、`format`パラメーター、場所 *n* 文字列の最小の長さを表します。  
+    -   整数値を 10 進数値として表示するには、`ToString(String)` メソッドを呼び出し、`format` パラメーターの値として文字列 "D*n*" を渡します。この *n* は文字列の最小長を表します。  
   
-    -   表示するには、整数の 16 進数値として呼び出すその`ToString(String)`メソッドと、文字列のパス"X*n*"の値として、`format`パラメーター、場所 *n* 文字列の最小の長さを表します。  
+    -   整数値を 16 進数値として表示するには、`ToString(String)` メソッドを呼び出し、`format` パラメーターの値として文字列 "X*n*" を渡します。この *n* は文字列の最小長を表します。  
   
-     などもメソッドでは、この書式指定文字列を使用することができます<xref:System.String.Format%2A>または<xref:System.Console.WriteLine%2A>を使用して[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)です。  
+     また、<xref:System.String.Format%2A> や <xref:System.Console.WriteLine%2A> など、[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)を使用するメソッドでもこの書式指定文字列を使用できます。  
   
  次の例は、書式指定された数値全体の長さが 8 文字以上になるように、先行ゼロを使用してさまざまな数値を書式指定します。  
   
@@ -57,7 +60,7 @@ ms.lasthandoff: 11/21/2017
   
 4.  書式指定した文字列に埋め込む先行ゼロの数を、埋め込まれていない数値の文字列の長さに加算します。 これにより、埋め込み文字列全体の長さが定義されます。  
   
-5.  整数値を呼び出す`ToString(String)`メソッド、およびパス文字列"D*n*"10 進数文字列のおよび"X*n*"16 進数文字列の場合、  *n*埋め込み文字列全体の長さを表します。 使用することも、"D*n*"または"X*n*"複合書式指定をサポートするメソッドに文字列の書式を設定します。  
+5.  整数値の `ToString(String)` メソッドを呼び出し、10 進数値文字列の場合は "D*n*"、16 進数値の場合は "X*n*" を渡します。*n* は埋め込み文字列全体の長さを表します。 書式指定文字列 "D*n*" または "X*n*" は、複合書式指定をサポートするメソッドでも使用できます。  
   
  次の例は、整数値に 5 つの先行ゼロを埋め込みます。  
   
@@ -81,13 +84,13 @@ ms.lasthandoff: 11/21/2017
   
 1.  数値に埋め込む先行ゼロの数を決定します。  
   
-2.  埋め込みのない数値文字列での整数部の桁数を決定します。 この操作を行うには、次の手順を実行します。  
+2.  埋め込みのない数値文字列での整数部の桁数を決定します。 手順は次のとおりです。  
   
     1.  文字列形式の数値に小数点が含まれるかどうかを決定します。  
   
     2.  小数点記号を含める場合は、整数部分の文字数を決定します。  
   
-         または  
+         - または -  
   
          小数点記号を含めない場合は、文字列の長さを決定します。  
   
@@ -100,7 +103,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Formatting.HowTo.PadNumber#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.PadNumber/cs/Pad1.cs#4)]
  [!code-vb[Formatting.HowTo.PadNumber#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.PadNumber/vb/Pad1.vb#4)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)  
  [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
  [複合書式指定](../../../docs/standard/base-types/composite-formatting.md)

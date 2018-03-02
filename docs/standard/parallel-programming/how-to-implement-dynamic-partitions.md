@@ -11,29 +11,33 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: tasks, how to create a dynamic partitioner
+helpviewer_keywords:
+- tasks, how to create a dynamic partitioner
 ms.assetid: c875ad12-a161-43e6-ad1c-3d6927c536a7
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d1e5dc93997918e0f7da29fa1f94c434a556f19f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9b08c387c9b10a9d6fa8728a7fce87a7894a37fa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-implement-dynamic-partitions"></a>方法: 動的パーティションを実装する
-次の例は、カスタムを実装する方法を示しています。<xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType>を動的なパーティション分割を実装し、特定のオーバー ロードから使用できる<xref:System.Threading.Tasks.Parallel.ForEach%2A>と PLINQ の間です。  
+次の例は、特定のオーバーロード <xref:System.Threading.Tasks.Parallel.ForEach%2A> と PLINQ から動的なパーティション分割を実装するカスタム <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> を実装する方法を示します。  
   
 ## <a name="example"></a>例  
- パーティションを呼び出すたびに<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子に対して、列挙子は 1 つのリストの要素を持つパーティションを提供します。 PLINQ の場合と<xref:System.Threading.Tasks.Parallel.ForEach%2A>、パーティションが、<xref:System.Threading.Tasks.Task>インスタンス。 要求は、複数のスレッドで同時に発生している、ため、現在のインデックスへのアクセスが同期されます。  
+ 列挙子でパーティションが <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出すたびに、列挙子はパーティションに 1 つのリスト要素を提供します。 PLINQ と <xref:System.Threading.Tasks.Parallel.ForEach%2A> では、パーティションは <xref:System.Threading.Tasks.Task> インスタンスです。 要求は、複数のスレッドで同時に発生しているため、現在のインデックスへのアクセスは同期されます。  
   
  [!code-csharp[TPL_Partitioners#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_partitioners/cs/partitioners.cs#04)]
  [!code-vb[TPL_Partitioners#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_partitioners/vb/dynamicpartitioner.vb#04)]  
   
- これは、パーティション分割、1 つの要素で構成される各チャンクをチャンクの例です。 を一度に複数の要素を提供するにはロックの競合を減らしでしたして理論的には高速なパフォーマンスを実現します。 ただし、いくつかの時点では、大きな単位必要があります負荷分散のロジックを追加、すべての作業が完了するまでのすべてのスレッドをビジー状態に保つためにします。  
+ これは、各チャンクが 1 つの要素で構成されるチャンク パーティション分割の例です。 一度に複数の要素を提供することにより、ロックの競合を減らし、理論的により高速なパフォーマンスを実現することができます。 ただし、チャンクが大きい場合、すべての作業が完了するまで、すべてのスレッドをビジーにするために、ある時点で追加の負荷分散ロジックが必要な場合があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [PLINQ および TPL 用のカスタム パーティショナー](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)  
  [方法: 静的パーティション分割用にパーティショナーを実装する](../../../docs/standard/parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md)

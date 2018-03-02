@@ -11,17 +11,21 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: tasks, continuations
+helpviewer_keywords:
+- tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7037e0c91ee6ae83b70d6a26e72b87095456063b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b8e21c338648d5925c8576f76dae3aae43a9ca0d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>継続タスクを使用したタスクの連結
 非同期プログラミングでは、非同期操作で完了時に 2 番目の操作を呼び出してデータを渡すのが一般的です。 これまで、この処理はコールバック メソッドを使用して行っていました。 タスク並列ライブラリでは、 *継続タスク*に同じ機能が用意されています。 継続タスク (単に "継続" とも呼ばれます) とは、別のタスク (" *継続元*" と呼ばれます) が終了したときにそのタスクによって呼び出される非同期タスクのことです。  
@@ -58,7 +62,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="creating-a-continuation-for-multiple-antecedents"></a>複数の継続元に対する継続の作成  
  タスク グループの一部または全部のタスクが完了したときに実行される継続を作成することもできます。 すべての継続元タスクが完了した時点で継続を実行するには、静的 (Visual Basic では `Shared`) <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> メソッドまたはインスタンス <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> メソッドを呼び出します。 いずれかの継続元タスクが完了した時点で継続を実行するには、静的 (Visual Basic では `Shared`) <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> メソッドまたはインスタンス <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A?displayProperty=nameWithType> メソッドを呼び出します。  
   
- 呼び出す、<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>と<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>オーバー ロードが呼び出し元のスレッドをブロックされません。  ただし、通常を呼び出す以外のすべての<xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType>と<xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType>、返されたを取得するメソッド<xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>プロパティで、呼び出し元のスレッドがブロックされます。  
+ <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> および <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> オーバーロードの呼び出しによって、呼び出しスレッドがブロックされることはない点に注意してください。  ただし、通常、返された <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> プロパティを取得するために <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> メソッドと <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> メソッドを除いたすべてを呼び出しますが、そうした場合は呼び出しスレッドがブロックされます。  
   
  次の例では、<xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> メソッドを呼び出し、10 個の継続元タスクの結果を反映する継続タスクを作成します。 各継続元タスクは、1 から 10 までの範囲内のインデックス値を二乗します。 継続元が正常に完了すると (その <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> プロパティが <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>)、継続の <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> プロパティは、各継続元から返される <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 値の配列になります。 この例では、1 から 10 までのすべての数値の二乗の合計を計算するため、これらを追加します。  
   
@@ -124,7 +128,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="associating-state-with-continuations"></a>状態と継続の関連付け  
  任意の状態とタスクの継続を関連付けることができます。 <xref:System.Threading.Tasks.Task.ContinueWith%2A> メソッドは、それぞれが継続の状態を表す <xref:System.Object> 値を受け取る、オーバーロードされたバージョンを提供します。 後でこの状態オブジェクトにアクセスするには、<xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> プロパティを使用します。 値を指定しない場合、この状態オブジェクトは `null` です。  
   
- 継続の状態は、TPL を使用するために、 [非同期プログラミング モデル (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) を使った既存のコードを変換する場合に有用です。 Apm で通常指定するオブジェクトの状態で、 **開始*メソッド** * メソッドと、その状態を使用して後でアクセスできる、<xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Threading.Tasks.Task.ContinueWith%2A> メソッドを使用すると、APM を使用するコードを TPL を使用するように変換するときに、この状態を維持できます。  
+ 継続の状態は、TPL を使用するために、 [非同期プログラミング モデル (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) を使った既存のコードを変換する場合に有用です。 APM では通常、**Begin***Method* メソッドでオブジェクト状態を指定し、後から <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> プロパティを使って、その状態にアクセスします。 <xref:System.Threading.Tasks.Task.ContinueWith%2A> メソッドを使用すると、APM を使用するコードを TPL を使用するように変換するときに、この状態を維持できます。  
   
  継続の状態は、 <xref:System.Threading.Tasks.Task> デバッガーで [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] オブジェクトを使用するときにも有用です。 たとえば、 **[並列タスク]** ウィンドウの **[タスク]** の列に、各タスクの状態オブジェクトの文字列表現が表示されます。 **[並列タスク]** ウィンドウの詳細については、「[[タスク] ウィンドウの使用](/visualstudio/debugger/using-the-tasks-window)」を参照してください。  
   
@@ -151,9 +155,9 @@ ms.lasthandoff: 10/18/2017
      [!code-csharp[TPL_Continuations#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception2.cs#11)]
      [!code-vb[TPL_Continuations#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception2.vb#11)]  
   
-     詳細については、「[例外処理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)」および「[NIB: 方法: タスクがスローした例外を処理する](http://msdn.microsoft.com/en-us/d6c47ec8-9de9-4880-beb3-ff19ae51565d)」を参照してください。  
+     詳細については、「[例外処理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)」および「[NIB: 方法: タスクがスローした例外を処理する](http://msdn.microsoft.com/library/d6c47ec8-9de9-4880-beb3-ff19ae51565d)」を参照してください。  
   
 -   アタッチされた子タスクで、<xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> オプションを使用して継続が作成された場合、アタッチされているその他の子と同様、その例外は親によって呼び出し元のスレッドに反映されます。 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

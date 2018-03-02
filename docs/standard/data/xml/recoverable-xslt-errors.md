@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 78149e0e1c84a457f68b67ea8fe4c82098e794ad
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4564530cd173793519471c78105d0394595f6d5c
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="recoverable-xslt-errors"></a>XSLT エラーの解決
 W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を実装者が決定できる事項があります。 このような事項は、随意動作と見なされています。 たとえば、XSLT 1.0 Recommendation は、セクション 7.3「Creating Processing Instructions」で、`xsl:processing-instruction` の内容をインスタンス化したときに、テキスト ノード以外のノードが作成されるのはエラーであるとしています。 いくつかの問題に関しては、プロセッサがエラー状態から回復するときにどのような対処をするべきかを、XSLT 1.0 Recommendation が規定しています。 セクション 7.3 に記述されている問題に関しては、W3C では、作成されたノードとその内容を無視することで、このエラーから回復できるとしています。  
@@ -29,7 +32,7 @@ W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を�
   
 -   エラーは、この状態に対する例外が発生したことを示します。  
   
--   参照は含まれて、 [W3C XSL Transformations (XSLT) Version 1.0 Recommendation](http://go.microsoft.com/fwlink/?LinkId=49919)と[W3C XSL Transformations (XSLT) Version 1.0 Specification Errata](http://go.microsoft.com/fwlink/?LinkId=49917)です。  
+-   詳細については、[W3C の XSL Transformations (XSLT) Version 1.0 勧告](http://www.w3.org/TR/xslt)に関するページと [W3C の「XSL Transformations (XSLT) Version 1.0 Specification Errata」(XSL Transformations (XSLT) Version 1.0 仕様の正誤表)](http://www.w3.org/1999/11/REC-xslt-19991116-errata/) を参照してください。  
   
 |XSLT の状態|セクション|XslCompiledTransform の動作|  
 |--------------------|-------------|-----------------------------------|  
@@ -59,7 +62,7 @@ W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を�
 |`value` の `xsl:number` 属性が NAN、無限、または 0.5 未満である。|errata 24|復元|  
 |document 関数への 2 番目の引数ノード セットが空であり、URI 参照が相対 URI 参照である。|errata 14|復元|  
   
- <sup>*</sup>この動作は異なる、<xref:System.Xml.Xsl.XslTransform>クラスです。 詳細については、次を参照してください。[実装のクラスの随意動作、XslTransform](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)です。  
+ <sup>*</sup> この動作は、<xref:System.Xml.Xsl.XslTransform> クラスの動作とは異なります。 詳細については、「[XslTransform クラスの随意動作の実装](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)

@@ -11,49 +11,53 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: PLINQ queries, how to handle exceptions
+helpviewer_keywords:
+- PLINQ queries, how to handle exceptions
 ms.assetid: 8d56ff9b-a571-4d31-b41f-80c0b51b70a5
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 209e0c1bf89f231d03647ae4351279bfdb172e68
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: db3e09bc2b285d014a7d3a6ed6fc4e50f85b537d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-handle-exceptions-in-a-plinq-query"></a>方法: PLINQ クエリの例外を処理する
-このトピックの最初の例は、処理する方法を示しています、<xref:System.AggregateException?displayProperty=nameWithType>を実行すると、PLINQ クエリからスローされることができます。 2 番目の例では、例外がスローされますにできるだけ近い、デリゲート内で、try-catch ブロックを配置する方法を示します。 これによりとすぐに、発生する可能性のあるクエリの実行を続行して、キャッチすることができます。 連結しているスレッドへ例外が上方向へ通知されると、例外が発生した後も、クエリによって一部の項目の処理が続行される可能性があります。  
+このトピックの最初の例では、PLINQ クエリの実行時にスローされる <xref:System.AggregateException?displayProperty=nameWithType> の処理方法を示します。 2 番目の例では、デリゲート内で例外がスローされる場所のできるだけ近くに try-catch ブロックを配置する方法を示します。 こうすると、発生の直後に例外をキャッチしてクエリの実行を続行できる可能性があります。 連結しているスレッドへ例外が上方向へ通知されると、例外が発生した後も、クエリによって一部の項目の処理が続行される可能性があります。  
   
- 場合によっては PLINQ に戻って、シーケンシャル実行と、例外が発生するときに例外が直接反映されでラップされません、<xref:System.AggregateException>です。 また、 <xref:System.Threading.ThreadAbortException>s が直接反映常にします。  
+ 場合によっては、PLINQ が順次実行に戻り、例外が発生すると、例外が直接反映され、<xref:System.AggregateException> にラップされないことがあります。 また、<xref:System.Threading.ThreadAbortException> は常に直接反映されます。  
   
 > [!NOTE]
->  「マイ コードのみ」を有効にすると、Visual Studio は例外をスローする行で中断し、「で処理されない例外ユーザー コードです」というエラー メッセージを表示 このエラーは問題にはなりません。 F5 キーを押して、処理が中断された箇所から続行し、以下の例に示す例外処理動作を確認できます。 Visual Studio の最初のエラーの処理は中断を防ぐために下にある [マイ コードのみ] チェック ボックスをオフにだけ**ツール、オプション、デバッグ、一般的な**します。  
+>  [マイ コードのみ] が有効になっている場合、Visual Studio では、例外をスローする行で処理が中断され、"ユーザー コードで処理されない例外" に関するエラー メッセージが表示されます。 このエラーは問題にはなりません。 F5 キーを押して、処理が中断された箇所から続行し、以下の例に示す例外処理動作を確認できます。 Visual Studio による処理が最初のエラーで中断しないようにするには、**[ツール] メニューの [オプション]、[デバッグ] 、[全般]** の順にクリックし、[マイ コードのみ] チェック ボックスをオフにします。  
 >   
->  この例は、使用方法を示すことを意図したものであるため、同等の順次的な LINQ to Objects クエリほど高速ではない可能性があります。 高速化の詳細については、次を参照してください。 [PLINQ で高速化について](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)です。  
+>  この例は、使用方法を示すことを意図したものであるため、同等の順次的な LINQ to Objects クエリほど高速ではない可能性があります。 高速化の詳細については、「[PLINQ での高速化について](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- この例をキャッチするクエリを実行するコードの周り、try-catch ブロックを配置する方法を示しています。 <xref:System.AggregateException?displayProperty=nameWithType>s は、スローされます。  
+ 次の例は、スローされる <xref:System.AggregateException?displayProperty=nameWithType> をキャッチするクエリを実行するコードの近くに try-catch ブロックを配置する方法を示しています。  
   
  [!code-csharp[PLINQ#41](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#41)]
  [!code-vb[PLINQ#41](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#41)]  
   
- この例では、クエリは、例外がスローされた後に続行できません。 時点では、アプリケーション コードが例外をキャッチ、PLINQ は既に停止クエリすべてのスレッドにします。  
+ この例では、例外がスローされた後にクエリを続行することはできません。 アプリケーション コードが例外をキャッチするまでに、PLINQ はすべてのスレッド上でクエリを停止しています。  
   
 ## <a name="example"></a>例  
- 次の例では、デリゲートで例外をキャッチし、クエリの実行を続行できるようにすることで、try-catch ブロックを配置する方法を示します。  
+ 次の例は、例外をキャッチしてクエリの実行を続行できるようにするため、try-catch ブロックをデリゲートに配置する方法を示しています。  
   
  [!code-csharp[PLINQ#42](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#42)]
  [!code-vb[PLINQ#42](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#42)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
--   コンパイルして、これらの例を実行、PLINQ データのサンプルにコピーし、Main からメソッドを呼び出します。  
+-   これらの例をコンパイルして実行するには、これらのコードを PLINQ データのサンプルにコピーして、Main からメソッドを呼び出します。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
- プログラムの状態が破損しないように、それを処理する方法を理解していない限り例外をキャッチしません。  
+ プログラムの状態を破損しないようにするため、処理方法がわからない場合は、例外をキャッチしないでください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq.ParallelEnumerable>  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

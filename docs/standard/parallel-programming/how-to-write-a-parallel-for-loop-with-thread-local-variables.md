@@ -11,17 +11,21 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: parallel for loops, how to use local state
+helpviewer_keywords:
+- parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2e0b3e28c95d9ccfb0ecd1954e16960576d8f115
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 004998a8891d92e2d1f805b3353fbe93864dcf1d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>方法: スレッド ローカル変数を使用する Parallel.For ループを記述する
 次の例に、<xref:System.Threading.Tasks.Parallel.For%2A> ループによって生成される個別のタスクごとの状態を、スレッド ローカル変数を使用して格納および取得する方法を示します。 スレッド ローカル変数を使用することで、共有状態への多数のアクセスを同期するオーバーヘッドを回避できます。 反復処理ごとに共有リソースを作成する代わりに、タスクの反復処理のすべてが完了するまで、値を計算して格納します。 この場合、最終結果を共有リソースに 1 回書き込んだり、別のメソッドに渡したりすることができます。  
@@ -48,9 +52,9 @@ Function() new MyClass()
   
  5 番目のパラメーターが定義するメソッドは、特定のスレッドでのすべての反復処理が完了した時点で 1 回だけ呼び出されます。 この場合も、入力引数の型は <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドの型引数、および本体のラムダ式によって返される型と一致します。 この例では、スレッド セーフな方法で、この値をクラス スコープで変数に追加するために、<xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> メソッドを呼び出します。 スレッド ローカル変数を使用することで、このクラス変数をループのすべての反復処理で作成する手間を省きました。  
   
- ラムダ式を使用する方法の詳細については、次を参照してください。 [PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)です。  
+ ラムダ式の使用方法の詳細については、「[PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データの並列化](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  
  [並列プログラミング](../../../docs/standard/parallel-programming/index.md)  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  

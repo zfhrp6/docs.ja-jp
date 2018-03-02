@@ -11,47 +11,51 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: synchronization primitives, CountdownEvent
+helpviewer_keywords:
+- synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9f953f6477abf1f4e0d6aaf79e67005172ff1144
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 144bcde6c4c8fb227773fe613da8445f100ce66d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="countdownevent"></a>CountdownEvent
-<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>待機中のスレッドのブロックが解除された後に同期プリミティブの通知回数だけです。 <xref:System.Threading.CountdownEvent>シナリオではそれ以外の場合があるを使用するよう設計されていますが、<xref:System.Threading.ManualResetEvent>または<xref:System.Threading.ManualResetEventSlim>と手動でイベントを通知する前に、変数をデクリメントします。 たとえば、分岐および結合のシナリオでのみ作成できます、 <xref:System.Threading.CountdownEvent> 5 のシグナルのカウントを持つと 5 つの作業項目、スレッドの開始をプールし、作業項目の各呼び出しがある<xref:System.Threading.CountdownEvent.Signal%2A>完了時にします。 各呼び出し<xref:System.Threading.CountdownEvent.Signal%2A>信号カウントを 1 だけデクリメントします。 メイン スレッドへの呼び出しで<xref:System.Threading.CountdownEvent.Wait%2A>シグナル カウントがゼロになるまでブロックします。  
+<xref:System.Threading.CountdownEvent?displayProperty=nameWithType> は同期プリミティブであり、特定の回数シグナル状態になった後、待機スレッドのブロックを解除します。 <xref:System.Threading.CountdownEvent> は、通常は <xref:System.Threading.ManualResetEvent> または <xref:System.Threading.ManualResetEventSlim> を使用して、イベントをシグナル化する前に変数を手動でデクリメントする必要があるシナリオ用に設計されています。 たとえば、fork/join シナリオでは、単にシグナル数 5 の <xref:System.Threading.CountdownEvent> を作成し、スレッド プールで 5 つの作業項目を開始し、完了時に各作業項目呼び出し <xref:System.Threading.CountdownEvent.Signal%2A> を使用できます。 <xref:System.Threading.CountdownEvent.Signal%2A> を呼び出すたびに、シグナル数が 1 だけデクリメントします。 メイン スレッドでは、シグナル数がゼロになるまで、<xref:System.Threading.CountdownEvent.Wait%2A> の呼び出しがブロックされます。  
   
 > [!NOTE]
->  従来の .NET Framework の同期 Api と対話する必要はありませんコード、使用を検討して<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>オブジェクトまたは<xref:System.Threading.Tasks.Parallel.Invoke%2A>分岐と結合の並列処理の表現をさらに簡単なアプローチのメソッドです。  
+>  レガシ .NET Framework の同期 API と対話する必要がないコードの場合は、fork と join の並列実行をさらに簡単に表すために <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> オブジェクトまたは <xref:System.Threading.Tasks.Parallel.Invoke%2A> メソッドの使用を検討してください。  
   
- <xref:System.Threading.CountdownEvent>これらの追加機能があります。  
+ <xref:System.Threading.CountdownEvent> には以下の追加機能があります。  
   
--   キャンセル トークンを使用して、待機操作をキャンセルできます。  
+-   取り消しトークンを使用して、待機操作を取り消すことができます。  
   
--   インスタンスが作成された後、その信号カウントをインクリメントできます。  
+-   インスタンスの作成後に、シグナル数をインクリメントできます。  
   
--   インスタンスが後に再利用できる<xref:System.Threading.CountdownEvent.Wait%2A>呼び出しで返されるが、<xref:System.Threading.CountdownEvent.Reset%2A>メソッドです。  
+-   <xref:System.Threading.CountdownEvent.Reset%2A> メソッドを呼び出すことで <xref:System.Threading.CountdownEvent.Wait%2A> が返された後、インスタンスを再利用できます。  
   
--   インスタンスを公開、<xref:System.Threading.WaitHandle>他の .NET Framework の同期 Api と統合するためなど<xref:System.Threading.WaitHandle.WaitAll%2A>です。  
+-   インスタンスは、<xref:System.Threading.WaitHandle.WaitAll%2A> などの他の .NET Framework の同期 API との統合のために <xref:System.Threading.WaitHandle> を公開します。  
   
 ## <a name="basic-usage"></a>基本的な使用方法  
- 次の例で使用する方法、<xref:System.Threading.CountdownEvent>で<xref:System.Threading.ThreadPool>作業項目です。  
+ <xref:System.Threading.CountdownEvent> と <xref:System.Threading.ThreadPool> 作業項目を使用する方法を次の例に示します。  
   
  [!code-csharp[CDS_CountdownEvent#01](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#01)]
  [!code-vb[CDS_CountdownEvent#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/module1.vb#01)]  
   
-## <a name="countdownevent-with-cancellation"></a>キャンセルを CountdownEvent  
- 次の例での待機操作をキャンセルする方法を示しています。<xref:System.Threading.CountdownEvent>キャンセル トークンを使用しています。 基本的なパターンが統一されたキャンセルで導入されたのモデルを採用[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]です。 詳細については、次を参照してください。[マネージ スレッドのキャンセル](../../../docs/standard/threading/cancellation-in-managed-threads.md)です。  
+## <a name="countdownevent-with-cancellation"></a>CountdownEvent と Cancellation  
+ 次の例は、取り消しトークンを使用して、<xref:System.Threading.CountdownEvent> での待機操作を取り消す方法を示しています。 基本的なパターンでは、[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] で導入された、統合取り消しのモデルに従います。 詳細については、「[マネージ スレッドのキャンセル](../../../docs/standard/threading/cancellation-in-managed-threads.md)」を参照してください。  
   
  [!code-csharp[CDS_CountdownEvent#02](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#02)]
  [!code-vb[CDS_CountdownEvent#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/canceleventwait.vb#02)]  
   
- 待ち操作がそのシグナル状態のスレッドをキャンセルしていないことに注意してください。 通常、取り消しは、論理操作に適用され、待機を同期しているすべての作業項目と同様に、イベントで待機していることを含めることができます。 この例では、各作業項目は、同じキャンセル トークンのコピーには、キャンセル要求に応答できるようにします。  
+ 待機操作では、それをシグナル化するスレッドが取り消されないことに注意してください。 通常、取り消しは論理操作に適用され、待機が同期中のすべての作業項目だけでなく、イベントでの待機を含めることができます。 この例では、各作業項目には同じ取り消しトークンのコピーが渡されるため、取り消し要求に応答することができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [EventWaitHandle、AutoResetEvent、CountdownEvent、ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)

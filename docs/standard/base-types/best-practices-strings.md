@@ -1,5 +1,5 @@
 ---
-title: ".NET で文字列を使用するためのベスト プラクティス"
+title: ".NET の文字列を使用するためのベスト プラクティス"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -23,20 +23,23 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d187096fee5119a22d886029cd63173e4ca1c8ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a4b92cd9d6b880f23d6acaf9e38e685184ec3bfe
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="best-practices-for-using-strings-in-net"></a>.NET で文字列を使用するためのベスト プラクティス
-<a name="top"></a>.NET は、ローカライズされたやグローバル化されたアプリケーションを開発するための広範なサポートを提供し、並べ替えおよび文字列の表示などの一般的な操作を実行するときに、現在のカルチャまたは特定のカルチャの規則を適用するが容易です。 しかし、文字列の並べ替えや比較の操作は、必ずしもカルチャに依存するとは限りません。 たとえば、アプリケーションが内部で使用する文字列は、通常、すべてのカルチャで同じように処理される必要があります。 XML タグ、HTML タグ、ユーザー名、ファイル パス、システム オブジェクトの名前などのカルチャに依存しない文字列データがカルチャに依存するかのように解釈されると、アプリケーション コードで軽度のバグが発生したり、パフォーマンスが低下したり、場合によってはセキュリティの問題を引き起こしたりする可能性があります。  
+# <a name="best-practices-for-using-strings-in-net"></a>.NET の文字列を使用するためのベスト プラクティス
+<a name="top"></a> .NET には、ローカライズされたアプリケーションやグローバル化されたアプリケーションを開発するための広範なサポートが用意されており、文字列の並べ替えや表示などの一般的な操作を実行するときに、現在のカルチャの規則や特定のカルチャの規則を簡単に適用できるようになっています。 しかし、文字列の並べ替えや比較の操作は、必ずしもカルチャに依存するとは限りません。 たとえば、アプリケーションが内部で使用する文字列は、通常、すべてのカルチャで同じように処理される必要があります。 XML タグ、HTML タグ、ユーザー名、ファイル パス、システム オブジェクトの名前などのカルチャに依存しない文字列データがカルチャに依存するかのように解釈されると、アプリケーション コードで軽度のバグが発生したり、パフォーマンスが低下したり、場合によってはセキュリティの問題を引き起こしたりする可能性があります。  
   
- このトピックは、文字列の並べ替え、比較、および .NET での大文字小文字の区別方法を調べて、適切な文字列処理メソッドを選択するための推奨事項し、文字列処理メソッドに関する追加情報を示します。 また、数値データ、日時データなど、書式付きデータを表示および格納のために処理する方法についても説明します。  
+ このトピックでは、.NET の文字列の並べ替え、比較、および大文字と小文字の区別のメソッドについて検討し、適切な文字列処理メソッドを選択するための推奨事項と、文字列処理メソッドに関する追加情報を紹介します。 また、数値データ、日時データなど、書式付きデータを表示および格納のために処理する方法についても説明します。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -48,7 +51,7 @@ ms.lasthandoff: 10/18/2017
   
 -   [メソッド呼び出しに使用する StringComparison メンバーの選択](#choosing_a_stringcomparison_member_for_your_method_call)  
   
--   [.NET の共通の文字列比較メソッド](#common_string_comparison_methods_in_the_net_framework)  
+-   [.NET の一般的な文字列比較メソッド](#common_string_comparison_methods_in_the_net_framework)  
   
 -   [間接的に文字列比較を実行するメソッド](#methods_that_perform_string_comparison_indirectly)  
   
@@ -244,13 +247,13 @@ ms.lasthandoff: 10/18/2017
 |----------|--------------|-----------------------------------------------------|  
 |大文字と小文字が区別される内部識別子。<br /><br /> XML や HTTP などの標準の、大文字と小文字が区別される識別子。<br /><br /> 大文字と小文字が区別されるセキュリティ関連の設定。|バイトが正確に一致する非言語的識別子。|<xref:System.StringComparison.Ordinal>|  
 |大文字と小文字が区別されない内部識別子。<br /><br /> XML や HTTP などの標準の、大文字と小文字が区別されない識別子。<br /><br /> ファイル パス。<br /><br /> レジストリのキーと値。<br /><br /> 環境変数。<br /><br /> リソース識別子 (ハンドル名など)。<br /><br /> 大文字と小文字が区別されないセキュリティ関連の設定。|大文字と小文字が区別されない、言語的な意味を持たない識別子 (ほとんどの Windows システム サービスで格納されるデータなど)。|<xref:System.StringComparison.OrdinalIgnoreCase>|  
-|永続化される、言語的な意味を持つデータの一部。<br /><br /> 一定の並べ替え順序を必要とする言語的なデータの表示。|カルチャに依存しないが、言語的な意味を持つデータ。|<xref:System.StringComparison.InvariantCulture><br /><br /> または<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|  
-|ユーザーに表示されるデータ。<br /><br /> ほとんどのユーザー入力。|特定の言語の規則を必要とするデータ。|<xref:System.StringComparison.CurrentCulture><br /><br /> または<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|  
+|永続化される、言語的な意味を持つデータの一部。<br /><br /> 一定の並べ替え順序を必要とする言語的なデータの表示。|カルチャに依存しないが、言語的な意味を持つデータ。|<xref:System.StringComparison.InvariantCulture><br /><br /> - または -<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|  
+|ユーザーに表示されるデータ。<br /><br /> ほとんどのユーザー入力。|特定の言語の規則を必要とするデータ。|<xref:System.StringComparison.CurrentCulture><br /><br /> - または -<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|  
   
  [ページのトップへ](#top)  
   
 <a name="common_string_comparison_methods_in_the_net_framework"></a>   
-## <a name="common-string-comparison-methods-in-net"></a>.NET の共通の文字列比較メソッド  
+## <a name="common-string-comparison-methods-in-net"></a>.NET の一般的な文字列比較メソッド  
  以降では、文字列比較でよく使用されるメソッドについて説明します。  
   
 ### <a name="stringcompare"></a>String.Compare  
@@ -374,5 +377,5 @@ ms.lasthandoff: 10/18/2017
 18.02.1905 15:12  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [文字列の操作](../../../docs/standard/base-types/manipulating-strings.md)

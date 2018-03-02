@@ -1,27 +1,25 @@
 ---
 title: "チュートリアル: Windows フォーム アプリケーションでのデータフローの使用"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - TPL dataflow library, in Windows Forms
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d2775cc99020fd99d6e7d79cdf3e1ffcc3219146
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8c0d44ca7933626c95603ccc81102889ba4c23cb
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>チュートリアル: Windows フォーム アプリケーションでのデータフローの使用
 このドキュメントでは、Windows フォーム アプリケーションでイメージ処理を実行する、データフロー ブロックのネットワークを作成する方法を説明します。  
@@ -30,11 +28,9 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを開始する前に、「[Dataflow (データフロー)](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)」をお読みください。  
-  
-> [!TIP]
->  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> 名前空間) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
- 
-  
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
+
 ## <a name="sections"></a>セクション  
  このチュートリアルは、次のセクションで構成されています。  
   
@@ -54,13 +50,13 @@ ms.lasthandoff: 10/18/2017
   
 1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)] または Visual Basic **Windows フォーム アプリケーション** プロジェクトを作成します。 このドキュメントでは、プロジェクトの名前を `CompositeImages` とします。  
   
-2.  メイン フォーム Form1.cs のフォーム デザイナーで (の Form1.vb [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)])、追加、<xref:System.Windows.Forms.ToolStrip>コントロール。  
+2.  メイン フォーム Form1.cs ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の場合は Form1.vb) のフォーム デザイナーで、<xref:System.Windows.Forms.ToolStrip> コントロールを追加します。  
   
-3.  追加、<xref:System.Windows.Forms.ToolStripButton>コントロールを<xref:System.Windows.Forms.ToolStrip>コントロール。 設定、<xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A>プロパティを<xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>と<xref:System.Windows.Forms.ToolStripItem.Text%2A>プロパティを**フォルダーを選択**です。  
+3.  <xref:System.Windows.Forms.ToolStrip> コントロールに <xref:System.Windows.Forms.ToolStripButton> コントロールを追加します。 <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> プロパティを <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> に設定し、<xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティを「**フォルダーの選択**」に設定します。  
   
-4.  1 秒あたりの追加<xref:System.Windows.Forms.ToolStripButton>コントロールを<xref:System.Windows.Forms.ToolStrip>コントロール。 設定、<xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A>プロパティを<xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>、<xref:System.Windows.Forms.ToolStripItem.Text%2A>プロパティを**キャンセル**、および<xref:System.Windows.Forms.ToolStripItem.Enabled%2A>プロパティを`False`です。  
+4.  <xref:System.Windows.Forms.ToolStrip> コントロールに 2 つ目の <xref:System.Windows.Forms.ToolStripButton> コントロールを追加します。 <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> プロパティを <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> に、<xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティを「**キャンセル**」に、<xref:System.Windows.Forms.ToolStripItem.Enabled%2A> プロパティを `False` に設定します。  
   
-5.  追加、<xref:System.Windows.Forms.PictureBox>メイン フォームにオブジェクト。 <xref:System.Windows.Forms.Control.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle.Fill> に設定します。  
+5.  <xref:System.Windows.Forms.PictureBox> オブジェクトをメイン フォームに追加します。 <xref:System.Windows.Forms.Control.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle.Fill> に設定します。  
   
 <a name="network"></a>   
 ## <a name="creating-the-dataflow-network"></a>データフロー ネットワークの作成  
@@ -91,26 +87,26 @@ ms.lasthandoff: 10/18/2017
      [!code-csharp[TPLDataflow_CompositeImages#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#5)]  
   
     > [!NOTE]
-    >  C# バージョンの`CreateCompositeBitmap`メソッドでは、ポインターを使用して効率的に処理を有効にする、<xref:System.Drawing.Bitmap?displayProperty=nameWithType>オブジェクト。 したがって、[unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) キーワードを使用するために、プロジェクト内の **[アンセーフ コードの許可]** オプションを有効にしてください。 アンセーフ コードを有効にする方法について、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)]プロジェクトで、[ビルド ページ、プロジェクト デザイナー (c#)] を参照してください https://msdn.microsoft.com/library/kb4wyys2)。  
+    >  `CreateCompositeBitmap` メソッドの C# バージョンでは、ポインターを使って、<xref:System.Drawing.Bitmap?displayProperty=nameWithType> オブジェクトの効率的な処理を実現します。 したがって、[unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) キーワードを使用するために、プロジェクト内の **[アンセーフ コードの許可]** オプションを有効にしてください。 [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] プロジェクトでアンセーフ コードを有効にする方法については、「[[ビルド] ページ (プロジェクト デザイナー) (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)」を参照してください。  
   
  ネットワークのメンバーを次の表に示します。  
   
 |メンバー|型|説明|  
 |------------|----------|-----------------|  
-|`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|フォルダー パスを入力として受け取りのコレクションを生成<xref:System.Drawing.Bitmap>オブジェクトとして出力します。|  
-|`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|コレクションを受け取って<xref:System.Drawing.Bitmap>オブジェクトを入力としてし、出力として複合ビットマップを生成します。|  
+|`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|フォルダーのパスを入力として取得し、<xref:System.Drawing.Bitmap> オブジェクトのコレクションを出力として生成します。|  
+|`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|<xref:System.Drawing.Bitmap> オブジェクトのコレクションを入力として取得し、複合ビットマップを出力として生成します。|  
 |`displayCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|フォーム上に複合ビットマップを表示します。|  
 |`operationCancelled`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|操作が取り消されたことを示すためにイメージを表示し、ユーザーが別のフォルダーを選択できるようにします。|  
   
- この例では、ネットワークを形成するデータフロー ブロックを接続するには<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A>メソッドです。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A>メソッドには受け取るオーバー ロードされたバージョンが含まれています、<xref:System.Predicate%601>ターゲット ブロックが受け入れるか、メッセージを拒否するかどうかを決定するオブジェクト。 このフィルターのしくみによって、メッセージ ブロックは特定の値のみを受信できます。 この例では、ネットワークが、2 つに分岐します。 メイン分岐は、ディスクからイメージを読み込み、複合イメージを作成し、フォームにそのイメージを表示します。 もう 1 つの分岐では、現在の操作がキャンセルされます。 <xref:System.Predicate%601>オブジェクトが特定のメッセージを拒否することによって、別の分岐を切り替えるには、メイン分岐に沿ったデータ フロー ブロックを有効にします。 たとえば、ユーザーが操作をキャンセルした場合、データフロー ブロック `createCompositeBitmap` で、`null`([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `Nothing`) が出力として生成されます。 データフロー ブロック `displayCompositeBitmap` では、`null` 入力値が拒否されるため、メッセージが `operationCancelled` に提供されます。 データフロー ブロック `operationCancelled` はすべてのメッセージを受け入れるため、操作が取り消されたことを示すためにイメージを表示します。  
+ データフロー ブロックを接続してネットワークを形成するため、この例では <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> メソッドを使います。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> メソッドには、ターゲット ブロックがメッセージを受け入れるか拒否するかを決定する <xref:System.Predicate%601> オブジェクトを受け取るオーバーロード バージョンが含まれます。 このフィルターのしくみによって、メッセージ ブロックは特定の値のみを受信できます。 この例では、ネットワークが、2 つに分岐します。 メイン分岐は、ディスクからイメージを読み込み、複合イメージを作成し、フォームにそのイメージを表示します。 もう 1 つの分岐では、現在の操作がキャンセルされます。 <xref:System.Predicate%601> オブジェクトは、メイン分岐に沿ったデータフロー ブロックで、特定のメッセージを拒否することによって、もう 1 つの分岐に切り替えることができます。 たとえば、ユーザーが操作をキャンセルした場合、データフロー ブロック `createCompositeBitmap` で、`null`([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `Nothing`) が出力として生成されます。 データフロー ブロック `displayCompositeBitmap` では、`null` 入力値が拒否されるため、メッセージが `operationCancelled` に提供されます。 データフロー ブロック `operationCancelled` はすべてのメッセージを受け入れるため、操作が取り消されたことを示すためにイメージを表示します。  
   
  次の図は、イメージ処理ネットワークを示しています。  
   
  ![イメージ処理ネットワーク](../../../docs/standard/parallel-programming/media/dataflowwinforms.png "DataflowWinForms")  
   
- `displayCompositeBitmap` と `operationCancelled` のデータフロー ブロックはユーザー インターフェイスで機能するので、これらの操作をユーザー インターフェイス スレッドで実行することが重要です。 これを実現する、構築時に、これらのオブジェクトは各の提供、<xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions>を持つオブジェクト、<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A>プロパティに設定<xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>です。 <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> メソッドは、現行の同期コンテキストで作業を実行する <xref:System.Threading.Tasks.TaskScheduler> オブジェクトを作成します。 ユーザー インターフェイス スレッドで実行される`CreateImageProcessingNetwork` メソッドは、**[フォルダーの選択]** ボタンのハンドラーから呼び出されるため、`displayCompositeBitmap` と`operationCancelled` のデータフロー ブロックのアクションも、ユーザー インターフェイス スレッドで実行されます。  
+ `displayCompositeBitmap` と `operationCancelled` のデータフロー ブロックはユーザー インターフェイスで機能するので、これらの操作をユーザー インターフェイス スレッドで実行することが重要です。 これを実現するため、構築時にこれらのオブジェクトは <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> プロパティが <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> に設定された <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> オブジェクトを提供します。 <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> メソッドは、現行の同期コンテキストで作業を実行する <xref:System.Threading.Tasks.TaskScheduler> オブジェクトを作成します。 ユーザー インターフェイス スレッドで実行される`CreateImageProcessingNetwork` メソッドは、**[フォルダーの選択]** ボタンのハンドラーから呼び出されるため、`displayCompositeBitmap` と`operationCancelled` のデータフロー ブロックのアクションも、ユーザー インターフェイス スレッドで実行されます。  
   
- この例の設定ではなく、共有のキャンセル トークンを使用して、<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>プロパティのため、<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>プロパティが完全にデータ フロー ブロックの実行をキャンセルします。 キャンセル トークンによって、この例では、ユーザーが 1 つまたは複数の操作をキャンセルしたときにも、同じデータフロー ネットワークを複数回再利用できます。 使用する例については<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>取り消すには完全にデータ フロー ブロックの実行、次を参照してください。[する方法: データフロー ブロックをキャンセル](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> プロパティはデータフロー ブロックの実行を完全にキャンセルするので、この例では、<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> プロパティを設定する代わりに、共有キャンセル トークンを使います。 キャンセル トークンによって、この例では、ユーザーが 1 つまたは複数の操作をキャンセルしたときにも、同じデータフロー ネットワークを複数回再利用できます。 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> を使ってデータフロー ブロックの実行を完全に取り消す例については、「[方法: データフロー ブロックをキャンセルする](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md)」をご覧ください。  
   
 <a name="ui"></a>   
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>ユーザー インターフェイスへのデータフロー ネットワークの接続  
@@ -118,15 +114,15 @@ ms.lasthandoff: 10/18/2017
   
 #### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>ユーザー インターフェイスにデータフロー ネットワークを接続するには  
   
-1.  メイン フォームのフォーム デザイナーでのイベント ハンドラーを作成、<xref:System.Windows.Forms.ToolStripItem.Click>イベントを**フォルダーを選択**ボタンをクリックします。  
+1.  メイン フォームのフォーム デザイナーで、**[フォルダーの選択]** ボタンの <xref:System.Windows.Forms.ToolStripItem.Click> イベントのイベント ハンドラーを作成します。  
   
-2.  実装、<xref:System.Windows.Forms.ToolStripItem.Click>イベントを**フォルダーを選択**ボタンをクリックします。  
+2.  **[フォルダーの選択]** ボタンの <xref:System.Windows.Forms.ToolStripItem.Click> イベントを実装します。  
   
      [!code-csharp[TPLDataflow_CompositeImages#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#6)]  
   
-3.  メイン フォームのフォーム デザイナーでのイベント ハンドラーを作成、<xref:System.Windows.Forms.ToolStripItem.Click>イベントを**キャンセル**ボタンをクリックします。  
+3.  メイン フォームのフォーム デザイナーで、**[キャンセル]** ボタンの <xref:System.Windows.Forms.ToolStripItem.Click> イベントのイベント ハンドラーを作成します。  
   
-4.  実装、<xref:System.Windows.Forms.ToolStripItem.Click>イベントを**キャンセル**ボタンをクリックします。  
+4.  **[キャンセル]** ボタンの <xref:System.Windows.Forms.ToolStripItem.Click> イベントを実装します。  
   
      [!code-csharp[TPLDataflow_CompositeImages#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#7)]  
   
@@ -139,8 +135,6 @@ ms.lasthandoff: 10/18/2017
  次の図は、一般的な \Sample Pictures\ フォルダーの典型的な出力を示しています。  
   
  ![Windows フォーム アプリケーション](../../../docs/standard/parallel-programming/media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
-  
-## <a name="next-steps"></a>次の手順  
-  
-## <a name="see-also"></a>関連項目  
+
+## <a name="see-also"></a>参照  
  [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

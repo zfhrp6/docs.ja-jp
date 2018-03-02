@@ -1,5 +1,5 @@
 ---
-title: ".Net 型の書式設定"
+title: ".NET での型の書式設定"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -31,17 +31,20 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-caps.latest.revision: "43"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 816337ead810be405339a0616798a06689b97315
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 201212251bf99e5a5bab7685544079968bbebdb1
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="formatting-types-in-net"></a>.Net 型の書式設定
+# <a name="formatting-types-in-net"></a>.NET での型の書式設定
 <a name="Introduction"></a> 書式設定とはクラス、構造体、または列挙値のインスタンスを文字列形式に変換するプロセスのことで、多くの場合、変換した文字列をユーザーに表示したり、逆シリアル化して元のデータ型を復元したりするために行います。 この変換には次のような問題がある場合があります。  
   
 -   値の内部での格納方法に、ユーザーが望む表示方法が反映されない場合がある。 たとえば、電話番号が 8009999999 という形式で格納されることがあります。これではユーザーにはわかりにくいため、 代わりに 800-999-9999 と表示する必要があります。 数値をこのように書式指定する例については、「 [カスタム書式指定文字列](#customStrings) 」を参照してください。  
@@ -71,7 +74,7 @@ ms.lasthandoff: 10/18/2017
   
     -   [カスタム書式指定文字列](#customStrings)  
   
-    -   [.NET クラス ライブラリの型および書式指定文字列](#stringRef)  
+    -   [書式指定文字列と .NET クラス ライブラリ型](#stringRef)  
   
 -   [書式プロバイダーと IFormatProvider インターフェイスによるカルチャに依存した書式指定](#FormatProviders)  
   
@@ -91,7 +94,7 @@ ms.lasthandoff: 10/18/2017
   
 <a name="NetFormatting"></a>   
 ## <a name="formatting-in-net"></a>.NET での書式設定  
- 書式設定するための基本的なメカニズムは、既定の実装、<xref:System.Object.ToString%2A?displayProperty=nameWithType>については、メソッド、 [ToString メソッドを使用して書式設定を既定](#DefaultToString)このトピックで後述する「します。 ただし、.NET には、この既定の書式設定機能を変更および拡張する方法がいくつかあります。 次に例を示します。  
+ 基本的な書式設定の方式は、<xref:System.Object.ToString%2A?displayProperty=nameWithType> メソッドによって既定として実装されます。このメソッドについては、このトピックの「[ToString メソッドを使用した既定の書式設定](#DefaultToString) 」のセクションを参照してください。 ただし、.NET には、この既定の書式設定機能を変更および拡張する方法がいくつかあります。 次に例を示します。  
   
 -   <xref:System.Object.ToString%2A?displayProperty=nameWithType> メソッドをオーバーライドして、オブジェクトの値のカスタム文字列形式を定義する方法。 詳細については、このトピックの「 [ToString メソッドのオーバーライド](#OverrideToString) 」のセクションを参照してください。  
   
@@ -121,7 +124,7 @@ ms.lasthandoff: 10/18/2017
   
 <a name="DefaultToString"></a>   
 ## <a name="default-formatting-using-the-tostring-method"></a>ToString メソッドを使用した既定の書式設定  
- <xref:System.Object?displayProperty=nameWithType> から派生したすべての型は、既定で型の名前を返す、パラメーターなしの `ToString` メソッドを自動的に継承します。 既定の `ToString` メソッドの例を次に示します。 このコード例では、実装を持たない `Automobile` という名前のクラスを定義します。 このクラスがインスタンス化され、 `ToString` メソッドが呼び出されると、その型の名前が表示されます。 サンプルでは、 `ToString` メソッドが明示的に呼び出されないことに注意してください。 <xref:System.Console.WriteLine%28System.Object%29?displayProperty=nameWithType> メソッドは引数として渡されたオブジェクトの `ToString` メソッドを暗黙的に呼び出します。  
+ <xref:System.Object?displayProperty=nameWithType> から派生したすべての型は、既定で型の名前を返す、パラメーターなしの `ToString` メソッドを自動的に継承します。 既定の `ToString` メソッドの例を次に示します。 このコード例では、実装を持たない `Automobile` という名前のクラスを定義します。 このクラスがインスタンス化され、 `ToString` メソッドが呼び出されると、その型の名前が表示されます。 サンプルでは、`ToString` メソッドが明示的に呼び出されないことに注意してください。 <xref:System.Console.WriteLine%28System.Object%29?displayProperty=nameWithType> メソッドは引数として渡されたオブジェクトの `ToString` メソッドを暗黙的に呼び出します。  
   
  [!code-csharp[Conceptual.Formatting.Overview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/default1.cs#1)]
  [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]  
@@ -143,7 +146,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Conceptual.Formatting.Overview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/overrides1.cs#2)]
  [!code-vb[Conceptual.Formatting.Overview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/overrides1.vb#2)]  
   
- .NET では、`ToString`名前の代わりに、オブジェクトの値を表示するのには、各プリミティブ値型のメソッドをオーバーライドされています。 各プリミティブ型のオーバーライドを次の表に示します。 オーバーライドされているメソッドのほとんどは `ToString` メソッドの別のオーバーロードを呼び出し、それにその型の一般書式を定義する "G" 書式指定子と、現在のカルチャを表す <xref:System.IFormatProvider> オブジェクトを渡します。  
+ .NET では、各プリミティブ値型の `ToString` メソッドは、名前の代わりにオブジェクトの値を表示するようにオーバーライドされています。 各プリミティブ型のオーバーライドを次の表に示します。 オーバーライドされているメソッドのほとんどは `ToString` メソッドの別のオーバーロードを呼び出し、それにその型の一般書式を定義する "G" 書式指定子と、現在のカルチャを表す <xref:System.IFormatProvider> オブジェクトを渡します。  
   
 |型|ToString のオーバーライド|  
 |----------|-----------------------|  
@@ -214,7 +217,7 @@ ms.lasthandoff: 10/18/2017
   
  標準の数値書式指定文字列の詳細については、「 [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)」を参照してください。  
   
- 日付と時刻の値の標準書式指定文字列は、特定の <xref:System.Globalization.DateTimeFormatInfo> プロパティに格納されているカスタム書式指定文字列のエイリアスです。 たとえば、"D" 書式指定子を渡して日付と時刻の値の `ToString` メソッドを呼び出すと、現在のカルチャの <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A?displayProperty=nameWithType> プロパティに格納されているカスタム書式指定文字列を使用して日付と時刻が表示されます (カスタム書式指定文字列の詳細については、次を参照してください、[次のセクション](#customStrings)。)。この関係を次の例に示します。  
+ 日付と時刻の値の標準書式指定文字列は、特定の <xref:System.Globalization.DateTimeFormatInfo> プロパティに格納されているカスタム書式指定文字列のエイリアスです。 たとえば、"D" 書式指定子を渡して日付と時刻の値の `ToString` メソッドを呼び出すと、現在のカルチャの <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A?displayProperty=nameWithType> プロパティに格納されているカスタム書式指定文字列を使用して日付と時刻が表示されます (カスタム書式指定文字列の詳細については、[次のセクション](#customStrings)を参照してください)。この関係を次の例に示します。  
   
  [!code-csharp[Conceptual.Formatting.Overview#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/alias1.cs#5)]
  [!code-vb[Conceptual.Formatting.Overview#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/alias1.vb#5)]  
@@ -258,17 +261,15 @@ ms.lasthandoff: 10/18/2017
  [ページのトップへ](#Introduction)  
   
 <a name="stringRef"></a>   
-### <a name="format-strings-and-net-class-library-types"></a>.NET クラス ライブラリの型および書式指定文字列  
- すべての数値型 (つまり、 <xref:System.Byte>、 <xref:System.Decimal>、 <xref:System.Double>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.SByte>、 <xref:System.Single>、 <xref:System.UInt16>、 <xref:System.UInt32>、 <xref:System.UInt64>、 <xref:System.Numerics.BigInteger> 型)  
+### <a name="format-strings-and-net-types"></a>書式指定文字列と .NET 型  
+ すべての数値型 (つまり、<xref:System.Byte>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>、および <xref:System.Numerics.BigInteger> 型)、<xref:System.DateTime>、<xref:System.DateTimeOffset>、<xref:System.TimeSpan>、<xref:System.Guid>、すべての列挙型が、書式指定文字列による書式設定に対応しています。 各型でサポートされている特定の書式指定文字列については、次のトピックを参照してください。  
   
- 、 <xref:System.DateTime>、 <xref:System.DateTimeOffset>、 <xref:System.TimeSpan>、 <xref:System.Guid>、すべての列挙型が書式指定文字列による書式設定に対応しています。 各型でサポートされている特定の書式指定文字列については、次のトピックを参照してください  
-  
-|タイトル|定義|  
+|Title|定義|  
 |-----------|----------------|  
 |[Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)|数値に対して一般的に使用される文字列形式を作成する標準書式指定文字列について説明します。|  
 |[Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)|数値に対するアプリケーション固有の文字列形式を作成するカスタム書式指定文字列について説明します。|  
-|[Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|<xref:System.DateTime> 値に対して一般的に使用される文字列形式を作成する標準書式指定文字列について説明します。|  
-|[Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|<xref:System.DateTime> 値に対するアプリケーション固有の文字列形式を作成するカスタム書式指定文字列について説明します。|  
+|[Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|<xref:System.DateTime> と <xref:System.DateTimeOffset> 値に対して一般的に使用される文字列形式を作成する標準書式指定文字列について説明します。|  
+|[Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|<xref:System.DateTime> と <xref:System.DateTimeOffset> 値に対するアプリケーション固有の文字列形式を作成するカスタム書式指定文字列について説明します。|  
 |[標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)|時間間隔に対して一般的に使用される文字列形式を作成する標準書式指定文字列について説明します。|  
 |[カスタム時間間隔書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)|時間間隔に対するアプリケーション固有の文字列形式を作成するカスタム書式指定文字列について説明します。|  
 |[Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)|列挙型の文字列形式を作成するために使用される標準書式指定文字列について説明します。|  
@@ -276,7 +277,7 @@ ms.lasthandoff: 10/18/2017
   
 <a name="FormatProviders"></a>   
 ## <a name="culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface"></a>書式プロバイダーと IFormatProvider インターフェイスによるカルチャに依存した書式指定  
- 書式指定子を利用することでオブジェクトの書式をカスタマイズできますが、多くの場合、意味のあるオブジェクトの文字列形式を生成するには追加の書式設定情報が必要です。 たとえば、"C" 標準書式指定文字列または "$ #,#.00" などのカスタム書式指定文字列を使用して数字を通貨値として書式設定する場合、少なくとも、正しい通貨記号、桁区切り記号、および小数点記号についての情報を書式設定された文字列に含めることができる必要があります。 .NET では、この追加の書式設定情報はをとおして利用可能な<xref:System.IFormatProvider>の 1 つまたは複数のオーバー ロードに対するパラメーターとして提供されているインターフェイス、`ToString`数値型および日付と時刻の型のメソッドです。 <xref:System.IFormatProvider>実装は、カルチャ固有の書式設定をサポートするために、.NET で使用されます。 それぞれ異なるカルチャを示す 3 つの <xref:System.IFormatProvider> オブジェクトを使用してオブジェクトの書式を設定した場合に、その文字列形式がどのように変化するかを次の例に示します。  
+ 書式指定子を利用することでオブジェクトの書式をカスタマイズできますが、多くの場合、意味のあるオブジェクトの文字列形式を生成するには追加の書式設定情報が必要です。 たとえば、"C" 標準書式指定文字列または "$ #,#.00" などのカスタム書式指定文字列を使用して数字を通貨値として書式設定する場合、少なくとも、正しい通貨記号、桁区切り記号、および小数点記号についての情報を書式設定された文字列に含めることができる必要があります。 .NET では、<xref:System.IFormatProvider> インターフェイスによって、この追加の書式設定情報を利用できるようにします。このインターフェイスは、数値型および日付/時刻型の `ToString` メソッドの 1 つ以上のオーバーロードに対するパラメーターとして提供されます。 <xref:System.IFormatProvider> の実装は .NET で使用され、カルチャ固有の書式指定をサポートします。 それぞれ異なるカルチャを示す 3 つの <xref:System.IFormatProvider> オブジェクトを使用してオブジェクトの書式を設定した場合に、その文字列形式がどのように変化するかを次の例に示します。  
   
  [!code-csharp[Conceptual.Formatting.Overview#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/iformatprovider1.cs#11)]
  [!code-vb[Conceptual.Formatting.Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/iformatprovider1.vb#11)]  
@@ -297,7 +298,7 @@ ms.lasthandoff: 10/18/2017
 > [!NOTE]
 >  数値型および日付/時刻型の `ToString` メソッドはオーバーロードされますが、 <xref:System.IFormatProvider> パラメーターが含まれるのはそのうちの一部のオーバーロードだけです。 メソッドに <xref:System.IFormatProvider> 型のパラメーターがない場合は、代わりに <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> プロパティによって返されるオブジェクトが渡されます。 たとえば、既定の <xref:System.Int32.ToString?displayProperty=nameWithType> メソッドの呼び出しの場合は、最終的には `Int32.ToString("G", System.Globalization.CultureInfo.CurrentCulture)` のようなメソッド呼び出しになります。  
   
- 実装する次の 3 つのクラスを提供する .NET <xref:System.IFormatProvider>:  
+ .NET には、<xref:System.IFormatProvider> を実装する次の 3 つのクラスが用意されています。  
   
 -   <xref:System.Globalization.DateTimeFormatInfo>。このクラスは、特定のカルチャの日付と時刻の値に対する書式設定情報を提供します。 対応する <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> の実装では、単にそれ自身のインスタンスが返されます。  
   
@@ -360,7 +361,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Conceptual.Formatting.Overview#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/iformattable.cs#12)]
  [!code-vb[Conceptual.Formatting.Overview#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/iformattable.vb#12)]  
   
- 次の例では、 `Temperature` オブジェクトをインスタンス化しています。 その後、 <xref:System.Convert.ToString%2A> メソッドを呼び出し、いくつかの複合書式指定文字列を使用して `Temperature` オブジェクトのさまざまな文字列形式を取得します。 さらに、それらの各メソッド呼び出しで、 <xref:System.IFormattable> クラスの `Temperature` 実装を呼び出しています。  
+ 次の例では、`Temperature` オブジェクトをインスタンス化しています。 その後、 <xref:System.Convert.ToString%2A> メソッドを呼び出し、いくつかの複合書式指定文字列を使用して `Temperature` オブジェクトのさまざまな文字列形式を取得します。 さらに、それらの各メソッド呼び出しで、 <xref:System.IFormattable> クラスの `Temperature` 実装を呼び出しています。  
   
  [!code-csharp[Conceptual.Formatting.Overview#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/iformattable.cs#13)]
  [!code-vb[Conceptual.Formatting.Overview#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/iformattable.vb#13)]  
@@ -376,7 +377,7 @@ ms.lasthandoff: 10/18/2017
   
  書式項目をそれに対応するオブジェクトの文字列形式に置換することに加えて、書式項目は以下を制御することもできます。  
   
--   オブジェクトを文字列として表現する特定の方法 (オブジェクトが <xref:System.IFormattable> インターフェイスを実装し、書式文字列をサポートする場合)。 これは、 `:` (コロン) 付きの書式項目のインデックスに、有効な書式文字列を続けることによります。 前の例では、日付の値を "d" (短い日付のパターン) 書式文字列 ( `{0:d}`など) を書式設定し、数値を "C2" 書式文字列 ( `{2:C2}` など) で書式設定して数値を 2 桁の小数部を含む 10 進数を持つ通貨値で表していました。  
+-   オブジェクトを文字列として表現する特定の方法 (オブジェクトが <xref:System.IFormattable> インターフェイスを実装し、書式文字列をサポートする場合)。 これは、`:` (コロン) 付きの書式項目のインデックスに、有効な書式文字列を続けることによります。 前の例では、日付の値を "d" (短い日付のパターン) 書式文字列 ( `{0:d}`など) を書式設定し、数値を "C2" 書式文字列 ( `{2:C2}` など) で書式設定して数値を 2 桁の小数部を含む 10 進数を持つ通貨値で表していました。  
   
 -   オブジェクトの文字列形式を含むフィールドの幅、およびそのフィールドの文字列形式の配置。 これは、 `,` (コンマ) 付きの書式項目のインデックスに、フィールドの幅を続けることによります。 フィールドの幅が正の値の場合、文字列はフィールドで右揃えにし、フィールドの幅が負の値の場合、左揃えにします。 次の例では、20 文字のフィールドで日付の値を左揃えにし、11 文字のフィールドで、1 桁の小数部を含む 10 進数値を右揃えにします。  
   
@@ -400,7 +401,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Conceptual.Formatting.Overview#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/icustomformatter1.cs#15)]
  [!code-vb[Conceptual.Formatting.Overview#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/icustomformatter1.vb#15)]  
   
- `ByteByByteFormatter` クラスを使用して整数値の書式を設定する例を次に示します。 注意してください、 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> 、2 番目のメソッドが複数回呼び出される<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッドを呼び出すことと、既定<xref:System.Globalization.NumberFormatInfo>のために、3 番目のメソッド呼び出しで使用されるプロバイダー、します。`ByteByByteFormatter.Format` ) を返すため、3 回目のメソッド呼び出しでは既定の`Nothing` ) に相当する書式指定子。  
+ `ByteByByteFormatter` クラスを使用して整数値の書式を設定する例を次に示します。 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> メソッドが 2 回目の <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> メソッド呼び出しで複数回呼び出されることに注意してください。また、既定の <xref:System.Globalization.NumberFormatInfo> プロバイダーは、`ByteByByteFormatter.Format` メソッドが "N0" 書式指定文字列を認識せず、null 参照 (Visual Basic の場合は  `Nothing`) を返すため、3 回目のメソッド呼び出しで使用されます。  
   
  [!code-csharp[Conceptual.Formatting.Overview#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/icustomformatter1.cs#16)]
  [!code-vb[Conceptual.Formatting.Overview#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/icustomformatter1.vb#16)]  
@@ -410,7 +411,7 @@ ms.lasthandoff: 10/18/2017
 <a name="RelatedTopics"></a>   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|定義|  
+|Title|定義|  
 |-----------|----------------|  
 |[Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)|数値に対して一般的に使用される文字列形式を作成する標準書式指定文字列について説明します。|  
 |[Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)|数値に対するアプリケーション固有の文字列形式を作成するカスタム書式指定文字列について説明します。|  

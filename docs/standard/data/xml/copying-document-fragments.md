@@ -9,18 +9,21 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: cf424bbe-81b7-40d2-9978-9b727da94d80
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 22d6f70b3317b67255d51690a6c4e262e29d23f9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e90af026db0fc190b2c93e4c751de6600e8fd27a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="copying-document-fragments"></a>ドキュメント フラグメントのコピー
-作成することができます、 **XmlDocumentFragment**ノードし、その下にノードを追加します。 ときに、 **XmlDocumentFragment**で挿入、 **InsertNode** 、メソッド、 **XmlDocumentFragment**ノードはコピーされませんが、その子ノードが XML に挿入されますドキュメント オブジェクト モデル (DOM)。  
+**XmlDocumentFragment** ノードを作成し、その下にノードを追加できます。 **InsertNode** メソッドを使って **XmlDocumentFragment** を挿入する場合、**XmlDocumentFragment** ノードはコピーされず、その子ノードが XML ドキュメント オブジェクト モデル (DOM) に挿入されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

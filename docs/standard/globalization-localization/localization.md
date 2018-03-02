@@ -20,26 +20,29 @@ helpviewer_keywords:
 - localization [.NET Framework], about localization
 - localizing resources
 ms.assetid: 49d520d7-92d7-44ee-bb24-8b615db1d41b
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4aaf2da77a1fab55cbebd6bfa05a2b1c74e5cbbd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 952696cf813a4bd0915f85a02946489d389d23e7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="localization"></a>ローカリゼーション
-ローカライズは、アプリケーションのリソースをアプリケーションでサポートされる各カルチャのローカライズ版に変換するプロセスです。 完了後にのみローカライズの手順に進む必要があります、[ローカライズ化のレビュー](../../../docs/standard/globalization-localization/localizability-review.md)グローバライズされたアプリケーションがローカライズ可能であることを確認する手順。  
+ローカリゼーションはアプリケーションのリソースを翻訳するプロセスであり、そのアプリケーションで対応するカルチャ別のバージョンが作られます。 [ローカライズ化の確認](../../../docs/standard/globalization-localization/localizability-review.md)手順で世界展開するアプリケーションがローカライズ可能であることを確認してから、ローカリゼーション手順に進んでください。  
   
- ローカライズ可能なアプリケーションは、2 つの概念ブロック、すべてのユーザー インターフェイス要素を格納するブロックと実行可能コードを格納するブロックに分割されます。 ユーザー インターフェイス ブロックには、文字列、エラー メッセージ、ダイアログ ボックス、メニューのニュートラル カルチャについての埋め込みオブジェクト リソースなどのローカライズ可能なユーザー インターフェイス要素のみが含まれています。 コード ブロックには、サポートされているすべてのカルチャが使用するアプリケーション コードだけが含まれています。 共通言語ランタイムには、そのリソースからアプリケーションの実行可能コードを分離するサテライト アセンブリ リソース モデルがサポートしています。 このモデルの実装の詳細については、次を参照してください。[デスクトップ アプリでのリソース](../../../docs/framework/resources/index.md)です。  
+ ローカライズ可能なアプリケーションは、概念的に 2 つのブロックに分けられます。すべてのユーザー インターフェイス要素を含むブロックと実行可能なコードを含むブロックです。 ユーザー インターフェイス ブロックには、ローカライズ可能なユーザー インターフェイス要素のみが含まれます。ニュートラル カルチャの場合、文字列、エラー メッセージ、ダイアログ ボックス、メニュー、埋め込みオブジェクト リソースなどです。 コード ブロックには、すべての対応カルチャで使用されるアプリケーション コードのみが含まれます。 共通言語ランタイムは、アプリケーションの実行可能コードをそのリソースから分離させるサテライト アセンブリ リソース モデルに対応しています。 このモデルの実装方法については、「[デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)」を参照してください。  
   
- アプリケーションの各ローカライズ バージョンでは、ローカライズされたユーザー インターフェイス ブロックが、ターゲット カルチャに適切な言語に翻訳を含む新しいサテライト アセンブリを追加します。 すべてのカルチャのコード ブロックは同じである必要があります。 ユーザー インターフェイスを使用してブロックのコード ブロックのローカライズされたバージョンの組み合わせには、アプリケーションのローカライズされたバージョンが生成されます。  
+ アプリケーションのローカライズ バージョンごとに、ターゲット カルチャの言語に翻訳されたユーザー インターフェイス ブロックを含む新しいサテライト アセンブリを追加します。 すべてのカルチャのコード ブロックを同じにしてください。 ユーザー インターフェイス ブロックのローカライズされたバージョンとコード ブロックを組み合わせることで、アプリケーションのローカライズ バージョンが作られます。  
   
- [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]ターゲットのカルチャに対して Windows フォームをすばやくローカライズできるようにする Windows フォーム リソース エディター (Winres.exe) を提供します。 このツールの使用方法の詳細については、次を参照してください。 [Winres.exe (Windows フォーム リソース エディター)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)です。  
+ [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] には Windows フォーム リソース エディター (Winres.exe) があります。このエディターでは、ターゲット カルチャに合わせて Windows フォームを簡単にローカライズできます。 このツールの使用方法については、「[Winres.exe (Windows フォーム リソース エディター)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)  
  [ローカライズ化の確認](../../../docs/standard/globalization-localization/localizability-review.md)  
  [グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)  

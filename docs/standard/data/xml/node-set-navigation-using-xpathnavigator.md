@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 1a954b41-7173-40bc-8544-d430f209b1e5
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9ac0135227599d6a72813bcf57b209705545da66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d1bca725d20ec35ef7d6f60fce131f9d9c951650
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="node-set-navigation-using-xpathnavigator"></a>XPathNavigator を使用するノード セットのナビゲーション
 <xref:System.Xml.XPath.XPathDocument> クラスのノード セット ナビゲーション メソッドを使用して、<xref:System.Xml.XmlDocument> または <xref:System.Xml.XPath.XPathNavigator> オブジェクト内のノード間を移動できます。 すべてのノード間の移動、または <xref:System.Xml.XPath.XPathNavigator> クラスの選択メソッドによって返される選択されたノード セット間を移動できます。  
@@ -25,7 +28,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="element-node-set-navigation"></a>要素ノード セットのナビゲーション  
  <xref:System.Xml.XPath.XPathNavigator> クラスは、要素ノードの移動に使用されるいくつかのメソッドを提供します。 利用可能なナビゲーション メソッドおよびその移動方法を次の表に示します。これには、属性および名前空間のノードのナビゲートに使用されるメソッドは含まれません。  
   
- 内のノードの選択の詳細については、<xref:System.Xml.XPath.XPathNavigator>オブジェクトを参照してください[を選択すると、評価、および XPathNavigator を使用して、一致する XML データ](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)です。 属性と名前空間ノードの移動の詳細については、次を参照してください。[属性および XPathNavigator を使用してノードのナビゲーションを Namespace](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)です。  
+ <xref:System.Xml.XPath.XPathNavigator> オブジェクトでノードを選択する方法については、「[XPathNavigator を使用した XML データの選択、評価、および照合](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)」を参照してください。 属性ノードと名前空間ノードをナビゲートする方法については、「[XPathNavigator を使用する属性と名前空間のナビゲーション](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)」を参照してください。  
   
 |メソッド|説明|  
 |------------|-----------------|  
@@ -59,11 +62,11 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.Xml.XPath.XPathNavigator.MoveToId%2A>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
  [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [属性と Namespace XPathNavigator を使用したナビゲーション](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)  
- [XPathNavigator による XML データを抽出します。](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)  
- [XPathNavigator による XML データに型指定された厳密にアクセスします。](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+ [XPathNavigator を使用する属性と名前空間のナビゲーション](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)  
+ [XpathNavigator を使用した XML データの抽出](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)  
+ [厳密に型指定された XML データへの XPathNavigator を使用したアクセス](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)

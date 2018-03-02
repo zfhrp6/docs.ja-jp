@@ -9,26 +9,29 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bbbcc70c-bf9a-4f6a-af72-1bab5384a187
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e21d402dce02ecb332d041f0cda651df911979ca
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1cfac14f934efb22f7cd39faceb232cc819b540e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="working-with-xml-schemas"></a>XML スキーマの使用
 XML ドキュメントの構造、その要素間のリレーションシップ、データ型、および内容の制約を定義するには、ドキュメント型定義 (DTD: Document Type Definition) または XML スキーマ定義言語 (XSD) スキーマを使用します。 XML ドキュメントは、W3C (World Wide Web Consortium) 勧告『Extensible Markup Language (XML) 1.0』で定義されている構文要件をすべて満たしている場合には整形式と見なされますが、整形式であると同時に DTD またはスキーマに定義されている制約に準拠していなければ有効とは見なされません。 したがって、有効な XML ドキュメントはすべて整形式ですが、整形式の XML ドキュメントがすべて有効であるとは限りません。  
   
- XML の詳細については、次を参照してください。、 [w3c 勧告 『 XML 1.0 』](http://go.microsoft.com/fwlink/?linkid=7269)です。 XML スキーマの詳細については、次を参照してください。、 [W3C XML Schema Part 1: Structures](http://go.microsoft.com/fwlink/?linkid=48881)と[W3C XML Schema Part 2: Datatypes recommendation 』](http://go.microsoft.com/fwlink/?linkid=17392)の推奨事項です。  
+ XML の詳細については、[W3C 勧告『XML 1.0』](http://go.microsoft.com/fwlink/?linkid=7269)を参照してください。 XML スキーマの詳細については、[W3C 勧告『XML Schema Part 1: Structures』](http://go.microsoft.com/fwlink/?linkid=48881)および[『XML Schema Part 2: Datatypes』](http://go.microsoft.com/fwlink/?linkid=17392)を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [XML スキーマ オブジェクト モデル (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
  <xref:System.Xml.Schema?displayProperty=nameWithType> 名前空間のスキーマ オブジェクト モデル (SOM) について説明します。SOM は、ファイルからスキーマ定義言語 (XSD) スキーマを読み取ったり、プログラムを使用してメモリ内にスキーマを作成したりできる一連のクラスを提供します。  
   
- [スキーマのコンパイルのための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+ [スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
  <xref:System.Xml.Schema.XmlSchemaSet> クラスについて説明します。このクラスは、XSD スキーマを格納または検証できるキャッシュです。  
   
  [XmlSchemaValidator のプッシュ ベースの検証](../../../../docs/standard/data/xml/xmlschemavalidator-push-based-validation.md)  
@@ -44,5 +47,5 @@ XML ドキュメントの構造、その要素間のリレーションシップ�
  [DOM における XML ドキュメントの検証](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)  
  ドキュメント オブジェクト モデル (DOM) の XML を検証する方法を説明します。 検証できる XML は、DOM に読み込まれている XML か、または事前に検証されていない DOM の XML ドキュメントです。  
   
- [XPathNavigator を使用するスキーマの検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
+ [XPathNavigator を使用したスキーマ検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
  <xref:System.Xml.XPath.XPathNavigator> クラスを使用して操作中および編集中の XML を検証する方法を説明します。

@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 11c22bf71109137ea328b8e1136180494364ce0e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d9e4c1c0b432ff44af0410b1efdc3940cd0ff19c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-convert-between-net-framework-streams-and-windows-runtime-streams"></a>方法: .NET Framework ストリームと Windows ランタイム ストリームの間で変換を行う
 Windows ストア アプリ用 .NET Framework は、完全な .NET Framework のサブセットです。 Windows ストア アプリのセキュリティおよびその他の要件のために、ファイルを開いたり読み取ったりするために使用する .NET Framework API の完全なセットを使用できません。 詳細については、 [「Windows ストア アプリ用 .NET の概要」](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)を参照してください。 ただし、他のストリームの処理操作のために .NET Framework API を使用することもできます。 これらのストリームを操作するには、 <xref:System.IO.MemoryStream> や <xref:System.IO.FileStream>などの .NET Framework ストリーム型と、 [IInputStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.iinputstream.aspx)、 [IOutputStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.ioutputstream.aspx)、 [IRandomAccessStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.irandomaccessstream.aspx)などの Windows ランタイム ストリームの間で変換が必要になる場合があります。  
@@ -86,7 +89,7 @@ Windows ストア アプリ用 .NET Framework は、完全な .NET Framework の
     [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage.xaml.cs#2)]
     [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage.xaml.vb#2)]  
   
-## <a name="see-also"></a>関連項目  
- [クイック スタート: 読み書きファイル (Windows)](http://msdn.microsoft.com/library/windows/apps/hh464978.aspx)  
- [.NET Windows ストア アプリの概要](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
+## <a name="see-also"></a>参照  
+ [クイック スタート: ファイルの読み取りと書き込み (Windows)](http://msdn.microsoft.com/library/windows/apps/hh464978.aspx)  
+ [Windows ストア アプリ用 .NET の概要](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
  [Windows ストア アプリ用 .NET – サポートされている API](http://msdn.microsoft.com/library/windows/apps/br230232.aspx)

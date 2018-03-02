@@ -18,20 +18,23 @@ helpviewer_keywords:
 - culture-sensitive string operations
 - culture-insensitive string operations
 ms.assetid: e6e2bb94-a95d-44e2-b68c-cfdd1db77784
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dddd46dc5d825738dd9d5038ae573910122953c8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 697d3ec32af6b704fbb1787bbb9ba1de57a0632e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="culture-insensitive-string-operations"></a>カルチャを認識しない文字列操作
 カルチャを認識する文字列操作は、カルチャごとにユーザーに結果を表示するようデザインされたアプリケーションを作成する場合に役立ちます。 既定では、カルチャを認識するメソッドは、使用するカルチャを現在のスレッドの <xref:System.Globalization.CultureInfo.CurrentCulture%2A> プロパティから取得します。  
   
- ただし、カルチャを認識する文字列操作は、必ずしも望ましい動作ではありません。 結果をカルチャに依存させない場合に、カルチャを認識する操作を使用すると、カスタムの大文字と小文字の対応規則および並べ替え規則を使用するカルチャでのアプリケーション コードの実行が失敗することがあります。 例についてを参照してください「の文字列比較を使用して、現在のカルチャ」、[文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)資料です。  
+ ただし、カルチャを認識する文字列操作は、必ずしも望ましい動作ではありません。 結果をカルチャに依存させない場合に、カルチャを認識する操作を使用すると、カスタムの大文字と小文字の対応規則および並べ替え規則を使用するカルチャでのアプリケーション コードの実行が失敗することがあります。 たとえば、「[.NET で文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)」の記事の「現在のカルチャを使用する文字列比較」を参照してください。  
   
  文字列操作でカルチャに依存するかどうかは、アプリケーションで結果をどのように使用するかに基づいて決定する必要があります。 ユーザーに結果を表示する場合は、通常、カルチャを認識する文字列操作を実行する必要があります。 たとえば、アプリケーションがローカライズされた文字列を並べ替えてリスト ボックスに表示する場合は、カルチャを認識する並べ替えを実行します。  
   
@@ -39,5 +42,5 @@ ms.lasthandoff: 10/18/2017
   
  開発するアプリケーションにローカリゼーションとグローバリゼーションに対応するためのコードが含まれているかどうかに関係なく、.NET Framework のメソッドは既定ではカルチャを認識する結果を取得することに注意してください。 このトピックの目的は、アプリケーションがこれらのメソッドを使用してカルチャを認識しない結果を取得するための正しい方法を示すことです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)

@@ -11,22 +11,26 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: parallel foreach loop, how to use local state
+helpviewer_keywords:
+- parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6102274f75d2fe66b89f917cf9095d3a6dfaa3e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4c65edd8959cbf5f83e3353770f71cad130953d1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-thread-local-variables"></a>方法: スレッド ローカル変数を使用する Parallel.ForEach ループを記述する
 スレッド ローカル変数を持つ <xref:System.Threading.Tasks.Parallel.ForEach%2A> メソッドを記述する方法を次の例に示します。 <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループが実行されると、そのソース コレクションが複数のパーティションに分割されます。 各パーティションには、"スレッド ローカル" 変数が個別にコピーされます  ("スレッド ローカル" という用語は少し不正確です。1 つのスレッド上で 2 つのパーティションが実行されることがあるからです)。  
   
- この例のコードおよびパラメーターは、対応する <xref:System.Threading.Tasks.Parallel.For%2A> メソッドによく似ています。 詳細については、次を参照してください。[する方法: スレッド ローカル変数を使用する Parallel.For ループを記述](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)です。  
+ この例のコードおよびパラメーターは、対応する <xref:System.Threading.Tasks.Parallel.For%2A> メソッドによく似ています。 詳細については、「[方法: スレッド ローカル変数を使用する Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)」を参照してください。  
   
  <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループでスレッド ローカル変数を使用するには、2 つのタイプのパラメーターを取るメソッド オーバーロードのうち、いずれか 1 つを呼び出す必要があります。 最初の型パラメーター `TSource` でソース要素の型を指定し、2 番目の型パラメーター `TLocal` でスレッド ローカル変数の型を指定します。  
   
@@ -54,7 +58,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[TPL_Parallel#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/foreachthreadlocal.cs#04)]
  [!code-vb[TPL_Parallel#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/foreachthreadlocal.vb#04)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データの並列化](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  
  [方法: スレッド ローカル変数を使用する Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)  
  [PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

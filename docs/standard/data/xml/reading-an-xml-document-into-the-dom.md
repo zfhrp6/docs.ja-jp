@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a4fb291f-5630-49ba-a49a-5b66c3b71e49
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b8844705b492574443ff4f37de33ccaf1f5fedd7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: bbbd61cbe22eb2c8e54daad863ad35ef076c1bc3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="reading-an-xml-document-into-the-dom"></a>XML ドキュメントの DOM への読み取り
 XML 情報は、さまざまな形式からメモリに読み取られます。 XML 情報は、文字列、ストリーム、URL、テキスト リーダー、および <xref:System.Xml.XmlReader> から派生したクラスから読み取ることができます。  
@@ -31,9 +34,9 @@ XML 情報は、さまざまな形式からメモリに読み取られます。 
   
 |Subject|トピック|  
 |-------------|-----------|  
-|空白ノードの作成|DOM を読み込むために使用したオブジェクトに応じて、DOM で生成される空白ノードと有意の空白ノードの処理が異なります。 詳細については、次を参照してください。[空白および有意の空白処理 DOM を読み込むとき](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md)です。|  
-|特定ノード以降の XML の読み込み、または XML ドキュメント全体の読み込み|使用して、 <xref:System.Xml.XmlDocument.Load%2A?displayProperty=nameWithType> DOM に特定のノードからメソッドのデータを読み込むことができます 詳細については、次を参照してください。[リーダーからのデータの読み込み](../../../../docs/standard/data/xml/load-data-from-a-reader.md)です。|  
-|XML の読み込み時の検証|DOM に読み込む XML データは、読み込みながら検証することができます。 これは検証型の <xref:System.Xml.XmlReader> を使用して行えます。 読み込まれると、XML を検証の詳細については、次を参照してください。 [DOM における XML ドキュメントの検証](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)です。|  
+|空白ノードの作成|DOM を読み込むために使用したオブジェクトに応じて、DOM で生成される空白ノードと有意の空白ノードの処理が異なります。 詳細については、「[DOM を読み込むときの空白および有意の空白の処理](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md)」を参照してください。|  
+|特定ノード以降の XML の読み込み、または XML ドキュメント全体の読み込み|<xref:System.Xml.XmlDocument.Load%2A?displayProperty=nameWithType> メソッドを使用して、データを特定のノードから DOM に読み込むことができます。 詳細については、「[リーダーからのデータの読み込み](../../../../docs/standard/data/xml/load-data-from-a-reader.md)」を参照してください。|  
+|XML の読み込み時の検証|DOM に読み込む XML データは、読み込みながら検証することができます。 これは検証型の <xref:System.Xml.XmlReader> を使用して行えます。 読み込み時の XML の検証の詳細については、「[DOM における XML ドキュメントの検証](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)」を参照してください。|  
   
  <xref:System.Xml.XmlDocument.LoadXml%2A> メソッドによって XML を読み込む例を次に示します。読み込まれたデータは、`data.xml` というテキスト ファイルに保存されます。  
   
@@ -77,5 +80,5 @@ public class Sample
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

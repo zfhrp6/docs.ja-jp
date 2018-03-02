@@ -12,19 +12,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 167cd81ecbc25ca243e3b4a7a6aa7327679528e0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2f1367268920e4b72f29b77a7f2e96f09a1dce37
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>XslTransform クラスによる XSLT プロセッサの実装
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。 参照してください[XslCompiledTransform クラスを使用して](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)と[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)詳細についてはします。  
+>  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。 詳細については、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」と「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」を参照してください。  
   
  <xref:System.Xml.Xsl.XslTransform> クラスは、『XSL Transformations (XSLT) Version 1.0』勧告を実装する XSLT プロセッサです。 <xref:System.Xml.Xsl.XslTransform.Load%2A> メソッドはスタイル シートを検索して読み込み、<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドは渡されたソース ドキュメントを変換します。 <xref:System.Xml.XPath.IXPathNavigable> インターフェイスを実装している任意のストアを <xref:System.Xml.Xsl.XslTransform> のソース ドキュメントとして使用できます。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、現在、<xref:System.Xml.XPath.IXPathNavigable> インターフェイスを <xref:System.Xml.XmlDocument>、<xref:System.Xml.XmlDataDocument>、および <xref:System.Xml.XPath.XPathDocument> に実装しているので、これらすべてを変換用の入力ソース ドキュメントとして使用できます。  
   
@@ -84,9 +87,9 @@ public void Load(XPathNavigator, XmlResolver, Evidence);
   
  URI も証拠も指定されていない場合は、スタイル シートに対して設定されている証拠が完全に信頼されます。 信頼されていないソースからスタイル シートを読み込んだり、信頼されていない拡張オブジェクトを <xref:System.Xml.Xsl.XsltArgumentList> に追加したりしないでください。  
   
- セキュリティ レベルと証拠とスクリプト影響の詳細については、次を参照してください。 [XSLT スタイル シートのスクリプトを使用して\<msxsl:script >](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)です。 セキュリティ レベルと証拠と拡張オブジェクトに与える影響については、次を参照してください。[スタイル シート パラメーターと拡張オブジェクト用の XsltArgumentList](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)です。  
+ セキュリティ レベルと証拠、それがスクリプトに及ぼす影響の詳細については、「[XSLT Stylesheet Scripting Using \<msxsl:script>](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)」(<msxsl:script> を使用する XSLT スタイルシート スクリプト) を参照してください。 セキュリティ レベルと証拠、それが拡張オブジェクトに与える影響の詳細については、「[スタイル シート パラメーターと拡張オブジェクト用の XsltArgumentList](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)」を参照してください。  
   
- セキュリティ レベルと証拠とに与える影響については、`document()`関数を参照してください[外部の XSLT スタイル シートを解決してドキュメント](../../../../docs/standard/data/xml/resolving-external-xslt-style-sheets-and-documents.md)です。  
+ セキュリティ レベルと証拠、それが `document()` 関数に及ぼす影響については、「[外部の XSLT スタイル シートとドキュメントの解決](../../../../docs/standard/data/xml/resolving-external-xslt-style-sheets-and-documents.md)」を参照してください。  
   
  スタイル シートに対しては、多くの入力パラメーターを指定できます。 スタイル シートでは、拡張オブジェクトの関数を呼び出すこともできます。 パラメーターおよび拡張オブジェクトのいずれも <xref:System.Xml.Xsl.XsltArgumentList> クラスを使用してスタイル シートに渡されます。 <xref:System.Xml.Xsl.XsltArgumentList> の詳細については、「<xref:System.Xml.Xsl.XsltArgumentList>」を参照してください。  
   
@@ -213,7 +216,7 @@ Root node is book.
 ## <a name="migration-of-xslt-from-net-framework-version-10-to-net-framework-version-11"></a>.NET Framework Version 1.0 から .NET Framework Version 1.1 への XSLT の移行  
  廃止された [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] バージョン 1.0 の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] メソッドと新しい <xref:System.Xml.Xsl.XslTransform.Load%2A> バージョン 1.1 の  メソッドを次の表に示します。 新しいメソッドでは、証拠を指定することで、スタイル シートのアクセス許可を制限できます。  
   
-|旧式で .NET Framework version 1.0 の Load メソッド|交換用 .NET Framework version 1.1 の Load メソッド|  
+|廃止された .NET Framework バージョン 1.0 の Load メソッド|新しい .NET Framework バージョン 1.1 の Load メソッド|  
 |------------------------------------------------------|---------------------------------------------------------|  
 |Load(XPathNavigator input);<br /><br /> Load(XPathNavigator input, XmlResolver resolver);|Load(XPathNavigator stylesheet, XmlResolver resolver, Evidence evidence);|  
 |Load(IXPathNavigable stylesheet);<br /><br /> Load(IXPathNavigable stylesheet, XmlResolver resolver);|Load(IXPathNavigable stylesheet, XmlResolver resolver, Evidence evidence);|  
@@ -221,7 +224,7 @@ Root node is book.
   
  廃止された <xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドと新しい  メソッドを次の表に示します。 新しいメソッドは <xref:System.Xml.XmlResolver> オブジェクトを受け取ります。  
   
-|.NET Framework バージョン 1.0 の Transform メソッドします。|.NET Framework version 1.1 での Transform メソッド|  
+|廃止された .NET Framework バージョン 1.0 の Transform メソッド|新しい .NET Framework バージョン 1.1 の Transform メソッド|  
 |-----------------------------------------------------------|--------------------------------------------------------------|  
 |XmlReader Transform(XPathNavigator input, XsltArgumentList args)|XmlReader Transform(XPathNavigator input, XsltArgumentList args, XmlResolver resolver)|  
 |XmlReader Transform(IXPathNavigable input, XsltArgumentList args)|XmlReader Transform(IXPathNavigable input, XsltArgumentList args, XmlResolver resolver)|  
@@ -233,11 +236,11 @@ Root node is book.
 |Void Transform(IXPathNavigable input, XsltArgumentList args, Stream output)|Void Transform(IXPathNavigable input, XsltArgumentList args, Stream output, XmlResolver resolver)|  
 |Void Transform(String input, String output);|Void Transform(String input, String output, XmlResolver resolver);|  
   
- <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> バージョン 1.1 では、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] プロパティが廃止されています。 代わりに、新しい<xref:System.Xml.Xsl.XslTransform.Transform%2A>を受け取るオーバー ロード、<xref:System.Xml.XmlResolver>オブジェクト。  
+ <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> バージョン 1.1 では、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] プロパティが廃止されています。 代わりに、<xref:System.Xml.XmlResolver> オブジェクトを受け取る新しい <xref:System.Xml.Xsl.XslTransform.Transform%2A> オーバーロードを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Xsl.XslTransform>  
- [XslTransform クラスによる XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [XslTransform クラスを使用した XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
  [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
  [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
  [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  

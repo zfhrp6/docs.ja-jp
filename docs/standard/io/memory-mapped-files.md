@@ -15,18 +15,21 @@ helpviewer_keywords:
 - memory-mapped files
 - inter-process communiation
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2602d431aada7b3e0ee226eed319903492022ae9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 23755f7b76e8cc050df8529852af9bf151472f72
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="memory-mapped-files"></a>メモリ マップト ファイル
-メモリ マップト ファイルには、仮想メモリ内のファイルの内容が含まれています。 ファイルとメモリ空間の間のこのマッピングによって、複数のプロセスを含むアプリケーションは、メモリを直接読み書きすることでファイルを変更できます。 以降で、 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、マネージ コードを使用するには」の説明に従ってネイティブの Windows 関数がメモリ マップト ファイルにアクセスする同じ方法でメモリ マップト ファイルにアクセスする[win32 Managing Memory-Mapped ファイル](http://go.microsoft.com/fwlink/?linkid=180801)です。  
+メモリ マップト ファイルには、仮想メモリ内のファイルの内容が含まれています。 ファイルとメモリ空間の間のこのマッピングによって、複数のプロセスを含むアプリケーションは、メモリを直接読み書きすることでファイルを変更できます。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、「[Managing Memory-Mapped Files in Win32](http://go.microsoft.com/fwlink/?linkid=180801)」 (Win32 でのメモリマップ ファイルの管理) で説明されているように、マネージ コードを使用して、ネイティブ Windows 関数がメモリ マップ済みファイルにアクセスする場合と同じ方法でメモリ マップ済みファイルにアクセスできます。  
   
  メモリ マップト ファイルには次の 2 種類があります。  
   
@@ -51,7 +54,7 @@ ms.lasthandoff: 10/18/2017
   
  次の図に、複数のプロセスがどのように同じメモリ マップト ファイルへの複数の重なるビューを同時に持つことができるかを示します。  
   
- ![メモリ &#45;にビューを示しています。 マップされているファイル。] (../../../docs/standard/io/media/memmappersisted.png "MemMapPersisted")  
+ ![メモリ マップト ファイルへのビューの表示。] (../../../docs/standard/io/media/memmappersisted.png "MemMapPersisted")  
 メモリ マップト ファイルへの複数の重なるビュー  
   
 ## <a name="programming-with-memory-mapped-files"></a>メモリ マップト ファイルのプログラミング  
@@ -82,7 +85,7 @@ ms.lasthandoff: 10/18/2017
   
  メモリ マップト ファイルに新規または変更済みのアクセス規則を適用するには、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.SetAccessControl%2A> メソッドを使用します。 既存のファイルからアクセス規則または監査規則を取得するには、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.GetAccessControl%2A> メソッドを使用します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
   
 ### <a name="persisted-memory-mapped-files"></a>永続化メモリ マップト ファイル  
  <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A> メソッドは、ディスク上の既存のファイルからメモリ マップト ファイルを作成します。  
@@ -151,5 +154,5 @@ Process C says: True
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/vb/program.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)

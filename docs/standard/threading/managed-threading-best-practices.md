@@ -16,21 +16,24 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e396bb1f6a710e49e311ca1526a7aae9bca7bf90
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c23ef17e2bf2bec389368d1b9d88d11723ef531e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="managed-threading-best-practices"></a>マネージ スレッド処理の実施
 マルチスレッドには慎重なプログラミングが必要です。 ほとんどのタスクでは、スレッド プールのスレッドを使って実行の要求をキューに置くことによって、処理の複雑さを軽減できます。 このトピックでは、マルチ スレッド動作の調整や、ブロックするスレッドの処理など、より難しい状況について説明します。  
   
 > [!NOTE]
-> 複雑さの一部とマルチ スレッド プログラミングのリスクを軽減する Api は、.NET Framework 4 以降では Task Parallel Library および PLINQ から提供します。 詳細については、次を参照してください。 [.NET での並行プログラミング](../../../docs/standard/parallel-programming/index.md)です。  
+> .NET Framework 4 以降では、マルチスレッド プログラミングの複雑さとリスクを軽減する API が Task Parallel Library および PLINQ に用意されています。 詳細については、[.NET の並列プログラミング](../../../docs/standard/parallel-programming/index.md)に関するページをご覧ください。  
   
 ## <a name="deadlocks-and-race-conditions"></a>デッドロックと競合状態  
  マルチスレッドはスループットと応答速度の問題を解決しますが、その一方で、デッドロックと競合状態という新たな問題を発生させます。  
@@ -38,7 +41,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="deadlocks"></a>デッドロック  
  デッドロックは、2 つのスレッドのうちの一方が、もう一方によって既にロックされているリソースをロックしようとすると発生します。 こうなると、どちらのスレッドも続行できなくなります。  
   
- マネージ スレッド処理クラスの多くのメソッドには、ロックアウトを検出するためのタイムアウト機能が用意されています。 たとえば、次のコードがという名前のオブジェクトに対するロックを取得しようと`lockObject`です。 ロックが 300 ミリ秒単位で取得されていない場合<xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType>返します`false`です。  
+ マネージ スレッド処理クラスの多くのメソッドには、ロックアウトを検出するためのタイムアウト機能が用意されています。 たとえば、`lockObject` というオブジェクトへのロックの取得を試みるコードを次に示します。 ロックが 300 ミリ秒の間に得られない場合は、<xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> は `false` を返します。  
   
 ```vb  
 If Monitor.TryEnter(lockObject, 300) Then  
@@ -122,7 +125,7 @@ else {
   
 -   インスタンスをロックする場合 (たとえば、C# の `lock(this)`、Visual Basic の `SyncLock(Me)`) には注意してください。 アプリケーション内の、その型以外の他のコードがオブジェクトをロックすると、デッドロックが発生する場合があります。  
   
--   モニター状態に入った (ロックを取得した) スレッドは、モニター状態である間に例外が発生した場合でも、必ずモニター状態から出すようにします。 C#[ロック](~/docs/csharp/language-reference/keywords/lock-statement.md)ステートメントと Visual Basic [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md)ステートメントこの動作を自動的に提供を採用すること、 **finally**いることを確認するブロック<xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>はと呼ばれる。 **Exit** を確実に呼び出すことができない場合は、**Mutex** を使用するようにデザインを変更することを検討してください。 ミューテックスは、現在それを保持しているスレッドが終了すると、自動的に解放されます。  
+-   モニター状態に入った (ロックを取得した) スレッドは、モニター状態である間に例外が発生した場合でも、必ずモニター状態から出すようにします。 C# の [lock](~/docs/csharp/language-reference/keywords/lock-statement.md) ステートメントと Visual Basic の [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) ステートメントは、**finally** ブロックを使用して <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> が呼び出されるようにすることで、この動作を自動的に提供します。 **Exit** を確実に呼び出すことができない場合は、**Mutex** を使用するようにデザインを変更することを検討してください。 ミューテックスは、現在それを保持しているスレッドが終了すると、自動的に解放されます。  
   
 -   マルチ スレッドは異なるリソースを必要とするタスクに使用し、1 つのリソースに複数のスレッドを割り当てることがないように注意します。 たとえば、I/O を含む作業であれば、その作業専用のスレッドを用意すると有益です。I/O 操作の間、このスレッドはブロックを行いますが、他のスレッドは実行できるからです。 ユーザー入力も、専用のスレッドが役に立つリソースの 1 つです。 シングル プロセッサのコンピューターでは、計算中心のタスクがユーザー入力や I/O タスクと共存することはできますが、計算中心タスクどうしは競合してしまいます。  
   
@@ -203,6 +206,6 @@ else {
   
 -   静的状態を変更する静的メソッドは提供しないでください。 一般的なサーバーのシナリオでは、静的状態は要求間で共有されます。つまり、複数のスレッドがそのコードを同時に実行できます。 これにより、スレッド処理のバグが発生する可能性が高くなります。 要求間で共有されないインスタンスにデータをカプセル化するデザイン パターンの使用を検討してください。 加えて、静的なデータを同期する場合は、状態を変更する呼び出しが静的メソッド間にあると、デッドロックや冗長な同期が生じる可能性があり、パフォーマンスに悪影響を及ぼします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スレッド化](../../../docs/standard/threading/index.md)  
  [スレッドおよびスレッド処理](../../../docs/standard/threading/threads-and-threading.md)

@@ -12,24 +12,27 @@ helpviewer_keywords:
 - threading [.NET Framework], AutoResetEvent class
 - AutoResetEvent class
 ms.assetid: 6d39c48d-6b37-4a9b-8631-f2924cfd9c18
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 69d16e8c6491b4c66ab5a5452762e73172ebbb77
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 71933d0be804fdf68b0dc602902343f2d88b8c82
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="autoresetevent"></a>AutoResetEvent
-<xref:System.Threading.AutoResetEvent>クラスはシグナルを受け取ると、1 つの待機中のスレッドを解放した後に自動的にリセットするローカルの待機ハンドルのイベントを表します。 このクラスは、その基本クラスの特殊なケースを表します<xref:System.Threading.EventWaitHandle>です。 自動リセット イベントの使用方法と機能については、[EventWaitHandle](../../../docs/standard/threading/eventwaithandle.md) の概念に関する文書を参照してください。  
+<xref:System.Threading.AutoResetEvent> クラスは、単一の待機スレッドを解放した後、シグナル状態になると自動的にリセットするローカル待機ハンドル イベントを表します。 このクラスは、その基底クラス <xref:System.Threading.EventWaitHandle> の特殊なケースを表します。 自動リセット イベントの使用方法と機能については、[EventWaitHandle](../../../docs/standard/threading/eventwaithandle.md) の概念に関する文書を参照してください。  
   
- <xref:System.Threading.AutoResetEvent>オブジェクトが自動的にリセットを非シグナル、システムによって 1 つの待機中のスレッドが解放された後です。 待機しているスレッドがない場合でも、イベント オブジェクトの状態はシグナルのままです。 <xref:System.Threading.AutoResetEvent>Win32 に対応する`CreateEvent`を呼び出すと、指定する`false`の`bManualReset`引数。  
+ <xref:System.Threading.AutoResetEvent> オブジェクトは、単一の待機スレッドが解放された後、システムによって自動的に非シグナルにリセットされます。 待機しているスレッドがない場合でも、イベント オブジェクトの状態はシグナルのままです。 <xref:System.Threading.AutoResetEvent> は、`bManualReset` 引数に対して `false` を指定する、Win32 `CreateEvent` 呼び出しに対応します。  
   
- 使用する例については<xref:System.Threading.AutoResetEvent>を参照してください[モニター](http://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)です。  
+ <xref:System.Threading.AutoResetEvent> の使用例については、「[Monitor クラス](http://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.ManualResetEvent>  
  <xref:System.Threading.Monitor>  
  [EventWaitHandle、AutoResetEvent、CountdownEvent、ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)  

@@ -1,5 +1,5 @@
 ---
-title: "トリミングおよび .NET の文字列から文字を削除します。"
+title: ".NET の文字列からの文字のトリムと削除"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -21,20 +21,23 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: fde24a97234d275d3d599f13bfc4063af939507b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: dac047c7efefcacb959401aedcb96080810f2278
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="trimming-and-removing-characters-from-strings-in-net"></a>トリミングおよび .NET の文字列から文字を削除します。
+# <a name="trimming-and-removing-characters-from-strings-in-net"></a>.NET の文字列からの文字のトリムと削除
 文章を個々の単語に分割すると、単語の先頭または末尾に空白が残る場合があります。 そのような場合は、**System.String** クラスのトリム メソッドのいずれかを使用して、文字列内の指定した位置から任意の数の空白またはその他の文字を削除できます。 使用できるトリム メソッドとその説明を次の表に示します。  
   
-|メソッド名|用途|  
+|メソッド名|使用|  
 |-----------------|---------|  
 |<xref:System.String.Trim%2A?displayProperty=nameWithType>|文字列の先頭と末尾から、空白または文字配列で指定した文字を削除します。|  
 |<xref:System.String.TrimEnd%2A?displayProperty=nameWithType>|文字列の末尾から、文字配列で指定した文字を削除します。|  
@@ -56,7 +59,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="trimend"></a>TrimEnd  
  **String.TrimEnd** メソッドは、文字列の末尾から文字を削除して新しい文字列オブジェクトを作成します。 このメソッドには、削除する文字を指定する文字配列が渡されます。 文字配列内での要素の順序は、トリム操作に影響しません。 トリム操作は、文字配列で指定された文字が見つからなくなった時点で停止します。  
   
- 次の例を使用して文字列の最後の文字を削除する、 **TrimEnd**メソッドです。 この例では、文字配列内の文字の順序が操作に影響しないことを示すために、`'r'` という文字と `'W'` という文字の順序を逆にしてあります。 このコードは、`MyString` の最後の単語だけでなく、最初の単語の一部も削除します。  
+ **TrimEnd** メソッドを使用して文字列の末尾の数文字を削除する例を次に示します。 この例では、文字配列内の文字の順序が操作に影響しないことを示すために、`'r'` という文字と `'W'` という文字の順序を逆にしてあります。 このコードは、`MyString` の最後の単語だけでなく、最初の単語の一部も削除します。  
   
  [!code-cpp[Conceptual.String.BasicOps#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#18)]
  [!code-csharp[Conceptual.String.BasicOps#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#18)]
@@ -97,5 +100,5 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Conceptual.String.BasicOps#23](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/replace1.cs#23)]
  [!code-vb[Conceptual.String.BasicOps#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/replace1.vb#23)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的な文字列操作](../../../docs/standard/base-types/basic-string-operations.md)

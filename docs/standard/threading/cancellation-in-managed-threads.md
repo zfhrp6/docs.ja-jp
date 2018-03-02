@@ -11,20 +11,24 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: cancellation in .NET, overview
+helpviewer_keywords:
+- cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 819f564b93d54c41b879fbfcb20997a8abdebc6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5407beba999ede6131adbc17f56d139396429597
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="cancellation-in-managed-threads"></a>マネージ スレッドのキャンセル
-[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降で、非同期操作または長時間にわたる同期操作に対する連携によるキャンセルのための統一されたモデルが .NET Framework に導入されました。 このモデルは、キャンセル トークンと呼ばれる軽量のオブジェクトに基づいています。 新しいスレッドまたは新しいタスクの作成などによって 1 つ以上のキャンセル可能な操作を呼び出すオブジェクトは、各操作にトークンを渡します。 次いで、個々の操作は他の操作にトークンのコピーを渡すことができます。 その後、トークンを作成したオブジェクトは、操作が実行している処理を停止するように、そのトークンを使用してその操作に要求できます。 要求側のオブジェクトのみがキャンセル要求を発行し、各リスナーは、要求を確認しながらおよび適切なと適切な方法で対処をします。  
+[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降で、非同期操作または長時間にわたる同期操作に対する連携によるキャンセルのための統一されたモデルが .NET Framework に導入されました。 このモデルは、キャンセル トークンと呼ばれる軽量のオブジェクトに基づいています。 新しいスレッドまたは新しいタスクの作成などによって 1 つ以上のキャンセル可能な操作を呼び出すオブジェクトは、各操作にトークンを渡します。 次いで、個々の操作は他の操作にトークンのコピーを渡すことができます。 その後、トークンを作成したオブジェクトは、操作が実行している処理を停止するように、そのトークンを使用してその操作に要求できます。 キャンセル要求は、要求側のオブジェクトからのみ発行できます。各リスナーは要求を確認し、適切な時に定期的にその要求に応答する必要があります。  
   
  連携によるキャンセル処理モデルを実装するための一般的なパターンは次のとおりです。  
   
@@ -41,7 +45,7 @@ ms.lasthandoff: 10/18/2017
   
  トークンのソースとそのトークンのすべてのコピーの間の関係を次の図に示します。  
   
- ![CancellationTokenSource とキャンセル トークン](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")  
+ ![CancellationTokenSource とキャンセル トークン ](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")  
   
  新しいキャンセル モデルによって、キャンセルに対応したアプリケーションやライブラリの作成が簡単になりました。このモデルでは次の機能がサポートされます。  
   
@@ -51,7 +55,7 @@ ms.lasthandoff: 10/18/2017
   
 -   要求側のオブジェクトは、1 回のメソッド呼び出しでトークンのすべてのコピーにキャンセル要求を発行できます。  
   
--   リスナーをリッスンできる複数のトークンを同時に 1 つに結合して*リンク トークン*です。  
+-   リスナーは、複数のトークンを 1 つの*リンク トークン*に結合して同時にリッスンできます。  
   
 -   ライブラリ コードからのキャンセル要求をユーザー コードで確認して応答したり、ユーザー コードからのキャンセル要求をライブラリ コードで確認して応答したりすることができます。  
   
@@ -66,13 +70,13 @@ ms.lasthandoff: 10/18/2017
 |<xref:System.Threading.CancellationToken>|1 つ以上のリスナーに渡される軽量な値型で、通常はメソッド パラメーターとして渡されます。 リスナーはポーリング、コールバック、または待機ハンドルによってトークンの `IsCancellationRequested` プロパティの値を監視します。|  
 |<xref:System.OperationCanceledException>|この例外のコンストラクターのオーバーロードで、<xref:System.Threading.CancellationToken> をパラメーターとして受け入れます。 リスナーは必要に応じてこの例外をスローすることができます。この例外により、キャンセルのソースを確認し、キャンセル要求にそのリスナーが応答したことを他のリスナーに通知します。|  
   
- この新しいキャンセル モデルに統合されて、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]でいくつかの種類。 最も重要なものは<xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>、 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>と<xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>です。 すべての新しいライブラリとアプリケーション コードには、この新しいキャンセル モデルを使用することをお勧めします。  
+ この新しいキャンセル モデルは、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のいくつかの型に統合されています。 最も重要なものは、<xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>、<xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> です。 新しいライブラリおよびアプリケーション コードでは、すべてこの新しいキャンセル モデルを使用することをお勧めします。  
   
 ## <a name="code-example"></a>コード例  
  次の例では、要求側のオブジェクトで <xref:System.Threading.CancellationTokenSource> オブジェクトを作成した後、その <xref:System.Threading.CancellationTokenSource.Token%2A> プロパティをキャンセル可能な操作に渡します。 要求を受け取る側の操作では、ポーリングによってトークンの <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> プロパティの値を監視します。 値が `true` になったら、リスナーは適切な方法で終了できます。 この例では、メソッドの終了だけを行っています。多くの場合はこの処理だけで十分です。  
   
 > [!NOTE]
->  この例では、新しいキャンセル フレームワークが従来の API と互換性があることを示すために、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> メソッドを使用しています。 例では、新しいについては、優先<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>を入力しを参照してください[する方法: タスクとその子を取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)です。  
+>  この例では、新しいキャンセル フレームワークが従来の API と互換性があることを示すために、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> メソッドを使用しています。 推奨される新しい <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 型を使用した例については、「[方法: タスクとその子を取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)」を参照してください。  
   
  [!code-csharp[Cancellation#1](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex1.cs#1)]
  [!code-vb[Cancellation#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex1.vb#1)]  
@@ -92,7 +96,7 @@ ms.lasthandoff: 10/18/2017
   
  ただし、より複雑なケースでは、キャンセルが発生したことをユーザー デリゲートからライブラリ コードに通知する必要がある場合があります。 そのような場合、操作を終了するための正しい方法はユーザー デリゲートから <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> メソッドを呼び出すことです。これにより、<xref:System.OperationCanceledException> がスローされます。 ライブラリ コードでは、ユーザー デリゲートのスレッドでこの例外をキャッチし、例外のトークンを調べて、この例外が連携によるキャンセルを示すのか、それ以外の例外的な状況を示すのかを判断できます。  
   
- <xref:System.Threading.Tasks.Task> クラスはこの方法で <xref:System.OperationCanceledException> を処理します。 詳細については、「 [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md)」を参照してください。  
+ <xref:System.Threading.Tasks.Task> クラスはこの方法で <xref:System.OperationCanceledException> を処理します。 詳細については、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」をご覧ください。  
   
 ### <a name="listening-by-polling"></a>ポーリングによるリッスン  
  ループや再帰を伴う長時間にわたる計算では、<xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType> プロパティの値を定期的にポーリングすることによってキャンセル要求をリッスンできます。 その値が `true` の場合、メソッドはできるだけ早くクリーンアップを行って終了する必要があります。 最適なポーリング間隔はアプリケーションの種類によって異なります。 プログラムごとに、最適なポーリング間隔を開発者が決定します。 ポーリング自体がパフォーマンスに大きく影響することはありません。 ポーリングを行う方法の 1 つの例を次に示します。  
@@ -100,12 +104,12 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Cancellation#3](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#3)]
  [!code-vb[Cancellation#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex11.vb#3)]  
   
- 完全な例では、次を参照してください。[する方法: ポーリングによりキャンセル要求をリッスン](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-by-polling.md)です。  
+ さらに完全に近い例については、「[方法: ポーリングによりキャンセル要求を待機する](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-by-polling.md)」を参照してください。  
   
 ### <a name="listening-by-registering-a-callback"></a>コールバックの登録によるリッスン  
  操作によっては、キャンセル トークンの値を定期的に確認できないことによりブロックされる場合があります。 そのような場合は、キャンセル要求を受け取ったときにメソッドのブロックを解除するコールバック メソッドを登録できます。  
   
- <xref:System.Threading.CancellationToken.Register%2A>メソッドを返します、<xref:System.Threading.CancellationTokenRegistration>この用途専用で使用されるオブジェクト。 <xref:System.Threading.CancellationToken.Register%2A> メソッドを使用して非同期 Web 要求を取り消す方法を次の例に示します。  
+ <xref:System.Threading.CancellationToken.Register%2A> メソッドは、特にこの目的のために使用される <xref:System.Threading.CancellationTokenRegistration> オブジェクトを返します。 <xref:System.Threading.CancellationToken.Register%2A> メソッドを使用して非同期 Web 要求を取り消す方法を次の例に示します。  
   
  [!code-csharp[Cancellation#4](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex4.cs#4)]
  [!code-vb[Cancellation#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex4.vb#4)]  
@@ -120,7 +124,7 @@ ms.lasthandoff: 10/18/2017
   
 -   コールバックでは、手動によるスレッド処理を実行したり、<xref:System.Threading.SynchronizationContext> を使用したりしないでください。 特定のスレッドでコールバックを実行する必要がある場合は、<xref:System.Threading.CancellationTokenRegistration?displayProperty=nameWithType> コンストラクターを使用します。これにより、ターゲットの syncContext がアクティブな <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> であることを指定できます。 コールバックで手動によるスレッド処理を実行すると、デッドロックが発生する可能性があります。  
   
- 完全な例では、次を参照してください。[する方法: キャンセル要求を行うためのコールバックの登録](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md)です。  
+ さらに完全に近い例については、「[方法: キャンセル要求のコールバックを登録する](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md)」を参照してください。  
   
 ### <a name="listening-by-using-a-wait-handle"></a>待機ハンドルを使用したリッスン  
  <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> や <xref:System.Threading.Semaphore?displayProperty=nameWithType> などの同期プリミティブを待機している間、キャンセル可能な操作をブロックできる場合は、<xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType> プロパティを使用してその操作がイベントとキャンセル要求の両方を待機するようにできます。 キャンセル トークンの待機ハンドルは、キャンセル要求への応答としてシグナル状態になります。メソッドは <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドの戻り値を使用して、キャンセル トークンがシグナル状態であったかどうかを判断できます。 操作はその後、状況に合わせて、そのまま終了するか、<xref:System.OperationCanceledException> をスローします。  
@@ -128,12 +132,12 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Cancellation#5](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#5)]
  [!code-vb[Cancellation#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex9.vb#5)]  
   
- [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] を対象とする新しいコードでは、<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> と <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> はどちらも、`Wait` メソッドで新しいキャンセル フレームワークをサポートしています。 渡すことができます、 <xref:System.Threading.CancellationToken> 、メソッドにイベントが起動され、スロー、キャンセルが要求されると、および、<xref:System.OperationCanceledException>です。  
+ [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] を対象とする新しいコードでは、<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> と <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> はどちらも、`Wait` メソッドで新しいキャンセル フレームワークをサポートしています。 メソッドに <xref:System.Threading.CancellationToken> を渡すことができ、キャンセルが要求されると、イベントが起動して <xref:System.OperationCanceledException> がスローされます。  
   
  [!code-csharp[Cancellation#6](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex10.cs#6)]
  [!code-vb[Cancellation#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex10.vb#6)]  
   
- 完全な例では、次を参照してください。[する方法: キャンセル要求がある待機が処理されるのをリッスン](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-that-have-wait-handles.md)です。  
+ さらに完全に近い例については、「[方法: 待機ハンドルがあるキャンセル要求を待機する](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-that-have-wait-handles.md)」を参照してください。  
   
 ### <a name="listening-to-multiple-tokens-simultaneously"></a>同時に複数のトークンをリッスンする  
  リスナーでは、複数のキャンセル トークンを同時にリッスンしなければならない場合もあります。 たとえば、キャンセル可能な操作で、メソッド パラメーターの引数として外部から渡されるトークンのほかに、内部のキャンセル トークンも監視する必要がある場合などです。 これを行うには、複数のトークンを 1 つのトークンに結合できるリンク トークン ソースを作成します。次に例を示します。  
@@ -141,18 +145,18 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Cancellation#7](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#7)]
  [!code-vb[Cancellation#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex13.vb#7)]  
   
- 処理の終了後にリンク トークン ソースに対して `Dispose` を呼び出す必要があることに注意してください。 完全な例では、次を参照してください。[する方法: 複数のキャンセル要求をリッスン](../../../docs/standard/threading/how-to-listen-for-multiple-cancellation-requests.md)です。  
+ 処理の終了後にリンク トークン ソースに対して `Dispose` を呼び出す必要があることに注意してください。 さらに完全に近い例については、「[方法: 複数のキャンセル要求を待機する](../../../docs/standard/threading/how-to-listen-for-multiple-cancellation-requests.md)」を参照してください。  
   
 ## <a name="cooperation-between-library-code-and-user-code"></a>ライブラリ コードとユーザー コードの連携  
  統合キャンセル フレームワークでは、ライブラリ コードとユーザー コードを連携させ、どちらのコードからも他方のコードを取り消せるようにすることができます。 円滑な連携のためには、それぞれで以下のガイドラインに従う必要があります。  
   
 -   ライブラリ コードでキャンセル可能な操作を提供する場合は、ユーザー コードからキャンセルを要求できるように、外部のキャンセル トークンを受け入れるパブリック メソッドも提供します。  
   
--   ライブラリ コードは、ユーザー コードを呼び出すの場合、ライブラリ コードは、Externaltoken を解釈する必要があります*連携によるキャンセル*、およびエラーの例外とは限らないです。  
+-   ライブラリ コードからユーザー コードを呼び出す場合は、ライブラリ コードで OperationCanceledException(externalToken) を常にエラー例外として解釈するのではなく、*連携によるキャンセル*としても解釈するようにします。  
   
 -   ユーザー デリゲートでは、ライブラリ コードからのキャンセル要求に定期的に応答するようにします。  
   
- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> および <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> は、これらのガイドラインに従ったクラスの例です。 詳細については、次を参照してください。[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)と[する方法: PLINQ クエリを取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)です。  
+ <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> および <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> は、これらのガイドラインに従ったクラスの例です。 詳細については、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」と「[方法: PLINQ クエリを取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ スレッド処理の基本](../../../docs/standard/threading/managed-threading-basics.md)

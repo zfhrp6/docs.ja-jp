@@ -1,5 +1,5 @@
 ---
-title: ".NET における文字列の比較"
+title: ".NET で文字列を比較する"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -24,20 +24,23 @@ helpviewer_keywords:
 - Equals method
 - StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 34aa922155943d1b4d39de2e7c33ebc1228e1083
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a9c2597ed2321c7494eaf44c3c43c2edc4df1952
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="comparing-strings-in-net"></a>.NET における文字列の比較
+# <a name="comparing-strings-in-net"></a>.NET で文字列を比較する
 .NET は、文字列の値を比較するためのメソッドをいくつか提供します。 これらの値の比較メソッドとその説明を次の表に示します。  
   
-|メソッド名|用途|  
+|メソッド名|使用|  
 |-----------------|---------|  
 |<xref:System.String.Compare%2A?displayProperty=nameWithType>|2 つの文字列の値を比較します。 整数値を返します。|  
 |<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>|ローカル カルチャに関係なく、2 つの文字列を比較します。 整数値を返します。|  
@@ -53,9 +56,9 @@ ms.lasthandoff: 11/21/2017
   
 |戻り値|条件|  
 |------------------|---------------|  
-|負の整数|最初の文字列は、並べ替え順序が 2 番目の文字列の前に置かれます。<br /><br /> または<br /><br /> 最初の文字列は `null`です。|  
-|0|最初の文字列と 2 番目の文字列は等価です。<br /><br /> または<br /><br /> 両方の文字列が `null`です。|  
-|正の整数<br /><br /> または<br /><br /> 1|最初の文字列は、並べ替え順序が 2 番目の文字列の後に続きます。<br /><br /> または<br /><br /> 第 2 文字列は `null`です。|  
+|負の整数|最初の文字列は、並べ替え順序が 2 番目の文字列の前に置かれます。<br /><br /> - または -<br /><br /> 最初の文字列は `null`です。|  
+|0|最初の文字列と 2 番目の文字列は等価です。<br /><br /> - または -<br /><br /> 両方の文字列が `null`です。|  
+|正の整数<br /><br /> - または -<br /><br /> 1|最初の文字列は、並べ替え順序が 2 番目の文字列の後に続きます。<br /><br /> - または -<br /><br /> 第 2 文字列は `null` です。|  
   
 > [!IMPORTANT]
 >  <xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドは、主に文字列の並べ替えに使用するものです。 等価性をテストする (つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する) 目的では、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドを使用しないでください。 2 つの文字列が等価かどうかを判断するには、<xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> メソッドを使用してください。  
@@ -68,7 +71,7 @@ ms.lasthandoff: 11/21/2017
   
  この例は、コンソールに `-1` と出力します。  
   
- 既定では、上の例はカルチャによって異なります。 カルチャを認識しない文字列比較を実行するには、オーバー ロードを使用して、<xref:System.String.Compare%2A?displayProperty=nameWithType>メソッドを指定して使用するカルチャを指定することができます、*カルチャ*パラメーター。 使用する方法を示す例については、 <xref:System.String.Compare%2A?displayProperty=nameWithType> 、カルチャに依存しない比較を実行する方法を確認する[カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)です。  
+ 既定では、上の例はカルチャによって異なります。 カルチャに依存せずに文字列を比較するには、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドのオーバーロードを利用します。このメソッドでは、*culture* パラメーターを指定することで、使用するカルチャを指定できます。 <xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドを使用してカルチャに依存しない比較を実行する例については、「[カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
   
 ## <a name="compareordinal"></a>CompareOrdinal  
  <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> メソッドは、ローカル カルチャを考慮せずに 2 つの文字列オブジェクトを比較します。 このメソッドの戻り値は、上の表で示した **Compare** メソッドによって返される値と同じです。  
@@ -98,7 +101,7 @@ ms.lasthandoff: 11/21/2017
   
  この例は、コンソールに `-1` と出力します。  
   
- すべてのオーバー ロード、<xref:System.String.CompareTo%2A?displayProperty=nameWithType>メソッドは、既定ではカルチャおよび大文字小文字を区別の比較を実行します。 このメソッドのオーバーロードで、カルチャに依存しない比較を実行できるものはありません。 コードをわかりやすく、ことをお勧めを使用すること、 **String.Compare**メソッドを指定する代わりに、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>カルチャに依存する操作のまたは<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>のカルチャに依存しない操作します。 **String.Compare** メソッドを使用してカルチャに依存する比較とカルチャに依存しない比較の両方を実行する例については、「 [カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
+ <xref:System.String.CompareTo%2A?displayProperty=nameWithType> メソッドのすべてのオーバーロードは、既定で、カルチャに依存して大文字小文字を区別する比較を実行します。 このメソッドのオーバーロードで、カルチャに依存しない比較を実行できるものはありません。 コードを理解しやすくするために、**String.Compare** メソッドを使用することをお勧めします。その際、カルチャに依存する操作には <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> を指定し、カルチャに依存しない操作には <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> を指定します。 **String.Compare** メソッドを使用してカルチャに依存する比較とカルチャに依存しない比較の両方を実行する例については、「 [カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
   
 ## <a name="equals"></a>次の値に等しい  
  **String.Equals** メソッドを使用すると、2 つの文字列が等しいかどうかを簡単に確認できます。 このメソッドは大文字と小文字を区別し、 **True** または **False** の Boolean 値を返します。 このメソッドは、次の例に示すように、既存のクラスで使用できます。 **Equals** メソッドを使用して、文字列オブジェクトに "Hello World" という語句が含まれているかどうかを確認する例を次に示します。  
@@ -157,6 +160,6 @@ ms.lasthandoff: 11/21/2017
   
  いずれのメソッドも、 **String.Remove** メソッドと組み合わせて使用すると便利です。 **IndexOf** メソッドまたは **LastIndexOf** メソッドのいずれかを使用して文字の位置を取得し、その位置を **Remove** メソッドに渡すことによって、その文字またはその文字で始まる単語を削除できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的な文字列操作](../../../docs/standard/base-types/basic-string-operations.md)  
  [カルチャを認識しない文字列操作の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

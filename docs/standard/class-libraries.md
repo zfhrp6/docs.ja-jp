@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: c72cdcbbe20c3c7a6890cdacb446e3db8de1b37a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5445c6971e243e9fc2eea34937683a5c3c432c01
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-class-libraries"></a>.NET クラス ライブラリ
 
@@ -24,7 +27,7 @@ ms.lasthandoff: 10/18/2017
 
 *   **プラットフォーム固有** クラス ライブラリは、特定のプラットフォーム (たとえば、.NET Framework、Xamarin iOS) のすべての API にアクセスできますが、そのプラットフォームを対象とするアプリケーションとライブラリでのみ使用できます。
 *   **ポータブル** クラス ライブラリは、API のサブセットへのアクセスがあり、複数のプラットフォームを対象とするアプリケーションとライブラリで使用できます。
-*   **.NET Core** クラス ライブラリは、プラットフォーム固有のライブラリとポータブル ライブラリの概念を両方の長所を持つ 1 つのモデルに統合しています。
+*   **.NET Standard** クラス ライブラリは、プラットフォーム固有のライブラリとポータブル ライブラリの概念を両方の長所を持つ 1 つのモデルに統合しています。
 
 ## <a name="platform-specific-class-libraries"></a>プラットフォーム固有のクラス ライブラリ
 

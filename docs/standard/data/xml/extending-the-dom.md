@@ -12,18 +12,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b91c49be9268d8dc967daeac116cf67b2ed7d742
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 06cac8d76b17f3ef32931ea21d0556085f05d7b1
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="extending-the-dom"></a>DOM の拡張
-Microsoft .NET Framework には、XML ドキュメント オブジェクト モデル (DOM) の実装を提供するクラスの基本セットが含まれています。 <xref:System.Xml.XmlNode> およびその派生クラスのメソッドとプロパティを利用して、XML ドキュメントの内容および構造の中で移動し、それらに対してクエリを実行し、それらを変更することができます。  
+Microsoft .NET Framework は、XML ドキュメント オブジェクト モデル (DOM) の実装を提供するクラスの基本セットを備えています。 <xref:System.Xml.XmlNode> およびその派生クラスのメソッドとプロパティを利用して、XML ドキュメントの内容および構造の中で移動し、それらに対してクエリを実行し、それらを変更することができます。  
   
  DOM を使用して XML コンテンツをメモリに読み込むと、作成されたノードには、ノード名やノード型などの情報が格納されます。 場合によっては、基本クラスによっては提供されない特定のノード情報が必要になることもあります。 たとえば、ノードの行番号と位置が必要な場合です。 このような場合は、既存の DOM クラスから新しいクラスを派生させ、追加機能を持たせることができます。  
   
@@ -250,10 +253,10 @@ Number of elements in book.xml: 3
   
  イベント処理プロセスは、派生クラスでも、元の DOM クラスとまったく同じように動作します。  
   
- ノードのイベント処理の詳細については、次を参照してください。[イベント](../../../../docs/standard/events/index.md)と<xref:System.Xml.XmlNodeChangedEventHandler>です。  
+ ノード イベント処理については、「[イベント](../../../../docs/standard/events/index.md)」と「<xref:System.Xml.XmlNodeChangedEventHandler>」を参照してください。  
   
 ## <a name="default-attributes-and-the-createelement-method"></a>既定の属性と CreateElement メソッド  
- 派生クラスの <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドをオーバーライドした場合は、ドキュメントの編集中に新しい要素を作成しても、既定の属性は追加されません。 これは編集中だけの問題です。 <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドが既定の属性を <xref:System.Xml.XmlDocument> に追加する機能を実行するため、この機能は <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドにコーディングする必要があります。 既定の属性が含まれた <xref:System.Xml.XmlDocument> を読み込めば、既定の属性が正しく処理されます。 既定の属性の詳細については、次を参照してください。 [DOM の要素の新しい属性の作成](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md)です。  
+ 派生クラスの <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドをオーバーライドした場合は、ドキュメントの編集中に新しい要素を作成しても、既定の属性は追加されません。 これは編集中だけの問題です。 <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドが既定の属性を <xref:System.Xml.XmlDocument> に追加する機能を実行するため、この機能は <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドにコーディングする必要があります。 既定の属性が含まれた <xref:System.Xml.XmlDocument> を読み込めば、既定の属性が正しく処理されます。 既定の属性の詳細については、「[DOM の要素に対する新しい属性の作成](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

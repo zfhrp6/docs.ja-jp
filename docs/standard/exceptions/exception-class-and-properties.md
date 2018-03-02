@@ -12,15 +12,18 @@ helpviewer_keywords:
 - exceptions, Exception class
 - Exception class
 ms.assetid: e2e1f8c4-e7b4-467d-9a66-13c90861221d
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 253a9846e484aa4e54c3433b0bbc8623519bbb7e
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 120d56832aad5024ee607d6e3114f164c967a12f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exception-class-and-properties"></a>Exception クラスとプロパティ
 
@@ -46,7 +49,7 @@ Object
 
 <xref:System.Exception> から継承するほとんどのクラスは、追加メンバーを実装したり、追加の機能を提供することはありません。これらは、<xref:System.Exception> から継承するだけです。 そのため、例外の最も重要な情報は、例外クラスの階層、例外の名前と、例外に含まれる情報で見つけることができます。
 
-スローしてから派生したオブジェクトのみをキャッチすることをお勧め<xref:System.Exception>から派生した任意のオブジェクトをスローすることができますが、<xref:System.Object>例外としてのクラスです。 <xref:System.Exception> から派生していないオブジェクトのスローとキャッチは、すべての言語ではサポートされていないことに注意してください。
+<xref:System.Exception> から派生したオブジェクトのみをスローし、キャッチすることをお勧めしますが、<xref:System.Object> クラスから派生したオブジェクトはすべて例外としてスローできます。 <xref:System.Exception> から派生していないオブジェクトのスローとキャッチは、すべての言語ではサポートされていないことに注意してください。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [例外](index.md)

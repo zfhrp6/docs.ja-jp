@@ -8,7 +8,8 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: VS.RegularExpressionBuilder
+f1_keywords:
+- VS.RegularExpressionBuilder
 helpviewer_keywords:
 - regex cheat sheet
 - parsing text with regular expressions, language elements
@@ -19,18 +20,21 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-caps.latest.revision: "56"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ab77293796eb20b1056f57f64903beb9357a80c5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a0fed14784327c6fe16f083a22471b56032b6b5d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="regular-expression-language---quick-reference"></a>正規表現言語 - クイック リファレンス
-<a name="top"></a> 正規表現とは、入力テキスト内で正規表現エンジンによる照合が試行されるパターンです。 パターンは、1 個以上の文字リテラル、演算子、または構成体で構成されます。  簡単な概要については、次を参照してください。 [.NET 正規表現](../../../docs/standard/base-types/regular-expressions.md)です。  
+<a name="top"></a> 正規表現とは、入力テキスト内で正規表現エンジンによる照合が試行されるパターンです。 パターンは、1 個以上の文字リテラル、演算子、または構成体で構成されます。  簡単な概要については、「[.NET の正規表現](../../../docs/standard/base-types/regular-expressions.md)」を参照してください。  
   
  このクイック リファレンスの各セクションでは、正規表現の定義に使用できる特定カテゴリの文字、演算子、および構成体を一覧表示します。  
   
@@ -68,7 +72,7 @@ ms.lasthandoff: 11/21/2017
 |`\x` *nn*|16 進数表現で文字を指定します (*nn* は 2 桁で構成されます)。|`\w\x20\w`|"a bc d" の<br /><br /> "a b"、"c d"|  
 |`\c` *X*<br /><br /> `\c` *x*|*X* または *x*で指定された ASCII の制御文字と一致します。 *X* または *x* は制御文字です。|`\cC`|"\x0003" (Ctrl-C) の "\x0003"|  
 |`\u` *nnnn*|16 進数形式で表される Unicode 文字 ( *nnnn*で表される 4 桁の数字) と一致します。|`\w\u0020\w`|"a bc d" の<br /><br /> "a b"、"c d"|  
-|`\`|このトピック内の表に示されているエスケープ文字として認識されない文字が後ろに付いている場合は、その文字と一致します。 たとえば、 `\*` は `\x2A`と同じであり、 `\.` は `\x2E`と同じです。 これにより、正規表現エンジンは言語要素を区別するために (など\*または?) と文字リテラル (によって表される`\*`または`\?`)。|`\d+[\+-x\*]\d+`|「2 + 2」および"3\*"の""(2+2) \* 3\*9"|  
+|`\`|このトピック内の表に示されているエスケープ文字として認識されない文字が後ろに付いている場合は、その文字と一致します。 たとえば、 `\*` は `\x2A`と同じであり、 `\.` は `\x2E`と同じです。 これを使用すると、正規表現エンジンによって言語要素 (\* や ? など) と文字リテラル (`\*` や `\?` など) のあいまいさが解消されます。|`\d+[\+-x\*]\d+`|"(2+2) \* 3\*9" の "2+2" と "3\*9"|  
   
  [ページのトップへ](#top)  
   
@@ -152,7 +156,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="backreference_constructs"></a>   
 ## <a name="backreference-constructs"></a>前方参照構成体  
- 前方参照を使用すると、以前に一致した部分式を、同じ正規表現内で引き続き識別できます。 次の表は、.NET の正規表現でサポートされている前方参照構成体を一覧表示します。 詳細については、「 [Backreference Constructs](backreference-constructs-in-regular-expressions.md)」を参照してください。  
+ 前方参照を使用すると、以前に一致した部分式を、同じ正規表現内で引き続き識別できます。 .NET の正規表現でサポートされている前方参照構成体を、次の表に示します。 詳細については、「 [Backreference Constructs](backreference-constructs-in-regular-expressions.md)」を参照してください。  
   
 |前方参照構成体|説明|パターン|一致件数|  
 |-----------------------------|-----------------|-------------|-------------|  
@@ -214,7 +218,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="miscellaneous_constructs"></a>   
 ## <a name="miscellaneous-constructs"></a>その他の構成体  
- その他の構成体は、正規表現パターンを変更するか、それに関する情報を指定します。 次の表は、.NET でサポートされるその他の構文を示します。 詳細については、「 [Miscellaneous Constructs](miscellaneous-constructs-in-regular-expressions.md)」を参照してください。  
+ その他の構成体は、正規表現パターンを変更するか、それに関する情報を指定します。 次の表に .NET でサポートされているその他の構成体を示します。 詳細については、「 [Miscellaneous Constructs](miscellaneous-constructs-in-regular-expressions.md)」を参照してください。  
   
 |構成体|定義|例|  
 |---------------|----------------|-------------|  
@@ -222,7 +226,7 @@ ms.lasthandoff: 11/21/2017
 |`(?#` *comment* `)`|インライン コメントです。 コメントは、最初の閉じかっこで終了します。|`\bA(?#Matches words starting with A)\w+\b`|  
 |`#` [to end of line]|X モード コメントです。 コメントの先頭はエスケープされない `#` で、コメントは行末まで継続します。|`(?x)\bA\w+\b#Matches words starting with A`|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
  <xref:System.Text.RegularExpressions.Regex>  
  [正規表現](regular-expressions.md)  

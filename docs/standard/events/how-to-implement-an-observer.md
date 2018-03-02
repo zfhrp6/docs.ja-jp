@@ -15,48 +15,51 @@ helpviewer_keywords:
 - observers [.NET Framework], observer design pattern
 - observer design pattern [.NET Framework], implementing observers
 ms.assetid: 8ecfa9f5-b500-473d-bcf0-5652ffb1e53d
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a964bd031f6f8a7fc029b2b209b9693b72e688af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b895739daf1f4844d6300df4788441be67b90254
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-implement-an-observer"></a>方法: オブザーバーを実装する
-オブサーバー デザイン パターンでは、通知を登録すると、監視者、およびデータを監視し、1 つまたは複数のオブザーバーに通知を送信する、プロバイダーの分割が必要です。 このトピックでは、オブザーバーを作成する方法について説明します。 関連するトピック[する方法: プロバイダーを実装する](../../../docs/standard/events/how-to-implement-a-provider.md)プロバイダーを作成する方法について説明します。  
+オブザーバー デザイン パターンでは、通知を登録するオブザーバーと、データを監視して 1 人以上のオブザーバーに通知を送信するプロバイダーを分ける必要があります。 このトピックでは、オブザーバーを作成する方法について説明します。 プロバイダーの作成方法については、関連トピックの「[方法: プロバイダーを実装する](../../../docs/standard/events/how-to-implement-a-provider.md)」を参照してください。  
   
 ### <a name="to-create-an-observer"></a>オブザーバーを作成するには  
   
-1.  実装する型であると、オブザーバーを定義、<xref:System.IObserver%601?displayProperty=nameWithType>インターフェイスです。 たとえば、次のコードがという名前の型を定義`TemperatureReporter`が構築された<xref:System.IObserver%601?displayProperty=nameWithType>のジェネリック型引数で実装`Temperature`です。  
+1.  オブザーバーを定義します。これは <xref:System.IObserver%601?displayProperty=nameWithType> インターフェイスを実装する型です。 たとえば、次のコードでは、`TemperatureReporter` という型が定義されています。これは、ジェネリック型引数の <xref:System.IObserver%601?displayProperty=nameWithType> を使用して構築された `Temperature` の実装です。  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#8)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#8)]  
   
-2.  オブザーバーがプロバイダーの呼び出し前に、の通知の受信を停止することができる場合、<xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>実装を保持するプライベート変数を定義する、 <xref:System.IDisposable> 、プロバイダーによって返される実装<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>メソッドです。 呼び出す、プロバイダーのサブスクリプション メソッドを定義することも必要があります。<xref:System.IObservable%601.Subscribe%2A>メソッドと、返されたストア<xref:System.IDisposable>オブジェクト。 たとえば、次のコードがという名前のプライベート変数を定義`unsubscriber`を定義し、`Subscribe`メソッドは、プロバイダーの呼び出しを<xref:System.IObservable%601.Subscribe%2A>メソッドに返されるオブジェクトを代入し、`unsubscriber`変数。  
+2.  プロバイダーが <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> の実装を呼び出す前にオブザーバーが通知の受信を停止できる場合は、プロバイダーの <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> メソッドから返される <xref:System.IDisposable> の実装を保持するプライベート変数を定義します。 また、プロバイダーの <xref:System.IObservable%601.Subscribe%2A> メソッドを呼び出し、返された <xref:System.IDisposable> オブジェクトを格納するサブスクリプション メソッドも定義する必要があります。 たとえば、次のコードでは `unsubscriber` というプライベート変数を定義し、プロバイダーの <xref:System.IObservable%601.Subscribe%2A> メソッドを呼び出し、返されたオブジェクトを `unsubscriber` 変数に割り当てる `Subscribe` メソッドを定義します。  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#9)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#9)]  
   
-3.  プロバイダーの呼び出し前に、の通知の受信を停止するオブザーバーをできるようにするメソッドを定義するその<xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>実装では、この機能が必要な場合です。 次の例では定義、`Unsubscribe`メソッドです。  
+3.  この機能が必要な場合は、プロバイダーが <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> の実装を呼び出す前に、オブザーバーが通知の受信を停止できるようにするメソッドを定義します。 次の例では、`Unsubscribe` メソッドを定義しています。  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#10)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#10)]  
   
-4.  によって定義された 3 つのメソッドの実装を提供する、<xref:System.IObserver%601>インターフェイス: <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>、 <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>、および<xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>です。 プロバイダーと、アプリケーションのニーズに応じて、<xref:System.IObserver%601.OnError%2A>と<xref:System.IObserver%601.OnCompleted%2A>メソッドがスタブ実装を指定できます。 注意してください、<xref:System.IObserver%601.OnError%2A>メソッドを渡された処理しないでください<xref:System.Exception>オブジェクト、例外として、<xref:System.IObserver%601.OnCompleted%2A>メソッドは、プロバイダーの呼び出しに無料<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>実装します。 次の例は、<xref:System.IObserver%601>の実装、`TemperatureReporter`クラスです。  
+4.  <xref:System.IObserver%601> インターフェイスに定義されている 3 つのメソッド <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>、<xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>、および <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> の実装を用意します。 プロバイダーとアプリケーションのニーズに応じて、<xref:System.IObserver%601.OnError%2A> メソッドと <xref:System.IObserver%601.OnCompleted%2A> メソッドをスタブ実装にすることができます。 <xref:System.IObserver%601.OnError%2A> メソッドが渡された <xref:System.Exception> オブジェクトを例外として処理しない点と、<xref:System.IObserver%601.OnCompleted%2A> メソッドはプロバイダーの <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> の実装を自由に呼び出すことができる点に注意してください。 次の例は、`TemperatureReporter` クラスの <xref:System.IObserver%601> の実装を示しています。  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#11)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#11)]  
   
 ## <a name="example"></a>例  
- 次の例には完全なソース コードが含まれています、`TemperatureReporter`を提供するクラス、<xref:System.IObserver%601>温度監視アプリケーションの実装です。  
+ 次の例には、`TemperatureReporter` クラスの完全なソース コードが含まれています。これは、温度監視アプリケーション向けに <xref:System.IObserver%601> の実装を提供するクラスです。  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#12)]
  [!code-vb[Conceptual.ObserverDesign.HowTo#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#12)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IObserver%601>  
  [オブサーバー デザイン パターン](../../../docs/standard/events/observer-design-pattern.md)  
  [方法: プロバイダーを実装する](../../../docs/standard/events/how-to-implement-a-provider.md)  

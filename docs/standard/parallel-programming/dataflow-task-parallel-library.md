@@ -1,12 +1,8 @@
 ---
 title: "データフロー (タスク並列ライブラリ)"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,23 +11,24 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
-caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 73933c5f171881b5b3a2479aabdb26d1abd58cfc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f91100303cb0970ed430eebe2a377a487017b47d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="dataflow-task-parallel-library"></a>データフロー (タスク並列ライブラリ)
 <a name="top"></a> タスク並列ライブラリ (TPL) はデータ フロー コンポーネントを提供し、同時実行対応アプリケーションの堅牢性を強化します。 これらのデータ フロー コンポーネントは *TPL データ フロー ライブラリ*と総称されます。 データ フロー モデルは、粒度の粗いデータ フローおよびパイプライン処理タスクのためのインプロセス メッセージ パッシングを提供し、アクター ベースのプログラミング モデルを推進します。 データ フロー コンポーネントは、TPL の種類とスケジュール インフラストラクチャの上でビルドされ、C#、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]、および同期プログラミングの F# 言語のサポートを統合します。 相互に非同期通信を行う必要がある複数の操作を行う場合、またはデータが使用可能になったときにデータを処理する場合に、これらのデータ フロー コンポーネントは役立ちます。 たとえば、Web カメラからのイメージ データを処理するアプリケーションを考えてみます。 データ フロー モデルを使用すると、イメージ フレームが使用可能になったときに、それをアプリケーションで処理できます。 たとえば、アプリケーションが輝度修正や赤目補正などを実行してイメージ フレームを向上させる場合、データ フロー コンポーネントの*パイプライン*を作成できます。 パイプラインの各ステージは、イメージを変換するために、TPL が提供する機能のような、粒度の粗い並列機能を使用する場合があります。  
   
  ここでは、TPL データ フロー ライブラリの概要を示します。 プログラミング モデル、定義済みのデータ フロー ブロックの型、およびアプリケーションの特定の要件を満たすためのデータ フロー ブロックの構成方法を説明します。  
-  
-> [!TIP]
->  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> 名前空間) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
  このドキュメントは、次のトピックに分かれています。  
   
@@ -64,16 +61,16 @@ ms.lasthandoff: 10/18/2017
 >  それぞれの定義済みのソースのデータ フロー ブロックの型は、メッセージを受信した順にそれが伝達されることを保証するため、ソース ブロックは各メッセージを読み取ってから、次のメッセージを処理する必要があります。 したがって、フィルター処理を使用して複数のターゲットをソースに接続する場合、各メッセージを少なくとも 1 つのターゲット ブロックが受信するようにします。 そうしない場合、アプリケーションでデッドロックが発生する可能性があります。  
   
 ### <a name="message-passing"></a>メッセージ パッシング  
- データ フロー プログラミング モデルは、プログラムの独立したコンポーネントがメッセージの送信によって相互に通信する、*メッセージ パッシング*の概念に関連しています。 アプリケーション コンポーネント間でメッセージを伝達する方法の 1 つが呼び出されて、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A>と<xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType>ターゲット データ フロー ブロック ポストにメッセージを送信する方法 (<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A>同期的には、機能<xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A>非同期的に動作) および<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A>、 <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A>、および<xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A>メソッドのソース ブロックからメッセージを受信します。 入力データをヘッド ノード (ターゲット ブロック) に送信し、出力データをパイプラインのターミナル ノードまたはネットワーク (1 つ以上のソース ブロック) のターミナル ノードから受信することにより、これらのメソッドとデータ フロー パイプラインまたはネットワークを結合することができます。 <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Choose%2A> メソッドを使用して、データが使用可能な、指定されたソースの先頭から読み取り、そのデータにアクションを実行することもできます。  
+ データ フロー プログラミング モデルは、プログラムの独立したコンポーネントがメッセージの送信によって相互に通信する、*メッセージ パッシング*の概念に関連しています。 アプリケーション コンポーネントの間でメッセージを伝達する方法の 1 つは、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> および <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType> メソッドを呼び出して、ターゲット データ フロー ブロック ポストにメッセージを送信し (<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> は同期的に動作し、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> は非同期的に動作します)、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A>、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A>、および <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A> メソッドを呼び出して、ソース ブロックからメッセージを受け取ることです。 入力データをヘッド ノード (ターゲット ブロック) に送信し、出力データをパイプラインのターミナル ノードまたはネットワーク (1 つ以上のソース ブロック) のターミナル ノードから受信することにより、これらのメソッドとデータ フロー パイプラインまたはネットワークを結合することができます。 <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Choose%2A> メソッドを使用して、データが使用可能な、指定されたソースの先頭から読み取り、そのデータにアクションを実行することもできます。  
   
- ソース ブロックを呼び出してターゲット ブロックにデータを提供する、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A?displayProperty=nameWithType>メソッドです。 ターゲット ブロックは、提供されたメッセージに、3 つの方法のうちの 1 つで応答します。メッセージを受け入れるか、メッセージを拒否するか、またはメッセージを延期できます。 ターゲットがメッセージを受け入れると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> メソッドは <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted> を返します。 ターゲットがメッセージを拒否すると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> メソッドは <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined> を返します。 ターゲットがソースからメッセージを受け取らないことを要求すると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> は <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.DecliningPermanently> を返します。 その戻り値を受信した後は、定義済みのソース ブロックの型は、リンクされたターゲットにメッセージを提供せず、自動的にそのターゲットからリンク解除します。  
+ ソース ブロックは、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A?displayProperty=nameWithType> メソッドを呼び出して、ターゲット ブロックにデータを提供します。 ターゲット ブロックは、提供されたメッセージに、3 つの方法のうちの 1 つで応答します。メッセージを受け入れるか、メッセージを拒否するか、またはメッセージを延期できます。 ターゲットがメッセージを受け入れると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> メソッドは <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted> を返します。 ターゲットがメッセージを拒否すると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> メソッドは <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined> を返します。 ターゲットがソースからメッセージを受け取らないことを要求すると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> は <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.DecliningPermanently> を返します。 その戻り値を受信した後は、定義済みのソース ブロックの型は、リンクされたターゲットにメッセージを提供せず、自動的にそのターゲットからリンク解除します。  
   
- 後で使用するために、ターゲット ブロックがメッセージを延期すると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> メソッドは <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Postponed> を返します。 メッセージを延期したターゲット ブロックには、その後の呼び出しことができます、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ReserveMessage%2A?displayProperty=nameWithType>メソッドを提供されたメッセージを予約しようとしています。 この時点で、メッセージはまだ使用できてターゲット ブロックから使用できるか、または他のターゲットに取得されています。 ターゲット ブロックがメッセージを後で必要または必要としないメッセージを呼び出し、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ConsumeMessage%2A?displayProperty=nameWithType>または<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ReleaseReservation%2A>メソッド、それぞれします。 通常は、メッセージの予約は、最短一致のモードで動作するデータ フロー ブロックの型で使用されます。 最短一致のモードについては、このドキュメントの後で説明します。 延期されたメッセージを予約せずに、ターゲット ブロックは <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ConsumeMessage%2A?displayProperty=nameWithType> メソッドを使用して、直接延期されたメッセージを使用しようとすることもできます。  
+ 後で使用するために、ターゲット ブロックがメッセージを延期すると、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> メソッドは <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Postponed> を返します。 メッセージを延期したターゲット ブロックは、後から <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ReserveMessage%2A?displayProperty=nameWithType> メソッドを呼び出して、提供されたメッセージの予約を試みることができます。 この時点で、メッセージはまだ使用できてターゲット ブロックから使用できるか、または他のターゲットに取得されています。 ターゲット ブロックがメッセージを後から必要とする場合、またはメッセージを必要としない場合には、それぞれ <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ConsumeMessage%2A?displayProperty=nameWithType> または <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ReleaseReservation%2A> メソッドを呼び出します。 通常は、メッセージの予約は、最短一致のモードで動作するデータ フロー ブロックの型で使用されます。 最短一致のモードについては、このドキュメントの後で説明します。 延期されたメッセージを予約せずに、ターゲット ブロックは <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ConsumeMessage%2A?displayProperty=nameWithType> メソッドを使用して、直接延期されたメッセージを使用しようとすることもできます。  
   
 ### <a name="dataflow-block-completion"></a>データ フロー ブロックの完了  
- データ フロー ブロックは、*完了*の概念をサポートしています。 完了した状態にあるデータ フロー ブロックは、処理を実行しません。 各データ フロー ブロックが関連付けられている<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>と呼ばれる、オブジェクト、*完了タスク*ブロックの完了ステータスを表すです。 <xref:System.Threading.Tasks.Task> オブジェクトの終了を待機できるため、完了タスクを使用して、データ フロー ネットワークの 1 つ以上のターミナル ノードが終了するまで待機できます。 <xref:System.Threading.Tasks.Dataflow.IDataflowBlock> インターフェイスは、データ フロー ブロックに完了の要求を通知する <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> メソッドを定義し、またデータ フロー ブロックの完了タスクを返す <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion%2A> プロパティを定義します。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> と <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> はどちらも <xref:System.Threading.Tasks.Dataflow.IDataflowBlock> インターフェイスを継承します。  
+ データ フロー ブロックは、*完了*の概念をサポートしています。 完了した状態にあるデータ フロー ブロックは、処理を実行しません。 各データ フロー ブロックには、ブロックの完了ステータスを表す "*完了タスク*" と呼ばれる <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> オブジェクトが関連付けられています。 <xref:System.Threading.Tasks.Task> オブジェクトの終了を待機できるため、完了タスクを使用して、データ フロー ネットワークの 1 つ以上のターミナル ノードが終了するまで待機できます。 <xref:System.Threading.Tasks.Dataflow.IDataflowBlock> インターフェイスは、データ フロー ブロックに完了の要求を通知する <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> メソッドを定義し、またデータ フロー ブロックの完了タスクを返す <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion%2A> プロパティを定義します。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> と <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> はどちらも <xref:System.Threading.Tasks.Dataflow.IDataflowBlock> インターフェイスを継承します。  
   
- データ フロー ブロックがエラーなしで完了したか、1 つのエラーが発生したか、複数のエラーが発生したか、取り消されたかを知る 2 つの方法があります。 最初の方法が呼び出されて、<xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>完了タスクでのメソッド、 `try` - `catch`ブロック (`Try` - `Catch` Visual Basic で)。 次の例では、入力値が 0 未満の場合に <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> をスローする <xref:System.ArgumentOutOfRangeException> オブジェクトを作成します。 この例では、完了タスクで <xref:System.AggregateException> を呼び出すと、<xref:System.Threading.Tasks.Task.Wait%2A> がスローされます。 <xref:System.ArgumentOutOfRangeException> には <xref:System.AggregateException.InnerExceptions%2A> オブジェクトの <xref:System.AggregateException> プロパティを使用してアクセスします。  
+ データ フロー ブロックがエラーなしで完了したか、1 つのエラーが発生したか、複数のエラーが発生したか、取り消されたかを知る 2 つの方法があります。 最初の方法は、`try`-`catch` ブロック (Visual Basic では `Try`-`Catch`) の完了タスクで <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> メソッドを呼び出すことです。 次の例では、入力値が 0 未満の場合に <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> をスローする <xref:System.ArgumentOutOfRangeException> オブジェクトを作成します。 この例では、完了タスクで <xref:System.AggregateException> を呼び出すと、<xref:System.Threading.Tasks.Task.Wait%2A> がスローされます。 <xref:System.ArgumentOutOfRangeException> には <xref:System.AggregateException.InnerExceptions%2A> オブジェクトの <xref:System.AggregateException> プロパティを使用してアクセスします。  
   
  [!code-csharp[TPLDataflow_Overview#10](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#10)]
  [!code-vb[TPLDataflow_Overview#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#10)]  
@@ -87,7 +84,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#11)]
  [!code-vb[TPLDataflow_Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#11)]  
   
- また、継続タスクの本体で <xref:System.Threading.Tasks.Task.IsCanceled%2A> などのプロパティを使用して、データ フロー ブロックの完了ステータスに関する追加情報を決定することもできます。 継続タスク、および継続タスクと取り消し処理やエラー処理との関連の詳細については、「[Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)」(継続タスクを使用したタスクのチェーン作成)、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」、「[例外処理 (タスク並列ライブラリ)](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)」、および「[方法: タスクがスローした例外を処理する](http://msdn.microsoft.com/en-us/d6c47ec8-9de9-4880-beb3-ff19ae51565d)」を参照してください。  
+ また、継続タスクの本体で <xref:System.Threading.Tasks.Task.IsCanceled%2A> などのプロパティを使用して、データ フロー ブロックの完了ステータスに関する追加情報を決定することもできます。 継続タスク、および継続タスクと取り消し処理やエラー処理との関連の詳細については、「[Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)」(継続タスクを使用したタスクのチェーン作成)、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」、「[例外処理 (タスク並列ライブラリ)](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)」、および「[方法: タスクがスローした例外を処理する](http://msdn.microsoft.com/library/d6c47ec8-9de9-4880-beb3-ff19ae51565d)」を参照してください。  
   
  [[ページのトップへ](#top)]  
   
@@ -106,7 +103,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#1)]
  [!code-vb[TPLDataflow_Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#1)]  
   
- メッセージを書き込むし、メッセージを読み取る方法を示す完全な例については、<xref:System.Threading.Tasks.Dataflow.BufferBlock%601>オブジェクトを参照してください[する方法: メッセージを書き込むと、データ フロー ブロックからメッセージの読み取り](../../../docs/standard/parallel-programming/how-to-write-messages-to-and-read-messages-from-a-dataflow-block.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> オブジェクトへのメッセージの書き込み方法や、オブジェクトからのメッセージの読み取り方法の完全な例については、「[方法: データフロー ブロックに対してメッセージの読み取りと書き込みを行う](../../../docs/standard/parallel-programming/how-to-write-messages-to-and-read-messages-from-a-dataflow-block.md)」をご覧ください。  
   
 #### <a name="broadcastblockt"></a>BroadcastBlock(T)  
  <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> クラスは、複数のメッセージを別のコンポーネントに渡すときに、そのコンポーネントで必要になるのが最新の値のみである場合に便利です。 また、このクラスは、メッセージを複数のコンポーネントにブロードキャストする場合にも便利です。  
@@ -116,17 +113,17 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#2)]
  [!code-vb[TPLDataflow_Overview#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#2)]  
   
- 使用する方法を示す完全な例について<xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601>複数のターゲット ブロックにメッセージをブロードキャストするを参照してください。[する方法: データフロー ブロックのタスク スケジューラを指定](../../../docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> を使って複数のターゲット ブロックにメッセージをブロードキャストする方法を示す例について詳しくは、「[方法: データフロー ブロックのタスク スケジューラを指定する](../../../docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)」をご覧ください。  
   
 #### <a name="writeonceblockt"></a>WriteOnceBlock(T)  
- <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> クラスは <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> クラスに似ていますが、<xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> オブジェクトに 1 回しか書き込むことができない点が異なります。 考えることができます<xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601>c# ようなもの[読み取り専用](~/docs/csharp/language-reference/keywords/readonly.md)([ReadOnly](~/docs/visual-basic/language-reference/modifiers/readonly.md)で[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) ことを除いて、キーワード、<xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601>オブジェクトを変更できなくなる値を受信した後代わりに構築時です。 <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> クラスと同様に、ターゲットが <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> オブジェクトからメッセージを受信しても、そのメッセージはそのオブジェクトから削除されません。 そのため、複数のターゲットがメッセージのコピーを受信します。 <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> のクラスは、複数のメッセージの最初のメッセージだけを伝達する場合に便利です。  
+ <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> クラスは <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> クラスに似ていますが、<xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> オブジェクトに 1 回しか書き込むことができない点が異なります。 <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> は C# の [readonly](~/docs/csharp/language-reference/keywords/readonly.md) ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では [ReadOnly](~/docs/visual-basic/language-reference/modifiers/readonly.md)) キーワードと似ていると考えることができますが、構築時でなく、値を読み取った後は、<xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> オブジェクトを変更できなくなる点が異なります。 <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> クラスと同様に、ターゲットが <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> オブジェクトからメッセージを受信しても、そのメッセージはそのオブジェクトから削除されません。 そのため、複数のターゲットがメッセージのコピーを受信します。 <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> のクラスは、複数のメッセージの最初のメッセージだけを伝達する場合に便利です。  
   
  次の基本的な例は、<xref:System.String> オブジェクトに複数の <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> の値をポストし、その値をそのオブジェクトから読み込みます。 <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> オブジェクトには 1 回だけ書き込むことができるため、<xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> オブジェクトは 1 つのメッセージを受信した後は、それ以降のメッセージを破棄します。  
   
  [!code-csharp[TPLDataflow_Overview#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#3)]
  [!code-vb[TPLDataflow_Overview#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#3)]  
   
- 使用する方法を示す完全な例について<xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601>が完了すると、最初の操作の値を受信するを参照してください。[する方法: データフロー ブロックのリンクを解除](../../../docs/standard/parallel-programming/how-to-unlink-dataflow-blocks.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.WriteOnceBlock%601> を使って終了した最初の操作の値を受け取る方法の例について詳しくは、「[方法: データフロー ブロックのリンクを解除する](../../../docs/standard/parallel-programming/how-to-unlink-dataflow-blocks.md)」をご覧ください。  
   
 ### <a name="execution-blocks"></a>実行ブロック  
  実行ブロックは、受け取ったデータのそれぞれに、ユーザーが指定したデリゲートを呼び出します。 TPL データ フロー ライブラリは <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType> と <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> の 3 つの実行ブロックの型を提供します。  
@@ -139,7 +136,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#4)]
  [!code-vb[TPLDataflow_Overview#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#4)]  
   
- 持つデリゲートを使用する方法を示す完全な例については、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>クラスを参照してください[する方法: 実行操作時に、データ フロー ブロックでデータを受信](../../../docs/standard/parallel-programming/how-to-perform-action-when-a-dataflow-block-receives-data.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> クラスでデリゲートを使う方法を示す完全な例については、「[方法: データフロー ブロックでデータを受信したときにアクションを実行する](../../../docs/standard/parallel-programming/how-to-perform-action-when-a-dataflow-block-receives-data.md)」をご覧ください。  
   
 #### <a name="transformblocktinput-toutput"></a>TransformBlock(TInput, TOutput)  
  <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> クラスは <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> クラスに似ていますが、ソースとしてもターゲットとしても動作する点が異なります。 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトに渡すデリゲートは `TOutput` 型の値を返します。 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトに提供するデリゲートは、`System.Func<TInput, TOutput>` 型または`System.Func<TInput, Task>` 型を使用できます。 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトを `System.Func\<TInput, TOutput>` と共に使用すると、各入力要素の処理はデリゲートが返されたときに完了したと見なされます。 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトを `System.Func<TInput, Task<TOutput>>` と共に使用すると、各入力要素の処理は返された <xref:System.Threading.Tasks.Task> オブジェクトが終了した場合にのみ、完了したと見なされます。 <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> と同様に、この 2 つの方法を使って、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> を使用して各入力要素を同期的にも非同期的にも処理することができます。  
@@ -149,7 +146,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#5)]
  [!code-vb[TPLDataflow_Overview#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#5)]  
   
- 使用する完全な例について<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>Windows フォーム アプリケーションでイメージ処理を実行するデータフロー ブロックのネットワークで、次を参照してください。[チュートリアル: Windows フォーム アプリケーションでのデータフローの使用](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md)です。  
+ Windows フォーム アプリケーションでイメージ処理を実行するデータフロー ブロックのネットワークで <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> を使う例について詳しくは、「[チュートリアル: Windows フォーム アプリケーションでのデータフローの使用](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md)」をご覧ください。  
   
 #### <a name="transformmanyblocktinput-toutput"></a>TransformManyBlock(TInput, TOutput)  
  <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> クラスは <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> クラスに似ていますが、各入力値に 1 つの出力値を生成するのでなく、<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> は各入力値に出力値を生成しないか、または 1 つ以上の出力値を生成する点が異なります。 <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> オブジェクトに提供するデリゲートは、`System.Func<TInput, IEnumerable<TOutput>>` 型または`type System.Func<TInput, Task<IEnumerable<TOutput>>>` 型を使用できます。 <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> オブジェクトを `System.Func<TInput, IEnumerable<TOutput>>` と共に使用すると、各入力要素の処理はデリゲートが返されたときに完了したと見なされます。 <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> オブジェクトを `System.Func<TInput, Task<IEnumerable<TOutput>>>` と共に使用すると、各入力要素の処理は返された `System.Threading.Tasks.Task<IEnumerable<TOutput>>` オブジェクトが終了した場合にのみ、完了したと見なされます。  
@@ -159,7 +156,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#6)]
  [!code-vb[TPLDataflow_Overview#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#6)]  
   
- 使用する完全な例について<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602>データフロー パイプラインの各入力の複数の独立した出力を生成するために、次を参照してください。[チュートリアル: データフロー パイプラインの作成](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> を使ってデータフロー パイプラインの各入力に複数の独立した出力を生成する方法について詳しくは、「[チュートリアル: データフロー パイプラインの作成](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md)」をご覧ください。  
   
 #### <a name="degree-of-parallelism"></a>並列化の次数  
  すべての <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> と <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> オブジェクトは、ブロックが入力メッセージを処理できるようになるまで、入力メッセージをバッファリングします。 既定では、これらのクラスはメッセージを受信した順序で、一度に 1 つずつ処理します。 <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> と <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> のオブジェクトを有効化し、並列化の次数を指定して、複数のメッセージを同時に処理することもできます。 同時実行に関する詳細については、このドキュメントの後の「並列化の次数の指定」のセクションを参照してください。 並列化の次数を設定して実行データ フロー ブロックを有効化し、同時に複数のメッセージを処理する例については、「[方法: データ フロー ブロックで並列処理の範囲を指定する](../../../docs/standard/parallel-programming/how-to-specify-the-degree-of-parallelism-in-a-dataflow-block.md)」を参照してください。  
@@ -181,14 +178,14 @@ ms.lasthandoff: 10/18/2017
 #### <a name="batchblockt"></a>BatchBlock(T)  
  <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスは、バッチと呼ばれる入力データのセットを、出力データの配列に結合します。 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトを作成するときに、各バッチのサイズを指定します。 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトは、指定した数の入力要素を受け取ると、その要素を含む配列を非同期的に伝達します。 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトが完了状態に設定されているが、バッチを形成するために十分な要素を含んでいない場合には、残りの入力要素を含む最終的な配列を伝達します。  
   
- <xref:System.Threading.Tasks.Dataflow.BatchBlock%601>クラスは、どちらかで動作*最長一致*または*最短*モード。 既定では最長一致モードで、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトは提供されたすべてのメッセージを受け取り、指定された数の要素を受け取った後に、配列を伝達します。 最短一致モードでは、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトは、バッチを作成するために十分なソースがブロックへのメッセージを提供するまで、すべての受信メッセージを延期します。 最長一致モードでは通常、最短一致モードよりも処理のオーバーヘッドが低いため、パフォーマンスがよくなります。 ただし、アトミックな方法で複数のソースの使用量を調整する必要がある場合、最短一致モードを使用できます。 最短一致モードを指定するには、<xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> コンストラクターの `False` パラメーターの `dataflowBlockOptions` へ <xref:System.Threading.Tasks.Dataflow.BatchBlock%601.%23ctor%2A> を設定します。  
+ <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスは、"*最長一致*" モードまたは "*最短一致*" モードのどちらかで動作します。 既定では最長一致モードで、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトは提供されたすべてのメッセージを受け取り、指定された数の要素を受け取った後に、配列を伝達します。 最短一致モードでは、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトは、バッチを作成するために十分なソースがブロックへのメッセージを提供するまで、すべての受信メッセージを延期します。 最長一致モードでは通常、最短一致モードよりも処理のオーバーヘッドが低いため、パフォーマンスがよくなります。 ただし、アトミックな方法で複数のソースの使用量を調整する必要がある場合、最短一致モードを使用できます。 最短一致モードを指定するには、<xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> コンストラクターの `False` パラメーターの `dataflowBlockOptions` へ <xref:System.Threading.Tasks.Dataflow.BatchBlock%601.%23ctor%2A> を設定します。  
   
  次の基本的な例では、複数の <xref:System.Int32> の値を、バッチに 10 個の要素を持つ <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトにポストします。 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> からすべての値が伝達されることを保証するために、この例では <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> メソッドを呼び出します。 <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> メソッドは <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトを完了状態に設定するため、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトは残りのすべての要素を最終バッチとして伝達します。  
   
  [!code-csharp[TPLDataflow_Overview#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#7)]
  [!code-vb[TPLDataflow_Overview#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#7)]  
   
- 使用する完全な例について<xref:System.Threading.Tasks.Dataflow.BatchBlock%601>データベース挿入操作の効率を向上させるのを参照してください。[チュートリアル: を使用して BatchBlock および BatchedJoinBlock 効率の向上を](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> を使ってデータベース挿入操作の効率を向上させる完全な例については、「[チュートリアル: BatchBlock および BatchedJoinBlock を使用した効率の向上](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md)」をご覧ください。  
   
 #### <a name="joinblockt1-t2-"></a>JoinBlock(T1, T2, ...)  
  <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> と <xref:System.Threading.Tasks.Dataflow.JoinBlock%603> クラスは、入力要素を収集して、それらの要素を含む <xref:System.Tuple%602?displayProperty=nameWithType> または <xref:System.Tuple%603?displayProperty=nameWithType> オブジェクトを伝達します。 <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> クラスと <xref:System.Threading.Tasks.Dataflow.JoinBlock%603> クラスは、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> を継承しません。 代わりに、<xref:System.Threading.Tasks.Dataflow.JoinBlock%602.Target1%2A> を実装する <xref:System.Threading.Tasks.Dataflow.JoinBlock%602.Target2%2A>、<xref:System.Threading.Tasks.Dataflow.JoinBlock%603.Target3%2A>、および <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> のプロパティを提供します。  
@@ -200,7 +197,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#8)]
  [!code-vb[TPLDataflow_Overview#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#8)]  
   
- 使用する完全な例について<xref:System.Threading.Tasks.Dataflow.JoinBlock%602>協調的なリソースを共有する最短一致モードでのオブジェクトを参照してください[する方法: JoinBlock を使用して複数のソースからのデータ読み取りに](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md)です。  
+ 最短一致モードで <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> オブジェクトを使って協調的にリソースを共有する例について詳しくは、「[方法: JoinBlock を使用して複数のソースからデータを読み込む](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md)」をご覧ください。  
   
 #### <a name="batchedjoinblockt1-t2-"></a>BatchedJoinBlock(T1, T2, ...)  
  <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> と <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%603> クラスは、入力要素のバッチを収集して、それらの要素を含む `System.Tuple(IList(T1), IList(T2))` または `System.Tuple(IList(T1), IList(T2), IList(T3))` オブジェクトを伝達します。 <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> は <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> と <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> の組み合わせであると考えることができます。 <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> オブジェクトを作成するときに、各バッチのサイズを指定します。 <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> は、<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602.Target1%2A> を実装する <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602.Target2%2A> および <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> のプロパティを提供します。 すべてのターゲットから指定した数の入力要素を受け取ると、<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> オブジェクトは、それらの要素を含む `System.Tuple(IList(T1), IList(T2))` オブジェクトを非同期的に伝達します。  
@@ -210,7 +207,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_Overview#9](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#9)]
  [!code-vb[TPLDataflow_Overview#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#9)]  
   
- 使用する完全な例について<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602>結果と、プログラムがデータベースから読み取り中に発生する例外の両方をキャプチャするを参照してください。[チュートリアル: を使用して BatchBlock および BatchedJoinBlock 効率の向上を](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md)です。  
+ <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> を使用して、プログラムがデータベースを読み取る間にその結果と発生する例外の両方をキャプチャする例について詳しくは、「[チュートリアル: BatchBlock および BatchedJoinBlock を使用した効率の向上](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md)」をご覧ください。  
   
  [[ページのトップへ](#top)]  
   
@@ -235,7 +232,7 @@ ms.lasthandoff: 10/18/2017
 ### <a name="specifying-the-task-scheduler"></a>タスク スケジューラの指定  
  すべての定義済みのデータ フロー ブロックは TPL タスク スケジューリング メカニズムを使って、ターゲットへのデータの伝達、ソースからのデータの受け取り、データが使用可能になったときのユーザー定義のデリゲートの実行、などのアクティビティを実行します。 <xref:System.Threading.Tasks.TaskScheduler> は、タスクをスレッドのキューに置くタスク スケジューラを表す抽象クラスです。 既定のタスク スケジューラである <xref:System.Threading.Tasks.TaskScheduler.Default%2A> は、<xref:System.Threading.ThreadPool> クラスを使用して作業をキューに置き、実行します。 データ フロー ブロック オブジェクトを構成する場合、<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> プロパティを設定して、既定のタスク スケジューラを上書きできます。  
   
- 同じタスク スケジューラが複数のデータ フロー ブロックを管理する場合、それらにポリシーを強制的に適用できます。 たとえば、複数のデータ フロー ブロックが、それぞれ同じ <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> オブジェクトの排他スケジューラを対象とするように構成されている場合、これらのブロックにわたって実行されるすべての操作がシリアル化されます。 同様に、これらのブロックが同じ <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> オブジェクトの同時スケジューラをターゲットとして構成され、そのスケジューラが最大同時実行レベルに構成されている場合、これらのブロックのすべての操作は、その同時操作の数に制限されます。 使用する例については、<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair>に並列に行うものの、書き込み操作のすべての操作とは排他的に発生するを参照して、読み取り操作を有効にするクラス[する方法: データフロー ブロックのタスク スケジューラを指定](../../../docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)です。 TPL のタスク スケジューラの詳細については、<xref:System.Threading.Tasks.TaskScheduler> クラスに関するトピックを参照してください。  
+ 同じタスク スケジューラが複数のデータ フロー ブロックを管理する場合、それらにポリシーを強制的に適用できます。 たとえば、複数のデータ フロー ブロックが、それぞれ同じ <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> オブジェクトの排他スケジューラを対象とするように構成されている場合、これらのブロックにわたって実行されるすべての操作がシリアル化されます。 同様に、これらのブロックが同じ <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> オブジェクトの同時スケジューラをターゲットとして構成され、そのスケジューラが最大同時実行レベルに構成されている場合、これらのブロックのすべての操作は、その同時操作の数に制限されます。 <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> クラスを使って、読み取り操作は並列で実行可能とするものの、書き込み操作はすべての操作で排他的に行う例について詳しくは、「[方法: データフロー ブロックのタスク スケジューラを指定する](../../../docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)」をご覧ください。 TPL のタスク スケジューラの詳細については、<xref:System.Threading.Tasks.TaskScheduler> クラスに関するトピックを参照してください。  
   
 ### <a name="specifying-the-degree-of-parallelism"></a>並列化の次数の指定  
  既定では、TPL データ フロー ライブラリが提供する 3 つの実行ブロックの型、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> および <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> は、一度に 1 つのメッセージを処理します。 これらのデータ フロー ブロックの型は、メッセージを受け取った順番でそれを処理します。 データ フロー ブロックのオブジェクトを構築するときに、これらのデータ フロー ブロックがメッセージを同時に操作できるようにするには、<xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.MaxDegreeOfParallelism%2A?displayProperty=nameWithType> のプロパティを設定します。  
@@ -276,13 +273,13 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[方法: データ フロー ブロックに対してメッセージの読み取りと書き込みを行う](../../../docs/standard/parallel-programming/how-to-write-messages-to-and-read-messages-from-a-dataflow-block.md)|<xref:System.Threading.Tasks.Dataflow.BufferBlock%601> オブジェクトにメッセージを書き込む方法とメッセージを読み取る方法を示します。|  
 |[方法: プロデューサー/コンシューマーのデータ フロー パターンを実装する](../../../docs/standard/parallel-programming/how-to-implement-a-producer-consumer-dataflow-pattern.md)|データ フロー モデルを使ってプロデューサー/コンシューマー パターンを実装し、プロデューサーがデータ フロー ブロックにメッセージを送信して、コンシューマーがそのブロックからメッセージを読み取る方法を示します。|  
 |[方法: データ フロー ブロックでデータを受信したときにアクションを実行する](../../../docs/standard/parallel-programming/how-to-perform-action-when-a-dataflow-block-receives-data.md)|デリゲートを実行データ フロー ブロックの型である、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> と <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> に提供する方法について説明します。|  
 |[チュートリアル: データ フロー パイプラインの作成](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md)|Web からテキストをダウンロードし、そのテキストの操作を実行する、データ フロー パイプラインを作成する方法について説明します。|  
-|[方法: データ フロー ブロックのリンクを解除する](../../../docs/standard/parallel-programming/how-to-unlink-dataflow-blocks.md)|使用する方法を示します、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A>ソースがターゲットにメッセージを提供した後に、ターゲット ブロックをソースからのリンクを解除するメソッド。|  
+|[方法: データ フロー ブロックのリンクを解除する](../../../docs/standard/parallel-programming/how-to-unlink-dataflow-blocks.md)|<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> メソッドを使って、ソースがターゲットにメッセージを提供した後に、ターゲット ブロックをソースからリンク解除する方法を示します。|  
 |[チュートリアル: Windows フォーム アプリケーションでのデータ フローの使用](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md)|Windows フォーム アプリケーションでイメージ処理を実行する、データ フロー ブロックのネットワークを作成する方法を示します。|  
 |[方法: データ フロー ブロックをキャンセルする](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md)|Windows フォーム アプリケーションで取り消しを使う方法を説明します。|  
 |[方法: JoinBlock を使用して複数のソースからデータを読み込む](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md)|データが複数のソースから使用できるようになった場合に <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> クラスを使って操作を実行する方法、および最短一致モードを使って、複数の結合ブロックがデータ ソースをより効率的に共有できる方法について説明します。|  

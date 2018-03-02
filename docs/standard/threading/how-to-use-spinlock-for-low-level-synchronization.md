@@ -11,32 +11,36 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: SpinLock, how to use
+helpviewer_keywords:
+- SpinLock, how to use
 ms.assetid: a9ed3e4e-4f29-4207-b730-ed0a51ecbc19
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 30ddc7d340b210aaad4a04ea43e89555d2701f20
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 11d41a1fd04039fd08d945a72a37a479f79449a5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>方法: 下位レベルの同期に SpinLock を使用する
-次の例で使用する方法、<xref:System.Threading.SpinLock>です。  
+<xref:System.Threading.SpinLock> の使用例を以下に示します。  
   
 ## <a name="example"></a>例  
- この例ではクリティカル セクションには最小限の作業は、これはにとって適切な候補を実行、<xref:System.Threading.SpinLock>です。 少量の作業を増やすとパフォーマンスが向上、<xref:System.Threading.SpinLock>標準的なロックを比較します。 ただし、SpinLock が標準ロックよりも高負荷になるポイントがあります。 プロファイリング ツールで同時実行プロファイリング機能を使用して、どのタイプのロックを使用すればプログラムのパフォーマンスが高まるかを確認できます。 詳細については、「[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)」を参照してください。  
+ この例では、クリティカル セクションが実行する作業量は最小限であるため、<xref:System.Threading.SpinLock> に適しています。 作業量を少し増やすと、標準ロックと比較して <xref:System.Threading.SpinLock> のパフォーマンスは高まります。 ただし、SpinLock が標準ロックよりも高負荷になるポイントがあります。 プロファイリング ツールで同時実行プロファイリング機能を使用して、どのタイプのロックを使用すればプログラムのパフォーマンスが高まるかを確認できます。 詳細については、「[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)」を参照してください。  
   
  [!code-csharp[CDS_SpinLock#02](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_spinlock/cs/spinlockdemo.cs#02)]
  [!code-vb[CDS_SpinLock#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_spinlock/vb/spinlock_vb.vb#02)]  
   
- <xref:System.Threading.SpinLock>共有リソースのロックが保持されるを行わない場合に便利な場合あります非常に長いです。 そのような場合、マルチコア コンピューターでは、ロックが解除されるまで数回のサイクルの間、ブロックされたスレッドをスピンさせると効率が高まることがあります。 スピンするとスレッドはブロックされなくなりますが、これは CPU 負荷の高いプロセスです。 <xref:System.Threading.SpinLock>論理プロセッサまたはハイパー スレッディングのシステムで優先順位の逆転の枯渇を防ぐために特定の条件下でスピンは停止されます。  
+ <xref:System.Threading.SpinLock> は、共有リソースのロックが非常に長い期間使用されない場合に有用なことがあります。 そのような場合、マルチコア コンピューターでは、ロックが解除されるまで数回のサイクルの間、ブロックされたスレッドをスピンさせると効率が高まることがあります。 スピンするとスレッドはブロックされなくなりますが、これは CPU 負荷の高いプロセスです。 ハイパースレッディングを使用するシステムでは、<xref:System.Threading.SpinLock> は特定の状況でスピンを停止して、論理プロセッサの不足や優先順位の逆転が発生するのを回避します。  
   
- この例では、<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>クラスは、マルチ スレッド アクセスをユーザーの同期が必要です。 アプリケーションで .NET Framework version 4 を対象とする、別のオプションが使用する、<xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType>ユーザーのすべてのロックは不要です。  
+ この例では、<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> クラスを使用するため、マルチスレッド アクセスにはユーザーによる同期が必要になります。 .NET Framework Version 4 をターゲットにしているアプリケーションでは、ユーザーのロックが不要な <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> を使用することもできます。  
   
- 使用に注意してください`false`(`False` Visual Basic で) への呼び出しで<xref:System.Threading.SpinLock.Exit%2A>です。 これにより、最適なパフォーマンスを得られます。 メモリ フェンスを使用するには、IA64 アーキテクチャで `true` (`True`) を指定します。これにより、書き込みバッファーがフラッシュされるので、ロックを使用して他のスレッドを終了できるようになります。  
+ <xref:System.Threading.SpinLock.Exit%2A> の呼び出しに `false` (Visual Basic では `False`) が使用されていることに注目してください。 これにより、最適なパフォーマンスを得られます。 メモリ フェンスを使用するには、IA64 アーキテクチャで `true` (`True`) を指定します。これにより、書き込みバッファーがフラッシュされるので、ロックを使用して他のスレッドを終了できるようになります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スレッド処理オブジェクトと機能](../../../docs/standard/threading/threading-objects-and-features.md)

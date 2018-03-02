@@ -14,32 +14,35 @@ helpviewer_keywords:
 - foreground threads
 - background threads
 ms.assetid: cfe0d632-dd35-47e0-91ad-f742a444005e
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 42ad427fc2c1175c0d9b333aa418aea039f11a35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 83022bd27379e1ee34197af4897a5c809f495f48
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="foreground-and-background-threads"></a>フォアグラウンド スレッドとバックグラウンド スレッド
-マネージ スレッドは、バック グラウンド スレッドまたはフォア グラウンド スレッドのいずれかです。 バック グラウンド スレッドは同じですがフォア グラウンド スレッドを 1 つの例外: バック グラウンド スレッドが実行されているマネージ実行環境を維持しません。 すべてのフォア グラウンド スレッドをマネージ プロセス (.exe ファイルは、マネージ アセンブリ) に停止すると、システムはすべてのバック グラウンド スレッドを停止し、シャット ダウンします。  
+マネージ スレッドは、バックグラウンド スレッドまたはフォアグラウンド スレッドのいずれかです。 バックグラウンド スレッドは、1 つの例外を除き、フォアグラウンド スレッドと同じです。その例外とは、バックグラウンド スレッドではマネージ実行環境を実行させておくことができないことです。 すべてのフォアグラウンド スレッドが (.exe ファイルがマネージ アセンブリである) マネージ プロセスで停止されると、システムはすべてのバックグラウンド スレッドを停止し、シャットダウンします。  
   
 > [!NOTE]
->  ランタイムでは、プロセスをシャット ダウンしているため、バック グラウンド スレッドが停止したら、スレッドで例外はスローされません。 ただし、場合のスレッドは停止ため、<xref:System.AppDomain.Unload%2A?displayProperty=nameWithType>メソッドは、アプリケーション ドメインをアンロード、<xref:System.Threading.ThreadAbortException>がフォア グラウンドとバック グラウンド スレッドでスローされます。  
+>  プロセスがシャットダウンしているため、ランタイムがバックグラウンド スレッドを停止した場合、スレッドでは例外がスローされません。 ただし、<xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> メソッドがアプリケーション ドメインをアンロードしたために、スレッドが停止された場合、フォアグラウンド スレッドとバックグラウンド スレッドの両方で <xref:System.Threading.ThreadAbortException> がスローされます。  
   
- 使用して、<xref:System.Threading.Thread.IsBackground%2A?displayProperty=nameWithType>スレッドがバック グラウンドまたはフォア グラウンド スレッドがかどうかを判断する、またはその状態を変更するプロパティです。 スレッドはバック グラウンド スレッドにいつでも設定してその<xref:System.Threading.Thread.IsBackground%2A>プロパティを`true`です。  
+ スレッドがバックグラウンド スレッドであるか、フォアグラウンド スレッドであるかを判断する場合や、その状態を変更する場合は、<xref:System.Threading.Thread.IsBackground%2A?displayProperty=nameWithType> プロパティを使用します。 スレッドは、<xref:System.Threading.Thread.IsBackground%2A> プロパティを `true` に設定することで、いつでもバックグラウンド スレッドに変更できます。  
   
 > [!IMPORTANT]
->  スレッドの前景色または背景の状態は、スレッドで未処理の例外の結果には影響しません。 .NET framework version 2.0 では、フォア グラウンドまたはバック グラウンド スレッドで未処理の例外は、アプリケーションの終了になります。 参照してください[マネージ スレッドの例外](../../../docs/standard/threading/exceptions-in-managed-threads.md)です。  
+>  スレッドのフォアグラウンドまたはバックグラウンドの状態が、スレッドのハンドルされない例外の結果に影響することはありません。 .NET framework Version 2.0 では、フォアグラウンドまたはバックグラウンド スレッドのハンドルされない例外により、アプリケーションが終了します。 「[マネージ スレッドの例外](../../../docs/standard/threading/exceptions-in-managed-threads.md)」を参照してください。  
   
- マネージ スレッド プールに属するスレッドを (つまり、あるスレッド<xref:System.Threading.Thread.IsThreadPoolThread%2A>プロパティは`true`) スレッドがバック グラウンドします。 アンマネージ コードからマネージ実行環境を入力するすべてのスレッドがバック グラウンド スレッドとしてマークされます。 すべてのスレッドを作成して、新しい開始によって生成された<xref:System.Threading.Thread>オブジェクトは既定のフォア グラウンド スレッドでします。  
+ マネージ スレッド プールに属するスレッド (つまり、<xref:System.Threading.Thread.IsThreadPoolThread%2A> プロパティが `true` のスレッド) はバックグラウンド スレッドです。 アンマネージ コードからマネージ実行環境に入るすべてのスレッドは、バックグラウンド スレッドとしてマークされます。 新しい <xref:System.Threading.Thread> オブジェクトを作成して開始することで生成されるすべてのスレッドは、既定でフォアグラウンド スレッドとなります。  
   
- スレッドを使用して、ソケット接続などのアクティビティを監視する場合は、設定、<xref:System.Threading.Thread.IsBackground%2A>プロパティを`true`スレッドが終了してから、プロセスをできないようにします。  
+ スレッドを使用して、ソケット接続などのアクティビティを監視する場合は、その <xref:System.Threading.Thread.IsBackground%2A> プロパティを `true` に設定して、スレッドがプロセスの終了を回避しないようにします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.Thread.IsBackground%2A?displayProperty=nameWithType>  
  <xref:System.Threading.Thread>  
  <xref:System.Threading.ThreadAbortException>

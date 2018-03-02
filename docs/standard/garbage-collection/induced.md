@@ -8,17 +8,21 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: garbage collection, forced
+helpviewer_keywords:
+- garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 92918e347b10dfcf3a0d6e2c08cec8c7a6963f5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6c3093a14fe5186df086cb5b63d20a7eb309c7ba
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="induced-collections"></a>発生したコレクション
 ほとんどの場合、コレクションの実行に最適なタイミングはガベージ コレクターが判断できるので、ガベージ コレクターに任せるのが良い方法です。 ただし、ごくまれに、強制的にコレクションを実行するとアプリケーションのパフォーマンスが向上する場合があります。 このような場合は、<xref:System.GC.Collect%2A?displayProperty=nameWithType> メソッドを使用してガベージ コレクションを強制的に実行できます。  
@@ -42,6 +46,6 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.GCCollectionMode.Forced> または <xref:System.GCCollectionMode.Default>|ブロッキング コレクションはできるだけ早く実行されます。 バックグラウンド コレクションが実行中でジェネレーションが 0 または 1 の場合、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> メソッドは直ちにブロッキング コレクションをトリガーし、コレクションが終了すると制御を戻します。 バックグラウンド コレクションが実行中で `generation` パラメーターが 2 の場合、メソッドはバックグラウンド コレクションの終了を待機し、ジェネレーション 2 のブロッキング コレクションをトリガーして、制御を戻します。|コレクションはできるだけ早く実行されます。 <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> メソッドはバックグラウンド コレクションを要求しますが、それは保証されず、状況によってはブロッキング コレクションが実行される場合もあります。 バックグラウンド コレクションが既に実行中の場合、メソッドはすぐに制御を返します。|  
 |<xref:System.GCCollectionMode.Optimized>|ガベージ コレクターおよび `generation` パラメーターの状態によっては、ブロッキング コレクションが実行される場合があります。 ガベージ コレクターは最適なパフォーマンスを提供しようとします。|ガベージ コレクターの状態によっては、コレクションが実行される場合があります。 <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> メソッドはバックグラウンド コレクションを要求しますが、それは保証されず、状況によってはブロッキング コレクションが実行される場合もあります。 ガベージ コレクターは最適なパフォーマンスを提供しようとします。 バックグラウンド コレクションが既に実行中の場合、メソッドはすぐに制御を返します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [待機モード](../../../docs/standard/garbage-collection/latency.md)  
  [ガベージ コレクション](../../../docs/standard/garbage-collection/index.md)

@@ -1,12 +1,8 @@
 ---
 title: "チュートリアル: BatchBlock および BatchedJoinBlock を使用した効率の向上"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,30 +11,31 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, improving efficiency
 ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bc74b4acc5b29395c05e7c8302caefeb51718282
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 49056607d84b48584660ff62bba13147d6aa43ec
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>チュートリアル: BatchBlock および BatchedJoinBlock を使用した効率の向上
-TPL データ フロー ライブラリが提供する <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> および <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType> クラスを使って、1 つ以上のソースからデータを受信してバッファーに格納し、それを 1 つのコレクションとして反映することができます。 このバッチ メカニズムは、1 つ以上のソースからデータを収集し、複数のデータ要素をバッチとして処理する場合に便利です。 例として、データフローを使ってレコードをデータベースに挿入するアプリケーションについて考えてみましょう。 この操作は、1 つずつ順番にではなく、複数の項目が同時に挿入される場合により効率的となります。 このドキュメントでは、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスを使用して、そのようなデータベースの挿入操作を効率的に行う方法について説明します。 また、<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> クラスを使用して、プログラムでデータベースを読み取る場合に、その結果と発生する例外の両方をキャプチャする方法について説明します。  
-  
-> [!TIP]
->  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> 名前空間) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
-  
+TPL データ フロー ライブラリが提供する <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> および <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType> クラスを使って、1 つ以上のソースからデータを受信してバッファーに格納し、それを 1 つのコレクションとして反映することができます。 このバッチ メカニズムは、1 つ以上のソースからデータを収集し、複数のデータ要素をバッチとして処理する場合に便利です。 例として、データフローを使ってレコードをデータベースに挿入するアプリケーションについて考えてみましょう。 この操作は、1 つずつ順番にではなく、複数の項目が同時に挿入される場合により効率的となります。 このドキュメントでは、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスを使用して、そのようなデータベースの挿入操作を効率的に行う方法について説明します。 また、<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> クラスを使用して、プログラムでデータベースを読み取る場合に、その結果と発生する例外の両方をキャプチャする方法について説明します。
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
+
 ## <a name="prerequisites"></a>必須コンポーネント  
   
-1.  ブロックの結合」セクションを読み、[データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)このチュートリアルを開始する前に文書化します。  
+1.  このチュートリアルを開始する前に、ドキュメント「[データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)」の結合ブロックのセクションを参照してください。  
   
-2.  コンピューターに Northwind データベース (Northwind.sdf) のコピーがあることを確認します。 このファイルは通常、フォルダーにプログラム Files%\Microsoft SQL Server Compact Edition\v3.5\Samples\\です。  
+2.  コンピューターに Northwind データベース (Northwind.sdf) のコピーがあることを確認します。 このファイルは通常、%Program Files%\Microsoft SQL Server Compact Edition\v3.5\Samples\\ フォルダーに置かれています。  
   
     > [!IMPORTANT]
-    >  Windows のバージョンによっては、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] が管理者以外のモードで実行されている場合には、Northwind.sdf に接続できません。 Northwind.sdf に接続するには、開始[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]または[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]のコマンド プロンプトで、**管理者として実行**モード。  
+    >  Windows のバージョンによっては、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] が管理者以外のモードで実行されている場合には、Northwind.sdf に接続できません。 Northwind.sdf に接続するには、**[管理者として実行]** モードで、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] または [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のコマンド プロンプトを開始します。  
   
  このチュートリアルは、次のセクションで構成されています。  
   
@@ -46,13 +43,13 @@ TPL データ フロー ライブラリが提供する <xref:System.Threading.Ta
   
 -   [Employee クラスの定義](#employeeClass)  
   
--   [従業員データベースの操作を定義します。](#operations)  
+-   [従業員データベースの操作の定義](#operations)  
   
--   [バッファリングを使用しない従業員データをデータベースに追加します。](#nonBuffering)  
+-   [バッファリングを使用しない従業員データのデータベースへの追加](#nonBuffering)  
   
--   [バッファリングを使用して、従業員データをデータベースに追加するには](#buffering)  
+-   [バッファリングを使用した従業員データのデータベースへの追加](#buffering)  
   
--   [バッファリングされた結合を使用して、データベースから従業員データを読み取る](#bufferedJoin)  
+-   [バッファリングされた結合を使用した従業員データのデータベースからの読み込み](#bufferedJoin)  
   
 -   [コード例全体](#complete)  
   
@@ -60,7 +57,7 @@ TPL データ フロー ライブラリが提供する <xref:System.Threading.Ta
 ## <a name="creating-the-console-application"></a>コンソール アプリケーションの作成  
   
 <a name="consoleApp"></a>   
-1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]、Visual c# または Visual Basic 作成**コンソール アプリケーション**プロジェクト。 このドキュメントでは、プロジェクトの名前を `DataflowBatchDatabase` とします。  
+1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、Visual C# または Visual Basic の **[コンソール アプリケーション]** プロジェクトを作成します。 このドキュメントでは、プロジェクトの名前を `DataflowBatchDatabase` とします。  
   
 2.  プロジェクトで、System.Data.SqlServerCe.dll への参照と System.Threading.Tasks.Dataflow.dll への参照を追加します。  
   
@@ -108,7 +105,7 @@ TPL データ フロー ライブラリが提供する <xref:System.Threading.Ta
  [!code-csharp[TPLDataflow_BatchDatabase#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#6)]
  [!code-vb[TPLDataflow_BatchDatabase#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#6)]  
   
- このメソッドは `AddEmployees` に似ていますが、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスを使用して複数の `Employee` オブジェクトをバッファリングしてから、それらのオブジェクトを <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトに送信する点が異なります。 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスは複数の要素を 1 つのコレクションとして反映させるため、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトは `Employee` オブジェクトの配列として動作するように変更されます。 `AddEmployees` メソッドと同様に、`AddEmployeesBatched` は `PostRandomEmployees` メソッドを呼び出して複数の `Employee` オブジェクトをポストしますが、`AddEmployeesBatched` はこれらのオブジェクトを <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトにポストします。 `AddEmployeesBatched`メソッドは、すべての insert 操作を完了するのにも待機します。  
+ このメソッドは `AddEmployees` に似ていますが、<xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスを使用して複数の `Employee` オブジェクトをバッファリングしてから、それらのオブジェクトを <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトに送信する点が異なります。 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスは複数の要素を 1 つのコレクションとして反映させるため、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトは `Employee` オブジェクトの配列として動作するように変更されます。 `AddEmployees` メソッドと同様に、`AddEmployeesBatched` は `PostRandomEmployees` メソッドを呼び出して複数の `Employee` オブジェクトをポストしますが、`AddEmployeesBatched` はこれらのオブジェクトを <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトにポストします。 また、`AddEmployeesBatched` メソッドは、すべての挿入操作が終了するまで待機もします。  
   
 <a name="bufferedJoin"></a>   
 ## <a name="using-buffered-join-to-read-employee-data-from-the-database"></a>バッファリングされた結合を使用した従業員データのデータベースからの読み込み  
@@ -126,5 +123,5 @@ TPL データ フロー ライブラリが提供する <xref:System.Threading.Ta
  [!code-csharp[TPLDataflow_BatchDatabase#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#100)]
  [!code-vb[TPLDataflow_BatchDatabase#100](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#100)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

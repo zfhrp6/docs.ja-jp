@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 097b0cb1-5743-4c3a-86ef-caf5cbe6750d
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ad656e2db17e44733b5718fe2e3a2a48afcb1381
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2138b9c47c6e41cd94e775eaed005d8a6fd976c9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="saving-and-writing-a-document"></a>ドキュメントの保存と書き込み
 <xref:System.Xml.XmlDocument> を読み込んで保存した場合、保存されたドキュメントは、元のドキュメントとは次のように異なる可能性があります。  
@@ -29,7 +32,7 @@ ms.lasthandoff: 10/18/2017
   
 -   属性間のすべての空白は 1 つの空白文字になります。  
   
--   要素間の空白が変更されます。 有意の空白は保持され、意味のない空白は保持されません。 ドキュメントの保存時に使用されますが、 <xref:System.Xml.XmlTextWriter> **インデント**モードが既定では、出力読みやすくするためにします。  
+-   要素間の空白が変更されます。 有意の空白は保持され、意味のない空白は保持されません。 しかしながら、ドキュメントの保存時には、出力が読みやすくなるように、既定で <xref:System.Xml.XmlTextWriter> の**インデント** モードが使用されます。  
   
 -   属性値を囲む引用符は、既定で二重引用符に変更されます。 <xref:System.Xml.XmlTextReader.QuoteChar%2A> の <xref:System.Xml.XmlTextWriter> プロパティを使用すると、引用符を二重引用符または一重引用符のいずれかに設定できます。  
   
@@ -97,5 +100,5 @@ string xml = mydoc.DocumentElement.OuterXml;
   
  一方、子ノードの内容が必要な場合は、<xref:System.Xml.XmlNode.InnerText%2A> プロパティを使用します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

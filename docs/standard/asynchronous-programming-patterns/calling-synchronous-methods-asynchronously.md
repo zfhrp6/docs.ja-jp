@@ -26,15 +26,18 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET Framework], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 965e5928c03ae573eacba98a7596f55b56aaba26
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e7e6f402d9423a8ae1ee464499f1b794785c2b06
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>同期メソッドの非同期呼び出し
 .NET Framework では、すべてのメソッドを非同期的に呼び出すことができます。 これを行うには、呼び出すメソッドと同じシグネチャを持つデリゲートを定義します。これにより、共通言語ランタイムによって、適切なシグネチャを持つ、このデリゲートの `BeginInvoke` メソッドと `EndInvoke` メソッドが自動的に定義されます。  
@@ -44,7 +47,7 @@ ms.lasthandoff: 11/21/2017
   
  `BeginInvoke` メソッドは、非同期呼び出しを開始します。 このメソッドは、非同期的に実行するメソッドと同じパラメーターと共に、2 つの省略可能な追加パラメーターを持っています。 最初のパラメーターは、同期呼び出しが完了したときに呼び出されるメソッドを参照する <xref:System.AsyncCallback> デリゲートです。 2 番目のパラメーターは、コールバック メソッドに情報を渡すユーザー定義オブジェクトです。 `BeginInvoke` からは制御がすぐに戻り、非同期呼び出しが完了するまで待機しません。 `BeginInvoke` は <xref:System.IAsyncResult>を返します。これを使用して非同期呼び出しの進捗状況を監視できます。  
   
- `EndInvoke` メソッドは、非同期呼び出しの結果を取得します。 このメソッドは、 `BeginInvoke`の後であればいつでも呼び出すことができます。 非同期呼び出しがまだ完了していない場合は、 `EndInvoke` は非同期呼び出しが完了するまで呼び出し元スレッドをブロックします。 パラメーター`EndInvoke`含める、`out`と`ref`パラメーター (`<Out>` `ByRef`と`ByRef`Visual Basic で)、非同期的に実行するメソッドの加えた<xref:System.IAsyncResult>によって返される`BeginInvoke`.  
+ `EndInvoke` メソッドは、非同期呼び出しの結果を取得します。 このメソッドは、 `BeginInvoke`の後であればいつでも呼び出すことができます。 非同期呼び出しがまだ完了していない場合は、 `EndInvoke` は非同期呼び出しが完了するまで呼び出し元スレッドをブロックします。 `EndInvoke` のパラメーターには、非同期実行するメソッドの `out` パラメーターと `ref` パラメーター (Visual Basic では `<Out>` `ByRef` と `ByRef`) と、`BeginInvoke` によって返された <xref:System.IAsyncResult> が含まれます。  
   
 > [!NOTE]
 >  [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] の IntelliSense 機能によって `BeginInvoke` および `EndInvoke`のパラメーターが表示されます。 Visual Studio や類似のツールを使っていない場合や、[!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] で C# を使っている場合、これらのメソッドについて定義されているパラメーターについては、「[非同期プログラミング モデル (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)」を参照してください。  
@@ -57,7 +60,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.IAsyncResult> によって返される `BeginInvoke` をポーリングして非同期呼び出しが完了したかどうかを確認した後、 `EndInvoke`を呼び出します。  
   
--   コールバック メソッドのデリゲートを `BeginInvoke`に渡します。 このメソッドは、非同期呼び出しが完了すると、 <xref:System.Threading.ThreadPool> スレッドで実行されます。 コールバック メソッドは `EndInvoke`を呼び出します。  
+-   コールバック メソッドのデリゲートを `BeginInvoke` に渡します。 このメソッドは、非同期呼び出しが完了すると、 <xref:System.Threading.ThreadPool> スレッドで実行されます。 コールバック メソッドは `EndInvoke` を呼び出します。  
   
 > [!IMPORTANT]
 >  どの手法を使用する場合でも、常に `EndInvoke` を呼び出して、非同期呼び出しを完了します。  
@@ -87,7 +90,7 @@ ms.lasthandoff: 11/21/2017
  <xref:System.Threading.WaitHandle>を使用する場合は、非同期呼び出しの完了前または完了後、 `EndInvoke` を呼び出して結果を取得する前に、追加の処理を実行できます。  
   
 > [!NOTE]
->  `EndInvoke`を呼び出す場合、待機ハンドルは自動的に閉じられません。 待機ハンドルへのすべての参照を解放すると、ガベージ コレクションが待機ハンドルをクリアするときにシステム リソースが解放されます。 待機ハンドルの使用が終了すると同時にシステム リソースを解放するには、<xref:System.Threading.WaitHandle.Close%2A?displayProperty=nameWithType> メソッドを呼び出して破棄します。 破棄可能なオブジェクトが明示的に破棄されると、ガベージ コレクションはより効率的に動作します。  
+>  `EndInvoke` を呼び出す場合、待機ハンドルは自動的に閉じられません。 待機ハンドルへのすべての参照を解放すると、ガベージ コレクションが待機ハンドルをクリアするときにシステム リソースが解放されます。 待機ハンドルの使用が終了すると同時にシステム リソースを解放するには、<xref:System.Threading.WaitHandle.Close%2A?displayProperty=nameWithType> メソッドを呼び出して破棄します。 破棄可能なオブジェクトが明示的に破棄されると、ガベージ コレクションはより効率的に動作します。  
   
  [!code-cpp[AsyncDelegateExamples#3](../../../samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/waithandle.cpp#3)]
  [!code-csharp[AsyncDelegateExamples#3](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/waithandle.cs#3)]
@@ -107,7 +110,7 @@ ms.lasthandoff: 11/21/2017
   
  例に関する注意事項  
   
--   `threadId`のパラメーター`TestMethod`は、`out`パラメーター ([`<Out>` `ByRef` Visual Basic で) ため、入力値を使用することはありません、`TestMethod`です。 `BeginInvoke` 呼び出しにはダミー変数が渡されます。 `threadId` パラメーターが `ref` パラメーター (Visual Basic では`ByRef` ) であった場合、 `BeginInvoke` と `EndInvoke`の両方に渡すことができるように、変数はクラス レベルのフィールドであることが必要です。  
+-   `TestMethod` の `threadId` パラメーターは `out` パラメーター (Visual Basic では [`<Out>` `ByRef`) であるため、その入力値が `TestMethod` で使用されることはありません。 `BeginInvoke` 呼び出しにはダミー変数が渡されます。 `threadId` パラメーターが `ref` パラメーター (Visual Basic では`ByRef` ) であった場合、 `BeginInvoke` と `EndInvoke`の両方に渡すことができるように、変数はクラス レベルのフィールドであることが必要です。  
   
 -   `BeginInvoke` に渡される状態情報は、コールバック メソッドが出力メッセージを書式指定するために使用する書式指定文字列です。 型 <xref:System.Object>として渡されるため、状態情報を使用するには適切な型にキャストする必要があります。  
   
@@ -117,6 +120,6 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[AsyncDelegateExamples#5](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/callback.cs#5)]
  [!code-vb[AsyncDelegateExamples#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/callback.vb#5)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Delegate>  
  [イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

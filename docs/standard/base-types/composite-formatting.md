@@ -19,15 +19,18 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1f4b311d6e933f6c653fd7ab189c2e644021970d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: dae73a7ace3aac4e7d89ccba186fceacfe9898ae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="composite-formatting"></a>複合書式指定
 .NET Framework の複合書式指定機能は、オブジェクトのリストおよび複合書式指定文字列を入力として使用します。 複合書式指定文字列は、固定テキストに、書式指定項目と呼ばれるインデックス化されたプレースホルダーが混合されて構成されます。このプレースホルダーはリスト内のオブジェクトに対応します。 書式設定操作によって生成される結果の文字列は、元の固定テキストに文字列で表されたリスト内のオブジェクトが混合されて構成されます。  
@@ -87,11 +90,11 @@ ms.lasthandoff: 11/21/2017
  [!code-vb[Formatting.Composite#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/alignment1.vb#8)]  
   
 ### <a name="format-string-component"></a>Format String コンポーネント  
- オプションの *formatString* コンポーネントは、書式設定されるオブジェクトの種類に適した書式指定文字列です。 標準またはカスタム数値書式指定文字列の対応するオブジェクトが、数値の場合、標準またはカスタムの日付と時刻書式設定文字列場合は、対応するオブジェクトを指定して、<xref:System.DateTime>オブジェクト、または[列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)、対応するオブジェクトが列挙値の場合。 *formatString* が指定されない場合は、数値、日付と時刻、または列挙型の汎用 ("G") 書式指定子が使用されます。 *formatString* を指定する場合はコロンが必要です。  
+ オプションの *formatString* コンポーネントは、書式設定されるオブジェクトの種類に適した書式指定文字列です。 対応するオブジェクトが数値の場合は標準またはカスタムの数値書式指定文字列を指定し、対応するオブジェクトが <xref:System.DateTime> オブジェクトの場合は標準またはカスタムの日時書式指定文字列を指定し、対応するオブジェクトが列挙値の場合は[列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)を指定します。 *formatString* が指定されない場合は、数値、日付と時刻、または列挙型の汎用 ("G") 書式指定子が使用されます。 *formatString* を指定する場合はコロンが必要です。  
   
  次の表は、定義済みの一連の書式指定文字列をサポートする .NET Framework クラス ライブラリ内の型または型のカテゴリの一覧です。サポートされている書式指定文字列が示されているトピックへのリンクも含まれています。 文字列の書式設定とは拡張可能な機構で、既存のすべての型に対する新しい書式指定文字列を定義できるだけでなく、アプリケーション定義の型でサポートされる一連の書式指定文字列も定義できます。 詳しくは、<xref:System.IFormattable> および <xref:System.ICustomFormatter> のインターフェイスに関するトピックを参照してください。  
   
-|型または型のカテゴリ|参照トピック|  
+|型または型のカテゴリ|解決方法については、|  
 |---------------------------|---------|  
 |日付と時刻の型 (<xref:System.DateTime>、<xref:System.DateTimeOffset>)|[Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
 |列挙型 (<xref:System.Enum?displayProperty=nameWithType> から派生したすべての型)|[Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)|  
@@ -126,7 +129,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  書式設定する値が `null` の場合は、空の文字列 ("") が返されます。  
   
-2.  <xref:System.ICustomFormatter> 実装が利用できる場合、ランタイムはその <xref:System.ICustomFormatter.Format%2A> メソッドを呼び出します。 書式項目のメソッドに渡します*formatString*値のいずれかが存在する場合または`null`がない場合は、と共に、<xref:System.IFormatProvider>実装します。  
+2.  <xref:System.ICustomFormatter> 実装が利用できる場合、ランタイムはその <xref:System.ICustomFormatter.Format%2A> メソッドを呼び出します。 メソッドには書式指定項目の *formatString* 値 (ある場合) または `null` (ない場合) と、<xref:System.IFormatProvider> 実装が渡されます。  
   
 3.  値が <xref:System.IFormattable> インターフェイスを実装している場合は、インターフェイスの <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドが呼び出されます。 メソッドは、*formatString* 値 (書式指定項目内に値がある場合) または `null` (ない場合) を受け取ります。 <xref:System.IFormatProvider> 引数は、次のように判断されます。  
   
@@ -163,7 +166,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Formatting.Composite#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#6)]
  [!code-vb[Formatting.Composite#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#6)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Console.WriteLine%2A>  
  <xref:System.String.Format%2A?displayProperty=nameWithType>  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  

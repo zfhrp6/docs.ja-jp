@@ -19,15 +19,18 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 37428cf96bbe36a55e88edeb5ec56e09895be994
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b6e0b9d3482bbfc3dabeee1f6b7fce7a93364dfb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>正規表現でのグループ化構成体
 グループ化構成体は、正規表現の部分式を表し、入力文字列の部分文字列をキャプチャします。 グループ化構成体を使用して、以下を実行できます。  
@@ -40,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> プロパティから個々の部分式を取得し、一致したテキスト全体とは別に処理する。  
   
- 次の表は、.NET の正規表現エンジンでサポートされているグループ化構成体の一覧し、キャプチャまたは非キャプチャするかどうかを示します。  
+ 次の表に、.NET 正規表現エンジンでサポートされているグループ化構成体と、これらの構成体がキャプチャまたは非キャプチャのいずれであるかを示します。  
   
 |グループ化構成体|キャプチャまたは非キャプチャ|  
 |------------------------|-------------------------------|  
@@ -66,15 +69,15 @@ ms.lasthandoff: 11/21/2017
  ここで、 *subexpression* は有効な正規表現パターンです。 かっこを使用するキャプチャには、正規表現の左かっこの順番に基づいて、左から右に自動的に 1 から始まる番号が付けられます。 番号が 0 になるキャプチャは、正規表現パターン全体と一致するテキストです。  
   
 > [!NOTE]
->  既定では、 `(`*subexpression*`)` 言語要素が、一致する部分式をキャプチャします。 場合に、<xref:System.Text.RegularExpressions.RegexOptions>正規表現パターン一致メソッドのパラメーターが含まれています、<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>フラグ、または、`n`オプションがこの部分式に適用される (を参照してください[グループ オプション](#group_options)このトピックで後述) では、一致した部分式はキャプチャされません。  
+>  既定では、 `(`*subexpression*`)` 言語要素が、一致する部分式をキャプチャします。 ただし、正規表現パターン一致メソッドの <xref:System.Text.RegularExpressions.RegexOptions> パラメーターに <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> フラグが含まれる場合や、`n` オプションがこの部分式に適用される場合は (このトピックで後述する「[グループ オプション](#group_options)」を参照)、一致した部分式はキャプチャされません。  
   
  キャプチャされたグループにアクセスする方法は 4 つあります。  
   
--   正規表現内で前方参照構成体を使用する。 構文を使用して、同じ正規表現で一致した部分式が参照されている`\`*数*ここで、*数*はキャプチャされた部分式の序数。  
+-   正規表現内で前方参照構成体を使用する。 `\`*number* という構文を使うと、一致した部分式が同じ正規表現内で参照されます。ここで、*number* はキャプチャされた部分式の序数です。  
   
--   正規表現内で名前付き前方参照構成体を使用する。 構文を使用して、同じ正規表現で一致した部分式が参照されている`\k<`*名前*`>`ここで、*名前*、キャプチャ グループの名前を指定または`\k<`*数*`>`ここで、*数*キャプチャ グループの序数します。 キャプチャ グループには、その序数と同じ既定の名前が付いています。 詳細については、このトピックで後述する「 [一致した名前付き部分式](#named_matched_subexpression) 」を参照してください。  
+-   正規表現内で名前付き前方参照構成体を使用する。 `\k<`*name*`>` という構文 (*name* はキャプチャ グループの名前)、または `\k<`*number*`>` という構文 (*number* はキャプチャ グループの序数) を使用すると、一致した部分式が同じ正規表現内で参照されます。 キャプチャ グループには、その序数と同じ既定の名前が付いています。 詳細については、このトピックで後述する「 [一致した名前付き部分式](#named_matched_subexpression) 」を参照してください。  
   
--   使用して、 `$`*数*置換シーケンスを<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>または<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>メソッドを呼び出す場所*数*はキャプチャされた部分式の序数。  
+-   `$`*number* 置換シーケンスを、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドまたは <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドの呼び出しで使用する。ここで、*number* はキャプチャされた部分式の序数です。  
   
 -   プログラムで <xref:System.Text.RegularExpressions.GroupCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> オブジェクトを使用する。 コレクション内の位置 0 にあるメンバーは、正規表現に一致した文字列全体を表します。 後続の各メンバーは、一致した部分式を表します。 詳しくは、「 [Grouping Constructs and Regular Expression Objects](#Objects) 」セクションをご覧ください。  
   
@@ -115,17 +118,17 @@ ms.lasthandoff: 11/21/2017
  ここで、 *name* は有効なグループ名、 *subexpression* は有効な正規表現パターンです。 *name* は区切り記号を含まず、先頭が数字以外である必要があります。  
   
 > [!NOTE]
->  場合、<xref:System.Text.RegularExpressions.RegexOptions>正規表現パターン一致メソッドのパラメーターが含まれています、<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>フラグ、または、`n`オプションがこの部分式に適用される (を参照してください[グループ オプション](#group_options)このトピックで後述)、のみキャプチャする方法、部分式は明示的にグループの名前をキャプチャします。  
+>  正規表現パターン一致メソッドの <xref:System.Text.RegularExpressions.RegexOptions> パラメーターに <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> フラグが含まれる場合や、`n` オプションがこの部分式に適用される場合は (このトピックで後述する「[グループ オプション](#group_options)」を参照)、部分式をキャプチャする唯一の方法は、キャプチャ グループの名前を明示的に指定することです。  
   
  キャプチャされた名前付きグループには次の方法でアクセスできます。  
   
--   正規表現内で名前付き前方参照構成体を使用する。 構文を使用して、同じ正規表現で一致した部分式が参照されている`\k<`*名前*`>`ここで、*名前*キャプチャされた部分式の名前を指定します。  
+-   正規表現内で名前付き前方参照構成体を使用する。 `\k<`*name*`>` という構文を使用すると、一致した部分式が同じ正規表現内で参照されます。ここで、*name* はキャプチャされた部分式の名前です。  
   
--   正規表現内で前方参照構成体を使用する。 構文を使用して、同じ正規表現で一致した部分式が参照されている`\`*数*ここで、*数*はキャプチャされた部分式の序数。 一致した名前付き部分式には、一致した部分式の後、左から右に連続した番号が付けられます。  
+-   正規表現内で前方参照構成体を使用する。 `\`*number* という構文を使うと、一致した部分式が同じ正規表現内で参照されます。ここで、*number* はキャプチャされた部分式の序数です。 一致した名前付き部分式には、一致した部分式の後、左から右に連続した番号が付けられます。  
   
--   使用して、 `${`*名前*`}`置換シーケンスを<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>または<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>メソッドを呼び出す場所*名前*キャプチャされた部分式の名前を指定します。  
+-   `${`*name*`}` 置換シーケンスを、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドまたは <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドの呼び出しで使用する。ここで、*name* はキャプチャされた部分式の名前です。  
   
--   使用して、 `$`*数*置換シーケンスを<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>または<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>メソッドを呼び出す場所*数*はキャプチャされた部分式の序数。  
+-   `$`*number* 置換シーケンスを、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドまたは <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドの呼び出しで使用する。ここで、*number* はキャプチャされた部分式の序数です。  
   
 -   プログラムで <xref:System.Text.RegularExpressions.GroupCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> オブジェクトを使用する。 コレクション内の位置 0 にあるメンバーは、正規表現に一致した文字列全体を表します。 後続の各メンバーは、一致した部分式を表します。 キャプチャされた名前付きグループは、キャプチャされた番号付きグループの後にコレクションに格納されます。  
   
@@ -228,32 +231,32 @@ ms.lasthandoff: 11/21/2017
   
  最後の部分式の `(?(Open)(?!))`は、入力文字列内の入れ子の構成体の数が一致しているかどうかを示します (各左山かっこに一致する右山かっこが存在するかどうかなど)。 有効なキャプチャ グループに基づく条件一致を使います。詳しくは、「 [Alternation Constructs](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)」をご覧ください。 `Open` グループが定義されている場合は、正規表現エンジンによって、入力文字列内で部分式 `(?!)` の照合が試行されます。 `Open` グループは、入れ子の構成体の数が一致していない場合にのみ定義する必要があります。 したがって、入力文字列で照合されるパターンでは、照合は常に失敗します。 この場合、 `(?!)` は、常に失敗するゼロ幅の否定先読みアサーションです。入力文字列内の次の位置に、必ず空の文字列が暗黙的に存在するためです。  
   
- 例では、正規表現エンジンは、入力文字列を評価"\<abc >< mno\<xyz >>"次の表に示すようにします。  
+ この例では、正規表現エンジンによって、次の表に示すように入力文字列 "\<abc><mno\<xyz>>" が評価されます。  
   
 |手順|パターン|結果|  
 |----------|-------------|------------|  
 |1|`^`|入力文字列の先頭から照合を開始します。|  
 |2|`[^<>]*`|左山かっこの前にある山かっこではない文字を検索します。一致する項目は見つかりません。|  
-|3|`(((?'Open'<)`|左山かっこと一致する"\<abc >"に割り当てます、`Open`グループ。|  
+|3|`(((?'Open'<)`|"\<abc>" の左山かっこと一致し、そのかっこを `Open` グループに代入します。|  
 |4|`[^<>]*`|"abc" と一致します。|  
 |5|`)+`|"<abc" が 2 番目のキャプチャ グループの値になります。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻りません。|  
-|6|`((?'Close-Open'>)`|右山かっこと一致する"\<abc >"、"abc"は、部分文字列を割り当てます間、`Open`グループと、右山かっこに、`Close`グループ化、および現在の値を削除 ("<") の`Open`グループ空のままにします。|  
+|6|`((?'Close-Open'>)`|"\<abc>" の右山かっこと一致し、`Open` グループと右山かっこの間の部分文字列である "abc" を `Close` グループに代入して、`Open` グループの現在の値 ("<") を削除してグループを空にします。|  
 |7|`[^<>]*`|右山かっこの後にある山かっこではない文字を検索します。一致する項目は見つかりません。|  
 |8|`)+`|3 番目のキャプチャ グループの値は ">" です。<br /><br /> 入力文字列内の次の文字は右山かっこではないので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻りません。|  
-|9|`)*`|最初のキャプチャ グループの値が"\<abc >"です。<br /><br /> 入力文字列内の次の文字は左山かっこなので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻ります。|  
-|10|`(((?'Open'<)`|左山かっこと一致する"\<mno >"に割り当てます、`Open`グループ。 その <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> コレクションには、現在、単一の値 "<" が含まれています。|  
+|9|`)*`|最初のキャプチャ グループの値は "\<abc>" です。<br /><br /> 入力文字列内の次の文字は左山かっこなので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻ります。|  
+|10|`(((?'Open'<)`|"\<mno>" の左山かっこと一致し、そのかっこを `Open` グループに代入します。 その <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> コレクションには、現在、単一の値 "<" が含まれています。|  
 |11|`[^<>]*`|"mno" と一致します。|  
 |12|`)+`|"<mno" が 2 番目のキャプチャ グループの値になります。<br /><br /> 入力文字列内の次の文字は左山かっこなので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻ります。|  
-|13|`(((?'Open'<)`|左山かっこと一致する"\<xyz >"に割り当てます、`Open`グループ。 <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>のコレクション、`Open`グループが 2 つのキャプチャを含むようになりました: 左山かっこ"\<mno >"、および左山かっこから"\<xyz >"です。|  
+|13|`(((?'Open'<)`|"\<xyz>" の左山かっこと一致し、そのかっこを `Open` グループに代入します。 `Open` グループの <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> コレクションには、現在、"\<mno>" の左山かっこと "\<xyz>" の左山かっこの 2 つのキャプチャが含まれています。|  
 |14|`[^<>]*`|"xyz" と一致します。|  
-|15|`)+`|"<xyz" が 2 番目のキャプチャ グループの値になります。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻りません。|  
-|16|`((?'Close-Open'>)`|右山かっこと一致する"\<xyz >"です。 "xyz" は `Open` グループと右山かっこの間の部分文字列を `Close` グループに代入して、 `Open` グループの現在の値を削除します。 前のキャプチャの値 (で左山かっこ"\<mno >") の現在の値になります、`Open`グループ。 <xref:System.Text.RegularExpressions.Group.Captures%2A>のコレクション、`Open`グループにはここで、単一のキャプチャ、左山かっこが含まれています"\<xyz >"です。|  
+|16|`)+`|"<xyz" が 2 番目のキャプチャ グループの値になります。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻りません。|  
+|16|`((?'Close-Open'>)`|"\<xyz>" の右山かっこと一致します。 "xyz" は `Open` グループと右山かっこの間の部分文字列を `Close` グループに代入して、 `Open` グループの現在の値を削除します。 前のキャプチャの値 ("\<mno>" の左山かっこ) が `Open` グループの現在の値になります。 `Open` グループの <xref:System.Text.RegularExpressions.Group.Captures%2A> コレクションには、現在、単一のキャプチャ ("\<xyz>" の左山かっこ) が含まれています。|  
 |17|`[^<>]*`|山かっこではない文字を検索します。一致する項目は見つかりません。|  
 |18|`)+`|3 番目のキャプチャ グループの値は ">" です。<br /><br /> 入力文字列内の次の文字は右山かっこなので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻ります。|  
-|19|`((?'Close-Open'>)`|最後の右山かっこと一致する"xyz >>"、割り当てます"mno\<xyz >"(間の部分文字列、`Open`グループと、右の山かっ) に、`Close`グループ化、および現在の値を削除、`Open`グループ。 `Open` グループは空になります。|  
+|19|`((?'Close-Open'>)`|"xyz>>" の最後の右山かっこと一致し、"mno\<xyz>" (`Open` グループと右山かっこの間の部分文字列) を `Close` グループに代入して、`Open` グループの現在の値を削除します。 `Open` グループは空になります。|  
 |20|`[^<>]*`|山かっこではない文字を検索します。一致する項目は見つかりません。|  
 |21|`)+`|3 番目のキャプチャ グループの値は ">" です。<br /><br /> 入力文字列内の次の文字は右山かっこではないので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻りません。|  
-|22|`)*`|最初のキャプチャ グループの値は"< mno\<xyz >>"です。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻りません。|  
+|22|`)*`|最初のキャプチャ グループの値は "<mno\<xyz>>" です。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻りません。|  
 |23|`(?(Open)(?!))`|`Open` グループは定義されていないので、照合は試行されません。|  
 |24|`$`|入力文字列の末尾と一致します。|  
   
@@ -477,6 +480,6 @@ ms.lasthandoff: 11/21/2017
   
  最初のキャプチャ グループは、文の各単語と一致します。 2 番目のキャプチャ グループは、各単語およびその単語に続く句読点や空白と一致します。 インデックスが 2 の <xref:System.Text.RegularExpressions.Group> オブジェクトは、2 番目のキャプチャ グループと一致したテキストの情報を保持します。 キャプチャ グループによってキャプチャされたすべての単語は、<xref:System.Text.RegularExpressions.CaptureCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> オブジェクトから取得できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
  [バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)

@@ -13,15 +13,18 @@ helpviewer_keywords:
 - threading [.NET Framework],synchronizing threads
 - managed threading
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 58fb520365d0a80a8f8bc46e3fdbd23483fdf07f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 79d6e384458e289c4da8587eae66486a054aad08
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="overview-of-synchronization-primitives"></a>同期プリミティブの概要
 <a name="top"></a>.NET Framework には、スレッドの相互作用を制御したり競合状態を回避したりするためのさまざまな同期プリミティブが用意されています。 これらは、大きくは 3 つのカテゴリ (ロック、シグナリング、インタロックされた操作) に分類することができます。  
@@ -47,9 +50,9 @@ ms.lasthandoff: 11/21/2017
  ロックは、リソースの制御を一度に 1 つのスレッドに渡したり、指定された数のスレッドに渡したりします。 ロックが使用されているときに排他ロックを要求したスレッドは、ロックが使用可能になるまでブロックされます。  
   
 ### <a name="exclusive-locks"></a>排他ロック  
- ロックの最も単純な形式は、C# では `lock` ステートメントであり、Visual Basic では `SyncLock` ステートメントです。これらのステートメントは、コード ブロックへのアクセスを制御します。 このようなブロックはしばしば、クリティカル セクションと呼ばれます。 `lock`を使用してステートメントを実装、<xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType>と<xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>メソッド、およびそれを使用して`try…catch…finally`ロックが解放されることを確認するブロック。  
+ ロックの最も単純な形式は、C# では `lock` ステートメントであり、Visual Basic では `SyncLock` ステートメントです。これらのステートメントは、コード ブロックへのアクセスを制御します。 このようなブロックはしばしば、クリティカル セクションと呼ばれます。 `lock` ステートメントは <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> メソッドと <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> メソッドを使用して実装され、`try…catch…finally` ブロックを使用してロックが解放されるようにします。  
   
- 一般を使用して、`lock`または`SyncLock`小さいコードより広げないメソッドを 1 つのブロックを保護するステートメントが使用する最善の方法、<xref:System.Threading.Monitor>クラスです。 <xref:System.Threading.Monitor> クラスは強力ですが、孤立したロックやデッドロックが発生しやすくなります。  
+ 一般的に、`lock` ステートメントまたは `SyncLock` ステートメントを使用して小さいコード ブロックを保護して、1 つのメソッドより広げないようにするのが、<xref:System.Threading.Monitor> クラスを使用するための最適な方法です。 <xref:System.Threading.Monitor> クラスは強力ですが、孤立したロックやデッドロックが発生しやすくなります。  
   
 #### <a name="monitor-class"></a>Monitor クラス  
  <xref:System.Threading.Monitor> クラスは、`lock` ステートメントと併せて使用できる追加機能を備えています。  
@@ -80,7 +83,7 @@ ms.lasthandoff: 11/21/2017
  概念的概要については、「[ミューテックス](../../../docs/standard/threading/mutexes.md)」を参照してください。  
   
 #### <a name="spinlock-class"></a>SpinLock クラス  
- 以降で、 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、使用することができます、<xref:System.Threading.SpinLock>でオーバーヘッドが必要なときにクラス<xref:System.Threading.Monitor>パフォーマンスが低下します。 <xref:System.Threading.SpinLock> は、ロックされたクリティカル セクションを検出すると、ロックが使用可能になるまで単にループ内をスピンします。 ロックが保持される時間が非常に短い場合は、ブロックよりもスピンのほうがパフォーマンスがよいことがあります。 ただし、サイクル、万が複数のロックが保持される期間<xref:System.Threading.SpinLock>でも同じように実行として<xref:System.Threading.Monitor>より多くの CPU サイクルが使用され、したがって他のスレッドやプロセスのパフォーマンスが低下することができますが、します。  
+ [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降、<xref:System.Threading.Monitor> にとって必要なオーバーヘッドのためにパフォーマンスが低下する場合は、<xref:System.Threading.SpinLock> クラスを使用できるようになりました。 <xref:System.Threading.SpinLock> は、ロックされたクリティカル セクションを検出すると、ロックが使用可能になるまで単にループ内をスピンします。 ロックが保持される時間が非常に短い場合は、ブロックよりもスピンのほうがパフォーマンスがよいことがあります。 ただし、ロックが保持される期間が数十サイクル以上の場合、<xref:System.Threading.SpinLock> は <xref:System.Threading.Monitor> と同様のパフォーマンスを示しますが、使用する CPU サイクルが多くなるため、他のスレッドやプロセスのパフォーマンスが低下する可能性があります。  
   
 ### <a name="other-locks"></a>他のロック  
  ロックは排他的である必要はありません。 多くの場合、限定された数のスレッドがリソースに同時にアクセスすることを許可すると有用です。 セマフォおよびリーダー/ライター ロックは、このようなプールされたリソース アクセスを制御することを意図して設計されています。  
@@ -155,7 +158,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="spinwait"></a>   
 ## <a name="spinwait"></a>SpinWait  
- 以降で、 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]、使用することができます、 <xref:System.Threading.SpinWait?displayProperty=nameWithType> otherwi や、待機ハンドルを使用して、必要な待機時間よりも小さくする実際の待機時間が予想される場合は、スレッドがシグナル状態になるイベントまたは条件が満たされるを待っているときに構造体se は、現在のスレッドをブロックします。 <xref:System.Threading.SpinWait> を使用することにより、待機中はスピンし、指定した時間内に条件が満たされなかった場合のみ (たとえば待機またはスリープして) 譲渡するための短い時間を指定できます。  
+ [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降、<xref:System.Threading.SpinWait?displayProperty=nameWithType> 構造体を使用できるようになりました。この構造体は、イベントが通知されるか条件が満たされるのをスレッドが待機する必要があるが、待機ハンドルを使用するかあるいは現在のスレッドをブロックする際に必要な待機時間よりも実際の待機時間が短いと思われる場合に使用します。 <xref:System.Threading.SpinWait> を使用することにより、待機中はスピンし、指定した時間内に条件が満たされなかった場合のみ (たとえば待機またはスリープして) 譲渡するための短い時間を指定できます。  
   
  [ページのトップへ](#top)  
   
@@ -172,7 +175,7 @@ ms.lasthandoff: 11/21/2017
   
  概念的概要については、「[インタロックされた操作](../../../docs/standard/threading/interlocked-operations.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マルチスレッド処理のためのデータの同期](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)  
  [モニター](http://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)  
  [ミューテックス](../../../docs/standard/threading/mutexes.md)  

@@ -1,6 +1,6 @@
 ---
 title: "自動メモリ管理とガベージ コレクション"
-description: "自動メモリ管理、共通言語ランタイムがマネージ実行時に提供するサービスのいずれかを説明します。"
+description: "マネージ実行中に共通言語ランタイムが提供するサービスの 1 つである自動メモリ管理について説明します。"
 keywords: .NET, .NET Core
 author: dotnet-bot
 ms.author: dotnetcontent
@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d095b0b6-2454-4e23-80b4-c9e8a447116c
-ms.openlocfilehash: 30bcf08ebb4e05706d5b25e2f805474dd1ee428e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a99d849cc1092e36181da7b7ab767a41ff5ef234
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="automatic-memory-management-and-garbage-collection"></a>自動メモリ管理とガベージ コレクション
 
@@ -50,7 +53,7 @@ ms.lasthandoff: 10/18/2017
 
 アプリケーションで作成されるオブジェクトの大部分については、ガベージ コレクターによって、必要なメモリ管理タスクを自動的に実行できます。 しかし、アンマネージ リソースでは、明示的なクリーンアップが必要です。 最も一般的な種類のアンマネージ リソースは、ファイル ハンドル、ウィンドウ ハンドル、ネットワーク接続などのオペレーティング システム リソースをラップしたオブジェクトです。 ガベージ コレクターは、アンマネージ リソースをカプセル化したマネージ オブジェクトの存続期間を追跡することはできますが、そのアンマネージ リソースのクリーンアップ方法については具体的な情報を持っていません。 アンマネージ リソースをカプセル化するオブジェクトを作成する場合は、そのアンマネージ リソースをクリーンアップするために必要なコードをパブリックな `Dispose` メソッドという形で提供することをお勧めします。 `Dispose` メソッドを提供すると、ユーザーがオブジェクトを使い終わったときに、そのオブジェクトのメモリを明示的に解放できます。 アンマネージ リソースをカプセル化するオブジェクトを使用する場合は、`Dispose` メソッドの存在を念頭に置き、必要に応じて呼び出すようにしてください。 アンマネージ リソースのクリーンアップの詳細と、`Dispose` を実装するためのデザイン パターンの例については、「[.NET のガベージ コレクション](index.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [System.GC](xref:System.GC)
 

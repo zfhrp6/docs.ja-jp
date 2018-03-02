@@ -12,22 +12,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 09f89708607ada18181bc6605994c7908e1dd14b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c492d470fe29041f32039d98ecb854e18f40423c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xpathnavigator-in-transformations"></a>変換における XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> クラスは、データへの読み取り専用のランダム アクセスを提供し、XSLT (Extensible Stylesheet Language for Transformations) への入力として使用することを目的に設計されています。 このクラスは、<xref:System.Xml.XPath.XPathDocument>、<xref:System.Xml.XmlDataDocument>、および <xref:System.Xml.XmlDocument> に実装されます。 <xref:System.Xml.XPath.XPathNavigator> は、『XML Path Language (XPath)』勧告のセクション 5 で規定されている W3C (World Wide Web Consortium) データ モデルに準拠しています。  
   
  <xref:System.Xml.XPath.XPathNavigator> は、任意のストアに対するカーソル モデルを定義し、任意のデータ ストアに対する高速で読み取り専用の XPath クエリを提供します。 <xref:System.Xml.XPath.XPathNavigator> クラスは、結果ツリー フラグメントの反復処理でも使用されます。  
   
- この API を使用すると、ストア内の現在のノードから情報を取得し、接続されているノードに移動することができます。 <xref:System.Xml.XPath.XPathNavigator>カーソル スタイルのモデルの走査のセットを使用してストアを実行するは**移動**メソッドです。 <xref:System.Xml.XPath.XPathNavigator> は、常にノード上に配置されます。 どの**移動**メソッドが失敗した場合、<xref:System.Xml.XPath.XPathNavigator>変更されません。  
+ この API を使用すると、ストア内の現在のノードから情報を取得し、接続されているノードに移動することができます。 <xref:System.Xml.XPath.XPathNavigator> は、一連の **Move** メソッドを使用してストアの走査を実行するカーソル スタイルのモデルです。 <xref:System.Xml.XPath.XPathNavigator> は、常にノード上に配置されます。 **Move** メソッドが失敗した場合、<xref:System.Xml.XPath.XPathNavigator> は変更されません。  
   
  <xref:System.Xml.XPath.XPathNavigator> クラスは、結果ツリー フラグメントの反復処理で使用されます。 XML を含む `fragment` パラメーターを指定して関数を呼び出すことにより、スタイル シート内で結果ツリー フラグメントを作成するコード サンプルを次に示します。  
   
@@ -70,7 +73,7 @@ ms.lasthandoff: 10/18/2017
 <root>Some text</root>  
 ```  
   
- 次のコードでは、 **test.xsl**スタイル シートと**test.xml**データを入力します。  
+ 次の例では、**test.xsl** スタイル シートと **test.xml** 入力データを使用しています。  
   
 ```vb  
 Imports System  
@@ -117,11 +120,11 @@ public class sample
 ```  
   
 ## <a name="output"></a>出力  
- 変換の結果がファイルで見つかった**out.xml**:  
+ 変換結果はファイル **out.xml** に出力されます。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>Joe  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XslTransform クラスによる XSLT プロセッサ](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+## <a name="see-also"></a>参照  
+ [XslTransform クラスによる XSLT プロセッサの実装](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

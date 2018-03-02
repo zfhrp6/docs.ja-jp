@@ -13,32 +13,35 @@ helpviewer_keywords:
 - garbage collection, optimizing
 - garbage collection, shared Web hosting
 ms.assetid: be98c0ab-7ef8-409f-8a0d-cb6e5b75ff20
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1f423d867d4fada075800650627c94f9d09e9e7a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7525ca263449da77b4b6364fd6bcfd51dcba145d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="optimization-for-shared-web-hosting"></a>共有 Web ホストの最適化
-複数の小規模 Web サイトをホストすることにより共有されているサーバーの管理者がいる場合は、パフォーマンスを最適化し、次を追加することによってサイト容量を増やす`gcTrimCommitOnLowMemory`設定、 `runtime` .net Aspnet.config ファイル内のノードディレクトリ:  
+複数の小規模な Web サイトをホストして共有されているサーバーの管理者は、.NET ディレクトリの Aspnet.config ファイルの `runtime` ノードに次の `gcTrimCommitOnLowMemory` 設定を追加することで、パフォーマンスを最適化し、サイトの容量を増やすことができます。  
   
  `<gcTrimCommitOnLowMemory enabled="true|false"/>`  
   
 > [!NOTE]
->  この設定は推奨のみ共有 Web をホスティングのシナリオです。  
+>  この設定は、共有 Web ホスティング シナリオの場合にのみお勧めします。  
   
- ガベージ コレクターは、将来の割り当て用のメモリを保持しているためにより厳密に必要なものをコミットされた領域にできます。 時刻を格納するには、この領域を減らすことができますが、システム メモリの負荷が高い場合。 このコミットされた領域を減らすことにより、パフォーマンスが向上しより多くのサイトをホストする能力を展開します。  
+ ガベージ コレクターは将来の割り当てのためにメモリを保持するので、コミットされる領域は厳密に必要な領域を超える可能性があります。 この領域を減らすと、システム メモリにかかる負荷が高くなる時間に対応できます。 このコミットされる領域を減らすと、パフォーマンスが向上し、より多くのサイトをホストできるようになります。  
   
- ときに、`gcTrimCommitOnLowMemory`設定が有効になっていると、ガベージ コレクターは、システム メモリの負荷を評価し、負荷が 90% に達すると、トリミング モードに入ります。 負荷が 85% を未満になるまで、トリミング モードが維持されます。  
+ `gcTrimCommitOnLowMemory` 設定が有効な場合、ガベージ コレクターはシステムのメモリ負荷を評価し、負荷が 90% に達するとトリミング モードに切り替わります。 負荷が 85% 未満になるまでトリミング モードは維持されます。  
   
- 条件は次の許可、ガベージ コレクター場合ことができますを`gcTrimCommitOnLowMemory`設定されず、現在のアプリケーションのヘルプ、それを無視します。  
+ 条件を満たしている場合、`gcTrimCommitOnLowMemory` 設定で現在のアプリケーションを助けずに無視することをガベージ コレクターで決定することができます。  
   
 ## <a name="example"></a>例  
- 次の XML フラグメントが有効にする方法を示しています、`gcTrimCommitOnLowMemory`設定します。 省略記号ボタンを示すようになります。 その他の設定、`runtime`ノード。  
+ 次の XML フラグメントは、`gcTrimCommitOnLowMemory` 設定を有効にする方法を示しています。 省略記号は、`runtime` ノード内のその他の設定を示します。  
   
 ```xml  
 <?xml version="1.0" encoding="UTF-8"?>  
@@ -51,5 +54,5 @@ ms.lasthandoff: 10/18/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ガベージ コレクション](../../../docs/standard/garbage-collection/index.md)

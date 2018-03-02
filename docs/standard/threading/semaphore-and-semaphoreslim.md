@@ -16,15 +16,18 @@ helpviewer_keywords:
 - SemaphoreSlim class, about SemaphoreSlim class
 - threading [.NET Framework], Semaphore class
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 039dee4df1a6d06fa1833eae077817ff5eca3ea3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3c7d196b54a831c807b7181c1c810c3e78a463a2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semaphore と SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType> クラスは、名前付きセマフォ (システム全体) またはローカル セマフォを表します。 これは、Win32 セマフォ オブジェクトの Thin ラッパーです。 Win32 セマフォは、リソースのプールへのアクセスの制御に使用できるカウント セマフォです。  
@@ -39,7 +42,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="semaphores-and-thread-identity"></a>セマフォとスレッド ID  
  この 2 つの種類のセマフォは、<xref:System.Threading.WaitHandle.WaitOne%2A>、<xref:System.Threading.SemaphoreSlim.Wait%2A>、<xref:System.Threading.Semaphore.Release%2A>、および <xref:System.Threading.SemaphoreSlim.Release%2A?displayProperty=nameWithType> の各メソッドの呼び出しでスレッド ID を適用しません。 たとえば、セマフォの一般的な使用シナリオでは、producer スレッドと consumer スレッドが使用され、一方のスレッドが常にセマフォ カウントをインクリメントし、もう一方のスレッドが常にセマフォ カウントをデクリメントします。  
   
- プログラマは、スレッドによるセマフォの解放回数が多くなりすぎないようにする必要があります。 たとえば、セマフォの最大カウントが 2 で、スレッド A とスレッド B が両方ともセマフォに入るとします。 スレッド B がプログラミング エラーのために `Release` を 2 回呼び出した場合、この呼び出しは両方とも成功します。 セマフォのカウントがいっぱいになり、A のときにスレッドを最終的に呼び出す`Release`、<xref:System.Threading.SemaphoreFullException>がスローされます。  
+ プログラマは、スレッドによるセマフォの解放回数が多くなりすぎないようにする必要があります。 たとえば、セマフォの最大カウントが 2 で、スレッド A とスレッド B が両方ともセマフォに入るとします。 スレッド B がプログラミング エラーのために `Release` を 2 回呼び出した場合、この呼び出しは両方とも成功します。 セマフォのカウントがいっぱいになっているときに、スレッド A も `Release` を呼び出すと、<xref:System.Threading.SemaphoreFullException> がスローされます。  
   
 ## <a name="named-semaphores"></a>名前付きセマフォ  
  Windows オペレーティング システムでは、セマフォに名前を付けることができます。 名前付きセマフォはシステム全体でのセマフォです。 つまり、名前付きセマフォは、作成されると、すべてのプロセスのすべてのスレッドで認識されるようになります。 そのため、名前付きセマフォは、プロセスおよびスレッドのアクティビティを同期するために使用できます。  
@@ -53,7 +56,7 @@ ms.lasthandoff: 11/21/2017
   
  アクセス制御セキュリティを使用して、名前付きセマフォを表す <xref:System.Threading.Semaphore> オブジェクトを保護します。可能であれば <xref:System.Security.AccessControl.SemaphoreSecurity?displayProperty=nameWithType> オブジェクトを指定するコンストラクターを使用して保護します。 <xref:System.Threading.Semaphore.SetAccessControl%2A?displayProperty=nameWithType> メソッドを使用してアクセス制御セキュリティを適用することもできますが、この場合、セマフォが作成されてから保護されるまでの間に無防備な時間帯が生じてしまいます。 アクセス制御セキュリティによりセマフォを保護すると、悪意のある攻撃を防ぐことができますが、意図しない名前の競合の問題の解決にはなりません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.Semaphore>  
  <xref:System.Threading.SemaphoreSlim>  
  [スレッド処理オブジェクトと機能](../../../docs/standard/threading/threading-objects-and-features.md)

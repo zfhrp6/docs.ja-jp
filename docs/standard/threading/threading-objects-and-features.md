@@ -12,15 +12,18 @@ helpviewer_keywords:
 - threading [.NET Framework], features
 - managed threading
 ms.assetid: 239b2e8d-581b-4ca3-992b-0e8525b9321c
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2a73e5c60a661c171e9e46e6307484cf5e0e6b80
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0cb36c004c46e22256928b3b2432da59fb3e6fa2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="threading-objects-and-features"></a>スレッド処理オブジェクトと機能
 .NET Framework には、マルチスレッド アプリケーションの作成と管理に役立つ多くのオブジェクトが用意されています。 マネージ スレッドは、<xref:System.Threading.Thread> クラスによって表されます。 <xref:System.Threading.ThreadPool> クラスを使用すると、マルチスレッドのバックグラウンド タスクを簡単に作成し、管理できます。 <xref:System.ComponentModel.BackgroundWorker> クラスは、ユーザー インターフェイスと対話するタスクについてそれと同じことを実現します。 <xref:System.Threading.Timer> クラスは、指定された間隔でバックグラウンド タスクを実行します。  
@@ -44,7 +47,7 @@ ms.lasthandoff: 10/18/2017
  通知を行ったり通知を待機したりすることによりスレッドの活動を同期するために使用するマネージ イベント待機ハンドルについて説明します。  
   
  [ミューテックス](../../../docs/standard/threading/mutexes.md)  
- 使用する方法について説明します、<xref:System.Threading.Mutex>オブジェクトへのアクセスを同期するために、または独自の同期機構を構築します。  
+ オブジェクトへのアクセスの同期、または独自の同期機構の構築を <xref:System.Threading.Mutex> を使用して行う方法を説明します。  
   
  [インタロックされた操作](../../../docs/standard/threading/interlocked-operations.md)  
  <xref:System.Threading.Interlocked> クラスを使用して、値の増減と値の格納をアトミックな 1 回の操作で実行する方法を説明します。  

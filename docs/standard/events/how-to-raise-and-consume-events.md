@@ -17,20 +17,23 @@ helpviewer_keywords:
 - raising events
 - events [.NET Framework], samples
 ms.assetid: 42afade7-3a02-4f2e-868b-95845f302f8f
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d052c865a554977ce5c8b0a347337d9d9b92fc57
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8efdef82cf98f4f1758cb941dc4610ebf575490c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-raise-and-consume-events"></a>方法 : イベントを発生させる/処理する
 このトピックの例では、イベントを使用する方法を示します。 ここでは、<xref:System.EventHandler> デリゲートと <xref:System.EventHandler%601> デリゲート、およびカスタム デリゲートの例を使用して、データを持つイベントと持たないイベントを示します。  
   
- 例で説明する概念を使用して、[イベント](../../../docs/standard/events/index.md)資料です。  
+ この例では、「[イベント](../../../docs/standard/events/index.md)」で説明されている概念を使用します。  
   
 ## <a name="example"></a>例  
  最初の例は、データを持たないイベントを発生させて処理する方法を示しています。 この例には、`Counter` という名前のイベントを持つ、`ThresholdReached` という名前のクラスが含まれます。 このイベントは、カウンター値がしきい値と等しいか、またはそれを超えた場合に発生します。 イベントのデータが指定されていないため、<xref:System.EventHandler> デリゲートはイベントに関連付けられます。  
@@ -51,5 +54,5 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[EventsOverview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programwithdelegate.cs#7)]
  [!code-vb[EventsOverview#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1withdelegate.vb#7)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [イベント](../../../docs/standard/events/index.md)

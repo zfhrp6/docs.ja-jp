@@ -15,32 +15,35 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 90b2a36f0e6bf06b0fefe2191d5b17c9c07d1588
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3eddf8899863b7f1c59950c9cd4fa4d42f7acdb7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>タスク ベースの非同期パターンの利用
-タスク ベースの非同期パターン (TAP) を使用して非同期操作を行うと、コールバックを使用して、ブロックすることなく待機できます。  タスクについては、これは、メソッドによってなど<xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>です。 言語ベースの非同期サポートが、通常の制御フロー内での非同期操作の待機を許可することで、コールバックを隠し、コンパイラにより生成されたコードはこの同じ API レベルのサポートを提供します。  
+タスク ベースの非同期パターン (TAP) を使用して非同期操作を行うと、コールバックを使用して、ブロックすることなく待機できます。  タスクの場合、これは <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> などのメソッドによって行われます。 言語ベースの非同期サポートが、通常の制御フロー内での非同期操作の待機を許可することで、コールバックを隠し、コンパイラにより生成されたコードはこの同じ API レベルのサポートを提供します。  
   
 ## <a name="suspending-execution-with-await"></a>Await による実行の中断  
- 以降で、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、使用することができます、 [await](~/docs/csharp/language-reference/keywords/await.md)キーワード (C#) および[Await 演算子](~/docs/visual-basic/language-reference/operators/await-operator.md)を非同期的に待機する Visual Basic で<xref:System.Threading.Tasks.Task>と<xref:System.Threading.Tasks.Task%601>オブジェクト。 待機しているときに、 <xref:System.Threading.Tasks.Task>、`await`式の型は`void`します。 待機しているときに、 <xref:System.Threading.Tasks.Task%601>、`await`式の型は`TResult`します。 `await` 式は、非同期メソッドの本体内に含める必要があります。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] における C# および Visual Basic の言語サポートの詳細については、C# および Visual Basic の言語仕様を参照してください。  
+ [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、C# の [await](~/docs/csharp/language-reference/keywords/await.md) キーワードおよび Visual Basic の [Await 演算子](~/docs/visual-basic/language-reference/operators/await-operator.md)を使用して <xref:System.Threading.Tasks.Task> オブジェクトと <xref:System.Threading.Tasks.Task%601> オブジェクトを非同期に待機できます。 <xref:System.Threading.Tasks.Task> を待っているとき、`await` 式は型 `void` になります。 <xref:System.Threading.Tasks.Task%601> を待っているとき、`await` 式は型 `TResult` になります。 `await` 式は、非同期メソッドの本体内に含める必要があります。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] における C# および Visual Basic の言語サポートの詳細については、C# および Visual Basic の言語仕様を参照してください。  
   
- 待機機能は、隠れた状態で継続を使用してタスクにコールバックをインストールします。  このコールバックは中断ポイントから非同期メソッドを再開します。 非同期のメソッドが再開されたときに、待機中の操作が正常に完了された場合、 <xref:System.Threading.Tasks.Task%601>、その`TResult`が返されます。  場合、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>で終了を待機するが、 <xref:System.Threading.Tasks.TaskStatus.Canceled> 、状態、<xref:System.OperationCanceledException>例外がスローされます。  場合、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>で終了を待機するが、<xref:System.Threading.Tasks.TaskStatus.Faulted>状態にある場合にエラーの原因となった例外がスローされます。 `Task` は複数の例外の結果としてエラーになることがありますが、反映されるのはこれらの例外の中の 1 つのみです。 ただし、<xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType>プロパティから返される、<xref:System.AggregateException>例外は、すべてのエラーが含まれています。  
+ 待機機能は、隠れた状態で継続を使用してタスクにコールバックをインストールします。  このコールバックは中断ポイントから非同期メソッドを再開します。 非同期メソッドが再開され、待機していた操作が正常に完了し、<xref:System.Threading.Tasks.Task%601> であった場合に、その `TResult` が返されます。  待っていた <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> が <xref:System.Threading.Tasks.TaskStatus.Canceled> 状態で終わった場合、<xref:System.OperationCanceledException> 例外がスローされます。  待っていた <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> が <xref:System.Threading.Tasks.TaskStatus.Faulted> 状態で終わった場合、エラーの原因となった例外がスローされます。 `Task` は複数の例外の結果としてエラーになることがありますが、反映されるのはこれらの例外の中の 1 つのみです。 ただし、<xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> プロパティは、すべてのエラーが含まれる <xref:System.AggregateException> 例外を返します。  
   
- 場合、同期コンテキスト (<xref:System.Threading.SynchronizationContext>オブジェクト) の中断時に、非同期メソッドが実行しているスレッドに関連付けられて (場合など、<xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType>プロパティは使用されません`null`)、非同期のメソッドが再開します。コンテキストを使用して、同じ同期コンテキスト<xref:System.Threading.SynchronizationContext.Post%2A>メソッドです。 それ以外の場合、依存タスク スケジューラ (<xref:System.Threading.Tasks.TaskScheduler>オブジェクト) が現在中断時にします。 通常、これは既定のタスク スケジューラ (<xref:System.Threading.Tasks.TaskScheduler.Default%2A?displayProperty=nameWithType>)、スレッド プールを対象とします。 このタスク スケジューラによって、待機していた非同期操作が完了した場合に再開するかどうか、または再開のスケジュールを設定するかどうかが決定されます。 既定のスケジューラは、通常、待機していた操作が完了したスレッド上での実行の継続を許可します。  
+ 中断時に非同期メソッドを実行したスレッドに同期コンテキスト (<xref:System.Threading.SynchronizationContext> オブジェクト) が関連付けられている場合 (<xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> プロパティが `null` ではないなど)、非同期メソッドは、コンテキストの <xref:System.Threading.SynchronizationContext.Post%2A> メソッドを利用し、その同じ同期コンテキストで再開します。 そのように関連付けられていない場合、中断時に実行されていたタスク スケジューラ (<xref:System.Threading.Tasks.TaskScheduler> オブジェクト) に基づきます。 通常、これは既定のタスク スケジューラ (<xref:System.Threading.Tasks.TaskScheduler.Default%2A?displayProperty=nameWithType>) であり、スレッド プールをターゲットにします。 このタスク スケジューラによって、待機していた非同期操作が完了した場合に再開するかどうか、または再開のスケジュールを設定するかどうかが決定されます。 既定のスケジューラは、通常、待機していた操作が完了したスレッド上での実行の継続を許可します。  
   
- 非同期メソッドが呼び出された場合、まだ完了していない待機可能なインスタンスの最初の await 式まで、関数の本体を同期をとって実行し、この時点で呼び出しを呼び出し元に返します。 非同期のメソッドが返されなかった場合`void`、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>を継続的な計算を表すオブジェクトが返されます。 非 void の非同期メソッドに return ステートメントが発生したか、またはメソッド本体の末尾に達した場合、タスクの完了で、<xref:System.Threading.Tasks.TaskStatus.RanToCompletion>最終的な状態です。 未処理の例外では、コントロールを非同期メソッドの本体外に出すとの終了、<xref:System.Threading.Tasks.TaskStatus.Faulted>状態です。 その例外がある場合、 <xref:System.OperationCanceledException>、タスクの代わりに終了日、<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。 この方法では、結果または例外が最終的に発行されます。  
+ 非同期メソッドが呼び出された場合、まだ完了していない待機可能なインスタンスの最初の await 式まで、関数の本体を同期をとって実行し、この時点で呼び出しを呼び出し元に返します。 非同期メソッドが `void` を返さない場合、進行中の計算を表す <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> オブジェクトが返されます。 void 以外の非同期メソッドでは、return ステートメントが検出された場合、またはメソッド本体の末尾に到達した場合、タスクが <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> の終了状態で完了します。 ハンドルされない例外により、非同期メソッドの本体から制御が離れた場合、タスクは <xref:System.Threading.Tasks.TaskStatus.Faulted> 状態になります。 その例外が <xref:System.OperationCanceledException> の場合、タスクは代わりに <xref:System.Threading.Tasks.TaskStatus.Canceled> 状態で終わります。 この方法では、結果または例外が最終的に発行されます。  
   
  この動作には、いくつかの重要なバリエーションがあります。  タスクが待機されるまでに既に完了していた場合は、パフォーマンス上の理由から、制御が明け渡されず、関数が実行を継続します。  また、元のコンテキストに戻ることが必ずしも望ましい動作ではない場合は変更されることがあります。これは、次のセクションで詳しく説明します。  
   
 ### <a name="configuring-suspension-and-resumption-with-yield-and-configureawait"></a>Yield と ConfigureAwait を使用して中断と再開を構成する  
- 一部のメソッドでは、非同期メソッドの実行をより詳細に制御できます。 たとえば、使用することができます、<xref:System.Threading.Tasks.Task.Yield%2A?displayProperty=nameWithType>非同期メソッドに、徐行を表すポイントを導入する方法。  
+ 一部のメソッドでは、非同期メソッドの実行をより詳細に制御できます。 たとえば、<xref:System.Threading.Tasks.Task.Yield%2A?displayProperty=nameWithType> メソッドを使用し、yield ポイントを非同期メソッドに伝えることができます。  
   
 ```csharp  
 public class Task : …  
@@ -63,16 +66,16 @@ Task.Run(async delegate
 });  
 ```  
   
- 使用することも、<xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType>を中断および再開する非同期メソッドでより細かく制御メソッド。  再開時に非同期メソッドの継続を呼び出すために非同期メソッドが中断され、そのキャプチャされたコンテキストが使用されている場合、既定では、既に説明したように現在のコンテキストがキャプチャされます。  これは、多くの場合に求められる動作です。  その他の場合では、継続のコンテキストが重要でないこともあり、元のコンテキストへのポスト バックを回避することでパフォーマンスを向上できます。  これを有効にするには、<xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType>にキャプチャし、コンテキストの再開はなく、実行を継続する待機対象が非同期の操作が完了した場所に、await 操作を通知します。  
+ <xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType> メソッドを使用することもできます。非同期メソッドでの中断と再開でより優れた制御機能が与えられます。  再開時に非同期メソッドの継続を呼び出すために非同期メソッドが中断され、そのキャプチャされたコンテキストが使用されている場合、既定では、既に説明したように現在のコンテキストがキャプチャされます。  これは、多くの場合に求められる動作です。  その他の場合では、継続のコンテキストが重要でないこともあり、元のコンテキストへのポスト バックを回避することでパフォーマンスを向上できます。  そのためには、<xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType> メソッドを使用して、待機操作にコンテキストをキャプチャして再開するのではなく、待機していた非同期操作がどこで完了したかを問わず、実行を継続するように指示できます。  
   
 ```csharp  
 await someTask.ConfigureAwait(continueOnCapturedContext:false);  
 ```  
   
 ## <a name="canceling-an-asynchronous-operation"></a>非同期操作の取り消し  
- 以降で、 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、キャンセルをサポートする TAP メソッドは、キャンセル トークンを受け入れるには、少なくとも 1 つのオーバー ロードを提供 (<xref:System.Threading.CancellationToken>オブジェクト)。  
+ [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、取り消しをサポートする TAP メソッドは、キャンセル トークン (<xref:System.Threading.CancellationToken> オブジェクト) を受け取るオーバーロードを少なくとも 1 つ用意します。  
   
- キャンセル トークンが、キャンセル トークン ソースを作成 (<xref:System.Threading.CancellationTokenSource>オブジェクト)。  ソースの<xref:System.Threading.CancellationTokenSource.Token%2A>プロパティには、通知されるキャンセル トークンが返されます。 ときに、ソースの<xref:System.Threading.CancellationTokenSource.Cancel%2A>メソッドが呼び出されます。  たとえば、1 つの web ページをダウンロードする場合、操作を取り消すことができるを作成する、<xref:System.Threading.CancellationTokenSource>オブジェクト、TAP メソッドにそのトークンを渡すし、ソースを呼び出す<xref:System.Threading.CancellationTokenSource.Cancel%2A>操作をキャンセルする準備ができたら、メソッド。  
+ キャンセル トークンは、キャンセル トークンのソース (<xref:System.Threading.CancellationTokenSource> オブジェクト) によって作成されます。  ソースの <xref:System.Threading.CancellationTokenSource.Token%2A> プロパティがキャンセル トークンを返します。ソースの <xref:System.Threading.CancellationTokenSource.Cancel%2A> メソッドが呼び出されたとき、このトークンに信号が送られます。  たとえば、単一の Web ページをダウンロードする際に操作を取り消せるようにする場合は、<xref:System.Threading.CancellationTokenSource> オブジェクトを作成し、TAP メソッドにそのオブジェクトのトークンを渡し、操作を取り消す準備ができたらソースの <xref:System.Threading.CancellationTokenSource.Cancel%2A> メソッドを呼び出します。  
   
 ```csharp  
 var cts = new CancellationTokenSource();  
@@ -103,7 +106,7 @@ var cts = new CancellationTokenSource();
   
  取り消し要求は任意のスレッドから開始することができます。  
   
- 渡すことができます、<xref:System.Threading.CancellationToken.None%2A?displayProperty=nameWithType>取り消しが要求しないことを示すためにキャンセル トークンを受け入れるメソッドにする値。  これにより、<xref:System.Threading.CancellationToken.CanBeCanceled%2A?displayProperty=nameWithType>を返すプロパティ`false`、し、それに応じて、呼び出されたメソッドを最適化できます。  テストのためには、トークンが既に取り消された状態か取り消し不可能な状態で開始するかどうかを示すブール値を受け取るコンストラクターを使用してインスタンス化した、事前に取り消されたキャンセル トークンを渡すこともできます。  
+ 取り消しが要求されないことを示すために、キャンセル トークンを受け取るすべてのメソッドに <xref:System.Threading.CancellationToken.None%2A?displayProperty=nameWithType> 値を渡すことができます。  これで <xref:System.Threading.CancellationToken.CanBeCanceled%2A?displayProperty=nameWithType> プロパティが `false` を返します。呼び出されたメソッドは適宜最適化できます。  テストのためには、トークンが既に取り消された状態か取り消し不可能な状態で開始するかどうかを示すブール値を受け取るコンストラクターを使用してインスタンス化した、事前に取り消されたキャンセル トークンを渡すこともできます。  
   
  この取り消し方法には、いくつか利点があります。  
   
@@ -133,10 +136,10 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
   
 <a name="combinators"></a>   
 ## <a name="using-the-built-in-task-based-combinators"></a>タスク ベースの組み込み連結子の使用  
- <xref:System.Threading.Tasks>名前空間には、作成するタスクを操作するためのいくつかのメソッドが含まれています。  
+ <xref:System.Threading.Tasks> 名前空間には、タスクを構成および使用するための複数のメソッドがあります。  
   
 ### <a name="taskrun"></a>Task.Run  
- <xref:System.Threading.Tasks.Task>クラスが含まれる<xref:System.Threading.Tasks.Task.Run%2A>簡単にするためのメソッドとしての作業をオフロードする、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>例については、スレッド プールに。  
+ <xref:System.Threading.Tasks.Task> クラスには、<xref:System.Threading.Tasks.Task.Run%2A> メソッドがいくつか含まれています。このメソッドでは、次のように、<xref:System.Threading.Tasks.Task> や <xref:System.Threading.Tasks.Task%601> のような作業の負荷をスレッド プールに簡単に移すことができます。  
   
 ```csharp  
 public async void button1_Click(object sender, EventArgs e)  
@@ -149,7 +152,7 @@ public async void button1_Click(object sender, EventArgs e)
 }  
 ```  
   
- これらのいくつか<xref:System.Threading.Tasks.Task.Run%2A>メソッドなど、<xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType>オーバー ロードする、短縮形として存在している、<xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType>メソッドです。  などの他の overloads <xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType>、たとえばオフロードの作業内 await を使用することで有効にする。  
+ <xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> オーバーロードなど、これらの <xref:System.Threading.Tasks.Task.Run%2A> メソッドの一部は <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> メソッドの短縮形として存在します。  <xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> など、他のオーバーロードでは、次のように、負荷分散される作業内で await を使用できます。  
   
 ```csharp  
 public async void button1_Click(object sender, EventArgs e)  
@@ -163,10 +166,10 @@ public async void button1_Click(object sender, EventArgs e)
 }  
 ```  
   
- このようなオーバー ロードを使用してに論理的に等価、<xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType>メソッドと組み合わせて、<xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A>タスク並列ライブラリでも拡張メソッド。  
+ このようなオーバーロードは論理的に、タスク並列ライブラリの <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> 拡張メソッドとの連動で <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> メソッドを使用することと等しくなります。  
   
 ### <a name="taskfromresult"></a>Task.FromResult  
- 使用して、<xref:System.Threading.Tasks.Task.FromResult%2A>データことが既にある使用可能かつだけのシナリオでメソッドをクラスに退避タスクを返すメソッドから返される必要があります、 <xref:System.Threading.Tasks.Task%601>:  
+ データが既に利用でき、単に <xref:System.Threading.Tasks.Task%601> にリフトされたタスクを返すメソッドから返す必要があるシナリオでは、<xref:System.Threading.Tasks.Task.FromResult%2A> メソッドを使用します。  
   
 ```csharp  
 public Task<int> GetValueAsync(string key)  
@@ -184,7 +187,7 @@ private async Task<int> GetValueAsyncInternal(string key)
 ```  
   
 ### <a name="taskwhenall"></a>Task.WhenAll  
- 使用して、<xref:System.Threading.Tasks.Task.WhenAll%2A>メソッドがタスクとして表される非同期操作を複数の非同期的に待機します。  メソッドには、一連の非ジェネリック タスクまたは不均一な一連のジェネリック タスク (複数の void を返す操作を非同期に待機したり、各値の型が異なる複数の値を返すメソッドを非同期に待機するなど) に加えて、均一な一連のジェネリック タスク (複数の `TResult` を返すメソッドを非同期に待機するなど) をサポートする複数のオーバーロードが含まれます。  
+ <xref:System.Threading.Tasks.Task.WhenAll%2A> メソッドは、タスクとして表される複数の非同期操作で非同期に待機するために使用されます。  メソッドには、一連の非ジェネリック タスクまたは不均一な一連のジェネリック タスク (複数の void を返す操作を非同期に待機したり、各値の型が異なる複数の値を返すメソッドを非同期に待機するなど) に加えて、均一な一連のジェネリック タスク (複数の `TResult` を返すメソッドを非同期に待機するなど) をサポートする複数のオーバーロードが含まれます。  
   
  複数の顧客に電子メール メッセージを送信するとします。 このような場合、1 つのメッセージの送信完了を待たずに次のメッセージを送信するような、メッセージのオーバーラップ送信が可能です。 送信操作がいつ完了したか、またエラーが発生したかを確認することもできます。  
   
@@ -193,7 +196,7 @@ IEnumerable<Task> asyncOps = from addr in addrs select SendMailAsync(addr);
 await Task.WhenAll(asyncOps);  
 ```  
   
- このコードは、例外が発生するが、例外の伝達されることができますを処理しない明示的に、`await`から結果のタスクで<xref:System.Threading.Tasks.Task.WhenAll%2A>です。  例外を処理するには、次のようなコードを使用できます。  
+ このコードは発生する可能性がある例外を明示的に処理せず、<xref:System.Threading.Tasks.Task.WhenAll%2A> の結果のタスクの `await` から例外を反映します。  例外を処理するには、次のようなコードを使用できます。  
   
 ```csharp  
 IEnumerable<Task> asyncOps = from addr in addrs select SendMailAsync(addr);  
@@ -207,7 +210,7 @@ catch(Exception exc)
 }  
 ```  
   
- この例では、非同期操作が失敗した場合、すべての例外はで統合、<xref:System.AggregateException>に格納されている例外、<xref:System.Threading.Tasks.Task>から返された、<xref:System.Threading.Tasks.Task.WhenAll%2A>メソッドです。  ただし、これらの例外の 1 つだけが `await` キーワードによって反映されます。  すべての例外を調べる場合は、上記のコードを次のように書き直します。  
+ この例では、非同期の操作が失敗した場合、すべての例外が <xref:System.AggregateException> 例外で連結され、<xref:System.Threading.Tasks.Task.WhenAll%2A> メソッドから返される <xref:System.Threading.Tasks.Task> に格納されます。  ただし、これらの例外の 1 つだけが `await` キーワードによって反映されます。  すべての例外を調べる場合は、上記のコードを次のように書き直します。  
   
 ```csharp  
 Task [] asyncOps = (from addr in addrs select SendMailAsync(addr)).ToArray();  
@@ -251,7 +254,7 @@ catch(Exception exc)
 ```  
   
 ### <a name="taskwhenany"></a>Task.WhenAny  
- 使用することができます、<xref:System.Threading.Tasks.Task.WhenAny%2A>複数の非同期操作の 1 つの非同期的に待機するメソッドが完了するタスクとして表されます。  このメソッドは、次の 4 つの主なユース ケースで役立ちます。  
+ <xref:System.Threading.Tasks.Task.WhenAny%2A> メソッドを使用して、完了するタスクとして表される複数の非同期操作の 1 つのみを非同期に待機できます。  このメソッドは、次の 4 つの主なユース ケースで役立ちます。  
   
 -   冗長性:  1 つの操作を複数回実行し、最初に完了したものを選択する (たとえば、1 つの結果を生成する複数の株価情報 Web サービスに問い合わせて、最も速く完了したものを選択する)。  
   
@@ -259,10 +262,10 @@ catch(Exception exc)
   
 -   調整:  他の操作が完了したら追加の操作を開始できるようにする。  これは、インターリーブのシナリオを拡張したものです。  
   
--   初期の保留: でなどにタスク t1 で表される操作をグループ化することができます、<xref:System.Threading.Tasks.Task.WhenAny%2A>で別のタスク t2 とするタスクが待機できる、<xref:System.Threading.Tasks.Task.WhenAny%2A>タスク。 タスク t2 は、タイムアウト、またはキャンセル、または原因となるその他のいくつかの信号を表すことが、 <xref:System.Threading.Tasks.Task.WhenAny%2A> t1 が完了する前に完了するタスク。  
+-   初期のエスケープ: たとえば、タスク t1 が表す操作を別のタスク t2 と共に <xref:System.Threading.Tasks.Task.WhenAny%2A> タスクでグループにまとめ、<xref:System.Threading.Tasks.Task.WhenAny%2A> タスクで待機できます。 タスク t2 は、タイムアウトか取り消し、または <xref:System.Threading.Tasks.Task.WhenAny%2A> タスクを t1 の前に完了するようなその他のシグナルを表す場合があります。  
   
 #### <a name="redundancy"></a>冗長性  
- 株式を購入するかどうかを決定するとします。  信頼できるいくつかの株式推薦 Web サービスがありますが、日常的な負荷によっては、時に応じて各サービスがかなり遅くなることがあります。  使用することができます、<xref:System.Threading.Tasks.Task.WhenAny%2A>任意の操作が完了したら、通知を受信するメソッド。  
+ 株式を購入するかどうかを決定するとします。  信頼できるいくつかの株式推薦 Web サービスがありますが、日常的な負荷によっては、時に応じて各サービスがかなり遅くなることがあります。  <xref:System.Threading.Tasks.Task.WhenAny%2A> メソッドを使用すると、いずれかの操作が完了したときに通知を受け取ることができます。  
   
 ```csharp  
 var recommendations = new List<Task<bool>>()   
@@ -275,9 +278,9 @@ Task<bool> recommendation = await Task.WhenAny(recommendations);
 if (await recommendation) BuyStock(symbol);  
 ```  
   
- 異なり<xref:System.Threading.Tasks.Task.WhenAll%2A>、正常に完了しているすべてのタスクのラップ解除された結果が返されます<xref:System.Threading.Tasks.Task.WhenAny%2A>完了タスクを返します。 タスクが失敗した場合は、それを把握することが重要です。タスクが成功した場合は、戻り値が関連付けられているタスクを把握することが重要です。  そのため、この例で示すように、返されるタスクの結果にアクセスするか、引き続き待機する必要があります。  
+ 正常に完了したすべてのタスクの結果をラップせずに返す <xref:System.Threading.Tasks.Task.WhenAll%2A> とは異なり、<xref:System.Threading.Tasks.Task.WhenAny%2A> は完了したタスクを返します。 タスクが失敗した場合は、それを把握することが重要です。タスクが成功した場合は、戻り値が関連付けられているタスクを把握することが重要です。  そのため、この例で示すように、返されるタスクの結果にアクセスするか、引き続き待機する必要があります。  
   
- 同様に<xref:System.Threading.Tasks.Task.WhenAll%2A>例外に対応することができる必要があります。  完了したタスクを受け取るので、適切に `try/catch` で囲んで、エラーが反映されて返されるタスクを待機できます。次に例を示します。  
+ <xref:System.Threading.Tasks.Task.WhenAll%2A> と同様に、例外に対応できる必要があります。  完了したタスクを受け取るので、適切に `try/catch` で囲んで、エラーが反映されて返されるタスクを待機できます。次に例を示します。  
   
 ```csharp  
 Task<bool> [] recommendations = …;  
@@ -296,7 +299,7 @@ while(recommendations.Count > 0)
 }  
 ```  
   
- さらに、最初のタスクが正常に完了しても、以降のタスクが失敗する可能性があります。  この時点では、例外を処理するためのいくつかのオプションがある: 使用する場合、起動されたすべてのタスクが完了するまでに待機することができます、<xref:System.Threading.Tasks.Task.WhenAll%2A>メソッド、またはするは、すべての例外が重要で、ログインする必要があるを決定できます。  そのためには、継続を使用してタスクが非同期に完了した時点で通知を受け取ることができます。  
+ さらに、最初のタスクが正常に完了しても、以降のタスクが失敗する可能性があります。  この時点で、例外を処理する方法はいくつかあります。起動したすべてのタスクが完了するまで待機できます。その場合は、<xref:System.Threading.Tasks.Task.WhenAll%2A> メソッドを使用するか、すべての例外が重要であり、ログに記録する必要があると指定できます。  そのためには、継続を使用してタスクが非同期に完了した時点で通知を受け取ることができます。  
   
 ```csharp  
 foreach(Task recommendation in recommendations)  
@@ -367,7 +370,7 @@ while(imageTasks.Count > 0)
 }  
 ```  
   
- 負荷の高い処理を行うシナリオをインターリーブを適用することも、<xref:System.Threading.ThreadPool>ダウンロードしたイメージの; 例。  
+ 次のように、ダウンロードしたイメージの <xref:System.Threading.ThreadPool> でコンピューター処理を集中して行うことが必要になるシナリオでも、インターリーブを適用できます。  
   
 ```csharp  
 List<Task<Bitmap>> imageTasks =   
@@ -482,12 +485,12 @@ public async void btnRun_Click(object sender, EventArgs e)
 }  
 ```  
   
- 初期の保留の別の例を使用して、<xref:System.Threading.Tasks.Task.WhenAny%2A>メソッドと組み合わせて、<xref:System.Threading.Tasks.Task.Delay%2A>メソッドを次のセクションで説明したようにします。  
+ 初期のエスケープのもう 1 つの例では、次のセクションで説明する <xref:System.Threading.Tasks.Task.Delay%2A> メソッドと連動で <xref:System.Threading.Tasks.Task.WhenAny%2A> メソッドを使用します。  
   
 ### <a name="taskdelay"></a>Task.Delay  
- 使用することができます、<xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType>を導入するメソッドが非同期メソッドの実行を一時停止します。  これは、ポーリング ループのビルド、あらかじめ指定された期間にわたるユーザー入力処理の遅延など、さまざまな機能に役立ちます。  <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType>メソッドにも役立ちますと組み合わせて<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>の待機のタイムアウトを実装します。  
+ <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> メソッドを使用し、非同期メソッドの実行を一時停止できます。  これは、ポーリング ループのビルド、あらかじめ指定された期間にわたるユーザー入力処理の遅延など、さまざまな機能に役立ちます。  <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> メソッドは、<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> との連動で使用し、待機にタイムアウトを実装する場合にも便利です。  
   
- 大規模な非同期操作 (ASP.NET Web サービスなど) の一部を構成するタスクが完了するまで時間がかかる場合 (特に操作が完了しない場合) には、操作全般に影響が及びます。  そのため、非同期操作の待機をタイムアウトできるようにすることが重要になります。  同期<xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>、 <xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>、および<xref:System.Threading.Tasks.Task.WaitAny%2A?displayProperty=nameWithType>メソッドが、対応するが、タイムアウト値を受け入れる<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>前に説明したと<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>メソッドがありません。  使用する代わりに、<xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType>と<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>を組み合わせると、タイムアウトを実装します。  
+ 大規模な非同期操作 (ASP.NET Web サービスなど) の一部を構成するタスクが完了するまで時間がかかる場合 (特に操作が完了しない場合) には、操作全般に影響が及びます。  そのため、非同期操作の待機をタイムアウトできるようにすることが重要になります。  同期の <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Task.WaitAny%2A?displayProperty=nameWithType> メソッドはタイムアウト値を受け取りますが、対応する <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType>/<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> と前述の <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>/<xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> メソッドは受け取りません。  代わりに、<xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> と <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> を併用し、タイムアウトを実装できます。  
   
  たとえば、UI アプリケーションで、イメージをダウンロードし、そのダウンロード中は UI を無効にするとします。 ただし、ダウンロードに時間がかかりすぎる場合には、UI を再び有効にしてダウンロードを破棄します。  
   
@@ -516,7 +519,7 @@ public async void btnDownload_Click(object sender, EventArgs e)
 }  
 ```  
   
- 同じに適用される複数のダウンロードのため<xref:System.Threading.Tasks.Task.WhenAll%2A>タスクを返します。  
+ 複数のダウンロードにも同じことが当てはまります。次のように、<xref:System.Threading.Tasks.Task.WhenAll%2A> がタスクを返すためです。  
   
 ```csharp  
 public async void btnDownload_Click(object sender, RoutedEventArgs e)  
@@ -639,7 +642,7 @@ double currentPrice = await NeedOnlyOne(
 ```  
   
 ### <a name="interleaved-operations"></a>インターリーブされた操作  
- 使用して潜在的なパフォーマンスの問題がある、<xref:System.Threading.Tasks.Task.WhenAny%2A>タスクの非常に大きなセットを使用している場合、インターリーブのシナリオをサポートするメソッド。  すべての呼び出しに<xref:System.Threading.Tasks.Task.WhenAny%2A>登録されると、各タスクの継続で発生します。 タスクの数を N とすると、インターリーブ操作の有効期間に作成された O (N2) の継続になります。  多数のタスクを使用する場合は、連結子 (次の例の `Interleaved`) を使用してパフォーマンスの問題に対処できます。  
+ 多数のタスクを使用する際に、インターリーブのシナリオをサポートするために <xref:System.Threading.Tasks.Task.WhenAny%2A> メソッドを使用すると、パフォーマンスの問題が発生することがあります。  <xref:System.Threading.Tasks.Task.WhenAny%2A> を呼び出すたびに、継続が各タスクに登録されます。 タスクの数を N とすると、インターリーブ操作の有効期間に作成された O (N2) の継続になります。  多数のタスクを使用する場合は、連結子 (次の例の `Interleaved`) を使用してパフォーマンスの問題に対処できます。  
   
 ```csharp  
 static IEnumerable<Task<T>> Interleaved<T>(IEnumerable<Task<T>> tasks)  
@@ -703,10 +706,10 @@ public static Task<T[]> WhenAllOrFirstException<T>(IEnumerable<Task<T>> tasks)
 ```  
   
 ## <a name="building-task-based-data-structures"></a>タスク ベースのデータ構造のビルド  
- データ構造を持つできるだけでなく、カスタムのタスク ベースの連結子を構築する、<xref:System.Threading.Tasks.Task>と<xref:System.Threading.Tasks.Task%601>非同期操作の両方の結果を表すし、それに参加するために必要な同期では、非常に強力な非同期のシナリオで使用するカスタム データ構造を構築するために入力します。  
+ カスタム タスク ベースの連結子をビルドする機能に加えて、非同期操作の結果と、結合する必要な同期の両方を表す <xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> 内にデータ構造を配置することで、非同期シナリオに使用するカスタム データ構造をビルドするための非常に強力な型になります。  
   
 ### <a name="asynccache"></a>AsyncCache  
- その結果または例外を取得 1 つのタスクの重要な側面は、そのことがあります配ることで、登録継続 await の可能性があります、複数のコンシューマーに (の場合、 <xref:System.Threading.Tasks.Task%601>) のようにします。  これにより、<xref:System.Threading.Tasks.Task>と<xref:System.Threading.Tasks.Task%601>非同期キャッシュ インフラストラクチャで使用するのには最適です。  小規模の例を次に示しますが、強力な非同期キャッシュの上に構築<xref:System.Threading.Tasks.Task%601>:  
+ タスクの重要な側面の 1 つに、タスクを待機する複数のコンシューマーに渡し、タスクに継続を登録し、その結果または例外を取得できることなどがあります (<xref:System.Threading.Tasks.Task%601> の場合)。  これで <xref:System.Threading.Tasks.Task> と <xref:System.Threading.Tasks.Task%601> が非同期キャッシュ インフラストラクチャで使用できるように調整されます。  次に、<xref:System.Threading.Tasks.Task%601> 上にビルドした小さいながらも強力な非同期キャッシュの例を示します。  
   
 ```csharp  
 public class AsyncCache<TKey, TValue>  
@@ -733,7 +736,7 @@ public class AsyncCache<TKey, TValue>
 }  
 ```  
   
- [AsyncCache\<TKey, TValue >](http://go.microsoft.com/fwlink/p/?LinkId=251941)を受け取る関数、クラス、コンス トラクターにデリゲートを受け入れる、`TKey`を返します、<xref:System.Threading.Tasks.Task%601>です。  以前にキャッシュからアクセスした値は内部ディクショナリに格納され、`AsyncCache` によって、キャッシュに同時にアクセスしてもキーごとにタスクが 1 つしか生成されないようにします。  
+ [AsyncCache\<TKey,TValue>](http://go.microsoft.com/fwlink/p/?LinkId=251941) クラスは、コンストラクターへのデリゲートとして `TKey` を受け取る関数を受け入れ、<xref:System.Threading.Tasks.Task%601> を返します。  以前にキャッシュからアクセスした値は内部ディクショナリに格納され、`AsyncCache` によって、キャッシュに同時にアクセスしてもキーごとにタスクが 1 つしか生成されないようにします。  
   
  たとえば、次のようにダウンロードされた Web ページのキャッシュをビルドできます。  
   
@@ -818,7 +821,7 @@ private static void Produce(int data)
 }  
 ```  
   
- <xref:System.Threading.Tasks.Dataflow>名前空間が含まれています、<xref:System.Threading.Tasks.Dataflow.BufferBlock%601>型で、カスタム コレクション型を構築する必要はありませんが、同様の方法で行うこともできます。  
+ <xref:System.Threading.Tasks.Dataflow> 名前空間には <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> 型が含まれます。これは同様に使用できますが、カスタムのコレクション型をビルドする必要はありません。  
   
 ```csharp  
 private static BufferBlock<int> m_data = …;  
@@ -839,9 +842,9 @@ private static void Produce(int data)
 ```  
   
 > [!NOTE]
->  <xref:System.Threading.Tasks.Dataflow>名前空間で使用できる、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]を通じて**NuGet**です。 含むアセンブリをインストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**から、[プロジェクト] メニューのし、Microsoft.Tpl.Dataflow パッケージをオンライン検索します。  
+>  <xref:System.Threading.Tasks.Dataflow> 名前空間は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] にあります。**NuGet** を利用してください。 <xref:System.Threading.Tasks.Dataflow> 名前空間が含まれるアセンブリをインストールするには、[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] でプロジェクトを開き、[プロジェクト] メニューの **[Manage NuGet Packages]** を選択し、Microsoft.Tpl.Dataflow パッケージをオンライン検索します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [タスク ベースの非同期パターン (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)  
  [タスク ベースの非同期パターンの実装](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)  
  [他の非同期パターンと型との相互運用](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)

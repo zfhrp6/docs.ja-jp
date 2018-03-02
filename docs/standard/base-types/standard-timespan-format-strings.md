@@ -23,18 +23,21 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c4c486728ee4f98a6718c4d019976fccd6f380d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 02dd73cd7f8f6be07b298e6fb1aac2b4759d21bb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="standard-timespan-format-strings"></a>標準 TimeSpan 書式指定文字列
-<a name="Top"></a>標準的な<xref:System.TimeSpan>書式指定文字列のテキスト表現を定義する単一の書式指定子を使用して、<xref:System.TimeSpan>書式設定操作によって生成される値。 空白を含む複数の文字で構成される書式指定文字列は、カスタムの <xref:System.TimeSpan> 書式指定文字列として解釈されます。 詳細については、「[カスタム TimeSpan 書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)」をご覧ください。  
+<a name="Top"></a> 標準の <xref:System.TimeSpan> 書式指定文字列は、単一の書式指定子を使用して、書式設定操作によって生成される <xref:System.TimeSpan> 値のテキスト表現を定義します。 空白を含む複数の文字で構成される書式指定文字列は、カスタムの <xref:System.TimeSpan> 書式指定文字列として解釈されます。 詳細については、「[カスタム TimeSpan 書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)」をご覧ください。  
   
  <xref:System.TimeSpan> 値の文字列形式は、<xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType> メソッドのオーバーロードの呼び出しと、<xref:System.String.Format%2A?displayProperty=nameWithType> などの複合書式指定をサポートするメソッドによって生成されます。 詳細については、「[型の書式設定](../../../docs/standard/base-types/formatting-types.md)」と「[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)」をご覧ください。 次の例では、書式設定操作で標準書式指定文字列を使用する方法を示しています。  
   
@@ -48,7 +51,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="top"></a>標準の時間間隔書式指定子を次の表に示します。  
   
-|書式指定子|名前|説明|例|  
+|書式指定子|name|説明|使用例|  
 |----------------------|----------|-----------------|--------------|  
 |"c"|固定 (不変) 書式|この指定子はカルチャに依存しません。 `[-][d’.’]hh’:’mm’:’ss[‘.’fffffff]` の書式を使用します。<br /><br /> ("t" と "T" の各書式指定文字列によって生成される結果は同じになります。)<br /><br /> 詳細については、「[固定の ("c") 書式指定子](#Constant)」を参照してください。|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
 |"g"|一般の短い書式|この指定子は必要なものだけを出力します。 カルチャに依存し、`[-][d’:’]h’:’mm’:’ss[.FFFFFFF]` の書式になります。<br /><br /> 詳細については、「[一般の短い ("g") 書式指定子](#GeneralShort)」を参照してください。|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50,5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50,599 (fr-FR)|  
@@ -71,7 +74,7 @@ ms.lasthandoff: 11/21/2017
 |*ss*|"0" ～ "59" の範囲の秒数。|  
 |*fffffff*|省略可能な秒の小数部。  "0000001" (1 ティック、つまり 1,000 万分の 1 秒) ～ "9999999" (1,000 万分の 9,999,999 秒、つまり 1 秒より 1 ティック少ない) までの範囲の値が可能です。|  
   
- "g" および "G" 書式指定子とは異なり、"c" 書式指定子はカルチャに依存しません。 不変で、かつ <xref:System.TimeSpan> より前のすべての .NET Framework バージョンに共通する、[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 値の文字列形式を生成します。 既定値は、"c"<xref:System.TimeSpan>書式指定文字列以外の場合は、<xref:System.TimeSpan.ToString?displayProperty=nameWithType>メソッドは、"c"書式指定文字列を使用して時間間隔の値を書式化します。  
+ "g" および "G" 書式指定子とは異なり、"c" 書式指定子はカルチャに依存しません。 不変で、かつ <xref:System.TimeSpan> より前のすべての .NET Framework バージョンに共通する、[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 値の文字列形式を生成します。 "c" は、既定の <xref:System.TimeSpan> 書式文字列です。<xref:System.TimeSpan.ToString?displayProperty=nameWithType> メソッドは、"c" 書式指定文字列を使用して時間間隔値の書式を設定します。  
   
 > [!NOTE]
 >  <xref:System.TimeSpan> では、動作が "c" 標準書式指定文字列と同じである "t" と "T" の標準書式指定文字列もサポートされます。  
@@ -137,7 +140,7 @@ ms.lasthandoff: 11/21/2017
   
  [表のトップへ](#Top)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [カスタム時間間隔書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)  
- [文字列の解析](../../../docs/standard/base-types/parsing-strings.md)
+ [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)

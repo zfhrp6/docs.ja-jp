@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe60aaa0-ae43-4b1c-9be1-426af66ba757
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e66d98501bb0bd3a5d5cd5eacc0b09405c158522
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b16ad921e5b16ab7564b2ceedab91c6b6073537d
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xslt-parameters"></a>XSLT パラメーター
 XSLT パラメーターを <xref:System.Xml.Xsl.XsltArgumentList> に追加するには、<xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> メソッドを使用します。 その時点で、修飾名と名前空間 URI がそのパラメーター オブジェクトに関連付けられます。  
@@ -43,11 +46,11 @@ XSLT パラメーターを <xref:System.Xml.Xsl.XsltArgumentList> に追加す�
 |`Number`|<xref:System.Double?displayProperty=nameWithType>|XPath|  
 |`Result Tree Fragment`|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|XSLT|  
 |`Node*`|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|XPath|  
-|`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator><br /><br /> **Xpathnavigator[]**|XPath|  
+|`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator><br /><br /> **XPathNavigator[]**|XPath|  
   
  * これは単一のノードを含むノード セットに相当します。  
   
- パラメーター オブジェクトが上記のクラスのいずれでもない場合、次の規則に従って型が変換されます。 共通言語ランタイム (CLR) の数値型は、<xref:System.Double> に変換されます。 <xref:System.DateTime> 型は <xref:System.String> に変換されます。 <xref:System.Xml.XPath.IXPathNavigable> 型は <xref:System.Xml.XPath.XPathNavigator> に変換されます。 **Xpathnavigator[]**に変換されます<xref:System.Xml.XPath.XPathNodeIterator>です。  
+ パラメーター オブジェクトが上記のクラスのいずれでもない場合、次の規則に従って型が変換されます。 共通言語ランタイム (CLR) の数値型は、<xref:System.Double> に変換されます。 <xref:System.DateTime> 型は <xref:System.String> に変換されます。 <xref:System.Xml.XPath.IXPathNavigable> 型は <xref:System.Xml.XPath.XPathNavigator> に変換されます。 **XPathNavigator[]** は <xref:System.Xml.XPath.XPathNodeIterator> に変換されます。  
   
  その他の型はエラーになります。  
   
@@ -75,5 +78,5 @@ XSLT パラメーターを <xref:System.Xml.Xsl.XsltArgumentList> に追加す�
 </order>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)

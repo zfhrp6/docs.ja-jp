@@ -11,24 +11,28 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: tasks, with other asynchronous models
+helpviewer_keywords:
+- tasks, with other asynchronous models
 ms.assetid: e7b31170-a156-433f-9f26-b1fc7cd1776f
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0f29ca819fa7a59edeb105720d74a25512e95bdc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 50c4f9cfeb135f1046fbb427585897ca99248afd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a>TPL と従来の .NET Framework 非同期プログラミング
 .NET Framework の I/O バインドの非同期操作および計算主体の非同期操作には、次の 2 つの標準パターンがあります。  
   
 -   非同期操作が Begin/End メソッドのペアによって表される非同期プログラミング モデル (APM)。<xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType>、<xref:System.IO.Stream.EndRead%2A?displayProperty=nameWithType> など。  
   
--   イベント ベースの非同期パターン (EAP)、非同期操作が名前付きであるメソッドとイベントのペアで表されている*OperationName*Async および*OperationName*完了すると、たとえば、 <xref:System.Net.WebClient.DownloadStringAsync%2A?displayProperty=nameWithType>と<xref:System.Net.WebClient.DownloadStringCompleted?displayProperty=nameWithType>です。 (EAP は、.NET Framework Version 2.0 で導入されました)。  
+-   イベントベースの非同期パターン (EAP)。たとえば <xref:System.Net.WebClient.DownloadStringAsync%2A?displayProperty=nameWithType> や <xref:System.Net.WebClient.DownloadStringCompleted?displayProperty=nameWithType> など、*OperationName*Async および *OperationName*Completed という名前のメソッドとイベントのペアによって非同期操作が表されています。 (EAP は、.NET Framework Version 2.0 で導入されました)。  
   
  タスク並列ライブラリ (TPL) は、これらの非同期パターンと共にさまざまな方法で使用されます。 ライブラリ使用時に、APM 操作と EAP 操作をタスクとして公開するか、または APM パターンを公開し、タスク オブジェクトを使用して内部的に実装することができます。 どちらの場合でも、タスク オブジェクトを使用することでコードを簡易化し、次のような便利な機能を活用できます。  
   
@@ -110,7 +114,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[FromAsync#10](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/snippet10.cs#10)]
  [!code-vb[FromAsync#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/snippet10.vb#10)]  
   
- 追加の例外処理を含む、クライアント コードからメソッドを呼び出す方法を示していますより詳細な例については[する方法: タスクに EAP パターンをラップ](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md)です。  
+ 追加の例外処理を含み、クライアント コードからメソッドを呼び出す方法を示す、より包括的な例については、「[方法: タスクに EAP パターンをラップする](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md)」を参照してください。  
   
  <xref:System.Threading.Tasks.TaskCompletionSource%601> によって作成されたタスクは、その TaskCompletionSource によって開始されるので、ユーザー コードがそのタスクで Start メソッドを呼び出さないようにする必要があります。  
   
@@ -123,7 +127,7 @@ ms.lasthandoff: 10/18/2017
  [!code-vb[FromAsync#09](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#09)]  
   
 ## <a name="using-the-streamextensions-sample-code"></a>StreamExtensions サンプル コードの使用  
- Streamextensions.cs ファイルに[、.NET Framework 4 による並列プログラミングのサンプル](http://go.microsoft.com/fwlink/?LinkID=165717)MSDN Web サイト、およびネットワーク I/O 非同期のファイルのタスク オブジェクトを使用するいくつかの参照実装が含まれています。  
+ MSDN Web サイトの「[Samples for Parallel Programming with the .NET Framework 4 (.NET Framework 4 での並列プログラミングの例)](http://go.microsoft.com/fwlink/?LinkID=165717)」に示す Streamextensions.cs ファイルには、非同期ファイルおよびネットワーク I/O に対してタスク オブジェクトを使用する参照実装がいくつか含まれています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

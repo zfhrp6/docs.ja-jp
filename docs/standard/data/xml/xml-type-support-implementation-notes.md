@@ -9,21 +9,24 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5e99573fc3a82db7798426172a13a78e10c65636
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8c2706782ed1242ecdb5af1fdfab7a3f24e19236
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-type-support-implementation-notes"></a>XML 型サポートの実装に関するメモ
 このトピックでは、認識しておく必要があるいくつかの実装上の詳細について説明します。  
   
 ## <a name="list-mappings"></a>リストのマッピング  
- <xref:System.Collections.IList>、 <xref:System.Collections.ICollection>、 <xref:System.Collections.IEnumerable>、 **Type[]**、および<xref:System.String>を XML スキーマ定義言語 (XSD) のリスト型を表す種類が使用されます。  
+ <xref:System.Collections.IList>、<xref:System.Collections.ICollection>、<xref:System.Collections.IEnumerable>、**Type[]**、<xref:System.String> 型は、XML スキーマ定義言語 (XSD) のリスト型を表現するために使用されます。  
   
 ## <a name="union-mappings"></a>ユニオンのマッピング  
  ユニオン型は <xref:System.Xml.Schema.XmlAtomicValue> 型または <xref:System.String> 型を使用して表現されます。 したがって、変換前の型または変換後の型は常に <xref:System.String> または <xref:System.Xml.Schema.XmlAtomicValue> のどちらかである必要があります。  
@@ -54,5 +57,5 @@ ms.lasthandoff: 10/18/2017
 ### <a name="xsanyuri-and-systemuri"></a>xs:anyURI および System.Uri  
  相対 URI を表す `xs:anyURI` のインスタンスが <xref:System.Uri> にマップされている場合、<xref:System.Uri> オブジェクトには基本 URI がありません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)

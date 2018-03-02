@@ -11,30 +11,34 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: synchronization primitives, SpinWait
+helpviewer_keywords:
+- synchronization primitives, SpinWait
 ms.assetid: 36012f42-34e5-4f86-adf4-973f433ed6c6
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cfaf85c0fe1de3be89618ae540e9c183b66a11eb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1e67dd59464de09a35941d91ef984db6b7779b8c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="spinwait"></a>SpinWait
-<xref:System.Threading.SpinWait?displayProperty=nameWithType>高価なコンテキストの切り替えとカーネル イベントに必要なカーネル遷移を避けるために低レベルのシナリオで使用できる軽量な同期型です。 マルチコア コンピューターは、長期間保持するリソースが予期されていない場合があります数十または数百サイクル、ユーザー モードで起動し、リソースの取得を再試行を待機中のスレッドの効率。 回転の後に、リソースが利用可能な場合は、数千サイクルを保存しました。 リソースがまだ使用できない場合は、いくつかのサイクルのみを費やしし、カーネル ベースの待機を入力できます。 この待機時間、回転の組み合わせとも呼ば、 *2 フェーズ待機操作*です。  
+<xref:System.Threading.SpinWait?displayProperty=nameWithType> は軽量な同期型であり、負荷が高いコンテキスト スイッチとカーネル イベントに必要なカーネル遷移を避けるために低レベルのシナリオで使用できます。 マルチコア コンピューターでは、リソースの保持期間が長くならないと予測される場合、待機中のスレッドを数十または数百サイクルの間ユーザー モードでスピンさせてから、リソースの取得を再試行した方が効率的です。 スピン後にリソースを使用できる場合は、数千サイクルを節約したことになります。 リソースをまだ使用できない場合でも、数サイクルを消費しただけであり、カーネル ベースの待機に移行できます。 スピン後に待機というこの組み合わせは、*2 フェーズ待機操作* と呼ばれることがあります。  
   
- <xref:System.Threading.SpinWait>などのカーネル イベントをラップする .NET Framework の型と組み合わせて使用するように設計された<xref:System.Threading.ManualResetEvent>です。 <xref:System.Threading.SpinWait>1 つだけのプログラムの基本的な回転機能を単独でも使用できます。  
+ <xref:System.Threading.SpinWait> は、<xref:System.Threading.ManualResetEvent> などのカーネル イベントをラップする .NET Framework 型と共に使用するように設計されています。 また、<xref:System.Threading.SpinWait> は、1 つのプログラムのみで基本的なスピン機能のために単独で使用することもできます。  
   
- <xref:System.Threading.SpinWait>空のループだけがします。 動作を提供する適切なスピン一般的なケースでは、慎重に実装されているし、コンテキスト スイッチが開始場合は、回転する十分な時間 (ほぼカーネル遷移に必要な時間の長さ)。 たとえば、コンピューターでは単一コア、<xref:System.Threading.SpinWait>スレッドのタイム スライスの生成スピン ブロックのすべてのスレッドでの進行状況を転送するためにすぐにします。 <xref:System.Threading.SpinWait>またを待機中のスレッドが優先順位の高いスレッドや、ガベージ コレクターをブロックするを防ぐために、マルチコア コンピューター上であっても生成します。 そのためを使用している場合、 <xref:System.Threading.SpinWait> 2 フェーズ待機操作では、ことをお勧めする前に、カーネル待機が起動される、<xref:System.Threading.SpinWait>コンテキスト スイッチをそれ自体を開始します。 <xref:System.Threading.SpinWait>提供、<xref:System.Threading.SpinWait.NextSpinWillYield%2A>プロパティで、すべての呼び出しにする前に確認できる<xref:System.Threading.SpinWait.SpinOnce%2A>です。 プロパティが返されるときに`true`、独自の待機操作を開始します。 例については、次を参照してください。[する方法: 2 フェーズ待機操作を実装する使用 SpinWait](../../../docs/standard/threading/how-to-use-spinwait-to-implement-a-two-phase-wait-operation.md)です。  
+ <xref:System.Threading.SpinWait> は単なる空のループではありません。 一般的に、適切なスピン動作を提供するためには慎重に実装する必要があり、長時間 (おおよそ、カーネル遷移に要する時間) スピンすると、コンテキスト スイッチが開始されます。 たとえば、シングルコア コンピューターでは、スピンはすべてのスレッドの進行をブロックするため、<xref:System.Threading.SpinWait> によって、スレッドのタイム スライスがすぐに生成されます。 マルチコア コンピューターでも、待機中のスレッドがより優先順位の高いスレッドやガベージ コレクターをブロックしないように、<xref:System.Threading.SpinWait> によってタイム スライスが生成されます。 したがって、<xref:System.Threading.SpinWait> を 2 フェーズ待機操作で使用する場合は、<xref:System.Threading.SpinWait> 自体がコンテキスト スイッチを開始する前にカーネル待機を呼び出すことをお勧めします。 <xref:System.Threading.SpinWait> では <xref:System.Threading.SpinWait.NextSpinWillYield%2A> プロパティが提供され、<xref:System.Threading.SpinWait.SpinOnce%2A> のすべての呼び出しの前に確認できます。 プロパティが `true` を返したときに、独自の待機操作を開始します。 例については、「[方法: SpinWait を使用して 2 フェーズ待機操作を実装する](../../../docs/standard/threading/how-to-use-spinwait-to-implement-a-two-phase-wait-operation.md)」を参照してください。  
   
- 有効にできますが、2 フェーズ待機操作を実行していないいくつかの条件が true になるまでだけ回転している場合は、<xref:System.Threading.SpinWait>をそのコンテキストを実行する Windows オペレーティング システムの環境での良き市民ようにを切り替えます。 基本的な例を次に、<xref:System.Threading.SpinWait>ロック制御不要のスタックにします。 高パフォーマンス、スレッド セーフであるスタックを必要とする場合は、使用を検討して<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType>です。  
+ 2 フェーズ待機操作は実行せずに、特定の条件が満たされるまでスピンを行うだけの場合は、Windows オペレーティング システム環境で問題を発生させることなく、<xref:System.Threading.SpinWait> を有効にしてコンテキスト スイッチを実行できます。 ロックされないスタックの <xref:System.Threading.SpinWait> を次の基本的な例に示します。 高パフォーマンスのスレッド セーフ スタックが必要な場合は、<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType> の使用を検討してください。  
   
  [!code-csharp[CDS_SpinWait#05](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_spinwait/cs/spinwait.cs#05)]
  [!code-vb[CDS_SpinWait#05](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_spinwait/vb/cds_spinwait1.vb#05)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.Thread.SpinWait%2A>  
  [スレッド処理オブジェクトと機能](../../../docs/standard/threading/threading-objects-and-features.md)

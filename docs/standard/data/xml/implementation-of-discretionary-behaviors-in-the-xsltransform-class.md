@@ -9,19 +9,22 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7b6c81a5737b879b7c1356c4b9c2ab68fbbc4688
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 98ad31039b5351a7dc4aa3cf033ae8cd0f896b7b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a>XslTransform クラスの随意動作の実装
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。 参照してください[XslCompiledTransform クラスを使用して](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)と[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)詳細についてはします。  
+>  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。 詳細については、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」と「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」を参照してください。  
   
  随意動作とは、W3C (World Wide Web Consortium) 勧告『XSL Transformations (XSLT) Version 1.0』(www.w3.org/TR/xslt) で列挙されている動作で、ある状況に対処する手段として、実装プロバイダーが複数のオプションから 1 つ選択するものです。 たとえば、W3C Recommendation は、セクション 7.3「Creating Processing Instructions」で、`xsl:processing-instruction` の内容をインスタンス化したときに、テキスト ノード以外のノードが作成されるのはエラーであるとしています。 いくつかの問題に関しては、プロセッサがエラー状態から回復するときにどのような対処をするべきかを、W3C が規定しています。 セクション 7.3 に記述されている問題に関しては、W3C では、作成されたノードとその内容を無視することで、このエラーから回復できるとしています。  
   
@@ -40,7 +43,7 @@ ms.lasthandoff: 11/21/2017
 |`xsl:processing-instruction` 名前属性が NCName (コロンが含まれていない名前) も処理命令ターゲットも生成しない。|復元|7.3|  
 |`xsl:processing-instruction` の内容をインスタンス化すると、テキスト ノード以外のノードが作成される。|復元|7.3|  
 |`xsl:processing-instruction` の内容をインスタンス化した結果に文字列 "`?>`" が含まれている。|復元|7.3|  
-|内容をインスタンス化した結果、`xsl:comment`文字列が含まれています"-"、または末尾"-"です。|復元|7.4|  
+|`xsl:comment` の内容をインスタンス化した結果に文字列 "--" が含まれているか、結果が "-" で終了している。|復元|7.4|  
 |`xsl:comment` の内容をインスタンス化した結果、テキスト ノード以外のノードが作成される。|復元|7.4|  
 |変数バインディング要素内のテンプレートが属性ノードまたは名前空間ノードを返す。|復元|11.2|  
 |document 関数に渡された URI からのリソースの取得時にエラーが発生する。|例外をスロー|12.1|  
@@ -68,12 +71,12 @@ ms.lasthandoff: 11/21/2017
   
 -   言語については、`xsl:sort.` で指定されていない特定の言語での並べ替え動作がプロセッサによって異なる場合があります。  
   
- 次の表を使用して、変換の .NET Framework の実装で各データ型に対して実装されている並べ替え動作<xref:System.Xml.Xsl.XslTransform>です。  
+ <xref:System.Xml.Xsl.XslTransform> を使用した変換の .NET Framework の実装で各データ型に対して実装されている並べ替え動作を次の表に示します。  
   
-|データ型|並べ替え動作|  
+|データの種類|並べ替え動作|  
 |---------------|----------------------|  
 |Text|データは、共通言語ランタイム (CLR: Common Language Runtime) の String.Compare メソッドとカルチャ ロケールを使用して並べ替えられます。 データ型が "テキスト" である場合、<xref:System.Xml.Xsl.XslTransform> クラスの並べ替え動作は、CLR の文字列比較動作と同じです。|  
-|Number|数値は、XPath (XML Path Language) 数値として処理され、W3C 勧告『XML Path Language (XPath) Version 1.0』のセクション 3.5 (www.w3.org/TR/xpath.html#numbers) に記述されている方法に従って並べ替えられます。|  
+|数値|数値は、XPath (XML Path Language) 数値として処理され、W3C 勧告『XML Path Language (XPath) Version 1.0』のセクション 3.5 (www.w3.org/TR/xpath.html#numbers) に記述されている方法に従って並べ替えられます。|  
   
 ## <a name="optional-features-supported"></a>サポートされているオプション機能  
  XSLT プロセッサがオプションで実装する機能を次に示します。これらの機能は、<xref:System.Xml.Xsl.XslTransform> クラスに実装されます。  
@@ -82,10 +85,10 @@ ms.lasthandoff: 11/21/2017
 |-------------|------------------------|-----------|  
 |`disable-output-escaping` タグと `<xsl:text...>` タグの `<xsl:value-of...>` 属性|W3C 勧告『XSLT 1.0』<br /><br /> セクション 16.4|`disable-output-escaping` 要素または `xsl:text` 要素が `xsl:value-of`、`xsl:comment`、または `xsl:processing-instruction` のいずれかの要素で使用される場合、`xsl:attribute` 属性は無視されます。<br /><br /> テキストが含まれた結果ツリー フラグメントおよびエスケープされたテキスト出力はサポートされません。<br /><br /> <xref:System.Xml.XmlReader> オブジェクトまたは <xref:System.Xml.XmlWriter> オブジェクトへの変換時には、disable-output-escaping 属性が無視されます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Xsl.XslTransform>  
- [XslTransform クラスによる XSLT プロセッサ](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
- [XslTransform クラスによる XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [XslTransform クラスによる XSLT プロセッサの実装](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
+ [XslTransform クラスを使用した XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
  [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
  [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
  [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  

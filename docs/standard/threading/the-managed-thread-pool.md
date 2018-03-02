@@ -18,15 +18,18 @@ helpviewer_keywords:
 - threading [.NET Framework], thread pool
 - threading [.NET Framework], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 38032fccce1a8f6f7cbcb3bbd3d3f9d008a74141
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e50fd66096d6bd58fb7db692449e7f8654b5ca76
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="the-managed-thread-pool"></a>マネージ スレッド プール
 <xref:System.Threading.ThreadPool> クラスを使用すると、システムによって管理されるワーカー スレッドのプールがアプリケーションに提供されます。これを利用すると、開発者は、スレッド管理ではなくアプリケーション タスクに注意を集中できるようになります。 バックグラウンド処理が必要な短いタスクがある場合、マネージ スレッド プールを使用すると、複数のスレッドを簡単に利用できます。 たとえば、[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、スレッド プールのスレッドで非同期タスクを実行する <xref:System.Threading.Tasks.Task> オブジェクトと <xref:System.Threading.Tasks.Task%601> オブジェクトを作成できます。  
@@ -52,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 -   安定した ID をスレッドに関連付ける必要がある場合、またはスレッドを特定のタスク専用にする必要がある場合。  
   
 ## <a name="thread-pool-characteristics"></a>スレッド プールの特徴  
- スレッド プールのスレッドはバックグラウンド スレッドです。 参照してください[フォア グラウンドとバック グラウンド スレッド](../../../docs/standard/threading/foreground-and-background-threads.md)です。 各スレッドは、既定のスタック サイズを使用し、既定の優先順位で実行されます。また、各スレッドはマルチスレッド アパートメント内にあります。  
+ スレッド プールのスレッドはバックグラウンド スレッドです。 「[フォアグラウンド スレッドとバックグラウンド スレッド](../../../docs/standard/threading/foreground-and-background-threads.md)」を参照してください。 各スレッドは、既定のスタック サイズを使用し、既定の優先順位で実行されます。また、各スレッドはマルチスレッド アパートメント内にあります。  
   
  プロセスごとにスレッド プールが 1 つだけあります。  
   
@@ -65,7 +68,7 @@ ms.lasthandoff: 11/21/2017
   
 -   共通言語ランタイムまたはホスト プロセスがスレッドを終了する。  
   
- 詳細については、次を参照してください。[マネージ スレッドの例外](../../../docs/standard/threading/exceptions-in-managed-threads.md)です。  
+ 詳しくは、「[マネージ スレッドの例外](../../../docs/standard/threading/exceptions-in-managed-threads.md)」をご覧ください。  
   
 > [!NOTE]
 >  .NET Framework Version 1.0 および 1.1 では、スレッド プールのスレッドの未処理の例外は、共通言語ランタイムによって通知なしにトラップされます。 このため、アプリケーション状態が破損し、最終的にアプリケーションが停止することになり、デバッグが困難になることがあります。  
@@ -90,25 +93,25 @@ ms.lasthandoff: 11/21/2017
 >  アイドル スレッドの最小数は、<xref:System.Threading.ThreadPool.SetMinThreads%2A> メソッドを使用して増やすことができます。 ただし、これらの値を必要以上に大きくすると、パフォーマンスの問題が発生する可能性があります。 同時に開始するタスクの数が多すぎる場合は、すべてのタスクで処理速度が低下する可能性があります。 ほとんどの場合、スレッドを割り当てるためのスレッド プール独自のアルゴリズムを使用することでスレッド プールのパフォーマンスが向上します。  
   
 ## <a name="skipping-security-checks"></a>セキュリティ チェックのスキップ  
- スレッド プールでは、<xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> メソッドと <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType> メソッドも使用できます。 これらのメソッドは、呼び出し元のスタックが、キューに配置されているタスクの実行時に行われるセキュリティ チェックと無関係であることが確認できる場合にのみ使用します。 <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>および<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>両方、スレッドがタスクの実行を開始するときに、スレッド プールのスレッドのスタックにマージは、呼び出し元のスタックをキャプチャします。 セキュリティ チェックが必要な場合は、そのスタック全体をチェックする必要があります。 チェックは安全性を提供しますが、パフォーマンスへの影響もあります。  
+ スレッド プールでは、<xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> メソッドと <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType> メソッドも使用できます。 これらのメソッドは、呼び出し元のスタックが、キューに配置されているタスクの実行時に行われるセキュリティ チェックと無関係であることが確認できる場合にのみ使用します。 <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> と <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> はどちらも呼び出し元のスタックを取り込みます。このスタックは、スレッドがタスクの実行を開始するときにスレッド プールのスレッドのスタックにマージされます。 セキュリティ チェックが必要な場合は、そのスタック全体をチェックする必要があります。 チェックは安全性を提供しますが、パフォーマンスへの影響もあります。  
   
 ## <a name="using-the-thread-pool"></a>スレッド プールの使用  
- 以降で、 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]、スレッド プールを使用する最も簡単な方法が使用するには、[タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)です。 <xref:System.Threading.Tasks.Task> や <xref:System.Threading.Tasks.Task%601> などの並列ライブラリの型では、既定でスレッド プールのスレッドを使用してタスクが実行されます。 また、マネージ コードから <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> (またはアンマネージ コードから `CorQueueUserWorkItem`) を呼び出し、タスクを実行するメソッドを表す <xref:System.Threading.WaitCallback> デリゲートを渡すことによってスレッド プールを使用することもできます。 スレッド プールを使用するもう 1 つの方法として、待機操作の関連ワーク アイテムをキューに置く方法もあります。これには、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> メソッドを使用し、<xref:System.Threading.WaitHandle> を渡します。その WaitHandle がシグナル状態になるかタイムアウトになると、<xref:System.Threading.WaitOrTimerCallback> デリゲートによって表されるメソッドが呼び出されます。 スレッド プールのスレッドを使用してコールバック メソッドが呼び出されます。  
+ [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降でスレッド プールを使用する場合は、[タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md) を使用すると最も簡単です。 <xref:System.Threading.Tasks.Task> や <xref:System.Threading.Tasks.Task%601> などの並列ライブラリの型では、既定でスレッド プールのスレッドを使用してタスクが実行されます。 また、マネージ コードから <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> (またはアンマネージ コードから `CorQueueUserWorkItem`) を呼び出し、タスクを実行するメソッドを表す <xref:System.Threading.WaitCallback> デリゲートを渡すことによってスレッド プールを使用することもできます。 スレッド プールを使用するもう 1 つの方法として、待機操作の関連ワーク アイテムをキューに置く方法もあります。これには、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> メソッドを使用し、<xref:System.Threading.WaitHandle> を渡します。その WaitHandle がシグナル状態になるかタイムアウトになると、<xref:System.Threading.WaitOrTimerCallback> デリゲートによって表されるメソッドが呼び出されます。 スレッド プールのスレッドを使用してコールバック メソッドが呼び出されます。  
   
 ## <a name="threadpool-examples"></a>ThreadPool の例  
  このセクションのコード例では、<xref:System.Threading.Tasks.Task> クラス、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> メソッド、および <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> メソッドを使用したスレッド プールの例を示します。  
   
--   [タスク並列ライブラリを使用して非同期タスクを実行します。](#TaskParallelLibrary)  
+-   [タスク並列ライブラリを使用した非同期タスクの実行](#TaskParallelLibrary)  
   
--   [QueueUserWorkItem で非同期的にコードを実行します。](#ExecuteCodeWithQUWI)  
+-   [QueueUserWorkItem を使用した非同期のコード実行](#ExecuteCodeWithQUWI)  
   
--   [QueueUserWorkItem のタスクのデータを指定します。](#TaskDataForQUWI)  
+-   [QueueUserWorkItem へのタスク データの供給](#TaskDataForQUWI)  
   
 -   [RegisterWaitForSingleObject の使用](#RegisterWaitForSingleObject)  
   
 <a name="TaskParallelLibrary"></a>   
 ### <a name="executing-asynchronous-tasks-with-the-task-parallel-library"></a>タスク並列ライブラリを使用した非同期タスクの実行  
- 次の例では、<xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> メソッドを呼び出すことにより、<xref:System.Threading.Tasks.Task> オブジェクトを作成して使用する方法を示します。 使用する例については、<xref:System.Threading.Tasks.Task%601>クラス、非同期タスクから値を返すを参照してください[する方法: タスクから値を返す](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)です。  
+ 次の例では、<xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> メソッドを呼び出すことにより、<xref:System.Threading.Tasks.Task> オブジェクトを作成して使用する方法を示します。 <xref:System.Threading.Tasks.Task%601> クラスを使用して非同期タスクから値を返す方法の例については、「[方法: タスクから値を返す](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)」を参照してください。  
   
  [!code-csharp[System.Threading.Tasks.Task#01](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task/cs/startnew.cs#01)]
  [!code-vb[System.Threading.Tasks.Task#01](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task/vb/startnew.vb#01)]  
@@ -135,7 +138,7 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.Threading.ThreadPool> スレッドで実行するタスクを、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> メソッドを使用してキューに配置します。  
   
--   <xref:System.Threading.AutoResetEvent> を使用して、実行するようにタスクに通知します。 参照してください[EventWaitHandle、AutoResetEvent、CountdownEvent、ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)です。  
+-   <xref:System.Threading.AutoResetEvent> を使用して、実行するようにタスクに通知します。 「[EventWaitHandle、AutoResetEvent、CountdownEvent、ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)」を参照してください。  
   
 -   <xref:System.Threading.WaitOrTimerCallback> デリゲートを使用して、タイムアウトと通知の両方を処理します。  
   
@@ -145,7 +148,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.ThreadPool#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.threadpool/cs/source3.cs#3)]
  [!code-vb[Conceptual.ThreadPool#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.threadpool/vb/source3.vb#3)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.ThreadPool>  
  <xref:System.Threading.Tasks.Task>  
  <xref:System.Threading.Tasks.Task%601>  

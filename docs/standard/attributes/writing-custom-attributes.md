@@ -22,18 +22,21 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0205edba221b833625becbe6a1f2fdda2f9409a2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d3fb814d6b458de90d684a3ac92e22a62e290a9a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="writing-custom-attributes"></a>カスタム属性の記述
-独自のカスタム属性をデザインするために、多くの新しい概念を習得する必要はありません。 オブジェクト指向プログラミングに精通してクラスをデザインする方法を理解しているなら、必要な知識をほぼすべて持っています。 カスタム属性は、本質的に従来のクラスから直接または間接的に派生される<xref:System.Attribute?displayProperty=nameWithType>です。 従来のクラスと同じように、カスタム属性には、データを格納したり取得したりするメソッドが含まれます。  
+独自のカスタム属性をデザインするために、多くの新しい概念を習得する必要はありません。 オブジェクト指向プログラミングに精通してクラスをデザインする方法を理解しているなら、必要な知識をほぼすべて持っています。 カスタム属性は、基本的には、<xref:System.Attribute?displayProperty=nameWithType> から直接的に派生したか間接的に派生した従来のクラスです。 従来のクラスと同じように、カスタム属性には、データを格納したり取得したりするメソッドが含まれます。  
   
  カスタム属性クラスを適切にデザインするための主要な手順は次のとおりです。  
   
@@ -55,7 +58,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.Attributes.Usage#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#5)]
  [!code-vb[Conceptual.Attributes.Usage#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#5)]  
   
- <xref:System.AttributeUsageAttribute?displayProperty=nameWithType>はカスタム属性を作成するために重要な 3 つのメンバーがあります: [AttributeTargets](#cpconwritingcustomattributesanchor1)、[継承](#cpconwritingcustomattributesanchor2)、および[AllowMultiple](#cpconwritingcustomattributesanchor3)です。  
+ <xref:System.AttributeUsageAttribute?displayProperty=nameWithType> には、カスタム属性を作成するために重要な 3 つのメンバーがあります。それらは、[AttributeTargets](#cpconwritingcustomattributesanchor1)、[Inherited](#cpconwritingcustomattributesanchor2)、[AllowMultiple](#cpconwritingcustomattributesanchor3) です。  
   
 <a name="cpconwritingcustomattributesanchor1"></a>   
 ### <a name="attributetargets-member"></a>AttributeTargets メンバー  
@@ -69,7 +72,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="cpconwritingcustomattributesanchor2"></a>   
 ### <a name="inherited-property"></a>Inherited プロパティ  
- <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType>プロパティは、属性、属性を適用するクラスから派生したクラスによって継承できるかどうかを示します。 このプロパティは、 **true** (既定) か **false** フラグのいずれかを使います。 たとえば、次の例で、 `MyAttribute` は <xref:System.AttributeUsageAttribute.Inherited%2A> true **の既定の**値が指定されていますが、 `YourAttribute` は <xref:System.AttributeUsageAttribute.Inherited%2A> false **の**値が指定されています。  
+ <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType> プロパティは、属性が、その属性が適用されたクラスから派生したクラスによって継承可能かどうかを示します。 このプロパティは、 **true** (既定) か **false** フラグのいずれかを使います。 たとえば、次の例で、 `MyAttribute` は <xref:System.AttributeUsageAttribute.Inherited%2A> true **の既定の**値が指定されていますが、 `YourAttribute` は <xref:System.AttributeUsageAttribute.Inherited%2A> false **の**値が指定されています。  
   
  [!code-cpp[Conceptual.Attributes.Usage#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#7)]
  [!code-csharp[Conceptual.Attributes.Usage#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#7)]
@@ -89,7 +92,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="cpconwritingcustomattributesanchor3"></a>   
 ### <a name="allowmultiple-property"></a>AllowMultiple プロパティ  
- <xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>プロパティは、要素上、属性の複数のインスタンスに存在できるかどうかを示します。 **true**に設定されている場合、複数のインスタンスが許可され、 **false** (既定) に設定されている場合、1 つのインスタンスのみが許可されます。  
+ <xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType> プロパティは、1 つの要素に、属性の複数のインスタンスが存在できるかどうかを示します。 **true**に設定されている場合、複数のインスタンスが許可され、 **false** (既定) に設定されている場合、1 つのインスタンスのみが許可されます。  
   
  次の例では、 `MyAttribute` は <xref:System.AttributeUsageAttribute.AllowMultiple%2A> false **の既定の**値が指定されていますが、 `YourAttribute` は **true**の値が指定されています。  
   
@@ -163,7 +166,7 @@ ms.lasthandoff: 11/21/2017
   
  最初の例は、必須の名前付きパラメーターのみを使って適用された属性を示し、2 番目の例は、必須パラメーターと省略可能なパラメーターの両方を使って適用された属性を示しています。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Attribute?displayProperty=nameWithType>  
  <xref:System.AttributeUsageAttribute>  
  [属性](../../../docs/standard/attributes/index.md)

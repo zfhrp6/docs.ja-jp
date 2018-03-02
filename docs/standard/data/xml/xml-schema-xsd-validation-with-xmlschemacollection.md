@@ -12,21 +12,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ebe8a55cd5dd80be10553948c7765f81429c0957
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c7af29acd33ff3909f0d82e3ef7f7027dc5e44aa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>XmlSchemaCollection を使用した XML スキーマ (XSD) 検証
 <xref:System.Xml.Schema.XmlSchemaCollection> を使用して、XML スキーマ定義言語 (XSD) スキーマを基準として XML ドキュメントを検証できます。 <xref:System.Xml.Schema.XmlSchemaCollection> は、検証を行うたびにスキーマをメモリに読み込まなくてもいいように、スキーマをコレクションに格納することによってパフォーマンスの向上を図ります。 スキーマがスキーマ コレクション内にある場合、コレクション内のスキーマの位置を特定するには `schemaLocation` 属性を使用します。  
   
 > [!IMPORTANT]
->  <xref:System.Xml.Schema.XmlSchemaCollection> クラスは廃止されており、<xref:System.Xml.Schema.XmlSchemaSet> クラスに置き換えられています。 詳細については、<xref:System.Xml.Schema.XmlSchemaSet>クラス」を参照して[スキーマのコンパイルのための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)です。  
+>  <xref:System.Xml.Schema.XmlSchemaCollection> クラスは廃止されており、<xref:System.Xml.Schema.XmlSchemaSet> クラスに置き換えられています。 <xref:System.Xml.Schema.XmlSchemaSet> クラスの詳細については、「[スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)」を参照してください。  
   
  データ ファイルのルート要素の例を次に示します。  
   
@@ -215,7 +218,7 @@ while(vr.Read()) {
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlParserContext>  
  <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>  
  <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>  

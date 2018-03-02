@@ -1,12 +1,8 @@
 ---
 title: "方法: データフロー ブロックのタスク スケジューラを指定する"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,34 +12,35 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - task scheduler, linking from TPL
 ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 20faebc8bda3b50c4f762615d84b7a449ae61c6f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 592b6c5c92a2c752fa0d2694cdb477423b15eb0d
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>方法: データフロー ブロックのタスク スケジューラを指定する
-このドキュメントでは、アプリケーションでデータ フローを使用する場合に特定のタスク スケジューラを関連付ける方法を示します。 この例では、Windows フォーム アプリケーションの <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> クラスを使用して、リーダー タスクがアクティブである場合と、ライター タスクがアクティブである場合を示します。 また、<xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> メソッドを使用してデータ フロー ブロックを有効にし、ユーザー インターフェイス スレッドで実行できるようにします。  
+このドキュメントでは、アプリケーションでデータ フローを使用する場合に特定のタスク スケジューラを関連付ける方法を示します。 この例では、Windows フォーム アプリケーションの <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> クラスを使用して、リーダー タスクがアクティブである場合と、ライター タスクがアクティブである場合を示します。 また、<xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> メソッドを使用してデータ フロー ブロックを有効にし、ユーザー インターフェイス スレッドで実行できるようにします。
+
+[!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
+
+## <a name="to-create-the-windows-forms-application"></a>Windows フォーム アプリケーションを作成するには  
   
-> [!TIP]
->  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> 名前空間) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+1.  [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] または Visual Basic **Windows フォーム アプリケーション** プロジェクトを作成します。 以降の手順では、プロジェクトの名前は `WriterReadersWinForms` とします。  
   
-### <a name="to-create-the-windows-forms-application"></a>Windows フォーム アプリケーションを作成するには  
-  
-1.  作成、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)]または Visual Basic **Windows フォーム アプリケーション**プロジェクト。 以降の手順では、プロジェクトの名前は `WriterReadersWinForms` とします。  
-  
-2.  メイン フォーム Form1.cs ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の Form1.vb) のフォーム デザイナーで、4 つの <xref:System.Windows.Forms.CheckBox> コントロールを追加します。 設定、<xref:System.Windows.Forms.Control.Text%2A>プロパティを**リーダー 1**の`checkBox1`、**リーダー 2**の`checkBox2`、**リーダー 3**の`checkBox3`、および**ライター**の`checkBox4`します。 コントロールごとに、<xref:System.Windows.Forms.Control.Enabled%2A> プロパティを `False` に設定します。  
+2.  メイン フォーム Form1.cs ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の Form1.vb) のフォーム デザイナーで、4 つの <xref:System.Windows.Forms.CheckBox> コントロールを追加します。 <xref:System.Windows.Forms.Control.Text%2A> プロパティを、`checkBox1` に対しては「**リーダー 1**」に、`checkBox2` に対しては「**リーダー 2**」に、`checkBox3` に対しては「**リーダー 3**」に、そして `checkBox4` に対しては「**ライター**」に設定します。 コントロールごとに、<xref:System.Windows.Forms.Control.Enabled%2A> プロパティを `False` に設定します。  
   
 3.  フォームに <xref:System.Windows.Forms.Timer> コントロールを追加します。 <xref:System.Windows.Forms.Timer.Interval%2A> プロパティを `2500` に設定します。  
   
 ## <a name="adding-dataflow-functionality"></a>データ フロー機能の追加  
  このセクションでは、アプリケーションに参加するデータ フロー ブロックを作成する方法と、各データ フロー ブロックをタスク スケジューラとを関連付ける方法について説明します。  
   
-#### <a name="to-add-dataflow-functionality-to-the-application"></a>アプリケーションにデータ フロー機能を追加するには  
+### <a name="to-add-dataflow-functionality-to-the-application"></a>アプリケーションにデータ フロー機能を追加するには  
   
 1.  プロジェクトで、System.Threading.Tasks.Dataflow.dll への参照を追加します。  
   
@@ -89,5 +86,5 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[TPLDataflow_WriterReadersWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#100)]
  [!code-vb[TPLDataflow_WriterReadersWinForms#100](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#100)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

@@ -16,15 +16,18 @@ helpviewer_keywords:
 - garbage collection, workstation garbage collection
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-caps.latest.revision: "51"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b15ae041cdadb259c59d447b8775844fc96048be
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9a42c9aeb3295cd90fb6796e36b840daff843aac
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="fundamentals-of-garbage-collection"></a>ガベージ コレクションの基礎
 <a name="top"></a> 共通言語ランタイム (CLR) では、自動メモリ マネージャーとしてガベージ コレクターを使用できます。 次のような利点があります。  
@@ -79,7 +82,7 @@ ms.lasthandoff: 10/18/2017
   
     -   コミット済み。 物理ストレージに割り当てられたメモリ ブロックです。  
   
--   仮想アドレス空間は、断片化することがあります。 断片化とは、アドレス空間に複数の空きブロック (ホールとも呼ばれます) がある状態です。 仮想メモリの割り当てが要求された場合、仮想メモリ マネージャーは、その割り当て要求を満たすのに十分な大きさの単一の空きブロックを見つけなければなりません。 場合でも、2 GB の空き領域がある場合は、2 GB を必要とする割り当てされません成功した 1 つのアドレス ブロックにない限り、そのすべての空き領域。  
+-   仮想アドレス空間は、断片化することがあります。 断片化とは、アドレス空間に複数の空きブロック (ホールとも呼ばれます) がある状態です。 仮想メモリの割り当てが要求された場合、仮想メモリ マネージャーは、その割り当て要求を満たすのに十分な大きさの単一の空きブロックを見つけなければなりません。 2 GB の空き領域があっても、そのすべての空き領域が 1 つのアドレス ブロックの中にない場合、2 GB の領域を必要とする割り当ては失敗します。  
   
 -   メモリが足りなくなるのは、予約する仮想アドレス空間が足りなくなった場合か、コミットする物理領域が足りなくなった場合です。  
   
@@ -91,7 +94,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="conditions-for-a-garbage-collection"></a>ガベージ コレクションの条件  
  ガベージ コレクションは、次のいずれかの条件に当てはまる場合に発生します。  
   
--   システムの物理メモリが少ない場合。 これは、OS からいずれか、メモリ不足の通知またはホストによって示されるメモリの不足によって検出されました。
+-   システムの物理メモリが少ない場合。 OS からのメモリ不足通知またはホストによって示されたメモリ不足のいずれかによって検出されます。
   
 -   マネージ ヒープで割り当てられたオブジェクトによって使用されているメモリが、許容されるしきい値を超える場合。 このしきい値は、プロセスの進行に合わせて絶えず調整されます。  
   
@@ -105,7 +108,7 @@ ms.lasthandoff: 10/18/2017
   
  マネージ ヒープはマネージ プロセスごとに割り当てられます。 プロセス内のすべてのスレッドは、同じヒープにオブジェクト用のメモリを割り当てます。  
   
- メモリを予約するために、ガベージ コレクターは Win32 [VirtualAlloc](http://go.microsoft.com/fwlink/?LinkId=179047) 関数を呼び出し、マネージ アプリケーション用のメモリのセグメントを一度に 1 つずつ予約します。 また、ガベージ コレクターは、必要に応じてセグメントを予約したり、Win32 [VirtualFree](http://go.microsoft.com/fwlink/?LinkId=179050) 関数を呼び出すことで (オブジェクトのセグメントをクリアしてから) セグメントを解放してオペレーティング システムに戻したりします。  
+ メモリを予約するために、ガベージ コレクターは Win32 [VirtualAlloc](https://msdn.microsoft.com/library/aa366887.aspx) 関数を呼び出し、マネージ アプリケーション用のメモリのセグメントを一度に 1 つずつ予約します。 また、ガベージ コレクターは、必要に応じてセグメントを予約したり、Win32 [VirtualFree](https://msdn.microsoft.com/library/aa366892.aspx) 関数を呼び出すことで (オブジェクトのセグメントをクリアしてから) セグメントを解放してオペレーティング システムに戻したりします。  
   
 > [!IMPORTANT]
 >  ガベージ コレクターによって割り当てらるセグメントのサイズは実装に固有であり、定期的な更新プログラムによる場合を含め、いつでも変更されることがあります。 アプリでは、セグメント サイズを推測することや、特定のセグメント サイズに依存することを絶対に避けてください。また、セグメントの割り当てに使用可能なメモリの量を構成しようとしてもなりません。  
@@ -189,7 +192,7 @@ ms.lasthandoff: 10/18/2017
   
  次の図は、ガベージ コレクションを発生させて他のスレッドの中断を引き起こすスレッドを示しています。  
   
- ![スレッドがガベージ コレクションを発生させる](../../../docs/standard/garbage-collection/media/gc-triggered.png "GC_Triggered")  
+ ![スレッドがガベージ コレクションを発生させる場合](../../../docs/standard/garbage-collection/media/gc-triggered.png "GC_Triggered")  
 ガベージ コレクションを発生させるスレッド  
   
  [ページのトップへ](#top)  
@@ -208,7 +211,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="workstation-and-server-garbage-collection"></a>ワークステーションとサーバーのガベージ コレクション  
  ガベージ コレクターは、さまざまなシナリオに対応できるように自動的に調整されます。 構成ファイルの設定を使って、作業負荷の特性に基づいてガベージ コレクションの種類を設定できます。 CLR には、次の種類のガベージ コレクションが用意されています。  
   
--   ワークステーションのガベージ コレクション。すべてのクライアント ワークステーションとスタンドアロンの PC を対象としたオプションです。 これは、既定の設定、 [ \<gcServer > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)ランタイム構成スキーマでします。  
+-   ワークステーションのガベージ コレクション。すべてのクライアント ワークステーションとスタンドアロンの PC を対象としたオプションです。 これは、ランタイム構成スキーマの [\<gcServer> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)の既定の設定です。  
   
      ワークステーションのガベージ コレクションは、同時実行または非同時実行のどちらかで実行できます。 同時実行ガベージ コレクションでは、ガベージ コレクションの実行中にマネージ スレッドの操作を続けることができます。  
   
@@ -218,13 +221,13 @@ ms.lasthandoff: 10/18/2017
   
  次の図は、サーバー上でガベージ コレクションを実行する専用のスレッドを示しています。  
   
- ![サーバーのガベージ コレクション スレッド](../../../docs/standard/garbage-collection/media/gc-server.png "GC_Server")  
+ ![サーバー ガベージ コレクション スレッド](../../../docs/standard/garbage-collection/media/gc-server.png "GC_Server")  
 サーバー ガベージ コレクション  
   
 ### <a name="configuring-garbage-collection"></a>ガベージ コレクションの構成  
- 使用することができます、 [ \<gcServer > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)CLR で実行する場合、ランタイム構成スキーマのガベージ コレクションの種類を指定します。 この要素の `enabled` 属性が `false` (既定値) に設定されている場合、ワークステーションのガベージ コレクションが実行されます。 `enabled` 属性を `true`に設定すると、サーバーのガベージ コレクションが実行されます。  
+ ランタイム構成スキーマの [\<gcServer> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)を使用して、CLR で実行するガベージ コレクションの種類を指定できます。 この要素の `enabled` 属性が `false` (既定値) に設定されている場合、ワークステーションのガベージ コレクションが実行されます。 `enabled` 属性を `true`に設定すると、サーバーのガベージ コレクションが実行されます。  
   
- 同時実行ガベージ コレクションを指定した、 [ \<gcConcurrent > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)ランタイム構成スキーマのです。 既定値は `enabled`です。 この設定は、同時実行ガベージ コレクションとバックグラウンド ガベージ コレクションの両方を制御します。  
+ 同時実行ガベージ コレクションは、ランタイム構成スキーマの [\<gcConcurrent> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)を使用して指定します。 既定値は `enabled`です。 この設定は、同時実行ガベージ コレクションとバックグラウンド ガベージ コレクションの両方を制御します。  
   
  サーバーのガベージ コレクションは、アンマネージ ホスト インターフェイスを使用して指定することもできます。 ASP.NET および SQL Server では、アプリケーションがそのいずれかの環境内でホストされている場合、自動的にサーバーのガベージ コレクションが有効になることに注意してください。  
   
@@ -235,7 +238,7 @@ ms.lasthandoff: 10/18/2017
   
      ネイティブ コードを実行しているスレッドは中断されません。  
   
--   関係なく 1 つのみのプロセッサをあるコンピューター上で常にワークステーションのガベージ コレクションを使用、 [ \<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)設定します。 サーバーのガベージ コレクションを指定した場合、CLR は、同時実行を無効にしてワークステーションのガベージ コレクションを使用します。  
+-   プロセッサが 1 つしかないコンピューターでは、[\<gcServer>](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) の設定に関係なく、常にワークステーションのガベージ コレクションが使用されます。 サーバーのガベージ コレクションを指定した場合、CLR は、同時実行を無効にしてワークステーションのガベージ コレクションを使用します。  
   
  サーバーのガベージ コレクションにおける、スレッド処理とパフォーマンスについての注意点を次に示します。  
   
@@ -259,7 +262,7 @@ ms.lasthandoff: 10/18/2017
   
  同時実行ガベージ コレクションでは、コレクションの一時停止を最小限にすることで、インタラクティブ アプリケーションの応答性を高めることができます。 マネージ スレッドは、同時実行ガベージ コレクションのスレッドが実行されている間も、ほぼ常に処理を続けることができます。 そのため、ガベージ コレクションの実行中の一時停止が短くなります。  
   
- 複数のプロセスを実行している場合にパフォーマンスを向上させるには、同時実行ガベージ コレクションを無効にします。 追加することでこれを行う、 [ \<gcConcurrent > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)アプリの構成ファイルと設定の値をその`enabled`属性を`"false"`です。  
+ 複数のプロセスを実行している場合にパフォーマンスを向上させるには、同時実行ガベージ コレクションを無効にします。 [\<gcConcurrent> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)をアプリの構成ファイルに追加し、`enabled` 属性の値を `"false"` に設定することで、これを行うことができます。  
   
  同時実行ガベージ コレクションは、専用のスレッドで実行されます。 既定では、CLR は、同時実行ガベージ コレクションを有効にしてワークステーションのガベージ コレクションを実行します。 これは、シングルプロセッサのコンピューターでもマルチプロセッサのコンピューターでも同じです。  
   
@@ -269,7 +272,7 @@ ms.lasthandoff: 10/18/2017
   
  次の図は、別々の専用のスレッドで実行される同時実行ガベージ コレクションを示しています。  
   
- ![同時実行ガベージ コレクション スレッド](../../../docs/standard/garbage-collection/media/gc-concurrent.png "GC_Concurrent")  
+ ![同時実行ガベージ コレクションのスレッド](../../../docs/standard/garbage-collection/media/gc-concurrent.png "GC_Concurrent")  
 同時実行ガベージ コレクション  
   
  [ページのトップへ](#top)  
@@ -289,19 +292,19 @@ ms.lasthandoff: 10/18/2017
   
  次の図は、ワークステーション上の別々の専用スレッドで実行されるバックグラウンド ガベージ コレクションを示しています。  
   
- ![バック グラウンド ワークステーション ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundworkstn.png "BackgroundWorkstn")  
+ ![バックグラウンド ワークステーション ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundworkstn.png "BackgroundWorkstn")  
 バックグラウンド ワークステーション ガベージ コレクション  
   
  [ページのトップへ](#top)  
   
 <a name="background_server_garbage_collection"></a>   
 ## <a name="background-server-garbage-collection"></a>バックグラウンド サーバー ガベージ コレクション  
- .NET Framework 4.5 以降では、サーバーのバックグラウンド ガベージ コレクションは、サーバーのガベージ コレクションの既定のモードです。 このモードを選択するには設定、`enabled`の属性、 [ \<gcServer > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)に`true`ランタイム構成スキーマでします。 このモードは、前のセクションで説明したワークステーションのバックグラウンド ガベージ コレクションと同様に機能しますが、いくつかの違いがあります。 ワークステーションのバックグラウンド ガベージ コレクションでは専用のバックグラウンド ガベージ コレクション スレッドを 1 つ使用します。これに対して、サーバーのバックグラウンド ガベージ コレクションでは複数のスレッドを使用し、通常、論理プロセッサごとに専用のスレッドが使用されます。 ワークステーションのバックグラウンド ガベージ コレクション スレッドとは異なり、これらのスレッドはタイムアウトになりません。  
+ .NET Framework 4.5 以降では、サーバーのバックグラウンド ガベージ コレクションは、サーバーのガベージ コレクションの既定のモードです。 このモードを選択するには、ランタイム構成スキーマで [\<gcServer> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)の `enabled` 属性を `true` に設定します。 このモードは、前のセクションで説明したワークステーションのバックグラウンド ガベージ コレクションと同様に機能しますが、いくつかの違いがあります。 ワークステーションのバックグラウンド ガベージ コレクションでは専用のバックグラウンド ガベージ コレクション スレッドを 1 つ使用します。これに対して、サーバーのバックグラウンド ガベージ コレクションでは複数のスレッドを使用し、通常、論理プロセッサごとに専用のスレッドが使用されます。 ワークステーションのバックグラウンド ガベージ コレクション スレッドとは異なり、これらのスレッドはタイムアウトになりません。  
   
  次の図は、サーバー上の別々の専用スレッドで実行されるバックグラウンド ガベージ コレクションを示しています。  
   
- ![バック グラウンド サーバー ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundserver.png "BackgroundServer")  
+ ![バックグラウンド サーバー ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundserver.png "BackgroundServer")  
 バックグラウンド サーバー ガベージ コレクション  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ガベージ コレクション](../../../docs/standard/garbage-collection/index.md)

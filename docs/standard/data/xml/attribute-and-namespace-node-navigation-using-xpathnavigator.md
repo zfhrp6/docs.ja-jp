@@ -9,18 +9,21 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 23975f88-e0af-4b88-93de-9e20e11880ad
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 45e94954641e935597394b7cf04818c6c78ea675
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2f86abb7da5509a80cceede0f1092a75cef4d8da
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>XPathNavigator を使用する属性と名前空間のナビゲーション
-<xref:System.Xml.XPath.XPathNavigator>クラスには、ナビゲーション メソッドの 2 つのセットが用意されています、最初のセットについては、[ノード セット ナビゲーションを使用して XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)トピック、移動に使用される*ノード セット*で、<xref:System.Xml.XPath.XPathDocument>または<xref:System.Xml.XmlDocument>オブジェクト。 このトピックで説明されている 2 番目のセットが移動に使用される*属性と名前空間ノード*で、<xref:System.Xml.XPath.XPathDocument>または<xref:System.Xml.XmlDocument>オブジェクト。  
+<xref:System.Xml.XPath.XPathNavigator> クラスは、2 セットの移動メソッドを提供します。「[XPathNavigator を使用するノード セットのナビゲーション](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)」に記載されている最初のセットは <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内の*ノード セット*の移動に使用されます。 ここに記載されている 2 つ目のセットは、<xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内の*属性ノードと名前空間ノード*の移動に使用されます。  
   
 ## <a name="attribute-node-navigation"></a>属性ノードの移動  
  属性は要素のプロパティであり、要素の子ではありません。 兄弟ノード、親ノード、および子ノードの移動には <xref:System.Xml.XPath.XPathNavigator> クラスのメソッドが使用されるため、この区別が重要になります。  
@@ -103,11 +106,11 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  <xref:System.Xml.XPath.XPathNavigator> クラスは、ドキュメントの逆順で名前空間ノードを返します。 したがって、<xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> は原則的に、現在のスコープ内の最後の名前空間ノードに移動します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
  [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [XPathNavigator を使用してノード セットのナビゲーション](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
- [XPathNavigator による XML データを抽出します。](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)  
- [XPathNavigator による XML データに型指定された厳密にアクセスします。](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+ [XPathNavigator を使用するノード セットのナビゲーション](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
+ [XpathNavigator を使用した XML データの抽出](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)  
+ [厳密に型指定された XML データへの XPathNavigator を使用したアクセス](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)

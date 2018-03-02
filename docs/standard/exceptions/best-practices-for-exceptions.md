@@ -12,17 +12,21 @@ dev_langs:
 - csharp
 - vb
 - cpp
-helpviewer_keywords: exceptions, best practices
+helpviewer_keywords:
+- exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-caps.latest.revision: "28"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 87f9287c3714416ee5d6b63f3c9db311bb97b131
-ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4c5ea19077ff9ce8e36a33601b7e5e87c64afe60
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="best-practices-for-exceptions"></a>例外の推奨事項
 
@@ -72,7 +76,7 @@ ms.lasthandoff: 10/28/2017
 
 ## <a name="use-the-predefined-net-exception-types"></a>事前定義済みの .NET の例外の種類を使用する
 
-事前定義の例外クラスが適用されない場合に限り、新しい例外クラスを導入します。 次に例を示します。
+事前定義の例外クラスが適用されない場合に限り、新しい例外クラスを導入します。 例:
 
 - オブジェクトの現在の状態に対して、プロパティの設定またはメソッドの呼び出しが適切でない場合は、<xref:System.InvalidOperationException> をスローします。
 
@@ -90,7 +94,7 @@ ms.lasthandoff: 10/28/2017
 
 独自の例外クラスを作成するときに、少なくとも 3 つの共通コンストラクターを使用します。それらは、既定のコンストラクター、文字列メッセージを受け取るコンストラクター、および文字列メッセージと内部例外を受け取るコンストラクターです。
 
-* <xref:System.Exception.%23ctor>、既定値を使用します。
+* 既定の値を使用する <xref:System.Exception.%23ctor>。
   
 * 文字列メッセージを受け取る <xref:System.Exception.%23ctor%28System.String%29>。  
   
@@ -102,7 +106,7 @@ ms.lasthandoff: 10/28/2017
 
 ユーザー定義例外を作成するときには、リモートで実行されるコードで例外のメタデータを使用できるようにします。 
 
-たとえば、アプリ ドメインをサポートする .NET 実装にはアプリ ドメイン全体で例外が発生する可能性があります。 アプリ ドメイン A が、例外をスローするコードを実行するアプリ ドメイン B を作成するとします。 アプリ ドメイン A が例外を適切にキャッチして処理するには、アプリ ドメイン B によりスローされた例外が含まれているアセンブリを検出できる必要があります。アプリ ドメイン B が、アプリ ドメイン A のアプリケーション ベースではなく、自身のアプリケーション ベースの下のアセンブリに含まれている例外をスローする場合、アプリ ドメイン A は、例外を検出できなくなり、共通言語ランタイムが <xref:System.IO.FileNotFoundException> 例外をスローします。 このような状況を回避するには、例外情報が格納されているアセンブリを次のいずれかの方法で配置します。
+たとえば、アプリ ドメインをサポートする .NET 実装では、アプリ ドメイン間で例外が発生する可能性があります。 アプリ ドメイン A が、例外をスローするコードを実行するアプリ ドメイン B を作成するとします。 アプリ ドメイン A が例外を適切にキャッチして処理するには、アプリ ドメイン B によりスローされた例外が含まれているアセンブリを検出できる必要があります。アプリ ドメイン B が、アプリ ドメイン A のアプリケーション ベースではなく、自身のアプリケーション ベースの下のアセンブリに含まれている例外をスローする場合、アプリ ドメイン A は、例外を検出できなくなり、共通言語ランタイムが <xref:System.IO.FileNotFoundException> 例外をスローします。 このような状況を回避するには、例外情報が格納されているアセンブリを次のいずれかの方法で配置します。
 
 - 2 つのアプリ ドメインが共有する共通アプリケーション ベースにアセンブリを配置する。
 
@@ -116,7 +120,7 @@ ms.lasthandoff: 10/28/2017
 
 ## <a name="use-grammatically-correct-error-messages"></a>文法的に正しいエラー メッセージを使用する
 
-明確な文を記述し、末尾に句点を含めます。 例外の説明文字列の文の末尾には、必ず句点を使用します。 たとえば、「ログ テーブルがオーバーフローしました。」 適切な説明文字列です。
+明確な文を記述し、末尾に句点を含めます。 例外の説明文字列の文の末尾には、必ず句点を使用します。 たとえば、"ログ テーブルがオーバーフローしました。" は、 適切な説明文字列です。
 
 ## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>カスタム例外で、必要に応じて追加のプロパティを提供する
 
@@ -134,7 +138,7 @@ ms.lasthandoff: 10/28/2017
 [!code-csharp[Conceptual.Exception.Handling#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#6)]
 [!code-vb[Conceptual.Exception.Handling#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#6)]  
   
-場合によっては、例外のコンストラクターを使用して例外を作成する方が適切な場合もあります。 例など、グローバル例外クラスは、<xref:System.ArgumentException>です。
+場合によっては、例外のコンストラクターを使用して例外を作成する方が適切な場合もあります。 <xref:System.ArgumentException> などのグローバル例外クラスはその一例です。
 
 ## <a name="clean-up-intermediate-results-when-throwing-an-exception"></a>例外をスローするときに、中間結果を削除する
 
@@ -177,5 +181,5 @@ catch (Exception ex)
 }
 ```
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [例外](index.md)

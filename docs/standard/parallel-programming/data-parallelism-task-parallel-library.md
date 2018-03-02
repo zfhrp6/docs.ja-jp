@@ -11,22 +11,26 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: parallelism, data
+helpviewer_keywords:
+- parallelism, data
 ms.assetid: 3f05f33f-f1da-4b16-81c2-9ceff1bef449
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 13788542fa368bd5bcf1c2f277c9d83f84b35cdb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0644e2d9e7a52dd5747c9442a4771aa7400cdcb0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-parallelism-task-parallel-library"></a>データの並列化 (タスク並列ライブラリ)
 "*データの並列化*" とは、ソース コレクションまたは配列の要素に対して、同じ操作を同時に (つまり、並列で) 実行するシナリオを意味します。 データの並列化操作では、複数のスレッドが異なるセグメント上で同時に操作できるようにソース コレクションがパーティション分割されます。  
   
- タスク並列ライブラリ (TPL) は <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> クラスによって、データの並列化をサポートします。 このクラスでは、[for](~/docs/csharp/language-reference/keywords/for.md) ループおよび [foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) ループ (Visual Basic では `For` および `For Each`) をメソッド ベースで並列実装できます。 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> ループまたは <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> ループに対するループのロジックは、順次ループを記述する場合と同等に記述します。 スレッドまたはキューの作業項目を作成する必要はありません。 基本のループでは、ロックを取得する必要はありません。 TPL では低水準の作業はすべて自動的に行われます。 使用の詳細については<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>と<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>、ドキュメントをダウンロードして[並列プログラミングのパターン: .NET Framework 4 による並列パターンの適用と理解](http://www.microsoft.com/download/details.aspx?id=19222)です。 次のコード例では、単純な `foreach` ループおよびそのループに相当する並列を示しています。  
+ タスク並列ライブラリ (TPL) は <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> クラスによって、データの並列化をサポートします。 このクラスでは、[for](~/docs/csharp/language-reference/keywords/for.md) ループおよび [foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) ループ (Visual Basic では `For` および `For Each`) をメソッド ベースで並列実装できます。 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> ループまたは <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> ループに対するループのロジックは、順次ループを記述する場合と同等に記述します。 スレッドまたはキューの作業項目を作成する必要はありません。 基本のループでは、ロックを取得する必要はありません。 TPL では低水準の作業はすべて自動的に行われます。 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> および <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> の使い方について詳しくは、ドキュメント「[Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4](http://www.microsoft.com/download/details.aspx?id=19222)」(並列プログラミングのパターン: .NET Framework 4 の並列パターンの理解と適用) をダウンロードしてご覧ください。 次のコード例では、単純な `foreach` ループおよびそのループに相当する並列を示しています。  
   
 > [!NOTE]
 >  ここでは、ラムダ式を使用して TPL でデリゲートを定義します。 C# または Visual Basic のラムダ式についての情報が必要な場合は、「[Lambda Expressions in PLINQ and TPL (PLINQ および TPL のラムダ式)](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)」を参照してください。  
@@ -47,11 +51,11 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[方法: 単純な Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md)|任意の配列またはインデックス可能な <xref:System.Threading.Tasks.Parallel.For%2A> ソース コレクションに対して <xref:System.Collections.Generic.IEnumerable%601> ループを記述する方法について説明します。|  
 |[方法: 単純な Parallel.ForEach ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md)|任意の <xref:System.Threading.Tasks.Parallel.ForEach%2A> ソース コレクションに対して <xref:System.Collections.Generic.IEnumerable%601> ループを記述する方法について説明します。|  
-|[方法: Parallel.For ループを停止または中断する](http://msdn.microsoft.com/en-us/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)|並列ループを停止するかまたは抜けて、そのアクションがすべてのスレッドに通知されるようにする方法について説明します。|  
+|[方法: Parallel.For ループを停止または中断する](http://msdn.microsoft.com/library/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)|並列ループを停止するかまたは抜けて、そのアクションがすべてのスレッドに通知されるようにする方法について説明します。|  
 |[方法: スレッド ローカル変数を使用する Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)|各スレッドが他のスレッドからは見えないプライベート変数を維持する <xref:System.Threading.Tasks.Parallel.For%2A> ループを記述する方法と、ループが完了したときにすべてのスレッドの結果を同期する方法について説明します。|  
 |[方法: スレッド ローカル変数を使用する Parallel.ForEach ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-thread-local-variables.md)|各スレッドが他のスレッドからは見えないプライベート変数を維持する <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループを記述する方法と、ループが完了したときにすべてのスレッドの結果を同期する方法について説明します。|  
 |[方法: Parallel.For または ForEach ループを取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-parallel-for-or-foreach-loop.md)|<xref:System.Threading.CancellationToken?displayProperty=nameWithType> を使用して並列ループを取り消す方法について説明します。|  
@@ -59,5 +63,5 @@ ms.lasthandoff: 10/18/2017
 |[タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|タスク並列ライブラリの概要を示します。|  
 |[並列プログラミング](../../../docs/standard/parallel-programming/index.md)|.NET Framework の並列プログラミングについて説明します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [並列プログラミング](../../../docs/standard/parallel-programming/index.md)

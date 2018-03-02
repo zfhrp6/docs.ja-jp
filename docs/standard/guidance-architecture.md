@@ -1,31 +1,34 @@
 ---
-title: ".NET のアーキテクチャ ガイダンス"
-description: "設計、デザイン、および .NET のソフトウェアの構築の recoommended プラクティスについて説明します。"
-keywords: "Docker, Microservices、ASP.NET、コンテナー、アーキテクチャ"
+title: ".NET アーキテクチャ ガイダンス"
+description: ".NET ソフトウェアを設計し、構築するときの推奨プラクティスを紹介します。"
+keywords: "Docker, マイクロサービス, ASP.NET, コンテナー, アーキテクチャ"
 author: BillWagner
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
 ms.technology: dotnet
-ms.openlocfilehash: 008ab640c7708e0ae692ce30e77f34ba53f6c07e
-ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 24c02dfec62304293ab574b90c24c1332ce78108
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="net-architecture-guidance"></a>.NET のアーキテクチャ ガイダンス
+# <a name="net-architecture-guidance"></a>.NET アーキテクチャ ガイダンス
 
-## <a name="containerized-docker-application-lifecycle-with-the-microsoft-platform-and-toolscontainerized-lifecycle-architectureindexmd"></a>[Microsoft プラットフォームとツールを使って Docker のコンテナー化アプリケーションのライフ サイクル](./containerized-lifecycle-architecture/index.md)
+## <a name="containerized-docker-application-lifecycle-with-the-microsoft-platform-and-toolscontainerized-lifecycle-architectureindexmd"></a>[Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル](./containerized-lifecycle-architecture/index.md)
 
-このガイドは、開発、検証、および Docker を Visual Studio と Microsoft Azure を使用してコンテナー化アプリケーションを配置に使用することをお勧めのエンド ツー エンドのライフ サイクルのプロセスの概要です。
+このガイドは、Visual Studio と Microsoft Azure を使用し、コンテナー化された Docker アプリケーションを開発し、検証し、デプロイするための推奨ライフサイクル プロセスを端から端まで紹介するものです。
 
-## <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containersmodernize-with-azure-and-containersindexmd"></a>[Azure のクラウドと Windows コンテナーで既存の .NET アプリケーションを最新化します。](./modernize-with-azure-and-containers/index.md)
+## <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containersmodernize-with-azure-and-containersindexmd"></a>[Azure クラウドおよび Windows コンテナーで既存の .NET アプリケーションを最新にする](./modernize-with-azure-and-containers/index.md)
 
-このガイドは、Azure クラウドと Windows コンテナーに既存の web アプリケーションを移行する必要があります戦略の概要です。 コードの方法、データの移行、orchestrators、について学習し、CI/CD 処理します。
+このガイドは、Azure クラウドと Windows コンテナーに既存の Web アプリケーションを移行する計画の概要です。 コード計画、データ移行、オーケストレーター、CI/CD プロセスについて説明します。
 
-## <a name="architect-modern-web-applications-with-aspnet-core-and-azuremodern-web-apps-azure-architectureindexmd"></a>[ASP.NET Core と Azure での最新の web アプリケーションを設計します。](modern-web-apps-azure-architecture/index.md)
+## <a name="architect-modern-web-applications-with-aspnet-core-and-azuremodern-web-apps-azure-architectureindexmd"></a>[ASP.NET Core および Azure での最新の Web アプリケーションの設計](modern-web-apps-azure-architecture/index.md)
 
-このガイドは、推奨されるアーキテクチャ、設計、および ASP.NET および ASP.NET Core アプリケーションを作成し、Azure でそれらのアプリケーションをホストするときに使用する展開プロセスの概要です。
+このガイドは、ASP.NET アプリケーションや ASP.NET Core アプリケーションを構築し、Azure でホストするための推奨設計/デプロイ プロセスの概要になっています。
 
 ## <a name="architecting-container-and-microservice-based-applicationsmicroservices-architectureindexmd"></a>[コンテナーとマイクロサービス ベースのアプリケーションの設計](microservices-architecture/index.md)
 

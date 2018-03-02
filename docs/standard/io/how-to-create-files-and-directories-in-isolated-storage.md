@@ -20,32 +20,35 @@ helpviewer_keywords:
 - stores, creating files and directories
 - storing data using isolated storage, creating files and directories
 ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
-caps.latest.revision: "12"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8b8a48473bf9ac91b89657d00d27031255491353
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cf6295e7d58d03e7b4bf4e0a00cfc509d289e071
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a>方法 : 分離ストレージでファイルおよびディレクトリを作成する
-分離ストアを取得した後は、ディレクトリとデータを格納するファイルを作成できます。 ストア内でファイルおよびディレクトリ名は仮想ファイル システムのルートに対して指定します。  
+分離ストアを取得したら、データを格納するためのファイルとディレクトリを作成することができます。 ストア内では、ファイル名とディレクトリ名は仮想ファイル システムのルートに対して指定されます。  
   
- ディレクトリを作成するには、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType>インスタンス メソッドです。 存在しないディレクトリのサブディレクトリを指定する場合は、両方のディレクトリが作成されます。 既に存在するディレクトリを指定する場合、メソッドは、ディレクトリを作成することがなくを返し、例外はスローされません。 ただし、ディレクトリ名を指定する場合を含む無効な文字を<xref:System.IO.IsolatedStorage.IsolatedStorageException>例外がスローされます。  
+ ディレクトリを作成するには、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType> インスタンス メソッドを使用します。 存在しないディレクトリのサブディレクトリを指定した場合、両方のディレクトリが作成されます。 既に存在するディレクトリを指定した場合、メソッドはディレクトリを作成せずに制御を返し、例外はスローされません。 ただし、無効な文字を含むディレクトリ名を指定した場合、<xref:System.IO.IsolatedStorage.IsolatedStorageException> 例外がスローされます。  
   
- ファイルを作成するには、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType>メソッドです。  
+ ファイルを作成するには、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType> メソッドを使用します。  
   
- Windows オペレーティング システム、分離ストレージ ファイルおよびディレクトリの名前は区別されません。 つまり、という名前のファイルを作成する場合`ThisFile.txt`、という別のファイルを作成および`THISFILE.TXT`、1 つのファイルを作成します。 ファイル名では、表示目的で元の大文字小文字の区別が保持されます。  
+ Windows オペレーティング システムでは、分離ストレージ ファイルおよびディレクトリの名前の大文字と小文字は区別されません。 つまり、`ThisFile.txt` という名前のファイルを作成してから `THISFILE.TXT` という名前の別のファイルを作成した場合、作成されるのは 1 つのファイルのみです。 ファイル名では、表示目的で元の大文字と小文字の区別が保持されます。  
   
 ## <a name="example"></a>例  
- 次のコード例は、分離ストアのファイルとディレクトリを作成する方法を示しています。  
+ 分離ストア内にファイルおよびディレクトリを作成する方法を次のコード例で示します。  
   
  [!code-csharp[Conceptual.IsolatedStorage#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source.cs#1)]
  [!code-vb[Conceptual.IsolatedStorage#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>  
  [分離ストレージ](../../../docs/standard/io/isolated-storage.md)

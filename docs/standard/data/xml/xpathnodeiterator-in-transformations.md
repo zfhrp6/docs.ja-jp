@@ -12,18 +12,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 28877f10e11f2eebdcbcc8ff75854551302e3f66
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 523a4774de9975812838b22bbb5193e59cd58130
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>変換における XPathNodeIterator
-<xref:System.Xml.XPath.XPathNodeIterator> は、XPath (XML Path Language) クエリの結果として作成されたノード セット、または node-set メソッドを使用して結果ツリー フラグメントから変換されたノード セットの反復処理を行うためのメソッドを提供します。 <xref:System.Xml.XPath.XPathNodeIterator> を使用すれば、そのノード セット内のノードの反復処理を実行できます。 ノード セットが取得されると、<xref:System.Xml.XPath.XPathNodeIterator> クラスは、選択されたノード セットへの読み取り専用、前方参照専用のカーソルを提供します。 ノード セットはドキュメント順に作成されるため、このメソッドを呼び出すと、ドキュメント順で次のノードに移動します。 <xref:System.Xml.XPath.XPathNodeIterator> は、セット内のすべてのノードのノード ツリーを構築するわけではありません。 その代わりに、XPathNodeIterator は、データへの単一ノード ウィンドウを提供し、ツリー内での移動に合わせて、自身が指している基になるノードを公開します。 <xref:System.Xml.XPath.XPathNodeIterator> クラスで利用できるメソッドとプロパティを使用すると、現在のノードから情報を取得できます。 使用可能なメソッドとプロパティの一覧は、次を参照してください。<xref:System.Windows.Forms.ToolBar>です。  
+<xref:System.Xml.XPath.XPathNodeIterator> は、XPath (XML Path Language) クエリの結果として作成されたノード セット、または node-set メソッドを使用して結果ツリー フラグメントから変換されたノード セットの反復処理を行うためのメソッドを提供します。 <xref:System.Xml.XPath.XPathNodeIterator> を使用すれば、そのノード セット内のノードの反復処理を実行できます。 ノード セットが取得されると、<xref:System.Xml.XPath.XPathNodeIterator> クラスは、選択されたノード セットへの読み取り専用、前方参照専用のカーソルを提供します。 ノード セットはドキュメント順に作成されるため、このメソッドを呼び出すと、ドキュメント順で次のノードに移動します。 <xref:System.Xml.XPath.XPathNodeIterator> は、セット内のすべてのノードのノード ツリーを構築するわけではありません。 その代わりに、XPathNodeIterator は、データへの単一ノード ウィンドウを提供し、ツリー内での移動に合わせて、自身が指している基になるノードを公開します。 <xref:System.Xml.XPath.XPathNodeIterator> クラスで利用できるメソッドとプロパティを使用すると、現在のノードから情報を取得できます。 メソッドとプロパティの一覧については、「<xref:System.Windows.Forms.ToolBar>」を参照してください。  
   
  <xref:System.Xml.XPath.XPathNodeIterator> は XPath クエリの結果作成されたノード セット内を前方にのみ移動するため、移動するときは <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> メソッドを使用します。 このメソッドの戻り値の型は  `Boolean` であり、選択されている次のノードに移動すると `true` が返り、選択されているノードがそれ以上ないと `false` が返ります。 このメソッドが `true` を返した場合は、次のプロパティを使用できます。  
   
@@ -35,7 +38,7 @@ ms.lasthandoff: 10/18/2017
   
  ノード セットを初めて参照するときは、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> を呼び出して、選択されているセットの最初のノードに <xref:System.Xml.XPath.XPathNodeIterator> を移動する必要があります。 これにより、while ループによる書き込みが可能になります。  
   
- <xref:System.Xml.XPath.XPathNodeIterator> を <xref:System.Xml.Xsl.XslTransform> に <xref:System.Xml.Xsl.XsltArgumentList> 内のパラメーターとして渡すコード サンプルを次に示します。 コードへの入力が**books.xml**、スタイル シートと**text.xsl**です。 ファイル**test.xml**は、<xref:System.Xml.XPath.XPathDocument>です。  
+ <xref:System.Xml.XPath.XPathNodeIterator> を <xref:System.Xml.Xsl.XslTransform> に <xref:System.Xml.Xsl.XsltArgumentList> 内のパラメーターとして渡すコード サンプルを次に示します。 コードへの入力は **books.xml** で、スタイル シートは **text.xsl** です。 ファイル **test.xml** は、<xref:System.Xml.XPath.XPathDocument> です。  
   
 ```vb  
 Imports System  
@@ -165,5 +168,5 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 </out>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XslTransform クラスによる XSLT プロセッサ](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+## <a name="see-also"></a>参照  
+ [XslTransform クラスによる XSLT プロセッサの実装](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

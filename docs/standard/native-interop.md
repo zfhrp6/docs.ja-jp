@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
-ms.openlocfilehash: 9652986491f087b8fa175e2b4041063c71211178
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 11a93f4014734130f7c4e33cf215c6d49d2554c5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="native-interoperability"></a>ネイティブ相互運用性
 
@@ -71,7 +74,7 @@ using System.Runtime.InteropServices;
 namespace PInvokeSamples {
     public static class Program {
 
-        // Import the libc and define the method corresponding to the native function.
+        // Import the libSystem shared library and define the method corresponding to the native function.
         [DllImport("libSystem.dylib")]
         private static extern int getpid();
 
@@ -84,7 +87,7 @@ namespace PInvokeSamples {
 }
 ```
 
-これはもちろん Linux でも似ています。 `getpid(2)` は [POSIX](https://en.wikipedia.org/wiki/POSIX) システム コールであるため、関数名が同じです。
+これは Linux でも同様です。 `getpid(2)` は標準的な [POSIX](https://en.wikipedia.org/wiki/POSIX) システム コールであるため、関数名が同じです。
 
 ```csharp
 using System;
@@ -93,7 +96,7 @@ using System.Runtime.InteropServices;
 namespace PInvokeSamples {
     public static class Program {
 
-        // Import the libc and define the method corresponding to the native function.
+        // Import the libc shared library and define the method corresponding to the native function.
         [DllImport("libc.so.6")]
         private static extern int getpid();
 
@@ -263,7 +266,7 @@ namespace PInvokeSamples {
 
 **マーシャ リング**はマネージの境界を越えてネイティブに、またはその逆の必要がある場合に、型を変換するプロセスです。
 
-マーシャリングが必要な理由は、マネージ コードとアンマネージ コード内の型が異なるためです。 マネージ コードで、たとえば、`String` があるとします。アンマネージ環境では、文字列は Unicode ("ワイド")、Unicode 以外、Null 終了、ASCII などです。既定で、P/Invoke サブシステムは既定の動作に基づいて "正しいこと" をしようと試みますが、それらについては [MSDN](https://msdn.microsoft.com/library/zah6xy75.aspx) で確認できます。 ただし、特別な制御が必要な場合、`MarshalAs` 属性を採用して、アンマネージ側で期待する型を指定します。 たとえば、文字列を NULL で終わる ANSI 文字列として送信させる場合は、次のように指定できます。
+マーシャリングが必要な理由は、マネージ コードとアンマネージ コード内の型が異なるためです。 マネージ コードで、たとえば、`String` があるとします。アンマネージ環境では、文字列は Unicode ("ワイド")、Unicode 以外、Null 終了、ASCII などです。既定で、P/Invoke サブシステムは既定の動作に基づいて "正しいこと" をしようと試みますが、それらについては [MSDN](../../docs/framework/interop/default-marshaling-behavior.md) で確認できます。 ただし、特別な制御が必要な場合、`MarshalAs` 属性を採用して、アンマネージ側で期待する型を指定します。 たとえば、文字列を NULL で終わる ANSI 文字列として送信させる場合は、次のように指定できます。
 
 ```csharp
 [DllImport("somenativelibrary.dll")]

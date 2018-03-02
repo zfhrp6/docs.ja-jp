@@ -16,21 +16,24 @@ helpviewer_keywords:
 - generics [.NET Framework], collections
 - generic collections [.NET Framework]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 94da20072f793e137b0b7545c1a658ed20537a7f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d7e7d11446c14cffbef1e5cade5f082874187636
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generic-collections-in-the-net-framework"></a>.NET Framework のジェネリック コレクション
 このトピックでは、.NET Framework のジェネリック コレクション クラスとその他のジェネリック型について概説します。  
   
 ## <a name="generic-collections-in-the-net-framework"></a>.NET Framework のジェネリック コレクション  
- .NET Framework クラス ライブラリでは、<xref:System.Collections.Generic> および <xref:System.Collections.ObjectModel> の名前空間に多数のジェネリック コレクション クラスが用意されています。 これらのクラスの詳細については、次を参照してください。[よく使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)です。  
+ .NET Framework クラス ライブラリでは、<xref:System.Collections.Generic> および <xref:System.Collections.ObjectModel> の名前空間に多数のジェネリック コレクション クラスが用意されています。 これらのクラスの詳細については、「[一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)」を参照してください。  
   
 ### <a name="systemcollectionsgeneric"></a>System.Collections.Generic  
  ジェネリック コレクション型の多くは、非ジェネリック型に直接類似しています。 <xref:System.Collections.Generic.Dictionary%602> は、<xref:System.Collections.Hashtable> のジェネリック バージョンです。これは列挙体のために <xref:System.Collections.DictionaryEntry> ではなくジェネリック構造体 <xref:System.Collections.Generic.KeyValuePair%602> を使用します。  
@@ -58,7 +61,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.Generics.Overview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source2.cs#7)]
  [!code-vb[Conceptual.Generics.Overview#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source2.vb#7)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Generic?displayProperty=nameWithType>  
  <xref:System.Collections.ObjectModel?displayProperty=nameWithType>  
  [ジェネリック](../../../docs/standard/generics/index.md)  

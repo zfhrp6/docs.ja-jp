@@ -15,28 +15,31 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-caps.latest.revision: "44"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b5a304c48a953b172cbcc3aa1c717a660298d36a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 404fdece284accf305ef3cf2324be2e37a8da4b6
+ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="implementing-a-dispose-method"></a>Dispose メソッドの実装
 
-実装する、<xref:System.IDisposable.Dispose%2A>をアプリケーションで使用されているアンマネージ リソースを解放するメソッド。 .NET のガベージ コレクターは、アンマネージ メモリの割り当てや解放を行いません。  
+アプリケーションによって使用されるアンマネージ リソースを解放するための <xref:System.IDisposable.Dispose%2A> メソッドを実装します。 .NET のガベージ コレクターは、アンマネージ メモリの割り当てや解放を行いません。  
   
-呼ばれる、オブジェクトを破棄するパターン、 [dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)オブジェクトの有効期間に順番が付けられます。 Dispose パターンは、ファイルおよびパイプ ハンドル、レジストリ ハンドル、待機ハンドル、アンマネージ メモリ ブロックのポインターなど、アンマネージ リソースにアクセスするオブジェクトでのみ使用されます。 これは、使用されていないマネージ オブジェクトの解放にはガベージ コレクターが非常に有効ですが、アンマネージ オブジェクトは解放できないためです。  
+[Dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)と呼ばれる、オブジェクトを破棄するパターンによって、オブジェクトの有効期間に順番が付けられます。 Dispose パターンは、ファイルおよびパイプ ハンドル、レジストリ ハンドル、待機ハンドル、アンマネージ メモリ ブロックのポインターなど、アンマネージ リソースにアクセスするオブジェクトでのみ使用されます。 これは、使用されていないマネージ オブジェクトの解放にはガベージ コレクターが非常に有効ですが、アンマネージ オブジェクトは解放できないためです。  
   
 Dispose パターンには 2 種類あります。  
   
 * 型で使用する各アンマネージ リソースをセーフ ハンドル (つまり、<xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> から派生したクラス) でラップします。 この場合、<xref:System.IDisposable> インターフェイスと追加の `Dispose(Boolean)` メソッドを実装します。 これは推奨される方法で、<xref:System.Object.Finalize%2A?displayProperty=nameWithType> メソッドをオーバーライドする必要がありません。  
   
   > [!NOTE]
-  > <xref:Microsoft.Win32.SafeHandles?displayProperty=nameWithType>名前空間から派生したクラスのセットを提供する<xref:System.Runtime.InteropServices.SafeHandle>に記載されている、[セーフ ハンドルを使用して](#SafeHandles)セクションです。 アンマネージ リソースを解放できるクラスが見つからない場合は、<xref:System.Runtime.InteropServices.SafeHandle> の独自のサブクラスを実装できます。  
+  > <xref:Microsoft.Win32.SafeHandles?displayProperty=nameWithType> 名前空間には <xref:System.Runtime.InteropServices.SafeHandle> から派生した一連のクラスが用意されています。これらのクラスの一覧については、「[セーフ ハンドルの使用](#SafeHandles)」を参照してください。 アンマネージ リソースを解放できるクラスが見つからない場合は、<xref:System.Runtime.InteropServices.SafeHandle> の独自のサブクラスを実装できます。  
   
 * <xref:System.IDisposable> インターフェイスと追加の `Dispose(Boolean)` メソッドを実装し、<xref:System.Object.Finalize%2A?displayProperty=nameWithType> メソッドもオーバーライドします。 <xref:System.Object.Finalize%2A> の実装が型のコンシューマーによって呼び出されなかった場合にアンマネージ リソースが破棄されるように、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> をオーバーライドする必要があります。 前の項目で説明された推奨される方法を使用すると、<xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> クラスが代わりにこれを実行します。  
   
@@ -67,7 +70,7 @@ Dispose パターンには 2 種類あります。
   
 ### <a name="the-disposeboolean-overload"></a>Dispose(Boolean) オーバーロード
 
-2 番目のオーバー ロードで、 *disposing*パラメーターは、<xref:System.Boolean>メソッドの呼び出し元となるかどうかを示す、<xref:System.IDisposable.Dispose%2A>メソッド (その値は`true`) それともファイナライザーか (その値は`false`)。  
+2 番目のオーバーロードでは、*disposing* パラメーターは <xref:System.Boolean> で、メソッドの呼び出し元が <xref:System.IDisposable.Dispose%2A> メソッドか (値は `true`)、それともファイナライザーか (値は `false`) を示します。  
   
 メソッドの本体は 2 つのコード ブロックで構成されます。  
   
@@ -75,7 +78,7 @@ Dispose パターンには 2 種類あります。
   
 * マネージ リソースを解放する条件付きブロック。 このブロックは、`disposing` の値が `true` の場合に実行されます。 解放するマネージ リソースには、次のオブジェクトを含めることができます。  
   
-  **実装するマネージ オブジェクト<xref:System.IDisposable>です。** 条件付きブロックを使用して <xref:System.IDisposable.Dispose%2A> の実装を呼び出すことができます。 セーフ ハンドルを使用してアンマネージ リソースをラップしている場合は、ここで <xref:System.Runtime.InteropServices.SafeHandle.Dispose%28System.Boolean%29?displayProperty=nameWithType> の実装を呼び出す必要があります。  
+  **<xref:System.IDisposable> を実装するマネージ オブジェクト。** 条件付きブロックを使用して <xref:System.IDisposable.Dispose%2A> の実装を呼び出すことができます。 セーフ ハンドルを使用してアンマネージ リソースをラップしている場合は、ここで <xref:System.Runtime.InteropServices.SafeHandle.Dispose%28System.Boolean%29?displayProperty=nameWithType> の実装を呼び出す必要があります。  
   
   **大量のメモリを消費するか、不足しているリソースを消費するマネージ オブジェクト。** これらのオブジェクトを `Dispose` メソッドで明示的に解放すると、ガベージ コレクターによって非確定的に解放される場合よりも迅速に解放されます。  
   
@@ -108,13 +111,13 @@ Dispose パターンには 2 種類あります。
 [!code-vb[System.IDisposable#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/base2.vb#5)]  
   
 > [!NOTE]
-> オーバーライドする (C#)、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>定義することによって、[デストラクター](~/docs/csharp/programming-guide/classes-and-structs/destructors.md)です。  
+> C# では、[デストラクター](~/docs/csharp/programming-guide/classes-and-structs/destructors.md)を定義することによって、<xref:System.Object.Finalize%2A?displayProperty=nameWithType> をオーバーライドします。  
   
 ## <a name="implementing-the-dispose-pattern-for-a-derived-class"></a>派生クラスでの Dispose パターンの実装
 
 <xref:System.IDisposable> インターフェイスを実装するクラスから派生したクラスは、<xref:System.IDisposable> の基底クラスでの実装が派生クラスに継承されるため、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> を実装しないでください。 代わりに、派生クラスで Dispose パターンを実装するには、以下の項目を用意します。  
   
-* 基底クラスのメソッドをオーバーライドして、派生クラスのリソースを解放する実際の作業を実行する `protected``Dispose(Boolean)` メソッド。 このメソッドは、基底クラスの `Dispose(Boolean)` メソッドも呼び出して、それに *disposing* 引数の値として `true` を渡す必要があります。  
+* 基底クラスのメソッドをオーバーライドして、派生クラスのリソースを解放する実際の作業を実行する `protected Dispose(Boolean)` メソッド。 このメソッドは、基底クラスの `Dispose(Boolean)` メソッドも呼び出して、それに *disposing* 引数の値として `true` を渡す必要があります。  
   
 * アンマネージ リソースをラップする <xref:System.Runtime.InteropServices.SafeHandle> から派生したクラス (推奨)、または、<xref:System.Object.Finalize%2A?displayProperty=nameWithType> メソッドのオーバーライド。 <xref:System.Runtime.InteropServices.SafeHandle> クラスには、コーディングが不要なファイナライザーが用意されています。 ファイナライザーを用意する場合は、*disposing* 引数を `false` として `Dispose(Boolean)` オーバーロードを呼び出す必要があります。  
   
@@ -132,7 +135,7 @@ Dispose パターンには 2 種類あります。
 [!code-vb[System.IDisposable#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/derived2.vb#6)]  
   
 > [!NOTE]
-> オーバーライドする (C#)、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>定義することによって、[デストラクター](~/docs/csharp/programming-guide/classes-and-structs/destructors.md)です。  
+> C# では、[デストラクター](~/docs/csharp/programming-guide/classes-and-structs/destructors.md)を定義することによって、<xref:System.Object.Finalize%2A?displayProperty=nameWithType> をオーバーライドします。  
   
 <a name="SafeHandles"></a>   
 ## <a name="using-safe-handles"></a>セーフ ハンドルの使用
@@ -175,5 +178,5 @@ Dispose パターンには 2 種類あります。
 <xref:Microsoft.Win32.SafeHandles>   
 <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>   
 <xref:System.Object.Finalize%2A?displayProperty=nameWithType>   
-[方法: を定義およびクラスと構造体を使用 (C + + CLI)](/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli)   
+[方法: クラスと構造体を定義および使用する (C++/CLI)](/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli)   
 [Dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)

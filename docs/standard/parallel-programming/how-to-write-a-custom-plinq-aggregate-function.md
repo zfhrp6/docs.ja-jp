@@ -11,34 +11,38 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: PLINQ queries, how to create aggregate function
+helpviewer_keywords:
+- PLINQ queries, how to create aggregate function
 ms.assetid: 5a70dd49-ab2a-4798-b551-196ee7042b1a
-caps.latest.revision: "7"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8b098f21e29d0d59cd99ddbb64af6246d9953a3a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 210e9913ab3eba636ff99b7610df05655246f4eb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-write-a-custom-plinq-aggregate-function"></a>方法: カスタムの PLINQ 集約関数を記述する
-この例を使用する方法を示しています、<xref:System.Linq.ParallelEnumerable.Aggregate%2A>ソース シーケンスに、カスタム集計関数を適用する方法です。  
+この例は、<xref:System.Linq.ParallelEnumerable.Aggregate%2A> メソッドを使用して、カスタム集計関数をソース シーケンスに適用する方法を示しています。  
   
 > [!WARNING]
->  この例は、使用方法を示すことを意図したものであるため、同等の順次的な LINQ to Objects クエリほど高速ではない可能性があります。 高速化の詳細については、次を参照してください。 [PLINQ で高速化について](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)です。  
+>  この例は、使用方法を示すことを意図したものであるため、同等の順次的な LINQ to Objects クエリほど高速ではない可能性があります。 高速化の詳細については、「[PLINQ での高速化について](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例では、整数のシーケンスの標準偏差を計算します。  
+ 次の例では、整数シーケンスの標準偏差を計算します。  
   
  [!code-csharp[PLINQ#31](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#31)]
  [!code-vb[PLINQ#31](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#31)]  
   
- この例では、PLINQ 固有の集計の標準クエリ演算子のオーバー ロードを使用します。 このオーバー ロードは余分な<xref:System.Func%603?displayProperty=nameWithType>3 番目の入力パラメーターとして。 このデリゲートは、集計の結果の最終的な計算が実行する前に、すべてのスレッドからの結果を結合します。 この例では合計が追加のすべてのスレッドからです。  
+ この例では、PLINQ に固有の Aggregate 標準クエリ演算子のオーバーロードを使用します。 このオーバーロードでは、3 番目の入力パラメーターとして、追加の <xref:System.Func%603?displayProperty=nameWithType> を受け取ります。 このデリゲートは、集計結果で最終計算を実行する前に、すべてのスレッドからの結果を結合します。 この例では、すべてのスレッドからの合計をまとめます。  
   
- ラムダ式の本体は、単一の式の戻り値の場合、<xref:System.Func%602?displayProperty=nameWithType>デリゲートは、式の値。  
+ ラムダ式の本体が単一の式で構成されている場合、<xref:System.Func%602?displayProperty=nameWithType> デリゲートの戻り値は式の値になることに注意してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq.ParallelEnumerable>  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

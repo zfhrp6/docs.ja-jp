@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b4ca08d8080c2116ce05634a544c91780869b165
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 967344db880347bde94330912bc5689c57b29921
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>DOM の要素ノードからの属性の削除
 属性を削除するには、さまざまな方法があります。 その 1 つとして、属性コレクションから属性を削除する方法があります。 属性コレクションから属性を削除するには、次の手順を実行します。  
@@ -42,9 +45,9 @@ ms.lasthandoff: 10/18/2017
   
  もう 1 つの方法として、要素を取得し、属性コレクションから属性を取得して、属性ノードを直接削除する方法もあります。 属性コレクションから属性を取得するには、名前 (`XmlAttribute attr = attrs["attr_name"];`)、インデックス (`XmlAttribute attr = attrs[0];`)、または名前空間を指定した完全修飾名 (`XmlAttribute attr = attrs["attr_localName", "attr_namespace"]`) を使用できます。  
   
- 既定の属性としてドキュメント型定義 (DTD) に定義されている属性を削除するときは、使用するメソッドにかかわらず、特別な制限が適用されます。 既定の属性は、その属性が含まれている要素を削除しない限り削除できません。 既定の属性が宣言されている要素には、常に既定の属性が存在します。 <xref:System.Xml.XmlAttributeCollection> または <xref:System.Xml.XmlElement> から既定の属性を削除すると、代わりの属性が要素の <xref:System.Xml.XmlAttributeCollection> に挿入され、宣言されている既定値に初期化されます。 たとえば、`<book att1="1" att2="2" att3="3"></book>` として定義された要素がある場合、`book` 要素には、宣言された 3 つの既定の属性が設定されます。 XML ドキュメント オブジェクト モデル (DOM) の実装では、ことが保証されます限りこれ`book`要素が存在し、これら 3 つの既定の属性がある`att1`、 `att2`、および`att3`です。  
+ 既定の属性としてドキュメント型定義 (DTD) に定義されている属性を削除するときは、使用するメソッドにかかわらず、特別な制限が適用されます。 既定の属性は、その属性が含まれている要素を削除しない限り削除できません。 既定の属性が宣言されている要素には、常に既定の属性が存在します。 <xref:System.Xml.XmlAttributeCollection> または <xref:System.Xml.XmlElement> から既定の属性を削除すると、代わりの属性が要素の <xref:System.Xml.XmlAttributeCollection> に挿入され、宣言されている既定値に初期化されます。 たとえば、`<book att1="1" att2="2" att3="3"></book>` として定義された要素がある場合、`book` 要素には、宣言された 3 つの既定の属性が設定されます。 XML ドキュメント オブジェクト モデル (DOM) の実装によって、この `book`要素が存在する限り、`att1`、`att2`、および `att3` という 3 つの既定の属性が存在することが保証されます。  
   
  <xref:System.Xml.XmlAttribute> を呼び出した場合、<xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> メソッドにより、属性の値が String.Empty に設定されます。これは、値のない属性が存在できないためです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

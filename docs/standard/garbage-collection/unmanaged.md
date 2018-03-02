@@ -18,22 +18,25 @@ helpviewer_keywords:
 - unmanaged resource cleanup
 - Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c94a449edbbe38c4028e27fd946b66a054badf51
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: fea76042bb603889764a9d42b5a7836d704fcd48
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>アンマネージ リソースのクリーンアップ
-アプリで作成されるオブジェクトのほとんどに依存することができます。ガベージ コレクターが NET のメモリ管理を処理します。 しかし、アンマネージ リソースを含むオブジェクトを作成する場合は、アプリケーションでそのオブジェクトの使用が終了した時点で、そのリソースを明示的に解放する必要があります。 アンマネージ リソースの種類で最も一般的なのは、ファイル、ウィンドウ、ネットワーク接続、データベース接続などのオペレーティング システム リソースをラップしたオブジェクトです。 ガベージ コレクターは、アンマネージ リソースをカプセル化したオブジェクトを有効期間全体にわたって監視できますが、アンマネージ リソースを解放しクリーンアップする方法については情報を持っていません。  
+アプリケーションで作成するオブジェクトの大部分については、.NET のガベージ コレクターにメモリ管理を任せることができます。 しかし、アンマネージ リソースを含むオブジェクトを作成する場合は、アプリケーションでそのオブジェクトの使用が終了した時点で、そのリソースを明示的に解放する必要があります。 アンマネージ リソースの種類で最も一般的なのは、ファイル、ウィンドウ、ネットワーク接続、データベース接続などのオペレーティング システム リソースをラップしたオブジェクトです。 ガベージ コレクターは、アンマネージ リソースをカプセル化したオブジェクトを有効期間全体にわたって監視できますが、アンマネージ リソースを解放しクリーンアップする方法については情報を持っていません。  
   
  型でアンマネージ リソースを使用している場合は、次のようにする必要があります。  
   
--   実装、 [dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)です。 これは、アンマネージ リソースの確定的解放を有効にするために <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> の実装を提供する必要があります。 型のコンシューマーはオブジェクト (および使用するリソース) が不要になると <xref:System.IDisposable.Dispose%2A> を呼び出します。 <xref:System.IDisposable.Dispose%2A> メソッドはアンマネージ リソースを直ちに解放します。  
+-   [dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)を実装します。 これは、アンマネージ リソースの確定的解放を有効にするために <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> の実装を提供する必要があります。 型のコンシューマーはオブジェクト (および使用するリソース) が不要になると <xref:System.IDisposable.Dispose%2A> を呼び出します。 <xref:System.IDisposable.Dispose%2A> メソッドはアンマネージ リソースを直ちに解放します。  
   
 -   型のコンシューマーが <xref:System.IDisposable.Dispose%2A> の呼び出しを忘れた場合にアンマネージ リソースを解放します。 これには、2 つの方法があります。  
   
@@ -47,7 +50,7 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Dispose メソッドの実装](../../../docs/standard/garbage-collection/implementing-dispose.md)  
- 実装する方法について説明します、 [dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)アンマネージ リソースを解放するためです。  
+ アンマネージ リソースを解放する [Dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)を実装する方法について説明します。  
   
  [IDisposable を実装するオブジェクトの使用](../../../docs/standard/garbage-collection/using-objects.md)  
  型のコンシューマーが <xref:System.IDisposable.Dispose%2A> の実装を確実に呼び出す方法について説明します。 このためには、C# の `using` ステートメントまたは Visual Basic の `Using` ステートメントを使用することをお勧めします。  

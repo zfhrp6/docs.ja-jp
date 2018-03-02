@@ -12,29 +12,32 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: fab67e10aa0562b59f8c7704a5ca1feeb66d6208
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f875169d43a2f733050b46c76cea0891b4cfabf7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>XmlSchemaCollection を使用した XDR 検証
-に対して検証するときは、Xml-data Reduced (XDR) スキーマが格納されている場合、 **XmlSchemaCollection**URI では、スキーマがコレクションに追加したときに指定された名前空間に関連付けられています。 **XmlValidatingReader** XML ドキュメント内の名前空間 URI をコレクション内の URI に対応するスキーマにマップします。  
+検証の基準とする XDR (XML-Data Reduced) スキーマが **XmlSchemaCollection** に格納されている場合、そのスキーマは、XmlSchemaCollection に追加したときに指定された名前空間 URI に関連付けられています。 **XmlValidatingReader** は、XML ドキュメント内の名前空間 URI を、コレクション内のその URI に対応するスキーマに割り当てます。  
   
 > [!IMPORTANT]
->  <xref:System.Xml.Schema.XmlSchemaCollection> クラスは廃止されており、<xref:System.Xml.Schema.XmlSchemaSet> クラスに置き換えられています。 詳細については、<xref:System.Xml.Schema.XmlSchemaSet>クラス」を参照して[スキーマのコンパイルのための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)です。  
+>  <xref:System.Xml.Schema.XmlSchemaCollection> クラスは廃止されており、<xref:System.Xml.Schema.XmlSchemaSet> クラスに置き換えられています。 <xref:System.Xml.Schema.XmlSchemaSet> クラスの詳細については、「[スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)」を参照してください。  
   
- たとえば、XML ドキュメントのルート要素が`<bookstore xmlns="urn:newbooks-schema">`にスキーマを追加すると、 **XmlSchemaCollection**次のように、同じ名前空間を参照しています。  
+ たとえば、XML ドキュメントのルート要素が `<bookstore xmlns="urn:newbooks-schema">` の場合、スキーマを **XmlSchemaCollection** に追加するときに、そのスキーマも、次に示すように同じ名前空間を参照します。  
   
 ```  
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")  
 ```  
   
- 次のコード例を作成、 **XmlValidatingReader**を受け取る、 **XmlTextReader** XDR スキーマ HeadCount.xdr に追加し、 **XmlSchemaCollection**です。  
+ **XmlTextReader** を受け取り、XDR スキーマ HeadCount.xdr を **XmlSchemaCollection** に追加する **XmlValidatingReader** を作成するコード サンプルを次に示します。  
   
 ```vb  
 Imports System  
@@ -164,7 +167,7 @@ namespace ValidationSample
 </Schema>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.XmlValidatingReader.ValidationType%2A>  
  <!--zz <xref:System.Xml.XmlValidatingReader.Settings%2A>-->  `System.Xml.XmlValidatingReader.Settings`  
  [XmlSchemaCollection スキーマのコンパイル](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)

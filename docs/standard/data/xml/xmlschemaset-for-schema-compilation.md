@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 193a9980bba423292921beff6c4c3172ce02fd92
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a834fe8764744f5b2dd41de1f4fe1479059b87bb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>スキーマをコンパイルするための XmlSchemaSet
 XML スキーマ定義言語 (XSD) スキーマの格納と検証が可能なキャッシュである <xref:System.Xml.Schema.XmlSchemaSet> について説明します。  
@@ -254,11 +257,11 @@ foreach (XmlSchema schema in schemaSet.Schemas())
  <xref:System.Xml.Schema.XmlSchemaSet> は、`http://www.contoso.com` URL から読み込むことによって、`http://www.contoso.com/schema.xsd` 名前空間に関するスキーマをインポートしようとします。 `http://www.contoso.com` 名前空間に関する他のスキーマ ドキュメントが <xref:System.Xml.Schema.XmlSchemaSet> 内にある場合でも、インポート元のスキーマでは、スキーマ宣言とそのスキーマ ドキュメント内で定義した型だけしか使用できません。 `schema.xsd` ファイルが `http://www.contoso.com/schema.xsd` URL で見つからない場合、`http://www.contoso.com` 名前空間に関するスキーマは、インポート元のスキーマにインポートされません。  
   
 ## <a name="validating-xml-documents"></a>XML ドキュメントの検証  
- XML ドキュメントは、<xref:System.Xml.Schema.XmlSchemaSet> 内のスキーマに対して検証できます。 スキーマを <xref:System.Xml.Schema.XmlSchemaSet> オブジェクトの <xref:System.Xml.XmlReaderSettings.Schemas%2A><xref:System.Xml.XmlReaderSettings> プロパティに追加するか、<xref:System.Xml.Schema.XmlSchemaSet> を <xref:System.Xml.XmlReaderSettings.Schemas%2A> オブジェクトの <xref:System.Xml.XmlReaderSettings> プロパティに追加することによって、XML ドキュメントを検証します。 次に、<xref:System.Xml.XmlReaderSettings> オブジェクトを作成して、XML ドキュメントを検証するために、<xref:System.Xml.XmlReader.Create%2A> オブジェクトが <xref:System.Xml.XmlReader> クラスの <xref:System.Xml.XmlReader> メソッドによって使用されます。  
+ XML ドキュメントは、<xref:System.Xml.Schema.XmlSchemaSet> 内のスキーマに対して検証できます。 スキーマを <xref:System.Xml.XmlReaderSettings> オブジェクトの <xref:System.Xml.Schema.XmlSchemaSet><xref:System.Xml.XmlReaderSettings.Schemas%2A> プロパティに追加するか、<xref:System.Xml.Schema.XmlSchemaSet> を <xref:System.Xml.XmlReaderSettings> オブジェクトの <xref:System.Xml.XmlReaderSettings.Schemas%2A> プロパティに追加することによって、XML ドキュメントを検証します。 次に、<xref:System.Xml.XmlReaderSettings> オブジェクトを作成して、XML ドキュメントを検証するために、<xref:System.Xml.XmlReader.Create%2A> オブジェクトが <xref:System.Xml.XmlReader> クラスの <xref:System.Xml.XmlReader> メソッドによって使用されます。  
   
- XML の検証の詳細についてはドキュメントを使用して、<xref:System.Xml.Schema.XmlSchemaSet>を参照してください[XmlSchemaSet による XML スキーマ (XSD) 検証](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)です。  
+ <xref:System.Xml.Schema.XmlSchemaSet> を利用して XML 文書を検証する方法については、「[XmlSchemaSet による XML スキーマ (XSD) 検証](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Schema.XmlSchemaSet.Add%2A>  
  <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>  
  <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A>  
@@ -266,5 +269,5 @@ foreach (XmlSchema schema in schemaSet.Schemas())
  <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>  
  <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>  
  <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>  
- [スキーマ キャッシュとして XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+ [スキーマ キャッシュとしての XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
  [XmlSchemaSet による XML スキーマ (XSD) 検証](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)

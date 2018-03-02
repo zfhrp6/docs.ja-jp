@@ -16,18 +16,21 @@ helpviewer_keywords:
 - compression
 - compress files
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 22a95ce18b602d4e329499c5d36557213e08a8b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 33c9249692998aea8c22ddbf75a5a9b7bdf28708
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-compress-and-extract-files"></a>方法 : ファイルを圧縮して抽出する
-<xref:System.IO.Compression>名前空間は、圧縮および圧縮解除ファイルおよびストリームの次の種類を格納します。 閲覧、圧縮されたファイルの内容を変更してこれらの型を使用することもできます。  
+<xref:System.IO.Compression> 名前空間には、ファイルおよびストリームを圧縮および展開するための次の型が含まれています。 これらの型を使用して、圧縮ファイルの内容を読み取り、変更することもできます。  
   
 -   <xref:System.IO.Compression.ZipFile>  
   
@@ -39,33 +42,33 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.IO.Compression.GZipStream>  
   
- 次の例では、圧縮されたファイルを操作するときに実行できる機能のいくつかを示します。  
+ 圧縮ファイルを操作するときに実行できる機能の例を次に示します。  
   
 ## <a name="example"></a>例  
- この例は、作成しを使用してファイル名拡張子が .zip の圧縮ファイルを抽出する方法を示しています、<xref:System.IO.Compression.ZipFile>クラスです。 新しい .zip ファイルに、フォルダーの内容を圧縮し、その新しいフォルダーにそのコンテンツを抽出します。 使用する、<xref:System.IO.Compression.ZipFile>クラスを参照する必要がある、`System.IO.Compression.FileSystem`プロジェクト内のアセンブリ。  
+ この例では、<xref:System.IO.Compression.ZipFile> クラスを使用して .zip ファイル名拡張子を持つ圧縮ファイルの作成と抽出を行う方法を示しています。 フォルダーの内容を新しい .zip ファイルに圧縮し、その内容を新しいフォルダーに抽出します。 <xref:System.IO.Compression.ZipFile> クラスを使用するには、プロジェクトの `System.IO.Compression.FileSystem` アセンブリを参照する必要があります。  
   
  [!code-csharp[System.IO.Compression.ZipFile#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.zipfile/cs/program1.cs#1)]
  [!code-vb[System.IO.Compression.ZipFile#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.zipfile/vb/program1.vb#1)]  
   
 ## <a name="example"></a>例  
- 次の例では、既存の .zip ファイルの内容を反復処理し、.txt 拡張子を持つファイルを抽出する方法を示します。 使用して、<xref:System.IO.Compression.ZipArchive>既存の .zip ファイルにアクセスするクラスと<xref:System.IO.Compression.ZipArchiveEntry>圧縮ファイル内の個々 のエントリを検査するクラス。 拡張メソッドを使用して (<xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A>) の<xref:System.IO.Compression.ZipArchiveEntry>オブジェクト。 拡張メソッドがで使用できる、<xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType>クラスです。 使用する、<xref:System.IO.Compression.ZipFileExtensions>クラスを参照する必要がある、`System.IO.Compression.FileSystem`プロジェクト内のアセンブリ。  
+ 次の例は、既存の .zip ファイルの内容を反復処理し、拡張子が .txt のファイルを抽出する方法を示しています。 <xref:System.IO.Compression.ZipArchive> クラスを使用して既存の .zip ファイルにアクセスし、<xref:System.IO.Compression.ZipArchiveEntry> クラスを使用して圧縮ファイル内の個々のエントリを検査します。 <xref:System.IO.Compression.ZipArchiveEntry> オブジェクトの拡張メソッド (<xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A>) を使用しています。 拡張メソッドは、<xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType> クラスで使用できます。 <xref:System.IO.Compression.ZipFileExtensions> クラスを使用するには、プロジェクトの `System.IO.Compression.FileSystem` アセンブリを参照する必要があります。  
   
  [!code-csharp[System.IO.Compression.ZipArchive#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchive/cs/program1.cs#1)]
  [!code-vb[System.IO.Compression.ZipArchive#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchive/vb/program1.vb#1)]  
   
 ## <a name="example"></a>例  
- 次の例では、<xref:System.IO.Compression.ZipArchive>クラスの既存の .zip ファイルにアクセスして、圧縮ファイルに新しいファイルに追加します。 既存の .zip ファイルに追加すると、新しいファイルが圧縮されます。  
+ 次の例では、<xref:System.IO.Compression.ZipArchive> クラスを使用して既存の .zip ファイルにアクセスし、新しいファイルを圧縮ファイルに追加します。 新しいファイルは、既存の .zip ファイルに追加するときに圧縮されます。  
   
  [!code-csharp[System.IO.Compression.ZipArchiveMode#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/cs/program1.cs#1)]
  [!code-vb[System.IO.Compression.ZipArchiveMode#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/vb/program1.vb#1)]  
   
 ## <a name="example"></a>例  
- 使用することも、<xref:System.IO.Compression.GZipStream>と<xref:System.IO.Compression.DeflateStream>クラスして、データを圧縮します。 同じ圧縮アルゴリズムを使用します。 圧縮された<xref:System.IO.Compression.GZipStream>によって提供されるメソッドだけでなく多くの一般的なツールを使用して、拡張子を持つファイルに書き込まれるオブジェクトの圧縮を解除できる<xref:System.IO.Compression.GZipStream>です。 この例は、圧縮し、を使用してファイルのディレクトリを圧縮解除する方法を示します、<xref:System.IO.Compression.GZipStream>クラスです。  
+ また、<xref:System.IO.Compression.GZipStream> クラスと <xref:System.IO.Compression.DeflateStream> クラスを使用してデータを圧縮および展開することもできます。 圧縮と展開には同じ圧縮アルゴリズムが使用されます。 拡張子が .gz のファイルに書き込まれた圧縮済み <xref:System.IO.Compression.GZipStream> オブジェクトは、<xref:System.IO.Compression.GZipStream> で提供されているメソッドに加えて、多くの一般的なツールを使用して展開できます。 この例では、<xref:System.IO.Compression.GZipStream> クラスを使用してファイルのディレクトリを圧縮および展開する方法を示します。  
   
  [!code-csharp[IO.Compression.GZip1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.Compression.GZip1/CS/gziptest.cs#1)]
  [!code-vb[IO.Compression.GZip1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/IO.Compression.GZip1/VB/gziptest.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.Compression.ZipArchive>  
  <xref:System.IO.Compression.ZipFile>  
  <xref:System.IO.Compression.ZipArchiveEntry>  

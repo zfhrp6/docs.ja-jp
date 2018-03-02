@@ -13,21 +13,24 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d3b336b0ac4ca4fd02950a572404a117d4c193f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a8c9b513f47fcb07f987b1e17f0b7f485cef3143
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="including-or-importing-xml-schemas"></a>XML スキーマのインクルードまたはインポート
 XML スキーマには、`<xs:import />` 要素、`<xs:include />` 要素、および `<xs:redefine />` 要素を含めることができます。 これらのスキーマ要素は、インクルードまたはインポートするスキーマの構造を補足するために使用できる他の XML スキーマを参照します。 <xref:System.Xml.Schema.XmlSchemaImport> クラス、<xref:System.Xml.Schema.XmlSchemaInclude> クラス、および <xref:System.Xml.Schema.XmlSchemaRedefine> クラスは、スキーマ オブジェクト モデル (SOM) API でこれらの要素にマップされます。  
   
 ## <a name="including-or-importing-an-xml-schema"></a>XML スキーマのインクルードまたはインポート  
- 次のコード例で作成したカスタム スキーマを補足するもの、 [XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)アドレス スキーマを持つトピックです。 アドレス スキーマを使用してカスタム スキーマを補足すると、カスタム スキーマでアドレス型が使用できるようになります。  
+ 次のコード サンプルは、アドレス スキーマを使用して「[XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)」で作成したカスタム スキーマを補足します。 アドレス スキーマを使用してカスタム スキーマを補足すると、カスタム スキーマでアドレス型が使用できるようになります。  
   
  アドレス スキーマを統合するには、`<xs:include />` 要素または `<xs:import />` 要素を使用して、アドレス スキーマのコンポーネントをそのまま使用するか、または `<xs:redefine />` 要素を使用して、カスタム スキーマのニーズに合わせてコンポーネントを変更します。 アドレス スキーマの `targetNamespace` はカスタム スキーマのものとは異なっているため、`<xs:import />` 要素 (インポートのセマンティクス) が使用されます。  
   
@@ -105,12 +108,12 @@ XML スキーマには、`<xs:import />` 要素、`<xs:include />` 要素、お�
 </schema>  
 ```  
   
- 詳細については、 `<xs:import />`、 `<xs:include />`、および`<xs:redefine />`要素および<xref:System.Xml.Schema.XmlSchemaImport>、<xref:System.Xml.Schema.XmlSchemaInclude>と<xref:System.Xml.Schema.XmlSchemaRedefine>クラスを参照してください、 [W3C XML スキーマ](http://go.microsoft.com/fwlink/?LinkId=45242)と<xref:System.Xml.Schema?displayProperty=nameWithType>名前空間のクラスのリファレンス ドキュメント。  
+ `<xs:import />` 要素、`<xs:include />` 要素、`<xs:redefine />` 要素、<xref:System.Xml.Schema.XmlSchemaImport> クラス、<xref:System.Xml.Schema.XmlSchemaInclude> クラス、<xref:System.Xml.Schema.XmlSchemaRedefine> クラスの詳細については、[W3C XML スキーマ](http://www.w3.org/XML/Schema)および <xref:System.Xml.Schema?displayProperty=nameWithType> 名前空間クラスのリファレンス ドキュメントを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML スキーマ オブジェクト モデルの概要](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
  [XML スキーマの読み取りと書き込み](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
  [XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)  
  [XML スキーマの走査](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
  [XML スキーマの編集](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
- [スキーマのコンパイルのための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
+ [スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)

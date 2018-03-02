@@ -19,15 +19,18 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a60284bf2db8f47dd17c04fad5cbd6db4970a8a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 357d18843af0af2869d0ec98def6c733e51f9a4c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="globalization"></a>グローバリゼーション
 グローバリゼーションとは、さまざまな文化圏 (カルチャ) のユーザー向けに、ローカライズされたインターフェイスと、その地域に合ったデータをサポートするような、国際対応アプリの設計と開発をいいます。 設計フェーズに着手する前に、アプリでサポートするカルチャを決定してください。 アプリは既定値として 1 つのカルチャまたは地域を対象としますが、別のカルチャまたは地域のユーザーに簡単に拡張できるようにアプリを設計および作成できます。  
@@ -36,37 +39,37 @@ ms.lasthandoff: 11/21/2017
   
  次のセクションでは、グローバライズされたアプリで文字列、日付と時刻の値、および数値を処理するときに考慮する必要がある重要な問題および使用できるベスト プラクティスについて説明します。  
   
--   [文字列を処理します。](../../../docs/standard/globalization-localization/globalization.md#HandlingStrings)  
+-   [文字列を処理する](../../../docs/standard/globalization-localization/globalization.md#HandlingStrings)  
   
-    -   [Unicode を内部で使用します。](../../../docs/standard/globalization-localization/globalization.md#Strings_Unicode)  
+    -   [Unicode を内部で使用する](../../../docs/standard/globalization-localization/globalization.md#Strings_Unicode)  
   
-    -   [リソース ファイルの使用](../../../docs/standard/globalization-localization/globalization.md#Strings_Resources)  
+    -   [リソース ファイルを使用する](../../../docs/standard/globalization-localization/globalization.md#Strings_Resources)  
   
-    -   [検索して文字列を比較します。](../../../docs/standard/globalization-localization/globalization.md#Strings_Searching)  
+    -   [文字列を検索して比較する](../../../docs/standard/globalization-localization/globalization.md#Strings_Searching)  
   
-    -   [等しいかどうかの文字列をテストします。](../../../docs/standard/globalization-localization/globalization.md#Strings_Equality)  
+    -   [文字列の等価性をテストする](../../../docs/standard/globalization-localization/globalization.md#Strings_Equality)  
   
-    -   [順序付けと文字列の並べ替え](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
+    -   [文字列の順序付けと並べ替えを実行する](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
   
-    -   [文字列連結を回避します。](../../../docs/standard/globalization-localization/globalization.md#Strings_Concat)  
+    -   [文字列の連結を回避する](../../../docs/standard/globalization-localization/globalization.md#Strings_Concat)  
   
--   [日付と時刻の処理](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes)  
+-   [日付と時刻を処理する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes)  
   
-    -   [永続化する日付と時刻](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Persist)  
+    -   [日付と時刻を保持する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Persist)  
   
-    -   [日付と時刻を表示します。](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Display)  
+    -   [日付と時刻を表示する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Display)  
   
-    -   [シリアル化とタイム ゾーンに対応](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_TimeZones)  
+    -   [シリアル化とタイム ゾーンへの対応](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_TimeZones)  
   
-    -   [日付と時刻の演算を実行します。](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Arithmetic)  
+    -   [日付と時刻の演算を実行する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Arithmetic)  
   
--   [数値の値の処理](../../../docs/standard/globalization-localization/globalization.md#Numbers)  
+-   [数値を処理する](../../../docs/standard/globalization-localization/globalization.md#Numbers)  
   
-    -   [数値を表示します。](../../../docs/standard/globalization-localization/globalization.md#Numbers_Display)  
+    -   [数値を表示する](../../../docs/standard/globalization-localization/globalization.md#Numbers_Display)  
   
-    -   [数値を保持します。](../../../docs/standard/globalization-localization/globalization.md#Numbers_Persist)  
+    -   [数値を保持する](../../../docs/standard/globalization-localization/globalization.md#Numbers_Persist)  
   
--   [カルチャに固有の設定の操作](../../../docs/standard/globalization-localization/globalization.md#Cultures)  
+-   [カルチャ固有の設定を使用する](../../../docs/standard/globalization-localization/globalization.md#Cultures)  
   
 <a name="HandlingStrings"></a>   
 ## <a name="handling-strings"></a>文字列を処理する  
@@ -97,7 +100,7 @@ ms.lasthandoff: 11/21/2017
   
  ローカライズされたアプリを作成する場合、リソース ファイルを使用することには特に利点があります。 サテライト アセンブリにリソースを配置すると <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> プロパティで定義されているユーザーの現在の UI カルチャに基づいて、共通言語ランタイムが自動的にカルチャに応じたリソースを選択します。 適切なカルチャ固有のリソースを提供し、<xref:System.Resources.ResourceManager> オブジェクトを正しくインスタンス化するか、厳密に型指定されたリソース クラスを使用すると、ランタイムは適切なリソースの取得の詳細を処理します。  
   
- リソース ファイルの作成の詳細については、次を参照してください。[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)です。 作成して、サテライト アセンブリの展開については、次を参照してください。[サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)と[パッケージ化と配置リソース](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)です。  
+ リソース ファイルの作成の詳細については、[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)に関する記事を参照してください。 サテライト アセンブリの作成と展開の詳細については、[サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)と[リソースのパッケージ化と展開](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)に関するページを参照してください。  
   
 <a name="Strings_Searching"></a>   
 ### <a name="searching-and-comparing-strings"></a>文字列を検索して比較する  
@@ -182,7 +185,7 @@ ms.lasthandoff: 11/21/2017
   
 -   書式指定文字列を含む <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>  
   
--   [複合書式指定](../../../docs/standard/base-types/composite-formatting.md)日付と共に使用したときに、機能  
+-   [複合書式指定](../../../docs/standard/base-types/composite-formatting.md)機能 (日付と共に使用する場合)  
   
  次の例では、2012 年 10 月 11 日の日の出と日没のデータを 2 回表示します。 最初に、現在のカルチャをクロアチア語 (クロアチア) に設定し、次に英語 (英国) に設定します。 どちらの場合も、日付と時刻はそのカルチャに適した書式で表示されます。  
   
@@ -213,7 +216,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="serialization-and-time-zone-awareness"></a>シリアル化とタイム ゾーンへの対応  
  日付と時刻の値は、一般的な時刻 ("店舗は 2013 年 1 月 2 日の午前 9 時に開店します") から特定の時点 ("生年月日: 2013 年 1 月 2 日午前 6 時 32 分 00 秒") まで、多様に解釈できます。 時刻の値が特定の時点を表し、それをシリアル化された値から復元する場合、ユーザーの地理的場所またはタイム ゾーンに関係なく同じ特定の時点を表すことを確認する必要があります。  
   
- この問題を説明する例を次に示します。 1 つのローカル日付と時刻の値を 3 つの文字列として保存[標準形式](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)(一般的な日付、長い形式の時刻の並べ替え可能な日付/時刻、"s"の"G"、"o"ラウンド トリップの日付/時刻) およびバイナリ形式のです。  
+ この問題を説明する例を次に示します。 この例では、1 つのローカル日付と時刻の値を、3 つの[標準書式](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) (一般の日付と長い形式の時刻の "G"、並べ替え可能な日付と時刻の "s"、およびラウンド トリップする日付と時刻の "o") の文字列として、およびバイナリ形式で保存します。  
   
  [!code-csharp[Conceptual.Globalization#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates4.cs#10)]
  [!code-vb[Conceptual.Globalization#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates4.vb#10)]  
@@ -263,13 +266,13 @@ ms.lasthandoff: 11/21/2017
 3/31/2013 3:00:00 AM Local  
 ```  
   
- 詳細については、次を参照してください。[に変換する時間の間のタイム ゾーン](../../../docs/standard/datetime/converting-between-time-zones.md)です。  
+ 詳細については、「[Converting Times Between Time Zones](../../../docs/standard/datetime/converting-between-time-zones.md)」(タイム ゾーン間での時刻の変換) を参照してください。  
   
 <a name="DatesAndTimes_Arithmetic"></a>   
 ### <a name="performing-date-and-time-arithmetic"></a>日付と時刻の演算を実行する  
  <xref:System.DateTime> 型と <xref:System.DateTimeOffset> 型は、算術演算をサポートします。 2 つの日付の値の差を計算したり、日付の値に特定の時間間隔を加算または減算したりできます。 ただし、日付と時刻の値に対する算術演算では、タイム ゾーンとタイム ゾーン調整規則が考慮されません。 このため、時点を表す値に対して日付と時刻の算術を実行すると、不正確な結果が返されることがあります。  
   
- たとえば、太平洋標準時から太平洋夏時間への切り替えは、3 月の第 2 日曜日、2013 年の場合は 3 月 10 日に行われます。 次の例として、日を計算し、時刻が、示します 48 時間後は、2013 年 3 月 9 日午前 10 時 30 分 システムでは太平洋標準時ゾーンの結果、2013 年 3 月 11 日午前 10 時 30 分にアカウントに介在する時間の調整は取りません。  
+ たとえば、太平洋標準時から太平洋夏時間への切り替えは、3 月の第 2 日曜日、2013 年の場合は 3 月 10 日に行われます。 次の例に示すように、太平洋標準時ゾーンのシステムで 2013 年 3 月 9 日午前 10 時 30 分の 48 時間後の日時を計算すると、 結果は 2013 年 3 月 11 日午前 10 時 30 分となり、その間の時間調整は考慮されません。  
   
  [!code-csharp[Conceptual.Globalization#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates5.cs#8)]
  [!code-vb[Conceptual.Globalization#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates5.vb#8)]  
@@ -287,7 +290,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.Globalization#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates6.cs#9)]
  [!code-vb[Conceptual.Globalization#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates6.vb#9)]  
   
- 詳細については、次を参照してください。[日付と時刻の算術演算操作の実行](../../../docs/standard/datetime/performing-arithmetic-operations.md)です。  
+ 詳細については、「[日付と時刻を使用した算術演算の実行](../../../docs/standard/datetime/performing-arithmetic-operations.md)」を参照してください。  
   
 ### <a name="using-culture-sensitive-names-for-date-elements"></a>日付要素のカルチャに依存した名前を使用する  
  アプリによっては、月または曜日の名前を表示することが必要になる場合があります。 これを実行するために、次のようなコードが一般に使用されます。  
@@ -297,7 +300,7 @@ ms.lasthandoff: 11/21/2017
   
  ただし、このコードは曜日の名前を必ず英語で返します。 多くの場合、月の名前を抽出するコードには、さらに柔軟性がありません。 一般に、このようなコードでは特定の言語の月の名前を使用した 12 か月の暦を前提としています。  
   
- 使用して[カスタム日付/時刻の書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)のプロパティを<xref:System.Globalization.DateTimeFormatInfo>オブジェクトを簡単に次の例に示すように、曜日や月で、ユーザーのカルチャの曜日名を反映する文字列を抽出します。 この例では、現在のカルチャをフランス語 (フランス) に変更し、2013 年 7 月 1 日の曜日の名前と月の名前を表示します。  
+ 次の例に示すように、[カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)または <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのプロパティを使用すると、ユーザーのカルチャの曜日または月の名前を反映する文字列を簡単に抽出できます。 この例では、現在のカルチャをフランス語 (フランス) に変更し、2013 年 7 月 1 日の曜日の名前と月の名前を表示します。  
   
  [!code-csharp[Conceptual.Globalization#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/monthname2.cs#20)]
  [!code-vb[Conceptual.Globalization#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/monthname2.vb#20)]  
@@ -317,7 +320,7 @@ ms.lasthandoff: 11/21/2017
   
 -   書式指定文字列を引数として含む任意の数値型の `ToString(String)` メソッド  
   
--   [複合書式指定](../../../docs/standard/base-types/composite-formatting.md)機能、数値と共に使用した場合  
+-   [複合書式指定](../../../docs/standard/base-types/composite-formatting.md)機能 (数値と共に使用する場合)  
   
  次の例では、パリ (フランス) の毎月の平均気温を表示します。 この例では、最初にデータを表示する前に現在のカルチャをフランス語 (フランス) に設定し、次に英語 (米国) に設定します。 どちらの場合も、月の名前と気温はそのカルチャに適した形式で表示されます。 この 2 つのカルチャでは、気温の値に使用する小数点記号が異なります。 また、この例では、"MMMM" カスタム日時書式指定文字列を使用して月の正式名を表示し、<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType> 配列で最も長い月の名前の長さを確認することで、結果の文字列の月の名前に適切な領域を割り当てます。  
   
@@ -374,8 +377,8 @@ ms.lasthandoff: 11/21/2017
   
 -   .NET Framework では置換カルチャをサポートしています。 これにより、既存の標準カルチャを補足または既存の標準カルチャを完全に置き換える新しいカスタム カルチャを定義できます。  
   
--   ユーザーを使用してカルチャに固有の設定をカスタマイズすることができます、**地域と言語**コントロール パネルでのアプリです。 <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するときに、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出すことでこのようなユーザーによるカスタマイズを反映するかどうかを決定できます。 通常は、エンド ユーザーのアプリでは、ユーザー設定を尊重して、ユーザー自身が予期する形式でデータを表示する必要があります。  
+-   ユーザーは、コントロール パネルの **[地域と言語]** アプリを使用してカルチャ固有の設定をカスタマイズできます。 <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するときに、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出すことでこのようなユーザーによるカスタマイズを反映するかどうかを決定できます。 通常は、エンド ユーザーのアプリでは、ユーザー設定を尊重して、ユーザー自身が予期する形式でデータを表示する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)  
  [文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)

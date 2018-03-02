@@ -1,5 +1,5 @@
 ---
-title: "方法: Try Catch ブロックを使用して例外をキャッチするには"
+title: "方法: Try ブロックと Catch ブロックを使用して例外をキャッチする"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -18,15 +18,18 @@ helpviewer_keywords:
 - try/catch blocks
 - catch blocks
 ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5a72a21085c37bed4d84518810f69a013d515189
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 192f762872b112ea261d22251175db6867229437
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a>Try ブロックと Catch ブロックを使用して例外をキャッチする方法
 
@@ -43,5 +46,5 @@ ms.lasthandoff: 10/21/2017
 > [!NOTE] 
 > ほぼすべてのコード行で例外 (特に、<xref:System.OutOfMemoryException> などの共通言語ランタイムそのものによってスローされる例外) が発生する可能性があります。 ほとんどのアプリケーションではこれらの例外を処理する必要はありませんが、他のユーザーが使用するライブラリを記述する際には、この可能性に注意する必要があります。 Try ブロック内でコードを設定するタイミングに関しては、「[例外の推奨事項](best-practices-for-exceptions.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [例外](index.md)

@@ -14,15 +14,18 @@ helpviewer_keywords:
 - threading [.NET Framework],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-caps.latest.revision: "9"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ebb5559d300bb3db34fe640e87eb8b9e67931561
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4f68a7aebdb1625b149287d70fd91c2108a658b9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exceptions-in-managed-threads"></a>マネージ スレッドの例外
 .NET Framework バージョン 2.0 以降では、共通言語ランタイムはスレッド内のほとんどのハンドルされない例外をそのまま続行させます。 ほとんどの場合、これはハンドルされない例外によってアプリケーションが終了することを意味します。  
@@ -32,9 +35,9 @@ ms.lasthandoff: 10/18/2017
   
  共通言語ランタイムには、プログラム フローの制御に使用する特定のハンドルされない例外について、次のような安全策が用意されています。  
   
--   A<xref:System.Threading.ThreadAbortException>ためのスレッドでスローされる<xref:System.Threading.Thread.Abort%2A>が呼び出されました。  
+-   <xref:System.Threading.Thread.Abort%2A> が呼び出されたため、スレッドで <xref:System.Threading.ThreadAbortException> がスローされる。  
   
--   <xref:System.AppDomainUnloadedException>が、スレッドを実行しているアプリケーション ドメインがアンロードされるため、スレッドでスローされます。  
+-   スレッドが実行中のアプリケーション ドメインがアンロードされると、スレッドで <xref:System.AppDomainUnloadedException> がスローされる。  
   
 -   共通言語ランタイムまたはホスト プロセスは、内部例外をスローすることによってスレッドを終了します。  
   
@@ -56,7 +59,7 @@ ms.lasthandoff: 10/18/2017
   
 -   スレッド プールのスレッドのハンドルされない例外は存在しません。 タスクが例外をスローし、その例外がハンドルされない場合、ランタイムは例外のスタック トレースをコンソールに出力し、スレッドをスレッド プールに戻します。  
   
--   スレッドでハンドルされない例外が作成されると、このようなものはありません、<xref:System.Threading.Thread.Start%2A>のメソッド、<xref:System.Threading.Thread>クラスです。 このようなスレッド上で実行中のコードが例外をスローし、その例外がハンドルされない場合、ランタイムは例外のスタック トレースをコンソールに出力し、スレッドを適切に終了します。  
+-   <xref:System.Threading.Thread> クラスの <xref:System.Threading.Thread.Start%2A> メソッドを使用して作成されたスレッドのハンドルされない例外は存在しません。 このようなスレッド上で実行中のコードが例外をスローし、その例外がハンドルされない場合、ランタイムは例外のスタック トレースをコンソールに出力し、スレッドを適切に終了します。  
   
 -   ファイナライザー スレッドのハンドルされない例外は存在しません。 ファイナライザーが例外をスローし、その例外がハンドルされない場合、ランタイムは例外のスタック トレースをコンソールに出力し、ファイナライザー スレッドがファイナライザーの実行を再開できるようにします。  
   
@@ -69,7 +72,7 @@ ms.lasthandoff: 10/18/2017
   
 -   シグナルを受信したときに、スレッドが適切に終了するようにコードを再構築します。  
   
--   使用して、<xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>スレッドを中止します。  
+-   スレッドを中止するには、<xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> メソッドを使用します。  
   
 -   プロセスを終了できるように、スレッドを中止する必要がある場合は、スレッドをバックグラウンド スレッドにして、プロセス終了時にスレッドが自動的に終了するようにします。  
   
@@ -85,5 +88,5 @@ ms.lasthandoff: 10/18/2017
 ## <a name="host-override"></a>ホストのオーバーライド  
  .NET Framework バージョン 2.0 では、アンマネージ ホストはホスト API の [ICLRPolicyManager](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) インターフェイスを使用して、共通言語ランタイムの既定のハンドルされない例外ポリシーをオーバーライドできます。 [ICLRPolicyManager::SetUnhandledExceptionPolicy](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) 関数を使用して、ハンドルされない例外のポリシーを設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マネージ スレッド処理の基本](../../../docs/standard/threading/managed-threading-basics.md)

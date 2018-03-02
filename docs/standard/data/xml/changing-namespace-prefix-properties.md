@@ -12,18 +12,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d5c87cbe-4d69-429f-aad5-3103c2ca2770
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7ce6e4b705188b9c1d0949703991633e3f450689
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3cb0db0fbffa5f42fb09f29da2976727451e3741
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="changing-namespace-prefix-properties"></a>名前空間プレフィックス プロパティの変更
-**XmlNode**クラスでは、特定のノードに関連付けられている名前空間プレフィックスを変更することができます。 たとえば、要素のプレフィックスを変更するコードを次に示します。  
+**XmlNode** クラスを使用すると、特定のノードに関連付けられた名前空間プレフィックスを変更できます。 たとえば、要素のプレフィックスを変更するコードを次に示します。  
   
 ```vb  
 Dim doc as XmlDocument = new XmlDocument()  
@@ -71,7 +74,7 @@ Console.WriteLine(doc.InnerXml);
 <a:test xmlns="123" xmlns:a="123" />  
 ```  
   
- 呼び出しの結果としての文字列に、ツリーが永続化されるとき**ドキュメント。InnerXml**、`xmlns:a='123'`の名前空間を保持するために属性が追加された、`test`要素。 `'123'` の元の値は `'123'` だったので、そのまま  として残ります。  
+ **doc.InnerXml** の呼び出しの結果としてツリーが文字列に永続化されるとき、`test` 要素の名前空間を保持するために `xmlns:a='123'` という属性が追加されます。 `'123'` の元の値は `'123'` だったので、そのまま  として残ります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -19,15 +19,18 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-caps.latest.revision: "20"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7a92c454548c69d1a64c954ab2d510b77553a895
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f93584b9dff721c8521d8cb58aaf5eab2c1fc931
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="substitutions-in-regular-expressions"></a>正規表現での置換
 <a name="Top"></a> 置換は、置換パターン内でのみ認識される言語要素です。 置換では、正規表現パターンを使用して、入力文字列内の一致するテキストを置換するテキストの全体または一部を定義します。 置換パターンは、1 個以上の置換と、リテラル文字で構成されます。 置換パターンは、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> パラメーターを持つ `replacement` メソッドのオーバーロードおよび <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドに対して用意されています。 メソッドは、一致するパターンを、 `replacement` パラメーターで定義されているパターンで置換します。  
@@ -149,7 +152,7 @@ ms.lasthandoff: 10/18/2017
   
 <a name="BeforeMatch"></a>   
 ## <a name="substituting-the-text-before-the-match"></a>一致した文字列より前にあるテキストの置換  
- <code>$\`</code> の置換は、一致した場所より前にある入力文字列全体で一致した文字列を置換します。 つまり、一致した場所までの入力文字列を複製し、一致したテキストを削除します。 結果文字列では、一致したテキストに続くテキストは変更されません。 入力文字列に複数の一致文字列がある場合、置換テキストは、テキストが前の一致で置換された文字列からではなく、元の入力文字列から派生します  \(この例では、具体的なを示します。\)一致する文字列がない場合、<code>$\`</code> の置換は無効です。  
+ <code>$\`</code> の置換は、一致した場所より前にある入力文字列全体で一致した文字列を置換します。 つまり、一致した場所までの入力文字列を複製し、一致したテキストを削除します。 結果文字列では、一致したテキストに続くテキストは変更されません。 入力文字列に複数の一致文字列がある場合、置換テキストは、テキストが前の一致で置換された文字列からではなく、元の入力文字列から派生します  \(具体的な例を次に示します。\)一致する文字列がない場合、<code>$\`</code> の置換は無効です。  
   
  次の例では、正規表現パターン `\d+` を使用して、入力文字列内の 1 つ以上の 10 進数のシーケンスを照合します。 置換文字列 <code>$`</code> は、これらの数字を、一致文字列より前にあるテキストで置換します。  
   
@@ -193,7 +196,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="substituting-the-last-captured-group"></a>キャプチャされた最後のグループの置換  
  `$+` の置換は、キャプチャされた最後のグループで一致した文字列を置換します。 キャプチャされたグループがない場合、またはキャプチャされた最後のグループの値が <xref:System.String.Empty?displayProperty=nameWithType> の場合、`$+` の置換は無効です。  
   
- 次の例では、文字列内の重複する単語を識別し、 `$+` の置換を使用して、これらの単語をその単語 1 つに置換します。 <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> オプションを使用すると、大文字と小文字の違いを除いて同一である単語が重複と見なされるようになります。  
+ 次の例では、文字列内の重複する単語を識別し、`$+` の置換を使用して、これらの単語をその単語 1 つに置換します。 <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> オプションを使用すると、大文字と小文字の違いを除いて同一である単語が重複と見なされるようになります。  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/lastmatch1.cs#6)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/lastmatch1.vb#6)]  
@@ -226,5 +229,5 @@ ms.lasthandoff: 10/18/2017
 |1|3|123|ABC**ABC123DEF456**DEF456|  
 |2|5|456|ABCABC123DEF456DEF**ABC123DEF456**|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

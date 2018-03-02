@@ -18,22 +18,25 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-caps.latest.revision: "27"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7bc068cc248e1ca8e1d3c64eaa4132682721e035
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a4a1513840d17f2e7b02acf821b5032eaac6e6fc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="regular-expression-options"></a>正規表現のオプション
 <a name="Top"></a>正規表現パターンでの入力文字列とリテラル文字列の比較では、大文字と小文字が区別されます。正規表現パターンに含まれる空白は、リテラルの空白文字として解釈されます。正規表現で使用されるキャプチャ グループは、暗黙的に指定される場合と明示的に指定される場合があります。これらはすべて、正規表現の既定の動作です。 正規表現のオプションを指定することで、これらの正規表現の既定の動作とそのいくつかの側面を変更できます。 次の表に示す各オプションは、正規表現パターンの一部としてインラインで記述することも、<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> クラス コンストラクターまたは静的パターン一致メソッドに <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> 列挙値として渡すこともできます。  
   
 |RegexOptions のメンバー|インライン文字|効果|  
 |-------------------------|----------------------|------------|  
-|<xref:System.Text.RegularExpressions.RegexOptions.None>|使用できません。|既定の動作を使用します。 詳細については、「[既定のオプション](#Default)」を参照してください。|  
+|<xref:System.Text.RegularExpressions.RegexOptions.None>|使用できません|既定の動作を使用します。 詳細については、「[既定のオプション](#Default)」を参照してください。|  
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|大文字と小文字を区別しない一致を使用します。 詳細については、「[大文字と小文字を区別しない一致](#Case)」を参照してください。|  
 |<xref:System.Text.RegularExpressions.RegexOptions.Multiline>|`m`|複数行モードを使用します。`^` と `$` は、(入力文字列の先頭および末尾ではなく) 各行の先頭および末尾と一致します。 詳細については、「[複数行モード](#Multiline)」を参照してください。|  
 |<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|単一行モードを使用します。このモードでは、ピリオド (.) は任意の 1 文字と一致します (`\n` を除くすべての文字の代用)。 詳細については、「[単一行モード](#Singleline)」を参照してください。|  
@@ -112,7 +115,7 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Conceptual.Regex.Language.Options#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/determine1.cs#20)]
  [!code-vb[Conceptual.Regex.Language.Options#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/determine1.vb#20)]  
   
- 次のセクションでは、.NET の正規表現でサポートされるオプションを一覧表示します。  
+ 以降のセクションでは、.NET の正規表現でサポートされているオプションについて説明します。  
   
 <a name="Default"></a>   
 ## <a name="default-options"></a>既定のオプション  
@@ -214,7 +217,7 @@ ms.lasthandoff: 10/18/2017
   
  この正規表現は、ドキュメントから文末がピリオド、感嘆符、または疑問符である文を抽出することのみを目的とし、結果の文 (<xref:System.Text.RegularExpressions.Match> オブジェクトで表される) のみを対象としています。 コレクション内の個々の単語は対象ではありません。  
   
- 正規表現エンジンで <xref:System.Text.RegularExpressions.GroupCollection> コレクション オブジェクトと <xref:System.Text.RegularExpressions.CaptureCollection> コレクション オブジェクトの両方を設定する必要があるので、キャプチャ グループが以後、使用されない場合は、この設定の処理が無駄になる可能性があります。 別の方法として、いずれかを使用できる、<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>オプションまたは`n`インライン オプションのみが有効なキャプチャが明示的に名前または番号で指定されることを指定する、 `(?<`*名前*`>`*subexpression* `)`を構築します。  
+ 正規表現エンジンで <xref:System.Text.RegularExpressions.GroupCollection> コレクション オブジェクトと <xref:System.Text.RegularExpressions.CaptureCollection> コレクション オブジェクトの両方を設定する必要があるので、キャプチャ グループが以後、使用されない場合は、この設定の処理が無駄になる可能性があります。 別の方法としては、<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> オプションまたは `n` インライン オプションを使用して、`(?<`*name*`>` *subexpression*`)` 構成体によって指定された明示的な名前または番号付きのグループのみを有効なキャプチャ対象として指定する方法が挙げられます。  
   
  次の例は、`\b\(?((\w+),?\s?)+[\.!?]\)?` 正規表現パターンによって返された一致に関する情報を示しています (<xref:System.Text.RegularExpressions.Regex.Match%2A> メソッドが <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> オプションを使用して呼び出された場合、および使用せずに呼び出された場合)。 最初のメソッド呼び出しの出力結果が示すように、正規表現エンジンでは、キャプチャした部分文字列に関する情報に基づいて、<xref:System.Text.RegularExpressions.GroupCollection> コレクション オブジェクトおよび <xref:System.Text.RegularExpressions.CaptureCollection> コレクション オブジェクトが完全に設定されています。 2 番目のメソッドは、`options` を <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> に設定して呼び出されているので、グループに関する情報をキャプチャしません。  
   
@@ -282,11 +285,11 @@ ms.lasthandoff: 10/18/2017
   
 -   文字クラス内の空白は常に、空白として解釈されます。 たとえば、正規表現パターン `[ .,;:]` は、空白文字、ピリオド、コンマ、セミコロン、またはコロンの任意の 1 文字と一致します。  
   
--   空白文字が許可されていない、かっこで囲まれた量指定子内でなど`{`  *n*  `}`、 `{`  *n*  `,}`、および`{` *n*  `,` *m*`}`です。 たとえば、正規表現パターン `\d{1. 3}` は、空白文字が含まれているため、1 ～ 3 桁の数値のどのシーケンスにも一致しません。  
+-   かっこで囲まれた量指定子 (`{`*n*`}`、`{`*n*`,}`、`{`*n*`,`*m*`}` など) には空白を使用できません。 たとえば、正規表現パターン `\d{1. 3}` は、空白文字が含まれているため、1 ～ 3 桁の数値のどのシーケンスにも一致しません。  
   
 -   言語要素を導入する文字シーケンス内では空白を使用できません。 例:  
   
-    -   言語要素 `(?:`*subexpression*`)` は非キャプチャ グループを表し、要素の `(?:` 部分には空白を埋め込むことはできません。 パターン`(? :` *subexpression* `)`スロー、<xref:System.ArgumentException>実行時に、パターン、および、パターン、正規表現エンジンで解析できないため`( ?:`*部分式* `)`一致に失敗した*subexpression*です。  
+    -   言語要素 `(?:`*subexpression*`)` は非キャプチャ グループを表し、要素の `(?:` 部分には空白を埋め込むことはできません。 パターン `(? :`*subexpression*`)` は、正規表現エンジンで解析できないため実行時に <xref:System.ArgumentException> をスローします。パターン `( ?:`*subexpression*`)` は *subexpression* に一致しません。  
   
     -   Unicode カテゴリまたは名前付きブロックを表す言語要素 `\p{`*name*`}` の `\p{` 部分には、空白を埋め込むことはできません。 空白を追加すると、この要素は実行時に <xref:System.ArgumentException> をスローします。  
   
@@ -296,7 +299,7 @@ ms.lasthandoff: 10/18/2017
   
  `\b \(? ( (?>\w+) ,?\s? )+  [\.!?] \)? # Matches an entire sentence.`  
   
- このパターンで定義されたパターンに似ています、[明示的なキャプチャのみ](#Explicit)セクションで、使用する点を除いて、<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType>パターンの空白を無視するオプションです。  
+ このパターンは、「[明示的なキャプチャのみ](#Explicit)」セクションで定義したパターンと似ています。ただし、<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> オプションを使用して、パターンの空白を無視している点が異なります。  
   
  [!code-csharp[Conceptual.Regex.Language.Options#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/whitespace1.cs#12)]
  [!code-vb[Conceptual.Regex.Language.Options#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/whitespace1.vb#12)]  
@@ -401,5 +404,5 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Conceptual.Regex.Language.Options#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/culture1.cs#15)]
  [!code-vb[Conceptual.Regex.Language.Options#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#15)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

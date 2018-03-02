@@ -1,5 +1,5 @@
 ---
-title: "I O の一般的なタスク"
+title: "共通 I/O タスク"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -8,20 +8,24 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords: I/O, common tasks
+helpviewer_keywords:
+- I/O, common tasks
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 51238020f4d93ad32dac85a95d7b1cab26f2dd64
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: be291265d59dca5d1f555f8a98a3d0c79235f3c3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="common-io-tasks"></a>共通 I/O タスク
-<xref:System.IO> 名前空間には、読み取り、書き込みなどの各種アクションをファイル、ディレクトリ、およびストリーム上で実行できるようにするいくつかのクラスが用意されています。 詳細については、次を参照してください。[ファイルおよびストリームは-o](../../../docs/standard/io/index.md)です。  
+<xref:System.IO> 名前空間には、読み取り、書き込みなどの各種アクションをファイル、ディレクトリ、およびストリーム上で実行できるようにするいくつかのクラスが用意されています。 詳細については、「[ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)」を参照してください。  
   
 ## <a name="common-file-tasks"></a>共通ファイル タスク  
   
@@ -59,7 +63,7 @@ ms.lasthandoff: 11/21/2017
 |ディレクトリのサイズの確認|<xref:System.IO.Directory?displayProperty=nameWithType> クラス|  
 |ディレクトリが存在するかどうかの確認|<xref:System.IO.Directory.Exists%2A?displayProperty=nameWithType> メソッド|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)  
  [ストリームの構成](../../../docs/standard/io/composing-streams.md)  
  [非同期ファイル I/O](../../../docs/standard/io/asynchronous-file-i-o.md)

@@ -12,18 +12,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8d94e041-d340-4ddf-9a2c-d7319e3f4f86
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0cd1a3bad69499b4804299adecabad3a43b5eab1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f6c65581437bfb22cf771d66716b3dbb62dbafae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="object-comparison-using-xmlnametable"></a>XmlNameTable によるオブジェクトの比較
-**XmlDocuments**を作成すると、そのドキュメント用に作成された名前のテーブルがあります。 属性と要素の名前が入れられます、ドキュメントに XML が読み込まれるか、新しい要素や属性を作成、ときに、 **XmlNameTable**です。 作成することも、 **XmlDocument**既存**NameTable**別のドキュメントからです。 ときに**XmlDocuments**を受け取るコンス トラクターで作成された、 **XmlNameTable**パラメーター、ドキュメントがノード名、名前空間、およびに既に格納されているプレフィックスへのアクセス、 **XmlNameTable**です。 どのような方法で名前テーブルと名前が読み込まれたとしても、いったんテーブルに名前が格納されると、文字列比較によってではなく、オブジェクト比較を利用して高速に名前を比較できます。 名前のテーブルを使用する文字列を追加することも、<xref:System.Xml.NameTable.Add%2A>です。 次のコード サンプルは、名前のテーブルを作成し、文字列を示します**MyString**テーブルに追加されています。 その後、 **XmlDocument**そのテーブル、および内の要素と属性名を使用して作成された**Myfile.xml**既存の名前テーブルに追加されます。  
+**XmlDocuments** の作成時には、そのドキュメント用の名前テーブルが作成されます。 XML がドキュメントに読み込まれるか、新しい要素または属性が作成されると、その属性名と要素名が **XmlNameTable** に格納されます。 別のドキュメントからの既存の **NameTable** を使用して **XmlDocument** を作成することもできます。 **XmlNameTable** パラメーターをとるコンストラクターを使用して **XmlDocuments** を作成すると、ドキュメントは、その **XmlNameTable** に既に保存されているノード名、名前空間、プレフィックスにアクセスするようになります。 どのような方法で名前テーブルと名前が読み込まれたとしても、いったんテーブルに名前が格納されると、文字列比較によってではなく、オブジェクト比較を利用して高速に名前を比較できます。 <xref:System.Xml.NameTable.Add%2A> を使用して、名前テーブルに文字列を追加することもできます。 名前テーブルを作成し、そのテーブルに **MyString** という文字列を追加するコード サンプルを次に示します。 その後、そのテーブルを使用して **XmlDocument** を作成し、**Myfile.xml** の要素名と属性名を既存の名前テーブルに追加します。  
   
 ```vb  
 Dim nt As New NameTable()  
@@ -60,5 +63,5 @@ if (((object)node1.Name) == ((object)node2.Name))
   
  上記のように 2 つのドキュメント間で名前テーブルが渡される状況は、同じタイプのドキュメントを繰り返し処理する場合によく発生します。たとえば、XML スキーマ定義言語 (XSD) スキーマまたはドキュメント型定義 (DTD) に準拠し、同じ文字列が繰り返し使われる発注ドキュメントを e コマース サイトで処理する場合などです。 このような場合は、同じ要素名が複数のドキュメントに現れるため、同じ名前テーブルを使用することによってパフォーマンスが向上します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

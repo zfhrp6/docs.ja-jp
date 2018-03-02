@@ -21,15 +21,18 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-caps.latest.revision: "25"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9f9952cfd6ed2d5bac66d1cd5e3c8eed7506cd5c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 26ee5cffd5e04a8c78cf5913b286fadfaab03c7c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="common-type-system"></a>共通型システム
 共通型システム (CTS: Common Type System) は、共通言語ランタイムにおける型の宣言、使用、および管理の方法を定義しており、ランタイムによる言語間統合のサポートにおいても重要な役割を果たします。 共通型システムには次のような機能があります。  
@@ -95,7 +98,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="Structures"></a>   
 ### <a name="structures"></a>構造体  
- 構造体は、<xref:System.ValueType?displayProperty=nameWithType> から派生する <xref:System.Object?displayProperty=nameWithType> から暗黙的に派生する値型です。 構造体は、メモリ要件が小さい値を表す場合や、厳密に型指定されたパラメーターを持つメソッドに対してパラメーターを値渡しする場合などに、非常に便利です。 .NET では、すべてのプリミティブ データ型 (<xref:System.Boolean>、 <xref:System.Byte>、 <xref:System.Char>、 <xref:System.DateTime>、 <xref:System.Decimal>、 <xref:System.Double>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.SByte>、 <xref:System.Single>、 <xref:System.UInt16>、 <xref:System.UInt32>、および<xref:System.UInt64>) 構造体として定義されます。  
+ 構造体は、<xref:System.ValueType?displayProperty=nameWithType> から派生する <xref:System.Object?displayProperty=nameWithType> から暗黙的に派生する値型です。 構造体は、メモリ要件が小さい値を表す場合や、厳密に型指定されたパラメーターを持つメソッドに対してパラメーターを値渡しする場合などに、非常に便利です。 .NET では、すべてのプリミティブ データ型 (<xref:System.Boolean>、<xref:System.Byte>、<xref:System.Char>、<xref:System.DateTime>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>) が構造体として定義されています。  
   
  クラスと同様、構造体にもデータ (構造体のフィールド) と、そのデータに対して実行できる操作 (構造体のメソッド) が定義されます。 これは、<xref:System.Object?displayProperty=nameWithType> クラスと <xref:System.ValueType?displayProperty=nameWithType> クラスで定義されている仮想メソッドなどのメソッドと、値型そのものに定義されているすべてのメソッドを、構造体に対して呼び出すことができることを意味します。 言い換えれば、構造体には、静的メソッドと非静的メソッドに加え、フィールド、プロパティ、およびイベントを持たせることができます。 構造体のインスタンスを作成したり、構造体をパラメーターとして渡したりできるほか、構造体をローカル変数として格納することも、別の値型または参照型のフィールドに格納することもできます。 構造体でインターフェイスを実装することもできます。  
   
@@ -166,7 +169,7 @@ ms.lasthandoff: 11/21/2017
   
  コールバック メソッドの場合のように、多くの場合、デリゲートは 1 つのメソッドのみを表すため、デリゲートを作成し、呼び出す以外の処理は必要ありません。  
   
- .NET がのメソッドを提供する複数のメソッドを表すデリゲートを<xref:System.Delegate>と<xref:System.MulticastDelegate>デリゲート メソッドをデリゲートの呼び出しリストに追加するなどの操作をサポートするクラス (、<xref:System.Delegate.Combine%2A?displayProperty=nameWithType>メソッド)、(、メソッドを削除します。<xref:System.Delegate.Remove%2A?displayProperty=nameWithType>メソッド)、呼び出しリストを取得しています (、<xref:System.Delegate.GetInvocationList%2A?displayProperty=nameWithType>メソッド)。  
+ 複数のメソッドを表すデリゲートの場合、.NET は <xref:System.Delegate> と <xref:System.MulticastDelegate> デリゲート クラスのメソッドを提供し、デリゲートの呼び出しリスト (<xref:System.Delegate.Combine%2A?displayProperty=nameWithType> メソッド) にメソッドを追加したり、メソッド (<xref:System.Delegate.Remove%2A?displayProperty=nameWithType> メソッド) を削除したり、呼び出しリスト (<xref:System.Delegate.GetInvocationList%2A?displayProperty=nameWithType>メソッド) を取得したりする操作をサポートしています。  
   
 > [!NOTE]
 >  C#、C++、および Visual Basic では、イベント ハンドラー デリゲートに対して、これらのメソッドを使用する必要はありません。これらの言語には、イベント ハンドラーの追加および削除に使用する構文が用意されているためです。  
@@ -327,7 +330,7 @@ ms.lasthandoff: 11/21/2017
   
 -   派生型で、継承された仮想メソッドをオーバーライドできます。 オーバーライドするメソッドでは、コンパイル時点の変数の型ではなく、実行時の値の型に基づいて呼び出される、メソッドの新しい定義を提供します。 メソッドが仮想メソッドをオーバーライドできるのは、その仮想メソッドが `final` としてマークされておらず、新しいメソッドのアクセシビリティがその仮想メソッドと少なくとも同じ場合に限られます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=217856)  
  [共通言語ランタイム](../../../docs/standard/clr.md)  
  [.NET での型変換](../../../docs/standard/base-types/type-conversion.md)

@@ -12,28 +12,31 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b867b2d7eb2f4b1252579bbf1f47430d9a9a48f4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 964e2de7258f4849de01e4fbeae330d009710289
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>XslTransform クラスからの移行
-XSLT アーキテクチャで再設計されました、[!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)]を解放します。 <xref:System.Xml.Xsl.XslTransform> クラスは <xref:System.Xml.Xsl.XslCompiledTransform> クラスで置き換えられています。  
+XSLT アーキテクチャは、[!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] リリースで設計が変更されました。 <xref:System.Xml.Xsl.XslTransform> クラスは <xref:System.Xml.Xsl.XslCompiledTransform> クラスで置き換えられています。  
   
  以降では、<xref:System.Xml.Xsl.XslCompiledTransform> クラスと <xref:System.Xml.Xsl.XslTransform> クラスの主な相違点について説明します。  
   
-## <a name="performance"></a>パフォーマンス テスト  
+## <a name="performance"></a>パフォーマンス  
  <xref:System.Xml.Xsl.XslCompiledTransform> クラスでは多くのパフォーマンスの向上が図られています。 新しい XSLT プロセッサは XSLT スタイル シートを、共通言語ランタイム (CLR) が他のプログラム言語で行うのと同様に、共通の中間形式にコンパイルします。 いったんスタイル シートがコンパイルされると、それをキャッシュして再利用することができます。  
   
  <xref:System.Xml.Xsl.XslCompiledTransform> クラスには、このクラスを <xref:System.Xml.Xsl.XslTransform> クラスよりも大幅に高速化する他の最適化も含まれています。  
   
 > [!NOTE]
->  全体的なパフォーマンスは <xref:System.Xml.Xsl.XslCompiledTransform> クラスの方が <xref:System.Xml.Xsl.XslTransform> クラスより優れていますが、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> クラスの <xref:System.Xml.Xsl.XslCompiledTransform> メソッドが変換で初めて呼び出されたときは、<xref:System.Xml.Xsl.XslTransform.Load%2A> クラスの <xref:System.Xml.Xsl.XslTransform> メソッドよりパフォーマンスが劣る場合があります。 これは、XSLT ファイルを読み込む前にコンパイルする必要があるためです。 詳細については、次のブログの投稿を参照してください: [XslCompiledTransform は XslTransform より遅いですか?](http://go.microsoft.com/fwlink/?LinkId=130590)  
+>  全体的なパフォーマンスは <xref:System.Xml.Xsl.XslCompiledTransform> クラスの方が <xref:System.Xml.Xsl.XslTransform> クラスより優れていますが、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> クラスの <xref:System.Xml.Xsl.XslCompiledTransform> メソッドが変換で初めて呼び出されたときは、<xref:System.Xml.Xsl.XslTransform.Load%2A> クラスの <xref:System.Xml.Xsl.XslTransform> メソッドよりパフォーマンスが劣る場合があります。 これは、XSLT ファイルを読み込む前にコンパイルする必要があるためです。 詳しくは、ブログの投稿「[XslCompiledTransform Slower than XslTransform?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)」(XslCompiledTransform は XslTransform より遅い?) をご覧ください。  
   
 ## <a name="security"></a>セキュリティ  
  既定で、<xref:System.Xml.Xsl.XslCompiledTransform> クラスでは XSLT `document()` 関数と埋め込みスクリプトのサポートが無効になっています。 これらの機能を有効にするには、機能が有効になっている <xref:System.Xml.Xsl.XsltSettings> オブジェクトを作成し、それを <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> メソッドに渡します。 スクリプト作成を有効にして XSLT 変換を実行する方法を次の例に示します。  
@@ -41,7 +44,7 @@ XSLT アーキテクチャで再設計されました、[!INCLUDE[vsprvslong](..
  [!code-csharp[XML_Migration#16](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#16)]
  [!code-vb[XML_Migration#16](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#16)]  
   
- 詳細については、次を参照してください。 [XSLT のセキュリティに関する考慮事項](../../../../docs/standard/data/xml/xslt-security-considerations.md)です。  
+ 詳しくは、「[XSLT のセキュリティに関する考慮事項](../../../../docs/standard/data/xml/xslt-security-considerations.md)」をご覧ください。  
   
 ## <a name="new-features"></a>新機能  
   
@@ -98,7 +101,7 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
 ```  
   
 ### <a name="discretionary-behavior"></a>随意動作  
- W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を実装者が決定できる事項があります。 このような事項は、随意動作と見なされています。 事項によっては、<xref:System.Xml.Xsl.XslCompiledTransform> クラスと <xref:System.Xml.Xsl.XslTransform> クラスで動作が異なります。 詳細については、次を参照してください。[回復可能な XSLT エラー](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)です。  
+ W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を実装者が決定できる事項があります。 このような事項は、随意動作と見なされています。 事項によっては、<xref:System.Xml.Xsl.XslCompiledTransform> クラスと <xref:System.Xml.Xsl.XslTransform> クラスで動作が異なります。 詳しくは、「[XSLT エラーの解決](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)」をご覧ください。  
   
 ### <a name="extension-objects-and-script-functions"></a>拡張オブジェクトとスクリプト関数  
  <xref:System.Xml.Xsl.XslCompiledTransform> では、スクリプト関数の使用に関して新たに 2 つの制限が加えられています。  
@@ -109,21 +112,21 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
   
  <xref:System.Xml.Xsl.XslCompiledTransform> では、スクリプト関数へのバインド (メソッド名参照) がコンパイル時に実行されます。XslTranform を利用するスタイル シートを <xref:System.Xml.Xsl.XslCompiledTransform> によって読み込むと、例外が発生する場合があります。  
   
- <xref:System.Xml.Xsl.XslCompiledTransform> では、`msxsl:using` 要素内に子要素として `msxsl:assembly` および `msxsl:script` を含めることがサポートされます。 `msxsl:using` 要素と `msxsl:assembly` 要素を使用して、スクリプト ブロックで使用する追加の名前空間とアセンブリを宣言できます。 参照してください[msxsl:script スクリプト ブロックを使用した](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md)詳細についてはします。  
+ <xref:System.Xml.Xsl.XslCompiledTransform> では、`msxsl:using` 要素内に子要素として `msxsl:assembly` および `msxsl:script` を含めることがサポートされます。 `msxsl:using` 要素と `msxsl:assembly` 要素を使用して、スクリプト ブロックで使用する追加の名前空間とアセンブリを宣言できます。 詳しくは、「[msxsl:script を使用したスクリプト ブロック](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md)」をご覧ください。  
   
  <xref:System.Xml.Xsl.XslCompiledTransform> では、複数のオーバーロードおよびそれと同数の引数を含む拡張オブジェクトは使用できません。  
   
 ### <a name="msxml-functions"></a>MSXML 関数  
  <xref:System.Xml.Xsl.XslCompiledTransform> クラスでは、新しい MSXML 関数のサポートが追加されました。 新しい関数または強化された関数は次のとおりです。  
   
--   msxsl:node-設定:<xref:System.Xml.Xsl.XslTransform>の引数を必要な[ノードセット関数](http://msdn.microsoft.com/en-us/87b6b3f4-16f4-4fa3-8103-d62a679ac2a7)関数の結果ツリー フラグメント。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスでは、この要件がありません。  
+-   msxsl:node-set: <xref:System.Xml.Xsl.XslTransform> では、[node-set 関数](http://msdn.microsoft.com/library/87b6b3f4-16f4-4fa3-8103-d62a679ac2a7)の引数を結果ツリー フラグメントにする必要がありました。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスでは、この要件がありません。  
   
 -   msxsl:version : この関数は、<xref:System.Xml.Xsl.XslCompiledTransform> でサポートされます。  
   
--   XPath 拡張関数: [ms:string-関数の比較](http://msdn.microsoft.com/en-us/20616b82-9e27-444c-b714-4f1e09b73aee)、 [ms:utc 関数](http://msdn.microsoft.com/en-us/ef26fc88-84c6-4fb9-9c3b-f2f5264b864f)、 [ms:namespace-uri 関数](http://msdn.microsoft.com/en-us/91f9cabf-ab93-4dbe-9c12-e6a75214f4c7)、 [ms:local-関数の名前](http://msdn.microsoft.com/en-us/10ed60a1-17a9-4d74-8b98-7940ac97c0b5)、 [ms:number 関数](http://msdn.microsoft.com/en-us/b94fc08e-1f31-4f48-b1a8-6d78c1b5d954)、 [ms:format-関数の日付](http://msdn.microsoft.com/en-us/51f35609-89a9-4098-a166-88bf01300bf5)、および[ms:format-関数の時間](http://msdn.microsoft.com/en-us/e5c2df2d-e8fb-4a8f-bfc0-db84ea12a5d5)関数がサポートされています。  
+-   XPath 拡張関数: [ms:string-compare 関数](http://msdn.microsoft.com/library/20616b82-9e27-444c-b714-4f1e09b73aee)、[ms:utc 関数](http://msdn.microsoft.com/library/ef26fc88-84c6-4fb9-9c3b-f2f5264b864f)、[ms:namespace-uri 関数](http://msdn.microsoft.com/library/91f9cabf-ab93-4dbe-9c12-e6a75214f4c7)、[ms:local-name 関数](http://msdn.microsoft.com/library/10ed60a1-17a9-4d74-8b98-7940ac97c0b5)、[ms:number 関数](http://msdn.microsoft.com/library/b94fc08e-1f31-4f48-b1a8-6d78c1b5d954)、[ms:format-date 関数](http://msdn.microsoft.com/library/51f35609-89a9-4098-a166-88bf01300bf5)、[ms:format-time 関数](http://msdn.microsoft.com/library/e5c2df2d-e8fb-4a8f-bfc0-db84ea12a5d5)がサポートされるようになりました。  
   
 -   スキーマ関連の XPath 拡張関数 : これは、<xref:System.Xml.Xsl.XslCompiledTransform> ではネイティブでサポートされません。 ただし、拡張関数として実装することはできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)  
  [XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)

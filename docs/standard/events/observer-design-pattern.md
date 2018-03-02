@@ -18,18 +18,21 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 83663a28ac7ae19848552583f2ec39a5e96c7fdc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c13424ad817ae73b5019f0ce5a7cda54c84adc71
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="observer-design-pattern"></a>オブサーバー デザイン パターン
-オブザーバー デザイン パターンでは、プロバイダーにサブスクライバーを登録して通知を受信することができます。 このデザイン パターンは、プッシュ ベースの通知を必要とするあらゆるシナリオに適しています。 パターンは、定義、*プロバイダー* (とも呼ばれる、*サブジェクト*または*観測可能なオブジェクト*) と 0、1 つ、以上*オブザーバー*です。 プロバイダーにオブザーバーを登録すると、あらかじめ定義した条件、イベント、または状態変化が発生するたびに、プロバイダーのいずれかのメソッドが呼び出されて自動的にすべてのオブザーバーに通知されます。 このメソッド呼び出しで、プロバイダーからオブザーバーに現在の状態の情報を提供することもできます。 .NET Framework でオブザーバー デザイン パターンを適用するには、ジェネリック インターフェイスの <xref:System.IObservable%601?displayProperty=nameWithType> および <xref:System.IObserver%601?displayProperty=nameWithType> を実装します。 ジェネリック型パラメーターは、通知情報を提供する型を表します。  
+オブザーバー デザイン パターンでは、プロバイダーにサブスクライバーを登録して通知を受信することができます。 このデザイン パターンは、プッシュ ベースの通知を必要とするあらゆるシナリオに適しています。 このパターンでは、1 つの*プロバイダー* (*サブジェクト*または*観察可能なオブジェクト*とも呼ばれます) と、0 個以上の*オブザーバー*を定義します。 プロバイダーにオブザーバーを登録すると、あらかじめ定義した条件、イベント、または状態変化が発生するたびに、プロバイダーのいずれかのメソッドが呼び出されて自動的にすべてのオブザーバーに通知されます。 このメソッド呼び出しで、プロバイダーからオブザーバーに現在の状態の情報を提供することもできます。 .NET Framework でオブザーバー デザイン パターンを適用するには、ジェネリック インターフェイスの <xref:System.IObservable%601?displayProperty=nameWithType> および <xref:System.IObserver%601?displayProperty=nameWithType> を実装します。 ジェネリック型パラメーターは、通知情報を提供する型を表します。  
   
 ## <a name="applying-the-pattern"></a>パターンの適用  
  オブザーバー デザイン パターンは、データ ソース (ビジネス ロジック) 層とユーザー インターフェイス (表示) 層のように、2 つの異なるコンポーネントまたはアプリケーション層を明確に分離できるため、分散型のプッシュ ベースの通知に適しています。 このパターンは、プロバイダーがコールバックを使用して現在の情報をクライアントに提供するあらゆる場面で実装できます。  
@@ -53,7 +56,7 @@ ms.lasthandoff: 10/18/2017
 -   プロバイダーがオブザーバーに送信するデータを含むオブジェクト。 このオブジェクトの型は、<xref:System.IObservable%601> インターフェイスと <xref:System.IObserver%601> インターフェイスのジェネリック型パラメーターに対応します。 このオブジェクトは、<xref:System.IObservable%601> の実装と同じにすることもできますが、別の型にするのが最も一般的です。  
   
 > [!NOTE]
->  オブザーバー デザイン パターンを実装するだけでなく、<xref:System.IObservable%601> インターフェイスと <xref:System.IObserver%601> インターフェイスを使用して構築されたライブラリを使用することもできます。 たとえば、 [.NET (Rx) の反応拡張](http://go.microsoft.com/fwlink/?LinkId=186345)一連の拡張メソッドと非同期のプログラミングをサポートする LINQ 標準シーケンス演算子で構成されます。  
+>  オブザーバー デザイン パターンを実装するだけでなく、<xref:System.IObservable%601> インターフェイスと <xref:System.IObserver%601> インターフェイスを使用して構築されたライブラリを使用することもできます。 たとえば、[.NET (Rx) の反応拡張](https://msdn.microsoft.com/library/hh242985.aspx)は、非同期プログラミングをサポートする一連の拡張メソッドと LINQ 標準シーケンス演算子で構成します。  
   
 ## <a name="implementing-the-pattern"></a>パターンの実装  
  次の例では、オブザーバー デザイン パターンを使用して、空港の手荷物受取所の情報システムを実装します。 `BaggageInfo` クラスは、到着便と、各便の手荷物の受け取り場所に関する情報を提供します。 これを次の例に示します。  
@@ -97,7 +100,7 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[オブザーバー デザイン パターンのベスト プラクティス](../../../docs/standard/events/observer-design-pattern-best-practices.md)|オブザーバー デザイン パターンを実装するアプリケーションを開発するときのベスト プラクティスについて説明します。|  
 |[方法: プロバイダーを実装する](../../../docs/standard/events/how-to-implement-a-provider.md)|温度監視アプリケーションのプロバイダーを実装するための手順について説明します。|  

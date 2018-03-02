@@ -13,18 +13,21 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 77fe1790a4ff2f910a740e969e458549f1fd9642
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4b59b2b59852190bd19a3c1c9536fadb7b40603e
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="post-schema-compilation-infoset"></a>スキーマのコンパイル後の情報セット
-[World Wide Web Consortium (W3C) XML スキーマ勧告](http://go.microsoft.com/fwlink/?linkid=45242)情報セット (infoset) スキーマ検証前とスキーマ コンパイル後に公開する必要があります。 XML スキーマ オブジェクト モデル (SOM) は、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> の <xref:System.Xml.Schema.XmlSchemaSet> メソッドが呼び出される前と後について、この公開内容を調べます。  
+W3C 勧告『[XML Schema](http://go.microsoft.com/fwlink/?linkid=45242)』では、スキーマ検証前とスキーマ コンパイル後に必ず公開する情報セットについて解説されています。 XML スキーマ オブジェクト モデル (SOM) は、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> の <xref:System.Xml.Schema.XmlSchemaSet> メソッドが呼び出される前と後について、この公開内容を調べます。  
   
  スキーマの検証前の情報セットは、スキーマの編集時に作成されます。 スキーマ コンパイル後の情報セットは、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> の <xref:System.Xml.Schema.XmlSchemaSet> メソッドが呼び出された後、スキーマのコンパイル時に生成され、プロパティとして公開されます。  
   
@@ -47,5 +50,5 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[PsciSample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/PsciSample/CS/PsciSample.cs#1)]
  [!code-vb[PsciSample#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/PsciSample/VB/PsciSample.vb#1)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML スキーマ オブジェクト モデル (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)

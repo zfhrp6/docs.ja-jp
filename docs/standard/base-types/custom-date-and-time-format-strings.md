@@ -20,15 +20,18 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-caps.latest.revision: "79"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f0346de00988a6863c212a95be3ffa9d356fe5ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 503f9d593235cc81c6e2ecf43b93abb2105e0adf
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="custom-date-and-time-format-strings"></a>カスタム日時書式指定文字列
 日時書式指定文字列は、<xref:System.DateTime> 値または <xref:System.DateTimeOffset> 値の書式設定操作によって生成されるテキスト表現を定義します。 また、文字列を日時に正常に変換するために解析操作で必要となる日時値の表現も定義します。 カスタム書式指定文字列は、1 つ以上のカスタム日時書式指定子で構成されます。 [標準の日時書式指定文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)以外の文字列は、すべてカスタム日時書式指定文字列として解釈されます。  
@@ -50,7 +53,7 @@ ms.lasthandoff: 11/21/2017
   
  次の表に、カスタム日時書式指定子の説明および書式指定子ごとの書式設定後の文字列を示します。 既定では、結果の文字列は、en-US カルチャの書式指定規則を反映します。 特定の書式指定子でローカライズされた文字列が書式設定後に生成される場合、例には書式設定後の文字列が適用されるカルチャも示されます。 カスタム日時書式指定文字列の使用方法については、「メモ」を参照してください。  
   
-|書式指定子|説明|例|  
+|書式指定子|説明|使用例|  
 |----------------------|-----------------|--------------|  
 |"d"|月の日にち (1 ～ 31)。<br /><br /> 詳細については、「["d" カスタム書式指定子](#dSpecifier)」を参照してください。|2009-06-01T13:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 15|  
 |"dd"|月の日にち (01 ～ 31)。<br /><br /> 詳細については、「["dd" カスタム書式指定子](#ddSpecifier)」を参照してください。|2009-06-01T13:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 15|  
@@ -358,7 +361,7 @@ ms.lasthandoff: 11/21/2017
   
 -   タイム ゾーンが指定されていない時刻の場合 (<xref:System.DateTime.Kind%2A?displayProperty=nameWithType> プロパティ = <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>)、<xref:System.String.Empty?displayProperty=nameWithType> と同じ結果になります。  
   
- <xref:System.DateTimeOffset> "K"書式指定子の値は、"zzz"書式指定子に相当し、結果を含む文字列を生成する、 <xref:System.DateTimeOffset> UTC からのオフセットの値。  
+ "K" 書式指定子を <xref:System.DateTimeOffset> 値で使用した場合、この指定子は "zzz" 書式指定子に相当し、書式設定後の文字列には <xref:System.DateTimeOffset> 値の UTC を基準としたオフセットが含まれます。  
   
  "K" 書式指定子が単独で使用され、その他のカスタム書式指定子がない場合、"K" は標準の日時書式指定子として解釈され、<xref:System.FormatException> をスローします。 単一の書式指定子を使用する方法の詳細については、このトピックで後述する「[単一のカスタム書式指定子の使用](#UsingSingleSpecifiers)」を参照してください。  
   
@@ -661,7 +664,7 @@ ms.lasthandoff: 11/21/2017
      [!code-vb[Formatting.DateAndTime.Custom#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]  
   
 <a name="Notes"></a>   
-## <a name="notes"></a>ノート  
+## <a name="notes"></a>メモ  
   
 <a name="UsingSingleSpecifiers"></a>   
 ### <a name="using-single-custom-format-specifiers"></a>単一のカスタム書式指定子の使用  
@@ -691,14 +694,14 @@ ms.lasthandoff: 11/21/2017
 ### <a name="control-panel-settings"></a>コントロール パネルの設定  
  コントロール パネルの **[地域と言語のオプション]** の設定は、各種のカスタム日時書式指定子を使った書式設定操作によって生成される結果の文字列に影響します。 これらの設定は、書式設定の制御に使用される値を提供する現在のスレッド カルチャに関連付けられた <xref:System.Globalization.DateTimeFormatInfo> オブジェクトを初期化するために使用されます。 コンピューターで使用する設定が異なる場合は、生成される文字列も異なります。  
   
- また、使用する場合、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType>新しいのインスタンスを作成するコンス トラクター<xref:System.Globalization.CultureInfo>を現在のシステム カルチャによって確立された任意のカスタマイズと同じカルチャを表すオブジェクト、**地域と言語のオプション**コントロール パネル では、新しいに適用される<xref:System.Globalization.CultureInfo>オブジェクト。 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。  
+ また、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> コンストラクターを使用して、現在のシステム カルチャと同じカルチャを表す新しい <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化した場合、コントロール パネルの **[地域と言語のオプション]** 項目で設定されたカスタマイズが新しい <xref:System.Globalization.CultureInfo> オブジェクトに適用されます。 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。  
   
 ### <a name="datetimeformatinfo-properties"></a>DateTimeFormatInfo のプロパティ  
  書式設定は、現在の <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのプロパティの影響を受けます。このオブジェクトは、現在のスレッド カルチャによって暗黙的に指定されるか、または書式設定を実行するメソッドの <xref:System.IFormatProvider> パラメーターによって明示的に指定されます。 <xref:System.IFormatProvider> パラメーターには、カルチャを表す <xref:System.Globalization.CultureInfo> オブジェクト、または <xref:System.Globalization.DateTimeFormatInfo> オブジェクトを指定します。  
   
  各種のカスタム日時書式指定子によって生成される書式設定後の文字列も、現在の <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのプロパティに依存します。 カスタム日時書式指定子によって生成される結果は、対応する <xref:System.Globalization.DateTimeFormatInfo> プロパティを変更することによって変えることができます。 たとえば、"ddd" 書式指定子を使用した場合、書式設定後の文字列には、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A> 文字列配列に指定されている曜日の省略名が追加されます。 同様に、"MMMM" 書式指定子を使用した場合、書式設定後の文字列には、<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A> 文字列配列に指定されている月の正式名が追加されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.DateTime?displayProperty=nameWithType>  
  <xref:System.IFormatProvider?displayProperty=nameWithType>  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  

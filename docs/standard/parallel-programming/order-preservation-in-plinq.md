@@ -11,17 +11,21 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: PLINQ queries, order preservation
+helpviewer_keywords:
+- PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 060459cf8f408e40ddc394fbcda6a022ec6379de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 164dce7c58e1ce44972e0e390e4f0bf2be8de548
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="order-preservation-in-plinq"></a>PLINQ における順序維持
 PLINQ では、正確性を維持しながらパフォーマンスを最大にすることが重要です。 クエリをできるだけ速く実行する一方で、正確な結果を生成する必要があります。 正確性のために、ソース シーケンスの順序の維持が必要な場合がありますが、順序付けには負荷がかかります。 したがって、既定では、PLINQ はソース シーケンスの順序を維持しません。 この点で、PLINQ は [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] と似ていますが、順序を維持する LINQ to Objects とは異なります。  
@@ -101,16 +105,16 @@ PLINQ では、正確性を維持しながらパフォーマンスを最大に�
 |<xref:System.Linq.ParallelEnumerable.OrderBy%2A>|シーケンスを並べ替え|新規に順序付けられたセクションを開始|  
 |<xref:System.Linq.ParallelEnumerable.OrderByDescending%2A>|シーケンスを並べ替え|新規に順序付けられたセクションを開始|  
 |<xref:System.Linq.ParallelEnumerable.Range%2A>|該当なし (<xref:System.Linq.ParallelEnumerable.AsParallel%2A> の既定と同じ)|利用不可|  
-|<xref:System.Linq.ParallelEnumerable.Repeat%2A>|該当なし (既定と同じ<xref:System.Linq.ParallelEnumerable.AsParallel%2A>)|利用不可|  
+|<xref:System.Linq.ParallelEnumerable.Repeat%2A>|該当なし (<xref:System.Linq.ParallelEnumerable.AsParallel%2A> の既定と同じ)|利用不可|  
 |<xref:System.Linq.ParallelEnumerable.Reverse%2A>|逆方向|処理を行わない|  
 |<xref:System.Linq.ParallelEnumerable.Select%2A>|順序ありの結果|順序なしの結果|  
-|<xref:System.Linq.ParallelEnumerable.Select%2A>(インデックス付き)|順序ありの結果|順序なしの結果|  
+|<xref:System.Linq.ParallelEnumerable.Select%2A> (インデックス付き)|順序ありの結果|順序なしの結果|  
 |<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|順序ありの結果|順序なしの結果|  
-|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>(インデックス付き)|順序ありの結果|順序なしの結果|  
+|<xref:System.Linq.ParallelEnumerable.SelectMany%2A> (インデックス付き)|順序ありの結果|順序なしの結果|  
 |<xref:System.Linq.ParallelEnumerable.SequenceEqual%2A>|順序ありの比較|順序なしの比較|  
 |<xref:System.Linq.ParallelEnumerable.Single%2A>|利用不可|利用不可|  
 |<xref:System.Linq.ParallelEnumerable.SingleOrDefault%2A>|利用不可|利用不可|  
-|<xref:System.Linq.ParallelEnumerable.Skip%2A>|最初にスキップ *n* 要素|いずれかでスキップ *n* 要素|  
+|<xref:System.Linq.ParallelEnumerable.Skip%2A>|最初の *n* 要素をスキップ|任意の *n* 要素をスキップ|  
 |<xref:System.Linq.ParallelEnumerable.SkipWhile%2A>|順序ありの結果|非確定。 現在の任意の順序で SkipWhile を実行|  
 |<xref:System.Linq.ParallelEnumerable.Sum%2A>|非結合演算子または非可換演算子の場合は非確定の出力|非結合演算子または非可換演算子の場合は非確定の出力|  
 |<xref:System.Linq.ParallelEnumerable.Take%2A>|最初の `n` 要素を取得|`n` 要素を取得|  
@@ -123,11 +127,11 @@ PLINQ では、正確性を維持しながらパフォーマンスを最大に�
 |<xref:System.Linq.ParallelEnumerable.ToLookup%2A>|順序ありの結果|順序なしの結果|  
 |<xref:System.Linq.ParallelEnumerable.Union%2A>|順序ありの結果|順序なしの結果|  
 |<xref:System.Linq.ParallelEnumerable.Where%2A>|順序ありの結果|順序なしの結果|  
-|<xref:System.Linq.ParallelEnumerable.Where%2A>(インデックス付き)|順序ありの結果|順序なしの結果|  
+|<xref:System.Linq.ParallelEnumerable.Where%2A> (インデックス付き)|順序ありの結果|順序なしの結果|  
 |<xref:System.Linq.ParallelEnumerable.Zip%2A>|順序ありの結果|順序なしの結果|  
   
  順序なしの結果はアクティブにシャッフルされるわけではありません。適用される特別な順序ロジックがないだけです。 順序なしのクエリでソース シーケンスの順序が保持される場合もあります。 インデックス付きの Select 演算子を使用するクエリの場合、PLINQ ではインデックスが増加する順に出力要素が出力されることは保証しますが、どのインデックスがどの要素に割り当てられるかについては一切保証しません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
  [並列プログラミング](../../../docs/standard/parallel-programming/index.md)

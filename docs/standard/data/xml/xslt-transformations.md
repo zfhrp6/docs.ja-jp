@@ -9,18 +9,21 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 202f8820-224c-494f-b61e-cd127eac6e03
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0d7fa8492487daff68fd8ebaf4159dd537d13e51
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 92d0688b86e6a95af46e09c21c1a8b3cdf66efc3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xslt-transformations"></a>XSLT 変換
-XSLT (Extensible Stylesheet Language Transformation) を使用すれば、ソース XML ドキュメントの内容を、形式や構造が異なる別のドキュメントに変換できます。 たとえば、XSLT を使用して、XML を Web サイトで使われる HTML に変換したり、アプリケーションが必要とするフィールドだけが含まれたドキュメントに変換したりできます。 この変換処理がで指定された、 [W3C XSL Transformations (XSLT) Version 1.0 』 勧告](http://go.microsoft.com/fwlink/?LinkID=49919)です。  
+XSLT (Extensible Stylesheet Language Transformation) を使用すれば、ソース XML ドキュメントの内容を、形式や構造が異なる別のドキュメントに変換できます。 たとえば、XSLT を使用して、XML を Web サイトで使われる HTML に変換したり、アプリケーションが必要とするフィールドだけが含まれたドキュメントに変換したりできます。 この変換処理の仕様は、[W3C 勧告『XSL Transformations (XSLT) Version 1.0』](http://go.microsoft.com/fwlink/?LinkID=49919)で規定されています。  
   
  <xref:System.Xml.Xsl.XslCompiledTransform> クラスは .NET Framework の XSLT プロセッサです。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスは、W3C 勧告『XSLT 1.0』をサポートしています。  
   
@@ -37,10 +40,10 @@ XSLT (Extensible Stylesheet Language Transformation) を使用すれば、ソー
  [XSLT コンパイラ (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
  XSLT コンパイラの使用方法について説明します。  
   
- [XslTransform クラスによる XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [XslTransform クラスを使用した XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
  <xref:System.Xml.Xsl.XslTransform> クラスの使用方法について説明します。  
   
- **注**、<xref:System.Xml.Xsl.XslTransform>クラスは、.NET Framework 2.0 リリースで廃止されています。  
+ **注** .NET Framework 2.0 リリースでは <xref:System.Xml.Xsl.XslTransform> クラスが廃止されています。  
   
 ## <a name="reference"></a>参照  
  <xref:System.Xml.Xsl.XslCompiledTransform>  

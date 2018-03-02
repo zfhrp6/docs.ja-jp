@@ -8,11 +8,14 @@ ms.topic: article
 ms.custom: updateeachrelease
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.openlocfilehash: 20152a951f11b1b923209b56b31663a9a8a81587
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 838f4f6d78b4544a538e9c4bd6c487bcc731270b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="target-frameworks"></a>ターゲット フレームワーク
 
@@ -30,7 +33,7 @@ ms.lasthandoff: 10/18/2017
 
 次の表では、最も一般的なターゲット フレームワーク、それらの参照方法、およびそれらが実装する [.NET Standard](~/docs/standard/net-standard.md) のバージョンを定義します。 これらのターゲット フレームワークのバージョンは、最新の安定したバージョンです。 プレリリース バージョンは記載されていません。 ターゲット フレームワーク モニカー (TFM) は、.NET アプリまたはライブラリのターゲット フレームワークを指定するための標準化されたトークン形式です。 
 
-| [対象とする Framework]      | [最新バージョン] | ターゲット フレームワーク モニカー (TFM) | 実装されています。 <br/> .NET Standard バージョン |
+| [対象とする Framework]      | [最新バージョン] | ターゲット フレームワーク モニカー (TFM) | 実装済み <br/> .NET Standard バージョン |
 | :-------------------: | :------------: | :----------------------------: | :-------------------------------------: |
 | .NET Standard         | 2.0            | netstandard2.0                 | N/A                                     |
 | .NET Core アプリケーション | 2.0            | netcoreapp2.0                  | 2.0                                     |

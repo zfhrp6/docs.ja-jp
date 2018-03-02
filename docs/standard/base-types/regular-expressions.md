@@ -26,21 +26,24 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cb612d524f32eb4a97ac358d6deb8d2889ee5391
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 145e0c9a722afd9f49216058604936189c003f17
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="net-regular-expressions"></a>.NET の正規表現
-正規表現を使用すると、強力、柔軟、そして効率的な方法でテキストを処理できます。 正規表現の広範なパターン一致表記法を使用することで、大量のテキストをすばやく解析して特定の文字パターンを検索したり、決められたパターン (電子メール アドレスなど) と照らしてテキストを検証したりできるほか、テキストの部分文字列を抽出、編集、置換、または削除したり、抽出した文字列をコレクションに追加してレポートを生成したりすることもできます。 文字列処理や大量のテキストを解析する多くのアプリケーションにとって、正規表現は欠くことのできないツールです。  
+正規表現を使用すると、強力、柔軟、そして効率的な方法でテキストを処理できます。 正規表現の広範なパターン一致表記法を使用することで、大量のテキストをすばやく解析して特定の文字パターンを検索したり、決められたパターン (メール アドレスなど) と照らしてテキストを検証したりできるほか、テキストの部分文字列を抽出、編集、置換、または削除したり、抽出した文字列をコレクションに追加してレポートを生成したりすることもできます。 文字列処理や大量のテキストを解析する多くのアプリケーションにとって、正規表現は欠くことのできないツールです。  
   
 ## <a name="how-regular-expressions-work"></a>正規表現の動作  
- 正規表現を使ったテキスト処理の中心的な場所は、正規表現エンジンによって表される、 <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> .NET でのオブジェクト。 正規表現を使ったテキスト処理では、正規表現エンジンに対し、最低でも次の 2 つの情報を与える必要があります。  
+ 正規表現を使ったテキスト処理の最も重要な部分は、.NET の <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> オブジェクトによって表される正規表現エンジンです。 正規表現を使ったテキスト処理では、正規表現エンジンに対し、最低でも次の 2 つの情報を与える必要があります。  
   
 -   テキストを識別する正規表現パターン。  
   
@@ -50,18 +53,18 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Text.RegularExpressions.Regex> クラスのメソッドを使用すると、次のような処理を実行できます。  
   
--   入力されたテキストに特定の正規表現パターンが出現するかどうかを調べるには、<xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> メソッドを呼び出します。 使用する例については、 <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> 、テキストを検証するためのメソッドを参照してください[する方法: 文字列が有効な電子メール形式であることを確認](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)です。  
+-   入力されたテキストに特定の正規表現パターンが出現するかどうかを調べるには、<xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> メソッドを呼び出します。 テキストを検証するために <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> メソッドを使う例については、「[方法 : 文字列が有効な電子メール形式であるかどうかを検証する](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)」をご覧ください。  
   
 -   正規表現パターンと一致したテキストを 1 つまたは全部取得するには、<xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> メソッドまたは <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドを呼び出します。 前者は、一致したテキストの情報を保持する <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> オブジェクトを返します。 後者は、解析対象のテキストに見つかった各一致につき 1 つの <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを含む <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> オブジェクトを返します。  
   
--   正規表現パターンと一致したテキストを置換するには、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出します。 使用する例について、<xref:System.Text.RegularExpressions.Regex.Replace%2A>日付形式を変更し、文字列から無効な文字を削除する方法を確認する[する方法: 文字列から無効な文字をストリップ](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md)と[例:日付形式を変更する](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md).  
+-   正規表現パターンと一致したテキストを置換するには、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出します。 <xref:System.Text.RegularExpressions.Regex.Replace%2A> メソッドを使って日付形式を変更したり文字列から無効な文字を削除したりする例については、「[方法: 文字列から無効な文字を取り除く](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md)」および「[例: 日付形式の変更](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md)」をご覧ください。  
   
  正規表現のオブジェクト モデルの概要については、「[正規表現のオブジェクト モデル](../../../docs/standard/base-types/the-regular-expression-object-model.md)」をご覧ください。  
   
- 正規表現言語の詳細については、次を参照してください。[正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)またはダウンロードして、次の資料のいずれかを印刷します。  
+ 正規表現の言語について詳しくは、「[正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)」を参照するか、次の資料のいずれかをダウンロードして印刷してください。  
   
- [Word (.docx) 形式でのクイック リファレンス](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [PDF (.pdf) 形式でのクイック リファレンス](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
+ [Word (.docx) 形式のクイック リファレンス](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [PDF (.pdf) 形式のクイック リファレンス](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
   
 ## <a name="regular-expression-examples"></a>正規表現の例  
  <xref:System.String> クラスには、文字列内のリテラル文字列を検索する際に使用できる文字列の検索メソッドと置換メソッドが数多く含まれています。 正規表現は、次の例に示すように、文字列内の部分文字列のいずれかを検索する場合、または文字列内のパターンを識別する場合に最も役立ちます。  
@@ -72,7 +75,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.Regex#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example1.cs#2)]
  [!code-vb[Conceptual.Regex#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex/vb/example1.vb#2)]  
   
- 正規表現パターン`(Mr\.? |Mrs\.? |Miss |Ms\.? )`"Mr"、「mr.」、"Mrs"、「mrs.」、"Miss"、"Ms または"Ms."の任意の項目を検索します。 <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出すと、一致する文字列が <xref:System.String.Empty?displayProperty=nameWithType> に置き換えられます。つまり、元の文字列から削除されます。  
+ 正規表現パターン `(Mr\.? |Mrs\.? |Miss |Ms\.? )` は、"Mr "、"Mr. "、"Mrs "、"Mrs. "、"Miss "、"Ms"、または "Ms. " の出現と一致します。 <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出すと、一致する文字列が <xref:System.String.Empty?displayProperty=nameWithType> に置き換えられます。つまり、元の文字列から削除されます。  
   
 ### <a name="example-2-identifying-duplicated-words"></a>例 2: 重複する単語の識別  
  記述者が単語を誤って重複入力するというエラーがよくあります。 次の例に示すように、正規表現を使用して重複する単語を識別できます。  
@@ -118,11 +121,11 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|正規表現を定義するために使う一連の文字、演算子、および構成体について説明します。|  
 |[正規表現のオブジェクト モデル](../../../docs/standard/base-types/the-regular-expression-object-model.md)|正規表現クラスの使用方法について詳しく説明し、コード例を示します。|  
-|[正規表現の動作の詳細](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|.NET の正規表現の動作と機能についてを説明します。|  
+|[正規表現の動作の詳細](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|.NET の正規表現の機能と動作について説明します。|  
 |[正規表現の例](../../../docs/standard/base-types/regular-expression-examples.md)|正規表現の一般的な使用方法を示すコード例が用意されています。|  
   
 ## <a name="reference"></a>参照  

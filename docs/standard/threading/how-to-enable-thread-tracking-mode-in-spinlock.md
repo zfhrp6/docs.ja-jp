@@ -11,30 +11,34 @@ ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: SpinLock, how to enable thread-tracking
+helpviewer_keywords:
+- SpinLock, how to enable thread-tracking
 ms.assetid: 62ee2e68-0bdd-4869-afc9-f0a57a11ae01
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ca5f1b6eace7a24a6bbb7fd541858246828fa757
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f3d5b40f1f7b4b7534a44f4f7ab542d33d373702
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-enable-thread-tracking-mode-in-spinlock"></a>方法: SpinLock のスレッド追跡モードを有効にする
-<xref:System.Threading.SpinLock?displayProperty=nameWithType>非常に短い待機時間が含まれる場合に使用できる低レベルの相互排他ロックです。 <xref:System.Threading.SpinLock>再入可能ではありません。 スレッドがロックに入った後、再入する前に正しくロックを終了にする必要があります。 通常、ロックを再入力しようとすると、デッドロックが発生し、デッドロックをデバッグが非常に困難になることができます。 開発を支援するため<xref:System.Threading.SpinLock?displayProperty=nameWithType>スレッドが既に保持しているロックを再入力しようとしたときにスローされる例外を発生させるスレッド追跡モードをサポートします。 これは、操作により、あるロックが適切に終了しなかったポイントを簡単に特定できます。 使用してスレッド追跡モードをオンすることができます、<xref:System.Threading.SpinLock>をブール値を受け取るコンス トラクターは入力パラメーター、およびの引数を渡すこと`true`です。 開発およびテスト フェーズを完了すると後、は、パフォーマンス向上のためのスレッド追跡モードをオフにします。  
+<xref:System.Threading.SpinLock?displayProperty=nameWithType> は低レベルの相互排他ロックであり、待機時間が非常に短いシナリオで使用できます。 <xref:System.Threading.SpinLock> は再入可能ではありません。 スレッドはロックを取得した後、ロックを正しく解放してから再度取得する必要があります。 通常、ロックを再取得しようとすると、デッドロックが発生し、デッドロックのデバッグが非常に困難になる場合があります。 開発の支援手段として、<xref:System.Threading.SpinLock?displayProperty=nameWithType> ではスレッド追跡モードがサポートされ、スレッドが既に保持しているロックを再取得しようとしたときに例外がスローされます。 これにより、ロックが正しく解放されたなかった位置を見つけやすくなります。 スレッド追跡モードを有効にするには、ブール入力パラメーターを受け取る <xref:System.Threading.SpinLock> コンストラクターを使用して、`true` の引数を渡します。 開発およびテスト フェーズの完了後は、パフォーマンスを向上させるため、スレッド追跡モードを無効にしてください。  
   
 ## <a name="example"></a>例  
- 次の例では、スレッド追跡モードを示します。 ロックを適切に終了する行については、結果は、次のいずれかの原因となるコーディング エラーをシミュレートするためにコメント アウトします。  
+ 次の例はスレッド追跡モードを示しています。 以下のいずれかの結果の原因となるコード エラーをシミュレートするために、ロックを正しく解放する行がコメントアウトされています。  
   
--   場合、例外がスローされます、<xref:System.Threading.SpinLock>の引数を使用して作成された`true`(`True` Visual Basic で)。  
+-   `true` (Visual Basic では `True`) の引数を使用して <xref:System.Threading.SpinLock> が作成された場合、例外がスローされる。  
   
--   デッドロックに陥る、<xref:System.Threading.SpinLock>の引数を使用して作成された`false`(`False` Visual Basic で)。  
+-   `false` (Visual Basic では `False`) の引数を使用して <xref:System.Threading.SpinLock> が作成された場合、デッドロックが発生する。  
   
  [!code-csharp[CDS_SpinLock#01](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_spinlock/cs/spinlockdemo.cs#01)]
  [!code-vb[CDS_SpinLock#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_spinlock/vb/spinlock_threadtracking.vb#01)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SpinLock](../../../docs/standard/threading/spinlock.md)
