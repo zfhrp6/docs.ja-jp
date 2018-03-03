@@ -10,25 +10,31 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: c09f8abe4dd46453cb6cc5ed7dbb6f60dbf0ad98
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: a2db07c4f5688aece212681af40d69c377f6fa4a
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="tutorial-creating-a-type-provider"></a>チュートリアル: 型プロバイダーを作成します。
 
-> [!NOTE]
-このガイドでは、f# 3.0 用に作成された、更新されます。
+F# 型プロバイダー メカニズムは、インフォメーション リッチ プログラミングのサポートの重要な部分です。 このチュートリアルでは、基本的な概念を示すために単純な型プロバイダーをいくつか作成する過程を通して、独自の型プロバイダーを作成する方法を説明します。 F# 型プロバイダー メカニズムの詳細については、次を参照してください。[型プロバイダー](index.md)です。
 
-F# 3.0 の型プロバイダー メカニズムはインフォメーション リッチ プログラミングのサポートにおいて重要な部分です。 このチュートリアルでは、基本的な概念を示すために単純な型プロバイダーをいくつか作成する過程を通して、独自の型プロバイダーを作成する方法を説明します。 F# 型プロバイダー メカニズムの詳細については、次を参照してください。[型プロバイダー](index.md)です。
+F# のエコシステムには、一般的に使用されるインターネットやエンタープライズ データ サービス プロバイダーが型の範囲が含まれています。 例:
 
-F# 3.0 には、インターネットやエンタープライズ データ サービスで一般に使用される型プロバイダーがいくつか組み込まれています。 これらの型プロバイダーは、SQL リレーショナル データベースとネットワーク ベースの OData および WSDL サービスへの単純で安定したアクセスを提供します。 また、これらのプロバイダーは、これらのデータ ソースに対して F# LINQ クエリの使用もサポートします。
+- [FSharp.Data](https://fsharp.github.io/FSharp.Data/) JSON、XML、CSV、および HTML ドキュメントの形式の型プロバイダーが含まれています
+
+- [SQLProvider](https://fsprojects.github.io/SQLProvider/)オブジェクトのマッピングと f# LINQ を使用する SQL データベースへのアクセスを厳密に型指定されたこれらのデータ ソースに対するクエリを提供します。
+
+- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/)が持つセットを f# で T-SQL の埋め込みが山に com の型プロバイダーのチェック
+
+- [FSharp.Data.TypeProviders](https://fsprojects.github.io/FSharp.Data.TypeProviders/)古い一連の型プロバイダーが SQL、Entity Framework、OData および WSDL のデータ サービスにアクセスするための .NET Framework プログラミングでのみ使用します。
 
 必要に応じて、カスタム型プロバイダーを作成することも、他のユーザーが作成した型プロバイダーを参照することもできます。 たとえば、組織に 1 つのデータ サービスを用意し、そのデータ サービスにより、増加し続ける名前付きデータセット群と各データセットの安定したデータ スキーマを提供することができます。 スキーマを読み取り、最新のデータセットを厳密に型指定してプログラマに提示する型プロバイダーを作成できます。
 
 
 ## <a name="before-you-start"></a>開始前の作業
+
 型プロバイダー メカニズムは、主に F# のプログラミング作業にデータとサービスの安定した情報空間を提供するために設計されています。
 
 このメカニズムは、プログラム ロジックに合うようにプログラムの実行中にスキーマが変わるような情報空間を提供するためのものではありません。 また、このメカニズムは言語内メタプログラミングでいくつか有効な使用法がありますが、この分野のために設計されたものではありません。 このメカニズムは型プロバイダーの作成が非常に高い価値をもたらし必要な場合にのみ使用してください。
@@ -36,7 +42,6 @@ F# 3.0 には、インターネットやエンタープライズ データ サ�
 スキーマを使用できない場合は、型プロバイダーを作成しないでください。 同様に、通常の (または既存の) .NET ライブラリが十分に機能する場合は、型プロバイダーを作成しないでください。
 
 開始する前に、次の検討事項を確認してください。
-
 
 - 情報ソースのスキーマがあるか。 その場合、F# および .NET の型システムへのマッピングはどうか。
 
@@ -56,7 +61,8 @@ F# 3.0 には、インターネットやエンタープライズ データ サ�
 
 
 ## <a name="a-simple-type-provider"></a>単純な型プロバイダー
-このサンプルで Samples.HelloWorldTypeProvider、`SampleProviders\Providers`のディレクトリ、 [f# 3.0 のサンプル パック](https://fsharp3sample.codeplex.com)Codeplex web サイトです。 このプロバイダーは、次のコードが示すように、F# シグネチャ構文を使用して `Type1` 以外の詳細を省略することで、消去型 100 個を含む "型空間" を使用可能にします。 消去型の詳細については、次を参照してください。[の詳細については消去指定された型が](#details-about-erased-provided-types)このトピックで後述します。
+
+このサンプルは、サンプルでは、ような Samples.HelloWorldTypeProvider、`examples`のディレクトリ、 [f# 型プロバイダー SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/)です。 このプロバイダーは、次のコードが示すように、F# シグネチャ構文を使用して `Type1` 以外の詳細を省略することで、消去型 100 個を含む "型空間" を使用可能にします。 消去型の詳細については、次を参照してください。[の詳細については消去指定された型が](#details-about-erased-provided-types)このトピックで後述します。
 
 ```fsharp
 namespace Samples.HelloWorldTypeProvider
@@ -97,16 +103,16 @@ type Type100 =
 
 
 >[!WARNING] 
-このコードとオンライン サンプルとの間には名前付けに多少の違いがある場合があります。
+このコードとオンライン サンプルの相違点がある可能性があります。
 
 ```fsharp
 namespace Samples.FSharp.HelloWorldTypeProvider
 
 open System
 open System.Reflection
-open Samples.FSharp.ProvidedTypes
-open Microsoft.FSharp.Core.CompilerServices
-open Microsoft.FSharp.Quotations
+open ProviderImplementation.ProvidedTypes
+open FSharp.Core.CompilerServices
+open FSharp.Quotations
 
 // This type defines the type provider. When compiled to a DLL, it can be added
 // as a reference to an F# command-line compilation, script, or project.
@@ -115,7 +121,7 @@ type SampleTypeProvider(config: TypeProviderConfig) as this =
 
   // Inheriting from this type provides implementations of ITypeProvider 
   // in terms of the provided types below.
-  inherit TypeProviderForNamespaces()
+  inherit TypeProviderForNamespaces(config)
 
   let namespaceName = "Samples.HelloWorldTypeProvider"
   let thisAssembly = Assembly.GetExecutingAssembly()
@@ -173,6 +179,7 @@ devenv.exe /debugexe fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 
 
 ### <a name="implementation-of-the-type-provider"></a>型プロバイダーの実装
+
 ここでは、型プロバイダーの実装の主なセクションを順に説明します。 まず、カスタム型プロバイダーの型自体を定義します。
 
 ```fsharp
@@ -185,7 +192,7 @@ type SampleTypeProvider(config: TypeProviderConfig) as this =
 次に、実装、 [ITypeProvider](https://msdn.microsoft.com/library/2c2b0571-843d-4a7d-95d4-0a7510ed5e2f)インターフェイスです。 この場合、基本型として `TypeProviderForNamespaces` API の `ProvidedTypes` 型を使用します。 このヘルパー型は、集中的に指定された名前空間の有限のコレクションを指定できます。個々の名前空間には、集中的に指定された固定の型 (有限数) が直接含まれています。 このコンテキストでは、プロバイダーで*集中的に*必要または使用を行っていない場合でも、型を生成します。
 
 ```fsharp
-inherit TypeProviderForNamespaces()
+inherit TypeProviderForNamespaces(config)
 ```
 
 次に、指定された型の名前空間を指定するローカル プライベート値を定義し、型プロバイダー アセンブリ自体を見つけます。 このアセンブリは後で、指定された型が消去される場合の論理親の型として使用されます。
@@ -221,6 +228,7 @@ do()
 ```
 
 ### <a name="providing-one-type-and-its-members"></a>1 つの型とそのメンバーの指定
+
 `makeOneProvidedType` 関数は、型の 1 つを指定する実際の処理を行います。
 
 ```fsharp
@@ -233,19 +241,16 @@ let makeOneProvidedType (n:int) =
 ```fsharp
 // This is the provided type. It is an erased provided type and, in compiled code, 
 // will appear as type 'obj'.
-let t = ProvidedTypeDefinition(thisAssembly,namespaceName,
-"Type" + string n,
-baseType = Some typeof<obj>)
+let t = ProvidedTypeDefinition(thisAssembly, namespaceName,
+                               "Type" + string n,
+                               baseType = Some typeof<obj>)
 ```
 
 次の点に注意してください。
 
-
 - この指定された型は消去されます。  基本の種類があると示されるので`obj`、インスタンスは、型の値として表示されます[obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7)でコードをコンパイルします。
-<br />
 
 - 入れ子になっていない型を指定する場合、アセンブリと名前空間を指定する必要があります。 消去型の場合、アセンブリは型プロバイダー アセンブリ自体である必要があります。
-<br />
 
 次に、型に XML ドキュメントを追加します。 このドキュメントは遅延されます。つまり、ホスト コンパイラで必要な場合に、要求に応じて計算されます。
 
@@ -257,9 +262,9 @@ t.AddXmlDocDelayed (fun () -> sprintf "This provided type %s" ("Type" + string n
 
 ```fsharp
 let staticProp = ProvidedProperty(propertyName = "StaticProperty", 
-propertyType = typeof<string>, 
-IsStatic=true,
-GetterCode= (fun args -> <@@ "Hello!" @@>))
+                                  propertyType = typeof<string>, 
+                                  isStatic = true,
+                                  getterCode = (fun args -> <@@ "Hello!" @@>))
 ```
 
 このプロパティを取得すると、常に文字列 "Hello!" に評価されます。 プロパティの `GetterCode` は F# クォートを使用しますが、これはホスト コンパイラがプロパティを取得するために生成するコードを表します。 クォートの詳細については、次を参照してください。[コード クォート (f#)](https://msdn.microsoft.com/library/6f055397-a1f0-4f9a-927c-f0d7c6951155)です。
@@ -280,7 +285,7 @@ t.AddMember staticProp
 
 ```fsharp
 let ctor = ProvidedConstructor(parameters = [ ], 
-InvokeCode= (fun args -> <@@ "The object data" :> obj @@>))
+                               invokeCode = (fun args -> <@@ "The object data" :> obj @@>))
 ```
 
 そのコンストラクターの `InvokeCode` は F# クォートを返しますが、これはコンストラクターが呼び出されたときにホスト コンパイラが生成するコードを表します。 たとえば、次のようなコンストラクターを使用できます。
@@ -304,7 +309,7 @@ t.AddMember ctor
 ```fsharp
 let ctor2 = 
 ProvidedConstructor(parameters = [ ProvidedParameter("data",typeof<string>) ], 
-InvokeCode= (fun args -> <@@ (%%(args.[0]) : string) :> obj @@>))
+                    invokeCode = (fun args -> <@@ (%%(args.[0]) : string) :> obj @@>))
 ```
 
 そのコンストラクターの `InvokeCode` も F# クォートを返しますが、そのクォートはそのメソッドを呼び出すためにホスト コンパイラが生成したコードを表します。 たとえば、次のようなコンストラクターを使用できます。
@@ -317,10 +322,10 @@ new Type10("ten")
 
 ```fsharp
 let instanceProp = 
-ProvidedProperty(propertyName = "InstanceProperty", 
-propertyType = typeof<int>, 
-GetterCode= (fun args -> 
-<@@ ((%%(args.[0]) : obj) :?> string).Length @@>))
+    ProvidedProperty(propertyName = "InstanceProperty", 
+                     propertyType = typeof<int>, 
+                     getterCode= (fun args -> 
+                        <@@ ((%%(args.[0]) : obj) :?> string).Length @@>))
 instanceProp.AddXmlDocDelayed(fun () -> "This is an instance property")
 t.AddMember instanceProp
 ```
@@ -329,11 +334,11 @@ t.AddMember instanceProp
 
 ```fsharp
 let instanceMeth = 
-ProvidedMethod(methodName = "InstanceMethod", 
-parameters = [ProvidedParameter("x",typeof<int>)], 
-returnType = typeof<char>, 
-InvokeCode = (fun args -> 
-<@@ ((%%(args.[0]) : obj) :?> string).Chars(%%(args.[1]) : int) @@>))
+    ProvidedMethod(methodName = "InstanceMethod", 
+                   parameters = [ProvidedParameter("x",typeof<int>)], 
+                   returnType = typeof<char>, 
+                   invokeCode = (fun args -> 
+                       <@@ ((%%(args.[0]) : obj) :?> string).Chars(%%(args.[1]) : int) @@>))
 
 instanceMeth.AddXmlDocDelayed(fun () -> "This is an instance method")
 // Add the instance method to the type.
@@ -344,100 +349,86 @@ t.AddMember instanceMeth
 
 ```fsharp
 t.AddMembersDelayed(fun () -> 
-let nestedType = ProvidedTypeDefinition("NestedType",
-Some typeof<obj>
+  let nestedType = ProvidedTypeDefinition("NestedType", Some typeof<obj>)
 
-)
+  nestedType.AddMembersDelayed (fun () -> 
+    let staticPropsInNestedType = 
+      [ for i in 1 .. 100 do
+          let valueOfTheProperty = "I am string "  + string i
 
-nestedType.AddMembersDelayed (fun () -> 
-let staticPropsInNestedType = 
-[ for i in 1 .. 100 do
-let valueOfTheProperty = "I am string "  + string i
+          let p = 
+            ProvidedProperty(propertyName = "StaticProperty" + string i, 
+              propertyType = typeof<string>, 
+              isStatic = true,
+              getterCode= (fun args -> <@@ valueOfTheProperty @@>))
 
-let p = ProvidedProperty(propertyName = "StaticProperty" + string i, 
-propertyType = typeof<string>, 
-IsStatic=true,
-GetterCode= (fun args -> <@@ valueOfTheProperty @@>))
+          p.AddXmlDocDelayed(fun () -> 
+              sprintf "This is StaticProperty%d on NestedType" i)
 
-p.AddXmlDocDelayed(fun () -> 
-sprintf "This is StaticProperty%d on NestedType" i)
+          yield p ]
 
-yield p ]
-staticPropsInNestedType)
+    staticPropsInNestedType)
 
-[nestedType])
-
-// The result of makeOneProvidedType is the type.
-t
+  [nestedType])
 ```
 
 ### <a name="details-about-erased-provided-types"></a>指定された型が消去される場合の詳細
+
 このセクションの例ではのみ*指定された型の消去*、これは次の状況で特に便利です。
 
-
 - データとメソッドのみを含む情報空間のプロバイダーを作成する場合。
-<br />
 
 - 情報空間の実用上、正確なランタイム型のセマンティクスが重要ではないプロバイダーを作成する場合。
-<br />
 
 - 情報空間のプロバイダーを作成する際に、情報空間の規模が大きく相互接続していて、情報空間の .NET 型を実際に生成するのが技術的に不可能な場合。
-<br />
 
 この例では、指定された型は消去されてそれぞれ型 `obj` に変換され、コンパイル済みコードではすべて型 `obj` で表されます。 実際、次の例の基になるオブジェクトは文字列ですが、.NET コンパイル済みコードでは `System.Object` として表されます。 使用されるすべての型消去に当てはまりますが、明示的なボックス化、ボックス化解除、およびキャストを使用すると消去型を無効にすることができます。 この場合、オブジェクトを使用したときに無効なキャスト例外が発生する可能性があります。 プロバイダー ランタイムは間違った表現から保護するため独自のプライベート表現型を定義できます。 F# では消去型を定義できません。 指定された型が消去される場合があるだけです。 型プロバイダーで消去型を使用する場合、または消去型を指定するプロバイダーで消去型を使用する場合のいずれも、実際およびセマンティクスの両方の影響を理解しておく必要があります。 消去型には実際の .NET 型はありません。 したがって、型に対して正確なリフレクションを実行できず、厳密なランタイム型のセマンティクスに依存するランタイム キャストなどの手法を使用する場合は消去型が無効になる場合があります。 消去型の無効化により、多くの場合、実行時に型キャスト例外が発生します。
 
 
 ### <a name="choosing-representations-for-erased-provided-types"></a>指定された型が消去される場合の表現の選択
+
 指定された型の消去を使用する場合、表現が必須ではない場合があります。 たとえば、指定された型が消去される場合にその型には静的なプロパティとメンバーのみが含まれてコンストラクターは含まれない場合があり、メソッドもプロパティもその型のインスタンスを返しません。 指定された型が消去される場合のインスタンスを取得できる場合は、次の事項を検討する必要があります。
 
+**指定された型の消去とは何ですか。**
 
-- 指定された型の消去はどのようなものか。
-<br />
-  - 指定された型の消去は、コンパイル済みの .NET コードにおけるその型の表現である。
-<br />
+- 指定された型の消去は、コンパイル済みの .NET コードにおけるその型の表現である。
 
-  - 指定された消去クラス型の消去は、常に型の継承チェーンにおける消去型でない最初の基本型である。
-<br />
+- 指定された消去クラス型の消去は、常に型の継承チェーンにおける消去型でない最初の基本型である。
 
-  - 指定された消去インターフェイス型の消去は、常に `System.Object` である。
-<br />
+- 指定された消去インターフェイス型の消去は、常に `System.Object` である。
 
-- 指定された型はどのように表現されるか。
-<br />
-  - 指定された型が消去される場合に使用可能なオブジェクトのセットがその表現として呼び出される。 このドキュメントの例では、指定された型 `Type1..Type100` が消去される場合の表現はすべて、常に文字列オブジェクトです。
-<br />
+**指定された型の表現とは**
+
+- 指定された型が消去される場合に使用可能なオブジェクトのセットがその表現として呼び出される。 このドキュメントの例では、指定された型 `Type1..Type100` が消去される場合の表現はすべて、常に文字列オブジェクトです。
 
 指定された型の表現はすべて指定された型の消去と互換性がある必要があります  (互換性がない場合、F# コンパイラがその型プロバイダーの使用に対してエラーを生成するか、または検証不可能で無効な .NET コードが生成されます。 有効ではない表現を指定するコードを返す型プロバイダーは無効です)。
 
 次のアプローチのどちらかを使って指定されたオブジェクトの表現を選択できます。どちらもよく使用されます。
 
-
 - 既存の .NET 型に対して厳密に型指定されたラッパーを指定するだけであれば、多くの場合、使用する型を消去してその型に変換し、その型のインスタンスを表現として使用するのが理にかなっています。 このアプローチは、厳密に型指定されたバージョンを使用するとき、その型の既存のメソッドのほとんどをそのまま使用できる場合に適しています。
-<br />
 
 - 既存の .NET API とは大きく異なる API を作成する場合は、指定された型の型消去および表現となるランタイム型を作成するのが理にかなっています。
-<br />
 
 このドキュメントの例では、指定されたオブジェクトの表現として文字列を使用します。 しばしば、表現に他のオブジェクトを使用する方が適切な場合もあります。 たとえば、プロパティ バッグとしてディクショナリを使用できます。
 
 ```fsharp
 ProvidedConstructor(parameters = [], 
-InvokeCode= (fun args -> <@@ (new Dictionary<string,obj>()) :> obj @@>))
+    invokeCode= (fun args -> <@@ (new Dictionary<string,obj>()) :> obj @@>))
 ```
 
 もう 1 つの方法として、型プロバイダーで、1 つ以上のランタイム操作と共に表現を形成するために実行時に使用される型を定義できます。
 
 ```fsharp
 type DataObject() =
-let data = Dictionary<string,obj>()
-member x.RuntimeOperation() = data.Count
+    let data = Dictionary<string,obj>()
+    member x.RuntimeOperation() = data.Count
 ```
 
 指定されたメンバーはこのオブジェクト型のインスタンスを作成できます。
 
 ```fsharp
 ProvidedConstructor(parameters = [], 
-InvokeCode= (fun args -> <@@ (new DataObject()) :> obj @@>))
+    invokeCode= (fun args -> <@@ (new DataObject()) :> obj @@>))
 ```
 
 この場合、必要に応じて、`baseType` を作成するときにこの型を `ProvidedTypeDefinition` として指定することによって、この型を型消去として使用することもできます。
@@ -448,24 +439,23 @@ ProvidedTypeDefinition(…, baseType = Some typeof<DataObject> )
 ProvidedConstructor(…, InvokeCode = (fun args -> <@@ new DataObject() @@>), …)
 ```
 
-`Key Lessons`
+### <a name="key-lessons"></a>レッスンの要点
 
 前のセクションでは、一連の型、プロパティ、およびメソッドを指定する、消去の単純な型プロバイダーの作成方法を説明しました。 また、型プロバイダーから消去型を指定することの長所と短所を含む型消去の概念について、および消去型の表現についても説明しました。
 
 
 ## <a name="a-type-provider-that-uses-static-parameters"></a>静的パラメーターを使用する型プロバイダー
+
 静的データによって型プロバイダーをパラメーター化できると、プロバイダーがローカルまたはリモート データにアクセスする必要がないような、多くの興味深いシナリオが可能になります。 このセクションでは、このようなプロバイダーを用意するための基本的な手法について説明します。
 
 
 ### <a name="type-checked-regex-provider"></a>型チェック済み Regex プロバイダー
+
 .NET `System.Text.RegularExpressions.Regex` ライブラリをラップする正規表現の型プロバイダーを、次のコンパイル時保証を提供するインターフェイスに実装するとしたらどうでしょう。
 
-
 - 正規表現が有効かどうかを確認できる。
-<br />
 
 - パターンが一致したとき、正規表現内のグループ名に基づいて名前付きプロパティを提供できる。
-<br />
 
 このセクションでは、これらの利点が実現するように正規表現パターンによってパラメーター化される `RegExProviderType` 型を作成するための型プロバイダーを使用する方法を示します。 コンパイラは、提供されたパターンが有効でない場合にエラーを報告しますが、型プロバイダーはパターンからグループを抽出できるので、パターンが一致したとき名前付きプロパティを使用してグループにアクセスできます。 型プロバイダーを設計するとき、公開された API がエンド ユーザーにどのように表示される必要があるか、そのデザインが .NET コードにどのように変換されるかを考慮する必要があります。 次の例は、市外局番のコンポーネントを取得するために、このような API を使用する方法を示しています。
 
@@ -486,18 +476,13 @@ let r = reg.Match("425-123-2345").Groups.["AreaCode"].Value //r equals "425"
 
 次の点に注意してください。
 
-
 - 標準 Regex 型は、パラメーター化された `RegexTyped` 型を表します。
-<br />
 
 - `RegexTyped` コンストラクターは、Regex コンストラクターを呼び出し、パターンの静的な型引数を渡します。
-<br />
 
 - `Match` メソッドの結果は、標準の `System.Text.RegularExpressions.Match` 型で表されます。
-<br />
 
 - 各名前付きグループは指定されたプロパティになり、プロパティにアクセスすると、パターン一致の `Groups` コレクションでインデクサーが使用されます。
-<br />
 
 次のコードはこのようなプロバイダーの実装におけるコア ロジックです。この例では指定された型へのすべてのメンバーの追加は省略されています。 それぞれの追加されたメンバーについては、このトピックの後半の該当するセクションを参照してください。 完全なコードからサンプルをダウンロード、 [f# 3.0 のサンプル パック](https://fsharp3sample.codeplex.com)Codeplex web サイトです。
 
@@ -511,43 +496,45 @@ open System.Text.RegularExpressions
 
 [<TypeProvider>]
 type public CheckedRegexProvider() as this =
-inherit TypeProviderForNamespaces()
+    inherit TypeProviderForNamespaces()
 
-// Get the assembly and namespace used to house the provided types
-let thisAssembly = Assembly.GetExecutingAssembly()
-let rootNamespace = "Samples.FSharp.RegexTypeProvider"
-let baseTy = typeof<obj>
-let staticParams = [ProvidedStaticParameter("pattern", typeof<string>)]
+    // Get the assembly and namespace used to house the provided types
+    let thisAssembly = Assembly.GetExecutingAssembly()
+    let rootNamespace = "Samples.FSharp.RegexTypeProvider"
+    let baseTy = typeof<obj>
+    let staticParams = [ProvidedStaticParameter("pattern", typeof<string>)]
 
-let regexTy = ProvidedTypeDefinition(thisAssembly, rootNamespace, "RegexTyped", Some baseTy)
+    let regexTy = ProvidedTypeDefinition(thisAssembly, rootNamespace, "RegexTyped", Some baseTy)
 
-do regexTy.DefineStaticParameters(
-parameters=staticParams, 
-instantiationFunction=(fun typeName parameterValues ->
+    do regexTy.DefineStaticParameters(
+        parameters=staticParams, 
+        instantiationFunction=(fun typeName parameterValues ->
 
-match parameterValues with 
-| [| :? string as pattern|] -> 
-// Create an instance of the regular expression. 
-//
-// This will fail with System.ArgumentException if the regular expression is not valid. 
-// The exception will escape the type provider and be reported in client code.
-let r = System.Text.RegularExpressions.Regex(pattern)            
+          match parameterValues with 
+          | [| :? string as pattern|] -> 
 
-// Declare the typed regex provided type.
-// The type erasure of this type is 'obj', even though the representation will always be a Regex
-// This, combined with hiding the object methods, makes the IntelliSense experience simpler.
-let ty = ProvidedTypeDefinition(
-thisAssembly, 
-rootNamespace, 
-typeName, 
-baseType = Some baseTy)
+            // Create an instance of the regular expression. 
+            //
+            // This will fail with System.ArgumentException if the regular expression is not valid. 
+            // The exception will escape the type provider and be reported in client code.
+            let r = System.Text.RegularExpressions.Regex(pattern)            
 
-...
+            // Declare the typed regex provided type.
+            // The type erasure of this type is 'obj', even though the representation will always be a Regex
+            // This, combined with hiding the object methods, makes the IntelliSense experience simpler.
+            let ty = 
+              ProvidedTypeDefinition(
+                thisAssembly, 
+                rootNamespace, 
+                typeName, 
+                baseType = Some baseTy)
 
-ty
-| _ -> failwith "unexpected parameter values")) 
+            ...
 
-do this.AddNamespace(rootNamespace, [regexTy])
+            ty
+          | _ -> failwith "unexpected parameter values")) 
+
+    do this.AddNamespace(rootNamespace, [regexTy])
 
 [<TypeProviderAssembly>]
 do ()
@@ -555,34 +542,28 @@ do ()
 
 次の点に注意してください。
 
-
 - 型プロバイダーは、`pattern` (必須) と `options` (既定値が指定されるので省略可能) の 2 つの静的パラメーターを受け取ります。
-<br />
 
 - 静的引数が提供された後、正規表現のインスタンスを作成します。 Regex が正しくない場合、このインスタンスは例外をスローし、このエラーはユーザーに報告されます。
-<br />
 
 - `DefineStaticParameters` コールバック内では、引数が提供された後に返される型を定義します。
-<br />
 
 - IntelliSense による効率化が損なわれないように、このコードは `HideObjectMethods` を true に設定します。 この属性により、`Equals`、`GetHashCode`、`Finalize`、`GetType` の各メンバーが指定されたオブジェクトの IntelliSense リストで抑制されます。
-<br />
 
 - `obj` をそのメソッドの基本型として使用しますが、この型のランタイム表現には `Regex` オブジェクトを使用します。次にその例を示します。
-<br />
 
 - 正規表現が有効でない場合、`Regex` コンストラクターを呼び出すと `System.ArgumentException` がスローされます。 コンパイラはこの例外をキャッチし、コンパイル時、または Visual Studio のエディターでエラー メッセージを表示します。 この例外によって、アプリケーションを実行せずに正規表現が有効かどうかを確認できます。
-<br />
 
 前に定義した型は、まだ意味のあるメソッドまたはプロパティを含んでいないので、有効ではありません。 最初に、静的な `IsMatch` メソッドを追加します。
 
 ```fsharp
-let isMatch = ProvidedMethod(
-methodName = "IsMatch", 
-parameters = [ProvidedParameter("input", typeof<string>)], 
-returnType = typeof<bool>, 
-IsStaticMethod = true,
-InvokeCode = fun args -> <@@ Regex.IsMatch(%%args.[0], pattern) @@>) 
+let isMatch = 
+    ProvidedMethod(
+        methodName = "IsMatch", 
+        parameters = [ProvidedParameter("input", typeof<string>)], 
+        returnType = typeof<bool>, 
+        isStatic = true,
+        invokeCode = fun args -> <@@ Regex.IsMatch(%%args.[0], pattern) @@>) 
 
 isMatch.AddXmlDoc "Indicates whether the regular expression finds a match in the specified input string." 
 ty.AddMember isMatch
@@ -593,10 +574,11 @@ ty.AddMember isMatch
 次に、インスタンスの Match メソッドを追加します。 ただし、厳密に型指定された方法でグループにアクセスできるように、このメソッドは指定された型 `Match` の値を返す必要があります。 したがって、最初に `Match` 型を宣言します。 この型は静的引数として提供されたパターンに依存するため、パラメーター化された型定義内に入れ子にする必要があります。
 
 ```fsharp
-let matchTy = ProvidedTypeDefinition(
-"MatchType", 
-baseType = Some baseTy, 
-HideObjectMethods = true)
+let matchTy = 
+    ProvidedTypeDefinition(
+        "MatchType", 
+        baseType = Some baseTy, 
+        hideObjectMethods = true)
 
 ty.AddMember matchTy
 ```
@@ -605,14 +587,15 @@ ty.AddMember matchTy
 
 ```fsharp
 for group in r.GetGroupNames() do
-// Ignore the group named 0, which represents all input.
-if group <> "0" then
-let prop = ProvidedProperty(
-propertyName = group, 
-propertyType = typeof<Group>, 
-GetterCode = fun args -> <@@ ((%%args.[0]:obj) :?> Match).Groups.[group] @@>)
-prop.AddXmlDoc(sprintf @"Gets the ""%s"" group from this match" group)
-matchTy.AddMember prop
+    // Ignore the group named 0, which represents all input.
+    if group <> "0" then
+    let prop = 
+      ProvidedProperty(
+        propertyName = group, 
+        propertyType = typeof<Group>, 
+        getterCode = fun args -> <@@ ((%%args.[0]:obj) :?> Match).Groups.[group] @@>)
+        prop.AddXmlDoc(sprintf @"Gets the ""%s"" group from this match" group)
+    matchTy.AddMember prop
 ```
 
 ここでも指定されたプロパティに XML ドキュメントを追加していることに注意してください。 `GetterCode` 関数が指定されている場合はプロパティを読み取ることができ、`SetterCode` 関数が指定されている場合はプロパティを書き出すことができるので、その結果、プロパティは読み取り専用になることにも注意してください。
@@ -621,11 +604,12 @@ matchTy.AddMember prop
 
 ```fsharp
 let matchMethod = 
-ProvidedMethod(
-methodName = "Match", 
-parameters = [ProvidedParameter("input", typeof<string>)], 
-returnType = matchTy, 
-InvokeCode = fun args -> <@@ ((%%args.[0]:obj) :?> Regex).Match(%%args.[1]) :> obj @@>)
+    ProvidedMethod(
+        methodName = "Match", 
+        parameters = [ProvidedParameter("input", typeof<string>)], 
+        returnType = matchTy, 
+        invokeCode = fun args -> <@@ ((%%args.[0]:obj) :?> Regex).Match(%%args.[1]) :> obj @@>)
+
 matchMeth.AddXmlDoc "Searches the specified input string for the first ocurrence of this regular expression" 
 
 ty.AddMember matchMeth
@@ -636,9 +620,11 @@ ty.AddMember matchMeth
 最後に、指定された型のインスタンスを作成できるように、コンストラクターを指定します。
 
 ```fsharp
-let ctor = ProvidedConstructor(
-parameters = [], 
-InvokeCode = fun args -> <@@ Regex(pattern, options) :> obj @@>)
+let ctor = 
+    ProvidedConstructor(
+        parameters = [], 
+        invokeCode = fun args -> <@@ Regex(pattern, options) :> obj @@>)
+
 ctor.AddXmlDoc("Initializes a regular expression instance.")
 
 ty.AddMember ctor
@@ -656,136 +642,137 @@ open System.Text.RegularExpressions
 
 [<TypeProvider>]
 type public CheckedRegexProvider() as this =
-inherit TypeProviderForNamespaces()
+    inherit TypeProviderForNamespaces()
 
-// Get the assembly and namespace used to house the provided types.
-let thisAssembly = Assembly.GetExecutingAssembly()
-let rootNamespace = "Samples.FSharp.RegexTypeProvider"
-let baseTy = typeof<obj>
-let staticParams = [ProvidedStaticParameter("pattern", typeof<string>)]
+    // Get the assembly and namespace used to house the provided types.
+    let thisAssembly = Assembly.GetExecutingAssembly()
+    let rootNamespace = "Samples.FSharp.RegexTypeProvider"
+    let baseTy = typeof<obj>
+    let staticParams = [ProvidedStaticParameter("pattern", typeof<string>)]
 
-let regexTy = ProvidedTypeDefinition(thisAssembly, rootNamespace, "RegexTyped", Some baseTy)
+    let regexTy = ProvidedTypeDefinition(thisAssembly, rootNamespace, "RegexTyped", Some baseTy)
 
-do regexTy.DefineStaticParameters(
-parameters=staticParams, 
-instantiationFunction=(fun typeName parameterValues ->
+    do regexTy.DefineStaticParameters(
+        parameters=staticParams, 
+        instantiationFunction=(fun typeName parameterValues ->
 
-match parameterValues with 
-| [| :? string as pattern|] -> 
-// Create an instance of the regular expression. 
+            match parameterValues with 
+            | [| :? string as pattern|] -> 
 
+                // Create an instance of the regular expression. 
 
+                let r = System.Text.RegularExpressions.Regex(pattern)            
 
+                // Declare the typed regex provided type.
 
-let r = System.Text.RegularExpressions.Regex(pattern)            
+                let ty = 
+                    ProvidedTypeDefinition(
+                        thisAssembly, 
+                        rootNamespace, 
+                        typeName, 
+                        baseType = Some baseTy)
 
-// Declare the typed regex provided type.
+                ty.AddXmlDoc "A strongly typed interface to the regular expression '%s'"
 
+                // Provide strongly typed version of Regex.IsMatch static method.
+                let isMatch = 
+                    ProvidedMethod(
+                        methodName = "IsMatch", 
+                        parameters = [ProvidedParameter("input", typeof<string>)], 
+                        returnType = typeof<bool>, 
+                        isStatic = true,
+                        invokeCode = fun args -> <@@ Regex.IsMatch(%%args.[0], pattern) @@>) 
 
+                isMatch.AddXmlDoc "Indicates whether the regular expression finds a match in the specified input string"
 
-let ty = ProvidedTypeDefinition(
-thisAssembly, 
-rootNamespace, 
-typeName, 
-baseType = Some baseTy)
+                ty.AddMember isMatch
 
-ty.AddXmlDoc "A strongly typed interface to the regular expression '%s'"
+                // Provided type for matches
+                // Again, erase to obj even though the representation will always be a Match
+                let matchTy = 
+                    ProvidedTypeDefinition(
+                        "MatchType", 
+                        baseType = Some baseTy, 
+                        hideObjectMethods = true)
 
-// Provide strongly typed version of Regex.IsMatch static method.
-let isMatch = ProvidedMethod(
-methodName = "IsMatch", 
-parameters = [ProvidedParameter("input", typeof<string>)], 
-returnType = typeof<bool>, 
-IsStaticMethod = true,
-InvokeCode = fun args -> <@@ Regex.IsMatch(%%args.[0], pattern) @@>) 
+                // Nest the match type within parameterized Regex type.
+                ty.AddMember matchTy
 
-isMatch.AddXmlDoc "Indicates whether the regular expression finds a match in the specified input string"
+                // Add group properties to match type
+                for group in r.GetGroupNames() do
+                    // Ignore the group named 0, which represents all input.
+                    if group <> "0" then
+                        let prop = 
+                          ProvidedProperty(
+                            propertyName = group, 
+                            propertyType = typeof<Group>, 
+                            getterCode = fun args -> <@@ ((%%args.[0]:obj) :?> Match).Groups.[group] @@>)
+                        prop.AddXmlDoc(sprintf @"Gets the ""%s"" group from this match" group)
+                        matchTy.AddMember(prop)
 
-ty.AddMember isMatch
+                // Provide strongly typed version of Regex.Match instance method.
+                let matchMeth = 
+                  ProvidedMethod(
+                    methodName = "Match", 
+                    parameters = [ProvidedParameter("input", typeof<string>)], 
+                    returnType = matchTy, 
+                    invokeCode = fun args -> <@@ ((%%args.[0]:obj) :?> Regex).Match(%%args.[1]) :> obj @@>)
+                matchMeth.AddXmlDoc "Searches the specified input string for the first occurence of this regular expression"
 
-// Provided type for matches
-// Again, erase to obj even though the representation will always be a Match
-let matchTy = ProvidedTypeDefinition(
-"MatchType", 
-baseType = Some baseTy, 
-HideObjectMethods = true)
+                ty.AddMember matchMeth
 
-// Nest the match type within parameterized Regex type.
-ty.AddMember matchTy
+                // Declare a constructor.
+                let ctor = 
+                  ProvidedConstructor(
+                    parameters = [], 
+                    invokeCode = fun args -> <@@ Regex(pattern) :> obj @@>)
 
-// Add group properties to match type
-for group in r.GetGroupNames() do
-// Ignore the group named 0, which represents all input.
-if group <> "0" then
-let prop = ProvidedProperty(
-propertyName = group, 
-propertyType = typeof<Group>, 
-GetterCode = fun args -> <@@ ((%%args.[0]:obj) :?> Match).Groups.[group] @@>)
-prop.AddXmlDoc(sprintf @"Gets the ""%s"" group from this match" group)
-matchTy.AddMember(prop)
+                // Add documentation to the constructor.
+                ctor.AddXmlDoc "Initializes a regular expression instance"
 
-// Provide strongly typed version of Regex.Match instance method.
-let matchMeth = ProvidedMethod(
-methodName = "Match", 
-parameters = [ProvidedParameter("input", typeof<string>)], 
-returnType = matchTy, 
-InvokeCode = fun args -> <@@ ((%%args.[0]:obj) :?> Regex).Match(%%args.[1]) :> obj @@>)
-matchMeth.AddXmlDoc "Searches the specified input string for the first occurence of this regular expression"
+                ty.AddMember ctor
 
-ty.AddMember matchMeth
+                ty
+            | _ -> failwith "unexpected parameter values")) 
 
-// Declare a constructor.
-let ctor = ProvidedConstructor(
-parameters = [], 
-InvokeCode = fun args -> <@@ Regex(pattern) :> obj @@>)
-
-// Add documentation to the constructor.
-ctor.AddXmlDoc "Initializes a regular expression instance"
-
-ty.AddMember ctor
-
-ty
-| _ -> failwith "unexpected parameter values")) 
-
-do this.AddNamespace(rootNamespace, [regexTy])
+    do this.AddNamespace(rootNamespace, [regexTy])
 
 [<TypeProviderAssembly>]
 do ()
 ```
 
-`Key Lessons`
+### <a name="key-lessons"></a>レッスンの要点
 
 このセクションでは静的パラメーターを操作する型プロバイダーを作成する方法を説明しました。 プロバイダーは、静的パラメーターをチェックし、その値に基づいて操作を指定します。
 
 
 ## <a name="a-type-provider-that-is-backed-by-local-data"></a>ローカル データに基づく型プロバイダー
+
 しばしば、静的パラメーターだけでなくローカルまたはリモート システムからの情報にも基づく API を提供する型プロバイダーが便利な場合があります。 このセクションでは、ローカル データ ファイルなどのローカル データに基づく型プロバイダーについて説明します。
 
 
 ### <a name="simple-csv-file-provider"></a>単純な CSV ファイル プロバイダー
+
 単純な例として、コンマ区切り値 (CSV) 形式の指数データにアクセスするための型プロバイダーを考えてみましょう。 ここでは、次の表に示すように、CSV ファイルにはヘッダー行があり、その後に浮動小数点型のデータが続いているとします。
 
 
-
-|距離 (メートル)|時間 (秒)|
+```
+|Distance (meter)|Time (second)|
 |----------------|-------------|
 |50.0|3.7|
 |100.0|5.2|
 |150.0|6.4|
+```
+
 ここでは、`Distance` 型の `float<meter>` プロパティと `Time` 型の `float<second>` プロパティの行を取得するために使用できる型を指定する方法を示します。 説明を簡単にするために、次のように仮定します。
 
-
 - ヘッダー名は、いずれかの単位のない「名前 (単位)」の形式やコンマが含まれていません。
-<br />
 
 - 単位は、すべて国際単位系 (SI) 単位、 [Microsoft.FSharp.Data.UnitSystems.SI.UnitNames モジュール (f#)](https://msdn.microsoft.com/library/3cb43485-11f5-4aa7-a779-558f19d4013b)モジュールを定義します。
-<br />
 
 - 単位はすべて単純な単位 (たとえば、メートル) で、複合単位 (メートル/秒など) ではありません。
-<br />
 
 - すべての列に浮動小数点データが含まれています。
-<br />
 
 より詳細なプロバイダーを使用すると、これらの制限は緩和されます。
 
@@ -814,122 +801,122 @@ printfn "%f" (float time)
 ```fsharp
 // Simple type wrapping CSV data
 type CsvFile(filename) =
-// Cache the sequence of all data lines (all lines but the first)
-let data = 
-seq { for line in File.ReadAllLines(filename) |> Seq.skip 1 do
-yield line.Split(',') |> Array.map float }
-|> Seq.cache
-member __.Data = data
+    // Cache the sequence of all data lines (all lines but the first)
+    let data = 
+        seq { for line in File.ReadAllLines(filename) |> Seq.skip 1 do
+                 yield line.Split(',') |> Array.map float }
+        |> Seq.cache
+    member __.Data = data
 
 [<TypeProvider>]
 type public MiniCsvProvider(cfg:TypeProviderConfig) as this =
-inherit TypeProviderForNamespaces()
+    inherit TypeProviderForNamespaces(cfg)
 
-// Get the assembly and namespace used to house the provided types.
-let asm = System.Reflection.Assembly.GetExecutingAssembly()
-let ns = "Samples.FSharp.MiniCsvProvider"
+    // Get the assembly and namespace used to house the provided types.
+    let asm = System.Reflection.Assembly.GetExecutingAssembly()
+    let ns = "Samples.FSharp.MiniCsvProvider"
 
-// Create the main provided type.
-let csvTy = ProvidedTypeDefinition(asm, ns, "MiniCsv", Some(typeof<obj>))
+    // Create the main provided type.
+    let csvTy = ProvidedTypeDefinition(asm, ns, "MiniCsv", Some(typeof<obj>))
 
-// Parameterize the type by the file to use as a template.
-let filename = ProvidedStaticParameter("filename", typeof<string>)
-do csvTy.DefineStaticParameters([filename], fun tyName [| :? string as filename |] ->
+    // Parameterize the type by the file to use as a template.
+    let filename = ProvidedStaticParameter("filename", typeof<string>)
+    do csvTy.DefineStaticParameters([filename], fun tyName [| :? string as filename |] ->
+    
+        // Resolve the filename relative to the resolution folder.
+        let resolvedFilename = Path.Combine(cfg.ResolutionFolder, filename)
 
-// Resolve the filename relative to the resolution folder.
-let resolvedFilename = Path.Combine(cfg.ResolutionFolder, filename)
+        // Get the first line from the file.
+        let headerLine = File.ReadLines(resolvedFilename) |> Seq.head
 
-// Get the first line from the file.
-let headerLine = File.ReadLines(resolvedFilename) |> Seq.head
+        // Define a provided type for each row, erasing to a float[].
+        let rowTy = ProvidedTypeDefinition("Row", Some(typeof<float[]>))
 
-// Define a provided type for each row, erasing to a float[].
-let rowTy = ProvidedTypeDefinition("Row", Some(typeof<float[]>))
+        // Extract header names from the file, splitting on commas.
+        // use Regex matching to get the position in the row at which the field occurs
+        let headers = Regex.Matches(headerLine, "[^,]+")
 
-// Extract header names from the file, splitting on commas.
-// use Regex matching to get the position in the row at which the field occurs
-let headers = Regex.Matches(headerLine, "[^,]+")
+        // Add one property per CSV field.
+        for i in 0 .. headers.Count - 1 do
+            let headerText = headers.[i].Value
 
-// Add one property per CSV field.
-for i in 0 .. headers.Count - 1 do
-let headerText = headers.[i].Value
+            // Try to decompose this header into a name and unit.
+            let fieldName, fieldTy =
+                let m = Regex.Match(headerText, @"(?<field>.+) \((?<unit>.+)\)")
+                if m.Success then
 
-// Try to decompose this header into a name and unit.
-let fieldName, fieldTy =
-let m = Regex.Match(headerText, @"(?<field>.+) \((?<unit>.+)\)")
-if m.Success then
+                    let unitName = m.Groups.["unit"].Value
+                    let units = ProvidedMeasureBuilder.Default.SI unitName
+                    m.Groups.["field"].Value, ProvidedMeasureBuilder.Default.AnnotateType(typeof<float>,[units])
 
+                else
+                    // no units, just treat it as a normal float
+                    headerText, typeof<float>
 
-let unitName = m.Groups.["unit"].Value
-let units = ProvidedMeasureBuilder.Default.SI unitName
-m.Groups.["field"].Value, ProvidedMeasureBuilder.Default.AnnotateType(typeof<float>,[units])
+            let prop = 
+                ProvidedProperty(fieldName, fieldTy, 
+                    getterCode = fun [row] -> <@@ (%%row:float[]).[i] @@>)
 
+            // Add metadata that defines the property's location in the referenced file.
+            prop.AddDefinitionLocation(1, headers.[i].Index + 1, filename)
+            rowTy.AddMember(prop) 
 
-else
-// no units, just treat it as a normal float
-headerText, typeof<float>
+        // Define the provided type, erasing to CsvFile.
+        let ty = ProvidedTypeDefinition(asm, ns, tyName, Some(typeof<CsvFile>))
 
-let prop = ProvidedProperty(fieldName, fieldTy, 
-GetterCode = fun [row] -> <@@ (%%row:float[]).[i] @@>)
+        // Add a parameterless constructor that loads the file that was used to define the schema.
+        let ctor0 = 
+            ProvidedConstructor([], 
+                invokeCode = fun [] -> <@@ CsvFile(resolvedFilename) @@>)
+        ty.AddMember ctor0
 
-// Add metadata that defines the property's location in the referenced file.
-prop.AddDefinitionLocation(1, headers.[i].Index + 1, filename)
-rowTy.AddMember(prop) 
+        // Add a constructor that takes the file name to load.
+        let ctor1 = ProvidedConstructor([ProvidedParameter("filename", typeof<string>)], 
+            invokeCode = fun [filename] -> <@@ CsvFile(%%filename) @@>)
+        ty.AddMember ctor1
 
-// Define the provided type, erasing to CsvFile.
-let ty = ProvidedTypeDefinition(asm, ns, tyName, Some(typeof<CsvFile>))
+        // Add a more strongly typed Data property, which uses the existing property at runtime.
+        let prop = 
+            ProvidedProperty("Data", typedefof<seq<_>>.MakeGenericType(rowTy), 
+                getterCode = fun [csvFile] -> <@@ (%%csvFile:CsvFile).Data @@>)
+        ty.AddMember prop
 
-// Add a parameterless constructor that loads the file that was used to define the schema.
-let ctor0 = ProvidedConstructor([], 
-InvokeCode = fun [] -> <@@ CsvFile(resolvedFilename) @@>)
-ty.AddMember ctor0
+        // Add the row type as a nested type.
+        ty.AddMember rowTy
+        ty)
 
-// Add a constructor that takes the file name to load.
-let ctor1 = ProvidedConstructor([ProvidedParameter("filename", typeof<string>)], 
-InvokeCode = fun [filename] -> <@@ CsvFile(%%filename) @@>)
-ty.AddMember ctor1
-
-// Add a more strongly typed Data property, which uses the existing property at runtime.
-let prop = ProvidedProperty("Data", typedefof<seq<_>>.MakeGenericType(rowTy), 
-GetterCode = fun [csvFile] -> <@@ (%%csvFile:CsvFile).Data @@>)
-ty.AddMember prop
-
-// Add the row type as a nested type.
-ty.AddMember rowTy
-ty)
-
-// Add the type to the namespace.
-do this.AddNamespace(ns, [csvTy])
+    // Add the type to the namespace.
+    do this.AddNamespace(ns, [csvTy])
 ```
 
 実装の次の点に注意してください。
 
-
 - オーバーロードされたコンストラクターでは、元のファイル、またはそれと同一のスキーマを持つファイルを読み取ることができます。 このパターンは、ローカルまたはリモートのデータ ソースの型プロバイダーを作成するときによく使用され、ローカル ファイルをリモート データのテンプレートとして使用できるようにします。
-<br />  使用することができます、 [TypeProviderConfig](https://msdn.microsoft.com/library/1cda7b9a-3d07-475d-9315-d65e1c97eb44)相対ファイル名を解決するのには、型プロバイダー コンス トラクターに渡される値。
-<br />
+
+- 使用することができます、 [TypeProviderConfig](https://msdn.microsoft.com/library/1cda7b9a-3d07-475d-9315-d65e1c97eb44)相対ファイル名を解決するのには、型プロバイダー コンス トラクターに渡される値。
 
 - 指定されたプロパティの場所を定義するには `AddDefinitionLocation` メソッドを使用できます。 そのため、使用する場合`Go To Definition`指定されたプロパティで、CSV ファイルは Visual Studio で開きます。
-<br />
 
 - SI 単位を調べて適切な `ProvidedMeasureBuilder` 型を生成するには、`float<_>` 型を使用できます。
-<br />
 
-`Key Lessons`
+### <a name="key-lessons"></a>レッスンの要点
 
 このセクションでは、単純なスキーマがデータ ソース自体に含まれているローカル データ ソースのための型プロバイダーを作成する方法を説明しました。
 
 
 ## <a name="going-further"></a>理解を深める
+
 以降のセクションでは、さらに理解を深めるための参考情報を示します。
 
 
 ### <a name="a-look-at-the-compiled-code-for-erased-types"></a>コンパイル済みコードにおける消去型
+
 型プロバイダーの使用が生成されたコードにどのように対応するかを説明するために、このトピックの前半で使用した `HelloWorldTypeProvider` を使って次の関数を見てみます。
 
 ```fsharp
 let function1 () = 
-let obj1 = Samples.HelloWorldTypeProvider.Type1("some data")
-obj1.InstanceProperty
+    let obj1 = Samples.HelloWorldTypeProvider.Type1("some data")
+    obj1.InstanceProperty
 ```
 
 ildasm.exe を使用して逆コンパイルされたコードのイメージを次に示します。
@@ -966,33 +953,26 @@ IL_0017:  ret
 ### <a name="design-and-naming-conventions-for-type-providers"></a>型プロバイダーのデザインと名前付け規則
 型プロバイダーを作成するときは、次の規則に従ってください。
 
-
-- `Providers for Connectivity Protocols`
-<br />  一般に、OData や SQL 接続など、データとサービスの接続プロトコルのほとんどのプロバイダー DLL の名前は、`TypeProvider` または `TypeProviders` で終わります。 たとえば、次の文字列のような DLL 名を使用します。
-<br />
+**接続プロトコルのプロバイダー** OData や SQL の接続など、データとサービスの接続プロトコルのほとんどのプロバイダー Dll の名前の末尾に一般に、`TypeProvider`または`TypeProviders`です。 たとえば、次の文字列のような DLL 名を使用します。
 
 ```
   Fabrikam.Management.BasicTypeProviders.dll
 ```
 
-  指定された型が対応する名前空間のメンバーであり、実装した接続プロトコルを示すようにします。
-<br />
+指定された型が対応する名前空間のメンバーであり、実装した接続プロトコルを示すようにします。
 
 ```
   Fabrikam.Management.BasicTypeProviders.WmiConnection<…>
   Fabrikam.Management.BasicTypeProviders.DataProtocolConnection<…>
 ```
 
-- `Utility Providers for General Coding`
-<br />  正規表現用などのユーティリティ型プロバイダーでは、次の例に示すように、型プロバイダーが基本ライブラリに含まれる場合があります。
-<br />
+**一般的なコーディングにおけるユーティリティ プロバイダー**です。  正規表現用などのユーティリティ型プロバイダーでは、次の例に示すように、型プロバイダーが基本ライブラリに含まれる場合があります。
 
 ```fsharp
   #r "Fabrikam.Core.Text.Utilities.dll"
 ```
 
-  この場合、指定された型は、通常の .NET デザイン規則に従って適切な位置に表示されます。
-<br />
+この場合、指定された型は、通常の .NET デザイン規則に従って適切な位置に表示されます。
 
 ```fsharp
   open Fabrikam.Core.Text.RegexTyped
@@ -1000,21 +980,19 @@ IL_0017:  ret
   let regex = new RegexTyped<"a+b+a+b+">()
 ```
 
-- `Singleton Data Sources`
-<br />  型プロバイダーの中には、単一の専用データ ソースに接続してデータのみを指定するものがあります。 この場合、`TypeProvider` サフィックスを削除して、通常の .NET の名前付け規則を使用する必要があります。
-<br />
+**データ ソースのシングルトン**です。 型プロバイダーの中には、単一の専用データ ソースに接続してデータのみを指定するものがあります。 この場合、`TypeProvider` サフィックスを削除して、通常の .NET の名前付け規則を使用する必要があります。
 
 ```fsharp
-  #r "Fabrikam.Data.Freebase.dll"
+#r "Fabrikam.Data.Freebase.dll"
   
-  let data = Fabrikam.Data.Freebase.Astronomy.Asteroids
+let data = Fabrikam.Data.Freebase.Astronomy.Asteroids
 ```
 
-  詳細については、このトピックで後述する `GetConnection` デザイン規則を参照してください。
-<br />
+詳細については、このトピックで後述する `GetConnection` デザイン規則を参照してください。
 
 
 ### <a name="design-patterns-for-type-providers"></a>型プロバイダーのパターンのデザイン
+
 以降のセクションでは、型プロバイダーを作成するときに使用できるデザイン パターンを説明します。
 
 
@@ -1032,54 +1010,48 @@ let data = connection.Astronomy.Asteroids
 ```
 
 #### <a name="type-providers-backed-by-remote-data-and-services"></a>リモート データとサービスに基づく型プロバイダー
+
 リモート データとサービスに基づく型プロバイダーを作成する前に、接続型プログラミングに内在するさまざまな問題を検討する必要があります。 これらの問題には、次の検討事項が含まれています。
 
-
 - スキーマ マッピング
-<br />
 
 - スキーマ変更がある場合の活性と無効化
-<br />
 
 - スキーマ キャッシュ
-<br />
 
 - データ アクセス操作の非同期実装
-<br />
 
 - LINQ クエリを含むクエリのサポート
-<br />
 
 - 資格情報と認証
-<br />
 
 このトピックでは、これらの問題をこれ以上説明しません。
 
-
 ### <a name="additional-authoring-techniques"></a>その他の作成方法
+
 独自の型プロバイダーを作成するとき、次の方法も使用できます。
 
+### <a name="creating-types-and-members-on-demand"></a>型およびメンバーを要求に応じて作成する
 
-- `Creating Types and Members On-Demand`
-<br />  ProvidedType API には遅延バージョンの AddMember があります。
-<br />
+ProvidedType API には遅延バージョンの AddMember があります。
 
 ```fsharp
   type ProvidedType =
-  member AddMemberDelayed  : (unit -> MemberInfo)      -> unit
-  member AddMembersDelayed : (unit -> MemberInfo list) -> unit
+      member AddMemberDelayed  : (unit -> MemberInfo)      -> unit
+      member AddMembersDelayed : (unit -> MemberInfo list) -> unit
 ```
 
-  これらのバージョンは、型のオンデマンド空間の作成に使用されます。
-<br />
+これらのバージョンは、型のオンデマンド空間の作成に使用されます。
 
-- `Providing Array, ByRef, and Pointer types`
-<br />  配列型、byref 型、およびジェネリック型のインスタンス化をシグネチャに持つ、指定されたメンバーを作成するには、System.Type の任意のインスタンスに対して通常の `MakeArrayType`、`MakePointerType`、および `MakeGenericType` を使用します。インスタンスには `ProvidedTypeDefinitions` も含まれます。
-<br />
+### <a name="providing-array-types-and-generic-type-instantiations"></a>配列の型およびジェネリック型のインスタンス化を提供します。
 
-- `Providing Unit of Measure Annotations`
-<br />  ProvidedTypes API は、メジャーの注釈を指定するためのヘルパーを指定します。 たとえば、`float<kg>` 型を指定するには次のコードを使用します。
-<br />
+配列型、byref 型、およびジェネリック型のインスタンス化をシグネチャに持つ、指定されたメンバーを作成するには、System.Type の任意のインスタンスに対して通常の `MakeArrayType`、`MakePointerType`、および `MakeGenericType` を使用します。インスタンスには `ProvidedTypeDefinitions` も含まれます。
+
+注: いくつかの場合にする必要がありますでヘルパーを使用して`ProvidedTypeBuilder.MakeGenericType`です。  詳細については、型プロバイダー SDK ドキュメントを参照してください。
+
+### <a name="providing-unit-of-measure-annotations"></a>測定単位の注釈を指定する
+
+ProvidedTypes API は、メジャーの注釈を指定するためのヘルパーを指定します。 たとえば、`float<kg>` 型を指定するには次のコードを使用します。
 
 ```fsharp
   let measures = ProvidedMeasureBuilder.Default
@@ -1089,7 +1061,6 @@ let data = connection.Astronomy.Asteroids
 ```
 
   `Nullable<decimal<kg/m^2>>` 型を指定するには次のコードを使用します。
-<br />
 
 ```fsharp
   let kgpm2 = measures.Ratio(kg, measures.Square m)
@@ -1097,44 +1068,34 @@ let data = connection.Astronomy.Asteroids
   let nullableDecimal_kgpm2 = typedefof<System.Nullable<_>>.MakeGenericType [|dkgpm2 |]
 ```
 
-- `Accessing Project-Local or Script-Local Resources`
-<br />  型プロバイダーの各インスタンスには、構築時に `TypeProviderConfig` 値を指定できます。 この値には、そのプロバイダー用の "解決フォルダー"(コンパイル用のプロジェクト フォルダーまたはスクリプトを含んでいるディレクトリ)、参照されるアセンブリのリスト、その他の情報が含まれます。
-<br />
+### <a name="accessing-project-local-or-script-local-resources"></a>プロジェクト ローカル リソースまたはスクリプト ローカル リソースにアクセスする
 
-- `Invalidation`
-<br />  プロバイダーは、無効化シグナルを生成して F# 言語サービスにスキーマの前提が変わった可能性があることを通知できます。 無効化が発生すると、プロバイダーが Visual Studio にホストされている場合は型チェックが再度実行されます。 このシグナルは、プロバイダーが F# Interactive または F# コンパイラ (fsc.exe) でホストされている場合は無視されます。
-<br />
+型プロバイダーの各インスタンスには、構築時に `TypeProviderConfig` 値を指定できます。 この値には、そのプロバイダー用の "解決フォルダー"(コンパイル用のプロジェクト フォルダーまたはスクリプトを含んでいるディレクトリ)、参照されるアセンブリのリスト、その他の情報が含まれます。
 
-- `Caching Schema Information`
-<br />  多くの場合、プロバイダーはスキーマ情報へのアクセスをキャッシュする必要があります。 キャッシュされたデータは静的パラメーターまたはユーザー データとして指定されたファイル名を使用して格納されます。 スキーマ キャッシュの例には、`LocalSchemaFile` アセンブリ内の型プロバイダーの `FSharp.Data.TypeProviders` パラメーターがあります。 これらのプロバイダーの実装では、この静的パラメーターは、型プロバイダーがデータ ソースにネットワーク経由でアクセスする代わりに、指定されたローカル ファイル内のスキーマ情報を使用するように指定します。 また、キャッシュされたスキーマ情報を使用するには、静的パラメーター `ForceUpdate` を `false` に設定する必要があります。 同様の手法でオンラインとオフラインのデータ アクセスを有効にすることができます。
-<br />
+### <a name="invalidation"></a>無効化
 
-- `Backing Assembly`
-<br />  .dll または .exe ファイルをコンパイルすると、生成された型のバッキング .dll ファイルが、結果のアセンブリに静的にリンクされます。 このリンクは、中間言語 (IL) の型定義とマネージ リソースをバッキング アセンブリから最終アセンブリにコピーして作成されます。 F# Interactive を使用すると、バッキング .dll ファイルはコピーされず、代わりに F# Interactive プロセスに直接読み込まれます。
-<br />
+プロバイダーは、無効化シグナルを生成して F# 言語サービスにスキーマの前提が変わった可能性があることを通知できます。 無効化が発生すると、プロバイダーが Visual Studio にホストされている場合は型チェックが再度実行されます。 このシグナルは、プロバイダーが F# Interactive または F# コンパイラ (fsc.exe) でホストされている場合は無視されます。
 
-- `Exceptions and Diagnostics from Type Providers`
-<br />  指定された型のすべてのメンバーの使用において例外がスローされる可能性があります。 いずれの場合も、型プロバイダーが例外をスローした場合、ホスト コンパイラはそのエラーの原因を特定の型プロバイダーに求めます。
-<br />
-  - 型プロバイダーの例外は、内部コンパイル エラーになることはありません。
-<br />
+### <a name="caching-schema-information"></a>スキーマ情報をキャッシュする
 
-  - 型プロバイダーは警告を発生できません。
-<br />
+多くの場合、プロバイダーはスキーマ情報へのアクセスをキャッシュする必要があります。 キャッシュされたデータは静的パラメーターまたはユーザー データとして指定されたファイル名を使用して格納されます。 スキーマ キャッシュの例には、`LocalSchemaFile` アセンブリ内の型プロバイダーの `FSharp.Data.TypeProviders` パラメーターがあります。 これらのプロバイダーの実装では、この静的パラメーターは、型プロバイダーがデータ ソースにネットワーク経由でアクセスする代わりに、指定されたローカル ファイル内のスキーマ情報を使用するように指定します。 また、キャッシュされたスキーマ情報を使用するには、静的パラメーター `ForceUpdate` を `false` に設定する必要があります。 同様の手法でオンラインとオフラインのデータ アクセスを有効にすることができます。
 
-  - F# コンパイラ、F# 開発環境、または F# Interactive でホストされている型プロバイダーからの例外はすべてキャッチされます。 Message プロパティは常にエラー テキストであり、スタック トレースは表示されません。 例外をスローする場合は、次の例をスローできます。
-<br />
-    - `System.NotSupportedException`
-<br />
+### <a name="backing-assembly"></a>バッキング アセンブリ
 
-    - `System.IO.IOException`
-<br />
+コンパイルするときに、`.dll`または`.exe`ファイルの場合は、生成された型は、生成されたアセンブリに静的にリンクのバッキング .dll ファイル。 このリンクは、中間言語 (IL) の型定義とマネージ リソースをバッキング アセンブリから最終アセンブリにコピーして作成されます。 F# Interactive を使用すると、バッキング .dll ファイルはコピーされず、代わりに F# Interactive プロセスに直接読み込まれます。
 
-    - `System.Exception`
-<br />
+### <a name="exceptions-and-diagnostics-from-type-providers"></a>型プロバイダーからの例外と診断
 
+指定された型のすべてのメンバーの使用において例外がスローされる可能性があります。 いずれの場合も、型プロバイダーが例外をスローした場合、ホスト コンパイラはそのエラーの原因を特定の型プロバイダーに求めます。
+
+- 型プロバイダーの例外は、内部コンパイル エラーになることはありません。
+
+- 型プロバイダーは警告を発生できません。
+
+- F# コンパイラ、F# 開発環境、または F# Interactive でホストされている型プロバイダーからの例外はすべてキャッチされます。 Message プロパティは常にエラー テキストであり、スタック トレースは表示されません。 例外をスローする場合は、次の例をスローすることができます: `System.NotSupportedException`、 `System.IO.IOException`、`System.Exception`です。
 
 #### <a name="providing-generated-types"></a>生成された型の指定
+
 これまで、このドキュメントでは消去型の指定方法を説明してきました。 F# の型プロバイダー メカニズムを使用して、ユーザー プログラムに実際の .NET 型定義として追加される生成された型を指定することもできます。 生成され指定された型は型定義を使用して参照する必要があります。
 
 ```fsharp
@@ -1145,81 +1106,62 @@ type Service = ODataService<" https://services.odata.org/Northwind/Northwind.svc
 
 F# 3.0 リリースに含まれている ProvidedTypes-0.2 ヘルパー コードは、生成された型を指定するためのサポートが限られています。 生成された型の定義は次の条件を満たす必要があります。
 
+- `isErased` 設定する必要があります`false`です。
 
-- IsErased が `false` に設定されている。
-<br />
+- 生成された型を追加する必要がありますに新しく構築された`ProvidedAssembly()`、生成されたコードのフラグメントのコンテナーを表します。
 
 - プロバイダーは、実際のバッキング .NET .dll ファイルを含むアセンブリを持ち、対応する .dll ファイルがディスク上にある。
-<br />
-
-また、入れ子になった型が生成された型の Closed Set を形成するルートの指定された型に対して `ConvertToGenerated` を呼び出す必要があります。 この呼び出しは、特定の指定された型の定義とその入れ子になった型の定義をアセンブリに生成し、アセンブリを返すようにすべての指定された型の定義の `Assembly` プロパティを調整します。 アセンブリは、ルート型のアセンブリ プロパティが初めてアクセスされたときにのみ生成されます。 ホストの F# コンパイラは、その型の生成的型宣言を処理するときに、このプロパティにアクセスします。
 
 
 ## <a name="rules-and-limitations"></a>規則と制約
+
 型プロバイダーを作成するときは、次の規則と制約に注意してください。
 
 
-- `Provided types must be reachable.`
-<br />  すべての指定された型は、入れ子になっていない型から到達可能である必要があります。 入れ子になっていない型は、`TypeProviderForNamespaces` コンストラクターへの呼び出し、または `AddNamespace` への呼び出しで指定されます。 たとえば、プロバイダーが `StaticClass.P : T` 型を指定する場合、T は入れ子になっていない型、または 1 階層だけ入れ子になっている型である必要があります。
-<br />  たとえば、一部のプロバイダーには、`DataTypes` の各型を含む `T1, T2, T3, ...` などの静的クラスがあります。 それ以外の場合、アセンブリ A 内の型 T に対する参照は見つかるが、型はそのアセンブリ内に見つからないというエラーが表示されます。 このエラーが表示された場合は、すべての下位の型が指定された型から到達可能であることを確認します。 注: これら`T1, T2, T3...`型と呼びます、*その場で*型です。 必ずこれらの型をアクセス可能な名前空間または親の型に入れてください。
-<br />
+### <a name="provided-types-must-be-reachable"></a>指定された型に到達可能である必要があります。
 
-- `Limitations of the Type Provider Mechanism`
-<br />  F# の型プロバイダー メカニズムには、次の制約があります。
-<br />
-  - F# の型プロバイダーの基になるインフラストラクチャは、指定されたジェネリック型または指定されたジェネリック メソッドをサポートしません。
-<br />
+すべての指定された型は、入れ子になっていない型から到達可能である必要があります。 入れ子になっていない型は、`TypeProviderForNamespaces` コンストラクターへの呼び出し、または `AddNamespace` への呼び出しで指定されます。 たとえば、プロバイダーが `StaticClass.P : T` 型を指定する場合、T は入れ子になっていない型、または 1 階層だけ入れ子になっている型である必要があります。
 
-  - このメカニズムは、静的パラメーターを持つ入れ子になった型をサポートしません。
-<br />
+たとえば、一部のプロバイダーには、`DataTypes` の各型を含む `T1, T2, T3, ...` などの静的クラスがあります。 それ以外の場合、アセンブリ A 内の型 T に対する参照は見つかるが、型はそのアセンブリ内に見つからないというエラーが表示されます。 このエラーが表示された場合は、すべての下位の型が指定された型から到達可能であることを確認します。 注: これら`T1, T2, T3...`型と呼びます、*その場で*型です。 必ずこれらの型をアクセス可能な名前空間または親の型に入れてください。
 
-- `Limitations of the ProvidedTypes Support Code`
-<br />  `ProvidedTypes` サポート コードには次の規則と制約があります。
-<br />
-  1. インデックス付き getter および setter を持つ指定されたプロパティは実装されていません。
-<br />
+### <a name="limitations-of-the-type-provider-mechanism"></a>型プロバイダー メカニズムの制約
 
-  2. 指定されたイベントは実装されていません。
-<br />
+F# の型プロバイダー メカニズムには、次の制約があります。
 
-  3. 指定された型および情報オブジェクトは F# の型プロバイダー メカニズムでのみ使用してください。 これらは System.Type オブジェクトとして一般的に使用することはできません。
-<br />
+- F# の型プロバイダーの基になるインフラストラクチャは、指定されたジェネリック型または指定されたジェネリック メソッドをサポートしません。
 
-  4. メソッドの実装を定義するクォートで使用できるコンストラクトには、いくつかの制約があります。 ProvidedTypes - のソース コードを参照することができます*バージョン*を二重引用符でどの構成体がサポートされているを参照してください。
-<br />
-
-- `Type providers must generate output assemblies that are .dll files, not .exe files.`
-<br />
-
+- このメカニズムは、静的パラメーターを持つ入れ子になった型をサポートしません。
 
 ## <a name="development-tips"></a>開発のヒント
+
 開発過程では次のヒントが役立つことがあります。
 
+### <a name="run-two-instances-of-visual-studio"></a>Visual Studio の 2 つのインスタンスを実行します。
 
-- `Run Two Instances of Visual Studio.` 1 つのインスタンスで、型プロバイダーを開発およびテスト IDE が型プロバイダーがリビルドされることを防止する .dll ファイルのロックを取得するので、他のプロバイダーをテストできます。 したがって、最初のインスタンスでプロバイダーをビルドしている間は Visual Studio の 2 番目のインスタンスを閉じておき、プロバイダーがビルドされた後に、2 番目のインスタンスを再び開く必要があります。
-<br />
+型プロバイダーがリビルドされることを防止する .dll ファイルのロックをテスト IDE が取得するので、型プロバイダーを 1 つのインスタンスで作成し、そのプロバイダーを別のインスタンスでテストできます。 したがって、最初のインスタンスでプロバイダーをビルドしている間は Visual Studio の 2 番目のインスタンスを閉じておき、プロバイダーがビルドされた後に、2 番目のインスタンスを再び開く必要があります。
 
-- `Debug type providers by using invocations of fsc.exe.` 次のツールを使用して、型プロバイダーを呼び出すことができます。
-<br />
-  - fsc.exe (F# コマンド ライン コンパイラ)
-<br />
+### <a name="debug-type-providers-by-using-invocations-of-fscexe"></a>Fsc.exe を呼び出してを使用して型プロバイダーをデバッグします。
 
-  - fsi.exe (F# Interactive コンパイラ)
-<br />
+次のツールを使用して型プロバイダーを呼び出すことができます。
 
-  - devenv.exe (Visual Studio)
-<br />
+- fsc.exe (F# コマンド ライン コンパイラ)
 
-  多くの場合、型プロバイダーは、テスト スクリプト ファイル (script.fsx など) で fsc.exe を使用することによって、最も簡単にデバッグできます。 コマンド プロンプトからデバッガーを起動できます。
-<br />
+- fsi.exe (F# Interactive コンパイラ)
+
+- devenv.exe (Visual Studio)
+
+多くの場合、型プロバイダーは、テスト スクリプト ファイル (script.fsx など) で fsc.exe を使用することによって、最も簡単にデバッグできます。 コマンド プロンプトからデバッガーを起動できます。
 
 ```
   devenv /debugexe fsc.exe script.fsx
 ```
 
   stdout への出力のログを使用できます。
-<br />
 
 
 ## <a name="see-also"></a>参照
-[型プロバイダー](index.md)
+
+* [型プロバイダー](index.md)
+
+* [型プロバイダー SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK)
+

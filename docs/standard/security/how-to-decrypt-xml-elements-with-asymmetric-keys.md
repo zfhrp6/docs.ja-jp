@@ -18,21 +18,21 @@ helpviewer_keywords:
 - XML encryption
 - decryption
 ms.assetid: dd5de491-dafe-4b94-966d-99714b2e754a
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 099937fe113c39c717b4c9fcba2042115b9105e6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 698a542765cf8599a2f07e747669893502b75045
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="how-to-decrypt-xml-elements-with-asymmetric-keys"></a>方法 : 非対称キーで XML 要素を復号化する
-<xref:System.Security.Cryptography.Xml> 名前空間のクラスを使用して、XML ドキュメント内の要素を暗号化および復号化することができます。  XML 暗号化は、データが簡単に読み取られる心配なく、暗号化された XML データを交換または保存する標準的な方法です。  標準の XML 暗号化の詳細については、World Wide Web Consortium (W3C) の推奨事項を参照してください。 [XML 署名の構文と処理](http://go.microsoft.com/fwlink/?LinkID=136777)です。  
+<xref:System.Security.Cryptography.Xml> 名前空間のクラスを使用して、XML ドキュメント内の要素を暗号化および復号化することができます。  XML 暗号化は、データが簡単に読み取られる心配なく、暗号化された XML データを交換または保存する標準的な方法です。  標準の XML 暗号化の詳細については、World Wide Web Consortium (W3C) の推奨事項を参照してください。 [XML 署名の構文と処理](https://www.w3.org/TR/xmldsig-core/)です。  
   
  この手順の例で説明する方法を使用して暗号化された XML 要素を復号化[する方法: 非対称キーで XML 要素を暗号化](../../../docs/standard/security/how-to-encrypt-xml-elements-with-asymmetric-keys.md)です。  <`EncryptedData`> 要素を検出し、要素を復号化してから、要素を元のプレーン テキストの XML 要素に置き換えます。  
   

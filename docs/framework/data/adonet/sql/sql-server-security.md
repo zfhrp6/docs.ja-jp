@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-ado
+ms.technology:
+- dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 9053724d-a1fb-4f0f-b9dc-7f6dd893e8ff
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: abb7c9322a9b7ddfd3e0add4d8b9be6941c5e240
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: c186b25aeaa42b7285316d7bc9de913dd7b89af7
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="sql-server-security"></a>SQL Server のセキュリティ
-[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] には、安全なデータベース アプリケーションの作成を支援するさまざまな機能が備わっています。  
+[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] セキュリティで保護されたデータベース アプリケーションの作成をサポートする多くの機能があります。  
   
  データの盗難や破壊など、セキュリティに関する基本的な考慮事項は、使用している [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] のバージョンに関係なく当てはまります。 また、データの整合性もセキュリティの問題として考慮する必要があります。 データの保護を怠り、その場しのぎでデータの操作を許可すると、不注意でまたは意図的に不正確な値に置き換えられたり、完全に削除されてしまうことによってデータの価値が失われてしまうこともあります。 加えて、機密情報の適切な保管方法など、遵守すべき法的要件が存在します。 特定の司法管轄域の法令によっては、一部の種類の個人データについて、保管すること自体が完全に禁止されている場合もあります。  
   
@@ -44,13 +46,12 @@ ms.lasthandoff: 01/17/2018
  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express のセキュリティ上の考慮事項について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [セキュリティと保護 (データベース エンジン)](http://msdn2.microsoft.com/library/bb510589\(SQL.100\).aspx.)  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックのセキュリティ トピックです。  
-  
- [SQL Server のセキュリティに関する考慮事項](http://go.microsoft.com/fwlink/?LinkId=98587)  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックのセキュリティ トピックです。  
-  
+[SQL Server データベース エンジンと Azure SQL Database のセキュリティ センター](/sql/relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database)  
+SQL Server と Azure SQL Database のセキュリティに関する考慮事項をについて説明します。
+
+[SQL Server のインストールのセキュリティに関する考慮事項](/sql/sql-server/install/security-considerations-for-a-sql-server-installation)  
+SQL Server をインストールする前に考慮すべきセキュリティに関する注意事項について説明します。
+
 ## <a name="see-also"></a>参照  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server と ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)
