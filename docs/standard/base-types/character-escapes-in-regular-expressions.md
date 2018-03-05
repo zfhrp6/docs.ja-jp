@@ -20,15 +20,18 @@ helpviewer_keywords:
 - .NET Framework regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0149bd97b997da8b29e225a7a1aeda17a6ffa226
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8a4ec10bfa332c8caafce57385791d8069a7231a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="character-escapes-in-regular-expressions"></a>正規表現での文字のエスケープ
 正規表現の円記号 (\\) は、次のいずれかを示します。  
@@ -45,7 +48,7 @@ ms.lasthandoff: 10/18/2017
   
 |文字または文字シーケンス|説明|  
 |---------------------------|-----------------|  
-|次の文字を除くすべての文字:<br /><br /> 」を参照してください。 $ ^ { [ ( &#124; ) * + ? \|**文字またはシーケンス**の列にリストされているもの以外の文字は、正規表現で特別な意味を持ちません。それらは、その文字自体と一致します。<br /><br /> **文字またはシーケンス**の列に含まれる文字は、特殊な正規表現言語要素です。 正規表現でそれらの文字と一致するためには、エスケープするか、[正の文字グループ](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)に含める必要があります。 たとえば、正規表現の `\$\d+` または `[$]\d+`は「$1200」と一致します。|  
+|次の文字を除くすべての文字:<br /><br /> である必要があります。 $ ^ { [ ( &#124; ) * + ? \|**文字またはシーケンス**の列にリストされているもの以外の文字は、正規表現で特別な意味を持ちません。それらは、その文字自体と一致します。<br /><br /> **文字またはシーケンス**の列に含まれる文字は、特殊な正規表現言語要素です。 正規表現でそれらの文字と一致するためには、エスケープするか、[正の文字グループ](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)に含める必要があります。 たとえば、正規表現の `\$\d+` または `[$]\d+`は「$1200」と一致します。|  
 |`\a`|ビープ音 (アラーム) 文字の `\u0007`。|  
 |`\b`|`[`*character_group*`]` 文字クラスでバックスペースの `\u0008` と一致します   (「[文字クラス](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)」を参照してください)。文字クラスの外部では、`\b` はワード境界と一致するアンカーです (「[アンカー](../../../docs/standard/base-types/anchors-in-regular-expressions.md)」を参照してください)。|  
 |`\t`|タブの `\u0009`。|  
@@ -54,10 +57,10 @@ ms.lasthandoff: 10/18/2017
 |`\f`|フォーム フィードの `\u000C`。|  
 |`\n`|改行文字の `\u000A`。|  
 |`\e`|エスケープ文字の `\u001B`。|  
-|`\` *nnn*|ASCII 文字と一致する、  *nnn* を 8 進文字コードを表す 2 つまたは 3 つの数字で構成されます。 たとえば、`\040` は、空白文字を表します。 この構成体は、1 桁のみの場合 (`\2` など)、またはキャプチャ グループの番号に対応する場合には前方参照として解釈されます。 (「[前方参照構成体](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md)」を参照してください。)|  
-|`\x` *nn*|ASCII 文字と一致する、  *nn*  2 桁の 16 進文字コードです。|  
+|`\` *nnn*|ASCII 文字と一致します。*nnn* は、8 進文字コードを表す 2 桁または 3 桁で構成されます。 たとえば、`\040` は、空白文字を表します。 この構成体は、1 桁のみの場合 (`\2` など)、またはキャプチャ グループの番号に対応する場合には前方参照として解釈されます。 (「[前方参照構成体](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md)」を参照してください。)|  
+|`\x` *nn*|ASCII 文字と一致します。*nn* は 2 桁の 16 進文字コードです。|  
 |`\c` *X*|ASCII の制御文字と一致します。X は制御文字です。 たとえば、`\cC` は CTRL-C です。|  
-|`\u` *nnnn*|値がある utf-16 コード単位と一致する *nnnn*  16 進数。 **注:** .NET では、Unicode を指定するために使用する perl5 の文字エスケープはサポートされていません。 Perl 5 の文字エスケープは `\x{`*####*`…}` の形式です。ここで、*####*`…` は一連の 16 進数です。 代わりに、 `\u`  *nnnn*です。|  
+|`\u` *nnnn*|値が *nnnn* の 16 進数である UTF-16 コード単位と一致します。 **注:** .NET では、Unicode を指定するために使用する Perl5 の文字エスケープはサポートされません。 Perl 5 の文字エスケープは `\x{`*####*`…}` の形式です。ここで、*####*`…` は一連の 16 進数です。 代わりに、`\u`*nnnn* を使用します。|  
 |`\`|エスケープ文字として認識されない文字が後ろに付いている場合は、その文字と一致します。 たとえば、`\*` はアスタリスク (*) と一致し、`\x2A` と同じです。|  
   
 ## <a name="an-example"></a>例  
@@ -76,5 +79,5 @@ ms.lasthandoff: 10/18/2017
 |`(.+)`|任意の文字と 1 回以上、一致します。 これが 2 番目のキャプチャ グループです。|  
 |`\r?\n`|復帰とそれに続く改行に、0 回または 1 回一致します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

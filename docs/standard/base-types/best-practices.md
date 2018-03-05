@@ -15,30 +15,33 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4d140c8bf88b296d4ad7d6de368117dfb310b4fa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4064e3f9bd9be425108baf934817645fc7fa51c2
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>.NET の正規表現に関するベスト プラクティス
-<a name="top"></a>.NET の正規表現エンジンは、比較するリテラル テキストと照合ではなくパターン一致に基づいてテキストを処理する、全機能を備えた強力なツールです。 ほとんどの場合は、すばやく効率的にパターン一致が実行されますが、 処理が非常に遅く見えることもあります。 極端なケースでは、比較的小さな入力の処理に何時間も何日もかかり、応答しなくなったように見えることさえあります。  
+<a name="top"></a> .NET の正規表現エンジンは、リテラル テキストの比較と照合ではなくパターン一致に基づいてテキストを処理する、完全な機能を備えた強力なツールです。 ほとんどの場合は、すばやく効率的にパターン一致が実行されますが、 処理が非常に遅く見えることもあります。 極端なケースでは、比較的小さな入力の処理に何時間も何日もかかり、応答しなくなったように見えることさえあります。  
   
  ここでは、正規表現で最適なパフォーマンスを確保するためのいくつかのベスト プラクティスの概要を説明します。 このチュートリアルは、次のセクションで構成されています。  
   
--   [入力ソースを検討してください。](#InputSource)  
+-   [入力ソースを考慮に入れる](#InputSource)  
   
--   [オブジェクトのインスタンス化を適切に処理します。](#ObjectInstantiation)  
+-   [オブジェクトのインスタンス化を適切に処理する](#ObjectInstantiation)  
   
--   [バックトラッ キングします。](#Backtracking)  
+-   [バックトラッキングを管理する](#Backtracking)  
   
--   [タイムアウト値を使用します。](#Timeouts)  
+-   [タイムアウト値を使用する](#Timeouts)  
   
--   [必要なときにのみキャプチャします。](#Capture)  
+-   [必要なときにのみキャプチャする](#Capture)  
   
 -   [関連トピック](#RelatedTopics)  
   
@@ -74,16 +77,16 @@ ms.lasthandoff: 10/18/2017
   
 -   パターンを開発するときには、バックトラッキングが正規表現エンジンのパフォーマンスに与える影響を考慮に入れます。特に、制約のない入力を処理する正規表現ではこれが重要です。 詳細については、このトピックの「[バックトラッキングを管理する](#Backtracking)」を参照してください。  
   
--   有効な入力だけでなく、無効な入力と有効に近い入力も使用して、正規表現を徹底的にテストします。 特定の正規表現に対する入力をランダムに生成するには、Microsoft Research の正規表現調査ツール [Rex](http://go.microsoft.com/fwlink/?LinkId=210756) を使用できます。  
+-   有効な入力だけでなく、無効な入力と有効に近い入力も使用して、正規表現を徹底的にテストします。 特定の正規表現に対する入力をランダムに生成するには、Microsoft Research の正規表現調査ツール [Rex](https://www.microsoft.com/en-us/research/project/rex-regular-expression-exploration/) を使用できます。  
   
  [ページのトップへ](#top)  
   
 <a name="ObjectInstantiation"></a>   
 ## <a name="handle-object-instantiation-appropriately"></a>オブジェクトのインスタンス化を適切に処理する  
- 中核です。NET の正規表現オブジェクト モデルは、<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>クラスで、正規表現エンジンを表します。 <xref:System.Text.RegularExpressions.Regex> エンジンの使用方法は、多くの場合、正規表現のパフォーマンスを左右する最大の要因になります。 正規表現を定義するときには、正規表現エンジンと正規表現パターンを密に結合する必要があります。 この結合のプロセスは、正規表現パターンをコンストラクターに渡して <xref:System.Text.RegularExpressions.Regex> オブジェクトをインスタンス化する場合も、分析する文字列と共に正規表現パターンを渡して静的メソッドを呼び出す場合も、必然的にコストが高くなります。  
+ .NET の正規表現オブジェクト モデルの中核となるのは、正規表現エンジンを表す <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> クラスです。 <xref:System.Text.RegularExpressions.Regex> エンジンの使用方法は、多くの場合、正規表現のパフォーマンスを左右する最大の要因になります。 正規表現を定義するときには、正規表現エンジンと正規表現パターンを密に結合する必要があります。 この結合のプロセスは、正規表現パターンをコンストラクターに渡して <xref:System.Text.RegularExpressions.Regex> オブジェクトをインスタンス化する場合も、分析する文字列と共に正規表現パターンを渡して静的メソッドを呼び出す場合も、必然的にコストが高くなります。  
   
 > [!NOTE]
->  解釈されたとコンパイルされる正規表現の使用のパフォーマンスに与える影響の詳細については、次を参照してください。[正規表現のパフォーマンスの最適化、パート II: 取得充電バックトラッ キングの管理](http://go.microsoft.com/fwlink/?LinkId=211566)BCL チームのブログでします。  
+>  解釈される正規表現を使用する場合とコンパイルされる正規表現を使用する場合のパフォーマンスへの影響に関する詳細な議論については、BCL チームのブログの「[Optimizing Regular Expression Performance, Part II: Taking Charge of Backtracking](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/)」(正規表現のパフォーマンスの最適化、パート II: バックトラッキングの管理) を参照してください。  
   
  正規表現エンジンを特定の正規表現パターンと結合し、そのエンジンを使用してテキストを照合するには、次のようにいくつかの方法があります。  
   
@@ -136,7 +139,7 @@ ms.lasthandoff: 10/18/2017
   
  要約すると、特定の正規表現について正規表現メソッドを呼び出す回数が比較的少ない場合は、解釈される正規表現を使用することをお勧めします。 特定の正規表現について正規表現メソッドを呼び出す回数が比較的多い場合は、コンパイルされる正規表現を使用することをお勧めします。 解釈される正規表現で実行速度の低下がスタートアップ時間の短縮を上回るしきい値や、コンパイルされる正規表現でスタートアップ時間の増加が実行速度の向上を上回るしきい値については、正確な値を特定するのは困難です。 これは、正規表現の複雑さや、処理される個々のデータなど、さまざまな要因に依存します。 特定のアプリケーションのシナリオにおいて、解釈される正規表現とコンパイルされる正規表現のどちらで最適なパフォーマンスが得られるかを特定するには、<xref:System.Diagnostics.Stopwatch> クラスを使用して実行時間を比較します。  
   
- 次の例は、Theodore Dreiser のテキスト内のすべての文を読み取るときに最初の 10 個の文を読み取るときにコンパイルと解釈される正規表現のパフォーマンスを比較*The Financier*です。 出力を見るとわかるように、正規表現の一致メソッドの呼び出しが 10 回だけの場合は、解釈される正規表現の方がコンパイルされる正規表現よりパフォーマンスが高くなります。 しかし、多数の呼び出し (この場合は 13,000 回以上) が行われる場合は、コンパイルされる正規表現の方がパフォーマンスが高くなります。  
+ 次の例では、Theodore Dreiser の『*The Financier*』の最初の 10 個の文を読み取る場合とすべての文を読み取る場合について、コンパイルされる正規表現と解釈される正規表現のパフォーマンスを比較しています。 出力を見るとわかるように、正規表現の一致メソッドの呼び出しが 10 回だけの場合は、解釈される正規表現の方がコンパイルされる正規表現よりパフォーマンスが高くなります。 しかし、多数の呼び出し (この場合は 13,000 回以上) が行われる場合は、コンパイルされる正規表現の方がパフォーマンスが高くなります。  
   
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/compare1.cs#5)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/compare1.vb#5)]  
@@ -153,7 +156,7 @@ ms.lasthandoff: 10/18/2017
 |`[.?:;!]`|ピリオド、疑問符、コロン、セミコロン、または感嘆符に一致します。|  
   
 ### <a name="regular-expressions-compiled-to-an-assembly"></a>正規表現: アセンブリへのコンパイル  
- .NET では、コンパイルされた正規表現を含むアセンブリを作成することもできます。 これにより、パフォーマンスの低下を招く正規表現のコンパイルを、実行時ではなくデザイン時に行うことができます。 ただし、追加の作業がいくつか必要になります。具体的には、正規表現を事前に定義して、アセンブリにコンパイルしなければなりません。 これにより、アセンブリの正規表現を使用するソース コードをコンパイルするときに、コンパイラがそのアセンブリを参照できるようになります。 アセンブリに含まれるコンパイル済みの各正規表現は、<xref:System.Text.RegularExpressions.Regex> の派生クラスによって表されます。  
+ .NET では、コンパイル済みの正規表現を含むアセンブリを作成することもできます。 これにより、パフォーマンスの低下を招く正規表現のコンパイルを、実行時ではなくデザイン時に行うことができます。 ただし、追加の作業がいくつか必要になります。具体的には、正規表現を事前に定義して、アセンブリにコンパイルしなければなりません。 これにより、アセンブリの正規表現を使用するソース コードをコンパイルするときに、コンパイラがそのアセンブリを参照できるようになります。 アセンブリに含まれるコンパイル済みの各正規表現は、<xref:System.Text.RegularExpressions.Regex> の派生クラスによって表されます。  
   
  正規表現をアセンブリにコンパイルするには、<xref:System.Text.RegularExpressions.Regex.CompileToAssembly%28System.Text.RegularExpressions.RegexCompilationInfo%5B%5D%2CSystem.Reflection.AssemblyName%29?displayProperty=nameWithType> メソッドを呼び出して、コンパイルする正規表現を表す <xref:System.Text.RegularExpressions.RegexCompilationInfo> オブジェクトの配列と、作成するアセンブリに関する情報を含む <xref:System.Reflection.AssemblyName> オブジェクトを渡します。  
   
@@ -165,12 +168,12 @@ ms.lasthandoff: 10/18/2017
   
  コンパイル済みの正規表現を使用してパフォーマンスを最適化する場合は、アセンブリの作成、正規表現エンジンの読み込み、およびそのパターン一致メソッドの実行にリフレクションを使用しないようにする必要があります。 そのためには、正規表現パターンを動的に構築しないこと、およびパターン一致オプション (大文字と小文字を区別しないパターン一致など) をアセンブリの作成時に指定することが要求されます。 さらに、アセンブリを作成するコードを、正規表現を使用するコードから分離する必要もあります。  
   
- 次の例は、コンパイル済みの正規表現を含むアセンブリを作成する方法を示しています。 という名前のアセンブリを作成`RegexLib.dll`1 つの正規表現クラスを`SentencePattern`、文に一致する正規表現を格納している使用パターン、 [vs を解釈します。コンパイルされる正規表現](#Interpreted)セクションです。  
+ 次の例は、コンパイル済みの正規表現を含むアセンブリを作成する方法を示しています。 この例では、`RegexLib.dll` という 1 つの正規表現クラスを含む `SentencePattern` という名前のアセンブリを作成しています。このクラスには、「[解釈される正規表現とコンパイルされる正規表現](#Interpreted)」セクションで使用した、文に一致する正規表現パターンが含まれています。  
   
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/compile1.cs#6)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/compile1.vb#6)]  
   
- この例を実行可能ファイルにコンパイルして実行すると、`RegexLib.dll` という名前のアセンブリが作成されます。 正規表現は、`Utilities.RegularExpressions.SentencePattern` から派生する <xref:System.Text.RegularExpressions.Regex> という名前のクラスによって表されます。 次の例は、Theodore Dreiser のテキストから文を抽出するコンパイル済みの正規表現を使用する、 *The Financier*です。  
+ この例を実行可能ファイルにコンパイルして実行すると、`RegexLib.dll` という名前のアセンブリが作成されます。 正規表現は、`Utilities.RegularExpressions.SentencePattern` から派生する <xref:System.Text.RegularExpressions.Regex> という名前のクラスによって表されます。 次の例では、このコンパイル済みの正規表現を使用して、Theodore Dreiser の『*The Financier*』のテキストから文を抽出しています。  
   
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/compile2.cs#7)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/compile2.vb#7)]  
@@ -182,7 +185,7 @@ ms.lasthandoff: 10/18/2017
  通常、正規表現エンジンは入力文字列内を直線的に進んで、入力文字列を正規表現パターンと比較します。 しかし、正規表現パターン内で不定量指定子 (`*`、`+`、`?` など) が使用されていると、パターン全体に対する一致を検索するために、それまでに見つかった部分的な一致を放棄して、以前に保存した状態に戻る場合があります。 このプロセスをバックトラッキングと呼びます。  
   
 > [!NOTE]
->  バックトラッ キングの詳細については、次を参照してください。[詳細正規表現の動作](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)と[バックトラッ キング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)です。 バックトラッ キングの詳細については、次を参照してください。[正規表現のパフォーマンスの最適化、パート II: バックトラッの料金を取得](http://go.microsoft.com/fwlink/?LinkId=211567)BCL チームのブログでします。  
+>  バックトラッキングの詳細については、「[正規表現の動作の詳細](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)」と「[バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)」を参照してください。 バックトラッキングに関する詳細な議論については、BCL チームのブログの「[Optimizing Regular Expression Performance, Part II: Taking Charge of Backtracking](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/)」(正規表現のパフォーマンスの最適化、パート II: バックトラッキングの管理) を参照してください。  
   
  バックトラッキングのサポートにより、正規表現はより強力かつ柔軟になります。 同時に、正規表現エンジンの動作を正規表現の開発者が制御することにもなります。 この責任を認識していない開発者によるバックトラッキングの誤用や過度なバックトラッキングへの依存が、多くの場合、正規表現のパフォーマンスを低下させる最大の要因になっています。 最悪のシナリオでは、入力文字列が 1 文字増えるたびに実行時間が倍増することもあります。 実際、バックトラッキングを過度に使用すると、入力が正規表現パターンにほぼ一致する場合に、プログラム的に無限ループと同等の状態に陥りやすくなります。そのような状態では、正規表現エンジンによる比較的短い入力文字列の処理に何時間も何日もかかることがあります。  
   
@@ -197,7 +200,7 @@ ms.lasthandoff: 10/18/2017
   
  ワード境界は単語文字と同じではなく、単語文字のサブセットでもないため、正規表現エンジンが単語文字の照合中にワード境界を越える可能性はありません。 したがって、この正規表現では、バックトラッキングが照合の全体的な成功に寄与することはありません。バックトラッキングを使用すると、正規表現エンジンが単語文字の照合に成功するたびに状態を保存しなければならなくなるため、パフォーマンスを低下させるだけです。  
   
- バックトラッ キングが必要ないことを確認する場合を使って無効にします`(?>``subexpression``)`言語要素です。 次の例では、2 つの正規表現を使用して入力文字列を解析しています。 1 つはバックトラッキングに依存する `\b\p{Lu}\w*\b`、 もう 1 つはバックトラッキングを無効にする `\b\p{Lu}(?>\w*)\b` です。 出力を見るとわかるように、どちらも結果は同じになります。  
+ バックトラッキングが不要であることがわかった場合は、`(?>``subexpression``)` 言語要素を使用して無効にすることができます。 次の例では、2 つの正規表現を使用して入力文字列を解析しています。 1 つはバックトラッキングに依存する `\b\p{Lu}\w*\b`、 もう 1 つはバックトラッキングを無効にする `\b\p{Lu}(?>\w*)\b` です。 出力を見るとわかるように、どちらも結果は同じになります。  
   
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack2.cs#10)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack2.vb#10)]  
@@ -259,7 +262,7 @@ ms.lasthandoff: 10/18/2017
   
 <a name="Capture"></a>   
 ## <a name="capture-only-when-necessary"></a>必要なときにのみキャプチャする  
- .NET の正規表現では、数多くのグループ化構成体がサポートされています。これらを使用すると、正規表現パターンを 1 つ以上の部分式にグループ化することができます。 .NET 正規表現言語で最もよく使用されるグループ化構成体は`(` *subexpression*`)`、番号付きキャプチャ グループを定義して`(?<`*名前*`>` *subexpression*`)`、名前付きキャプチャ グループを定義します。 グループ化構成体は、前方参照を作成したり、量指定子を適用する部分式を定義したりするのに欠かせません。  
+ .NET の正規表現では、数多くのグループ化構成体がサポートされています。これらを使用すると、正規表現パターンを 1 つ以上の部分式にグループ化することができます。 .NET の正規表現言語で最もよく使用されるグループ化構成体は、番号付きのキャプチャ グループを定義する `(`*subexpression*`)` と、名前付きのキャプチャ グループを定義する `(?<`*name*`>`*subexpression*`)` です。 グループ化構成体は、前方参照を作成したり、量指定子を適用する部分式を定義したりするのに欠かせません。  
   
  しかし、これらの言語要素の使用にはコストが伴います。 まず、<xref:System.Text.RegularExpressions.GroupCollection> プロパティから返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> オブジェクトに、最新の名前のないキャプチャまたは名前付きキャプチャが設定されます。また、1 つのグループ化構成体によって入力文字列の複数の部分文字列がキャプチャされた場合は、特定のキャプチャ グループの <xref:System.Text.RegularExpressions.CaptureCollection> プロパティから返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> オブジェクトに複数の <xref:System.Text.RegularExpressions.Capture> オブジェクトが設定されます。  
   
@@ -279,16 +282,16 @@ ms.lasthandoff: 10/18/2017
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/group1.cs#8)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/group1.vb#8)]  
   
- 量指定子を適用するためだけに部分式を使用していて、キャプチャされたテキストは特に必要ないという場合は、グループ キャプチャを無効にする必要があります。 たとえば、`(?:``subexpression``)`言語要素に適用すると、グループを一致した部分文字列を取得できなくなります。 次の例では、前の例の正規表現パターンが `\b(?:\w+[;,]?\s?)+[.?!]` に変更されています。 出力を見るとわかるように、これにより、<xref:System.Text.RegularExpressions.GroupCollection> コレクションと <xref:System.Text.RegularExpressions.CaptureCollection> コレクションが設定されなくなります。  
+ 量指定子を適用するためだけに部分式を使用していて、キャプチャされたテキストは特に必要ないという場合は、グループ キャプチャを無効にする必要があります。 たとえば、`(?:``subexpression``)` 言語要素をグループに適用すると、そのグループでは、一致した部分文字列がキャプチャされなくなります。 次の例では、前の例の正規表現パターンが `\b(?:\w+[;,]?\s?)+[.?!]` に変更されています。 出力を見るとわかるように、これにより、<xref:System.Text.RegularExpressions.GroupCollection> コレクションと <xref:System.Text.RegularExpressions.CaptureCollection> コレクションが設定されなくなります。  
   
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/group2.cs#9)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/group2.vb#9)]  
   
  キャプチャを無効にするには次のような方法があります。  
   
--   使用して、`(?:``subexpression``)`言語要素です。 この要素をグループに適用すると、そのグループでは、一致した部分文字列がキャプチャされなくなります。 入れ子になったグループによる部分文字列のキャプチャは無効になりません。  
+-   `(?:``subexpression``)` 言語要素を使用します。 この要素をグループに適用すると、そのグループでは、一致した部分文字列がキャプチャされなくなります。 入れ子になったグループによる部分文字列のキャプチャは無効になりません。  
   
--   <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> オプションを使用します。 これにより、正規表現パターン内の名前のないキャプチャ (暗黙的なキャプチャ) がすべて無効になります。 このオプションを使用する場合に定義されているグループをという名前と一致するを部分文字列のみ、`(?<``name``>``subexpression``)`言語要素をキャプチャすることができます。 <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> フラグは、`options` クラス コンストラクターの <xref:System.Text.RegularExpressions.Regex> パラメーターか、`options` の静的な一致メソッドの <xref:System.Text.RegularExpressions.Regex> パラメーターに渡すことができます。  
+-   <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> オプションを使用します。 これにより、正規表現パターン内の名前のないキャプチャ (暗黙的なキャプチャ) がすべて無効になります。 このオプションを使用した場合は、`(?<``name``>``subexpression``)` 言語要素を使用して定義した名前付きグループに一致する部分文字列のみがキャプチャされます。 <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> フラグは、`options` クラス コンストラクターの <xref:System.Text.RegularExpressions.Regex> パラメーターか、`options` の静的な一致メソッドの <xref:System.Text.RegularExpressions.Regex> パラメーターに渡すことができます。  
   
 -   `n` 言語要素の `(?imnsx)` オプションを使用します。 これにより、正規表現パターンでこの要素が出現する位置以降の名前のないキャプチャ (暗黙的なキャプチャ) がすべて無効になります。 パターンの末尾に到達するか、`(-n)` オプションによって名前のないキャプチャ (暗黙的なキャプチャ) が有効になるまで、キャプチャは無効のままです。 詳しくは、「[その他の構成体](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md)」を参照してください。  
   
@@ -299,7 +302,7 @@ ms.lasthandoff: 10/18/2017
 <a name="RelatedTopics"></a>   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[正規表現の動作の詳細](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|.NET の正規表現エンジンの実装について検討します。 正規表現の柔軟性に焦点を当てて、正規表現エンジンの効率的かつ堅牢な動作を確保するための開発者の責任について説明します。|  
 |[バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|バックトラッキングの概要と、正規表現のパフォーマンスに与える影響について説明し、バックトラッキングの代わりに使用できる言語要素について検討します。|  

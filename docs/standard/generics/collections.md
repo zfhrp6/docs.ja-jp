@@ -1,7 +1,7 @@
 ---
-title: ".NET Framework のジェネリック コレクション"
+title: ".NET の汎用コレクション"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 02/15/2018
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
@@ -13,27 +13,25 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- generics [.NET Framework], collections
-- generic collections [.NET Framework]
+- generics [.NET], collections
+- generic collections [.NET]
+- generic types [.NET]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d7e7d11446c14cffbef1e5cade5f082874187636
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 827d5a7edd335769ec5497518cbdf71181aacc2c
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
-# <a name="generic-collections-in-the-net-framework"></a>.NET Framework のジェネリック コレクション
-このトピックでは、.NET Framework のジェネリック コレクション クラスとその他のジェネリック型について概説します。  
-  
-## <a name="generic-collections-in-the-net-framework"></a>.NET Framework のジェネリック コレクション  
- .NET Framework クラス ライブラリでは、<xref:System.Collections.Generic> および <xref:System.Collections.ObjectModel> の名前空間に多数のジェネリック コレクション クラスが用意されています。 これらのクラスの詳細については、「[一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)」を参照してください。  
+# <a name="generic-collections-in-net"></a>.NET の汎用コレクション
+
+ .NET クラス ライブラリでは、<xref:System.Collections.Generic> および <xref:System.Collections.ObjectModel> の名前空間に多数のジェネリック コレクション クラスが用意されています。 各クラスについて詳しくは、「[一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)」を参照してください。  
   
 ### <a name="systemcollectionsgeneric"></a>System.Collections.Generic  
  ジェネリック コレクション型の多くは、非ジェネリック型に直接類似しています。 <xref:System.Collections.Generic.Dictionary%602> は、<xref:System.Collections.Hashtable> のジェネリック バージョンです。これは列挙体のために <xref:System.Collections.DictionaryEntry> ではなくジェネリック構造体 <xref:System.Collections.Generic.KeyValuePair%602> を使用します。  
@@ -51,7 +49,7 @@ ms.lasthandoff: 12/23/2017
  <xref:System.Nullable%601> ジェネリック構造体により、`null` が割り当て可能であるかのように値型を使用できます。 これは、値型が含まれるフィールドが欠落している可能性のあるデータベース クエリで作業するときに便利です。 ジェネリック型パラメーターには、任意の値型を指定できます。  
   
 > [!NOTE]
->  C# には null 許容型の構文があるので、その言語では <xref:System.Nullable%601> を明示的に使用する必要はありません。  
+>  C# および Visual Basic には null 許容型の構文があるので、その言語では <xref:System.Nullable%601> を明示的に使用する必要はありません。 「[Null 許容型 (C# プログラミング ガイド)](../../csharp/programming-guide/nullable-types/index.md)」および「[null 許容値型 (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)」を参照してください。 
   
  <xref:System.ArraySegment%601> ジェネリック構造体は、任意の型の 0 から始まる 1 次元の配列内で、要素の範囲を区切る方法を提供します。 ジェネリック型パラメーターは、配列の要素の型です。  
   

@@ -48,11 +48,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4f1918788a571e9626554eaeec9fdd3f1686d4cc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8917ce764d615282f95aad2eee494fcc0ba7a847
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="the-regular-expression-object-model"></a>正規表現のオブジェクト モデル
 <a name="introduction"></a> ここでは、.NET の正規表現を扱うときに使用するオブジェクト モデルについて説明します。 このチュートリアルは、次のセクションで構成されています。  
@@ -211,7 +211,7 @@ ms.lasthandoff: 12/23/2017
   
 -   `Match.Captures` プロパティは、用途が限定された <xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトを返します。 <xref:System.Text.RegularExpressions.Match> オブジェクトの `Success` プロパティが `false` の場合、コレクションに値は設定されません。 それ以外の場合は、<xref:System.Text.RegularExpressions.Capture> オブジェクトと同じ情報を含む単一の <xref:System.Text.RegularExpressions.Match> オブジェクトが格納されます。  
   
- これらのオブジェクトの詳細については、このトピックで後述する「[GroupCollection](#GroupCollection)」および「[CaptureCollection](#CaptureCollection)」を参照してください。  
+ これらのオブジェクトの詳細については、このトピックで後述する「[GroupCollection](#GroupCollection)」セクションおよび「[CaptureCollection](#CaptureCollection)」セクションを参照してください。  
   
  <xref:System.Text.RegularExpressions.Match> クラスの 2 つの追加プロパティに、一致文字列の情報が保持されます。 `Match.Value` プロパティは、正規表現パターンに一致する入力文字列内の部分文字列を返します。 `Match.Index` プロパティは、入力文字列内の一致する文字列の 0 から始まる開始位置を返します。  
   

@@ -17,15 +17,18 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-caps.latest.revision: "58"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 603633e1a0f385c061fe0928ea7361490d61fa3e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: dfcb0d0ace4bd42d89fe7b4c2dc04098858c2945
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="character-classes-in-regular-expressions"></a>正規表現での文字クラス
 <a name="Top"></a> 文字クラスは、いずれかが入力文字列に含まれると一致と見なされる文字のセットを定義します。 .NET の正規表現言語では、次の文字クラスがサポートされます。  
@@ -55,7 +58,7 @@ ms.lasthandoff: 11/21/2017
  .NET は、文字クラスの減算式をサポートしています。これにより、ある文字クラスから別の文字クラスを除外した結果を文字のセットとして定義できます。 詳細については、「[文字クラス減算](#CharacterClassSubtraction)」を参照してください。  
   
 > [!NOTE]
->  文字クラスをカテゴリ別などの文字に一致が[\w](#WordCharacter)単語文字に一致するか、 [\p {}](#CategoryOrBlock) Unicode カテゴリを一致するには、依存、<xref:System.Globalization.CharUnicodeInfo>文字に関する情報を提供するクラスカテゴリ。  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降の文字カテゴリは、[Unicode 標準バージョン 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/) に基づいています。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] から [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] の文字カテゴリは、[Unicode 標準バージョン 6.3.0](http://www.unicode.org/versions/Unicode6.3.0/) に基づいています。  
+>  カテゴリ別の文字に一致する文字クラス (単語文字に一致する [\w](#WordCharacter)、Unicode カテゴリに一致する [\p{}](#CategoryOrBlock) など) は、<xref:System.Globalization.CharUnicodeInfo> クラスを使用して文字カテゴリに関する情報を提供します。  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降の文字カテゴリは、[Unicode 標準バージョン 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/) に基づいています。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] から [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] の文字カテゴリは、[Unicode 標準バージョン 6.3.0](http://www.unicode.org/versions/Unicode6.3.0/) に基づいています。  
   
 <a name="PositiveGroup"></a>   
 ## <a name="positive-character-group--"></a>文字グループの肯定: [ ]  
@@ -181,7 +184,7 @@ ms.lasthandoff: 11/21/2017
      [!code-vb[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any1.vb#4)]  
   
 > [!NOTE]
->  `.` 言語要素は任意の文字と一致するので、正規表現パターンが任意の文字と複数回一致する場合に最短一致の量指定子と共によく使用されます。 詳細については、「[正規表現での量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」を参照してください。  
+>  `.` 言語要素は任意の文字と一致するので、正規表現パターンが任意の文字と複数回一致する場合に最短一致の量指定子と共によく使用されます。 詳細については、「[量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」を参照してください。  
   
  [ページのトップへ](#Top)  
   
@@ -253,7 +256,7 @@ ms.lasthandoff: 11/21/2017
  ECMAScript 準拠の動作が指定された場合、`\w` は `[a-zA-Z_0-9]` と同じになります。 ECMAScript 正規表現の詳細については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」の「ECMAScript 一致の動作」のセクションを参照してください。  
   
 > [!NOTE]
->  `\w` 言語要素は単語に使用される任意の文字と一致するので、正規表現パターンが単語に使用される任意の文字の後に特定の単語に使用される文字が続く語と複数回一致する場合に最短一致の量指定子と共によく使用されます。 詳細については、「[正規表現での量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」を参照してください。  
+>  `\w` 言語要素は単語に使用される任意の文字と一致するので、正規表現パターンが単語に使用される任意の文字の後に特定の単語に使用される文字が続く語と複数回一致する場合に最短一致の量指定子と共によく使用されます。 詳細については、「[量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」を参照してください。  
   
  `\w` 言語要素を使用して単語内の重複する文字を照合する例を次に示します。 この例では、次のように解釈できる正規表現パターン `(\w)\1` を定義しています。  
   
@@ -405,7 +408,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="SupportedUnicodeGeneralCategories"></a>   
 ## <a name="supported-unicode-general-categories"></a>サポートされている Unicode 一般カテゴリ  
- Unicode は、次の表に示されている一般カテゴリを定義しています。 詳細については、「[Unicode Character Database (Unicode 文字データベース)](http://go.microsoft.com/fwlink/?LinkId=57650)」内の「UCD File Format (UCD ファイル形式)」および「General Category Values (一般カテゴリの値)」を参照してください。  
+ Unicode は、次の表に示されている一般カテゴリを定義しています。 詳細については、「[Unicode Character Database (Unicode 文字データベース)](http://www.unicode.org/reports/tr44/)」内の「UCD File Format (UCD ファイル形式)」および「General Category Values (一般カテゴリの値)」を参照してください。  
   
 |カテゴリ|説明|  
 |--------------|-----------------|  
@@ -467,7 +470,7 @@ ms.lasthandoff: 11/21/2017
 |0250 ～ 02AF|`IsIPAExtensions`|  
 |02B0 ～ 02FF|`IsSpacingModifierLetters`|  
 |0300 ～ 036F|`IsCombiningDiacriticalMarks`|  
-|0370 ～ 03FF|`IsGreek`<br /><br /> または<br /><br /> `IsGreekandCoptic`|  
+|0370 ～ 03FF|`IsGreek`<br /><br /> - または -<br /><br /> `IsGreekandCoptic`|  
 |0400 ～ 04FF|`IsCyrillic`|  
 |0500 ～ 052F|`IsCyrillicSupplement`|  
 |0530 ～ 058F|`IsArmenian`|  
@@ -511,7 +514,7 @@ ms.lasthandoff: 11/21/2017
 |2000 ～ 206F|`IsGeneralPunctuation`|  
 |2070 ～ 209F|`IsSuperscriptsandSubscripts`|  
 |20A0 ～ 20CF|`IsCurrencySymbols`|  
-|20D0 ～ 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> または<br /><br /> `IsCombiningMarksforSymbols`|  
+|20D0 ～ 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> - または -<br /><br /> `IsCombiningMarksforSymbols`|  
 |2100 ～ 214F|`IsLetterlikeSymbols`|  
 |2150 ～ 218F|`IsNumberForms`|  
 |2190 ～ 21FF|`IsArrows`|  
@@ -597,7 +600,7 @@ ms.lasthandoff: 11/21/2017
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/classsubtraction1.cs#15)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/classsubtraction1.vb#15)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Char.GetUnicodeCategory%2A>  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
  [正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)

@@ -18,21 +18,24 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - examples [Visual Basic], strings
 - IsValidEmail
-- validation, e-mail strings
+- validation, email strings
 - input, checking
 - strings [.NET Framework], examples [Visual Basic]
-- e-mail [.NET Framework], validating
+- email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-caps.latest.revision: "30"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 03623cc4086981dc321aafe3020dcd571b74d9bc
-ms.sourcegitcommit: 9c4b8d457ffb8d134c9d55c6d7682a0f22e2b9a8
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: fdbb64cac1f1d4043b8b935fcad32aec88b7bb7a
+ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>方法 : 文字列が有効な電子メール形式であるかどうかを検証する
 正規表現を使用して文字列の形式が有効な電子メール形式であるかどうかを検証する例を次に示します。  
@@ -63,7 +66,7 @@ ms.lasthandoff: 10/20/2017
 |-------------|-----------------|  
 |`^`|文字列の先頭から照合を開始します。|  
 |`(?(")`|最初の文字が引用符であるかどうかを確認します。 `(?(")` は代替構成体の開始位置です。|  
-|`(?("")("".+?(?<!\\)""@)`|最初の文字が引用符である場合、始まりの引用符に続く 1 つ以上の任意の文字と終わりの引用符に一致します。 終わりの引用符は、円記号によって前ない必要があります (\\)。 `(?<!` はゼロ幅の否定先読みアサーションの開始です。 文字列はアット マーク (@) で終わる必要があります。|  
+|`(?("")("".+?(?<!\\)""@)`|最初の文字が引用符である場合、始まりの引用符に続く 1 つ以上の任意の文字と終わりの引用符に一致します。 終わりの引用符の前には円記号 (\\) を使用できません。 `(?<!` はゼロ幅の否定先読みアサーションの開始です。 文字列はアット マーク (@) で終わる必要があります。|  
 |`&#124;(([0-9a-z]`|最初の文字が引用符でない場合は、a ～ z または A ～ Z の任意の英字または 0 ～ 9 の任意の数字と一致します (比較では大文字小文字は区別されません)。|  
 |`(\.(?!\.))`|次の文字がピリオドの場合は、その文字と一致します。 ピリオドでない場合は、次の文字を先読みして照合を継続します。 `(?!\.)` は、2 つの連続するピリオドが電子メール アドレスのローカル部分に出現することを防ぐゼロ幅の負の先読みアサーションです。|  
 |``&#124;[-!#\$%&'\*\+/=\?\^`{}\&#124;~\w]``|次の文字がピリオドでない場合は、任意の単語文字または -!#$%'*+=?^`{}&#124;~ のいずれかの文字と一致します。|  
@@ -72,7 +75,7 @@ ms.lasthandoff: 10/20/2017
 |`(?<=[0-9a-z])`|@ 文字の前にくる文字が A ～ Z、a ～ z、または 0 ～ 9 である場合に照合を継続します。 `(?<=[0-9a-z])` 構成体は、ゼロ幅の正の後読みアサーションを定義します。|  
 |`(?(\[)`|@ に続く文字が左角かっこかどうかを確認します。|  
 |`(\[(\d{1,3}\.){3}\d{1,3}\])`|左角かっこの場合は、左角かっこ、それに続く IP アドレス (各セットがピリオドで区切られた、4 セットの 1 ～ 3 桁の数字)、および右角かっこと一致します。|  
-|`&#124;(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+`|@ に続く文字が、始め角かっこ、一致する 1 つの英数字、A ~ Z の値ではない場合 a ~ z、または 0 ~ 9、ハイフンの 0 個以上の出現の後に続く、値は A ~ Z、0 個または 1 つの英数字文字 a ~ z、または 0 ~ 9、ピリオドが続きます。 このパターンは 1 回以上繰り返すことができ、後ろに最上位ドメイン名が続く必要があります。|  
+|`&#124;(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+`|@ に続く文字が左角かっこでない場合は、値が A - Z、a - z、または 0 - 9 の 1 つの英数字の後に、ハイフンの 0 回以上の出現、A - Z、a - z、または 0 - 9 の値の 0 個または 1 つの英数字、さらにピリオドが続くパターンと一致します。 このパターンは 1 回以上繰り返すことができ、後ろに最上位ドメイン名が続く必要があります。|  
 |`[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))`|最上位ドメイン名では、最初の文字と最後の文字が英数字文字 (a ～ z、A ～ Z、0 ～ 9) である必要があります。 また、0 ～ 22 文字の ASCII 文字 (英数字またはハイフン) を含めることができます。|  
 |`$`|入力文字列の末尾で照合を終了します。|  
   
@@ -113,5 +116,5 @@ vbc /t:library RegexUtilities.vb
     vbc Example.vb /r:RegexUtilities.dll  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework 正規表現](../../../docs/standard/base-types/regular-expressions.md)
