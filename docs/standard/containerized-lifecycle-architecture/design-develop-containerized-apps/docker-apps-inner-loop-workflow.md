@@ -8,11 +8,11 @@ ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3605a6cd53db695de3af015a777e3c1a0e92af58
-ms.sourcegitcommit: 672c9cd122c13c9813f57f022c86ebdf6dd69b4f
+ms.openlocfilehash: 632c04507c1478238a5dc2573542f8c88bae2a51
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Docker アプリ用の内部ループ開発ワークフロー
 
@@ -123,7 +123,7 @@ DockerFile で (ポート 80) などの実行時に使用する TCP ポートを
 
 Docker は、アプリを実行する方法を認識しているように、dockerfile を使用している言語/フレームワークによって追加できる構成の他の行があります。 インスタンスでは、ENTRYPOINT 行が必要な\["dotnet"、"MyCustomMicroservice.dll"\]をビルドして、サービスを実行する方法に応じて複数のバリアントを持つことができますが、.NET Core のアプリを実行します。 .NET アプリをビルドして、実行、SDK と dotnet CLI を使用している場合は、若干異なるがなります。 一番下の行が、ENTRYPOINT 行と追加の行になりますアプリケーション用に選択した言語またはプラットフォームによって異なります。
 
-**詳細については** .NET Core アプリケーションの Docker イメージを構築する方法についてを参照してください<https://docs.microsoft.com/dotnet/articles/core/docker/building-net-docker-images>です。
+**詳細については** .NET Core アプリケーションの Docker イメージを構築する方法についてを参照してください<https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>です。
 
 独自のイメージの構築に関する詳細については、するには[https://docs.docker.com/engine/\チュートリアル/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/)です。
 
@@ -258,8 +258,8 @@ Visual Studio のコードは、Node.js と .NET Core コンテナーのよう�
 
 デバッグすることもできます Docker でコンテナーを .NET Core、Visual Studio を使用する場合、次のセクションで説明されているようです。
 
-**詳細情報:** Node.js Docker コンテナーのデバッグに関する詳細については、するには<https://blog.docker.com/2016/07/live-debugging-docker/>と[https://blogs.msdn.microsoft.com/\ユーザー\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/)です。
+**詳細情報:** Node.js Docker コンテナーのデバッグに関する詳細については、するには<https://blog.docker.com/2016/07/live-debugging-docker/>と[https://blogs.msdn.microsoft.com/\ ユーザー\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/)です。
 
 
 >[!div class="step-by-step"]
-[前](docker-アプリの開発-environment.md) [次へ] (visual-studio のツールでの-docker.md)
+[前] (docker-アプリの開発-environment.md) [次へ] (visual-studio のツールでの-docker.md)

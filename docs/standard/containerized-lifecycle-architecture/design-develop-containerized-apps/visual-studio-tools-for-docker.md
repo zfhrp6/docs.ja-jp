@@ -8,11 +8,11 @@ ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 717675170f19f18fb48c4cea3ddd15bcd9648d71
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0525633b23625d915fd447d438c6281fb14b3b46
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用
 
@@ -22,13 +22,13 @@ Visual Studio Code と Docker CLI を使用する場合は、Docker は、ワー
 
 Docker for Windows の最新のバージョンでは、これまでにアプリケーションを開発 Docker のため、次の参照で説明したように、セットアップは単純ですより簡単です。
 
-**詳細情報:** Docker for Windows のインストールに関する詳細については、するには<https://docs.docker.com/docker-for-windows/>です。
+**詳細情報:** Docker for Windows のインストールに関する詳細については、するには<https://docs.docker.com/docker-for-windows/>します。
 
 Visual Studio 2015 を使用している場合は、更新プログラム 3 またはそれ以降のバージョンと Visual Studio Tools for Docker が必要です。
 
 **詳細情報:** Visual Studio をインストールする方法の詳細についてを参照してください[https://www.visualstudio.com/\ 製品/vs-2015-製品のエディション](https://www.visualstudio.com/products/vs-2015-product-editions)です。
 
-Visual Studio Tools for Docker のインストールに関する詳細を参照するには、するには<http://aka.ms/vstoolsfordocker>と<https://docs.microsoft.com/dotnet/articles/core/docker/visual-studio-tools-for-docker>.
+Visual Studio Tools for Docker のインストールに関する詳細を参照するには、するには<http://aka.ms/vstoolsfordocker>と<https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker>です。
 
 Visual Studio 2017 を使用している場合、Docker のサポートは既にに含まれます。
 
@@ -74,4 +74,4 @@ Multicontainer を展開することを実行すると、1 つの docker compose
 
 
 >[!div class="step-by-step"]
-[前](docker-アプリ-内側のループ-workflow.md) [次へ] (set-up-windows-containers-with-powershell.md)
+[前] (docker-アプリ-内側のループ-workflow.md) [次へ] (set-up-windows-containers-with-powershell.md)
