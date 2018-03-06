@@ -1,4 +1,4 @@
-﻿---
+---
 title: "値オブジェクトの実装"
 description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 値オブジェクトの実装"
 keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2b7b85d2aa3c563fbd4c7cf89336827d25f22c0e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e6ac6f2d316a94e69c2599acf07aaaf6361b3e5a
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="implementing-value-objects"></a>値オブジェクトの実装
 
@@ -136,7 +136,7 @@ public class Address : ValueObject
 
 ### <a name="background-and-older-approaches-using-ef-core-11"></a>EF Core 1.1 を使用する背景と以前のアプローチ
 
-背景として、EF Core 1.0 と 1.1 を使用する場合、従来の .NET Framework で EF 6.x で定義されているような[複合型](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.schema.complextypeattribute?view=netframework-4.7)を使用できないという制限がありました。 そのため、EF Core 1.0 または 1.1 を使用する場合、値オブジェクトを ID フィールドを持つ EF エンティティとして格納する必要がありました。 そこで、ID を持たない値オブジェクトのように見えるように、ID を非表示にすることがありました。これで、値オブジェクトの ID がドメイン モデルで重要ではないことがはっきりします。 この ID を非表示にするには、[シャドウ プロパティ](https://docs.microsoft.com/ef/core/modeling/shadow-properties )として ID を使用します。 モデル内の ID を非表示にする構成は EF インフラストラクチャ レベルで設定されるため、ドメイン モデルでも透過的になります。
+背景として、EF Core 1.0 と 1.1 を使用する場合、従来の .NET Framework で EF 6.x で定義されているような[複合型](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute)を使用できないという制限がありました。 そのため、EF Core 1.0 または 1.1 を使用する場合、値オブジェクトを ID フィールドを持つ EF エンティティとして格納する必要がありました。 そこで、ID を持たない値オブジェクトのように見えるように、ID を非表示にすることがありました。これで、値オブジェクトの ID がドメイン モデルで重要ではないことがはっきりします。 この ID を非表示にするには、[シャドウ プロパティ](https://docs.microsoft.com/ef/core/modeling/shadow-properties )として ID を使用します。 モデル内の ID を非表示にする構成は EF インフラストラクチャ レベルで設定されるため、ドメイン モデルでも透過的になります。
 
 eShopOnContainers の初期バージョン (.NET Core 1.1) では、EF Core インフラストラクチャに必要な非表示の ID は、次のように、インフラストラクチャ プロジェクトで Fluent API を使用して DbContext レベルで実装されていました。 そのため、ID はドメイン モデルの観点からは非表示でしたが、インフラストラクチャには存在していました。
 
@@ -168,7 +168,7 @@ DDD の標準の値オブジェクト パターンと EF Core の所有エンテ
 ドメイン モデルのみを見ると、所有型には ID がないように見えます。
 実際には所有型に ID はありますが、所有者ナビゲーション プロパティはこの ID の一部です。
 
-所有型のインスタンスの ID は、完全に独自のものではありません。 この ID は 3 つのコンポーネントで構成されています。 
+所有型のインスタンスの ID は、完全に独自のものではありません。 この ID は 3 つのコンポーネントで構成されています。
 
 - 所有者の ID
 
@@ -252,8 +252,8 @@ public class Order
 
 public class OrderDetails
 {
-    public StreetAddress BillingAddress { get; set; }
-    public StreetAddress ShippingAddress { get; set; }
+    public Address BillingAddress { get; set; }
+    public Address ShippingAddress { get; set; }
 }
 
 public class Address
@@ -307,7 +307,7 @@ public class Address
 -   **Martin Fowler。値オブジェクト パターン**
     [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)
 
--   **Eric Evans。ドメイン駆動型設計: ソフトウェアの心臓部にある複雑さへの取り組み** (書籍、値オブジェクトについての記載あり) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+-   **Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (ドメイン駆動設計: ソフトウェア中心部の複雑さへの取り組み)。** (書籍、値オブジェクトについての記載あり) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 -   **Vaughn Vernon。ドメイン駆動型設計の実装** (書籍、値オブジェクトについての記載あり) [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)
 

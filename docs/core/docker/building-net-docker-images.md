@@ -14,11 +14,11 @@ ms.custom: mvc
 manager: wpickett
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 2b1a57fe264eda0a4d3186c7be8b0de01bd5f0a9
-ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
+ms.openlocfilehash: d5631bdbc0334640b290c08df17cba0bfe99fe85
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>.NET Core アプリケーションの Docker イメージのビルド
 
@@ -76,7 +76,7 @@ ms.lasthandoff: 01/24/2018
 
 開発、ビルドおよび実稼働の最適化されたシナリオに加え、次の追加イメージが提供されます。
 
-* `microsoft/dotnet:<version>-runtime-deps`: **runtime-deps** イメージには、オペレーティング システムと .NET Core で必要とされるすべてのネイティブ依存関係が含まれます。 このイメージは[自己完結型アプリケーション](https://docs.microsoft.com/dotnet/core/deploying/index)用です。
+* `microsoft/dotnet:<version>-runtime-deps`: **runtime-deps** イメージには、オペレーティング システムと .NET Core で必要とされるすべてのネイティブ依存関係が含まれます。 このイメージは[自己完結型アプリケーション](../deploying/index.md)用です。
 
 各バリアントの最新バージョン:
 

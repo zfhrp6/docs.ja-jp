@@ -7,11 +7,11 @@ ms.date: 10/26/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: aaf1ef968600a56d91267c6c12efa90d99446dd7
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: eef0197edb3aba555da63f1ea0b75726a826bd32
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>クラウドの準備が整って回復力のあるサービスを構築しますクラウド内の一時的な障害を受け入れる。 
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 01/19/2018
 
 アプリケーションには、少なくともは、ハードウェア ベースのモデルではなく、回復性のソフトウェア ベースのモデルに実装すると、クラウドの準備ができてです。 クラウド アプリケーションには、確実に発生する部分的な障害を採用する必要があります。 設計または部分的に予想される部分的な障害に対する回復力を達成したい場合、アプリケーションをリファクターする必要があります。 これは、一時的なネットワークの停止とノード、または Vm クラウドでクラッシュしたのと同様に、部分的な障害に対処を設計する必要があります。 Orchestrator クラスター内の別のノードに移動するものコンテナーには、アプリケーション内での断続的な短いエラー可能性があります。
 
-## <a name="handling-partial-failure"></a>部分的な障害を処理
+## <a name="handling-partial-failure"></a>部分的なエラーの処理
 
 クラウド ベースのアプリケーションでは、一部の障害のリスクがないです。 たとえば、1 つの web サイト インスタンスまたはコンテナーが失敗すると、または使用できなくなったり、短い時間があります。 または、1 つの VM またはサーバーがクラッシュする可能性があります。
 
@@ -47,15 +47,13 @@ HTTP リソースとデータベース リソースの両方には、これら�
 
 -   **部分的な障害に対処する回復力のある通信を実装します。**
 
-    [https://docs.microsoft.com/dotnet/standard/microservices-architecture/implement-resilient-applications/partial-failure-strategies](https://docs.microsoft.com/dotnet/standard/microservices-architecture/implement-resilient-applications/partial-failure-strategies)
+    [https://docs.microsoft.com/dotnet/standard/microservices-architecture/implement-resilient-applications/partial-failure-strategies](../../microservices-architecture/implement-resilient-applications/partial-failure-strategies.md)
 
 -   **Entity Framework 接続回復性と再試行ロジック (バージョン 6 以降)**
 
     [https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx](https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx)
 
 -   **Transient Fault Handling Application Block**
-
-<!-- -->
 
 -   [https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx](https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx)
 

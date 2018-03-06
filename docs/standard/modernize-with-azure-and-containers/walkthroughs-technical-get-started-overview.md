@@ -7,11 +7,11 @@ ms.date: 10/26/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ead28fe1ffe1e002af73642a1c3b2e72479520f4
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: bced3bed84d138dbda4f322322213b47c0159016
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>チュートリアルと技術は、開始の概要を取得します。 
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/06/2018
 
 このチュートリアルでは、次の 2 つのサンプルのレガシ アプリケーションの最初の実装を調べることができます。 両方のサンプル アプリは、モノリシックのアーキテクチャを持ち、従来の ASP.NET を使用して作成されました。 1 つのアプリケーションが ASP.NET に基づく 4.x MVC です。2 番目のアプリケーションは、ASP.NET 4.x Web フォームに基づいています。 両方のアプリケーションが、 [GitHub リポジトリの eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing)です。
 
-両方のサンプル アプリを containerize すると同様の方法を containerize するクラシック[Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf)をデスクトップ アプリケーションとして使用する (WCF) アプリケーションです。 例については、次を参照してください。 [eShopModernizingWCFWinForms](https://github.com/dotnet-architecture/eShopModernizingWCFWinForms)です。
+両方のサンプル アプリを containerize すると同様の方法を containerize するクラシック[Windows Communication Foundation](../../framework/wcf/whats-wcf.md)をデスクトップ アプリケーションとして使用する (WCF) アプリケーションです。 例については、次を参照してください。 [eShopModernizingWCFWinForms](https://github.com/dotnet-architecture/eShopModernizingWCFWinForms)です。
 
 ### <a name="goals"></a>目的
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/06/2018
 
 > ![元のレガシ アプリケーションのシナリオを単純なアーキテクチャ](./media/image5-1.png)
 >
-> **図 5-1。** 元のレガシ アプリケーションのシナリオを単純なアーキテクチャ
+> **図 5-1** 元のレガシ アプリケーションのシナリオを単純なアーキテクチャ
 
 ビジネス ドメインの観点から両方のアプリは管理機能に同じカタログを提供します。 EShop エンタープライズ チームのメンバーは表示および製品カタログを編集するアプリを使用します。 図 5-2 は、最初のアプリのスクリーン ショットを示しています。
 
@@ -97,7 +97,7 @@ Windows コンテナーの MVC、Web フォーム、または WCF、運用、開
 
 このチュートリアルの目的は、既存の .NET Framework アプリケーションを containerizing いくつかのオプションを表示します。 次の操作を行うことができます。
 
--   使用してアプリを containerize [Docker 用の Visual Studio 2017 Tools](https://docs.microsoft.com/dotnet/core/docker/visual-studio-tools-for-docker) (Visual Studio 2017 年 1 またはそれ以降のバージョン)。
+-   使用してアプリを containerize [Docker 用の Visual Studio 2017 Tools](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker) (Visual Studio 2017 年 1 またはそれ以降のバージョン)。
 
 -   手動で追加することによってアプリを containerize する[Dockerfile](https://docs.docker.com/engine/reference/builder/)を使用して、 [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)です。
 
@@ -163,7 +163,7 @@ Azure で Windows Server 2016 VM 上の Docker ホストに展開するには、
 
 ![Visual Studio Team Services での CI/CD パイプラインから Azure の仮想マシンを展開します。](./media/image5-6.png)
 
-> **図 5 ~ 6 です。** Visual Studio Team Services での CI/CD パイプラインから Azure の仮想マシンを展開します。
+> **図 5-6** Visual Studio Team Services での CI/CD パイプラインから Azure の仮想マシンを展開します。
 
 ### <a name="azure-vms-for-windows-containers"></a>Windows コンテナーの azure Vm
 

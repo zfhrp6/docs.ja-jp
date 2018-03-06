@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d1453a0d-317c-4da6-b68e-422a2c0bfe49
-ms.workload: dotnetcore
-ms.openlocfilehash: a38c2e5ff5e11cecaa75b8cd678c362a857d7ebc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 0428f93d4044fa0dd65a6f48ee425948fe052697
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="get-started-with-net-core"></a>.NET Core の概要
 
@@ -30,8 +31,8 @@ ms.lasthandoff: 12/23/2017
 * [C# および Visual Studio 2017 の .NET Core を使用したクラス ライブラリの構築](./tutorials/library-with-visual-studio.md) - Visual Studio 2017 を利用し、C# で記述されたクラス ライブラリをビルドする方法について説明します。
 * [Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリケーションの構築](./tutorials/vb-with-visual-studio.md) - Visual Basic および Visual Studio 2017 を使用し、単純な .NET Core コンソール アプリケーションを構築、デバッグ、公開する方法について説明します。 
 * [Visual Basic および Visual Studio 2017 の .NET Core を使用したクラス ライブラリの構築](./tutorials/vb-library-with-visual-studio.md) - Visual Studio 2017 を利用し、Visual Basic で記述されたクラス ライブラリをビルドする方法について説明します。
-* [Windows で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://www.visualstudio.com/products/code-vs) をインストールして使用する方法を示します。
-* [Get Started with .NET Core and Visual Studio 2017](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017) (.NET Core および Visual Studio 2017 の概要) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のクロスプラットフォーム コンソール アプリケーションを作成するために、Microsoft のフル機能の IDE である [Visual Studio 2017](https://www.visualstudio.com/) をインストールして使用する方法を示します。
+* [Windows で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://code.visualstudio.com/) をインストールして使用する方法を示します。
+* [Get Started with .NET Core and Visual Studio 2017](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017) (.NET Core および Visual Studio 2017 の概要) - この [Channel9](https://channel9.msdn.com) ビデオでは、.NET Core で最初のクロスプラットフォーム コンソール アプリケーションを作成するために、Microsoft のフル機能の IDE である [Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) をインストールして使用する方法を示します。
 * [コマンドラインを使用した .NET Core の概要](tutorials/using-with-xplat-cli.md) - [.NET Core クロスプラットフォーム コマンドライン インターフェイス (CLI)](tools/index.md) で任意のコード エディターを使用します。
 
 サポートされている Windows のバージョンの一覧については、[Windows 開発の前提条件](windows-prerequisites.md)に関するページをご覧ください。

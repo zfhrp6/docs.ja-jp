@@ -18,11 +18,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: dd257e7d481a12389f8a47921ab985ca82a157fc
-ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
+ms.openlocfilehash: 0a25ba2d72588dddf0ac1f88d4de59c623e31ff6
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>方法 : インストールされている .NET Framework バージョンを確認する
 ユーザーはコンピューターに複数のバージョンの .NET Framework をインストールして実行できます。 アプリを開発または配置する場合、どのバージョンの .NET Framework がユーザーのコンピューターにインストールされているかを確認しなければならない場合があります。 .NET Framework は、個別にバージョン管理される 2 つの主要コンポーネントで構成されています。  
@@ -133,7 +133,7 @@ ms.lasthandoff: 01/25/2018
 
 2. `Release` キーワードの値を確認して、インストールされているバージョンを決定します。 上位互換性を確認するには、テーブルに示されている値以上の値があるかを確認します。 .NET Framework のバージョンと関連付けられた `Release` キーワードを次に示します。
 
-    [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+    [!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
 
     |Version|Release DWORD の値|
     |-------------|--------------------------------|

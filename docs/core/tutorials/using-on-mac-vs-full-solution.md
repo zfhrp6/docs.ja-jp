@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 6945bedf-5bf3-4955-8588-83fb87511b79
-ms.workload: dotnetcore
-ms.openlocfilehash: f64bc6463c455a288a374604e42e6747f701b0e7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 0db67593340ea3bae00a45b845a0effe0c1fcab1
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
 
@@ -33,7 +34,7 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 - [.NET Core SDK 1.1 以降](https://www.microsoft.com/net/core#macos)
 - [Visual Studio 2017 for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
 
-必須コンポーネントの詳細については、「[Mac における .NET Core の前提条件](../../core/macos-prerequisites.md)」を参照してください。 Visual Studio 2017 for Mac の完全なシステム要件については、「[Visual Studio 2017 for Mac 製品ファミリのシステム要件](https://www.visualstudio.com/productinfo/vs2017-system-requirements-mac)」をご覧ください。
+必須コンポーネントの詳細については、「[Mac における .NET Core の前提条件](../../core/macos-prerequisites.md)」を参照してください。 Visual Studio 2017 for Mac の完全なシステム要件については、「[Visual Studio 2017 for Mac 製品ファミリのシステム要件](/visualstudio/productinfo/vs2017-system-requirements-mac)」をご覧ください。
 
 ## <a name="building-a-library"></a>ライブラリのビルド
 
@@ -197,4 +198,4 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
 ## <a name="see-also"></a>関連項目
 
-[Visual Studio 2017 for Mac リリース ノート](https://www.visualstudio.com/news/releasenotes/vs2017-mac-relnotes)
+[Visual Studio 2017 for Mac リリース ノート](/visualstudio/releasenotes/vs2017-mac-relnotes)

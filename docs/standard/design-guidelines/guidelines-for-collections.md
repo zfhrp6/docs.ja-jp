@@ -9,18 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 62205e6bea39214383f6a653d719c0285f374a9f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 09a2a075e21de6968989575385db07ab39eb627f
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="guidelines-for-collections"></a>コレクションに関するガイドライン
 任意の型が共通の特性を持つオブジェクトのグループの操作を厳密には、コレクションを見なすことができます。 実装するには、このような型に適したはほぼ<xref:System.Collections.IEnumerable>または<xref:System.Collections.Generic.IEnumerable%601>、このセクションの内容おのみ考慮されるようにコレクションにそれらのインターフェイスの一方または両方を実装する型。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 12/23/2017
   
  **X しないで**使用<xref:System.Collections.ArrayList>または<xref:System.Collections.Generic.List%601>パブリック Api でします。  
   
- これらの型は、パブリック Api ではなく、内部の実装で使用するためのデータ構造です。 `List<T>`パフォーマンスと電力消費 cleanness Api と柔軟性を犠牲に最適です。 返す場合など、 `List<T>`、いない続けることができますをクライアント コードは、コレクションを変更するときに通知を受信します。 また、`List<T>`など多くのメンバーを公開<xref:System.Collections.Generic.List%601.BinarySearch%2A>、いないの役に立たず、多くのシナリオに該当します。 次の 2 つのセクションでは、パブリック Api で使用する専用に設計された型 (抽象) について説明します。  
+ これらの型は、パブリック Api ではなく、内部の実装で使用するためのデータ構造です。 `List<T>` パフォーマンスと電力消費 cleanness Api と柔軟性を犠牲に最適です。 返す場合など、 `List<T>`、いない続けることができますをクライアント コードは、コレクションを変更するときに通知を受信します。 また、`List<T>`など多くのメンバーを公開<xref:System.Collections.Generic.List%601.BinarySearch%2A>、いないの役に立たず、多くのシナリオに該当します。 次の 2 つのセクションでは、パブリック Api で使用する専用に設計された型 (抽象) について説明します。  
   
  **X しないで**使用`Hashtable`または`Dictionary<TKey,TValue>`パブリック Api でします。  
   
@@ -61,7 +61,7 @@ ms.lasthandoff: 12/23/2017
   
  **✓ は**使用<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>のサブクラス`ReadOnlyCollection<T>`、まれなケースとして、または`IEnumerable<T>`プロパティまたは戻り値を表す読み取り専用のコレクションのです。  
   
- 一般に、必要に応じて`ReadOnlyCollection<T>`です。 いくつかの要件を満たしていない場合 (など、コレクションを実装する必要がありますいない`IList`)、実装することによってカスタム コレクションを使用して`IEnumerable<T>`、 `ICollection<T>`、または`IList<T>`です。 カスタムの読み取り専用コレクションを実装する場合は、実装`ICollection<T>.ReadOnly`false を返します。  
+ 一般に、必要に応じて`ReadOnlyCollection<T>`です。 いくつかの要件を満たしていない場合 (など、コレクションを実装する必要がありますいない`IList`)、実装することによってカスタム コレクションを使用して`IEnumerable<T>`、 `ICollection<T>`、または`IList<T>`です。 カスタムの読み取り専用コレクションを実装する場合は、実装`ICollection<T>.IsReadOnly`を返す`true`です。  
   
  あるか、唯一のシナリオをサポートすることがイテレーションを順方向専用であることを確認する場合、単に使用できます`IEnumerable<T>`です。  
   
@@ -135,7 +135,7 @@ ms.lasthandoff: 12/23/2017
   
  たとえば、文字列の読み取り専用コレクションを呼び出す必要があります`ReadOnlyStringCollection`です。  
   
- *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
+ *Portions © 2005, 2009 Microsoft Corporation.All rights reserved.*  
   
  *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   

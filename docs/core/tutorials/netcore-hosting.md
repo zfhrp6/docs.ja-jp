@@ -9,24 +9,25 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
-ms.workload: dotnetcore
-ms.openlocfilehash: 2f421c72e8099a328fbc255d51f77a9cd0724e58
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 3c358ab9173032b1f76d30b756ee6290233b2702
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="hosting-net-core"></a>.NET Core のホスティング
 
 あらゆるマネージ コードと同様に、.NET Core アプリケーションはホストにより実行されます。 ホストは、ランタイム (JIT やガベージ コレクターのようなコンポーネントを含む) の開始、AppDomain の作成、マネージ エントリ ポイントの呼び出しを担当します。
 
-.NET Core ランタイムのホスティングは高度なシナリオです。ほとんどの場合、.NET Core 開発者はホスティングについて心配する必要がありません。 .NET Core ビルド プロセスが .NET Core アプリケーションを実行するための既定ホストを提供するためです。 ただし、特別な状況で、ネイティブ プロセスのマネージ コードを呼び出す手段として、あるいはランタイムの動作をさらに細かくコントロールする目的で .NET Core ランタイムを明示的にホスティングすると効果的な場合があります。
+.NET Core ランタイムのホスティングは高度なシナリオです。ほとんどの場合、.NET Core 開発者はホスティングについて心配する必要がありません。.NET Core ビルド プロセスが .NET Core アプリケーションを実行するための既定ホストを提供するためです。 ただし、特別な状況で、ネイティブ プロセスのマネージ コードを呼び出す手段として、あるいはランタイムの動作をさらに細かくコントロールする目的で .NET Core ランタイムを明示的にホスティングすると効果的な場合があります。
 
 この記事では、ネイティブ コードから .NET Core ランタイムを開始し、最初のアプリケーション ドメイン (<xref:System.AppDomain>) を作成し、その中でマネージ コードを実行するために必要な手順について説明します。
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-ホストはネイティブ アプリケーションであるため、このチュートリアルでは、C++ アプリケーションを構築して .NET Core をホスティングする方法について説明します。 C++ 開発環境が必要になります ([Visual Studio](https://www.visualstudio.com/downloads/) に付属のものなど)。
+ホストはネイティブ アプリケーションであるため、このチュートリアルでは、C++ アプリケーションを構築して .NET Core をホスティングする方法について説明します。 C++ 開発環境が必要になります ([Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) に付属のものなど)。
 
 ホストをテストするための単純な .NET Core アプリケーションも必要です。そのため、[.NET Core SDK](https://www.microsoft.com/net/core) をインストールし、[小さい .NET Core テスト アプリを作成](../../core/tutorials/with-visual-studio.md)してください ('Hello World' アプリなど)。 新しい .NET Core コンソール プロジェクト テンプレートで作成される 'Hello World' アプリで十分です。
 

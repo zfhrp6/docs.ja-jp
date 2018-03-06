@@ -7,11 +7,11 @@ ms.date: 10/26/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4cb85c9dbcc7586510db9947d0151e3856964ef4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: adcb9d2352022cc94238296562b3eb7677bdf20b
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="what-about-cloud-optimized-applications"></a>クラウドに最適化されたアプリケーションについて説明します。
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 12/23/2017
 
 Microservices を使用していない新しいアプリケーションを作成すると、意味もなります。 Microservices ベースのアプローチがニーズを超える可能性がある新しいおよびも最新の多くのシナリオがあります。 場合によっては、可能性がありますだけシンプルなモノリシックな web アプリケーションを作成またはする N 層アプリケーションに粒度の粗いサービスを追加します。 このような場合は、することができますもクラウドを最大限に活用 Azure App Service によって提供されるものと同様に PaaS 機能します。 まだ制限に、メンテナンス作業を削減します。
 
-また、新しいコードを開発するためクラウドに向けて最適化されたシナリオ (完全なアプリケーションや部分的なサブシステムのため)、新しいコードを作成するときに使用することは新しいバージョンの .NET ([.NET Core](https://docs.microsoft.com/dotnet/core/)と[ASP.NET Core](https://docs.microsoft.com/aspnet/core/)、特に)。 これは .NET Core は効率的で高速なフレームワークであるために、microservices とコンテナーを作成する場合に特に当てはまります。 メモリ使用量およびコンテナーでは、高速の開始と、アプリケーションは、高パフォーマンスでされます。 このアプローチは microservices とコンテナーの要件とぴったり収まるし、クロスプラット フォーム framework する Linux、Windows Server、および Mac (Mac 開発環境用) で同じアプリケーションを実行することの利点を取得します。
+また、新しいコードを開発するためクラウドに向けて最適化されたシナリオ (完全なアプリケーションや部分的なサブシステムのため)、新しいコードを作成するときに使用することは新しいバージョンの .NET ([.NET Core](../../../core/index.md)と[ASP.NET Core](/aspnet/core/)、特に)。 これは .NET Core は効率的で高速なフレームワークであるために、microservices とコンテナーを作成する場合に特に当てはまります。 メモリ使用量およびコンテナーでは、高速の開始と、アプリケーションは、高パフォーマンスでされます。 このアプローチは microservices とコンテナーの要件とぴったり収まるし、クロスプラット フォーム framework する Linux、Windows Server、および Mac (Mac 開発環境用) で同じアプリケーションを実行することの利点を取得します。
 
 ## <a name="cloud-native-applications-with-cloud-optimized-applications"></a>クラウドに最適化されたアプリケーションとクラウド ネイティブ アプリケーション
 
@@ -65,7 +65,7 @@ Microservices アーキテクチャを最初から、または既存のアプリ
 
 Microservices アーキテクチャには、自律的なサービスの形式で、複数の独立したサブシステムに基づく分散し、大規模または複雑なミッションクリティカルなアプリケーションの推奨できるアプローチが高まっています。 Microservices ベースのアーキテクチャでは、アプリケーションができるサービスを独自に開発、テスト、バージョン管理、配置と拡張のコレクションとして構築されます。 マイクロ サービスごとに、関連する、自律的なデータベースでもかまいません。
 
-.NET Core を使用して実装できる microservices アーキテクチャの詳細については、表示、ダウンロード可能な PDF 電子書籍[.NET microservices: コンテナーの .NET アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)です。 このガイドもは[オンライン](https://docs.microsoft.com/dotnet/standard/microservices-architecture/)です。
+.NET Core を使用して実装できる microservices アーキテクチャの詳細については、表示、ダウンロード可能な PDF 電子書籍[.NET microservices: コンテナーの .NET アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)です。 このガイドもは[オンライン](../../microservices-architecture/index.md)です。
 
 強力な機能に依存しない展開、強力なサブシステム境界、およびテクノロジの多様性に提供して microservices シナリオにおいてさえ-も、多くの新しい課題が発生します。 断片化されていない、独立したデータ モデルなどの分散アプリケーションの開発に関連する課題に対処します。microservices; 間の回復力のある通信を実現します。最終的整合性; の必要性および運用の複雑さです。 Microservices より高度なモノリシック従来のアプリケーションと比較して複雑さを紹介します。
 

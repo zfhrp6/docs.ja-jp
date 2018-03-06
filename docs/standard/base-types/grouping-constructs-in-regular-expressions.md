@@ -26,11 +26,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b6e0b9d3482bbfc3dabeee1f6b7fce7a93364dfb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9b9e54d8bbc9ca7cc9172fd83bd15968b3cef8e1
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>正規表現でのグループ化構成体
 グループ化構成体は、正規表現の部分式を表し、入力文字列の部分文字列をキャプチャします。 グループ化構成体を使用して、以下を実行できます。  
@@ -421,7 +421,7 @@ ms.lasthandoff: 12/23/2017
 |`\w+`|1 個以上の単語文字の後に空白文字が続くパターンと一致します。|  
 |`\d{1,2},`|1 桁または 2 桁の 10 進数の後に空白文字とコンマが続くパターンと一致します。|  
 |`\d{4}\b`|4 桁の 10 進数と一致し、ワード境界で照合を終了します。|  
-|`(?<!(Saturday&#124;Sunday) )`|文字列 "Saturday" または "Sunday" の後に空白が続くパターン以外が一致の前にある場合は、一致と見なされます。|  
+|<code>(?<!(Saturday&#124;Sunday) )</code>|文字列 "Saturday" または "Sunday" の後に空白が続くパターン以外が一致の前にある場合は、一致と見なされます。|  
   
 <a name="nonbacktracking_subexpression"></a>   
 ## <a name="nonbacktracking-subexpressions"></a>非バックトラッキング部分式  

@@ -27,11 +27,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: db1c3af1bb3ad207278eed64a8fb2ef8ed6dc465
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ad4e8ab527ca59c21bf4771ca9d386866d9919f7
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="quantifiers-in-regular-expressions"></a>量指定子 (正規表現)
 量指定子は、一致と見なされるために入力中に存在する必要がある文字、グループ、または文字クラスの出現数を指定します。  次の表に、.NET でサポートされている量指定子の一覧を示します。  
@@ -273,7 +273,7 @@ ms.lasthandoff: 12/23/2017
 |パターン|説明|  
 |-------------|-----------------|  
 |`(a\1`|"a" と最初のキャプチャ グループの値に一致します …|  
-|`&#124;(?(1)`|… または、最初のキャプチャ グループが定義されているかどうかをテストします。 (`(?(1)` コンストラクトではキャプチャ グループは定義されないことに注意してください。)|  
+|<code>&#124;(?(1)</code>|… または、最初のキャプチャ グループが定義されているかどうかをテストします。 (`(?(1)` コンストラクトではキャプチャ グループは定義されないことに注意してください。)|  
 |`\1))`|最初のキャプチャ グループが存在する場合、その値と一致します。 グループが存在しない場合、そのグループは <xref:System.String.Empty?displayProperty=nameWithType> と一致します。|  
   
  最初の正規表現では 0 ～ 2 回、このパターンとの照合が行われます。2 番目の正規表現では、厳密に 2 回です。 最初のパターンは <xref:System.String.Empty?displayProperty=nameWithType> の最初のキャプチャでキャプチャの最小回数に達するため、`a\1` との照合は繰り返されません。`{0,2}` 量指定子では、最後の繰り返しでの空一致だけが許可されます。 一方、2 番目の正規表現では、2 回目の `a\1` が評価されるため、"a" に一致します。繰り返しの最小回数は 2 で、空一致の後でエンジンが繰り返さなければならない回数になります。  

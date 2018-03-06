@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: fcfb78bf521107b14d7796235f52c836f48f41fe
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: eec258ff01bcfeb834fa7a1138fdf822fd00c996
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Docker コンテナー用 .NET Framework を選択するタイミング
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 02/01/2018
 
 ## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>NET Core で使用できないサードパーティ製の .NET ライブラリや NuGet パッケージを使用する
 
-サードパーティ ライブラリでは [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) の採用が迅速に進められています。これにより、.NET Core を含むすべての種類の .NET でコードを共有できるようになります。 .NET Standard Library 2.0 以上では、異なるフレームワーク間での API サーフェスの互換性はかなり高くなっています。また、.NET Core 2.0 では、アプリケーションは既存の .NET Framework ライブラリを直接参照することもできます (「[compat shim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work)」を参照)。
+サードパーティ ライブラリでは [.NET Standard](../../net-standard.md) の採用が迅速に進められています。これにより、.NET Core を含むすべての種類の .NET でコードを共有できるようになります。 .NET Standard Library 2.0 以上では、異なるフレームワーク間での API サーフェスの互換性はかなり高くなっています。また、.NET Core 2.0 では、アプリケーションは既存の .NET Framework ライブラリを直接参照することもできます (「[compat shim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work)」を参照)。
 
 ただし、.NET Standard 2.0 および .NET Core 2.0 以降の進歩が並外れているとしても、特定の NuGet パッケージが実行に Windows を必要とし、.NET Core をサポートしていないというケースはあります。 これらのパッケージがアプリケーションに不可欠な場合は、Windows コンテナー上で .NET Framework を使用する必要があります。
 
@@ -56,16 +56,16 @@ Microsoft やサードパーティ製のプラットフォームの中には、.
 ### <a name="additional-resources"></a>その他の技術情報
 
 -   **.NET Core ガイド**
-    [*https://docs.microsoft.com/dotnet/core/index*](https://docs.microsoft.com/dotnet/core/index)
+    [*https://docs.microsoft.com/dotnet/core/index*](../../../core/index.md)
 
 -   **.NET Framework から .NET Core への移植**
-    [*https://docs.microsoft.com/dotnet/core/porting/index*](https://docs.microsoft.com/dotnet/core/porting/index)
+    [*https://docs.microsoft.com/dotnet/core/porting/index*](../../../core/porting/index.md)
 
 -   **Docker 上の .NET Framework ガイド**
-    [*https://docs.microsoft.com/dotnet/framework/docker/*](https://docs.microsoft.com/dotnet/framework/docker/)
+    [*https://docs.microsoft.com/dotnet/framework/docker/*](../../../framework/docker/index.md)
 
 -   **.NET コンポーネントの概要**
-    [*https://docs.microsoft.com/dotnet/standard/components*](https://docs.microsoft.com/dotnet/standard/components)
+    [*https://docs.microsoft.com/dotnet/standard/components*](../../components.md)
 
 
 

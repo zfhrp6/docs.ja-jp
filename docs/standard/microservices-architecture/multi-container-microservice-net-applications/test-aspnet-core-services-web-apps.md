@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 80b7fa75344f8737baacfba6462a03b436fdf6a8
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 596f588aae8c0814e5b40d29c4bf5723f944c5ac
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>ASP.NET Core サービスと Web アプリのテスト
 
@@ -102,12 +102,12 @@ public class PrimeWebDefaultRequestShould
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Steve Smith。コントローラーのテスト** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](https://docs.microsoft.com/aspnet/core/mvc/controllers/testing)
+-   **Steve Smith。コントローラーのテスト** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
 
--   **Steve Smith。統合テスト** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/testing/integration-testing*](https://docs.microsoft.com/aspnet/core/testing/integration-testing)
+-   **Steve Smith。統合テスト** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/testing/integration-testing*](/aspnet/core/testing/integration-testing)
 
 -   **dotnet test を使用した .NET Core での単体テスト**
-    [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test)
+    [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 -   **xUnit.net**。 公式サイト。
     [*https://xunit.github.io/*](https://xunit.github.io/)
@@ -125,7 +125,7 @@ public class PrimeWebDefaultRequestShould
 
 前述のとおり、マルチコンテナー アプリケーションをテストする際、すべてのマイクロサービスを Docker ホスト内やコンテナー クラスター内で実行している必要があります。 いくつかのマイクロサービスが関係する複数の操作を含むエンド ツー エンドのサービス テストでは、docker-compose up (または、オーケストレーターを使用している場合は相当するメカニズム) を実行して、Docker ホストでアプリケーション全体を展開して起動する必要があります。 アプリケーション全体とそのすべてのサービスが実行されると、エンド ツー エンドの統合テストと機能のテストを実行できます。
 
-使用できる方法はいくつかあります。 アプリケーションの展開に使用する docker-compose.yml ファイル (または、docker-compose.ci.build.yml などの同様のもの) では、ソリューション レベルで [dotnet test](https://docs.microsoft.com/dotnet/core/tools/dotnet-test) を使用してエントリ ポイントを拡張できます。 対象とするイメージで、テストを実行する別の Compose ファイルを使用することもできます。 コンテナー上のマイクロサービスとデータベースを含む統合テストで別の Compose ファイルを使用すれば、テストを実行する前に、関連するデータが元の状態に常にリセットされることを確認できます。
+使用できる方法はいくつかあります。 アプリケーションの展開に使用する docker-compose.yml ファイル (または、docker-compose.ci.build.yml などの同様のもの) では、ソリューション レベルで [dotnet test](../../../core/tools/dotnet-test.md) を使用してエントリ ポイントを拡張できます。 対象とするイメージで、テストを実行する別の Compose ファイルを使用することもできます。 コンテナー上のマイクロサービスとデータベースを含む統合テストで別の Compose ファイルを使用すれば、テストを実行する前に、関連するデータが元の状態に常にリセットされることを確認できます。
 
 Compose アプリケーションが起動し実行されると、Visual Studio を実行している場合はブレークポイントと例外を活用できます。 または、Visual Studio Team Services の CI パイプラインや Docker コンテナーをサポートする他の CI/CD システムで、統合テストを自動的に実行することができます。
 

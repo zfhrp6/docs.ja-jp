@@ -20,14 +20,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4b59b2b59852190bd19a3c1c9536fadb7b40603e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5b55271306abdca95694bd8fb2ebb6e538d060ae
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="post-schema-compilation-infoset"></a>スキーマのコンパイル後の情報セット
-W3C 勧告『[XML Schema](http://go.microsoft.com/fwlink/?linkid=45242)』では、スキーマ検証前とスキーマ コンパイル後に必ず公開する情報セットについて解説されています。 XML スキーマ オブジェクト モデル (SOM) は、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> の <xref:System.Xml.Schema.XmlSchemaSet> メソッドが呼び出される前と後について、この公開内容を調べます。  
+W3C 勧告『[XML Schema](https://www.w3.org/XML/Schema)』では、スキーマ検証前とスキーマ コンパイル後に必ず公開する情報セットについて解説されています。 XML スキーマ オブジェクト モデル (SOM) は、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> の <xref:System.Xml.Schema.XmlSchemaSet> メソッドが呼び出される前と後について、この公開内容を調べます。  
   
  スキーマの検証前の情報セットは、スキーマの編集時に作成されます。 スキーマ コンパイル後の情報セットは、<xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> の <xref:System.Xml.Schema.XmlSchemaSet> メソッドが呼び出された後、スキーマのコンパイル時に生成され、プロパティとして公開されます。  
   
