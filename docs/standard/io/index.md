@@ -16,18 +16,18 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-caps.latest.revision: "33"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9ddb94119d009d61e8126724df2a4b852b7ad3f5
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: e9ebd1a11684afaa143d1f016f31e0a29a3478db
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="file-and-stream-io"></a>ファイルおよびストリーム入出力
 ファイルおよびストリーム I/O (入出力) とは、ストレージ メディアとの間のデータの転送を指します。 .NET Framework では、`System.IO` 名前空間に、データ ストリームおよびファイルで同期的および非同期的に読み取りと書き込みを有効にする型が用意されています。 これらの名前空間には、ファイルを圧縮および圧縮解除する型、パイプとシリアル ポート経由の通信を有効にする型もあります。  
@@ -155,7 +155,7 @@ ms.lasthandoff: 01/09/2018
   
  必要に応じて、.NET Framework ストリームと Windows ランタイム ストリームを変換できます。 詳細については、「[方法: .NET Framework ストリームと Windows ランタイム ストリームの間で変換を行う](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)」または「[System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx)」を参照してください。 <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   
- [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでの I/O 操作の詳細については、Windows デベロッパー センターの「[クイック スタート: ファイルの読み取りと書き込み](http://go.microsoft.com/fwlink/p/?LinkId=243072)」を参照してください。  
+ [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでの I/O 操作の詳細については、「[Quickstart: Reading and writing files (XAML)](/previous-versions/windows/apps/hh758325(v=win.10))」 (クイック スタート: ファイルの読み取りと書き込み) を参照してください。  
   
 ## <a name="io-and-security"></a>I/O とセキュリティ  
  <xref:System.IO?displayProperty=nameWithType> 名前空間のクラスを使用する場合、アクセス制御リスト (ACL: Access Control List) などのオペレーティング システムのセキュリティ要件に従い、ファイルとディレクトリへのアクセスを制御する必要があります。 この要件の他にも、<xref:System.Security.Permissions.FileIOPermission> で指定されている要件を満たす必要があります。 ACL はプログラムで管理できます。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  

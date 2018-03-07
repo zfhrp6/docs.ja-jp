@@ -9,11 +9,11 @@ ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6822143df2d02c284d7506d180139c18cfbaf370
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 501a11f1bc6118e647cc414f4b83a14f6b41a37d
+ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Async および Await を使用した非同期プログラミング (C#)
 パフォーマンスのボトルネックを回避しアプリケーション全体の応答性を向上させるために、非同期プログラミングを使用できます。 ただ、非同期アプリケーションを作成する従来の方法は複雑で、プログラムの作成、デバッグ、保守が困難な場合があります。  
@@ -146,7 +146,7 @@ string urlContents = await client.GetStringAsync();
 ##  <a name="BKMK_APIAsyncMethods"></a> API の非同期メソッド  
  非同期のプログラミングをサポートする `GetStringAsync` などのメソッドがどこにあるのかということです。 .NET Framework 4.5 以降および .NET Core には、`async` および `await` で使用する多くのメンバーが含まれています。 メンバー名に付記されている "Async" というサフィックスと、その戻り値の型である <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> から識別できます。 たとえば、`System.IO.Stream` のクラスには、同期メソッドの <xref:System.IO.Stream.CopyTo%2A>、<xref:System.IO.Stream.Read%2A>、および <xref:System.IO.Stream.Write%2A> と共に、<xref:System.IO.Stream.CopyToAsync%2A>、<xref:System.IO.Stream.ReadAsync%2A> および <xref:System.IO.Stream.WriteAsync%2A> という同期メソッドが含まれています。  
   
- Windows ランタイムにも、Windows アプリの `async` と `await` で使用できる多くのメソッドが含まれています。 UWP 開発の詳細については、「[スレッド化と非同期プログラミング](/windows/uwp/threading-async/)」を参照してください。旧バージョンの Windows ランタイムを使用する場合は、「[非同期プログラミング (Windows ストア アプリ)](/previous-versions/windows/apps/hh464924(v=win.10))」および「[クイック スタート: await 演算子を使用した非同期プログラミング](/previous-versions/windows/apps/hh452713(v=win.10))」を参照してください。  
+ Windows ランタイムにも、Windows アプリの `async` と `await` で使用できる多くのメソッドが含まれています。 UWP 開発の詳細については、「[スレッド化と非同期プログラミング](/windows/uwp/threading-async/)」を参照してください。旧バージョンの Windows ランタイムを使用する場合は、「[Asynchronous programming (Windows Store apps)](/previous-versions/windows/apps/hh464924(v=win.10))」 (非同期プログラミング (Windows ストア アプリ)) および「[Quickstart: Calling asynchronous APIs in C# or Visual Basic](/previous-versions/windows/apps/hh452713(v=win.10))」(クイック スタート: C# または Visual Basic での非同期 API の呼び出し) を参照してください。  
   
 ##  <a name="BKMK_Threads"></a>スレッド  
 非同期のメソッドは非ブロッキング操作を意図しています。 非同期のメソッドの `await` 式は、待機中のタスクの実行中に現在のスレッドをブロックしません。 代わりに、式はメソッドの残りの部分の継続を登録し、非同期のメソッドの呼び出し元にコントロールを戻します。  
