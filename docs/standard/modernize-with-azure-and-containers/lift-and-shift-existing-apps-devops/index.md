@@ -4,16 +4,18 @@ description: "Azure クラウドおよび Windows コンテナーで既存の .N
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 08bf7da36714b2c18d96659814bb11df6d9b26fc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: af9457552a71e4cb5cffe95ce1f33ccfa227268a
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="lift-and-shift-existing-apps-devops"></a>既存のアプリの DevOps のリフト アンド シフト
+
 > ビジョン: 既存の .NET Framework アプリケーションを Cloud DevOps 対応アプリケーションにリフト アンド シフトすると、展開の機敏性が大幅に改善され、短期間で少ない配信コストで出荷できるようになります。
 
 クラウドやコンテナーなどの新しいテクノロジのメリットを活用するために、既存の .NET アプリケーションを少なくとも部分的に最新化する必要があります。 最終的に、エンタープライズ アプリケーションを最新化すると、総保有コストが低下します。

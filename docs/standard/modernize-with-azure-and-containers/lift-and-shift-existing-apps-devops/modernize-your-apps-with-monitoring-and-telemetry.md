@@ -4,14 +4,15 @@ description: "コンテナーの .NET アプリケーションの .NET Microserv
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1535951eb648deab17cf8c2fe64db6ddf7df4cb5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3caeb60cf0107aaf5413d935f3bde11863561c7d
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>監視と遠隔測定でアプリを最新化します。
 
@@ -37,7 +38,7 @@ Azure インフラストラクチャ ログとの関連ログ分析、Azure サ�
 
 [コンテナー監視ソリューション](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers)ではログ分析、表示および 1 つの場所で、Docker と Windows コンテナー ホストを管理します。 ソリューションは、どのコンテナーを示しています。 実行して、どのようなコンテナー イメージを実行していると、コンテナーが実行されています。 コンテナーで使用されているコマンドを含む、詳細な監査情報を表示することができます。 また、コンテナーを表示し、Docker または Windows のホストをリモートで表示することがなく一元的なログを検索トラブルシューティングすることもできます。 ホスト上のノイズの多いと使用の余分なリソースがあるコンテナーを検索できます。 さらに、一元的な CPU、メモリ、記憶域、およびネットワーク使用率およびパフォーマンスについては、コンテナーを表示することができます。 Windows を実行するコンピューター上には、集中管理し、Windows Server からログを比較することができます、HYPER-V と Docker のコンテナーです。 ソリューションには、次のコンテナー orchestrators がサポートされています。
 
--   Docker 群
+-   Docker Swarm
 
 -   DC/OS
 

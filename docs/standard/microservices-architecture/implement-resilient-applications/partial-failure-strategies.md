@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: baeeb47dde77ceaa461214f55482d2312d67ccec
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0b5fdb03e4b0d0c2d4e8aa8a897fd46d56707f11
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="strategies-for-handling-partial-failure"></a>部分的なエラーを処理するための戦略
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/19/2018
 
 **フォールバックを実行する**。 この方法の場合、クライアント プロセスは、要求が失敗したときに、キャッシュ データや既定値を返すなどのフォールバック ロジックを実行します。 これは、クエリに適した方法で、更新やコマンドの場合は、複雑さが増します。
 
-**キューに格納する要求の数を制限する**。 クライアントは、クライアント マイクロサービスが特定のサービスに送信できる未処理の要求数に対して、上限を課す必要もあります。 制限に達した場合は、追加の要求を行ってもたいていは無意味で、それらの試みは直ちに失敗します。 実装に関しては、Polly の [バルクヘッド分離](https://github.com/App-vNext/Polly/wiki/Bulkhead)ポリシーを使用して、この要件を満たすことができます。 この方法は、本質的には、[SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?view=netcore-1.1) を実装として使用した並列化スロットルです。 バルクヘッドの外側の "キュー" も許可されます。 (たとえば、容量が一杯であると思われた理由で) 実行前であっても、過度の負荷をプロアクティブに取り除くことができます。 これにより、特定のエラー シナリオへの対処をサーキット ブレーカーよりも速く行うことができます (サーキット ブレーカーは、エラーを待機しているため)。 Polly の BulkheadPolicy オブジェクトを見ると、バルクヘッドとキューがどのくらい一杯になっているかがわかります。また、このオブジェクトは、オーバーフローに関するイベントを提供するので、自動水平スケールの駆動に使用することもできます。
+**キューに格納する要求の数を制限する**。 クライアントは、クライアント マイクロサービスが特定のサービスに送信できる未処理の要求数に対して、上限を課す必要もあります。 制限に達した場合は、追加の要求を行ってもたいていは無意味で、それらの試みは直ちに失敗します。 実装に関しては、Polly の [バルクヘッド分離](https://github.com/App-vNext/Polly/wiki/Bulkhead)ポリシーを使用して、この要件を満たすことができます。 この方法は、本質的には、<xref:System.Threading.SemaphoreSlim> を実装として使用した並列化スロットルです。 バルクヘッドの外側の "キュー" も許可されます。 (たとえば、容量が一杯であると思われた理由で) 実行前であっても、過度の負荷をプロアクティブに取り除くことができます。 これにより、特定のエラー シナリオへの対処をサーキット ブレーカーよりも速く行うことができます (サーキット ブレーカーは、エラーを待機しているため)。 Polly の BulkheadPolicy オブジェクトを見ると、バルクヘッドとキューがどのくらい一杯になっているかがわかります。また、このオブジェクトは、オーバーフローに関するイベントを提供するので、自動水平スケールの駆動に使用することもできます。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/19/2018
 -   **回復性に優れた Azure 用アプリケーションの設計**
     [*https://docs.microsoft.com/azure/architecture/resiliency/*](https://docs.microsoft.com/azure/architecture/resiliency/)
 
--   **一時的な障害の処理**
+-   **一時的フォールト処理**
     <https://docs.microsoft.com/azure/architecture/best-practices/transient-faults>
 
 

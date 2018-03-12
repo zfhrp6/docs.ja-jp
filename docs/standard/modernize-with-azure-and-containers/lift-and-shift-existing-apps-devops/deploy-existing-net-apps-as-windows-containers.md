@@ -4,20 +4,21 @@ description: "コンテナーの .NET アプリケーションの .NET Microserv
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f9a30605313c06542fabf9689f700ed726445f57
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bab6e275c93d2cedddf010ab20f98cb8392fa9fa
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Windows コンテナーとして既存の .NET アプリを展開します。
 
 Windows コンテナーに基づいた展開は、クラウドに最適化されたアプリケーション、クラウド ネイティブ アプリケーション、およびクラウド DevOps 対応アプリケーションに適用されます。
 
-Windows コンテナーの使用について説明、このガイドで、次のセクションで*クラウド DevOps 対応*リフト既存の .NET アプリケーションをシフトすると、アプリケーションです。
+Windows コンテナーの使用にこのガイドでは、次のセクションでフォーカスがある*クラウド DevOps 対応*リフト既存の .NET アプリケーションをシフトすると、アプリケーションです。
 
 ## <a name="what-are-containers-linux-or-windows"></a>コンテナーとは? (Linux または Windows)
 
@@ -41,7 +42,7 @@ Windows コンテナーでアプリケーションのパッケージ化のプロ
 
 多数の組織では、次の理由でモノリシックな既存のアプリケーションを containerizing は。
 
--   **クラウドに改善された展開をリリース**です。 コンテナーは、開発と運用の間で一貫性のある展開のコントラクトを提供します。 コンテナーを使用するときと開発者が聞こえません () で"、私のコンピューターでは、しないのはなぜ実稼働環境でですか?" できますだけでよく言わ「として実行されます、コンテナー、ため、実稼働環境で実行されます」 およびすべての依存関係のパッケージ化されたアプリケーションは、サポートされているコンテナー ベース環境で実行できます。 すべての配置対象 (dev、QA、ステージング、実稼働) で実行する意図された方法で実行されます。 1 つの段階から次に、展開を大幅に向上させるに移動する、コンテナーがほとんど frictions を排除し、高速化を出荷することができます。
+-   **クラウドに改善された展開をリリース**です。 コンテナーは、開発と運用の間で一貫性のある展開のコントラクトを提供します。 コンテナーを使用するときと開発者が聞こえません () で"、私のコンピューターでは、しないのはなぜ実稼働環境でですか?" できますだけでよく言わ「として実行されます、コンテナー、実稼働環境で実行するためです」 およびすべての依存関係のパッケージ化されたアプリケーションは、サポートされているコンテナー ベース環境で実行できます。 すべての配置対象 (dev、QA、ステージング、実稼働) で実行する意図された方法で実行されます。 1 つの段階から次に、展開を大幅に向上させるに移動する、コンテナーがほとんど frictions を排除し、高速化を出荷することができます。
 
 -   **コスト削減**です。 コンテナーは、統合と既存のハードウェア、またはハードウェアの単位あたり高密度でアプリケーションを実行してから削除するか、コスト削減につながります。
 
@@ -51,7 +52,7 @@ Windows コンテナーでアプリケーションのパッケージ化のプロ
 
 アジリティ、移植性、およびコントロールでの大きな改善点最終的に発生するコストを大幅に削減開発およびアプリケーションを管理するコンテナーを使用する場合。
 
-## <a name="what-is-docker"></a>Docker とは何ですか。
+## <a name="what-is-docker"></a>Docker について
 
 [Docker](https://www.docker.com/)は、[オープン ソース プロジェクト](https://github.com/docker/docker)クラウドまたは内部設置型で実行でき、移植可能で自分のコンテナーとしてのアプリケーションの展開を自動化します。 Docker は、また、[会社](https://www.docker.com/)を昇格し、このテクノロジは進化します。 会社は、クラウド、Linux、およびなどの Microsoft Windows ベンダーと共同で動作します。
 
@@ -81,9 +82,9 @@ Windows コンテナーを使用する利点は基本的には同様の利点が
 
 .NET Framework と .NET Core の違いと同様に Docker、によってサポートされているオペレーティング システムの多様性を指定するには、特定の OS とを使用しているフレームワークに基づいて特定のバージョンをターゲットする必要があります。
 
-Windows の場合は、Windows Server Core または Nano Server の Windows を使用できます。 これらのバージョンの Windows には、.NET Framework または .NET Core アプリケーションによって必要になる可能性があります (Kestrel と同様に、自己ホスト型の web サーバーと IIS) などの別の特性が実現します。
+Windows の場合、Windows Server Core または Windows Nano Server を使用できます。 これらのバージョンの Windows には、.NET Framework または .NET Core アプリケーションによって必要になる可能性があります (Kestrel と同様に、自己ホスト型の web サーバーと IIS) などの別の特性が実現します。
 
-For Linux ディストリビューションの場合は複数、使用可能な (Debian) などの公式の .NET Docker イメージでサポートされているです。
+Linux の場合、複数のディストリビューションを利用できます。また、Linux は公式の .NET Docker イメージ (Debian など) でサポートされています。
 
 図 4-7 は、.NET Framework のアプリのバージョンによっては、対象できます OS バージョンを示しています。
 
@@ -95,14 +96,14 @@ For Linux ディストリビューションの場合は複数、使用可能な 
 
 Dockerfile は、ファイルをイメージ名を追加する場合は、.NET Framework ベースの Windows コンテナー イメージの次の例のように、タグを使用して、オペレーティング システムとバージョンを選択できます。
 
-> | タグ | **システムとバージョン** |
+> | **タグ** | **システムとバージョン** |
 > |---|---|
 > | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET framework 4.x を Windows Server Core |
 > | **microsoft/aspnet:4.x-windowsservercore** | .NET framework 4.x で Windows Server Core での他の ASP.NET カスタマイズ |
 
 .NET core (Linux と Windows はクロス プラットフォーム)、タグは次のようになります。
 
-> | タグ | **システムとバージョン**
+> | **タグ** | **システムとバージョン**
 > |---|---|
 > | **microsoft/dotnet:2.0.0-runtime** | .NET core 2.0 Linux 上のランタイムのみ |
 > | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET core 2.0 Windows Nano Server でのランタイムのみ |

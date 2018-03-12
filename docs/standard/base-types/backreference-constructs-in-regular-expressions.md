@@ -24,11 +24,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2ec92933bdf123412a3d489fc493d76c4a0dc0d0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b4cecc44ff740dd99d10131341c6a6056ce3aab3
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>正規表現での前方参照構成体
 前方参照は、文字列内の繰り返しの文字または部分文字列を識別するために便利な方法を提供します。 たとえば、入力文字列に複数回出現する任意の部分文字列が含まれている場合は、キャプチャ グループを使用して最初の一致を検出し、前方参照を使用して部分文字列の後続の出現箇所を見つけます。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/23/2017
   
  `\` *number*  
   
- ここで、*number* は、正規表現でのキャプチャ グループの位置を表す序数です。 たとえば、`\4` は 4 番目のキャプチャ グループの内容と一致します。 *number* が正規表現パターンで定義されていない場合は、解析エラーが発生し、正規表現エンジンが <xref:System.ArgumentException> をスローします。 たとえば、正規表現 `\b(\w+)\s\1` は有効です (`(\w+)` が式の中の最初で唯一のキャプチャ グループであるため)。 これに対して、`\b(\w+)\s\2` は無効であり、引数の例外がスローされます (`\2` という番号のキャプチャ グループは存在しないため)。  
+ ここで、*number* は、正規表現でのキャプチャ グループの位置を表す序数です。 たとえば、`\4` は 4 番目のキャプチャ グループの内容と一致します。 *number* が正規表現パターンで定義されていない場合は、解析エラーが発生し、正規表現エンジンが <xref:System.ArgumentException> をスローします。 たとえば、正規表現 `\b(\w+)\s\1` は有効です (`(\w+)` が式の中の最初で唯一のキャプチャ グループであるため)。 これに対して、`\b(\w+)\s\2` は無効であり、引数の例外がスローされます (`\2` という番号のキャプチャ グループは存在しないため)。 さらに、*number* が特定の序数位置のキャプチャ グループを示していても、そのキャプチャ グループにその序数位置とは異なる数値名が割り当てられている場合、正規表現パーサーで <xref:System.ArgumentException> もスローされます。 
   
  同じ表記法を使用した、8 進数のエスケープ コード (`\16` など) と `\`*number* 前方参照との間には、あいまいさがあることに注意してください。 このあいまいさは、次のように解決されます。  
   
@@ -87,12 +87,24 @@ ms.lasthandoff: 12/23/2017
   
  [!code-csharp[RegularExpressions.Language.Backreferences#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference2.cs#2)]
  [!code-vb[RegularExpressions.Language.Backreferences#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference2.vb#2)]  
-  
- *name* は数字の文字列表現とすることもできます。 たとえば、次の例では正規表現 `(?<2>\w)\k<2>` を使用して、文字列内の単語の重複した文字を検索します。  
+
+## <a name="named-numeric-backreferences"></a>名前付き数値前方参照
+
+`\k` を使用する名前付き前方参照の場合、*name* は数字の文字列表現にすることもできます。 たとえば、次の例では正規表現 `(?<2>\w)\k<2>` を使用して、文字列内の単語の重複した文字を検索します。 この例では、明示的に "2" という名前が付けられたキャプチャ グループを定義し、これに応じて、前方参照には "2" という名前が付けられています。 
   
  [!code-csharp[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference3.cs#3)]
  [!code-vb[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference3.vb#3)]  
-  
+
+*name* が数字の文字列表現で、その名前を持つキャプチャ グループが存在しない場合、`\k<`*name*`>` は前方参照 `\`*number* と同じになります。ここで、*number* はキャプチャの序数位置です。 次の例には、`char` という名前の単一のキャプチャ グループがあります。 前方参照構成体ではこれを `\k<1>` と呼びます。 例からの出力に示されているように、`char` は最初のキャプチャ グループであるため、<xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> の呼び出しは正常に行われています。
+
+[!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference6.cs)]
+[!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference6.vb)]  
+
+ただし、*name* が数字の文字列表現であり、その位置のキャプチャ グループに数値名が明示的に割り当てられている場合、正規表現パーサーではその序数位置でキャプチャ グループを識別することはできません。 代わりに、<xref:System.ArgumentException> をスローします。次の例の唯一のキャプチャ グループには "2" という名前が付けられています。 `\k` コンストラクトが "1" という名前の前方参照を定義するために使用されているため、正規表現パーサーは最初のキャプチャ グループを識別できず、例外をスローします。
+
+[!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference7.cs)]
+[!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference7.vb)]  
+
 ## <a name="what-backreferences-match"></a>前方参照と一致する内容  
  前方参照は、グループの最新の定義 (左から右に検出する場合は、すぐ左にある定義) を参照します。 1 つのグループで複数のキャプチャが発生した場合、前方参照は最新のキャプチャを参照します。  
   

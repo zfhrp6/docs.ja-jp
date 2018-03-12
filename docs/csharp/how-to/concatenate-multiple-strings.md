@@ -14,11 +14,11 @@ ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 978f631a130f9ec2d450779f2a6296a6ce3af356
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 43b60455762ecd91a790ea5c7dae49d3348794aa
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>方法: 複数の文字列を連結する (C# ガイド)
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 02/23/2018
  [!code-csharp-interactive[Combining strings at compile time](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#1)]  
   
 
-文字列変数を連結する場合は、`+` または `+=` 演算子、[文字列補間](../tutorials/string-interpolation.md)または <xref:System.String.Concat%2A?displayProperty=nameWithType>、<xref:System.String.Format%2A?displayProperty=nameWithType>、<xref:System.String.Join%2A?displayProperty=nameWithType>、<xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType> メソッドを使用できます。 `+` 演算子は使い方が簡単で、直感的なコードにすることができます。 1 つのステートメントで複数の `+` 演算子を使用している場合でも、文字列の内容がコピーされるのは 1 回のみです。 次のコードは、`+` 演算子を使用して文字列を連結する 2 つの例を示しています。
+文字列変数を連結する場合は、`+` または `+=` 演算子、[文字列補間](../tutorials/string-interpolation.md)または <xref:System.String.Format%2A?displayProperty=nameWithType>、<xref:System.String.Concat%2A?displayProperty=nameWithType>、<xref:System.String.Join%2A?displayProperty=nameWithType>、<xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType> メソッドを使用できます。 `+` 演算子は使い方が簡単で、直感的なコードにすることができます。 1 つのステートメントで複数の `+` 演算子を使用している場合でも、文字列の内容がコピーされるのは 1 回のみです。 次のコードは、`+` および `+=` 演算子を使用して文字列を連結する例を示しています。
 
 [!code-csharp-interactive[combining strings using +](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#2)]  
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 02/23/2018
 > [!NOTE]
 >  文字列連結操作において、C# コンパイラでは null 文字列は空の文字列と同様に扱われます。
 
-文字列を連結する他のメソッドとして、<xref:System.String.Format%2A?displayProperty=nameWithType> があります。 このメソッドは、少数のコンポーネント文字列から文字列を作成する場合に有効です。 このメソッドは、連結した文字列を構成する文字列の数がわかっている場合にも有効です。
+文字列を連結する他のメソッドとして、<xref:System.String.Format%2A?displayProperty=nameWithType> があります。 このメソッドは、少数のコンポーネント文字列から文字列を作成する場合に有効です。
 
 他にも、ループ内の文字列を結合する場合があります。このケースでは、結合するソース文字列の数はわからず、ソース文字列の実際の数は非常に大きくなる可能性があります。 <xref:System.Text.StringBuilder> クラスは、このようなシナリオのために設計されています。 次のコードでは、<xref:System.Text.StringBuilder> クラスの <xref:System.Text.StringBuilder.Append%2A> メソッドを使用して文字列を連結しています。  
   
@@ -50,7 +50,7 @@ ms.lasthandoff: 02/23/2018
 
 [文字列の連結または `StringBuilder` クラスを選択する理由](xref:System.Text.StringBuilder#StringAndSB)に関するページで詳細をご確認ください。
 
-コレクションからの文字列を結合する別のオプションとして、<xref:System.String.Concat%2A?displayProperty=nameWithType> メソッドを使用する方法があります。 文字列を区切り記号で区切る必要がある場合は <xref:System.String.Join%2A?displayProperty=nameWithType> メソッドを使用します。 次のコードでは、両方のメソッドを使用して単語の配列を結合します。
+コレクションからの文字列を結合する別のオプションとして、<xref:System.String.Concat%2A?displayProperty=nameWithType> メソッドを使用する方法があります。 ソース文字列を区切り記号で区切る必要がある場合は、<xref:System.String.Join%2A?displayProperty=nameWithType> メソッドを使用します。 次のコードでは、両方のメソッドを使用して単語の配列を結合します。
 
 [!code-csharp-interactive[concatenation of string collection](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#5)]
 
@@ -58,6 +58,7 @@ ms.lasthandoff: 02/23/2018
 
 [!code-csharp-interactive[string concatenation using LINQ expressions](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#6)]  
 
+[GitHub リポジトリ](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings)のコードを見て、これらのサンプルを試すことができます。 または、サンプルを [zip ファイルとして](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings.zip)ダウンロードすることができます。
 
 ## <a name="see-also"></a>参照  
  <xref:System.String>  

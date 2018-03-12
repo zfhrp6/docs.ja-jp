@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 9a8b28d840d3c8ef63611e9f584e5984e1dcb1a3
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 99c2f8e4807c4d18c0c798e3a737f4a88d6e62d6
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="numbers-in-c-quickstart"></a>C# における数値クイックスタート
 
@@ -312,7 +312,7 @@ decimal 型を使用した演算では、小数点の右側の桁数がより多
 
 ***課題***
 
-さまざまな数値型を確認したので、次は半径が 2.50 インチの円の面積を計算するコードを記述してみます。 円の面積は、半径の 2 乗 x 円周率です。 ヒント: .NET には <xref:System.Math.PI?displayProperty=nameWithType> という円周率の定数があり、その値を使用できます。 
+さまざまな数値型を確認したので、次は半径が 2.50 センチメートルの円の面積を計算するコードを記述してみます。 円の面積は、半径の 2 乗 x 円周率です。 ヒント: .NET には <xref:System.Math.PI?displayProperty=nameWithType> という円周率の定数があり、その値を使用できます。 
 
 答えは 19 と 20 の間になるはずです。
 [GitHub にある完成版のサンプル コード](https://github.com/dotnet/docs/tree/master/samples/csharp/numbers-quickstart/Program.cs#L104-L106)で答えを確認できます。

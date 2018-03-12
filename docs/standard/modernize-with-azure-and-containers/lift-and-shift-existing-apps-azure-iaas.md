@@ -4,14 +4,15 @@ description: "既存の .NET アプリケーションと Azure のクラウド�
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: eed17ad06c138c3a4eb85f5e023427b681488784
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6811da4b59531e27f2d832c102d37ba1383b15ab
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="lift-and-shift-existing-apps-azure-iaas"></a>リフト アンド シフト Azure IaaS の既存のアプリ
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 12/23/2017
 
 > **図 2-1。** クラウド インフラストラクチャの準備完了のアプリケーションの配置
 
-## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Azure IaaS に既存の .NET web アプリケーションを移行する理由 
+## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Azure IaaS に既存の .NET web アプリケーションを移行する理由
 
 初期の IaaS レベルでも、クラウドに移行する主な理由は、コストの削減を実現するためにです。 多くの管理されたインフラストラクチャ サービスを使用すると、組織はハードウェアのメンテナンス、サーバーまたは VM のプロビジョニングし配置、およびインフラストラクチャの管理で、投資収益率を下げることができます。
 
@@ -53,15 +54,15 @@ ms.lasthandoff: 12/23/2017
 
 [Azure 移行](https://aka.ms/azuremigrate)ガイダンス、insights、および Azure への移行を支援するために必要なメカニズムを提供する新しいサービスは、します。 Azure の移行を提供します。
 
--   探索と内部設置型の仮想マシンの評価
+- 探索と内部設置型の仮想マシンの評価
 
--   多階層アプリケーションの信頼性の高い検出用の組み込みの依存関係のマッピング
+- 多階層アプリケーションの信頼性の高い検出用の組み込みの依存関係のマッピング
 
--   Azure の仮想マシンをインテリジェント適正
+- Azure の仮想マシンをインテリジェント適正
 
--   潜在的な問題を修復するためのガイドラインとレポートの互換性
+- 潜在的な問題を修復するためのガイドラインとレポートの互換性
 
--   データベースの検出と移行のための Azure Database Management Service との統合
+- データベースの検出と移行のための Azure Database Management Service との統合
 
 Azure の移行では、信頼度のワークロードが業務に影響を最小限に移行し、Azure で期待どおりに実行できます。 適切なツールとガイダンスでは、最大の重要なパフォーマンスを確保しながら投資回収を実現でき、信頼性のニーズを満たしています。
 
@@ -85,23 +86,23 @@ Azure の移行では、信頼度のワークロードが業務に影響を最�
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Azure 移行データシート**
+- **Azure 移行データシート**
 
     [https://aka.ms/azuremigration\_datasheet](https://aka.ms/azuremigration\_datasheet)
 
--   Azure を移行します。
+- **Azure を移行します。**
 
     [http://azuremigrationcenter.com/](http://azuremigrationcenter.com/)
 
--   **Site Recovery と Azure への移行します。**
+- **Site Recovery と Azure への移行します。**
 
     [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure)
 
--   **Azure Site Recovery サービスの概要**
+- **Azure Site Recovery サービスの概要**
 
     [https://docs.microsoft.com/azure/site-recovery/site-recovery-overview](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)
 
--   **AWS を Azure Vm で Vm を移行します。**
+- **AWS を Azure Vm で Vm を移行します。**
 
     [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure)
 

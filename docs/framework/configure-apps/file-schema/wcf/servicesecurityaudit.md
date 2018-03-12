@@ -5,36 +5,38 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: e36019cd6d010e25292fa50ed3bf795dfca15f73
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 25355acfd7bc82ccff33f68a690f3f02d1235438
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
 サービス操作中にセキュリティ イベントの監査を有効にする設定を指定します。  
   
- \<システムです。ServiceModel >  
-\<ビヘイビアー >  
-\<serviceBehaviors >  
-\<動作 >  
-\<serviceSecurityAudit >  
+ \<system.ServiceModel>  
+\<behaviors>  
+\<serviceBehaviors>  
+\<behavior>  
+\<serviceSecurityAudit>  
   
 ## <a name="syntax"></a>構文  
   
 ```xml  
 <serviceSecurityAudit   
    auditLogLocation="Default/Application/Security"  
-   messageAuthenticationAuditLevel= None/Success/Failure/SuccessAndFailure"   serviceAuthorizationAuditLevel="None/Success/Failure/SuccessAndFailure"  
+   messageAuthenticationAuditLevel= None/Success/Failure/SuccessOrFailure"   serviceAuthorizationAuditLevel="None/Success/Failure/SuccessOrFailure"  
    suppressAuditFailure="Boolean"  
 />  
 ```  
@@ -48,8 +50,8 @@ ms.lasthandoff: 12/22/2017
 |---------------|-----------------|  
 |auditLogLocation|監査ログの場所を指定します。 以下の値が有効です。<br /><br /> -既定値: セキュリティ イベントはログに書き込ま、アプリケーション イベント ログおよび Windows XP に Windows Server 2003 および Windows Vista で。<br />アプリケーション: 監査イベントには、アプリケーション イベント ログが書き込まれます。<br />セキュリティ: 監査イベントには、セキュリティ イベント ログが書き込まれます。<br /><br /> 既定値は Default です。 詳細については、「<xref:System.ServiceModel.AuditLogLocation>」を参照してください。|  
 |suppressAuditFailure|監査ログへの書き込みエラーを非表示にする動作を指定します。<br /><br /> アプリケーションには、監査ログへの書き込みエラーを通知する必要があります。 アプリケーションが監査エラーを処理するように設計されていない場合は、この属性を使用して、監査ログへの書き込みでのエラーが表示されないようにする必要があります。<br /><br /> この属性が `true` の場合、監査イベントの書き込み試行の結果発生する例外 (ただし、OutOfMemoryException、StackOverFlowException、ThreadAbortException、および ArgumentException を除く) はシステムによって処理され、アプリケーションには伝達されません。 この属性が `false` の場合、監査イベントの書き込み試行の結果発生する例外は、すべてアプリケーションまで渡されます。<br /><br /> 既定値は、`true` です。|  
-|serviceAuthorizationAuditLevel|監査ログに記録される承認イベントの種類を指定します。 以下の値が有効です。<br /><br /> -None: サービス承認イベントの監査が実行されます。<br />-Success: 成功したサービス承認イベントだけが監査されます。<br />-エラー: 失敗したサービス承認イベントだけが監査されます。<br />-SuccessAndFailure: 両方サービス承認イベントの成功と失敗を監査します。<br /><br /> 既定値は None です。 詳細については、「<xref:System.ServiceModel.AuditLevel>」を参照してください。|  
-|messageAuthenticationAuditLevel|ログに記録されるメッセージ認証監査イベントの種類を指定します。 以下の値が有効です。<br /><br /> -None: 監査イベントがありませんが生成されます。<br />-Success: 成功したセキュリティ (メッセージ署名の検証、暗号、およびトークンの検証を含む完全な検証) イベントだけが記録されます。<br />-エラー: 失敗したイベントだけが記録されます。<br />の両方 SuccessAndFailure: 成功と失敗のイベントが記録されます。<br /><br /> 既定値は None です。 詳細については、「<xref:System.ServiceModel.AuditLevel>」を参照してください。|  
+|serviceAuthorizationAuditLevel|監査ログに記録される承認イベントの種類を指定します。 以下の値が有効です。<br /><br /> -None: サービス承認イベントの監査が実行されます。<br />-Success: 成功したサービス承認イベントだけが監査されます。<br />-エラー: 失敗したサービス承認イベントだけが監査されます。<br />-SuccessOrFailure: 両方サービス承認イベントの成功と失敗を監査します。<br /><br /> 既定値は None です。 詳細については、「<xref:System.ServiceModel.AuditLevel>」を参照してください。|  
+|messageAuthenticationAuditLevel|ログに記録されるメッセージ認証監査イベントの種類を指定します。 以下の値が有効です。<br /><br /> -None: 監査イベントがありませんが生成されます。<br />-Success: 成功したセキュリティ (メッセージ署名の検証、暗号、およびトークンの検証を含む完全な検証) イベントだけが記録されます。<br />-エラー: 失敗したイベントだけが記録されます。<br />-SuccessOrFailure: 両方とも成功および失敗イベントが記録されます。<br /><br /> 既定値は None です。 詳細については、「<xref:System.ServiceModel.AuditLevel>」を参照してください。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -58,7 +60,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
   
 ## <a name="remarks"></a>コメント  
  この構成要素は、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] 認証イベントの監査に使用されます。 監査を有効にすると、成功した認証、失敗した認証、またはその両方を監査できます。 イベントは、3 種類のイベント ログ (アプリケーション ログ、セキュリティ ログ、およびオペレーティング システムのバージョンに対する既定のログ) のいずれかに書き込まれます。 イベント ログはすべて、Windows イベント ビューアーを使用して表示できます。  
@@ -71,7 +73,7 @@ ms.lasthandoff: 12/22/2017
   
  メッセージ認証監査イベントは、メッセージの改ざんや期限切れの有無、クライアントによるサービス認証の成否などに適用されます。 このイベントでは、認証の成功または失敗に関する情報とクライアント ID、およびメッセージ送信先のエンドポイントとそのメッセージに関連付けられたアクションに関する情報が提供されます。  
   
- サービス承認監査イベントは、サービス承認マネージャーによって決定される承認に適用されます。 このイベントでは、承認の成功または失敗に関する情報とクライアント ID、メッセージ送信先のエンドポイント、そのメッセージに関連付けられたアクション、受信メッセージから生成された承認コンテキストの ID、およびアクセス決定を行った承認マネージャーの種類に関する情報が提供されます。  
+ サービス承認監査イベントは、サービス承認マネージャーによって決定される承認に適用されます。 承認が成功したかどうかに関する情報を提供またはクライアントの id と共にに失敗しましたメッセージ送信先のエンドポイントから生成された承認コンテキストの識別子、メッセージに関連付けられているアクションには。受信メッセージおよびアクセス決定を行った承認マネージャーの種類。  
   
 ## <a name="example"></a>例  
   

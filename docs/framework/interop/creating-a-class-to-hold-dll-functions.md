@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -17,23 +18,24 @@ helpviewer_keywords:
 - platform invoke, creating class for functions
 - DLL functions
 ms.assetid: e08e4c34-0223-45f7-aa55-a3d8dd979b0f
-caps.latest.revision: "6"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6d64034f8059dc094b3fc8a71c6a2b7e96fe8d89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ed5ef9b7aaad3405ff31ff45ee8d0b22f56f51d7
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>DLL 関数を保持するクラスの作成
 マネージ クラス内の頻繁に使用される DLL 関数をラップすることは、プラットフォームの機能をカプセル化するための効果的な方法です。 これはすべてのケースで必須であるわけではありませんが、DLL 関数の定義には手間がかかり、エラーが発生しやすくなるため、クラス ラッパーを用意しておくと便利です。 Visual Basic や C# でプログラミングしている場合は、DLL 関数をクラスまたは Visual Basic モジュール内で宣言する必要があります。  
   
  クラス内では、呼び出す DLL 関数ごとに静的メソッドを定義します。 この定義には、メソッド引数を渡すときに使用される呼び出し規則や文字セットなどの追加情報を含めることができます。この情報を省略すると、既定の設定が選択されます。 宣言のオプションと、既定の設定の完全なリストについては、「[Creating Prototypes in Managed Code](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)」(マネージ コードでのプロトタイプの作成) を参照してください。  
   
- ラッピングが完了すると、他の静的関数でメソッドを呼び出す場合と同じように、関数でメソッドを呼び出すことができます。 プラットフォーム呼び出しでは、基になるエクスポートされた関数が自動的に処理されます。  
+ 、ラップされた後、他のクラスの静的メソッドを呼び出すと、クラスのメソッドを呼び出すことができます。 プラットフォーム呼び出しでは、基になるエクスポートされた関数が自動的に処理されます。  
   
  プラットフォーム呼び出しのためにマネージ クラスをデザインする場合は、クラスと DLL 関数との関係を考慮してください。 たとえば、次のように操作できます。  
   

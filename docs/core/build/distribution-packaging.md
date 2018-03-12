@@ -9,60 +9,121 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 71b9d722-c5a8-4271-9ce1-d87e7ae2494d
-ms.workload: dotnetcore
-ms.openlocfilehash: 9f5cd2f7c4fec553dfdfaf1765663b6896b3061d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: e511ea13c578ab44c65a5ba78f666cce1ab6a0c4
+ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="net-core-distribution-packaging"></a>.NET Core の配布パッケージ
 
 .NET Core はますます多くのプラットフォームで使用できるようになってきているため、.NET Core をパッケージ化し、名前を付け、バージョン管理する方法を知っていると便利です。 そうすることで、パッケージの管理者は、ユーザーの .NET の実行環境に左右されることなく一貫した体験が保証されるようにサポートできます。
 
-## <a name="net-core-components"></a>.NET Core コンポーネント
+## <a name="disk-layout"></a>ディスク レイアウト
 
-.NET core は、パッケージ化が必要な 3 つの主要部から構成されています。
+インストールした .NET Core は複数のコンポーネントで構成されています。コンポーネントは、ファイルシステムで次のようにレイアウトされています。
 
-1. **ホスト** (別名 "muxer (マルチプレクサー)") には 2 つの異なるロールがあります。アプリケーションを起動するランタイムのアクティブ化と、コマンドをディスパッチする SDK のアクティブ化です。 ホストは、ネイティブの実行可能ファイル (`dotnet.exe`) とその対応するポリシー ライブラリ (`host/fxr` にインストールされています) です。 [`dotnet/core-setup`](https://github.com/dotnet/core-setup/) リポジトリ内のコードからビルドされます。 厳密な要件ではありませんが、通常、特定のマシンに存在するホストは 1 つのみです。
-2. **フレームワーク**は、ランタイムと対応するマネージ ライブラリで構成されます。 フレームワークは、アプリケーションの一部としてインストールされる場合と、複数のアプリケーションで再利用可能な中心となる場所に、共有フレームワークとしてインストールされる場合があります。 特定のマシンにインストールできる共有フレームワークの数に制限はありません。 共有フレームワークは `shared/Microsoft.NETCore.App/<version>` にあります。 ホストは、パッチ バージョン間でロール フォワードされます。 アプリケーションの対象が `Microsoft.NETCore.App` 1.0.0 で、1.0.4 のみが存在する場合、アプリケーションは 1.0.4 に対して起動します。
-3. **SDK** (別名 "the tooling (ツール)") は、.NET Core のライブラリやアプリケーションを記述およびビルドするために使用できるマネージ ツールのセットです。 SDK には、CLI、MSBuild、関連するビルド タスクおよびターゲット、NuGet、新しいプロジェクト テンプレートなどが含まれています。1 つのマシンに複数の SDK を設定できますが (たとえば、明示的に以前のバージョンを必要とするプロジェクトを構築する場合など)、最新リリースのツールを使用することをお勧めします。
+```
+.
+├── dotnet                       (1)
+├── LICENSE.txt                  (8)
+├── ThirdPartyNotices.txt        (8)
+├── host
+│   └── fxr
+│       └── <fxr version>        (2)
+├── sdk
+│   ├── <sdk version>            (3)
+│   └── NuGetFallbackFolder      (4)
+└── shared
+    ├── Microsoft.NETCore.App
+    │   └── <runtime version>    (5)
+    └── Microsoft.AspNetCore.App
+        └── <aspnetcore version> (6)
+    └── Microsoft.AspNetCore.All
+        └── <aspnetcore version> (7)
+/
+├─usr/share/man/man1
+│       └── dotnet.1.gz          (9)
+└─usr/bin
+        └── dotnet               (10)
+```
 
-## <a name="recommended-package-names"></a>推奨されるパッケージ名
+- (1) **dotnet** ホスト (別名 "muxer (マルチプレクサー)") には 2 つの異なるロールがあります。アプリケーションを起動するランタイムのアクティブ化と、コマンドをディスパッチする SDK のアクティブ化です。 ホストはネイティブの実行可能ファイルです (`dotnet.exe`)。
 
-次のガイダンスは、推奨するパッケージ名についてです。 パッケージ管理者は、さまざまな理由 (対象とする特定の配布では慣習が異なるなど) から分岐を選択することがあります。
+ホストは 1 つですが、他のコンポーネントのほとんどはバージョン管理されたディレクトリに入っています (2、3、5、6)。 並列インストールされており、複数のバージョンをシステムに置くことができます。
 
-### <a name="minimum-package-set"></a>最小パッケージ セット
+- (2) **host/fxr/\<fxr バージョン>** には、ホストが使用するフレームワーク解決ロジックが含まれます。 ホストでは、インストールされている最新の hostfxr が使用されます。 hostfxr は、.NET Core アプリケーションの実行時に適切なランタイムを選択する役割を担います。 たとえば、.NET Core 2.0.0 用としてビルドされたアプリケーションは、2.0.5 が利用できればそれを利用します。 同様に、hostfxr は開発中、適切な SDK を選択します。
 
-* `dotnet-runtime-[major].[minor]`: 指定したバージョンの共有フレームワーク (パッケージ マネージャーでは、指定したメジャーとマイナーの組み合わせからなる最新パッチ バージョンのみ使用可能)。 **依存関係**: `dotnet-host`
-* `dotnet-sdk`: 最新の SDK **依存関係**: 最新の `dotnet-sdk-[major].[minor]`
-* `dotnet-sdk-[major].[minor]`: 指定したバージョンの SDK 指定するバージョンは、ユーザーが共有フレームワークに SDK を簡単に関連付けられるように、同梱する共有フレームワークの中で最も高いバージョンを含むものにします。 **依存関係**: `dotnet-host`、1 つまたは複数の `dotnet-runtime-[major].[minor]` (ランタイムのうちの 1 つは SDK コード自体で使用され、それ以外はユーザーの構築および実行のためにこの場所にあります)。
-* `dotnet-host`: 最新のホスト
+- (3) **sdk/\<sdk バージョン>** SDK (別名 "ツール") は、.NET Core のライブラリやアプリケーションを記述し、ビルドするために使用できるマネージ ツールのセットです。 SDK には、CLI、Roslyn コンパイラ、MSBuild、関連するビルド タスクとターゲット、NuGet、新しいプロジェクト テンプレートなどが含まれています。
+
+- (4) **sdk/NuGetFallbackFolder** には、`dotnet restore` 手順中、SDK で使用される NuGet パッケージのキャッシュが含まれています。
+
+**共有**フォルダーには、フレームワークが含まれています。 共有フレームワークは、さまざまなアプリケーションで利用できるように、中央の場所で一連のライブラリを提供します。
+
+- (5) **shared/Microsoft.NETCore.App/\<runtime バージョン>** このフレームワークには、.NET Core のランタイムと補助マネージ ライブラリが含まれています。
+
+- (6,7) **shared/Microsoft.AspNetCore.{App,All}/\<aspnetcore バージョン>** には、ASP.NET Core ライブラリが含まれています。 `Microsoft.AspNetCore.App` の下にあるライブラリは、.NET Core プロジェクトの一部として開発され、サポートされています。 `Microsoft.AspNetCore.All` の下にあるライブラリは、サードパーティ ライブラリも含まれるスーパーセットです。
+
+- (8) **LICENSE.txt,ThirdPartyNotices.txt** は .NET Core ライセンスと、.NET Core で利用されるサードパーティ ライブラリのライセンスです。
+
+- (9,10) **dotnet.1.gz, dotnet** `dotnet.1.gz` は dotnet man ページです。 `dotnet` は dotnet host(1) のシンボリック リンクです。 これらのファイルは、システム統合のために、よく知られている場所にインストールされます。
+
+## <a name="recommended-packages"></a>推奨パッケージ
+
+.NET Core バージョン管理は、ランタイム コンポーネント `[major].[minor]` バージョン番号に基づきます。
+SDK バージョンは同じ `[major].[minor]` を利用し、SDK の機能とパッチ意味論を結合する非依存の `[patch]` が与えられます。
+例: SDK バージョン 2.2.302 は、2.2 ランタイム対応の SDK の第 3 機能リリースの第 2 パッチ リリースです。
+
+パッケージには、その名前にバージョン番号の一部が含まれているものもあります。 それによって、エンドユーザーは特定のバージョンをインストールできます。
+バージョンの残りの部分はバージョン名には含まれていません。 それによって、OS パッケージ マネージャーはパッケージを更新できます (セキュリティ修正の自動インストールなど)。
+
+次の表は、推奨パッケージをまとめたものです。
+
+| name                                    | 例                | ユース ケース: インストール ...           | 内容           | 依存関係                                   | Version            |
+|-----------------------------------------|------------------------|---------------------------------|--------------------|------------------------------------------------|--------------------|
+| dotnet-sdk-[major]                      | dotnet-sdk-2           | ランタイム メジャーの最新 sdk    |                    | dotnet-sdk-[major].[latestminor]               | \<sdk version>     |
+| dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | 特定のランタイムの最新の sdk |                    | dotnet-sdk-[major].[minor].[latest sdk feat]xx | \<sdk version>     |
+| dotnet-sdk-[major].[minor].[sdk feat]xx | dotnet-sdk-2.1.3xx     | 特定の sdk 機能リリース    | (3),(4)            | aspnetcore-runtime-[major].[minor]             | \<sdk version>     |
+| aspnetcore-runtime-[major].[minor]      | aspnetcore-runtime-2.1 | 特定の ASP.NET Core ランタイム   | (6),[(7)]          | dotnet-runtime-[major].[minor]                 | \<runtime version> |
+| dotnet-runtime-[major].[minor]          | dotnet-runtime-2.1     | 特定のランタイム                | (5)                | host-fxr:\<runtime version>+                   | \<runtime version> |
+| dotnet-host-fxr                         | dotnet-host-fxr        | _dependency_                    | (2)                | host:\<runtime version>+                       | \<runtime version> |
+| dotnet-host                             | dotnet-host            | _dependency_                    | (1),(8),(9),(10)   |                                                | \<runtime version> |
+
+ほとんどのディストリビューションで、ソースからビルドするすべての成果物を必要とします。 これはパッケージにいくつかの影響を与えます。
+
+- `shared/Microsoft.AspNetCore.All` の下にあるサードパーティ ライブラリは、ソースから簡単にビルドできません。 そのため、そのフォルダーは `aspnetcore-runtime` パッケージから除外されます。
+
+- `NuGetFallbackFolder` は `nuget.org` からバイナリ成果物を利用して入力されます。 空のままにしてください。
+
+複数の `dotnet-sdk` パッケージで `NuGetFallbackFolder` に同じファイルが提供されることがあります。 パッケージ マネージャーの問題を回避するには、これらのファイルを同じにします (チェックサム、変更日...)。
 
 #### <a name="preview-versions"></a>プレビュー バージョン
 
-パッケージ管理者は、共有フレームワークと SDK のプレビュー バージョンを含めるという選択もできます。 それらはバージョン管理されない `dotnet-sdk` パッケージに含めるべきではありませんが、名前のメジャーおよびマイナー バージョン セクションにプレビュー マーカーを追加して、バージョン管理されたパッケージとしてリリースできます。 たとえば、`dotnet-sdk-2.0-preview-final` のようなパッケージが可能です。
+パッケージ管理者は、共有フレームワークと SDK のプレビュー バージョンを提供するという選択もできます。 プレビュー リリースは、`dotnet-sdk-[major].[minor].[sdk feat]xx`、`aspnetcore-runtime-[major].[minor]`、`dotnet-runtime-[major].[minor]` パッケージを利用して提供されることもあります。 プレビュー リリースの場合、パッケージ バージョン メジャーをゼロに設定する必要があります。 この方法で、最終リリースがパッケージのアップグレードとしてインストールされます。
 
-### <a name="optional-additional-packages"></a>オプションの追加パッケージ
+#### <a name="patch-packages"></a>パッチ パッケージ
 
-管理者は、次のような追加パッケージの提供を選ぶこともできます。
+パッケージのパッチ バージョンは破壊的な変更を招くことがあるため、パッケージ管理者は_パッチ パッケージ_を提供することがあります。 そのようなパッケージによって、自動的にアップグレードされない特定のパッチ バージョンをインストールできます。 パッチ パッケージは (セキュリティ) 修正でアップグレードされないため、まれな状況でのみ使用してください。
 
-* `dotnet-lts`: 共有フレームワークの最新の長期サポート (LTS) バージョン。 [LTS および最新のリリース トレイン](~/docs/core/versions/lts-current.md)は、.NET Core がリリースされるさまざまな周期に対応しています。 ユーザーは更新の頻度に基づいて、採用するトレインを選択できます。 これはサポート レベルにも関連する概念であるため、検討しているディストリビューションによっては、有効な場合もあれば無効な場合があります。
+次の表は、推奨パッケージと**パッチ パッケージ**をまとめたものです。
 
-## <a name="disk-layout"></a>ディスク レイアウト
+| name                                           | 例                  | 内容         | 依存関係                                              |
+|------------------------------------------------|--------------------------|------------------|-----------------------------------------------------------|
+| dotnet-sdk-[major]                             | dotnet-sdk-2             |                  | dotnet-sdk-[major].[latest sdk minor]                     |
+| dotnet-sdk-[major].[minor]                     | dotnet-sdk-2.1           |                  | dotnet-sdk-[major].[minor].[latest sdk feat]xx            |
+| dotnet-sdk-[major].[minor].[sdk feat]xx        | dotnet-sdk-2.1.3xx       |                  | dotnet-sdk-[major].[minor].[latest sdk patch]             |
+| **dotnet-sdk-[major].[minor].[patch]**         | dotnet-sdk-2.1.300       | (3),(4)          | aspnetcore-runtime-[major].[minor].[sdk runtime patch]    |
+| aspnetcore-runtime-[major].[minor]             | aspnetcore-runtime-2.1   |                  | aspnetcore-runtime-[major].[minor].[latest runtime patch] |
+| **aspnetcore-runtime-[major].[minor].[patch]** | aspnetcore-runtime-2.1.0 | (6),[(7)]        | dotnet-runtime-[major].[minor].[patch]                    |
+| dotnet-runtime-[major].[minor]                 | dotnet-runtime-2.1       |                  | dotnet-runtime-[major].[minor].[latest runtime patch]     |
+| **dotnet-runtime-[major].[minor].[patch]**     | dotnet-runtime-2.1.0     | (5)              | host-fxr:\<runtime version>+                              |
+| dotnet-host-fxr                                | dotnet-host-fxr          | (2)              | host:\<runtime version>+                                  |
+| dotnet-host                                    | dotnet-host              | (1),(8),(9),(10) |                                                           |
 
-.NET Core パッケージをインストールするときの、ディスクのインストール先における相対的な配置。
-`dotnet.exe` ホストは、`dotnet-sdk` SDK パッケージのバージョン管理されたコンテンツと `dotnet-runtime` 共有フレームワーク パッケージを含む `sdk` および `shared` フォルダーのそばに配置する必要があります。
+パッチ パッケージの使用の代わりになるのが_ピン留め_ (固定) です。パッケージ マネージャーを利用し、特定のバージョンにパッケージを固定します。 他のアプリケーション/ユーザーに影響を与えないように、このようなアプリケーションはコンテナーでビルドし、配置できます。
 
-パッケージ内のファイルとディレクトリのディスク レイアウトはバージョン管理されます。 つまり、最新の `dotnet-runtime` に更新すると、新しいバージョンが以前のバージョンと共存してインストールされます。これにより、パッケージの更新によって既存のアプリケーションが壊れる可能性が低くなります。 パッケージの更新では、以前のバージョンは削除されません。
+## <a name="building-packages"></a>パッケージをビルドする
 
-## <a name="update-policies"></a>ポリシーの更新
-
-`update` が実行されると、各パッケージの動作は次のようになります。
-
-* `dotnet-runtime-[major].[minor]`: 新しいパッチ バージョンでパッケージを更新しますが、新しいマイナーまたはメジャー バージョンは別のパッケージとなります。
-* `dotnet-sdk`: `update` がメジャー、マイナー、およびパッチ バージョンをロール フォワードします。
-* `dotnet-sdk-[major].[minor]`: 新しいパッチ バージョンでパッケージを更新しますが、新しいマイナーまたはメジャー バージョンは別のパッケージとなります。
-* `dotnet-lts`: `update` がメジャー、マイナー、およびパッチ バージョンをロール フォワードします。
-
-このトピックでは .NET Core のパッケージ化の推奨事項を示しましたが、各ディストリビューションで提供するバージョンと時期は、自由に選択できます。 たとえば、最新であることよりも安定性を重視するディストリビューションでは、LTS リリース トレインのあるバージョンのみをリリースするように選択できます。
+https://github.com/dotnet/source-build リポジトリには、.NET Core SDK のソース ターボールとそのすべてのコンポーネントをビルドする方法があります。 この source-build リポジトリの出力は、この記事の最初のセクションで説明したレイアウトに一致します。

@@ -4,16 +4,17 @@ description: "コンテナーの .NET アプリケーションの .NET Microserv
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: eef0197edb3aba555da63f1ea0b75726a826bd32
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: df452c9fbf1c16603efcec40844b55810bd5d2d4
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/08/2018
 ---
-# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>クラウドの準備が整って回復力のあるサービスを構築しますクラウド内の一時的な障害を受け入れる。 
+# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>クラウドの準備が整って回復力のあるサービスを構築しますクラウド内の一時的な障害を受け入れる。
 
 回復性は、障害から回復し、引き続き機能する能力です。 回復性エラーを回避するが、エラーが発生するという事実を受信し、ダウンタイムやデータの損失を回避するように後で対応するのではありません。 回復性の目的は、障害発生後にアプリケーションを完全に機能する状態に戻すことです。
 

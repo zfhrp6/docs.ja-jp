@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -18,16 +19,17 @@ helpviewer_keywords:
 - animation [WPF], gradient brush colors
 - brushes [WPF], animating colors of
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c977e8a4a23f9739541cf28d9e34ad9e8db1daf0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 74227ebe815e971087569ff39ac0a3479c1b0d14
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="getting-started-with-ink"></a>インクの概要
 デジタル インクを組み込むことをアプリケーションには、これまでよりも簡単です。 インクのプログラミングに完全な統合を実現するための COM および Windows フォームのメソッドへの推論の進化に伴い、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 個別の Sdk またはランタイム ライブラリをインストールする必要はありません。  
@@ -38,14 +40,14 @@ ms.lasthandoff: 12/22/2017
 ## <a name="quick-start"></a>クイック スタート  
  このセクションでは、単純なを作成できます。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]インクを収集するアプリケーション。  
   
- 完了していない場合は、Microsoft Visual Studio 2005 をインストールし、[!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション通常コンパイルする必要が、それらを表示する前にのみで構成されている場合でも[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 ただし、[!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)]を実装するプロセスを高速化するように設計 XamlPad のアプリケーションが含まれています、 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]-ベースの UI。 そのアプリケーションを使用して、表示およびこのドキュメントで最初のいくつかのサンプルを修正することができます。 作成プロセスからコンパイルされたアプリケーション[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]は、このドキュメントの後半で説明します。  
+ 完了していない場合は、Microsoft Visual Studio 2005 をインストールし、[!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーション通常コンパイルする必要が、それらを表示する前にのみで構成されている場合でも[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 ただし、[!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)]を実装するプロセスを高速化するように設計 XamlPad のアプリケーションが含まれています、 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]-ベースの UI。 そのアプリケーションを使用して、表示およびこのドキュメントで最初のいくつかのサンプルを修正することができます。 作成プロセスからコンパイルされたアプリケーション[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]は、このドキュメントの後半で説明します。  
   
- XAMLPad を起動する をクリックして、**開始** メニューのをポイント**すべてのプログラム**、 をポイント**ボタンをクリック**、指す**ツール**、 をクリック**XAMLPad**です。 表示ウィンドウでは、XAMLPad は、コード ペインで記述された XAML コードを表示します。 XAML コードを編集することができ、変更はすぐに表示ウィンドウで表示します。  
+ XAMLPad を起動する をクリックして、**開始** メニューのをポイント**すべてのプログラム**、指す**Microsoft Windows SDK**、 をポイント**ツール**、 をクリック**XAMLPad**です。 表示ウィンドウでは、XAMLPad は、コード ペインで記述された XAML コードを表示します。 XAML コードを編集することができ、変更はすぐに表示ウィンドウで表示します。  
   
 #### <a name="got-ink"></a>インクを取得します。  
  初めて開始する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]インクをサポートするアプリケーション。  
   
-1.  Microsoft Visual Studio 2005 を開きます。  
+1.  Open Microsoft Visual Studio 2005  
   
 2.  新しい**Windows アプリケーション (WPF)**  
   

@@ -4,14 +4,15 @@ description: "Azure のクラウドと Windows コンテナーの既存の .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 221d8c2b837fb738425e26f3af4da895e4987212
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9189de8d083c8f9dea8c53b428e6cd34ae6dad15
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>リレーショナル データベースを azure に移行します。
 
@@ -21,7 +22,7 @@ Azure では、(純粋なリフト アンド シフト) の IaaS Vm に直接、
 
 ![Azure でのデータベースの移行パス](./media/image3-1.png)
 
-> **図 3-1。** Azure でのデータベースの移行パス
+> **図 3-1.** Azure でのデータベースの移行パス
 
 ## <a name="when-to-migrate-to-azure-sql-database-managed-instance"></a>Azure SQL データベースのマネージ インスタンスに移行に適した状況
 
@@ -35,27 +36,27 @@ Azure SQL データベースのマネージ インスタンスは、SQL Server �
 
 Azure SQL データベースでのマネージ インスタンスには、次の特徴があります。
 
--   Azure の仮想ネットワーク経由のセキュリティの分離
+- Azure の仮想ネットワーク経由のセキュリティの分離
 
--   画面とアプリケーションの互換性、これらの機能:
+- 画面とアプリケーションの互換性、これらの機能:
 
-    -   SQL Server エージェントおよび SQL Server Profiler
+  - SQL Server エージェントおよび SQL Server Profiler
 
-    -   データベースにまたがる参照およびクエリ、SQL CLR のレプリケーション、変更データ キャプチャ (CDC)、および Service Broker
+  - データベースにまたがる参照およびクエリ、SQL CLR のレプリケーション、変更データ キャプチャ (CDC)、および Service Broker
 
--   データベースのサイズを最大 35 TB
+- データベースのサイズを最大 35 TB
 
--   最小のダウンタイムでの移行、これらの機能:
+- 最小のダウンタイムでの移行、これらの機能:
 
-    -   Azure のデータベース移行サービス
+  - Azure のデータベース移行サービス
 
-    -   ネイティブのバックアップと復元、およびログ配布
+  - ネイティブのバックアップと復元、およびログ配布
 
 これらの機能により、Azure SQL データベースに既存のアプリケーション データベースを移行するときに、マネージ インスタンスのモデルでは、Paas の利点のほぼ 100% for SQL Server。 マネージ インスタンスは、インスタンス レベルの機能を使用して、アプリケーションの設計を変更することがなく引き続き SQL Server 環境です。
 
 マネージ インスタンスが現在使用している SQL Server とクラウド内のネットワーク セキュリティの柔軟性を必要とする企業に最適では可能性があります。 SQL データベース用のプライベート仮想ネットワークを持つようになります。
 
-## <a name="when-to-migrate-to-azure-sql-database"></a>Azure SQL Database への移行に適した状況 
+## <a name="when-to-migrate-to-azure-sql-database"></a>Azure SQL Database への移行に適した状況
 
 前述のように、標準の Azure SQL Database は、完全に管理されたリレーショナル DBaaS がします。 現在、SQL データベースは、世界中の 38 データ センター間で何百万もの実稼働データベースを管理します。 これは、さまざまなアプリケーションや世界規模での高度なデータ処理を必要とするデータが集中する、ミッション クリティカルなアプリケーションにするために、簡単なトランザクション データの管理からのワークロードをサポートします。
 
@@ -65,19 +66,19 @@ Azure SQL データベースは、アプリの開発者に組み込まれてい�
 
 Azure SQL Database には次の利点があります。
 
--   組み込みのインテリジェンス (機械学習) を学習して、アプリへの対応
+- 組み込みのインテリジェンス (機械学習) を学習して、アプリへの対応
 
--   オンデマンドのデータベースの準備
+- オンデマンドのデータベースの準備
 
--   すべてのワークロード向けの情報の範囲
+- すべてのワークロード向けの情報の範囲
 
--   可用性 99.99% の SLA、ゼロのメンテナンス
+- 可用性 99.99% の SLA、ゼロのメンテナンス
 
--   データ保護のために Geo レプリケーションと復元のサービス
+- データ保護のために Geo レプリケーションと復元のサービス
 
--   Azure SQL データベース特定時点に復元機能
+- Azure SQL データベース特定時点に復元機能
 
--   ハイブリッドおよび移行を含む、SQL Server 2016 との互換性
+- ハイブリッドおよび移行を含む、SQL Server 2016 との互換性
 
 標準の Azure SQL データベースでは、Azure SQL データベースのマネージ インスタンスよりは、PaaS に近づきます。 マネージ クラウドから複数のメリットになるため、使用可能な場合に試してください。 しかし、Azure SQL データベースは正規の主な相違点あり、内部設置型 SQL Server インスタンス。 、、、既存のアプリケーションのデータベースの要件、および企業の要件とポリシーに応じて、できない可能性があります最善の選択、クラウドへの移行を計画するときにします。
 
@@ -108,23 +109,23 @@ Azure データベースの移行サービスを使用してデータベース�
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **クラウド SQL Server のオプションを選択します Azure SQL データベース (PaaS) または Azure の仮想マシン (IaaS) 上の SQL Server。**
+- **クラウド SQL Server のオプションを選択します Azure SQL データベース (PaaS) または Azure の仮想マシン (IaaS) 上の SQL Server。**
 
     [https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas)
 
--   **クラウドの Azure SQL DB マネージ インスタンスおよびデータベースの移行サービスでより迅速に取得します。**
+- **クラウドの Azure SQL DB マネージ インスタンスおよびデータベースの移行サービスでより迅速に取得します。**
 
     [https://channel9.msdn.com/Events/Build/2017/P4008](https://channel9.msdn.com/Events/Build/2017/P4008)
 
--   **クラウド内の SQL データベースに SQL Server データベースの移行**
+- **クラウド内の SQL データベースに SQL Server データベースの移行**
 
     [https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate](https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate)
 
--   **Azure SQL Database**
+- **Azure SQL Database**
 
     [https://azure.microsoft.com/services/sql-database/?v=16.50](https://azure.microsoft.com/services/sql-database/?v=16.50)
 
--   **仮想マシン上の SQL Server**
+- **仮想マシン上の SQL Server**
 
     [https://azure.microsoft.com/services/virtual-machines/sql-server/](https://azure.microsoft.com/services/virtual-machines/sql-server/)
 

@@ -2,7 +2,8 @@
 title: "ref (C# リファレンス)"
 ms.date: 05/30/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - ref_CSharpKeyword
@@ -11,14 +12,14 @@ helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
 ms.assetid: b8a5e59c-907d-4065-b41d-95bf4273c0bd
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0be0eee67b507e2a209c9caaa3eb14cc60e8a763
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9b1e926bd1d9c3a8e0525ed02d102f26e6ec9abd
+ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="ref-c-reference"></a>ref (C# リファレンス)
 
@@ -82,19 +83,19 @@ ms.lasthandoff: 11/21/2017
    ```csharp
    public ref decimal GetCurrentValue()
    ``` 
-- メソッドの各 `return` ステートメントの前。 例:
+- メソッドの `return` ステートメントで返される変数と `return` トークンの間。 例:
  
    ```csharp
-   ref return Decimal.Zero;
+   return ref DecimalArray[0];
    ``` 
 
-として明示的に定義されている変数に値を格納する必要がありますが、参照、呼び出し元オブジェクトの状態を変更するためには、返す、 [ref ローカル変数](#ref-locals)です。 
+呼び出し元がオブジェクトの状態を変更するには、[ref ローカル変数](#ref-locals)として明示的に定義した変数に参照戻り値を格納する必要があります。 
 
 例については、「[ref 戻り値と ref ローカル変数](#a-ref-returns-and-ref-locals-example)」を参照してください。
 
 ## <a name="ref-locals"></a>ref ローカル変数
 
-ref ローカル変数は、`ref return` を使用して返された値を参照するために使用します。  ref ローカル変数は、初期化して ref 戻り値に割り当てる必要があります。 ref ローカル変数の値に変更を加えると、参照渡しの値を返すメソッドのオブジェクトの状態に反映されます。
+ref ローカル変数は、`return ref` を使用して返された値を参照するために使用します。  ref ローカル変数は、初期化して ref 戻り値に割り当てる必要があります。 ref ローカル変数の値に変更を加えると、参照渡しの値を返すメソッドのオブジェクトの状態に反映されます。
 
 ref ローカル変数を定義するには、変数宣言の前と、参照渡しで値を返すメソッドの呼び出しの直前に、`ref` キーワードを使用します。 
 
@@ -119,7 +120,7 @@ ref decimal estValue = ref Building.GetEstimatedValue();
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  

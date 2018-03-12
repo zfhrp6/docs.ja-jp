@@ -4,36 +4,37 @@ description: "Azure のクラウドと Windows コンテナーの既存の .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
+ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bced3bed84d138dbda4f322322213b47c0159016
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 6a2abda3949c1fffc4d731b01e35e58e7c56dac0
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/08/2018
 ---
-# <a name="walkthroughs-and-technical-get-started-overview"></a>チュートリアルと技術は、開始の概要を取得します。 
+# <a name="walkthroughs-and-technical-get-started-overview"></a>チュートリアルと技術は、開始の概要を取得します。
 
-この電子書籍のサイズを制限するには、しました他の技術ドキュメントと完全のチュートリアルでは、GitHub リポジトリで使用できます。 オンラインの一連のこの章で説明されているチュートリアルでは、Windows コンテナー、および Azure へのデプロイに基づいて複数の環境の詳細な手順のセットアップについて説明します。
+この電子書籍のサイズを制限するには、追加のテクニカル ドキュメントと完全のチュートリアルで行われた使用可能な GitHub リポジトリです。 オンラインの一連のこの章で説明されているチュートリアルでは、Windows コンテナー、および Azure へのデプロイに基づいて複数の環境の詳細な手順のセットアップについて説明します。
 
-次のセクションでは、について説明する各チュートリアルに関するその目標、その高度なビジョン- し、関連するタスクを次の図を提供します。 チュートリアル自体を取得することができますに、 *eShopModernizing*でアプリの GitHub リポジトリの wiki [https://github.com/dotnet-architecture/eShopModernizing/wiki](https://github.com/dotnet-architecture/eShopModernizing/wiki)です。
+次のセクションでは、各チュートリアルでは、その目標と高レベルのビジョンを通知し、関連するタスクを次の図は、について説明します。 チュートリアル自体を取得することができますに、 *eShopModernizing*でアプリの GitHub リポジトリの wiki [https://github.com/dotnet-architecture/eShopModernizing/wiki](https://github.com/dotnet-architecture/eShopModernizing/wiki)です。
 
-# <a name="technical-walkthrough-list"></a>技術的なチュートリアルの一覧
+## <a name="technical-walkthrough-list"></a>技術的なチュートリアルの一覧
 
 はじめに-次のチュートリアルでは、リフトしコンテナーを使用して、シフトし、し、Azure で複数の展開の選択肢を使用して、移動するサンプル アプリの一貫性のあるで包括的なに関するテクニカル ガイダンスを提供します。
 
 次のチュートリアルの各アプリケーションを使用して、新しいサンプル eShopLegacy と eShopModernizing で GitHub で利用可能である[https://github.com/dotnet-architecture/eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing)です。
 
--   **EShop レガシ アプリケーションのツアー**
+- **EShop レガシ アプリケーションのツアー**
 
--   **Windows コンテナーで、既存の .NET アプリケーションを containerize します。**
+- **Windows コンテナーで、既存の .NET アプリケーションを containerize します。**
 
--   **Azure Vm を Windows コンテナー ベースのアプリを展開します。**
+- **Azure Vm を Windows コンテナー ベースのアプリを展開します。**
 
--   **Azure のコンテナー サービスで Kubernetes に Windows コンテナー ベースのアプリを展開します。**
+- **Azure のコンテナー サービスで Kubernetes に Windows コンテナー ベースのアプリを展開します。**
 
--   **Azure Service Fabric に Windows コンテナー ベースのアプリを展開します。**
+- **Azure Service Fabric に Windows コンテナー ベースのアプリを展開します。**
 
 ## <a name="walkthrough-1-tour-of-eshop-legacy-apps"></a>EShop レガシ アプリケーションのチュートリアル 1: ツアー
 
@@ -97,13 +98,13 @@ Windows コンテナーの MVC、Web フォーム、または WCF、運用、開
 
 このチュートリアルの目的は、既存の .NET Framework アプリケーションを containerizing いくつかのオプションを表示します。 次の操作を行うことができます。
 
--   使用してアプリを containerize [Docker 用の Visual Studio 2017 Tools](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker) (Visual Studio 2017 年 1 またはそれ以降のバージョン)。
+- 使用してアプリを containerize [Docker 用の Visual Studio 2017 Tools](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker) (Visual Studio 2017 年 1 またはそれ以降のバージョン)。
 
--   手動で追加することによってアプリを containerize する[Dockerfile](https://docs.docker.com/engine/reference/builder/)を使用して、 [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)です。
+- 手動で追加することによってアプリを containerize する[Dockerfile](https://docs.docker.com/engine/reference/builder/)を使用して、 [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)です。
 
--   使用してアプリを containerize、 [Img2Docker](https://github.com/docker/communitytools-image2docker-win)ツール (Docker からオープン ソース ツール)。
+- 使用してアプリを containerize、 [Img2Docker](https://github.com/docker/communitytools-image2docker-win)ツール (Docker からオープン ソース ツール)。
 
-このチュートリアルは、Docker 方法は、Visual Studio 2017 ツールに焦点を当てていますが、他の 2 つのアプローチが Dockerfile を使用してにおいては類似しています。
+このチュートリアルは、Docker 方法は、Visual Studio 2017 ツールに焦点を当てていますが、他の 2 つのアプローチが Dockerfile を使用してに関して類似しています。
 
 ### <a name="scenario"></a>シナリオ
 
@@ -137,7 +138,7 @@ GitHub wiki 上でこのコンテンツをさらに詳しい情報を表示: [ht
 
 ### <a name="overview"></a>概要
 
-Azure で Windows Server 2016 VM 上の Docker ホストに展開するには、開発/テスト/ステージング環境をすばやくセットアップすることができます。 アプリを検証するには、テスト担当者またはビジネス ユーザー用の共通の場所も示します。 また Vm は、有効な IaaS の運用環境を指定できます。
+Azure の Windows Server 2016 仮想マシン (VM) 上の Docker ホストに展開するには、開発/テスト/ステージング環境をすばやくセットアップすることができます。 アプリを検証するには、テスト担当者またはビジネス ユーザー用の共通の場所も示します。 Vm は、Service (IaaS) の実稼働環境として有効なインフラストラクチャをすることもできます。
 
 ### <a name="goals"></a>目的
 
@@ -167,7 +168,7 @@ Azure で Windows Server 2016 VM 上の Docker ホストに展開するには、
 
 ### <a name="azure-vms-for-windows-containers"></a>Windows コンテナーの azure Vm
 
-Azure Vm の Windows コンテナーは、Windows 10、Windows Server 2016 に基づいている Vm だけでは、または以降のバージョンがあり、Docker エンジンの両方をセットアップします。 ほとんどの場合は、Azure Vm で Windows Server 2016 を使用します。
+Windows コンテナーの azure Vm は Vm の Windows Server 2016、Windows 10、またはそれ以降のバージョンに基づく、Docker エンジンがどちらも設定します。 ほとんどの場合は、Windows Server 2016 は Azure Vm で使用されます。
 
 Azure は、という名前の VM を現在提供**コンテナーと Windows Server 2016**です。 この VM を使用して、Windows Server Core または Nano Server の Windows で、新しい Windows Server コンテナー機能を試みることができます。 コンテナー OS イメージがインストールされ、その VM は Docker で使用できるようにします。
 
@@ -217,25 +218,25 @@ Kubernetes に Windows コンテナー ベースのアプリケーションを�
 
 ### <a name="benefits"></a>利点
 
-Kubernetes でクラスターに展開する多くの利点があります。 最大のメリットは、運用環境で環境をすることがスケール アウトする (内部スケーラビリティの既存のノードで) を使用して、クラスター (ノードまたは Vm の数に基づいて、コンテナーのインスタンスの数に基づいてアプリケーションを取得します。グローバルなスケーラビリティはクラスターの)。
+Kubernetes でクラスターに展開する多くの利点があります。 最大のメリットは、運用環境で環境をスケール アウトできます (既存のノードでは内部スケーラビリティ) を使用して、クラスター (ノードまたは Vm の数に基づくコンテナーのインスタンスの数に基づいて、アプリケーションを取得します。グローバルなスケーラビリティはクラスターの)。
 
 Azure のコンテナー サービスは、具体的には Azure の一般的なオープン ソース ツールとテクノロジを最適化します。 移植性をコンテナーと、アプリケーションの構成の両方を提供する、開いているソリューションが表示されます。 ホストの数、サイズを選択し、orchestrator ツール-コンテナーのサービスが他のすべてを処理します。
 
 Kubernetes と開発者は他のユーザー間で、次の機能を容易にするコンテナーを中心としたインフラストラクチャの計画を考えた物理および仮想マシンに進むことができます。
 
--   複数のコンテナーに基づくアプリケーション
+- 複数のコンテナーに基づくアプリケーション
 
--   コンテナーのインスタンスと自動スケールを水平方向にレプリケートします。
+- コンテナーのインスタンスと自動スケールを水平方向にレプリケートします。
 
--   名前付けと (たとえば、内部 DNS) を検出します。
+- 名前付けと (たとえば、内部 DNS) を検出します。
 
--   負荷を分散
+- 負荷を分散
 
--   ローリング アップデート
+- ローリング アップデート
 
--   シークレットを配布します。
+- シークレットを配布します。
 
--   アプリケーションの正常性チェック
+- アプリケーションの正常性チェック
 
 ## <a name="next-steps"></a>次の手順
 
@@ -251,7 +252,7 @@ GitHub wiki 上でこのコンテンツをさらに詳しい情報を表示: [ht
 
 ### <a name="overview"></a>概要
 
-Windows コンテナーに基づいているアプリケーションはすばやく遠ざかる、さらに IaaS Vm からプラットフォームを使用する必要があります。 これを簡単に高いスケーラビリティを実現するために必要なよりスケーラビリティ、自動化され、では、大幅な向上を配置およびバージョン管理を自動化します。 Orchestrator は、Azure クラウドで使用できますが、内部設置型の使用にも使用可能で、Azure Service Fabric を使用するか、別のパブリック クラウドであっても、これらの目標を実現できます。
+Windows コンテナーをすばやくに基づいてアプリケーションは、プラットフォームでは、遠ざかる、さらに IaaS Vm からを使用する必要があります。 これを簡単に高いスケーラビリティを実現するために必要なよりスケーラビリティ、自動化され、では、大幅な向上を配置およびバージョン管理を自動化します。 Orchestrator は、Azure クラウドで使用できますが、内部設置型の使用にも使用可能で、Azure Service Fabric を使用するか、別のパブリック クラウドであっても、これらの目標を実現できます。
 
 ### <a name="goals"></a>目的
 
@@ -277,37 +278,37 @@ Windows コンテナーに基づいているアプリケーションはすばや
 
 ## <a name="benefits"></a>利点
 
-Service Fabric クラスターを展開する利点は、Kubernetes を使用する利点と似ています。 1 つの違いは、Service Fabric Kubernetes、早い段階まで Windows コンテナーのプレビューでは 2017 年の月と比較して、Windows アプリケーションの非常に成熟した実稼働環境です。 (Kubernetes は for Linux より完成度の高い環境) です。 
+Service Fabric クラスターを展開する利点は、Kubernetes を使用する利点と似ています。 1 つの違いは Service Fabric Kubernetes バージョン 1.9 で Windows コンテナーのベータ版のフェーズでは Kubernetes と比較して、Windows アプリケーションの運用環境より完成度の高い (2017 年 12 月)。 Kubernetes は、for Linux より完成度の高い環境です。
 
-Azure Service Fabric を使用する主な利点は、運用環境で環境をすることがスケール アウトする (内部スケーラビリティの既存のノードで) を使用しての数に基づいて、コンテナーのインスタンスの数に基づいてアプリケーションを取得します。ノードまたはクラスター (クラスターのグローバルな拡張性) で Vm です。
+Azure Service Fabric を使用する主な利点は、運用環境で環境をスケール アウトできます (既存のノードでは内部スケーラビリティ) を使用するの数に基づいて、コンテナー インスタンスの数に基づいて、アプリケーションを取得します。ノードまたはクラスター (クラスターのグローバルな拡張性) で Vm です。
 
 Azure Service Fabric は、コンテナーと、アプリケーションの構成の両方の移植性を提供します。 Azure では、クラスター、または独自のデータ センターに内部設置型インストールに Service Fabric ことができます。 同様にも別のクラウドにこの Service Fabric クラスターをインストールすることができます[Amazon AWS](https://blogs.msdn.microsoft.com/azureservicefabric/2017/05/18/tutorial-how-to-create-a-service-fabric-standalone-cluster-with-aws-ec2-instances/)です。
 
 Service Fabric で開発者は他のユーザー間で、次の機能を容易にするコンテナーを中心としたインフラストラクチャの計画を考えた物理および仮想マシンに進むことができます。
 
--   複数のコンテナーに基づくアプリケーションです。
+- 複数のコンテナーに基づくアプリケーションです。
 
--   コンテナーのインスタンスおよび水平方向の自動スケーリングをレプリケートしています。
+- コンテナーのインスタンスおよび水平方向の自動スケーリングをレプリケートしています。
 
--   名前付けと (たとえば、内部 DNS) を検出します。
+- 名前付けと (たとえば、内部 DNS) を検出します。
 
--   負荷を分散します。
+- 負荷を分散します。
 
--   更新プログラムの展開です。
+- 更新プログラムの展開です。
 
--   シークレットを配布します。
+- シークレットを配布します。
 
--   アプリケーションの正常性を確認します。
+- アプリケーションの正常性を確認します。
 
 次の機能は、(他の orchestrators と比較して)、Service Fabric で排他が。
 
--   ステートフル サービスの機能、信頼性の高いサービス アプリケーションのモデルを使用します。
+- ステートフル サービスの機能、信頼性の高いサービス アプリケーションのモデルを使用します。
 
--   アクター パターン、Reliable Actors アプリケーション モデルを使用します。
+- アクター パターン、Reliable Actors アプリケーション モデルを使用します。
 
--   Windows または Linux のコンテナーに加え、ベア骨のプロセスを展開します。
+- Windows または Linux のコンテナーに加え、ベア骨のプロセスを展開します。
 
--   高度なローリング更新プログラムとの正常性チェックします。
+- 高度なローリング更新プログラムとの正常性チェックします。
 
 ### <a name="next-steps"></a>次の手順
 

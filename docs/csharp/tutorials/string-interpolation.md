@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-ms.openlocfilehash: b6b3ce53a08cfacfacb19266b0be216a40633352
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: db062ed2f832ae933941da1c49e84303090f4390
+ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="string-interpolation-in-c"></a>C# における文字列補間 #
 
-文字列補間は、文字列内のプレースホルダーを文字列変数の値によって置き換える方法です。 C# 6 より前は、これは `System.String.Format` を使用して行われました。 それでも動作しますが、番号付きのプレースホルダーを使用するため読みにくく冗長になります。
+文字列補間は、文字列内のプレースホルダーを文字列変数の値によって置き換える方法です。 C# 6 より前は、これは <xref:System.String.Format%2A?displayProperty=nameWithType> を使用して行われました。 それでも動作しますが、番号付きのプレースホルダーを使用するため読みにくく冗長になります。
 
 他のプログラミング言語ではすでに、文字列補間の機能を組み込んでいました。 たとえば PHP では次のようになります。
 
@@ -42,7 +42,7 @@ C# 6 でついに、この形式の文字列補間ができるようになりま
 dotnet new console
 ```
 
-このコマンドで、プロジェクト ファイル *interpolated.csproj* およびソース コード ファイル *Program.cs* とともに、必要最低限の .NET Core プロジェクトが作成されます。 `dotnet restore` を実行して、このプロジェクトのコンパイルに必要な依存関係を復元する必要があります。
+このコマンドでは、プロジェクト ファイル *interpolated.csproj* およびソース コード ファイル *Program.cs* とともに、必要最低限の .NET Core プロジェクトが作成されます。 `dotnet restore` を実行して、このプロジェクトのコンパイルに必要な依存関係を復元する必要があります。
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -52,7 +52,7 @@ dotnet new console
 
 ## <a name="intro-to-string-interpolation"></a>文字列補間の概要
 
-`System.String.Format` を使用して、文字列で、その文字列に続くパラメーターで置き換えられる "プレースホルダー" を指定します。 たとえば、次のようになります。
+<xref:System.String.Format%2A?displayProperty=nameWithType> を使用して、文字列で、その文字列に続く引数で置き換えられる "プレースホルダー" を指定します。 たとえば、次のようになります。
 
 [!code-csharp[String.Format example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#StringFormatExample)]  
 
@@ -78,7 +78,7 @@ This is line number 5
 
 ## <a name="how-string-interpolation-works"></a>文字列補間の動作
 
-背後では、この文字列補間の構文はコンパイラによって String.Format に変換されます。 そのため、[前に String.Format で実行したのと同様のこと](https://msdn.microsoft.com/library/dwhawy9k(v=vs.110).aspx)ができます。
+背後では、この文字列補間の構文はコンパイラによって `String.Format` に変換されます。 そのため、[前に `String.Format` で実行したのと同様のこと](../../standard/base-types/formatting-types.md)ができます。
 
 たとえば、パディングと数値の書式設定を追加できます。
 
@@ -114,14 +114,12 @@ Console.WriteLine(localizeMe);
 
 ## <a name="localization-and-internationalization"></a>ローカリゼーションと国際化
 
-補間された文字列は `IFormattable` と `FormattableString` をサポートしており、国際化するのに役立ちます。
+補間された文字列は <xref:System.IFormattable?displayProperty=nameWithType> と <xref:System.FormattableString?displayProperty=nameWithType> をサポートしており、国際化するのに役立ちます。
 
-既定では、補間された文字列は現在のカルチャを使用します。 別のカルチャを使用するには、`IFormattable` としてキャストします。
-
-たとえば、次のようになります。
+既定では、補間された文字列は現在のカルチャを使用します。 別のカルチャを使用するには、補間された文字列を `IFormattable` としてキャストします。 たとえば、次のようになります。
 
 [!code-csharp[Interpolation internationalization example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationInternationalizationExample)]  
 
 ## <a name="conclusion"></a>まとめ 
 
-このチュートリアルでは、C# 6 の文字列補間機能の使用方法について説明しました。 これは基本的に、シンプルな `String.Format` ステートメントを書く簡潔な方法で、より高度な使い方をするには注意が必要です。
+このチュートリアルでは、C# 6 の文字列補間機能の使用方法について説明しました。 これは基本的に、シンプルな `String.Format` ステートメントを書き込む簡潔な方法で、より高度な使い方をするには注意が必要です。 詳細については、「[挿入文字列](../../csharp//language-reference/keywords/interpolated-strings.md)」トピックを参照してください。
