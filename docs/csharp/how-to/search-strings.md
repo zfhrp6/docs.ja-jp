@@ -11,11 +11,11 @@ helpviewer_keywords:
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
 ms.author: wiwagn
-ms.openlocfilehash: cb672ef74d9eb83df7d1c8985e518136dad54c34
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 60d31a3d6d694c04d0c93b96816928e2ccbd3fba
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-to-search-strings"></a>方法: 文字列を検索する
 
@@ -60,7 +60,7 @@ ms.lasthandoff: 02/28/2018
 
 ## <a name="does-a-string-follow-a-pattern"></a>文字列はパターンに従っていますか?
 
-次のコードでは正規表現を使用して、配列の各文字列の形式を検証します。 各文字列が電話番号の形式であることが検証されます。つまり、3 グループの数値がダッシュで区切られ、最初の 2 グループには 3 桁の数値が含まれ、3 つ目のグループには 4 桁の数値が含まれることが検証されます。 検索パターンでは正規表現の `^\\d{3}-\\d{3}-\\d{4}$` を使用します。 詳細については、「[正規表現言語 - クイック リファレンス](http://msdn.microsoft.com/library/930653a6-95d2-4697-9d5a-52d11bb6fd4c)」をご覧ください。
+次のコードでは正規表現を使用して、配列の各文字列の形式を検証します。 各文字列が電話番号の形式であることが検証されます。つまり、3 グループの数値がダッシュで区切られ、最初の 2 グループには 3 桁の数値が含まれ、3 つ目のグループには 4 桁の数値が含まれることが検証されます。 検索パターンでは正規表現の `^\\d{3}-\\d{3}-\\d{4}$` を使用します。 詳細については、「[正規表現言語 - クイック リファレンス](../../standard/base-types/regular-expression-language-quick-reference.md)」をご覧ください。
 
 | pattern  | 説明                             |
 | -------- |-------------------------------------|

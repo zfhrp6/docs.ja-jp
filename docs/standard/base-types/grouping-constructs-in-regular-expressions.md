@@ -26,11 +26,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9b9e54d8bbc9ca7cc9172fd83bd15968b3cef8e1
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 107e935f3fd4fd38b4393d09e46c03c0c51c4d79
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>正規表現でのグループ化構成体
 グループ化構成体は、正規表現の部分式を表し、入力文字列の部分文字列をキャプチャします。 グループ化構成体を使用して、以下を実行できます。  
@@ -393,7 +393,7 @@ ms.lasthandoff: 02/27/2018
 |パターン|説明|  
 |-------------|-----------------|  
 |`\d{2}`|2 桁の 10 進数と一致します。|  
-|`{?<=\b20)`|ワード境界で 2 桁の 10 進数の前に 10 進数 "20" がある場合は照合を続行します。|  
+|`(?<=\b20)`|ワード境界で 2 桁の 10 進数の前に 10 進数 "20" がある場合は照合を続行します。|  
 |`\b`|ワード境界で照合を終了します。|  
   
  ゼロ幅の正の後読みアサーションは、キャプチャされたグループの最後の文字がそのグループの正規表現パターンと一致する文字のサブセットになる必要がある場合に、バックトラッキングを制限するためにも使用されます。 たとえば、グループが連続するすべての単語文字をキャプチャする場合に、ゼロ幅の正の後読みアサーションを使用して、最後の文字がアルファベットになるように要求できます。  

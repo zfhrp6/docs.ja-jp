@@ -27,11 +27,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8e565d029096b88d304b9cfc241807084873e735
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cea67e0309bccac7d21d7e8db659a55d34d4959a
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>正規表現での代替構成体
 <a name="top"></a> 代替構成体は、択一条件または条件一致を有効にするように正規表現を変更します。 .NET では、次の 3 つの代替構成体がサポートされています。  
@@ -126,18 +126,18 @@ ms.lasthandoff: 12/23/2017
  [!code-csharp[RegularExpressions.Language.Alternation#4](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation4.cs#4)]
  [!code-vb[RegularExpressions.Language.Alternation#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation4.vb#4)]  
   
- この正規表現パターン `\b(?<n2>\d{2}-)*(?(n2)\d{7}|\d{3}-\d{2}-\d{4})\b` の解釈を次の表に示します。  
+ この正規表現パターン `\b(?<n2>\d{2}-)?(?(n2)\d{7}|\d{3}-\d{2}-\d{4})\b` の解釈を次の表に示します。  
   
 |パターン|説明|  
 |-------------|-----------------|  
 |`\b`|ワード境界から開始します。|  
-|`(?<n2>\d{2}-)*`|「2 桁の数字の後にハイフン」の 0 個または 1 個の出現と照合します。 このキャプチャ グループに `n2`という名前を付けます。|  
+|`(?<n2>\d{2}-)?`|「2 桁の数字の後にハイフン」の 0 個または 1 個の出現と照合します。 このキャプチャ グループに `n2`という名前を付けます。|  
 |`(?(n2)`|`n2` への一致が入力文字列内に見つかるかどうかテストします。|  
 |`)\d{7}`|`n2` が一致した場合は、7 桁の 10 進数を照合します。|  
 |<code>&#124;\d{3}-\d{2}-\d{4}</code>|`n2` が一致しなかった場合は、「3 桁の 10 進数、ハイフン、2 桁の 10 進数、もう 1 つのハイフン、および 4 桁の 10 進数」を照合します。|  
 |`\b`|ワード境界に一致します。|  
   
- この例を少し変更して、名前付きグループではなく番号付きグループを使用する例を次に示します。 正規表現パターンは `\b(\d{2}-)*(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b`です。  
+ この例を少し変更して、名前付きグループではなく番号付きグループを使用する例を次に示します。 正規表現パターンは `\b(\d{2}-)?(?(1)\d{7}|\d{3}-\d{2}-\d{4})\b` です。  
   
  [!code-csharp[RegularExpressions.Language.Alternation#5](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation5.cs#5)]
  [!code-vb[RegularExpressions.Language.Alternation#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation5.vb#5)]  
