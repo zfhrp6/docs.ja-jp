@@ -1,4 +1,3 @@
 # [文字列](index.md)
-## [方法: 文字列の内容を変更する](how-to-modify-string-contents.md)
 ## [方法: 文字列を比較する](how-to-compare-strings.md)
 ## [方法: 文字列が数値を表しているかどうかを確認する](how-to-determine-whether-a-string-represents-a-numeric-value.md)
