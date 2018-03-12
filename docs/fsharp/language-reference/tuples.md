@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 35069073-9a82-410f-8dea-912e2a152e6d
-ms.openlocfilehash: c6a0565ac7022928f5c2bdad5387d896c6c3d387
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 996566f2baaea8ab01e5c80e53caea82e9684714
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tuples"></a>タプル
 
@@ -29,7 +29,7 @@ struct(element, ... ,element )
 ## <a name="remarks"></a>コメント
 各*要素*前の構文では有効な f# 式を指定できます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 組には、ペア 3 要素、やなど、同じまたは異なる型のなどがあります。 いくつかの例は、次のコードに示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/tuples/basic-examples.fsx#L6-L21)]
@@ -89,7 +89,7 @@ int * float * string
 
 ## <a name="interoperation-with-c-tuples"></a>C# の組との相互運用
 
-C# 7 では、組を言語で導入されました。  C# とは構造体、およびは f# の構造体の組を等価の組。  相互運用する必要がある場合は、c# の組を使用して、構造体の組を使用する必要があります。
+C# 7 では、組を言語で導入されました。  C# 内の組構造体と f# の構造体のタプルに同じです。  C# と相互運用する必要がある場合は、構造体の組を使用する必要があります。
 
 これは簡単に行えます。  たとえば、c# のクラスに組を渡すし、これは、組でも、その結果を使用する必要があるとします。
 
@@ -132,7 +132,7 @@ let struct (newX, newY) = Example.AddOneToXAndY(struct (1, 2))
 
 構造体の組 (たとえば、 `struct (x, y)`)、参照の組から基本的に異なります。  コンパイル、<xref:System.ValueTuple>アリティ、または型パラメーターの数によってオーバー ロードされた型。  これらと同じ[c# 7 組](../../csharp/tuples.md)と[Visual Basic 2017 組](../../visual-basic/programming-guide/language-features/data-types/tuples.md)、双方向の相互運用とします。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [F# 言語リファレンス](index.md)
 
 [F# の型](fsharp-types.md)
