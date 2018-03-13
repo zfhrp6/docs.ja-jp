@@ -1,5 +1,5 @@
 ---
-title: "」を参照してください。 演算子 (C# リファレンス)"
+title: ". 演算子 (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
