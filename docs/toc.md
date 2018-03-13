@@ -267,6 +267,7 @@
 ### [文字列を連結する方法](csharp/how-to/concatenate-multiple-strings.md)
 ### [方法 文字列を DateTime に変換する](standard/base-types/parsing-datetime.md)
 ### [文字列を検索する方法](csharp/how-to/search-strings.md)
+### [文字列の内容を変更する方法](csharp/how-to/modify-string-contents.md)
 <!-- End of C# Concepts section -->
 ## [.NET Compiler Platform SDK (Roslyn API)](csharp/roslyn-sdk/)
 ## [C# プログラミング ガイド](csharp/programming-guide/)

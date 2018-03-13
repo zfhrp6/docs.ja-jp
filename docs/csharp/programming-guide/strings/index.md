@@ -12,11 +12,11 @@ ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6492edae6e4311252dc664236fb43cd373f7c59f
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 24b3db01047a9f9a47182e0e1ac105f69562c316
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="strings-c-programming-guide"></a>文字列 (C# プログラミング ガイド)
 文字列は、値がテキストの <xref:System.String> 型のオブジェクトです。 内部では、テキストは <xref:System.Char> オブジェクトの順次読み取り専用コレクションとして格納されます。 C# の文字列の末尾には null 終端文字はありません。したがって、C# の文字列には任意の数の null 文字 ('\0') を埋め込むことができます。 文字列の <xref:System.String.Length%2A> プロパティは、Unicode 文字の数ではなく、文字列に含まれている `Char` オブジェクトの数を表します。 文字列内の個別の Unicode コード ポイントにアクセスするには、<xref:System.Globalization.StringInfo> オブジェクトを使用します。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 02/28/2018
   
  [!code-csharp[csProgGuideStrings#25](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_3.cs)]  
   
- 元の文字列での検索操作や置換操作などの変更に基づく新しい文字列を作成する方法の詳細については、「[方法: 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)」を参照してください。  
+ 元の文字列での検索操作や置換操作などの変更に基づく新しい文字列を作成する方法の詳細については、「[方法: 文字列の内容を変更する](../../how-to/modify-string-contents.md)」を参照してください。  
   
 ## <a name="regular-and-verbatim-string-literals"></a>標準リテラル文字列と逐語的リテラル文字列  
  次の例に示すように、C# で提供されるエスケープ文字を埋め込む必要がある場合は、標準リテラル文字列を使用します。  
@@ -83,7 +83,7 @@ ms.lasthandoff: 02/28/2018
  <xref:System.Console.WriteLine%2A> メソッドのオーバーロードは、パラメーターとして書式指定文字列を受け取ります。 したがって、メソッドを明示的に呼び出さずに書式指定リテラル文字列を埋め込むことができます。 ただし、Visual Studio の **[出力]** ウィンドウにデバッグ出力を表示するために <xref:System.Diagnostics.Trace.WriteLine%2A> メソッドを使用する場合、<xref:System.Diagnostics.Trace.WriteLine%2A> は書式文字列ではなく、文字列のみを受け入れるので、明示的に <xref:System.String.Format%2A> メソッドを呼び出す必要があります。 書式指定文字列の詳細については、「[型の書式設定](../../../standard/base-types/formatting-types.md)」を参照してください。  
   
 ## <a name="substrings"></a>部分文字列  
- 部分文字列は、1 つの文字列に含まれる一連の文字です。 元の文字列の一部から新しい文字列を作成するには、<xref:System.String.Substring%2A> メソッドを使用します。 <xref:System.String.IndexOf%2A> メソッドを使用して、1 つまたは複数の部分文字列を検索できます。 指定されたすべての部分文字列を新しい文字列に置換するには、<xref:System.String.Replace%2A> メソッドを使用します。 <xref:System.String.Substring%2A> メソッドと同様に、<xref:System.String.Replace%2A> は実際に新しい文字列を返し、元の文字列は変更しません。 詳細については、「[How to: search strings](../../how-to/search-strings.md)」(方法: 文字列を検索する) および「[方法 : 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)」を参照してください。  
+ 部分文字列は、1 つの文字列に含まれる一連の文字です。 元の文字列の一部から新しい文字列を作成するには、<xref:System.String.Substring%2A> メソッドを使用します。 <xref:System.String.IndexOf%2A> メソッドを使用して、1 つまたは複数の部分文字列を検索できます。 指定されたすべての部分文字列を新しい文字列に置換するには、<xref:System.String.Replace%2A> メソッドを使用します。 <xref:System.String.Substring%2A> メソッドと同様に、<xref:System.String.Replace%2A> は実際に新しい文字列を返し、元の文字列は変更しません。 詳細については、「[How to: search strings](../../how-to/search-strings.md)」(方法: 文字列を検索する) および「[方法 : 文字列の内容を変更する](../../how-to/modify-string-contents.md)」を参照してください。  
   
  [!code-csharp[csProgGuideStrings#7](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_7.cs)]  
   
@@ -123,11 +123,11 @@ string s = String.Empty;
   
 |トピック|説明|  
 |-----------|-----------------|  
-|[方法: 文字列の内容を変更する](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)|文字列の内容を変更するコード例を紹介します。|  
-|[方法: 複数の文字列を連結する](../../../csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md)|`+` 演算子と `Stringbuilder` クラスを使用して、コンパイル時および実行時に文字列を結合する方法について説明します。|  
+|[方法: 文字列の内容を変更する](../../how-to/modify-string-contents.md)|文字列の変換および文字列の内容を変更する手法を示します。|  
+|[方法: 複数の文字列を連結する](../../../csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md)|コンパイル時と実行時に 1 つの文字列に複数の文字列を結合する手法を示します。|  
 |[方法: 文字列を比較する](../../../csharp/programming-guide/strings/how-to-compare-strings.md)|文字列の序数比較を実行する方法を示します。|  
 |[方法: String.Split を使用して文字列を解析する](../../how-to/parse-strings-using-split.md)|`String.Split` メソッドを使用して文字列を解析するコード例を紹介します。|  
-|[方法: 文字列を検索する](../../how-to/search-strings.md)|特定のメソッドを使用して文字列を検索する方法について説明します。|  
+|[方法: 文字列を検索する](../../how-to/search-strings.md)|特定のテキストまたは文字列のパターンの検索を使用する方法について説明します。|  
 |[方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|文字列を安全に解析して、有効な数値があるかどうかを確認する方法を示します。|  
 |[方法: 文字列を DateTime に変換する](../../../csharp/programming-guide/strings/how-to-convert-a-string-to-a-datetime.md)|"01/24/2008" などの文字列を、<xref:System.DateTime?displayProperty=nameWithType> オブジェクトに変換する方法を示します。|  
 |[基本的な文字列操作](../../../../docs/standard/base-types/basic-string-operations.md)|<xref:System.String?displayProperty=nameWithType> メソッドおよび <xref:System.Text.StringBuilder?displayProperty=nameWithType> メソッドを使用し文字列の基本操作を実行する、トピックへのリンクがあります。|  
