@@ -24,14 +24,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2abd4c772c02c431ecb73139be7f620fe04d5d82
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7536d06c971251fb857fabefc95a50ae4389f785
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>ジェネリックの共変性と反変性
-<a name="top"></a> 共変性と反変性は、元の指定よりも弱い派生型 (具体性が低い) と強い派生型 (具体性が高い) を使用する能力を示す用語です。 ジェネリック型パラメーターは、ジェネリック型の代入と使用の柔軟性を向上させるために、共変性と反変性をサポートしています。 型システムにおいて、共変性、反変性、および不変性は、次のように定義されます。 各例では、基底クラスが `Base` という名前であり、派生クラスが `Derived`という名前であるとします。  
+<a name="top"></a> 共変性と反変性は、元の指定よりも強い派生型 (具体性が高い) と弱い派生型 (具体性が低い) を使用する能力を示す用語です。 ジェネリック型パラメーターは、ジェネリック型の代入と使用の柔軟性を向上させるために、共変性と反変性をサポートしています。 型システムにおいて、共変性、反変性、および不変性は、次のように定義されます。 各例では、基底クラスが `Base` という名前であり、派生クラスが `Derived`という名前であるとします。  
   
 -   `Covariance`  
   

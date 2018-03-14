@@ -3,16 +3,16 @@ title: "Windows における .NET Core の前提条件"
 description: "Windows コンピューターで .NET Core アプリケーションを開発および実行する場合に必要な依存関係について説明します。"
 author: JRAlexander
 ms.author: johalex
-ms.date: 02/28/2018
+ms.date: 03/02/2018
 ms.topic: article
 ms.prod: .net-core
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: e64ecb807fd377458a9998ebbdfe2f6f15b115bb
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: 48102f3fb7fa6e93238eefff0e7f1ecbed4d8409
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Windows における .NET Core の前提条件
 
@@ -100,5 +100,6 @@ Visual Studio で .NET Core 1.x アプリを開発するには、(**[その他�
 >
 > * **[ヘルプ]** メニューの **[About Microsoft Visual Studio]** (Microsoft Visual Studio のバージョン情報) を選択します。
 > * **[Microsoft Visual Studio のバージョン情報]** ダイアログで、バージョン番号を確認します。
->   * .NET Core 2.x アプリの場合は、Visual Studio 2017 バージョン 15.3 (26730.01) 以降です。
->   * .NET Core 1.x アプリの場合は、Visual Studio 2017 バージョン 15.0 (26228.04) 以降です。
+>   * .NET Core 2.1 Preview 1 アプリの場合は、Visual Studio 2017 バージョン 15.6 Preview 6 以降です。
+>   * .NET Core 2.0 アプリの場合は、Visual Studio 2017 バージョン 15.3 以降です。
+>   * .NET Core 1.x アプリの場合は、Visual Studio 2017 バージョン 15.0 以降です。

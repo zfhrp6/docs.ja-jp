@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 519b910a-6efe-4394-9b81-0546aa3e7462
-ms.workload: dotnetcore
-ms.openlocfilehash: 44b4ff6b870a6515f623c690ad722917c9ea5bd3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: bf523ead40d0e3cc9148b48d5c7a4a84d3d5cb81
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>dotnet new のカスタム テンプレートを作成する
 
@@ -40,7 +41,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="create-a-template-from-a-project"></a>プロジェクトからテンプレートを作成する
 
-コンパイルして実行できることが確認されている既存のプロジェクトを利用するか、ハード ドライブのフォルダーで新しいコンソール アプリ プロジェクトを作成します。 このチュートリアルでは、ユーザーのプロファイルの *Documents/Templates* に保存されている *GarciaSoftware.ConsoleTemplate.CSharp* をプロジェクト フォルダーとして想定しています。 チュートリアルのプロジェクト テンプレート名は、*\<会社名>.\<テンプレートの種類>.\<プログラミング言語>* という形式になりますが、プロジェクトとテンプレートには自由に名前を付けることができます。
+コンパイルして実行できることが確認されている既存のプロジェクトを利用するか、ハード ドライブのフォルダーで新しいコンソール アプリ プロジェクトを作成します。 このチュートリアルでは、ユーザーのプロファイルの *Documents\Templates* に保存されている *GarciaSoftware.ConsoleTemplate.CSharp* をプロジェクト フォルダーとして想定しています。 チュートリアルのプロジェクト テンプレート名は、*\<会社名>.\<テンプレートの種類>.\<プログラミング言語>* という形式になりますが、プロジェクトとテンプレートには自由に名前を付けることができます。
 
 1. *.template.config* という名前のプロジェクトのルートにフォルダーを追加します。
 1. *.template.config* フォルダー内で、テンプレートを構成する *template.json* ファイルを作成します。 *template.json* ファイルの詳細情報とメンバー定義については、「[dotnet new のカスタム テンプレート](../tools/custom-templates.md#templatejson)」トピックと JSON Schema Store の [*template.json*](http://json.schemastore.org/template) スキーマを参照してください。
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/23/2017
 
 ### <a name="pack-the-template-into-a-nuget-package"></a>テンプレートをパッケージ化し、NuGet パッケージを作成する
 
-1. NuGet パッケージのフォルダーを作成します。 このチュートリアルでは、*GarciaSoftware.ConsoleTemplate.CSharp* フォルダーが使用されます。このフォルダーは、ユーザーのプロファイルの *Documents/NuGetTemplates* フォルダーの中に作成されています。 プロジェクト ファイルを保存する目的で、新しいテンプレート フォルダー内に *content* という名前のフォルダーを作成します。
+1. NuGet パッケージのフォルダーを作成します。 このチュートリアルでは、*GarciaSoftware.ConsoleTemplate.CSharp* フォルダーが使用されます。このフォルダーは、ユーザーのプロファイルの *Documents\NuGetTemplates* フォルダーの中に作成されています。 プロジェクト ファイルを保存する目的で、新しいテンプレート フォルダー内に *content* という名前のフォルダーを作成します。
 1. 作成した *content* フォルダーに、プロジェクト フォルダーの中身を *.template.config/template.json* ファイルと共にコピーします。
 1. *content* フォルダーの隣に、[*nuspec*](/nuget/create-packages/creating-a-package) ファイルを追加します。 nuspec ファイルは XML マニフェスト ファイルであり、パッケージの中身が記述され、NuGet パッケージの作成プロセスを実行します。
    
@@ -102,10 +103,10 @@ ms.lasthandoff: 12/23/2017
    </package>
    ```
 
-1. `nuget pack <PATH_TO_NUSPEC_FILE>` コマンドで[パッケージを作成](/nuget/create-packages/creating-a-package#creating-the-package)します。 次のコマンドでは、NuGet アセットが保存されているフォルダーが *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp/* にあると想定しています。 ただし、システムのどこにフォルダーを置いても、`nuget pack` コマンドは *nuspec* ファイルのパスを受け取ります。
+1. `nuget pack <PATH_TO_NUSPEC_FILE>` コマンドで[パッケージを作成](/nuget/create-packages/creating-a-package#creating-the-package)します。 次のコマンドでは、NuGet アセットが保存されているフォルダーが *C:\Users\\\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate.CSharp\* にあると想定しています。 ただし、システムのどこにフォルダーを置いても、`nuget pack` コマンドは *nuspec* ファイルのパスを受け取ります。
 
    ```console
-   nuget pack C:/Users/<USER>/Documents/NuGetTemplates/GarciaSoftware.ConsoleTemplate.CSharp/GarciaSoftware.ConsoleTemplate.CSharp.nuspec
+   nuget pack C:\Users\<USER>\Documents\NuGetTemplates\GarciaSoftware.ConsoleTemplate.CSharp\GarciaSoftware.ConsoleTemplate.CSharp.nuspec
    ```
 
 ### <a name="publishing-the-package-to-nugetorg"></a>パッケージを nuget.org に公開する
@@ -119,7 +120,7 @@ NuGet パッケージを公開するには、「[Create and publish a package](/
 作成した *nupkg* ファイルからテンプレートをインストールするには、`-i|--install` オプションを付けて `dotnet new` コマンドを実行します。*nupkg* ファイルのパスを指定します。
 
 ```console
-dotnet new -i C:/Users/<USER>/GarciaSoftware.ConsoleTemplate.CSharp.1.0.0.nupkg
+dotnet new -i C:\Users\<USER>\GarciaSoftware.ConsoleTemplate.CSharp.1.0.0.nupkg
 ```
 
 #### <a name="install-the-template-from-a-nuget-package-stored-at-nugetorg"></a>nuget.org に保存されている NuGet パッケージからテンプレートをインストールする
@@ -187,14 +188,14 @@ dotnet new -u GarciaSoftware.ConsoleTemplate.CSharp.1.0.0
 このチュートリアルでは、ユーザーのプロファイルの *Documents/Templates* フォルダーにプロジェクト テンプレートが保存されていると想定しています。 その場所から、次のコマンドでテンプレートをインストールします。\<USER> はユーザーのプロファイルの名前に変更します。
 
 ```console
-dotnet new -i C:/Users/<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp
+dotnet new -i C:\Users\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate.CSharp
 ```
 
 ### <a name="create-a-project-from-the-template"></a>テンプレートからプロジェクトを作成する
 
 テンプレートをファイル システムからインストールしたら、そのテンプレートを使用します。(`-o|--output` オプションを利用して特定のディレクトリを指定するのでなければ) テンプレート エンジンの出力を置くディレクトリから `dotnet new <TEMPLATE>` コマンドを実行します。 詳細については、「[`dotnet new` オプション](~/docs/core/tools/dotnet-new.md#options)」を参照してください。 テンプレートの省略名 (短い名前) を `dotnet new` コマンドに直接指定します。
 
-*C:/Users/\<USER>/Documents/Projects/MyConsoleApp* に作成された新しいプロジェクト フォルダーで、`garciaconsole` テンプレートからプロジェクトを作成します。
+*C:\Users\\\<USER>\Documents\Projects\MyConsoleApp* に作成された新しいプロジェクト フォルダーで、`garciaconsole` テンプレートからプロジェクトを作成します。
 
 ```console
 dotnet new garciaconsole
@@ -202,14 +203,14 @@ dotnet new garciaconsole
 
 ### <a name="uninstall-the-template"></a>テンプレートをアンインストールする
 
-ローカル ファイル システムの *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* にテンプレートを作成した場合、`-u|--uninstall` スイッチとテンプレート フォルダーのパスを指定してアンインストールします。
+ローカル ファイル システムの *C:\Users\\\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate.CSharp* にテンプレートを作成した場合、`-u|--uninstall` スイッチとテンプレート フォルダーのパスを指定してアンインストールします。
 
 ```console
-dotnet new -u C:/Users/<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp
+dotnet new -u C:\Users\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate.CSharp
 ```
 
 > [!NOTE]
-> テンプレートをお使いのローカル ファイル システムからアンインストールするには、完全修飾パスを使用する必要があります。 たとえば、*C:/Users/\<ユーザー>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* は有効ですが、*./GarciaSoftware.ConsoleTemplate.CSharp* が含まれるフォルダーから、そのパスを指定することはできません。
+> テンプレートをお使いのローカル ファイル システムからアンインストールするには、完全修飾パスを使用する必要があります。 たとえば、*C:\Users\\\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate.CSharp* は有効ですが、*./GarciaSoftware.ConsoleTemplate.CSharp* が含まれるフォルダーから、そのパスを指定することはできません。
 > また、テンプレートのパスの最後にある終端ディレクトリのスラッシュは含めないでください。
 
 ## <a name="see-also"></a>関連項目
