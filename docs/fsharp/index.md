@@ -1,62 +1,85 @@
 ---
 title: "F# のガイド"
-description: "F# で、.NET で実行される関数型プログラミング言語について説明します。"
-keywords: .NET, .NET Core
+description: "このガイドでは、f#、.NET で実行される関数型プログラミング言語のさまざまな学習教材の概要を説明します。"
 author: jackfoxy
 ms.author: phcart
-ms.date: 12/01/2016
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ea27fb37-dad1-4bd4-a3cc-4f5c70767ae9
-ms.openlocfilehash: 45f5d2ca794ccea7a35cf6c0bf9d58a3e6500453
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: b7cf3feb5699f85bf09a47f008fdaf70ac7c8d77
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="f-guide"></a><span data-ttu-id="f5016-104">F# のガイド</span><span class="sxs-lookup"><span data-stu-id="f5016-104">F# Guide</span></span>
+# <a name="f-guide"></a><span data-ttu-id="c3c6f-103">F# のガイド</span><span class="sxs-lookup"><span data-stu-id="c3c6f-103">F# Guide</span></span>
 
-<span data-ttu-id="f5016-105">F# は、.NET で実行される関数型プログラミング言語です。</span><span class="sxs-lookup"><span data-stu-id="f5016-105">F# is a functional programming language which runs on .NET.</span></span>  <span data-ttu-id="f5016-106">サポートする関数型プログラミング構成要素だけでなくオブジェクトのプログラミング機能もあります。</span><span class="sxs-lookup"><span data-stu-id="f5016-106">In addition to supporting functional programming constructs, it also has object programming capabilities.</span></span>  <span data-ttu-id="f5016-107">このハイブリッド オブジェクト指向の機能を備えた関数型プログラミングは、F# でいずれかのタスクを実行するための実践的な言語です。</span><span class="sxs-lookup"><span data-stu-id="f5016-107">This hybrid of functional programming with object-oriented capabilities makes F# a pragmatic language for accomplishing any task.</span></span>
+<span data-ttu-id="c3c6f-104">F# では .NET で実行されている機能のプログラミング言語です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-104">F# is a functional programming language that runs on .NET.</span></span> <span data-ttu-id="c3c6f-105">Blend の機能とオブジェクトのプログラミングに関する問題をすべての実用的な解決策をすること、オブジェクトの完全なサポートもあります。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-105">It also has full support for objects, letting you blend functional and object programming for pragmatic solutions to any problem.</span></span>
 
-## <a name="if-youre-new-to-f"></a><span data-ttu-id="f5016-108">F# に慣れていない場合</span><span class="sxs-lookup"><span data-stu-id="f5016-108">If You're New to F#</span></span> #
+```fsharp
+open System // Get access to functionality in System namespace.
 
-<span data-ttu-id="f5016-109">F# を初めて始まります、[ツアーの f#](tour.md)言語の概要とそのプログラミングの概念の一部を取得します。</span><span class="sxs-lookup"><span data-stu-id="f5016-109">If you're new to F#, begin with the [Tour of F#](tour.md) to get an overview of the language and some of its programming concepts.</span></span>  <span data-ttu-id="f5016-110">Visual Studio を使用している場合、チュートリアルのプロジェクト テンプレートには、同じコンテンツが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f5016-110">If you're using Visual Studio, the Tutorial project template contains the same content.</span></span>
+// Function: takes a name and produces a greeting.
+let getGreeting name =
+    sprintf "Hello, %s! Isn't F# great?" name
 
-## <a name="if-youre-experienced-with-f"></a><span data-ttu-id="f5016-111">F# によるした経験が場合</span><span class="sxs-lookup"><span data-stu-id="f5016-111">If You're Experienced with F#</span></span> #
+// Use the EntryPoint attribute to run the program.
+[<EntryPoint>]
+let main args =
+    args                     // Use F# pipe operators to send the args into some functions.
+    |> Array.map getGreeting // Turn each name into a friendly greeting.
+    |> Array.iter printfn    // Print them!
 
-<span data-ttu-id="f5016-112">F# では、対処方法を知っているかの詳細については、特定の言語コンストラクトを表示、[言語リファレンス](language-reference/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="f5016-112">If you know your way around F#, or want to learn more about a specific language construct, see the [Language Reference](language-reference/index.md).</span></span>  <span data-ttu-id="f5016-113">F# 言語のすべての機能の詳細なガイドでは。</span><span class="sxs-lookup"><span data-stu-id="f5016-113">It's a thorough guide of all F# language capabilities.</span></span>
+    0
+```
 
-<span data-ttu-id="f5016-114">さらに、 [f# コア ライブラリ リファレンス](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference)は FSharp.Core、f# の一部では、コア ライブラリの学習に役立つ優れたリソースです。</span><span class="sxs-lookup"><span data-stu-id="f5016-114">Additionally, the [F# Core Library Reference](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference) is a great resource for learning about FSharp.Core, the core library which is a part of F#.</span></span>
+<span data-ttu-id="c3c6f-106">F# は、その中心に生産性が向上します。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-106">F# is about productivity at its heart.</span></span> <span data-ttu-id="c3c6f-107">F# 用ツール サポートは、広く普及し、高度な機能の完全です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-107">The tooling support for F# is ubiquitous and full of advanced features.</span></span>
 
-## <a name="the-f-software-foundation"></a><span data-ttu-id="f5016-115">F# ソフトウェアの基礎</span><span class="sxs-lookup"><span data-stu-id="f5016-115">The F# Software Foundation</span></span>
+## <a name="learning-f"></a><span data-ttu-id="c3c6f-108">F# の学習</span><span class="sxs-lookup"><span data-stu-id="c3c6f-108">Learning F#</span></span> #
 
-<span data-ttu-id="f5016-116">Microsoft は、f# 言語およびそのツールの主な開発者が、f# もでバックアップ、独立した foundation、f# ソフトウェア Foundation (FSSF)。</span><span class="sxs-lookup"><span data-stu-id="f5016-116">Although Microsoft is the primary developer of the F# language and its tooling, F# is also backed by an independent foundation, the F# Software Foundation (FSSF).</span></span>
+<span data-ttu-id="c3c6f-109">[F# のツアー](tour.md)多くのコード サンプルの主要な言語機能の概要を示します。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-109">[Tour of F#](tour.md) gives an overview of major language features with lots of code samples.</span></span> <span data-ttu-id="c3c6f-110">これは推奨している f# に新しい言語のしくみを理解する場合。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-110">This is recommended if you are new to F# and want to get a feel for how the language works.</span></span>
 
-<span data-ttu-id="f5016-117">F# Software Foundation の使命は、F# プログラミング言語の促進、保護、進歩であり、F# プログラマーの多様なインターナショナル コミュニティをサポートし、成長を促進しています。</span><span class="sxs-lookup"><span data-stu-id="f5016-117">The mission of the F# Software Foundation is to promote, protect, and advance the F# programming language, and to support and facilitate the growth of a diverse and international community of F# programmers.</span></span>
+<span data-ttu-id="c3c6f-111">[F# では、Visual Studio での概要](get-started/get-started-visual-studio.md)Windows にいるし、Visual Studio IDE (Integraded 開発環境) の完全なエクスペリエンスをするかどうか。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-111">[Get started with F# in Visual Studio](get-started/get-started-visual-studio.md) if you're on Windows and want the full Visual Studio IDE (Integraded Development Environment) experience.</span></span>
 
-<span data-ttu-id="f5016-118">詳細およびコミュニティへの参加については、[fsharp.org](http://fsharp.org) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f5016-118">To learn more and get involved, check out [fsharp.org](http://fsharp.org).</span></span>
+<span data-ttu-id="c3c6f-112">[Mac 用の Visual Studio で f# 概要](get-started/get-started-with-visual-studio-for-mac.md)macos Visual Studio IDE を使用する場合。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-112">[Get started with F# in Visual Studio for Mac](get-started/get-started-with-visual-studio-for-mac.md) if you're on macOS and want to use a Visual Studio IDE.</span></span>
 
-## <a name="documentation"></a><span data-ttu-id="f5016-119">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="f5016-119">Documentation</span></span>
+<span data-ttu-id="c3c6f-113">[Visual Studio のコードで f# で作業を開始](get-started/get-started-vscode.md)軽量なクロスプラット フォームをするかどうか、および IDE の機能パックが発生します。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-113">[Get Started with F# in Visual Studio Code](get-started/get-started-vscode.md) if you want a lightweight, cross-platform, and feature-packed IDE experience.</span></span>
 
-* [<span data-ttu-id="f5016-120">チュートリアル</span><span class="sxs-lookup"><span data-stu-id="f5016-120">Tutorials</span></span>](tutorials/getting-started/index.md)
-* <span data-ttu-id="f5016-121">[ファースト クラス値としての関数](introduction-to-functional-programming/functions-as-first-class-values.md)<!--[Introduction to Functional Programming](introduction-to-functional-programming/index.md)--></span><span class="sxs-lookup"><span data-stu-id="f5016-121">[Functions as First-Class Values](introduction-to-functional-programming/functions-as-first-class-values.md)<!--[Introduction to Functional Programming](introduction-to-functional-programming/index.md)--></span></span>
-* [<span data-ttu-id="f5016-122">言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="f5016-122">Language Reference</span></span>](language-reference/index.md)
-* [<span data-ttu-id="f5016-123">F# コア ライブラリ リファレンス</span><span class="sxs-lookup"><span data-stu-id="f5016-123">F# Core Library Reference</span></span>](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference)
+<span data-ttu-id="c3c6f-114">[F# では、.NET Core CLI を使用して使ってみる](get-started/get-started-command-line.md)コマンド ライン ツールを使用する場合。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-114">[Get started with F# with the .NET Core CLI](get-started/get-started-command-line.md) if you want to use command-line tools.</span></span>
 
-## <a name="online-reading-resources"></a><span data-ttu-id="f5016-124">オンライン リソース</span><span class="sxs-lookup"><span data-stu-id="f5016-124">Online Reading Resources</span></span>
+## <a name="references"></a><span data-ttu-id="c3c6f-115">参照</span><span class="sxs-lookup"><span data-stu-id="c3c6f-115">References</span></span>
 
-* [<span data-ttu-id="f5016-125">F# の楽しみとメリット Gitbook</span><span class="sxs-lookup"><span data-stu-id="f5016-125">F# for Fun and Profit Gitbook</span></span>](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/) 
-* [<span data-ttu-id="f5016-126">F# プログラミング Wikibook</span><span class="sxs-lookup"><span data-stu-id="f5016-126">F# Programming Wikibook</span></span>](https://en.wikibooks.org/wiki/F_Sharp_Programming)
+<span data-ttu-id="c3c6f-116">[F# 言語リファレンス](language-reference/index.md)の f# 言語のすべての機能の公式、包括的な参照です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-116">[F# Language Reference](language-reference/index.md) is the official, comprehensive reference for all F# language features.</span></span> <span data-ttu-id="c3c6f-117">各記事は、構文について説明し、コード サンプルを示します。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-117">Each article explains the syntax and shows code samples.</span></span> <span data-ttu-id="c3c6f-118">目次のフィルター バーを使用するには特定の記事を検索します。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-118">You can use the filter bar in the table of contents to find specific articles.</span></span>
 
-## <a name="video-learning-resources"></a><span data-ttu-id="f5016-127">ビデオ学習リソース</span><span class="sxs-lookup"><span data-stu-id="f5016-127">Video Learning Resources</span></span>
+<span data-ttu-id="c3c6f-119">[F# コア ライブラリ リファレンス](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference)f# コア ライブラリの API リファレンスがします。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-119">[F# Core Library Reference](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference) is the API reference for the F# Core Library.</span></span>
 
-* [<span data-ttu-id="f5016-128">YouTube の F# でのプログラミングの概要シリーズ</span><span class="sxs-lookup"><span data-stu-id="f5016-128">Introduction to Programming with F# series on YouTube</span></span>](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC)
-* [<span data-ttu-id="f5016-129">FSharpTV の F# の概要シリーズ</span><span class="sxs-lookup"><span data-stu-id="f5016-129">Introduction to F# series on FSharpTV</span></span>](https://fsharp.tv/courses/fsharp-programming-intro/)
+## <a name="additional-guides"></a><span data-ttu-id="c3c6f-120">その他のガイド</span><span class="sxs-lookup"><span data-stu-id="c3c6f-120">Additional guides</span></span>
 
-## <a name="further-resources"></a><span data-ttu-id="f5016-130">他のリソース</span><span class="sxs-lookup"><span data-stu-id="f5016-130">Further Resources</span></span>
+<span data-ttu-id="c3c6f-121">[F# では、楽しくて利益の](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/)F# で学習するための包括的な非常に詳細なブックします。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-121">[F# for Fun and Profit](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/) is a comprehensive and very detailed book on learning F#.</span></span> <span data-ttu-id="c3c6f-122">その内容と作成者は、f# コミュニティ大好きです。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-122">Its contents and author are beloved by the F# community.</span></span> <span data-ttu-id="c3c6f-123">対象者は、オブジェクト指向プログラミングの経験によって、開発者は、主にです。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-123">The target audience is primarily developers with an object oriented programming background.</span></span>
 
-* [<span data-ttu-id="f5016-131">F# series の F# 学習リソース</span><span class="sxs-lookup"><span data-stu-id="f5016-131">F# Learning Resources on fsharp.org</span></span>](http://fsharp.org/learn.html)
-* [<span data-ttu-id="f5016-132">F# スニペットの Web サイト</span><span class="sxs-lookup"><span data-stu-id="f5016-132">F# Snippets Website</span></span>](http://www.fssnip.net)
-* [<span data-ttu-id="f5016-133">F# ソフトウェアの基礎</span><span class="sxs-lookup"><span data-stu-id="f5016-133">F# Software Foundation</span></span>](http://fsharp.org)
+<span data-ttu-id="c3c6f-124">[F# のプログラミング Wikibook](https://en.wikibooks.org/wiki/F_Sharp_Programming) f# に関する wikibook がします。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-124">[F# Programming Wikibook](https://en.wikibooks.org/wiki/F_Sharp_Programming) is a wikibook about learning F#.</span></span> <span data-ttu-id="c3c6f-125">F# community の製品です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-125">It is also a product of the F# community.</span></span> <span data-ttu-id="c3c6f-126">対象者は、f#、若干のオブジェクト指向プログラミングの経験に慣れていないユーザーです。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-126">The target audience is people who are new to F#, with a little bit of object oriented programming background.</span></span>
+
+## <a name="learn-f-through-videos"></a><span data-ttu-id="c3c6f-127">ビデオを F# で学習します</span><span class="sxs-lookup"><span data-stu-id="c3c6f-127">Learn F# through videos</span></span>
+
+<span data-ttu-id="c3c6f-128">[YouTube の f# チュートリアル](https://www.youtube.com/watch?v=c7eNDJN758U)は、優れた入門 f# Visual Studio を使用して、1.5 時間の間に多数の優れた例を示しています。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-128">[F# tutorial on YouTube](https://www.youtube.com/watch?v=c7eNDJN758U) is a great introduction to F# using Visual Studio, showing lots of great examples over the course of 1.5 hours.</span></span> <span data-ttu-id="c3c6f-129">対象者は、f# を初めて Visual Studio の開発者です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-129">The target audience is Visual Studio developers who are new to F#.</span></span>
+
+<span data-ttu-id="c3c6f-130">[F# によるプログラミングの概要](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC)はメインのエディターとして Visual Studio のコードを使用する優れたビデオ シリーズです。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-130">[Introduction to Programming with F#](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC) is a great video series that uses Visual Studio Code as the main editor.</span></span> <span data-ttu-id="c3c6f-131">ビデオ シリーズでは、何もから開始され、テキスト ベースの RPG ビデオ ゲームの構築を終了します。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-131">The video series starts from nothing and ends with building a text-based RPG video game.</span></span> <span data-ttu-id="c3c6f-132">対象者は、Visual Studio Code (または軽量 IDE) を優先し、f# に慣れていない開発者です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-132">The target audience is developers who prefer Visual Studio Code (or a lightweight IDE) and are new to F#.</span></span>
+
+<span data-ttu-id="c3c6f-133">[F# の開発者向けの Visual Studio 2017 の新](https://www.linkedin.com/learning/what-s-new-in-visual-studio-2017-for-f-sharp-for-developers)の F# では、Visual Studio 2017 で、新しい機能の一部を表示するビデオのコースがします。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-133">[What's New in Visual Studio 2017 for F# For Developers](https://www.linkedin.com/learning/what-s-new-in-visual-studio-2017-for-f-sharp-for-developers) is a video course that shows some of the newer features for F# in Visual Studio 2017.</span></span> <span data-ttu-id="c3c6f-134">対象者は、f# を初めて Visual Studio の開発者です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-134">The target audience is Visual Studio developers who are new to F#.</span></span>
+
+## <a name="other-useful-resources"></a><span data-ttu-id="c3c6f-135">その他の便利なリソース</span><span class="sxs-lookup"><span data-stu-id="c3c6f-135">Other useful resources</span></span>
+
+<span data-ttu-id="c3c6f-136">[F# スニペット web サイト](http://www.fssnip.net)f#、初級から非常に高度なスニペットまでの範囲にあるあらゆるものを行う方法を示すコード スニペットの大規模なセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-136">The [F# Snippets Website](http://www.fssnip.net) contains a massive set of code snippets showing how to do just about anything in F#, ranging from absolute beginner to highly advanced snippets.</span></span>
+
+<span data-ttu-id="c3c6f-137">[F# ソフトウェア Foundation Slack](http://fsharp.org/guides/slack/)最適な場所が初心者と似ていますの専門家は、頻度の高いおり、世界中の最適な f# のプログラマのチャットに使用できるいくつか。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-137">The [F# Software Foundation Slack](http://fsharp.org/guides/slack/) is a great place for beginners and experts alike, is highly active, and has some of world's best F# programmers available for a chat.</span></span> <span data-ttu-id="c3c6f-138">参加を強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-138">We highly recommend joining.</span></span>
+
+## <a name="the-f-software-foundation"></a><span data-ttu-id="c3c6f-139">F# ソフトウェアの基礎</span><span class="sxs-lookup"><span data-stu-id="c3c6f-139">The F# Software Foundation</span></span>
+
+<span data-ttu-id="c3c6f-140">マイクロソフトでは、f# 言語やそのツールと Visual Studio での主な開発者は、f# も支えられた独立の foundation、f# ソフトウェア Foundation (FSSF)。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-140">Although Microsoft is the primary developer of the F# language and its tools in Visual Studio, F# is also backed by an independent foundation, the F# Software Foundation (FSSF).</span></span>
+
+<span data-ttu-id="c3c6f-141">F# Software Foundation の使命は、F# プログラミング言語の促進、保護、進歩であり、F# プログラマーの多様なインターナショナル コミュニティをサポートし、成長を促進しています。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-141">The mission of the F# Software Foundation is to promote, protect, and advance the F# programming language, and to support and facilitate the growth of a diverse and international community of F# programmers.</span></span>
+
+<span data-ttu-id="c3c6f-142">詳細およびコミュニティへの参加については、[fsharp.org](http://fsharp.org) を参照してください。参加するには無料で、f# foundation の開発者のネットワークを使用して、見逃したくない点です。</span><span class="sxs-lookup"><span data-stu-id="c3c6f-142">To learn more and get involved, check out [fsharp.org](http://fsharp.org). It's free to join, and the network of F# developers in the foundation is something you don't want to miss out on!</span></span>
