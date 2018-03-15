@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 04bd57dfd32a51bf5d7e3a573e34140b0feec90f
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 94a28d21cfec1894c3ee3b631335043e1d0ec817
+ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="get-started-with-semantic-analysis"></a>セマンティック解析の概要
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/27/2018
 > [!IMPORTANT]
 > 次のサンプルでは、Visual Studio 2017 の一部としてインストールされる **.NET Compiler SDK** が必要です。 **Visual Studio 拡張機能の開発**ワークロードの下にリストされている最後の省略可能なコンポーネントとして、.NET Compiler SDK があります。 テンプレートは、このコンポーネントなしではインストールされません。
 
-このサンプルの完成したコードは [GitHub のサンプル リポジトリ](https://github.com/dotnet/samples/csharp/roslyn-sdk/SemanticQuickStart)で確認できます。
+このサンプルの完成したコードは、[GitHub のリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SemanticQuickStart)で確認できます。
 
 > [!NOTE]
 > 構文ツリー型では継承を使用して、プログラムのさまざまな場所で有効なさまざまな構文要素を記述します。 これらの API を使用することは、多くの場合、特定の派生型にプロパティまたはコレクション メンバーをキャストすることを意味します。 次の例では、割り当てとキャストは別のステートメントであり、明示的に型指定された変数を使用します。 コードを読み取り、API の戻り値の型と返されるオブジェクトのランタイム型を確認することができます。 実際には、暗黙的に型指定された変数を使用して、API 名に依存して、調べられるオブジェクトの型を記述するのがより一般的です。
@@ -49,52 +49,53 @@ ms.lasthandoff: 02/27/2018
 前述の基本的な "Hello World!" プログラムを 分析します。
 Hello World プログラムのテキストを `Program` クラスの定数として追加します。
 
-[!code-csharp[Declare the program test](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#1 "Declare a constant string for the program text to analyze")]
+[!code-csharp[Declare the program test](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#1 "Declare a constant string for the program text to analyze")]
 
 次に、以下のコードを追加して、`programText` 定数のコード テキストの構文ツリーをビルドします。  次の行を `Main` メソッドに追加します。
 
-[!code-csharp[Create the tree](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#2 "Create the syntax tree")]
+[!code-csharp[Create the tree](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#2 "Create the syntax tree")]
 
 次に、作成済みのツリーから <xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation> をビルドします。 "Hello World" サンプルは、<xref:System.String> 型と <xref:System.Console> 型に基づきます。 コンパイルでこの 2 つの型を宣言するアセンブリを参照する必要があります。 `Main` メソッドに次の行を追加し、適切なアセンブリの参照を含む、構文ツリーのコンパイルを作成します。
 
-[!code-csharp[Create the compilation](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#3 "Create the compilation for the semantic model")]
+[!code-csharp[Create the compilation](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#3 "Create the compilation for the semantic model")]
 
-<xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences%2A?displayProperty=nameWithType> メソッドはコンパイルに参照を追加します。 <xref:Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(System.String,Microsoft.CodeAnalysis.MetadataReferenceProperties,Microsoft.CodeAnalysis.DocumentationProvider)> メソッドは参照としてアセンブリを読み込みます。 
+<xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences%2A?displayProperty=nameWithType> メソッドはコンパイルに参照を追加します。 <xref:Microsoft.CodeAnalysis.MetadataReference.CreateFromFile%2A?displayProperty=nameWithType> メソッドは参照としてアセンブリを読み込みます。 
 
 ## <a name="querying-the-semantic-model"></a>セマンティック モデルにクエリを実行する
 
-<xref:Microsoft.CodeAnalysis.Compilation> が与えられたら、その <xref:Microsoft.CodeAnalysis.Compilation> に含まれている <xref:Microsoft.CodeAnalysis.SyntaxTree> について <xref:Microsoft.CodeAnalysis.SemanticModel> を求めることができます。 セマンティック モデルは、通常は IntelliSense から得られるすべての情報源として捉えることができます。 <xref:Microsoft.CodeAnalysis.SemanticModel> は "この場所ではどのような名前が範囲に入っていますか"、 "このメソッドからどのようなメンバーにアクセスできますか"、 "このテキスト ブロックではどのような変数が使用されていますか"、 "この名前/式は何を参照していますか" のような質問に答えられます。 このステートメントを追加し、セマンティック モデルを作成します。
+<xref:Microsoft.CodeAnalysis.Compilation> が与えられたら、その <xref:Microsoft.CodeAnalysis.Compilation> に含まれている <xref:Microsoft.CodeAnalysis.SyntaxTree> について <xref:Microsoft.CodeAnalysis.SemanticModel> を求めることができます。 セマンティック モデルは、通常は IntelliSense から得られるすべての情報源としてとらえることができます。 <xref:Microsoft.CodeAnalysis.SemanticModel> は "この場所のスコープ内にはどのような名前があるか"、"このメソッドからアクセスできるメンバーはどれか"、"このテキストのブロックではどのような変数が使用されているか"、"この名前/式は何を参照しているか" のような質問に答えることができます。 このステートメントを追加し、セマンティック モデルを作成します。
 
-[!code-csharp[Create the semantic model](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#4 "Create the semantic model")]
+[!code-csharp[Create the semantic model](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#4 "Create the semantic model")]
 
 ## <a name="binding-a-name"></a>名前をバインドする
 
 <xref:Microsoft.CodeAnalysis.Compilation> は <xref:Microsoft.CodeAnalysis.SyntaxTree> から <xref:Microsoft.CodeAnalysis.SemanticModel> を作成します。 モデルを作成したら、それにクエリを実行し、最初の `using` ディレクティブを見つけ、`System` 名前空間のシンボル情報を取得できます。 この 2 つの行を `Main` メソッドに追加し、セマンティック モデルを作成し、最初の using ステートメントのシンボルを取得します。
 
-[!code-csharp[Find the namespace symbol for the first using](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#5 "Find the namespace symbol for the first using")]
+[!code-csharp[Find the namespace symbol for the first using](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#5 "Find the namespace symbol for the first using")]
 
-先のコードでは、HelloWorld <xref:Microsoft.CodeAnalysis.SyntaxTree> の <xref:Microsoft.CodeAnalysis.SemanticModel> オブジェクトを取得する方法を確認できます。 モデルを取得すると、最初の `using` ディレクティブの名前がバインドされ、`System` 名前空間の <xref:Microsoft.CodeAnalysis.SymbolInfo?displayProperty=nameWithType> が取得されます。 先のコードでは、**構文モデル**を利用してコードの構造を見つけることも確認できます。**セマンティック モデル**を使用し、その意味を理解します。 **構文モデル**は、using ステートメントの文字列 `System` を見つけます。 **セマンティック モデル**には、`System` 名前空間に定義されている型に関するすべての情報があります。
+先のコードは、最初の `using` ディレクティブの名前をバインドして、`System` 名前空間の <xref:Microsoft.CodeAnalysis.SymbolInfo?displayProperty=nameWithType> を取得する方法を示しています。 先のコードでは、**構文モデル**を利用してコードの構造を見つけることも確認できます。**セマンティック モデル**を使用し、その意味を理解します。 **構文モデル**は、using ステートメントの文字列 `System` を見つけます。 **セマンティック モデル**には、`System` 名前空間に定義されている型に関するすべての情報があります。
 
 <xref:Microsoft.CodeAnalysis.SymbolInfo> オブジェクトから、<xref:Microsoft.CodeAnalysis.SymbolInfo.Symbol?displayProperty=nameWithType> プロパティを利用して <xref:Microsoft.CodeAnalysis.ISymbol?displayProperty=nameWithType> を取得できます。 このプロパティは、この式が参照するシンボルを返します。 何も参照しない式の場合 (数値リテラルなど)、このプロパティは `null` です。 <xref:Microsoft.CodeAnalysis.SymbolInfo.Symbol?displayProperty=nameWithType> が null ではないとき、<xref:Microsoft.CodeAnalysis.ISymbol.Kind?displayProperty=nameWithType> はシンボルの型を示します。 この例では、<xref:Microsoft.CodeAnalysis.ISymbol.Kind?displayProperty=nameWithType> プロパティは <xref:Microsoft.CodeAnalysis.SymbolKind.Namespace?displayProperty=nameWithType> です。 次のコードを `Main` メソッドに追加します。 `System` 名前空間のシンボルを取得し、`System` 名前空間で宣言されているすべての子名前空間を表示します。
 
-[!code-csharp[Display all the child namespaces](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#6 "Display all the child namespaces from this compilation")]
+[!code-csharp[Display all the child namespaces](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#6 "Display all the child namespaces from this compilation")]
 
 プログラムを実行します。次の出力が表示されるはずです。
 
 ```
-Collections
-Configuration
-Deployment
-Diagnostics
-Globalization
-IO
-Reflection
-Resources
-Runtime
-Security
-StubHelpers
-Text
-Threading
+System.Collections
+System.Configuration
+System.Deployment
+System.Diagnostics
+System.Globalization
+System.IO
+System.Numerics
+System.Reflection
+System.Resources
+System.Runtime
+System.Security
+System.StubHelpers
+System.Text
+System.Threading
 Press any key to continue . . .
 ```
 
@@ -109,31 +110,31 @@ Press any key to continue . . .
 
 プログラムの中で 1 つの文字列リテラルを見つけることで、 "Hello, World!" 文字列が見つかります。 構文ノードが見つかったら、セマンティック モデルからそのノードの型情報を取得します。 次のコードを `Main` メソッドに追加します。
 
-[!code-csharp[Find the namespace symbol for the only using](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#7 "Find the namespace symbol for the only using")]
+[!code-csharp[Find the namespace symbol for the only using](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#7 "Find the namespace symbol for the only using")]
 
 <xref:Microsoft.CodeAnalysis.TypeInfo?displayProperty=nameWithType> 構造体には <xref:Microsoft.CodeAnalysis.TypeInfo.Type?displayProperty=nameWithType> プロパティが含まれます。このプロパティによって、リテラルの型に関するセマンティック情報にアクセスできます。 この例では、`string` 型です。 このプロパティをローカル変数に割り当てる宣言を追加します。
 
-[!code-csharp[Find the semantic information about the string type](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#8 "Use the string literal to access the semantic information in the string type.")]
+[!code-csharp[Find the semantic information about the string type](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#8 "Use the string literal to access the semantic information in the string type.")]
 
 このチュートリアルの終わりとして、`string` を返す `string` 型で宣言されているすべてのパブリック メソッドのシーケンスを作成する LINQ クエリをビルドしましょう。 このクエリは複雑になります。そのため、1 行ずつビルドしてから 1 つのクエリとして再構築します。 このクエリのソースは、`string` 型で宣言されているすべてのメンバーのシーケンスです。
 
-[!code-csharp[Access the sequence of members on the string type](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#9 "Access the sequence of members on the string type.")]
+[!code-csharp[Access the sequence of members on the string type](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#9 "Access the sequence of members on the string type.")]
 
 そのソース シーケンスには、プロパティやフィールドなど、すべてのメンバーが含まれています。そのため、<xref:System.Collections.Immutable.ImmutableArray%601.OfType%2A?displayProperty=nameWithType> メソッドでフィルター処理し、<xref:Microsoft.CodeAnalysis.IMethodSymbol?diplayProperty=nameWithType> オブジェクトである要素を見つけます。
 
-[!code-csharp[Filter the sequence to only methods](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#10 "Find the subset of the collection that is the methods.")]
+[!code-csharp[Filter the sequence to only methods](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#10 "Find the subset of the collection that is the methods.")]
 
 次に、パブリック メソッドのみを返す別のフィルターを追加し、`string` を返します。
 
-[!code-csharp[Filter on return type and accessibility](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#11 "Find only the public methods that return a string.")]
+[!code-csharp[Filter on return type and accessibility](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#11 "Find only the public methods that return a string.")]
 
 名前プロパティのみを選択します。オーバーロードを削除し、別個の名前のみを選択します。
 
-[!code-csharp[find the distinct names.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#12 "Use the string literal to access the semantic information in the string type.")]
+[!code-csharp[find the distinct names.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#12 "Use the string literal to access the semantic information in the string type.")]
 
 LINQ クエリ構文で完全クエリをビルドし、コンソールにすべてのメソッド名を表示することもできます。
 
-[!code-csharp[build and display the results of this query.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/SemanticQuickStart/Program.cs#12 "Build and display the results of the query.")]
+[!code-csharp[build and display the results of this query.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#12 "Build and display the results of the query.")]
 
 プログラムをビルドして実行します。 次の出力が表示されます。
 

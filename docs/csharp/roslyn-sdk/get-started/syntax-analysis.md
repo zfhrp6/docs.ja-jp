@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: c89695379d545ac5b22fc0716f3e0060b6c08f31
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 52f66782086af651517d54105fea6f5533ea05a2
+ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="get-started-with-syntax-analysis"></a>構文解析の概要
 
@@ -73,14 +73,14 @@ Syntax API を使用してコード ファイルで何でも見つけること�
 
 ### <a name="manual-traversal"></a>手動による走査
 
-このサンプルの完成したコードは [GitHub のサンプル リポジトリ](https://github.com/dotnet/samples/csharp/roslyn-sdk/SyntaxQuickStart)で確認できます。
+このサンプルの完成したコードは、[GitHub のリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SyntaxQuickStart)で確認できます。
 
 > [!NOTE]
 > 構文ツリー型では継承を使用して、プログラムのさまざまな場所で有効なさまざまな構文要素を記述します。 これらの API を使用することは、多くの場合、特定の派生型にプロパティまたはコレクション メンバーをキャストすることを意味します。 次の例では、割り当てとキャストは別のステートメントであり、明示的に型指定された変数を使用します。 コードを読み取り、API の戻り値の型と返されるオブジェクトのランタイム型を確認することができます。 実際には、暗黙的に型指定された変数を使用して、API 名に依存して、調べられるオブジェクトの型を記述するのがより一般的です。
 
 次のようにして、新しい C# の **Stand-Alone Code Analysis Tool** プロジェクトを作成します。
 
-* Visual Studio で、**[ファイル]** > **[新規]** > **[プロジェクト]** の順に選択して、[新しいプロジェクト] ダイアログを表示します。
+* Visual Studio で、**[ファイル]**、**[新規]**、**[プロジェクト]** の順に選択して、[新しいプロジェクト] ダイアログを表示します。
 * **[Visual C#]** > **[機能拡張]** で、**[Stand-Alone Code Analysis Tool]** を選択します。
 * プロジェクトに "**SyntaxTreeManualTraversal**" という名前を付けて、[OK] をクリックします。
 
@@ -103,7 +103,7 @@ Hello World プログラムのテキストを `Program` クラスの定数とし
 
 [!code-csharp[Find the first member](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#4 "Find the first member")]
 
-そのメンバーは <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax?displayProperty=nameWithType> です。 `namespace Hello World` 宣言のスコープ内ですべてを表します。 次のコードを追加して、`HelloWorld` 名前空間内で宣言されているノードを調べます。
+そのメンバーは <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax?displayProperty=nameWithType> です。 `namespace HelloWorld` 宣言のスコープ内ですべてを表します。 次のコードを追加して、`HelloWorld` 名前空間内で宣言されているノードを調べます。
 
 [!code-csharp[Find the class declaration](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#5 "Find the class declaration")]
 
@@ -127,14 +127,14 @@ The tree has 4 using statements. They are:
         System.Collections
         System.Linq
         System.Text
-The first member is a NamespaceDeclaration
+The first member is a NamespaceDeclaration.
 There are 1 members declared in this namespace.
-The first member is a ClassDeclaration
-There are 1 members declared in the Program class
-The first member is a MethodDeclaration
-The return type of the Main method is void
-The method has 1 parameters
-The type of the args parameter is string[]
+The first member is a ClassDeclaration.
+There are 1 members declared in the Program class.
+The first member is a MethodDeclaration.
+The return type of the Main method is void.
+The method has 1 parameters.
+The type of the args parameter is string[].
 The body text of the Main method follows:
         {
             Console.WriteLine("Hello, World!");
@@ -143,7 +143,7 @@ The body text of the Main method follows:
 
 ### <a name="query-methods"></a>クエリ メソッド
 
-ツリーの走査に加え、<xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType> で定義されているクエリ メソッドを使用して、構文ツリーを調べることもできます。 XPath を使い慣れていれば、これらのメソッドをすぐに使いこなすことができます。 LINQ でこれらのメソッドを使用することで、ツリー内の内容をすばやく検索できます。 <xref:Microsoft.CodeAnalysis.SyntaxNode> には、<xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>、<xref:Microsoft.CodeAnalysis.SyntaxNode.AncestorsAndSelf%2A>、<xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes> などのクエリ メソッドがあります。
+ツリーの走査に加え、<xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType> で定義されているクエリ メソッドを使用して、構文ツリーを調べることもできます。 XPath を使い慣れていれば、これらのメソッドをすぐに使いこなすことができます。 LINQ でこれらのメソッドを使用することで、ツリー内の内容をすばやく検索できます。 <xref:Microsoft.CodeAnalysis.SyntaxNode> には、<xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>、<xref:Microsoft.CodeAnalysis.SyntaxNode.AncestorsAndSelf%2A>、<xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes%2A> などのクエリ メソッドがあります。
 
 これらのクエリ メソッドを使用すれば、ツリーを移動せずに、`Main` メソッドに対する引数を検索することができます。 次のコードを `Main` メソッドの下部に追加します。
 
@@ -163,7 +163,7 @@ The body text of the Main method follows:
 
 新しい C# の**Stand-Alone Code Analysis Tool** プロジェクトを作成し、"**SyntaxWalker**" という名前を付けます。
 
-このサンプルの完成したコードは、[GitHub のリポジトリ](https://github.com/dotnet/docs/samples/csharp/roslyn-sdk/SyntaxQuickStart)で確認できます。 GitHub のサンプルには、このチュートリアルで説明されている両方のプロジェクトが含まれています。
+このサンプルの完成したコードは、[GitHub のリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SyntaxQuickStart)で確認できます。 GitHub のサンプルには、このチュートリアルで説明されている両方のプロジェクトが含まれています。
 
 上記のサンプルと同様に、分析しようとしているプログラムのテキストを保持する文字列定数を定義できます。
 
@@ -198,23 +198,23 @@ The body text of the Main method follows:
 プログラムをコンパイルして実行します。 次の出力が表示されます。
 
 ```console
-        VisitUsingDirective called with System
-        VisitUsingDirective called with System.Collections.Generic
-        VisitUsingDirective called with System.Linq
-        VisitUsingDirective called with System.Text
-        VisitUsingDirective called with Microsoft.CodeAnalysis
-                Success. Adding Microsoft.CodeAnalysis
-        VisitUsingDirective called with Microsoft.CodeAnalysis.CSharp
-                Success. Adding Microsoft.CodeAnalysis.CSharp
-        VisitUsingDirective called with Microsoft
-                Success. Adding Microsoft
-        VisitUsingDirective called with System.ComponentModel
-        VisitUsingDirective called with Microsoft.Win32
-                Success. Adding Microsoft.Win32
-        VisitUsingDirective called with System.Runtime.InteropServices
-        VisitUsingDirective called with System.CodeDom
-        VisitUsingDirective called with Microsoft.CSharp
-                Success. Adding Microsoft.CSharp
+        VisitUsingDirective called with System.
+        VisitUsingDirective called with System.Collections.Generic.
+        VisitUsingDirective called with System.Linq.
+        VisitUsingDirective called with System.Text.
+        VisitUsingDirective called with Microsoft.CodeAnalysis.
+                Success. Adding Microsoft.CodeAnalysis.
+        VisitUsingDirective called with Microsoft.CodeAnalysis.CSharp.
+                Success. Adding Microsoft.CodeAnalysis.CSharp.
+        VisitUsingDirective called with Microsoft.
+                Success. Adding Microsoft.
+        VisitUsingDirective called with System.ComponentModel.
+        VisitUsingDirective called with Microsoft.Win32.
+                Success. Adding Microsoft.Win32.
+        VisitUsingDirective called with System.Runtime.InteropServices.
+        VisitUsingDirective called with System.CodeDom.
+        VisitUsingDirective called with Microsoft.CSharp.
+                Success. Adding Microsoft.CSharp.
 Microsoft.CodeAnalysis
 Microsoft.CodeAnalysis.CSharp
 Microsoft
