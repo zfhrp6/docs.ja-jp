@@ -4,17 +4,17 @@ description: "F# のプログラミング言語のコード サンプルを使�
 keywords: "visual f#、f#、関数型プログラミングでは、.NET、ツアー"
 author: cartermp
 ms.author: phcart
-ms.date: 01/24/2017
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 49775139-082e-442f-b5a2-dd402399b5d2
-ms.openlocfilehash: c027e6b71f35fc3b58750eb164124de145244825
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7327573a25aa62af28570b4a8662235f3e41a972
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="tour-of-f"></a>F# のツアー #
 
@@ -22,20 +22,13 @@ F# について学習する最善の方法では、f# コードを読み書き�
 
 F# である 2 つの主要な概念: 関数と型。  このツアーはこれら 2 つの概念には、言語の機能を強調します。
 
-## <a name="how-to-run-the-code-samples"></a>コード サンプルを実行する方法
-
->[!NOTE]
-コード サンプルを実行するための 2 つのオプションは[f# を再試行してください](http://www.tryfsharp.org/Create)(Silverlight が必要) および[Azure ノートブックの f#](https://notebooks.azure.com/Microsoft/libraries/fsharp/html/FSharp%20for%20Azure%20Notebooks.ipynb) Microsoft Azure でします。
-
-これらのコード サンプルを実行する最も簡単な方法は使用する[f# Interactive](tutorials/fsharp-interactive/index.md)です。  同様のコード サンプルをコピー/貼り付けし、実行があります。  また、プロジェクトをコンパイルして、コンソール アプリケーションにコードを実行を設定することができます。  参照してください、[開始](./get-started/index.md)の詳細については、セクションです。
-
 ## <a name="functions-and-modules"></a>関数とモジュール
 
 任意の f# プログラムの最も基本的な部分が***関数***に編成***モジュール***です。  [関数](language-reference/functions/index.md)の入力、出力を生成するために作業を実行し、下では、編成された[モジュール](language-reference/modules.md)、f# で作業をグループ化する主要な手段であります。  使用して定義されている、 [ `let`バインディング](language-reference/functions/let-bindings.md)関数の名前し、その引数を定義します。
 
 [!code-fsharp[BasicFunctions](../../samples/snippets/fsharp/tour.fs#L101-L133)]
 
-`let`バインドも値を他の言語での変数のような名前にバインドする方法です。  `let`バインディングは***不変***既定では、値または関数が名前にバインドされると、それを変更できないことを意味するインプレースでします。  これは、他の言語は、変数とは対照的***変更可能な***時間で任意の時点でその値の意味を変更できます。  変更可能なバインディングを必要とする場合を使用できます`let mutable ...`構文です。
+`let` バインドも値を他の言語での変数のような名前にバインドする方法です。  `let` バインディングは***不変***既定では、値または関数が名前にバインドされると、それを変更できないことを意味するインプレースでします。  これは、他の言語は、変数とは対照的***変更可能な***時間で任意の時点でその値の意味を変更できます。  変更可能なバインディングを必要とする場合を使用できます`let mutable ...`構文です。
 
 [!code-fsharp[Immutability](../../samples/snippets/fsharp/tour.fs#L75-L94)]
 
