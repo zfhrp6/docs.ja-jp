@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -17,23 +18,24 @@ helpviewer_keywords:
 - add element, webRequestModules
 - <add> element, webRequestModules
 ms.assetid: 47ec4adc-f39f-4bcd-8680-1ec21fd26890
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9b7d2c0f52ea42fcb98be149ab005cd67c2db46a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="ltaddgt-element-for-webrequestmodules-network-settings"></a>&lt;追加&gt;webRequestModules (ネットワーク設定) の要素
 アプリケーションにカスタム Web 要求のモジュールを追加します。  
   
  \<configuration>  
-\<system.net >  
-\<webRequestModules >  
+\<system.net>  
+\<webRequestModules>  
 \<add>  
   
 ## <a name="syntax"></a>構文  
@@ -69,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
  URI の一致のプレフィックスに渡される Web 要求のモジュールが作成された、<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>メソッドです。  
   
- 値、`prefix`属性が有効な URI: たとえば、"http"または"http://www.contoso.com"の先頭の文字にする必要があります。  
+ 値、`prefix`属性が有効な URI: たとえば、"http"の先頭の文字にする必要がありますか"http://www.contoso.com"です。  
   
  値、`type`属性が有効な型名と対応するアセンブリ名、コンマで区切られたにする必要があります。  
   
@@ -92,6 +94,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.WebRequest>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

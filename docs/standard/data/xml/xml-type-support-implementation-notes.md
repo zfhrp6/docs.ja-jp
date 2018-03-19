@@ -17,10 +17,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 8c2706782ed1242ecdb5af1fdfab7a3f24e19236
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="xml-type-support-implementation-notes"></a>XML 型サポートの実装に関するメモ
 このトピックでは、認識しておく必要があるいくつかの実装上の詳細について説明します。  
@@ -37,14 +37,14 @@ ms.lasthandoff: 12/23/2017
  CLR 型と XML データ型の間で発生する可能性のある不一致とその処理方法を次に示します。  
   
 > [!NOTE]
->  `xs` プレフィックスは、http://www.w3.org/2001/XMLSchema と名前空間の URI. にマップされます。  
+>  `xs`にプレフィックスのマッピング、http://www.w3.org/2001/XMLSchemaと名前空間 URI。  
   
 ### <a name="systemtimespan-and-xsduration"></a>System.TimeSpan と xs:duration  
  `xs:duration` 型は、値は異なるが同等の継続時間値として、部分的な順序付けが行われます。 これは、たとえば 1 か月 (P1M) という `xs:duration` 型の値が、32 日 (P32D) より小さく、27 日 (P27D) より大きく、28 日、29 日または 30 日と同等であることを意味します。  
   
  <xref:System.TimeSpan> クラスは、この部分的な順序付けをサポートしません。 その代わりに、1 年および 1 か月に特定の日数 (それぞれ 365 日と 30 日) を使用します。  
   
- `xs:duration` の詳細については、http://www.w3.org/TR/xmlschema-2/ にアクセスして『W3C XML Schema Part 2: Datatypes Recommendation』を参照してください。  
+ 詳細については、`xs:duration`入力 W3C XML Schema Part 2 を参照してください: Datatypes Recommendation 』http://www.w3.org/TR/xmlschema-2/です。  
   
 ### <a name="xstime-gregorian-date-types-and-systemdatetime"></a>xs:time、グレオリオ暦の日付、および System.DateTime  
  `xs:time` 値が <xref:System.DateTime> オブジェクトにマップされている場合、<xref:System.DateTime.MinValue> フィールドは <xref:System.DateTime> オブジェクトの日付プロパティ (<xref:System.DateTime.Year%2A>、<xref:System.DateTime.Month%2A>、<xref:System.DateTime.Day%2A> など) を可能な最小の <xref:System.DateTime> 値に初期化するために使用されます。  
@@ -57,5 +57,5 @@ ms.lasthandoff: 12/23/2017
 ### <a name="xsanyuri-and-systemuri"></a>xs:anyURI および System.Uri  
  相対 URI を表す `xs:anyURI` のインスタンスが <xref:System.Uri> にマップされている場合、<xref:System.Uri> オブジェクトには基本 URI がありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)

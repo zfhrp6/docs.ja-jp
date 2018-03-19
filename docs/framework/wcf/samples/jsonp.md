@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-caps.latest.revision: "8"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 02332e04f729abd125f43acdbe0883851004537e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="jsonp"></a>JSONP
 このサンプルでは、WCF REST サービスの JSONP (JSON with Padding) をサポートする方法を示します。 JSONP とは、現在のドキュメントでスクリプト タグを生成してドメイン間スクリプトを呼び出す際に使用される変換です。 結果は、指定したコールバック関数で返されます。 JSONP はなどのタグするという考えに基づいて\<スクリプトの src =「http://...」> の任意のドメインからのスクリプトを評価することができ、ようなタグによって取得されたスクリプトが、その他の関数が既に定義されて範囲で評価します。  
@@ -77,6 +79,6 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
   
 1.  JSONP サンプルのソリューションを開きます。  
   
-2.  F5 キーを押して、http://localhost:26648/jsonpclientpage.aspx ハイパーリンク""http://localhost:26648/JSONPClientPage.aspx をブラウザーにします。  
+2.  Press F5 to launch  HYPERLINK "http://localhost:26648/JSONPClientPage.aspx" http://localhost:26648/JSONPClientPage.aspx in the browser.  
   
 3.  ページが読み込まれると、"Name"および"Address"のテキスト入力が設定されている値に注意してください。  これらの値は、ブラウザーがページを表示した後に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの呼び出しから提供されたものです。

@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 791e201907f72f9d590f6d835fd6ec1bfc25633f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="service-versioning"></a>サービスのバージョン管理
 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、サービス (およびサービスが公開するエンドポイント) を変更することが必要になる場合があります。 変更が発生するたびに、新しいバージョンのサービスが導入されます。 ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] でのバージョン管理の考え方について説明します。  
@@ -110,7 +112,7 @@ ms.lasthandoff: 12/22/2017
  データ コントラクトのバージョン管理と同様に、サービス コントラクトのバージョン管理にも、操作の追加、変更、および削除が含まれます。  
   
 ### <a name="specifying-name-namespace-and-action"></a>名前、名前空間、およびアクションの指定  
- 既定では、サービス コントラクトの名前はインターフェイスの名前です。 既定の名前空間は "http://tempuri.org" で、各操作のアクションは "http://tempuri.org/contractname/methodname" です。 サービス コントラクトの名前と名前空間、および各操作のアクションを明示的に指定して、"http://tempuri.org" を使用しないようにし、サービスのコントラクトにインターフェイス名とメソッド名が公開されないようにすることをお勧めします。  
+ 既定では、サービス コントラクトの名前はインターフェイスの名前です。 既定の名前空間が"http://tempuri.org"、各操作のアクションは、"http://tempuri.org/contractname/methodname"です。 明示的に指定する名前と、サービス コントラクトの名前空間と、各操作のアクションを使用しないようにお勧め"http://tempuri.org"インターフェイスとメソッドの名前が、サービスのコントラクトで公開されないようにするとします。  
   
 ### <a name="adding-parameters-and-operations"></a>パラメーターと操作の追加  
  サービスが公開するサービス操作の追加は互換性に影響しない変更です。既存のクライアントは、追加された新しい操作を考慮する必要がないからです。  
@@ -136,7 +138,7 @@ ms.lasthandoff: 12/22/2017
  クライアントが新しいエンドポイント アドレスまたはバインディングを動的に検出できない場合、エンドポイント アドレスとバインディングの変更は互換性に影響する変更です。 新しいエンドポイントまたはバインディングを動的に検出する機能を実装する 1 つの方法として、クライアントがエンドポイントとの通信を試みるときに、UDDI (Universal Discovery Description and Integration) レジストリと UDDI 呼び出しパターンを使用します。エラーが発生した場合、現在のエンドポイントのメタデータについて既知の UDDI レジストリに照会します。 クライアントは、このメタデータからアドレスとバインディングを使用して、エンドポイントと通信を行います。 この通信が成功した場合、クライアントは今後使用できるように、そのアドレスとバインディングをキャッシュします。  
   
 ## <a name="routing-service-and-versioning"></a>ルーティング サービスとバージョン管理  
- サービスに対して行った変更が互換性に影響するもので、複数の異なるバージョンのサービスを同時に実行する必要がある場合、WCF ルーティング サービスを使用して、メッセージを適切なサービス インスタンスにルーティングすることができます。 WCF ルーティング サービスは、メッセージの内容に基づくルーティングを使用します。つまり、メッセージ内に含まれる情報に応じて、そのメッセージのルーティング先が特定されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]WCF ルーティング サービスを参照してください[ルーティング サービス](../../../docs/framework/wcf/feature-details/routing-service.md)です。 サービスのバージョン管理の WCF ルーティング サービスを使用する方法の例については、次を参照してください。[操作方法: サービスのバージョン管理](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)です。  
+ サービスに対して行った変更が互換性に影響するもので、複数の異なるバージョンのサービスを同時に実行する必要がある場合、WCF ルーティング サービスを使用して、メッセージを適切なサービス インスタンスにルーティングすることができます。 WCF ルーティング サービスは、メッセージの内容に基づくルーティングを使用します。つまり、メッセージ内に含まれる情報に応じて、そのメッセージのルーティング先が特定されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] WCF ルーティング サービスを参照してください[ルーティング サービス](../../../docs/framework/wcf/feature-details/routing-service.md)です。 サービスのバージョン管理の WCF ルーティング サービスを使用する方法の例については、次を参照してください。[操作方法: サービスのバージョン管理](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)です。  
   
 ## <a name="appendix"></a>付録  
  厳密なバージョン管理が必要な場合、データ コントラクトのバージョン管理の一般的なガイダンスは、データ コントラクトを変更不可として扱い、変更が必要な場合は新しいデータ コントラクトを作成することです。 新しいデータ コントラクトごとに新しいクラスを作成する必要があります。したがって、古いデータ コントラクト クラスの観点で作成された既存のコードを取得し、新しいデータ コントラクト クラスの観点でコードを書き換える必要がないようにするための方法が必要となります。  
@@ -186,7 +188,7 @@ public class PurchaseOrderV2 : IPurchaseOrderV1, IPurchaseOrderV2
   
  `PurchaseOrderV2` の観点で作成された新しい操作を含めるために、サービス コントラクトが更新されます。 `IPurchaseOrderV1` の観点で作成された既存のビジネス ロジックは、`PurchaseOrderV2` で引き続き機能し、`OrderDate` プロパティを必要とする新しいビジネス ロジックが `IPurchaseOrderV2` の観点で作成されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A>  

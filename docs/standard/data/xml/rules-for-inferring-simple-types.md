@@ -17,10 +17,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: c3e6c24fafdd79676e68fa9dd06cf399fc09d5ea
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="rules-for-inferring-simple-types"></a>単純型を推論するときの規則
 <xref:System.Xml.Schema.XmlSchemaInference> クラスが属性と要素のデータ型を推論する方法を説明します。  
@@ -75,7 +75,7 @@ ms.lasthandoff: 12/23/2017
   
  最初に `attr2` の値が検出されると、`attr2` の型は、値 `unsignedByte` に基づいて `0` と推論されます。 `attr2` の 2 番目の値が検出されると、現在推論されている型 `string` と現在の値 `unsignedByte` に基づいて、型が `true` に昇格します。これは、<xref:System.Xml.Schema.XmlSchemaInference> クラスが推論型を昇格させるときに前の値を考慮するためです。 ただし、`attr2` の 2 つのインスタンスが、上記の説明のように 2 つの別々の XML ドキュメントで検出されたのではなく、同じ XML ドキュメントで検出された場合、`attr2` は `boolean` と推論されます。  
   
-### <a name="ignored-attributes-from-the-httpwwww3org2001xmlschema-instance-namespace"></a>無視される http://www.w3.org/2001/XMLSchema-instance 名前空間の属性  
+### <a name="ignored-attributes-from-the-httpwwww3org2001xmlschema-instance-namespace"></a>属性は無視、 http://www.w3.org/2001/XMLSchema-instance Namespace  
  スキーマの推論で無視されるスキーマ定義属性を次に示します。  
   
 |属性|説明|  
@@ -85,7 +85,7 @@ ms.lasthandoff: 12/23/2017
 |`xsi:schemaLocation`|`xsi:schemaLocation` は検出されても無視されます。|  
 |`xsi:noNamespaceSchemaLocation`|`xsi:noNamespaceSchemaLocation` は検出されても無視されます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XML スキーマ オブジェクト モデル (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
  [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
  [スキーマのノード型および構造を推論するときの規則](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)

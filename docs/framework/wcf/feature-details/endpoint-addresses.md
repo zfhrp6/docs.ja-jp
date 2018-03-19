@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,22 +14,23 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], addresses
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 58e6d383856d57e95a1ea5bd2658af2ec0b22ed5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="endpoint-addresses"></a>エンドポイント アドレス
 すべてのエンドポイントにはこれと関連するアドレスがあり、エンドポイントの検索と識別に使用されます。 このアドレスは主にエンドポイントの位置を指定する URI (Uniform Resource Identifier) で構成されます。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のプログラミング モデルでは、エンドポイント アドレスは <xref:System.ServiceModel.EndpointAddress> クラスによって表されます。このクラスには、このエンドポイントとメッセージを交換する他のエンドポイントがエンドポイントを認証できるようにする、オプションの <xref:System.ServiceModel.EndpointAddress.Identity%2A> プロパティ、およびサービスに到達するために必要な他の任意の SOAP ヘッダーを定義するオプションの <xref:System.ServiceModel.EndpointAddress.Headers%2A> プロパティが含まれます。 オプションのヘッダーは、サービス エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 エンドポイントのアドレスは、ネットワーク上では WS-Addressing エンドポイント参照 (EPR) として表されます。  
   
 ## <a name="uri-structure-of-an-address"></a>アドレスの URI 構造  
- ほとんどのトランスポートの URI アドレスは、4 つの部分から構成されます。 たとえば、http://www.fabrikam.com:322/mathservice.svc/secureEndpoint という URI は、次の 4 つの部分から構成されます。  
+ ほとんどのトランスポートの URI アドレスは、4 つの部分から構成されます。 URI の 4 つの部分ではたとえば、http://www.fabrikam.com:322/mathservice.svc/secureEndpointようを明細化することができます。  
   
 -   スキーム : http:  
   
@@ -86,7 +88,7 @@ ms.lasthandoff: 01/19/2018
 </system.serviceModel>  
 ```  
   
- 上記の例では、net.tcp://payroll.myorg.com:8000 と http://shipping.myorg.com:8000 が、対応するスキームに対して渡されるベース アドレスです。  
+ 上記の例では、net.tcp://payroll.myorg.com: 8000 とhttp://shipping.myorg.com:8000唯一のベース アドレスを対応するスキームを通じて渡されるは、します。  
   
  `baseAddressPrefixFilter` では、ワイルカードはサポートされません。  
   
@@ -148,6 +150,6 @@ ms.lasthandoff: 01/19/2018
   
  シナリオによっては、適切な `To` ヘッダーを持つメッセージだけではなく、基になるトランスポートに到着したすべてのメッセージをエンドポイントで受信します。 これを行うには、ユーザーは <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> クラスを使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エンドポイント アドレスの指定](../../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
  [サービス ID と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)

@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -17,24 +18,25 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 391e5f2a7d9d8076ba9e9a3057e3d8899e2ce672
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="ltremovegt-element-for-webrequestmodules-network-settings"></a>&lt;削除&gt;webRequestModules (ネットワーク設定) の要素
 アプリケーションからカスタム Web 要求のモジュールを削除します。  
   
  \<configuration>  
-\<system.net >  
-\<webRequestModules >  
-\<削除 >  
+\<system.net>  
+\<webRequestModules>  
+\<remove>  
   
 ## <a name="syntax"></a>構文  
   
@@ -65,7 +67,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="remarks"></a>コメント  
  `remove`要素が指定した URI プレフィックスの登録済みの Web 要求のモジュールを削除します。  
   
- 値、`prefix`属性が有効な URI: たとえば、"http"または"http://www.contoso.com"の先頭の文字にする必要があります。  
+ 値、`prefix`属性が有効な URI: たとえば、"http"の先頭の文字にする必要がありますか"http://www.contoso.com"です。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
@@ -87,6 +89,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.WebRequest>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

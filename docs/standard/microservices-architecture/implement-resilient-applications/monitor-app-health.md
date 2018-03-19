@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 76821e27613335609527b867a6b94dac551f6235
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="health-monitoring"></a>正常性の監視
 
@@ -37,7 +37,7 @@ ASP.NET Core マイクロサービスまたは Web アプリケーションを�
 
 EShopOnContainers サンプル アプリケーションでの HealthChecks ライブラリの使用方法を確認することができます。 開始するには、各マイクロサービスの正常性状態の構成要素を定義する必要があります。 サンプル アプリケーションでは、マイクロサービス API が HTTP 経由でアクセス可能である場合と、それに関連する SQL Server データベースも使用可能である場合、マイクロサービスは正常な状態です。
 
-将来的には、HealthChecks ライブラリを NuGet パッケージとしてインストールできるようになります。 ただし、このドキュメントの作成時点では、ソリューションの一部として、コードをダウンロードしてコンパイルする必要があります。 https://github.com/dotnet-architecture/HealthChecks から入手可能なコードを複製し、次のフォルダーをソリューションにコピーします。
+将来的には、HealthChecks ライブラリを NuGet パッケージとしてインストールできるようになります。 ただし、このドキュメントの作成時点では、ソリューションの一部として、コードをダウンロードしてコンパイルする必要があります。 利用可能なコードを複製https://github.com/dotnet-architecture/HealthChecksし、ソリューションに、次のフォルダーをコピーします。
 
   - src/common
   - src/Microsoft.AspNetCore.HealthChecks
@@ -192,10 +192,10 @@ Azure Service Fabric を使用している場合は、単純な正常性チェ�
 
 -   **ASP.NET Core HealthChecks** (初期リリース) [*https://github.com/aspnet/HealthChecks/*](https://github.com/aspnet/HealthChecks/)
 
--   **Service Fabric の正常性モニタリングの概要**
+-   **Service Fabric の正常性の監視の概要**
     [*https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction*](https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction)
 
--   **Azure Application Insights**
+-   **Azure の Application Insights**
     [*https://azure.microsoft.com/services/application-insights/*](https://azure.microsoft.com/services/application-insights/)
 
 -   **Microsoft Operations Management Suite**

@@ -17,10 +17,10 @@ manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 75a39fa1d0301a48cec7ad61c968ee3fc82d189c
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="messaging-protocols"></a>メッセージング プロトコル
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] チャネル スタックは、エンコーディングとトランスポート チャネルを使用して、内部メッセージ表現をワイヤ形式に変換し、特定のトランスポートを使用して送信します。 Web サービスの相互運用性を確保するために、最も一般的に使用されるトランスポートは HTTP です。また、Web サービスが使用する最も一般的なエンコーディングは、XML ベースの SOAP 1.1、SOAP 1.2、および MTOM (Message Transmission Optimization Mechanism) です。  
@@ -55,7 +55,7 @@ W3C Web Services Addressing 1.0 - メタデータ|http://www.w3.org/TR/ws-addr-m
 |XOP|http://www.w3.org/TR/xop10/|  
 |MTOM および SOAP 1.2 バインディング|http://www.w3.org/TR/soap12-mtom/|  
 |MTOM SOAP 1.1 バインディング|http://www.w3.org/Submission/soap11mtom10/|  
-|MTOM WS-Policy アサーション|http://www.w3.org/Submission/2006/SUBM-WS-MTOMPolicy-20061101/|  
+|MTOM WS-Policy アサーション|http://www.w3.org/Submission/2006/SUBM-WS-MTOMPolicy-20061101/。|  
   
  ここでは、次の XML 名前空間と関連付けられたプレフィックスが使用されます。  
   
@@ -75,12 +75,12 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 ## <a name="soap-11-and-soap-12"></a>SOAP 1.1 と SOAP 1.2  
   
 ### <a name="envelope-and-processing-model"></a>エンベロープと処理モデル  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 次の Basic Profile 1.1 (BP11) および Basic Profile 1.0 (ssbp10) に従って、SOAP 1.1 エンベロープの処理を実装します。 SOAP 1.2 エンベロープの処理は、SOAP12-Part1 に従って実装されます。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、Basic Profile 1.1 (BP11) および Basic Profile 1.0 (SSBP10) に従って、SOAP 1.1 エンベロープの処理を実装しています。 SOAP 1.2 エンベロープの処理は、SOAP12-Part1 に従って実装されます。  
   
  このセクションでは、BP11 および SOAP12-Part1 に関して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で選択されている一部の実装について説明します。  
   
 #### <a name="mandatory-header-processing"></a>必須のヘッダー処理  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] マークされたヘッダーの処理規則に従います`mustUnderstand`次のように、SOAP 1.1 と SOAP 1.2 の仕様で説明します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、SOAP 1.1 仕様と SOAP 1.2 仕様に記載されたルールに従って、`mustUnderstand` としてマークされたヘッダーを次のように処理します。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル スタックに入ったメッセージは、関連付けられたバインド要素 (テキスト メッセージ エンコーディング、セキュリティ、信頼できるメッセージング、トランザクションなど) によって構成された個々のチャネルで処理されます。 各チャネルは、関連付けられた名前空間からヘッダーを認識し、認識済みとしてマークします。 メッセージがディスパッチャーに入ると、操作フォーマッタは対応するメッセージ コントラクトと操作コントラクトで想定されたヘッダーを読み取り、認識済みとしてマークします。 次に、ディスパッチャーは、`mustUnderstand` としてマークされているにもかかわらず、認識されていないヘッダーが残っていないかどうかを検証し、例外をスローします。 受信者を対象とする `mustUnderstand` ヘッダーが含まれたメッセージが、受信者のアプリケーション コードで処理されることはありません。  
   
@@ -102,14 +102,14 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 ### <a name="http-binding"></a>HTTP バインディング  
   
 #### <a name="soap-11-http-binding"></a>SOAP 1.1 HTTP バインディング  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Basic Profile 1.1 仕様の次に説明セクション 3.4 に従って、SOAP1.1 HTTP バインディングを実装します。  
+ 次に説明するように、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、Basic Profile 1.1 仕様のセクション 3.4 に従って、SOAP1.1 HTTP バインディングを実装しています。  
   
 -   B2211 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、HTTP POST 要求のリダイレクトを実装していません。  
   
 -   B2212 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは、セクション 3.4.8 に従って HTTP クッキーをサポートします。  
   
 #### <a name="soap-12-http-binding"></a>SOAP 1.2 HTTP バインディング  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] SOAP 1.2-part 2 (SOAP12Part2) 仕様次に説明」の説明に従って、SOAP 1.2 HTTP バインディングを実装します。  
+ 次に説明するように、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、SOAP 1.2-part 2 (SOAP12Part2) 仕様に従って、SOAP 1.2 HTTP バインディングを実装しています。  
   
  SOAP 1.2 では、`application/soap+xml` メディア タイプの省略可能なアクション パラメーターが導入されました。 このパラメーターは、WS-Addressing を使用していない場合に、SOAP メッセージの本文を解析する必要なく、メッセージ ディスパッチを最適化する際に役立ちます。  
   
@@ -120,7 +120,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
  WS-Addressing が無効になっているときに、受信要求にアクション パラメーターが含まれていない場合、メッセージの `Action` は指定されていないものと見なされます。  
   
 ## <a name="ws-addressing"></a>WS-Addressing  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Ws-addressing の 3 つのバージョンを実装します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、WS-Addressing の次の 3 つのバージョンを実装しています。  
   
 -   WS-Addressing 2004/08  
   
@@ -132,7 +132,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で実装されている WS-Addressing のすべてのバージョンでは、エンドポイント参照を使用してエンドポイントを記述します。  
   
 #### <a name="endpoint-references-and-ws-addressing-versions"></a>エンドポイント参照と WS-Addressing のバージョン  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Ws-addressing を使用するインフラストラクチャ プロトコルの特定の数を実装して、`EndpointReference`要素および`W3C.WsAddressing.EndpointReferenceType`クラス (Ws-reliablemessaging、Ws-secureconversation、Ws-trust など)。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、いずれかのバージョンの WS-Addressing を他のインフラストラクチャ プロトコルと共に使用できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントは、エンドポイントごとに WS-Addressing の 1 つのバージョンをサポートします。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、特に `EndpointReference` 要素と `W3C.WsAddressing.EndpointReferenceType` クラスで WS-Addressing を使用する多数のインフラストラクチャ プロトコルを実装しています (WS-ReliableMessaging、WS-SecureConversation、WS-Trust など)。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、いずれかのバージョンの WS-Addressing を他のインフラストラクチャ プロトコルと共に使用できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントは、エンドポイントごとに WS-Addressing の 1 つのバージョンをサポートします。  
   
  R3111 では、`EndpointReference` エンドポイントと交換されるメッセージで使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 要素または型の名前空間は、そのエンドポイントで実装されている WS-Addressing のバージョンに適合する必要があります。  
   
@@ -143,7 +143,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  B3121 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、WS-MetadataExchange (MEX) 仕様のセクション 6 に記載された機構を使用して、エンドポイント参照のメタデータを値または参照で含めます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが http://sts.fabrikam123.com のトークン発行者によって発行された SAML (Security Assertions Markup Language) トークンを使用して、認証を行う必要があるシナリオについて考えてみます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントでは、トークン発行者を指し示す `sp:IssuedToken` アサーションが入れ子になった `sp:Issuer` アサーションを使用して、この認証要件が記述されます。 `sp:Issuer` アサーションにアクセスするクライアント アプリケーションは、トークン発行者のエンドポイントとの通信方法を知る必要があります。 クライアントは、トークン発行者に関するメタデータを知る必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、MEX で定義されたエンドポイント参照のメタデータ拡張を使用して、トークン発行者のメタデータへの参照を提供します。  
+ シナリオを考えます場所、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスで、トークン発行者によって発行された Security Assertions Markup Language (SAML) トークンを使用して認証を必要とhttp://sts.fabrikam123.comです。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントでは、トークン発行者を指し示す `sp:IssuedToken` アサーションが入れ子になった `sp:Issuer` アサーションを使用して、この認証要件が記述されます。 `sp:Issuer` アサーションにアクセスするクライアント アプリケーションは、トークン発行者のエンドポイントとの通信方法を知る必要があります。 クライアントは、トークン発行者に関するメタデータを知る必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、MEX で定義されたエンドポイント参照のメタデータ拡張を使用して、トークン発行者のメタデータへの参照を提供します。  
   
 ```xml  
 <sp:IssuedToken>  
@@ -176,7 +176,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションとやり取りするアプリケーションは、これらのメッセージ ヘッダーを追加できます。追加されたヘッダーは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって適切に処理されます。  
   
 #### <a name="reference-parameters-and-properties"></a>参照パラメーターと参照プロパティ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント参照のパラメーターと参照 p の処理の実装  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、それぞれの仕様に従って、エンドポイントの参照パラメーターと  
   
  参照プロパティの処理を実装しています。  
   
@@ -207,7 +207,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
 -   R3322 : WS-Addressing 2004/08 を使用する場合、`ReplyTo` も要求に含める必要があります。  
   
--   R3323 : WS-Addressing 1.0 を使用し、`ReplyTo` が要求に含まれていない場合、[address] プロパティが "http://www.w3.org/2005/08/addressing/anonymous" である既定のエンドポイント参照が使用されます。  
+-   R3323: Ws-addressing 1.0 を使用する場合と`ReplyTo`と等しい [address] プロパティを使用して既定のエンドポイント参照、要求に存在しない"http://www.w3.org/2005/08/addressing/anonymous"を使用します。  
   
 -   R3324: リクエスターを含める必要があります`wsa:To`、 `wsa:Action`、および`wsa:RelatesTo`応答メッセージのヘッダーだけでなくすべての参照パラメーターまたは参照プロパティ (またはその両方) で指定されたヘッダー、`ReplyTo`でエンドポイント参照、要求。  
   
@@ -234,7 +234,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 ### <a name="wsdl-11-binding-and-ws-policy-assertions"></a>WSDL 1.1 バインディングと WS-Policy アサーション  
   
 #### <a name="indicating-use-of-ws-addressing"></a>WS-Addressing の使用の提示  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ポリシー アサーションを使用して、特定の Ws-addressing のバージョンのエンドポイントのサポートを示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ポリシー アサーションを使用して、エンドポイントが WS-Addressing の特定のバージョンをサポートすることを示します。  
   
  次のポリシー アサーションには、エンドポイント ポリシー サブジェクト [WS-PA] が含まれており、そのエンドポイントで送受信されるメッセージでは WS-Addressing 2004/08 を使用する必要があることを示しています。  
   
@@ -278,7 +278,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  ただし、リクエスターとレスポンダー間で 2 つの独立した逆方向の HTTP 接続を確立することによってメリットのあるメッセージ交換パターンがあります。たとえば、レスポンダーによって送信される要求されていない一方向のメッセージなどです。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 複合二重チャネル、入力メッセージの 1 つのチャネルを使用して、出力メッセージの使用は、他の場所を基になる 2 つのトランスポート チャネルから形成できる機能を提供します。 HTTP トランスポートの場合、複合二重によって 2 つの逆方向の HTTP 接続が実現します。 一方の接続はリクエスターがレスポンダーにメッセージを送信するために使用し、もう一方はレスポンダーがリクエスターにメッセージを返すために使用します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、基になる 2 つのトランスポート チャネルで、一方のチャネルを入力メッセージに使用し、もう一方を出力メッセージに使用する複合二重チャネルを形成できる機能が用意されています。 HTTP トランスポートの場合、複合二重によって 2 つの逆方向の HTTP 接続が実現します。 一方の接続はリクエスターがレスポンダーにメッセージを送信するために使用し、もう一方はレスポンダーがリクエスターにメッセージを返すために使用します。  
   
  個別の HTTP 要求を使用して送信された応答の場合、WS-AM アサーションは次のようになります。  
   
@@ -304,11 +304,11 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  上記のステートメントにより、要求メッセージの `wsa:ReplyTo` ヘッダーに関する以下の要件が発生します。  
   
--   R3514 : エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用しており、`ReplyTo` アサーションまたは `[address]` アサーションを含み、`wsap10:UsingAddressing` が関連付けられたポリシー代替手段を持つ場合、エンドポイントに送信する要求メッセージには、`wsap:UsingAddressing` プロパティが "http://www.w3.org/2005/08/addressing/anonymous" ではない `cdp:CompositeDuplex` ヘッダーが必要です。  
+-   R3514: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティに等しくない"http://www.w3.org/2005/08/addressing/anonymous"エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合、`wsap10:UsingAddressing`または`wsap:UsingAddressing`組み合わせるとアサーション`cdp:CompositeDuplex`添付します。  
   
--   R3515 : エンドポイントに送信する要求メッセージには、`ReplyTo` プロパティが "http://www.w3.org/2005/08/addressing/anonymous" である `[address]` ヘッダーが必要です。エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用しており、`ReplyTo` アサーションを含み、`wsap10:UsingAddressing` アサーションが関連付けられていないポリシー代替手段を持つ場合、`cdp:CompositeDuplex` ヘッダーはまったく必要ありません。  
+-   R3515: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティを等しく"http://www.w3.org/2005/08/addressing/anonymous"、かない、`ReplyTo`ヘッダーはまったく、エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合`wsap10:UsingAddressing`アサーションといいえ`cdp:CompositeDuplex`アサーションです。  
   
--   R3516 : エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用しており、`ReplyTo` アサーションを含み、`[address]` アサーションが関連付けられていないポリシー代替手段を持つ場合、エンドポイントに送信する要求メッセージには、`wsap:UsingAddressing` プロパティが "http://www.w3.org/2005/08/addressing/anonymous" である `cdp:CompositeDuplex` ヘッダーが必要です。  
+-   R3516: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティを等しく"http://www.w3.org/2005/08/addressing/anonymous"エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合`wsap:UsingAddressing`アサーションとありません`cdp:CompositeDuplex`アサーションです。  
   
  WS-Addressing の WSDL 仕様では、`<wsaw:Anonymous/>` ヘッダーの要件を示す 3 つのテキスト値 (required、optional、および prohibited) を持つ `wsa:ReplyTo` 要素を導入することにより、同様のプロトコル バインディングを記述することを試みています (セクション 3.2)。 残念ながら、このような要素の定義では、要素をアサーションとして使用する代替手段の共通部分をサポートするために、ドメイン固有の拡張を必要とするため、特に WS-Policy のコンテキストではアサーションとして使用することはできません。 また、このような要素の定義は、ネットワーク上のエンドポイントの動作に相反する `ReplyTo` ヘッダーの値を示すため、HTTP トランスポートに固有のものになります。  
   
@@ -410,7 +410,7 @@ Content-Length: 0
   
  次の一連の手順は、MTOM 固有のエンコーディング プロセスを示しています。  
   
-1.  エンコードする SOAP エンベロープに、`[namespace name]` が "http://www.w3.org/2004/08/xop/include" で、`[local name]` が `Include` である要素情報項目が含まれていないことを確認します。  
+1.  エンコードする SOAP エンベロープに記述されている要素情報項目が含まれていないことを確認、`[namespace name]`の"http://www.w3.org/2004/08/xop/include"および`[local name]`の`Include`します。  
   
 2.  空の MIME パッケージを作成します。  
   
@@ -576,7 +576,7 @@ mail-address   =     id-left "@" id-right
  MTOM を使用するように構成された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントは、常に MTOM でエンコードされたメッセージを送信します。 必要な条件を満たすパートがない場合でも、メッセージは MTOM でエンコードされます (SOAP エンベロープを含む単一の MIME パートを持つ MIME パッケージとしてシリアル化されます)。  
   
 ### <a name="ws-policy-assertion-for-mtom"></a>MTOM の WS-Policy アサーション  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 次のポリシー アサーションを使用して、エンドポイントで MTOM の使用方法を指定します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、次のポリシー アサーションを使用して、エンドポイントによる MTOM の使用方法を示します。  
   
 ```xml  
 <wsoma:OptimizedMimeSerialization ... />  
