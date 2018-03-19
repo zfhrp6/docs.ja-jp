@@ -2,21 +2,22 @@
 title: "演算子 (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - operators [C#]
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-caps.latest.revision: "42"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8e270b683862502c218ff248de76819ecea83dc8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 267022b8c6b7f8faf301cae1a62f4dfaa8249f96
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="operators-c-programming-guide"></a>演算子 (C# プログラミング ガイド)
 C# では、 *演算子* は式またはステートメントの中で 1 つ以上の *オペランド* に適用されるプログラム要素です。 インクリメント演算子 (`++`) や `new`など、1 つのオペランドを受け取る演算子を *単項* 演算子と言います。 算術演算子 (`+`、`-`、`*`、`/`) など、2 つのオペランドを受け取る演算子を *二項* 演算子と言います。 条件演算子 (`?:`) は、3 つのオペランドを受け取る、C# でただ 1 つの三項演算子です。  
@@ -42,7 +43,7 @@ C# では、 *演算子* は式またはステートメントの中で 1 つ以�
   
  **主な演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |x[.](../../../csharp/language-reference/operators/member-access-operator.md)y<br /><br /> x?.y|メンバー アクセス。<br /><br /> 条件付きのメンバー アクセス。|  
 |f[(x)](../../../csharp/language-reference/operators/invocation-operator.md)|メソッドおよびデリゲートの呼び出し。|  
@@ -61,11 +62,11 @@ C# では、 *演算子* は式またはステートメントの中で 1 つ以�
   
  **単項演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |[+](../../../csharp/language-reference/operators/addition-operator.md)x|同一。|  
 |[-](../../../csharp/language-reference/operators/subtraction-operator.md)x|否定。|  
-|[!](../../../csharp/language-reference/operators/logical-negation-operator.md)x|論理否定。|  
+|[\!](../../../csharp/language-reference/operators/logical-negation-operator.md)x|論理否定。|  
 |[~](../../../csharp/language-reference/operators/bitwise-complement-operator.md)x|ビットごとの否定。|  
 |[++](../../../csharp/language-reference/operators/increment-operator.md)x|前置インクリメント。|  
 |[--](../../../csharp/language-reference/operators/decrement-operator.md)x|前置デクリメント。|  
@@ -73,7 +74,7 @@ C# では、 *演算子* は式またはステートメントの中で 1 つ以�
   
  **乗算演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |[*](../../../csharp/language-reference/operators/multiplication-operator.md)|乗算|  
 |[/](../../../csharp/language-reference/operators/division-operator.md)|除算記号|  
@@ -81,21 +82,21 @@ C# では、 *演算子* は式またはステートメントの中で 1 つ以�
   
  **加算演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |x [+](../../../csharp/language-reference/operators/addition-operator.md) y|加算、文字列の連結、デリゲートの組み合わせ。|  
 |x [-](../../../csharp/language-reference/operators/subtraction-operator.md) y|減算、デリゲートの削除。|  
   
  **シフト演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |x [<\<](../../../csharp/language-reference/operators/left-shift-operator.md) y|左シフト。|  
 |x [>>](../../../csharp/language-reference/operators/right-shift-operator.md) y|右シフト。|  
   
  **関係演算子と型演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |x [\<](../../../csharp/language-reference/operators/less-than-operator.md) y|より小さい|  
 |x [>](../../../csharp/language-reference/operators/greater-than-operator.md) y|次の値より大きい|  
@@ -106,14 +107,14 @@ C# では、 *演算子* は式またはステートメントの中で 1 つ以�
   
  **等値演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |x [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) y|等しい|  
 |x [!=](../../../csharp/language-reference/operators/not-equal-operator.md) y|等しくない|  
   
  **論理演算子、条件演算子、Null 演算子**  
   
-|カテゴリ|式|説明|  
+|カテゴリ|正規表現|説明|  
 |--------------|----------------|-----------------|  
 |論理 AND|x [&](../../../csharp/language-reference/operators/and-operator.md) y|整数のビットごとの AND、ブール型の論理 AND。|  
 |論理 XOR|x [^](../../../csharp/language-reference/operators/xor-operator.md) y|整数のビットごとの XOR、ブール型の論理 XOR。|  
@@ -125,7 +126,7 @@ C# では、 *演算子* は式またはステートメントの中で 1 つ以�
   
  **代入演算子と匿名演算子**  
   
-|式|説明|  
+|正規表現|説明|  
 |----------------|-----------------|  
 |[=](../../../csharp/language-reference/operators/assignment-operator.md)|代入|  
 |x op= y|複合代入。 サポートされる演算子: [+=](../../../csharp/language-reference/operators/addition-assignment-operator.md)、[-=](../../../csharp/language-reference/operators/subtraction-assignment-operator.md)、[*=](../../../csharp/language-reference/operators/multiplication-assignment-operator.md)、[/=](../../../csharp/language-reference/operators/division-assignment-operator.md)、[%=](../../../csharp/language-reference/operators/modulus-assignment-operator.md)、[&=](../../../csharp/language-reference/operators/and-assignment-operator.md)、[&#124;=](../../../csharp/language-reference/operators/or-assignment-operator.md)、[!=](../../../csharp/language-reference/operators/not-equal-operator.md)、[<\<=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md)、[>>=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|  
@@ -173,6 +174,6 @@ a = (b = c);
 ## <a name="related-sections"></a>関連項目  
  詳細については、「[演算子のキーワード](../../../csharp/language-reference/keywords/operator-keywords.md)」および「[C# 演算子](../../../csharp/language-reference/operators/index.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [ステートメント、式、および演算子](../../../csharp/programming-guide/statements-expressions-operators/index.md)

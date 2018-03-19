@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,11 +15,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-caps.latest.revision: "40"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ce66f98f064ec5c9460dd1909f8eb7bc44c26f76
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -114,7 +116,7 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
 |/wrapped|ラップされたパラメーターを含んでいるドキュメント リテラル スタイルのドキュメントに特別な大文字と小文字の規則が使用されるかどうかを制御します。 使用して、 **/wrapped**に切り替えて、[サービス モデル メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)ツールを通常の大文字と小文字を指定します。|  
   
 > [!NOTE]
-> サービス バインドが、システム指定のバインディングのいずれかであるとき ([システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md) を参照してください)、および <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> プロパティに `None` または `Sign` が設定されているときに、Svcutil は期待されるシステム指定の要素の代わりに [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) 要素を使用して構成ファイルを生成します。 たとえば、サービスが `ProtectionLevel` に `Sign` が設定された `<wsHttpBinding>` 要素を使用する場合、生成される構成のバインディング セクションには `<wsHttpBinding>` の代わりに `<customBinding>` を持ちます。 保護レベルのさらに詳しい情報については [保護レベルの理解](../../../docs/framework/wcf/understanding-protection-level.md) を参照してください。
+>  サービス バインドが、システム指定のバインディングのいずれかであるとき ([システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md) を参照してください)、および <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> プロパティに `None` または `Sign` が設定されているときに、Svcutil は期待されるシステム指定の要素の代わりに [\<customBinding>](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) 要素を使用して構成ファイルを生成します。 たとえば、サービスが `ProtectionLevel` に `Sign` が設定された `<wsHttpBinding>` 要素を使用する場合、生成される構成のバインディング セクションには `<wsHttpBinding>` の代わりに `<customBinding>` を持ちます。 保護レベルのさらに詳しい情報については [保護レベルの理解](../../../docs/framework/wcf/understanding-protection-level.md) を参照してください。  
   
 ### <a name="metadata-export"></a>メタデータのエクスポート  
  Svcutil.exe は、コンパイル済みアセンブリのサービス、コントラクト、およびデータ型のメタデータをエクスポートできます。 サービスのメタデータをエクスポートするには、`/serviceName` オプションを使用して、エクスポートするサービスを指定する必要があります。 アセンブリ内のすべてのデータ コントラクト型をエクスポートするには、`/dataContractOnly` オプションを使用する必要があります。 既定では、入力アセンブリのすべてのサービス コントラクトのメタデータがエクスポートされます。  

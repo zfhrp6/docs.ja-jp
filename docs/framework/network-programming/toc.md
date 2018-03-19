@@ -66,6 +66,7 @@
 #### [方法: 時間ベースのキャッシュ ポリシーをカスタマイズする](how-to-customize-a-time-based-cache-policy.md)
 #### [方法: 要求のキャッシュ ポリシーを設定する](how-to-set-cache-policy-for-a-request.md)
 ## [ネットワーク プログラミングにおけるセキュリティ](security-in-network-programming.md)
+### [トランスポート層セキュリティ (TLS) のベスト プラクティス](tls.md)
 ### [Secure Sockets Layer の使用](using-secure-sockets-layer.md)
 #### [証明書の選択と検証](certificate-selection-and-validation.md)
 ### [インターネット認証](internet-authentication.md)

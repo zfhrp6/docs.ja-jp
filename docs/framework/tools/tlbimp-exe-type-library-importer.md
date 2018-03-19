@@ -3,9 +3,9 @@ title: "Tlbimp.exe (タイプ ライブラリ インポーター)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -17,16 +17,16 @@ helpviewer_keywords:
 - type libraries
 - converting type definitions
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
-caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2e6b98d03988c5eb747fb3a4c766c98f477a3b5a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2eb29c82b21088f4bfe4752d70b927ca048c875b
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (タイプ ライブラリ インポーター)
 タイプ ライブラリ インポーターは、COM タイプ ライブラリにある型定義を共通言語ランタイム アセンブリで等価な定義に変換します。 Tlbimp.exe の出力は、元のタイプ ライブラリで定義された型のランタイム メタデータを格納するバイナリ ファイル (アセンブリ) です。 このファイルは [ildasm.exe](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) などのツールでチェックできます。  
@@ -61,7 +61,7 @@ tlbimp tlbFile [options]
 |**/noclassmembers**|Tlbimp.exe がメンバーをクラスに追加できないようにします。 これにより、<xref:System.TypeLoadException> が発生する可能性がなくなります。|  
 |**/nologo**|Microsoft 著作権情報を表示しません。|  
 |**/out:** *filename*|メタデータ定義の書き込み先の出力ファイル、アセンブリ、および名前空間の名前を指定します。 アセンブリの名前空間を明示的に制御するインターフェイス定義言語 (IDL: Interface Definition Language) カスタム属性がタイプ ライブラリで指定されている場合、**/out** オプションはアセンブリの名前空間を制御できません。 このオプションを指定しない場合、Tlbimp.exe は、入力ファイルで定義された実際のタイプ ライブラリと同じ名前のファイルにメタデータを書き込み、そのファイルに .dll 拡張子を割り当てます。 出力ファイルの名前が入力ファイルと同じ場合は、タイプ ライブラリが上書きされるのを防ぐためにエラーが発生します。|  
-|**/primary**|指定したタイプ ライブラリのプライマリ相互運用機能アセンブリを生成します。 アセンブリに追加される情報は、アセンブリを生成したタイプ ライブラリの発行者を示します。 プライマリ相互運用機能アセンブリを指定すると、Tlbimp.exe を使用して、ある発行者のアセンブリとタイプ ライブラリから作成された他のアセンブリを区別します。 Tlbimp.exe を使用してインポートするタイプ ライブラリの発行者である場合は、**/primary** オプションを使用してください。 プライマリ相互運用機能アセンブリには、[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)で署名する必要があります。 詳細については、「[プライマリ相互運用機能アセンブリ](http://msdn.microsoft.com/library/b977a8be-59a0-40a0-a806-b11ffba5c080)」を参照してください。|  
+|**/primary**|指定したタイプ ライブラリのプライマリ相互運用機能アセンブリを生成します。 アセンブリに追加される情報は、アセンブリを生成したタイプ ライブラリの発行者を示します。 プライマリ相互運用機能アセンブリを指定すると、Tlbimp.exe を使用して、ある発行者のアセンブリとタイプ ライブラリから作成された他のアセンブリを区別します。 Tlbimp.exe を使用してインポートするタイプ ライブラリの発行者である場合は、**/primary** オプションを使用してください。 プライマリ相互運用機能アセンブリには、[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)で署名する必要があります。 詳細については、「[プライマリ相互運用機能アセンブリ](https://msdn.microsoft.com/library/b977a8be-59a0-40a0-a806-b11ffba5c080(v=vs.100))」を参照してください。|  
 |**/product:** `productinformation`|出力アセンブリに製品情報を追加します。 この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。|  
 |**/productversion:** `productversioninformation`|出力アセンブリにバージョン情報を追加します。 形式の制限はありません。 この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。|  
 |**/publickey:** *filename*|生成されたアセンブリに署名するために使用する公開キーを格納するファイルを指定します。 **/publickey:** オプションの代わりに **/keyfile:** オプションまたは **/keycontainer:** オプションを指定した場合、Tlbimp.exe は、**/keyfile:** または **/keycontainer:** で指定された公開キーと秘密キーのペアから公開キーを生成します。 **/publickey:** オプションを指定すると、テスト キーと遅延署名を使用できます。 ファイルは Sn.exe で生成された形式になります。 詳細については、「[厳密名ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)」にある Sn.exe の **-p** オプションの説明を参照してください。|  

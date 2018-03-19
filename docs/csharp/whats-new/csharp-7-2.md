@@ -8,11 +8,11 @@ ms.date: 08/16/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: 9e7fefde6763dbd5c73c01e45e5652d9f207c213
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: db22c9251fa5e9f5a9cb66af6ec8b193b88e0eb3
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="whats-new-in-c-72"></a>C# 7.2 の新機能
 
@@ -31,7 +31,7 @@ C# 7.2 では[言語バージョンの選択](csharp-7-1.md#language-version-sel
   - 名前付き引数の後ろに位置引数を続けることができます。
 * [数値リテラルでの先頭のアンダースコア (_)](#leading-underscores-in-numeric-literals)
   - 数値リテラルの印刷桁の前に先頭のアンダースコア(_) を含めることができるようになりました。
-* [`private protected` アクセス修飾子](#private-protected)
+* [`private protected` アクセス修飾子](#private-protected-access-modifier)
   - `private protected` アクセス修飾子によって、同じアセンブリ内の派生クラスのアクセスが有効になります。
 
 ## <a name="reference-semantics-with-value-types"></a>値の型による参照セマンティクス

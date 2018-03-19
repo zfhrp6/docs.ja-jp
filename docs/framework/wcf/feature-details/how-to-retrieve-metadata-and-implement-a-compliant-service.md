@@ -1,19 +1,21 @@
-﻿---
+---
 title: "方法 : メタデータの取得および準拠サービスの実装をする"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: f6f3a2b9-c8aa-4b0b-832c-ec2927bf1163
-caps.latest.revision: "13"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ac7654fa041688bbd703d564f6703df9671fbaea
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -27,7 +29,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-retrieve-data-and-implement-a-compliant-service"></a>データを取得して準拠サービスを実装するには  
   
-1.  メタデータ ファイルまたはコード ファイルを生成するメタデータ エンドポイントに対して [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用します。
+1.  メタデータ ファイルまたはコード ファイルを生成するメタデータ エンドポイントに対して [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用します。  
   
 2.  出力コード ファイルを検索し、<xref:System.ServiceModel.ServiceContractAttribute?displayProperty=nameWithType> 属性でマークされた対象のインターフェイス (複数ある場合) 部分を見つけます。 次のコード例は、によって生成された 2 つのインターフェイスを示しています。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 最初の例 (`ISampleService`) は、準拠サービスを作成するために実装するサービス コントラクト インターフェイスです。 2 番目の例 (`ISampleServiceChannel`) は、サービス コントラクト インターフェイスと <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> の両方を拡張するクライアント用のヘルパー インターフェイスです。これはクライアント アプリケーションでも使用されます。  
   
@@ -35,7 +37,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  すべての操作に対する応答アクションを WSDL で指定していない場合、生成後の操作コントラクトでは、<xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> プロパティがワイルドカード文字 (*) に設定される場合があります。 このプロパティの設定を削除します。 削除しない場合は、サービス コントラクト メタデータを実装するときに、それらの操作のメタデータをエクスポートできません。  
   
-4.  クラスにインターフェイスを実装してサービスをホストします。例については、[サービス コントラクトを実装する方法](../../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md) に関する記事、または下記の例のセクションにあるシンプルな実装を参照してください。
+4.  クラスにインターフェイスを実装してサービスをホストします。 例については、[サービス コントラクトを実装する方法](../../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md) に関する記事、または下記の例のセクションにあるシンプルな実装を参照してください。  
   
 5.  クライアントの構成ファイルを[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成、変更、 [\<クライアント >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md)構成セクションの[ \<services >](../../../../docs/framework/configure-apps/file-schema/wcf/services.md)構成セクション。 (生成されたクライアント アプリケーション構成ファイルの例については、次の例を参照してください)。  
   

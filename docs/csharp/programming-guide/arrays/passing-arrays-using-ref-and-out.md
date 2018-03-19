@@ -11,14 +11,14 @@ ms.assetid: 6a2b261e-a1cc-49a6-b4f0-6cacae385a1e
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7f2d4e613491b26e82523d230398af3ec34b4d0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f76f63aee0100c6af6bde73c8543b4e7136b1954
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="passing-arrays-using-ref-and-out-c-programming-guide"></a>ref と out を使用した配列の引き渡し (C# プログラミング ガイド)
-すべての [out](../../../csharp/language-reference/keywords/out.md) パラメーターと同じように、配列型の `out` パラメーターも使用する前に代入される必要があります。つまり、呼び出される側で代入する必要があります。 例:  
+すべての [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターと同じように、配列型の `out` パラメーターも使用する前に代入される必要があります。つまり、呼び出される側で代入する必要があります。 例:  
   
  [!code-csharp[csProgGuideArrays#39](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-using-ref-and-out_1.cs)]  
   
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideArrays#38](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-using-ref-and-out_4.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ref](../../../csharp/language-reference/keywords/ref.md)  
  [out パラメーター修飾子](../../../csharp/language-reference/keywords/out-parameter-modifier.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  

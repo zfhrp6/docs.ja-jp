@@ -10,23 +10,23 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: a2db07c4f5688aece212681af40d69c377f6fa4a
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: 30d1c20d66fd0a193c05c97ee726a886f98356ad
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="tutorial-creating-a-type-provider"></a>チュートリアル: 型プロバイダーを作成します。
 
 F# 型プロバイダー メカニズムは、インフォメーション リッチ プログラミングのサポートの重要な部分です。 このチュートリアルでは、基本的な概念を示すために単純な型プロバイダーをいくつか作成する過程を通して、独自の型プロバイダーを作成する方法を説明します。 F# 型プロバイダー メカニズムの詳細については、次を参照してください。[型プロバイダー](index.md)です。
 
-F# のエコシステムには、一般的に使用されるインターネットやエンタープライズ データ サービス プロバイダーが型の範囲が含まれています。 例:
+F# のエコシステムには、一般的に使用されるインターネットやエンタープライズ データ サービス プロバイダーが型の範囲が含まれています。 例えば:
 
-- [FSharp.Data](https://fsharp.github.io/FSharp.Data/) JSON、XML、CSV、および HTML ドキュメントの形式の型プロバイダーが含まれています
+- [FSharp.Data](https://fsharp.github.io/FSharp.Data/) JSON、XML、CSV、および HTML ドキュメントの形式の型プロバイダーが含まれています。
 
 - [SQLProvider](https://fsprojects.github.io/SQLProvider/)オブジェクトのマッピングと f# LINQ を使用する SQL データベースへのアクセスを厳密に型指定されたこれらのデータ ソースに対するクエリを提供します。
 
-- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/)が持つセットを f# で T-SQL の埋め込みが山に com の型プロバイダーのチェック
+- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/)がコンパイル時の型プロバイダーの設定をオンに f# で T-SQL の埋め込み。
 
 - [FSharp.Data.TypeProviders](https://fsprojects.github.io/FSharp.Data.TypeProviders/)古い一連の型プロバイダーが SQL、Entity Framework、OData および WSDL のデータ サービスにアクセスするための .NET Framework プログラミングでのみ使用します。
 
@@ -62,7 +62,7 @@ F# のエコシステムには、一般的に使用されるインターネッ�
 
 ## <a name="a-simple-type-provider"></a>単純な型プロバイダー
 
-このサンプルは、サンプルでは、ような Samples.HelloWorldTypeProvider、`examples`のディレクトリ、 [f# 型プロバイダー SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/)です。 このプロバイダーは、次のコードが示すように、F# シグネチャ構文を使用して `Type1` 以外の詳細を省略することで、消去型 100 個を含む "型空間" を使用可能にします。 消去型の詳細については、次を参照してください。[の詳細については消去指定された型が](#details-about-erased-provided-types)このトピックで後述します。
+このサンプルは、Samples.HelloWorldTypeProvider、内のサンプルと同様、`examples`のディレクトリ、 [f# 型プロバイダー SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/)です。 このプロバイダーは、次のコードが示すように、F# シグネチャ構文を使用して `Type1` 以外の詳細を省略することで、消去型 100 個を含む "型空間" を使用可能にします。 消去型の詳細については、次を参照してください。[の詳細については消去指定された型が](#details-about-erased-provided-types)このトピックで後述します。
 
 ```fsharp
 namespace Samples.HelloWorldTypeProvider
@@ -135,11 +135,11 @@ type SampleTypeProvider(config: TypeProviderConfig) as this =
   // And add them to the namespace
   do this.AddNamespace(namespaceName, types)
 
-  [<assembly:TypeProviderAssembly>] 
-  do()
+[<assembly:TypeProviderAssembly>] 
+do()
 ```
 
-このプロバイダーを使用するには、Visual Studio 2012 の別のインスタンスを開き、f# スクリプトを作成、として、次のコードに示す #r を使用して、スクリプトからプロバイダーへの参照を追加します。
+このプロバイダーを使用するには、Visual Studio の別のインスタンスを開き、f# スクリプトを作成、として、次のコードに示す #r を使用して、スクリプトからプロバイダーへの参照を追加します。
 
 ```fsharp
 #r @".\bin\Debug\Samples.HelloWorldTypeProvider.dll"
@@ -451,13 +451,13 @@ ProvidedConstructor(…, InvokeCode = (fun args -> <@@ new DataObject() @@>), �
 
 ### <a name="type-checked-regex-provider"></a>型チェック済み Regex プロバイダー
 
-.NET `System.Text.RegularExpressions.Regex` ライブラリをラップする正規表現の型プロバイダーを、次のコンパイル時保証を提供するインターフェイスに実装するとしたらどうでしょう。
+.NET <xref:System.Text.RegularExpressions.Regex> ライブラリをラップする正規表現の型プロバイダーを、次のコンパイル時保証を提供するインターフェイスに実装するとしたらどうでしょう。
 
 - 正規表現が有効かどうかを確認できる。
 
 - パターンが一致したとき、正規表現内のグループ名に基づいて名前付きプロパティを提供できる。
 
-このセクションでは、これらの利点が実現するように正規表現パターンによってパラメーター化される `RegExProviderType` 型を作成するための型プロバイダーを使用する方法を示します。 コンパイラは、提供されたパターンが有効でない場合にエラーを報告しますが、型プロバイダーはパターンからグループを抽出できるので、パターンが一致したとき名前付きプロパティを使用してグループにアクセスできます。 型プロバイダーを設計するとき、公開された API がエンド ユーザーにどのように表示される必要があるか、そのデザインが .NET コードにどのように変換されるかを考慮する必要があります。 次の例は、市外局番のコンポーネントを取得するために、このような API を使用する方法を示しています。
+このセクションでは、これらの利点が実現するように正規表現パターンによってパラメーター化される `RegexTyped` 型を作成するための型プロバイダーを使用する方法を示します。 コンパイラは、提供されたパターンが有効でない場合にエラーを報告しますが、型プロバイダーはパターンからグループを抽出できるので、パターンが一致したとき名前付きプロパティを使用してグループにアクセスできます。 型プロバイダーを設計するとき、公開された API がエンド ユーザーにどのように表示される必要があるか、そのデザインが .NET コードにどのように変換されるかを考慮する必要があります。 次の例は、市外局番のコンポーネントを取得するために、このような API を使用する方法を示しています。
 
 ```fsharp
 type T = RegexTyped< @"(?<AreaCode>^\d{3})-(?<PhoneNumber>\d{3}-\d{4}$)">
@@ -480,7 +480,7 @@ let r = reg.Match("425-123-2345").Groups.["AreaCode"].Value //r equals "425"
 
 - `RegexTyped` コンストラクターは、Regex コンストラクターを呼び出し、パターンの静的な型引数を渡します。
 
-- `Match` メソッドの結果は、標準の `System.Text.RegularExpressions.Match` 型で表されます。
+- `Match` メソッドの結果は、標準の <xref:System.Text.RegularExpressions.Match> 型で表されます。
 
 - 各名前付きグループは指定されたプロパティになり、プロパティにアクセスすると、パターン一致の `Groups` コレクションでインデクサーが使用されます。
 
@@ -552,7 +552,7 @@ do ()
 
 - `obj` をそのメソッドの基本型として使用しますが、この型のランタイム表現には `Regex` オブジェクトを使用します。次にその例を示します。
 
-- 正規表現が有効でない場合、`Regex` コンストラクターを呼び出すと `System.ArgumentException` がスローされます。 コンパイラはこの例外をキャッチし、コンパイル時、または Visual Studio のエディターでエラー メッセージを表示します。 この例外によって、アプリケーションを実行せずに正規表現が有効かどうかを確認できます。
+- 正規表現が有効でない場合、`Regex` コンストラクターを呼び出すと <xref:System.ArgumentException> がスローされます。 コンパイラはこの例外をキャッチし、コンパイル時、または Visual Studio のエディターでエラー メッセージを表示します。 この例外によって、アプリケーションを実行せずに正規表現が有効かどうかを確認できます。
 
 前に定義した型は、まだ意味のあるメソッドまたはプロパティを含んでいないので、有効ではありません。 最初に、静的な `IsMatch` メソッドを追加します。
 
@@ -583,7 +583,7 @@ let matchTy =
 ty.AddMember matchTy
 ```
 
-次に、各グループの Match 型にプロパティを 1 つ追加します。 実行時には、一致は `System.Text.RegularExpressions.Match` 値として表されるので、そのプロパティを定義するクォートはインデックス付きの `System.Text.RegularExpressions.Match.Groups` プロパティを使用して適切なグループを取得する必要があります。
+次に、各グループの Match 型にプロパティを 1 つ追加します。 実行時には、一致は <xref:System.Text.RegularExpressions.Match> 値として表されるので、そのプロパティを定義するクォートはインデックス付きの <xref:System.Text.RegularExpressions.Match.Groups> プロパティを使用して適切なグループを取得する必要があります。
 
 ```fsharp
 for group in r.GetGroupNames() do
@@ -756,13 +756,11 @@ do ()
 単純な例として、コンマ区切り値 (CSV) 形式の指数データにアクセスするための型プロバイダーを考えてみましょう。 ここでは、次の表に示すように、CSV ファイルにはヘッダー行があり、その後に浮動小数点型のデータが続いているとします。
 
 
-```
-|Distance (meter)|Time (second)|
+|距離 (メートル)|時間 (秒)|
 |----------------|-------------|
 |50.0|3.7|
 |100.0|5.2|
 |150.0|6.4|
-```
 
 ここでは、`Distance` 型の `float<meter>` プロパティと `Time` 型の `float<second>` プロパティの行を取得するために使用できる型を指定する方法を示します。 説明を簡単にするために、次のように仮定します。
 
@@ -788,7 +786,7 @@ printfn "%f" (float time)
 この場合、コンパイラはこれらの呼び出しを次の例のように変換します。
 
 ```fsharp
-let info = new MiniCsvFile("info.csv")
+let info = new CsvFile("info.csv")
 for row in info.Data do
 let (time:float) = row.[1]
 printfn "%f" (float time)
@@ -1045,9 +1043,10 @@ ProvidedType API には遅延バージョンの AddMember があります。
 
 ### <a name="providing-array-types-and-generic-type-instantiations"></a>配列の型およびジェネリック型のインスタンス化を提供します。
 
-配列型、byref 型、およびジェネリック型のインスタンス化をシグネチャに持つ、指定されたメンバーを作成するには、System.Type の任意のインスタンスに対して通常の `MakeArrayType`、`MakePointerType`、および `MakeGenericType` を使用します。インスタンスには `ProvidedTypeDefinitions` も含まれます。
+(シグネチャを持つは、配列型、byref 型、およびジェネリック型のインスタンスを含む) 指定されたメンバー、normal を使用して行った`MakeArrayType`、 `MakePointerType`、および`MakeGenericType`任意のインスタンスで<xref:System.Type>など、`ProvidedTypeDefinitions`です。
 
-注: いくつかの場合にする必要がありますでヘルパーを使用して`ProvidedTypeBuilder.MakeGenericType`です。  詳細については、型プロバイダー SDK ドキュメントを参照してください。
+> [!NOTE]
+> 場合によってでヘルパーを使用する必要があります`ProvidedTypeBuilder.MakeGenericType`です。  参照してください、[型プロバイダー SDK ドキュメント](https://github.com/fsprojects/FSharp.TypeProviders.SDK/blob/master/README.md#explicit-construction-of-code-makegenerictype-makegenericmethod-and-uncheckedquotations)詳細についてはします。
 
 ### <a name="providing-unit-of-measure-annotations"></a>測定単位の注釈を指定する
 
@@ -1096,12 +1095,12 @@ ProvidedTypes API は、メジャーの注釈を指定するためのヘルパ�
 
 #### <a name="providing-generated-types"></a>生成された型の指定
 
-これまで、このドキュメントでは消去型の指定方法を説明してきました。 F# の型プロバイダー メカニズムを使用して、ユーザー プログラムに実際の .NET 型定義として追加される生成された型を指定することもできます。 生成され指定された型は型定義を使用して参照する必要があります。
+これまで、このドキュメントは、消去型を提供する方法について説明しました。 F# の型プロバイダー メカニズムを使用して、ユーザー プログラムに実際の .NET 型定義として追加される生成された型を指定することもできます。 生成され指定された型は型定義を使用して参照する必要があります。
 
 ```fsharp
 open Microsoft.FSharp.TypeProviders 
 
-type Service = ODataService<" https://services.odata.org/Northwind/Northwind.svc/">
+type Service = ODataService<"http://services.odata.org/Northwind/Northwind.svc/">
 ```
 
 F# 3.0 リリースに含まれている ProvidedTypes-0.2 ヘルパー コードは、生成された型を指定するためのサポートが限られています。 生成された型の定義は次の条件を満たす必要があります。
@@ -1159,7 +1158,7 @@ F# の型プロバイダー メカニズムには、次の制約があります�
   stdout への出力のログを使用できます。
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [型プロバイダー](index.md)
 
