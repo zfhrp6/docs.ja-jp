@@ -67,7 +67,7 @@ HRESULT SetPropertyProps (
  [in]プロパティの既定値。  
   
  `cchValue`  
- [in](Unicode) の数の文字について`pValue`です。  
+ [in] \(Unicode) の数の文字について`pValue`です。  
   
  `mdSetter`  
  [in]プロパティの値を設定するメソッド。  
