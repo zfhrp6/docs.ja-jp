@@ -23,7 +23,7 @@ ms.lasthandoff: 12/22/2017
 # <a name="using-the-wcf-development-tools"></a>WCF 開発ツールの使用
 このセクションでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの開発を支援する [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] 開発ツールについて説明します。
 
-[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートは独自のサービスを迅速に構築するための基礎として使用することができます。これによって、サービスをテストし、デバッグするための [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス 自動ホスト と [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テストクライアント を使用できるようになります。 これらのツールは、高速でシームレスなデバッグとテストのサイクルを実現させ、初期の段階においてホスト モデルのコミットを必要とさせません。
+[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートは独自のサービスを迅速に構築するための基礎として使用することができます。これによって、サービスをデバッグし、テストするための [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを使用できるようになります。 これらのツールによって、高速でシームレスなデバッグとテストのサイクルが実現し、初期の段階においてホスト モデルのコミットが必要なくなります。
 
 ## <a name="the-wcf-developer-tools"></a>WCF の開発者用ツール  
  [WCF Visual Studio テンプレート](../../../docs/framework/wcf/wcf-vs-templates.md)  
