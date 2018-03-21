@@ -2,7 +2,8 @@
 title: "@ (C# リファレンス)"
 ms.date: 02/09/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - '@_CSharpKeyword'
@@ -13,11 +14,11 @@ helpviewer_keywords:
 ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 30f937951557ba65971a752b414cce6b485149be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2b62231afc3014f9fc2b9ac7bd39168f40e12c8d
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="-c-reference"></a>@ (C# リファレンス)
 
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
 
    [!code-csharp[verbatim3](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#3)]
 
-1. 名前の競合がある場合に、コンパイラが属性を区別できるようにする。 属性は <xref:System.Attribute> の派生型です。 通常、その型の名前には **Attribute** サフィックスが含まれます。これは、コンパイラがその規則を強制していない場合でも同様です。 そのため属性は、完全な型名 (たとえば、`[InfoAttribute]`) か、短縮名 (たとえば、`[Info]`) によってコード内から参照できます。 ただし、短縮された 2 つの属性型名が同じである場合、一方の型名に **Attribute** サフィックスが含まれていて、もう一方に含まれていないと、名前の競合が発生します。 たとえば、次のコードでは、`Info` と `InfoAttribute` のどちらの属性が `Main` メソッドに適用されるのをコンパイラが判断できないため、コンパイルが失敗します。
+1. 名前の競合がある場合に、コンパイラが属性を区別できるようにする。 属性は <xref:System.Attribute> の派生型です。 通常、その型の名前には **Attribute** サフィックスが含まれます。これは、コンパイラがその規則を強制していない場合でも同様です。 そのため属性は、完全な型名 (たとえば、`[InfoAttribute]`) か、短縮名 (たとえば、`[Info]`) によってコード内から参照できます。 ただし、短縮された 2 つの属性型名が同じである場合、一方の型名に **Attribute** サフィックスが含まれていて、もう一方に含まれていないと、名前の競合が発生します。 たとえば、次のコードでは、`Info` と `InfoAttribute` のどちらの属性が `Example` クラスに適用されるかをコンパイラが判断できないため、コンパイルが失敗します。
 
    ```csharp
    using System;
@@ -76,7 +77,7 @@ ms.lasthandoff: 11/21/2017
 
    [!code-csharp[verbatim4](../../../../samples/snippets/csharp/language-reference/keywords/verbatim4.cs#1)]
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# 特殊文字](../../../csharp/language-reference/tokens/index.md)

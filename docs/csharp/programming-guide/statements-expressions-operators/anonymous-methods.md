@@ -2,21 +2,22 @@
 title: "匿名メソッド (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - anonymous methods [C#]
 - methods [C#], anonymous
 - delegates [C#], anonymous methods
 ms.assetid: a62441fa-f0a3-4acb-9aa6-93762a635275
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4d942e0f3245f6404c896173b2c7ca6f1090a8c2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 96e78257c5aab84562cd8cdb336bb5a91ba59534
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="anonymous-methods-c-programming-guide"></a>匿名メソッド (C# プログラミング ガイド)
 C# 2.0 より前のバージョンでは、[デリゲート](../../../csharp/language-reference/keywords/delegate.md)を宣言するには[名前付きメソッド](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)を使用するしかありませんでした。 C# 2.0 では匿名メソッドが導入され、C# 3.0 以降では、インライン コードを記述するための本来の方法として、匿名メソッドに代わってラムダ式が使用されるようになりました。 ただし、このトピックに記載した匿名メソッドに関する情報は、ラムダ式にも適用されます。 ラムダ式にはない機能を匿名メソッドが備えているケースが 1 つあります。 匿名メソッドではパラメーター リストを省略できます。 つまり、匿名メソッドを、さまざまなシグネチャを持つデリゲートに変換できます。 これはラムダ式では不可能です。 ラムダ式の詳細については、「[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」を参照してください。  
@@ -44,7 +45,7 @@ C# 2.0 より前のバージョンでは、[デリゲート](../../../csharp/lan
   
  外部変数 `n` への参照は、デリゲートの作成時に "*キャプチャ*" されるといわれます。 ローカル変数とは異なり、匿名メソッドを参照するデリゲートがガベージ コレクションの対象になるまで、キャプチャされた変数の有効期間を拡張します。  
   
- 匿名メソッドは、外部スコープの [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターや [out](../../../csharp/language-reference/keywords/out.md) パラメーターにアクセスできません。  
+ 匿名メソッドは、外部スコープの [in](../../../csharp/language-reference/keywords/in.md)、[ref](../../../csharp/language-reference/keywords/ref.md)、[out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターにアクセスできません。  
   
  "*匿名メソッド ブロック*" 内のアンセーフ コードにはアクセスできません。  
   
@@ -61,7 +62,7 @@ C# 2.0 より前のバージョンでは、[デリゲート](../../../csharp/lan
   
  [!code-csharp[csProgGuideDelegates#4](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_5.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)  

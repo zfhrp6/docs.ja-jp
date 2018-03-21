@@ -15,11 +15,11 @@ ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: df59647b803bff448a801374a325f07e4903a160
-ms.sourcegitcommit: 22a48b64a0150a60b00b4fc4d8c62cde7f1670c4
+ms.openlocfilehash: 14bb60a5009f9a1ae59ed9846ebc868cfdcc05c6
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>ラムダ式 (C# プログラミング ガイド)
 ラムダ式は、 [デリゲート](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) 型または [式ツリー](../../../csharp/programming-guide/delegates/using-delegates.md) 型を作成するために使用できる [匿名関数](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b) です。 ラムダ式を使用すると、引数として渡したり関数呼び出しの結果値として返すことができるローカル関数を記述できます。 ラムダ式は、LINQ クエリ式を記述する場合に特に便利です。  
@@ -265,7 +265,7 @@ class Test
   
 -   ラムダ式内に導入された変数は、外側のメソッドでは参照できません。  
   
--   ラムダ式は、外側のメソッドの `ref` パラメーターまたは `out` パラメーターを直接取り込むことはできません。  
+-   ラムダ式は、外側のメソッドの `in`、`ref`、`out` パラメーターを直接取り込むことはできません。  
   
 -   ラムダ式に含まれる return ステートメントで外側のメソッドを戻すことはありません。  
   

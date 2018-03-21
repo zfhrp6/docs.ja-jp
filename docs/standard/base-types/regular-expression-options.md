@@ -25,11 +25,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a4a1513840d17f2e7b02acf821b5032eaac6e6fc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cc32a98930c4c1243f53fc9c5d2a10f339b4de11
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="regular-expression-options"></a>正規表現のオプション
 <a name="Top"></a>正規表現パターンでの入力文字列とリテラル文字列の比較では、大文字と小文字が区別されます。正規表現パターンに含まれる空白は、リテラルの空白文字として解釈されます。正規表現で使用されるキャプチャ グループは、暗黙的に指定される場合と明示的に指定される場合があります。これらはすべて、正規表現の既定の動作です。 正規表現のオプションを指定することで、これらの正規表現の既定の動作とそのいくつかの側面を変更できます。 次の表に示す各オプションは、正規表現パターンの一部としてインラインで記述することも、<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> クラス コンストラクターまたは静的パターン一致メソッドに <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> 列挙値として渡すこともできます。  
@@ -281,7 +281,7 @@ ms.lasthandoff: 12/23/2017
   
 -   シャープ記号 (#) は、リテラル文字ではなく、コメントの先頭として解釈されます。 # 記号から文字列の末尾まで、正規表現パターンに含まれるすべてのテキストは、コメントとして解釈されます。  
   
- ただし次に説明する状況では、<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> オプションを使用している場合でも、正規表現の空白文字は無視されません。  
+ ただし、次に説明する状況では、<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> オプションを使用している場合でも、正規表現の空白文字は無視されません。  
   
 -   文字クラス内の空白は常に、空白として解釈されます。 たとえば、正規表現パターン `[ .,;:]` は、空白文字、ピリオド、コンマ、セミコロン、またはコロンの任意の 1 文字と一致します。  
   

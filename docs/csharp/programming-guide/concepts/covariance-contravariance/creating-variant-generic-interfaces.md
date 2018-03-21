@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0a6ba6bd85d0bdfa7e98dd85886fee89527b59fe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 585d1fc3ee6114532d7ddbfd30f5e09950d3b0b0
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>バリアント ジェネリック インターフェイスの作成 (C#)
 インターフェイスのジェネリック型パラメーターは、共変または反変として宣言できます。 "*共変性*" により、インターフェイス メソッドの戻り値の型の派生を、ジェネリック型パラメーターで定義されている型よりも強くすることができます。 "*反変性*" により、インターフェイス メソッドの引数の型の派生を、ジェネリック パラメーターで指定されている型よりも弱くすることができます。 共変または反変のジェネリック型パラメーターを持つジェネリック インターフェイスは、"*バリアント*" と呼ばれます。  
@@ -27,7 +28,7 @@ ms.lasthandoff: 11/21/2017
  バリアント ジェネリック インターフェイスは、ジェネリック型パラメーターの `in` キーワードと `out` キーワードを使用して宣言できます。  
   
 > [!IMPORTANT]
->  C# の `ref` パラメーターと `out` パラメーターは、バリアントにすることはできません。 また、値の型も変性をサポートしていません。  
+>  C# の `ref`、`in`、`out` パラメーターは、バリアントにすることはできません。 また、値の型も変性をサポートしていません。  
   
  ジェネリック型パラメーターを共変として宣言するには、`out` キーワードを使用します。 共変の型は、次の条件を満たす必要があります。  
   
@@ -193,6 +194,6 @@ class Program
   
  この例では、`pets.GetEnumerator` メソッドで `Cat` と `Dog` がどのように選択されるかが明らかではありません。 そのため、コードで問題が発生する可能性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ジェネリック インターフェイスの分散 (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
  [Func および Action 汎用デリゲートでの分散の使用 (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

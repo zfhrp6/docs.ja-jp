@@ -1,9 +1,8 @@
 ---
 title: ".NET での文字列の埋め込み"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 03/15/2018
 ms.prod: .net
-ms.reviewer: 
 ms.suite: 
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
@@ -19,21 +18,21 @@ helpviewer_keywords:
 - PadLeft method
 - padding strings
 ms.assetid: 84a9f142-3244-4c90-ba02-21af9bbaff71
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ea903c1f950e7c226e043c1fa7276a66126b2512
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bf90c841c8fff21dd423fcd19613b5eb46a2c80c
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="padding-strings-in-net"></a>.NET での文字列の埋め込み
-ある文字の先頭または末尾に文字を埋め込み、合計を指定の長さにするとき、元の文字列で構成される新しい文字列を次の <xref:System.String> メソッドの 1 つを利用して作成します。 埋め込み文字にはスペースや指定した文字を利用できます。結果的に、右揃えまたは左揃えのように見えます。  
+
+ある文字の先頭または末尾に文字を埋め込み、合計を指定の長さにするとき、元の文字列で構成される新しい文字列を次の <xref:System.String> メソッドの 1 つを利用して作成します。 埋め込み文字は、スペースまたは指定した文字にすることができます。 結果の文字列は右揃えまたは左揃えのように見えます。 元の文字列の長さが既に必要な合計の長さ以上である場合、埋め込みメソッドは元の文字列をそのまま返します。詳細については、<xref:System.String.PadLeft%2A?displayProperty=nameWithType> および <xref:System.String.PadRight%2A?displayProperty=nameWithType> メソッドの 2 つのオーバーロードの**戻り値**に関するセクションを参照してください。
   
 |メソッド名|使用|  
 |-----------------|---------|  

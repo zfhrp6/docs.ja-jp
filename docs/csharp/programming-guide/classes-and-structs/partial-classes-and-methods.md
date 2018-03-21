@@ -2,21 +2,22 @@
 title: "部分クラスと部分メソッド (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-caps.latest.revision: "35"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 662b3308c3baa429ed29adca750cbb9b143b79dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 396914e487bee0924c36bb1d7a0f28976f4ad354
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>部分クラスと部分メソッド (C# プログラミング ガイド)
 [クラス](../../../csharp/language-reference/keywords/class.md)や[構造体](../../../csharp/language-reference/keywords/struct.md)、[インターフェイス](../../../csharp/language-reference/keywords/interface.md)やメソッドの定義を、複数のソース ファイルに分割できます。 各ソース ファイルには型やメソッドの定義のセクションが含まれ、分割されたすべての部分はアプリケーションのコンパイル時に結合されます。  
@@ -150,7 +151,7 @@ partial void onNameChanged()
   
 -   部分メソッドの宣言はコンテキスト キーワード [partial](../../../csharp/language-reference/keywords/partial-type.md) で始まる必要があり、メソッドは [void](../../../csharp/language-reference/keywords/void.md) を返す必要があります。  
   
--   部分メソッドには [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターを使用できますが、[out](../../../csharp/language-reference/keywords/out.md) パラメーターは使用できません。  
+-   部分メソッドには、[in](../../../csharp/language-reference/keywords/in-parameter-modifier.md) や [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターを使用できますが、[out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターは使用できません。  
   
 -   部分メソッドは暗黙的に [private](../../../csharp/language-reference/keywords/private.md) です。したがって部分メソッドを [virtual](../../../csharp/language-reference/keywords/virtual.md) にすることはできません。  
   
@@ -165,7 +166,7 @@ partial void onNameChanged()
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)  
  [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)  

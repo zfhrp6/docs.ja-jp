@@ -3,16 +3,17 @@ title: "dotnet build コマンド - .NET Core CLI"
 description: "dotnet build コマンドは、プロジェクトとそのすべての依存関係をビルドします。"
 author: mairaw
 ms.author: mairaw
-ms.date: 08/13/2017
+ms.date: 03/10/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 403dc2262e2aba29fc432581a4b325092cdfb25e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: e7181f502e2a25b17077366da9d9f071e7e94d33
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dotnet-build"></a>dotnet-build
 
@@ -26,12 +27,14 @@ ms.lasthandoff: 12/23/2017
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 ```
-dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--no-dependencies] [--no-incremental] [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--no-dependencies] [--no-incremental]
+    [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 dotnet build [-h|--help]
 ```
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 ```
-dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--no-dependencies] [--no-incremental] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--no-dependencies] [--no-incremental] [-o|--output]
+    [-r|--runtime] [-v|--verbosity] [--version-suffix]
 dotnet build [-h|--help]
 ```
 ---
@@ -44,7 +47,7 @@ dotnet build [-h|--help]
 
 ビルドには *project.assets.json* ファイルが必要です。このファイルには、アプリケーションの依存関係が一覧表示されています。 このファイルは、[`dotnet restore`](dotnet-restore.md) を実行すると作成されます。 アセット ファイルがないと、ツールは参照アセンブリを解決できないため、エラーになります。 .NET Core 1.x SDK の場合、`dotnet build` を実行する前に `dotnet restore` を明示的に実行する必要があります。 .NET Core 2.0 SDK 以降では、`dotnet build` を実行すると、`dotnet restore` が暗黙的に実行されます。 ビルド コマンドの実行時に暗黙的な復元を無効にする場合は、`--no-restore` オプションを渡します。
 
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+[!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
 ビルド コマンドの実行時に暗黙的な復元を無効にする場合は、`dotnet build` オプションを渡します。 詳しくは、「[インクリメンタル ビルド](/visualstudio/msbuild/incremental-builds)」をご覧ください。
 
@@ -167,3 +170,7 @@ dotnet build [-h|--help]
 特定のランタイム (この例では、Ubuntu 16.04) 用にプロジェクトとその依存関係をビルドします。
 
 `dotnet build --runtime ubuntu.16.04-x64`
+
+プロジェクトをビルドし、復元操作中に指定された NuGet パッケージ ソースを使用します (.NET Core SDK 2.0 以降のバージョン)。
+
+`dotnet build --source c:\packages\mypackages`

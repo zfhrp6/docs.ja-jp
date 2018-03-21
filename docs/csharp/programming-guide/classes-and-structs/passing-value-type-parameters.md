@@ -2,23 +2,24 @@
 title: "値型パラメーターの引き渡し (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - method parameters [C#], value types
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
-caps.latest.revision: "17"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 08a336e9aa34ac3ce5bb8848df533caa563972f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c33ef23040ec6adaae97a440796e7c6a491c2d8c
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>値型パラメーターの引き渡し (C# プログラミング ガイド)
-データへの参照を含む[参照型](../../../csharp/language-reference/keywords/reference-types.md)変数とは対照的に、[値型](../../../csharp/language-reference/keywords/value-types.md)変数にはデータが直接含まれます。 値型変数を値渡しでメソッドに渡すと、変数のコピーがメソッドに渡されます。 メソッド内部で生じるパラメーターに対する変更の影響は、引数の変数に格納されている元のデータには及びません。 呼び出したメソッドでパラメーターの値を変更する場合は、[ref](../../../csharp/language-reference/keywords/ref.md) キーワードまたは [out](../../../csharp/language-reference/keywords/out.md) キーワードを使用して、参照渡しでそのメソッドを渡す必要があります。 わかりやすくするために、次の例では `ref` を使用しています。  
+データへの参照を含む[参照型](../../../csharp/language-reference/keywords/reference-types.md)変数とは対照的に、[値型](../../../csharp/language-reference/keywords/value-types.md)変数にはデータが直接含まれます。 値型変数を値渡しでメソッドに渡すと、変数のコピーがメソッドに渡されます。 メソッド内部で生じるパラメーターに対する変更の影響は、引数の変数に格納されている元のデータには及びません。 呼び出したメソッドでパラメーターの値を変更する場合は、[ref](../../../csharp/language-reference/keywords/ref.md) キーワードまたは [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) キーワードを使用して、参照渡しでそのメソッドを渡す必要があります。 また、[in](../../../csharp/language-reference/keywords/out-parameter-modifier.md) キーワードを使用し、参照で値パラメーターを渡してコピーを回避し、同時に値が変更されないようにすることができます。 わかりやすくするために、次の例では `ref` を使用しています。  
   
 ## <a name="passing-value-types-by-value"></a>値渡しによる値型の引き渡し  
  次の例では、値型のパラメーターを値渡しで渡す方法について説明します。 変数 `n` を、値渡しでメソッド `SquareIt` に渡します。 メソッド内で生じた変更が、変数の元の値に影響することはありません。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideParameters#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/passing-value-type-parameters_4.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
  [参照型パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)

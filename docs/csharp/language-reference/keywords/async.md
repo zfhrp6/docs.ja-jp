@@ -15,11 +15,11 @@ ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c4a89736822342a9d9a24db6d43435f9795b81b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2ddbd0f7268dd5dae4095d661cf800b5b481cbbd
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="async-c-reference"></a>async (C# リファレンス)
 `async` 修飾子を使用して、メソッド、[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)、または[匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)が非同期であることを指定します。 この修飾子が使用されているメソッドまたは式を、"*非同期メソッド*" と呼びます。 次の例では、`ExampleMethodAsync` という名前の非同期メソッドを定義します。 
@@ -78,7 +78,7 @@ Windows ストア アプリとしてコードを実行するには:
 - [void](../../../csharp/language-reference/keywords/void.md): イベント ハンドラーに対してのみ使用します。
 - C# 7 以降、アクセス可能な `GetAwaiter` を持つ任意の型です。 `System.Threading.Tasks.ValueTask<TResult>` 型はこの実装例で、 NuGet パッケージ `System.Threading.Tasks.Extensions` を追加することで使用できます。 
 
-非同期メソッドでは [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターまたは [out](../../../csharp/language-reference/keywords/out.md) パラメーターを宣言できません。また、<!-- [reference return value](../../programming-guide/classes-and-structs/ref-returns.md) -->参照戻り値を指定することもできません。ただし、これらのパラメーターを持つメソッドを呼び出すことはできます。  
+非同期メソッドでは [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md)、[ref](../../../csharp/language-reference/keywords/ref.md)、[out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターを宣言できません。また、[参照戻り値](../../programming-guide/classes-and-structs/ref-returns.md)を指定することもできません。ただし、これらのパラメーターを持つメソッドを呼び出すことはできます。  
   
 メソッドの [return](../../../csharp/language-reference/keywords/return.md) ステートメントで `TResult` 型のオペランドを指定している場合、非同期メソッドの戻り値の型として `Task<TResult>` を指定します。 メソッドの完了時に意味のある値を返さない場合は、`Task` を使用します。 これにより、メソッドの呼び出しでは `Task` が返されますが、`Task` の完了時に、`await` を待機している `Task` 式はすべて、`void` に評価されます。  
   
@@ -88,7 +88,7 @@ C# 7 以降、`GetAwaiter` メソッドを持つ別の型 (通常は値の型) �
 
 使用例を含む詳細については、「[非同期の戻り値の型](../../../csharp/programming-guide/concepts/async/async-return-types.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>  
  [await](../../../csharp/language-reference/keywords/await.md)  
  [チュートリアル: Async と Await を使用した Web へのアクセス](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  

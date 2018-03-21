@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 0c6e44a3e1a1458f4211b66b6d1ef5b4b30cd7c1
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.openlocfilehash: 6e40907cab2aabcf8c8321819c99298314bcfbc5
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="reference-semantics-with-value-types"></a>値の型による参照セマンティクス
 
@@ -46,7 +46,7 @@ C# 7.2 では、参照で引数を渡すメソッドを記述するときに既�
 
 引数は 2 つの構造で、それぞれに 3 つの倍精度浮動小数点型が含まれます。 倍精度浮動小数点型は 8 バイトです。そのため、各引数は 24 バイトになります。 `in` 修飾子を指定することで、コンピューターのアーキテクチャに基づき、4 バイトまたは 8 バイトの参照をそれらの引数に渡します。 サイズの差はわずかですが、アプリケーションにおいて、繰り返しの多いループでさまざまな値でこのメソッドを呼び出すと、すぐに差が膨れ上がります。
  
-`in` 修飾子は、その他の面でも `out` と `ref` を補完します。 `in`、`out`、または `ref` の存在でのみ異なるメソッドのオーバーロードは作成できません。 これらの新しいルールは、`out` パラメーターと `ref` パラメーターに常に定義されていた同じ動作を拡張します。
+`in` 修飾子は、その他の面でも `out` と `ref` を補完します。 `in`、`out`、または `ref` の存在のみが異なるメソッドのオーバーロードは作成できません。 これらの新しいルールは、`out` パラメーターと `ref` パラメーターに常に定義されていた同じ動作を拡張します。
 
 `in` 修飾子は、メソッド、デリケート、ラムダ、ローカル関数、インデクサー、演算子など、パラメーターを受け取るあらゆるメンバーに適用されることがあります。
 

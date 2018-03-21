@@ -5,17 +5,18 @@ ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6eacc9f6ac815e01c446f7cdea6026904ad2ba90
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c29d4ddbf5f1f9ae80535a8a97651b296f3c1fb3
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="variance-in-delegates-c"></a>デリゲートの分散 (C#)
 .NET Framework 3.5 では、C# のすべてのデリゲートで、メソッド シグネチャとデリゲート型を一致させるために分散 (共変性と反変性) のサポートが導入されました。 つまり、シグネチャが一致するメソッドだけでなく、デリゲート型で指定された型よりも強い派生型を返す (共変性) メソッドや、弱い派生型のパラメーターを受け取る (反変性) メソッドを、デリゲートに割り当てることができます。 これには、汎用デリゲートと非汎用デリゲートの両方が含まれます。  
@@ -148,7 +149,7 @@ public delegate void DContravariant<in A>(A a);
 ```  
   
 > [!IMPORTANT]
->  C# の `ref` パラメーターと `out` パラメーターを、バリアントとしてマークすることはできません。  
+>  C# の `ref`、`in`、`out` パラメーターを、バリアントとしてマークすることはできません。  
   
  同じデリゲートで、型パラメーターが異なる場合は、分散と共変性の両方をサポートすることもできます。 これを次の例に示します。  
   
@@ -204,7 +205,7 @@ public static void Test()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ジェネリック](~/docs/standard/generics/index.md)  
  [Func および Action 汎用デリゲートでの分散の使用 (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)  
  [方法: デリゲートを結合する (マルチキャスト デリゲート)](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)

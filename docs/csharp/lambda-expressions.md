@@ -10,23 +10,23 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b6a0539a-8ce5-4da7-adcf-44be345a2714
-ms.openlocfilehash: 1a97d830c675c8e3980eddae78f3face279ec6dc
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 6395d873c4a04501d25a2edbb1acc0a163dd3e5c
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lambda-expressions"></a>ラムダ式 #
 
 "*ラムダ式*" は、オブジェクトとして扱われるコード ブロック (式またはステートメント ブロック) です。 これは、引数としてメソッドに渡すことができるほか、メソッドの呼び出しによって返すこともできます。 ラムダ式は、次の処理によく使用されます。
 
-- など、非同期のメソッドを実行するのには、コードを渡す<xref:System.Threading.Tasks.Task.Run(System.Action)>です。
+- <xref:System.Threading.Tasks.Task.Run(System.Action)> など、非同期メソッドに対して実行されるコードを渡す。
 
 - [LINQ クエリ式](linq/index.md)を記述する。
 
 - [式ツリー](expression-trees-building.md)を作成する。
 
-ラムダ式は、デリゲート、またはデリゲートにコンパイルされる式ツリーとして表現できるコードです。 ラムダ式の特定のデリゲート型は、パラメーターや戻り値によって異なります。 値を返さないラムダ式は、そのパラメーター数に応じて、特定の `Action` デリゲートに対応します。 値を返すラムダ式は、そのパラメーター数に応じて、特定の `Func` デリゲートに対応します。 たとえばがあるが 2 つのパラメーター値を返さないラムダ式に対応しています。、<xref:System.Action%602>委任します。 対応する、ラムダ式を 1 つのパラメーターを持ち、値を返します<xref:System.Func%602>を委任します。
+ラムダ式は、デリゲート、またはデリゲートにコンパイルされる式ツリーとして表現できるコードです。 ラムダ式の特定のデリゲート型は、パラメーターや戻り値によって異なります。 値を返さないラムダ式は、そのパラメーター数に応じて、特定の `Action` デリゲートに対応します。 値を返すラムダ式は、そのパラメーター数に応じて、特定の `Func` デリゲートに対応します。 たとえば、2 つのパラメーターがあっても値を返さないラムダ式は、<xref:System.Action%602> デリゲートに対応します。 パラメーターが 1 つあり、値を返すラムダ式は、<xref:System.Func%602> デリゲートに対応します。
 
 ラムダ式は、`=>` ([ラムダ宣言演算子](language-reference/operators/lambda-operator.md)) を使用して、ラムダのパラメーター リストを実行可能コードから分離します。 ラムダ式を作成するには、ラムダ演算子の左側に入力パラメーター (ある場合) を指定し、反対側に式またはステートメント ブロックを置きます。 たとえば、1 行のラムダ式 `x => x * x` は、`x` という名前のパラメーターを指定し、`x` を 2 乗した値を返します。 次の例に示すように、この式をデリゲート型に割り当てることもできます。
 
@@ -96,7 +96,7 @@ C# におけるタプルのサポートの詳細については、「[C# Tuple t
 
 ## <a name="lambdas-with-the-standard-query-operators"></a>標準クエリ演算子を使用したラムダ ##
 
-その他の実装間でのオブジェクトを LINQ がある型を持つは 1 つの入力パラメーターの<xref:System.Func%601>汎用デリゲートのファミリです。 これらのデリゲートは、型パラメーターを使用して、入力パラメーターの数と型に加え、デリゲートの戻り値の型を定義します。 `Func` デリゲートは、ソース データのセット内の各要素に適用されるユーザー定義の式をカプセル化する場合に非常に便利です。 たとえば、<xref:System.Func%601>構文を持つデリゲート。
+いくつかある実装の中で特に、LINQ to Objects は、汎用デリゲートの <xref:System.Func%601> ファミリに属する型の入力パラメーターを持ちます。 これらのデリゲートは、型パラメーターを使用して、入力パラメーターの数と型に加え、デリゲートの戻り値の型を定義します。 `Func` デリゲートは、ソース データのセット内の各要素に適用されるユーザー定義の式をカプセル化する場合に非常に便利です。 たとえば、<xref:System.Func%601> デリゲートを考えてみます。この構文は次のとおりです。
 
 [!code-csharp[csSnippets.Lambdas](../../samples/snippets/csharp/concepts/lambda-expressions/query1.cs#1)]
 
@@ -108,7 +108,7 @@ C# におけるタプルのサポートの詳細については、「[C# Tuple t
 
 [!code-csharp[csSnippets.Lambdas](../../samples/snippets/csharp/concepts/lambda-expressions/query1.cs#3)]
 
-引数の型がときに、ラムダ式を指定することもできます、<xref:System.Linq.Expressions.Expression%601>で定義されている標準クエリ演算子の例では、<xref:System.Linq.Queryable>型です。 指定すると、<xref:System.Linq.Expressions.Expression%601>引数、ラムダは式ツリーにコンパイルされています。 次の例では、[System.Linq.Enumerable.Count](xref:System.Linq.Enumerable.Count%60%601(System.Collections.Generic.IEnumerable{%60%600})) 標準クエリ演算子を使用します。
+たとえば、<xref:System.Linq.Queryable> 型で定義された標準クエリ演算子において、引数型が <xref:System.Linq.Expressions.Expression%601> の場合もラムダ式を使用できます。 <xref:System.Linq.Expressions.Expression%601> 引数を指定すると、ラムダは式ツリーにコンパイルされます。 次の例では、[System.Linq.Enumerable.Count](xref:System.Linq.Enumerable.Count%60%601(System.Collections.Generic.IEnumerable{%60%600})) 標準クエリ演算子を使用します。
 
 [!code-csharp[csSnippets.Lambdas](../../samples/snippets/csharp/concepts/lambda-expressions/query1.cs#4)]
 
@@ -150,7 +150,7 @@ C# におけるタプルのサポートの詳細については、「[C# Tuple t
 
 - ラムダ式内に導入された変数は、外側のメソッドでは参照できません。
 
-- ラムダ式は、外側のメソッドの `ref` パラメーターまたは `out` パラメーターを直接取り込むことはできません。
+- ラムダ式は、外側のメソッドの `in`、`ref`、`out` パラメーターを直接取り込むことはできません。
 
 - ラムダ式に含まれる return ステートメントで外側のメソッドを戻すことはありません。
 

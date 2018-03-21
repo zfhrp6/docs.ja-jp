@@ -1,6 +1,6 @@
 ---
 title: "in (C# リファレンス)"
-ms.date: 07/20/2015
+ms.date: 02/06/2018
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -10,24 +10,23 @@ f1_keywords:
 - in_CSharpKeyword
 helpviewer_keywords:
 - in keyword [C#]
-ms.assetid: 52032838-0a38-476e-b4d5-94b59141952f
-caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 56824b21da416aecb9b00b46f2817b3d0fba2be2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e8c45427a99756006799d1dca42841ef09b9ed8e
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="in-c-reference"></a>in (C# リファレンス)
-`in` コンテキスト キーワードが次の 3 つのコンテキストで使用されます。  
+
+`in` コンテキスト キーワードが次の 4 つのコンテキストで使用されます。  
   
--   [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメント  
+-   ジェネリック インターフェイスとデリゲートの[ジェネリック型パラメーター](in-generic-modifier.md)
+-   [パラメーター修飾子](in-parameter-modifier.md)として。この場合、値ではなく参照で、メソッドに引数を渡すことができます。
+-   [foreach](foreach-in.md) ステートメント。
+-   LINQ クエリ式内の [join 句](join-clause.md)。
   
--   クエリ式内の [join 句](../../../csharp/language-reference/keywords/join-clause.md)  
-  
--   ジェネリック インターフェイスとデリゲートの[ジェネリック型パラメーター](../../../csharp/language-reference/keywords/in-generic-modifier.md)  
-  
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)
+## <a name="see-also"></a>参照  
+ [C# のキーワード](index.md)  
+ [C# リファレンス](../index.md)

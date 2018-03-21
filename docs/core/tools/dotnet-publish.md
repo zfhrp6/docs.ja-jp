@@ -3,16 +3,17 @@ title: "dotnet publish コマンド - .NET Core CLI"
 description: "dotnet publish コマンドは、.NET Core プロジェクトをディレクトリに発行します。"
 author: mairaw
 ms.author: mairaw
-ms.date: 09/01/2017
+ms.date: 03/10/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: e29d5269ab5e9e2c9fd08811552c09ec1c95363d
-ms.sourcegitcommit: 3fd4e718d1bac9769fe0c1dd08ca1b2323ae272b
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 2aa69217e949b970b632c4fad72838b63c2a8988
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -50,6 +51,8 @@ dotnet publish [-h|--help]
 * アプリケーションの依存関係。 これらは NuGet キャッシュから出力フォルダーにコピーされます。
 
 `dotnet publish` コマンドの出力は、ホスティング システム (サーバー、PC、Mac、ラップトップなど) に展開して実行できる状態になっており、展開用にアプリケーションを準備するための正式にサポートされる唯一の方法です。 プロジェクトに指定されている展開の種類によっては、ホスティング システムに .NET Core 共有ランタイムがインストールされている場合とされていない場合があります。 詳しくは、「[.NET Core アプリケーション展開](../deploying/index.md)」をご覧ください。 発行されるアプリケーションのディレクトリ構造については、「[Directory structure](/aspnet/core/hosting/directory-structure)」 (ディレクトリ構造) をご覧ください。
+
+[!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
 ## <a name="arguments"></a>引数
 
@@ -156,14 +159,18 @@ dotnet publish [-h|--help]
 指定されたプロジェクト ファイルを使用して、アプリケーションを発行します。
 
 `dotnet publish ~/projects/app1/app1.csproj`
-    
+
 `netcoreapp1.1` フレームワークを使って現在のディレクトリ内のプロジェクトを発行します。
 
 `dotnet publish --framework netcoreapp1.1`
-    
+
 `netcoreapp1.1` フレームワークと `OS X 10.10` のランタイム (この RID はプロジェクト ファイルに列挙しておく必要があります) を使って、現在のアプリケーションを発行します。
 
 `dotnet publish --framework netcoreapp1.1 --runtime osx.10.11-x64`
+
+現在のアプリケーションを発行します。ただし、復元操作中はルート プロジェクトのみを復元し、プロジェクト間 (P2P) 参照は復元しないでください (.NET Core SDK 2.0 以降のバージョン)。
+
+`dotnet publish --no-dependencies`
 
 ## <a name="see-also"></a>関連項目
 

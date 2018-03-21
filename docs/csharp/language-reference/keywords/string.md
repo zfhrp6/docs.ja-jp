@@ -2,7 +2,8 @@
 title: "string (C# リファレンス)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - string
@@ -13,17 +14,17 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
-caps.latest.revision: "31"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 87df2b158b173072aad5257594e1b1482ae61067
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8899eb75b1b7c556a1e92f173a4d0ca4135014c8
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="string-c-reference"></a>string (C# リファレンス)
-`string` 型は、0 個以上の Unicode 文字のシーケンスを表します。 `string` は、.NET Framework の <xref:System.String> のエイリアスです。  
+`string` 型は、0 個以上の Unicode 文字のシーケンスを表します。 `string` は .NET の <xref:System.String> の別名です。  
   
  `string` は参照型ですが、等値演算子 (`==` および `!=`) は、`string` オブジェクトの参照ではなく、値を比較するように定義されています。 これにより、文字列が等しいかを直感的にテストできます。 例:  
   
@@ -76,7 +77,7 @@ Console.WriteLine(a);
 > [!NOTE]
 >  エスケープ コード `\udddd` (`dddd` は 4 桁の数字) は、Unicode 文字 U +`dddd` を表します。 8 桁の Unicode エスケープ コード `\Udddddddd` も認識できます。  
   
- verbatim 文字列リテラルの場合は、先頭に @ を付け、さらに前後に二重引用符を付けます。 例:  
+ verbatim 文字列リテラルの場合は、先頭に `@` を付け、さらに前後に二重引用符を付けます。 例:  
   
 ```csharp  
 @"good morning"  // a string literal  
@@ -94,7 +95,7 @@ Console.WriteLine(a);
 @"""Ahoy!"" cried the captain." // "Ahoy!" cried the captain.  
 ```  
   
- また、C# キーワードである参照 ([/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)) 識別子を使用する場合も、@ 記号を使用します。  
+ `@` 特殊文字のその他の使用については、[@ -- 逐語的識別子](../tokens/verbatim.md)に関するページを参照してください。  
   
  C# での文字列の詳細については、「[文字列](../../../csharp/programming-guide/strings/index.md)」を参照してください。  
   
@@ -104,7 +105,7 @@ Console.WriteLine(a);
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [文字列を使用するためのベスト プラクティス](../../../standard/base-types/best-practices-strings.md)  

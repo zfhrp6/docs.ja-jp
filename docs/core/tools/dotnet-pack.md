@@ -3,16 +3,17 @@ title: "dotnet pack コマンド - .NET Core CLI"
 description: "dotnet pack コマンドでは、.NET Core プロジェクトの NuGet パッケージを作成します。"
 author: mairaw
 ms.author: mairaw
-ms.date: 12/13/2017
+ms.date: 03/10/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 28cd05db0643097a7271fd0488354846598ba493
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 401a4491c27ea10d0fdf1877417f1e2d5da6839f
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -27,7 +28,8 @@ ms.lasthandoff: 12/23/2017
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 ```
-dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies] [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
+dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
+    [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 
@@ -47,6 +49,8 @@ dotnet pack [-h|--help]
 既定では、`dotnet pack` は最初にプロジェクトをビルドします。 この動作を避けたい場合は、`--no-build` オプションを渡します。 これは、コードが既にビルドされていることがわかっている場合の継続的インテグレーション (CI) ビルド シナリオで役立つことがよくあります。
 
 パッキング プロセスのために `dotnet pack` コマンドに MSBuild のプロパティを使用できます。 詳細については、「[NuGet メタデータ プロパティ](csproj.md#nuget-metadata-properties)」と「[MSBuild コマンド ライン リファレンス](/visualstudio/msbuild/msbuild-command-line-reference)」を参照してください。 「[例](#examples)」のセクションでは、MSBuild の /p スイッチを使用する方法について、2 つの異なるシナリオで説明します。
+
+[!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
 ## <a name="arguments"></a>引数
 
@@ -157,7 +161,7 @@ NuGet パッケージにソース ファイルを含めます。 ソース フ�
 `app1` プロジェクトをパックします。
 
 `dotnet pack ~/projects/app1/project.csproj`
-    
+
 プロジェクトを現在のディレクトリにパックし、`nupkgs` フォルダーに生成されたパッケージを配置します。
 
 `dotnet pack --output nupkgs`
@@ -177,3 +181,7 @@ NuGet パッケージにソース ファイルを含めます。 ソース フ�
 プロジェクトを特定の[ターゲット フレームワーク](../../standard/frameworks.md)用にパックします。
 
 `dotnet pack /p:TargetFrameworks=net45`
+
+プロジェクトをパックして、復元操作の特定のランタイム (Windows 10) を使用します(.NET Core SDK 2.0 以降のバージョン)。
+
+`dotnet pack --runtime win10-x64`

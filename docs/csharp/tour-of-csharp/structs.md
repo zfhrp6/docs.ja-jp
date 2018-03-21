@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-ms.openlocfilehash: 9d435fd87a6103d505c14219499eeea9aee045fb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fa840d80bba98889f75863db2612f196d78bd3c5
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="structs"></a>構造体
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 10/18/2017
 
 `Point` がクラスである場合、a と b は同じオブジェクトを参照しているので、出力は 20 です。 ポイントが構造体である場合、出力は 10 です。`a` の `b` への割り当ては値のコピーを作成し、このコピーは後続の `a.x` への割り当てには影響されないからです。
 
-前述の例では、構造体の 2 つの制限事項が強調されています。 1 つめは、構造体全体をコピーすることは通常、オブジェクト参照をコピーするよりも非効率であり、割り当てと値パラメーターの引き渡しは参照型よりも構造体のほうが手がかかるということです。 2 つめは、`ref` および `out` パラメーターを除いて、構造体への参照を作成することはできず、そのために構造体を使用できない状況が数多くあるということです。
+前述の例では、構造体の 2 つの制限事項が強調されています。 1 つめは、構造体全体をコピーすることは通常、オブジェクト参照をコピーするよりも非効率であり、割り当てと値パラメーターの引き渡しは参照型よりも構造体のほうが手がかかるということです。 2 つめは、`in`、`ref`、`out` パラメーターを除いて、構造体への参照を作成することはできず、そのために構造体を使用できない状況が数多くあるということです。
 
 >[!div class="step-by-step"]
 [前へ](classes-and-objects.md)

@@ -2,26 +2,27 @@
 title: "プロパティの使用 (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - set accessor [C#]
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-caps.latest.revision: "24"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: aae36195f4a6eb2ab49ec27e1e07debff7289b37
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 36345748e514f0e0a4c945d8ead149c7d8ca9a19
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-properties-c-programming-guide"></a>プロパティの使用 (C# プログラミング ガイド)
 プロパティは、フィールドとメソッドの両方の側面を結合します。 オブジェクトのユーザーにとってプロパティは、プロパティへのアクセスに同じ構文を必要とするフィールドのように見えます。 クラスの実装者にとってプロパティは、[get](../../../csharp/language-reference/keywords/get.md) アクセサーと [set](../../../csharp/language-reference/keywords/set.md) アクセサーの両方またはいずれかを表す 1 つまたは 2 つのコード ブロックです。 `get` アクセサーのコード ブロックはプロパティが読み取られる時に実行され、`set` アクセサーのコード ブロックはプロパティに新しい値が割り当てられるときに実行されます。 `set` アクセサーのないプロパティは読み取り専用と見なされます。 `get` アクセサーのないプロパティは書き込み専用と見なされます。 両方のアクセサーを持つプロパティは、読み取り/書き込みです。  
   
- フィールドとは異なり、プロパティは変数には分類されません。 そのため、プロパティを [ref](../../../csharp/language-reference/keywords/ref.md) または [out](../../../csharp/language-reference/keywords/out.md) パラメーターとして渡すことはできません。  
+ フィールドとは異なり、プロパティは変数には分類されません。 そのため、プロパティを [ref](../../../csharp/language-reference/keywords/ref.md) または [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターとして渡すことはできません。  
   
  プロパティには次のようなさまざまな用途があります。変更を許可する前にデータを検証したり、データをそのデータが実際に他のソース (データベースなど) から取得されるクラスで透過的に公開したり、イベントの発生や他のフィールドの値を変更するなど、データが変更されたときに、アクションを実行したりすることができます。  
   
@@ -66,7 +67,7 @@ ms.lasthandoff: 11/21/2017
  `set` アクセサーでローカル変数の宣言に暗黙のパラメーター名 `value` を使用すると、エラーになります。  
   
 ## <a name="remarks"></a>コメント  
- として設定できるプロパティ`public`、 `private`、 `protected`、 `internal`、`protected internal`または`private protected`です。 これらのアクセス修飾子により、クラスのユーザーがプロパティにアクセスできる方法が定義されます。 同じプロパティの `get` と `set` アクセサーは、異なるアクセス修飾子を持つことができます。 たとえば、`get` を `public` にして、型の外部からの読み取り専用アクセスを許可して、`set` を `private` または `protected` にすることができます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ プロパティは `public`、`private`、`protected`、`internal`、`protected internal`、`private protected` のいずれかでマークできます。 これらのアクセス修飾子により、クラスのユーザーがプロパティにアクセスできる方法が定義されます。 同じプロパティの `get` と `set` アクセサーは、異なるアクセス修飾子を持つことができます。 たとえば、`get` を `public` にして、型の外部からの読み取り専用アクセスを許可して、`set` を `private` または `protected` にすることができます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  `static` キーワードを使用して、プロパティを静的プロパティとして宣言できます。 その場合、クラスのインスタンスが存在しなくても、呼び出し元がいつでもプロパティを使用できるようになります。 詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
   
@@ -104,7 +105,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_12.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)  
  [インターフェイスのプロパティ](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  

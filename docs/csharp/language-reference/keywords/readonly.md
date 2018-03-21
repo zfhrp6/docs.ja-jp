@@ -14,16 +14,16 @@ ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
 caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: b499f9fc5121afe6c2e92bcf8c5d2ac593b4c06c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 175eebf6e49e79db1ff86689599416a10827a792
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="readonly-c-reference"></a>readonly (C# リファレンス)
 `readonly` キーワードは、フィールドで使用できる修飾子です。 フィールド宣言に `readonly` 修飾子が含まれていると、その宣言によって導入されるフィールドへの割り当ては、宣言の一部分として、または同じクラスのコンストラクター内でのみ実行できます。  
   
-## <a name="example"></a>例  
+## <a name="readonly-field-example"></a>読み取り専用フィールドの例  
  この例では、`year` フィールドの値は、クラス コンストラクターで値が割り当てられていても `ChangeYear` メソッドでは変更できません。  
   
  [!code-csharp[csrefKeywordsModifiers#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/readonly_1.cs)]  
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/21/2017
     public readonly int y = 5;  
     ```  
   
--   インスタンス フィールドの場合は、フィールド宣言が含まれるクラスのインスタンス コンストラクター内。静的フィールドの場合は、フィールド宣言が含まれるクラスの静的コンストラクター内。 また、こうしたコンテキスト内でのみ、`readonly` フィールドを [out](../../../csharp/language-reference/keywords/out.md) パラメーターまたは [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターとして渡すことができます。  
+-   インスタンス フィールドの場合は、フィールド宣言が含まれるクラスのインスタンス コンストラクター内。静的フィールドの場合は、フィールド宣言が含まれるクラスの静的コンストラクター内。 また、こうしたコンテキスト内でのみ、`readonly` フィールドを [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターまたは [ref](../../../csharp/language-reference/keywords/ref.md) パラメーターとして渡すことができます。  
   
 > [!NOTE]
 >  `readonly` キーワードは [const](../../../csharp/language-reference/keywords/const.md) キーワードとは異なります。 `const` フィールドは、フィールドの宣言でしか初期化できません。 `readonly` フィールドは、宣言またはコンストラクターのどちらかで初期化できます。 このため、`readonly` フィールドは、使用するコンストラクターに応じて異なる値を持つことができます。 また、次の例のように、`const` フィールドがコンパイル時定数であるのに対し、`readonly` フィールドは実行時定数として使用できます。  
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/21/2017
 public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;  
 ```  
   
-## <a name="example"></a>例  
+## <a name="comparing-readonly-and-non-readonly-instance-fields"></a>読み取り専用と読み取り専用以外のインスタンス フィールドの比較  
  [!code-csharp[csrefKeywordsModifiers#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/readonly_2.cs)]  
   
  上の例で、次のようにステートメントを使用するとします。  
@@ -61,7 +61,7 @@ public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  

@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
-ms.workload: dotnetcore
-ms.openlocfilehash: 599f46253a29db5dfd21d0d44ecf67654b6d2eb3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 85f20594844025655bbfb590364324631bd8e695
+ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="packages-metapackages-and-frameworks"></a>パッケージ、メタパッケージ、フレームワーク
 
@@ -76,7 +77,7 @@ ms.lasthandoff: 12/23/2017
 
 主な .NET Core メタパッケージ:
 
-- [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) - .NET Core 配布に含まれるライブラリについて記述します。 [`.NETCoreApp` フレームワーク](https://github.com/dotnet/core-setup/blob/master/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj)を確立します。 よりサイズの小さな `NETStandard.Library` に依存します。
+- [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) - .NET Core 配布に含まれるライブラリについて記述します。 [`.NETCoreApp` フレームワーク](https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj)を確立します。 よりサイズの小さな `NETStandard.Library` に依存します。
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) - mscorlib ベースのポータブル クラス ライブラリ (PCL) を .NET Core で実行できるようにするための互換性ファサードのセットです。
 
 ## <a name="frameworks"></a>フレームワーク

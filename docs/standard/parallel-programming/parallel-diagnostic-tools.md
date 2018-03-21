@@ -18,14 +18,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4ed0b3991b08eceb950aa1a3aa1704529700feb3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 127737877ac64ac9278bc039650caf72936571bf
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="parallel-diagnostic-tools"></a>並列診断ツール
-[!INCLUDE[vs_dev10_ext](../../../includes/vs-dev10-ext-md.md)] は、マルチ スレッド アプリケーションのデバッグおよびプロファイリングを広範にサポートします。  
+Visual Studio は、マルチ スレッド アプリケーションのデバッグおよびプロファイリングを広範にサポートします。  
   
 ## <a name="debugging"></a>デバッグ  
  Visual Studio デバッガーに、並列アプリケーションをデバッグするための新しいウィンドウが追加されました。 詳細については、次のトピックを参照してください。  

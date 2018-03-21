@@ -2,20 +2,21 @@
 title: "ポインター型 (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
 ms.assetid: 3319faf9-336d-4148-9af2-1da2579cdd1e
-caps.latest.revision: "19"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0699793e91199cc623c0d13e42937c8b919e992a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe7b926bdf9f662d25f2fe960b51fc8254b7aa3a
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pointer-types-c-programming-guide"></a>ポインター型 (C# プログラミング ガイド)
 unsafe コンテキストの型には、ポインター型、値型、または参照型を設定できます。 ポインター型の宣言は、次のいずれかの形式になります。  
@@ -113,11 +114,11 @@ Console.ReadLine();
   
  ポインターは、`null` にできます。 null ポインターに間接演算子を適用すると、実装で定義されている動作が発生します。  
   
- ポインターをメソッド間で引き渡すと、未定義の動作が発生する可能性があります。 たとえば、Out パラメーターや Ref パラメーターを介してポインターをローカル変数に返したり、関数の結果として返したりする場合です。 ポインターが固定ブロックに設定されていた場合は、そのポインターが指す変数が既に固定されていない可能性があります。  
+ ポインターをメソッド間で引き渡すと、未定義の動作が発生する可能性があります。 たとえば、`in`、`out` または `ref` パラメーターを介してポインターをローカル変数に返したり、関数の結果として返したりするメソッドがあるとします。 ポインターが固定ブロックに設定されていた場合は、そのポインターが指す変数が既に固定されていない可能性があります。  
   
  次の表は、unsafe コンテキストでポインターに使用できる演算子とステートメントの一覧を示しています。  
   
-|演算子/ステートメント|用途|  
+|演算子/ステートメント|使用|  
 |-------------------------|---------|  
 |*|ポインターの間接参照を実行します。|  
 |->|ポインター経由で構造体のメンバーにアクセスします。|  
@@ -132,7 +133,7 @@ Console.ReadLine();
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
  [ポインター変換](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md)  

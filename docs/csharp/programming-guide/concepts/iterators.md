@@ -2,17 +2,18 @@
 title: "反復子 (C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 6d4994ea57d9fd0df8dfca7ffa40c280499caee6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 48b09368ed0a84dc84793091b819ba7b4b6183f1
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="iterators-c"></a>反復子 (C#)
 *反復子*を使用して、リストや配列などのコレクションをステップ実行することができます。  
@@ -344,7 +345,7 @@ public class Stack<T> : IEnumerable<T>
   
  `yield return` ステートメント内の式の型から反復子の戻り値の型への暗黙的な変換が存在する必要があります。  
   
- C# の場合、iterator メソッドで `ref` パラメーターや `out` パラメーターを指定することはできません。  
+ C# の場合、反復子メソッドで `in`、`ref`、`out` パラメーターを指定することはできません。  
   
  C# の場合、"yield" は予約語ではなく、`return` または `break` キーワードの前に使用される場合にのみ、特別な意味を持ちます。  
   
@@ -370,7 +371,7 @@ public class Stack<T> : IEnumerable<T>
   
 -   反復子に一覧の作成をカプセル化する。 iterator メソッドでは、一覧を作成してから、ループで各結果を生成することができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Collections.Generic>  
  <xref:System.Collections.Generic.IEnumerable%601>  
  [foreach、in](../../../csharp/language-reference/keywords/foreach-in.md)  

@@ -3,16 +3,17 @@ title: "dotnet run コマンド - .NET Core CLI"
 description: "dotnet run コマンドは、ソース コードからアプリケーションを実行する便利なオプションを提供します。"
 author: mairaw
 ms.author: mairaw
-ms.date: 09/24/2017
+ms.date: 03/10/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.workload: dotnetcore
-ms.openlocfilehash: 1f5a3927859f89bef6c50d3d31b73de43cd1cd31
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 251aca6dcd3edb17fe86dc03ea8f5c6d7d699d48
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dotnet-run"></a>dotnet run
 
@@ -42,9 +43,9 @@ dotnet run [-h|--help]
 
 ## <a name="description"></a>説明
 
-`dotnet run` コマンドは、1 つのコマンドを使用して、ソース コードからアプリケーションを実行する便利なオプションを提供します。 コマンド ラインからの短期間の反復開発に便利です。 このコマンドは [`dotnet build`](dotnet-build.md) コマンドに依存し、コードをビルドします。 そのため、プロジェクトを最初に復元する必要があるなど、ビルドに要件があれば、それが `dotnet run` にも適用されます。 
+`dotnet run` コマンドは、1 つのコマンドを使用して、ソース コードからアプリケーションを実行する便利なオプションを提供します。 コマンド ラインからの短期間の反復開発に便利です。 このコマンドは [`dotnet build`](dotnet-build.md) コマンドに依存し、コードをビルドします。 そのため、プロジェクトを最初に復元する必要があるなど、ビルドに要件があれば、それが `dotnet run` にも適用されます。
 
-出力ファイルは既定の場所である `bin/<configuration>/<target>` に書き込まれます。 たとえば、`netcoreapp1.0` というアプリケーションがあり、`dotnet run` を実行する場合、`bin/Debug/netcoreapp1.0` に出力されます。 必要に応じて、ファイルは上書きされます。 一時ファイルは `obj` ディレクトリに置かれます。 
+出力ファイルは既定の場所である `bin/<configuration>/<target>` に書き込まれます。 たとえば、`netcoreapp1.0` というアプリケーションがあり、`dotnet run` を実行する場合、`bin/Debug/netcoreapp1.0` に出力されます。 必要に応じて、ファイルは上書きされます。 一時ファイルは `obj` ディレクトリに置かれます。
 
 フレームワークを複数指定するプロジェクトの場合、`-f|--framework <FRAMEWORK>` オプションを使用してフレームワークを指定しない限り、`dotnet run` を実行するとエラーが発生します。
 
@@ -57,6 +58,8 @@ dotnet myapp.dll
 `dotnet` ドライバーの詳細については、「[.NET Core Command Line Tools (CLI)](index.md)」 (.NET Core コマンド ライン ツール (CLI)) を参照してください。
 
 アプリケーションを実行するために、`dotnet run` コマンドは、NuGet キャッシュから共有ランタイムの外にあるアプリケーションの依存関係を解決します。 このコマンドではキャッシュされた依存関係を使用するため、`dotnet run` を使用してアプリケーションを実稼働環境で実行することは推奨されません。 代わりに、[`dotnet publish`](dotnet-publish.md) コマンドを使用して[展開を作成](../deploying/index.md)し、発行された出力を展開します。
+
+[!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
 ## <a name="options"></a>オプション
 
@@ -133,7 +136,7 @@ dotnet myapp.dll
 プロジェクト ファイルのパスと名前を指定します  (注を参照)。指定しない場合は、既定で現在のディレクトリに設定されます。
 
 > [!NOTE]
-> `-p|--project` オプションでプロジェクト ファイルのパスと名前を使用します。 CLI の回帰により、.NET Core 1.x SDK でフォルダー パスを指定できなくなります。 この問題の詳細については、[「dotnet run -p, can not start a project (dotnet/cli #5992)」](https://github.com/dotnet/cli/issues/5992) (dotnet run -p でプロジェクトを開始できない (dotnet/cli #5992)) を参照してください。
+> `-p|--project` オプションでプロジェクト ファイルのパスと名前を使用します。 CLI の回帰により、.NET Core SDK 1.x でフォルダー パスを指定できなくなります。 この問題の詳細については、[「dotnet run -p, can not start a project (dotnet/cli #5992)」](https://github.com/dotnet/cli/issues/5992) (dotnet run -p でプロジェクトを開始できない (dotnet/cli #5992)) を参照してください。
 
 ---
 
@@ -150,3 +153,7 @@ dotnet myapp.dll
 現在のディレクトリのプロジェクトを実行します (この例では、`--` 引数が使用されているため、`--help` 引数がアプリケーションに渡されます)。
 
 `dotnet run --configuration Release -- --help`
+
+現在のディレクトリでプロジェクトの依存関係とツールを復元し、最小限の出力のみを表示して、プロジェクトを実行します (.NET Core SDK 2.0 以降のバージョン)。
+
+`dotnet run --verbosity m`

@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 67f89b4ee42d896497f462b80d41afff6b347e05
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4acdbde6405af7eb78a8c605562fdb1795fedf4d
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Entity Framework Core でインフラストラクチャの永続レイヤーを実装する
 
@@ -240,13 +240,13 @@ DbContext の有効期間が範囲 (InstancePerLifetimeScope) として設定さ
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET MVC アプリケーションに Repository パターンと Unit of Work パターンを実装する**
+-   **ASP.NET MVC アプリケーションでの Repository および Unit of Work パターンの実装**
     [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
--   **Jonathan Allen。Entity Framework、Dapper、Chain を利用して Repository パターンを実装する方法**
+-   **Jonathan Allen。Entity Framework、Dapper、Chain を使用する Repository パターンの実装方法**
     [*https://www.infoq.com/articles/repository-implementation-strategies*](https://www.infoq.com/articles/repository-implementation-strategies)
 
--   **Cesar de la Torre。ASP.NET Core IoC コンテナー サービスの有効期間と Autofac IoC コンテナー インスタンスの範囲を比較する**
+-   **Cesar de la Torre。ASP.NET Core IoC コンテナー サービスの有効期間と Autofac IoC コンテナー インスタンスの範囲の比較**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
 
 ## <a name="table-mapping"></a>テーブル マッピング
@@ -330,7 +330,7 @@ class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 
 ### <a name="the-hilo-algorithm-in-ef-core"></a>EF Core の Hi/Lo アルゴリズム
 
-先の例のコードで興味深いところは、キーの生成方法として [Hi/Lo アルゴリズム](https://vladmihalcea.com/2014/06/23/the-hilo-algorithm/)が使用されていることです。
+先の例のコードで興味深いところは、キーの生成方法として [Hi/Lo アルゴリズム](https://vladmihalcea.com/the-hilo-algorithm/)が使用されていることです。
 
 Hi/Lo アルゴリズムは一意のキーが必要なときに便利です。 手短に言えば、Hi/Lo アルゴリズムでは、一意の識別子がテーブル行に割り当てられます。データベースにすぐに行を格納することには依存しません。 連続する通常のデータベース ID と同様に、識別子の使用をすぐに開始できます。
 
@@ -460,7 +460,7 @@ public IEnumerable<T> List(ISpecification<T> spec)
 -   **テーブル マッピング**
     [*https://docs.microsoft.com/ef/core/modeling/relational/tables*](https://docs.microsoft.com/ef/core/modeling/relational/tables)
 
--   **HiLo を使用し、Entity Framework Core でキーを生成する**
+-   **HiLo を使用して Entity Framework Core でキーを生成する**
     [*http://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/*](http://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/)
 
 -   **バッキング フィールド**

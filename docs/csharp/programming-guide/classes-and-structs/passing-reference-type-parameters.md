@@ -2,23 +2,24 @@
 title: "参照型パラメーターの引き渡し (C# プログラミング ガイド)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-caps.latest.revision: "14"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2cd862a9179e027ab82631631784203993d0465a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 282929d82822f81f12dae91d2f422da51a0f43e5
+ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>参照型パラメーターの引き渡し (C# プログラミング ガイド)
-[型参照](../../../csharp/language-reference/keywords/reference-types.md)の変数には、そのデータは直接含まれず、そのデータへの参照が含まれます。 値渡しで参照型パラメーターを渡す場合、クラス メンバーの値など、参照によってポイントされるデータを変更することができます。 ただし、参照自体の値を変更することはできません。つまり、同じ参照を使用して、新しいクラスのメモリを割り当て、それをブロックの外側で永続化させることはできません。 これを行うには、[ref](../../../csharp/language-reference/keywords/ref.md) または [out](../../../csharp/language-reference/keywords/out.md) キーワードを使用してパラメーターを渡します。 わかりやすくするために、次の例では `ref` を使用しています。  
+[型参照](../../../csharp/language-reference/keywords/reference-types.md)の変数には、そのデータは直接含まれず、そのデータへの参照が含まれます。 値で参照型パラメーターを渡す場合、クラス メンバーの値など、参照先オブジェクトに属するデータを変更することができます。 ただし、参照自体の値を変更することはできません。たとえば、同じ参照を使用して、新しいクラスのメモリを割り当て、ブロックの外側で永続化させることはできません。 これを行うには、[ref](../../../csharp/language-reference/keywords/ref.md) または [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) キーワードを使用してパラメーターを渡します。 わかりやすくするために、次の例では `ref` を使用しています。  
   
 ## <a name="passing-reference-types-by-value"></a>値渡しによる参照型の引き渡し  
  次の例では、参照型のパラメーター `arr` を値渡しで `Change` メソッドに渡す方法について説明します。 このパラメーターは `arr` への参照であるため、配列要素の値を変更できます。 ただし、別のメモリ位置へのパラメーターの再割り当ては、メソッドの内部でのみ機能し、元の変数 `arr` には影響しません。  
@@ -43,9 +44,11 @@ ms.lasthandoff: 11/21/2017
   
  文字列の詳細については、「[文字列](../../../csharp/language-reference/keywords/string.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
  [ref と out を使用した配列の引き渡し](../../../csharp/programming-guide/arrays/passing-arrays-using-ref-and-out.md)  
  [ref](../../../csharp/language-reference/keywords/ref.md)  
+ [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md)  
+ [out](../../../csharp/language-reference/keywords/out.md)  
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)
