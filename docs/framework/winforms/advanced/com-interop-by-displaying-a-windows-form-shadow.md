@@ -1,12 +1,13 @@
 ---
-title: "方法 : ShowDialog メソッドで Windows フォームを表示して COM 相互運用機能をサポートする"
-ms.custom: 
+title: '方法 : ShowDialog メソッドで Windows フォームを表示して COM 相互運用機能をサポートする'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - COM [Windows Forms]
@@ -15,11 +16,12 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], COM interop
 - Windows Forms, interop
 ms.assetid: 87aac8ad-3c04-43b3-9b0c-d0b00df9ee74
-caps.latest.revision: "6"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 415ffebbcf196a163932b1b83e32a6128f0bf1a8
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -33,7 +35,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> メソッドを使用して、Windows フォームを表示します。  
   
--   各 Windows フォームを別のスレッドで表示します。 詳細については、「 [How to: Support COM Interop by Displaying Each Windows Form on Its Own Thread](../../../../docs/framework/winforms/advanced/how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)」を参照してください。  
+-   各 Windows フォームを別のスレッドで表示します。 詳細については、「[方法 : 独自のスレッドで各 Windows フォームを表示して COM 相互運用機能をサポートする](../../../../docs/framework/winforms/advanced/how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)」を参照してください。  
   
 ## <a name="procedure"></a>プロシージャ  
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] メッセージ ループにフォームを表示する方法としては、すべての方法の中で実装する必要があるコードが最も少ない <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> メソッドを使用する方法が最も簡単です。  
