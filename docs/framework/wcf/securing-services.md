@@ -1,23 +1,25 @@
 ---
-title: "サービスのセキュリティ保護"
-ms.custom: 
+title: サービスのセキュリティ保護
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - configuration [WCF], securing services
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-caps.latest.revision: "28"
+caps.latest.revision: ''
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 2b8e84fe75f812cdcb97dcc24a0edad2d238515b
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -49,7 +51,7 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] インフラストラクチャは、この Windows セキュリティ機構を使用するように設計されています。 したがって、イントラネットに展開するサービスを作成していて、そのクライアントを Windows ドメインのメンバーに限定する場合、セキュリティを簡単に実装できます。 有効なユーザーだけがドメインにログオンできます。 ログオン後、Kerberos コントローラーによって、各ユーザーは他のコンピューターまたはアプリケーションとの間にセキュリティで保護されたコンテキストを確立できます。 ローカル コンピューターでは、グループを簡単に作成でき、特定のフォルダーを保護する場合、そのグループを使用してローカル コンピューター上でアクセス権を割り当てることができます。  
   
 ## <a name="implementing-windows-security-on-intranet-services"></a>イントラネット サービスでの Windows セキュリティの実装  
- Windows ドメインでのみ実行するアプリケーションをセキュリティで保護するには、 <xref:System.ServiceModel.WSHttpBinding> または <xref:System.ServiceModel.NetTcpBinding> バインディングの既定のセキュリティ設定を使用できます。 既定では、同じ Windows ドメインに存在するすべてのユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスできます。 ドメイン内にいるユーザーは、ネットワークにログオン済みなので信頼できます。 サービスとクライアントの間で交換されるメッセージは、機密性を保護するために暗号化され、整合性を保護するために署名されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [How to: Secure a Service with Windows Credentials](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)に依存します。  
+ Windows ドメインでのみ実行するアプリケーションをセキュリティで保護するには、 <xref:System.ServiceModel.WSHttpBinding> または <xref:System.ServiceModel.NetTcpBinding> バインディングの既定のセキュリティ設定を使用できます。 既定では、同じ Windows ドメインに存在するすべてのユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスできます。 ドメイン内にいるユーザーは、ネットワークにログオン済みなので信頼できます。 サービスとクライアントの間で交換されるメッセージは、機密性を保護するために暗号化され、整合性を保護するために署名されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [方法 : Windows 資格情報でサービスをセキュリティで保護する](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)に依存します。  
   
 ### <a name="authorization-using-the-principalpermissionattribute-class"></a>PrincipalPermissionAttribute クラスを使用した承認  
  コンピューター上のリソースへのアクセスを制限する必要がある場合、最も簡単な方法は <xref:System.Security.Permissions.PrincipalPermissionAttribute> クラスを使用することです。 この属性を使用すると、ユーザーが指定の Windows グループまたはロールに属しているか、特定のユーザーであることを要求して、サービス操作の呼び出しを制限できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: PrincipalPermissionAttribute クラスへのアクセスを制限する](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)です。  
