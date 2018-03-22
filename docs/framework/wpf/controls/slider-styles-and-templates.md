@@ -1,12 +1,13 @@
 ---
-title: "スライダーのスタイルとテンプレート"
-ms.custom: 
+title: スライダーのスタイルとテンプレート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - parts [WPF], Slider
@@ -16,11 +17,12 @@ helpviewer_keywords:
 - templates [WPF], Slider
 - ControlTemplate [WPF], Slider
 ms.assetid: d89aa97b-075a-4752-9c41-9679df65c491
-caps.latest.revision: "19"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9ffbc5d2aa6e401dffb06f1695a5299a99ef90a7
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -28,7 +30,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 12/22/2017
 ---
 # <a name="slider-styles-and-templates"></a>スライダーのスタイルとテンプレート
-このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.Slider>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.Slider>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
   
 ## <a name="slider-parts"></a>スライダーのパーツ  
  次の表に、名前付きのパーツの<xref:System.Windows.Controls.Slider>コントロール。  
