@@ -1,32 +1,33 @@
 ---
-title: "どのような &#39; の Windows Workflow Foundation"
-ms.custom: 
+title: どのような&#39;Windows Workflow Foundation の新機能として s
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Workflow Foundation [WF], what's new
 - WF [WF], what's new
 ms.assetid: 11f96014-001e-41a0-bcc2-d0684a52fa43
-caps.latest.revision: "29"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9c5026c7c3e90afa843b819fb51d7a4a7c8249a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
-# <a name="what39s-new-in-windows-workflow-foundation"></a>どのような &#39; の Windows Workflow Foundation
-[!INCLUDE[wf](../../../includes/wf-md.md)] の [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] では、前のバージョンから開発パラダイムがいくつか変更されました。 ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)].NET 3.0 を移行して、最新バージョンを使用する .NET 3.5 ワークフロー アプリケーションを参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  
+# <a name="what39s-new-in-windows-workflow-foundation"></a>どのような&#39;Windows Workflow Foundation の新機能として s
+[!INCLUDE[wf](../../../includes/wf-md.md)] の [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] では、前のバージョンから開発パラダイムがいくつか変更されました。 ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] .NET 3.0 を移行して、最新バージョンを使用する .NET 3.5 ワークフロー アプリケーションを参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  
   
 ## <a name="workflow-activity-model"></a>ワークフロー アクティビティ モデル  
- アクティビティは、現在はワークフロー作成の基本単位であり、<xref:System.Workflow.Activities.SequentialWorkflowActivity> クラスや <xref:System.Workflow.Activities.StateMachineWorkflowActivity> クラスは使用されなくなっています。 <xref:System.Activities.Activity> クラスは、ワークフロー動作の基本抽象クラスです。 このため、アクティビティの作成者は、基本的なカスタム アクティビティ機能用に <xref:System.Activities.CodeActivity> を実装するか、一定範囲のランタイムを使用するカスタム アクティビティ機能用に <xref:System.Activities.NativeActivity> を実装することができます。 <xref:System.Activities.Activity>クラス宣言の観点から他の新しい動作を明示するアクティビティの作成者によって使用<xref:System.Activities.NativeActivity>、 <xref:System.Activities.CodeActivity>、 <xref:System.Activities.AsyncCodeActivity>、または<xref:System.Activities.DynamicActivity>オブジェクト、カスタム開発したかに含まれているかどうか、[ビルトイン アクティビティライブラリ](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md)です。  
+ アクティビティは、現在はワークフロー作成の基本単位であり、<xref:System.Workflow.Activities.SequentialWorkflowActivity> クラスや <xref:System.Workflow.Activities.StateMachineWorkflowActivity> クラスは使用されなくなっています。 <xref:System.Activities.Activity> クラスは、ワークフロー動作の基本抽象クラスです。 このため、アクティビティの作成者は、基本的なカスタム アクティビティ機能用に <xref:System.Activities.CodeActivity> を実装するか、一定範囲のランタイムを使用するカスタム アクティビティ機能用に <xref:System.Activities.NativeActivity> を実装することができます。 <xref:System.Activities.Activity> クラス宣言の観点から他の新しい動作を明示するアクティビティの作成者によって使用<xref:System.Activities.NativeActivity>、 <xref:System.Activities.CodeActivity>、 <xref:System.Activities.AsyncCodeActivity>、または<xref:System.Activities.DynamicActivity>オブジェクト、カスタム開発したかに含まれているかどうか、[ビルトイン アクティビティライブラリ](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md)です。  
   
 ## <a name="rich-composite-activity-options"></a>豊富な複合アクティビティ オプション  
  <xref:System.Activities.Statements.Flowchart> は新しい強力な制御フロー アクティビティです。作成者は、これを使用して任意のループや条件分岐をモデル化できます。 <xref:System.Activities.Statements.Flowchart> により、以前は <xref:System.Workflow.Activities.StateMachineWorkflowActivity> でのみ実装が可能であったイベント ドリブン プログラミング モデルを使用できます。 手続き型のワークフローでは、<xref:System.Activities.Statements.TryCatch> や <xref:System.Activities.Statements.Switch%601> などの従来のフロー制御構造をモデル化する新しいフロー制御アクティビティを利用できます。  
@@ -43,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 -   <xref:System.ServiceModel.Activities.SendContent> や <xref:System.ServiceModel.Activities.ReceiveReply> などの新しいメッセージング アクティビティ  
   
 ## <a name="explicit-activity-data-model"></a>明示的なアクティビティ データ モデル  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、データを格納および移動するための新しいオプションがあります。 データは、<xref:System.Activities.Variable> を使用してアクティビティに格納できます。 データをアクティビティに移動したり、アクティビティから移動したりするときは、特殊な引数型を使用してデータの移動方向が判定されます。 これらの型は、<xref:System.Activities.InArgument>、<xref:System.Activities.InOutArgument>、<xref:System.Activities.OutArgument>です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Workflow Foundation のデータ モデル](../../../docs/framework/windows-workflow-foundation/data-model.md)です。  
+ [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、データを格納および移動するための新しいオプションがあります。 データは、<xref:System.Activities.Variable> を使用してアクティビティに格納できます。 データをアクティビティに移動したり、アクティビティから移動したりするときは、特殊な引数型を使用してデータの移動方向が判定されます。 これらの型は、<xref:System.Activities.InArgument>、<xref:System.Activities.InOutArgument>、<xref:System.Activities.OutArgument>です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Windows Workflow Foundation のデータ モデル](../../../docs/framework/windows-workflow-foundation/data-model.md)です。  
   
 ## <a name="enhanced-hosting-persistence-and-tracking-options"></a>ホスティング、永続化、追跡の強化されたオプション  
  [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、次のような永続化の拡張機能があります。  
@@ -65,4 +66,4 @@ ms.lasthandoff: 12/22/2017
 -   保留中のワークフローの再開は、<xref:System.Activities.Bookmark> オブジェクトを使用して管理されるようになりました。  
   
 ## <a name="easier-ability-to-extend-wf-designer-experience"></a>WF デザイナー エクスペリエンスの容易な拡張  
- 新しい WF デザイナーは [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] に基づいて構築されており、Visual Studio の外部で WF デザイナーを再ホストするときに簡単に使用できるモデルです。また、カスタムのアクティビティ デザイナーを作成するための使いやすいメカニズムを備えています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)です。
+ 新しい WF デザイナーは [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] に基づいて構築されており、Visual Studio の外部で WF デザイナーを再ホストするときに簡単に使用できるモデルです。また、カスタムのアクティビティ デザイナーを作成するための使いやすいメカニズムを備えています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)です。

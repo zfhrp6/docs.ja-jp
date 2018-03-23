@@ -1,12 +1,13 @@
 ---
-title: "方法: 変更、暗号化サービス プロバイダーの X.509 証明書 &#39; s 秘密キー"
-ms.custom: 
+title: '方法: X.509 証明書の暗号化サービス プロバイダーを変更する&#39;s 秘密キー'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,18 +16,19 @@ helpviewer_keywords:
 - cryptographic provider [WCF], changing
 - cryptographic provider [WCF]
 ms.assetid: b4254406-272e-4774-bd61-27e39bbb6c12
-caps.latest.revision: "7"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e7dea9834b654be0b86155e18524053efa4b778b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/23/2018
 ---
-# <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificate39s-private-key"></a>方法: 変更、暗号化サービス プロバイダーの X.509 証明書 &#39; s 秘密キー
+# <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificate39s-private-key"></a>方法: X.509 証明書の暗号化サービス プロバイダーを変更する&#39;s 秘密キー
 ここでは、X.509 証明書の秘密キーを提供するために使用する暗号化プロバイダーを変更する方法、およびそのプロバイダーを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティ フレームワークに統合する方法を説明します。 証明書の使用の詳細については、次を参照してください。[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティ フレームワーク」の説明に従って、新しいセキュリティ トークンの種類を導入する方法を提供する[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。 また、カスタム トークンを使用して既存のシステム指定のトークンを置き換えることも可能です。  
@@ -87,7 +89,7 @@ ms.lasthandoff: 01/19/2018
      [!code-csharp[c_CustomX509Token#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#7)]
      [!code-vb[c_CustomX509Token#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#7)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Tokens.X509AsymmetricSecurityKey>  
  <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey>  
  <xref:System.IdentityModel.Tokens.SecurityKey>  

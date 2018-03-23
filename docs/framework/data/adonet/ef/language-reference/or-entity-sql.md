@@ -17,10 +17,10 @@ manager: craigg
 ms.workload:
 - dotnet
 ms.openlocfilehash: b44934aa0db73f872f0ab27a4c36c5c615855de1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="-or-entity-sql"></a>|| (OR) (Entity SQL)
 2 つの `Boolean` 式を結合します。  
@@ -43,7 +43,7 @@ boolean_expression || boolean_expression
 ## <a name="remarks"></a>コメント  
  OR は [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の論理演算子です。 2 つの条件を結合する場合に使用します。 1 つのステートメント内に複数の論理演算子が使われている場合、OR 演算子は AND 演算子の次に評価されます。 ただし、かっこを使うと、演算の順序を変更することができます。  
   
- 二重の縦棒 (&#124; &#124;)、OR 演算子と同じ機能があります。  
+ 二重の縦棒 (&#124;&#124;)、OR 演算子と同じ機能があります。  
   
  使用可能な入力値と戻り値の型を次の表に示します。  
   
@@ -62,5 +62,5 @@ boolean_expression || boolean_expression
   
  [!code-csharp[DP EntityServices Concepts 2#OR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#or)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

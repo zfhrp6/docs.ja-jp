@@ -1,13 +1,13 @@
 ---
-title: "ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)"
-ms.custom: 
+title: ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - clients [WCF], building
@@ -15,17 +15,17 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: ce66f98f064ec5c9460dd1909f8eb7bc44c26f76
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)
 ServiceModel メタデータ ユーティリティ ツールを使用して、メタデータ ドキュメントからサービス モデル コードを生成したり、サービス モデル コードからメタデータ ドキュメントを生成します。  
@@ -65,16 +65,16 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
   
 |オプション|説明|  
 |------------|-----------------|  
-|/ディレクトリ:\<ディレクトリ >|ファイルを作成するためのディレクトリ。<br /><br /> 既定 : 現在のディレクトリ<br /><br /> 短縮形 : `/d`|  
+|/directory:\<directory>|ファイルを作成するためのディレクトリ。<br /><br /> 既定 : 現在のディレクトリ<br /><br /> 短縮形 : `/d`|  
 |/help|このツールのコマンド構文とオプションを表示します。<br /><br /> 短縮形 : `/?`|  
 |/noLogo|著作権やバナー メッセージを表示しません。|  
-|/svcutilConfig:\<configFile >|App.config ファイルの代わりに使用するカスタム構成ファイルを指定します。 これは、ツールの構成ファイルを変更せずに system.serviceModel 拡張を登録するために使用できます。|  
-|/target:\<出力の種類 >|ツールによって生成される出力を指定します。<br /><br /> 有効な値は、コード、メタデータ、または xmlSerializer です。<br /><br /> 短縮形 : `/t`|  
+|/svcutilConfig:\<configFile>|App.config ファイルの代わりに使用するカスタム構成ファイルを指定します。 これは、ツールの構成ファイルを変更せずに system.serviceModel 拡張を登録するために使用できます。|  
+|/target:\<output type>|ツールによって生成される出力を指定します。<br /><br /> 有効な値は、コード、メタデータ、または xmlSerializer です。<br /><br /> 短縮形 : `/t`|  
   
 ### <a name="code-generation"></a>コード生成  
  Svcutil.exe は、メタデータ ドキュメントからサービス コントラクト、クライアント、およびデータ型のコードを生成できます。 これらのメタデータ ドキュメントは、永続ストレージにあるか、オンラインで取得できます。 オンライン取得は、WS-Metadata Exchange プロトコルまたは DISCO プロトコルに従います (詳細については、「メタデータのダウンロード」セクションを参照してください)。  
   
- 定義済みの WSDL ドキュメントに基づいてサービスとデータ コントラクトを生成するために SvcUtil.exe ツールを使用できます。 /serviceContract スイッチを使用し、WSDL ドキュメントをダウンロードできるか見つけることができる URL またはファイルの場所を指定します。 こうすると、WSDL ドキュメントで定義されているサービスとデータ コントラクトが生成され、苦情サービスの実装に使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: メタデータを取得し、準拠サービスを実装する](../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)です。  
+ 定義済みの WSDL ドキュメントに基づいてサービスとデータ コントラクトを生成するために SvcUtil.exe ツールを使用できます。 /serviceContract スイッチを使用し、WSDL ドキュメントをダウンロードできるか見つけることができる URL またはファイルの場所を指定します。 こうすると、WSDL ドキュメントで定義されているサービスとデータ コントラクトが生成され、苦情サービスの実装に使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: メタデータを取得し、準拠サービスを実装する](../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)です。  
   
  BasicHttpContextbinding エンドポイントを使用するサービスの場合は代わりに、Svcutil.exe が、`allowCookies` 属性を `true` に設定した BasicHttpBinding を生成します。 クッキーはサーバー側でのコンテキスト用に使用されます。 サービスでクッキーを使用するときにクライアント側でコンテキストを管理する場合は、コンテキスト バインディングを使用するように構成を手動で変更できます。  
   
@@ -92,21 +92,21 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
 |オプション|説明|  
 |------------|-----------------|  
 |/async|同期と非同期の両方のメソッド署名を生成します。<br /><br /> 既定 : 同期メソッド署名のみを生成します。<br /><br /> 短縮形: `/a`|  
-|/collectionType:\<型 >|WCF クライアントのリスト コレクション型を指定します。<br/><br /> 既定値: コレクションの種類は、System.Array がします。 <br /><br /> 短縮形: `/ct`|  
-|/config:\<configFile >|生成される構成ファイルの名前を指定します。<br /><br /> 既定値: output.config|  
+|/collectionType:\<type>|WCF クライアントのリスト コレクション型を指定します。<br/><br /> 既定値: コレクションの種類は、System.Array がします。 <br /><br /> 短縮形: `/ct`|  
+|/config:\<configFile>|生成される構成ファイルの名前を指定します。<br /><br /> 既定値: output.config|  
 |/dataContractOnly|データ コントラクト型に対してのみコードを生成します。 サービス コントラクト型は生成されません。<br /><br /> このオプションにはローカル メタデータ ファイルだけを指定する必要があります。<br /><br /> 短縮形: `/dconly`|  
 |/enableDataBinding|データ バインディングを有効にするために、すべてのデータ コントラクト型に <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装します。<br /><br /> 短縮形: `/edb`|  
-|/excludeType:\<型 >|参照されるコントラクト型から除外する完全修飾またはアセンブリ修飾の型名を指定します。<br /><br /> このスイッチを個別の DLL から `/r` と共に使用する場合は、XSD クラスの完全名を参照します。<br /><br /> 短縮形: `/et`|  
+|/excludeType:\<type>|参照されるコントラクト型から除外する完全修飾またはアセンブリ修飾の型名を指定します。<br /><br /> このスイッチを個別の DLL から `/r` と共に使用する場合は、XSD クラスの完全名を参照します。<br /><br /> 短縮形: `/et`|  
 |/importXmlTypes|非データ コントラクト型を IXmlSerializable 型としてインポートするようにデータ コントラクト シリアライザーを構成します。|  
 |/internal|内部としてマークされるクラスを生成します。 既定 : パブリック クラスのみを生成します。<br /><br /> 短縮形: `/i`|  
 |/language:\<言語 >|コード生成に使用するプログラミング言語を指定します。 Machine.config ファイルに登録された言語名か、<xref:System.CodeDom.Compiler.CodeDomProvider> から継承するクラスの完全修飾名のいずれかを指定する必要があります。<br /><br /> 値 : c#、cs、csharp、vb、visualbasic、c++、cpp<br /><br /> 既定値: csharp<br /><br /> 短い形式: `/l` **注:**スイッチでは、Visual Studio 2005 SP1 に付属しているコード プロバイダーの C++ だけがサポートしています。|  
 |/mergeConfig|既存のファイルを上書きする代わりに、生成される構成ファイルを既存のファイルにマージします。|  
 |/messageContract|メッセージ コントラクト型を生成します。<br /><br /> 短縮形: `/mc`|  
-|/namespace:\<, string >|WSDL または XML スキーマの targetNamespace から CLR 名前空間へのマッピングを指定します。 使用して '\*' の targetNamespace は、明示的なマッピングがないすべての targetNamespaces をその CLR 名前空間にマップします。<br /><br /> メッセージ コントラクト名が操作名と競合しないようにするには、型参照を `::` で修飾するか、名前を一意にする必要があります。<br /><br /> 既定 : データ コントラクトのスキーマ ドキュメントのターゲット名前空間から派生します。 既定の名前空間は、生成される他のすべての型に使用されます。<br /><br /> 短縮形: `/n` **注:** XmlSerializer を使用する型を生成するときに単一の名前空間のマッピングのみがサポートされています。 生成されたすべての型は既定の名前空間またはで指定された名前空間に存在するか ' *'。|  
+|/namespace:\<string,string>|WSDL または XML スキーマの targetNamespace から CLR 名前空間へのマッピングを指定します。 使用して '\*' の targetNamespace は、明示的なマッピングがないすべての targetNamespaces をその CLR 名前空間にマップします。<br /><br /> メッセージ コントラクト名が操作名と競合しないようにするには、型参照を `::` で修飾するか、名前を一意にする必要があります。<br /><br /> 既定 : データ コントラクトのスキーマ ドキュメントのターゲット名前空間から派生します。 既定の名前空間は、生成される他のすべての型に使用されます。<br /><br /> 短縮形: `/n` **注:** XmlSerializer を使用する型を生成するときに単一の名前空間のマッピングのみがサポートされています。 生成されたすべての型は既定の名前空間またはで指定された名前空間に存在するか ' *'。|  
 |/noConfig|構成ファイルを生成しません。|  
 |/noStdLib|標準ライブラリを参照しません。<br /><br /> 既定 : Mscorlib.dll と System.servicemodel.dll を参照します。|  
-|/out:\<ファイル >|生成されるコードのファイル名を指定します。<br /><br /> 既定 : WSDL 定義名、WSDL サービス名、またはスキーマの 1 つのターゲット名前空間から派生します。<br /><br /> 短縮形 : `/o`|  
-|/reference:\<ファイル パス >|指定されたアセンブリの型を参照します。 クライアントの生成時に、このオプションを使用して、インポートするメタデータを表す型を含むアセンブリを指定します。<br /><br /> このスイッチを使用して、メッセージ コントラクト型と <xref:System.Xml.Serialization.XmlSerializer> 型は指定できません。<br /><br /> <xref:System.DateTimeOffset> が参照されている場合、新しい型を生成する代わりにこの型が使用されます。 アプリケーションが [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して記述されている場合、SvcUtil.exe は、自動的に <xref:System.DateTimeOffset> を参照します。<br /><br /> 短縮形: `/r`|  
+|/out:\<file>|生成されるコードのファイル名を指定します。<br /><br /> 既定 : WSDL 定義名、WSDL サービス名、またはスキーマの 1 つのターゲット名前空間から派生します。<br /><br /> 短縮形 : `/o`|  
+|/reference:\<file path>|指定されたアセンブリの型を参照します。 クライアントの生成時に、このオプションを使用して、インポートするメタデータを表す型を含むアセンブリを指定します。<br /><br /> このスイッチを使用して、メッセージ コントラクト型と <xref:System.Xml.Serialization.XmlSerializer> 型は指定できません。<br /><br /> <xref:System.DateTimeOffset> が参照されている場合、新しい型を生成する代わりにこの型が使用されます。 アプリケーションが [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して記述されている場合、SvcUtil.exe は、自動的に <xref:System.DateTimeOffset> を参照します。<br /><br /> 短縮形: `/r`|  
 |/serializable|シリアル化可能属性でマークされたクラスを生成します。<br /><br /> 短縮形: `/s`|  
 |/serviceContract|サービス コントラクトのコードのみを生成します。 クライアント クラスと構成は生成されません。<br /><br /> 短縮形: `/sc`|  
 |/serializer:Auto|シリアライザーが自動的に選択します。 これは、データ コントラクト シリアライザーを使用しようとしが失敗した場合は、XmlSerializer を使用します。<br /><br /> 短縮形: `/ser`|  
@@ -129,10 +129,10 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
   
 |オプション|説明|  
 |------------|-----------------|  
-|/serviceName:\<serviceConfigName >|エクスポートされるサービスの構成名を指定します。 このオプションを使用した場合、関連構成ファイルが存在する実行可能アセンブリを入力として渡す必要があります。 Svcutil.exe は、すべての関連構成ファイルからサービス構成を検索します。 構成ファイルが拡張型を含む場合、これらの型を含むアセンブリは GAC に存在するか、`/reference` オプションを使用して明示的に指定される必要があります。|  
-|/reference:\<ファイル パス >|指定したアセンブリを、型参照の解決に使用するアセンブリの集合に追加します。 サービスのエクスポートまたは検証に、構成に登録されているサードパーティ製拡張機能 (Behaviors、Bindings、および BindingElements) を使用している場合は、このオプションを使用して GAC に含まれていない拡張機能アセンブリを指定します。<br /><br /> 短縮形: `/r`|  
+|/serviceName:\<serviceConfigName>|エクスポートされるサービスの構成名を指定します。 このオプションを使用した場合、関連構成ファイルが存在する実行可能アセンブリを入力として渡す必要があります。 Svcutil.exe は、すべての関連構成ファイルからサービス構成を検索します。 構成ファイルが拡張型を含む場合、これらの型を含むアセンブリは GAC に存在するか、`/reference` オプションを使用して明示的に指定される必要があります。|  
+|/reference:\<file path>|指定したアセンブリを、型参照の解決に使用するアセンブリの集合に追加します。 サービスのエクスポートまたは検証に、構成に登録されているサードパーティ製拡張機能 (Behaviors、Bindings、および BindingElements) を使用している場合は、このオプションを使用して GAC に含まれていない拡張機能アセンブリを指定します。<br /><br /> 短縮形: `/r`|  
 |/dataContractOnly|データ コントラクト型に対してのみ機能します。 サービス コントラクトは処理されません。<br /><br /> このオプションにはローカル メタデータ ファイルだけを指定する必要があります。<br /><br /> 短縮形: `/dconly`|  
-|/excludeType:\<型 >|エクスポートから除外する完全修飾またはアセンブリ修飾の型名を指定します。 このオプションは、エクスポートから型を除外するために、サービスのメタデータまたはサービス コントラクトのセットをエクスポートするときに使用できます。 このオプションは `/dconly` オプションとは併用できません。<br /><br /> 複数のサービスを含む単一のアセンブリが存在し、それぞれのサービスが同じ XSD 名の別のクラスを使用している場合は、このスイッチに XSD クラス名の代わりにサービス名を指定する必要があります。<br /><br /> XSD またはデータ コントラクト型はサポートされていません。<br /><br /> 短縮形: `/et`|  
+|/excludeType:\<type>|エクスポートから除外する完全修飾またはアセンブリ修飾の型名を指定します。 このオプションは、エクスポートから型を除外するために、サービスのメタデータまたはサービス コントラクトのセットをエクスポートするときに使用できます。 このオプションは `/dconly` オプションとは併用できません。<br /><br /> 複数のサービスを含む単一のアセンブリが存在し、それぞれのサービスが同じ XSD 名の別のクラスを使用している場合は、このスイッチに XSD クラス名の代わりにサービス名を指定する必要があります。<br /><br /> XSD またはデータ コントラクト型はサポートされていません。<br /><br /> 短縮形: `/et`|  
   
 ### <a name="service-validation"></a>サービスの検証  
  検証は、サービスをホストせずにサービス実装でエラーを検出するために使用できます。 `/serviceName` オプションを使用して、検証するサービスを指定する必要があります。  
@@ -146,10 +146,10 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
 |オプション|説明|  
 |------------|-----------------|  
 |/validate|`/serviceName` オプションによって指定されたサービス実装を検証します。 このオプションを使用した場合、関連構成ファイルが存在する実行可能アセンブリを入力として渡す必要があります。<br /><br /> 短縮形: `/v`|  
-|/serviceName:\<serviceConfigName >|検証するサービスの構成名を指定します。 Svcutil.exe は、すべての入力アセンブリのすべての関連構成ファイルからサービス構成を検索します。 構成ファイルが拡張型を含む場合、これらの型を含むアセンブリは GAC に存在するか、`/reference` オプションを使用して明示的に指定される必要があります。|  
-|/reference:\<ファイル パス >|指定したアセンブリを、型参照の解決に使用するアセンブリの集合に追加します。 サービスのエクスポートまたは検証に、構成に登録されているサードパーティ製拡張機能 (Behaviors、Bindings、および BindingElements) を使用している場合は、このオプションを使用して GAC に含まれていない拡張機能アセンブリを指定します。<br /><br /> 短縮形: `/r`|  
+|/serviceName:\<serviceConfigName>|検証するサービスの構成名を指定します。 Svcutil.exe は、すべての入力アセンブリのすべての関連構成ファイルからサービス構成を検索します。 構成ファイルが拡張型を含む場合、これらの型を含むアセンブリは GAC に存在するか、`/reference` オプションを使用して明示的に指定される必要があります。|  
+|/reference:\<file path>|指定したアセンブリを、型参照の解決に使用するアセンブリの集合に追加します。 サービスのエクスポートまたは検証に、構成に登録されているサードパーティ製拡張機能 (Behaviors、Bindings、および BindingElements) を使用している場合は、このオプションを使用して GAC に含まれていない拡張機能アセンブリを指定します。<br /><br /> 短縮形: `/r`|  
 |/dataContractOnly|データ コントラクト型に対してのみ機能します。 サービス コントラクトは処理されません。<br /><br /> このオプションにはローカル メタデータ ファイルだけを指定する必要があります。<br /><br /> 短縮形: `/dconly`|  
-|/excludeType:\<型 >|検証から除外する完全修飾のまたはアセンブリ修飾の型名を指定します。<br /><br /> 短縮形: `/et`|  
+|/excludeType:\<type>|検証から除外する完全修飾のまたはアセンブリ修飾の型名を指定します。<br /><br /> 短縮形: `/et`|  
   
 ### <a name="metadata-download"></a>メタデータのダウンロード  
  Svcutil.exe を使用すると、実行中のサービスからメタデータをダウンロードして、ローカル ファイルに保存できます。 メタデータをダウンロードするには、`/t:metadata` オプションを指定する必要があります。 それ以外の場合は、クライアント コードが生成されます。 URL スキームが HTTP および HTTPS の場合、Svcutil.exe はメタデータの抽出に WS-Metadata Exchange および DISCO を使用します。 その他の URL スキームの場合、Svcutil.exe は WS-Metadata Exchange のみを使用します。  
@@ -190,9 +190,9 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
   
 |オプション|説明|  
 |------------|-----------------|  
-|/reference:\<ファイル パス >|指定したアセンブリを、型参照の解決に使用するアセンブリの集合に追加します。<br /><br /> 短縮形: `/r`|  
-|/excludeType:\<型 >|エクスポートや検証から除外する完全修飾のまたはアセンブリ修飾の型名を指定します。<br /><br /> 短縮形: `/et`|  
-|/out:\<ファイル >|生成されるコードのファイル名を指定します。 このオプションは、複数のアセンブリが入力としてツールに渡される場合は無視されます。<br /><br /> 既定 : アセンブリ名から派生します。<br /><br /> 短縮形: `/o`|  
+|/reference:\<file path>|指定したアセンブリを、型参照の解決に使用するアセンブリの集合に追加します。<br /><br /> 短縮形: `/r`|  
+|/excludeType:\<type>|エクスポートや検証から除外する完全修飾のまたはアセンブリ修飾の型名を指定します。<br /><br /> 短縮形: `/et`|  
+|/out:\<file>|生成されるコードのファイル名を指定します。 このオプションは、複数のアセンブリが入力としてツールに渡される場合は無視されます。<br /><br /> 既定 : アセンブリ名から派生します。<br /><br /> 短縮形: `/o`|  
 |/UseSerializerForFaults|指定する、 <!--zz <xref:System.Xml.XmlSerializer> --> `xref:System.Xml.XmlSerializer `の既定値ではなく、エラーの読み書きに使用する必要があります<xref:System.Runtime.Serialization.DataContractSerializer>です。|  
   
 ## <a name="examples"></a>使用例  
@@ -274,7 +274,7 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
   
  また、現在のプロセスにサービス拒否を引き起こす可能性があるため、アプリケーションの中間層でツールを使用しないようにする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)

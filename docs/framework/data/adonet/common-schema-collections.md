@@ -1,24 +1,26 @@
 ---
-title: "共通のスキーマ コレクション"
-ms.custom: 
+title: 共通のスキーマ コレクション
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
-caps.latest.revision: "3"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 893093900b3fc4276f9bd7143b1f235a5ba98f90
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="common-schema-collections"></a>共通のスキーマ コレクション
 共通のスキーマ コレクションとは、それぞれの .NET Framework マネージ プロバイダーにより実装されるスキーマ コレクションのことです。 呼び出すことによってサポートされるスキーマ コレクションの一覧を特定の .NET Framework マネージ プロバイダーを照会することができます、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。 これらのコレクションは、必要なすべての列を表現します。 プロバイダーでは、任意で列を追加できます。 たとえば、`SqlClient` と `OracleClient` は、ParameterName を制限のコレクションに追加します。  
@@ -41,7 +43,7 @@ ms.lasthandoff: 01/17/2018
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
-|CompositeIdentifierSeparatorPattern|string|複合識別子内の複合セパレーターと一致する正規表現。 たとえば、"\\"。 (SQL サーバー用) または"@&#124;です。\\." (Oracle の場合) のように指定します。<br /><br /> 複合識別子はたとえば、データベース オブジェクト名の使用目的は、通常: pubs.dbo.authors またはpubs@dbo.authorsです。<br /><br /> SQL Server の正規表現を使用して"\\。"です。 Oracleclient の場合、次のように使用します。"@&#124;です。\\.".<br /><br /> ODBC の場合、Catalog_name_seperator を使用します。<br /><br /> OLE DB の場合、DBLITERAL_CATALOG_SEPARATOR または DBLITERAL_SCHEMA_SEPARATOR を使用します。|  
+|CompositeIdentifierSeparatorPattern|string|複合識別子内の複合セパレーターと一致する正規表現。 たとえば、"\\"。 (SQL サーバー用) または"@&#124;\\." (Oracle の場合) のように指定します。<br /><br /> 複合識別子はたとえば、データベース オブジェクト名の使用目的は、通常: pubs.dbo.authors またはpubs@dbo.authorsです。<br /><br /> SQL Server の正規表現を使用して"\\。"です。 Oracleclient の場合、次のように使用します。"@&#124;\\。"です。<br /><br /> ODBC の場合、Catalog_name_seperator を使用します。<br /><br /> OLE DB の場合、DBLITERAL_CATALOG_SEPARATOR または DBLITERAL_SCHEMA_SEPARATOR を使用します。|  
 |DataSourceProductName|string|"Oracle" や "SQLServer" など、プロバイダーによってアクセスされる製品の名前。|  
 |DataSourceProductVersion|string|プロバイダーによりアクセスされる製品のバージョンを、Microsoft の形式ではなく、データ ソースのネイティブ形式で表します。<br /><br /> 場合によっては、DataSourceProductVersion と DataSourceProductVersionNormalized は同じ値になります。 OLE DB と ODBC の場合、これらの値は、元になるネイティブ API 内の同じ関数呼び出しに割り当てられているので、常に同じ値になります。|  
 |DataSourceProductVersionNormalized|string|`String.Compare()` を使用して比較できるような、データ ソースの正規化されたバージョン。 この形式は、バージョン 10 がバージョン 1 とバージョン 2 の間に並べ替えられることがないように、プロバイダーのすべてのバージョンで一貫しています。<br /><br /> たとえば、Oracle プロバイダーは、これにより、「08.01.07.04.01」を返すには、Oracle 8i データ ソースの正規化されたバージョンは、"nn.nn.nn.nn.nn"の形式を使用します。 SQL Server では、一般的な Microsoft"nn.nn.nnnn"形式を使用します。<br /><br /> 場合によっては、DataSourceProductVersion と DataSourceProductVersionNormalized は同じ値になります。 OLE DB と ODBC の場合、これらの値は、元になるネイティブ API 内の同じ関数呼び出しに割り当てられているので、常に同じ値になります。|  
@@ -53,10 +55,10 @@ ms.lasthandoff: 01/17/2018
 |ParameterMarkerPattern|string|パラメーター マーカーと一致する正規表現。 パラメーター名の一致する値になります (一致する値がある場合)。<br /><br /> たとえば、パラメーター名に "@" という前置文字が含まれている、名前付きパラメーターがサポートされている場合、"(@[A-Za-z0-9_$#]*)" となります。<br /><br /> ただしで名前付きパラメーターがサポートされている場合、':' 前置文字は、パラメーター名の一部ではないとになります。": ([z0 _ $#]\*)"です。<br /><br /> もちろん、データ ソースが名前付きパラメーターをサポートしない場合は、単に "?" になります。|  
 |ParameterNameMaxLength|int|パラメーター名の文字の最大長。 Visual Studio では、パラメーター名がサポートされている場合、最大長の最小値が 30 文字であることを想定しています。<br /><br /> データ ソースが名前付きパラメーターをサポートしない場合、このプロパティは 0 を返します。|  
 |ParameterNamePattern|string|有効なパラメーター名と一致する正規表現。 異なるデータ ソースでは、パラメーター名として使用できる文字に関して、規則が異なります。<br /><br /> Visual Studio では、パラメーター名がサポートされている場合、文字 "\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}" が、パラメーター名として有効な、サポートされる最小限の文字のセットです。|  
-|QuotedIdentifierPattern|string|引用符で囲まれた識別子と一致し、引用符を除いた識別子自体の一致する値のある正規表現。 たとえば、データ ソースが引用符で囲まれた識別子を識別する二重引用符を使用する場合になります:"(([^\\"] &#124;\\"\\")*)".|  
+|QuotedIdentifierPattern|string|引用符で囲まれた識別子と一致し、引用符を除いた識別子自体の一致する値のある正規表現。 たとえば、データ ソースが引用符で囲まれた識別子を識別する二重引用符を使用する場合になります:"(([^\\"]&#124;\\"\\") *)"です。|  
 |QuotedIdentifierCase|<xref:System.Data.Common.IdentifierCase>|引用符で囲まれた識別子が、大文字と小文字を区別して扱われるかどうかを示します。|  
 |StatementSeparatorPattern|string|ステートメント区切り文字と一致する正規表現。|  
-|StringLiteralPattern|string|文字列リテラルと一致し、リテラル自体の一致する値のある正規表現。 たとえば、文字列を識別する、データ ソースが単一引用符を使用する場合になります:"('([^'] &#124; ')*')"'|  
+|StringLiteralPattern|string|文字列リテラルと一致し、リテラル自体の一致する値のある正規表現。 たとえば、文字列を識別する、データ ソースが単一引用符を使用する場合になります:"('([^']&#124;'') *')"'|  
 |SupportedJoinOperators|<xref:System.Data.Common.SupportedJoinOperators>|データ ソースでサポートされる SQL の JOIN ステートメントの種類を指定します。|  
   
 ## <a name="datatypes"></a>DataTypes  
@@ -105,7 +107,7 @@ ms.lasthandoff: 01/17/2018
 |----------------|--------------|-----------------|  
 |ReservedWord|string|プロバイダー固有の仕様には、word が予約されています。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [GetSchema およびスキーマ コレクション](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,24 +1,26 @@
 ---
-title: "Entity SQL リファレンス"
-ms.custom: 
+title: Entity SQL リファレンス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ac05ec8a8732da383a4e33e84c669aa29660a0da
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="entity-sql-reference"></a>Entity SQL リファレンス
 このセクションには、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 参照に関するトピックがあります。 このトピックでは、カテゴリ別に [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 演算子をグループ化し、その概要を説明します。  
@@ -60,9 +62,9 @@ ms.lasthandoff: 01/19/2018
 |[IS &#91;NOT&#93; NULL](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|クエリ式が NULL かどうかを調べます。|  
 |[< (より小さい)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値よりも小さいかどうかを判別します。|  
 |[<= (以下)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-or-equal-to-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値以下であるかどうかを判別します。|  
-|[& #91。いない &#93;です。間](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|式の結果が指定の範囲内の値になるかどうかを判断します。|  
+|[&AMP;#91;いない&AMP;#93;BETWEEN](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|式の結果が指定の範囲内の値になるかどうかを判断します。|  
 |[!= (等しくない)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-equal-to-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値と等しくないかどうかを判別します。|  
-|[& #91。いない &#93;です。という感じで](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|指定された文字列が指定されたパターンと一致するかどうかを判断します。|  
+|[&AMP;#91;いない&AMP;#93;など](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|指定された文字列が指定されたパターンと一致するかどうかを判断します。|  
   
 ## <a name="logical-and-case-expression-operators"></a>論理演算子と CASE 式演算子  
  論理演算子は、条件の真偽をテストします。 CASE 式は、一連のブール式を評価して結果を判定します。 次の表に論理演算子と CASE 式演算子を示します。  
@@ -71,7 +73,7 @@ ms.lasthandoff: 01/19/2018
 |--------------|-----------------|  
 |[& & (論理 AND)](../../../../../../docs/framework/data/adonet/ef/language-reference/and-entity-sql.md)|論理 AND。|  
 |[!(論理 NOT)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)|論理 NOT。|  
-|[&#124; &#124;です。(論理 OR)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|論理 OR。|  
+|[&#124;&#124;(論理 OR)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|論理 OR。|  
 |[CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)|一連のブール式を評価して結果を決定します。|  
 |[THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)|結果、[とき](http://msdn.microsoft.com/library/6233fe9f-00b0-460e-8372-64e138a5f998)句を true に評価された場合。|  
   
@@ -92,7 +94,7 @@ ms.lasthandoff: 01/19/2018
 |[WHERE](../../../../../../docs/framework/data/adonet/ef/language-reference/where-entity-sql.md)|クエリによって返されるデータを条件に基づいてフィルター処理します。|  
   
 ## <a name="reference-operators"></a>リファレンス演算子  
- リファレンスは、特定のエンティティ セットにある特定のエンティティへの論理ポインター (外部キー) です。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]構築、分解、および参照を使用して移動するには、次の演算子をサポートしています。  
+ リファレンスは、特定のエンティティ セットにある特定のエンティティへの論理ポインター (外部キー) です。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 構築、分解、および参照を使用して移動するには、次の演算子をサポートしています。  
   
 |演算子|使用|  
 |--------------|---------|  
@@ -109,7 +111,7 @@ ms.lasthandoff: 01/19/2018
 |--------------|---------|  
 |[ANYELEMENT](../../../../../../docs/framework/data/adonet/ef/language-reference/anyelement-entity-sql.md)|複数値のコレクションから要素を抽出します。|  
 |[EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md)|EXCEPT オペランドの左辺のクエリ式から返される結果のうち、右辺のクエリ式でも返される結果を除いた、重複しない値のコレクションを返します。|  
-|[& #91。いない &#93;です。存在します。](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|コレクションが空かどうかを調べます。|  
+|[&AMP;#91;いない&AMP;#93;EXISTS](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|コレクションが空かどうかを調べます。|  
 |[FLATTEN](../../../../../../docs/framework/data/adonet/ef/language-reference/flatten-entity-sql.md)|コレクションのコレクションをフラット化して単一のコレクションに変換します。|  
 |[&#91;NOT&#93; IN](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|コレクション内に一致する値があるかどうかを調べます。|  
 |[INTERSECT](../../../../../../docs/framework/data/adonet/ef/language-reference/intersect-entity-sql.md)|INTERSECT オペランドの左右両方のクエリ式によって返される個別の値のコレクションを返します。|  
@@ -118,13 +120,13 @@ ms.lasthandoff: 01/19/2018
 |[UNION](../../../../../../docs/framework/data/adonet/ef/language-reference/union-entity-sql.md)|複数のクエリの結果を 1 つのコレクションに結合します。|  
   
 ## <a name="type-operators"></a>型演算子  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]式 (値) を作成、照会、および操作の種類を許可する操作を提供します。 次の表に型の操作に使用される演算子を示します。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 式 (値) を作成、照会、および操作の種類を許可する操作を提供します。 次の表に型の操作に使用される演算子を示します。  
   
 |演算子|使用|  
 |--------------|---------|  
 |[CAST](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md)|あるデータ型の式を別のデータ型に変換します。|  
 |[COLLECTION](../../../../../../docs/framework/data/adonet/ef/language-reference/collection-entity-sql.md)|使用される、[関数](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md)宣言エンティティ型または複合型のコレクションを操作します。|  
-|[& #91。いない &#93;です。の](../../../../../../docs/framework/data/adonet/ef/language-reference/isof-entity-sql.md)|式の型が指定の型であるか、またはそのサブタイプであるかを判断します。|  
+|[&AMP;#91;いない&AMP;#93;の](../../../../../../docs/framework/data/adonet/ef/language-reference/isof-entity-sql.md)|式の型が指定の型であるか、またはそのサブタイプであるかを判断します。|  
 |[OFTYPE](../../../../../../docs/framework/data/adonet/ef/language-reference/oftype-entity-sql.md)|クエリ式を使用して、指定された型のオブジェクトのコレクションを返します。|  
 |[名前付きの型コンストラクター](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md)|エンティティ型または複合型のインスタンスの作成に使用されます。|  
 |[MULTISET](../../../../../../docs/framework/data/adonet/ef/language-reference/multiset-entity-sql.md)|値のリストからマルチセットのインスタンスを作成します。|  
@@ -141,5 +143,5 @@ ms.lasthandoff: 01/19/2018
 |[-- (コメント)](../../../../../../docs/framework/data/adonet/ef/language-reference/comment-entity-sql.md)|[!INCLUDE[esql](../../../../../../includes/esql-md.md)] コメントを含めます。|  
 |[FUNCTION](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md)|Entity SQL クエリで実行できるインライン関数を定義します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL 言語](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)

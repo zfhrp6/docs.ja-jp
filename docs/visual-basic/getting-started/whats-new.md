@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic の新機能"
+title: Visual Basic の新機能
 ms.date: 02/15/2018
 ms.prod: .net
 ms.technology:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-caps.latest.revision: 
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4df9a34e078de9daeff85c894afbbf4d60501f6b
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
-ms.translationtype: HT
+ms.openlocfilehash: c0452a5dde3a266f5d50f69016eac8144bab9ba6
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
 
@@ -34,6 +34,9 @@ Visual Basic 15.5
 
 Visual Basic 15.3   
 新しい機能については、「[Visual Basic 15.3](#visual-basic-153)」を参照してください。
+
+Visual Basic 2017   
+新しい機能については、「[Visual Basic 2017](#visual-basic-2017)」を参照してください。
 
 Visual Basic / Visual Studio .NET 2015   
 新しい機能については、「[Visual Basic 14](#visual-basic-14)」を参照してください。
@@ -78,7 +81,7 @@ Visual Basic 2017 では、桁区切り記号としてアンダースコア文�
 ```vb
 Dim number As Integer = &H_C305_F860
 ``` 
-アンダースコア文字を先頭の区切り記号として使用するには、以下の要素を Visual Basic プロジェクト (*.vbproj) ファイルに追加する必要があります。
+先行する区切り記号としてアンダー スコア文字を使用するには、Visual Basic プロジェクトに次の要素を追加する必要があります (\*.vbproj) ファイル。
 
 ```xml
 <PropertyGroup>
@@ -88,15 +91,19 @@ Dim number As Integer = &H_C305_F860
 
 ## <a name="visual-basic-153"></a>Visual Basic 15.3
 
-[名前付きタプルの推論](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
+[**名前付きの組の推論**](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
 
 変数からタプル要素の値を割り当てる場合、Visual Basic は対応する変数名からタプル要素の名前を推論します。ユーザーがタプル要素に明示的に名前を付ける必要はありません。 以下の例では、推論を使用して、`state`、`stateName`、`capital` という 3 つの名前付き要素のタプルを作成します。
 
 [!code-vb[Inferred tuple names](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
+**追加のコンパイラ スイッチ**  
+
+では、コマンド ライン コンパイラ、Visual Basic、 [ **- refout** ](../reference/command-line-compiler/refout-compiler-option.md)と[ **- refonly** ](../reference/command-line-compiler/refonly-compiler-option.md)の出力を制御するコンパイラ オプション参照アセンブリ。 **-refout**参照アセンブリの出力ディレクトリを定義および**- refonly**参照アセンブリだけがコンパイルで出力することを指定します。
+
 ## <a name="visual-basic-2017"></a>Visual Basic 2017
 
-[タプル](../programming-guide/language-features/data-types/tuples.md)
+[**組**](../programming-guide/language-features/data-types/tuples.md)
 
 タプルは軽量のデータ構造であり、最も一般的には、1 回のメソッド呼び出しで複数の値を返すために利用されます。 通常、1 つのメソッドから複数の値を返すには、次のいずれかを行う必要があります。
 

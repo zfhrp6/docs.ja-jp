@@ -1,30 +1,32 @@
 ---
-title: "WPF Version 4.5 の新機能"
-ms.custom: 
+title: WPF Version 4.5 の新機能
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Presentation Foundation [WPF], what's new
 - WPF [WPF], what's new
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
-caps.latest.revision: "55"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8de8725bc48f69cdd18100d90a1bc610caa7ecfb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="what39s-new-in-wpf-version-45"></a>WPF Version 4.5 の新機能
-<a name="introduction"></a>このトピックには、新機能および強化機能に関する情報が含まれています。[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]バージョン 4.5。  
+<a name="introduction"></a> このトピックには、新機能および強化機能に関する情報が含まれています。[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]バージョン 4.5。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -136,5 +138,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="markup-extensions-for-events"></a>イベントのマークアップ拡張機能  
  WPF 4.5 では、イベントのマークアップ拡張機能がサポートされます。  WPF はイベントに使用されるマークアップ拡張機能を定義しませんが、サードパーティがイベントで使用できるマークアップ拡張機能を作成できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework の新機能](../../../../docs/framework/whats-new/index.md)

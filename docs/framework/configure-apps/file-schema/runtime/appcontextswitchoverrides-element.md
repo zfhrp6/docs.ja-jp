@@ -1,14 +1,14 @@
 ---
-title: "&lt;AppContextSwitchOverrides&gt;要素"
-ms.custom: 
+title: '&lt;AppContextSwitchOverrides&gt;要素'
+ms.custom: ''
 ms.date: 01/08/2018
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-bcl
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - AppContextSwitchOverrides
@@ -16,23 +16,24 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-caps.latest.revision: "16"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 71888febdc42f0ee65bdcd55a761700eda065bc1
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt;要素
 <xref:System.AppContext> クラスで使用される、新機能に対するオプトアウト メカニズムを指定するスイッチを 1 つまたは複数定義します。  
   
  \<configuration>  
- \<ランタイム >  
-\<AppContextSwitchOverrides >  
+ \<runtime>  
+\<AppContextSwitchOverrides>  
   
 ## <a name="syntax"></a>構文  
   
@@ -53,7 +54,7 @@ ms.lasthandoff: 01/09/2018
   
 |[値]|説明|  
 |-----------|-----------------|  
-|"名前 = 値"|値と共に定義済みのスイッチの名前 (`true`または`false`)。 複数のスイッチの名前/値ペアをセミコロンで区切られます (「;」) です。 .NET Framework でサポートされている定義済みのスイッチ名の一覧は、「解説」セクションを参照してください。|  
+|"name=value"|値と共に定義済みのスイッチの名前 (`true`または`false`)。 複数のスイッチの名前/値ペアをセミコロンで区切られます (「;」) です。 .NET Framework でサポートされている定義済みのスイッチ名の一覧は、「解説」セクションを参照してください。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -141,7 +142,7 @@ ms.lasthandoff: 01/09/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.AppContext?displayProperty=nameWithType>  
  [\<ランタイム > 要素](runtime-element.md)  
  [\<configuration> 要素](../configuration-element.md)

@@ -1,7 +1,7 @@
 ---
-title: ".NET 用語集"
-description: ".NET のドキュメントで使われている用語からいくつか選択してその意味を説明します。"
-keywords: ".NET 用語集, .NET ディクショナリ, .NET の用語, .NET プラットフォーム, .NET Framework, .NET ランタイム"
+title: .NET 用語集
+description: .NET のドキュメントで使われている用語からいくつか選択してその意味を説明します。
+keywords: .NET 用語集, .NET ディクショナリ, .NET の用語, .NET プラットフォーム, .NET Framework, .NET ランタイム
 author: tdykstra
 ms.author: tdykstra
 ms.date: 07/08/2017
@@ -13,10 +13,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 33123732514a53574036f6f8e948b2cf9acb9229
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="net-glossary"></a>.NET 用語集
 
@@ -252,7 +252,7 @@ OS は、ランタイム環境の一部ですが、.NET ランタイムの一部
 
 .NET アプリまたはライブラリが依存する API のコレクション。
 
-アプリまたはライブラリは、.NET Standard の 1 つのバージョン (.NET Standard 2.0 など) をターゲットにできます。 .NET Standard は、.NET のすべての実装で標準化された API のセットの仕様です。 また、アプリまたはライブラリは、.NET の特定の実装のバージョンをターゲットにすることもでき、その場合は実装固有の API にアクセスできます。 たとえば、Xamarin.iOS をターゲットにするアプリは、Xamarin が提供する iOS API ラッパーにアクセスできます。
+アプリまたはライブラリは、.NET Standard の 1 つのバージョン (.NET Standard 2.0 など) をターゲットにできます.NET Standard は、.NET のすべての実装で標準化された API のセットの仕様です。 また、アプリまたはライブラリは、.NET の特定の実装のバージョンをターゲットにすることもでき、その場合は実装固有の API にアクセスできます。 たとえば、Xamarin.iOS をターゲットにするアプリは、Xamarin が提供する iOS API ラッパーにアクセスできます。
 
 一部のターゲット フレームワーク (.NET Framework など) では、使用可能な API は .NET の実装がシステムにインストールするアセンブリによって定義され、アプリケーション フレームワーク API (たとえば ASP.NET、WinForms) を含む場合があります。 パッケージ ベースのターゲット フレームワーク (.NET Standard、.NET Core など) では、フレームワーク API はアプリまたはライブラリでインストールされるパッケージによって定義されます。 その場合、ターゲット フレームワークでは、全体としてフレームワークを構成するすべてのパッケージを参照するメタパッケージが暗黙的に指定されます。
 

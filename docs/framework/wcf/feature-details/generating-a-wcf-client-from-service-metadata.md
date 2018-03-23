@@ -1,24 +1,26 @@
 ---
-title: "サービス メタデータからの WCF クライアントの生成"
-ms.custom: 
+title: サービス メタデータからの WCF クライアントの生成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
-caps.latest.revision: "9"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9eedf84d1dccb8bc2540aca7e6bd338b4e58326d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>サービス メタデータからの WCF クライアントの生成
 ここでは、Svcutil.exe の各種のスイッチを使用して、メタデータ ドキュメントからクライアントを生成する方法を説明します。  
@@ -42,7 +44,7 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
 |オプション|説明|  
 |------------|-----------------|  
 |**/reference:\<ファイル パス >**|指定されたアセンブリの型を参照します。 クライアントの生成時に、このオプションを使用して、インポートするメタデータを表す型を含むアセンブリを指定します。<br /><br /> 短縮形 : `/r`|  
-|**/excludeType:\<型 >**|参照されるコントラクト型から除外する完全修飾またはアセンブリ修飾の型名を指定します。<br /><br /> 短縮形 : `/et`|  
+|**/excludeType:\<type>**|参照されるコントラクト型から除外する完全修飾またはアセンブリ修飾の型名を指定します。<br /><br /> 短縮形 : `/et`|  
   
 ## <a name="choosing-a-serializer"></a>シリアライザーの選択  
   
@@ -58,13 +60,13 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/language:\<言語 >**|コード生成に使用するプログラミング言語を指定します。 Machine.config ファイルに登録された言語名か、<xref:System.CodeDom.Compiler.CodeDomProvider> から継承するクラスの完全修飾名のいずれかを指定します。<br /><br /> 値は、c#、cs、csharp、vb、vbs、visualbasic、vbscript、javascript、c++、mc、cpp になります。<br /><br /> 既定値: csharp<br /><br /> 短縮形 : `/l`<br /><br /> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][CodeDomProvider クラス](http://go.microsoft.com/fwlink/?LinkId=94778)です。|  
+|**/language:\<言語 >**|コード生成に使用するプログラミング言語を指定します。 Machine.config ファイルに登録された言語名か、<xref:System.CodeDom.Compiler.CodeDomProvider> から継承するクラスの完全修飾名のいずれかを指定します。<br /><br /> 値は、c#、cs、csharp、vb、vbs、visualbasic、vbscript、javascript、c++、mc、cpp になります。<br /><br /> 既定値: csharp<br /><br /> 短縮形 : `/l`<br /><br /> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [CodeDomProvider クラス](http://go.microsoft.com/fwlink/?LinkId=94778)です。|  
   
 ## <a name="choosing-a-namespace-for-the-client"></a>クライアントの名前空間の選択  
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/namespace:\<, string >**|WSDL または XML スキーマの `targetNamespace` から共通言語ランタイム (CLR: Common Language Runtime) 名前空間へのマッピングを指定します。 `targetNamespace` にワイルドカード (*) を使用すると、マッピングを明示的に指定せずにすべての `targetNamespaces` がその CLR 名前空間にマップされます。<br /><br /> メッセージ コントラクト名が操作名と競合しないようにするには、型参照を 2 つのコロン `::` で修飾するか、名前を一意にします。<br /><br /> 既定 : `DataContracts` のスキーマ ドキュメントのターゲット名前空間から派生します。 既定の名前空間は、生成される他のすべての型に使用されます。<br /><br /> 短縮形 : `/n`|  
+|**/namespace:\<string,string>**|WSDL または XML スキーマの `targetNamespace` から共通言語ランタイム (CLR: Common Language Runtime) 名前空間へのマッピングを指定します。 `targetNamespace` にワイルドカード (*) を使用すると、マッピングを明示的に指定せずにすべての `targetNamespaces` がその CLR 名前空間にマップされます。<br /><br /> メッセージ コントラクト名が操作名と競合しないようにするには、型参照を 2 つのコロン `::` で修飾するか、名前を一意にします。<br /><br /> 既定 : `DataContracts` のスキーマ ドキュメントのターゲット名前空間から派生します。 既定の名前空間は、生成される他のすべての型に使用されます。<br /><br /> 短縮形 : `/n`|  
   
 ## <a name="choosing-a-data-binding"></a>データ バインディングの選択  
   
@@ -76,10 +78,10 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/config:\<configFile >**|生成される構成ファイルの名前を指定します。<br /><br /> 既定値: output.config|  
+|**/config:\<configFile>**|生成される構成ファイルの名前を指定します。<br /><br /> 既定値: output.config|  
 |**/mergeConfig**|既存のファイルを上書きする代わりに、生成される構成ファイルを既存のファイルにマージします。|  
 |**/noConfig**|構成ファイルを生成しません。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メタデータを使用する](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
  [メタデータ アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)

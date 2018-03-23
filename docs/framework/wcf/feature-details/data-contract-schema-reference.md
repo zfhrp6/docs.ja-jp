@@ -1,34 +1,34 @@
 ---
-title: "データ コントラクト スキーマの参照"
-ms.custom: 
+title: データ コントラクト スキーマの参照
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 57ccc812aab5df0a9acd99bdcde327d56e4bad8d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="data-contract-schema-reference"></a>データ コントラクト スキーマの参照
 ここでは、XML シリアル化用の共通言語ランタイム (CLR) 型を表すために <xref:System.Runtime.Serialization.DataContractSerializer> が使用する XML スキーマ (XSD) のサブセットについて説明します。  
   
 ## <a name="datacontractserializer-mappings"></a>DataContractSerializer のマッピング  
- また、 `DataContractSerializer` は、メタデータ エンドポイントや [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してメタデータを [indigo1](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
+ また、 `DataContractSerializer` は、メタデータ エンドポイントや [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してメタデータを [indigo1](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
   
  また、 `DataContractSerializer` は、Svcutil.exe を使用して Web サービス記述言語 (WSDL) や XSD ドキュメントにアクセスし、サービスまたはクライアントのデータ コントラクトを生成するときに、XSD を CLR 型にマッピングします。  
   
@@ -60,7 +60,7 @@ ms.lasthandoff: 12/22/2017
 |`elementFormDefault`|修飾する必要があります。 `DataContractSerializer`でスキーマをサポートするには、すべての要素を修飾する必要があります。 これには、いずれかの設定によってxs:schema/@elementFormDefaultを"qualified"かを設定してxs:element/@form各個々 の要素の宣言を"qualified"にします。|  
 |`finalDefault`|無視されます。|  
 |`Id`|無視されます。|  
-|`targetNamespace`|サポートされます。データ コントラクト名前空間にマッピングされます。 この属性を指定しなかった場合は、空の名前空間が使用されます。 予約されている名前空間 http://schemas.microsoft.com/2003/10/Serialization/ は指定できません。|  
+|`targetNamespace`|サポートされます。データ コントラクト名前空間にマッピングされます。 この属性を指定しなかった場合は、空の名前空間が使用されます。 予約された名前空間をすることはできませんhttp://schemas.microsoft.com/2003/10/Serialization/です。|  
 |`version`|無視されます。|  
   
 ### <a name="xsschema-contents"></a>\<xs:schema >: コンテンツ  
@@ -78,7 +78,7 @@ ms.lasthandoff: 12/22/2017
 |`attribute`|無視されます。 `DataContractSerializer` では、 `xs:group`、 `xs:attributeGroup`、および `xs:attribute`の使用はサポートされていません。 これらの宣言は `xs:schema`の子として無視され、 `complexType` やその他のサポートされている構文内から参照できません。|  
 |`notation`|無視されます。|  
   
-## <a name="complex-types--xscomplextype"></a>複合型 – \<xs:complexType >  
+## <a name="complex-types--xscomplextype"></a>Complex Types – \<xs:complexType>  
   
 ### <a name="general-information"></a>一般情報  
  各複合型\<xs:complexType > データ コントラクトにマップします。  
@@ -94,7 +94,7 @@ ms.lasthandoff: 12/22/2017
 |`mixed`|false (既定) のみ有効です。|  
 |`name`|サポートされています。データ コントラクト名にマッピングされます。 名前にピリオドが含まれている場合は、内部型への型のマッピングが実行されます。 たとえば、 `A.B` という名前の複合型は、データ コントラクト名 `A`を持つ型の内部型であるデータ コントラクト型にマッピングされますが、このようなデータ コントラクト型が存在する場合に限られます。 複数レベルの入れ子が可能です。たとえば、 `A.B.C` という内部型も可能ですが、これは、 `A` と `A.B` の両方が存在する場合に限られます。|  
   
-### <a name="xscomplextype-contents"></a>\<xs:complexType >: コンテンツ  
+### <a name="xscomplextype-contents"></a>\<xs:complexType>: contents  
   
 |目次|Schema|  
 |--------------|------------|  
@@ -213,7 +213,7 @@ ms.lasthandoff: 12/22/2017
 |`keyref`|無視されます。|  
 |(空白)|サポートされています。|  
   
- \*使用する場合、`simpleType`と`complexType,`匿名型のマッピングは、同じ非匿名型、匿名データ コントラクトがないする点を除いて、および要素名から派生して生成された名前で、名前付きのデータ コントラクトが作成されるようにします。 匿名型のルールは、次のとおりです。  
+ \* 使用する場合、`simpleType`と`complexType,`匿名型のマッピングは、同じ非匿名型、匿名データ コントラクトがないする点を除いて、および要素名から派生して生成された名前で、名前付きのデータ コントラクトが作成されるようにします。 匿名型のルールは、次のとおりです。  
   
 -   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 実装詳細 : `xs:element` 名にピリオドが含まれていない場合、匿名型は、外部データ コントラクト型の内部型にマッピングされます。 名前にピリオドが含まれている場合、結果のデータ コントラクト型は、内部型ではなく、独立した型になります。  
   
@@ -221,7 +221,7 @@ ms.lasthandoff: 12/22/2017
   
 -   そのような名前を持つデータ コントラクトが既に存在する場合は、"1"、"2"、"3" などの番号が付加されて一意の名前になります。  
   
-## <a name="simple-types---xssimpletype"></a>単純型 - \<xs:simpleType >  
+## <a name="simple-types---xssimpletype"></a>Simple Types - \<xs:simpleType>  
   
 ### <a name="xssimpletype-attributes"></a>\<xs:simpleType >: 属性  
   
@@ -239,7 +239,7 @@ ms.lasthandoff: 12/22/2017
 |`list`|サポートされています。 フラグ列挙データ コントラクトにマッピングされます。 `xs:simpleType` の一覧のセクションを参照してください。|  
 |`union`|禁止。|  
   
-### <a name="xsrestriction"></a>\<xs:restriction >  
+### <a name="xsrestriction"></a>\<xs:restriction>  
   
 -   複合型制限は、base="`xs:anyType`" の場合のみサポートされます。  
   
@@ -342,7 +342,7 @@ public enum MyEnum
 </xs:simpleType>  
 ```  
   
-### <a name="xslist"></a>\<xs:list >  
+### <a name="xslist"></a>\<xs:list>  
  `DataContractSerializer` は、 `System.FlagsAttribute` によってマークされた列挙型を、 `xs:list` から派生した `xs:string`にマッピングします。 これ以外の `xs:list` のバリエーションはサポートされません。  
   
 ### <a name="xslist-attributes"></a>\<xs:list >: 属性  
@@ -537,7 +537,7 @@ public class Employee : Person
 |`positiveInteger`|<xref:System.Int64>。|  
   
 ## <a name="iserializable-types-mapping"></a>ISerializable 型のマッピング  
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Version 1.0 では、永続性の確保やデータ転送のためにオブジェクトをシリアル化する一般的な機構として `ISerializable` が導入されました。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を実装したり、アプリケーション間で受け渡したりできる、さまざまな `ISerializable` 型があります。 `DataContractSerializer` は、当然ながら `ISerializable` クラスをサポートします。 `DataContractSerializer` は、型の QName (修飾名) のみが異なり、事実上プロパティ コレクションである `ISerializable` 実装スキーマ型をマッピングします。 たとえば、 `DataContractSerializer` は、http://schemas.datacontract.org/2004/07/System 名前空間にある次の XSD 型に <xref:System.Exception> をマッピングします。  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Version 1.0 では、永続性の確保やデータ転送のためにオブジェクトをシリアル化する一般的な機構として `ISerializable` が導入されました。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を実装したり、アプリケーション間で受け渡したりできる、さまざまな `ISerializable` 型があります。 `DataContractSerializer` は、当然ながら `ISerializable` クラスをサポートします。 `DataContractSerializer` は、型の QName (修飾名) のみが異なり、事実上プロパティ コレクションである `ISerializable` 実装スキーマ型をマッピングします。 たとえば、`DataContractSerializer`マップ<xref:System.Exception>で次の XSD 型をhttp://schemas.datacontract.org/2004/07/System名前空間。  
   
 ```xml  
 <xs:complexType name="Exception">  
@@ -695,7 +695,7 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
