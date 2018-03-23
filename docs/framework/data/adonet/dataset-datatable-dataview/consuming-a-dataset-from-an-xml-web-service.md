@@ -1,27 +1,29 @@
 ---
-title: "XML Web サービスからの DataSet の使用"
-ms.custom: 
+title: XML Web サービスからの DataSet の使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 316bebfec652987351e64368c3b7c0155011fe8e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9bfcd4d8dca38c9438c072c143cf7ba0eafd6ecf
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>XML Web サービスからの DataSet の使用
 <xref:System.Data.DataSet> は、非接続型デザインで設計されています。インターネットで簡単にデータを転送するのが目的の一部です。 **データセット**「シリアル化可能」への入力として指定できますか、ストリームのコンテンツに追加のコーディングなし XML Web サービスからの出力が必要な点で、**データセット**XML Web サービスからクライアントをバックアップします。 **データセット**DiffGram 形式を使用して XML ストリームに暗黙的に変換、ネットワーク経由で送信される、として、XML ストリームから再構築し、**データセット**受信側でします。 これにより、XML Web サービスを使用してリレーショナル データを送信および返送する、たいへん簡単で柔軟性のある方法が提供されます。 DiffGram 形式の詳細については、次を参照してください。 [Diffgram](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md)です。  
@@ -29,7 +31,7 @@ ms.lasthandoff: 01/19/2018
  次の例は、XML Web サービスと使用するクライアントを作成する方法を示します、**データセット**リレーショナル データ (変更後のデータを含む) を解決するには、更新プログラムは、元のデータ ソースをバックアップします。  
   
 > [!NOTE]
->  XML Web サービスを作成する場合は、常にセキュリティへの影響を考慮することをお勧めします。 XML Web サービスをセキュリティで保護する方法の詳細については、次を参照してください。[セキュリティで保護する XML Web サービス作成を使用して ASP.NET](http://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c)です。  
+>  XML Web サービスを作成する場合は、常にセキュリティへの影響を考慮することをお勧めします。 XML Web サービスをセキュリティで保護する方法の詳細については、次を参照してください。[セキュリティで保護する XML Web サービス作成を使用して ASP.NET](https://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c)です。  
   
 ### <a name="to-create-an-xml-web-service-that-returns-and-consumes-a-dataset"></a>DataSet を返し、処理する XML Web サービスを作成するには、次のようにします。  
   
@@ -176,33 +178,33 @@ ms.lasthandoff: 01/19/2018
   
      プロキシは、Web サービス記述言語ツールを使用して作成できます。 たとえば、XML Web サービスが http://myserver/data/DataSetSample.asmx に公開されている場合の名前空間と Visual Basic .NET プロキシを作成する、次のようコマンドを発行**WebData.DSSample**し、ファイルに保存sample.vb です。  
   
-    ```  
-    wsdl /l:VB /out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
+    ```console
+    wsdl /l:VB -out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
     ```  
   
      ファイル sample.cs に C# プロキシを作成するには、次のコマンドを実行します。  
   
-    ```  
-    wsdl /l:CS /out:sample.cs http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
+    ```console
+    wsdl -l:CS -out:sample.cs http://myserver/data/DataSetSample.asmx -n:WebData.DSSample  
     ```  
   
      その後、プロキシをライブラリとしてコンパイルし、XML Web サービスのクライアントにインポートします。 sample.vb に格納されている Visual Basic .NET プロキシ コードを sample.dll としてコンパイルするには次のコマンドを実行します。  
   
-    ```  
-    vbc /t:library /out:sample.dll sample.vb /r:System.dll /r:System.Web.Services.dll /r:System.Data.dll /r:System.Xml.dll  
+    ```console  
+    vbc -t:library -out:sample.dll sample.vb -r:System.dll -r:System.Web.Services.dll -r:System.Data.dll -r:System.Xml.dll  
     ```  
   
      sample.cs に格納されている C# プロキシ コードを sample.dll としてコンパイルするには次のコマンドを実行します。  
   
-    ```  
-    csc /t:library /out:sample.dll sample.cs /r:System.dll /r:System.Web.Services.dll /r:System.Data.dll /r:System.Xml.dll  
+    ```console
+    csc -t:library -out:sample.dll sample.cs -r:System.dll -r:System.Web.Services.dll -r:System.Data.dll -r:System.Xml.dll  
     ```  
   
 3.  XML Web サービスのクライアントを作成します。  
   
      Visual studio での Web サービス プロキシ クラスを生成する場合は、単に、クライアント プロジェクトを作成して、ソリューション エクスプ ローラー ウィンドウで、プロジェクトを右クリックしをクリックして**Web 参照の追加**から Web サービスの選択と(この必要があります、Web サービス エンドポイントのアドレスを提供して、Web サービスでは、現在のソリューション内または現在のコンピューターで使用可能な場合。) Web サービスの一覧上記の手順に従って、XML Web サービス プロキシを作成した場合は、それをクライアント コードにインポートし、XML Web サービスのメソッドを処理できます。 次のサンプル コード、呼び出し、プロキシ ライブラリがインポート**GetCustomers** 、顧客の一覧を取得する追加、新しい顧客しを返します、**データセット**、更新プログラムがある**UpdateCustomers**.  
   
-     例では、渡される通知、**データセット**によって返される**DataSet.GetChanges**に**UpdateCustomers**変更行のみに渡される必要があるため**UpdateCustomers**です。 **UpdateCustomers**は解決されたを返します**データセット**、することができます**マージ**既存に**データセット**解決の変更を反映し、更新プログラムからの行エラー情報。 次のコードには、Web 参照を作成する Visual Studio を使用することと、Web 参照の dssample に変更済みの名前を変更したことが前提としています、 **Web 参照の追加** ダイアログ ボックス。  
+     例では、渡される通知、**データセット**によって返される**DataSet.GetChanges**に**UpdateCustomers**変更行のみに渡される必要があるため**UpdateCustomers**です。 **UpdateCustomers**返しますは解決された**データセット**、することができます**マージ**既存に**データセット**を組み込むと、解決された変更更新プログラムからの行エラー情報。 次のコードには、Web 参照を作成する Visual Studio を使用することと、Web 参照の dssample に変更済みの名前を変更したことが前提としています、 **Web 参照の追加** ダイアログ ボックス。  
   
     ```vb  
     Imports System  
@@ -260,22 +262,22 @@ ms.lasthandoff: 01/19/2018
   
      プロキシ クラスを手動で作成する場合は、次の手順に従ってください。 このサンプルをコンパイルするには、作成したプロキシ ライブラリ (sample.dll) および関連する .NET ライブラリを指定します。 ファイル client.vb に格納されている Visual Basic .NET バージョンのサンプルをコンパイルするには次のコマンドを実行します。  
   
-    ```  
-    vbc client.vb /r:sample.dll /r:System.dll /r:System.Data.dll /r:System.Xml.dll /r:System.Web.Services.dll  
+    ```console
+    vbc client.vb -r:sample.dll -r:System.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Web.Services.dll  
     ```  
   
      ファイル client.cs に格納されている C# バージョンのサンプルをコンパイルするには、次のコマンドを実行します。  
   
-    ```  
-    csc client.cs /r:sample.dll /r:System.dll /r:System.Data.dll /r:System.Xml.dll /r:System.Web.Services.dll  
+    ```console
+    csc client.cs -r:sample.dll -r:System.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Web.Services.dll  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET](../../../../../docs/framework/data/adonet/index.md)  
  [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
  [DataAdapter からの DataSet の読み込み](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)  
  [DataAdapter によるデータ ソースの更新](../../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [DataAdapter パラメーター](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
- [Web サービス記述言語ツール (Wsdl.exe)](http://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88)  
+ [Web サービス記述言語ツール (Wsdl.exe)](https://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

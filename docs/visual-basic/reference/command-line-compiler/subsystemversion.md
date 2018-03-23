@@ -1,35 +1,34 @@
 ---
-title: /subsystemversion (Visual Basic)
-ms.date: 07/20/2015
+title: -/subsystemversion (Visual Basic)
+ms.date: 03/13/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - /subsystemversion compiler option [Visual Basic]
 - -subsystemversion compiler option [Visual Basic]
 - subsystemversion compiler option [Visual Basic]
 ms.assetid: 08be22b2-f447-4cd3-8203-120b1b920b54
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8330896f890febc4d9f8627715fdd55a8f341f0c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 9369f87f62bd2f481c543f6cdbb3344ac841193e
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="subsystemversion-visual-basic"></a>/subsystemversion (Visual Basic)
+# <a name="-subsystemversion-visual-basic"></a>-/subsystemversion (Visual Basic)
 生成された実行可能ファイルが動作できるサブシステムの最小バージョンを指定します。これにより、実行可能ファイルが動作できる Windows のバージョンが決まります。 通常、このオプションを指定することで、実行可能ファイルが、Windows の以前のバージョンでは使用できない特定のセキュリティ機能を利用できるようになります。  
   
 > [!NOTE]
->  サブシステム自体を指定するには、[/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) のコンパイラ オプションを使用します。  
+>  サブシステム自体を指定するには、[-target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) のコンパイラ オプションを使用します。  
   
 ## <a name="syntax"></a>構文  
   
 ```vb  
-/subsystemversion:major.minor  
+-subsystemversion:major.minor  
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -52,7 +51,7 @@ ms.lasthandoff: 10/18/2017
 |[!INCLUDE[win8](~/includes/win8-md.md)]|6.02|  
   
 ## <a name="default-values"></a>既定の値  
- **/subsystemversion** コンパイラ オプションの既定値は条件によって異なります。その条件を次に示します。  
+ **-subsystemversion** コンパイラ オプションの既定値は条件によって異なります。その条件を次に示します。  
   
 -   次のコンパイラ オプションのいずれかが設定されている場合、既定値は 6.02 です。  
   
@@ -60,14 +59,14 @@ ms.lasthandoff: 10/18/2017
   
     -   [/target:winmdobj](../../../visual-basic/reference/command-line-compiler/target.md)  
   
-    -   [/platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)  
+    -   [-platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)  
   
 -   MSBuild を使用しており、[!INCLUDE[net_v45](~/includes/net-v45-md.md)] が対象で、さらにこの一覧で前に指定したコンパイラ オプションを設定していない場合、既定値は 6.00 です。  
   
 -   上記の条件がどれも当てはまらない場合、既定値は 4.00 です。  
   
 ## <a name="setting-this-option"></a>このオプションを設定する  
- 設定する、 **/subsystemversion**コンパイラ オプション Visual Studio で、.vbproj ファイルを開くし、値を指定する必要があります、 `SubsystemVersion` MSBuild XML 内のプロパティです。 Visual Studio IDE でこのオプションを設定することはできません。 詳細については、このトピックの「既定値」または「[MSBuild プロジェクトの共通プロパティ](/visualstudio/msbuild/common-msbuild-project-properties)」を参照してください。  
+ 設定する、 **-subsystemversion**コンパイラ オプション Visual Studio で、.vbproj ファイルを開くし、値を指定する必要があります、 `SubsystemVersion` MSBuild XML 内のプロパティです。 Visual Studio IDE でこのオプションを設定することはできません。 詳細については、このトピックの「既定値」または「[MSBuild プロジェクトの共通プロパティ](/visualstudio/msbuild/common-msbuild-project-properties)」を参照してください。  
   
 
   

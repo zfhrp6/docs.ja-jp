@@ -1,7 +1,7 @@
 ---
-title: "C# 7 の新機能 - C# ガイド"
-description: "C# 言語の次期バージョン 7 で導入される新機能の概要を示します。"
-keywords: "C#, .NET, .NET Core, 最新機能, 新機能"
+title: C# 7 の新機能 - C# ガイド
+description: C# 言語の次期バージョン 7 で導入される新機能の概要を示します。
+keywords: C#, .NET, .NET Core, 最新機能, 新機能
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/21/2016
@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
 ms.openlocfilehash: 374ac9917464a7e83566440abab10eda8a9c8683
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="whats-new-in-c-7"></a>C# 7 の新機能
 

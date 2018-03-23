@@ -1,12 +1,13 @@
 ---
-title: "方法 : トレースとデバッグを指定して条件付きコンパイルを実行する"
-ms.custom: 
+title: '方法 : トレースとデバッグを指定して条件付きコンパイルを実行する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - trace compiler options
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - TRACE directive
 - conditional compilation, tracing code
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
-caps.latest.revision: "11"
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ccdadc22728c28c8dea80f168a98cb985b2572a7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5e590888a56ed4c325e89eb828349f4f289815cd
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>方法 : トレースとデバッグを指定して条件付きコンパイルを実行する
 開発時にアプリケーションをデバッグするときは、トレース出力とデバッグ出力の両方が Visual Studio の [出力] ウィンドウに表示されます。 ただし、配置されるアプリケーションにトレース機能を組み込むには、**TRACE** コンパイラ ディレクティブを有効にして、インストルメント化されたアプリケーションをコンパイルする必要があります。 これにより、コンパイルされたアプリケーションのリリース バージョンに、トレース コードが組み込まれます。 **TRACE** ディレクティブを有効にしないと、コンパイル時にすべてのトレース コードが無視され、配置する実行可能コードに含まれなくなります。  
@@ -59,9 +61,9 @@ ms.lasthandoff: 12/22/2017
   
      たとえば、コマンド ラインで次のコンパイラ命令を入力すると、コンパイルされた実行可能ファイルにトレース コードが組み込まれます。  
   
-     Visual Basic の場合: **vbc /r:System.dll /d:TRACE=TRUE /d:DEBUG=FALSE MyApplication.vb**  
+     Visual basic の場合: **vbc-r:System.dll-d: トレース = TRUE-d: デバッグ = FALSE MyApplication.vb**  
   
-     C# の場合: **csc /r:System.dll /d:TRACE /d:DEBUG=FALSE MyApplication.cs**  
+     For C#: **csc -r:System.dll -d:TRACE -d:DEBUG=FALSE MyApplication.cs**  
   
     > [!TIP]
     >  複数のアプリケーション ファイルをコンパイルするには、各ファイル名の間にスペースを 1 つ挿入します。たとえば、「**MyApplication1.vb MyApplication2.vb MyApplication3.vb**」または「**MyApplication1.cs MyApplication2.cs MyApplication3.cs**」とします。  
@@ -72,8 +74,8 @@ ms.lasthandoff: 12/22/2017
     |---------------|-------------|  
     |`vbc`|Visual Basic コンパイラ|  
     |`csc`|C# コンパイラ|  
-    |`/r:`|外部アセンブリ (EXE または DLL) を参照します。|  
-    |`/d:`|条件付きコンパイル シンボルを定義します。|  
+    |`-r:`|外部アセンブリ (EXE または DLL) を参照します。|  
+    |`-d:`|条件付きコンパイル シンボルを定義します。|  
   
     > [!NOTE]
     >  TRACE または DEBUG は大文字で入力する必要があります。 条件付きコンパイル コマンドの詳細情報を参照するには、コマンド プロンプトに `vbc /?` (Visual Basic の場合) または `csc /?` (c# の場合) と入力します。 詳細については、「[コマンド ラインからのビルド](~/docs/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)」(C# の場合) または「[コマンド ライン コンパイラの起動](~/docs/visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)」(Visual Basic の場合) を参照してください。  
@@ -95,16 +97,16 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-disable-tracing-or-debugging"></a>トレースまたはデバッグを無効にするには  
   
-1.  ソース コードからコンパイラ ディレクティブを削除します。  
+ソース コードからコンパイラ ディレクティブを削除します。  
   
-     \- または  
+\- または  
   
-2.  コンパイラ ディレクティブをコメント アウトします。  
+コンパイラ ディレクティブをコメント アウトします。  
   
-    > [!NOTE]
-    >  コンパイルの準備ができたら、**[ビルド]** メニューの **[ビルド]** を選択できます。または、条件付きコンパイル シンボルを定義するための「**d:**」を入力せずにコマンド ライン メソッドを使用することもできます。  
+> [!NOTE]
+>  コンパイルの準備ができたら、**[ビルド]** メニューの **[ビルド]** を選択できます。または、条件付きコンパイル シンボルを定義するための「**d:**」を入力せずにコマンド ライン メソッドを使用することもできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
  [方法 : トレース スイッチを作成、初期化、および構成する](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
  [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)  

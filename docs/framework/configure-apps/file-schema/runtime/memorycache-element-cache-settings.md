@@ -1,44 +1,46 @@
 ---
-title: "&lt;memoryCache&gt;要素 (キャッシュの設定)"
-ms.custom: 
+title: '&lt;memoryCache&gt;要素 (キャッシュの設定)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - <memoryCache> element
 - caching [.NET Framework], configuration
 - memoryCache element
 ms.assetid: 182a622f-f7cf-472d-9d0b-451d2fd94525
-caps.latest.revision: "12"
+caps.latest.revision: ''
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 5862e696f084916f3359d185f42e84b2a2789a0e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8219607debb9f0f616895a57e0328b3785d5e84e
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ltmemorycachegt-element-cache-settings"></a>&lt;memoryCache&gt;要素 (キャッシュの設定)
 <xref:System.Runtime.Caching.MemoryCache> クラスに基づくキャッシュを構成するために使用される要素を定義します。 <xref:System.Runtime.Caching.Configuration.MemoryCacheElement> クラスは、キャッシュの構成に使用できる [memoryCache](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md) 要素を定義します。 <xref:System.Runtime.Caching.MemoryCache> クラスの複数のインスタンスを、単一のアプリケーションで使用できます。 構成ファイル内の各 `memoryCache` 要素には、指定した <xref:System.Runtime.Caching.MemoryCache> インスタンスの設定を含むことができます。  
   
  \<configuration>  
-\<system.runtime.caching >  
-\<memoryCache >  
+\<system.runtime.caching>  
+\<memoryCache>  
   
 ## <a name="syntax"></a>構文  
   
 ```xml  
-<memoryCache   
+<memoryCache>   
     <namedCaches>  
         <!-- child elements -->  
     </namedCaches>   
-< memoryCache />  
+</memoryCache>  
 ```  
   
 ## <a name="type"></a>型  
@@ -101,7 +103,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Caching.MemoryCache>  
  [\<system.runtime.caching > 要素 (キャッシュの設定)](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)  
  [\<namedCaches > 要素 (キャッシュの設定)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

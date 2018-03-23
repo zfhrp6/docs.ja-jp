@@ -1,32 +1,31 @@
 ---
-title: /bugreport
-ms.date: 07/20/2015
+title: -bugreport
+ms.date: 03/08/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - -bugreport compiler option [Visual Basic]
 - bugreport compiler option [Visual Basic]
 - /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
-caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0c36cdcaf8d2db0b08e262d6ba8ff2bb774fb233
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 766a4252fd77be95e2641239cba53a4d90e0cb1d
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="bugreport"></a>/bugreport
+# <a name="-bugreport"></a>-bugreport
 バグのレポートをファイルするときに使用できるファイルを作成します。  
   
 ## <a name="syntax"></a>構文  
   
 ```  
-/bugreport:file  
+-bugreport:file  
 ```  
   
 ## <a name="arguments"></a>引数  
@@ -53,9 +52,9 @@ ms.lasthandoff: 01/19/2018
  すべてのソース コード ファイルのコピーが含まれているため`file`、できるだけ小さなプログラムに思われるコードの障害を再現することがあります。  
   
 > [!IMPORTANT]
->  `/bugreport`オプションは、機密性の高い情報を含むファイルを生成します。 これにより、現在の時刻、コンパイラのバージョンが含まれます。[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョン、オペレーティング システムのバージョン、ユーザー名、コマンドライン引数を、コンパイラが実行された、すべてのソース コードでは、参照されるアセンブリのいずれかのバイナリ形式です。 このオプションは、Web.config ファイルのサーバー側のコンパイルでのコマンド ライン オプションを指定することによってアクセスできる、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーションです。 これを回避するには、ユーザーがサーバーでのコンパイルが行われないよう、Machine.config ファイルを変更します。  
+>  `-bugreport`オプションは、機密性の高い情報を含むファイルを生成します。 これにより、現在の時刻、コンパイラのバージョンが含まれます。[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョン、オペレーティング システムのバージョン、ユーザー名、コマンドライン引数を、コンパイラが実行された、すべてのソース コードでは、参照されるアセンブリのいずれかのバイナリ形式です。 このオプションは、Web.config ファイルのサーバー側のコンパイルでのコマンド ライン オプションを指定することによってアクセスできる、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーションです。 これを回避するには、ユーザーがサーバーでのコンパイルが行われないよう、Machine.config ファイルを変更します。  
   
- このオプションを使用する場合`/errorreport:prompt`、 `/errorreport:queue`、または`/errorreport:send`、アプリケーションでの情報は、内部コンパイラ エラーが発生して`file`がマイクロソフトに送信します。 この情報はマイクロソフトのエンジニアが、エラーの原因を特定し、次のリリースの改善に役立てます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 既定では、Microsoft に情報は送信されません。 ただしを使用してアプリケーションをコンパイルするときに`/errorreport:queue`、既定で有効にする、アプリケーションがエラー レポートを収集します。 次に、コンピューターの管理者がログインすると、エラー レポート システムにより、管理者は、ログオン以降に発生したすべてのエラー レポートを Microsoft に転送するポップアップ ウィンドウが表示されます。  
+ このオプションを使用する場合`-errorreport:prompt`、 `-errorreport:queue`、または`-errorreport:send`、アプリケーションでの情報は、内部コンパイラ エラーが発生して`file`がマイクロソフトに送信します。 この情報はマイクロソフトのエンジニアが、エラーの原因を特定し、次のリリースの改善に役立てます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 既定では、Microsoft に情報は送信されません。 ただしを使用してアプリケーションをコンパイルするときに`-errorreport:queue`、既定で有効にする、アプリケーションがエラー レポートを収集します。 次に、コンピューターの管理者がログインすると、エラー レポート システムにより、管理者は、ログオン以降に発生したすべてのエラー レポートを Microsoft に転送するポップアップ ウィンドウが表示されます。  
   
 > [!NOTE]
 >  `/bugreport`オプションは、Visual Studio 開発環境からは利用できません。 使用可能なコマンドラインからコンパイルするときにのみです。  
@@ -64,12 +63,12 @@ ms.lasthandoff: 01/19/2018
  次の例をコンパイル`T2.vb`ファイルにバグ レポートのすべての情報を格納`Problem.txt`です。  
   
 ```  
-vbc /bugreport:problem.txt t2.vb  
+vbc -bugreport:problem.txt t2.vb  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
- [/debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)  
- [/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)  
+ [デバッグ (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)  
+ [-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)  
  [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [securityPolicy (ASP.NET 設定スキーマ) の trustLevel 要素](http://msdn.microsoft.com/library/729ab04c-03da-4ee5-86b1-be9d08a09369)

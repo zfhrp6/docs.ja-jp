@@ -1,12 +1,13 @@
 ---
-title: "方法 : シンプルな Windows フォーム コントロールを開発する"
-ms.custom: 
+title: '方法 : シンプルな Windows フォーム コントロールを開発する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating simple controls using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 86cbe435-45b7-4cb4-9b5a-47418369758d
-caps.latest.revision: "17"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: da876ec74bf80d4329451a9bf125421731c7f9de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ab7fced9237cad3de30d417770f6f1d7f7e7ed6a
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-develop-a-simple-windows-forms-control"></a>方法 : シンプルな Windows フォーム コントロールを開発する
 ここでは、カスタム Windows フォーム コントロールの主な作成手順を紹介します。 このチュートリアルで開発された単純なコントロールでの配置は、その<xref:System.Windows.Forms.Control.Text%2A>プロパティを変更します。 イベントを発生させたり処理したりすることはありません。  
@@ -50,7 +52,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[System.Windows.Forms.FirstControl#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#3)]
      [!code-vb[System.Windows.Forms.FirstControl#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#3)]  
   
-     コントロールのビジュアル表示を変更するプロパティを設定するときに呼び出す必要があります、<xref:System.Windows.Forms.Control.Invalidate%2A>コントロールを再描画するためです。 <xref:System.Windows.Forms.Control.Invalidate%2A>基本クラスで定義された<xref:System.Windows.Forms.Control>です。  
+     コントロールのビジュアル表示を変更するプロパティを設定するときに呼び出す必要があります、<xref:System.Windows.Forms.Control.Invalidate%2A>コントロールを再描画するためです。 <xref:System.Windows.Forms.Control.Invalidate%2A> 基本クラスで定義された<xref:System.Windows.Forms.Control>です。  
   
 3.  保護されたオーバーライド<xref:System.Windows.Forms.Control.OnPaint%2A>から継承されたメソッド<xref:System.Windows.Forms.Control>をコントロールにレンダリング ロジックを提供します。 オーバーライドしていない場合<xref:System.Windows.Forms.Control.OnPaint%2A>コントロールでは、自身で描画できません。 次のコード フラグメントで、<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドが表示されます、<xref:System.Windows.Forms.Control.Text%2A>プロパティから継承<xref:System.Windows.Forms.Control>で指定された配置された、`alignmentValue`フィールドです。  
   
@@ -70,12 +72,12 @@ ms.lasthandoff: 12/22/2017
   
     2.  ソース コードをコンパイルして、アセンブリを生成し、アプリケーションのディレクトリに保存します。 それには、ソース ファイルが格納されているディレクトリで次のコマンドを実行します。  
   
-        ```vb  
-        vbc /t:library /out:[path to your application's directory]/CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll FirstControl.vb  
+        ```console  
+        vbc -t:library -out:[path to your application's directory]/CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll FirstControl.vb  
         ```  
   
-        ```csharp  
-        csc /t:library /out:[path to your application's directory]/CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll FirstControl.cs  
+        ```console 
+        csc -t:library -out:[path to your application's directory]/CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll FirstControl.cs  
         ```  
   
          `/t:library` コンパイラ オプションは、作成しているアセンブリが (実行可能ファイルではなく) ライブラリであることをコンパイラに伝えます。 `/out` オプションでは、アセンブリの名前とパスを指定します。 `/r` オプションでは、コードが参照するアセンブリの名前を指定します。 この例では、ご自身のアプリケーションのみが使用できるプライベート アセンブリを作成します。 このため、アセンブリはご自身のアプリケーションのディレクトリに保存する必要があります。 配布用コントロールのパッケージ化と配置の詳細については、[配置](../../../../docs/framework/deployment/index.md)に関するページをご覧ください。  
@@ -94,25 +96,25 @@ ms.lasthandoff: 12/22/2017
   
 2.  ソース ファイルが格納されているディレクトリから次のコマンドを実行して、ソース コードを実行可能アセンブリにコンパイルします。  
   
-    ```vb  
-    vbc /r:CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll SimpleForm.vb  
+    ```console  
+    vbc -r:CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll SimpleForm.vb  
     ```  
   
-    ```csharp  
-    csc /r:CustomWinControls.dll /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll SimpleForm.cs  
+    ```console 
+    csc -r:CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll SimpleForm.cs  
     ```  
   
      CustomWinControls.dll は、クラスを含むアセンブリ`FirstControl`です。 フォームがアセンブリにアクセスできるように、そのアセンブリはソース ファイル (SimpleForm.cs または SimpleForms.vb) と同じディレクトリに格納されている必要があります。  
   
 3.  次のコマンドで SimpleForm.exe を実行します。  
   
-    ```  
+    ```console
     SimpleForm  
     ```  
   
  [!code-csharp[System.Windows.Forms.FirstControl#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/SimpleForm.cs#10)]
  [!code-vb[System.Windows.Forms.FirstControl#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/SimpleForm.vb#10)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム コントロールのプロパティ](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
  [Windows フォーム コントロールのイベント](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)

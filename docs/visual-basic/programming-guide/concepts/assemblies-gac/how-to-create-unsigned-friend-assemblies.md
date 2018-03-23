@@ -1,22 +1,21 @@
 ---
-title: "方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。"
-ms.custom: 
-ms.date: 07/20/2015
+title: '方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。'
+ms.custom: ''
+ms.date: 03/14/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5735eb79-9729-4c46-ac1f-537ada3acaa7
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a2b2667c60a07a2897a0934d210901042e2e43c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 8cc71a27f24c634ebadb060325df4c602b1387b0
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a>方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。
 この例では、署名のないアセンブリと共にフレンド アセンブリを使用する方法を示します。  
@@ -30,7 +29,7 @@ ms.lasthandoff: 11/21/2017
     ```vb  
     ' friend_unsigned_A.vb  
     ' Compile with:   
-    ' Vbc /target:library friend_unsigned_A.vb  
+    ' vbc -target:library friend_unsigned_A.vb  
     Imports System.Runtime.CompilerServices  
     Imports System  
   
@@ -53,8 +52,8 @@ ms.lasthandoff: 11/21/2017
   
 3.  次のコマンドを使用して friend_signed_A をコンパイルして署名します。  
   
-    ```vb  
-    Vbc /target:library friend_unsigned_A.vb  
+    ```console  
+    vbc -target:library friend_unsigned_A.vb  
     ```  
   
 4.  という名前の Visual Basic ファイルを作成する`friend_unsigned_B`次のコードを格納しています。 friend_unsigned_A が friend_unsigned_B をフレンド アセンブリとして指定しているため、friend_unsigned_B 内のコードは、friend_unsigned_A の `Friend` 型とメンバーにアクセスできます。  
@@ -62,7 +61,7 @@ ms.lasthandoff: 11/21/2017
     ```vb  
     ' friend_unsigned_B.vb  
     ' Compile with:   
-    ' Vbc /r:friend_unsigned_A.dll friend_unsigned_B.vb  
+    ' vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb  
     Module Module1  
         Sub Main()  
             ' Access a Friend type.  
@@ -80,15 +79,15 @@ ms.lasthandoff: 11/21/2017
   
 5.  次のコマンドを使用して friend_signed_B をコンパイルします。  
   
-    ```vb  
-    Vbc /r:friend_unsigned_A.dll friend_unsigned_B.vb  
+    ```console
+    vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb  
     ```  
   
      コンパイラによって生成されるアセンブリの名前は、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されるフレンド アセンブリ名と一致している必要があります。 使用してアセンブリを明示的に設定することができます、`/out`コンパイラ オプション。  
   
 6.  friend_signed_B.exe ファイルを実行します。  
   
-     プログラムによって 2 つの文字列 "Class1.Test" と "Class2.Test" が出力されます。  
+     2 つの文字列が表示されます:"Class1.Test"と"Class2.Test"です。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `Friend` 型とメンバーの参照可能範囲を制御することです。  

@@ -1,8 +1,9 @@
 ---
-title: "方法: コマンドラインから Windows フォーム アプリケーションを作成します。"
-ms.date: 03/30/2017
+title: '方法: コマンドラインから Windows フォーム アプリケーションを作成します。'
+ms.date: 03/14/2018
 ms.prod: .net-framework
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.topic: article
 dev_langs:
 - csharp
@@ -12,16 +13,15 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating basic form
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 22acab6ea3912488ae1382ffb42ca5383a7311af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+author: rpetrusha
+ms.author: ronpet
+ms.workload:
+- dotnet
+ms.openlocfilehash: 79fda0f5f455cbac50c0c1b51f0cd3bef4c5bfbc
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>方法: コマンドラインから Windows フォーム アプリケーションを作成します。
 次の手順では、コマンドラインから Windows フォーム アプリケーションを作成して実行するために完了する必要のある基本的な手順について説明します。 Visual Studio では、これらの手順に対する広範なサポートが用意されています。  参照してください[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\))です。  
@@ -49,9 +49,9 @@ ms.lasthandoff: 12/22/2017
   
 4.  `Main` メソッドをクラスに追加します。  
   
-    1.  <xref:System.STAThreadAttribute> を `Main` メソッドに適用し、Windows フォーム アプリケーションがシングル スレッド アパートメントであることを指定します。  
+    1.  適用、 <xref:System.STAThreadAttribute> c# `Main` Windows フォーム アプリケーションを指定するメソッドは、シングル スレッド アパートメントです。 (属性は必要ありません Visual basic で Windows フォーム アプリケーションを使用して開発 Visual Basic を使用して、シングル スレッド アパートメント モデル既定ためです。)  
   
-    2.  <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> を呼び出して、アプリケーションを Windows XP の外観にします。  
+    2.  呼び出す<xref:System.Windows.Forms.Application.EnableVisualStyles%2A>スタイルを適用するオペレーティング システムをアプリケーションにします。  
   
     3.  フォームのインスタンスを作成して実行します。  
   
@@ -64,13 +64,13 @@ ms.lasthandoff: 12/22/2017
   
 2.  フォームをコンパイルします。  
   
-    -   C# を使用している場合は、次のように入力します。`csc form1.cs`  
+    -   C# を使用している場合は、次のように入力します。 `csc form1.cs`  
   
          `-or-`  
   
-    -   Visual Basic を使用している場合は、次のように入力します。`vbc form1.vb /r:system.dll,system.drawing.dll,system.windows.forms.dll`  
+    -   Visual Basic を使用している場合は、次のように入力します。 `vbc form1.vb`  
   
-3.  コマンド プロンプトで次のように入力します。`Form1.exe`  
+3.  コマンド プロンプトで次のように入力します。 `Form1.exe`  
   
 ## <a name="adding-a-control-and-handling-an-event"></a>コントロールの追加とイベントの処理  
  前の手順は、コンパイルして実行する基本的な Windows フォームを作成する方法を示しました。 次の手順では、コントロールを作成してフォームに追加し、コントロールのイベントを処理する方法を示します。 Windows フォームに追加できるコントロールの詳細については、次を参照してください。 [Windows フォーム コントロール](../../../docs/framework/winforms/controls/index.md)です。  
@@ -118,7 +118,7 @@ ms.lasthandoff: 12/22/2017
   
 -   コードをコンパイルするには、アプリケーションをコンパイルして実行する方法を説明した、前述の手順に従います。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Form>  
  <xref:System.Windows.Forms.Control>  
  [Windows フォームの表示形式の変更](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  

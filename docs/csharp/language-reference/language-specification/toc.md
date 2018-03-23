@@ -1,4 +1,5 @@
 # [C# 6.0 のドラフト仕様](index.md)
+## [はじめに](../../../../_csharplang/spec/introduction.md)
 ## [字句構造](../../../../_csharplang/spec/lexical-structure.md)
 ## [基本的な概念](../../../../_csharplang/spec/basic-concepts.md)
 ## [型](../../../../_csharplang/spec/types.md)
