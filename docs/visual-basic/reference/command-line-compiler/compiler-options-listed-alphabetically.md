@@ -12,14 +12,16 @@ helpviewer_keywords:
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 008a1619343874396e22c3606f8a0aeadd81cd7a
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 4c78246a1e9fe14b0ba64ac447293d02e8416079
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic コンパイラ オプションがアルファベット順に表示
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) からプログラムをコンパイルする方法の代替手段として提供されています。 アルファベット順に並べ替えた [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
+プログラムをコンパイルする代わりに、Visual Basic のコマンド ライン コンパイラが提供される、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境 (IDE) です。 アルファベット順に並べ替え、Visual Basic のコマンド ライン コンパイラ オプションの一覧を次に示します。  
+
+[!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 |オプション|目的|  
 |------------|-------------|  
@@ -36,9 +38,9 @@ ms.lasthandoff: 03/22/2018
 |[-define](../../../visual-basic/reference/command-line-compiler/define.md)|条件付きコンパイルのシンボルを定義します。|  
 |[-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)|アセンブリに完全に署名するか、部分的に署名するかを指定します。|  
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|ドキュメント コメントを XML ファイルに出力します。|  
-|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。|  
+|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Visual Basic コンパイラで内部コンパイラ エラーを報告する方法を指定します。|  
 |[-filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|出力ファイルでセクションをアラインするサイズを指定します。|  
-|[-help](../../../visual-basic-reference/command-line-compiler/help.md)|コンパイラ オプションを出力します。 このコマンドは、`-?` オプションの指定と同じです。 コンパイルは発生しません。|  
+|[-help](../../../visual-basic/reference/command-line-compiler/help.md)|コンパイラ オプションを出力します。 このコマンドは、`-?` オプションの指定と同じです。 コンパイルは発生しません。|  
 |[-highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|特定の実行可能ファイルで高エントロピ ASLR (Address Space Layout Randomization) をサポートするかどうかを示します。|  
 |[-imports](../../../visual-basic/reference/command-line-compiler/imports.md)|指定したアセンブリから名前空間をインポートします。|  
 |[-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。|  
@@ -67,6 +69,8 @@ ms.lasthandoff: 03/22/2018
 |[-quiet](../../../visual-basic/reference/command-line-compiler/quiet.md)|コンパイラで構文関連のエラーと警告のコードが表示されないようにします。|  
 |[-recurse](../../../visual-basic/reference/command-line-compiler/recurse.md)|コンパイルするソース ファイルをサブディレクトリで検索します。|  
 |[-reference](../../../visual-basic/reference/command-line-compiler/reference.md)|アセンブリからメタデータをインポートします。|  
+|[/refonly](refonly-compiler-option.md)|参照アセンブリのみを出力します。|
+|[/refout](refout-compiler-option.md)|参照アセンブリの出力パスを指定します。|
 |[-removeintchecks](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|整数オーバーフローのチェックを無効にします。|  
 |[-resource](../../../visual-basic/reference/command-line-compiler/resource.md)|マネージ リソースをアセンブリに埋め込みます。|  
 |[-rootnamespace](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|すべての型宣言に対して名前空間を指定します。|  

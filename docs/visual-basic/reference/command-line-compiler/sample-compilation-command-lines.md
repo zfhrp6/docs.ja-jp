@@ -16,16 +16,16 @@ helpviewer_keywords:
 ms.assetid: 5bfbb487-5f47-4267-969a-39dfb917beeb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a7c3fac318e05c5e3d6fb9dd7117cac70ead03dc
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: cf20e2916efd2eb10065be22c319e34ddb2bda9a
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="sample-compilation-command-lines-visual-basic"></a>コンパイル コマンドラインのサンプル (Visual Basic)
-コンパイルする代わりに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]内からプログラム[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (.dll) ファイルを生成するためにコマンドラインからコンパイルすることができます。  
+Visual Basic プログラム内からコンパイルする代わりに[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (.dll) ファイルを生成するためにコマンドラインからコンパイルすることができます。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コマンド ライン コンパイラは、入力と出力ファイル、アセンブリ、およびデバッグを制御するオプションとプリプロセッサ オプションの完全なセットをサポートしています。 各オプションは、2 つの交換形式で利用可能:`-option`と`/option`です。 このドキュメントのみが表示されます、`-option`フォーム。  
+ Visual Basic のコマンド ライン コンパイラは、出力ファイル、アセンブリ、およびデバッグおよびプリプロセッサ オプションおよび入力を制御するオプションの完全なセットをサポートします。 各オプションは、2 つの交換形式で利用可能:`-option`と`/option`です。 このドキュメントのみが表示されます、`-option`フォーム。  
   
  次の表は、独自の用途を変更するサンプルのコマンドラインを一覧表示します。  
   
@@ -34,14 +34,13 @@ ms.lasthandoff: 03/22/2018
 |File.vb をコンパイルして File.exe を作成します。|`vbc -reference:Microsoft.VisualBasic.dll File.vb`|  
 |File.vb をコンパイルして File.dll を作成します。|`vbc -target:library File.vb`|  
 |File.vb をコンパイルして My.exe を作成します。|`vbc -out:My.exe File.vb`|  
-|すべてコンパイル[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を最適化して、現在のディレクトリ内のファイルと`DEBUG`File2.exe を生成したシンボルを定義するには、|`vbc -define:DEBUG=1 -optimize -out:File2.exe *.vb`|  
-|すべてコンパイル[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ロゴや警告を表示することがなく、デバッグ バージョンの File2.dll を生成する、現在のディレクトリ内のファイル|`vbc -target:library -out:File2.dll -nowarn -nologo -debug *.vb`|  
-|すべてコンパイル[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]Something.dll を現在のディレクトリ内のファイル|`vbc -target:library -out:Something.dll *.vb`|  
-  
- をコマンドラインからコンパイルするときは、Microsoft を明示的に参照する必要があります[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]経由のランタイム ライブラリ、`-reference`コンパイラ オプション。  
+|File.vb をコンパイルし、ライブラリと File.dll をという名前の参照アセンブリの両方を作成|`vbc -target:library -ref:.\debug\bin\ref\file.dll File.vb`|
+|最適化して、現在のディレクトリ内のすべての Visual Basic ファイルをコンパイルし、 `DEBUG` File2.exe を生成したシンボルを定義するには、|`vbc -define:DEBUG=1 -optimize -out:File2.exe *.vb`|  
+|ロゴや警告を表示することがなく、デバッグ バージョンの File2.dll を生成する、現在のディレクトリ内のすべての Visual Basic ファイルをコンパイルします。|`vbc -target:library -out:File2.dll -nowarn -nologo -debug *.vb`|  
+|Something.dll を現在のディレクトリ内のすべての Visual Basic ファイルをコンパイルします。|`vbc -target:library -out:Something.dll *.vb`|  
   
 > [!TIP]
->  関連付けられているに関する情報を表示するには、Visual Studio IDE を使用してプロジェクトをビルドするときに**vbc**コマンドは、出力ウィンドウでコンパイラ オプションとします。 この情報を表示、開く、[オプション ダイアログ ボックス、プロジェクトとソリューションをビルドおよび実行](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run)、し、設定、 **MSBuild プロジェクトのビルド出力の詳細度**に**標準**またはより高度な詳細度。 詳細については、「[方法: ビルド ログ ファイルを表示、保存、および構成する](http://msdn.microsoft.com/library/75d38b76-26d6-4f43-bbe7-cbacd7cc81e7)」をご覧ください。  
+>  関連付けられているに関する情報を表示するには、Visual Studio IDE を使用してプロジェクトをビルドするときに**vbc**コマンドは、出力ウィンドウでコンパイラ オプションとします。 この情報を表示、開く、[オプション ダイアログ ボックス、プロジェクトとソリューションをビルドおよび実行](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run)、し、設定、 **MSBuild プロジェクトのビルド出力の詳細度**に**標準**またはより高度な詳細度。   
   
 ## <a name="see-also"></a>関連項目  
  [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  

@@ -12,14 +12,16 @@ helpviewer_keywords:
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc14d090951f12fd322b90fababa064d1f5b4e80
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: e66ec709a32b39e2e7427d6ce165f62212dac543
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic コンパイラ オプションのカテゴリ別一覧
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) 内からプログラムをコンパイルする方法の代替手段として提供されています。 機能のカテゴリ順に並べ替えた [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
+内からプログラムをコンパイルする代わりに、Visual Basic のコマンド ライン コンパイラが提供される、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境 (IDE) です。 機能カテゴリ順に並べ替えて Visual Basic のコマンド ライン コンパイラ オプションの一覧を次に示します。  
+
+[!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 ## <a name="compiler-output"></a>コンパイラの出力  
   
@@ -45,6 +47,8 @@ ms.lasthandoff: 03/22/2018
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|ドキュメント コメントを XML ファイルに出力します。|  
 |[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|[!INCLUDE[Compact](~/includes/compact-md.md)] が対象になるようにコンパイラを設定します。|  
 |[-out](../../../visual-basic/reference/command-line-compiler/out.md)|出力ファイルを指定します。|  
+|[/refonly](refonly-compiler-option.md)|参照アセンブリのみを出力します。|
+|[/refout](refout-compiler-option.md)|参照アセンブリの出力パスを指定します。|
 |[-target](../../../visual-basic/reference/command-line-compiler/target.md)|出力の形式を指定します。|  
   
 ## <a name="net-assemblies"></a>.NET アセンブリ  
@@ -113,7 +117,7 @@ ms.lasthandoff: 03/22/2018
 |[@ (応答ファイルの指定)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|応答ファイルを指定します。|  
 |[-baseaddress](../../../visual-basic/reference/command-line-compiler/baseaddress.md)|DLL のベース アドレスを指定します。|  
 |[-codepage](../../../visual-basic/reference/command-line-compiler/codepage.md)|コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。|  
-|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。|  
+|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Visual Basic コンパイラで内部コンパイラ エラーを報告する方法を指定します。|  
 |[-highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|特定の実行可能ファイルで高エントロピ ASLR (Address Space Layout Randomization) をサポートするかどうかを Windows カーネルに示します。|  
 |[-main](../../../visual-basic/reference/command-line-compiler/main.md)|含むクラスを指定します、`Sub Main`起動時に使用するプロシージャ。|  
 |[-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|コンパイルに Vbc.rsp が使用されないようにします。|  
@@ -130,6 +134,6 @@ ms.lasthandoff: 03/22/2018
   
 ## <a name="see-also"></a>関連項目  
  [Visual Basic コンパイラ オプション一覧 (アルファベット順)](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
- [プロジェクト デザイナーの概要](http://msdn.microsoft.com/library/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
+ [プロジェクト デザイナーの概要](https://msdn.microsoft.com/en-us/library/898dd854-c98d-430c-ba1b-a913ce3c73d7(v=vs.100))  
  [アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
  [カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)
