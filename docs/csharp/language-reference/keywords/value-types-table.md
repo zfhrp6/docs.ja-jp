@@ -1,8 +1,9 @@
 ---
-title: "値型の一覧表 (C# リファレンス)"
+title: 値型の一覧表 (C# リファレンス)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - value types [C#], table
@@ -10,7 +11,7 @@ helpviewer_keywords:
 - types [C#], value types
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-caps.latest.revision: "11"
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 49ada8d7c006808077b5a7c93175a143932bf277
