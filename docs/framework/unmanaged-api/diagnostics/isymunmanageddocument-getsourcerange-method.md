@@ -1,13 +1,13 @@
 ---
-title: "ISymUnmanagedDocument::GetSourceRange メソッド"
-ms.custom: 
+title: ISymUnmanagedDocument::GetSourceRange メソッド
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 api_name:
 - ISymUnmanagedDocument.GetSourceRange
@@ -23,7 +23,7 @@ helpviewer_keywords:
 ms.assetid: 20fefee7-1040-41ba-93dc-bd42f68b90c2
 topic_type:
 - apiref
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
@@ -66,7 +66,7 @@ HRESULT GetSourceRange(
  [in]現在のドキュメント内の最終列。  
   
  `cSourceBytes`  
- [in](バイト単位)、ソースのサイズ。  
+ [in] \(バイト単位)、ソースのサイズ。  
   
  `pcSourceBytes`  
  [out]ソースのサイズを受け取る変数へのポインター。  
