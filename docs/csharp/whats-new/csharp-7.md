@@ -1,7 +1,7 @@
 ---
-title: "C# 7 の新機能 - C# ガイド"
-description: "C# 言語の次期バージョン 7 で導入される新機能の概要を示します。"
-keywords: "C#, .NET, .NET Core, 最新機能, 新機能"
+title: C# 7 の新機能 - C# ガイド
+description: C# 言語の次期バージョン 7 で導入される新機能の概要を示します。
+keywords: C#, .NET, .NET Core, 最新機能, 新機能
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/21/2016
