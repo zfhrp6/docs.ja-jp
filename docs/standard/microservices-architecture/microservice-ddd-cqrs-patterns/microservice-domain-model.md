@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービス ドメイン モデルの設計"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービス ドメイン モデルの設計"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービス ドメイン モデルの設計
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービス ドメイン モデルの設計
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/09/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 752c4cceada2bf0649facbfd46c36c26dc666d29
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="designing-a-microservice-domain-model"></a>マイクロサービス ドメイン モデルの設計
 
@@ -63,10 +63,10 @@ Martin Fowler は、投稿した [AnemicDomainModel](https://martinfowler.com/bl
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **DevIQ。ドメイン エンティティに関する記事**
+-   **DevIQ。Domain Entity**
     [*http://deviq.com/entity/*](http://deviq.com/entity/)
 
--   **Martin Fowler。Domain Model (ドメイン モデル)**
+-   **Martin Fowler。ドメイン モデル**
     [*https://martinfowler.com/eaaCatalog/domainModel.html*](https://martinfowler.com/eaaCatalog/domainModel.html)
 
 -   **Martin Fowler。ドメイン モデル貧血症に関する記事**
@@ -87,14 +87,14 @@ Eric Evans は、"多くのオブジェクトは、概念 ID を持ちません�
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Martin Fowler。値オブジェクト パターンに関する記事**
+-   **Martin Fowler。値オブジェクト パターンには**
     [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)
 
--   **Value Object (値オブジェクト)**
+-   **値オブジェクト**
     [*http://deviq.com/value-object/*](http://deviq.com/value-object/)
 
--   **テスト駆動開発の値オブジェクトに関する記事**
-    [*https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
+-   **テスト駆動型開発内のオブジェクトを値**
+    [*https://leanpub.com/tdd-ebook/read\#leanpub 自動値オブジェクト*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
 -   **Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (ドメイン駆動設計: ソフトウェア中心部の複雑さへの取り組み)。** (書籍、値オブジェクトについての記載あり) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
@@ -139,22 +139,22 @@ public class Order : Entity, IAggregateRoot
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Vaughn Vernon。Effective Aggregate Design - Part I: Modeling a Single Aggregate (効果的な集計の設計 - パート I: 1 つの集計のモデリング)**
-    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_COMMUNITY\_ESSAY\_AGGREGATES\_PART\_1.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
+-   **Vaughn Vernon。効果的な集計のデザイン - パート i: 1 つの集計のモデリング**
+    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_コミュニティ\_エッセイ\_集計\_パーツ\_1. pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
 
--   **Vaughn Vernon。Effective Aggregate Design - Part II: Making Aggregates Work Together (効果的な集計の設計 - パート II: 集計の連携)**
+-   **Vaughn Vernon。効果的な集計デザインのパート II: 行う集計連携**
     *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf> *
 
--   **Vaughn Vernon。Effective Aggregate Design - Part III: Gaining Insight Through Discovery (効果的な集計の設計 - パート III: 検出による洞察の獲得)**
+-   **Vaughn Vernon。探索によって効果的な集計デザインのパート III: 獲得 Insight**
     *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf> *
 
--   **Sergey Grybniak。DDD Tactical Design Patterns (DDD の戦略的な設計パターン)**
+-   **Sergey Grybniak。DDD 戦術的なデザイン パターン**
     [*https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part*](https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part)
 
--   **Chris Richardson。Developing Transactional Microservices Using Aggregates (集計を使用したトランザクション マイクロサービスの開発)**
+-   **Chris Richardson。集計を使用してトランザクション Microservices の開発**
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson)
 
--   **DevIQ。The Aggregate pattern (集計パターン)**
+-   **DevIQ。集計パターン**
     [*http://deviq.com/aggregate-pattern/*](http://deviq.com/aggregate-pattern/)
 
 

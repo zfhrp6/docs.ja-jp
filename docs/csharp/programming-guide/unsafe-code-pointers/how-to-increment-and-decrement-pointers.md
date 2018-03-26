@@ -1,21 +1,22 @@
 ---
-title: "方法 : ポインターのインクリメントとデクリメント (C# プログラミング ガイド)"
+title: '方法 : ポインターのインクリメントとデクリメント (C# プログラミング ガイド)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - pointers [C#], increment and decrement
 - pointer expressions [C#], increment and decrement
 ms.assetid: 1b8b9281-44ee-485a-9045-3db38a4b4b89
-caps.latest.revision: "20"
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 2c8efc6d0844d867ad6eebccf3bb22c03e6d5020
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-increment-and-decrement-pointers-c-programming-guide"></a>方法 : ポインターのインクリメントとデクリメント (C# プログラミング ガイド)
 pointer-type* 型のポインターの [sizeof](../../../csharp/language-reference/keywords/sizeof.md) (`pointer-type`) でポインターの位置を変更するには、インクリメント演算子 (`++`) とデクリメント演算子 (`--`) を使用します。 インクリメント式とデクリメント式には、次の書式を使用します。  

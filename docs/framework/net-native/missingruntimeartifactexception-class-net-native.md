@@ -1,24 +1,26 @@
 ---
-title: "MissingRuntimeArtifactException クラス (.NET ネイティブ)"
-ms.custom: 
+title: MissingRuntimeArtifactException クラス (.NET ネイティブ)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5b3d13e-689f-4584-8ba6-44f5167a8590
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e41e6c6d47d7057e2482a48e6f48c33a1325294c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>MissingRuntimeArtifactException クラス (.NET ネイティブ)
 **Windows 10 の Windows アプリ用 .NET ([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ)**  
@@ -89,6 +91,6 @@ ms.lasthandoff: 12/22/2017
   
  `MissingRuntimeArtifactException` クラスには一意のメンバーは含まれていません。メンバーはすべて基底クラスの <xref:System.MemberAccessException> から継承されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

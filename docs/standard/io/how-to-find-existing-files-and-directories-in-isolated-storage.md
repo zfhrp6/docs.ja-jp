@@ -1,12 +1,12 @@
 ---
-title: "方法 : 分離ストレージ内でファイルおよびディレクトリを検索する"
-ms.custom: 
+title: '方法 : 分離ストレージ内でファイルおよびディレクトリを検索する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -23,7 +23,7 @@ helpviewer_keywords:
 - locating directories in isolated storage file
 - storing data using isolated storage, finding files and directories
 ms.assetid: eb28458a-6161-4e7a-9ada-30ef93761b5c
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
@@ -31,10 +31,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 8d460f07e7558fdf9190561b1cac4307767ff245
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-find-existing-files-and-directories-in-isolated-storage"></a>方法 : 分離ストレージ内でファイルおよびディレクトリを検索する
 分離ストレージ内のディレクトリを検索するには、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A?displayProperty=nameWithType> メソッドを使用します。 このメソッドは、検索パターンを表す文字列を取得します。 検索パターンでは、1 文字を表すワイルドカード文字 (?) と複数の文字を表すワイルドカード文字 (*) の両方がサポートされています。ただし、これらのワイルドカード文字は、名前の最後の部分で使用する必要があります。 たとえば、`directory1/*ect*` は有効な検索文字列ですが、`*ect*/directory2` は無効です。  
@@ -50,6 +50,6 @@ ms.lasthandoff: 12/23/2017
  [!code-csharp[Conceptual.IsolatedStorage#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source8.cs#9)]
  [!code-vb[Conceptual.IsolatedStorage#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source8.vb#9)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
  [分離ストレージ](../../../docs/standard/io/isolated-storage.md)

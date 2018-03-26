@@ -1,12 +1,13 @@
 ---
-title: "ドラッグ アンド ドロップの概要"
-ms.custom: 
+title: ドラッグ アンド ドロップの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-caps.latest.revision: "31"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b7a69a4dcd5fc39b700bf9c3404e70d581509ebc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="drag-and-drop-overview"></a>ドラッグ アンド ドロップの概要
 このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでのドラッグ アンド ドロップのサポートの概要について説明します。 一般的に、ドラッグ アンド ドロップとは、マウス (または何らかのポインティング デバイス) を使用して 1 つ以上のオブジェクトを選択し、これらのオブジェクトを [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] の目的のドロップ先までドラッグしてからドロップするデータ転送方式をいいます。  
@@ -229,7 +231,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[DragDropSnippets#Drop](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#drop)]
  [!code-vb[DragDropSnippets#Drop](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#drop)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Clipboard>  
  [チュートリアル: ユーザー コントロールでのドラッグ アンド ドロップの有効化](../../../../docs/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
  [方法トピック](../../../../docs/framework/wpf/advanced/drag-and-drop-how-to-topics.md)  

@@ -1,12 +1,13 @@
 ---
-title: "方法 : XPS ファイルをプログラムにより印刷する"
-ms.custom: 
+title: '方法 : XPS ファイルをプログラムにより印刷する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - printing XPS files programmatically [WPF]
 - XPS files [WPF], printing programmatically
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
-caps.latest.revision: "9"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 0b58e617fb04ecaba45ed655dc650459e89453dd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>方法 : XPS ファイルをプログラムにより印刷する
 1 つのオーバー ロードを使用することができます、<xref:System.Printing.PrintQueue.AddJob%2A>を印刷するメソッド[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]ファイルを開かず、<xref:System.Windows.Controls.PrintDialog>または原則として、任意[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]まったくです。  
@@ -69,7 +71,7 @@ ms.lasthandoff: 01/19/2018
   
  **メモ** 上記の例では、説明を簡単にするために、*.xps 拡張子の有無でファイルが [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] かどうかを確認していますが、 [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] ファイルには、この拡張子を付ける必要はありません。 [isXPS.exe (isXPS 適合性ツール)](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3) は、ファイルが [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] かどうかをテストする 1 つの手段です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Printing.PrintQueue>  
  <xref:System.Printing.PrintQueue.AddJob%2A>  
  <xref:System.Threading.ApartmentState>  

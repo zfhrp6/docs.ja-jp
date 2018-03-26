@@ -1,24 +1,26 @@
 ---
-title: "有害メッセージ処理"
-ms.custom: 
+title: 有害メッセージ処理
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-caps.latest.revision: "29"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 8202c9f715944c6d556c0023444475838cfd5eab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="poison-message-handling"></a>有害メッセージ処理
 A*有害なメッセージ*をアプリケーションに配信試行の最大数を超えたメッセージです。 この状況は、キュー ベースのアプリケーションがエラーによってメッセージを処理できないときに発生する可能性があります。 信頼性に対する要求を満たすために、キューに置かれたアプリケーションはトランザクションの下でメッセージを受信します。 キューに置かれたメッセージを受信したトランザクションを中止すると、メッセージはそのままキューに残り、新しいトランザクションの下で再試行されます。 トランザクションを中止させた問題が解決されなければ、受信側のアプリケーションは、配信試行回数の最大値を超えるまで同じメッセージの受信と中止を繰り返す悪循環に陥る可能性があり、その結果、有害メッセージが生じることになります。  
@@ -73,7 +75,7 @@ A*有害なメッセージ*をアプリケーションに配信試行の最大�
 ## <a name="best-practice-handling-msmqpoisonmessageexception"></a>ベスト プラクティス : MsmqPoisonMessageException の処理  
  メッセージが有害であるとサービスが判断した場合、キューに置かれたトランスポートは <xref:System.ServiceModel.MsmqPoisonMessageException> をスローします。この例外には、有害メッセージの `LookupId` が含まれます。  
   
- 受信側アプリケーションでは、必要な <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装して、すべてのエラーを処理できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][エラー処理およびレポートに対する制御の拡張](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)です。  
+ 受信側アプリケーションでは、必要な <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装して、すべてのエラーを処理できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [エラー処理およびレポートに対する制御の拡張](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)です。  
   
  アプリケーションでは、有害メッセージを有害メッセージ キューに移動し、サービスがキュー内の残りのメッセージにアクセスできるようにする、なんらかの有害メッセージ自動処理を必要とする場合があります。 エラー処理機構を使用して有害メッセージの例外をリッスンする唯一のシナリオは、<xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> の設定を <xref:System.ServiceModel.ReceiveErrorHandling.Fault> に設定した場合です。 メッセージ キュー 3.0 の有害メッセージ サンプルは、この動作を示しています。 ベスト プラクティスを含め、有害メッセージを処理するために必要な手順の概要を以下に示します。  
   
@@ -102,7 +104,7 @@ A*有害なメッセージ*をアプリケーションに配信試行の最大�
  セッションでは、単一のメッセージと同じ再試行および有害メッセージ処理手順が行われます。 有害メッセージに対する上記のプロパティは、セッション全体に適用されます。 つまり、セッション全体が再試行され、メッセージは最終有害メッセージ キューに送られます。または、メッセージが拒否された場合は、送信側の配信不能キューに送られます。  
   
 ## <a name="batching-and-poison-messages"></a>バッチ処理と有害メッセージ  
- バッチの一部であるメッセージが有害メッセージになった場合は、バッチ全体がロールバックされ、チャネルはメッセージを 1 つずつ読み取る処理に戻ります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]バッチ処理を参照してください[トランザクションでメッセージのバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
+ バッチの一部であるメッセージが有害メッセージになった場合は、バッチ全体がロールバックされ、チャネルはメッセージを 1 つずつ読み取る処理に戻ります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] バッチ処理を参照してください[トランザクションでメッセージのバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
   
 ## <a name="poison-message-handling-for-messages-in-a-poison-queue"></a>有害キュー内のメッセージに対する有害メッセージ処理  
  有害メッセージ処理は、メッセージが有害メッセージ キューに配置された時点では終了しません。 有害メッセージ キューに置かれたメッセージは、依然として読み取り、処理する必要があります。 最終有害サブキューからメッセージを読み取るときは、有害メッセージ処理設定のサブセットを使用できます。 適用できる設定は、`ReceiveRetryCount` と `ReceiveErrorHandling` です。 `ReceiveErrorHandling` は Drop、Rreject、Fault のいずれかに設定できます。 `MaxRetryCycles` が Move に設定されている場合は、`ReceiveErrorHandling` が無視され、例外がスローされます。  
@@ -116,7 +118,7 @@ A*有害なメッセージ*をアプリケーションに配信試行の最大�
   
 -   [!INCLUDE[wv](../../../../includes/wv-md.md)] のメッセージ キューは、メッセージの配信試行回数を保持するメッセージ プロパティをサポートしています。 この中止回数のプロパティは、[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] と [!INCLUDE[wxp](../../../../includes/wxp-md.md)] では使用できません。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、中止回数をメモリで保持するため、同じメッセージがファーム内の複数の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスによって読み取られた場合、このプロパティは、正確な値を格納できない可能性があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
  [Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違点](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
  [コントラクトおよびサービスのエラーの指定と処理](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

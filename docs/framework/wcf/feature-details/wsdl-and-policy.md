@@ -1,24 +1,26 @@
 ---
-title: "WSDL とポリシー"
-ms.custom: 
+title: WSDL とポリシー
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cea87440-3519-4640-8494-b8a2b0e88c84
-caps.latest.revision: "10"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: dd52e36199fc2412abb003d530dd5614cda8049b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="wsdl-and-policy"></a>WSDL とポリシー
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WSDL 1.1、WS-Policy、および WS-PolicyAttachment の実装の詳細、および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって導入される追加の WS-Policy アサーションと WSDL 1.1 拡張について説明します。  
@@ -29,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 |プレフィックス|Namespace|  
 |------------|---------------|  
-|wsp (WS-Policy 1.2)|http://schemas.xmlsoap.org/ws/2004/09/policy |  
+|wsp (WS-Policy 1.2)|http://schemas.xmlsoap.org/ws/2004/09/policy|  
 |wsp (WS-Policy 1.5)|http://www.w3.org/ns/ws-policy|  
 |http|http://schemas.microsoft.com/ws/06/2004/policy/http|  
 |msmq|http://schemas.microsoft.com/ws/06/2004/mspolicy/msmq|  
@@ -83,7 +85,7 @@ ms.lasthandoff: 12/22/2017
 |mssp:MustNotSendCancel|入れ子|Cancel バインディング [WS-Trust、WS-SC] を使用するセキュリティ トークン要求 (RST) の要求メッセージ [WS-Trust] を特定の SecurityContextToken の発行者に送信しないという要件を指定します。 このアサーションが存在する場合、このような要求メッセージを発行者に送信することはできません。 このアサーションが存在しない場合、このような要求メッセージを発行者に送信できます。|  
 |mssp:RequireClientCertificate|入れ子|このオプション要素では、TLSNEGO プロトコルの一部としてクライアント証明書を提供するという要件を指定します。 このアサーションが存在する場合、クライアント証明書を提供する必要があります。 このアサーションが存在しない場合、クライアント証明書を提供しないでください。 このアサーションは、mssp:SslContextToken の外側で使用することはできません。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [カスタム WSDL パブリケーション](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md)  
  [方法 : カスタム WSDL をエクスポートする](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)  
  [方法 : カスタム WSDL をインポートする](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)

@@ -1,16 +1,16 @@
 ---
-title: "SystemWebRouting 統合サンプル"
-ms.custom: 
+title: SystemWebRouting 統合サンプル
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -51,7 +51,7 @@ ms.lasthandoff: 02/27/2018
   
      サンプルのディレクトリの一覧が表示されます。 ファイル拡張子が .svc のファイルがないことに注意してください。  
   
-3.  アドレス バーに追加`movies`url、そのためことを読み取ります http://localhost: [port]/映画 ENTER キーを押します。  
+3.  アドレス バーに追加`movies`url、そのためことを読み取ります http://localhost:[port]/映画 ENTER キーを押します。  
   
      movies フィードがブラウザーに表示されます。  
   

@@ -1,24 +1,26 @@
 ---
-title: ".NET リモート処理から WCF への移行"
-ms.custom: 
+title: .NET リモート処理から WCF への移行
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6b387e100ff881c5394b6a77716a733b3928eae9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>.NET リモート処理から WCF への移行
 この記事では、.NET リモート処理を使用するアプリケーションを、Windows Communication Foundation (WCF) を使用するように移行する方法について説明します。 これらの製品間で類似する概念を比較した後、WCF で一般的なリモート処理のシナリオを実現する方法を説明します。  
@@ -34,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 |サービス操作|サーバーの型のパブリック メソッド|[OperationContract] 属性でマーク|  
 |シリアル化|ISerializable または [Serializable]|DataContractSerializer または XmlSerializer|  
 |渡されるオブジェクト|値渡しまたは参照渡し|値渡しのみ|  
-|エラーと例外|すべてのシリアル化可能な例外|FaultContract\<TDetail >|  
+|エラーと例外|すべてのシリアル化可能な例外|FaultContract\<TDetail>|  
 |クライアント プロキシ オブジェクト|厳密に型指定された透過的プロキシが MarshalByRefObjects から自動的に作成されます|厳密に型指定されたプロキシが生成されるオンデマンド ChannelFactory を使用して\<TChannel >|  
 |必要なプラットフォーム|クライアントとサーバーの両方で Microsoft OS と .NET を使用する必要があります|クロスプラットフォーム|  
 |メッセージ形式|プライベート|業界標準 (SOAP、WS-* など)|  

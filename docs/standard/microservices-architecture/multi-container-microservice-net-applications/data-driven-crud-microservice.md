@@ -1,7 +1,7 @@
 ---
-title: "単純なデータ ドリブン CRUD マイクロサービスの作成"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 単純なデータ ドリブン CRUD マイクロサービスの作成"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 単純なデータ ドリブン CRUD マイクロサービスの作成
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 単純なデータ ドリブン CRUD マイクロサービスの作成
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: be8644e45be8db88c99332476e74c5c968764c74
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>単純なデータ ドリブン CRUD マイクロサービスの作成
 
@@ -293,13 +293,13 @@ public class CatalogController : ControllerBase
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Scott Hanselman。ASP.NET Core RESTful Web API バージョン管理で簡単に**
+-   **Scott Hanselman。ASP.NET Core RESTful Web API のバージョン管理が簡単に作成**
     [*http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
--   **RESTful Web API のバージョン管理**
+-   **RESTful web API のバージョン管理**
     [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
--   **Roy Fielding。バージョン管理、ハイパーメディア、REST**
+-   **Roy Fielding。バージョン管理、Hypermedia、および残りの部分**
     [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
 
 ## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>ASP.NET Core Web API からの Swagger 記述メタデータの生成 
@@ -310,7 +310,7 @@ Swagger の中心となるのは、JSON または YAML ファイル内の API �
 
 仕様は、OpenAPI 仕様 (OAS) の基盤であり、RESTful インターフェイスを定義する方法を標準化するためにオープンで透過的なコラボレーション コミュニティで開発されています。
 
-仕様では、サービスの検出方法とその機能を理解する方法に関する構造体を定義します。 Web エディターや、Spotify、Uber、Slack、Microsoft などの企業の Swagger 仕様の例について詳しくは、Swagger のサイト (<http://swagger.io>) をご覧ください。
+仕様では、サービスの検出方法とその機能を理解する方法に関する構造体を定義します。 詳細については、web エディターおよび Spotify、Uber、余裕期間、および、Microsoft などの企業から Swagger 仕様の例を含むサイトを参照して、Swagger (<http://swagger.io>)。
 
 ### <a name="why-use-swagger"></a>Swagger を使用する理由
 
@@ -415,7 +415,7 @@ http://&lt;your-root-url&gt;/swagger/ui のような URL に対して Swashbuckl
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Swagger を使用する ASP.NET Web API のヘルプ ページ**
+-   **ASP.NET Web API のヘルプ ページを使用して Swagger します。**
     [*https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger*](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger)
 
 

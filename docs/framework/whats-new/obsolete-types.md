@@ -1,28 +1,30 @@
 ---
-title: ".NET Framework で互換性のために残されている型"
-ms.custom: 
+title: .NET Framework で互換性のために残されている型
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete types
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-caps.latest.revision: "41"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: f30b9e245ad38b0e861590e9b2ca3658a2b5e967
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>.NET Framework で互換性のために残されている型
 <a name="introduction"></a> この記事の表に、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] で互換性のために残されている型をアセンブリ別に示します。 各アセンブリで互換性のために残されている型と推奨される代替型の一覧を表示するには、以下のリンクを使用してください。 これらの型は廃止されているため、そのメンバーもすべて廃止されます。 .NET Framework クラス ライブラリで互換性のために残されているその他のメンバーの一覧については、[互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)に関する記事をご覧ください。  
@@ -251,7 +253,7 @@ ms.lasthandoff: 12/22/2017
 <a name="servicemodel"></a>   
 ### <a name="assembly-systemservicemodeldll"></a>アセンブリ: System.ServiceModel.dll  
   
-|型|メッセージ|  
+|種類|メッセージ|  
 |----------|-------------|  
 |<xref:System.ServiceModel.NetPeerTcpBinding?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
 |<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型は互換性のために残されています。 Http <xref:System.Net.CookieContainer> を有効にするには、Http バインドか `AllowCookies` で <xref:System.ServiceModel.Channels.HttpTransportBindingElement> プロパティを使用します。|  
@@ -288,7 +290,7 @@ ms.lasthandoff: 12/22/2017
 <a name="mobile"></a>   
 ### <a name="assembly-systemwebmobiledll"></a>アセンブリ: System.Web.Mobile.dll  
   
-|型|メッセージ|  
+|種類|メッセージ|  
 |----------|-------------|  
 |<xref:System.Web.Mobile.CookielessData?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
 |<xref:System.Web.Mobile.DeviceFilterElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
@@ -563,7 +565,7 @@ ms.lasthandoff: 12/22/2017
 <a name="xaml"></a>   
 ### <a name="assembly-systemxamldll"></a>アセンブリ: System.Xaml.dll  
   
-|型|メッセージ|  
+|種類|メッセージ|  
 |----------|-------------|  
 |<xref:System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute?displayProperty=nameWithType>|これは、XAML パーサーでは使用されなくなりました。 <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute?displayProperty=nameWithType> を参照してください。|  
   
@@ -785,6 +787,6 @@ ms.lasthandoff: 12/22/2017
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)  
  [互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)

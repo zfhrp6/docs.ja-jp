@@ -20,7 +20,7 @@ ms.openlocfilehash: 893093900b3fc4276f9bd7143b1f235a5ba98f90
 ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="common-schema-collections"></a>共通のスキーマ コレクション
 共通のスキーマ コレクションとは、それぞれの .NET Framework マネージ プロバイダーにより実装されるスキーマ コレクションのことです。 呼び出すことによってサポートされるスキーマ コレクションの一覧を特定の .NET Framework マネージ プロバイダーを照会することができます、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。 これらのコレクションは、必要なすべての列を表現します。 プロバイダーでは、任意で列を追加できます。 たとえば、`SqlClient` と `OracleClient` は、ParameterName を制限のコレクションに追加します。  

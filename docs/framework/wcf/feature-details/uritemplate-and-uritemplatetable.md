@@ -1,24 +1,26 @@
 ---
-title: "UriTemplate と UriTemplateTable"
-ms.custom: 
+title: UriTemplate と UriTemplateTable
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-caps.latest.revision: "24"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ac77fe2c83828d2cc9473417d2b29b2d2e540923
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate と UriTemplateTable
 Web 開発者は、サービスの応答先となる URI の形状とレイアウトを記述できる必要があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、開発者が URI を制御するための 2 つの新しいクラスが追加されています。 <xref:System.UriTemplate> と <xref:System.UriTemplateTable> は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] における URI ベースのディスパッチ エンジンの基盤となります。 これらのクラスは単独で使用することもできるため、開発者は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを実装せずにテンプレートと URI マッピング機構を利用できます。  
@@ -92,19 +94,19 @@ Web 開発者は、サービスの応答先となる URI の形状とレイア�
   
 -   "{shoe}/boat"  
   
--   "{shoe}/{ボート}/bed/{キルト}"  
+-   "{shoe}/{boat}/bed/{quilt}"  
   
--   「靴/{ボート}」  
+-   "shoe/{boat}"  
   
--   "靴/{ボート}/*"  
+-   "shoe/{boat}/*"  
   
--   "靴/ボート? x = 2"  
+-   "shoe/boat?x=2"  
   
 -   "靴/{ボート}? x = {ベッド}"  
   
 -   "shoe/{boat}?x={bed}&y=band"  
   
--   "? x = {shoe}"  
+-   "?x={shoe}"  
   
 -   "shoe?x=3&y={var}  
   
@@ -140,7 +142,7 @@ Web 開発者は、サービスの応答先となる URI の形状とレイア�
 -   /{shoe}{boat} – 変数はリテラルによって分割されている必要があります。  
   
 ### <a name="matching-and-compound-path-segments"></a>照合と複合パス セグメント  
- 複合パス セグメントを使用すると、1 つのパス セグメント内に複数の変数を含む UriTemplate を定義できます。 たとえば、次のテンプレート文字列で:"アドレス/{state} です。{city}"2 つの変数 (state と city) が同じセグメント内で定義されています。 このテンプレートには、"http://example.com/Washington.Redmond"などの URL と一致しますが、"http://example.com/Washington.Redmond.Microsoft"のような URL は一致もします。 後者の場合、状態変数には、"Washington"が含まれ、city 変数は"Redmond.Microsoft"が含まれます。 この場合、任意のテキスト ('/' 以外) が {city} 変数と一致することになります。 テンプレートを「余分な」テキストと一致しない場合は、配置、変数セグメントでは、別のテンプレート、たとえば:"アドレス/{state}/{city} です。  
+ 複合パス セグメントを使用すると、1 つのパス セグメント内に複数の変数を含む UriTemplate を定義できます。 たとえば、次のテンプレート文字列で:"アドレス/{state} です。{city}"2 つの変数 (state と city) が同じセグメント内で定義されています。 このテンプレートは URL と一致するように"http://example.com/Washington.Redmond「がのような URL は一致も」http://example.com/Washington.Redmond.Microsoft"です。 後者の場合、状態変数には、"Washington"が含まれ、city 変数は"Redmond.Microsoft"が含まれます。 この場合、任意のテキスト ('/' 以外) が {city} 変数と一致することになります。 テンプレートを「余分な」テキストと一致しない場合は、配置、変数セグメントでは、別のテンプレート、たとえば:"アドレス/{state}/{city} です。  
   
 ### <a name="named-wildcard-segments"></a>名前付きワイルドカード セグメント  
  名前付きワイルドカード セグメントは、ワイルドカード文字 '*' で始まる変数名を持つ任意のパス変数セグメントです。 次のテンプレート文字列には、"shoe" という名前付きワイルドカード セグメントが含まれています。  
@@ -343,7 +345,7 @@ Console.WriteLine("Bound URI: {0}", boundUri);
 > [!NOTE]
 >  文字 á と Á が URI パスまたは <xref:System.UriTemplate> のパス セグメントのリテラルの一部として出現した場合、これらは異なる文字と見なされます (ただし、a と A は同じ文字と見なされます)。 文字 á と Á が <xref:System.UriTemplate> の {variableName} またはクエリ文字列の一部として出現した場合は、これらは同じ文字と見なされます (a と A も同じ文字と見なされます)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)  
  [WCF Web HTTP プログラミング オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
  [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)  

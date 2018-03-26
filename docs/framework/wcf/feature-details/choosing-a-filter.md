@@ -1,24 +1,26 @@
 ---
-title: "フィルターの選択"
-ms.custom: 
+title: フィルターの選択
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e81af51be3e281faa94bcea17ff75b41341abb33
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="choosing-a-filter"></a>フィルターの選択
 ルーティング サービスを構成する際には、適切なメッセージ フィルターを選択し、受信するメッセージと正確に一致できるように、それらのフィルターを構成することが重要です。 選択したフィルターの適合基準が幅広すぎる場合や、適切に構成されていない場合は、メッセージが正しくルーティングされません。 フィルターの適合基準が厳格すぎると、一部のメッセージの有効なルーティング先が見つからないことがあります。  
@@ -142,10 +144,10 @@ XPathMessageFilter xpath1=new XPathMessageFilter("//ns:element");
   
  受信するメッセージに特定の値が含まれていることがわかっている場合は、このフィルターが便利です。 たとえば、同じサービスの 2 つのバージョンをホストしており、そのサービスの新しい方のバージョン宛てのメッセージのカスタム ヘッダーに一意の値が含まれていることがわかっている場合は、XPath を使用するフィルターを作成してそのヘッダーに移動し、そのヘッダー内にある値を、フィルター構成で指定されている別の値と比較して、そのフィルターが一致するかどうかを判断できます。  
   
- XPath クエリには、長い文字列値または複雑な文字列値である一意の名前空間が含まれていることが多いため、XPath フィルターでは、名前空間用の一意のプレフィックスを定義する名前空間テーブルを使用できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]名前空間のテーブルを参照してください[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)です。  
+ XPath クエリには、長い文字列値または複雑な文字列値である一意の名前空間が含まれていることが多いため、XPath フィルターでは、名前空間用の一意のプレフィックスを定義する名前空間テーブルを使用できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 名前空間のテーブルを参照してください[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]XPath クエリを設計するを参照してください[XPath 構文](http://go.microsoft.com/fwlink/?LinkId=164592)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] XPath クエリを設計するを参照してください[XPath 構文](http://go.microsoft.com/fwlink/?LinkId=164592)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)  
  [フィルターを使用する方法](../../../../docs/framework/wcf/feature-details/how-to-use-filters.md)

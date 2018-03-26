@@ -1,12 +1,13 @@
 ---
-title: "マークアップ拡張機能と WPF XAML"
-ms.custom: 
+title: マークアップ拡張機能と WPF XAML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - brace character [WPF]
@@ -22,16 +23,17 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-caps.latest.revision: "26"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 5e6dec42d40039f9cc23ba976ecf421f6471888e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>マークアップ拡張機能と WPF XAML
 ここでは XAML のマークアップ拡張の概念について、構文規則、目的、その基になるクラス オブジェクト モデルなどを説明します。 マークアップ拡張は、XAML 言語、および XAML サービスの .NET 実装の一般的な機能です。 ここでは、WPF XAML で使用するマークアップ拡張について特に詳しく説明します。  
@@ -74,7 +76,7 @@ ms.lasthandoff: 12/22/2017
   
 -   `Binding` は、実行時に親オブジェクトに適用されるデータ コンテキストを使用して、データ バインディングされた値をプロパティに提供します。 このマークアップ拡張は、データ バインディングを指定するためにかなりの量のインライン構文を使用できるため、比較的複雑です。 詳細については、「[バインディングのマークアップ拡張機能](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)」を参照してください。  
   
--   `RelativeSource`ソース情報を提供する<xref:System.Windows.Data.Binding>実行時のオブジェクト ツリーで、いくつかの可能なリレーションシップを移動することができます。 これにより、周囲のオブジェクト ツリーに関する完全な知識がなくても、多目的のテンプレートで作成されるバインド、またはコードで作成されるバインドに対して、特殊なソースを指定することができます。 詳細については、「[RelativeSource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)」を参照してください。  
+-   `RelativeSource` ソース情報を提供する<xref:System.Windows.Data.Binding>実行時のオブジェクト ツリーで、いくつかの可能なリレーションシップを移動することができます。 これにより、周囲のオブジェクト ツリーに関する完全な知識がなくても、多目的のテンプレートで作成されるバインド、またはコードで作成されるバインドに対して、特殊なソースを指定することができます。 詳細については、「[RelativeSource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)」を参照してください。  
   
 -   `TemplateBinding` により、コントロール テンプレートがテンプレート プロパティの値を使用できるようになります。それらの値は、テンプレートを使用するクラスのオブジェクト モデルで定義されたプロパティから取られます。 つまり、テンプレート定義内のプロパティが、テンプレートを適用する場合にのみ存在するコンテキストにアクセスできます。 詳細については、「[TemplateBinding のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)」を参照してください。 `TemplateBinding` の実際の使用方法の詳細については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。  
   
@@ -128,7 +130,7 @@ ms.lasthandoff: 12/22/2017
   
  ほとんどのマークアップ拡張は、プロパティ要素を指定するオブジェクト要素構文で使用される場合、内側にコンテンツや他のプロパティ要素構文を含みません。 このため、オブジェクト要素タグを閉じ、子要素は指定しません。 オブジェクト要素が XAML プロセッサで検出されるたびに、そのクラスのコンストラクターが呼び出され、解析した要素から作成されたオブジェクトがインスタンス化されます。 マークアップ拡張クラスも同じです。マークアップ拡張をオブジェクト要素構文で使用できるようにする場合は、既定のコンストラクターを用意する必要があります。 既存のマークアップ拡張の中には、有効な初期化のために指定する必要のある必須プロパティ値を少なくとも 1 つ持っているものがあります。 その場合、通常、そのプロパティ値はオブジェクト要素のプロパティ属性として指定します。 「[XAML 名前空間 (x:) 言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)」および「[WPF XAML 拡張機能](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)」の各リファレンス ページで、必須プロパティを持つマークアップ拡張 (および必須プロパティの名前) について説明します。 これらのリファレンス ページでは、特定のマークアップ拡張でオブジェクト要素構文と属性構文のどちらかが使用できないケースについても説明します。 特に注意する必要があるケースは、[x:Array マークアップ拡張](../../../../docs/framework/xaml-services/x-array-markup-extension.md)です。このマークアップ拡張では、配列の内容をタグ設定の内側にコンテンツとして指定する必要があるため、属性構文をサポートできません。 配列の内容は一般的なオブジェクトとして扱われるため、属性に対する既定の型コンバーターは使用できません。 また、[x:Array マークアップ拡張](../../../../docs/framework/xaml-services/x-array-markup-extension.md)には `type` パラメーターが必要です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [XAML 名前空間 (x:) 言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
  [WPF XAML 拡張機能](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  

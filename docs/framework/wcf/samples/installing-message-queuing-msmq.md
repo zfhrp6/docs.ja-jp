@@ -1,19 +1,21 @@
 ---
-title: "メッセージ キュー (MSMQ) のインストール"
-ms.custom: 
+title: メッセージ キュー (MSMQ) のインストール
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-caps.latest.revision: "16"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: de9b67390d1260b5de26c146bd5afec7cfff4c42
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -48,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  [Microsoft Message Queue (MSMQ) Server]、[Microsoft Message Queue (MSMQ) Server Core] の順に展開して、インストールする次のメッセージ キュー機能のチェック ボックスをオンにします。  
   
-    -   [MSMQ Active Directory Domain Services Integration] (ドメインに参加するコンピューターの場合)  
+    -   [MSMQ Active Directory Domain Services Integration] \(ドメインに参加するコンピューターの場合)  
   
     -   [MSMQ HTTP サポート]  
   

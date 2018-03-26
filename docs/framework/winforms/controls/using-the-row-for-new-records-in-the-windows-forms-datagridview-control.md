@@ -1,28 +1,30 @@
 ---
-title: "Windows フォーム DataGridView コントロールにおける新規レコード行の使用"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールにおける新規レコード行の使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], adding rows for new records
 - rows [Windows Forms], new records
 - DataGridView control [Windows Forms], data entry
 ms.assetid: 6110f1ea-9794-442c-a98a-f104a1feeaf4
-caps.latest.revision: "14"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e349a33c90d08606da09ebdf32de6dedb8d6a52c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールにおける新規レコード行の使用
 使用すると、<xref:System.Windows.Forms.DataGridView>アプリケーション内のデータを編集するため、多くの場合、データ ストアに新しい行のデータを追加する機能をユーザーに付与します。 <xref:System.Windows.Forms.DataGridView>コントロールは、最後の行として常に表示されている、新しいレコードの行を指定してこの機能をサポートしています。 行のヘッダーにアスタリスク (*) 記号が付きます。 次のセクションでは、新しいレコードの行でプログラムが有効な場合の考慮事項について説明します。  
@@ -68,7 +70,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="virtual-mode"></a>仮想モード  
  仮想モードを実装している場合は、データ モデルと、行の追加をロールバックする時点で新しいレコードの行が必要なときに追跡する必要があります。 この機能の正確な実装によって異なります、データ モデルとそのトランザクションのセマンティクスの実装など、コミットのスコープがセルまたは行レベルにあるかどうか。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded?displayProperty=nameWithType>  
  [Windows フォーム DataGridView コントロールでのデータ入力](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)  

@@ -1,24 +1,26 @@
 ---
-title: "Web サービス プロトコルの相互運用性ガイド"
-ms.custom: 
+title: Web サービス プロトコルの相互運用性ガイド
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-caps.latest.revision: "20"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6b962452b6127d259733418969f1fb7b5036b1e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Web サービス プロトコルの相互運用性ガイド
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、さまざまな Web サービス プロトコルを実装します。 これらのプロトコルの多くには、さまざまなオプションと拡張ポイントが用意されており、それらの実装は実装者の裁量に任されています。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が実装する Web サービス プロトコルの一覧を示します。 サポートされる各プロトコルの実装の詳細については、このセクションの他のトピックで説明します。  
@@ -26,7 +28,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="web-services-protocols-implemented-by-wcf"></a>WCF が実装する Web サービス プロトコル  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、チャネルを通じて Web サービス (WS) のインフラストラクチャ プロトコルをサポートし、コントラクト機能を通じて Web サービスのアプリケーション プロトコルをサポートします。 アプリケーション プロトコルの相互運用性は、XML スキーマ記述言語 (XSD) 1.0 と Web サービス記述言語 (WSDL) 1.1 を通じて実現されます。  
   
- インフラストラクチャ プロトコルの相互運用性は、WS-* 仕様によって提供されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]チャネルは、さまざまな ws-サポートを提供\*インフラストラクチャ プロトコルです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは、バインド要素を使用して構成されます。 次の表は、ws-の完全な一覧を含む\*さまざまなによって実装されるインフラストラクチャ プロトコル[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインド要素。  
+ インフラストラクチャ プロトコルの相互運用性は、WS-* 仕様によって提供されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは、さまざまな ws-サポートを提供\*インフラストラクチャ プロトコルです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは、バインド要素を使用して構成されます。 次の表は、ws-の完全な一覧を含む\*さまざまなによって実装されるインフラストラクチャ プロトコル[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインド要素。  
   
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement> は、次の表の仕様をサポートします。  
   
@@ -75,7 +77,7 @@ ms.lasthandoff: 12/22/2017
 |WSS: SAML 1.1 Token Profile 1.1|[Web サービス セキュリティの SAML トークン プロファイル 1.1](http://go.microsoft.com/fwlink/?LinkId=96694)|  
 |WS-SecureConversation|[Web サービスのセキュリティで保護されたメッセージ交換の言語](http://go.microsoft.com/fwlink/?LinkId=95317)|  
 |WS-Trust 1.4|[Web サービスを信頼言語](http://go.microsoft.com/fwlink/?LinkId=169514)|  
-|WS-SecurityPolicy 2005/07|[Web サービスのセキュリティで保護されたメッセージ交換の言語](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> OASIS WS-SX 技術委員会に提出された正誤表で修正されています。<br /><br /> [ws sx メッセージ](http://go.microsoft.com/fwlink/?LinkId=96700)|  
+|WS-SecurityPolicy 2005/07|[Web サービスのセキュリティで保護されたメッセージ交換の言語](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> OASIS WS-SX 技術委員会に提出された正誤表で修正されています。<br /><br /> [ws-sx message](http://go.microsoft.com/fwlink/?LinkId=96700)|  
 |WS-ReliableMessaging 1.1|[信頼できるメッセージング プロトコル バージョン 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
   
  <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> は、次の表の仕様をサポートします。  
@@ -97,9 +99,9 @@ ms.lasthandoff: 12/22/2017
   
 -   [Ws-policy 1.5](http://go.microsoft.com/fwlink/?LinkId=96706)  
   
--   [Ws-policyattachment 1.2](http://go.microsoft.com/fwlink/?LinkId=96707)  
+-   [WS-PolicyAttachment 1.2](http://go.microsoft.com/fwlink/?LinkId=96707)  
   
--   [Ws-metadataexchange 1.1](http://go.microsoft.com/fwlink/?LinkId=94868)  
+-   [WS-MetadataExchange 1.1](http://go.microsoft.com/fwlink/?LinkId=94868)  
   
 -   [Ws-transfer Get によるメタデータの取得](http://go.microsoft.com/fwlink/?LinkId=96708)  
   
@@ -111,7 +113,7 @@ ms.lasthandoff: 12/22/2017
   
 -   [Basic Security Profile 1.0 ワーキング ドラフト](http://go.microsoft.com/fwlink/?LinkId=96711)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
  [メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)  
  [データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  

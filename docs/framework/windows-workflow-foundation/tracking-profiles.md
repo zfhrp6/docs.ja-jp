@@ -1,23 +1,24 @@
 ---
-title: "追跡プロファイル"
-ms.custom: 
+title: 追跡プロファイル
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
-caps.latest.revision: "21"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: a3b1e96451eb89544d0902a1f3498263dec981a3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="tracking-profiles"></a>追跡プロファイル
 追跡プロファイルには、実行時にワークフロー インスタンスの状態が変化したときに生成されるワークフロー イベントを追跡参加要素が定期受信することを可能にする追跡クエリが含まれています。  
@@ -390,7 +391,7 @@ TrackingProfile sampleTrackingProfile = new TrackingProfile()
 </trackingProfile>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL 追跡](../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)  
  [Windows Server App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201273)  
  [アプリケーション App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201275)

@@ -1,19 +1,19 @@
 ---
-title: "方法 : Windows Communication Foundation クライアントを作成する"
-ms.custom: 
+title: '方法 : Windows Communication Foundation クライアントを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/19/2018
   
 3.  右クリックして System.ServiceModel への参照を GettingStartedClient プロジェクトに追加、**参照**クリックし、ソリューション エクスプ ローラーで GettingStartedClient プロジェクトの下のフォルダー**追加**参照。 **参照の追加**ダイアログの  **Framework**ダイアログ ボックスの左側にあります。 [アセンブリの検索] ボックスに「`System.ServiceModel`」と入力します。 ダイアログの中央のセクションで選択**System.ServiceModel**をクリックして、**追加**ボタンをクリックし、をクリックして、**閉じる**ボタンをクリックします。 クリックして、ソリューションを保存、**すべて保存**メイン メニューの下のボタンをクリックします。  
   
-4.  次に、電卓サービスへのサービス参照を追加します。 これを実行する前に、GettingStartedHost コンソール アプリケーションを起動する必要があります。 ホストが実行されているソリューション エクスプ ローラーで GettingStartedClient プロジェクトの 参照 フォルダーを右クリックしてサービス参照の追加 ダイアログ ボックスの アドレス ボックスに次の URL でサービス参照の追加と種類を選択します HYPERLINK"http:/。/localhost:8000/ServiceModelSamples/Service"http://localhost:8000/ServiceModelSamples/Service とクリック、**移動**ボタンをクリックします。 "CalculatorService" が [サービス] ボックスに表示されたら、CalculatorService をダブルクリックして、そのサービスによって実装されているサービス コントラクトを展開して表示します。 同様をクリックして既定の名前空間のままにして、 **OK**ボタンをクリックします。  
+4.  次に、電卓サービスへのサービス参照を追加します。 これを実行する前に、GettingStartedHost コンソール アプリケーションを起動する必要があります。 ホストが実行されているソリューション エクスプ ローラーで GettingStartedClient プロジェクトの 参照 フォルダーを右クリックしてサービス参照の追加 ダイアログ ボックスの アドレス ボックスに次の URL でサービス参照の追加と種類を選択します HYPERLINK "http://localhost:8000/ServiceModelSamples/Service"  http://localhost:8000/ServiceModelSamples/Service とクリック、**移動**ボタンをクリックします。 "CalculatorService" が [サービス] ボックスに表示されたら、CalculatorService をダブルクリックして、そのサービスによって実装されているサービス コントラクトを展開して表示します。 同様をクリックして既定の名前空間のままにして、 **OK**ボタンをクリックします。  
   
      Visual Studio を使用してサービスへの参照を追加すると、ソリューション エクスプローラーで、新しい項目が GettingStartedClient プロジェクトの [サービス参照] フォルダーの下に表示されます。  使用する場合、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)ツールは、ソース コード ファイルおよび app.config ファイルが生成されます。  
   

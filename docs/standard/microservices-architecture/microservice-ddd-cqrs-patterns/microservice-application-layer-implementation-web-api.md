@@ -1,7 +1,7 @@
 ---
-title: "Web API を使用したマイクロサービス アプリケーション レイヤーの実装"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Web API を使用したマイクロサービス アプリケーション レイヤーの実装"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Web API を使用したマイクロサービス アプリケーション レイヤーの実装
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Web API を使用したマイクロサービス アプリケーション レイヤーの実装
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: cfca93dca0ec9d05936f4be676e27135c581de94
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Web API を使用したマイクロサービス アプリケーション レイヤーの実装
 
@@ -117,7 +117,7 @@ IoC コンテナーに型を登録する場合の最も一般的なパターン�
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Matthew King。Registering services with Scrutor (サービスを Scrutor に登録する)**
+-   **Matthew King。Scrutor をサービスに登録します。**
     [*https://mking.io/blog/registering-services-with-scrutor*](https://mking.io/blog/registering-services-with-scrutor)
 
 <!-- -->
@@ -172,13 +172,13 @@ public class ApplicationModule : Autofac.Module
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET Core での依存関係挿入の概要**
+-   **ASP.NET Core の依存関係の挿入の概要**
     [*https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection*](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)
 
 -   **Autofac。** 公式ドキュメント。
     [*http://docs.autofac.org/en/latest/*](http://docs.autofac.org/en/latest/)
 
--   **ASP.NET Core IoC コンテナー サービスの有効期間と Autofac IoC コンテナー インスタンスの範囲を比較する - Cesar de la Torre**
+-   **金 de la Torre Autofac IoC コンテナー インスタンスのスコープでの ASP.NET Core IoC コンテナー サービスの有効期間を比較します。**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/01/26/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/)
 
 ## <a name="implementing-the-command-and-command-handler-patterns"></a>コマンドおよびコマンド ハンドラー パターンの実装
@@ -398,19 +398,19 @@ public class CreateOrderCommandHandler
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Mark Seemann。At the Boundaries, Applications are Not Object-Oriented (境界においては、アプリケーションはオブジェクト指向ではない)**
-    [*http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/*](http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/)
+-   **Mark Seemann。境界、アプリケーションがオブジェクトではなく指向**
+    [*http://blog.ploeh.dk/2011/05/31/AttheBoundariesApplicationsareNotObject 指向/*](http://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/)
 
--   **Commands and events (コマンドとイベント)**
+-   **コマンドとイベント**
     [*http://cqrs.nu/Faq/commands-and-events*](http://cqrs.nu/Faq/commands-and-events)
 
--   **What does a command handler do? (コマンド ハンドラーとは何か)**
+-   **コマンド ハンドラー何か。**
     [*http://cqrs.nu/Faq/command-handlers*](http://cqrs.nu/Faq/command-handlers)
 
--   **Jimmy Bogard。Domain Command Patterns – Handlers (ドメイン コマンド パターン – ハンドラー)**
+-   **Jimmy Bogard。ドメイン コマンド パターン – ハンドラー**
     [*https://jimmybogard.com/domain-command-patterns-handlers/*](https://jimmybogard.com/domain-command-patterns-handlers/)
 
--   **Jimmy Bogard。Domain Command Patterns – Validation (ドメイン コマンド パターン – 検証)**
+-   **Jimmy Bogard。ドメインのコマンドのパターン: 検証**
     [*https://jimmybogard.com/domain-command-patterns-validation/*](https://jimmybogard.com/domain-command-patterns-validation/)
 
 ## <a name="the-command-process-pipeline-how-to-trigger-a-command-handler"></a>コマンド プロセス パイプライン: コマンド ハンドラーをトリガーする方法
@@ -833,38 +833,38 @@ public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
 
 ##### <a name="the-mediator-pattern"></a>メディエーター パターン
 
--   **Mediator pattern (メディエーター パターン)**
-    [*https://en.wikipedia.org/wiki/Mediator\_pattern*](https://en.wikipedia.org/wiki/Mediator_pattern)
+-   **媒介パターン**
+    [*https://en.wikipedia.org/wiki/Mediator\_パターン*](https://en.wikipedia.org/wiki/Mediator_pattern)
 
 ##### <a name="the-decorator-pattern"></a>デコレーター パターン
 
--   **Decorator pattern (デコレーター パターン)**
-    [*https://en.wikipedia.org/wiki/Decorator\_pattern*](https://en.wikipedia.org/wiki/Decorator_pattern)
+-   **デコレータ パターン**
+    [*https://en.wikipedia.org/wiki/Decorator\_パターン*](https://en.wikipedia.org/wiki/Decorator_pattern)
 
 ##### <a name="mediatr-jimmy-bogard"></a>MediatR (Jimmy Bogard)
 
 -   **MediatR。** GitHub リポジトリ。
     [*https://github.com/jbogard/MediatR*](https://github.com/jbogard/MediatR)
 
--   **CQRS with MediatR and AutoMapper (CQRS と MediatR および AutoMapper )**
+-   **MediatR と AutoMapper CQRS**
     [*https://lostechies.com/jimmybogard/2015/05/05/cqrs-with-mediatr-and-automapper/*](https://lostechies.com/jimmybogard/2015/05/05/cqrs-with-mediatr-and-automapper/)
 
--   **Put your controllers on a diet: POSTs and commands. (コントローラーの簡略化: POST とコマンド)**
+-   **コント ローラーをダイエットに入れます: 投稿とコマンド。**
     [*https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/*](https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/)
 
--   **Tackling cross-cutting concerns with a mediator pipeline (横断的関心事とメディエーター パイプラインの扱い)**
+-   **対応横断的関心事媒介パイプラインを持つ**
     [*https://lostechies.com/jimmybogard/2014/09/09/tackling-cross-cutting-concerns-with-a-mediator-pipeline/*](https://lostechies.com/jimmybogard/2014/09/09/tackling-cross-cutting-concerns-with-a-mediator-pipeline/)
 
--   **CQRS and REST: the perfect match (CQRS と REST: 完璧な組み合わせ)**
+-   **CQRS および REST: 完全に一致します。**
     [*https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/*](https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/)
 
--   **MediatR Pipeline Examples (MediatR パイプラインの例)**
+-   **MediatR パイプラインの例**
     [*https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/*](https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/)
 
--   **Vertical Slice Test Fixtures for MediatR and ASP.NET Core (MediatR および ASP.NET Core 用の垂直スライス テスト フィクスチャ)**
+-   **縦方向のスライス テスト フィクスチャ MediatR および ASP.NET Core**
     *<https://lostechies.com/jimmybogard/2016/10/24/vertical-slice-test-fixtures-for-mediatr-and-asp-net-core/> *
 
--   **MediatR Extensions for Microsoft Dependency Injection Released (Microsoft 依存関係挿入のためにリリースされた MediatR の拡張機能)**
+-   **リリースされる Microsoft の依存関係の挿入用 MediatR 拡張機能**
     [*https://lostechies.com/jimmybogard/2016/07/19/mediatr-extensions-for-microsoft-dependency-injection-released/*](https://lostechies.com/jimmybogard/2016/07/19/mediatr-extensions-for-microsoft-dependency-injection-released/)
 
 ##### <a name="fluent-validation"></a>Fluent 検証

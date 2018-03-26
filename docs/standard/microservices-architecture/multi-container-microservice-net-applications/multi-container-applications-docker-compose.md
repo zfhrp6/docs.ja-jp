@@ -1,7 +1,7 @@
 ---
-title: "docker-compose.yml で複数のコンテナー アプリケーションを定義する"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | docker-compose.yml で複数のコンテナー アプリケーションを定義する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: docker-compose.yml で複数のコンテナー アプリケーションを定義する
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | docker-compose.yml で複数のコンテナー アプリケーションを定義する'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/30/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: c4fed5c7ba5c2048d103f22bd2b463c143013280
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>docker-compose.yml で複数のコンテナー アプリケーションを定義する 
 
@@ -434,11 +434,11 @@ Docker-compose は、.env ファイル内の各行が &lt;変数&gt;=&lt;値&gt;
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Docker Compose の概要**
+-   **Docker の概要を作成します。**
     [*https://docs.docker.com/compose/overview/*](https://docs.docker.com/compose/overview/)
 
--   **複数の Compose ファイル**
-    [*https://docs.docker.com/compose/extends/\#multiple-compose-files*](https://docs.docker.com/compose/extends/#multiple-compose-files)
+-   **複数の構成ファイル**
+    [*https://docs.docker.com/compose/extends/\#複数を構成ファイル*](https://docs.docker.com/compose/extends/#multiple-compose-files)
 
 ### <a name="building-optimized-aspnet-core-docker-images"></a>最適化された ASP.NET Core Docker イメージをビルドする
 
@@ -468,7 +468,7 @@ ENTRYPOINT ["dotnet", "run"]
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET Core を使用して最適化された Docker イメージをビルドする**
+-   **ビルドと ASP.NET Core Docker Images の最適化**
     [*https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/*](https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/)
 
 ### <a name="building-the-application-from-a-build-ci-container"></a>ビルド (CI) コンテナーからアプリケーションをビルドする
@@ -549,8 +549,8 @@ Visual Studio を使用すると、これらすべての手順は内部で実行
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **コンテナーから bits をビルドする: Windows CLI 環境 (dotnet CLI、Docker CLI と VS Code) で eShopOnContainers ソリューションをセットアップする**
-    [*https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code)*](https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code))
+-   **コンテナーからのビットの構築: eShopOnContainers ソリューションを Windows CLI 環境 (dotnet CLI、Docker CLI と VS Code) で設定**
+    [*https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI、- Docker - CLI- と -VS-コード)*](https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code))
 
 
 >[!div class="step-by-step"]

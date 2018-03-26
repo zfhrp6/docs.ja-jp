@@ -1,8 +1,9 @@
 ---
-title: "方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する"
+title: '方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する'
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,12 +15,13 @@ ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 1e1c00abfec36622f5da493165259fb1786ab8d6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する
 これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、3 番目のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
@@ -422,10 +424,10 @@ End Module
 ```  
   
 > [!NOTE]
->  このようなサービスには、リッスンを行うコンピューター上で HTTP アドレスを登録するためのアクセス許可が必要です。 管理者アカウントにはこのアクセス許可がありますが、管理者以外のアカウントの場合は、HTTP 名前空間へのアクセス許可を付与する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]参照してください、名前空間の予約を構成する方法[を構成する HTTP および HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)です。 [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] での service.exe の実行には、管理者権限が必要です。  
+>  このようなサービスには、リッスンを行うコンピューター上で HTTP アドレスを登録するためのアクセス許可が必要です。 管理者アカウントにはこのアクセス許可がありますが、管理者以外のアカウントの場合は、HTTP 名前空間へのアクセス許可を付与する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 参照してください、名前空間の予約を構成する方法[を構成する HTTP および HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)です。 [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] での service.exe の実行には、管理者権限が必要です。  
   
  これでサービスが実行されていることが確認できました。 進みます[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 情報をトラブルシューティングするには、次を参照してください。[チュートリアル入門のトラブルシューティング](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
  [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)

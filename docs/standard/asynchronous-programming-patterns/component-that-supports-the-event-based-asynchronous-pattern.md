@@ -1,12 +1,12 @@
 ---
-title: "チュートリアル : イベントベースの非同期パターンをサポートするコンポーネントの実装"
-ms.custom: 
+title: 'チュートリアル : イベントベースの非同期パターンをサポートするコンポーネントの実装'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -24,7 +24,7 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -32,10 +32,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 4d42c1d4b58f5e2517ff8d8c504628c7aab6fd0d
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="walkthrough-implementing-a-component-that-supports-the-event-based-asynchronous-pattern"></a>チュートリアル : イベントベースの非同期パターンをサポートするコンポーネントの実装
 顕著な遅延が発生する可能性がある操作を伴うクラスを作成する場合は、[イベント ベースの非同期パターン](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)を実装することによって、非同期機能を与えることを検討します。  
@@ -263,7 +263,7 @@ ms.lasthandoff: 02/09/2018
   
  2、3、5 などの自明の約数をテストすることにより、この例を改良することもできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: バックグラウンドで操作を実行する](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
  [イベントベースの非同期パターンの概要](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
  [ビルド内にありません: Visual Basic でのマルチスレッド](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  

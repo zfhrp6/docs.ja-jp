@@ -1,12 +1,13 @@
 ---
-title: "パス マークアップ構文"
-ms.custom: 
+title: パス マークアップ構文
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - attribute usage in XAML [WPF]
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - graphics [WPF], PathGeometry class
 - XAML [WPF], object element usage
 ms.assetid: b8586241-a02d-486e-9223-e1e98e047f41
-caps.latest.revision: "22"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9cd8f9b14f114060ebec8e336c1212d61fa19c83
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="path-markup-syntax"></a>パス マークアップ構文
 パスは、後ほど[図形と WPF の概要での基本的な描画](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)と[ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)、ただし、このトピックの詳細、強力で複雑なミニ言語の説明パスの指定に使用することができます使用してよりコンパクト ジオメトリ[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -34,7 +36,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="abouthisdocument"></a>   
 ## <a name="streamgeometry-and-pathfigurecollection-mini-languages"></a>StreamGeometry ミニ言語と PathFigureCollection ミニ言語  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]幾何学模様のパスを記述するためのミニ言語を提供する 2 つのクラスを提供します。<xref:System.Windows.Media.StreamGeometry>と<xref:System.Windows.Media.PathFigureCollection>です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 幾何学模様のパスを記述するためのミニ言語を提供する 2 つのクラスを提供します。<xref:System.Windows.Media.StreamGeometry>と<xref:System.Windows.Media.PathFigureCollection>です。  
   
 -   使用する、<xref:System.Windows.Media.StreamGeometry>型のプロパティを設定するときに、ミニ言語<xref:System.Windows.Media.Geometry>、ように、<xref:System.Windows.UIElement.Clip%2A>のプロパティ、<xref:System.Windows.UIElement>または<xref:System.Windows.Shapes.Path.Data%2A>のプロパティ、<xref:System.Windows.Shapes.Path>要素。 次の例では、属性の構文を使用して、作成、<xref:System.Windows.Media.StreamGeometry>です。  
   
@@ -58,17 +60,17 @@ ms.lasthandoff: 12/22/2017
   
 |StreamGeometry XAML 属性使用構文|  
 |-----------------------------------------|  
-|`<`*オブジェクト**プロパティ* `="`[ `fillRule`] `figureDescription`[ `figureDescription`] *`" ... />`|  
+|`<` *object* *property* `="`[ `fillRule`] `figureDescription`[ `figureDescription`]* `" ... />`|  
   
  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]属性の使用法の構文、<xref:System.Windows.Media.PathFigureCollection>は 1 つまたは複数の図の説明で構成されます。  
   
 |PathFigureCollection XAML 属性使用構文|  
 |-----------------------------------------------|  
-|`<`*オブジェクト**プロパティ* `="` `figureDescription`[ `figureDescription`] *`" ... />`|  
+|`<` *object* *property* `="` `figureDescription`[ `figureDescription`]* `" ... />`|  
   
 |用語|説明|  
 |----------|-----------------|  
-|*fillRule*|<xref:System.Windows.Media.FillRule?displayProperty=nameWithType><br /><br /> 指定するかどうか、<xref:System.Windows.Media.StreamGeometry>を使用して、<xref:System.Windows.Media.FillRule.EvenOdd>または<xref:System.Windows.Media.FillRule.Nonzero><xref:System.Windows.Media.PathGeometry.FillRule%2A>です。<br /><br /> -   `F0`指定します、<xref:System.Windows.Media.FillRule.EvenOdd>塗りつぶしルール。<br />-   `F1`指定します、<xref:System.Windows.Media.FillRule.Nonzero>塗りつぶしルール。<br /><br /> このコマンドを省略した場合、サブパスが既定の動作を使用<xref:System.Windows.Media.FillRule.EvenOdd>です。 このコマンドを指定する場合は、先頭に配置する必要があります。|  
+|*fillRule*|<xref:System.Windows.Media.FillRule?displayProperty=nameWithType><br /><br /> 指定するかどうか、<xref:System.Windows.Media.StreamGeometry>を使用して、<xref:System.Windows.Media.FillRule.EvenOdd>または<xref:System.Windows.Media.FillRule.Nonzero><xref:System.Windows.Media.PathGeometry.FillRule%2A>です。<br /><br /> -   `F0` 指定します、<xref:System.Windows.Media.FillRule.EvenOdd>塗りつぶしルール。<br />-   `F1` 指定します、<xref:System.Windows.Media.FillRule.Nonzero>塗りつぶしルール。<br /><br /> このコマンドを省略した場合、サブパスが既定の動作を使用<xref:System.Windows.Media.FillRule.EvenOdd>です。 このコマンドを指定する場合は、先頭に配置する必要があります。|  
 |*figureDescription*|移動コマンドと描画コマンド (および省略可能な閉じるコマンド) で構成される図形。<br /><br /> `moveCommand` `drawCommands`  `[` `closeCommand` `]`|  
 |*moveCommand*|図形の開始位置を指定する移動コマンド。 参照してください、[移動コマンド](#themovecommand)セクションです。|  
 |*drawCommands*|図の内容を記述する 1 つまたは複数の描画コマンド。 参照してください、[描画コマンド](#drawcommands)セクションです。|  
@@ -95,7 +97,7 @@ ms.lasthandoff: 12/22/2017
  各コマンドは、大文字または小文字で入力します。大文字は絶対値を、小文字は相対値を表し、そのセグメントの制御点は、前の例の終点を基準とします。 順番に同じ型の 1 つ以上のコマンドを入力する、ときに、重複するコマンドの入力を省略できます。たとえば、`L 100,200 300,400`は等価`L 100,200 L 300,400`です。 次の表、**移動**と**描画**コマンド。  
   
 ### <a name="line-command"></a>直線コマンド  
- 現在の点と指定された終点の間に直線を作成します。 `l 20 30`および`L 20,30`の有効な例については、**行**コマンド。  
+ 現在の点と指定された終点の間に直線を作成します。 `l 20 30` および`L 20,30`の有効な例については、**行**コマンド。  
   
 |構文|  
 |------------|  
@@ -235,7 +237,7 @@ ms.lasthandoff: 12/22/2017
   
  指数表記を使用することもできます。 たとえば、`+1.e17`有効な値です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Shapes.Path>  
  <xref:System.Windows.Media.StreamGeometry>  
  <xref:System.Windows.Media.PathGeometry>  

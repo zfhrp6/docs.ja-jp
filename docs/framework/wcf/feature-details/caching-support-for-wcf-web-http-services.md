@@ -1,27 +1,29 @@
 ---
-title: "WCF WEB HTTP サービスのキャッシュ サポート"
-ms.custom: 
+title: WCF WEB HTTP サービスのキャッシュ サポート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-caps.latest.revision: "11"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 723f485ab45cbe127bfd337c2d428d38d5f27232
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>WCF WEB HTTP サービスのキャッシュ サポート
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]WCF Web HTTP サービスで既に ASP.NET での使用可能な宣言によるキャッシュ機構を使用できます。 これにより、WCF Web HTTP サービス操作からの応答をキャッシュできます。 キャッシュ用に構成されているサービスに対してユーザーが HTTP GET を送信すると、ASP.NET は、キャッシュされた応答を送り返し、サービス メソッドは呼び出されません。 キャッシュの有効期限が切れると、ユーザーが次回に HTTP GET を送信したときに、サービス メソッドが呼び出され、応答が再度キャッシュされます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ASP.NET キャッシュを参照してください[ASP.NET のキャッシュの概要](http://go.microsoft.com/fwlink/?LinkId=152534)  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] WCF Web HTTP サービスで既に ASP.NET での使用可能な宣言によるキャッシュ機構を使用できます。 これにより、WCF Web HTTP サービス操作からの応答をキャッシュできます。 キャッシュ用に構成されているサービスに対してユーザーが HTTP GET を送信すると、ASP.NET は、キャッシュされた応答を送り返し、サービス メソッドは呼び出されません。 キャッシュの有効期限が切れると、ユーザーが次回に HTTP GET を送信したときに、サービス メソッドが呼び出され、応答が再度キャッシュされます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ASP.NET キャッシュを参照してください[ASP.NET のキャッシュの概要](http://go.microsoft.com/fwlink/?LinkId=152534)  
   
 ## <a name="basic-web-http-service-caching"></a>基本的な Web HTTP サービスのキャッシュ  
  WEB HTTP サービスのキャッシュを有効にするには、まず、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> の <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> を <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required> に設定してサービスに適用し、ASP.NET との互換性を有効にする必要があります。  
@@ -133,7 +135,7 @@ public class Service
  ここでは、キャッシュ期間が 60 秒に、`varyByParam` が none に設定されており、`sqlDependency` が、コロン区切りのデータベース名とテーブルのペアをセミコロンで区切ったリストに設定されています。 `MyTable` のデータが変更されると、キャッシュされているサービス操作への応答が削除されます。この操作が呼び出されると、新しい応答が (サービス操作の呼び出しによって) 生成され、キャッシュされて、クライアントに返されます。  
   
 > [!IMPORTANT]
->  SQL データベースにアクセスする asp.net、使用する必要があります、 [ASP.NET SQL Server の登録ツール](http://go.microsoft.com/fwlink/?LinkId=152536)です。 また、適切なユーザー アカウントに、データベースおよびテーブルへのアクセスを許可する必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Web アプリケーションから SQL Server へのアクセス](http://go.microsoft.com/fwlink/?LinkId=178988)です。  
+>  SQL データベースにアクセスする asp.net、使用する必要があります、 [ASP.NET SQL Server の登録ツール](http://go.microsoft.com/fwlink/?LinkId=152536)です。 また、適切なユーザー アカウントに、データベースおよびテーブルへのアクセスを許可する必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Web アプリケーションから SQL Server へのアクセス](http://go.microsoft.com/fwlink/?LinkId=178988)です。  
   
 ## <a name="conditional-http-get-based-caching"></a>条件付きの HTTP GET ベースのキャッシュ  
  Web HTTP シナリオで条件付きの HTTP GET はよく使用サービスによってキャッシュを実装するインテリジェント HTTP」の説明に従って、 [HTTP 仕様](http://go.microsoft.com/fwlink/?LinkId=165800)です。 そのためには、サービスが ETag ヘッダーの値を HTTP 応答に設定する必要があります。 また、HTTP 要求の If-None-Match ヘッダーの値を確認して、指定されている ETag が現在の ETag と一致するかどうかを調べる必要もあります。  

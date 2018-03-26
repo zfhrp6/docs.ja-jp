@@ -20,7 +20,7 @@ ms.openlocfilehash: 823edadf7d387d1a509edbdf839ac6eeece5d41f
 ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="wcf-service-publishing"></a>WCF サービス発行
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントで構成される初期の開発環境から、テストの目的でアプリケーションを実際に実稼働環境に配置する場合に役立ちます。 最終的な配置計画を確定する前に、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行を使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスが正しく動作し、発行の準備ができていることを確認できます。 また、テスト用のさまざまなターゲットの場所に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを配置することもできます。  

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core サービスと Web アプリのテスト"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | ASP.NET Core サービスと Web アプリのテスト"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: ASP.NET Core サービスと Web アプリのテスト
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | ASP.NET Core サービスと Web アプリのテスト'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 596f588aae8c0814e5b40d29c4bf5723f944c5ac
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>ASP.NET Core サービスと Web アプリのテスト
 
@@ -102,11 +102,11 @@ public class PrimeWebDefaultRequestShould
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Steve Smith。コントローラーのテスト** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
+-   **Steve Smith。テスト コント ローラー** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
 
--   **Steve Smith。統合テスト** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/testing/integration-testing*](/aspnet/core/testing/integration-testing)
+-   **Steve Smith。統合テスト**(ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/testing/integration-testing*](/aspnet/core/testing/integration-testing)
 
--   **dotnet test を使用した .NET Core での単体テスト**
+-   **Dotnet テストを使用して .NET Core での単体テスト**
     [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 -   **xUnit.net**。 公式サイト。

@@ -1,35 +1,37 @@
 ---
-title: "Entity SQL と Transact-SQL の相違点"
-ms.custom: 
+title: Entity SQL と Transact-SQL の相違点
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c9ee36d-f294-4c8b-a196-f0114c94f559
-caps.latest.revision: "3"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 3f80ec1ac51dded1f91d1a18c4d4e24836cf92cd
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-entity-sql-differs-from-transact-sql"></a>Entity SQL と Transact-SQL の相違点
 このトピックの違いを説明する[!INCLUDE[esql](../../../../../../includes/esql-md.md)]と[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]です。  
   
 ## <a name="inheritance-and-relationships-support"></a>継承とリレーションシップのサポート  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]エンティティの概念スキーマを直接操作し、継承やリレーションシップなどの概念モデル機能をサポートします。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] エンティティの概念スキーマを直接操作し、継承やリレーションシップなどの概念モデル機能をサポートします。  
   
  継承を操作するときは、スーパータイプ インスタンスのコレクションからサブタイプのインスタンスを選択すると便利である場合がよくあります。 [Oftype](../../../../../../docs/framework/data/adonet/ef/language-reference/oftype-entity-sql.md)で演算子[!INCLUDE[esql](../../../../../../includes/esql-md.md)](のような`oftype`c# シーケンスで) この機能を提供します。  
   
 ## <a name="support-for-collections"></a>コレクションのサポート  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]コレクションをファーストクラスのエンティティとして扱われます。 例:  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] コレクションをファーストクラスのエンティティとして扱われます。 例えば:  
   
 -   コレクションの式は、`from` 句内で有効です。  
   
@@ -42,7 +44,7 @@ ms.lasthandoff: 01/17/2018
 -   結合はコレクションに対して実行されます。  
   
 ## <a name="support-for-expressions"></a>式のサポート  
- [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]サブクエリ (テーブル) と式 (行と列) があります。  
+ [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] サブクエリ (テーブル) と式 (行と列) があります。  
   
  コレクションとを入れ子になったコレクションをサポートするために[!INCLUDE[esql](../../../../../../includes/esql-md.md)]はすべてを式。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] よりもコンポーザブルであり、すべての式をどこにでも使用できます。 クエリ式は常に投射型のコレクションとなり、コレクション式が許可されている任意の場所で使用できます。 について[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]でサポートされていない式[!INCLUDE[esql](../../../../../../includes/esql-md.md)]を参照してください[サポートされていない式](../../../../../../docs/framework/data/adonet/ef/language-reference/unsupported-expressions-entity-sql.md)です。  
   
@@ -60,7 +62,7 @@ set(e1)
 ## <a name="uniform-treatment-of-subqueries"></a>サブクエリの一貫した処理  
  テーブルに重点を[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]サブクエリのコンテキストを解釈を実行します。 内のサブクエリなど、`from`句は、マルチセット (テーブル) と見なされます。 ただし、`select` 句で使用される同じサブクエリは、スカラー サブクエリと見なされます。 同様に、サブクエリの左側に使用される、`in`演算子は、スカラー サブクエリの場合は、右側にあるは、サブクエリはマルチセット サブクエリをする必要があると見なされます。  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ではこれらの違いが排除されます。 式は、使用するコンテキストに依存しない、一貫した方法で解釈されます。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]すべてのサブクエリはマルチセット サブクエリと見なします。 サブクエリ、スカラー値が必要な場合の[!INCLUDE[esql](../../../../../../includes/esql-md.md)]提供、`anyelement`はコレクション (この場合はサブクエリ) に対して演算を行い、コレクションからシングルトン値を抽出する演算子です。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ではこれらの違いが排除されます。 式は、使用するコンテキストに依存しない、一貫した方法で解釈されます。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] すべてのサブクエリはマルチセット サブクエリと見なします。 サブクエリ、スカラー値が必要な場合の[!INCLUDE[esql](../../../../../../includes/esql-md.md)]提供、`anyelement`はコレクション (この場合はサブクエリ) に対して演算を行い、コレクションからシングルトン値を抽出する演算子です。  
   
 ### <a name="avoiding-implicit-coercions-for-subqueries"></a>サブクエリの暗黙の強制型変換の回避  
  サブクエリの一貫した処理に伴う二次的作用として、スカラー値へのサブクエリの暗黙的な変換があります。 具体的には、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] では、単一フィールドの行のマルチセットはそのフィールドのデータ型を持つスカラー値に暗黙的に変換されます。  
@@ -68,7 +70,7 @@ set(e1)
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、この暗黙の強制型変換をサポートしていません。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、コレクションからシングルトン値を抽出するための ANYELEMENT 演算子と、クエリ式の実行中に row ラッパーの作成を回避するための `select value` 句が提供されています。  
   
 ## <a name="select-value-avoiding-the-implicit-row-wrapper"></a>SELECT VALUE: 暗黙の row ラッパーの回避  
- Select 句、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]サブクエリでは、句で、項目の周辺の row ラッパーを暗黙的に作成します。 これは、スカラーやオブジェクトのコレクションを作成できないことを意味します。 [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]1 つのフィールドの rowtype と、同じデータ型の単一値の間の暗黙の強制変換を使用できます。  
+ Select 句、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]サブクエリでは、句で、項目の周辺の row ラッパーを暗黙的に作成します。 これは、スカラーやオブジェクトのコレクションを作成できないことを意味します。 [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] 1 つのフィールドの rowtype と、同じデータ型の単一値の間の暗黙の強制変換を使用できます。  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] には、暗黙の行の構築をスキップする `select value` 句が用意されています。 `select value` 句には 1 つの項目のみを指定できます。 このような句を使用した場合、`select` 句内の項目には row ラッパーは構築されず、目的の構造を持つコレクションを作成できます。たとえば、`select value a` のように指定します。  
   
@@ -79,7 +81,7 @@ set(e1)
 ## <a name="left-correlation-and-aliasing"></a>左の相関関係と別名定義  
  [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] では、1 つのスコープ内の式 (`select` または `from` のような単一句) は同じスコープ内で先に定義された式を参照できません。 一部の SQL 言語仕様 ([!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] を含む) では、`from` 句でこれらを制限付きでサポートしています。  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]左の相関関係を一般化、`from`句、およびこれらを取り扱います。 `from` 句内の式は、追加の構文を使用せずに、同じ句内で先に作成された定義 (左側の定義) を参照できます。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 左の相関関係を一般化、`from`句、およびこれらを取り扱います。 `from` 句内の式は、追加の構文を使用せずに、同じ句内で先に作成された定義 (左側の定義) を参照できます。  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、`group by` 句を伴うクエリにも制限を課しています。 内の式、`select`句と`having`のようなクエリ句のみが参考に、`group by`別名を使用してキー。 次の構成体がで有効では[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]に追加されていないが、 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]:  
   
@@ -122,7 +124,7 @@ p.Address.City
 ```  
   
 ## <a name="no-support-for-"></a>* のサポートなし  
- [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]修飾されていないをサポートしています * 全体の行では、および限定のエイリアスとして構文\*構文 (t.\*)、そのテーブルのフィールドのショートカットとして。 さらに、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]では、特殊な count (\*) 集計で、null 値が含まれています。  
+ [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] 修飾されていないをサポートしています * 全体の行では、および限定のエイリアスとして構文\*構文 (t.\*)、そのテーブルのフィールドのショートカットとして。 さらに、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]では、特殊な count (\*) 集計で、null 値が含まれています。  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、* 構造をサポートしていません。 [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] および `select * from T` の形式の `select T1.* from T1, T2...` クエリは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] ではそれぞれ `select value t from T as t` および `select value t1 from T1 as t1, T2 as t2...` として表すことができます。 また、これらの構造は継承 (値の置換可能性) に対応していますが、`select *` Variant 型では宣言された型の最上位レベルのプロパティに限定されています。  
   
@@ -185,7 +187,7 @@ SELECT C2.FirstName, C2.LastName
  次の [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] 機能は [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では使用できません。  
   
  DML  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]現在はサポートされません DML ステートメント (挿入、更新、削除) します。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 現在はサポートされません DML ステートメント (挿入、更新、削除) します。  
   
  DDL  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の現在のバージョンでは DDL はサポートされていません。  
@@ -200,7 +202,7 @@ SELECT C2.FirstName, C2.LastName
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では分析関数はまだサポートしていません。  
   
  組み込み関数、演算子  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]サブセットをサポート[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]関数および演算子の組み込みです。 これらの演算子と関数の多くは、主要なストア プロバイダーによりサポートされています。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]プロバイダー マニフェストで宣言されたストア固有の関数を使用します。 さらに、[!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]組み込みを宣言することができ、既存のユーザー定義ストア関数[!INCLUDE[esql](../../../../../../includes/esql-md.md)]を使用します。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] サブセットをサポート[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]関数および演算子の組み込みです。 これらの演算子と関数の多くは、主要なストア プロバイダーによりサポートされています。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] プロバイダー マニフェストで宣言されたストア固有の関数を使用します。 さらに、[!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]組み込みを宣言することができ、既存のユーザー定義ストア関数[!INCLUDE[esql](../../../../../../includes/esql-md.md)]を使用します。  
   
  ヒント  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ではクエリ ヒントのメカニズムは提供していません。  
@@ -222,6 +224,6 @@ Select value c from Categories as c;
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、コマンドごとに 1 つの結果生成クエリ ステートメントのみをサポートします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
  [サポートされていない式](../../../../../../docs/framework/data/adonet/ef/language-reference/unsupported-expressions-entity-sql.md)

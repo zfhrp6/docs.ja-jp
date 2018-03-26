@@ -1,27 +1,29 @@
 ---
-title: "標準クエリ演算子の変換"
-ms.custom: 
+title: 標準クエリ演算子の変換
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-caps.latest.revision: "2"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: fc99fea9b722f6c3395f6bade625a09c6e97eb08
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="standard-query-operator-translation"></a>標準クエリ演算子の変換
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、標準クエリ演算子から SQL コマンドへの変換が行われます。 データベースのクエリ プロセッサでは、SQL 変換の実行のセマンティクスを決定します。  
@@ -45,7 +47,7 @@ ms.lasthandoff: 01/17/2018
  <xref:System.Linq.Enumerable.Union%2A> メソッドは、マルチセットの順序なし連結メソッドとして、マルチセットに対して定義されます (事実上、SQL の UNION ALL 句の結果)。  
   
 ### <a name="take-skip"></a>Take、Skip  
- <xref:System.Linq.Enumerable.Take%2A>および<xref:System.Linq.Enumerable.Skip%2A>メソッドはに対してのみ正しく定義*順序付けされたセット*です。 順序付けされていないセットまたはマルチセットのセマンティクスは未定義です。  
+ <xref:System.Linq.Enumerable.Take%2A> および<xref:System.Linq.Enumerable.Skip%2A>メソッドはに対してのみ正しく定義*順序付けされたセット*です。 順序付けされていないセットまたはマルチセットのセマンティクスは未定義です。  
   
 > [!NOTE]
 >  <xref:System.Linq.Enumerable.Take%2A> と <xref:System.Linq.Enumerable.Skip%2A> を SQL Server 2000 に対するクエリで使用する場合は、いくつかの制限があります。 詳細については、「Skip 例外と例外を SQL Server 2000 で Take」のエントリを参照してください。[トラブルシューティング](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)です。  
@@ -105,7 +107,7 @@ ORDER BY [t0].[CustomerID]
  同様に、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] が整数値の <xref:System.Linq.Enumerable.Average%2A> を変換するときには、`integer` ではなく `double` として計算されます。  
   
 ### <a name="entity-arguments"></a>エンティティ引数  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]により、エンティティ型で使用される、<xref:System.Linq.Enumerable.GroupBy%2A>と<xref:System.Linq.Enumerable.OrderBy%2A>メソッドです。 これらの演算子の変換では、型の引数を使用している場合、その型のすべてのメンバーを指定しているのと同等と見なされます。 たとえば、次のコードは同じ意味です。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] により、エンティティ型で使用される、<xref:System.Linq.Enumerable.GroupBy%2A>と<xref:System.Linq.Enumerable.OrderBy%2A>メソッドです。 これらの演算子の変換では、型の引数を使用している場合、その型のすべてのメンバーを指定しているのと同等と見なされます。 たとえば、次のコードは同じ意味です。  
   
  [!code-csharp[DLinqSQOTranslation#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#2)]
  [!code-vb[DLinqSQOTranslation#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#2)]  
@@ -123,7 +125,7 @@ ORDER BY [t0].[CustomerID]
   
  <xref:System.Linq.Enumerable.Except%2A>  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]等値との比較をサポートしている*フラット*引数のではなく、シーケンスが含まれる引数。 フラットな引数とは、SQL の行に対応付けられる型のものです。 シーケンスを含まないと静的に決定できる 1 つまたは複数のエンティティ型の射影は、フラットな引数と見なされます。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 等値との比較をサポートしている*フラット*引数のではなく、シーケンスが含まれる引数。 フラットな引数とは、SQL の行に対応付けられる型のものです。 シーケンスを含まないと静的に決定できる 1 つまたは複数のエンティティ型の射影は、フラットな引数と見なされます。  
   
  フラットな引数の例を次に示します。  
   
@@ -206,7 +208,7 @@ ORDER BY [t0].[CustomerID]
  この制限事項には、対処方法はありません。 具体的には、`Distinct()` 列または `text` 列に割り当てられているメンバーを含む結果に対して、`ntext` を使用することはできません。  
   
 ### <a name="behavior-triggered-by-nested-queries"></a>入れ子になったクエリによってトリガーされる動作  
- [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)](SP4 まで) は、バインダーは、入れ子になったクエリによってトリガーされる特異な動作がします。 この特異動作をトリガーする SQL クエリのセットは、正しく定義されていません。 このためのセットを定義することはできません[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]クエリを SQL Server の例外が発生する可能性があります。  
+ [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] (SP4 まで) は、バインダーは、入れ子になったクエリによってトリガーされる特異な動作がします。 この特異動作をトリガーする SQL クエリのセットは、正しく定義されていません。 このためのセットを定義することはできません[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]クエリを SQL Server の例外が発生する可能性があります。  
   
 ### <a name="skip-and-take-operators"></a>Skip 演算子および Take 演算子  
  <xref:System.Linq.Enumerable.Take%2A> と <xref:System.Linq.Enumerable.Skip%2A> には、[!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] に対するクエリで使用する場合に特定の制限があります。 詳細については、「Skip 例外と例外を SQL Server 2000 で Take」のエントリを参照してください。[トラブルシューティング](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)です。  
@@ -236,7 +238,7 @@ ORDER BY [t0].[CustomerID]
   
     -   <xref:System.Linq.Enumerable.ToArray%2A>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
  [シーケンスの要素の取得またはスキップ](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
  [2 つのシーケンスの連結](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  

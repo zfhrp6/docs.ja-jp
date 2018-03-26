@@ -1,7 +1,7 @@
 ---
-title: "イベントへのサブスクライブ"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | イベントへのサブスクライブ"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: イベントへのサブスクライブ
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | イベントへのサブスクライブ'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 7538c760d396349fe9b1e93a21839e3e59d7f046
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="subscribing-to-events"></a>イベントへのサブスクライブ
 
@@ -302,7 +302,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **べき等性の確保** (このページの小見出し) [*https://msdn.microsoft.com/library/jj591565.aspx*](https://msdn.microsoft.com/library/jj591565.aspx)
+-   **メッセージべき等に従う**(このページの小見出し) [*https://msdn.microsoft.com/library/jj591565.aspx*](https://msdn.microsoft.com/library/jj591565.aspx)
 
 ## <a name="deduplicating-integration-event-messages"></a>統合イベント メッセージの重複除去
 
@@ -322,63 +322,63 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **NServiceBus を使用するフォークされた eShopOnContainers (Particular Software)**
+-   **NServiceBus (特定のソフトウェア) を使用して、分岐した eShopOnContainers**
     [*http://go.particular.net/eShopOnContainers*](http://go.particular.net/eShopOnContainers)
 
 -   **イベント ドリブン メッセージング**
-    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
+    [*http://soapatterns.org/design\_パターン/イベント\_ドリブン\_メッセージング*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
--   **Jimmy Bogard。復元性に向けたリファクタリング: 結合の評価**
+-   **Jimmy Bogard。結合の評価からの復元力の方向にリファクタリングします。**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
--   **発行-サブスクライブ チャネル**
+-   **公開/定期受信チャネル**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
--   **制限ありコンテキスト間の通信**
+-   **境界のあるコンテキスト間の通信**
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
--   **最終的な整合性**
-    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
+-   **最終的整合性**
+    [*https://en.wikipedia.org/wiki/Eventual\_整合性*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
--   **Philip Brown。制限ありコンテキストの統合の戦略**
+-   **Philip Brown。コンテキストに制限を統合するための戦略**
     [*http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
 
--   **Chris Richardson。集計、イベント ソーシング、および CQRS を使用したトランザクション マイクロサービスの開発 - パート 2**
+-   **Chris Richardson。集計、イベント ソース、CQRS - パート 2 を使用してトランザクション Microservices の開発**
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson)
 
 -   **Chris Richardson。イベント ソーシング パターン**
     [*http://microservices.io/patterns/data/event-sourcing.html*](http://microservices.io/patterns/data/event-sourcing.html)
 
--   **イベント ソーシングの概要**
+-   **イベント ソースの概要**
     [*https://msdn.microsoft.com/library/jj591559.aspx*](https://msdn.microsoft.com/library/jj591559.aspx)
 
 -   **イベント ストア データベース**。 公式サイト。
     [*https://geteventstore.com/*](https://geteventstore.com/)
 
--   **Patrick Nommensen。マイクロサービスのイベント ドリブン データ管理**
+-   **Patrick Nommensen。Microservices のイベント ドリブンのデータ管理**
     *<https://dzone.com/articles/event-driven-data-management-for-microservices-1> *
 
--   **CAP 定理**
-    [*https://en.wikipedia.org/wiki/CAP\_theorem*](https://en.wikipedia.org/wiki/CAP_theorem)
+-   **キャップの定理**
+    [*https://en.wikipedia.org/wiki/CAP\_定理*](https://en.wikipedia.org/wiki/CAP_theorem)
 
--   **CAP 定理とは**
+-   **キャップの定理とは何ですか。**
     [*https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
 
--   **データ整合性入門**
+-   **データ整合性の概要**
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
--   **Rick Saling。CAP 定理: クラウドとインターネットで「すべてのものが異なる」理由**
+-   **Rick Saling。キャップの定理:「すべてのものが異なる」クラウドやインターネット理由**
     [*https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/*](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
 
--   **Eric Brewer。12 年後の CAP: 「ルール」はどのように変更されたか**
+-   **Eric Brewer。CAP 12 年後:「規則」が次のように変更されました**
     [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
--   **外部 (DTC) トランザクションへの参加** (MSMQ) [*https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
+-   **外部 (DTC) トランザクションに参加している**(MSMQ) [  *https://msdn.microsoft.com/library/ms978430.aspx \#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
 
--   **Azure Service Bus。ブローカー メッセージング: 重複データ検出**
+-   **Azure Service Bus。重複データ検出の仲介型メッセージング:**
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
--   **信頼性ガイド** (RabbitMQ ドキュメント) [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
+-   **信頼性ガイド**(RabbitMQ ドキュメント) [  *https://www.rabbitmq.com/reliability.html\#コンシューマー*](https://www.rabbitmq.com/reliability.html%23consumer)
 
 
 

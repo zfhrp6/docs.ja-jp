@@ -1,24 +1,26 @@
 ---
-title: "OLE DB データ型のマッピング"
-ms.custom: 
+title: OLE DB データ型のマッピング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 04bcb259-59d3-4fd7-894d-4f0dd0c68069
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 407f194a8530f9b9e4241a6bdb4d26a4b891aa46
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ole-db-data-type-mappings"></a>OLE DB データ型のマッピング
 .NET Framework Data Provider for ADO および OLE DB ([!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]) のデータ型から推論される <xref:System.Data.OleDb> の型を次の表に示します。 <xref:System.Data.OleDb.OleDbDataReader> の型指定されたアクセサー メソッドも示します。  
@@ -58,8 +60,8 @@ ms.lasthandoff: 01/17/2018
 |adUserDefined|DBTYPE_UDT|サポート外||  
 |adVarNumeric|DBTYPE_VARNUMERIC|サポート外||  
   
- \*OLE DB 型の`DBTYPE_IUNKNOWN`と`DBTYPE_IDISPATCH`、オブジェクト参照はポインターのマーシャ リングされた表現です。  
+ \* OLE DB 型の`DBTYPE_IUNKNOWN`と`DBTYPE_IDISPATCH`、オブジェクト参照はポインターのマーシャ リングされた表現です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

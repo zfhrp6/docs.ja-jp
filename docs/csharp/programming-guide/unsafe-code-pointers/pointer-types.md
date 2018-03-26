@@ -1,5 +1,5 @@
 ---
-title: "ポインター型 (C# プログラミング ガイド)"
+title: ポインター型 (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
 ms.assetid: 3319faf9-336d-4148-9af2-1da2579cdd1e
-caps.latest.revision: 
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: fe7b926bdf9f662d25f2fe960b51fc8254b7aa3a
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="pointer-types-c-programming-guide"></a>ポインター型 (C# プログラミング ガイド)
 unsafe コンテキストの型には、ポインター型、値型、または参照型を設定できます。 ポインター型の宣言は、次のいずれかの形式になります。  
@@ -38,7 +38,7 @@ void* identifier; //allowed but not recommended
   
  ポインター型は [object](../../../csharp/language-reference/keywords/object.md) を継承せず、ポインター型と `object` の間で変換を行う方法はありません。 また、ボックス化とボックス化解除もポインターをサポートしません。 ただし、異なるポインター型の間で変換したり、ポインター型と整数型の間で変換したりすることはできます。  
   
- 同じ 1 つの宣言で複数のポインターを宣言する場合、アスタリスク (*) は基底の型だけに記述します。各ポインター名のプレフィックスとしては使用しません。 例:  
+ 同じ 1 つの宣言で複数のポインターを宣言する場合、アスタリスク (*) は基底の型だけに記述します。各ポインター名のプレフィックスとしては使用しません。 例えば:  
   
 ```  
 int* p1, p2, p3;   // Ok  
@@ -133,7 +133,7 @@ Console.ReadLine();
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
  [ポインター変換](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md)  

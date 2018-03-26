@@ -1,12 +1,13 @@
 ---
-title: "バインディングとセキュリティ"
-ms.custom: 
+title: バインディングとセキュリティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], security
@@ -14,28 +15,29 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-caps.latest.revision: "42"
+caps.latest.revision: ''
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9e44db963a696f22f91569eb3d7c2956289a9c76
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="bindings-and-security"></a>バインディングとセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されたシステム指定のバインディングを使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをすばやくプログラミングできます。 1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。 ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。  
   
- 概要については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]プログラミング[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインドを使用して、参照してください[WCF セキュリティのプログラミング](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)です。  
+ 概要については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] プログラミング[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインドを使用して、参照してください[WCF セキュリティのプログラミング](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)です。  
   
  バインディングを既に選択した場合のセキュリティに関連付けられている実行時の動作に関する詳細を見つかります[セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)です。  
   
  セキュリティ機能のなかには、システム指定のバインディングを使用してプログラミングできないものがあります。 詳細コントロールがカスタム バインドを使用して、次を参照してください。[のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
   
 ## <a name="security-functions-of-bindings"></a>バインディングのセキュリティ機能  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、ほとんどのニーズを満たすシステム指定のバインディングが多数用意されています。 特定のバインディングでは不十分な場合は、カスタム バインドを作成することもできます。 システム指定のバインディングの一覧は、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]カスタム バインディングを参照してください[カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、ほとんどのニーズを満たすシステム指定のバインディングが多数用意されています。 特定のバインディングでは不十分な場合は、カスタム バインドを作成することもできます。 システム指定のバインディングの一覧は、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] カスタム バインディングを参照してください[カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のすべてのバインディングには、API としての形式と、構成ファイルで使用する XML 要素としての形式という 2 つの形式があります。 たとえば、 `WSHttpBinding` (API)、対応するには、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。  
   
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
 -   WS-I で定義されている基本セキュリティ プロファイル  
   
- 既定では、このバインディングはセキュリティで保護されません。 ASMX サービスと相互運用するように設計されています。 セキュリティを有効にした場合、このバインディングは、インターネット インフォメーション サービス (IIS: Internet Information Services) のセキュリティ機構 (基本認証、ダイジェスト、Windows 統合セキュリティなど) とシームレスに相互運用できるように設計されています。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)です。 このバインディングでは、以下をサポートしています。  
+ 既定では、このバインディングはセキュリティで保護されません。 ASMX サービスと相互運用するように設計されています。 セキュリティを有効にした場合、このバインディングは、インターネット インフォメーション サービス (IIS: Internet Information Services) のセキュリティ機構 (基本認証、ダイジェスト、Windows 統合セキュリティなど) とシームレスに相互運用できるように設計されています。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)です。 このバインディングでは、以下をサポートしています。  
   
 -   HTTPS トランスポート セキュリティ  
   
@@ -100,7 +102,7 @@ ms.lasthandoff: 12/22/2017
   
     -   チャネル セットアップの一部としてサービスからネゴシエートされるサービス資格情報の提供  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.WSDualHttpSecurity> and <xref:System.ServiceModel.WSDualHttpSecurityMode>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.WSDualHttpSecurity> および<xref:System.ServiceModel.WSDualHttpSecurityMode>です。  
   
 ### <a name="nettcpbinding"></a>NetTcpBinding  
  コードを使用して、<xref:System.ServiceModel.NetTcpBinding>クラスは、構成を使用して、 [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)です。  
@@ -155,7 +157,7 @@ ms.lasthandoff: 12/22/2017
   
 -   MSMQ トランスポート セキュリティ (トランスポート)。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.NetMsmqSecurity> and <xref:System.ServiceModel.NetMsmqSecurityMode>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetMsmqSecurity> および<xref:System.ServiceModel.NetMsmqSecurityMode>です。  
   
 ### <a name="netmsmqbinding"></a>NetMsmqBinding  
  コードを使用して、<xref:System.ServiceModel.NetMsmqBinding>クラスは、構成を使用して、 [ \<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)です。  
@@ -176,17 +178,17 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.ServiceModel.MessageCredentialType.Certificate> 資格情報は、セキュリティ モードが <xref:System.ServiceModel.NetMsmqSecurityMode.Both> または <xref:System.ServiceModel.NetMsmqSecurityMode.Message> に設定されている場合にのみサポートされます。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.MessageSecurityOverMsmq> and <xref:System.ServiceModel.MsmqTransportSecurity>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.MessageSecurityOverMsmq> および<xref:System.ServiceModel.MsmqTransportSecurity>です。  
   
 ### <a name="wsfederationhttpbinding"></a>WSFederationHttpBinding  
  コードを使用して、<xref:System.ServiceModel.WSFederationHttpBinding>クラスは、構成を使用して、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
   
  既定では、このバインディングは WS-Security (メッセージ層セキュリティ) を使用します。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity>、および<xref:System.ServiceModel.WSFederationHttpSecurityMode>です。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity>、および<xref:System.ServiceModel.WSFederationHttpSecurityMode>です。  
   
 ## <a name="custom-bindings"></a>カスタム バインディング  
- システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインドを作成できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
+ システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインドを作成できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [カスタム バインドのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
   
 ## <a name="binding-choices"></a>バインディングの選択肢  
  次の表は、セキュリティ モード設定で提供される機能をまとめたものです。つまり、セキュリティ モードを `Transport`、`Message`、または `TransportWithMessageCredential` に設定したときに使用できる機能の一覧です。 アプリケーションで必要なセキュリティ機能を決定するときに、この表を参考にしてください。  
@@ -216,12 +218,12 @@ ms.lasthandoff: 12/22/2017
 |型|説明|  
 |----------|-----------------|  
 |なし|クライアントが資格情報を提示する必要がないことを指定します。 匿名クライアントであると解釈されます。|  
-|Basic|基本認証です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
-|Digest|ダイジェスト認証です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
+|Basic|基本認証です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[ http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
+|Digest|ダイジェスト認証です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[ http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
 |NTLM|NTLM (NT LAN Manager) 認証です。|  
 |Windows|Windows 認証です。|  
 |証明書|証明書を使用して実行される認証です。|  
-|IssuedToken|セキュリティ トークン サービスまたは [!INCLUDE[infocard](../../../../includes/infocard-md.md)] によって発行されたトークンを使用したクライアントの認証を、サービスが要求できるようにします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
+|IssuedToken|セキュリティ トークン サービスまたは [!INCLUDE[infocard](../../../../includes/infocard-md.md)] によって発行されたトークンを使用したクライアントの認証を、サービスが要求できるようにします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
   
 ### <a name="message-client-credentials-in-bindings"></a>バインディングにおけるメッセージ クライアント資格情報  
  メッセージ セキュリティ モードでバインディングを使用するときに使用できるクライアント資格情報の種類を次の表に示します。  
@@ -234,7 +236,7 @@ ms.lasthandoff: 12/22/2017
 |証明書|証明書を使用したクライアントの認証を、サービスで要求することが可能になります。|  
 |IssuedToken|サービスは、セキュリティ トークン サービスを使用してカスタム トークンを提供できます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [資格情報の種類の選択](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  

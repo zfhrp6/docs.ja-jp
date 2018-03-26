@@ -1,12 +1,12 @@
 ---
-title: "イベントベースの非同期パターンを実装するための推奨される手順"
-ms.custom: 
+title: イベントベースの非同期パターンを実装するための推奨される手順
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Event-based Asynchronous Pattern
@@ -18,7 +18,7 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-caps.latest.revision: 
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -26,10 +26,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 910edb8c79518f63e8b881b8eaecd69060fb6711
-ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>イベントベースの非同期パターンを実装するための推奨される手順
 イベントベースの非同期パターンは、使い慣れたイベントおよびデリゲートのセマンティクスと共に、クラス内の非同期動作を公開する効果的な方法を提供します。 イベント ベースの非同期パターンを実装するには、いくつかの固有の動作要件に従う必要があります。 以降のセクションでは、イベントベースの非同期パターンに従うクラスを実装する際に検討すべき要件とガイドラインについて説明します。  
@@ -93,7 +93,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 ### <a name="accessing-results"></a>結果へのアクセス  
   
--   非同期操作の実行中にエラーが発生した場合、その結果にはアクセスできないようにしてください。 <xref:System.ComponentModel.AsyncCompletedEventArgs> が <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> ではない場合に `null` のプロパティにアクセスすると、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> により参照される例外が発生するようにしてください。 <xref:System.ComponentModel.AsyncCompletedEventArgs> クラスには、この目的で使用する <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A> メソッドが用意されています。  
+-   非同期操作の実行中にエラーが発生した場合、その結果にはアクセスできないようにしてください。 <xref:System.ComponentModel.AsyncCompletedEventArgs> が <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> ではない場合に `null` のプロパティにアクセスすると、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> により参照される例外が発生するようにしてください. <xref:System.ComponentModel.AsyncCompletedEventArgs> クラスには、この目的で使用する <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A> メソッドが用意されています。  
   
 -   結果にアクセスしようとすると、操作がキャンセルされたことを示す <xref:System.InvalidOperationException> が発生するようにしてください。 この検証を行うには、<xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A?displayProperty=nameWithType> メソッドを使用します。  
   
@@ -155,7 +155,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 -   どのようなマルチスレッドを使用する場合でも、深刻かつ複雑なバグが発生する可能性があります。 マルチスレッドを使用するソリューションを実装する前に、「[マネージ スレッド処理の実施](../../../docs/standard/threading/managed-threading-best-practices.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.AsyncOperation>  
  <xref:System.ComponentModel.AsyncOperationManager>  
  <xref:System.ComponentModel.AsyncCompletedEventArgs>  

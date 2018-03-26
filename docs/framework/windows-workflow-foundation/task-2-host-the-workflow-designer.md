@@ -1,23 +1,24 @@
 ---
-title: "タスク 2: ワークフロー デザイナーのホスティング"
-ms.custom: 
+title: 'タスク 2: ワークフロー デザイナーのホスティング'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-caps.latest.revision: "19"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 991f3d25a81e90ab779936c993ec7dd09a71b794
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="task-2-host-the-workflow-designer"></a>タスク 2: ワークフロー デザイナーのホスティング
 このトピックでは、[!INCLUDE[wfd1](../../../includes/wfd1-md.md)] アプリケーションで [!INCLUDE[avalon1](../../../includes/avalon1-md.md)]のインスタンスをホストする手順について説明します。  
@@ -107,7 +108,7 @@ ms.lasthandoff: 12/22/2017
         }  
         ```  
   
-         [!INCLUDE[crabout](../../../includes/crabout-md.md)]アクティビティ デザイナーを登録するを参照してください[する方法: カスタム アクティビティ デザイナーを作成](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)です。  
+         [!INCLUDE[crabout](../../../includes/crabout-md.md)] アクティビティ デザイナーを登録するを参照してください[する方法: カスタム アクティビティ デザイナーを作成](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)です。  
   
     5.  `MainWindow` クラス コンストラクターで、前に宣言したメソッドへの呼び出しを追加して、デザイナー サポートのメタデータを登録し、<xref:System.Activities.Presentation.WorkflowDesigner> を作成します。  
   
@@ -131,7 +132,7 @@ ms.lasthandoff: 12/22/2017
   
 10. 参照してください[タスク 3: ツールボックス ペインと PropertyGrid ペインを作成する](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)を追加する方法について**ツールボックス**と**PropertyGrid**再ホストされたワークフロー デザイナーにサポートします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー デザイナーのホスト変更](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
  [タスク 1: 新しい Windows Presentation Foundation アプリケーションの作成](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
  [タスク 3: ツールボックス ペインと PropertyGrid ペインの作成](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)

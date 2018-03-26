@@ -1,18 +1,18 @@
 ---
-title: "XmlSchemaValidator のプッシュ ベースの検証"
-ms.custom: 
+title: XmlSchemaValidator のプッシュ ベースの検証
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
@@ -20,10 +20,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 60c2effea612a579b4c66b7c30243b785b86a263
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>XmlSchemaValidator のプッシュ ベースの検証
 <xref:System.Xml.Schema.XmlSchemaValidator> は、プッシュ ベース方式で、XML スキーマを基準として XML データを検証する、効率的かつ高性能なしくみを提供します。 たとえば、<xref:System.Xml.Schema.XmlSchemaValidator> クラスでは、XML 情報セットを XML ドキュメントにシリアル化してから検証型 XML リーダーを使用してドキュメントを再解析する必要なしに、情報セットをそのまま検証することができます。  
@@ -487,5 +487,5 @@ static void SchemaValidationEventHandler(object sender, ValidationEventArgs e)
 > [!NOTE]
 >  <xref:System.Xml.Schema.XmlSchemaValidator> クラスの各種プロパティで返される値は、上の表のどのメソッドを呼び出しても変わることはありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Xml.Schema.XmlSchemaValidator>

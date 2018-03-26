@@ -1,19 +1,21 @@
 ---
-title: "ICorDebugVirtualUnwinder::GetContext メソッド"
-ms.custom: 
+title: ICorDebugVirtualUnwinder::GetContext メソッド
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: reference
 ms.assetid: fe502a76-3068-47e5-a0a0-85ccb72dfac3
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 9d034016c7470cbf134cb142db9f98d82d0c59d4
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -36,7 +38,7 @@ HRESULT GetContext(
   
 #### <a name="parameters"></a>パラメーター  
  `contextFlags`  
- [in] (WinNT.h で定義されている) コンテキストのどの部分を返すかを指定するフラグ。  
+ [in] \(WinNT.h で定義されている) コンテキストのどの部分を返すかを指定するフラグ。  
   
  `cbContextBuf`  
  [in] `contextBuf` のバイト数。  

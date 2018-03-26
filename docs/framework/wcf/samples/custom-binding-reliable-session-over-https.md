@@ -1,24 +1,26 @@
 ---
-title: "HTTPS を介したカスタム バインディングの信頼できるセッション"
-ms.custom: 
+title: HTTPS を介したカスタム バインディングの信頼できるセッション
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
-caps.latest.revision: "13"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: b68e5692122efbb79f8101079e721802c3dda42c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>HTTPS を介したカスタム バインドの信頼できるセッション
 このサンプルでは、信頼できるセッションを使用した SSL トランスポート セキュリティを示します。 信頼できるセッションは、WS-ReliableMessaging プロトコルを実装しています。 信頼できるセッションを介して WS-Security を構築することにより、セキュリティで保護された信頼できるセッションを持つことができます。 ただし、SSL による HTTP トランスポート セキュリティの使用を選択できる場合もあります。  
@@ -147,4 +149,4 @@ Press <ENTER> to terminate client.
   
 5.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

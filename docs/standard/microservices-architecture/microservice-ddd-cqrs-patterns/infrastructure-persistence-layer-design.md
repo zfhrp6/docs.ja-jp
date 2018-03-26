@@ -1,7 +1,7 @@
 ---
-title: "インフラストラクチャの永続レイヤーの設計"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | インフラストラクチャの永続レイヤーの設計"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: インフラストラクチャの永続レイヤーの設計
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | インフラストラクチャの永続レイヤーの設計'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/08/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 76db5388c75d4eb3b5cc23c1e57cc391a15f2934
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="designing-the-infrastructure-persistence-layer"></a>インフラストラクチャの永続レイヤーの設計
 
@@ -138,35 +138,35 @@ public interface ISpecification<T>
 
 ### <a name="the-repository-pattern"></a>リポジトリ パターン
 
--   **Edward Hieatt、Rob Mee。リポジトリに関する記事**
+-   **Edward Hieatt、Rob Mee。リポジトリ パターン。**
     [*http://martinfowler.com/eaaCatalog/repository.html*](http://martinfowler.com/eaaCatalog/repository.html)
 
--   **「The Repository pattern」(リポジトリ パターン)**
+-   **リポジトリ パターン**
     [*https://msdn.microsoft.com/library/ff649690.aspx*](https://msdn.microsoft.com/library/ff649690.aspx)
 
--   **「Repository Pattern: A data persistence abstraction」(リポジトリ パターン: データ永続性の抽象化)**
+-   **リポジトリ パターン: データ持続性の抽象化**
     [*http://deviq.com/repository-pattern/*](http://deviq.com/repository-pattern/)
 
--   **Eric Evans。「Domain-Driven Design: Tackling Complexity in the Heart of Software」(ドメイン駆動型設計: ソフトウェアの心臓部にある複雑さへの取り組み)** (書籍、リポジトリ パターンについての記載あり) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+-   **Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (ドメイン駆動設計: ソフトウェア中心部の複雑さへの取り組み)。** (予約以外の場合は、リポジトリ パターンの詳細についてにが含まれています) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 ### <a name="unit-of-work-pattern"></a>Unit of Work パターン
 
--   **Martin Fowler。Unit of Work パターンに関する記事。**
+-   **Martin Fowler。作業のパターンの単位。**
     [*http://martinfowler.com/eaaCatalog/unitOfWork.html*](http://martinfowler.com/eaaCatalog/unitOfWork.html)
 
 <!-- -->
 
--   **ASP.NET MVC アプリケーションに Repository パターンと Unit of Work パターンを実装する**
+-   **ASP.NET MVC アプリケーションでの Repository および Unit of Work パターンの実装**
     [*https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application*](https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
 ### <a name="the-specification-pattern"></a>仕様パターン
 
--   **Specification パターン**
+-   **仕様のパターン。**
     [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
 
 -   **Evans, Eric (2004 年)。「Domain Driven Design」(ドメイン駆動設計)。Addison-Wesley. p. 224.**
 
--   **「Specifications」(仕様)。Martin Fowler**
+-   **「Specifications」(仕様)。Martin ファウラー**
     [*https://www.martinfowler.com/apsupp/spec.pdf/*](https://www.martinfowler.com/apsupp/spec.pdf)
 
 >[!div class="step-by-step"]

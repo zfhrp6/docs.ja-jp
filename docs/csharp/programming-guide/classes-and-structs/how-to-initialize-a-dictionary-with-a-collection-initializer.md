@@ -12,10 +12,10 @@ caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8b8de5fb85a839d52ad00ad552ef823d9817e9b7
-ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a>方法 : コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド)
 <xref:System.Collections.Generic.Dictionary`2> にはキーと値のペアのコレクションが含まれています。 その <xref:System.Collections.Generic.Dictionary`2.Add*> メソッドは、それぞれキーと値に対する 2 つのパラメーターを受け取ります。 `Add` メソッドが複数のパラメーターを受け取る <xref:System.Collections.Generic.Dictionary`2> またはコレクションを初期化するには、次の例に示すように、各パラメーターのセットを中かっこで囲みます。  
@@ -30,6 +30,6 @@ ms.lasthandoff: 03/20/2018
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  このコードを実行するには、クラスをコピーし、[!INCLUDE[vs_current_short](~/includes/vs-current-short-md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに貼り付けます。 既定では、このプロジェクトは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のバージョン 3.5 を対象としており、System.Core.dll への参照と System.Linq の using ディレクティブが含まれます。 これらの要件のうち 1 つまたは複数がプロジェクトから欠落している場合は、手動で追加することができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)

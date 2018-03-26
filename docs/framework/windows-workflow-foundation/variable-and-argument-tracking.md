@@ -1,23 +1,24 @@
 ---
-title: "変数と引数の追跡"
-ms.custom: 
+title: 変数と引数の追跡
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-caps.latest.revision: "7"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c0857830b52b2f71df5d81f4bd232b62b894da63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="variable-and-argument-tracking"></a>変数と引数の追跡
 ワークフローの実行を追跡するときは、データを抽出すると便利です。 これにより、実行後に追跡レコードにアクセスするときにコンテキストが追加されます。 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] では、追跡を使用して、ワークフローのアクティビティのスコープ内の参照可能な変数や引数を抽出できます。 プロファイルを追跡すると、データを簡単に抽出できるようになります。  
@@ -56,6 +57,6 @@ ms.lasthandoff: 12/22/2017
   
 3.  カスタムの追跡参加要素については、変数や引数に格納されている機密情報が WF コードによって公開されないようにします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Server App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201273)  
  [アプリケーション App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201275)

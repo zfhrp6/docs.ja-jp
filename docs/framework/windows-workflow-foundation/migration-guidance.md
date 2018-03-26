@@ -1,23 +1,24 @@
 ---
-title: "移行のガイドライン"
-ms.custom: 
+title: 移行のガイドライン
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-caps.latest.revision: "7"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: e04c63754960dca44558d888b8ce357220562ea7
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="migration-guidance"></a>移行のガイドライン
 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、[!INCLUDE[wf](../../../includes/wf-md.md)] の 2 番目のメジャー バージョンがリリースされています。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] は、[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (これに含まれていた System.Workflow.* 名前空間の型は現在 WF3 と呼ばれています) でリリースされ、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] で強化されました。 WF3 もの一部、 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]、新しいワークフロー テクノロジが存在するが、(System.Activities。 内の型\*名前空間です。 WF4 と呼ばれます)。 WF4 の導入時期を検討する場合は、最初にそのタイミングの管理を認識することが重要です。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 01/19/2018
  [WF のガイダンス: ステート マシン](http://go.microsoft.com/fwlink/?LinkId=153855)  
  ステート マシンのアクティビティがない場合の WF4 の制御フロー モデリングについて説明します。  
   
- このガイダンスは、.NET Framework 4 を対象とするワークフロー プロジェクトにのみ該当することに注意してください。 ステート マシンのワークフローは、Platform Update 1 のリリースで .NET 4.0.1 に追加され、.NET Framework 4.5 の一部として含まれていました。 [!INCLUDE[crabout](../../../includes/crabout-md.md)].NET 4.0.1 - 4.0.3 以降と .NET Framework 4.5 でのステート マシン ワークフローを参照してください[Microsoft .NET Framework 4 の機能の更新プログラム 4.0.1](http://msdn.microsoft.com/library/de3297bd-c3e1-4126-95be-2ed7fe2a98fc)と[ステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md)です。  
+ このガイダンスは、.NET Framework 4 を対象とするワークフロー プロジェクトにのみ該当することに注意してください。 ステート マシンのワークフローは、Platform Update 1 のリリースで .NET 4.0.1 に追加され、.NET Framework 4.5 の一部として含まれていました。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] .NET 4.0.1 - 4.0.3 以降と .NET Framework 4.5 でのステート マシン ワークフローを参照してください[Microsoft .NET Framework 4 の機能の更新プログラム 4.0.1](http://msdn.microsoft.com/library/de3297bd-c3e1-4126-95be-2ed7fe2a98fc)と[ステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md)です。  
   
  [WF 移行のクックブック: カスタム アクティビティ](http://go.microsoft.com/fwlink/?LinkId=153856)  
  WF3 のカスタム アクティビティを WF4 で再設計する場合のサンプルと手順について説明します。  
@@ -65,5 +66,5 @@ ms.lasthandoff: 01/19/2018
  [WF のガイダンス: ワークフロー サービス](http://go.microsoft.com/fwlink/?LinkId=275564)  
  事前定義アクティビティの一般的なシナリオ向けに、WF3 で作成した Windows Communication Foundation (WCF) Web サービス (一般にワークフロー サービスと呼ばれます) を実装するワークフローを WF4 を使用するように再設計するための詳細な手順を例を中心として示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Activities.Statements.Interop>

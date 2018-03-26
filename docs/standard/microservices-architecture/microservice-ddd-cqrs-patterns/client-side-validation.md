@@ -1,7 +1,7 @@
 ---
-title: "クライアント側の検証 (プレゼンテーション層での検証)"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | クライアント側の検証 (プレゼンテーション層での検証)"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: クライアント側の検証 (プレゼンテーション層での検証)
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | クライアント側の検証 (プレゼンテーション層での検証)
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -12,10 +12,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 273aa0a8ceb7f683999f1074faae0a6aa303f9be
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>クライアント側の検証 (プレゼンテーション層での検証)
 
@@ -35,8 +35,8 @@ ms.lasthandoff: 12/23/2017
 
 ### <a name="validation-in-xamarin-mobile-apps"></a>Xamarin モバイル アプリの検証
 
--   **テキスト入力の検証とエラーの表示**
-    [*https://developer.xamarin.com/recipes/ios/standard\_controls/text\_field/validate\_input/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
+-   **テキストを入力し、エラーの表示の検証**
+    [*https://developer.xamarin.com/recipes/ios/standard\_コントロール]、[テキスト\_フィールド/検証\_入力/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
 
 -   **検証コールバック**
     [*https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/*](https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/)
@@ -48,10 +48,10 @@ ms.lasthandoff: 12/23/2017
 
 ### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>SPA Web アプリの検証 (Angular 2、TypeScript、JavaScript)
 
--   **Ado Kukic。Angular 2 フォームの検証** **
+-   **Ado Kukic。角度の 2 つのフォーム検証** **
     **[*https://scotch.io/tutorials/angular-2-form-validation*](https://scotch.io/tutorials/angular-2-form-validation)
 
--   **フォームの検証**
+-   **フォーム検証**
     [*https://angular.io/docs/ts/latest/cookbook/form-validation.html*](https://angular.io/docs/ts/latest/cookbook/form-validation.html)
 
 -   **検証。** Breeze ドキュメント。

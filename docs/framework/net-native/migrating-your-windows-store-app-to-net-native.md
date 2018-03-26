@@ -1,24 +1,26 @@
 ---
-title: "Windows ストア アプリの .NET ネイティブへの移行"
-ms.custom: 
+title: Windows ストア アプリの .NET ネイティブへの移行
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-caps.latest.revision: "29"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: ce23d66f79f94af74250cff137499f6c8b1582ac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Windows ストア アプリの .NET ネイティブへの移行
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は、Windows ストアまたは開発者のコンピューターでアプリの静的なコンパイルを行います。 これは、デバイス上で Just-In-Time (JIT) コンパイラまたは [ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) によって Windows ストア アプリに対して実行される動的なコンパイルとは異なります。 違いはありますが、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は [Windows ストア アプリ用 .NET](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)との互換性を保持しようとします。 Windows ストア アプリ用 .NET で機能する大部分が [!INCLUDE[net_native](../../../includes/net-native-md.md)]でも機能します。  ただし、動作に違いがある場合もあります。 このドキュメントでは、次の領域における、標準の Windows ストア アプリ用 .NET と [!INCLUDE[net_native](../../../includes/net-native-md.md)] との違いについて説明します。  
@@ -166,7 +168,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> メソッドは、[!INCLUDE[net_native](../../../includes/net-native-md.md)]で、短い日付を含む文字列を正しく解析します。 ただし、Microsoft サポート技術情報の記事 [KB2803771](http://support.microsoft.com/kb/2803771) と [KB2803755](http://support.microsoft.com/kb/2803755)で説明されている日付と時刻の解析の変更に対する互換性は保持されません。  
   
--   <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType>`("E")`で正しく丸められますは[!INCLUDE[net_native](../../../includes/net-native-md.md)]します。 CLR の一部のバージョンでは、結果の文字列が丸められるのではなく、切り捨てられます。  
+-   <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType> `("E")` 正しく丸められますは[!INCLUDE[net_native](../../../includes/net-native-md.md)]します。 CLR の一部のバージョンでは、結果の文字列が丸められるのではなく、切り捨てられます。  
   
 <a name="HttpClient"></a>   
 ### <a name="httpclient-differences"></a>HttpClient の違い  
@@ -230,7 +232,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>|  
 |<xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>|  
   
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>サポートされてと共に使用した場合など、一部のシナリオで例外がスローが[IDispatch](http://msdn.microsoft.com/library/windows/apps/ms221608.aspx)や byref バリアント。  
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> サポートされてと共に使用した場合など、一部のシナリオで例外がスローが[IDispatch](http://msdn.microsoft.com/library/windows/apps/ms221608.aspx)や byref バリアント。  
   
  非推奨の [IDispatch](http://msdn.microsoft.com/library/windows/apps/ms221608.aspx) サポート用 API:  
   
@@ -683,7 +685,7 @@ ms.lasthandoff: 12/22/2017
   
  Windows ストア アプリ用単体テスト ライブラリ プロジェクトで [!INCLUDE[net_native](../../../includes/net-native-md.md)] を有効にすることはサポートされていません。有効にすると、プロジェクトはビルドに失敗します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../docs/framework/net-native/getting-started-with-net-native.md)  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [.NET Windows ストア アプリの概要](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)  

@@ -1,24 +1,26 @@
 ---
-title: "開発者の視点から見た ASP.NET Web サービスと WCF との比較"
-ms.custom: 
+title: 開発者の視点から見た ASP.NET Web サービスと WCF との比較
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-caps.latest.revision: "10"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: c12bd11cee62cd769f7dffc142806fa5ab1b0137
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>開発者の視点から見た ASP.NET Web サービスと WCF との比較
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には ASP.NET 互換モードがあります。このモードにすると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションを ASP.NET Web サービスと同じようにプログラミングおよび構成し、動作を真似ることができます。 以下のセクションでは、ASP.NET Web サービスと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を、それぞれの技術を使ってアプリケーションを開発する視点から比較してみます。  
@@ -380,7 +382,7 @@ typeof(Service), //"Service" is the name of the service type baseAdresses))
   
  この例では <xref:System.ServiceModel.ServiceHost> の構築時にトランスポート プロトコルに対してアドレスを指定しています。 このアドレスをベース アドレスと呼びます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのエンドポイントは、エンドポイントのホストに設定されたベース アドレスから見た相対アドレスで表します。 ホストではトランスポート プロトコルごとに 1 つベース アドレスを設定できます。 上記の構成ファイルの構成例では、エンドポイントに対して選択された <xref:System.ServiceModel.BasicHttpBinding> はトランスポート プロトコルとして HTTP を使用しているので、エンドポイント `EchoService` のアドレスは、HTTP に対して設定されたベース アドレスを基準としたものになります。 上記の例に挙げたホストの場合、HTTP ベース アドレスは http://www.contoso.com:8000/ です。 なお、IIS や WAS 上でホストされているサービスの場合、ベース アドレスはサービス ファイルの URL になります。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのエンドポイントは、エンドポイントのホストに設定されたベース アドレスから見た相対アドレスで表します。 ホストではトランスポート プロトコルごとに 1 つベース アドレスを設定できます。 上記の構成ファイルの構成例では、エンドポイントに対して選択された <xref:System.ServiceModel.BasicHttpBinding> はトランスポート プロトコルとして HTTP を使用しているので、エンドポイント `EchoService` のアドレスは、HTTP に対して設定されたベース アドレスを基準としたものになります。 前の例で、ホストの場合、HTTP ベース アドレスはhttp://www.contoso.com:8000/します。 なお、IIS や WAS 上でホストされているサービスの場合、ベース アドレスはサービス ファイルの URL になります。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を ASP.NET 互換モードで動かせるのは、IIS や WAS 上でホストされていて、トランスポート プロトコルとしてもっぱら HTTP を使うサービスに限ります。 ASP.NET 互換モードは、次の 2 つの手順で切り替えます。  
   
@@ -761,5 +763,5 @@ public void Receive(Message input)
 ## <a name="globalization"></a>グローバリゼーション  
  ASP.NET 構成言語では、個々のサービスごとにカルチャを指定することができます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこの設定ができるのは、ASP.NET 互換モードの場合に限ります。 ASP.NET 互換モードでない [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをローカライズするためには、サービス型をコンパイルしてカルチャごとのアセンブリを生成し、エンドポイントもカルチャごとのアセンブリそれぞれについて用意する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [使用目的と使用標準に基づく ASP.NET Web サービスと WCF との比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)

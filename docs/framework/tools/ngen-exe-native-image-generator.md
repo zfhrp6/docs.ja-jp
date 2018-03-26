@@ -1,12 +1,13 @@
 ---
-title: "Ngen.exe (ネイティブ イメージ ジェネレーター)"
-ms.custom: 
+title: Ngen.exe (ネイティブ イメージ ジェネレーター)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -25,16 +26,17 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-caps.latest.revision: "57"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 20c120323356171d78da35a490488f4654baece6
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (ネイティブ イメージ ジェネレーター)
 ネイティブ イメージ ジェネレーター (Ngen.exe) は、マネージ アプリケーションのパフォーマンスを向上するツールです。 Ngen.exe は、コンパイルされたプロセッサ固有のマシン コードを含むファイルであるネイティブ イメージを作成してローカル コンピューターのネイティブ イメージ キャッシュにインストールします。 ランタイムは、Just-In-Time (JIT) コンパイラを使用してオリジナルのアセンブリをコンパイルする代わりに、キャッシュにあるネイティブ イメージを使用できます。  
@@ -428,7 +430,7 @@ ngen install c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe
 ngen uninstall c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe  
 ```  
   
- グローバル アセンブリ キャッシュにアセンブリのネイティブ イメージを作成するには、アセンブリの表示名を使用します。 例:  
+ グローバル アセンブリ キャッシュにアセンブリのネイティブ イメージを作成するには、アセンブリの表示名を使用します。 次に例を示します。  
   
 ```  
 ngen install "ClientApp, Version=1.0.0.0, Culture=neutral,   
@@ -529,8 +531,8 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
   
 |タスク名|32 ビット コンピューター|64 ビット コンピューター|  
 |---------------|----------------------|----------------------|  
-|NET Framework NGEN v4.0.30319|[はい]|[はい]|  
-|NET Framework NGEN v4.0.30319 64|×|[はい]|  
+|NET Framework NGEN v4.0.30319|はい|はい|  
+|NET Framework NGEN v4.0.30319 64|いいえ|はい|  
   
  ネイティブ イメージ タスクは、Windows 8 以降の実行時に .NET Framework 4.5 以降のバージョンで使用できます。 Windows の以前のバージョンでは、.NET Framework は[ネイティブ イメージ サービス][Native Image Service]を使用します。  
   
@@ -593,7 +595,7 @@ ngen executeQueuedItems
 ### <a name="service-interaction-with-clients"></a>クライアントとサービスとのやり取り  
  .NET Framework Version 2.0 では、必ず Ngen.exe というコマンド ライン ツールを使用してネイティブ イメージ サービスとやり取りします。 インストール スクリプトでコマンド ライン ツールを使用してネイティブ イメージ サービスのアクションをキューに置いたり、サービスとやり取りしたりします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ツール](../../../docs/framework/tools/index.md)  
  [マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)  
  [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
