@@ -1,1 +1,1 @@
-<span data-ttu-id="7d21a-101">汎用名前付け規則 (UCS)</span><span class="sxs-lookup"><span data-stu-id="7d21a-101">Universal Naming Convention (UNC)</span></span>
+<span data-ttu-id="1b1fb-101">汎用名前付け規則 (UCS)</span><span class="sxs-lookup"><span data-stu-id="1b1fb-101">Universal Naming Convention (UNC)</span></span>

@@ -1,0 +1,2 @@
+
+<span data-ttu-id="6dc4f-101">すべてのコンパイル オプションは、**-option** および **/option** という 2 つの形で使用できます。</span><span class="sxs-lookup"><span data-stu-id="6dc4f-101">Every compiler option is available in two forms: **-option** and **/option**.</span></span> <span data-ttu-id="6dc4f-102">ドキュメントのみが表示オプション形式です。</span><span class="sxs-lookup"><span data-stu-id="6dc4f-102">The documentation only shows the -option form.</span></span> 

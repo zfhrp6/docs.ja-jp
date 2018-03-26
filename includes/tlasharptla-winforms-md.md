@@ -1,1 +1,1 @@
-<span data-ttu-id="4ed1e-101">Windows フォーム</span><span class="sxs-lookup"><span data-stu-id="4ed1e-101">Windows Forms</span></span>
+<span data-ttu-id="8d43b-101">Windows フォーム</span><span class="sxs-lookup"><span data-stu-id="8d43b-101">Windows Forms</span></span>
