@@ -1,12 +1,13 @@
 ---
-title: "デスクトップ アプリケーションに対するリソース ファイルの作成"
-ms.custom: 
+title: デスクトップ アプリケーションに対するリソース ファイルの作成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-caps.latest.revision: "25"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 555ef705dc485462dc209b090e5cdbee98983681
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b73520dfc3d5123aedce77254f738a61a27ccd95
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-resource-files-for-desktop-apps"></a>デスクトップ アプリケーションに対するリソース ファイルの作成
 リソース ファイルにリソース (文字列、イメージ、オブジェクト データなど) を追加して、アプリケーションで簡単に使用できるようにすることが可能です。 .NET Framework では、次の 5 つの方法でリソース ファイルを作成できます。  
@@ -130,11 +132,15 @@ greeting=Hello, {0}!
   
  Visual Basic を使用している場合、ソース コード ファイル名が Greeting.vb であれば、埋め込みの .resources ファイルを含む実行可能ファイルを次のコマンドによって作成します。  
   
- **vbc greeting.vb /resource:GreetingResources.resources**  
+```console 
+vbc greeting.vb -resource:GreetingResources.resources
+```
   
  C# を使用している場合、ソース コード ファイル名が Greeting.cs であれば、埋め込みの .resources ファイルを含む実行可能ファイルを次のコマンドによって作成します。  
   
- **csc greeting.cs /resource:GreetingResources.resources**  
+ ```console
+csc greeting.cs -resource:GreetingResources.resources
+```
   
 <a name="ResxFiles"></a>   
 ## <a name="resources-in-resx-files"></a>.resx ファイル内のリソース  

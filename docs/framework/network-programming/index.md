@@ -1,11 +1,11 @@
 ---
-title: ".NET Framework のネットワーク プログラミング"
-ms.custom: 
+title: .NET Framework のネットワーク プログラミング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Networking
@@ -13,21 +13,23 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-caps.latest.revision: "24"
+caps.latest.revision: ''
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d702e7c910536566aabfaa7948afb24ae94d2cb1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: e51f4464eb39dc12ea50f4a94e55030895866f08
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="network-programming-in-the-net-framework"></a>.NET Framework のネットワーク プログラミング
 Microsoft .NET Framework は、アプリケーションにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージ実装を提供します。 ネットワーク アプリケーションは、プラグ可能なプロトコルを基に自動的に新しいインターネット プロトコルを使用するように作成することも、ソケット レベルでネットワークを使用できるように Windows ソケット インターフェイスのマネージ実装を使用することもできます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
+
  [プラグ可能なプロトコルの概要](../../../docs/framework/network-programming/introducing-pluggable-protocols.md)  
  必要なアクセス プロトコルに関係なく、インターネット リソースにアクセスする方法について説明します。  
   
@@ -144,6 +146,8 @@ Microsoft .NET Framework は、アプリケーションにすばやく簡単に�
  アプリケーションの拡張保護を使用した認証の構成をサポートします。  
   
 ## <a name="see-also"></a>参照  
+
+ [.NET Framework でのトランスポート層セキュリティ (TLS) のベスト プラクティス](../../../docs/framework/network-programming/tls.md)  
  [ネットワーク プログラミング方法のトピック](../../../docs/framework/network-programming/network-programming-how-to-topics.md)  
  [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  
  [MSDN Code Gallery 上の .NET 用のネットワークのサンプル](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)  

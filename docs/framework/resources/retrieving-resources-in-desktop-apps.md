@@ -1,12 +1,13 @@
 ---
-title: "デスクトップ アプリケーションのリソースの取得"
-ms.custom: 
+title: デスクトップ アプリケーションのリソースの取得
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -25,16 +26,17 @@ helpviewer_keywords:
 - translating resources into languages
 - localizing resources
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
-caps.latest.revision: "22"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b1227aa30d854d736bb24413b37d4722e729b2ff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a02d9efcadcc4c7066dba4e55268ab898b6790e8
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>デスクトップ アプリケーションのリソースの取得
 ローカライズされたリソースを NET Framework デスクトップ アプリケーションで使用する場合は、既定カルチャまたはニュートラル カルチャ用のリソースをメイン アセンブリと共にパッケージ化し、アプリでサポートされている言語またはカルチャごとに個別のサテライト アセンブリを作成することが理想的です。 名前付きリソースには、次のセクションで説明する <xref:System.Resources.ResourceManager> クラスを使用してアクセスすることができます。 目的のリソースをメイン アセンブリおよびサテライト アセンブリに埋め込まない場合でも、.resources バイナリ ファイルには直接アクセスすることができます。詳細については、「 [.resources ファイルからのリソースの取得](#from_file) 」セクションを参照してください。  [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでリソースを取得するには、Windows デベロッパー センターの「 [Windows ストア アプリでのリソースの作成と取得](http://go.microsoft.com/fwlink/p/?LinkID=241674) 」を参照してください。  
@@ -77,15 +79,15 @@ TimeHeader=Текущее время —
   
 ```  
 resgen strings.txt  
-csc GetString.cs /resource:strings.resources  
+csc GetString.cs -resource:strings.resources  
   
 resgen strings.fr-FR.txt  
 md fr-FR  
-al /embed:strings.fr-FR.resources /culture:fr-FR /out:fr-FR\GetString.resources.dll  
+al -embed:strings.fr-FR.resources -culture:fr-FR -out:fr-FR\GetString.resources.dll  
   
 resgen strings.ru-RU.txt  
 md ru-RU  
-al /embed:strings.ru-RU.resources /culture:ru-RU /out:ru-RU\GetString.resources.dll  
+al -embed:strings.ru-RU.resources -culture:ru-RU -out:ru-RU\GetString.resources.dll  
 ```  
   
  現在の UI カルチャがスペイン語 (スペイン) である場合、この例で表示されるのは英語リソースです。スペイン語のリソースは利用できず、この例の既定のカルチャは英語であるということが理由です。  
@@ -111,7 +113,7 @@ CreateResources
   
 resgen AppResources.resx  
   
-csc GetStream.cs /resource:AppResources.resources  
+csc GetStream.cs -resource:AppResources.resources  
 ```  
   
  次の例では、 <xref:System.Resources.ResourceManager.GetObject%28System.String%29?displayProperty=nameWithType> メソッドを使用して、カスタム オブジェクトを逆シリアル化します。 この例では、次に示す `PersonTable`という名前の構造体が定義されている UIElements.cs (Visual Basic の場合は UIElements.vb) という名前のソース コード ファイルを使用しています。 この構造体は、ローカライズされたテーブル列名を表示する一般的なテーブル表示ルーチンでの使用を目的としています。 `PersonTable` 構造体は、 <xref:System.SerializableAttribute> 属性でマークされています。  
@@ -132,12 +134,12 @@ csc GetStream.cs /resource:AppResources.resources
  次のバッチ ファイルを実行することで、必要なリソース ファイルとアセンブリをビルドし、アプリケーションを実行することができます。 `/r` 構造体に関する情報にアクセスできるように、 `PersonTable` オプションを使用して Resgen.exe を指定し、UIElements.dll への参照を含める必要があります。 C# を使用している場合は、 `vbc` コンパイラ名を `csc`に置換し、 `.vb` 拡張子を `.cs`に置換します。  
   
 ```  
-vbc /t:library UIElements.vb  
-vbc CreateResources.vb /r:UIElements.dll  
+vbc -t:library UIElements.vb  
+vbc CreateResources.vb -r:UIElements.dll  
 CreateResources  
   
-resgen UIResources.resx  /r:UIElements.dll  
-vbc GetObject.vb /r:UIElements.dll /resource:UIResources.resources  
+resgen UIResources.resx  -r:UIElements.dll  
+vbc GetObject.vb -r:UIElements.dll -resource:UIResources.resources  
   
 GetObject.exe  
 ```  

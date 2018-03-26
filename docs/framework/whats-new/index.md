@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework の新機能"
+title: .NET Framework の新機能
 ms.custom: updateeachrelease
 ms.date: 05/02/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 86f1884749b5fdf93254985ab3e163dca0562648
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: 93c08633af1b4bb46afe9e382066f523c9923a9b
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>.NET Framework の新機能
 <a name="introduction"></a> この記事では、.NET Framework の次のバージョンにおける主な新機能と機能強化の概要を示します。  
@@ -192,7 +192,7 @@ GitHub で [.NET Framework 4.7 の暗号化の向上の例](https://gist.github.
 <a name="wcf47" />
 #### <a name="windows-communication-foundation-wcf"></a>Windows Communication Foundation (WCF)
 
-Windows Communication Foundation (WFC) では以下の機能が追加または変更されました。
+Windows Communication Foundation (WCF) では以下の機能が追加または変更されました。
 
 **既定のメッセージ セキュリティ設定を TLS1.1 または TLS1.2 に構成する機能。**
 
@@ -1134,7 +1134,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - **Windows フォーム コントロールでのサイズ変更** この機能が拡張されました。 これにより、システム DPI 設定を使用して、次の追加コントロールのコンポーネント (例: コンボ ボックスのドロップダウン矢印) をサイズ変更できます。
 
-     <xref:System.Windows.Forms.ComboBox>    <xref:System.Windows.Forms.ToolStripComboBox>    <xref:System.Windows.Forms.ToolStripMenuItem>    <xref:System.Windows.Forms.Cursor>    <xref:System.Windows.Forms.DataGridView>    <xref:System.Windows.Forms.DataGridViewComboBoxColumn>
+     <xref:System.Windows.Forms.ComboBox> <xref:System.Windows.Forms.ToolStripComboBox> <xref:System.Windows.Forms.ToolStripMenuItem> <xref:System.Windows.Forms.Cursor> <xref:System.Windows.Forms.DataGridView> <xref:System.Windows.Forms.DataGridViewComboBoxColumn>
 
      これはオプトイン機能です。 この機能を有効にするには、アプリケーション構成 (app.config) ファイルで `EnableWindowsFormsHighDpiAutoResizing` 要素を `true` に設定します。
 
@@ -1214,7 +1214,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - Windows フォーム コントロールでのサイズ変更。 アプリのアプリケーション構成ファイル (app.config) 内のエントリで有効にすることにより、システム DIP 設定を使用してコントロールのコンポーネント (例: プロパティ グリッドに表示されるアイコン) をサイズ変更できます。 現在、この機能は次の Windows フォーム コントロールでサポートされています。
 
-     <xref:System.Windows.Forms.PropertyGrid>    <xref:System.Windows.Forms.TreeView>    <xref:System.Windows.Forms.DataGridView> の一部 (サポートされている追加コントロールについては、「[4.5.2 の新機能](#v452)」を参照してください)
+     <xref:System.Windows.Forms.PropertyGrid> <xref:System.Windows.Forms.TreeView> <xref:System.Windows.Forms.DataGridView> の一部 (サポートされている追加コントロールについては、「[4.5.2 の新機能](#v452)」を参照してください)
 
      この機能を有効にするには、構成ファイル (app.config) に新しい \<appSettings> 要素を追加し、`EnableWindowsFormsHighDpiAutoResizing` 要素を `true` に設定します。
 
@@ -1269,7 +1269,7 @@ Dim utc As New Date(2016, 11, 07, 3, 0, 0, DateTimeKind.Utc)
 
 - <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> クラスを [!INCLUDE[win8](../../../includes/win8-md.md)] で使用した場合の IDNA (Internationalized Domain Names in Applications) 規格の 2008 バージョンのサポート。
 
-- オペレーティング システムへの文字列比較の処理代行。 .NET Framework を [!INCLUDE[win8](../../../includes/win8-md.md)] で使用したときに、Unicode 6.0 が実装されます。 他のプラットフォームで実行されている場合、.NET Framework には、Unicode 5.x. を実装する独自の文字列比較データが含まれています。 <xref:System.String> クラスおよび <xref:System.Globalization.SortVersion> クラスの「コメント」セクションを参照してください。
+- オペレーティング システムへの文字列比較の処理代行。.NET Framework を [!INCLUDE[win8](../../../includes/win8-md.md)] で使用したときに、Unicode 6.0 が実装されます。 他のプラットフォームで実行されている場合、.NET Framework には、Unicode 5.x. を実装する独自の文字列比較データが含まれています。 <xref:System.String> クラスおよび <xref:System.Globalization.SortVersion> クラスの「コメント」セクションを参照してください。
 
 - アプリケーション ドメインごとに文字列のハッシュ コードを計算する機能。 「[\<UseRandomizedStringHashAlgorithm> 要素](../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md)」をご覧ください。
 

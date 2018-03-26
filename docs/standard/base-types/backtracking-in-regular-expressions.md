@@ -1,12 +1,12 @@
 ---
-title: "正規表現におけるバックトラッキング"
-ms.custom: 
+title: 正規表現におけるバックトラッキング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,7 +22,7 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-caps.latest.revision: 
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -30,10 +30,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: b3d7b5c42f43795f811af66d42ed364d482c8ced
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="backtracking-in-regular-expressions"></a>正規表現におけるバックトラッキング
 <a name="top"></a> バックトラッキングは、正規表現パターンに省略可能な [量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) または [代替構成体](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)が含まれている場合に発生します。この場合、正規表現エンジンは、一致の検索を継続するために、以前に保存した状態に戻ります。 バックトラッキングは、正規表現を強力にするための中心的な機能で、これにより、非常に複雑なパターンを照合できる強力かつ柔軟な正規表現を作成できるようになります。 その一方で、バックトラッキングにはマイナス面もあり、 多くの場合、正規表現エンジンのパフォーマンスを左右する最大の要因になります。 さいわい、正規表現エンジンの動作とバックトラッキングの使用方法は開発者が制御できます。 ここでは、バックトラッキングの動作のしくみと、バックトラッキングを制御する方法について説明します。  
@@ -128,7 +128,7 @@ ms.lasthandoff: 02/01/2018
   
 -   以前に保存した照合 3 に戻ります。 追加のキャプチャ グループに割り当てる必要がある文字 "a" があと 2 つあることを特定しますが、 文字列の終わりのテストに失敗します。 その後、照合 3 に戻り、2 つの追加のキャプチャ グループの 2 つの追加の文字 "a" を照合しようとしますが、 ここでも文字列の終わりのテストに失敗します。 これらの照合の失敗に必要な比較は 12 回です。 これまでに実行された比較は合計 25 回になります。  
   
- このようにして、正規表現エンジンがすべての可能な一致の組み合わせを試行し終わるまで入力文字列と正規表現の比較が続けられます。一致しないという結論に到達するのはその後です。 この比較は、入れ子になった量指定子があるため、O(2<sup>n</sup>) (指数演算、*n* は入力文字列の文字数) です。 そのため、最悪のケースでは、30 文字の入力文字列で約 1,073,741,824 回、40 文字の入力文字列では約 1,099,511,627,776 回の比較が必要になります。 使用する文字列の長さがこのレベル以上になると、正規表現パターンに一致しない入力を処理するときに、正規表現メソッドの完了までに膨大な時間がかかる可能性があります。  
+ このようにして、正規表現エンジンがすべての可能な一致の組み合わせを試行し終わるまで入力文字列と正規表現の比較が続けられます。一致しないという結論に到達するのはその後です。 この比較では、入れ子になった量指定子のため、O (2<sup>n</sup>) または指数演算、場所*n*入力文字列内の文字数です。 そのため、最悪のケースでは、30 文字の入力文字列で約 1,073,741,824 回、40 文字の入力文字列では約 1,099,511,627,776 回の比較が必要になります。 使用する文字列の長さがこのレベル以上になると、正規表現パターンに一致しない入力を処理するときに、正規表現メソッドの完了までに膨大な時間がかかる可能性があります。  
   
  [ページのトップへ](#top)  
   
@@ -225,8 +225,8 @@ ms.lasthandoff: 02/01/2018
   
  [ページのトップへ](#top)  
   
-## <a name="see-also"></a>参照  
- [.NET 正規表現](../../../docs/standard/base-types/regular-expressions.md)  
+## <a name="see-also"></a>関連項目  
+ [.NET の正規表現](../../../docs/standard/base-types/regular-expressions.md)  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
  [量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)  
  [代替構成体](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)  
