@@ -1,12 +1,13 @@
 ---
-title: "WPF アプリケーションへのグラス フレームの拡張"
-ms.custom: 
+title: WPF アプリケーションへのグラス フレームの拡張
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-caps.latest.revision: "12"
+caps.latest.revision: ''
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: aad070bca408fc608eb000948c1b942d08f02018
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>WPF アプリケーションへのグラス フレームの拡張
 このトピックでは、[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] のグラス フレームを [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションのクライアント領域に拡張する方法を示します。  
@@ -160,7 +162,7 @@ void OnLoaded(object sender, RoutedEventArgs e)
   
  ![WPF アプリケーションに拡張されたグラス フレーム。](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デスクトップ ウィンドウ マネージャーの概要](https://msdn.microsoft.com/library/aa969540.aspx)  
  [デスクトップ ウィンドウ マネージャーぼかしの概要](https://msdn.microsoft.com/library/aa969537.aspx)  
  [DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx)

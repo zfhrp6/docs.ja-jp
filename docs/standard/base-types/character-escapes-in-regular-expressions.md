@@ -1,12 +1,12 @@
 ---
-title: "正規表現での文字のエスケープ"
-ms.custom: 
+title: 正規表現での文字のエスケープ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,7 +20,7 @@ helpviewer_keywords:
 - .NET Framework regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-caps.latest.revision: 
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -28,10 +28,10 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 8a4ec10bfa332c8caafce57385791d8069a7231a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="character-escapes-in-regular-expressions"></a>正規表現での文字のエスケープ
 正規表現の円記号 (\\) は、次のいずれかを示します。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/23/2017
   
 |文字または文字シーケンス|説明|  
 |---------------------------|-----------------|  
-|次の文字を除くすべての文字:<br /><br /> である必要があります。 $ ^ { [ ( &#124; ) * + ? \|**文字またはシーケンス**の列にリストされているもの以外の文字は、正規表現で特別な意味を持ちません。それらは、その文字自体と一致します。<br /><br /> **文字またはシーケンス**の列に含まれる文字は、特殊な正規表現言語要素です。 正規表現でそれらの文字と一致するためには、エスケープするか、[正の文字グループ](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)に含める必要があります。 たとえば、正規表現の `\$\d+` または `[$]\d+`は「$1200」と一致します。|  
+|次の文字を除くすべての文字:<br /><br /> である必要があります。 $ ^ { [ ( &#124; ) * + ? \|記載されている以外の文字、**文字またはシーケンス**列正規表現で特別な意味がありません。 自体と一致します。<br /><br /> **文字またはシーケンス**の列に含まれる文字は、特殊な正規表現言語要素です。 正規表現でそれらの文字と一致するためには、エスケープするか、[正の文字グループ](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)に含める必要があります。 たとえば、正規表現の `\$\d+` または `[$]\d+`は「$1200」と一致します。|  
 |`\a`|ビープ音 (アラーム) 文字の `\u0007`。|  
 |`\b`|`[`*character_group*`]` 文字クラスでバックスペースの `\u0008` と一致します   (「[文字クラス](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)」を参照してください)。文字クラスの外部では、`\b` はワード境界と一致するアンカーです (「[アンカー](../../../docs/standard/base-types/anchors-in-regular-expressions.md)」を参照してください)。|  
 |`\t`|タブの `\u0009`。|  
@@ -79,5 +79,5 @@ ms.lasthandoff: 12/23/2017
 |`(.+)`|任意の文字と 1 回以上、一致します。 これが 2 番目のキャプチャ グループです。|  
 |`\r?\n`|復帰とそれに続く改行に、0 回または 1 回一致します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

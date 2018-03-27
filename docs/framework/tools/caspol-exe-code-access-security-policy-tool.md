@@ -1,12 +1,13 @@
 ---
-title: "Caspol.exe (コード アクセス セキュリティ ポリシー ツール)"
-ms.custom: 
+title: Caspol.exe (コード アクセス セキュリティ ポリシー ツール)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - permission sets, modifying security policy
@@ -22,16 +23,17 @@ helpviewer_keywords:
 - security policy [.NET Framework], modifying
 - manually editing security configuration files
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
-caps.latest.revision: "44"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 6ab363e833ecde86a17d9adea3fcd26351725868
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: HT
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 03/26/2018
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (コード アクセス セキュリティ ポリシー ツール)
 ユーザーと管理者は、コード アクセス セキュリティ (CAS) ポリシー ツール (Caspol.exe) を使用して、コンピューター ポリシー レベル、ユーザー ポリシー レベル、およびエンタープライズ ポリシー レベルのセキュリティ ポリシーを変更できます。  
@@ -97,8 +99,8 @@ caspol [options]
 |**-custom**  *xmlfile*|カスタム メンバーシップ条件を追加します。 必須引数の *xmlfile* は、XML シリアル化したカスタム メンバーシップ条件を含む .xml ファイルを指定します。|  
 |**-hash** *hashAlg* {**-hex** *hashValue* &#124; **-file** *assembly_file*}|指定されたアセンブリ ハッシュを持つコードを指定します。 コード グループのメンバーシップ条件としてハッシュを使用するには、ハッシュ値またはアセンブリ ファイルを指定する必要があります。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.HashMembershipCondition>」を参照してください。|  
 |**-pub** {**-cert** *cert_file_name* &#124;<br /><br /> **-file** *signed_file_name* &#124; **-hex**  *hex_string*}|指定されたソフトウェア発行者を持つコードを、証明書ファイル、ファイル上の署名、または X509 証明書の 16 進表示で指定します。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.PublisherMembershipCondition>」を参照してください。|  
-|**-site** *website*|指定されたサイトがソースであるコードを指定します。 例:<br /><br /> **-site** www.proseware.com<br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.SiteMembershipCondition>」を参照してください。|  
-|**-strong -file** *file_name* {*name* &#124; **-noname**} {*version* &#124; **-noversion**}|特定の厳密な名前を持つコードを、ファイル名、文字列としてのアセンブリ名、および *major*.*minor*.*build*.*revision* 形式のアセンブリ バージョンで指定します。 例:<br /><br /> **-strong -file** myAssembly.exe myAssembly 1.2.3.4<br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.StrongNameMembershipCondition>」を参照してください。|  
+|**-site** *website*|指定されたサイトがソースであるコードを指定します。 例えば:<br /><br /> **-site** www.proseware.com<br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.SiteMembershipCondition>」を参照してください。|  
+|**-strong -file** *file_name* {*name* &#124; **-noname**} {*version* &#124; **-noversion**}|特定の厳密な名前を持つコードを、ファイル名、文字列としてのアセンブリ名、および *major*.*minor*.*build*.*revision* 形式のアセンブリ バージョンで指定します。 例えば:<br /><br /> **-strong -file** myAssembly.exe myAssembly 1.2.3.4<br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.StrongNameMembershipCondition>」を参照してください。|  
 |**-url** *URL*|指定された URL をソースとするコードを指定します。 URL には、http:// や ftp:// などのプロトコルを含める必要があります。 さらに、ワイルドカード文字 (\*) を使用して、特定の URL から複数のアセンブリを指定できます。 **メモ:** 複数の名前を使用して 1 つの URL を識別できるため、URL をメンバーシップ条件として使用する方法は、コードの識別情報を安全に確認できる方法ではありません。 できるだけ厳密な名前メンバーシップ条件、発行元メンバーシップ条件、またはハッシュ メンバーシップ条件を使用してください。 <br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.UrlMembershipCondition>」を参照してください。|  
 |**-zone** *zonename*|指定されたゾーンがソースであるコードを指定します。 引数 *zonename* として、**MyComputer**、**Intranet**、**Trusted**、**Internet**、または **Untrusted** のいずれかの値を指定できます。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.ZoneMembershipCondition> クラス」を参照してください。|  
   
@@ -122,7 +124,7 @@ caspol [options]
  名前付きアクセス許可セットを参照する場合は、名前を使用します。 **–list** オプションでは、最初にコード グループの一覧、次にそのポリシーの中で利用できる名前付きアクセス許可セットの一覧が表示されます。  
   
 ## <a name="caspolexe-behavior"></a>Caspol.exe の動作  
- **-s****[ecurity]** {**on** &#124; **off**} を除くすべてのオプションが、Caspol.exe と共にインストールされたバージョンの .NET Framework を使用します。 あるバージョンのランタイムと共にインストールされた Caspol.exe を実行する場合、変更内容はそのバージョンだけに適用されます*。* その他のランタイムが共存する場合、それらのランタイムは影響を受けません。 特定のランタイム バージョンのディレクトリに切り替えずに Caspol.exe をコマンド ラインで実行する場合、Caspol.exe はパスに含まれる最初のランタイム バージョン (通常は最後にインストールされたランタイム バージョン) のディレクトリから実行されます。  
+ **-s****[ecurity]** {**on** &#124; **off**} を除くすべてのオプションが、Caspol.exe と共にインストールされたバージョンの .NET Framework を使用します。 あるバージョンのランタイムと共にインストールされた Caspol.exe を実行する場合、変更内容はそのバージョンだけに適用されます。** その他のランタイムが共存する場合、それらのランタイムは影響を受けません。 特定のランタイム バージョンのディレクトリに切り替えずに Caspol.exe をコマンド ラインで実行する場合、Caspol.exe はパスに含まれる最初のランタイム バージョン (通常は最後にインストールされたランタイム バージョン) のディレクトリから実行されます。  
   
  **-s****[ecurity]** {**on** &#124; **off**} オプションは、コンピューター全体に対する操作です。 コード アクセス セキュリティをオフにすると、すべてのマネージ コードおよびコンピューター上のすべてのユーザーに対するセキュリティ チェックが中止されます。 side-by-side 実行バージョンの .NET Framework がインストールされている場合は、このコマンドによってコンピューターにインストールされているすべてのバージョンのセキュリティがオフになります。 **-list** オプションを使用するとセキュリティがオフになっていることが示されますが、他のユーザーに対してセキュリティがオフになっていることが明確に示されることはありません。  
   
@@ -255,6 +257,6 @@ caspol -customall "c:\config_test\security.config" -resolvegroup myassembly
 caspol -all -resolveperm testassembly  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ツール](../../../docs/framework/tools/index.md)  
  [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
