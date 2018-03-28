@@ -25,7 +25,7 @@ ms.lasthandoff: 03/26/2018
 # <a name="how-to-retrieve-metadata-and-implement-a-compliant-service"></a>方法 : メタデータの取得および準拠サービスの実装をする
 サービスのデザイン担当者と実装担当者が同じであるとは限りません。 アプリケーションの相互運用が重要な環境では、コントラクトを Web サービス記述言語 (WSDL) でデザインまたは記述した場合、開発者はそのコントラクトに準拠するサービスを実装する必要があります。 既存のサービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に移行することもできますが、その物理メッセージ フォーマットを維持しなければなりません。 さらに、双方向コントラクトでは、呼び出し元でコールバック コントラクトを実装する必要もあります。  
   
- このような場合は、使用する必要があります、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) (または同等のツール) の要件を満たすために実装できるマネージ言語でサービス コントラクト インターフェイスを生成する、コント ラク ト。 通常、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)が、チャネル ファクトリを使用するサービス コントラクトを取得するために使用または[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントの種類を設定するクライアント構成ファイルと同様、正しいバインドとアドレス。 生成された構成ファイルを使用するには、それをサービスの構成ファイルに変更する必要があります。 また、サービス コントラクトを変更する必要もあります。  
+ このようなケースにおいて、コントラクトの要件を満たしうる言語で サービス コントラクト インターフェイスを生成するためには、[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) (または同等のツール) を使用する必要があります。 通常、[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) は、チャネル ファクトリを使用するサービス コントラクトを、または、正しいバインドとアドレスを設定するクライアント構成ファイルと同様に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクライアントの種類を取得するために使用されます。生成された構成ファイルを使用するには、それをサービスの構成ファイルに変更する必要があります。 また、サービス コントラクトを変更する必要がある場合もあります。 また、サービス コントラクトを変更する必要もあります。  
   
 ### <a name="to-retrieve-data-and-implement-a-compliant-service"></a>データを取得して準拠サービスを実装するには  
   
