@@ -1,7 +1,7 @@
 ---
-title: "値オブジェクトの実装"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 値オブジェクトの実装"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 値オブジェクトの実装
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 値オブジェクトの実装'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017

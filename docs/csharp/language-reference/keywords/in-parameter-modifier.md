@@ -1,5 +1,5 @@
 ---
-title: "in パラメーター修飾子 (C# リファレンス)"
+title: in パラメーター修飾子 (C# リファレンス)
 ms.date: 03/06/2018
 ms.prod: .net
 ms.technology:
@@ -10,11 +10,11 @@ helpviewer_keywords:
 - in parameters [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 035aac3e6b902f607e533b709713eb1d07c9774a
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 9b8b21e2bdc95829c831ee71f24b47986321b7d0
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="in-parameter-modifier-c-reference"></a>in パラメーター修飾子 (C# リファレンス)
 
@@ -60,7 +60,10 @@ class InOverloads
   
 - [yield return](../../../csharp/language-reference/keywords/yield.md) または `yield break` ステートメントを含む Iterator メソッド。  
 
-通常は、`in` 引数を宣言して、値で引数を渡すために必要なコピー操作を回避します。 これは、引数が構造体または構造体の配列である場合に最も有効です。
+通常は、`in` 引数を宣言して、値で引数を渡すために必要なコピー操作を回避します。 これは、引数が構造体などの値の型で、参照渡しよりもコピー操作の方が負荷がかかる場合に特に便利です。
+
+> [!WARNING]
+>  `in` パラメーターは誤って使用すると、さらに負荷がかかることがあります。 コンパイラでは、メンバー メソッドが、構造体の状態を変更するかどうかを認識しません。 オブジェクトが変更されないことがコンパイラで確認できない場合は、常に防御のためにコンパイラがコピーを作成し、そのコピーを利用してメンバー参照を呼び出します。 変更されるとすれば、その防御用のコピーに対して加えられます。 このようなコピーが作成されないようにするには、`in` パラメーターを `in` 引数として渡す方法と、構造体を `readonly struct` として定義する方法の 2 つがあります。
 
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
@@ -69,4 +72,5 @@ class InOverloads
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
- [メソッド パラメーター](../../../csharp/language-reference/keywords/method-parameters.md)
+ [メソッド パラメーター](../../../csharp/language-reference/keywords/method-parameters.md)  
+ [値の型による参照セマンティクス](../../../csharp/reference-semantics-with-value-types.md)

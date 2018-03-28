@@ -1,7 +1,7 @@
 ---
-title: "Docker アプリの開発ワークフロー"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker アプリの開発ワークフロー"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker アプリの開発ワークフロー
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker アプリの開発ワークフロー'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8537b1db27f512ec0bfc2f23589efe8199ca3287
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 9c3df50430117936fd0b9d4390cb84e02085e48d
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="development-workflow-for-docker-apps"></a>Docker アプリの開発ワークフロー
 
@@ -69,7 +69,7 @@ Visual Studio 2017 もインストールされている必要があります。 
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Get started with Docker CE for Windows (Docker CE for Windows の概要)**
+-   **Windows 用の Docker CE の概要**
     [*https://docs.docker.com/docker-for-windows/*](https://docs.docker.com/docker-for-windows/)
 
 -   **Visual Studio 2017**
@@ -127,7 +127,7 @@ ENTRYPOINT ["dotnet", " MySingleContainerWebApp.dll "]
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Building Docker Images for .NET Core Applications (.NET Core アプリケーション用の Docker イメージのビルド)**
+-   **.NET Core アプリケーションの Docker イメージのビルド**
     [*https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images*](../../../core/docker/building-net-docker-images.md)
 
 -   **Build your own image (独自のイメージのビルド)**。 Docker の公式なドキュメント内にあります。
@@ -338,7 +338,7 @@ Visual Studio 2017 を使用したマルチコンテナー アプリケーショ
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Deploy an ASP.NET container to a remote Docker host (ASP.NET コンテナーをリモートの Docker ホストに展開する)**
+-   **リモート Docker ホストへの ASP.NET コンテナーのデプロイ**
     [*https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker*](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 
 ### <a name="a-note-about-testing-and-deploying-with-orchestrators"></a>オーケストレーターを使用したテストと展開に関する注意事項
@@ -395,10 +395,10 @@ Visual Studio を使用するワークフローは、エディター/CLI アプ�
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **作成者: Steve Lasker。 .NET Docker Development with Visual Studio 2017 (Visual Studio 2017 を使用した .NET Docker の開発)**
+-   **作成者: Steve Lasker。Visual Studio 2017 を使用した .NET Docker の開発**
     [*https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111*](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111)
 
--   **作成者: Jeffrey T. Fritz。Put a .NET Core App in a Container with the new Docker Tools for Visual Studio (Visual Studio 用の新しい Docker ツールを使用してコンテナーに .NET Core アプリを入れる)**
+-   **作成者: Jeffrey T. Fritz。Visual Studio の新しい Docker ツールを使用してコンテナーに .NET Core アプリを配置する**
     [*https://blogs.msdn.microsoft.com/webdev/2016/11/16/new-docker-tools-for-visual-studio/*](https://blogs.msdn.microsoft.com/webdev/2016/11/16/new-docker-tools-for-visual-studio/)
 
 ## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>Windows コンテナーを設定するための PowerShell コマンドの使用 

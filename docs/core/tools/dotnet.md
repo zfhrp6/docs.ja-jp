@@ -1,19 +1,19 @@
 ---
-title: "dotnet コマンド - .NET Core CLI"
-description: "dotnet コマンド (.NET Core CLI ツールの一般的なドライバー) とその使用法について説明します。"
+title: dotnet コマンド - .NET Core CLI
+description: dotnet コマンド (.NET Core CLI ツールの一般的なドライバー) とその使用法について説明します。
 author: mairaw
 ms.author: mairaw
-ms.date: 11/28/2017
+ms.date: 03/20/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: bed0876645428cdff11fa83a091fc63e64cedc8f
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: 2d22124cb613152df402046541650f3262e7e202
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="dotnet-command"></a>dotnet コマンド
 
@@ -27,11 +27,13 @@ ms.lasthandoff: 02/22/2018
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 ```
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbose] [--version]
+dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
+    [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 ```
-dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [-v|--verbose] [--version]
+dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
+    [-h|--help] [--info] [-v|--verbosity] [--version]
 ```
 ---
 
@@ -75,9 +77,9 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
  共有フレームワークの候補なしでロールフォワードします。
 
-`-v|--verbose`
+`-v|--verbosity <LEVEL>`
 
-詳細出力を有効にします。
+コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。 一部のコマンドではサポートされていません。このオプションが使用可能かどうかを判断するには、対象のコマンドのページを参照してください。
 
 `--version`
 
@@ -105,9 +107,9 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 現在のオペレーティング システム、バージョンのコミット SHA、およびその他の情報など、CLI ツールと環境の詳細情報を印刷します。
 
-`-v|--verbose`
+`-v|--verbosity <LEVEL>`
 
-詳細出力を有効にします。
+コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。 一部のコマンドではサポートされていません。このオプションが使用可能かどうかを判断するには、対象のコマンドのページを参照してください。
 
 `--version`
 

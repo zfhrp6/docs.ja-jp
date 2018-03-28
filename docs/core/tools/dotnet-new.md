@@ -1,22 +1,19 @@
 ---
-title: "dotnet new コマンド - .NET Core CLI"
-description: "dotnet new コマンドは、指定されたテンプレートに基づいて新しい .NET Core プロジェクトを作成します。"
-keywords: "dotnet-new, CLI, CLI コマンド, .NET Core"
+title: dotnet new コマンド - .NET Core CLI
+description: dotnet new コマンドは、指定されたテンプレートに基づいて新しい .NET Core プロジェクトを作成します。
 author: mairaw
 ms.author: mairaw
-ms.date: 08/13/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: ea94c875ae6fe82d0e5d35ba8ca3fd47971fbbe6
-ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
+ms.openlocfilehash: 2cbd42195d0ec713d2ccb4af823075ece950ceff
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/13/2018
 
 ## <a name="synopsis"></a>構文
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 ```
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
@@ -55,7 +52,7 @@ dotnet new [-h|--help]
 
 コマンドが呼び出されたときにインスタンス化するテンプレート。 各テンプレートには、渡すことができるオプションが存在する場合があります。 詳細については、[テンプレートのオプション](#template-options)を参照してください。
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 
 このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -l` を使います。 次の表は、.NET Core 2.0 SDK にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
 
@@ -101,7 +98,7 @@ dotnet new [-h|--help]
 
 ## <a name="options"></a>オプション
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 
 `--force`
 
@@ -113,7 +110,9 @@ dotnet new [-h|--help]
 
 `-i|--install <PATH|NUGET_ID>`
 
-指定された `PATH` または `NUGET_ID` からソース パックまたはテンプレート パックをインストールします。 カスタム テンプレートの作成方法については、[「dotnet new のカスタム テンプレート」](custom-templates.md) を参照してください。
+指定された `PATH` または `NUGET_ID` からソース パックまたはテンプレート パックをインストールします。 テンプレート パッケージのプレリリース版をインストールする場合は、`<package-name>::<package-version>` の形式でバージョンを指定する必要があります。 既定では、`dotnet new` は、バージョンに対して \* を渡します。これは最後の安定したパッケージのバージョンを表します。 「[使用例](#examples)」のセクションで、例をご覧ください。
+
+カスタム テンプレートの作成方法については、[「dotnet new のカスタム テンプレート」](custom-templates.md) を参照してください。
 
 `-l|--list`
 
@@ -175,11 +174,11 @@ dotnet new [-h|--help]
 
 プロジェクト テンプレートはそれぞれ、追加のオプションが与えられている場合があります。 コア テンプレートの場合、次のオプションが追加されています。
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
 
 **console, angular, react, reactredux**
 
-`--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
+  `--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
 
 **classlib**
 
@@ -322,6 +321,10 @@ dotnet new [-h|--help]
 MVC に利用できるすべてのテンプレートを一覧表示します。
 
 `dotnet new mvc -l`
+
+ASP.NET Core のシングル ページ アプリケーション テンプレートのバージョン 2.0 をインストールします (コマンド オプションは .NET Core SDK 1.1 以降のバージョンでのみ使用できます):
+
+`dotnet new -i Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0`
 
 ## <a name="see-also"></a>関連項目
 

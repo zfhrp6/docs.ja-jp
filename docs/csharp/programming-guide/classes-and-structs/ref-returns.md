@@ -1,6 +1,6 @@
 ---
-title: "ref 戻り値と ref ローカル変数 (C# ガイド)"
-description: "ref 戻り値と ref ローカル変数を定義して使用する方法について説明します。"
+title: ref 戻り値と ref ローカル変数 (C# ガイド)
+description: ref 戻り値と ref ローカル変数を定義して使用する方法について説明します。
 author: rpetrusha
 ms.author: ronpet
 ms.date: 01/23/2017
@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: a74563c0d24b6cd2a2fa8534787f078f3cc92674
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: c37c6dd61ae02813bcc467982f3b175da9136e4a
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="ref-returns-and-ref-locals"></a>ref 戻り値と ref ローカル変数
 
@@ -85,7 +85,15 @@ ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 
 この後 `p` を使用することは、`GetContactInformation` によって返された変数を使用することと同じです。`p` はその変数のエイリアスであるためです。 `p` を変更すると、`GetContactInformation` から返される変数も変更されます。
 
-なお、`ref` キーワードは、ローカル変数宣言の前*および*メソッド呼び出しの前の両方で使用します。 変数宣言と代入の両方の `ref` キーワードを含めないと、コンパイラ エラー CS8172 "値を使用して参照渡し変数を初期化することはできません" が生成されます。 
+なお、`ref` キーワードは、ローカル変数宣言の前*および*メソッド呼び出しの前の両方で使用します。 
+
+同じ方法で、参照渡しの値にアクセスできます。 場合によっては、参照渡しの値へのアクセスによって負荷がかかる可能性があるコピー操作が回避され、パフォーマンスが向上します。 たとえば、次のステートメントは、値の参照に使用される ref ローカル値をどのように定義できるかを示しています。
+
+```csharp
+ref VeryLargeStruct reflocal = ref veryLargeStruct;
+```
+
+なお、`ref` キーワードは、ローカル変数宣言の前*および* 2 番目の例の値の前で使用します。 両方の例の、変数宣言と代入の両方の `ref` キーワードを含めないと、コンパイラ エラー CS8172 "値を使用して参照渡し変数を初期化することはできません" が生成されます。 
  
 ## <a name="ref-returns-and-ref-locals-an-example"></a>ref 戻り値と ref ローカル変数: 使用例
 
@@ -101,4 +109,5 @@ ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
  
 ## <a name="see-also"></a>関連項目
 
-[ref キーワード](../../language-reference/keywords/ref.md)
+[ref キーワード](../../language-reference/keywords/ref.md)  
+[値の型による参照セマンティクス](../../../csharp/reference-semantics-with-value-types.md)

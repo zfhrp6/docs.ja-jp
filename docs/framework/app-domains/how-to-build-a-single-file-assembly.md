@@ -1,12 +1,13 @@
 ---
-title: "方法: シングルファイル アセンブリをビルドする"
-ms.custom: 
+title: '方法: シングルファイル アセンブリをビルドする'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,16 +21,17 @@ helpviewer_keywords:
 - code modules
 - single-file assemblies
 ms.assetid: a6063221-43a5-4d3e-814c-288a4ec69aec
-caps.latest.revision: "10"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bd9f2bab23fff1bbc4ebb521b167ac8031af3bc7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 80fa584a21a3bdfb9392021959d777139daafd04
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-to-build-a-single-file-assembly"></a>方法: シングルファイル アセンブリをビルドする
 アセンブリの最も単純な形式であるシングルファイル アセンブリには、型の情報、実装、[アセンブリ マニフェスト](../../../docs/framework/app-domains/assembly-manifest.md)が含まれています。 コマンド ライン コンパイラや [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を利用し、シングルファイル アセンブリを作成できます。 既定では、コンパイラは .exe 拡張子でアセンブリ ファイルを作成します。  
@@ -49,11 +51,11 @@ ms.lasthandoff: 12/22/2017
   
  次の例では、`myCode` という名前のコード モジュールから `myCode.exe` という名前のアセンブリが作成されます。  
   
-```csharp  
+```console
 csc myCode.cs  
 ```  
-  
-```vb  
+
+```console
 vbc myCode.vb  
 ```  
   
@@ -67,12 +69,12 @@ vbc myCode.vb
   
  次の例では、`myCode` という名前のコード モジュールから `myAssembly.exe` という名前のアセンブリが作成されます。  
   
-```csharp  
-csc /out:myAssembly.exe myCode.cs  
+```console  
+csc -out:myAssembly.exe myCode.cs  
 ```  
   
-```vb  
-vbc /out:myAssembly.exe myCode.vb  
+```console
+vbc -out:myAssembly.exe myCode.vb  
 ```  
   
 ## <a name="creating-library-assemblies"></a>ライブラリ アセンブリを作成する  
@@ -88,12 +90,12 @@ vbc /out:myAssembly.exe myCode.vb
   
  次の例では、`myCode` という名前のコード モジュールから `myCodeAssembly.dll` という名前のライブラリ アセンブリが作成されます。  
   
-```csharp  
-csc /out:myCodeLibrary.dll /t:library myCode.cs  
+```console  
+csc -out:myCodeLibrary.dll -t:library myCode.cs  
 ```  
   
-```vb  
-vbc /out:myCodeLibrary.dll /t:library myCode.vb  
+```console
+vbc -out:myCodeLibrary.dll -t:library myCode.vb  
 ```  
   
 ## <a name="see-also"></a>参照  

@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービス アプリケーション レイヤーと Web API を設計する"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | マイクロサービス アプリケーション レイヤーと Web API を設計する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービス アプリケーション レイヤーと Web API を設計する
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | マイクロサービス アプリケーション レイヤーと Web API を設計する'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c166e0286d0769e24a6361037eb6c4694fb821ae
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 87b48624fde8c7cdab097289f1cf56ab56e1173f
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="designing-the-microservice-application-layer-and-web-api"></a>マイクロサービス アプリケーション レイヤーと Web API を設計する
 
@@ -29,7 +29,7 @@ SOLID の原則は、最新のミッション クリティカル アプリケー
 
 -   リスコフの置換 (Liskov substitution) 原則
 
--   インターフェイス分離 (Inversion Segregation) の原則
+-   インターフェイス分離 (Interface Segregation) の原則
 
 -   依存関係逆転 (Dependency Inversion) の原則
 
@@ -46,10 +46,10 @@ SOLID の詳細を取り上げた別のガイドがあります。 そのため�
 -   **SOLID: 基本的な OOP 原則**
     [*http://deviq.com/solid/*](http://deviq.com/solid/%20)
 
--   **制御の反転コンテナーと依存関係挿入パターン**
+-   **制御の反転コンテナーと依存関係の挿入パターン**
     [*https://martinfowler.com/articles/injection.html*](https://martinfowler.com/articles/injection.html)
 
--   **Steve Smith。New は接着剤**
+-   **Steve Smith。new は接着剤である**
     [*http://ardalis.com/new-is-glue*](http://ardalis.com/new-is-glue)
 
 

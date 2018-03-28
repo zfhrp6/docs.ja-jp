@@ -1,6 +1,6 @@
 ---
-title: "値の型による参照セマンティクス"
-description: "構造のコピーを安全に最小限に抑える言語機能を理解する"
+title: 値の型による参照セマンティクス
+description: 構造のコピーを安全に最小限に抑える言語機能を理解する
 author: billwagner
 ms.author: wiwagn
 ms.date: 11/10/2017
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 6e40907cab2aabcf8c8321819c99298314bcfbc5
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 8a0cfe83200d50eefa9b01ab51591a5fe0703ec0
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="reference-semantics-with-value-types"></a>値の型による参照セマンティクス
 
@@ -110,6 +110,22 @@ C# 7.2 では、参照で引数を渡すメソッドを記述するときに既�
 - ラムダ式またはローカル関数で `ref struct` 変数をキャプチャすることはできません。
 
 これらの制約によって、誤って、マネージ ヒープに昇格させるようなやり方で `ref struct` を使用することがなくなります。
+
+## <a name="readonly-ref-struct-type"></a>`readonly ref struct` 型
+
+構造体を `readonly ref` として宣言すると、`ref struct` と `readonly struct` の制限の利点と制限が組み合わされます。 
+
+次の例は、`readonly ref struct` の宣言を示しています。
+
+```csharp
+readonly ref struct ReadOnlyRefPoint2D
+{
+    public int X { get; }
+    public int Y { get; }
+    
+    ReadOnlyRefPoint2D(int x, int y) => (X, Y) = (x, y);
+}
+```
 
 ## <a name="conclusions"></a>まとめ
 

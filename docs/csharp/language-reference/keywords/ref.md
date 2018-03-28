@@ -1,5 +1,5 @@
 ---
-title: "ref (C# リファレンス)"
+title: ref (C# リファレンス)
 ms.date: 03/06/2018
 ms.prod: .net
 ms.technology:
@@ -13,11 +13,11 @@ helpviewer_keywords:
 - ref keyword [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 427045317e9d7d0fe3435a486b9f761908ab5e78
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 63f984f4004cfce9694e7e7405ec2477bc370731
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="ref-c-reference"></a>ref (C# リファレンス)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/15/2018
 
 - メソッド シグネチャで、参照渡しで呼び出し元に値を返します。 詳細については、「[参照戻り値](#reference-return-values)」を参照してください。
 
-- メンバーの本文で、参照戻り値が、呼び出し元によって変更される参照としてローカルに格納されることを示します。 詳細については、「[ref ローカル変数](#ref-locals)」を参照してください。
+- メンバーの本文で、参照戻り値が、呼び出し元によって変更される参照としてローカルに格納されること、または、通常はローカル変数が参照渡しによって別の値にアクセスすることを示します。 詳細については、「[ref ローカル変数](#ref-locals)」を参照してください。
 
 ## <a name="passing-an-argument-by-reference"></a>参照渡しで引数を渡す
 
@@ -109,7 +109,13 @@ ref ローカル変数を定義するには、変数宣言の前と、参照渡�
 ref decimal estValue = ref Building.GetEstimatedValue();
 ```
 
-なお、`ref` キーワードは両方の位置で使用する必要があります。そうしないと、コンパイラ エラー CS8172 "値を使用して参照渡し変数を初期化することはできません" が生成されます。 
+同じ方法で、参照渡しの値にアクセスできます。 場合によっては、参照渡しの値へのアクセスによって負荷がかかる可能性があるコピー操作が回避され、パフォーマンスが向上します。 たとえば、次のステートメントは、値の参照に使用される ref ローカル値をどのように定義できるかを示しています。
+
+```csharp
+ref VeryLargeStruct reflocal = ref veryLargeStruct;
+```
+
+どちらの例も、`ref` キーワードは両方の位置で使用する必要があります。そうしないと、コンパイラ エラー CS8172 "値を使用して参照渡し変数を初期化することはできません" が生成されます。 
  
 ## <a name="a-ref-returns-and-ref-locals-example"></a>ref 戻り値と ref ローカル変数の使用例
 

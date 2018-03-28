@@ -1,27 +1,29 @@
 ---
-title: ".NET Framework 配置ガイド (管理者向け)"
-ms.custom: 
+title: .NET Framework 配置ガイド (管理者向け)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-caps.latest.revision: "40"
+caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3af5e301e57350b72ac0ea50448c7a46ca6c5387
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f57b5db5c03030d8cb930355586d0253cae13319
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework 配置ガイド (管理者向け)
 この記事では、システム管理者が Microsoft System Center Configuration Manager を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのシステムの依存関係をネットワーク経由で配置する方法を手順に沿って説明します。 ここでは、すべての対象のクライアント コンピューターが .NET Framework の最小要件を満たしていることを前提としています。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールに必要なソフトウェア要件とハードウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
@@ -230,8 +232,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="log-file-locations"></a>ログ ファイルの場所  
  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のセットアップ中に次のログ ファイルが作成されます。  
   
- %temp%\Microsoft .NET Framework 4.5*.txt  
- %temp%\Microsoft .NET Framework 4.5\*.html  
+ %temp%\Microsoft .NET Framework 4.5*.txt %temp%\Microsoft .NET Framework 4.5*.html  
   
  [ログ収集ツール](http://www.microsoft.com/download/details.aspx?id=12493)を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のログ ファイルを収集し、それらのファイルのサイズを縮小した圧縮キャビネット (.cab) ファイルを作成できます。  
   

@@ -1,19 +1,19 @@
 ---
-title: "サーバー アプリ用 .NET Core と .NET Framework の選択"
-description: ".NET でのサーバー アプリのビルド時に考慮する必要がある .NET の実装に関するガイドです。"
+title: サーバー アプリ用 .NET Core と .NET Framework の選択
+description: .NET でのサーバー アプリのビルド時に考慮する必要がある .NET の実装に関するガイドです。
 author: cartermp
 ms.author: mairaw
-ms.date: 08/15/2016
+ms.date: 03/15/2018
 ms.topic: article
 ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2108125b9c01a2686d66b0ebd4e43e7ac863e223
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c07b0b760e2a46faea574eef3575409bac773942
+ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>サーバー アプリ用 .NET Core と .NET Framework の選択
 
@@ -79,6 +79,7 @@ Docker コンテナーは、オンプレミスの Linux または Windows イン
 ### <a name="a-need-to-use-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>.NET Core で使用できないサードパーティ製の .NET ライブラリや NuGet パッケージを使用する必要性
 
 ライブラリは、短期間で .NET Standard を採用しています。 .NET Standard を使用すると、.NET Core を含め、すべての .NET 実装全体でコードを共有できます。 .NET Standard 2.0 を使用すれば、さらに簡単です。
+
 - API サーフェスがはるかに大きくなりました。 
 - .NET Framework 互換モードが導入されました。 この互換モードにより、.NET Standard/.NET Core プロジェクトは .NET Framework ライブラリを参照できます。 互換モードの詳細については、「[Announcing .NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/)」(.NET Standard 2.0 のお知らせ) を参照してください。
 
@@ -92,7 +93,7 @@ Docker コンテナーは、オンプレミスの Linux または Windows イン
 
 * ASP.NET Web ページ アプリケーション: ASP.NET Web ページは、ASP.NET Core に含まれていません。 ASP.NET Core [Razor ページ](/aspnet/core/mvc/razor-pages/)には、Web ページとの類似点が多数あります。
 
-* ASP.NET SignalR サーバー/クライアントの実装。 現時点では、ASP.NET SignalR は ASP.NET Core (クライアントとサーバーの両方) で使用できません。 ASP.NET Core SignalR は ASP.NET Core 2.1 で実装される予定です。 「[ASP.NET Core Schedule and Roadmap](https://github.com/aspnet/Home/wiki/Roadmap)」(ASP.NET Core のスケジュールとロードマップ) を参照してください。 Preview 版は、[サーバー側](https://github.com/aspnet/SignalR-Server)と[クライアント ライブラリ](https://github.com/aspnet/SignalR-Client-Net)の GitHub リポジトリで利用できます。
+* ASP.NET SignalR サーバー/クライアントの実装。 現在、[ASP.NET SignalR](https://github.com/aspnet/SignalR) は ASP.NET Core 2.1 のプレビュー モードで使用できます。
 
 * WCF サービスの実装。 現在のところ、.NET Core から WCF サービスを利用する [WCF クライアント ライブラリ](https://github.com/dotnet/wcf)がある場合でも、WCF サーバーの実装は .NET Framework でのみ可能です。 このシナリオは .NET Core の現在の計画に含まれていませんが、将来に向けて検討中です。
 

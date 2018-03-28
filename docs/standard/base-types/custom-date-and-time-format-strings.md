@@ -1,12 +1,8 @@
 ---
-title: "カスタム日時書式指定文字列"
-ms.custom: 
+title: カスタム日時書式指定文字列
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,18 +16,18 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-caps.latest.revision: 
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 503f9d593235cc81c6e2ecf43b93abb2105e0adf
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c54a5ec9cdbfd73bccd8f70befcfcff7cf8aac2d
+ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="custom-date-and-time-format-strings"></a>カスタム日時書式指定文字列
 日時書式指定文字列は、<xref:System.DateTime> 値または <xref:System.DateTimeOffset> 値の書式設定操作によって生成されるテキスト表現を定義します。 また、文字列を日時に正常に変換するために解析操作で必要となる日時値の表現も定義します。 カスタム書式指定文字列は、1 つ以上のカスタム日時書式指定子で構成されます。 [標準の日時書式指定文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)以外の文字列は、すべてカスタム日時書式指定文字列として解釈されます。  
@@ -614,7 +610,7 @@ ms.lasthandoff: 12/23/2017
  ":" カスタム書式指定子は、時、分、および秒を区別するための時刻の区切り記号を表します。 ローカライズされた適切な時刻の区切り記号は、現在のカルチャまたは特定のカルチャの <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> プロパティから取得されます。  
   
 > [!NOTE]
->  特定の日付と時刻の文字列について時刻の区切り記号を変更するには、リテラル文字列の区切り記号内に区切り記号を指定します。 たとえば、カスタム書式指定文字列 `hh'_'dd'_'ss` は、常に時刻の区切り記号として "_" (アンダースコア) が使用される結果文字列を生成します。 カルチャのすべての日付について時刻の区切り記号を変更するには、現在のカルチャの <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> プロパティ値を変更するか、<xref:System.Globalization.DateTimeFormatInfo> オブジェクトのインスタンスを作成し、その <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A> プロパティに文字を割り当てて、<xref:System.IFormatProvider> パラメーターを含む書式設定メソッドのオーバーロードを呼び出します。  
+>  特定の日付と時刻の文字列について時刻の区切り記号を変更するには、リテラル文字列の区切り記号内に区切り記号を指定します。 たとえば、カスタム書式指定文字列 `hh'_'dd'_'ss` は、常に時刻の区切り記号として "\_" (アンダースコア) が使用される結果文字列を生成します。 カルチャのすべての日付について時刻の区切り記号を変更するには、現在のカルチャの <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> プロパティ値を変更するか、<xref:System.Globalization.DateTimeFormatInfo> オブジェクトのインスタンスを作成し、その <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A> プロパティに文字を割り当てて、<xref:System.IFormatProvider> パラメーターを含む書式設定メソッドのオーバーロードを呼び出します。  
   
  ":" 書式指定子が単独で使用され、その他のカスタム書式指定子がない場合、":" は標準の日時書式指定子として解釈され、<xref:System.FormatException> をスローします。 単一の書式指定子を使用する方法の詳細については、このトピックで後述する「[単一のカスタム書式指定子の使用](#UsingSingleSpecifiers)」を参照してください。  
   

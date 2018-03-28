@@ -1,12 +1,13 @@
 ---
-title: "デスクトップ アプリケーションに対するサテライト アセンブリの作成"
-ms.custom: 
+title: デスクトップ アプリケーションに対するサテライト アセンブリの作成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -30,16 +31,17 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-caps.latest.revision: "11"
+caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d360dc5b95c1cdb8de54bcbd723d0056c81c9c2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2f75da3332c8172a6a888e6f40c66383866799ea
+ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>デスクトップ アプリケーションに対するサテライト アセンブリの作成
 リソース ファイルはローカライズされたアプリケーションの中心的な役割を果たします。 これを使用することで、アプリケーションでは、ユーザー固有の言語とカルチャで文字列、イメージ、およびその他のデータを表示し、ユーザー固有の言語またはカルチャ用のリソースが使用できない場合には代替データを提供できるようになります。 .NET Framework ではハブ アンド スポーク モデルを使用して、ローカライズされたリソースを見つけて取得します。 ハブはニュートラルまたは既定のカルチャと呼ばれる、単一カルチャ用のリソースとローカライズできない実行可能コードを含むメイン アセンブリです。 既定のカルチャはアプリケーションで使用されるフォールバック カルチャです。これは、ローカライズされたリソースが使用できない場合に使用されます。 アプリケーションの既定のカルチャにカルチャを指定するために <xref:System.Resources.NeutralResourcesLanguageAttribute> 属性を使用します。 各スポークは、単一のローカライズされたカルチャ用のリソースを含むがコードは含まないサテライト アセンブリに接続します。 サテライト アセンブリはメイン アセンブリには含まれないため、アプリケーションのメイン アセンブリを置換しなくても、特定のカルチャに対応するリソースを簡単に更新または置換できます。  
@@ -71,14 +73,14 @@ ms.lasthandoff: 12/22/2017
   
  次の Al.exe コマンドでは、ドイツ語のリソース ファイル strings.de.resources からアプリケーション `Example` 用のサテライト アセンブリを作成します。  
   
-```  
-al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dll  
+```console
+al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll  
 ```  
   
  また、次の Al.exe コマンドでは、ファイル strings.de.resources からアプリケーション `Example` 用のサテライト アセンブリを作成します。 **/template** オプションを指定すると、サテライト アセンブリは親アセンブリ (Example.dll) のカルチャ情報を除き、すべてのアセンブリ メタデータを継承します。  
   
-```  
-al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dll /template:Example.dll  
+```console
+al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll -template:Example.dll  
 ```  
   
  次の表では、これらのコマンドで使用する Al.exe オプションについてさらに詳しく説明します。  
@@ -113,7 +115,7 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
   
 4.  [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) を使用して、バイナリ .resources ファイルに各テキストまたは XML リソース ファイルをコンパイルします。 出力は、.resx ファイルまたは .txt ファイルと同じルート ファイル名を持つファイル セットです。ただし、拡張子は .resources になります。 Visual Studio で例を作成する場合は、コンパイル プロセスが自動的に処理されます。 Visual Studio を使用していない場合は、次のコマンドを実行して .resx ファイルを .resources ファイルにコンパイルします。  
   
-    ```  
+    ```console
     resgen Greeting.resx  
     resgen Greeting.en-us.resx  
     resgen Greeting.fr-FR.resx  
@@ -132,22 +134,22 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
   
      アプリケーションが Example という名前で、コマンド ラインからコンパイルする場合、C# コンパイラのコマンドは次のようになります。  
   
-    ```  
-    csc Example.cs /res:Greeting.resources  
+    ```console  
+    csc Example.cs -res:Greeting.resources  
     ```  
   
      対応する Visual Basic コンパイラのコマンドは次のようになります。  
   
-    ```  
-    vbc Example.vb /res:Greeting.resources  
+    ```console  
+    vbc Example.vb -res:Greeting.resources  
     ```  
   
 6.  アプリケーションでサポートされているそれぞれのローカライズされたカルチャのメイン アプリケーション ディレクトリに、サブディレクトリを作成します。 en-US、fr-FR および ru-RU サブディレクトリを作成する必要があります。 Visual Studio では、コンパイル プロセスの一環として、これらのサブディレクトリが自動的に作成されます。  
   
 7.  個々のカルチャ固有の .resources ファイルをサテライト アセンブリに埋め込み、適切なディレクトリに保存します。 各 .resources ファイルでこれを行う場合のコマンドは次のようになります。  
   
-    ```  
-    al /target:lib /embed:Greeting.culture.resources /culture:culture /out:culture\Example.resources.dll  
+    ```console
+    al -target:lib -embed:Greeting.culture.resources -culture:culture -out:culture\Example.resources.dll  
     ```  
   
      ここで、*culture* はリソースがサテライト アセンブリに含まれるカルチャの名前です。 Visual Studio ではこのプロセスが自動的に処理されます。  
@@ -167,13 +169,13 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
   
  次の Sn.exe コマンドでは、テスト用の公開/秘密キーのペアを作成します。 **–k** オプションは、Sn.exe で新しいキー ペアを作成し、TestKeyPair.snk という名前のファイルに格納するように指定します。  
   
-```  
+```console
 sn –k TestKeyPair.snk   
 ```  
   
  テスト用のキー ペアを含むファイルから公開キーを抽出できます。 次のコマンドでは、TestKeyPair.snk から公開キーを抽出し、PublicKey.snk に保存します。  
   
-```  
+```console
 sn –p TestKeyPair.snk PublicKey.snk  
 ```  
   
@@ -182,8 +184,8 @@ sn –p TestKeyPair.snk PublicKey.snk
   
  次の Al.exe コマンドでは、strings.ja.resources ファイルからアプリケーション StringLibrary 用の厳密な名前のサテライト アセンブリを作成します。  
   
-```  
-al /target:lib /embed:strings.ja.resources /culture:ja /out:StringLibrary.resources.dll /delay+ /keyfile:PublicKey.snk  
+```console 
+al -target:lib -embed:strings.ja.resources -culture:ja -out:StringLibrary.resources.dll -delay+ -keyfile:PublicKey.snk  
 ```  
   
  **/delay+** オプションは、アセンブリ リンカーがアセンブリに遅延署名することを指定します。 **/keyfile** オプションは、アセンブリへの遅延署名のために使用する公開キーを含むキー ファイルの名前を指定します。  
@@ -193,7 +195,7 @@ al /target:lib /embed:strings.ja.resources /culture:ja /out:StringLibrary.resour
   
  次の Sn.exe コマンドでは、ファイル RealKeyPair.snk に格納されているキーのペアで StringLibrary.resources.dll に署名します。 **–R** オプションは、以前に署名または遅延署名されたアセンブリに再署名する必要があることを指定します。  
   
-```  
+```console
 sn –R StringLibrary.resources.dll RealKeyPair.snk   
 ```  
   
@@ -202,8 +204,8 @@ sn –R StringLibrary.resources.dll RealKeyPair.snk
   
  次の Gacutil.exe コマンドでは、グローバル アセンブリ キャッシュに StringLibrary.resources.dll をインストールします。  
   
-```  
-gacutil /i:StringLibrary.resources.dll  
+```console
+gacutil -i:StringLibrary.resources.dll  
 ```  
   
  **/i** オプションは、Gacutil.exe でグローバル アセンブリ キャッシュに指定されたアセンブリをインストールする必要があることを指定します。 サテライト アセンブリがキャッシュにインストールされた後、中に含まれるリソースは、サテライト アセンブリを使用するようにデザインされたすべてのアプリケーションで使用できるようになります。  
@@ -213,7 +215,7 @@ gacutil /i:StringLibrary.resources.dll
   
 1.  Visual Studio を使用していない場合は、次の[厳密な名前ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) コマンドを使用して、ResKey.snk という名前の公開/秘密キーのペアを作成します。  
   
-    ```  
+    ```console
     sn –k ResKey.snk  
     ```  
   
@@ -221,7 +223,7 @@ gacutil /i:StringLibrary.resources.dll
   
 2.  次の[厳密な名前ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) コマンドを使用して、PublicKey.snk という名前の公開キー ファイルを作成します。  
   
-    ```  
+    ```console
     sn –p ResKey.snk PublicKey.snk  
     ```  
   
@@ -242,7 +244,7 @@ gacutil /i:StringLibrary.resources.dll
   
 6.  [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) を使用して、バイナリ .resources ファイルに各テキストまたは XML リソース ファイルをコンパイルします。 出力は、.resx ファイルまたは .txt ファイルと同じルート ファイル名を持つファイル セットです。ただし、拡張子は .resources になります。 Visual Studio で例を作成する場合は、コンパイル プロセスが自動的に処理されます。 Visual Studio を使用していない場合は、次のコマンドを実行して .resx ファイルを .resources ファイルにコンパイルします。  
   
-    ```  
+    ```console
     resgen filename  
     ```  
   
@@ -258,42 +260,42 @@ gacutil /i:StringLibrary.resources.dll
   
      C# コンパイラのコマンドは次のようになります。  
   
-    ```  
-    csc /t:library /resource:Strings.resources /delaysign+ /keyfile:publickey.snk StringLibrary.cs  
+    ```console
+    csc -t:library -resource:Strings.resources -delaysign+ -keyfile:publickey.snk StringLibrary.cs  
     ```  
   
      対応する Visual Basic コンパイラのコマンドは次のようになります。  
   
-    ```  
-    vbc /t:library /resource:Strings.resources /delaysign+ /keyfile:publickey.snk StringLibrary.vb  
+    ```console  
+    vbc -t:library -resource:Strings.resources -delaysign+ -keyfile:publickey.snk StringLibrary.vb  
     ```  
   
 8.  アプリケーションでサポートされているそれぞれのローカライズされたカルチャのメイン アプリケーション ディレクトリに、サブディレクトリを作成します。 en-US、fr-FR および ru-RU サブディレクトリを作成する必要があります。 Visual Studio では、コンパイル プロセスの一環として、これらのサブディレクトリが自動的に作成されます。 すべてのサテライト アセンブリが同じファイル名を持つため、公開/秘密キーのペアで署名されるまで個々のカルチャ固有のサテライト アセンブリを格納するためにはサブディレクトリが使用されます。  
   
 9. 個々のカルチャ固有の .resources ファイルを遅延署名されたサテライト アセンブリに埋め込み、適切なディレクトリに保存します。 各 .resources ファイルでこれを行う場合のコマンドは次のようになります。  
   
-    ```  
-    al /target:lib /embed:Strings.culture.resources /culture:culture /out:culture\StringLibrary.resources.dll /delay+ /keyfile:publickey.snk  
+    ```console
+    al -target:lib -embed:Strings.culture.resources -culture:culture -out:culture\StringLibrary.resources.dll -delay+ -keyfile:publickey.snk  
     ```  
   
      ここで、*culture* はカルチャの名前です。 この例では、カルチャ名は en-US、fr-FR、および ru-RU です。  
   
 10. 次のように、[厳密な名前ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) を使用して、StringLibrary.dll に再署名します。  
   
-    ```  
+    ```console
     sn –R StringLibrary.dll RealKeyPair.snk  
     ```  
   
 11. 個々のサテライト アセンブリに再署名します。 これを行うには、各サテライト アセンブリに対して、次のように[厳密な名前ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) を使用します。  
   
-    ```  
+    ```console
     sn –R StringLibrary.resources.dll RealKeyPair.snk  
     ```  
   
 12. 次のコマンドを使用して、グローバル アセンブリ キャッシュに StringLibrary.dll とそのサテライト アセンブリをそれぞれ登録します。  
   
-    ```  
-    gacutil /i filename  
+    ```console
+    gacutil -i filename  
     ```  
   
      ここで、*filename* は登録するファイルの名前です。  
@@ -305,14 +307,14 @@ gacutil /i:StringLibrary.resources.dll
   
      コマンド ラインからコンパイルするには、C# コンパイラの次のコマンドを使用します。  
   
-    ```  
-    csc Example.cs /r:StringLibrary.dll   
+    ```console
+    csc Example.cs -r:StringLibrary.dll   
     ```  
   
      Visual Basic コンパイラのコマンド ラインは次のとおりです。  
   
-    ```  
-    vbc Example.vb /r:StringLibrary.dll   
+    ```console
+    vbc Example.vb -r:StringLibrary.dll   
     ```  
   
 14. Example.exe を実行します。  

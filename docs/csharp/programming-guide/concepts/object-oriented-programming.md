@@ -1,18 +1,19 @@
 ---
-title: "オブジェクト指向プログラミング (C#)"
+title: オブジェクト指向プログラミング (C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4a7f30293bb2d50981353badfb7e373b60dcfeec
-ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
+ms.openlocfilehash: 6da28e97a33e962d4926a3b65d0fdf388c252d9a
+ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="object-oriented-programming-c"></a>オブジェクト指向プログラミング (C#)
 C# は、カプセル化、継承、ポリモーフィズムなど、オブジェクト指向プログラミングを完全にサポートします。  
@@ -95,7 +96,7 @@ struct SampleStruct
  フィールドを定義するコード例を次に示します。  
   
 ```csharp  
-Class SampleClass  
+class SampleClass  
 {  
     public string sampleField;  
 }  
@@ -233,8 +234,8 @@ Container.Nested nestedInstance = new Container.Nested()
 |[private](../../../csharp/language-reference/keywords/private.md)|この型またはメンバーには、同じクラスのコードのみがアクセスできます。|  
 |[protected](../../../csharp/language-reference/keywords/protected.md)|この型またはメンバーには、同じクラスまたは派生クラスのコードのみがアクセスできます。|  
 |[internal](../../../csharp/language-reference/keywords/internal.md)|この型またはメンバーには、同じアセンブリ内の任意のコードからアクセスできますが、別のアセンブリからはアクセスできません。|  
-|[内部の保護](../../../csharp/language-reference/keywords/protected-internal.md)|この型またはメンバーには、同じアセンブリ内の任意のコード、または別のアセンブリ内の任意の派生クラスからアクセスできます。|  
-|[保護されたプライベート](../../../csharp/language-reference/keywords/private-protected.md)|型またはメンバーは、同じクラスまたは基底クラスのアセンブリ内で派生クラスでのコードでアクセスできます。|  
+|[protected internal](../../../csharp/language-reference/keywords/protected-internal.md)|この型またはメンバーには、同じアセンブリ内の任意のコード、または別のアセンブリ内の任意の派生クラスからアクセスできます。|  
+|[private protected](../../../csharp/language-reference/keywords/private-protected.md)|この型またはメンバーには、基底クラス アセンブリ内の同じクラスまたは派生クラスのコードがアクセスできます。|  
   
  詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
@@ -383,7 +384,7 @@ class SampleClass : ISampleInterface
  ジェネリック クラスを定義するコード例を次に示します。  
   
 ```csharp  
-Public class SampleGeneric<T>   
+public class SampleGeneric<T>   
 {  
     public T Field;  
 }  
@@ -439,5 +440,5 @@ class SampleClass
   
 -   [delegate](../../../csharp/language-reference/keywords/delegate.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
