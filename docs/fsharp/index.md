@@ -1,6 +1,6 @@
 ---
-title: "F# のガイド"
-description: "このガイドでは、f#、.NET で実行される関数型プログラミング言語のさまざまな学習教材の概要を説明します。"
+title: F# のガイド
+description: このガイドでは、f#、.NET で実行される関数型プログラミング言語のさまざまな学習教材の概要を説明します。
 author: jackfoxy
 ms.author: phcart
 ms.date: 03/19/2018
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ea27fb37-dad1-4bd4-a3cc-4f5c70767ae9
-ms.openlocfilehash: 8be5ac5090e10ae9270e7eec529bd9b7c3c663fb
-ms.sourcegitcommit: 32172ca05d5dcce7ef3d327b9c8639c736e0fe2b
+ms.openlocfilehash: a101233f396368c0bc25937c49f77699cb9f8cf2
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="f-guide"></a>F# のガイド
 
@@ -54,11 +54,14 @@ F# は、その中心に生産性が向上します。 F# 用ツール サポー
 
 [F# では、.NET Core CLI を使用して使ってみる](get-started/get-started-command-line.md)コマンド ライン ツールを使用する場合。
 
+[F# および Xamarin の概要](https://docs.microsoft.com/xamarin/cross-platform/platform/fsharp/)f# とモバイルのプログラミングに関するします。
+
 ## <a name="references"></a>参照
 
 [F# 言語リファレンス](language-reference/index.md)の f# 言語のすべての機能の公式、包括的な参照です。 各記事は、構文について説明し、コード サンプルを示します。 目次のフィルター バーを使用するには特定の記事を検索します。
 
 [F# コア ライブラリ リファレンス](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference)f# コア ライブラリの API リファレンスがします。
+
 
 ## <a name="additional-guides"></a>その他のガイド
 

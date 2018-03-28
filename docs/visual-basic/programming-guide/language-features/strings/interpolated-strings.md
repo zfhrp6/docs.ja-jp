@@ -1,16 +1,17 @@
 ---
-title: "補間文字列 (Visual Basic)"
+title: 補間文字列 (Visual Basic)
 ms.date: 10/31/2017
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f865d5a7167847bf869d70a39570413dac271a2c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9501c052f387a522226e957193a8866083aa4233
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="interpolated-strings-visual-basic-reference"></a>補間文字列 (Visual Basic リファレンス)
 
@@ -40,7 +41,7 @@ $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text>
 - *format-string* は、書式設定されるオブジェクトの種類に適した書式指定文字列です。 たとえば、<xref:System.DateTime>値である可能性があります、[標準の日時書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)"D"または"d"などです。
 
 > [!IMPORTANT]
-> 間の空白を持つことはできません、`$`と`"`文字列を開始します。 これにより、コンパイラ エラーが発生します。
+> `$` と文字列を開始する `"` の間に空白を入れることはできません。 これにより、コンパイラ エラーが発生します。
 
  文字列リテラルを使用できる場所であればどこでも補間文字列を使用できます。  この挿入文字列は、挿入文字列を含むコードが実行されるたびに評価されます。 これにより、挿入文字列の定義と評価を分離することができます。  
   
@@ -54,7 +55,7 @@ $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text>
 
 挿入文字列から暗黙の型変換を行う方法は 3 種類あります。  
 
-1. 挿入文字列から <xref:System.String> への変換。 次の例では、挿入文字列式を文字列表現で置き換えた文字列が返されます。 例:
+1. 挿入文字列から <xref:System.String> への変換。 次の例では、挿入文字列式を文字列表現で置き換えた文字列が返されます。 例えば:
 
    [!code-vb[interpolated-strings1](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings1.vb)]  
 
@@ -62,11 +63,11 @@ $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text>
 
 2. 挿入文字列から <xref:System.IFormattable> 変数への変換。これは、単一の <xref:System.IFormattable> インスタンスから、カルチャ固有のコンテンツを持った複数の結果文字列の作成を可能にするものです。 これは、個々のカルチャに適切な数値書式や日付形式などの情報を含めるのに便利です。  二重中かっこ ("{{" および "}}") のすべての出現箇所は、明示的または暗黙的に <xref:System.Object.ToString> メソッドを呼び出して文字列を書式指定するまで、二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
 
-   次の例では、リフレクションを使用することで、挿入文字列から作成された <xref:System.IFormattable> 変数のフィールドおよびプロパティ値だけでなく、メンバーも表示しています。 渡しても、<xref:System.IFormattable>変数を<xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType>メソッドです。
+   次の例では、リフレクションを使用することで、挿入文字列から作成された <xref:System.IFormattable> 変数のフィールドおよびプロパティ値だけでなく、メンバーも表示しています。 また、<xref:System.IFormattable> 変数を <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> メソッドに渡しています。
 
    [!code-vb[interpolated-strings2](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings2.vb)]  
 
-   挿入文字列の検査には、リフレクションを使用する必要があることに注意してください。 かどうか、メソッドなどの書式設定文字列に渡されます<xref:System.Console.WriteLine(System.String)>の書式指定項目は解決され、結果の文字列が返されます。 
+   挿入文字列の検査には、リフレクションを使用する必要があることに注意してください。 挿入文字列が <xref:System.Console.WriteLine(System.String)> などの文字列書式指定メソッドに渡されると、書式指定項目が解決され、結果文字列が返されます。 
 
 3. 補間文字列からへの変換、<xref:System.FormattableString>複合書式指定文字列を表す変数です。 たとえば、複合書式指定文字列を検査し、それが結果文字列としてどのように表示されるかを検査すると、クエリを構築する場合にインジェクション攻撃を防ぐことができます。 A<xref:System.FormattableString>も含まれています。
 
@@ -81,7 +82,7 @@ $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text>
    [!code-vb[interpolated-strings3](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings3.vb)]  
 
 ## <a name="see-also"></a>関連項目  
-f<xref:System.IFormattable?displayProperty=nameWithType>   
+ <xref:System.IFormattable?displayProperty=nameWithType>  
  <xref:System.FormattableString?displayProperty=nameWithType>  
  [Visual Basic の言語リファレンス](index.md)  
  
