@@ -23,7 +23,6 @@
 #### [interface](interface.md)
 #### [object](object.md)
 #### [string](string.md)
-#### [補間文字列](interpolated-strings.md)
 ### [void](void.md)
 ### [var](var.md)
 ### [型のリファレンス表](reference-tables-for-types.md)
