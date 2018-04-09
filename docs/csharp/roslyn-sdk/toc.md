@@ -3,7 +3,7 @@
 ## [構文の使用](work-with-syntax.md)
 ## [セマンティクスの使用](work-with-semantics.md)
 ## [ワークスペースの使用](work-with-workspace.md)
-
+## [構文ビジュアライザーでコードを調べる](syntax-visualizer.md)
 ## クイック スタート
 ### [構文の解析](get-started/syntax-analysis.md)
 ### [セマンティック解析](get-started/semantic-analysis.md)

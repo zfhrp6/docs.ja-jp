@@ -1,7 +1,7 @@
 ---
 title: .NET Compiler Platform SDK (Roslyn API)
-description: ".NET Compiler Platform SDK (Roslyn API とも呼ばれます) を使用して、.NET コードを理解し、エラーを見つけて、そのエラーを修正する方法について説明します。"
-keywords: "Roslyn、アナライザー、コード修正"
+description: .NET Compiler Platform SDK (Roslyn API とも呼ばれます) を使用して、.NET コードを理解し、エラーを見つけて、そのエラーを修正する方法について説明します。
+keywords: Roslyn、アナライザー、コード修正
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/10/2017
@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 260efa9810e6587224bddb196b4a746d15f785e2
-ms.sourcegitcommit: 3fd4e718d1bac9769fe0c1dd08ca1b2323ae272b
+ms.openlocfilehash: c627903743f8867e05bac9ce835659fc7270b94e
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="the-net-compiler-platform-sdk"></a>.NET Compiler Platform SDK
 
@@ -67,10 +67,15 @@ NuGet 上の自分のライブラリを使用して、アナライザーとコ�
 
 .NET Compiler Platform SDK の概念の詳細については、次の 4 つのトピックを参照してください。
 
+ - [構文ビジュアライザーでコードを調べる](syntax-visualizer.md)
  - [コンパイラ API モデルを理解する](compiler-api-model.md)
  - [構文の使用](work-with-syntax.md)
  - [セマンティクスの使用](work-with-semantics.md)
  - [ワークスペースの使用](work-with-workspace.md)
+ 
+まず **.NET Compiler Platform SDK** をインストールする必要があります。
+
+[!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
 <!--
 

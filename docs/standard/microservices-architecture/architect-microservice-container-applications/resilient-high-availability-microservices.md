@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービスの回復性と高可用性"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスの回復性と高可用性"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービスの回復性と高可用性
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスの回復性と高可用性
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -59,7 +59,7 @@ ms.lasthandoff: 03/05/2018
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Twelve-Factor App.XI.Logs: イベントのストリームとしてのログの処理 **
+-   **Twelve-Factor App.XI.Logs: イベントのストリームとしてのログの処理**
     [*https://12factor.net/logs*](https://12factor.net/logs)
 
 -   **Microsoft 診断 EventFlow ライブラリ。** GitHub リポジトリ。

@@ -1,5 +1,5 @@
 ---
-title: "in (C# リファレンス)"
+title: in (C# リファレンス)
 ms.date: 02/06/2018
 ms.prod: .net
 ms.technology:
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - in keyword [C#]
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e8c45427a99756006799d1dca42841ef09b9ed8e
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: da29a4121767f723e4397a6cf485bf48d8674d7c
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="in-c-reference"></a>in (C# リファレンス)
 
-`in` コンテキスト キーワードが次の 4 つのコンテキストで使用されます。  
+`in` キーワードは、次の 4 つのコンテキストで使用されます。  
   
 -   ジェネリック インターフェイスとデリゲートの[ジェネリック型パラメーター](in-generic-modifier.md)
 -   [パラメーター修飾子](in-parameter-modifier.md)として。この場合、値ではなく参照で、メソッドに引数を渡すことができます。

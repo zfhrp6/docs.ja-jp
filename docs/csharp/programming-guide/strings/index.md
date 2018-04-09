@@ -1,5 +1,5 @@
 ---
-title: "文字列 (C# プログラミング ガイド)"
+title: 文字列 (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-caps.latest.revision: 
+caps.latest.revision: 41
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 24b3db01047a9f9a47182e0e1ac105f69562c316
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 9478900be008588597c1dd9e75f704c751ebe344
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="strings-c-programming-guide"></a>文字列 (C# プログラミング ガイド)
 文字列は、値がテキストの <xref:System.String> 型のオブジェクトです。 内部では、テキストは <xref:System.Char> オブジェクトの順次読み取り専用コレクションとして格納されます。 C# の文字列の末尾には null 終端文字はありません。したがって、C# の文字列には任意の数の null 文字 ('\0') を埋め込むことができます。 文字列の <xref:System.String.Length%2A> プロパティは、Unicode 文字の数ではなく、文字列に含まれている `Char` オブジェクトの数を表します。 文字列内の個別の Unicode コード ポイントにアクセスするには、<xref:System.Globalization.StringInfo> オブジェクトを使用します。  
@@ -124,8 +124,7 @@ string s = String.Empty;
 |トピック|説明|  
 |-----------|-----------------|  
 |[方法: 文字列の内容を変更する](../../how-to/modify-string-contents.md)|文字列の変換および文字列の内容を変更する手法を示します。|  
-|[方法: 複数の文字列を連結する](../../../csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md)|コンパイル時と実行時に 1 つの文字列に複数の文字列を結合する手法を示します。|  
-|[方法: 文字列を比較する](../../../csharp/programming-guide/strings/how-to-compare-strings.md)|文字列の序数比較を実行する方法を示します。|  
+|[方法: 文字列を比較する](../../how-to/compare-strings.md)|文字列の序数とカルチャ固有の比較を実行する方法を示します。|  
 |[方法: String.Split を使用して文字列を解析する](../../how-to/parse-strings-using-split.md)|`String.Split` メソッドを使用して文字列を解析するコード例を紹介します。|  
 |[方法: 文字列を検索する](../../how-to/search-strings.md)|特定のテキストまたは文字列のパターンの検索を使用する方法について説明します。|  
 |[方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|文字列を安全に解析して、有効な数値があるかどうかを確認する方法を示します。|  

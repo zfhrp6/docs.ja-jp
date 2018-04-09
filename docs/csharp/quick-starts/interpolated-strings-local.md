@@ -1,6 +1,6 @@
 ---
-title: "挿入文字列のチュートリアル - C# ローカル クイックスタート"
-description: "この挿入文字列に関するクイックスタートでは、C# コードを記述して、より大きな文字列に式の結果を含めます。"
+title: 挿入文字列のチュートリアル - C# ローカル クイックスタート
+description: この挿入文字列に関するクイックスタートでは、C# コードを記述して、より大きな文字列に式の結果を含めます。
 author: rpetrusha
 ms.author: ronpet
 ms.date: 01/11/2018
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: b6089b69eb350fce29f86f19f5abeb44acb4b6b4
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 1edd2b9f59d1933547c4152343f226a86ad90216
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="interpolated-strings"></a>挿入文字列
 
@@ -166,5 +166,4 @@ Console.WriteLine($"{DateTime.Now,-20:d} Hour {DateTime.Now,-10:HH} {1063.342,15
     
 続けて独自の開発環境で[配列とコレクション](arrays-and-collections.md)のクイックスタートに進むことができます。
 
-挿入文字列の機能の詳細については、C# リファレンスの[挿入文字列](../language-reference/keywords/interpolated-strings.md)に関するトピックで学習できます。
-
+挿入文字列の詳細については、C# リファレンスの「[文字列補間](../language-reference/tokens/interpolated.md)」トピックで学習できます。

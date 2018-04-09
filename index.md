@@ -1,7 +1,7 @@
 ---
 layout: HubPage
 ms.topic: hub-page
-hide_bc: ''
+hide_bc: true
 title: .NET ドキュメント
 description: .NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。
 ms.custom: updateeachrelease

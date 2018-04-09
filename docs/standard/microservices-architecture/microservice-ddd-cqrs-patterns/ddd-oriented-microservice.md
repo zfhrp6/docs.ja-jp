@@ -1,7 +1,7 @@
 ---
-title: "DDD 指向マイクロサービスの設計"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | DDD 指向マイクロサービスの設計"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: DDD 指向マイクロサービスの設計
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | DDD 指向マイクロサービスの設計'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/06/2017
@@ -101,7 +101,7 @@ Entity Framework Core などの最新の ORM フレームワークのほとん�
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **DevIQ。永続化非依存の原則 **
+-   **DevIQ。永続化非依存の原則**
     [*http://deviq.com/persistence-ignorance/*](http://deviq.com/persistence-ignorance/)
 
 -   **Oren Eini。インフラストラクチャ非依存**

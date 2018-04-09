@@ -1,6 +1,6 @@
 ---
-title: "LINQ の使用"
-description: "このチュートリアルでは、LINQ を使用してシーケンスを生成し、LINQ クエリで使用するためのメソッドを作成し、先行評価と遅延評価を区別する方法を説明します。"
+title: LINQ の使用
+description: このチュートリアルでは、LINQ を使用してシーケンスを生成し、LINQ クエリで使用するためのメソッドを作成し、先行評価と遅延評価を区別する方法を説明します。
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 3f0fcfebf37d9e6dad52c69111cc5e374ae27183
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: c5720d5391eec327aa2f885fd65579aeb6260488
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="working-with-linq"></a>LINQ の使用
 
@@ -313,7 +313,7 @@ public static void Main(string[] args)
 
 [!CODE-csharp[PlayingCard](../../../samples/csharp/getting-started/console-linq/playingcard.cs?name=snippet1)]
 
-この型は、コンストラクターに設定されている*自動実装された読み取り専用プロパティ*が使用しているため、変更することができません。 また、新しい*文字列補間*機能を活用していて、文字列出力の書式設定が簡単です。
+この型は、コンストラクターに設定されている*自動実装された読み取り専用プロパティ*が使用しているため、変更することができません。 また、[文字列補間](../language-reference/tokens/interpolated.md)機能を活用していて、文字列出力の書式設定が簡単です。
 
 最初のデッキを生成するクエリを更新して、新しい型を使用します。
 

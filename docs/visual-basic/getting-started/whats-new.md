@@ -12,14 +12,14 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-caps.latest.revision: ''
+caps.latest.revision: 145
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0452a5dde3a266f5d50f69016eac8144bab9ba6
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 4641041657e99fa64bf1b7eb5317a43660ac7e2b
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
 
@@ -81,7 +81,7 @@ Visual Basic 2017 では、桁区切り記号としてアンダースコア文�
 ```vb
 Dim number As Integer = &H_C305_F860
 ``` 
-先行する区切り記号としてアンダー スコア文字を使用するには、Visual Basic プロジェクトに次の要素を追加する必要があります (\*.vbproj) ファイル。
+アンダースコア文字を先頭の区切り記号として使用するには、以下の要素を Visual Basic プロジェクト (\*.vbproj) ファイルに追加する必要があります。
 
 ```xml
 <PropertyGroup>
@@ -91,7 +91,7 @@ Dim number As Integer = &H_C305_F860
 
 ## <a name="visual-basic-153"></a>Visual Basic 15.3
 
-[**名前付きの組の推論**](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
+[**名前付きタプルの推論**](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
 
 変数からタプル要素の値を割り当てる場合、Visual Basic は対応する変数名からタプル要素の名前を推論します。ユーザーがタプル要素に明示的に名前を付ける必要はありません。 以下の例では、推論を使用して、`state`、`stateName`、`capital` という 3 つの名前付き要素のタプルを作成します。
 
@@ -99,11 +99,11 @@ Dim number As Integer = &H_C305_F860
 
 **追加のコンパイラ スイッチ**  
 
-では、コマンド ライン コンパイラ、Visual Basic、 [ **- refout** ](../reference/command-line-compiler/refout-compiler-option.md)と[ **- refonly** ](../reference/command-line-compiler/refonly-compiler-option.md)の出力を制御するコンパイラ オプション参照アセンブリ。 **-refout**参照アセンブリの出力ディレクトリを定義および**- refonly**参照アセンブリだけがコンパイルで出力することを指定します。
+Visual Basic コマンド ライン コンパイラで、参照アセンブリの出力を制御する [**-refout**](../reference/command-line-compiler/refout-compiler-option.md) と [**-refonly**](../reference/command-line-compiler/refonly-compiler-option.md) のコンパイラ オプションがサポートされるようになりました。 **-refout** は、参照アセンブリの出力ディレクトリを定義し、**-refonly** はコンパイルで参照アセンブリだけが出力されるように指定します。
 
 ## <a name="visual-basic-2017"></a>Visual Basic 2017
 
-[**組**](../programming-guide/language-features/data-types/tuples.md)
+[**タプル**](../programming-guide/language-features/data-types/tuples.md)
 
 タプルは軽量のデータ構造であり、最も一般的には、1 回のメソッド呼び出しで複数の値を返すために利用されます。 通常、1 つのメソッドから複数の値を返すには、次のいずれかを行う必要があります。
 
@@ -154,7 +154,7 @@ C# 7 以降の C# は参照戻り値に対応しています。 つまり、メ�
 [nameof](../../csharp/language-reference/keywords/nameof.md)  
  文字列をハードコーディングせずにエラー メッセージで使用するための型またはメンバーの非修飾文字列名を取得できます。  これにより、リファクタリングするときにコードは正しい状態を保てます。  この機能は、またモデル-ビュー-コントローラーの MVC のリンクをフックし、プロパティ変更イベントを発生させるためにも役立ちます。  
   
-[文字列補間](../../csharp/language-reference/keywords/interpolated-strings.md)  
+[文字列補間](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)  
  文字列補間式を使用して、文字列を構築することができます。  補間文字列式は、式が含まれているテンプレート文字列のように見えます。  引数に関しては、補間文字列は[複合書式指定](../../standard/base-types/composite-format.md)より理解しやすくなっています。  
   
 [Null 条件メンバー アクセスとインデックス作成](../../csharp/language-reference/operators/null-conditional-operators.md)  

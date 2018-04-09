@@ -1,6 +1,6 @@
 ---
-title: "構文解析の概要 (Roslyn API)"
-description: "構文ツリーの走査、クエリおよびウォークに関する概要。"
+title: 構文解析の概要 (Roslyn API)
+description: 構文ツリーの走査、クエリおよびウォークに関する概要。
 author: billwagner
 ms.author: wiwagn
 ms.date: 02/05/2018
@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 52f66782086af651517d54105fea6f5533ea05a2
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 90d6542122dd8c579c63f5f003441ce63a7ca5e9
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="get-started-with-syntax-analysis"></a>構文解析の概要
 
@@ -43,6 +43,10 @@ Syntax API では、コンパイル ユニットを表すルートを含むツ�
 
 その簡単な説明では、Syntax API を使用してアクセスできる情報の種類の概要を示します。 Syntax API は、C# の使い慣れたコード コンストラクトを記述する正式な API にすぎません。 完全な機能には、改行、空白、インデントを含め、コードの書式設定方法に関する情報が含まれます。 この情報を使用して、人間のプログラマまたはコンパイラによって書き込まれ、読み取られるコードを完全に表すことができます。 この構造を使用することで、深い意味のあるレベルのソース コードと対話することができます。 テキスト文字列はもう存在しませんが、C# プログラムの構造を表すデータはあります。
 
+まず **.NET Compiler Platform SDK** をインストールする必要があります。
+
+[!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
+
 ## <a name="understanding-syntax-trees"></a>構文ツリーについて
 
 C# コードの構造の分析には Syntax API を使用します。 **Syntax API** では、パーサー、構文ツリー、および構文ツリーを分析して構築するためのユーティリティを公開します。 これを使用して、特定の構文要素のコードの検索またはプログラムのコードの読み取りを行います。
@@ -67,9 +71,6 @@ Syntax API を使用してコード ファイルで何でも見つけること�
 ## <a name="traversing-trees"></a>ツリーの走査
 
 2 つの方法で構文ツリー内のノードを調べることができます。 ツリーを走査して、各ノードを調べることができます。あるいは、特定の要素やノードに対してクエリを実行することができます。
-
-> [!IMPORTANT]
-> 次のサンプルでは、Visual Studio 2017 の一部としてインストールされる **.NET Compiler Platform SDK** が必要です。 **Visual Studio 拡張機能の開発**ワークロードの下にリストされている最後の省略可能なコンポーネントとして、.NET Compiler SDK があります。 テンプレートは、このコンポーネントなしではインストールされません。
 
 ### <a name="manual-traversal"></a>手動による走査
 

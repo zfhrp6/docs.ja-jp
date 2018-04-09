@@ -1,7 +1,7 @@
 ---
-title: "列挙型ではなく列挙型クラスを使用する"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 列挙型ではなく列挙型クラスを使用する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 列挙型ではなく列挙型クラスを使用する
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 列挙型ではなく列挙型クラスを使用する
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4b190ee9dde5628bf16fe9c483d3636539c29361
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 57ff60ea01421f1a2a0466b7de9716b72b02d2c1
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="using-enumeration-classes-instead-of-enum-types"></a>列挙型ではなく列挙型クラスを使用する
 
@@ -32,8 +32,8 @@ eShopOnContainers 内の注文マイクロサービスは、次の例のよう�
 ```csharp
 public abstract class Enumeration : IComparable
 {
-    public string Name { get; private set; }
-    public int Id { get; private set; }
+    public string Name { get; }
+    public int Id { get; }
 
     protected Enumeration()
     {

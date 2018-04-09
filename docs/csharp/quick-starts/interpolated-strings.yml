@@ -1,8 +1,8 @@
 ### YamlMime:Tutorial
-title: "C# の挿入文字列"
+title: C# の挿入文字列
 metadata:
-  title: "挿入文字列の対話形式チュートリアル - C# クイックスタート"
-  description: "このチュートリアルでは、ブラウザーを使用して、対話形式で C# の挿入文字列機能を使用します。 C# コードを記述し、ブラウザーで直接コードをコンパイルして、実行した結果を確認します。"
+  title: 挿入文字列の対話形式チュートリアル - C# クイックスタート
+  description: このチュートリアルでは、ブラウザーを使用して、対話形式で C# の挿入文字列機能を使用します。 C# コードを記述し、ブラウザーで直接コードをコンパイルして、実行した結果を確認します。
   audience: Developer
   ms.custom: mvc
   ms.topic: get-started-article
@@ -10,25 +10,51 @@ metadata:
   displayType: two-column
   interactive: csharp
   nextTutorialHref: list-collection
-  nextTutorialTitle: "C# のコレクション"
-  ms.openlocfilehash: 6f2bb18298ec41c8ccf634035059940342cbc82c
-  ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+  nextTutorialTitle: C# のコレクション
+  ms.openlocfilehash: 7e1de34c9075826a6fcb6bf71cb01bfbd5c215ca
+  ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/19/2018
+  ms.lasthandoff: 03/28/2018
 items:
 - durationInMinutes: 2
-  content: "このクイックスタートでは、C# で挿入文字列を使用して、対話形式で単一の出力文字列に値を挿入する方法を説明します。 ブラウザーを使用して C# コードを記述し、コードのコンパイルと実行の結果をすぐに確認することができます。 クイックスタートには、文字列を連結し、値を文字列に挿入し、それらの値の書式をさまざまな方法で設定する、一連のレッスンが含まれています。\n"
-- title: "挿入文字列を作成する"
+  content: >
+    このクイックスタートでは、C# で挿入文字列を使用して、対話形式で単一の出力文字列に値を挿入する方法を説明します。 ブラウザーを使用して C# コードを記述し、コードのコンパイルと実行の結果をすぐに確認することができます。 クイックスタートには、文字列を連結し、値を文字列に挿入し、それらの値の書式をさまざまな方法で設定する、一連のレッスンが含まれています。
+- title: 挿入文字列を作成する
   durationInMinutes: 2
   content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し (\"\\<name>\" を自分の名前に置き換える)、**[実行]** ボタンをクリックします。\n\n```csharp\nvar name = \"<name>\";\nConsole.WriteLine($\"Hello, {name}. It's a pleasure to meet you!\");\n```\n\nプログラムを実行すると、あいさつ文に自分の名前を含む単一の文字列が表示されます。 <xref:System.Console.WriteLine%2A> メソッド呼び出しに含まれる文字列は、*挿入文字列*です。 これは、埋め込みコードを含む文字列から (*結果文字列*という) 単一の文字列を構築できる一種のテンプレートです。 挿入文字列は、文字列に値を挿入したり、文字列を (結合) 連結したりする場合に特に便利です。 \n\nこの簡単な例には、すべての挿入文字列に含める必要がある次の 2 つの要素が含まれています。 \n\n- 始まりの引用符文字の前の `$` で始まる文字列リテラル。 `$` シンボルと引用符文字の間にスペースを挿入することはできません  (スペースが含まれている場合の動作を確認したい場合は、対話型ウィンドウで `$` 文字の後にスペースを挿入し、**[実行]** ボタンをクリックします。 C# コンパイラには \"予期しない '$' 文字です\" と示されます)。 \n\n- 1 つ以上の*挿入式*。 挿入式は、始めかっこと終わりかっこ (`{` と `}`) で示されます。 かっこ内に (`null` を含む) 値を返す C# 式を配置できます。 \n\nその他のいくつかのデータ型を持つ挿入文字列の例をさらにいくつか試してみましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "さまざまなデータ型を含める"
+- title: さまざまなデータ型を含める
   durationInMinutes: 3
   content: "前のクイックスタートでは、挿入文字列を使用して、1 つの文字列内に別の文字列を挿入しましたが、 挿入文字列式を任意のデータ型にすることもできます。 複数のデータ型の値を持つ挿入文字列を試してみましょう。 \n\n次の例には、`Vegetable` オブジェクト、`Unit` 列挙型のメンバー、<xref:System.DateTime> 値、<xref:System.Decimal> 値を持つ挿入式が含まれています。 これを対話型ウィンドウで実行します。\n\n```csharp\npublic class Vegetable\n{\n   public Vegetable(string name) => Name = name;\n\n   public string Name { get; }\n\n   public override string ToString() => Name;\n}\n\npublic class Example\n{\n   public enum Unit { item, pound, ounce, dozen };\n\n   public static void Main()\n   {\n      var item = new Vegetable(\"eggplant\");\n      var date = DateTime.Now;\n      var price = 1.99m;\n      var unit = Unit.item;\n      Console.WriteLine($\"On {date}, the price of {item} was {price} per {unit}.\");\n   }\n}\n```\n\n挿入式の 1 つには、コンソールに表示される結果文字列の `item` オブジェクトが含まれており、この場合、\"eggplant\" という文字列が結果文字列に挿入されることに注意してください。 これは、挿入式の型が文字列でない場合、C# コンパイラでは次の処理が行われるためです。\n\n- 挿入式が `null` の場合、挿入式は空の文字列 (\"\"、または <xref:System.String.Empty?displayProperty=nameWithType>) を返します。\n\n- 挿入式が `null` でない場合、挿入式の型の `ToString` メソッドが呼び出されます。 コメント シンボル (`//`) を前に配置して、例の `Vegetable.ToString` メソッドの定義をコメント アウトすることで、これをテストできます。 出力では、\"eggplant\" という文字列が完全修飾型名 (型名と共に C# REPL によって定義される名前空間) に置き換えられます。これは、<xref:System.Object.ToString?displayProperty=nameWithType> メソッドの既定の動作です。   \n\nこの例の出力では、日付の精度が高すぎ (エッグプラントの価格が 2 つ目の値により変化しない)、価格の値は通貨の単位を示していません。 次の手順では、挿入式によって返される文字列の形式を制御することで、こうした問題を修正する方法について説明します。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "挿入式の書式設定を制御する"
+- title: 挿入式の書式設定を制御する
   durationInMinutes: 5
-  content: "前のレッスンでは、適切に書式設定されていない 2 つの文字列が結果文字列に挿入されました。 1 つは、日付のみが適切な日時の値でした。 もう 1 つは、通貨単位を示さない価格でした。 両方の問題には簡単に対処することができます。 挿入式に、特定の型の書式設定を制御する*書式指定文字列*を含めることができます。 前の例の `Console.WriteLine` 呼び出しを変更し、次の行に示すように、日付と価格のフィールドの書式指定子を含めます。\n\n```csharp\nConsole.WriteLine($\"On {date:d}, the price of {item} was {price:C2} per {unit}.\");\n```\n\nコロンと書式指定文字列を持つ挿入式に従って、書式指定文字列を指定します。 \"d\" は、短い日付形式を表す[標準の日時書式設定文字列](../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier)です。 \"C2\" は、小数点以下が 2 桁の通貨値として数値を表す[標準の数値書式指定文字列](../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier)です。\n\n.NET Standard ライブラリの多くの型で、定義済みの書式指定文字列セットがサポートされています。 これらには、数値型と日時型がすべて含まれます。 書式指定文字列をサポートする型の完全なリストについては、「[.Net 型の書式設定](../../standard/base-types/formatting-types.md)」記事の「[.NET クラス ライブラリの型および書式指定文字列](../../standard/base-types/formatting-types.md#stringRef)」を参照してください。 どの型でも書式指定文字列セットをサポートすることができ、既存の型のカスタム書式指定を提供するカスタム書式指定拡張機能を開発することもできます。 <xref:System.ICustomFormatter> 実装を提供することによるカスタム書式指定については、「[.Net 型の書式設定](../../standard/base-types/formatting-types.md)」記事の「[ICustomFormatter を使用したカスタム書式設定](../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter)」を参照してください。\n\n**.NET エディター**で書式指定文字列を変更してみて、日時と数値の書式設定にどのように影響するかを確認します。 `{date:d}` の \"d\" を \"t\" (短い時刻形式を表示する)、\"y\" (年と月を表示する)、\"yyyy\" (4 桁の数字として年を表示する) に変更します。 `{price:C2}` \"C2\" を \"e\" (指数表記の場合) と \"F3\" (小数点以下が 3 桁の数値の場合) に変更します。\n\n書式設定を制御するだけでなく、挿入式によって返される文字列のフィールドの幅と配置を制御することもできます。 次の手順では、この方法を説明します。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "挿入式のフィールドの幅と配置を制御する"
+  content: >
+    前のレッスンでは、適切に書式設定されていない 2 つの文字列が結果文字列に挿入されました。 1 つは、日付のみが適切な日時の値でした。 もう 1 つは、通貨単位を示さない価格でした。 両方の問題には簡単に対処することができます。 挿入式に、特定の型の書式設定を制御する*書式指定文字列*を含めることができます。 前の例の `Console.WriteLine` 呼び出しを変更し、次の行に示すように、日付と価格のフィールドの書式指定子を含めます。
+
+
+    ```csharp
+
+    Console.WriteLine($"On {date:d}, the price of {item} was {price:C2} per {unit}.");
+
+    ```
+
+
+    コロンと書式指定文字列を持つ挿入式に従って、書式指定文字列を指定します。 "d" は、短い日付形式を表す[標準の日時書式設定文字列](../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier)です。 "C2" は、小数点以下が 2 桁の通貨値として数値を表す[標準の数値書式指定文字列](../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier)です。
+
+
+    .NET Standard ライブラリの多くの型で、定義済みの書式指定文字列セットがサポートされています。 これらには、数値型と日時型がすべて含まれます。 書式指定文字列をサポートする型の完全なリストについては、「[.Net 型の書式設定](../../standard/base-types/formatting-types.md)」記事の「[.NET クラス ライブラリの型および書式指定文字列](../../standard/base-types/formatting-types.md#stringRef)」を参照してください。 どの型でも書式指定文字列セットをサポートすることができ、既存の型のカスタム書式指定を提供するカスタム書式指定拡張機能を開発することもできます。 <xref:System.ICustomFormatter> 実装を提供することによるカスタム書式指定については、「[.Net 型の書式設定](../../standard/base-types/formatting-types.md)」記事の「[ICustomFormatter を使用したカスタム書式設定](../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter)」を参照してください。
+
+
+    **.NET エディター**で書式指定文字列を変更してみて、日時と数値の書式設定にどのように影響するかを確認します。 `{date:d}` の "d" を "t" (短い時刻形式を表示する)、"y" (年と月を表示する)、"yyyy" (4 桁の数字として年を表示する) に変更します。 `{price:C2}` "C2" を "e" (指数表記の場合) と "F3" (小数点以下が 3 桁の数値の場合) に変更します。
+
+
+    書式設定を制御するだけでなく、挿入式によって返される文字列のフィールドの幅と配置を制御することもできます。 次の手順では、この方法を説明します。
+
+
+    > [!NOTE]
+
+    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
+- title: 挿入式のフィールドの幅と配置を制御する
   durationInMinutes: 6
   content: "通常、挿入式によって返される文字列が結果文字列に含まれている場合、先頭スペースも末尾スペースもありません。 特にデータ セットを処理する場合、挿入式ではフィールドの幅とその配置を指定することができます。 そのためには、次のコードを実行します。\n\n```csharp\n  var inventory = new Dictionary<string, int>();\n  inventory.Add(\"hammer, ball pein\", 18);\n  inventory.Add(\"hammer, cross pein\", 5);\n  inventory.Add(\"screwdriver, Phillips #2\", 14);\n\n  Console.WriteLine($\"Inventory on {DateTime.Now:d}\");\n  Console.WriteLine(\" \");\n  Console.WriteLine($\"{\"Item\",-25}    {\"Quantity\",10}\");\n  Console.WriteLine(\" \"); \n  foreach (var item in inventory)\n     Console.WriteLine($\"{item.Key,-25}     {item.Value,10}\");\n```\n\n項目名は左揃えになり、その数量は右揃えになります。 式の後にコンマ (\",\") を追加し、フィールドの幅を指定して、配置を指定します。 次のようにフィールドの幅が正数の場合、フィールドは右揃えになります。\n\n```text\n{expression, width}\n```\n\n次のようにフィールドの幅が負数の場合、フィールドは左揃えになります。\n\n```text\n{expression, -width}\n```\n`{\"Item\",-25}` と `{item.Key,-25}` の挿入式から負号を削除してみて、例を再実行します。 この場合、項目名は右揃えになります。\n\nフィールドの幅と書式指定文字列を組み合わせて単一の挿入式にまとめることができます。 最初にフィールドの幅が配置され、その後にコロンと書式指定文字列が続きます。 フィールド幅が定義された 3 つの書式指定された文字列を表示する、次の簡単なプログラムを試します。\n\n```csharp\nConsole.WriteLine($\"{DateTime.Now,-20:d} Hour {DateTime.Now,-10:HH} {1063.342,15:N2} feet\");\n```\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- content: "挿入文字列のクイックスタートはこれで終了です。 \n\nこれまでのクイックスタートを、ご自身のローカル開発環境でも引き続き使用できます。 [ローカル開発](local-environment.md)の基本を学習してから、クイックスタートを選択してください。 これと同じ演習を試すことも、次のクイックスタートに直接移動することも、再度「[C# の数値](numbers-in-csharp-local.md)」クイック スタートから始めることもできます。\n\n挿入文字列の機能の詳細については、C# リファレンスの[挿入文字列](../language-reference/keywords/interpolated-strings.md)に関するトピックで学習できます。\0"
+- content: "挿入文字列のクイックスタートはこれで終了です。 \n\nこれまでのクイックスタートを、ご自身のローカル開発環境でも引き続き使用できます。 [ローカル開発](local-environment.md)の基本を学習してから、クイックスタートを選択してください。 これと同じ演習を試すことも、次のクイックスタートに直接移動することも、再度「[C# の数値](numbers-in-csharp-local.md)」クイック スタートから始めることもできます。\n\n挿入文字列の詳細については、C# リファレンスの「[文字列補間](../language-reference/tokens/interpolated.md)」トピックで学習できます。"

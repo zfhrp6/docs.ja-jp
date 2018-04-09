@@ -1,6 +1,6 @@
 ---
-title: "C# 6 - c# ガイドの新機能"
-description: "C# バージョン 6 の新機能について説明します"
+title: C# 6 の新機能 - C# ガイド
+description: C# バージョン 6 の新機能について説明します
 keywords: .NET, .NET Core
 author: BillWagner
 ms.date: 09/22/2016
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: f3e7a515b1dde52461ab6abf8a9adbe84d27b7c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ea54e9a05120134eea8e1bc9d82302a7513b43e7
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-in-c-6"></a>C# 6 の新機能
 
@@ -30,7 +30,7 @@ C# の 6.0 リリースには、開発者の生産性を向上させる多くの
 * [null 条件演算子](#null-conditional-operators):
     - null 条件演算子で null をチェックしながら、オブジェクトのメンバーに簡潔かつ安全にアクセスできます。
 * [文字列補間](#string-interpolation):
-    - 位置指定引数の代わりに、インライン式を使用して書式設定文字列式をを記述できます。
+    - 位置指定引数の代わりに、インライン式を使用して書式設定文字列式を記述できます。
 * [例外フィルター](#exception-filters):
     - 例外のプロパティやその他のプログラム状態に基づいて、式をキャッチできます。 
 * [nameof 式](#nameof-expressions):
@@ -56,7 +56,7 @@ C# の 6.0 リリースには、開発者の生産性を向上させる多くの
 
 ただし、このシンプルな構文では、自動プロパティを使ってサポートできる設計の種類に制限がありました。 C# 6 では、自動プロパティの機能が強化され、より多くのシナリオで自動プロパティを使用できるようなりました。 これにより、冗長な構文を宣言したり、バッキング フィールドを手動で操作する労力が軽減されます。
 
-新しい構文は、読み取り専用プロパティ、および自動プロパティの背後にある変数のストレージを初期化するためのシナリオに対処します。
+新しい構文は、読み取り専用のプロパティを扱うシナリオや、自動プロパティの背後での変数格納を初期化するシナリオに対応しています。
 
 ### <a name="read-only-auto-properties"></a>読み取り専用の自動プロパティ
 
@@ -105,17 +105,17 @@ C# 6 では、自動プロパティ宣言で自動プロパティによって使
 
 `Grades` メンバーは宣言された場所で初期化されます。 これにより、初期化を厳密に 1 回だけ実行しやすくなります。 初期化がプロパティ宣言の一部になることで、ストレージ割り当てが `Student` オブジェクトのパブリック インターフェイスと同じであることを示しやすくなっています。
 
-プロパティ初期化子は、ここで示すように、読み取り専用のプロパティと同様に読み取り/書き込みプロパティを使用できます。
+次のように、プロパティ初期化子は読み取り専用プロパティだけでなく、読み取り/書き込みプロパティにも使用できます。
 
 [!code-csharp[ReadWriteInitialization](../../../samples/snippets/csharp/new-in-6/newcode.cs#ReadWriteInitialization)]
 
 ## <a name="expression-bodied-function-members"></a>式形式の関数メンバー
 
-開発者が記述する多くのメンバーの本文は、式として表すことができる 1 つのステートメントだけで構成されます。 これに代えて式形式のメンバーを記述すれば、その構文を減らすことができます。 メソッドおよび読み取り専用のプロパティに対して動作します。 たとえば、`ToString()` のオーバーライドはその好例です。
+開発者が記述する多くのメンバーの本文は、式として表すことができる 1 つのステートメントだけで構成されます。 これに代えて式形式のメンバーを記述すれば、その構文を減らすことができます。 この方法は、メソッドと読み取り専用プロパティに有効です。 たとえば、`ToString()` のオーバーライドはその好例です。
 
 [!code-csharp[ToStringExpressionMember](../../../samples/snippets/csharp/new-in-6/newcode.cs#ToStringExpressionMember)]
 
-読み取り専用プロパティで式の本文メンバーを使用することもできます。
+式形式のメンバーは、読み取り専用のプロパティにも使用できます。
 
 [!code-csharp[FullNameExpressionMember](../../../samples/snippets/csharp/new-in-6/newcode.cs#FullNameExpressionMember)]
 
@@ -128,7 +128,7 @@ C# 6 では、自動プロパティ宣言で自動プロパティによって使
 
 [!code-csharp[UsingStaticMath](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStaticMath)]
 
-これで、<xref:System.Math> クラスを修飾しなくても、<xref:System.Math> クラス内の任意の静的メソッドを使用できます。 <xref:System.Math> クラスにはインスタンス メソッドが含まれていないので、この機能が特に役に立ちます。 また `using static` は、静的メソッドとインスタンス メソッドの両方を持つクラスの静的クラスをインポートするためにも使用できます。 最も役に立つの例では、いずれかが<xref:System.String>:
+これで、<xref:System.Math> クラスを修飾しなくても、<xref:System.Math> クラス内の任意の静的メソッドを使用できます。 <xref:System.Math> クラスにはインスタンス メソッドが含まれていないので、この機能が特に役に立ちます。 また `using static` は、静的メソッドとインスタンス メソッドの両方を持つクラスの静的クラスをインポートするためにも使用できます。 特に便利な例の 1 つが <xref:System.String> です。
 
 [!code-csharp[UsingStatic](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStatic)]
 
@@ -177,7 +177,7 @@ Null 値はコードを複雑にします。 開発者は変数のアクセス�
 メソッドを条件付きで呼び出すためにも使用できます。 Null 条件演算子を使用したメンバー関数の最も一般的な用途は、`null` である可能性があるデリゲート (またはイベント ハンドラー) を安全に呼び出すことです。  これを行うには、`?.` 演算子を使用してデリゲートの `Invoke` メソッドを呼び出し、メンバーにアクセスします。 この例は、  
 [デリゲート パターン](../delegates-patterns.md#handling-null-delegates)に関するトピックに記載されています。
 
-`?.` 演算子のルールでは、、演算子の左側が 1 回だけ評価されることが保証されています。 これは重要なことであり、これによって多くの表現方法が可能になります (イベント ハンドラーを使用した例を含む)。 まずは、イベント ハンドラーを使用した例から見ていきましょう。 以前のバージョンの C# では、コードを次のように記述することが推奨されていました。
+`?.` 演算子のルールでは、演算子の左側が 1 回だけ評価されることが保証されています。 これは重要なことであり、これによって多くの表現方法が可能になります (イベント ハンドラーを使用した例を含む)。 まずは、イベント ハンドラーを使用した例から見ていきましょう。 以前のバージョンの C# では、コードを次のように記述することが推奨されていました。
 
 ```csharp
 var handler = this.SomethingHappened;
@@ -209,17 +209,17 @@ this.SomethingHappened?.Invoke(this, eventArgs);
 
 ## <a name="string-interpolation"></a>文字列補間
 
-C# 6 で導入された新しい構文では、書式文字列と、その他の文字列値を生成するために評価できる式から、文字列を作成することができます。
+C# 6 で導入された新しい構文では、書式文字列と、その他の文字列値を生成するために評価される式から、文字列を作成することができます。
 
 これまでは、`string.Format` などのメソッドで位置指定パラメーターを使用する必要がありました。
 
 [!code-csharp[stringFormat](../../../samples/snippets/csharp/new-in-6/oldcode.cs#stringFormat)]
 
-C# 6 では、新しい文字列補間機能を使用して、書式文字列に式を埋め込むことができます。 方法は、文字列の前に `$` を付けるだけです。
+C# 6 では、新しい[文字列補間](../language-reference/tokens/interpolated.md)機能を使用して、書式文字列に式を埋め込むことができます。 方法は、文字列の前に `$` を付けるだけです。
 
 [!code-csharp[stringInterpolation](../../../samples/snippets/csharp/new-in-6/newcode.cs#FullNameExpressionMember)]
 
-この最初の例では、置換される式に変数の式を使用しています。 この構文を拡張することで、任意の式を使用することができます。 たとえば、補間の一部として生徒の評価点の平均を計算することもできます。
+この最初の例では、置換される式にプロパティ式を使用しています。 この構文を拡張することで、任意の式を使用することができます。 たとえば、補間の一部として生徒の評価点の平均を計算することもできます。
 
 [!code-csharp[stringInterpolationExpression](../../../samples/snippets/csharp/new-in-6/newcode.cs#stringInterpolationExpression)]
 
@@ -250,21 +250,16 @@ public string GetGradePointPercentages() =>
 ### <a name="string-interpolation-and-specific-cultures"></a>文字列補間と特定のカルチャ
 
 前のセクションで示した例はいずれも、コードが実行されるマシンの現在のカルチャと言語を使用して文字列を書式設定するものでした。 しかし場合によっては、生成された文字列を特定のカルチャで書式設定する必要が生じる場合もあるでしょう。
-文字列補間によって生成されるオブジェクトの型には、<xref:System.String> または <xref:System.FormattableString> への暗黙的な変換があります。
+これを行うには、文字列補間によって生成されたオブジェクトは暗黙的に <xref:System.FormattableString> に変換できることを利用します。
 
-<xref:System.FormattableString> 型には、書式文字列と、それらを文字列に変換する前の引数評価の結果が含まれます。 <xref:System.FormattableString> のパブリック メソッドを使用すれば、文字列の書式設定時にカルチャを指定することができます。 たとえば、次のコードでは言語とカルチャにドイツ語を使用して文字列が生成されます。 (小数点区切り文字に ',' 文字が使用され、桁区切り記号に '.' 文字が使用されます。)
+<xref:System.FormattableString> インスタンスには、書式文字列と、それらを文字列に変換する前の式評価の結果が含まれます。 <xref:System.FormattableString> のパブリック メソッドを使用すれば、文字列の書式設定時にカルチャを指定することができます。 たとえば、次の例は、ドイツのカルチャを使用して文字列を生成します。 (小数点区切り文字に ',' 文字が使用され、桁区切り記号に '.' 文字が使用されます。)
 
 ```csharp
 FormattableString str = $"Average grade is {s.Grades.Average()}";
-var gradeStr = string.Format(null, 
-    System.Globalization.CultureInfo.CreateSpecificCulture("de-de"),
-    str.GetFormat(), str.GetArguments());
+var gradeStr = str.ToString(new System.Globalization.CultureInfo("de-DE"));
 ```
 
-> [!NOTE]
-> 上記の例は、.NET Core バージョン 1.0.1 ではサポートされません。 .NET Framework でのみサポートされます。
-
-一般に、文字列補間式は文字列を出力として生成します。 ただし、文字列の書式設定に使用されるカルチャをより細かく制御する必要がある場合は、特定の出力を指定することもできます。  この機能を頻繁にする必要がある場合は、用途に合ったメソッドを (拡張メソッドとして) 作成して、特定のカルチャでの書式設定を簡単にすることができます。
+詳細については、[文字列補間](../language-reference/tokens/interpolated.md)に関するトピックを参照してください。
 
 ## <a name="exception-filters"></a>例外フィルター
 
