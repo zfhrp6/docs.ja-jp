@@ -1,7 +1,7 @@
 ---
-title: "重要な習得事項"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル (e-book)_v1.1"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 重要な習得事項
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル (e-book)_v1.1
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

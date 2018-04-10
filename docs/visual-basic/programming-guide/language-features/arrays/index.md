@@ -1,6 +1,6 @@
 ---
-title: "Visual Basic における配列"
-ms.custom: 
+title: Visual Basic における配列
+ms.custom: ''
 ms.date: 12/06/2017
 ms.prod: .net
 ms.technology:

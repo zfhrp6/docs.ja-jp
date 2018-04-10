@@ -1,7 +1,7 @@
 ---
-title: "回復性の高いアプリケーションの実装"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 回復性の高いアプリケーションの実装"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 回復性の高いアプリケーションの実装
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 回復性の高いアプリケーションの実装'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

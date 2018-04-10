@@ -1,6 +1,6 @@
 ---
-title: ".NET Core コマンドライン インターフェイス (CLI) ツール"
-description: ".NET Core コマンドライン インターフェイス (CLI) ツールとその機能の概要です。"
+title: .NET Core コマンドライン インターフェイス (CLI) ツール
+description: .NET Core コマンドライン インターフェイス (CLI) ツールとその機能の概要です。
 author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017

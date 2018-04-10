@@ -1,5 +1,5 @@
 ---
-title: "インターフェイス (C# プログラミング ガイド)"
+title: インターフェイス (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -9,7 +9,7 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-caps.latest.revision: 
+caps.latest.revision: 45
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: f14d4bf48d117558a4019a8f016e194af27a9ebf

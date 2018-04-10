@@ -1,6 +1,6 @@
 ---
-title: "WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)"
-description: ".NET Framework の概要を示します WMI パフォーマンス カウンターに関する情報のアンマネージ API です。"
+title: WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)
+description: .NET Framework の概要を示します WMI パフォーマンス カウンターに関する情報のアンマネージ API です。
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett

@@ -1,7 +1,7 @@
 ---
-title: "F# の概要"
-description: "F# のプログラミング言語を .NET で作業を開始する方法を確認します。"
-keywords: "visual f#, f#, 関数型プログラミング, .NET, .NET Core"
+title: F# の概要
+description: F# のプログラミング言語を .NET で作業を開始する方法を確認します。
+keywords: visual f#, f#, 関数型プログラミング, .NET, .NET Core
 author: cartermp
 ms.author: phcart
 ms.date: 09/06/2016

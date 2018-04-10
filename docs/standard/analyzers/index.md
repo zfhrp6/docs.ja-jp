@@ -1,6 +1,6 @@
 ---
-title: "Roslyn ベースのアナライザー - .NET"
-description: "問題を検出し、各問題について修正を提案する Roslyn ベースのアナライザーについて説明します。"
+title: Roslyn ベースのアナライザー - .NET
+description: 問題を検出し、各問題について修正を提案する Roslyn ベースのアナライザーについて説明します。
 keywords: .NET, .NET Core
 author: billwagner
 ms.author: billwagner

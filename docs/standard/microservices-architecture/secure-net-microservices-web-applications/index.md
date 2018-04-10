@@ -1,7 +1,7 @@
 ---
-title: "NET マイクロサービスおよび Web アプリケーションをセキュリティで保護する"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | .NET マイクロサービスおよび Web アプリケーションをセキュリティで保護する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: NET マイクロサービスおよび Web アプリケーションをセキュリティで保護する
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | .NET マイクロサービスおよび Web アプリケーションをセキュリティで保護する
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017

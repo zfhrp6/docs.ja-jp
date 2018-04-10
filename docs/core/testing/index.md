@@ -1,7 +1,7 @@
 ---
-title: ".NET Core での単体テスト"
-description: "単体テストがさらに容易になりました。 .NET Core と .NET Standard プロジェクトでの単体テストの使用方法をご覧ください。"
-keywords: ".NET, .NET Core, .NET Standard, 単体テスト"
+title: .NET Core での単体テスト
+description: 単体テストがさらに容易になりました。 .NET Core と .NET Standard プロジェクトでの単体テストの使用方法をご覧ください。
+keywords: .NET, .NET Core, .NET Standard, 単体テスト
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
@@ -9,7 +9,8 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-ms.workload: dotnetcore
+ms.workload:
+- dotnetcore
 ms.openlocfilehash: cb78a66a3a6a7158a86a76d62e5230c75b51a416
 ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT

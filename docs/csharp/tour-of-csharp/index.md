@@ -1,7 +1,7 @@
 ---
-title: "C# のツアー - C# ガイド"
-description: "C# を始めてお使いの方のために、 この言語の基本を説明します。"
-keywords: ".NET, .NET Core, C#, C# 入門, C# ガイド"
+title: C# のツアー - C# ガイド
+description: C# を始めてお使いの方のために、 この言語の基本を説明します。
+keywords: .NET, .NET Core, C#, C# 入門, C# ガイド
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/10/2016

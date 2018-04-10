@@ -1,7 +1,7 @@
 ---
-title: "Docker 実稼働環境の実行、管理、および監視"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker 実稼働環境の実行、管理、および監視
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

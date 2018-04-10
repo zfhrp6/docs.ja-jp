@@ -1,7 +1,7 @@
 ---
-title: "Docker ベースのアプリケーションの開発プロセス"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker ベースのアプリケーションの開発プロセス"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker ベースのアプリケーションの開発プロセス
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker ベースのアプリケーションの開発プロセス'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017

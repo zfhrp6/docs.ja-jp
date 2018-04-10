@@ -1,7 +1,7 @@
 ---
-title: "型プロバイダー"
-description: "F# 型プロバイダーの種類、プロパティ、およびプログラム内で使用するメソッドを提供するコンポーネントの方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 型プロバイダー
+description: F# 型プロバイダーの種類、プロパティ、およびプログラム内で使用するメソッドを提供するコンポーネントの方法について説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

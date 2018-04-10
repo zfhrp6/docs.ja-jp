@@ -1,6 +1,6 @@
 ---
-title: "C# のチュートリアル"
-description: "以下の C# のチュートリアルでは、C# プログラムをビルドする方法と C# 言語機能について説明します。"
+title: C# のチュートリアル
+description: 以下の C# のチュートリアルでは、C# プログラムをビルドする方法と C# 言語機能について説明します。
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn

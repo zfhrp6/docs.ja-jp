@@ -1,7 +1,7 @@
 ---
-title: "Docker と Microsoft Azure を使用したコンテナー化アプリケーションの設計と開発"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker と Microsoft Azure を使用したコンテナー化アプリケーションの設計と開発
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017

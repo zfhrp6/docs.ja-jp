@@ -1,5 +1,5 @@
 ---
-title: "using static ディレクティブ (C# リファレンス)"
+title: using static ディレクティブ (C# リファレンス)
 ms.date: 03/10/2017
 ms.prod: .net
 ms.technology:

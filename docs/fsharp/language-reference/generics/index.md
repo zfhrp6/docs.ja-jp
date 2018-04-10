@@ -1,7 +1,7 @@
 ---
-title: "ジェネリック (F#)"
-description: "F# の汎用的な機能とコードを繰り返すことがなく、さまざまな種類で動作するコードを記述する型を使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: ジェネリック (F#)
+description: F# の汎用的な機能とコードを繰り返すことがなく、さまざまな種類で動作するコードを記述する型を使用する方法を説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

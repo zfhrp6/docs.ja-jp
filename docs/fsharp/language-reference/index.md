@@ -1,7 +1,7 @@
 ---
-title: "F# 言語リファレンス"
-description: "言語トークン、概念、種類、式、およびコンストラクトのコンパイラでサポートされているトピックへの参照をこの f# 言語機能情報を検索します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: F# 言語リファレンス
+description: 言語トークン、概念、種類、式、およびコンストラクトのコンパイラでサポートされているトピックへの参照をこの f# 言語機能情報を検索します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

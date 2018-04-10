@@ -1,6 +1,6 @@
 ---
-title: "ASP.NET Core および Azure での最新の Web アプリケーションの設計"
-description: "ASP.NET Core および Azure での最新の Web アプリケーションの設計 | 概要"
+title: ASP.NET Core および Azure での最新の Web アプリケーションの設計
+description: ASP.NET Core および Azure での最新の Web アプリケーションの設計 | 概要
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017

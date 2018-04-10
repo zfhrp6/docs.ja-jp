@@ -1,7 +1,7 @@
 ---
-title: "コンテナーと Docker の概要"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: コンテナーと Docker の概要
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

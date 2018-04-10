@@ -1,7 +1,7 @@
 ---
-title: "値 (F#)"
-description: "F# の値の特定の種類の数量の方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 値 (F#)
+description: F# の値の特定の種類の数量の方法について説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

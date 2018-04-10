@@ -1,7 +1,7 @@
 ---
-title: "コンテナーと Docker の概要"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | コンテナーと Docker の概要"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: コンテナーと Docker の概要
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | コンテナーと Docker の概要'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

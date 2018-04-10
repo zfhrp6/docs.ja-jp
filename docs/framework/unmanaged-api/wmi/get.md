@@ -1,6 +1,6 @@
 ---
-title: "Get 関数 (アンマネージ API リファレンス)"
-description: "Get 関数は、指定されたプロパティ値を取得します。"
+title: Get 関数 (アンマネージ API リファレンス)
+description: Get 関数は、指定されたプロパティ値を取得します。
 ms.date: 11/06/2017
 ms.prod: .net-framework
 ms.technology:
