@@ -133,7 +133,7 @@ ms.lasthandoff: 01/19/2018
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
            <assemblyIdentity  
                         name="myOrganization.myDivision.myManagedComp"  
-                        version="1.2.3.4" />  
+                        version="1.2.3.4"  
                         publicKeyToken="8275b28176rcbbef"  
            />  
            <clrClass  
