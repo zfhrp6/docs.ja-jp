@@ -1,5 +1,5 @@
 ---
-title: どのような&#39;Windows Communication Foundation 4.5 の新機能として s
+title: Windows Communication Foundation 4.5 の新機能
 ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -67,8 +67,8 @@ ms.lasthandoff: 03/23/2018
  HTTPS 上のエンドポイントの公開を簡単にするため、HTTPS のプロトコル マッピングが追加されました。 HTTPS のエンドポイントを有効にするには、Web サイトで HTTPS バインドと SSL 証明書が構成されていることを確認した後、サービスをホストする仮想ディレクトリに対して HTTPS を有効にするだけです。 サービスのメタデータが有効になっている場合は、それも HTTPS を介して公開されます。  
   
 ## <a name="generating-a-single-wsdl-document"></a>単一の WSDL ドキュメントの生成  
- サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。  WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一の WSDL ドキュメントの追加を要求する"? singleWSDL"サービスからメタデータを要求するときに、uri。  
-  
+ サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。  WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一 WSDL ドキュメントをリクエストするには、サービスからメタデータを要求するときに、その URI に "?singleWSDL" を追加します。
+  
 ## <a name="websocket-support"></a>WebSocket のサポート  
  Websocket は、TCP と同様のパフォーマンス特性を持つポート 80 と 443 で真の双方向通信を実現するテクノロジです。 WebSocket トランスポート経由の通信をサポートするために 2 つの新しいバインドが追加されました。 <xref:System.ServiceModel.NetHttpBinding> および <xref:System.ServiceModel.NetHttpsBinding>。 詳細については、次を参照してください。:[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。  
   
