@@ -1,7 +1,7 @@
 ---
-title: "Linux または Windows Nano Server ホスト上で 1 つのコンテナー ベースの NET Core Web アプリケーションを展開する"
-description: "コンテナー化 .NET アプリケーションの .NET マイクロサービス アーキテクチャ |Linux または Windows Nano Server ホスト上で 1 つのコンテナー ベースの .NET Core Web アプリケーションを展開する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Linux または Windows Nano Server ホスト上で 1 つのコンテナー ベースの NET Core Web アプリケーションを展開する
+description: コンテナー化 .NET アプリケーションの .NET マイクロサービス アーキテクチャ |Linux または Windows Nano Server ホスト上で 1 つのコンテナー ベースの .NET Core Web アプリケーションを展開する
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

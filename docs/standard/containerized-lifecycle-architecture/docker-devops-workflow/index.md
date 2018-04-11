@@ -1,7 +1,7 @@
 ---
-title: "Microsoft ツールを使用した Docker アプリケーション devops ワークフロー"
-description: "Microsoft プラットフォームでのコンテナー化された Docker アプリケーションのライフサイクルと Microsoft ツールでの Toolsdevops ワークフロー"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Microsoft ツールを使用した Docker アプリケーション devops ワークフロー
+description: Microsoft プラットフォームでのコンテナー化された Docker アプリケーションのライフサイクルと Microsoft ツールでの Toolsdevops ワークフロー
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017

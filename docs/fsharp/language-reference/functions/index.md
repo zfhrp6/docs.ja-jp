@@ -1,7 +1,7 @@
 ---
-title: "関数 (F#)"
-description: "F# および f# のサポートについて共通の関数型プログラミング構成要素内の関数について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 関数 (F#)
+description: F# および f# のサポートについて共通の関数型プログラミング構成要素内の関数について説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

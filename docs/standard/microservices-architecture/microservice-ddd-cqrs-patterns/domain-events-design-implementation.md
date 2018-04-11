@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5840c2f7692d81f193c7d659aea6eb42a431369e
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: af6a6b73c790577cebf301075f2ff7e90960ea62
+ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>ドメイン イベント: 設計と実装
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 03/26/2018
 2.  コマンド ハンドラーでコマンドを受信します。
     -   1 つの集計のトランザクションを実行します。
     -   (省略可能) 副作用のドメイン イベントを発生させます (例: OrderStartedDomainEvent)。
-1.  複数の集計またはアプリケーション アクションにおいて開放された数の副作用を実行する (現在のプロセス内の) ドメイン ベントを処理します。 例えば:
+1.  複数の集計またはアプリケーション アクションにおいて開放された数の副作用を実行する (現在のプロセス内の) ドメイン ベントを処理します。 例:
     -   購入者および支払方法を確認または作成します。
     -   関連する統合イベントを作成してイベント バスに送信し、複数のマイクロサービスに状態を伝達するか、購入者へのメール送信のような外部アクションをトリガーします。
     -   他の副作用を処理します。
@@ -76,7 +76,7 @@ ms.lasthandoff: 03/26/2018
 
 **図 9-15**:  ドメインごとに複数のアクションの処理
 
-マイクロサービスの動作にはリポジトリやアプリケーション API などのインフラストラクチャ オブジェクトを使うため、通常、イベント ハンドラーはアプリケーション レイヤーにあります。 どちらもアプリケーション レイヤーの一部であるという意味で、イベント ハンドラーはコマンド ハンドラーに似ています。 重要な相違点は、コマンドは 1 回だけ処理する必要があることです。 ドメイン イベント可能性がありますゼロを処理または*n*ためにがタイムアウトと場合、によって複数の受信器または各ハンドラーに対して別の目的でイベント ハンドラーを受信することができます。
+マイクロサービスの動作にはリポジトリやアプリケーション API などのインフラストラクチャ オブジェクトを使うため、通常、イベント ハンドラーはアプリケーション レイヤーにあります。 どちらもアプリケーション レイヤーの一部であるという意味で、イベント ハンドラーはコマンド ハンドラーに似ています。 重要な相違点は、コマンドは 1 回だけ処理する必要があることです。 ドメイン イベントは、それぞれが異なる用途を持つ複数のレシーバーまたはイベント ハンドラーで受信できるため、ドメイン イベントはゼロ回または *n* 回処理される可能性があります。
 
 ドメイン イベントあたりのハンドラーの数を開放できるため、現在のコードに影響を与えずにさらに多くのドメイン ルールを追加することができます。 たとえば、イベントの直後に発生する必要のある次のビジネス ルールは、いくつかのイベント ハンドラー (またはたった 1 つ) を追加するだけで簡単に実装できます。
 
@@ -89,13 +89,13 @@ C# のドメイン イベントは、ドメインで発生したことに関連�
 ```csharp
 public class OrderStartedDomainEvent : INotification
 {
-    public string UserId { get; private set; }
-    public int CardTypeId { get; private set; }
-    public string CardNumber { get; private set; }
-    public string CardSecurityNumber { get; private set; }
-    public string CardHolderName { get; private set; }
-    public DateTime CardExpiration { get; private set; }
-    public Order Order { get; private set; }
+    public string UserId { get; }
+    public int CardTypeId { get; }
+    public string CardNumber { get; }
+    public string CardSecurityNumber { get; }
+    public string CardHolderName { get; }
+    public DateTime CardExpiration { get; }
+    public Order Order { get; }
 
     public OrderStartedDomainEvent(Order order,
                                    int cardTypeId, string cardNumber,
@@ -337,37 +337,37 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Greg Young。ドメインのイベントとは何ですか。**
+-   **Greg Young。ドメイン イベントとは**
     [*http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
 
--   **Jan Stenberg。ドメインのイベントと最終的整合性**
+-   **Jan Stenberg。ドメイン イベントと最終的な整合性**
     [*https://www.infoq.com/news/2015/09/domain-events-consistency*](https://www.infoq.com/news/2015/09/domain-events-consistency)
 
--   **Jimmy Bogard。優れたドメインのイベント パターン**
+-   **Jimmy Bogard。よりよいドメイン イベント パターン**
     [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
--   **Vaughn Vernon。効果的な集計デザイン パート II: 行う作業を一緒に集計**
-    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_記事/カバー\_2011\_2. pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
+-   **Vaughn Vernon。効果的な集計設計パート II: 集計処理の連携**
+    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
 -   **Jimmy Bogard。ドメインの強化: ドメイン イベント**
     *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
--   **Tony Truong。ドメインのイベント パターンの例**
+-   **Tony Truong。ドメイン イベント パターンの例**
     [*http://www.tonytruong.net/domain-events-pattern-example/*](http://www.tonytruong.net/domain-events-pattern-example/)
 
--   **Udi Dahan。完全に作成する方法のカプセル化されたドメイン モデル**
+-   **Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
--   **Udi Dahan。ドメインのイベントの Take 2**
+-   **Udi Dahan。ドメイン イベント – テイク 2**
     [*http://udidahan.com/2008/08/25/domain-events-take-2/*](http://udidahan.com/2008/08/25/domain-events-take-2/%20)
 
--   **Udi Dahan。ドメインのイベントの救済**
+-   **Udi Dahan。ドメイン イベント – 救済**
     [*http://udidahan.com/2009/06/14/domain-events-salvation/*](http://udidahan.com/2009/06/14/domain-events-salvation/)
 
--   **Jan Kronquist。ドメインのイベントを公開表示しないで、それらが戻ります。**
+-   **Jan Kronquist。ドメイン イベントを発行しないで返す**
     [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
--   **Cesar de la Torre。DDD およびマイクロサービス アーキテクチャでのドメイン イベントとDDD および microservices アーキテクチャに統合イベント**
+-   **Cesar de la Torre。DDD およびマイクロサービス アーキテクチャでのドメイン イベントと統合イベント**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
 
 

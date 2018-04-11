@@ -1,6 +1,6 @@
 ---
-title: "base (C# リファレンス)"
-description: "C# で派生クラス内から基底クラスのメンバーにアクセスするために使用する base キーワードについて説明します。"
+title: base (C# リファレンス)
+description: C# で派生クラス内から基底クラスのメンバーにアクセスするために使用する base キーワードについて説明します。
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,7 +13,7 @@ f1_keywords:
 helpviewer_keywords:
 - base keyword [C#]
 ms.assetid: 8b645dbe-1a33-49b8-8716-1c401f9a5ea5
-caps.latest.revision: 
+caps.latest.revision: 14
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 1bbaa0cc05b35f822113bc3a8c3cde966b1484ef

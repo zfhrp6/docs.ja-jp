@@ -1,14 +1,15 @@
 ---
-title: "配列 (C# プログラミング ガイド)"
+title: 配列 (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - arrays [C#]
 - C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
-caps.latest.revision: "33"
+caps.latest.revision: 33
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 8d395bcb179650fe29ab0918e7f91f3c8b6197b5

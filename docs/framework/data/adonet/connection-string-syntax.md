@@ -1,24 +1,26 @@
 ---
-title: "接続文字列の構文"
-ms.custom: 
+title: 接続文字列の構文
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9c7edc59ecb71c4b201b77c993fc839f5700abe3
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 76d8765be1dc24f4b8c457644595796680c2f2c3
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="connection-string-syntax"></a>接続文字列の構文
 すべての .NET Framework データ プロバイダーは、`Connection` を継承する <xref:System.Data.Common.DbConnection> オブジェクトに加え、プロバイダー固有の <xref:System.Data.Common.DbConnection.ConnectionString%2A> プロパティを持ちます。 それぞれのプロバイダーに固有の接続文字列の構文は、対応する `ConnectionString` プロパティのトピックで説明されています。 次の表は、.NET Framework に含まれている 4 つのデータ プロバイダーを一覧にしたものです。  
@@ -42,7 +44,7 @@ ms.lasthandoff: 01/17/2018
 -   <xref:System.Data.OracleClient.OracleConnectionStringBuilder>  
   
  接続文字列ビルダーを使用すると、構文的に正しい接続文字列を実行時に構築できるため、コード内で接続文字列値を手動で連結する必要はありません。 詳細については、次を参照してください。[接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)です。  
-  
+
 ## <a name="windows-authentication"></a>Windows 認証  
  Windows 認証を使用することをお勧め (とも呼ば*統合セキュリティ*) サポートされているデータ ソースに接続します。 接続文字列の構文は、プロバイダーによって異なります。 .NET Framework データ プロバイダーで使用されている Windows 認証の構文を次の表に示します。  
   
@@ -57,9 +59,13 @@ ms.lasthandoff: 01/17/2018
 >  `Integrated Security=true` プロバイダーで `OleDb` に設定すると例外がスローされます。  
   
 ## <a name="sqlclient-connection-strings"></a>SqlClient 接続文字列  
- <xref:System.Data.SqlClient.SqlConnection> 接続文字列の構文については、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> プロパティで説明されています。 <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> プロパティを使用すると、SQL Server データベースの接続文字列を取得または設定することができます。 以前のバージョンの SQL Server に接続する必要がある場合は、.NET Framework Data Provider for OleDb (<xref:System.Data.OleDb>) を使用する必要があります。 接続文字列のほとんどのキーワードは、<xref:System.Data.SqlClient.SqlConnectionStringBuilder> のプロパティにマップされています。  
-  
- それぞれの構文の次の形式への接続に Windows 認証を使用、 **AdventureWorks**ローカル サーバー上のデータベースです。  
+<xref:System.Data.SqlClient.SqlConnection> 接続文字列の構文については、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> プロパティで説明されています。 <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> プロパティを使用すると、SQL Server データベースの接続文字列を取得または設定することができます。 以前のバージョンの SQL Server に接続する必要がある場合は、.NET Framework Data Provider for OleDb (<xref:System.Data.OleDb>) を使用する必要があります。 接続文字列のほとんどのキーワードは、<xref:System.Data.SqlClient.SqlConnectionStringBuilder> のプロパティにマップされています。  
+
+> [!IMPORTANT]
+>  既定の設定、`Persist Security Info`キーワードは`false`します。 このキーワードを `true` または `yes` に設定すると、ユーザー ID やパスワードなどのセキュリティ関連情報を、接続を開いた後にその接続から取得できます。 保持`Persist Security Info`'éý'`false`を信頼できないソースに機密を要する接続文字列情報へのアクセスがないことを確認します。  
+
+### <a name="windows-authentication-with-sqlclient"></a>SqlClient で Windows 認証 
+ 接続に Windows 認証を使用して次の形式の構文の各、 **AdventureWorks**ローカル サーバー上のデータベースです。  
   
 ```  
 "Persist Security Info=False;Integrated Security=true;  
@@ -70,26 +76,26 @@ ms.lasthandoff: 01/17/2018
     database=AdventureWorks;server=(local)"  
 ```  
   
-### <a name="sql-server-logins"></a>SQL Server ログイン  
+### <a name="sql-server-authentication-with-sqlclient"></a>SqlClient で SQL Server 認証   
  SQL Server への接続には Windows 認証の使用をお勧めします。 ただし、どうしても SQL Server 認証を使用する必要がある場合は、次の構文に従ってユーザー名とパスワードを指定してください。 この例では、アスタリスクを使用して有効なユーザー名とパスワードを表しています。  
   
 ```  
 "Persist Security Info=False;User ID=*****;Password=*****;Initial Catalog=AdventureWorks;Server=MySqlServer"  
 ```  
-  
-> [!IMPORTANT]
->  既定の設定、`Persist Security Info`キーワードは`false`します。 このキーワードを `true` または `yes` に設定すると、ユーザー ID やパスワードなどのセキュリティ関連情報を、接続を開いた後にその接続から取得できます。 保持`Persist Security Info`'éý'`false`を信頼できないソースに機密を要する接続文字列情報へのアクセスがないことを確認します。  
-  
- SQL Server の名前付きインスタンスに接続するには、使用、*サーバー名 \ インスタンス名*構文です。  
+
+Azure SQL Database または Azure SQL Data Warehouse に接続し、形式のログインを提供するときに`user@servername`、ことを確認して、`servername`ログインの値に指定された値が一致する`Server=`です。
+
+> [!NOTE]
+>  Windows 認証は SQL Server ログインよりも優先されます。 Integrated Security を true に指定し、ユーザー名とパスワードも指定した場合、ユーザー名とパスワードは無視され、Windows 認証が使用されます。  
+
+### <a name="connect-to-a-named-instance-of-sql-server"></a>SQL Server の名前付きインスタンスへの接続します。
+SQL Server の名前付きインスタンスに接続するには、使用、*サーバー名 \ インスタンス名*構文です。  
   
 ```  
 Data Source=MySqlServer\MSSQL1;"  
 ```  
-  
- 接続文字列の作成時に、<xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A> の `SqlConnectionStringBuilder` プロパティをインスタンス名に設定することもできます。 <xref:System.Data.SqlClient.SqlConnection.DataSource%2A> オブジェクトの <xref:System.Data.SqlClient.SqlConnection> プロパティは読み取り専用です。  
-  
-> [!NOTE]
->  Windows 認証は SQL Server ログインよりも優先されます。 Integrated Security を true に指定し、ユーザー名とパスワードも指定した場合、ユーザー名とパスワードは無視され、Windows 認証が使用されます。  
+ 
+接続文字列の作成時に、<xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A> の `SqlConnectionStringBuilder` プロパティをインスタンス名に設定することもできます。 <xref:System.Data.SqlClient.SqlConnection.DataSource%2A> オブジェクトの <xref:System.Data.SqlClient.SqlConnection> プロパティは読み取り専用です。  
   
 ### <a name="type-system-version-changes"></a>Type System Version の変更  
  `Type System Version` の <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> キーワードは、クライアント側での [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] 型の表現を指定します。 <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> キーワードの詳細については、`Type System Version` のトピックを参照してください。  
@@ -201,7 +207,7 @@ Data Source=Oracle9i;User ID=*****;Password=*****;
   
  ODBC 接続文字列の構文の詳細については、「<xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [接続文字列](../../../../docs/framework/data/adonet/connection-strings.md)  
  [データ ソースへの接続](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

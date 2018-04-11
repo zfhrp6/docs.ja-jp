@@ -1,12 +1,13 @@
 ---
-title: "&lt;legacyImpersonationPolicy&gt;要素"
-ms.custom: 
+title: '&lt;legacyImpersonationPolicy&gt;要素'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#legacyImpersonationPolicy
@@ -15,23 +16,24 @@ helpviewer_keywords:
 - <legacyImpersonationPolicy> element
 - legacyImpersonationPolicy element
 ms.assetid: 6e00af10-42f3-4235-8415-1bb2db78394e
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: caeede11d8128af00beb5b1b3426e8c4a5406520
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9a50ad06026b6ef2f819abefc22016aee29f8ab5
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="ltlegacyimpersonationpolicygt-element"></a>&lt;legacyImpersonationPolicy&gt;要素
 Windows ID が、現在のスレッドの実行コンテキストのフロー設定に関係なく、非同期ポイント間でフローしないことを指定します。  
   
  \<configuration>  
-\<ランタイム >  
-\<legacyImpersonationPolicy >  
+\<runtime>  
+\<legacyImpersonationPolicy>  
   
 ## <a name="syntax"></a>構文  
   
@@ -53,8 +55,8 @@ Windows ID が、現在のスレッドの実行コンテキストのフロー設
   
 |値|説明|  
 |-----------|-----------------|  
-|`false`|<xref:System.Security.Principal.WindowsIdentity>に応じて非同期ポイント間のフロー、<xref:System.Threading.ExecutionContext>フロー、現在のスレッドの設定。 既定値です。|  
-|`true`|<xref:System.Security.Principal.WindowsIdentity>非同期ポイント間をフローしないに関係なく、<xref:System.Threading.ExecutionContext>フロー、現在のスレッドに設定します。|  
+|`false`|<xref:System.Security.Principal.WindowsIdentity> に応じて非同期ポイント間のフロー、<xref:System.Threading.ExecutionContext>フロー、現在のスレッドの設定。 既定値です。|  
+|`true`|<xref:System.Security.Principal.WindowsIdentity> 非同期ポイント間をフローしないに関係なく、<xref:System.Threading.ExecutionContext>フロー、現在のスレッドに設定します。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -93,8 +95,8 @@ Windows ID が、現在のスレッドの実行コンテキストのフロー設
   
  既定では ASP.NET には、次の構成設定を使用して、aspnet.config ファイルで、権限借用フローが無効にします。  
   
-```  
-configuration>  
+``` xml
+<configuration>  
    <runtime>  
       <legacyImpersonationPolicy enabled="true"/>  
       <alwaysFlowImpersonationPolicy enabled="false"/>  
@@ -124,7 +126,7 @@ configuration>
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<alwaysFlowImpersonationPolicy > 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)

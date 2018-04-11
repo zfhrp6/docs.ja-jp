@@ -1,7 +1,7 @@
 ---
-title: "F# を使用して Azure Blob ストレージの概要します。"
-description: "Azure Blob ストレージとクラウドには、非構造化データを格納します。"
-keywords: "visual f#、f#、関数型プログラミングでは、.NET では、.NET Core では、Azure"
+title: F# を使用して Azure Blob ストレージの概要します。
+description: Azure Blob ストレージとクラウドには、非構造化データを格納します。
+keywords: visual f#、f#、関数型プログラミングでは、.NET では、.NET Core では、Azure
 author: sylvanc
 ms.author: phcart
 ms.date: 09/20/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: c5b74a4f-dcd1-4849-930c-904b6c8a04e1
-ms.openlocfilehash: 5be948e100c496bc6613f1fdfb826ece5de6df8e
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 14ccba36638c724536793a6a589cf1c0a6186eeb
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>F# を使用して Azure Blob ストレージの概要します。 #
 
@@ -247,7 +247,7 @@ Blob データの暗号化の詳細については、「[暗号化を blob ス�
 
 ### <a name="related-guides"></a>関連ガイド
 
-- [C# での Azure Blob ストレージの概要](https://azure.microsoft.com/documentation/samples/storage-blob-dotnet-getting-started/)
+- [C# での Azure Blob ストレージの概要](https://azure.microsoft.com/resources/samples/storage-blob-dotnet-getting-started/)
 - [Windows 上の AzCopy コマンド ライン ユーティリティでのデータを転送します。](/azure/storage/common/storage-use-azcopy)
 - [Linux 上の AzCopy コマンド ライン ユーティリティでのデータを転送します。](/azure/storage/common/storage-use-azcopy-linux)
 - [Azure ストレージ接続文字列を構成します。](/azure/storage/common/storage-configure-connection-string)

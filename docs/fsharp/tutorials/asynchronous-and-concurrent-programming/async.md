@@ -1,6 +1,6 @@
 ---
-title: "F# で非同期のプログラミング"
-description: "言語レベルのプログラミング モデルを使いやすく、自然言語を使用して非同期 f# のプログラミングを実現する方法について説明します。"
+title: F# で非同期のプログラミング
+description: 言語レベルのプログラミング モデルを使いやすく、自然言語を使用して非同期 f# のプログラミングを実現する方法について説明します。
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: phcart

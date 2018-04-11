@@ -1,6 +1,6 @@
 ---
-title: "C# の属性 - C# 言語のツアー"
-description: "C# で属性を使用した宣言型のプログラミングについて"
+title: C# の属性 - C# 言語のツアー
+description: C# で属性を使用した宣言型のプログラミングについて
 keywords: .NET, csharp
 author: BillWagner
 ms.author: wiwagn

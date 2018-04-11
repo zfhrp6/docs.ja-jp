@@ -1,7 +1,7 @@
 ---
-title: "Docker コンテナー用 .NET Core と .NET Framework の選択"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker コンテナー用 .NET Core と .NET Framework の選択"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker コンテナー用 .NET Core と .NET Framework の選択
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Docker コンテナー用 .NET Core と .NET Framework の選択'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

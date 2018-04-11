@@ -1,7 +1,7 @@
 ---
-title: "例外処理 (F#)"
-description: "F# の例外処理の基礎を学習し、例外処理の式と関数へのリンクを見つけてください。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 例外処理 (F#)
+description: F# の例外処理の基礎を学習し、例外処理の式と関数へのリンクを見つけてください。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

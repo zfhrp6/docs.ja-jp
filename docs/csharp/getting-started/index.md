@@ -1,7 +1,7 @@
 ---
-title: "概要 - C# ガイド"
-description: "短期間で C# の概念について学習でき、.NET Core アプリケーションを作成することができるようになるような、短くて簡単なチュートリアルを探します。"
-keywords: "C#, 概要, 取得,インストール"
+title: 概要 - C# ガイド
+description: 短期間で C# の概念について学習でき、.NET Core アプリケーションを作成することができるようになるような、短くて簡単なチュートリアルを探します。
+keywords: C#, 概要, 取得,インストール
 helpviewer_keywords:
 - Visual C#, getting started
 - getting started, Visual C#
@@ -12,11 +12,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: 002c0e35bc8dfb54fc081fcb70000c9c61eb5fcc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f335ee1412932043b175aa49b29ecd360d447eb9
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-c"></a>C# の使用を開始する #
 
@@ -43,10 +43,6 @@ ms.lasthandoff: 10/18/2017
    Visual Studio Code は、最新の Web アプリケーションやクラウド アプリケーションのビルドとデバッグ向けに最適化された無料コード エディターです。 IntelliSense をサポートしており、Linux、macOS、Windows で使用できます。
 
    このトピックでは、Visual Studio Code と .NET Core を使用して、単純な Hello World アプリケーションを作成して実行する方法を説明します。
-
-* [Visual C# プログラマのための追加リソース](additional-resources.md)
-
-   一般的な問題の解決に役立つ Web サイトおよびニュースグループへのリンクを示します。
 
 ## <a name="related-sections"></a>関連項目
 

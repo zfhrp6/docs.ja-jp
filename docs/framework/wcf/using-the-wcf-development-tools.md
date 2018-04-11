@@ -1,19 +1,21 @@
 ---
-title: "WCF 開発ツールの使用"
-ms.custom: 
+title: WCF 開発ツールの使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
+ms.workload:
+- dotnet
 ms.openlocfilehash: 7d253f38fab21496dd305cc67e7b6e84846579f3
 ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
@@ -21,10 +23,10 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-the-wcf-development-tools"></a>WCF 開発ツールの使用
-このセクションでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの開発を支援する [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] 開発ツールについて説明します。
-
-[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートは独自のサービスを迅速に構築するための基礎として使用することができます。これによって、サービスをデバッグし、テストするための [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを使用できるようになります。 これらのツールによって、高速でシームレスなデバッグとテストのサイクルが実現し、初期の段階においてホスト モデルのコミットが必要なくなります。
-
+このセクションの内容について説明します、 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]開発ツールの開発に役立つ、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス。  
+  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)][!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] テンプレートは独自のサービスを迅速に構築するための基礎として使用することができます。これによって、サービスをデバッグし、テストするための [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを使用できるようになります。 これらのツールによって、高速でシームレスなデバッグとテストのサイクルが実現し、初期の段階においてホスト モデルのコミットが必要なくなります。  
+  
 ## <a name="the-wcf-developer-tools"></a>WCF の開発者用ツール  
  [WCF Visual Studio テンプレート](../../../docs/framework/wcf/wcf-vs-templates.md)  
   

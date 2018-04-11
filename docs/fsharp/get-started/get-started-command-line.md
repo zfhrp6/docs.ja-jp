@@ -1,57 +1,55 @@
 ---
-title: "コマンド ライン ツールを使用して f# の概要します。"
-description: "クロス プラットフォームの .NET Core CLI を使用してすべての OS (Windows、MacOS、Linux) で f# を使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング, .NET, .NET Core"
+title: コマンド ライン ツールを使用して f# の概要します。
+description: F# CLI を使用して、.NET Core オペレーティング システム (Windows、macOs または Linux) での単純なマルチ プロジェクト ソリューションをビルドする方法を説明します。
 author: cartermp
 ms.author: phcart
-ms.date: 06/14/2017
+ms.date: 03/26/2018
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
-ms.assetid: 615db1ec-6ef3-4de2-bae6-4586affa9771
-ms.openlocfilehash: 4820a8a306bd478429b497a8b7c70ff170c1c655
-ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
+ms.openlocfilehash: e48e1291bbe91da0d9ca2adbb08662bd106c8fb4
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>.NET Core CLI を使用して f# の概要します。
 
-この記事では、どのように開始できます (Windows、macOS、または Linux) のすべての OS で .NET Core CLI で f# を使用してについて説明します。 これを通過コンソール アプリケーションによって呼び出されるクラス ライブラリとマルチ プロジェクト ソリューションを構築します。
+この記事では、どのように開始できます f# と .NET Core CLI を使用してオペレーティング システム (Windows、macOS、または Linux) でについて説明します。 コンソール アプリケーションによって呼び出されるクラス ライブラリを複数プロジェクトのソリューションをビルド経由になります。
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-最初に、インストールする必要があります、 [.NET Core SDK 1.0 以降](https://dot.net/core)です。 サイド バイ サイド インストールがサポートされていること、.NET Core SDK の以前のバージョンをアンインストールする必要はありません。
+最初に、インストールする必要があります、 [.NET Core SDK 1.0 以降](https://www.microsoft.com/net/download/)です。 サイド バイ サイド インストールがサポートされていること、.NET Core SDK の以前のバージョンをアンインストールする必要はありません。
 
 この記事では、方法を知っているコマンドラインを使用して、任意のテキスト エディターを前提としています。 既にコマンドを使用しない場合[Visual Studio Code](https://code.visualstudio.com) f# のテキスト エディターとして優れたオプションです。 IntelliSense より優れた構文の強調表示、および詳細などの優れた機能を取得するには、ダウンロードすることができます、 [Ionide 拡張子](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)です。
 
-## <a name="building-a-simple-multi-project-solution"></a>単純なマルチ プロジェクト ソリューションを構築します。
+## <a name="build-a-simple-multi-project-solution"></a>単純なマルチ プロジェクト ソリューションをビルドします。
 
-コマンド プロンプト/ターミナルを開いて使用して、`dotnet new`と呼ばれる新しいソリューション ファイルを作成するコマンドを`FSNetCore`:
+コマンド プロンプト/ターミナルを開いて使用して、 [dotnet 新しい](../../core/tools/dotnet-new.md)と呼ばれる新しいソリューション ファイルを作成するコマンドを`FSNetCore`:
 
 ```
 dotnet new sln -o FSNetCore
 ```
 
-次のディレクトリ構造は、コマンドの完了の結果として生成されます。
+前のコマンドを実行した後は、次のディレクトリ構造が生成されます。
 
 ```
 FSNetCore
     ├── FSNetCore.sln
 ```
 
-ディレクトリに移動*FSNetCore*およびソリューション フォルダーをプロジェクトの追加を開始します。
- 
-### <a name="writing-a-class-library"></a>クラス ライブラリを作成
+### <a name="write-a-class-library"></a>クラス ライブラリを作成します。
 
-使用して、`dotnet new`コマンドで、クラス ライブラリ プロジェクトを作成、 **src**ライブラリをという名前のフォルダーです。 
+ディレクトリに移動*FSNetCore*です。
 
-```bash
-dotnet new lib -lang F# -o src/Library 
+使用して、`dotnet new`コマンドで、クラス ライブラリ プロジェクトを作成、 **src**ライブラリをという名前のフォルダーです。
+
+```
+dotnet new lib -lang F# -o src/Library
 ```
 
-次のディレクトリ構造は、コマンドの完了の結果として生成されます。
+前のコマンドを実行した後は、次のディレクトリ構造が生成されます。
 
 ```
 └── FSNetCore
@@ -62,40 +60,40 @@ dotnet new lib -lang F# -o src/Library
             └── Library.fsproj
 ```
 
-内容を置き換える`Library.fs`次。
+内容を置き換える`Library.fs`を次のコード。
 
 ```fsharp
 module Library
 
 open Newtonsoft.Json
 
-let getJsonNetJson value = 
-    sprintf "I used to be %s but now I'm %s thanks to JSON.NET!" value  (JsonConvert.SerializeObject(value))
+let getJsonNetJson value =
+    sprintf "I used to be %s but now I'm %s thanks to JSON.NET!" value (JsonConvert.SerializeObject(value))
 ```
 
 Newtonsoft.Json NuGet パッケージをライブラリ プロジェクトに追加します。
 
-```bash
+```
 dotnet add src/Library/Library.fsproj package Newtonsoft.Json
 ```
 
-追加、`Library`プロジェクトを`FSNetCore`ソリューションを使用して、`dotnet sln add`コマンド。
+追加、`Library`プロジェクトを`FSNetCore`ソリューションを使用して、 [dotnet sln 追加](../../core/tools/dotnet-sln.md)コマンド。
 
-```bash
+```
 dotnet sln add src/Library/Library.fsproj
 ```
 
-NuGet の依存関係を復元`dotnet restore`([注を参照してください](#dotnet-restore-note)) を実行して`dotnet build`プロジェクトをビルドします。
+使用して NuGet の依存関係を復元、`dotnet restore`コマンド ([注を参照してください](#dotnet-restore-note)) を実行して`dotnet build`プロジェクトをビルドします。
 
-### <a name="writing-a-console-application-which-consumes-the-class-library"></a>クラス ライブラリを使用するコンソール アプリケーションの作成
+### <a name="write-a-console-application-that-consumes-the-class-library"></a>クラス ライブラリを使用するコンソール アプリケーションを書く
 
-使用して、`dotnet new`コマンドで、コンソール アプリケーションを作成、 **src**アプリをという名前のフォルダーです。 
+使用して、`dotnet new`コマンドで、コンソール アプリケーションを作成、 **src**アプリをという名前のフォルダーです。
 
-```bash
-dotnet new console -lang F# -o src/App 
+```
+dotnet new console -lang F# -o src/App
 ```
 
-次のディレクトリ構造は、コマンドの完了の結果として生成されます。
+前のコマンドを実行した後は、次のディレクトリ構造が生成されます。
 
 ```
 └── FSNetCore
@@ -109,14 +107,14 @@ dotnet new console -lang F# -o src/App
             └── Library.fsproj
 ```
 
-変更`Program.fs`に。
+内容を置き換える、`Program.fs`を次のコード ファイル。
 
 ```fsharp
 open System
 open Library
 
 [<EntryPoint>]
-let main argv = 
+let main argv =
     printfn "Nice command-line arguments! Here's what JSON.NET has to say about them:"
 
     argv
@@ -126,15 +124,15 @@ let main argv =
     0 // return an integer exit code
 ```
 
-参照を追加、`Library`を使用してプロジェクト`dotnet add reference`です。
+参照を追加、`Library`を使用してプロジェクト[dotnet 参照の追加](../../core/tools/dotnet-add-reference.md)です。
 
-```bash
+```
 dotnet add src/App/App.fsproj reference src/Library/Library.fsproj
 ```
 
 追加、`App`プロジェクトを`FSNetCore`ソリューションを使用して、`dotnet sln add`コマンド。
 
-```bash
+```
 dotnet sln add src/App/App.fsproj
 ```
 
@@ -142,10 +140,10 @@ NuGet の依存関係を復元`dotnet restore`([注を参照してください](
 
 ディレクトリを変更、`src/App`コンソール プロジェクト プロジェクトと実行を渡す`Hello World`引数として。
 
-```bash
+```
 cd src/App
 dotnet run Hello World
-``` 
+```
 
 次の結果が表示されます。
 
@@ -155,5 +153,6 @@ Nice command-line arguments! Here's what JSON.NET has to say about them:
 I used to be Hello but now I'm ""Hello"" thanks to JSON.NET!
 I used to be World but now I'm ""World"" thanks to JSON.NET!
 ```
+
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

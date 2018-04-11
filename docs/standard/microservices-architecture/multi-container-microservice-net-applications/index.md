@@ -1,7 +1,7 @@
 ---
-title: "複数のコンテナーとマイクロサービス ベースの NET アプリケーションのデザインと開発"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 複数のコンテナーとマイクロサービス ベースの NET アプリケーションのデザインと開発"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 複数のコンテナーとマイクロサービス ベースの NET アプリケーションのデザインと開発
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 複数のコンテナーとマイクロサービス ベースの NET アプリケーションのデザインと開発'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

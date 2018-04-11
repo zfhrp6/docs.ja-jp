@@ -1,7 +1,7 @@
 ---
-title: "C# 対話型チュートリアル - C# のクイックスタート"
-description: "お使いのブラウザーで C# を学習し、独自の開発環境で使用を開始します"
-keywords: "C#, 学ぶ, レッスン, 対話形式"
+title: C# 対話型チュートリアル - C# のクイックスタート
+description: お使いのブラウザーで C# を学習し、独自の開発環境で使用を開始します
+keywords: C#, 学ぶ, レッスン, 対話形式
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/30/2018

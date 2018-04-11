@@ -1,13 +1,13 @@
 ---
-title: "ICorDebug::CreateProcess メソッド"
-ms.custom: 
+title: ICorDebug::CreateProcess メソッド
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: reference
 api_name:
 - ICorDebug.CreateProcess
@@ -23,17 +23,17 @@ helpviewer_keywords:
 ms.assetid: b6128694-11ed-46e7-bd4e-49ea1914c46a
 topic_type:
 - apiref
-caps.latest.revision: 
+caps.latest.revision: 21
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 ms.openlocfilehash: 16e45f3bad92914ce8c7fb0044534789a7a28b2e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess メソッド
 プロセスと、デバッガーの制御下で、プライマリ スレッドが起動します。  
@@ -97,20 +97,20 @@ HRESULT CreateProcess (
 ## <a name="remarks"></a>コメント  
  このメソッドのパラメーターは、Win32 のと同じ`CreateProcess`メソッドです。  
   
- アンマネージ混合モード デバッグを有効にするには設定`dwCreationFlags`に DEBUG_PROCESS &#124;です。DEBUG_ONLY_THIS_PROCESS です。 マネージ デバッグのみを使用する場合は、これらのフラグを設定しないでください。  
+ アンマネージ混合モード デバッグを有効にするには設定`dwCreationFlags`DEBUG_PROCESS に&#124;DEBUG_ONLY_THIS_PROCESS です。 マネージ デバッグのみを使用する場合は、これらのフラグを設定しないでください。  
   
  デバッガーとプロセスが (アタッチされたプロセス) をデバッグするかどうか、単一のコンソールを共有し、相互運用機能デバッグを使用する場合は、可能であれば接続されているプロセスがコンソールのロックを保持し、デバッグ イベントで停止します。 デバッガーは、コンソールを使用するあらゆる試みをブロックし、されます。 この問題を回避するで防ぐを設定、`dwCreationFlags`パラメーター。  
   
  相互運用機能デバッグは IA 64 ベースおよび AMD64 ベースのプラットフォームなど Win9x と x86 以外のプラットフォームではサポートされていません。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICorDebug インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)

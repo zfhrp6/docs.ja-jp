@@ -1,17 +1,19 @@
 ---
-title: "&#39;です。&lt;属性&gt;&#39; ために、適用できません GUID &#39; の形式&lt;数&gt;&#39; が正しくありません"
+title: '&#39;です。&lt;属性&gt;&#39; ために、適用できません GUID &#39; の形式&lt;数&gt;&#39; が正しくありません'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc32500
 - bc32500
-helpviewer_keywords: BC32500
+helpviewer_keywords:
+- BC32500
 ms.assetid: 6fa34c55-368e-4d7d-b488-07a3fffe045f
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 8ead07d12064dbe18a1e23d4d1343b1efba1b533

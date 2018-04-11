@@ -1,7 +1,7 @@
 ---
-title: "メンバー (F#)"
-description: "F# のプログラミング言語でオブジェクトのメンバーについて説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: メンバー (F#)
+description: F# のプログラミング言語でオブジェクトのメンバーについて説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

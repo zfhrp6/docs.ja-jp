@@ -1,5 +1,5 @@
 ---
-title: "=&gt; 演算子 (C# リファレンス)"
+title: =&gt; 演算子 (C# リファレンス)
 ms.date: 10/02/2017
 ms.prod: .net
 ms.technology:

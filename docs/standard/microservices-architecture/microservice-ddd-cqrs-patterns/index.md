@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

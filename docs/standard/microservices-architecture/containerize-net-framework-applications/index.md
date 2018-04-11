@@ -1,7 +1,7 @@
 ---
-title: "レガシ モノリシック .NET Framework アプリケーションを Windows コンテナーに移行する"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | レガシ モノリシック .NET Framework アプリケーションを Windows コンテナーに移行する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: レガシ モノリシック .NET Framework アプリケーションを Windows コンテナーに移行する
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | レガシ モノリシック .NET Framework アプリケーションを Windows コンテナーに移行する'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017

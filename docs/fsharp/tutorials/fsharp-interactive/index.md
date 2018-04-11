@@ -1,7 +1,7 @@
 ---
-title: "F# Interactive (fsi.exe) のリファレンス"
-description: "使用方法を学習 f# Interactive (fsi.exe) は、コンソールで f# コードを対話的に実行する、または f# スクリプトを実行します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: F# Interactive (fsi.exe) のリファレンス
+description: 使用方法を学習 f# Interactive (fsi.exe) は、コンソールで f# コードを対話的に実行する、または f# スクリプトを実行します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

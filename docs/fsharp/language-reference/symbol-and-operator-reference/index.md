@@ -1,20 +1,20 @@
 ---
-title: "シンボルと演算子のリファレンス (F#)"
-description: "シンボルと f# のプログラミング言語で使用する演算子について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: シンボルと演算子のリファレンス (F#)
+description: シンボルと f# のプログラミング言語で使用する演算子について説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
-ms.date: 05/16/2016
+ms.date: 04/04/2018
 ms.topic: language-reference
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ab453800-d4d0-4a11-9d55-2b358d56af27
-ms.openlocfilehash: cb21ef7385cb679f9d445f8ee419db3d727fa057
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 2fa4504c7059b4559b364d4000fe4ec6131430e5
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="symbol-and-operator-reference"></a>シンボルと演算子のリファレンス
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 01/05/2018
 |`$`|詳細情報はありません。|<ul><li>コンパイラで生成された特定の変数名と関数名に、内部的に使用されます。<br /></li><ul/>|
 |`%`|[算術演算子](arithmetic-operators.md)<br /><br />[コード クォート](../code-quotations.md)|<ul><li>整数の剰余を計算します。<br /></li><li>型指定されたコード クォートに式をスプライスするために使用されます。<br /></li><ul/>|
 |`%%`|[コード クォート](../code-quotations.md)|<ul><li>型指定されていないコード クォートに式をスプライスするために使用されます。<br /></li><ul/>|
-|`%?`|[Null 許容の演算子](nullable-operators.md)|<ul><li>右辺が null 許容型である場合に、整数の剰余を計算します。<br /></li><ul/>|
+|`%?`|[Null 許容の演算子](nullable-operators.md)|<ul><li>右辺が null 許容型の場合は、整数の剰余を計算します。<br /></li><ul/>|
 |`&`|[match 式](../match-expressions.md)|<ul><li>他の言語と相互運用するときに使用するための、変更可能な値のアドレスを計算します。<br /></li><li>AND パターンで使用されます。<br /></li><ul/>|
 |`&&`|[ブール演算子](boolean-operators.md)|<ul><li>ブール値の AND 演算を実行します。<br /></li><ul/>|
 |`&&&`|[ビット処理演算子](bitwise-operators.md)|<ul><li>ビットごとの AND 演算を実行します。<br /></li><ul/>|
@@ -127,7 +127,7 @@ ms.lasthandoff: 01/05/2018
 |--------|-------------|
 |`as`|Right|
 |`when`|権限|
-|<code>&#124;</code>(パイプ)|Left|
+|<code>&#124;</code> (パイプ)|Left|
 |`;`|Right|
 |`let`|非結合|
 |`function`, `fun`, `match`, `try`|非結合|
@@ -138,7 +138,7 @@ ms.lasthandoff: 01/05/2018
 |`or`, <code>&#124;&#124;</code>|Left|
 |`&`, `&&`|Left|
 |`:>`, `:?>`|権限|
-|`!=`*op*、 `<` *op*、 `>` *op*、 `=`、 <code>&#124;</code> *op*、 `&` *op*、`&`<br /><br />(`<<<`、`>>>`、<code>&#124;&#124;&#124;</code>、`&&&` を含む)|Left|
+|`!=`*op*、 `<` *op*、 `>` *op*、 `=`、 <code>&#124;</code> *op*、 `&` *op*, `&`<br /><br />(`<<<`、`>>>`、<code>&#124;&#124;&#124;</code>、`&&&` を含む)|Left|
 |`^`*op*<br /><br />(`^^^` を含む)|権限|
 |`::`|権限|
 |`:?`|非結合|
@@ -146,14 +146,14 @@ ms.lasthandoff: 01/05/2018
 |`*`*op*、`/`*op*、`%`*op*|左|
 |`**`*op*|権限|
 |`f x` (関数適用)|Left|
-|<code>&#124;</code>(パターン マッチ)|権限|
+|<code>&#124;</code> (パターン マッチ)|権限|
 |前置演算子 (`+`*op*、`-`*op*、`%`、`%%`、`&`、`&&`、`!`*op*、`~`*op*)|Left|
 |`.`|Left|
 |`f(x)`|Left|
 |`f<`*types*`>`|Left|
 F# はカスタム演算子のオーバー ロードをサポートしています。 これは、独自の演算子を定義できることを意味します。 上記の表では、*op* に、組み込みまたはユーザー定義の有効な (場合によっては空の) 演算子文字シーケンスを指定できます。 つまり、この表を使用して、カスタム演算子に使用する文字のシーケンスを決定し、目的のレベルの優先順位を実現することができます。 先行する `.` 文字は、コンパイラが優先順位を決定する場合は無視されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [F# 言語リファレンス](../index.md)
 
 [演算子のオーバーロード](../operator-overloading.md)

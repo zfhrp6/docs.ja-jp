@@ -1,6 +1,6 @@
 ---
-title: ".NET Core バージョン管理"
-description: ".NET Core でのバージョン管理のしくみについて説明します。"
+title: .NET Core バージョン管理
+description: .NET Core でのバージョン管理のしくみについて説明します。
 author: bleroy
 ms.author: mairaw
 ms.date: 02/13/2018

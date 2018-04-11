@@ -1,13 +1,13 @@
 ---
-title: "証明書の使用"
-ms.custom: 
+title: 証明書の使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,29 +15,29 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-caps.latest.revision: 
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 80bc22599a2c7b3478912453b3f90a563aec9c57
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba49d990c9f067ae2c10ae2a60cbad24b30f43eb
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-certificates"></a>証明書の使用
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティをプログラミングする場合、一般に X.509 デジタル証明書を使用して、クライアントとサーバーの認証、暗号化、およびメッセージのデジタル署名を行います。 ここでは、X.509 デジタル証明書の機能および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でのそれらの機能の使用方法について簡単に説明します。また、これらの概念の詳細を説明するトピックや、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と証明書を使用した一般的なタスクの実行方法が記載されたトピックへのリンクも示します。  
   
- デジタル証明書の一部である、簡単に言えば、*公開キー基盤*(PKI)、これは、デジタル証明書、証明書機関、およびその他の検証し、認証の有効性を登録機関のシステム公開キーの暗号化を使用して、電子取引に関与する各当事者です。 証明機関が証明書を発行し、各証明書など、データを含んでいるフィールドのセットがあります*サブジェクト*(証明書の発行先であるエンティティ) 有効期間 (ときに、証明書が有効)、(、発行者エンティティ証明書を発行する) と公開キー。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、これらの各プロパティは <xref:System.IdentityModel.Claims.Claim> (クレーム) として処理されます。各クレームは、さらに ID と権限の 2 種類に分けられます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]X.509 証明書を参照してください[X.509 公開キー証明書](http://go.microsoft.com/fwlink/?LinkId=209952)[!INCLUDE[crabout](../../../../includes/crabout-md.md)]クレームと WCF での承認を参照してください。[管理クレームと Id モデル承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]参照してください、PKI を実装する[Windows Server 2008 R2 の証明書サービス](http://go.microsoft.com/fwlink/?LinkId=209949)です。  
+ デジタル証明書の一部である、簡単に言えば、*公開キー基盤*(PKI)、これは、デジタル証明書、証明書機関、およびその他の検証し、認証の有効性を登録機関のシステム公開キーの暗号化を使用して、電子取引に関与する各当事者です。 証明機関が証明書を発行し、各証明書など、データを含んでいるフィールドのセットがあります*サブジェクト*(証明書の発行先であるエンティティ) 有効期間 (ときに、証明書が有効)、(、発行者エンティティ証明書を発行する) と公開キー。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、これらの各プロパティは <xref:System.IdentityModel.Claims.Claim> (クレーム) として処理されます。各クレームは、さらに ID と権限の 2 種類に分けられます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] X.509 証明書を参照してください[X.509 公開キー証明書](http://go.microsoft.com/fwlink/?LinkId=209952)[!INCLUDE[crabout](../../../../includes/crabout-md.md)]クレームと WCF での承認を参照してください。[管理クレームと Id モデル承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 参照してください、PKI を実装する[Windows Server 2008 R2 の証明書サービス](http://go.microsoft.com/fwlink/?LinkId=209949)です。  
   
  証明書の第一の機能は、他者に対して証明書の所有者の ID を認証することです。 証明書が含まれています、*公開キー*の所有者、所有者、秘密キーを保持するときにします。 公開キーを使用して、証明書の所有者に送信されるメッセージを暗号化できます。 秘密キーにアクセスできるのは所有者だけであるため、所有者だけが暗号化されたメッセージを復号化できます。  
   
  証明書は、証明機関によって発行される必要があります。多くの場合、証明機関はサードパーティの証明書発行者です。 Windows ドメインでは、そのドメインのコンピューターに対して証明書を発行する際に使用できる証明機関が含まれています。  
   
 ## <a name="viewing-certificates"></a>証明書の表示  
- 証明書を使用するには、多くの場合、証明書を表示し、プロパティを確認する必要があります。 Microsoft 管理コンソール (MMC: Microsoft Management Console) スナップイン ツールを使用すると、これを簡単に行うことができます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: MMC スナップインで証明書を表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
+ 証明書を使用するには、多くの場合、証明書を表示し、プロパティを確認する必要があります。 Microsoft 管理コンソール (MMC: Microsoft Management Console) スナップイン ツールを使用すると、これを簡単に行うことができます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法: MMC スナップインで証明書を表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
   
 ## <a name="certificate-stores"></a>証明書ストア  
  証明書はストアに格納されています。 2 つの主要なストアがあり、さらにサブストアに分かれています。 コンピューターの管理者は、MMC スナップイン ツールを使用して、両方の主要なストアを表示できます。 管理者以外のユーザーは、現在のユーザー ストアだけを表示できます。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 12/22/2017
   
 -   **個人用**です。 このストアは、コンピューターのユーザーに関連付けられた証明書に使用されます。 通常、このストアは、信頼されたルート証明機関ストアにある証明機関証明書のいずれかによって発行された証明書に使用されます。 また、自己発行され、アプリケーションから信頼された証明書が格納されている場合もあります。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]証明書のストアは、「[証明書ストア](http://go.microsoft.com/fwlink/?LinkId=88912)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 証明書のストアは、「[証明書ストア](http://go.microsoft.com/fwlink/?LinkId=88912)です。  
   
 ### <a name="selecting-a-store"></a>ストアの選択  
  証明書を格納する場所の選択は、サービスまたはクライアントの実行方法や実行する状況によって異なります。 次の一般規則が適用されます。  
@@ -65,7 +65,7 @@ ms.lasthandoff: 12/22/2017
 -   サービスまたはクライアントがアプリケーション ユーザー アカウントで実行される場合を使用して、**現在のユーザー**を格納します。  
   
 ### <a name="accessing-stores"></a>ストアへのアクセス  
- ストアは、コンピューター上の一種のフォルダーであり、アクセス制御リスト (ACL: Access Control List) によって保護されています。 インターネット インフォメーション サービス (IIS: Internet Information Services) によってホストされたサービスを作成すると、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アカウントで [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] プロセスが実行されます。 このアカウントは、サービスが使用する証明書を格納するストアにアクセス可能である必要があります。 各主要ストアは既定のアクセス リストで保護されていますが、これらのリストは変更できます。 ストアにアクセスする別のロールを作成した場合、そのロールにアクセス許可を付与する必要があります。 WinHttpCertConfig.exe ツールを使用してアクセス リストを変更する方法については、次を参照してください。[する方法: 開発中に使用する一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]IIS クライアント証明書を使用して、参照してください[を ASP.NET Web アプリケーションでは認証にクライアント証明書を使用して、Web サービスを呼び出す方法](http://go.microsoft.com/fwlink/?LinkId=88914)です。  
+ ストアは、コンピューター上の一種のフォルダーであり、アクセス制御リスト (ACL: Access Control List) によって保護されています。 インターネット インフォメーション サービス (IIS: Internet Information Services) によってホストされたサービスを作成すると、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アカウントで [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] プロセスが実行されます。 このアカウントは、サービスが使用する証明書を格納するストアにアクセス可能である必要があります。 各主要ストアは既定のアクセス リストで保護されていますが、これらのリストは変更できます。 ストアにアクセスする別のロールを作成した場合、そのロールにアクセス許可を付与する必要があります。 WinHttpCertConfig.exe ツールを使用してアクセス リストを変更する方法については、次を参照してください。[する方法: 開発中に使用する一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] IIS クライアント証明書を使用して、参照してください[を ASP.NET Web アプリケーションでは認証にクライアント証明書を使用して、Web サービスを呼び出す方法](http://go.microsoft.com/fwlink/?LinkId=88914)です。  
   
 ## <a name="chain-trust-and-certificate-authorities"></a>信頼チェーンと証明機関  
  証明書は、各証明書がその発行元の CA にリンクされる階層構造で作成されます。 このリンクは CA の証明書へのリンクになります。 次に、CA の証明書は元の CA の証明書を発行した CA にリンクします。 ルート CA の証明書に到達するまでこのプロセスが繰り返されます。 ルート CA の証明書は本質的に信頼されています。  
@@ -87,16 +87,16 @@ ms.lasthandoff: 12/22/2017
   
  構成を使用して、このプロパティを設定することもできます。 検証モードを指定するには、次の要素を使用します。  
   
--   [\<認証 >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
+-   [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
   
--   [\<peerAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
+-   [\<peerAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
   
--   [\<messageSenderAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
+-   [\<messageSenderAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
   
 ## <a name="custom-authentication"></a>カスタム認証  
  `CertificateValidationMode` プロパティを使用すると、証明書の認証方法をカスタマイズすることもできます。 既定では、レベルは `ChainTrust` に設定されています。 <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> 値を使用するには、`CustomCertificateValidatorType` 属性を証明書の検証に使用するアセンブリと型に設定することも必要です。 カスタム検証を作成するには、抽象 <xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスから継承する必要があります。  
   
- カスタム認証システムを作成する場合、オーバーライドする最も重要なメソッドは <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> メソッドです。 カスタム認証の例は、次を参照してください。、 [X.509 証明書検証](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md)サンプルです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][カスタム資格情報と資格情報の検証](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)です。  
+ カスタム認証システムを作成する場合、オーバーライドする最も重要なメソッドは <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> メソッドです。 カスタム認証の例は、次を参照してください。、 [X.509 証明書検証](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md)サンプルです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [カスタム資格情報と資格情報の検証](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)です。  
   
 ## <a name="using-makecertexe-to-build-a-certificate-chain"></a>Makecert.exe を使用した証明書チェーンの構築  
  証明書作成ツール (Makecert.exe) では、X.509 証明書および秘密キーと公開キーのペアを作成します。 秘密キーをディスクに保存し、新しい証明書の発行と署名に使用できるため、チェーンになった証明書の階層をシミュレートできます。 このツールは、サービスの開発時に支援ツールとして使用することだけを目的としています。実際の展開に使用する証明書の作成には使用しないでください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの開発時に、Makecert.exe を使用して信頼チェーンを構築するには、次の手順に従います。  
@@ -115,7 +115,7 @@ ms.lasthandoff: 12/22/2017
  証明書に関する一般的な質問は、どの証明書を使用するかということとその理由に関するものです。 その答えは、クライアントとサービスのどちらをプログラミングするかによって異なります。 以下に一般的なガイドラインを示します (これらの質問に対する包括的な答えではありません)。  
   
 ### <a name="service-certificates"></a>サービス証明書  
- サービス証明書の第一のタスクは、クライアントに対してサーバーを認証することです。 クライアントがサーバーを認証する場合は、初期チェックの 1 つの値を比較するが、**サブジェクト**フィールドに、Uniform Resource Identifier ()、サービスに接続するために使用: 両方の DNS が一致する必要があります。 たとえば、サービスの URI が"http://www.contoso.com/endpoint/"の場合、**サブジェクト**フィールドには、値"www.contoso.com"が含まれてもする必要があります。  
+ サービス証明書の第一のタスクは、クライアントに対してサーバーを認証することです。 クライアントがサーバーを認証する場合は、初期チェックの 1 つの値を比較するが、**サブジェクト**フィールドに、Uniform Resource Identifier ()、サービスに接続するために使用: 両方の DNS が一致する必要があります。 たとえば、サービスの URI は、"http://www.contoso.com/endpoint/"、**サブジェクト**フィールドには、値"www.contoso.com"が含まれてもする必要があります。  
   
  このフィールドには複数の値を含めることができますが、各値の先頭にはその値を示す初期化コードが付加されます。 通常、初期化コードは共通名 (Common Name) を表す "CN" です。たとえば、"CN = www.contoso.com" のようになります。 ことも、**サブジェクト**いる場合は、空白にするフィールド、**サブジェクトの別名**フィールドを含めることができます、 **DNS 名**値。  
   
@@ -153,15 +153,15 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[c_WorkingWithCertificates#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_workingwithcertificates/vb/source.vb#1)]  
   
 ### <a name="multiple-certificates-with-the-same-value"></a>同じ値が含まれた複数の証明書  
- ストアには、同じサブジェクト名が含まれた複数の証明書が格納されていることがあります。 つまり、設定した場合、`x509FindType`は<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName>または<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectDistinguishedName>、もう 1 つ以上の証明書が同じ値を持つ、becausethereisno 方法には、どの証明書が必要なを区別するために、例外がスローされます。 この状況は、`x509FindType` を <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> に設定することによってある程度防ぐことができます。 拇印フィールドには一意の値が含まれるため、このフィールドを使用することで、ストア内の特定の証明書を検索できます。 ただし、この方法には欠点があります。証明書が失効したり、更新されたりした場合、拇印も失われてしまうため、`SetCertificate` メソッドは失敗します。 また、証明書が有効でなくなると、認証が失敗します。 このような状況が発生する可能性を軽減する方法として、`x590FindType` パラメーターを <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByIssuerName> に設定し、発行者の名前を指定します。 特定の発行者が必要ではない場合は、その他の <xref:System.Security.Cryptography.X509Certificates.X509FindType> 列挙値のいずれか (<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByTimeValid> など) を設定することもできます。  
+ ストアには、同じサブジェクト名が含まれた複数の証明書が格納されていることがあります。 つまり、設定した場合、`x509FindType`は<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName>または<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectDistinguishedName>、もう 1 つ以上の証明書と同じ値には、どの証明書が必要なを区別する方法がないため、例外がスローされます。 この状況は、`x509FindType` を <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> に設定することによってある程度防ぐことができます。 拇印フィールドには一意の値が含まれるため、このフィールドを使用することで、ストア内の特定の証明書を検索できます。 ただし、この方法には欠点があります。証明書が失効したり、更新されたりした場合、拇印も失われてしまうため、`SetCertificate` メソッドは失敗します。 また、証明書が有効でなくなると、認証が失敗します。 このような状況が発生する可能性を軽減する方法として、`x590FindType` パラメーターを <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByIssuerName> に設定し、発行者の名前を指定します。 特定の発行者が必要ではない場合は、その他の <xref:System.Security.Cryptography.X509Certificates.X509FindType> 列挙値のいずれか (<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByTimeValid> など) を設定することもできます。  
   
 ## <a name="certificates-in-configuration"></a>構成における証明書  
  証明書は、構成を使用して設定することもできます。 証明書を含む、資格情報が指定されたサービスを作成する場合、 [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)です。 証明書が指定されたクライアントをプログラミングする際に、 [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)です。  
   
 ## <a name="mapping-a-certificate-to-a-user-account"></a>ユーザー アカウントへの証明書のマッピング  
- IIS と Active Directory には、証明書を Windows ユーザー アカウントにマップできる機能があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]この機能を参照してください[証明書をユーザー アカウントにマップ](http://go.microsoft.com/fwlink/?LinkId=88917)です。  
+ IIS と Active Directory には、証明書を Windows ユーザー アカウントにマップできる機能があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] この機能を参照してください[証明書をユーザー アカウントにマップ](http://go.microsoft.com/fwlink/?LinkId=88917)です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Active Directory のマッピングを使用して、参照してください[ディレクトリ サービスのマッピングでクライアント証明書のマッピング](http://go.microsoft.com/fwlink/?LinkId=88918)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Active Directory のマッピングを使用して、参照してください[ディレクトリ サービスのマッピングでクライアント証明書のマッピング](http://go.microsoft.com/fwlink/?LinkId=88918)です。  
   
  この機能が有効になっている場合、<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> クラスの <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> プロパティを `true` に設定できます。 構成では、設定することができます、`mapClientCertificateToWindowsAccount`の属性、 [\<認証 >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)要素`true`次のコードに示すように、します。  
   
@@ -183,7 +183,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の最初のリリースでは、ドメイン ポリシーを参照せずにマッピングが実行されます。 そのため、マッピングが有効になっており、X.509 証明書がドメイン ポリシーを満たしていない場合は、最初のリリースの下で実行しているときには動作していた古いアプリケーションが動作しなくなる可能性があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels>  
  <xref:System.ServiceModel.Security>  
  <xref:System.ServiceModel>  

@@ -1,6 +1,6 @@
 ---
 title: C# 演算子
-ms.date: 03/09/2017
+ms.date: 04/04/2018
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -25,11 +25,11 @@ ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
 caps.latest.revision: 40
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 14ebd489c48f53c8618cadf91f9744bb30f582d3
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: c62a168c845575e4fd3df212db379548926d2fab
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="c-operators"></a>C# 演算子
 C# には、多くの演算子が用意されています。演算子とは、式で実行する演算 (数値演算、インデックス作成、関数呼び出しなど) を指定する記号のことです。 多くの演算子は、ユーザー定義型に適用する際に[オーバーロード](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)して、その意味を変更できます。  
@@ -101,7 +101,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
   
  [x / y](../../../csharp/language-reference/operators/division-operator.md) – 除算。 オペランドが整数の場合、結果は 0 に近い整数になるように切り捨てられます (例: `-7 / 2 is -3`)。  
   
- [x % y](../../../csharp/language-reference/operators/modulus-operator.md) – 剰余。 オペランドが整数の場合、x を y で除算した剰余を返します。  `q = x / y` で `r = x % y` の場合、`x = q * y + r` になります。  
+ [x % y](../../../csharp/language-reference/operators/remainder-operator.md) – 剰余。 オペランドが整数の場合、x を y で除算した剰余を返します。  `q = x / y` で `r = x % y` の場合、`x = q * y + r` になります。  
   
 ## <a name="additive-operators"></a>加法演算子  
  これらの演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  
@@ -187,7 +187,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
   
  [x /= y](../../../csharp/language-reference/operators/division-assignment-operator.md) – 除算代入。 `x` の値を `y` の値で除算した結果を `x` に格納し、新しい値を返します。  
   
- [x %= y](../../../csharp/language-reference/operators/modulus-assignment-operator.md) – 剰余代入。 `x` の値を `y` の値で除算した剰余を `x` に格納し、新しい値を返します。  
+ [x %= y](../../../csharp/language-reference/operators/remainder-assignment-operator.md) – 剰余代入。 `x` の値を `y` の値で除算した剰余を `x` に格納し、新しい値を返します。  
   
  [x &= y](../../../csharp/language-reference/operators/and-assignment-operator.md) – AND 代入。 `y` の値と `x` の値の AND 演算を行った結果を `x` に格納し、新しい値を返します。  
   

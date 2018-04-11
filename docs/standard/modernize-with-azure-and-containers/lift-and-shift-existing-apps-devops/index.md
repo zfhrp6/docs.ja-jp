@@ -1,6 +1,6 @@
 ---
-title: "既存のアプリの DevOps のリフト アンド シフト"
-description: "Azure クラウドおよび Windows コンテナーで既存の .NET アプリケーションを最新化する"
+title: 既存のアプリの DevOps のリフト アンド シフト
+description: Azure クラウドおよび Windows コンテナーで既存の .NET アプリケーションを最新化する
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017

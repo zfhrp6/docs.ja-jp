@@ -1,7 +1,7 @@
 ---
-title: "サンプルおよびチュートリアル"
-description: ".NET Core、ASP.NET Core、C# 言語に関する、.NET の学習に役立つサンプルとチュートリアルの情報です。"
-keywords: ".NET、.NET Core、ASP.NET、C#、サンプル、チュートリアル"
+title: サンプルおよびチュートリアル
+description: .NET Core、ASP.NET Core、C# 言語に関する、.NET の学習に役立つサンプルとチュートリアルの情報です。
+keywords: .NET、.NET Core、ASP.NET、C#、サンプル、チュートリアル
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-ms.openlocfilehash: d800d861f65779a73f83cf44e8884566eb7adee4
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: f69aa704b05bffeaf932a093b991810f8678251c
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="samples-and-tutorials"></a>サンプルおよびチュートリアル
 
@@ -25,17 +25,17 @@ ms.lasthandoff: 02/09/2018
 
 **[dotnet テストを使用した .NET Core での単体テスト](../core/testing/unit-testing-with-dotnet-test.md)**
 
-このガイドでは、ASP.NET Core の Web アプリと、関連する単体テストの作成方法について説明します。 最初に単純な Web サービス アプリを作成し、それからテストを追加します。 さらに多くのテストを作成し、新機能実装を指導します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test)は、GitHub の dotnet/docs リポジトリにあります。
+このガイドでは、ASP.NET Core の Web アプリと、関連する単体テストの作成方法について説明します。 最初に単純な Web サービス アプリを作成し、それからテストを追加します。 さらに多くのテストを作成し、新機能実装を指導します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test)は、GitHub の dotnet/samples リポジトリにあります。
 
 ### <a name="tutorials"></a>チュートリアル
 
 **[CLI ツールを使用する .NET Core コンソール アプリの作成: 手順ガイド](../core/tutorials/using-with-xplat-cli.md)**
 
-このガイドでは、.NET Core CLI ツールを使用してクロスプラットフォーム コンソール アプリを作成する方法を説明します。 基本的なコンソール アプリから始めて、最終的にテストを含む複数プロジェクトまで拡張します。 段階的に機能を追加し、作業を進めながらナレッジを構築します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/console-apps)は、GitHub の dotnet/docs リポジトリにあります。
+このガイドでは、.NET Core CLI ツールを使用してクロスプラットフォーム コンソール アプリを作成する方法を説明します。 基本的なコンソール アプリから始めて、最終的にテストを含む複数プロジェクトまで拡張します。 段階的に機能を追加し、作業を進めながらナレッジを構築します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/core/console-apps)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[クロス プラットフォーム ツールによるライブラリの作成](../core/tutorials/libraries.md)**
 
-このサンプルでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。 これらのツールは、サポートされる任意のオペレーティング システムで動作する効率的で低レベルのエクスペリエンスを提供します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library)は、GitHub の dotnet/docs リポジトリにあります。
+このサンプルでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。 これらのツールは、サポートされる任意のオペレーティング システムで動作する効率的で低レベルのエクスペリエンスを提供します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/framework/libraries/frameworks-library)は、GitHub の dotnet/samples リポジトリにあります。
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
@@ -47,41 +47,41 @@ ms.lasthandoff: 02/09/2018
 
 **[反復子](../csharp/iterators.md)**
 
-このサンプルは、C# 反復子の作成と使用のための構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/iterators)は、GitHub の dotnet/docs リポジトリにあります。
+このサンプルは、C# 反復子の作成と使用のための構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/iterators)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[インデクサー](../csharp/indexers.md)**
 
-このサンプルは、C# インデクサーの構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers)は、GitHub の dotnet/docs リポジトリにあります。
+このサンプルは、C# インデクサーの構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/indexers)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[デリゲートとイベント](../csharp/delegates-events.md)**
 
-このサンプルは、C# デリゲートとイベントの構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events)は、GitHub の dotnet/docs リポジトリにあります。 イベントに重点を置いた [2 つ目のサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/events)も、同じリポジトリにあります。
+このサンプルは、C# デリゲートとイベントの構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/delegates-and-events)は、GitHub の dotnet/samples リポジトリにあります。 イベントに重点を置いた [2 つ目のサンプル](https://github.com/dotnet/samples/tree/master/csharp/events)も、同じリポジトリにあります。
 
 **[式ツリー](../csharp/expression-trees.md)**
 
-このサンプルは、式ツリーを使用して解決できる問題の多くを示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees)は、GitHub の dotnet/docs リポジトリにあります。
+このサンプルは、式ツリーを使用して解決できる問題の多くを示しています。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/expression-trees)は、GitHub の dotnet/samples リポジトリにあります。
 
 **LINQ のサンプル**
 
-この一連のサンプルは、統合言語クエリ (LINQ) の多くの機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/linq/csharp)は、GitHub の dotnet/docs リポジトリにあります。
+この一連のサンプルは、統合言語クエリ (LINQ) の多くの機能を示しています。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/core/linq/csharp)は、GitHub の dotnet/samples リポジトリにあります。
 
 ### <a name="tutorials"></a>チュートリアル
 
 **[コンソール アプリケーション](../csharp/tutorials/console-teleprompter.md)**
 
-このチュートリアルでは、コンソール I/O、コンソール アプリの構造、タスクベースの非同期プログラミング モデルの基礎について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)は、GitHub の dotnet/docs リポジトリにあります。
+このチュートリアルでは、コンソール I/O、コンソール アプリの構造、タスクベースの非同期プログラミング モデルの基礎について説明します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[REST クライアント](../csharp/tutorials/console-webapiclient.md)**
 
-このチュートリアルでは、Web 通信、JSON シリアル化、C# 言語でのオブジェクト指向の機能について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)は、GitHub の dotnet/docs リポジトリにあります。
+このチュートリアルでは、Web 通信、JSON シリアル化、C# 言語でのオブジェクト指向の機能について説明します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[LINQ の使用](../csharp/tutorials/working-with-linq.md)**
 
-このチュートリアルでは、LINQ の多くの機能と、それをサポートする言語要素について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-linq)は、GitHub の dotnet/docs リポジトリにあります。
+このチュートリアルでは、LINQ の多くの機能と、それをサポートする言語要素について説明します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-linq)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[Docker でホストされているマイクロサービス](../csharp/tutorials/microservices.md)**
 
-このチュートリアルでは、ASP.NET Core のマイクロ サービスの構築と、これを Docker でホストする方法について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)は、GitHub の dotnet/docs リポジトリにあります。
+このチュートリアルでは、ASP.NET Core のマイクロ サービスの構築と、これを Docker でホストする方法について説明します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/csharp/getting-started/WeatherMicroservice)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[Visual Studio for Mac を使用した macOS での .NET Core の概要](../core/tutorials/using-on-mac-vs.md)**
 
@@ -95,11 +95,11 @@ ms.lasthandoff: 02/09/2018
 
 **[Windows Docker コンテナーでの ASP.NET MVC アプリケーションの実行](../framework/docker/aspnetmvc.md)**
 
-このチュートリアルでは、Windows Docker コンテナーで既存の ASP.NET MVC アプリを展開する方法について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/docker/MVCRandomAnswerGenerator)は、GitHub の dotnet/docs リポジトリにあります。
+このチュートリアルでは、Windows Docker コンテナーで既存の ASP.NET MVC アプリを展開する方法について説明します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator)は、GitHub の dotnet/samples リポジトリにあります。
 
 **[Windows コンテナーでの .NET Framework コンソール アプリケーションの実行](../framework/docker/console.md)**
 
-このチュートリアルでは、Windows コンテナーで既存のコンソール アプリを展開する方法について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)は、GitHub の dotnet/docs リポジトリにあります。
+このチュートリアルでは、Windows コンテナーで既存のコンソール アプリを展開する方法について説明します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/framework/docker/ConsoleRandomAnswerGenerator)は、GitHub の dotnet/samples リポジトリにあります。
 
 ## <a name="viewing-and-downloading-samples"></a>サンプルの表示とダウンロード
 

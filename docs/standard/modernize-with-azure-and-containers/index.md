@@ -1,6 +1,6 @@
 ---
-title: "Azure クラウドおよび Windows コンテナーで既存の .NET アプリケーションを最新化する"
-description: "リフト アンド シフト既存のアプリケーションを Azure クラウドおよび電子書籍とコンテナーを説明します。"
+title: Azure クラウドおよび Windows コンテナーで既存の .NET アプリケーションを最新化する
+description: リフト アンド シフト既存のアプリケーションを Azure クラウドおよび電子書籍とコンテナーを説明します。
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017

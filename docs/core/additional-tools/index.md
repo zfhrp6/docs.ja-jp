@@ -1,6 +1,6 @@
 ---
-title: ".NET Core の追加ツール"
-description: ".NET Core 機能を支援し、拡張する追加ツールの概要。"
+title: .NET Core の追加ツール
+description: .NET Core 機能を支援し、拡張する追加ツールの概要。
 author: mlacouture
 manager: wpickett
 ms.author: johalex

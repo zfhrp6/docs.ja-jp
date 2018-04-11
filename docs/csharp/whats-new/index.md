@@ -1,7 +1,7 @@
 ---
-title: "C# の新機能 - C# ガイド"
-description: "C# 言語がどのように進化しているか"
-keywords: "C#, 最新の機能, 新機能, Roslyn"
+title: C# の新機能 - C# ガイド
+description: C# 言語がどのように進化しているか
+keywords: C#, 最新の機能, 新機能, Roslyn
 author: BillWagner
 ms.author: wiwagn
 ms.date: 11/13/2017
