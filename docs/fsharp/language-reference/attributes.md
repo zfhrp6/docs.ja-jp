@@ -1,7 +1,7 @@
 ---
-title: "属性 (F#)"
-description: "F# の属性がプログラミング構成要素に適用するメタデータを有効にする方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 属性 (F#)
+description: F# の属性がプログラミング構成要素に適用するメタデータを有効にする方法について説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016

@@ -1,12 +1,14 @@
 ---
-title: "引数 &#39;&lt;argumentname&gt;&#39; 値を数値に変換することはできません"
+title: 引数 &#39;&lt;argumentname&gt;&#39; 値を数値に変換することはできません
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgumentNotNumeric1
+f1_keywords:
+- vbrArgumentNotNumeric1
 ms.assetid: 1901c4d4-abbe-462f-a450-5d907d485e94
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 5426dbfce291203c0fda951151ad4b20a3500cd9

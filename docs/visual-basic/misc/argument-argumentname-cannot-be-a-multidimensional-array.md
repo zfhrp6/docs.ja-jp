@@ -1,12 +1,14 @@
 ---
-title: "引数 &#39;&lt;argumentname&gt;&#39; 多次元配列にすることはできません"
+title: 引数 &#39;&lt;argumentname&gt;&#39; 多次元配列にすることはできません
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrArgument_RankEQOne1
+f1_keywords:
+- vbrArgument_RankEQOne1
 ms.assetid: 3b44521a-44e3-4cbe-9a99-1e0ac6ccf537
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 250f0e2b9e2e44bbebb61d1e397fcbe7614d3c80

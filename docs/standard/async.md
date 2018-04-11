@@ -1,6 +1,6 @@
 ---
-title: "非同期の概要"
-description: "ブロッキング I/O と複数コアでの同時操作の処理を容易にする鍵となる手法である非同期プログラミングについて説明します。"
+title: 非同期の概要
+description: ブロッキング I/O と複数コアでの同時操作の処理を容易にする鍵となる手法である非同期プログラミングについて説明します。
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn

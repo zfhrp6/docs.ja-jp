@@ -1,6 +1,6 @@
 ---
-title: "非同期プログラミング"
-description: ".NET Core で提供される、C# 言語レベルの非同期プログラミング モデルについて説明します。"
+title: 非同期プログラミング
+description: .NET Core で提供される、C# 言語レベルの非同期プログラミング モデルについて説明します。
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn

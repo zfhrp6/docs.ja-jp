@@ -1,7 +1,7 @@
 ---
-title: "属性 - C#"
-description: "C# での属性の機能について説明します。"
-keywords: ".NET, .NET Core, C#, 属性"
+title: 属性 - C#
+description: C# での属性の機能について説明します。
+keywords: .NET, .NET Core, C#, 属性
 author: mgroves
 ms.author: wiwagn
 ms.date: 03/06/2017
