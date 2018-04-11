@@ -2,6 +2,7 @@
 ## [[] 演算子](index-operator.md)
 ## [() 演算子](invocation-operator.md)
 ## [。演算子](member-access-operator.md)
+## [?. 演算子と ?[] 演算子](null-conditional-operators.md)
 ## [:: 演算子](namespace-alias-qualifer.md)
 ## [+ 演算子](addition-operator.md)
 ## [- 演算子](subtraction-operator.md)
@@ -40,4 +41,3 @@
 ## [-> 演算子](dereference-operator.md)
 ## [??演算子](null-conditional-operator.md)
 ## [=> 演算子](lambda-operator.md)
-## [Null 条件演算子](null-conditional-operators.md)
