@@ -1,17 +1,19 @@
 ---
-title: "暗黙の変換 &#39;&lt;typename1&gt;&#39; の &#39;&lt;typename2&gt;&#39; の値 &#39; のコピー中ByRef &#39;パラメーター &#39;&lt;parametername&gt;&#39; 一致する引数に戻します。"
+title: 暗黙の変換 &#39;&lt;typename1&gt;&#39; の &#39;&lt;typename2&gt;&#39; の値 &#39; のコピー中ByRef &#39;パラメーター &#39;&lt;parametername&gt;&#39; 一致する引数に戻します。
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc41999
 - bc41999
-helpviewer_keywords: BC41999
+helpviewer_keywords:
+- BC41999
 ms.assetid: ae48c738-dff8-4c0f-8931-bbb70b2c8b03
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 9e858b475a816a35d18822643de5a273abe28562

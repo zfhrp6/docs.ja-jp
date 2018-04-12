@@ -1,12 +1,14 @@
 ---
-title: "定義クラスのインスタンスではないオブジェクトのフレンド関数は呼び出せません"
+title: 定義クラスのインスタンスではないオブジェクトのフレンド関数は呼び出せません
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrID97
+f1_keywords:
+- vbrID97
 ms.assetid: b9d821f0-8565-4f15-bb35-184789c69662
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2f1ac1ea14efb0cdf0d8ca03257e4da33d35e368

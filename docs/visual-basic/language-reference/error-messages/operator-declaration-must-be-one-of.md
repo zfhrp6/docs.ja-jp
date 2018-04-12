@@ -1,17 +1,19 @@
 ---
-title: "演算子の宣言は、のいずれかを指定する必要があります: +、-、*、-、-、^、 &amp;、Like、Mod、および、Or、Xor、Not、 &lt; &lt;、 &gt; &gt;、=、 &lt; &gt;、 &lt;、 &lt;=、 &gt;、 &gt;=、CType、IsTrue、または IsFalse"
+title: '演算子の宣言は、のいずれかを指定する必要があります: +、-、*、-、-、^、 &amp;、Like、Mod、および、Or、Xor、Not、 &lt; &lt;、 &gt; &gt;、=、 &lt; &gt;、 &lt;、 &lt;=、 &gt;、 &gt;=、CType、IsTrue、または IsFalse'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc33000
 - vbc33000
-helpviewer_keywords: BC33000
+helpviewer_keywords:
+- BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 80c8358dd13105c18e73e94735a51b02d5bd22c5
@@ -20,7 +22,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---
-# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not-ltlt-gtgt"></a><span data-ttu-id="ba254-102">演算子の宣言は、のいずれかを指定する必要があります: +、-、*、\,/、^、 &amp;、Like、Mod、および、Or、Xor、Not、 &lt; &lt;、 &gt;&gt;しています.</span><span class="sxs-lookup"><span data-stu-id="ba254-102">Operator declaration must be one of:  +,-,*,\,/,^, &amp;, Like, Mod, And, Or, Xor, Not, &lt;&lt;, &gt;&gt;...</span></span>
+# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not-ltlt-gtgt"></a><span data-ttu-id="ba254-102">演算子の宣言は、のいずれかを指定する必要があります: +、-、\*、\,/、^、 &amp;、Like、Mod、および、Or、Xor、Not、 &lt; &lt;、 &gt;&gt;しています.</span><span class="sxs-lookup"><span data-stu-id="ba254-102">Operator declaration must be one of:  +,-,\*,\,/,^, &amp;, Like, Mod, And, Or, Xor, Not, &lt;&lt;, &gt;&gt;...</span></span>
 <span data-ttu-id="ba254-103">オーバー ロードできるは、演算子のみを宣言することができます。</span><span class="sxs-lookup"><span data-stu-id="ba254-103">You can declare only an operator that is eligible for overloading.</span></span> <span data-ttu-id="ba254-104">次の表には、宣言できる演算子が一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="ba254-104">The following table lists the operators you can declare.</span></span>  
   
 |<span data-ttu-id="ba254-105">型</span><span class="sxs-lookup"><span data-stu-id="ba254-105">Type</span></span>|<span data-ttu-id="ba254-106">演算子</span><span class="sxs-lookup"><span data-stu-id="ba254-106">Operators</span></span>|  

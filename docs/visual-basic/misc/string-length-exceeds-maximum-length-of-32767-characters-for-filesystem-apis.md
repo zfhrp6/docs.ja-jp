@@ -1,12 +1,14 @@
 ---
-title: "文字列の長さは、32767 文字の最大長 &#39; を超えています。FileSystem &#39;Api"
+title: 文字列の長さは、32767 文字の最大長 &#39; を超えています。FileSystem &#39;Api
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFileIO_StringLengthExceeded
+f1_keywords:
+- vbrFileIO_StringLengthExceeded
 ms.assetid: 4044ae87-9984-400c-b247-20f9c1b1a0c0
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 2cee17283907fca67b1606b0c27eefae66c87ff4

@@ -2,16 +2,18 @@
 title: "&#39;です。各 &#39; の型 &#39; で&lt;typename&gt;&#39; の複数のインスタンス &#39; 型が実装されているためには、あいまいです'System.collections.generic.ienumerable(of (Of T) &#39;"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc32096
 - bc32096
-helpviewer_keywords: BC32096
+helpviewer_keywords:
+- BC32096
 ms.assetid: ed20d09c-913f-482e-89f8-c0a596c3ec24
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: a74178f3f0b2e7589b87046973473582993f3ed9

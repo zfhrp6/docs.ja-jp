@@ -1,12 +1,14 @@
 ---
-title: "指定された引数を使って割合を計算することはできません"
+title: 指定された引数を使って割合を計算することはできません
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
-f1_keywords: vbrFinancial_CannotCalculateRate
+f1_keywords:
+- vbrFinancial_CannotCalculateRate
 ms.assetid: 17d5c8eb-4716-4b72-977f-a640c02e630d
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: bd5d86bf6b4c0be77fa42599e6c8e042190b89f1

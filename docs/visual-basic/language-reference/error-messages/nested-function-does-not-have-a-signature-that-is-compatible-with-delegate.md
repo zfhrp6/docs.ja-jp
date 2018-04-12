@@ -1,17 +1,19 @@
 ---
-title: "入れ子になった関数にデリゲート & #39; と互換性のあるシグネチャがありません。&lt;delegatename&gt;& #39 です。"
+title: '入れ子になった関数にデリゲート & #39; と互換性のあるシグネチャがありません。&lt;delegatename&gt;& #39 です。'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc36532
 - bc36532
-helpviewer_keywords: BC36532
+helpviewer_keywords:
+- BC36532
 ms.assetid: 493f292c-d81e-40ef-8b47-61f020571829
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 60cf15343023110561da3e3fcf202bd00394127a

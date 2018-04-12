@@ -1,17 +1,19 @@
 ---
-title: "&#39;です。&lt;キーワード&gt;&#39; は、インスタンス メソッド内でのみ有効です"
+title: '&#39;です。&lt;キーワード&gt;&#39; は、インスタンス メソッド内でのみ有効です'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc30043
 - vbc30043
-helpviewer_keywords: BC30043
+helpviewer_keywords:
+- BC30043
 ms.assetid: 7973aa82-a681-440c-9bca-242627d7ba86
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: a61314c036cec0fd1412a9c844a610fbd1401add
