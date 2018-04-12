@@ -13,7 +13,7 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-caps.latest.revision: ''
+caps.latest.revision: 35
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -25,7 +25,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/23/2018
 ---
-# <a name="what39s-new-in-windows-communication-foundation-45"></a>どのような&#39;Windows Communication Foundation 4.5 の新機能として s
+# <a name="what39s-new-in-windows-communication-foundation-45"></a>Windows Communication Foundation 4.5 の新機能
 このトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] の新しい機能について説明します。  
   
 ## <a name="wcf-simplification-features"></a>WCF の単純化機能  
@@ -67,8 +67,8 @@ ms.lasthandoff: 03/23/2018
  HTTPS 上のエンドポイントの公開を簡単にするため、HTTPS のプロトコル マッピングが追加されました。 HTTPS のエンドポイントを有効にするには、Web サイトで HTTPS バインドと SSL 証明書が構成されていることを確認した後、サービスをホストする仮想ディレクトリに対して HTTPS を有効にするだけです。 サービスのメタデータが有効になっている場合は、それも HTTPS を介して公開されます。  
   
 ## <a name="generating-a-single-wsdl-document"></a>単一の WSDL ドキュメントの生成  
- サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。  WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一 WSDL ドキュメントをリクエストするには、サービスからメタデータを要求するときに、その URI に "?singleWSDL" を追加します。
-  
+ サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。  WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一 WSDL ドキュメントをリクエストするには、サービスからメタデータを要求するときに、その URI に "?singleWSDL" を追加します。  
+  
 ## <a name="websocket-support"></a>WebSocket のサポート  
  Websocket は、TCP と同様のパフォーマンス特性を持つポート 80 と 443 で真の双方向通信を実現するテクノロジです。 WebSocket トランスポート経由の通信をサポートするために 2 つの新しいバインドが追加されました。 <xref:System.ServiceModel.NetHttpBinding> および <xref:System.ServiceModel.NetHttpsBinding>。 詳細については、次を参照してください。:[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。  
   

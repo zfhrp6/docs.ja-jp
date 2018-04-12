@@ -1,7 +1,7 @@
 ---
-title: "永続インフラストラクチャとして NoSQL データベースを使用する"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 永続インフラストラクチャとして NoSQL データベースを使用する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 永続インフラストラクチャとして NoSQL データベースを使用する
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 永続インフラストラクチャとして NoSQL データベースを使用する
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9cb9cc231396f9de5fba0e04d1671865ea645873
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a6f3a991529aea6560eb12f1400ba2750795ebff
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="using-nosql-databases-as-a-persistence-infrastructure"></a>永続インフラストラクチャとして NoSQL データベースを使用する
 
@@ -111,7 +111,7 @@ orderAggregate.AddOrderItem(orderItem2);
 Uri collectionUri = UriFactory.CreateDocumentCollectionUri(databaseName,
     collectionName);
 
-await client.CreateDocumentAsync(collectionUri, order);
+await client.CreateDocumentAsync(collectionUri, orderAggregate);
 
 // As your app evolves, let's say your object has a new schema. You can insert
 // OrderV2 objects without any changes to the database tier.
@@ -307,32 +307,32 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **NoSQL データベースのドキュメント データのモデル化**
-    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
+-   **NoSQL データベースのドキュメント データのモデリング**
+    [*https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
 
 -   **Vaughn Vernon。理想的なドメイン駆動設計集計ストアとは?**
     [*https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
 
--   **Azure Cosmos DB の概要: MongoDB 用 API** 
-    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
+-   **Azure Cosmos DB の概要: MongoDB の API** 
+    [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
 
--   **Azure Cosmos DB: .NET と Azure Portal による MongoDB API Web アプリの構築** 
-    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
+-   **Azure Cosmos DB: .NET および Azure Portal を使用して MongoDB API の Web アプリを構築する** 
+    [*https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
 
 -   **ローカルの開発とテストでの Azure Cosmos DB Emulator の使用** 
-    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
+    [*https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
 
 -   **Azure Cosmos DB への MongoDB アプリケーションの接続** 
-    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
+    [*https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
 
--   **Cosmos DB エミュレーター Docker イメージ (Windows コンテナー)** 
+-   **Cosmos DB エミュレーターの Docker イメージ (Windows コンテナー)** 
     [*https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/*](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
 
 -   **MongoDB Docker イメージ (Linux と Windows コンテナー)** 
     [*https://hub.docker.com/r/_/mongo/*](https://hub.docker.com/r/_/mongo/)
 
 -   **Azure Cosmos DB: MongoDB API アカウントでの Studio 3T の使用** 
-    [*https://docs.microsoft.com/ja-jp/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef)
+    [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef)
 
 
 >[!div class="step-by-step"]
