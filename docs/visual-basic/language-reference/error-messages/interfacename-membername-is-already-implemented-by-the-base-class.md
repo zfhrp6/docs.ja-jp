@@ -1,17 +1,19 @@
 ---
-title: "&#39;です。&lt;interfacename&gt;.&lt;membername&gt;&#39; は、基本クラス &#39; によって既に実装されて&lt;baseclassname&gt;&#39;。 再実装&lt;型&gt;と見なされます"
+title: '&#39;です。&lt;interfacename&gt;.&lt;membername&gt;&#39; は、基本クラス &#39; によって既に実装されて&lt;baseclassname&gt;&#39;。 再実装&lt;型&gt;と見なされます'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc42015
 - bc42015
-helpviewer_keywords: BC42015
+helpviewer_keywords:
+- BC42015
 ms.assetid: 658c070a-113e-4bd8-b294-12c243191160
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 69884ed567e0046da5cf5c51b3e83e57e890d49f

@@ -2,16 +2,18 @@
 title: "この &#39; の最初のステートメント新しいサブ &#39;明示的に呼び出す &#39; にする必要があります。指定されて &#39;または &#39;です。'Mybase.new' &#39;&#39;です。&lt;古い形式&gt;&#39;以外の場合は、基本クラス &#39; で&lt;baseclassname&gt;&#39; の &#39;&lt;derivedclassname&gt;&#39; 旧式とマークされて: &#39;&lt;errormessage&gt;&#39;です。"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc30920
 - bc30920
-helpviewer_keywords: BC30920
+helpviewer_keywords:
+- BC30920
 ms.assetid: e47dc755-4294-4368-b813-2177b7677957
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 8882acd947251d85804fbefd54267ce078e31b95

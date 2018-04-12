@@ -1,17 +1,19 @@
 ---
-title: "&lt;type1&gt;&#39;&lt;typename&gt;&#39; する必要があります実装 &#39;&lt;membername&gt;&#39; インターフェイス &#39;&lt;interfacename&gt;&#39;です。"
+title: '&lt;type1&gt;&#39;&lt;typename&gt;&#39; する必要があります実装 &#39;&lt;membername&gt;&#39; インターフェイス &#39;&lt;interfacename&gt;&#39;です。'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc30154
 - bc30154
-helpviewer_keywords: BC30154
+helpviewer_keywords:
+- BC30154
 ms.assetid: 259afdfa-3608-4760-adcb-88ec0da5020d
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 05e0229d0259c519d4db265c017a5040b425c79a

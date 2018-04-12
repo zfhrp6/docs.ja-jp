@@ -1,17 +1,19 @@
 ---
-title: "識別子が長すぎます。"
+title: 識別子が長すぎます。
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc30033
 - vbc30033
-helpviewer_keywords: BC30033
+helpviewer_keywords:
+- BC30033
 ms.assetid: 3d07f6d0-9a2f-49ca-94e8-1e354932e855
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 10ae608903301d7e5662de3356030d682e11fd00

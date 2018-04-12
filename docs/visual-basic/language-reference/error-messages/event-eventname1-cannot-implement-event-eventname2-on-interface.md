@@ -1,17 +1,19 @@
 ---
-title: "イベント &#39;&lt;eventname1&gt;&#39; を実装できませんイベント &#39;&lt; 。eventname2&gt;&#39;インターフェイス &#39; 上の;&lt;インターフェイス&gt;&#39;のためですデリゲート型 &#39;&lt; 。delegate1&gt;&#39; と &#39;&lt;delegate2&gt;&#39; が一致しません"
+title: イベント &#39;&lt;eventname1&gt;&#39; を実装できませんイベント &#39;&lt; 。eventname2&gt;&#39;インターフェイス &#39; 上の;&lt;インターフェイス&gt;&#39;のためですデリゲート型 &#39;&lt; 。delegate1&gt;&#39; と &#39;&lt;delegate2&gt;&#39; が一致しません
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc31423
 - bc31423
-helpviewer_keywords: BC31423
+helpviewer_keywords:
+- BC31423
 ms.assetid: 2e754b66-5836-48ff-9697-b9c0d7085f18
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: b0fcbbf8a6e23270e4dcbf9d813c773e1522a92a

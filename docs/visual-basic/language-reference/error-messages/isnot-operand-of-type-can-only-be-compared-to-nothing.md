@@ -1,17 +1,19 @@
 ---
-title: "&#39; IsNot &#39;オペランド型 &#39; typename &#39; ののみと比較する (& a) #39 です。何も &#39; であるため &#39; typename &#39;null 許容型は、します。"
+title: '&#39; IsNot &#39;オペランド型 &#39; typename &#39; ののみと比較する (& a) #39 です。何も &#39; であるため &#39; typename &#39;null 許容型は、します。'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc32128
 - vbc32128
-helpviewer_keywords: BC32128
+helpviewer_keywords:
+- BC32128
 ms.assetid: 1155b23a-ad75-4bab-b9da-73f35c767a36
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: ec0ae1561bfbee998e7c65f6023012c0f982a8a7

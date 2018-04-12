@@ -1,17 +1,19 @@
 ---
-title: "&#39;です。&lt;name1&gt;&#39; は、あいまいな名前空間または型 &#39; からインポートされた&lt;name2&gt;&#39;です。"
+title: '&#39;です。&lt;name1&gt;&#39; は、あいまいな名前空間または型 &#39; からインポートされた&lt;name2&gt;&#39;です。'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc30561
 - bc30561
-helpviewer_keywords: BC30561
+helpviewer_keywords:
+- BC30561
 ms.assetid: 761091f7-1018-4299-b481-3966a4a2c126
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: b6ebc9b75d171a28b4388d48625b772ac6f20dc8

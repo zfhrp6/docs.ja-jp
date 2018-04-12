@@ -1,17 +1,19 @@
 ---
-title: "&#39;です。拡張機能 &#39;属性にのみ適用できます (& a) #39 です。モジュール &#39;、&#39;です。Sub &#39;、または &#39;です。関数 &#39;宣言"
+title: '&#39;です。拡張機能 &#39;属性にのみ適用できます (& a) #39 です。モジュール &#39;、&#39;です。Sub &#39;、または &#39;です。関数 &#39;宣言'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc36550
 - vbc36550
-helpviewer_keywords: BC36550
+helpviewer_keywords:
+- BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 9d77933c52484eb934501107d1ddad15f0eca826
