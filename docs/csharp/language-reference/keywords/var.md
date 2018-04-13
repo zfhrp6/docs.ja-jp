@@ -1,5 +1,5 @@
 ---
-title: "var (C# リファレンス)"
+title: var (C# リファレンス)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -11,7 +11,7 @@ f1_keywords:
 helpviewer_keywords:
 - var keyword [C#]
 ms.assetid: 0777850a-2691-4e3e-927f-0c850f5efe15
-caps.latest.revision: 
+caps.latest.revision: 13
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: d2be56243f9c4ddafb3903d14fa6d6f9cb0e2f84
