@@ -44,7 +44,7 @@ ms.lasthandoff: 02/14/2018
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]が登場する前もそのようなアプリケーションの作成は可能でしたが、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] によってエンドポイントの開発が一段と簡単になりました。 要約すると、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は Web サービスと Web サービス クライアントを作成するための管理しやすいアプローチを提供するように設計されています。  
   
 ## <a name="features-of-wcf"></a>WCF の機能  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 次の機能セットが含まれます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF Feature Details](../../../docs/framework/wcf/feature-details/index.md)。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には次の機能セットが含まれます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF 機能の詳細](../../../docs/framework/wcf/feature-details/index.md)。
   
 -   **サービス指向**  
   
@@ -52,40 +52,40 @@ ms.lasthandoff: 02/14/2018
   
 -   **相互運用性**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Web サービスの相互運用性の最新の業界標準を実装します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Interoperability and Integration](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)。  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Web サービスの相互運用性の最新の業界標準を実装します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については [相互運用性と統合](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md) を参照してください。
   
 -   **複数のメッセージ パターン**  
   
-     メッセージは複数のパターンの 1 つを使用して交換されます。 最も一般的なパターンは要求/応答パターンです。このパターンでは 1 つのエンドポイントが 2 番目のエンドポイントからデータを要求し、 2 番目のエンドポイントが応答します。 その他にも一方向のメッセージなどのパターンがあります。一方向のメッセージでは、1 つのエンドポイントが応答を期待せずにメッセージを送信します。 より複雑なパターンとして、2 つのエンドポイントが接続を確立し、インスタント メッセージング プログラムのようにデータをやり取りする双方向交換パターンがあります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] を使用した異なるメッセージ交換パターンの実装方法の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [Contracts](../../../docs/framework/wcf/feature-details/contracts.md)。  
+     メッセージは複数のパターンの 1 つを使用して交換されます。 最も一般的なパターンは要求/応答パターンです。このパターンでは 1 つのエンドポイントが 2 番目のエンドポイントからデータを要求し、 2 番目のエンドポイントが応答します。 その他にも一方向のメッセージなどのパターンがあります。一方向のメッセージでは、1 つのエンドポイントが応答を期待せずにメッセージを送信します。 より複雑なパターンとして、2 つのエンドポイントが接続を確立し、インスタント メッセージング プログラムのようにデータをやり取りする双方向交換パターンがあります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用した異なるメッセージ交換パターンの実装方法については [コントラクト](../../../docs/framework/wcf/feature-details/contracts.md) を参照してください。
   
 -   **サービス メタデータ**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] WSDL、XML スキーマ、Ws-policy などの業界標準で指定された形式を使用してサービス メタデータの公開をサポートします。 このメタデータを使用して、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスするためのクライアントを自動生成および構成できます。 メタデータは HTTP や HTTPS 上で、または Web サービス メタデータ交換標準を使用して公開できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Metadata](../../../docs/framework/wcf/feature-details/metadata.md)。  
-  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] WSDL、XML スキーマ、Ws-policy などの業界標準で指定された形式を使用してサービス メタデータの公開をサポートします。 このメタデータを使用して、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスするためのクライアントを自動生成および構成できます。 メタデータは HTTP や HTTPS 上で、または Web サービス メタデータ交換標準を使用して公開できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [メタデータ](../../../docs/framework/wcf/feature-details/metadata.md)
+
 -   **データ コントラクト**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]を使用して作成されているため、適用するコントラクトを提供するコードフレンドリなメソッドが含まれています。 汎用的な型のコントラクトの 1 つにデータ コントラクトがあります。 本質的に、Visual C# または Visual Basic を使用してサービスをコード化した場合、データを処理する最も簡単な方法は、データ エンティティを表すクラスにデータ エンティティに属するプロパティを作成する方法です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、このような簡単な方法でデータを使用する包括的なシステムがあります。 データを表すクラスを作成すると、設計したデータ型にクライアントが準拠できるメタデータがサービスによって自動生成されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Using Data Contracts](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
-  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]を使用して作成されているため、適用するコントラクトを提供するコードフレンドリなメソッドが含まれています。 汎用的な型のコントラクトの 1 つにデータ コントラクトがあります。 本質的に、Visual C# または Visual Basic を使用してサービスをコード化した場合、データを処理する最も簡単な方法は、データ エンティティを表すクラスにデータ エンティティに属するプロパティを作成する方法です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、このような簡単な方法でデータを使用する包括的なシステムがあります。 データを表すクラスを作成すると、設計したデータ型にクライアントが準拠できるメタデータがサービスによって自動生成されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [データコントラクトの使用](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+
 -   **セキュリティ**  
   
-     メッセージを暗号化してプライバシーを保護し、メッセージを受信する前にユーザーが自身を認証することを必須化することができます。 SSL や WS-SecureConversation などよく知られた標準を使用してセキュリティを実装できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [セキュリティ](../../../docs/framework/wcf/feature-details/security.md)。  
-  
+     メッセージを暗号化してプライバシーを保護し、メッセージを受信する前にユーザーが自身を認証することを必須化することができます。 SSL や WS-SecureConversation などよく知られた標準を使用してセキュリティを実装できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [セキュリティ](../../../docs/framework/wcf/feature-details/security.md)
+
 -   **複数のトランスポートとエンコーディング**  
   
-     メッセージは複数の組み込みトランスポート プロトコルおよびエンコーディングのいずれかを使用して送信できます。 最も一般的なプロトコルとエンコーディングは、World Wide Web で HTTP (ハイパーテキスト転送プロトコル) を使用して、テキスト エンコードされた SOAP メッセージを送信するものです。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、TCP、名前付きパイプ、MSMQ でメッセージを送信することもできます。 これらのメッセージはテキストとしてエンコードするか、最適化されたバイナリ形式を使用することができます。  バイナリ データは MTOM 標準を使用することで効率的に送信できます。 提供されているトランスポートまたはエンコーディングのいずれもニーズを満たさない場合は、独自のカスタム トランスポートまたはエンコーディングを作成できます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] トランスポートとエンコーディングでサポートされている[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を参照してください[トランスポート](../../../docs/framework/wcf/feature-details/transports.md)です。  
-  
+     メッセージは複数の組み込みトランスポート プロトコルおよびエンコーディングのいずれかを使用して送信できます。 最も一般的なプロトコルとエンコーディングは、World Wide Web で HTTP (ハイパーテキスト転送プロトコル) を使用して、テキスト エンコードされた SOAP メッセージを送信するものです。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、TCP、名前付きパイプ、MSMQ でメッセージを送信することもできます。 これらのメッセージはテキストとしてエンコードするか、最適化されたバイナリ形式を使用することができます。  バイナリ データは MTOM 標準を使用することで効率的に送信できます。 提供されているトランスポートまたはエンコーディングのいずれもニーズを満たさない場合は、独自のカスタム トランスポートまたはエンコーディングを作成できます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] によってサポートされているトランスポートとエンコーディングについては [Windows Communication Foundation のトランスポート](../../../docs/framework/wcf/feature-details/transports.md) を参照してください。
+
 -   **キューに置かれた信頼性のあるメッセージ**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Ws-reliable Messaging 経由で実装され、MSMQ を使用して、信頼できるセッションを使用した信頼性の高いメッセージ交換をサポートしています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] でサポートされている、キューに置かれた信頼性の高いメッセージングの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [Queues and Reliable Sessions](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)。  
-  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Ws-reliable Messaging 経由で実装され、MSMQ を使用して、信頼できるセッションを使用した信頼性の高いメッセージ交換をサポートしています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] におけるキューと信頼できるメッセージングのサポートについては [キューと信頼できるセッション](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md) を参照してください。
+
 -   **非揮発性メッセージ**  
   
      非揮発性メッセージは、通信の中断によって失われることがないメッセージです。 非揮発性メッセージ パターンのメッセージは常にデータベースに保存されます。 中断が発生した場合、接続復旧時にデータベースでメッセージの交換を再開できます。 [!INCLUDE[wf](../../../includes/wf-md.md)]を使用して非揮発性メッセージを作成することもできます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Workflow Services](../../../docs/framework/wcf/feature-details/workflow-services.md)。  
   
 -   **トランザクション**  
   
-     WCF では、WS-AtomicTtransactions、 <xref:System.Transactions> 名前空間の API、および Microsoft 分散トランザクション コーディネーターの 3 つのトランザクション モデルの 1 つを使用したトランザクションもサポートしています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] でサポートされているトランザクションの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [トランザクション](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md)。  
-  
+     WCF では、WS-AtomicTtransactions、 <xref:System.Transactions> 名前空間の API、および Microsoft 分散トランザクション コーディネーターの 3 つのトランザクション モデルの 1 つを使用したトランザクションもサポートしています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] でサポートされているトランザクションの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [トランザクション](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md)
+
 -   **AJAX および REST サポート**  
   
      REST は、進化し続ける Web 2.0 テクノロジの一例です。 SOAP エンベロープにラップされていない "書式なし" XML データを処理するように[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を構成できます。 また、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を拡張して、ATOM (一般的な RSS 標準) などの特定の XML 形式や、JSON (JavaScript Object Notation) などの XML 以外の形式をサポートすることもできます。  
