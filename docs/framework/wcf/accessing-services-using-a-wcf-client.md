@@ -38,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  WCF クライアント プロキシをインスタンス化します。  
   
- 詳細については、「サービス モデル メタデータ ユーティリティ ツール (SvcUtil.exe) を使用して、WCF クライアント プロキシを手動で生成できる[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 WCF クライアント プロキシは、Visual Studio の "サービス参照の追加" 機能を使って生成することもできます。 いずれかの方法で WCF クライアント プロキシを生成するには、サービスが実行中であることが必要です。 サービスが自己ホスト型の場合は、ホストを実行する必要があります。 サービスが IIS/WAS でホストされている場合、特に必要な操作はありません。  
+WCF クライアント プロキシは、サービス モデル メタデータ ユーティリティ ツール (SvcUtil.exe) を使用することによって、手動で生成することができます。詳細は [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を参照してください。 WCF クライアント プロキシは、Visual Studio の "サービス参照の追加" 機能を使って生成することもできます。 いずれかの方法で WCF クライアント プロキシを生成するには、サービスが実行中であることが必要です。 サービスが自己ホスト型の場合は、ホストを実行する必要があります。 サービスが IIS/WAS でホストされている場合、特に必要な操作はありません。
   
 ## <a name="servicemodel-metadata-utility-tool"></a>ServiceModel メタデータ ユーティリティ ツール  
  [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)メタデータからコードを生成するためのコマンド ライン ツールです。 基本的な Svcutil.exe コマンドの使用例を次に示します。  
