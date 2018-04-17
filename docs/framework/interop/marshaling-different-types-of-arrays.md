@@ -1,12 +1,9 @@
 ---
-title: "さまざまな型の配列のマーシャリング"
-ms.custom: 
+title: さまざまな型の配列のマーシャリング
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,87 +12,88 @@ helpviewer_keywords:
 - marshaling, Arrays sample
 - data marshaling, Arrays sample
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1102243eaf43eeb87b16bb654568ef15a821214c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 62958f1656dfbfcb45356378161090b8271b6b83
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="marshaling-different-types-of-arrays"></a><span data-ttu-id="8f155-102">さまざまな型の配列のマーシャリング</span><span class="sxs-lookup"><span data-stu-id="8f155-102">Marshaling Different Types of Arrays</span></span>
-<span data-ttu-id="8f155-103">配列は、同じ型の 1 つ以上の要素を含むマネージ コード内の参照型です。</span><span class="sxs-lookup"><span data-stu-id="8f155-103">An array is a reference type in managed code that contains one or more elements of the same type.</span></span> <span data-ttu-id="8f155-104">配列は参照型ですが、アンマネージ関数には In パラメーターとして渡されます。</span><span class="sxs-lookup"><span data-stu-id="8f155-104">Although arrays are reference types, they are passed as In parameters to unmanaged functions.</span></span> <span data-ttu-id="8f155-105">この動作は、マネージ配列がマネージ オブジェクトに渡される方法 (In/Out パラメーターとして渡される) と一致しません。</span><span class="sxs-lookup"><span data-stu-id="8f155-105">This behavior is inconsistent with way managed arrays are passed to managed objects, which is as In/Out parameters.</span></span> <span data-ttu-id="8f155-106">詳細については、「 [コピーと固定](../../../docs/framework/interop/copying-and-pinning.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8f155-106">For additional details, see [Copying and Pinning](../../../docs/framework/interop/copying-and-pinning.md).</span></span>  
+# <a name="marshaling-different-types-of-arrays"></a><span data-ttu-id="4a8aa-102">さまざまな型の配列のマーシャリング</span><span class="sxs-lookup"><span data-stu-id="4a8aa-102">Marshaling Different Types of Arrays</span></span>
+<span data-ttu-id="4a8aa-103">配列は、同じ型の 1 つ以上の要素を含むマネージ コード内の参照型です。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-103">An array is a reference type in managed code that contains one or more elements of the same type.</span></span> <span data-ttu-id="4a8aa-104">配列は参照型ですが、アンマネージ関数には In パラメーターとして渡されます。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-104">Although arrays are reference types, they are passed as In parameters to unmanaged functions.</span></span> <span data-ttu-id="4a8aa-105">この動作は、マネージ配列がマネージ オブジェクトに渡される方法 (In/Out パラメーターとして渡される) と一致しません。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-105">This behavior is inconsistent with way managed arrays are passed to managed objects, which is as In/Out parameters.</span></span> <span data-ttu-id="4a8aa-106">詳細については、次を参照してください。[コピーと固定](copying-and-pinning.md)です。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-106">For additional details, see [Copying and Pinning](copying-and-pinning.md).</span></span>  
   
- <span data-ttu-id="8f155-107">次の表では、配列のマーシャリング オプションをリストして、それらの使用方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="8f155-107">The following table lists marshaling options for arrays and describes their usage.</span></span>  
+ <span data-ttu-id="4a8aa-107">次の表では、配列のマーシャリング オプションをリストして、それらの使用方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-107">The following table lists marshaling options for arrays and describes their usage.</span></span>  
   
-|<span data-ttu-id="8f155-108">配列</span><span class="sxs-lookup"><span data-stu-id="8f155-108">Array</span></span>|<span data-ttu-id="8f155-109">説明</span><span class="sxs-lookup"><span data-stu-id="8f155-109">Description</span></span>|  
+|<span data-ttu-id="4a8aa-108">配列</span><span class="sxs-lookup"><span data-stu-id="4a8aa-108">Array</span></span>|<span data-ttu-id="4a8aa-109">説明</span><span class="sxs-lookup"><span data-stu-id="4a8aa-109">Description</span></span>|  
 |-----------|-----------------|  
-|<span data-ttu-id="8f155-110">値による整数の。</span><span class="sxs-lookup"><span data-stu-id="8f155-110">Of integers by value.</span></span>|<span data-ttu-id="8f155-111">整数の配列を In パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="8f155-111">Passes an array of integers as an In parameter.</span></span>|  
-|<span data-ttu-id="8f155-112">参照による整数の。</span><span class="sxs-lookup"><span data-stu-id="8f155-112">Of integers by reference.</span></span>|<span data-ttu-id="8f155-113">整数の配列を In/Out パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="8f155-113">Passes an array of integers as an In/Out parameter.</span></span>|  
-|<span data-ttu-id="8f155-114">値による整数の (2 次元)。</span><span class="sxs-lookup"><span data-stu-id="8f155-114">Of integers by value (two-dimensional).</span></span>|<span data-ttu-id="8f155-115">整数のマトリックスを In パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="8f155-115">Passes a matrix of integers as an In parameter.</span></span>|  
-|<span data-ttu-id="8f155-116">値による文字列の。</span><span class="sxs-lookup"><span data-stu-id="8f155-116">Of strings by value.</span></span>|<span data-ttu-id="8f155-117">文字列の配列を In パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="8f155-117">Passes an array of strings as an In parameter.</span></span>|  
-|<span data-ttu-id="8f155-118">整数による構造体の。</span><span class="sxs-lookup"><span data-stu-id="8f155-118">Of structures with integers.</span></span>|<span data-ttu-id="8f155-119">In パラメーターとして整数を含む構造体の配列を渡します。</span><span class="sxs-lookup"><span data-stu-id="8f155-119">Passes an array of structures that contain integers as an In parameter.</span></span>|  
-|<span data-ttu-id="8f155-120">文字列による構造体の。</span><span class="sxs-lookup"><span data-stu-id="8f155-120">Of structures with strings.</span></span>|<span data-ttu-id="8f155-121">In/Out パラメーターとして整数のみを含む構造体の配列を渡します。</span><span class="sxs-lookup"><span data-stu-id="8f155-121">Passes an array of structures that contain only integers as an In/Out parameter.</span></span> <span data-ttu-id="8f155-122">配列のメンバーを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="8f155-122">Members of the array can be changed.</span></span>|  
+|<span data-ttu-id="4a8aa-110">値による整数の。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-110">Of integers by value.</span></span>|<span data-ttu-id="4a8aa-111">整数の配列を In パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-111">Passes an array of integers as an In parameter.</span></span>|  
+|<span data-ttu-id="4a8aa-112">参照による整数の。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-112">Of integers by reference.</span></span>|<span data-ttu-id="4a8aa-113">整数の配列を In/Out パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-113">Passes an array of integers as an In/Out parameter.</span></span>|  
+|<span data-ttu-id="4a8aa-114">値による整数の (2 次元)。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-114">Of integers by value (two-dimensional).</span></span>|<span data-ttu-id="4a8aa-115">整数のマトリックスを In パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-115">Passes a matrix of integers as an In parameter.</span></span>|  
+|<span data-ttu-id="4a8aa-116">値による文字列の。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-116">Of strings by value.</span></span>|<span data-ttu-id="4a8aa-117">文字列の配列を In パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-117">Passes an array of strings as an In parameter.</span></span>|  
+|<span data-ttu-id="4a8aa-118">整数による構造体の。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-118">Of structures with integers.</span></span>|<span data-ttu-id="4a8aa-119">In パラメーターとして整数を含む構造体の配列を渡します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-119">Passes an array of structures that contain integers as an In parameter.</span></span>|  
+|<span data-ttu-id="4a8aa-120">文字列による構造体の。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-120">Of structures with strings.</span></span>|<span data-ttu-id="4a8aa-121">In/Out パラメーターとして整数のみを含む構造体の配列を渡します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-121">Passes an array of structures that contain only integers as an In/Out parameter.</span></span> <span data-ttu-id="4a8aa-122">配列のメンバーを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-122">Members of the array can be changed.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="8f155-123">例</span><span class="sxs-lookup"><span data-stu-id="8f155-123">Example</span></span>  
- <span data-ttu-id="8f155-124">このサンプルは、以下の種類の配列差を渡す法を示します。</span><span class="sxs-lookup"><span data-stu-id="8f155-124">This sample demonstrates how to pass the following types of arrays:</span></span>  
+## <a name="example"></a><span data-ttu-id="4a8aa-123">例</span><span class="sxs-lookup"><span data-stu-id="4a8aa-123">Example</span></span>  
+ <span data-ttu-id="4a8aa-124">このサンプルは、以下の種類の配列差を渡す法を示します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-124">This sample demonstrates how to pass the following types of arrays:</span></span>  
   
--   <span data-ttu-id="8f155-125">値による整数の配列。</span><span class="sxs-lookup"><span data-stu-id="8f155-125">Array of integers by value.</span></span>  
+-   <span data-ttu-id="4a8aa-125">値による整数の配列。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-125">Array of integers by value.</span></span>  
   
--   <span data-ttu-id="8f155-126">サイズを変更できる、参照による整数の配列。</span><span class="sxs-lookup"><span data-stu-id="8f155-126">Array of integers by reference, which can be resized.</span></span>  
+-   <span data-ttu-id="4a8aa-126">サイズを変更できる、参照による整数の配列。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-126">Array of integers by reference, which can be resized.</span></span>  
   
--   <span data-ttu-id="8f155-127">値による整数の多次元配列 (マトリックス)。</span><span class="sxs-lookup"><span data-stu-id="8f155-127">Multidimensional array (matrix) of integers by value.</span></span>  
+-   <span data-ttu-id="4a8aa-127">値による整数の多次元配列 (マトリックス)。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-127">Multidimensional array (matrix) of integers by value.</span></span>  
   
--   <span data-ttu-id="8f155-128">値による文字列の配列。</span><span class="sxs-lookup"><span data-stu-id="8f155-128">Array of strings by value.</span></span>  
+-   <span data-ttu-id="4a8aa-128">値による文字列の配列。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-128">Array of strings by value.</span></span>  
   
--   <span data-ttu-id="8f155-129">整数による構造体の配列。</span><span class="sxs-lookup"><span data-stu-id="8f155-129">Array of structures with integers.</span></span>  
+-   <span data-ttu-id="4a8aa-129">整数による構造体の配列。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-129">Array of structures with integers.</span></span>  
   
--   <span data-ttu-id="8f155-130">文字列による構造体の配列。</span><span class="sxs-lookup"><span data-stu-id="8f155-130">Array of structures with strings.</span></span>  
+-   <span data-ttu-id="4a8aa-130">文字列による構造体の配列。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-130">Array of structures with strings.</span></span>  
   
- <span data-ttu-id="8f155-131">配列が参照によって明示的にマーシャリングされない限り、既定の動作は、配列を In パラメーターとしてマーシャリングすることです。</span><span class="sxs-lookup"><span data-stu-id="8f155-131">Unless an array is explicitly marshaled by reference, the default behavior marshals the array as an In parameter.</span></span> <span data-ttu-id="8f155-132">この動作は、 <xref:System.Runtime.InteropServices.InAttribute> と <xref:System.Runtime.InteropServices.OutAttribute> 属性を明示的に適用することで変更できます。</span><span class="sxs-lookup"><span data-stu-id="8f155-132">You can change this behavior by applying the <xref:System.Runtime.InteropServices.InAttribute> and <xref:System.Runtime.InteropServices.OutAttribute> attributes explicitly.</span></span>  
+ <span data-ttu-id="4a8aa-131">配列が参照によって明示的にマーシャリングされない限り、既定の動作は、配列を In パラメーターとしてマーシャリングすることです。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-131">Unless an array is explicitly marshaled by reference, the default behavior marshals the array as an In parameter.</span></span> <span data-ttu-id="4a8aa-132">この動作は、 <xref:System.Runtime.InteropServices.InAttribute> と <xref:System.Runtime.InteropServices.OutAttribute> 属性を明示的に適用することで変更できます。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-132">You can change this behavior by applying the <xref:System.Runtime.InteropServices.InAttribute> and <xref:System.Runtime.InteropServices.OutAttribute> attributes explicitly.</span></span>  
   
- <span data-ttu-id="8f155-133">Arrays のサンプルで使用するアンマネージ関数とその元の関数宣言を次に示します。</span><span class="sxs-lookup"><span data-stu-id="8f155-133">The Arrays sample uses the following unmanaged functions, shown with their original function declaration:</span></span>  
+ <span data-ttu-id="4a8aa-133">Arrays のサンプルで使用するアンマネージ関数とその元の関数宣言を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-133">The Arrays sample uses the following unmanaged functions, shown with their original function declaration:</span></span>  
   
--   <span data-ttu-id="8f155-134">PinvokeLib.dll からエクスポートされる**TestArrayOfInts** 。</span><span class="sxs-lookup"><span data-stu-id="8f155-134">**TestArrayOfInts** exported from PinvokeLib.dll.</span></span>  
+-   <span data-ttu-id="4a8aa-134">PinvokeLib.dll からエクスポートされる**TestArrayOfInts** 。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-134">**TestArrayOfInts** exported from PinvokeLib.dll.</span></span>  
   
     ```  
     int TestArrayOfInts(int* pArray, int pSize);  
     ```  
   
--   <span data-ttu-id="8f155-135">PinvokeLib.dll からエクスポートされる**TestRefArrayOfInts** 。</span><span class="sxs-lookup"><span data-stu-id="8f155-135">**TestRefArrayOfInts** exported from PinvokeLib.dll.</span></span>  
+-   <span data-ttu-id="4a8aa-135">PinvokeLib.dll からエクスポートされる**TestRefArrayOfInts** 。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-135">**TestRefArrayOfInts** exported from PinvokeLib.dll.</span></span>  
   
     ```  
     int TestRefArrayOfInts(int** ppArray, int* pSize);  
     ```  
   
--   <span data-ttu-id="8f155-136">PinvokeLib.dll からエクスポートされる**TestMatrixOfInts** 。</span><span class="sxs-lookup"><span data-stu-id="8f155-136">**TestMatrixOfInts** exported from PinvokeLib.dll.</span></span>  
+-   <span data-ttu-id="4a8aa-136">PinvokeLib.dll からエクスポートされる**TestMatrixOfInts** 。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-136">**TestMatrixOfInts** exported from PinvokeLib.dll.</span></span>  
   
     ```  
     int TestMatrixOfInts(int pMatrix[][COL_DIM], int row);  
     ```  
   
--   <span data-ttu-id="8f155-137">PinvokeLib.dll からエクスポートされる**TestArrayOfStrings** 。</span><span class="sxs-lookup"><span data-stu-id="8f155-137">**TestArrayOfStrings** exported from PinvokeLib.dll.</span></span>  
+-   <span data-ttu-id="4a8aa-137">PinvokeLib.dll からエクスポートされる**TestArrayOfStrings** 。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-137">**TestArrayOfStrings** exported from PinvokeLib.dll.</span></span>  
   
     ```  
     int TestArrayOfStrings(char** ppStrArray, int size);  
     ```  
   
--   <span data-ttu-id="8f155-138">PinvokeLib.dll からエクスポートされる**TestArrayOfStructs** 。</span><span class="sxs-lookup"><span data-stu-id="8f155-138">**TestArrayOfStructs** exported from PinvokeLib.dll.</span></span>  
+-   <span data-ttu-id="4a8aa-138">PinvokeLib.dll からエクスポートされる**TestArrayOfStructs** 。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-138">**TestArrayOfStructs** exported from PinvokeLib.dll.</span></span>  
   
     ```  
     int TestArrayOfStructs(MYPOINT* pPointArray, int size);  
     ```  
   
--   <span data-ttu-id="8f155-139">PinvokeLib.dll からエクスポートされる**TestArrayOfStructs2** 。</span><span class="sxs-lookup"><span data-stu-id="8f155-139">**TestArrayOfStructs2** exported from PinvokeLib.dll.</span></span>  
+-   <span data-ttu-id="4a8aa-139">PinvokeLib.dll からエクスポートされる**TestArrayOfStructs2** 。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-139">**TestArrayOfStructs2** exported from PinvokeLib.dll.</span></span>  
   
     ```  
     int TestArrayOfStructs2 (MYPERSON* pPersonArray, int size);  
     ```  
   
- <span data-ttu-id="8f155-140">[PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614)は、上記の関数および 2 つの構造体変数の実装を含むカスタム アンマネージ ライブラリ**MYPOINT**と**MYPERSON**です。</span><span class="sxs-lookup"><span data-stu-id="8f155-140">[PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614) is a custom unmanaged library that contains implementations for the previously listed functions and two structure variables, **MYPOINT** and **MYPERSON**.</span></span> <span data-ttu-id="8f155-141">構造体には次の要素が含まれます。</span><span class="sxs-lookup"><span data-stu-id="8f155-141">The structures contain the following elements:</span></span>  
+ <span data-ttu-id="4a8aa-140">[PinvokeLib.dll](https://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614(v=vs.100))は、上記の関数および 2 つの構造体変数の実装を含むカスタム アンマネージ ライブラリ**MYPOINT**と**MYPERSON**です。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-140">[PinvokeLib.dll](https://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614(v=vs.100)) is a custom unmanaged library that contains implementations for the previously listed functions and two structure variables, **MYPOINT** and **MYPERSON**.</span></span> <span data-ttu-id="4a8aa-141">構造体には次の要素が含まれます。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-141">The structures contain the following elements:</span></span>  
   
 ```  
 typedef struct _MYPOINT  
@@ -111,19 +109,19 @@ typedef struct _MYPERSON
 } MYPERSON;  
 ```  
   
- <span data-ttu-id="8f155-142">このサンプルでは、`MyPoint` と `MyPerson` 構造体に埋め込み型が含まれています。</span><span class="sxs-lookup"><span data-stu-id="8f155-142">In this sample, the `MyPoint` and `MyPerson` structures contain embedded types.</span></span> <span data-ttu-id="8f155-143">各メンバーが出現する順番でメモリ内に順次配列されることを保証するために、 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性を設定します。</span><span class="sxs-lookup"><span data-stu-id="8f155-143">The <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute is set to ensure that the members are arranged in memory sequentially, in the order in which they appear.</span></span>  
+ <span data-ttu-id="4a8aa-142">このサンプルでは、`MyPoint` と `MyPerson` 構造体に埋め込み型が含まれています。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-142">In this sample, the `MyPoint` and `MyPerson` structures contain embedded types.</span></span> <span data-ttu-id="4a8aa-143">各メンバーが出現する順番でメモリ内に順次配列されることを保証するために、 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性を設定します。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-143">The <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute is set to ensure that the members are arranged in memory sequentially, in the order in which they appear.</span></span>  
   
- <span data-ttu-id="8f155-144">`LibWrap` クラスには、`App` クラスによって呼び出されるメソッドのセットが含まれます。</span><span class="sxs-lookup"><span data-stu-id="8f155-144">The `LibWrap` class contains a set of methods called by the `App` class.</span></span> <span data-ttu-id="8f155-145">配列を渡す特定の方法について詳しくは、次のサンプル内のコメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="8f155-145">For specific details about passing arrays, see the comments in the following sample.</span></span> <span data-ttu-id="8f155-146">参照型の配列は、既定では In パラメーターとして渡されます。</span><span class="sxs-lookup"><span data-stu-id="8f155-146">An array, which is a reference type, is passed as an In parameter by default.</span></span> <span data-ttu-id="8f155-147">呼び出し元が結果を受け取るためには、 **InAttribute** と **OutAttribute** を配列が含まれる引数に明示的に適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f155-147">For the caller to receive the results, **InAttribute** and **OutAttribute** must be applied explicitly to the argument containing the array.</span></span>  
+ <span data-ttu-id="4a8aa-144">`LibWrap` クラスには、`App` クラスによって呼び出されるメソッドのセットが含まれます。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-144">The `LibWrap` class contains a set of methods called by the `App` class.</span></span> <span data-ttu-id="4a8aa-145">配列を渡す特定の方法について詳しくは、次のサンプル内のコメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-145">For specific details about passing arrays, see the comments in the following sample.</span></span> <span data-ttu-id="4a8aa-146">参照型の配列は、既定では In パラメーターとして渡されます。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-146">An array, which is a reference type, is passed as an In parameter by default.</span></span> <span data-ttu-id="4a8aa-147">呼び出し元が結果を受け取るためには、 **InAttribute** と **OutAttribute** を配列が含まれる引数に明示的に適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4a8aa-147">For the caller to receive the results, **InAttribute** and **OutAttribute** must be applied explicitly to the argument containing the array.</span></span>  
   
-### <a name="declaring-prototypes"></a><span data-ttu-id="8f155-148">プロトタイプの宣言</span><span class="sxs-lookup"><span data-stu-id="8f155-148">Declaring Prototypes</span></span>  
+### <a name="declaring-prototypes"></a><span data-ttu-id="4a8aa-148">プロトタイプの宣言</span><span class="sxs-lookup"><span data-stu-id="4a8aa-148">Declaring Prototypes</span></span>  
  [!code-csharp[Conceptual.Interop.Marshaling#31](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#31)]
  [!code-vb[Conceptual.Interop.Marshaling#31](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/arrays.vb#31)]  
   
-### <a name="calling-functions"></a><span data-ttu-id="8f155-149">関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="8f155-149">Calling Functions</span></span>  
+### <a name="calling-functions"></a><span data-ttu-id="4a8aa-149">関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="4a8aa-149">Calling Functions</span></span>  
  [!code-csharp[Conceptual.Interop.Marshaling#32](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#32)]
  [!code-vb[Conceptual.Interop.Marshaling#32](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/arrays.vb#32)]  
   
-## <a name="see-also"></a><span data-ttu-id="8f155-150">参照</span><span class="sxs-lookup"><span data-stu-id="8f155-150">See Also</span></span>  
- [<span data-ttu-id="8f155-151">型の配列のマーシャリング</span><span class="sxs-lookup"><span data-stu-id="8f155-151">Marshaling Arrays of Types</span></span>](http://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)  
- [<span data-ttu-id="8f155-152">プラットフォーム呼び出しのデータ型</span><span class="sxs-lookup"><span data-stu-id="8f155-152">Platform Invoke Data Types</span></span>](http://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f)  
- [<span data-ttu-id="8f155-153">マネージ コードでのプロトタイプの作成</span><span class="sxs-lookup"><span data-stu-id="8f155-153">Creating Prototypes in Managed Code</span></span>](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
+## <a name="see-also"></a><span data-ttu-id="4a8aa-150">関連項目</span><span class="sxs-lookup"><span data-stu-id="4a8aa-150">See Also</span></span>  
+ <span data-ttu-id="4a8aa-151">[型の配列のマーシャリング](https://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="4a8aa-151">[Marshaling Arrays of Types](https://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8(v=vs.100))</span></span>  
+ <span data-ttu-id="4a8aa-152">[プラットフォーム呼び出しのデータ型](https://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="4a8aa-152">[Platform Invoke Data Types](https://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f(v=vs.100))</span></span>  
+ [<span data-ttu-id="4a8aa-153">マネージ コードでのプロトタイプの作成</span><span class="sxs-lookup"><span data-stu-id="4a8aa-153">Creating Prototypes in Managed Code</span></span>](creating-prototypes-in-managed-code.md)
