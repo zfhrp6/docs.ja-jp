@@ -1,18 +1,18 @@
 ---
-title: "Docker アプリケーションの外側のループ DevOps ワークフローの手順を実行します。"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker アプリケーションの外側のループ DevOps ワークフローの手順を実行します。
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: fe51fc4b5026d17f0f9b93e7fd0dedde93ef4a3c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a03a9d153793b30ca9276b64a0a33e3de26f8f6e
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Docker アプリケーションの外側のループ DevOps ワークフローの手順を実行します。
 
@@ -110,13 +110,13 @@ Visual Studio Team Services Docker 拡張機能では、Visual Studio Team Servi
 
 **詳細については** パイプラインおよびチュートリアルを表示する、次のサイトを参照してください。 Visual Studio Team Services Docker CI をまとめることの詳細を読むため。
 
-Docker のコンテナーとして、Visual Studio Team Services エージェントを実行している: [https://hub.docker.com/r/\ microsoft/vsts エージェント/](https://hub.docker.com/r/microsoft/vsts-agent/)
+Docker のコンテナーとして、Visual Studio Team Services エージェントを実行している: [ https://hub.docker.com/r/\ microsoft/vsts エージェント/](https://hub.docker.com/r/microsoft/vsts-agent/)
 
 VSTS Docker 拡張機能: <https://aka.ms/vstsdockerextension>
 
-Visual Studio Team Services と .NET Core Linux Docker イメージを構築します<https://blogs.msdn.microsoft.com/stevelasker/2016/06/13/building-net-core-linux-docker-images-with-visual-studio-team-services/。>
+Visual Studio Team Services と .NET Core Linux Docker イメージを構築します。 <https://blogs.msdn.microsoft.com/stevelasker/2016/06/13/building-net-core-linux-docker-images-with-visual-studio-team-services/>
 
-Docker のサポートとマシンを作成する Visual Studio チーム Linux ベース サービスの構築: <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
+Docker のサポートと Linux ベースの Visual Studio チームのサービスのビルド コンピューターの構築。 <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
 
 ### <a name="integrate-test-and-validate-multicontainer-docker-applications"></a>統合、テスト、および multicontainer Docker アプリケーションを検証
 
@@ -158,7 +158,7 @@ Azure コンテナー レジストリ、Amazon Web Services コンテナー レ�
 
 図 5-5: Docker のレジストリへの発行のカスタム イメージを Visual Studio Team Services を使用します。
 
-**詳細については** 詳細を確認する Visual Studio Team Services の Docker 拡張機能についてに移動<https://aka.ms/vstsdockerextension>です。 Azure コンテナー レジストリに関する詳細については、するには<https://aka.ms/azurecontainerregistry>です。
+**詳細については** 詳細を確認する Visual Studio Team Services の Docker 拡張機能についてに移動<https://aka.ms/vstsdockerextension>です。 Azure コンテナー レジストリに関する詳細については、するには<https://aka.ms/azurecontainerregistry>します。
 
 ## <a name="step-4-cd-deploy"></a>手順 4: CD、展開
 
@@ -220,7 +220,7 @@ CD の観点から Visual Studio Team Services 具体的には、タスクを実
 
 **詳細については** 詳細を確認する、CD には、Visual Studio Team Services と Docker のパイプラインは、次のサイトを参照してください。
 
-Docker と Azure のコンテナー サービスの visual Studio Team Services の拡張機能: [https://aka.ms/\ vstsdockerextension](https://aka.ms/vstsdockerextension)
+Docker と Azure のコンテナー サービスの visual Studio Team Services の拡張機能: [ https://aka.ms/\ vstsdockerextension](https://aka.ms/vstsdockerextension)
 
 Azure のコンテナー サービス: <https://aka.ms/azurecontainerservice>
 
@@ -237,4 +237,4 @@ Azure のコンテナー サービス: <https://aka.ms/azurecontainerservice>
 監視と診断が 100 %devops の領域の場合にのみ、監視プロセスおよびテスト シナリオまたは beta 環境に対して、開発チームによって実行される分析です。 これには、ロード テストを実行するか、ベータ版または、ベータ テストしようとしている、新しいバージョンの QA 環境を監視するだけでは行われます。
 
 >[!div class="step-by-step"]
-[前](index.md) [次へ] (../run-manage-monitor-docker-environments/index.md)
+[前] (index.md) [次へ] (../run-manage-monitor-docker-environments/index.md)

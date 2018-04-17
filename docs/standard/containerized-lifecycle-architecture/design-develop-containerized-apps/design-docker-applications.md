@@ -1,18 +1,18 @@
 ---
-title: "Docker のアプリケーションを設計します。"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker のアプリケーションを設計します。
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: aeddd3a4b7ebd3c917fba46e048fbab5a77dda19
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 54f6f1ecdd89b85d4f44136da9a5ec9610f170a9
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="design-docker-applications"></a>Docker のアプリケーションを設計します。
 
@@ -22,4 +22,4 @@ ms.lasthandoff: 12/23/2017
 
 
 >[!div class="step-by-step"]
-[前](index.md) [次へ] (共通のコンテナーのデザインの principles.md)
+[前] (index.md) [次へ] (共通のコンテナーのデザインの principles.md)

@@ -1,22 +1,22 @@
 ---
-title: "Docker アプリの開発環境"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker アプリの開発環境
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ad1a6e4cb0974ebb067cf1a7be987d696e8bc82a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c164b94572a8fde58124acaa14d47da574a19383
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="development-environment-for-docker-apps"></a>Docker アプリの開発環境
 
-## <a name="development-tools-choices-ide-or-editor"></a>開発ツールの選択: IDE やエディター
+## <a name="development-tools-choices-ide-or-editor"></a>開発ツールの選択: IDE またはエディター
 
 かにかかわらずする場合、完全かつ強力な IDE または軽量とアジャイル エディターでは、Microsoft に対応する際に Docker アプリケーションを開発します。
 
@@ -25,16 +25,16 @@ ms.lasthandoff: 12/23/2017
 任意の開発言語をサポートする、軽量のクロスプラット フォーム エディターを使用する場合は、Visual Studio Code と Docker CLI を使用できます。 これらの製品では、簡単かつ堅牢なエクスペリエンスを合理化開発者ワークフローにとって重要となるを提供します。 "Docker の Mac"または"Docker for Windows の"(開発環境) をインストールすると、Docker の開発者は、Windows または Linux (ランタイム環境) の両方のアプリをビルドするのに 1 つの Docker CLI を使用できます。 さらに、Visual Studio Code エディターから Docker コマンドを実行するには、Dockerfile とショートカット タスク用の IntelliSense と Docker の拡張機能をサポートしています。
 
 > [!NOTE]
-> Visual Studio のコードをダウンロードするには<https://code.visualstudio.com/download>です。
+> Visual Studio のコードをダウンロードするには<https://code.visualstudio.com/download>します。
 
-Mac および Windows の Docker をダウンロードするには<http://www.docker.com/products/docker>です。
+Mac および Windows の Docker をダウンロードするには<http://www.docker.com/products/docker>します。
 
 ### <a name="visual-studio-with-docker-tools"></a>Docker ツールと visual Studio
 
 Visual Studio 2015 を使用している場合は、"Docker Tools for Visual Studio です"のアドオン ツールをインストールすることができます。 Visual Studio 2017 の Docker ツールに付属でビルドされた既にです。 どちらの場合に、開発し、実行、および選択した Docker 環境内で直接、アプリケーションを検証することができます。 F5 キーを押して、Docker に直接、アプリケーション (1 つのコンテナーまたは複数のコンテナー) はデバッグは、ホストまたは Ctrl + f5 キーを押して編集し、コンテナーを再構築しなくてもアプリを更新します。 これは、Linux または Windows の Docker コンテナーを作成する Windows 開発者にとって最も簡単で強力な選択肢です。
 
 > [!NOTE]
-> Visual Studio の Docker のツールをダウンロードするには<https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4>です。
+> Visual Studio の Docker のツールをダウンロードするには<https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4>します。
 
 ## <a name="language-and-framework-choices"></a>言語やフレームワークの選択
 
@@ -56,4 +56,4 @@ Docker のアプリケーションと最近のほとんどの言語で Microsoft
 
 
 >[!div class="step-by-step"]
-[前](調整-高-スケーラビリティ-availability.md) [次へ] (docker-アプリ-内側のループ-workflow.md)
+[前] (調整-高-スケーラビリティ-availability.md) [次へ] (docker-アプリ-内側のループ-workflow.md)

@@ -1,18 +1,18 @@
 ---
-title: "Docker の本番環境を管理します。"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker の本番環境を管理します。
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c962543004c88b0a6413cc22d8bdddf954af66f8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 72ae92c89ed9b51815016205e20b09fc4dced1e1
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-production-docker-environments"></a>Docker の本番環境を管理します。
 
@@ -31,7 +31,7 @@ Azure 仮想マシン スケール セットを使用してこれらのクラス
 
 | 管理ツール      | 説明           | 関連する orchestrators |
 |-----------------------|-----------------------|-----------------------|
-| コンテナー サービス\(Azure ポータルで UI 管理) | [コンテナー サービス](https://azure.microsoft.com/en-us/services/container-service/)簡単に提供する方法を開始[Azure でコンテナー クラスターを展開](https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment)続き DC/OS、Kubernetes Docker Swarm などの一般的な orchestrators に基づいて。 <br /><br /> コンテナー サービスは、これらのプラットフォームの構成を最適化します。 だけ、サイズ、ホストの数と、orchestrator ツールの選択肢を選択する必要があり、コンテナー サービスでは、他のすべてを処理します。 | 続き DC/OS <br /><br /> Kubernetes <br /><br /> Docker 群 |
+| コンテナー サービス\(Azure ポータルで UI 管理) | [コンテナー サービス](https://azure.microsoft.com/en-us/services/container-service/)簡単に提供する方法を開始[Azure でコンテナー クラスターを展開](https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment)続き DC/OS、Kubernetes Docker Swarm などの一般的な orchestrators に基づいて。 <br /><br /> コンテナー サービスは、これらのプラットフォームの構成を最適化します。 だけ、サイズ、ホストの数と、orchestrator ツールの選択肢を選択する必要があり、コンテナー サービスでは、他のすべてを処理します。 | Mesosphere DC/OS <br /><br /> Kubernetes <br /><br /> Docker Swarm |
 | Docker ユニバーサル制御プレーン\(オンプレミスまたはクラウド) | [Docker ユニバーサル制御プレーン](https://docs.docker.com/v1.11/ucp/overview/)Docker からエンタープライズ レベルのクラスター管理ソリューションです。 1 つの場所から、クラスター全体を管理するときに役立ちます。 <br /><br /> Docker ユニバーサル コントロール平面は商用製品 Docker Swarm、制御プレーンのユニバーサル Docker と Docker Trusted Registry を提供する Docker データ センターをという名前の一部として含めるです。 <br /><br /> Docker のデータ センターでは、インストールされている内部設置型を指定できます。 または Azure などのパブリック クラウドをプロビジョニングします。 | Docker Swarm\(コンテナー サービスでサポートされている) |
 | Docker のクラウド\(Tutum; クラウド SaaS とも呼ばれます) | [Docker のクラウド](https://docs.docker.com/docker-cloud/)ビルドとテストの施設 Dockerized アプリケーション イメージは、設定し、ホスト インフラストラクチャを管理するのに役立つツールとオーケストレーションの機能と Docker のレジストリを提供するホストされている管理サービス (SaaS) は、イメージ、具体的なインフラストラクチャを展開するを自動化するのに役立つ機能を展開します。 SaaS Docker のクラウド アカウントは、Docker Swarm クラスターを実行しているコンテナー サービスでお客様のインフラストラクチャに接続できます。 | Docker Swarm\(コンテナー サービスでサポートされている) |
 | 続きマラソン\(オンプレミスまたはクラウド) | [マラソン](https://mesosphere.github.io/marathon/docs/marathon-ui.html)続きの DC/OS と Apache Mesos は実稼働レベルのコンテナーのオーケストレーションとスケジューラのプラットフォームです。 <br /><br /> Mesos と連携して (DC/OS は Apache Mesos に基づく) 実行時間の長いのコントロールにサービスを示し、[プロセスとコンテナーの管理用 web UI](https://mesosphere.github.io/marathon/docs/marathon-ui.html)です。 Web UI の管理ツールを提供します。 | 続き DC/OS\(Apache に基づいて Mesos; コンテナー サービスでサポートされている) |
@@ -49,4 +49,4 @@ Azure 仮想マシン スケール セットを使用してこれらのクラス
 
 
 >[!div class="step-by-step"]
-[前](run-microservices-based-applications-in-production.md) [次へ] (モニター-コンテナー-アプリケーション-services.md)
+[前] (run-microservices-based-applications-in-production.md) [次へ] (モニター-コンテナー-アプリケーション-services.md)

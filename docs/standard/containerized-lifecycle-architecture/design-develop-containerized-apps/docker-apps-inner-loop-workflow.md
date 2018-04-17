@@ -1,18 +1,18 @@
 ---
-title: "Docker アプリ用の内部ループ開発ワークフロー"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker アプリ用の内部ループ開発ワークフロー
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 632c04507c1478238a5dc2573542f8c88bae2a51
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 7f49b19b0836636bf7656dc618ef2f181a0d7fff
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Docker アプリ用の内部ループ開発ワークフロー
 
@@ -52,7 +52,7 @@ Docker CLI を使用する Docker コンテナー詰めアプリケーション 
 
 Mac および Windows 向けの Docker の最新のバージョンがこれまでに、Docker のアプリケーションの開発よりも簡単と、セットアップは簡単です。
 
-**詳細については** Docker for Windows の設定手順についてを参照してください[https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/)です。
+**詳細については** Docker for Windows の設定手順についてを参照してください[ https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/)です。
 
 Mac の Docker を設定する方法についてを参照してください<https://docs.docker.com/docker-for-mac/>です。
 
@@ -60,7 +60,7 @@ Mac の Docker を設定する方法についてを参照してください<http
 
 Microsoft は、軽量なコード エディターで IntelliSense を示し、Mac、Windows、および Linux ではサポートされているは、Visual Studio のコードを提供[の多数の言語サポート](https://code.visualstudio.com/docs/languages/overview)(JavaScript、.NET、移動、Java、Ruby、Python、およびほとんど最新の言語)、[デバッグ](https://code.visualstudio.com/Docs/editor/debugging)、 [Git と統合](https://code.visualstudio.com/Docs/editor/versioncontrol)と[拡張機能のサポート](https://code.visualstudio.com/docs/extensions/overview)です。 このエディターは、Mac および Linux の開発者にとって最適です。 Windows もに、完全な Visual Studio アプリケーションを使用できます。
 
-**詳細については** か、Visual Studio for Windows、Mac、Linux をインストールする方法の詳細についてを参照してください[http://code.visualstudio.com/docs/setup/setup-overview/https://docs.docker.com/docker-for-mac/](http://code.visualstudio.com/docs/setup/setup-overview/https:/docs.docker.com/docker-for-mac/)です。
+**詳細については** か、Visual Studio for Windows、Mac、Linux をインストールする方法の詳細についてを参照してください[ http://code.visualstudio.com/docs/setup/setup-overview/https://docs.docker.com/docker-for-mac/](http://code.visualstudio.com/docs/setup/setup-overview/https:/docs.docker.com/docker-for-mac/)です。
 
 Docker CLI を使用して、コード エディターを使用して、コードの記述が Visual Studio のコードを使用する場合、作成者 Dockerfile を容易に行えます、docker compose.yml ファイル ワークスペースにします。 さらに、下に Docker CLI を使用して詳細な操作を実行できるスクリプトを要求する IDE から Visual Studio のコードのタスクを実行できます。
 
@@ -125,7 +125,7 @@ Docker は、アプリを実行する方法を認識しているように、dock
 
 **詳細については** .NET Core アプリケーションの Docker イメージを構築する方法についてを参照してください<https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>です。
 
-独自のイメージの構築に関する詳細については、するには[https://docs.docker.com/engine/\チュートリアル/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/)です。
+独自のイメージの構築に関する詳細については、するには[ https://docs.docker.com/engine/\チュートリアル/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/)です。
 
 **マルチプラット フォームのイメージ リポジトリ**
 
@@ -258,7 +258,7 @@ Visual Studio のコードは、Node.js と .NET Core コンテナーのよう�
 
 デバッグすることもできます Docker でコンテナーを .NET Core、Visual Studio を使用する場合、次のセクションで説明されているようです。
 
-**詳細情報:** Node.js Docker コンテナーのデバッグに関する詳細については、するには<https://blog.docker.com/2016/07/live-debugging-docker/>と[https://blogs.msdn.microsoft.com/\ ユーザー\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/)です。
+**詳細情報:** Node.js Docker コンテナーのデバッグに関する詳細については、するには<https://blog.docker.com/2016/07/live-debugging-docker/>と[ https://blogs.msdn.microsoft.com/\ ユーザー\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/)です。
 
 
 >[!div class="step-by-step"]

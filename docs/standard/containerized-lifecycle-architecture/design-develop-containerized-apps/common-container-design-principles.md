@@ -1,18 +1,18 @@
 ---
-title: "共通のコンテナー デザインの原則"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 共通のコンテナー デザインの原則
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a9cd569a931824c4fab060b99265ea9e3ca75129
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c398e2da979637c450e2c9754ff3c9e8d8233aeb
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="common-container-design-principles"></a>共通のコンテナー デザインの原則
 
@@ -26,4 +26,4 @@ ms.lasthandoff: 12/23/2017
 
 
 >[!div class="step-by-step"]
-[前](デザインの docker-applications.md) [次へ] (モノリシック applications.md)
+[前] (デザインの docker-applications.md) [次へ] (モノリシック applications.md)

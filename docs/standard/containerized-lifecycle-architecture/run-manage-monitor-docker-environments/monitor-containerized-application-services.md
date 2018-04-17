@@ -1,18 +1,18 @@
 ---
-title: "コンテナー化アプリケーションのサービスを監視します。"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: コンテナー化アプリケーションのサービスを監視します。
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 58bf96dfa06a78892563698200e6f4df5f371346
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b3ffa6c230176e1de6269ed0b30d05711ff78704
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="monitor-containerized-application-services"></a>コンテナー化アプリケーションのサービスを監視します。
 
@@ -42,10 +42,10 @@ Docker に関連してライフ サイクル イベントおよび Application I
 
 Application Insights リソースを作成するには、下記の一覧に表示される記事は、設定を指示します。 Azure ポータルを必要なスクリプトを作成します。
 
--   **Application Insights での Docker アプリケーションの監視:**[https://docs.microsoft.com/azure/application-insights/app-insights-docker](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
+-   **Application Insights での Docker アプリケーションの監視:**  [https://docs.microsoft.com/azure/application-insights/app-insights-docker](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
 
 -   **Docker Hub、Github にあるアプリケーション Insights Docker イメージ:**  
-[https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) and <https://github.com/Microsoft/ApplicationInsights-Docker>
+[https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) そして <https://github.com/Microsoft/ApplicationInsights-Docker>
 
 -   **ASP.NET の Application Insights を設定します。**  
 [https://docs.microsoft.com/azure/application-insights/app-insights-asp-net](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net)
@@ -97,7 +97,7 @@ Operations Management Suite で示すように Docker ホストのパフォー�
 
 Operations Management Suite での標準機能ではまたクエリを保存できると便利ですが増えるし、システム内の傾向を検出、クエリを保持します。
 
-**詳細については** でコンテナー ソリューションをインストールして、Docker の構成に関する情報を検索する[Operations Management Suite](http://microsoft.com/oms)に進み、 <https://docs.microsoft.com/azure/log-analytics/log-analytics-containers>です。
+**詳細については** でコンテナー ソリューションをインストールして、Docker の構成に関する情報を検索する[Operations Management Suite](http://microsoft.com/oms)に進み、<https://docs.microsoft.com/azure/log-analytics/log-analytics-containers>です。
 
 >[!div class="step-by-step"]
-[前](管理、運用の docker-environments.md) [次へ] (../key-takeaways/index.md)
+[前] (管理、運用の docker-environments.md) [次へ] (../key-takeaways/index.md)

@@ -1,18 +1,18 @@
 ---
-title: "DevOps コラボレーションを基盤としてのコンテナー"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: DevOps コラボレーションを基盤としてのコンテナー
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 832beea490bb8221c7aa4202316cbebee84ef32e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f7d0f9b1d72f353b2c22f846f723c82f769f6a4e
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>DevOps コラボレーションを基盤としてのコンテナー
 
@@ -71,4 +71,4 @@ DevOps がターゲットではない、旅を考慮してください。 元の
 -   多くのオープン ソースの投資を含む DevOps 投資既存と共にプラグ アンド プレイします。
 
 >[!div class="step-by-step"]
-[前](index.md) [次へ] (../Microsoft-platform-tools-containerized-apps/index.md)
+[前] (index.md) [次へ] (../Microsoft-platform-tools-containerized-apps/index.md)

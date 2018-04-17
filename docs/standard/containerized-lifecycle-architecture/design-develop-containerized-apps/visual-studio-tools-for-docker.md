@@ -1,18 +1,18 @@
 ---
-title: "Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0525633b23625d915fd447d438c6281fb14b3b46
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: cbd4dea32b98e79e85302aa5d4a5c97b1b0fa556
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用
 
@@ -26,7 +26,7 @@ Docker for Windows の最新のバージョンでは、これまでにアプリ�
 
 Visual Studio 2015 を使用している場合は、更新プログラム 3 またはそれ以降のバージョンと Visual Studio Tools for Docker が必要です。
 
-**詳細情報:** Visual Studio をインストールする方法の詳細についてを参照してください[https://www.visualstudio.com/\ 製品/vs-2015-製品のエディション](https://www.visualstudio.com/products/vs-2015-product-editions)です。
+**詳細情報:** Visual Studio をインストールする方法の詳細についてを参照してください[ https://www.visualstudio.com/\ 製品/vs-2015-製品のエディション](https://www.visualstudio.com/products/vs-2015-product-editions)です。
 
 Visual Studio Tools for Docker のインストールに関する詳細を参照するには、するには<http://aka.ms/vstoolsfordocker>と<https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker>です。
 
@@ -68,9 +68,9 @@ Multicontainer を展開することを実行すると、1 つの docker compose
 
 **詳細情報:** サービスの実装と Docker の Visual Studio Tools の使用の詳細については、次の記事を読み取る。
 
-ビルド、デバッグ、更新、およびローカル Docker コンテナーでのアプリの更新: [https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh/](https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh)
+ビルド、デバッグ、更新、およびローカル Docker コンテナーでのアプリを更新します。 [https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh/](https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh)
 
-リモート Docker ホストに、ASP.NET のコンテナーの展開: [https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker/](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+リモート Docker ホストに、ASP.NET のコンテナーを展開します。 [https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker/](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 
 
 >[!div class="step-by-step"]
