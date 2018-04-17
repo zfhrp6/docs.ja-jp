@@ -1,12 +1,9 @@
 ---
-title: "マネージ コードでのプロトタイプの作成"
-ms.custom: 
+title: マネージ コードでのプロトタイプの作成
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -24,19 +21,20 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d1006f59f9841a10066c83a8f0800d3a7c17500a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c59a05c5f6abfa30a71ccf7608f8a84738f99c3a
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="creating-prototypes-in-managed-code"></a>マネージ コードでのプロトタイプの作成
-このトピックは、アンマネージ関数にアクセスする方法について説明し、マネージ コードでメソッドの定義の注釈を設定するいくつかの属性フィールドを紹介しています。 プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)」を参照してください。  
+このトピックは、アンマネージ関数にアクセスする方法について説明し、マネージ コードでメソッドの定義の注釈を設定するいくつかの属性フィールドを紹介しています。 プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](marshaling-data-with-platform-invoke.md)」を参照してください。  
   
  マネージ コードからアンマネージ DLL 関数にアクセスする前に、関数の名前とエクスポートする DLL の名前を知っている必要があります。 この情報を使用すると、マネージ DLL に実装されているアンマネージ関数の定義の作成を開始できます。 さらに、プラットフォーム呼び出しが関数を作成し、関数間でデータをマーシャリングする方法を調整できます。  
   
@@ -44,7 +42,7 @@ ms.lasthandoff: 01/19/2018
 >  文字列を割り当てる Win32 API 関数を使用して、`LocalFree` などのメソッドを使用して文字列を解放できます。 プラットフォーム呼び出しは、このようなパラメーターを異なる方法で処理します。 プラットフォーム呼び出しでは、パラメーターを `String` 型の代わりに `IntPtr` 型にします。 <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> クラスにより提供されるメソッドを使用して、型を手動で文字列に変換し、手動で解放します。  
   
 ## <a name="declaration-basics"></a>宣言の基本  
- アンマネージ関数に対するマネージ定義は、次の例で確認できるように、言語に依存します。 完全なコード例については、「[プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)」を参照してください。  
+ アンマネージ関数に対するマネージ定義は、次の例で確認できるように、言語に依存します。 完全なコード例については、「[プラットフォーム呼び出しの例](platform-invoke-examples.md)」を参照してください。  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -230,12 +228,12 @@ interface IDemandStubsItf
 }  
 ```  
   
-## <a name="see-also"></a>参照  
- [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
- [エントリ ポイントの指定](../../../docs/framework/interop/specifying-an-entry-point.md)  
- [文字セットの指定](../../../docs/framework/interop/specifying-a-character-set.md)  
- [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)  
- [プラットフォーム呼び出しのセキュリティに関する考慮事項](http://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb)  
- [DLL 内の関数の識別](../../../docs/framework/interop/identifying-functions-in-dlls.md)  
- [DLL 関数を保持するクラスの作成](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)  
- [DLL 関数の呼び出し](../../../docs/framework/interop/calling-a-dll-function.md)
+## <a name="see-also"></a>関連項目  
+ [アンマネージ DLL 関数の処理](consuming-unmanaged-dll-functions.md)  
+ [エントリ ポイントの指定](specifying-an-entry-point.md)  
+ [文字セットの指定](specifying-a-character-set.md)  
+ [プラットフォーム呼び出しの例](platform-invoke-examples.md)  
+ [プラットフォーム呼び出しのセキュリティに関する考慮事項](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))  
+ [DLL 内の関数の識別](identifying-functions-in-dlls.md)  
+ [DLL 関数を保持するクラスの作成](creating-a-class-to-hold-dll-functions.md)  
+ [DLL 関数の呼び出し](calling-a-dll-function.md)

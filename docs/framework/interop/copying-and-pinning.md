@@ -1,12 +1,9 @@
 ---
-title: "コピーと固定"
-ms.custom: 
+title: コピーと固定
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - pinning, interop marshaling
@@ -14,38 +11,38 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 11739d35d3a6d845feb1f6d9544f6ea347a9942d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c785c7bc9160cb252aad61fea00cce0d9a7eacdf
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="copying-and-pinning"></a>コピーと固定
 データをマーシャリングするときに、相互運用マーシャラーはマーシャリングされるデータをコピーまたは固定できます。 データをコピーすると、あるメモリ位置のデータのコピーが別のメモリ位置に配置されます。 マネージ メモリからアンマネージ メモリへの値型のコピーと、参照渡しされる型のコピーの違いを次の図に示します。  
   
- ![値渡しされる値型と参照渡しされる値型](../../../docs/framework/interop/media/interopmarshalcopy.gif "interopmarshalcopy")  
+ ![値渡しされる値型と参照渡しされる値型](./media/interopmarshalcopy.gif "interopmarshalcopy")  
 値と参照別に渡される値型  
   
  値渡しされるメソッド引数は、スタック上の値としてアンマネージ コードにマーシャリングされます。 コピーのプロセスは直接的です。 参照渡しされる引数は、ポインターとしてスタック上に渡されます。 参照型も値渡しと参照渡しが行われます。 次の図に示されているように、値渡しされる参照型はコピーまたは固定されます。  
   
- ![COM 相互運用](../../../docs/framework/interop/media/interopmarshalpin.gif "interopmarshalpin")  
+ ![COM 相互運用](./media/interopmarshalpin.gif "interopmarshalpin")  
 値渡しされる参照型と参照渡しされる参照型  
   
  固定では一時的に現在のメモリ位置でデータをロックします。したがって、共通言語ランタイムのガベージ コレクターによって、そのデータが再配置されることを回避できます。 マーシャラーはデータを固定することでコピーのオーバーヘッドを減らし、パフォーマンスを向上させます。 マーシャリング プロセス中にデータがコピーされるか固定されるかは、そのデータの型によって決まります。  固定は <xref:System.String> などのオブジェクトのマーシャリング中に自動的に実行されますが、<xref:System.Runtime.InteropServices.GCHandle> クラスを使用して手動でメモリを固定することもできます。  
   
 ## <a name="formatted-blittable-classes"></a>書式指定された blittable クラス  
- 書式指定された [blittable](../../../docs/framework/interop/blittable-and-non-blittable-types.md) クラスは、マネージ メモリとアンマネージ メモリの両方で、固定レイアウト (書式指定されている) と共通のデータ表現を持ちます。 このような型でマーシャリングが必要な場合は、ヒープ内のオブジェクトへのポインターが呼び出し先に直接渡されます。 呼び出し先はポインターによって参照されるメモリ位置の内容を変更できます。  
+ 書式指定された [blittable](blittable-and-non-blittable-types.md) クラスは、マネージ メモリとアンマネージ メモリの両方で、固定レイアウト (書式指定されている) と共通のデータ表現を持ちます。 このような型でマーシャリングが必要な場合は、ヒープ内のオブジェクトへのポインターが呼び出し先に直接渡されます。 呼び出し先はポインターによって参照されるメモリ位置の内容を変更できます。  
   
 > [!NOTE]
 >  パラメーターに Out または In/Out のマークが付いている場合、呼び出し先はメモリの内容を変更できます。逆に、In としてマーシャリングするようにパラメーターが設定されている場合、呼び出し先は内容の変更を避ける必要があります。In は書式指定された blittable 型に対する既定の設定です。 同じクラスをタイプ ライブラリにエクスポートし、アパートメント間呼び出しのために使用した場合に、In オブジェクトを変更すると問題が発生します。  
   
 ## <a name="formatted-non-blittable-classes"></a>書式指定された blittable でないクラス  
- 書式指定された [blittable でない](../../../docs/framework/interop/blittable-and-non-blittable-types.md)クラスは、固定レイアウト (書式指定されている) を持ちますが、マネージ メモリとアンマネージ メモリではデータ表現が異なります。 次の状況では、データの変換が必要になる場合があります。  
+ 書式指定された [blittable でない](blittable-and-non-blittable-types.md)クラスは、固定レイアウト (書式指定されている) を持ちますが、マネージ メモリとアンマネージ メモリではデータ表現が異なります。 次の状況では、データの変換が必要になる場合があります。  
   
 -   blittable でないクラスを値でマーシャリングする場合、呼び出し先はデータ構造体のコピーへのポインターを受け取ります。  
   
@@ -86,8 +83,8 @@ ms.lasthandoff: 01/19/2018
   
  <xref:System.Text.StringBuilder?displayProperty=nameWithType> を値渡しする場合、マーシャラーは **StringBuilder** の内部バッファーへの参照を直接呼び出し元に渡します。 呼び出し元と呼び出し先は、バッファーのサイズに同意する必要があります。 呼び出し元は、適切な長さの **StringBuilder** を作成します。 呼び出し先は、バッファーのオーバーランが発生しないように必要な予防措置をとる必要があります。 **StringBuilder** は、値渡しされる参照型は既定で In パラメーターとして渡される、という規則の例外です。 StringBuilder は常に In/Out として渡されます。  
   
-## <a name="see-also"></a>参照  
- [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [相互運用マーシャラーによるメモリ管理](http://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee)  
- [方向属性](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
- [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>関連項目  
+ [既定のマーシャリング動作](default-marshaling-behavior.md)  
+ [相互運用マーシャラーによるメモリ管理](https://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee(v=vs.100))  
+ [方向属性](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))  
+ [相互運用マーシャリング](interop-marshaling.md)

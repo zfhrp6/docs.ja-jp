@@ -1,9 +1,9 @@
 ---
-title: "#<a name=\"ifthenelse-directives\"></a>もし。。。Then... #Else ディレクティブ"
-ms.date: 07/20/2015
+title: '#もし。。。Then... #Else ディレクティブ'
+ms.date: 04/11/2018
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.#EndIf
@@ -22,14 +22,13 @@ helpviewer_keywords:
 - else directive (#else)
 - '#Else directive [Visual Basic]'
 ms.assetid: 10bba104-e3fd-451b-b672-faa472530502
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 77757e441ae937aa86122f237e839d1005644409
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 884c7ed6f0a346f2d35f01006cea23e47907d13f
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="ifthenelse-directives"></a>#If...Then...#Else ディレクティブ
 条件付きで選択した Visual Basic コード ブロックをコンパイルします。  
@@ -67,14 +66,29 @@ ms.lasthandoff: 11/21/2017
  使用して、任意の評価の結果に関係なくすべての式が評価は`Option Compare Binary`します。 `Option Compare`ステートメントでは内の式には影響しません`#If`と`#ElseIf`ステートメントです。  
   
 > [!NOTE]
->  単一行形式、 `#If`、 `#Else`、 `#ElseIf`、および`#End If`ディレクティブが存在しません。 他のコードは、ディレクティブのいずれかと同じ行に表示できません。  
-  
-## <a name="example"></a>例  
+>  単一行形式、 `#If`、 `#Else`、 `#ElseIf`、および`#End If`ディレクティブが存在しません。 他のコードは、ディレクティブのいずれかと同じ行に表示できません。 
+
+条件付きコンパイル ブロック内のステートメントは、完全な論理ステートメントである必要があります。 たとえば、条件付きで、関数の属性だけをコンパイルすることはできませんが、条件付きでその属性と共に、関数を宣言することができます。
+
+```vb
+   #If DEBUG Then
+   <WebMethod()>
+   Public Function SomeFunction() As String
+   #Else
+   <WebMethod(CacheDuration:=86400)>
+   Public Function SomeFunction() As String
+   #End If
+```
+
+## <a name="example"></a>例
  この例では、`#If...Then...#Else`コンストラクトを特定のステートメントをコンパイルするかどうかを判断します。  
   
  [!code-vb[VbVbalrConditionalComp#1](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/if-then-else-directives_1.vb)]  
   
 ## <a name="see-also"></a>関連項目  
- [#Const ディレクティブ](../../../visual-basic/language-reference/directives/const-directive.md)  
- [If...Then...Else ステートメント](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
- [条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
+[#Const ディレクティブ](../../../visual-basic/language-reference/directives/const-directive.md)  
+[If...Then...Else ステートメント](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
+[条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
+<xref:System.Diagnostics.ConditionalAttribute?displayProperty=nameWithType>   
+
+

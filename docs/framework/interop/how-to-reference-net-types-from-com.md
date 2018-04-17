@@ -1,13 +1,9 @@
 ---
-title: "方法: COM から .NET 型を参照する"
-ms.custom: 
+title: '方法: COM から .NET 型を参照する'
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - cpp
@@ -20,17 +16,16 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: 54917f6f-cb18-4103-b622-856b55da93f3
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b452dd686286ba0ddf648ee532e67a0c121f66eb
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3ac4308230f29067f358a45fd7f882abe6e41b96
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="how-to-reference-net-types-from-com"></a>方法: COM から .NET 型を参照する
 クライアント アンド サーバー コードの観点からすると、COM と .NET Framework の違いはほとんどわかりません。 Microsoft Visual Basic クライアントでは、オブジェクト ブラウザーを使って .NET オブジェクトを表示できます。オブジェクト ブラウザーには、オブジェクトのメソッドと構文、プロパティ、およびフィールドが、他の COM オブジェクトの場合と同様に公開されます。  
@@ -39,7 +34,7 @@ ms.lasthandoff: 01/19/2018
   
 ### <a name="to-import-a-library"></a>ライブラリをインポートするには  
   
--   **#import** ディレクティブで **raw_interfaces_only** オプションを指定します。 例:  
+-   **#import** ディレクティブで **raw_interfaces_only** オプションを指定します。 例えば:  
   
     ```cpp  
     #import "..\LoanLib\LoanLib.tlb" raw_interfaces_only  
@@ -47,15 +42,15 @@ ms.lasthandoff: 01/19/2018
   
      - または -  
   
--   Mscorlib.tlb の #import ディレクティブを含めます。 例:  
+-   Mscorlib.tlb の #import ディレクティブを含めます。 例えば:  
   
     ```cpp  
     #import "mscorlib.tlb"  
     #import "..\LoanLib\LoanLib.tlb"  
     ```  
   
-## <a name="see-also"></a>参照  
- [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
- [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)  
- [.NET オブジェクトの呼び出し](http://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33)  
- [COM アクセスに対するアプリケーションの配置](http://msdn.microsoft.com/library/fb63564c-c1b9-4655-a094-a235625882ce)
+## <a name="see-also"></a>関連項目  
+ [COM への .NET Framework コンポーネントの公開](exposing-dotnet-components-to-com.md)  
+ [COM へのアセンブリの登録](registering-assemblies-with-com.md)  
+ [.NET オブジェクトの呼び出し](https://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33(v=vs.100))  
+ [COM アクセスに対するアプリケーションの配置](https://msdn.microsoft.com/library/fb63564c-c1b9-4655-a094-a235625882ce(v=vs.100))

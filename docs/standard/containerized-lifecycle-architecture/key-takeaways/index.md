@@ -1,18 +1,18 @@
 ---
 title: 重要な習得事項
 description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル (e-book)_v1.1
-keywords: Docker, マイクロサービス, ASP.NET, コンテナー
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2ad2e0171b8deaead6d0b28a9da67fec245a405a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5bda215f895fd0e3a66e10c2d85a431314d737fc
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="key-takeaways"></a>重要な習得事項
 

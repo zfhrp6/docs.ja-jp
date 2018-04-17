@@ -1,10 +1,10 @@
 ---
-title: "Visual Basic での組"
-ms.custom: 
+title: Visual Basic での組
+ms.custom: ''
 ms.date: 04/23/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bf26b7ce58c1e20fbbe5043cbd2acfd5712837fa
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 68c82e75ce4a438381bc9c60ce8c992565eb31cb
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="tuples-visual-basic"></a>タプル (Visual Basic)
 
@@ -80,7 +80,7 @@ Visual Basic コンパイラは場合によっては、候補名からタプル�
 
 Visual Basic の組が値型の 1 つのインスタンスでは、 **System.ValueTuple**ジェネリック型です。 たとえば、`holiday`前の例で定義される組がのインスタンス、<xref:System.ValueTuple%603>構造体。 軽量のデータ コンテナーに設計されています。 組の目的は、複数のデータ項目を含むオブジェクトを作成するが簡単に、ため、可能性のあるカスタム構造機能の一部が不足しています。 次の設定があります。
 
-- 顧客メンバー。 独自のプロパティ、メソッド、または組のイベントを定義することはできません。
+- カスタム メンバー。 独自のプロパティ、メソッド、または組のイベントを定義することはできません。
 
 - 検証します。 フィールドに割り当てられているデータを検証することはできません。
 

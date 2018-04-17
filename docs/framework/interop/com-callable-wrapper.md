@@ -1,12 +1,9 @@
 ---
-title: "COM 呼び出し可能ラッパー"
-ms.custom: 
+title: COM 呼び出し可能ラッパー
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,23 +16,23 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 65d09b33982f62b965d6907902ded98f87d9a97e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 270d7e85491f0f4ada797910d4fc12c1a14be625
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="com-callable-wrapper"></a>COM 呼び出し可能ラッパー
 COM クライアントが .NET オブジェクトを呼び出すと、共通言語ランタイムがマネージ オブジェクトとそのオブジェクトのための COM 呼び出し可能ラッパー (CCW: COM Callable Wrapper) を作成します。 COM クライアントは .NET オブジェクトを直接参照できないため、CCW をマネージ オブジェクトのプロキシとして使用します。  
   
  ランタイムは、サービスを要求している COM クライアントの数に関係なく、1 つのマネージ オブジェクトに対して 1 つの CCW を作成します。 次の図に示すように、複数の COM クライアントが、INew インターフェイスを公開する CCW への参照を保持できます。 CCW は、INew インターフェイスを実装するマネージ オブジェクトへの 1 つの参照を保持し、ガベージ コレクションされます。 COM クライアントと .NET クライアントは、同一のマネージ オブジェジェクトに対して同時に要求できます。  
   
- ![COM 呼び出し可能ラッパー](../../../docs/framework/interop/media/ccw.gif "ccw")  
+ ![COM 呼び出し可能ラッパー](./media/ccw.gif "ccw")  
 COM 呼び出し可能ラッパー経由の .NET オブジェクト アクセス  
   
  CCW は、.NET Framework. 内で実行されている他のクラスからは見えません。 CCW の主な目的は、マネージ コードとアンマネージ コードの間の呼び出しをマーシャリングすることですが、CCW は、CCW にラップされているマネージ オブジェクトのオブジェクト ID やオブジェクトの有効期間の管理も行います。  
@@ -46,12 +43,13 @@ COM 呼び出し可能ラッパー経由の .NET オブジェクト アクセス
 ## <a name="object-lifetime"></a>オブジェクトの有効期間  
  CCW にラップされている .NET クライアントとは異なり、CCW は、従来の COM 方式で参照カウントを使用します。 CCW の参照カウントが 0 (ゼロ) に達すると、ラッパーはマネージ オブジェクトの参照を解放します。 参照が残っていないマネージ オブジェクトは、次のガベージ コレクション サイクルで収集されます。  
   
-## <a name="simulating-com-interfaces"></a>COM インターフェイスのシミュレート  
- [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md) (CCW) は、パブリックで COM から参照できるすべてのインターフェイス、データ型、および戻り値を、COM によるインターフェイス ベースの対話の適用と整合性のある方法で COM クライアントに公開します。 COM クライアントの場合、.NET Framework オブジェクトのメソッドを呼び出すことは COM オブジェクトのメソッドを呼び出すことと同じです。  
+## <a name="simulating-com-interfaces"></a>COM インターフェイスのシミュレート
+
+CCW は、すべてのパブリック、COM から参照できるインターフェイス、データ型、およびインターフェイス ベースの相互作用の COM の適用と整合性のある方法で COM クライアントに戻り値を公開します。 COM クライアントの場合、.NET Framework オブジェクトのメソッドを呼び出すことは COM オブジェクトのメソッドを呼び出すことと同じです。  
   
  このシームレスなアプローチを実現するために、CCW は **IUnknown** や **IDispatch** などの従来の COM インターフェイスを製造します。 次の図が示すように、CCW は、ラップしている .NET オブジェクトの 1 つの参照を保持します。 COM クライアントと .NET オブジェクトの両方は、CCW のプロキシとスタブ構築を介して相互に対話します。  
   
- ![COM インターフェイス](../../../docs/framework/interop/media/ccwwithinterfaces.gif "ccwwithinterfaces")  
+ ![COM インターフェイス](./media/ccwwithinterfaces.gif "ccwwithinterfaces")  
 COM インターフェイスおよび COM 呼び出し可能ラッパー  
   
  マネージ環境でクラスによって明示的実装されるインターフェイスを公開するだけでなく、.NET Framework は、オブジェクトの代わりに、次の表にリストされている COM インターフェイスの実装を提供します。 .NET クラスは、これらのインターフェイスの独自の実装を提供することで、既定の動作をオーバーライドできます。 ただし、ランタイムは **IUnknown** と **IDispatch** インターフェイス実装を常に提供します。  
@@ -69,15 +67,15 @@ COM インターフェイスおよび COM 呼び出し可能ラッパー
   
 |インターフェイス|説明|  
 |---------------|-----------------|  
-|(_*classname*) クラス インターフェイス|マネージ オブジェクトで明示的に公開されている、すべてのパブリック インターフェイス、メソッド、プロパティ、およびフィールドを公開する、ランタイムによって公開され、明示的に定義されていない、インターフェイス、|  
+|(\_*Classname*) クラス インターフェイス|マネージ オブジェクトで明示的に公開されている、すべてのパブリック インターフェイス、メソッド、プロパティ、およびフィールドを公開する、ランタイムによって公開され、明示的に定義されていない、インターフェイス、|  
 |**IConnectionPoint** と **IconnectionPointContainer**|デリゲート ベースのソース イベント (イベント サブスクライバーを登録するためのインターフェイス) を供給するオブジェクトのインターフェイス。|  
 |**IdispatchEx**|クラスが **IExpando** を実装する場合、ランタイムによって提供されているインターフェイス。 **IDispatchEx** インターフェイスは、**IDispatch** インターフェイスの拡張版で、**IDispatch** とは異なり、列挙、追加、削除、および大文字小文字を区別したメンバーの呼び出しが可能になります。|  
 |**IEnumVARIANT**|クラスが **IEnumerable** を実装する場合、コレクション内のオブジェクトを列挙するコレクション型クラスのインターフェイス。|  
   
 ## <a name="introducing-the-class-interface"></a>クラス インターフェイスの概要  
- マネージ コードで明示的に定義されていないクラス インターフェイスは、.NET オブジェクトで明示的に公開されるすべてのパブリック メソッド、プロパティ、フィールド、およびイベントを公開するインターフェイスです。 このインターフェイスは、デュアルまたはディスパッチ専用インターフェイスです。 クラス インターフェイスは、前にアンダー スコアの付いた、.NET クラス自体の名前を受け取ります。 たとえば、クラス Mammal の場合、クラス インターフェイスは _Mammal です。  
+ マネージ コードで明示的に定義されていないクラス インターフェイスは、.NET オブジェクトで明示的に公開されるすべてのパブリック メソッド、プロパティ、フィールド、およびイベントを公開するインターフェイスです。 このインターフェイスは、デュアルまたはディスパッチ専用インターフェイスです。 クラス インターフェイスは、前にアンダー スコアの付いた、.NET クラス自体の名前を受け取ります。 たとえば、クラス Mammal の場合は、クラス インターフェイスは\_Mammal です。  
   
- 派生クラスの場合、クラス インターフェイスは、基本クラスのすべてのパブリック メソッド、プロパティ、およびフィールドも公開します。 派生クラスは、各基本クラスのクラス インターフェイスも公開します。 たとえば、クラス Mammal がクラス MammalSuperclass を拡張し、そのクラスがさらに System.Object を拡張する場合、.NET オブジェクトは COM クライアントに _Mammal、_MammalSuperclass、および _Object という名前の 3 つのクラス インターフェイスを公開します。  
+ 派生クラスの場合、クラス インターフェイスは、基本クラスのすべてのパブリック メソッド、プロパティ、およびフィールドも公開します。 派生クラスは、各基本クラスのクラス インターフェイスも公開します。 たとえば、クラス Mammal は、クラス拡張を拡張、System.Object を拡張する、という名前のインターフェイスをクラス 3 COM クライアントに .NET オブジェクトの公開\_Mammal、\_拡張、および\_オブジェクト。  
   
  たとえば、次の .NET クラスを考えます。  
   
@@ -104,7 +102,7 @@ public class Mammal
 }  
 ```  
   
- COM クライアントは、`_Mammal` という名前のクラス インターフェイスへのポインターを取得できます。これについては、[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) ツールで生成されるタイプ ライブラリで説明されています。 `Mammal` クラスが 1 つ以上のインターフェイスを実装した場合、それらのインターフェイスはコクラスの下に表示されます。  
+ COM クライアントは、`_Mammal` という名前のクラス インターフェイスへのポインターを取得できます。これについては、[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../tools/tlbexp-exe-type-library-exporter.md) ツールで生成されるタイプ ライブラリで説明されています。 `Mammal` クラスが 1 つ以上のインターフェイスを実装した場合、それらのインターフェイスはコクラスの下に表示されます。  
   
 ```  
 [odl, uuid(…), hidden, dual, nonextensible, oleautomation]  
@@ -156,7 +154,7 @@ public class LoanApp : IExplicit {
   
  **ClassInterfaceType.None** 値により、クラス メタデータをタイプ ライブラリにエクスポートするときに、クラス インターフェイスが生成されなくなります。 前の例では、COM クライアントは `IExplicit` インターフェイスを通してのみ `LoanApp` クラスにアクセスできます。  
   
-### <a name="avoid-caching-dispatch-identifiers-dispids"></a>ディスパッチ識別子 (DISPID) をキャッシュしないようにします。  
+### <a name="avoid-caching-dispatch-identifiers-dispids"></a>ディスパッチ識別子 (Dispid) をキャッシュしないように
  クラス インターフェイスの使用は、インターフェイス メンバーの DISPID をキャッシュしていないスクリプト化されたクライアント、Microsoft Visual Basic 6.0 クライアント、または遅延バインディング クライアントのために許容されるオプションです。 DISPID は遅延バインディングを有効にするインターフェイス メンバーを特定します。  
   
  クラス インターフェイスでは、インターフェイス内のメンバーの位置に基づいて DISPID が生成されます。 メンバーの順序を変更してクラスをタイプ ライブラリにエクスポートすると、クラス インターフェイスで生成される DISPID が変更されます。  
@@ -185,11 +183,9 @@ public class LoanApp : IAnother {
   
  自動的に生成されたデュアル インターフェイスが適切な場合もまれにありますが、より多くの場合、それはバージョンに関連する複雑さを生じさせます。 たとえば、派生クラスのクラス インターフェイスを使用する COM クライアントは、基本クラスが変更されると簡単に中断します。 サード パーティが基本クラスを提供するとき、クラス インターフェイスのレイアウトを自分で制御することはできません。 さらに、ディスパッチ専用インターフェイスとは異なり、デュアル インターフェイス (**ClassInterface.AutoDual**) は、エクスポートされたタイプ ライブラリ内にクラス インターフェイスの説明を提供します。 そのような説明は、遅延バインディングのクライアントが実行時に DISPID をキャッシュすることを促進します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
- [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)  
- [COM ラッパー](../../../docs/framework/interop/com-wrappers.md)  
- [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
- [COM インターフェイスのシミュレート](http://msdn.microsoft.com/library/ad2ab959-e2be-411b-aaff-275c3fba606c)  
- [要件 (相互運用のための .NET 型の)](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
- [ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md)
+ [COM ラッパー](com-wrappers.md)  
+ [COM への .NET Framework コンポーネントの公開](exposing-dotnet-components-to-com.md)  
+ [要件 (相互運用のための .NET 型の)](qualifying-net-types-for-interoperation.md)  
+ [ランタイム呼び出し可能ラッパー](runtime-callable-wrapper.md)

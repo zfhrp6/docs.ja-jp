@@ -1,20 +1,20 @@
 ---
-title: "Docker とは何ですか。"
-description: "Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Docker について
+description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c75b2fa87e5aad93693c76c3bbd135044b36525f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c471c4bc1588aaa6c0e145ede0b67ab5340f254a
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="what-is-docker"></a>Docker とは何ですか。
+# <a name="what-is-docker"></a>Docker について
 
 [Docker](https://www.docker.com/)は、[オープン ソース プロジェクト](https://github.com/docker/docker)クラウドまたは内部設置型で実行でき、移植可能で自分のコンテナーとしてのアプリケーションの展開を自動化するため (を参照してください図 1-2)。 Docker はでも、[会社](https://www.docker.com/)を昇格し、このテクノロジは、クラウド、Linux、およびなどの Microsoft Windows ベンダーと共同で作業を開発します。
 
@@ -30,11 +30,11 @@ Docker が付属する開発環境でコンテナーをホストし、その他�
 
 実行する[Windows コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)ランタイムの 2 種類があります。
 
--   **Windows Server コンテナー** このランタイムには、プロセスと名前空間の分離テクノロジによる分離をアプリケーションが用意されています。 Windows Server コンテナーは、コンテナー ホストとホストで実行されているすべてのコンテナーに、カーネルを共有します。
+-   **Windows Server コンテナー** このランタイムには、プロセスと名前空間の分離テクノロジによる分離をアプリケーションが用意されています。 Windows Server コンテナーは、コンテナー ホストおよびホストで実行されているすべてのコンテナーとカーネルを共有します。
 
--   **HYPER-V コンテナー** で各コンテナーを大幅に最適化された VM で実行されている Windows Server コンテナーによって提供される分離性を展開します。 コンテナーでは、HYPER-V、分離性を提供することは、この構成では、コンテナー ホストのカーネルを共有されません。
+-   **HYPER-V コンテナー** で各コンテナーを大幅に最適化された VM で実行されている Windows Server コンテナーによって提供される分離性を展開します。 この構成では、コンテナー ホストのカーネルは、Hyper-V コンテナーと共有されず、分離性を提供します。
 
-これらのコンテナーのイメージは同じ方法で作成され、同じように機能します。 イメージからコンテナーを作成する方法に違いが、HYPER-V コンテナーの実行で追加のパラメーターが必要です。 詳細については、「 [Hyper-v コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)です。
+これらのコンテナーのイメージは同じ方法で作成され、同じように機能します。 イメージからコンテナーを作成する方法に違いが、HYPER-V コンテナーの実行で追加のパラメーターが必要です。 詳細については、「[Hyper-V コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)」を参照してください。
 
 ## <a name="comparing-docker-containers-with-vms"></a>Vm での Docker コンテナーの比較
 
@@ -44,7 +44,7 @@ Docker が付属する開発環境でコンテナーをホストし、その他�
 
 同じカーネルを実行する副作用として Vm よりも低い分離を実現します。
 
-イメージの主な目的は、することが環境 (依存関係) 同じ上でさまざまな展開です。 つまり、コンピューターにデバッグおよび保証同じ環境内の別のコンピューターに展開できます。
+イメージの主な目的は、異なる展開間で同じ環境 (依存関係) にすることです。 自分のコンピューターでデバッグし、同じ環境が保証されている別のコンピューターに展開できます。
 
 コンテナー イメージは、アプリやサービスをパッケージ化し、信頼性が高く、再現可能な方法で展開する方法です。 この点で、Docker は、テクノロジだけではありませんも理念され、処理します。
 
@@ -56,4 +56,4 @@ Docker コンテナーへの従来の仮想マシンの図 1-3: 比較
 
 
 >[!div class="step-by-step"]
-[前](index.md) [次へ] (docker terminology.md)
+[Previous] (index.md) [Next] (docker-terminology.md)

@@ -1,12 +1,9 @@
 ---
-title: "配列に対する既定のマーシャリング"
-ms.custom: 
+title: 配列に対する既定のマーシャリング
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-clr
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,21 +12,22 @@ helpviewer_keywords:
 - interop marshaling, arrays
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 91df17448a57f7495dc95fb2b4ab1fa63dd8a27f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 84f4015fd9bc5eb2de11b71530115d20c583d21d
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="default-marshaling-for-arrays"></a>配列に対する既定のマーシャリング
 全体がマネージ コードで構成されるアプリケーションでは、共通言語ランタイムは、配列型を In/Out パラメーターとして渡します。 これに対し、相互運用マーシャラーは、既定で In パラメーターとして配列を渡します。  
   
- [ピン留め最適化](../../../docs/framework/interop/copying-and-pinning.md)を使用すると、同じアパートメント内のオブジェクトと対話するときに、blittable 配列を In/Out パラメーターとして操作しているように見せることができます。 ただし、後でコードをコンピューター間のプロキシを生成するために使用されるタイプ ライブラリにエクスポートし、そのライブラリがアパートメント間で呼び出しをマーシャリングするために使用される場合は、呼び出しで In パラメーターの動作を true に戻すことができます。  
+ [ピン留め最適化](copying-and-pinning.md)を使用すると、同じアパートメント内のオブジェクトと対話するときに、blittable 配列を In/Out パラメーターとして操作しているように見せることができます。 ただし、後でコードをコンピューター間のプロキシを生成するために使用されるタイプ ライブラリにエクスポートし、そのライブラリがアパートメント間で呼び出しをマーシャリングするために使用される場合は、呼び出しで In パラメーターの動作を true に戻すことができます。  
   
  配列は本質的に複雑で、マネージ配列とアンマネージ配列間の違いが、他の非 blittable 型より多くの情報を保証します。 このトピックでは、マーシャリング配列に関する以下の情報を示します。  
   
@@ -51,9 +49,9 @@ ms.lasthandoff: 01/19/2018
   
 |マネージ配列型|要素型|順位|下限|シグネチャの表記|  
 |------------------------|------------------|----------|-----------------|------------------------|  
-|**ELEMENT_TYPE_ARRAY**|型で指定。|ランクで指定。|必要に応じて境界で指定。|*type* **[** *n*,*m* **]**|  
+|**ELEMENT_TYPE_ARRAY**|型で指定。|ランクで指定。|必要に応じて境界で指定。|*型* **[** *n*、*m* **]**|  
 |**ELEMENT_TYPE_CLASS**|不明|不明|不明|**System.Array**|  
-|**ELEMENT_TYPE_SZARRAY**|型で指定。|1|0|*type* **[** *n* **]**|  
+|**ELEMENT_TYPE_SZARRAY**|型で指定。|1|0|*型* **[** *n* **]**|  
   
 <a name="cpcondefaultmarshalingforarraysanchor2"></a>   
 ## <a name="unmanaged-arrays"></a>アンマネージ配列  
@@ -71,7 +69,7 @@ ms.lasthandoff: 01/19/2018
 ### <a name="safe-arrays"></a>セーフ配列  
  セーフ配列がタイプ ライブラリから .NET アセンブリにインポートされるときに、配列は既知の型 (**int** など) の 1 次元配列に変換されます。 パラメーターに適用される同じ型変換規則は、配列要素にも適用されます。 たとえば、**BSTR** 型のセーフ配列は文字列のマネージ配列になり、バリアントのセーフ配列はオブジェクトのマネージ配列になります。 **SAFEARRAY** 要素型はタイプ ライブラリからキャプチャされ、<xref:System.Runtime.InteropServices.UnmanagedType> 列挙型の **SAFEARRAY** 値に保存されます。  
   
- セーフ配列のランクと境界はタイプ ライブラリからは判断できないため、ランクは 1 に等しく下限は 0 に等しいと見なされます。 ランクと境界は、[タイプ ライブラリ インポーター (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) によって生成されるマネージ シグネチャで定義する必要があります。 実行時にメソッドに渡されるランクが異なる場合、<xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> がスローされます。 実行時に渡される配列の型が異なる場合、<xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> がスローされます。 次の例は、マネージ コードとアンマネージ コードでのセーフ配列を示しています。  
+ セーフ配列のランクと境界はタイプ ライブラリからは判断できないため、ランクは 1 に等しく下限は 0 に等しいと見なされます。 ランクと境界は、[タイプ ライブラリ インポーター (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md) によって生成されるマネージ シグネチャで定義する必要があります。 実行時にメソッドに渡されるランクが異なる場合、<xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> がスローされます。 実行時に渡される配列の型が異なる場合、<xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> がスローされます。 次の例は、マネージ コードとアンマネージ コードでのセーフ配列を示しています。  
   
  **アンマネージ シグネチャ**  
   
@@ -100,7 +98,7 @@ void New3([MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VT_BSTR)]
    ref String[] ar);  
 ```  
   
- 多次元配列 (0 以外の値にバインドされたセーフ配列) は、Tlbimp.exe によって生成されたメソッド シグネチャが、**ELEMENT_TYPE_SZARRAY** ではなく **ELEMENT_TYPE_ARRAY** の要素型を示すように変更された場合に、マネージ コードにマーシャリングできます。 または、Tlbimp.exe で **/sysarray** スイッチを使用してすべての配列を <xref:System.Array?displayProperty=nameWithType> オブジェクトとしてインポートできます。 渡される配列が多次元配列だとわかっている場合は、Tlbimp.exe で生成された Microsoft Intermediate Language (MSIL) コードを編集してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。  
+ 多次元配列 (0 以外の値にバインドされたセーフ配列) は、Tlbimp.exe によって生成されたメソッド シグネチャが、**ELEMENT_TYPE_SZARRAY** ではなく **ELEMENT_TYPE_ARRAY** の要素型を示すように変更された場合に、マネージ コードにマーシャリングできます。 または、Tlbimp.exe で **/sysarray** スイッチを使用してすべての配列を <xref:System.Array?displayProperty=nameWithType> オブジェクトとしてインポートできます。 渡される配列が多次元配列だとわかっている場合は、Tlbimp.exe で生成された Microsoft Intermediate Language (MSIL) コードを編集してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](https://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be(v=vs.100))」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。  
   
 ### <a name="c-style-arrays"></a>C スタイル配列  
  C スタイル配列がタイプ ライブラリから .NET アセンブリにインポートされると、その配列は **ELEMENT_TYPE_SZARRAY** に変換されます。  
@@ -140,7 +138,7 @@ void New2([MarshalAs(UnmanagedType.LPArray,
    ArraySubType=UnmanagedType.LPWStr, SizeConst=10)] String[] ar);  
 ```  
   
- インターフェイス定義言語 (IDL) ソース内の配列に **size_is** 属性または **length_is** 属性を適用してサイズをクライアントに伝達することができますが、Microsoft インターフェイス定義言語 (MIDL) コンパイラはその情報をタイプ ライブラリに伝達しません。 サイズがわからないと、相互運用マーシャリング サービスが配列要素をマーシャリングできません。 その結果、可変長配列は参照引数としてインポートされます。 例:  
+ インターフェイス定義言語 (IDL) ソース内の配列に **size_is** 属性または **length_is** 属性を適用してサイズをクライアントに伝達することができますが、Microsoft インターフェイス定義言語 (MIDL) コンパイラはその情報をタイプ ライブラリに伝達しません。 サイズがわからないと、相互運用マーシャリング サービスが配列要素をマーシャリングできません。 その結果、可変長配列は参照引数としてインポートされます。 例えば:  
   
  **アンマネージ シグネチャ**  
   
@@ -164,7 +162,7 @@ void New2(ref double ar);
 void New3(ref String ar);   
 ```  
   
- Tlbimp.exe によって生成された Microsoft Intermediate Language (MSIL) コードを編集して、マーシャラーに配列サイズを提供してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。 配列内の要素の数を示すには、次の方法のいずれかの方法で、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 型をマネージ メソッド定義の配列パラメーターに適用します。  
+ Tlbimp.exe によって生成された Microsoft Intermediate Language (MSIL) コードを編集して、マーシャラーに配列サイズを提供してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](https://msdn.microsoft.com/library/4652beaf-77d0-4f37-9687-ca193288c0be(v=vs.100))」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。 配列内の要素の数を示すには、次の方法のいずれかの方法で、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 型をマネージ メソッド定義の配列パラメーターに適用します。  
   
 -   配列内の要素数を含む別のパラメーターを特定します。 パラメーターは位置によって識別され、最初のパラメーターは番号 0 から始まります。     
   
@@ -180,7 +178,7 @@ void New3(ref String ar);
        [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=0)] int[] ar );  
     ```  
   
--   配列のサイズを定数として定義します。 例:  
+-   配列のサイズを定数として定義します。 例えば:  
   
     ```vb  
     Sub [New](\<MarshalAs(UnmanagedType.LPArray, SizeConst:=128)> _  
@@ -212,7 +210,7 @@ void New3(ref String ar);
  LPSTR または LPWSTR を含む構造体の配列に関連する OLE オートメーションの制限があります。  そのため、**String** フィールドは **UnmanagedType.BSTR** としてマーシャリングする必要があります。 この操作を行わない場合、例外がスローされます。  
   
 ### <a name="elementtypeszarray"></a>ELEMENT_TYPE_SZARRAY  
- **ELEMENT_TYPE_SZARRAY** パラメーター (1 次元配列) を含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。 同じ変換規則が配列要素型に適用されます。 マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。 例:  
+ **ELEMENT_TYPE_SZARRAY** パラメーター (1 次元配列) を含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。 同じ変換規則が配列要素型に適用されます。 マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。 例えば:  
   
 #### <a name="managed-signature"></a>マネージ シグネチャ  
   
@@ -235,7 +233,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  セーフ配列のランクは常に 1 で、下限は常に 0 です。 サイズは実行時に渡されるマネージ配列のサイズによって決まります。  
   
- <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、配列を C スタイル配列としてマーシャリングすることもできます。 例:  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、配列を C スタイル配列としてマーシャリングすることもできます。 例えば:  
   
 #### <a name="managed-signature"></a>マネージ シグネチャ  
   
@@ -270,7 +268,7 @@ HRESULT New(LPStr ar[]);
  マーシャラーには配列をマーシャリングするために必要な長さ情報がありますが、配列の長さは通常、呼び出し先に長さを伝えるために個別の引数として渡されます。  
   
 ### <a name="elementtypearray"></a>ELEMENT_TYPE_ARRAY  
- **ELEMENT_TYPE_ARRAY** パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。 マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。 例:  
+ **ELEMENT_TYPE_ARRAY** パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。 マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。 例えば:  
   
 #### <a name="managed-signature"></a>マネージ シグネチャ  
   
@@ -293,7 +291,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  セーフ配列のランク、サイズ、およ境界は、マネージ配列の特性によって実行時に決定されます。  
   
- <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を適用することで、配列を C スタイル配列としてマーシャリングすることもできます。 例:  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を適用することで、配列を C スタイル配列としてマーシャリングすることもできます。 例えば:  
   
 #### <a name="managed-signature"></a>マネージ シグネチャ  
   
@@ -320,7 +318,7 @@ HRESULT New(long ar[]);
 HRESULT New(LPStr ar[]);  
 ```  
   
- 入れ子にされた配列をマーシャリングすることはできません。 たとえば、次のシグネチャを[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) を使用してエクスポートすると、エラーが発生します。  
+ 入れ子にされた配列をマーシャリングすることはできません。 たとえば、次のシグネチャを[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../tools/tlbexp-exe-type-library-exporter.md) を使用してエクスポートすると、エラーが発生します。  
   
 #### <a name="managed-signature"></a>マネージ シグネチャ  
   
@@ -333,7 +331,7 @@ void New(long [][][] ar );
 ```  
   
 ### <a name="elementtypeclass-systemarray"></a>ELEMENT_TYPE_CLASS \<System.Array>  
- <xref:System.Array?displayProperty=nameWithType> パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **_Array** インターフェイスに変換されます。 マネージ配列の内容には、**_Array** インターフェイスのメソッドとプロパティを介してのみアクセスできます。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、**System.Array** を **SAFEARRAY** としてマーシャリングすることもできます。 セーフ配列としてマーシャリングすると、配列要素はバリアントとしてマーシャリングされます。 例:  
+ <xref:System.Array?displayProperty=nameWithType> パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **_Array** インターフェイスに変換されます。 マネージ配列の内容には、**_Array** インターフェイスのメソッドとプロパティを介してのみアクセスできます。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、**System.Array** を **SAFEARRAY** としてマーシャリングすることもできます。 セーフ配列としてマーシャリングすると、配列要素はバリアントとしてマーシャリングされます。 例えば:  
   
 #### <a name="managed-signature"></a>マネージ シグネチャ  
   
@@ -381,8 +379,8 @@ public struct MyStruct {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
- [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)  
- [Blittable 型と非 Blittable 型](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [方向属性](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
- [コピーと固定](../../../docs/framework/interop/copying-and-pinning.md)
+## <a name="see-also"></a>関連項目  
+ [既定のマーシャリング動作](default-marshaling-behavior.md)  
+ [Blittable 型と非 Blittable 型](blittable-and-non-blittable-types.md)  
+ [方向属性](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))  
+ [コピーと固定](copying-and-pinning.md)

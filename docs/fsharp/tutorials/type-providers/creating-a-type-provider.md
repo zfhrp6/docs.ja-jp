@@ -1,7 +1,7 @@
 ---
-title: "チュートリアル : 型プロバイダーの作成 (F#)"
-description: "F# 3.0 での基本的な概念を説明するためにいくつかの単純型プロバイダーを確認するには、独自の f# 型プロバイダーを作成する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 'チュートリアル: 型プロバイダー (f#) を作成します。'
+description: F# 3.0 での基本的な概念を説明するためにいくつかの単純型プロバイダーを確認するには、独自の f# 型プロバイダーを作成する方法を説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
@@ -10,13 +10,13 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: 30d1c20d66fd0a193c05c97ee726a886f98356ad
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: b2e83218184bd1aef8258378485b99697cc8cf8d
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="tutorial-creating-a-type-provider"></a>チュートリアル: 型プロバイダーを作成します。
+# <a name="tutorial-create-a-type-provider"></a>チュートリアル: 型プロバイダーを作成します。
 
 F# 型プロバイダー メカニズムは、インフォメーション リッチ プログラミングのサポートの重要な部分です。 このチュートリアルでは、基本的な概念を示すために単純な型プロバイダーをいくつか作成する過程を通して、独自の型プロバイダーを作成する方法を説明します。 F# 型プロバイダー メカニズムの詳細については、次を参照してください。[型プロバイダー](index.md)です。
 

@@ -1,13 +1,9 @@
 ---
 title: 既定のマーシャリングの動作
-ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,17 +13,16 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f0a8fcba31ddfa09ca60f8ba6cf08d20b270c3da
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 7d653e6bd82a897d1fe8591f263a12f4c3a67abf
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="default-marshaling-behavior"></a>既定のマーシャリングの動作
 相互運用マーシャリングは、メソッドのパラメーターに関連付けられたデータが、マネージ メモリとアンマネージ メモリの間で渡されるときに、どのように動作するかを指示する規則に従って機能します。 これらの組み込みの規則は、データ型の変換などのマーシャリング動作、呼び出し先が渡されたデータを変更してその変更を呼び出し元にこ返すことが可能かどうか、およびどのような状況のときにマーシャラーがパフォーマンスの最適化を実現するかを制御します。  
@@ -52,10 +47,10 @@ BSTR MethodOne (BSTR b) {
   
  ただし、メソッドをプラットフォーム呼び出しのプロトタイプとして定義する場合は、各 **BSTR** 型を <xref:System.String> 型に置き換えて、`MethodOne` を呼び出します。共通言語ランタイムは、`b` の解放を 2 回試行します。 **String** 型ではなく <xref:System.IntPtr> 型を使用することにより、マーシャリングの動作を変更できます。  
   
- ランタイムは、常に **CoTaskMemFree** メソッドを使用してメモリを解放します。 使用しているメモリが **CoTaskMemAlloc** メソッドで割り当てられていない場合、**IntPtr** を使用し、適切なメソッドを使用して手動でメモリを解放する必要があります。 同様に、カーネル メモリへのポインターを返す **GetCommandLine** 関数を Kernel32.dll から使用するときなど、メモリを解放してはいけない状況のときには、自動的なメモリの解放を防止できます。 手動でメモリを解放する方法について詳しくは、「[Buffers サンプル](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5)」を参照してください。  
+ ランタイムは、常に **CoTaskMemFree** メソッドを使用してメモリを解放します。 使用しているメモリが **CoTaskMemAlloc** メソッドで割り当てられていない場合、**IntPtr** を使用し、適切なメソッドを使用して手動でメモリを解放する必要があります。 同様に、カーネル メモリへのポインターを返す **GetCommandLine** 関数を Kernel32.dll から使用するときなど、メモリを解放してはいけない状況のときには、自動的なメモリの解放を防止できます。 手動でメモリを解放する方法について詳しくは、「[Buffers サンプル](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5(v=vs.100))」を参照してください。  
   
 ## <a name="default-marshaling-for-classes"></a>クラスに対する既定のマーシャリング  
- クラスは、COM 相互運用でのみマーシャリングすることができ、常にインターフェイスとしてマーシャリングされます。 場合によっては、クラスをマーシャリングするために使用されるインターフェイスが、クラス インターフェイスと呼ばれます。 クラス インターフェイスを任意のインターフェイスでオーバーライドする方法について詳しくは、「[クラス インターフェイスの概要](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024)」を参照してください。  
+ クラスは、COM 相互運用でのみマーシャリングすることができ、常にインターフェイスとしてマーシャリングされます。 場合によっては、クラスをマーシャリングするために使用されるインターフェイスが、クラス インターフェイスと呼ばれます。 任意のインターフェイスを持つクラス インターフェイスをオーバーライドする方法の詳細については、次を参照してください。[クラス インターフェイスの概要](com-callable-wrapper.md#introducing-the-class-interface)です。  
   
 ### <a name="passing-classes-to-com"></a>クラスを COM に渡す  
  マネージ クラスが COM に渡されると、相互運用マーシャラーは自動的にクラスを COM プロキシでラップし、プロキシによって生成されたクラス インターフェイスを COM メソッド呼び出しに渡します。 その後、プロキシは、クラス インターフェイス上のすべての呼び出しを、マネージ オブジェクトにデリゲートして戻します。 プロキシはまた、クラスによって明示的に実装されていない他のインターフェイスも公開します。 プロキシは、クラスの代わりに、**IUnknown** や **IDispatch** などのインターフェイスを自動的に実装します。  
@@ -171,7 +166,7 @@ internal class DelegateTest {
 ```  
   
 ## <a name="default-marshaling-for-value-types"></a>値型に対する既定のマーシャリング  
- 整数や浮動小数点数など、ほとんどの値型は、[blittable](../../../docs/framework/interop/blittable-and-non-blittable-types.md) であり、マーシャリングを必要としません。 その他の [non-blittable](../../../docs/framework/interop/blittable-and-non-blittable-types.md) 型は、マネージ メモリとアンマネージ メモリに類似しない表現があり、マーシャリングが必要です。 さらに他の型は、相互運用性の境界を越えて、明示的な書式設定が必要です。  
+ 整数や浮動小数点数など、ほとんどの値型は、[blittable](blittable-and-non-blittable-types.md) であり、マーシャリングを必要としません。 その他の [non-blittable](blittable-and-non-blittable-types.md) 型は、マネージ メモリとアンマネージ メモリに類似しない表現があり、マーシャリングが必要です。 さらに他の型は、相互運用性の境界を越えて、明示的な書式設定が必要です。  
   
  このトピックでは、書式設定された値の型について以下の情報を示します。  
   
@@ -450,8 +445,8 @@ interface IValueTypes : IDispatch {
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Blittable 型と非 Blittable 型](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
- [コピーと固定](../../../docs/framework/interop/copying-and-pinning.md)  
- [配列に対する既定のマーシャリング](../../../docs/framework/interop/default-marshaling-for-arrays.md)  
- [オブジェクトに対する既定のマーシャリング](../../../docs/framework/interop/default-marshaling-for-objects.md)  
- [文字列に対する既定のマーシャリング](../../../docs/framework/interop/default-marshaling-for-strings.md)
+ [Blittable 型と非 Blittable 型](blittable-and-non-blittable-types.md)  
+ [コピーと固定](copying-and-pinning.md)  
+ [配列に対する既定のマーシャリング](default-marshaling-for-arrays.md)  
+ [オブジェクトに対する既定のマーシャリング](default-marshaling-for-objects.md)  
+ [文字列に対する既定のマーシャリング](default-marshaling-for-strings.md)

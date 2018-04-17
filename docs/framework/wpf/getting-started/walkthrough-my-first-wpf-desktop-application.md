@@ -1,12 +1,13 @@
 ---
-title: "チュートリアル: 最初 WPF デスクトップ アプリケーション"
-ms.custom: 
+title: 'チュートリアル: 初めての WPF デスクトップ アプリケーション'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,21 +16,22 @@ helpviewer_keywords:
 - getting started [WPF], WPF
 - WPF [WPF], getting started
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
-caps.latest.revision: "71"
+caps.latest.revision: 71
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 16ed99181f8462e805638b5d3881464b16f21177
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3725e96b514b0204f10f6b5c45ed2bbec1d892de
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="walkthrough-my-first-wpf-desktop-application"></a>チュートリアル: 最初 WPF デスクトップ アプリケーション
+# <a name="walkthrough-my-first-wpf-desktop-application"></a>チュートリアル: 初めての WPF デスクトップ アプリケーション
 このチュートリアルでは、開発の概要については、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]多くに共通要素を含むアプリケーション[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーション:[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]マークアップ、分離コード、アプリケーション定義、コントロール、レイアウト、データ バインディング、およびスタイル。 
   
- このチュートリアルで説明する、簡単な開発[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションは、次の手順を使用します。 
+このチュートリアルで説明する、簡単な開発[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションは、次の手順を使用します。 
   
 -   定義する[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、アプリケーションの外観をデザインする[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 
   
@@ -43,9 +45,9 @@ ms.lasthandoff: 01/19/2018
   
 -   バインディング、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]両方にデータを設定、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]データとデータを維持するからと[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]同期します。 
   
- スタンドアロンのチュートリアルの目的は、構築した[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]アプリケーションを選択したユーザーの経費報告書を表示することができます。 アプリケーションは、いくつかの構成は[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ブラウザー スタイルのウィンドウでホストされているページ。 
+スタンドアロンのチュートリアルの目的は、構築した[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]アプリケーションを選択したユーザーの経費報告書を表示することができます。 アプリケーションは、いくつかの構成は[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ブラウザー スタイルのウィンドウでホストされているページ。 
   
- このチュートリアルの構築に使用するサンプル コードは両方の使用可能な[!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)]と[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)]で[Introduction to Building WPF Applications](http://go.microsoft.com/fwlink/?LinkID=160008)です。 
+このチュートリアルの構築に使用するサンプル コードは両方の使用可能な[!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)]と[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)]で[Introduction to Building WPF Applications](http://go.microsoft.com/fwlink/?LinkID=160008)です。 
 
 ## <a name="prerequisites"></a>必須コンポーネント  
 
@@ -54,12 +56,12 @@ ms.lasthandoff: 01/19/2018
 Visual Studio の最新バージョンのインストールに関する詳細については、次を参照してください。 [Visual Studio インストール](/visualstudio/install/install-visual-studio)です。
   
 ## <a name="creating-the-application-project"></a>アプリケーション プロジェクトの作成  
- このセクションでは、アプリケーション定義、2 つのページ、および 1 つのイメージが含まれる、アプリケーション インフラストラクチャを作成します。 
+このセクションでは、アプリケーション定義、2 つのページ、および 1 つのイメージが含まれる、アプリケーション インフラストラクチャを作成します。 
   
 1. Visual Basic または Visual c# のという名前の新しい WPF アプリケーション プロジェクトを作成する`ExpenseIt`です。 詳細については、次を参照してください。[する方法: 新しい WPF アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)です。 
   
     > [!NOTE]
-    >  このチュートリアルでは、 <xref:System.Windows.Controls.DataGrid> .NET Framework 4 で使用可能なコントロールです。 プロジェクトの対象 .NET Framework 4 であることを確認して以降であります。 詳細については、次を参照してください。[する方法: .NET Framework のバージョンを対象に](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)です。 
+    >  このチュートリアルでは、 <xref:System.Windows.Controls.DataGrid> .NET Framework 4 で使用可能なコントロールです。 プロジェクトの対象 .NET Framework 4 であることを確認して以降であります。 詳細については、「[方法: .NET Framework のバージョンをターゲットにする](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)」を参照してください。 
   
 2. Application.xaml (Visual Basic) または App.xaml (C#) を開きます。 
   
@@ -79,7 +81,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
   
 4. 変更、<xref:System.Windows.Window>要素を<xref:System.Windows.Navigation.NavigationWindow>です。 
   
-     このアプリケーションでは、ユーザー操作に応じて画面がさまざまなコンテンツに移動します。 そのため、メイン<xref:System.Windows.Window>に変更する必要があります、<xref:System.Windows.Navigation.NavigationWindow>です。 <xref:System.Windows.Navigation.NavigationWindow>すべてのプロパティを継承<xref:System.Windows.Window>です。 <xref:System.Windows.Navigation.NavigationWindow> XAML ファイル内の要素のインスタンスを作成する、<xref:System.Windows.Navigation.NavigationWindow>クラスです。 詳細については、「[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)」を参照してください。 
+     このアプリケーションでは、ユーザー操作に応じて画面がさまざまなコンテンツに移動します。 そのため、メイン<xref:System.Windows.Window>に変更する必要があります、<xref:System.Windows.Navigation.NavigationWindow>です。 <xref:System.Windows.Navigation.NavigationWindow> すべてのプロパティを継承<xref:System.Windows.Window>です。 <xref:System.Windows.Navigation.NavigationWindow> XAML ファイル内の要素のインスタンスを作成する、<xref:System.Windows.Navigation.NavigationWindow>クラスです。 詳細については、「[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)」を参照してください。 
   
 5. 次のプロパティを変更、<xref:System.Windows.Navigation.NavigationWindow>要素。  
   
@@ -112,8 +114,8 @@ Visual Studio の最新バージョンのインストールに関する詳細に
     [!code-csharp[ExpenseIt#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/MainWindow.xaml.cs#3)]
     [!code-vb[ExpenseIt#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/MainWindow.xaml.vb#3)]  
   
-## <a name="adding-files-to-the-application"></a>ファイルをアプリケーションに追加します。  
- このセクションでは、アプリケーションに 2 つのページと 1 つのイメージを追加します。 
+## <a name="adding-files-to-the-application"></a>ファイルのアプリケーションへの追加  
+このセクションでは、アプリケーションに 2 つのページと 1 つのイメージを追加します。 
   
 1. という名前のプロジェクトに新しいページ (WPF) を追加`ExpenseItHome.xaml`です。 詳細については、次を参照してください。[する方法: WPF プロジェクトに新しい項目の追加](http://msdn.microsoft.com/library/17e6b238-fc32-4385-98ef-2f66ca09d9ad)です。 
   
@@ -171,12 +173,12 @@ Visual Studio の最新バージョンのインストールに関する詳細に
     [!code-csharp[ExpenseIt#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml.cs#5)]
     [!code-vb[ExpenseIt#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]  
   
-10. watermark.png という名前のイメージをプロジェクトに追加します。 独自のイメージを作成することも、サンプル コードからファイルをコピーすることもできます。 詳細については、次を参照してください。 [NIB: 方法: 既存の項目をプロジェクトに追加](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。 
+10. という名前のイメージを追加*watermark.png*をプロジェクトにします。 独自のイメージを作成することも、サンプル コードからファイルをコピーすることもできます。 詳細については、次を参照してください。[する方法: 既存の項目をプロジェクトに追加](/previous-versions/visualstudio/visual-studio-2008/9f4t9t92(v=vs.90))です。 
 
 ## <a name="building-and-running-the-application"></a>ビルドおよびアプリケーションの実行  
- このセクションでは、アプリケーションをビルドして実行します。 
+このセクションでは、アプリケーションをビルドして実行します。 
   
-1. ビルドおよびキーを押して、f5 キーまたは選択して、アプリケーションを実行する**デバッグの開始**から、**デバッグ**メニュー。 
+1. ビルドおよび f5 キーを押すかを選択して、アプリケーションを実行する**デバッグの開始**から、**デバッグ**メニュー。 
   
      次の図は、アプリケーションに、<xref:System.Windows.Navigation.NavigationWindow>ボタン。 
   
@@ -185,7 +187,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
 2. 戻るには、アプリケーションを閉じて[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]です。 
   
 ## <a name="creating-the-layout"></a>レイアウトの作成  
- レイアウトが順序付けられたを配置する方法を提供[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]要素、およびそれらの要素の位置とサイズをまた管理ときに、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]のサイズを変更します。 通常、レイアウトを作成するには、次のいずれかのレイアウト コントロールを使用します。  
+レイアウトが順序付けられたを配置する方法を提供[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]要素、およびそれらの要素の位置とサイズをまた管理ときに、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]のサイズを変更します。 通常、レイアウトを作成するには、次のいずれかのレイアウト コントロールを使用します。  
   
 -   <xref:System.Windows.Controls.Canvas>  
   
@@ -199,12 +201,12 @@ Visual Studio の最新バージョンのインストールに関する詳細に
   
 -   <xref:System.Windows.Controls.WrapPanel>  
   
- これらの各レイアウト コントロールは、その子要素に対する特別な種類のレイアウトをサポートしています。 ExpenseIt のページはサイズの変更が可能で、各ページの要素は縦にも横にも他の要素と揃えられます。 その結果、<xref:System.Windows.Controls.Grid>アプリケーションに最適なレイアウト要素です。 
+これらの各レイアウト コントロールは、その子要素に対する特別な種類のレイアウトをサポートしています。 ExpenseIt のページはサイズの変更が可能で、各ページの要素は縦にも横にも他の要素と揃えられます。 その結果、<xref:System.Windows.Controls.Grid>アプリケーションに最適なレイアウト要素です。 
   
 > [!NOTE]
 >  詳細については<xref:System.Windows.Controls.Panel>要素を参照してください[パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)です。 レイアウトの詳細については、次を参照してください。[レイアウト](../../../../docs/framework/wpf/advanced/layout.md)です。 
   
- セクションで、テーブルを作成する、単一列 3 つの行と 10 ピクセルの余白を含む列と行の定義を追加することによって、 <xref:System.Windows.Controls.Grid> ExpenseItHome.xaml にします。 
+セクションで、テーブルを作成する、単一列 3 つの行と 10 ピクセルの余白を含む列と行の定義を追加することによって、 <xref:System.Windows.Controls.Grid> ExpenseItHome.xaml にします。 
   
 1. ExpenseItHome.xaml を開きます。 
   
@@ -221,17 +223,17 @@ Visual Studio の最新バージョンのインストールに関する詳細に
     [!code-xaml[ExpenseIt#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt3/ExpenseItHome.xaml#9)]  
   
 ## <a name="adding-controls"></a>コントロールを追加します。  
- このセクションでは、ホーム ページの[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]が更新されことから選択できる、選択された人物の経費報告書を表示するユーザーの一覧を表示します。 コントロールとは、ユーザーがアプリケーションと対話できるようにする UI オブジェクトのことです。 詳しくは、「 [コントロール](../../../../docs/framework/wpf/controls/index.md)」をご覧ください。 
+このセクションでは、ホーム ページの[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]が更新されことから選択できる、選択された人物の経費報告書を表示するユーザーの一覧を表示します。 コントロールとは、ユーザーがアプリケーションと対話できるようにする UI オブジェクトのことです。 詳しくは、「 [コントロール](../../../../docs/framework/wpf/controls/index.md)」をご覧ください。 
   
- これを作成する[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]ExpenseItHome.xaml に、次の要素が追加されます。  
+これを作成する[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]ExpenseItHome.xaml に、次の要素が追加されます。  
   
--   <xref:System.Windows.Controls.ListBox>(用、ユーザーの一覧)。 
+-   <xref:System.Windows.Controls.ListBox> (用、ユーザーの一覧)。 
   
--   <xref:System.Windows.Controls.Label>(リストのヘッダーとして)。 
+-   <xref:System.Windows.Controls.Label> (リストのヘッダーとして)。 
   
--   <xref:System.Windows.Controls.Button>(をクリックして、一覧で選択されているユーザーの経費報告書を表示する)。 
+-   <xref:System.Windows.Controls.Button> (をクリックして、一覧で選択されているユーザーの経費報告書を表示する)。 
   
- 行内の各コントロールが配置される、<xref:System.Windows.Controls.Grid>を設定して、<xref:System.Windows.Controls.Grid.Row%2A?displayProperty=nameWithType>添付プロパティ。 添付プロパティの詳細については、次を参照してください。[添付プロパティの概要](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)です。 
+行内の各コントロールが配置される、<xref:System.Windows.Controls.Grid>を設定して、<xref:System.Windows.Controls.Grid.Row%2A?displayProperty=nameWithType>添付プロパティ。 添付プロパティの詳細については、次を参照してください。[添付プロパティの概要](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)です。 
   
 1. ExpenseItHome.xaml を開きます。 
   
@@ -241,12 +243,12 @@ Visual Studio の最新バージョンのインストールに関する詳細に
   
 3. アプリケーションをビルドして実行します。 
   
- 次の図は、このセクションの XAML で作成されたコントロールを示しています。 
+次の図は、このセクションの XAML で作成されたコントロールを示しています。 
   
- ![ExpenseIt のサンプルのスクリーン ショット](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure2.png "GettingStartedFigure2")  
+![ExpenseIt のサンプルのスクリーン ショット](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure2.png "GettingStartedFigure2")  
   
 ## <a name="adding-an-image-and-a-title"></a>イメージとタイトルを追加します。  
- このセクションでは、ホーム ページの[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]イメージとページ タイトルで更新されます。 
+このセクションでは、ホーム ページの[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]イメージとページ タイトルで更新されます。 
   
 1. ExpenseItHome.xaml を開きます。 
   
@@ -272,9 +274,9 @@ Visual Studio の最新バージョンのインストールに関する詳細に
   
 7. アプリケーションをビルドして実行します。 
   
- 次の図は、このセクションの結果を示しています。 
+次の図は、このセクションの結果を示しています。 
   
- ![ExpenseIt のサンプルのスクリーン ショット](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure3.png "GettingStartedFigure3")  
+![ExpenseIt のサンプルのスクリーン ショット](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure3.png "GettingStartedFigure3")  
   
 ## <a name="adding-code-to-handle-events"></a>イベントを処理するコードを追加します。  
   
@@ -292,7 +294,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
     [!code-vb[ExpenseIt#16](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt6/ExpenseItHome.xaml.vb#16)]  
   
 ## <a name="creating-the-ui-for-expensereportpage"></a>ExpenseReportPage の UI の作成  
- ExpenseReportPage.xaml には、ExpenseItHome.xaml で選択した個人の経費報告書が表示されます。 このセクションでは、コントロールを追加し、作成、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ExpenseReportPage.xaml 用です。 ここでは、さまざまな背景の塗りつぶしの色を追加するも[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]要素。 
+ExpenseReportPage.xaml には、ExpenseItHome.xaml で選択した個人の経費報告書が表示されます。 このセクションでは、コントロールを追加し、作成、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ExpenseReportPage.xaml 用です。 ここでは、さまざまな背景の塗りつぶしの色を追加するも[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]要素。 
   
 1. ExpenseReportPage.xaml を開きます。 
   
@@ -311,12 +313,12 @@ Visual Studio の最新バージョンのインストールに関する詳細に
   
      経費明細書ページが表示されます。 
   
- 次の図は、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ExpenseReportPage.xaml に追加された要素。 [戻る] ナビゲーション ボタンが有効になっていることを確認してください。 
+次の図は、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ExpenseReportPage.xaml に追加された要素。 [戻る] ナビゲーション ボタンが有効になっていることを確認してください。 
   
- ![ExpenseIt のサンプルのスクリーン ショット](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure4.png "GettingStartedFigure4")  
+![ExpenseIt のサンプルのスクリーン ショット](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure4.png "GettingStartedFigure4")  
   
 ## <a name="styling-controls"></a>コントロールのスタイル  
- さまざまな要素の外観は、同じ型でのすべての要素の同じ多くの場合、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]です。 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] では、複数の要素間で外観を再利用できるように、スタイルが使用されます。 スタイルの再利用が簡略化するのに役立つ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の作成および管理します。 スタイルの詳細については、次を参照してください。[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)です。 このセクションでは、これまでの手順で定義した要素ごとの属性を、スタイルに置き換えます。 
+さまざまな要素の外観は、同じ型でのすべての要素の同じ多くの場合、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]です。 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] では、複数の要素間で外観を再利用できるように、スタイルが使用されます。 スタイルの再利用が簡略化するのに役立つ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の作成および管理します。 スタイルの詳細については、次を参照してください。[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)です。 このセクションでは、これまでの手順で定義した要素ごとの属性を、スタイルに置き換えます。 
   
 1. Application.xaml または App.xaml を開きます。 
   
@@ -361,7 +363,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
      追加した後、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]このセクションで、アプリケーションの外観は同じとスタイルを使用して更新される前にします。 
   
 ## <a name="binding-data-to-a-control"></a>コントロールへのデータ バインディング  
- このセクションで作成、[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]さまざまなコントロールにバインドされているデータ。 
+このセクションで作成、[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]さまざまなコントロールにバインドされているデータ。 
   
 1. ExpenseItHome.xaml を開きます。 
   
@@ -386,7 +388,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
      次の XAML バインド、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>データ ソースに、データ テンプレートとして適用されると、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>です。 
   
 ## <a name="connecting-data-to-controls"></a>コントロールにデータを接続します。  
- このセクションで、ExpenseItHome.xaml ページで、ユーザーの一覧で選択されのコンス トラクターへの参照を渡しますを現在の項目を取得するコードを記述する`ExpenseReportPage`インスタンス化します。 `ExpenseReportPage` は、渡された項目を使用してデータ コンテキストを設定します。この項目が、ExpenseReportPage.xaml で定義されたコントロールのバインド先になります。 
+このセクションで、ExpenseItHome.xaml ページで、ユーザーの一覧で選択されのコンス トラクターへの参照を渡しますを現在の項目を取得するコードを記述する`ExpenseReportPage`インスタンス化します。 `ExpenseReportPage` は、渡された項目を使用してデータ コンテキストを設定します。この項目が、ExpenseReportPage.xaml で定義されたコントロールのバインド先になります。 
   
 1. ExpenseReportPage.xaml.vb または ExpenseReportPage.xaml.cs を開きます。 
   
@@ -403,7 +405,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
     [!code-vb[ExpenseIt#27](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt8/ExpenseItHome.xaml.vb#27)]  
   
 ## <a name="styling-data-with-data-templates"></a>データ テンプレートを使用してデータのスタイル設定  
- このセクションで更新する、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]バインドされたリストをデータ テンプレートを使用して、データ内の各項目。 
+このセクションで更新する、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]バインドされたリストをデータ テンプレートを使用して、データ内の各項目。 
   
 1. ExpenseReportPage.xaml を開きます。 
   
@@ -427,7 +429,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
  ![ExpenseIt のサンプルのスクリーン ショット](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure5.png "GettingStartedFigure5")  
   
 ## <a name="best-practices"></a>ベスト プラクティス  
- このサンプルは、WPF の特定の機能を説明するものであり、アプリケーション開発のベスト プラクティスには従っていません。 包括的なカバレッジ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]アプリケーション開発のベスト プラクティスでは、必要に応じて、次のトピックを参照してください。  
+このサンプルは、WPF の特定の機能を説明するものであり、アプリケーション開発のベスト プラクティスには従っていません。 包括的なカバレッジ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]アプリケーション開発のベスト プラクティスでは、必要に応じて、次のトピックを参照してください。  
   
 -   ユーザー補助 - [ユーザー補助のベスト プラクティス](../../../../docs/framework/ui-automation/accessibility-best-practices.md)  
   
@@ -438,7 +440,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
 -   パフォーマンス - [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
   
 ## <a name="whats-next"></a>次の内容  
- ユーザーが自由に作成するためのさまざまな手法があるようになりました、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]を使用して[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。 データ バインドの基本的な構成要素の広範な理解が[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]アプリケーションです。 このトピックは決して網羅的なものではありませんが、このトピックの手法を基に、自分で学習を進められるようになったはずです。 
+ユーザーが自由に作成するためのさまざまな手法があるようになりました、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]を使用して[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。 データ バインドの基本的な構成要素の広範な理解が[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]アプリケーションです。 このトピックは決して網羅的なものではありませんが、このトピックの手法を基に、自分で学習を進められるようになったはずです。 
   
  WPF のアーキテクチャおよびプログラミング モデルの詳細については、次のトピックを参照してください。  
   
