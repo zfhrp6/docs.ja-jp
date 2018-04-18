@@ -5,11 +5,11 @@ hide_bc: true
 title: .NET ドキュメント
 description: .NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。
 ms.custom: updateeachrelease
-ms.openlocfilehash: f3a044df40a5508f62b5b441965c4ce16e998428
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 35a85cfc9f829f287a239d1a1bb98fd5d15487ca
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/16/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -149,11 +149,11 @@ ms.lasthandoff: 03/22/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3><a href="https://developer.xamarin.com/guides/cross-platform/getting_started">Xamarin</a></h3>
-                                                <p><a href="https://developer.xamarin.com/guides/cross-platform/getting_started">開始するには</a></p>
-                                                <p><a href="https://developer.xamarin.com/guides/ios">Xamarin.iOS のガイド</a></p>
-                                                <p><a href="https://developer.xamarin.com/guides/android/getting_started">Xamarin.Android のガイド</a></p>
-                                                <p><a href="https://developer.xamarin.com/guides/xamarin-forms">Xamarin.Forms のガイド</a></p>
+                                                <h3><a href="/xamarin">Xamarin</a></h3>
+                                                <p><a href="/xamarin/cross-platform">クロスプラットフォーム開発</a></p>
+                                                <p><a href="/xamarin/ios">Xamarin.iOS のガイド</a></p>
+                                                <p><a href="/xamarin/android">Xamarin.Android のガイド</a></p>
+                                                <p><a href="/xamarin/xamarin-forms">Xamarin.Forms のガイド</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -438,7 +438,7 @@ ms.lasthandoff: 03/22/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://developer.xamarin.com/guides/ios/getting_started/">
+                                                <a href="/xamarin/ios">
                                                     <h3>Xamarin.iOS</h3>
                                                     <p>Xamarin.iOS で C# と F# を使用してネイティブ iOS アプリを作成します。</p>
                                                 </a>
@@ -457,7 +457,7 @@ ms.lasthandoff: 03/22/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://developer.xamarin.com/guides/android/getting_started">
+                                                <a href="/xamarin/android">
                                                     <h3>Xamarin.Android</h3>
                                                     <p>Xamarin.Android で C# と F# を使用してネイティブ Android アプリを作成します。</p>
                                                 </a>
@@ -476,7 +476,7 @@ ms.lasthandoff: 03/22/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://developer.xamarin.com/guides/xamarin-forms">
+                                                <a href="/xamarin/xamarin-forms">
                                                     <h3>Xamarin.Forms</h3>
                                                     <p>Xamarin.Forms で C# と F# を使用してクロスプラットフォームのモバイル UI を作成します。</p>
                                                 </a>
@@ -558,7 +558,7 @@ ms.lasthandoff: 03/22/2018
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://developer.xamarin.com/guides/mac/getting_started">
+                                                <a href="/xamarin/mac">
                                                     <h3>macOS 向けの Xamarin</h3>
                                                     <p>Xamarin で C# と F# を使用して macOS 向けのアプリを作成します。</p>
                                                 </a>
