@@ -39,7 +39,7 @@ ms.lasthandoff: 03/26/2018
   
 4.  クラスにインターフェイスを実装してサービスをホストします。 例については、[サービス コントラクトを実装する方法](../../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md) に関する記事、または下記の例のセクションにあるシンプルな実装を参照してください。  
   
-5. [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) が生成したクライアント構成ファイルで、[\<client>](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) 構成セクションを[ \<services>](../../../../docs/framework/configure-apps/file-schema/wcf/services.md) 構成セクションへ変更します。 (生成されたクライアント アプリケーション構成ファイルの例は、後述の例を参照してください)。
+5. [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) が生成したクライアント構成ファイルで、[\<client>](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) 構成セクションを[ \<services>](../../../../docs/framework/configure-apps/file-schema/wcf/services.md) 構成セクションへ変更します。 (生成されたクライアント アプリケーション構成ファイルの例は、次の「例」セクションを参照してください)。
   
 6. [ \<services >](../../../../docs/framework/configure-apps/file-schema/wcf/services.md) 構成セクションの中で、サービス実装の`name`属性を[ \<services >](../../../../docs/framework/configure-apps/file-schema/wcf/services.md)構成セクションに作成します。
   
