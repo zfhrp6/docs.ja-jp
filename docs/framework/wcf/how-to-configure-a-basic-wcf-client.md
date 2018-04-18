@@ -31,7 +31,7 @@ ms.lasthandoff: 03/23/2018
   
 ### <a name="to-configure-a-windows-communication-foundation-client"></a>Windows Communication Foundation クライアントを構成するには  
   
-1.  GettingStartedClient プロジェクトから生成された構成ファイル (App.config) を開きます。 生成された構成ファイルを次の例に示します。 下にある、 [ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションで、検索、 [\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素。  
+1.  GettingStartedClient プロジェクトから生成された構成ファイル (App.config) を開きます。 生成された構成ファイルを次の例に示します。[ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションの下にある [\<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素を見つけてください。
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
