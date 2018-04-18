@@ -57,7 +57,7 @@ private:
 
 多くのイベントは、2 番目のパラメーターに異なるイベント オブジェクト型を持つ イベント ハンドラーを有しています。 <xref:System.Windows.Forms.Control.MouseDown> や <xref:System.Windows.Forms.Control.MouseUp> のようないくつかのイベント ハンドラーは 2 番目のパラメーターに同じオブジェクト型を持ちます。この種のイベントでは、両方のイベントを処理するために同じイベント ハンドラーを使用することができます。
 
-また、異なるコントロールの同じイベントを処理するために同じイベント ハンドラーを使用することもできます。たとえば、フォーム上に <xref:System.Windows.Forms.RadioButton> のコントロールのグループがある場合、<xref:System.Windows.Forms.Control.Click> イベントのイベント ハンドラーを作成し、それぞれの <xref:System.Windows.Forms.Control.Click> イベントのコントロールを 1 つのイベント ハンドラーにバインドさせ、処理することができます。詳細については、[方法: Windows フォームの 1 つのイベント ハンドラーの複数のイベントを接続](../../../docs/framework/winforms/how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md) を参照してください。
+また、異なるコントロールの同じイベントを処理するために同じイベント ハンドラーを使用することもできます。たとえば、フォーム上に <xref:System.Windows.Forms.RadioButton> のコントロールのグループがある場合、<xref:System.Windows.Forms.Control.Click> イベントのイベント ハンドラーを作成し、それぞれのコントロールの <xref:System.Windows.Forms.Control.Click> イベントをその 1 つのイベント ハンドラーにバインドさせることができます。詳細については、[ Windows フォームの 1 つのイベント ハンドラーに複数のイベントを接続する方法](../../../docs/framework/winforms/how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md) についての記事を参照してください。
 
 ## <a name="see-also"></a>参照  
  [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
