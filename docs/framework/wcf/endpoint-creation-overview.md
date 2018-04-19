@@ -33,9 +33,9 @@ ms.lasthandoff: 12/22/2017
 ## <a name="the-structure-of-an-endpoint"></a>エンドポイントの構造
 各エンドポイントは、そのエンドポイントが存在する場所を示すアドレス、クライアントがエンドポイントと通信するための方法を指定するバインディング、および利用可能なメソッドを特定するコントラクトで構成されます。  
   
-- **アドレス**。アドレスは、エンドポイントを一意に識別し、潜在的なユーザーにそのサービスの場所を示します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] オブジェクト モデルでは、<xref:System.ServiceModel.EndpointAddress> アドレスで表されます。このアドレスは、URI (Uniform Resource Identifier) とアドレス プロパティ (ID、Web サービス記述言語 (WSDL) 要素、およびオプション ヘッダーのコレクションを含む) を格納します。 オプション ヘッダーは、エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][エンドポイント アドレスを指定する](../../../docs/framework/wcf/specifying-an-endpoint-address.md)です。
+- **アドレス**。アドレスは、エンドポイントを一意に識別し、潜在的なユーザーにそのサービスの場所を示します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] オブジェクト モデルでは、<xref:System.ServiceModel.EndpointAddress> アドレスで表されます。このアドレスは、URI (Uniform Resource Identifier) とアドレス プロパティ (ID、Web サービス記述言語 (WSDL) 要素、およびオプション ヘッダーのコレクションを含む) を格納します。 オプション ヘッダーは、エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。詳細については、「[!INCLUDE[crdefault](../../../includes/crdefault-md.md)]エンドポイント アドレスを指定する(../../../docs/framework/wcf/specifying-an-endpoint-address.md)」を参照してくだです。
   
-- **バインド**。バインディングはエンドポイントとの通信方法を指定します。 バインディングでは、使用するトランスポート プロトコル (TCP や HTTP)、メッセージのエンコーディング方法 (テキストやバイナリ)、必要なセキュリティ要件 (SSL (Secure Sockets Layer) や SOAP メッセージ セキュリティ) など、そのエンドポイントがどのように通信を行うかを指定します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][バインディングを使用してサービスとクライアントを構成する](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)です。  
+- **バインド**。バインディングはエンドポイントとの通信方法を指定します。 バインディングによって、使用するトランスポート プロトコル (TCP や HTTP など)、メッセージに使用するエンコード (テキストやバイナリなど)、必要なセキュリティ要件 (SSL (Secure Sockets Layer) や SOAP メッセージ セキュリティなど) など、そのエンドポイントが通信を行う方法が指定されます。詳細については、「[!INCLUDE[crdefault](../../../includes/crdefault-md.md)]バインディングを使用してサービスとクライアントを構成する(../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)」を参照してください。 
   
 - **サービス コントラクト**です。サービス コントラクトは、エンドポイントがクライアントに公開する機能を示します。 コントラクトは、クライアントが呼び出すことのできる操作、メッセージの形式、操作の呼び出しに必要な入力パラメーターやデータの型、クライアントに提供する処理または応答メッセージの種類を指定します。 基本的なメッセージ交換パターン (MEP) に対応する基本的なコントラクトの種類には、データグラム (一方向)、要求/応答、二重 (双方向) の 3 つがあります。 サービス コントラクトは、データ コントラクトとメッセージ コントラクトを使用して、クライアントが特定のデータ型とメッセージ形式でアクセスするように要求することもできます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]サービス コントラクトを定義する方法[サービス コントラクトの設計](../../../docs/framework/wcf/designing-service-contracts.md)です。 クライアントでは、二重 MEP でサービスからメッセージを受信するために、コールバック コントラクトというサービス定義のコントラクトを実装することが必要な場合があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][双方向サービス](../../../docs/framework/wcf/feature-details/duplex-services.md)です。  
   
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="defining-endpoints-in-code"></a>コードでのエンドポイントの定義  
  次の例は、コードにエンドポイントを指定する方法を示しています。  
   
--   任意の名前を受け付け、"Hello \<name>!" と応答するサービスの `IEcho` 型のコントラクトを定義します。
+-   任意の名前を受け付け、"Hello \<name>!" とエコー応答するサービスの `IEcho` 型のコントラクトを定義します。
 
 -   `IEcho` コントラクトで定義された型の `Echo` サービスを実装します。
 
@@ -142,7 +142,7 @@ serviceHost.Open()
 >  サービスとクライアントのどちらの場合も、<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> の呼び出しの前に記述を変更することをお勧めします。  
   
 ## <a name="defining-endpoints-in-configuration"></a>構成でのエンドポイントの定義  
- アプリケーションの作成では、各種決定事項をアプリケーションを展開する管理者に任せる場合がよくあります。 たとえば、どのサービス アドレス (URI) を使用するかなどの情報は、前もって知るすべがありません。 アドレスをハードコーディングする代わりに、サービスの作成後に管理者が指定する方が便利です。 構成を活用することで、この柔軟性が得られます。 詳細は [サービスを構成する](../../../docs/framework/wcf/configuring-services.md) を参照してください。
+ アプリケーションの作成では、各種決定事項をアプリケーションを展開する管理者に任せる場合がよくあります。 たとえば、どのサービス アドレス (URI) を使用するかなどの情報は、前もって知るすべがありません。 アドレスをハードコーディングする代わりに、サービスの作成後に管理者が指定する方が便利です。 構成を活用することで、この柔軟性が得られます。 詳細については、「サービスを構成する(../../../docs/framework/wcf/configuring-services.md)」を参照してください。
   
 > [!NOTE]
 >  [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) の `/config: *filename* [,*filename*]` を切り替えて使用すると、構成ファイルをすばやく作成できます。
