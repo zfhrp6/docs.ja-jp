@@ -11,20 +11,20 @@ ms.devlang: dotnet
 ms.assetid: 8b49079c-6ede-429a-92d7-ecd2fda1ab0e
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 6aa5abd071355b1c1a367b35e9521e6b1af9c945
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a14e8dbf3f9be9910a2c50cfbcb3f52f4e7385e1
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="build-net-core-from-source"></a>ソースから .NET Core をビルドする
 
-ソース コードから .NET Core をビルドできることは、複数の方法において重要なことです。 .NET Core を新しいプラットフォームに簡単に移植でき、製品に対するコントリビューションと修正を有効にすることができ、また、.NET のカスタム バージョンを作成することができます。
+ソース コードから .NET Core をビルドできることは、複数の方法において重要なことです。.NET Core を新しいプラットフォームに簡単に移植でき、製品に対するコントリビューションと修正を有効にすることができ、また、.NET のカスタム バージョンを作成することができます。
 この記事では、独自のバージョンの .NET Core をビルドして配布する開発者向けのガイダンスを提供します。
 
 ## <a name="build-the-clr-from-source"></a>ソースから CLR をビルドする
 
-.NET CoreCLR のソース コードは、[GitHub の `dotnet/coreclr` リポジトリ](https://github.com/dotnet/coreclr/)にあります。
+.NET CoreCLR のソース コードは、GitHub の [dotnet/coreclr](https://github.com/dotnet/coreclr/) リポジトリにあります。
 
 ビルドは、現在、次の前提条件に依存しています。
 * [Git](https://git-scm.com/)
@@ -32,7 +32,7 @@ ms.lasthandoff: 12/23/2017
 * [Python](https://www.python.org/)
 * C++ コンパイラ。
 
-これらの前提条件をインストールしたら、[CoreCLR リポジトリ](https://github.com/dotnet/coreclr/)の下部にあるビルド スクリプト (Windows の場合は `build.cmd`、Linux と macOS の場合は `build.sh`) を呼び出して、CLR をビルドできます。
+これらの前提条件をインストールしたら、[dotnet/coreclr リポジトリ](https://github.com/dotnet/coreclr/)の下部にあるビルド スクリプト (Windows の場合は `build.cmd`、Linux と macOS の場合は `build.sh`) を呼び出して、CLR をビルドできます。
 
 コンポーネントのインストールは、オペレーティング システム (OS) によって異なります。 以下の特定の OS のビルド手順を参照してください。
 
@@ -82,12 +82,12 @@ OS 間でのクロス ビルドはありません (X64 にビルドされる ARM
  2. **corerun.exe を使用し、解凍した DLL を使用してアプリケーションを実行します**。
     このリポジトリでは、NuGet に依存しない corerun.exe という単純なホストの定義も行います。
     実際に使用する必要な DLL を取得する場所をホストに指示する必要があり、これらの DLL は手動で収集する必要があります。
-    この方法は、[CoreCLR リポジトリ](https://github.com/dotnet/coreclr)のすべてのテストで使用され、事前の単体テストなどの、クイック ローカル "編集-コンパイル-デバッグ" ループに役立ちます。
+    この方法は、[dotnet/coreclr リポジトリ](https://github.com/dotnet/coreclr)のすべてのテストで使用され、事前の単体テストなどの、クイック ローカル "編集-コンパイル-デバッグ" ループに役立ちます。
     この方法の使用の詳細については、「[Executing .NET Core Apps with CoreRun.exe](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingCoreRun.md)」 (CoreRun.exe を使用する .NET Core アプリの実行) を参照してください。
 
 ## <a name="build-the-cli-from-source"></a>ソースから CLI をビルドする
 
-.NET Core CLI のソース コードは、[GitHub の `dotnet/cli` リポジトリ](https://github.com/dotnet/cli/)にあります。
+.NET Core CLI のソース コードは、GitHub の [dotnet/cli](https://github.com/dotnet/cli/) リポジトリにあります。
 
 .NET Core CLI をビルドするには、コンピューターに以下をインストールする必要があります。
 
