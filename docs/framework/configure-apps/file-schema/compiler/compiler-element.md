@@ -1,5 +1,5 @@
 ---
-title: "&lt;コンパイラ&gt;要素"
+title: "&lt;compiler&gt;要素"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -30,13 +30,13 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/02/2018
 ---
-# <a name="ltcompilergt-element"></a>&lt;コンパイラ&gt;要素
+# <a name="ltcompilergt-element"></a>&lt;compiler&gt;要素
 言語プロバイダーのコンパイラ構成属性を指定します。  
-  
- \<構成要素 >  
-\<system.codedom Element>  
-\<コンパイラ要素 >  
-\<コンパイラ > 要素  
+
+&lt;configuration&gt; 要素
+&lt;system.codedom&gt; 要素
+&lt;compilers&gt; 要素
+&lt;compiler&gt; 要素
   
 ## <a name="syntax"></a>構文  
   
@@ -75,7 +75,7 @@ ms.lasthandoff: 03/02/2018
 |-------------|-----------------|  
 |[\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|使用可能な言語プロバイダーのコンパイラ構成設定を指定します。|  
-|[\<コンパイラ > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラ構成要素のコンテナー0 個以上含む`<compiler>`要素。|  
+|[\<compilers> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラ構成要素のコンテナー0 個以上含む`<compiler>`要素。|
   
 ## <a name="remarks"></a>コメント  
  各`<compiler>`要素は、特定の言語プロバイダーのコンパイラ構成属性を指定します。 プロバイダーでは、 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 、特定の言語のクラス、`<compiler>`要素は、コンパイラおよび言語プロバイダーのコード ジェネレーターの設定を定義します。  
