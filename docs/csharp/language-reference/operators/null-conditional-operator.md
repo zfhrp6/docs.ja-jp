@@ -27,7 +27,7 @@ ms.lasthandoff: 12/06/2017
 ## <a name="remarks"></a>コメント  
  null 許容型は、型のドメインの値を表すことができ、値は未定義でもかまいません (その場合、値は null になります)。 `??` 演算子の構文を使用して、左側のオペランドが null 許容型でその値が null である場合に、適切な値 (右側のオペランド) を返すことができます。 `??` 演算子を使用せずに、null 非許容値型に対して null 許容値型を割り当てると、コンパイル時にエラーが発生します。 null 許容値型が定義されていない場合にキャストを使用すると、`InvalidOperationException` 例外がスローされます。  
   
- 詳細については、「[ull 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。  
+ 詳細については、「[Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。  
   
  ?? の結果は、 たとえ両方の引数が定数であった場合でも、定数とは見なされません。  
   
