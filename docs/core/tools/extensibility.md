@@ -1,7 +1,7 @@
 ---
-title: ".NET Core CLI の拡張モデル"
-description: "コマンド ライン インターフェイス (CLI) ツールを拡張する方法について説明します。"
-keywords: "CLI, 拡張, カスタム コマンド, .NET Core"
+title: .NET Core CLI の拡張モデル
+description: コマンド ライン インターフェイス (CLI) ツールを拡張する方法について説明します。
+keywords: CLI, 拡張, カスタム コマンド, .NET Core
 author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
@@ -10,12 +10,13 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fffc3400-aeb9-4c07-9fea-83bc8dbdcbf3
-ms.workload: dotnetcore
-ms.openlocfilehash: 0d273510903c888f3212a57f4c28b118b73cab5c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 53329c302066891c240a234156c2572acc66e7ab
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>.NET Core CLI ツールの拡張モデル
 
@@ -82,8 +83,8 @@ CLI ツールは、主に次の 3 つの方法で拡張できます。
 
 このようなツールには、それらのツールを使用するプロジェクトの依存関係グラフから完全に切り離された依存関係グラフがあります。 復元処理では、最初にプロジェクトの依存関係を復元し、その後、各ツールとその依存関係を復元します。
 
-豊富な例やさまざまな組み合わせを [.NET Core CLI リポジトリ](https://github.com/dotnet/cli/tree/rel/1.0.1/TestAssets/TestProjects) で見つけることができます。
-また、同じリポジトリで[使用されたツールの実装](https://github.com/dotnet/cli/tree/rel/1.0.1/TestAssets/TestPackages)を確認することもできます。
+豊富な例やさまざまな組み合わせを [.NET Core CLI リポジトリ](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestProjects) で見つけることができます。
+また、同じリポジトリで[使用されたツールの実装](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestPackages)を確認することもできます。
 
 ### <a name="custom-targets"></a>カスタム ターゲット
 NuGet には、[カスタム MSBuild ターゲット ファイルとプロパティ ファイルをパッケージ化](/nuget/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)する機能があります。 .NET Core CLI ツールが MSBuild を使用するようになり、同じ拡張機能のメカニズムが .NET Core プロジェクトに適用されています。 このような拡張機能は、ビルド プロセスの拡張が必要な場合、生成されたファイルなどのビルド プロセスの成果物にアクセスする必要がある場合、またはビルドが呼び出される構成を検査する場合などに使用します。

@@ -1,6 +1,6 @@
 ---
-title: ".NET Compiler Platform SDK の概念とオブジェクト モデル"
-description: "この概要では、.NET Compiler SDK を効果的に使用するために必要な背景を示します。 API レイヤー、関連する主な型、全体のオブジェクト モデルについて学習します。"
+title: .NET Compiler Platform SDK の概念とオブジェクト モデル
+description: この概要では、.NET Compiler SDK を効果的に使用するために必要な背景を示します。 API レイヤー、関連する主な型、全体のオブジェクト モデルについて学習します。
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/10/2017
@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: d230d334eba4e438635a4c70e8c1b5fc5075b065
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 17a7884518f71d7df1f4a9fe8c91da87d7335e0d
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>.NET Compiler Platform SDK モデルについて
 
@@ -22,15 +22,15 @@ ms.lasthandoff: 03/15/2018
 
 .NET Compiler Platform SDK は、従来のコンパイラ パイプラインを反映する API レイヤーを提供することで、コンシューマーに C# と Visual Basic コンパイラーのコード分析を公開します。
 
-![ソース コードからオブジェクト コードへのコンパイラ パイプラインの処理ステップ](media/compiler-pipeline.png)
+![ソース コードからオブジェクト コードへのコンパイラ パイプラインの処理ステップ](media/compiler-api-model/compiler-pipeline.png)
 
 このパイプラインの各フェーズは別のコンポーネントです。 最初に、解析フェーズで、言語文法に従う構文にソース テキストをトークン化して解析します。 2 番目に、宣言フェーズで、ソースとインポートされたメタデータを分析して、名前付け規則を形成します。 次に、バインド フェーズで、コード内の識別子をシンボルと一致させます。 最後に、生成フェーズで、コンパイラによって構築されたすべての情報でアセンブリを生成します。
 
-![コンパイラ パイプライン API は、コンパイラ パイプラインの一部である各ステップへのアクセスを提供します](media/compiler-pipeline-api.png)
+![コンパイラ パイプライン API は、コンパイラ パイプラインの一部である各ステップへのアクセスを提供します](media/compiler-api-model/compiler-pipeline-api.png)
 
 これらの各フェーズに応じて、.NET Compiler Platform SDK はオブジェクト モデルを公開します。これにより、各フェーズの情報にアクセスできます。 解析フェーズでは構文ツリーを公開し、宣言フェーズでは階層シンボル テーブルを公開し、バインド フェーズではコンパイラのセマンティック分析結果を公開します。生成フェーズは IL バイト コードを生成する API です。
 
-![コンパイラ パイプラインの各ステップでコンパイラ API から使用可能な言語サービス](media/compiler-pipeline-lang-svc.png)
+![コンパイラ パイプラインの各ステップでコンパイラ API から使用可能な言語サービス](media/compiler-api-model/compiler-pipeline-lang-svc.png)
 
 各コンパイラは、これらのコンポーネントを一緒に単一のエンド ツー エンド全体として結合します。
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 03/15/2018
 
 .NET Compiler SDK は、2 つの主要な API レイヤー (コンパイラ API とワークスペース API) で構成されています。
 
-![コンパイラ パイプライン API で表される API レイヤー](media/api-layers.png)
+![コンパイラ パイプライン API で表される API レイヤー](media/compiler-api-model/api-layers.png)
 
 ### <a name="compiler-apis"></a>コンパイラ API
 

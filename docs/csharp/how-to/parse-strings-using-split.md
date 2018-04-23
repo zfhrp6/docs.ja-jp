@@ -1,6 +1,6 @@
 ---
-title: "方法: String.Split を使用して文字列を解析する (C# ガイド)"
-description: "String.Split は、一連の区切り記号で分割された文字列の配列を返します。 文字列を解析する簡単な方法です。"
+title: '方法: String.Split を使用して文字列を解析する (C# ガイド)'
+description: String.Split は、一連の区切り記号で分割された文字列の配列を返します。 文字列を解析する簡単な方法です。
 ms.date: 01/03/2018
 ms.prod: .net
 ms.technology:
@@ -15,11 +15,11 @@ ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 author: BillWagner
 ms.author: wiwagn
 ms.custom: mvc
-ms.openlocfilehash: afaff6f81a1a4240214f738d0fc9f3bafdaf868c
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: c6ccbe8e1287101d3b79d0ec84e530e0e525ff57
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>方法: String.Split を使用して文字列を解析する (C# ガイド)
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 02/28/2018
   
 [!code-csharp-interactive[split strings using strings as separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#5)]
 
-[GitHub リポジトリ](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings)のコードを見て、これらのサンプルを試すことができます。 または、サンプルを [zip ファイルとして](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings.zip)ダウンロードすることができます。
+[GitHub リポジトリ](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings)のコードを見て、これらのサンプルを試すことができます。 または、サンプルを [zip ファイルとして](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip)ダウンロードすることができます。
 
 ## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../programming-guide/index.md)  

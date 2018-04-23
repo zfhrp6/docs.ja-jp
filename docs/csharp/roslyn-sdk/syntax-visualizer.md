@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: ec9d9fcdcaf2c018762542f6dc403e2a4f89376b
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 04452159c759a0c7236c1b93dc966e5e9c54574a
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Visual Studio で Roslyn Syntax Visualizer を使ってコードを調べる
 
@@ -28,16 +28,17 @@ ms.lasthandoff: 03/28/2018
 
 このコマンドにより、Syntax Visualizer がフローティング ツール ウィンドウとして開きます。 開いているコード エディター ウィンドウがない場合は、次の図に示すように、表示は空白になります。 
 
-![Syntax Visualizer ツール ウィンドウ](media/syntax-visualizer.png)
+![Syntax Visualizer ツール ウィンドウ](media/syntax-visualizer/syntax-visualizer.png)
 
 このツール ウィンドウを、Visual Studio 内の任意の場所 (左側など) にドッキングします。 Visualizer によって、現在のコード ファイルに関する情報が表示されます。
 
 **[ファイル]** > **[新しいプロジェクト]** コマンドを使用して、新しいプロジェクトを作成します。 VB または C# のプロジェクトを作成することができます。 Visual Studio でこのプロジェクトのメイン コード ファイルが開かれるときに、Visualizer によってその構文ツリーが表示されます。 この Visual Studio インスタンスで既存の C#/VB ファイルを開き、Visualizer でそのファイルの構文ツリーを表示することができます。 Visual Studio 内で複数のコード ファイルを開いている場合、Visualizer は現在アクティブなコード ファイル (キーボードのフォーカスがあるコード ファイル) の構文ツリーを表示します。
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
-![C# 構文ツリーの視覚化](media/visualize-csharp.png)
+![C# 構文ツリーの視覚化](media/syntax-visualizer/visualize-csharp.png)
 # <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-<a name="visualizing-a-vb-syntax-treemediavisualize-visual-basicpng"></a>![VB 構文ツリーの視覚化](media/visualize-visual-basic.png)
+![VB 構文ツリーの視覚化](media/syntax-visualizer/visualize-visual-basic.png)
+
 ---
 
 前出の画像のように、Visualizer ツール ウィンドウでは、上部に構文ツリーが表示され、下部にプロパティ グリッドが表示されます。 プロパティ グリッドには、ツリーで現在選択されている項目のプロパティが表示されます。これには、項目の .NET *型*と*種類* (SyntaxKind) が含まれます。
@@ -60,13 +61,18 @@ Visualizer は、アクティブなコード ファイル内の変更に合わ�
 
 ツリー内の任意の項目を右クリックし、**[View Directed Syntax Graph]\(有向構文グラフの表示\)** をクリックします。 
 
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 Visualizer により、選択した項目をルートとするサブツリーのグラフィカル表現が表示されます。 C# の例で `Main()` のメソッドに対応する **MethodDeclaration** ノードに、これらの手順を試してみます。 Visualizer により、次のような構文グラフが表示されます。
 
-![C# の構文グラフの表示](media/csharp-syntax-graph.png)
+![C# の構文グラフの表示](media/syntax-visualizer/csharp-syntax-graph.png)
+# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
 
 前出の VB の例の `Main()` メソッドに対応する **SubBlock** ノードにも同じことを試してみます。 Visualizer により、次のような構文グラフが表示されます。
 
-![VB の構文グラフの表示](media/visual-basic-syntax-graph.png)
+![VB の構文グラフの表示](media/syntax-visualizer/visual-basic-syntax-graph.png)
+
+---
 
 構文グラフ ビューアーには、その色分けスキームの凡例を表示するオプションがあります。 マウスを使って、構文グラフ内の個々の項目にポインターを合わせても、その項目に対応するプロパティを表示することができます。
 
@@ -74,7 +80,7 @@ Visualizer により、選択した項目をルートとするサブツリーの
 
 Visualizer ツール ウィンドウと構文グラフ ウィンドウを使用するためのドッキング レイアウトを次に示します。
 
-![Visualizer と構文グラフ ウィンドウのためのドッキング レイアウト](media/docking-layout.png)
+![Visualizer と構文グラフ ウィンドウのためのドッキング レイアウト](media/syntax-visualizer/docking-layout.png)
 
 デュアル モニターの設定では、2 つ目のモニターに構文グラフ ウィンドウを配置することもできます。
 
@@ -84,19 +90,19 @@ Syntax Visualizer を使用すると、シンボルとセマンティクス情�
 
 Visualizer 内のプロパティ グリッドが、次の図のように更新されます。式のシンボルは、**SynthesizedIntrinsicOperatorSymbol** と **Kind = Method** です。
 
-![シンボル プロパティ](media/symbol-properties.png)
+![シンボル プロパティ](media/syntax-visualizer/symbol-properties.png)
 
 同じ **AddExpression** ノードに対し、**[View TypeSymbol (if any)]\(TypeSymbol の表示 (ある場合)\)** を試してみます。 Visualizer のプロパティ グリッドが、次の図に示すように更新され、選択された式の型が `Int32` であることを示します。
 
-![TypeSymbol プロパティ](media/type-symbol-properties.png)
+![TypeSymbol プロパティ](media/syntax-visualizer/type-symbol-properties.png)
 
 同じ **AddExpression** ノードに対し、**[View Converted TypeSymbol (if any)]\(変換された TypeSymbol の表示 (ある場合)\)** を試してみます。 プロパティ グリッドが更新され、次の図に示すように、式の型は `Int32` で、式の変換後の型は `Double` であることを示します。 `Double` に変換する必要があるコンテキストで `Int32` 式が発生するため、このノードには変換後の型のシンボル情報が含まれます。 この変換により、代入演算子の左側にある変数 `x` に指定された `Double` 型を満たします。
 
-![変換された TypeSymbol プロパティ](media/converted-type-symbol-properties.png)
+![変換された TypeSymbol プロパティ](media/syntax-visualizer/converted-type-symbol-properties.png)
 
 最後に、同じ **AddExpression** ノードに対し、**[View Constant Value (if any)]\(定数値の表示 (ある場合)\)** を試してみます。 プロパティ グリッドには、式の値が、値 `2` を持つコンパイル時の定数であることが示されます。
 
-![定数値](media/constant-value.png)
+![定数値](media/syntax-visualizer/constant-value.png)
 
 前の例は VB でもレプリケートできます。 VB ファイルに `Dim x As Double = 1 + 1` を入力します。 コード エディター ウィンドウで式 `1 + 1` を選択します。 Visualizer で対応する **AddExpression** ノードが強調表示されます。 この **AddExpression** に対して上記の手順を繰り返すと、同一の結果になるはずです。
 
@@ -114,15 +120,15 @@ End Module
 
 このコードは、ファイルの上部にある型 `System.Console` にマップする `C` という名前の別名を導入し、この別名を `Main()` の内部で使用します。 `Main()` メソッド内部で、この別名の使用を選択します (`C.WriteLine()` の `C`)。 Visualizer で、対応する **IdentifierName** ノードが選択されます。 このノードを右クリックし、**[View Symbol (if any)]\(シンボルの表示 (ある場合)\)** をクリックします。 プロパティ グリッドには、次の図に示すように、この識別子が型 `System.Console` にバインドされていることが示されます。
 
-![シンボル プロパティ](media/symbol-visual-basic.png)
+![シンボル プロパティ](media/syntax-visualizer/symbol-visual-basic.png)
 
 同じ **IdentifierName** ノードに対して、**[View AliasSymbol (if any)]\(AliasSymbol の表示 (ある場合)\)** を試してみます。 プロパティ グリッドには、識別子が `System.Console` ターゲットにバインドされている `C` という名前の別名であることが示されます。 つまり、プロパティ グリッドでは、識別子 `C` に対応する **AliasSymbol** に関する情報が提供されます。
 
-![AliasSymbol プロパティ](media/alias-symbol.png)
+![AliasSymbol プロパティ](media/syntax-visualizer/alias-symbol.png)
 
 任意の宣言された型、メソッド、プロパティに対応するシンボルを検査します。 Visualizer で対応するノードを選択し、**[View Symbol (if any)]\(シンボルの表示 (ある場合)\)** をクリックします。 `Sub Main()` メソッドを選択します。メソッドの本文も含めます。 Visualizer で対応する **SubBlock** ノードに対し、**[View Symbol (if any)]\(シンボルの表示 (ある場合)\)** をクリックします。 プロパティ グリッドには、この **SubBlock** の **MethodSymbol** の名前が `Main` で、戻り値の型が `Void` であることが示されます。
 
-![メソッドの宣言のシンボルを表示する](media/method-symbol.png)
+![メソッドの宣言のシンボルを表示する](media/syntax-visualizer/method-symbol.png)
 
 上記の VB の例は、C# で簡単にレプリケートできます。 別名の `Imports C = System.Console` の代わりに `using C = System.Console;` を入力します。 C# で上記の手順を行うと、Visualizer ウィンドウの結果はまったく同じになります。
 
