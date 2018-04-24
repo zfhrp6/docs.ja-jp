@@ -12,7 +12,7 @@ ms.topic: article
 helpviewer_keywords:
 - WCF clients [WCF], configuring
 ms.assetid: d067b86d-afb0-47bf-94f6-45180a3d8d78
-caps.latest.revision: ''
+caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
@@ -31,7 +31,7 @@ ms.lasthandoff: 03/23/2018
   
 ### <a name="to-configure-a-windows-communication-foundation-client"></a>Windows Communication Foundation クライアントを構成するには  
   
-1.  GettingStartedClient プロジェクトから生成された構成ファイル (App.config) を開きます。 生成された構成ファイルを次の例に示します。[ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションの下にある [\<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素を見つけてください。
+1.  GettingStartedClient プロジェクトから生成された構成ファイル (App.config) を開きます。 生成された構成ファイルを次の例に示します。 [\<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションの下にある [\<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素を見つけてください。  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  

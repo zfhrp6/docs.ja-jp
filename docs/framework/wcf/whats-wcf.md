@@ -56,7 +56,7 @@ ms.lasthandoff: 04/16/2018
   
 -   **複数のメッセージ パターン**  
   
-     メッセージは複数のパターンの 1 つを使用して交換されます。 最も一般的なパターンは要求/応答パターンです。このパターンでは 1 つのエンドポイントが 2 番目のエンドポイントからデータを要求し、 2 番目のエンドポイントが応答します。 その他にも一方向のメッセージなどのパターンがあります。一方向のメッセージでは、1 つのエンドポイントが応答を期待せずにメッセージを送信します。 より複雑なパターンとして、2 つのエンドポイントが接続を確立し、インスタント メッセージング プログラムのようにデータをやり取りする双方向交換パターンがあります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] を使用した異なるメッセージ交換パターンの実装方法の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [Contracts](../../../docs/framework/wcf/feature-details/contracts.md)。  
+     メッセージは複数のパターンの 1 つを使用して交換されます。 最も一般的なパターンは要求/応答パターンです。このパターンでは 1 つのエンドポイントが 2 番目のエンドポイントからデータを要求し、 2 番目のエンドポイントが応答します。 その他にも一方向のメッセージなどのパターンがあります。一方向のメッセージでは、1 つのエンドポイントが応答を期待せずにメッセージを送信します。 より複雑なパターンとして、2 つのエンドポイントが接続を確立し、インスタント メッセージング プログラムのようにデータをやり取りする双方向交換パターンがあります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)][!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用した異なるメッセージ交換パターンの実装方法については [コントラクト](../../../docs/framework/wcf/feature-details/contracts.md) を参照してください。  
   
 -   **サービス メタデータ**  
   
@@ -68,7 +68,7 @@ ms.lasthandoff: 04/16/2018
   
 -   **セキュリティ**  
   
-     メッセージを暗号化してプライバシーを保護し、メッセージを受信する前にユーザーが自身を認証することを必須化することができます。 SSL や WS-SecureConversation などよく知られた標準を使用してセキュリティを実装できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [セキュリティ](../../../docs/framework/wcf/feature-details/security.md)。  
+     メッセージを暗号化してプライバシーを保護し、メッセージを受信する前にユーザーが自身を認証することを必須化することができます。 SSL や WS-SecureConversation などよく知られた標準を使用してセキュリティを実装できます。 詳細については、「[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [セキュリティ](../../../docs/framework/wcf/feature-details/security.md)」を参照してください。  
   
 -   **複数のトランスポートとエンコーディング**  
   
@@ -84,7 +84,7 @@ ms.lasthandoff: 04/16/2018
   
 -   **トランザクション**  
   
-     WCF では、WS-AtomicTtransactions、 <xref:System.Transactions> 名前空間の API、および Microsoft 分散トランザクション コーディネーターの 3 つのトランザクション モデルの 1 つを使用したトランザクションもサポートしています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] でサポートされているトランザクションの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [トランザクション](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md)。  
+     WCF では、WS-AtomicTtransactions、<xref:System.Transactions> 名前空間の API、および Microsoft 分散トランザクション コーディネーターの 3 つのトランザクション モデルの 1 つを使用したトランザクションもサポートしています。  [!INCLUDE[crabout](../../../includes/crabout-md.md)] でサポートされているトランザクションの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [トランザクション](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md)。  
   
 -   **AJAX および REST サポート**  
   
