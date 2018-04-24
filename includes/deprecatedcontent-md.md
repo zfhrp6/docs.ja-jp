@@ -1,0 +1,1 @@
+ここでは、廃止された型と名前空間について説明します。 詳細については、「[.NET 4.5 での Windows Workflow Foundation の新機能](http://aka.ms/wfdeprecatedtypes)」を参照してください。

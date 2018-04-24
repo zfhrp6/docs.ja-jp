@@ -1,0 +1,1 @@
+行列変換の場合、インスタンス <xref:System.Numerics.Vector2>、<xref:System.Numerics.Vector3>、<xref:System.Numerics.Vector4> が行を表します。マトリックス *M* と *vM* の乗算によりベクター *v* が変換されます。
