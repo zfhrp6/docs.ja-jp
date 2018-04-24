@@ -1,12 +1,12 @@
 ---
-title: "標準の日時書式指定文字列"
-ms.custom: 
+title: 標準の日時書式指定文字列
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,18 +20,18 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-caps.latest.revision: 
+caps.latest.revision: 92
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 55f8f6b544a3ade0ad9423e8253cc44e0fb5fec1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5de7da12867e11fcde00089e13c98396ed279a5e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="standard-date-and-time-format-strings"></a>標準の日時書式指定文字列
 標準の日時書式指定文字列は、単一の書式指定子を使用して日付と時刻の値のテキスト表現を定義します。 空白を含む複数の文字で構成される日時書式指定文字列は、カスタム日時書式指定文字列として解釈されます。詳細については、「[カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)」をご覧ください。 標準またはカスタムの書式指定文字列には、次の 2 とおりの使用方法があります。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/23/2017
  標準の日時書式指定文字列は、<xref:System.DateTime> 値で使用することも、<xref:System.DateTimeOffset> 値で使用することもできます。  
   
 > [!TIP]
->  [書式指定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
+>  [書式指定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
   
 <a name="table"></a>標準日時書式指定子を次の表に示します。 特に明記されない限り、特定の標準日時書式指定子は、<xref:System.DateTime> 値で使用しても、<xref:System.DateTimeOffset> 値で使用してもまったく同じ文字列形式を生成します。 標準の日時書式指定文字列の使用方法については、「[メモ](#Notes)」をご覧ください。  
   
@@ -426,4 +426,4 @@ ms.lasthandoff: 12/23/2017
  <xref:System.DateTimeOffset?displayProperty=nameWithType>  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
- [サンプル: .NET Framework 4 の書式設定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+ [サンプル: .NET Framework 4 の書式設定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

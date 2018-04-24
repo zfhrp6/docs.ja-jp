@@ -23,11 +23,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: e9ebd1a11684afaa143d1f016f31e0a29a3478db
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: b420859380d7c3c39a7d85f94df1708d9f26bebc
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="file-and-stream-io"></a>ファイルおよびストリーム入出力
 ファイルおよびストリーム I/O (入出力) とは、ストレージ メディアとの間のデータの転送を指します。 .NET Framework では、`System.IO` 名前空間に、データ ストリームおよびファイルで同期的および非同期的に読み取りと書き込みを有効にする型が用意されています。 これらの名前空間には、ファイルを圧縮および圧縮解除する型、パイプとシリアル ポート経由の通信を有効にする型もあります。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 03/02/2018
   
  これらのクラスに加えて、Visual Basic のユーザーは、ファイル I/O 用の <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> クラスに用意されているメソッドとプロパティを使用できます。  
   
- 「[方法: ディレクトリをコピーする](../../../docs/standard/io/how-to-copy-directories.md)」、「[方法: ディレクトリ リストを作成する](http://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69)」、および「[方法: ディレクトリとファイルを列挙する](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)」を参照してください。  
+ 「[方法: ディレクトリをコピーする](../../../docs/standard/io/how-to-copy-directories.md)」、「[方法: ディレクトリ リストを作成する](https://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69)」、および「[方法: ディレクトリとファイルを列挙する](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)」を参照してください。  
   
 ## <a name="streams"></a>ストリーム  
  抽象基底クラス <xref:System.IO.Stream> は、バイトの読み取りと書き込みをサポートします。 ストリームを表すすべてのクラスは、<xref:System.IO.Stream> クラスから継承されます。 <xref:System.IO.Stream> クラスとその派生クラスは、データ ソースやリポジトリの共通ビューを提供し、プログラマがオペレーティング システムや基になるデバイスに固有の詳細事項を考慮する必要をなくします。  

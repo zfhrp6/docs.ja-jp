@@ -1,30 +1,30 @@
 ---
-title: "XML スキーマのインクルードまたはインポート"
-ms.custom: 
+title: XML スキーマのインクルードまたはインポート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
-caps.latest.revision: 
+caps.latest.revision: 2
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a8c9b513f47fcb07f987b1e17f0b7f485cef3143
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 7ee43ddbcd038574fbff3ae487fbebbbd2643656
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="including-or-importing-xml-schemas"></a>XML スキーマのインクルードまたはインポート
 XML スキーマには、`<xs:import />` 要素、`<xs:include />` 要素、および `<xs:redefine />` 要素を含めることができます。 これらのスキーマ要素は、インクルードまたはインポートするスキーマの構造を補足するために使用できる他の XML スキーマを参照します。 <xref:System.Xml.Schema.XmlSchemaImport> クラス、<xref:System.Xml.Schema.XmlSchemaInclude> クラス、および <xref:System.Xml.Schema.XmlSchemaRedefine> クラスは、スキーマ オブジェクト モデル (SOM) API でこれらの要素にマップされます。  
@@ -108,7 +108,7 @@ XML スキーマには、`<xs:import />` 要素、`<xs:include />` 要素、お�
 </schema>  
 ```  
   
- `<xs:import />` 要素、`<xs:include />` 要素、`<xs:redefine />` 要素、<xref:System.Xml.Schema.XmlSchemaImport> クラス、<xref:System.Xml.Schema.XmlSchemaInclude> クラス、<xref:System.Xml.Schema.XmlSchemaRedefine> クラスの詳細については、[W3C XML スキーマ](http://www.w3.org/XML/Schema)および <xref:System.Xml.Schema?displayProperty=nameWithType> 名前空間クラスのリファレンス ドキュメントを参照してください。  
+ `<xs:import />` 要素、`<xs:include />` 要素、`<xs:redefine />` 要素、<xref:System.Xml.Schema.XmlSchemaImport> クラス、<xref:System.Xml.Schema.XmlSchemaInclude> クラス、<xref:System.Xml.Schema.XmlSchemaRedefine> クラスの詳細については、[W3C XML スキーマ](https://www.w3.org/XML/Schema)および <xref:System.Xml.Schema?displayProperty=nameWithType> 名前空間クラスのリファレンス ドキュメントを参照してください。  
   
 ## <a name="see-also"></a>参照  
  [XML スキーマ オブジェクト モデルの概要](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  

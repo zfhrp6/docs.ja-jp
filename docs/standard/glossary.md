@@ -12,11 +12,11 @@ ms.devlang: dotnet
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 33123732514a53574036f6f8e948b2cf9acb9229
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 7e9732fb6eaef240d08449635697ba6b8ad9c510
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="net-glossary"></a>.NET 用語集
 
@@ -150,7 +150,7 @@ Mono は、主に小規模なランタイムが必要な場合に使用される
 
 一般的に Mono は、Just-In-Time コンパイラと共に使用されますが、iOS のようなプラットフォームに使用される完全な静的コンパイラ (Ahead Of Time コンパイル) としても機能します。
 
-Mono について詳しくは、[Mono のドキュメント](http://www.mono-project.com/docs/)をご覧ください。
+Mono について詳しくは、[Mono のドキュメント](https://www.mono-project.com/docs/)をご覧ください。
 
 ## <a name="net"></a>.NET
 
@@ -252,7 +252,7 @@ OS は、ランタイム環境の一部ですが、.NET ランタイムの一部
 
 .NET アプリまたはライブラリが依存する API のコレクション。
 
-アプリまたはライブラリは、.NET Standard の 1 つのバージョン (.NET Standard 2.0 など) をターゲットにできます.NET Standard は、.NET のすべての実装で標準化された API のセットの仕様です。 また、アプリまたはライブラリは、.NET の特定の実装のバージョンをターゲットにすることもでき、その場合は実装固有の API にアクセスできます。 たとえば、Xamarin.iOS をターゲットにするアプリは、Xamarin が提供する iOS API ラッパーにアクセスできます。
+アプリまたはライブラリは、.NET Standard の 1 つのバージョン (.NET Standard 2.0 など) をターゲットにできます。.NET Standard は、.NET のすべての実装で標準化された API のセットの仕様です。 また、アプリまたはライブラリは、.NET の特定の実装のバージョンをターゲットにすることもでき、その場合は実装固有の API にアクセスできます。 たとえば、Xamarin.iOS をターゲットにするアプリは、Xamarin が提供する iOS API ラッパーにアクセスできます。
 
 一部のターゲット フレームワーク (.NET Framework など) では、使用可能な API は .NET の実装がシステムにインストールするアセンブリによって定義され、アプリケーション フレームワーク API (たとえば ASP.NET、WinForms) を含む場合があります。 パッケージ ベースのターゲット フレームワーク (.NET Standard、.NET Core など) では、フレームワーク API はアプリまたはライブラリでインストールされるパッケージによって定義されます。 その場合、ターゲット フレームワークでは、全体としてフレームワークを構成するすべてのパッケージを参照するメタパッケージが暗黙的に指定されます。
 

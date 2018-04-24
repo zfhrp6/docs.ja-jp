@@ -1,12 +1,12 @@
 ---
-title: "方法: Parallel クラスを使用してファイル ディレクトリを反復処理する"
-ms.custom: 
+title: '方法: Parallel クラスを使用してファイル ディレクトリを反復処理する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,18 +14,18 @@ dev_langs:
 helpviewer_keywords:
 - parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-caps.latest.revision: 
+caps.latest.revision: 8
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3ac1af7922e1bbd81f4dfcee256f5c8892294003
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 449f7c9e3dfd4c74ad67cea9cbc08104f07bc680
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>方法: Parallel クラスを使用してファイル ディレクトリを反復処理する
 多くの場合、ファイル反復処理は簡単に並列化できる操作です。 「[方法: PLINQ を使用してファイル ディレクトリを反復処理する](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md)」のトピックは、多くのシナリオでこのタスクを実行するための簡単な方法を示しています。 ただし、ファイル システムへのアクセス時に発生する可能性のある多くの種類の例外をコードで処理する必要がある場合は、複雑さが生じることがあります。 次の例は、この問題への対処方法の 1 つを示しています。 この例では、スタック ベースの反復処理を使用して、指定されたディレクトリにあるすべてのファイルとフォルダーを走査し、コードで各種例外をキャッチして処理できるようにしています。 例外を処理する方法は開発者に委ねられています。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/19/2018
   
  この例では、ローカル変数 `fileCount` を使用して、処理済みファイルの合計数を示すカウントを管理します。 この変数は複数のタスクから同時にアクセスされる可能性があるため、この変数へのアクセスは <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> メソッドの呼び出しによって同期されています。  
   
- メイン スレッドで例外がスローされた場合、<xref:System.Threading.Tasks.Parallel.ForEach%2A> メソッドによって開始されたスレッドが引き続き実行されることがあります。 これらのスレッドを停止するには、例外ハンドラーで Boolean 変数を設定し、並列ループを反復処理するたびに値をチェックします。 例外がスローされたことを値が示している場合は、<xref:System.Threading.Tasks.ParallelLoopState> 変数を使用してループを停止または中断します。 詳細については、「[方法: Parallel.For ループを停止または中断する](http://msdn.microsoft.com/library/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)」を参照してください。  
+ メイン スレッドで例外がスローされた場合、<xref:System.Threading.Tasks.Parallel.ForEach%2A> メソッドによって開始されたスレッドが引き続き実行されることがあります。 これらのスレッドを停止するには、例外ハンドラーで Boolean 変数を設定し、並列ループを反復処理するたびに値をチェックします。 例外がスローされたことを値が示している場合は、<xref:System.Threading.Tasks.ParallelLoopState> 変数を使用してループを停止または中断します。 詳細については、「[方法: Parallel.For ループを停止または中断する](https://msdn.microsoft.com/library/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
  [データの並列化](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)

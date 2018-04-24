@@ -1,7 +1,7 @@
 ---
-title: "Azure Service Fabric の使用"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Azure Service Fabric の使用"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Azure Service Fabric の使用
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Azure Service Fabric の使用
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 9480a3f67e9d0a61d0669bf34be4b66208f5e9ce
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 85c9c336b0a215dc22a9308c5726f03789f31d5a
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-azure-service-fabric"></a>Azure Service Fabric の使用
 
@@ -90,7 +90,7 @@ Service Fabric でサービス自体もステートフルにして、データ�
 
 ステートフル サービスには欠点があります。 スケール アウト可能なある程度の複雑さを強制します。通常外部データベース システムによって実装される機能は、ステートフル マイクロサービスにまたがるレプリケーションや、データのパーティション分割などの機能として対処する必要があります。 ただし、[Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture) などのオーケストレーターとその[ステートフル Reliable Service](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) が最も役立つ領域の 1 つです。これにより、[Reliable Services API](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections) と [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction) を使用するステートフル マイクロサービスの開発とライフサイクルが簡素化されます。
 
-ステートフル サービスを許可し、Actor パターンをサポートし、ビジネス ロジックとデータ間のフォールト トレランスと遅延を改善する他のマイクロサービス フレームワークは、Microsoft [Orleans](https://github.com/dotnet/orleans)、Microsoft Research、および [Akka.NET](http://getakka.net/) です。 両方のフレームワークは、現在 Docker のサポートを向上させています。
+ステートフル サービスを許可し、Actor パターンをサポートし、ビジネス ロジックとデータ間のフォールト トレランスと遅延を改善する他のマイクロサービス フレームワークは、Microsoft [Orleans](https://github.com/dotnet/orleans)、Microsoft Research、および [Akka.NET](https://getakka.net/) です。 両方のフレームワークは、現在 Docker のサポートを向上させています。
 
 Docker コンテナーはそれ自身ステートレスなことに注意してください。 ステートフル サービスを実装する場合は、前に説明した追加の規範的で高度なフレームワークの 1 つが必要です。 
 

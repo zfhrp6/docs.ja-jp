@@ -1,30 +1,30 @@
 ---
-title: "Windows でのマネージ スレッド処理とアンマネージ スレッド処理"
-ms.custom: 
+title: Windows でのマネージ スレッド処理とアンマネージ スレッド処理
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - threading [.NET Framework], unmanaged
 - threading [.NET Framework], managed
 - managed threading
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
-caps.latest.revision: 
+caps.latest.revision: 17
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2ce17ef15a5b582a9df0f16d7e0ac82df626579d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 66bf8458a3f4f9dd622129e82acb659dddf8467a
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Windows でのマネージ スレッド処理とアンマネージ スレッド処理
 共通言語ランタイムにより作成されたスレッド、マネージ環境に入ってコードを実行するランタイム外部で作成されたスレッドなど、すべてのスレッドの管理は、 <xref:System.Threading.Thread> クラスを使用して行われます。 ランタイムは、プロセス内のスレッドのうち、マネージ実行環境内でコードを実行したすべてのスレッドを監視します。 その他のスレッドは追跡しません。 ランタイムがマネージ オブジェクトを COM オブジェクトとしてアンマネージ環境に公開するため、スレッドは COM 相互運用を使用してマネージ実行環境に入ることができます。また、COM [DllGetClassObject](https://msdn.microsoft.com/library/ms680760.aspx) 関数やプラットフォーム呼び出しを介してマネージ実行環境に入ることもできます。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 01/19/2018
 |**CoInitializeEx** (OLE32.DLL) に類似|<xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>|  
   
 ## <a name="managed-threads-and-com-apartments"></a>マネージ スレッドと COM アパートメント  
- マネージ スレッドには、[シングル スレッド](http://msdn.microsoft.com/library/windows/desktop/ms680112.aspx) アパートメントをホストするか、[マルチ スレッド](http://msdn.microsoft.com/library/windows/desktop/ms693421.aspx) アパートメントをホストするかを示すようマークすることができます  (COM スレッド アーキテクチャの詳細については、「[プロセス、スレッド、アパートメント](http://msdn.microsoft.com/library/windows/desktop/ms693344.aspx)」を参照してください。)<xref:System.Threading.Thread.GetApartmentState%2A> クラスの <xref:System.Threading.Thread.SetApartmentState%2A>、<xref:System.Threading.Thread.TrySetApartmentState%2A>、および <xref:System.Threading.Thread> の各スレッドは、スレッドのアパートメント状態を返して割り当てます。 状態が設定されていない場合、<xref:System.Threading.Thread.GetApartmentState%2A> は <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType> を返します。  
+ マネージ スレッドには、[シングル スレッド](https://msdn.microsoft.com/library/windows/desktop/ms680112.aspx) アパートメントをホストするか、[マルチ スレッド](https://msdn.microsoft.com/library/windows/desktop/ms693421.aspx) アパートメントをホストするかを示すようマークすることができます  (COM スレッド アーキテクチャの詳細については、「[プロセス、スレッド、アパートメント](https://msdn.microsoft.com/library/windows/desktop/ms693344.aspx)」を参照してください。)<xref:System.Threading.Thread.GetApartmentState%2A> クラスの <xref:System.Threading.Thread.SetApartmentState%2A>、<xref:System.Threading.Thread.TrySetApartmentState%2A>、および <xref:System.Threading.Thread> の各スレッドは、スレッドのアパートメント状態を返して割り当てます。 状態が設定されていない場合、<xref:System.Threading.Thread.GetApartmentState%2A> は <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType> を返します。  
   
  プロパティは、スレッドが <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> 状態の場合にのみ設定することができます。設定できるのは、1 つのスレッドにつき 1 回だけです。  
   

@@ -6,14 +6,15 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: eb830ede1b644700a80f0e9fac2f3608deb88276
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b1472f8107d57eff8faca1b4c7de7ba43f4271c0
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>従来の Web アプリケーションかシングル ページ アプリケーション (SPA) を選択する
 
@@ -91,7 +92,7 @@ SPA を作成するには、JavaScript や TypeScript と、クライアント�
   | **要素** | **従来の Web アプリケーション** | **シングル ページ アプリケーション** |
   |---|---|---|
   | チームに必要な JavaScript/TypeScript の精通度 | **最小限** | **必須** |
-  | スクリプトを作成せずにブラウザーをサポート | **サポート** | **サポートされない** |
+  | スクリプトを作成せずにブラウザーをサポート | **サポート状況** | **サポートされない** |
   | 最小限のクライアント側アプリケーションの動作 | **適している** | **過剰** |
   | 高度で複雑なユーザー インターフェイス要件 | **制限がある** | **適している** |
 

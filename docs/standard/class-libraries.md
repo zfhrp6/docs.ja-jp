@@ -13,15 +13,15 @@ ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8f7c421d2490678f7122e78bc0b83ebf3a1aa9ea
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 44d5745daed8539c5dd48b08f9f73edce4da939f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="net-class-libraries"></a>.NET クラス ライブラリ
 
-クラス ライブラリは、.NET の[共有ライブラリ](http://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries)の概念です。 クラス ライブラリを使用すると、役に立つ機能をモジュールとしてコンポーネント化して、複数のアプリケーションで使用することができます。 また、アプリケーションの起動時には不要または認識されない機能を読み込むための手段としても使用できます。 クラス ライブラリは、[.NET アセンブリ ファイルの形式](assembly-format.md)を使用して記述されます。
+クラス ライブラリは、.NET の[共有ライブラリ](https://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries)の概念です。 クラス ライブラリを使用すると、役に立つ機能をモジュールとしてコンポーネント化して、複数のアプリケーションで使用することができます。 また、アプリケーションの起動時には不要または認識されない機能を読み込むための手段としても使用できます。 クラス ライブラリは、[.NET アセンブリ ファイルの形式](assembly-format.md)を使用して記述されます。
 
 次の 3 種類のクラス ライブラリを使用できます。
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/19/2018
 
 ポータブル ライブラリを作成するときに、プラットフォームの構成を選択します。 これらはサポートする必要があるプラットフォーム (たとえば、.NET Framework 4.5 以降、Windows Phone 8.0 以降) のセットです。 サポートするプラットフォームが増えるほど、想定可能な API とプラットフォームが減り、共通分母が最小になります。 このような特性は、最初は混乱を招くことがあります。ユーザーは多くの場合、「多いほどよい」と考えますが、結果はサポートするプラットフォームが増えるほど、使用可能な API は少なくなります。
 
-多くのライブラリ開発者は、1 つのソースから複数のプラットフォーム固有のライブラリを生成する方法 (条件付きコンパイル ディレクティブを使用) からポータブル ライブラリに切り替えています。 ポータブル ライブラリ内のプラットフォーム固有の機能にアクセスする[方法はいくつか](http://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html)あります。現時点で最も広く採用されている手法は、[bait-and-switch](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/) です。
+多くのライブラリ開発者は、1 つのソースから複数のプラットフォーム固有のライブラリを生成する方法 (条件付きコンパイル ディレクティブを使用) からポータブル ライブラリに切り替えています。 ポータブル ライブラリ内のプラットフォーム固有の機能にアクセスする[方法はいくつか](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html)あります。現時点で最も広く採用されている手法は、[bait-and-switch](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/) です。
 
 ### <a name="net-standard-class-libraries"></a>.NET Standard クラス ライブラリ
 

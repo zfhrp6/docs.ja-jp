@@ -5,14 +5,15 @@ ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 13f279b371bc5212a4ce9a171d37316c5e6efb77
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
-ms.translationtype: MT
+ms.openlocfilehash: bde96fd6348cf651dcca988eb546549fedf4df85
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Microsoft ツールを使用した Docker アプリケーション DevOps ワークフロー
 
@@ -32,7 +33,7 @@ Microsoft ツールは、Docker、.NET Core、または他のプラットフォ�
 
 -   Visual Studio Team Services でビルド パイプラインの一部として、自動テストを実行します。
 
--   Visual Studio Team Services では、実稼働環境用のみでなく、A/B 実験、[カナリヤ リリース](http://martinfowler.com/bliki/CanaryRelease.html)など、テスト用を含む複数の環境への配信により、DevOps のライフ サイクルを強化できます。
+-   Visual Studio Team Services では、実稼働環境用のみでなく、A/B 実験、[カナリヤ リリース](https://martinfowler.com/bliki/CanaryRelease.html)など、テスト用を含む複数の環境への配信により、DevOps のライフ サイクルを強化できます。
 
 -   組織は、Azure Container Registry に格納されたプライベート イメージから Docker コンテナーを、Azure Resource Manager テンプレートと既に使い慣れているツールを使用して、(Data、PaaS などの) Azure コンポーネントの任意の依存関係と共に簡単にプロビジョニングできます。
 

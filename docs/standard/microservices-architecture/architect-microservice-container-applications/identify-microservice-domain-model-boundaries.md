@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービスごとにドメイン モデルの境界を識別する"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスごとにドメイン モデルの境界を識別する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービスごとにドメイン モデルの境界を識別する
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスごとにドメイン モデルの境界を識別する
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,17 +11,17 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 830dd48a420a462842de57e436323a5a930c195d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 23b5ebafc5ea037568f168426d76b3ec9839040e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="identify-domain-model-boundaries-for-each-microservice"></a>マイクロサービスごとにドメイン モデルの境界を識別する
 
 可能であればマイクロサービスの規模は傾向的に小さくする必要があります。しかし、各マイクロサービスのモデルの境界とサイズを識別する場合の目標は、できる限り細かい分離を実現することではありません。 ドメイン知識に従って最も意味のある分離を実現することに目標を設定する必要があります。 重点を置くのはサイズではなく、ビジネス機能です。 加えて、多くの依存関係に基づくアプリケーションの特定の領域に対してクリアな凝集度が必要である場合は、単一のマイクロサービスに対してもそのことが必要になります。 凝集度とは、マイクロサービスをどのように分離またはグループ化するかを識別する方法です。 最終的には、ドメインに関する知識をより多く取得しながら、マイクロサービスのサイズを繰り返し調整する必要があります。 適切なサイズを見つけるには、複数回のプロセスが必要です。
 
-マイクロサービスの推奨者として認知され、書籍『[Building Microservices](http://samnewman.io/books/building_microservices/)』 (マイクロサービスの構築) の著者でもある [Sam Newman](http://samnewman.io/) 氏は、以前に紹介した Bounded Context (BC) パターン (ドメインドリブン設計の一部) に基づいてマイクロサービスを設計する必要があることを強調しています。 場合によって、1 つの BC を複数の物理サービスで構成することが可能ですが、その逆は成立しません。
+マイクロサービスの推奨者として認知され、書籍『[Building Microservices](https://samnewman.io/books/building_microservices/)』 (マイクロサービスの構築) の著者でもある [Sam Newman](https://samnewman.io/) 氏は、以前に紹介した Bounded Context (BC) パターン (ドメインドリブン設計の一部) に基づいてマイクロサービスを設計する必要があることを強調しています。 場合によって、1 つの BC を複数の物理サービスで構成することが可能ですが、その逆は成立しません。
 
 具体的な BC またはマイクロサービス内では、特定のドメイン エンティティを持つドメイン モデルが適用されます。 BC によってドメイン モデルの適用性の範囲が定められ、開発チームのメンバーは結束性が必要であるもの、および個別に開発できるものを明確に理解し、その理解を共有することができます。 これらの目標はマイクロサービスと同じです。
 

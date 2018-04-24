@@ -1,6 +1,6 @@
 ---
-title: "ネイティブ相互運用性"
-description: ".Net のネイティブ コンポーネントとやり取りする方法を説明します。"
+title: ネイティブ相互運用性
+description: .Net のネイティブ コンポーネントとやり取りする方法を説明します。
 keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: ronpet
@@ -13,11 +13,11 @@ ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 11a93f4014734130f7c4e33cf215c6d49d2554c5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d9b0fa5ebe37e51c45a8a5d8a42ce9b9688cc7c1
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="native-interoperability"></a>ネイティブ相互運用性
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 12/23/2017
 ネイティブ コードを呼び出す理由はいくつかあります。
 
 *   オペレーティング システムには、マネージ クラス ライブラリに存在しない大量の API が付属しています。 この主な例には、ハードウェアまたはオペレーティング システム管理機能へのアクセスがあります。
-*   C スタイル ABI (ネイティブ ABI) があるか、または生成できるその他のコンポーネントと通信します。 これはたとえば、[Java ネイティブ インターフェイス (JNI)](http://docs.oracle.com/javase/8/docs/technotes/guides/jni/) によって公開されている Java コードまたはネイティブ コンポーネントを生成できる他のマネージ言語を対象とします。
+*   C スタイル ABI (ネイティブ ABI) があるか、または生成できるその他のコンポーネントと通信します。 これはたとえば、[Java ネイティブ インターフェイス (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) によって公開されている Java コードまたはネイティブ コンポーネントを生成できる他のマネージ言語を対象とします。
 *   Windows では、Microsoft Office スイートなどのインストールされるソフトウェアのほとんどが、それらのプログラムを表し、開発者が自動化したり、使用したりできる COM コンポーネントを登録します。 これも、ネイティブ相互運用性を必要とします。
 
 もちろん、上の一覧は、開発者がネイティブ コンポーネントとやり取りしたいと考える、またはその必要があるすべての可能性のある状況やシナリオを取り上げていません。 たとえば、.NET クラス ライブラリは、ネイティブ相互運用性サポートを使用して、コンソールのサポートと操作、ファイル システムのアクセスなど、そのかなりの数の API を実装しています。 ただし、それを必要とする場合に、オプションがあることに注意することが重要です。
@@ -340,6 +340,6 @@ public class StatClass {
 
 ## <a name="more-resources"></a>その他のリソース
 
-*   [PInvoke.net wiki](http://www.pinvoke.net) は、一般的な Win32 API とそれらを呼び出す方法に関する情報を記載した優れた Wiki です。
+*   [PInvoke.net wiki](https://www.pinvoke.net/) は、一般的な Win32 API とそれらを呼び出す方法に関する情報を記載した優れた Wiki です。
 *   [MSDN の P/Invoke](https://msdn.microsoft.com/library/zbz07712.aspx)
-*   [P/invoke に関する Mono のドキュメント](http://www.mono-project.com/docs/advanced/pinvoke/)
+*   [P/invoke に関する Mono のドキュメント](https://www.mono-project.com/docs/advanced/pinvoke/)

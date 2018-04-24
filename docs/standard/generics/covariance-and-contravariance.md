@@ -1,12 +1,12 @@
 ---
-title: "ジェネリックの共変性と反変性"
-ms.custom: 
+title: ジェネリックの共変性と反変性
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-caps.latest.revision: 
+caps.latest.revision: 24
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7536d06c971251fb857fabefc95a50ae4389f785
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 595b637ac12b6ecd8633bb8f48a54d722bc84f49
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>ジェネリックの共変性と反変性
 <a name="top"></a> 共変性と反変性は、元の指定よりも強い派生型 (具体性が高い) と弱い派生型 (具体性が低い) を使用する能力を示す用語です。 ジェネリック型パラメーターは、ジェネリック型の代入と使用の柔軟性を向上させるために、共変性と反変性をサポートしています。 型システムにおいて、共変性、反変性、および不変性は、次のように定義されます。 各例では、基底クラスが `Base` という名前であり、派生クラスが `Derived`という名前であるとします。  
@@ -145,7 +145,7 @@ ms.lasthandoff: 03/12/2018
 ### <a name="variance-in-generic-and-non-generic-delegates"></a>汎用デリゲートと非汎用デリゲートの分散  
  上のコードでは、 `MyMethod` のシグネチャが、構築された汎用デリゲート `Func<Base, Derived>` (Visual Basic では`Func(Of Base, Derived)` ) のシグネチャと厳密に一致しています。 この例から、より強い派生型のパラメーターとより弱い派生型の戻り値を持つ変数やメソッド パラメーターにこの汎用デリゲートを格納できることと、そのためには、すべてのデリゲート型が汎用デリゲート型 <xref:System.Func%602>から構築されている必要があることがわかります。  
   
- これは重要なポイントです。 汎用デリゲートの型パラメーターの共変性と反変性の効果は、通常のデリゲート バインディングの共変性と反変性の効果 (「[デリゲートの分散](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)」を参照) に似ていますが、 デリゲート バインディングの分散は、バリアント型パラメーターを持つ汎用デリゲート型だけでなく、すべてのデリゲート型で使用できます。 さらに、デリゲート バインディングの分散では、より限定的なパラメーターの型とより限定的でない戻り値の型を持つ任意のデリゲートにメソッドをバインドできますが、汎用デリゲートの代入を使用できるのは、両方のデリゲート型が同じジェネリック型定義から構築されている場合のみです。  
+ これは重要なポイントです。 汎用デリゲートの型パラメーターの共変性と反変性の効果は、通常のデリゲート バインディングの共変性と反変性の効果 (「[デリゲートの分散](https://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)」を参照) に似ていますが、 デリゲート バインディングの分散は、バリアント型パラメーターを持つ汎用デリゲート型だけでなく、すべてのデリゲート型で使用できます。 さらに、デリゲート バインディングの分散では、より限定的なパラメーターの型とより限定的でない戻り値の型を持つ任意のデリゲートにメソッドをバインドできますが、汎用デリゲートの代入を使用できるのは、両方のデリゲート型が同じジェネリック型定義から構築されている場合のみです。  
   
  デリゲート バインディングの分散とジェネリック型パラメーターの分散の両方の効果を組み合わせた例を以下に示します。 ここでは、3 つの型を含む型階層を定義しています。`Type1`が最も弱い派生型で、`Type3`が最も強い派生型です。 通常のデリゲート バインディングの分散を使用して、パラメーターの型が `Type1` で戻り値の型が `Type3` のメソッドを、パラメーターの型が `Type2` で戻り値の型が `Type2`の汎用デリゲートにバインドしています。 その結果、得られた汎用デリゲートを、ジェネリック型パラメーターの共変性と反変性を使用して、 `Type3` 型のパラメーターと `Type1`型の戻り値を持つ汎用デリゲート型の変数に代入しています。 2 回目の代入では、変数型とデリゲート型の両方が同じジェネリック型定義 (この場合は <xref:System.Func%602>) から構築されている必要があります。  
   
@@ -172,7 +172,7 @@ ms.lasthandoff: 03/12/2018
   
  Visual Basic と C# では、共変および反変の型パラメーターの使用規則に違反したり、インターフェイスとデリゲート以外の型の型パラメーターに共変性や反変性の注釈を追加したりすることは許可されません。 [MSIL アセンブラー](../../../docs/framework/tools/ilasm-exe-il-assembler.md) ではそのようなチェックは行われませんが、規則に違反する型を読み込もうとすると <xref:System.TypeLoadException> がスローされます。  
   
- 詳細とコード例については、「[ジェネリック インターフェイスの分散](http://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a)」を参照してください。  
+ 詳細とコード例については、「[ジェネリック インターフェイスの分散](https://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a)」を参照してください。  
   
  [ページのトップへ](#top)  
   
@@ -201,4 +201,4 @@ ms.lasthandoff: 03/12/2018
 ## <a name="see-also"></a>参照  
  [共変性と反変性 (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/index.md)  
  [共変性と反変性 (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)    
- [デリゲートの分散](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)
+ [デリゲートの分散](https://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)

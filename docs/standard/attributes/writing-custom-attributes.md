@@ -1,12 +1,12 @@
 ---
-title: "カスタム属性の記述"
-ms.custom: 
+title: カスタム属性の記述
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,18 +22,18 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-caps.latest.revision: 
+caps.latest.revision: 14
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d3fb814d6b458de90d684a3ac92e22a62e290a9a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b38aa643453d9ad853d0d17af0f1ddf2ba69d4a1
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="writing-custom-attributes"></a>カスタム属性の記述
 独自のカスタム属性をデザインするために、多くの新しい概念を習得する必要はありません。 オブジェクト指向プログラミングに精通してクラスをデザインする方法を理解しているなら、必要な知識をほぼすべて持っています。 カスタム属性は、基本的には、<xref:System.Attribute?displayProperty=nameWithType> から直接的に派生したか間接的に派生した従来のクラスです。 従来のクラスと同じように、カスタム属性には、データを格納したり取得したりするメソッドが含まれます。  
@@ -134,7 +134,7 @@ ms.lasthandoff: 12/23/2017
  [!code-csharp[Conceptual.Attributes.Usage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#15)]
  [!code-vb[Conceptual.Attributes.Usage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#15)]  
   
- さまざまな値の組み合わせに対応するように、コンストラクターをオーバーロードできます。 カスタム属性クラスの [プロパティ](http://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52) も定義する場合、属性を初期化する際に、名前付きパラメーターと位置指定パラメーターの組み合わせを使うことができます。 通常、必須パラメーターすべてを位置指定パラメーター、省略可能なパラメーターすべてを名前付きパラメーターとして定義します。 この場合、属性は必須パラメーターがないと初期化できません。 その他のすべてのパラメーターは省略できます。 Visual Basic では、属性クラスのコンストラクターで ParamArray 引数を使うべきではないことに注意してください。  
+ さまざまな値の組み合わせに対応するように、コンストラクターをオーバーロードできます。 カスタム属性クラスの[プロパティ](https://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52)も定義する場合、属性を初期化する際に、名前付きパラメーターと位置指定パラメーターの組み合わせを使うことができます。 通常、必須パラメーターすべてを位置指定パラメーター、省略可能なパラメーターすべてを名前付きパラメーターとして定義します。 この場合、属性は必須パラメーターがないと初期化できません。 その他のすべてのパラメーターは省略できます。 Visual Basic では、属性クラスのコンストラクターで ParamArray 引数を使うべきではないことに注意してください。  
   
  次のコード例は、省略可能なパラメーターと必須パラメーターを使って、前のコンストラクターを使う属性を適用できることを示しています。 ここでは、属性には、必須のブール値 1 つと省略可能な文字列のプロパティ 1 つが含まれていることを前提としています。  
   
@@ -144,7 +144,7 @@ ms.lasthandoff: 12/23/2017
   
 <a name="cpcondeclaringproperties"></a>   
 ## <a name="declaring-properties"></a>プロパティを宣言する  
- 名前付きパラメーターを定義するか、属性によって格納される値を簡単に返すことができるようにする場合、 [プロパティ](http://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52)を宣言します。 属性プロパティは、返されるデータ型の記述を添えて、パブリック エンティティとして宣言する必要があります。 プロパティの値を保持する変数を定義して、その変数を **get** メソッドと **set** メソッドに関連付けます。 次のコード例は、属性に単純なプロパティを実装する方法を示しています。  
+ 名前付きパラメーターを定義するか、属性によって格納される値を簡単に返すことができるようにする場合、[プロパティ](https://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52)を宣言します。 属性プロパティは、返されるデータ型の記述を添えて、パブリック エンティティとして宣言する必要があります。 プロパティの値を保持する変数を定義して、その変数を **get** メソッドと **set** メソッドに関連付けます。 次のコード例は、属性に単純なプロパティを実装する方法を示しています。  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]

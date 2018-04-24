@@ -1,6 +1,6 @@
 ---
-title: ".NET および Docker の概要"
-description: "Docker と .NET Core について"
+title: .NET および Docker の概要
+description: Docker と .NET Core について
 keywords: .NET, .NET Core, Docker
 author: jralexander
 ms.author: johalex
@@ -14,11 +14,11 @@ manager: wpickett
 ms.custom: mvc
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: dabc7c0c4a0afab8edf7d2bab410bb9635821936
-ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
+ms.openlocfilehash: 75c631cf0abac543889cb7387f6fc3fdb2624512
+ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="introduction-to-net-and-docker"></a>.NET および Docker の概要
 
@@ -105,15 +105,15 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 **.NET Framework 4.7**
 
-[dotnet-framework: 4.7 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7)では、[.NET Framework 4.7](../../framework/whats-new/index.md#v47) の使用方法について基礎的な "hello world" で説明します。 [.NET Framework 4.7 の Docker イメージ](https://github.com/Microsoft/dotnet-framework-docker/blob/master/4.7/Dockerfile)に依存するアプリを構築して配置する方法を示します。
+[dotnet-framework: 4.7 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7)では、[.NET Framework 4.7](../../framework/whats-new/index.md#v47) の使用方法について基礎的な "hello world" で説明します。 [.NET Framework 4.7 の Docker イメージ](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-4.7/Dockerfile)に依存するアプリを構築して配置する方法を示します。
 
 **.NET Framework 4.6.2**
 
-[dotnet-framework: 4.6.2 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.6.2)では、[.NET Framework 4.6.2](../../framework/whats-new/index.md#v462) の使用方法について基礎的な "hello world" で説明します。 [.NET Framework 4.6.2 の Docker イメージ](https://github.com/Microsoft/dotnet-framework-docker/tree/master/4.6.2)に依存するアプリを構築して配置する方法を示します。
+[dotnet-framework: 4.6.2 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.6.2)では、[.NET Framework 4.6.2](../../framework/whats-new/index.md#v462) の使用方法について基礎的な "hello world" で説明します。 [.NET Framework 4.6.2 の Docker イメージ](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-4.6.2/Dockerfile)に依存するアプリを構築して配置する方法を示します。
 
 **.NET Framework 3.5**
 
- [dotnet-framework:3.5 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-3.5)では、[.NET Framework 3.5](https://github.com/Microsoft/dotnet-framework-docker/tree/master/3.5) の使用方法について基礎的な "hello world" で説明します。 Docker で .NET Framework 3.5 に依存するプロジェクトを構築して配置する方法を示します。
+ [dotnet-framework:3.5 のサンプル](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-3.5)では、[.NET Framework 3.5](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-3.5/dotnetapp-3.5/Dockerfile) の使用方法について基礎的な "hello world" で説明します。 Docker で .NET Framework 3.5 に依存するプロジェクトを構築して配置する方法を示します。
 
 #### <a name="aspnet-core"></a>ASP.NET Core
 
@@ -133,7 +133,7 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 * [DockerHub の Windows Communication Framework (WCF) イメージ](https://hub.docker.com/r/microsoft/wcf/)
 
-* [GitHub の Windows Communication Framework (WCF) イメージ](https://github.com/microsoft/iis-docker)
+* [GitHub の Windows Communication Framework (WCF) イメージ](https://github.com/microsoft/wcf-docker)
 
 * [完全な .NET Framework 4.6.2 を使用する Windows Communication Framework (WCF) の Docker サンプル](https://github.com/Microsoft/wcf-docker-samples)
 
@@ -141,7 +141,7 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 * [DockerHub のインターネット インフォメーション サーバー (IIS) イメージ](https://hub.docker.com/r/microsoft/iis/)
 
-* [GitHub のインターネット インフォメーション サーバー (IIS) イメージ](https://github.com/microsoft/wcf-docker)
+* [GitHub のインターネット インフォメーション サーバー (IIS) イメージ](https://github.com/microsoft/iis-docker)
 
 ### <a name="interact-with-other-microsoft-stack-container-images"></a>その他の Microsoft スタック コンテナー イメージを操作する
 
@@ -149,9 +149,7 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 * [Docker クイック スタートで Linux 2017 用 Microsoft SQL Server コンテナー イメージを実行する](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker)
 
-* [DockerHub の Linux 用 Microsoft SQL Server イメージ](https://hub.docker.com/r/microsoft/mssql-server-windows/)
-
-* [DockerHub の Windows コンテナー用 Microsoft SQL Server イメージ](https://hub.docker.com/r/microsoft/mssql-server-windows/)
+* [DockerHub の Linux 用 Microsoft SQL Server イメージ](https://hub.docker.com/r/microsoft/mssql-server-linux/)
 
 * [DockerHub のWindows コンテナー用 Microsoft SQL Server Express Edition イメージ](https://hub.docker.com/r/microsoft/mssql-server-windows-express/)
 
@@ -165,9 +163,9 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 #### <a name="operations-management-suite-oms-linux-agent"></a>Operations Management Suite (OMS) Linux エージェント
 
-* [Operations Management Suite (OMS) Linux エージェントの概要](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Docker-Instructions.md#overview)
+* [Operations Management Suite (OMS) Linux エージェントの概要](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Docker-Instructions.md)
 
-* [DockerHub の Operations Management Suite (OMS) イメージ](https://hub.docker.com/r/microsoft/vsts-agent/)
+* [DockerHub の Operations Management Suite (OMS) イメージ](https://hub.docker.com/r/microsoft/oms/)
 
 * [GitHub の Operations Management Suite (OMS) イメージ](https://github.com/Microsoft/OMS-docker)
 
@@ -175,7 +173,7 @@ Docker コンテナー開発に .NET Core と .NET Framework のどちらを使�
 
 * [DockerHub の Microsoft Azure コマンド ライン インターフェイス (CLI) イメージ](https://hub.docker.com/r/microsoft/azure-cli/) 
 
-* [GitHub の Microsoft Azure コマンド ライン インターフェイス (CLI) イメージ](https://github.com/Microsoft/OMS-docker)
+* [GitHub の Microsoft Azure コマンド ライン インターフェイス (CLI) イメージ](https://github.com/Azure/azure-cli#Docker)
 
 > [!NOTE]
 > Azure サブスクリプションをお持ちでない場合は、[今すぐサインアップ](https://azure.microsoft.com/free/?b=16.48)して 30 日間の無料アカウントと 200 ドル分の Azure クレジットを取得し、お好きな Azure サービスの組み合わせを試しましょう。

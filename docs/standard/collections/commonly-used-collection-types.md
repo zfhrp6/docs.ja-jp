@@ -1,12 +1,12 @@
 ---
-title: "一般的に使用されるコレクション型"
-ms.custom: 
+title: 一般的に使用されるコレクション型
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - collections [.NET Framework], generic
@@ -18,18 +18,18 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-caps.latest.revision: 
+caps.latest.revision: 29
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: cdc4e0660c5eae0a9550cf73d273d394ed71b823
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 127813e52b6e72f896ebe4f5017651467f748a04
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="commonly-used-collection-types"></a>一般的に使用されるコレクション型
 コレクション型は、ハッシュ テーブル、キュー、スタック、バッグ、ディクショナリ、リストなど、一般的な種類のデータ コレクションです。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 12/23/2017
   
  コレクションは、要素の格納方法、要素の並べ替え方法、検索の実行方法、および比較の実行方法によって異なります。 <xref:System.Collections.Queue> クラスと <xref:System.Collections.Generic.Queue%601> ジェネリック クラスは先入れ先出しのリストを提供しますが、<xref:System.Collections.Stack> クラスと <xref:System.Collections.Generic.Stack%601> ジェネリック クラスは後入れ先出しのリストを提供します。 <xref:System.Collections.SortedList> クラスと <xref:System.Collections.Generic.SortedList%602> ジェネリック クラスは、<xref:System.Collections.Hashtable> クラスと <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスの並べ替えバージョンを提供します。 <xref:System.Collections.Hashtable> または <xref:System.Collections.Generic.Dictionary%602> の要素は、要素のキーによってのみアクセスできますが、<xref:System.Collections.SortedList> または <xref:System.Collections.ObjectModel.KeyedCollection%602> の要素は、キーまたは要素のインデックスによってアクセスできます。 すべてのコレクションのインデックスがゼロから始まりますが、<xref:System.Array> は例外で、ゼロから始まらない配列を使用できます。  
   
- LINQ to Objects 機能では、オブジェクト型で <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> を実装している限り、LINQ クエリを使用してメモリ内オブジェクトにアクセスできます。 LINQ クエリはデータ アクセス用の一般的なパターンです。通常、これは標準の `foreach` ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化機能を備えています。 さらに、LINQ クエリによってパフォーマンスを向上させることができます。 詳細については、「[LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)」および「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」を参照してください。  
+ LINQ to Objects 機能では、オブジェクト型で <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> を実装している限り、LINQ クエリを使用してメモリ内オブジェクトにアクセスできます。 LINQ クエリはデータ アクセス用の一般的なパターンです。通常、これは標準の `foreach` ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化機能を備えています。 さらに、LINQ クエリによってパフォーマンスを向上させることができます。 詳細については、「[LINQ to Objects](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)」および「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」を参照してください。  
   
 ## <a name="related-topics"></a>関連トピック  
   

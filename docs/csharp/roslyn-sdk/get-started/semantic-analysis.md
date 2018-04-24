@@ -1,6 +1,6 @@
 ---
-title: "セマンティック解析の概要"
-description: "このチュートリアルでは、.NET コンパイラ SDK を使用したセマンティック解析の概要を説明します。"
+title: セマンティック解析の概要
+description: このチュートリアルでは、.NET コンパイラ SDK を使用したセマンティック解析の概要を説明します。
 author: billwagner
 ms.author: wiwagn
 ms.date: 02/06/2018
@@ -8,17 +8,21 @@ ms.topic: conceptual
 ms.prod: .net
 ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 94a28d21cfec1894c3ee3b631335043e1d0ec817
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 8703670f650a16d1b6642eaaf4f82f0a73ab4c69
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-semantic-analysis"></a>セマンティック解析の概要
 
 このチュートリアルでは、構文 API の知識を前提としています。 「[構文解析の概要](syntax-analysis.md)」という記事が入門編になっています。
 
 このチュートリアルでは、**シンボル API** と**バインドの API** について学習します。 これらの API は、プログラムの_意味論的意味_に関する情報を提供します。 プログラムのシンボルが表す型について質問したり、回答したりできます。
+
+**.NET Compiler Platform SDK** をインストールする必要があります。
+
+[!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
 ## <a name="understanding-compilations-and-symbols"></a>コンパイルとシンボルについて
 
@@ -32,10 +36,7 @@ ms.lasthandoff: 03/12/2018
 
 このチュートリアルでは、"Hello World" プログラムをもう一度見てみます。 今回、プログラムの中のシンボルにクエリを実行し、そのシンボルが表す型を理解します。 名前空間の型について問い、型で利用できるメソッドを確認します。
 
-> [!IMPORTANT]
-> 次のサンプルでは、Visual Studio 2017 の一部としてインストールされる **.NET Compiler SDK** が必要です。 **Visual Studio 拡張機能の開発**ワークロードの下にリストされている最後の省略可能なコンポーネントとして、.NET Compiler SDK があります。 テンプレートは、このコンポーネントなしではインストールされません。
-
-このサンプルの完成したコードは、[GitHub のリポジトリ](https://github.com/dotnet/docs/tree/master/samples/csharp/roslyn-sdk/SemanticQuickStart)で確認できます。
+このサンプルの完成したコードは、[GitHub のリポジトリ](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SemanticQuickStart)で確認できます。
 
 > [!NOTE]
 > 構文ツリー型では継承を使用して、プログラムのさまざまな場所で有効なさまざまな構文要素を記述します。 これらの API を使用することは、多くの場合、特定の派生型にプロパティまたはコレクション メンバーをキャストすることを意味します。 次の例では、割り当てとキャストは別のステートメントであり、明示的に型指定された変数を使用します。 コードを読み取り、API の戻り値の型と返されるオブジェクトのランタイム型を確認することができます。 実際には、暗黙的に型指定された変数を使用して、API 名に依存して、調べられるオブジェクトの型を記述するのがより一般的です。

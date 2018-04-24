@@ -1,28 +1,28 @@
 ---
 title: Parallel LINQ (PLINQ)
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - PLINQ, overview
 ms.assetid: 3d4d0cd3-bde4-490b-99e7-f4e41be96455
-caps.latest.revision: 
+caps.latest.revision: 17
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 94eeeda4666a4e6c1cb8729d6563ffcc4aa479c4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5c24f51401b1e493864409ddafe580cea7ac435e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="parallel-linq-plinq"></a>Parallel LINQ (PLINQ)
 Parallel LINQ (PLINQ) は、LINQ to Objects の並列実装です。 PLINQ は、LINQ 標準クエリ演算子の完全なセットを <xref:System.Linq> 名前空間の拡張メソッドとして実装し、並列操作用の追加演算子も備えています。 PLINQ は、LINQ 構文の単純さと読みやすさに加え、並列プログラミングのパワーを兼ね備えています。 タスク並列ライブラリを対象とするコードと同じように、PLINQ クエリの同時実行の程度は、ホスト コンピューターの能力に基づいて調整されます。  
@@ -63,4 +63,4 @@ Parallel LINQ (PLINQ) は、LINQ to Objects の並列実装です。 PLINQ は�
 ## <a name="see-also"></a>参照  
  <xref:System.Linq.ParallelEnumerable>  
  [並列プログラミング](../../../docs/standard/parallel-programming/index.md)  
- [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)
+ [統合言語クエリ (LINQ)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)

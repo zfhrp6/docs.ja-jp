@@ -31,11 +31,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4d42c1d4b58f5e2517ff8d8c504628c7aab6fd0d
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 7350b7969500676deb251aea3d42f47324fb171b
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="walkthrough-implementing-a-component-that-supports-the-event-based-asynchronous-pattern"></a>チュートリアル : イベントベースの非同期パターンをサポートするコンポーネントの実装
 顕著な遅延が発生する可能性がある操作を伴うクラスを作成する場合は、[イベント ベースの非同期パターン](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)を実装することによって、非同期機能を与えることを検討します。  
@@ -266,6 +266,6 @@ ms.lasthandoff: 04/10/2018
 ## <a name="see-also"></a>参照  
  [方法: バックグラウンドで操作を実行する](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
  [イベントベースの非同期パターンの概要](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
- [ビルド内にありません: Visual Basic でのマルチスレッド](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
+ [ビルド内にありません: Visual Basic でのマルチスレッド](https://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
  [方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)  
  [イベント ベースの非同期パターンを使用したマルチスレッド プログラミング](../../../docs/standard/asynchronous-programming-patterns/multithreaded-programming-with-the-event-based-asynchronous-pattern.md)

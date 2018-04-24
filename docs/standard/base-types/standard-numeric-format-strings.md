@@ -24,11 +24,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f042d72c76ddbf3b5eaf8923fc747325b701c9a6
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 34fe406dac4cbbc0c25e43f479154fd3e398ffc2
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="standard-numeric-format-strings"></a>標準の数値書式指定文字列
 一般的な数値型を書式設定するには、標準の数値書式指定文字列を使用します。 標準の数値書式指定文字列の形式は `Axx` です。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 03/28/2018
 - C# と Visual Basic の[補間文字列](../../csharp/language-reference/tokens/interpolated.md)。複合書式指定文字列と比較すると、構文は単純です。
  
 > [!TIP]
->  [書式指定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
+>  [書式指定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
   
 <a name="table"></a>次の表に、標準数値書式指定子の説明および書式指定子ごとのサンプル出力を示します。 標準の数値書式指定文字列の使用方法については、「[メモ](#NotesStandardFormatting)」をご覧ください。それらを使用する包括的な例については、「[例](#example)」をご覧ください。  
   
@@ -361,5 +361,5 @@ ms.lasthandoff: 03/28/2018
  [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [方法: 数値に先行するゼロを埋め込む](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
- [サンプル: .NET Framework 4 の書式設定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)  
+ [サンプル: .NET Framework 4 の書式設定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)  
  [複合書式指定](../../../docs/standard/base-types/composite-formatting.md)

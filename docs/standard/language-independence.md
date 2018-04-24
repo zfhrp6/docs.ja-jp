@@ -1,6 +1,6 @@
 ---
-title: "言語への非依存性、および言語非依存コンポーネント"
-description: "C#、C++/CLI、F#、IronPython、VB、Visual COBOL、PowerShell など、.NET でサポートされる多くの言語の中のいずれかで開発する方法を説明します。"
+title: 言語への非依存性、および言語非依存コンポーネント
+description: C#、C++/CLI、F#、IronPython、VB、Visual COBOL、PowerShell など、.NET でサポートされる多くの言語の中のいずれかで開発する方法を説明します。
 keywords: .NET, .NET Core
 author: dotnet-bot
 ms.author: dotnetcontent
@@ -16,11 +16,11 @@ ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0a7a37b1c8eed81866035dc6fb55db89391f25aa
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2745bc67c926f50c28f5fdfb122ee94a85f020ec
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/23/2017
 > [!NOTE]
 > この記事の最初の部分では、言語に依存しないコンポーネント、つまり、どの言語で記述されたアプリからでも使用できるコンポーネントの作成について説明します。 また、複数の言語で記述されたソース コードから 1 つのコンポーネントまたはアプリを作成することもできます。この記事の 2 番目のパートにある「[言語間の相互運用性](#cross-language-interoperability)」を参照してください。 
 
-任意の言語で記述された他のオブジェクトと完全に対話するには、すべての言語に共通の機能だけを呼び出し側に公開するようにオブジェクトを実装する必要があります。 この共通の機能セットは、生成されたアセンブリに適用される規則のセットである、共通言語仕様 (CLS: Common Language Specification) によって定義されます。 共通言語仕様は、「[Standard ECMA-335: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 7 ～ 11 項で定義されています。 
+任意の言語で記述された他のオブジェクトと完全に対話するには、すべての言語に共通の機能だけを呼び出し側に公開するようにオブジェクトを実装する必要があります。 この共通の機能セットは、生成されたアセンブリに適用される規則のセットである、共通言語仕様 (CLS: Common Language Specification) によって定義されます。 共通言語仕様は、「[Standard ECMA-335: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 7 ～ 11 項で定義されています。 
 
 コンポーネントが共通言語仕様に準拠している場合は、CLS に準拠することが保証され、CLS をサポートするすべてのプログラミング言語で記述されたアセンブリのコードからアクセスできます。 コンパイル時にコンポーネントが共通言語仕様に準拠しているかどうかを確認するには、[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性をソース コードに適用します。 詳細については、「[CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)」を参照してください。
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="cls-compliance-rules"></a>CLS 準拠の規則
 
-ここでは、CLS に準拠したコンポーネントを作成するための規則について説明します。 規則の一覧については、「[ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 11 項を参照してください。
+ここでは、CLS に準拠したコンポーネントを作成するための規則について説明します。 規則の一覧については、「[ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 11 項を参照してください。
 
 > [!NOTE]
 > 共通言語仕様では、コンシューマー (プログラムによって CLS 準拠のコンポーネントにアクセスする開発者)、フレームワーク (言語コンパイラを使用して CLS 準拠のライブラリを作成する開発者)、およびエクステンダー (CLS 準拠のコンポーネントを作成する言語コンパイラ、コード パーサーなどのツールを作成する開発者) に適用する、CLS 準拠の各規則について説明します。 ここでは、フレームワークに適用するときの規則に焦点を当てます。 エクステンダーに適用する一部の規則は、[Reflection.Emit](xref:System.Reflection.Emit) を使用して作成されたアセンブリに適用されることもあります。 
@@ -158,7 +158,7 @@ End Class
 
 * パブリック クラスのパブリック メソッドのパラメーターおよび戻り値の型、派生クラスからアクセスできるメソッドのパラメーターおよび戻り値の型。 
 
-CLS 準拠の規則を次の表に示します。 この規則は、「[ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) からの引用で、Ecma International が 2012 年の著作権を保有しています。 これらの規則の詳細については、以降のセクションを参照してください。 
+CLS 準拠の規則を次の表に示します。 この規則は、「[ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) からの引用で、Ecma International が 2012 年の著作権を保有しています。 これらの規則の詳細については、以降のセクションを参照してください。 
 
 カテゴリ | 解決方法については、 | ルール | 規則番号
 -------- | --- | ---- | -----------
@@ -617,7 +617,7 @@ public class person
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
-名前空間、型、メンバーの名前など、プログラミング言語の識別子は [Unicode Standard 3.0 の Technical Report 15 の Annex 7](http://www.unicode.org/reports/tr15/tr15-18.html) に準拠する必要があります。 これによって、次のことが起こります。
+名前空間、型、メンバーの名前など、プログラミング言語の識別子は [Unicode Standard 3.0 の Technical Report 15 の Annex 7](https://www.unicode.org/reports/tr15/tr15-18.html) に準拠する必要があります。 これによって、次のことが起こります。
 
 * 識別子の最初の文字は Unicode の大文字と小文字、大文字と小文字の組み合わせ、修飾子文字、その他の文字、または文字数の番号を指定できます。 Unicode 文字のカテゴリの詳細については、「[System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) 列挙体」を参照してください。 
 
@@ -1630,7 +1630,7 @@ End Module
 '       Outer`1+Inner1B`1[System.String,System.Int32]
 ```
 
-ジェネリック型の名前は、*name*'*n* の形でエンコードされます。ここで、*name* は型の名前、*`* は文字リテラル、*n* は型で宣言されたパラメーターの数 (入れ子になったジェネリック型の場合は新しく導入された型パラメーターの数) です。 ジェネリック型の名前のエンコーディングは、主に、リフレクションを使用してライブラリ内の CLS 準拠のジェネリック型にアクセスする開発者が使用します。 
+ジェネリック型の名前は、フォーム *name*'*n* でエンコードされます。ここで、*name* は型の名前、*`* は文字リテラル、*n* は型で宣言されたパラメーターの数、入れ子になったジェネリック型の場合は、新しく導入された型パラメーターの数です。 ジェネリック型の名前のエンコーディングは、主に、リフレクションを使用してライブラリ内の CLS 準拠のジェネリック型にアクセスする開発者が使用します。 
 
 制約がジェネリック型に適用される場合は、制約として使用されるすべての型も CLS に準拠している必要があります。 次の例では、CLS に準拠していない `BaseClass` という名前のクラスと、型パラメーターが `BaseCollection` から派生しなければならない `BaseClass` という名前のジェネリック クラスを定義します。 ただし、`BaseClass` が CLS に準拠していないので、コンパイラによって警告が生成されます。 
 

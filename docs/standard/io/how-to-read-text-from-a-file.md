@@ -1,12 +1,12 @@
 ---
-title: "方法 : ファイルからテキストを読み取る"
-ms.custom: 
+title: '方法 : ファイルからテキストを読み取る'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -18,18 +18,18 @@ helpviewer_keywords:
 - data streams, reading text from files
 - I/O [.NET Framework], reading text from files
 ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
-caps.latest.revision: 
+caps.latest.revision: 23
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6fbf9c910847986af1c02b5848c81266009e2e07
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e1058879d4af8aac12baf24d10a0c22894351e6f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="how-to-read-text-from-a-file"></a>方法 : ファイルからテキストを読み取る
 次に、.NET デスクトップ アプリを使用してテキスト ファイルから同期でテキストを読み取る方法と非同期でテキストを読み取る方法の例を示します。 どちらの例でも、<xref:System.IO.StreamReader> クラスのインスタンスを作成する場合に、ファイルの相対パスまたは絶対パスを指定します。 次の例では、TestFile.txt という名前のファイルがアプリケーションと同じフォルダーにあることを前提とします。  
@@ -53,7 +53,7 @@ ms.lasthandoff: 01/19/2018
  <xref:System.IO.File.OpenText%2A?displayProperty=nameWithType>  
  <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>  
  [非同期ファイル I/O](../../../docs/standard/io/asynchronous-file-i-o.md)  
- [NIB: 方法: ディレクトリ一覧を作成する](http://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69)  
+ [NIB: 方法: ディレクトリ一覧を作成する](https://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69)  
  [クイック スタート: ファイルの読み取りと書き込み](http://msdn.microsoft.com/library/windows/apps/hh758325.aspx)  
  [方法: .NET Framework ストリームと Windows ランタイム ストリームの間で変換を行う](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
  [方法: 新しく作成されたデータ ファイルに対して読み書きする](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  

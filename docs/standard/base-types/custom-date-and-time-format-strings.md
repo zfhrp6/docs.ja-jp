@@ -16,18 +16,18 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-caps.latest.revision: ''
+caps.latest.revision: 79
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c54a5ec9cdbfd73bccd8f70befcfcff7cf8aac2d
-ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
+ms.openlocfilehash: 51c16e8c1cd031e4f2b8a207c8d288b7691e7a84
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="custom-date-and-time-format-strings"></a>カスタム日時書式指定文字列
 日時書式指定文字列は、<xref:System.DateTime> 値または <xref:System.DateTimeOffset> 値の書式設定操作によって生成されるテキスト表現を定義します。 また、文字列を日時に正常に変換するために解析操作で必要となる日時値の表現も定義します。 カスタム書式指定文字列は、1 つ以上のカスタム日時書式指定子で構成されます。 [標準の日時書式指定文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)以外の文字列は、すべてカスタム日時書式指定文字列として解釈されます。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/22/2018
  カスタム日時書式指定文字列は、<xref:System.DateTime> 値で使用することも、<xref:System.DateTimeOffset> 値で使用することもできます。  
   
 > [!TIP]
->  [書式設定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を日付と時刻の値または数値に適用して、結果の文字列を表示できます。  
+>  [書式設定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を日付と時刻の値または数値に適用して、結果の文字列を表示できます。  
   
 <a name="table"></a> 書式設定操作では、日時インスタンスの `ToString` メソッドまたは複合書式指定をサポートするメソッドで、カスタム日時書式指定文字列を使用できます。 両方の使用例を次に示します。  
   
@@ -702,4 +702,4 @@ ms.lasthandoff: 03/22/2018
  <xref:System.IFormatProvider?displayProperty=nameWithType>  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
- [サンプル: .NET Framework 4 の書式設定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+ [サンプル: .NET Framework 4 の書式設定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

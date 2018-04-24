@@ -6,14 +6,15 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 648e0a4cdd388cf4a322f0fc049d5dcfca53d54b
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7d160d23808832ff6456e5c95f6e5ed5f4d44fa5
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>ASP.NET Core アプリでのデータの操作
 
@@ -206,7 +207,7 @@ await strategy.ExecuteAsync(async () =>
 > - **EF Core: 関連データ**  
 > <https://docs.microsoft.com/ef/core/querying/related-data>
 > - **ASPNET アプリケーションでのエンティティの遅延読み込みを回避する**  
-> <http://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
+> <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
 ## <a name="ef-core-or-micro-orm"></a>EF Core または micro-ORM の選択
 
@@ -236,7 +237,7 @@ Dapper でより複雑なオブジェクト グラフを作成する必要があ
 
 ```sql
 select * from #Posts p
-left join \#Users u on u.Id = p.OwnerId
+left join #Users u on u.Id = p.OwnerId
 Order by p.Id
 ```
 
@@ -270,7 +271,7 @@ NoSQL データベースで対処する必要があるもう 1 つの複雑な�
 
 NoSQL データベースには、リレーショナル データベースでは通常サポートされない固定スキーマなど、複数のバージョンのオブジェクトを格納できます。 ただし、その場合、アプリケーション コードでは以前のバージョンのオブジェクトの存在を考慮する必要があり、複雑さが増します。
 
-通常、NoSQL データベースでは [ACID](http://en.wikipedia.org/wiki/ACID) が適用されません。つまり、リレーショナル データベースよりもパフォーマンスとスケーラビリティの両方が優れています。 正規化されたテーブル構造には最適ではない、非常に大規模なデータセットとオブジェクトに最適です。 単一のアプリケーションでリレーショナル データベースと NoSQL データベースの両方 (それぞれ適宜使用) を利用できない理由はありません。
+通常、NoSQL データベースでは [ACID](https://en.wikipedia.org/wiki/ACID) が適用されません。つまり、リレーショナル データベースよりもパフォーマンスとスケーラビリティの両方が優れています。 正規化されたテーブル構造には最適ではない、非常に大規模なデータセットとオブジェクトに最適です。 単一のアプリケーションでリレーショナル データベースと NoSQL データベースの両方 (それぞれ適宜使用) を利用できない理由はありません。
 
 ## <a name="azure-documentdb"></a>Azure DocumentDB
 

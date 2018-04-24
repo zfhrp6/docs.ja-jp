@@ -29,11 +29,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b33acfef1cabd3aa53fbe8947bd7adbe52d3b7a4
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 1b0940432d3fd201979b537752b917d60a10d22e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="custom-numeric-format-strings"></a>カスタム数値書式指定文字列
 1 つ以上のカスタム数値指定子で構成されるカスタム数値書式指定文字列を作成して、数値データの書式設定方法を定義できます。 カスタム数値書式指定文字列は、 [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)ではない任意の書式指定文字列です。  
@@ -41,7 +41,7 @@ ms.lasthandoff: 03/28/2018
  カスタム数値書式指定文字列は、すべての数値型の `ToString` メソッドの一部のオーバーロードでサポートされています。 たとえば、 <xref:System.Int32.ToString%28System.String%29> 型の <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドおよび <xref:System.Int32> メソッドに数値書式指定文字列を指定できます。 カスタム数値書式指定文字列は、.NET の[複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md)でもサポートされています。この機能を使用するメソッドには、<xref:System.Console> クラスおよび <xref:System.IO.StreamWriter> クラスの一部の `Write` メソッドと `WriteLine` メソッド、<xref:System.String.Format%2A?displayProperty=nameWithType> メソッド、<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> メソッドがあります。 [文字列補間](../../csharp/language-reference/tokens/interpolated.md)機能は、カスタム数値書式指定文字列もサポートしています。  
   
 > [!TIP]
->  [書式指定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
+>  [書式指定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
   
 <a name="table"></a> 次の表に、カスタム数値書式指定子の説明および書式指定子ごとのサンプル出力を示します。 カスタム数値書式指定文字列の使用方法については、「 [メモ](#NotesCustomFormatting) 」を参照してください。それらを使用する包括的な例については、「 [例](#example) 」を参照してください。  
   
@@ -243,4 +243,4 @@ ms.lasthandoff: 03/28/2018
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
  [方法: 数値に先行するゼロを埋め込む](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
- [サンプル: .NET Framework 4 の書式設定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+ [サンプル: .NET Framework 4 の書式設定ユーティリティ](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

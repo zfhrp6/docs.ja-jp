@@ -1,29 +1,29 @@
 ---
-title: "XslTransform クラスからの移行"
-ms.custom: 
+title: XslTransform クラスからの移行
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-caps.latest.revision: 
+caps.latest.revision: 3
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 964e2de7258f4849de01e4fbeae330d009710289
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 09d982105d8cf1297a53bd755003e3ef2b089293
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>XslTransform クラスからの移行
 XSLT アーキテクチャは、[!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] リリースで設計が変更されました。 <xref:System.Xml.Xsl.XslTransform> クラスは <xref:System.Xml.Xsl.XslCompiledTransform> クラスで置き換えられています。  
@@ -119,11 +119,11 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
 ### <a name="msxml-functions"></a>MSXML 関数  
  <xref:System.Xml.Xsl.XslCompiledTransform> クラスでは、新しい MSXML 関数のサポートが追加されました。 新しい関数または強化された関数は次のとおりです。  
   
--   msxsl:node-set: <xref:System.Xml.Xsl.XslTransform> では、[node-set 関数](http://msdn.microsoft.com/library/87b6b3f4-16f4-4fa3-8103-d62a679ac2a7)の引数を結果ツリー フラグメントにする必要がありました。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスでは、この要件がありません。  
+-   msxsl:node-set: <xref:System.Xml.Xsl.XslTransform> では、[node-set 関数](https://msdn.microsoft.com/library/87b6b3f4-16f4-4fa3-8103-d62a679ac2a7)の引数を結果ツリー フラグメントにする必要がありました。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスでは、この要件がありません。  
   
 -   msxsl:version : この関数は、<xref:System.Xml.Xsl.XslCompiledTransform> でサポートされます。  
   
--   XPath 拡張関数: [ms:string-compare 関数](http://msdn.microsoft.com/library/20616b82-9e27-444c-b714-4f1e09b73aee)、[ms:utc 関数](http://msdn.microsoft.com/library/ef26fc88-84c6-4fb9-9c3b-f2f5264b864f)、[ms:namespace-uri 関数](http://msdn.microsoft.com/library/91f9cabf-ab93-4dbe-9c12-e6a75214f4c7)、[ms:local-name 関数](http://msdn.microsoft.com/library/10ed60a1-17a9-4d74-8b98-7940ac97c0b5)、[ms:number 関数](http://msdn.microsoft.com/library/b94fc08e-1f31-4f48-b1a8-6d78c1b5d954)、[ms:format-date 関数](http://msdn.microsoft.com/library/51f35609-89a9-4098-a166-88bf01300bf5)、[ms:format-time 関数](http://msdn.microsoft.com/library/e5c2df2d-e8fb-4a8f-bfc0-db84ea12a5d5)がサポートされるようになりました。  
+-   XPath 拡張関数: [ms:string-compare 関数](https://msdn.microsoft.com/library/20616b82-9e27-444c-b714-4f1e09b73aee)、[ms:utc 関数](https://msdn.microsoft.com/library/ef26fc88-84c6-4fb9-9c3b-f2f5264b864f)、[ms:namespace-uri 関数](https://msdn.microsoft.com/library/91f9cabf-ab93-4dbe-9c12-e6a75214f4c7)、[ms:local-name 関数](https://msdn.microsoft.com/library/10ed60a1-17a9-4d74-8b98-7940ac97c0b5)、[ms:number 関数](https://msdn.microsoft.com/library/b94fc08e-1f31-4f48-b1a8-6d78c1b5d954)、[ms:format-date 関数](https://msdn.microsoft.com/library/51f35609-89a9-4098-a166-88bf01300bf5)、[ms:format-time 関数](https://msdn.microsoft.com/library/e5c2df2d-e8fb-4a8f-bfc0-db84ea12a5d5)がサポートされるようになりました。  
   
 -   スキーマ関連の XPath 拡張関数 : これは、<xref:System.Xml.Xsl.XslCompiledTransform> ではネイティブでサポートされません。 ただし、拡張関数として実装することはできます。  
   

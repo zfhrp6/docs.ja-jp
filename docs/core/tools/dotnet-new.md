@@ -3,17 +3,17 @@ title: dotnet new コマンド - .NET Core CLI
 description: dotnet new コマンドは、指定されたテンプレートに基づいて新しい .NET Core プロジェクトを作成します。
 author: mairaw
 ms.author: mairaw
-ms.date: 03/21/2018
+ms.date: 03/26/2018
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 2cbd42195d0ec713d2ccb4af823075ece950ceff
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 4432587c0015c353a34816eee4206dc53cdefba9
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -42,7 +42,7 @@ dotnet new [-h|--help]
 
 ## <a name="description"></a>説明
 
-`dotnet new` コマンドは、有効な .NET Core プロジェクトを初期化する便利な手段を提供します。 
+`dotnet new` コマンドは、有効な .NET Core プロジェクトを初期化する便利な手段を提供します。
 
 このコマンドは、[テンプレート エンジン](https://github.com/dotnet/templating)を呼び出し、指定されたテンプレートとオプションに基づいて、ディスク上に成果物を作成します。
 
@@ -122,6 +122,9 @@ dotnet new [-h|--help]
 
 作成するテンプレートの言語。 使用できる言語は、テンプレートによって異なります ([引数](#arguments)の既定値を参照してください)。 一部のテンプレートでは無効です。
 
+    > [!NOTE]
+    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+
 `-n|--name <OUTPUT_NAME>`
 
 作成される出力の名前です。 名前が指定されていない場合、現在のディレクトリの名前が使用されます。
@@ -159,6 +162,9 @@ dotnet new [-h|--help]
 `-lang|--language {C#|F#}`
 
 作成するテンプレートの言語。 使用できる言語は、テンプレートによって異なります ([引数](#arguments)の既定値を参照してください)。 一部のテンプレートでは無効です。
+
+    > [!NOTE]
+    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -304,13 +310,13 @@ dotnet new [-h|--help]
 
 現在のディレクトリに、F# コンソール アプリケーション プロジェクトを作成します。
 
-`dotnet new console -lang f#`
+`dotnet new console -lang F#`
 
 指定したディレクトリ内に .NET 標準クラス ライブラリ プロジェクトを作成します (.NET Core 2.0 SDK またはそれ以降のバージョンでのみ使用可能)。
 
 `dotnet new classlib -lang VB -o MyLibrary`
 
-現在のディレクトリに新しい ASP.NET Core C# MVC アプリケーション プロジェクトを作成します。 .NET Core 2.0 を対象にする認証はありません。
+現在のディレクトリに新しい ASP.NET Core C# MVC アプリケーション プロジェクトを作成します。.NET Core 2.0 を対象にする認証はありません。
 
 `dotnet new mvc -au None -f netcoreapp2.0`
 

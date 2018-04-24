@@ -1,6 +1,6 @@
 ---
-title: ".NET アーキテクチャ コンポーネント"
-description: ".NET Standard、.NET 実装、.NET ランタイム、ツールなど、.NET アーキテクチャ コンポーネントについて説明します。"
+title: .NET アーキテクチャ コンポーネント
+description: .NET Standard、.NET 実装、.NET ランタイム、ツールなど、.NET アーキテクチャ コンポーネントについて説明します。
 author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
@@ -10,11 +10,11 @@ ms.technology: dotnet-standard
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8a17d4c36d9c1942166b9ad889103a7942f1813d
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 51e6779d63cdaccc5633c9e81f97471d71099653
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="net-architectural-components"></a>.NET アーキテクチャ コンポーネント
 
@@ -61,7 +61,7 @@ Mono は、主に小規模なランタイムが必要な場合に使用される
 
 一般的に Mono は、Just-In-Time コンパイラと共に使用されますが、iOS のようなプラットフォームに使用される完全な静的コンパイラ (Ahead Of Time コンパイル) としても機能します。
 
-Mono について詳しくは、[Mono のドキュメント](http://www.mono-project.com/docs/)をご覧ください。
+Mono について詳しくは、[Mono のドキュメント](https://www.mono-project.com/docs/)をご覧ください。
 
 ### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
@@ -83,10 +83,10 @@ UWP の詳細については、「[ユニバーサル Windows プラットフォ
 すべての .NET 実装と連携する多様なツールやインフラストラクチャ コンポーネントにアクセスできます。 その一部を次に示します。
 
 - .NET 言語とコンパイラ
-- .NET プロジェクト システム (*.csproj*、*.vbproj*、および*.fsproj* ファイルに基づく)
+- .NET プロジェクト システム (*.csproj*、*.vbproj*、および *.fsproj* ファイルに基づく)
 - [MSBuild](/visualstudio/msbuild/msbuild) (プロジェクトのビルドに使用されるビルド エンジン)
 - [NuGet](/nuget/) (Microsoft の .NET 用パッケージ マネージャー)
-- オープン ソースのビルド オーケストレーション ツール ([CAKE](http://cakebuild.net/)、[FAKE](https://fake.build/) など)
+- オープン ソースのビルド オーケストレーション ツール ([CAKE](https://cakebuild.net/)、[FAKE](https://fake.build/) など)
 
 ## <a name="see-also"></a>関連項目
 [サーバー アプリ用 .NET Core と .NET Framework の選択](choosing-core-framework-server.md)   

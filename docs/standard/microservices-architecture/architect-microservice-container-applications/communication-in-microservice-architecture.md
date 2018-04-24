@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービス アーキテクチャでの通信"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービス アーキテクチャでの通信"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービス アーキテクチャでの通信
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービス アーキテクチャでの通信
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3c80ce8e3c4ccdc7e53634f54dd998581758ab07
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 6bf4de57d3431577e6c770a5a83b911f41e5a4fe
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="communication-in-a-microservice-architecture"></a>マイクロサービス アーキテクチャでの通信
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/23/2018
 
 マイクロサービス ベースのアプリケーションは、複数のプロセスまたはサービスで (通常は複数のサーバーまたはホスト間でも) 実行される分散システムです。 通常、各サービス インスタンスはプロセスです。 そのため、サービスは、各サービスの性質に応じて、HTTP、AMQP などのプロセス間通信プロトコル、または TCP などのバイナリ プロトコルを使用して対話する必要があります。
 
-マイクロサービス コミュニティでは、"[スマート エンドポイントとダム パイプ](http://simplicable.com/new/smart-endpoints-and-dumb-pipes)" という考えを推進しています。 このスローガンは、マイクロサービスをできるだけ分離し、単一のマイクロサービスにできるだけまとめる設計を促進します。 前述のとおり、各マイクロサービスは独自のデータとドメイン ロジックを所有しています。 ただし、エンド ツー エンド アプリケーションを構成するマイクロサービスは、一元化されたビジネス プロセス オーケストレーターの代わりの WS-\* および柔軟なイベント ドリブン通信などの複雑なプロトコルではなく、通常は REST 通信を使用して単に振り付けされます。
+マイクロサービス コミュニティでは、"[スマート エンドポイントとダム パイプ](https://simplicable.com/new/smart-endpoints-and-dumb-pipes)" という考えを推進しています。 このスローガンは、マイクロサービスをできるだけ分離し、単一のマイクロサービスにできるだけまとめる設計を促進します。 前述のとおり、各マイクロサービスは独自のデータとドメイン ロジックを所有しています。 ただし、エンド ツー エンド アプリケーションを構成するマイクロサービスは、一元化されたビジネス プロセス オーケストレーターの代わりの WS-\* および柔軟なイベント ドリブン通信などの複雑なプロトコルではなく、通常は REST 通信を使用して単に振り付けされます。
 
 一般的に使用される 2 つのプロトコルは、リソース API を使用する HTTP 要求/応答 (ほとんどすべてのクエリを実行する場合) と、複数のマイクロサービス間で更新を伝達する場合の軽量な非同期メッセージングです。 これらについては、次のセクションで詳しく説明します。
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 02/23/2018
 
 -   単一の受信者。 各要求は、単一の受信者またはサービスのみに処理される必要があります。 この通信の例は[コマンド パターン](https://en.wikipedia.org/wiki/Command_pattern)です。
 
--   複数の受信者。 ゼロから複数の受信者が各要求を処理できます。 この種の通信は非同期である必要があります。 例として、[イベント ドリブン アーキテクチャ](http://microservices.io/patterns/data/event-driven-architecture.html)などのパターンで使用される[パブリッシュ/サブスクライブ](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) メカニズムがあります。 これは、イベントを介して複数のマイクロサービス間でデータ更新を伝搬する場合のイベント バス インターフェイスまたはメッセージ ブローカーに基づきます。通常は、サービス バスまたは[トピックとサブスクリプション](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)を使用する [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) などの同様の成果物を介して実装されます。
+-   複数の受信者。 ゼロから複数の受信者が各要求を処理できます。 この種の通信は非同期である必要があります。 例として、[イベント ドリブン アーキテクチャ](https://microservices.io/patterns/data/event-driven-architecture.html)などのパターンで使用される[パブリッシュ/サブスクライブ](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) メカニズムがあります。 これは、イベントを介して複数のマイクロサービス間でデータ更新を伝搬する場合のイベント バス インターフェイスまたはメッセージ ブローカーに基づきます。通常は、サービス バスまたは[トピックとサブスクリプション](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)を使用する [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) などの同様の成果物を介して実装されます。
 
 マイクロサービス ベースのアプリケーションでは、多くの場合、これらの通信スタイルを組み合わせて使用します。 最も一般的な種類は、通常の Web API HTTP サービスを呼び出すときに HTTP/HTTPS などの同期プロトコルを使用する単一受信者通信です。 マイクロサービスでは、通常、マイクロサービス間の非同期通信でメッセージング プロトコルも使用します。
 
@@ -91,15 +91,15 @@ JSON や XML などの複数のメッセージ形式 (バイナリ形式でも) 
 
 要求/応答通信で一般的に使用されるアーキテクチャ スタイルは [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) です。 これは、GET、POST、PUT などの HTTP 動詞を採用する、[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) プロトコルに基づいており、また、密接に関連している方法です。 REST は、サービスの作成時に最もよく使用されるアーキテクチャ通信方法です。 ASP.NET Core Web API サービスの開発時に REST サービスを実装できます。
 
-インターフェイス定義言語として HTTP REST サービスを使用する場合、追加の値があります。 たとえば、[Swagger メタデータ](http://swagger.io/)を使用してサービス API を記述する場合、サービスを直接検出して使用できるクライアント スタブを生成するツールを使用できます。
+インターフェイス定義言語として HTTP REST サービスを使用する場合、追加の値があります。 たとえば、[Swagger メタデータ](https://swagger.io/)を使用してサービス API を記述する場合、サービスを直接検出して使用できるクライアント スタブを生成するツールを使用できます。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
 -   **Martin Fowler。Richardson 成熟度モデル。** REST モデルの説明。
-    [*http://martinfowler.com/articles/richardsonMaturityModel.html*](http://martinfowler.com/articles/richardsonMaturityModel.html)
+    [*https://martinfowler.com/articles/richardsonMaturityModel.html*](https://martinfowler.com/articles/richardsonMaturityModel.html)
 
 -   **Swagger。** 公式サイト。
-    [*http://swagger.io/*](http://swagger.io/)
+    [*https://swagger.io/*](https://swagger.io/)
 
 ### <a name="push-and-real-time-communication-based-on-http"></a>HTTP に基づくプッシュおよびリアルタイム通信
 

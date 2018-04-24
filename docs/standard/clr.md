@@ -1,5 +1,5 @@
 ---
-title: "共通言語ランタイム (CLR)"
+title: 共通言語ランタイム (CLR)
 ms.custom: updateeachrelease
 ms.date: 10/17/2017
 ms.prod: .net
@@ -24,11 +24,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4aa9a6d37a52d5f15643e9179060450a2d7a34c4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 2993fbcdc1caf73147c252a0d501e65478a3d08d
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="common-language-runtime-clr"></a>共通言語ランタイム (CLR)
 .NET Framework には、共通言語ランタイムと呼ばれるランタイム環境が用意されています。共通言語ランタイムは、コードを実行し、開発プロセスを支援するサービスを提供します。  
@@ -87,7 +87,7 @@ ms.lasthandoff: 01/19/2018
 |-----------|-----------------|  
 |[マネージ実行プロセス](../../docs/standard/managed-execution-process.md)|共通言語ランタイム利用するために必要な手順について説明します。|  
 |[自動メモリ管理](../../docs/standard/automatic-memory-management.md)|ガベージ コレクターによるメモリの割り当て方法および解放方法について説明します。|  
-|[.NET Framework の概要](http://msdn.microsoft.com/library/ea38ac1e-92af-4d1b-8db1-e8a5ea10ed85)|共通型システム、言語間での相互運用性、マネージ実行、アプリケーション ドメイン、アセンブリなどの .NET Framework の主要な概念について説明します。|  
+|[.NET Framework の概要](https://msdn.microsoft.com/library/ea38ac1e-92af-4d1b-8db1-e8a5ea10ed85)|共通型システム、言語間での相互運用性、マネージ実行、アプリケーション ドメイン、アセンブリなどの .NET Framework の主要な概念について説明します。|  
 |[共通型システム](../../docs/standard/base-types/common-type-system.md)|言語間の統合をサポートするために共通言語ランタイムで型を宣言、使用、および管理する方法について説明します。|  
   
 ## <a name="see-also"></a>参照  

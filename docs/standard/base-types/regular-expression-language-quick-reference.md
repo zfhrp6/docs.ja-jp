@@ -1,12 +1,12 @@
 ---
-title: "正規表現言語 - クイック リファレンス"
-ms.custom: 
+title: 正規表現言語 - クイック リファレンス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VS.RegularExpressionBuilder
@@ -20,18 +20,18 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-caps.latest.revision: 
+caps.latest.revision: 56
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: a0fed14784327c6fe16f083a22471b56032b6b5d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b8e43264619158ed9325875d9843e322e08872a4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="regular-expression-language---quick-reference"></a>正規表現言語 - クイック リファレンス
 <a name="top"></a> 正規表現とは、入力テキスト内で正規表現エンジンによる照合が試行されるパターンです。 パターンは、1 個以上の文字リテラル、演算子、または構成体で構成されます。  簡単な概要については、「[.NET の正規表現](../../../docs/standard/base-types/regular-expressions.md)」を参照してください。  
@@ -51,8 +51,8 @@ ms.lasthandoff: 12/23/2017
   
  また、ダウンロードして印刷し、簡単に参照できるように、この情報を 2 種類の形式で提供します  
   
- [Word (.docx) 形式でダウンロード](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [PDF (.pdf) 形式でダウンロード](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
+ [Word (.docx) 形式でダウンロード](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [PDF (.pdf) 形式でダウンロード](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
   
 <a name="character_escapes"></a>   
 ## <a name="character-escapes"></a>文字のエスケープ  
@@ -143,14 +143,14 @@ ms.lasthandoff: 12/23/2017
 |`+`|直前の要素と 1 回以上一致します。|`"be+"`|"been" の "bee"、"bent" の "be"|  
 |`?`|直前の要素と 0 回または 1 回一致します。|`"rai?n"`|"ran"、"rain"|  
 |`{` *n* `}`|直前の要素とちょうど *n* 回一致します。|`",\d{3}"`|"1,043.6" の ",043"、"9,876,543,210" の ",876"、",543"、および ",210"|  
-|`{` *n* `,}`|直前の要素と *n* 回一致します。|`"\d{2,}"`|"166"、"29"、"1930"|  
-|`{` *n* `,` *分* `}`|直前の要素と *n* 回以上 *分* 回一致します。|`"\d{3,5}"`|"166"、"17668"<br /><br /> "193024" の "19302"|  
+|`{` *n* `,}`|直前の要素と *n* 回以上一致します。|`"\d{2,}"`|"166"、"29"、"1930"|  
+|`{` *n* `,` *分* `}`|直前の要素と *n* 回以上 *m* 回以下で一致します。|`"\d{3,5}"`|"166"、"17668"<br /><br /> "193024" の "19302"|  
 |`*?`|直前の要素と 0 回以上 (ただし、できるだけ少ない回数) 一致します。|`\d*?\.\d`|".0"、"19.9"、"219.9"|  
 |`+?`|直前の要素と 1 回以上 (ただし、できるだけ少ない回数) 一致します。|`"be+?"`|"been" の "be"、"bent" の "be"|  
 |`??`|直前の要素と 0 回または 1 回 (ただし、できるだけ少ない回数) 一致します。|`"rai??n"`|"ran"、"rain"|  
 |`{` *n* `}?`|直前の要素とちょうど *n* 回一致します。|`",\d{3}?"`|"1,043.6" の ",043"、"9,876,543,210" の ",876"、",543"、および ",210"|  
 |`{` *n* `,}?`|直前の要素と *n* 回以上 (ただし、できるだけ少ない回数) 一致します。|`"\d{2,}?"`|"166"、"29"、"1930"|  
-|`{` *n* `,` *分* `}?`|直前の要素と *n* 回以上 *分* 回以上 (ただし、できるだけ少ない回数) 一致します。|`"\d{3,5}?"`|"166"、"17668"<br /><br /> "193024" の "193"、"024"|  
+|`{` *n* `,` *分* `}?`|直前の要素と *n* 回以上 *m* 回以下 (ただし、できるだけ少ない回数) 一致します。|`"\d{3,5}?"`|"166"、"17668"<br /><br /> "193024" の "193"、"024"|  
   
  [ページのトップへ](#top)  
   
@@ -232,5 +232,5 @@ ms.lasthandoff: 12/23/2017
  [正規表現](regular-expressions.md)  
  [正規表現クラス](the-regular-expression-object-model.md)  
  [正規表現の例](regular-expression-examples.md)  
- [正規表現 - クイック リファレンス (Word 形式でダウンロード)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [正規表現 - クイック リファレンス (PDF 形式でダウンロード)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)
+ [正規表現 - クイック リファレンス (Word 形式でダウンロード)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [正規表現 - クイック リファレンス (PDF 形式でダウンロード)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

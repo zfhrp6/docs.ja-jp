@@ -1,29 +1,29 @@
 ---
-title: "&lt;msxsl:script&gt; を使用した XSLT スタイルシートのスクリプト"
-ms.custom: 
+title: '&lt;msxsl:script&gt; を使用した XSLT スタイルシートのスクリプト'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-caps.latest.revision: 
+caps.latest.revision: 4
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f9e7ceb40167d970b1886aec17b93f4bcf08f631
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 01d4271eb5795e3760d289842bdfbdfa11c883fd
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xslt-stylesheet-scripting-using-ltmsxslscriptgt"></a>&lt;msxsl:script&gt; を使用した XSLT スタイルシートのスクリプト
 <xref:System.Xml.Xsl.XslTransform> クラスは、`script` 要素を使用した埋め込みスクリプトをサポートしています。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 01/19/2018
   
  アセンブリから証拠を取得するには、`this.GetType().Assembly.Evidence` を使用します。 URI (Uniform Resource Identifier) から証拠を取得するには、`Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)` を使用します。  
   
- <xref:System.Xml.Xsl.XslTransform.Load%2A> を受け取り、<xref:System.Xml.XmlResolver> を受け取らない `Evidence` メソッドを使う場合、アセンブリのセキュリティ ゾーンは既定で Full Trust に設定されます。 詳しくは、「<xref:System.Security.SecurityZone>」および「[名前付き権限セット](http://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)」をご覧ください。  
+ <xref:System.Xml.Xsl.XslTransform.Load%2A> を受け取り、<xref:System.Xml.XmlResolver> を受け取らない `Evidence` メソッドを使う場合、アセンブリのセキュリティ ゾーンは既定で Full Trust に設定されます。 詳しくは、「<xref:System.Security.SecurityZone>」および「[名前付き権限セット](https://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)」をご覧ください。  
   
  関数は、`msxsl:script` 要素内で宣言できます。 既定でサポートされる名前空間を次の表に示します。 表に示す名前空間の外側でもクラスを使用できます。 ただし、これらのクラスには、完全修飾名が指定されている必要があります。  
   

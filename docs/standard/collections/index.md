@@ -19,11 +19,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7760f30e8053b55c2f846c08ccb6a3d026089afb
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e36d23c6dfd89b54c86d0b6062813aeccb649579
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="collections-and-data-structures"></a>コレクションとデータ構造体
 多くの場合、類似するデータはコレクションとして格納および操作すると、より効率的に処理できます。 <xref:System.Array?displayProperty=nameWithType> クラスまたは <xref:System.Collections>、<xref:System.Collections.Generic>、<xref:System.Collections.Concurrent>、System.Collections.Immutable の各名前空間のクラスを使用して、コレクションの個々の要素または一定の範囲の要素を追加、削除、および変更することができます。  
@@ -39,7 +39,7 @@ ms.lasthandoff: 12/23/2017
   
 -   **コレクションを列挙する機能**  
   
-     .NET Framework のコレクションでは <xref:System.Collections.IEnumerable?displayProperty=nameWithType> または <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> を実装すると、コレクションを反復処理できます。 列挙子は、コレクション内の任意の要素への移動可能なポインターと考えることができます。 [foreach, in](~/docs/csharp/language-reference/keywords/foreach-in.md) ステートメントと [For Each...Next ステートメント](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) では、<xref:System.Collections.IEnumerable.GetEnumerator%2A> メソッドによって公開される列挙子を使用して、列挙子の操作の複雑さを隠しています。 また、<xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> を実装するコレクションはいずれも*クエリ可能型*と見なされ、LINQ で照会できます。 LINQ クエリでは、データにアクセスするための共通パターンが提供されます。 通常、これらは、標準の `foreach` ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化の機能を利用できます。 さらに、LINQ クエリによってパフォーマンスを向上させることができます。 詳細については、「[LINQ to Objects](http://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)」、「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」、および「[LINQ クエリの概要 (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)」をご覧ください。  
+     .NET Framework のコレクションでは <xref:System.Collections.IEnumerable?displayProperty=nameWithType> または <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> を実装すると、コレクションを反復処理できます。 列挙子は、コレクション内の任意の要素への移動可能なポインターと考えることができます。 [foreach, in](~/docs/csharp/language-reference/keywords/foreach-in.md) ステートメントと [For Each...Next ステートメント](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) では、<xref:System.Collections.IEnumerable.GetEnumerator%2A> メソッドによって公開される列挙子を使用して、列挙子の操作の複雑さを隠しています。 また、<xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> を実装するコレクションはいずれも*クエリ可能型*と見なされ、LINQ で照会できます。 LINQ クエリでは、データにアクセスするための共通パターンが提供されます。 通常、これらは、標準の `foreach` ループよりも簡潔で読みやすく、フィルター処理、並べ替え、およびグループ化の機能を利用できます。 さらに、LINQ クエリによってパフォーマンスを向上させることができます。 詳細については、「[LINQ to Objects](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9)」、「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」、および「[LINQ クエリの概要 (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)」をご覧ください。  
   
 -   **コレクションの内容を配列にコピーする機能**  
   
@@ -80,7 +80,7 @@ ms.lasthandoff: 12/23/2017
 <a name="BKMK_RelatedTopics"></a>   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[コレクション クラスの選択](../../../docs/standard/collections/selecting-a-collection-class.md)|さまざまなコレクションについて説明し、いずれかのシナリオを選択できるよう支援します。|  
 |[ 一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)|<xref:System.Array?displayProperty=nameWithType>、<xref:System.Collections.Generic.List%601?displayProperty=nameWithType>、<xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> などの一般的に使用されるジェネリックと非ジェネリック コレクション型について説明します。|  

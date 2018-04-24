@@ -1,7 +1,7 @@
 ---
-title: "Entity Framework Core でインフラストラクチャの永続レイヤーを実装する"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Entity Framework Core でインフラストラクチャの永続レイヤーを実装する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Entity Framework Core でインフラストラクチャの永続レイヤーを実装する
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Entity Framework Core でインフラストラクチャの永続レイヤーを実装する'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4acdbde6405af7eb78a8c605562fdb1795fedf4d
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 49bd528db50397ea896b7251ea60d18b90fea30c
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Entity Framework Core でインフラストラクチャの永続レイヤーを実装する
 
@@ -342,7 +342,7 @@ Hi/Lo アルゴリズムは、データベースではなく、クライアン�
 
 -   GUID を利用する手法とは異なり、人間にわかりやすい識別子が生成されます。
 
-EF Core は ForSqlServerUseSequenceHiLo メソッドで [HiLo](http://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) に対応しています。先の例をご覧ください。
+EF Core は ForSqlServerUseSequenceHiLo メソッドで [HiLo](https://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) に対応しています。先の例をご覧ください。
 
 ### <a name="mapping-fields-instead-of-properties"></a>プロパティの代わりにフィールドをマッピングする
 
@@ -467,7 +467,7 @@ public IEnumerable<T> List(ISpecification<T> spec)
     [*https://docs.microsoft.com/ef/core/modeling/backing-field*](https://docs.microsoft.com/ef/core/modeling/backing-field)
 
 -   **Steve Smith。Entity Framework Core のカプセル化されたコレクション**
-    [*http://ardalis.com/encapsulated-collections-in-entity-framework-core*](http://ardalis.com/encapsulated-collections-in-entity-framework-core)
+    [*https://ardalis.com/encapsulated-collections-in-entity-framework-core*](https://ardalis.com/encapsulated-collections-in-entity-framework-core)
 
 -   **シャドウ プロパティ**
     [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)

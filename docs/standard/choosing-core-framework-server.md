@@ -9,11 +9,11 @@ ms.prod: .net
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c07b0b760e2a46faea574eef3575409bac773942
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 1fba5ce14b2504ea688bdff35efa959b8a5a86ab
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>サーバー アプリ用 .NET Core と .NET Framework の選択
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 03/19/2018
 
 複数のプラットフォーム (Windows、Linux、macOS ) で実行する必要があるアプリケーション (Web/サービス) の場合は、.NET Core を使用します。
 
-.NET Core は、開発ワークステーションとして前述のオペレーティング システムをサポートしています。 Visual Studio では、Windows および macOS 用の統合開発環境 (IDE) が用意されています。 また、macOS、Linux、および Windows 上で動作する Visual Studio Code も使用できます。 Visual Studio Code は、IntelliSense、デバッグなどの .NET Core をサポートしています。 Sublime、Emacs、VI など、ほとんどのサード パーティ製エディターは、.NET Core で動作します。 これらのサード パーティ製エディターでは、[Omnisharp](http://www.omnisharp.net/) を使用して、エディターを IntelliSense にします。 さらに、コード エディターをまったく使用せずに、サポートされているすべてのプラットフォームで利用可能な [.NET Core CLI ツール](../core/tools/index.md)を直接使用することもできます。
+.NET Core は、開発ワークステーションとして前述のオペレーティング システムをサポートしています。 Visual Studio では、Windows および macOS 用の統合開発環境 (IDE) が用意されています。 また、macOS、Linux、および Windows 上で動作する Visual Studio Code も使用できます。 Visual Studio Code は、IntelliSense、デバッグなどの .NET Core をサポートしています。 Sublime、Emacs、VI など、ほとんどのサード パーティ製エディターは、.NET Core で動作します。 これらのサード パーティ製エディターでは、[Omnisharp](https://www.omnisharp.net/) を使用して、エディターを IntelliSense にします。 さらに、コード エディターをまったく使用せずに、サポートされているすべてのプラットフォームで利用可能な [.NET Core CLI ツール](../core/tools/index.md)を直接使用することもできます。
 
 ### <a name="microservices-architecture"></a>マイクロサービス アーキテクチャ
 

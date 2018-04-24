@@ -1,12 +1,12 @@
 ---
-title: ".NET での文字エンコード"
-ms.custom: 
+title: .NET での文字エンコード
+ms.custom: ''
 ms.date: 12/22/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,18 +16,18 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-caps.latest.revision: 
+caps.latest.revision: 33
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ac24e3a685c20445c473f0f5222ddba72b6b098c
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 1d296920d75af2194323791c4ea571c10f1e3c7d
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="character-encoding-in-net"></a>.NET での文字エンコード
 文字は、さまざまな方法で表現できる抽象エンティティです。 文字エンコーディングとは、サポートされている文字セットの各文字を、その文字を表す値と組み合わせる体系です。 たとえばモールス符号は、ローマ字の各文字を、電信線での送信に適したドットとダッシュのパターンと組み合わせる文字エンコーディングです。 コンピューターの文字エンコーディングは、サポートされている文字セットの各文字を、その文字を表す数値と組み合わせます。 文字エンコーディングには、次の 2 つの異なるコンポーネントがあります。  
@@ -70,7 +70,7 @@ ms.lasthandoff: 02/01/2018
 > [!NOTE]
 >  Unicode 規格では、サポートされるすべてのスクリプトについて、各文字にコード ポイント (数値) と名前を割り当てています。 たとえば、文字 "A" は U+0041 というコード ポイントと、"LATIN CAPITAL LETTER A" という名前で表されます。 UTF (Unicode Transformation Format) エンコーディングは、そのコード ポイントを 1 つ以上のバイトのシーケンスにエンコードする方法を定義します。 Unicode エンコーディング方式を使用すると、任意の文字セットの文字を 1 つのエンコーディング方式で表現できるため、国際対応アプリケーションの開発が簡素化されます。 これにより、アプリケーション開発者が、特定の言語または書記体系の文字を表すために使用されるエンコーディング方式を追跡する必要はなくなります。また、データを破損することなく、各国のシステム間でデータを共有できます。  
 >   
->  .NET では、Unicode 規格によって定義されている UTF-8、UTF-16、および UTF-32 の 3 つのエンコーディングをサポートしています。 詳しくは、[Unicode ホーム ページ](http://www.unicode.org/)の Unicode 標準をご覧ください。  
+>  .NET では、Unicode 規格によって定義されている UTF-8、UTF-16、および UTF-32 の 3 つのエンコーディングをサポートしています。 詳しくは、[Unicode ホーム ページ](https://www.unicode.org/)の Unicode 標準をご覧ください。  
   
  .NET で使えるすべてのエンコーディングに関する情報を取得するには、<xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType> メソッドを呼び出します。 .NET でサポートされている文字エンコーディング システムを次の表に示します。  
   
@@ -157,7 +157,7 @@ ms.lasthandoff: 02/01/2018
  最適なストラテジはコード ページごとに異なります。 たとえば、全角のアルファベットがより一般的な半角のアルファベットにマッピングされるコード ページもあれば、 そのようなマッピングが行われないコード ページもあります。 積極的な最適ストラテジでも、一部のエンコーディングの一部の文字には可能な対応がない場合があります。 たとえば、中国語の漢字からコード ページ 1252 への適切なマッピングはありません。 その場合は、置換文字列が使用されます。 既定では、この文字列は単一の QUESTION MARK (疑問符) (U+003F) です。  
   
 > [!NOTE]
->  最適なストラテジは、詳細には文書化されていません。 ただし、いくつかのコード ページは、[Unicode コンソーシアム](http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/)の Web サイトで文書化されています。 マッピング ファイルを解釈する方法について詳しくは、そのフォルダーの **readme.txt** ファイルをご覧ください。
+>  最適なストラテジは、詳細には文書化されていません。 ただし、いくつかのコード ページは、[Unicode コンソーシアム](https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/)の Web サイトで文書化されています。 マッピング ファイルを解釈する方法について詳しくは、そのフォルダーの **readme.txt** ファイルをご覧ください。
   
  次の例では、コード ページ 1252 (西ヨーロッパ言語の Windows コード ページ) を使用して、最適マッピングとその欠点を示しています。 まず、<xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> メソッドを使用して、コード ページ 1252 のエンコーディング オブジェクトを取得します。 このエンコーディング オブジェクトは、サポートされていない Unicode 文字に対して既定で最適マッピングを使用します。 次に、スペースで区切られた 3 つの非 ASCII 文字 (CIRCLED LATIN CAPITAL LETTER S (U+24C8)、SUPERSCRIPT FIVE (U+2075)、および INFINITY (U+221E)) を含む文字列をインスタンス化します。 出力を見るとわかるように、この文字列をエンコードすると、スペースを除く元の 3 つの文字が、QUESTION MARK (U+003F)、DIGIT FIVE (U+0035)、および DIGIT EIGHT (U+0038) に置き換えられます。 DIGIT EIGHT は、サポートされていない INFINITY 文字の代替として最適とは言えません。QUESTION MARK は、元の文字に対応するマッピングがなかったことを示します。  
   

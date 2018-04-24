@@ -16,11 +16,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 824e06a00c4242d8ee38bdfc5a57151a71e4f285
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: 0da27afc5509af6db510b5e622ffde461ae2e0a1
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xml-documents-and-data"></a>XML ドキュメントと XML データ
 .NET Framework には、XML 対応アプリを容易に構築するための、包括的で統合された一連のクラスが用意されています。 次の名前空間のクラスでは、XML の解析と書き込み、メモリ内での XML データの編集、データの検証、および XSLT 変換がサポートされます。  
@@ -35,21 +35,21 @@ ms.lasthandoff: 03/02/2018
   
 -   <xref:System.Xml.Linq>  
   
- 一覧については、「[System.Xml 名前空間](http://msdn.microsoft.com/library/gg145036.aspx)」Web ページを参照してください。  
+ 一覧については、「[System.Xml 名前空間](https://msdn.microsoft.com/library/gg145036.aspx)」Web ページを参照してください。  
   
  次の名前空間のクラスでは、World Wide Web Consortium (W3C) 勧告がサポートされます。 例:  
   
--   <xref:System.Xml.XmlDocument?displayProperty=nameWithType> クラスは、[W3C ドキュメント オブジェクト モデル (DOM) 勧告の DOM Level 1 Core](http://www.w3.org/TR/REC-DOM-Level-1/) および [DOM Level 2 Core](http://www.w3.org/TR/DOM-Level-2-Core/) を実装しています。  
+-   <xref:System.Xml.XmlDocument?displayProperty=nameWithType> クラスは、[W3C ドキュメント オブジェクト モデル (DOM) 勧告の DOM Level 1 Core](https://www.w3.org/TR/REC-DOM-Level-1/) および [DOM Level 2 Core](https://www.w3.org/TR/DOM-Level-2-Core/) を実装しています。  
   
--   <xref:System.Xml.XmlReader?displayProperty=nameWithType> クラスと <xref:System.Xml.XmlWriter?displayProperty=nameWithType> クラスは、W3C 勧告『[XML 1.0](http://www.w3.org/TR/2006/REC-xml-20060816/)』および『[Namespaces in XML](http://www.w3.org/TR/REC-xml-names/)』をサポートしています。  
+-   <xref:System.Xml.XmlReader?displayProperty=nameWithType> クラスと <xref:System.Xml.XmlWriter?displayProperty=nameWithType> クラスは、W3C 勧告『[XML 1.0](https://www.w3.org/TR/2006/REC-xml-20060816/)』および『[Namespaces in XML](https://www.w3.org/TR/REC-xml-names/)』をサポートしています。  
   
--   <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> クラスのスキーマは、W3C 勧告『[XML Schema Part 1: Structures](http://www.w3.org/TR/xmlschema-1/)』および『[XML Schema Part 2: DataTypes](http://www.w3.org/TR/xmlschema-2/)』をサポートしています。  
+-   <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> クラスのスキーマは、W3C 勧告『[XML Schema Part 1: Structures](https://www.w3.org/TR/xmlschema-1/)』および『[XML Schema Part 2: DataTypes](https://www.w3.org/TR/xmlschema-2/)』をサポートしています。  
   
 -   <xref:System.Xml.Xsl?displayProperty=nameWithType> 名前空間のクラスは、W3C 勧告『[XSLT version 1.0](http://www.w3.org/TR/xslt)』に準拠する XSLT 変換をサポートしています。  
   
  .NET Framework の XML クラスの利点を次に示します。  
   
--   **生産性** [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) により XML でのプログラミングがさらに容易になるほか、SQL と同じようにクエリを利用できます。  
+-   **生産性** [LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) により XML でのプログラミングがさらに容易になるほか、SQL と同じようにクエリを利用できます。  
   
 -   **拡張性** .NET Framework の XML クラスは、抽象基本クラスと仮想メソッドを使用することによって拡張できます。 たとえば、キャッシュ ストリームをローカルのディスクに格納する <xref:System.Xml.XmlUrlResolver> クラスの派生クラスを作成できます。  
   
@@ -72,7 +72,7 @@ ms.lasthandoff: 03/02/2018
  XML データの処理に関するオプションについて説明します。  
   
  [メモリ内の XML データの処理](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md)  
- XML データをメモリ内で処理する 3 つの方法について説明します。 [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)、<xref:System.Xml.XmlDocument> クラス (W3C ドキュメント オブジェクト モデルに基づく)、および <xref:System.Xml.XPath.XPathDocument> クラス (XPath データ モデルに基づく)。  
+ XML データをメモリ内で処理する 3 つの方法について説明します。 [LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)、<xref:System.Xml.XmlDocument> クラス (W3C ドキュメント オブジェクト モデルに基づく)、および <xref:System.Xml.XPath.XPathDocument> クラス (XPath データ モデルに基づく)。  
   
  [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)  
  XSLT プロセッサの使い方について説明します。  

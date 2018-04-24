@@ -6,18 +6,19 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ecef23870ac547f4b4066628da71f8af98c91b27
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4f12b6860f1c4efe0f55cae4fefd8cd5f4539095
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="characteristics-of-modern-web-applications"></a>最新の Web アプリケーションの特徴
 
-> 「… 設計が適切であれば、低コストで機能を提供できます。 このアプローチは困難ですが、成功は継続します」  
+> "… 設計が適切であれば、低コストで機能を提供できます。 このアプローチは困難ですが、成功は継続します」  
 > _\- Dennis Ritchie_
 
 ## <a name="summary"></a>まとめ

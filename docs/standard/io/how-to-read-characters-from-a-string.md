@@ -1,12 +1,12 @@
 ---
-title: "方法 : 文字列から文字を読み取る"
-ms.custom: 
+title: '方法 : 文字列から文字を読み取る'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,18 +19,18 @@ helpviewer_keywords:
 - reading data, strings
 - streams, reading characters from string
 ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
-caps.latest.revision: 
+caps.latest.revision: 13
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b8c41350431f49b638c4353e68c9bacded947a1d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c4023d8e801da542414aac1fddaf7aef5bf1e98f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="how-to-read-characters-from-a-string"></a>方法 : 文字列から文字を読み取る
 次のコード例は、文字列から同期で文字を読み取る方法と非同期で文字を読み取る方法を示しています。  
@@ -52,7 +52,7 @@ ms.lasthandoff: 01/19/2018
  <xref:System.IO.StringReader>  
  <xref:System.IO.StringReader.Read%2A?displayProperty=nameWithType>  
  [非同期ファイル I/O](../../../docs/standard/io/asynchronous-file-i-o.md)  
- [NIB: 方法: ディレクトリ一覧を作成する](http://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69)  
+ [NIB: 方法: ディレクトリ一覧を作成する](https://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69)  
  [方法: 新しく作成されたデータ ファイルに対して読み書きする](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
  [方法: ログ ファイルを開いて情報を追加する](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
  [方法: ファイルからテキストを読み取る](../../../docs/standard/io/how-to-read-text-from-a-file.md)  

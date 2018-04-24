@@ -1,12 +1,12 @@
 ---
-title: "PLINQ の概要"
-ms.custom: 
+title: PLINQ の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,22 +14,22 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-caps.latest.revision: 
+caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 6ee718737885618322c3623a80b0b091bbfc729d
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 1148d2b245d67304071d8dd23bb1a88bdc020b8d
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-plinq"></a>PLINQ の概要
 ## <a name="what-is-a-parallel-query"></a>並列クエリとは  
- 統合言語クエリ (LINQ) は [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] で導入されました。  これはタイプ セーフな方法で任意の <xref:System.Collections.IEnumerable?displayProperty=nameWithType> または <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> のデータ ソースを照会する、統一されたモデルです。 LINQ to Objects とは、<xref:System.Collections.Generic.List%601> や配列などのメモリ内コレクションに対して実行される LINQ クエリの名前です。 この記事では、LINQ の基礎を理解していることを前提としています。 詳細については、「[LINQ (Language-Integrated Query) (LINQ (統合言語クエリ))](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)」をご覧ください。  
+ 統合言語クエリ (LINQ) は [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] で導入されました。  これはタイプ セーフな方法で任意の <xref:System.Collections.IEnumerable?displayProperty=nameWithType> または <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> のデータ ソースを照会する、統一されたモデルです。 LINQ to Objects とは、<xref:System.Collections.Generic.List%601> や配列などのメモリ内コレクションに対して実行される LINQ クエリの名前です。 この記事では、LINQ の基礎を理解していることを前提としています。 詳細については、「[LINQ (Language-Integrated Query) (LINQ (統合言語クエリ))](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)」をご覧ください。  
   
  Parallel LINQ (PLINQ) は、LINQ パターンの並列実装です。 PLINQ クエリは、あらゆる意味において、並列ではない LINQ to Objects クエリに似ています。 PLINQ クエリは、[!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] の順次クエリと同様、メモリ内の <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> データ ソースで実行され、遅延実行が存在するので、クエリが列挙されるまでは実行されません。 主な相違点は、PLINQ は、システムのすべてのプロセッサを十分に活用しようとする点です。 そのために、データ ソースをセグメントにパーティション分割し、複数のプロセッサで個々のワーカー スレッドの各セグメントに対してクエリを並行実行します。 多くの場合、並行実行によって、クエリは非常に高速に処理されます。  
   
@@ -43,7 +43,7 @@ ms.lasthandoff: 02/27/2018
 ## <a name="the-parallelenumerable-class"></a>ParallelEnumerable クラス  
  <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> クラスは、ほぼすべての PLINQ 機能を公開します。  このクラスと、その他の <xref:System.Linq?displayProperty=nameWithType> 名前空間の型は、System.Core.dll アセンブリにコンパイルされます。 Visual Studio の既定の C# プロジェクトと Visual Basic プロジェクトは、どちらもアセンブリを参照し、名前空間をインポートします。  
   
- <xref:System.Linq.ParallelEnumerable> には、LINQ to Objects がサポートするすべての標準クエリ演算子の実装が含まれていますが、各演算子の並列化は試行しません。 [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] についての情報が必要な場合は、「[Introduction to LINQ (LINQ の概要)](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e)」を参照してください。  
+ <xref:System.Linq.ParallelEnumerable> には、LINQ to Objects がサポートするすべての標準クエリ演算子の実装が含まれていますが、各演算子の並列化は試行しません。 [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] についての情報が必要な場合は、「[Introduction to LINQ (LINQ の概要)](https://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e)」を参照してください。  
   
  <xref:System.Linq.ParallelEnumerable> クラスには、標準クエリ演算子に加え、並行実行固有の動作を可能にする一連のメソッドが含まれています。 次の表に、これらの PLINQ 固有のメソッドを示します。  
   

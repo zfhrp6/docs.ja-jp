@@ -17,18 +17,18 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-caps.latest.revision: ''
+caps.latest.revision: 58
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 98aaa5c7bbd28facf9cc06fd0d0898b72ea7dbc2
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 538aa21712f1e2290fb009c24774059098c60c1e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="character-classes-in-regular-expressions"></a>正規表現での文字クラス
 <a name="Top"></a> 文字クラスは、いずれかが入力文字列に含まれると一致と見なされる文字のセットを定義します。 .NET の正規表現言語では、次の文字クラスがサポートされます。  
@@ -58,7 +58,7 @@ ms.lasthandoff: 03/15/2018
  .NET は、文字クラスの減算式をサポートしています。これにより、ある文字クラスから別の文字クラスを除外した結果を文字のセットとして定義できます。 詳細については、「[文字クラス減算](#CharacterClassSubtraction)」を参照してください。  
   
 > [!NOTE]
->  カテゴリ別の文字に一致する文字クラス (単語文字に一致する [\w](#WordCharacter)、Unicode カテゴリに一致する [\p{}](#CategoryOrBlock) など) は、<xref:System.Globalization.CharUnicodeInfo> クラスを使用して文字カテゴリに関する情報を提供します。  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降の文字カテゴリは、[Unicode 標準バージョン 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/) に基づいています。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] から [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] の文字カテゴリは、[Unicode 標準バージョン 6.3.0](http://www.unicode.org/versions/Unicode6.3.0/) に基づいています。  
+>  カテゴリ別の文字に一致する文字クラス (単語文字に一致する [\w](#WordCharacter)、Unicode カテゴリに一致する [\p{}](#CategoryOrBlock) など) は、<xref:System.Globalization.CharUnicodeInfo> クラスを使用して文字カテゴリに関する情報を提供します。  [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] 以降の文字カテゴリは、[Unicode 標準バージョン 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/) に基づいています。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] から [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] の文字カテゴリは、[Unicode 標準バージョン 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/) に基づいています。  
   
 <a name="PositiveGroup"></a>   
 ## <a name="positive-character-group--"></a>文字グループの肯定: [ ]  
@@ -408,7 +408,7 @@ ms.lasthandoff: 03/15/2018
   
 <a name="SupportedUnicodeGeneralCategories"></a>   
 ## <a name="supported-unicode-general-categories"></a>サポートされている Unicode 一般カテゴリ  
- Unicode は、次の表に示されている一般カテゴリを定義しています。 詳細については、「[Unicode Character Database (Unicode 文字データベース)](http://www.unicode.org/reports/tr44/)」内の「UCD File Format (UCD ファイル形式)」および「General Category Values (一般カテゴリの値)」を参照してください。  
+ Unicode は、次の表に示されている一般カテゴリを定義しています。 詳細については、「[Unicode Character Database (Unicode 文字データベース)](https://www.unicode.org/reports/tr44/)」内の「UCD File Format (UCD ファイル形式)」および「General Category Values (一般カテゴリの値)」を参照してください。  
   
 |カテゴリ|説明|  
 |--------------|-----------------|  

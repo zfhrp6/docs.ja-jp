@@ -1,12 +1,12 @@
 ---
-title: "推奨される国際対応アプリケーション開発手順"
-ms.custom: 
+title: 推奨される国際対応アプリケーション開発手順
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - global applications, best practices
@@ -14,18 +14,18 @@ helpviewer_keywords:
 - globalization [.NET Framework], best practices
 - international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
-caps.latest.revision: 
+caps.latest.revision: 20
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1fbdbe2596f44a6efda35b8c3e3aace303d79364
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 65566d54c97db7592fdd38178d88fe2963e637bf
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>推奨される国際対応アプリケーション開発手順
 このセクションでは、推奨される国際対応アプリケーション開発手順について説明します。  
@@ -102,7 +102,7 @@ ms.lasthandoff: 01/19/2018
   
 4.  ASP.NET アプリケーション内の次の 3 か所で、requestEncoding、responseEncoding、fileEncoding、culture、uiCulture の各属性の値を指定します。  
   
-    -   Web.config ファイルのグローバリゼーション セクション。 Web.config ファイルは、ASP.NET アプリケーションの外部ファイルです。 詳しくは、「[\<globalization> 要素](http://msdn.microsoft.com/library/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7)」をご覧ください。  
+    -   Web.config ファイルのグローバリゼーション セクション。 Web.config ファイルは、ASP.NET アプリケーションの外部ファイルです。 詳しくは、「[\<globalization> 要素](https://msdn.microsoft.com/library/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7)」をご覧ください。  
   
     -   ページ ディレクティブ。 アプリケーションがページを処理している時点では、ファイルは既に読み取られています。 そのため、fileEncoding と requestEncoding を指定するには遅すぎます。 ページ ディレクティブでは uiCulture、Culture、および responseEncoding だけを指定できます。  
   

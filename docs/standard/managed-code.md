@@ -1,6 +1,6 @@
 ---
-title: "マネージ コードとは"
-description: "ランタイムによって管理されるコードであるマネージ コードが共通言語ランタイム (CLR) によってどのように管理されるかを説明します。"
+title: マネージ コードとは
+description: ランタイムによって管理されるコードであるマネージ コードが共通言語ランタイム (CLR) によってどのように管理されるかを説明します。
 keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: mairaw
@@ -13,17 +13,17 @@ ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ca2ae076229a1726d3a25a84e358f9cfb623a297
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 46bbe30f216ba9b0a3bc7f88267c428ec56de614
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="what-is-managed-code"></a>"マネージ コード" とは
 
 .NET Framework を使用していると、よく "マネージ コード" という用語を目にすることがあります。 このドキュメントでは、この用語の意味とそれに関する追加の情報について説明します。
 
-ごく簡単に言うと、マネージ コードとは、その実行がランタイムによって管理されるコードです。 この場合、問題のランタイムは、実装 ([Mono](http://www.mono-project.com/) または .NET Framework または .NET Core) に関係なく、**共通言語ランタイム**または CLR と呼ばれます。 CLR は、マネージ コードの取得、そのマシン コードへのコンパイルと実行を担当します。 それに加えて、ランタイムは、自動メモリ管理、セキュリティ境界、タイプ セーフなどのいくつかの重要なサービスも提供します。
+ごく簡単に言うと、マネージ コードとは、その実行がランタイムによって管理されるコードです。 この場合、問題のランタイムは、実装 ([Mono](https://www.mono-project.com/) または .NET Framework または .NET Core) に関係なく、**共通言語ランタイム**または CLR と呼ばれます。 CLR は、マネージ コードの取得、そのマシン コードへのコンパイルと実行を担当します。 それに加えて、ランタイムは、自動メモリ管理、セキュリティ境界、タイプ セーフなどのいくつかの重要なサービスも提供します。
 
 これを、"アンマネージ コード" とも呼ばれる C/C++ プログラムを実行する方法と比較します。 アンマネージ環境では、プログラマがほとんどすべてのことを担当します。 実際のプログラムは、基本的に、オペレーティング システム (OS) がメモリに読み込み、起動するバイナリです。 メモリ管理からセキュリティの考慮事項まで、他のすべてのことをプログラマが担当します。
 

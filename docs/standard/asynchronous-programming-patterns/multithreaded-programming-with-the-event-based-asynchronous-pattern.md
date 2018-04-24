@@ -1,12 +1,12 @@
 ---
-title: "イベント ベースの非同期パターンを使用したマルチスレッド プログラミング"
-ms.custom: 
+title: イベント ベースの非同期パターンを使用したマルチスレッド プログラミング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Event-based Asynchronous Pattern
@@ -19,18 +19,18 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 958d6617-5e70-4b36-b5db-63c16dc35e43
-caps.latest.revision: 
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 557d639cc8a4e7ade2cfbd1f5d7264bca226d273
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6d93e449877456e415ebd4d3490a7df99280e7e5
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="multithreaded-programming-with-the-event-based-asynchronous-pattern"></a>イベント ベースの非同期パターンを使用したマルチスレッド プログラミング
 非同期機能をクライアント コードに公開する方法は数多くあります。 イベント ベースの非同期パターンは、非同期動作を示すクラスに対して推奨される方法を規定します。  
@@ -67,5 +67,5 @@ ms.lasthandoff: 12/23/2017
 ## <a name="see-also"></a>参照  
  [マネージ スレッド処理の実施](../../../docs/standard/threading/managed-threading-best-practices.md)  
  [イベント](../../../docs/standard/events/index.md)  
- [コンポーネントのマルチスレッド](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
+ [コンポーネントのマルチスレッド](https://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
  [イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

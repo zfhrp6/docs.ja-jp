@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル: Office のプログラミング (C# および Visual Basic)"
+title: 'チュートリアル: Office のプログラミング (C# および Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,19 +13,18 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 684fe023d46d3522aecd3cbd4d89e7f9ee92140f
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 7108ef10333b2ec7aded1b8f768c2953283ac625
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>チュートリアル: Office のプログラミング (C# および Visual Basic)
 Visual Studio には、Microsoft Office のプログラミングを改善する C# および Visual Basic の新機能が導入されています。 便利な C# の機能には、名前付き引数、省略可能な引数、型 `dynamic` の戻り値があります。 COM プログラミングでは、`ref` キーワードを省略し、インデックス付きプロパティにアクセスできます。 Visual Basic の機能には、自動実装プロパティ、ラムダ式内のステートメント、コレクション初期化子などがあります。
 
-両方の言語で、ユーザーのコンピューターにプライマリ相互運用機能アセンブリ (PIA) を配置せずに COM コンポーネントとやり取りするアセンブリを配置できる型情報を埋め込むことができます。 詳細については、「[チュートリアル: マネージ アセンブリからの型の埋め込み](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)」を参照してください。  
+両方の言語で、ユーザーのコンピューターにプライマリ相互運用機能アセンブリ (PIA) を配置せずに COM コンポーネントとやり取りするアセンブリを配置できる型情報を埋め込むことができます。 詳細については、「[チュートリアル: マネージ アセンブリからの型の埋め込み](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)」を参照してください。  
   
 このチュートリアルでは、Office プログラミングのコンテキストで機能を示しますが、これらの機能の多くは一般的なプログラミングにも便利です。 このチュートリアルでは、Excel ブックを作成する Excel アドイン アプリケーションを使用します。 次に、ブックへのリンクを含む Word 文書を作成します。 最後に、PIA 依存関係の有効/無効を切り替える方法を確認します。  
   
@@ -41,7 +40,7 @@ Visual Studio には、Microsoft Office のプログラミングを改善する 
   
 1.  Visual Studio を起動します。  
   
-2.  **[ファイル]** メニューの **[新規作成]**をポイントし、 **[プロジェクト]**をクリックします。  
+2.  **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。  
   
 3.  **[インストールされたテンプレート]** ペインで、**[Visual Basic]** または **[Visual C#]** を展開し、**[Office]** を展開して、Office 製品のバージョン年度をクリックします。  
   
@@ -51,7 +50,7 @@ Visual Studio には、Microsoft Office のプログラミングを改善する 
   
 6.  必要に応じて、**[名前]** ボックスにプロジェクトの名前を入力します。  
   
-7.  **[OK]**をクリックします。  
+7.  **[OK]** をクリックします。  
   
 8.  **ソリューション エクスプローラー**に新しいプロジェクトが表示されます。  
   
@@ -61,7 +60,7 @@ Visual Studio には、Microsoft Office のプログラミングを改善する 
   
 2.  **[アセンブリ]** タブの **[コンポーネント名]** 一覧で、**Microsoft.Office.Interop.Excel**、バージョン `<version>.0.0.0` (Office 製品番号のキーについては、[Microsoft バージョン](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)に関するページを参照してください) を選択し、Ctrl キーを押しながら **Microsoft.Office.Interop.Word**、`version <version>.0.0.0` を選択します。 アセンブリが表示されない場合は、アセンブリがインストールされ、表示されることの確認が必要になることがあります (「[方法: Office のプライマリ相互運用機能アセンブリをインストールする](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)」を参照)。  
   
-3.  **[OK]**をクリックします。  
+3.  **[OK]** をクリックします。  
   
 ### <a name="to-add-necessary-imports-statements-or-using-directives"></a>必要な Imports ステートメントまたはディレクティブの使用を追加するには  
   
@@ -75,7 +74,7 @@ Visual Studio には、Microsoft Office のプログラミングを改善する 
   
 ### <a name="to-create-a-list-of-bank-accounts"></a>銀行口座の一覧を作成するには  
   
-1.  **ソリューション エクスプローラー**で、プロジェクト名を右クリックし、**[追加]** をクリックしてから **[クラス]** をクリックします。 Visual Basic を使用している場合は Account.vb、C# を使用している場合は Account.cs という名前をクラスに付けます。 **[追加]**をクリックします。  
+1.  **ソリューション エクスプローラー**で、プロジェクト名を右クリックし、**[追加]** をクリックしてから **[クラス]** をクリックします。 Visual Basic を使用している場合は Account.vb、C# を使用している場合は Account.cs という名前をクラスに付けます。 **[追加]** をクリックします。  
   
 2.  `Account` クラスの定義を次のコードに置き換えます。 このクラス定義では、*自動実装プロパティ*が使用されます。 詳細については、「[自動実装プロパティ](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)」を参照してください。  
   
@@ -210,8 +209,8 @@ Visual Studio には、Microsoft Office のプログラミングを改善する 
  [ラムダ式 (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
  [ラムダ式 (C#)](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
  [方法: COM 相互運用機能を使用したプログラミングでインデックス付きプロパティを使用する](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
- [チュートリアル: Microsoft Office アセンブリからの型情報の埋め込み](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)  
- [チュートリアル: マネージ アセンブリからの型の埋め込み](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
- [チュートリアル: 初めての Excel 用 VSTO アドインの作成](http://msdn.microsoft.com/library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)  
+ [チュートリアル: Microsoft Office アセンブリからの型情報の埋め込み](https://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3(v=vs.100))  
+ [チュートリアル: マネージ アセンブリからの型の埋め込み](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
+ [チュートリアル: 初めての Excel 用 VSTO アドインの作成](https://msdn.microsoft.com/library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)  
  [COM 相互運用](../../../visual-basic/programming-guide/com-interop/index.md)  
  [相互運用性](../../../csharp/programming-guide/interop/index.md)

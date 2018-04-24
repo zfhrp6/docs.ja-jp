@@ -1,26 +1,26 @@
 ---
-title: "XSLT エラーの解決"
-ms.custom: 
+title: XSLT エラーの解決
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
-caps.latest.revision: 
+caps.latest.revision: 2
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 4564530cd173793519471c78105d0394595f6d5c
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 70491e86697356766b64a98201b2969883ab7ee4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="recoverable-xslt-errors"></a>XSLT エラーの解決
 W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を実装者が決定できる事項があります。 このような事項は、随意動作と見なされています。 たとえば、XSLT 1.0 Recommendation は、セクション 7.3「Creating Processing Instructions」で、`xsl:processing-instruction` の内容をインスタンス化したときに、テキスト ノード以外のノードが作成されるのはエラーであるとしています。 いくつかの問題に関しては、プロセッサがエラー状態から回復するときにどのような対処をするべきかを、XSLT 1.0 Recommendation が規定しています。 セクション 7.3 に記述されている問題に関しては、W3C では、作成されたノードとその内容を無視することで、このエラーから回復できるとしています。  
@@ -32,7 +32,7 @@ W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を�
   
 -   エラーは、この状態に対する例外が発生したことを示します。  
   
--   詳細については、[W3C の XSL Transformations (XSLT) Version 1.0 勧告](http://www.w3.org/TR/xslt)に関するページと [W3C の「XSL Transformations (XSLT) Version 1.0 Specification Errata」(XSL Transformations (XSLT) Version 1.0 仕様の正誤表)](http://www.w3.org/1999/11/REC-xslt-19991116-errata/) を参照してください。  
+-   詳細については、[W3C の XSL Transformations (XSLT) Version 1.0 勧告](http://www.w3.org/TR/xslt)に関するページと [W3C の「XSL Transformations (XSLT) Version 1.0 Specification Errata」(XSL Transformations (XSLT) Version 1.0 仕様の正誤表)](https://www.w3.org/1999/11/REC-xslt-19991116-errata/) を参照してください。  
   
 |XSLT の状態|セクション|XslCompiledTransform の動作|  
 |--------------------|-------------|-----------------------------------|  

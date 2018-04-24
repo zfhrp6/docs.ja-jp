@@ -1,12 +1,12 @@
 ---
-title: ".NET Framework の正規表現"
-ms.custom: 
+title: .NET Framework の正規表現
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -26,18 +26,18 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-caps.latest.revision: 
+caps.latest.revision: 24
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 145e0c9a722afd9f49216058604936189c003f17
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 5d0ec5572776368fa9943a87fa72280a4ebeb03d
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="net-regular-expressions"></a>.NET の正規表現
 正規表現を使用すると、強力、柔軟、そして効率的な方法でテキストを処理できます。 正規表現の広範なパターン一致表記法を使用することで、大量のテキストをすばやく解析して特定の文字パターンを検索したり、決められたパターン (メール アドレスなど) と照らしてテキストを検証したりできるほか、テキストの部分文字列を抽出、編集、置換、または削除したり、抽出した文字列をコレクションに追加してレポートを生成したりすることもできます。 文字列処理や大量のテキストを解析する多くのアプリケーションにとって、正規表現は欠くことのできないツールです。  
@@ -63,8 +63,8 @@ ms.lasthandoff: 02/01/2018
   
  正規表現の言語について詳しくは、「[正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)」を参照するか、次の資料のいずれかをダウンロードして印刷してください。  
   
- [Word (.docx) 形式のクイック リファレンス](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [PDF (.pdf) 形式のクイック リファレンス](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
+ [Word (.docx) 形式のクイック リファレンス](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [PDF (.pdf) 形式のクイック リファレンス](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
   
 ## <a name="regular-expression-examples"></a>正規表現の例  
  <xref:System.String> クラスには、文字列内のリテラル文字列を検索する際に使用できる文字列の検索メソッドと置換メソッドが数多く含まれています。 正規表現は、次の例に示すように、文字列内の部分文字列のいずれかを検索する場合、または文字列内のパターンを識別する場合に最も役立ちます。  
@@ -131,5 +131,5 @@ ms.lasthandoff: 02/01/2018
 ## <a name="reference"></a>参照  
  <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
  <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  
- [正規表現 - クイック リファレンス (Word 形式でダウンロード)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [正規表現 - クイック リファレンス (PDF 形式でダウンロード)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)
+ [正規表現 - クイック リファレンス (Word 形式でダウンロード)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [正規表現 - クイック リファレンス (PDF 形式でダウンロード)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

@@ -1,12 +1,12 @@
 ---
-title: "非同期ファイル I-O"
-ms.custom: 
+title: 非同期ファイル I-O
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -23,18 +23,18 @@ helpviewer_keywords:
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-caps.latest.revision: 
+caps.latest.revision: 23
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ff9ae65e47a35f4acfade1d06c703f9e1f5f6bee
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e0c67c9b397dfcd6f6ba947c2876919693c4f472
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="asynchronous-file-io"></a>非同期ファイル I/O
 非同期操作では、メイン スレッドをブロックすることなくリソース使用量の多い I/O 操作を実行できます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリまたは [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)] アプリで特に重要です。  
@@ -49,7 +49,7 @@ ms.lasthandoff: 12/23/2017
   
  `Await` (Visual Basic) 演算子または `await` (C#) 演算子。非同期のメソッドの結果に適用されます。  
   
- 非同期 I/O 操作を実装するには、これらのキーワードを非同期のメソッドと組み合わせて使用します。次に例を示します。 詳細については、「[Async および Await を使用した非同期プログラミング](http://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)」を参照してください。  
+ 非同期 I/O 操作を実装するには、これらのキーワードを非同期のメソッドと組み合わせて使用します。次に例を示します。 詳細については、「[Async および Await を使用した非同期プログラミング](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)」を参照してください。  
   
  次の例では、2 つの <xref:System.IO.FileStream> オブジェクトを使用して、ファイルをディレクトリ間で非同期にコピーする方法を示します。 非同期のメソッドを呼び出すので、 <xref:System.Web.UI.WebControls.Button.Click> コントロールの <xref:System.Windows.Controls.Button> イベント ハンドラーは `async` 修飾子でマークされていることに注意してください。  
   
@@ -71,4 +71,4 @@ ms.lasthandoff: 12/23/2017
 ## <a name="see-also"></a>参照  
  <xref:System.IO.Stream>  
  [ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)  
- [Async および Await を使用した非同期プログラミング](http://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)
+ [Async および Await を使用した非同期プログラミング](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)

@@ -1,30 +1,30 @@
 ---
-title: "スレッドおよびスレッド処理"
-ms.custom: 
+title: スレッドおよびスレッド処理
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - multiple threads
 - threading [.NET Framework]
 - threading [.NET Framework], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-caps.latest.revision: 
+caps.latest.revision: 14
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 114fb704a622d92ab8e92fa866fa0fc9bebf4e58
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 02c676e3bb6c0dcc9e65858367d13f41adc797e8
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="threads-and-threading"></a>スレッドおよびスレッド処理
 オペレーティング システムは、実行している異なるアプリケーションを分離するために、プロセスを使います。 スレッドはオペレーティング システムがプロセッサ時間を割り当てる基本単位であり、複数のスレッドがそのプロセスの内部でコードを実行できます。 各スレッドは、例外ハンドラー、スケジューリングの優先順位、スレッドがスケジュールされるまでシステムがスレッド コンテキストを保存するために使用する構造体のセットを保持しています。 スレッド コンテキストには、スレッドがシームレスに実行を再開するために必要なすべての情報 (スレッドの CPU レジスタとスタックのセットなど) が含まれ、スレッドのホスト プロセスのアドレス空間内に保持されます。  
@@ -36,7 +36,7 @@ ms.lasthandoff: 01/19/2018
  タイム スライスの長さは、オペレーティング システムとプロセッサによって異なります。 各タイム スライスは小さいため、プロセッサが 1 つだけであっても、複数のスレッドが同時に実行しているように見えます。 実際には、これはマルチプロセッサ システムの場合であり、実行可能なスレッドは利用可能なプロセッサ間に分散されます。  
   
 ## <a name="when-to-use-multiple-threads"></a>複数のスレッドを使用する場合  
- ユーザーの介入を必要とするソフトウェアは、よいユーザー エクスペリエンスを提供するため、できる限り早くユーザーのアクティビティに応答する必要があります。 ただし同時に、できるだけ速くユーザーにデータを提示するために必要な計算を実行する必要もあります。 アプリケーションが実行スレッドを 1 つしか使っていない場合は、[非同期プログラミング](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)と [.NET Framework リモート処理](http://msdn.microsoft.com/library/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)または ASP.NET を使って作成された [XML Web サービス](http://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)を組み合わせて、そのコンピューター自体の処理時間に加えて他のコンピューターの処理時間を使うことにより、応答性を向上させ、アプリケーションのデータ処理時間を減らすことができます。 入力/出力の多い処理を行っている場合は、I/O 完了ポートを使ってアプリケーションの応答性を高めることもできます。  
+ ユーザーの介入を必要とするソフトウェアは、よいユーザー エクスペリエンスを提供するため、できる限り早くユーザーのアクティビティに応答する必要があります。 ただし同時に、できるだけ速くユーザーにデータを提示するために必要な計算を実行する必要もあります。 アプリケーションが実行スレッドを 1 つしか使っていない場合は、[非同期プログラミング](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)と [.NET Framework リモート処理](https://msdn.microsoft.com/library/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)または ASP.NET を使って作成された [XML Web サービス](https://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)を組み合わせて、そのコンピューター自体の処理時間に加えて他のコンピューターの処理時間を使うことにより、応答性を向上させ、アプリケーションのデータ処理時間を減らすことができます。 入力/出力の多い処理を行っている場合は、I/O 完了ポートを使ってアプリケーションの応答性を高めることもできます。  
   
 ### <a name="advantages-of-multiple-threads"></a>複数スレッドの長所  
  ただし、複数のスレッドを使うことは、ユーザーへの応答性を向上させ、ほぼ同時にジョブの完了に必要なデータを処理するために利用できる、最も強力な方法です。 1 プロセッサのコンピューターでは、複数のスレッドによってこの効果を作り出すことができ、ユーザー イベントの間の短い時間を利用してバックグラウンドでデータを処理します。 たとえば、別のスレッドが同じアプリケーション内でワークシートの他の部分を再計算中に、ユーザーはスプレッドシートを編集できます。  

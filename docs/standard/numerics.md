@@ -1,12 +1,12 @@
 ---
-title: ".NET Framework における数値"
-ms.custom: 
+title: .NET Framework における数値
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - SIMD
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-caps.latest.revision: 
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bd55b127f73fe1cefce9724f3a74400b5fe7488f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 074ed60a3cbc1949eea4a8d866cdb3bba7c0f196
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="numerics-in-the-net-framework"></a>.NET Framework における数値
 .NET Framework は、標準の数値整数と浮動小数点型のプリミティブをサポートしています。さらに、理論上の上限や下限のない整数型の <xref:System.Numerics.BigInteger>、複素数を表す型の <xref:System.Numerics.Complex>、<xref:System.Numerics> 名前空間の SIMD が有効なベクター型のセットもサポートしています。  
@@ -85,7 +85,7 @@ ms.lasthandoff: 12/23/2017
   
  SimD 対応のベクター型は IL に実装されているので、これを SimD 非対応のハードウェアや JIT コンパイラで使用できます。 SIMD 命令の利点を活用するために、64 ビットのアプリはマネージ コード用の新しい 64 ビット JIT コンパイラ (.NET Framework 4.6 に含まれる) でコンパイルする必要があります。これは、x64 プロセッサがターゲットの場合に SIMD のサポートを追加します。  
   
- SIMD は [NuGet パッケージ](http://www.nuget.org/packages/System.Numerics.Vectors)としてもダウンロードできます。  NuGET パッケージには、ジェネリック <xref:System.Numerics.Vector%601> 構造体も含まれています。この構造体を使用すると、任意のプリミティブな数値型のベクターを作成できます。 (プリミティブな数値型には、<xref:System.Decimal> を除く <xref:System> 名前空間のすべての数値型が含まれます。)さらに、<xref:System.Numerics.Vector%601> 構造体は、ベクターを使用しているときに呼び出すことのできる便利なメソッドのライブラリを提供します。  
+ SIMD は [NuGet パッケージ](https://www.nuget.org/packages/System.Numerics.Vectors)としてもダウンロードできます。  NuGET パッケージには、ジェネリック <xref:System.Numerics.Vector%601> 構造体も含まれています。この構造体を使用すると、任意のプリミティブな数値型のベクターを作成できます。 (プリミティブな数値型には、<xref:System.Decimal> を除く <xref:System> 名前空間のすべての数値型が含まれます。)さらに、<xref:System.Numerics.Vector%601> 構造体は、ベクターを使用しているときに呼び出すことのできる便利なメソッドのライブラリを提供します。  
   
 ## <a name="see-also"></a>参照  
  [アプリケーションの基本事項](../../docs/standard/application-essentials.md)

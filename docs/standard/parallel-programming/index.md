@@ -18,11 +18,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c0ea65b0a61719c85ab1da53bcc99f5d43a3210b
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 1e649bcb37b711d01199bd4e4823a9bb0cac60b4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="parallel-programming-in-net"></a>.NET での並列プログラミング
 多くのパーソナル コンピューターとワークステーションには、複数スレッドの同時実行を可能にする 2 つまたは 4 つのコア (CPU) があります。 近い将来、コンピューターは、これよりはるかに多くのコアを搭載すると予想されています。 現在および将来のハードウェアを活用するには、コードを並列化して複数のプロセッサに負荷を分散します。 以前は、並列化には低水準のスレッドおよびロックの操作が必要でした。 [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] および [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、新しいランタイム、新しいクラス ライブラリの型、および新しい診断ツールを提供することで、並列プログラミングのサポートを強化しています。 これらの機能により並行開発が簡素化され、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] の並列プログラミング アーキテクチャの高度な概要を次の図に示します。  
@@ -44,4 +44,4 @@ ms.lasthandoff: 04/09/2018
   
 ## <a name="see-also"></a>参照  
  [Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4 (並列プログラミングのパターン: .NET Framework 4 での並列パターンの理解と適用)](https://www.microsoft.com/download/details.aspx?id=19222)  
- [.NET Framework による並列プログラミングのサンプル](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+ [.NET Framework による並列プログラミングのサンプル](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
