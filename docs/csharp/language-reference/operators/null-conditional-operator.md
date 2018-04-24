@@ -1,5 +1,5 @@
 ---
-title: "?? 演算子 (C# リファレンス)"
+title: ?? 演算子 (C# リファレンス)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,7 +12,7 @@ helpviewer_keywords:
 - ?? operator [C#]
 - conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-caps.latest.revision: 
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 6c2372380d8162d3e7760bba4a43cdb1c568bf5b
