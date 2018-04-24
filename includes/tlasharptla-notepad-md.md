@@ -1,1 +1,0 @@
-Microsoft メモ帳

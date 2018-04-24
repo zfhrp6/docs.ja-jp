@@ -1,1 +1,0 @@
-このクラスが表すメッセージの詳細については、[Web Services Federation Language (WS-Federation) Version 1.2 の仕様 ](http://go.microsoft.com/fwlink/?LinkID=210152)(http://go.microsoft.com/fwlink/?LinkID=210152) のセクション 13 を参照してください。
