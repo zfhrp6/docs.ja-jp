@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 45f29a8d19e49685f864b7ca83e466ceb1f73a62
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8098c62ac18593d8044d52cb24c4cd8859972e68
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
 
@@ -37,36 +37,36 @@ DDD は、学習用に豊富な技術資料が提供されている大きなテ�
 
 ##### <a name="ddd-domain-driven-design"></a>DDD (ドメイン駆動設計)
 
--   **Eric Evans。Domain Language (ドメイン言語)**
-    [*http://domainlanguage.com/*](http://domainlanguage.com/)
+-   **Eric Evans。ドメイン言語**
+    [*https://domainlanguage.com/*](https://domainlanguage.com/)
 
--   **Martin Fowler。Domain-Driven Design (ドメイン駆動設計)**
-    [*http://martinfowler.com/tags/domain%20driven%20design.html*](http://martinfowler.com/tags/domain%20driven%20design.html)
+-   **Martin Fowler。ドメイン駆動設計**
+    [*https://martinfowler.com/tags/domain%20driven%20design.html*](https://martinfowler.com/tags/domain%20driven%20design.html)
 
--   **Jimmy Bogard。Strengthening your domain: a primer (ドメインの強化: 入門)**
+-   **Jimmy Bogard。ドメインの強化: 入門**
     [*https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/*](https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/)
 
 ##### <a name="ddd-books"></a>DDD 関連の書籍
 
--   **Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (ドメイン駆動設計: ソフトウェアの核心にある複雑さに立ち向かう)**
+-   **Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (エリック・エヴァンスのドメイン駆動設計)**
     [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
--   **Eric Evans。Domain-Driven Design Reference: Definitions and Pattern Summaries (ドメイン駆動設計リファレンス: 定義とパターンの概要)**
+-   **Eric Evans。Domain-Driven Design Reference: Definitions and Pattern Summaries (ドメイン駆動設計のリファレンス: 定義とパターンの概要)**
     [*https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/*](https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/)
 
--   **Vaughn Vernon。Implementing Domain-Driven Design (実践ドメイン駆動設計)**
+-   **Vaughn Vernon。実践ドメイン駆動設計**
     [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)
 
--   **Vaughn Vernon。Domain-Driven Design Distilled (ドメイン駆動設計の本質)**
+-   **Vaughn Vernon。Domain-Driven Design Distilled (ドメイン駆動設計の基本)**
     [*https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/*](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/)
 
--   **Jimmy Nilsson。Applying Domain-Driven Design and Patterns (ドメイン駆動設計とパターンの適用)**
+-   **Jimmy Nilsson。ドメイン駆動**
     [*https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/*](https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/)
 
--   **Cesar de la Torre。N-Layered Domain-Oriented Architecture Guide with .NET (.NET を使用した N 層のドメイン指向アーキテクチャのガイド)**
+-   **Cesar de la Torre。N-Layered Domain-Oriented Architecture Guide with .NET (.NET による N 層ドメイン指向アーキテクチャ ガイド)**
     [*https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/*](https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/)
 
--   **Abel Avram および Floyd Marinescu。Domain-Driven Design Quickly (ドメイン駆動設計の要点)**
+-   **Abel Avram および Floyd Marinescu。Domain-Driven Design Quickly (ドメイン駆動設計簡易ガイド)**
     [*https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/*](https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/)
 
 DDD に関するトレーニング
