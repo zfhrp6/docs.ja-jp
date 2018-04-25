@@ -1,5 +1,5 @@
 ---
-title: "方法: 文字列を検索する (C# ガイド)"
+title: '方法: 文字列を検索する (C# ガイド)'
 ms.date: 02/21/2018
 ms.prod: .net
 ms.technology:
@@ -11,11 +11,11 @@ helpviewer_keywords:
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
 ms.author: wiwagn
-ms.openlocfilehash: 60d31a3d6d694c04d0c93b96816928e2ccbd3fba
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: cb381ee811846ae8ff0589d918be4f43b3e9ddc3
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-search-strings"></a>方法: 文字列を検索する
 
@@ -77,7 +77,7 @@ ms.lasthandoff: 03/12/2018
 
 この単一の検索パターンは多くの有効な文字列と一致します。 単一のテキスト文字列ではなく、パターンの検索やパターンに対する検証を行う場合は、正規表現が適しています。
 
-[GitHub リポジトリ](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings)のコードを見て、これらのサンプルを試すことができます。 または、サンプルを [zip ファイルとして](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings.zip)ダウンロードすることができます。
+[GitHub リポジトリ](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings)のコードを見て、これらのサンプルを試すことができます。 または、サンプルを [zip ファイルとして](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip)ダウンロードすることができます。
 
 ## <a name="see-also"></a>参照  
 

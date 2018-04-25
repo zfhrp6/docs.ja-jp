@@ -13,11 +13,11 @@ ms.assetid: 1e38e9d9-8284-46ee-a15f-199adc4f26f4
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f2dddc21dfb124fe97c397a156743981a67e4037
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 85e30292fdc0e0e529eacdd328d4515bba5ee3e8
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="async-overview"></a>非同期の概要
 
@@ -41,4 +41,14 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="whats-next"></a>次の内容
 
-非同期の概念とプログラミングの詳細については、「[非同期の詳細](async-in-depth.md)」と「[Task-based asynchronous programming](~/docs/standard/parallel-programming/task-based-asynchronous-programming.md)」(タスクベースの非同期プログラミング) を参照してください。
+詳しくは、「[非同期の詳細](async-in-depth.md)」トピックをご覧ください。
+
+「[非同期プログラミングのパターン](/asynchronous-programming-patterns/index.md)」トピックでは、.NET でサポートされている 3 種類の非同期プログラミング パターンの概要が説明されています。  
+  
+-   [非同期プログラミング モデル (APM)](asynchronous-programming-patterns/asynchronous-programming-model-apm.md) (レガシ)  
+  
+-   [イベント ベースの非同期パターン (EAP)](asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) (レガシ)  
+  
+-   [タスク ベースの非同期パターン (TAP)](asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (新規の開発に推奨)  
+
+推奨されるタスク ベースのプログラミング モデルについて詳しくは、「[タスク ベースの非同期プログラミング](parallel-programming/task-based-asynchronous-programming.md)」トピックをご覧ください。

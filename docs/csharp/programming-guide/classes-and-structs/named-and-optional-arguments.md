@@ -1,8 +1,9 @@
 ---
-title: "名前付き引数と省略可能な引数 (C# プログラミング ガイド)"
+title: 名前付き引数と省略可能な引数 (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - namedParameter_CSharpKeyword
@@ -16,14 +17,14 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-caps.latest.revision: "43"
+caps.latest.revision: 43
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e4c57efa4027af5dd6b0476eb65845a39fc0b691
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c3c2c2ec0c982582032c1ae586d23226028ad899
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>名前付き引数と省略可能な引数 (C# プログラミング ガイド)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] では、名前付き引数と省略可能な引数が導入されています。 *名前付き引数*を使用すると、パラメーター リストのパラメーターの位置ではなく、パラメーター名に引数を関連付けることによって、特定のパラメーターの引数を指定できます。 *省略可能な引数*を使用すると、一部のパラメーターの引数を省略できます。 両方の手法をメソッド、インデクサー、コンストラクター、デリゲートで使用できます。  

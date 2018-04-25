@@ -1,6 +1,6 @@
 ---
-title: ".NET Core を使用した REST クライアントの作成"
-description: "このチュートリアルでは、.NET Core と C# 言語のさまざまな機能を説明します。"
+title: .NET Core を使用した REST クライアントの作成
+description: このチュートリアルでは、.NET Core と C# 言語のさまざまな機能を説明します。
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 22391c4db3027c0fad2115c767b5e2808fee28a0
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 8cca71b9b8e09fd26f80d53618a3f1e278e28390
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="rest-client"></a>REST クライアント
 
@@ -31,7 +31,7 @@ GitHub 上の REST サービスに対して HTTP 要求を発行するアプリ�
 
 このチュートリアルには、多くの機能が含まれています。 それらを 1 つずつビルドしてみましょう。
 
-このトピックの[最終的なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)も参照したい方は、ダウンロードできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+このトピックの[最終的なサンプル](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient)も参照したい方は、ダウンロードできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ## <a name="prerequisites"></a>必須コンポーネント
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。 このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
@@ -63,7 +63,7 @@ GitHub 上の REST サービスに対して HTTP 要求を発行するアプリ�
 これらの変更を加えた後で、`dotnet restore` ([注記を参照](#dotnet-restore-note)) をもう一度実行して、システムにパッケージがインストールされるようにします。
 
 ## <a name="making-web-requests"></a>Web 要求を作成する
-Web サイトからデータの取得を開始する準備ができました。 このアプリケーションでは、[GitHub API](https://developer.github.com/v3/) から情報を読み取ります。 [.NET Foundation](http://www.dotnetfoundation.org/) にあるプロジェクトに関する情報を読み取ります。 最初に、プロジェクトに関する情報を取得する GitHub API に対する要求を作成します。 使用するエンドポイントは、[https://api.github.com/orgs/dotnet/repos](https://api.github.com/orgs/dotnet/repos) です。 HTTP GET 要求を使用して、これらのプロジェクトに関する情報をすべて取得します。
+Web サイトからデータの取得を開始する準備ができました。 このアプリケーションでは、[GitHub API](https://developer.github.com/v3/) から情報を読み取ります。 [.NET Foundation](http://www.dotnetfoundation.org/) にあるプロジェクトに関する情報を読み取ります。 最初に、プロジェクトに関する情報を取得する GitHub API に対する要求を作成します。 使用するエンドポイントは [https://api.github.com/orgs/dotnet/repos](https://api.github.com/orgs/dotnet/repos) です。 HTTP GET 要求を使用して、これらのプロジェクトに関する情報をすべて取得します。
 HTTP GET 要求はブラウザーでも使用されるので、ブラウザーに URL を貼り付けて、取得および処理する情報を確認できます。
 
 <xref:System.Net.Http.HttpClient> クラスを使用して Web 要求を作成します。 最新のすべての .NET API と同様に、<xref:System.Net.Http.HttpClient> は実行時間の長い API の非同期メソッドだけをサポートします。
@@ -380,7 +380,7 @@ using System.Globalization;
 Console.WriteLine(repo.LastPush);
 ```
 
-以上で、作成してきたバージョンは[最終的なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)と同じになるはずです。
+以上で、作成してきたバージョンは[最終的なサンプル](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient)と同じになるはずです。
  
 ## <a name="conclusion"></a>まとめ
 

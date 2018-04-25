@@ -1,21 +1,21 @@
 ---
-title: "dotnet テストと NUnit を使用した .NET Core での単体テスト F# ライブラリ"
-description: "dotnet テストおよび NUnit を使用したサンプル ソリューションを段階的に構築していく対話型エクスペリエンスを通じて、.NET Core における F# の単体テストの概念について説明します。"
+title: dotnet テストと NUnit を使用した .NET Core での単体テスト F# ライブラリ
+description: dotnet テストおよび NUnit を使用したサンプル ソリューションを段階的に構築していく対話型エクスペリエンスを通じて、.NET Core における F# の単体テストの概念について説明します。
 author: rprouse
 ms.date: 12/01/2017
 ms.topic: article
 dev_langs:
 - fsharp
 ms.prod: .net-core
-ms.openlocfilehash: 27a7bb889fd736294252da39b1839b2197b8df03
-ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
+ms.openlocfilehash: c38be75ff39fae3afd371a5a3a9332ee5ac96022
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>dotnet テストと NUnit を使用した .NET Core での単体テスト F# ライブラリ
 
-このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-with-fsharp-nunit/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-nunit/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ## <a name="creating-the-source-project"></a>ソース プロジェクトの作成
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 12/06/2017
 
 ```fsharp
 module MyMath =
-    let sumOfSquares xs = raise (System.NotImplementedException("You haven't written a test yet!"))
+    let squaresOfOdds xs = raise (System.NotImplementedException("You haven't written a test yet!"))
 ```
 
 *unit-testing-with-fsharp* ディレクトリに戻ります。 [`dotnet sln add .\MathService\MathService.fsproj`](../tools/dotnet-sln.md) を実行して、クラス ライブラリ プロジェクトをソリューションに追加します。
@@ -75,7 +75,7 @@ NUnit テストのプロジェクト テンプレートは、テスト プロジ
 dotnet add reference ../MathService/MathService.fsproj
 ```
 
-全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj)で確認できます。
+全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj)で確認できます。
 
 ソリューションの最終的なレイアウトは次のようになります。
 
@@ -116,15 +116,15 @@ type TestClass () =
 
 `[<TestFixture>]` 属性は、テストを含むクラスを表します。 `[<Test>]` 属性は、テスト ランナーによって実行されるテスト メソッドを表します。 *unit-testing-with-fsharp* ディレクトリで [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 NUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
 
-この 2 つのテストは、最も基本的な成功テストと失敗テストです。 `My test` は成功し、`Fail every time` は失敗します。 今度は `sumOfSquares` メソッドのテストを作成します。 `sumOfSquares` メソッドは、入力シーケンスに含まれるすべての奇数の整数値を 2 乗して合計した値を返します。 これらの関数をすべて一度に書き込むのではなく、機能を検証するテストを繰り返し作成することができます。 各テストを成功させることで、メソッドに必要な機能を作成することになります。
+この 2 つのテストは、最も基本的な成功テストと失敗テストです。 `My test` は成功し、`Fail every time` は失敗します。 今度は `squaresOfOdds` メソッドのテストを作成します。 `squaresOfOdds` メソッドは、入力シーケンスに含まれるすべての奇数の整数値を 2 乗した値のシーケンスを返します。 これらの関数をすべて一度に書き込むのではなく、機能を検証するテストを繰り返し作成することができます。 各テストを成功させることで、メソッドに必要な機能を作成することになります。
 
-最も簡単に記述できるテストは、すべて偶数である数字を `sumOfSquares` に渡して呼び出すことです。このテストの結果は、整数の空のシーケンスになります。  次に示すのがそのテストです。
+最も簡単に記述できるテストは、すべて偶数である数字を `squaresOfOdds` に渡して呼び出すことです。このテストの結果は、整数の空のシーケンスになります。  次に示すのがそのテストです。
 
 ```fsharp
 [<Test>]
 member this.TestEvenSequence() =
-    let expected = Seq.empty<int> |> Seq.toList
-    let actual = MyMath.sumOfSquares [2; 4; 6; 8; 10]
+    let expected = Seq.empty<int>
+    let actual = MyMath.squaresOfOdds [2; 4; 6; 8; 10]
     Assert.That(actual, Is.EqualTo(expected))
 ```
 
@@ -133,8 +133,8 @@ member this.TestEvenSequence() =
 テストを実行すると、失敗することがわかります。 実装はまだ作成していません。 最も単純な動作のコードを `Mathservice` クラスに記述して、このテストを作成します。
 
 ```csharp
-let sumOfSquares xs =
-    Seq.empty<int> |> Seq.toList
+let squaresOfOdds xs =
+    Seq.empty<int>
 ```
 
 *unit-testing-with-fsharp* ディレクトリで、もう一度 `dotnet test` を実行します。 `dotnet test` コマンドは `MathService` プロジェクトのビルドを実行してから、`MathService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
@@ -145,21 +145,20 @@ let sumOfSquares xs =
 
 ```fsharp
 [<Test>]
-member public this.SumOnesAndEvens() =
+member public this.TestOnesAndEvens() =
     let expected = [1; 1; 1; 1]
-    let actual = MyMath.sumOfSquares [2; 1; 4; 1; 6; 1; 8; 1; 10]
+    let actual = MyMath.squaresOfOdds [2; 1; 4; 1; 6; 1; 8; 1; 10]
     Assert.That(actual, Is.EqualTo(expected))
 ```
 
-`dotnet test` を実行すると、新しいテストは失敗します。 新しいテストに対応するには `sumOfSquares` メソッドを更新する必要があります。 このテストを成功させるには、フィルター処理でシーケンスからすべての偶数を除外する必要があります。 小さなフィルター関数を記述し、`Seq.filter` を使用することで実現できます。
+`dotnet test` を実行すると、新しいテストは失敗します。 新しいテストに対応するには `squaresOfOdds` メソッドを更新する必要があります。 このテストを成功させるには、フィルター処理でシーケンスからすべての偶数を除外する必要があります。 小さなフィルター関数を記述し、`Seq.filter` を使用することで実現できます。
 
 ```fsharp
 let private isOdd x = x % 2 <> 0
 
-let sumOfSquares xs =
+let squaresOfOdds xs =
     xs
     |> Seq.filter isOdd
-    |> Seq.toList
 ```
 
 `Seq.toList` を呼び出していることに注意してください。 これにより、<xref:System.Collections.ICollection> インターフェイスを実装するリストが作成されます。
@@ -170,7 +169,7 @@ let sumOfSquares xs =
 [<Test>]
 member public this.TestSquaresOfOdds() =
     let expected = [1; 9; 25; 49; 81]
-    let actual = MyMath.sumOfSquares [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
+    let actual = MyMath.squaresOfOdds [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
     Assert.That(actual, Is.EqualTo(expected))
 ```
 
@@ -180,11 +179,10 @@ member public this.TestSquaresOfOdds() =
 let private square x = x * x
 let private isOdd x = x % 2 <> 0
 
-let sumOfSquares xs =
+let squaresOfOdds xs =
     xs
     |> Seq.filter isOdd
     |> Seq.map square
-    |> Seq.toList
 ```
 
 これで、小さなライブラリとそのライブラリの単体テストのセットが構築されました。 ソリューションを構築したことで、新しいパッケージとテストの追加が通常のワークフローに組み込まれました。 アプリケーションの目標を達成することに時間と労力の多くを割き、集中して取り組みました。

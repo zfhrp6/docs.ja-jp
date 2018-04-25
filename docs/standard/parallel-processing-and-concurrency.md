@@ -1,50 +1,37 @@
 ---
-title: ".NET Framework の並列処理と同時実行"
-ms.custom: 
-ms.date: 03/30/2017
+title: .NET での並列処理、同時実行、および非同期プログラミング
+description: .NET の並列処理と非同期プログラミングの機能を使用して応答性が高く高速のアプリケーションを作成する方法について説明します
+ms.date: 04/06/2018
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
-- .NET Framework, parallel processing
-- parallel processing [.NET Framework]
-- concurrency [.NET Framework]
-- .NET Framework, concurrency
+- parallel processing [.NET]
+- concurrency [.NET]
+- asynchronous programming [.NET]
 ms.assetid: e573faa8-0212-44b1-a850-ce85dc54f47f
-caps.latest.revision: 
+caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ab15fd38a467eec398f8383e40067d2135c042b5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e4ee282f226d553a8bca92c1afb184bc181d6bb7
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="parallel-processing-and-concurrency-in-the-net-framework"></a>.NET Framework の並列処理と同時実行
-.NET Framework には、ユーザーのコンピューターのパフォーマンスを最大化しながら、アプリケーションのユーザーに対する応答性を維持するために、複数の実行スレッドを使用する方法がいくつか用意されています。  
+# <a name="parallel-processing-concurrency-and-async-programming-in-net"></a>.NET での並列処理、同時実行、および非同期プログラミング
+.NET で提供されている複数の方法を使用すると、ユーザーに対するアプリケーションの応答性を高くする非同期コードや、複数の実行スレッドを使用してユーザーのコンピューターのパフォーマンスを最大化する並列コードを、記述することができます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [スレッド化](../../docs/standard/threading/index.md)  
- .NET Framework に用意されている基本的な同時実行および同期のための機構について説明します。  
-  
- [非同期プログラミングのパターン](../../docs/standard/asynchronous-programming-patterns/index.md)  
- .NET Framework でサポートされている 3 種類の非同期パターンのプログラミングの概要が記載されています。  
-  
--   [非同期プログラミング モデル (APM)](../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) (レガシ)  
-  
--   [イベント ベースの非同期パターン (EAP)](../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) (レガシ)  
-  
--   [タスク ベースの非同期パターン (TAP)](../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (新規の開発に推奨)  
+ [非同期プログラミング](../../docs/standard/async.md)  
+ .NET によって提供される非同期プログラミングのメカニズムについて説明します。  
   
  [並列プログラミング](../../docs/standard/parallel-programming/index.md)  
  並行開発を簡素化するタスクベースのプログラミング モデルについて説明します。このモデルにより、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。  
-  
-## <a name="see-also"></a>参照  
- [開発ガイド](../../docs/framework/development-guide.md)
+
+ [スレッド化](../../docs/standard/threading/index.md)  
+ .NET によって提供される基本的な同時実行および同期のためのメカニズムについて説明します。  

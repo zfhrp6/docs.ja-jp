@@ -1,6 +1,6 @@
 ---
-title: "dotnet テストと MSTest を使用した .NET Core での単体テスト F# ライブラリ"
-description: "dotnet テストおよび MSTest を使用したサンプル ソリューションを段階的に構築していく対話型エクスペリエンスを通じて、.NET Core における F# の単体テストの概念について説明します。"
+title: dotnet テストと MSTest を使用した .NET Core での単体テスト F# ライブラリ
+description: dotnet テストおよび MSTest を使用したサンプル ソリューションを段階的に構築していく対話型エクスペリエンスを通じて、.NET Core における F# の単体テストの概念について説明します。
 author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
@@ -10,15 +10,15 @@ dev_langs:
 ms.prod: .net-core
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 6dc5388f8e5645530cdd12986a9e1e53e4115c9a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 552e61fae243b627eb51abac0f885ce399f37331
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a>dotnet テストと MSTest を使用した .NET Core での単体テスト F# ライブラリ
 
-このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-with-fsharp-mstest/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-mstest/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ## <a name="creating-the-source-project"></a>ソース プロジェクトの作成
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 12/23/2017
 
 ```fsharp
 module MyMath =
-    let sumOfSquares xs = raise (System.NotImplementedException("You haven't written a test yet!"))
+    let squaresOfOdds xs = raise (System.NotImplementedException("You haven't written a test yet!"))
 ```
 
 *unit-testing-with-fsharp* ディレクトリに戻ります。 [`dotnet sln add .\MathService\MathService.fsproj`](../tools/dotnet-sln.md) を実行して、クラス ライブラリ プロジェクトをソリューションに追加します。
@@ -70,7 +70,7 @@ module MyMath =
 dotnet add reference ../MathService/MathService.fsproj
 ```
 
-全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj)で確認できます。
+全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj)で確認できます。
 
 ソリューションの最終的なレイアウトは次のようになります。
 
@@ -111,15 +111,15 @@ type TestClass () =
 
 `[<TestClass>]` 属性は、テストを含むクラスを表します。 `[<TestMethod>]` 属性は、テスト ランナーによって実行されるテスト メソッドを表します。 *unit-testing-with-fsharp* ディレクトリで [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 MSTest テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
 
-この 2 つのテストは、最も基本的な成功テストと失敗テストです。 `My test` は成功し、`Fail every time` は失敗します。 今度は `sumOfSquares` メソッドのテストを作成します。 `sumOfSquares` メソッドは、入力シーケンスに含まれるすべての奇数の整数値を 2 乗して合計した値を返します。 これらの関数をすべて一度に書き込むのではなく、機能を検証するテストを繰り返し作成することができます。 各テストを成功させることで、メソッドに必要な機能を作成することになります。
+この 2 つのテストは、最も基本的な成功テストと失敗テストです。 `My test` は成功し、`Fail every time` は失敗します。 今度は `squaresOfOdds` メソッドのテストを作成します。 `squaresOfOdds` メソッドは、入力シーケンスに含まれるすべての奇数の整数値を 2 乗した値のリストを返します。 これらの関数をすべて一度に書き込むのではなく、機能を検証するテストを繰り返し作成することができます。 各テストを成功させることで、メソッドに必要な機能を作成することになります。
 
-最も簡単に記述できるテストは、すべて偶数である数字を `sumOfSquares` に渡して呼び出すことです。このテストの結果は、整数の空のシーケンスになります。  次に示すのがそのテストです。
+最も簡単に記述できるテストは、すべて偶数である数字を `squaresOfOdds` に渡して呼び出すことです。このテストの結果は、整数の空のシーケンスになります。  次に示すのがそのテストです。
 
 ```fsharp
 [<TestMethod>]
 member this.TestEvenSequence() =
     let expected = Seq.empty<int> |> Seq.toList
-    let actual = MyMath.sumOfSquares [2; 4; 6; 8; 10]
+    let actual = MyMath.squaresOfOdds [2; 4; 6; 8; 10]
     Assert.AreEqual(expected, actual)
 ```
 
@@ -128,7 +128,7 @@ member this.TestEvenSequence() =
 テストを実行すると、失敗することがわかります。 実装はまだ作成していません。 最も単純な動作のコードを `Mathservice` クラスに記述して、このテストを作成します。
 
 ```csharp
-let sumOfSquares xs =
+let squaresOfOdds xs =
     Seq.empty<int> |> Seq.toList
 ```
 
@@ -140,18 +140,18 @@ let sumOfSquares xs =
 
 ```fsharp
 [<TestMethod>]
-member public this.SumOnesAndEvens() =
+member public this.TestOnesAndEvens() =
     let expected = [1; 1; 1; 1]
-    let actual = MyMath.sumOfSquares [2; 1; 4; 1; 6; 1; 8; 1; 10]
+    let actual = MyMath.squaresOfOdds [2; 1; 4; 1; 6; 1; 8; 1; 10]
     Assert.AreEqual(expected, actual)
 ```
 
-`dotnet test` を実行すると、新しいテストは失敗します。 新しいテストに対応するには `sumOfSquares` メソッドを更新する必要があります。 このテストを成功させるには、フィルター処理でシーケンスからすべての偶数を除外する必要があります。 小さなフィルター関数を記述し、`Seq.filter` を使用することで実現できます。
+`dotnet test` を実行すると、新しいテストは失敗します。 新しいテストに対応するには `squaresOfOdds` メソッドを更新する必要があります。 このテストを成功させるには、フィルター処理でシーケンスからすべての偶数を除外する必要があります。 小さなフィルター関数を記述し、`Seq.filter` を使用することで実現できます。
 
 ```fsharp
 let private isOdd x = x % 2 <> 0
 
-let sumOfSquares xs =
+let squaresOfOdds xs =
     xs
     |> Seq.filter isOdd |> Seq.toList
 ```
@@ -164,7 +164,7 @@ let sumOfSquares xs =
 [<TestMethod>]
 member public this.TestSquaresOfOdds() =
     let expected = [1; 9; 25; 49; 81]
-    let actual = MyMath.sumOfSquares [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
+    let actual = MyMath.squaresOfOdds [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]
     Assert.AreEqual(expected, actual)
 ```
 
@@ -174,7 +174,7 @@ member public this.TestSquaresOfOdds() =
 let private square x = x * x
 let private isOdd x = x % 2 <> 0
 
-let sumOfSquares xs =
+let squaresOfOdds xs =
     xs
     |> Seq.filter isOdd
     |> Seq.map square

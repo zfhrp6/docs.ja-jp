@@ -1,17 +1,18 @@
 ---
-title: ".NET Core のランタイム識別子 (RID) のカタログ"
-description: "ランタイム識別子 (RID) と .NET Core での RID の使用方法について説明します。"
+title: .NET Core のランタイム識別子 (RID) のカタログ
+description: ランタイム識別子 (RID) と .NET Core での RID の使用方法について説明します。
 author: mairaw
 ms.author: mairaw
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: .net-core
-ms.workload: dotnetcore
-ms.openlocfilehash: 180aac7635746f9ede146c3e561deb9bba9a61ab
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 9343d475319084ddfe3450b4c1d2bbcbd394ad1f
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="net-core-rid-catalog"></a>.NET Core の RID カタログ
 
@@ -19,7 +20,7 @@ RID は*ランタイム識別子*の略です。 RID の値は、アプリケー
 これは NuGet パッケージのプラットフォーム固有のアセットを表すために、.NET パッケージによって使用されます。 RID は、たとえば `linux-x64`、`ubuntu.14.04-x64`、`win7-x64`、または `osx.10.12-x64` などの値です。
 ネイティブ依存関係のあるパッケージの場合、パッケージを復元できるプラットフォームが RID によって指定されます。
 
-RID はお使いのプロジェクト ファイルの `<RuntimeIdentifier>` 要素で設定できます。 以下の [.NET Core CLI コマンド](./tools/index.md)の `--runtime` オプションで使用することもできます。
+プロジェクト ファイルの `<RuntimeIdentifier>` 要素では、1 つの RID を設定できます。 複数の RID は、プロジェクト ファイルの `<RuntimeIdentifiers>` 要素でセミコロン区切りのリストとして定義できます。 以下の [.NET Core CLI コマンド](./tools/index.md)の `--runtime` オプションで使用することもできます。
 
 - [dotnet build](./tools/dotnet-build.md)
 - [dotnet clean](./tools/dotnet-clean.md)

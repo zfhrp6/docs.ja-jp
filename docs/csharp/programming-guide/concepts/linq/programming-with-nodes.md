@@ -1,21 +1,22 @@
 ---
-title: "ノードでのプログラミング (C#)"
-ms.custom: 
+title: ノードでのプログラミング (C#)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: c38df0f2-c805-431a-93ff-9103a4284c2f
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 629e530caeabf3231655881199c0c1d83ae9f464
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 92ec8445123a8b685bd6ea134aca0b792cab6d2d
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="programming-with-nodes-c"></a>ノードでのプログラミング (C#)
 XML エディター、変換システム、レポート作成プログラムなどのプログラムを作成する [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の開発者は、要素や属性よりも細かい粒度レベルで動作するプログラムを作成しなければならないことがよくあります。 また場合によっては、ノード レベルで、テキスト ノード、処理命令、およびコメントを操作する必要があります。 このトピックでは、ノード レベルでのプログラミングについて詳しく説明します。  
@@ -134,7 +135,7 @@ AnAttribute="abc"  IsNamespaceDeclaration:False
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] で処理できる <xref:System.Xml.Linq.XDocument> の子テキスト ノードは、空白のみを含んでいるものに限られます。 ただし、XPath オブジェクト モデルでは、空白がドキュメントの子ノードとして組み込まれないため、<xref:System.Xml.Linq.XDocument> 軸を使用して <xref:System.Xml.Linq.XContainer.Nodes%2A> の子を反復処理すると、空白のテキスト ノードが返されます。 一方、XPath 軸メソッドを使用して <xref:System.Xml.Linq.XDocument> の子を反復処理すると、空白のテキスト ノードが返されません。  
   
 ```csharp  
-// Create a document with some white space child nodes of the document.  
+// Create a document with some white-space child nodes of the document.  
 XDocument root = XDocument.Parse(  
 @"<?xml version='1.0' encoding='utf-8' standalone='yes'?>  
   
@@ -143,10 +144,10 @@ XDocument root = XDocument.Parse(
 <!--a comment-->  
 ", LoadOptions.PreserveWhitespace);  
   
-// count the white space child nodes using LINQ to XML  
+// count the white-space child nodes using LINQ to XML  
 Console.WriteLine(root.Nodes().OfType<XText>().Count());  
   
-// count the white space child nodes using XPathEvaluate  
+// count the white-space child nodes using XPathEvaluate  
 Console.WriteLine(((IEnumerable)root.XPathEvaluate("text()")).OfType<XText>().Count());   
 ```  
   
@@ -180,5 +181,5 @@ Console.WriteLine(doc.Nodes().Count());
 1  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [高度な LINQ to XML プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

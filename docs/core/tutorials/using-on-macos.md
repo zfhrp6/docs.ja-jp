@@ -11,11 +11,11 @@ ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 8c045e5625cee53acc4daa3c9fca524bc953b5a1
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: d130ef34961d19c450dd7142c8a5996c83465646
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-started-with-net-core-on-macos"></a>macOS での .NET Core の概要
 
@@ -34,7 +34,7 @@ Visual Studio Code C# 拡張機能をインストールするには、Visual Stu
 
 ## <a name="getting-started"></a>作業の開始
 
-このチュートリアルでは 3 つのプロジェクト (ライブラリ プロジェクト、そのライブラリ プロジェクトのテスト、およびライブラリを使用するコンソール アプリケーション) を作成します。 GitHub の dotnet/docs レポジトリで、このトピックの[ソースを表示またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden)することができます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+このチュートリアルでは 3 つのプロジェクト (ライブラリ プロジェクト、そのライブラリ プロジェクトのテスト、およびライブラリを使用するコンソール アプリケーション) を作成します。 GitHub の dotnet/samples レポジトリで、このトピックの[ソースを表示またはダウンロード](https://github.com/dotnet/samples/tree/master/core/getting-started/golden)することができます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 Visual Studio Code を開始します。 <kbd>Ctrl</kbd>+<kbd>\`</kbd> (バッククォートまたはアクサン グラーブ) キーを押すか、メニューから **[表示]、[統合ターミナル]** の順に選択し、Visual Studio Code で埋め込みターミナルを開きます。 Visual Studio Code の外部で作業を行う場合は、エクスプローラーの **[コマンド プロンプトで開く]** コマンド (Ma または Linux の場合は **[ターミナルで開く]**) を使用して外部シェルを開くこともできます。
 

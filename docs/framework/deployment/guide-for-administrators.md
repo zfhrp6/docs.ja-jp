@@ -1,7 +1,7 @@
 ---
 title: .NET Framework 配置ガイド (管理者向け)
 ms.custom: ''
-ms.date: 03/30/2017
+ms.date: 04/10/2018
 ms.prod: .net-framework
 ms.reviewer: ''
 ms.suite: ''
@@ -13,17 +13,17 @@ helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-caps.latest.revision: ''
+caps.latest.revision: 40
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f57b5db5c03030d8cb930355586d0253cae13319
-ms.sourcegitcommit: 6f967c86dde55472440f0c8669b0e910ee3c53ba
+ms.openlocfilehash: 67efb04fc0d86a20fdf10c0e84bb00ae57383bb1
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework 配置ガイド (管理者向け)
 この記事では、システム管理者が Microsoft System Center Configuration Manager を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのシステムの依存関係をネットワーク経由で配置する方法を手順に沿って説明します。 ここでは、すべての対象のクライアント コンピューターが .NET Framework の最小要件を満たしていることを前提としています。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールに必要なソフトウェア要件とハードウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
@@ -230,11 +230,16 @@ ms.lasthandoff: 03/22/2018
 ## <a name="troubleshooting"></a>トラブルシューティング  
   
 ### <a name="log-file-locations"></a>ログ ファイルの場所  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のセットアップ中に次のログ ファイルが作成されます。  
+ .NET Framework のセットアップ中に次のログ ファイルが作成されます。  
   
- %temp%\Microsoft .NET Framework 4.5*.txt %temp%\Microsoft .NET Framework 4.5*.html  
+ %temp%\Microsoft .NET Framework <*バージョン*>\*.txt  
+ %temp%\Microsoft .NET Framework <*バージョン*>\*.html  
   
- [ログ収集ツール](http://www.microsoft.com/download/details.aspx?id=12493)を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のログ ファイルを収集し、それらのファイルのサイズを縮小した圧縮キャビネット (.cab) ファイルを作成できます。  
+ <*バージョン*> は、インストールしている .NET Framework のバージョンです (4.5 や 4.7.2 など)。  
+ 
+ .NET Framework インストール コマンドの `/log` コマンド ライン オプションを使用して、ログ ファイルが書き込まれるディレクトリを指定することもできます。 詳しくは、「[.NET Framework 配置ガイド (開発者向け)](deployment-guide-for-developers.md#command-line-options)」をご覧ください。 
+ 
+ [ログ収集ツール](https://www.microsoft.com/download/details.aspx?id=12493)を使用して .NET Framework のログ ファイルを収集し、それらのファイルのサイズを縮小した圧縮キャビネット (.cab) ファイルを作成できます。  
   
 <a name="return_codes"></a>   
 ### <a name="return-codes"></a>リターン コード  

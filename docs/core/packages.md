@@ -1,6 +1,6 @@
 ---
-title: "パッケージ、メタパッケージ、フレームワーク"
-description: "パッケージ、メタパッケージ、フレームワークの用語を説明します。"
+title: パッケージ、メタパッケージ、フレームワーク
+description: パッケージ、メタパッケージ、フレームワークの用語を説明します。
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
@@ -11,11 +11,11 @@ ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 85f20594844025655bbfb590364324631bd8e695
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
+ms.openlocfilehash: f9b98fb38390e91c7a144ff5585c0a26824303dc
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="packages-metapackages-and-frameworks"></a>パッケージ、メタパッケージ、フレームワーク
 
@@ -78,6 +78,7 @@ ms.lasthandoff: 03/16/2018
 主な .NET Core メタパッケージ:
 
 - [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) - .NET Core 配布に含まれるライブラリについて記述します。 [`.NETCoreApp` フレームワーク](https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj)を確立します。 よりサイズの小さな `NETStandard.Library` に依存します。
+- [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) - ASP.NET Core、Entity Framework Core、および ASP.NET Core と Entity Framework Core によって使用される内部依存関係およびサード パーティの依存関係からの、サポートされるすべてのパッケージが含まれます。 詳しくは、「[ASP.NET Core 2.x 用 Microsoft.AspNetCore.All メタパッケージ](/aspnet/core/fundamentals/metapackage)」をご覧ください。
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) - mscorlib ベースのポータブル クラス ライブラリ (PCL) を .NET Core で実行できるようにするための互換性ファサードのセットです。
 
 ## <a name="frameworks"></a>フレームワーク

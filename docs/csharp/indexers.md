@@ -1,6 +1,6 @@
 ---
-title: "インデクサー"
-description: "C# のインデクサーとインデックス付きプロパティの実装方法を説明します。これらのプロパは、1 つまたは複数の引数を使用して参照されます。"
+title: インデクサー
+description: C# のインデクサーとインデックス付きプロパティの実装方法を説明します。これらのプロパは、1 つまたは複数の引数を使用して参照されます。
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: 32e090524f414ef93b8481a8ad356b313191d8b9
-ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
+ms.openlocfilehash: f0731061c518a61ce5b81e8282915b1245239864
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="indexers"></a>インデクサー
 
@@ -39,7 +39,7 @@ public int this[string key]
 }
 ```
 
-この最初の例から、プロパティの構文とインデクサーの構文の関係がわかります。 この類似点は、インデクサーの構文規則のほとんどで見られます。 インデクサーは、任意の有効なアクセス修飾子を持つことができます (パブリック、プロテクト内部、保護されている、内部、プライベートまたはプライベート保護)。 sealed、virtual、または abstract を指定することもできます。 プロパティと同様に、インデクサーの get アクセサーと set アクセサーには異なるアクセス修飾子を指定できます。
+この最初の例から、プロパティの構文とインデクサーの構文の関係がわかります。 この類似点は、インデクサーの構文規則のほとんどで見られます。 インデクサーは、有効なアクセス修飾子 (public、protected internal、protected、internal、private、private protected) を持つことができます。 sealed、virtual、または abstract を指定することもできます。 プロパティと同様に、インデクサーの get アクセサーと set アクセサーには異なるアクセス修飾子を指定できます。
 また、読み取り専用インデクサー (set アクセサーを省略) または書き込み専用インデクサー (get アクセサーを省略) を指定することもできます。
 
 プロパティの操作方法から習得したほとんどすべてのことをインデクサーにも適用できます。 その唯一の例外は、"*自動実装プロパティ*" です。 コンパイラは、必ずしもインデクサーに適切なストレージを生成できるとは限りません。
@@ -51,7 +51,7 @@ public int this[string key]
 型の API がコレクションをモデル化していて、そのコレクションへの引数が定義されている場合に、型に "*インデクサー*" を定義します。 インデクサーは、.NET Core Framework に含まれているコレクション型に直接マップされることもあれば、されないこともあります。 型は、コレクションのモデル化だけでなく、他の役割がある場合もあります。
 インデクサーを使用すると、型の抽象化に適した API を提供することができ、抽象化された値の格納や計算の方法の内部の詳細を公開しなくて済みます。
 
-"*インデクサー*" を使用する一般的なシナリオをいくつか見ていきましょう。 [インデクサーのサンプル フォルダー](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers)にアクセスできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+"*インデクサー*" を使用する一般的なシナリオをいくつか見ていきましょう。 [インデクサーのサンプル フォルダー](https://github.com/dotnet/samples/tree/master/csharp/indexers)にアクセスできます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ### <a name="arrays-and-vectors"></a>配列とベクター
 

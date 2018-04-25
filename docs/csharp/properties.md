@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
-ms.openlocfilehash: 2a25919048f94211b1696ac8c8471a14ce6e15c5
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 05e51d527dc3c05301fc85d7717c751dc46bf9fa
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="properties"></a>プロパティ
 
@@ -103,7 +103,7 @@ public class Person
 
 ### <a name="validation"></a>検証
 
-`set` アクセサーにコードを記述すると、プロパティが表す値を常に有効な値にすることができます。 たとえば、`Person` クラスに設定されているルールの 1 つに、名前は空白にできないというものがあるとします。 これは次のように記述できます。
+`set` アクセサーにコードを記述すると、プロパティが表す値を常に有効な値にすることができます。 たとえば、`Person` クラスに設定されているルールの 1 つに、名前は無指定または空白文字にできないというものがあるとします。 これは次のように記述できます。
 
 ```csharp
 public class Person
@@ -123,7 +123,7 @@ public class Person
 }
 ```
 
-上記の例では、名を空白にしてはいけないというルールが強制的に適用されます。 もし開発者が下のように指定すると、
+上記の例では、名前を無指定または空白文字にしてはいけないというルールが強制的に適用されます。 もし開発者が下のように指定すると、
 
 ```csharp
 hero.FirstName = "";
@@ -275,7 +275,7 @@ public class Person
 ```
 
 上の最終版では、必要になった場合にのみ `FullName` プロパティが評価されます。
-以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開する重要な利点です。
+以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開するする重要な利点です。
  
 ### <a name="inotifypropertychanged"></a>INotifyPropertyChanged
 

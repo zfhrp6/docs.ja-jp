@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 38b65bc6752dd8b6ed4083c0bc5a5eccabcffbcc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d2d07abe55f30e0b12a7f0cba937abd1b7e32629
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="designing-a-ddd-oriented-microservice"></a>DDD 指向マイクロサービスの設計
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 12/23/2017
 
 ### <a name="the-domain-model-layer"></a>ドメイン モデル レイヤー
 
-Eric Evans の名著「[Domain Driven Design](http://domainlanguage.com/ddd/)」(ドメイン駆動設計) には、ドメイン モデル レイヤーとアプリケーション レイヤーについて、次のように記述されています。
+Eric Evans の名著「[Domain Driven Design](https://domainlanguage.com/ddd/)」(ドメイン駆動設計) には、ドメイン モデル レイヤーとアプリケーション レイヤーについて、次のように記述されています。
 
 **ドメイン モデル レイヤー**: ビジネスの概念、ビジネス状況に関する情報、ビジネス ルールの表現を担当します。 ビジネス状況を反映する状態はここで制御および使用されますが、その状態を保管することの技術的な詳細はインフラストラクチャに委任されます。 このレイヤーは、ビジネス ソフトウェアの中核です。
 
@@ -75,7 +75,7 @@ Entity Framework Core などの最新の ORM フレームワークのほとん�
 
 ### <a name="the-application-layer"></a>アプリケーション レイヤー
 
-アプリケーション レイヤーに移ります。ここでも、Eric Evans の著書「[Domain Driven Design](http://domainlanguage.com/ddd/)」の引用を示します。
+アプリケーション レイヤーに移ります。ここでも、Eric Evans の著書「[Domain Driven Design](https://domainlanguage.com/ddd/)」の引用を示します。
 
 **アプリケーション レイヤー:** ソフトウェアが実行するはずのジョブを定義し、表現力が豊かなドメイン オブジェクトに問題解決を指示します。 このレイヤーが担当するタスクは、ビジネスにとって重要であるか、他のシステムのアプリケーション レイヤーとの対話に必要です。 このレイヤーは小さなものに保ちます。 これにはビジネス ルールもナレッジも含まれません。これは、ただ各タスクを調整して、下方にある次のレイヤーのドメイン オブジェクトのコラボレーションに作業を委任するに過ぎません。 このレイヤーは、ビジネス状況を反映する状態を持ちませんが、ユーザーまたはプログラムのタスクの進行状況を反映する状態を持つことはできます。
 
@@ -101,10 +101,10 @@ Entity Framework Core などの最新の ORM フレームワークのほとん�
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **DevIQ。永続化非依存の原則**
+-   **DevIQ。永続性無視の原則**
     [*http://deviq.com/persistence-ignorance/*](http://deviq.com/persistence-ignorance/)
 
--   **Oren Eini。インフラストラクチャ非依存**
+-   **Oren Eini。インフラストラクチャの無視**
     [*https://ayende.com/blog/3137/infrastructure-ignorance*](https://ayende.com/blog/3137/infrastructure-ignorance)
 
 -   **Angel Lopez。ドメイン駆動設計での階層型アーキテクチャ**

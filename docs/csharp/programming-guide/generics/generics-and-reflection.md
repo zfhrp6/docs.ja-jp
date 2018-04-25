@@ -1,21 +1,22 @@
 ---
-title: "ジェネリックとリフレクション (C# プログラミング ガイド)"
+title: ジェネリックとリフレクション (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: cc2363eea7d5c601fc73f5f9eb14b4b07ad14cb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3048cb6a9b333107f6ea37edf31ead96f9fe2057
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>ジェネリックとリフレクション (C# プログラミング ガイド)
 共通言語ランタイム (CLR) は実行時にジェネリック型の情報にアクセスできるため、非ジェネリック型の場合と同じように、リフレクションを使用してジェネリック型の情報を取得できます。 詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
@@ -38,18 +39,18 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Type.DeclaringMethod%2A>|現在のジェネリック型パラメーターを定義したジェネリック メソッドを返します。その型パラメーターがジェネリック メソッドによって定義されたものではない場合は null を返します。|  
 |<xref:System.Type.MakeGenericType%2A>|型の配列の要素を現在のジェネリック型定義の型パラメーターで置き換え、結果の構築型を表す <xref:System.Type> オブジェクトを返します。|  
   
- ジェネリック メソッドの実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Reflection.MethodInfo> クラスに追加されています。 ジェネリック メソッドのリフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A> プロパティの解説を参照してください。  
+ さらに、<xref:System.Reflection.MethodInfo> クラスのメンバーは、ジェネリック メソッドの実行時の情報を有効にします。 ジェネリック メソッドのリフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Reflection.MethodBase.IsGenericMethod%2A> プロパティの解説を参照してください。  
   
 |System.Reflection.MemberInfo メンバー名|説明|  
 |----------------------------------------------|-----------------|  
-|<xref:System.Reflection.MethodInfo.IsGenericMethod%2A>|メソッドがジェネリックである場合に true を返します。|  
+|<xref:System.Reflection.MethodBase.IsGenericMethod%2A>|メソッドがジェネリックである場合に true を返します。|  
 |<xref:System.Reflection.MethodInfo.GetGenericArguments%2A>|構築されたジェネリック メソッドの型引数、またはジェネリック メソッド定義の型パラメーターを表す Type オブジェクトの配列を返します。|  
 |<xref:System.Reflection.MethodInfo.GetGenericMethodDefinition%2A>|現在構築されているメソッドの基になるジェネリック メソッド定義を返します。|  
-|<xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A>|メソッド (またはそこに含まれているいずれかの型) に、具体的な型の指定されていない型パラメーターが含まれている場合に true を返します。|  
-|<xref:System.Reflection.MethodInfo.IsGenericMethodDefinition%2A>|現在の <xref:System.Reflection.MethodInfo> がジェネリック メソッドの定義を表している場合に true を返します。|  
+|<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>|メソッド (またはそこに含まれているいずれかの型) に、具体的な型の指定されていない型パラメーターが含まれている場合に true を返します。|  
+|<xref:System.Reflection.MethodBase.IsGenericMethodDefinition%2A>|現在の <xref:System.Reflection.MethodInfo> がジェネリック メソッドの定義を表している場合に true を返します。|  
 |<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|現在のジェネリック メソッド定義の型パラメーターを型の配列要素に置き換え、その結果構築されるメソッドを表す <xref:System.Reflection.MethodInfo> オブジェクトを返します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [ジェネリック](../../../csharp/programming-guide/generics/index.md)  
  [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  

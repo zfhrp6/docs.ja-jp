@@ -1,7 +1,8 @@
 ---
-title: ".NET Standard の新機能"
+title: .NET Standard の新機能
+description: この記事では、.NET Standard の新しいバージョンごとに、組み込まれた新機能と機能強化をまとめます。
 ms.custom: updateeachrelease
-ms.date: 11/08/2017
+ms.date: 04/12/2018
 ms.prod: .net
 ms.topic: article
 ms.technology: dotnet-standard
@@ -11,11 +12,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3a5833bdfcf1e3433ea82403908e9a06a88cde27
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 13efc4a927d744662ba8d2e1210d5f8fc166a472
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="whats-new-in-the-net-standard"></a>.NET Standard の新機能
 
@@ -27,21 +28,21 @@ ms.lasthandoff: 12/23/2017
 
 .NET Standard 2.0 は、次の .NET 実装でサポートされています。
 
-- .NET Core 2.0
-- .NET Framework 4.6.1
-- Mono 5.4
-- Xamarin.iOS 10.14
-- Xamarin.Mac 3.8
-- Xamarin.Android 8.0
-- ユニバーサル Windows プラットフォーム 10.0.16299
+- .NET Core 2.0 以降
+- .NET Framework 4.6.1 以降
+- Mono 5.4 以降
+- Xamarin.iOS 10.14 以降
+- Xamarin.Mac 3.8 以降
+- Xamarin.Android 8.0 以降
+- ユニバーサル Windows プラットフォーム 10.0.16299 以降
 
 ## <a name="whats-new-in-the-net-standard-20"></a>.NET Standard 2.0 の新機能
- 
+
 .NET Standard 2.0 には、次の新機能が含まれています。
 
-**大幅に拡張された一連の API**
+### <a name="a-vastly-expanded-set-of-apis"></a>大幅に拡張された一連の API
 
-.NET Standard バージョン 1.6 には、比較的少数の API が含まれました。 除外された API の中には、.NET Framework または Xamarin で一般的に使用されていた多くの API がありました。 その結果、複数の .NET 実装をターゲットとするアプリケーションやライブラリを開発する場合に、使い慣れた API に適した代替のものを開発者が見つけなければならないので、開発は複雑になります。 .NET Standard 2.0 では、以前のバージョンの標準である .NET Standard 1.6 で使用できる API に 20,000 個を超える API を追加して、この制限に対処しています。 .NET Standard 2.0 に追加された API の一覧については、「[.NET Standard 2.0 vs 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md)」(.NET Standard 2.0 と 1.6) を参照してください。 
+.NET Standard バージョン 1.6 には、比較的少数の API が含まれました。 除外された API の中には、.NET Framework または Xamarin で一般的に使用されていた多くの API がありました。 その結果、複数の .NET 実装をターゲットとするアプリケーションやライブラリを開発する場合に、使い慣れた API に適した代替のものを開発者が見つけなければならないので、開発は複雑になります。 .NET Standard 2.0 では、以前のバージョンの標準である .NET Standard 1.6 で使用できる API に 20,000 個を超える API を追加して、この制限に対処しています。 .NET Standard 2.0 に追加された API の一覧については、「[.NET Standard 2.0 vs 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md)」(.NET Standard 2.0 と 1.6) を参照してください。
 
 .NET Standard 2.0 の <xref:System> 名前空間には、以下のような追加がありました。
 
@@ -57,37 +58,45 @@ ms.lasthandoff: 12/23/2017
 - <xref:System.Type> クラスの機能が大幅に強化されました。
 - <xref:System.Runtime.Serialization.SerializationInfo> および <xref:System.Runtime.Serialization.StreamingContext> パラメーターを使用する例外コンストラクターを追加することで、例外オブジェクトの逆シリアル化のサポートを改善しました。
 
-**.NET Framework ライブラリのサポート**
+### <a name="support-for-net-framework-libraries"></a>.NET Framework ライブラリのサポート
 
 大部分のライブラリは、.NET Standard ではなく .NET Framework をターゲットとしています。 ただし、このようなライブラリの呼び出しのほとんどは、.NET Standard 2.0 に含まれている API に対する呼び出しです。 .NET Standard 2.0 以降、[互換性 shim](https://github.com/dotnet/standard/blob/master/docs/netstandard-20/README.md#assembly-unification) を使用して .NET Standard ライブラリから .NET Framework ライブラリにアクセスできるようになりました。 この互換レイヤーは開発者に対して透過的です。 .NET Framework ライブラリを利用するために必要なことはありません。
 
 唯一の要件は、.NET Framework クラス ライブラリから呼び出される API が .NET Standard 2.0 に含まれている必要があることです。
 
-**Visual Basic のサポート**
+### <a name="support-for-visual-basic"></a>Visual Basic のサポート
 
-Visual Basic で .NET Standard ライブラリを開発できるようになりました。 .NET Core ワークロードがインストールされた Visual Studio 2017 Version 15.3 以降を使用している Visual Basic 開発者向けに、Visual Studio には .NET Standard Class Library テンプレートが追加されました。 他の開発ツールと環境を使用している Visual Basic 開発者の場合、[dotnet new](../../core/tools/dotnet-new.md) コマンドを使用して .NET Standard ライブラリ プロジェクトを作成できます。 詳細については、「[.NET Standard ライブラリのツールのサポート](#tooling)」を参照してください。
+Visual Basic で .NET Standard ライブラリを開発できるようになりました。 .NET Core ワークロードがインストールされた Visual Studio 2017 Version 15.3 以降を使用している Visual Basic 開発者向けに、Visual Studio には .NET Standard Class Library テンプレートが追加されました。 他の開発ツールと環境を使用している Visual Basic 開発者の場合、[dotnet new](../../core/tools/dotnet-new.md) コマンドを使用して .NET Standard ライブラリ プロジェクトを作成できます。 詳細については、「[.NET Standard ライブラリのツールのサポート](#tooling-support-for-net-standard-libraries)」を参照してください。
 
-<a name="tooling" />**.NET Standard ライブラリのツールのサポート**
+### <a name="tooling-support-for-net-standard-libraries"></a>.NET Standard ライブラリのツールのサポート
 
-.NET Core 2.0 と .NET Standard 2.0 がリリースされ、Visual Studio 2017 と [.NET Core Command Line Interface (CLI)](../../core/tools/index.md) には .NET Standard ライブラリの作成をサポートするツールが追加されました。 
+.NET Core 2.0 と .NET Standard 2.0 がリリースされ、Visual Studio 2017 と [.NET Core Command Line Interface (CLI)](../../core/tools/index.md) には .NET Standard ライブラリの作成をサポートするツールが追加されました。
 
-**.NET Core クロスプラットフォーム開発**ワークロードを使用して Visual Studio をインストールする場合は、次の図に示すように、プロジェクト テンプレートを使用して .NET Standard 2.0 ライブラリ プロジェクトを作成できます。 
+**.NET Core クロスプラットフォーム開発**ワークロードを使用して Visual Studio をインストールする場合は、次の図に示すように、プロジェクト テンプレートを使用して .NET Standard 2.0 ライブラリ プロジェクトを作成できます。
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 ![新しい .NET Standard ライブラリ プロジェクトを追加する](./media/std-project-cs.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
-<a name="add-new-net-standard-library-projectmediastd-project-vbpng"></a>![新しい .NET Standard ライブラリ プロジェクトを追加する](./media/std-project-vb.png)
----
 
 .NET Core CLI を使用している場合、次の [dotnet new](../../core/tools/dotnet-new.md) コマンドを実行すると、.NET Standard 2.0 をターゲットとするクラス ライブラリ プロジェクトが作成されます。
 
-```csharp
+```
 dotnet new classlib
 ```
-```vb
+
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+
+![新しい .NET Standard ライブラリ プロジェクトを追加する](./media/std-project-vb.png)
+
+.NET Core CLI を使用している場合、次の [dotnet new](../../core/tools/dotnet-new.md) コマンドを実行すると、.NET Standard 2.0 をターゲットとするクラス ライブラリ プロジェクトが作成されます。
+
+```
 dotnet new classlib -lang vb
 ```
-  
-## <a name="see-also"></a>参照
-[.NET Standard](../net-standard.md)
+
+---
+
+## <a name="see-also"></a>関連項目
+
+[.NET Standard](../net-standard.md)  
 [.NET Standard の概要](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)

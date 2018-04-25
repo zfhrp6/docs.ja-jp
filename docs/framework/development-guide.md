@@ -1,28 +1,28 @@
 ---
-title: ".NET Framework の開発ガイド"
-ms.custom: 
+title: .NET Framework の開発ガイド
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-caps.latest.revision: 
+caps.latest.revision: 13
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5d7950ae39ada3e1e0e070967f8d578fc3371126
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3432ac629a6c754cf7f863b6444dc81b6f9919ef
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="net-framework-development-guide"></a>.NET Framework の開発ガイド
 ここでは、.NET Framework アプリの作成、構成、デバッグ、保護、および配置を行う方法について説明します。 また、動的プログラミング、相互運用性、拡張性、メモリ管理、スレッド処理などの技術領域に関する情報も提供します。  
@@ -49,7 +49,7 @@ ms.lasthandoff: 01/19/2018
  [Windows サービス アプリケーション](../../docs/framework/windows-services/index.md)  
  Visual Studio および .NET Framework を使用して、サービスとしてインストールされるアプリを作成し、その動作を開始、停止、制御する方法について説明します。  
   
- [並列処理と同時実行](../../docs/standard/parallel-processing-and-concurrency.md)  
+ [.NET での並列処理、同時実行、および非同期プログラミング](../../docs/standard/parallel-processing-and-concurrency.md)  
  マネージ スレッド処理、並列プログラミング、および非同期プログラミングのデザイン パターンについて説明します。  
   
  [.NET Framework のネットワーク プログラミング](../../docs/framework/network-programming/index.md)  

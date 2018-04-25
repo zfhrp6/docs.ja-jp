@@ -1,21 +1,22 @@
 ---
-title: "シリアル化時の空白の維持3"
-ms.custom: 
+title: シリアル化時の空白の維持3
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 0c4f8b98-483b-4cf8-86be-fa146eef90dc
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: df0ee9bedd4123ac47c06d1c64f305fcf0b0825a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a73c4ec01c1a4d2cebe71ae1afdcce0466762c9c
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="preserving-white-space-while-serializing"></a>シリアル化時の空白の維持
 このトピックでは、XML ツリーをシリアル化するときに空白を制御する方法について説明します。  
@@ -39,5 +40,5 @@ ms.lasthandoff: 10/18/2017
   
  メソッドが <xref:System.Xml.Linq.SaveOptions> を引数として受け取る場合は、シリアル化された XML が書式設定 (インデント) されないことを指定できます。 この場合、XML ツリー内の空白はすべて維持されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ツリーのシリアル化 (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)

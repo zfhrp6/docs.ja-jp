@@ -1,12 +1,13 @@
 ---
-title: "方法 : アセンブリから型およびメンバーの情報を取得する"
-ms.custom: 
+title: '方法 : アセンブリから型およびメンバーの情報を取得する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - obtaining assembly information
 - assemblies [.NET Framework], obtaining information from
 ms.assetid: 348ae651-ccda-4f13-8eda-19e8337e9438
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c3112b7484e4d03eaacd218ff8e8ac34e77745b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 390afb392c06d5ce003d69f028cd667deb4d86c8
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-obtain-type-and-member-information-from-an-assembly"></a>方法 : アセンブリから型およびメンバーの情報を取得する
 <xref:System.Reflection> 名前空間には、アセンブリから情報を取得するための多くのメソッドがあります。 このセクションでは、これらのメソッドの 1 つを実行する例を示します。 詳細については、「[リフレクションの概要](../../../docs/framework/reflection-and-codedom/reflection.md)」を参照してください。  
@@ -38,6 +40,5 @@ ms.lasthandoff: 01/19/2018
  [!code-vb[Conceptual.Types.ViewInfo#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source6.vb#8)]  
   
 ## <a name="see-also"></a>参照  
- [アプリケーション ドメインを使用したプログラミング](http://msdn.microsoft.com/library/bd36055b-56bd-43eb-b4d8-820c37172131)  
- [リフレクション](../../../docs/framework/reflection-and-codedom/reflection.md)  
+ [アプリケーション ドメインを使用したプログラミング](./application-domains.md#programming-with-application-domains) [リフレクション](../../../docs/framework/reflection-and-codedom/reflection.md)  
  [アプリケーション ドメインの使用](../../../docs/framework/app-domains/use.md)

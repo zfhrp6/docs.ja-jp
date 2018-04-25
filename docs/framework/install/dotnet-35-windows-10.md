@@ -1,18 +1,18 @@
 ---
-title: "Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストール"
-description: "Windows 10、Windows 8.1、および Windows 8 に .NET Framework 3.5 をインストールする方法について説明します"
+title: Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストール
+description: Windows 10、Windows 8.1、および Windows 8 に .NET Framework 3.5 をインストールする方法について説明します
 author: rlander
 ms.author: mairaw
-ms.date: 11/27/2017
+ms.date: 03/30/2018
 ms.topic: article
 ms.prod: .net-framework
 ms.workload:
 - dotnet
-ms.openlocfilehash: e81008eca3019860789db548d40998a7a7565d31
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: 09c4f81da76bb6608c3e579c442cf686ffab1688
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Windows 8、Windows 8.1、および Windows 10 への .NET Framework 3.5 のインストール
 
@@ -24,6 +24,10 @@ Windows 10、Windows 8.1、および Windows 8 上でアプリケーションを
 
 ![.NET Framework のインストール ダイアログ](./media/dotnet-framework-installation-dialog.jpg)
 
+### <a name="why-am-i-getting-this-pop-up"></a>このポップアップが表示される理由
+
+.NET Framework は、Microsoft によって作成されており、アプリケーションの実行環境を提供します。 異なるバージョンを利用できます。 多くの企業は .NET Framework を使用して実行するようにアプリを開発しており、それらのアプリでは特定のバージョンが対象になっています。 このポップアップが表示される場合は、実行しようとしているアプリケーションでは .NET Framework バージョン 3.5 が必要ですが、そのバージョンがシステムにインストールされていません。
+
 ## <a name="enable-the-net-framework-35-in-control-panel"></a>コントロール パネルで .NET Framework 3.5 を有効にする
 
 Windows のコントロール パネルを使用して .NET Framework 3.5 を有効にできます。 このオプションを使用するには、インターネット接続が必要です。
@@ -34,10 +38,10 @@ Windows のコントロール パネルを使用して .NET Framework 3.5 を有
 
    ![コントロール パネルを使用した .NET のインストール](./media/dotnet-control-panel.png)
 
-   Windows Communication Foundation (WCF) 機能が必要な開発者またはサーバー管理者でない限り、**[Windows Communication Foundation HTTP アクティブ化]** および **[Windows Communication Foundation 非 HTTP アクティブ化]**の子項目を選択する必要はありません。
+   Windows Communication Foundation (WCF) 機能が必要な開発者またはサーバー管理者でない限り、**[Windows Communication Foundation HTTP アクティブ化]** および **[Windows Communication Foundation 非 HTTP アクティブ化]** の子項目を選択する必要はありません。
 
 ## <a name="troubleshoot-the-installation-of-the-net-framework-35"></a>.NET Framework 3.5 のインストールのトラブルシューティング
 
 インストール中にエラー 0x800f0906、0x800f0907、0x800f081f、0x800F0922 が発生することがあります。その場合は、「[.NET Framework 3.5 インストール エラー: 0x800f0906、0x800f0907、または 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09)」を参照し、問題の解決方法をご確認ください。
 
-前の記事で紹介した方法がいずれも失敗した場合、またはインターネット接続がない場合は、Windows のインストール メディアを使用する必要があります。 詳細については、「[Deploy .NET Framework 3.5 by using Deployment Image Servicing and Management (DISM)](/windows-hardware/manufacture/desktop/deploy-net-framework-35-by-using-deployment-image-servicing-and-management--dism)」 (展開イメージのサービスと管理 (DISM) を利用して .NET Framework 3.5 を展開する) を参照してください。 インストール メディアがない場合は、「[Windows 用のインストール メディアを作成する](https://support.microsoft.com/help/15088/windows-create-installation-media)」を参照してください。
+インストールの問題をまだ解決できない場合、またはインターネット接続がない場合は、Windows のインストール メディアを使ってインストールしてみることができます。 詳細については、「[Deploy .NET Framework 3.5 by using Deployment Image Servicing and Management (DISM)](/windows-hardware/manufacture/desktop/deploy-net-framework-35-by-using-deployment-image-servicing-and-management--dism)」 (展開イメージのサービスと管理 (DISM) を利用して .NET Framework 3.5 を展開する) を参照してください。 インストール メディアがない場合は、「[Windows 用のインストール メディアを作成する](https://support.microsoft.com/help/15088/windows-create-installation-media)」を参照してください。

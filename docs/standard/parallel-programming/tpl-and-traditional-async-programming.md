@@ -21,11 +21,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 50c4f9cfeb135f1046fbb427585897ca99248afd
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2acfb9a564f3a7bc96ed303f49349afe56ca7fe4
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a>TPL と従来の .NET Framework 非同期プログラミング
 .NET Framework の I/O バインドの非同期操作および計算主体の非同期操作には、次の 2 つの標準パターンがあります。  
@@ -127,7 +127,7 @@ ms.lasthandoff: 12/23/2017
  [!code-vb[FromAsync#09](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#09)]  
   
 ## <a name="using-the-streamextensions-sample-code"></a>StreamExtensions サンプル コードの使用  
- MSDN Web サイトの「[Samples for Parallel Programming with the .NET Framework 4 (.NET Framework 4 での並列プログラミングの例)](http://go.microsoft.com/fwlink/?LinkID=165717)」に示す Streamextensions.cs ファイルには、非同期ファイルおよびネットワーク I/O に対してタスク オブジェクトを使用する参照実装がいくつか含まれています。  
+ 「[Samples for Parallel Programming with the .NET Framework 4](https://code.msdn.microsoft.com/ParExtSamples)」(.NET Framework 4 での並列プログラミングの例) に示す Streamextensions.cs ファイルには、非同期ファイルおよびネットワーク I/O に対してタスク オブジェクトを使用する参照実装がいくつか含まれています。  
   
 ## <a name="see-also"></a>参照  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

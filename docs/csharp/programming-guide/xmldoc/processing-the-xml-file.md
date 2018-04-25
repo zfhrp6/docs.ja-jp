@@ -1,21 +1,22 @@
 ---
-title: "XML ファイルの処理 (C# プログラミング ガイド)"
+title: XML ファイルの処理 (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: e8b4c078ffcf7ba7690b7f3dd61bfab4162dd2cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1e6e983d4fc07aaadc294bc67e146ac600f4c5bc
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>XML ファイルの処理 (C# プログラミング ガイド)
 コンパイラは、ドキュメントを生成するためにタグ付けされたコードのコンストラクトごとに、ID 文字列を生成します。 (コードをタグ付けする方法については、[ドキュメント コメント用の推奨タグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)に関するページを参照してください。)ID 文字列によって、コンストラクトは一意に識別されます。 XML ファイルを処理するプログラムは、ID 文字列を使用して、対応する .NET Framework のメタデータまたはドキュメントを適用するリフレクション項目を識別できます。  
@@ -24,7 +25,7 @@ ms.lasthandoff: 11/21/2017
   
  コンパイラは、次の規則に基づいて ID 文字列を生成します。  
   
--   文字列に空白は含まれません。  
+-   文字列に空白文字は含まれません。  
   
 -   ID 文字列の最初の部分は、単一の文字とそれに続くコロンで識別されるメンバー種類を示します。 使用されるメンバー型は次のとおりです。  
   
@@ -74,18 +75,18 @@ ms.lasthandoff: 11/21/2017
   
 -   変換演算子 (op_Implicit および op_Explicit) だけは、上記のエンコードと同様に、メソッドの戻り値が ”~” としてエンコードされ、それに続けて戻り値の型が表されます。  
   
--   ジェネリック型では、型の名前の後に、バックチック、ジェネリック型パラメーターの数を示す数値が順に続きます。  次に例を示します。  
+-   ジェネリック型では、型の名前の後に、バックチック、ジェネリック型パラメーターの数を示す数値が順に続きます。  たとえば、オブジェクトに適用された  
   
      `<member name="T:SampleClass`2">` is the tag for a type that is defined as `public class SampleClass\<T, U >'。  
   
      パラメーターとしてジェネリック型を受け取るメソッドでは、ジェネリック型パラメーターは、バックチック付きの数値 (\`0、`1 など) として指定されます。  各数値は、型のジェネリック パラメーターに対する、0 から始まる配列表記を表しています。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例は、クラスおよびそのメンバーの ID 文字列を生成する方法を示します。  
   
  [!code-csharp[csProgGuidePointers#21](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/processing-the-xml-file_1.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [/doc (c# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
+ [/doc (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
  [XML ドキュメント コメント](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)

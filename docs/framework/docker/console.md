@@ -1,19 +1,19 @@
 ---
-title: "Docker でのコンソール アプリケーションの実行"
-description: "既存の .NET Framework コンソール アプリケーションを Windows Docker コンテナーで実行する方法について説明します。"
+title: Docker でのコンソール アプリケーションの実行
+description: 既存の .NET Framework コンソール アプリケーションを Windows Docker コンテナーで実行する方法について説明します。
 author: spboyer
-keywords: ".NET, コンテナー, コンソール, アプリケーション"
+keywords: .NET, コンテナー, コンソール, アプリケーション
 ms.date: 09/28/2016
 ms.topic: article
 ms.prod: .net-framework
 ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
-ms.openlocfilehash: 037d94452dd62c06fe6d8ac7aea1143f52b96d32
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 7990ed03028ea9361a8b1760b237b8ed2f9d204d
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Windows コンテナーでのコンソール アプリケーションの実行
 
@@ -25,7 +25,7 @@ Docker コンテナーと Windows Server コンテナーを使用するように
 
 回答に加えて、`Environment.MachineName` が応答に追加されており、アプリケーションの実行をローカルで行う場合と Windows コンテナーで行う場合の違いが示されます。 アプリケーションをローカルで実行する場合はローカル コンピューター名が返され、Windows コンテナーで実行する場合はコンテナーのセッション ID が返されます。
 
-[完全な例](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)は GitHub の dotnet/docs レポジトリにあります。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+[完全な例](https://github.com/dotnet/samples/tree/master/framework/docker/ConsoleRandomAnswerGenerator)は、GitHub の dotnet/samples リポジトリにあります。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 アプリケーションをコンテナーに移行する作業を開始する前に、いくつかの Docker 用語を理解しておく必要があります。
 
@@ -46,7 +46,7 @@ Docker アーキテクチャの詳細については、Docker サイトの「[Do
 1. [イメージの Dockerfile の作成](#creating-the-dockerfile)
 1. [Docker コンテナーをビルドして実行するプロセス](#creating-the-image)
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>必須コンポーネント
 Windows コンテナーは、[Windows 10 Anniversary Update](https://www.microsoft.com/en-us/software-download/windows10/) または [Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server) でサポートされています。
 
 > [!NOTE]

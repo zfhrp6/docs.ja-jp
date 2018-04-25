@@ -1,6 +1,6 @@
 ---
-title: "パターン マッチング - C# ガイド"
-description: "C# のパターン マッチング式について説明します"
+title: パターン マッチング - C# ガイド
+description: C# のパターン マッチング式について説明します
 keywords: .NET, .NET Core, C#
 ms.date: 01/24/2017
 ms.author: wiwagn
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 0c77c3c3da9983d20cdd86db18f60f83b86b07ea
-ms.sourcegitcommit: 281070dee88db86ec3bb4634d5f558d1a4e159dd
+ms.openlocfilehash: c3fbc617f742e8dd5db4b2ac46b38958cdc30007
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="pattern-matching"></a>パターン マッチ #
 
@@ -112,27 +112,27 @@ C# 7 より前では、一連の `if` ステートメントと `is` ステート
 
 `null` パターンの特殊な動作に注目します。パターン内の定数 `null` は、型がありませんが、任意の参照型または null 許容型に変換できるためです。 `null` を任意の型に変換するよりも、変数のコンパイル時の型に関係なく、`null` 値が任意の型パターンと一致しないことを言語で定義します。 この動作により、新しい `switch` ベースの型パターンが `is` ステートメントと一貫性を持ちます。`is` ステートメントは、チェックされている値が `null` のとき、常に `false` を返します。 より簡単なのは、型をチェックしたら、追加の null チェックが必要ないことです。 上記のサンプルの case ブロックのいずれにも null チェックがないことからわかるように、型パターンのマッチングにより null 以外の値が保証されるため、これらは必要ありません。
 
-## <a name="var-declarations-in-case-expressions"></a>`var`内の宣言`case`式
+## <a name="var-declarations-in-case-expressions"></a>`case` 式内の `var` 宣言
 
-導入`var`ようにパターン マッチに新しいルールを導入する一致式のいずれか。
+match 式の 1 つとしての `var` の導入により、パターン マッチングに新しい規則が導入されます。
 
-最初の規則は、`var`宣言標準型の推論規則に従います: switch 式の静的な型である型を推論します。 そのルールから、型は常に一致します。
+最初の規則は、`var` 宣言は通常の型推論規則に従うというものです。型は、switch 式のスタティック型と推論されます。 その規則から、型は常に一致します。
 
-2 番目のルールは、`var`宣言には、その他の型のパターン式を含む null チェックはありません。 つまり、変数が null であるし、null チェックが必要な場合は。
+2 番目の規則は、`var` 宣言には、他の型パターン式には含まれる null チェックがないというものです。 つまり、変数は null である可能性があり、その場合は null チェックが必要です。
 
-これら 2 つの規則からといって、さまざまな状況で、`var`内の宣言、`case`式と同じ条件に一致する、`default`式。
-既定以外のすべてのケースがより優先するため、`default`場合も、`default`ケースが実行されません。
+これら 2 つの規則は、多くの場合、`case` 式での `var` 宣言は `default` 式と同じ条件に一致することを意味します。
+非 default ケースは `default` ケースより優先されるため、`default` ケースは実行されません。
 
 > [!NOTE]
-> コンパイラはこのような場合に警告を生成しません場所、`default`ケースが書き込まれましたが実行されません。 これは、一貫性のある現在の`switch`ステートメントの動作が可能なすべてのケースが一覧されています。
+> `default` ケースが記述されていても実行されない場合、コンパイラは警告を生成しません。 これは、すべての可能なケースが列記されている `switch` ステートメントの動作と一致しています。
 
-3 番目のルールに使用が導入されていますここで、`var`ケースが役立つことがあります。 入力が文字列であり、使用されているコマンドの値を検索するパターン マッチを行っていることを想像してください。 ようなものを記述する場合があります。
+3 番目の規則では、`var` ケースが役に立つことがある使用が導入されます。 入力が文字列であり、既知のコマンド値を検索する、パターン マッチングを行っている場合を想像してください。 次のようなコードを記述する場合があります。
 
 [!code-csharp[VarCaseExpression](../../samples/csharp/PatternMatching/Program.cs#VarCaseExpression "use a var case expression to filter white space")]
 
-`var`と一致する case `null`、空の文字列、または空白のみを含む任意の文字列。 上記のコードを使用する通知、`?.`演算子には誤ってをスローしないことを確認する、<xref:System.NullReferenceException>です。 `default`の場合は、このコマンドのパーサーで認識されないその他の文字列値を処理します。
+`var` のケースは、`null`、空の文字列、または空白文字のみを含む文字列と一致します。 上記のコードでは、`?.` 演算子を使用して、誤って <xref:System.NullReferenceException> をスローしないようになっていることに注意してください。 `default` のケースは、このコマンド パーサーで認識されない他のすべての文字列値を処理します。
 
-これは、1 つの例を検討する可能性があります、`var`別個のものである式の場合、`default`式。
+これは、`default` 式とは別に `var` ケース式を検討する必要がある 1 つの例です。
 
 ## <a name="conclusions"></a>まとめ
 

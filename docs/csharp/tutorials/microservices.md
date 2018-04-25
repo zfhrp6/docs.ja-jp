@@ -1,7 +1,7 @@
 ---
-title: "Docker でホストされているマイクロサービス - C"
-description: "Docker コンテナーで実行される ASP.NET Core サービスを作成する方法を学ぶ"
-keywords: ".NET, .NET Core, Docker, C#, ASP.NET, マイクロサービス"
+title: Docker でホストされているマイクロサービス - C
+description: Docker コンテナーで実行される ASP.NET Core サービスを作成する方法を学ぶ
+keywords: .NET, .NET Core, Docker, C#, ASP.NET, マイクロサービス
 author: BillWagner
 ms.author: wiwagn
 ms.date: 02/03/2017
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: d399cdce81350356b71e21d879a4f5b5079f98d8
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 253b622618ef62c28ac13a287c34b9d9049dd066
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="microservices-hosted-in-docker"></a>Docker でホストされているマイクロサービス
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 01/05/2018
 * 受信 HTTP 要求を処理し、HTTP 応答を生成する方法
 * Null 許容の値型を操作する方法
 
-このトピックの[サンプル アプリを表示またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)できます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+このトピックの[サンプル アプリを表示またはダウンロード](https://github.com/dotnet/samples/tree/master/csharp/getting-started/WeatherMicroservice)できます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 ### <a name="why-docker"></a>Docker を使用する理由
 
@@ -98,7 +98,7 @@ dotnet build
 dotnet run
 ```
 
-既定の構成では http://localhost:5000 がリッスンされます。 ブラウザーを開いてそのページに移動すると、"Hello World!" という メッセージが表示されます。
+既定の構成では `http://localhost:5000` がリッスンされます。 ブラウザーを開いてそのページに移動すると、"Hello World!" という メッセージが表示されます。
 
 ### <a name="anatomy-of-an-aspnet-core-application"></a>ASP.NET Core アプリケーションの構造
 
