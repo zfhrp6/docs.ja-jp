@@ -1,13 +1,13 @@
 ---
-title: "&lt;compiler&gt;要素"
-ms.custom: 
+title: '&lt;compiler&gt;要素'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#compiler
@@ -18,7 +18,7 @@ helpviewer_keywords:
 - compiler configuration attributes
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
-caps.latest.revision: 
+caps.latest.revision: 20
 author: mcleblanc
 ms.author: markl
 manager: markl
@@ -32,11 +32,11 @@ ms.lasthandoff: 03/02/2018
 ---
 # <a name="ltcompilergt-element"></a>&lt;compiler&gt;要素
 言語プロバイダーのコンパイラ構成属性を指定します。  
-
-&lt;configuration&gt; 要素
-&lt;system.codedom&gt; 要素
-&lt;compilers&gt; 要素
-&lt;compiler&gt; 要素
+  
+ \<configuration >要素  
+\<system.codedom>要素  
+\<compilers >要素  
+\<compiler> 要素  
   
 ## <a name="syntax"></a>構文  
   
@@ -75,7 +75,7 @@ ms.lasthandoff: 03/02/2018
 |-------------|-----------------|  
 |[\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|使用可能な言語プロバイダーのコンパイラ構成設定を指定します。|  
-|[\<compilers> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラ構成要素のコンテナー0 個以上含む`<compiler>`要素。|
+|[\<compilers> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラ構成要素のコンテナー0 個以上含む`<compiler>`要素。|  
   
 ## <a name="remarks"></a>コメント  
  各`<compiler>`要素は、特定の言語プロバイダーのコンパイラ構成属性を指定します。 プロバイダーでは、 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 、特定の言語のクラス、`<compiler>`要素は、コンパイラおよび言語プロバイダーのコード ジェネレーターの設定を定義します。  
@@ -112,6 +112,6 @@ ms.lasthandoff: 03/02/2018
  <xref:System.CodeDom.Compiler.CompilerInfo>  
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<コンパイラ > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [\<compilers> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
  [完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
  [コンパイル (ASP.NET 設定スキーマ) のコンパイラのコンパイラ要素](https://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e(v=vs.100))
