@@ -1,12 +1,12 @@
 ---
-title: ".NET の正規表現に関するベスト プラクティス"
-ms.custom: 
+title: .NET の正規表現に関するベスト プラクティス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-caps.latest.revision: 
+caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c665dfbf8c3b6609a934aae027ba40e0462498db
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 59ec9ead0fd010baccaadb1eda0f469b7b4dcb46
+ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>.NET の正規表現に関するベスト プラクティス
 <a name="top"></a> .NET の正規表現エンジンは、リテラル テキストの比較と照合ではなくパターン一致に基づいてテキストを処理する、完全な機能を備えた強力なツールです。 ほとんどの場合は、すばやく効率的にパターン一致が実行されますが、 処理が非常に遅く見えることもあります。 極端なケースでは、比較的小さな入力の処理に何時間も何日もかかり、応答しなくなったように見えることさえあります。  
@@ -208,7 +208,7 @@ ms.lasthandoff: 02/27/2018
  正規表現パターンと入力テキストの照合にバックトラッキングが欠かせない場合もよくあります。 ただし、過度なバックトラッキングが発生すると、極端にパフォーマンスが低下して、アプリケーションが応答しなくなったように見えることがあります。 この状況が発生するのは、たとえば、量指定子が入れ子になっていて、外側の部分式に一致するテキストが内側の部分式に一致するテキストのサブセットになっている場合です。  
   
 > [!WARNING]
->  過度なバックトラッキングの回避に加えて、タイムアウト機能を使用して、過度なバックトラッキングによって、正規表現のパフォーマンスが極端に低下するのを防ぐ必要があります。 詳細については、「[タイムアウト値を使用する](#Timeouts)」を参照してください。  
+>  過度なバックトラッキングの回避に加えて、タイムアウト機能を使用して、過度なバックトラッキングによって、正規表現のパフォーマンスが極端に低下するのを防ぐ必要があります。 詳しくは、「[タイムアウト値を使用する](#Timeouts)」をご覧ください。  
   
  例として、部品番号に一致するように作られた `^[0-9A-Z]([-.\w]*[0-9A-Z])*\$$` という正規表現パターンについて見てみましょう。この部品番号は、少なくとも 1 文字の英数字で構成されます。 追加の文字では、英数字、ハイフン、アンダースコア、およびピリオドが許容されますが、最後の文字は英数字でなければなりません。 部品番号の終わりはドル記号で示されます。 この正規表現パターンは、量指定子が入れ子になっているうえに、部分式 `[0-9A-Z]` が部分式 `[-.\w]*` のサブセットであるため、パフォーマンスが極端に低下する可能性があります。  
   

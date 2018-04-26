@@ -1,7 +1,7 @@
 ---
-title: ".NET Core のホスティング"
-description: "ネイティブ コードから .NET Core ランタイムをホスティングする"
-keywords: ".NET, .NET Core, ホスティング, .NET Core のホスティング"
+title: .NET Core のホスティング
+description: ネイティブ コードから .NET Core ランタイムをホスティングする
+keywords: .NET, .NET Core, ホスティング, .NET Core のホスティング
 author: mjrousos
 ms.author: mikerou
 ms.date: 2/3/2017
@@ -11,11 +11,11 @@ ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 3c358ab9173032b1f76d30b756ee6290233b2702
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 5ff2e8e4da12b2a9822b595abbb2bdb0f583cf02
+ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="hosting-net-core"></a>.NET Core のホスティング
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/28/2018
 
 ## <a name="creating-the-host"></a>ホストを作成する
 
-dotnet/docs GitHub リポジトリには、この記事で説明する手順を実演する[サンプル ホスト](https://github.com/dotnet/docs/tree/master/samples/core/hosting)があります。 サンプルの *host.cpp* ファイルにあるコメントを見れば、このチュートリアルで番号が付けられている手順がサンプルのどこで実行されるかわかります。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+dotnet/samples GitHub リポジトリには、この記事で説明する手順を実演する[サンプル ホスト](https://github.com/dotnet/samples/tree/master/core/hosting)があります。 サンプルの *host.cpp* ファイルにあるコメントを見れば、このチュートリアルで番号が付けられている手順がサンプルのどこで実行されるかわかります。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
 サンプル ホストは学習目的のために利用されるものです。エラーのチェック時に軽くなっており、効率性より読みやすさを重視して設計されています。 より実際的なホスト サンプルは [dotnet/coreclr](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts) リポジトリにあります。 特に、[CoreRun ホスト](https://github.com/dotnet/coreclr/tree/master/src/coreclr/hosts/corerun)は、単純なサンプルを読んだ後に学習するのに最適な汎用ホストです。
 
@@ -90,7 +90,7 @@ AppDomain フラグは、セキュリティと相互運用に関連する AppDom
 *  `PLATFORM_RESOURCE_ROOTS` このリストには、(カルチャ固有の下位ディレクトリで) リソース サテライト アセンブリを探すパスが含まれています。
 *  `AppDomainCompatSwitch` この文字列は、明示的なターゲット フレームワーク モニカーのないアセンブリに使用する互換性を指定します (アセンブリが実行する対象のフレームワークを示すアセンブリレベルの属性)。 通常、これは `"UseLatestBehaviorWhenTFMNotSpecified"` に設定しますが、以前の Silverlight や Windows Phone の互換性を優先するホストもあります。
 
-この[単純なサンプル ホスト](https://github.com/dotnet/docs/tree/master/samples/core/hosting)では、これらのプロパティは次のように設定されています。
+この[単純なサンプル ホスト](https://github.com/dotnet/samples/tree/master/core/hosting)では、これらのプロパティは次のように設定されています。
 
 [!code-cpp[NetCoreHost#6](../../../samples/core/hosting/host.cpp#6)]
 
