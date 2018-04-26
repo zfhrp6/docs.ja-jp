@@ -1,12 +1,12 @@
 ---
-title: "タスク ベースの非同期パターンの利用"
-ms.custom: 
+title: タスク ベースの非同期パターンの利用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, and TAP
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-caps.latest.revision: 
+caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3eddf8899863b7f1c59950c9cd4fa4d42f7acdb7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: eb1b73af4ccdc22e811988450824123c0055d9e6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>タスク ベースの非同期パターンの利用
 タスク ベースの非同期パターン (TAP) を使用して非同期操作を行うと、コールバックを使用して、ブロックすることなく待機できます。  タスクの場合、これは <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> などのメソッドによって行われます。 言語ベースの非同期サポートが、通常の制御フロー内での非同期操作の待機を許可することで、コールバックを隠し、コンパイラにより生成されたコードはこの同じ API レベルのサポートを提供します。  
@@ -736,7 +736,7 @@ public class AsyncCache<TKey, TValue>
 }  
 ```  
   
- [AsyncCache\<TKey,TValue>](http://go.microsoft.com/fwlink/p/?LinkId=251941) クラスは、コンストラクターへのデリゲートとして `TKey` を受け取る関数を受け入れ、<xref:System.Threading.Tasks.Task%601> を返します。  以前にキャッシュからアクセスした値は内部ディクショナリに格納され、`AsyncCache` によって、キャッシュに同時にアクセスしてもキーごとにタスクが 1 つしか生成されないようにします。  
+ [AsyncCache\<TKey,TValue>](https://blogs.msdn.microsoft.com/pfxteam/2010/04/23/parallelextensionsextras-tour-12-asynccache/) クラスは、コンストラクターへのデリゲートとして `TKey` を受け取る関数を受け入れ、<xref:System.Threading.Tasks.Task%601> を返します。  以前にキャッシュからアクセスした値は内部ディクショナリに格納され、`AsyncCache` によって、キャッシュに同時にアクセスしてもキーごとにタスクが 1 つしか生成されないようにします。  
   
  たとえば、次のようにダウンロードされた Web ページのキャッシュをビルドできます。  
   

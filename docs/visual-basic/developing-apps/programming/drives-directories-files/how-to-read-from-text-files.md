@@ -1,11 +1,12 @@
 ---
-title: "方法: テキスト ファイルからデータを読み取る (Visual Basic)"
-ms.custom: 
+title: '方法: テキスト ファイルからデータを読み取る (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - extended characters [Visual Basic], reading
@@ -14,14 +15,14 @@ helpviewer_keywords:
 - examples [Visual Basic], reading text files
 - text files [Visual Basic], reading
 ms.assetid: 735fe9d7-0f7a-4185-ba02-f35e580ec4b8
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f75d89fb4ab10a8c116d4a0ab79c17ceb3efd0ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e39b08fcee382674fcf6af07f9da7439eb1bea69
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-read-from-text-files-in-visual-basic"></a>方法: テキスト ファイルからデータを読み取る (Visual Basic)
 <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2A> オブジェクトの `My.Computer.FileSystem` メソッドを使用すると、テキスト ファイルを読み取ることができます。 ファイルの内容が ASCII や UTF-8 などのエンコーディングを使用している場合、ファイル エンコーディングを指定できます。  
@@ -62,11 +63,11 @@ ms.lasthandoff: 11/21/2017
   
 -   ユーザーがパスを参照するのに必要なアクセス許可がない (<xref:System.Security.SecurityException>)  
   
- ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のソース ファイルではない可能性もあります。  
+ ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは Visual Basic のソース ファイルではない可能性もあります。  
   
  アプリケーションでデータを使用する前に、入力をすべて検証してください。 ファイルの内容が予想どおりでないことがあり、ファイルの内容を読み取るメソッドが失敗する可能性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A>  
  [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
