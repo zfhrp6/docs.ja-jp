@@ -217,7 +217,7 @@
 ## [C# の新機能](csharp/whats-new/index.md)
 ### [C# 7.2 の新機能](csharp/whats-new/csharp-7-2.md)
 ### [C# 7.1 の新機能](csharp/whats-new/csharp-7-1.md)
-### [C# 7 の新機能](csharp/whats-new/csharp-7.md)
+### [C# 7.0 の新機能](csharp/whats-new/csharp-7.md)
 ### [C# 6 の新機能](csharp/whats-new/csharp-6.md)
 ### [C# バージョン履歴](csharp/whats-new/csharp-version-history.md)
 ### [言語とフレームワークの関係](csharp/whats-new/relationships-between-language-and-library.md)
