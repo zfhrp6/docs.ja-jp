@@ -1,0 +1,2 @@
+> [!NOTE]
+>  <xref:Microsoft.VisualBasic.Compatibility.VB6> 名前空間の関数とオブジェクトは、Visual Basic 6.0 から Visual Basic 2008 へのアップグレード ツールで使用するために用意されています。 ほとんどの場合、これらの関数とオブジェクトは、.NET Framework の他の名前空間にある機能と重複しています。 これらが必要になるのは、Visual Basic 6.0 のコード モデルが .NET Framework の実装と大きく異なる場合だけです。

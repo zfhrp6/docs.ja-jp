@@ -1,0 +1,1 @@
+このクラスが表す要素について詳しくは、それぞれのシナリオに応じて、[WS-Trust February 2005](http://schemas.xmlsoap.org/ws/2005/02/trust/)、[WS-Trust 1.3](http://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html)、または [WS-Trust 1.4](http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/os/ws-trust-1.4-spec-os.html) の各 WS-Trust 仕様をご覧ください。
