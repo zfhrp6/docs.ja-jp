@@ -16,26 +16,26 @@ ms.assetid: 23996dca-250f-4320-8211-1560e90172df
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3f27fcf3bd1f80b5daf501609c2cd157c209924a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 5314702192dd4536f1d49c3ac8b26214d06b786b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="unable-to-write-output-to-memory"></a><span data-ttu-id="17b28-102">出力をメモリに書き込めません。</span><span class="sxs-lookup"><span data-stu-id="17b28-102">Unable to write output to memory</span></span>
-<span data-ttu-id="17b28-103">出力をメモリに書き込むときに問題が発生しました。</span><span class="sxs-lookup"><span data-stu-id="17b28-103">There was a problem writing output to memory.</span></span>  
+# <a name="unable-to-write-output-to-memory"></a><span data-ttu-id="a12b9-102">出力をメモリに書き込めません。</span><span class="sxs-lookup"><span data-stu-id="a12b9-102">Unable to write output to memory</span></span>
+<span data-ttu-id="a12b9-103">出力をメモリに書き込むときに問題が発生しました。</span><span class="sxs-lookup"><span data-stu-id="a12b9-103">There was a problem writing output to memory.</span></span>  
   
- <span data-ttu-id="17b28-104">**エラー ID:** BC31020</span><span class="sxs-lookup"><span data-stu-id="17b28-104">**Error ID:** BC31020</span></span>  
+ <span data-ttu-id="a12b9-104">**エラー ID:** BC31020</span><span class="sxs-lookup"><span data-stu-id="a12b9-104">**Error ID:** BC31020</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="17b28-105">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="17b28-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="a12b9-105">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="a12b9-105">To correct this error</span></span>  
   
-1.  <span data-ttu-id="17b28-106">プログラムをもう一度コンパイルし、エラーがまだ発生するかどうか確認します。</span><span class="sxs-lookup"><span data-stu-id="17b28-106">Compile the program again to see if the error reoccurs.</span></span>  
+1.  <span data-ttu-id="a12b9-106">プログラムをもう一度コンパイルし、エラーがまだ発生するかどうか確認します。</span><span class="sxs-lookup"><span data-stu-id="a12b9-106">Compile the program again to see if the error reoccurs.</span></span>  
   
-2.  <span data-ttu-id="17b28-107">エラーが引き続き発生する場合は、作業内容を保存し、 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を再起動します。</span><span class="sxs-lookup"><span data-stu-id="17b28-107">If the error continues, save your work and restart [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].</span></span>  
+2.  <span data-ttu-id="a12b9-107">エラーが引き続き発生する場合は、作業内容を保存し、Visual Studio を再起動します。</span><span class="sxs-lookup"><span data-stu-id="a12b9-107">If the error continues, save your work and restart Visual Studio.</span></span>  
   
-3.  <span data-ttu-id="17b28-108">エラーが再発する場合は、Visual Basic を再インストールします。</span><span class="sxs-lookup"><span data-stu-id="17b28-108">If the error recurs, reinstall Visual Basic.</span></span>  
+3.  <span data-ttu-id="a12b9-108">エラーが再発する場合は、Visual Basic を再インストールします。</span><span class="sxs-lookup"><span data-stu-id="a12b9-108">If the error recurs, reinstall Visual Basic.</span></span>  
   
-4.  <span data-ttu-id="17b28-109">再インストールした後にエラーが続く場合は、マイクロソフト プロダクト サポート サービスに通知してください。</span><span class="sxs-lookup"><span data-stu-id="17b28-109">If the error persists after reinstallation, notify Microsoft Product Support Services.</span></span>  
+4.  <span data-ttu-id="a12b9-109">再インストールした後にエラーが続く場合は、マイクロソフト プロダクト サポート サービスに通知してください。</span><span class="sxs-lookup"><span data-stu-id="a12b9-109">If the error persists after reinstallation, notify Microsoft Product Support Services.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="17b28-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="17b28-110">See Also</span></span>  
- [<span data-ttu-id="17b28-111">ご意見</span><span class="sxs-lookup"><span data-stu-id="17b28-111">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)
+## <a name="see-also"></a><span data-ttu-id="a12b9-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="a12b9-110">See Also</span></span>  
+ [<span data-ttu-id="a12b9-111">ご意見</span><span class="sxs-lookup"><span data-stu-id="a12b9-111">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)

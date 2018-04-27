@@ -1,12 +1,13 @@
 ---
-title: "ShouldSerialize メソッドと Reset メソッドによる既定値の定義"
-ms.custom: 
+title: ShouldSerialize メソッドと Reset メソッドによる既定値の定義
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,30 +16,31 @@ helpviewer_keywords:
 - custom controls [Windows Forms], property methods
 - ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a654fef461d92c4b93db131e303bb07a1e839d34
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a28cd84c88cd7434eaca3fdaa7b4406006c44dad
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a><span data-ttu-id="ecbfd-102">ShouldSerialize メソッドと Reset メソッドによる既定値の定義</span><span class="sxs-lookup"><span data-stu-id="ecbfd-102">Defining Default Values with the ShouldSerialize and Reset Methods</span></span>
-<span data-ttu-id="ecbfd-103">`ShouldSerialize``Reset`プロパティ用に指定できるオプションのメソッドは、プロパティがない場合、単純な既定値があります。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-103">`ShouldSerialize` and `Reset` are optional methods that you can provide for a property, if the property does not a have simple default value.</span></span> <span data-ttu-id="ecbfd-104">プロパティの単純な既定値が、適用してください、<xref:System.ComponentModel.DefaultValueAttribute>し、代わりに、属性クラスのコンス トラクターを既定値を指定します。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-104">If the property has a simple default value, you should apply the <xref:System.ComponentModel.DefaultValueAttribute> and supply the default value to the attribute class constructor instead.</span></span> <span data-ttu-id="ecbfd-105">これらのメカニズムのいずれかにより、デザイナーで、次の機能。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-105">Either of these mechanisms enables the following features in the designer:</span></span>  
+# <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a><span data-ttu-id="da4b0-102">ShouldSerialize メソッドと Reset メソッドによる既定値の定義</span><span class="sxs-lookup"><span data-stu-id="da4b0-102">Defining Default Values with the ShouldSerialize and Reset Methods</span></span>
+<span data-ttu-id="da4b0-103">`ShouldSerialize` `Reset`プロパティ用に指定できるオプションのメソッドは、プロパティがない場合、単純な既定値があります。</span><span class="sxs-lookup"><span data-stu-id="da4b0-103">`ShouldSerialize` and `Reset` are optional methods that you can provide for a property, if the property does not a have simple default value.</span></span> <span data-ttu-id="da4b0-104">プロパティの単純な既定値が、適用してください、<xref:System.ComponentModel.DefaultValueAttribute>し、代わりに、属性クラスのコンス トラクターを既定値を指定します。</span><span class="sxs-lookup"><span data-stu-id="da4b0-104">If the property has a simple default value, you should apply the <xref:System.ComponentModel.DefaultValueAttribute> and supply the default value to the attribute class constructor instead.</span></span> <span data-ttu-id="da4b0-105">これらのメカニズムのいずれかにより、デザイナーで、次の機能。</span><span class="sxs-lookup"><span data-stu-id="da4b0-105">Either of these mechanisms enables the following features in the designer:</span></span>  
   
--   <span data-ttu-id="ecbfd-106">プロパティが既定値から変更された場合に、プロパティ ブラウザーで表示を提供します。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-106">The property provides visual indication in the property browser if it has been modified from its default value.</span></span>  
+-   <span data-ttu-id="da4b0-106">プロパティが既定値から変更された場合に、プロパティ ブラウザーで表示を提供します。</span><span class="sxs-lookup"><span data-stu-id="da4b0-106">The property provides visual indication in the property browser if it has been modified from its default value.</span></span>  
   
--   <span data-ttu-id="ecbfd-107">ユーザーが、プロパティを右クリックし、選択**リセット**プロパティを既定値に復元します。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-107">The user can right-click on the property and choose **Reset** to restore the property to its default value.</span></span>  
+-   <span data-ttu-id="da4b0-107">ユーザーが、プロパティを右クリックし、選択**リセット**プロパティを既定値に復元します。</span><span class="sxs-lookup"><span data-stu-id="da4b0-107">The user can right-click on the property and choose **Reset** to restore the property to its default value.</span></span>  
   
--   <span data-ttu-id="ecbfd-108">デザイナーより効率的なコードを生成します。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-108">The designer generates more efficient code.</span></span>  
+-   <span data-ttu-id="da4b0-108">デザイナーより効率的なコードを生成します。</span><span class="sxs-lookup"><span data-stu-id="da4b0-108">The designer generates more efficient code.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="ecbfd-109">適用するか、<xref:System.ComponentModel.DefaultValueAttribute>提供または`Reset` *PropertyName*と`ShouldSerialize` *PropertyName*メソッドです。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-109">Either apply the <xref:System.ComponentModel.DefaultValueAttribute> or provide `Reset`*PropertyName* and `ShouldSerialize`*PropertyName* methods.</span></span> <span data-ttu-id="ecbfd-110">どちらも使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-110">Do not use both.</span></span>  
+    >  <span data-ttu-id="da4b0-109">適用するか、<xref:System.ComponentModel.DefaultValueAttribute>提供または`Reset` *PropertyName*と`ShouldSerialize` *PropertyName*メソッドです。</span><span class="sxs-lookup"><span data-stu-id="da4b0-109">Either apply the <xref:System.ComponentModel.DefaultValueAttribute> or provide `Reset`*PropertyName* and `ShouldSerialize`*PropertyName* methods.</span></span> <span data-ttu-id="da4b0-110">どちらも使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="da4b0-110">Do not use both.</span></span>  
   
- <span data-ttu-id="ecbfd-111">`Reset` *PropertyName*メソッドは、次のコード フラグメントで示すように、既定値にプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-111">The `Reset`*PropertyName* method sets a property to its default value, as shown in the following code fragment.</span></span>  
+ <span data-ttu-id="da4b0-111">`Reset` *PropertyName*メソッドは、次のコード フラグメントで示すように、既定値にプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="da4b0-111">The `Reset`*PropertyName* method sets a property to its default value, as shown in the following code fragment.</span></span>  
   
 ```vb  
 Public Sub ResetMyFont()  
@@ -53,9 +55,9 @@ public void ResetMyFont() {
 ```  
   
 > [!NOTE]
->  <span data-ttu-id="ecbfd-112">プロパティがない場合、`Reset`メソッド、されていない、 <xref:System.ComponentModel.DefaultValueAttribute>、および、その宣言で指定された既定値はありません、`Reset`オプションのショートカット メニューでそのプロパティは無効になって、 **のプロパティ**で Windows フォーム デザイナーのウィンドウ[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]します。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-112">If a property does not have a `Reset` method, is not marked with a <xref:System.ComponentModel.DefaultValueAttribute>, and does not have a default value supplied in its declaration, the `Reset` option for that property is disabled in the shortcut menu of the **Properties** window of the Windows Forms Designer in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].</span></span>  
+>  <span data-ttu-id="da4b0-112">プロパティがない場合、`Reset`メソッド、されていない、 <xref:System.ComponentModel.DefaultValueAttribute>、および、その宣言で指定された既定値はありません、`Reset`オプションのショートカット メニューでそのプロパティは無効になって、 **のプロパティ** Visual Studio での Windows フォーム デザイナーのウィンドウ。</span><span class="sxs-lookup"><span data-stu-id="da4b0-112">If a property does not have a `Reset` method, is not marked with a <xref:System.ComponentModel.DefaultValueAttribute>, and does not have a default value supplied in its declaration, the `Reset` option for that property is disabled in the shortcut menu of the **Properties** window of the Windows Forms Designer in Visual Studio.</span></span>  
   
- <span data-ttu-id="ecbfd-113">などのデザイナー[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]を使用して、 `ShouldSerialize` *PropertyName*プロパティが既定値から変更されたかどうかを確認し、プロパティ場合にのみフォームにコードを記述する方法を変更すると、のでより効率的なコード生成します。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-113">Designers such as [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] use the `ShouldSerialize`*PropertyName* method to check whether a property has changed from its default value and write code into the form only if a property is changed, thus allowing for more efficient code generation.</span></span> <span data-ttu-id="ecbfd-114">例:</span><span class="sxs-lookup"><span data-stu-id="ecbfd-114">For example:</span></span>  
+ <span data-ttu-id="da4b0-113">Visual Studio などのデザイナーを使用して、 `ShouldSerialize` *PropertyName*プロパティが既定値から変更されたかどうかを確認し、プロパティ場合にのみフォームにコードを記述する方法を変更すると、のでより効率的なコード生成します。</span><span class="sxs-lookup"><span data-stu-id="da4b0-113">Designers such as Visual Studio use the `ShouldSerialize`*PropertyName* method to check whether a property has changed from its default value and write code into the form only if a property is changed, thus allowing for more efficient code generation.</span></span> <span data-ttu-id="da4b0-114">例えば:</span><span class="sxs-lookup"><span data-stu-id="da4b0-114">For example:</span></span>  
   
 ```vb  
 'Returns true if the font has changed; otherwise, returns false.  
@@ -73,7 +75,7 @@ public bool ShouldSerializeMyFont() {
 }  
 ```  
   
- <span data-ttu-id="ecbfd-115">完全なコード例に従います。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-115">A complete code example follows.</span></span>  
+ <span data-ttu-id="da4b0-115">完全なコード例に従います。</span><span class="sxs-lookup"><span data-stu-id="da4b0-115">A complete code example follows.</span></span>  
   
 ```vb  
 Option Explicit  
@@ -152,9 +154,9 @@ public class MyControl : Control {
 }  
 ```  
   
- <span data-ttu-id="ecbfd-116">ここでは、プライベート変数の値がからアクセスする場合でも、`MyFont`プロパティは`null`、プロパティ ブラウザーは表示されません`null`代わりに、表示、<xref:System.Windows.Forms.Control.Font%2A>されていない場合は、親のプロパティ`null`、。既定値または<xref:System.Windows.Forms.Control.Font%2A>で定義された値<xref:System.Windows.Forms.Control>です。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-116">In this case, even when the value of the private variable accessed by the `MyFont` property is `null`, the property browser does not display `null`; instead, it displays the <xref:System.Windows.Forms.Control.Font%2A> property of the parent, if it is not `null`, or the default <xref:System.Windows.Forms.Control.Font%2A> value defined in <xref:System.Windows.Forms.Control>.</span></span> <span data-ttu-id="ecbfd-117">既定値ため`MyFont`、単に設定することはできませんと<xref:System.ComponentModel.DefaultValueAttribute>このプロパティには適用できません。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-117">Thus the default value for `MyFont` cannot be simply set, and a <xref:System.ComponentModel.DefaultValueAttribute> cannot be applied to this property.</span></span> <span data-ttu-id="ecbfd-118">代わりに、`ShouldSerialize`と`Reset`のメソッドを実装する必要があります、`MyFont`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="ecbfd-118">Instead, the `ShouldSerialize` and `Reset` methods must be implemented for the `MyFont` property.</span></span>  
+ <span data-ttu-id="da4b0-116">ここでは、プライベート変数の値がからアクセスする場合でも、`MyFont`プロパティは`null`、プロパティ ブラウザーは表示されません`null`代わりに、表示、<xref:System.Windows.Forms.Control.Font%2A>されていない場合は、親のプロパティ`null`、。既定値または<xref:System.Windows.Forms.Control.Font%2A>で定義された値<xref:System.Windows.Forms.Control>です。</span><span class="sxs-lookup"><span data-stu-id="da4b0-116">In this case, even when the value of the private variable accessed by the `MyFont` property is `null`, the property browser does not display `null`; instead, it displays the <xref:System.Windows.Forms.Control.Font%2A> property of the parent, if it is not `null`, or the default <xref:System.Windows.Forms.Control.Font%2A> value defined in <xref:System.Windows.Forms.Control>.</span></span> <span data-ttu-id="da4b0-117">既定値ため`MyFont`、単に設定することはできませんと<xref:System.ComponentModel.DefaultValueAttribute>このプロパティには適用できません。</span><span class="sxs-lookup"><span data-stu-id="da4b0-117">Thus the default value for `MyFont` cannot be simply set, and a <xref:System.ComponentModel.DefaultValueAttribute> cannot be applied to this property.</span></span> <span data-ttu-id="da4b0-118">代わりに、`ShouldSerialize`と`Reset`のメソッドを実装する必要があります、`MyFont`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="da4b0-118">Instead, the `ShouldSerialize` and `Reset` methods must be implemented for the `MyFont` property.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ecbfd-119">参照</span><span class="sxs-lookup"><span data-stu-id="ecbfd-119">See Also</span></span>  
- [<span data-ttu-id="ecbfd-120">Windows フォーム コントロールのプロパティ</span><span class="sxs-lookup"><span data-stu-id="ecbfd-120">Properties in Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
- [<span data-ttu-id="ecbfd-121">プロパティの定義</span><span class="sxs-lookup"><span data-stu-id="ecbfd-121">Defining a Property</span></span>](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
- [<span data-ttu-id="ecbfd-122">プロパティ変更イベント</span><span class="sxs-lookup"><span data-stu-id="ecbfd-122">Property-Changed Events</span></span>](../../../../docs/framework/winforms/controls/property-changed-events.md)
+## <a name="see-also"></a><span data-ttu-id="da4b0-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="da4b0-119">See Also</span></span>  
+ [<span data-ttu-id="da4b0-120">Windows フォーム コントロールのプロパティ</span><span class="sxs-lookup"><span data-stu-id="da4b0-120">Properties in Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
+ [<span data-ttu-id="da4b0-121">プロパティの定義</span><span class="sxs-lookup"><span data-stu-id="da4b0-121">Defining a Property</span></span>](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
+ [<span data-ttu-id="da4b0-122">プロパティ変更イベント</span><span class="sxs-lookup"><span data-stu-id="da4b0-122">Property-Changed Events</span></span>](../../../../docs/framework/winforms/controls/property-changed-events.md)

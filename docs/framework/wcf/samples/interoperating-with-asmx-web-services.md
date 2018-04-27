@@ -1,36 +1,38 @@
 ---
-title: "ASMX Web サービスとの相互運用性"
-ms.custom: 
+title: ASMX Web サービスとの相互運用性
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ce0f548f345e3711edfd547b2e6879fafdbd0ad4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8fa28637ad4ffdc2652c4c925208cd699134579a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="interoperating-with-asmx-web-services"></a><span data-ttu-id="dd209-102">ASMX Web サービスとの相互運用性</span><span class="sxs-lookup"><span data-stu-id="dd209-102">Interoperating with ASMX Web Services</span></span>
-<span data-ttu-id="dd209-103">このサンプルは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを既存の ASMX Web サービスと統合する手順を示します。</span><span class="sxs-lookup"><span data-stu-id="dd209-103">This sample demonstrates how to integrate a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client application with an existing ASMX Web service.</span></span>  
+# <a name="interoperating-with-asmx-web-services"></a><span data-ttu-id="412b2-102">ASMX Web サービスとの相互運用性</span><span class="sxs-lookup"><span data-stu-id="412b2-102">Interoperating with ASMX Web Services</span></span>
+<span data-ttu-id="412b2-103">このサンプルは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを既存の ASMX Web サービスと統合する手順を示します。</span><span class="sxs-lookup"><span data-stu-id="412b2-103">This sample demonstrates how to integrate a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client application with an existing ASMX Web service.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="dd209-104">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="dd209-104">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+>  <span data-ttu-id="412b2-104">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="412b2-104">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="dd209-105">このサンプルは、クライアント コンソール プログラム (.exe) と、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll) で構成されています。</span><span class="sxs-lookup"><span data-stu-id="dd209-105">This sample consists of a client console program (.exe) and a service library (.dll) hosted by Internet Information Services (IIS).</span></span> <span data-ttu-id="dd209-106">サービスは、要求/応答通信パターンを定義するコントラクトを実装する ASMX Web サービスです。</span><span class="sxs-lookup"><span data-stu-id="dd209-106">The service is an ASMX Web Service that implements a contract that defines a request-reply communication pattern.</span></span> <span data-ttu-id="dd209-107">このサービスは算術演算 (`Add`、`Subtract`、`Multiply`、および `Divide`) を公開しています。</span><span class="sxs-lookup"><span data-stu-id="dd209-107">The service exposes math operations (`Add`, `Subtract`, `Multiply`, and `Divide`).</span></span> <span data-ttu-id="dd209-108">クライアントは算術演算を同期要求し、サービスはその結果を応答として返します。</span><span class="sxs-lookup"><span data-stu-id="dd209-108">The client makes synchronous requests to a math operation and the service replies with the result.</span></span> <span data-ttu-id="dd209-109">クライアント アクティビティは、コンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="dd209-109">Client activity is visible in the console window.</span></span>  
+ <span data-ttu-id="412b2-105">このサンプルは、クライアント コンソール プログラム (.exe) と、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll) で構成されています。</span><span class="sxs-lookup"><span data-stu-id="412b2-105">This sample consists of a client console program (.exe) and a service library (.dll) hosted by Internet Information Services (IIS).</span></span> <span data-ttu-id="412b2-106">サービスは、要求/応答通信パターンを定義するコントラクトを実装する ASMX Web サービスです。</span><span class="sxs-lookup"><span data-stu-id="412b2-106">The service is an ASMX Web Service that implements a contract that defines a request-reply communication pattern.</span></span> <span data-ttu-id="412b2-107">このサービスは算術演算 (`Add`、`Subtract`、`Multiply`、および `Divide`) を公開しています。</span><span class="sxs-lookup"><span data-stu-id="412b2-107">The service exposes math operations (`Add`, `Subtract`, `Multiply`, and `Divide`).</span></span> <span data-ttu-id="412b2-108">クライアントは算術演算を同期要求し、サービスはその結果を応答として返します。</span><span class="sxs-lookup"><span data-stu-id="412b2-108">The client makes synchronous requests to a math operation and the service replies with the result.</span></span> <span data-ttu-id="412b2-109">クライアント アクティビティは、コンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="412b2-109">Client activity is visible in the console window.</span></span>  
   
- <span data-ttu-id="dd209-110">次のサンプル コードで示す ASMX Web サービス実装では、計算を行い、結果を返します。</span><span class="sxs-lookup"><span data-stu-id="dd209-110">The ASMX Web service implementation shown in the following sample code calculates and returns the appropriate result.</span></span>  
+ <span data-ttu-id="412b2-110">次のサンプル コードで示す ASMX Web サービス実装では、計算を行い、結果を返します。</span><span class="sxs-lookup"><span data-stu-id="412b2-110">The ASMX Web service implementation shown in the following sample code calculates and returns the appropriate result.</span></span>  
   
-```  
+```csharp  
 [WebService(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public class CalculatorService : System.Web.Services.WebService  
     {  
@@ -57,15 +59,15 @@ public class CalculatorService : System.Web.Services.WebService
     }  
 ```  
   
- <span data-ttu-id="dd209-111">上記の構成では、サービスと同じコンピュータ上にあるクライアントは、http://localhost/servicemodelsamples/service.asmx でサービスにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="dd209-111">As configured, the service can be accessed at http://localhost/servicemodelsamples/service.asmx by a client on the same machine.</span></span> <span data-ttu-id="dd209-112">リモート コンピューター上のクライアントがサービスにアクセスするには、localhost の代わりに修飾ドメイン名を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dd209-112">For clients on remote machines to access the service, a qualified domain name must be specified instead of localhost.</span></span>  
+ <span data-ttu-id="412b2-111">サービスにアクセスできるように構成されている、http://localhost/servicemodelsamples/service.asmx同じマシン上のクライアントによってです。</span><span class="sxs-lookup"><span data-stu-id="412b2-111">As configured, the service can be accessed at http://localhost/servicemodelsamples/service.asmx by a client on the same machine.</span></span> <span data-ttu-id="412b2-112">リモート コンピューター上のクライアントがサービスにアクセスするには、localhost の代わりに修飾ドメイン名を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="412b2-112">For clients on remote machines to access the service, a qualified domain name must be specified instead of localhost.</span></span>  
   
- <span data-ttu-id="dd209-113">によって生成されたクライアント経由の通信が行われます、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。</span><span class="sxs-lookup"><span data-stu-id="dd209-113">Communication is done through a client generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span> <span data-ttu-id="dd209-114">このクライアントは、ファイル generatedClient.cs に含まれています。</span><span class="sxs-lookup"><span data-stu-id="dd209-114">The client is contained in the file generatedClient.cs.</span></span> <span data-ttu-id="dd209-115">プロキシ コードを生成するには、ASMX サービスを利用できる必要があります。このサービスは、更新されたメタデータの取得に使用されるためです。</span><span class="sxs-lookup"><span data-stu-id="dd209-115">The ASMX service must be available to generate the proxy code, because it is used to retrieve the updated metadata.</span></span> <span data-ttu-id="dd209-116">次のコマンドをクライアント ディレクトリでコマンド プロンプトから実行して、型指定のあるプロキシを生成します。</span><span class="sxs-lookup"><span data-stu-id="dd209-116">Run the following command from a command prompt in the client directory to generate the typed proxy.</span></span>  
+ <span data-ttu-id="412b2-113">によって生成されたクライアント経由の通信が行われます、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。</span><span class="sxs-lookup"><span data-stu-id="412b2-113">Communication is done through a client generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span> <span data-ttu-id="412b2-114">このクライアントは、ファイル generatedClient.cs に含まれています。</span><span class="sxs-lookup"><span data-stu-id="412b2-114">The client is contained in the file generatedClient.cs.</span></span> <span data-ttu-id="412b2-115">プロキシ コードを生成するには、ASMX サービスを利用できる必要があります。このサービスは、更新されたメタデータの取得に使用されるためです。</span><span class="sxs-lookup"><span data-stu-id="412b2-115">The ASMX service must be available to generate the proxy code, because it is used to retrieve the updated metadata.</span></span> <span data-ttu-id="412b2-116">次のコマンドをクライアント ディレクトリでコマンド プロンプトから実行して、型指定のあるプロキシを生成します。</span><span class="sxs-lookup"><span data-stu-id="412b2-116">Run the following command from a command prompt in the client directory to generate the typed proxy.</span></span>  
   
 ```  
 svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedClient.cs  
 ```  
   
- <span data-ttu-id="dd209-117">生成されたクライアントを使用することにより、適切なアドレスとバインディングを構成して、サービス エンドポイントにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="dd209-117">By using the generated client, you can access a service endpoint by configuring the appropriate address and binding.</span></span> <span data-ttu-id="dd209-118">サービスと同様、クライアントは構成ファイル (App.config) を使用して、通信するエンドポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="dd209-118">Like the service, the client uses a configuration file (App.config) to specify the endpoint to communicate with.</span></span> <span data-ttu-id="dd209-119">クライアント エンドポイント構成は、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="dd209-119">The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract, as shown in the following sample configuration.</span></span>  
+ <span data-ttu-id="412b2-117">生成されたクライアントを使用することにより、適切なアドレスとバインディングを構成して、サービス エンドポイントにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="412b2-117">By using the generated client, you can access a service endpoint by configuring the appropriate address and binding.</span></span> <span data-ttu-id="412b2-118">サービスと同様、クライアントは構成ファイル (App.config) を使用して、通信するエンドポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="412b2-118">Like the service, the client uses a configuration file (App.config) to specify the endpoint to communicate with.</span></span> <span data-ttu-id="412b2-119">クライアント エンドポイント構成は、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="412b2-119">The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract, as shown in the following sample configuration.</span></span>  
   
 ```xml  
 <client>  
@@ -76,9 +78,9 @@ svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samp
 </client>  
 ```  
   
- <span data-ttu-id="dd209-120">クライアント実装は、生成されたクライアントのインスタンスをコンストラクトします。</span><span class="sxs-lookup"><span data-stu-id="dd209-120">The client implementation constructs an instance of the generated client.</span></span> <span data-ttu-id="dd209-121">生成されたクライアントは、サービスとの通信に使用できます。</span><span class="sxs-lookup"><span data-stu-id="dd209-121">The generated client can then be used to communicate with the service.</span></span>  
+ <span data-ttu-id="412b2-120">クライアント実装は、生成されたクライアントのインスタンスをコンストラクトします。</span><span class="sxs-lookup"><span data-stu-id="412b2-120">The client implementation constructs an instance of the generated client.</span></span> <span data-ttu-id="412b2-121">生成されたクライアントは、サービスとの通信に使用できます。</span><span class="sxs-lookup"><span data-stu-id="412b2-121">The generated client can then be used to communicate with the service.</span></span>  
   
-```  
+```csharp  
 // Create a client.  
 CalculatorServiceSoapClient client = new CalculatorServiceSoapClient();  
   
@@ -114,7 +116,7 @@ Console.WriteLine("Press <ENTER> to terminate client.");
 Console.ReadLine();  
 ```  
   
- <span data-ttu-id="dd209-122">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="dd209-122">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="dd209-123">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="dd209-123">Press ENTER in the client window to shut down the client.</span></span>  
+ <span data-ttu-id="412b2-122">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="412b2-122">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="412b2-123">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="412b2-123">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -125,21 +127,21 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="dd209-124">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="dd209-124">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="412b2-124">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="412b2-124">To set up, build, and run the sample</span></span>  
   
-1.  <span data-ttu-id="dd209-125">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="dd209-125">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1.  <span data-ttu-id="412b2-125">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="412b2-125">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  <span data-ttu-id="dd209-126">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="dd209-126">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2.  <span data-ttu-id="412b2-126">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="412b2-126">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  <span data-ttu-id="dd209-127">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="dd209-127">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3.  <span data-ttu-id="412b2-127">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="412b2-127">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="dd209-128">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="dd209-128">The samples may already be installed on your machine.</span></span> <span data-ttu-id="dd209-129">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="dd209-129">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="412b2-128">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="412b2-128">The samples may already be installed on your machine.</span></span> <span data-ttu-id="412b2-129">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="412b2-129">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="dd209-130">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="dd209-130">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="dd209-131">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="dd209-131">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="412b2-130">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="412b2-130">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="412b2-131">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="412b2-131">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\ASMX`  
   
-## <a name="see-also"></a><span data-ttu-id="dd209-132">参照</span><span class="sxs-lookup"><span data-stu-id="dd209-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="412b2-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="412b2-132">See Also</span></span>
