@@ -12,11 +12,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: f335ee1412932043b175aa49b29ecd360d447eb9
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 630815032925e5dac0477147c6265657face44a5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="get-started-with-c"></a>C# の使用を開始する #
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 04/09/2018
 
 * [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
 
-    [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 統合開発環境を使用する方法について説明します。
+    Visual C# 統合開発環境を使用する方法について説明します。
 
 * [C# プログラミング ガイド](../../csharp/programming-guide/index.md)
 

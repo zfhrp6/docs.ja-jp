@@ -12,11 +12,11 @@ ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
 caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e53ba3e1134b09edcc87a0421b7699bcf3bb1d39
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: 58e63d95c2f10329f85d6150b58f196294de38d1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入門
 このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。  
@@ -55,12 +55,10 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  オブジェクト指向プログラミングの概要、独自のオブジェクトの作成方法、およびオブジェクトを使用してコーディングを簡潔にする方法を説明するページへのリンクを示します。  
   
  [サンプル](../../visual-basic/sample-applications.md)  
- 
-          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるサンプル コードへのリンクを示します。  
+ Visual Basic によるサンプル コードへのリンクを示します。  
   
  [チュートリアル](../../visual-basic/walkthroughs.md)  
- 
-          [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな面を説明するヘルプ ページの一覧を示します。  
+ Visual Basic 言語のさまざまな面を説明するヘルプ ページの一覧を示します。  
   
  [ご意見](/visualstudio/ide/talk-to-us)  
  サポートの利用方法、およびフィードバックの送付方法について説明します。  
@@ -69,7 +67,7 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  
           [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のドキュメントへのリンクを示します。  
   
- [C#](../../csharp/index.md) [!INCLUDE[csprcs](~/includes/csprcs-md.md)] を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
+ [C#](../../csharp/index.md) Visual C# を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
   
  [Visual C++](/cpp/)  
  Visual C++ のドキュメントへのリンクを示します。  
