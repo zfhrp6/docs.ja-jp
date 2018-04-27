@@ -1,64 +1,66 @@
 ---
-title: "Entity Framework 用 SqlClient"
-ms.custom: 
+title: Entity Framework 用 SqlClient
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9a5d6d39-d955-43a5-a5c2-931c239398f1
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 08f662d41f1a147970ae7611f4fe061dd86bac1f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2801ad445be073f2cd4725d04a0c731e8bfcdd1b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="sqlclient-for-the-entity-framework"></a><span data-ttu-id="d42ba-102">Entity Framework 用 SqlClient</span><span class="sxs-lookup"><span data-stu-id="d42ba-102">SqlClient for the Entity Framework</span></span>
-<span data-ttu-id="d42ba-103">このセクションでは、.NET Framework Data Provider for SQL Server (SqlClient) について説明します。これによって、Microsoft SQL Server 上で Entity Framework が機能できるようになります。</span><span class="sxs-lookup"><span data-stu-id="d42ba-103">This section describes the .NET Framework Data Provider for SQL Server (SqlClient), which enables the Entity Framework to work over Microsoft SQL Server.</span></span>  
+# <a name="sqlclient-for-the-entity-framework"></a><span data-ttu-id="67d34-102">Entity Framework 用 SqlClient</span><span class="sxs-lookup"><span data-stu-id="67d34-102">SqlClient for the Entity Framework</span></span>
+<span data-ttu-id="67d34-103">このセクションでは、.NET Framework Data Provider for SQL Server (SqlClient) について説明します。これによって、Microsoft SQL Server 上で Entity Framework が機能できるようになります。</span><span class="sxs-lookup"><span data-stu-id="67d34-103">This section describes the .NET Framework Data Provider for SQL Server (SqlClient), which enables the Entity Framework to work over Microsoft SQL Server.</span></span>  
   
-## <a name="provider-schema-attribute"></a><span data-ttu-id="d42ba-104">Provider スキーマ属性</span><span class="sxs-lookup"><span data-stu-id="d42ba-104">Provider Schema Attribute</span></span>  
- <span data-ttu-id="d42ba-105">`Provider` は、ストア スキーマ定義言語 (SSDL) の `Schema` 要素の属性です。</span><span class="sxs-lookup"><span data-stu-id="d42ba-105">`Provider` is an attribute of the `Schema` element in store schema definition language (SSDL).</span></span>  
+## <a name="provider-schema-attribute"></a><span data-ttu-id="67d34-104">Provider スキーマ属性</span><span class="sxs-lookup"><span data-stu-id="67d34-104">Provider Schema Attribute</span></span>  
+ <span data-ttu-id="67d34-105">`Provider` は、ストア スキーマ定義言語 (SSDL) の `Schema` 要素の属性です。</span><span class="sxs-lookup"><span data-stu-id="67d34-105">`Provider` is an attribute of the `Schema` element in store schema definition language (SSDL).</span></span>  
   
- <span data-ttu-id="d42ba-106">SqlClient を使用するには、文字列 "System.Data.SqlClient" を `Provider` 要素の `Schema` 属性に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="d42ba-106">To use SqlClient, assign the string "System.Data.SqlClient" to the `Provider` attribute of the `Schema` element.</span></span>  
+ <span data-ttu-id="67d34-106">SqlClient を使用するには、文字列 "System.Data.SqlClient" を `Provider` 要素の `Schema` 属性に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="67d34-106">To use SqlClient, assign the string "System.Data.SqlClient" to the `Provider` attribute of the `Schema` element.</span></span>  
   
-## <a name="providermanifesttoken-schema-attribute"></a><span data-ttu-id="d42ba-107">ProviderManifestToken スキーマ属性</span><span class="sxs-lookup"><span data-stu-id="d42ba-107">ProviderManifestToken Schema Attribute</span></span>  
- <span data-ttu-id="d42ba-108">`ProviderManifestToken` は、SSDL の`Schema` 要素の必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="d42ba-108">`ProviderManifestToken` is a required attribute of the `Schema` element in SSDL.</span></span> <span data-ttu-id="d42ba-109">このトークンは、オフライン シナリオ用のプロバイダー マニフェストを読み込むために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d42ba-109">This token is used to load the provider manifest for offline scenarios.</span></span> <span data-ttu-id="d42ba-110">詳細については`ProviderManifestToken`属性は、「[スキーマ要素 (SSDL)](http://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222)です。</span><span class="sxs-lookup"><span data-stu-id="d42ba-110">For more information about `ProviderManifestToken` attribute, see [Schema Element (SSDL)](http://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222).</span></span>  
+## <a name="providermanifesttoken-schema-attribute"></a><span data-ttu-id="67d34-107">ProviderManifestToken スキーマ属性</span><span class="sxs-lookup"><span data-stu-id="67d34-107">ProviderManifestToken Schema Attribute</span></span>  
+ <span data-ttu-id="67d34-108">`ProviderManifestToken` は、SSDL の`Schema` 要素の必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="67d34-108">`ProviderManifestToken` is a required attribute of the `Schema` element in SSDL.</span></span> <span data-ttu-id="67d34-109">このトークンは、オフライン シナリオ用のプロバイダー マニフェストを読み込むために使用されます。</span><span class="sxs-lookup"><span data-stu-id="67d34-109">This token is used to load the provider manifest for offline scenarios.</span></span> <span data-ttu-id="67d34-110">詳細については`ProviderManifestToken`属性は、「[スキーマ要素 (SSDL)](http://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222)です。</span><span class="sxs-lookup"><span data-stu-id="67d34-110">For more information about `ProviderManifestToken` attribute, see [Schema Element (SSDL)](http://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222).</span></span>  
   
- <span data-ttu-id="d42ba-111">SqlClient は、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] の各バージョンのデータ プロバイダーとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="d42ba-111">SqlClient can be used as a data provider for different versions of [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="d42ba-112">これらのバージョンでは機能が異なります。</span><span class="sxs-lookup"><span data-stu-id="d42ba-112">These versions have different capabilities.</span></span> <span data-ttu-id="d42ba-113">たとえば、[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] では、`varchar(max)` で導入された `nvarchar(max)` 型および [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] 型をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="d42ba-113">For example, [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] does not support `varchar(max)` and `nvarchar(max)` types that were introduced with [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].</span></span>  
+ <span data-ttu-id="67d34-111">SqlClient は、異なるバージョンの SQL Server のデータ プロバイダーとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="67d34-111">SqlClient can be used as a data provider for different versions of SQL Server.</span></span> <span data-ttu-id="67d34-112">これらのバージョンでは機能が異なります。</span><span class="sxs-lookup"><span data-stu-id="67d34-112">These versions have different capabilities.</span></span> <span data-ttu-id="67d34-113">たとえば、[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] では、`varchar(max)` で導入された `nvarchar(max)` 型および [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] 型をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="67d34-113">For example, [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] does not support `varchar(max)` and `nvarchar(max)` types that were introduced with [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].</span></span>  
   
- <span data-ttu-id="d42ba-114">SqlClient は、SQL Server の各バージョンに対応する次のプロバイダー マニフェスト トークンを生成し、受け取ります。</span><span class="sxs-lookup"><span data-stu-id="d42ba-114">SqlClient produces and accepts the following provider manifest tokens for different versions of SQL Server.</span></span>  
+ <span data-ttu-id="67d34-114">SqlClient は、SQL Server の各バージョンに対応する次のプロバイダー マニフェスト トークンを生成し、受け取ります。</span><span class="sxs-lookup"><span data-stu-id="67d34-114">SqlClient produces and accepts the following provider manifest tokens for different versions of SQL Server.</span></span>  
   
-|<span data-ttu-id="d42ba-115">SQL Server 2000</span><span class="sxs-lookup"><span data-stu-id="d42ba-115">SQL Server 2000</span></span>|<span data-ttu-id="d42ba-116">SQL Server 2005</span><span class="sxs-lookup"><span data-stu-id="d42ba-116">SQL Server 2005</span></span>|<span data-ttu-id="d42ba-117">SQL Server 2008</span><span class="sxs-lookup"><span data-stu-id="d42ba-117">SQL Server 2008</span></span>|  
+|<span data-ttu-id="67d34-115">SQL Server 2000</span><span class="sxs-lookup"><span data-stu-id="67d34-115">SQL Server 2000</span></span>|<span data-ttu-id="67d34-116">SQL Server 2005</span><span class="sxs-lookup"><span data-stu-id="67d34-116">SQL Server 2005</span></span>|<span data-ttu-id="67d34-117">SQL Server 2008</span><span class="sxs-lookup"><span data-stu-id="67d34-117">SQL Server 2008</span></span>|  
 |-|-|-|  
-|<span data-ttu-id="d42ba-118">2000</span><span class="sxs-lookup"><span data-stu-id="d42ba-118">2000</span></span>|<span data-ttu-id="d42ba-119">2005</span><span class="sxs-lookup"><span data-stu-id="d42ba-119">2005</span></span>|<span data-ttu-id="d42ba-120">2008</span><span class="sxs-lookup"><span data-stu-id="d42ba-120">2008</span></span>|  
+|<span data-ttu-id="67d34-118">2000</span><span class="sxs-lookup"><span data-stu-id="67d34-118">2000</span></span>|<span data-ttu-id="67d34-119">2005</span><span class="sxs-lookup"><span data-stu-id="67d34-119">2005</span></span>|<span data-ttu-id="67d34-120">2008</span><span class="sxs-lookup"><span data-stu-id="67d34-120">2008</span></span>|  
   
 > [!NOTE]
->  <span data-ttu-id="d42ba-121">以降で[!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)]2010、 [ADO.NET Entity Data Model ツール](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)SQL Server 2000 をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="d42ba-121">Starting with [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] 2010, the [ADO.NET Entity Data Model  Tools](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527) do not support SQL Server 2000.</span></span>  
+>  <span data-ttu-id="67d34-121">以降で[!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)]2010、 [ADO.NET Entity Data Model ツール](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)SQL Server 2000 をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="67d34-121">Starting with [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] 2010, the [ADO.NET Entity Data Model  Tools](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527) do not support SQL Server 2000.</span></span>  
   
-## <a name="provider-namespace-name"></a><span data-ttu-id="d42ba-122">プロバイダーの名前空間名</span><span class="sxs-lookup"><span data-stu-id="d42ba-122">Provider Namespace Name</span></span>  
- <span data-ttu-id="d42ba-123">すべてのプロバイダーで名前空間を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d42ba-123">All providers must specify a namespace.</span></span> <span data-ttu-id="d42ba-124">このプロパティによって、型や関数など、プロバイダーが特定のコンストラクターに使用するプレフィックスを Entity Framework に通知できます。</span><span class="sxs-lookup"><span data-stu-id="d42ba-124">This property tells the Entity Framework which prefix is used by the provider for specific constructs, such as types and functions.</span></span> <span data-ttu-id="d42ba-125">SqlClient プロバイダー マニフェストの名前空間は `SqlServer` です。</span><span class="sxs-lookup"><span data-stu-id="d42ba-125">The namespace for SqlClient provider manifests is `SqlServer`.</span></span> <span data-ttu-id="d42ba-126">名前空間の詳細については、次を参照してください。[名前空間](../../../../../docs/framework/data/adonet/ef/language-reference/namespaces-entity-sql.md)です。</span><span class="sxs-lookup"><span data-stu-id="d42ba-126">For more information about namespaces, see [Namespaces](../../../../../docs/framework/data/adonet/ef/language-reference/namespaces-entity-sql.md).</span></span>  
+## <a name="provider-namespace-name"></a><span data-ttu-id="67d34-122">プロバイダーの名前空間名</span><span class="sxs-lookup"><span data-stu-id="67d34-122">Provider Namespace Name</span></span>  
+ <span data-ttu-id="67d34-123">すべてのプロバイダーで名前空間を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="67d34-123">All providers must specify a namespace.</span></span> <span data-ttu-id="67d34-124">このプロパティによって、型や関数など、プロバイダーが特定のコンストラクターに使用するプレフィックスを Entity Framework に通知できます。</span><span class="sxs-lookup"><span data-stu-id="67d34-124">This property tells the Entity Framework which prefix is used by the provider for specific constructs, such as types and functions.</span></span> <span data-ttu-id="67d34-125">SqlClient プロバイダー マニフェストの名前空間は `SqlServer` です。</span><span class="sxs-lookup"><span data-stu-id="67d34-125">The namespace for SqlClient provider manifests is `SqlServer`.</span></span> <span data-ttu-id="67d34-126">名前空間の詳細については、次を参照してください。[名前空間](../../../../../docs/framework/data/adonet/ef/language-reference/namespaces-entity-sql.md)です。</span><span class="sxs-lookup"><span data-stu-id="67d34-126">For more information about namespaces, see [Namespaces](../../../../../docs/framework/data/adonet/ef/language-reference/namespaces-entity-sql.md).</span></span>  
   
-## <a name="types"></a><span data-ttu-id="d42ba-127">種類</span><span class="sxs-lookup"><span data-stu-id="d42ba-127">Types</span></span>  
- <span data-ttu-id="d42ba-128">Entity Framework 用の SqlClient プロバイダーは、概念モデルの型と SQL Server 型の間のマッピング情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="d42ba-128">The SqlClient provider for the Entity Framework provides mapping information between conceptual model types and SQL Server types.</span></span> <span data-ttu-id="d42ba-129">詳細については、次を参照してください。 [Entity Framework 用 SqlClient](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="d42ba-129">For more information, see [SqlClient for Entity FrameworkTypes](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md).</span></span>  
+## <a name="types"></a><span data-ttu-id="67d34-127">種類</span><span class="sxs-lookup"><span data-stu-id="67d34-127">Types</span></span>  
+ <span data-ttu-id="67d34-128">Entity Framework 用の SqlClient プロバイダーは、概念モデルの型と SQL Server 型の間のマッピング情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="67d34-128">The SqlClient provider for the Entity Framework provides mapping information between conceptual model types and SQL Server types.</span></span> <span data-ttu-id="67d34-129">詳細については、次を参照してください。 [Entity Framework 用 SqlClient](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="67d34-129">For more information, see [SqlClient for Entity FrameworkTypes](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md).</span></span>  
   
-## <a name="functions"></a><span data-ttu-id="d42ba-130">関数</span><span class="sxs-lookup"><span data-stu-id="d42ba-130">Functions</span></span>  
- <span data-ttu-id="d42ba-131">Entity Framework 用の SqlClient プロバイダーは、プロバイダーがサポートする関数の一覧を定義します。</span><span class="sxs-lookup"><span data-stu-id="d42ba-131">The SqlClient provider for the Entity Framework defines the list of functions supported by the provider.</span></span> <span data-ttu-id="d42ba-132">サポートされている関数の一覧は、次を参照してください。 [Framework 用 SqlClient エンティティ関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)です。</span><span class="sxs-lookup"><span data-stu-id="d42ba-132">For a list of the supported functions, see [SqlClient for Entity Framework Functions](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).</span></span>  
+## <a name="functions"></a><span data-ttu-id="67d34-130">関数</span><span class="sxs-lookup"><span data-stu-id="67d34-130">Functions</span></span>  
+ <span data-ttu-id="67d34-131">Entity Framework 用の SqlClient プロバイダーは、プロバイダーがサポートする関数の一覧を定義します。</span><span class="sxs-lookup"><span data-stu-id="67d34-131">The SqlClient provider for the Entity Framework defines the list of functions supported by the provider.</span></span> <span data-ttu-id="67d34-132">サポートされている関数の一覧は、次を参照してください。 [Framework 用 SqlClient エンティティ関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)です。</span><span class="sxs-lookup"><span data-stu-id="67d34-132">For a list of the supported functions, see [SqlClient for Entity Framework Functions](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="d42ba-133">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d42ba-133">In This Section</span></span>  
- [<span data-ttu-id="d42ba-134">Entity Framework 用 SqlClient 関数</span><span class="sxs-lookup"><span data-stu-id="d42ba-134">SqlClient for Entity Framework Functions</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)  
+## <a name="in-this-section"></a><span data-ttu-id="67d34-133">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="67d34-133">In This Section</span></span>  
+ [<span data-ttu-id="67d34-134">Entity Framework 用 SqlClient 関数</span><span class="sxs-lookup"><span data-stu-id="67d34-134">SqlClient for Entity Framework Functions</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)  
   
- [<span data-ttu-id="d42ba-135">Entity Framework 型用 SqlClient</span><span class="sxs-lookup"><span data-stu-id="d42ba-135">SqlClient for Entity FrameworkTypes</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md)  
+ [<span data-ttu-id="67d34-135">Entity Framework 型用 SqlClient</span><span class="sxs-lookup"><span data-stu-id="67d34-135">SqlClient for Entity FrameworkTypes</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md)  
   
- [<span data-ttu-id="d42ba-136">Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題</span><span class="sxs-lookup"><span data-stu-id="d42ba-136">Known Issues in SqlClient for Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/known-issues-in-sqlclient-for-entity-framework.md)  
+ [<span data-ttu-id="67d34-136">Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題</span><span class="sxs-lookup"><span data-stu-id="67d34-136">Known Issues in SqlClient for Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/known-issues-in-sqlclient-for-entity-framework.md)  
   
-## <a name="see-also"></a><span data-ttu-id="d42ba-137">参照</span><span class="sxs-lookup"><span data-stu-id="d42ba-137">See Also</span></span>  
- [<span data-ttu-id="d42ba-138">Entity SQL 言語</span><span class="sxs-lookup"><span data-stu-id="d42ba-138">Entity SQL Language</span></span>](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
- [<span data-ttu-id="d42ba-139">言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="d42ba-139">Language Reference</span></span>](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)  
- [<span data-ttu-id="d42ba-140">Entity Framework 用の SqlClient プロバイダーに関する既知の問題</span><span class="sxs-lookup"><span data-stu-id="d42ba-140">Known Issues in SqlClient Provider for Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)
+## <a name="see-also"></a><span data-ttu-id="67d34-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="67d34-137">See Also</span></span>  
+ [<span data-ttu-id="67d34-138">Entity SQL 言語</span><span class="sxs-lookup"><span data-stu-id="67d34-138">Entity SQL Language</span></span>](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
+ [<span data-ttu-id="67d34-139">言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="67d34-139">Language Reference</span></span>](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)  
+ [<span data-ttu-id="67d34-140">Entity Framework 用の SqlClient プロバイダーに関する既知の問題</span><span class="sxs-lookup"><span data-stu-id="67d34-140">Known Issues in SqlClient Provider for Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)

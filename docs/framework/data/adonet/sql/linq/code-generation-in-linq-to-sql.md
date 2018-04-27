@@ -1,49 +1,51 @@
 ---
-title: "LINQ to SQL でのコード生成"
-ms.custom: 
+title: LINQ to SQL でのコード生成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0d1c80817bb1126d8e9828171c2a2aeee52eb672
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: ff543efecb65e61fecef0056650b35735bef83c0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="48469-102">LINQ to SQL でのコード生成</span><span class="sxs-lookup"><span data-stu-id="48469-102">Code Generation in LINQ to SQL</span></span>
-<span data-ttu-id="48469-103">[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal コマンド ライン ツールを使用することにより、データベースを表すコードを生成できます。</span><span class="sxs-lookup"><span data-stu-id="48469-103">You can generate code to represent a database by using either the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] or the SQLMetal command-line tool.</span></span> <span data-ttu-id="48469-104">どちらの場合も、エンド ツー エンドのコード生成が次の 3 段階で行われます。</span><span class="sxs-lookup"><span data-stu-id="48469-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
+# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="fa9c5-102">LINQ to SQL でのコード生成</span><span class="sxs-lookup"><span data-stu-id="fa9c5-102">Code Generation in LINQ to SQL</span></span>
+<span data-ttu-id="fa9c5-103">[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal コマンド ライン ツールを使用することにより、データベースを表すコードを生成できます。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-103">You can generate code to represent a database by using either the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] or the SQLMetal command-line tool.</span></span> <span data-ttu-id="fa9c5-104">どちらの場合も、エンド ツー エンドのコード生成が次の 3 段階で行われます。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
   
-1.  <span data-ttu-id="48469-105">*DBML Extractor*データベースからスキーマ情報を抽出し、情報を XML 形式の DBML ファイルに再アセンブルします。</span><span class="sxs-lookup"><span data-stu-id="48469-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
+1.  <span data-ttu-id="fa9c5-105">*DBML Extractor*データベースからスキーマ情報を抽出し、情報を XML 形式の DBML ファイルに再アセンブルします。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
   
-2.  <span data-ttu-id="48469-106">によって、DBML ファイルをスキャン、 *DBML Validator*のエラーです。</span><span class="sxs-lookup"><span data-stu-id="48469-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
+2.  <span data-ttu-id="fa9c5-106">によって、DBML ファイルをスキャン、 *DBML Validator*のエラーです。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
   
-3.  <span data-ttu-id="48469-107">検証エラーが見つからない場合、ファイルはコード ジェネレーターに渡されます。</span><span class="sxs-lookup"><span data-stu-id="48469-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
+3.  <span data-ttu-id="fa9c5-107">検証エラーが見つからない場合、ファイルはコード ジェネレーターに渡されます。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
   
- <span data-ttu-id="48469-108">詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="48469-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="48469-109">使用する開発者[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]使用することができます、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]コードを生成します。</span><span class="sxs-lookup"><span data-stu-id="48469-109">Developers using [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] can also use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] to generate code.</span></span> <span data-ttu-id="48469-110">参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。</span><span class="sxs-lookup"><span data-stu-id="48469-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
+ <span data-ttu-id="fa9c5-108">詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="fa9c5-109">Visual Studio を使用している開発者が使用することも、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]コードを生成します。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-109">Developers using Visual Studio can also use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] to generate code.</span></span> <span data-ttu-id="fa9c5-110">参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
   
-## <a name="dbml-extractor"></a><span data-ttu-id="48469-111">DBML Extractor</span><span class="sxs-lookup"><span data-stu-id="48469-111">DBML Extractor</span></span>  
- <span data-ttu-id="48469-112">DBML Extractor は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]コンポーネントの入力としてのデータベースのメタデータを受け取り、出力として、DBML ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="48469-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
+## <a name="dbml-extractor"></a><span data-ttu-id="fa9c5-111">DBML Extractor</span><span class="sxs-lookup"><span data-stu-id="fa9c5-111">DBML Extractor</span></span>  
+ <span data-ttu-id="fa9c5-112">DBML Extractor は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]コンポーネントの入力としてのデータベースのメタデータを受け取り、出力として、DBML ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
   
-## <a name="code-generator"></a><span data-ttu-id="48469-113">コード ジェネレーター</span><span class="sxs-lookup"><span data-stu-id="48469-113">Code Generator</span></span>  
- <span data-ttu-id="48469-114">コード ジェネレーターは [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のコンポーネントの 1 つで、DBML ファイルを [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]、C#、または XML のマッピング ファイルに変換します。</span><span class="sxs-lookup"><span data-stu-id="48469-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)], C#, or XML mapping files.</span></span>  
+## <a name="code-generator"></a><span data-ttu-id="fa9c5-113">コード ジェネレーター</span><span class="sxs-lookup"><span data-stu-id="fa9c5-113">Code Generator</span></span>  
+ <span data-ttu-id="fa9c5-114">コード ジェネレーターが、 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] DBML に変換するコンポーネントのファイルを Visual Basic、C# の場合、または XML マッピング ファイル。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to Visual Basic, C#, or XML mapping files.</span></span>  
   
-## <a name="xml-schema-definition-file"></a><span data-ttu-id="48469-115">XML スキーマ定義ファイル</span><span class="sxs-lookup"><span data-stu-id="48469-115">XML Schema Definition File</span></span>  
- <span data-ttu-id="48469-116">DBML ファイルは、以下のような XSD ファイルのスキーマ定義に対して有効である必要があります。</span><span class="sxs-lookup"><span data-stu-id="48469-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
+## <a name="xml-schema-definition-file"></a><span data-ttu-id="fa9c5-115">XML スキーマ定義ファイル</span><span class="sxs-lookup"><span data-stu-id="fa9c5-115">XML Schema Definition File</span></span>  
+ <span data-ttu-id="fa9c5-116">DBML ファイルは、以下のような XSD ファイルのスキーマ定義に対して有効である必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
   
- <span data-ttu-id="48469-117">このスキーマ定義ファイルを、外部マッピング ファイルの検証に使われるスキーマ定義ファイルと区別してください。</span><span class="sxs-lookup"><span data-stu-id="48469-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="48469-118">詳細については、次を参照してください。[外部マッピング](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md))。</span><span class="sxs-lookup"><span data-stu-id="48469-118">For more information, see [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).</span></span>  
+ <span data-ttu-id="fa9c5-117">このスキーマ定義ファイルを、外部マッピング ファイルの検証に使われるスキーマ定義ファイルと区別してください。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="fa9c5-118">詳細については、次を参照してください。[外部マッピング](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md))。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-118">For more information, see [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]<span data-ttu-id="48469-119"> ユーザーには、この XSD ファイルが [XML スキーマ] ダイアログ ボックスで「DbmlSchema.xsd」としても表示されます。</span><span class="sxs-lookup"><span data-stu-id="48469-119"> users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="48469-120">使用するには、XSD ファイル正しく DBML ファイルを検証するため、次を参照してください。[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。</span><span class="sxs-lookup"><span data-stu-id="48469-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
+>  <span data-ttu-id="fa9c5-119">Visual Studio ユーザーも紹介この XSD ファイルの XML スキーマ ダイアログ ボックスで「DbmlSchema.xsd」としてします。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-119">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="fa9c5-120">使用するには、XSD ファイル正しく DBML ファイルを検証するため、次を参照してください。[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  
@@ -253,8 +255,8 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="sample-dbml-file"></a><span data-ttu-id="48469-121">サンプル DBML ファイル</span><span class="sxs-lookup"><span data-stu-id="48469-121">Sample DBML File</span></span>  
- <span data-ttu-id="48469-122">次のコードは、Northwind サンプル データベースから作成された DBML ファイルの抜粋です。</span><span class="sxs-lookup"><span data-stu-id="48469-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="48469-123">SQLMetal でを使用して、ファイル全体を生成することができます、 **/xml**オプション。</span><span class="sxs-lookup"><span data-stu-id="48469-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="48469-124">詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="48469-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
+## <a name="sample-dbml-file"></a><span data-ttu-id="fa9c5-121">サンプル DBML ファイル</span><span class="sxs-lookup"><span data-stu-id="fa9c5-121">Sample DBML File</span></span>  
+ <span data-ttu-id="fa9c5-122">次のコードは、Northwind サンプル データベースから作成された DBML ファイルの抜粋です。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="fa9c5-123">SQLMetal でを使用して、ファイル全体を生成することができます、 **/xml**オプション。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="fa9c5-124">詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="fa9c5-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -280,9 +282,9 @@ elementFormDefault="qualified" >
 </Database>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="48469-125">参照</span><span class="sxs-lookup"><span data-stu-id="48469-125">See Also</span></span>  
- [<span data-ttu-id="48469-126">背景情報</span><span class="sxs-lookup"><span data-stu-id="48469-126">Background Information</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
- [<span data-ttu-id="48469-127">外部マップ</span><span class="sxs-lookup"><span data-stu-id="48469-127">External Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
- [<span data-ttu-id="48469-128">方法 : オブジェクト モデルを外部ファイルとして生成する</span><span class="sxs-lookup"><span data-stu-id="48469-128">How to: Generate the Object Model as an External File</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
- [<span data-ttu-id="48469-129">サンプル データベースのダウンロード</span><span class="sxs-lookup"><span data-stu-id="48469-129">Downloading Sample Databases</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
- [<span data-ttu-id="48469-130">参照</span><span class="sxs-lookup"><span data-stu-id="48469-130">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+## <a name="see-also"></a><span data-ttu-id="fa9c5-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="fa9c5-125">See Also</span></span>  
+ [<span data-ttu-id="fa9c5-126">背景情報</span><span class="sxs-lookup"><span data-stu-id="fa9c5-126">Background Information</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
+ [<span data-ttu-id="fa9c5-127">外部マップ</span><span class="sxs-lookup"><span data-stu-id="fa9c5-127">External Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
+ [<span data-ttu-id="fa9c5-128">方法 : オブジェクト モデルを外部ファイルとして生成する</span><span class="sxs-lookup"><span data-stu-id="fa9c5-128">How to: Generate the Object Model as an External File</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
+ [<span data-ttu-id="fa9c5-129">サンプル データベースのダウンロード</span><span class="sxs-lookup"><span data-stu-id="fa9c5-129">Downloading Sample Databases</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
+ [<span data-ttu-id="fa9c5-130">参照</span><span class="sxs-lookup"><span data-stu-id="fa9c5-130">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

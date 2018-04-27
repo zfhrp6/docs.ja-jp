@@ -1,59 +1,60 @@
 ---
-title: "XML の使用によるコードのドキュメントの作成 (Visual Basic)"
-ms.custom: 
+title: XML の使用によるコードのドキュメントの作成 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - XML [Visual Basic], documenting code
 - XML comments, Visual Basic
 - Visual Basic code, documenting with XML
 ms.assetid: a0d35dc7-c5f9-4d74-92ff-a1c6f28d5235
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ddb1f366002c4f0c675c591d83aab1b31ef8f602
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 645dd4a8a9d1c78fd54f0f31ad0efd772b671d39
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="documenting-your-code-with-xml-visual-basic"></a><span data-ttu-id="a108d-102">XML の使用によるコードのドキュメントの作成 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a108d-102">Documenting Your Code with XML (Visual Basic)</span></span>
-<span data-ttu-id="a108d-103">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]XML を使用してコードを文書化することができます</span><span class="sxs-lookup"><span data-stu-id="a108d-103">In [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], you can document your code using XML</span></span>  
+# <a name="documenting-your-code-with-xml-visual-basic"></a><span data-ttu-id="45b00-102">XML の使用によるコードのドキュメントの作成 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="45b00-102">Documenting Your Code with XML (Visual Basic)</span></span>
+<span data-ttu-id="45b00-103">Visual basic では XML を使用してコードを文書化することができます。</span><span class="sxs-lookup"><span data-stu-id="45b00-103">In Visual Basic, you can document your code using XML</span></span>  
   
-## <a name="xml-documentation-comments"></a><span data-ttu-id="a108d-104">XML ドキュメントのコメント</span><span class="sxs-lookup"><span data-stu-id="a108d-104">XML Documentation Comments</span></span>  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="a108d-105">プロジェクトの XML ドキュメントを自動的に作成する簡単な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="a108d-105"> provides an easy way to automatically create XML documentation for projects.</span></span> <span data-ttu-id="a108d-106">型とメンバーに対する XML スケルトンを自動的に生成し、パラメーターごとに、その他の注釈の概要、説明的なドキュメントを提供できます。</span><span class="sxs-lookup"><span data-stu-id="a108d-106">You can automatically generate an XML skeleton for your types and members, and then provide summaries, descriptive documentation for each parameter, and other remarks.</span></span> <span data-ttu-id="a108d-107">適切なセットアップでは、.xml 拡張子と、プロジェクトと同じ名前を持つ XML ファイルに XML ドキュメントが自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="a108d-107">With the appropriate setup, the XML documentation is automatically emitted into an XML file with the same name as your project and the .xml extension.</span></span> <span data-ttu-id="a108d-108">詳細については、「[/doc](../../../visual-basic/reference/command-line-compiler/doc.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a108d-108">For more information, see [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).</span></span>  
+## <a name="xml-documentation-comments"></a><span data-ttu-id="45b00-104">XML ドキュメントのコメント</span><span class="sxs-lookup"><span data-stu-id="45b00-104">XML Documentation Comments</span></span>  
+ <span data-ttu-id="45b00-105">Visual Basic では、プロジェクトの XML ドキュメントを自動的に作成する簡単な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="45b00-105">Visual Basic provides an easy way to automatically create XML documentation for projects.</span></span> <span data-ttu-id="45b00-106">型とメンバーに対する XML スケルトンを自動的に生成し、パラメーターごとに、その他の注釈の概要、説明的なドキュメントを提供できます。</span><span class="sxs-lookup"><span data-stu-id="45b00-106">You can automatically generate an XML skeleton for your types and members, and then provide summaries, descriptive documentation for each parameter, and other remarks.</span></span> <span data-ttu-id="45b00-107">適切なセットアップでは、.xml 拡張子と、プロジェクトと同じ名前を持つ XML ファイルに XML ドキュメントが自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="45b00-107">With the appropriate setup, the XML documentation is automatically emitted into an XML file with the same name as your project and the .xml extension.</span></span> <span data-ttu-id="45b00-108">詳細については、「[/doc](../../../visual-basic/reference/command-line-compiler/doc.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="45b00-108">For more information, see [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).</span></span>  
   
- <span data-ttu-id="a108d-109">XML ファイルを消費または XML として操作することができます。</span><span class="sxs-lookup"><span data-stu-id="a108d-109">The XML file can be consumed or otherwise manipulated as XML.</span></span> <span data-ttu-id="a108d-110">このファイルは、プロジェクトの出力の .exe または .dll ファイルと同じディレクトリにあります。</span><span class="sxs-lookup"><span data-stu-id="a108d-110">This file is located in the same directory as the output .exe or .dll file of your project.</span></span>  
+ <span data-ttu-id="45b00-109">XML ファイルを消費または XML として操作することができます。</span><span class="sxs-lookup"><span data-stu-id="45b00-109">The XML file can be consumed or otherwise manipulated as XML.</span></span> <span data-ttu-id="45b00-110">このファイルは、プロジェクトの出力の .exe または .dll ファイルと同じディレクトリにあります。</span><span class="sxs-lookup"><span data-stu-id="45b00-110">This file is located in the same directory as the output .exe or .dll file of your project.</span></span>  
   
- <span data-ttu-id="a108d-111">XML ドキュメントの先頭`'''`です。</span><span class="sxs-lookup"><span data-stu-id="a108d-111">XML documentation starts with `'''`.</span></span> <span data-ttu-id="a108d-112">これらのコメントの処理にはいくつか制限があります。</span><span class="sxs-lookup"><span data-stu-id="a108d-112">The processing of these comments has some restrictions:</span></span>  
+ <span data-ttu-id="45b00-111">XML ドキュメントの先頭`'''`です。</span><span class="sxs-lookup"><span data-stu-id="45b00-111">XML documentation starts with `'''`.</span></span> <span data-ttu-id="45b00-112">これらのコメントの処理にはいくつか制限があります。</span><span class="sxs-lookup"><span data-stu-id="45b00-112">The processing of these comments has some restrictions:</span></span>  
   
--   <span data-ttu-id="a108d-113">ドキュメントは整形式の XML である必要があります。</span><span class="sxs-lookup"><span data-stu-id="a108d-113">The documentation must be well-formed XML.</span></span> <span data-ttu-id="a108d-114">場合は、XML の形式が正しくありません、警告が生成され、ドキュメント ファイルにエラーが発生したことを示すコメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a108d-114">If the XML is not well formed, a warning is generated and the documentation file contains a comment saying that an error was encountered.</span></span>  
+-   <span data-ttu-id="45b00-113">ドキュメントは整形式の XML である必要があります。</span><span class="sxs-lookup"><span data-stu-id="45b00-113">The documentation must be well-formed XML.</span></span> <span data-ttu-id="45b00-114">場合は、XML の形式が正しくありません、警告が生成され、ドキュメント ファイルにエラーが発生したことを示すコメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="45b00-114">If the XML is not well formed, a warning is generated and the documentation file contains a comment saying that an error was encountered.</span></span>  
   
--   <span data-ttu-id="a108d-115">開発者は、独自のタグ セットを自由に作成できます。</span><span class="sxs-lookup"><span data-stu-id="a108d-115">Developers are free to create their own set of tags.</span></span> <span data-ttu-id="a108d-116">推奨されるタグ (このトピックの「関連項目」を参照してください) 設定があります。</span><span class="sxs-lookup"><span data-stu-id="a108d-116">There is a recommended set of tags (see "Related Sections" in this topic).</span></span> <span data-ttu-id="a108d-117">推奨されるタグの一部には特別な意味があります。</span><span class="sxs-lookup"><span data-stu-id="a108d-117">Some of the recommended tags have special meanings:</span></span>  
+-   <span data-ttu-id="45b00-115">開発者は、独自のタグ セットを自由に作成できます。</span><span class="sxs-lookup"><span data-stu-id="45b00-115">Developers are free to create their own set of tags.</span></span> <span data-ttu-id="45b00-116">推奨されるタグ (このトピックの「関連項目」を参照してください) 設定があります。</span><span class="sxs-lookup"><span data-stu-id="45b00-116">There is a recommended set of tags (see "Related Sections" in this topic).</span></span> <span data-ttu-id="45b00-117">推奨されるタグの一部には特別な意味があります。</span><span class="sxs-lookup"><span data-stu-id="45b00-117">Some of the recommended tags have special meanings:</span></span>  
   
-    -   <span data-ttu-id="a108d-118">\<param> タグは、パラメーターの記述に使われます。</span><span class="sxs-lookup"><span data-stu-id="a108d-118">The \<param> tag is used to describe parameters.</span></span> <span data-ttu-id="a108d-119">このタグがあると、コンパイラは、パラメーターが存在すること、およびすべてのパラメーターがドキュメントで記述されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="a108d-119">If used, the compiler will verify that the parameter exists and that all parameters are described in the documentation.</span></span> <span data-ttu-id="a108d-120">検証に失敗した場合、コンパイラは警告を発行します。</span><span class="sxs-lookup"><span data-stu-id="a108d-120">If the verification fails, the compiler issues a warning.</span></span>  
+    -   <span data-ttu-id="45b00-118">\<param> タグは、パラメーターの記述に使われます。</span><span class="sxs-lookup"><span data-stu-id="45b00-118">The \<param> tag is used to describe parameters.</span></span> <span data-ttu-id="45b00-119">このタグがあると、コンパイラは、パラメーターが存在すること、およびすべてのパラメーターがドキュメントで記述されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="45b00-119">If used, the compiler will verify that the parameter exists and that all parameters are described in the documentation.</span></span> <span data-ttu-id="45b00-120">検証に失敗した場合、コンパイラは警告を発行します。</span><span class="sxs-lookup"><span data-stu-id="45b00-120">If the verification fails, the compiler issues a warning.</span></span>  
   
-    -   <span data-ttu-id="a108d-121">`cref` 属性は任意のタグにアタッチでき、コード要素への参照を提供します。</span><span class="sxs-lookup"><span data-stu-id="a108d-121">The `cref` attribute can be attached to any tag to provide a reference to a code element.</span></span> <span data-ttu-id="a108d-122">コンパイラでは、このコード要素が存在することを確認します。</span><span class="sxs-lookup"><span data-stu-id="a108d-122">The compiler verifies that this code element exists.</span></span> <span data-ttu-id="a108d-123">検証に失敗した場合、コンパイラは警告を発行します。</span><span class="sxs-lookup"><span data-stu-id="a108d-123">If the verification fails, the compiler issues a warning.</span></span> <span data-ttu-id="a108d-124">コンパイラではいずれかのことも考慮`Imports`ステートメントで示される型を探すときに、`cref`属性。</span><span class="sxs-lookup"><span data-stu-id="a108d-124">The compiler also respects any `Imports` statements when looking for a type described in the `cref` attribute.</span></span>  
+    -   <span data-ttu-id="45b00-121">`cref` 属性は任意のタグにアタッチでき、コード要素への参照を提供します。</span><span class="sxs-lookup"><span data-stu-id="45b00-121">The `cref` attribute can be attached to any tag to provide a reference to a code element.</span></span> <span data-ttu-id="45b00-122">コンパイラでは、このコード要素が存在することを確認します。</span><span class="sxs-lookup"><span data-stu-id="45b00-122">The compiler verifies that this code element exists.</span></span> <span data-ttu-id="45b00-123">検証に失敗した場合、コンパイラは警告を発行します。</span><span class="sxs-lookup"><span data-stu-id="45b00-123">If the verification fails, the compiler issues a warning.</span></span> <span data-ttu-id="45b00-124">コンパイラではいずれかのことも考慮`Imports`ステートメントで示される型を探すときに、`cref`属性。</span><span class="sxs-lookup"><span data-stu-id="45b00-124">The compiler also respects any `Imports` statements when looking for a type described in the `cref` attribute.</span></span>  
   
-    -   <span data-ttu-id="a108d-125">\<概要 > タグを使用してでは、IntelliSense によって[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]型またはメンバーに関する追加情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="a108d-125">The \<summary> tag is used by IntelliSense in [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] to display additional information about a type or member.</span></span>  
+    -   <span data-ttu-id="45b00-125">\<概要 > タグを使用してでは、IntelliSense によって[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]型またはメンバーに関する追加情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="45b00-125">The \<summary> tag is used by IntelliSense in [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] to display additional information about a type or member.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="a108d-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="a108d-126">Related Sections</span></span>  
- <span data-ttu-id="a108d-127">ドキュメント コメントで、XML ファイルを作成する方法の詳細については、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="a108d-127">For details on creating an XML file with documentation comments, see the following topics:</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="45b00-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="45b00-126">Related Sections</span></span>  
+ <span data-ttu-id="45b00-127">ドキュメント コメントで、XML ファイルを作成する方法の詳細については、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="45b00-127">For details on creating an XML file with documentation comments, see the following topics:</span></span>  
   
--   [<span data-ttu-id="a108d-128">/doc</span><span class="sxs-lookup"><span data-stu-id="a108d-128">/doc</span></span>](../../../visual-basic/reference/command-line-compiler/doc.md)  
+-   [<span data-ttu-id="45b00-128">/doc</span><span class="sxs-lookup"><span data-stu-id="45b00-128">/doc</span></span>](../../../visual-basic/reference/command-line-compiler/doc.md)  
   
--   [<span data-ttu-id="a108d-129">XML のコメント用タグ</span><span class="sxs-lookup"><span data-stu-id="a108d-129">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)  
+-   [<span data-ttu-id="45b00-129">XML のコメント用タグ</span><span class="sxs-lookup"><span data-stu-id="45b00-129">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)  
   
--   [<span data-ttu-id="a108d-130">XML ファイルの処理</span><span class="sxs-lookup"><span data-stu-id="a108d-130">Processing the XML File</span></span>](../../../visual-basic/programming-guide/program-structure/processing-the-xml-file.md)  
+-   [<span data-ttu-id="45b00-130">XML ファイルの処理</span><span class="sxs-lookup"><span data-stu-id="45b00-130">Processing the XML File</span></span>](../../../visual-basic/programming-guide/program-structure/processing-the-xml-file.md)  
   
--   [<span data-ttu-id="a108d-131">方法: XML ドキュメントを作成する</span><span class="sxs-lookup"><span data-stu-id="a108d-131">How to: Create XML Documentation</span></span>](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)  
+-   [<span data-ttu-id="45b00-131">方法: XML ドキュメントを作成する</span><span class="sxs-lookup"><span data-stu-id="45b00-131">How to: Create XML Documentation</span></span>](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)  
   
--   [<span data-ttu-id="a108d-132">Visual Studio の XML ツール</span><span class="sxs-lookup"><span data-stu-id="a108d-132">XML Tools in Visual Studio</span></span>](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
+-   [<span data-ttu-id="45b00-132">Visual Studio の XML ツール</span><span class="sxs-lookup"><span data-stu-id="45b00-132">XML Tools in Visual Studio</span></span>](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
   
-## <a name="see-also"></a><span data-ttu-id="a108d-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="a108d-133">See Also</span></span>  
- [<span data-ttu-id="a108d-134">Visual Basic でのアプリケーションの開発</span><span class="sxs-lookup"><span data-stu-id="a108d-134">Developing Applications with Visual Basic</span></span>](../../../visual-basic/developing-apps/index.md)  
- [<span data-ttu-id="a108d-135">Visual Basic プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="a108d-135">Visual Basic Programming Guide</span></span>](../../../visual-basic/programming-guide/index.md)
+## <a name="see-also"></a><span data-ttu-id="45b00-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="45b00-133">See Also</span></span>  
+ [<span data-ttu-id="45b00-134">Visual Basic でのアプリケーションの開発</span><span class="sxs-lookup"><span data-stu-id="45b00-134">Developing Applications with Visual Basic</span></span>](../../../visual-basic/developing-apps/index.md)  
+ [<span data-ttu-id="45b00-135">Visual Basic プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="45b00-135">Visual Basic Programming Guide</span></span>](../../../visual-basic/programming-guide/index.md)

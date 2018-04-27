@@ -1,12 +1,13 @@
 ---
-title: "方法 : Windows フォーム アプリケーションに印刷プレビューを表示する"
-ms.custom: 
+title: '方法 : Windows フォーム アプリケーションに印刷プレビューを表示する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,34 +18,35 @@ helpviewer_keywords:
 - printing [Windows Forms], print preview
 - examples [Windows Forms], print preview
 ms.assetid: e394134c-0886-4517-bd8d-edc4a3749eb5
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2567a564b5769abd91d34696c1a94c21ad2913ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4868187e860afe8004742365465baf8c57e312a4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="how-to-display-print-preview-in-windows-forms-applications"></a><span data-ttu-id="4d756-102">方法 : Windows フォーム アプリケーションに印刷プレビューを表示する</span><span class="sxs-lookup"><span data-stu-id="4d756-102">How to: Display Print Preview in Windows Forms Applications</span></span>
-<span data-ttu-id="4d756-103">使用することができます、<xref:System.Windows.Forms.PrintPreviewDialog>を印刷する前に多くの場合、ドキュメントを表示するユーザーを有効にするコントロール。</span><span class="sxs-lookup"><span data-stu-id="4d756-103">You can use the <xref:System.Windows.Forms.PrintPreviewDialog> control to enable users to display a document, often before it is to be printed.</span></span>  
+# <a name="how-to-display-print-preview-in-windows-forms-applications"></a><span data-ttu-id="68517-102">方法 : Windows フォーム アプリケーションに印刷プレビューを表示する</span><span class="sxs-lookup"><span data-stu-id="68517-102">How to: Display Print Preview in Windows Forms Applications</span></span>
+<span data-ttu-id="68517-103">使用することができます、<xref:System.Windows.Forms.PrintPreviewDialog>を印刷する前に多くの場合、ドキュメントを表示するユーザーを有効にするコントロール。</span><span class="sxs-lookup"><span data-stu-id="68517-103">You can use the <xref:System.Windows.Forms.PrintPreviewDialog> control to enable users to display a document, often before it is to be printed.</span></span>  
   
- <span data-ttu-id="4d756-104">これを行うには、インスタンスを指定する必要があります、<xref:System.Drawing.Printing.PrintDocument>クラスです。 これは、印刷するドキュメントです。</span><span class="sxs-lookup"><span data-stu-id="4d756-104">To do this, you need to specify an instance of the <xref:System.Drawing.Printing.PrintDocument> class; this is the document to be printed.</span></span> <span data-ttu-id="4d756-105">印刷プレビューでの使用の詳細については、<xref:System.Drawing.Printing.PrintDocument>コンポーネントを参照してください[する方法: Windows フォームを使用して印刷プレビューで印刷](../../../../docs/framework/winforms/advanced/how-to-print-in-windows-forms-using-print-preview.md)です。</span><span class="sxs-lookup"><span data-stu-id="4d756-105">For more information about using print preview with the <xref:System.Drawing.Printing.PrintDocument> component, see [How to: Print in Windows Forms Using Print Preview](../../../../docs/framework/winforms/advanced/how-to-print-in-windows-forms-using-print-preview.md).</span></span>  
+ <span data-ttu-id="68517-104">これを行うには、インスタンスを指定する必要があります、<xref:System.Drawing.Printing.PrintDocument>クラスです。 これは、印刷するドキュメントです。</span><span class="sxs-lookup"><span data-stu-id="68517-104">To do this, you need to specify an instance of the <xref:System.Drawing.Printing.PrintDocument> class; this is the document to be printed.</span></span> <span data-ttu-id="68517-105">印刷プレビューでの使用の詳細については、<xref:System.Drawing.Printing.PrintDocument>コンポーネントを参照してください[する方法: Windows フォームを使用して印刷プレビューで印刷](../../../../docs/framework/winforms/advanced/how-to-print-in-windows-forms-using-print-preview.md)です。</span><span class="sxs-lookup"><span data-stu-id="68517-105">For more information about using print preview with the <xref:System.Drawing.Printing.PrintDocument> component, see [How to: Print in Windows Forms Using Print Preview](../../../../docs/framework/winforms/advanced/how-to-print-in-windows-forms-using-print-preview.md).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="4d756-106">使用する、<xref:System.Windows.Forms.PrintPreviewDialog>制御、実行時にユーザーが必要ローカルまたはネットワークを介して、自分のコンピューターにインストールされているプリンターは部分的方法、<xref:System.Windows.Forms.PrintPreviewDialog>コンポーネントは、印刷されたときに、ドキュメントがどのように表示されるかを決定します。</span><span class="sxs-lookup"><span data-stu-id="4d756-106">To use the <xref:System.Windows.Forms.PrintPreviewDialog> control at run time, users must have a printer installed on their computer, either locally or through a network, as this is partly how the <xref:System.Windows.Forms.PrintPreviewDialog> component determines how a document will look when printed.</span></span>  
+>  <span data-ttu-id="68517-106">使用する、<xref:System.Windows.Forms.PrintPreviewDialog>制御、実行時にユーザーが必要ローカルまたはネットワークを介して、自分のコンピューターにインストールされているプリンターは部分的方法、<xref:System.Windows.Forms.PrintPreviewDialog>コンポーネントは、印刷されたときに、ドキュメントがどのように表示されるかを決定します。</span><span class="sxs-lookup"><span data-stu-id="68517-106">To use the <xref:System.Windows.Forms.PrintPreviewDialog> control at run time, users must have a printer installed on their computer, either locally or through a network, as this is partly how the <xref:System.Windows.Forms.PrintPreviewDialog> component determines how a document will look when printed.</span></span>  
   
- <span data-ttu-id="4d756-107"><xref:System.Windows.Forms.PrintPreviewDialog>コントロール、<xref:System.Drawing.Printing.PrinterSettings>クラスです。</span><span class="sxs-lookup"><span data-stu-id="4d756-107">The <xref:System.Windows.Forms.PrintPreviewDialog> control uses the <xref:System.Drawing.Printing.PrinterSettings> class.</span></span> <span data-ttu-id="4d756-108">さらに、<xref:System.Windows.Forms.PrintPreviewDialog>コントロール、<xref:System.Drawing.Printing.PageSettings>クラスと同様に、<xref:System.Windows.Forms.PrintPreviewDialog>はコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="4d756-108">Additionally, the <xref:System.Windows.Forms.PrintPreviewDialog> control uses the <xref:System.Drawing.Printing.PageSettings> class, just as the <xref:System.Windows.Forms.PrintPreviewDialog> component does.</span></span> <span data-ttu-id="4d756-109">指定した印刷ドキュメント、<xref:System.Windows.Forms.PrintPreviewDialog>コントロールの<xref:System.Windows.Forms.PrintPreviewControl.Document%2A>プロパティが両方のインスタンスを指す、<xref:System.Drawing.Printing.PrinterSettings>と<xref:System.Drawing.Printing.PageSettings>クラス、およびこれらは、プレビュー ウィンドウ内のドキュメントを表示するために使用します。</span><span class="sxs-lookup"><span data-stu-id="4d756-109">The print document specified in the <xref:System.Windows.Forms.PrintPreviewDialog> control's <xref:System.Windows.Forms.PrintPreviewControl.Document%2A> property refers to instances of both the <xref:System.Drawing.Printing.PrinterSettings> and <xref:System.Drawing.Printing.PageSettings> classes, and these are used to render the document in the preview window.</span></span>  
+ <span data-ttu-id="68517-107"><xref:System.Windows.Forms.PrintPreviewDialog>コントロール、<xref:System.Drawing.Printing.PrinterSettings>クラスです。</span><span class="sxs-lookup"><span data-stu-id="68517-107">The <xref:System.Windows.Forms.PrintPreviewDialog> control uses the <xref:System.Drawing.Printing.PrinterSettings> class.</span></span> <span data-ttu-id="68517-108">さらに、<xref:System.Windows.Forms.PrintPreviewDialog>コントロール、<xref:System.Drawing.Printing.PageSettings>クラスと同様に、<xref:System.Windows.Forms.PrintPreviewDialog>はコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="68517-108">Additionally, the <xref:System.Windows.Forms.PrintPreviewDialog> control uses the <xref:System.Drawing.Printing.PageSettings> class, just as the <xref:System.Windows.Forms.PrintPreviewDialog> component does.</span></span> <span data-ttu-id="68517-109">指定した印刷ドキュメント、<xref:System.Windows.Forms.PrintPreviewDialog>コントロールの<xref:System.Windows.Forms.PrintPreviewControl.Document%2A>プロパティが両方のインスタンスを指す、<xref:System.Drawing.Printing.PrinterSettings>と<xref:System.Drawing.Printing.PageSettings>クラス、およびこれらは、プレビュー ウィンドウ内のドキュメントを表示するために使用します。</span><span class="sxs-lookup"><span data-stu-id="68517-109">The print document specified in the <xref:System.Windows.Forms.PrintPreviewDialog> control's <xref:System.Windows.Forms.PrintPreviewControl.Document%2A> property refers to instances of both the <xref:System.Drawing.Printing.PrinterSettings> and <xref:System.Drawing.Printing.PageSettings> classes, and these are used to render the document in the preview window.</span></span>  
   
-### <a name="to-view-pages-using-the-printpreviewdialog-control"></a><span data-ttu-id="4d756-110">PrintPreviewDialog コントロールを使用してページを表示するには</span><span class="sxs-lookup"><span data-stu-id="4d756-110">To view pages using the PrintPreviewDialog control</span></span>  
+### <a name="to-view-pages-using-the-printpreviewdialog-control"></a><span data-ttu-id="68517-110">PrintPreviewDialog コントロールを使用してページを表示するには</span><span class="sxs-lookup"><span data-stu-id="68517-110">To view pages using the PrintPreviewDialog control</span></span>  
   
--   <span data-ttu-id="4d756-111"><xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> メソッドを使用してダイアログ ボックスを表示し、使用する <xref:System.Drawing.Printing.PrintDocument> を指定します。</span><span class="sxs-lookup"><span data-stu-id="4d756-111">Use the <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> method to display the dialog box, specifying the <xref:System.Drawing.Printing.PrintDocument> to use.</span></span>  
+-   <span data-ttu-id="68517-111"><xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> メソッドを使用してダイアログ ボックスを表示し、使用する <xref:System.Drawing.Printing.PrintDocument> を指定します。</span><span class="sxs-lookup"><span data-stu-id="68517-111">Use the <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> method to display the dialog box, specifying the <xref:System.Drawing.Printing.PrintDocument> to use.</span></span>  
   
-     <span data-ttu-id="4d756-112">次のコード例では、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Click>イベント ハンドラーのインスタンスを開き、<xref:System.Windows.Forms.PrintPreviewDialog>コントロール。</span><span class="sxs-lookup"><span data-stu-id="4d756-112">In the following code example, the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Click> event handler opens an instance of the <xref:System.Windows.Forms.PrintPreviewDialog> control.</span></span> <span data-ttu-id="4d756-113">印刷ドキュメントがで指定された、<xref:System.Windows.Forms.PrintDialog.Document%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4d756-113">The print document is specified in the <xref:System.Windows.Forms.PrintDialog.Document%2A> property.</span></span> <span data-ttu-id="4d756-114">次の例では、印刷ドキュメントが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="4d756-114">In the example below, no print document is specified.</span></span>  
+     <span data-ttu-id="68517-112">次のコード例では、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Click>イベント ハンドラーのインスタンスを開き、<xref:System.Windows.Forms.PrintPreviewDialog>コントロール。</span><span class="sxs-lookup"><span data-stu-id="68517-112">In the following code example, the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Click> event handler opens an instance of the <xref:System.Windows.Forms.PrintPreviewDialog> control.</span></span> <span data-ttu-id="68517-113">印刷ドキュメントがで指定された、<xref:System.Windows.Forms.PrintDialog.Document%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="68517-113">The print document is specified in the <xref:System.Windows.Forms.PrintDialog.Document%2A> property.</span></span> <span data-ttu-id="68517-114">次の例では、印刷ドキュメントが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="68517-114">In the example below, no print document is specified.</span></span>  
   
-     <span data-ttu-id="4d756-115">この例では、フォームがある必要があります、<xref:System.Windows.Forms.Button>コントロール、<xref:System.Drawing.Printing.PrintDocument>という名前のコンポーネント`myDocument`、および<xref:System.Windows.Forms.PrintPreviewDialog>コントロール。</span><span class="sxs-lookup"><span data-stu-id="4d756-115">The example requires that your form has a <xref:System.Windows.Forms.Button> control, a <xref:System.Drawing.Printing.PrintDocument> component named `myDocument`, and a <xref:System.Windows.Forms.PrintPreviewDialog> control.</span></span>  
+     <span data-ttu-id="68517-115">この例では、フォームがある必要があります、<xref:System.Windows.Forms.Button>コントロール、<xref:System.Drawing.Printing.PrintDocument>という名前のコンポーネント`myDocument`、および<xref:System.Windows.Forms.PrintPreviewDialog>コントロール。</span><span class="sxs-lookup"><span data-stu-id="68517-115">The example requires that your form has a <xref:System.Windows.Forms.Button> control, a <xref:System.Drawing.Printing.PrintDocument> component named `myDocument`, and a <xref:System.Windows.Forms.PrintPreviewDialog> control.</span></span>  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -81,7 +83,7 @@ ms.lasthandoff: 12/22/2017
        }  
     ```  
   
-     <span data-ttu-id="4d756-116">([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。</span><span class="sxs-lookup"><span data-stu-id="4d756-116">([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Place the following code in the form's constructor to register the event handler.</span></span>  
+     <span data-ttu-id="68517-116">(Visual C# の場合、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)])、イベント ハンドラーを登録するフォームのコンス トラクターに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="68517-116">(Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
@@ -92,8 +94,8 @@ ms.lasthandoff: 12/22/2017
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="4d756-117">参照</span><span class="sxs-lookup"><span data-stu-id="4d756-117">See Also</span></span>  
- [<span data-ttu-id="4d756-118">PrintDocument コンポーネント</span><span class="sxs-lookup"><span data-stu-id="4d756-118">PrintDocument Component</span></span>](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)  
- [<span data-ttu-id="4d756-119">PrintPreviewDialog コントロール</span><span class="sxs-lookup"><span data-stu-id="4d756-119">PrintPreviewDialog Control</span></span>](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
- [<span data-ttu-id="4d756-120">Windows フォームにおける印刷のサポート</span><span class="sxs-lookup"><span data-stu-id="4d756-120">Windows Forms Print Support</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
- [<span data-ttu-id="4d756-121">Windows フォーム</span><span class="sxs-lookup"><span data-stu-id="4d756-121">Windows Forms</span></span>](../../../../docs/framework/winforms/index.md)
+## <a name="see-also"></a><span data-ttu-id="68517-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="68517-117">See Also</span></span>  
+ [<span data-ttu-id="68517-118">PrintDocument コンポーネント</span><span class="sxs-lookup"><span data-stu-id="68517-118">PrintDocument Component</span></span>](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)  
+ [<span data-ttu-id="68517-119">PrintPreviewDialog コントロール</span><span class="sxs-lookup"><span data-stu-id="68517-119">PrintPreviewDialog Control</span></span>](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
+ [<span data-ttu-id="68517-120">Windows フォームにおける印刷のサポート</span><span class="sxs-lookup"><span data-stu-id="68517-120">Windows Forms Print Support</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
+ [<span data-ttu-id="68517-121">Windows フォーム</span><span class="sxs-lookup"><span data-stu-id="68517-121">Windows Forms</span></span>](../../../../docs/framework/winforms/index.md)
