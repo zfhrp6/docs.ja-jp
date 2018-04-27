@@ -1,31 +1,33 @@
 ---
-title: "属性ベースの対応付け"
-ms.custom: 
+title: 属性ベースの対応付け
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a7a66b165e5bcfc605842b96295ae1721e7b3af5
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 49969af962db9fb533ad316622af42104438be7d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="attribute-based-mapping"></a>属性ベースの対応付け
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]マップを SQL Server データベース、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]属性を適用するか、または外部マッピング ファイルを使用してオブジェクト モデルです。 このトピックでは、属性ベースの方法について説明します。  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] マップを SQL Server データベース、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]属性を適用するか、または外部マッピング ファイルを使用してオブジェクト モデルです。 このトピックでは、属性ベースの方法について説明します。  
   
  大部分の基本フォームでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、データベースと <xref:System.Data.Linq.DataContext>、テーブルとクラス、列およびリレーションシップとそのクラスのプロパティを、それぞれ対応付けています。 属性を使用して、オブジェクト モデル内の継承階層を対応付けることもできます。 詳細については、次を参照してください。[する方法: Visual Basic または c# でのオブジェクト モデルの生成](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)です。  
   
- 使用する開発者[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]通常を使用して属性ベースのマッピングを実行、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]です。 また、SQLMetal コマンド ライン ツールを使用したり、自分で属性をハンド コードしたりすることもできます。 詳細については、次を参照してください。[する方法: Visual Basic または c# でのオブジェクト モデルの生成](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)です。  
+ 通常の Visual Studio を使用している開発者を使用して属性ベースのマッピングを実行、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]です。 また、SQLMetal コマンド ライン ツールを使用したり、自分で属性をハンド コードしたりすることもできます。 詳細については、次を参照してください。[する方法: Visual Basic または c# でのオブジェクト モデルの生成](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)です。  
   
 > [!NOTE]
 >  外部 XML ファイルを使用して対応付けることもできます。 詳細については、次を参照してください。[外部マッピング](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)です。  
@@ -72,7 +74,7 @@ ms.lasthandoff: 01/17/2018
  詳細については、「<xref:System.Data.Linq.Mapping.ColumnAttribute>」を参照してください。  
   
 > [!NOTE]
->  AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。 たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。 これは、[!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)] など、通常は大文字と小文字が区別されない言語を含むすべての .NET プログラミング言語に適用されます。 Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>」を参照してください。  
+>  AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。 たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。 これは、すべての .NET プログラミング言語も含めていない通常大文字と小文字は、Visual Basic などに適用されます。 Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>」を参照してください。  
   
 ## <a name="associationattribute-attribute"></a>AssociationAttribute 属性  
  この属性は、外部キーと主キーのリレーションシップなど、データベース内の関連付けを表すプロパティを指定するために使用します。 リレーションシップの詳細については、次を参照してください。[する方法: マップ データベース リレーションシップ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)です。  
@@ -91,7 +93,7 @@ ms.lasthandoff: 01/17/2018
  詳細については、「<xref:System.Data.Linq.Mapping.AssociationAttribute>」を参照してください。  
   
 > [!NOTE]
->  AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。 たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。 これは、[!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)] など、通常は大文字と小文字が区別されない言語を含むすべての .NET プログラミング言語に適用されます。 Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>」を参照してください。  
+>  AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。 たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。 これは、すべての .NET プログラミング言語も含めていない通常大文字と小文字は、Visual Basic などに適用されます。 Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>」を参照してください。  
   
 ## <a name="inheritancemappingattribute-attribute"></a>InheritanceMappingAttribute 属性  
  この属性は、継承階層を対応付けるために使用します。  
@@ -153,5 +155,5 @@ ms.lasthandoff: 01/17/2018
   
  詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

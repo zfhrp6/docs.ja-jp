@@ -5,14 +5,15 @@ ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/19/2017
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 92bfd4516866fe82408dd3dd341a13db0ee216c0
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 59c03755bebce98e018f56fc7213b00a0d3eae38
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Microservices および multicontainer アプリケーション高いスケーラビリティと可用性を調整すること
 
@@ -104,7 +105,7 @@ ACS の一部として既定でインストールされるソフトウェアは�
     <https://docs.mesosphere.com/1.7/overview/>
 
 -   Kubernetes (公式サイト):  
-    <http://kubernetes.io/>
+    <https://kubernetes.io/>
 
 ## <a name="using-service-fabric"></a>Service Fabric を使用します。
 
@@ -178,7 +179,7 @@ Service Fabric でいくつかのサービス (コンテナー) で、図 4-11: 
 
 ステートフル サービスには欠点があります。 スケール アウトを許可するための複雑さのレベルをかけます。通常外部データベース システムによって実装される機能は、ステートフル マイクロサービスにまたがるレプリケーションや、データのパーティション分割などの機能として対処する必要があります。 ただし、これは、orchestrator のような領域の 1 つ[Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture)でその[ステートフルな信頼性の高いサービス](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)最も役立つことができます: 開発とステートフルのライフ サイクルを簡略化microservices を使用して、 [Services API の信頼性の高い](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections)と[Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction)です。
 
-ステートフル サービスを許可し、Actor パターンをサポートし、ビジネス ロジックとデータ間のフォールト トレランスと遅延を改善する他のマイクロサービス フレームワークは、Microsoft [Orleans](https://github.com/dotnet/orleans)、Microsoft Research、および [Akka.NET](http://getakka.net/) です。 両方のフレームワークは、現在 Docker のサポートを向上させています。
+ステートフル サービスを許可し、Actor パターンをサポートし、ビジネス ロジックとデータ間のフォールト トレランスと遅延を改善する他のマイクロサービス フレームワークは、Microsoft [Orleans](https://github.com/dotnet/orleans)、Microsoft Research、および [Akka.NET](https://getakka.net/) です。 両方のフレームワークは、現在 Docker のサポートを向上させています。
 
 Docker コンテナーはそれ自身ステートレスなことに注意してください。 ステートフル サービスを実装する場合は、前に説明した追加の規範的で高度なフレームワークの 1 つが必要です。 ただし、現時点では、Service Fabric でのステートフルなサービスはサポートされていません plain microservices としてのみのコンテナーとして。 コンテナーで信頼性の高いサービス サポートは、Service Fabric の今後のバージョンで使用されます。
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: サービスの設計と実装
 ms.custom: ''
 ms.date: 03/30/2017
@@ -18,17 +18,17 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b6d5a2dfb4db1d57f60e4c7f8cf3300b766402e1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9b954a8ac4f8507b095eb97d0724095cecc7b75b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="designing-and-implementing-services"></a>サービスの設計と実装
-このセクションでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]コントラクトの定義および実装の方法を説明します。サービス コントラクトとは、エンドポイントが外部と何をやりとりするかを指定するものです。より具体的には、要求/応答、一方向、双方向というような、基本的なメッセージ交換パターン (MEP) として編成された一連のメッセージに関する記述です。サービス コントラクトが一連のメッセージ交換に論理的に関連付けられていれば、サービスの操作は単一のメッセージ交換になります。たとえば、`Hello` という操作は、必ず 1 つのメッセージを受け取らなければならず (呼び出し元があいさつを通知できるようにするため) 、これに対してメッセージを返したり、返さなかったりします (その操作がマナーを守っているかどうかによる)。
-
-コントラクトと、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のその他の中核的な概念の詳細については、「[Windows Communication Foundation の基本概念](../../../docs/framework/wcf/fundamental-concepts.md)」を参照してください。このトピックでは、サービス コントラクトの理解を深めることに焦点をあてています。サービスへ接続するためにサービス コントラクトを使用するクライアントを構築する方法の詳細については、「[WCF クライアントの概要](../../../docs/framework/wcf/wcf-client-overview.md)」を参照してください。
-
+このセクションでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]コントラクトの定義および実装の方法を説明します。 サービス コントラクトとは、エンドポイントが外部と何をやりとりするかを指定するものです。 より具体的には、要求/応答、一方向、双方向というような、基本的なメッセージ交換パターン (MEP) として編成された一連のメッセージに関する記述です。 サービス コントラクトが一連のメッセージ交換に論理的に関連付けられていれば、サービスの操作は単一のメッセージ交換になります。 たとえば、`Hello` という操作は、必ず 1 つのメッセージを受け取らなければならず (呼び出し元があいさつを通知できるようにするため) 、これに対してメッセージを返したり、返さなかったりします (その操作がマナーを守っているかどうかによる)。  
+  
+ コントラクトと、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のその他の中核的な概念の詳細については、「[Windows Communication Foundation の基本概念](../../../docs/framework/wcf/fundamental-concepts.md)」を参照してください。 このトピックでは、サービス コントラクトの理解を深めることに焦点をあてています。 サービスへ接続するためにサービス コントラクトを使用するクライアントを構築する方法の詳細については、 [WCF クライアントの概要](../../../docs/framework/wcf/wcf-client-overview.md)を参照してください。  
+  
 ## <a name="overview"></a>概要  
  ここでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの設計および実装に関する大まかな概念的方向付けを行います。 サブトピックでは、設計と実装の仕様についてさらに詳しく説明します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションを設計および実装する前に、次の準備をしておくことをお勧めします。  
   
@@ -68,7 +68,7 @@ ms.lasthandoff: 12/22/2017
  コントラクトの設計の詳細については、次を参照してください。[サービス コントラクトの設計](../../../docs/framework/wcf/designing-service-contracts.md)です。 コントラクトの実装の詳細については、次を参照してください。[サービス コントラクトを実装する](../../../docs/framework/wcf/implementing-service-contracts.md)です。  
   
 ### <a name="messages-up-front-and-center"></a>重要なメッセージ  
- リモート プロシージャ コール (RPC) スタイルのメソッド シグネチャを使用する場合、マネージ インターフェイス、マネージ クラス、およびマネージ メソッドを使用してサービス操作をモデル化することは簡単です。メソッドにパラメーターを渡し、戻り値を受け取る方法は、オブジェクトや他の種類のコードから機能を要求する通常の形式です。 たとえば、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] や C++ COM のようなマネージ言語を使用するプログラマは、(オブジェクトとインターフェイスのどちらを使用するかに関係なく) RPC スタイルの手法に関する知識を、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス コントラクトの作成に応用できます。この場合、RPC スタイルの分散オブジェクト システムに固有の問題は発生しません。 サービス指向では、RPC プログラミングの容易さと知識を保持しながら、疎結合のメッセージ指向プログラミングの利点を得ることができます。  
+ リモート プロシージャ コール (RPC) スタイルのメソッド シグネチャを使用する場合、マネージ インターフェイス、マネージ クラス、およびマネージ メソッドを使用してサービス操作をモデル化することは簡単です。メソッドにパラメーターを渡し、戻り値を受け取る方法は、オブジェクトや他の種類のコードから機能を要求する通常の形式です。 たとえば、Visual Basic および C++ COM は、RPC スタイルの知識を適用できるように、マネージ言語を使用するプログラマに近づきます (オブジェクトまたはインターフェイスを使用) かどうかを作成する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス コントラクトの問題は発生しませんRPC スタイルの分散オブジェクト システムに固有です。 サービス指向では、RPC プログラミングの容易さと知識を保持しながら、疎結合のメッセージ指向プログラミングの利点を得ることができます。  
   
  プログラマの多くは、メッセージ キュー (Microsoft MSMQ、.NET Framework の <xref:System.Messaging> 名前空間、HTTP 要求における構造化されていない XML の送信など) のようなメッセージ指向のアプリケーション プログラミング インターフェイスの方が使いやすいと考えています。 メッセージ レベルでのプログラミングの詳細については、次を参照してください[メッセージ コントラクトを使用して](../../../docs/framework/wcf/feature-details/using-message-contracts.md)、[サービス チャネル レベルのプログラミング](../../../docs/framework/wcf/extending/service-channel-level-programming.md)、および[POX アプリケーションとの相互運用](../../../docs/framework/wcf/feature-details/interoperability-with-pox-applications.md)。  
   
@@ -79,6 +79,6 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス アプリケーションを設計、実装、構成、およびホストする際には、この追加要件の処理に注意することが重要です。 たとえば、コントラクトでセッションをサポートする必要があることが指定されている場合があります。 その場合、コントラクトの要件をサポートするようにバインディングを構成する必要があります。そうしないと、サービス実装は機能しなくなります。 また、サービスで統合 Windows 認証が必要であり、インターネット インフォメーション サービス (IIS) でホストされる場合、サービスが存在する Web アプリケーションでは、統合 Windows 認証を有効にし、匿名サポートを無効にする必要があります。 機能と、別のサービス ホスト アプリケーションの種類の影響の詳細については、次を参照してください。[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービス コントラクトの設計](../../../docs/framework/wcf/designing-service-contracts.md)  
  [サービス コントラクトの実装](../../../docs/framework/wcf/implementing-service-contracts.md)

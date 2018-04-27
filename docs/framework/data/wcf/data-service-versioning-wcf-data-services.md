@@ -1,28 +1,30 @@
 ---
-title: "データ サービスのバージョン管理 (WCF Data Services)"
-ms.custom: 
+title: データ サービスのバージョン管理 (WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - versioning, WCF Data Services
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 73e394c4d0a7f78fca7c8c70f68bfc16da556d8d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: d795008e014deaa126dac1bb978ac825f2536208
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>データ サービスのバージョン管理 (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]クライアントは、Uri を使用して、データ モデルに基づいたリソースとしてデータをアクセスできるように、データ サービスを作成することができます。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、サービス操作の定義もサポートしています。 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、これらのデータ サービスを変更することが必要になる場合があります。 既存のデータ サービスに変更を加える場合は、新しいバージョンのデータ サービスを定義する必要性や、既存のクライアント アプリケーションへの影響を最小限に抑える最善の方法を検討する必要があります。 ここでは、新しいバージョンのデータ サービスをいつどのように作成するかに関するガイダンスを示します。 さらに、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] が [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルの異なるバージョンをサポートするクライアントとデータ サービスの間の交換どのように処理するかについても説明します。  
@@ -64,7 +66,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="odata-protocol-versions"></a>OData プロトコルのバージョン  
  新しいバージョンとして[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]がリリースされると、クライアント アプリケーションは使用されないものと同じバージョンの[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]データ サービスによってサポートされているプロトコルです。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] の新しいバージョンをサポートするデータ サービスにアクセスできる古いクライアント アプリケーションもあります。 クライアント アプリケーションが、新しいバージョンを使用しても可能性があります、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]のより新しいバージョンをサポートするクライアント ライブラリ[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]アクセスされているデータ サービス バージョンよりもします。  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]によって提供されるサポートを利用[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]このようなバージョン管理シナリオを処理します。 生成して、クライアントが別のバージョンを使用する場合、クライアント データ サービス クラスを作成するデータ モデルのメタデータを使用してサポートされて[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]データ サービスを使用します。 詳細については、次を参照してください。 [OData: プロトコルのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=186071)です。  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] によって提供されるサポートを利用[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]このようなバージョン管理シナリオを処理します。 生成して、クライアントが別のバージョンを使用する場合、クライアント データ サービス クラスを作成するデータ モデルのメタデータを使用してサポートされて[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]データ サービスを使用します。 詳細については、次を参照してください。 [OData: プロトコルのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=186071)です。  
   
 ### <a name="version-negotiation"></a>バージョンのネゴシエーション  
  最新バージョンを定義するデータ サービスを構成することができます、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]クライアントから要求されたバージョンに関係なく、サービスによって使用されるプロトコル。 こうことを指定して、<xref:System.Data.Services.Common.DataServiceProtocolVersion>値を<xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A>のプロパティ、<xref:System.Data.Services.DataServiceBehavior>データ サービスで使用します。 詳細については、次を参照してください。[データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)です。  
@@ -75,15 +77,15 @@ ms.lasthandoff: 01/19/2018
   
 |[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルのバージョン|サポートが用意されているバージョン|  
 |-----------------------------------------------------------------------------------|----------------------------|  
-|バージョン 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]Service Pack 1 (SP1)<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)]バージョン 3|  
-|バージョン 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />-更新プログラムを[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]SP1。 ダウンロードしてから、更新プログラムをインストールすることができます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=158125)です。<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)]バージョン 4|  
+|バージョン 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Service Pack 1 (SP1)<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] バージョン 3|  
+|バージョン 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />-更新プログラムを[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]SP1。 ダウンロードしてから、更新プログラムをインストールすることができます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=158125)です。<br />-   [!INCLUDE[silverlight](../../../../includes/silverlight-md.md)] バージョン 4|  
 |バージョン 3|-ダウンロードしてインストールをサポートするプレリリース バージョン[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]からバージョン 3、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=203885)です。|  
   
 ### <a name="metadata-versions"></a>メタデータのバージョン  
- 既定では、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ではデータ モデルを表すために CSDL のバージョン 1.1 が使用されます。 リフレクション プロバイダーまたはカスタム データ サービス プロバイダーに基づくデータ モデルの場合は、常にこの CSDL バージョンが使用されます。 ただし、[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] を使用してデータ モデルを定義している場合は、返される CSDL のバージョンは [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] で使用されるバージョンと同じになります。 CSDL のバージョンはの名前空間によって決定されます、[スキーマ要素](http://msdn.microsoft.com/library/396074d8-f99c-4f50-a073-68bce848224f)です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]仕様[ \[MC-CSDL\]: 概念スキーマ定義ファイル形式](http://go.microsoft.com/fwlink/?LinkId=159072)です。  
+ 既定では、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ではデータ モデルを表すために CSDL のバージョン 1.1 が使用されます。 リフレクション プロバイダーまたはカスタム データ サービス プロバイダーに基づくデータ モデルの場合は、常にこの CSDL バージョンが使用されます。 ただし、[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] を使用してデータ モデルを定義している場合は、返される CSDL のバージョンは [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] で使用されるバージョンと同じになります。 CSDL のバージョンはの名前空間によって決定されます、[スキーマ要素](http://msdn.microsoft.com/library/396074d8-f99c-4f50-a073-68bce848224f)です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] 仕様[ \[MC-CSDL\]: 概念スキーマ定義ファイル形式](http://go.microsoft.com/fwlink/?LinkId=159072)です。  
   
- 返されたメタデータの `DataServices` 要素には `DataServiceVersion` 属性も含まれます。この属性は、応答メッセージの `DataServiceVersion` ヘッダーの値と同じです。 クライアント アプリケーションなど、**サービス参照の追加** ダイアログ ボックスで[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]、この情報を使用してクライアント データ サービス クラスのバージョンで正常に機能を生成する[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]データ サービスをホストします。 詳細については、次を参照してください。 [OData: プロトコルのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=186071)です。  
+ 返されたメタデータの `DataServices` 要素には `DataServiceVersion` 属性も含まれます。この属性は、応答メッセージの `DataServiceVersion` ヘッダーの値と同じです。 クライアント アプリケーションなど、**サービス参照の追加**ダイアログ ボックスを使用してクライアント データ サービスを生成するには、この情報はクラスのバージョンを正しく操作する、Visual Studio で[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]データ サービスをホストします。 詳細については、次を参照してください。 [OData: プロトコルのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=186071)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Data Services プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

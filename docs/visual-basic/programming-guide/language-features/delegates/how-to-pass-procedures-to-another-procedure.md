@@ -1,29 +1,30 @@
 ---
-title: "方法 : Visual Basic でプロシージャを別のプロシージャに渡す"
-ms.custom: 
+title: '方法 : Visual Basic でプロシージャを別のプロシージャに渡す'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - AddressOf operator [Visual Basic]
 - delegates [Visual Basic], passing procedures
 ms.assetid: 5adbba15-5a1d-413f-ab3e-3ff6cc0a4669
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4e8e205f5238aab39aa92574bc5c680e68cc8a81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 30264e0480b603b21f8f71893af0fd742af40286
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a>方法 : Visual Basic でプロシージャを別のプロシージャに渡す
 この例では、デリゲートを使用してプロシージャを別のプロシージャに渡す方法を示します。  
   
- デリゲートはで他の任意の型と同様に使用できる型[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 `AddressOf`演算子プロシージャ名に適用される場合は、デリゲート オブジェクトを返します。  
+ デリゲートは、Visual Basic の他の型と同様に使用できる型です。 `AddressOf`演算子プロシージャ名に適用される場合は、デリゲート オブジェクトを返します。  
   
  この例で取得した、別のプロシージャへの参照を実行できるデリゲート パラメーターを持つプロシージャ、`AddressOf`演算子。  
   

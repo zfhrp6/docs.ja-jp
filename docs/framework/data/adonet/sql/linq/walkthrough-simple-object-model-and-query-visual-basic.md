@@ -1,28 +1,28 @@
 ---
-title: "チュートリアル : 簡単なオブジェクト モデルとクエリ (Visual Basic)"
-ms.custom: 
+title: 'チュートリアル : 簡単なオブジェクト モデルとクエリ (Visual Basic)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-ado
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - vb
 ms.assetid: c878e457-f715-46e4-a136-ff14d6c86018
-caps.latest.revision: 
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9d72c0e1f432679f4dc818703dafb813ab8ebd19
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d9b9f69b15b5df981ee47da9ac3c1e2eb2514beb
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>チュートリアル : 簡単なオブジェクト モデルとクエリ (Visual Basic)
 このチュートリアルでは、複雑さを抑えた、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 全体の基本的なシナリオを示します。 サンプルの Northwind データベースにある Customers テーブルのモデル化を行うエンティティ クラスを作成します。 次に、住所がロンドンの顧客を表示するための簡単なクエリを作成します。  
@@ -40,9 +40,9 @@ ms.lasthandoff: 01/17/2018
 -   このチュートリアルには、Northwind サンプル データベースが必要です。 開発用コンピューターにこのデータベースがない場合は、Microsoft ダウンロード サイトからダウンロードします。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。 データベースをダウンロードしたら、ファイルを c:\linqtest フォルダーにコピーします。  
   
 ## <a name="overview"></a>概要  
- このチュートリアルは、主に次の 6 つの手順で構成されています。  
+ このチュートリアルは、主に次の 6 つのタスクで構成されています。  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] で [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ソリューションを作成します。  
+-   作成する、 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Visual Studio でソリューションです。  
   
 -   データベース テーブルにクラスを割り当てます。  
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 01/17/2018
 -   クエリを実行して結果を観察する。  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成する  
- 最初に、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] プロジェクトをビルドおよび実行するために必要な参照を含む [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ソリューションを作成します。  
+ この最初のタスクでは、ビルドおよび実行するために必要な参照を含む Visual Studio ソリューションを作成、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクト。  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成するには  
   
@@ -67,7 +67,7 @@ ms.lasthandoff: 01/17/2018
   
 4.  **名前**ボックスに、入力**linqconsoleapp」と入力**です。  
   
-5.  **[OK]**をクリックします。  
+5.  **[OK]** をクリックします。  
   
 ## <a name="adding-linq-references-and-directives"></a>LINQ の参照とディレクティブを追加する  
  このチュートリアルで使用するアセンブリは、既定ではプロジェクトにインストールされていない場合があります。 場合`System.Data.Linq`がプロジェクトの参照として表示されない (をクリックして**すべてのファイル**で**ソリューション エクスプ ローラー**を展開し、**参照**ノード)、」の説明に従って、追加次の手順です。  
@@ -76,11 +76,11 @@ ms.lasthandoff: 01/17/2018
   
 1.  **ソリューション エクスプ ローラー**を右クリックして**参照**、クリックして**参照の追加**です。  
   
-2.  **参照の追加**ダイアログ ボックスで、をクリックして**.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
+2.  **参照の追加**ダイアログ ボックスで、をクリックして **.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
   
      アセンブリがプロジェクトに追加されます。  
   
-3.  また、**参照の追加**ダイアログ ボックスで、をクリックして**.NET**、までスクロールし、System.Windows.Forms をクリック**[ok]**です。  
+3.  また、**参照の追加**ダイアログ ボックスで、をクリックして **.NET**、までスクロールし、System.Windows.Forms をクリック **[ok]** です。  
   
      このチュートリアルで使用するメッセージ ボックスをサポートするアセンブリがプロジェクトに追加されます。  
   
@@ -165,5 +165,5 @@ ms.lasthandoff: 01/17/2018
   
  「リレーションシップ間でクエリを実行する」のチュートリアルに進む場合は、必要条件として、ここで完了したチュートリアルのソリューションを保存しておく必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

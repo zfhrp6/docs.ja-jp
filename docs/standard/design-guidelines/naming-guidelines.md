@@ -1,12 +1,12 @@
 ---
-title: "名前付けのガイドライン"
-ms.custom: 
+title: 名前付けのガイドライン
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - names [.NET Framework], about naming guidelines
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - names [.NET Framework]
 - format naming guidelines [.NET Framework]
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 713a11f822dd30e77e6442c0bb082a40755b1832
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 91b392c2fe895499b9da83cfd773edb1128a429b
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="naming-guidelines"></a>名前付けのガイドライン
 次のフレームワークの開発に名前付け規則の一貫性を確保すると、フレームワークの使いやすさに主要な金額があります。 これにより、広範囲に分散されたプロジェクトの多くの開発者によって使用されるフレームワークです。 フォームの整合性を超えるフレームワーク要素の名前は簡単に理解する必要があり、各要素の機能を伝達する必要があります。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/23/2017
  [リソースに名前を付ける](../../../docs/standard/design-guidelines/naming-resources.md)  
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

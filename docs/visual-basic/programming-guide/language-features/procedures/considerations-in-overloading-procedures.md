@@ -1,11 +1,12 @@
 ---
-title: "プロシージャのオーバーロードに関する注意事項 (Visual Basic)"
-ms.custom: 
+title: プロシージャのオーバーロードに関する注意事項 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - signatures [Visual Basic], ParamArray arguments
@@ -31,14 +32,14 @@ helpviewer_keywords:
 - restrictions [Visual Basic], overloading procedures
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3c9a9a4759d4ec2dd87778c49c4fd82a08c081a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ac4bc47f9e781f83c7930efffedd40d9c25c2ec2
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>プロシージャのオーバーロードに関する注意事項 (Visual Basic)
 プロシージャをオーバー ロードするときに使用する必要あります別*署名*オーバー ロードされたバージョンごとにします。 通常、このエラーは、各バージョンは、異なるパラメーター リストを指定する必要があることを意味します。 詳細についてを参照してください「異なる署名」[プロシージャのオーバー ロード](./procedure-overloading.md)です。  
@@ -50,7 +51,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="alternatives-to-overloaded-versions"></a>オーバー ロードされたバージョンに代わる方法  
  引数の有無は省略可能またはその数が可変である場合に特にオーバー ロードされたバージョンは、選択肢場合もありますがあります。  
   
- 省略可能な引数が必ずしもすべての言語でサポートされていませんし、パラメーター配列には制限があることに注意してください[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 任意のいくつかの異なる言語で記述されたコードから呼び出される可能性のあるプロシージャを作成している場合に、バージョンによって柔軟性がオーバー ロードされます。  
+ 省略可能な引数が必ずしもすべての言語でサポートされていません、パラメーター配列は、Visual Basic に制限に注意してください。 任意のいくつかの異なる言語で記述されたコードから呼び出される可能性のあるプロシージャを作成している場合に、バージョンによって柔軟性がオーバー ロードされます。  
   
 ### <a name="overloads-and-optional-arguments"></a>省略可能な引数とオーバー ロード  
  呼び出し元のコードの指定または 1 つまたは複数の引数を省略できます必要に応じて、ときに、複数のオーバー ロードされたバージョンを定義または省略可能なパラメーターを使用できます。  
@@ -104,7 +105,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="implicit-overloads-for-a-paramarray-parameter"></a>ParamArray パラメーターの暗黙のオーバー ロード  
  コンパイラは、使用するプロシージャを[ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)無数のオーバー ロードが互いにどのような呼び出し元のコードを渡しますはパラメーター配列に次のように異なるパラメーター。  
   
--   1 つのオーバー ロードの呼び出し元のコードでは引数に指定されていない場合、`ParamArray`  
+-   1 つのオーバー ロードの呼び出し元のコードでは引数に指定されていない場合、 `ParamArray`  
   
 -   1 つのオーバー ロードの 1 次元配列を呼び出し元のコードが提供する場合の`ParamArray`要素の型  
   

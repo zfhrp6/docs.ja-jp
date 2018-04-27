@@ -14,11 +14,11 @@ ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
 caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c26bb7322064d0b8cdf733e74f8b37e81b1e620c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 558eae39b38161d01d599bba6c3121839560884b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="interfaces-visual-basic"></a>インターフェイス (Visual Basic)
 *インターフェイス*は、クラスが実装できるプロパティ、メソッド、およびイベントを定義します。 インターフェイスでは、密接に関連するプロパティ、メソッド、およびイベントの小さなグループとして機能を定義できます。これにより、既存のコードを損なうことなく、インターフェイスを拡張して実装を開発できるため、互換性の問題を減らすことができます。 追加のインターフェイスと実装を開発することで、いつでも新しい機能を追加できます。  
@@ -46,13 +46,13 @@ ms.lasthandoff: 10/22/2017
  [!code-vb[VbVbalrOOP#17](../../../../visual-basic/misc/codesnippet/VisualBasic/index_1.vb)]  
   
 ## <a name="implementing-interfaces"></a>インターフェイスの実装  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、予約語 `Implements` が 2 つの方法で使用されます。 `Implements` ステートメントは、クラスまたは構造体がインターフェイスを実装することを示します。 `Implements` キーワードは、クラス メンバーまたは構造体メンバーが特定のインターフェイス メンバーを実装することを示します。  
+ Visual Basic の予約語`Implements`は 2 つの方法で使用します。 `Implements` ステートメントは、クラスまたは構造体がインターフェイスを実装することを示します。 `Implements` キーワードは、クラス メンバーまたは構造体メンバーが特定のインターフェイス メンバーを実装することを示します。  
   
 ### <a name="implements-statement"></a>Implements ステートメント  
  クラスまたは構造体が 1 つ以上のインターフェイスを実装する場合は、`Implements` ステートメントを `Class` または `Structure` ステートメントの直後に記述する必要があります。 `Implements` ステートメントには、クラスによって実装されるインターフェイスのコンマ区切りのリストが必要です。 クラスまたは構造体は、すべてのインターフェイス メンバーを `Implements` キーワードを使用して実装する必要があります。  
   
 ### <a name="implements-keyword"></a>Implements キーワード  
- `Implements` キーワードには、実装されるインターフェイス メンバーのコンマ区切りのリストが必要です。 一般的には、1 つのインターフェイス メンバーのみが指定されますが、複数のメンバーを指定することもできます。 インターフェイス メンバーの指定は、クラス内の implements ステートメントで指定する必要があるインターフェイス名と、ピリオドと、実装されるメンバー関数、プロパティ、またはイベントの名前で構成されます。 インターフェイス メンバーを実装するメンバーの名前には、有効な任意の識別子を使用できます。また、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の以前のバージョンで使用されている `InterfaceName_MethodName` 規則の制限を受けません。  
+ `Implements` キーワードには、実装されるインターフェイス メンバーのコンマ区切りのリストが必要です。 一般的には、1 つのインターフェイス メンバーのみが指定されますが、複数のメンバーを指定することもできます。 インターフェイス メンバーの指定は、クラス内の implements ステートメントで指定する必要があるインターフェイス名と、ピリオドと、実装されるメンバー関数、プロパティ、またはイベントの名前で構成されます。 インターフェイス メンバーを実装するメンバーの名前が有効な識別子を使用してに制限はありません、`InterfaceName_MethodName`以前のバージョンの Visual Basic で使用される規則です。  
   
  たとえば、次のコードは、インターフェイスのメソッドを実装する `Sub1` という名前のサブルーチンを宣言する方法を示しています。  
   

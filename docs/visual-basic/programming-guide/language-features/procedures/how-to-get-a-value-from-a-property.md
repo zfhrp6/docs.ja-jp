@@ -1,11 +1,12 @@
 ---
-title: "方法: プロパティから値を取得する (Visual Basic)"
-ms.custom: 
+title: '方法: プロパティから値を取得する (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - property values [Visual Basic]
@@ -14,29 +15,29 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: 3954423e-6ab7-4a4c-b55c-a8d27be47891
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6cde5408ea09398a79a3da01ae9b2d0202c58eaf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7161052b9d9b388d8da8bd421c3b220f15037805
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-get-a-value-from-a-property-visual-basic"></a>方法: プロパティから値を取得する (Visual Basic)
 プロパティの値を取得するには、式の中で、プロパティ名を含めます。  
   
- プロパティの`Get`プロシージャが、値を取得しますが、呼び出すことはありません明示的にその名前でします。 変数を使用すると同様に、プロパティを使用します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロパティのプロシージャを呼び出します。  
+ プロパティの`Get`プロシージャが、値を取得しますが、呼び出すことはありません明示的にその名前でします。 変数を使用すると同様に、プロパティを使用します。 Visual Basic では、プロパティのプロシージャ呼び出しを行います。  
   
 ### <a name="to-retrieve-a-value-from-a-property"></a>プロパティから値を取得するには  
   
 1.  式の中で変数名を使用するのと同様に対応するプロパティ名を使用します。 プロパティを使用する変数または定数を使用する任意の場所。  
   
-     または  
+     - または -  
   
      等号の後、プロパティ名を使用して (`=`) 代入ステートメントにサインインします。  
   
-     次の例の値を読み取ります、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] `Now`プロパティ、暗黙的に呼び出してその`Get`プロシージャです。  
+     次の例は、Visual Basic の値を読み取ります`Now`プロパティ、暗黙的に呼び出してその`Get`プロシージャです。  
   
      [!code-vb[VbVbalrDateProperties#4](./codesnippet/VisualBasic/how-to-get-a-value-from-a-property_1.vb)]  
   

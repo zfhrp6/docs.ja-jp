@@ -1,11 +1,12 @@
 ---
-title: "方法: プロパティに値を格納する (Visual Basic)"
-ms.custom: 
+title: '方法: プロパティに値を格納する (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - property values [Visual Basic]
@@ -14,25 +15,25 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: c39401e5-b5fc-4439-8f31-ed640f7ce6ed
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 44e7c4a92ea3d087c12e74aa2ede33a52c8730cf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0f00303b290e324612ad3ac7af673690b4cf4e15
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-put-a-value-in-a-property-visual-basic"></a>方法: プロパティに値を格納する (Visual Basic)
 プロパティに値を格納するには、代入ステートメントの左側にあるプロパティの名前を置きます。  
   
- プロパティの`Set`プロシージャが、値を格納しますが、呼び出すことはありません明示的にその名前でします。 変数を使用すると同様に、プロパティを使用します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロパティのプロシージャを呼び出します。  
+ プロパティの`Set`プロシージャが、値を格納しますが、呼び出すことはありません明示的にその名前でします。 変数を使用すると同様に、プロパティを使用します。 Visual Basic では、プロパティのプロシージャ呼び出しを行います。  
   
 ### <a name="to-store-a-value-in-a-property"></a>プロパティの値を格納するには  
   
 1.  代入ステートメントの左側にあるプロパティの名前を使用します。  
   
-     次の例の値の設定、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] `TimeOfDay`プロパティ、正午を暗黙的に呼び出してその`Set`プロシージャです。  
+     次の例は、Visual Basic の値を設定`TimeOfDay`プロパティ、正午を暗黙的に呼び出してその`Set`プロシージャです。  
   
      [!code-vb[VbVbcnProcedures#11](./codesnippet/VisualBasic/how-to-put-a-value-in-a-property_1.vb)]  
   

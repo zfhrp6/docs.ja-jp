@@ -26,11 +26,11 @@ ms.assetid: cffac744-ab8c-4f1f-ba50-732c22ab4b88
 caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c18d0a9abb1d8b9e3e22f3b81bf605fb8ed75cfa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0ec038a17b4a6b10dbe339fe33969c4ade57e2a7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="namespaces-in-visual-basic"></a>Visual Basic における名前空間
 アセンブリ内で定義されているオブジェクトは、名前空間によって編成されています。 アセンブリには複数の名前空間を含めることができます。さらに、名前空間の中に他の名前空間を含めることもできます。 名前空間を使用するとあいまいさがなくなるため、クラス ライブラリを使用する場合など、多数のオブジェクトを使用する場合に参照が簡単になります。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="avoiding-name-collisions"></a>名前の競合の回避  
  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] の名前空間は、他のライブラリで似た名前が使用されている場合にクラス ライブラリの開発者が遭遇する、 *名前空間の汚染*と呼ばれる問題に対処しています。 このような既存コンポーネントとの競合は、 *名前の競合*とも呼ばれます。  
   
- たとえば、 `ListBox`という名前の新しいクラスを作成した場合、プロジェクト内ではこのクラスを修飾子を付けずに使用できます。 ただし、使用する場合、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.Windows.Forms.ListBox>クラス、同じプロジェクト内の参照を一意にするための完全修飾参照を使用する必要があります。 参照が一意でない場合、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、名前があいまいであることを示すエラーを生成します。 次のコード例では、これらのオブジェクトを宣言する方法を示しています。  
+ たとえば、 `ListBox`という名前の新しいクラスを作成した場合、プロジェクト内ではこのクラスを修飾子を付けずに使用できます。 ただし、使用する場合、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.Windows.Forms.ListBox>クラス、同じプロジェクト内の参照を一意にするための完全修飾参照を使用する必要があります。 参照が一意でない場合、Visual Basic には、名前があいまいであることを示すエラーが生成されます。 次のコード例では、これらのオブジェクトを宣言する方法を示しています。  
   
  [!code-vb[VbVbalrApplication#7](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_2.vb)]  
   
@@ -50,9 +50,9 @@ ms.lasthandoff: 11/21/2017
   
  ![Namespace 階層](../../../visual-basic/programming-guide/program-structure/media/vanamespacehierarchy.gif "vaNamespaceHierarchy")  
   
- 既定では、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で作成するすべての実行可能ファイルには、プロジェクトと同名の名前空間が含まれます。 たとえば、 `ListBoxProject`という名前のプロジェクト内でオブジェクトを定義した場合、実行可能ファイル ListBoxProject.exe には `ListBoxProject`という名前空間が含まれます。  
+ 既定では、Visual Basic を使用して作成するすべての実行可能ファイルには、プロジェクトと同じ名前を持つ名前空間が含まれています。 たとえば、 `ListBoxProject`という名前のプロジェクト内でオブジェクトを定義した場合、実行可能ファイル ListBoxProject.exe には `ListBoxProject`という名前空間が含まれます。  
   
- 複数のアセンブリで同じ名前空間を使用することができます。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] はこれらを 1 つの名前セットとして扱います。 たとえば、 `SomeNameSpace` というアセンブリの `Assemb1`という名前空間のクラスを定義した後に、 `Assemb2`というアセンブリの同じ名前空間のクラスを定義できます。  
+ 複数のアセンブリで同じ名前空間を使用することができます。 Visual Basic の名前の単一のセットとして扱います。 たとえば、 `SomeNameSpace` というアセンブリの `Assemb1`という名前空間のクラスを定義した後に、 `Assemb2`というアセンブリの同じ名前空間のクラスを定義できます。  
   
 ## <a name="fully-qualified-names"></a>完全修飾名  
  完全修飾名は、オブジェクトが定義されている名前空間の名前で始まるオブジェクト参照です。 他のプロジェクトで定義されているオブジェクトを使用するには、 **[プロジェクト]** メニューの **[参照の追加]** をクリックしてそのクラスへの参照を作成し、コード内でそのオブジェクトの完全修飾名を使用します。 次のコードは、別のプロジェクトの名前空間のオブジェクトを使用して完全修飾名を使用する方法を示しています。  
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrApplication#11](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/namespaces_6.vb)]  
   
- この場合、完全修飾名を使わずに `Class1` を使おうとすると、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] から、 `Class1` という名前があいまいであることを指摘するエラーが生成されます。  
+ 使用しようとする場合`Class1`完全修飾、Visual Basic でエラーが発生することを示す名前`Class1`があいまいです。  
   
 ## <a name="namespace-level-statements"></a>名前空間レベルのステートメント  
  名前空間内では、モジュール、インターフェイス、クラス、デリゲート、列挙体、構造体、他の名前空間などの項目を定義できます。 プロパティ、プロシージャ、変数、イベントなどの項目を名前空間のレベルで定義することはできません。 これらの項目は、モジュール、構造体、クラスなどのコンテナー内で宣言する必要があります。  

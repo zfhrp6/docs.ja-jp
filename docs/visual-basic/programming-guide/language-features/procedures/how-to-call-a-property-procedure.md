@@ -1,11 +1,12 @@
 ---
-title: "方法: プロパティ プロシージャを呼び出す (Visual Basic)"
-ms.custom: 
+title: '方法: プロパティ プロシージャを呼び出す (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -14,25 +15,25 @@ helpviewer_keywords:
 - properties [Visual Basic], property procedures
 - procedure calls [Visual Basic], property procedures
 ms.assetid: 96bc4d74-d9c3-4b7a-954d-58ac8553cd94
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: cf9080e3c2b23302257499f13e734231f3614495
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 38b3704328916a487f94879ea0096ae923f19082
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>方法: プロパティ プロシージャを呼び出す (Visual Basic)
 プロパティ プロシージャを呼び出すには、「プロパティ値を格納するか値を取得します。 プロパティは、変数にアクセスする同じ方法でアクセスします。  
   
- プロパティの`Set`プロシージャは値を格納して、その`Get`プロシージャが値を取得します。 ただし、明示的に呼び出さないこれらのプロシージャ名でします。 格納したり、変数の値を取得すると同様に、代入ステートメントまたは式のプロパティを使用します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロパティのプロシージャを呼び出します。  
+ プロパティの`Set`プロシージャは値を格納して、その`Get`プロシージャが値を取得します。 ただし、明示的に呼び出さないこれらのプロシージャ名でします。 格納したり、変数の値を取得すると同様に、代入ステートメントまたは式のプロパティを使用します。 Visual Basic では、プロパティのプロシージャ呼び出しを行います。  
   
 ### <a name="to-call-a-propertys-get-procedure"></a>プロパティの Get プロシージャを呼び出しています  
   
 1.  式の中で変数名を使用するのと同様に対応するプロパティ名を使用します。 プロパティを使用する変数または定数を使用する任意の場所。  
   
-     または  
+     - または -  
   
      等号の後、プロパティ名を使用して (`=`) 代入ステートメントにサインインします。  
   

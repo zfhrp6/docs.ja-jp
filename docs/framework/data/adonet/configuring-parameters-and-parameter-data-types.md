@@ -1,27 +1,29 @@
 ---
-title: "パラメーターおよびパラメーター データ型の構成"
-ms.custom: 
+title: パラメーターおよびパラメーター データ型の構成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a71ba7ed12196184b7e826ed70c92a9873efdb0c
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: cdb6efb428f5c096178895f95fe1256846e9c1e5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>パラメーターおよびパラメーター データ型の構成
 コマンド オブジェクトは、パラメーターを使用して SQL ステートメントまたはストアド プロシージャに値を渡すことによって、型チェックと検証の機能を実現します。 コマンド テキストとは異なり、パラメーターの入力は実行可能なコードとしてではなく、リテラル値として扱われます。 これにより、攻撃者がサーバーのセキュリティを侵害するコマンドを SQL ステートメントに "注入" する SQL インジェクション攻撃を防ぐことができます。  
@@ -90,7 +92,7 @@ ms.lasthandoff: 01/17/2018
 >  decimal から他の型への変換は縮小変換になるため、decimal 値は最も近い整数値に切り捨てられます。 変換結果が対象の型にならなかった場合、 <xref:System.OverflowException> がスローされます。  
   
 > [!NOTE]
->  サーバーに NULL パラメーター値を送信する場合は、 <xref:System.DBNull>( `null` の場合は`Nothing` ) ではなく、 [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]を指定する必要があります。 システムの null 値は、値のない空オブジェクトです。 <xref:System.DBNull> は、null 値を表すために使用します。 データベースの NULL 値の詳細については、「 [Handling Null Values](../../../../docs/framework/data/adonet/sql/handling-null-values.md)」を参照してください。  
+>  指定する必要があります、サーバーに null パラメーター値を送信するときに<xref:System.DBNull>ではなく、 `null` (`Nothing` Visual Basic で)。 システムの null 値は、値のない空オブジェクトです。 <xref:System.DBNull> は、null 値を表すために使用します。 データベースの NULL 値の詳細については、「 [Handling Null Values](../../../../docs/framework/data/adonet/sql/handling-null-values.md)」を参照してください。  
   
 ## <a name="deriving-parameter-information"></a>パラメーター情報の派生  
  `DbCommandBuilder` クラスを使用してストアド プロシージャからパラメーターを派生させることができます。 `SqlCommandBuilder` クラスと `OleDbCommandBuilder` クラスはどちらも静的メソッド `DeriveParameters`を提供します。このメソッドは、ストアド プロシージャから得られたパラメーター情報を使用して、コマンド オブジェクトのパラメーター コレクションを設定します。 `DeriveParameters` はコマンドの既存のパラメーター情報を上書きします。  
@@ -206,7 +208,7 @@ parameter = command.Parameters.Add( _
 parameter.Direction = ParameterDirection.Output;  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [DataAdapter パラメーター](../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
  [ADO.NET でのデータ型のマッピング](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  

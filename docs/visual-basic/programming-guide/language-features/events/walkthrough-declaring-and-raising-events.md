@@ -1,11 +1,12 @@
 ---
-title: "宣言と発生イベント (Visual Basic)"
-ms.custom: 
+title: 宣言と発生イベント (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declarations [Visual Basic], events
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - events [Visual Basic], raising
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0bf75cfba5102be5d837af385e2d3578f78a03c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 27db585084703607a7389f5a0aa3eba6f70dd793
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>チュートリアル: イベントの宣言と発生 (Visual Basic)
 このチュートリアルを宣言してという名前のクラスのイベントを発生させる方法について説明`Widget`です。 手順を完了した後可能性がある、関連トピック[チュートリアル: イベントの処理](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)からのイベントを使用する方法が示されます`Widget`アプリケーションの状態情報を提供するオブジェクト。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
   
 #### <a name="to-build-the-code-example-for-this-topic"></a>このトピックのコード例をビルドするには  
   
-1.  新しく開きます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]Windows アプリケーション プロジェクトし、という名前のフォームを作成する`Form1`です。  
+1.  新しい Visual Basic Windows アプリケーション プロジェクトを開き、という名前のフォームを作成`Form1`です。  
   
 2.  2 つのボタンとラベルを追加`Form1`です。  
   
@@ -61,7 +62,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  次の例外を除き、プロシージャ引数を行う場合と同様、イベント引数を宣言することができます: イベントことはできません`Optional`または`ParamArray`引数、およびイベントに戻り値がありません。  
   
- `PercentDone`によってイベントが発生した、`LongTask`のメソッド、`Widget`クラスです。 `LongTask`2 つの引数を受け取る: 作業、および処理する前に最小の時間間隔に操作を実行する時間の長さメソッド別人`LongTask`させる一時停止、`PercentDone`イベント。  
+ `PercentDone`によってイベントが発生した、`LongTask`のメソッド、`Widget`クラスです。 `LongTask` 2 つの引数を受け取る: 作業、および処理する前に最小の時間間隔に操作を実行する時間の長さメソッド別人`LongTask`させる一時停止、`PercentDone`イベント。  
   
 #### <a name="to-raise-the-percentdone-event"></a>ですイベントを発生させる  
   

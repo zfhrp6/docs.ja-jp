@@ -1,26 +1,26 @@
 ---
-title: "コレクションに関するガイドライン"
-ms.custom: 
+title: コレクションに関するガイドライン
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
-caps.latest.revision: 
+caps.latest.revision: 4
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 09a2a075e21de6968989575385db07ab39eb627f
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 5a1bb81a23a180c3f7738d811398a5a45abd9122
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="guidelines-for-collections"></a>コレクションに関するガイドライン
 任意の型が共通の特性を持つオブジェクトのグループの操作を厳密には、コレクションを見なすことができます。 実装するには、このような型に適したはほぼ<xref:System.Collections.IEnumerable>または<xref:System.Collections.Generic.IEnumerable%601>、このセクションの内容おのみ考慮されるようにコレクションにそれらのインターフェイスの一方または両方を実装する型。  
@@ -135,10 +135,10 @@ ms.lasthandoff: 03/05/2018
   
  たとえば、文字列の読み取り専用コレクションを呼び出す必要があります`ReadOnlyStringCollection`です。  
   
- *Portions © 2005, 2009 Microsoft Corporation.All rights reserved.*  
+ *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
  [使用方法のガイドライン](../../../docs/standard/design-guidelines/usage-guidelines.md)

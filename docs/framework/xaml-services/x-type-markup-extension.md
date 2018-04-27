@@ -1,12 +1,13 @@
 ---
-title: "x:Type マークアップ拡張機能"
-ms.custom: 
+title: x:Type マークアップ拡張機能
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - x:TypeExtension
@@ -21,16 +22,17 @@ helpviewer_keywords:
 - TargetType attribute [XAML Services]
 - Type markup extension in XAML [XAML Services]
 ms.assetid: e0e0ce6f-e873-49c7-8ad7-8b840eb353ec
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a4d645d5c953c0ff33435a5648024ace099455e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: db56c2bcdca14b87de320dfe19a6c364c76ecef7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xtype-markup-extension"></a>x:Type マークアップ拡張機能
 CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオブジェクト。  
@@ -55,7 +57,7 @@ CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオ�
 |`typeNameValue`|必須。 現在既定の XAML 名前空間以外に解決可能な型名指定した場合はマップのプレフィックスまたは`prefix`を指定します。|  
   
 ## <a name="remarks"></a>コメント  
- `x:Type`マークアップ拡張機能と同様の機能は、`typeof()`で演算子[!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)]または`GetType`で演算子[!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)]です。  
+ `x:Type`マークアップ拡張機能と同様の機能は、 `typeof()` (C#) 演算子または`GetType`Microsoft Visual Basic での演算子。  
   
  `x:Type`マークアップ拡張機能は、種類を取得するプロパティの文字列から変換動作を提供<xref:System.Type>です。 入力は、XAML の型です。 入力 XAML の型と CLR の出力間のリレーションシップ<xref:System.Type>出力される<xref:System.Type>は、<xref:System.Xaml.XamlType.UnderlyingType%2A>入力の<xref:System.Xaml.XamlType>、必要なを検索した後<xref:System.Xaml.XamlType>XAML スキーマ コンテキストと、に基づいて<xref:System.Windows.Markup.IXamlTypeResolver>サービス コンテキストを提供します。  
   
@@ -67,7 +69,7 @@ CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオ�
   
  `x:Type`オブジェクト要素の構文でマークアップ拡張機能を使用できます。 ここでは、値を指定する、<xref:System.Windows.Markup.TypeExtension.TypeName%2A>プロパティは、拡張機能を正しく初期化するために必要です。  
   
- `x:Type`マークアップ拡張機能は、verbose 属性としても使用できますただしこの使用法は一般的な: `<``object` 。`property``="{x:Type TypeName=``typeNameValue``}" .../>`  
+ `x:Type`マークアップ拡張機能は、verbose 属性としても使用できます。 ただし この使用はほとんど発生しません。 `<``object` `property``="{x:Type TypeName=``typeNameValue``}" .../>`  
   
 ## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
   
@@ -82,7 +84,7 @@ CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオ�
 ## <a name="xaml-2009"></a>XAML 2009  
  XAML 2009 はジェネリック型し、の機能の動作が変更の追加サポートを提供`x:TypeArguments`と`x:Type`このサポートを提供します。  
   
--   `x:TypeArguments`汎用オブジェクトのインスタンス化に関連付けられているオブジェクトの要素がルート以外の要素にあることができます。 詳細については、「XAML 2009」のセクションを参照してください。 [X:typearguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)です。  
+-   `x:TypeArguments` 汎用オブジェクトのインスタンス化に関連付けられているオブジェクトの要素がルート以外の要素にあることができます。 詳細については、「XAML 2009」のセクションを参照してください。 [X:typearguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)です。  
   
 -   XAML 2009 では、マークアップでジェネリック型の制約を指定する構文をサポートします。 によって使用されるこの`x:TypeArguments`により、 `x:Type`、または組み合わせで 2 つの機能です。  
   
@@ -90,7 +92,7 @@ CLR の提供<xref:System.Type>指定の XAML 型の基になる型であるオ�
   
  WPF では、loose XAML (XAML をマークアップ コンパイルされていない) については、XAML 2009 の機能を使用することができます。 WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Style>  
  [スタイルとテンプレート](../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  

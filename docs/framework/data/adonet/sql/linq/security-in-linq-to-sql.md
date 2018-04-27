@@ -1,24 +1,26 @@
 ---
-title: "LINQ to SQL におけるセキュリティ"
-ms.custom: 
+title: LINQ to SQL におけるセキュリティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d49787f7-414e-4c71-aa33-80a5895536b1
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0ee361c27bd14f0266b2b86f315f9c091e049c12
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 96951b3b3c8a6ee93a83ba24f6c6a19c3e36381c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="security-in-linq-to-sql"></a>LINQ to SQL におけるセキュリティ
 データベースに接続するときは、常にセキュリティのリスクがあります。 LINQ to SQL には SQL Server のデータを操作する新しい方法が含まれていますが、セキュリティ メカニズムは追加されていません。  
@@ -32,7 +34,7 @@ ms.lasthandoff: 01/17/2018
 ## <a name="connection-strings"></a>接続文字列  
  接続文字列にパスワードを使用することは、できるだけ避けてください。 接続文字列自体がセキュリティのリスクであるうえに、接続文字列はオブジェクト リレーショナル デザイナーまたは SQLMetal コマンド ライン ツールの使用時にオブジェクト モデルや外部マッピング ファイルにクリア テキストで追加できます。 ファイル システムでオブジェクト モデルまたは外部マッピング ファイルに対してアクセス権があれば、どのユーザーでも接続パスワードを見ることができます (パスワードが接続文字列に含まれている場合)。  
   
- このようなリスクを最小限に抑えるには、統合セキュリティを使用して [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] との信頼関係接続を作成します。 この方法を使用すると、接続文字列にパスワードを含める必要がなくなります。 詳細については、次を参照してください。 [SQL Server のセキュリティ](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md)です。  
+ このようなリスクを最小限に抑えるには、SQL Server との信頼された接続を作成するのに統合セキュリティを使用します。 この方法を使用すると、接続文字列にパスワードを含める必要がなくなります。 詳細については、次を参照してください。 [SQL Server のセキュリティ](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md)です。  
   
  統合セキュリティがない場合は、接続文字列にクリア テキストのパスワードが必要になります。 以下は、接続文字列のセキュリティ保護に最も有効な手段です。  
   
@@ -44,6 +46,6 @@ ms.lasthandoff: 01/17/2018
   
 -   すべての接続文字列の期限と接触点を最小限にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
  [よく寄せられる質問](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)

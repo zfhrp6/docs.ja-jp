@@ -1,18 +1,19 @@
 ---
-title: "上の理由がリフト アンド シフトの既存のクラウド DevOps 対応アプリケーションへアプリ用 .NET"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |上の理由がリフト アンド シフトの既存のクラウド DevOps 対応アプリケーションへアプリ用 .NET"
+title: 上の理由がリフト アンド シフトの既存のクラウド DevOps 対応アプリケーションへアプリ用 .NET
+description: コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |上の理由がリフト アンド シフトの既存のクラウド DevOps 対応アプリケーションへアプリ用 .NET
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1339264f49a065888a95e6ef6fe8575aa3c75564
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: b6a65dfff45b240e89ab22fd7eba82d6cdbc27b8
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="reasons-to-lift-and-shift-existing-net-apps-to-cloud-devops-ready-applications"></a>上の理由がリフト アンド シフトの既存のクラウド DevOps 対応アプリケーションへアプリ用 .NET
 
@@ -48,7 +49,7 @@ ms.lasthandoff: 03/08/2018
 
 > ![クラウド DevOps 対応アプリケーションのメインの柱](./media/image2.png)
 >
-> **図 4-2 です。** クラウド DevOps 対応アプリケーションのメインの柱
+> **図 4-2** クラウド DevOps 対応アプリケーションのメインの柱
 
 要約すると、クラウド DevOps 対応アプリケーションは、クラウド コンテナー、管理されたクラウド インフラストラクチャ、回復力のあるアプリケーション手法の組み合わせを使用しているときに、モデルをコンピューティングを活用したを構築し、アプリケーションを管理する方法監視、継続的な配信、および DevOps をすべて再構築し、既存のアプリケーションを書き直す必要はありません。
 

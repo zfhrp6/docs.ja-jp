@@ -1,11 +1,12 @@
 ---
-title: "Sub プロシージャ (Visual Basic)"
-ms.custom: 
+title: Sub プロシージャ (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Sub procedures [Visual Basic], about Sub procedures
@@ -17,17 +18,17 @@ helpviewer_keywords:
 - procedures [Visual Basic], Sub
 - syntax [Visual Basic], Sub procedures
 ms.assetid: 6a0a4958-ed0a-4d3d-8d31-0772c82bda58
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4e20e0dd5ff9e2b931e5792bebb3144930826f89
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7258d57d2677042a2020097893a4f7a0adb35508
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub プロシージャ (Visual Basic)
-A`Sub`プロシージャは、一連の[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]で囲まれたステートメント、`Sub`と`End Sub`ステートメントです。 `Sub`呼び出しコードに値を返さないが、プロシージャは、タスクを実行し、呼び出し元のコードにコントロールを返します。  
+A`Sub`プロシージャは、一連の Visual Basic ステートメントで囲まれた、`Sub`と`End Sub`ステートメントです。 `Sub`呼び出しコードに値を返さないが、プロシージャは、タスクを実行し、呼び出し元のコードにコントロールを返します。  
   
  プロシージャが呼び出されるたびにそのステートメントが実行される後の最初の実行可能ステートメントで始まる、`Sub`ステートメントと最初で終了するまで`End Sub`、 `Exit Sub`、または`Return`ステートメントが発生しました。  
   
@@ -38,7 +39,7 @@ A`Sub`プロシージャは、一連の[!INCLUDE[vbprvb](~/includes/vbprvb-md.md
 ## <a name="declaration-syntax"></a>宣言の構文  
  宣言の構文、`Sub`手順のとおりです。  
   
- `[`*修飾子* `] Sub` *subname* `[(` *parameterlist*  `)]`  
+ `[` *修飾子* `] Sub` *subname* `[(` *parameterlist*  `)]`  
   
  `' Statements of the Sub procedure.`  
   
@@ -65,7 +66,7 @@ A`Sub`プロシージャは、一連の[!INCLUDE[vbprvb](~/includes/vbprvb-md.md
   
  呼び出しの構文、`Sub`手順のとおりです。  
   
- `[Call]`  *subname* `[(` *argumentlist*`)]`  
+ `[Call]`  *subname* `[(` *argumentlist* `)]`  
   
  呼び出すことができます、`Sub`からそれを定義するクラスの外側のメソッドです。 最初に、使用する必要がある、`New`キーワードをクラスのインスタンスを作成またはメソッドを呼び出すには、クラスのインスタンスが返されます。 詳細については、次を参照してください。 [New 演算子](../../../../visual-basic/language-reference/operators/new-operator.md)です。 呼び出して、次の構文を使用する、`Sub`インスタンス オブジェクトのメソッド。  
   

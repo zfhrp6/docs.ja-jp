@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic における型変換"
-ms.custom: 
+title: Visual Basic における型変換
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - conversions [Visual Basic], type
@@ -16,14 +17,14 @@ helpviewer_keywords:
 - changing data types [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 1cdacd21-ba31-4b62-b5be-395e41eeaa17
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b46d813b4fcadd975d87b235e9f3350a365949fa
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: f1487d98f37e7ef00982de365d0d164435f84567
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="type-conversions-in-visual-basic"></a>Visual Basic における型変換
 値の 1 つのデータ型から別の型に変更するプロセスが呼び出されると*変換*です。 いずれかの変換は*拡大*または*縮小*関連する型のデータ容量に応じて、します。 *暗黙的な*または*明示的な*、ソース コード内の構文によって異なります。  
@@ -33,7 +34,7 @@ ms.lasthandoff: 10/22/2017
  変換先の型がデータを保持するかどうかによって分類される変換について説明します。  
   
  [暗黙の型変換と明示的な型変換](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
- かどうかによって分類される変換について説明します[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]自動的に実行します。  
+ かどうか Visual Basic でに実行によって自動的に分類される変換をについて説明します。  
   
  [文字列とその他の型との変換](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
  文字列と数値、間の変換を示しています。 `Boolean`、または日付/時刻値。  
@@ -46,10 +47,10 @@ ms.lasthandoff: 10/22/2017
   
 ## <a name="related-sections"></a>関連項目  
  [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- 導入されています、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のデータ型し、その使用方法について説明します。  
+ Visual Basic データ型を紹介し、それらを使用する方法について説明します。  
   
  [データの種類](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- によって提供される基本データ型を一覧表示[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ Visual Basic で用意されている基本データ型を一覧表示します。  
   
  [トラブルシューティング (データ型)](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  データ型を操作するときに発生する可能性がある一般的な問題について説明します。

@@ -1,11 +1,12 @@
 ---
-title: "配列のトラブルシューティング (Visual Basic)"
-ms.custom: 
+title: 配列のトラブルシューティング (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - troubleshooting arrays
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - arrays [Visual Basic], declaration errors
 - arrays [Visual Basic], troubleshooting
 ms.assetid: f4e971c7-c0a4-4ed7-a77a-8d71039f266f
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0417ae8d37642a65b14cc81ae9dcf3a3c32d63ce
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9e5c00c2b531dd019a207b16ffcac95424bfe450
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting-arrays-visual-basic"></a>配列のトラブルシューティング (Visual Basic)
 このページには、配列を扱うときに発生する可能性がある一般的な問題が一覧表示されます。  
@@ -60,10 +61,10 @@ ms.lasthandoff: 11/21/2017
  配列の初期化中のプロセスは、各ディメンションを上限と下限の境界を割り当てます。 配列の要素へのアクセスには、有効なインデックスまたは添字の各次元を指定します。 インデックスの場合は、下限を下回る、またはその上限を超えて、<xref:System.IndexOutOfRangeException>例外が発生します。 実行時にエラーが発生したため、コンパイラは、このようなエラーを検出できません。  
   
 ### <a name="determining-bounds"></a>範囲の確認  
- 場合は、コードに別のコンポーネントが配列を渡すと、たとえば、プロシージャの引数としてわからないその配列のサイズまたはその次元の長さ。 任意の要素にアクセスしようとする前に常に配列のすべての次元の上限の境界を決定する必要があります。 かどうか、配列は作成されていくつかの方法で以外の場合、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] `New`句、下限が 0 以外のものありますでありもその下限の境界を決定する最も安全な方法です。  
+ 場合は、コードに別のコンポーネントが配列を渡すと、たとえば、プロシージャの引数としてわからないその配列のサイズまたはその次元の長さ。 任意の要素にアクセスしようとする前に常に配列のすべての次元の上限の境界を決定する必要があります。 配列は、Visual Basic 以外のいくつかの方法で作成されている場合`New`句、下限が 0 以外のものありますでありもその下限の境界を決定する最も安全な方法です。  
   
 ### <a name="specifying-the-dimension"></a>ディメンションを指定します。  
- 多次元配列の境界を決定するときに注意して、ディメンションを指定する方法。 `dimension`のパラメーター、<xref:System.Array.GetLowerBound%2A>と<xref:System.Array.GetUpperBound%2A>メソッドは、中に、0 から始まる、`Rank`のパラメーター、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Information.LBound%2A>と<xref:Microsoft.VisualBasic.Information.UBound%2A>関数は、1 から始まります。  
+ 多次元配列の境界を決定するときに注意して、ディメンションを指定する方法。 `dimension`のパラメーター、<xref:System.Array.GetLowerBound%2A>と<xref:System.Array.GetUpperBound%2A>メソッドは、中に、0 から始まる、 `Rank` 、Visual Basic のパラメーター<xref:Microsoft.VisualBasic.Information.LBound%2A>と<xref:Microsoft.VisualBasic.Information.UBound%2A>関数は、1 から始まります。  
   
 ## <a name="see-also"></a>関連項目  
  [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  

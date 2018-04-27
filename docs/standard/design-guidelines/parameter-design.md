@@ -1,12 +1,12 @@
 ---
-title: "パラメーターのデザイン"
-ms.custom: 
+title: パラメーターのデザイン
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - member design guidelines [.NET Framework], parameters
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f95301bab57e8bdb6b22c54140a4c02ed208b8d3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 0d89ed81c06558a6bc101864a7fef3173f019fd0
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="parameter-design"></a>パラメーターのデザイン
 このセクションでは、引数をチェックするためのガイドラインにセクションを含むパラメーターのデザインの大まかなガイドラインを示します。 さらを参照してくださいで解説するガイドライン[パラメーターの名前付け](../../../docs/standard/design-guidelines/naming-parameters.md)です。  
@@ -82,9 +82,9 @@ ms.lasthandoff: 12/23/2017
   
  引数が値渡しでパラメーターを通じて渡されると、メンバーは、実際に渡された引数のコピーを受け取ります。 引数が値型の場合、引数のコピーは、スタックに配置します。 引数の参照型では、参照のコピーは、スタックに配置されます。 パラメーターの値渡しを c#、VB.NET、および C++ での既定値などの最も一般的な CLR 言語。  
   
- を介して、引数が渡されたときに、`ref`パラメーター、メンバーがで渡される実際の引数への参照を受け取ります。 引数が値型の場合は、引数への参照は、スタックに配置します。 引数の参照型では、参照への参照はスタックに配置されます。 `Ref`パラメーターは、呼び出し元によって渡された引数の変更をメンバーに許可を使用することができます。  
+ を介して、引数が渡されたときに、`ref`パラメーター、メンバーがで渡される実際の引数への参照を受け取ります。 引数が値型の場合は、引数への参照は、スタックに配置します。 引数の参照型では、参照への参照はスタックに配置されます。 `Ref` パラメーターは、呼び出し元によって渡された引数の変更をメンバーに許可を使用することができます。  
   
- `Out`パラメーターはのような`ref`小さな違いがいくつかのパラメーターです。 割り当てられていないため、読み取れませんメンバー本体でいくつかの値が割り当ては、前に、パラメーターが最初と見なされます。 また、パラメーターは、メンバーを返す前に、いくつかの値を割り当てられるにします。  
+ `Out` パラメーターはのような`ref`小さな違いがいくつかのパラメーターです。 割り当てられていないため、読み取れませんメンバー本体でいくつかの値が割り当ては、前に、パラメーターが最初と見なされます。 また、パラメーターは、メンバーを返す前に、いくつかの値を割り当てられるにします。  
   
  **避け x**を使用して`out`または`ref`パラメーター。  
   
@@ -164,8 +164,8 @@ public class String {
   
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メンバーのデザインのガイドライン](../../../docs/standard/design-guidelines/member.md)  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

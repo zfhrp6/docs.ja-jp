@@ -1,27 +1,29 @@
 ---
-title: "方法 : DBML ファイルおよび外部マッピング ファイルを検証する"
-ms.custom: 
+title: '方法 : DBML ファイルおよび外部マッピング ファイルを検証する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d9ea37f5-0a9e-4401-8fc3-1e6fd44c49f9
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7724586c33c19654c3657a5a4604a3c74f2c8756
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4d3fc297078c9f6c1ac8b2d8a498050f294a5437
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-validate-dbml-and-external-mapping-files"></a>方法 : DBML ファイルおよび外部マッピング ファイルを検証する
-変更した外部マッピング ファイルや .dbml ファイルは、それぞれのスキーマ定義に対して検証する必要があります。 このトピックでは、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ユーザーを対象に、検証プロセスを実装する手順を示します。  
+変更した外部マッピング ファイルや .dbml ファイルは、それぞれのスキーマ定義に対して検証する必要があります。 このトピックでは、検証プロセスを実装する手順を Visual Studio ユーザーを示します。  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -56,7 +58,7 @@ ms.lasthandoff: 01/17/2018
      エラー、警告、またはメッセージが生成されていないか確認します。 生成されていなければ、XML ファイルはスキーマ定義に対して有効です。  
   
 ## <a name="alternate-method-for-supplying-schema-definition"></a>スキーマ定義を指定する別の方法  
- 何らかの理由により適切な .xsd ファイルが表示されない場合に、 **XML スキーマ**ダイアログ ボックスで、ヘルプ トピックから .xsd ファイルをダウンロードすることができます。 次の手順を使用すると、ダウンロードしたファイルを、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] の XML エディターに対応する Unicode 形式で保存できます。  
+ 何らかの理由により適切な .xsd ファイルが表示されない場合に、 **XML スキーマ**ダイアログ ボックスで、ヘルプ トピックから .xsd ファイルをダウンロードすることができます。 次の手順では、Visual Studio XML エディターで必要な Unicode 形式でダウンロードしたファイルを保存できます。  
   
 #### <a name="to-copy-a-schema-definition-file-from-a-help-topic"></a>スキーマ定義ファイルをヘルプ トピックからコピーするには  
   
@@ -81,5 +83,5 @@ ms.lasthandoff: 01/17/2018
   
 7.  **ファイル名**ボックスで、ファイル名の拡張子が .xsd で作成します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

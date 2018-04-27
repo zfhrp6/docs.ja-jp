@@ -19,11 +19,11 @@ ms.assetid: a178f85b-5d54-438f-8479-40b62af6fe76
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0f3c42b5134b058c010ca4c7a5ee7c24627c65fe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1dc5fe1addb089f3de9b4d5054f34a578b491fb0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-descendant-axis-property-visual-basic"></a>XML 子孫軸プロパティ (Visual Basic)
 次の子孫にアクセスできるように:<xref:System.Xml.Linq.XElement>オブジェクト、<xref:System.Xml.Linq.XDocument>オブジェクト、コレクションの<xref:System.Xml.Linq.XElement>オブジェクト、または一連の<xref:System.Xml.Linq.XDocument>オブジェクト。  
@@ -36,21 +36,21 @@ object...<descendant>
   
 ## <a name="parts"></a>指定項目  
  `object`  
- 必須です。 <xref:System.Xml.Linq.XElement> オブジェクト、<xref:System.Xml.Linq.XDocument> オブジェクト、<xref:System.Xml.Linq.XElement> オブジェクトのコレクション、または <xref:System.Xml.Linq.XDocument> オブジェクトのコレクションです。  
+ 必須。 <xref:System.Xml.Linq.XElement> オブジェクト、<xref:System.Xml.Linq.XDocument> オブジェクト、<xref:System.Xml.Linq.XElement> オブジェクトのコレクション、または <xref:System.Xml.Linq.XDocument> オブジェクトのコレクションです。  
   
  ...<  
- 必ず指定します。 子孫軸プロパティの開始を示します。  
+ 必須。 子孫軸プロパティの開始を示します。  
   
  `descendant`  
- 必須です。 アクセスする場合、フォームの子孫ノードの名前 [`prefix``:`]`name`です。  
+ 必須。 アクセスする場合、フォームの子孫ノードの名前 [`prefix``:`]`name`です。  
   
 |パーツ|説明|  
 |----------|-----------------|  
-|`prefix`|省略可能です。 子孫のノードの XML 名前空間プレフィックス。 使用して定義されているグローバル XML 名前空間にある必要があります、`Imports`ステートメントです。|  
-|`name`|必須です。 子孫のノードのローカル名。 参照してください[宣言する XML 要素と属性の名前](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)です。|  
+|`prefix`|任意。 子孫のノードの XML 名前空間プレフィックス。 使用して定義されているグローバル XML 名前空間にある必要があります、`Imports`ステートメントです。|  
+|`name`|必須。 子孫のノードのローカル名。 参照してください[宣言する XML 要素と属性の名前](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)です。|  
   
  \>  
- 必須です。 子孫軸プロパティの終了を示します。  
+ 必須。 子孫軸プロパティの終了を示します。  
   
 ## <a name="return-value"></a>戻り値  
  <xref:System.Xml.Linq.XElement> オブジェクトのコレクション。  
@@ -58,7 +58,7 @@ object...<descendant>
 ## <a name="remarks"></a>コメント  
  名を使用して子孫ノードにアクセスする XML 子孫軸プロパティを使用することができます、<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XDocument>オブジェクトのコレクションから、または<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XDocument>オブジェクト。 XML を使用して`Value`返されるコレクションの最初の子孫ノードの値にアクセスするプロパティです。 詳細については、次を参照してください。 [XML Value プロパティ](../../../visual-basic/language-reference/xml-axis/xml-value-property.md)です。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラでは、descendant 軸のプロパティを変換への呼び出しに、<xref:System.Xml.Linq.XContainer.Descendants%2A>メソッドです。  
+ Visual Basic コンパイラでは、descendant 軸のプロパティを変換への呼び出しに、<xref:System.Xml.Linq.XContainer.Descendants%2A>メソッドです。  
   
 ## <a name="xml-namespaces"></a>XML 名前空間  
  子孫軸プロパティの名前でグローバルに宣言された XML 名前空間のみを使用できます、`Imports`ステートメントです。 XML 要素リテラル内にローカルに宣言されている XML 名前空間は使用できません。 詳細については、次を参照してください。 [Imports ステートメント (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)です。  

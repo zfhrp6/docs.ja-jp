@@ -1,11 +1,12 @@
 ---
-title: "チュートリアル: COM オブジェクトによる継承の実装 (Visual Basic)"
-ms.custom: 
+title: 'チュートリアル: COM オブジェクトによる継承の実装 (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - inheritance [Visual Basic], COM reusability
@@ -13,17 +14,17 @@ helpviewer_keywords:
 - inheritance [Visual Basic], walkthroughs
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8d6906c58431a0e844e8f430ade10ae819e77ff2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 10c6bdf46e351b23705107da3b693531718cfd37
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>チュートリアル: COM オブジェクトによる継承の実装 (Visual Basic)
-Visual Basic クラスを派生させることができます`Public`の以前のバージョンで作成されたものでも、COM オブジェクトのクラス[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 プロパティと COM オブジェクトから継承されたクラスのメソッドをオーバーライドまたはプロパティと同様にオーバー ロード、およびその他の任意の基本クラスのメソッドをオーバーライドまたはオーバー ロードできます。 COM オブジェクトからの継承は、再コンパイルしたくない既存のクラス ライブラリがある場合に便利です。  
+Visual Basic クラスを派生させることができます`Public`も以前のバージョンの Visual Basic で作成された COM オブジェクトのクラスです。 プロパティと COM オブジェクトから継承されたクラスのメソッドをオーバーライドまたはプロパティと同様にオーバー ロード、およびその他の任意の基本クラスのメソッドをオーバーライドまたはオーバー ロードできます。 COM オブジェクトからの継承は、再コンパイルしたくない既存のクラス ライブラリがある場合に便利です。  
   
  次の手順では、Visual Basic 6.0 を使用して、クラスが含まれている COM オブジェクトを作成し、基底クラスとして使用する方法を示します。  
   
@@ -77,22 +78,22 @@ Visual Basic クラスを派生させることができます`Public`の以前�
 10. 作成しをクリックして、COM オブジェクトを登録**ように ComObject1.dll**上、**ファイル**メニュー。  
   
     > [!NOTE]
-    >  作成したクラスを公開することもできます。 ただし[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を COM オブジェクトとしてその場合は true。 COM オブジェクトではありませんし、このチュートリアルでは使用できません。 詳細については、「 [.NET Framework アプリケーションにおける COM 相互運用性](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
+    >  COM オブジェクトとして Visual Basic で作成したクラスを公開することが true COM オブジェクトではないと、このチュートリアルでは使用できません。 詳細については、「 [.NET Framework アプリケーションにおける COM 相互運用性](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
   
 ## <a name="interop-assemblies"></a>相互運用機能アセンブリ  
- 次の手順では、(COM オブジェクトなど) のアンマネージ コードとマネージ コード間の仲介役として機能する、相互運用機能アセンブリを作成します[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を使用します。 相互運用機能アセンブリを[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]などの COM の使用の詳細の多くのオブジェクト ハンドルを作成*相互運用マーシャ リング*、パッケージ パラメーターと戻り値を等価のデータの処理の種類に移動します。COM からオブジェクトとします。 内の参照、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]実際の COM オブジェクトではなく、相互運用機能アセンブリをアプリケーションのポイント。  
+ 次の手順では、(COM オブジェクトなど) のアンマネージ コードとマネージ コード間の仲介役として機能する、相互運用機能アセンブリを作成します[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を使用します。 Visual Basic によって作成される相互運用機能アセンブリでは、ように、COM オブジェクトの操作の詳細を処理*相互運用マーシャ リング*、パッケージ パラメーターと戻り値を等価のデータの処理の種類に移動してCOM オブジェクトです。 Visual Basic アプリケーション内の参照は、実際の COM オブジェクトではなく、相互運用機能アセンブリを指します。  
   
 #### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Visual Basic 2005 およびそれ以降のバージョンで COM オブジェクトを使用するには  
   
-1.  新しい [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Windows アプリケーション プロジェクトを開きます。  
+1.  新しい Visual Basic Windows アプリケーション プロジェクトを開きます。  
   
 2.  **[プロジェクト]** メニューの **[参照の追加]** をクリックします。  
   
-     **参照の追加** ダイアログ ボックスが表示されます。  
+     **[参照の追加]** ダイアログ ボックスが表示されます。  
   
 3.  **COM**  タブをダブルクリックして`ComObject1`で、**コンポーネント名**を一覧表示し、をクリックして**OK**です。  
   
-4.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。  
+4.  **[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。  
   
      **[新しい項目の追加]** ダイアログ ボックスが表示されます。  
   
@@ -124,7 +125,7 @@ Visual Basic クラスを派生させることができます`Public`の以前�
   
 3.  F5 キーを押してプロジェクトを実行します。  
   
- フォーム上のボタンをクリックすると、`AddNumbers`メソッドが呼び出された最初`Short`データ型の数字、および[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]基底クラスから適切な方法を選択します。 2 番目の呼び出し`AddNumbers`からは、オーバー ロード メソッドに送られます`MathClass`です。 3 番目の呼び出しの呼び出し、`SubtractNumbers`メソッドで、クラスを拡張します。 基本クラスのプロパティが設定され、値が表示されます。  
+ フォーム上のボタンをクリックすると、`AddNumbers`メソッドが呼び出された最初`Short`データ型の数値、Visual Basic は、基本クラスから、適切なメソッドを選択します。 2 番目の呼び出し`AddNumbers`からは、オーバー ロード メソッドに送られます`MathClass`です。 3 番目の呼び出しの呼び出し、`SubtractNumbers`メソッドで、クラスを拡張します。 基本クラスのプロパティが設定され、値が表示されます。  
   
 ## <a name="next-steps"></a>次の手順  
  お気付きをオーバー ロードされた`AddNumbers`と同じデータ型、COM オブジェクトの基本クラスから継承されたメソッドに関数が表示されます。 これは、引数と、基底クラス メソッドのパラメーターは、Visual Basic 6.0 の 16 ビット整数値として定義されますが、型の 16 ビット整数として公開されるため`Short`Visual Basic のそれ以降のバージョン。 新しい関数では、32 ビット整数値を受け入れるし、基本クラスの関数をオーバー ロードします。  

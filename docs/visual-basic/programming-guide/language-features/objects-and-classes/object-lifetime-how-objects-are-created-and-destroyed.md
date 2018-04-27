@@ -32,11 +32,11 @@ ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
 caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f985d6bf7b26ec22d6e533eae1f1d7ea0682e56c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d93d0c94bdbeb93e0527ef6b5c6248b3b580599f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>オブジェクトの有効期間: オブジェクトの作成と破棄 (Visual Basic)
 クラスのインスタンス (オブジェクト) を作成するには、`New` キーワードを使用します。 新しいオブジェクトを使用する前に、多くの場合、そのオブジェクトに対して初期化タスクを実行する必要があります。 一般的な初期化タスクとして、ファイルを開く、データベースに接続する、レジストリ キーの値を読み取る、などがあります。 Visual Basic と呼ばれるプロシージャを使用して新しいオブジェクトの初期化を制御する*コンス トラクター* (初期化を制御できる特殊なメソッド)。  
@@ -44,10 +44,10 @@ ms.lasthandoff: 11/21/2017
  スコープを離れたオブジェクトは、共通言語ランタイム (CLR) によって解放されます。 Visual Basic は、呼び出されるプロシージャを使用してシステム リソースの解放を制御*デストラクター*です。 コンストラクターとデストラクターは共に、堅牢で予測可能なクラス ライブラリの作成をサポートしています。  
   
 ## <a name="using-constructors-and-destructors"></a>コンストラクターとデストラクターの使用  
- コンストラクターとデストラクターは、オブジェクトの作成および破棄を制御します。 Visual Basic の `Sub New` と `Sub Finalize` の各プロシージャが、オブジェクトを初期化および破棄します。これらは、`Class_Initialize` 6.0 とそれ以前のバージョンで使用される `Class_Terminate` と [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の各メソッドに置き換わるものです。  
+ コンストラクターとデストラクターは、オブジェクトの作成および破棄を制御します。 `Sub New`と`Sub Finalize`置き換わるものです。 Visual Basic におけるプロシージャを初期化およびオブジェクトの破棄、`Class_Initialize`と`Class_Terminate`Visual Basic 6.0 とそれ以前のバージョンで使用される方法です。  
   
 ### <a name="sub-new"></a>Sub New  
- `Sub New` コンストラクターは、クラスの作成時に 1 回だけ実行できます。 同じクラスまたは派生クラスから別のコンストラクターの最初のコード行以外の任意の場所で、明示的に呼び出すことはできません。 また、`Sub New` メソッド内のコードは常に、クラス内の他のすべてのコードより先に実行されます。 [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]以降のバージョンが暗黙的に作成し、`Sub New`明示的に定義していない場合、実行時にコンス トラクター、`Sub New`クラスのプロシージャです。  
+ `Sub New` コンストラクターは、クラスの作成時に 1 回だけ実行できます。 同じクラスまたは派生クラスから別のコンストラクターの最初のコード行以外の任意の場所で、明示的に呼び出すことはできません。 また、`Sub New` メソッド内のコードは常に、クラス内の他のすべてのコードより先に実行されます。 [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] 以降のバージョンが暗黙的に作成し、`Sub New`明示的に定義していない場合、実行時にコンス トラクター、`Sub New`クラスのプロシージャです。  
   
  クラスのコンストラクターを作成するには、クラス定義の任意の場所に `Sub New` という名前のプロシージャを作成します。 パラメーター化されたコンストラクターを作成するには、次のコードに示すように、他のプロシージャの引数を指定する場合と同じく、`Sub New` に引数の名前とデータ型を指定します。  
   
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrOOP#116](../../../../visual-basic/misc/codesnippet/VisualBasic/object-lifetime-how-objects-are-created-and-destroyed_2.vb)]  
   
- 別のクラスから派生したクラスを定義するときは、基本クラスにパラメーターを受け取らないアクセス可能なコンストラクターがある場合を除き、コンストラクターの 1 行目で基本クラスのコンストラクターを呼び出す必要があります。 たとえば、上記のコンストラクターを含む基本クラスの呼び出しは、`MyBase.New(s)` になります。 それ以外の場合、`MyBase.New` はオプションであり、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ランタイムによって暗黙的に呼び出されます。  
+ 別のクラスから派生したクラスを定義するときは、基本クラスにパラメーターを受け取らないアクセス可能なコンストラクターがある場合を除き、コンストラクターの 1 行目で基本クラスのコンストラクターを呼び出す必要があります。 たとえば、上記のコンストラクターを含む基本クラスの呼び出しは、`MyBase.New(s)` になります。 それ以外の場合、`MyBase.New`は省略可能で、Visual Basic ランタイムは、それを暗黙的に呼び出すとします。  
   
  親オブジェクトのコンストラクターを呼び出すコードを記述した後、追加の初期化コードを `Sub New` プロシージャに追加できます。 `Sub New`は、パラメーター化されたコンストラクターとして呼び出されたときには、引数を受け取ることができます。 このようなパラメーターは、コンストラクターを呼び出すプロシージャ (たとえば、`Dim AnObject As New ThisClass(X)`) から渡されます。  
   

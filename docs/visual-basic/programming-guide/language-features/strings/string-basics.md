@@ -1,31 +1,32 @@
 ---
-title: "Visual Basic における文字列の基本"
-ms.custom: 
+title: Visual Basic における文字列の基本
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - strings [Visual Basic], Like operator
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8881ad6ab7f28689019463abdab3b867e010d51e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4a40435b76b0eee4f4eca15d5ba1a31cc58698ab
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="string-basics-in-visual-basic"></a>Visual Basic における文字列の基本
-`String` データ型は、一連の文字を表します (各文字は `Char` データ型のインスタンスを表しています)。 このトピックでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での文字列の基本的な概念について説明します。  
+`String` データ型は、一連の文字を表します (各文字は `Char` データ型のインスタンスを表しています)。 このトピックでは、Visual Basic における文字列の基本的な概念について説明します。  
   
 ## <a name="string-variables"></a>文字列変数  
- 文字列のインスタンスには、一連の文字を表すリテラル値を代入できます。 例:  
+ 文字列のインスタンスには、一連の文字を表すリテラル値を代入できます。 例えば:  
   
  [!code-vb[VbVbalrStrings#63](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-basics_1.vb)]  
   
@@ -37,7 +38,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrStrings#65](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-basics_3.vb)]  
   
- このコードでは、2 つ目の引用符の後で文字列が終了し、残りの部分はコードであるとコンパイラが解釈するため、エラーが発生します。 この問題を解決するために、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は文字列リテラル内の 2 つの引用符を文字列内の 1 つの引用符として解釈します。 次の例は、引用符を文字列に含めるための正しい方法を示しています。  
+ このコードでは、2 つ目の引用符の後で文字列が終了し、残りの部分はコードであるとコンパイラが解釈するため、エラーが発生します。 この問題を解決するためには、Visual Basic は、文字列内の 1 つの引用符としてリテラル文字列内の 2 つの引用符を解釈します。 次の例は、引用符を文字列に含めるための正しい方法を示しています。  
   
  [!code-vb[VbVbalrStrings#66](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-basics_4.vb)]  
   
@@ -58,11 +59,11 @@ World]]></xml>.Value
 ```  
   
 ## <a name="characters-in-strings"></a>文字列内の文字  
- 文字列は、一連の `Char` 値であると考えることができます。また、配列の場合と同様に、`String` 型には文字列に対してさまざまな操作を行うことができる、組み込み関数があります。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のすべての配列のように、これらは 0 ベース配列です。 文字列内の特定の文字は、`Chars` プロパティを通じて参照できます。このプロパティでは、文字列内で文字が現れる位置を使用して、文字にアクセスできます。 例:  
+ 文字列は、一連の `Char` 値であると考えることができます。また、配列の場合と同様に、`String` 型には文字列に対してさまざまな操作を行うことができる、組み込み関数があります。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のすべての配列のように、これらは 0 ベース配列です。 文字列内の特定の文字は、`Chars` プロパティを通じて参照できます。このプロパティでは、文字列内で文字が現れる位置を使用して、文字にアクセスできます。 例えば:  
   
  [!code-vb[VbVbalrStrings#67](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-basics_5.vb)]  
   
- 上の例で、文字列の `Chars` プロパティは、文字列内の 4 番目の文字 (つまり `D`) を返し、`myChar` に代入します。 `Length` プロパティを通じて、特定の文字列の長さを取得することもできます。 文字列に対して複数の配列型の操作を実行する必要がある場合は、文字列の `ToCharArray` 関数を使用して、文字列を `Char` インスタンスの配列に変換することができます。 例:  
+ 上の例で、文字列の `Chars` プロパティは、文字列内の 4 番目の文字 (つまり `D`) を返し、`myChar` に代入します。 `Length` プロパティを通じて、特定の文字列の長さを取得することもできます。 文字列に対して複数の配列型の操作を実行する必要がある場合は、文字列の `ToCharArray` 関数を使用して、文字列を `Char` インスタンスの配列に変換することができます。 例えば:  
   
  [!code-vb[VbVbalrStrings#68](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-basics_6.vb)]  
   

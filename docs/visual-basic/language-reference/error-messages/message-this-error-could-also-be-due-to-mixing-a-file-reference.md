@@ -1,9 +1,9 @@
 ---
-title: "&lt;メッセージ&gt;このエラーをファイル参照アセンブリ &#39; への参照をプロジェクトとの混合によって生じた可能性があります&lt;assemblyname&gt;&#39;です。"
+title: '&lt;メッセージ&gt;このエラーをファイル参照アセンブリへの参照をプロジェクトとの混合によって生じた可能性があります&#39; &lt;assemblyname&gt;&#39;'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -13,21 +13,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC30971
 ms.assetid: 75d2e8b5-2fdc-4623-8b32-cba805dab7db
-caps.latest.revision: 
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0fcbcc48928b1b03487f31930e3d14051ddd990a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 37a152da06a36756b86576bad9c6c5d6a392dc8d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="ltmessagegt-this-error-could-also-be-due-to-mixing-a-file-reference-with-a-project-reference-to-assembly-39ltassemblynamegt39"></a>&lt;メッセージ&gt;このエラーをファイル参照アセンブリ &#39; への参照をプロジェクトとの混合によって生じた可能性があります&lt;assemblyname&gt;&#39;です。
+# <a name="ltmessagegt-this-error-could-also-be-due-to-mixing-a-file-reference-with-a-project-reference-to-assembly-39ltassemblynamegt39"></a>&lt;メッセージ&gt;このエラーをファイル参照アセンブリへの参照をプロジェクトとの混合によって生じた可能性があります&#39; &lt;assemblyname&gt;&#39;
 \<メッセージ > このエラーをファイル参照アセンブリへの参照をプロジェクトとの混合によって生じた可能性があります '\<assemblyname >。 この場合、交換してみますファイル参照を '\<assemblyfilename >' プロジェクトで'\<projectname1 >' への参照をプロジェクトに '\<projectname2 >' です。  
   
- プロジェクト内のコードが別のプロジェクトのメンバーにアクセスしていますが、このプロジェクトのソリューションは [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラに参照の解決を許可するよう構成されていません。  
+ プロジェクトのコードが別のプロジェクトのメンバーにアクセスは、ソリューションの構成は、参照を解決するのには、Visual Basic コンパイラを許可しません。  
   
- 別のアセンブリで定義されている型にアクセスするには、そのアセンブリへの参照を [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラが保持する必要があります。 これは、プロジェクト間の循環参照にならない、単一であいまいさのない参照である必要があります。  
+ 別のアセンブリで定義された型にアクセスするには、そのアセンブリへの参照が、Visual Basic コンパイラに必要です。 これは、プロジェクト間の循環参照にならない、単一であいまいさのない参照である必要があります。  
   
  **エラー ID:** BC30971  
   
@@ -37,7 +37,7 @@ ms.lasthandoff: 12/21/2017
   
 2.  プロジェクトのプロパティに、使用する型が定義されているアセンブリを含むプロジェクトへの参照を追加します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [プロジェクト内の参照の管理](/visualstudio/ide/managing-references-in-a-project)  
  [宣言された要素の参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
    

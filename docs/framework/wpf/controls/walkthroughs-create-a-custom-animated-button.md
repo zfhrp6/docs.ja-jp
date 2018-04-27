@@ -1,42 +1,44 @@
 ---
-title: "チュートリアル : カスタム アニメーション ボタンの作成"
-ms.custom: 
+title: 'チュートリアル : カスタム アニメーション ボタンの作成'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - custom animated buttons [WPF]
 - buttons [WPF]
 - animation [WPF], buttons [WPF]
 ms.assetid: e9532c72-460f-4898-9332-613fa21d746a
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3ece907b23772504990ef334f446d7b6072f5d44
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 349a9627c20de24a17c533bb9b2fd5f6d1735c70
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>チュートリアル : カスタム アニメーション ボタンの作成
 その名前からわかるように、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]は顧客の経験の豊富なプレゼンテーションを行うために役立ちます。 これらのチュートリアルでは、(アニメーションを含む) ボタンの動作と外観をカスタマイズする方法を示します。 このカスタマイズを行う、スタイルとテンプレートを使用すると、このカスタム ボタンをアプリケーションで他のボタンに簡単に適用できます。 次の図を作成する場合、カスタマイズされたボタンを示しています。  
   
  ![作成するカスタマイズされたボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-intro.jpg "custom_button_blend_Intro")  
   
- ボタンの外観を構成するベクター グラフィックスを使用して作成される[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]強力で拡張可能である点を除いて、HTML に似ています。 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]Microsoft Visual Studio またはメモ帳を使用して手動で入力できるまたは Microsoft Expression Blend などのビジュアル デ ザイン ツールを使用することができます。 Expression Blend は基になるを作成することで機能[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コードは、両方のメソッドが、同じグラフィックスを作成するようにします。  
+ ボタンの外観を構成するベクター グラフィックスを使用して作成される[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 強力で拡張可能である点を除いて、HTML に似ています。 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Microsoft Visual Studio またはメモ帳を使用して手動で入力できるまたは Microsoft Expression Blend などのビジュアル デ ザイン ツールを使用することができます。 Expression Blend は基になるを作成することで機能[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コードは、両方のメソッドが、同じグラフィックスを作成するようにします。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Microsoft Expression Blend を使用してボタンを作成する](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)  
  Expression Blend のデザイナーの機能を使用して、カスタム動作を持つボタンを作成する方法を示します。  
   
  [XAML を使用したボタンの作成](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)  
- 使用して、カスタム動作を持つボタンを作成する方法を示します[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]と[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]です。  
+ 使用して、カスタム動作を持つボタンを作成する方法を示します[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]および Visual Studio です。  
   
 ## <a name="related-sections"></a>関連項目  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  

@@ -13,14 +13,14 @@ ms.assetid: 42c30017-19d0-442e-87a2-850b66ddc3df
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 16079ad7854630f68ecb6fd9fb3b640a440fe69b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a4bfab2f6f06cbe1ac971fc21d53a7336ad03c58
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basic-language-specification"></a>Visual Basic 言語仕様
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語仕様は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の文法と構文に関するあらゆる疑問に答える信頼性のある情報源です。 これには、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] リファレンス ドキュメントで取り上げられていない、言語に関する詳細な情報が網羅されています。  
+Visual Basic 言語仕様は、Visual Basic の文法と構文に関するすべての質問に対する回答の権限を持つソースです。 Visual Basic リファレンス ドキュメントで取り上げられていない、言語に関する詳細情報が含まれています。  
   
  この仕様は、[Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=188623)で入手できます。  
   

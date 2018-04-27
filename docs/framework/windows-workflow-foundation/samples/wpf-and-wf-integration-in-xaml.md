@@ -1,26 +1,27 @@
 ---
-title: "XAML での WPF と WF の統合"
-ms.custom: 
+title: XAML での WPF と WF の統合
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a4f53b48-fc90-4315-bca0-ba009562f488
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 327efb0b829e2628328d2e324c0736f8cb423b75
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0447df0e6d4f14a4171a315858f992ad23d69373
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="wpf-and-wf-integration-in-xaml"></a>XAML での WPF と WF の統合
-このサンプルでは、[!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] および [!INCLUDE[wf](../../../../includes/wf-md.md)] 機能を使用するアプリケーションを 1 つの XAML ドキュメントで作成する方法を示します。 これを実現するために、サンプルでは [!INCLUDE[wf](../../../../includes/wf-md.md)] および XAML 機能拡張を使用します。  
+このサンプルでは Windows Presentation Foundation (WPF) を使用するアプリケーションを作成する方法と[!INCLUDE[wf](../../../../includes/wf-md.md)]1 つの XAML ドキュメントで機能します。 これを実現するために、サンプルでは [!INCLUDE[wf](../../../../includes/wf-md.md)] および XAML 機能拡張を使用します。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
  ShowWindow.xaml ファイルは、シーケンスのアクティビティによって操作される 2 つの文字列変数 <xref:System.Activities.Statements.Sequence> および `ShowWindow` を持つ `WriteLine` アクティビティに逆シリアル化します。 <xref:System.Activities.Statements.WriteLine> アクティビティは、<xref:System.Activities.Statements.WriteLine.Text%2A> プロパティに割り当てる式をコンソール ウィンドウに出力します。 `ShowWindow` アクティビティは、実行ロジックの一部として [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] ウィンドウを表示します。 このウィンドウの <xref:System.Activities.ActivityContext.DataContext%2A> には、シーケンスで宣言された変数が含まれます。 `ShowWindow` アクティビティで宣言されたウィンドウのコントロールは、データ バインドを使用してこれらの変数を操作します。 最後に、このウィンドウにはボタン コントロールが含まれます。 このボタンの `Click` イベントは、<xref:System.Activities.ActivityDelegate> アクティビティを含む `MarkupExtension` という名前の `CloseWindow` によって処理されます。 `MarkUpExtension` は、`x:Name` によって識別されるオブジェクトおよび格納先ウィンドウの <xref:System.Activities.ActivityContext.DataContext%2A> を、コンテキストとして提供する、含まれているアクティビティを呼び出します。 したがって、`CloseWindow.InArgument<Window>` は、ウィンドウの名前を参照する式を使用してバインドできます。  

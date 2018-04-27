@@ -1,40 +1,42 @@
 ---
-title: "はじめに Tutorial1"
-ms.custom: 
+title: はじめに Tutorial1
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], getting started
 - Windows Communication Foundation [WCF], getting started
 - getting started [WCF]
 ms.assetid: df939177-73cb-4440-bd95-092a421516a1
-caps.latest.revision: "47"
+caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 74a322730c5e9fc205097da310a8db1fd7c50f82
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9c66e7d8f610126e2702a6c593a93ee496108ecf
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="getting-started-tutorial"></a>チュートリアル入門
 このセクションの各トピックで、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のプログラミング方法について簡単に説明します。 これらは、このトピックに記載されているリストの順番どおりに完了するように設計されています。 このチュートリアルを通じて [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアント アプリケーションの作成に必要な手順について理解することができます。 サービスは 1 つ以上のエンドポイントを公開し、それぞれのエンドポイントは 1 つ以上のサービス操作を公開します。 *エンドポイント*サービスのアドレス、サービスがある、クライアントは、サービスと機能を定義するコントラクトと通信する必要がある方法を説明する情報を含んでいるバインディングを指定します。クライアントにサービスによって提供されます。  
   
- このチュートリアルの一連のトピックを終了すると、サービスを実行し、クライアントからそのサービスを呼び出すことができるようになります。 最初の 3 つのトピックでは、サービス コントラクトを定義する方法、サービス コントラクトを実装する方法、およびサービスをホストする方法について説明します。 作成したサービスは、コンソール アプリケーション内で自己ホストされます。 また、サービスは、インターネット インフォメーション サービス (IIS) でホストすることもできます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]を参照してください方法[する方法: IIS で WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)です。 サービスはコードで構成されますが、構成ファイル内で構成することもできます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]構成ファイルを使用して参照してください[構成ファイルを使用してサービスを構成する](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)です。  
+ このチュートリアルの一連のトピックを終了すると、サービスを実行し、クライアントからそのサービスを呼び出すことができるようになります。 最初の 3 つのトピックでは、サービス コントラクトを定義する方法、サービス コントラクトを実装する方法、およびサービスをホストする方法について説明します。 作成したサービスは、コンソール アプリケーション内で自己ホストされます。 また、サービスは、インターネット インフォメーション サービス (IIS) でホストすることもできます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] を参照してください方法[する方法: IIS で WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)です。 サービスはコードで構成されますが、構成ファイル内で構成することもできます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 構成ファイルを使用して参照してください[構成ファイルを使用してサービスを構成する](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)です。  
   
  次の 3 つのトピックでは、クライアント プロキシを作成する方法、クライアント アプリケーションを構成する方法、およびサービスが公開するサービス操作をクライアント プロキシを使って呼び出す方法について説明します。 サービスは、クライアント アプリケーションがサービスと通信するために必要な情報を定義したメタデータを公開します。 [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] は、このメタデータにアクセスするプロセスを自動化し、それを使って、サービスのクライアント アプリケーションを構築および構成します。 使用していない場合[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]、使用することができます、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を構築し、サービスのクライアント アプリケーションを構成します。  
   
- このセクションのすべてのトピックでは、開発環境として Visual Studio 2011 を使用することを前提としています。 他の開発環境を使用する場合は、[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] に固有の指示については無視してください。  
+ このセクションのすべてのトピックでは、開発環境として Visual Studio 2011 を使用することを前提としています。 他の開発環境を使用している場合は、Visual Studio 具体的な指示を無視します。  
   
 > [!NOTE]
->  実行する場合は[!INCLUDE[wv](../../../includes/wv-md.md)]または開始する必要があります以降のバージョンの Windows オペレーティング システムでは、[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)]しようとして、[スタート] メニュー、Visual Studio 2011 を右クリックしを選択して**管理者として実行**です。 ショートカットを作成のショートカットを右クリックして、プロパティを選択して、選択、管理者として Visual Studio 2011 を常に起動する、**互換性**タブをクリックし、確認、 **管理者としてこのプログラムを実行**チェック ボックスをオンします。 このショートカットで Visual Studio 2011 を起動すると、常に管理者として実行されます。  
+>  実行する場合は[!INCLUDE[wv](../../../includes/wv-md.md)]または以降のバージョンの Windows オペレーティング システムでは、[スタート] メニューに、Visual Studio 2011 を右クリックしを選択して Visual Studio を開始する必要があります**管理者として実行**です。 ショートカットを作成のショートカットを右クリックして、プロパティを選択して、選択、管理者として Visual Studio 2011 を常に起動する、**互換性**タブをクリックし、確認、 **管理者としてこのプログラムを実行**チェック ボックスをオンします。 このショートカットで Visual Studio 2011 を起動すると、常に管理者として実行されます。  
   
  ハード_ディスクにダウンロードできますして実行する場合は、トピックを参照して、サンプル アプリケーションの[Windows Communication Foundation サンプル](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)です。 このトピックを参照してください、具体的には、[作業の開始](../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
   
@@ -69,7 +71,7 @@ ms.lasthandoff: 01/19/2018
   
  [基本的なプログラミング ライフサイクル](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [概念](../../../docs/framework/wcf/conceptual-overview.md)  
  [ドキュメントのガイド](../../../docs/framework/wcf/guide-to-the-documentation.md)  
  [Windows Communication Foundation とは](../../../docs/framework/wcf/whats-wcf.md)  

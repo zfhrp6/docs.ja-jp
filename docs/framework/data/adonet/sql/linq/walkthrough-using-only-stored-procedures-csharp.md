@@ -1,24 +1,26 @@
 ---
-title: "チュートリアル : ストアド プロシージャのみを使用する (C#)"
-ms.custom: 
+title: 'チュートリアル : ストアド プロシージャのみを使用する (C#)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ecde4bf2-fa4d-4252-b5e4-96a46b9e097d
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: befc1cbafa7e2ab0a6f6ceeddf1170090f13f92d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4c13e4c12abf17f995bb819ddd7d6337407e3b28
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-using-only-stored-procedures-c"></a>チュートリアル : ストアド プロシージャのみを使用する (C#)
 このチュートリアルでは、ストアド プロシージャを実行することでのみデータにアクセスする、基本的な [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] シナリオ全体を示します。 この方法は、データ ストアへのアクセス方法を制限する目的で、データベース管理者によってよく使用されます。  
@@ -28,7 +30,7 @@ ms.lasthandoff: 01/17/2018
   
  このチュートリアルでは、Northwind サンプル データベース内のストアド プロシージャにマップされた 2 つのメソッド (CustOrdersDetail および CustOrderHist) を使用します。 このマップは、SqlMetal コマンド ライン ツールを実行して C# ファイルを生成したときに作成されます。 詳細については、このチュートリアルの「前提条件」を参照してください。  
   
- このチュートリアルは、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]には依存しません。 [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している開発者は、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]を使用して、ストアド プロシージャの機能を実装することもできます。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
+ このチュートリアルは、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]には依存しません。 Visual Studio を使用している開発者が使用することも、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]ストアド プロシージャの機能を実装します。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -52,9 +54,9 @@ ms.lasthandoff: 01/17/2018
      詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。  
   
 ## <a name="overview"></a>概要  
- このチュートリアルは、主に次の 6 つの手順で構成されています。  
+ このチュートリアルは、主に次の 6 つのタスクで構成されています。  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] で [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ソリューションを設定します。  
+-   セットアップ、 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Visual Studio でソリューションです。  
   
 -   プロジェクトに System.Data.Linq アセンブリを追加します。  
   
@@ -67,21 +69,21 @@ ms.lasthandoff: 01/17/2018
 -   アプリケーションを実行およびテストします。  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成する  
- 最初に、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] プロジェクトをビルドおよび実行するために必要な参照を含む [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ソリューションを作成します。  
+ この最初のタスクでは、ビルドおよび実行するために必要な参照を含む Visual Studio ソリューションを作成、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクト。  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成するには  
   
-1.  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] **ファイル** メニューのをポイント**新規**、クリックして**プロジェクト**です。  
+1.  Visual Studio で**ファイル** メニューのをポイント**新規**、クリックして**プロジェクト**です。  
   
-2.  **プロジェクトの種類**ペインで、**新しいプロジェクト**ダイアログ ボックスで、をクリックして**Visual c#**です。  
+2.  **プロジェクトの種類**ペインで、**新しいプロジェクト**ダイアログ ボックスで、をクリックして**Visual c#** です。  
   
-3.  **[テンプレート]** ペインの **[Windows フォーム アプリケーション]**をクリックします。  
+3.  **[テンプレート]** ペインの **[Windows フォーム アプリケーション]** をクリックします。  
   
 4.  **名前**ボックスに、入力**sproconlyapp」と入力**です。  
   
 5.  **場所**ボックスで、プロジェクト ファイルを格納することを確認します。  
   
-6.  **[OK]**をクリックします。  
+6.  **[OK]** をクリックします。  
   
      Windows フォーム デザイナーが開きます。  
   
@@ -92,7 +94,7 @@ ms.lasthandoff: 01/17/2018
   
 1.  **ソリューション エクスプ ローラー**を右クリックして**参照**、クリックして**参照の追加**です。  
   
-2.  **参照の追加**ダイアログ ボックスで、をクリックして**.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
+2.  **参照の追加**ダイアログ ボックスで、をクリックして **.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
   
      アセンブリがプロジェクトに追加されます。  
   
@@ -125,7 +127,7 @@ ms.lasthandoff: 01/17/2018
   
 1.  戻り値を Windows フォーム デザイナー (**Form1.cs[Design]**)。  
   
-2.  **[表示]** メニューの **[ツールボックス]**をクリックします。  
+2.  **[表示]** メニューの **[ツールボックス]** をクリックします。  
   
      ツールボックスが表示されます。  
   
@@ -138,9 +140,9 @@ ms.lasthandoff: 01/17/2018
   
 4.  右クリック**label1**、クリックして**プロパティ**です。  
   
-5.  変更、**テキスト**プロパティから**label1**に**Enter OrderID:**です。  
+5.  変更、**テキスト**プロパティから**label1**に**Enter OrderID:** です。  
   
-6.  に対して同じ方法で**label2**、変更、**テキスト**プロパティから**label2**に**Enter CustomerID:**です。  
+6.  に対して同じ方法で**label2**、変更、**テキスト**プロパティから**label2**に**Enter CustomerID:** です。  
   
 7.  同じ方法で変更、**テキスト**プロパティを**button1**に**Order Details**です。  
   
@@ -198,6 +200,6 @@ ms.lasthandoff: 01/17/2018
 ## <a name="next-steps"></a>次の手順  
  いくつかの変更を加えることによって、このプロジェクトを強化できます。 たとえば、使用できるストアド プロシージャの一覧をリスト ボックスに表示し、実行するプロシージャをユーザーに選択させることができます。 レポートの出力をテキスト ファイルに送ることもできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)  
  [ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

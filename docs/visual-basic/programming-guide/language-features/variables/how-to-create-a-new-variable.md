@@ -1,25 +1,26 @@
 ---
-title: "方法: 新しい変数を作成する (Visual Basic)"
-ms.custom: 
+title: '方法: 新しい変数を作成する (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Dim statement [Visual Basic]
 - variables [Visual Basic], creating
 ms.assetid: 35300be3-77b0-4bef-a156-034d3cdedde0
-caps.latest.revision: "29"
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a6806dcbe9e00cbae77181b79d74ddb9a1e1493f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: aff160584d3d1fe382020d5b8c25ac57dab66d92
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-create-a-new-variable-visual-basic"></a>方法: 新しい変数を作成する (Visual Basic)
 変数を作成する、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)です。  
@@ -40,7 +41,7 @@ ms.lasthandoff: 11/21/2017
   
      必要としない、`Dim`の宣言でその他のキーワードを使用する場合は、キーワード。  
   
-3.  変数の名前は、従う必要がありますの仕様に従う[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]規則と規約。 詳細については、次を参照してください。[宣言された要素の名前](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
+3.  変数の名前は、Visual Basic の規則と規則に従う必要がありますの仕様に従ってください。 詳細については、次を参照してください。[宣言された要素の名前](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
   
     ```  
     Public Static newCustomer  
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/21/2017
   
 5.  以下の`As`等号 (=) を含む句 (`=`) し、変数の初期値を等号 (=) に従います。  
   
-     [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]実行するたびに、指定した値を変数に代入、`Dim`ステートメントです。 初期値を指定しない場合[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を含むコードが最初に入ると、変数のデータ型の既定の初期値を割り当てます、`Dim`ステートメントです。  
+     実行するたびに Visual Basic に変数に指定された値が割り当てられます、`Dim`ステートメントです。 Visual Basic を含むコードを最初に切り替わったときに、変数のデータ型の既定の初期値が割り当てられます、初期値を指定しない場合、`Dim`ステートメントです。  
   
      含めることによって、このクラスのインスタンスを作成するには、変数が参照型である場合、 [New 演算子](../../../../visual-basic/language-reference/operators/new-operator.md)キーワード、`As`句。 使用しない場合`New`、変数の初期値は[Nothing](../../../../visual-basic/language-reference/nothing.md)です。  
   

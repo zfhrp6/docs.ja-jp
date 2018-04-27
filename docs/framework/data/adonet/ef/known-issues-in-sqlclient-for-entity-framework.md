@@ -1,38 +1,40 @@
 ---
-title: "Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題"
-ms.custom: 
+title: Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3fb62e266ee6f0ca7957667d7c41fbd90dd34d32
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8d5363ede9735ea805284638f795af67f2415ad0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題
 ここでは、.NET Framework Data Provider for SQL Server (SqlClient) に関連する既知の問題について説明します。  
   
 ## <a name="trailing-spaces-in-string-functions"></a>文字列関数の末尾のスペース  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、文字列値の末尾のスペースは無視されます。 そのため、文字列の末尾にスペースを挿入すると、予期できない結果が生じたり、場合によってはエラーが発生することもあります。  
+ SQL Server では、文字列値の末尾にスペースを無視します。 そのため、文字列の末尾にスペースを挿入すると、予期できない結果が生じたり、場合によってはエラーが発生することもあります。  
   
- 文字列の末尾にスペースを挿入する必要がある場合は、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] が文字列を切り捨てることがないように、空白文字を挿入することを検討してください。 末尾のスペースが不要である場合は、クエリ パイプラインに渡す前にスペースを削除してください。  
+ 文字列の末尾にスペースがある場合は、SQL Server は、文字列をトリムされないように、末尾に空白文字を追加することを検討してください。 末尾のスペースが不要である場合は、クエリ パイプラインに渡す前にスペースを削除してください。  
   
 ## <a name="right-function"></a>RIGHT 関数  
  `null`, 0`RIGHT(nvarchar(max)` または `)`, 0`RIGHT(varchar(max)` に、最初の引数として `)` 以外の値を、2 番目の引数として 0 を渡すと、`NULL` 文字列の代わりに `empty` 値が返されます。  
   
 ## <a name="cross-and-outer-apply-operators"></a>CROSS APPLY 演算子および OUTER APPLY 演算子  
- CROSS APPLY 演算子および OUTER APPLY 演算子は [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] で導入されました。 場合によっては、クエリ パイプラインにより、CROSS APPLY 演算子または OUTER APPLY 演算子を含む Transact-SQL ステートメントが生成されることがあります。 一部のバックエンド プロバイダー ([!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] より古いバージョンの [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] など) では、これらの演算子がサポートされていません。したがって、このようなクエリをこれらのバックエンド プロバイダーで実行することはできません。  
+ CROSS APPLY 演算子および OUTER APPLY 演算子は [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] で導入されました。 場合によっては、クエリ パイプラインにより、CROSS APPLY 演算子または OUTER APPLY 演算子を含む Transact-SQL ステートメントが生成されることがあります。 SQL Server のバージョンを含む一部のバックエンド プロバイダーよりも前[!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)]、これらの演算子をサポートしていません、このようなクエリは、これらのバックエンド プロバイダーで実行することはできません。  
   
  CROSS APPLY 演算子または OUTER APPLY 演算子を含むクエリの生成につながる可能性がある一般的なシナリオを次に示します。  
   
@@ -68,8 +70,8 @@ SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2
 ```  
   
 ## <a name="server-generated-guid-identity-values"></a>サーバー生成の GUID ID 値  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、サーバー生成の GUID 型 ID 値がサポートされますが、プロバイダーは、サーバー生成の ID 値を行の挿入後に返す動作をサポートする必要があります。 以降で[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]2005 でサーバー生成 GUID 型を返すことができます、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]を通じてデータベース、 [OUTPUT 句](http://go.microsoft.com/fwlink/?LinkId=169400)です。  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、サーバー生成の GUID 型 ID 値がサポートされますが、プロバイダーは、サーバー生成の ID 値を行の挿入後に返す動作をサポートする必要があります。 SQL Server 2005 以降を返すことができます、サーバー生成 GUID 型を使用して SQL Server データベースで、 [OUTPUT 句](http://go.microsoft.com/fwlink/?LinkId=169400)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity Framework 用 SqlClient](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
  [LINQ to Entities の既知の問題および注意点](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)

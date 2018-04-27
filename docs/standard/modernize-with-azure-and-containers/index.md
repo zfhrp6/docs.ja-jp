@@ -5,14 +5,15 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ba48579735379bfc857993cd1546f5f7125101f4
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: ac4cd9f14f046a970b6ec41c1b176e9980a960cf
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-v10"></a>Azure クラウドおよび Windows コンテナー (v1.0) で既存の .NET アプリケーションを最新化する
 
@@ -28,7 +29,7 @@ Copyright © 2017 by Microsoft Corporation
 
 All rights reserved. 本書のいかなる部分も、書面による発行者の許可なしに、いかなる形式または方法によっても、複製することを禁じます。
 
-このブックは、電子書籍の (電子書籍) http://dot.net/architecture など、マイクロソフトの複数のチャネルを通じて使用可能な形式で無料で利用可能なです。
+このブックはなど、電子書籍の (電子書籍) マイクロソフトの複数のチャネルを通じて使用可能な形式で無料で利用できるhttp://dot.net/architectureです。
 
 この書籍で電子メールに関連する質問がある場合は、[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book) に電子メールをお送りください。
 
@@ -36,7 +37,7 @@ All rights reserved. 本書のいかなる部分も、書面による発行者�
 
 ここに記載したいくつかの例は、説明のためだけに提供された架空のものです。 実在のものとの関連性または関係性は一切ありません。
 
-http://www.microsoft.com の "商標" Web ページに記載されている Microsoft および商標は、Microsoft グループの商標です。 その他のすべてのマークは、該当する各社が所有しています。
+Microsoft およびに記載されている商標http://www.microsoft.com「商標」web ページには、Microsoft グループ企業各社の商標です。 その他のすべてのマークは、該当する各社が所有しています。
 
 作成者:
 > **Cesar de la Torre**、Microsoft corp.、.NET 製品チーム、シニア PM
@@ -172,11 +173,11 @@ Web アプリケーションを最新化し、クラウドに移動すると決�
 
 ### <a name="additional-resources"></a>その他の技術情報
 
-- **Microsoft のプラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な電子ブック) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+- **Microsoft プラットフォームとツールのアプリケーションのライフ サイクルの Docker のコンテナー** (ダウンロード可能な電子書籍)。 [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
-- **.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ** (ダウンロード可能な電子ブック) [*https://aka.ms/microservicesebook*](https://aka.ms/microservicesebook)
+- **.NET Microservices: コンテナーの .NET アプリケーションのアーキテクチャ**(ダウンロード可能な電子書籍)。 [*https://aka.ms/microservicesebook*](https://aka.ms/microservicesebook)
 
-- **Architecting modern web applications with ASP.NET Core and Azure**(ASP.NET Core と Azure を使用した最新の Web アプリケーションのアーキテクチャ) (ダウンロード可能な電子ブック): [*https://aka.ms/webappebook*](https://aka.ms/webappebook)
+- **ASP.NET Core と Azure での最新の web アプリケーションの設計**(ダウンロード可能な電子書籍)。 [*https://aka.ms/webappebook*](https://aka.ms/webappebook)
 
 ## <a name="who-should-use-this-guide"></a>対象読者
 

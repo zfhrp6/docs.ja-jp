@@ -1,24 +1,26 @@
 ---
-title: "トラブルシューティング"
-ms.custom: 
+title: トラブルシューティング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 56d06fa7adf2690a2cb9194342071c7814a4ec4a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5544540c6a27975a885bf4cd8b2e0a26183e192b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting"></a>トラブルシューティング
 ここでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションで発生する可能性のある問題をいくつか示し、そうした問題を回避または影響を軽減するための提案を示します。  
@@ -57,7 +59,7 @@ ms.lasthandoff: 01/17/2018
   
 -   `System.Core.dll` および `System.Data.Linq.dll` への参照が存在する。  
   
--   `Imports` および [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] のための `using` (<xref:System.Linq>) または <xref:System.Data.Linq> (C#) ディレクティブが存在する。  
+-   ある、 `Imports` (Visual Basic) または`using`(c#) ディレクティブの<xref:System.Linq>と<xref:System.Data.Linq>です。  
   
 ## <a name="duplicatekeyexception"></a>DuplicateKeyException  
  デバッグ中、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクト、エンティティのリレーションシップを走査する可能性があります。 キャッシュ内にこれらの項目は、これにより、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プレゼンスの対応になります。 その後、同じキーの複数の行を生成する <xref:System.Data.Linq.Table%601.Attach%2A> や <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> などのメソッドを実行しようとした場合、<xref:System.Data.Linq.DuplicateKeyException> がスローされます。  
@@ -80,6 +82,6 @@ ms.lasthandoff: 01/17/2018
 ## <a name="oncreated-partial-method"></a>OnCreated() 部分メソッド  
  オブジェクト コンストラクターが呼び出されるたびに、生成されたメソッド `OnCreated()` が呼び出されます。これは、元の値をコピーするために [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] がコンストラクターを呼び出す場合にも当てはまります。 独自の部分クラスに `OnCreated()` メソッドを実装する場合には、この動作を考慮に入れてください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デバッグのサポート](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)  
  [よく寄せられる質問](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)

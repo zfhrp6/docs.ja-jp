@@ -1,25 +1,26 @@
 ---
-title: "Visual Basic の統合言語軸 (LINQ to XML)"
-ms.custom: 
+title: Visual Basic の統合言語軸 (LINQ to XML)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d450a556-a134-4261-b011-44e399660894
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d648ba7c8710f73c4aeb8dad3983f219c5fe1815
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8360281d1d8de0cad243297cd78e97958530bae4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="language-integrated-axes-in-visual-basic-linq-to-xml"></a>Visual Basic の統合言語軸 (LINQ to XML)
-このセクションの内容に直接組み込まれている機能を説明します、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]言語 XML にアクセスするが簡単にします。 LINQ to XML のドキュメントに記載されている多くの例では、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 統合軸を使用しています。  
+このセクションでは、XML にアクセスするが簡単に、Visual Basic 言語に直接組み込まれている機能について説明します。 例では、LINQ to XML のドキュメントの多くは、Visual Basic の統合軸を使用します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   

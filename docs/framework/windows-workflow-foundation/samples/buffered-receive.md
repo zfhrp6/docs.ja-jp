@@ -1,23 +1,24 @@
 ---
-title: "バッファーされた受信機能"
-ms.custom: 
+title: バッファーされた受信機能
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9d46d9b9-96c9-4531-9695-ab526b4d704a
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7a486d3fbfb520ffe3b32c392566e5147c5dfcc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9cd4dfcbfc9d417766615c624905f8bce2c10e54
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="buffered-receive"></a>バッファーされた受信機能
 このサンプルでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] のバッファーされた受信機能を設定および構成する方法を示します。 バッファーされた受信機能を使用すると、ワークフロー作成者は、メッセージが受信される順序を考慮することなくワークフローを作成できます。 バッファーされた受信機能では、メッセージがローカルにバッファーされ、ワークフローで受信準備が整ったときにメッセージが配信されます。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  また、サービスでは、<xref:System.ServiceModel.Description.ServiceMetadataBehavior> を使用してサービスのメタデータが公開されます。  
   
- 同様に、<xref:System.ServiceModel.NetMsmqBinding> を使用してクライアント エンドポイントが構成されます。 クライアント コードと構成を使用して生成されて、**サービス参照の追加**の機能[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]します。 App.config ファイルで生成されたクライアント エンドポイントを次の例に示します。  
+ 同様に、<xref:System.ServiceModel.NetMsmqBinding> を使用してクライアント エンドポイントが構成されます。 クライアント コードと構成を使用して生成されて、**サービス参照の追加**Visual Studio の機能です。 App.config ファイルで生成されたクライアント エンドポイントを次の例に示します。  
   
 ```xml  
 <endpoint address="net.msmq://localhost/private/LoanService/Service1.xamlx"  
@@ -95,7 +96,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-run-the-sample"></a>サンプルを実行するには  
   
-1.  http://localhost/private/loanservice/service1.xamlx を参照し、サービスが実行されていることを確認します。  
+1.  参照http://localhost/private/loanservice/service1.xamlxをサービスが実行されていることを確認します。  
   
 2.  F5 キーを押して LoanClient アプリケーションを実行します。 ワークフローが完了したら、メッセージ交換の結果を示す out.txt ファイルが C:\Inbox に保存されます。  
   

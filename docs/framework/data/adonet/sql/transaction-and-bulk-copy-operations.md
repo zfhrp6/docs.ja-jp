@@ -1,27 +1,29 @@
 ---
-title: "トランザクションとバルク コピー操作"
-ms.custom: 
+title: トランザクションとバルク コピー操作
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f6f0cbc9-f7bf-4d6e-875f-ad1ba0b4aa62
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d37ea32ef1f73b84050cdd64ca026ac12813bbd2
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 40494c887ffa48c6ebc7f020cb4d42eecbd08e75
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="transaction-and-bulk-copy-operations"></a>トランザクションとバルク コピー操作
 バルク コピー操作は、単独の操作として、または、手順が複数あるトランザクションの 1 手順として実行されます。 手順が複数あるトランザクションの 1 手順として実行する場合、同一トランザクション内でバルク コピー操作を複数回実行することができます。また、挿入、更新、削除などの他のデータベース操作を実行していても、トランザクション全体をコミットまたはロールバックできます。  
@@ -36,7 +38,7 @@ ms.lasthandoff: 01/17/2018
  このバルク コピー操作は、<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A> プロパティを 10 に設定して実行されます。 処理中に無効な行が検出されると、例外がスローされます。 この最初の例では、バルク コピー操作はトランザクション処理ではありません。 エラー発生ポイントまでにコピーされたバッチはすべてコミットされ、重複キーが含まれるバッチはロールバックされます。また、バルク コピー操作は、他のバッチを処理する前に中止されます。  
   
 > [!NOTE]
->  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 コピー元およびコピー先のテーブルが同一の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] インスタンス内に存在する場合、[!INCLUDE[tsql](../../../../../includes/tsql-md.md)] の `INSERT … SELECT` ステートメントを使用すれば簡単かつ高速にデータをコピーすることができます。  
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ迅速に使用する元と移行先のテーブルは、同じ SQL Server インスタンスに存在する場合は、 [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT`ステートメント、データをコピーします。  
   
  [!code-csharp[DataWorks SqlBulkCopy.DefaultTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DefaultTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.DefaultTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DefaultTransaction/VB/source.vb#1)]  
@@ -52,7 +54,7 @@ ms.lasthandoff: 01/17/2018
  次のコンソール アプリケーションは前の例とほぼ同じですが、バルク コピー操作で専用のトランザクションが管理される点が異なります。 エラー発生ポイントまでにコピーされたバッチはすべてコミットされ、重複キーが含まれるバッチはロールバックされます。また、バルク コピー操作は、他のバッチを処理する前に中止されます。  
   
 > [!IMPORTANT]
->  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 コピー元およびコピー先のテーブルが同一の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] インスタンス内に存在する場合、[!INCLUDE[tsql](../../../../../includes/tsql-md.md)] の `INSERT … SELECT` ステートメントを使用すれば簡単かつ高速にデータをコピーすることができます。  
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ迅速に使用する元と移行先のテーブルは、同じ SQL Server インスタンスに存在する場合は、 [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT`ステートメント、データをコピーします。  
   
  [!code-csharp[DataWorks SqlBulkCopy.InternalTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.InternalTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.InternalTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.InternalTransaction/VB/source.vb#1)]  
@@ -65,11 +67,11 @@ ms.lasthandoff: 01/17/2018
  次のコンソール アプリケーションは最初の (トランザクションのない) 例とほぼ同じですが、バルク コピー操作がより大きな外部トランザクションに含まれている点が異なります。 主キーの違反エラーが発生した場合、トランザクションはすべてロールバックされ、コピー先のテーブルに行は追加されません。  
   
 > [!IMPORTANT]
->  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 コピー元およびコピー先のテーブルが同一の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] インスタンス内に存在する場合、[!INCLUDE[tsql](../../../../../includes/tsql-md.md)] の `INSERT … SELECT` ステートメントを使用すれば簡単かつ高速にデータをコピーすることができます。  
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ迅速に使用する元と移行先のテーブルは、同じ SQL Server インスタンスに存在する場合は、 [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] `INSERT … SELECT`ステートメント、データをコピーします。  
   
  [!code-csharp[DataWorks SqlBulkCopy.SqlTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.SqlTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.SqlTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.SqlTransaction/VB/source.vb#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL Server でのバルク コピー操作](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

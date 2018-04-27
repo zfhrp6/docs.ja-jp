@@ -1,12 +1,12 @@
 ---
-title: "イベントとコールバック"
-ms.custom: 
+title: イベントとコールバック
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - events [.NET Framework], extensibility
@@ -14,18 +14,18 @@ helpviewer_keywords:
 - callback methods
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 39dd4e31e84e455b72ce53bd8abffd650ce77dfc
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6a6851d1be543fe356827cad67b28cafdc9e56c2
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="events-and-callbacks"></a>イベントとコールバック
 コールバックでは、フレームワークがデリゲートからのユーザー コードにコールバックする機能拡張ポイントです。 これらのデリゲートは、メソッドのパラメーターを通じて通常フレームワークに渡されます。  
@@ -42,18 +42,18 @@ ms.lasthandoff: 12/23/2017
   
  **✓ は**新しい`Func<...>`、 `Action<...>`、または`Expression<...>`コールバックで Api を定義するときに、カスタム デリゲートではなく型です。  
   
- `Func<...>`および`Action<...>`汎用デリゲートを表します。 `Expression<...>`コンパイルと、その後もできますが、実行時に呼び出されることができますを表す関数定義シリアル化およびリモート プロセスに渡されます。  
+ `Func<...>` および`Action<...>`汎用デリゲートを表します。 `Expression<...>` コンパイルと、その後もできますが、実行時に呼び出されることができますを表す関数定義シリアル化およびリモート プロセスに渡されます。  
   
  **✓ しないで**を測定しを使用するパフォーマンスの影響について理解する`Expression<...>`、使用する代わりに`Func<...>`と`Action<...>`デリゲート。  
   
- `Expression<...>`型はほとんどの場合と論理的に等価に`Func<...>`と`Action<...>`デリゲート。 主な違いは、デリゲートがローカル処理のシナリオで使用するものでは、式がある場合と役に立つとリモート プロセスまたはコンピューターで式を評価することを意図しています。  
+ `Expression<...>` 型はほとんどの場合と論理的に等価に`Func<...>`と`Action<...>`デリゲート。 主な違いは、デリゲートがローカル処理のシナリオで使用するものでは、式がある場合と役に立つとリモート プロセスまたはコンピューターで式を評価することを意図しています。  
   
  **✓ しないで**するデリゲートを呼び出すことによって実行している任意のコードを理解し、セキュリティ、正確性、および互換性への影響を与える可能性です。  
   
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

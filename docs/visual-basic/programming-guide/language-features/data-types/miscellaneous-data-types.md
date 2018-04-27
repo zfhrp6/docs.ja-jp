@@ -1,29 +1,30 @@
 ---
-title: "その他のデータ型 (Visual Basic)"
-ms.custom: 
+title: その他のデータ型 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Object data type [Visual Basic], data types
 - data types [Visual Basic], choosing
 ms.assetid: 64c71a12-9057-4dbf-baca-7379c4aada69
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b6bb86bb6d203aa4e6bdded27a4cb78a8155ddec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f80aacccab4c215b3e3917cc73097080aa6b9941
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="miscellaneous-data-types-visual-basic"></a>その他のデータ型 (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]数字や文字を対象とされているいくつかのデータ型を提供します。 代わりが扱う特化されたデータなど、はい/いいえ値、日付/時刻値、およびオブジェクトのアドレス。  
+Visual Basic では、数字や文字を対象とされているいくつかのデータ型を提供します。 代わりが扱う特化されたデータなど、はい/いいえ値、日付/時刻値、およびオブジェクトのアドレス。  
   
- サイド バイ サイドの比較を示す表に、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]データ型を参照してください[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
+ Visual Basic データ型のサイド バイ サイドの比較を示す表を参照してください[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
   
 ## <a name="boolean-type"></a>ブール型  
  [ブールのデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)いずれかとして解釈される符号なしの値は、`True`または`False`です。 データのサイズは実装されているプラットフォームに依存します。 場合は、変数は、はい/いいえ、またはオン/オフ、true または false などの 2 つの状態値のみを含めることができます、宣言として`Boolean`です。  

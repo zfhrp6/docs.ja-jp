@@ -1,13 +1,13 @@
 ---
-title: "チュートリアル : Visual Basic による Windows フォーム コントロールからの継承"
-ms.custom: 
+title: 'チュートリアル : Visual Basic による Windows フォーム コントロールからの継承'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-winforms
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - vb
@@ -18,20 +18,20 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: fb58d7c8-b702-4478-ad31-b00cae118882
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b165de0d18cede275dfe8405b0266c1a909ac570
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 342ab60d4c3481d2154293fab9fb1254f937a934
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>チュートリアル : Visual Basic による Windows フォーム コントロールからの継承
-[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では、*継承*によって強力なカスタム コントロールを作成できます。 継承を使用すると、標準の Windows フォーム コントロールの固有の機能をすべて保持しながら、カスタム機能も組み込んだコントロールを作成できます。 このチュートリアルでは、`ValueButton` という単純な継承されたコントロールを作成します。 このボタンは、標準の Windows フォームの機能を継承<xref:System.Windows.Forms.Button>制御、およびと呼ばれるカスタム プロパティを公開`ButtonValue`です。  
+Visual basic では、経由の強力なカスタム コントロールを作成することができます*継承*です。 継承を使用すると、標準の Windows フォーム コントロールの固有の機能をすべて保持しながら、カスタム機能も組み込んだコントロールを作成できます。 このチュートリアルでは、`ValueButton` という単純な継承されたコントロールを作成します。 このボタンは、標準の Windows フォームの機能を継承<xref:System.Windows.Forms.Button>制御、およびと呼ばれるカスタム プロパティを公開`ButtonValue`です。  
   
 > [!NOTE]
 >  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  **[ファイル]** メニューの **[新規作成]** をポイントし、**[プロジェクト]** をクリックして **[新しいプロジェクト]** ダイアログ ボックスを開きます。  
   
-2.  [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] プロジェクトの一覧で **[Windows フォーム コントロール ライブラリ]** プロジェクト テンプレートを選択し、**[名前]** ボックスに「`ValueButtonLib`」と入力します。  
+2.  選択、 **Windows フォーム コントロール ライブラリ**Visual Basic プロジェクト、および種類の一覧からプロジェクト テンプレート`ValueButtonLib`で、**名前**ボックス。  
   
      プロジェクト名 `ValueButtonLib` は、既定でルート名前空間にも割り当てられます。 ルート名前空間は、アセンブリ内のコンポーネント名の修飾に使用されます。 たとえば、`ValueButton` という名前のコンポーネントが 2 つのアセンブリに含まれている場合、`ValueButtonLib.ValueButton` を使用して目的の `ValueButton` コンポーネントを指定できます。 詳細については、「[Visual Basic における名前空間](~/docs/visual-basic/programming-guide/program-structure/namespaces.md)」を参照してください。  
   
@@ -99,7 +99,7 @@ ms.lasthandoff: 01/19/2018
   
 #### <a name="to-build-your-control"></a>コントロールをビルドするには  
   
-1.  **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。  
+1.  **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。  
   
      コンパイル エラーも警告も発生せずに、ビルドが正常に完了します。  
   
@@ -107,7 +107,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  **[ファイル]** メニューの **[追加]** をポイントし、**[新しいプロジェクト]** をクリックして **[新しいプロジェクトの追加]** ダイアログ ボックスを開きます。  
   
-2.  [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] プロジェクト ノードを選択し、**[Windows フォーム アプリケーション]** をクリックします。  
+2.  Visual Basic のプロジェクト ノードを選択し、クリックして**Windows フォーム アプリケーション**です。  
   
 3.  **[名前]** ボックスに「`Test`」と入力します。  
   
@@ -159,7 +159,7 @@ ms.lasthandoff: 01/19/2018
   
      `Label1` に数字の "5" が表示されます。これは、継承されたコントロールの `ButtonValue` プロパティが、`ValueButton1_Click` メソッドによって `Label1` に渡されたことを示しています。 このようにして、`ValueButton` コントロールは標準の Windows フォーム ボタンの機能をすべて継承しながら、追加のカスタム プロパティを公開します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアル: Visual Basic による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
  [方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)  
  [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  

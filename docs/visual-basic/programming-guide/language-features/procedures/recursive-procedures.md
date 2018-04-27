@@ -1,11 +1,12 @@
 ---
-title: "再帰プロシージャ (Visual Basic)"
-ms.custom: 
+title: 再帰プロシージャ (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -16,17 +17,17 @@ helpviewer_keywords:
 - functions [Visual Basic], calling recursively
 - recursion
 ms.assetid: ba1d3962-b4c3-48d3-875e-96fdb4198327
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 444eeaf043cf3710c5154fd7e8577590e3ce7d1e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 471746f4412b61c9782e8019aa8a9ec6221afb04
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="recursive-procedures-visual-basic"></a>再帰プロシージャ (Visual Basic)
-A*再帰*手順は、自分自身を呼び出します。 一般に、これが最も効果的な方法を記述する[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コード。  
+A*再帰*手順は、自分自身を呼び出します。 通常、これは Visual Basic コードを記述する最も効果的な方法ではありません。  
   
  次の手順では、元の引数の階乗を計算するのに再帰を使用します。  
   

@@ -1,30 +1,30 @@
 ---
-title: "汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発"
-ms.custom: 
+title: 汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Portable Class Library [.NET Framework]
 - targeting multiple platforms
 - multiple platforms, targeting
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
-caps.latest.revision: "95"
+caps.latest.revision: 95
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: ea0a111727093cb65a98e48255b06b3c4516d258
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 4e6b853c3548f27bbb4056f7d59d51a6964e0d91
+ms.sourcegitcommit: 68b60d38043e50104ccc90c76f8599b1ffe18346
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発
 Visual Studio の .NET Framework ポータブル クラス ライブラリ プロジェクト タイプにより、Microsoft プラットフォームを対象としたクロスプラットフォーム アプリとライブラリをすばやく簡単に開発できます。  
@@ -38,7 +38,7 @@ Visual Studio の .NET Framework ポータブル クラス ライブラリ プ�
  Visual Studio には、ポータブル クラス ライブラリの開発に役立つテンプレートがあります。 使用している Visual Studio のバージョンによっては、使用可能なテンプレートやメニューはこの記事で説明するものとは異なることがあります。  
   
 > [!WARNING]
->  [Visual Studio 2013 Update 2](http://go.microsoft.com/fwlink/p/?LinkId=393658)にポータブル クラス ライブラリ テンプレートの更新が含まれています。 Visual Studio と同じコンピューターにインストールされている Visual Studio 2013 以前のバージョンがあり、更新プログラム 2 への変更をインストールする場合、**ターゲット フレームワーク**選択肢は、Visual Studio の両方のバージョンに適用されます。  
+>  Visual Studio 2013 Update 2 には、ポータブル クラス ライブラリ テンプレートの更新が含まれています。 Visual Studio と同じコンピューターにインストールされている Visual Studio 2013 以前のバージョンがあり、更新プログラム 2 への変更をインストールする場合、**ターゲット フレームワーク**選択肢は、Visual Studio の両方のバージョンに適用されます。  
   
  このトピックの内容:  
   
@@ -59,16 +59,16 @@ Visual Studio の .NET Framework ポータブル クラス ライブラリ プ�
 |-----------------------|---------------------------------------------------|  
 |Visual Studio 2010、Professional、Premium、または Ultimate|[はい] をインストールするときに、[ポータブル ライブラリ ツール](https://marketplace.visualstudio.com/items?itemName=BCLTeam.PortableLibraryTools2)です。|  
 |Visual Studio Express 2010 の各バージョン|いいえ。|  
-|Visual Studio 2012、Professional、Premium、または Ultimate|はい。 サポートの電話番号、インストール、 [Windows Phone SDK 8.0](http://go.microsoft.com/fwlink/?LinkId=265772)です。|  
+|Visual Studio 2012、Professional、Premium、または Ultimate|はい。 Windows Phone 8.0 のサポート、インストール、 [Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471)です。|  
 |Visual Studio Express 2012 の各バージョン|いいえ。|  
-|Visual Studio 2013、Professional、Premium、または Ultimate|はい。 Windows Phone 8.1 をサポートする、インストール[Visual Studio 2013 Update 2](http://go.microsoft.com/fwlink/p/?LinkId=393658)です。|  
-|Visual Studio Express 2013 for Windows|[はい] をインストールするときに、[最新バージョンの Visual Studio Express](http://go.microsoft.com/fwlink/p/?LinkId=394629)、Update 2 が含まれていますが、または追加[Visual Studio 2013 Update 2](http://go.microsoft.com/fwlink/p/?LinkId=393658)です。|  
+|Visual Studio 2013、Professional、Premium、または Ultimate|はい。 Windows Phone 8.1 をサポートする、インストール、[最新バージョンの Visual Studio 2013](https://www.visualstudio.com/vs/older-downloads/)です。|  
+|Windows 用の visual Studio Community 2013|[はい] をインストールするときに、[最新バージョンの Visual Studio Community 2013](https://www.visualstudio.com/vs/older-downloads/)、更新プログラム 2 が含まれます。|  
   
 <a name="create_pcl"></a>   
 ## <a name="creating-a-portable-class-library-project"></a>ポータブル クラス ライブラリ プロジェクトの作成  
  ポータブル クラス ライブラリを作成するには、Visual Studio に用意されているテンプレートのいずれかを使用してください。 新しいプロジェクトを作成し、、**新しいプロジェクト**ダイアログ ボックスで、**テンプレート**(c# または Visual Basic) で、目的の言語を選択して、対象となるプラットフォームのいずれかを選択します。 次のステップで追加のプラットフォームを選択できます。  
   
- Visual Studio 2013 Update 2 でを選択できます、**クラス ライブラリ (ポータブル)**選択した言語とポータブル クラス ライブラリを作成するためのプラットフォーム用のテンプレートです。 このテンプレートは次のプラットフォームで表示されます。  
+ Visual Studio 2013 Update 2 でを選択できます、**クラス ライブラリ (ポータブル)** 選択した言語とポータブル クラス ライブラリを作成するためのプラットフォーム用のテンプレートです。 このテンプレートは次のプラットフォームで表示されます。  
   
 -   ストア アプリ  
   
@@ -76,7 +76,7 @@ Visual Studio の .NET Framework ポータブル クラス ライブラリ プ�
   
 -   Silverlight  
   
- C# の場合にターゲット Windows Phone 8.1 および Windows 8.1 にライブラリを作成する場合は、選択**ストア アプリ**を選択し**クラス ライブラリ (ユニバーサル アプリ用ポータブル)**です。  
+ C# の場合にターゲット Windows Phone 8.1 および Windows 8.1 にライブラリを作成する場合は、選択**ストア アプリ**を選択し**クラス ライブラリ (ユニバーサル アプリ用ポータブル)** です。  
   
  ![ストア アプリ用ポータブル クラス ライブラリ](../../../docs/standard/cross-platform/media/storeuniversalpcl.png "StoreUniversalPCL")  
   
@@ -95,7 +95,7 @@ Visual Studio 2013 更新プログラム 2 の [ポータブル クラス ライ
   
 <a name="platforms"></a>   
 ## <a name="target-options"></a>ターゲット オプション  
- ポータブル クラス ライブラリ プロジェクトを作成するときに、ターゲットにするオペレーティング システムと .NET Framework バージョンを選択できます。 Visual Studio 2013 を使用しているや更新プログラム 2 をインストールした後で、ことができる場合、**クラス ライブラリ (ユニバーサル アプリ用ポータブル)**を Windows 8.1 および Windows Phone 8.1 を対象とするポータブル クラス ライブラリを作成するテンプレートです。 Visual Studio のバージョン別に選択可能なターゲットを次の表に示します。  
+ ポータブル クラス ライブラリ プロジェクトを作成するときに、ターゲットにするオペレーティング システムと .NET Framework バージョンを選択できます。 Visual Studio 2013 を使用しているや更新プログラム 2 をインストールした後で、ことができる場合、**クラス ライブラリ (ユニバーサル アプリ用ポータブル)** を Windows 8.1 および Windows Phone 8.1 を対象とするポータブル クラス ライブラリを作成するテンプレートです。 Visual Studio のバージョン別に選択可能なターゲットを次の表に示します。  
   
 |ターゲット オプション|Visual Studio 2012|Visual Studio 2013|Visual Studio 2013 Update 2 以降|  
 |-|-|-|-|  
@@ -152,10 +152,10 @@ Visual Studio 2012 の [ターゲットの変更] ダイアログ ボックス
   
  ➊ 必要[Microsoft Async](https://www.nuget.org/packages/Microsoft.Bcl.Async/)パッケージ  
  ➋ 必要[Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression)パッケージ  
- ➌ 必要[Microsoft HTTP Client Libraries](http://www.nuget.org/packages/Microsoft.Net.Http)パッケージ  
+ ➌ 必要[Microsoft HTTP Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http)パッケージ  
   
 > [!WARNING]
->  参照するときにエラーが発生する可能性があります、 [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression)と[Microsoft HTTP Client Libraries](http://www.nuget.org/packages/Microsoft.Net.Http) Windows Phone Silverlight 8.1 アプリで使用するポータブル ライブラリからのパッケージです。 詳細については、次を参照してください。[プラットフォームの互換性と最新の Windows Phone Silverlight 8.1 アプリ変更](http://go.microsoft.com/fwlink/p/?LinkId=394744)です。  
+>  参照するときにエラーが発生する可能性があります、 [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression)と[Microsoft HTTP Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http) Windows Phone Silverlight 8.1 アプリで使用するポータブル ライブラリからのパッケージです。 詳細については、次を参照してください。[プラットフォームの互換性と最新の Windows Phone Silverlight 8.1 アプリ変更](/previous-versions/windows/apps/dn642084(v=vs.105))です。  
   
 <a name="members"></a>   
 ## <a name="supported-types-and-members"></a>サポートされている型とメンバー  
@@ -197,7 +197,7 @@ Visual Studio 2012 の [ターゲットの変更] ダイアログ ボックス
  ポータブル クラス ライブラリ アセンブリを参照する Windows ストア アプリまたは Windows Phone アプリを作成する場合、そのアプリを配置するために必要なすべての機能はアプリ パッケージに含まれており、追加の作業は不要です。  
   
 ### <a name="deploying-a-net-framework-app"></a>.NET Framework アプリの配置  
- ポータブル クラス ライブラリ アセンブリを参照する .NET Framework アプリを配置するときは、.NET Framework の正しいバージョンに対する依存関係を指定する必要があります。 この依存関係を指定することで、必要なバージョンがアプリケーションと共に確実にインストールされます。 .NET Framework 4 を対象にするか、後で、コンピューターに必要で、.NET Framework 4、[更新](http://go.microsoft.com/fwlink/?LinkId=210824)、更新プログラム 4.0.3、.NET Framework 4 または .NET Framework 4.5 をインストールします。  
+ ポータブル クラス ライブラリ アセンブリを参照する .NET Framework アプリを配置するときは、.NET Framework の正しいバージョンに対する依存関係を指定する必要があります。 この依存関係を指定することで、必要なバージョンがアプリケーションと共に確実にインストールされます。 .NET Framework 4 を対象にするか、後で、コンピューターに必要で、.NET Framework 4、[更新](https://www.microsoft.com/download/details.aspx?id=3556)、更新プログラム 4.0.3、.NET Framework 4 または .NET Framework 4.5 をインストールします。  
   
 -   ClickOnce 配置で依存関係を作成する: で**ソリューション エクスプ ローラー**、発行するプロジェクトのプロジェクト ノードを選択します。 (これは、ポータブル クラス ライブラリ プロジェクトを参照するプロジェクトです。)メニュー バーで、次のように選択します。**プロジェクト**、**プロパティ**、を選択し、**発行**タブです。**発行**ページで、選択**の前提条件**です。 必須コンポーネントとして、必要な .NET Framework のバージョン (または .NET Framework 4 の更新プログラム) を選択します。  
   
@@ -217,9 +217,9 @@ Visual Studio 2012 の [ターゲットの変更] ダイアログ ボックス
     <param name="background" value="white" />  
     <param name="minRuntimeVersion" value="4.0.60129.0" />  
     <param name="autoUpgrade" value="true" />  
-    <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0"   
+    <a href="https://www.microsoft.com/getsilverlight/get-started/install/"   
              style="text-decoration:none">  
-      <img src=http://go.microsoft.com/fwlink/?LinkId=161376  
+      <img src=http://download.microsoft.com/download/5/1/6/5165823D-1D79-4871-8AC2-42DDDB94A5C2/PNGs/SLMedallion_ENU.png  
              alt="Get Microsoft Silverlight" style="border-style:none"/>  
     </a>  
   </object>  
@@ -229,7 +229,7 @@ Visual Studio 2012 の [ターゲットの変更] ダイアログ ボックス
 </div>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [MVVM を利用した汎用性のあるクラス ライブラリの使用](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)  
  [複数のプラットフォームを対象とするライブラリのアプリケーション リソース](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md)  
  [.NET 移植性アナライザー](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)  

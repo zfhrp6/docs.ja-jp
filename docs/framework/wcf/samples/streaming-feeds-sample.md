@@ -1,24 +1,26 @@
 ---
-title: "ストリーミング フィードのサンプル"
-ms.custom: 
+title: ストリーミング フィードのサンプル
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e3d2de4dd5510b212e030ea537cea0be3dce24f0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 24dfd6c7eb2c1df6605d03bfb99cc82c0a489377
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="streaming-feeds-sample"></a>ストリーミング フィードのサンプル
 このサンプルでは、多数の項目が含まれた配信フィードを管理する方法を示します。 サーバー側のサンプルは、フィード内での個々の <xref:System.ServiceModel.Syndication.SyndicationItem> オブジェクトの作成を、項目がネットワーク ストリームに書き込まれる直前まで遅らせる方法を示しています。  
@@ -27,7 +29,7 @@ ms.lasthandoff: 12/22/2017
   
  配信 API のストリーミング機能を十分に示すため、このサンプルでは、無数の項目を含むフィードがサーバーによって公開されるという多少通常とは異なるシナリオを使用しています。 この場合、サーバーは、クライアントがフィードから特定の数 (既定では 10) の項目を読み取ったと判断するまで、新しい項目をフィードに対して生成し続けます。 処理を簡単にするために、クライアントとサーバーは両方とも同じプロセスで実装され、共有 `ItemCounter` オブジェクトを使用して、クライアントによって生成された項目の数を追跡します。 `ItemCounter` 型は、サンプル シナリオを正常に終了するためにのみ存在し、示されるパターンの重要な要素ではありません。  
   
- デモでは、使用[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]反復子 (を使用して、`yield``return`キーワード コンストラクト)。 反復子[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、MSDN の「反復子の使用」を参照してください。  
+ デモでは、Visual c# の使用により、反復子 (を使用して、`yield``return`キーワード コンストラクト)。 反復子[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、MSDN の「反復子の使用」を参照してください。  
   
 ## <a name="service"></a>サービス  
  次のコードに示すように、サービスは、1 つの操作で構成される基本的な <xref:System.ServiceModel.Web.WebGetAttribute> コントラクトを実装します。  
@@ -129,5 +131,5 @@ private IEnumerable<SyndicationItem> DelayReadItems(XmlReader reader, Syndicatio
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StreamingFeeds`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スタンドアロン診断フィード](../../../../docs/framework/wcf/samples/stand-alone-diagnostics-feed-sample.md)

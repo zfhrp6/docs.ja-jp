@@ -1,29 +1,31 @@
 ---
-title: "SqlClient ストリーミング サポート"
-ms.custom: 
+title: SqlClient ストリーミング サポート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f870bab357db7a425378afcfb0bedd19b0359ce1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: cfa672908248afa951ab3a429e437e0e2c0607c5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sqlclient-streaming-support"></a>SqlClient ストリーミング サポート
-[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] とアプリケーション間のストリーミング サポート ([!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] の新機能) では、サーバー上の非構造化データ (ドキュメント、画像、およびメディア ファイル) がサポートされます。 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] データベースはバイナリ ラージ オブジェクト (BLOB) を格納できますが、BLOB の取得には大量のメモリが使用される可能性があります。  
+SQL Server とアプリケーション間のストリーミング サポート (で新しい[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) サーバー (ドキュメント、画像、およびメディア ファイル) の非構造化データをサポートしています。 SQL Server データベースはバイナリ ラージ オブジェクト (Blob) を格納できますが、大量のメモリを使用して BLOB を取得することができます。  
   
- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] との間のストリーミング サポートにより、データをストリーミングするアプリケーションの作成が簡略化され、データをメモリに完全に読み込む必要がなくなるため、メモリのオーバーフロー例外は減少します。  
+ ストリーミングをサポートして、SQL Server からすると、アプリケーションの作成を完全にデータをメモリに読み込むより少ないメモリのオーバーフロー例外の結果として得られることがなくに簡略化、そのデータをストリームされます。  
   
  また、ストリーミング サポートにより、特にビジネス オブジェクトが大きな BLOB を送信、取得、操作するために SQL Azure に接続するシナリオでは、中間層アプリケーションが適切に拡張できるようになります。  
   
@@ -32,10 +34,10 @@ ms.lasthandoff: 01/17/2018
 >   
 >  ストリーミング サポートに追加されたメンバーは、クエリからデータを取得し、クエリおよびストアド プロシージャにパラメーターを渡すために使用されます。 ストリーミング機能は、基本的な OLTP およびデータ移行のシナリオに対処し、社内および社外のデータ移行環境に適用できます。  
   
-## <a name="streaming-support-from-includessnoversionincludesssnoversion-mdmd"></a>[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポート  
- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポートでは、<xref:System.Data.Common.DbDataReader>、<xref:System.Data.SqlClient.SqlDataReader>、および <xref:System.IO.Stream> の各オブジェクトを取得して対応するために、<xref:System.Xml.XmlReader> クラスと <xref:System.IO.TextReader> クラスに新機能が導入されました。  これらのクラスはクエリからデータを取得するために使用されます。 その結果、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポートは、OLTP シナリオに対処し、社内および社外環境に適用されます。  
+## <a name="streaming-support-from-sql-server"></a>SQL Server からのストリーミング サポート  
+ SQL Server からのストリーミング サポートでの新機能が導入されています、<xref:System.Data.Common.DbDataReader>し、、<xref:System.Data.SqlClient.SqlDataReader>を取得するためにクラス<xref:System.IO.Stream>、 <xref:System.Xml.XmlReader>、および<xref:System.IO.TextReader>オブジェクトし、それらに対応します。  これらのクラスはクエリからデータを取得するために使用されます。 その結果、SQL Server からのストリーミング サポートでは、OLTP シナリオに対処し、オンプレミスおよびオフプレミス環境に適用されます。  
   
- <xref:System.Data.SqlClient.SqlDataReader> からのストリーミング サポートを有効にするために、次のメンバーが [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] に追加されました。  
+ 次のメンバーが追加された<xref:System.Data.SqlClient.SqlDataReader>を SQL Server からのストリーミング サポートを有効にします。  
   
 1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
@@ -49,7 +51,7 @@ ms.lasthandoff: 01/17/2018
   
 6.  <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
   
- <xref:System.Data.Common.DbDataReader> からのストリーミング サポートを有効にするために、次のメンバーが [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] に追加されました。  
+ 次のメンバーが追加された<xref:System.Data.Common.DbDataReader>を SQL Server からのストリーミング サポートを有効にします。  
   
 1.  <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
   
@@ -57,8 +59,8 @@ ms.lasthandoff: 01/17/2018
   
 3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
-## <a name="streaming-support-to-includessnoversionincludesssnoversion-mdmd"></a>[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング サポート  
- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング サポートでは、<xref:System.Data.SqlClient.SqlParameter>、<xref:System.Xml.XmlReader>、および <xref:System.IO.Stream> の各オブジェクトを受け取って対応するために、<xref:System.IO.TextReader> クラスに新機能が導入されました。 <xref:System.Data.SqlClient.SqlParameter> はクエリおよびストアド プロシージャにパラメーターを渡すために使用されます。  
+## <a name="streaming-support-to-sql-server"></a>SQL Server へのストリーミング サポート  
+ SQL Server へのストリーミング サポートでの新機能が導入されています、<xref:System.Data.SqlClient.SqlParameter>に同意しに対応するためにできるようにクラス<xref:System.Xml.XmlReader>、 <xref:System.IO.Stream>、および<xref:System.IO.TextReader>オブジェクト。 <xref:System.Data.SqlClient.SqlParameter> はクエリおよびストアド プロシージャにパラメーターを渡すために使用されます。  
   
  <xref:System.Data.SqlClient.SqlCommand> オブジェクトの破棄または <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> の呼び出しでは、ストリーミング操作を取り消す必要があります。 アプリケーションが <xref:System.Threading.CancellationToken> を送信すると、取り消しは保証されません。  
   
@@ -84,7 +86,7 @@ ms.lasthandoff: 01/17/2018
   
  <xref:System.Xml.XmlReader>、<xref:System.IO.TextReader>、および <xref:System.IO.Stream> の各オブジェクトは、<xref:System.Data.SqlClient.SqlParameter.Size%2A> によって定義された値まで転送されます。  
   
-## <a name="sample----streaming-from-includessnoversionincludesssnoversion-mdmd"></a>サンプル -- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング  
+## <a name="sample----streaming-from-sql-server"></a>サンプル--SQL Server からのストリーミング  
  次の [!INCLUDE[tsql](../../../../includes/tsql-md.md)] を使用して、サンプル データベースを作成します。  
   
 ```  
@@ -108,13 +110,13 @@ GO
   
 -   大きなファイルを非同期に取得できるようにして、ユーザー インターフェイス スレッドのブロックを回避する。  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] で [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] から大きなテキスト ファイルを転送する。  
+-   内の SQL Server から大きなテキスト ファイルを転送[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]です。  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] で [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] から大きな XML ファイルを転送する。  
+-   大きな XML ファイルを転送に SQL Server から[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]です。  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からデータを取得する。  
+-   SQL Server からデータを取得します。  
   
--   メモリ不足にならないように、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] データベースから別のデータベースに大きなファイル (BLOB) を転送する。  
+-   メモリが不足することがなく、大きなファイル (Blob) を 1 つの SQL Server データベースから転送します。  
   
 ```  
 using System;  
@@ -305,7 +307,7 @@ namespace StreamingFromServer {
 }  
 ```  
   
-## <a name="sample----streaming-to-includessnoversionincludesssnoversion-mdmd"></a>サンプル -- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング  
+## <a name="sample----streaming-to-sql-server"></a>サンプル--SQL Server へのストリーミング  
  次の [!INCLUDE[tsql](../../../../includes/tsql-md.md)] を使用して、サンプル データベースを作成します。  
   
 ```  
@@ -329,9 +331,9 @@ GO
   
  このサンプルでは、次の処理の実行方法を示します。  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] で [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] に大きな BLOB を転送する。  
+-   SQL server に大きな BLOB を転送する[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]です。  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] で [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] に大きなテキスト ファイルを転送する。  
+-   SQL server に大きなテキスト ファイルを転送する[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]です。  
   
 -   新しい非同期機能を使用して大きな BLOB を転送する。  
   
@@ -339,7 +341,7 @@ GO
   
 -   大きな BLOB の転送を取り消す。  
   
--   新しい非同期機能を使用して [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] から別の SQL Server にストリーミングする。  
+-   新しい非同期機能を使用して 1 つの SQL Server からのストリーミング。  
   
 ```  
 using System;  
@@ -461,8 +463,8 @@ namespace StreamingToServer {
 }  
 ```  
   
-## <a name="sample----streaming-from-one-includessnoversionincludesssnoversion-mdmd-to-another-includessnoversionincludesssnoversion-mdmd"></a>サンプル -- ある [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] から別の [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング  
- このサンプルでは、取り消し処理がサポートされている、大きな BLOB を [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] 間で非同期にストリーミングする方法を示します。  
+## <a name="sample----streaming-from-one-sql-server-to-another-sql-server"></a>サンプル--が 1 つの SQL Server から別の SQL Server にストリーミング  
+ このサンプルでは、キャンセルのサポートにより、別の 1 つの SQL Server から大きな BLOB を非同期にストリーミングする方法を示します。  
   
 ```  
 using System;  
@@ -527,5 +529,5 @@ namespace StreamingFromServerToAnother {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)

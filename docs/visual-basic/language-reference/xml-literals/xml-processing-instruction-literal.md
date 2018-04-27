@@ -17,11 +17,11 @@ ms.assetid: cef4f7f8-0011-4f64-8602-795077ad4f15
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9ce0f2d0dff80072beefdb4f84643ea28e2cf165
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2d2df93a46d426358988b3ad7f3161c7ae0c7b9e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-processing-instruction-literal-visual-basic"></a>XML 処理命令リテラル (Visual Basic)
 リテラルを表す、<xref:System.Xml.Linq.XProcessingInstruction>オブジェクト。  
@@ -34,16 +34,16 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="parts"></a>指定項目  
  `<?`  
- 必須です。 XML 処理命令リテラルの開始を示します。  
+ 必須。 XML 処理命令リテラルの開始を示します。  
   
  `piName`  
- 必須です。 アプリケーションを示す処理命令のターゲットを名前します。 "Xml"または"XML"で始まることはできません。  
+ 必須。 アプリケーションを示す処理命令のターゲットを名前します。 "Xml"または"XML"で始まることはできません。  
   
  `piData`  
- 省略可能です。 アプリケーションの対象とする方法を示す文字列`piName`XML ドキュメントを処理する必要があります。  
+ 任意。 アプリケーションの対象とする方法を示す文字列`piName`XML ドキュメントを処理する必要があります。  
   
  `?>`  
- 必須です。 処理命令の終了を示します。  
+ 必須。 処理命令の終了を示します。  
   
 ## <a name="return-value"></a>戻り値  
  <xref:System.Xml.Linq.XProcessingInstruction> オブジェクト。  
@@ -59,9 +59,9 @@ ms.lasthandoff: 11/21/2017
  変数に XML 処理命令リテラルを代入または XML ドキュメント リテラルに含めることができます。  
   
 > [!NOTE]
->  XML リテラルは、行継続文字をことがなく複数行にまたがることができます。 これにより、XML ドキュメントの内容をコピーして貼り付けに直接、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プログラムです。  
+>  XML リテラルは、行継続文字をことがなく複数行にまたがることができます。 これにより、XML ドキュメントからコンテンツをコピーして、Visual Basic プログラムに直接貼り付けることができます。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラへの呼び出しにリテラルの XML 処理命令を変換する、<xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A>コンス トラクターです。  
+ Visual Basic コンパイラでは、XML 処理命令リテラルを変換への呼び出しに、<xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A>コンス トラクターです。  
   
 ## <a name="example"></a>例  
  次の例では、XML ドキュメントのスタイル シートを識別する処理命令を作成します。  

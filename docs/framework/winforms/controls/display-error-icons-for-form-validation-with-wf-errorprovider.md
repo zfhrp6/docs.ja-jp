@@ -1,12 +1,13 @@
 ---
-title: "方法 : Windows フォーム ErrorProvider コンポーネントを使用してフォーム検証でエラー アイコンを表示する"
-ms.custom: 
+title: '方法 : Windows フォーム ErrorProvider コンポーネントを使用してフォーム検証でエラー アイコンを表示する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -18,16 +19,17 @@ helpviewer_keywords:
 - ErrorProvider component [Windows Forms], displaying error icons
 - error messages [Windows Forms], displaying icons
 ms.assetid: 3b681a32-9db4-497b-a34b-34980eabee46
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 738ca9670635f78e8cb04318b192127184766c3c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 08e0ac04f2d34f7b6e1cc85d77f863c8ef3f7961
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a>方法 : Windows フォーム ErrorProvider コンポーネントを使用してフォーム検証でエラー アイコンを表示する
 Windows フォームを使用することができます<xref:System.Windows.Forms.ErrorProvider>コンポーネントを無効なデータが入力されたときにエラー アイコンが表示されます。 それらの間 タブし、検証コードを呼び出すために、フォーム上には、少なくとも 2 つのコントロールが必要です。  
@@ -88,7 +90,7 @@ Windows フォームを使用することができます<xref:System.Windows.For
        }  
     ```  
   
-     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
+     (Visual C# の場合、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)])、イベント ハンドラーを登録するフォームのコンス トラクターに次のコードを追加します。  
   
     ```csharp  
     this.textBox1.Validating += new  
@@ -103,7 +105,7 @@ Windows フォームを使用することができます<xref:System.Windows.For
   
 4.  プロジェクトを実行します。 (この例では、数値以外) では無効なデータを最初のコントロールとし、2 番目のタブに入力します。 エラー アイコンが表示されたら、ポイントにマウス ポインターがエラーのテキストを参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ErrorProvider.SetError%2A>  
  [ErrorProvider コンポーネントの概要](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)  
  [方法: Windows フォーム ErrorProvider コンポーネントで DataSet 内にエラーを表示する](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)

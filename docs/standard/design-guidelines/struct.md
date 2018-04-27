@@ -24,11 +24,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2f4a6debc25a51e3a0a83e70fc8c8f8fc55c62f5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dfa32112a2eb85a93cdd1e7a72d4411a3b197a1a
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="struct-design"></a>構造体のデザイン
 ほとんどの場合に、汎用的な値の型を構造体、その c# キーワードと呼びます。 このセクションでは、一般的な構造体のデザインのガイドラインを示します。  
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/23/2017
   
  **✓ は**実装<xref:System.IEquatable%601>を値の型。  
   
- <xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッド値の型をボックス化、発生して、既定の実装はリフレクションを使用しているため、非常に効率はします。 <xref:System.IEquatable%601.Equals%2A>多くのパフォーマンスが向上し、ボックス化は発生しませんできるように実装することができます。  
+ <xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッド値の型をボックス化、発生して、既定の実装はリフレクションを使用しているため、非常に効率はします。 <xref:System.IEquatable%601.Equals%2A> 多くのパフォーマンスが向上し、ボックス化は発生しませんできるように実装することができます。  
   
  **X しないで**明示的に拡張<xref:System.ValueType>です。 実際には、ほとんどの言語は、これを防ぐ。  
   
@@ -55,9 +55,9 @@ ms.lasthandoff: 12/23/2017
   
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [型デザインのガイドライン](../../../docs/standard/design-guidelines/type.md)  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
  [クラスまたは構造体の選択](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)

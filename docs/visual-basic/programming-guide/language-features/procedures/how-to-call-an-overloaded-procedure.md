@@ -1,11 +1,12 @@
 ---
-title: "方法: オーバーロードされたプロシージャを呼び出す (Visual Basic)"
-ms.custom: 
+title: '方法: オーバーロードされたプロシージャを呼び出す (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -14,14 +15,14 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure calls [Visual Basic], overloaded
 ms.assetid: 3bb331fb-f6bc-406f-9ca0-9609b497014c
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ff5967c1b09ad59f249297b1cf0a4ed900faf4a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5eca03de6b6dd2ca2b992196b1ae224f8fbf5068
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-call-an-overloaded-procedure-visual-basic"></a>方法: オーバーロードされたプロシージャを呼び出す (Visual Basic)
 プロシージャのオーバー ロードの利点は、呼び出しの柔軟性にです。 呼び出し元のコードは、プロシージャに渡すし、どのような引数が渡されるに関係なく、1 つのプロシージャの名前を呼び出す必要がある情報を取得できます。  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  引数リスト内のデータの表示、通常の方法で、プロシージャの呼び出しを記述します。 必ず、引数、プロシージャに対して定義されているバージョンのいずれかのパラメーター リストに一致します。  
   
-3.  呼び出すプロシージャのバージョンを決定する必要はありません。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]引数リストに一致するバージョンに制御を渡す。  
+3.  呼び出すプロシージャのバージョンを決定する必要はありません。 Visual Basic では、引数リストに一致するバージョンに制御を渡します。  
   
      次の例では、`post`でプロシージャが宣言されて[する方法: 複数のバージョンのプロシージャ定義](./how-to-define-multiple-versions-of-a-procedure.md)です。 顧客 id を取得、かどうかが判断したこと、`String`または`Integer`、し、いずれの場合、同じプロシージャを呼び出します。  
   

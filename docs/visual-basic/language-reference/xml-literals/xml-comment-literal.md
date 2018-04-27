@@ -18,11 +18,11 @@ ms.assetid: 634c1cee-5e01-48d0-88d7-2dd55e4a9e52
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 36be34ac22cfe926a2eea946f5e4c4eb534de696
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d5bb8c10c28a4ab864220c1b4ce4702622e55c92
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-comment-literal-visual-basic"></a>XML コメント リテラル (Visual Basic)
 リテラルを表す、<xref:System.Xml.Linq.XComment>オブジェクト。  
@@ -37,9 +37,9 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`<!--`|必須です。 XML コメントの開始を示します。|  
-|`content`|必須です。 XML コメントに表示されるテキストです。 2 つのハイフン (-) または終了タグの横にあるハイフンで end の系列を含めることはできません。|  
-|`-->`|必須です。 XML コメントの終了を示します。|  
+|`<!--`|必須。 XML コメントの開始を示します。|  
+|`content`|必須。 XML コメントに表示されるテキストです。 2 つのハイフン (-) または終了タグの横にあるハイフンで end の系列を含めることはできません。|  
+|`-->`|必須。 XML コメントの終了を示します。|  
   
 ## <a name="return-value"></a>戻り値  
  <xref:System.Xml.Linq.XComment> オブジェクト。  
@@ -54,9 +54,9 @@ ms.lasthandoff: 11/21/2017
  XML コメント リテラルは、変数に割り当てることができますか、XML 要素リテラルに含めることができます。  
   
 > [!NOTE]
->  XML リテラルは、行継続文字を使用せず複数行にまたがることができます。 この機能を有効にすると、XML ドキュメントの内容をコピーして貼り付けに直接、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プログラムです。  
+>  XML リテラルは、行継続文字を使用せず複数行にまたがることができます。 この機能を使用すると、XML ドキュメントの内容をコピーし、Visual Basic プログラムに直接貼り付けることができます。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラへの呼び出しにリテラルの XML コメントの変換、<xref:System.Xml.Linq.XComment.%23ctor%2A>コンス トラクターです。  
+ Visual Basic コンパイラでは、XML コメント リテラルを変換への呼び出しに、<xref:System.Xml.Linq.XComment.%23ctor%2A>コンス トラクターです。  
   
 ## <a name="example"></a>例  
  次の例では、「これは、コメント」テキストを含む XML コメントを作成します。  

@@ -23,17 +23,17 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-caps.latest.revision: ''
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5e6dec42d40039f9cc23ba976ecf421f6471888e
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: cf1d7fda58c3bca0f9d76c3c4d3b8d22545a9912
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>マークアップ拡張機能と WPF XAML
 ここでは XAML のマークアップ拡張の概念について、構文規則、目的、その基になるクラス オブジェクト モデルなどを説明します。 マークアップ拡張は、XAML 言語、および XAML サービスの .NET 実装の一般的な機能です。 ここでは、WPF XAML で使用するマークアップ拡張について特に詳しく説明します。  
@@ -64,7 +64,7 @@ ms.lasthandoff: 03/26/2018
 -   `x:Array` は、XAML 構文での一般的な配列の作成をサポートします。WPF 基本要素とコントロール モデルで提供されているコレクションのサポートをあえて使用しない場合に使用します。 詳細については、「[x:Array Markup Extension](../../../../docs/framework/xaml-services/x-array-markup-extension.md)」を参照してください。  
   
 > [!NOTE]
->  `x:` プレフィックスは、XAML 言語の組み込みに対する標準的な XAML 名前空間マッピングのために、XAML ファイルまたは稼働環境のルート要素で使用します。 たとえば、WPF アプリケーション用の [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] テンプレートでは、XAML ファイルの先頭でこの `x:` マッピングを使用しています。 独自の XAML 名前空間マッピングに別のプレフィックス トークンを選ぶこともできますが、このドキュメントでは、WPF の既定の名前空間や、特定のフレームワークに関連のないその他の XAML 名前空間ではなく、XAML 言語の XAML 名前空間の一部として定義されているエンティティを識別する手段として、既定の `x:` マッピングを想定します。  
+>  `x:` プレフィックスは、XAML 言語の組み込みに対する標準的な XAML 名前空間マッピングのために、XAML ファイルまたは稼働環境のルート要素で使用します。 たとえば、WPF アプリケーション用の Visual Studio テンプレートがこれを使用して XAML ファイルを開始`x:`マッピングします。 独自の XAML 名前空間マッピングに別のプレフィックス トークンを選ぶこともできますが、このドキュメントでは、WPF の既定の名前空間や、特定のフレームワークに関連のないその他の XAML 名前空間ではなく、XAML 言語の XAML 名前空間の一部として定義されているエンティティを識別する手段として、既定の `x:` マッピングを想定します。  
   
 <a name="WPF_Specific_Markup_Extensions"></a>   
 ## <a name="wpf-specific-markup-extensions"></a>WPF 固有のマークアップ拡張  
@@ -112,7 +112,7 @@ ms.lasthandoff: 03/26/2018
   
 <a name="EscapeSequences"></a>   
 ## <a name="escape-sequences-and-markup-extensions"></a>エスケープ シーケンスとマークアップ拡張  
- XAML プロセッサによる属性の処理では、マークアップ拡張シーケンスのインジケーターとして中かっこを使用します。 必要に応じて、空の中かっこペアの後にリテラル中かっこを使用したエスケープ シーケンスを入力することによって、リテラル中かっこ文字の属性値を生成することもできます。 参照してください[{} エスケープ シーケンスのマークアップ拡張機能](../../xaml-services/escape-sequence-markup-extension.md)します。  
+ XAML プロセッサによる属性の処理では、マークアップ拡張シーケンスのインジケーターとして中かっこを使用します。 必要に応じて、空の中かっこペアの後にリテラル中かっこを使用したエスケープ シーケンスを入力することによって、リテラル中かっこ文字の属性値を生成することもできます。 参照してください[{}エスケープ シーケンスのマークアップ拡張機能](../../xaml-services/escape-sequence-markup-extension.md)します。  
   
 <a name="Nesting"></a>   
 ## <a name="nesting-markup-extensions-in-xaml-usage"></a>XAML の使用におけるマークアップ拡張の入れ子  

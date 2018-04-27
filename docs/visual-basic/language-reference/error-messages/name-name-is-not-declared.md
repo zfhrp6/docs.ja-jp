@@ -1,5 +1,5 @@
 ---
-title: 名前 &#39;&lt;名前&gt;&#39; が宣言されていません
+title: 名前&#39;&lt;名前&gt;&#39;が宣言されていません
 ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ''
@@ -16,20 +16,20 @@ ms.assetid: 765f099b-e21e-47c6-a906-a065444e56b3
 caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7a63ae74c7179d71756e2b9b4bf6b41a71ce12a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 26245952a2dc5341dedba6c497c47773b882b49b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="name-39ltnamegt39-is-not-declared"></a>名前 &#39;&lt;名前&gt;&#39; が宣言されていません
+# <a name="name-39ltnamegt39-is-not-declared"></a>名前&#39;&lt;名前&gt;&#39;が宣言されていません
 ステートメントがプログラミング要素を参照しますが、コンパイラはその正確な名前を持つ要素を見つけることができません。  
   
  **エラー ID:** BC30451  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  参照元のステートメントで名前のスペルを確認します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]小文字を区別しない、スペルにその他の違いは、完全に別の名前と見なされますが、します。 アンダースコア (`_`) も名前の一部であり、スペルに含まれます。  
+1.  参照元のステートメントで名前のスペルを確認します。 Visual Basic では、大文字と小文字が、スペルにその他の違いは、完全に別の名前と見なされます。 アンダースコア (`_`) も名前の一部であり、スペルに含まれます。  
   
 2.  メンバー アクセス演算子があることを確認 (`.`) オブジェクトとメンバーの間です。 たとえば、 <xref:System.Windows.Forms.TextBox> という名前の `TextBox1`コントロールがある場合、このコントロールの <xref:System.Windows.Forms.TextBoxBase.Text%2A> プロパティにアクセスするには、「 `TextBox1.Text`」と入力する必要があります。 代わりに「 `TextBox1Text`」と入力した場合、別の名前と見なされます。  
   

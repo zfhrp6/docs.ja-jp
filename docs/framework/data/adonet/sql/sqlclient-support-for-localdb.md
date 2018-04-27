@@ -1,30 +1,32 @@
 ---
-title: "SqlClient による LocalDB のサポート"
-ms.custom: 
+title: SqlClient による LocalDB のサポート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a3d643ac386aebf51673f937b3f47e73c749b78f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: e2564e49a90a1c8fd9fe2cc000ebf648cf90b4e7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sqlclient-support-for-localdb"></a>SqlClient による LocalDB のサポート
-コード名 Denali 以降の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、LocalDB という軽量バージョンの [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]を使用できます。 このトピックでは、LocalDB データベースに接続する方法について説明します。  
+SQL Server コード名 Denali 以降は、LocalDB と呼ばれる SQL Server の簡易バージョンは使用できます。 このトピックでは、LocalDB データベースに接続する方法について説明します。  
   
-## <a name="remarks"></a>解説  
- LocalDB をインストールする方法と LocalDB インスタンスを構成する方法を含む LocalDB の詳細については、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックを参照してください。  
+## <a name="remarks"></a>コメント  
+ LocalDB をインストールして、LocalDB インスタンスを構成する方法を含む LocalDB の詳細については、SQL Server オンライン ブックを参照してください。  
   
  LocalDB の主な機能の概要  
   
@@ -42,7 +44,7 @@ ms.lasthandoff: 01/17/2018
   
  `User Instance=True` は LocalDB データベースに接続するときに使用することはできません。  
   
- LocalDB は [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065)からダウンロードできます。 LocalDB インスタンスのデータを変更するために sqlcmd.exe を使用する場合は、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 の sqlcmd が必要です。これも、 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Feature Pack から取得できます。  
+ LocalDB は [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065)からダウンロードできます。 LocalDB インスタンスのデータ変更に sqlcmd.exe を使用する場合は、SQL Server 2012、SQL Server 2012 Feature Pack から取得することもできます。 sqlcmd が必要です。  
   
 ## <a name="programmatically-create-a-named-instance"></a>名前付きインスタンスをプログラムによって作成する  
  アプリケーションは、次のように名前付きインスタンスを作成してデータベースを指定できます。  
@@ -69,6 +71,6 @@ ms.lasthandoff: 01/17/2018
   
 -   .MDF ファイルを指定するには、 `AttachDBFilename` 接続文字列キーワードを使用する。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL Server の機能と ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

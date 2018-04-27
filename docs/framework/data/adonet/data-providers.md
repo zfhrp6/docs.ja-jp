@@ -1,27 +1,29 @@
 ---
-title: ".NET Framework データ プロバイダー"
-ms.custom: 
+title: .NET Framework データ プロバイダー
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a78654f5c8de480b1eb38fbf25fbc923a30a0d25
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 69acb7b2fe4eafcce75a7b76305fab37dbb7d2f6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="net-framework-data-providers"></a>.NET Framework データ プロバイダー
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーは、データベースに接続して、コマンドを実行したり、結果を取得したりする目的で使用されます。 その結果は、直接処理されるか、必要に応じてユーザーに公開されるように <xref:System.Data.DataSet> に格納されるか、取得したデータセットを複数のソースからのデータと組み合わせるか、または、層間でリモート処理されます。 軽量な [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーでは、データ ソースとコード間に形成される層が最小限で済むため、機能を犠牲にすることなく、パフォーマンスを高めることができます。  
@@ -30,12 +32,12 @@ ms.lasthandoff: 01/19/2018
   
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダー|説明|  
 |-------------------------------------------------------------------------------|-----------------|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|Microsoft [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]へのデータ アクセスを提供します。 <xref:System.Data.SqlClient> 名前空間を使用してください。|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server|Microsoft SQL Server へのデータ アクセスを提供します。 <xref:System.Data.SqlClient> 名前空間を使用してください。|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB|OLE DB を使用して公開されるデータ ソースに対応。 <xref:System.Data.OleDb> 名前空間を使用してください。|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for ODBC|ODBC を使用して公開されるデータ ソースに対応。 <xref:System.Data.Odbc> 名前空間を使用してください。|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for Oracle|Oracle データ ソースに対応。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for Oracle は、Oracle クライアント ソフトウェア バージョン 8.1.7 以降をサポートしています。 <xref:System.Data.OracleClient> 名前空間を使用してください。|  
 |EntityClient プロバイダー|エンティティ データ モデル (EDM) アプリケーションにデータ アクセスを提供します。 <xref:System.Data.EntityClient> 名前空間を使用してください。|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Compact 4.0|Microsoft [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Compact 4.0 へのデータ アクセスを提供します。 [System.Data.SqlServerCe](http://msdn.microsoft.com/library/system.data.sqlserverce.aspx) 名前空間を使用します。|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server Compact 4.0 です。|Microsoft SQL Server Compact 4.0 のデータ アクセスを提供します。 [System.Data.SqlServerCe](http://msdn.microsoft.com/library/system.data.sqlserverce.aspx) 名前空間を使用します。|  
   
 ## <a name="core-objects-of-net-framework-data-providers"></a>.NET Framework Data Providers の核となるオブジェクト  
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーを構成する核となる 4 つのオブジェクトの概要を、次の表に示します。  
@@ -59,8 +61,8 @@ ms.lasthandoff: 01/19/2018
 |`Error`|データ ソースから返された警告またはエラー情報を公開します。|  
 |`ClientPermission`|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーにコード アクセス セキュリティ属性を提供します。 すべての `ClientPermission` オブジェクトの基本クラスは <xref:System.Data.Common.DBDataPermission> クラスです。|  
   
-## <a name="net-framework-data-provider-for-includessnoversionincludesssnoversion-mdmd-sqlclient"></a>.NET Framework Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] (SqlClient)  
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] (SqlClient) は独自のプロトコルを使用して [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]と通信します。 これは軽量で高速に動作します。OLE DB または ODBC (Open Database Connectivity) 層を追加しなくても、直接 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] にアクセスするように最適化されているためです。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] と [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB の対比を次の図に示します。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB は、接続プールとトランザクション サービスを提供する OLE DB Service コンポーネントと、データ ソース用の OLE DB プロバイダーの両方をとおして OLE DB データ ソースと通信します。  
+## <a name="net-framework-data-provider-for-sql-server-sqlclient"></a>.NET framework Data Provider for SQL Server (SqlClient)  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server (SqlClient) では、独自のプロトコルを使用して SQL Server と通信します。 軽量と、動作は、OLE DB またはオープン データベース コネクティビティ (ODBC) レイヤーを追加せずに直接 SQL Server にアクセスするのに最適化されています。 次の図とは異なり、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server で、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB します。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB は、接続プールとトランザクション サービスを提供する OLE DB Service コンポーネントと、データ ソース用の OLE DB プロバイダーの両方をとおして OLE DB データ ソースと通信します。  
   
 > [!NOTE]
 >  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for ODBC は、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB に似たアーキテクチャを持っています。たとえば、ODBC Service コンポーネントへの呼び出しを行います。  
@@ -68,9 +70,9 @@ ms.lasthandoff: 01/19/2018
  ![データ プロバイダー](../../../../docs/framework/data/adonet/media/netdataproviders-bpuedev11.gif "NETDataProviders_bpuedev11")  
 .NET Framework Data Provider for SQL Server と .NET Framework Data Provider for OLE DB の比較  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] クラスは、名前空間 <xref:System.Data.SqlClient> 内に配置されます。  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server のクラスにある、<xref:System.Data.SqlClient>名前空間。  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] はローカル トランザクションと分散トランザクションのどちらもサポートします。 分散トランザクションの場合、既定で、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]は自動的にトランザクションに参加し、トランザクションの詳細を Windows コンポーネント サービスまたは <xref:System.Transactions>から取得します。 詳細については、次を参照してください。[トランザクションと同時実行](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)です。  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server は、ローカルおよび分散トランザクションをサポートしています。 分散トランザクションで、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server で、既定は自動的にトランザクションに参加し、Windows コンポーネント サービスからトランザクションの詳細を取得または<xref:System.Transactions>です。 詳細については、次を参照してください。[トランザクションと同時実行](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)です。  
   
  名前空間 `System.Data.SqlClient` をユーザーのアプリケーションにインクルードする方法を次のコード サンプルで示します。  
   
@@ -89,7 +91,7 @@ using System.Data.SqlClient;
   
 |ドライバー|プロバイダー|  
 |------------|--------------|  
-|SQLOLEDB|Microsoft OLE DB Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|  
+|SQLOLEDB|SQL Server の Microsoft OLE DB プロバイダー|  
 |MSDAORA|Microsoft OLE DB Provider for Oracle|  
 |Microsoft.Jet.OLEDB.4.0|OLE DB Provider for Microsoft Jet|  
   
@@ -117,7 +119,7 @@ using System.Data.OleDb;
   
 |ドライバー|  
 |------------|  
-|[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|  
+|SQL Server|  
 |Microsoft ODBC for Oracle|  
 |Microsoft Access ドライバー (*.mdb)|  
   
@@ -158,17 +160,17 @@ using System.Data.OracleClient;
 ## <a name="choosing-a-net-framework-data-provider"></a>.NET Framework データ プロバイダーの選択  
  アプリケーションのデザインおよびデータ ソースによっては、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーを選択すると、アプリケーションのパフォーマンス、能力、および整合性が向上します。 各 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーが持つ利点と制限事項を次の表で説明します。  
   
-|プロバイダー|ノート|  
+|プロバイダー|メモ|  
 |--------------|-----------|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]|[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]を使用する中間層アプリケーションに推奨されています。<br /><br /> Microsoft Database Engine (MSDE) または [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]を使用する単層アプリケーションに推奨されています。<br /><br /> SQLOLEDB (OLE DB Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] ) と [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB を併用する場合に推奨します。|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB|[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]では、このプロバイダーではなく [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] が推奨されます。<br /><br /> Microsoft Access データベースを使用する単層アプリケーションに推奨されます。 Access データベースを中間層アプリケーションで使用することはお勧めできません。|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]' Data Provider for ODBC|中間層アプリケーションおよび単層アプリケーションで ODBC データ ソースを使用する場合に推奨します。|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ``Data Provider for Oracle|中間層アプリケーションおよび単層アプリケーションで Oracle データ ソースを使用する場合に推奨します。|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server|Microsoft SQL Server を使用する中間層アプリケーションのことをお勧めします。<br /><br /> Microsoft Database Engine (MSDE) または SQL Server を使用する単層アプリケーションに推奨されます。<br /><br /> SQL Server (SQLOLEDB) と、OLE DB プロバイダーの使用をお勧め、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB します。|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for OLE DB|SQL Server 用、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server は、このプロバイダーではなくことをお勧めします。<br /><br /> Microsoft Access データベースを使用する単層アプリケーションに推奨されます。 Access データベースを中間層アプリケーションで使用することはお勧めできません。|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ' Data Provider for ODBC|中間層アプリケーションおよび単層アプリケーションで ODBC データ ソースを使用する場合に推奨します。|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ' Data Provider for Oracle|中間層アプリケーションおよび単層アプリケーションで Oracle データ ソースを使用する場合に推奨します。|  
   
 ## <a name="entityclient-provider"></a>EntityClient プロバイダー  
  EntityClient プロバイダーは、エンティティ データ モデル (EDM) に基づくデータ アクセスで使用されます。 他の .NET Framework データ プロバイダーとは異なり、データ ソースと直接やり取りしません。 代わりに Entity SQL を使用して、基になるデータ プロバイダーと通信します。 詳細については、次を参照してください。 [EntityClient と Entity SQL](http://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET の概要](../../../../docs/framework/data/adonet/ado-net-overview.md)  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

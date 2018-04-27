@@ -1,27 +1,29 @@
 ---
-title: "UI オートメーション クライアントにおけるキャッシュ"
-ms.custom: 
+title: UI オートメーション クライアントにおけるキャッシュ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - UI Automation caching in clients
 - caching, UI Automation clients
 ms.assetid: 94c15031-4975-43cc-bcd5-c9439ed21c9c
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: cce1890357f5781f1772b6a0aa583e493e2cfa8b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5bbd54d4e1e8a6a1eae52f50696aecddd1f8bd8a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="caching-in-ui-automation-clients"></a>UI オートメーション クライアントにおけるキャッシュ
 > [!NOTE]
@@ -67,7 +69,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="activating-the-cacherequest"></a>CacheRequest のアクティブ化  
  <xref:System.Windows.Automation.AutomationElement> が現在のスレッドに対してアクティブである間に <xref:System.Windows.Automation.CacheRequest> オブジェクトが取得された場合にのみ、キャッシュが実行されます。 <xref:System.Windows.Automation.CacheRequest>をアクティブ化するには、2 つの方法があります。  
   
- 通常の方法では、 <xref:System.Windows.Automation.CacheRequest.Activate%2A>を呼び出します。 このメソッドは、 <xref:System.IDisposable>を実装するオブジェクトを返します。 要求は、 <xref:System.IDisposable> オブジェクトが存在する限りアクティブなままです。 オブジェクトの有効期間を制御する最も簡単な方法は、 `using` ([!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)]) または `Using` ([!INCLUDE[TLA2#tla_visualb](../../../includes/tla2sharptla-visualb-md.md)]) のブロック内に呼び出しを埋め込むことです。 これにより、例外が発生した場合でも、スタックから要求がポップされます。  
+ 通常の方法では、 <xref:System.Windows.Automation.CacheRequest.Activate%2A>を呼び出します。 このメソッドは、 <xref:System.IDisposable>を実装するオブジェクトを返します。 要求は、 <xref:System.IDisposable> オブジェクトが存在する限りアクティブなままです。 オブジェクトの有効期間を制御する最も簡単な方法が内に呼び出しを埋め込むには、 `using` (c#) または`Using`(Visual Basic の場合) ブロックされます。 これにより、例外が発生した場合でも、スタックから要求がポップされます。  
   
  キャッシュ要求を入れ子にする場合に有用な別の方法は、 <xref:System.Windows.Automation.CacheRequest.Push%2A>を呼び出すことです。 この方法では、スタック上に要求が配置され、アクティブ化されます。 <xref:System.Windows.Automation.CacheRequest.Pop%2A>によってスタックから削除されるまで、要求はアクティブなままです。 別の要求がスタックにプッシュされた場合、要求は一時的に非アクティブになります。スタックの最上位の要求のみがアクティブになります。  
   
@@ -112,7 +114,7 @@ ms.lasthandoff: 01/19/2018
   
  キャッシュを更新しても、既存の <xref:System.Windows.Automation.AutomationElement> の参照のプロパティはいずれも変更されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クライアントの UI オートメーション イベント](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
  [UI オートメーションにおけるキャッシュの使用](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
  [FetchTimer サンプル](http://msdn.microsoft.com/library/5b7d3294-de22-4f24-b2d6-d4785a304b90)

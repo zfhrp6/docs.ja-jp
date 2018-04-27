@@ -11,11 +11,11 @@ ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 15e6ea1a8b2df0b8ed1b84abceee9e6be2c556f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5ffd882c2a1d04c29483d380e972d6ce70bdb5c4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Visual Basic アプリケーション モデルの拡張
 アプリケーション モデルに機能を追加するにはオーバーライドすることで、`Overridable`のメンバー、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>クラスです。 この手法を使用すると、アプリケーション モデルの動作をカスタマイズし、アプリケーションの起動およびシャット ダウン、独自のメソッドへの呼び出しを追加できます。  
@@ -25,11 +25,11 @@ ms.lasthandoff: 11/21/2017
   
  次の図は、通常 Visual Basic Windows フォーム アプリケーションでアプリケーション モデルの呼び出しシーケンスを示します。 シーケンスが開始、`Sub Main`プロシージャの呼び出し、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A>メソッドです。  
   
- ![Visual Basic アプリケーション モデル &#45; &#45;実行](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelrun.gif "VB_ModelRun")  
+ ![Visual Basic アプリケーション モデル&#45;&#45;実行](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelrun.gif "VB_ModelRun")  
   
  Visual Basic アプリケーション モデルも提供、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>と<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>イベント。 次の図は、これらのイベントを発生させるためのメカニズムを示します。  
   
- ![Visual Basic アプリケーション モデル &#45; &#45;次にインスタンス](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelnext.gif "VB_ModelNext")  
+ ![Visual Basic アプリケーション モデル&#45;&#45;次インスタンス](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelnext.gif "VB_ModelNext")  
   
  ![Visual Basic アプリケーション モデル ハンドルされない例外](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_unhandex.gif "VB_UnhandEx")  
   
@@ -50,7 +50,7 @@ ms.lasthandoff: 11/21/2017
   
     2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>。 スプラッシュ スクリーンを初期化するコードを出力するデザイナーを使用します。  
   
-         既定では、このメソッドは何も行いません。 アプリケーションのスプラッシュ スクリーンを選択するかどうか、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **プロジェクト デザイナー**、デザイナーをオーバーライドし、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>メソッドを設定するメソッドを<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>プロパティ スプラッシュ スクリーン フォームの新しいインスタンスをします。  
+         既定では、このメソッドは何も行いません。 Visual Basic でのアプリケーションのスプラッシュ スクリーンを選択するかどうかは**プロジェクト デザイナー**、デザイナーをオーバーライドし、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>メソッドを設定するメソッドを<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>プロパティ スプラッシュ スクリーン フォームの新しいインスタンスを.  
   
 2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup%2A>。 発生させるための拡張ポイントを提供、`Startup`イベント。 この関数を返した場合、アプリケーションの起動処理が停止した`False`です。  
   
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/21/2017
   
     1.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>。 デザイナーでメイン フォームの初期化コードを出力する方法を提供します。  
   
-         既定では、このメソッドは何も行いません。 ただしでのアプリケーションのメイン フォームを選択すると、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **プロジェクト デザイナー**、デザイナーをオーバーライドし、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>メソッドを設定するメソッドを<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>プロパティをメイン フォームの新しいインスタンスにします。  
+         既定では、このメソッドは何も行いません。 ただし、Visual Basic でのアプリケーションのメイン フォームを選択すると**プロジェクト デザイナー**、デザイナーをオーバーライドし、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>メソッドを設定するメソッドを<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>プロパティをメイン フォームの新しいインスタンスにします。  
   
     2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>。 スプラッシュ スクリーンが定義されているいるアプリケーションが開いている場合は、このメソッドは、スプラッシュ スクリーンを閉じます。  
   
@@ -85,7 +85,7 @@ ms.lasthandoff: 11/21/2017
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)>コンス トラクターの呼び出し、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A>プロパティをアプリケーションのフォームを使用するどのテキスト レンダリング エンジンを確認します。 既定では、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A>プロパティから返される`False`、GDI テキスト レンダリング エンジンを使用することを示すは、既定で[!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]です。 オーバーライドすることができます、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A>返されるプロパティを`True`GDI + テキスト レンダリング エンジンを使用することを示す Visual Basic .NET 2002 および Visual Basic .NET 2003 で既定値は。  
   
 ## <a name="configuring-the-application"></a>アプリケーションを構成します。  
- 一部として、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデル、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering>クラスには、アプリケーションを構成する保護対象のプロパティが用意されています。 これらのプロパティは、実装するクラスのコンス トラクターで設定する必要があります。  
+ Visual Basic アプリケーション モデルの一部として、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering>クラスには、アプリケーションを構成する保護対象のプロパティが用意されています。 これらのプロパティは、実装するクラスのコンス トラクターで設定する必要があります。  
   
  既定の Windows フォーム プロジェクトで、**プロジェクト デザイナー**デザイナーの設定とプロパティを設定するコードを作成します。 アプリケーションの起動時にのみ、プロパティを使用します。アプリケーションの起動後に設定しても効果はありません。  
   

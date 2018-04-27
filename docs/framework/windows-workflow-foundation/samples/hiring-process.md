@@ -1,23 +1,24 @@
 ---
-title: "雇用プロセス"
-ms.custom: 
+title: 雇用プロセス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 30cad662a9cca679f7e8ce720cfde3d369b9ba60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8cfa23ab5f36b3a40de107a546dd4700a4523595
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="hiring-process"></a>雇用プロセス
 このサンプルでは、メッセージング アクティビティ、およびワークフロー サービスとしてホストされる 2 つのワークフローを使用して、ビジネス プロセスを実装する方法を示します。 この 2 つのワークフローは、Contoso, Inc という架空の会社の IT インフラストラクチャの一部です。  
@@ -129,7 +130,7 @@ ms.lasthandoff: 12/22/2017
 |カスタム追跡|このサンプルには、`HiringRequestProcess` の履歴を保存するカスタム追跡参加要素が含まれています (これによって、アクションの内容、実行者、および時期が記録されます)。 ソース コードは、HiringRequestService の Tracking フォルダーにあります。|HiringRequestService|  
 |ETW 追跡|システムで指定された ETW 追跡は、HiringRequestService サービスの App.config ファイルで設定されます。|HiringRequestService|  
 |アクティビティの構成|プロセス定義では、<xref:System.Activities.Activity> のフリー コンポジションが使用されます。 Flowchart には、その他のアクティビティなどを同時に含んでいる複数の Sequence アクティビティと Parallel アクティビティが含まれています。|HiringRequestService|  
-|並列アクティビティ|-   <xref:System.Activities.Statements.ParallelForEach%601>並列 (2 人の HR マネージャーの承認手順待機中) で、CEO および HR マネージャーの受信トレイに登録に使用されます。<br />-   <xref:System.Activities.Statements.Parallel>完了と拒否の手順の一部のクリーンアップ タスクを行うために使用します。|HiringRequestService|  
+|並列アクティビティ|-   <xref:System.Activities.Statements.ParallelForEach%601> 並列 (2 人の HR マネージャーの承認手順待機中) で、CEO および HR マネージャーの受信トレイに登録に使用されます。<br />-   <xref:System.Activities.Statements.Parallel> 完了と拒否の手順の一部のクリーンアップ タスクを行うために使用します。|HiringRequestService|  
 |モデルの取り消し|フローチャートでは、<xref:System.Activities.Statements.CancellationScope> を使用して、取り消し動作を作成します (この場合、一部のクリーンアップが実行されます)。|HiringRequestService|  
 |カスタマー永続参加要素|`HiringRequestPersistenceParticipant` は、ワークフロー変数のデータを Contoso HR データベースに保存されているテーブルに保存します。|HiringRequestService|  
 |ワークフロー サービス|`ResumeRequestService` は、ワークフロー サービスを使用して実装されます。 ワークフロー定義およびサービス情報は、ResumeRequestService.xamlx に含まれています。 サービスは、永続性と追跡を使用するように構成されます。|ResumeRequestService|  
@@ -141,13 +142,13 @@ ms.lasthandoff: 12/22/2017
 ## <a name="data-storage"></a>データ ストレージ  
  データは、`ContosoHR` という名前の SQL Server データベースに保存されます (このデータベースを作成するためのスクリプトは `DbSetup` フォルダーにあります)。 ワークフロー インスタンスは `InstanceStore` という名前の SQL Server データベースに保存されます (インスタンス ストアを作成するためのスクリプトは [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] の配布に含まれています)。  
   
- 両方のデータベースとも、[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] コマンド プロンプトの Setup.cmd スクリプトを実行して作成されます。  
+ 両方のデータベースを作成するには、Visual Studio コマンド プロンプトから Setup.cmd スクリプトを実行します。  
   
 ## <a name="running-the-sample"></a>サンプルの実行  
   
 #### <a name="to-create-the-databases"></a>データベースを作成するには  
   
-1.  [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] のコマンド プロンプトを開きます。  
+1.  Visual Studio コマンド プロンプトを開きます。  
   
 2.  サンプル フォルダーに移動します。  
   
@@ -157,11 +158,11 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-set-up-the-solution-for-execution"></a>ソリューションの実行を設定するには  
   
-1.  [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] を管理者として実行します。 HiringRequest.sln を開きます。  
+1.  Visual Studio を管理者として実行します。 HiringRequest.sln を開きます。  
   
 2.  ソリューションを右クリックして**ソリューション エクスプ ローラー**選択**プロパティ**です。  
   
-3.  オプションを選択**マルチ スタートアップ プロジェクト**設定と、 **[careerswebsite]**、 **[internalclient]**、 **HiringRequestService**、および**[Resumerequestservice]**に**開始**です。 ままにして**ContosoHR**、 **InboxService**、および**[orgservice]** None とします。  
+3.  オプションを選択**マルチ スタートアップ プロジェクト**設定と、 **[careerswebsite]**、 **[internalclient]**、 **HiringRequestService**、および **[Resumerequestservice]** に**開始**です。 ままにして**ContosoHR**、 **InboxService**、および **[orgservice]** None とします。  
   
 4.  Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。 ビルドが成功したことを確認します。  
   
@@ -169,7 +170,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  デバッグを行わない場合は、ソリューションのビルド後、Ctrl キーを押しながら F5 キーを押してソリューションを実行します。 すべてのサービスが開始されたことを確認します。  
   
-2.  右クリックして**[internalclient]**クリックしてソリューションに**ブラウザーで表示**です。 `InternalClient` の既定のページが表示されます。 サービスが実行中であることを確認し、リンクをクリックします。  
+2.  右クリックして **[internalclient]** クリックしてソリューションに**ブラウザーで表示**です。 `InternalClient` の既定のページが表示されます。 サービスが実行中であることを確認し、リンクをクリックします。  
   
 3.  **HiringRequest**モジュールが表示されます。 詳細については、以下のシナリオを参照してください。  
   
@@ -177,9 +178,9 @@ ms.lasthandoff: 12/22/2017
   
 5.  `ResumeRequest` は、投稿されると、パブリック Web サイト (Contoso Careers Web サイト) で使用可能になります。 求人を確認するには (さらに、応募するには)、Careers Web サイトに移動します。  
   
-6.  右クリック**[careerswebsite]**クリックし、ソリューションで**ブラウザーで表示**です。  
+6.  右クリック **[careerswebsite]** クリックし、ソリューションで**ブラウザーで表示**です。  
   
-7.  戻る、`InternalClient`を右クリックして**[internalclient]**ソリューションを選択して**ブラウザーで表示**です。  
+7.  戻る、`InternalClient`を右クリックして **[internalclient]** ソリューションを選択して**ブラウザーで表示**です。  
   
 8.  移動して、 **JobPostings**セクションをクリックして、**求人**受信トレイの上部のメニュー内のリンク。 詳細については、以下のシナリオを参照してください。  
   
@@ -221,7 +222,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="troubleshooting"></a>トラブルシューティング  
   
-1.  [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] を実行するには、管理特権が必要です。  
+1.  管理者特権で Visual Studio を実行していることを確認します。  
   
 2.  ソリューションをビルドできない場合は、次の項目を確認してください。  
   
@@ -237,7 +238,7 @@ ms.lasthandoff: 12/22/2017
   
         2.  右クリック**Contoso**選択**Web/サービス参照の更新**です。  
   
-        3.  [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] で、Ctrl キーと Shift キーを押しながら B キーを押してソリューションをリビルドします。  
+        3.  Visual Studio で CTRL + SHIFT + B を押して、ソリューションをリビルドします。  
   
 ## <a name="uninstalling"></a>アンインストール  
   

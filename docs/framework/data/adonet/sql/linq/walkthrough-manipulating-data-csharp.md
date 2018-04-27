@@ -1,24 +1,26 @@
 ---
-title: "チュートリアル : データの操作 (C#)"
-ms.custom: 
+title: 'チュートリアル : データの操作 (C#)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 60724967cccd1209aeec1bf53b4e6d4fa5051996
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: d1851bd4c358b96cc9b49f274b31f5f69d9b8d7b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-manipulating-data-c"></a>チュートリアル : データの操作 (C#)
 このチュートリアルでは、データベースに対してデータの追加、変更、および削除を行う、基本の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] シナリオ全体を示します。 顧客の追加、顧客名の変更、および注文の削除を行うため、サンプルの Northwind データベースのコピーを使用します。  
@@ -45,9 +47,9 @@ ms.lasthandoff: 01/17/2018
      詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。  
   
 ## <a name="overview"></a>概要  
- このチュートリアルは、主に次の 6 つの手順で構成されています。  
+ このチュートリアルは、主に次の 6 つのタスクで構成されています。  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] で [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ソリューションを作成します。  
+-   作成する、 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Visual Studio でソリューションです。  
   
 -   プロジェクトにデータベース コード ファイルを追加します。  
   
@@ -60,13 +62,13 @@ ms.lasthandoff: 01/17/2018
 -   これらの変更を Northwind データベースに送信します。  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成する  
- 最初に、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] プロジェクトをビルドおよび実行するために必要な参照を含む [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ソリューションを作成します。  
+ この最初のタスクでは、ビルドおよび実行するために必要な参照を含む Visual Studio ソリューションを作成、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクト。  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成するには  
   
-1.  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] **ファイル** メニューのをポイント**新規**、クリックして**プロジェクト**です。  
+1.  Visual Studio で**ファイル** メニューのをポイント**新規**、クリックして**プロジェクト**です。  
   
-2.  **プロジェクトの種類**ペインで、**新しいプロジェクト**ダイアログ ボックスで、をクリックして**Visual c#**です。  
+2.  **プロジェクトの種類**ペインで、**新しいプロジェクト**ダイアログ ボックスで、をクリックして**Visual c#** です。  
   
 3.  **[テンプレート]** ペインの **[コンソール アプリケーション]** をクリックします。  
   
@@ -74,7 +76,7 @@ ms.lasthandoff: 01/17/2018
   
 5.  **場所**ボックスで、プロジェクト ファイルを格納することを確認します。  
   
-6.  **[OK]**をクリックします。  
+6.  **[OK]** をクリックします。  
   
 ## <a name="adding-linq-references-and-directives"></a>LINQ の参照とディレクティブを追加する  
  このチュートリアルで使用するアセンブリは、既定ではプロジェクトにインストールされていない場合があります。 System.Data.Linq がプロジェクトの参照として表示されない場合は、次に説明する手順に従って追加してください。  
@@ -83,7 +85,7 @@ ms.lasthandoff: 01/17/2018
   
 1.  **ソリューション エクスプ ローラー**を右クリックして**参照**、クリックして**参照の追加**です。  
   
-2.  **参照の追加**ダイアログ ボックスで、をクリックして**.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
+2.  **参照の追加**ダイアログ ボックスで、をクリックして **.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
   
      アセンブリがプロジェクトに追加されます。  
   
@@ -115,7 +117,7 @@ ms.lasthandoff: 01/17/2018
   
      A**コンソール**ウィンドウが開きます。  
   
-     Enter キーを押してアプリケーションを閉じることができます、**コンソール**ウィンドウ、またはをクリックして**デバッグの停止**上、 [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] **デバッグ**メニュー。  
+     Enter キーを押してアプリケーションを閉じることができます、**コンソール**ウィンドウ、またはをクリックして**デバッグの停止** Visual Studio で**デバッグ**メニュー。  
   
 ## <a name="creating-a-new-entity"></a>新しいエンティティの作成  
  新しいエンティティを作成する手順は簡単です。 `Customer` キーワードを使用してオブジェクト (`new` など) を作成できます。  
@@ -172,5 +174,5 @@ ms.lasthandoff: 01/17/2018
 > [!NOTE]
 >  変更内容を送信して新しい顧客を追加した後で、このソリューションを再度実行することはできません。 ソリューションを再度実行するには、追加する顧客の名前と顧客 ID を変更します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

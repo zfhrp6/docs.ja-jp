@@ -1,9 +1,10 @@
 ---
-title: "申し訳ありませんが、お don &#39; この Visual Basic エラーに関する詳細が含まれていたり"
+title: 申し訳ありません&#39;t この Visual Basic エラーに関する詳細があります。
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vbc30234
@@ -3048,32 +3049,32 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 132bb3f93ae5084df73aed56b6d1483830984928
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4ab447c06504d6c3bb7c51107e422b2cba1f45e3
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>申し訳ありませんが、お don &#39; この Visual Basic エラーに関する詳細が含まれていたり
+# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>申し訳ありません&#39;t この Visual Basic エラーに関する詳細があります。
 申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用して他の開発者に尋ねることができます。  
   
  [Visual Basic 言語](http://go.microsoft.com/fwlink/?LinkId=145963)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。  
+ 質問や議論の Visual Basic 言語の構文およびコンパイラのフォーラムを提供します。  
   
  [Visual Basic の相互運用とアップグレード](http://go.microsoft.com/fwlink/?LinkId=145966)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] へのアップグレードや相互運用機能の使用に関する質問や議論のためのフォーラムです。  
+ に関する質問については、フォーラムを提供し、Visual Basic にアップグレードして、相互運用性機能の使用を発行します。  
   
  [Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 環境で作業する方法について質問するためのフォーラムです。  
   
  [Visual Basic 全般](http://go.microsoft.com/fwlink/?LinkId=145973)  
- 他のフォーラムで取り上げていない [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に関する質問や議論のためのフォーラムです。  
+ に関する質問については、フォーラムを提供し、その他のフォーラムで取り上げていない Visual Basic を使用して発行します。  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/vb.net)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に関する質問や問題のためのフォーラムです。  
+ に関する質問については、フォーラムを提供し、Visual Basic を使用して発行します。  
   
  関連項目:  
  [Visual Basic プログラマのための追加リソース](../../visual-basic/getting-started/additional-resources.md)  

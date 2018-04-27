@@ -1,11 +1,12 @@
 ---
-title: "構造体とクラス (Visual Basic)"
-ms.custom: 
+title: 構造体とクラス (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - classes [Visual Basic], vs. structures
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - structures [Visual Basic], structure variables
 - structure variables [Visual Basic]
 ms.assetid: a221e74a-ffcf-4bdc-a0f6-a088a9bf26cc
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 08e31481feac7a6184c6b29269d193c749f440ff
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cf72fb0a7a34d45774cb9a58c037ebcb1c05288f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="structures-and-classes-visual-basic"></a>構造体とクラス (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]構造体とクラスは、両方のエンティティに同じ機能のほとんどがサポートされる結果の構文を統一します。 ただし、構造体とクラスの重要な違いもできます。  
+Visual Basic では、構造体とクラスは、両方のエンティティに同じ機能のほとんどがサポートされる結果の構文を統一します。 ただし、構造体とクラスの重要な違いもできます。  
   
  クラスが参照型になるというメリットがある、参照を渡すことが、そのすべてのデータと構造体変数を渡すより効率的です。 その一方で、構造体には、グローバル ヒープにメモリの割り当ては不要です。  
   
@@ -92,7 +93,7 @@ ms.lasthandoff: 11/21/2017
   
      ただし、構造体の要素は、独自のインスタンス内で分離されます。 他のインスタンスが同じであっても、別の構造体変数にその値への変更は反映されません`Structure`宣言します。  
   
--   **等しいかどうか。** 2 つの構造の等価テストは、要素でテストを実行する必要があります。 使用して 2 つのオブジェクト変数を比較することができます、<xref:System.Object.Equals%2A>メソッドです。 <xref:System.Object.Equals%2A>2 つの変数が同じインスタンスをポイントするかどうかを示します。  
+-   **等しいかどうか。** 2 つの構造の等価テストは、要素でテストを実行する必要があります。 使用して 2 つのオブジェクト変数を比較することができます、<xref:System.Object.Equals%2A>メソッドです。 <xref:System.Object.Equals%2A> 2 つの変数が同じインスタンスをポイントするかどうかを示します。  
   
 ## <a name="see-also"></a>関連項目  
  [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  

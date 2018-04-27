@@ -13,14 +13,14 @@ ms.assetid: d1fb027c-872b-4ccc-afc8-2380e3f65d4a
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: de65fdd3a71c87199127b9013a6e89e0528be18e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a41089514bb4f38ef981b4fe014b249f0d7ee6da
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="operators-listed-by-functionality-visual-basic"></a>機能別の演算子一覧 (Visual Basic)
-以下のカテゴリのいずれかを参照するか、ヘルプの目次のアルファベット順の一覧を表示するには、この部分を開いて[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]演算子。  
+以下のカテゴリのいずれかを参照してくださいか、ヘルプの目次の Visual Basic の演算子のアルファベット順の一覧を表示するには、この部分を開きます。  
   
 ## <a name="categories-of-operators"></a>演算子のカテゴリ  
   

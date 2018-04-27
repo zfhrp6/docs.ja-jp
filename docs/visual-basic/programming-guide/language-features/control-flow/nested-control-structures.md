@@ -1,11 +1,12 @@
 ---
-title: "入れ子になった制御構造 (Visual Basic)"
-ms.custom: 
+title: 入れ子になった制御構造 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, control flow
@@ -16,20 +17,20 @@ helpviewer_keywords:
 - structures [Visual Basic], nested control
 - nested control statements [Visual Basic]
 ms.assetid: cf60b061-65d9-44a8-81f2-b0bdccd23a05
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 22adf4086cd494202a540b2ec16310072329b6ca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f2c91bcdd741ef75417fe50b0c08bd0f9bd5ff80
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nested-control-structures-visual-basic"></a>入れ子になった制御構造 (Visual Basic)
 たとえば他のコントロール ステートメント内のコントロール ステートメントを配置することができます、`If...Then...Else`ブロック内で、`For...Next`ループします。 制御ステートメントの中に別のコントロール ステートメントの配置と呼ばれます*入れ子になった*です。  
   
 ## <a name="nesting-levels"></a>入れ子のレベル  
- 内の構造を制御[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]レベルに入れ子にすることができます。 入れ子になった構造体を 1 つずつの本体をインデントして読みやすくするための一般的な方法であります。 統合開発環境 (IDE) のエディターでは、この自動的に行われます。  
+ Visual Basic での制御構造は、複数のレベルに入れ子にすることができます。 入れ子になった構造体を 1 つずつの本体をインデントして読みやすくするための一般的な方法であります。 統合開発環境 (IDE) のエディターでは、この自動的に行われます。  
   
  次の例では、プロシージャ`sumRows`マトリックスの行ごとの正の要素を一緒に追加します。  
   
@@ -78,7 +79,7 @@ Next ctl
  ![無効な入れ子のグラフィック ダイアグラム](../../../../visual-basic/programming-guide/language-features/control-flow/media/nestexampleinvalid.gif "NestExampleInvalid")  
 無効な構造体を使用して対応の入れ子  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラはこのような重複する制御構造し、コンパイル時エラーが通知を検出します。  
+ Visual Basic コンパイラでは、このような重複する制御構造を検出し、コンパイル時のエラーを通知します。  
   
 ## <a name="see-also"></a>関連項目  
  [制御フロー](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)  

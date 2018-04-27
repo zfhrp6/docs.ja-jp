@@ -15,18 +15,18 @@ ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f7074206baa51259592cca3fdc224d99438791f9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 620453d140e3d4ba2ee468e5bf087df6deb9aad4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basic-language-features"></a>Visual Basic 言語の機能
-次のトピックでは、オブジェクト指向プログラミング言語である [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の必須コンポーネントを紹介して説明します。 フォームとコントロールを使用してアプリケーションのユーザー インターフェイスを作成した後、アプリケーションの動作を定義するコードを作成する必要があります。 他の最新のプログラミング言語と同じように、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、多数の一般的なプログラミング構成要素と言語要素をサポートしています。  
+次のトピックでは、紹介し、Visual Basic では、オブジェクト指向プログラミング言語の重要なコンポーネントについて説明します。 フォームとコントロールを使用してアプリケーションのユーザー インターフェイスを作成した後、アプリケーションの動作を定義するコードを作成する必要があります。 最新のプログラミング言語と Visual Basic では、一般的なプログラミング構成要素と言語要素の数がサポートしています。  
   
- 他の言語でプログラミングしたことがある場合、このセクションで説明されている内容の大半はすでに知っている可能性があります。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の構造体の大部分は他の言語の構造体と似ていますが、イベント ドリブン型という性質のため、いくつかの微妙な違いが発生しています。  
+ 他の言語でプログラミングしたことがある場合、このセクションで説明されている内容の大半はすでに知っている可能性があります。 構造のほとんどは、他の言語と似ていますが、Visual Basic のイベント ドリブン性質は微妙な違いについて説明します。  
   
- プログラミングの経験がない場合、このセクションの説明は、コードを記述するための基礎を紹介するものになります。 基礎を理解したら、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] を使用して強力なアプリケーションを作成することができます。  
+ プログラミングの経験がない場合、このセクションの説明は、コードを記述するための基礎を紹介するものになります。 基本を理解すると、Visual Basic を使用して強力なアプリケーションを作成できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)  
@@ -91,4 +91,4 @@ ms.lasthandoff: 10/18/2017
  .NET Framework で提供されているコレクションの種類について説明します。 単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。  
   
  [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのプログラミングのさまざまな側面に関するリファレンス情報を提供します。
+ Visual Basic プログラミングのさまざまな側面に関するリファレンス情報を提供します。

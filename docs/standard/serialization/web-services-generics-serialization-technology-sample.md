@@ -8,21 +8,21 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cdc15ea4-f678-4729-8ebe-188ae720bef7
-caps.latest.revision: ''
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0c29e6778cc0749620a7e38d51303356c2e99436
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: aa4e54a1085e3e5713004c489051e54b0fc8ee9d
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="web-services-generics-serialization-technology-sample"></a>Web サービス ジェネリック シリアル化の技術サンプル
-[サンプルのダウンロード](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/GenericsSerialization.zip.exe)  
+[サンプルのダウンロード](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/GenericsSerialization.zip.exe)  
   
  このサンプルでは、ASP.NET Web サービスで、ジェネリックのシリアル化を使用および制御する方法について説明します。  
   
@@ -36,7 +36,7 @@ ms.lasthandoff: 03/23/2018
   
 4.  Service.asmx を選択して、このファイルを Visual Studio で開きます。  
   
-5.  **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。  
+5.  **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。  
   
 > [!NOTE]
 >  この一覧の最初の 5 つの手順は省略可能です。 サービスが最初に要求されたときに、.NET Framework ランタイムによって Web サービスが自動的に生成されます。  
@@ -70,14 +70,14 @@ ms.lasthandoff: 03/23/2018
   
 1.  Web ブラウザー ウィンドウを開き、アドレス バーをクリックします。  
   
-2.  **http://localhost/[virtual directory]/Service.asmx** と入力します。[virtual directory] は、サンプルのビルド時に作成した仮想ディレクトリを表します。  
+2.  型 **http://localhost/[仮想 directory]/Service.asmx**, ここで、[仮想ディレクトリ] は、サンプルをビルドしたときに作成した仮想ディレクトリを表します。  
   
 ## <a name="remarks"></a>コメント  
- サンプルでは、Web サービスの定義へのリンクを含む既定の ASP.NET ページが表示されます。 Web サービスのソース コードの変更に加えて、表示のカスタマイズも可能です。 詳細については、「[XML Web サービス クライアントの作成](http://msdn.microsoft.com/library/c606f3cb-4111-45b4-ae42-9300420fa16c)」を参照してください。  
+ サンプルでは、Web サービスの定義へのリンクを含む既定の ASP.NET ページが表示されます。 Web サービスのソース コードの変更に加えて、表示のカスタマイズも可能です。 詳細については、「[XML Web サービス クライアントの作成](https://msdn.microsoft.com/library/c606f3cb-4111-45b4-ae42-9300420fa16c)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic>  
  <xref:System.Web.Services>  
  <xref:System.Xml.Serialization>  
  [シリアル化](../../../docs/standard/serialization/index.md)  
- [ASP.NET と XML Web サービス クライアントを使用して作成した XML Web サービス](http://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)
+ [ASP.NET と XML Web サービス クライアントを使用して作成した XML Web サービス](https://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)

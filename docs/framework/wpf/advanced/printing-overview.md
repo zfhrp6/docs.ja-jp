@@ -1,12 +1,13 @@
 ---
-title: "印刷の概要"
-ms.custom: 
+title: 印刷の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,19 +23,20 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-caps.latest.revision: "35"
+caps.latest.revision: 35
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 91ccf1f98d9e1e2f5784246cf30995b689a0b94b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9a36589ca670892398b4d6bb171e79a07060d458
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="printing-overview"></a>印刷の概要
-[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] によって、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] を使用するアプリケーション開発者は、新しい印刷と印刷システムの管理 [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] の豊富な一式を得られます。 また、[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] によって、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] アプリケーションを作成する開発者と、アンマネージ コードを使用する開発者も、これらの印刷システム拡張機能の一部を使用できます。 この新しい機能の中核となるのが、新しい [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] ファイル形式と [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] 印刷パスです。  
+Microsoft .NET Framework を使用するアプリケーション開発者による[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]印刷と印刷のシステム管理の豊富な新しいセットを持つ[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]します。 また、[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] によって、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] アプリケーションを作成する開発者と、アンマネージ コードを使用する開発者も、これらの印刷システム拡張機能の一部を使用できます。 この新しい機能の中核となるのが、新しい [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] ファイル形式と [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] 印刷パスです。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -47,14 +49,12 @@ ms.lasthandoff: 12/22/2017
   
 <a name="XPS_print_path_intro"></a>   
 ## <a name="xps-print-path"></a>XPS 印刷パス  
- 
-          [!INCLUDE[TLA#tla_metro](../../../../includes/tlasharptla-metro-md.md)] 印刷パスは、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] アプリケーションでの印刷の処理方法を再定義する [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] の新機能です。 [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] は、ドキュメントのプレゼンテーション言語 (RTF など)、印刷スプーラの形式 (WMF など)、ページ記述言語 (PCL や Postscript など) に置き換えることができるため、新しい印刷パスは、アプリケーションの公開から印刷ドライバーまたはデバイスでの最終処理まで、[!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] 形式を維持します。  
+ [!INCLUDE[TLA#tla_metro](../../../../includes/tlasharptla-metro-md.md)]印刷パスは、新しい[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]印刷を Windows アプリケーションで処理する方法を再定義する機能。 [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] は、ドキュメントのプレゼンテーション言語 (RTF など)、印刷スプーラの形式 (WMF など)、ページ記述言語 (PCL や Postscript など) に置き換えることができるため、新しい印刷パスは、アプリケーションの公開から印刷ドライバーまたはデバイスでの最終処理まで、[!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] 形式を維持します。  
   
  
           [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] 印刷パスは、[!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] のプリンター ドライバー モデル (XPSDrv) 上に構築されています。XPSDrv により、開発者は [!INCLUDE[TLA#tla_wys](../../../../includes/tlasharptla-wys-md.md)] の印刷、色のサポートの向上、および印刷のパフォーマンスの大幅な向上など、いくつかの利点を得られます。 (XPSDrv の詳細については、「[Windows Driver Kit (WDK)](https://msdn.microsoft.com/library/windows/hardware/ff557573.aspx)」をご覧ください。)  
   
- 
-          [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] ドキュメントの印刷スプーラの操作は、基本的に [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] の以前のバージョンと同じです。 ただし、既存の [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] 印刷パスに加えて [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] 印刷パスをサポートするように強化されました。 新しい印刷パスは、ネイティブに [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] スプール ファイルを使用します。 
+ 操作用の印刷スプーラーの[!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)]ドキュメントには基本的には、Windows の以前のバージョンと同じです。 ただし、既存の [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] 印刷パスに加えて [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] 印刷パスをサポートするように強化されました。 新しい印刷パスは、ネイティブに [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] スプール ファイルを使用します。 
           [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] の以前のバージョン向けに記述されたユーザー モードのプリンター ドライバーは引き続き機能しますが、[!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] 印刷パスを使用するためには、[!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] プリンター ドライバー (XPSDrv) が必要になります。  
   
  
@@ -160,7 +160,7 @@ ms.lasthandoff: 12/22/2017
   
 -   **ZIP 圧縮**。 すべての [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] ドキュメントで ZIP 圧縮を使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.PrintDialog>  
  <xref:System.Windows.Xps.XpsDocumentWriter>  
  <xref:System.Windows.Xps.Packaging.XpsDocument>  

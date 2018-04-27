@@ -1,27 +1,29 @@
 ---
-title: "SQL Server の接続プール (ADO.NET)"
-ms.custom: 
+title: SQL Server の接続プール (ADO.NET)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 497ebbd573ea05568010485f04f08cdeddbf6041
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: c0be63e767255508ac93555a503980f3798e70c0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>SQL Server の接続プール (ADO.NET)
 通常、データベース サーバーへの接続は、時間のかかるいくつかの手順で構成されています。 ソケットまたは名前付きパイプなどの物理チャネルの確立、サーバーとの最初のハンドシェイクの実行、接続文字列の情報の解析、サーバーによる接続の認証、現在のトランザクションへ参加するための検証などの手順を行う必要があります。  
@@ -78,13 +80,13 @@ using (SqlConnection connection = new SqlConnection(
  接続プーラーは、接続がプールに解放されたときに接続の再割り当てを行って、接続に対する要求に応えます。 最大プール サイズに達すると、使用可能な接続を取得できなくなり、要求はキューに置かれます。 プーラーは、タイムアウト (既定は 15 秒) に達するまで接続の再利用を試みます。 接続がタイムアウトになる前に、プーラーが要求を満たすことができない場合は、例外がスローされます。  
   
 > [!CAUTION]
->  接続がプールに返されるようにするために、接続を使い終えたら必ず接続を終了することを強くお勧めします。 この操作は、`Close` オブジェクトの `Dispose` または `Connection` メソッドを使用するか、あるいは C# の `using` ステートメントまたは `Using` の [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ステートメント内ですべての接続を開くことによって実行できます。 明示的に終了されていない接続は、プールに追加したり返したりすることができないことがあります。 詳細については、次を参照してください。[ステートメントを使用して](~/docs/csharp/language-reference/keywords/using-statement.md)または[する方法: システム リソースを破棄](~/docs/visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md)の[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]します。  
+>  接続がプールに返されるようにするために、接続を使い終えたら必ず接続を終了することを強くお勧めします。 これを行うかを使用して、`Close`または`Dispose`のメソッド、`Connection`オブジェクト、または内のすべての接続を開くことによって、 `using` 、C# の場合は、ステートメントまたは`Using`Visual Basic でのステートメント。 明示的に終了されていない接続は、プールに追加したり返したりすることができないことがあります。 詳細については、次を参照してください。[ステートメントを使用して](~/docs/csharp/language-reference/keywords/using-statement.md)または[する方法: システム リソースを破棄](~/docs/visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md)Visual basic の場合。  
   
 > [!NOTE]
 >  クラスの `Close` メソッド内で `Dispose`、`Connection`、またはその他のマネージ オブジェクトの `DataReader` または `Finalize` を呼び出さないでください。 終了処理では、クラスに直接所有されているアンマネージ リソースだけを解放してください。 クラスがアンマネージ リソースを所有していない場合は、クラス定義に `Finalize` メソッドを含めないでください。 詳細については、次を参照してください。[ガベージ コレクション](../../../../docs/standard/garbage-collection/index.md)です。  
   
 > [!NOTE]
->  接続が接続プールからフェッチされたり接続プールに返される場合、ログイン イベントとログアウト イベントはサーバーで発生しません。 これは、接続プールに返されるときに接続が実際には終了していないためです。 詳細については、次を参照してください。 [Audit Login Event Class](http://msdn2.microsoft.com/library/ms190260.aspx)と[Audit Logout イベント クラス](http://msdn2.microsoft.com/library/ms175827.aspx)で[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]オンライン ブック。  
+>  接続が接続プールからフェッチされたり接続プールに返される場合、ログイン イベントとログアウト イベントはサーバーで発生しません。 これは、接続プールに返されるときに接続が実際には終了していないためです。 詳細については、次を参照してください。 [Audit Login Event Class](http://msdn2.microsoft.com/library/ms190260.aspx)と[Audit Logout イベント クラス](http://msdn2.microsoft.com/library/ms175827.aspx)SQL Server オンライン ブック。  
   
 ## <a name="removing-connections"></a>接続の削除  
  接続プール機能は、アイドル状態の時間が約 4-8 分になったか、サーバーとの接続が切断されたことをプール機能が検出した場合に、プールからの接続を削除します。 サーバーとの通信を試みた後にのみ、切断されたサーバー接続が検出可能になることに注意してください。 接続がサーバーに接続していないことがわかると、その接続は無効としてマークされます。 無効な接続は、閉じられるか、または再利用された場合のみ、接続プールから削除されます。  
@@ -111,7 +113,7 @@ using (SqlConnection connection = new SqlConnection(
 ### <a name="pool-fragmentation-due-to-many-databases"></a>多数のデータベースによるプールの断片化  
  インターネット サービス プロバイダーの多くは、1 つのサーバー上で複数の Web サイトをホストしています。 インターネット サービス プロバイダーは、1 つのデータベースを使用してフォーム認証ログインを確認し、そのユーザーまたはユーザー グループの特定のデータベースへの接続を開きます。 認証データベースへの接続はプールされ、すべてのユーザーが使用できるようになります。 ただし、各データベースに対して個別の接続のプールが存在するため、サーバーへの接続数が増加します。  
   
- これもまた、アプリケーションのデザインの副作用です。 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] に接続するときにセキュリティを損なうことなく、この副作用を回避する比較的簡単な方法があります。 各ユーザーまたはグループの個別のデータベースに接続する代わりに、サーバー上の同じデータベースに接続してから、[!INCLUDE[tsql](../../../../includes/tsql-md.md)] USE ステートメントを実行して目的のデータベースに変更します。 `master` データベースへの最初の接続を作成し、`databaseName` 文字列変数で指定した目的のデータベースに切り替えるコードを次に示します。  
+ これもまた、アプリケーションのデザインの副作用です。 SQL Server に接続するときにセキュリティを損なうことなく、この副作用を回避する比較的簡単な方法があります。 各ユーザーまたはグループの個別のデータベースに接続する代わりに、サーバー上の同じデータベースに接続してから、[!INCLUDE[tsql](../../../../includes/tsql-md.md)] USE ステートメントを実行して目的のデータベースに変更します。 `master` データベースへの最初の接続を作成し、`databaseName` 文字列変数で指定した目的のデータベースに切り替えるコードを次に示します。  
   
 ```vb  
 ' Assumes that command is a valid SqlCommand object and that  
@@ -136,12 +138,12 @@ using (SqlConnection connection = new SqlConnection(
 ```  
   
 ## <a name="application-roles-and-connection-pooling"></a>アプリケーション ロールおよび接続プール  
- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] システム ストアド プロシージャの呼び出しにより `sp_setapprole` のアプリケーション ロールがアクティブになった後は、その接続のセキュリティ コンテキストをリセットすることはできません。 ただし、プールを有効した場合は、プールに接続が返され、プール接続が再利用されると、エラーが発生します。 詳細については、サポート技術情報の記事を参照してください"[では、OLE DB リソース プールの SQL アプリケーション ロール エラー](http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)。"。  
+ `sp_setapprole` システム ストアド プロシージャの呼び出しにより SQL Server のアプリケーション ロールが起動された後は、その接続のセキュリティ コンテキストをリセットすることはできません。 ただし、プールを有効した場合は、プールに接続が返され、プール接続が再利用されると、エラーが発生します。 詳細については、サポート技術情報の記事を参照してください"[では、OLE DB リソース プールの SQL アプリケーション ロール エラー](http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)。"。  
   
 ### <a name="application-role-alternatives"></a>アプリケーション ロールに代わる方法  
  アプリケーション ロールに代わるセキュリティ メカニズムの使用をお勧めします。 詳細については、次を参照してください。 [SQL Server でのアプリケーション ロールの作成](../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [接続プール](../../../../docs/framework/data/adonet/connection-pooling.md)  
  [SQL Server と ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
  [パフォーマンス カウンター](../../../../docs/framework/data/adonet/performance-counters.md)  

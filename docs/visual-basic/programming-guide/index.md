@@ -13,28 +13,28 @@ ms.assetid: 640e5796-2796-433c-af37-4d2a2334895b
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 72234f4707e891abd00744db8cebe04114865522
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5f71267bb1bcbe5b3e3e47cea193488ac4e1596d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basic-programming-guide"></a>Visual Basic のプログラミング ガイド
-他の最新のプログラミング言語と同様、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、多くの一般的なプログラミング構成要素と言語要素をサポートします。 このガイドでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] によるプログラミングの主な要素について説明します。  
+Visual Basic は、最新のプログラミング言語と同様に、多くの一般的なプログラミング構成要素と言語要素をサポートします。 このガイドでは、Visual Basic でのプログラミングのすべての主要な要素について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [プログラム構造とコード規則](../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の基本的な構造およびコード規則 (名前付け規則、コード内のコメント、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での制限事項など) についてのドキュメントが含まれています。  
+ 名前付け規則などの Visual Basic、Visual Basic での制限事項、コード内のコメントの基本的な構造とコード規則に関するドキュメントが含まれています。  
   
  [Visual Basic 言語の機能](../../visual-basic/programming-guide/language-features/index.md)  
- LINQ や XML リテラルなど、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の重要な機能に関するトピックへのリンクを示します。  
+ LINQ や XML リテラルなど、Visual Basic の重要な機能に関するトピックへのリンクを示します。  
   
  [COM 相互運用](../../visual-basic/programming-guide/com-interop/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのコンポーネント オブジェクト モデル (COM) オブジェクトの作成および使用に関連する相互運用性の問題について説明します。  
+ Visual Basic でのコンポーネント オブジェクト モデル (COM) オブジェクトの作成と使用に関連する相互運用性の問題について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
  [Visual Basic の言語リファレンス](../../visual-basic/language-reference/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プログラミングのさまざまな側面に関するリファレンス情報を提供します。  
+ Visual Basic プログラミングのさまざまな側面に関するリファレンス情報を提供します。  
   
  [Visual Basic のコマンド ライン コンパイラ](../../visual-basic/reference/command-line-compiler/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のコマンド ライン コンパイラ、コンパイラ オプション、およびキーワード アップグレード ツールの使用について説明します。
+ Visual Basic のコマンド ライン コンパイラ、コンパイラ オプション、およびキーワード アップグレード ツールの使用に関する情報を提供します。

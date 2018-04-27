@@ -12,18 +12,18 @@ ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1bef4da309f5e281b4016912d4b0da8237db6ec0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 26cb885187cff31a085e34c60c820fe7c0bdc787
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="reference-visual-basic"></a>リファレンス (Visual Basic)
-このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プログラミングに関するさまざまなリファレンス情報へのリンクを示します。  
+このセクションでは、Visual Basic プログラミングのさまざまな側面に関する参照情報へのリンクを提供します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Visual Basic の言語リファレンス](../../visual-basic/language-reference/index.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな側面に関するリファレンス情報を提供します。  
+ Visual Basic 言語のさまざまな側面に関するリファレンス情報を提供します。  
   
  [Visual Basic のコマンド ライン コンパイラ](../../visual-basic/reference/command-line-compiler/index.md)  
  コマンド ライン コンパイラに関する情報へのリンクを示します。コマンド ライン コンパイラは、Visual Studio IDE を使用せずにプログラムをコンパイルするためのツールです。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 10/18/2017
  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリの使用方法に関する情報へのリンクを示します。  
   
  [Visual Basic 言語仕様](../../visual-basic/reference/language-specification/index.md)  
- 完全な [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語仕様へのリンクを示します。ここには、この言語のあらゆる側面に関する詳細な情報が掲載されています。  
+ 言語のあらゆる側面に関する詳細な情報を含む完全な Visual Basic 言語仕様へのリンクを提供します。  
   
 ## <a name="reference"></a>参照  
  <xref:Microsoft.VisualBasic.PowerPacks?displayProperty=nameWithType>  

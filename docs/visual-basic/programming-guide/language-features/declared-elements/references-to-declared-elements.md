@@ -1,32 +1,33 @@
 ---
-title: "宣言された要素の参照 (Visual Basic)"
-ms.custom: 
+title: 宣言された要素の参照 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declared elements [Visual Basic]
 - references [Visual Basic], declared elements
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9b3847164b4e577a9265a746b9329218b4af928b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 86d25d42688cffbf4076c4fb42eccc3b917d1dc1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>宣言された要素の参照 (Visual Basic)
-コードは、宣言された要素を参照している場合、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラでその名前の適切な宣言への参照を名前に一致します。 複数の要素が同じ名前で宣言されている場合で参照するのにはそれらの要素を制御できます*正規*の名前。  
+宣言された要素をコードが参照されているとき、Visual Basic コンパイラはその名前の適切な宣言に、参照内の名前と一致します。 複数の要素が同じ名前で宣言されている場合で参照するのにはそれらの要素を制御できます*正規*の名前。  
   
  コンパイラが、名前の参照名の宣言でを一致させようとしています。、*狭いスコープ*です。 これは、参照を実行するコードから開始して、下位レベルの要素を含むを通じてに向かってを意味します。  
   
- 次の例では、同じ名前の 2 つの変数への参照を示します。 例では、2 つの変数を宣言して、各名前付き`totalCount`、モジュール内のスコープのさまざまなレベルで`container`です。 ときに、プロシージャ`showCount`が表示されます`totalCount`修飾、なし、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラを最も狭いスコープ内にローカル宣言つまり宣言への参照を解決する`showCount`です。 適用されるときに`totalCount`を含むモジュールで`container`コンパイラより広いスコープを含む宣言への参照を解決します。  
+ 次の例では、同じ名前の 2 つの変数への参照を示します。 例では、2 つの変数を宣言して、各名前付き`totalCount`、モジュール内のスコープのさまざまなレベルで`container`です。 ときにプロシージャ`showCount`表示`totalCount`無条件では、Visual Basic コンパイラが、最も狭いスコープ、つまり内にローカル宣言で宣言への参照を解決`showCount`です。 適用されるときに`totalCount`を含むモジュールで`container`コンパイラより広いスコープを含む宣言への参照を解決します。  
   
 ```vb  
 ' Assume these two modules are both in the same assembly.  
@@ -199,7 +200,7 @@ Dim xDoc As xD.XmlDocument
  すべての要素の一意の名前を指定すると、名前のあいまいさを回避できます。 名前空間、モジュール、またはクラス名を修飾することがなく任意の要素への参照をことができます。 正しくない要素を誤って参照する可能性を低くします。  
   
 ## <a name="shadowing"></a>シャドウ  
- 2 つのプログラミング要素は、同じ名前を共有する場合それらのいずれかの非表示に、または*シャドウ*、もう 1 つです。 シャドウされた要素は参照できません。代わりに、コードがシャドウされた要素名を使用する場合、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラがそれをシャドウする要素に解決します。 例と詳細な説明については、次を参照してください。 [Visual Basic におけるシャドウ](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)です。  
+ 2 つのプログラミング要素は、同じ名前を共有する場合それらのいずれかの非表示に、または*シャドウ*、もう 1 つです。 シャドウされた要素は参照できません。代わりに、コードでは、シャドウされた要素名を使用する場合、Visual Basic コンパイラに解決されます、シャドウする要素。 例と詳細な説明については、次を参照してください。 [Visual Basic におけるシャドウ](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  

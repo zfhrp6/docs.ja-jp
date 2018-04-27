@@ -1,24 +1,26 @@
 ---
-title: "部分信頼機能の互換性"
-ms.custom: 
+title: 部分信頼機能の互換性
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-caps.latest.revision: "75"
+caps.latest.revision: 75
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1950a0c4015658affb0b9fa0d7c87a062865144b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 72282c62ad23ec825eab7054ab1909d07a062b45
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="partial-trust-feature-compatibility"></a>部分信頼機能の互換性
 部分信頼環境で実行される場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でサポートされる機能は、限られたサブセットになります。 部分信頼でサポートされる機能は、「 [Supported Deployment Scenarios](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) 」のトピックで説明される特定のシナリオを念頭にデザインされています。  
@@ -103,7 +105,7 @@ ms.lasthandoff: 12/22/2017
   
 -   アプリケーションが完全信頼アプリケーションとして配置されている場合に、ユーザーが部分信頼環境でアプリケーションを実行するようにコード アクセス セキュリティ設定を変更できないことを確認します。 ユーザーがこのような変更を行うことができる場合、動作は実行されず、例外もスローされません。 これには、次を参照してください。、 **levelfinal**オプションを使用して[Caspol.exe (コード アクセス セキュリティ ポリシー ツール)](../../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)です。  
   
- [!INCLUDE[crexample](../../../../includes/crexample-md.md)] 、「 [How to: Lock Down Endpoints in the Enterprise](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)である必要があります。  
+ 共通の動作の例は、次を参照してください。[する方法: 企業内のロックのダウン エンドポイント](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)です。  
   
 ## <a name="configuration"></a>構成  
  1 つの例外を除き、部分信頼コードは、ローカルの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ファイルにある `app.config` 構成セクションのみを読み込むことができます。 machine.config ファイルまたはルート web.config ファイルの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セクションを参照する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 構成セクションを読み込むには、ConfigurationPermission(Unrestricted) が必要です。 このアクセス許可がない場合、ローカルの構成ファイル外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 構成セクション (behaviors、bindings) を参照すると、構成の読み込み時に例外が発生します。  
@@ -170,7 +172,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="unlisted-features"></a>記載されていない機能  
  部分信頼環境で利用できない情報やアクションを見つけ出す最善の方法は、リソースへのアクセスまたはアクションの実行を `try` ブロックの内側で試みて、エラーを `catch` することです。 トレース ファイルが重複したエラーでいっぱいになるのを防ぐために、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では最初のセキュリティ エラーの後でリソースまたはアクションのトレースを無効にします。 リソースへのアクセスまたはアクションの実行が初めて行われようとしたとき、例外トレースはリソース アクセスの各失敗に対して、1 回だけ行われます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  

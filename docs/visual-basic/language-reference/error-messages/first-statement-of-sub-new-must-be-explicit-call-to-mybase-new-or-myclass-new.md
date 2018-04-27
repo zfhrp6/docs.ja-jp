@@ -1,5 +1,5 @@
 ---
-title: "この &#39; の最初のステートメント新しいサブ &#39;明示的に呼び出す &#39; にする必要があります。指定されて &#39;または &#39;です。'Mybase.new' &#39;&#39;です。&lt;古い形式&gt;&#39;以外の場合は、基本クラス &#39; で&lt;baseclassname&gt;&#39; の &#39;&lt;derivedclassname&gt;&#39; 旧式とマークされて: &#39;&lt;errormessage&gt;&#39;です。"
+title: "この最初のステートメント&#39;Sub New&#39;を明示的に呼び出す必要があります&#39;トラクター&#39;または&#39;'mybase.new'&#39;ため、 &#39;&lt;古い形式&gt;&#39; 、基底クラスで&#39;&lt;baseclassname&gt; &#39;の&#39; &lt;derivedclassname&gt; &#39;旧式とマークされて: &#39; &lt;errormessage&gt;&#39;"
 ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ''
@@ -16,18 +16,18 @@ ms.assetid: e47dc755-4294-4368-b813-2177b7677957
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8882acd947251d85804fbefd54267ce078e31b95
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7690c9dcdb97e63959d2f0e31791d55ee7b09ffc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="first-statement-of-this-39sub-new39-must-be-an-explicit-call-to-39mybasenew39-or-39myclassnew39-because-the-39ltconstructornamegt39-in-the-base-class-39ltbaseclassnamegt39-of-39ltderivedclassnamegt39-is-marked-obsolete-39lterrormessagegt39"></a>この &#39; の最初のステートメント新しいサブ &#39;明示的に呼び出す &#39; にする必要があります。指定されて &#39;または &#39;です。'Mybase.new' &#39;&#39;です。&lt;古い形式&gt;&#39;以外の場合は、基本クラス &#39; で&lt;baseclassname&gt;&#39; の &#39;&lt;derivedclassname&gt;&#39; 旧式とマークされて: &#39;&lt;errormessage&gt;&#39;です。
+# <a name="first-statement-of-this-39sub-new39-must-be-an-explicit-call-to-39mybasenew39-or-39myclassnew39-because-the-39ltconstructornamegt39-in-the-base-class-39ltbaseclassnamegt39-of-39ltderivedclassnamegt39-is-marked-obsolete-39lterrormessagegt39"></a>この最初のステートメント&#39;Sub New&#39;を明示的に呼び出す必要があります&#39;トラクター&#39;または&#39;'mybase.new'&#39;ため、 &#39;&lt;古い形式&gt;&#39; 、基底クラスで&#39;&lt;baseclassname&gt; &#39;の&#39; &lt;derivedclassname&gt; &#39;旧式とマークされて: &#39; &lt;errormessage&gt;&#39;
 クラス コンストラクターが基底クラスのコンストラクターを明示的に呼び出さず、暗黙的な基底クラスのコンストラクターが <xref:System.ObsoleteAttribute> 属性およびエラーとして扱うことを示すディレクティブでマークされています。  
   
- 派生クラスのコンストラクターが基底クラスのコンストラクターを呼び出さない場合、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、パラメーターなしの基底クラスのコンストラクターの暗黙的な呼び出しを生成しようとします。 引数を指定せずに呼び出すことができるアクセス可能なコンストラクターが基底クラスにない場合、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では暗黙的な呼び出しを生成できません。 この場合、必要なコンストラクターが <xref:System.ObsoleteAttribute> 属性でマークされるため、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では呼び出すことができません。  
+ 派生クラスのコンス トラクターが基底クラスのコンス トラクターを呼び出さない場合、Visual Basic はパラメーターなしの基底クラスのコンス トラクターの暗黙的な呼び出しを生成しようとします。 引数を指定せずに呼び出すことができる基底クラスにアクセス可能なコンス トラクターがない場合、Visual Basic は、暗黙的な呼び出しを生成できません。 この場合、必要なコンス トラクターでマークされている、<xref:System.ObsoleteAttribute>属性があるため、Visual Basic から呼び出すことができません。  
   
- <xref:System.ObsoleteAttribute> を適用することで、使用されなくなった要素としてすべてのプログラミング要素にマークを付けることができます。 これを行う場合、この属性の <xref:System.ObsoleteAttribute.IsError%2A> プロパティを `True` または `False`のどちらかに設定できます。 `True`に設定した場合、この要素を使用しようとすると、コンパイラはエラーとして処理します。 `False`に設定するか、または既定の `False`にする場合、この要素を使用しようとすると、コンパイラは警告を発行します。  
+ どのプログラミング要素でも、 <xref:System.ObsoleteAttribute> を適用すれば、もう使用しなくなったものとしてマークを付けることができます。 これを行う場合、この属性の <xref:System.ObsoleteAttribute.IsError%2A> プロパティを `True` または `False`のどちらかに設定できます。 `True`に設定した場合、この要素を使用しようとすると、コンパイラはエラーとして処理します。 `False`に設定した場合、または既定値の `False`を使用した場合、コンパイラはこの要素の使用が試行されると、警告を発行します。  
   
  **エラー ID:** BC30920  
   

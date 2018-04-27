@@ -1,28 +1,30 @@
 ---
-title: "バインディング ソースの概要"
-ms.custom: 
+title: バインディング ソースの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - binding data [WPF], binding sources
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6b603599232a5cb4d33e2b7c9ad00e7ab3a24649
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.workload:
+- dotnet
+ms.openlocfilehash: 94238ba34976ad5971e7181aa3377e38ab0e4659
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="binding-sources-overview"></a>バインディング ソースの概要
 データ バインディングでは、バインディング ソース オブジェクトは、データの取得元のオブジェクトを表します。 このトピックでは、バインディング ソースとして使用できるオブジェクトの型について説明します。  
@@ -55,7 +57,7 @@ ms.lasthandoff: 01/09/2018
 ### <a name="other-characteristics"></a>その他の特性  
  その他の重要な点を次に示します。  
   
--   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] にオブジェクトを作成する場合、クラスに既定のコンストラクターが必要です。 [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] などの一部の [!INCLUDE[TLA2#tla_net](../../../../includes/tla2sharptla-net-md.md)] 言語では、既定のコンストラクターが作成されている場合があります。  
+-   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] にオブジェクトを作成する場合、クラスに既定のコンストラクターが必要です。 一部の[!INCLUDE[TLA2#tla_net](../../../../includes/tla2sharptla-net-md.md)]など、C# の場合は、言語を既定のコンス トラクターがありますが作成されます。  
   
 -   バインディングのバインディング ソース プロパティとして使用するプロパティは、クラスのパブリック プロパティである必要があります。 明示的に定義されたインターフェイスのプロパティは、バインディングの目的ではアクセスできません。また、基本実装を持たない保護されたプロパティ、プライベート プロパティ、内部プロパティ、仮想プロパティも同様にバインディングの目的ではアクセスできません。  
   
@@ -79,7 +81,7 @@ ms.lasthandoff: 01/09/2018
   
  WPF はコレクションに直接バインドすることはありません。 バインディング ソースとしてコレクションを指定すると、WPF は実際にはコレクションの既定のビューにバインドします。 既定のビューの詳細については、「[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
   
- 高度なシナリオがあり、独自のコレクションを実装する場合は、使用を検討して、<xref:System.Collections.IList>インターフェイスです。 <xref:System.Collections.IList>パフォーマンスを向上させることができます、インデックスによって個別にアクセスできるオブジェクトの非ジェネリック コレクションを提供します。  
+ 高度なシナリオがあり、独自のコレクションを実装する場合は、使用を検討して、<xref:System.Collections.IList>インターフェイスです。 <xref:System.Collections.IList> パフォーマンスを向上させることができます、インデックスによって個別にアクセスできるオブジェクトの非ジェネリック コレクションを提供します。  
   
 <a name="permissions"></a>   
 ## <a name="permission-requirements-in-data-binding"></a>データ バインディングでのアクセス許可要件  
@@ -105,7 +107,7 @@ ms.lasthandoff: 01/09/2018
   
  部分信頼セキュリティの詳細については、「[WPF 部分信頼セキュリティ](../../../../docs/framework/wpf/wpf-partial-trust-security.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Data.ObjectDataProvider>  
  <xref:System.Windows.Data.XmlDataProvider>  
  [バインディング ソースを指定する](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)  

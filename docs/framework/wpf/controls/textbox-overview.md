@@ -1,30 +1,32 @@
 ---
-title: "TextBox の概要"
-ms.custom: 
+title: TextBox の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF], about TextBox control
 ms.assetid: 1ba6dc5b-11a7-4247-9213-36c6729ee35f
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 50e36192198c172843d79a4195e894b848f84c90
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 02e7a5046dec689b1088585d58e4e424751ac512
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="textbox-overview"></a>TextBox の概要
-<xref:System.Windows.Controls.TextBox>クラスを使用する書式設定されていないテキストを表示または編集します。 一般的な用途、<xref:System.Windows.Controls.TextBox>形式で書式設定されていないテキストを編集します。 たとえば、ユーザーの名前、電話番号の入力を求めるフォームなど使用<xref:System.Windows.Controls.TextBox>のテキスト入力コントロール。 このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と[!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)]です。  
+<xref:System.Windows.Controls.TextBox>クラスを使用する書式設定されていないテキストを表示または編集します。 一般的な用途、<xref:System.Windows.Controls.TextBox>形式で書式設定されていないテキストを編集します。 たとえば、ユーザーの名前、電話番号の入力を求めるフォームなど使用<xref:System.Windows.Controls.TextBox>のテキスト入力コントロール。 このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と C# の場合。  
   
  
   
@@ -32,7 +34,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="textbox-or-richtextbox"></a>TextBox か RichTextBox か  
  両方<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.RichTextBox>テキストを入力するユーザーが、2 つのコントロールは、さまざまなシナリオのために使用します。 A<xref:System.Windows.Controls.TextBox>システム リソースが必要です、<xref:System.Windows.Controls.RichTextBox>ので適してプレーン テキストのみを編集する必要がある場合 (つまり、フォームで使用)。 A<xref:System.Windows.Controls.RichTextBox>は適して場合に書式付きテキスト、画像、テーブル、編集するユーザーの必要があるか、サポートされているその他のコンテンツ。 たとえば、画像、ドキュメント、アーティクル、または書式設定を必要とするブログを編集などの使用が最も適切な<xref:System.Windows.Controls.RichTextBox>します。 次の表の主な機能をまとめたもの<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.TextBox>です。  
   
-|コントロール|リアルタイム スペル チェック|コンテキスト メニュー|ようなコマンドの書式設定<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)|<xref:System.Windows.Documents.FlowDocument>イメージ、段落、テーブルなどのコンテンツ。|  
+|コントロール|リアルタイム スペル チェック|コンテキスト メニュー|ようなコマンドの書式設定<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)|<xref:System.Windows.Documents.FlowDocument> イメージ、段落、テーブルなどのコンテンツ。|  
 |-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Windows.Controls.TextBox>|[はい]|はい|×|いいえ。|  
 |<xref:System.Windows.Controls.RichTextBox>|[はい]|[はい]|はい (「[RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)」を参照)|はい (「[RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)」を参照)|  
@@ -78,6 +80,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="detect-when-content-changes"></a>内容が変更されたときに検出する  
  通常、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>を検出するたびにイベントを使用する必要があります内のテキスト、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>変更ではなく<xref:System.Windows.UIElement.KeyDown>想定される場合があります。 例については、「[TextBox のテキストがいつ変更されたかを検出する](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法トピック](../../../../docs/framework/wpf/controls/textbox-how-to-topics.md)  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

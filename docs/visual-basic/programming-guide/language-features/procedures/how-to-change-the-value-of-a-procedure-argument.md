@@ -1,11 +1,12 @@
 ---
-title: "方法: プロシージャ引数の値を変更する (Visual Basic)"
-ms.custom: 
+title: '方法: プロシージャ引数の値を変更する (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -19,19 +20,19 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ba23c8f0b4b0b6e751546019af902a6305b9ef53
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 93d9cc11e919e45fdd3b48dd2731b165f3466640
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>方法: プロシージャ引数の値を変更する (Visual Basic)
 プロシージャを呼び出すときに指定する各引数はプロシージャで定義されているパラメーターのいずれかに対応します。 場合によっては、プロシージャのコードは、呼び出し元のコードで引数の基になる値を変更できます。 それ以外の場合に、プロシージャは、引数のローカル コピーのみを変更できます。  
   
- プロシージャを呼び出す場合[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]が渡される引数のすべてのローカル コピーを作成[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)です。 渡された各引数に対して[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロシージャのコードに呼び出し元のコードで引数の基になるプログラミング要素への直接参照を提供します。  
+ Visual Basic が渡されるすべての引数のローカル コピーを作成して、プロシージャを呼び出すときに[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)です。 渡された各引数に対して[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、Visual Basic は、プロシージャ コード、呼び出し元のコードで引数の基になるこのプログラミング要素への直接参照します。  
   
  呼び出し元のコードに基になる要素が変更可能な引数が渡される場合`ByRef`、プロシージャ コードは、直接的な参照を使用して、呼び出し元のコード内の要素の値を変更します。  
   
@@ -56,9 +57,9 @@ ms.lasthandoff: 11/21/2017
   
 1.  プロシージャ宣言で指定[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)引数に対応するパラメーターです。  
   
-     または  
+     - または -  
   
-     呼び出し元のコードでは、引数、引数リストのかっこで囲みます。 これにより、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]引数を値渡し、場合でも、対応するパラメーターを指定する`ByRef`です。  
+     呼び出し元のコードでは、引数、引数リストのかっこで囲みます。 これは、Visual Basic での値で、引数を渡す場合でも強制的に対応するパラメーターを指定`ByRef`です。  
   
 2.  プロシージャのコードでは、引数のローカル コピーに値を代入するのにパラメーターの名前を使用します。 呼び出し元のコードに基になる値は変更されません。  
   
@@ -80,7 +81,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  参照によって変数を渡す際に使用する必要あります、`ByRef`このメカニズムを指定するキーワードです。  
   
- 既定で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は引数の値渡しします。 いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これにより、コードを読みやすくします。  
+ Visual Basic では既定では、引数の値渡しです。 いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これにより、コードを読みやすくします。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  呼び出し元のコードで引数の基になる値を変更するプロシージャを許可するのには潜在的なリスクは常にします。 この値を変更してを使用する前の有効性を確認する準備を行うことを確認してください。  

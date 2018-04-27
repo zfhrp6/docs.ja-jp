@@ -1,11 +1,12 @@
 ---
-title: "コード内の特殊文字 (Visual Basic)"
-ms.custom: 
+title: コード内の特殊文字 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.)
@@ -36,17 +37,17 @@ helpviewer_keywords:
 - exclamation point operator (!)
 - Visual Basic code, special characters
 ms.assetid: 310dce0c-45b5-4e0d-83e9-32df258d2a3e
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 11c5ef9ad41fc2362d9ba4f2cb5eb5b63a9ca31c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b724c48320f74045d7192be6d6e269c00511ffc9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="special-characters-in-code-visual-basic"></a>コード内の特殊文字 (Visual Basic)
-場合によってアルファベットまたは数字ではない文字がコードでは、特殊文字を使用する必要があります。 句読点と特殊文字に、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]文字セットに、コンパイラやコンパイル済みプログラムを実行するタスクの定義をプログラム テキストの整理からのさまざまな用途があります。 実行するオペレーションを指定するのには使用されません。  
+場合によってアルファベットまたは数字ではない文字がコードでは、特殊文字を使用する必要があります。 区切り記号と Visual Basic の文字セット内の特殊文字は、コンパイラやコンパイル済みプログラムを実行するタスクの定義をプログラム テキストの整理から、さまざまな用途があります。 実行するオペレーションを指定するのには使用されません。  
   
 ## <a name="parentheses"></a>かっこ  
  など、プロシージャを定義するときに、かっこを使用して、`Sub`または`Function`です。 すべてのプロシージャの引数リストをかっこで囲む必要があります。 また、複雑な式で演算子の優先順位の既定の順序を上書きするには、特に論理グループは、変数または引数を格納するためかっこを使用します。 次に例を示します。  
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/21/2017
  次のコードでは、値の実行`d`8.225 しの値は、`e`は 3 です。 計算`d`の既定の優先順位を使用して`/`経由で`+`と同等です`d = b + (c / a)`です。 計算にかっこ`e`既定の優先順位をオーバーライドします。  
   
 ## <a name="separators"></a>[区切り記号]  
- 区切り記号は、その名前が示す: コードのセクションを区切ります。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、区切り記号はコロン (`:`)。 別々 の行ではなく 1 つの行に複数のステートメントを追加する場合は、区切り記号を使用します。 これにより、領域を節約し、コードの読みやすさを向上させます。 次の例は、コロンで区切られた 3 つのステートメントを示しています。  
+ 区切り記号は、その名前が示す: コードのセクションを区切ります。 Visual basic での区切り記号はコロン (`:`)。 別々 の行ではなく 1 つの行に複数のステートメントを追加する場合は、区切り記号を使用します。 これにより、領域を節約し、コードの読みやすさを向上させます。 次の例は、コロンで区切られた 3 つのステートメントを示しています。  
   
  [!code-vb[VbVbcnConventions#12](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_2.vb)]  
   

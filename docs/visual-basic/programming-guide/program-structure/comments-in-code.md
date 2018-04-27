@@ -1,11 +1,12 @@
 ---
-title: "コード内のコメント (Visual Basic)"
-ms.custom: 
+title: コード内のコメント (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Uncomment button
@@ -20,17 +21,17 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0cf1aa755c479c73c64951f80ab0b76985507da6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9cd3277ea61ac9b46d8d20028bd100811988f611
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="comments-in-code-visual-basic"></a>コード内のコメント (Visual Basic)
-コード例にはコメント記号 (`'`) がしばしば見られます。 このシンボルに指示、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラをそれに続くテキストを無視するか、*コメント*です。 コメントは、コードを読むユーザーに役立つように追加される簡単な説明です。  
+コード例にはコメント記号 (`'`) がしばしば見られます。 このシンボルをそれに続くテキストを無視する Visual Basic コンパイラに指示または*コメント*です。 コメントは、コードを読むユーザーに役立つように追加される簡単な説明です。  
   
  プロシージャの先頭に、そのプロシージャの機能の特性 (何を実行するか) について説明する簡単なコメントを常に配置するのは、推奨されるプログラミング方法です。 コードを作成した本人にとっても、コードを調べる他人にとっても、この説明は役に立ちます。 実装の詳細 (プロシージャの実行手順) は、機能の特性を説明するコメントとは別に記述する必要があります。 実装の詳細を記述に入れる場合は、関数を更新するときにその説明も更新してください。  
   
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/21/2017
  [!code-vb[VbVbcnConventions#17](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/comments-in-code_2.vb)]  
   
 ## <a name="commenting-guidelines"></a>コメントのガイドライン  
- 次の表は、どの種類のコメントをコードのセクションの前に配置できるかに関する一般的なガイドラインを示しています。 これらは推奨であり、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ではコメントの追加に規則はありません。 コードの作成者自身およびコードを読む他のユーザーに最適な内容を記述してください。  
+ 次の表は、どの種類のコメントをコードのセクションの前に配置できるかに関する一般的なガイドラインを示しています。 これらは推奨です。Visual Basic では、コメントを追加するための規則は適用されません。 コードの作成者自身およびコードを読む他のユーザーに最適な内容を記述してください。  
   
 |||  
 |---|---|  

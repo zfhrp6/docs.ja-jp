@@ -1,11 +1,12 @@
 ---
-title: "演算子プロシージャ (Visual Basic)"
-ms.custom: 
+title: 演算子プロシージャ (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -17,22 +18,22 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 865695731dd591b0c48f4416814fa97edf4ea42e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8fba5180da6498d280fa4192937c39d3e33168e8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="operator-procedures-visual-basic"></a>演算子プロシージャ (Visual Basic)
-演算子プロシージャは、一連の[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]標準演算子の動作を定義するステートメント (など`*`、 `<>`、または`And`) クラスまたは定義した構造にします。 これとも呼ばれます*演算子のオーバー ロード*です。  
+演算子プロシージャは、一連の標準の演算子の動作を定義する Visual Basic ステートメント (など`*`、 `<>`、または`And`) クラスまたは定義した構造にします。 これとも呼ばれます*演算子のオーバー ロード*です。  
   
 ## <a name="when-to-define-operator-procedures"></a>演算子プロシージャを定義する場合  
  クラスまたは構造体を定義した場合は、そのクラスまたは構造体の型の変数を宣言できます。 このような変数は、式の一部として操作に参加する必要があります。 これを行うには、演算子のオペランドがあります。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]その基本的なデータ型でのみ演算子を定義します。 クラスまたは構造体の型は、両方のオペランドまたは演算子と 1 つの動作を定義できます。  
+ Visual Basic では、その基本データ型でのみ演算子を定義します。 クラスまたは構造体の型は、両方のオペランドまたは演算子と 1 つの動作を定義できます。  
   
  詳細については、次を参照してください。 [Operator ステートメント](../../../../visual-basic/language-reference/statements/operator-statement.md)です。  
   

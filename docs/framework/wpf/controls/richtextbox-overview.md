@@ -1,12 +1,13 @@
 ---
-title: "RichTextBox の概要"
-ms.custom: 
+title: RichTextBox の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,31 +16,32 @@ helpviewer_keywords:
 - controls [WPF], RichTextBox
 - RichTextBox control [WPF], about RichTextBox control
 ms.assetid: c94548b2-c1e9-4b62-b10c-dd8740eb23d8
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e88afe5f9c35448b3234498af413500bee163abc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3ac25413aaf15a18f70eff6114db81fbb6cc5411
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="richtextbox-overview"></a>RichTextBox の概要
-<xref:System.Windows.Controls.RichTextBox>コントロールでは、表示または段落、画像、テーブルなどのフロー コンテンツを編集することができます。 このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と[!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)]です。  
+<xref:System.Windows.Controls.RichTextBox>コントロールでは、表示または段落、画像、テーブルなどのフロー コンテンツを編集することができます。 このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と C# の場合。  
   
   
 <a name="textbox_or_richtextbox"></a>   
 ## <a name="textbox-or-richtextbox"></a>TextBox か RichTextBox か  
  両方<xref:System.Windows.Controls.RichTextBox>と<xref:System.Windows.Controls.TextBox>テキストを編集できるように、ただし、2 つのコントロールがさまざまなシナリオで使用します。 A<xref:System.Windows.Controls.RichTextBox>書式付きテキスト、画像、テーブル、またはその他の豊富なコンテンツを編集するユーザーの必要がある場合をお勧めします。 たとえば、画像、ドキュメント、アーティクル、または書式設定を必要とするブログを編集などの使用が最も適切な<xref:System.Windows.Controls.RichTextBox>します。 A<xref:System.Windows.Controls.TextBox>システム リソースが必要です、<xref:System.Windows.Controls.RichTextBox>のみプレーン テキストする必要があります (つまりフォームで使用) を編集する際に最適とします。 参照してください[TextBox 概要](../../../../docs/framework/wpf/controls/textbox-overview.md)について<xref:System.Windows.Controls.TextBox>です。 次の表の主な機能をまとめたもの<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.RichTextBox>です。  
   
-|コントロール|リアルタイム スペル チェック|コンテキスト メニュー|ようなコマンドの書式設定<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)|<xref:System.Windows.Documents.FlowDocument>イメージ、段落、テーブルなどのコンテンツ。|  
+|コントロール|リアルタイム スペル チェック|コンテキスト メニュー|ようなコマンドの書式設定<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)|<xref:System.Windows.Documents.FlowDocument> イメージ、段落、テーブルなどのコンテンツ。|  
 |-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Windows.Controls.TextBox>|[はい]|はい|×|いいえ。|  
 |<xref:System.Windows.Controls.RichTextBox>|[はい]|はい|はい|[はい]|  
   
- **注:**が<xref:System.Windows.Controls.TextBox>のように関連するコマンドの書式設定をサポートしていません<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)、多くの基本的なコマンドがなどの両方のコントロールでサポートされて<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>です。  
+ **注:** が<xref:System.Windows.Controls.TextBox>のように関連するコマンドの書式設定をサポートしていません<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)、多くの基本的なコマンドがなどの両方のコントロールでサポートされて<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>です。  
   
  上の表の機能については、後で詳しく説明します。  
   
@@ -62,7 +64,7 @@ ms.lasthandoff: 12/22/2017
   
  などの要素<xref:System.Windows.Documents.Paragraph>と<xref:System.Windows.Documents.Bold>を決定する方法の内部コンテンツ、<xref:System.Windows.Controls.RichTextBox>が表示されます。 ユーザーが編集と<xref:System.Windows.Controls.RichTextBox>コンテンツを変更することもこのフロー コンテンツ。 フロー コンテンツの機能およびその操作方法の詳細については、[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)を参照してください。  
   
- **注:**内のコンテンツをフローする<xref:System.Windows.Controls.RichTextBox>フロー コンテンツを他のコントロールに含まれているのと同じように動作しません。 たとえば、内の列がない、<xref:System.Windows.Controls.RichTextBox>のため自動サイズ変更なしの動作とします。 また、組み込み機能の検索、表示モード、ページ ナビゲーション、およびズームは、内で使用できるように、<xref:System.Windows.Controls.RichTextBox>です。  
+ **注:** 内のコンテンツをフローする<xref:System.Windows.Controls.RichTextBox>フロー コンテンツを他のコントロールに含まれているのと同じように動作しません。 たとえば、内の列がない、<xref:System.Windows.Controls.RichTextBox>のため自動サイズ変更なしの動作とします。 また、組み込み機能の検索、表示モード、ページ ナビゲーション、およびズームは、内で使用できるように、<xref:System.Windows.Controls.RichTextBox>です。  
   
 <a name="realtime_spellechecking"></a>   
 ## <a name="real-time-spell-checking"></a>リアルタイム スペル チェック  
@@ -105,6 +107,6 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/SaveLoadPrintRTB.xaml.cs#saveloadprintrtbcodeexamplewholepage)]
  [!code-vb[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/VisualBasic/SaveLoadPrintRTB.xaml.vb#saveloadprintrtbcodeexamplewholepage)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法トピック](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)  
  [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)

@@ -1,25 +1,26 @@
 ---
-title: "定数と列挙型 (Visual Basic)"
+title: 定数と列挙型 (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - enumerations [Visual Basic]
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9fd298cc504f9e4faf5205e53ebbf2ee355a21b3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: da42d58190e8069154cd8383cf0a87e0b19f5ae4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>定数と列挙型 (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]定義済みの定数と開発者の列挙体の数を指定します。 定数は、アプリケーションの実行全体で一定の値を格納します。 一連の関連する定数を操作する場合や、定数値に名前を関連付ける場合は、列挙型を使うと便利です。  
+Visual Basic では、定義済みの定数と開発者の列挙体の数を指定します。 定数は、アプリケーションの実行全体で一定の値を格納します。 一連の関連する定数を操作する場合や、定数値に名前を関連付ける場合は、列挙型を使うと便利です。  
   
 ## <a name="constants"></a>定数  
   
@@ -30,9 +31,9 @@ ms.lasthandoff: 11/21/2017
 |---|---|  
 |`CONFIG`|現在の設定に対応する文字列、**アクティブ ソリューション構成**ボックスに、 **Configuration Manager**です。|  
 |`DEBUG`|A`Boolean`で設定できる値、**プロジェクト プロパティ** ダイアログ ボックス。 既定では、プロジェクトのデバッグ構成を定義します`DEBUG`です。 ときに`DEBUG`が定義されている<xref:System.Diagnostics.Debug>クラスのメソッドへの出力を生成する、**出力**ウィンドウです。 定義されていない場合<xref:System.Diagnostics.Debug>クラス メソッドはコンパイルされず、デバッグ出力は生成されません。|  
-|`TARGET`|出力の種類のプロジェクトまたはコマンドラインの設定を表す文字列**/target**オプション。 使用できる値`TARGET`は。<br /><br /> -Windows アプリケーションの"winexe"です。<br />コンソール アプリケーション用には、"exe"です。<br />クラス ライブラリには、"library"です。<br />-モジュールの「モジュール」です。<br />- **/Target**オプションを設定することがあります、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境です。 詳細については、次を参照してください。 [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md)です。|  
+|`TARGET`|出力の種類のプロジェクトまたはコマンドラインの設定を表す文字列 **/target**オプション。 使用できる値`TARGET`は。<br /><br /> -Windows アプリケーションの"winexe"です。<br />コンソール アプリケーション用には、"exe"です。<br />クラス ライブラリには、"library"です。<br />-モジュールの「モジュール」です。<br />- **/Target**オプションを設定することがあります、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境です。 詳細については、次を参照してください。 [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md)です。|  
 |`TRACE`|A`Boolean`で設定できる値、**プロジェクト プロパティ** ダイアログ ボックス。 既定では、プロジェクトのすべての構成を定義する`TRACE`です。 ときに`TRACE`が定義されている<xref:System.Diagnostics.Trace>クラスのメソッドへの出力を生成する、**出力**ウィンドウです。 定義されていない場合<xref:System.Diagnostics.Trace>クラスのメソッドはコンパイルされず、いいえ`Trace`出力が生成されます。|  
-|`VBC_VER`|表す数値、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]バージョンで、*メジャー*.*マイナー*形式です。 バージョン番号[!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]8.0 がします。|  
+|`VBC_VER`|Visual Basic バージョンを表す数値*メジャー*.*マイナー*形式です。 バージョン番号[!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]8.0 がします。|  
   
 ### <a name="print-and-display-constants"></a>印刷と表示の定数  
  印刷を呼び出す関数を表示すると、実際の値の代わりに、コードで次の定数を使用できます。  
@@ -45,14 +46,14 @@ ms.lasthandoff: 11/21/2017
 |`vbNewLine`|改行文字。|  
 |`vbNullChar`|Null 文字です。|  
 |`vbNullString`|同じ長さ 0 の文字列ではありません ("") です。外部プロシージャを呼び出すために使用します。|  
-|`vbObjectError`|エラー番号。 ユーザー定義のエラー番号は、この値より大きい必要があります。 例:<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
+|`vbObjectError`|エラー番号。 ユーザー定義のエラー番号は、この値より大きい必要があります。 例えば:<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
 |`vbTab`|タブ文字。|  
 |`vbBack`|バック スペース文字。|  
 |`vbFormFeed`|Microsoft Windows では使用されません。|  
 |`vbVerticalTab`|Microsoft Windows ではないに役立ちます。|  
   
 ## <a name="enumerations"></a>列挙  
- 次の表とによって提供される列挙体について説明[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ 次の表は、一覧し、Visual Basic で提供される列挙体について説明します。  
   
 |列挙|説明|  
 |---|---|  

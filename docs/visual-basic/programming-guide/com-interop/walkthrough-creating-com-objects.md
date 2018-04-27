@@ -1,11 +1,12 @@
 ---
-title: "チュートリアル : Visual Basic での COM オブジェクトの作成"
-ms.custom: 
+title: 'チュートリアル : Visual Basic での COM オブジェクトの作成'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - COM interop [Visual Basic], creating COM objects
@@ -14,22 +15,22 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ff7d3868a2e3ddaba06ebc6f98c8eacfc7299366
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e660d672fc32455cee349dc44ad20c3244c087b4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>チュートリアル : Visual Basic での COM オブジェクトの作成
-新しいアプリケーションまたはコンポーネントを作成する場合は、.NET Framework アセンブリを作成することをお勧めします。 ただし、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]も簡単に COM に .NET Framework コンポーネントの公開 これにより、COM コンポーネントを必要とする以前のアプリケーション スイートの新しいコンポーネントを提供することができます。 このチュートリアルを使用する方法を示します[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を公開する[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]オブジェクトと COM クラス テンプレートを使用せず、COM オブジェクトとして。  
+新しいアプリケーションまたはコンポーネントを作成する場合は、.NET Framework アセンブリを作成することをお勧めします。 ただし、Visual Basic も簡単に COM に .NET Framework コンポーネントを公開するには これにより、COM コンポーネントを必要とする以前のアプリケーション スイートの新しいコンポーネントを提供することができます。 このチュートリアルは、Visual Basic を使用して公開する方法を示します[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]オブジェクトと COM クラス テンプレートを使用せず、COM オブジェクトとして。  
   
  COM オブジェクトを公開する最も簡単な方法は、COM クラス テンプレートを使用してです。 COM クラス テンプレートは、新しいクラスを作成し、構成、プロジェクトの COM オブジェクトとしてのクラスと相互運用性レイヤーを生成し、オペレーティング システムに登録します。  
   
 > [!NOTE]
->  作成されたクラスを公開することもできます。 ただし[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用するアンマネージ コードの COM オブジェクト、その場合は true。 COM オブジェクトではありませんとでは使用できません[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 詳細については、次を参照してください。 [.NET Framework アプリケーションにおける COM 相互運用性](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
+>  Visual Basic で使用するアンマネージ コードの COM オブジェクトとして作成したクラスを公開することが true COM オブジェクトではないと、Visual Basic では使用できません。 詳細については、次を参照してください。 [.NET Framework アプリケーションにおける COM 相互運用性](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -41,11 +42,11 @@ ms.lasthandoff: 11/21/2017
   
 3.  選択**新しい項目の追加**から、**プロジェクト**メニュー。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。  
   
-4.  選択**COM クラス**から、**テンプレート**一覧をクリックして**追加**です。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]新しいクラスを追加し、COM 相互運用機能の新しいプロジェクトを構成します。  
+4.  選択**COM クラス**から、**テンプレート**一覧をクリックして**追加**です。 Visual Basic では、新しいクラスを追加し、COM 相互運用機能の新しいプロジェクトを構成します。  
   
 5.  COM クラスには、プロパティ、メソッド、およびイベントのようなコードを追加します。  
   
-6.  選択**ビルド ClassLibrary1**から、**ビルド**メニュー。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アセンブリがビルドされ、オペレーティング システムと COM オブジェクトを登録します。  
+6.  選択**ビルド ClassLibrary1**から、**ビルド**メニュー。 Visual Basic では、アセンブリがビルドされ、オペレーティング システムと COM オブジェクトを登録します。  
   
 ## <a name="creating-com-objects-without-the-com-class-template"></a>COM クラス テンプレートを使用せず、COM オブジェクトの作成  
  COM クラス テンプレートを使用する代わりに、手動での COM クラスを作成することもできます。 コマンドラインから作業している場合、または COM オブジェクトの定義方法を制御する場合は、この手順をお勧めします。  
@@ -72,7 +73,7 @@ ms.lasthandoff: 11/21/2017
   
      [!code-vb[VbVbalrInterop#2](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_1.vb)]  
   
-4.  **[ツール]** メニューの **[GUID の作成]**をクリックします。 **[GUID の作成]**ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。 **[終了]** をクリックします。  
+4.  **[ツール]** メニューの **[GUID の作成]** をクリックします。 **[GUID の作成]** ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。 **[終了]** をクリックします。  
   
 5.  空の文字列を置き換える、 `ClassId` GUID を持つ削除、先頭と末尾の右中かっこです。 たとえば、GUID が Guidgen によって提供される場合は`"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"`コードは次のように表示する必要があります。  
   
@@ -93,10 +94,10 @@ ms.lasthandoff: 11/21/2017
   
      [!code-vb[VbVbalrInterop#6](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-creating-com-objects_5.vb)]  
   
-9. 終了して、クラスのプロパティ、メソッド、およびイベントに追加、`End Class`ステートメントです。 選択**ソリューションのビルド**から、**ビルド**メニュー。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アセンブリがビルドされ、オペレーティング システムと COM オブジェクトを登録します。  
+9. 終了して、クラスのプロパティ、メソッド、およびイベントに追加、`End Class`ステートメントです。 選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Basic では、アセンブリがビルドされ、オペレーティング システムと COM オブジェクトを登録します。  
   
     > [!NOTE]
-    >  使用して作成する COM オブジェクト[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]他のでは使用できません[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーションは true。 COM オブジェクトではないためです。 このような COM オブジェクトへの参照を追加する操作には、エラーが発生します。 詳細については、「 [.NET Framework アプリケーションにおける COM 相互運用性](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
+    >  Visual basic を生成する COM オブジェクトは、true の COM オブジェクトではないために、他の Visual Basic アプリケーションで使用できません。 このような COM オブジェクトへの参照を追加する操作には、エラーが発生します。 詳細については、「 [.NET Framework アプリケーションにおける COM 相互運用性](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.ComClassAttribute>  

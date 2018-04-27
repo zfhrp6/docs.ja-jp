@@ -1,36 +1,38 @@
 ---
-title: "データ バインディング"
-ms.custom: 
+title: データ バインディング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: bb7562c2f6fab7ce496fd87ecdd891531589abfa
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8308700a35bdd2aec2d66f4edd8a89c128e07d7c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="data-binding"></a>データ バインディング
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]グリッド コントロールなどのコモン コントロールにバインドをサポートします。 具体的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]データ グリッドへのバインドの表示と更新の両方に関して、マスター/詳細バインディングを処理するための基本的なパターンを定義します。  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] グリッド コントロールなどのコモン コントロールにバインドをサポートします。 具体的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]データ グリッドへのバインドの表示と更新の両方に関して、マスター/詳細バインディングを処理するための基本的なパターンを定義します。  
   
 ## <a name="underlying-principle"></a>基本原則  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]変換[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]to SQL のクエリがデータベース上で実行します。 その結果は、厳密に型指定された `IEnumerable` になります。 これらのオブジェクトは通常の共通言語ランタイム (CLR: Common Language Runtime) オブジェクトであるため、一般的なオブジェクト データ バインディングを使用して結果を表示できます。 一方、変更操作 (挿入、更新、および削除) には、追加的な手順が必要です。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 変換[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]to SQL のクエリがデータベース上で実行します。 その結果は、厳密に型指定された `IEnumerable` になります。 これらのオブジェクトは通常の共通言語ランタイム (CLR: Common Language Runtime) オブジェクトであるため、一般的なオブジェクト データ バインディングを使用して結果を表示できます。 一方、変更操作 (挿入、更新、および削除) には、追加的な手順が必要です。  
   
 ## <a name="operation"></a>操作  
- Windows フォーム コントロールに対する暗黙バインディングは、<xref:System.ComponentModel.IListSource> を実装することで実現されます。 データ ソース ジェネリック <xref:System.Data.Linq.Table%601> (C# では `Table<T>`、`Table(Of T)` では [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]) およびジェネリック `DataQuery` は、<xref:System.ComponentModel.IListSource> を実装するように更新されています。 ユーザー インターフェイス (UI) データ バインディング エンジン (Windows フォームおよび Windows Presentation Foundation) はいずれも、データ ソースが <xref:System.ComponentModel.IListSource> を実装しているかどうかをテストします。 そのため、直接表示を作成、クエリのコントロールのデータ ソースに暗黙的に呼び出し[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]次の例のように、コレクションのジェネレーション。  
+ Windows フォーム コントロールに対する暗黙バインディングは、<xref:System.ComponentModel.IListSource> を実装することで実現されます。 データ ソースのジェネリック<xref:System.Data.Linq.Table%601>(`Table<T>` (C#) または`Table(Of T)`Visual Basic で) と汎用`DataQuery`実装に更新されました<xref:System.ComponentModel.IListSource>です。 ユーザー インターフェイス (UI) データ バインディング エンジン (Windows フォームおよび Windows Presentation Foundation) はいずれも、データ ソースが <xref:System.ComponentModel.IListSource> を実装しているかどうかをテストします。 そのため、直接表示を作成、クエリのコントロールのデータ ソースに暗黙的に呼び出し[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]次の例のように、コレクションのジェネレーション。  
   
  [!code-csharp[DLinqDataBinding#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDataBinding/cs/Program.cs#1)]
  [!code-vb[DLinqDataBinding#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDataBinding/vb/Module1.vb#1)]  
@@ -43,7 +45,7 @@ ms.lasthandoff: 01/17/2018
  コレクション生成は、ジェネリック <xref:System.Data.Linq.Table%601> およびジェネリック `DataQuery` によって <xref:System.ComponentModel.IListSource.GetList%2A> で実装されます。  
   
 ## <a name="ilistsource-implementation"></a>IListSource の実装  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]実装する<xref:System.ComponentModel.IListSource>2 つの場所。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 実装する<xref:System.ComponentModel.IListSource>2 つの場所。  
   
 -   データ ソースが、 <xref:System.Data.Linq.Table%601>:[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]設定するテーブルを参照する、`DataBindingList`テーブルの参照を保持するコレクション。  
   
@@ -51,7 +53,7 @@ ms.lasthandoff: 01/17/2018
   
     -   場合[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]、基になる検索<xref:System.Data.Linq.Table%601>から、<xref:System.Linq.IQueryable%601>エディションでは、ソース、および、この状況は、最初の箇条書きと同じです。  
   
-    -   場合[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]、基になるを見つけることができません<xref:System.Data.Linq.Table%601>、エディションのソースを許容できない (たとえば、 `groupby`)。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]ジェネリック型を格納するクエリを参照する`SortableBindingList`、これは、単純な<xref:System.ComponentModel.BindingList%601>指定したプロパティによる T エンティティの並べ替え機能を実装します。  
+    -   場合[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]、基になるを見つけることができません<xref:System.Data.Linq.Table%601>、エディションのソースを許容できない (たとえば、 `groupby`)。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ジェネリック型を格納するクエリを参照する`SortableBindingList`、これは、単純な<xref:System.ComponentModel.BindingList%601>指定したプロパティによる T エンティティの並べ替え機能を実装します。  
   
 ## <a name="specialized-collections"></a>専用コレクション  
  このドキュメントでここまでに説明した多くの機能について、<xref:System.ComponentModel.BindingList%601> を特化したクラスが用意されています。 ジェネリック `SortableBindingList` クラスと、ジェネリック `DataBindingList` クラスです。 いずれも内部クラスとして宣言されています。  
@@ -69,7 +71,7 @@ ms.lasthandoff: 01/17/2018
  このクラスは、ジェネリック `SortableBindingLIst` を継承しています。 ジェネリック `DataBindingList` は、最初にコレクションの読み込みに使用したジェネリック `Table` の基になるジェネリック `IQueryable` に対する参照を保持しています。 ジェネリック `DatabindingList` では、`InsertItem`() と `RemoveItem`() がオーバーライドされて、コレクションに対する項目の追加と削除を追跡する処理が追加されています。 また、追跡を中断および再開する機能の抽象メソッドが実装され、条件に応じた追跡が可能となっています。 この結果、ジェネリック `DataBindingList` では、親クラスが持つ追跡機能のポリモーフィックな使用法がすべて活用されています。  
   
 ## <a name="binding-to-entitysets"></a>EntitySet へのバインディング  
- `EntitySet` へのバインディングは特別なケースです。`EntitySet` は既に、<xref:System.ComponentModel.IBindingList> を実装したコレクションであるためです。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]追加並べ替えとキャンセル (<xref:System.ComponentModel.ICancelAddNew>) をサポートします。 `EntitySet` クラスは内部リストを使用してエンティティを格納します。 このリストは、ジェネリック配列 (ジェネリック `ItemList` クラス) を基にした低水準のコレクションです。  
+ `EntitySet` へのバインディングは特別なケースです。`EntitySet` は既に、<xref:System.ComponentModel.IBindingList> を実装したコレクションであるためです。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 追加並べ替えとキャンセル (<xref:System.ComponentModel.ICancelAddNew>) をサポートします。 `EntitySet` クラスは内部リストを使用してエンティティを格納します。 このリストは、ジェネリック配列 (ジェネリック `ItemList` クラス) を基にした低水準のコレクションです。  
   
 ### <a name="adding-a-sorting-feature"></a>並べ替え機能の追加  
  Array には、T の `Array.Sort()` を使用できる並べ替えメソッド (`Comparer`) があります。[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、このトピックで前に説明したジェネリック `SortableBindingList.PropertyComparer` クラスを使用して、プロパティに応じた `Comparer` と、並べ替えの方向を取得します。 ジェネリック `ApplySort` には、この機能を呼び出すための `ItemList` メソッドが追加されています。  
@@ -87,7 +89,7 @@ ms.lasthandoff: 01/17/2018
  かどうかする System.Windows.Forms.BindingSource を使用して BindingSource.DataMember プロパティを設定して、EntitySet を公開する BindingSource.DataMember でプロパティを持つクラスに BindingSource.DataSource を設定\<TEntity > をします。EntitySet を呼び出す必要はありません\<Tentity >。GetNewBindingList、BindingSource.List を更新するには、並べ替え機能が失われます。  
   
 ## <a name="caching"></a>キャッシュ  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]クエリを実装<xref:System.ComponentModel.IListSource.GetList%2A>です。 Windows フォームの BindingSource クラスは、このインターフェイスがあると、1 つの接続に対して GetList() を 3 回呼び出します。 このような状況を回避する[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]を格納し、常に生成された、同じコレクションを返しますのインスタンスごとにキャッシュを実装します。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリを実装<xref:System.ComponentModel.IListSource.GetList%2A>です。 Windows フォームの BindingSource クラスは、このインターフェイスがあると、1 つの接続に対して GetList() を 3 回呼び出します。 このような状況を回避する[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]を格納し、常に生成された、同じコレクションを返しますのインスタンスごとにキャッシュを実装します。  
   
 ## <a name="cancellation"></a>キャンセル  
  <xref:System.ComponentModel.IBindingList> には <xref:System.ComponentModel.IBindingList.AddNew%2A> メソッドが定義されています。バインドされたコレクションから新しい項目を作成するためにコントロールが使用するメソッドです。 `DataGridView` コントロールでは、表示されている最後の行のヘッダーにアスタリスクが表示されている状況で、この機能が明確に示されます。 このアスタリスクは、新しい項目を追加できることを示します。  
@@ -117,5 +119,5 @@ ms.lasthandoff: 01/17/2018
   
 -   1 つのエンティティが 2 つの別個のグリッド (たとえばマスター グリッドと詳細グリッド) にバインドされている場合、マスター グリッドで `Delete` を行っても、詳細グリッドには反映されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

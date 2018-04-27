@@ -1,22 +1,23 @@
 ---
-title: "集計操作 (Visual Basic)"
-ms.custom: 
+title: 集計操作 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f47e92c-5dd2-4007-baf4-c5fe5dc3b4a8
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9d4b07eeb1d09d7db0f75d96629c816f66dbb128
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e2f4234b9f56794b9bfe6c56029ccc9c00ae0642
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aggregation-operations-visual-basic"></a>集計操作 (Visual Basic)
 集計の操作では、値の集合体から単一の値が計算されます。 たとえば、1 か月分の毎日の気温値から 1 日あたりの平均の気温値を計算することが集計操作です。  
@@ -41,13 +42,13 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="query-expression-syntax-examples"></a>クエリ式の構文例  
   
-### <a name="average"></a>Average  
- 次のコード例では、`Aggregate Into Average`句[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]温度を表す数値の配列内の平均の気温を計算します。  
+### <a name="average"></a>平均  
+ 次のコード例では、`Aggregate Into Average`温度を表す数値の配列内の平均の気温を計算する Visual Basic での句。  
   
  [!code-vb[CsLINQAggregating#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/aggregation-operations_1.vb)]  
   
 ### <a name="count"></a>カウント  
- 次のコード例では、`Aggregate Into Count`句[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]80 以上である配列内の値の数をカウントします。  
+ 次のコード例では、 `Aggregate Into Count` 80 以上である配列内の値の数をカウントする Visual Basic での句。  
   
  [!code-vb[CsLINQAggregating#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/aggregation-operations_2.vb)]  
   

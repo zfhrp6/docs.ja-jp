@@ -1,22 +1,23 @@
 ---
-title: "LINQ to XML 軸 (Visual Basic)"
-ms.custom: 
+title: LINQ to XML 軸 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ecd3bd00-28e5-4517-a59f-53bff39fd478
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 119c4808b6d436c2227331dbb3ab9c4077ff56f2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 404ddcc89e6549d7575761e10c23413d9688a38f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="linq-to-xml-axes-visual-basic"></a>LINQ to XML 軸 (Visual Basic)
 XML ツリーを作成した後、または XML ドキュメントを XML ツリーに読み込んだ後は、クエリを実行して要素や属性を調べたり、その値を取得したりできます。  
@@ -37,7 +38,7 @@ XML ツリーを作成した後、または XML ドキュメントを XML ツリ
 |[方法: 単一の属性 (LINQ to XML) を取得する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-a-single-attribute-linq-to-xml.md)|属性名を指定して要素の単一の属性を取得する方法について説明します。|  
 |[方法: 属性 (LINQ to XML) の値の取得 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-attribute-linq-to-xml.md)|属性の値を取得する方法について説明します。|  
 |[方法: 要素 (Visual Basic) の浅い値を取得](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-shallow-value-of-an-element.md)|要素の浅い値を取得する方法について説明します。|  
-|[Visual Basic (LINQ to XML) の統合言語軸](../../../../visual-basic/programming-guide/concepts/linq/language-integrated-axes.md)|要約、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]統合軸です。|  
+|[Visual Basic (LINQ to XML) の統合言語軸](../../../../visual-basic/programming-guide/concepts/linq/language-integrated-axes.md)|Visual Basic の統合軸をまとめたものです。|  
   
 ## <a name="see-also"></a>関連項目  
  [プログラミング ガイド (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

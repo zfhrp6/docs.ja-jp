@@ -1,12 +1,13 @@
 ---
-title: "方法 : Windows フォームの RichTextBox コントロールを使用して Web スタイルのリンクを表示する"
-ms.custom: 
+title: '方法 : Windows フォームの RichTextBox コントロールを使用して Web スタイルのリンクを表示する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,23 +18,24 @@ helpviewer_keywords:
 - examples [Windows Forms], text boxes
 - RichTextBox control [Windows Forms], linking to Web pages
 ms.assetid: 95089a37-a202-4f7a-94ee-6ee312908851
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 80f794be15eae33ca4e28dc0cfe04872f63230b6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b82a5251cb5e1f632d126105cfae5cf2b8f62fc0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-display-web-style-links-with-the-windows-forms-richtextbox-control"></a>方法 : Windows フォームの RichTextBox コントロールを使用して Web スタイルのリンクを表示する
 Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールは、カラーや下線が引かれたとしての Web リンクを表示できます。 ウィンドウを開いてブラウザー表示のリンクがクリックされたときに、このリンク テキストで指定された Web サイト コードを記述することができます。  
   
 ### <a name="to-link-to-a-web-page-with-the-richtextbox-control"></a>RichTextBox コントロールでの Web ページにリンクするには  
   
-1.  設定、<xref:System.Windows.Forms.RichTextBox.Text%2A>プロパティを有効な URL (たとえば、"http://www.microsoft.com/") を含む文字列にします。  
+1.  設定、<xref:System.Windows.Forms.RichTextBox.Text%2A>プロパティを有効な URL を含む文字列に (たとえば、"http://www.microsoft.com/") です。  
   
 2.  確認、<xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>プロパティに設定されている`true`(既定)。  
   
@@ -91,7 +93,7 @@ Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールは
     p = gcnew System::Diagnostics::Process();  
     ```  
   
-     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
+     (Visual C# の場合、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)])、イベント ハンドラーを登録するフォームのコンス トラクターに次のコードを追加します。  
   
     ```csharp  
     this.richTextBox1.LinkClicked += new   
@@ -127,7 +129,7 @@ Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールは
     }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>  
  <xref:System.Windows.Forms.RichTextBox.LinkClicked>  
  <xref:System.Windows.Forms.RichTextBox>  

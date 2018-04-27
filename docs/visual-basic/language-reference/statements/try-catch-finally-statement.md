@@ -1,10 +1,11 @@
 ---
-title: "Try...Catch...Finally ステートメント (Visual Basic)"
+title: Try...Catch...Finally ステートメント (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Try...Catch...Finally
@@ -24,14 +25,14 @@ helpviewer_keywords:
 - Visual Basic code, handling errors while running
 - structured exception handling, Try...Catch...Finally statements
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
-caps.latest.revision: "69"
+caps.latest.revision: 69
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c297a84b37b455a4b30b1848aa9bdd30dc567ec1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 701475d41d24ad89e6c83796f7cc5cd4b7802a32
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch...Finally ステートメント (Visual Basic)
 コードの実行中に、コードの所定のブロックで発生する可能性があります一部またはすべての可能なエラーを処理する方法を提供します。  
@@ -70,22 +71,22 @@ End Try
 ## <a name="remarks"></a>コメント  
  特定の例外コードの特定のセクションの中に発生する可能性がある場合は、コードを配置、`Try`をブロックしを使用して、`Catch`コントロールを保持し、発生した場合、例外を処理するブロック。  
   
- A`Try…Catch`ステートメントには、`Try`ブロックとそれに続く 1 つ以上`Catch`句で、さまざまな例外のハンドラーを指定します。 例外がスローされたときに、`Try`ブロック、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は検索、`Catch`例外を処理するステートメント。 一致する場合`Catch`ステートメントが見つかりません、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]呼び出し履歴の上に、現在のメソッドを呼び出す方法を調べます。 ない場合は`Catch`ブロックが見つかると、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]をユーザーにハンドルされない例外メッセージが表示され、プログラムの実行を停止します。  
+ A`Try…Catch`ステートメントには、`Try`ブロックとそれに続く 1 つ以上`Catch`句で、さまざまな例外のハンドラーを指定します。 例外がスローされたときに、`Try`ブロック、Visual Basic を検索、`Catch`例外を処理するステートメント。 一致する場合`Catch`ステートメントが見つからない場合は、Visual Basic が呼び出し履歴の上に、現在のメソッドを呼び出す方法を調べます。 ない場合は`Catch`ブロックが見つかると、Visual Basic をユーザーにハンドルされない例外メッセージを表示して、プログラムの実行を停止します。  
   
  1 つ以上を使用することができます`Catch`内のステートメント、`Try…Catch`ステートメントです。 これには、順にした場合、`Catch`句は重要では順序がチェックされるためです。 例外は、特殊性の高い順にキャッチしてください。  
   
  次`Catch`ステートメントの条件が少なくとも固有であり、すべてをキャッチする例外から派生する、<xref:System.Exception>クラスです。 前回通常これらのバリエーションの 1 つ使用する必要があります`Catch`のブロック、`Try...Catch...Finally`期待するすべての特定の例外をキャッチした後、構造体。 制御フローに到達できることはありません、`Catch`これらのバリエーションのいずれかに依存してブロックします。  
   
--   `type`は`Exception`、例を示します。`Catch ex As Exception`  
+-   `type`は`Exception`、例を示します。 `Catch ex As Exception`  
   
--   ステートメントが no`exception`例については、変数。`Catch`  
+-   ステートメントが no`exception`例については、変数。 `Catch`  
   
- ときに、`Try…Catch…Finally`ステートメントが別の入れ子になった`Try`ブロック、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]最初各検証`Catch`最も内側のステートメント`Try`ブロックします。 一致する場合`Catch`ステートメントが見つかりましたに、 `Catch` 、外側のステートメントの`Try…Catch…Finally`ブロックします。  
+ ときに、`Try…Catch…Finally`ステートメントが別の入れ子になった`Try`ブロック、Visual Basic が最初に各検証`Catch`最も内側のステートメント`Try`ブロックします。 一致する場合`Catch`ステートメントが見つかりましたに、 `Catch` 、外側のステートメントの`Try…Catch…Finally`ブロックします。  
   
  ローカル変数、`Try`ブロックでは使用できない、`Catch`独立したブロックであるためにをブロックします。 複数のブロックで変数を使用する場合は、外部変数を宣言、`Try...Catch...Finally`構造体。  
   
 > [!TIP]
->  `Try…Catch…Finally`ステートメントは IntelliSense コード スニペットとして使用できます。 コード スニペット マネージャーで **コード パターン - If、For Each、Try Catch、プロパティなど**、し**エラー処理 (例外)**です。 詳細については、「[Code Snippets](/visualstudio/ide/code-snippets)」を参照してください。  
+>  `Try…Catch…Finally`ステートメントは IntelliSense コード スニペットとして使用できます。 コード スニペット マネージャーで **コード パターン - If、For Each、Try Catch、プロパティなど**、し**エラー処理 (例外)** です。 詳細については、「[Code Snippets](/visualstudio/ide/code-snippets)」を参照してください。  
   
 ## <a name="finally-block"></a>Finally ブロックします。  
  1 つまたは複数のステートメントを終了する前に実行する必要がある場合、`Try`構造体を使用して、`Finally`ブロックします。 制御が渡されます、`Finally`ブロックだけの out を渡す前に、`Try…Catch`構造体。 これは内で例外が発生した場合でも、`Try`構造体。  
@@ -108,7 +109,7 @@ End Try
 ## <a name="exception-argument"></a>例外の引数  
  `Catch`ブロック`exception`引数がのインスタンスでは、<xref:System.Exception>クラスまたはクラスから派生した、`Exception`クラスです。 `Exception`クラスのインスタンスで発生したエラーに対応して、`Try`ブロックします。  
   
- プロパティ、`Exception`オブジェクトのヘルプを原因と、例外の場所を指定します。 たとえば、<xref:System.Exception.StackTrace%2A>プロパティに、コード内のエラーの発生場所を確認できるため、例外を引き起こした呼び出されたメソッドの一覧です。 <xref:System.Exception.Message%2A>例外を説明するメッセージが返されます。 <xref:System.Exception.HelpLink%2A>関連付けられているヘルプ ファイルへのリンクを返します。 <xref:System.Exception.InnerException%2A>返します、`Exception`または現在の例外の原因となったオブジェクトを返します`Nothing`元が存在しない場合`Exception`です。  
+ プロパティ、`Exception`オブジェクトのヘルプを原因と、例外の場所を指定します。 たとえば、<xref:System.Exception.StackTrace%2A>プロパティに、コード内のエラーの発生場所を確認できるため、例外を引き起こした呼び出されたメソッドの一覧です。 <xref:System.Exception.Message%2A> 例外を説明するメッセージが返されます。 <xref:System.Exception.HelpLink%2A> 関連付けられているヘルプ ファイルへのリンクを返します。 <xref:System.Exception.InnerException%2A> 返します、`Exception`または現在の例外の原因となったオブジェクトを返します`Nothing`元が存在しない場合`Exception`です。  
   
 ## <a name="considerations-when-using-a-trycatch-statement"></a>使用に関する注意点、試してみてください.Catch ステートメント  
  使用して、`Try…Catch`ステートメントのみにプログラムの異常なまたは予期しないイベントの発生を通知します。 この理由から、次のとおりです。  
@@ -134,7 +135,7 @@ End Try
   
  `Await`内の式で使用できない、`Catch`ブロックまたは`Finally`ブロックします。  
   
-## <a name="iterators"></a>反復子  
+## <a name="iterators"></a>Iterators  
  Iterator 関数または`Get`アクセサーは、コレクションに対するカスタム イテレーションを実行します。 反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)ステートメントを一度にいずれかのコレクションの各要素を返します。 使用して反復子関数を呼び出す、[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)します。  
   
  A`Yield`内のステートメントに含めることができます、`Try`ブロックします。 A`Try`を含むブロック、`Yield`ステートメントが持つことができます`Catch`をブロックしてができます、`Finally`ブロックします。 "再試行ブロック Visual Basic で"を参照してください[反復子](../../programming-guide/concepts/iterators.md)例についてはします。  
@@ -188,7 +189,7 @@ End Try
   
  [!code-vb[csAsyncExceptions#3](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_8.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Information.Err%2A>  
  <xref:System.Exception>  
  [Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)  

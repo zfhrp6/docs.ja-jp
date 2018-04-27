@@ -1,13 +1,13 @@
 ---
-title: "WPF アプリケーション (WPF) のビルド"
-ms.custom: 
+title: WPF アプリケーション (WPF) のビルド
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-caps.latest.revision: 
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 87fc77aaa95e2d2de4b0c6eb75484ab9b4006c31
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 054f6cd6ae71428aca6b99eb510b2ac34fc6c4b6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-a-wpf-application-wpf"></a>WPF アプリケーション (WPF) のビルド
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の実行可能ファイル (.exe)、 ライブラリ (.dll)、または両方のタイプのアセンブリの組み合わせとしてビルドできます。 このトピックでは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションをビルドする方法を紹介し、ビルド プロセスの主な手順について説明します。  
@@ -77,7 +77,7 @@ ms.lasthandoff: 01/19/2018
   
 3.  新しい部分クラスの CodeDOM 表現が作成され、obj\Release フォルダーにコピーされます。  
   
- さらに、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルごとに、言語固有のコード ファイルが生成されます。 たとえば、[!INCLUDE[TLA2#tla_visualb](../../../../includes/tla2sharptla-visualb-md.md)] プロジェクトの Page1.xaml ページについては Page1.g.vb が生成されます。[!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] プロジェクトの Page1.xaml ページについては Page1.g.cs が生成されます。 ファイル名の ".g" は、ファイルが生成されたコードであり、マークアップ ファイルのトップレベルの要素 (`Page` や `Window` など) に対する部分クラス宣言を持つことを示しています。 クラスは [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] の `partial` 修飾子 ([!INCLUDE[TLA2#tla_visualb](../../../../includes/tla2sharptla-visualb-md.md)] では `Extends`) によって宣言され、他の場所 (通常は分離コード ファイル Page1.xaml.cs) に別のクラス宣言があることを示します。  
+ さらに、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルごとに、言語固有のコード ファイルが生成されます。 たとえば、Visual Basic プロジェクトで、Page1.xaml ページ、Page1.g.vb が生成です。c# プロジェクトで、Page1.xaml ページ、Page1.g.cs が生成されます。 ファイル名の ".g" は、ファイルが生成されたコードであり、マークアップ ファイルのトップレベルの要素 (`Page` や `Window` など) に対する部分クラス宣言を持つことを示しています。 クラスが宣言された、 `partial` (C#) 修飾子 (`Extends` Visual Basic で) を示す別の場所のクラスの別の宣言は、通常、分離コード ファイルで Page1.xaml.cs です。  
   
  部分クラスが適切な基本クラスから拡張 (など<xref:System.Windows.Controls.Page>ページ) を実装し、<xref:System.Windows.Markup.IComponentConnector?displayProperty=nameWithType>インターフェイスです。 <xref:System.Windows.Markup.IComponentConnector>インターフェイスは、コンポーネントを初期化し、名前とそのコンテンツの要素のイベントに接続する方法があります。 その結果、生成されたコード ファイルには、次のようなメソッドの実装が含まれます。  
   
@@ -137,7 +137,7 @@ End Sub
   
  これらのマニフェスト ファイルは、常に [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] 用に作成されます。 インストール型アプリケーションの場合、プロジェクト ファイル内で `GenerateManifests` プロパティの値が `true` に指定されない限り、作成されません。  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]さらに、これらのアクセス許可は、一般的なアプリケーションのインターネット ゾーンに割り当てられている 2 つの追加アクセス許可を取得します。<xref:System.Security.Permissions.WebBrowserPermission>と<xref:System.Security.Permissions.MediaPermission>です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ビルド システムは、これらのアクセス許可をアプリケーション マニフェストで宣言します。  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] さらに、これらのアクセス許可は、一般的なアプリケーションのインターネット ゾーンに割り当てられている 2 つの追加アクセス許可を取得します。<xref:System.Security.Permissions.WebBrowserPermission>と<xref:System.Security.Permissions.MediaPermission>です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ビルド システムは、これらのアクセス許可をアプリケーション マニフェストで宣言します。  
   
 <a name="Incremental_Build_Support"></a>   
 ## <a name="incremental-build-support"></a>インクリメンタル ビルドのサポート  
@@ -179,7 +179,7 @@ End Sub
   
 -   何も再コンパイルされない (プロジェクトに何も変更が加えられていない場合)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF アプリケーションの配置](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
  [WPF MSBuild Reference (WPF MSBuild リファレンス)](/visualstudio/msbuild/wpf-msbuild-reference)  
  [WPF におけるパッケージの URI](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  

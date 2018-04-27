@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 766a4252fd77be95e2641239cba53a4d90e0cb1d
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 097435a3d8acda6325b27abaf3ca0fd2839d344e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="-bugreport"></a>-bugreport
 バグのレポートをファイルするときに使用できるファイルを作成します。  
@@ -54,7 +54,7 @@ ms.lasthandoff: 03/22/2018
 > [!IMPORTANT]
 >  `-bugreport`オプションは、機密性の高い情報を含むファイルを生成します。 これにより、現在の時刻、コンパイラのバージョンが含まれます。[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョン、オペレーティング システムのバージョン、ユーザー名、コマンドライン引数を、コンパイラが実行された、すべてのソース コードでは、参照されるアセンブリのいずれかのバイナリ形式です。 このオプションは、Web.config ファイルのサーバー側のコンパイルでのコマンド ライン オプションを指定することによってアクセスできる、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーションです。 これを回避するには、ユーザーがサーバーでのコンパイルが行われないよう、Machine.config ファイルを変更します。  
   
- このオプションを使用する場合`-errorreport:prompt`、 `-errorreport:queue`、または`-errorreport:send`、アプリケーションでの情報は、内部コンパイラ エラーが発生して`file`がマイクロソフトに送信します。 この情報はマイクロソフトのエンジニアが、エラーの原因を特定し、次のリリースの改善に役立てます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 既定では、Microsoft に情報は送信されません。 ただしを使用してアプリケーションをコンパイルするときに`-errorreport:queue`、既定で有効にする、アプリケーションがエラー レポートを収集します。 次に、コンピューターの管理者がログインすると、エラー レポート システムにより、管理者は、ログオン以降に発生したすべてのエラー レポートを Microsoft に転送するポップアップ ウィンドウが表示されます。  
+ このオプションを使用する場合`-errorreport:prompt`、 `-errorreport:queue`、または`-errorreport:send`、アプリケーションでの情報は、内部コンパイラ エラーが発生して`file`がマイクロソフトに送信します。 その情報はマイクロソフトのエンジニアが、エラーの原因を特定し、Visual Basic の次回リリースの改善に役立てます。 既定では、Microsoft に情報は送信されません。 ただしを使用してアプリケーションをコンパイルするときに`-errorreport:queue`、既定で有効にする、アプリケーションがエラー レポートを収集します。 次に、コンピューターの管理者がログインすると、エラー レポート システムにより、管理者は、ログオン以降に発生したすべてのエラー レポートを Microsoft に転送するポップアップ ウィンドウが表示されます。  
   
 > [!NOTE]
 >  `/bugreport`オプションは、Visual Studio 開発環境からは利用できません。 使用可能なコマンドラインからコンパイルするときにのみです。  

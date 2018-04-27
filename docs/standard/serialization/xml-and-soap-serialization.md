@@ -1,11 +1,11 @@
 ---
-title: "XML シリアル化および SOAP シリアル化"
-ms.custom: 
+title: XML シリアル化および SOAP シリアル化
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - SOAP, XML serialization
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - XML serialization
 - serialization
 ms.assetid: 832ac524-21bc-419a-a27b-ca8bfc45840f
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1ac5e83d6daf9654c541dcd8a748717be3ed05d0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8895a3ca460034cd963bc43e1f27535a51cf9356
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xml-and-soap-serialization"></a>XML シリアル化および SOAP シリアル化
 XML シリアル化とは、オブジェクトのパブリック フィールドやパブリック プロパティ、またはメソッドのパラメーターや戻り値を、特定の XML スキーマ定義言語 (XSD: XML Schema Definition Language) ドキュメントに準拠する XML ストリームに変換 (シリアル化) する処理です。 XML シリアル化によって、パブリック プロパティおよびパブリック フィールドを含むクラスの型が厳密に指定され、それらのパブリック メンバーは格納または転送できるようにシリアル形式 (この場合は XML) に変換されます。  
@@ -93,11 +93,11 @@ XML シリアル化とは、オブジェクトのパブリック フィールド
  <xref:System.Xml.Serialization.XmlSchemaImporter> クラスによって使用される型を追加します。  
   
 ## <a name="related-sections"></a>関連項目  
- [高度な開発テクノロジ](http://msdn.microsoft.com/library/c4a7e341-f0c6-4df4-a74f-223387ac6e4e)  
+ [高度な開発テクノロジ](https://msdn.microsoft.com/library/c4a7e341-f0c6-4df4-a74f-223387ac6e4e)  
  .NET Framework での高度な開発タスクと技法に関する詳細情報へのリンクを示します。  
   
- [ASP.NET と XML Web サービス クライアントを使用して作成した XML Web サービス](http://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)  
+ [ASP.NET と XML Web サービス クライアントを使用して作成した XML Web サービス](https://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)  
  ASP.NET を使用した XML Web サービスのプログラミング方法について説明するトピックを示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [バイナリ シリアル化](../../../docs/standard/serialization/binary-serialization.md)

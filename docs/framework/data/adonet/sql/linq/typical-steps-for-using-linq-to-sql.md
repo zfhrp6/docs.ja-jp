@@ -1,24 +1,26 @@
 ---
-title: "典型的な LINQ to SQL の使用手順"
-ms.custom: 
+title: 典型的な LINQ to SQL の使用手順
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3aedef610d8ad3f743b346a46059b15d917cf7ca
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 31daf8ee10334327070cb5bfc4068bc80e1d7ea4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>典型的な LINQ to SQL の使用手順
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションを実装するには、このトピックで説明する手順に従います。 多くの手順は省略できます。 既定の状態でオブジェクト モデルを使用することもできます。  
@@ -33,7 +35,7 @@ ms.lasthandoff: 01/17/2018
   
 -   [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]   
   
-     このデザイナーは、既存のデータベースからモデルを作成する多機能なユーザー インターフェイスを備えています。 このツールは [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] IDE の一部であり、小規模または中規模のデータベースに最適です。  
+     このデザイナーは、既存のデータベースからモデルを作成する多機能なユーザー インターフェイスを備えています。 このツール、Visual Studio IDE の一部であり、小規模または中規模のデータベースに最適です。  
   
 -   SQLMetal コード生成ツール  
   
@@ -41,13 +43,13 @@ ms.lasthandoff: 01/17/2018
   
 -   コード エディター  
   
-     [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] コード エディターまたは他のエディターを使用して、独自のコードを作成できます。 既存のデータベースがあり、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]または SQLMetal ツールを使用できる場合は、この方法はエラーを発生する可能性が高いため、その使用はお勧めできません。 ただし、コード エディターは、他のツールを使用して既に生成されたコードを調整または変更する場合に役立ちます。 詳細については、次を参照してください。[する方法: コード エディターを使用してエンティティ クラスをカスタマイズ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)です。  
+     Visual Studio code エディターまたは別のエディターを使用して独自のコードを記述することができます。 既存のデータベースがあり、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]または SQLMetal ツールを使用できる場合は、この方法はエラーを発生する可能性が高いため、その使用はお勧めできません。 ただし、コード エディターは、他のツールを使用して既に生成されたコードを調整または変更する場合に役立ちます。 詳細については、次を参照してください。[する方法: コード エディターを使用してエンティティ クラスをカスタマイズ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)です。  
   
 ### <a name="2-select-the-kind-of-code-you-want-to-generate"></a>2.生成するコードの種類を選択します。  
   
--   属性ベースの対応付け用の C# または [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] ソース コード。  
+-   C# または Visual Basic ソース コード ファイルの属性に基づくマッピングします。  
   
-     このコード ファイルを、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] プロジェクトに含めます。 詳細については、次を参照してください。[属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)です。  
+     このコード ファイルは、Visual Studio プロジェクトに含めます。 詳細については、次を参照してください。[属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)です。  
   
 -   外部マッピング用の XML ファイル。  
   
@@ -92,7 +94,7 @@ ms.lasthandoff: 01/17/2018
 ### <a name="6-debug-and-test-your-application"></a>6.アプリケーションをデバッグおよびテストします。  
  詳細については、次を参照してください。[デバッグのサポート](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)  
  [オブジェクト モデルの作成](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)  
  [ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

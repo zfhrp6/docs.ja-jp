@@ -1,12 +1,13 @@
 ---
-title: "方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する"
-ms.custom: 
+title: '方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], examples
 - Splitter control [Windows Forms], examples
 ms.assetid: e79f6bcc-3740-4d1e-b46a-c5594d9b7327
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f29fb5fc4f873431471cd1c037446a5157d5f07c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6011eb2d49e537a2f5dfc540611af40a30b3e721
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する
 Microsoft Outlook で使用される次のようなマルチペイン ユーザー インターフェイスを作成する次の手順で、**フォルダー**  ボックスの一覧、**メッセージ** ウィンドウで、および**プレビュー**ウィンドウです。 この方法は、主にコントロールをフォームにドッキングすることにより実現されます。  
@@ -175,7 +177,7 @@ Microsoft Outlook で使用される次のようなマルチペイン ユーザ�
     }  
     ```  
   
-3.  [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]で作成したプロシージャの呼び出しを追加、`New()`プロシージャです。 [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、フォーム クラスのコンス トラクターに次のコード行を追加します。  
+3.  Visual basic で作成したプロシージャの呼び出しを追加、`New()`プロシージャです。 Visual c# では、フォーム クラスのコンス トラクターに次のコード行を追加します。  
   
     ```vb  
     ' Add this to the New procedure.  
@@ -187,7 +189,7 @@ Microsoft Outlook で使用される次のようなマルチペイン ユーザ�
     createOutlookUI();  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.SplitContainer>  
  [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
  [方法: デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)

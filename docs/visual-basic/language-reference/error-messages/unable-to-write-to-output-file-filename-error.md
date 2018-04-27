@@ -1,5 +1,5 @@
 ---
-title: 出力ファイル &#39; を書き込めません。&lt;filename&gt;&#39;:&lt;エラー&gt;
+title: 出力ファイルを書き込めません&#39; &lt;filename&gt;&#39;:&lt;エラー。&gt;
 ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ''
@@ -16,13 +16,13 @@ ms.assetid: 0845b245-11bb-46fd-95ca-f6cef3c318ef
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d142a8c741a9f0e25b8ac3c0002d04f437bf0ca9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a183f81a73c3c8034d9ba7366be8b36d425263da
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="unable-to-write-to-output-file-39ltfilenamegt39-lterrorgt"></a>出力ファイル &#39; を書き込めません。&lt;filename&gt;&#39;:&lt;エラー&gt;
+# <a name="unable-to-write-to-output-file-39ltfilenamegt39-lterrorgt"></a>出力ファイルを書き込めません&#39; &lt;filename&gt;&#39;:&lt;エラー。&gt;
 ファイルの作成で問題が発生しました。  
   
  出力ファイルを書き込み用に開くことができません。 ファイル (または、そのファイルが格納されているフォルダー) は、別のプロセスによって排他的に開かれているか、読み取り専用属性が設定されている可能性があります。  
@@ -45,7 +45,7 @@ ms.lasthandoff: 10/18/2017
   
 3.  エラーが引き続き発生する場合は、コンピューターを再起動します。  
   
-4.  エラーがまだ発生する場合は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] を再インストールします。  
+4.  エラーが再発する場合は、Visual Basic を再インストールします。  
   
 5.  再インストールした後にエラーが続く場合は、マイクロソフト プロダクト サポート サービスに通知してください。  
   
@@ -63,7 +63,7 @@ ms.lasthandoff: 10/18/2017
   
 2.  **属性**のセクションで、**全般**タブで、、**読み取り専用**ボックス。  
   
-3.  Press **OK**.  
+3.  **[OK]** を押します。  
   
 ## <a name="see-also"></a>関連項目  
  [ご意見](/visualstudio/ide/talk-to-us)

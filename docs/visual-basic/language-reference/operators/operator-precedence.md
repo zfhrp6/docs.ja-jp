@@ -1,10 +1,11 @@
 ---
-title: "Visual Basic における演算子の優先順位"
+title: Visual Basic における演算子の優先順位
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - arithmetic operators [Visual Basic], precedence
@@ -19,14 +20,14 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6c0fb466b404cafdd4b91d061971fd683375c715
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2d8de9deea84c7f0c11c91b55951cdfc200b017f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Visual Basic における演算子の優先順位
 いくつかの操作は、式の中で発生した場合、各部分が評価されと呼ばれる事前に定義された順序で解決*演算子の優先順位*です。  
@@ -95,10 +96,10 @@ Dim n3 As Integer = 96 / (8 / 4)
   
  1 番目の式、除算 96/8 (これは、結果は 12) し、除算 12/4 で、結果は 3 です。 コンパイラは、操作を評価するため`n1`左から右の評価は、同じ場合、その注文が明示的に示されています`n2`です。 両方`n1`と`n2`3 つの結果になります。 これに対し、`n3`がかっこは、8 を評価するコンパイラを強制するために、48 の結果を保持する/4 最初。  
   
- この動作のための演算子と呼ばれます*左結合*で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ この動作のための演算子と呼ばれます*左結合*Visual Basic でします。  
   
 ## <a name="overriding-precedence-and-associativity"></a>優先順位と結合規則のオーバーライド  
- かっこを使用すると、他のユーザーの前に評価される式の一部を強制します。 これには、優先順位の順序と左の結合規則の両方をオーバーライドできます。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]常に外部の前にかっこで囲まれた演算を実行します。 ただし、かっこ内で維持通常の優先順位と結合規則にかっこを使用する場合を除き、します。 次に例を示します。  
+ かっこを使用すると、他のユーザーの前に評価される式の一部を強制します。 これには、優先順位の順序と左の結合規則の両方をオーバーライドできます。 Visual Basic は、常に外部の前にかっこで囲まれた演算を実行します。 ただし、かっこ内で維持通常の優先順位と結合規則にかっこを使用する場合を除き、します。 次に例を示します。  
   
 ```  
 Dim a, b, c, d, e, f, g As Double  

@@ -1,13 +1,13 @@
 ---
-title: "バインディング宣言の概要"
-ms.custom: 
+title: バインディング宣言の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -20,17 +20,17 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-caps.latest.revision: 
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 615b92d264b91ab5b267d5e79ab829b8afa489cd
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: 3fcc1b57f758abd2791bc6970c29300fd2fc0e30
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="binding-declarations-overview"></a>バインディング宣言の概要
 このトピックでは、バインディングを宣言するさまざまな方法について説明します。  
@@ -88,7 +88,7 @@ ms.lasthandoff: 02/22/2018
   
 -   最も簡単なケースで、<xref:System.Windows.Data.Binding.Path%2A>プロパティの値などを使用して、バインディングのソース オブジェクトのプロパティの名前は、`Path=PropertyName`です。  
   
--   プロパティのサブプロパティは、[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] と同様の構文で指定できます。 たとえば、句 `Path=ShoppingCart.Order` は、バインディングをオブジェクトのサブプロパティ `Order` またはプロパティ `ShoppingCart` に設定します。  
+-   プロパティのサブプロパティは、c# の場合と同様の構文で指定できます。 たとえば、句 `Path=ShoppingCart.Order` は、バインディングをオブジェクトのサブプロパティ `Order` またはプロパティ `ShoppingCart` に設定します。  
   
 -   添付プロパティにバインドするには、添付プロパティをかっこで囲みます。 例については、添付プロパティをバインドする<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>、構文は`Path=(DockPanel.Dock)`します。  
   
@@ -138,7 +138,7 @@ ms.lasthandoff: 02/22/2018
   
 -   既定値<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>値によって異なります<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>と<xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>も、バインドされた依存関係プロパティによって異なります。 ほとんどの依存関係プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> です。ただし、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
  [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  

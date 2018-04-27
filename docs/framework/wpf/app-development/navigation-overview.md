@@ -1,12 +1,13 @@
 ---
-title: "ナビゲーションの概要"
-ms.custom: 
+title: ナビゲーションの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -31,19 +32,20 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-caps.latest.revision: "69"
+caps.latest.revision: 69
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3a3b7d865a503189ebb5b3adadc7258603461c9b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 07609671d061851e6ede2f2bd90e4bee38e43159
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="navigation-overview"></a>ナビゲーションの概要
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]2 つの種類のアプリケーションで使用できるブラウザー スタイルのナビゲーションをサポートしています: スタンドアロン アプリケーションと[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]です。 ナビゲーションのためのパッケージのコンテンツを[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]提供、<xref:System.Windows.Controls.Page>クラスです。 1 つから移動することができます<xref:System.Windows.Controls.Page>別に宣言してを使用して、 <xref:System.Windows.Documents.Hyperlink>、またはを使用して、プログラムによって、<xref:System.Windows.Navigation.NavigationService>です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ナビゲート元のページを記憶し、それらのページに戻るために、履歴を使用します。  
+[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] 2 つの種類のアプリケーションで使用できるブラウザー スタイルのナビゲーションをサポートしています: スタンドアロン アプリケーションと[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]です。 ナビゲーションのためのパッケージのコンテンツを[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]提供、<xref:System.Windows.Controls.Page>クラスです。 1 つから移動することができます<xref:System.Windows.Controls.Page>別に宣言してを使用して、 <xref:System.Windows.Documents.Hyperlink>、またはを使用して、プログラムによって、<xref:System.Windows.Navigation.NavigationService>です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ナビゲート元のページを記憶し、それらのページに戻るために、履歴を使用します。  
   
  <xref:System.Windows.Controls.Page>、 <xref:System.Windows.Documents.Hyperlink>、 <xref:System.Windows.Navigation.NavigationService>、およびジャーナル フォームで提供されているナビゲーションのサポートの中核となる[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。 この概要は、高度なナビゲーション サポートが厳密でないへのナビゲーションをカバーする前にこれらの機能の詳細を検討[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]ファイル、[!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)]ファイル、およびオブジェクト。  
   
@@ -118,7 +120,7 @@ ms.lasthandoff: 12/22/2017
   
 -   分離コード クラスがある必要があります、`partial`によって指定される同じ名前のクラス、`x:Class`マークアップ、およびその属性がから派生する必要があります<xref:System.Windows.Controls.Page>です。 これにより、分離コード ファイルに関連付けられる、`partial`アプリケーションのビルド時に、マークアップ ファイルに対して生成されるクラス (を参照してください[WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md))。  
   
--   分離コードで、<xref:System.Windows.Controls.Page>クラスは、呼び出すコンス トラクターを実装する必要があります、`InitializeComponent`メソッドです。 `InitializeComponent`実装ファイルの生成されたマークアップで`partial`イベントを登録し、マークアップで定義されているプロパティを設定するクラス。  
+-   分離コードで、<xref:System.Windows.Controls.Page>クラスは、呼び出すコンス トラクターを実装する必要があります、`InitializeComponent`メソッドです。 `InitializeComponent` 実装ファイルの生成されたマークアップで`partial`イベントを登録し、マークアップで定義されているプロパティを設定するクラス。  
   
 > [!NOTE]
 >  新しいを追加すると<xref:System.Windows.Controls.Page>を使用して、プロジェクトに[!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]、<xref:System.Windows.Controls.Page>マークアップと分離コードの両方を使用して実装ととしてのマークアップと分離コード ファイル間の関連付けを作成するために必要な構成が含まれていますここで説明します。  
@@ -215,7 +217,7 @@ ms.lasthandoff: 12/22/2017
 [!code-xaml[NavigationOverviewSnippets#PageThatNavigatesXAML3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageThatNavigatesToFragment.xaml#pagethatnavigatesxaml3)]  
   
 > [!NOTE]
->  このセクションで、既定のフラグメント ナビゲーションの実装について説明で[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]部分的に処理が必要ですが、独自のフラグメント ナビゲーション スキームを実装することもできます、<xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>イベント。  
+>  このセクションで、既定のフラグメント ナビゲーションの実装について説明で[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] 部分的に処理が必要ですが、独自のフラグメント ナビゲーション スキームを実装することもできます、<xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>イベント。  
   
 > [!IMPORTANT]
 >  緩やかにフラグメントに移動することができます[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページ (マークアップのみ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルが`Page`ルート要素として) を使用して、ページを参照できる場合にのみ[!INCLUDE[TLA2#tla_http](../../../../includes/tla2sharptla-http-md.md)]です。  
@@ -276,7 +278,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[NavigationOverviewSnippets#NSNavigationPageCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/NSNavigationPage.xaml.cs#nsnavigationpagecodebehind)]
  [!code-vb[NavigationOverviewSnippets#NSNavigationPageCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationOverviewSnippets/VisualBasic/NSNavigationPage.xaml.vb#nsnavigationpagecodebehind)]  
   
- ときに、<xref:System.Windows.Documents.Hyperlink>この<xref:System.Windows.Controls.Page>がクリックすると、ナビゲーションが開始されたインスタンス化して、<xref:System.Windows.Controls.Page>既定以外のコンス トラクターを使用して、呼び出しに移動する、<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Windows.Navigation.NavigationService.Navigate%2A>オブジェクトへの参照を受け入れること、<xref:System.Windows.Navigation.NavigationService>パックではなくに移動されます[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]です。  
+ ときに、<xref:System.Windows.Documents.Hyperlink>この<xref:System.Windows.Controls.Page>がクリックすると、ナビゲーションが開始されたインスタンス化して、<xref:System.Windows.Controls.Page>既定以外のコンス トラクターを使用して、呼び出しに移動する、<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Windows.Navigation.NavigationService.Navigate%2A> オブジェクトへの参照を受け入れること、<xref:System.Windows.Navigation.NavigationService>パックではなくに移動されます[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]です。  
   
 #### <a name="programmatic-navigation-with-a-pack-uri"></a>パック URI によるプログラム ナビゲーション  
  パックを作成する必要がある場合[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]プログラムで (できますのみを決定する場合、パック[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]実行時に、たとえば) を使用することができます、<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>メソッド。 これを次の例に示します。  
@@ -338,7 +340,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Windows.Application.FragmentNavigation?displayProperty=nameWithType>  
   
- たびに<xref:System.Windows.Navigation.NavigationService>、イベントを発生させる、<xref:System.Windows.Application>クラスは、対応するイベントを発生させます。 <xref:System.Windows.Controls.Frame>および<xref:System.Windows.Navigation.NavigationWindow>それぞれのスコープ内のナビゲーションを検出するために同じイベントを提供します。  
+ たびに<xref:System.Windows.Navigation.NavigationService>、イベントを発生させる、<xref:System.Windows.Application>クラスは、対応するイベントを発生させます。 <xref:System.Windows.Controls.Frame> および<xref:System.Windows.Navigation.NavigationWindow>それぞれのスコープ内のナビゲーションを検出するために同じイベントを提供します。  
   
  場合によっては、<xref:System.Windows.Controls.Page>これらのイベントに関心があるかもしれません。 たとえば、<xref:System.Windows.Controls.Page>処理可能性があります、<xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=nameWithType>自体からナビゲーションをキャンセルするかどうかを決定するイベントです。 これを次の例に示します。  
   
@@ -455,7 +457,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  <xref:System.Windows.Controls.Page>に移動します。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]次のコントロールを使用すると自動的にこのサポートを使用して、 <xref:System.Windows.Controls.Page>:  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] 次のコントロールを使用すると自動的にこのサポートを使用して、 <xref:System.Windows.Controls.Page>:  
   
 -   <xref:System.Windows.Controls.CheckBox>  
   
@@ -513,13 +515,13 @@ ms.lasthandoff: 12/22/2017
   
  Cookie がサポートされている方法をいくつかは、次のとおり[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]:  
   
--   [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]スタンドアロン アプリケーションと[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]できます両方を作成し、cookie を管理します。  
+-   [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] スタンドアロン アプリケーションと[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]できます両方を作成し、cookie を管理します。  
   
 -   によって作成される cookie、[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]ブラウザーからアクセスできます。  
   
 -   同じドメインの [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] は、クッキーを作成して共有できます。  
   
--   [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]および[!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]同じドメインからのページの作成および cookie を共有できます。  
+-   [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] および[!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]同じドメインからのページの作成および cookie を共有できます。  
   
 -   Cookie がディスパッチされるときに[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]厳密でないと[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページが Web 要求を実行します。  
   
@@ -537,15 +539,15 @@ ms.lasthandoff: 12/22/2017
   
 <a name="The_NavigationWindow_Class"></a>   
 ## <a name="the-navigationwindow-class"></a>NavigationWindow クラス  
- ここまでで、ナビゲート可能なコンテンツを含むアプリケーションをビルドするために使用する可能性が最も高いナビゲーション サービスの全容を説明しました。 これらのサービスは、のコンテキストで説明した[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]だけではありませんが、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。 最近のオペレーティング システムと[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]アプリケーションには、ブラウザーのモダン ユーザー エクスペリエンスをブラウザー スタイルのナビゲーションをスタンドアロン アプリケーションに組み込むが利用できます。 一般的な例は、次のとおりです。  
+ ここまでで、ナビゲート可能なコンテンツを含むアプリケーションをビルドするために使用する可能性が最も高いナビゲーション サービスの全容を説明しました。 これらのサービスは、のコンテキストで説明した[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]だけではありませんが、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。 最近のオペレーティング システムおよび Windows アプリケーションをブラウザー スタイルのナビゲーションをスタンドアロン アプリケーションに組み込む最新のユーザーのブラウザー経験を活用します。 一般的な例は、次のとおりです。  
   
 -   **Word の類義語辞典**: 選択可能な単語をナビゲートします。  
   
 -   **ファイル エクスプ ローラー**: ファイルとフォルダーをナビゲートします。  
   
--   **ウィザード**: 複雑なタスクを複数のページに分割し、ページ間をナビゲートできます。 例としては、Windows コンポーネント ウィザードの追加と削除を処理する[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]機能します。  
+-   **ウィザード**: 複雑なタスクを複数のページに分割し、ページ間をナビゲートできます。 たとえば、Windows コンポーネント ウィザードを追加して、Windows 機能の削除を処理するなどです。  
   
- ブラウザー スタイルのナビゲーションをスタンドアロン アプリケーションに組み込むを使用することができます、<xref:System.Windows.Navigation.NavigationWindow>クラスです。 <xref:System.Windows.Navigation.NavigationWindow>派生した<xref:System.Windows.Window>しそれを拡張とナビゲーションのサポートを[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]を提供します。 使用することができます<xref:System.Windows.Navigation.NavigationWindow>スタンドアロン アプリケーションのメイン ウィンドウ、またはダイアログ ボックスなど、セカンダリ ウィンドウとして。  
+ ブラウザー スタイルのナビゲーションをスタンドアロン アプリケーションに組み込むを使用することができます、<xref:System.Windows.Navigation.NavigationWindow>クラスです。 <xref:System.Windows.Navigation.NavigationWindow> 派生した<xref:System.Windows.Window>しそれを拡張とナビゲーションのサポートを[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]を提供します。 使用することができます<xref:System.Windows.Navigation.NavigationWindow>スタンドアロン アプリケーションのメイン ウィンドウ、またはダイアログ ボックスなど、セカンダリ ウィンドウとして。  
   
  実装する、<xref:System.Windows.Navigation.NavigationWindow>のほとんどの最上位クラスと同様、 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] (<xref:System.Windows.Window>、<xref:System.Windows.Controls.Page>など)、マークアップと分離コードとの組み合わせを使用します。 これを次の例に示します。  
   
@@ -592,7 +594,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Frame_in_Standalone_Applications"></a>   
 ## <a name="the-frame-class"></a>Frame クラス  
- ブラウザーの両方と<xref:System.Windows.Navigation.NavigationWindow>windows は、ナビゲート可能なコンテンツをホストします。 場合によっては、アプリケーションには、ウィンドウ全体でホストする必要のないコンテンツがあることもあります。 このようなコンテンツは、代わりに、他のコンテンツ内でホストされます。 使用して、その他のコンテンツにナビゲート可能なコンテンツを挿入できる、<xref:System.Windows.Controls.Frame>クラスです。 <xref:System.Windows.Controls.Frame>として同じのサポートを提供<xref:System.Windows.Navigation.NavigationWindow>と[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。  
+ ブラウザーの両方と<xref:System.Windows.Navigation.NavigationWindow>windows は、ナビゲート可能なコンテンツをホストします。 場合によっては、アプリケーションには、ウィンドウ全体でホストする必要のないコンテンツがあることもあります。 このようなコンテンツは、代わりに、他のコンテンツ内でホストされます。 使用して、その他のコンテンツにナビゲート可能なコンテンツを挿入できる、<xref:System.Windows.Controls.Frame>クラスです。 <xref:System.Windows.Controls.Frame> として同じのサポートを提供<xref:System.Windows.Navigation.NavigationWindow>と[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。  
   
  次の例は、追加する方法を示します、<xref:System.Windows.Controls.Frame>を<xref:System.Windows.Controls.Page>を使用して宣言によって、`Frame`要素。  
   
@@ -633,7 +635,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Navigation_Hosts"></a>   
 ## <a name="navigation-hosts"></a>ナビゲーション ホスト  
- <xref:System.Windows.Controls.Frame>および<xref:System.Windows.Navigation.NavigationWindow>ナビゲーション ホストと呼ばれるクラスです。 A*ナビゲーション ホスト*に移動して、コンテンツを表示できるクラスです。 これを実現する、各ナビゲーション ホストを使用して独自<xref:System.Windows.Navigation.NavigationService>およびジャーナルです。 ナビゲーション ホストの基本的な構造を次の図に示します。  
+ <xref:System.Windows.Controls.Frame> および<xref:System.Windows.Navigation.NavigationWindow>ナビゲーション ホストと呼ばれるクラスです。 A*ナビゲーション ホスト*に移動して、コンテンツを表示できるクラスです。 これを実現する、各ナビゲーション ホストを使用して独自<xref:System.Windows.Navigation.NavigationService>およびジャーナルです。 ナビゲーション ホストの基本的な構造を次の図に示します。  
   
  ![ナビゲーターのダイアグラム](../../../../docs/framework/wpf/app-development/media/navigationoverviewfigure15.png "NavigationOverviewFigure15")  
   
@@ -738,9 +740,9 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Security"></a>   
 ## <a name="security"></a>セキュリティ  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ナビゲーションのサポートにより、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]とインターネット間を移動できない場合にサード パーティのコンテンツをホストするアプリケーションを許可します。 有害な動作は、アプリケーションとユーザーの両方を保護するために[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]で説明されているセキュリティ機能のさまざまな提供[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)と[WPF 部分信頼セキュリティ](../../../../docs/framework/wpf/wpf-partial-trust-security.md)です。  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ナビゲーションのサポートにより、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]とインターネット間を移動できない場合にサード パーティのコンテンツをホストするアプリケーションを許可します。 有害な動作は、アプリケーションとユーザーの両方を保護するために[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]で説明されているセキュリティ機能のさまざまな提供[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)と[WPF 部分信頼セキュリティ](../../../../docs/framework/wpf/wpf-partial-trust-security.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Application.SetCookie%2A>  
  <xref:System.Windows.Application.GetCookie%2A>  
  [アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)  

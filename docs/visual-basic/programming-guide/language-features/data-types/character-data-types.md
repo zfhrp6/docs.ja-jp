@@ -1,11 +1,12 @@
 ---
-title: "文字データ型 (Visual Basic)"
-ms.custom: 
+title: 文字データ型 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - data types [Visual Basic], character
@@ -14,22 +15,22 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character data types
 - data types [Visual Basic], choosing
 ms.assetid: 902479ef-1679-47fc-9911-0c1c5008226c
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d1066444ba3a98f26fc2a35135a50b2954c6b992
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: dca9cde0af08c4113ea9a4644efa40a721b4d9b1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="character-data-types-visual-basic"></a>文字データ型 (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]提供*文字データ型*文字や表示可能な文字を処理します。 Unicode 文字を扱う両者間`Char`一方、1 つの文字を保持している`String`不特定数文字にはが含まれています。  
+Visual Basic では*文字データ型*文字や表示可能な文字を処理します。 Unicode 文字を扱う両者間`Char`一方、1 つの文字を保持している`String`不特定数文字にはが含まれています。  
   
- サイド バイ サイドの比較を表示するテーブルの[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]データ型を参照してください[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
+ Visual Basic データ型のサイド バイ サイドの比較を表示するテーブル、次を参照してください。[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
   
 ## <a name="char-type"></a>Char 型  
- `Char`データ型は単一 2 バイト (16 ビット) の Unicode 文字。 変数は、常に正確に 1 つの文字を保存する場合として宣言`Char`です。 例:  
+ `Char`データ型は単一 2 バイト (16 ビット) の Unicode 文字。 変数は、常に正確に 1 つの文字を保存する場合として宣言`Char`です。 例えば:  
   
  [!code-vb[VbVbalrCharTypes#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_1.vb)]  
   
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
  詳細については、次を参照してください。 [Char データ型](../../../../visual-basic/language-reference/data-types/char-data-type.md)です。  
   
 ## <a name="string-type"></a>文字列型  
- `String`データ型は、0 個以上 2 バイト (16 ビット) の Unicode 文字のシーケンス。 場合は、変数は、不特定数の文字を含めることができます、宣言として`String`です。 例:  
+ `String`データ型は、0 個以上 2 バイト (16 ビット) の Unicode 文字のシーケンス。 場合は、変数は、不特定数の文字を含めることができます、宣言として`String`です。 例えば:  
   
  [!code-vb[VbVbalrCharTypes#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_2.vb)]  
   

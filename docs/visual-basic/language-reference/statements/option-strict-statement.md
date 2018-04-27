@@ -2,9 +2,10 @@
 title: Option Strict Statement
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Strict
@@ -16,14 +17,14 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
-caps.latest.revision: "49"
+caps.latest.revision: 49
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1a01edd918ea49c08defddb45bf23c33307e814f
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 0e49c8f64d38b7f8d2dc1a34cf22925c15e3a505
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="option-strict-statement"></a>Option Strict Statement
 暗黙的なデータ型の変換のみ拡大変換を制限、遅延バインディングは許可されていません、および結果となる暗黙の型指定は許可されていません、`Object`型です。  
@@ -68,7 +69,7 @@ Option Strict { On | Off }
 ## <a name="implicit-narrowing-conversion-errors"></a>暗黙的な縮小変換エラー  
  縮小変換する暗黙的なデータ型変換がある場合は、暗黙的な縮小変換エラーが発生します。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]多くのデータ型を他のデータ型に変換できます。 1 つのデータ型の値でありより精度の低いまたは容量の小さいデータ型に変換するときに、データ損失が発生することができます。 このような縮小変換が失敗した場合、実行時エラーが発生します。 `Option Strict`これらの縮小変換のコンパイル時の通知のことを確認して、それらを回避するようにします。 詳細については、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)と[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)です。  
+ Visual Basic は、多くのデータ型を他のデータ型に変換できます。 1 つのデータ型の値でありより精度の低いまたは容量の小さいデータ型に変換するときに、データ損失が発生することができます。 このような縮小変換が失敗した場合、実行時エラーが発生します。 `Option Strict` これらの縮小変換のコンパイル時の通知のことを確認して、それらを回避するようにします。 詳細については、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)と[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)です。  
   
  エラーが発生する変換では、式に発生する暗黙的な変換を含めます。 詳細については、次のトピックを参照してください。  
   
@@ -120,7 +121,7 @@ Option Strict { On | Off }
   
 2.  **コンパイル** タブの値を設定、 **Option Strict**ボックス。  
   
-###  <a name="conditions"></a>IDE で警告の構成を設定するには  
+###  <a name="conditions"></a> IDE で警告の構成を設定するには  
  使用すると、[コンパイル ページで、プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)の代わりに、`Option Strict`ステートメントでは、エラーが生成される条件をさらに制御があります。 **警告の構成**のセクション、 **[コンパイル] ページ**コンパイル時エラーが発生する 3 つの条件に対応する設定を持つときに`Option Strict`にします。 これらの設定を次に示します。  
   
 -   **暗黙的な変換**  
@@ -158,7 +159,7 @@ Option Strict { On | Off }
   
  [!code-vb[VbVbalrStatements#164](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_4.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
  [暗黙の型変換と明示的な型変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
  [[コンパイル] ページ、プロジェクト デザイナー (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)  

@@ -1,23 +1,24 @@
 ---
-title: "再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート"
-ms.custom: 
+title: 再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee8467eaeaef490f4c7a8bfbcb204506d71f5500
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 999c18f20264a71cf73bbd5afd352ad3104a03e8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート
 [!INCLUDE[wf](../../../includes/wf-md.md)] の [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] には、ワークフロー デザイナー エクスペリエンスの拡張機能を含む、多くの新機能が導入されています。 このトピックでは、このような新機能のうち、再ホストされたデザイナーでサポートされている機能と現時点ではサポートされていない機能について詳しく説明します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 12/22/2017
   
  次のスクリーンショットは、`WriteLine` の `Body` 内の `NoPersistScope` アクティビティを示しています。  
   
- ![自動 &#45; 格納場所サラウンド](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")  
+ ![自動&#45;の格納場所を囲む](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")  
   
  次のスクリーンショットは、2 つ目の `Sequence` を 1 つ目の下にドロップしたときに `Body` 内に自動的に作成された `WriteLine` アクティビティを示しています。  
   
@@ -75,7 +76,7 @@ ms.lasthandoff: 12/22/2017
  選択した複数のアクティビティは、デザイナー内でドラッグ アンド ドロップすることも、コンテキスト メニューを使用して操作することもできます。  
   
 ### <a name="outline-view-of-workflow-items"></a>ワークフロー項目のアウトライン表示  
- 階層ワークフローを移動しやすくするため、ワークフローのコンポーネントはツリー スタイルのアウトライン表示で示されます。 アウトライン表示で、 **ドキュメント アウトライン**ビュー。 開くにはこのビューで[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)]、上部のメニューから選択**ビュー**、**その他のウィンドウ**、 **ドキュメント アウトライン**、または Ctrl W キーと u ですキーを押します。 アウトライン表示でノードをクリックすると、ワークフロー デザイナーの対応するアクティビティに移動し、アウトライン表示が更新されて、デザイナーで選択されているアクティビティが表示されます。 この機能は、再ホストされたデザイナーでサポートされています。  
+ 階層ワークフローを移動しやすくするため、ワークフローのコンポーネントはツリー スタイルのアウトライン表示で示されます。 アウトライン表示で、 **ドキュメント アウトライン**ビュー。 上部のメニューから、Visual Studio で、このビューを開く、次のように選択します**ビュー**、**その他のウィンドウ**、 **ドキュメント アウトライン**、または Ctrl W キーと u です。 キーを押します。 アウトライン表示でノードをクリックすると、ワークフロー デザイナーの対応するアクティビティに移動し、アウトライン表示が更新されて、デザイナーで選択されているアクティビティが表示されます。 この機能は、再ホストされたデザイナーでサポートされています。  
   
  完了済みワークフローからの次のスクリーン ショット、[チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)シーケンシャル ワークフローにより、アウトライン表示を示しています。  
   
@@ -93,7 +94,7 @@ ms.lasthandoff: 12/22/2017
   
  アクティビティは、フローチャート ノードと状態の間の接続にドラッグすることで、その他 2 つのノード間にノードを自動挿入することもできます。 次のスクリーンショットは、アクティビティをツールボックスからドラッグ アンド ドロップできる、強調表示された接続線を示しています。  
   
- ![自動 &#45; 処理のアクティビティをドロップする insert](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "自動")  
+ ![自動&#45;アクティビティをドロップするためのハンドルを挿入](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "自動")  
   
  自動接続と自動挿入は、再ホストされたデザイナーでサポートされています。  
   
@@ -149,7 +150,7 @@ ms.lasthandoff: 12/22/2017
  ステート マシン ワークフローを作成する方法の詳細については、次を参照してください。[ステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md)です。 ステート マシンのワークフローは、再ホストされたデザイナーでサポートされています。  
   
 ### <a name="contract-first-workflow-development"></a>コントラクト優先ワークフローの開発  
- コントラクト優先ワークフローの開発ツールにより、開発者はコード優先のコントラクトを設計することができ、その後、[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] で数回クリックするだけで、各操作を表すアクティビティ テンプレートをツールボックス内に自動的に生成できます。 これらのアクティビティは、コントラクトで定義された操作を実装するワークフローを作成するために使用されます。 ワークフロー デザイナーは、ワークフロー サービスを検証し、これらの操作が実装され、ワークフローの署名がコントラクトの署名と一致することを確認します。 また、開発者は、ワークフロー サービスを、実装済みコントラクトのコレクションと関連付けることもできます。 コントラクト優先ワークフロー サービスの開発の詳細については、次を参照してください。[する方法: 既存のサービス コントラクトを使用するワークフロー サービスを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)です。  
+ コントラクト優先ワークフローの開発ツールでは、開発者が最初に、コードでコントラクトを設計し、Visual Studio での数回のクリックで各操作を表す、ツールボックスに自動的に活動テンプレートを生成できるようにします。 これらのアクティビティは、コントラクトで定義された操作を実装するワークフローを作成するために使用されます。 ワークフロー デザイナーは、ワークフロー サービスを検証し、これらの操作が実装され、ワークフローの署名がコントラクトの署名と一致することを確認します。 また、開発者は、ワークフロー サービスを、実装済みコントラクトのコレクションと関連付けることもできます。 コントラクト優先ワークフロー サービスの開発の詳細については、次を参照してください。[する方法: 既存のサービス コントラクトを使用するワークフロー サービスを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)です。  
   
 > [!WARNING]
 >  コントラクト優先ワークフローの開発は、ワークフロー デザイナーではサポートされていません。

@@ -1,24 +1,26 @@
 ---
-title: "SQL Server での安全な動的 SQL の作成"
-ms.custom: 
+title: SQL Server での安全な動的 SQL の作成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 41c396bf2101e54adb1608f938c702ff7663cb1d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5fdf41353e1772eab46e2e6b8f16ad7bfdf7a72f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>SQL Server での安全な動的 SQL の作成
 SQL インジェクションとは、悪意のあるユーザーによって、有効な入力データの代わりに Transact-SQL ステートメントが入力されることをいいます。 この入力データが検証されずにサーバーに直接渡され、挿入されたコードがアプリケーションでそのまま実行された場合、その攻撃によってデータが破損または破壊される可能性があります。  
@@ -68,7 +70,7 @@ SQL インジェクションとは、悪意のあるユーザーによって、�
  証明書により署名されているストアド プロシージャが実行されると、証明書ユーザーに許可される権限が呼び出し元の権限にマージされます。 実行コンテキストは変わりません。証明書ユーザーは呼び出し元の権限を借用しません。 ストアド プロシージャの署名を実装するには、いくつかの手順を実行する必要があります。 プロシージャが変更されるたびに、再度署名する必要があります。  
   
 ### <a name="cross-database-access"></a>複数のデータベースへのアクセス  
- 動的に生成された SQL ステートメントを実行する場合、複数データベースの組み合わせ所有権は機能しません。 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、別のデータベースのデータにアクセスするストアド プロシージャを作成し、両方のデータベースに存在する証明書でそのプロシージャに署名することによって、これを回避できます。 これにより、ユーザーは、データベースへのアクセス許可が付与されていなくても、そのプロシージャによって使用されるデータベース リソースにアクセスできるようになります。  
+ 動的に生成された SQL ステートメントを実行する場合、複数データベースの組み合わせ所有権は機能しません。 別のデータベース内のデータにアクセスするストアド プロシージャを作成し、両方のデータベースに存在する証明書と、プロシージャに署名して SQL Server でこの問題を回避操作できます。 これにより、ユーザーは、データベースへのアクセス許可が付与されていなくても、そのプロシージャによって使用されるデータベース リソースにアクセスできるようになります。  
   
 ## <a name="external-resources"></a>外部リソース  
  詳細については、次のリソースを参照してください。  
@@ -78,7 +80,7 @@ SQL インジェクションとは、悪意のあるユーザーによって、�
 |[ストアド プロシージャ](http://go.microsoft.com/fwlink/?LinkId=98233)と[SQL インジェクション](http://go.microsoft.com/fwlink/?LinkId=98234)SQL Server オンライン ブック|ストアド プロシージャの作成方法と SQL インジェクションのしくみについて説明します。|  
 |[新しい SQL 切り捨て攻撃とその回避方法](http://msdn.microsoft.com/msdnmag/issues/06/11/SQLSecurity/)MSDN マガジンのです。|文字と文字列の区切り方法、SQL インジェクション、切り捨て攻撃による変更について説明します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  

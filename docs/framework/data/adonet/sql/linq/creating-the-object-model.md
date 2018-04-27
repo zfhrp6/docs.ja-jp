@@ -1,39 +1,41 @@
 ---
-title: "オブジェクト モデルの作成"
-ms.custom: 
+title: オブジェクト モデルの作成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27afce86-9b1d-45fb-8e0b-636bf671a236
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: bb6f8683ce49c8115b6dce477d0e61369d7abeef
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8686b46545699ab8c07b5d3b5f3ea26080261036
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="creating-the-object-model"></a>オブジェクト モデルの作成
 既存のデータベースからオブジェクト モデルを作成し、このオブジェクト モデルを既定の状態で使用できます。 オブジェクト モデルの多くの側面と動作をカスタマイズできます。  
   
- 使用している場合[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]、使用することができます、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]オブジェクト モデルを作成します。  
+ Visual Studio を使用している場合を使用できます、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]オブジェクト モデルを作成します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法: Visual Basic または C# でオブジェクト モデルを生成する](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  
- SQLMetal コマンド ライン ツールの使い方について説明します。 また、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ユーザー向けの[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]に関するトピックへのリンクを示します。  
+ SQLMetal コマンド ライン ツールの使い方について説明します。 リンクを提供、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]の Visual Studio ユーザー  
   
  [方法 : オブジェクト モデルを外部ファイルとして生成する](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
  属性ベースの対応付けを使用する代わりに外部マッピング ファイルを生成する方法について説明します。  
   
  [方法 : DBML ファイルを変更してカスタマイズ コードを生成する](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-customized-code-by-modifying-a-dbml-file.md)  
- [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] または C# のコードを DBML メタデータ ファイルから生成する方法について説明します。  
+ Visual Basic または c# のコードを DBML メタデータ ファイルから生成する方法について説明します。  
   
  [方法 : DBML ファイルおよび外部マッピング ファイルを検証する](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)  
  変更したマッピング ファイルを検証する方法について説明します (上級)。  

@@ -19,19 +19,19 @@ helpviewer_keywords:
 - command-line compilers [Visual Basic], Visual Basic
 - command line [Visual Basic], Visual Basic
 ms.assetid: e61947e9-a42e-4717-a699-5f70a98cdd03
-caps.latest.revision: ''
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c3f71a84feffce46bafd92ff701a0250c059a82e
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 1fd4054838925267647986a5166fd88037b17fae
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-from-the-command-line-visual-basic"></a>コマンド ラインからのビルド (Visual Basic)
-A[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロジェクトで構成される 1 つまたは複数の独立したソース ファイルです。 コンパイルと呼ばれる過程で、これらのファイルが 1 つのパッケージにまとめられて — アプリケーションとして実行できる 1 つの実行可能ファイルです。  
+Visual Basic プロジェクトで構成された 1 つまたは複数の独立したソース ファイルです。 コンパイルと呼ばれる過程で、これらのファイルが 1 つのパッケージにまとめられて — アプリケーションとして実行できる 1 つの実行可能ファイルです。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 内からプログラムをコンパイルする代わりに、コマンド ライン コンパイラを提供、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境 (IDE) です。 コマンド ライン コンパイラが状況を必要としない、IDE の機能の完全なセット用に設計された — たとえば、またはする場合を使用して限られたシステムのメモリまたはストレージの領域を持つコンピューター用の記述。  
+ Visual Basic 内からプログラムをコンパイルする代わりに、コマンド ライン コンパイラでは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境 (IDE) です。 コマンド ライン コンパイラが状況を必要としない、IDE の機能の完全なセット用に設計された — たとえば、またはする場合を使用して限られたシステムのメモリまたはストレージの領域を持つコンピューター用の記述。  
   
   内からソース ファイルをコンパイルする、 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] IDE、選択、**ビルド**コマンドを**ビルド**メニュー。  
   

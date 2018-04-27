@@ -1,12 +1,13 @@
 ---
-title: "方法 : MaskedTextBox コントロールにデータをバインドする"
-ms.custom: 
+title: '方法 : MaskedTextBox コントロールにデータをバインドする'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - data binding [Windows Forms], MaskedTextBox control [Windows Forms]
 - MaskedTextBox control [Windows Forms], binding data
 ms.assetid: 34b29f07-e8df-48d4-b08b-53fcca524708
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cb3fd4038634969d34be4514f4d314cf5d7513e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8adf445de4648c0a751a852f67a55ca9683e3469
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>方法 : MaskedTextBox コントロールにデータをバインドする
 データをバインドすることができます、<xref:System.Windows.Forms.MaskedTextBox>と同様に、他の Windows フォーム コントロールを制御します。 ただし、データベース内のデータの形式でマスクで定義された形式が一致しない場合は、データの書式を変更する必要があります。 次の手順を使用してこれを行う方法を示して、<xref:System.Windows.Forms.Binding.Format>と<xref:System.Windows.Forms.Binding.Parse>のイベント、<xref:System.Windows.Forms.Binding>クラスを別の電話番号を表示およびデータベースの拡張フィールドを 1 つの編集可能なフィールドとして電話します。  
@@ -239,7 +241,7 @@ ms.lasthandoff: 12/22/2017
     End Sub  
     ```  
   
-9. サンプルを実行します。 データを編集して、**前**と**[次へ]**ボタンのデータを正しく保存されることを確認、<xref:System.Data.DataSet>です。  
+9. サンプルを実行します。 データを編集して、**前**と **[次へ]** ボタンのデータを正しく保存されることを確認、<xref:System.Data.DataSet>です。  
   
 ## <a name="example"></a>例  
  次のコード例では、前の手順を完了するの結果であるを一覧表示する完全なコードを示します。  
@@ -250,7 +252,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
--   作成、[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]または[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]プロジェクト。  
+-   Visual c# または Visual Basic プロジェクトを作成します。  
   
 -   追加、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.MaskedTextBox>フォームにコントロールを前の手順で説明します。  
   
@@ -260,5 +262,5 @@ ms.lasthandoff: 12/22/2017
   
 -   アプリケーションをコンパイルします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアル: MaskedTextBox コントロールの使用](../../../../docs/framework/winforms/controls/walkthrough-working-with-the-maskedtextbox-control.md)

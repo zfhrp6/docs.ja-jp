@@ -1,11 +1,12 @@
 ---
-title: "方法: 値を返すプロシージャを呼び出す (Visual Basic)"
-ms.custom: 
+title: '方法: 値を返すプロシージャを呼び出す (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - procedure calls [Visual Basic], returning values
@@ -13,14 +14,14 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - procedures [Visual Basic], returning a value
 ms.assetid: a445127b-0f5f-465a-98fb-3e514b93d115
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f6d408eed67fa417f42252bb49ecea28d4458382
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cbaaa5ed17845a7ac8847786fb10111c724015ba
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>方法: 値を返すプロシージャを呼び出す (Visual Basic)
 A`Function`プロシージャが呼び出し元のコードに値を返します。 これを呼び出す、名前と引数を含む式、または代入ステートメントの右側にあるいずれか。  
@@ -48,7 +49,7 @@ A`Function`プロシージャが呼び出し元のコードに値を返します
 4.  プロシージャから返される値は、変数または代入ステートメントの左側にあるプロパティに格納されます。  
   
 ## <a name="example"></a>例  
- 次の例では、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Interaction.Environ%2A>オペレーティング システム環境変数の値を取得します。 最初の行呼び出し`Environ`代入ステートメントでその行の式、および 2 つ目の呼び出しです。 `Environ`その唯一の引数として変数名を使用します。 呼び出し元のコードに変数の値を返します。  
+ 次の例では、Visual Basic<xref:Microsoft.VisualBasic.Interaction.Environ%2A>オペレーティング システム環境変数の値を取得します。 最初の行呼び出し`Environ`代入ステートメントでその行の式、および 2 つ目の呼び出しです。 `Environ` その唯一の引数として変数名を使用します。 呼び出し元のコードに変数の値を返します。  
   
  [!code-vb[VbVbcnProcedures#7](./codesnippet/VisualBasic/how-to-call-a-procedure-that-returns-a-value_1.vb)]  
   

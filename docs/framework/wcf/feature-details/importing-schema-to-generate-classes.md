@@ -1,12 +1,13 @@
 ---
-title: "クラスを作成するためのスキーマのインポート"
-ms.custom: 
+title: クラスを作成するためのスキーマのインポート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, schema import and export
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a872fbd5be56fed3d01481d1740c70932fd60c06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7fc755ff7f1b6c583a1e9aa1bc209495563812f0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="importing-schema-to-generate-classes"></a>クラスを作成するためのスキーマのインポート
 スキーマを読み込んで、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で使用可能なクラスを生成するには、<xref:System.Runtime.Serialization.XsdDataContractImporter> クラスを使用します。 ここでは、生成時に指定できる各種のオプションについて解説します。  
@@ -77,7 +79,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xml[c_SchemaImportExport#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  
   
- `Namespaces` プロパティを使って、"http://schemas.contoso.com/carSchema" という名前空間を "Contoso.Cars" に対応付ける例を示します。  
+ 次の例では、`Namespaces`プロパティ マップを"http://schemas.contoso.com/carSchema"を"Contoso.Cars"に名前空間。  
   
  [!code-csharp[c_SchemaImportExport#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#8)]
  [!code-vb[c_SchemaImportExport#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#8)]  
@@ -95,7 +97,7 @@ ms.lasthandoff: 12/22/2017
 #### <a name="adding-data-binding-support-enabledatabinding-or-the-enabledatabinding-switch"></a>データ バインディング機能の追加 (EnableDataBinding または /enableDataBinding スイッチ)  
  これに対応して、 **/enableDataBinding** Svcutil.exe ツールをオンにします。  
   
- スキーマから生成された型を GUI コンポーネントにバインドして、この型のインスタンスを更新したとき、自動的に UI にも反映されるようにする場合があります。 `XsdDataContractImporter` は、生成する型に <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装して、プロパティが変更されるとイベントが発生するようにすることができます。 このインターフェイスを実装した型 (たとえば [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)]) を生成して、クライアント側の UI プログラミング環境で使用できるようにする場合は、<xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> プロパティの値を `true` に設定してください。  
+ スキーマから生成された型を GUI コンポーネントにバインドして、この型のインスタンスを更新したとき、自動的に UI にも反映されるようにする場合があります。 `XsdDataContractImporter` は、生成する型に <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装して、プロパティが変更されるとイベントが発生するようにすることができます。 このインターフェイス (など Windows Presentation Foundation (WPF)) をサポートするクライアント側 UI プログラミング環境で使用するための型を生成する場合は、設定、<xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A>プロパティを`true`この機能を有効にします。  
   
  `Vehicle` プロパティを <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> に設定して生成した `true` クラスの例を以下に示します。  
   
@@ -112,7 +114,7 @@ ms.lasthandoff: 12/22/2017
  [!code-xml[C_SchemaImportExport#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  
   
 > [!NOTE]
->  関連付けもリストと見なすことができます。 たとえば、上記の関連付けは、文字列と整数の 2 つのフィールドから成る複雑な `city` オブジェクトのリストと考えることも可能です。 どちらの方法であっても、XSD スキーマで表現できます。 この 2 つを区別する手段はないので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に特有の特別な注釈がスキーマ内になければ、このようなパターンは常にリストとして扱われます。 注釈がある場合は、関連付けを表すものとして扱われます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクト スキーマ リファレンス](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。  
+>  関連付けもリストと見なすことができます。 たとえば、上記の関連付けは、文字列と整数の 2 つのフィールドから成る複雑な `city` オブジェクトのリストと考えることも可能です。 どちらの方法であっても、XSD スキーマで表現できます。 この 2 つを区別する手段はないので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に特有の特別な注釈がスキーマ内になければ、このようなパターンは常にリストとして扱われます。 注釈がある場合は、関連付けを表すものとして扱われます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [データ コントラクト スキーマ リファレンス](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。  
   
  リストは通常、ジェネリック リストから派生したコレクション データ コントラクト、または [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の配列としてインポートされます。スキーマがコレクションの標準的な名前付けパターンに従っているかどうかによって切り分けます。 さらに詳しく記載されて[データ コントラクトのコレクション型](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md)です。 関連付けは通常、<xref:System.Collections.Generic.Dictionary%602>、または辞書オブジェクトから派生したコレクション データ コントラクトとしてインポートされます。 たとえば、次のスキーマを考えます。  
   
@@ -159,7 +161,7 @@ ms.lasthandoff: 12/22/2017
   
 ##### <a name="design-considerations"></a>設計上の考慮事項  
   
--   弱く型指定された XML 表現を直接扱うのは困難です。 データ コントラクトと互換性がないスキーマを厳密に型指定された方法で操作するには、<xref:System.Xml.Serialization.XmlSerializer> などの別のシリアル化エンジンの使用を検討します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][XmlSerializer クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)です。  
+-   弱く型指定された XML 表現を直接扱うのは困難です。 データ コントラクトと互換性がないスキーマを厳密に型指定された方法で操作するには、<xref:System.Xml.Serialization.XmlSerializer> などの別のシリアル化エンジンの使用を検討します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [XmlSerializer クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)です。  
   
 -   スキーマ構造によっては、<xref:System.Runtime.Serialization.XsdDataContractImporter> プロパティを <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> に設定しても、`true` でインポートできない場合があります。 このような場合も、<xref:System.Xml.Serialization.XmlSerializer> の使用を検討します。  
   
@@ -188,9 +190,9 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> プロパティ。 生成されたクラスに組み込むコードを生成するために使用する、<xref:System.CodeDom.Compiler.CodeDomProvider> を指定します。 インポートの際は、<xref:System.CodeDom.Compiler.CodeDomProvider> でサポートされていない機能が回避されます。 <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> を設定しない場合は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] のすべての機能が制限なく使用されます。  
   
--   <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> プロパティ。 <xref:System.Runtime.Serialization.IDataContractSurrogate> の実装を指定するために使います。 <xref:System.Runtime.Serialization.IDataContractSurrogate> は、インポート処理をカスタマイズします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクト サロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)です。 既定では、サロゲートは使用されません。  
+-   <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> プロパティ。 <xref:System.Runtime.Serialization.IDataContractSurrogate> の実装を指定するために使います。 <xref:System.Runtime.Serialization.IDataContractSurrogate> は、インポート処理をカスタマイズします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [データ コントラクト サロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)です。 既定では、サロゲートは使用されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.XsdDataContractImporter>  
  <xref:System.Runtime.Serialization.XsdDataContractExporter>  

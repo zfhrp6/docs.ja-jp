@@ -1,13 +1,13 @@
 ---
-title: "方法 : Windows 資格情報でサービスをセキュリティで保護する"
-ms.custom: 
+title: '方法 : Windows 資格情報でサービスをセキュリティで保護する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-caps.latest.revision: 
+caps.latest.revision: 26
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6a5225f25ca921407d64f579bbc7c204917ff260
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cbe29ed57a7eee3a74166dabd2b8931e73cd2860
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>方法 : Windows 資格情報でサービスをセキュリティで保護する
-このトピックでトランスポート セキュリティを有効にする方法について説明、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスを Windows ドメインに存在し、同じドメイン内のクライアントによって呼び出されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]このシナリオを参照してください[トランスポート セキュリティと Windows 認証](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)です。 サンプル アプリケーションについては、次を参照してください。、 [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。  
+このトピックでトランスポート セキュリティを有効にする方法について説明、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスを Windows ドメインに存在し、同じドメイン内のクライアントによって呼び出されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] このシナリオを参照してください[トランスポート セキュリティと Windows 認証](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)です。 サンプル アプリケーションについては、次を参照してください。、 [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。  
   
  このトピックでは、定義済みのコントラクト インターフェイスと実装が既に存在するものとして、それに機能を追加していきます。 既存のサービスとクライアントを変更することもできます。  
   
@@ -57,17 +57,17 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[c_SecureWindowsService#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsservice/vb/secureservice.vb#1)]  
   
 ### <a name="using-the-binding-in-a-service"></a>サービスでのバインディングの使用  
- この 2 番目の手順では、自己ホスト型サービスでバインディングを使用する方法を示します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]ホスティング サービスを参照してください[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
+ この 2 番目の手順では、自己ホスト型サービスでバインディングを使用する方法を示します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ホスティング サービスを参照してください[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
   
 ##### <a name="to-use-a-binding-in-a-service"></a>サービスでバインディングを使用するには  
   
 1.  前の手順のコードの後に、この手順のコードを挿入します。  
   
-2.  <xref:System.Type> という名前の `contractType` 変数を作成し、その変数にインターフェイスの型 (`ICalculator`) を割り当てます。 [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] を使用している場合は、`GetType` 演算子を使用し、C# を使用している場合は、`typeof` キーワードを使用します。  
+2.  <xref:System.Type> という名前の `contractType` 変数を作成し、その変数にインターフェイスの型 (`ICalculator`) を割り当てます。 Visual Basic を使用する場合を使用して、`GetType`演算子; を使用して C# の場合、使用するときに、`typeof`キーワード。  
   
 3.  `Type` という名前の 2 つ目の `serviceType` 変数を作成し、その変数に実装されたコントラクトの型 (`Calculator`) を割り当てます。  
   
-4.  <xref:System.Uri> という名前で、サービスのベース アドレスが指定された `baseAddress` クラスのインスタンスを作成します。 ベース アドレスには、トランスポートに一致するスキームを指定する必要があります。 この場合、トランスポート スキームは HTTP であり、アドレスは、特別な URI (Uniform Resource Identifier) の "localhost"、ポート番号 (8036)、およびベース エンドポイント アドレス ("serviceModelSamples/) で構成されます。つまり、http://localhost:8036/serviceModelSamples/ になります。  
+4.  <xref:System.Uri> という名前で、サービスのベース アドレスが指定された `baseAddress` クラスのインスタンスを作成します。 ベース アドレスには、トランスポートに一致するスキームを指定する必要があります。 ここでは、トランスポート スキームは HTTP であり、アドレスは、特殊な識別子 URI (Uniform Resource)"localhost"、ポート番号 (8036)、およびベース エンドポイント アドレス ("serviceModelSamples/):http://localhost:8036/serviceModelSamples/です。  
   
 5.  <xref:System.ServiceModel.ServiceHost> 変数と `serviceType` 変数を指定して、`baseAddress` クラスのインスタンスを作成します。  
   
@@ -87,7 +87,7 @@ ms.lasthandoff: 12/22/2017
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>コードによってクライアントでバインディングを使用するには  
   
-1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 生成されたプロキシ コードは <xref:System.ServiceModel.ClientBase%601> クラスから継承しているので、各クライアントには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に必要なコンストラクター、メソッド、およびプロパティが確実に定義されます。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。  
+1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 生成されたプロキシ コードは <xref:System.ServiceModel.ClientBase%601> クラスから継承しているので、各クライアントには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に必要なコンストラクター、メソッド、およびプロパティが確実に定義されます。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。  
   
 2.  この手順のコードは、クライアント プログラムの `Main` メソッドの先頭に挿入します。  
   
@@ -140,7 +140,7 @@ ms.lasthandoff: 12/22/2017
   
 ##### <a name="to-use-a-binding-in-a-client-with-configuration"></a>構成によってクライアントでバインディングを使用するには  
   
-1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードと構成ファイルを生成します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
+1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードと構成ファイルを生成します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
   
 2.  置換、 [\<バインド >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)前のセクションの構成コードで生成された構成ファイルのセクションです。  
   
@@ -160,7 +160,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_SecureWindowsClient#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsclient/cs/secureclient.cs#0)] 
  [!code-vb[c_SecureWindowsClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsclient/vb/secureclient.vb#0)]      
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WSHttpBinding>  
  [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  

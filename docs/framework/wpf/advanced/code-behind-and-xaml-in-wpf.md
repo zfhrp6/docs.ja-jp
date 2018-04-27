@@ -1,30 +1,32 @@
 ---
-title: "WPF における分離コードと XAML"
-ms.custom: 
+title: WPF における分離コードと XAML
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - XAML [WPF], code-behind
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 19c7c2cdd49663a57a4184027fd7d6ad8fcd7656
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9c28a501996e4f2cc25e9e280b2f63e1c0c67051
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>WPF における分離コードと XAML
-<a name="introduction"></a>分離コードとは、マークアップ定義オブジェクトによって結合されるコードの記述に使用される用語と、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページがマークアップ コンパイルします。 このトピックは、分離コードの要件および内のコードの別のインライン コード メカニズムについて説明します。[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
+<a name="introduction"></a> 分離コードとは、マークアップ定義オブジェクトによって結合されるコードの記述に使用される用語と、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページがマークアップ コンパイルします。 このトピックは、分離コードの要件および内のコードの別のインライン コード メカニズムについて説明します。[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -57,11 +59,11 @@ ms.lasthandoff: 12/22/2017
   
 -   ハンドラーは、バッキング型システムで適切なイベントのデリゲートに一致しなければなりません。  
   
--   [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)]言語固有の言語を使用する具体的には、`Handles`インスタンスとでの属性のハンドラーのアタッチではなく、ハンドラーの宣言内のイベントにハンドラーを関連付けるキーワード[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 ただし、この手法はいくつかの制限がありますので、`Handles`キーワードには、すべての特定の機能のサポートできない、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]など特定のイベントのシステム イベントのシナリオをルーティングまたはアタッチされるイベント。 詳細については、「 [Visual Basic およびイベント処理の WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)です。  
+-   Microsoft Visual Basic 言語具体的には、使用できます、言語固有`Handles`インスタンスとでの属性のハンドラーのアタッチではなく、ハンドラーの宣言内のイベントにハンドラーを関連付けるキーワード[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 ただし、この手法はいくつかの制限がありますので、`Handles`キーワードには、すべての特定の機能のサポートできない、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]など特定のイベントのシステム イベントのシナリオをルーティングまたはアタッチされるイベント。 詳細については、「 [Visual Basic およびイベント処理の WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)です。  
   
 <a name="x_Code"></a>   
 ## <a name="xcode"></a>x: コード  
- [X:code](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)ディレクティブ要素で定義されている[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 `x:Code`ディレクティブ要素がインラインのプログラミング コードを含めることができます。 インラインで定義されているコードに対話できる、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]同じページにします。 次の例では、インライン[!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)]コード。 内のコードにある通知、`x:Code`要素と、コードで囲む必要がある`<CDATA[`しています.`]]>`の内容をエスケープするために[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]するように、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサ (解釈するか、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]スキーマまたは[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]スキーマ) 内容を解釈しようとは、リテラルとして[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]です。  
+ [X:code](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)ディレクティブ要素で定義されている[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 `x:Code`ディレクティブ要素がインラインのプログラミング コードを含めることができます。 インラインで定義されているコードに対話できる、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]同じページにします。 次の例は、インライン c# コードを示しています。 内のコードにある通知、`x:Code`要素と、コードで囲む必要がある`<CDATA[`しています.`]]>`の内容をエスケープするために[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]するように、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサ (解釈するか、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]スキーマまたは[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]スキーマ) 内容を解釈しようとは、リテラルとして[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]です。  
   
  [!code-xaml[XAMLOvwSupport#ButtonWithInlineCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page4.xaml#buttonwithinlinecode)]  
   
@@ -69,7 +71,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="inline-code-limitations"></a>インライン コードの制限  
  回避するインライン コードの使用を制限したりすることを検討する必要があります。 アーキテクチャとコーディングの原理に関してマークアップと分離コードの間の分離の維持は保持設計者と開発者の役割もはっきりと区別します。 技術的な詳細レベルでは、インライン コードを記述するコードが生じること書き込むには、メッセージが不適切に常に記述するため、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]部分クラスを生成し、既定の XML 名前空間のマッピングのみを使用できます。 追加できないため、`using`ステートメント、する必要がありますを完全修飾の多く、[!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)]行う呼び出しです。 既定値[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]マッピングを含める最もすべてではない[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]名前空間に存在する、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アセンブリへの呼び出しの種類およびその他の CLR 名前空間内に含まれるメンバーを完全に修飾する必要があります。 定義することもできない部分クラス以外のインライン コードにしを参照するすべてのユーザー コードのエンティティが生成される部分クラス内の変数またはメンバーとして存在する必要があります。 その他の言語固有プログラミングなどの機能、マクロや`#ifdef`グローバル変数、またはビルド変数、に対しては、利用できません。 詳細については、次を参照してください。 [X:code 組み込み XAML 型](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [x:Code 組み込み XAML 型 ](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)  
  [WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  

@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 55a9a50527df0605cb9699622a165147597a500a
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 9e461a847e36277cb7d70534249a926693584b1f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>方法 : XPS ファイルをプログラムにより印刷する
 1 つのオーバー ロードを使用することができます、<xref:System.Printing.PrintQueue.AddJob%2A>を印刷するメソッド[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]ファイルを開かず、<xref:System.Windows.Controls.PrintDialog>または原則として、任意[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]まったくです。  
@@ -56,9 +56,9 @@ ms.lasthandoff: 04/16/2018
   
  XPSDrv プリンターを使用している場合は、最後のパラメーターを `true` に設定できます。 その場合、[!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] はプリンターのページ記述言語であるため、メソッドはファイルの検証や別のページ記述言語への変換を行わずにファイルをプリンターに送ります。 不明なデザイン時にするかどうか、アプリケーションで使用される XPSDrv プリンター場合、は、アプリケーションの読み取りを変更することができます、<xref:System.Printing.PrintQueue.IsXpsDevice%2A>プロパティと検出した内容に従って分岐します。  
   
- [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] および [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] のリリースの直後には XPSDrv プリンターの普及率が低いことが想定されるため、場合によっては、XPSDrv プリンターではないプリンターを XPSDrv プリンターに見せかける必要があります。 そのためには、アプリケーションを実行しているコンピューターで、以下のレジストリ キーのファイルの一覧に Pipelineconfig.xml を追加します。  
+ 最初になるため XPSDrv プリンターをいくつか使用可能なのリリース後すぐに[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]し、Microsoft .NET Framework XPSDrv プリンターとして XPSDrv 以外のプリンターを偽装する必要があります。 そのためには、アプリケーションを実行しているコンピューターで、以下のレジストリ キーのファイルの一覧に Pipelineconfig.xml を追加します。  
   
- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Drivers\Version-3\\*\<PseudoXPSPrinter>*\DependentFiles  
+ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Drivers\Version-3\\*\<PseudoXPSPrinter>* \DependentFiles  
   
  ここで、*\<PseudoXPSPrinter* は任意の印刷キューです。 その後、コンピューターを再起動する必要があります。  
   

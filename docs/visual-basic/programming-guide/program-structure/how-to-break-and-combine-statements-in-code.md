@@ -31,11 +31,11 @@ ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: cf6b3ce7e5f9549ca04c4980bd3c91513b343ff6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 06702cdc9073065a418b17d198dbb43be4aefca1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>方法: コード内でステートメントを分割および連結する (Visual Basic)
 コードを書くときにも必要になるは、水平方向にスクロール コード エディターでステートメントが長くなりを作成する可能性があります。 方法は、これには影響しませんが、コードの実行、困難の作成者やその他のユーザーをモニターに表示されるようにコードを読み取る。 このような場合は、単一の長いステートメントを複数の行に分割することを検討してください。  
@@ -59,7 +59,7 @@ ms.lasthandoff: 11/21/2017
   
      行連結文字を使用してコメントを続行することはできません。 コンパイラには、特別な意味のコメント内の文字を確認しません。 複数行にコメントを記述する場合は、コメント記号を繰り返します (`'`) 行ごとにします。  
   
- 行ごとに各ステートメントを配置することをお勧めの方法では、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]同じ行に複数のステートメントを配置することもできます。  
+ 行ごとに各ステートメントを配置することは推奨される方法が、Visual Basic することもできますが同じ直線上に複数のステートメントを配置します。  
   
 ### <a name="to-place-multiple-statements-on-the-same-line"></a>同じ行に複数のステートメントを配置するには  
   

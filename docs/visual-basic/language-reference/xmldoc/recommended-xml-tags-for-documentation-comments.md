@@ -18,14 +18,14 @@ ms.assetid: 294e0736-ff1e-498e-af83-6db71ed41a72
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 54712deb8bb2a5ed1e7b1f5fb8aa073dcdaf76d6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7815d4c9fddc4e760c7495ef7a2509c55141e96e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="recommended-xml-tags-for-documentation-comments-visual-basic"></a>ドキュメント コメントとして推奨される XML タグ (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラは、コードを XML ファイルにドキュメント コメントを処理できます。 その他のツールを使用して、ドキュメントを XML ファイルに変換することができます。  
+Visual Basic コンパイラでは、XML ファイルにコードでドキュメントのコメントを処理できます。 その他のツールを使用して、ドキュメントを XML ファイルに変換することができます。  
   
  XML コメントは、型など、コード コンス トラクターでは許可し、メンバーを入力します。 部分の型の型の 1 つだけの一部はそのメンバーをコメントに制限はありませんが XML コメントを持つことができます。  
   

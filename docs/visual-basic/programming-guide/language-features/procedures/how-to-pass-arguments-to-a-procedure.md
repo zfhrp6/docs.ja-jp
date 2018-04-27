@@ -1,11 +1,12 @@
 ---
-title: "方法: プロシージャに引数を渡す (Visual Basic)"
-ms.custom: 
+title: '方法: プロシージャに引数を渡す (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - arguments [Visual Basic], passing to procedures
@@ -17,14 +18,14 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - argument passing [Visual Basic], procedures
 ms.assetid: 08723588-3890-4ddc-8249-79e049e0f241
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3debb4fa6e7b15f9c321ef207d0cc04181a98da2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1e8f8e438dc749e7f5f0d33aeaa26dfbcf4c29f3
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>方法: プロシージャに引数を渡す (Visual Basic)
 プロシージャを呼び出すときに、かっこ内に引数リストを持つプロシージャの名前に従います。 プロシージャに定義されたすべての必須パラメーターに対応する引数を指定して、引数を指定することができます必要に応じて、`Optional`パラメーター。 指定しない場合、`Optional`呼び出しのパラメーターは、任意の以降の引数を指定している場合、引数リスト内での位置をマークするコンマを含める必要があります。  
@@ -45,15 +46,16 @@ ms.lasthandoff: 11/21/2017
   
 5.  引数を省略した場合、`Optional`パラメーターとパラメーター リストで別のパラメーター後に、引数リスト内の余分なコンマが省略された引数の代わりをマークすることができます。  
   
-     次の例では、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>関数。  
+     次の例では、Visual Basic<xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>関数。  
   
      [!code-vb[VbVbcnProcedures#34](./codesnippet/VisualBasic/how-to-pass-arguments-to-a-procedure_1.vb)]  
   
-     前の例では、必要な最初の引数を表示するメッセージ文字列を指定します。 省略可能な 2 番目のパラメーター、メッセージ ボックスに表示するボタンを指定する引数を省略します。 呼び出しは、値を指定していないため`MsgBox`既定値を使用して`MsgBoxStyle.OKOnly`、のみが表示されます、 **[ok]**ボタンをクリックします。  
+     前の例では、必要な最初の引数を表示するメッセージ文字列を指定します。 省略可能な 2 番目のパラメーター、メッセージ ボックスに表示するボタンを指定する引数を省略します。 呼び出しは、値を指定していないため`MsgBox`既定値を使用して`MsgBoxStyle.OKOnly`、のみが表示されます、 **[ok]** ボタンをクリックします。  
   
      引数リスト内の 2 つ目のコンマは省略すると 2 番目の引数の位置をマークし、最後の文字列は省略可能な 3 番目のパラメーターに渡される`MsgBox`、これは、タイトル バーに表示されるテキストです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>関連項目
+
  [Sub プロシージャ](./sub-procedures.md)  
  [Function プロシージャ](./function-procedures.md)  
  [Property プロシージャ](./property-procedures.md)  
@@ -63,4 +65,4 @@ ms.lasthandoff: 11/21/2017
  [再帰プロシージャ](./recursive-procedures.md)  
  [プロシージャのオーバーロード](./procedure-overloading.md)  
  [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [オブジェクト指向プログラミング](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)
+ [オブジェクト指向プログラミング (Visual Basic)](../../concepts/object-oriented-programming.md)  

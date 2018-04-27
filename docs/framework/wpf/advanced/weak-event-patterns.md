@@ -1,34 +1,36 @@
 ---
-title: "弱いイベント パターン"
-ms.custom: 
+title: 弱いイベント パターン
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - weak event pattern implementation [WPF]
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 21a36797f945f37a641e7002bbb9937a664650fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f96327f8eaad36f3faebf48db083125816589821
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="weak-event-patterns"></a>弱いイベント パターン
-アプリケーションでは、可能であれば、イベント ソースに接続されているハンドラーは破棄されません、ハンドラーをソースに接続されているリスナー オブジェクトと連携します。 このような状況は、メモリ リークが発生する可能性があります。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]この問題に対処、特定のイベントの専用マネージャー クラスを提供して、そのイベントのリスナーにインターフェイスを実装して使用できるデザイン パターンについて説明します。 この設計パターンと呼ばれる、*弱いイベント パターン*です。  
+アプリケーションでは、可能であれば、イベント ソースに接続されているハンドラーは破棄されません、ハンドラーをソースに接続されているリスナー オブジェクトと連携します。 このような状況は、メモリ リークが発生する可能性があります。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] この問題に対処、特定のイベントの専用マネージャー クラスを提供して、そのイベントのリスナーにインターフェイスを実装して使用できるデザイン パターンについて説明します。 この設計パターンと呼ばれる、*弱いイベント パターン*です。  
   
 ## <a name="why-implement-the-weak-event-pattern"></a>弱いイベント パターンを実装する理由  
- イベントのリッスンと、メモリ リークが発生する可能性があります。 イベントをリッスンするための一般的な手法では、ソースでのイベントにハンドラーをアタッチする言語固有の構文を使用します。 たとえば、 [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)]、構文がである:`source.SomeEvent += new SomeEventHandler(MyEventHandler)`です。  
+ イベントのリッスンと、メモリ リークが発生する可能性があります。 イベントをリッスンするための一般的な手法では、ソースでのイベントにハンドラーをアタッチする言語固有の構文を使用します。 たとえば、C# の場合、その構文は:`source.SomeEvent += new SomeEventHandler(MyEventHandler)`です。  
   
  この手法は、強い参照をイベント ソースからのイベント リスナーを作成します。 オブジェクトの有効期間が影響を受けるソースのオブジェクトの有効期間 (しない限り、イベント ハンドラーが明示的に削除) にリスナーが通常は、リスナーのイベント ハンドラーをアタッチするとします。 特定の状況で、ソースの有効期間ではなく、アプリケーションのビジュアル ツリーに現在属しているかどうかなどするその他の要因によって制御されているリスナーのオブジェクトの有効期間をする可能性があります。 ソース オブジェクトの有効期間は、リスナーのオブジェクトの有効期間からはみ出した、ときに通常のイベント パターンは、メモリ リークが発生につながります。 リスナーが有効のまま保持ためのものよりも長い時間です。  
   
@@ -140,7 +142,7 @@ ms.lasthandoff: 12/22/2017
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.WeakEventManager>  
  <xref:System.Windows.IWeakEventListener>  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  

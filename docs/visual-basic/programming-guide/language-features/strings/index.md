@@ -15,18 +15,18 @@ ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
 caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ffa6e015339387746b0cc1c4e5d3c2b84f84720e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: eae0bec98d960dd8d6cbe5859599a3758bdbfe56
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="strings-in-visual-basic"></a>Visual Basic における文字列
-このセクションは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で文字列を使用する場合の基本的な考え方について説明します。  
+このセクションでは、Visual Basic で文字列を使用するときの基本的な概念について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Visual Basic の文字列の概要](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で文字列を使用する場合の基本概念に関するトピックを紹介します。  
+ Visual Basic で文字列を使用するときの基本的な概念を説明するトピックを一覧表示します。  
   
  [方法 : Visual Basic の StringBuilder を使用して文字列を作成する](../../../../visual-basic/programming-guide/language-features/strings/how-to-create-strings-using-a-stringbuilder.md)  
  長い文字列を多数のより短い文字列から効率的に作成する方法を紹介します。  

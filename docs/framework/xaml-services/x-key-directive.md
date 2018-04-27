@@ -1,12 +1,13 @@
 ---
-title: "x:Key ディレクティブ"
-ms.custom: 
+title: x:Key ディレクティブ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - xKey
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - Key attribute in XAML [XAML Services]
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2c73cf28905e1dd0f3056ab0eed953d6f05b0a7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f28ed1e4077a48016ddd8d9b5eeb45d6ba25d8e5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xkey-directive"></a>x:Key ディレクティブ
 XAML で定義されたディクショナリで作成および参照される要素を一意に識別します。 `x:Key` 値を XAML オブジェクトに追加するのは、リソース ディクショナリ (<xref:System.Windows.ResourceDictionary> など) のリソースを識別するための最も一般的な方法です。  
@@ -56,7 +58,7 @@ XAML で定義されたディクショナリで作成および参照される要
 |||  
 |-|-|  
 |`stringKeyValue`|キーとして使用するテキスト文字列。 テキスト文字列に準拠する必要があります、 [XamlName の文法](../../../docs/framework/xaml-services/xamlname-grammar.md)です。|  
-|`markupExtensionUsage`|マークアップ拡張機能の区切り記号 {} 内では、キーとして使用するオブジェクトを提供するマークアップ拡張機能の使用方法です。 「解説」を参照してください。|  
+|`markupExtensionUsage`|マークアップ拡張機能の区切り文字で{}、マークアップ拡張機能の使用をキーとして使用するオブジェクトを提供します。 「解説」を参照してください。|  
   
 ## <a name="remarks"></a>コメント  
  `x:Key` は XAML のリソース ディクショナリの概念をサポートしています。 言語としての XAML ではリソース ディクショナリの実装は定義されていません。特定の UI フレーム ワークによって定義されています。 Wpf XAML リソース ディクショナリを実装する方法の詳細については、次を参照してください。 [XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)です。  
@@ -76,7 +78,7 @@ XAML で定義されたディクショナリで作成および参照される要
   
 -   WPF は、マージされたリソース ディクショナリの概念をサポートしています。 キーは、マージされたディクショナリ間で共有できます。また、共有されたキーの動作には、<xref:System.Windows.FrameworkContentElement.FindResource%2A> を使用してアクセスできます。 詳細については、「[Merged Resource Dictionaries](../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
   
- 通常、WPF XAML の実装およびアプリケーション モデルでは、キーの一意性が XAML マークアップ コンパイラによってチェックされることはありません。 その代わり、`x:Key` 値が指定されていない場合や一意でない場合は、読み込み時に XAML パーサー エラーが発生します。 ただし、[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)]辞書の処理の WPF ことができます、設計段階でこのようなエラーを多くの場合、注意してください。  
+ 通常、WPF XAML の実装およびアプリケーション モデルでは、キーの一意性が XAML マークアップ コンパイラによってチェックされることはありません。 その代わり、`x:Key` 値が指定されていない場合や一意でない場合は、読み込み時に XAML パーサー エラーが発生します。 ただし、wpf のディクショナリの Visual Studio 処理できます多くの場合、このようなエラー、設計フェーズで。  
   
  ここに示す構文において、<xref:System.Windows.ResourceDictionary> オブジェクトは WPF XAML プロセッサが <xref:System.Windows.FrameworkElement.Resources%2A> コレクションを取得するためのコレクションを生成する方法を暗黙的に決定することに注意してください。 <xref:System.Windows.ResourceDictionary> は、通常はマークアップで要素として明示的に指定されませんが、わかりやすくするために必要に応じて明示的に指定することもできます (その場合、このオブジェクトは、<xref:System.Windows.FrameworkElement.Resources%2A> プロパティ要素とディクショナリに設定される項目間のコレクション オブジェクト要素になります)。 なぜ、コレクション オブジェクトはほとんどの場合、暗黙的なマークアップで要素については、次を参照してください。 [XAML 構文の詳細](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)です。  
   
@@ -121,7 +123,7 @@ keyObject
 ## <a name="silverlight-usage-notes"></a>Silverlight の使用上の注意  
  Silverlight 用の `x:Key` に関しては、別途ドキュメントが用意されています。 詳細については、次を参照してください[XAML Namespace (x:)。言語機能 (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [リソースとコード](../../../docs/framework/wpf/advanced/resources-and-code.md)  
  [StaticResource のマークアップ拡張機能](../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)

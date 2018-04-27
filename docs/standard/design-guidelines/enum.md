@@ -1,12 +1,12 @@
 ---
-title: "列挙型デザイン"
-ms.custom: 
+title: 列挙型デザイン
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - type design guidelines, enumerations
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], enumerations
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3ee73e8677ca3fd48f4bb3c94bd4e15c49a564c7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c3e89567761367ddcd67078b138c15b982a0d666
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="enum-design"></a>列挙型デザイン
 列挙型は、特殊な値の型です。 列挙型の 2 種類があります。 単純な列挙型、およびフラグ列挙型。  
@@ -77,7 +77,7 @@ ms.lasthandoff: 12/23/2017
   
  **X しないで**拡張<xref:System.Enum?displayProperty=nameWithType>直接です。  
   
- <xref:System.Enum?displayProperty=nameWithType>特殊な種類で使用、CLR ユーザー定義列挙型を作成します。 ほとんどのプログラミング言語では、この機能にアクセスできるプログラミング要素を提供します。 たとえば、c# では、`enum`列挙体を定義するキーワードを使用します。  
+ <xref:System.Enum?displayProperty=nameWithType> 特殊な種類で使用、CLR ユーザー定義列挙型を作成します。 ほとんどのプログラミング言語では、この機能にアクセスできるプログラミング要素を提供します。 たとえば、c# では、`enum`列挙体を定義するキーワードを使用します。  
   
 <a name="design"></a>   
 ### <a name="designing-flag-enums"></a>設計のフラグ列挙型  
@@ -87,7 +87,7 @@ ms.lasthandoff: 12/23/2017
   
  **✓ を検討してください**フラグの組み合わせを使用してよくの特別な enum 値を提供します。  
   
- ビットごとの演算は高度な概念することはできません、単純なタスク <xref:System.IO.FileAccess.ReadWrite>このような特殊な値の例を示します。  
+ ビットごとの演算は高度な概念することはできません、単純なタスク <xref:System.IO.FileAccess.ReadWrite> このような特殊な値の例を示します。  
   
  **避け x**特定の値の組み合わせは有効なフラグ列挙型を作成します。  
   
@@ -105,8 +105,8 @@ ms.lasthandoff: 12/23/2017
   
  *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [型デザインのガイドライン](../../../docs/standard/design-guidelines/type.md)  
  [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

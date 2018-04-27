@@ -1,11 +1,12 @@
 ---
-title: "参照と Imports ステートメント (Visual Basic)"
-ms.custom: 
+title: 参照と Imports ステートメント (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - assemblies [Visual Basic], namespaces
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - Imports statement [Visual Basic], referencing assemblies
 - assemblies [Visual Basic], references
 ms.assetid: 38149bd4-0a6f-4b31-b5f8-94a8c33f1600
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 60c62eae57ae127fcbb860fe72853604802cccd9
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 051351c2fa0648de54bbfd36b1630ec1cd49d6f0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="references-and-the-imports-statement-visual-basic"></a>参照と Imports ステートメント (Visual Basic)
-利用できる外部オブジェクトをプロジェクトを選択して、**参照の追加**コマンドを**プロジェクト**メニュー。 参照[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]タイプ ライブラリが含まれていますが、詳細についてにと似ていますが、アセンブリを指すことができます。  
+利用できる外部オブジェクトをプロジェクトを選択して、**参照の追加**コマンドを**プロジェクト**メニュー。 Visual Basic での参照は、タイプ ライブラリが含まれていますが、詳細についてにと似ていますが、アセンブリを指すことができます。  
   
 ## <a name="the-imports-statement"></a>Imports ステートメント  
  アセンブリには、1 つまたは複数の名前空間が含まれます。 アセンブリへの参照を追加するときに追加することも、`Imports`ステートメント、モジュール内でそのアセンブリの名前空間の表示を制御するモジュールにします。 `Imports`ステートメントは、一意の参照を指定するために必要な名前空間の部分のみを使用できるスコープのコンテキストを提供します。  
@@ -34,19 +35,19 @@ ms.lasthandoff: 12/21/2017
   
  `Imports` [`|``Aliasname` =] `Namespace`  
   
- `Aliasname`インポート済み名前空間を参照するコード内で使用できる短い名前を指します。 `Namespace`名前空間のいずれかで使用可能なプロジェクト参照をプロジェクト内で定義、または以前を通じて`Imports`ステートメントです。  
+ `Aliasname` インポート済み名前空間を参照するコード内で使用できる短い名前を指します。 `Namespace` 名前空間のいずれかで使用可能なプロジェクト参照をプロジェクト内で定義、または以前を通じて`Imports`ステートメントです。  
   
  モジュールは、任意の数を含めることがあります`Imports`ステートメントです。 いずれかの後に出現する必要があります`Option`ステートメント、存在する場合、その他のコードの前にします。  
   
 > [!NOTE]
->  プロジェクト参照とを混同しないでください、`Imports`ステートメントまたは`Declare`ステートメントです。 プロジェクトの参照、アセンブリ内のオブジェクトなど、外部のオブジェクトを利用[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロジェクト。 `Imports`ステートメントは、プロジェクト参照へのアクセスを簡素化されますが、これらのオブジェクトへのアクセスを提供しません。 `Declare`ダイナミック リンク ライブラリ (DLL) で外部プロシージャへの参照を宣言するステートメントを使用します。  
+>  プロジェクト参照とを混同しないでください、`Imports`ステートメントまたは`Declare`ステートメントです。 プロジェクト参照は、Visual Basic プロジェクトで使用できる、アセンブリ内のオブジェクトなど、外部のオブジェクトを作成します。 `Imports`ステートメントは、プロジェクト参照へのアクセスを簡素化されますが、これらのオブジェクトへのアクセスを提供しません。 `Declare`ダイナミック リンク ライブラリ (DLL) で外部プロシージャへの参照を宣言するステートメントを使用します。  
   
 ## <a name="using-aliases-with-the-imports-statement"></a>Imports ステートメントを使用してエイリアスを使用します。  
  `Imports`ステートメント簡単にクラスのアクセス方法によって明示的に参照の完全修飾名を入力する必要があります。 エイリアスを使用する名前空間の 1 つの部分に付けるわかりやすい名前を割り当てます。 たとえばの一部は、復帰/改行シーケンスに複数の行に表示されるテキストの 1 つの原因となる、<xref:Microsoft.VisualBasic.ControlChars>内のモジュール、<xref:Microsoft.VisualBasic?displayProperty=nameWithType>名前空間。 この定数を使用して、エイリアスがなければプログラムに、次のコードを入力する必要があります。  
   
  [!code-vb[VbVbalrApplication#3](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/references-and-the-imports-statement_1.vb)]  
   
- `Imports`ステートメントはすぐに次のいずれかの最初の行を常にある`Option`モジュール内のステートメント。 次のコード フラグメントをインポートし、エイリアスを割り当てる方法を示しています、<xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType>モジュール。  
+ `Imports` ステートメントはすぐに次のいずれかの最初の行を常にある`Option`モジュール内のステートメント。 次のコード フラグメントをインポートし、エイリアスを割り当てる方法を示しています、<xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType>モジュール。  
   
  [!code-vb[VbVbalrApplication#4](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/references-and-the-imports-statement_2.vb)]  
   
@@ -56,7 +57,7 @@ ms.lasthandoff: 12/21/2017
   
  場合、`Imports`ステートメントは、エイリアス名を指定していない、インポートされた名前空間内で定義されている要素を修飾なしのモジュールで使用できます。 エイリアス名が指定されている場合その名前空間内に含まれる名前の修飾子として使用するあります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.ControlChars>  
  <xref:Microsoft.VisualBasic>  
    

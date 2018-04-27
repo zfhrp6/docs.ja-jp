@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1e1c00abfec36622f5da493165259fb1786ab8d6
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a13e5a0044c51700acce6b123688868443f635ae
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する
 これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、3 番目のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
@@ -40,9 +40,9 @@ ms.lasthandoff: 03/26/2018
   
 ## <a name="to-create-a-new-console-application-to-host-the-service"></a>新しいコンソール アプリケーションを作成し、サービスをホストするには  
   
-1.  はじめにソリューションを選択するを右クリックして新しいコンソール アプリケーション プロジェクトを作成する**追加**、**新しいプロジェクト**です。 **新しいプロジェクトの追加**ダイアログの の左側でダイアログ**Windows**  **c#**または**VB**です。 ダイアログの中央のセクションで選択**コンソール アプリケーション**です。 プロジェクトに GettingStartedHost という名前を付けます。  
+1.  はじめにソリューションを選択するを右クリックして新しいコンソール アプリケーション プロジェクトを作成する**追加**、**新しいプロジェクト**です。 **新しいプロジェクトの追加**ダイアログの の左側でダイアログ**Windows**  **c#** または**VB**です。 ダイアログの中央のセクションで選択**コンソール アプリケーション**です。 プロジェクトに GettingStartedHost という名前を付けます。  
   
-2.  右クリックで GettingStartedHost プロジェクトのターゲット フレームワークを .NET Framework 4.5 に設定**GettingStartedHost**ソリューション エクスプ ローラーを選択して**プロパティ**です。 ラベルの付いたボックスの一覧で**ターゲット フレームワーク**選択**.NET Framework 4.5**です。 VB プロジェクトは少し異なり、GettingStartedHost プロジェクトのプロパティ ダイアログ ボックスのターゲット フレームワークを設定をクリックして、**コンパイル**、画面の左側にあるタブをクリックして、**高度なコンパイルオプション**ダイアログ ボックスの左下隅にあるボタンをクリックします。 選択し、 **.NET Framework 4.5**というドロップダウン ボックスで**ターゲット フレームワーク**です。  
+2.  右クリックで GettingStartedHost プロジェクトのターゲット フレームワークを .NET Framework 4.5 に設定**GettingStartedHost**ソリューション エクスプ ローラーを選択して**プロパティ**です。 ラベルの付いたボックスの一覧で**ターゲット フレームワーク**選択 **.NET Framework 4.5**です。 VB プロジェクトは少し異なり、GettingStartedHost プロジェクトのプロパティ ダイアログ ボックスのターゲット フレームワークを設定をクリックして、**コンパイル**、画面の左側にあるタブをクリックして、**高度なコンパイルオプション**ダイアログ ボックスの左下隅にあるボタンをクリックします。 選択し、 **.NET Framework 4.5**というドロップダウン ボックスで**ターゲット フレームワーク**です。  
   
      ターゲット フレームワークと、設定[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]キーを押して、ソリューションを再読み込みする**OK**が表示されたらです。  
   
@@ -170,7 +170,7 @@ ms.lasthandoff: 03/26/2018
   
 ### <a name="to-verify-the-service-is-working"></a>サービスが正常に機能していることを確認するには  
   
-1.  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] 内から GettingStartedHost コンソール アプリケーションを実行します。 [!INCLUDE[wv](../../../includes/wv-md.md)] 以降のオペレーティング システムでは、サービスを管理者権限で実行する必要があります。 [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] は管理者権限で実行されているため、GettingStartedHost も管理者権限で実行される必要があります。 新しいコマンド プロンプトを管理者権限で開いて、service.exe をその中で実行することもできます。  
+1.  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] 内から GettingStartedHost コンソール アプリケーションを実行します。 [!INCLUDE[wv](../../../includes/wv-md.md)] 以降のオペレーティング システムでは、サービスを管理者権限で実行する必要があります。 Visual Studio が管理者特権で実行された、GettingStartedHost も管理者特権で実行されます。 新しいコマンド プロンプトを管理者権限で開いて、service.exe をその中で実行することもできます。  
   
 2.  Internet Explorer を開き、サービスのデバッグ ページ (`http://localhost:8000/GettingStarted/CalculatorService`) に移動します。  
   
@@ -424,7 +424,7 @@ End Module
 ```  
   
 > [!NOTE]
->  このようなサービスには、リッスンを行うコンピューター上で HTTP アドレスを登録するためのアクセス許可が必要です。 管理者アカウントにはこのアクセス許可がありますが、管理者以外のアカウントの場合は、HTTP 名前空間へのアクセス許可を付与する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 参照してください、名前空間の予約を構成する方法[を構成する HTTP および HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)です。 [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] での service.exe の実行には、管理者権限が必要です。  
+>  このようなサービスには、リッスンを行うコンピューター上で HTTP アドレスを登録するためのアクセス許可が必要です。 管理者アカウントにはこのアクセス許可がありますが、管理者以外のアカウントの場合は、HTTP 名前空間へのアクセス許可を付与する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 参照してください、名前空間の予約を構成する方法[を構成する HTTP および HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)です。 Visual Studio での実行中、管理者特権を持つ、service.exe を実行する必要があります。  
   
  これでサービスが実行されていることが確認できました。 進みます[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 情報をトラブルシューティングするには、次を参照してください。[チュートリアル入門のトラブルシューティング](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md)です。  
   

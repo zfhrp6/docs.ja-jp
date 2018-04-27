@@ -1,18 +1,19 @@
 ---
-title: "Azure Vm (IaaS クラウド) に Windows コンテナーを展開するタイミング"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Azure Vm (IaaS クラウド) に Windows コンテナーを展開するタイミング"
+title: Azure Vm (IaaS クラウド) に Windows コンテナーを展開するタイミング
+description: コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |Azure Vm (IaaS クラウド) に Windows コンテナーを展開するタイミング
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 37a37f91bb910004128c96511f585bea03a51d3a
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: d1a9f0593b4b84cbe25da9e4164f4ecbe8513831
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-vms-iaas-cloud"></a>Azure Vm (IaaS クラウド) に Windows コンテナーを展開するタイミング
 

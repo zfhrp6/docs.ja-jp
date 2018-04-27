@@ -1,11 +1,12 @@
 ---
-title: "暗黙の型変換と明示的な型変換 (Visual Basic)"
-ms.custom: 
+title: 暗黙の型変換と明示的な型変換 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - conversions [Visual Basic], type
@@ -26,17 +27,17 @@ helpviewer_keywords:
 - data type conversion [Visual Basic], implicit
 - implicit data type conversions [Visual Basic]
 ms.assetid: 77de1659-af8a-492c-967e-e7ef60ccce66
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6e9dd698e1cc84464cd12d33767feec960c511ca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9827cecce0a15d37d2ffe3ccf691404149b156fb
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="implicit-and-explicit-conversions-visual-basic"></a>暗黙の型変換と明示的な型変換 (Visual Basic)
-*暗黙的な変換*特別な構文のソース コードでは必要ありません。 次の例では、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]の値を暗黙的に変換`k`単精度浮動小数点値を割り当てる前に`q`です。  
+*暗黙的な変換*特別な構文のソース コードでは必要ありません。 次の例では、Visual Basic に暗黙的の値を変換`k`単精度浮動小数点値を割り当てる前に`q`です。  
   
 ```  
 Dim k As Integer  
@@ -46,7 +47,7 @@ k = 432
 q = k  
 ```  
   
- *明示的な変換*型の変換キーワードを使用します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]このようなキーワードが複数、目的のデータ型をかっこで囲まれた式を強制するを提供します。 関数と同様、これらのキーワードの動作が、コンパイラは、実行は、関数呼び出しよりもわずかに高速に、コード インラインを生成します。  
+ *明示的な変換*型の変換キーワードを使用します。 Visual Basic では、いくつかそのようなキーワード、目的のデータ型をかっこで指定した式変換を提供します。 関数と同様、これらのキーワードの動作が、コンパイラは、実行は、関数呼び出しよりもわずかに高速に、コード インラインを生成します。  
   
  前の例では、次の拡張機能に、`CInt`キーワードの値を変換する`q`に割り当てる前に整数に戻す`k`です。  
   
@@ -62,28 +63,28 @@ k = CInt(q)
   
 |型変換キーワード|データ型の式に変換します。|変換する式のデータ型|  
 |---|---|---|  
-|`CBool`|[Boolean データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `String`、`Object`|  
-|`CByte`|[Byte データ型](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|任意の数値型 (など`SByte`および列挙型)、 `Boolean`、 `String`、`Object`|  
+|`CBool`|[Boolean データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `String`、 `Object`|  
+|`CByte`|[Byte データ型](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|任意の数値型 (など`SByte`および列挙型)、 `Boolean`、 `String`、 `Object`|  
 |`CChar`|[Char データ型](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`String`, `Object`|  
 |`CDate`|[Date データ型](../../../../visual-basic/language-reference/data-types/date-data-type.md)|`String`, `Object`|  
-|`CDbl`|[Double 型](../../../../visual-basic/language-reference/data-types/double-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CDec`|[Decimal データ型](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CInt`|[整数データ型](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CLng`|[Long データ型](../../../../visual-basic/language-reference/data-types/long-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
+|`CDbl`|[Double 型](../../../../visual-basic/language-reference/data-types/double-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CDec`|[Decimal データ型](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CInt`|[整数データ型](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CLng`|[Long データ型](../../../../visual-basic/language-reference/data-types/long-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
 |`CObj`|[Object 型](../../../../visual-basic/language-reference/data-types/object-data-type.md)|任意の型|  
-|`CSByte`|[SByte データ型](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|任意の数値型 (など`Byte`および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CShort`|[Short データ型](../../../../visual-basic/language-reference/data-types/short-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CSng`|[Single データ型](../../../../visual-basic/language-reference/data-types/single-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CStr`|[String データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `Char`、`Char`配列、 `Date`、`Object`|  
+|`CSByte`|[SByte データ型](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|任意の数値型 (など`Byte`および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CShort`|[Short データ型](../../../../visual-basic/language-reference/data-types/short-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CSng`|[Single データ型](../../../../visual-basic/language-reference/data-types/single-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CStr`|[String データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `Char`、`Char`配列、 `Date`、 `Object`|  
 |`CType`|コンマの後に指定された型 (`,`)|変換する際、*基本データ型*(基本型の配列を含む)、同じ種類として、対応する変換キーワードの許可<br /><br /> 変換する際、*複合データ型*、実装するインターフェイスとその継承元となるクラス<br /><br /> オーバー ロードしたクラスまたは構造体に変換するときに`CType`、そのクラスまたは構造体|  
-|`CUInt`|[UInteger データ型](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CULng`|[ULong データ型](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
-|`CUShort`|[UShort データ型](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、`Object`|  
+|`CUInt`|[UInteger データ型](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CULng`|[ULong データ型](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
+|`CUShort`|[UShort データ型](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|任意の数値型 (など`Byte`、 `SByte`、および列挙型)、 `Boolean`、 `String`、 `Object`|  
   
 ## <a name="the-ctype-function"></a>CType 関数  
  [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)は 2 つの引数で動作します。 1 つは、変換する式、2 番目の変換先のデータ型またはオブジェクト クラス。 最初の引数は型ではなく、式である必要がありますに注意してください。  
   
- `CType`*インライン関数*変換は、コンパイルされたコードの意味、多くの場合、呼び出す関数は生成されません。 これにより、パフォーマンスが向上します。  
+ `CType` *インライン関数*変換は、コンパイルされたコードの意味、多くの場合、呼び出す関数は生成されません。 これにより、パフォーマンスが向上します。  
   
  比較について`CType`他の型変換のキーワードと、次を参照してください。 [DirectCast 演算子](../../../../visual-basic/language-reference/operators/directcast-operator.md)と[TryCast 演算子](../../../../visual-basic/language-reference/operators/trycast-operator.md)です。  
   
@@ -109,7 +110,7 @@ h = CType(cZ, iZone)
 ```  
   
 ### <a name="array-types"></a>配列型  
- `CType`次の例のように、配列のデータ型を変換することもできます。  
+ `CType` 次の例のように、配列のデータ型を変換することもできます。  
   
 ```  
 Dim v() As classV  

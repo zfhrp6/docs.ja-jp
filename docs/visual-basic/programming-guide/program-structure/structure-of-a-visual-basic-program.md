@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic プログラムの構造"
-ms.custom: 
+title: Visual Basic プログラムの構造
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - conditional compilation [Visual Basic], Visual Basic
@@ -13,35 +14,35 @@ helpviewer_keywords:
 - procedures [Visual Basic], structure
 - Visual Basic code, program structure
 ms.assetid: ad0c6531-d762-4c77-a700-de16b07b6119
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 136be5e2eab3ed0226e0ca471ee1d84cdc7a52d1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5def0de1e22af39eb16489a2d4d27bdbd1853f2b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="structure-of-a-visual-basic-program"></a>Visual Basic プログラムの構造
-A[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プログラムは、標準の構成ブロックから構築します。 A*ソリューション*1 つまたは複数のプロジェクトで構成されます。 A*プロジェクト*さらに、1 つまたは複数のアセンブリを含めることができます。 各*アセンブリ*が 1 つまたは複数のソース ファイルからコンパイルします。 A*ソースファイル*定義とクラス、構造体、モジュール、および最終的にすべてのコードが含まれているインターフェイスの実装を提供します。  
+Visual Basic プログラムは、標準の構成ブロックから構築します。 A*ソリューション*1 つまたは複数のプロジェクトで構成されます。 A*プロジェクト*さらに、1 つまたは複数のアセンブリを含めることができます。 各*アセンブリ*が 1 つまたは複数のソース ファイルからコンパイルします。 A*ソースファイル*定義とクラス、構造体、モジュール、および最終的にすべてのコードが含まれているインターフェイスの実装を提供します。  
   
- これらの構成要素の詳細については、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プログラムを参照してください[ソリューションとプロジェクト](/visualstudio/ide/solutions-and-projects-in-visual-studio)と[アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)です。  
+ Visual Basic プログラムの詳細については、これらの構成要素は、次を参照してください。[ソリューションとプロジェクト](/visualstudio/ide/solutions-and-projects-in-visual-studio)と[アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)です。  
   
 ## <a name="file-level-programming-elements"></a>ファイル レベルのプログラミング要素  
  プロジェクトまたはファイルを開始する、コード エディターを開くと、既に実行されていると、正しい順序でいくつかのコードを参照してください。 すべてのコードを記述するは、次の順序に従う必要があります。  
   
-1.  `Option`ステートメント  
+1.  `Option` ステートメント  
   
-2.  `Imports`ステートメント  
+2.  `Imports` ステートメント  
   
-3.  `Namespace`ステートメントと名前空間レベル要素  
+3.  `Namespace` ステートメントと名前空間レベル要素  
   
  異なる順序でステートメントを入力すると、コンパイル エラーが発生することができます。  
   
  プログラムは、条件付きコンパイル ステートメントを含めることもできます。 上記の一連のステートメントの間でソース ファイルでこれらを挿入することができます。  
   
 ### <a name="option-statements"></a>ステートメントのオプション  
- `Option`ステートメントは、構文とロジック エラーを回避することができ、後続のコードの基本的な規則を確立します。 [Option Explicit ステートメント](../../../visual-basic/language-reference/statements/option-explicit-statement.md)いるすべての変数の宣言し、の綴り、デバッグ時間を短縮することを確認します。 [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)を異なるデータ型の変数間で作業するときに発生する可能性がロジックのエラーやデータの損失を最小限に抑えるのに役立ちます。 [Option Compare ステートメント](../../../visual-basic/language-reference/statements/option-compare-statement.md)方法文字列は、互いにいずれかに基づく比較を指定します、`Binary`または`Text`値。  
+ `Option` ステートメントは、構文とロジック エラーを回避することができ、後続のコードの基本的な規則を確立します。 [Option Explicit ステートメント](../../../visual-basic/language-reference/statements/option-explicit-statement.md)いるすべての変数の宣言し、の綴り、デバッグ時間を短縮することを確認します。 [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)を異なるデータ型の変数間で作業するときに発生する可能性がロジックのエラーやデータの損失を最小限に抑えるのに役立ちます。 [Option Compare ステートメント](../../../visual-basic/language-reference/statements/option-compare-statement.md)方法文字列は、互いにいずれかに基づく比較を指定します、`Binary`または`Text`値。  
   
 ### <a name="imports-statements"></a>Imports ステートメント  
  含めることができます、 [Imports ステートメント (.NET Namespace よぶ型)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)名、プロジェクトの外側で定義をインポートします。 `Imports`ステートメントにより、コードをクラスとそれらを修飾することがなく、インポートされた名前空間内で定義されているその他の型を参照してください。 できるだけ使用することができます`Imports`に応じてステートメントです。 詳細については、次を参照してください。[参照と Imports ステートメント](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)です。  
@@ -88,7 +89,7 @@ A[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プログラムは、標準の構成
  プロシージャ レベルのデータ要素は、ローカル変数および定数に限定されます。  
   
 ## <a name="the-main-procedure"></a>Main プロシージャ  
- `Main`プロシージャは、アプリケーションが読み込まれているときに実行する最初のコード。 `Main`開始ポイントとアプリケーションの全体的なコントロールとして機能します。 次の 4 種類がある`Main`:  
+ `Main`プロシージャは、アプリケーションが読み込まれているときに実行する最初のコード。 `Main` 開始ポイントとアプリケーションの全体的なコントロールとして機能します。 次の 4 種類がある`Main`:  
   
 -   `Sub Main()`  
   

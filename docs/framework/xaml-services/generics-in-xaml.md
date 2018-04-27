@@ -1,34 +1,34 @@
 ---
-title: "XAML のジェネリック"
-ms.custom: 
+title: XAML のジェネリック
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-caps.latest.revision: 
+caps.latest.revision: 8
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c0e5bfb4f327028f09e8c898cf07e5fec9a5f789
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e64224edcb49d5040332b7cef9649c98cf26798b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="generics-in-xaml"></a>XAML のジェネリック
 System.Xaml に実装されている .NET Framework XAML サービスでは、CLR 型のジェネリック型を使用するためのサポートを提供します。 このサポートには、引数の型としてジェネリックの制約を指定して、適切な呼び出しによって、制約の適用が含まれます。`Add`メソッドのジェネリック コレクションの場合。 このトピックを使用して、XAML でのジェネリック型の参照の側面について説明します。  
   
 ## <a name="xtypearguments"></a>x: TypeArguments  
- `x:TypeArguments`ディレクティブは、XAML 言語によって定義されます。 ジェネリック型によってバックアップされている XAML 型のメンバーとして使用されているときに`x:TypeArguments`型のバッキング コンス トラクターに、ジェネリック引数を渡すの制約を定義します。 .NET Framework XAML サービスに関連する参照構文の使用`x:TypeArguments`、構文の例を含むを参照してください[X:typearguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)です。  
+ `x:TypeArguments` ディレクティブは、XAML 言語によって定義されます。 ジェネリック型によってバックアップされている XAML 型のメンバーとして使用されているときに`x:TypeArguments`型のバッキング コンス トラクターに、ジェネリック引数を渡すの制約を定義します。 .NET Framework XAML サービスに関連する参照構文の使用`x:TypeArguments`、構文の例を含むを参照してください[X:typearguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)です。  
   
  `x:TypeArguments`文字列を受け取り、型コンバーター バッキングの場合は通常、属性として XAML の使用方法で宣言されています。  
   
@@ -53,9 +53,9 @@ System.Xaml に実装されている .NET Framework XAML サービスでは、CL
   
  対象とする WPF における[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]、と共に XAML 2009 の機能を使用することができます`x:TypeArguments`、loose XAML (XAML をマークアップ コンパイルされていない) に対してのみです。 WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。  
   
- カスタム ワークフロー[!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]の[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]汎用的な XAML の使用方法をサポートしていません。  
+ カスタムの Windows Workflow Foundation ワークフロー[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]汎用的な XAML の使用方法をサポートしていません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [x:TypeArguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md)  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)

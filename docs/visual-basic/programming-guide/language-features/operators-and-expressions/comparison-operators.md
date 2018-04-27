@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic における比較演算子"
-ms.custom: 
+title: Visual Basic における比較演算子
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - comparison operators [Visual Basic], comparing strings
@@ -21,32 +22,32 @@ helpviewer_keywords:
 - comparison operators [Visual Basic], comparing numeric values
 - operators [Visual Basic], comparison
 ms.assetid: 0b570339-5407-474f-8421-e183a8b303ee
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d8bf37ad30f410251f18aea6747734fc24d42cd0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 77c5520be63d6d05cc4b895b99b466cd8e486f6a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Visual Basic における比較演算子
 比較演算子は 2 つの式を比較し、`Boolean`これらの値のリレーションシップを表す値です。 数値、文字列、比較演算子とオブジェクトの比較演算子を比較するための演算子があります。 すべての 3 種類の演算子は、ここで説明します。  
   
 ## <a name="comparing-numeric-values"></a>数値の値を比較します。  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]6 つの数値の比較演算子を使用して、数値を比較します。 各演算子はオペランドとして数値に評価される 2 つの式を受け取ります。 次の表は、演算子の一覧し、それぞれの例を示しています。  
+ Visual Basic では、6 つの数値の比較演算子を使用して、数値を比較します。 各演算子はオペランドとして数値に評価される 2 つの式を受け取ります。 次の表は、演算子の一覧し、それぞれの例を示しています。  
   
-|演算子|テスト条件|例|  
+|演算子|テスト条件|使用例|  
 |--------------|----------------------|--------------|  
-|`=`(等価)|最初の式等しいかどうかの値と 2 番目の値には|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
-|`<>`(非等値)|最初の式の値と等しくない 2 番目の値にしますか。|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
-|`<`(より小さい)|最初の式の値よりも小さいか、2 番目の値とは|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
-|`>`(より大きい)|最初の式の値が 2 番目の値より大きいですか。|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
-|`<=`(以下を)|最初の式の値を 2 番目の値未満ですか。|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
-|`>=`(より大きいまたは等しい)|最初の式の値をより大きいか等しい 2 つ目の値には|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
+|`=` (等価)|最初の式等しいかどうかの値と 2 番目の値には|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
+|`<>` (非等値)|最初の式の値と等しくない 2 番目の値にしますか。|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
+|`<` (より小さい)|最初の式の値よりも小さいか、2 番目の値とは|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
+|`>` (より大きい)|最初の式の値が 2 番目の値より大きいですか。|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
+|`<=` (以下を)|最初の式の値を 2 番目の値未満ですか。|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
+|`>=` (より大きいまたは等しい)|最初の式の値をより大きいか等しい 2 つ目の値には|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
   
 ## <a name="comparing-strings"></a>文字列の比較  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]使用して文字列を比較し、 [Like 演算子](../../../../visual-basic/language-reference/operators/like-operator.md)だけでなく、数値比較演算子です。 `Like`演算子では、パターンを指定することができます。 文字列を比較し、パターンと一致した場合、結果は`True`します。 それ以外の場合、結果は`False`します。 比較することは数値演算子`String`値が次の例のように、並べ替え順序に基づいています。  
+ Visual Basic を使用して文字列を比較し、 [Like 演算子](../../../../visual-basic/language-reference/operators/like-operator.md)だけでなく、数値比較演算子です。 `Like`演算子では、パターンを指定することができます。 文字列を比較し、パターンと一致した場合、結果は`True`します。 それ以外の場合、結果は`False`します。 比較することは数値演算子`String`値が次の例のように、並べ替え順序に基づいています。  
   
  `"73" < "9"`  
   
@@ -67,7 +68,7 @@ ms.lasthandoff: 11/21/2017
  並べ替え順序が、バイナリの比較またはテキストの比較の設定に応じてに基づいて`Option Compare`です。 詳細については、次を参照してください。 [Option Compare ステートメント](../../../../visual-basic/language-reference/statements/option-compare-statement.md)です。  
   
 ## <a name="comparing-objects"></a>オブジェクトを比較します。  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]2 つの比較はオブジェクト参照変数と、 [Is 演算子](../../../../visual-basic/language-reference/operators/is-operator.md)と[IsNot 演算子](../../../../visual-basic/language-reference/operators/isnot-operator.md)です。 これらの演算子のいずれかを使用して、2 つの参照変数が同じオブジェクト インスタンスを参照している場合を判断します。 次に例を示します。  
+ Visual Basic での 2 つのオブジェクト参照変数を比較し、 [Is 演算子](../../../../visual-basic/language-reference/operators/is-operator.md)と[IsNot 演算子](../../../../visual-basic/language-reference/operators/isnot-operator.md)です。 これらの演算子のいずれかを使用して、2 つの参照変数が同じオブジェクト インスタンスを参照している場合を判断します。 次に例を示します。  
   
  [!code-vb[VbVbalrOperators#65](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
   

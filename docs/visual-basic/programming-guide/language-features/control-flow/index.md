@@ -18,16 +18,16 @@ ms.assetid: 5623ef47-52b1-4202-befd-9af36422ec6f
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6ce0cb7cba8f05b488d47f99da51b0b5de75eb15
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 4ec3ab191942e47d5025a0e641085b0f507088c7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="control-flow-in-visual-basic"></a>Visual Basic における制御フロー
 制御されていないままの場合、プログラムは最初から最後までそのステートメントを使って続行されます。 この 1 方向のフローのみを使用して、いくつかの単純なプログラムを記述できます。 ただし、任意のプログラミング言語の能力とユーティリティのほとんどは、制御ステートメントとループで実行する順番を変更する機能からのものです。  
   
- 制御構造を使用すると、プログラムの実行フローを制御できます。 制御構造を使用して、判断したり、アクションを繰り返したりする [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のコードを記述することができます。 他の制御構造を使用して、リソースの破棄を保証したり、同じオブジェクト参照で一連のステートメントを実行したりすることができます。  
+ 制御構造を使用すると、プログラムの実行フローを制御できます。 制御構造を使用して、条件を判断したり繰り返し処理をする Visual Basic コードを記述できます。 他の制御構造を使用して、リソースの破棄を保証したり、同じオブジェクト参照で一連のステートメントを実行したりすることができます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [条件判断構造](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  

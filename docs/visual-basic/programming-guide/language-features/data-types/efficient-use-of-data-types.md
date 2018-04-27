@@ -1,11 +1,12 @@
 ---
-title: "データ型の有効な使用方法 (Visual Basic)"
-ms.custom: 
+title: データ型の有効な使用方法 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - performance, data type efficiency
@@ -19,14 +20,14 @@ helpviewer_keywords:
 - data types [Visual Basic], optimizing
 - ChrW function [Visual Basic], preferred to Chr
 ms.assetid: 28f5e4ba-ec24-4f37-b90a-e8ee822f778a
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0e13a1d61aacb06eb336c39aab969847127dfc67
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4cac585cdc3072d595d2446e1937678f9ab03335
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>データ型の有効な使用方法 (Visual Basic)
 宣言されていない変数とデータ型なしで宣言された変数が割り当てられている、`Object`データ型。 実行速度が低下することができるプログラムを迅速に作成するが容易になります。 可能性がします。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
 -   コードの実行を高速になります。  
   
 ## <a name="most-efficient-data-types"></a>最も効率的なデータ型  
- 小数を含まない変数の場合は、整数データ型は、非整数型よりも効率的です。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`Integer`と`UInteger`最も効率的な数値型です。  
+ 小数を含まない変数の場合は、整数データ型は、非整数型よりも効率的です。 Visual basic で`Integer`と`UInteger`最も効率的な数値型です。  
   
  小数値は、`Double`最も効率的なデータ型では、現在のプラットフォーム上のプロセッサの倍精度浮動小数点演算を実行するためです。 ただし、操作を`Double`などの整数型と同様に高速ではない`Integer`です。  
   

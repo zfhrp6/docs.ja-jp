@@ -1,24 +1,26 @@
 ---
-title: "チュートリアルによる学習"
-ms.custom: 
+title: チュートリアルによる学習
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c49ecfec032a20090e8eca1c94efe9e1f35cce7d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 98373ccee7f9fde178f26c62cd77acb17676c6cc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="learning-by-walkthroughs"></a>チュートリアルによる学習
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]ドキュメントには、いくつかのチュートリアルが用意されています。 このトピックでは、チュートリアルに関する全般的な話題 (トラブルシューティングを含む) を取り上げます。また、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] について学ぶための、いくつかの入門レベルのチュートリアルへのリンクを示します。  
@@ -41,20 +43,20 @@ ms.lasthandoff: 01/19/2018
 ## <a name="general"></a>全般  
  以下の情報は、これらのチュートリアル全体に該当します。  
   
--   環境 : [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の各チュートリアルでは、統合開発環境 (IDE: Integrated Development Environment) として [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用します。  
+-   環境の場合: 各[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]チュートリアルでは、その統合開発環境 (IDE) として Visual Studio を使用します。  
   
 -   SQL エンジン : これらのチュートリアルは、SQL Server Express を使用して実装できるように作成されています。 SQL Server Express を持っていない場合は、無料でダウンロードできます。 詳細については、次を参照してください。[サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
     > [!NOTE]
     >  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のチュートリアルでは、ファイル名を接続文字列として使用します。 ファイル名を指定するだけで済むのは、SQL Server Express ユーザーのために [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] に備わっている機能です。 セキュリティ問題には常に注意してください。 詳細については、次を参照してください。 [LINQ to SQL でセキュリティ](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)です。  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]チュートリアルでは、Northwind サンプル データベースが通常必要とします。 詳細については、次を参照してください。[サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
+-   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] チュートリアルでは、Northwind サンプル データベースが通常必要とします。 詳細については、次を参照してください。[サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
--   使用している設定または [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] のエディションによっては、チュートリアルの中で、ヘルプの記載と異なるダイアログ ボックスやメニュー コマンドが表示される場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+-   ダイアログ ボックスとメニュー コマンドが表示のチュートリアルで異なる場合があります、アクティブな設定または Visual Studio のエディションによっては、ヘルプの説明。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
 -   多階層のシナリオに関連するチュートリアルでは、開発用コンピューターとは別のコンピューターにサーバーが配置されていることと、そのサーバーにアクセスするための適切なアクセス許可が必要です。  
   
--   通常、Northwind サンプル データベースの Orders テーブルを表すクラスの名前は `[Order]` です。 エスケープが必要な理由は、`Order` が [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] のキーワードであるためです。  
+-   通常、Northwind サンプル データベースの Orders テーブルを表すクラスの名前は `[Order]` です。 エスケープ処理が必要な`Order`Visual Basic のキーワードです。  
   
 ## <a name="troubleshooting"></a>トラブルシューティング  
  これらのチュートリアルで使用するデータベースにアクセスするための十分なアクセス許可がない場合、ランタイム エラーが発生することがあります。 特に一般的な問題を解決するためのヒントについては、以下の手順を参照してください。  
@@ -98,5 +100,5 @@ ms.lasthandoff: 01/19/2018
   
 3.  右クリック**SQL Server (SQLEXPRESS)**、クリックして**再起動**です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)

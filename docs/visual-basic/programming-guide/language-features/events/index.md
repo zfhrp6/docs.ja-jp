@@ -15,11 +15,11 @@ ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
 caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5a1edd7976f1e22117e1f4f31354388d5257ffc1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: c18c1ea645c9f144e2c2043af5460d6fb03f13a1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="events-visual-basic"></a>イベント (Visual Basic)
 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] プロジェクトとは、順に実行される一連のプロシージャと思っているかもしれませんが、実際には、ほとんどのプログラムはイベント ドリブン型です。つまり、実行の流れは、外部で発生する "*イベント*" と呼ばれる事象によって決まります。  
@@ -27,7 +27,7 @@ ms.lasthandoff: 12/21/2017
  イベントは、何らかの重要な出来事が発生したことをアプリケーションに通知するシグナルです。 たとえば、ユーザーがフォーム上のコントロールをクリックすると、フォームは、`Click` イベントを発生させて、そのイベントを処理するプロシージャを呼び出すことができます。 イベントは、複数のタスク間の通信を可能にすることもできます。 たとえば、メインのアプリケーションとは別のアプリケーションで並べ替えタスクを実行するとします。 ユーザーが並べ替えを取り消した場合、アプリケーションは並べ替え処理の停止を指示するキャンセル イベントを送信できます。  
   
 ## <a name="event-terms-and-concepts"></a>イベントの用語と概念  
- このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で使用される用語と概念について説明します。  
+ このセクションでは、用語と Visual Basic でのイベントと共に使用する概念について説明します。  
   
 ### <a name="declaring-events"></a>イベントの宣言  
  イベントは、次の例に示すように、`Event` キーワードを使用して、クラス、構造体、モジュール、およびインターフェイス内で宣言します。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 12/21/2017
  [!code-vb[VbVbalrEvents#24](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_1.vb)]  
   
 ### <a name="raising-events"></a>イベントの発生  
- イベントは、重要な出来事が発生したことを通知するメッセージに似ています。 メッセージをブロードキャストする動作は、"*イベントの発生*" と呼ばれます。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、次の例に示すように、`RaiseEvent` ステートメントを使用してイベントを発生させます。  
+ イベントは、重要な出来事が発生したことを通知するメッセージに似ています。 メッセージをブロードキャストする動作は、"*イベントの発生*" と呼ばれます。 Visual basic でのイベントを発生させる、`RaiseEvent`ステートメントでは、次の例のようにします。  
   
  [!code-vb[VbVbalrEvents#25](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_2.vb)]  
   
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/21/2017
 ### <a name="event-handlers"></a>イベント ハンドラー  
  "*イベント ハンドラー*" は、対応するイベントが発生したときに呼び出されるプロシージャです。 イベント ハンドラーと一致するシグネチャを持つ任意の有効なサブルーチンを使用できます。 ただし、関数はイベント ソースに値を返すことができないため、イベント ハンドラーとして使用することはできません。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、イベント ハンドラーの標準的な名前付け規則である、イベントの送信元、アンダースコア、およびイベントの名前の組み合わせを使用しています。 たとえば、`button1` という名前のボタンの `Click` イベントには、`Sub button1_Click` という名前が付けられます。  
+ Visual Basic では、イベント ハンドラーのイベントの送信元、アンダー スコア、およびイベントの名前の名前を結合する標準の命名規則を使用します。 たとえば、`button1` という名前のボタンの `Click` イベントには、`Sub button1_Click` という名前が付けられます。  
   
 > [!NOTE]
 >  独自のイベントに対するイベント ハンドラーを定義するときは、この名前付け規則を使用することをお勧めしますが、使用は必須ではありません。任意の有効なサブルーチン名を付けることができます。  
@@ -72,7 +72,7 @@ ms.lasthandoff: 12/21/2017
   
  `Handles` 句は、イベントをイベント ハンドラーに関連付けるための標準的な方法ですが、イベントをイベント ハンドラーに関連付ける動作はコンパイル時に限定されます。  
   
- 場合によっては (フォームやコントロールに関連付けられたイベントなど)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、空のイベント ハンドラーを自動的にスタブとして作成し、それをイベントに関連付けます。 たとえば、デザイン モードでフォームのコマンド ボタンをダブルクリックすると、次のコードに示すように、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] はコマンド ボタン用の空のイベント ハンドラーと `WithEvents` 変数を作成します。  
+ 場合によってなどのコントロールやフォームに関連付けられたイベントを Visual Basic 自動的に空のイベント ハンドラーのスタブが作成およびイベントに関連付けます。 たとえば、フォームのデザイン モードでコマンド ボタンをダブルクリックすると、Visual Basic は作成、空のイベント ハンドラーと`WithEvents`コマンド ボタンで、次のコード参照の変数。  
   
  [!code-vb[VbVbalrEvents#26](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_4.vb)]  
   
@@ -83,7 +83,7 @@ ms.lasthandoff: 12/21/2017
   
  [!code-vb[VbVbalrEvents#28](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_5.vb)]  
   
- イベントとイベント ハンドラーと関連付けを解除する `RemoveHandler` は、`AddHandler` と同じ構文を使用します。 例:  
+ イベントとイベント ハンドラーと関連付けを解除する `RemoveHandler` は、`AddHandler` と同じ構文を使用します。 例えば:  
   
  [!code-vb[VbVbalrEvents#29](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_6.vb)]  
   
@@ -100,13 +100,13 @@ ms.lasthandoff: 12/21/2017
   
 #### <a name="to-handle-events-from-a-base-class"></a>基本クラスのイベントを処理するには  
   
--   イベント ハンドラー プロシージャの宣言行に `Handles MyBase.`*eventname* ステートメントを追加して、派生クラスのイベント ハンドラーを宣言します。*eventname* は処理する基本クラスのイベント名です。 例:  
+-   イベント ハンドラー プロシージャの宣言行に `Handles MyBase.`*eventname* ステートメントを追加して、派生クラスのイベント ハンドラーを宣言します。*eventname* は処理する基本クラスのイベント名です。 例えば:  
   
      [!code-vb[VbVbalrEvents#12](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_8.vb)]  
   
 ## <a name="related-sections"></a>関連項目  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[チュートリアル : イベントの宣言と発生](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)|クラスのイベントを宣言して発生させる方法を手順を追って説明します。|  
 |[チュートリアル : イベントの処理](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|イベント ハンドラー プロシージャの記述方法を示します。|  

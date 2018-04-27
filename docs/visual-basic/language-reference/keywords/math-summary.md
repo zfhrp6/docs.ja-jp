@@ -1,9 +1,10 @@
 ---
-title: "数値演算の概要 (Visual Basic)"
+title: 数値演算の概要 (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - math functions, summary
@@ -11,17 +12,17 @@ helpviewer_keywords:
 - math functions, Visual Basic
 - math functions
 ms.assetid: 6abf2dd7-92d2-488a-8e2b-819be9b30c3f
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 330ea0616da11ab5ccb02f5ee91c406f51de5893
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 45d682dffe699f12a7d58418d332dc05d5822209
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="math-summary-visual-basic"></a>数値演算の概要 (Visual Basic)
-以下の表は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のキーワードとランタイム ライブラリ メンバーを目的および使用方法別に分類したものです。  
+Visual Basic 言語のキーワードとランタイム ライブラリ メンバーを、目的と使用方法に応じて編成しました。  
   
 |アクション|言語要素|  
 |------------|----------------------|  

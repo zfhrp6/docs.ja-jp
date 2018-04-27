@@ -1,24 +1,26 @@
 ---
-title: "コマンド ツリーからの SQL の生成: ベスト プラクティス"
-ms.custom: 
+title: 'コマンド ツリーからの SQL の生成: ベスト プラクティス'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d68194ab83a6606337a33668470411ed8b1c6957
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 037d1eaa8d781d012cde7a1bd3b08aa7003edd77
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>コマンド ツリーからの SQL の生成: ベスト プラクティス
 出力クエリ コマンド ツリーは、SQL で表現できるクエリに厳密に従って作成されます。 ただし、出力コマンド ツリーから SQL を生成する際にプロバイダーの作成者が直面する、一般的な問題がいくつかあります。 このトピックでは、これらの問題について説明します。 これらの問題への対処方法については、次のトピックでサンプル プロバイダーを介して紹介します。  
@@ -147,7 +149,7 @@ ON b.y = d.z
  式は、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] によって渡されたクエリ コマンド ツリーで再利用できます。 各式は、クエリ コマンド ツリーで 1 回しか使用できないわけではありません。  
   
 ## <a name="mapping-primitive-types"></a>プリミティブ型のマッピング  
- 概念 (EDM) 型をプロバイダー型にマップする場合は、さまざまな値に対応できるように、最も幅の広い型 (Int32) にマップする必要があります。 また、BLOB 型のような、多様な操作に使用できない型 (`ntext` の [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] など) にマップすることは避けてください。  
+ 概念 (EDM) 型をプロバイダー型にマップする場合は、さまざまな値に対応できるように、最も幅の広い型 (Int32) にマップする必要があります。 また、多くの操作で、BLOB の種類と同様に使用できない型へのマッピングをしないでください (たとえば、 `ntext` SQL Server で)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation.md)

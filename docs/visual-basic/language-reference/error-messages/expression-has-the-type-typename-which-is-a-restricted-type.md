@@ -1,5 +1,5 @@
 ---
-title: '式の種類 &#39; 値が&lt;typename&gt;(& a) あり、制限付きの型から継承されたメンバー &#39; オブジェクト &#39; のアクセスに使用することはできません。 #39 または &#39;です。ValueType &#39;'
+title: 式の型&#39; &lt;typename&gt; &#39;は制限付きの型とから継承されたメンバーのアクセスに使用することはできません&#39;オブジェクト&#39;または&#39;ValueType&#39;
 ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ''
@@ -16,18 +16,18 @@ ms.assetid: 2963cf3f-c527-4aa7-b67c-ee80b6d23186
 caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a30742bd46ccd1a3e5a688ebd2621e2c8a3d50e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: ab4e48c93a6a3c645bf9b5cc6c536d418022ae86
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="expression-has-the-type-39lttypenamegt39-which-is-a-restricted-type-and-cannot-be-used-to-access-members-inherited-from-39object39-or-39valuetype39"></a>式の種類 &#39; 値が&lt;typename&gt;(& a) あり、制限付きの型から継承されたメンバー &#39; オブジェクト &#39; のアクセスに使用することはできません。 #39 または &#39;です。ValueType &#39;
+# <a name="expression-has-the-type-39lttypenamegt39-which-is-a-restricted-type-and-cannot-be-used-to-access-members-inherited-from-39object39-or-39valuetype39"></a>式の型&#39; &lt;typename&gt; &#39;は制限付きの型とから継承されたメンバーのアクセスに使用することはできません&#39;オブジェクト&#39;または&#39;ValueType&#39;
 式は、共通言語ランタイム (CLR) でボックス化できない型に評価が、ボックス化を必要とするメンバーにアクセスします。  
   
  *ボックス化* とは、型を `Object` (場合によっては <xref:System.ValueType>) に変換するために不可欠な処理です。 共通言語ランタイムでは、特定の構造体の型をたとえばボックスことはできません<xref:System.ArgIterator>、 <xref:System.RuntimeArgumentHandle>、および<xref:System.TypedReference>です。  
   
- この式から継承されたメソッドの呼び出しに制限付きの型を使用しようとしました。<xref:System.Object>または<xref:System.ValueType>、など<xref:System.Object.GetHashCode%2A>または<xref:System.Object.ToString%2A>です。 このメソッドにアクセスする[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]がこのエラーが発生する暗黙的なボックス化変換を試行します。  
+ この式から継承されたメソッドの呼び出しに制限付きの型を使用しようとしました。<xref:System.Object>または<xref:System.ValueType>、など<xref:System.Object.GetHashCode%2A>または<xref:System.Object.ToString%2A>です。 このメソッドにアクセスするには、Visual Basic はこのエラーが発生する暗黙的なボックス化変換をしようとしました。  
   
  **エラー ID:** BC31393  
   

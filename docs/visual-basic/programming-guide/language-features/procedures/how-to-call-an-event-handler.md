@@ -1,11 +1,12 @@
 ---
-title: "方法 : Visual Basic でイベント ハンドラーを呼び出す"
-ms.custom: 
+title: '方法 : Visual Basic でイベント ハンドラーを呼び出す'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -14,21 +15,21 @@ helpviewer_keywords:
 - procedures [Visual Basic], event handlers
 - procedures [Visual Basic], calling
 ms.assetid: 72e18ef8-144e-40df-a1f4-066a57271e28
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 52b4b6ca8b03d8301535d6aeedc3bd0190d8527f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2b8a35459fdeb7cce0b494a9b3024a79bd4173cc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-call-an-event-handler-in-visual-basic"></a>方法 : Visual Basic でイベント ハンドラーを呼び出す
 *イベント*アクションまたはイベントの発生は、-、マウスなどクリックやクレジットの上限を超えています: 認識によってプログラム コンポーネントによって、コードを記述できます応答します。 *イベント ハンドラー*イベントに応答を記述するコードです。  
   
- イベント ハンドラーに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は、`Sub`プロシージャです。 ただし、通常呼び出さないことと同じ方法とその他の`Sub`プロシージャです。 代わりに、イベントのハンドラーとしてプロシージャを識別します。 これを行うか、[処理](../../../../visual-basic/language-reference/statements/handles-clause.md)句と[WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md)変数、または、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)です。 使用して、`Handles`句内のイベント ハンドラーを宣言する既定の方法は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 これは、統合開発環境 (IDE) でプログラミングするときにイベント ハンドラーが、デザイナーによって書き込まれる方法です。 `AddHandler`ステートメントが実行時に動的にイベントを発生させるために適しています。  
+ Visual Basic でイベント ハンドラーは、`Sub`プロシージャです。 ただし、通常呼び出さないことと同じ方法とその他の`Sub`プロシージャです。 代わりに、イベントのハンドラーとしてプロシージャを識別します。 これを行うか、[処理](../../../../visual-basic/language-reference/statements/handles-clause.md)句と[WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md)変数、または、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)です。 使用して、`Handles`句は、Visual Basic では、イベント ハンドラーを宣言する既定の方法です。 これは、統合開発環境 (IDE) でプログラミングするときにイベント ハンドラーが、デザイナーによって書き込まれる方法です。 `AddHandler`ステートメントが実行時に動的にイベントを発生させるために適しています。  
   
- イベントが発生する、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]自動的にイベント ハンドラーのプロシージャを呼び出します。 イベントへのアクセスを持つあらゆるコードそれが原因で実行することによって発生する、 [RaiseEvent ステートメント](../../../../visual-basic/language-reference/statements/raiseevent-statement.md)です。  
+ イベントが発生すると、Visual Basic は自動的にイベント ハンドラーのプロシージャを呼び出します。 イベントへのアクセスを持つあらゆるコードそれが原因で実行することによって発生する、 [RaiseEvent ステートメント](../../../../visual-basic/language-reference/statements/raiseevent-statement.md)です。  
   
  同じイベントには、1 つ以上のイベント ハンドラーを関連付けることができます。 場合によっては、イベントからハンドラーを切り離すこともできます。 詳細については、「[イベント](../../../../visual-basic/programming-guide/language-features/events/index.md)」を参照してください。  
   
@@ -40,7 +41,7 @@ ms.lasthandoff: 11/21/2017
   
 3.  イベント処理の宣言で`Sub`の手順を追加、[処理](../../../../visual-basic/language-reference/statements/handles-clause.md)句を指定する、`WithEvents`変数、およびイベント名。  
   
-4.  イベントが発生するときに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を自動的に呼び出して、`Sub`プロシージャです。 コードを使用して、`RaiseEvent`ステートメントに発生するイベントです。  
+4.  Visual Basic を自動的に呼び出して、イベントの発生時に、`Sub`プロシージャです。 コードを使用して、`RaiseEvent`ステートメントに発生するイベントです。  
   
      次の例は、イベントを定義し、`WithEvents`イベントを発生させるクラスを参照する変数。 イベント処理`Sub`プロシージャの使用、`Handles`句をクラスと処理イベントを指定します。  
   
@@ -52,7 +53,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  実行、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)イベント処理を動的に接続する`Sub`イベントを持つプロシージャ。  
   
-3.  イベントが発生するときに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を自動的に呼び出して、`Sub`プロシージャです。 コードを使用して、`RaiseEvent`ステートメントに発生するイベントです。  
+3.  Visual Basic を自動的に呼び出して、イベントの発生時に、`Sub`プロシージャです。 コードを使用して、`RaiseEvent`ステートメントに発生するイベントです。  
   
      次の例では定義、`Sub`を処理するプロシージャ、<xref:System.Windows.Forms.Form.Closing>フォームのイベントです。 次を使用して、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)に関連付けるには、`catchClose`のイベント ハンドラーとプロシージャ<xref:System.Windows.Forms.Form.Closing>です。  
   

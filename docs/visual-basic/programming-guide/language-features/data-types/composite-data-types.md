@@ -1,11 +1,12 @@
 ---
-title: "複合データ型 (Visual Basic)"
-ms.custom: 
+title: 複合データ型 (Visual Basic)
+ms.custom: ''
 ms.date: 04/25/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -17,25 +18,25 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e9adb407757dbee2f7ac5a94118623a62212faec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: caa832fc191ad925674e21b1237ac98328ce0bd7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="composite-data-types-visual-basic"></a>複合データ型 (Visual Basic)
-基本データ型だけでなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]提供を作成するさまざまな種類の項目もアセンブリできます*複合データ型*構造体、配列、およびクラスなどです。 その他の複合型および基本型からは、複合データ型を構築できます。 たとえば、配列メンバーを持つ構造体の要素の配列または構造体を定義できます。  
+Visual Basic に用意されている基本データ型だけでなく、作成するさまざまな種類の項目を作成することができますも*複合データ型*構造体、配列、およびクラスなどです。 その他の複合型および基本型からは、複合データ型を構築できます。 たとえば、配列メンバーを持つ構造体の要素の配列または構造体を定義できます。  
   
-## <a name="data-types"></a>データ型  
+## <a name="data-types"></a>データの種類  
  複合型は、そのコンポーネントのいずれかのデータ型と異なるです。 たとえば、配列の`Integer`の要素ではありません、`Integer`データ型。  
   
  配列のデータ型は、通常、必要に応じて、要素の型、丸かっこ、コンマを使用して表されます。 たとえば、1 次元配列`String`として表される要素`String()`と、2 次元の配列`Boolean`として表される要素`Boolean(,)`です。  
   
 ## <a name="structure-types"></a>構造体の型  
- すべての構造を包括する 1 つのデータ型はありません。 代わりに、2 つの構造が同じ順序で同一要素を定義する場合でも、構造体の各定義は、固有のデータ型を表します。 ただし、同じ構造の 2 つ以上のインスタンスを作成する場合、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]はそれらのデータ型が同じであると見なします。  
+ すべての構造を包括する 1 つのデータ型はありません。 代わりに、2 つの構造が同じ順序で同一要素を定義する場合でも、構造体の各定義は、固有のデータ型を表します。 ただし、同じ構造の 2 つ以上のインスタンスを作成する場合は、Visual Basic は、同じデータ型のそれらと見なします。  
   
 ## <a name="tuples"></a>タプル
 

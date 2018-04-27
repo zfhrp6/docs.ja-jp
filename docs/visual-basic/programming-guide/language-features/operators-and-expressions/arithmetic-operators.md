@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic における算術演算子"
-ms.custom: 
+title: Visual Basic における算術演算子
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - type safety
@@ -19,14 +20,14 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7fec98c38eebc34a0f84e051dc7c0914f537418f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cef1e3610d885a0f3a2bae718641f7b8ca1062dc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Visual Basic における算術演算子
 算術演算子は、多くのリテラル、変数、その他の式、関数とプロパティの呼び出し、および定数で表される数値の計算を含む一般的な算術演算の実行に使用されます。 オペランドのビットごとのレベルで動作し、ビット パターンを左または右にシフトするビット シフト演算子は、算術演算子を含む分類もします。  
@@ -65,7 +66,7 @@ ms.lasthandoff: 11/21/2017
   
 |被除数のデータ型|除数のデータ型|被除数の値|結果|  
 |---|---|---|---|  
-|`Double`|`Double`|0|<xref:System.Double.NaN>(非数学的に定義されている数)|  
+|`Double`|`Double`|0|<xref:System.Double.NaN> (非数学的に定義されている数)|  
 |`Double`|`Double`|> 0|<xref:System.Double.PositiveInfinity>|  
 |`Double`|`Double`|\< 0|<xref:System.Double.NegativeInfinity>|  
   
@@ -98,9 +99,9 @@ ms.lasthandoff: 11/21/2017
 ## <a name="type-safety"></a>タイプ セーフ  
  オペランドは、同じ型の通常する必要があります。 などの追加を行う場合、`Integer`変数、する必要がありますに追加する別`Integer`して、変数は、型の変数に結果を割り当てる必要があります`Integer`もします。  
   
- 適切なタイプ セーフなことを確認する方法の 1 つコーディングの推奨手順を使用するが、 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)です。 設定した場合`Option Strict On`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]が自動的に実行*タイプ セーフ*変換します。 追加しようとする場合など、`Integer`変数を`Double`変数に値を割り当てると、`Double`変数、処理は正常、ため、`Integer`値に変換できる`Double`データの損失なし。 タイプ セーフの変換では、その一方とコンパイラ エラーが発生する`Option Strict On`です。 追加しようとする場合など、`Integer`変数を`Double`変数に値を割り当てると、`Integer`変数で、コンパイラ エラーが発生、ため、`Double`変数を型に暗黙的に変換することはできません`Integer`です。  
+ 適切なタイプ セーフなことを確認する方法の 1 つコーディングの推奨手順を使用するが、 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)です。 設定した場合`Option Strict On`、Visual Basic が自動的に実行*タイプ セーフ*変換します。 追加しようとする場合など、`Integer`変数を`Double`変数に値を割り当てると、`Double`変数、処理は正常、ため、`Integer`値に変換できる`Double`データの損失なし。 タイプ セーフの変換では、その一方とコンパイラ エラーが発生する`Option Strict On`です。 追加しようとする場合など、`Integer`変数を`Double`変数に値を割り当てると、`Integer`変数で、コンパイラ エラーが発生、ため、`Double`変数を型に暗黙的に変換することはできません`Integer`です。  
   
- 設定した場合`Option Strict Off`、ただし、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]予期しないデータまたは精度の損失に発生する可能性が発生する暗黙的な縮小変換を許可します。 このため、使用をお勧めする`Option Strict On`実稼働コードを記述する場合。 詳細については、「 [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
+ 設定した場合`Option Strict Off`、ただし、Visual Basic では発生する暗黙的な縮小変換が、予期しないデータまたは精度の損失があります。 このため、使用をお勧めする`Option Strict On`実稼働コードを記述する場合。 詳細については、「 [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [算術演算子](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)  

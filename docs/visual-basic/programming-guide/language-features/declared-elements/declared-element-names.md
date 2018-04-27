@@ -1,11 +1,12 @@
 ---
-title: "宣言された要素の名前 (Visual Basic)"
-ms.custom: 
+title: 宣言された要素の名前 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - declared elements [Visual Basic], case sensitivity
@@ -29,20 +30,20 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - identifiers [Visual Basic], elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 22595eff2509d3954b3ce9d5038b19a681fbfbbe
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: ad883dd8e1de419c74b5bcdb8762994e762b4cf7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="declared-element-names-visual-basic"></a>宣言された要素の名前 (Visual Basic)
 すべての宣言された要素とも呼ばれる、名前が付いて、*識別子*、これは、コードを使用して、それを参照してください。  
   
 ## <a name="rules"></a>ルール  
- 内の要素名[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]次の規則に従う必要があります。  
+ Visual Basic では、要素名は、次の規則に従う必要があります。  
   
 -   文字は英字またはアンダー スコアで始める必要があります (`_`)。  
   
@@ -79,25 +80,25 @@ ms.lasthandoff: 12/21/2017
  その一方で、自分の名前を記述しません。 適切にどのような要素を表し、コードがそれを使用する方法長さである必要があります。 これは、コードの読みやすくするため重要です。 理解しようとしている他の人が自分で見ることが、作成した後に長時間場合や、適切な要素名は、かなりの時間を保存できます。  
   
 ## <a name="escaped-names"></a>エスケープされた名前  
- 一般に、要素名は、する必要がありますと一致しませんによって予約済みキーワードのいずれかの[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]など`Case`または`Friend`です。 ただし、定義することができます、*エスケープ名前*、角かっこで囲まれている (`[ ]`)。 エスケープされた名前がいずれかに一致[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]キーワード、角かっこは、任意のあいまいさをなくすためです。 また、後続のコードで、名前を参照するときに、角かっこを使用します。  
+ 一般に、要素名は、する必要がありますと一致しませんなどの Visual Basic で予約されているキーワードのいずれかの`Case`または`Friend`です。 ただし、定義することができます、*エスケープ名前*、角かっこで囲まれている (`[ ]`)。 エスケープされた名前は、角かっこは、任意のあいまいさをなくすために、Visual Basic のキーワードに一致することができます。 また、後続のコードで、名前を参照するときに、角かっこを使用します。  
   
  一般に、エスケープされた名前を使用する必要がありますされる場合にのみ。  
   
--   コードが以前のバージョンから移行した[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]; 名として使用されているキーワードを予約されていないか、  
+-   コードは、名前として使用されているキーワードが確保されていない Visual Basic の以前のバージョンから移行しました。または  
   
 -   指定されたキーワードが予約されていない別の言語で記述されたコードを使用しています。  
   
  それ以外の場合、キーワードを使用してその名前が競合する場合、要素名の変更を検討してください。 統合開発環境 (IDE) では、これを行う簡単な方法を提供します。 詳細については、次を参照してください。[リファクタリング](/visualstudio/vb-ide/refactoring-vb)です。  
   
 ## <a name="case-sensitivity-in-names"></a>名前で大文字小文字の区別  
- 内の要素名[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]小文字は区別されません。 これは、コンパイラは、大文字と小文字のみが異なる 2 つの名前を比較し、ときを解釈するには同じ名前としてことを意味します。 たとえば、 `ABC` と `abc` は、宣言された同じ要素を参照していると見なされます。  
+ Visual Basic での要素名は区別されません。 これは、コンパイラは、大文字と小文字のみが異なる 2 つの名前を比較し、ときを解釈するには同じ名前としてことを意味します。 たとえば、 `ABC` と `abc` は、宣言された同じ要素を参照していると見なされます。  
   
  ただし、共通言語ランタイム (CLR) は、大文字小文字を区別バインディングを使用します。 このため、アセンブリまたは DLL を作成し、他のアセンブリで使用できるようにすると、名前の大文字と小文字が区別されるようになります。 たとえば、 `ABC`という名前の要素を持つクラスを定義し、他のアセンブリから共通言語ランタイムを通じてこのクラスを使用する場合は、この要素を `ABC`として参照する必要があります。 かどうか、その後、クラスを再コンパイルし、変更する要素の名前を`abc`クラスを使用して、他のアセンブリではその要素がアクセスできなく可能性があります。 したがって、アセンブリを更新してリリースするときは、パブリックな要素の名前の大文字と小文字を変更しないでください。  
   
 ## <a name="names-and-locales"></a>名前とロケール  
  名前の比較は、ロケールに依存しません。 1 つのロケールで 2 つの名前が同じ場合は、すべてのロケールに一致するように保証されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [宣言された要素](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)  
  [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
  [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  

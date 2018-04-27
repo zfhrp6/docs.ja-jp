@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic におけるステートメント"
-ms.custom: 
+title: Visual Basic におけるステートメント
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic], declaring
@@ -21,17 +22,17 @@ helpviewer_keywords:
 - variables [Visual Basic], defining
 - statements [Visual Basic], about statements
 ms.assetid: fcfdee1a-82b7-4846-98f7-9ca3f5160089
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 210637105e54244ba829dabd73feab0b43ec7c6c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: beb33b8f2c30723158e41244cbb5c9cfca108a53
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="statements-in-visual-basic"></a>Visual Basic におけるステートメント
-内のステートメント[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は完全な命令です。 これは、キーワード、演算子、変数、定数、および式に含めることができます。 各ステートメントは、次のカテゴリのいずれかに属します。  
+Visual Basic でのステートメントは、完全な命令です。 これは、キーワード、演算子、変数、定数、および式に含めることができます。 各ステートメントは、次のカテゴリのいずれかに属します。  
   
 -   **宣言ステートメント**変数、定数、またはプロシージャの名前し、データ型を指定することもできます。  
   
@@ -53,7 +54,7 @@ ms.lasthandoff: 10/22/2017
  3 番目の宣言は、`Dim`ステートメントでは、変数を宣言する`thisWidget`です。 データ型は、特定のオブジェクト、つまりから、オブジェクトが作成された、`Widget`クラスです。 任意の基本データ型またはそれを使用しているアプリケーションで公開されているオブジェクトの種類の変数を宣言することができます。  
   
 ### <a name="initial-values"></a>初期値  
- 宣言ステートメントを含むコードの実行時に[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]宣言された要素に必要なメモリを予約します。 要素は、値を保持している場合[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]そのデータ型の既定値に初期化します。 詳細については、「動作」を参照してください[Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)です。  
+ 宣言ステートメントを含むコードを実行すると、Visual Basic は、宣言された要素に必要なメモリを予約します。 要素には、値が含まれる、Visual Basic によりそのデータ型の既定値に初期化します。 詳細については、「動作」を参照してください[Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)です。  
   
  次の例に示すように、その宣言の一部として変数に初期値を割り当てることができます。  
   
@@ -121,7 +122,7 @@ ms.lasthandoff: 10/22/2017
 ### <a name="type-conversions-in-assignment-statements"></a>代入ステートメントでは型変換  
  変数、プロパティ、または配列要素に代入する値は、移行先の要素に適切なデータ型でなければなりません。 一般に、目的の要素のと同じデータ型の値を生成しようとする必要があります。 ただし、一部の型は、代入時に他の型に変換できます。  
   
- データ型の間で変換する方法の詳細については、次を参照してください。 [Visual Basic での型変換](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)です。 簡単に説明する、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]自動的に拡大変換するその他の種類を指定した型の値に変換します。 A*拡大変換*はで常に実行時に成功し、データが失われない。 たとえば、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]に変換、`Integer`値を`Double`適切な場合、ため`Integer`に拡大変換`Double`です。 詳細については、「 [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
+ データ型の間で変換する方法の詳細については、次を参照してください。 [Visual Basic での型変換](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)です。 簡単に説明すると、Visual Basic に自動的に変換指定された型の値、拡大変換とその他の種類します。 A*拡大変換*はで常に実行時に成功し、データが失われない。 たとえば、Visual Basic の変換、`Integer`値を`Double`適切な場合、ため`Integer`に拡大変換`Double`です。 詳細については、「 [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
   
  *縮小変換*、実行時にエラーやデータ損失のリスクを実行 (拡大変換がないもの)。 縮小変換を明示的に実行するには型変換関数を使用して、またはコンパイラに設定してすべての変換を暗黙的に実行を指示する`Option Strict Off`です。 詳細については、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)です。  
   
@@ -158,7 +159,7 @@ ms.lasthandoff: 10/22/2017
 |後に、`From`コレクション初期化子内のキーワードです。|[!code-vb[VbVbalrLineContinuation#13](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/statements_27.vb)]<br /><br /> 詳細については、「[コレクション初期化子](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)」を参照してください。|  
   
 ## <a name="adding-comments"></a>コメントを追加します。  
- ソース コードは自明ですが、それを記述したプログラマにも常にします。 そのコードを文書化するには、したがって、ほとんどのプログラマください埋め込みコメント多めに使用します。 コード内のコメントは、プロシージャまたは特定の命令を読み取り、または後で作業してすべてのユーザーに説明します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイル時に、コメントを無視し、コンパイルされたコードには影響しません。  
+ ソース コードは自明ですが、それを記述したプログラマにも常にします。 そのコードを文書化するには、したがって、ほとんどのプログラマください埋め込みコメント多めに使用します。 コード内のコメントは、プロシージャまたは特定の命令を読み取り、または後で作業してすべてのユーザーに説明します。 Visual Basic はコンパイル時に、コメントを無視し、コンパイルされたコードには影響しません。  
   
  コメント行アポストロフィで始まります (`'`) または`REM`空白が続きます。 追加する任意の場所コードを除く文字列内にあります。 ステートメントにコメントを追加するには、アポストロフィを挿入または`REM`コメントを続けて、ステートメントの後にします。 コメントは、独自の別々 の行に移動できます。 次の例では、これらの可能性を示します。  
   

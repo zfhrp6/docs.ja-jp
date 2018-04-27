@@ -16,11 +16,11 @@ helpviewer_keywords:
 ms.assetid: fec8a3f1-b791-4a37-8af7-344859f8212d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 53362c2eb5517d9230ea88975745315d6db7f1ba
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 5a25755bcbb8d42124cde531f641a611202ae5a1
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="-sdkpath"></a>-sdkpath
 Mscorlib.dll および Microsoft.VisualBasic.dll の位置を指定します。  
@@ -36,10 +36,10 @@ Mscorlib.dll および Microsoft.VisualBasic.dll の位置を指定します。
  Mscorlib.dll および Microsoft.VisualBasic.dll のコンパイルを使用するのバージョンを含むディレクトリです。 読み込まれるまで、このパスは検証されません。 ディレクトリ名を引用符で囲みます ("")、スペースが含まれている場合。  
   
 ## <a name="remarks"></a>コメント  
- このオプションにより、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラに既定以外の場所から mscorlib.dll および Microsoft.VisualBasic.dll のファイルを読み込みます。 `-sdkpath`オプションで使用するように設計されました[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)です。 [!INCLUDE[Compact](~/includes/compact-md.md)]これらの異なるバージョンを使用してサポート ライブラリを型と、デバイスが見つかりません。 言語機能は使用しないでください。  
+ このオプションは、既定以外の場所から mscorlib.dll および Microsoft.VisualBasic.dll のファイルを読み込む Visual Basic コンパイラに指示します。 `-sdkpath`オプションで使用するように設計されました[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)です。 [!INCLUDE[Compact](~/includes/compact-md.md)]これらの異なるバージョンを使用してサポート ライブラリを型と、デバイスが見つかりません。 言語機能は使用しないでください。  
   
 > [!NOTE]
->  `-sdkpath`オプションは、Visual Studio 開発環境からは利用できません; は、コマンドラインからコンパイルするときにのみ使用します。 `-sdkpath`場合は、オプションが設定されて、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]デバイス プロジェクトが読み込まれています。  
+>  `-sdkpath`オプションは、Visual Studio 開発環境からは利用できません; は、コマンドラインからコンパイルするときにのみ使用します。 `-sdkpath` Visual Basic プロジェクトのデバイスが読み込まれるときに、オプションを設定します。  
   
  使用して、Visual Basic ランタイム ライブラリへの参照なしコンパイラでコンパイルする必要があることを指定することができます、`-vbruntime`コンパイラ オプション。 詳細については、次を参照してください。 [-vbruntime](../../../visual-basic/reference/command-line-compiler/vbruntime.md)です。  
   

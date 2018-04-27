@@ -1,10 +1,11 @@
 ---
-title: "演算子の結果のデータ型 (Visual Basic)"
+title: 演算子の結果のデータ型 (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - data types [Visual Basic], operator result data types
@@ -14,17 +15,17 @@ helpviewer_keywords:
 - data types [Visual Basic], ranges
 - operators [Visual Basic], result data types
 ms.assetid: 9d524533-e1a1-4aa8-b1b8-622068173d06
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 61e8fb785830152acfd7e8e2e1784294053ac66e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 508329894758436158970760ba0d13a7780f83db
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="data-types-of-operator-results-visual-basic"></a>演算子の結果のデータ型 (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]オペランドのデータ型に基づく操作の結果のデータ型を決定します。 場合によっては、データ型のいずれかのオペランドよりも広い範囲でこれがあります。  
+Visual Basic では、オペランドのデータ型に基づく操作の結果のデータ型を決定します。 場合によっては、データ型のいずれかのオペランドよりも広い範囲でこれがあります。  
   
 ## <a name="data-type-ranges"></a>データ型の範囲  
  昇順、小さい方から順に、関連するデータ型の範囲は次のとおりです。  
@@ -45,20 +46,20 @@ ms.lasthandoff: 11/21/2017
   
 -   [二重](../../../visual-basic/language-reference/data-types/double-data-type.md): 最大範囲 1.7 E + 308 (絶対値)  
   
- 詳細については[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]データ型を参照してください[データ型](../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
+ Visual Basic データ型の詳細については、次を参照してください。[データ型](../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
   
- オペランドが評価された場合[Nothing](../../../visual-basic/language-reference/nothing.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]算術演算子が 0 として処理します。  
+ オペランドが評価された場合[Nothing](../../../visual-basic/language-reference/nothing.md)、Visual Basic 算術演算子が 0 として処理します。  
   
 ## <a name="decimal-arithmetic"></a>10 進数の算術演算子  
  なお、 [10 進](../../../visual-basic/language-reference/data-types/decimal-data-type.md)データ型はどちらも浮動小数点も整数。  
   
- 場合のいずれかのオペランド、 `+`、 `–`、 `*`、 `/`、または`Mod`操作が`Decimal`がないと`Single`または`Double`、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] をもう一方のオペランドを拡大変換`Decimal`. 操作を実行`Decimal`、結果のデータ型は`Decimal`します。  
+ 場合のいずれかのオペランド、 `+`、 `–`、 `*`、 `/`、または`Mod`操作が`Decimal`がないと`Single`または`Double`、Visual Basicをもう一方のオペランドを拡大変換`Decimal`. 操作を実行`Decimal`、結果のデータ型は`Decimal`します。  
   
 ## <a name="floating-point-arithmetic"></a>浮動小数点算術演算子  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ほとんどの浮動小数点演算を実行[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)などの操作は、最も効率的なデータを入力します。 ただし、1 つのオペランドが場合[単一](../../../visual-basic/language-reference/data-types/single-data-type.md)がないと`Double`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]で操作を実行`Single`です。 各オペランドは、操作の前に適切なデータ型を必要に応じて、拡大変換し、結果は、そのデータ型を持ちます。  
+ Visual Basic でのほとんどの浮動小数点演算を実行する[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)などの操作は、最も効率的なデータを入力します。 ただし、1 つのオペランドが場合[単一](../../../visual-basic/language-reference/data-types/single-data-type.md)がないと`Double`、Visual Basic での操作を実行する`Single`です。 各オペランドは、操作の前に適切なデータ型を必要に応じて、拡大変換し、結果は、そのデータ型を持ちます。  
   
 ### <a name="-and--operators"></a>/、^ 演算子  
- `/`に対してのみ演算子が定義されて、 [10 進](../../../visual-basic/language-reference/data-types/decimal-data-type.md)、[単一](../../../visual-basic/language-reference/data-types/single-data-type.md)、および[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)データ型。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]そのデータ型を操作し、結果がある前に各オペランドは、適切なデータ型を必要に応じて幅が広がります。  
+ `/`に対してのみ演算子が定義されて、 [10 進](../../../visual-basic/language-reference/data-types/decimal-data-type.md)、[単一](../../../visual-basic/language-reference/data-types/single-data-type.md)、および[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)データ型。 Visual Basic に拡大変換を必要に応じて、操作の前に適切なデータ型には、各オペランドと結果は、そのデータ型を持ちます。  
   
  次の表は、結果のデータ型、`/`演算子。 このテーブルは、対称; ことに注意してください。オペランドのデータ型の特定の組み合わせについては、結果のデータ型は、オペランドの順序に関係なく同じです。  
   
@@ -70,10 +71,10 @@ ms.lasthandoff: 11/21/2017
 |`Double`|倍精度浮動小数点型|倍精度浮動小数点型|倍精度浮動小数点型|倍精度浮動小数点型|  
 |任意の整数型|Decimal (10 進数型)|Single|倍精度浮動小数点型|倍精度浮動小数点型|  
   
- `^`に対してのみ演算子が定義されて、`Double`データ型。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]各オペランドを必要に応じて拡大変換`Double`操作、およびデータ型は常に、結果の前に`Double`です。  
+ `^`に対してのみ演算子が定義されて、`Double`データ型。 Visual Basic が各オペランドを必要に応じて拡大変換`Double`操作、およびデータ型は常に、結果の前に`Double`です。  
   
 ## <a name="integer-arithmetic"></a>整数算術演算  
- 整数演算の結果のデータ型は、オペランドのデータ型によって異なります。 一般に、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]結果のデータ型を決定するため、次のポリシーを使用します。  
+ 整数演算の結果のデータ型は、オペランドのデータ型によって異なります。 一般に、Visual Basic では、結果のデータ型を決定するため、次のポリシーを使用します。  
   
 -   バイナリ演算子のオペランドは両方と同じであるかどうか、結果はそのデータ型をデータ型します。 例外は、 `Boolean`、これには、強制的に`Short`です。  
   
@@ -92,18 +93,18 @@ ms.lasthandoff: 11/21/2017
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
-|単項`+`|Short|SByte|Byte|Short|UShort|整数|UInteger|Long|ULong|  
-|単項`–`|Short|SByte|Short|Short|整数|整数|Long|Long|Decimal (10 進数型)|  
+|単項 `+`|Short|SByte|Byte|Short|UShort|整数型|UInteger|Long|ULong|  
+|単項 `–`|Short|SByte|Short|Short|整数|整数型|Long|Long|Decimal (10 進数型)|  
   
-### <a name="-and--operators"></a><\<および >> 演算子  
- 次の表は、2 つのビット シフト演算子の結果のデータ型を示します`<<`と`>>`です。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]各ビット シフト演算子を単項演算子の左側のオペランド (をシフトするビット パターン) として扱われます。  
+### <a name="-and--operators"></a><\< および >> 演算子  
+ 次の表は、2 つのビット シフト演算子の結果のデータ型を示します`<<`と`>>`です。 各ビット シフト演算子は、Visual Basic は、左のオペランド (をシフトするビット パターン) の単項演算子として扱います。  
   
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
-|`<<`, `>>`|Short|SByte|Byte|Short|UShort|整数|UInteger|Long|ULong|  
+|`<<`, `>>`|Short|SByte|Byte|Short|UShort|整数型|UInteger|Long|ULong|  
   
- 左のオペランドが場合`Decimal`、 `Single`、 `Double`、または`String`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]に変換しようとしています。`Long`操作、およびデータ型は、結果の前に`Long`です。 右側のオペランド (シフトするビット位置の数) である必要があります`Integer`または型に拡大変換が`Integer`です。  
+ 左のオペランドが場合`Decimal`、 `Single`、 `Double`、または`String`、Visual Basic に変換しようとしました。`Long`操作、およびデータ型は、結果の前に`Long`です。 右側のオペランド (シフトするビット位置の数) である必要があります`Integer`または型に拡大変換が`Integer`です。  
   
 ### <a name="binary----and-mod-operators"></a>バイナリ +、-、*、および Mod 演算子  
  次の表は、結果のバイナリ データ型`+`と`–`演算子および`*`と`Mod`演算子。 このテーブルは、対称; ことに注意してください。オペランドのデータ型の特定の組み合わせについては、結果のデータ型は、オペランドの順序に関係なく同じです。  
@@ -111,12 +112,12 @@ ms.lasthandoff: 11/21/2017
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
-|`Boolean`|Short|SByte|Short|Short|整数|整数|Long|Long|Decimal (10 進数型)|  
-|`SByte`|SByte|SByte|Short|Short|整数|整数|Long|Long|Decimal (10 進数型)|  
-|`Byte`|Short|Short|Byte|Short|UShort|整数|UInteger|Long|ULong|  
-|`Short`|Short|Short|Short|Short|整数|整数|Long|Long|Decimal (10 進数型)|  
-|`UShort`|整数型|整数|UShort|整数|UShort|整数|UInteger|Long|ULong|  
-|`Integer`|整数型|整数|整数|整数|整数|整数|Long|Long|Decimal (10 進数型)|  
+|`Boolean`|Short|SByte|Short|Short|整数|整数型|Long|Long|Decimal (10 進数型)|  
+|`SByte`|SByte|SByte|Short|Short|整数|整数型|Long|Long|Decimal (10 進数型)|  
+|`Byte`|Short|Short|Byte|Short|UShort|整数型|UInteger|Long|ULong|  
+|`Short`|Short|Short|Short|Short|整数|整数型|Long|Long|Decimal (10 進数型)|  
+|`UShort`|整数型|整数型|UShort|整数型|UShort|整数型|UInteger|Long|ULong|  
+|`Integer`|整数型|整数型|整数型|整数型|整数型|整数型|Long|Long|Decimal (10 進数型)|  
 |`UInteger`|Long|Long|UInteger|Long|UInteger|Long|UInteger|Long|ULong|  
 |`Long`|Long|Long|Long|Long|Long|Long|Long|Long|Decimal (10 進数型)|  
 |`ULong`|Decimal (10 進数型)|Decimal (10 進数型)|ULong|Decimal (10 進数型)|ULong|Decimal (10 進数型)|ULong|Decimal (10 進数型)|ULong|  
@@ -127,25 +128,25 @@ ms.lasthandoff: 11/21/2017
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
-|`Boolean`|Short|SByte|Short|Short|整数|整数|Long|Long|Long|  
-|`SByte`|SByte|SByte|Short|Short|整数|整数|Long|Long|Long|  
-|`Byte`|Short|Short|Byte|Short|UShort|整数|UInteger|Long|ULong|  
-|`Short`|Short|Short|Short|Short|整数|整数|Long|Long|Long|  
-|`UShort`|整数型|整数|UShort|整数|UShort|整数|UInteger|Long|ULong|  
-|`Integer`|整数型|整数|整数|整数|整数|整数|Long|Long|Long|  
+|`Boolean`|Short|SByte|Short|Short|整数|整数型|Long|Long|Long|  
+|`SByte`|SByte|SByte|Short|Short|整数|整数型|Long|Long|Long|  
+|`Byte`|Short|Short|Byte|Short|UShort|整数型|UInteger|Long|ULong|  
+|`Short`|Short|Short|Short|Short|整数|整数型|Long|Long|Long|  
+|`UShort`|整数型|整数型|UShort|整数型|UShort|整数型|UInteger|Long|ULong|  
+|`Integer`|整数型|整数型|整数型|整数型|整数型|整数型|Long|Long|Long|  
 |`UInteger`|Long|Long|UInteger|Long|UInteger|Long|UInteger|Long|ULong|  
 |`Long`|Long|Long|Long|Long|Long|Long|Long|Long|Long|  
 |`ULong`|Long|Long|ULong|Long|ULong|Long|ULong|Long|ULong|  
   
- 場合のいずれかのオペランド、`\`演算子は[Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)、[単一](../../../visual-basic/language-reference/data-types/single-data-type.md)、または[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]に変換しようとしています[時間の長い。](../../../visual-basic/language-reference/data-types/long-data-type.md)操作、およびデータ型は、結果の前に`Long`です。  
+ 場合のいずれかのオペランド、`\`演算子は[10 進](../../../visual-basic/language-reference/data-types/decimal-data-type.md)、[単一](../../../visual-basic/language-reference/data-types/single-data-type.md)、または[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)、Visual Basic に変換しようとしました[時間の長い](../../../visual-basic/language-reference/data-types/long-data-type.md)。操作、およびデータ型は、結果の前に`Long`です。  
   
 ## <a name="relational-and-bitwise-comparisons"></a>リレーショナルとビットごとの比較  
  リレーショナル操作の結果のデータ型 (`=`、 `<>`、 `<`、 `>`、 `<=`、 `>=`) は常に`Boolean`[ブールのデータ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)です。 各論理操作について同じです (`And`、 `AndAlso`、 `Not`、 `Or`、 `OrElse`、 `Xor`) で`Boolean`オペランド。  
   
- 論理演算の結果のデータ型は、オペランドのデータ型によって異なります。 注意してください`AndAlso`と`OrElse`に対してのみ定義`Boolean`と[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を必要に応じて、各オペランドを変換`Boolean`操作を実行する前にします。  
+ 論理演算の結果のデータ型は、オペランドのデータ型によって異なります。 なお`AndAlso`と`OrElse`に対してのみ定義されます`Boolean`、Visual Basic は、各オペランドを必要に応じてに変換します`Boolean`操作を実行する前にします。  
   
 ### <a name="-----and--operators"></a>=、<>、 \<、>、 \<、=、> = 演算子  
- 両方のオペランドが場合`Boolean`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]考慮`True`するより小さい`False`です。 数値型とを比較する場合、 `String`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]の変換を試みます、`String`に`Double`操作の前にします。 A`Char`または`Date`オペランドは、同じデータ型のオペランドとのみ比較できます。 結果のデータ型は常に`Boolean`です。  
+ 両方のオペランドが場合`Boolean`、Visual Basic では考慮`True`するより小さい`False`です。 数値型とを比較する場合、 `String`、変換しようとしている Visual Basic、`String`に`Double`操作の前にします。 A`Char`または`Date`オペランドは、同じデータ型のオペランドとのみ比較できます。 結果のデータ型は常に`Boolean`です。  
   
 ### <a name="bitwise-not-operator"></a>ビットごとの Not 演算子  
  次の表は、結果のビットごとのデータ型を示しています`Not`演算子。  
@@ -153,9 +154,9 @@ ms.lasthandoff: 11/21/2017
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
-|`Not`|ブール型|SByte|Byte|Short|UShort|整数|UInteger|Long|ULong|  
+|`Not`|ブール型|SByte|Byte|Short|UShort|整数型|UInteger|Long|ULong|  
   
- オペランドが場合`Decimal`、 `Single`、 `Double`、または`String`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]に変換しようとしています。`Long`操作、およびデータ型は、結果の前に`Long`です。  
+ オペランドが場合`Decimal`、 `Single`、 `Double`、または`String`、Visual Basic に変換しようとしました。`Long`操作、およびデータ型は、結果の前に`Long`です。  
   
 ### <a name="bitwise-and-or-and-xor-operators"></a>ビット演算子、または、および Xor 演算子  
  次の表は、結果のビットごとのデータ型を示しています`And`、 `Or`、および`Xor`演算子。 このテーブルは、対称; ことに注意してください。オペランドのデータ型の特定の組み合わせについては、結果のデータ型は、オペランドの順序に関係なく同じです。  
@@ -163,24 +164,24 @@ ms.lasthandoff: 11/21/2017
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
 ||`Boolean`|`SByte`|`Byte`|`Short`|`UShort`|`Integer`|`UInteger`|`Long`|`ULong`|  
-|`Boolean`|ブール型|SByte|Short|Short|整数|整数|Long|Long|Long|  
-|`SByte`|SByte|SByte|Short|Short|整数|整数|Long|Long|Long|  
-|`Byte`|Short|Short|Byte|Short|UShort|整数|UInteger|Long|ULong|  
-|`Short`|Short|Short|Short|Short|整数|整数|Long|Long|Long|  
-|`UShort`|整数型|整数|UShort|整数|UShort|整数|UInteger|Long|ULong|  
-|`Integer`|整数型|整数|整数|整数|整数|整数|Long|Long|Long|  
+|`Boolean`|ブール型|SByte|Short|Short|整数|整数型|Long|Long|Long|  
+|`SByte`|SByte|SByte|Short|Short|整数|整数型|Long|Long|Long|  
+|`Byte`|Short|Short|Byte|Short|UShort|整数型|UInteger|Long|ULong|  
+|`Short`|Short|Short|Short|Short|整数|整数型|Long|Long|Long|  
+|`UShort`|整数型|整数型|UShort|整数型|UShort|整数型|UInteger|Long|ULong|  
+|`Integer`|整数型|整数型|整数型|整数型|整数型|整数型|Long|Long|Long|  
 |`UInteger`|Long|Long|UInteger|Long|UInteger|Long|UInteger|Long|ULong|  
 |`Long`|Long|Long|Long|Long|Long|Long|Long|Long|Long|  
 |`ULong`|Long|Long|ULong|Long|ULong|Long|ULong|Long|ULong|  
   
- オペランドは場合`Decimal`、 `Single`、 `Double`、または`String`、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]に変換しようとしています。`Long`前に、操作、および結果データ型は、同じ場合に、そのオペランドが既に`Long`です。  
+ オペランドは場合`Decimal`、 `Single`、 `Double`、または`String`、Visual Basic に変換しようとしました。`Long`前に、操作、および結果データ型は、同じ場合に、そのオペランドが既に`Long`です。  
   
 ## <a name="miscellaneous-operators"></a>その他の演算子  
- `&`演算子は連結に対してのみ定義`String`オペランド。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]各オペランドを必要に応じて変換`String`操作、およびデータ型は常に、結果の前に`String`です。 目的で、`&`演算子、すべての変換を`String`、拡大変換と見なされる場合でも`Option Strict`は`On`します。  
+ `&`演算子は連結に対してのみ定義`String`オペランド。 各オペランドを必要に応じて変換`String`操作、およびデータ型は常に、結果の前に`String`です。 目的で、`&`演算子、すべての変換を`String`、拡大変換と見なされる場合でも`Option Strict`は`On`します。  
   
  `Is`と`IsNot`演算子が両方のオペランドは参照型である必要があります。 `TypeOf`しています.`Is`式は、最初のオペランドは参照型であると、データ型の名前を指定する 2 番目のオペランドが必要です。 これらすべての場合、結果のデータ型は`Boolean`します。  
   
- `Like`のパターンに一致するだけの演算子が定義されている`String`オペランド。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]必要に応じて各オペランドを変換しようとしています。`String`操作の前にします。 結果のデータ型は常に`Boolean`です。  
+ `Like`のパターンに一致するだけの演算子が定義されている`String`オペランド。 Visual Basic が、必要に応じて各オペランドを変換しようとしています。`String`操作の前にします。 結果のデータ型は常に`Boolean`です。  
   
 ## <a name="see-also"></a>関連項目  
  [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  

@@ -1,24 +1,26 @@
 ---
-title: "高度なフィルター"
-ms.custom: 
+title: 高度なフィルター
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d81590f-e036-4f96-824a-4a187f462764
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 357b57bb39ca31b48d21cb83209a72d0b3d12a62
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a374765317751a5adc241941a0c0dc613a3ea2cc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="advanced-filters"></a>高度なフィルター
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ルーティング サービスを示します。 ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに簡単に追加できるようにする [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンポーネントです。 このサンプルでは、標準の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 電卓のサンプルを改良し、ルーティング サービスを使用して通信するようにします。 そして、メッセージ フィルターとメッセージ フィルター テーブルを使用してコンテンツ ベースのルーティング ロジックを定義する方法を説明します。  
@@ -60,7 +62,7 @@ XPathMessageFilter xpathFilter = new XPathMessageFilter("/s12:Envelope/s12:Heade
 EndpointNameMessageFilter endpointNameFilter = new EndpointNameMessageFilter("calculatorEndpoint");  
 ```  
   
- 3 番目のフィルターは、<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> です。 このフィルターは、指定したアドレス プレフィックス (アドレスの前半部分) に一致するアドレスを持つエンドポイントで受信されたメッセージに一致します。 この例のアドレス プレフィックスは "http://localhost/routingservice/router/rounding/" として定義されています。 この場合、"http://localhost/routingservice/router/rounding/*" 宛ての受信メッセージがこのフィルターに一致します。 この例では、丸め処理を行う電卓のエンドポイントのアドレスが "http://localhost/routingservice/router/rounding/calculator" なので、このエンドポイントで受信されたメッセージがこのフィルターに一致することになります。  
+ 3 番目のフィルターは、<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> です。 このフィルターは、指定したアドレス プレフィックス (アドレスの前半部分) に一致するアドレスを持つエンドポイントで受信されたメッセージに一致します。 としてこの例では、アドレス プレフィックスが定義されている"http://localhost/routingservice/router/rounding/"です。 つまり、受信メッセージにアドレスが"http://localhost/routingservice/router/rounding/*"は、このフィルターで一致します。 この場合は、丸め処理を行う電卓のエンドポイントに表示されるメッセージのアドレスを持つ"http://localhost/routingservice/router/rounding/calculator"です。  
   
 ```  
 PrefixEndpointAddressMessageFilter prefixAddressFilter = new PrefixEndpointAddressMessageFilter(new EndpointAddress("http://localhost/routingservice/router/rounding/"));  
@@ -91,7 +93,7 @@ RoundRobinMessageFilter roundRobinFilter2 = new RoundRobinMessageFilter("group1"
   
 2.  開くには**ソリューション エクスプ ローラー****ソリューション エクスプ ローラー**から、**ビュー**メニュー。  
   
-3.  [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] で F5 キーを押すか、Ctrl キーと Shift キーを押しながら B キーを押します。  
+3.  Visual Studio で f5 キーまたは CTRL + SHIFT + B にキーを押します。  
   
     1.  F5 キーを押したときに必要なプロジェクトを自動的に起動する場合は、ソリューションを右クリックし **プロパティ**です。 選択、**スタートアップ プロジェクト**ノードの下**共通プロパティ**左側のウィンドウでします。 選択、**マルチ スタートアップ プロジェクト**ラジオ ボタンと、すべてのプロジェクトに対して、設定、**開始**アクション。  
   
@@ -164,5 +166,5 @@ RoundRobinMessageFilter roundRobinFilter2 = new RoundRobinMessageFilter("group1"
 ### <a name="real-world-scenario"></a>実際のシナリオ  
  Contoso では、すべてのサービスを仮想化して 1 つのエンドポイントのみを公開し、そのエンドポイントを通じて複数の異なる種類のサービスへのアクセスを提供したいと考えています。 この場合は、ルーティング サービスのコンテンツ ベースのルーティング機能を使用して受信要求の送信先を決定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

@@ -17,11 +17,11 @@ ms.assetid: f1d04509-5e46-4551-9f9f-94334a121fca
 caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2cf51e1f6292a61c071fe6d92f5fcbce4be84ff4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5ea802572a59a3b94508558cee97290cac67e1ac
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="development-with-my-visual-basic"></a>My による開発 (Visual Basic)
 Visual Basic には、多彩な機能を提供する一方で生産性や使いやすさを向上させる、迅速なアプリケーション開発用の新しい機能が用意されています。 こうした機能の 1 つである `My` という機能は、情報へのアクセス、およびアプリケーションやそのランタイム環境に関連する既定のオブジェクト インスタンスを提供します。 この情報は、IntelliSense によって検出可能な形式で編成され、用途に応じて論理的に区別されます。  
@@ -43,7 +43,7 @@ Visual Basic には、多彩な機能を提供する一方で生産性や使い�
  `My.Resources` オブジェクトと `My.Settings` オブジェクトについて説明します。これらのオブジェクトは、アプリケーションのリソースと設定へのアクセスを提供します。  
   
  [Visual Basic アプリケーション モデルの概要](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のアプリケーションのスタートアップ/シャットダウン モデルについて説明します。  
+ Visual Basic アプリケーションのスタートアップ/シャット ダウン モデルをについて説明します。  
   
  [プロジェクトの種類に応じた My の機能](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
  異なる種類のプロジェクトで使用できる `My` 機能の詳細を説明します。  

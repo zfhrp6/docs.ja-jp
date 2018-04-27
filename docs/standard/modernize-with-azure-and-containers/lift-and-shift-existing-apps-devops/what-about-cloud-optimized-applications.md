@@ -1,18 +1,19 @@
 ---
-title: "クラウドに最適化されたアプリケーションについて説明します。"
-description: "コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |クラウドに最適化されたアプリケーションについて説明します。"
+title: クラウドに最適化されたアプリケーションについて説明します。
+description: コンテナーの .NET アプリケーションの .NET Microservices アーキテクチャ |クラウドに最適化されたアプリケーションについて説明します。
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
 ms.prod: .net
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 249da9ecbac90514647f4fdc926928ac7ad4648e
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 63eb80dc43e174f4c803f772f09f6e72d8c8e7c2
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="what-about-cloud-optimized-applications"></a>クラウドに最適化されたアプリケーションについて説明します。
 
@@ -72,7 +73,7 @@ Microservices アーキテクチャには、自律的なサービスの形式で
 
 Microservices アーキテクチャ、複雑な特定のシナリオと特定のアプリケーションの種類だけは、マイクロ サービス ベースのアプリケーションに適しています。 複数ある大規模で複雑なアプリケーションは、これらのサブシステムを発展します。 このような場合は、長期的な増加の機敏性とアプリケーションの保守をより効率的より複雑なソフトウェア アーキテクチャを購入する価値はします。 小さい複雑なシナリオは、単体のアプリケーションのアプローチを続行する方がよい場合があります。 または単純な N 層のアプローチです。
 
-これについては、繰り返し発生する可能性があっても、最後の注意点としてべきではありませんを確認すると、アプリケーションで microservices を使用する"オールインワンまたは nothing ですべて*.*" 拡張し、新しい microservices に基づいて小規模のシナリオを追加することによってモノリシックな既存のアプリケーションの進化できます。 Microservices アーキテクチャ アプローチで作業を開始する最初から開始する必要はありません。 実際には、新しいシナリオを追加することで既存のモノリシックまたは N 層アプリケーションを使用して進化することをお勧めします。 最終的には、自律的なコンポーネントまたは microservices にアプリケーションを中断することができます。 モノリシック microservices 方向、ステップ バイ ステップでアプリケーションの進化を開始することができます。
+これについては、繰り返し発生する可能性があっても、最後の注意点としてべきではありませんを確認すると、アプリケーションで microservices を使用する"オールインワンまたは nothing ですべて *.*" 拡張し、新しい microservices に基づいて小規模のシナリオを追加することによってモノリシックな既存のアプリケーションの進化できます。 Microservices アーキテクチャ アプローチで作業を開始する最初から開始する必要はありません。 実際には、新しいシナリオを追加することで既存のモノリシックまたは N 層アプリケーションを使用して進化することをお勧めします。 最終的には、自律的なコンポーネントまたは microservices にアプリケーションを中断することができます。 モノリシック microservices 方向、ステップ バイ ステップでアプリケーションの進化を開始することができます。
 
 ## <a name="when-to-use-azure-app-service-for-modernizing-existing-net-apps"></a>既存の .NET アプリケーションを刷新する Azure App Service を使用する場合
 

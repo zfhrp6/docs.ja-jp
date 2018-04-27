@@ -1,22 +1,23 @@
 ---
-title: "LINQ to XML の概要 (Visual Basic)"
-ms.custom: 
+title: LINQ to XML の概要 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 502661e0-bc5d-438d-94c2-7efb63bb6fbd
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 41dd5818dc33a690c7abe4c33aa7a7becfde2123
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f4ccc81f1f7b875c7388dc09cc45521c6257c00d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="linq-to-xml-overview-visual-basic"></a>LINQ to XML の概要 (Visual Basic)
 XML は、多くのコンテキストでデータを書式設定する方法として広く採用されてきました。 たとえば、Web、構成ファイル、Microsoft Office Word ファイル、データベースで XML が使用されています。  
@@ -92,7 +93,7 @@ Dim contacts = _
 </Contacts>  
 ```  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラに XML リテラルに変換[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]メソッドの呼び出しです。  
+ Visual Basic コンパイラに XML リテラルに変換[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]メソッドの呼び出しです。  
   
  詳細については、次を参照してください。 [XML ツリーを作成する」(Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)です。  
   

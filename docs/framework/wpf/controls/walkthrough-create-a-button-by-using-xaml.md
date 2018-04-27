@@ -1,34 +1,34 @@
 ---
-title: "チュートリアル : XAML を使用したボタンの作成"
-ms.custom: 
+title: 'チュートリアル : XAML を使用したボタンの作成'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-caps.latest.revision: 
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5c5efa9f8787e65d59e1b544632e806bf3fbbc81
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94ec5e56862190026b43331488cbc699fe7dfda4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>チュートリアル : XAML を使用したボタンの作成
 このチュートリアルの目的で使用するためのアニメーションのボタンを作成する方法については、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]アプリケーションです。 このチュートリアルでは、スタイルとテンプレートを使用して、コードの再利用やボタン宣言からボタン ロジックを分離するカスタマイズされたボタンのリソースを作成します。 このチュートリアルが完全に書き込まれる[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
   
 > [!IMPORTANT]
->  このチュートリアルでは入力またはコピーして貼り付けることによって、アプリケーションを作成する手順を説明します。 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] microsoft[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]です。 デザイン ツール (Microsoft Expression Blend) を使用して、同じアプリケーションを作成する方法を学習したい場合[Microsoft Expression Blend を使用してボタンを作成して](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)です。  
+>  このチュートリアルでは入力またはコピーして貼り付けることによって、アプリケーションを作成する手順を説明します。[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]に Microsoft Visual Studio です。 デザイン ツール (Microsoft Expression Blend) を使用して、同じアプリケーションを作成する方法を学習したい場合[Microsoft Expression Blend を使用してボタンを作成して](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)です。  
   
  次の図は、完成したボタンを示しています。  
   
@@ -39,11 +39,11 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-a-new-wpf-project-and-add-buttons-to-the-window"></a>新しい WPF プロジェクトを作成し、ボタン、ウィンドウを追加するには  
   
-1.  開始[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]です。  
+1.  Visual Studio を起動します。  
   
-2.  **新しい WPF プロジェクトの作成:**上、**ファイル** メニューのをポイント**新規**、順にクリック**プロジェクト**です。 検索、 **Windows アプリケーション (WPF)**テンプレートとプロジェクト"AnimatedButton"の名前。 これにより、アプリケーションのスケルトンが作成されます。  
+2.  **新しい WPF プロジェクトの作成:** 上、**ファイル** メニューのをポイント**新規**、順にクリック**プロジェクト**です。 検索、 **Windows アプリケーション (WPF)** テンプレートとプロジェクト"AnimatedButton"の名前。 これにより、アプリケーションのスケルトンが作成されます。  
   
-3.  **基本的な既定のボタンの追加:**このチュートリアルに必要なすべてのファイルは、テンプレートによって提供されます。 ダブルクリックして、ソリューション エクスプ ローラーで、Window1.xaml ファイルを開きます。 既定では、 <xref:System.Windows.Controls.Grid> Window1.xaml 内の要素。 削除、<xref:System.Windows.Controls.Grid>要素に、いくつかのボタンを追加して、 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] 」と入力またはコピーして貼り付けることによって window1.xaml の名前に次の強調表示されているコード ページ。  
+3.  **基本的な既定のボタンの追加:** このチュートリアルに必要なすべてのファイルは、テンプレートによって提供されます。 ダブルクリックして、ソリューション エクスプ ローラーで、Window1.xaml ファイルを開きます。 既定では、 <xref:System.Windows.Controls.Grid> Window1.xaml 内の要素。 削除、<xref:System.Windows.Controls.Grid>要素に、いくつかのボタンを追加して、 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] 」と入力またはコピーして貼り付けることによって window1.xaml の名前に次の強調表示されているコード ページ。  
   
     ```xaml  
     <Window x:Class="AnimatedButton.Window1"  
@@ -99,7 +99,7 @@ ms.lasthandoff: 12/22/2017
   
      たくさんありますのさまざまなオブジェクトが対象となるを微調整する方法を含む、複合型プロパティ値を指定する、およびスタイルを使用する入力として他のスタイルのスタイルを使って実行できます。 詳しくは、「 [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
   
-3.  **リソースにスタイル プロパティの値を設定:**リソースが簡単に一般的に定義されるオブジェクトとの値を再利用を有効にします。 コードにモジュール化するためのリソースを使用して複雑な値を定義すると特に便利です。 App.xaml に次の強調表示されているマークアップを追加します。  
+3.  **リソースにスタイル プロパティの値を設定:** リソースが簡単に一般的に定義されるオブジェクトとの値を再利用を有効にします。 コードにモジュール化するためのリソースを使用して複雑な値を定義すると特に便利です。 App.xaml に次の強調表示されているマークアップを追加します。  
   
     ```xaml  
     <Application.Resources>  
@@ -129,7 +129,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-use-the-template-to-define-the-look-of-the-button"></a>ボタンの外観を定義するテンプレートを使用するには  
   
-1.  **テンプレートのセットアップ:**コントロールなどのため<xref:System.Windows.Controls.Button>が、<xref:System.Windows.Controls.Control.Template%2A>プロパティで設定した他のプロパティ値と同じようにテンプレートのプロパティ値を定義することができます、<xref:System.Windows.Style>を使用して、<xref:System.Windows.Setter>です。 次の強調表示されているマークアップをボタンのスタイルに追加します。  
+1.  **テンプレートのセットアップ:** コントロールなどのため<xref:System.Windows.Controls.Button>が、<xref:System.Windows.Controls.Control.Template%2A>プロパティで設定した他のプロパティ値と同じようにテンプレートのプロパティ値を定義することができます、<xref:System.Windows.Style>を使用して、<xref:System.Windows.Setter>です。 次の強調表示されているマークアップをボタンのスタイルに追加します。  
   
     ```xaml
     <Application.Resources>  
@@ -152,7 +152,7 @@ ms.lasthandoff: 12/22/2017
     </Application.Resources>  
     ```  
   
-2.  **ボタンのプレゼンテーションを alter:**この時点では、テンプレートを定義する必要があります。 次の強調表示されているマークアップを追加します。 このマークアップでは、2 つを指定します<xref:System.Windows.Shapes.Rectangle>角の丸いを持つ要素が続く、<xref:System.Windows.Controls.DockPanel>です。 <xref:System.Windows.Controls.DockPanel>が使用されるホストに、<xref:System.Windows.Controls.ContentPresenter>ボタンのです。 A<xref:System.Windows.Controls.ContentPresenter>ボタンのコンテンツを表示します。 このチュートリアルでは、コンテンツは、テキスト (「ボタン 1」、「ボタン 2」、「ボタン 3」) です。 すべてのテンプレートのコンポーネント (四角形と<xref:System.Windows.Controls.DockPanel>) 内のレイアウト、<xref:System.Windows.Controls.Grid>です。  
+2.  **ボタンのプレゼンテーションを alter:** この時点では、テンプレートを定義する必要があります。 次の強調表示されているマークアップを追加します。 このマークアップでは、2 つを指定します<xref:System.Windows.Shapes.Rectangle>角の丸いを持つ要素が続く、<xref:System.Windows.Controls.DockPanel>です。 <xref:System.Windows.Controls.DockPanel>が使用されるホストに、<xref:System.Windows.Controls.ContentPresenter>ボタンのです。 A<xref:System.Windows.Controls.ContentPresenter>ボタンのコンテンツを表示します。 このチュートリアルでは、コンテンツは、テキスト (「ボタン 1」、「ボタン 2」、「ボタン 3」) です。 すべてのテンプレートのコンポーネント (四角形と<xref:System.Windows.Controls.DockPanel>) 内のレイアウト、<xref:System.Windows.Controls.Grid>です。  
   
     ```xaml  
     <Setter.Value>  
@@ -175,7 +175,7 @@ ms.lasthandoff: 12/22/2017
   
      ![](../../../../docs/framework/wpf/controls/media/custom-button-animatedbutton-4.gif "custom_button_AnimatedButton_4")  
   
-3.  **グラスをテンプレートに追加:**次ガラスに追加します。 まず、ガラスのグラデーション効果を作成するリソースを作成します。 リソースを追加するこれらグラデーション任意の場所内で、`Application.Resources`ブロック。  
+3.  **グラスをテンプレートに追加:** 次ガラスに追加します。 まず、ガラスのグラデーション効果を作成するリソースを作成します。 リソースを追加するこれらグラデーション任意の場所内で、`Application.Resources`ブロック。  
   
     ```xaml  
     <Application.Resources>  
@@ -224,7 +224,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-button-interactivity"></a>ボタンの対話機能を作成するには  
   
-1.  **テンプレートのトリガーを追加:**マークアップを強調表示されているテンプレートに追加します。  
+1.  **テンプレートのトリガーを追加:** マークアップを強調表示されているテンプレートに追加します。  
   
     ```  
     <Setter.Value>  
@@ -289,7 +289,7 @@ ms.lasthandoff: 12/22/2017
     </Setter.Value>  
     ```  
   
-2.  **プロパティ トリガーを追加:**強調表示されているマークアップを追加、`ControlTemplate.Triggers`ブロック。  
+2.  **プロパティ トリガーを追加:** 強調表示されているマークアップを追加、`ControlTemplate.Triggers`ブロック。  
   
     ```  
     <ControlTemplate.Triggers>  
@@ -301,7 +301,7 @@ ms.lasthandoff: 12/22/2017
   
      F5 キーを押してアプリケーションを実行し、ボタンの上にマウス ポインターを実行するように影響を確認します。  
   
-3.  **フォーカス トリガーを追加する:**次に、ボタンに (たとえば、ユーザーがクリックした後) のフォーカスがあるときに、ケースを処理するいくつかのような set アクセス操作子を追加します。  
+3.  **フォーカス トリガーを追加する:** 次に、ボタンに (たとえば、ユーザーがクリックした後) のフォーカスがあるときに、ケースを処理するいくつかのような set アクセス操作子を追加します。  
   
     ```  
     <ControlTemplate.Triggers>  
@@ -332,7 +332,7 @@ ms.lasthandoff: 12/22/2017
   
      F5 キーを押してアプリケーションを実行し、ボタンのいずれかをクリックします。 フォーカスがあるために、クリックした後、ボタンが強調表示されたままことに注意してください。 別のボタンをクリックした場合は、新しいボタンにフォーカスが最後の 1 つでは、それが失われます。  
   
-4.  **アニメーションの追加**<xref:System.Windows.UIElement.MouseEnter> **と** <xref:System.Windows.UIElement.MouseLeave> **:**次にいくつかのアニメーションのトリガーに追加します。 任意の場所内の次のマークアップを追加、`ControlTemplate.Triggers`ブロックします。  
+4.  **アニメーションの追加**<xref:System.Windows.UIElement.MouseEnter> **と** <xref:System.Windows.UIElement.MouseLeave> **:** 次にいくつかのアニメーションのトリガーに追加します。   任意の場所内の次のマークアップを追加、`ControlTemplate.Triggers`ブロックします。  
   
     ```  
     <!-- Animations that start when mouse enters and leaves button. -->  
@@ -369,7 +369,7 @@ ms.lasthandoff: 12/22/2017
   
      2 番目のイベント トリガー (<xref:System.Windows.UIElement.MouseLeave>) が停止される最初の 1 つだけです。 停止すると、<xref:System.Windows.Media.Animation.Storyboard>既定値にアニメーション化されたすべてのプロパティを返します。 そのため、ボタンからポインターを動かしたときに、ボタンに戻ります前に、の状態、ボタンにマウス ポインターを移動します。 アニメーションの詳細については、次を参照してください。[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)です。  
   
-5.  **ボタンがクリックされたときのアニメーションの追加:**最後に、ユーザーがボタンをクリックしたときにトリガーを追加します。 任意の場所内の次のマークアップを追加、`ControlTemplate.Triggers`ブロック。  
+5.  **ボタンがクリックされたときのアニメーションの追加:** 最後に、ユーザーがボタンをクリックしたときにトリガーを追加します。 任意の場所内の次のマークアップを追加、`ControlTemplate.Triggers`ブロック。  
   
     ```  
     <!-- Animation fires when button is clicked, causing glass to spin.  -->  
@@ -402,7 +402,7 @@ ms.lasthandoff: 12/22/2017
   
 -   ユーザーの操作への応答のボタンの動作のカスタマイズ (など<xref:System.Windows.UIElement.MouseEnter>、 <xref:System.Windows.UIElement.MouseLeave>、および<xref:System.Windows.Controls.Primitives.ButtonBase.Click>) アニメーション効果を含めることです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft Expression Blend を使用してボタンを作成する](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  

@@ -16,14 +16,14 @@ ms.assetid: f5e82c6e-3500-452b-bdb8-78f0d5477604
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f928a01424853dc7e3637f49cc3af4108c5afb5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 47c7af031b2169d1a259a8f96f5485bcb354aa25
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basic-runtime-library-members"></a>Visual Basic ランタイム ライブラリのメンバー
-`Microsoft.VisualBasic`名前空間には、クラス、モジュール、定数、および構成される列挙体が含まれています、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ランタイム ライブラリです。 これらのライブラリのメンバーでは、プロシージャ、プロパティ、およびコードで使用できる定数値を提供します。 各モジュール、クラスは、特定のカテゴリの機能を表します。  
+`Microsoft.VisualBasic`名前空間には、クラス、モジュール、定数、および Visual Basic ランタイム ライブラリを構成する列挙体が含まれています。 これらのライブラリのメンバーでは、プロシージャ、プロパティ、およびコードで使用できる定数値を提供します。 各モジュール、クラスは、特定のカテゴリの機能を表します。  
   
 ## <a name="microsoftvisualbasiccollection-class"></a>Microsoft.VisualBasic.Collection クラス  
   
@@ -197,7 +197,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:Microsoft.VisualBasic.VBMath.Randomize%2A>|<xref:Microsoft.VisualBasic.VBMath.Rnd%2A>|||  
   
 ## <a name="microsoftvisualbasic-constants-and-enumerations"></a>Microsoft.VisualBasic 定数と列挙型  
- `Microsoft.VisualBasic`名前空間の一部として定数と列挙を提供する、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ランタイム ライブラリです。 コードでは、これらの定数値を使用できます。 各列挙体は、特定のカテゴリの機能を表します。 詳細については、次を参照してください。[定数と列挙体](../../visual-basic/language-reference/constants-and-enumerations.md)です。  
+ `Microsoft.VisualBasic`名前空間は、Visual Basic ランタイム ライブラリの一部として定数と列挙を提供します。 コードでは、これらの定数値を使用できます。 各列挙体は、特定のカテゴリの機能を表します。 詳細については、次を参照してください。[定数と列挙体](../../visual-basic/language-reference/constants-and-enumerations.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [定数と列挙体](../../visual-basic/language-reference/constants-and-enumerations.md)  

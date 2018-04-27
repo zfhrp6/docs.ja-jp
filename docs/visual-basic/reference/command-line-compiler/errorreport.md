@@ -13,14 +13,14 @@ helpviewer_keywords:
 ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59dc833299161eac7b119e654c94534f202b1cb7
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 5dc321f7f927d68a9f270076640cbc6d31d2f6d5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="-errorreport"></a>-errorreport
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。  
+Visual Basic コンパイラで内部コンパイラ エラーを報告する方法を指定します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -29,7 +29,7 @@ ms.lasthandoff: 03/22/2018
 ```  
   
 ## <a name="remarks"></a>コメント  
- このオプションでは、レポートする便利な手段、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を内部コンパイラ エラー (ICE)、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Microsoft のチームのです。 既定では、コンパイラ情報を送信しませんを Microsoft にします。 ただし、内部コンパイラ エラーが発生した場合は、このオプションにより、エラーを Microsoft に報告します。 その情報がマイクロソフトのエンジニアが原因の特定に役立つし、次のリリースの改善に役立つ[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ このオプションは、microsoft Visual Basic チームに Visual Basic 内部コンパイル エラー (ICE) を報告する便利な手段を提供します。 既定では、コンパイラ情報を送信しませんを Microsoft にします。 ただし、内部コンパイラ エラーが発生した場合は、このオプションにより、エラーを Microsoft に報告します。 情報は、マイクロソフトのエンジニアが原因の特定に役立つし、次のリリースの Visual Basic の改善に役立てます。  
   
  レポートを送信するユーザーの機能は、コンピューターとユーザーのポリシー アクセス許可によって異なります。  
   

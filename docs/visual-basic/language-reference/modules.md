@@ -11,14 +11,14 @@ ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
 caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 62fba60aa6a9f95057010997d5f427f2c66ec178
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cd92be378894235f4753cfc52e8382a1960bd37b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="modules-visual-basic"></a>モジュール (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]使用して、文字列、数学的な計算をシステム情報を取得する、ファイルおよびディレクトリの操作を実行する実行の操作など、コードの一般的なタスクを簡単にするいくつかのモジュールを提供します。 次の表に、によって提供されるモジュール[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+Visual Basic では、いくつかのモジュールを使用して、使用すると、文字列、数学的な計算をシステム情報を取得する、ファイルおよびディレクトリの操作を実行する実行の操作など、コードの一般的なタスクを簡略化を提供します。 次の表は、Visual Basic で提供されるモジュールを一覧表示します。  
   
 |||  
 |---|---|  

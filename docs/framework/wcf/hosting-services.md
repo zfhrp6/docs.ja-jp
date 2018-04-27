@@ -1,28 +1,28 @@
 ---
-title: "ホスティング サービス"
-ms.custom: 
+title: ホスティング サービス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-caps.latest.revision: 
+caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b23dac1db5252d3ce2bd60e4f8525dd89d9127b0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db4662245f348eca795440f149160a66d87c998f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="hosting-services"></a>ホスティング サービス
 アクティブにするには、サービスを作成してそのコンテキストと有効期間を制御するランタイム環境内で、サービスをホストする必要があります。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスは、マネージ コードをサポートする任意の Windows プロセスで実行されるように設計されています。  
@@ -34,12 +34,12 @@ ms.lasthandoff: 12/22/2017
 ## <a name="hosting-options"></a>ホスト オプション  
   
 #### <a name="self-hosting-in-a-managed-application"></a>マネージ アプリケーションにおける自己ホスト  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスはすべてのマネージ アプリケーションでホストされます。 これは、展開に必要なインフラストラクチャが最小限になるため、最も柔軟なオプションです。 マネージ アプリケーション コード内にサービスのコードを埋め込み、続いて <xref:System.ServiceModel.ServiceHost> のインスタンスを作成して開き、サービスを有効にします。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: マネージ アプリケーションで WCF サービスをホスト](../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)です。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスはすべてのマネージ アプリケーションでホストされます。 これは、展開に必要なインフラストラクチャが最小限になるため、最も柔軟なオプションです。 マネージ アプリケーション コード内にサービスのコードを埋め込み、続いて <xref:System.ServiceModel.ServiceHost> のインスタンスを作成して開き、サービスを有効にします。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: マネージ アプリケーションで WCF サービスをホスト](../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)です。  
   
- このオプションで可能になる一般的なシナリオには、コンソール アプリケーション内部で実行される [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスと、 [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] または Windows フォーム (WinForms) に基づくリッチ クライアント アプリケーションの 2 つがあります。 コンソール アプリケーション内部の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストすることは、一般的にアプリケーションの開発フェーズで有用です。 コンソール アプリケーションにより、アプリケーション内部で起こっている状況を見極めるための情報のデバッグやトレースが容易になり、新しい場所にアプリケーションをコピーして移動することも簡単に行うことができます。 このホスト オプションを使用すると、 [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] や WinForms アプリケーションなど、外部と通信を行うリッチ クライアント アプリケーションの作成も容易になります。 たとえば、ユーザー インターフェイスに [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] を使用しながら、他のクライアントからの接続を許容して情報を共有するために [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするピア ツー ピア コラボレーションのクライアントなどです。  
+ このオプションにより、2 つの一般的なシナリオ: [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Windows Presentation Foundation (WPF) または Windows フォーム (WinForms) に基づいて、サービス コンソール アプリケーションとなどのリッチ クライアント アプリケーション内で実行中です。 コンソール アプリケーション内部の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストすることは、一般的にアプリケーションの開発フェーズで有用です。 コンソール アプリケーションにより、アプリケーション内部で起こっている状況を見極めるための情報のデバッグやトレースが容易になり、新しい場所にアプリケーションをコピーして移動することも簡単に行うことができます。 このホスト オプションを使用すると、 [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] や WinForms アプリケーションなど、外部と通信を行うリッチ クライアント アプリケーションの作成も容易になります。 たとえば、ユーザー インターフェイスに [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] を使用しながら、他のクライアントからの接続を許容して情報を共有するために [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするピア ツー ピア コラボレーションのクライアントなどです。  
   
 #### <a name="managed-windows-services"></a>マネージ Windows サービス  
- このホスト オプションは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをマネージ Windows サービス (従来 NT サービスと呼ばれていたもの) としてホストするアプリケーション ドメイン (AppDomain) の登録から構成されているため、サービスのプロセス有効期間は Windows サービスのサービス コントロール マネージャー (SCM) によって制御されます。 自己ホスト オプションと同様、この種類のホスト環境では、ホスト コードをアプリケーションの一部として記述する必要があります。 サービスは、Windows サービスと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの両方として実装します。そのためには、 <xref:System.ServiceProcess.ServiceBase> クラスから継承すると同時に、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス コントラクト インターフェイスからも継承します。 次に <xref:System.ServiceModel.ServiceHost> を作成し、オーバーライドされた <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> メソッドで開き、オーバーライドされた <xref:System.ServiceProcess.ServiceBase.OnStop> メソッドで閉じます。 また、 <xref:System.Configuration.Install.Installer> から継承されるインストーラー クラスも実装し、プログラムが Installutil.exe ツールによって Windows サービスとしてインストールされるようにする必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: マネージ Windows サービスで WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)です。 マネージ Windows サービスのホスト オプションによって有効になるシナリオは、メッセージがアクティブ化されていない、セキュリティ保護された環境において、IIS の外部でホストされ、長時間実行される [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスです。 サービスの有効期限は代わりにオペレーティング システムによって制御されます。 このホスト オプションは Windows のすべてのバージョンで使用できます。  
+ このホスト オプションは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをマネージ Windows サービス (従来 NT サービスと呼ばれていたもの) としてホストするアプリケーション ドメイン (AppDomain) の登録から構成されているため、サービスのプロセス有効期間は Windows サービスのサービス コントロール マネージャー (SCM) によって制御されます。 自己ホスト オプションと同様、この種類のホスト環境では、ホスト コードをアプリケーションの一部として記述する必要があります。 サービスは、Windows サービスと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの両方として実装します。そのためには、 <xref:System.ServiceProcess.ServiceBase> クラスから継承すると同時に、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス コントラクト インターフェイスからも継承します。 次に <xref:System.ServiceModel.ServiceHost> を作成し、オーバーライドされた <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> メソッドで開き、オーバーライドされた <xref:System.ServiceProcess.ServiceBase.OnStop> メソッドで閉じます。 また、 <xref:System.Configuration.Install.Installer> から継承されるインストーラー クラスも実装し、プログラムが Installutil.exe ツールによって Windows サービスとしてインストールされるようにする必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: マネージ Windows サービスで WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)です。 マネージ Windows サービスのホスト オプションによって有効になるシナリオは、メッセージがアクティブ化されていない、セキュリティ保護された環境において、IIS の外部でホストされ、長時間実行される [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスです。 サービスの有効期限は代わりにオペレーティング システムによって制御されます。 このホスト オプションは Windows のすべてのバージョンで使用できます。  
   
 #### <a name="internet-information-services-iis"></a>インターネット インフォメーション サービス (IIS)  
  IIS ホスト オプションは [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] と統合され、プロセスのリサイクル、アイドル シャットダウン、処理状況の監視、メッセージに基づくアクティベーションなど、このテクノロジによって提供される機能を使用します。 [!INCLUDE[wxp](../../../includes/wxp-md.md)] および [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] オペレーティング システムでは、高可用性と高スケーラビリティが求められる Web サービス アプリケーションのホストには、このオプションが適切なソリューションとなります。 IIS では、顧客がエンタープライズ クラスのサーバー製品に求める統合された管理性も提供されます。 このホスト オプションでは、IIS が正しく構成されている必要がありますが、アプリケーションの一部としてホスト コードを書く必要はありません。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] サービス用に IIS ホストを構成する方法の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [How to: Host a WCF Service in IIS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)。  
@@ -74,7 +74,7 @@ ms.lasthandoff: 12/22/2017
   
  信頼されていないホストからサービスや拡張機能を実行すると、セキュリティが損なわれるので注意してください。 また、偽装して <xref:System.ServiceModel.ServiceHost> を開くと、アプリケーションは、ユーザーの <xref:System.Security.Principal.WindowsIdentity> をキャッシュするなどして、ユーザーがログオフしていないことを確認する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [システム要件](../../../docs/framework/wcf/wcf-system-requirements.md)  
  [基本的なプログラミング ライフサイクル](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
  [サービス コントラクトの実装](../../../docs/framework/wcf/implementing-service-contracts.md)  

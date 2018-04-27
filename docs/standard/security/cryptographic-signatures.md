@@ -1,12 +1,12 @@
 ---
-title: "暗号署名"
-ms.custom: 
+title: 暗号署名
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -26,18 +26,18 @@ helpviewer_keywords:
 - digital signatures, verifying
 - signing XML
 ms.assetid: aa87cb7f-e608-4a81-948b-c9b8a1225783
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c4e460c11e0e78d56a54da1dd178b3f8e9f381b6
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 596625f229c4031b681755d538bf0a3d7b6674c8
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="cryptographic-signatures"></a>暗号署名
 <a name="top"></a> 暗号デジタル署名は、公開キー アルゴリズムを使用してデータの整合性を提供します。 デジタル署名を使用してデータに署名すると、第三者が署名を検証し、データが署名者から発信され、署名後に変更されていないことを証明できます。 デジタル署名の詳細については、「 [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)」を参照してください。  
@@ -115,7 +115,7 @@ class Class1
 ### <a name="signing-xml-files"></a>XML ファイルへの署名  
  .NET Framework に用意されている <xref:System.Security.Cryptography.Xml> 名前空間を使用すると、XML に署名できます。 XML が特定のソースから送信されたことを検証する場合は、XML への署名が重要です。 たとえば、XML を使用する株価情報サービスを使用している場合であれば、署名されているかどうかによって XML のソースを検証できます。  
   
- この名前空間のクラスに従って、 [XML 署名の構文と処理に関する勧告](http://www.w3.org/TR/xmldsig-core/)World Wide Web Consortium からです。  
+ この名前空間のクラスに従って、 [XML 署名の構文と処理に関する勧告](https://www.w3.org/TR/xmldsig-core/)World Wide Web Consortium からです。  
   
  [ページのトップへ](#top)  
   
@@ -151,7 +151,7 @@ RSAKeyInfo.Exponent = ExponentData;
   
  このプロセスを説明する例を次に示します。 この例で、 `HashValue` と `SignedHashValue` は、リモートにいる関係者から提供されるバイト配列です。 リモートにいる関係者は、SHA1 アルゴリズムを使用して `HashValue` に署名し、デジタル署名 `SignedHashValue`を生成します。 次に、  
   
- <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType>メソッドは、デジタル署名が有効で、署名に使用されたことを確認、`HashValue`です。  
+ <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType> メソッドは、デジタル署名が有効で、署名に使用されたことを確認、`HashValue`です。  
   
 ```vb  
 Dim RSA As New RSACryptoServiceProvider()  
@@ -182,5 +182,5 @@ else
   
  上記のコードでは、署名が有効であれば "`The signature is valid`" を表示し、署名が無効であれば "`The signature is not valid`" を表示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)

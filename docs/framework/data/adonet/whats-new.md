@@ -10,37 +10,37 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-caps.latest.revision: ''
+caps.latest.revision: 25
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: fb23f329906e21f3d8558139075c5f575f2f13bd
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a636734958cd73a2f158d3f25cbbe448ff703612
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="what39s-new-in-adonet"></a>どのような&#39;ADO.NET の
 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] の [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] では、次の機能が追加されています。  
   
 ## <a name="sqlclient-data-provider"></a>SqlClient Data Provider  
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Data Provider for [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] では、次の機能が追加されています。  
+ 次の機能が追加されて、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for SQL Server で[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]:  
   
 -   ConnectRetryCount と ConnectRetryInterval の接続文字列キーワード (<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>) を使用すると、アイドル状態の接続の復元機能を制御できます。  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からアプリケーションへのストリーミング サポートで、サーバー上のデータが構造化されていないシナリオをサポートします。  参照してください[SqlClient ストリーミング サポート](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)詳細についてはします。  
+-   SQL Server からアプリケーションへのサポートをストリーミングすると、サーバー上のデータが構造化であるシナリオがサポートしています。  参照してください[SqlClient ストリーミング サポート](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)詳細についてはします。  
   
 -   非同期のプログラミングにサポートが追加されています。  参照してください[非同期プログラミング](../../../../docs/framework/data/adonet/asynchronous-programming.md)詳細についてはします。  
   
 -   接続エラーは、拡張イベント ログに記録されるようになりました。 詳細については、「[ADO.NET のデータ追跡](../../../../docs/framework/data/adonet/data-tracing.md)」を参照してください。  
   
--   SqlClient は、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] の高可用性、ディザスター リカバリー機能である AlwaysOn をサポートするようになりました。 詳細については、次を参照してください。 [High Availability, Disaster Recovery の SqlClient サポート](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md)です。  
+-   SqlClient では、SQL Server の高可用性、障害復旧機能で AlwaysOn をサポートできるようになりました。 詳細については、次を参照してください。 [High Availability, Disaster Recovery の SqlClient サポート](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md)です。  
   
--   <xref:System.Security.SecureString> 認証を使用している場合、パスワードは [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] として渡すことができます。 詳細については、「<xref:System.Data.SqlClient.SqlCredential>」を参照してください。  
+-   パスワードとして渡すことが、 <xref:System.Security.SecureString> SQL Server 認証を使用する場合。 詳細については、「<xref:System.Data.SqlClient.SqlCredential>」を参照してください。  
   
--   `TrustServerCertificate` が false であり、`Encrypt` が true の場合は、接続文字列に指定されているサーバー名 (または IP アドレス) に [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] SSL 証明書が正確に一致する必要があります。 それ以外の場合、接続試行は失敗します。 詳細については、「`Encrypt`」の <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> 接続オプションの説明を参照してください。  
+-   ときに`TrustServerCertificate`が false と`Encrypt`が true の場合、SQL Server の SSL 証明書にサーバー名 (または IP アドレス) が正確に一致、サーバー名 (または IP アドレス)、接続文字列で指定します。 それ以外の場合、接続試行は失敗します。 詳細については、「`Encrypt`」の <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> 接続オプションの説明を参照してください。  
   
      この変更によって既存のアプリケーションが接続しなくなる場合、次のいずれかを使用してアプリケーションを修正できます。  
   

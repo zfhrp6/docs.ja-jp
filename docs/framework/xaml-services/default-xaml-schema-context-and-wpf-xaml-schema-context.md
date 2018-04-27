@@ -1,24 +1,26 @@
 ---
-title: "既定の XAML スキーマ コンテキストと WPF XAML スキーマ コンテキスト"
-ms.custom: 
+title: 既定の XAML スキーマ コンテキストと WPF XAML スキーマ コンテキスト
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 04e06a15-09b3-4210-9bdf-9a64c2eccb83
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9ee7c83868934f1a524bb0068ea5e749e6cbfab4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ec5e29ae9022470f8b583dc1b673a0b93040c862
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>既定の XAML スキーマ コンテキストと WPF XAML スキーマ コンテキスト
 XAML スキーマ コンテキストが特定の XAML ボキャブラリを使用する XAML の運用環境が、オブジェクトの型マッピングが解決する方法、アセンブリが読み込まれているか、特定のリーダーとライターをなどの動作を記述とやり取りする方法を修飾するエンティティの概念設定が解釈されます。 このトピックでは、.NET Framework XAML サービスと関連付けられている既定の XAML スキーマ コンテキスト、CLR の型システムに基づくの機能について説明します。 このトピックでは、WPF に使用される、XAML スキーマ コンテキストも説明します。  
@@ -35,7 +37,7 @@ XAML スキーマ コンテキストが特定の XAML ボキャブラリを使�
 ## <a name="wpf-xaml-schema-context"></a>WPF XAML スキーマ コンテキスト  
  WPF 実装には既定ではない XAML スキーマ コンテキストを実装することによってもたらされる機能の種類の興味深い例が用意されているために、WPF XAML スキーマ コンテキストはこのトピックで説明します。 また、XAML スキーマ コンテキストの概念では説明しません非常によく WPF XAML; に対応する WPF のドキュメントXAML スキーマ コンテキストが有効にする動作が完全に理解できるものの既定の XAML スキーマ コンテキストの動作方法の詳細については統合されている場合のみ可能性があります。 WPF XAML スキーマ コンテキストでは、次の動作を実装します。  
   
- **参照の上書き:** WPF が XAML のいくつかのコンテンツ モデルを持つが XAML のコンテンツ プロパティがない関数を<xref:System.Windows.Markup.ContentPropertyAttribute>に起因します。 <xref:System.Xaml.XamlType.LookupContentProperty%2A>WPF の上書きは、この動作を実装します。  
+ **参照の上書き:** WPF が XAML のいくつかのコンテンツ モデルを持つが XAML のコンテンツ プロパティがない関数を<xref:System.Windows.Markup.ContentPropertyAttribute>に起因します。 <xref:System.Xaml.XamlType.LookupContentProperty%2A> WPF の上書きは、この動作を実装します。  
   
  **WPF の式の遅延:** WPF ランタイム コンテキストが利用可能になるまでの値を遅らせる式クラスがいくつかの機能です。 また、テンプレートの展開は、遅延手法に依存しているランタイムの動作です。  
   
@@ -68,7 +70,7 @@ XAML スキーマ コンテキストが特定の XAML ボキャブラリを使�
     -   名前が、マッピング内で修飾でない場合を呼び出す<xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>です。  
   
 #### <a name="xamlbuildtask"></a>XamlBuildTask  
- `XamlBuildTask`使用は[!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]と[!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]です。  
+ `XamlBuildTask` 使用は[!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]および Windows Workflow Foundation です。  
   
  アセンブリが参照するを通じて注`XamlBuildTask`は常に完全修飾します。  
   
@@ -99,5 +101,5 @@ XAML スキーマ コンテキストが特定の XAML ボキャブラリを使�
   
     -   短い名前と公開キー トークンを使用して呼び出す<xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML ノード ストリームの構造と概念について](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)

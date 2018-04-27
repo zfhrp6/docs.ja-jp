@@ -1,10 +1,11 @@
 ---
-title: "Option Infer ステートメント"
+title: Option Infer ステートメント
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.OptionInfer
@@ -16,14 +17,14 @@ helpviewer_keywords:
 - declaring variables [Visual Basic], inferred
 - inferred variable declaration
 ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
-caps.latest.revision: "72"
+caps.latest.revision: 72
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1c8bd94bc8dd379edfda8c4350428684a5cda0b1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: fb6aea2b1e8faf9afd7d252d8828358130fb5374
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="option-infer-statement"></a>Option Infer ステートメント
 変数の宣言でローカル型推論を使用できるようにします。  
@@ -57,7 +58,7 @@ Option Infer がオンのときの IntelliSense
 Option Infer がオフのときの IntelliSense  
   
 > [!NOTE]
->  変数を `Object` として宣言すると、プログラムの実行中にランタイム型が変更される場合があります。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]という操作を実行*ボックス化*と*アンボックス*間で変換する、`Object`と値の種類、これにより実行速度が低下します。 ボックス化とボックス化解除については、次を参照してください。、 [Visual Basic 言語仕様](../../../visual-basic/reference/language-specification/index.md)です。
+>  変数を `Object` として宣言すると、プログラムの実行中にランタイム型が変更される場合があります。 Visual Basic という操作を実行する*ボックス化*と*ボックス化解除*間で変換する、`Object`と値の種類、これにより実行速度が低下します。 ボックス化とボックス化解除については、次を参照してください。、 [Visual Basic 言語仕様](../../../visual-basic/reference/language-specification/index.md)です。
   
  型の推定は、プロシージャ レベルで適用され、クラス、構造体、モジュール、またはインターフェイスのプロシージャの外側には適用されません。  
   
@@ -100,7 +101,7 @@ Option Infer がオフのときの IntelliSense
   
  [!code-vb[VbVbalrTypeInference#11](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/option-infer-statement_2.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
  [ローカル型の推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
  [Option Compare ステートメント](../../../visual-basic/language-reference/statements/option-compare-statement.md)  

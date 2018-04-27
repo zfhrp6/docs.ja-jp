@@ -1,26 +1,27 @@
 ---
-title: "ディレクトリとファイルの概要 (Visual Basic)"
+title: ディレクトリとファイルの概要 (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - files [Visual Basic]
 - directories [Visual Basic], Visual Basic
 - files [Visual Basic], summary
 ms.assetid: 588b75fd-a09b-4381-822d-19868990c170
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b07c2c400bd682d2340349435d03e192a1840c6e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7df9d0de955e6d9a225373d3711948886cff4c97
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="directories-and-files-summary-visual-basic"></a>ディレクトリとファイルの概要 (Visual Basic)
-以下の表は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のキーワードとランタイム ライブラリ メンバーを目的および使用方法別に分類したものです。  
+Visual Basic 言語のキーワードとランタイム ライブラリ メンバーを、目的と使用方法に応じて編成しました。  
   
  `My` 機能を使用すると、これらのメンバーを使用するよりもファイル I/O 処理の生産性とパフォーマンスが格段に向上します。 詳細については、「<xref:Microsoft.VisualBasic.FileIO.FileSystem>」を参照してください。  
   

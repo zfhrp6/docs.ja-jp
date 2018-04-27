@@ -16,17 +16,17 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 0862f747cb969a6aa2e63d86e842097260e95b56
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3df15e80a550857adbfbf30ebf8b6ef902426a1a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>診断用の WMI (Windows Management Instrumentation) の使用
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。  
   
 ## <a name="enabling-wmi"></a>WMI の有効化  
- WMI は、Web ベースのエンタープライズ管理 (WBEM) 標準をマイクロソフトが実装したものです。 [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]WMI SDK を参照してください[Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx)です。 WBEM は、アプリケーションが Management Instrumentation を外部管理ツールに開示する業界標準の方法です。  
+ WMI は、Web ベースのエンタープライズ管理 (WBEM) 標準をマイクロソフトが実装したものです。 [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] WMI SDK を参照してください[Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx)です。 WBEM は、アプリケーションが Management Instrumentation を外部管理ツールに開示する業界標準の方法です。  
   
  WMI プロバイダーは、WBEM と互換性のあるインターフェイスを通して実行時にインストルメンテーションを公開するコンポーネントです。 これは、属性と値のペアを持つ WMI オブジェクトのセットで構成されます。 ペアには多くの単純型を指定できます。 管理ツールは、実行時にインターフェイスを介してサービスに接続できます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、アドレス、バインディング、動作、リスナーなどのサービスの属性を公開します。  
   
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/22/2017
  この構成エントリには、WMI インターフェイスが開示されます。 管理アプリケーションはこのインターフェイスを通して接続し、アプリケーションの Management Instrumentation にアクセスできるようになります。  
   
 ## <a name="accessing-wmi-data"></a>WMI データへのアクセス  
- WMI データには、複数の異なる方法でアクセスできます。 マイクロソフトは、スクリプト用、[!INCLUDE[vbprvb](../../../../../includes/vbprvb-md.md)] アプリケーション用、C++ アプリケーション用、および [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 用の WMI API を提供しています。 詳細については、次を参照してください。 [WMI を使用した](http://go.microsoft.com/fwlink/?LinkId=95183)です。  
+ WMI データには、複数の異なる方法でアクセスできます。 マイクロソフトでは、WMI Api を提供するスクリプト、Visual Basic アプリケーションの場合、C++ アプリケーション、および[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]です。 詳細については、次を参照してください。 [WMI を使用した](http://go.microsoft.com/fwlink/?LinkId=95183)です。  
   
 > [!CAUTION]
 >  .NET Framework 提供のメソッドを使用し、プログラムで WMI データにアクセスする場合、そのようなメソッドは接続確立時に例外をスローする場合があることを認識しておく必要があります。 接続は、<xref:System.Management.ManagementObject> インスタンスの構築中に確立されませんが、実際のデータ交換が含まれた最初の要求時に確立されます。 したがって、`try..catch` ブロックを使用して例外をキャッチする必要があります。  
@@ -160,7 +160,7 @@ ms.lasthandoff: 12/22/2017
 Whoami /user  
 ```  
   
- これにより、現在のユーザーの SID が提供されますが、この方法を使用して任意のユーザーで SID を取得することはできません。 SID を取得する別の方法が使用するには、 [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467)ツールから、[管理タスク用の Windows 2000 リソース キット ツール](http://go.microsoft.com/fwlink/?LinkId=178660)です。 このツールは、2 人のユーザー (ローカルまたはドメイン) の SID を比較し、副作用として、2 つの SID をコマンド ラインに出力します。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][既知の Sid](http://go.microsoft.com/fwlink/?LinkId=186468)です。  
+ これにより、現在のユーザーの SID が提供されますが、この方法を使用して任意のユーザーで SID を取得することはできません。 SID を取得する別の方法が使用するには、 [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467)ツールから、[管理タスク用の Windows 2000 リソース キット ツール](http://go.microsoft.com/fwlink/?LinkId=178660)です。 このツールは、2 人のユーザー (ローカルまたはドメイン) の SID を比較し、副作用として、2 つの SID をコマンド ラインに出力します。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [既知の Sid](http://go.microsoft.com/fwlink/?LinkId=186468)です。  
   
 ## <a name="accessing-remote-wmi-object-instances"></a>リモート WMI オブジェクトのインスタンスへのアクセス  
  リモート コンピューターの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI インスタンスにアクセスする必要がある場合、アクセスに使用するツールのパケットのプライバシーを有効にする必要があります。 次のセクションでは、WMI CIM Studio、Windows Management Instrumentation テスト、および .NET SDK 2.0 を使用してこれらを実現する方法を説明します。  
@@ -170,16 +170,16 @@ Whoami /user
   
  **%windir%\Program Files\WMI ツール\\**  
   
-1.  **名前空間への接続:**ウィンドウで、「 **root \servicemodel**  をクリック**ok です。**  
+1.  **名前空間への接続:** ウィンドウで、「 **root \servicemodel**  をクリック**ok です。**  
   
-2.  **WMI CIM Studio Login**ウィンドウで、をクリックして、**オプション >>**ボタンをクリックしてウィンドウを展開します。 選択**パケットのプライバシー**の**認証レベル**、 をクリック**OK**です。  
+2.  **WMI CIM Studio Login**ウィンドウで、をクリックして、**オプション >>** ボタンをクリックしてウィンドウを展開します。 選択**パケットのプライバシー**の**認証レベル**、 をクリック**OK**です。  
   
 ### <a name="windows-management-instrumentation-tester"></a>Windows Management Instrumentation テスト  
  このツールは Windows によりインストールされます。 これを実行するように入力してコマンド コンソールを起動して**cmd.exe**で、**開始/実行** ダイアログ ボックスをクリック**OK**です。 次に、入力**wbemtest.exe**コマンド ウィンドウでします。 Windows Management Instrumentation テスト ツールが起動します。  
   
 1.  クリックして、**接続**ウィンドウの右上隅のボタンをクリックします。  
   
-2.  新しいウィンドウで、入力**root \servicemodel**の**Namespace**フィールド、および select**パケット プライバシー**の**認証レベル**です。 **[接続]**をクリックします。  
+2.  新しいウィンドウで、入力**root \servicemodel**の**Namespace**フィールド、および select**パケット プライバシー**の**認証レベル**です。 **[接続]** をクリックします。  
   
 ### <a name="using-managed-code"></a>マネージ コードの使用  
  <xref:System.Management> 名前空間が提供するクラスを使用して、リモートの WMI インスタンスにプログラムでアクセスすることもできます。 これを実行する方法を次のコード例に示します。  

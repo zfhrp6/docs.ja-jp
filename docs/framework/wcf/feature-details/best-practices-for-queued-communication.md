@@ -1,27 +1,29 @@
 ---
-title: "キューに置かれた通信のベスト プラクティス"
-ms.custom: 
+title: キューに置かれた通信のベスト プラクティス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - queues [WCF], best practices
 - best practices [WCF], queued communication
 ms.assetid: 446a6383-cae3-4338-b193-a33c14a49948
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c701b608071ebd9e8c29881000db8dcd2634f56
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3834f48c407f799fc5fede17182f47652f49747f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="best-practices-for-queued-communication"></a>キューに置かれた通信のベスト プラクティス
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のキューに置かれた通信で推奨されるベスト プラクティスについて説明します。 以下の各セクションでは、シナリオの観点から推奨されるベスト プラクティスについて説明します。  
@@ -31,7 +33,7 @@ ms.lasthandoff: 12/22/2017
   
  また、<xref:System.ServiceModel.MsmqBindingBase.Durable%2A> プロパティを `false` に設定して、ディスク書き込みの負荷がかからないようにすることもできます。  
   
- セキュリティは、パフォーマンスに影響を及ぼします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][パフォーマンスに関する考慮事項](../../../../docs/framework/wcf/feature-details/performance-considerations.md)です。  
+ セキュリティは、パフォーマンスに影響を及ぼします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [パフォーマンスに関する考慮事項](../../../../docs/framework/wcf/feature-details/performance-considerations.md)です。  
   
 ## <a name="reliable-end-to-end-queued-messaging"></a>キューに置かれた信頼性のあるエンド ツー エンドのメッセージング  
  以下のセクションでは、エンドツーエンドで信頼できるメッセージングが必要なシナリオで推奨されるベスト プラクティスについて説明します。  
@@ -47,21 +49,21 @@ ms.lasthandoff: 12/22/2017
   
  エンド ツー エンドの信頼性が必要な通信では、配信不能キューを無効にすることはお勧めしません。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][メッセージを処理する配信不能メッセージ キューを使用して転送エラー](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)です。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [配信不能メッセージ キュー メッセージ転送エラー処理を使用した](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)です。  
   
 ### <a name="use-of-poison-message-handling"></a>有害メッセージ処理の使用  
  有害メッセージ処理は、メッセージ処理のエラーから回復する機能を提供します。  
   
  有害メッセージ処理機能を使用する場合は、<xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> プロパティが適切な値に設定されていることを確認します。 このプロパティを <xref:System.ServiceModel.ReceiveErrorHandling.Drop> に設定すると、データが失われることになります。 一方、<xref:System.ServiceModel.ReceiveErrorHandling.Fault> に設定すると、有害メッセージが検出されたときにサービス ホストでエラーが発生します。 MSMQ 3.0 を使用する場合、データの損失を防ぎ、有害メッセージを取り除くための最適なオプションは <xref:System.ServiceModel.ReceiveErrorHandling.Fault> です。 MSMQ 4.0 を使用する場合は、<xref:System.ServiceModel.ReceiveErrorHandling.Move> が推奨されます。 <xref:System.ServiceModel.ReceiveErrorHandling.Move> に設定すると有害メッセージがキューから取り除かれるため、サービスは新しいメッセージの処理を続行できます。 有害メッセージ サービスは、取り除かれた有害メッセージを別個に処理できます。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][有害メッセージ処理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)です。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [有害メッセージ処理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)です。  
   
 ## <a name="achieving-high-throughput"></a>高スループットの実現  
  単一のエンドポイントで高スループットを実現するには、以下を使用します。  
   
--   トランザクション バッチ。 トランザクション バッチでは、1 回のトランザクションで多くのメッセージを読み取ることができます。 これにより、トランザクションのコミットが最適化され、全体的なパフォーマンスが向上します。 バッチ処理の難点は、バッチ内の 1 つのメッセージでエラーが発生した場合に、バッチ全体をロールバックし、再び安全にバッチ処理できるようになるまで、メッセージを 1 つずつ処理する必要があることです。 ほとんどの場合、有害メッセージはまれであるため、特にトランザクションに他のリソース マネージャーが参加している場合は、バッチ処理がシステム パフォーマンスを向上させる方法として推奨されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トランザクションでのメッセージをバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)です。  
+-   トランザクション バッチ。 トランザクション バッチでは、1 回のトランザクションで多くのメッセージを読み取ることができます。 これにより、トランザクションのコミットが最適化され、全体的なパフォーマンスが向上します。 バッチ処理の難点は、バッチ内の 1 つのメッセージでエラーが発生した場合に、バッチ全体をロールバックし、再び安全にバッチ処理できるようになるまで、メッセージを 1 つずつ処理する必要があることです。 ほとんどの場合、有害メッセージはまれであるため、特にトランザクションに他のリソース マネージャーが参加している場合は、バッチ処理がシステム パフォーマンスを向上させる方法として推奨されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [トランザクションでのメッセージをバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)です。  
   
--   同時実行。 同時実行によりスループットが向上します。ただし、同時実行は共有リソースの競合に影響します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Concurrency](../../../../docs/framework/wcf/samples/concurrency.md)です。  
+-   同時実行。 同時実行によりスループットが向上します。ただし、同時実行は共有リソースの競合に影響します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [同時実行](../../../../docs/framework/wcf/samples/concurrency.md)です。  
   
 -   調整。 最適なパフォーマンスを実現するために、ディスパッチャー パイプラインのメッセージの数を調整します。 これを行う方法の例は、次を参照してください。[スロットル](../../../../docs/framework/wcf/samples/throttling.md)です。  
   
@@ -71,18 +73,18 @@ ms.lasthandoff: 12/22/2017
   
  ファームを使用する場合、MSMQ 3.0 ではリモート トランザクション読み取りがサポートされていないので注意してください。 MSMQ 4.0 は、リモート トランザクション読み取りをサポートしています。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トランザクションでのメッセージをバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)と[Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)です。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [トランザクションでのメッセージをバッチ処理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)と[Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)です。  
   
 ## <a name="queuing-with-unit-of-work-semantics"></a>作業単位のセマンティクスによるキュー処理  
  キューにある一連のメッセージが関連している可能性があるため、これらのメッセージの順序付けが重要となるシナリオがあります。 このようなシナリオでは、関連するメッセージのグループを 1 つの単位としてまとめて処理します。つまり、すべてのメッセージが正常に処理されるか、どのメッセージも処理されないかのいずれかになります。 このような動作を実装するには、キューでセッションを使用します。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][セッションでキューに置かれたメッセージをグループ化](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)です。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [セッションでキューに置かれたメッセージをグループ化](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)です。  
   
 ## <a name="correlating-request-reply-messages"></a>要求/応答メッセージの関連付け  
  通常、キューは一方向ですが、シナリオによっては、受信した応答を以前に送信した要求に関連付けることが必要になる場合があります。 このような関連付けが必要な場合、関連付け情報を含む独自の SOAP メッセージ ヘッダーをメッセージに追加することをお勧めします。 通常、送信側がこのヘッダーをメッセージに添付すると、受信側は、このメッセージを処理して応答キューにある新しいメッセージで応答するときに、関連付け情報を含む送信側のメッセージ ヘッダーを添付します。これにより、送信側は要求メッセージを使用して応答メッセージを識別できます。  
   
 ## <a name="integrating-with-non-wcf-applications"></a>非 WCF アプリケーションとの統合  
- `MsmqIntegrationBinding` サービスまたはクライアントを非 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスまたはクライアントと統合するときには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用します。 非 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションには、System.Messaging、COM+、[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]、または C++ を使用して作成された MSMQ アプリケーションなどがあります。  
+ `MsmqIntegrationBinding` サービスまたはクライアントを非 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスまたはクライアントと統合するときには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用します。 以外の[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションは、System.Messaging、COM +、Visual Basic、または C++ を使用して記述された MSMQ アプリケーションを指定できます。  
   
  `MsmqIntegrationBinding` を使用するときは、以下の点に注意してください。  
   
@@ -92,7 +94,7 @@ ms.lasthandoff: 12/22/2017
   
 -   XML シリアル化を使用して、既知の型を指定できます、`KnownTypes`属性を[\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)要素 XML メッセージを逆シリアル化する方法を決定するために使用されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [方法 : WCF エンドポイントを使用してキューに置かれたメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
  [方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  

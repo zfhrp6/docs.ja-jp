@@ -1,32 +1,34 @@
 ---
-title: "WPF の双方向機能の概要"
-ms.custom: 
+title: WPF の双方向機能の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b50d98d5f02a59a013d7577f0e312e6ffde35690
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: fa2349bca86676f4dc3e1703216a2b0dc50ccd59
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>WPF の双方向機能の概要
 その他の開発プラットフォームとは異なり[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]双方向のコンテンツの迅速な開発をサポートする多くの機能にはたとえば、混合の左から右、および右には、同じドキュメント内データを除外します。 同時に、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アラビア語やヘブライ語を話すユーザーなどの双方向機能を必要とするユーザーの最良のエクスペリエンスを作成します。  
   
- 以降のセクションでは、多数の双方向機能と双方向コンテンツを最適に表示した例について説明します。 ほとんどのサンプルを使用して[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]する概念を簡単に適用できますが、[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)]または[!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)]コード。  
+ 以降のセクションでは、多数の双方向機能と双方向コンテンツを最適に表示した例について説明します。 ほとんどのサンプルを使用して[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]概念は、c# または Visual Basic コードを簡単に適用できますが、します。  
   
 
   
@@ -70,7 +72,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、<xref:System.Windows.Documents.FlowDocument>は、多様な[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]要素のテキスト、テーブル、イメージ、およびその他の要素の組み合わせをホストすることができます。 以下のセクションのサンプルでは、この要素を使用します。  
   
- テキストを追加、<xref:System.Windows.Documents.FlowDocument>複数の方法で行うことができます。 これを行う簡単な方法は、使用、<xref:System.Windows.Documents.Paragraph>テキストなどのコンテンツをグループに使用するブロック レベル要素であります。 サンプルを使用してインライン レベル要素にテキストを追加する<xref:System.Windows.Documents.Span>と<xref:System.Windows.Documents.Run>です。 <xref:System.Windows.Documents.Span>その他のインライン要素をグループ化するために使用するインライン レベル フロー コンテンツ要素は、中に、<xref:System.Windows.Documents.Run>インライン レベル フローはコンテンツでは要素の書式なしテキスト ランを格納するためのものです。 A<xref:System.Windows.Documents.Span>複数を含めることができる<xref:System.Windows.Documents.Run>要素。  
+ テキストを追加、<xref:System.Windows.Documents.FlowDocument>複数の方法で行うことができます。 これを行う簡単な方法は、使用、<xref:System.Windows.Documents.Paragraph>テキストなどのコンテンツをグループに使用するブロック レベル要素であります。 サンプルを使用してインライン レベル要素にテキストを追加する<xref:System.Windows.Documents.Span>と<xref:System.Windows.Documents.Run>です。 <xref:System.Windows.Documents.Span> その他のインライン要素をグループ化するために使用するインライン レベル フロー コンテンツ要素は、中に、<xref:System.Windows.Documents.Run>インライン レベル フローはコンテンツでは要素の書式なしテキスト ランを格納するためのものです。 A<xref:System.Windows.Documents.Span>複数を含めることができる<xref:System.Windows.Documents.Run>要素。  
   
  ドキュメントの最初の例には、共有名です。 ネットワークの数を持つドキュメントが含まれています。たとえば`\\server1\folder\file.ext`します。 このネットワーク リンクがアラビア語または英語のいずれのドキュメントにあっても、常に同じように表示する必要があります。 次の図は、アラビア語の<xref:System.Windows.FlowDirection.RightToLeft>ドキュメント。  
   
@@ -131,7 +133,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="FlowDirectionNontext"></a>   
 ## <a name="flowdirection-with-non-text-elements"></a>非テキスト要素のある FlowDirection  
- <xref:System.Windows.FlowDirection>だけでなくテキストの流れを定義するテキスト要素もほとんどすべての他のフローの方向で[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]要素。 次の図が示す、<xref:System.Windows.Controls.ToolBar>水平方向を使用する<xref:System.Windows.Media.LinearGradientBrush>の背景を描画します。  
+ <xref:System.Windows.FlowDirection> だけでなくテキストの流れを定義するテキスト要素もほとんどすべての他のフローの方向で[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]要素。 次の図が示す、<xref:System.Windows.Controls.ToolBar>水平方向を使用する<xref:System.Windows.Media.LinearGradientBrush>の背景を描画します。  
   
  **左から右へのグラデーションを付けたツール バーを示す図**  
   
@@ -245,13 +247,13 @@ ms.lasthandoff: 12/22/2017
   
  まず、設定、アプリケーション コンポーネントの`NumberSubstitution.CultureSource="Text"`します。 この設定を使用するから、設定にならないことを確認、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]など、既定値として「ユーザー」をされているテキスト要素に<xref:System.Windows.Controls.TextBlock>です。  
   
- 例:  
+ 例えば:  
   
 ||  
 |-|  
 |`<TextBlock`<br /><br /> `Name="text1" NumberSubstitution.CultureSource="Text">`<br /><br /> `1234+5679=6913`<br /><br /> `</TextBlock>`|  
   
- 対応する[!INCLUDE[TLA2#tla_lhcshrp](../../../../includes/tla2sharptla-lhcshrp-md.md)]コードは、設定、`Language`プロパティなど、`"ar-SA"`です。  
+ 対応する c# コードで設定、`Language`プロパティなど、`"ar-SA"`です。  
   
 ||  
 |-|  
@@ -263,13 +265,13 @@ ms.lasthandoff: 12/22/2017
 |-|  
 |`text1.Language =`<br /><br /> `System.Windows.Markup.XmlLanguage.GetLanguage(`<br /><br /> `System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag);`|  
   
- <xref:System.Globalization.CultureInfo.CurrentCulture%2A>実行時に現在のスレッドで使用される現在のカルチャを表します。  
+ <xref:System.Globalization.CultureInfo.CurrentCulture%2A> 実行時に現在のスレッドで使用される現在のカルチャを表します。  
   
  最終的な[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]例を次の例のようにする必要があります。  
   
  [!code-xaml[Numbers2#Numbers2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Numbers2/CS/Window1.xaml#numbers2)]  
   
- 最終的な[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)]例を次のようにする必要があります。  
+ 最終的な C# コード例は、次のようにする必要があります。  
   
  [!code-csharp[NumbersCSharp#NumbersCSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/NumbersCSharp/CSharp/Window1.xaml.cs#numberscsharp)]  
   

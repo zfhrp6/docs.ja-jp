@@ -13,11 +13,11 @@ ms.assetid: bfcd792b-ac29-4158-81fc-ea0c13f4ffa2
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3959c24aa4e95204e156a9863ef0ce237af1fcda
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: ec839d1f0ad1931ed4229e898a900c3210d813ed
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="out-of-stack-space-visual-basic"></a>スタック領域が不足しています。(Visual Basic)
 スタックは、実行しているプログラムの要求で動的に拡大および縮小するメモリの作業領域です。 上限を超えました。  
@@ -34,7 +34,7 @@ ms.lasthandoff: 10/18/2017
   
 5.  数を確認して入れ子になった`DoEvents`関数を使用して呼び出し、`Calls`ダイアログ ボックスで、スタック上でアクティブなプロシージャ ビューをします。  
   
-6.  スタックで既にイベント プロシージャを呼び出すイベントをトリガーすることによって、「イベントの連鎖」を発生しないことを確認してください。 イベント cascade は、未終了の再帰的なプロシージャの呼び出しに似ていますが、によって呼び出されるために、わかりにくくが[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のコード内の明示的な呼び出しではなくです。 使用して、`Calls`ダイアログ ボックスで、スタック上でアクティブなプロシージャ ビューをします。  
+6.  スタックで既にイベント プロシージャを呼び出すイベントをトリガーすることによって、「イベントの連鎖」を発生しないことを確認してください。 イベント cascade は、未終了の再帰的なプロシージャの呼び出しに似ていますのコード内の明示的な呼び出しではなく、Visual Basic での呼び出しが行われるために、わかりにくいがします。 使用して、`Calls`ダイアログ ボックスで、スタック上でアクティブなプロシージャ ビューをします。  
   
 ## <a name="see-also"></a>関連項目  
  [[メモリ] ウィンドウ](/visualstudio/debugger/memory-windows)

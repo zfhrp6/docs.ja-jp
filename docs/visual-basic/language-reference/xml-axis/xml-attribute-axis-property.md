@@ -19,11 +19,11 @@ ms.assetid: 7a4777e1-0618-4de9-9510-fb9ace2bf4db
 caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a286c70f57128d0406b3a300610fea5e1c44b32d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9968e5de0f8cb45fb896ba43c80d9c9a3ab8ef08
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-attribute-axis-property-visual-basic"></a>XML 属性軸プロパティ (Visual Basic)
 属性の値にアクセスできるように、<xref:System.Xml.Linq.XElement>オブジェクトのコレクションの最初の要素をまたは<xref:System.Xml.Linq.XElement>オブジェクト。  
@@ -38,24 +38,24 @@ object.@<attribute>
   
 ## <a name="parts"></a>指定項目  
  `object`  
- 必須です。 <xref:System.Xml.Linq.XElement>オブジェクトのコレクションまたは<xref:System.Xml.Linq.XElement>オブジェクト。  
+ 必須。 <xref:System.Xml.Linq.XElement>オブジェクトのコレクションまたは<xref:System.Xml.Linq.XElement>オブジェクト。  
   
  .@  
- 必ず指定します。 属性軸プロパティの開始を示します。  
+ 必須。 属性軸プロパティの開始を示します。  
   
  <  
- 省略可能です。 属性の名前の先頭を示すとき`attribute`で有効な識別子ではない[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ 任意。 属性の名前の先頭を示すとき`attribute`Visual Basic では有効な識別子ではありません。  
   
  `attribute`  
- 必須です。 アクセスする場合、フォームの属性の名前 [`prefix`:]`name`です。  
+ 必須。 アクセスする場合、フォームの属性の名前 [`prefix`:]`name`です。  
   
 |パーツ|説明|  
 |----------|-----------------|  
-|`prefix`|省略可能です。 属性の XML 名前空間プレフィックス。 `Imports` ステートメントを使用して定義されているグローバル XML 名前空間を指定する必要があります。|  
-|`name`|必須です。 ローカルの属性名です。 参照してください[宣言する XML 要素と属性の名前](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)です。|  
+|`prefix`|任意。 属性の XML 名前空間プレフィックス。 `Imports` ステートメントを使用して定義されているグローバル XML 名前空間を指定する必要があります。|  
+|`name`|必須。 ローカルの属性名です。 参照してください[宣言する XML 要素と属性の名前](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)です。|  
   
  \>  
- 省略可能です。 属性の名前の終了を示すとき`attribute`で有効な識別子ではない[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ 任意。 属性の名前の終了を示すとき`attribute`Visual Basic では有効な識別子ではありません。  
   
 ## <a name="return-value"></a>戻り値  
  値を含む文字列`attribute`です。 属性名が存在しない場合`Nothing`が返されます。  
@@ -65,7 +65,7 @@ object.@<attribute>
   
  XML 属性を使用して、参照するとき、文字列として @ 識別子、属性の値が返され、明示的に指定する必要はありません、<xref:System.Xml.Linq.XAttribute.Value%2A>プロパティです。  
   
- XML 属性の名前付け規則の名前付け規則が異なる[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]識別子。 有効な Visual Basic 識別子ではない名前を持つ XML 属性にアクセスする名前は山かっこで囲みます (\<および >)。  
+ XML 属性の名前付け規則は、Visual Basic 識別子の名前付け規則によって異なります。 有効な Visual Basic 識別子ではない名前を持つ XML 属性にアクセスする名前は山かっこで囲みます (\<および >)。  
   
 ## <a name="xml-namespaces"></a>XML 名前空間  
  属性軸プロパティの名前を使用してグローバルに宣言されている XML 名前空間プレフィックスのみを使用できます、`Imports`ステートメントです。 XML 要素リテラル内でローカルに宣言されている XML 名前空間プレフィックスは使用できません。 詳細については、次を参照してください。 [Imports ステートメント (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)です。  
@@ -97,7 +97,7 @@ object.@<attribute>
 ```  
   
 ## <a name="example"></a>例  
- 次の例では、山かっこ構文を使用してという名前の XML 属性の値を取得`number-type`、有効な識別子ではない[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ 次の例では、山かっこ構文を使用してという名前の XML 属性の値を取得`number-type`、Visual Basic では、有効な識別子ではないです。  
   
  [!code-vb[VbXMLSamples#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_3.vb)]  
   

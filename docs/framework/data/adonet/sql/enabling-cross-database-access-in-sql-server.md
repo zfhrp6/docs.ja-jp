@@ -1,24 +1,26 @@
 ---
-title: "SQL Server での複数データベースにまたがるアクセスの有効化"
-ms.custom: 
+title: SQL Server での複数データベースにまたがるアクセスの有効化
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2a31bddfec44ad4b33f1b595c2746d1a0e841b82
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0f27f5bd63acbf532d3dca2a8c6fea0b1a59d659
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="enabling-cross-database-access-in-sql-server"></a>SQL Server での複数データベースにまたがるアクセスの有効化
 複数データベースの組み合わせ所有権は、あるデータベースのプロシージャが、別のデータベースのオブジェクトに依存している場合に作用します。 複数データベースの組み合わせ所有権は、単一データベースの組み合わせ所有権とほぼ同じように機能しますが、所有権の連鎖性を保つために、すべてのオブジェクトの所有者が同じログイン アカウントにマップされていることが必要です。 ソース データベース内のソース オブジェクトおよびターゲット データベース内のターゲット オブジェクトが同じログイン アカウントによって所有されている場合、ターゲット オブジェクトに対する権限は SQL Server によってチェックされません。  
@@ -52,16 +54,16 @@ ALTER DATABASE Database2 SET DB_CHAINING ON;
 ```  
   
 ### <a name="dynamic-sql"></a>動的 SQL  
- 動的に生成された SQL ステートメントの実行では、同じユーザーが両方のデータベースに存在しない限り、複数データベースの組み合わせ所有権は機能しません。 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、別のデータベースのデータにアクセスするストアド プロシージャを作成し、両方のデータベースに存在する証明書でそのプロシージャに署名することによって、これを回避できます。 これにより、ユーザーは、データベースへのアクセス許可が付与されていなくても、そのプロシージャによって使用されるデータベース リソースにアクセスできるようになります。  
+ 動的に生成された SQL ステートメントの実行では、同じユーザーが両方のデータベースに存在しない限り、複数データベースの組み合わせ所有権は機能しません。 別のデータベース内のデータにアクセスするストアド プロシージャを作成し、両方のデータベースに存在する証明書と、プロシージャに署名して SQL Server でこの問題を回避操作できます。 これにより、ユーザーは、データベースへのアクセス許可が付与されていなくても、そのプロシージャによって使用されるデータベース リソースにアクセスできるようになります。  
   
 ## <a name="external-resources"></a>外部リソース  
  詳細については、次のリソースを参照してください。  
   
 |リソース|説明|  
 |--------------|-----------------|  
-|[EXECUTE AS の使用によるデータベースの権限借用の拡張](http://msdn.microsoft.com/library/ms188304\(SQL.105\).aspx)と[Cross DB Ownership Chaining オプション](http://msdn.microsoft.com/library/ms188694.aspx)[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]オンライン ブックの「します。|[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] のインスタンスに対して複数データベースの組み合わせ所有権を構成する方法を説明します。|  
+|[EXECUTE AS の使用によるデータベースの権限借用の拡張](http://msdn.microsoft.com/library/ms188304\(SQL.105\).aspx)と[Cross DB Ownership Chaining オプション](http://msdn.microsoft.com/library/ms188694.aspx)SQL Server オンライン ブックします。|複数データベースの SQL Server のインスタンスの組み合わせ所有権を構成する方法について説明します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [SQL Server でのストアド プロシージャを使用したアクセス許可の管理](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  

@@ -1,22 +1,23 @@
 ---
-title: "データのパーティション分割 (Visual Basic)"
-ms.custom: 
+title: データのパーティション分割 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 69c59379-b66e-422c-b324-5b5c07760ef7
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0ea305a67765e1b11ceebbf65c48a685024a41f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 01e4e6d6db07a520b97911de5388b8e42b7e1acc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="partitioning-data-visual-basic"></a>データのパーティション分割 (Visual Basic)
 LINQ におけるパーティション分割とは、要素を並べ替えずに入力シーケンスを 2 つのセクションに分割し、それらのセクションの 1 つを返す操作を指します。  
@@ -39,22 +40,22 @@ LINQ におけるパーティション分割とは、要素を並べ替えずに
 ## <a name="query-expression-syntax-examples"></a>クエリ式の構文例  
   
 ### <a name="skip"></a>Skip  
- 次のコード例では、`Skip`句[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を配列内の残りの文字列を返す前に、文字列の配列内の最初の 4 つの文字列をスキップします。  
+ 次のコード例では、`Skip`句、残りを返す前に文字列の配列内の最初の 4 つの文字列をスキップする Visual Basic で文字列配列。  
   
  [!code-vb[CsLINQPartitioning#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_1.vb)]  
   
 ### <a name="skipwhile"></a>SkipWhile  
- 次のコード例では、`Skip While`句[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]文字列の最初の文字の中に、配列内の文字列をスキップするは、"a"です。 配列内の残りの文字列が返されます。  
+ 次のコード例では、`Skip While`句、文字列の最初の文字は、配列内の文字列をスキップする Visual Basic では"a"です。 配列内の残りの文字列が返されます。  
   
  [!code-vb[CsLINQPartitioning#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_2.vb)]  
   
 ### <a name="take"></a>Take  
- 次のコード例では、`Take`句[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]文字列の配列の最初の 2 つの文字列を取得します。  
+ 次のコード例では、`Take`を文字列の配列の最初の 2 つの文字列を返す Visual Basic での句。  
   
  [!code-vb[CsLINQPartitioning#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_3.vb)]  
   
 ### <a name="takewhile"></a>TakeWhile  
- 次のコード例では、`Take While`句[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]文字列の長さが 5 個以下に、配列から文字列を取得します。  
+ 次のコード例では、`Take While`文字列を返す配列から文字列の長さが 5 個以下の Visual Basic での句。  
   
  [!code-vb[CsLINQPartitioning#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_4.vb)]  
   

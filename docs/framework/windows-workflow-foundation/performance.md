@@ -1,23 +1,24 @@
 ---
-title: "Windows Workflow Foundation 4 のパフォーマンス"
-ms.custom: 
+title: Windows Workflow Foundation 4 のパフォーマンス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 94d082ab3a7a29f422c54b9a309973d3c23d220b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 94eca5c2aad919fe46fa75626954e10bb68f1110
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Windows Workflow Foundation 4 のパフォーマンス
 Dustin Metzgar  
@@ -31,11 +32,11 @@ Dustin Metzgar
  WF3 と WF4 を比較すると、個々のワークフロー コンポーネントのパフォーマンスが桁違いに向上しています。  これにより、手動コーディングの [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスとのギャップが微小になります。  WF4 でワークフローの待機時間は大幅に短縮されました。  永続化のパフォーマンスは 2.5 ～ 3.0 倍向上しています。  ワークフロー追跡による状態監視のオーバーヘッドも格段に短縮されました。  これらの要因はアプリケーション内で WF4 に移行する、または WF4 を導入する理由として説得力があります。  
   
 ## <a name="terminology"></a>用語  
- [!INCLUDE[wf1](../../../includes/wf1-md.md)] で導入された [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] のバージョンは、このトピックではこれから WF4 と呼びます。  [!INCLUDE[wf1](../../../includes/wf1-md.md)] は .NET 3.0 で導入され、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] SP1 でいくつかの小さな変更がありました。 また、以後 [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] バージョンの Workflow Foundation を WF3 と呼びます。 WF3 は WF4 と共に [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] に付属しています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]WF4 に移行する WF3 の成果物を参照してください: [Windows Workflow Foundation 4 移行のガイドライン](http://go.microsoft.com/fwlink/?LinkID=153313)  
+ [!INCLUDE[wf1](../../../includes/wf1-md.md)] で導入された [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] のバージョンは、このトピックではこれから WF4 と呼びます。  [!INCLUDE[wf1](../../../includes/wf1-md.md)] は .NET 3.0 で導入され、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] SP1 でいくつかの小さな変更がありました。 また、以後 [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] バージョンの Workflow Foundation を WF3 と呼びます。 WF3 は WF4 と共に [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] に付属しています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] WF4 に移行する WF3 の成果物を参照してください: [Windows Workflow Foundation 4 移行のガイドライン](http://go.microsoft.com/fwlink/?LinkID=153313)  
   
  [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、サービス指向のアプリケーションを構築するための Microsoft の統一プログラミング モデルです。 当初は WF3 と共に .NET 3.0 の一部として導入されましたが、現在では [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の重要なコンポーネントになっています。  
   
- Windows Server AppFabric はインターネット インフォメーション サービス (IIS) 上で実行する Web アプリケーションおよび複合アプリケーションの構築、拡張、および管理を容易にする一連の統合テクノロジです。 監視およびサービスとワークフローの管理を行うためのツールを提供します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Server AppFabric](http://msdn.microsoft.com/windowsserver/ee695849.aspx)  
+ Windows Server AppFabric はインターネット インフォメーション サービス (IIS) 上で実行する Web アプリケーションおよび複合アプリケーションの構築、拡張、および管理を容易にする一連の統合テクノロジです。 監視およびサービスとワークフローの管理を行うためのツールを提供します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Windows Server AppFabric](http://msdn.microsoft.com/windowsserver/ee695849.aspx)  
   
 ## <a name="goals"></a>目的  
  このトピックの目的は、WF4 のパフォーマンス特性のさまざまな状況での測定データを示し、 WF4 と WF3 を詳細に比較して、新しいリビジョンでの大幅な機能強化について説明することです。 この記事のシナリオとデータは WF4 と WF3 のさまざまな側面の基本的なコストを定量化しています。 このデータは WF4 のパフォーマンス特性を理解するうえで役立ちます。また、WF3 から WF4 への移行計画または WF4 を使用したアプリケーション開発に役立つことがあります。 ただし、この記事に記載されているデータから結論を導き出す場合には注意が必要です。 複合ワークフロー アプリケーションのパフォーマンスは、ワークフローの実装方法や異なるコンポーネントの統合方法に大きく依存します。 アプリケーションのパフォーマンス特性を確認するには、各アプリケーションを測定する必要があります。  
@@ -49,7 +50,7 @@ Dustin Metzgar
  WF4 ランタイムのスケジューラは WF3 のスケジューラより効率的です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] と同じ I/O スレッド プールを利用し、バッチ作業項目をきわめて効率的に実行します。 内部作業項目のスケジューラ キューは一般的な使用パターンに合わせて最適化されています。 また、WF4 ランタイムは同期およびイベント処理のロジックを最小限に抑えたきわめてコンパクトな方法で実行状態を管理するのに対し、WF3 は大規模なイベントの登録と呼び出しに依存して状態遷移のための複雑な同期を実行します。  
   
 ### <a name="data-storage-and-flow"></a>データの格納とフロー  
- WF3 では、アクティビティに関連付けられたデータは <xref:System.Windows.DependencyProperty> 型によって実装される依存関係プロパティを使用してモデル化されます。 依存関係プロパティのパターンは [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] で導入されました。 通常、このパターンはデータ バインドなどの UI 機能の簡単な操作をサポートするための高度な柔軟性を備えています。 ただし、パターンを使用するには、ワークフロー定義にプロパティを静的フィールドとして定義する必要があります。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] ランタイムがプロパティ値を設定または取得するたびに、高負荷の検索ロジックが実行されます。  
+ WF3 では、アクティビティに関連付けられたデータは <xref:System.Windows.DependencyProperty> 型によって実装される依存関係プロパティを使用してモデル化されます。 依存関係プロパティのパターンには、Windows Presentation Foundation (WPF) が導入されました。 通常、このパターンはデータ バインディングなどの UI 機能の簡単な操作をサポートするための高度な柔軟性を備えています。 ただし、パターンを使用するには、ワークフロー定義にプロパティを静的フィールドとして定義する必要があります。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] ランタイムがプロパティ値を設定または取得するたびに、高負荷の検索ロジックが実行されます。  
   
  WF4 では、明確なデータ スコープ設定ロジックを使用することでワークフロー内のデータ処理方法が大幅に向上しています。 WF4 は、変数と引数という 2 つの異なる概念を使用して、アクティビティに保存されたデータとアクティビティ境界間を移動するデータを区別します。 "で/Out または InOut"引数および変数の明確な階層スコープを使用すると、アクティビティのデータの使用法の複雑さが大幅に短縮されましたし、データの有効期間のスコープが自動的に設定します。 アクティビティには、引数によって表されるシグネチャが適切に定義されています。 アクティビティを検査するだけで、予想される受け取りデータとアクティビティの実行結果として生成されるデータを知ることができます。  
   
@@ -66,7 +67,7 @@ Dustin Metzgar
 ### <a name="messaging"></a>メッセージング  
  当初、WF3 のメッセージングのサポートは、外部イベントまたは Web サービスの呼び出しによるきわめて限定的なものでした。 .Net 3.5 では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] および [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用して、ワークフローを <xref:System.Workflow.Activities.SendActivity> クライアントとして実装したり、<xref:System.Workflow.Activities.ReceiveActivity> サービスとして公開することができるようになりました。 WF4 では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] メッセージング ロジックを WF に密接に統合することで、ワークフローベースのメッセージング プログラミングの概念がさらに強化されました。  
   
- .Net 4 の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] で提供されている統合メッセージ処理パイプラインにより、WF4 サービスのパフォーマンスとスケーラビリティは WF3 と比べて大幅に向上しています。 WF4 ではメッセージング プログラミングのサポートも強化され、複雑なメッセージ交換パターン (MEP) をモデル化できます。 開発者は、型指定されたサービス コントラクトを使用することで、プログラミングを簡素化できます。また、型指定されないサービス コントラクトを使用することで、シリアル化のコストをなくしてパフォーマンスを向上させることができます。 WF4 の <xref:System.ServiceModel.Activities.SendMessageChannelCache> クラスを使用したクライアント側チャネルのキャッシュのサポートにより、少ない手間で短時間にアプリケーションを作成できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Send アクティビティのレベルのキャッシュ共有を変更する](../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)です。  
+ .Net 4 の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] で提供されている統合メッセージ処理パイプラインにより、WF4 サービスのパフォーマンスとスケーラビリティは WF3 と比べて大幅に向上しています。 WF4 ではメッセージング プログラミングのサポートも強化され、複雑なメッセージ交換パターン (MEP) をモデル化できます。 開発者は、型指定されたサービス コントラクトを使用することで、プログラミングを簡素化できます。また、型指定されないサービス コントラクトを使用することで、シリアル化のコストをなくしてパフォーマンスを向上させることができます。 WF4 の <xref:System.ServiceModel.Activities.SendMessageChannelCache> クラスを使用したクライアント側チャネルのキャッシュのサポートにより、少ない手間で短時間にアプリケーションを作成できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Send アクティビティのレベルのキャッシュ共有を変更する](../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)です。  
   
 ### <a name="declarative-programming"></a>宣言型プログラミング  
  WF4 にはビジネス プロセスおよびサービスをモデル化するための単純明快な宣言型プログラミング フレームワークがあります。 このプログラミング モデルは、完全な宣言型のアクティビティの作成をサポートし、コードの記述をなくしてワークフローの作成を大幅に簡素化します。 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、XAML ベースの宣言型プログラミング フレームワークが 1 つのアセンブリ System.Xaml.dll に統合され、WPF と WF の両方をサポートします。  
@@ -217,13 +218,13 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  ![待機時間とスループットのテスト環境のセットアップ](../../../docs/framework/windows-workflow-foundation/media/latencyandthroughputenvironment.gif "LatencyAndThroughputEnvironment")  
   
 ##### <a name="test-setup"></a>テストの設定  
- このシナリオでは、クライアント コンピューターはコンテキスト ベースの相関関係を使用して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスに接続します。  コンテキスト相関関係は特殊なコンテキスト バインドを必要とし、コンテキスト ヘッダーまたはクッキーを使用してメッセージを適切なワークフロー インスタンスに関連付けます。  相関 ID がメッセージ ヘッダーに存在するため、メッセージ本文を解析する必要がないというパフォーマンス上の利点があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]コンテキスト相関関係を参照してください[コンテキスト交換の相関関係](../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)  
+ このシナリオでは、クライアント コンピューターはコンテキスト ベースの相関関係を使用して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスに接続します。  コンテキスト相関関係は特殊なコンテキスト バインドを必要とし、コンテキスト ヘッダーまたはクッキーを使用してメッセージを適切なワークフロー インスタンスに関連付けます。  相関 ID がメッセージ ヘッダーに存在するため、メッセージ本文を解析する必要がないというパフォーマンス上の利点があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] コンテキスト相関関係を参照してください[コンテキスト交換の相関関係](../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)  
   
  サービスは要求を行う新しいワークフローを作成し、ワークフローの実行にかかった時間が待機時間の測定に含まれないように、すぐに応答を送信します。  WF3 のワークフローは XOML と分離コードで構成され、WF4 のワークフローは全体が XAML で構成されます。  WF4 のワークフローは次のようになります。  
   
  ![WF 4 相関スコープ](../../../docs/framework/windows-workflow-foundation/media/correlationscopeworkflow.gif "CorrelationScopeWorkflow")  
   
- <xref:System.ServiceModel.Activities.Receive> アクティビティはワークフロー インスタンスを作成します。  受信メッセージに渡した値は応答メッセージにエコーされます。  応答の後のシーケンスにはワークフローの残りの部分が含まれます。  前の例では 1 つの Comment アクティビティのみを示しました。  ワークフローの複雑さをシミュレーションするには、Comment アクティビティの数を変更します。  comment アクティビティは何も処理しない WF3 の <xref:System.Workflow.Activities.CodeActivity> と同等です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]comment アクティビティでは、この記事の前半「コンポーネント レベルのパフォーマンス比較」を参照してください。  
+ <xref:System.ServiceModel.Activities.Receive> アクティビティはワークフロー インスタンスを作成します。  受信メッセージに渡した値は応答メッセージにエコーされます。  応答の後のシーケンスにはワークフローの残りの部分が含まれます。  前の例では 1 つの Comment アクティビティのみを示しました。  ワークフローの複雑さをシミュレーションするには、Comment アクティビティの数を変更します。  comment アクティビティは何も処理しない WF3 の <xref:System.Workflow.Activities.CodeActivity> と同等です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] comment アクティビティでは、この記事の前半「コンポーネント レベルのパフォーマンス比較」を参照してください。  
   
 ##### <a name="test-results"></a>テスト結果  
  ![待機時間の結果](../../../docs/framework/windows-workflow-foundation/media/latencyresultsgraph.gif "LatencyResultsGraph")  
@@ -313,7 +314,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  この図で注目すべき明白な傾向の 1 つは、WF3 および WF4 のいずれの場合も入れ子がメモリ使用量に与える影響が比較的小さいことです。  メモリに最も重大な影響をもたらす要因はワークフロー内のアクティビティの数です。  シーケンス 1,000、複合深さ 5 シーケンス 5、複合深さ 7 シーケンス 1 (バリエーションあり) の各データから、アクティビティの数が千単位になるとメモリ使用量の増加が顕著になることが明らかです。  最大 29 K のアクティビティが存在する極端なケース (深さ 7 シーケンス 1) では、WF4 のメモリ使用量は WF3 より約 79% 少なくなっています。  
   
 ### <a name="multiple-workflow-definitions-test"></a>複数のワークフロー定義のテスト  
- ワークフロー定義ごとのメモリの測定は、WF3 と WF4 でワークフローのホスティングに使用できるオプションが原因で 2 つの異なるテストに分かれています。  このテストでは、ワークフローの複雑さテストと異なり、指定されたワークフローのインスタンス化と実行を定義ごとに 1 回だけ行います。  これは、ワークフロー定義とそのホストは AppDomain の有効期間中はメモリ内に保持されるためです。  指定されたワークフロー インスタンスの実行によって使用されたメモリは、ガベージ コレクション中にクリーンアップする必要があります。  WF4 の移行ガイドラインに、ホスト オプションの詳細が記載されています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][WF の移行のクックブック: ワークフロー ホスティング](http://go.microsoft.com/fwlink/?LinkID=153313)です。  
+ ワークフロー定義ごとのメモリの測定は、WF3 と WF4 でワークフローのホスティングに使用できるオプションが原因で 2 つの異なるテストに分かれています。  このテストでは、ワークフローの複雑さテストと異なり、指定されたワークフローのインスタンス化と実行を定義ごとに 1 回だけ行います。  これは、ワークフロー定義とそのホストは AppDomain の有効期間中はメモリ内に保持されるためです。  指定されたワークフロー インスタンスの実行によって使用されたメモリは、ガベージ コレクション中にクリーンアップする必要があります。  WF4 の移行ガイドラインに、ホスト オプションの詳細が記載されています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WF 移行のクックブック: ワークフロー ホスティング](http://go.microsoft.com/fwlink/?LinkID=153313)です。  
   
  ワークフロー定義テスト用に多数のワークフロー定義を作成するには、いくつかの方法があります。  たとえば、コード生成を使用して、名前以外は同一の 1,000 のワークフローを作成し、各ワークフローを個別のファイルに保存します。  この方法はコンソール ホストのテストで使用しました。  WF3 では、ワークフロー定義の実行に <xref:System.Workflow.Runtime.WorkflowRuntime> クラスを使用します。  WF4 は <xref:System.Activities.WorkflowApplication> を使用して単一ワークフローのインスタンスを作成するか、直接 <xref:System.Activities.WorkflowInvoker> を使用してアクティビティがメソッドに呼び出された場合のように実行できます。  <xref:System.Activities.WorkflowApplication> は単一ワークフローのインスタンスのホストで、<xref:System.Workflow.Runtime.WorkflowRuntime> に類似した機能を持つため、このテストで使用しました。  
   
@@ -434,7 +435,7 @@ public class Workflow1 : Activity
   
  WF4 には SQL 追跡プロバイダーはありませんが、AppFabric に SQL 追跡プロバイダーがあります。  AppFabric の SQL 追跡では、クイック挿入用にイベントをバッチ処理して SQL テーブルに書き込む Windows サービスを使用して、ETW イベントに定期受信します。  別のジョブでこのテーブルからデータを排出し、形式を変更して AppFabric ダッシュボードに表示可能なレポート テーブルに格納します。  追跡イベントのバッチは元になるワークフローとは独立して処理されるため、永続化ポイントを待機せずに記録されます。  
   
- ETW イベントの記録には logman や xperf などのツールを使用できます。  小規模な ETL ファイルは xperfview などのツールで表示できます。または、tracerpt を使用して XML などのわかりやすい形式に変換することもできます。  WF3 では、SQL データベースなしで追跡イベントを取得する唯一の方法は、カスタム追跡サービスを作成することです。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]ETW を参照してください[WCF サービスと Event Tracing for Windows](../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)と[Event Tracing for Windows](http://msdn.microsoft.com/library/ff190903.aspx\))です。  
+ ETW イベントの記録には logman や xperf などのツールを使用できます。  小規模な ETL ファイルは xperfview などのツールで表示できます。または、tracerpt を使用して XML などのわかりやすい形式に変換することもできます。  WF3 では、SQL データベースなしで追跡イベントを取得する唯一の方法は、カスタム追跡サービスを作成することです。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ETW を参照してください[WCF サービスと Event Tracing for Windows](../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)と[Event Tracing for Windows](http://msdn.microsoft.com/library/ff190903.aspx\))です。  
   
  ワークフロー追跡を有効にした場合のパフォーマンスへの影響の程度はさまざまです。  次のベンチマークでは、logman ツールを使用し、ETW 追跡イベントを使用してそのイベントを ETL ファイルに記録します。  AppFabric の SQL 追跡のコストについてはこの記事の対象外です。  このベンチマークには AppFabric でも使用される基本的な追跡プロファイルが示されています。  状態監視イベントのみを追跡した場合のコストも含まれています。  これらのイベントは問題をトラブルシューティングし、システムの平均スループットを確認するために役立ちます。  
   
@@ -447,7 +448,7 @@ public class Workflow1 : Activity
  状態監視はスループットに約 3% の影響をもたらしています。  基本プロファイルのコストは約 8% です。  
   
 ## <a name="interop"></a>Interop  
- WF4 では [!INCLUDE[wf1](../../../includes/wf1-md.md)] をほぼ全面的に変更しているため、WF3 のワークフローおよびアクティビティは WF4 とは直接互換性がありません。  採用して多くの顧客[!INCLUDE[wf2](../../../includes/wf2-md.md)]早い段階が社内またはサード パーティ製のワークフロー定義とカスタム アクティビティ WF3 用です。  WF4 への移行を簡素化するには、Interop アクティビティを使用する方法があります。この方法により WF4 ワークフロー内から WF3 アクティビティを実行できます。  <xref:System.Activities.Statements.Interop> アクティビティは必要な場合にのみ使用することをお勧めします。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]wf4 への移行、 [WF4 の移行のガイドライン](http://go.microsoft.com/fwlink/?LinkID=153313)です。  
+ WF4 では [!INCLUDE[wf1](../../../includes/wf1-md.md)] をほぼ全面的に変更しているため、WF3 のワークフローおよびアクティビティは WF4 とは直接互換性がありません。  採用して多くの顧客[!INCLUDE[wf2](../../../includes/wf2-md.md)]早い段階が社内またはサード パーティ製のワークフロー定義とカスタム アクティビティ WF3 用です。  WF4 への移行を簡素化するには、Interop アクティビティを使用する方法があります。この方法により WF4 ワークフロー内から WF3 アクティビティを実行できます。  <xref:System.Activities.Statements.Interop> アクティビティは必要な場合にのみ使用することをお勧めします。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] wf4 への移行、 [WF4 の移行のガイドライン](http://go.microsoft.com/fwlink/?LinkID=153313)です。  
   
 ### <a name="environment-setup"></a>環境の設定  
  ![ワークフロー パフォーマンス テスト環境](../../../docs/framework/windows-workflow-foundation/media/wfperfenvironment.gif "WFPerfEnvironment")  

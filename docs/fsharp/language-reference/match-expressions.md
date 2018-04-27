@@ -1,22 +1,20 @@
 ---
-title: "match 式 (F#)"
-description: "F# 一致式が式のパターンのセットとの比較に基づいている分岐のコントロールがどのように提供する方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: Match 式 (f#)
+description: F# 一致式が式のパターンのセットとの比較に基づいている分岐のコントロールがどのように提供する方法について説明します。
 author: cartermp
 ms.author: phcart
-ms.date: 05/16/2016
+ms.date: 04/19/2018
 ms.topic: language-reference
 ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
-ms.assetid: 8854b713-255a-408d-942a-e80ab52fd2a4
-ms.openlocfilehash: c8b9be744cfa7bc76f0d663b12abd66f8757fc56
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f843e6fde98eae8a10235dd5cae38ffc10a4fb9f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="match-expressions"></a>match 式
+# <a name="match-expressions"></a>Match 式
 
 `match`式が式のパターンのセットとの比較に基づいている分岐のコントロールを提供します。
 
@@ -48,7 +46,7 @@ fun arg ->
     | pattern1 [ when condition ] -> result-expression1
     | pattern2 [ when condition ] -> result-expression2
     | ...
-```    
+```
 
 ラムダ式の詳細については、次を参照してください。[ラムダ式:、`fun`キーワード](functions/lambda-expressions-the-fun-keyword.md)です。
 
@@ -66,14 +64,29 @@ fun arg ->
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4602.fs)]
 
-リテラル以外の値は、パターンでは使用できません、ためにを付けることに注意してください、`when`句の値に対する入力の一部を比較する必要がある場合に指定します。 これを次のコードに示します。
+リテラル以外の値は、パターンでは使用できません、ためにを付けることに注意してください、`when`句の値に対する入力の一部を比較する必要がある場合に指定します。 これは、次のコードで示されます。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4603.fs)]
 
+共用体パターンはガード覆われて、ときに、保護の対象に適用されることに注意してください**すべて**の最後の 1 つだけでなく、パターンのです。 たとえば、次のコードでは、ガードを与える`when a > 12`両方に適用される`A a`と`B a`:
+
+```fsharp
+type Union =
+    | A of int
+    | B of int
+
+let foo() =
+    let test = A 42
+    match test with
+    | A a
+    | B a when a > 41 -> a // the guard applies to both patterns
+    | _ -> 1
+
+foo() // returns 42
+```
+
 ## <a name="see-also"></a>関連項目
 
-[F# 言語リファレンス](index.md)
-
-[アクティブ パターン](active-patterns.md)
-
-[パターン一致](pattern-matching.md)
+[F# 言語リファレンス](index.md)  
+[アクティブ パターン](active-patterns.md)  
+[パターン一致](pattern-matching.md)  

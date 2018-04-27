@@ -1,24 +1,26 @@
 ---
-title: "LINQ to SQL クエリ"
-ms.custom: 
+title: LINQ to SQL クエリ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f4897aaa-7f44-4c20-a471-b948c2971aae
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8c32ff4040213ce73b78f7ea0f6d56e222d55b25
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 62e6252da06201e33d6f81f3160bee063272132f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="linq-to-sql-queries"></a>LINQ to SQL クエリ
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリは、[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] クエリと同じ構文を使用して定義します。 異なる点は、クエリ内で参照されるオブジェクトがデータベース内の要素に割り当てられるという点だけです。 詳細については、「[LINQ クエリの概要 (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)」を参照してください。  
@@ -33,7 +35,7 @@ ms.lasthandoff: 01/17/2018
 |アイテム|LINQ クエリ|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリ|  
 |----------|----------------|----------------------------------------------------------------------|  
 |クエリを保持するローカル変数の戻り値の型 (シーケンスを返すクエリの場合)|ジェネリック `IEnumerable`|ジェネリック `IQueryable`|  
-|データ ソースの指定|使用して、 `From` ([!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]) または`from`句 (c#)|同|  
+|データ ソースの指定|使用して、 `From` (Visual Basic) または`from`句 (c#)|同|  
 |フィルター処理|使用して、 `Where` / `where`句|同|  
 |グループ化|使用して、 `Group…By` / `groupby`句|同|  
 |選択 (投影)|使用して、 `Select` / `select`句|同|  
@@ -42,7 +44,7 @@ ms.lasthandoff: 01/17/2018
 |リモート実行とローカル実行||詳細については、次を参照してください。[リモート実行とします。ローカル実行](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)です。|  
 |ストリーミングとキャッシュ クエリ|ローカル メモリ シナリオでは適用なし||  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [LINQ クエリの概要 (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
  [LINQ クエリの基本操作](~/docs/csharp/programming-guide/concepts/linq/basic-linq-query-operations.md)  
  [LINQ クエリ操作での型の関係](~/docs/csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)  

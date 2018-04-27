@@ -1,11 +1,12 @@
 ---
-title: "数値データ型 (Visual Basic)"
-ms.custom: 
+title: 数値データ型 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - integral types [Visual Basic], Visual Basic
@@ -29,19 +30,19 @@ helpviewer_keywords:
 - Single data type [Visual Basic], numeric types
 - Decimal data type [Visual Basic], numeric data types
 ms.assetid: a27bd4d0-7e14-43eb-9cc4-b42eaab323c9
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9c185b7c04d589bfe74d1cca0c60df3e81ab80d3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c5e7a5340f9b0d103acc14350f30f17d8d709de3
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="numeric-data-types-visual-basic"></a>数値データ型 (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]いくつか提供*数値データ型*さまざまな表現で数値を処理するためです。 *整数*型を表す整数のみ (正、負の値、および 0)、および*非整数*型は整数と小数部の両方で数値を表します。  
+Visual Basic では、いくつかを指定*数値データ型*さまざまな表現で数値を処理するためです。 *整数*型を表す整数のみ (正、負の値、および 0)、および*非整数*型は整数と小数部の両方で数値を表します。  
   
- サイド バイ サイドの比較を示す表に、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]データ型を参照してください[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
+ Visual Basic データ型のサイド バイ サイドの比較を示す表を参照してください[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
   
 ## <a name="integral-numeric-types"></a>整数数値型  
  *整数データ型*は小数部のない数だけを表すです。  
@@ -51,10 +52,10 @@ ms.lasthandoff: 11/21/2017
  *符号なし*整数型では[Byte データ型](../../../../visual-basic/language-reference/data-types/byte-data-type.md)(8 ビット)、 [UShort データ型](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)(16 ビット)、 [UInteger データ型](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)(32 ビット)、および[Ulong 型](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)(64 ビット)。 変数にバイナリ データ、または不明な性質のデータが含まれる場合は、これらの型のいずれかとしてを宣言します。  
   
 ### <a name="performance"></a>パフォーマンス  
- 算術演算は、他のデータ型よりも整数型の高速です。 最も高速、`Integer`と`UInteger`型[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+ 算術演算は、他のデータ型よりも整数型の高速です。 最も高速、`Integer`と`UInteger`Visual Basic では型です。  
   
 ### <a name="large-integers"></a>大きな整数  
- 大きい整数値を保持する必要がある場合、`Integer`データ型を保持できる、使用することができます、`Long`データ型の代わりにします。 `Long`変数は、9,223,372,036,854,775,807 を通じて-9,223,372,036,854,775,808 から番号を保持できます。 操作を`Long`でよりも少し遅くなります`Integer`です。  
+ 大きい整数値を保持する必要がある場合、`Integer`データ型を保持できる、使用することができます、`Long`データ型の代わりにします。 `Long` 変数は、9,223,372,036,854,775,807 を通じて-9,223,372,036,854,775,808 から番号を保持できます。 操作を`Long`でよりも少し遅くなります`Integer`です。  
   
  使用することがより大きな値を必要がある場合、 [Decimal データ型](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)です。 79,228,162,514,264,337,593,543,950,335 を通じて-79,228,162,514,264,337,593,543,950,335 から番号を保持できる、`Decimal`変数の場合は、小数点以下桁数を使用しないでください。 ただし、操作を`Decimal`番号は、その他の数値データ型よりもかなり遅くなります。  
   
@@ -69,7 +70,7 @@ ms.lasthandoff: 11/21/2017
   
  非整数の数値データ型は、 `Decimal` (128 ビットの固定小数点)、 [Single データ型](../../../../visual-basic/language-reference/data-types/single-data-type.md)(32 ビット浮動小数点数)、および[Double データ型](../../../../visual-basic/language-reference/data-types/double-data-type.md)(64 ビット浮動小数点)。 これらは、すべて署名済みの型です。 変数には、小数が含まれることができる場合、は、これらの型のいずれかとしてを宣言します。  
   
- `Decimal`浮動小数点データ型がありません。 `Decimal`番号は、バイナリの整数値と値のどの部分が、小数を指定する整数のスケール ファクターがあります。  
+ `Decimal` 浮動小数点データ型がありません。 `Decimal` 番号は、バイナリの整数値と値のどの部分が、小数を指定する整数のスケール ファクターがあります。  
   
  使用することができます`Decimal`money 値として変数をします。 利点は、値の有効桁数です。 `Double`データ型が高速より少ないメモリが必要ですが、丸め誤差が発生します。 `Decimal`データ型は小数点以下桁数が 28 を完全な精度が保持されます。  
   
@@ -78,7 +79,7 @@ ms.lasthandoff: 11/21/2017
  非整数の数値として表現できます mmmEeee にある mmm、*仮数*(有効桁数) であり、廃棄、*指数*(10 の累乗) します。 非整数型の最上位の正の値は 7.9228162514264337593543950335 e + 28 `Decimal`、3.4028235 e + 38 `Single`、および 1.79769313486231570 e + 308 の`Double`します。  
   
 ### <a name="performance"></a>パフォーマンス  
- `Double`最も効率的な小数部のデータ型の現在のプラットフォーム上のプロセッサの倍精度浮動小数点演算を実行するためです。 ただし、操作を`Double`などの整数型と同様に高速ではない`Integer`です。  
+ `Double` 最も効率的な小数部のデータ型の現在のプラットフォーム上のプロセッサの倍精度浮動小数点演算を実行するためです。 ただし、操作を`Double`などの整数型と同様に高速ではない`Integer`です。  
   
 ### <a name="small-magnitudes"></a>小さい絶対値  
  (0 に最も近い)、最小の可能な大きさの数値の`Double`変数に保持できます - 4.94065645841246544E と同じくらい小さい-324 の負の値および 4.94065645841246544E-の正の値。  

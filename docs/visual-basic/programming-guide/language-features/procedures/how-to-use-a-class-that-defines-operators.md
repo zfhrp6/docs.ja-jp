@@ -1,11 +1,12 @@
 ---
-title: "方法: 演算子を定義するクラスを使用する (Visual Basic)"
-ms.custom: 
+title: '方法: 演算子を定義するクラスを使用する (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - operator procedures [Visual Basic], calling
@@ -17,22 +18,22 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: 7ccce94a-6ca0-47d1-9f3f-13385d34f5d5
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 223b3fc84fe75d1d530cd182c9332e5c663aa519
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7e0bcfaeca638dfabb841a9e935b872f76fdf957
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-use-a-class-that-defines-operators-visual-basic"></a>方法: 演算子を定義するクラスを使用する (Visual Basic)
-クラスまたは独自の演算子を定義する構造体を使用している場合のこれらの演算子にアクセスできます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+クラスまたは独自の演算子を定義する構造体を使用している場合は、Visual Basic からこれらの演算子を表示できます。  
   
  クラスまたは構造体で演算子を定義とも呼びます*オーバー ロード*演算子。  
   
 ## <a name="example"></a>例  
- 次の例では、SQL 構造<xref:System.Data.SqlTypes.SqlString>、変換演算子を定義する ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)) SQL 文字列間の双方向で、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]文字列。 使用して`CType(` *SQL 文字列式*、`String)`への SQL 文字列を変換する、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]文字列、および`CType(` *Visual Basic の文字列式*、 <xref:System.Data.SqlTypes.SqlString>`)`に逆方向に変換します。  
+ 次の例では、SQL 構造<xref:System.Data.SqlTypes.SqlString>、変換演算子を定義する ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md))、SQL 文字列と Visual Basic の文字列間で双方向でします。 使用して`CType(` *SQL 文字列式*、 `String)` SQL 文字列を文字列に変換する Visual Basic、および`CType(` *Visual Basic の文字列式*、 <xref:System.Data.SqlTypes.SqlString> `)`に逆方向に変換します。  
   
  [!code-vb[VbVbcnProcedures#30](./codesnippet/VisualBasic/how-to-use-a-class-that-defines-operators_1.vb)]  
   

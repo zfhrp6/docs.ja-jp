@@ -1,5 +1,5 @@
 ---
-title: "申し訳ありませんが、お don &#39; この c# エラーに関する詳細が含まれていたり"
+title: 申し訳ありません&#39;t この c# エラーに関する詳細があります。
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -886,34 +886,34 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-caps.latest.revision: 
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5f6224f661aff817b4314d832fcc2ff3938644c0
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: 4aeea86778b44cbe8e71ed64ee5a3a3a1618cccd
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>申し訳ありませんが、お don &#39; この c# エラーに関する詳細が含まれていたり
+# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>申し訳ありません&#39;t この c# エラーに関する詳細があります。
 申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用している他の開発者を依頼することができます。  
   
  [Visual C# 言語](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
- [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。  
+ に関する質問や一般的な議論のため、Visual c# 言語の構文とコンパイラ フォーラムを提供します。  
   
  [Visual C# IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 環境で作業する方法について質問するためのフォーラムです。  
   
  [Visual C# 全般](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
- 他のフォーラムで取り上げていない [!INCLUDE[csprcs](~/includes/csprcs-md.md)] に関する質問や議論のためのフォーラムです。  
+ に関する質問については、フォーラムを提供し、Visual c# を使用したその他のフォーラムで取り上げていないを発行します。  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
- [!INCLUDE[csprcs](~/includes/csprcs-md.md)] に関する質問や問題のためのフォーラムです。  
+ に関する質問については、フォーラムを提供し、Visual c# での問題です。  
   
  関連項目:  
  [Visual C# プログラマのための追加リソース](../../csharp/getting-started/additional-resources.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../csharp/programming-guide/index.md)  
  [C# リファレンス](../../csharp/language-reference/index.md)  
  [ご意見](/visualstudio/ide/talk-to-us)  

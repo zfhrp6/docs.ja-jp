@@ -12,17 +12,17 @@ ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4a37bf43096931597278974099becb9be6ae133d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d931a2034d681c4e14cc35ecfbd9ad7accf5afaa
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-my-depends-on-project-type-visual-basic"></a>プロジェクトの種類に応じた My の機能 (Visual Basic)
-`My`特定のプロジェクトの種類で必要なオブジェクトのみを公開します。 たとえば、`My.Forms`オブジェクトは、Windows フォーム アプリケーションで使用できますが、コンソール アプリケーションでは使用できません。 このトピックの内容を説明する`My`オブジェクトは、異なる種類のプロジェクトで使用できます。  
+`My` 特定のプロジェクトの種類で必要なオブジェクトのみを公開します。 たとえば、`My.Forms`オブジェクトは、Windows フォーム アプリケーションで使用できますが、コンソール アプリケーションでは使用できません。 このトピックの内容を説明する`My`オブジェクトは、異なる種類のプロジェクトで使用できます。  
   
 ## <a name="my-in-windows-applications-and-web-sites"></a>自分の Windows アプリケーションや Web サイト  
- `My`現在、プロジェクトの種類に便利なオブジェクトのみを公開します。適用されないオブジェクトを抑制します。 たとえば、次の図は、 `My` Windows フォーム プロジェクトでのオブジェクト モデルです。  
+ `My` 現在、プロジェクトの種類に便利なオブジェクトのみを公開します。適用されないオブジェクトを抑制します。 たとえば、次の図は、 `My` Windows フォーム プロジェクトでのオブジェクト モデルです。  
   
  ![図形の Windows フォーム アプリケーションで](../../../visual-basic/developing-apps/development-with-my/media/myinwinform.png "MyInWinForm")  
   
@@ -37,18 +37,18 @@ ms.lasthandoff: 11/21/2017
   
 |My オブジェクト|Windows アプリケーション|クラス ライブラリ|コンソール アプリケーション|Windows コントロール ライブラリ|Web コントロール ライブラリ|Windows サービス|Empty|Web サイト|  
 |---|---|---|---|---|---|---|---|---|  
-|`My.Application`|**[はい]** <sup>1</sup>|**[はい]** <sup>2</sup>|**[はい]** <sup>3</sup>|**[はい]** <sup>2</sup>|いいえ|**[はい]** <sup>3</sup>|いいえ|いいえ|  
-|`My.Computer`|**[はい]** <sup>4</sup>|**[はい]** <sup>4</sup>|**[はい]** <sup>4</sup>|**[はい]** <sup>4</sup>|**[はい]** <sup>5</sup>|**[はい]** <sup>4</sup>|いいえ|**[はい]** <sup>5</sup>|  
-|`My.Forms`|**はい**|いいえ|いいえ|**はい**|いいえ|いいえ|いいえ|いいえ|  
-|`My.Log`|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|**はい**|  
-|`My.Request`|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|**はい**|  
-|`My.Resources`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|いいえ|いいえ|  
-|`My.Response`|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|**はい**|  
-|`My.Settings`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|いいえ|いいえ|  
-|`My.User`|**[はい]** <sup>6</sup>|**[はい]** <sup>6</sup>|**[はい]** <sup>6</sup>|**[はい]** <sup>6</sup>|**[はい]** <sup>7</sup>|**[はい]** <sup>6</sup>|いいえ|**[はい]** <sup>7</sup>|  
-|`My.WebServices`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|いいえ|いいえ|  
+|`My.Application`|**[はい]** <sup>1</sup>|**[はい]** <sup>2</sup>|**[はい]** <sup>3</sup>|**[はい]** <sup>2</sup>|×|**[はい]** <sup>3</sup>|×|×|  
+|`My.Computer`|**[はい]** <sup>4</sup>|**[はい]** <sup>4</sup>|**[はい]** <sup>4</sup>|**[はい]** <sup>4</sup>|**[はい]** <sup>5</sup>|**[はい]** <sup>4</sup>|×|**[はい]** <sup>5</sup>|  
+|`My.Forms`|**はい**|×|×|**はい**|×|Ｘ|Ｘ|Ｘ|  
+|`My.Log`|Ｘ|Ｘ|Ｘ|Ｘ|Ｘ|Ｘ|×|**はい**|  
+|`My.Request`|×|Ｘ|Ｘ|Ｘ|Ｘ|Ｘ|×|**はい**|  
+|`My.Resources`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|×|Ｘ|  
+|`My.Response`|Ｘ|Ｘ|Ｘ|Ｘ|Ｘ|Ｘ|×|**はい**|  
+|`My.Settings`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|×|×|  
+|`My.User`|**[はい]** <sup>6</sup>|**[はい]** <sup>6</sup>|**[はい]** <sup>6</sup>|**[はい]** <sup>6</sup>|**[はい]** <sup>7</sup>|**[はい]** <sup>6</sup>|×|**[はい]** <sup>7</sup>|  
+|`My.WebServices`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|×|×|  
   
- <sup>1</sup> Windows フォームのバージョンの`My.Application`します。 コンソールのバージョンから派生した (注 3 を参照してください)。アプリケーションの windows と対話するためのサポートを追加し、提供、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデルです。  
+ <sup>1</sup> Windows フォームのバージョンの`My.Application`します。 コンソールのバージョンから派生した (注 3 を参照してください)。アプリケーションの windows と対話するためのサポートを追加し、Visual Basic アプリケーション モデルを提供します。  
   
  <sup>2</sup>ライブラリ版の`My.Application`します。 アプリケーションで必要な基本的な機能を提供します: アプリケーション ログに書き込むと、アプリケーションの情報にアクセスするメンバーを提供します。  
   

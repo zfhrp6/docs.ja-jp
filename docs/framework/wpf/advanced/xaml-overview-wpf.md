@@ -1,12 +1,13 @@
 ---
-title: "XAML の概要 (WPF)"
-ms.custom: 
+title: XAML の概要 (WPF)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -26,16 +27,17 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-caps.latest.revision: "57"
+caps.latest.revision: 57
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ce83713d2483320569bde0d5c9a677f0b357ebf2
-ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
+ms.workload:
+- dotnet
+ms.openlocfilehash: 87785d6bba58442a1a5ad27f5304aa63e16c1aa9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xaml-overview-wpf"></a>XAML の概要 (WPF)
 このトピックは、XAML 言語の機能について説明し、書き込む XAML を使用する方法について説明[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションです。 具体的には、このトピックにはによって実装される XAML について説明します[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 XAML 自体よりも大きい言語の概念は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。  
@@ -146,7 +148,7 @@ ms.lasthandoff: 01/25/2018
   
  ここでは、各<xref:System.Windows.Controls.Button>の子要素は、<xref:System.Windows.Controls.StackPanel>です。 これは、2 つのさまざまな理由で 2 つのタグを省略する簡素化されたで直感的なマークアップです。  
   
--   **省略された StackPanel.Children プロパティ要素:** <xref:System.Windows.Controls.StackPanel>から派生した<xref:System.Windows.Controls.Panel>です。 <xref:System.Windows.Controls.Panel>定義<xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType>としての XAML コンテンツ プロパティです。  
+-   **省略された StackPanel.Children プロパティ要素:** <xref:System.Windows.Controls.StackPanel>から派生した<xref:System.Windows.Controls.Panel>です。 <xref:System.Windows.Controls.Panel> 定義<xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType>としての XAML コンテンツ プロパティです。  
   
 -   **省略された UIElementCollection オブジェクト要素:** 、<xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType>プロパティは、型を受け取り<xref:System.Windows.Controls.UIElementCollection>を実装する<xref:System.Collections.IList>です。 コレクションの処理などの XAML 規則に基づいて、コレクションの要素のタグを省略できます<xref:System.Collections.IList>です。 (この場合、<xref:System.Windows.Controls.UIElementCollection>実際にインスタンス化できない既定のコンス トラクターでは、公開されず、理由があるため、<xref:System.Windows.Controls.UIElementCollection>オブジェクトの要素をコメント化されて表示)。  
   
@@ -192,7 +194,7 @@ ms.lasthandoff: 01/25/2018
 ## <a name="type-converters"></a>型コンバーター  
  [XAML 構文の概要](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md#xaml_syntax_in_brief) セクションで、属性の値は文字列で設定できる必要がありますを示されていました。 文字列が他のオブジェクト型またはプリミティブ値に変換される方法の基本的なネイティブの処理がに基づいて、<xref:System.String>型自体などの型をネイティブではさらに特定の処理<xref:System.DateTime>または<xref:System.Uri>です。 しかし、多く[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]型またはそれらの型のメンバーは、処理動作は、このような形でより複雑なオブジェクトの種類のインスタンスを文字列との属性として指定できること、基本的な文字列属性を拡張します。  
   
- <xref:System.Windows.Thickness>構造体は、XAML の使用法に対して有効になっている型の変換を持つ型の例を示します。 <xref:System.Windows.Thickness>入れ子になった四角形内での測定値を示しなどのプロパティの値として使用される<xref:System.Windows.FrameworkElement.Margin%2A>です。 実行する型コンバーターを配置することによって<xref:System.Windows.Thickness>を使用するすべてのプロパティ、<xref:System.Windows.Thickness>を簡単に属性として指定されるため、XAML で指定されます。 次の例の値を指定する型の変換と属性の構文を使用して、 <xref:System.Windows.FrameworkElement.Margin%2A>:  
+ <xref:System.Windows.Thickness>構造体は、XAML の使用法に対して有効になっている型の変換を持つ型の例を示します。 <xref:System.Windows.Thickness> 入れ子になった四角形内での測定値を示しなどのプロパティの値として使用される<xref:System.Windows.FrameworkElement.Margin%2A>です。 実行する型コンバーターを配置することによって<xref:System.Windows.Thickness>を使用するすべてのプロパティ、<xref:System.Windows.Thickness>を簡単に属性として指定されるため、XAML で指定されます。 次の例の値を指定する型の変換と属性の構文を使用して、 <xref:System.Windows.FrameworkElement.Margin%2A>:  
   
  [!code-xaml[XAMLOvwSupport#MarginTCE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#margintce)]  
   
@@ -216,14 +218,14 @@ ms.lasthandoff: 01/25/2018
   
  この使用法`xmlns`スコープの使用状況と、名前空間のマッピングを定義するのには、XML 1.0 仕様に一致します。 XAML 名前スコープは XML 名前空間と異なるのみを XAML 名前スコープでは名前空間の要素は、のバックアップ方法の種類によって型の解決や、XAML を解析する際に何かことも意味します。  
   
- なお、`xmlns`属性は厳密に各 XAML ファイルのルート要素に必要なだけです。 `xmlns`定義は、ルート要素のすべての子孫要素に適用されます (この動作は、XML 1.0 仕様に一致をもう一度`xmlns`)。`xmlns`属性は、ルートの下にあるその他の要素では許可されてもおよび定義の要素の子孫の要素に適用されます。 ただし、頻繁に定義または XAML 名前空間の再定義は、読みにくいされる XAML マークアップ スタイルで発生します。  
+ なお、`xmlns`属性は厳密に各 XAML ファイルのルート要素に必要なだけです。 `xmlns` 定義は、ルート要素のすべての子孫要素に適用されます (この動作は、XML 1.0 仕様に一致をもう一度`xmlns`)。`xmlns`属性は、ルートの下にあるその他の要素では許可されてもおよび定義の要素の子孫の要素に適用されます。 ただし、頻繁に定義または XAML 名前空間の再定義は、読みにくいされる XAML マークアップ スタイルで発生します。  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML プロセッサの実装には WPF コア アセンブリの認知度を持つインフラストラクチャが含まれています。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コア アセンブリがサポートする型を格納する既知の[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]既定の XAML 名前空間にマッピングします。 これを使用して、プロジェクトのビルドの一部である構成ファイルと、WPF をビルドし、プロジェクト システムです。 したがって、既定値として既定の XAML 名前空間を宣言する`xmlns`に由来する XAML 要素を参照するために必要なものは[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アセンブリ。  
   
 ### <a name="the-x-prefix"></a>X: プレフィックス  
  前のルート要素例で、プレフィックス`x:`XAML 名前空間をマップに使用された[!INCLUDE[TLA#tla_xamlxmlnsv1](../../../../includes/tlasharptla-xamlxmlnsv1-md.md)]、これは XAML 言語をサポートする専用の XAML 名前空間を作成します。 これは、`x:`例については、および全体でこのドキュメントの プロジェクトのテンプレートでこの XAML 名前空間のマッピングのプレフィックスが使用される[!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]です。 XAML 言語の XAML 名前空間は、XAML で非常に頻繁に使用するいくつかのプログラミング構成要素を含めます。 最も一般的なの一覧を次に示します`x:`プログラミング構成要素を使用するプレフィックスします。  
   
--   [X:key](../../../../docs/framework/xaml-services/x-key-directive.md): 内の各リソースの一意のキーを設定、 <xref:System.Windows.ResourceDictionary> (またはその他のフレームワークのようなディクショナリの概念)。 `x:Key`90% のアカウントではおそらく、`x:`使用状況の一般的な WPF アプリケーションのマークアップに表示されます。  
+-   [X:key](../../../../docs/framework/xaml-services/x-key-directive.md): 内の各リソースの一意のキーを設定、 <xref:System.Windows.ResourceDictionary> (またはその他のフレームワークのようなディクショナリの概念)。 `x:Key` 90% のアカウントではおそらく、`x:`使用状況の一般的な WPF アプリケーションのマークアップに表示されます。  
   
 -   [X:class](../../../../docs/framework/xaml-services/x-class-directive.md): を指定します、 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] XAML ページの分離コードを提供するクラスの名前空間とクラス名。 WPF のプログラミング モデルごとに分離コードをサポートするために、このようなクラスが必要し、そのため、ほとんどの場合を参照してください`x:`マップされている場合でも、リソースはありません。  
   
@@ -260,7 +262,7 @@ ms.lasthandoff: 01/25/2018
   
 <a name="events_and_xaml_codebehind"></a>   
 ## <a name="events-and-xaml-code-behind"></a>イベントと XAML コードの分離  
- ほとんど[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]XAML マークアップと分離コードの両方のアプリケーションが構成されます。 として書き込まれますが、XAML、プロジェクト内で、`.xaml`ファイル、および[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]などの言語[!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)]または[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)]分離コード ファイルを書き込むために使用します。 XAML コード ビハインドの場所が、名前空間を指定することによって識別される XAML ファイルのファイルし、クラスの XAML ファイルをマークアップ WPF プログラミングおよびアプリケーション モデルの一部としてコンパイルされるとき、 `x:Class` XAML のルート要素の属性です。  
+ ほとんど[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]XAML マークアップと分離コードの両方のアプリケーションが構成されます。 として書き込まれますが、XAML、プロジェクト内で、`.xaml`ファイル、および[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]分離コード ファイルの書き込みに Microsoft Visual Basic や c# などの言語を使用します。 XAML コード ビハインドの場所が、名前空間を指定することによって識別される XAML ファイルのファイルし、クラスの XAML ファイルをマークアップ WPF プログラミングおよびアプリケーション モデルの一部としてコンパイルされるとき、 `x:Class` XAML のルート要素の属性です。  
   
  例では、これまで、いくつかのボタンを表示するが、論理的な動作がまだ関連付けられていたこれらのボタンのいずれもします。 オブジェクト要素の動作を追加するアプリケーション レベルの主要なメカニズムは、要素クラスの既存のイベントを使用して、その実行時にそのイベントが発生したときに呼び出されるイベントの特定のハンドラーを作成するには。 イベント名と使用するハンドラーの名前は、ハンドラーを実装するコードが分離コードで定義されている一方、マークアップでは、指定します。  
   
@@ -314,13 +316,13 @@ ms.lasthandoff: 01/25/2018
   
 <a name="base_classes_and_xaml"></a>   
 ## <a name="base-types-and-xaml"></a>基本型、および XAML  
- 基になる WPF XAML と XAML 名前空間に対応する型のコレクションは、 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] XAML のマークアップ要素だけでなくオブジェクト。 ただし、すべてのクラスは、要素にマップできます。 など、クラスを抽象化<xref:System.Windows.Controls.Primitives.ButtonBase>での継承で特定非抽象基本クラスを使用して、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]オブジェクト モデルです。 基本クラス、抽象ものも含めてはその階層内のいずれかの基本クラスからメンバーを継承それぞれ具体的な XAML 要素のために XAML 開発することも重要です。 これらのメンバーが含まれる場合、要素の属性として設定できるプロパティやイベントを処理することができます。 <xref:System.Windows.FrameworkElement>具体的なベースである[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]のクラス[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]WPF フレームワーク レベル。 デザイン時[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]さまざまな図形、パネル、デコレータ、使用する、または指定したすべてのコントロール クラスから派生して<xref:System.Windows.FrameworkElement>です。 関連する基本クラスでは、 <xref:System.Windows.FrameworkContentElement>、フロー レイアウト プレゼンテーション、についても動作するドキュメント指向の要素をサポートを使用して[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]を意図的にミラー化、[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]で<xref:System.Windows.FrameworkElement>です。 要素レベルで属性の組み合わせと[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]オブジェクト モデルによって、特定の XAML 要素とその基になる型に関係なく、最も具体的な XAML 要素上では設定されている共通プロパティのセットでは提供します。  
+ 基になる WPF XAML と XAML 名前空間に対応する型のコレクションは、 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] XAML のマークアップ要素だけでなくオブジェクト。 ただし、すべてのクラスは、要素にマップできます。 など、クラスを抽象化<xref:System.Windows.Controls.Primitives.ButtonBase>での継承で特定非抽象基本クラスを使用して、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]オブジェクト モデルです。 基本クラス、抽象ものも含めてはその階層内のいずれかの基本クラスからメンバーを継承それぞれ具体的な XAML 要素のために XAML 開発することも重要です。 これらのメンバーが含まれる場合、要素の属性として設定できるプロパティやイベントを処理することができます。 <xref:System.Windows.FrameworkElement> 具体的なベースである[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]のクラス[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]WPF フレームワーク レベル。 デザイン時[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]さまざまな図形、パネル、デコレータ、使用する、または指定したすべてのコントロール クラスから派生して<xref:System.Windows.FrameworkElement>です。 関連する基本クラスでは、 <xref:System.Windows.FrameworkContentElement>、フロー レイアウト プレゼンテーション、についても動作するドキュメント指向の要素をサポートを使用して[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]を意図的にミラー化、[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]で<xref:System.Windows.FrameworkElement>です。 要素レベルで属性の組み合わせと[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]オブジェクト モデルによって、特定の XAML 要素とその基になる型に関係なく、最も具体的な XAML 要素上では設定されている共通プロパティのセットでは提供します。  
   
 <a name="xaml_security"></a>   
 ## <a name="xaml-security"></a>XAML セキュリティ  
  XAML は、直接オブジェクト インスタンスの作成と実行を表すマークアップ言語です。 したがって、XAML で作成された要素機能があります、同じを生成した同等のシステム リソース (ネットワーク アクセス、ファイル システムの入出力など) と対話するコードです。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]サポートしている、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]セキュリティ フレームワーク[!INCLUDE[TLA#tla_cas](../../../../includes/tlasharptla-cas-md.md)]です。 つまり、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]インターネット ゾーンで実行されているコンテンツの実行権限が少なくなっています。 "Loose XAML"(コンパイルされていない XAML のページと解釈の読み込み時に XAML ビューアーで) と[!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)]このインターネット ゾーンでは、通常実行して、同じアクセス許可セットを使用します。  ただし、XAML を完全に信頼されたアプリケーションでロードでは、ホスト アプリケーションのようにシステム リソースへのアクセス権があります。 詳細については、次を参照してください。 [WPF 部分信頼セキュリティ](../../../../docs/framework/wpf/wpf-partial-trust-security.md)です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サポートしている、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]セキュリティ フレームワーク[!INCLUDE[TLA#tla_cas](../../../../includes/tlasharptla-cas-md.md)]です。 つまり、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]インターネット ゾーンで実行されているコンテンツの実行権限が少なくなっています。 "Loose XAML"(コンパイルされていない XAML のページと解釈の読み込み時に XAML ビューアーで) と[!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)]このインターネット ゾーンでは、通常実行して、同じアクセス許可セットを使用します。  ただし、XAML を完全に信頼されたアプリケーションでロードでは、ホスト アプリケーションのようにシステム リソースへのアクセス権があります。 詳細については、次を参照してください。 [WPF 部分信頼セキュリティ](../../../../docs/framework/wpf/wpf-partial-trust-security.md)です。  
   
 <a name="loading_xaml_from_code"></a>   
 ## <a name="loading-xaml-from-code"></a>コードからの XAML を読み込む  
@@ -332,13 +334,13 @@ ms.lasthandoff: 01/25/2018
   
  既に完了していない場合この、チュートリアルのトピックの手順を実行してください。[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)です。 このチュートリアルで説明されているマークアップを中心としたアプリケーションを作成するときにこのトピックで説明する概念の多くが深まります。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]基になっている特定のアプリケーション モデルを使用して、<xref:System.Windows.Application>クラスです。 詳細については、「[アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 基になっている特定のアプリケーション モデルを使用して、<xref:System.Windows.Application>クラスです。 詳細については、「[アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)です。  
   
  [WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)XAML 包括的なアプリケーションを使用してコマンドラインからを構築する方法の詳細については、[!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]です。  
   
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)でプロパティの用途のための詳細については、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、し、依存関係プロパティの概念を紹介します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)  
  [WPF における XAML とカスタム クラス](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
  [XAML 名前空間 (x:) 言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  

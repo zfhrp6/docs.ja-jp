@@ -1,12 +1,13 @@
 ---
-title: "Ref 戻り値 (Visual Basic)"
-ms.custom: 
+title: Ref 戻り値 (Visual Basic)
+ms.custom: ''
 ms.date: 04/28/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic]
@@ -15,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: 5ef0cc69-eb3a-4a67-92a2-78585f223cb5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 560607f7aa304b25314daabeef3952e6bbef7426
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 6055028ac92016cbc4b6f7bffa7f483e5ea76608
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="support-for-reference-return-values-visual-basic"></a>参照戻り値 (Visual Basic) のサポート
 
-C# 言語をサポートしています (C#) 7 以降、*戻り値の参照*です。 戻り値の参照を理解する方法の 1 つは、メソッドへの参照によって渡される引数の逆であることです。 参照によって渡された引数が変更されると、変更が、呼び出し元に対して、変数の値に反映されます。 提供する場合、メソッドの参照の戻り値を呼び出し元に、呼び出し元の参照の戻り値に加えた変更が、呼び出されたメソッドのデータに反映されます。
+C# 言語のサポートされている c# 7.0 から始めて、*戻り値を参照*です。 戻り値の参照を理解する方法の 1 つは、メソッドへの参照によって渡される引数の逆であることです。 参照によって渡された引数が変更されると、変更が、呼び出し元に対して、変数の値に反映されます。 提供する場合、メソッドの参照の戻り値を呼び出し元に、呼び出し元の参照の戻り値に加えた変更が、呼び出されたメソッドのデータに反映されます。
 
 Visual Basic では、参照を持つメソッドを作成すると、戻り値が、参照戻り値を使用することは許可されません。 つまり、参照戻り値を持つメソッドを呼び出すし、その戻り値を変更し、参照の戻り値の変更は、呼び出されたメソッドのデータに反映されます。
 

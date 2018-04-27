@@ -1,11 +1,12 @@
 ---
-title: "方法: 演算子プロシージャを呼び出す (Visual Basic)"
-ms.custom: 
+title: '方法: 演算子プロシージャを呼び出す (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - operator procedures [Visual Basic], calling
@@ -17,19 +18,19 @@ helpviewer_keywords:
 - overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 0abff0a81ebcdacb59b69d0c307bb4aa219906c3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 21545f2488bfabd0abc9c6e316d21bbc4d5aeb91
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>方法: 演算子プロシージャを呼び出す (Visual Basic)
 演算子プロシージャを呼び出すには、式で演算子のシンボルを使用します。 場合は、変換演算子を呼び出す、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)に値を別の 1 つのデータ型に変換します。  
   
- 演算子プロシージャを明示的に呼び出すことはありません。 同様に、演算子を使用する、または`CType`関数、代入ステートメントまたは式、演算子を通常使用するのと同様にします。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]演算子プロシージャ呼び出しを行います。  
+ 演算子プロシージャを明示的に呼び出すことはありません。 同様に、演算子を使用する、または`CType`関数、代入ステートメントまたは式、演算子を通常使用するのと同様にします。 Visual Basic では、演算子プロシージャ呼び出しを行います。  
   
  クラスまたは構造体で演算子を定義とも呼びます*オーバー ロード*演算子。  
   
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  オペランドのデータ型は、変換して、正しい順序で適切なことを確認します。  
   
-3.  `CType`変換演算子プロシージャの呼び出しを変換後の値を返します。  
+3.  `CType` 変換演算子プロシージャの呼び出しを変換後の値を返します。  
   
 ## <a name="example"></a>例  
  次の例では、2 つ作成されます<xref:System.TimeSpan>構造体を加算してを 3 つ目の結果を格納<xref:System.TimeSpan>構造体。 <xref:System.TimeSpan>構造体は、いくつかの標準的な演算子をオーバー ロードする演算子プロシージャを定義します。  

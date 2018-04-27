@@ -1,5 +1,5 @@
 ---
-title: '値 &#39; のコピーByRef &#39;パラメーター &#39;&lt;parametername&gt;&#39; の種類 &#39; から、一致する引数範囲を絞り込みますに戻る&lt;typename1&gt;(& a) を入力します #39 &#39;&lt; 。typename2&gt;&#39;です。'
+title: 値をコピー &#39;ByRef&#39;パラメーター &#39; &lt;parametername&gt; &#39;型から縮小変換を一致する引数に戻して&#39; &lt;typename1&gt; &#39;型&#39; &lt;typename2&gt;&#39;
 ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ''
@@ -16,26 +16,26 @@ ms.assetid: 281564b7-99f7-451f-b10d-f985e831bb25
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4bf993639007162e2e17d4b8cb9dfe8d5316acaa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 18c72e56e4b2cc9c2251de2417a9f12a6688323f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="copying-the-value-of-39byref39-parameter-39ltparameternamegt39-back-to-the-matching-argument-narrows-from-type-39lttypename1gt39-to-type-39lttypename2gt39"></a>値 &#39; のコピーByRef &#39;パラメーター &#39;&lt;parametername&gt;&#39; の種類 &#39; から、一致する引数範囲を絞り込みますに戻る&lt;typename1&gt;(& a) を入力します #39 &#39;&lt; 。typename2&gt;&#39;です。
+# <a name="copying-the-value-of-39byref39-parameter-39ltparameternamegt39-back-to-the-matching-argument-narrows-from-type-39lttypename1gt39-to-type-39lttypename2gt39"></a>値をコピー &#39;ByRef&#39;パラメーター &#39; &lt;parametername&gt; &#39;型から縮小変換を一致する引数に戻して&#39; &lt;typename1&gt; &#39;型&#39; &lt;typename2&gt;&#39;
 プロシージャが、対応するパラメーターの型に拡大変換する引数によって呼び出され、引数には、パラメーターからの変換は縮小します。  
   
- クラスまたは構造体を定義するときは、そのクラスまたは構造体の型を他の型に変換する 1 つまたは複数の変換演算子を定義できます。 その他の型をクラスまたは構造体の型に変換する逆の変換演算子を定義することもできます。 プロシージャ呼び出しでクラスまたは構造体の型を使用すると、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] はこれらの変換演算子を使用して、引数の型を対応するパラメーターの型に変換することができます。  
+ クラスまたは構造体を定義するときは、そのクラスまたは構造体の型を他の型に変換する 1 つまたは複数の変換演算子を定義できます。 その他の型をクラスまたは構造体の型に変換する逆の変換演算子を定義することもできます。 プロシージャ呼び出しでクラスまたは構造体の型を使用すると、Visual Basic は、引数の型を対応するパラメーターの型に変換するのにこれらの変換演算子を使用できます。  
   
- 引数を渡す場合[ByRef](../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]場合がありますの参照を渡す代わりにプロシージャ内のローカル変数に引数の値をコピーします。 このような場合は、プロシージャから返されるときに、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は呼び出し元のコードの引数にローカル変数の値をコピーする必要があります。  
+ 引数を渡す場合[ByRef](../../../visual-basic/language-reference/modifiers/byref.md)、Visual Basic は、参照を渡す代わりにプロシージャ内のローカル変数に引数の値をコピーすることがあります。 このような場合は、プロシージャが戻るとき、Visual Basic 必要がありますにコピーしてローカル変数の値戻す呼び出し元のコードの引数。  
   
- `ByRef` 引数の値がプロシージャにコピーされ、引数とパラメーターが同じ型である場合、変換は必要ありません。 型が異なる場合、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は双方向で変換する必要があります。 型のいずれかがクラスまたは構造体の型の場合、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] はその型を他の型との間で変換する必要があります。 これらの変換のいずれかを拡大すると場合、逆変換は縮小可能性があります。  
+ `ByRef` 引数の値がプロシージャにコピーされ、引数とパラメーターが同じ型である場合、変換は必要ありません。 型が異なる場合は、Visual Basic が双方向で変換する必要があります。 型のいずれかがクラスまたは構造体の型の場合は、Visual Basic 必要があります変換との間、他の型。 これらの変換のいずれかを拡大すると場合、逆変換は縮小可能性があります。  
   
  **エラー ID:** BC32053  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   可能な場合は、プロシージャのパラメーターと同じ型の呼び出し元引数を使用して、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で変換する必要がないようにします。  
+-   可能であれば、ので Visual Basic は、変換を行う必要はありませんは、プロシージャのパラメーターと同じ型の呼び出し元の引数を使用します。  
   
 -   パラメーターの型の異なる型引数を持つプロシージャを呼び出す必要がある場合は、呼び出し元の引数に値を返す、パラメーターを定義する必要はありません[ByVal](../../../visual-basic/language-reference/modifiers/byval.md)の代わりに`ByRef`です。  
   

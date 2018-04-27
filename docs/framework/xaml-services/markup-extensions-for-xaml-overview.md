@@ -1,27 +1,29 @@
 ---
-title: "XAML のマークアップ拡張機能の概要"
-ms.custom: 
+title: XAML のマークアップ拡張機能の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0feef370e6b09d2f58a33f2142bd654e1d7e3402
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 464c5f547089d47906f2e227effe821357196c16
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>XAML のマークアップ拡張機能の概要
 マークアップ拡張機能は、プリミティブでも特定の XAML 型でもない値を取得するための XAML の手法です。 属性による使用では、マークアップ拡張機能は、左中かっこ `{` でマークアップ拡張機能スコープに入り、右中かっこ `}` で終了するという、既知の文字シーケンスを使用します。 .NET Framework XAML サービスを使用する場合は、System.Xaml アセンブリから XAML 言語の定義済みのマークアップ拡張機能をいくつか使用できます。 また、System.Xaml で定義された <xref:System.Windows.Markup.MarkupExtension> クラスからサブクラスを作成し、独自のマークアップ拡張機能を定義することもできます。 あるいは、特定のフレームワークを既に参照している場合は、そのフレームワークによって定義されたマークアップ拡張機能を使用することができます。  
@@ -33,7 +35,7 @@ ms.lasthandoff: 12/22/2017
  XAML 言語をサポートするため、.NET Framework XAML サービスによっていくつかのマークアップ拡張機能が実装されています。 これらのマークアップ拡張機能は、言語としての XAML の仕様の部分に対応しています。 これらは、通常、一般的に使用される構文では `x:` プレフィックスによって識別できます。 これらの XAML 言語要素に対する .NET Framework XAML サービスの実装は、すべて  <xref:System.Windows.Markup.MarkupExtension> 基底クラスから派生します。  
   
 > [!NOTE]
->  `x:` プレフィックスは、XAML 稼働環境のルート要素で、XAML 言語の名前空間を標準的な XAML 名前空間にマッピングするために使用します。 たとえば、さまざまな特定のフレームワークの [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] プロジェクト テンプレートおよびページ テンプレートでは、この `x:` マッピングを XAML ファイルの先頭に置きます。 独自の XAML 名前空間のマッピングに別のプレフィックス トークンを選択することもできますが、このドキュメントでは、既定の `x:` マッピングを、独自の固有なフレームワークの既定の XAML 名前空間や他の任意の CLR 名前空間または XML 名前空間ではなく、XAML 言語の XAML 名前空間の一部として定義されているエンティティを識別する手段と想定します。  
+>  `x:` プレフィックスは、XAML 稼働環境のルート要素で、XAML 言語の名前空間を標準的な XAML 名前空間にマッピングするために使用します。 たとえば、これを使用して XAML ファイルの開始、Visual Studio プロジェクト テンプレートおよびページ テンプレートのさまざまな特定のフレームワーク`x:`マッピングします。 独自の XAML 名前空間のマッピングに別のプレフィックス トークンを選択することもできますが、このドキュメントでは、既定の `x:` マッピングを、独自の固有なフレームワークの既定の XAML 名前空間や他の任意の CLR 名前空間または XML 名前空間ではなく、XAML 言語の XAML 名前空間の一部として定義されているエンティティを識別する手段と想定します。  
   
 ### <a name="xtype"></a>x:Type  
  `x:Type` は、名前を指定した型の <xref:System.Type> オブジェクトを提供します。 この機能は、基になる CLR 型やそれから派生した型をグループ化のモニカーまたは識別子として使用する遅延メカニズムの中で最も頻繁に使用されます。 具体的な例には、WPF のスタイルとテンプレート、およびそれらにおける `TargetType` プロパティの使用があります。 詳細については、「 [x:Type Markup Extension](../../../docs/framework/xaml-services/x-type-markup-extension.md)」を参照してください。  
@@ -165,7 +167,7 @@ public Collate(CollationMode collationMode, object collateThis) {...}
   
  保存パスで XAML ノード ストリームを処理している場合は、通常、シリアル化するオブジェクトが当初はマークアップ拡張機能の使用と `ProvideValue` の結果によって提供されたことを知らせる情報はオブジェクト グラフ表現の中に存在しません。 マークアップ拡張機能の使用をラウンドトリップさせ、オブジェクト グラフのその他の変化もキャプチャする必要があるシナリオでは、元の XAML 入力に由来するマークアップ拡張機能の使用の情報を保存するため、独自の手法を考案する必要があります。 たとえば、マークアップ拡張機能の使用を復元するには、保存パス上のノード ストリームを処理してマークアップ拡張機能の使用を復元するか、元の XAML とラウンドトリップされた XAML に対して何らかのマージ処理を実行することができます。 WPF などの一部の XAML 実装フレームワークでは、中間の型 (式) を使用して、マークアップ拡張機能の使用が値を提供したケースを表す場合があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Markup.MarkupExtension>  
  [XAML の型コンバーターおよびマークアップ拡張機能](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)  
  [マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

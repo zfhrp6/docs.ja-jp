@@ -1,25 +1,26 @@
 ---
-title: "Windows フォーム アプリケーションの基礎 (Visual Basic)"
+title: Windows フォーム アプリケーションの基礎 (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7872d3c7b19ec9cd7059cccf41e5fab50d85123b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: aaa7fbd679eceea53a673646173dc14dc4f209bc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Windows フォーム アプリケーションの基礎 (Visual Basic)
-重要な部分[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ユーザーのコンピューターでローカルに実行する Windows フォーム アプリケーションを作成する機能です。 Visual Studio を使用して、Windows フォームを使用して、アプリケーションとユーザー インターフェイスを作成することができます。 Windows フォーム アプリケーションからのクラスをベースに構築、<xref:System.Windows.Forms>名前空間。  
+Visual Basic の重要な部分は、ユーザーのコンピューターでローカルに実行する Windows フォーム アプリケーションを作成する機能です。 Visual Studio を使用して、Windows フォームを使用して、アプリケーションとユーザー インターフェイスを作成することができます。 Windows フォーム アプリケーションからのクラスをベースに構築、<xref:System.Windows.Forms>名前空間。  
   
 ## <a name="designing-windows-forms-applications"></a>設計の Windows フォーム アプリケーション  
  Windows フォームと Windows サービス アプリケーションを作成することができます[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]です。 詳細については、次のトピックを参照してください。  
@@ -52,9 +53,9 @@ ms.lasthandoff: 01/19/2018
   
 |終了|解決方法については、|  
 |--------|---------|  
-|使用して新しい Windows フォーム アプリケーションを作成します。[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|使用して新しい Windows フォーム アプリケーションを作成します。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
 |フォーム上のコントロールを使用します。|[方法: Windows フォームにコントロールを追加する](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
-|使用してグラフィックスを作成します。<xref:System.Drawing>|[グラフィックス プログラミングについて](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
+|使用してグラフィックスを作成します。 <xref:System.Drawing>|[グラフィックス プログラミングについて](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |カスタム コントロールを作成します。|[方法: UserControl クラスを継承する](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ## <a name="displaying-and-manipulating-data"></a>データの表示と操作  
@@ -77,19 +78,19 @@ ms.lasthandoff: 01/19/2018
 |データ ソース ウィンドウを使用します。|[チュートリアル: Windows フォームでのデータの表示](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>クライアント コンピューターにアプリケーションを配置する  
- アプリケーションを記述したとする必要がありますに送信するユーザーをインストールして、独自のクライアント コンピューターで実行できるようにします。 使用して、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]テクノロジ、内からアプリケーションを配置できる[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]して数回のクリックを使用して、Web 上のアプリケーションを指す URL をユーザーに提供します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]すべての要素と、アプリケーション内の依存関係を管理し、クライアント コンピューターで、アプリケーションが正しくインストールされていることを確認します。  
+ アプリケーションを記述したとする必要がありますに送信するユーザーをインストールして、独自のクライアント コンピューターで実行できるようにします。 使用して、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]テクノロジ、内からアプリケーションを配置できる[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]して数回のクリックを使用して、Web 上のアプリケーションを指す URL をユーザーに提供します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] すべての要素と、アプリケーション内の依存関係を管理し、クライアント コンピューターで、アプリケーションが正しくインストールされていることを確認します。  
   
  [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] アプリケーションは、ユーザーがネットワークに接続されている場合にのみ実行するか、オンラインとオフラインの両方で実行するかを構成することができます。 アプリケーションがオフラインの操作をサポートするように指定するときに[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]のユーザーのアプリケーションへのリンクを追加**開始**] メニューの [できるように、ユーザーを使用すると、URL を使用しても開くことができます。  
   
- アプリケーションを更新するときに、新しい配置マニフェストとアプリケーションの新しいコピーを Web サーバーに発行します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]存在することが検出で更新が提供し、ユーザーのインストールのアップグレード古いアセンブリを更新する、カスタム プログラミングは必要ありません。  
+ アプリケーションを更新するときに、新しい配置マニフェストとアプリケーションの新しいコピーを Web サーバーに発行します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] 存在することが検出で更新が提供し、ユーザーのインストールのアップグレード古いアセンブリを更新する、カスタム プログラミングは必要ありません。  
   
  [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] の概要については、「[ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)」を参照してください。 これらの機能の使用に関する詳細な手順については、次のヘルプ トピックを参照してください。  
   
 |終了|解決方法については、|  
 |--------|---------|  
-|アプリケーションを展開します。[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行する](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [チュートリアル : ClickOnce アプリケーションを手動で配置する](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
+|アプリケーションを展開します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行する](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [チュートリアル : ClickOnce アプリケーションを手動で配置する](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
 |更新プログラム、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開|[方法 : ClickOnce アプリケーションの更新プログラムを管理する](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
-|セキュリティを管理します。[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[方法 : ClickOnce のセキュリティ設定を有効にする](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
+|セキュリティを管理します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[方法 : ClickOnce のセキュリティ設定を有効にする](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ## <a name="other-controls-and-features"></a>その他のコントロールおよび機能  
  Windows フォームには、ダイアログ ボックスの作成、ヘルプやドキュメントの印刷や追加、アプリケーションの複数言語へのローカライズのサポートなど、一般的なタスクを高速で簡単に実装できる機能が他にも多数あります。 さらに、Windows フォームは、の堅牢なセキュリティ システムに依存しています。、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、より安全なアプリケーションを顧客にリリースできるようにします。  
@@ -101,7 +102,7 @@ ms.lasthandoff: 01/19/2018
 |フォームの内容を印刷します。|[方法: Windows フォームでグラフィックスを印刷する](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
 |Windows フォームのセキュリティについての詳細|[Windows フォームのセキュリティの概要](../../../framework/winforms/security-in-windows-forms-overview.md)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  
  [Windows フォームの概要](../../../framework/winforms/windows-forms-overview.md)  
  [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)

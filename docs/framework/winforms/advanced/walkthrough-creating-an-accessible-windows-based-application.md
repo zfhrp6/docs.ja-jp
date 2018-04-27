@@ -1,28 +1,30 @@
 ---
-title: "チュートリアル : ユーザー補助対応の Windows ベースのアプリケーションの作成"
-ms.custom: 
+title: 'チュートリアル : ユーザー補助対応の Windows ベースのアプリケーションの作成'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - accessibility [Windows Forms], Windows applications
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a8f0a35b569b38e0d7ca79129f720034420ecd23
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 600a0d3aaf7da1cd7513ba6dd1dadcb58031fbef
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>チュートリアル : ユーザー補助対応の Windows ベースのアプリケーションの作成
 ユーザー補助に対応するアプリケーションを作成することは、ビジネスに重要な影響を与えます。 多くの政府は、ソフトウェアの購入に関するユーザー補助の規制があります。 Certified for Windows ロゴには、ユーザー補助に関する要件が含まれています。 米国だけでも 3000 万人 (その多くは潜在的な顧客) が、ソフトウェアのアクセシビリティ機能によって影響を受けると推定されています。  
@@ -52,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-begin-making-the-application"></a>アプリケーションの作成を開始するには  
   
--   [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] または [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] で新しい Windows アプリケーションを作成します。 プロジェクトに **PizzaOrder** という名前を付けます。 (詳細については、「[ソリューションとプロジェクトの作成](/visualstudio/ide/creating-solutions-and-projects)」を参照。)  
+-   Visual Basic または Visual c# では、新しい Windows アプリケーションを作成します。 プロジェクトに **PizzaOrder** という名前を付けます。 (詳細については、「[ソリューションとプロジェクトの作成](/visualstudio/ide/creating-solutions-and-projects)」を参照。)  
   
 ## <a name="adding-the-controls-to-the-form"></a>フォームへのコントロールの追加  
  フォームにコントロールを追加するときは、ユーザー補助に対応したアプリケーション作成のガイドラインに従うよう注意してください。  

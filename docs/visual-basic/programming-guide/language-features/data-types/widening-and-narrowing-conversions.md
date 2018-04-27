@@ -1,11 +1,12 @@
 ---
-title: "拡大変換と縮小変換 (Visual Basic)"
-ms.custom: 
+title: 拡大変換と縮小変換 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - widening conversions [Visual Basic]
@@ -25,14 +26,14 @@ helpviewer_keywords:
 - data type conversion [Visual Basic], exceptions during conversion
 - conversions [Visual Basic], widening
 ms.assetid: 058c3152-6c28-4268-af44-2209e774f0bd
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2cf1f8d956935a9a363211abf94b4f1c2f538074
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 960b4e4c7184309b6a84247d86fb94ccb2faf877
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="widening-and-narrowing-conversions-visual-basic"></a>拡大変換と縮小変換 (Visual Basic)
 型変換で重要な考慮事項は、変換の結果が対象のデータ型の範囲内かどうかです。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="widening-conversions"></a>拡大変換  
  次の表は、標準の拡大変換を示します。  
   
-|データ型|データ型に拡大変換<sup>1</sup>|  
+|データの種類|データ型に拡大変換<sup>1</sup>|  
 |---|---|  
 |[SByte](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|`SByte`, `Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
 |[Byte](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|`Byte`、`Short`、`UShort`、`Integer`、`UInteger`、`Long`、`ULong`、`Decimal`、`Single`、`Double`|  
@@ -59,7 +60,7 @@ ms.lasthandoff: 11/21/2017
 |[Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)|`Double`|  
 |いずれかの列挙型 ([Enum](../../../../visual-basic/language-reference/statements/enum-statement.md))|基になる整数型と任意の型を基になる型が拡大変換されます。|  
 |[Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`Char`, `String`|  
-|`Char` 配列|`Char`配列、`String`|  
+|`Char` 配列|`Char` 配列、 `String`|  
 |任意の型|[オブジェクト](../../../../visual-basic/language-reference/data-types/object-data-type.md)|  
 |すべての派生型|任意の派生元となる型の基本<sup>3</sup>です。|  
 |任意の型|任意のインターフェイスを実装します。|  
@@ -97,11 +98,11 @@ ms.lasthandoff: 11/21/2017
 ## <a name="exceptions-during-conversion"></a>変換中に例外  
  拡大変換は常に、成功しますが、例外をスローしないでください。 縮小変換、失敗した場合は、最もよく、次の例外をスローします。  
   
--   <xref:System.InvalidCastException>-次の 2 つの型の間で変換が定義されていない場合  
+-   <xref:System.InvalidCastException> -次の 2 つの型の間で変換が定義されていない場合  
   
--   <xref:System.OverflowException>— (整数型のみ) 指定した型の変換後の値が大きすぎる場合  
+-   <xref:System.OverflowException> — (整数型のみ) 指定した型の変換後の値が大きすぎる場合  
   
- クラスまたは構造体が定義されている場合、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)そのクラスまたは構造体、または変換演算子として使用するを`CType`適切と見なされるすべての例外をスローすることができます。 さらを`CType`呼び出す可能性があります[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]関数または[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メソッドで、さらに、さまざまな例外をスローする可能性があります。  
+ クラスまたは構造体が定義されている場合、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)そのクラスまたは構造体、または変換演算子として使用するを`CType`適切と見なされるすべての例外をスローすることができます。 さらを`CType`Visual Basic の関数を呼び出すことがありますまたは[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メソッドで、さらに、さまざまな例外をスローする可能性があります。  
   
 ## <a name="changes-during-reference-type-conversions"></a>参照型の変換中の変更  
  変換、*型参照*ポインターだけが、値をコピーします。 値そのものがコピーも、任意の方法で変更します。 変更可能な唯一の機能は、ポインターを保持する変数のデータ型です。 次の例では、その基本クラスに、派生クラスからデータ型が変換されますが、両方の変数をポイントするようになりましたオブジェクトは変更されません。  

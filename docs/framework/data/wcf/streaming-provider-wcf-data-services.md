@@ -1,12 +1,13 @@
 ---
-title: "ストリーミング プロバイダー (WCF Data Services)"
-ms.custom: 
+title: ストリーミング プロバイダー (WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f965bc46c62742c0e2ffb0a7f8ae2e09eca5dc1c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: bc66d4154f60e46e53de8ca72596e133dc84eb97
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="streaming-provider-wcf-data-services"></a>ストリーミング プロバイダー (WCF Data Services)
 データ サービスは、ラージ オブジェクトのバイナリ データを公開できます。 このバイナリ データは、ビデオ ストリームとオーディオ ストリーム、画像、ドキュメント ファイル、またはその他の種類のバイナリのメディアを表すことができます。 データ モデルのエンティティに 1 つ以上のバイナリ プロパティが含まれている場合、データ サービスは、このバイナリ データを応答フィードのエントリ内に Base-64 としてエンコードして返します。 読み込みと、この方法で大きなバイナリ データをシリアル化するには、パフォーマンスに影響するので、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]が所属するエンティティの独立したバイナリ データを取得するためのメカニズムを定義します。 これは、バイナリ データとエンティティを分離して 1 つ以上のデータ ストリームを生成することで実現されます。  
@@ -61,7 +63,7 @@ ms.lasthandoff: 01/19/2018
   
  また、エンティティまたはデータ モデルを定義する .edmx ファイルまたは .csdl ファイルのルートに名前空間 `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` を追加する必要があります。  
   
- [!INCLUDE[crexample](../../../../includes/crexample-md.md)]使用するデータ サービス、[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]プロバイダー、メディア リソースを公開し、投稿を参照してください[Data Services ストリーミング プロバイダー シリーズ: ストリーミング プロバイダー (パート 1) を実装する](http://go.microsoft.com/fwlink/?LinkID=198989)です。  
+ 使用するデータ サービスの例については、[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]プロバイダー、メディア リソースを公開し、投稿を参照してください[Data Services ストリーミング プロバイダー シリーズ: ストリーミング プロバイダー (パート 1) を実装する](http://go.microsoft.com/fwlink/?LinkID=198989)です。  
   
  **リフレクション プロバイダー**  
  エンティティがメディア リンク エントリであることを示すには、リフレクション プロバイダーのエンティティ型を定義するクラスに <xref:System.Data.Services.Common.HasStreamAttribute> を追加します。  
@@ -122,7 +124,7 @@ ms.lasthandoff: 01/19/2018
   
     -   メディア リソースであるバイナリ プロパティをデータ モデルに含めないようにしてください。 データ モデルで公開されるプロパティはすべて、応答フィードのエントリで返されます。  
   
-    -   大きなバイナリ ストリームのパフォーマンスを向上させるには、カスタム ストリーム クラスを作成してバイナリ データをデータベースに格納することをお勧めします。 このクラスは、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> の実装によって返され、バイナリ データをチャンク単位でデータベースに送信します。 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]データベース、ことをお勧め、バイナリ データは 1 MB より大きい場合、データベースにストリーム データを FILESTREAM を使用することです。  
+    -   大きなバイナリ ストリームのパフォーマンスを向上させるには、カスタム ストリーム クラスを作成してバイナリ データをデータベースに格納することをお勧めします。 このクラスは、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> の実装によって返され、バイナリ データをチャンク単位でデータベースに送信します。 SQL Server データベースでは、バイナリ データは 1 MB より大きい場合、データベースにストリーム データを FILESTREAM を使用することをお勧めします。  
   
     -   データ サービスによって受信される大きなバイナリ ストリームを格納できるようにデータベースが設計されていることを確認してください。  
   
@@ -140,7 +142,7 @@ ms.lasthandoff: 01/19/2018
   
  詳細については、次を参照してください。[データ サービスのバージョン管理](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Data Services プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
  [カスタム データ サービス プロバイダー](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)  
  [バイナリ データの操作](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)

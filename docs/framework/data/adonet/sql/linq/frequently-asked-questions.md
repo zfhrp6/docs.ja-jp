@@ -1,27 +1,29 @@
 ---
-title: "よく寄せられる質問"
-ms.custom: 
+title: よく寄せられる質問
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e09dd7cb3fc979a9be0165705247cc5a63a6b328
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: caccbb76f32c38f29fa4f49adc9b7b1c8fe4045d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 ここでは、[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] を実装するときに発生する可能性のある一般的な問題の対処法について説明します。  
@@ -31,7 +33,7 @@ ms.lasthandoff: 01/17/2018
 ## <a name="cannot-connect"></a>接続できない  
  Q. データベースに接続できません。  
   
- A:  接続文字列が正しいこと、および [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] のインスタンスが実行中であることを確認してください。 また、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、名前付きパイプ プロトコルを有効にする必要があります。 詳細については、次を参照してください。[チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)です。  
+ A:  接続文字列が正しいと、SQL Server インスタンスが実行されていることを確認してください。 また、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、名前付きパイプ プロトコルを有効にする必要があります。 詳細については、次を参照してください。[チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)です。  
   
 ## <a name="changes-to-database-lost"></a>データベースの変更内容が失われる  
  Q. データベース内のデータを変更しましたが、アプリケーションを再実行すると、変更が元に戻っています。  
@@ -155,7 +157,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="provider-model"></a>プロバイダー モデル  
  Q. パブリック プロバイダー モデルを利用できますか?  
   
- A:  いいえ。使用可能なパブリック プロバイダー モデルはありません。 現時点で、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] と [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] だけをサポートします。  
+ A:  いいえ。使用可能なパブリック プロバイダー モデルはありません。 この時点で[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]SQL Server のサポートと[!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)]のみです。  
   
 ## <a name="sql-injection-attacks"></a>SQL 注入攻撃  
  Q. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、SQL 注入攻撃からどのように保護されますか?  
@@ -174,7 +176,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 3.  既定の <xref:System.Data.Linq.Mapping.UpdateCheck> 値 (<xref:System.Data.Linq.Mapping.UpdateCheck.Never>) がアプリケーションにとって適切な値かどうかを検討します。  
   
     > [!CAUTION]
-    >  [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] で[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]を使用している場合は、変更内容が上書きされる可能性があります。  
+    >  使用している場合、 [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Visual Studio で、変更を上書きする可能性があります。  
   
 ## <a name="aptca"></a>APTCA  
  Q. System.Data.Linq は、部分的に信頼されているコードが使用できるようにマークされていますか?  
@@ -196,7 +198,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
   
  A:  <xref:System.Data.Linq.DataContext> のインスタンスは再使用しないようにしてください。 <xref:System.Data.Linq.DataContext> はそれぞれ、特定の 1 つの編集/クエリ セッション用の状態 (ID キャッシュを含む) を保持します。 データベースの現在の状態に基づく新しいインスタンスを得るには、新しい <xref:System.Data.Linq.DataContext> を使用してください。  
   
- それでも、基になる [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] 接続プールは使用できます。 詳細については、次を参照してください。 [SQL サーバー接続プール (ADO.NET)](../../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md)です。  
+ それでも、基になる [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] 接続プールは使用できます。 詳しくは、「[SQL Server の接続プール (ADO.NET)](../../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md)」をご覧ください。  
   
 ## <a name="second-datacontext-is-not-updated"></a>2 番目の DataContext が更新されない  
  Q. データベース内の値を格納するために、<xref:System.Data.Linq.DataContext> の 1 つのインスタンスを使用しました。 しかし、同じデータベースに対する 2 番目の <xref:System.Data.Linq.DataContext> では、更新された値が反映されません。 2 番目の <xref:System.Data.Linq.DataContext> インスタンスは、キャッシュされた値を返すようです。  
@@ -210,7 +212,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
   
  A:  読み取り専用モードでは、変更を追跡するコンテキスト機能は無効です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
  [トラブルシューティング](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)  
  [LINQ to SQL におけるセキュリティ](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)

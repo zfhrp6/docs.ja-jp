@@ -1,12 +1,13 @@
 ---
-title: "クエリ操作での型の関係 (Visual Basic)"
-ms.custom: 
+title: クエリ操作での型の関係 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - variable relationships [LINQ in Visual Basic]
@@ -18,14 +19,14 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1b93188475dd2bb00aea044ff178028eb87e00d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e38f51d77869dcca8a81fdcbc70aed32c4146935
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>クエリ操作での型の関係 (Visual Basic)
 使用される変数[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]クエリ操作は、厳密に型指定し、相互に互換性がある必要があります。 厳密な型指定は、データ ソース、クエリ自体、およびクエリの実行に使用されます。 次の図は、説明に使用される用語の識別、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。 クエリの部分についての詳細については、次を参照してください。[基本的なクエリ操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)です。  
@@ -35,7 +36,7 @@ LINQ クエリの部分
   
  クエリで範囲変数の型は、データ ソース内の要素の型と互換性のあるする必要があります。 クエリ変数の型で定義されたシーケンスの要素と互換性のある必要があります、`Select`句。 最後に、シーケンスの要素の型もする必要がありますで使用されているループ コントロール変数の型と互換性のある、`For Each`クエリを実行するステートメント。 この厳密な型指定には、コンパイル時に型のエラーの識別が容易にします。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]容易厳密な型指定とも呼ばれるローカル型推論を実装することによって*暗黙の型指定*です。 機能は、前の例で使用して、全体で使用されることが表示されます、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]のサンプルとドキュメントです。 Visual basic でローカル型推論を使用するだけで完了、`Dim`ステートメントなし、`As`句。 次の例では、`city`を文字列として厳密に型指定します。  
+ Visual Basic が容易厳密な型指定とも呼ばれるローカル型推論を実装することによって*暗黙の型指定*です。 機能は、前の例で使用して、全体で使用されることが表示されます、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]のサンプルとドキュメントです。 Visual basic でローカル型推論を使用するだけで完了、`Dim`ステートメントなし、`As`句。 次の例では、`city`を文字列として厳密に型指定します。  
   
  [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_1.vb)]  
   

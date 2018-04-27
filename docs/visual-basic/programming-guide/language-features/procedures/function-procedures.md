@@ -1,11 +1,12 @@
 ---
-title: "Function プロシージャ (Visual Basic)"
-ms.custom: 
+title: Function プロシージャ (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Function procedures
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - procedures [Visual Basic], Function procedures
 - syntax [Visual Basic], function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9520a6555e65fd801a5c40d40748028e04a10739
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ad4f55a9dd9fbd68c36dd53a01f97ddb03c2bb9b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="function-procedures-visual-basic"></a>Function プロシージャ (Visual Basic)
-A`Function`プロシージャは、一連の[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]で囲まれたステートメント、`Function`と`End Function`ステートメントです。 `Function`手順がタスクを実行し、呼び出し元のコードにコントロールを返します。 コントロールが返されたときにも、呼び出し元のコードに値を返します。  
+A`Function`プロシージャは、一連の Visual Basic ステートメントで囲まれた、`Function`と`End Function`ステートメントです。 `Function`手順がタスクを実行し、呼び出し元のコードにコントロールを返します。 コントロールが返されたときにも、呼び出し元のコードに値を返します。  
   
  プロシージャが呼び出されるたびに、そのステートメントの実行、以降の後に実行可能ファイルの最初のステートメントで、`Function`ステートメントと最初で終了するまで`End Function`、 `Exit Function`、または`Return`ステートメントが発生しました。  
   
@@ -91,11 +92,11 @@ End Function
   
  呼び出しの構文、`Function`手順のとおりです。  
   
- *左辺値*`=`*functionname* `[(` *argumentlist*    `)]`  
+ *左辺値*`=`*functionname* `[(` *argumentlist*  `)]`  
   
- `If ((`*functionname* `[(` *argumentlist* `)] / 3) <=`*式*  `) Then`  
+ `If ((` *関数は functionname* `[(` *argumentlist* `)] / 3) <=`*式*  `) Then`  
   
- 呼び出すと、`Function`手順がありません、戻り値を使用します。 そうしないと場合、は、関数のすべてのアクションが実行されますが、戻り値は無視されます。 <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>多くの場合、この方法で呼び出されます。  
+ 呼び出すと、`Function`手順がありません、戻り値を使用します。 そうしないと場合、は、関数のすべてのアクションが実行されますが、戻り値は無視されます。 <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> 多くの場合、この方法で呼び出されます。  
   
 ### <a name="illustration-of-declaration-and-call"></a>宣言と呼び出しの図  
  次`Function`最長側では、やの他の 2 つの辺の値を指定、直角三角形の斜辺を計算します。  

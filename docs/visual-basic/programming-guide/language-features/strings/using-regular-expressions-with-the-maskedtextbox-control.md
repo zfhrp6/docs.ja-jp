@@ -1,31 +1,32 @@
 ---
-title: "Visual Basic の MaskedTextBox コントロールによる正規表現を使用する"
-ms.custom: 
+title: Visual Basic の MaskedTextBox コントロールによる正規表現を使用する
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2638ed804593dd52481bd3865e1c67c5fdb2dcf9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c72542c05123ef62a8f95afbe1bb19cb823d1f21
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Visual Basic の MaskedTextBox コントロールによる正規表現を使用する
 この例で使用する簡単な正規表現に変換する方法、<xref:System.Windows.Forms.MaskedTextBox>コントロール。  
   
 ## <a name="description-of-the-masking-language"></a>マスク言語の説明  
- 標準<xref:System.Windows.Forms.MaskedTextBox>マスク言語に基づきますで使用される、`Masked Edit`で制御[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]6.0 し、そのプラットフォームから移行するユーザーにとって理解する必要があります。  
+ 標準<xref:System.Windows.Forms.MaskedTextBox>マスク言語に基づきますで使用される、 `Masked Edit` Visual Basic 6.0 で制御し、そのプラットフォームから移行するユーザーにとって理解する必要があります。  
   
  <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>のプロパティ、<xref:System.Windows.Forms.MaskedTextBox>コントロールを使用するどのような入力マスクを指定します。 マスクは、1 つまたは複数の次の表からマスク要素で構成される文字列にする必要があります。  
   
@@ -39,8 +40,8 @@ ms.lasthandoff: 11/21/2017
 |&|文字です。 入力してください。|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
 |C|文字です。 省略可能です。|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]。|  
 |A|英数字です。 省略可能です。|\W|  
-|」を参照してください。|カルチャに応じた小数点のプレース ホルダーです。|使用できません。|  
-|、|何千ものカルチャに応じたプレース ホルダーです。|使用できません。|  
+|である必要があります。|カルチャに応じた小数点のプレース ホルダーです。|使用できません。|  
+|,|何千ものカルチャに応じたプレース ホルダーです。|使用できません。|  
 |:|カルチャに応じた時刻の区切り記号。|使用できません。|  
 |/|カルチャに応じた日付の区切り記号。|使用できません。|  
 |$|カルチャに応じた通貨記号。|使用できません。|  

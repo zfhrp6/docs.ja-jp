@@ -1,13 +1,13 @@
 ---
-title: "WCF のセキュリティのベスト プラクティス"
-ms.custom: 
+title: WCF のセキュリティのベスト プラクティス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
-caps.latest.revision: 
+caps.latest.revision: 19
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: ad5e459e7dc070b9412de860048c840f677421f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7416f8429f347d0b8dc6227415ad366b3ff63986
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="best-practices-for-security-in-wcf"></a>WCF のセキュリティのベスト プラクティス
-以下のセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してセキュリティで保護されたアプリケーションを作成する場合に考慮する必要のあるベスト プラクティスを示します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]セキュリティを参照してください[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
+以下のセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してセキュリティで保護されたアプリケーションを作成する場合に考慮する必要のあるベスト プラクティスを示します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] セキュリティを参照してください[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
   
 ## <a name="identify-services-performing-windows-authentication-with-spns"></a>Windows 認証での SPN を使用したサービスの識別  
  サービスはユーザー プリンシパル名 (UPN) またはサービス プリンシパル名 (SPN) によって識別できます。 ネットワーク サービスのようにコンピューター アカウントを使用して実行するサービスには、サービスが実行されるコンピューターに対応する SPN ID があります。 ユーザー アカウントを使用して実行するサービスには、そのユーザーに対応する UPN ID があります。ただし、`setspn` ツールを使用するとユーザー アカウントに SPN 割り当てることができます。 サービスが SPN によって識別されるように構成し、サービスに接続するクライアントが SPN を使用してサービスに接続するように構成すると、攻撃の種類によっては攻撃が困難になります。 このガイダンスは Kerberos または SSPI ネゴシエーションを使用するバインディングに適用されます。  その場合でも、SSPI が使用できなくて NTLM が使用される場合に備えて、クライアントは SPN を指定する必要があります。  
@@ -45,10 +45,10 @@ ms.lasthandoff: 12/22/2017
   
 -   転送された X509 資格情報の利用が難しくなる  
   
- 転送攻撃 NTLM の概要についてを参照してください[http://msdn.microsoft.com/msdnmag/issues/06/09/SecureByDesign/default.aspx](http://go.microsoft.com/fwlink/?LinkId=109571)です。  
+ 転送攻撃 NTLM の概要についてを参照してください[ http://msdn.microsoft.com/msdnmag/issues/06/09/SecureByDesign/default.aspx](http://go.microsoft.com/fwlink/?LinkId=109571)です。  
   
 ## <a name="always-revert-after-impersonation"></a>偽装後は必ず元に戻す  
- クライアントの偽装を有効にする API を使用した後は、必ず元の ID に戻してください。 使用する場合など、<xref:System.Security.Principal.WindowsIdentity>と<xref:System.Security.Principal.WindowsImpersonationContext>、c# を使用して`using`ステートメントまたは[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]`Using`ステートメントでは、次のコードに示すようにします。 <xref:System.Security.Principal.WindowsImpersonationContext> クラスは <xref:System.IDisposable> インターフェイスを実装しているため、コードが `using` ブロックを抜けると共通言語ランタイム (CLR: Common Language Runtime) は自動的に元の ID に戻ります。  
+ クライアントの偽装を有効にする API を使用した後は、必ず元の ID に戻してください。 使用する場合など、<xref:System.Security.Principal.WindowsIdentity>と<xref:System.Security.Principal.WindowsImpersonationContext>、c# を使用して`using`ステートメントまたは Visual Basic`Using`ステートメントでは、次のコードに示すようにします。 <xref:System.Security.Principal.WindowsImpersonationContext> クラスは <xref:System.IDisposable> インターフェイスを実装しているため、コードが `using` ブロックを抜けると共通言語ランタイム (CLR: Common Language Runtime) は自動的に元の ID に戻ります。  
   
  [!code-csharp[c_SecurityBestPractices#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securitybestpractices/cs/source.cs#1)]
  [!code-vb[c_SecurityBestPractices#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securitybestpractices/vb/source.vb#1)]  
@@ -60,18 +60,18 @@ ms.lasthandoff: 12/22/2017
  メタデータのソースが信頼できることと、メタデータが改ざんされていないことを確認します。 HTTP プロトコルを使用して取得したメタデータはクリア テキストで送信されるため、改ざんされるおそれがあります。 サービスが <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> および <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> プロパティを使用している場合は、サービス作成者によって提供された URL を使用して HTTPS プロトコルを介してデータをダウンロードします。  
   
 ## <a name="publish-metadata-using-security"></a>セキュリティを使用してメタデータを公開する  
- サービスが公開したメタデータの改ざんを防ぐには、トランスポート レベルまたはメッセージ レベルのセキュリティを使用して、メタデータ交換エンドポイントをセキュリティで保護します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][メタデータ エンドポイントを公開](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)と[する方法: コードを使用して、サービスのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。  
+ サービスが公開したメタデータの改ざんを防ぐには、トランスポート レベルまたはメッセージ レベルのセキュリティを使用して、メタデータ交換エンドポイントをセキュリティで保護します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [メタデータ エンドポイントを公開](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)と[する方法: コードを使用して、サービスのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。  
   
 ## <a name="ensure-use-of-local-issuer"></a>ローカル発行者の使用を確認する  
  特定のバインディングに対して発行者アドレスとバインディングが指定されている場合、ローカル発行者はこのバインディングを使用するエンドポイントには使用されません。 ローカル発行者を常に使用する必要があるクライアントには、このようなバインディングが使用されることがないか、または発行者アドレスが null となるようにクライアントによってバインディングが変更されることが保証されている必要があります。  
   
 ## <a name="saml-token-size-quotas"></a>SAML トークン サイズのクォータ  
- セキュリティ トークン サービス (STS: Security Token Service) によって SAML (Security Assertions Markup Language) トークンが発行されたとき、またはクライアントが認証の一部としてこれをサービスに提示したときに、SAML トークンがメッセージ内にシリアル化される場合は、メッセージの最大クォータ サイズが、SAML トークンおよびメッセージの他の部分を格納できるだけの大きさである必要があります。 通常は、既定のメッセージ クォータ サイズで十分です。 ただし、数百のクレームを含んでいるために SAML トークンのサイズが大きい場合には、シリアル化されたトークンを格納できるように、クォータを増やす必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]クォータを参照してください[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+ セキュリティ トークン サービス (STS: Security Token Service) によって SAML (Security Assertions Markup Language) トークンが発行されたとき、またはクライアントが認証の一部としてこれをサービスに提示したときに、SAML トークンがメッセージ内にシリアル化される場合は、メッセージの最大クォータ サイズが、SAML トークンおよびメッセージの他の部分を格納できるだけの大きさである必要があります。 通常は、既定のメッセージ クォータ サイズで十分です。 ただし、数百のクレームを含んでいるために SAML トークンのサイズが大きい場合には、シリアル化されたトークンを格納できるように、クォータを増やす必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] クォータを参照してください[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
   
 ## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>カスタム バインドで SecurityBindingElement.IncludeTimestamp を true に設定する  
  カスタム バインディングを作成するときは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> を `true` に設定する必要があります。 <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `false` に設定されている場合に、クライアントが、X509 証明書などの非対称キーに基づくトークンを使用すると、メッセージは署名されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [セキュリティに関するデータの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
  [メタデータを使用する場合のセキュリティ上の考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)

@@ -1,27 +1,29 @@
 ---
-title: "SQL と CLR の型の不一致"
-ms.custom: 
+title: SQL と CLR の型の不一致
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0a90c33f-7ed7-4501-ad5f-6224c5da8e9b
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6a027bd898409708dd6800908a6736f5853058df
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6006bb8fd1f6b49382c89acc2b55efcb035ffbf5
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sql-clr-type-mismatches"></a>SQL と CLR の型の不一致
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] はオブジェクト モデルと SQL Server 間の変換のほとんどを自動化します。 ただし、正確な変換が実行されない場合もあります。 以下のセクションでは、共通言語ランタイム (CLR) の型と SQL Server データベースの型の主な不一致について概要を示します。 特定の型マッピングおよびでの関数の変換に関する詳細を検索する[SQL-CLR 型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)と[データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)です。  
@@ -53,7 +55,7 @@ Select DateOfBirth From Customer Where CustomerId = @id
   
     -   **固定長文字型**です。 Transact SQL と非 Unicode カテゴリを区別して、各カテゴリの 3 つの型を持つ: 固定長`nchar` / `char`、可変長`nvarchar` / `varchar`、および大きいサイズ`ntext` /`text`です。 固定長文字型は、文字を取得するために CLR の <xref:System.Char?displayProperty=nameWithType> 型に変換できますが、この型の変換と動作に正確には対応していません。  
   
-    -   **ビット**です。 `bit` ドメインに格納される値の数は `Nullable<Boolean>` と同じですが、両者の型は異なります。 `Bit`値を受け取って`1`と`0`の代わりに`true` / `false`、ブール式に相当する型としては使用できません。  
+    -   **ビット**です。 `bit` ドメインに格納される値の数は `Nullable<Boolean>` と同じですが、両者の型は異なります。 `Bit` 値を受け取って`1`と`0`の代わりに`true` / `false`、ブール式に相当する型としては使用できません。  
   
     -   **タイムスタンプ**です。 CLR の <xref:System.TimeSpan?displayProperty=nameWithType> 型とは異なり、SQL Server の `TIMESTAMP` 型は、各更新に固有のデータベースで生成される 8 バイトの数字を表し、<xref:System.DateTime> の値の差異に基づくものではありません。  
   
@@ -118,7 +120,7 @@ or col1 != col2
   
  この例では、生成される SQL の動作は同等ですが、意図したとおりに正確に変換されない可能性があります。  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]かけない c#`null`または[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]`nothing`比較セマンティクスを SQL です。 比較演算子は、対応する SQL の演算子に構文上は変換されます。 セマンティクスには、サーバーまたは接続の設定で定義された SQL セマンティクスが反映されます。 既定の SQL Server 設定では、2 つの null 値は一致しないと見なされます (この設定を変更するとセマンティクスを変更できます)。 いずれにしても、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ではクエリの変換時にサーバーの設定は考慮されません。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] かけない c#`null`または Visual Basic`nothing`比較セマンティクスを SQL です。 比較演算子は、対応する SQL の演算子に構文上は変換されます。 セマンティクスには、サーバーまたは接続の設定で定義された SQL セマンティクスが反映されます。 既定の SQL Server 設定では、2 つの null 値は一致しないと見なされます (この設定を変更するとセマンティクスを変更できます)。 いずれにしても、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ではクエリの変換時にサーバーの設定は考慮されません。  
   
  リテラルの `null` (`nothing`) による比較は適切な SQL バージョンの (`is null` または `is not null`) に変換されます。  
   
@@ -179,7 +181,7 @@ Where Col1 = Col2
     > [!NOTE]
     >  この `Like` 演算子の動作は C# のみに当てはまります。Visual Basic の `Like` キーワードは以前と変わりません。  
   
--   SQL では常にオーバーフローがチェックされますが、C# ではこのチェックを明示的に指定して折り返しを回避する必要があります ([!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] では不要です)。 たとえば、整数の列 C1、C2、および C3 があり、C1+C2 が C3 (Update T Set C3 = C1 + C2) に保存されるとします。  
+-   オーバーフローが常にチェックイン SQL しますが、(C#) (Visual Basic) ではなく明示的に指定する必要がある折り返しを回避します。 たとえば、整数の列 C1、C2、および C3 があり、C1+C2 が C3 (Update T Set C3 = C1 + C2) に保存されるとします。  
   
     ```  
     create table T3 (  
@@ -197,7 +199,7 @@ Where Col1 = Col2
   
 -   SQL では対称的な算術型丸めが実行されますが、[!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] では銀行型丸めが使用されます。 詳細については、サポート技術情報の文書「丸めを行うカスタム プロシージャを実装する方法」(196652) を参照してください。  
   
--   既定で、共通ロケールの SQL で文字や文字列を比較する場合に大文字と小文字は区別されません。 Visual Basic と C# では、大文字と小文字は区別されます。 たとえば、`s == "Food"` が `s = "Food"` の場合、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`s == "Food"` では `s`) と `food` の結果は異なります。  
+-   既定で、共通ロケールの SQL で文字や文字列を比較する場合に大文字と小文字は区別されません。 Visual Basic と C# では、大文字と小文字は区別されます。 たとえば、 `s == "Food"` (`s = "Food"` Visual Basic で) と`s == "Food"`場合は、異なる結果が生成`s`は`food`します。  
   
     ```  
     -- Assume default US-English locale (case insensitive).  
@@ -304,5 +306,5 @@ Where Col1 + Col2 > 4
   
  SQL Server と CLR の型システムの境界を越えるときは、セマンティクスの相違に加えて、パフォーマンスへの影響も考慮することが重要です。 データセットが大きい場合、このようなパフォーマンスの問題が、アプリケーションの展開が可能かどうかを左右することがあります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

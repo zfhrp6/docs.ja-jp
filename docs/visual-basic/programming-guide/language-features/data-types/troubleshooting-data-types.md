@@ -1,11 +1,12 @@
 ---
-title: "データ型のトラブルシューティング (Visual Basic)"
-ms.custom: 
+title: データ型のトラブルシューティング (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Char data type [Visual Basic], converting
@@ -25,14 +26,14 @@ helpviewer_keywords:
 - floating-point numbers [Visual Basic], comparison
 - floating-point numbers
 ms.assetid: 90040d67-b630-4125-a6ae-37195b079042
-caps.latest.revision: "29"
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4d2fb1cd1be9c88ad0dd413eedb8a226fe59f41e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f34e7bc50a51032387cf01db3fae17ef44b8b4d9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting-data-types-visual-basic"></a>データ型のトラブルシューティング (Visual Basic)
 このページには、組み込みのデータ型に対する操作を実行するときに発生する可能性がある一般的な問題が一覧表示されます。  
@@ -74,7 +75,7 @@ ms.lasthandoff: 11/21/2017
  なっていないことを宣言するだけで十分に注意してください`decimalRemainder`として`Decimal`です。 リテラルを強制することも必要があります。 `Decimal`、または使用している`Double`既定と`decimalRemainder`として同じ不正確な値を受け取る`doubleRemainder`です。  
   
 ## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a>ブール型で正確な数値型に変換されません。  
- [Boolean データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)値は、数値として格納されず、格納された値が数値に相当するものではありません。 以前のバージョンとの互換性のため[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]変換キーワードを提供 ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、 `CBool`、`CInt`など) の間で変換する`Boolean`と数値型。 ただし、他の言語も実行これらの変換と同様に、異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メソッドです。  
+ [Boolean データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)値は、数値として格納されず、格納された値が数値に相当するものではありません。 以前のバージョンと互換性のため、Visual Basic では変換キーワード ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、 `CBool`、`CInt`など) の間で変換する`Boolean`と数値型。 ただし、他の言語も実行これらの変換と同様に、異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メソッドです。  
   
  数値と等価の値に依存するコードを記述する必要がありますしない`True`と`False`です。 使用を制限する必要があります、可能な限り`Boolean`仕様で定められている論理値変数。 組み合わせる必要がある場合`Boolean`し、数値を選択した変換方法を理解することを確認します。  
   
@@ -87,7 +88,7 @@ ms.lasthandoff: 11/21/2017
  変換する必要があります場合、`Boolean`値、数値データ型を注意を使用する変換メソッド。  
   
 ## <a name="character-literal-generates-compiler-error"></a>文字リテラルには、コンパイラ エラーが生成されます。  
- 任意の型文字がない場合は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]リテラルのデータ型の既定値を想定しています。 文字リテラルの既定の型: 引用符で囲む (`" "`) — は`String`します。  
+ 任意の型文字がない場合は、Visual Basic では既定リテラルのデータ型します。 文字リテラルの既定の型: 引用符で囲む (`" "`) — は`String`します。  
   
  `String`データ型に拡大変換されない、 [Char データ型](../../../../visual-basic/language-reference/data-types/char-data-type.md)です。 つまり、リテラルを代入する場合、`Char`変数、する必要がありますか、縮小変換または強制的にリテラル、`Char`型です。  
 
@@ -102,7 +103,7 @@ ms.lasthandoff: 11/21/2017
  常にリスクが縮小変換を使用して実行時にそれらが失敗する可能性です。 変換など、`String`に`Char`失敗する場合、`String`値には、1 つ以上の文字が含まれています。 そのため、これはよりプログラミングを使用する、`C`文字を入力します。  
   
 ## <a name="string-conversion-fails-at-run-time"></a>実行時に文字列変換に失敗します。  
- [文字列データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)拡大変換がごくわずかに関与します。 `String`自体にのみ拡大変換と`Object`、のみと`Char`と`Char()`(、`Char`配列) に拡大変換`String`です。 これは、ため`String`変数および定数が他のデータ型を含めることはできませんの値を含めることができます。  
+ [文字列データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)拡大変換がごくわずかに関与します。 `String` 自体にのみ拡大変換と`Object`、のみと`Char`と`Char()`(、`Char`配列) に拡大変換`String`です。 これは、ため`String`変数および定数が他のデータ型を含めることはできませんの値を含めることができます。  
   
  ときに、型チェック スイッチの ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`On`コンパイラには、すべての暗黙的な縮小変換が許可されていません。 関連するものが含まれます`String`です。 コードも使える変換キーワードなど`CStr`と[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、どのダイレクト、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]変換を試みます。  
   

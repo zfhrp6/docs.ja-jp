@@ -18,14 +18,14 @@ ms.assetid: 9effbcf0-80a0-4d1a-98f4-2c6920592766
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5487dc7dbe9be50e065610cfd61815242bb74ac0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 92cb2dd3f356acf89cbe62b5f3f5dc81fce271fc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="procedures-in-visual-basic"></a>Visual Basic におけるプロシージャ
-*プロシージャ*は、宣言ステートメント (`Function`、`Sub`、`Operator`、`Get`、`Set`) とこれに一致する `End` 宣言で囲まれた、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ステートメントのブロックです。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のすべての実行可能なステートメントは何らかのプロシージャに含まれている必要があります。  
+A*プロシージャ*宣言ステートメントで囲まれている Visual Basic ステートメントのブロックです (`Function`、 `Sub`、 `Operator`、 `Get`、 `Set`) し、対応する`End`宣言します。 Visual Basic でのすべての実行可能なステートメントは、いくつかの手順でなければなりません。  
   
 ## <a name="calling-a-procedure"></a>プロシージャの呼び出し  
  コード内の他の場所からプロシージャを呼び出します。 これは、*プロシージャ コール*と呼ばれています。 プロシージャの実行が終了すると、それを呼び出したコード (*呼び出しコード*と呼ばれます) に制御が戻ります。 呼び出しコードは、名前でプロシージャを指定して、これに制御を転送するステートメント、またはステートメント内の式です。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/21/2017
  プロシージャは、ほとんどの場合、呼び出すたびにデータごとに動作する必要があります。 この情報は、プロシージャ コールの一部としてプロシージャに渡すことができます。 プロシージャは、*パラメーター*を 0 個、またはそれ以上でも定義することができ、それぞれが渡す必要がある値を表しています。 プロシージャ定義の各パラメーターに相当するのが、プロシージャ コールの*引数*です。 引数は、指定したプロシージャ コールの対応するパラメーターに渡される値を表しています。  
   
 ## <a name="types-of-procedures"></a>プロシージャの種類  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、次のような種類のプロシージャを使用します。  
+ Visual Basic では、いくつかの種類のプロシージャを使用します。  
   
 -   [Sub プロシージャ](./sub-procedures.md)はアクションを実行しますが、呼び出しコードに値を返しません。  
   

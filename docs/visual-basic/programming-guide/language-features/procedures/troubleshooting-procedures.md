@@ -1,11 +1,12 @@
 ---
-title: "プロシージャのトラブルシューティング (Visual Basic)"
-ms.custom: 
+title: プロシージャのトラブルシューティング (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - troubleshooting Visual Basic, procedures
@@ -14,14 +15,14 @@ helpviewer_keywords:
 - troubleshooting procedures
 - procedures [Visual Basic], about procedures
 ms.assetid: 525721e8-2e02-4f75-b5d8-6b893462cf2b
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b838644baa5ad10f1deb917cff5751a0f625fca6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7e54c965dc15131734be2c5bcfe04ad70292bf23
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="troubleshooting-procedures-visual-basic"></a>プロシージャのトラブルシューティング (Visual Basic)
 このページには、プロシージャを使用する場合に発生する可能性がある一般的な問題が一覧表示されます。  
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/21/2017
   
  ステートメント`allOnes(i) = 1`を呼び出す可能性があるため、コンパイラ エラーが発生`allOnes`不適切なデータ型の引数を持つ (シングルトン`Integer`の代わりに、`Integer`配列)。 ステートメント`Return allOnes()`を呼び出す可能性があるため、コンパイラ エラーが発生`allOnes`引数なしでします。  
   
- **適切なアプローチ:**が返される配列の要素を変更できるようにするには、ローカル変数として内部の配列を定義します。 次の例がエラーなしでコンパイルします。  
+ **適切なアプローチ:** が返される配列の要素を変更できるようにするには、ローカル変数として内部の配列を定義します。 次の例がエラーなしでコンパイルします。  
   
  [!code-vb[VbVbcnProcedures#66](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
   
@@ -72,7 +73,7 @@ ms.lasthandoff: 11/21/2017
   
  2 番目`MsgBox`表示を呼び出して"目後: 41、11、21、31"です。 `n`渡される`ByVal`、`replace`変数を変更することはできません`n`を新しい配列を割り当てることによってです。 ときに`replace`配列の新しいインスタンスを作成`k`し、ローカル変数に代入`a`への参照が失われた`n`呼び出し元のコードで渡される入力します。 メンバーをインクリメントするときに`a`、ローカルの配列のみ`k`が影響を受けます。  
   
- **適切なアプローチ:**を基になる変数要素自体を変更するには、参照渡しで渡します。 次の例では、変更を示しますの宣言で`replace`呼び出し元のコードの別の 1 つの配列を置き換えることができます。  
+ **適切なアプローチ:** を基になる変数要素自体を変更するには、参照渡しで渡します。 次の例では、変更を示しますの宣言で`replace`呼び出し元のコードの別の 1 つの配列を置き換えることができます。  
   
  [!code-vb[VbVbcnProcedures#64](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
   
@@ -83,23 +84,23 @@ ms.lasthandoff: 11/21/2017
   
  次の項目を場合でも、パラメーター リストには関係ないコンポーネントを示します、プロシージャの署名。  
   
--   プロシージャ修飾子キーワードなど`Public`、 `Shared`、および`Static`  
+-   プロシージャ修飾子キーワードなど`Public`、 `Shared`、および `Static`  
   
 -   パラメーター名  
   
--   パラメーター修飾子キーワードなど`ByRef`と`Optional`  
+-   パラメーター修飾子キーワードなど`ByRef`と `Optional`  
   
 -   (変換演算子) を除く、戻り値のデータ型  
   
  1 つ以上の前の項目のみプロシージャをオーバー ロードすることはできません。  
   
- **適切なアプローチ:**プロシージャのオーバー ロードを定義できるようにするには、署名を変更する必要があります。 同じ名前を使用する必要があるために、数、順序、またはパラメーターのデータ型を変更しなければなりません。 ジェネリック プロシージャでは、型パラメーターの数を変更できます。 変換演算子で ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md))、戻り値の型を変更できます。  
+ **適切なアプローチ:** プロシージャのオーバー ロードを定義できるようにするには、署名を変更する必要があります。 同じ名前を使用する必要があるために、数、順序、またはパラメーターのデータ型を変更しなければなりません。 ジェネリック プロシージャでは、型パラメーターの数を変更できます。 変換演算子で ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md))、戻り値の型を変更できます。  
   
 ### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>省略可能な解像度と ParamArray 引数にオーバー ロードします。  
  場合は 1 つまたは複数のプロシージャをオーバー ロードは[オプション](../../../../visual-basic/language-reference/modifiers/optional.md)パラメーターまたは[ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)パラメーター、複製のいずれかの回避する必要があります、*暗黙のオーバー ロード*です。 詳細については、次を参照してください。[プロシージャのオーバー ロードでの考慮事項](./considerations-in-overloading-procedures.md)です。  
   
 ## <a name="calling-a-wrong-version-of-an-overloaded-procedure"></a>オーバー ロードされたプロシージャの間違ったバージョンの呼び出し  
- プロシージャにいくつかのオーバー ロードされたバージョンがある場合に、すべてのパラメーター リストに習熟して理解してください方法[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]オーバー ロード間の呼び出しを解決します。 それ以外の場合、意図したもの以外オーバー ロードを呼び出す可能性があります。  
+ プロシージャにいくつかのオーバー ロードされたバージョンがある場合、すべてのパラメーター リストに理解して、Visual Basic での通話を複数のオーバー ロードの解決方法を理解してください。 それ以外の場合、意図したもの以外オーバー ロードを呼び出す可能性があります。  
   
  どのオーバー ロードを呼び出したいを特定する場合は、次の規則に注意してください。  
   
@@ -124,7 +125,7 @@ ms.lasthandoff: 11/21/2017
   
  2 番目の呼び出しでは、コンパイラは縮小に基づいてオーバー ロードのいずれかで除去ことはできません。 引数の型の少ない拡大変換と 2 番目のオーバー ロードを呼び出すことがあるため最初の呼び出しと同様に、同じ理由から、3 番目のオーバー ロードを除外します。 ただし、コンパイラは、最初と 2 番目のオーバー ロードの解決できません。 それぞれが、他の対応する型に拡大する 1 つの定義済みパラメーターの型 (`Byte`に`Short`が`Single`に`Double`)。 そのため、コンパイラには、オーバー ロードの解決エラーが生成されます。  
   
- **適切なアプローチ:**にあいまいさを排除オーバー ロードされたプロシージャを呼び出すには、次のように使用します。 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)パラメーターの型引数のデータ型を一致するようにします。 次の例への呼び出しを示しています。`z`を強制的に 2 番目のオーバー ロードに解決します。  
+ **適切なアプローチ:** にあいまいさを排除オーバー ロードされたプロシージャを呼び出すには、次のように使用します。 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)パラメーターの型引数のデータ型を一致するようにします。 次の例への呼び出しを示しています。`z`を強制的に 2 番目のオーバー ロードに解決します。  
   
  [!code-vb[VbVbcnProcedures#65](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
   

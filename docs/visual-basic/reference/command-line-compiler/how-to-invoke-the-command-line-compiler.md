@@ -1,10 +1,11 @@
 ---
-title: "方法: コマンド ライン コンパイラを起動する (Visual Basic)"
+title: '方法: コマンド ライン コンパイラを起動する (Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - command-line arguments
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - Visual Basic compiler, starting
 - command line [Visual Basic], arguments
 ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 5c69860ede5620272e67bde435e6e6fa08cc81bc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f1ccf08ba58fa6af60bd8ffd7cba79b205dc0f3d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>方法: コマンド ライン コンパイラを起動する (Visual Basic)
 コマンド ラインで、MS-DOS のプロンプトとも呼ばれるにその実行可能ファイルの名前を入力して、コマンド ライン コンパイラを呼び出すことができます。 既定の Windows コマンド プロンプトからコンパイルする場合は、実行可能ファイルへの完全修飾パスを入力する必要があります。 この既定の動作をオーバーライドするを使用するか、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]コマンド プロンプト、または、PATH 環境変数を変更します。 コンパイラの名前を入力するだけで任意のディレクトリからコンパイルを両方ができます。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
   
 6.  をクリックして**OK**を編集内容を確認し、ダイアログ ボックスを閉じます。  
   
-     実行することができます、PATH 環境変数を変更した後、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラ、Windows コマンド プロンプトで、コンピューター上の任意のディレクトリからです。  
+     PATH 環境変数を変更すると、後に実行できます Visual Basic コンパイラ、Windows コマンド プロンプトで任意のディレクトリから、コンピューター上。  
   
 ### <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>Windows コマンド プロンプトを使用するコンパイラを起動するには  
   

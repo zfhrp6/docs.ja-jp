@@ -17,11 +17,11 @@ ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 906fd2494dd952c08088b9b7e38dba4505780481
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e8dfc091409e060e20970b0b6d6bc19b4fc2aeea
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>XML CDATA リテラル (Visual Basic)
 リテラルを表す、<xref:System.Xml.Linq.XCData>オブジェクト。  
@@ -34,13 +34,13 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="parts"></a>指定項目  
  `<![CDATA[`  
- 必須です。 XML CDATA セクションの開始を示します。  
+ 必須。 XML CDATA セクションの開始を示します。  
   
  `content`  
- 必須です。 XML CDATA セクションに表示されるテキストの内容。  
+ 必須。 XML CDATA セクションに表示されるテキストの内容。  
   
  `]]>`  
- 必須です。 セクションの終了を示します。  
+ 必須。 セクションの終了を示します。  
   
 ## <a name="return-value"></a>戻り値  
  <xref:System.Xml.Linq.XCData> オブジェクト。  
@@ -55,9 +55,9 @@ ms.lasthandoff: 11/21/2017
  リテラル XML CDATA を変数を割り当てたり、XML 要素リテラルに含めることができます。  
   
 > [!NOTE]
->  XML リテラルでは、複数行にまたがることができますが、行継続文字を使用しません。 これにより、XML ドキュメントの内容をコピーして貼り付けに直接、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プログラムです。  
+>  XML リテラルでは、複数行にまたがることができますが、行継続文字を使用しません。 これにより、XML ドキュメントからコンテンツをコピーして、Visual Basic プログラムに直接貼り付けることができます。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラへの呼び出しにリテラルの XML の CDATA の変換、<xref:System.Xml.Linq.XCData.%23ctor%2A>コンス トラクターです。  
+ Visual Basic コンパイラでは、XML CDATA リテラルを変換への呼び出しに、<xref:System.Xml.Linq.XCData.%23ctor%2A>コンス トラクターです。  
   
 ## <a name="example"></a>例  
  次の例では、テキストを含む CDATA セクション"リテラルに含めることができる\<XML > タグ"です。  

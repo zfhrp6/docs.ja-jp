@@ -1,27 +1,28 @@
 ---
-title: "Visual Basic においてカルチャが文字列に与える影響"
-ms.custom: 
+title: Visual Basic においてカルチャが文字列に与える影響
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - locale [Visual Basic], effect on strings
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b61f008edc446445fd5873b6138b64f29e0b8b8c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c95dcc8d04725f7a072e8c8bc7fe058e53a95c05
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Visual Basic においてカルチャが文字列に与える影響
-このヘルプ ページは、説明方法[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]カルチャ文字列の変換との比較を実行する情報を使用します。  
+このヘルプ ページは、Visual Basic はカルチャ情報を使用して、文字列の変換との比較を実行する方法について説明します。  
   
 ## <a name="when-to-use-culture-specific-strings"></a>カルチャ固有の文字列を使用する場合  
  通常に表示されるすべてのデータのカルチャに固有の文字列を使用する必要があります、ユーザーからの読み取りと、アプリケーションの内部データのカルチャに依存しない文字列を使用しています。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 11/21/2017
  ただし、アプリケーションは、中央のサーバーに日付をアップロードする場合、は、可能性のある別の日付形式の間での混乱を避けるため、1 つの特定のカルチャに従って文字列を書式設定する必要があります。  
   
 ## <a name="culture-sensitive-functions"></a>カルチャに依存した関数  
- すべての[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]文字列変換関数 (以外の`Str`と`Val`関数)、アプリケーションのカルチャ情報を使用して、変換および比較がのカルチャに対して適切であるかどうかを確認しますアプリケーションのユーザー。  
+ すべての Visual Basic の文字列変換関数 (を除き、`Str`と`Val`関数)、アプリケーションのカルチャ情報を使用して、変換および比較が、アプリケーションのカルチャに対して適切であるかどうかを確認ユーザー。  
   
  正常に別のカルチャ設定を持つコンピューターで実行されるアプリケーションに文字列変換関数を使用するキーでは、どの機能が特定のカルチャの設定を使用し、現在のカルチャ設定を使用してを理解します。 アプリケーションのカルチャ設定は、既定から継承されるオペレーティング システムのカルチャ設定に注意してください。 詳細については、次を参照してください。 <xref:Microsoft.VisualBasic.Strings.Asc%2A>、 <xref:Microsoft.VisualBasic.Strings.AscW%2A>、 <xref:Microsoft.VisualBasic.Strings.Chr%2A>、 <xref:Microsoft.VisualBasic.Strings.ChrW%2A>、 <xref:Microsoft.VisualBasic.Strings.Format%2A>、 <xref:Microsoft.VisualBasic.Conversion.Hex%2A>、 <xref:Microsoft.VisualBasic.Conversion.Oct%2A>、および[型変換関数](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)です。  
   
@@ -64,7 +65,7 @@ ms.lasthandoff: 11/21/2017
   
 -   **かどうかアプリケーション内部の 2 つの文字列と正確に一致 (通常はセキュリティの目的で) を決定します。** 現在のカルチャは無視して操作を使用します。  
   
- 両方の種類の比較を行うことができます、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Strings.StrComp%2A>関数。 省略可能な指定`Compare`比較の種類を制御する引数:`Text`ほとんどの入力と出力に`Binary`完全一致を判断するためです。  
+ 両方の種類の Visual Basic による比較を行うことができます<xref:Microsoft.VisualBasic.Strings.StrComp%2A>関数。 省略可能な指定`Compare`比較の種類を制御する引数:`Text`ほとんどの入力と出力に`Binary`完全一致を判断するためです。  
   
  `StrComp`関数、並べ替えの順序に基づいて、2 つの比較される文字列の間のリレーションシップを示す整数を返します。 結果の正の値は、最初の文字列が 2 番目の文字列より大きいことを示します。 陰性の結果は、最初の文字列が小さくを示し、0 の文字列間の等価性を示します。  
   
@@ -79,7 +80,7 @@ ms.lasthandoff: 11/21/2017
 |値を`comparisonType`引数|比較の種類|使用に適した状況|  
 |---|---|---|  
 |`Ordinal`|文字列のコンポーネントのバイト数に基づく比較です。|比較するときに、この値を使用します。 識別子の大文字小文字を区別、セキュリティ関連の設定、またはバイト数を正確に一致する必要があります、他の非言語的な識別子です。|  
-|`OrdinalIgnoreCase`|文字列のコンポーネントのバイト数に基づく比較です。<br /><br /> `OrdinalIgnoreCase`インバリアント カルチャ情報を使用して、2 つの文字が異なる場合にのみ大文字と小文字を決定します。|比較するときに、この値を使用します。 大文字と小文字の識別子、セキュリティ関連の設定、および Windows に格納されたデータ。|  
+|`OrdinalIgnoreCase`|文字列のコンポーネントのバイト数に基づく比較です。<br /><br /> `OrdinalIgnoreCase` インバリアント カルチャ情報を使用して、2 つの文字が異なる場合にのみ大文字と小文字を決定します。|比較するときに、この値を使用します。 大文字と小文字の識別子、セキュリティ関連の設定、および Windows に格納されたデータ。|  
 |`CurrentCulture` または `CurrentCultureIgnoreCase`|現在のカルチャで文字列の解釈に基づく比較です。|比較するときに、これらの値を使用: に、ユーザー、ほとんどのユーザー入力および言語的に解釈を必要とするその他のデータを表示するデータ。|  
 |`InvariantCulture` または `InvariantCultureIgnoreCase`|インバリアント カルチャで文字列の解釈に基づく比較です。<br /><br /> これは異なる、`Ordinal`と`OrdinalIgnoreCase`インバリアント カルチャの許容範囲外の文字を等価のインバリアント文字として扱われるため、します。|一定の並べ替え順序を必要とするデータの永続化または言語関連データの表示を比較するときにのみ、これらの値を使用します。|  
   

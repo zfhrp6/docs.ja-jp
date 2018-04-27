@@ -12,21 +12,21 @@ ms.assetid: 03de98b8-b54c-4764-91d7-83c64e974750
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 890d5a3a3f9c3a737a59e17fef0d4ac0407e9924
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 3269a980d19466205e6c67a18f22dded9301ec59
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="printform-component-visual-basic"></a>PrintForm コンポーネント (Visual Basic)
-<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> の [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンポーネントを使用すると、実行時に Windows フォームのイメージを印刷できます。 この動作は、Visual Basic の以前のバージョンで使用されていた `PrintForm` メソッドの動作に代わるものです。  
+<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Visual basic のコンポーネントでは、実行時に Windows フォームのイメージを印刷することができます。 この動作は、Visual Basic の以前のバージョンで使用されていた `PrintForm` メソッドの動作に代わるものです。  
   
  PowerPack コントロールは、Visual Studio には含まれなくなりましたが、 [ダウンロード センター](http://www.microsoft.com/en-us/download/details.aspx?id=25169)からダウンロードできます。  
   
 ## <a name="printform-component-overview"></a>PrintForm コンポーネントの概要  
  一般的に Windows フォームでは、紙の書類やレポートのような書式のフォームを作成して、フォームのイメージを印刷します。 <xref:System.Drawing.Printing.PrintDocument> コンポーネントを使ってこれを行うこともできますが、これを使用すると多くのコードが必要になる可能性があります。 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントを使用すると、 <xref:System.Drawing.Printing.PrintDocument> コンポーネントを使わなくても、フォームのイメージをプリンターに印刷し、印刷プレビュー ウィンドウに表示し、ファイルに出力することができます。  
   
- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントは、 **[ツールボックス]** の **[Visual Basic PowerPacks]**タブにあります。 これをフォームまでドラッグすると、コンポーネント トレイ (フォーム底部の境界下の小さな領域) に表示されます。 このコンポーネントを選択した場合、その動作を定義するプロパティを **[プロパティ]** ウィンドウで設定できます。 これらすべてのプロパティは、コードで設定することもできます。 さらに、デザイン時にコンポーネントを追加する代わりに、コードで <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントのインスタンスを作成することもできます。  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントは、 **[ツールボックス]** の **[Visual Basic PowerPacks]** タブにあります。 これをフォームまでドラッグすると、コンポーネント トレイ (フォーム底部の境界下の小さな領域) に表示されます。 このコンポーネントを選択した場合、その動作を定義するプロパティを **[プロパティ]** ウィンドウで設定できます。 これらすべてのプロパティは、コードで設定することもできます。 さらに、デザイン時にコンポーネントを追加する代わりに、コードで <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントのインスタンスを作成することもできます。  
   
  フォームの印刷時には、フォームのクライアント領域にあるものすべてが印刷されます。 これには、すべてのコントロール、およびグラフィックス メソッドを使ってフォームに描画されたすべてのテキストやグラフィックスも含まれます。 既定では、フォームのタイトル バー、スクロール バー、境界は印刷されません。 また既定では、 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントはフォーム内の表示されている部分だけを印刷します。 たとえば、ユーザーが実行時にフォームのサイズを変更した場合、現在表示されているコントロールとグラフィックスだけが印刷されます。  
   

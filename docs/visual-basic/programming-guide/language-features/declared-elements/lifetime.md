@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic における有効期間"
-ms.custom: 
+title: Visual Basic における有効期間
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - static variables [Visual Basic], lifetime
@@ -16,14 +17,14 @@ helpviewer_keywords:
 - lifetime [Visual Basic], Visual Basic
 - lifetime [Visual Basic]
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 999490885571889b2de911cc14754f8db257d0af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 14a75a2c3af52f63051d02df9341faf19c3b76c7
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="lifetime-in-visual-basic"></a>Visual Basic における有効期間
 *有効期間*宣言された要素は、期間その中に、使用可能です。 変数は、有効期間がある唯一の要素です。 この目的のため、コンパイラは、プロシージャのパラメーターを処理し、関数は変数の特殊なケースとして返します。 変数の有効期間は、値を保持できる時間の期間を表します。 その有効期間全体でその値を変更することができますが、いくつかの値が常に格納します。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
  プロシージャ内のブロック内で宣言された変数 (など、`For`ループ)、プロシージャへのエントリに初期化されます。 これらの初期化は、コードには、ブロックが実行されるかどうかよりも反映されます。  
   
 ## <a name="end-of-lifetime"></a>有効期間の終了  
- プロシージャが終了すると、そのローカル変数の値は保持されません、および[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]自らのメモリを解放します。 次回、プロシージャを呼び出すすべてのローカル変数は新しく作成、再初期化します。  
+ プロシージャが終了すると、そのローカル変数の値は保持されませんし、Visual Basic が自らのメモリを解放します。 次回、プロシージャを呼び出すすべてのローカル変数は新しく作成、再初期化します。  
   
  クラスまたは構造体のインスタンスが終了すると、非共有変数には、自らのメモリおよびその値が失われます。 クラスまたは構造体の新しいインスタンスごとでは、作成し、非共有変数を再初期化します。 ただし、`Shared`変数は、アプリケーションの実行が停止されるまで保持されます。  
   
@@ -55,7 +56,7 @@ ms.lasthandoff: 11/21/2017
 |クラスのインスタンスでない`Shared`(プロシージャではインスタンス メンバー)|初めてプロシージャは特定のインスタンスで呼び出されます。|ガベージ コレクション (GC) のインスタンスを解放する場合|  
   
 ## <a name="static-variables-of-the-same-name"></a>同じ名前の静的変数  
- 1 つ以上の手順で同じ名前を持つ静的変数を宣言することができます。 これを行う場合、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラは、このような各変数は別々 の要素を考慮します。 これらの変数のいずれかの初期化では、他の値は影響しません。 一連のオーバー ロードを持つプロシージャを定義および各オーバー ロード内の同じ名前を持つ静的変数を宣言する場合にも適用されます。  
+ 1 つ以上の手順で同じ名前を持つ静的変数を宣言することができます。 これを行う場合、Visual Basic コンパイラは、このような各変数は別々 の要素を検討します。 これらの変数のいずれかの初期化では、他の値は影響しません。 一連のオーバー ロードを持つプロシージャを定義および各オーバー ロード内の同じ名前を持つ静的変数を宣言する場合にも適用されます。  
   
 ## <a name="containing-elements-for-static-variables"></a>静的変数のコンテナー要素  
  つまり、そのクラスのプロシージャの中をクラス内で静的ローカル変数を宣言できます。 ただし、構造体のメンバー、またはその構造内のプロシージャのローカル変数として、構造体の内部静的ローカル変数を宣言することはできません。  

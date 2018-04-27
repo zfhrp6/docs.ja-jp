@@ -1,11 +1,12 @@
 ---
-title: "方法: 数値を計算する (Visual Basic)"
-ms.custom: 
+title: '方法: 数値を計算する (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - operator precedence
@@ -17,14 +18,14 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 65cd446b99018d029e8a18d69ed33d8b8ac28f8c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 322e2c9fe7f668e08a42cd707c5d81090aca627c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>方法: 数値を計算する (Visual Basic)
 数値式を使用して数値の値を計算することができます。 A*数値式*リテラル、定数、および数値を表す変数を含む式は、それらの値に対して作用する演算子です。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
      最初の 3 つの行は、リテラル、定数、および変数を示しています。 1 つは、単独で有効な数値式を形成します。 最後の行は、2 つのリテラルを持つ変数の組み合わせを示しています。  
   
-     数値式が、完全な形成されていませんが注[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ステートメント自体でします。 完全なステートメントの一部として式を使用する必要があります。  
+     数値式を単独で、Visual Basic、完全なステートメントが形成されていませんことに注意してください。 完全なステートメントの一部として式を使用する必要があります。  
   
 #### <a name="to-store-a-numeric-value"></a>数値の値を格納するには  
   

@@ -1,23 +1,24 @@
 ---
-title: "XAMLX における永続的な遅延"
-ms.custom: 
+title: XAMLX における永続的な遅延
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efc38df4-2d34-453c-8e59-2c21d1307354
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ff5eb09acea16ac125fac5d9e3ed875c9095e1c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2d7377d843e4ab8bd583e135dcdfd2cbfca67b8d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="durable-delay-in-xamlx"></a>XAMLX における永続的な遅延
 このサンプルでは、永続的な遅延を使用する方法を示します。これは、遅延の間、ワークフローを永続的なデバイスに永続化する遅延のことです。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="discussion"></a>説明  
  このサンプル ワークフローには、遅延によって分割された 2 つのローカル ファイルへのメッセージが含まれています。 遅延が発生すると、ワークフローがアンロードされ、ワークフローはメモリに再読み込みされるまでワークフロー インスタンス ストアで 5 秒間待機します。  
   
- この .xamlx ファイルは、[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] でホストされているワークフロー サービスです。 [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] は、ワークフロー サービス ホストを使用する Cassini を使用して、ワークフローをホストします。  
+ この .xamlx ファイルは、Visual Studio でホストされるワークフロー サービスです。 Visual Studio では、ワークフロー ホストに、ワークフロー サービスを使用する Cassini を使用します。  
   
  ワークフロー サービス ホストは、ワークフローをホストするだけでなく、読み込みとアンロードを行うことによってワークフロー インスタンスを管理します。 ワークフロー サービス ホストで [!INCLUDE[wf](../../../../includes/wf-md.md)] 定義のインスタンスを開始するには、ワークフローの <xref:System.ServiceModel.Activities.Receive> アクティビティにメッセージを送信するクライアントを設定します。 この <xref:System.ServiceModel.Activities.Receive> は、<xref:System.ServiceModel.Activities.Receive.CanCreateInstance%2A> プロパティが `true` に設定されているため、メッセージを受信した後にワークフローの新しいインスタンスを作成できます。  
   

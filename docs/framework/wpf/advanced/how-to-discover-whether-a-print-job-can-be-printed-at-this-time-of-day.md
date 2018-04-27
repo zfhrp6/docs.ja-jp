@@ -1,12 +1,13 @@
 ---
-title: "方法 : 現在、印刷ジョブが印刷可能であるかどうかを検出する"
-ms.custom: 
+title: '方法 : 現在、印刷ジョブが印刷可能であるかどうかを検出する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,23 +18,24 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ef9da205792823b7069024c5e4a3e9ac80d60a24
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: eef74cfa290614e530fa22a34533c7924d4af1b4
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>方法 : 現在、印刷ジョブが印刷可能であるかどうかを検出する
 印刷キューは常に使用できません、1 日 24 時間です。 1 日の特定の時刻に使用できないように設定できます開始と終了の時刻のプロパティがあります。 たとえば、この機能は、特定の部門午後 5 時以降後に排他的に使用するプリンターを予約するは使用できます。 その部門は、別のキュー サービスの他の部門よりプリンターを使用して必要があります。 午後 5 時以降に他の部署のキューを設定すると、する部門用のキューを設定することが常に使用します。  
   
  さらに、印刷ジョブ自体は、指定した期間内でのみ印刷できるように設定できます。  
   
- <xref:System.Printing.PrintQueue>と<xref:System.Printing.PrintSystemJobInfo>で公開されているクラス、[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]の[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]特定の印刷ジョブは、現在の時刻に特定のキューに印刷できるかどうかをリモートから確認の手段を提供します。  
+ <xref:System.Printing.PrintQueue>と<xref:System.Printing.PrintSystemJobInfo>で公開されているクラス、 [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework の特定の印刷ジョブが、現時点で特定のキューに印刷できるかどうかをリモートで確認の手段を提供します。  
   
 ## <a name="example"></a>例  
  次の例は、印刷ジョブに問題を診断できるサンプルです。  
@@ -65,7 +67,7 @@ ms.lasthandoff: 12/22/2017
  2 つのオーバー ロード、 **1 つ**メソッドはのみそれらに渡される型を除いて同一、<xref:System.Printing.PrintQueue>バージョンを記載します。  
   
 > [!NOTE]
->  サンプルはジェネリック メソッドを作成していないため、メソッドが型を除いて同一であることの質問を発生させます**1 つ\<T >**です。 その理由は、このようなメソッドを持つクラスに制限する必要がある、**一度、対象**と**UntilTimeOfDay**メソッドを呼び出すと、プロパティが、ジェネリック メソッドのみに制限できます、1 つのクラスであり、唯一のクラスの両方に共通<xref:System.Printing.PrintQueue>と<xref:System.Printing.PrintSystemJobInfo>ツリーは、継承の<xref:System.Printing.PrintSystemObject>をこのようなプロパティがありません。  
+>  サンプルはジェネリック メソッドを作成していないため、メソッドが型を除いて同一であることの質問を発生させます**1 つ\<T >** です。 その理由は、このようなメソッドを持つクラスに制限する必要がある、**一度、対象**と**UntilTimeOfDay**メソッドを呼び出すと、プロパティが、ジェネリック メソッドのみに制限できます、1 つのクラスであり、唯一のクラスの両方に共通<xref:System.Printing.PrintQueue>と<xref:System.Printing.PrintSystemJobInfo>ツリーは、継承の<xref:System.Printing.PrintSystemObject>をこのようなプロパティがありません。  
   
  **1 つ**メソッド (次のコード例で表されている) の初期化ではまず、 <xref:System.Boolean> sentinel 変数`true`です。 リセットされます`false`キューが使用できない場合は、します。  
   
@@ -79,13 +81,13 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[DiagnoseProblematicPrintJob#PrintQueueStartUntil](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#printqueuestartuntil)]
  [!code-vb[DiagnoseProblematicPrintJob#PrintQueueStartUntil](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#printqueuestartuntil)]  
   
- **また**メソッド (次のコード例で表されている) がで導入されたすべてのメソッドを使用しない[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]なので、ディスカッションは簡単です。 メソッドには二重の変換: 分の後、午前 0 時を表す整数値を取得および人間が判読できる時間に変換する必要があります、これをローカル時刻に変換する必要があります。 でこれを行う、最初に作成、 <xref:System.DateTime> UTC しを使用して午前 0 時に設定されているオブジェクト、<xref:System.DateTime.AddMinutes%2A>メソッドをメソッドに渡された分を加算します。 返されます。 新しい<xref:System.DateTime>メソッドに渡された元の時刻を表すです。 <xref:System.DateTime.ToLocalTime%2A>メソッドし、この現地時刻に変換します。  
+ **また**(次のコード例で表されている) メソッドは、ディスカッションは簡単なので、Microsoft .NET Framework で導入されたすべてのメソッドを使用しません。 メソッドには二重の変換: 分の後、午前 0 時を表す整数値を取得および人間が判読できる時間に変換する必要があります、これをローカル時刻に変換する必要があります。 でこれを行う、最初に作成、 <xref:System.DateTime> UTC しを使用して午前 0 時に設定されているオブジェクト、<xref:System.DateTime.AddMinutes%2A>メソッドをメソッドに渡された分を加算します。 返されます。 新しい<xref:System.DateTime>メソッドに渡された元の時刻を表すです。 <xref:System.DateTime.ToLocalTime%2A>メソッドし、この現地時刻に変換します。  
   
  [!code-cpp[DiagnoseProblematicPrintJob#TimeConverter](../../../../samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#timeconverter)]
  [!code-csharp[DiagnoseProblematicPrintJob#TimeConverter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#timeconverter)]
  [!code-vb[DiagnoseProblematicPrintJob#TimeConverter](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#timeconverter)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.DateTime>  
  <xref:System.Printing.PrintSystemJobInfo>  
  <xref:System.Printing.PrintQueue>  

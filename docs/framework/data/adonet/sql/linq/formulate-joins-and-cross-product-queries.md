@@ -1,56 +1,58 @@
 ---
-title: "結合およびクロス積クエリの作成"
-ms.custom: 
+title: 結合およびクロス積クエリの作成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 5f652f25d04480afb3df1f623347eee23d3ed258
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 468ee54b0936afcbb548249bc714ea4b04abd3de
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="formulate-joins-and-cross-product-queries"></a>結合およびクロス積クエリの作成
 次の例は、複数のテーブルからの結果を組み合わせる方法を示しています。  
   
 ## <a name="example"></a>例  
- 次の例で外部キー ナビゲーションを使用して、`From`句[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)](`from`句 (C#)) ロンドンの顧客のすべての注文を選択します。  
+ 次の例で外部キー ナビゲーションを使用して、 `From` Visual Basic での句 (`from`句 (C#)) をロンドンの顧客のすべての注文を選択します。  
   
  [!code-csharp[DLinqQueryExamples#47](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#47)]
  [!code-vb[DLinqQueryExamples#47](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#47)]  
   
 ## <a name="example"></a>例  
- 外部キー ナビゲーションを使用する例を次、`Where`句[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)](`where`句 (C#)) を在庫切れのフィルター処理する`Products`が`Supplier`米国の州がします。  
+ 次の例で外部キー ナビゲーションを使用して、 `Where` Visual Basic での句 (`where`句 (C#)) を在庫切れのフィルター処理する`Products`が`Supplier`米国の州がします。  
   
  [!code-csharp[DLinqQueryExamples#48](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#48)]
  [!code-vb[DLinqQueryExamples#48](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#48)]  
   
 ## <a name="example"></a>例  
- 次の例は、`From` の [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] 句 (C# の `from` 句) で外部キー ナビゲーションを使用して、シアトルの従業員をフィルター処理し、その担当区域を表示します。  
+ 次の例で外部キー ナビゲーションを使用して、 `From` Visual Basic での句 (`from`句 (C#)) シアトルの従業員をフィルター処理し、その担当区域の一覧を表示します。  
   
  [!code-csharp[DLinqQueryExamples#49](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#49)]  
   
 ## <a name="example"></a>例  
- 次の例で外部キー ナビゲーションを使用して、`Select`句[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)](`select`句 (C#)) を 1 人の従業員が、他のレポート、および、両方の従業員は同じ従業員の組み合わせをフィルター処理する`City`です。  
+ 次の例で外部キー ナビゲーションを使用して、 `Select` Visual Basic での句 (`select`句 (C#)) を 1 人の従業員が、他のレポート、および、両方の従業員は同じ従業員の組み合わせをフィルター処理する`City`です。  
   
  [!code-csharp[DLinqQueryExamples#50](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#50)]
  [!code-vb[DLinqQueryExamples#50](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50)]  
   
 ## <a name="example"></a>例  
- 次[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]例は、すべての顧客と注文を検索、顧客、注文が一致することを確認し、そのリスト内のすべての顧客の連絡先の名前が指定されていることを保証します。  
+ Visual Basic の例を次すべての顧客と注文を検索、注文が、顧客に一致することを確認して行いリスト内のすべての顧客の連絡先の名前が指定されていることを保証します。  
   
  [!code-vb[DLinqQueryExamples#50v](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50v)]  
   
@@ -90,5 +92,5 @@ ms.lasthandoff: 01/17/2018
  [!code-csharp[DLinqQueryExamples#56](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#56)]
  [!code-vb[DLinqQueryExamples#56](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#56)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クエリの例](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

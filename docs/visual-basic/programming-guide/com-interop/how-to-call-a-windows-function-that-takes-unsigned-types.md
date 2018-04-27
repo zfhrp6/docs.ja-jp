@@ -1,11 +1,12 @@
 ---
-title: "方法: 符号なしの型を使用する Windows の機能を呼び出す (Visual Basic)"
-ms.custom: 
+title: '方法: 符号なしの型を使用する Windows の機能を呼び出す (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Windows functions [Visual Basic], calling
@@ -20,21 +21,21 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 78e6789e7def5deeb8394e3aefecfdc187ec6ef6
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: dd0738300ec846041e78f19836f29e7adff1c821
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>方法: 符号なしの型を使用する Windows の機能を呼び出す (Visual Basic)
-クラス、モジュール、または符号なし整数型のメンバーを含む構造体を使用している場合にこれらのメンバーにアクセスできます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+クラス、モジュール、または符号なし整数型のメンバーを含む構造体を使用している場合は、Visual Basic を使用してこれらのメンバーを表示できます。  
   
 ### <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>符号なしの型を受け取る Windows 関数を呼び出す  
   
-1.  使用して、 [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)への通知[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ライブラリ関数を保持する、名前がそのライブラリでは、および呼び出しシーケンスは、それを呼び出すときに、文字列を変換する方法です。  
+1.  使用して、 [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)ライブラリ関数を保持する、名前がそのライブラリでは、および呼び出しシーケンスは、それを呼び出すときに、文字列を変換する方法は、Visual Basic を指定します。  
   
 2.  `Declare`ステートメントでは、使用`UInteger`、 `ULong`、 `UShort`、または`Byte`必要に応じて、各型のパラメーターを符号なしにします。  
   
@@ -85,7 +86,7 @@ ms.lasthandoff: 01/19/2018
     > [!IMPORTANT]
     >  Windows API を呼び出すと、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/library/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [整数データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
  [UInteger データ型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  

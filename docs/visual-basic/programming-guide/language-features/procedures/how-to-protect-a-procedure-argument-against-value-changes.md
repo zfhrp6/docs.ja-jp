@@ -1,11 +1,12 @@
 ---
-title: "方法: プロシージャ引数の値が変化しないようにする (Visual Basic)"
-ms.custom: 
+title: '方法: プロシージャ引数の値が変化しないようにする (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -20,17 +21,17 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: d2b7c766-ce16-4d2c-8d79-3fc0e7ba2227
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7975cbbc38c39223a4af5c87ac6bb090be548f2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 59c0486bd9543167e4c17a3109c4b89b3502e80e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>方法: プロシージャ引数の値が変化しないようにする (Visual Basic)
-プロシージャがパラメーターとしてを宣言する場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロシージャのコードに呼び出し元のコードで引数の基になるプログラミング要素への直接参照を提供します。 これにより、プロシージャが呼び出し元のコードで引数の基になる値を変更します。 場合によっては呼び出し元のコードは、このような変更を防ぐためにする可能性があります。  
+プロシージャがパラメーターとしてを宣言する場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、Visual Basic は、プロシージャ コード、呼び出し元のコードで引数の基になるこのプログラミング要素への直接参照します。 これにより、プロシージャが呼び出し元のコードで引数の基になる値を変更します。 場合によっては呼び出し元のコードは、このような変更を防ぐためにする可能性があります。  
   
  対応するパラメーターを宣言することで、変更から引数を保護できます常に[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)の手順でします。 によって自動的に指定された引数を変更できるようにする場合は、宣言できる`ByRef`させて、呼び出し元のコードの各呼び出しに渡すメカニズムを確認します。 これは、対応する引数を値渡しをかっこで囲むか、参照渡しをかっこで囲まないとで実行します。 詳細については、次を参照してください。[する方法: 引数を値渡しを強制](./how-to-force-an-argument-to-be-passed-by-value.md)です。  
   
@@ -48,7 +49,7 @@ ms.lasthandoff: 11/21/2017
  2 番目`MsgBox`表示を呼び出して"目後: 41、11、21、31"です。 `n`渡される`ByVal`、`replace`変数を変更することはできません`n`を新しい配列を割り当てることによって、呼び出し元のコードにします。 ときに`replace`配列の新しいインスタンスを作成`k`し、ローカル変数に代入`a`への参照が失われた`n`呼び出し元のコードで渡される入力します。 メンバーが変更されたとき`a`、ローカルの配列のみ`k`が影響を受けます。 したがって、`replace`配列の値をインクリメントしない`n`呼び出し元のコードにします。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- 既定で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は引数の値渡しします。 いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これにより、コードを読みやすくします。  
+ Visual Basic では既定では、引数の値渡しです。 いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これにより、コードを読みやすくします。  
   
 ## <a name="see-also"></a>関連項目  
  [手順](./index.md)  

@@ -1,12 +1,13 @@
 ---
-title: "UI オートメーションと Microsoft Active Accessibility"
-ms.custom: 
+title: UI オートメーションと Microsoft Active Accessibility
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Active Accessibility
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: b826bff9f16dcd564e9b5bd91aab8b2170db6ce3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2028f312433e3a4cf8c90f2e6809ed29288d7819
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>UI オートメーションと Microsoft Active Accessibility
 > [!NOTE]
@@ -35,7 +37,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Programming_Languages_compare"></a>   
 ## <a name="programming-languages"></a>プログラミング言語  
- [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] は [!INCLUDE[TLA#tla_com](../../../includes/tlasharptla-com-md.md)] をベースにしてデュアル インターフェイスをサポートしているため、C/C++、 [!INCLUDE[TLA#tla_vb6](../../../includes/tlasharptla-vb6-md.md)]、およびスクリプト言語でプログラムすることができます。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] (標準コントロールのクライアント側プロバイダー ライブラリを含む) はマネージ コードで記述されており、 [!INCLUDE[TLA#tla_vcshrp](../../../includes/tlasharptla-vcshrp-md.md)] または [!INCLUDE[TLA#tla_visualbnet](../../../includes/tlasharptla-visualbnet-md.md)]を使用して UI オートメーション クライアント アプリケーションを実に簡単にプログラムすることができます。 インターフェイスを実装する UI オートメーション プロバイダーは、マネージ コードまたは C/C++ で記述できます。  
+<[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] 基づく、[!INCLUDE[TLA#tla_com](../../../includes/tlasharptla-com-md.md)]デュアル インターフェイス サポートであるため、C および C++ でプログラミング可能な[!INCLUDE[TLA#tla_vb6](../../../includes/tlasharptla-vb6-md.md)]、およびスクリプト言語です。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] (標準コントロールのクライアント側プロバイダー ライブラリを含む) は、マネージ コードで記述され、UI オートメーション クライアント アプリケーションは、c# または Visual Basic .NET を使用する最も簡単にプログラミングされます。 インターフェイスを実装する UI オートメーション プロバイダーは、マネージ コードまたは C/C++ で記述できます。  
   
 <a name="Support_in_Windows_Presentation_Foundation_"></a>   
 ## <a name="support-in-windows-presentation-foundation"></a>Windows Presentation Foundation におけるサポート  
@@ -91,7 +93,7 @@ ms.lasthandoff: 12/22/2017
 |ROLE_SYSTEM_DOCUMENT|ドキュメント|  
 |ROLE_SYSTEM_TEXT|編集|  
 |ROLE_SYSTEM_GROUPING|グループ化|  
-|ROLE_SYSTEM_LIST|ヘッダー|  
+|ROLE_SYSTEM_LIST|Header|  
 |ROLE_SYSTEM_COLUMNHEADER|ヘッダー項目|  
 |ROLE_SYSTEM_LINK|ハイパーリンク|  
 |ROLE_SYSTEM_GRAPHIC|イメージ|  
@@ -135,7 +137,7 @@ ms.lasthandoff: 12/22/2017
   
  次の表に、2 つのモデルのプロパティ間の対応を示します。  
   
-|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] のプロパティ アクセサー|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のプロパティ ID|解説|  
+|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] のプロパティ アクセサー|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のプロパティ ID|コメント|  
 |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|  
 |`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> または <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|両方とも存在する場合は`AccessKeyProperty` が優先されます。|  
 |`get_accName`|<xref:System.Windows.Automation.AutomationElement.NameProperty>||  
@@ -218,7 +220,7 @@ ms.lasthandoff: 12/22/2017
 |EVENT_OBJECT_SELECTIONWITHIN|同等の機能がありません|  
 |EVENT_OBJECT_SHOW|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
 |EVENT_OBJECT_STATECHANGE|さまざまなプロパティ変更イベント|  
-|EVENT_OBJECT_VALUECHANGE|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType>および<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType>変更|  
+|EVENT_OBJECT_VALUECHANGE|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType> および<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType>変更|  
 |EVENT_SYSTEM_ALERT|同等の機能がありません|  
 |EVENT_SYSTEM_CAPTUREEND|同等の機能がありません|  
 |EVENT_SYSTEM_CAPTURESTART|同等の機能がありません|  
@@ -260,5 +262,5 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] モデルでは、プロバイダーが他のプロバイダー コードを呼び出す必要がありません。 必要な集約はすべて [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コア サービスが行います。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI オートメーションの基礎](../../../docs/framework/ui-automation/index.md)

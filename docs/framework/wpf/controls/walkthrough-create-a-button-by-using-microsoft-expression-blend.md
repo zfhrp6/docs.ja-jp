@@ -1,34 +1,36 @@
 ---
-title: "チュートリアル : Microsoft Expression Blend を使用してボタンを作成する"
-ms.custom: 
+title: 'チュートリアル : Microsoft Expression Blend を使用してボタンを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - buttons [WPF]
 - converting [WPF], shape to button
 - Expression Blend [WPF Designer]
 ms.assetid: ff5037c2-bba7-4cae-8abb-6475b686c48e
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76025da208cc0929a20c379f76106d7e101c3358
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e029537466e836cfc103bad64d4102652162c465
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a>チュートリアル : Microsoft Expression Blend を使用してボタンを作成する
 このチュートリアルの作成プロセス、 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Microsoft Expression Blend を使用してカスタマイズされたボタンをクリックします。  
   
 > [!IMPORTANT]
->  Microsoft Expression Blend が生成することによって動作[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]をコンパイルする実行可能プログラムを作成します。 使用することで場合[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]が 1 つ使用して、このと同じアプリケーションを作成するもう 1 つのチュートリアルを直接[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]で[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]Blend ではなくです。 参照してください[xaml を使用してボタンを作成して](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)詳細についてはします。  
+>  Microsoft Expression Blend が生成することによって動作[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]をコンパイルする実行可能プログラムを作成します。 使用することで場合[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]が 1 つ使用して、このと同じアプリケーションを作成するもう 1 つのチュートリアルを直接[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]Blend ではなく、Visual Studio でします。 参照してください[xaml を使用してボタンを作成して](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)詳細についてはします。  
   
  次の図を作成する場合、カスタマイズされたボタンを示しています。  
   
@@ -45,7 +47,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  **[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。  
   
-4.  選択**標準的なアプリケーション (.exe)**です。  
+4.  選択**標準的なアプリケーション (.exe)** です。  
   
 5.  プロジェクトに名前を`CustomButton`とキーを押します**OK**です。  
   
@@ -53,15 +55,15 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-convert-a-rectangle-to-a-button"></a>四角形をボタンに変換するには  
   
-1.  **プロパティ ウィンドウの背景色を黒に設定:**ウィンドウを選択し、をクリックして、**プロパティ タブ**、設定と、<xref:System.Windows.Controls.Control.Background%2A>プロパティを`Black`です。  
+1.  **プロパティ ウィンドウの背景色を黒に設定:** ウィンドウを選択し、をクリックして、**プロパティ タブ**、設定と、<xref:System.Windows.Controls.Control.Background%2A>プロパティを`Black`です。  
   
      ![ボタンの背景を黒に設定する方法について](../../../../docs/framework/wpf/controls/media/custom-button-blend-changebackground.png "custom_button_blend_ChangeBackground")  
   
-2.  **ウィンドウ上の四角形のボタンとほぼ同じサイズの描画:**ツールの左側のパネルに四角形ツールを選択し、ウィンドウに、四角形をドラッグします。  
+2.  **ウィンドウ上の四角形のボタンとほぼ同じサイズの描画:** ツールの左側のパネルに四角形ツールを選択し、ウィンドウに、四角形をドラッグします。  
   
      ![四角形を描画する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-drawrect.png "custom_button_blend_DrawRect")  
   
-3.  **四角形の角をラウンド:**四角形の制御点をドラッグするか、直接設定、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>プロパティです。 値を設定<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>20 です。  
+3.  **四角形の角をラウンド:** 四角形の制御点をドラッグするか、直接設定、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>プロパティです。 値を設定<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>20 です。  
   
      ![四角形の角を丸く方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-roundcorners.png "custom_button_blend_RoundCorners")  
   
@@ -80,7 +82,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-edit-the-button-template-to-change-the-button-appearance"></a>ボタンの外観を変更するボタンのテンプレートを編集するには  
   
-1.  **編集テンプレート ビューに移動:**さらにボタンの外観をカスタマイズする必要がありますを button テンプレートを編集します。 このテンプレートは、ボタンに四角形に変換したときに作成されました。 Button テンプレートを編集するボタンを右クリックし **編集コントロールのパーツ (テンプレート)**し**テンプレートの編集**です。  
+1.  **編集テンプレート ビューに移動:** さらにボタンの外観をカスタマイズする必要がありますを button テンプレートを編集します。 このテンプレートは、ボタンに四角形に変換したときに作成されました。 Button テンプレートを編集するボタンを右クリックし **編集コントロールのパーツ (テンプレート)** し**テンプレートの編集**です。  
   
      ![テンプレートを編集する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-edittemplate.jpg "custom_button_blend_EditTemplate")  
   
@@ -88,11 +90,11 @@ ms.lasthandoff: 12/22/2017
   
      ![四角形のプレゼンテーションでコンポーネント](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatepanel.png "custom_button_blend_TemplatePanel")  
   
-2.  **テンプレートのコンポーネントの名前を変更:**テンプレート インベントリ、変更の四角形を右クリックし、 <xref:System.Windows.Shapes.Rectangle> 「サイズ」を「[四角形]」の名前を指定しを""[ContentPresenter]"を変更します。  
+2.  **テンプレートのコンポーネントの名前を変更:** テンプレート インベントリ、変更の四角形を右クリックし、 <xref:System.Windows.Shapes.Rectangle> 「サイズ」を「[四角形]」の名前を指定しを""[ContentPresenter]"を変更します。  
   
      ![テンプレートのコンポーネントの名前を変更する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-renamecomponents.png "custom_button_blend_RenameComponents")  
   
-3.  **内の空 (ドーナツ) のようになるように、四角形を変更:**選択**サイズ**設定と<xref:System.Windows.Shapes.Shape.Fill%2A>「透明」と<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>5 にします。  
+3.  **内の空 (ドーナツ) のようになるように、四角形を変更:** 選択**サイズ**設定と<xref:System.Windows.Shapes.Shape.Fill%2A>「透明」と<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>5 にします。  
   
      ![四角形を空にする方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-changerectproperties.png "custom_button_blend_ChangeRectProperties")  
   
@@ -100,33 +102,33 @@ ms.lasthandoff: 12/22/2017
   
      ![使用するテンプレートの色を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatestroke.png "custom_button_blend_TemplateStroke")  
   
-4.  **内部の四角形を作成:**ここで、別の四角形を作成 (名前を付けます「において」) の内側の対称的に配置**サイズ**です。 この種類の作業では、おそらくする編集領域で、ボタンのサイズを大きくするズームします。  
+4.  **内部の四角形を作成:** ここで、別の四角形を作成 (名前を付けます「において」) の内側の対称的に配置**サイズ**です。 この種類の作業では、おそらくする編集領域で、ボタンのサイズを大きくするズームします。  
   
     > [!NOTE]
     >  図とは異なる、四角形になります (たとえば、その可能性がありますが丸く)。  
   
      ![別の四角形内の四角形を作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangleproperties.png "custom_button_blend_innerRectangleProperties")  
   
-5.  **ContentPresenter を一番上に移動:**この時点では、可能であればテキスト"Button"ができなくなった場合は表示されないことです。 これは場合、これはため**において**の上には、 **myContentPresenter**です。 この問題を解決するにはドラッグ**myContentPresenter**下**において**です。 四角形の位置を変更し、 **myContentPresenter**に次のようになります。  
+5.  **ContentPresenter を一番上に移動:** この時点では、可能であればテキスト"Button"ができなくなった場合は表示されないことです。 これは場合、これはため**において**の上には、 **myContentPresenter**です。 この問題を解決するにはドラッグ**myContentPresenter**下**において**です。 四角形の位置を変更し、 **myContentPresenter**に次のようになります。  
   
     > [!NOTE]
     >  また、配置することも**myContentPresenter**上を右クリックして、キーを押して**送信転送**です。  
   
      ![別のボタンの上に 1 つのボタンを移動する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangle2.png "custom_button_blend_innerRectangle2")  
   
-6.  **においての外観を変更:**設定、 <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>、 <xref:System.Windows.Shapes.Rectangle.RadiusY%2A>、および<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>20 の値。 また、設定、<xref:System.Windows.Shapes.Shape.Fill%2A>カスタム式"{TemplateBinding"バック グラウンド} を使用して、テンプレートの背景に) を設定および<xref:System.Windows.Shapes.Shape.Stroke%2A>「透過的」にします。 注意しての設定、<xref:System.Windows.Shapes.Shape.Fill%2A>と<xref:System.Windows.Shapes.Shape.Stroke%2A>の**において**は逆の場合の**サイズ**です。  
+6.  **においての外観を変更:** 設定、 <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>、 <xref:System.Windows.Shapes.Rectangle.RadiusY%2A>、および<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>20 の値。 また、設定、<xref:System.Windows.Shapes.Shape.Fill%2A>カスタム式"{TemplateBinding"バック グラウンド} を使用して、テンプレートの背景に) を設定および<xref:System.Windows.Shapes.Shape.Stroke%2A>「透過的」にします。 注意しての設定、<xref:System.Windows.Shapes.Shape.Fill%2A>と<xref:System.Windows.Shapes.Shape.Stroke%2A>の**において**は逆の場合の**サイズ**です。  
   
      ![四角形の外観を変更する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties1.png "custom_button_blend_glassRectangleProperties1")  
   
-7.  **上部でガラス レイヤーを追加:**ボタンの外観のカスタマイズの最後の部分は上部でガラス レイヤーを追加します。 このグラス レイヤーは、3 つ目の四角形で構成されます。 グラス四角形がディメンションに似ています虫眼鏡ボタン全体を対象とは、ため、**サイズ**です。 そのためのコピーするだけで四角形を作成、**サイズ**です。 強調表示**サイズ**CTRL + C と CTRL + V を使用して、コピーを作成するとします。 この新しい四角形"glassCube"の名前を付けます。  
+7.  **上部でガラス レイヤーを追加:** ボタンの外観のカスタマイズの最後の部分は上部でガラス レイヤーを追加します。 このグラス レイヤーは、3 つ目の四角形で構成されます。 グラス四角形がディメンションに似ています虫眼鏡ボタン全体を対象とは、ため、**サイズ**です。 そのためのコピーするだけで四角形を作成、**サイズ**です。 強調表示**サイズ**CTRL + C と CTRL + V を使用して、コピーを作成するとします。 この新しい四角形"glassCube"の名前を付けます。  
   
-8.  **GlassCube の位置を変更して必要に応じて:**場合**glassCube**は全体のボタンに対応するように配置されていない、位置にドラッグします。  
+8.  **GlassCube の位置を変更して必要に応じて:** 場合**glassCube**は全体のボタンに対応するように配置されていない、位置にドラッグします。  
   
-9. **GlassCube サイズよりも若干異なる図形に付ける:**のプロパティを変更**glassCube**です。 変更することによって、まず、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>10 プロパティおよび<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>2 にします。  
+9. **GlassCube サイズよりも若干異なる図形に付ける:** のプロパティを変更**glassCube**です。 変更することによって、まず、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>10 プロパティおよび<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>2 にします。  
   
      ![GlassCube の外観設定](../../../../docs/framework/wpf/controls/media/custom-button-blend-glasscubeappearance.gif "custom_button_blend_GlassCubeAppearance")  
   
-10. **GlassCube のガラスのように検索を行う:**設定、 <xref:System.Windows.Shapes.Shape.Fill%2A> 75% 不透明でありが交互に白と透明 6 以上ほぼ均等にある線形グラデーションの間隔の間隔を使用してガラスのような外観にします。 これは、グラデーションの終了位置に設定する新機能です。  
+10. **GlassCube のガラスのように検索を行う:** 設定、 <xref:System.Windows.Shapes.Shape.Fill%2A> 75% 不透明でありが交互に白と透明 6 以上ほぼ均等にある線形グラデーションの間隔の間隔を使用してガラスのような外観にします。 これは、グラデーションの終了位置に設定する新機能です。  
   
     -   グラデーションの分岐点 1: 白、75% のアルファ値  
   
@@ -144,7 +146,7 @@ ms.lasthandoff: 12/22/2017
   
      ![ガラスのようなする四角形](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties2.png "custom_button_blend_glassRectangleProperties2")  
   
-11. **グラス レイヤーを非表示に:**になったので、ガラスのようなレイヤーの外観が表示されたら、移動、**外観ウィンドウ**の**プロパティ パネル**し、非表示にする 0% 不透明度を設定します。 セクションで、事前プロパティ トリガーとイベントを表示およびグラス レイヤーを操作に使用されます。  
+11. **グラス レイヤーを非表示に:** になったので、ガラスのようなレイヤーの外観が表示されたら、移動、**外観ウィンドウ**の**プロパティ パネル**し、非表示にする 0% 不透明度を設定します。 セクションで、事前プロパティ トリガーとイベントを表示およびグラス レイヤーを操作に使用されます。  
   
      ![グラス四角形を非表示にする方法](../../../../docs/framework/wpf/controls/media/custom-button-glassrectangleproperties3.gif "custom_button_glassRectangleProperties3")  
   
@@ -153,13 +155,13 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-set-property-triggers"></a>プロパティを設定するには、次のようにトリガーします。  
   
-1.  **新しいプロパティ トリガーの作成:**で**glassCube**をクリックして選択すると、 **+ プロパティ**で、**トリガー**パネル (次の手順を次の図を参照してください)。 既定のプロパティ トリガー プロパティ トリガーが作成されます。  
+1.  **新しいプロパティ トリガーの作成:** で**glassCube**をクリックして選択すると、 **+ プロパティ**で、**トリガー**パネル (次の手順を次の図を参照してください)。 既定のプロパティ トリガー プロパティ トリガーが作成されます。  
   
-2.  **ように、トリガーで使用されるプロパティの IsMouseOver:**プロパティを変更<xref:System.Windows.UIElement.IsMouseOver%2A>です。 これにより、アクティブ化するときにプロパティ トリガー、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティは`true`(ときに、ユーザーが指す、マウスのボタン)。  
+2.  **ように、トリガーで使用されるプロパティの IsMouseOver:** プロパティを変更<xref:System.Windows.UIElement.IsMouseOver%2A>です。 これにより、アクティブ化するときにプロパティ トリガー、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティは`true`(ときに、ユーザーが指す、マウスのボタン)。  
   
      ![プロパティでトリガーを設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger.png "custom_button_blend_IsMousedOverPropertyTrigger")  
   
-3.  **IsMouseOver glassCube の 100% の不透明度のトリガー:**ことに注意して、**トリガーの記録がオン**(上記の図を参照してください)。 つまり、このプロパティの値に加えた変更はすべて**glassCube**の記録が入っているときに行われるときにアクションなります<xref:System.Windows.UIElement.IsMouseOver%2A>は`true`します。 記録中は、変更、<xref:System.Windows.UIElement.Opacity%2A>の**glassCube**を 100% にします。  
+3.  **IsMouseOver glassCube の 100% の不透明度のトリガー:** ことに注意して、**トリガーの記録がオン**(上記の図を参照してください)。 つまり、このプロパティの値に加えた変更はすべて**glassCube**の記録が入っているときに行われるときにアクションなります<xref:System.Windows.UIElement.IsMouseOver%2A>は`true`します。 記録中は、変更、<xref:System.Windows.UIElement.Opacity%2A>の**glassCube**を 100% にします。  
   
      ![ボタンの不透明度を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger2.gif "custom_button_blend_IsMousedOverPropertyTrigger2")  
   
@@ -169,11 +171,11 @@ ms.lasthandoff: 12/22/2017
   
      F5 キーを押して、アプリケーションを実行し、経由で、オフ、ボタンにマウス ポインターを移動します。 ときに表示グラス レイヤーが表示されます ボタンをマウスでポイントして、ポインターから離れたときに表示されなくなります。  
   
-4.  **値の変更の境界線の描画 IsMouseOver トリガー:**みましょうでその他のいくつかのアクションを関連付ける、<xref:System.Windows.UIElement.IsMouseOver%2A>トリガーします。 記録が引き続き発生する間には、選択した項目を切り替えます**glassCube**に**サイズ**です。 設定して、<xref:System.Windows.Shapes.Shape.Stroke%2A>の**サイズ**"以下 {DynamicResource {X:static SystemColors.HighlightBrushKey}}"のカスタム式にします。 これにより設定、<xref:System.Windows.Shapes.Shape.Stroke%2A>標準的なボタンで使用される色を強調表示します。 F5 キーを押して、ボタンにマウスを置く場合の効果を確認します。  
+4.  **値の変更の境界線の描画 IsMouseOver トリガー:** みましょうでその他のいくつかのアクションを関連付ける、<xref:System.Windows.UIElement.IsMouseOver%2A>トリガーします。 記録が引き続き発生する間には、選択した項目を切り替えます**glassCube**に**サイズ**です。 設定して、<xref:System.Windows.Shapes.Shape.Stroke%2A>の**サイズ**"以下 {DynamicResource {X:static SystemColors.HighlightBrushKey}}"のカスタム式にします。 これにより設定、<xref:System.Windows.Shapes.Shape.Stroke%2A>標準的なボタンで使用される色を強調表示します。 F5 キーを押して、ボタンにマウスを置く場合の効果を確認します。  
   
      ![ストロークを強調表示色を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger3.png "custom_button_blend_IsMousedOverPropertyTrigger3")  
   
-5.  **IsMouseOver トリガーがぼやけてテキスト:**みましょうを 1 つ以上のアクションを関連付ける、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティ トリガーします。 ボタンのコンテンツを上に表示されたら、ガラスに少しがぼやけて見えるようにします。 これを行うには、適用しても、ぼかし<xref:System.Windows.Media.Effects.BitmapEffect>を<xref:System.Windows.Controls.ContentPresenter>(**myContentPresenter**)。  
+5.  **IsMouseOver トリガーがぼやけてテキスト:** みましょうを 1 つ以上のアクションを関連付ける、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティ トリガーします。 ボタンのコンテンツを上に表示されたら、ガラスに少しがぼやけて見えるようにします。 これを行うには、適用しても、ぼかし<xref:System.Windows.Media.Effects.BitmapEffect>を<xref:System.Windows.Controls.ContentPresenter>(**myContentPresenter**)。  
   
      ![ボタンの内容をぼかす方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-propertytriggerwithbitmapeffect.png "custom_button_blend_PropertyTriggerWithBitMapEffect")  
   
@@ -182,7 +184,7 @@ ms.lasthandoff: 12/22/2017
   
      この時点では、マウスのポインター ボタン領域に出入りしたときの強調表示動作を作成するのにいくつかの関連するアクションがあるプロパティ トリガーを使用しています。 ボタンの他の一般的な動作はフォーカスがあるときに強調表示する (がクリックされた後など)。 別のプロパティ トリガーを追加することによってこのような動作を追加できる、<xref:System.Windows.UIElement.IsFocused%2A>プロパティです。  
   
-6.  **IsFocused のプロパティのトリガーの作成:**場合と同じ手順を使用して<xref:System.Windows.UIElement.IsMouseOver%2A>(このセクションの最初の手順を参照) の別のプロパティ トリガーを作成、<xref:System.Windows.UIElement.IsFocused%2A>プロパティです。 中に**トリガーの記録がオン**トリガーを次のアクションを追加します。  
+6.  **IsFocused のプロパティのトリガーの作成:** 場合と同じ手順を使用して<xref:System.Windows.UIElement.IsMouseOver%2A>(このセクションの最初の手順を参照) の別のプロパティ トリガーを作成、<xref:System.Windows.UIElement.IsFocused%2A>プロパティです。 中に**トリガーの記録がオン**トリガーを次のアクションを追加します。  
   
     -   **glassCube**を取得、 <xref:System.Windows.UIElement.Opacity%2A> 100% です。  
   
@@ -192,7 +194,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-use-event-triggers-and-animations-to-add-interactivity"></a>イベント トリガーとアニメーションを使用して、対話機能を追加するには  
   
-1.  **MouseEnter イベント トリガーの作成:**新しいイベント トリガーを追加し、選択<xref:System.Windows.UIElement.MouseEnter>イベントをトリガーに使用するとします。  
+1.  **MouseEnter イベント トリガーの作成:** 新しいイベント トリガーを追加し、選択<xref:System.Windows.UIElement.MouseEnter>イベントをトリガーに使用するとします。  
   
      ![MouseEnter イベント トリガーを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger.png "custom_button_blend_MouseOverEventTrigger")  
   
@@ -200,18 +202,18 @@ ms.lasthandoff: 12/22/2017
   
      ![アニメーション タイムラインをイベントに追加する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger2.png "custom_button_blend_MouseOverEventTrigger2")  
   
-     キーを押す**[ok]**新しいタイムラインを作成する、**タイムライン パネル**が表示され「タイムラインの記録がオン」に、[デザイン] パネルに表示されます。 つまり、タイムライン (アニメーションのプロパティが変更された) プロパティの変更を記録し始めることができます。  
+     キーを押す **[ok]** 新しいタイムラインを作成する、**タイムライン パネル**が表示され「タイムラインの記録がオン」に、[デザイン] パネルに表示されます。 つまり、タイムライン (アニメーションのプロパティが変更された) プロパティの変更を記録し始めることができます。  
   
     > [!NOTE]
     >  ウィンドウや表示を表示するパネルのサイズを変更する必要があります。  
   
      ![タイムライン パネル](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger3.png "custom_button_blend_MouseOverEventTrigger3")  
   
-3.  **キーフレームを作成する:**アニメーションを作成するには、アニメーション化する、タイムラインで、およびそれらのキーフレームの 2 つ以上のキーフレームを作成、補間するアニメーションを適用するプロパティ値を設定するオブジェクトを選択します。 次の図では、キーフレームの作成を説明します。  
+3.  **キーフレームを作成する:** アニメーションを作成するには、アニメーション化する、タイムラインで、およびそれらのキーフレームの 2 つ以上のキーフレームを作成、補間するアニメーションを適用するプロパティ値を設定するオブジェクトを選択します。 次の図では、キーフレームの作成を説明します。  
   
      ![キーフレームを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger4.png "custom_button_blend_MouseOverEventTrigger4")  
   
-4.  **このキーフレームの glassCube の圧縮:**選択されている 2 番目のキーフレーム、サイズの縮小、 **glassCube**を使用して、フル サイズの 90% を**サイズ変換**です。  
+4.  **このキーフレームの glassCube の圧縮:** 選択されている 2 番目のキーフレーム、サイズの縮小、 **glassCube**を使用して、フル サイズの 90% を**サイズ変換**です。  
   
      ![ボタンのサイズを縮小する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-sizetransform.png "custom_button_blend_SizeTransform")  
   
@@ -258,7 +260,7 @@ ms.lasthandoff: 12/22/2017
   
 -   BitmapEffects を追加のグラデーションを作成するその他: し、変換を使用してオブジェクトの基本プロパティを設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML を使用したボタンの作成](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  

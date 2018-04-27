@@ -1,24 +1,26 @@
 ---
-title: "LINQ to SQL でのコード生成"
-ms.custom: 
+title: LINQ to SQL でのコード生成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0d1c80817bb1126d8e9828171c2a2aeee52eb672
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: ff543efecb65e61fecef0056650b35735bef83c0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="code-generation-in-linq-to-sql"></a>LINQ to SQL でのコード生成
 [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal コマンド ライン ツールを使用することにより、データベースを表すコードを生成できます。 どちらの場合も、エンド ツー エンドのコード生成が次の 3 段階で行われます。  
@@ -29,13 +31,13 @@ ms.lasthandoff: 01/17/2018
   
 3.  検証エラーが見つからない場合、ファイルはコード ジェネレーターに渡されます。  
   
- 詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。 使用する開発者[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]使用することができます、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]コードを生成します。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
+ 詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。 Visual Studio を使用している開発者が使用することも、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]コードを生成します。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
   
 ## <a name="dbml-extractor"></a>DBML Extractor  
  DBML Extractor は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]コンポーネントの入力としてのデータベースのメタデータを受け取り、出力として、DBML ファイルを生成します。  
   
 ## <a name="code-generator"></a>コード ジェネレーター  
- コード ジェネレーターは [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のコンポーネントの 1 つで、DBML ファイルを [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]、C#、または XML のマッピング ファイルに変換します。  
+ コード ジェネレーターが、 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] DBML に変換するコンポーネントのファイルを Visual Basic、C# の場合、または XML マッピング ファイル。  
   
 ## <a name="xml-schema-definition-file"></a>XML スキーマ定義ファイル  
  DBML ファイルは、以下のような XSD ファイルのスキーマ定義に対して有効である必要があります。  
@@ -43,7 +45,7 @@ ms.lasthandoff: 01/17/2018
  このスキーマ定義ファイルを、外部マッピング ファイルの検証に使われるスキーマ定義ファイルと区別してください。 詳細については、次を参照してください。[外部マッピング](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md))。  
   
 > [!NOTE]
->  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ユーザーには、この XSD ファイルが [XML スキーマ] ダイアログ ボックスで「DbmlSchema.xsd」としても表示されます。 使用するには、XSD ファイル正しく DBML ファイルを検証するため、次を参照してください。[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。  
+>  Visual Studio ユーザーも紹介この XSD ファイルの XML スキーマ ダイアログ ボックスで「DbmlSchema.xsd」としてします。 使用するには、XSD ファイル正しく DBML ファイルを検証するため、次を参照してください。[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  
@@ -280,7 +282,7 @@ elementFormDefault="qualified" >
 </Database>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
  [外部マップ](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
  [方法 : オブジェクト モデルを外部ファイルとして生成する](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  

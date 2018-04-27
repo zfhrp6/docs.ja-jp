@@ -1,11 +1,12 @@
 ---
-title: "Property プロシージャ (Visual Basic)"
-ms.custom: 
+title: Property プロシージャ (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Set statement [Visual Basic], Property procedures
@@ -19,19 +20,19 @@ helpviewer_keywords:
 - property procedures
 - Get statement [Visual Basic], property procedures
 ms.assetid: 46a98379-e1a2-45dd-a48c-b51213f5ab07
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: cbdf49d5c3eb5ef71b25a060d62f55f19098f445
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0d9df6f381c89263aa16315fb06a2b3b0d645bbf
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="property-procedures-visual-basic"></a>Property プロシージャ (Visual Basic)
-プロパティ プロシージャは、一連の[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]モジュール、クラスまたは構造体のカスタム プロパティを操作するステートメント。 プロパティ プロシージャとも呼ばれます*プロパティ アクセサー*です。  
+プロパティ プロシージャは、一連のモジュール、クラスまたは構造体のカスタム プロパティを操作する Visual Basic ステートメントです。 プロパティ プロシージャとも呼ばれます*プロパティ アクセサー*です。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]次のプロパティ プロシージャについて説明します。  
+ Visual Basic は、次のプロパティ プロシージャについて説明します。  
   
 -   A`Get`プロシージャ、プロパティの値を返します。 式でプロパティにアクセスするときに呼び出されます。  
   

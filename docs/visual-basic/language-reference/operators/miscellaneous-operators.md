@@ -1,26 +1,27 @@
 ---
-title: "その他の演算子 (Visual Basic)"
+title: その他の演算子 (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - operators [Visual Basic]
 - operators [Visual Basic], miscellaneous
 ms.assetid: 2423b3c5-fc3f-479c-bcd2-2c6ebe92814f
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9f1bb3e03bcf20a3be55991e2b16076e1143806e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8334292561dbcaa8725631656683bc05d0b443d3
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="miscellaneous-operators-visual-basic"></a>その他の演算子 (Visual Basic)
-定義されているその他の演算子は、次のとおり[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+Visual Basic で定義されているその他の演算子を次に示します。  
   
  [AddressOf 演算子](../../../visual-basic/language-reference/operators/addressof-operator.md)  
   

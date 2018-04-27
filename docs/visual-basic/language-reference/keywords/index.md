@@ -18,14 +18,14 @@ ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
 caps.latest.revision: 43
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2ee98b317e9d94cad5087e708bd71ca88d2bae63
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 5a8e1f06e1f32baacd494339a561a363f5d81c9d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="keywords-visual-basic"></a>キーワード (Visual Basic)
-次の表は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のすべてのキーワードの一覧です。  
+次の表には、すべての Visual Basic 言語のキーワードが一覧表示します。  
   
 ## <a name="reserved-keywords"></a>予約済みのキーワード  
  次のキーワードは*予約済み*であり、プログラミングの要素 (変数やプロシージャなど) の名前として使用できません。 ただし、名前を角かっこ (`[]`) で囲むと、この制約を回避できます。 詳細については、「[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」の「エスケープされた名前」を参照してください。  
@@ -84,7 +84,7 @@ ms.lasthandoff: 12/21/2017
 |[>> 演算子](../../../visual-basic/language-reference/operators/right-shift-operator.md)|[>>= 演算子](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)|[<<](../../../visual-basic/language-reference/operators/left-shift-operator.md)|[<\<=](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)|  
   
 > [!NOTE]
->  `EndIf`、`GoSub`、`Variant`、`Wend` は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では使用されなくなりましたが、予約済みのキーワードとして残っています。 `Let` キーワードは、意味が変更されました。 `Let` は、LINQ クエリで使用するようになっています。 詳細については、「[Let 句](../../../visual-basic/language-reference/queries/let-clause.md)」を参照してください。  
+>  `EndIf`、 `GoSub`、 `Variant`、および`Wend`、、Visual Basic では使用されなくが予約されたキーワード、として保持されます。 `Let` キーワードは、意味が変更されました。 `Let` は、LINQ クエリで使用するようになっています。 詳細については、「[Let 句](../../../visual-basic/language-reference/queries/let-clause.md)」を参照してください。  
   
 ## <a name="unreserved-keywords"></a>予約されていないキーワード  
  次のキーワードは予約されていません。したがって、プログラミングの要素の名前として使用できます。 ただし、コードの可読性が低下し、検出しにくい微妙なエラーの原因となる可能性があるため、これらのキーワードを要素の名前として使用することは避けてください。  
@@ -124,5 +124,5 @@ ms.lasthandoff: 12/21/2017
 |[レジストリの概要](../../../visual-basic/language-reference/keywords/registry-summary.md)|プログラム設定の読み込み、保存、および削除に使用される関数の一覧を示します。|  
 |[文字列操作の概要](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)|文字列操作に使用される関数の一覧を示します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual Basic ランタイム ライブラリのメンバー](../../../visual-basic/language-reference/runtime-library-members.md)

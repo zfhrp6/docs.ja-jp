@@ -1,24 +1,26 @@
 ---
-title: "情報の漏えい"
-ms.custom: 
+title: 情報の漏えい
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7cf47ce71c70ab9054b1417bab7ae05d9c029188
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0af083ba1d97fcf07eab6f9d789f023a9194070c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="information-disclosure"></a>情報の漏えい
 情報が漏えいすると、攻撃者はシステムに関する重要情報を入手できます。 そのため、どのような情報を公開しているか、また、その情報が悪意のあるユーザーによって使用される可能性があるかどうかに常に気を配る必要があります。 考えられる情報漏えい攻撃とその軽減策を以下に示します。  
@@ -27,10 +29,10 @@ ms.lasthandoff: 12/22/2017
  HTTP トランスポート層でメッセージ レベルのセキュリティを使用している場合は、メッセージ レベルのセキュリティで HTTP ヘッダーが保護されないことに注意してください。 HTTP ヘッダーを保護する唯一の方法は、HTTP ではなく、HTTPS トランスポートを使用することです。 HTTPS トランスポートを使用すると、HTTP ヘッダーを含むメッセージ全体が SSL (Secure Sockets Layer) プロトコルを使用して暗号化されます。  
   
 ## <a name="policy-information"></a>ポリシー情報  
- ポリシーをセキュリティで保護することが重要です。特に、機密事項が含まれる発行済みトークンの要件や、トークン発行者の情報がポリシーで公開されるフェデレーション シナリオでは重要です。 このような場合は、フェデレーション サービスのポリシー エンドポイントをセキュリティで保護し、発行済みトークンに含まれるクレームの種類などサービスに関する情報が攻撃者の手に渡らないようにしたり、クライアントが悪意のあるトークン発行者にリダイレクトされたりしないようにすることをお勧めします。 たとえば、攻撃者は、フェデレーション信頼チェーンが man-in-the-middle 攻撃を実行する発行者で終了するように再構成することで、ユーザー名/パスワードのペアを発見することがあります。 また、ポリシーの取得によってバインディングを取得するフェデレーション クライアントの場合は、取得したフェデレーション信頼チェーンに含まれる発行者の信頼性を検証することもお勧めします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]フェデレーション シナリオを参照して[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
+ ポリシーをセキュリティで保護することが重要です。特に、機密事項が含まれる発行済みトークンの要件や、トークン発行者の情報がポリシーで公開されるフェデレーション シナリオでは重要です。 このような場合は、フェデレーション サービスのポリシー エンドポイントをセキュリティで保護し、発行済みトークンに含まれるクレームの種類などサービスに関する情報が攻撃者の手に渡らないようにしたり、クライアントが悪意のあるトークン発行者にリダイレクトされたりしないようにすることをお勧めします。 たとえば、攻撃者は、フェデレーション信頼チェーンが man-in-the-middle 攻撃を実行する発行者で終了するように再構成することで、ユーザー名/パスワードのペアを発見することがあります。 また、ポリシーの取得によってバインディングを取得するフェデレーション クライアントの場合は、取得したフェデレーション信頼チェーンに含まれる発行者の信頼性を検証することもお勧めします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] フェデレーション シナリオを参照して[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
   
 ## <a name="memory-dumps-can-reveal-claim-information"></a>メモリ ダンプによるクレーム情報の漏えい  
- アプリケーションにエラーが発生した場合、ワトソン博士などによって作成されたログ ファイルには、クレーム情報が含まれることがあります。 この情報はサポート チームなどの他のエンティティに対してエクスポートしないでください。プライベートなデータを含むクレーム情報もエクスポートされます。 ログ ファイルを未知のエンティティに送信しないようにすることで、クレーム情報が漏えいするリスクを軽減できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160)です。  
+ アプリケーションにエラーが発生した場合、ワトソン博士などによって作成されたログ ファイルには、クレーム情報が含まれることがあります。 この情報はサポート チームなどの他のエンティティに対してエクスポートしないでください。プライベートなデータを含むクレーム情報もエクスポートされます。 ログ ファイルを未知のエンティティに送信しないようにすることで、クレーム情報が漏えいするリスクを軽減できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160)です。  
   
 ## <a name="endpoint-addresses"></a>エンドポイント アドレス  
  エンドポイント アドレスには、エンドポイントとの通信に必要な情報が含まれます。 SOAP セキュリティでは、クライアントとサーバーとの間で対称キーをネゴシエートするために交換されるセキュリティ ネゴシエーション メッセージに、完全なアドレスが含まれている必要があります。 セキュリティ ネゴシエーションはブートストラップ プロセスであるため、このプロセスの間、アドレス ヘッダーを暗号化することはできません。 したがって、アドレスには機密データを含めないようにします。そうしないと、情報漏えい攻撃につながります。  
@@ -57,7 +59,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="specifying-client-credentials-or-invalid-identity-forces-ntlm-usage"></a>クライアント資格情報または無効な ID の指定による強制的な NTLM の使用  
  クライアントの作成時に、ドメイン名なしでクライアント資格情報を指定するか、無効なサーバー ID を指定すると、Kerberos プロトコルではなく NTLM が使用されます (`AlllowNtlm` プロパティが `true` に設定されている場合)。 NTLM ではサーバー認証を行わないため、情報が漏えいするおそれがあります。  
   
- たとえば、次の [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] のコードに示すように、ドメイン名なしで Windows クライアント資格情報を指定できます。  
+ たとえば、可能であればドメイン名がない場合、Windows クライアントの資格情報を指定する次の Visual c# コードに示すようにします。  
   
 ```  
 MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCredential("username", "password");  
@@ -65,9 +67,9 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
   
  このコードではドメイン名が指定されておらず、そのため NTLM が使用されます。  
   
- ドメインを指定していても、エンドポイント ID 機能を使用して無効なサービス プリンシパル名を指定した場合は、NTLM が使用されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]エンドポイント id を指定するを参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
+ ドメインを指定していても、エンドポイント ID 機能を使用して無効なサービス プリンシパル名を指定した場合は、NTLM が使用されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] エンドポイント id を指定するを参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [権限の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
  [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  

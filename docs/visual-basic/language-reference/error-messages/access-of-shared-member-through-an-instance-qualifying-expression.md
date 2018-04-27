@@ -15,18 +15,18 @@ ms.assetid: db3337e5-c349-42bf-86df-d9c1e00952a5
 caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bcf3c37852e73464eec612e9e1d458ca707342e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9bbec233435ab728657c1b99e26ab157d4657093
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="access-of-shared-member-through-an-instance-qualifying-expression-will-not-be-evaluated"></a>インスタンスを経由する共有メンバーへのアクセスです。正規の式は評価されません。
 クラスまたは構造体のインスタンス変数の使用にアクセスする、`Shared`変数、プロパティ、プロシージャ、またはそのクラスまたは構造体で定義されたイベント。 この警告は、クラスまたは定数または列挙型、または入れ子になったクラスまたは構造体などの構造体の暗黙的な共有メンバーにアクセスするインスタンス変数を使用する場合にも発生することができます。  
   
  メンバーの共有の目的は、そのメンバーの 1 つのコピーだけを作成し、その 1 つのコピーをクラスまたは構造体が宣言されているのすべてのインスタンスを使用できるようにします。 アクセスするには、この目的で一貫性が、`Shared`メンバーがそのクラスまたは構造体の個々 のインスタンスを保持する変数ではなく、そのクラスまたは構造の名前を使用します。  
   
- アクセス、`Shared`メンバー インスタンス変数を使用できますが、コード メンバーであるという事実を隠すことがわかりにくくなる`Shared`です。 さらに、このようなアクセスが、式の一部である場合などに、他の操作を実行するには`Function`共有のメンバーのインスタンスを返すプロシージャ[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]式と本来は実行されているその他の操作をバイパスします。  
+ アクセス、`Shared`メンバー インスタンス変数を使用できますが、コード メンバーであるという事実を隠すことがわかりにくくなる`Shared`です。 さらに、このようなアクセスが、式の一部である場合などに、他の操作を実行するには`Function`共有メンバーのインスタンスを返すプロシージャでは、Visual Basic は、式と本来は実行されているその他の操作をバイパスします。  
   
  例および詳細については、次を参照してください。 [Shared](../../../visual-basic/language-reference/modifiers/shared.md)です。  
   

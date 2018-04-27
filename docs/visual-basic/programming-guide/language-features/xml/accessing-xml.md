@@ -1,12 +1,13 @@
 ---
-title: "Visual Basic での XML へのアクセス"
-ms.custom: 
+title: Visual Basic での XML へのアクセス
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - LINQ to XML [Visual Basic], accessing XML
@@ -15,19 +16,19 @@ helpviewer_keywords:
 - XML [Visual Basic], axis properties
 - XML [Visual Basic], accessing
 ms.assetid: c47f88b2-3cbc-4bb1-b4b9-be60f71ffc6a
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 79c7b8a94731e151a803a041d91dd1e240ddeb97
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 064e4b224d37172b8f79e57c73164b90186ef922
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="accessing-xml-in-visual-basic"></a>Visual Basic での XML へのアクセス
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]XML 軸プロパティのアクセスおよび説明を移動する[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]構造体。 これらのプロパティは、XML の名前を指定する要素と属性にアクセスするために、特別な構文を使用します。  
+Visual Basic XML 軸のプロパティにアクセスして移動するために用意[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]構造体。 これらのプロパティは、XML の名前を指定する要素と属性にアクセスするために、特別な構文を使用します。  
   
- 次の表で XML 要素と属性にアクセスできるようにする言語機能[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]します。  
+ 次の表は、XML 要素と Visual Basic における属性にアクセスできるようにする言語機能を一覧表示します。  
   
 ### <a name="xml-axis-properties"></a>XML 軸プロパティ  
   
@@ -37,7 +38,7 @@ ms.lasthandoff: 10/18/2017
 |*attribute 軸*|`phone.@type`|すべてを取得`type`の属性、`phone`要素。|  
 |*descendant 軸*|`contacts...<name>`|すべてを取得`name`の要素、`contacts`に関係なく発生する階層の深さの要素。|  
 |*拡張機能インデクサー*|`contacts...<name>(0)`|最初に取得`name`シーケンスから要素。|  
-|*value*|`contacts...<name>.Value`|シーケンスの最初のオブジェクトの文字列形式を取得または`Nothing`シーケンスが空の場合。|  
+|*値*|`contacts...<name>.Value`|シーケンスの最初のオブジェクトの文字列形式を取得または`Nothing`シーケンスが空の場合。|  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法: XML 子孫要素にアクセスする](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)  

@@ -1,23 +1,24 @@
 ---
-title: "ステートメント A ～ E"
+title: ステートメント A ～ E
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 ms.assetid: af97c2bf-dddb-48a8-8eb6-798cd219430b
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: de0a11289c4bd5437469109e683781ce1c2daeb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a670de2c80d69c97b5ee80768decca747e64efb6
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="a-e-statements"></a>ステートメント A ～ E
-次の表には、一覧が含まれています。[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]言語のステートメント。  
+次の表には、Visual Basic 言語のステートメントの一覧が含まれています。  
   
 |||||  
 |---|---|---|---|  

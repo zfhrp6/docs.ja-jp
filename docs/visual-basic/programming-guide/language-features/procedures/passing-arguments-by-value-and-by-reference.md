@@ -1,11 +1,12 @@
 ---
-title: "引数の値渡しと参照渡し (Visual Basic)"
-ms.custom: 
+title: 引数の値渡しと参照渡し (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - ByRef keyword [Visual Basic], passing arguments by reference
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - arguments [Visual Basic], passing by value or by reference
 - argument passing [Visual Basic], by value or by reference
 ms.assetid: fd8a9de6-7178-44d5-a9bf-458d4ad907c2
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 752c0c8e90cafe457cbd5d684bc984a1ea4632ac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f10e0e582e060c1305a9c0fe922620cb4da2c215
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a>引数の値渡しと参照渡し (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、プロシージャに引数を渡すことができます*値によって*または*参照によって*です。 これと呼ばれますが、*渡し*プロシージャが呼び出し元のコードで引数の基になるプログラミング要素を変更できるかどうかを判定します。 プロシージャ宣言では、各パラメーターの引き渡し方法を決定を指定して、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード。  
+Visual basic では、プロシージャに引数を渡すことができます*値によって*または*参照によって*です。 これと呼ばれますが、*渡し*プロシージャが呼び出し元のコードで引数の基になるプログラミング要素を変更できるかどうかを判定します。 プロシージャ宣言では、各パラメーターの引き渡し方法を決定を指定して、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード。  
   
 ## <a name="distinctions"></a>相違点  
  プロシージャに引数を渡すときの相互作用をいくつかの違いに注意してください。  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
   
 -   **保護**です。 引数を渡す方法を選択すると、最も重要な条件を変更する変数を呼び出すことの公開です。 引数を渡す場合の利点`ByRef`は、プロシージャがその引数を呼び出し元のコードに値を返すことができます。 引数を渡す場合の利点`ByVal`プロシージャによって変更されない変数を防ぐことができます。  
   
--   **パフォーマンス**です。 引き渡し方法が、コードのパフォーマンスに影響を与えることができますが、違いは通常意味ではありません。 1 つの例外は、渡された値の型`ByVal`です。 この場合、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]引数のデータ全体の内容をコピーします。 そのため、構造体などの大きな値型のだということを渡す方が効率的`ByRef`です。  
+-   **パフォーマンス**です。 引き渡し方法が、コードのパフォーマンスに影響を与えることができますが、違いは通常意味ではありません。 1 つの例外は、渡された値の型`ByVal`です。 この場合、Visual Basic では、引数の内容が全体がコピーされます。 そのため、構造体などの大きな値型のだということを渡す方が効率的`ByRef`です。  
   
      参照型の場合は、データへのポインターのみ、コピーした (4 バイト 32 ビット プラットフォームでは、64 ビット プラットフォームでは 8 バイト) です。 そのため、型の引数を渡すことができます`String`または`Object`パフォーマンスに悪影響を与えない値。  
   
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
   
  パラメーターが宣言されている場合`ByRef`、呼び出し元のコードにするためのメカニズムを強制できます`ByVal`を呼び出しでは、かっこで囲み、引数名によってです。 詳細については、次を参照してください。[する方法: 引数を値渡しを強制](./how-to-force-an-argument-to-be-passed-by-value.md)です。  
   
- 既定で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は引数の値渡しします。  
+ Visual Basic では既定では、引数の値渡しです。  
   
 ## <a name="when-to-pass-an-argument-by-value"></a>引数の値渡しする場合  
   

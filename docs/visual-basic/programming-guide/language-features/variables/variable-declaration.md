@@ -1,12 +1,13 @@
 ---
-title: "Visual Basic での変数宣言"
-ms.custom: 
+title: Visual Basic での変数宣言
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic], declaring
@@ -24,14 +25,14 @@ helpviewer_keywords:
 - local variables [Visual Basic], declarations
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
-caps.latest.revision: "31"
+caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 7f7b924aed1da7db816aa5c11239e301428770b7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8edd0b65b08efd437cc35e8f58ed7ed423736920
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Visual Basic での変数宣言
 名前と特性を指定する変数を宣言するとします。 変数の宣言ステートメントは、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)です。 その場所と内容は、変数の特性を決定します。  
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="declaration-levels"></a>宣言のレベル  
   
 ### <a name="local-and-member-variables"></a>ローカルとメンバー変数  
- A*ローカル変数*はプロシージャ内で宣言されている 1 つです。 A*メンバー変数*のメンバーである、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ; 入力モジュール レベル、そのクラス、構造体、またはモジュールの内部プロシージャ内ではありませんが、クラス、構造体、またはモジュール内で宣言されています。  
+ A*ローカル変数*はプロシージャ内で宣言されている 1 つです。 A*メンバー変数*; Visual Basic の型のメンバーは、モジュール レベル、そのクラス、構造体、またはモジュールの内部プロシージャ内ではありませんが、クラス、構造体、またはモジュール内で宣言されています。  
   
 ### <a name="shared-and-instance-variables"></a>共有し、インスタンス変数  
  クラスまたは構造体のメンバー変数のカテゴリが共有されているかどうかに依存します。 宣言されている場合、 [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)キーワードでは、*共有変数*、1 つのコピーがクラスまたは構造体のすべてのインスタンス間で共有内に存在するとします。  
@@ -51,15 +52,15 @@ ms.lasthandoff: 11/21/2017
 ## <a name="declaring-data-type"></a>データ型を宣言します。  
  [として](../../../../visual-basic/language-reference/statements/as-clause.md)宣言ステートメントの句では、データ型またはオブジェクトを宣言する変数の型を定義することができます。 変数の種類は次のいずれかを指定できます。  
   
--   基本データ型など`Boolean`、 `Long`、または`Decimal`  
+-   基本データ型など`Boolean`、 `Long`、または `Decimal`  
   
 -   配列や構造体などの複合データ型  
   
 -   オブジェクトの種類、または別のアプリケーションまたはアプリケーションで定義されているクラス  
   
--   A[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]クラスなど<xref:System.Windows.Forms.Label>または<xref:System.Windows.Forms.TextBox>  
+-   A[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]クラスなど<xref:System.Windows.Forms.Label>または <xref:System.Windows.Forms.TextBox>  
   
--   インターフェイス型など、<xref:System.IComparable>または<xref:System.IDisposable>  
+-   インターフェイス型など、<xref:System.IComparable>または <xref:System.IDisposable>  
   
  データ型を繰り返すことがなく 1 つのステートメントで複数の変数を宣言することができます。 次のステートメントでは、変数で`i`、 `j`、および`k`型として宣言されて`Integer`、`l`と`m`として`Long`、および`x`と`y`として`Single`:  
   

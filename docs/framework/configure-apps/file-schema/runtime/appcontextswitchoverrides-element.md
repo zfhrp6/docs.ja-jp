@@ -1,7 +1,7 @@
 ---
 title: '&lt;AppContextSwitchOverrides&gt;要素'
 ms.custom: ''
-ms.date: 03/28/2018
+ms.date: 04/19/2018
 ms.prod: .net-framework
 ms.technology:
 - dotnet-bcl
@@ -19,17 +19,17 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a17d67a1c6143897802bb15b983a9a909fd5949c
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 146416a9872a8444316c2e4a754067b82030a81d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt;要素
 <xref:System.AppContext> クラスで使用される、新機能に対するオプトアウト メカニズムを指定するスイッチを 1 つまたは複数定義します。  
   
  \<configuration>  
- \<runtime>  
+ \<ランタイム >  
 \<AppContextSwitchOverrides>  
   
 ## <a name="syntax"></a>構文  
@@ -80,12 +80,13 @@ ms.lasthandoff: 04/09/2018
 |`Switch.System.Drawing.Printing.`</br>`OptimizePrintPreview`|コントロールかどうかのパフォーマンス、<xref:System.Windows.Forms.PrintPreviewDialog>ネットワーク プリンターに適しています。 詳細については、次を参照してください。 [PrintPreviewDialog コントロールの概要](../../../winforms/controls/printpreviewdialog-control-overview-windows-forms.md)です。|.NET Framework 4.6|
 |`Switch.System.Globalization.NoAsyncCurrentCulture`|非同期操作が呼び出し元のスレッドのコンテキストからフローしないかどうかを制御します。 詳細については、次を参照してください。 [CurrentCulture、CurrentUICulture のフローのタスクにわたって](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#currentculture-and-currentuiculture-flow-across-tasks)です。|.NET Framework 4.6|  
 |`Switch.System.IdentityModel.`<br/>`DisableMultipleDNSEntriesInSANCertificate`|コントロールかどうか、<xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType>メソッドは、要求の種類と最後の DNS エントリのみを一致させようとしています。 詳細については、「[軽減策: X509CertificateClaimSet.FindClaims メソッド](~/docs/framework/migration-guide/mitigation-x509certificateclaimset-findclaims-method.md)」を参照してください。|.NET Framework 4.6.1|  
+|`Switch.System.IdentityModel.`<br/>`EnableCachedEmptyDefaultAuthorizationContext`|変更可能なオブジェクトを返す AuthorizationContext.Empty を許可するかどうかを制御します。|.NET Framework 4.6|  
 |`Switch.System.IO.BlockLongPaths`|コントロールかどうかを超えるパス`MAX_PATH`(260) スロー、<xref:System.IO.PathTooLongException>です。 詳細については、次を参照してください。[長いパスをサポート](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#long-path-support)です。|.NET Framework 4.6.2|  
 |`Switch.System.IO.Compression.ZipFile.`<br/>`UseBackslash`|バック スラッシュを使用して ("\\")、スラッシュではなく (「/」) でのパス区切り記号として、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A?displayProperty=nameWithType>プロパティです。 詳細については、次を参照してください。[軽減策: ZipArchiveEntry.FullName パス区切り](~/docs/framework/migration-guide/mitigation-ziparchiveentry-fullname-path-separator.md)です。|.NET Framework 4.6.1|  
 |`Switch.System.IO.Ports.`<br/>`DoNotCatchSerialStreamThreadExceptions`|オペレーティング システムの例外はで作成されたバック グラウンド スレッドでスローされるかどうかを制御<xref:System.IO.Ports.SerialPort>ストリーム プロセスを終了します。|.NET Framework 4.7.1| 
 |`Switch.System.IO.`<br/>`UseLegacyPathHandling`|レガシ パスの正規化を使用してによって URI パスがサポートされているかどうかを制御、<xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType>と<xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType>メソッドです。 詳細については、次を参照してください。[軽減策: パスの正規化](~/docs/framework/migration-guide/mitigation-path-normalization.md)と[軽減策: パス コロン チェック](~/docs/framework/migration-guide/mitigation-path-colon-checks.md)です。|.NET Framework 4.6.2|  
 |`Switch.System.`<br/>`MemberDescriptorEqualsReturnsFalseIfEquivalent`|等値比較をテストするかどうかを制御、<xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=nameWithType>を持つ 1 つのオブジェクトのプロパティ、 <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=nameWithType> 2 番目のオブジェクトのプロパティです。 詳細については、次を参照してください。 [MemberDescriptor.Equals の実装が正しくない](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#incorrect-implementation-of-memberdescriptorequals)です。|.NET Framework 4.6.2|  
- `Switch.System.Net.`<br/>`DontCheckCertificateEKUs`|証明書の拡張キー使用法 (EKU) のオブジェクト識別子 (OID) の検証を無効にします。 拡張キー使用法 (EKU) 拡張機能とは、キーを使用するアプリケーションを示すオブジェクト識別子 (Oid) のコレクション。|.NET Framework 4.6|
+ `Switch.System.Net.`<br/>`DontCheckCertificateEKUs`|証明書の拡張キー使用法 (EKU) のオブジェクト識別子 (OID) の検証を無効にします。 EKU (拡張キー使用法) 拡張は、キーを使用するアプリケーションを示すオブジェクト識別子 (OID) の集まりです。|.NET Framework 4.6|
 |`Switch.System.Net.`<br/>`DontEnableSchSendAuxRecord`|SCH_SEND_AUX_RECORD の使用を無効にして TLS1.0 ブラウザー悪用に対して SSL や TLS (BEAST) の対策を無効にします。|.NET Framework 4.6|
 |`Switch.System.Net.`<br/>`DontEnableSchUseStrongCrypto`|コントロールかどうか、<xref:System.Net.ServicePointManager?displayProperty=nameWithType>と<xref:System.Net.Security.SslStream?displayProperty=nameWithType>クラスは、SSL 3.0 プロトコルを使用できます。 詳細については、「[軽減策: TLS プロトコル](~/docs/framework/migration-guide/mitigation-tls-protocols.md)」を参照してください。|.NET Framework 4.6|
 |`Switch.System.Net.`<br/>`DontEnableSystemDefaultTlsVersions`|システム標準の TLS バージョン Tls12、Tls、Tls11、既定値に戻すことを無効にします。|.NET Framework 4.7|
@@ -100,10 +101,13 @@ ms.lasthandoff: 04/09/2018
 |`Switch.System.ServiceModel.`<br/>`AllowUnsignedToHeader`|決定するかどうか、`TransportWithMessageCredential`セキュリティ モードでは、符号なしとメッセージを"to"ヘッダー。 これは、オプトイン スイッチです。 詳細については、次を参照してください。 [、.NET Framework 4.6.1 におけるランタイムの変更](https://msdn.microsoft.com/library/mt592686.aspx#WCF)です。|.NET Framework 4.6.1| 
 |`Switch.System.ServiceModel.`<br/>`DisableAddressHeaderCollectionValidation`>|コントロールかどうか、<xref:System.ServiceModel.Channels.AddressHeaderCollection.%23ctor(System.Collections.Generic.IEnumerable{System.ServiceModel.Channels.AddressHeader})>コンス トラクターをスロー、<xref:System.ArgumentException>場合は、要素の 1 つ`null`です。|.NET Framework 4.7.1| 
 |`Switch.System.ServiceModel.`<br />`DisableCngCertificates`|CSG キー記憶域プロバイダーが例外をスローすると証明書の X509 の使用を試みているかどうかを判断します。 詳細については、次を参照してください。 [WCF トランスポート セキュリティは、CNG を使用して格納されている証明書をサポートしている](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#wcf-transport-security-supports-certificates-stored-using-cng)です。|.NET Framework 4.6.1|
+|`Switch.System.ServiceModel.`<br/>`DisableExplicitConnectionCloseHeader`|自己ホスト型サービスと、HTTP トランスポートを使用している場合は、この値を設定`true`により、アプリケーションの追加を無視する WCF、`Connection: close`要求の応答ヘッダーにヘッダー。 この値を設定`false`追加できるように、`Connection: close`応答ヘッダーにヘッダー。 応答が送信された後に、要求、ソケットを閉じるときに発生します。|.NET Framework 4.6|
 |`Switch.System.ServiceModel.`<br/>`DisableOperationContextAsyncFlow`|同時実行の 1 つのスレッドに再入可能サービスのインスタンスを制限することに起因するデッドロックを処理します。|.NET Framework 4.6.2|
 |`Switch.System.ServiceModel.`<br/>`DisableUsingServicePointManagerSecurityProtocols`|と共に`Switch.System.Net.DontEnableSchUseStrongCrypto`、TLS 1.1 および TLS 1.2 に WCF メッセージ セキュリティを使用するかどうかを指定します。|.NET Framework 4.7 |    
+|`Switch.System.ServiceModel.`<br/>`DontEnableSystemDefaultTlsVersions`|値`false`プロトコルを選択するオペレーティング システムを許可する既定の構成を設定します。 値`true`使用可能な最も高いプロトコルを既定値に設定します。 (以前のバージョンのフレームワークの分岐をサービスにも使用可能)|.NET Framework 4.7.1|
 |`Switch.System.ServiceModel.`<br/>`UseSha1InMsmqEncryptionAlgorithm`|署名アルゴリズムの MSMQ メッセージが WCF の既定のメッセージが SHA1 または SHA256 かどうかを判断します。|.NET Framework 4.7.1|
 |`Switch.System.ServiceModel.`<br/>`UseSha1InPipeConnectionGetHashAlgorithm`|WCF が、SHA1 または SHA256 ハッシュを使用して名前付きパイプのランダムな名前を生成するかどうかを制御します。|.NET Framework 4.7.1|
+|`Switch.System.ServiceModel.Internals`<br/>`IncludeNullExceptionMessageInETWTrace`|スローするかどうかを制御する[NullReferenceException](xref:System.NullReferenceException)例外メッセージが null の場合。|.NET Framework 4.7|  
 |`Switch.System.ServiceProcess.`<br/>`DontThrowExceptionsOnStart`|呼び出し元にサービスの開始時にスローされる例外を反映するかどうかを制御、<xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType>メソッドです。|.NET Framework 4.7.1|
 |`Switch.System.Windows.Controls.Grid.`<br/>`StarDefinitionsCanExceedAvailableSpace` |Windows Presentation Foundation は、古いアルゴリズムを適用するかどうかを判断 (`true`) または新しいアルゴリズム (`false`) に領域の割り当てで\*-列です。 詳細については、「[Mitigation: Grid Control's Space Allocation to Star-columns](Mitigation:%20Grid%20Control's%20Space%20Allocation%20to%20Star-columns.md)」 (軽減策: グリッド コントロールの *-column へのディスク領域の割り当て) を参照してください。 |.NET Framework 4.7 |
 |`Switch.System.Windows.Controls.TabControl.`<br/>`SelectionPropertiesCanLagBehindSelectionChangedEvent`|コントロールの選択範囲を発生させる前に、選択した値のプロパティの値を更新、セレクターまたはタブが常にして制御するかどうかは、イベントを変更します。|.NET Framework 4.7.1|

@@ -1,12 +1,13 @@
 ---
-title: "方法 : 文字列に引用符を挿入する (Windows フォーム)"
-ms.custom: 
+title: '方法 : 文字列に引用符を挿入する (Windows フォーム)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,19 +18,20 @@ helpviewer_keywords:
 - TextBox control [Windows Forms], displaying quotation marks
 - quotation marks [Windows Forms], adding to strings in text boxes
 ms.assetid: 68bdc3f3-4177-4eab-99cd-cac17a82b515
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 267a69b9470040dfc60f3c0b280b71e3f52dbc88
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dd7c6a460f24b1406ad914e20b9113920814737c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a>方法 : 文字列に引用符を挿入する (Windows フォーム)
-テキストの文字列に引用符 (" ") を挿入することが必要な場合があります。 例:  
+テキストの文字列に引用符 (" ") を挿入することが必要な場合があります。 例えば:  
   
  言いました、「treat、優れた」!  
   
@@ -37,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-place-quotation-marks-in-a-string-in-your-code"></a>コードの文字列に引用符を挿入するには  
   
-1.  [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では、1 行に 2 つの引用符を埋め込み引用符として挿入します。 [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] と [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)] では、エスケープ シーケンス \\\" を埋め込み引用符として挿入します。 たとえば、上記の文字列を作成するには、次のコードを使用します。  
+1.  Visual basic では、埋め込みの引用符として行の 2 つの引用符を挿入します。 Visual C# の場合と[!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]、エスケープ シーケンスを挿入\\"として埋め込まれた引用符。 たとえば、上記の文字列を作成するには、次のコードを使用します。  
   
     ```vb  
     Private Sub InsertQuote()  
@@ -61,7 +63,7 @@ ms.lasthandoff: 12/22/2017
   
      - または -  
   
-2.  引用符を表す ASCII 文字または Unicode 文字を挿入します。 [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では、ASCII 文字 (34) を使用します。 [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] では、Unicode 文字 (\u0022) を使用します。  
+2.  引用符を表す ASCII 文字または Unicode 文字を挿入します。 Visual basic では、ASCII 文字 (34) を使用します。 Visual c# では、Unicode 文字 (\u0022) を使用します。  
   
     ```vb  
     Private Sub InsertAscii()  
@@ -99,7 +101,7 @@ ms.lasthandoff: 12/22/2017
        const_cast<String^>(quote));  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.TextBox>  
  <xref:Microsoft.VisualBasic.ControlChars.Quote>  
  [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  

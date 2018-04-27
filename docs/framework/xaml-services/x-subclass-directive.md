@@ -1,12 +1,13 @@
 ---
-title: "x:Subclass ディレクティブ"
-ms.custom: 
+title: x:Subclass ディレクティブ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - Subclass
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Subclass attribute
 - Subclass attribute in XAML [XAML Services]
 ms.assetid: 99f66072-8107-4362-ab99-8171dc83b469
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1d620b59208b9dc852abee3dd2e4d6c58b223d70
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 566b772db0e8f96c3272481d47b3e220f727d95b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xsubclass-directive"></a>x:Subclass ディレクティブ
 XAML マークアップのコンパイルの動作を変更してとき`x:Class`も用意されています。 基になっている部分クラスを作成する代わりに`x:Class`、提供されている`x:Class`、中間クラスとして作成された基になる、指定された派生クラスを想定し、`x:Class`です。  
@@ -52,21 +54,21 @@ XAML マークアップのコンパイルの動作を変更してとき`x:Class`
  [X:class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)も、同じオブジェクトに提供される必要があり、そのオブジェクトは XAML の運用環境のルート要素である必要があります。  
   
 ## <a name="remarks"></a>コメント  
- `x:Subclass`使用状況は、主に、部分クラス宣言をサポートしない言語のものです。  
+ `x:Subclass` 使用状況は、主に、部分クラス宣言をサポートしない言語のものです。  
   
  として使用されるクラス、`x:Subclass`入れ子になったクラスにすることはできませんと`x:Subclass`「の依存関係」セクションで説明したように、ルート オブジェクトを参照する必要があります。  
   
  それ以外の場合の概念の意味`x:Subclass`.NET Framework XAML サービス実装では未定義です。 これは、.NET Framework XAML サービスの動作にどの XAML マークアップおよびコードのバックアップを接続、全体的なプログラミング モデルが指定されていないためです。 さらに概念の実装に関連する`x:Class`と`x:Subclass`プログラミング モデルまたはアプリケーションのモデルを使用して、XAML マークアップ、コンパイルされたマークアップ、および CLR ベースの分離コードを接続する方法を定義する特定のフレームワークによって実行されます。 各フレームワークには、いくつかの動作、またはビルド環境に含める必要がある特定のコンポーネントを有効にする、独自のビルド アクションがあります。 フレームワーク内でビルド アクションも異なります分離コードに使用される特定の CLR 言語。  
   
 ## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
- `x:Subclass`ページのルートでまたはを指定できます、<xref:System.Windows.Application>を既に持っているアプリケーション定義のルート`x:Class`です。 宣言`x:Subclass`ページまたはアプリケーションのルート、または、no を指定する以外の任意の要素で`x:Class`が存在し、コンパイル時エラーが発生します。  
+ `x:Subclass` ページのルートでまたはを指定できます、<xref:System.Windows.Application>を既に持っているアプリケーション定義のルート`x:Class`です。 宣言`x:Subclass`ページまたはアプリケーションのルート、または、no を指定する以外の任意の要素で`x:Class`が存在し、コンパイル時エラーが発生します。  
   
  その作業を正しく派生を作成するクラス、`x:Subclass`シナリオは非常に複雑です。 中間ファイル (プロジェクトの obj フォルダーの名前には、.xaml ファイル名と、マークアップ コンパイルによって生成される .g ファイル) を確認する必要があります。 これらの中間ファイルは、コンパイルされたアプリケーションに参加している、部分クラスで特定のプログラミング構成要素の起点を特定するのに役立ちます。  
   
- 派生クラスでイベント ハンドラーがある必要があります`internal override`(`Friend Overrides`で[!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)]) コンパイル時に中間クラスで作成されると、ハンドラーのスタブをオーバーライドするためにします。 それ以外の場合、派生クラスの実装には、(シャドウ)、中間クラスの実装が非表示にし、中間クラスのハンドラーは呼び出されません。  
+ 派生クラスでイベント ハンドラーがある必要があります`internal override`(`Friend Overrides` Microsoft Visual Basic で) コンパイル時に中間クラスで作成されると、ハンドラーのスタブをオーバーライドするためにします。 それ以外の場合、派生クラスの実装には、(シャドウ)、中間クラスの実装が非表示にし、中間クラスのハンドラーは呼び出されません。  
   
  両方を定義するときに`x:Class`と`x:Subclass`、によって参照されているクラスのすべての実装を提供する必要はありません`x:Class`です。 のみを使用して名前を指定する必要があります、`x:Class`属性のコンパイラに中間ファイル (コンパイラ選択しません、既定の名前でも) で作成するクラスについてガイダンスを持つようにします。 付与できる、`x:Class`クラスの実装です。 ただし、これは、典型的なシナリオの両方を使用して`x:Class`と`x:Subclass`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [WPF における XAML とカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

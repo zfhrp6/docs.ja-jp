@@ -1,28 +1,28 @@
 ---
-title: "チュートリアル : ストアド プロシージャのみの使用 (Visual Basic)"
-ms.custom: 
+title: 'チュートリアル : ストアド プロシージャのみの使用 (Visual Basic)'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-ado
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-caps.latest.revision: 
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: 800cc7d6a1e4aa836ebe75afcbe29a3532ee173a
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c04fe5e81f19b89de7204ed2430c9acf08ce1647
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>チュートリアル : ストアド プロシージャのみの使用 (Visual Basic)
 このチュートリアルでは、ストアド プロシージャのみを使用してデータにアクセスする、基本の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] シナリオ全体を示します。 この方法は、データ ストアへのアクセス方法を制限する目的で、データベース管理者によってよく使用されます。  
@@ -30,9 +30,9 @@ ms.lasthandoff: 01/17/2018
 > [!NOTE]
 >  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションでストアド プロシージャを使用して、既定の動作をオーバーライドすることもできます。これは、`Create`、`Update`、および `Delete` の各プロセスで特に役立ちます。 詳細については、次を参照してください。[のカスタマイズを挿入、更新、および削除を行う](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)です。  
   
- このチュートリアルでは、Northwind サンプル データベース内のストアド プロシージャにマップされた 2 つのメソッド (CustOrdersDetail および CustOrderHist) を使用します。 SqlMetal コマンド ライン ツールを実行して [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] ファイルを生成すると、対応付けが発生します。 詳細については、このチュートリアルの「前提条件」を参照してください。  
+ このチュートリアルでは、Northwind サンプル データベース内のストアド プロシージャにマップされた 2 つのメソッド (CustOrdersDetail および CustOrderHist) を使用します。 マッピングは、Visual Basic ファイルを生成する、SqlMetal コマンド ライン ツールを実行するときに発生します。 詳細については、このチュートリアルの「前提条件」を参照してください。  
   
- このチュートリアルは、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]には依存しません。 [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している開発者は、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]を使用して、ストアド プロシージャの機能を実装することもできます。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
+ このチュートリアルは、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]には依存しません。 Visual Studio を使用している開発者が使用することも、[!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]ストアド プロシージャの機能を実装します。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/17/2018
   
      開発用コンピューターにこのデータベースがない場合は、Microsoft ダウンロード サイトからダウンロードします。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)です。 データベースをダウンロードしたら、northwnd.mdf ファイルを c:\linqtest3 フォルダーにコピーします。  
   
--   Northwind データベースから生成された [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] コード ファイル。  
+-   Northwind データベースから生成された Visual Basic コード ファイル。  
   
      このチュートリアルは、SqlMetal ツールを使用して次のコマンド ラインで作成されています。  
   
@@ -56,9 +56,9 @@ ms.lasthandoff: 01/17/2018
      詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。  
   
 ## <a name="overview"></a>概要  
- このチュートリアルは、主に次の 6 つの手順で構成されています。  
+ このチュートリアルは、主に次の 6 つのタスクで構成されています。  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] で [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ソリューションを設定します。  
+-   セットアップ、 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Visual Studio でソリューションです。  
   
 -   プロジェクトに System.Data.Linq アセンブリを追加します。  
   
@@ -71,19 +71,19 @@ ms.lasthandoff: 01/17/2018
 -   アプリケーションを実行およびテストします。  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成する  
- 最初に、[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] プロジェクトをビルドおよび実行するために必要な参照を含む [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ソリューションを作成します。  
+ この最初のタスクでは、ビルドおよび実行するために必要な参照を含む Visual Studio ソリューションを作成、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクト。  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>LINQ to SQL ソリューションを作成するには  
   
-1.  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] **ファイル** メニューのをクリックして**新しいプロジェクト**です。  
+1.  Visual Studio で **[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。  
   
-2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、 **[Visual Basic]**を展開し、 **[Windows]**をクリックします。  
+2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、 **[Visual Basic]** を展開し、 **[Windows]** をクリックします。  
   
-3.  **[テンプレート]** ペインの **[Windows フォーム アプリケーション]**をクリックします。  
+3.  **[テンプレート]** ペインの **[Windows フォーム アプリケーション]** をクリックします。  
   
 4.  **名前**ボックスに、入力**sproconlyapp」と入力**です。  
   
-5.  **[OK]**をクリックします。  
+5.  **[OK]** をクリックします。  
   
      Windows フォーム デザイナーが開きます。  
   
@@ -96,7 +96,7 @@ ms.lasthandoff: 01/17/2018
   
 2.  **ソリューション エクスプ ローラー**を右クリックして**参照**、クリックして**参照の追加**です。  
   
-3.  **参照の追加**ダイアログ ボックスで、をクリックして**.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
+3.  **参照の追加**ダイアログ ボックスで、をクリックして **.NET**を System.Data.Linq アセンブリをクリックし、をクリックして**OK**です。  
   
      アセンブリがプロジェクトに追加されます。  
   
@@ -131,7 +131,7 @@ ms.lasthandoff: 01/17/2018
   
 1.  戻り値を Windows フォーム デザイナー (**form1.vb [デザイン]**)。  
   
-2.  **[表示]** メニューの **[ツールボックス]**をクリックします。  
+2.  **[表示]** メニューの **[ツールボックス]** をクリックします。  
   
      ツールボックスが表示されます。  
   
@@ -144,9 +144,9 @@ ms.lasthandoff: 01/17/2018
   
 4.  右クリック**Label1**、クリックして**プロパティ**です。  
   
-5.  変更、**テキスト**プロパティから**Label1**に**Enter OrderID:**です。  
+5.  変更、**テキスト**プロパティから**Label1**に**Enter OrderID:** です。  
   
-6.  に対して同じ方法で**Label2**、変更、**テキスト**プロパティから**Label2**に**Enter CustomerID:**です。  
+6.  に対して同じ方法で**Label2**、変更、**テキスト**プロパティから**Label2**に**Enter CustomerID:** です。  
   
 7.  同じ方法で変更、**テキスト**プロパティを**Button1**に**Order Details**です。  
   
@@ -177,7 +177,7 @@ ms.lasthandoff: 01/17/2018
   
      Form1 が表示されます。  
   
-2.  **Enter OrderID**ボックスに、入力**10249** をクリックし、 **Order Details**です。  
+2.  **Enter OrderID**ボックスに、入力**10249**  をクリックし、 **Order Details**です。  
   
      注文 10249 に含まれている製品がメッセージ ボックスに表示されます。  
   
@@ -204,6 +204,6 @@ ms.lasthandoff: 01/17/2018
 ## <a name="next-steps"></a>次の手順  
  いくつかの変更を加えることによって、このプロジェクトを強化できます。 たとえば、使用できるストアド プロシージャの一覧をリスト ボックスに表示し、実行するプロシージャをユーザーに選択させることができます。 レポートの出力をテキスト ファイルに送ることもできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)  
  [ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

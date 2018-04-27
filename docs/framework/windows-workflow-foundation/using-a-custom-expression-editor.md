@@ -1,30 +1,31 @@
 ---
-title: "カスタム式エディターの使用"
-ms.custom: 
+title: カスタム式エディターの使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5ae60b8267e60d880ccdc156566b489163d2e686
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5388ed3f55d97f3282a710ac59fe36cfb32fa49c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="using-a-custom-expression-editor"></a>カスタム式エディターの使用
 カスタム式エディターを実装して、式の編集を多機能化したり単純化したりすることができます。 たとえば、次のような場合にカスタム式エディターを使用できます。  
   
 -   再ホストされたワークフロー デザイナーで IntelliSense などの高度な編集機能をサポートする場合。 再ホストされたアプリケーションでは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] の既定の式エディターは使用できないため、この機能が必要な場合は提供する必要があります。  
   
--   ビジネス アナリスト ユーザーのために式の編集を単純化する場合。これにより、たとえば、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] を学習したり、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の式を扱ったりする必要がなくなります。  
+-   Visual Basic の学習または Visual Basic 式を処理するなどの必要はありません、ようには、式のビジネス アナリスト ユーザーのため、編集を簡略化します。  
   
  カスタム式エディターを実装するには、次の 3 つの基本的な手順を実行する必要があります。  
   
@@ -288,7 +289,7 @@ namespace WpfApplication1
 ### <a name="notes"></a>メモ  
  使用している場合、 **ExpressionTextBox**コントロール、カスタム アクティビティ デザイナーで必要はありません作成し、破棄を使用して式エディターに、<xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A>と<xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A>のメソッド、<xref:System.Activities.Presentation.View.IExpressionEditorService>インターフェイスです。 <xref:System.Activities.Presentation.View.ExpressionTextBox> クラスによってこの処理が行われます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Activities.Presentation.View.IExpressionEditorService>  
  <xref:System.Activities.Presentation.View.IExpressionEditorInstance>  
  [カスタム アクティビティ デザイナーでの ExpressionTextBox の使用](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

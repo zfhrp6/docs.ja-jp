@@ -13,17 +13,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6b7f9cb-81be-44e1-bb94-56137954876d
-caps.latest.revision: ''
+caps.latest.revision: 7
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: 15c435d46d3695f78db27801f54ec9de475b2989
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: ef070c737f6a108aa9c9285d2cc8e0a1144479bd
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>ID 値および Autonumber 値の取得
 リレーショナル データベースの主キーとは、常に一意の値を含んだ列または列の組み合わせをいいます。 主キー値がわかっていれば、それが格納されている行を特定できます。 SQL Server、Oracle、Microsoft Access/Jet などのリレーショナル データベース エンジンは、主キーとして指定可能な自動インクリメント列の作成をサポートしています。 これらの値はテーブルに行を追加するとサーバーによって自動的に生成されます。 SQL Server では列の Identity プロパティを設定し、Oracle では Sequence を作成します。また、Microsoft Access では、AutoNumber 列を作成します。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/26/2018
  Microsoft Access Jet データベース エンジンなど、一部のデータベース エンジンは、出力パラメーターをサポートしておらず、複数のステートメントを 1 回のバッチで処理することもできません。 Jet データベース エンジンを使用する場合は、`RowUpdated` の `DataAdapter` イベントのイベント ハンドラーで別途 SELECT コマンドを実行することによって、挿入行に対して生成された新しい AutoNumber 値を取得できます。  
   
 > [!NOTE]
->  自動インクリメント値を使用する代わりに、クライアント コンピューター側で <xref:System.Guid.NewGuid%2A> オブジェクトの <xref:System.Guid> メソッドを使用して GUID (グローバルな一意識別子) を生成し、新しい行が挿入されるたびにそれをサーバーにコピーする方法もあります。 `NewGuid` メソッドでは、値の重複を高い確率で防ぐアルゴリズムを使って 16 バイトのバイナリ値が生成されます。 SQL Server データベースでは、Transact-SQL の `uniqueidentifier` 関数を使って自動的に生成される GUID が、`NEWID()` 列に格納されます。 GUID を主キーとして使用すると、パフォーマンスが低下する場合があります。 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] では、シーケンシャルな GUID を生成する `NEWSEQUENTIALID()` 関数のサポートが新たに提供されています。グローバルな一意性は保証されませんが、より効率的なインデックス処理が可能となります。  
+>  自動インクリメント値を使用する代わりに、クライアント コンピューター側で <xref:System.Guid.NewGuid%2A> オブジェクトの <xref:System.Guid> メソッドを使用して GUID (グローバルな一意識別子) を生成し、新しい行が挿入されるたびにそれをサーバーにコピーする方法もあります。 `NewGuid` メソッドでは、値の重複を高い確率で防ぐアルゴリズムを使って 16 バイトのバイナリ値が生成されます。 SQL Server データベースでは、Transact-SQL の `uniqueidentifier` 関数を使って自動的に生成される GUID が、`NEWID()` 列に格納されます。 GUID を主キーとして使用すると、パフォーマンスが低下する場合があります。 SQL Server のサポートを提供する、`NEWSEQUENTIALID()`をグローバルに一意であることは保証されませんより効率的にするインデックスことができる、シーケンシャルな GUID を生成する関数。  
   
 ## <a name="retrieving-sql-server-identity-column-values"></a>SQL Server の ID 列値の取得  
  Microsoft SQL Server を使用している場合は、出力パラメーターを持ったストアド プロシージャを作成して、挿入された行の ID 値を取得できます。 次の表は、SQL Server で ID 列値の取得に使用できる 3 つの Transact-SQL 関数を示しています。  

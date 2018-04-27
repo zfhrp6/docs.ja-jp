@@ -1,5 +1,5 @@
 ---
-title: '&#39;です。いずれかの &#39; としてサポートされていません (& a) #39; Declare &#39;ステートメント'
+title: '&#39;いずれかとして&#39;でサポートされていない&#39;Declare&#39;ステートメント'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: ''
@@ -15,14 +15,14 @@ ms.assetid: 7e5cf519-8b64-4ac5-8116-705fe26c846d
 caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 59120622688ee38d5b8f45c08dfc3ae40711fb8b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d8146e339ac5cb005b99c9a1e02f1cd248c4558b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="39as-any39-is-not-supported-in-39declare39-statements"></a>&#39;です。いずれかの &#39; としてサポートされていません (& a) #39; Declare &#39;ステートメント
-`Any`データ型と共に使用されました`Declare`任意のデータ型を含む可能性のある引数の使用を許可するには、Visual Basic 6.0 とそれ以前のバージョン内のステートメント。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ただし、オーバー ロードをサポートしは、`Any`旧式の型します。  
+# <a name="39as-any39-is-not-supported-in-39declare39-statements"></a>&#39;いずれかとして&#39;でサポートされていない&#39;Declare&#39;ステートメント
+`Any`データ型と共に使用されました`Declare`任意のデータ型を含む可能性のある引数の使用を許可するには、Visual Basic 6.0 とそれ以前のバージョン内のステートメント。 オーバー ロード、ただし、Visual Basic サポートされため、`Any`古いデータを入力します。  
   
  **エラー ID:** BC30828  
   

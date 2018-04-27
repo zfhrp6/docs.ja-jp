@@ -1,28 +1,28 @@
 ---
-title: "SchemaImporterExtension の技術サンプル"
-ms.custom: 
+title: SchemaImporterExtension の技術サンプル
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3f5eb78f-0ef6-433a-b095-3a63b1ce0bc9
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5001b31e11432c36c08f43bfa06b95483b247115
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 82178bb5b8915cef3f238bffa4c3ebcbbc6ecd2b
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="schemaimporterextension-technology-sample"></a>SchemaImporterExtension の技術サンプル
-[サンプルのダウンロード](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/SchemaImporterExtension.zip.exe)  
+[サンプルのダウンロード](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/SchemaImporterExtension.zip.exe)  
   
  このサンプルでは、XML スキーマをインポートするときのコード生成を微調整する、<xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> のカスタム化を示します。 このアプリケーションは、この拡張機能のビルド、登録および起動の方法を示しています。  
   
@@ -38,7 +38,7 @@ ms.lasthandoff: 12/23/2017
   
 2.  OrderSchemaImporterExtension.sln ファイルのアイコンをダブルクリックして、このファイルを Visual Studio で開きます。  
   
-3.  **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。  
+3.  **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。  
   
  アプリケーションは、既定の \bin ディレクトリまたは \bin\Debug ディレクトリにビルドされます。  
   
@@ -51,7 +51,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="remarks"></a>コメント  
  サンプルのバイナリ ファイルを作成する方法およびサンプルを登録する手順の詳細については、ソース コード ファイルおよび build.proj ファイル内のコメントを参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.CodeDom.CodeCompileUnit>  
  <xref:System.CodeDom.CodeNamespace>  
  <xref:System.CodeDom.CodeNamespaceImport>  

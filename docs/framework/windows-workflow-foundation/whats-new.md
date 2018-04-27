@@ -11,17 +11,17 @@ helpviewer_keywords:
 - Windows Workflow Foundation [WF], what's new
 - WF [WF], what's new
 ms.assetid: 11f96014-001e-41a0-bcc2-d0684a52fa43
-caps.latest.revision: ''
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9c5026c7c3e90afa843b819fb51d7a4a7c8249a0
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 93915e8eeb46d91140198c2d51f88535a93a28cc
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a>どのような&#39;Windows Workflow Foundation の新機能として s
 [!INCLUDE[wf](../../../includes/wf-md.md)] の [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] では、前のバージョンから開発パラダイムがいくつか変更されました。 ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] .NET 3.0 を移行して、最新バージョンを使用する .NET 3.5 ワークフロー アプリケーションを参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  
@@ -66,4 +66,4 @@ ms.lasthandoff: 03/23/2018
 -   保留中のワークフローの再開は、<xref:System.Activities.Bookmark> オブジェクトを使用して管理されるようになりました。  
   
 ## <a name="easier-ability-to-extend-wf-designer-experience"></a>WF デザイナー エクスペリエンスの容易な拡張  
- 新しい WF デザイナーは [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] に基づいて構築されており、Visual Studio の外部で WF デザイナーを再ホストするときに簡単に使用できるモデルです。また、カスタムのアクティビティ デザイナーを作成するための使いやすいメカニズムを備えています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)です。
+ 新しい WF デザイナーは Windows Presentation Foundation (WPF) のビルドが簡単に Visual Studio の外部で WF デザイナーを再ホストするときに使用できるモデルを提供およびもカスタム アクティビティ デザイナーを作成するための使いやすいメカニズムを提供します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)です。

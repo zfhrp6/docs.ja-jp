@@ -1,30 +1,32 @@
 ---
-title: "Web ブラウザーからサービスへのアクセス (WCF Data Services クイックスタート)"
-ms.custom: 
+title: Web ブラウザーからサービスへのアクセス (WCF Data Services クイックスタート)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a6fa180-3094-4e6e-ba2b-8c80975d18d1
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 71beb254bf258da97207f14afca73cd68c6927ca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c9ae96facd79ae3d268c630ff7bf8adf411eb775
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Web ブラウザーからサービスへのアクセス (WCF Data Services クイックスタート)
-このタスクでは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] から [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] を開始し、必要に応じて Web ブラウザーでのフィード読み取りを無効にします。 サービス定義ドキュメントを取得するだけでなく公開されているリソースを Web ブラウザーから HTTP GET 要求を送信することでデータ サービス リソースにアクセスします。  
+このタスクでは、Visual Studio から [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を開始し、必要に応じて Web ブラウザーでのフィード読み取りを無効にします。 サービス定義ドキュメントを取得するだけでなく公開されているリソースを Web ブラウザーから HTTP GET 要求を送信することでデータ サービス リソースにアクセスします。  
   
 > [!NOTE]
->  既定では、[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] によって、コンピューター上の `localhost` URI にポート番号が自動的に割り当てられます。 このタスクでは、URI の例でポート番号 `12345` を使用しています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]特定のポート番号を設定する方法、[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]プロジェクトを参照してください[データ サービスの作成](../../../../docs/framework/data/wcf/creating-the-data-service.md)です。  
+>  既定では、Visual Studio によって、コンピューター上の `localhost` URI にポート番号が自動的に割り当てられます。 このタスクでは、URI の例でポート番号 `12345` を使用しています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Visual Studio プロジェクトを参照で特定のポート番号を設定する方法[データ サービスの作成](../../../../docs/framework/data/wcf/creating-the-data-service.md)です。  
   
 ### <a name="to-request-the-default-service-document-by-using-internet-explorer"></a>Internet Explorer を使用して既定のサービス ドキュメントを要求するには  
   
@@ -35,7 +37,7 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  ブラウザーでフィードを生の XML データとして表示できない場合は、そのままでフィードをページのソース コードとして表示できます。  
   
-2.  [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] で F5 キーを押してアプリケーションのデバッグを開始します。  
+2.  Visual Studio で F5 キーを押してアプリケーションのデバッグを開始します。  
   
 3.  ローカル コンピューターで Web ブラウザーを開きます。 アドレス バーに次の URI を入力します。  
   
@@ -84,5 +86,5 @@ ms.lasthandoff: 12/22/2017
   
  [.NET Framework クライアント アプリケーションの作成](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ サービス リソースへのアクセス](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)

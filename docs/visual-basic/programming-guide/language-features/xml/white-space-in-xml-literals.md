@@ -1,28 +1,29 @@
 ---
-title: "XML リテラルでの空白文字 (Visual Basic)"
-ms.custom: 
+title: XML リテラルでの空白文字 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - white space [XML in Visual Basic]
 - XML literals [Visual Basic], white space
 ms.assetid: dfe3a9ff-d69a-418e-a6b5-476f4ed84219
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d8587abb98fe33ab2c5a0cef6cea76049a00909e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e6d23aa54b150748aac9aa955f4bd86ee88358ea
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="white-space-in-xml-literals-visual-basic"></a>XML リテラルでの空白文字 (Visual Basic)
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]の作成時にコンパイラに XML リテラルの有意の空白文字だけが組み込まれて、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。 意味のない空白文字は組み込まれません。  
+作成時に、Visual Basic コンパイラは、XML リテラルの有意の空白文字だけが組み込まれて、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。 意味のない空白文字は組み込まれません。  
   
 ## <a name="significant-and-insignificant-white-space"></a>有意の空白文字  
  3 つだけの領域で XML リテラルの空白文字が重要です。  
@@ -38,9 +39,9 @@ ms.lasthandoff: 10/18/2017
  XML リテラルに意味のない空白を含める、文字列リテラルの空白文字を含む埋め込み式を使用します。  
   
 > [!NOTE]
->  場合、`xml:space`リテラル XML 要素に属性が表示されます、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラにはで属性が含まれています、<xref:System.Xml.Linq.XElement>オブジェクトが、この属性は、コンパイラが空白文字を処理する方法を変更していないを追加します。  
+>  場合、 `xml:space` XML 要素リテラルの属性が表示されます、Visual Basic コンパイラにはで属性が含まれています、<xref:System.Xml.Linq.XElement>オブジェクトが、この属性は、コンパイラが空白文字を処理する方法を変更していないを追加します。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  次の例には、外部および内部の 2 つの XML 要素が含まれています。 両方の要素には、テキスト コンテンツ内の空白が含まれます。 空白文字と XML 要素のみが含まれているため、外側の要素内の空白は意味はありません。 空白とテキストが含まれているためには、内部の要素内の空白を使用することは重要です。  
   
  [!code-vb[VbXMLSamples#29](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/white-space-in-xml-literals_1.vb)]  

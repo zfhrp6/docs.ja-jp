@@ -1,13 +1,13 @@
 ---
-title: "アプリケーション管理の概要"
-ms.custom: 
+title: アプリケーション管理の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-caps.latest.revision: 
+caps.latest.revision: 56
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a881793c50a4ce506e752774e70e0904e30525c1
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 96a1ae8dce80588b296d9ab7fc9dff60fb7a04f0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="application-management-overview"></a>アプリケーション管理の概要
 すべてのアプリケーションは、アプリケーションの実装と管理に適用される機能を共有することがよくあります。 このトピックでは、機能の概要を示します、<xref:System.Windows.Application>を作成して、アプリケーションを管理するためのクラスです。  
@@ -128,7 +128,7 @@ ms.lasthandoff: 01/19/2018
  [!code-csharp[ApplicationManagementOverviewSnippets#GetCurrentAppCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/CSharp/MainWindow.xaml.cs#getcurrentappcode)]
  [!code-vb[ApplicationManagementOverviewSnippets#GetCurrentAppCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/VisualBasic/MainWindow.xaml.vb#getcurrentappcode)]  
   
- <xref:System.Windows.Application.Current%2A>インスタンスへの参照を返します、<xref:System.Windows.Application>クラスです。 参照の場合、<xref:System.Windows.Application>派生クラスの値をキャストする必要があります、<xref:System.Windows.Application.Current%2A>プロパティ、次の例で示すようにします。  
+ <xref:System.Windows.Application.Current%2A> インスタンスへの参照を返します、<xref:System.Windows.Application>クラスです。 参照の場合、<xref:System.Windows.Application>派生クラスの値をキャストする必要があります、<xref:System.Windows.Application.Current%2A>プロパティ、次の例で示すようにします。  
   
  [!code-csharp[ApplicationManagementOverviewSnippets#GetSTCurrentAppCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/CSharp/MainWindow.xaml.cs#getstcurrentappcode)]
  [!code-vb[ApplicationManagementOverviewSnippets#GetSTCurrentAppCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationManagementOverviewSnippets/VisualBasic/MainWindow.xaml.vb#getstcurrentappcode)]  
@@ -159,7 +159,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Showing_a_User_Interface"></a>   
 ### <a name="showing-a-user-interface"></a>ユーザー インターフェイスの表示  
- ほとんどのスタンドアロン[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]アプリケーションを開く、<xref:System.Windows.Window>開始時期を実行しています。 <xref:System.Windows.Application.Startup>次のコードに示すように、イベント ハンドラーは 1 つの場所がこれを行うことができます。  
+ ほとんどのスタンドアロンの Windows アプリケーションを開く、<xref:System.Windows.Window>開始時期を実行しています。 <xref:System.Windows.Application.Startup>次のコードに示すように、イベント ハンドラーは 1 つの場所がこれを行うことができます。  
   
  [!code-xaml[AppShowWindowHardSnippets#StartupEventMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AppShowWindowHardSnippets/CSharp/App.xaml#startupeventmarkup)]  
   
@@ -195,7 +195,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="Processing_Command_Line_Arguments"></a>   
 ### <a name="processing-command-line-arguments"></a>コマンド ライン引数の処理  
- [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]、コマンド プロンプトまたはデスクトップのいずれかからスタンドアロン アプリケーションを起動できます。 どちらの場合も、コマンド ライン引数をアプリケーションに渡すことができます。 次の例は、1 つのコマンド ライン引数 "/StartMinimized" を指定して起動されるアプリケーションを示しています。  
+ Windows には、コマンド プロンプトまたはデスクトップのいずれかからスタンドアロン アプリケーションを起動することができます。 どちらの場合も、コマンド ライン引数をアプリケーションに渡すことができます。 次の例は、1 つのコマンド ライン引数 "/StartMinimized" を指定して起動されるアプリケーションを示しています。  
   
  `wpfapplication.exe /StartMinimized`  
   
@@ -208,11 +208,11 @@ ms.lasthandoff: 01/19/2018
   
  コード ハンドル<xref:System.Windows.Application.Startup>を確認するかどうか、 **/StartMinimized**コマンドライン引数が指定されました。 でメイン ウィンドウを開きます。 その場合は、、<xref:System.Windows.WindowState>の<xref:System.Windows.WindowState.Minimized>します。 ため、<xref:System.Windows.Window.WindowState%2A>はプロパティを設定、プログラムによって、メイン<xref:System.Windows.Window>コードで明示的に開く必要があります。  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]取得しを使用して起動するためにコマンドライン引数を処理できません[!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)]展開 (を参照してください[WPF アプリケーションを配置する](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md))。 ただし、起動に使用される URL のクエリ文字列パラメーターを取得して処理することはできます。  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] 取得しを使用して起動するためにコマンドライン引数を処理できません[!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)]展開 (を参照してください[WPF アプリケーションを配置する](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md))。 ただし、起動に使用される URL のクエリ文字列パラメーターを取得して処理することはできます。  
   
 <a name="Application_Activation_and_Deactivation"></a>   
 ### <a name="application-activation-and-deactivation"></a>アプリケーションのアクティブ化と非アクティブ化  
- [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] では、ユーザーがアプリケーションを切り替えることができます。 最も一般的な方法は、Alt キーを押しながら Tab キーを押す方法です。 アプリケーションのみに切り替えられる場合は、表示がある<xref:System.Windows.Window>項目を選択できます。 現在選択されている<xref:System.Windows.Window>は、*アクティブなウィンドウ*(とも呼ばれる、*前面のウィンドウの*) は、<xref:System.Windows.Window>ユーザー入力を受け取る。 アクティブ ウィンドウで、アプリケーションが、*アクティブなアプリケーション*(または*フォア グラウンド アプリケーション*)。 アプリケーションは、次の状況でアクティブ アプリケーションになります。  
+ Windows では、アプリケーション間で切り替えることができます。 最も一般的な方法は、Alt キーを押しながら Tab キーを押す方法です。 アプリケーションのみに切り替えられる場合は、表示がある<xref:System.Windows.Window>項目を選択できます。 現在選択されている<xref:System.Windows.Window>は、*アクティブなウィンドウ*(とも呼ばれる、*前面のウィンドウの*) は、<xref:System.Windows.Window>ユーザー入力を受け取る。 アクティブ ウィンドウで、アプリケーションが、*アクティブなアプリケーション*(または*フォア グラウンド アプリケーション*)。 アプリケーションは、次の状況でアクティブ アプリケーションになります。  
   
 -   起動し、示しています、、<xref:System.Windows.Window>です。  
   
@@ -248,14 +248,14 @@ ms.lasthandoff: 01/19/2018
   
 -   ユーザーがメインを閉じる<xref:System.Windows.Window>です。  
   
--   ユーザーが終了、[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]セッションをログオフまたはシャット ダウンしています。  
+-   ユーザーは、ログオフまたはシャット ダウンによって、Windows セッションを終了します。  
   
 -   アプリケーション固有の条件が満たされた。  
   
  アプリケーションのシャット ダウンを管理するために<xref:System.Windows.Application>提供、<xref:System.Windows.Application.Shutdown%2A>メソッド、<xref:System.Windows.Application.ShutdownMode%2A>プロパティ、および<xref:System.Windows.Application.SessionEnding>と<xref:System.Windows.Application.Exit>イベント。  
   
 > [!NOTE]
->  <xref:System.Windows.Application.Shutdown%2A>持つアプリケーションからのみ呼び出すことができます<xref:System.Security.Permissions.UIPermission>です。 スタンドアロン[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションは常にこの権限を持っています。 ただし、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]しないインターネット ゾーンの部分的に信頼されたセキュリティ サンド ボックスで実行されています。  
+>  <xref:System.Windows.Application.Shutdown%2A> 持つアプリケーションからのみ呼び出すことができます<xref:System.Security.Permissions.UIPermission>です。 スタンドアロン[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションは常にこの権限を持っています。 ただし、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]しないインターネット ゾーンの部分的に信頼されたセキュリティ サンド ボックスで実行されています。  
   
 #### <a name="shutdown-mode"></a>シャットダウン モード  
  ほとんどのアプリケーションは、すべてのウィンドウが閉じられるか、メイン ウィンドウが閉じられたときにシャットダウンします。 ただし、場合によっては、他のアプリケーションに固有の条件によって、アプリケーションがシャット ダウンするタイミングに影響します。 対象アプリケーションはシャット ダウンを設定して条件を指定することができます<xref:System.Windows.Application.ShutdownMode%2A>、次のいずれかの<xref:System.Windows.ShutdownMode>列挙値。  
@@ -273,10 +273,10 @@ ms.lasthandoff: 01/19/2018
  設定するアプリケーション固有のシャット ダウンの条件を確認したら、<xref:System.Windows.Application.ShutdownMode%2A>に<xref:System.Windows.ShutdownMode.OnExplicitShutdown>です。 ここではユーザーの責任を明示的に呼び出すことによって、アプリケーションをシャット ダウン、<xref:System.Windows.Application.Shutdown%2A>メソッドです。 それ以外の場合、アプリケーションは引き続きすべてのウィンドウを閉じた場合でも実行します。 注意してください<xref:System.Windows.Application.Shutdown%2A>は暗黙的に呼び出されます場合、<xref:System.Windows.Application.ShutdownMode%2A>か<xref:System.Windows.ShutdownMode.OnLastWindowClose>または<xref:System.Windows.ShutdownMode.OnMainWindowClose>です。  
   
 > [!NOTE]
->  <xref:System.Windows.Application.ShutdownMode%2A>設定することができます、[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]は無視されますが、;[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]が常にシャット ダウンに移動したときから離れていても、ブラウザーまたはブラウザーをホストするときに、[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]が閉じられます。 詳細については、「[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)」を参照してください。  
+>  <xref:System.Windows.Application.ShutdownMode%2A> 設定することができます、[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]は無視されますが、;[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]が常にシャット ダウンに移動したときから離れていても、ブラウザーまたはブラウザーをホストするときに、[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]が閉じられます。 詳細については、「[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)」を参照してください。  
   
 #### <a name="session-ending"></a>セッションの終了  
- シャット ダウンの条件で説明されている、<xref:System.Windows.Application.ShutdownMode%2A>プロパティは、アプリケーションに固有です。 ただし、場合によっては、アプリケーションは、外部条件の結果としてシャットダウンすることもあります。 ユーザーが終了すると、最も一般的な外部条件が発生した、[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]セッションで、次の操作。  
+ シャット ダウンの条件で説明されている、<xref:System.Windows.Application.ShutdownMode%2A>プロパティは、アプリケーションに固有です。 ただし、場合によっては、アプリケーションは、外部条件の結果としてシャットダウンすることもあります。 最も一般的な外部の状態は、ユーザーが次のアクションによって Windows セッションを終了したときに発生します。  
   
 -   ログオフ  
   
@@ -286,17 +286,17 @@ ms.lasthandoff: 01/19/2018
   
 -   休止  
   
- ときに検出するために、[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]セッションが終了する処理、<xref:System.Windows.Application.SessionEnding>イベント、次の例に示すようにします。  
+ Windows セッションの終了時に検出すると、処理、<xref:System.Windows.Application.SessionEnding>イベント、次の例に示すようにします。  
   
  [!code-xaml[ApplicationSessionEndingSnippets#HandlingSessionEndingXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/CSharp/App.xaml#handlingsessionendingxaml)]  
   
  [!code-csharp[ApplicationSessionEndingSnippets#HandlingSessionEndingCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/CSharp/App.xaml.cs#handlingsessionendingcodebehind)]
  [!code-vb[ApplicationSessionEndingSnippets#HandlingSessionEndingCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/visualbasic/application.xaml.vb#handlingsessionendingcodebehind)]  
   
- この例では、コードを検査、<xref:System.Windows.SessionEndingCancelEventArgs.ReasonSessionEnding%2A>プロパティを決定する方法、[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]セッションが終了します。 この値を使用して、ユーザーに確認メッセージを表示します。 コードを設定する場合は、ユーザーはセッションを終了、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>に`true`を防ぐために、[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]終了セッション。  
+ この例では、コードを検査、 <xref:System.Windows.SessionEndingCancelEventArgs.ReasonSessionEnding%2A> Windows セッションが終了する方法を決定するプロパティです。 この値を使用して、ユーザーに確認メッセージを表示します。 コードを設定する場合は、ユーザーはセッションを終了、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>に`true`Windows セッションが終了するを防ぐにします。  
   
 > [!NOTE]
->  <xref:System.Windows.Application.SessionEnding>発生しません[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。  
+>  <xref:System.Windows.Application.SessionEnding> 発生しません[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。  
   
 #### <a name="exit"></a>終了  
  アプリケーションがシャット ダウンするときには、アプリケーション状態の保存など、いくつかの最終処理を実行しなければならない場合があります。 このような場合は、処理することができます、<xref:System.Windows.Application.Exit>イベント。  
@@ -311,7 +311,7 @@ ms.lasthandoff: 01/19/2018
   
  完了の例では、次を参照してください。[永続化し、アプリケーション セッション間でアプリケーション スコープのプロパティを復元](../../../../docs/framework/wpf/app-development/persist-and-restore-application-scope-properties.md)です。  
   
- <xref:System.Windows.Application.Exit>両方のスタンドアロン アプリケーションで処理できると[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。 [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]、<xref:System.Windows.Application.Exit>ときに、次の状況が発生します。  
+ <xref:System.Windows.Application.Exit> 両方のスタンドアロン アプリケーションで処理できると[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。 [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]、<xref:System.Windows.Application.Exit>ときに、次の状況が発生します。  
   
 -   [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]から移動します。  
   
@@ -320,7 +320,7 @@ ms.lasthandoff: 01/19/2018
 -   ブラウザーが閉じられた。  
   
 #### <a name="exit-code"></a>終了コード  
- ほとんどのアプリケーションは、ユーザー要求に応じてオペレーティング システムから起動されます。 ただし、アプリケーションは、特定のタスクを実行するために、別のアプリケーションに起動されることもあります。 起動されたアプリケーションがシャット ダウンするとき、起動元のアプリケーションは、起動されたアプリケーションのシャット ダウン条件を知ならなければならないことがあります。 これらの状況で[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]により、アプリケーションをシャット ダウン時にアプリケーションの終了コードを返します。 既定では、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションは、値の終了コード 0 を返します。  
+ ほとんどのアプリケーションは、ユーザー要求に応じてオペレーティング システムから起動されます。 ただし、アプリケーションは、特定のタスクを実行するために、別のアプリケーションに起動されることもあります。 起動されたアプリケーションがシャット ダウンするとき、起動元のアプリケーションは、起動されたアプリケーションのシャット ダウン条件を知ならなければならないことがあります。 これらの状況では、Windows は、アプリケーションをシャット ダウン時に、アプリケーションの終了コードを返すをできます。 既定では、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションは、値の終了コード 0 を返します。  
   
 > [!NOTE]
 >  デバッグする場合に[!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)]、アプリケーションの終了コードに表示されます、**出力**アプリケーションがシャット ダウンした、次のようになりますが、メッセージ内のウィンドウ。  
@@ -351,7 +351,7 @@ ms.lasthandoff: 01/19/2018
   
 -   アプリケーションの続行を試みる。  
   
--   開発者向けの詳細な例外情報を記録、[!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)]イベント ログです。  
+-   記録の詳細、開発者向け、例外、Windows イベント ログにします。  
   
  このサポートの実装によって異なります、未処理の例外を検出できることはどのような<xref:System.Windows.Application.DispatcherUnhandledException>に対してイベントが生成されます。  
   
@@ -378,7 +378,7 @@ ms.lasthandoff: 01/19/2018
   
  ![XBAP - アプリケーション オブジェクト イベント](../../../../docs/framework/wpf/app-development/media/applicationmodeloverview-applicationobjectevents-xbap.png "ApplicationModelOverview_ApplicationObjectEvents_xbap")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Application>  
  [WPF ウィンドウの概要](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)  
  [ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)  

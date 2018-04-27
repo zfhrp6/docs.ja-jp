@@ -1,23 +1,24 @@
 ---
 title: Scenario1
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cb678fda-79aa-4495-833b-ef570539d4c3
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 50efd36e1d54bd456e184c42d62aded14e510947
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 60f6571d7702236ee24c0cb9da2aa4121feddcf0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="scenario"></a>シナリオ
 このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] シナリオの例が含まれています。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Activities.Statements.Flowchart> アクティビティと <xref:System.Activities.Statements.Pick> アクティビティを組み合わせて簡単なストップウォッチ シナリオを実装する方法を示します。  
   
  [XAML での WPF と WF の統合](../../../../docs/framework/windows-workflow-foundation/samples/wpf-and-wf-integration-in-xaml.md)  
- [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] および [!INCLUDE[wf](../../../../includes/wf-md.md)] 機能を使用するアプリケーションを 1 つの XAML ドキュメントで作成する方法を示します。 これを実現するために、サンプルでは [!INCLUDE[wf](../../../../includes/wf-md.md)] および XAML 機能拡張を使用します。  
+ Windows Presentation Foundation (WPF) を使用するアプリケーションを作成する方法を示しますと[!INCLUDE[wf](../../../../includes/wf-md.md)]1 つの XAML ドキュメントで機能します。 これを実現するために、サンプルでは [!INCLUDE[wf](../../../../includes/wf-md.md)] および XAML 機能拡張を使用します。  
   
  [External RuleSet Toolkit](../../../../docs/framework/windows-workflow-foundation/samples/external-ruleset-toolkit.md)  
  データベースで RuleSet を管理および編集し、実行時にそれらの RuleSet にワークフローからアクセスする方法を示します。

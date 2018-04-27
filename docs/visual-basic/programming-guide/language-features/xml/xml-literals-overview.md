@@ -1,12 +1,13 @@
 ---
-title: "XML リテラルの概要 (Visual Basic)"
-ms.custom: 
+title: XML リテラルの概要 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - XML literals [Visual Basic], about XML literals
@@ -14,26 +15,26 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], XML literals
 - literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 59ce79995025692428263120f9c21c7baf5cf231
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1bc3bed1a7046e6f3c31828fbf17be877e66f146
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xml-literals-overview-visual-basic"></a>XML リテラルの概要 (Visual Basic)
-*XML リテラル*に直接 XML を組み込むことができます、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コード。 XML リテラルの構文を表します[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト、およびそれには、XML 1.0 の構文に似ています。 これにより、簡単に、コードが、最終的な XML と同じ構造を有して XML 要素やドキュメントをプログラムで作成します。  
+*XML リテラル*XML を Visual Basic のコードに直接組み込むことができます。 XML リテラルの構文を表します[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト、およびそれには、XML 1.0 の構文に似ています。 これにより、簡単に、コードが、最終的な XML と同じ構造を有して XML 要素やドキュメントをプログラムで作成します。  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]XML リテラルをコンパイル[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]密接に連携、統合、単純なオブジェクト モデルの作成と、XML を操作し、このモデルを提供[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]です。 詳細については、「<xref:System.Xml.Linq.XElement>」を参照してください。  
+ Visual Basic XML リテラルをコンパイルする[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 密接に連携、統合、単純なオブジェクト モデルの作成と、XML を操作し、このモデルを提供[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]です。 詳細については、「<xref:System.Xml.Linq.XElement>」を参照してください。  
   
- 埋め込むことができます、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] XML リテラル内の式。 アプリケーションを作成、実行時に、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]リテラルごとに埋め込み式の値を組み込むためのオブジェクト。 これにより、XML リテラル内の動的なコンテンツを指定できます。 詳細については、次を参照してください。 [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)です。  
+ XML リテラル Visual Basic の式を埋め込むことができます。 アプリケーションを作成、実行時に、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]リテラルごとに埋め込み式の値を組み込むためのオブジェクト。 これにより、XML リテラル内の動的なコンテンツを指定できます。 詳細については、次を参照してください。 [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)です。  
   
  XML リテラルの構文と XML 1.0 の構文の違いの詳細については、次を参照してください。 [XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。  
   
 ## <a name="simple-literals"></a>単純なリテラル  
- 作成することができます、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]内のオブジェクト、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を入力するか貼り付けを行って有効な XML コードです。 リテラル XML 要素を返します、<xref:System.Xml.Linq.XElement>オブジェクト。 詳細については、次を参照してください。 [XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)と[XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。 次の例では、いくつかの子要素を持つ XML 要素を作成します。  
+ 作成することができます、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]入力するか、有効な XML に貼り付けることによって、Visual Basic コード内のオブジェクト。 リテラル XML 要素を返します、<xref:System.Xml.Linq.XElement>オブジェクト。 詳細については、次を参照してください。 [XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)と[XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。 次の例では、いくつかの子要素を持つ XML 要素を作成します。  
   
  [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_1.vb)]  
   
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
  [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
 > [!NOTE]
->  XML リテラルの構文で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]構文、XML 1.0 仕様で同じではありません。 詳細については、次を参照してください。 [XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。  
+>  Visual Basic で XML リテラルの構文は、XML 1.0 仕様で構文と同じではないです。 詳細については、次を参照してください。 [XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。  
   
 ## <a name="line-continuation"></a>行の連結  
  XML リテラルは、行継続文字 (空白-アンダー スコアを入力してシーケンス) を使用することがなく複数行にまたがることができます。 これにより、XML リテラルの XML ドキュメントのコードで簡単に比較します。  
@@ -59,7 +60,7 @@ ms.lasthandoff: 11/21/2017
  [!code-vb[VbXMLSamples#7](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_3.vb)]  
   
 ## <a name="how-the-compiler-creates-objects-from-xml-literals"></a>コンパイラが XML リテラルからオブジェクトを作成する方法  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラは、該当するショートカットへの呼び出しに XML リテラルを変換[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]を構築するコンス トラクター、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。 たとえば、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラを使用して、次のコード例をへの呼び出しに変換されます、 <xref:System.Xml.Linq.XProcessingInstruction> XML バージョン命令のコンス トラクターを呼び出し、<xref:System.Xml.Linq.XElement>のコンス トラクター、 `<contact>`、 `<name>`、および`<phone>`要素、およびへの呼び出し、<xref:System.Xml.Linq.XAttribute>のコンス トラクター、`type`属性。 具体的には、次のサンプルでは、属性から得られる、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラを呼び出す、<xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29>コンス トラクターを 2 回クリックします。 1 つ目は、値を渡す`type`の`name`パラメーターと値を`home`の`value`パラメーター。 2 つ目は、値を渡すも`type`の`name`パラメーターは、値`work`の`value`パラメーター。  
+ Visual Basic コンパイラは、該当するショートカットへの呼び出しに XML リテラルを変換[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]を構築するコンス トラクター、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。 たとえば、Visual Basic コンパイラは、変換次のコード例への呼び出しに、 <xref:System.Xml.Linq.XProcessingInstruction> XML バージョン命令のコンス トラクターを呼び出し、<xref:System.Xml.Linq.XElement>のコンス トラクター、 `<contact>`、 `<name>`、および`<phone>`要素、およびへの呼び出し、<xref:System.Xml.Linq.XAttribute>のコンス トラクター、`type`属性。 具体的には、属性を指定すると、次のサンプルでは、Visual Basic コンパイラが呼び出す、<xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29>コンス トラクターを 2 回クリックします。 1 つ目は、値を渡す`type`の`name`パラメーターと値を`home`の`value`パラメーター。 2 つ目は、値を渡すも`type`の`name`パラメーターは、値`work`の`value`パラメーター。  
   
  [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   

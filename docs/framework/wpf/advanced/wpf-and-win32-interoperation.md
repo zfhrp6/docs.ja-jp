@@ -1,12 +1,13 @@
 ---
-title: "WPF と Win32 の相互運用性"
-ms.custom: 
+title: WPF と Win32 の相互運用性
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f762751da94d25a934d038c1da5adf4a7b88439b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6388762815a621b37c2894cdb7f7966b2c36639c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="wpf-and-win32-interoperation"></a>WPF と Win32 の相互運用性
 このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] および [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] コードを相互運用する方法の概要について説明します。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、アプリケーションの作成に適した環境を提供します。 ただし、[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] コードに多くの投資を行った場合は、そのコードの一部を再利用する方がより効率的である場合があります。  
@@ -47,9 +49,9 @@ ms.lasthandoff: 12/22/2017
   
  プロジェクト レベルで、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルを [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] プロジェクトにコンパイルできないという問題があります。  これを解決するために、プロジェクトを分割する手法がいくつかあります。  
   
--   すべての [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページを含む [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] DLL をコンパイル済みのアセンブリとして作成し、[!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] 実行可能ファイルにその [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] を参照として含めます。  
+-   すべてを含む c# DLL の作成、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]としてコンパイルされたアセンブリでは、ページし、[!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)]実行可能ファイルを含めることが[!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]参照として。  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コンテンツの [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] 実行可能ファイルを作成し、そのファイルが [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] コンテンツを含む [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] を参照するようにします。  
+-   C# を作成、実行可能ファイル、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]し、コンテンツ、参照、 [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]を格納している、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]コンテンツ。  
   
 -   使用して<xref:System.Windows.Markup.XamlReader.Load%2A>をロード[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コンパイルではなく、実行時に、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
   
@@ -105,7 +107,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="hosting_an_hwnd"></a>   
 ## <a name="hosting-a-microsoft-win32-window-in-wpf"></a>WPF での Microsoft Win32 ウィンドウのホスト  
- ホストするキー、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]内で他のウィンドウ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コンテンツは、<xref:System.Windows.Interop.HwndHost>クラスです。 このクラスは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素ツリーに追加できる [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素でウィンドウをラップします。 <xref:System.Windows.Interop.HwndHost>サポートしています[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]を使用するホストされたウィンドウのメッセージの処理などのタスクを実行します。 基本手順は次のとおりです。  
+ ホストするキー、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]内で他のウィンドウ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コンテンツは、<xref:System.Windows.Interop.HwndHost>クラスです。 このクラスは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素ツリーに追加できる [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素でウィンドウをラップします。 <xref:System.Windows.Interop.HwndHost> サポートしています[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]を使用するホストされたウィンドウのメッセージの処理などのタスクを実行します。 基本手順は次のとおりです。  
   
 1.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの要素ツリーを作成します (コードまたはマークアップによって)。 <xref:System.Windows.Interop.HwndHost> の実装を子要素として追加できる適切な許可ポイントを要素ツリーで検索します。 この手順では以後、この要素を予約要素と呼びます。  
   
@@ -132,7 +134,7 @@ ms.lasthandoff: 12/22/2017
  これらの各手順のコードを使用した説明については、「[チュートリアル: WPF での Win32 コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-win32-control-in-wpf.md)」のトピックを参照してください。  
   
 ### <a name="hwnds-inside-wpf"></a>WPF 内の HWND  
- <xref:System.Windows.Interop.HwndHost> は特殊なコントロールであると考えることができます  (技術的には、<xref:System.Windows.Interop.HwndHost>は、<xref:System.Windows.FrameworkElement>派生クラスにはない、<xref:System.Windows.Controls.Control>派生クラスには、相互運用のためのコントロールと見なされることができます)。<xref:System.Windows.Interop.HwndHost> 、基になるを抽象化[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]ホストされているコンテンツの種類になるようの残りの部分[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レンダリングし、入力を処理する必要がありますが、別のコントロールのようなオブジェクトをホストするコンテンツを考慮します。 <xref:System.Windows.Interop.HwndHost>一般に、他のように動作[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.FrameworkElement>(描画およびグラフィックス) の出力の周囲のいくつかの重要な違いがあるし、どのような基になる Hwnd の制限事項に基づく入力 (マウスとキーボード) をサポートできますが、します。  
+ <xref:System.Windows.Interop.HwndHost> は特殊なコントロールであると考えることができます  (技術的には、<xref:System.Windows.Interop.HwndHost>は、<xref:System.Windows.FrameworkElement>派生クラスにはない、<xref:System.Windows.Controls.Control>派生クラスには、相互運用のためのコントロールと見なされることができます)。<xref:System.Windows.Interop.HwndHost> 、基になるを抽象化[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]ホストされているコンテンツの種類になるようの残りの部分[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レンダリングし、入力を処理する必要がありますが、別のコントロールのようなオブジェクトをホストするコンテンツを考慮します。 <xref:System.Windows.Interop.HwndHost> 一般に、他のように動作[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.FrameworkElement>(描画およびグラフィックス) の出力の周囲のいくつかの重要な違いがあるし、どのような基になる Hwnd の制限事項に基づく入力 (マウスとキーボード) をサポートできますが、します。  
   
 #### <a name="notable-differences-in-output-behavior"></a>出力動作の顕著な違い  
   
@@ -172,7 +174,7 @@ ms.lasthandoff: 12/22/2017
  インターフェイスは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 領域と [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] 領域間の遷移で発生する処理をサポートするだけです。 
           [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] 領域では、Tab キーによる移動動作は、Tab キーによる移動の [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] 実装ロジック (ある場合) によって完全に制御されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Interop.HwndHost>  
  <xref:System.Windows.Interop.HwndSource>  
  <xref:System.Windows.Interop>  

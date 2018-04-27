@@ -1,42 +1,44 @@
 ---
-title: "WPF から System.Xaml に移行した型"
-ms.custom: 
+title: WPF から System.Xaml に移行した型
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WPF XAML [XAML Services], migration to System.Xaml
 - XAML [XAML Services], System.Xaml and WPF
 - System.Xaml [XAML Services], types migrated from WPF
 ms.assetid: d79dabf5-a2ec-4e8d-a37a-67c4ba8a2b91
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 86dd2dc74903dfb889ab618622786f5349a5fb32
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f4d4bc0b21770e5ac0c138c140334198d30a740a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>WPF から System.Xaml に移行した型
-[!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] および [!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)]では、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] と [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] の両方に XAML 言語の実装が含まれていました。 WPF XAML 実装に拡張性を与えていたパブリック型の多くは、WindowsBase、PresentationCore、および PresentationFramework アセンブリに存在していました。 同様に、 [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] XAML に拡張性を与えていたパブリック型は System.Workflow.ComponentModel アセンブリにありました。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]では、XAML 関連の型の一部が System.Xaml アセンブリに移行されました。 XAML 言語サービスの一般的な .NET Framework 実装では、もともと特定のフレームワークの XAML 実装によって定義されていた XAML 機能拡張のシナリオの多くを、今では全体的な [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] XAML 言語サポートの一部として使用できるようになりました。 このトピックでは、移行された型を紹介し、移行に伴う問題について説明します。  
+[!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]と[!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)]の両方を[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Windows Workflow Foundation には、XAML 言語の実装が含まれているとします。 WPF XAML 実装に拡張性を与えていたパブリック型の多くは、WindowsBase、PresentationCore、および PresentationFramework アセンブリに存在していました。 同様に、Windows Workflow Foundation の XAML に拡張性を与えているパブリック型は System.Workflow.ComponentModel アセンブリに存在します。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]では、XAML 関連の型の一部が System.Xaml アセンブリに移行されました。 XAML 言語サービスの一般的な .NET Framework 実装では、もともと特定のフレームワークの XAML 実装によって定義されていた XAML 機能拡張のシナリオの多くを、今では全体的な [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] XAML 言語サポートの一部として使用できるようになりました。 このトピックでは、移行された型を紹介し、移行に伴う問題について説明します。  
   
 <a name="assemblies_and_namespaces"></a>   
 ## <a name="assemblies-and-namespaces"></a>アセンブリと名前空間  
  [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] および [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)]では、WPF が XAML をサポートするために実装していた型は、一般に <xref:System.Windows.Markup> 名前空間にありました。 これらの型の多くは WindowsBase アセンブリにありました。  
   
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]には、新しい <xref:System.Xaml> 名前空間と、新しい System.Xaml アセンブリがあります。 当初は WPF XAML 向けとして実装されていた型の多くが、今では XAML の任意の実装用の機能拡張ポイントまたはサービスとして提供されています。 より一般的なシナリオでも使用できるようにするため、型は元の WPF アセンブリから System.Xaml アセンブリに型転送されました。 これにより、他のフレームワーク (WPF や [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]など) のアセンブリを含めることなく、XAML 機能拡張シナリオを有効にできるようになりました。  
+ [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]には、新しい <xref:System.Xaml> 名前空間と、新しい System.Xaml アセンブリがあります。 当初は WPF XAML 向けとして実装されていた型の多くが、今では XAML の任意の実装用の機能拡張ポイントまたはサービスとして提供されています。 より一般的なシナリオでも使用できるようにするため、型は元の WPF アセンブリから System.Xaml アセンブリに型転送されました。 これにより、XAML 機能拡張シナリオの他のフレームワーク (WPF や Windows Workflow Foundation) などのアセンブリを含める必要はありません。  
   
  移行した型のほとんどは、 <xref:System.Windows.Markup> 名前空間に残っています。 これは、既存の実装で CLR 名前空間マッピングが破損するのをファイルごとに回避するための策でもあります。 その結果、 <xref:System.Windows.Markup> の [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 名前空間には、XAML 言語をサポートする一般的な型 (System.Xaml アセンブリにあったもの) と、XAML の WPF 実装に固有の型 (WindowsBase およびその他の WPF アセンブリにあったもの) が混在しています。 System.Xaml に移行されたものの、以前は WPF アセンブリにあった型は、バージョン 4 の WPF アセンブリで型転送がサポートされています。  
   
 ### <a name="workflow-xaml-support-types"></a>ワークフロー XAML サポート型  
- [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] では XAML のサポート型も提供しており、多くの場合は、WPF に相当する同じ短い名前でした。 [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] の XAML サポート型の一覧を次に示します。  
+ Windows Workflow Foundation では、XAML サポート型も提供されており、多くの場合と同等の wpf の同一の短い名前でした。 Windows Workflow Foundation の XAML サポート型の一覧を次に示します。  
   
 -   <xref:System.Workflow.ComponentModel.Serialization.ContentPropertyAttribute>  
   
@@ -44,11 +46,11 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Workflow.ComponentModel.Serialization.XmlnsPrefixAttribute>  
   
- これらのサポート型は引き続き [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] の [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] アセンブリ内に存在し、今でも特定の [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)] アプリケーションで使用できますが、 [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]を使用しないアプリケーションまたはフレームワークでは参照できません。  
+ これらのサポート型は、Windows Workflow Foundation のアセンブリにまだ存在[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]および特定の Windows Workflow Foundation アプリケーションを使用できますただし、これらは参照できませんアプリケーションまたはフレームワークを使用しないで。Windows Workflow Foundation です。  
   
 <a name="markupextension"></a>   
 ## <a name="markupextension"></a>MarkupExtension  
- [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] および [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)]では、WPF の <xref:System.Windows.Markup.MarkupExtension> クラスは WindowsBase アセンブリにありました。 [!INCLUDE[TLA#tla_workflow](../../../includes/tlasharptla-workflow-md.md)]の並列クラスである <xref:System.Workflow.ComponentModel.Serialization.MarkupExtension>は、System.Workflow.ComponentModel アセンブリにありました。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]では、 <xref:System.Windows.Markup.MarkupExtension> クラスは System.Xaml アセンブリに移行されています。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]では、 <xref:System.Windows.Markup.MarkupExtension> は、特定のフレームワーク上に構築される XAML 機能拡張シナリオだけではなく、.NET Framework XAML サービスを使用する任意の XAML 機能拡張シナリオを対象としています。 特定のフレームワーク、またはフレームワーク内のユーザー コードも、可能な限り、XAML 機能拡張の <xref:System.Windows.Markup.MarkupExtension> クラス上に構築する必要があります。  
+ [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] および [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)]では、WPF の <xref:System.Windows.Markup.MarkupExtension> クラスは WindowsBase アセンブリにありました。 Windows Workflow Foundation での並列クラス<xref:System.Workflow.ComponentModel.Serialization.MarkupExtension>、System.Workflow.ComponentModel アセンブリ。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]では、 <xref:System.Windows.Markup.MarkupExtension> クラスは System.Xaml アセンブリに移行されています。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]では、 <xref:System.Windows.Markup.MarkupExtension> は、特定のフレームワーク上に構築される XAML 機能拡張シナリオだけではなく、.NET Framework XAML サービスを使用する任意の XAML 機能拡張シナリオを対象としています。 特定のフレームワーク、またはフレームワーク内のユーザー コードも、可能な限り、XAML 機能拡張の <xref:System.Windows.Markup.MarkupExtension> クラス上に構築する必要があります。  
   
 <a name="markupextension_supporting_service_classes"></a>   
 ## <a name="markupextension-supporting-service-classes"></a>MarkupExtension をサポートするサービス クラス  
@@ -136,5 +138,5 @@ ms.lasthandoff: 12/22/2017
   
  WPF アセンブリと System.Xaml の両方を参照しており、 `include` 名前空間と <xref:System.Windows.Markup> 名前空間の両方に対して <xref:System.Xaml> ステートメントを使用している場合は、あいまいさを排除して型を解決するために、これらの API への呼び出しを完全修飾する必要があることがあります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML サービス](../../../docs/framework/xaml-services/index.md)

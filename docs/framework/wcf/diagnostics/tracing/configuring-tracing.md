@@ -1,28 +1,28 @@
 ---
-title: "トレースの構成"
-ms.custom: 
+title: トレースの構成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-caps.latest.revision: 
+caps.latest.revision: 53
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3beeaec1ed9982fc49f6bf81e2717db862e7882f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7b9590096789af609e83d1a5ed736cf18e27700
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="configuring-tracing"></a>トレースの構成
 ここでは、トレースを有効にする方法、トレースを出力し、トレース レベルを設定するようにトレース ソースを構成する方法、エンドツーエンドのトレース相関をサポートするようにアクティビティ トレースと伝達を設定する方法、およびトレースにアクセスするようにトレース リスナーを設定する方法について説明します。  
@@ -66,7 +66,7 @@ ms.lasthandoff: 12/22/2017
 ```  
   
 > [!NOTE]
->  構成ファイルを編集する、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]でサービス プロジェクト[!INCLUDE[vs_current_short](../../../../../includes/vs-current-short-md.md)]、アプリケーションの構成ファイルを右クリックして、Web でホストされるアプリケーション、appname.exe.config 自己ホスト型アプリケーションの場合は Web.config **ソリューション エクスプ ローラー**です。 選択し、 **WCF 構成の編集**コンテキスト メニュー項目。 これにより、起動、[構成エディター ツール (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)の構成設定を変更できます[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]グラフィカル ユーザー インターフェイスを使用したサービスです。  
+>  構成ファイルを編集する、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]サービス プロジェクトを Visual Studio で、アプリケーションの構成ファイルを右クリックして、Web でホストされるアプリケーション、appname.exe.config 自己ホスト型アプリケーションの場合は Web.config **ソリューション エクスプ ローラー**です。 選択し、 **WCF 構成の編集**コンテキスト メニュー項目。 これにより、起動、[構成エディター ツール (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)の構成設定を変更できます[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]グラフィカル ユーザー インターフェイスを使用したサービスです。  
   
 ## <a name="configuring-trace-sources-to-emit-traces"></a>トレースを出力するためのトレース ソースの構成  
  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、アセンブリごとにトレース ソースを定義します。 アセンブリ内で生成されたトレースは、該当するソースで定義されているリスナーによってアクセスされます。 次のトレース ソースが定義されます。  
@@ -146,7 +146,7 @@ ms.lasthandoff: 12/22/2017
 </system.diagnostics>  
 ```  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]ユーザー定義の作成、トレース ソースを参照してください[トレースを拡張する](../../../../../docs/framework/wcf/samples/extending-tracing.md)です。  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] ユーザー定義の作成、トレース ソースを参照してください[トレースを拡張する](../../../../../docs/framework/wcf/samples/extending-tracing.md)です。  
   
 ## <a name="configuring-trace-listeners-to-consume-traces"></a>トレースを使用するためのトレース リスナーの構成  
  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、実行時にトレース データを処理するリスナーにデータを送信します。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は <xref:System.Diagnostics> に出力の形式が異なる複数の定義済みリスナーを提供します。 カスタム リスナーの種類を追加することもできます。  
@@ -155,7 +155,7 @@ ms.lasthandoff: 12/22/2017
   
  カスタム トレース リスナーは、ネットワーク上のリモート データベースなどにトレースを送信するように構成できます。 アプリケーションを展開するユーザーは、リモート コンピューターのトレース ログに適切なアクセス制御を適用する必要があります。  
   
- また、トレース リスナーはプログラムによって構成することもできます。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][する方法: を作成し、トレース リスナーを初期化](http://go.microsoft.com/fwlink/?LinkId=94648)と[カスタム TraceListener を作成する](http://go.microsoft.com/fwlink/?LinkId=96239)です。  
+ また、トレース リスナーはプログラムによって構成することもできます。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [方法: を作成し、トレース リスナーを初期化](http://go.microsoft.com/fwlink/?LinkId=94648)と[カスタム TraceListener を作成する](http://go.microsoft.com/fwlink/?LinkId=96239)です。  
   
 > [!CAUTION]
 >  `System.Diagnostics.XmlWriterTraceListener` はスレッド セーフではないため、トレース ソースは、トレースを出力するときにリソースを排他的にロックする可能性があります。 このリスナーを使用するように構成されたトレース ソースに多くのスレッドがトレースを出力すると、リソースの競合が発生し、パフォーマンスに重大な問題が生じる場合があります。 この問題を解決するには、スレッド セーフなカスタム リスナーを実装する必要があります。  
@@ -187,13 +187,13 @@ ms.lasthandoff: 12/22/2017
   
  `propagateActivity` 属性は、メッセージ交換に参加している他のエンドポイントにアクティビティを伝達する必要があるかどうかを示します。 この値を `true` に設定すると、任意の 2 つのエンドポイントで生成されたトレース ファイルを取得し、一方のエンドポイントのトレース セットがもう一方のエンドポイントのトレース セットにどのように転送されるかを監視できます。  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]アクティビティ トレースと伝達を参照してください。[伝達](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md)です。  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] アクティビティ トレースと伝達を参照してください。[伝達](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md)です。  
   
  両方`propagateActivity`と`ActivityTracing`System.ServiceModel TraceSource に適用されるブール値。 `ActivityTracing`値は、任意のトレース ソースにも適用されますを含む[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]またはユーザー定義のものです。  
   
  ユーザー定義のトレース ソースでは、`propagateActivity` 属性を使用できません。 ユーザー コード アクティビティ ID の伝達では、ServiceModel `ActivityTracing` 属性を `propagateActivity` に設定しているときは、ServiceModel `true` を設定しないでください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)  
  [方法 : トレース リスナーを作成し初期化する](http://go.microsoft.com/fwlink/?LinkId=94648)  

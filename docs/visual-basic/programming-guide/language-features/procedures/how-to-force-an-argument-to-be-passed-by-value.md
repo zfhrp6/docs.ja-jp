@@ -1,11 +1,12 @@
 ---
-title: "方法: 引数の値渡しを強制する (Visual Basic)"
-ms.custom: 
+title: '方法: 引数の値渡しを強制する (Visual Basic)'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -20,23 +21,23 @@ helpviewer_keywords:
 - procedure arguments [Visual Basic], in parentheses
 - arguments [Visual Basic], changing value
 ms.assetid: 77b4f2d2-1055-4c2f-a521-874d1db86946
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: fdb2df7e114f49c23db9f5b322ca9dd32135ac88
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 30f5e5fe7b9c92f90673dc99a0e299136a38305b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>方法: 引数の値渡しを強制する (Visual Basic)
-プロシージャ宣言では、引き渡し方法を決定します。 パラメーターが宣言されている場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]参照によって、対応する引数を渡すが必要です。 これにより、呼び出し元のコードで引数の基になるプログラミング要素の値を変更する手順です。 このような変更を基になる要素を保護する場合は、オーバーライドできます、`ByRef`引き渡し方法の手順では引数の名前をかっこで囲んだ呼び出します。 このかっこは、呼び出しで引数リストを囲むかっこだけでなく、します。  
+プロシージャ宣言では、引き渡し方法を決定します。 パラメーターが宣言されている場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、参照によって、対応する引数を渡す Visual Basic が必要です。 これにより、呼び出し元のコードで引数の基になるプログラミング要素の値を変更する手順です。 このような変更を基になる要素を保護する場合は、オーバーライドできます、`ByRef`引き渡し方法の手順では引数の名前をかっこで囲んだ呼び出します。 このかっこは、呼び出しで引数リストを囲むかっこだけでなく、します。  
   
  呼び出し元のコードがオーバーライドすることはできません、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)メカニズムです。  
   
 ### <a name="to-force-an-argument-to-be-passed-by-value"></a>引数の値渡しを強制するには  
   
--   対応するパラメーターが宣言されている場合`ByVal`の手順では、追加の手順を実行する必要はありません。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]引数の値渡しを既にが必要です。  
+-   対応するパラメーターが宣言されている場合`ByVal`の手順では、追加の手順を実行する必要はありません。 Visual Basic は、既に、値渡しの引数が必要です。  
   
 -   対応するパラメーターが宣言されている場合`ByRef`の手順で、プロシージャ呼び出しでのかっこ内に引数を囲みます。  
   
@@ -52,7 +53,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  参照によって変数を渡す際に使用する必要あります、`ByRef`このメカニズムを指定するキーワードです。  
   
- 既定で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は引数の値渡しします。 いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これにより、コードを読みやすくします。  
+ Visual Basic では既定では、引数の値渡しです。 いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これにより、コードを読みやすくします。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  プロシージャ パラメーターを宣言する場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、正しいコードの実行は呼び出し元のコードに基になる要素を変更することに依存しています。 呼び出し元のコードは、引数をかっこで囲んででこの呼び出し元のメカニズムをオーバーライドする場合、または変更できない引数を渡す場合は、プロシージャは、基になる要素を変更できません。 これにより、呼び出し元のコードで予期しない結果が生じる可能性があります。  

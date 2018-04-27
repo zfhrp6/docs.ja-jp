@@ -1,7 +1,7 @@
 ---
-title: "タプル (F#)"
-description: "F# タプル、名前のないが、順序付けられた、可能性のある異なる型の値のグループ化について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: タプル (F#)
+description: F# タプル、名前のないが、順序付けられた、可能性のある異なる型の値のグループ化について説明します。
+keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 35069073-9a82-410f-8dea-912e2a152e6d
-ms.openlocfilehash: 996566f2baaea8ab01e5c80e53caea82e9684714
-ms.sourcegitcommit: d95a91d685565f4d95c8773b558752864a6a3d7e
+ms.openlocfilehash: e0a5e5eb08e13bd5cbe9f88a47d4cf4bba19ea22
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="tuples"></a>タプル
 
@@ -89,7 +89,7 @@ int * float * string
 
 ## <a name="interoperation-with-c-tuples"></a>C# の組との相互運用
 
-C# 7 では、組を言語で導入されました。  C# 内の組構造体と f# の構造体のタプルに同じです。  C# と相互運用する必要がある場合は、構造体の組を使用する必要があります。
+C# 7.0 では、組を言語で導入されました。  C# 内の組構造体と f# の構造体のタプルに同じです。  C# と相互運用する必要がある場合は、構造体の組を使用する必要があります。
 
 これは簡単に行えます。  たとえば、c# のクラスに組を渡すし、これは、組でも、その結果を使用する必要があるとします。
 
@@ -119,7 +119,7 @@ let struct (newX, newY) = Example.AddOneToXAndY(struct (1, 2))
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/tuples/interop.fsx#L5-L12)]
 
-パターンを作成する必要があります 1 つの組が一致し、他の構成要素を構築します。  例:
+パターンを作成する必要があります 1 つの組が一致し、他の構成要素を構築します。  例えば:
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/tuples/interop.fsx#L18-L22)]
 
@@ -130,9 +130,9 @@ let struct (newX, newY) = Example.AddOneToXAndY(struct (1, 2))
 
 ### <a name="compiled-form-of-struct-tuples"></a>構造体の組をコンパイルした形式
 
-構造体の組 (たとえば、 `struct (x, y)`)、参照の組から基本的に異なります。  コンパイル、<xref:System.ValueTuple>アリティ、または型パラメーターの数によってオーバー ロードされた型。  これらと同じ[c# 7 組](../../csharp/tuples.md)と[Visual Basic 2017 組](../../visual-basic/programming-guide/language-features/data-types/tuples.md)、双方向の相互運用とします。
+構造体の組 (たとえば、 `struct (x, y)`)、参照の組から基本的に異なります。  コンパイル、<xref:System.ValueTuple>アリティ、または型パラメーターの数によってオーバー ロードされた型。  これらと同じ[c# 7.0 組](../../csharp/tuples.md)と[Visual Basic 2017 組](../../visual-basic/programming-guide/language-features/data-types/tuples.md)、双方向の相互運用とします。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [F# 言語リファレンス](index.md)
 
 [F# の型](fsharp-types.md)

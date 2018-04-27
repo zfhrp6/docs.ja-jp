@@ -1,10 +1,11 @@
 ---
-title: "For Each...Next ステートメント (Visual Basic)"
+title: For Each...Next ステートメント (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.ForEach
@@ -27,14 +28,14 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For Each...Next statements
 - iteration
 ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
-caps.latest.revision: "56"
+caps.latest.revision: 56
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 11601eb1caad1c6cc6d9898f590436a977a78fa1
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: b1593d279d4338ebadca803fe757a201cbcd654b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next ステートメント (Visual Basic)
 コレクションの各要素に対して、ステートメントのグループを繰り返します。  
@@ -97,7 +98,7 @@ Next [ element ]
   
  任意の数を配置する`Exit For`内のステートメント、`For Each`ループします。 使用すると内で入れ子になった`For Each`ループ、`Exit For`終了して入れ子の上位のレベルに最も内側のループと転送コントロールの実行制御が移ります。  
   
- `Exit For`いくつかの条件の評価後は、よく使用などで、`If`しています.`Then`...`Else`構造体。 使用することができます`Exit For`次の条件。  
+ `Exit For` いくつかの条件の評価後は、よく使用などで、`If`しています.`Then`...`Else`構造体。 使用することができます`Exit For`次の条件。  
   
 -   反復処理を続行するは、不要なまたは不可能です。 値が間違っているか、終了要求によってためと考えられます。  
   
@@ -133,7 +134,7 @@ Next [ element ]
   
  データ型`element`の要素のデータ型になるようにする必要があります`group`に変換することができます。  
   
- データ型`group`列挙可能な配列またはコレクションに参照する参照型である必要があります。 つまり通常`group`を実装するオブジェクトを参照して、<xref:System.Collections.IEnumerable>のインターフェイス、`System.Collections`名前空間または<xref:System.Collections.Generic.IEnumerable%601>のインターフェイス、`System.Collections.Generic`名前空間。 `System.Collections.IEnumerable`定義、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッドで、コレクションの列挙子オブジェクトを返します。 列挙子オブジェクトが実装する、`System.Collections.IEnumerator`のインターフェイス、`System.Collections`名前空間を公開し、<xref:System.Collections.IEnumerator.Current%2A>プロパティおよび<xref:System.Collections.IEnumerator.Reset%2A>と<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドです。 Visual Basic では、これらを使用して、コレクションを走査します。  
+ データ型`group`列挙可能な配列またはコレクションに参照する参照型である必要があります。 つまり通常`group`を実装するオブジェクトを参照して、<xref:System.Collections.IEnumerable>のインターフェイス、`System.Collections`名前空間または<xref:System.Collections.Generic.IEnumerable%601>のインターフェイス、`System.Collections.Generic`名前空間。 `System.Collections.IEnumerable` 定義、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッドで、コレクションの列挙子オブジェクトを返します。 列挙子オブジェクトが実装する、`System.Collections.IEnumerator`のインターフェイス、`System.Collections`名前空間を公開し、<xref:System.Collections.IEnumerator.Current%2A>プロパティおよび<xref:System.Collections.IEnumerator.Reset%2A>と<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドです。 Visual Basic では、これらを使用して、コレクションを走査します。  
   
 ### <a name="narrowing-conversions"></a>縮小変換  
  ときに`Option Strict`に設定されている`On`、縮小変換に通常はコンパイラ エラーが発生します。 `For Each`ステートメント、ただし、内の要素からの変換`group`に`element`が評価され、実行時に実行し、コンパイラによってエラーが発生縮小変換は抑制されます。  
@@ -149,7 +150,7 @@ Next [ element ]
   
  **コレクションを変更します。** によって返される列挙子オブジェクト<xref:System.Collections.IEnumerable.GetEnumerator%2A>通常することは追加、削除、置換、または任意の要素を並べ替えることによりコレクションを変更します。 開始した後にコレクションを変更する場合、`For Each`しています.`Next`ループ、列挙子オブジェクトは、無効になり、[次へ] しようとすると、要素アクセス、<xref:System.InvalidOperationException>例外。  
   
- ただし、によって決定されていない変更のこのブロック[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]の実装ではなく、<xref:System.Collections.IEnumerable>インターフェイスです。 実装することは`IEnumerable`ことがイテレーション中に変更が可能です。 このような動的な変更を行うを検討している場合は、特性を理解することを確認してください、`IEnumerable`を使用しているコレクションを実装します。  
+ ただし、この変更のブロックされていない決定 Visual Basic での実装ではなく、<xref:System.Collections.IEnumerable>インターフェイスです。 実装することは`IEnumerable`ことがイテレーション中に変更が可能です。 このような動的な変更を行うを検討している場合は、特性を理解することを確認してください、`IEnumerable`を使用しているコレクションを実装します。  
   
  **コレクションの要素を変更します。** <xref:System.Collections.IEnumerator.Current%2A>列挙子オブジェクトのプロパティが[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)、し、コレクションの各要素のローカル コピーを返します。 つまり、要素自体を変更できないことで、`For Each`しています.`Next`ループします。 対して行った変更の影響からローカルのコピーのみ`Current`し、基になるコレクションに反映されることはありません。 ただし、要素が参照型の場合は、ポイントするインスタンスのメンバーを変更できます。 次の例を変更、`BackColor`のそれぞれに所属`thisControl`要素。 ただし、変更することはできません、`thisControl`自体です。  
   
@@ -179,7 +180,7 @@ End Sub
   
  [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コレクション](../../../standard/collections/index.md)  
  [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
  [ループ構造](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
