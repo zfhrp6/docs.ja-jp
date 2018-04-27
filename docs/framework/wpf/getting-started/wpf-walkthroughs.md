@@ -1,27 +1,29 @@
 ---
-title: "WPF のチュートリアル"
-ms.custom: 
+title: WPF のチュートリアル
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - walkthroughs [WPF]
 - WPF walkthroughs [WPF]
 ms.assetid: c29bde96-0389-4aff-a9fb-cd678f66b7f7
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a6407ccb093d6bdba4e3953ffa1117cf4b56c119
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c99d23769e99ea01fe1e1d264361a933228f4c1c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wpf-walkthroughs"></a>WPF のチュートリアル
 チュートリアルでは、一般的なシナリオの手順を説明します。 このため、製品や特定の機能領域について知るための最初のステップとして適しています。  
@@ -30,7 +32,7 @@ ms.lasthandoff: 01/19/2018
   
 ## <a name="wpf-designer-walkthroughs"></a>WPF デザイナーのチュートリアル  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[チュートリアル: WPF デザイナーでの単純な WPF アプリケーションの作成](http://msdn.microsoft.com/library/2d412231-dbdf-4e69-b060-4f2b246c2027)|単純な WPF アプリケーションをビルドする方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]です。|  
 |[チュートリアル: 動的なレイアウトを構築します。](http://msdn.microsoft.com/library/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|使用して動的なレイアウトを作成する方法を示します、<xref:System.Windows.Controls.Grid>コントロールのパネルです。|  
@@ -40,7 +42,7 @@ ms.lasthandoff: 01/19/2018
   
 ## <a name="wpf-walkthroughs"></a>WPF のチュートリアル  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[チュートリアル: 初めての WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)|WPF コントロール、レイアウトやデータ バインディングなどの一般的な機能の多くを使用して、WPF アプリケーションの作成について説明します。|  
 |[XAML を使用したボタンの作成](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)|アニメーションのボタンを作成する方法を示します。|  
@@ -49,16 +51,16 @@ ms.lasthandoff: 01/19/2018
   
 ## <a name="migration-and-interoperability-in-wpf"></a>移行と WPF の相互運用性  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[チュートリアル: WPF での Windows フォーム コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)|Windows フォームをホストする方法を示します<xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType>WPF アプリケーションで制御します。|  
-|[チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)|ホストする方法を示します、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]の複合コントロールをデータ エントリ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。|  
+|[チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)|Windows フォーム データ エントリの複合コントロールをホストする方法を示します、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。|  
 |[チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)|Windows フォーム アプリケーションで、WPF データ エントリの複合コントロールをホストする方法を示します。|  
 |[チュートリアル: WPF での Windows フォーム コントロールの配置](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)|WPF レイアウト機能を使用して、ハイブリッド アプリケーションで Windows フォーム コントロールを配置する方法を示します。|  
 |[チュートリアル: ハイブリッド アプリケーションでのデータへのバインディング](../../../../docs/framework/wpf/advanced/walkthrough-binding-to-data-in-hybrid-applications.md)|Windows フォームと WPF の両方のコントロールを含むハイブリッド アプリケーションでデータ バインディングを使用する方法を示します。|  
   
 ## <a name="related-sections"></a>関連項目  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[Visual Studio のチュートリアル](http://msdn.microsoft.com/library/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Visual Studio でのプログラミングのすべての領域には、チュートリアルの関連する一覧を表示します。|

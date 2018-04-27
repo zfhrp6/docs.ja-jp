@@ -16,16 +16,16 @@ ms.author: douglasl
 manager: craigg
 ms.workload:
 - dotnet
-ms.openlocfilehash: be91650c7c06a3bdb5410166cc560ffc9a65d542
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: d86a3f97bcdb748d397dcf5edf20d4d8ce945bc6
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ と ADO.NET
 現在、多くのビジネス開発者が 2 つ (以上) のプログラミング言語を使用する必要があります: (Visual c# や Visual Basic)、ビジネス ロジックやプレゼンテーション層は高級言語と、データベースとやり取りするクエリ言語 (など[!INCLUDE[tsql](../../../../includes/tsql-md.md)])。 開発者は実質的に複数の言語に精通していることが要求され、開発環境における言語の不整合が生じる原因にもなっています。 たとえば、データ アクセス API を使用してデータベースを照会するアプリケーションでは、クエリは文字列リテラルとして引用符で囲んで指定する必要があります。 コンパイラはこのクエリ文字列を認識できないため、エラー (無効な構文、参照されている列または行が実際に存在するかどうかなど) のチェック機構が働きません。 クエリ パラメーターの型チェックや `IntelliSense` のサポートもありません。  
   
- [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] により、開発者はアプリケーション コード内でプログラミング言語とクエリ言語を使い分けることなく、セット ベースのクエリを作成できます。 インメモリのデータ構造、XML ドキュメント、SQL データベース、[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] オブジェクトなど、列挙可能な各種データ ソース (つまり、<xref:System.Collections.IEnumerable> インターフェイスを実装するデータ ソース) に対する <xref:System.Data.DataSet> クエリを作成できます。 実装方法には違いがありますが、こうした列挙可能なデータ ソースはすべて同じ構文および言語構造を公開しています。 クエリはプログラミング言語のみで作成できるため、コンパイラによる認識も検証もできない文字列リテラルとしてクエリ言語を記述する必要はありません。 クエリをプログラミング言語に統合することにより、コンパイル時の型チェックや構文チェック、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] の使用などが可能となるため、`IntelliSense` プログラマは生産性を高めることができます。 クエリのデバッグやエラーの修正に伴う手間は、これらの機能によって軽減されます。  
+ [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] により、開発者はアプリケーション コード内でプログラミング言語とクエリ言語を使い分けることなく、セット ベースのクエリを作成できます。 インメモリのデータ構造、XML ドキュメント、SQL データベース、[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] オブジェクトなど、列挙可能な各種データ ソース (つまり、<xref:System.Collections.IEnumerable> インターフェイスを実装するデータ ソース) に対する <xref:System.Data.DataSet> クエリを作成できます。 実装方法には違いがありますが、こうした列挙可能なデータ ソースはすべて同じ構文および言語構造を公開しています。 クエリはプログラミング言語のみで作成できるため、コンパイラによる認識も検証もできない文字列リテラルとしてクエリ言語を記述する必要はありません。 Visual Studio プログラマは、コンパイル時の型チェックや構文は次のチェックを提供することによって生産性を向上させることもできますクエリに統合するプログラミング言語と`IntelliSense`です。 クエリのデバッグやエラーの修正に伴う手間は、これらの機能によって軽減されます。  
   
  SQL テーブルのデータをメモリ内のオブジェクトに転送することは、面倒であるだけでなく間違いの元にもなります。 [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] および [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] で実装された [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] プロバイダーは、ソース データを <xref:System.Collections.IEnumerable> ベースのオブジェクト コレクションに変換します。 プログラマからは、クエリの実行時も更新時も常にデータが <xref:System.Collections.IEnumerable> コレクションとして見えます。 これらのコレクションに対するクエリを記述する際には、`IntelliSense` の機能を完全に利用できます。  
   

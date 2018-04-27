@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1e194a0784eb27043bbd0c127cde6883b4fafb2e
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 2fa6efdc61620647d5c6318746e61e09cdde7a46
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Windows Communication Foundation とは
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、サービス指向アプリケーションを構築するためのフレームワークです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を使用すると、1 つのサービス エンドポイントから別のサービス エンドポイントに非同期メッセージとしてデータを送信できます。 サービス エンドポイントには、IIS でホストされている、継続的に使用可能なサービスの一部を使用したり、アプリケーションでホストされているサービスを使用できます。 エンドポイントには、サービス エンドポイントからデータを要求するサービスのクライアントを使用できます。 メッセージは XML として送信された 1 文字または 1 語の簡単なものでも、バイナリ データのストリームのような複雑なものでも構いません。 サンプル シナリオをいくつか挙げます。  
@@ -80,7 +80,7 @@ ms.lasthandoff: 04/16/2018
   
 -   **非揮発性メッセージ**  
   
-     非揮発性メッセージは、通信の中断によって失われることがないメッセージです。 非揮発性メッセージ パターンのメッセージは常にデータベースに保存されます。 中断が発生した場合、接続復旧時にデータベースでメッセージの交換を再開できます。 [!INCLUDE[wf](../../../includes/wf-md.md)]を使用して非揮発性メッセージを作成することもできます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Workflow Services](../../../docs/framework/wcf/feature-details/workflow-services.md)。  
+     非揮発性メッセージは、通信の中断によって失われることがないメッセージです。 非揮発性メッセージ パターンのメッセージは常にデータベースに保存されます。 中断が発生した場合、接続復旧時にデータベースでメッセージの交換を再開できます。 Windows Workflow Foundation (WF) を使用して非揮発性メッセージを作成することもできます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Workflow Services](../../../docs/framework/wcf/feature-details/workflow-services.md)。  
   
 -   **トランザクション**  
   
@@ -97,7 +97,7 @@ ms.lasthandoff: 04/16/2018
 ## <a name="wcf-integration-with-other-microsoft-technologies"></a>WCF と他のマイクロソフト テクノロジと統合  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は柔軟性の高いプラットフォームです。 この柔軟性を活かして、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は他のいくつかの Microsoft 製品でも使用されています。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の基本を理解することで、これらの製品を使用するときにもすぐにこの利点を活用できます。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] とペアを組んでいる最初のテクノロジは、Windows Workflow Foundation (WF) です。 ワークフロー「アクティビティ」としてワークフローの手順をカプセル化することによってアプリケーションの開発を簡略化します。 [!INCLUDE[wf2](../../../includes/wf2-md.md)]の最初のバージョンでは、開発者がワークフローのホストを作成する必要がありました。 次のバージョンの [!INCLUDE[wf2](../../../includes/wf2-md.md)] は [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]と統合されました。 これにより、任意のワークフローを簡単に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスでホストできるようになりました。これは [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]で WF/WCF のプロジェクトの種類を自動的に選択して実行できます。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] とペアを組んでいる最初のテクノロジは、Windows Workflow Foundation (WF) です。 ワークフロー「アクティビティ」としてワークフローの手順をカプセル化することによってアプリケーションの開発を簡略化します。 最初のバージョンの Windows Workflow Foundation では、開発者は、ワークフローのホストを作成する必要があります。 次のバージョンの Windows Workflow Foundation が統合された[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]です。 これにより、任意のワークフローを簡単に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスでホストできるようになりました。これは [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]で WF/WCF のプロジェクトの種類を自動的に選択して実行できます。  
   
  Microsoft BizTalk Server R2 も [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を通信テクノロジに使用しています。 BizTalk は、1 つの標準化形式のデータを受け取り、別の形式に変換するように設計されています。 メッセージは、厳密なマッピングか、またはワークフロー エンジンなどの BizTalk 機能の 1 つを使用してメッセージを変換できる、中央管理のメッセージ ボックスに配信する必要があります。 BizTalk では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 業務基幹 (LOB) アダプターを使用してメッセージをメッセージ ボックスに配信できます。  
   

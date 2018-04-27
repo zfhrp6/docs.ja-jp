@@ -17,14 +17,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d6b61f5ae7d0e7f3102e0566fb1a6eff3ca072d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ca790f97eb677414655b583e46cb693506ed0cc2
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-workflow-foundation"></a>Windows Workflow Foundation
-ここでは、[!INCLUDE[wf](../../../includes/wf-md.md)] のプログラミング モデル、サンプル、およびツールについて説明します。  
+このセクションでは、プログラミング モデル、サンプル、および Windows Workflow Foundation (WF) のツールについて説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Windows Workflow ドキュメントのガイド](../../../docs/framework/windows-workflow-foundation/guide-to-the-documentation.md)  
@@ -40,16 +40,16 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] の Windows Workflow Foundation の新機能について説明します。  
   
  [Windows Workflow の概念](../../../docs/framework/windows-workflow-foundation/conceptual-overview.md)  
- [!INCLUDE[wf2](../../../includes/wf2-md.md)] の背景となる、より大きな概念について説明する一連のトピックです。  
+ Windows Workflow Foundation の背後にあるより大きな概念を説明するトピックのセット。  
   
  [チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)  
- [!INCLUDE[wf2](../../../includes/wf2-md.md)] アプリケーションのプログラミングの概要を説明する一連のチュートリアル トピックです。  
+ Windows Workflow Foundation アプリケーションのプログラミングを紹介するチュートリアルのトピックのセット。  
   
  [Windows Workflow Foundation プログラミング](../../../docs/framework/windows-workflow-foundation/programming.md)  
  [!INCLUDE[wf1](../../../includes/wf1-md.md)] の熟練したプログラマになるために理解する必要のある一連の入門トピックです。  
   
  [Windows Workflow Foundation の拡張](../../../docs/framework/windows-workflow-foundation/extend.md)  
- 要件に併せて [!INCLUDE[wf2](../../../includes/wf2-md.md)] を拡張またはカスタマイズする方法について説明する一連のトピックです。  
+ 一連のトピックを拡張したり、ニーズに合わせて Windows Workflow Foundation をカスタマイズする方法について説明します。  
   
  [.NET Framework 4.5 の Windows Workflow Foundation 用語集](../../../docs/framework/windows-workflow-foundation/glossary.md)  
  WF に固有の用語の一覧を定義します。  

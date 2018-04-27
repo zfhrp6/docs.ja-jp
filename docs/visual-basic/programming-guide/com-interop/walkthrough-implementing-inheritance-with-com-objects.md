@@ -17,11 +17,11 @@ ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 10c6bdf46e351b23705107da3b693531718cfd37
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b03b81c9e04e79f8ce7763ecf8a489d248ff480b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>チュートリアル: COM オブジェクトによる継承の実装 (Visual Basic)
 Visual Basic クラスを派生させることができます`Public`も以前のバージョンの Visual Basic で作成された COM オブジェクトのクラスです。 プロパティと COM オブジェクトから継承されたクラスのメソッドをオーバーライドまたはプロパティと同様にオーバー ロード、およびその他の任意の基本クラスのメソッドをオーバーライドまたはオーバー ロードできます。 COM オブジェクトからの継承は、再コンパイルしたくない既存のクラス ライブラリがある場合に便利です。  
@@ -81,7 +81,7 @@ Visual Basic クラスを派生させることができます`Public`も以前�
     >  COM オブジェクトとして Visual Basic で作成したクラスを公開することが true COM オブジェクトではないと、このチュートリアルでは使用できません。 詳細については、「 [.NET Framework アプリケーションにおける COM 相互運用性](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
   
 ## <a name="interop-assemblies"></a>相互運用機能アセンブリ  
- 次の手順では、(COM オブジェクトなど) のアンマネージ コードとマネージ コード間の仲介役として機能する、相互運用機能アセンブリを作成します[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を使用します。 Visual Basic によって作成される相互運用機能アセンブリでは、ように、COM オブジェクトの操作の詳細を処理*相互運用マーシャ リング*、パッケージ パラメーターと戻り値を等価のデータの処理の種類に移動してCOM オブジェクトです。 Visual Basic アプリケーション内の参照は、実際の COM オブジェクトではなく、相互運用機能アセンブリを指します。  
+ 次の手順では、アンマネージ コード (COM オブジェクトなど) および Visual Studio を使用してマネージ コード間の仲介役として機能する、相互運用機能アセンブリを作成します。 Visual Basic によって作成される相互運用機能アセンブリでは、ように、COM オブジェクトの操作の詳細を処理*相互運用マーシャ リング*、パッケージ パラメーターと戻り値を等価のデータの処理の種類に移動してCOM オブジェクトです。 Visual Basic アプリケーション内の参照は、実際の COM オブジェクトではなく、相互運用機能アセンブリを指します。  
   
 #### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Visual Basic 2005 およびそれ以降のバージョンで COM オブジェクトを使用するには  
   

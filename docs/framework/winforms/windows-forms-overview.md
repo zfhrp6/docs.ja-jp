@@ -1,27 +1,29 @@
 ---
-title: "Windows フォームの概要"
-ms.custom: 
+title: Windows フォームの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bc9ff97583566bd950486d96bd100f05ef651c7e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2620d8314a11e0a90864120c40dbc3935cce75fe
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-forms-overview"></a>Windows フォームの概要
 次の概要では、スマート クライアント アプリケーションの利点、Windows フォームのプログラミングの主な機能について説明し、Windows フォームを使用して今日の企業とエンドユーザーのニーズを満たすスマート クライアントを構築する方法を示します。  
@@ -30,7 +32,7 @@ ms.lasthandoff: 12/22/2017
  Windows フォームを使用して、スマート クライアントを開発します。 *スマート クライアント*は、配置と更新が容易で、インターネットに接続しているときも切断しているときも動作し、従来の Windows ベースのアプリケーションよりも安全な方法でローカル コンピューター上のリソースにアクセスできる、リッチなグラフィックスのアプリケーションです。  
   
 ### <a name="building-rich-interactive-user-interfaces"></a>リッチで対話型のユーザー インターフェイスの構築  
- Windows フォームは、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のためのスマート クライアント テクノロジであり、ファイル システムへの読み書きなど、アプリケーションの一般的なタスクを簡略化するマネージ ライブラリのセットです。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] などの開発環境を使用する場合、情報を表示して、ユーザーからの入力を要求し、ネットワーク経由でリモート コンピューターと通信する Windows フォームのスマート クライアント アプリケーションを作成できます。  
+ Windows フォームは、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のためのスマート クライアント テクノロジであり、ファイル システムへの読み書きなど、アプリケーションの一般的なタスクを簡略化するマネージ ライブラリのセットです。 Visual Studio などの開発環境を使用する場合は、ネットワーク経由でリモート コンピューターと情報を表示、ユーザー入力を要求し、通信する Windows フォームのスマート クライアント アプリケーションを作成できます。  
   
  Windows フォームでは、"*フォーム*" はユーザーに情報を表示するビジュアル サーフェイスです。 通常は、コントロールをフォームに追加して、マウスのクリックやキーの押下などのユーザー アクションへの応答を開発することで、Windows フォーム アプリケーションを開発します。 "*コントロール*" は、データを表示したりデータ入力を受け入れたりする独立したユーザー インターフェイス (UI) 要素です。  
   
@@ -40,7 +42,7 @@ ms.lasthandoff: 12/22/2017
   
  Windows フォームには、Microsoft Office のようなハイエンド アプリケーションの機能をエミュレートする豊富な UI コントロールが用意されています。 <xref:System.Windows.Forms.ToolStrip> コントロールと <xref:System.Windows.Forms.MenuStrip> コントロールを使用する場合、テキストとイメージを含むツールバーとメニューを作成したり、サブメニューを表示したり、テキスト ボックスやコンボ ボックスなど、その他のコントロールをホストしたりできます。  
   
- Windows フォーム デザイナーで [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] をドラッグ アンド ドロップすると、Windows フォーム アプリケーションを簡単に作成できます。 コントロールをカーソルで選択して、フォームの任意の場所に追加するだけです。 デザイナーがグリッド線やスナップ線などのツールを提供するので、コントロールの調整が楽になります。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用する場合も、コマンド ラインでコンパイルする場合も、<xref:System.Windows.Forms.FlowLayoutPanel>、<xref:System.Windows.Forms.TableLayoutPanel>、および <xref:System.Windows.Forms.SplitContainer> の各コントロールを使用して、短時間で高度なフォーム レイアウトを作成できます。  
+ Visual Studio ドラッグ アンド ドロップの Windows フォーム デザイナー、Windows フォーム アプリケーションを簡単に作成できます。 コントロールをカーソルで選択して、フォームの任意の場所に追加するだけです。 デザイナーがグリッド線やスナップ線などのツールを提供するので、コントロールの調整が楽になります。 Visual Studio を使用した場合、またはコマンドラインでコンパイルするかどうかは、使用して、 <xref:System.Windows.Forms.FlowLayoutPanel>、<xref:System.Windows.Forms.TableLayoutPanel>と<xref:System.Windows.Forms.SplitContainer>短時間で高度なを作成するコントロールのフォーム レイアウトです。  
   
  最後に、独自のカスタム UI 要素を作成する必要がある場合は、<xref:System.Drawing> 名前空間に、線、円、およびその他の図形をフォーム上に直接表示するクラスが多数含まれています。  
   
@@ -64,7 +66,7 @@ ms.lasthandoff: 12/22/2017
   
  [データ ソース] ウィンドウを使用すると、データ バインド コントロールを簡単に作成できます。 ウィンドウには、プロジェクト内のデータベース、Web サービス、オブジェクトなどのデータ ソースが表示されます。 このウィンドウからプロジェクトのフォームに項目をドラッグして、データ バインド コントロールを作成できます。 また、[データ ソース] ウィンドウから既存のコントロールにオブジェクトをドラッグして、データに既存のコントロールをバインドすることもできます。  
   
- Windows フォームで管理できる別の種類のデーデータ バインドは "*設定*" です。 ほとんどのスマート クライアント アプリケーションは、フォームの前回のサイズなどの実行時の状態に関する情報を保持し、保存されたファイルの既定の場所などのユーザー設定のデータを保持する必要があります。 アプリケーション設定機能は、クライアント コンピューターに両方の種類の設定を保存する簡単な方法を提供することで、こうした要件に対応します。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] またはコード エディターを使用してこれらの設定を定義したら、設定は XML として永続化され、実行時に自動的にメモリに読み取られます。  
+ Windows フォームで管理できる別の種類のデーデータ バインドは "*設定*" です。 ほとんどのスマート クライアント アプリケーションは、フォームの前回のサイズなどの実行時の状態に関する情報を保持し、保存されたファイルの既定の場所などのユーザー設定のデータを保持する必要があります。 アプリケーション設定機能は、クライアント コンピューターに両方の種類の設定を保存する簡単な方法を提供することで、こうした要件に対応します。 Visual Studio またはコード エディターを使用してこれらの設定を定義した後設定は XML として永続化され、自動的に実行時にメモリに読み込ま。  
   
 #### <a name="help-displaying-and-manipulating-data"></a>データの表示と操作に関するヘルプ  
  これらの機能を使用する方法の手順を追った説明については、次のヘルプ トピックを参照してください。  
@@ -77,7 +79,7 @@ ms.lasthandoff: 12/22/2017
 |アプリケーション設定を使用する|[方法 : アプリケーション設定を作成する](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)|  
   
 ### <a name="deploying-applications-to-client-computers"></a>クライアント コンピューターにアプリケーションを配置する  
- アプリケーションを作成した後、ユーザーにアプリケーションを送信して、独自のクライアント コンピューターにインストールして実行できるようにする必要があります。 [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] テクノロジを使用する場合、数回クリックするだけで、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] の中からアプリケーションを配置して、Web 上のアプリケーションを指す URL をユーザーに提供することができます。 [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] は、アプリケーションのすべての要素と依存関係を管理し、クライアント コンピューターにアプリケーションが正しくインストールされていることを確認します。  
+ アプリケーションを作成した後、ユーザーにアプリケーションを送信して、独自のクライアント コンピューターにインストールして実行できるようにする必要があります。 使用すると、[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]テクノロジ、数回のクリックを使用して、Visual Studio 内からアプリケーションを配置して、Web 上のアプリケーションを指す URL をユーザーに提供します。 [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] は、アプリケーションのすべての要素と依存関係を管理し、クライアント コンピューターにアプリケーションが正しくインストールされていることを確認します。  
   
  [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] アプリケーションは、ユーザーがネットワークに接続されている場合にのみ実行するか、オンラインとオフラインの両方で実行するかを構成することができます。 アプリケーションがオフライン操作をサポートするよう指定すると、[!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] はユーザーの **[スタート]** メニューにアプリケーションへのリンクを追加します。 ユーザーは、URL を使用せずにアプリケーションを開くことができます。  
   
@@ -103,7 +105,7 @@ ms.lasthandoff: 12/22/2017
 |フォームの内容を印刷する|[方法 : Windows フォームでグラフィックスを印刷する](../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|  
 |Windows フォームのセキュリティについての詳細|[Windows フォームのセキュリティの概要](../../../docs/framework/winforms/security-in-windows-forms-overview.md)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームについて](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
  [新しい Windows フォームの作成](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
  [ToolStrip コントロールの概要](../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  

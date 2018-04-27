@@ -1,23 +1,24 @@
 ---
-title: "プロパティ昇格アクティビティ"
-ms.custom: 
+title: プロパティ昇格アクティビティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 802196b7-1159-4c05-b41b-d3bfdfcc88d9
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 244cea33b684a8674681c4d1974d5d857c4c402b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 12f7aa4bd10a22a3cd3ea361e32016b95e41e46b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="property-promotion-activity"></a>プロパティ昇格アクティビティ
 このサンプルでは、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> 昇格機能をワークフロー作成に直接統合するエンド ツー エンドのソリューションを示します。 昇格機能の使用を単純化する構成要素、ワークフロー アクティビティ、およびワークフロー拡張機能のコレクションが用意されています。 また、サンプルには、このコレクションの使用方法を示す簡単なワークフローが含まれています。  
@@ -109,7 +110,7 @@ go
  `promotedValue` 要素の順序は、`InstancePromotedProperties` ビューの昇格されたプロパティの位置と相関しています。 `Count` は最初の `promotedValue` 要素です。 その結果、`Value1` ビューの `InstancePromotedProperties` 列にマップされます。 `LastIncrementedAt` は 2 番目の `promotedValue` 要素です。 その結果、`Value2` ビューの `InstancePromotedProperties` 列にマップされます。  
   
 #### <a name="using-the-promotevalue-activity"></a>PromoteValue アクティビティの使用  
- [!INCLUDE[wf2](../../../../includes/wf2-md.md)] デザイナーで CounterService.xamlx ファイルを確認します。 WF の定義には、`PromoteValue<DateTime>` および `PromoteValue<Int32>` の 2 つの特別なアクティビティがあります。  
+ Windows Workflow Foundation Designer で CounterService.xamlx ファイルを調べます。 WF の定義には、`PromoteValue<DateTime>` および `PromoteValue<Int32>` の 2 つの特別なアクティビティがあります。  
   
  `PromoteValue<Int32>` アクティビティには、`Name` として定義されているその `Count` メンバーがあります。 これは、構成の最初の `promotedValue` 要素と一致し、`Value` ワークフロー変数として定義されているその `Counter` があります。 ワークフローが永続化されると、`Counter` ワークフロー変数は昇格されたプロパティとして `Value1` ビューの `InstancePromotedProperties` 列に保存されます。  
   
@@ -200,5 +201,5 @@ public class SqlWorkflowInstanceStorePromotionBehavior :
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Persistence\PropertyPromotionActivity`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

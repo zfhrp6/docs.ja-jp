@@ -1,24 +1,26 @@
 ---
-title: "双方向通信"
-ms.custom: 
+title: 双方向通信
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3ea6ea34e83f9c813062620c5029ea4b812cd777
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9eb37e7e307bc9748113e5580ee96c8863d3ef89
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="two-way-communication"></a>双方向通信
 このサンプルでは、双方向のトランザクション化キューを MSMQ を介して実行する方法を示します。 このサンプルでは、`netMsmqBinding` バインディングを使用します。 このサンプルのサービスは自己ホスト型コンソール アプリケーションであるので、サンプルを実行すると、キューに置かれたメッセージをサービスが受信するようすを観察できます。  
@@ -33,33 +35,33 @@ ms.lasthandoff: 12/22/2017
  このサンプルでは、キューを使用する双方向通信の例を示します。 クライアントは、トランザクションのスコープ内から発注書をキューに送信します。 サービスは、注文を受信して処理し、注文ステータスをキューからクライアントに返信します。これらの処理を、トランザクションのスコープ内で実行します。 双方向通信を使用するには、クライアントとサービスの両方がキューを使用して、発注書や注文ステータスをキューに追加する必要があります。  
   
  サービス コントラクト `IOrderProcessor` は、キューの使用に合わせた一方向サービス操作を定義します。 サービス操作には、注文ステータスの送信に使用される応答エンドポイントが含まれます。 応答エンドポイントは、注文ステータスをクライアントに返信するためのキューの URI です。 注文処理アプリケーションは、このコントラクトを実装します。  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
     [OperationContract(IsOneWay = true)]  
     void SubmitPurchaseOrder(PurchaseOrder po, string   
                                   reportOrderStatusTo);  
-}  
-```  
+}
+```
   
  注文ステータスを送信する応答コントラクトは、クライアントが指定します。 クライアントは注文ステータス コントラクトを実装します。 サービスは、このコントラクトについて生成されたプロキシを使用して、注文ステータスをクライアントに返信します。  
-  
-```  
+
+```csharp
 [ServiceContract]  
 public interface IOrderStatus  
 {  
     [OperationContract(IsOneWay = true)]  
     void OrderStatus(string poNumber, string status);  
 }  
-```  
-  
+```
+
  サービス操作は、送信された発注書を処理します。 サービス操作に適用される <xref:System.ServiceModel.OperationBehaviorAttribute> では、キューからのメッセージ受信に使用されるトランザクションに自動的に帰属することと、サービス操作の完了時にトランザクションを自動的に完了させることが指定されています。 `Orders` クラスは、注文処理機能をカプセル化します。 この例では、発注書をディクショナリに追加します。 このサービス操作が帰属するしているトランザクションは、`Orders` クラス内の操作で使用できます。  
   
  サービス操作は、送信された発注書を処理するだけでなく、注文ステータスをクライアントに戻します。  
-  
-```  
+
+```csharp
 [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]  
 public void SubmitPurchaseOrder(PurchaseOrder po, string reportOrderStatusTo)  
 {  
@@ -79,16 +81,16 @@ public void SubmitPurchaseOrder(PurchaseOrder po, string reportOrderStatusTo)
     //Close the client.  
     client.Close();  
 }  
-```  
-  
+```
+
  MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。 サービスのエンドポイントは、構成ファイルの System.ServiceModel セクションで定義されます。  
   
 > [!NOTE]
 >  MSMQ のキュー名とエンドポイント アドレスでは、若干異なるアドレス表記が使用されています。 MSMQ のキュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のエンドポイント アドレスでは、net.msmq: スキームを使用します。"localhost" を使用してローカル コンピュータを表し、スラッシュを使用してパスを区切ります。 リモート コンピューターでホストされているキューからの読み出しを行うには、"." や "localhost" をリモート コンピューター名に置き換えます。  
   
  サービスは自己ホスト型です。 MSMQ トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。 手動で作成することもコードで作成することもできます。 このサンプルでは、サービスがキューの存在を確認し、必要な場合はキューを作成します。 キュー名は構成ファイルから読み込まれます。 ベース アドレスを使って、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスにプロキシを生成します。  
-  
-```  
+
+```csharp
 // Host the service within this EXE console application.  
 public static void Main()  
 {  
@@ -112,11 +114,11 @@ public static void Main()
         Console.ReadLine();  
     }  
 }  
-```  
-  
+```
+
  クライアントはトランザクションを作成します。 キューとの通信はトランザクションのスコープ内で実行されるので、全体が 1 つのアトミックな単位として扱われ、すべてのメッセージが成功するか、すべてのメッセージが失敗するかのいずれかになります。  
-  
-```  
+
+```csharp
 // Create a ServiceHost for the OrderStatus service type.  
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))  
 {  
@@ -152,11 +154,11 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))
     // Close the ServiceHost to shutdown the service.  
     serviceHost.Close();  
 }  
-```  
-  
+```
+
  クライアント コードは `IOrderStatus` コントラクトを実装して、サービスからの注文ステータスを受信します。 この場合は、注文ステータスを出力します。  
-  
-```  
+
+```csharp
 [ServiceBehavior]  
 public class OrderStatusService : IOrderStatus  
 {  
@@ -168,8 +170,8 @@ public class OrderStatusService : IOrderStatus
                                                            status);  
     }  
 }  
-```  
-  
+```
+
  注文ステータス キューは `Main` メソッド内で作成します。 クライアント構成には、注文ステータス サービスをホストするための注文ステータス サービス構成が含まれています。次のサンプル構成を参照してください。  
   
 ```xml  
@@ -323,7 +325,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
   
 3.  このサンプルのサービスは、`OrderProcessorService` でバインディングを作成します。 このバインディングをインスタンス化した後に、コード行を 1 行追加して、セキュリティ モードを `None` に設定します。  
   
-    ```  
+    ```csharp
     NetMsmqBinding msmqCallbackBinding = new NetMsmqBinding();  
     msmqCallbackBinding.Security.Mode = NetMsmqSecurityMode.None;  
     ```  
@@ -342,4 +344,4 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

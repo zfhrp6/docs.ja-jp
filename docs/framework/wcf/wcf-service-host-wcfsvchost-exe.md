@@ -1,46 +1,48 @@
 ---
-title: "WCF サービス ホスト (WcfSvcHost.exe)"
-ms.custom: 
+title: WCF サービス ホスト (WcfSvcHost.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-caps.latest.revision: "27"
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 495088463a6a7463ce1452588dc55d35110f0092
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1da8d7a08e7887e8ba3fd50a8f809e2ff551a7fd
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>WCF サービス ホスト (WcfSvcHost.exe)
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス ホスト (WcfSvcHost.exe) を使用すると、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] デバッガーを起動して (F5 キーを押します)、実装しているサービスを自動的にホストおよびテストすることができます。 その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアント (WcfTestClient.exe) または独自のクライアントを使用してサービスをテストし、潜在的なエラーを見つけて修正できます。  
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス ホスト (WcfSvcHost.exe) では、Visual Studio デバッガーを自動的にホストし、実装しているサービスをテストする (F5) を起動することができます。 その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアント (WcfTestClient.exe) または独自のクライアントを使用してサービスをテストし、潜在的なエラーを見つけて修正できます。  
   
 ## <a name="wcf-service-host"></a>WCF サービス ホスト  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス プロジェクト内のサービスを列挙し、プロジェクトの構成を読み込んで、検出された各サービスのためのホストをインスタンス化します。 このツールは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] サービス テンプレートによって [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に統合され、プロジェクトのデバッグを開始すると呼び出されます。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス プロジェクト内のサービスを列挙し、プロジェクトの構成を読み込んで、検出された各サービスのためのホストをインスタンス化します。 このツールはによる Visual Studio に統合されて、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス テンプレートとプロジェクトのデバッグを開始するときに呼び出されます。  
   
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストを使用すると、追加のコードを記述したり、開発時に特定のホストにしばられたりすることなく、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ([!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ プロジェクト内の WCF サービス) をホストできます。  
   
 > [!NOTE]
->  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストは、部分信頼をサポートしません。 部分信頼において [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用する場合は、サービスをビルドするために [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] にある [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] サービス ライブラリ プロジェクト テンプレートを使用しないでください。 代わりに、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] 部分信頼がサポートされている Web サーバーでサービスをホストできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス Web サイト テンプレートを選択して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に新しい Web サイトを作成します。  
+>  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストは、部分信頼をサポートしません。 使用する場合、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]部分信頼でのサービスは使用しないで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスをビルドする Visual Studio でサービス ライブラリ プロジェクト テンプレート。 代わりを選択して Visual Studio で新しい web サイトを作成、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を web サーバーでサービスをホストできるサービスの web サイト テンプレートは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]部分的な信頼はサポートされています。  
   
 ## <a name="project-types-hosted-by-wcf-service-host"></a>WCF サービス ホストでホストされるプロジェクトの種類  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストでホストできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ プロジェクトの種類は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ、シーケンシャル ワークフロー サービス ライブラリ、ステート マシン ワークフロー サービス ライブラリ、および配信サービス ライブラリです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス ホストは、サービス ライブラリを使用してプロジェクトに追加できるこれらのサービスもホスト、**項目の追加**機能します。 これには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス、WF ステート マシン サービス、WF シーケンシャル サービス、XAML WF ステート マシン サービス、および XAML WF シーケンシャル サービスが含まれます。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストでホストできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ プロジェクトの種類は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ、シーケンシャル ワークフロー サービス ライブラリ、ステート マシン ワークフロー サービス ライブラリ、および配信サービス ライブラリです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストは、サービス ライブラリを使用してプロジェクトに追加できるこれらのサービスもホスト、**項目の追加**機能します。 これには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス、WF ステート マシン サービス、WF シーケンシャル サービス、XAML WF ステート マシン サービス、および XAML WF シーケンシャル サービスが含まれます。  
   
  ただし、このツールでホストを構成することはできません。 ホストを構成するには、App.config ファイルを手動で編集する必要があります。 また、このツールでユーザー定義の構成ファイルを検証することはできません。  
   
 > [!CAUTION]
->  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストを使用して運用環境のサービスをホストしないでください。このツールはそのような目的で作られていないため、  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス ホストは、信頼性、セキュリティ、およびそのような環境の管理の容易性要件にはサポートされません。 代わりに IIS を使用してください。IIS は、より高度な信頼性機能や監視機能を備えており、サービスをホストするのに適しています。 サービスの開発が完了したら、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストから IIS にサービスを移行してください。  
+>  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストを使用して運用環境のサービスをホストしないでください。このツールはそのような目的で作られていないため、  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストは、信頼性、セキュリティ、およびそのような環境の管理の容易性要件にはサポートされません。 代わりに IIS を使用してください。IIS は、より高度な信頼性機能や監視機能を備えており、サービスをホストするのに適しています。 サービスの開発が完了したら、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストから IIS にサービスを移行してください。  
   
 ## <a name="scenarios-for-using-wcf-service-host-inside-visual-studio"></a>Visual Studio 内で WCF サービス ホストを使用するシナリオ  
- 次の表に、すべてのパラメーターに、**コマンドライン引数**でプロジェクトを右クリックして検索できるダイアログ ボックスで**ソリューション エクスプ ローラー**で[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]を選択します。**プロパティ**を選択し、**デバッグ** タブをクリックして**スタート プロジェクト**です。 これらのパラメーターは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストを構成する際に役立ちます。  
+ 次の表に、すべてのパラメーターに、**コマンドライン引数**でプロジェクトを右クリックして検索できるダイアログ ボックスで**ソリューション エクスプ ローラー** を選択すると、VisualStudioで**プロパティ**を選択し、**デバッグ** タブをクリックして**スタート プロジェクト**です。 これらのパラメーターは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストを構成する際に役立ちます。  
   
 |パラメーター|説明|  
 |---------------|-------------|  
@@ -51,12 +53,12 @@ ms.lasthandoff: 12/22/2017
 #### <a name="using-wcf-test-client"></a>WCF のテスト用クライアントの使用  
  新しい [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス プロジェクトを作成し、F5 キーを押してデバッガーを起動すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストが、プロジェクトで検出されたすべてのサービスのホストを開始します。 その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントが自動的に開き、構成ファイルに定義されているサービス エンドポイントの一覧が表示されます。 メイン ウィンドウでパラメーターをテストしたり、サービスを呼び出したりできます。  
   
- 確認する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]でプロジェクトを右クリックし、テスト用クライアントが使用される**ソリューション エクスプ ローラー**で[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)][**プロパティ**クリックし、 **をデバッグ**タブです。をクリックして**スタート プロジェクト**に、次が表示されていることを確認し、**コマンドライン引数**] ダイアログ ボックス。  
+ 確認する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]でプロジェクトを右クリックし、テスト用クライアントが使用される**ソリューション エクスプ ローラー** Visual Studio で、次のように選択します**プロパティ**クリックし、、**デバッグ**。タブです。をクリックして**スタート プロジェクト**に、次が表示されていることを確認し、**コマンドライン引数** ダイアログ ボックス。  
   
  `/client:WcfTestClient.exe`  
   
 #### <a name="using-a-custom-client"></a>カスタム クライアントの使用  
- カスタムクライアントを使用するには、**ソリューションエクスプローラ** に [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]でプロジェクトを右クリックし、**プロパティ** を選択してから、**デバッグ** タブを選択します。をクリックして**スタート プロジェクト**および編集、`/client`内のパラメーター、**コマンドライン引数**ダイアログ ボックスを次の例に示すように、カスタムのクライアント をポイントします。  
+ プロジェクトを右クリックし、カスタムのクライアントを使用する**ソリューション エクスプ ローラー** Visual Studio で、次のように選択します。**プロパティ**クリックし、、**デバッグ**タブです。をクリックして**スタート プロジェクト**および編集、`/client`内のパラメーター、**コマンドライン引数**ダイアログ ボックスを次の例に示すように、カスタムのクライアント をポイントします。  
   
  `/client:"path/CustomClient.exe"`  
   
@@ -71,13 +73,13 @@ ms.lasthandoff: 12/22/2017
  `/client:iexplore.exe /clientArgs:http://localhost:8731/Design_Time_Addresses/Feed1/`  
   
 #### <a name="specifying-no-client"></a>クライアントを指定しない場合  
- 後にクライアントが使用されていないことを指定する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスをホストしているでプロジェクトを右クリックして**ソリューション エクスプ ローラー**で[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]**プロパティ**、を選択し、**デバッグ**タブです。をクリックして**スタート プロジェクト**のままにし、**コマンドライン引数**ダイアログ ボックスを空白。  
+ 後にクライアントが使用されていないことを指定する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスをホストしているでプロジェクトを右クリックして**ソリューション エクスプ ローラー** Visual Studio で、次のように選択します**プロパティ**クリックし、、  **。デバッグ**タブです。をクリックして**スタート プロジェクト**のままにし、**コマンドライン引数**ダイアログ ボックスを空白。  
   
 #### <a name="using-a-custom-host"></a>カスタム ホストの使用  
- カスタム ホストを使用するのでプロジェクトを右クリックし**ソリューション エクスプ ローラー**で[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)][**プロパティ**クリックし、**デバッグ**] タブ。をクリックして**外部プログラムの開始**し、カスタム ホストを完全なパスを入力します。 使用することも、**コマンドライン引数**ダイアログ ボックスをホストに渡される引数を指定します。  
+ カスタム ホストを使用するのでプロジェクトを右クリックし**ソリューション エクスプ ローラー** Visual Studio で、次のように選択します。**プロパティ**クリックし、、**デバッグ**タブです。をクリックして**外部プログラムの開始**し、カスタム ホストを完全なパスを入力します。 使用することも、**コマンドライン引数**ダイアログ ボックスをホストに渡される引数を指定します。  
   
 ## <a name="wcf-service-host-user-interface"></a>WCF サービス ホストのユーザー インターフェイス  
- 最初に起動すると[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス ホスト (内で f5 キーを押して[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]) では、 **WCF サービス ホスト**ウィンドウが自動的に開きます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストが実行されている場合は、通知領域にプログラムのアイコンが表示されます。 アイコンをダブルクリックして開き、 **WCF サービス ホスト**ウィンドウ  
+ 最初に起動すると[!INCLUDE[indigo2](../../../includes/indigo2-md.md)](f5 キーを押して Visual Studio 内)、サービス ホスト、 **WCF サービス ホスト**ウィンドウが自動的に開きます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストが実行されている場合は、通知領域にプログラムのアイコンが表示されます。 アイコンをダブルクリックして開き、 **WCF サービス ホスト**ウィンドウ  
   
  サービスのホスト中にエラーが発生すると、[[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホスト] ダイアログ ボックスが開いて関連情報が表示されます。  
   
@@ -102,7 +104,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="stopping-wcf-service-host"></a>WCF サービス ホストの停止  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストは、次の 4 つの方法でシャットダウンできます。  
   
--   [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ セッションを停止します。  
+-   Visual Studio でのデバッグ セッションを停止します。  
   
 -   選択**終了**から、**ファイル**でメニュー、 **WCF サービス ホスト**ウィンドウです。  
   
@@ -111,7 +113,7 @@ ms.lasthandoff: 12/22/2017
 -   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントを使用している場合は、それを終了します。  
   
 ## <a name="using-service-host-without-administrator-privilege"></a>管理特権を必要としないサービス ホストの使用  
- 管理特権のないユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを開発できるようにするために、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のインストール時には、名前空間 "http://+:8731/Design_Time_Addresses" に対してアクセス制御リスト (ACL: Access Control List) が作成されます。 この ACL は (UI) に設定され、コンピューターにログオンしているすべての対話ユーザーが含まれます。 管理者は、この ACL にユーザーを追加または削除したり、追加のポートを開いたりできます。この ACL によって、管理特権が与えられていないユーザーでも、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホスト (wcfSvcHost.exe) を使用できるようになります。  
+ 開発する管理者特権のないユーザーを有効にする[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]、ACL (アクセス制御リスト) が作成されたサービス名前空間の"http://+:8731/Design_Time_Addresses"Visual Studio のインストール中にします。 この ACL は (UI) に設定され、コンピューターにログオンしているすべての対話ユーザーが含まれます。 管理者は、この ACL にユーザーを追加または削除したり、追加のポートを開いたりできます。この ACL によって、管理特権が与えられていないユーザーでも、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホスト (wcfSvcHost.exe) を使用できるようになります。  
   
  システム特権のある管理者アカウントで [!INCLUDE[wv](../../../includes/wv-md.md)] の netsh.exe ツールを使用すると、アクセスを変更できます。 netsh.exe の使用例を次に示します。  
   
@@ -121,5 +123,5 @@ netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
   
  Netsh.exe の詳細については、次を参照してください。"[Netsh.exe ツールとコマンド ライン スイッチを使用する方法](http://go.microsoft.com/fwlink/?LinkId=97877)"です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF のテスト用クライアント (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

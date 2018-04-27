@@ -1,12 +1,13 @@
 ---
-title: "チュートリアル : 拡張性のあるアプリケーションの作成"
-ms.custom: 
+title: 'チュートリアル : 拡張性のあるアプリケーションの作成'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -18,16 +19,17 @@ helpviewer_keywords:
 - add-in-side adapter [.NET Framework]
 - contracts for add-in pipelines [.NET Framework]
 ms.assetid: 694a33c5-a040-450d-aed5-ac49fc88ce61
-caps.latest.revision: "32"
+caps.latest.revision: 32
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5cee99346d19c632739bcc6540c43f1a35217a2f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8946e30ac9d7a224af7801bc721e7d9cf6e1fab0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>チュートリアル : 拡張性のあるアプリケーションの作成
 このチュートリアルでは、簡単な電卓の機能を実行するアドイン用のパイプラインを作成する方法について説明します。 実際のシナリオでは; は示しません代わりに、パイプラインとどのように追加のサービスを提供できるホストの基本機能を示します。  
@@ -61,14 +63,14 @@ ms.lasthandoff: 01/19/2018
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
   
--   [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]。  
+-   Visual Studio  
   
 ## <a name="creating-a-visual-studio-solution"></a>Visual Studio ソリューションを作成します。  
- ソリューションを使用して[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]パイプライン セグメントのプロジェクトを格納します。  
+ Visual Studio でソリューションを使用すると、パイプライン、セグメントのプロジェクトを含むです。  
   
 #### <a name="to-create-the-pipeline-solution"></a>パイプライン ソリューションを作成するには  
   
-1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]、という名前の新しいプロジェクトを作成する`Calc1Contract`です。 基になる、**クラス ライブラリ**テンプレート。  
+1.  Visual Studio で、という名前の新しいプロジェクトを作成する`Calc1Contract`です。 基になる、**クラス ライブラリ**テンプレート。  
   
 2.  ソリューションの名前を付けます`CalculatorV1`です。  
   
@@ -363,7 +365,7 @@ ms.lasthandoff: 01/19/2018
   
 4.  型**終了**キーを押すと、 **Enter**アプリケーションを閉じるにはキー。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアル: ホスト変更時の旧バージョンとの互換性を有効にします。](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
  [チュートリアル: アドインとホスト間でのコレクションの受け渡し](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)  
  [パイプラインの開発要件](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  

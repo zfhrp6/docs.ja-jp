@@ -1,27 +1,29 @@
 ---
-title: "チュートリアル : ハイブリッド アプリケーションのローカライズ"
-ms.custom: 
+title: 'チュートリアル : ハイブリッド アプリケーションのローカライズ'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f9bb7588ef1f6962a5cd55196154ac7f666d53b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: b00553c005b714094f208fc6d4ed40e838b90b49
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>チュートリアル : ハイブリッド アプリケーションのローカライズ
 このチュートリアルでは、ローカライズする方法について[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内の要素、 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]-ベースのハイブリッド アプリケーションです。  
@@ -86,7 +88,7 @@ ms.lasthandoff: 01/19/2018
   
 2.  [プロパティ] ウィンドウで、フォームの値を設定**Localizable**プロパティを`true`です。  
   
-3.  [プロパティ] ウィンドウ内の値を設定、**言語**プロパティを**スペイン語 (スペイン)**です。  
+3.  [プロパティ] ウィンドウ内の値を設定、**言語**プロパティを**スペイン語 (スペイン)** です。  
   
 4.  Windows フォーム デザイナーでは、ラベル コントロールを選択します。  
   
@@ -102,7 +104,7 @@ ms.lasthandoff: 01/19/2018
   
 8.  ソリューション エクスプ ローラーで右クリック**LocalizingWpfInWf**  をクリック**プロジェクトのアンロード**です。  
   
-     プロジェクト名のラベルは**(使用不可)**です。  
+     プロジェクト名のラベルは **(使用不可)** です。  
   
 9. 右クリック**LocalizingWpfInWf**、 をクリック**編集 LocalizingWpfInWf.csproj**です。  
   
@@ -123,7 +125,7 @@ ms.lasthandoff: 01/19/2018
   
 #### <a name="to-assign-resource-identifiers"></a>リソース識別子を割り当てる  
   
-1.  [スタート] メニューから開きます、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]コマンド プロンプトです。  
+1.  [スタート] メニューから、Visual Studio コマンド プロンプトを開きます。  
   
 2.  次のコマンドを使用して、ローカライズ可能なコンテンツにリソース識別子を割り当てます。  
   
@@ -150,7 +152,7 @@ ms.lasthandoff: 01/19/2018
     LocBaml /parse LocalizingWpfInWf.g.en-US.resources /out:temp.csv  
     ```  
   
-3.  Temp.csv ファイルを開きます[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]などのテキスト エディター。 文字列を置き換える`"Hello"`スペイン語に翻訳を`"Hola"`です。  
+3.  Visual Studio または他のテキスト エディターで temp.csv ファイルを開きます。 文字列を置き換える`"Hello"`スペイン語に翻訳を`"Hola"`です。  
   
 4.  Temp.csv ファイルを保存します。  
   
@@ -176,7 +178,7 @@ ms.lasthandoff: 01/19/2018
   
      アプリケーションは、英語の文字列の代わりにローカライズされた文字列を示しています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [アプリケーションをローカライズする](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)  

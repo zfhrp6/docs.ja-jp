@@ -24,14 +24,14 @@ ms.author: ghogen
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4ed6a741a6f86b492929598613a0c10ae08981c5
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: cc01c836daa73b1a39ceab0b523791b6a520dc70
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="developing-windows-service-applications"></a>Windows サービス アプリケーションの開発
-Microsoft[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]または Microsoft [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] SDK、簡単にサービスを作成できますが、サービスとしてインストールされているアプリケーションを作成しています。 この種類のアプリケーションには、Windows サービスが呼び出されます。 フレームワーク機能を使用することができますサービスを作成、したり、インストールし、開始、停止、および動作を制御します。  
+Microsoft Visual Studio または Microsoft を使用して[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]SDK、簡単にサービスを作成できますが、サービスとしてインストールされているアプリケーションを作成しています。 この種類のアプリケーションには、Windows サービスが呼び出されます。 フレームワーク機能を使用することができますサービスを作成、したり、インストールし、開始、停止、および動作を制御します。  
   
 > [!WARNING]
 >  C++ の Windows サービス テンプレートは、Visual Studio 2010 に組み込まれませんでした。 Windows サービスを作成するには、Visual c# または Visual Basic は、必要な場合は、既存の C++ コードと相互運用する可能性があります、マネージ コードでサービスを作成することができますか、またはを使用して、ネイティブ C++ で Windows サービスを作成することができます、 [ATLプロジェクトウィザード](/cpp/atl/reference/atl-project-wizard).  

@@ -2,9 +2,10 @@
 title: Property Statement
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.PropertySet
@@ -16,21 +17,21 @@ helpviewer_keywords:
 - property procedures [Visual Basic], Property statements
 - Property keyword [Visual Basic]
 ms.assetid: 3155edaf-8ebd-45c6-9cef-11d5d2dc8d38
-caps.latest.revision: "41"
+caps.latest.revision: 41
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: af4666ecb059f141480be2295055644537819293
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 558b62dd8c676532355ef12134ad8cb803b70796
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="property-statement"></a>Property Statement
 プロパティ、および格納およびプロパティの値を取得するためのプロパティ プロシージャの名前を宣言します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```vb  
 [ <attributelist> ] [ Default ] [ accessmodifier ]   
 [ propertymodifiers ] [ Shared ] [ Shadows ] [ ReadOnly | WriteOnly ] [ Iterator ]  
 Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslist ]  
@@ -51,11 +52,11 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `attributelist`  
   
-     省略可能です。 このプロパティに適用される属性の一覧または`Get`または`Set`プロシージャです。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
+     任意。 このプロパティに適用される属性の一覧または`Get`または`Set`プロシージャです。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
   
 -   `Default`  
   
-     省略可能です。 このプロパティは、既定のプロパティをクラスまたは構造体が定義されていることを指定します。 既定のプロパティのパラメーターを受け入れる必要がありますとに設定してプロパティ名を指定しなくても取得します。 としてプロパティを宣言する場合`Default`、使用することはできません`Private`プロパティまたはプロパティ プロシージャのいずれか。  
+     任意。 このプロパティは、既定のプロパティをクラスまたは構造体が定義されていることを指定します。 既定のプロパティのパラメーターを受け入れる必要がありますとに設定してプロパティ名を指定しなくても取得します。 としてプロパティを宣言する場合`Default`、使用することはできません`Private`プロパティまたはプロパティ プロシージャのいずれか。  
   
 -   `accessmodifier`  
   
@@ -75,7 +76,7 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `propertymodifiers`  
   
-     省略可能です。 次のいずれかの値を指定します。  
+     任意。 次のいずれかの値を指定します。  
   
     -   [オーバーロード](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
@@ -93,31 +94,31 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `Shared`  
   
-     省略可能です。 参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。  
+     任意。 参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。  
   
 -   `Shadows`  
   
-     省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
+     任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
   
 -   `ReadOnly`  
   
-     省略可能です。 参照してください[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  
+     任意。 参照してください[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  
   
 -   `WriteOnly`  
   
-     省略可能です。 参照してください[WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)です。  
+     任意。 参照してください[WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)です。  
   
 -   `Iterator`  
   
-     省略可能です。 参照してください[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。  
+     任意。 参照してください[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。  
   
 -   `name`  
   
-     必須です。 プロパティ名。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
+     必須。 プロパティ名。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
   
 -   `parameterlist`  
   
-     省略可能です。 このプロパティのパラメーターとの考えられる追加のパラメーターを表すローカル変数名の一覧、`Set`プロシージャです。 参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。  
+     任意。 このプロパティのパラメーターとの考えられる追加のパラメーターを表すローカル変数名の一覧、`Set`プロシージャです。 参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。  
   
 -   `returntype`  
   
@@ -125,7 +126,7 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `Implements`  
   
-     省略可能です。 このプロパティには、このプロパティの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつ、1 つまたは複数のプロパティが実装されていることを示します。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。  
+     任意。 このプロパティには、このプロパティの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつ、1 つまたは複数のプロパティが実装されていることを示します。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。  
   
 -   `implementslist`  
   
@@ -139,16 +140,16 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
     |パーツ|説明|  
     |---|---|  
-    |`interface`|必須です。 このプロパティによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。|  
-    |`definedname`|必須です。 名前のプロパティを定義する`interface`です。|  
+    |`interface`|必須。 このプロパティによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。|  
+    |`definedname`|必須。 名前のプロパティを定義する`interface`です。|  
   
 -   `Get`  
   
-     省略可能です。 プロパティがマークされているかどうかに必要な`WriteOnly`します。 開始、`Get`プロパティ プロシージャをプロパティの値を返すために使用します。  
+     任意。 プロパティがマークされているかどうかに必要な`WriteOnly`します。 開始、`Get`プロパティ プロシージャをプロパティの値を返すために使用します。  
   
 -   `statements`  
   
-     省略可能です。 内で実行するステートメントのブロック、`Get`または`Set`プロシージャです。  
+     任意。 内で実行するステートメントのブロック、`Get`または`Set`プロシージャです。  
   
 -   `End Get`  
   
@@ -156,7 +157,7 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `Set`  
   
-     省略可能です。 プロパティがマークされているかどうかに必要な`ReadOnly`します。 開始、`Set`プロパティ プロシージャ、プロパティの値を格納するために使用します。  
+     任意。 プロパティがマークされているかどうかに必要な`ReadOnly`します。 開始、`Set`プロパティ プロシージャ、プロパティの値を格納するために使用します。  
   
 -   `End Set`  
   

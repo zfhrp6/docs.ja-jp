@@ -1,28 +1,28 @@
 ---
-title: "WS トランザクション フロー"
-ms.custom: 
+title: WS トランザクション フロー
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-caps.latest.revision: 
+caps.latest.revision: 43
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bf441831a205b022899999b1bf34e1505b8fb6bb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f79ffdfe624674074f2e9cadeaccb7f2ab3ba0d7
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ws-transaction-flow"></a>WS トランザクション フロー
 このサンプルでは、クライアントによって調整されるトランザクションの使用方法と、WS-AtomicTransaction プロトコルまたは OleTransactions プロトコルを使用するトランザクション フローに関するクライアントとサーバーのオプションの使用方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)、電卓サービスを実装するが、操作の属性が設定の使用をデモ、`TransactionFlowAttribute`で、 **TransactionFlowOption**どの程度トランザクションをフローが有効になっているを決定する列挙です。 フローされたトランザクションのスコープ内では、要求された操作のログがデータベースに書き込まれ、クライアント調整トランザクションが完了するまで保持されます。クライアント トランザクションが完了しない場合は、データベースに対する該当する更新はコミットされません。  
@@ -31,8 +31,8 @@ ms.lasthandoff: 12/22/2017
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
  サービスとトランザクションへの接続を開始した後で、クライアントは複数のサービス操作にアクセスします。 サービスのコントラクトは次のように定義されています。操作はそれぞれ、`TransactionFlowOption` の設定が異なります。  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface ICalculator  
 {  
@@ -48,8 +48,8 @@ public interface ICalculator
     [OperationContract]  
     double Divide(double n1, double n2);   
 }  
-```  
-  
+```
+
  操作は、処理される順に次のように定義されています。  
   
 -   `Add` (加算) 操作要求には、フローされたトランザクションが含まれている必要があります。  
@@ -83,8 +83,8 @@ public interface ICalculator
   
 > [!NOTE]
 >  <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティは、サービス メソッド実装固有の動作を定義しますが、トランザクションをフローさせるためのクライアントの機能や要件は定義しません。  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 [ServiceBehavior(TransactionIsolationLevel = System.Transactions.IsolationLevel.Serializable)]  
 public class CalculatorService : ICalculator  
@@ -119,22 +119,22 @@ public class CalculatorService : ICalculator
   
     // Logging method omitted for brevity  
 }  
-```  
-  
+```
+
  クライアントでは、操作に対するサービスの `TransactionFlowOption` 設定が、クライアントで生成される `ICalculator` インターフェイスの定義に反映されます。 さらに、サービスの `transactionFlow` プロパティの設定はクライアントのアプリケーション構成に反映されます。 クライアントでは、適切な `endpointConfigurationName` を選択することによってトランスポートとプロトコルを選択できます。  
-  
-```  
+
+```csharp
 // Create a client using either wsat or oletx endpoint configurations  
 CalculatorClient client = new CalculatorClient("WSAtomicTransaction_endpoint");  
 // CalculatorClient client = new CalculatorClient("OleTransactions_endpoint");  
-```  
-  
+```
+
 > [!NOTE]
 >  このサンプルを実行したときの動作は、選択したプロトコルとトランスポートの種類にかかわらず同一です。  
   
  サービスへの接続を開始した後で、クライアントは次のように、サービス操作の呼び出しを囲む新しい `TransactionScope` を作成します。  
-  
-```  
+
+```csharp
 // Start a transaction scope  
 using (TransactionScope tx =  
             new TransactionScope(TransactionScopeOption.RequiresNew))  
@@ -191,8 +191,8 @@ using (TransactionScope tx =
 }  
   
 Console.WriteLine("Transaction committed");  
-```  
-  
+```
+
  操作の呼び出しは次のとおりです。  
   
 -   `Add` 要求によって、必須のトランザクションがサービスにフローされ、サービスのアクションはクライアントのトランザクション スコープ内で実行されます。  
@@ -251,7 +251,7 @@ Press <ENTER> to terminate the service.
   
 1.  Windows Server 2003 または Windows XP が動作するサービス コンピューターで、次の説明に従い、受信ネットワーク トランザクションを許可するよう MSDTC を構成します。  
   
-    1.  **開始** メニューの "éˆú"**コントロール パネルの** 、し**管理ツール**、し、**コンポーネント サービス**です。  
+    1.  **開始** メニューの "éˆú"**コントロール パネルの **、し**管理ツール**、し、**コンポーネント サービス**です。  
   
     2.  展開**コンポーネント サービス**です。 開く、**コンピューター**フォルダーです。  
   
@@ -261,13 +261,13 @@ Press <ENTER> to terminate the service.
   
     5.  確認**ネットワーク DTC アクセス**と**を許可する受信**です。  
   
-    6.  をクリックして**[ok]**、順にクリックして**はい**MSDTC サービスを再起動します。  
+    6.  をクリックして **[ok]**、順にクリックして**はい**MSDTC サービスを再起動します。  
   
     7.  **[OK]** をクリックしてダイアログ ボックスを閉じます。  
   
 2.  Windows Server 2008 または Windows Vista が動作するサービス コンピューターで、次の説明に従い、受信ネットワーク トランザクションを許可するよう MSDTC を構成します。  
   
-    1.  **開始** メニューの "éˆú"**コントロール パネルの** 、し**管理ツール**、し、**コンポーネント サービス**です。  
+    1.  **開始** メニューの "éˆú"**コントロール パネルの **、し**管理ツール**、し、**コンポーネント サービス**です。  
   
     2.  展開**コンポーネント サービス**です。 開く、**コンピューター**フォルダーです。 選択**分散トランザクション コーディネーター**です。  
   
@@ -275,7 +275,7 @@ Press <ENTER> to terminate the service.
   
     4.  **セキュリティ** タブで、チェック**ネットワーク DTC アクセス**と**受信を許可する**です。  
   
-    5.  をクリックして**[ok]**、順にクリックして**はい**MSDTC サービスを再起動します。  
+    5.  をクリックして **[ok]**、順にクリックして**はい**MSDTC サービスを再起動します。  
   
     6.  **[OK]** をクリックしてダイアログ ボックスを閉じます。  
   
@@ -289,7 +289,7 @@ Press <ENTER> to terminate the service.
   
     4.  確認**ネットワーク DTC アクセス**と**送信を許可する**です。  
   
-    5.  をクリックして**[ok]**、順にクリックして**はい**MSDTC サービスを再起動します。  
+    5.  をクリックして **[ok]**、順にクリックして**はい**MSDTC サービスを再起動します。  
   
     6.  **[OK]** をクリックしてダイアログ ボックスを閉じます。  
   

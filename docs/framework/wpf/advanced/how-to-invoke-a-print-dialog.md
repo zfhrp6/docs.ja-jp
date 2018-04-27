@@ -1,12 +1,13 @@
 ---
-title: "方法 : 印刷ダイアログ ボックスを呼び出す"
-ms.custom: 
+title: '方法 : 印刷ダイアログ ボックスを呼び出す'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - invoking print dialogs [WPF]
 - print dialogs [WPF], invoking
 ms.assetid: e3a2c84c-74fe-45a4-8501-5813f9dbfed2
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8831566daca6ca36b40fbaaedbec9ff3ca8aaa99
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 65ea65e13d3217466eeacdac4c386cc02c68b29a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-invoke-a-print-dialog"></a>方法 : 印刷ダイアログ ボックスを呼び出す
 アプリケーションから印刷する機能を提供するだけで作成して開く、、<xref:System.Windows.Controls.PrintDialog>オブジェクト。  
@@ -38,11 +40,11 @@ ms.lasthandoff: 12/22/2017
  ダイアログ ボックスが表示されたら、ユーザーは自分のコンピューターにインストールされているプリンターを選択することになります。 選択した場合のオプションもありますが、 [Microsoft XPS Document Writer](http://go.microsoft.com/fwlink/?LinkId=147319)を作成する、[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]印刷ではなくファイル。  
   
 > [!NOTE]
->  <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>の制御[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、これは、このトピックの内容について説明する必要がありますと混同しないで、<xref:System.Windows.Forms.PrintDialog?displayProperty=nameWithType>コンポーネント[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]です。  
+>  <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>の制御[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、これは、このトピックの内容について説明する必要がありますと混同しないで、 <xref:System.Windows.Forms.PrintDialog?displayProperty=nameWithType> Windows フォームのコンポーネントです。  
   
  厳密には、使用することができます、<xref:System.Windows.Controls.PrintDialog.PrintDocument%2A>ダイアログを開くことがなくメソッドです。 その意味では、コンポーネントとして含まれる未知、印刷コントロールを使用できます。 パフォーマンス上の理由から、いずれかを使用する方がよいなりますが、<xref:System.Printing.PrintQueue.AddJob%2A>メソッドまたは多くのいずれかの<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>と<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>のメソッド、 <xref:System.Windows.Xps.XpsDocumentWriter>。 詳細については、これは、次を参照してください。 [XPS ファイルをプログラムによって印刷](../../../../docs/framework/wpf/advanced/how-to-programmatically-print-xps-files.md)とします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.PrintDialog>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)  

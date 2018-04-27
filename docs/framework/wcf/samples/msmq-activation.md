@@ -1,26 +1,26 @@
 ---
-title: "MSMQ アクティベーション"
-ms.custom: 
+title: MSMQ アクティベーション
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-caps.latest.revision: 
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a4c3d1dc8116e9c1b26febc4d8473b15d8648c01
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: e0f8077e425464d5a9f33662366377d573719659
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="msmq-activation"></a>MSMQ アクティベーション
 このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス (WAS) でホストする方法を示します。 このサンプルでは、`netMsmqBinding`に基づくと、[双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)サンプルです。 この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。  
@@ -33,7 +33,7 @@ ms.lasthandoff: 03/19/2018
 >   
 >  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  このディレクトリが存在しない場合に、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ハイパーリンク"http://go.microsoft.com/fwlink/?LinkId=150780"\t"_blank"と[!INCLUDE[wf](../../../../includes/wf-md.md)]サンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]すべてダウンロードして[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ハイパーリンク"http://go.microsoft.com/fwlink/?LinkId=150780"\t"_blank"と用の Windows Workflow Foundation (WF) サンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]すべてダウンロードして[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation です。  
   
@@ -231,7 +231,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 2.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。 さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。  
   
-    1.  **開始** メニューの 選択**コントロール パネルの** です。  
+    1.  **開始** メニューの 選択**コントロール パネルの **です。  
   
     2.  選択**プログラムと機能**します。  
   
@@ -282,7 +282,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         > [!NOTE]
         >  このコマンドはテキスト 1 行です。  
   
-         このコマンドにより、/servicemodelsamples アプリケーションに http://localhost/servicemodelsamples と net.msmq://localhost/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
+         このコマンドにより、/servicemodelsamples アプリケーションを使用してアクセスするhttp://localhost/servicemodelsamplesと net.msmq://localhost/servicemodelsamples です。  
   
 7.  まだ確認していない場合は、MSMQ アクティベーション サービスが有効になっていることを確認します。 **開始** メニューのをクリックして**実行**、および種類`Services.msc`です。 サービスのリストを検索、 **Net.Msmq リスナ アダプタ**です。 右クリックし **プロパティ**です。 設定、**スタートアップの種類**に**自動**、 をクリックして**適用** をクリックし、**開始**ボタンをクリックします。 この手順は、Net.Msmq リスナー アダプター サービスを初めて使用する前に 1 回だけ実行する必要があります。  
   

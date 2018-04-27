@@ -1,12 +1,13 @@
 ---
-title: "Windows フォームのセキュリティの概要"
-ms.custom: 
+title: Windows フォームのセキュリティの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - code access security [Windows Forms], Windows Forms
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e56ae77a36ce0000fd518a3324ab5e5b8409d1d4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 57f46620e7b98bb1a4c120684075dbe065db9714
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="security-in-windows-forms-overview"></a>Windows フォームのセキュリティの概要
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のリリース以前、ユーザーのコンピューターで実行されているすべてのコードは、リソースにアクセスするために、そのコンピューターのユーザーが持っていたのと同じ権限またはアクセス許可を持っていました。 たとえば、ユーザーにファイル システムへのアクセスが許可されている場合は、コードにファイル システムへのアクセスが許可され、ユーザーにデータベースへのアクセスが許可されている場合は、コードにデータベースへのアクセスが許可されていました。 これらの権限やアクセス許可は、ユーザーがローカル コンピューターに明示的にインストールした実行可能ファイルのコードに対しては受け入れることができますが、インターネットやローカル イントラネットからの悪意のある可能性があるコードに対しては受け入れることができません。 このコードは、アクセス許可がないユーザーのコンピューター リソースにアクセスすべきではありません。  
@@ -60,7 +62,7 @@ ms.lasthandoff: 01/19/2018
   
  オプションのアクセス許可を要求するときに、アプリケーションに付与されていないアクセス許可が必要なアクションを実行する場合に生成されるセキュリティ例外を処理する必要があります。 <xref:System.Security.SecurityException> を適切に処理することで、アプリケーションを続行できます。 アプリケーションは例外を使用して、ユーザーに対して機能を無効にする必要があるかどうかを判断できます。 たとえば、必要なファイル アクセス許可が付与されていない場合、アプリケーションは **[保存]** メニュー オプションを無効にすることができます。  
   
- 場合によっては、すべての適切なアクセス許可をアサートしたかどうかを確認することが難しい場合があります。 たとえば、表面的には影響のないように見えるメソッドの呼び出しが、実行中のある時点でファイル システムにアクセスすることがあります。 必要なアクセス許可をすべて使用してアプリケーションを配置しない場合は、デスクトップでデバッグしている間は問題なくテストでき、配置のときに失敗する可能性があります。 [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] SDK と [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] の両方に、それぞれ MT.exe のコマンド ライン ツールと、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のアクセス許可の検出機能という、アプリケーションに必要なアクセス許可を検出するためのツールが含まれています。  
+ 場合によっては、すべての適切なアクセス許可をアサートしたかどうかを確認することが難しい場合があります。 たとえば、表面的には影響のないように見えるメソッドの呼び出しが、実行中のある時点でファイル システムにアクセスすることがあります。 必要なアクセス許可をすべて使用してアプリケーションを配置しない場合は、デスクトップでデバッグしている間は問題なくテストでき、配置のときに失敗する可能性があります。 両方の[!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)]SDK と[!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)]アプリケーションが必要なアクセス許可を計算するためのツールが含まれて: MT.exe のコマンド ライン ツールおよび Visual Studio でのアクセス許可の検出機能は、それぞれします。  
   
  次のトピックでは、Windows フォームの追加のセキュリティ機能について説明します。  
   
@@ -86,14 +88,14 @@ ms.lasthandoff: 01/19/2018
   
  どのテクノロジを選択するかは、配置環境に応じて異なります。 詳細については、「[ClickOnce 配置ストラテジの選択](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy)」を参照してください。  
   
- 既定では、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] または [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] SDK ツール (Mage.exe および MageUI.exe) のいずれかを使用して配置された [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] アプリケーションは、完全信頼を持つクライアント コンピューターで実行するよう構成されます。 部分信頼を使用して、またはいくつか追加のアクセス許可のみを使用して、アプリケーションを配置している場合、この既定を変更する必要があります。 配置を構成するときに、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] または [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] SDK ツールの MageUI.exe のいずれかを使用して構成できます。 MageUI.exe を使用する方法の詳細については、「チュートリアル : コマンドラインから ClickOnce アプリケーションを配置する」を参照してください。  「[方法 : ClickOnce アプリケーションのカスタム アクセス許可を設定する](http://msdn.microsoft.com/library/hafybdaa\(v=vs.110\))」または「[方法 : ClickOnce アプリケーションのカスタム アクセス許可を設定する](http://msdn.microsoft.com/library/hafybdaa\(v=vs.120\))」も参照してください。  
+ 既定では、 [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] 、Visual Studio を使用して配置されたアプリケーションまたは[!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)]SDK ツール (Mage.exe および MageUI.exe) は、完全信頼を持つクライアント コンピューターで実行するように構成します。 部分信頼を使用して、またはいくつか追加のアクセス許可のみを使用して、アプリケーションを配置している場合、この既定を変更する必要があります。 こうことで、Visual Studio または[!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)]SDK ツールの MageUI.exe、展開を構成するときにします。 MageUI.exe を使用する方法の詳細については、「チュートリアル : コマンドラインから ClickOnce アプリケーションを配置する」を参照してください。  「[方法 : ClickOnce アプリケーションのカスタム アクセス許可を設定する](http://msdn.microsoft.com/library/hafybdaa\(v=vs.110\))」または「[方法 : ClickOnce アプリケーションのカスタム アクセス許可を設定する](http://msdn.microsoft.com/library/hafybdaa\(v=vs.120\))」も参照してください。  
   
  [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] とアクセス許可の昇格のセキュリティ面の詳細については、「[ClickOnce アプリケーションのセキュリティ](/visualstudio/deployment/securing-clickonce-applications)」を参照してください。 信頼されたアプリケーションの配置の詳細については、「[信頼されたアプリケーションの配置の概要](/visualstudio/deployment/trusted-application-deployment-overview)」を参照してください。  
   
 ### <a name="testing-the-application"></a>アプリケーションのテスト  
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用して Windows フォーム アプリケーションを配置した場合は、開発環境から、部分信頼または制限されたアクセス許可セットでのデバッグを有効にできます。  「[方法 : アクセス許可が制限された ClickOnce アプリケーションをデバッグする](http://msdn.microsoft.com/library/593zkfdf\(v=vs.110\))」または「[方法 : アクセス許可が制限された ClickOnce アプリケーションをデバッグする](http://msdn.microsoft.com/library/593zkfdf\(v=vs.120\))」を参照してください。  
+ を Visual Studio を使用して、Windows フォーム アプリケーションを配置する場合は、部分信頼または制限されたアクセス許可の開発環境から設定でのデバッグを有効にできます。  「[方法 : アクセス許可が制限された ClickOnce アプリケーションをデバッグする](http://msdn.microsoft.com/library/593zkfdf\(v=vs.110\))」または「[方法 : アクセス許可が制限された ClickOnce アプリケーションをデバッグする](http://msdn.microsoft.com/library/593zkfdf\(v=vs.120\))」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームのセキュリティ](../../../docs/framework/winforms/windows-forms-security.md)  
  [コード アクセス セキュリティの基礎](../../../docs/framework/misc/code-access-security-basics.md)  
  [ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)  

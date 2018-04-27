@@ -16,11 +16,11 @@ ms.assetid: 72528d02-77b7-4b4c-8b9e-d12f666f92ef
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 63dfdf0f2fe8869577d450f21c4f12b5eec125bb
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ab3f9d2729dec1d97dc00fac3527e492d3c5880a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="class-39ltclassnamegt39-cannot-be-found"></a>クラス&#39; &lt;classname&gt; &#39;が見つかりません
 クラスの\<classname >' が見つかりません。 このエラーは通常、'Microsoft.VisualBasic.dll' が適切でない場合に発生します。  
@@ -33,7 +33,7 @@ ms.lasthandoff: 04/26/2018
   
 1.  プログラムをもう一度コンパイルし、エラーがまだ発生するかどうか確認します。  
   
-2.  エラーがまだ発生する場合は、作業内容を保存し、 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を再起動します。  
+2.  エラーが再発する場合は、作業を保存し、Visual Studio を再起動します。  
   
 3.  エラーが解決しない場合は、Visual Basic を再インストールします。  
   

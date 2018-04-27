@@ -1,12 +1,13 @@
 ---
-title: "方法 : Windows フォームのサイズを変更する"
-ms.custom: 
+title: '方法 : Windows フォームのサイズを変更する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,19 +17,20 @@ helpviewer_keywords:
 - resizing Windows Forms
 - Windows Forms, resizing
 ms.assetid: 5d9dd47e-e68c-48c9-a0a3-a9ff34ba009d
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cc2e9f81094d16030dbe4595a8132569edab782a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 22f1c829257f8cd23379de54063ae88802908fe0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-resize-windows-forms"></a>方法 : Windows フォームのサイズを変更する
-Windows フォームのサイズは、いくつかの方法で指定できます。 <xref:System.Windows.Forms.Form.Size%2A> プロパティに新しい値を設定したり、<xref:System.Windows.Forms.Control.Height%2A> プロパティまたは <xref:System.Windows.Forms.Control.Width%2A> プロパティを個別に調整したりすることで、フォームの高さと幅の両方をプログラムで変更できます。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用している場合は、Windows フォーム デザイナーを使用してサイズを変更することができます。 参照してください[する方法: サイズを変更する Windows フォーム デザイナーを使用して、](http://msdn.microsoft.com/library/37k2zkwx\(v=vs.110\))です。  
+Windows フォームのサイズは、いくつかの方法で指定できます。 <xref:System.Windows.Forms.Form.Size%2A> プロパティに新しい値を設定したり、<xref:System.Windows.Forms.Control.Height%2A> プロパティまたは <xref:System.Windows.Forms.Control.Width%2A> プロパティを個別に調整したりすることで、フォームの高さと幅の両方をプログラムで変更できます。 Visual Studio を使用している場合は、Windows フォーム デザイナーを使用してサイズを変更できます。 参照してください[する方法: サイズを変更する Windows フォーム デザイナーを使用して、](http://msdn.microsoft.com/library/37k2zkwx\(v=vs.110\))です。  
   
 ### <a name="to-resize-a-form-programmatically"></a>プログラムによってフォームのサイズを変更するには  
   
@@ -123,6 +125,6 @@ Windows フォームのサイズは、いくつかの方法で指定できます
     f->Size->X += 100;  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームについて](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
  [Windows フォーム アプリケーションの拡張](../../../docs/framework/winforms/advanced/index.md)

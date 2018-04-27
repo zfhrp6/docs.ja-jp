@@ -1,24 +1,26 @@
 ---
-title: "WCF のテスト用クライアント (WcfTestClient.exe)"
-ms.custom: 
+title: WCF のテスト用クライアント (WcfTestClient.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-caps.latest.revision: "45"
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 18866260c5d14cf27634afcd8391b159abac1dd1
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2eb32d36b1e6710f666391f918aff68c33566ab8
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF のテスト用クライアント (WcfTestClient.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] テスト クライアント (WcfTestClient.exe) は、テスト パラメーターを入力し、その入力をサービスに送信して、サービスから返される応答を確認できる GUI ツールです。 このツールを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと組み合わせて使用すると、シームレスにサービスをテストできるようになります。  
@@ -172,9 +174,9 @@ ms.lasthandoff: 01/05/2018
 ## <a name="closing-wcf-test-client"></a>WCF のテスト用クライアントの終了  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントは、次の方法で閉じることができます。  
   
--   **ファイル** メニューのをクリックして**終了**です。 代わりに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントのメイン ウィンドウ、をクリックして**閉じる**です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] によって起動された場合は、どちらの手順でも [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストがシャットダウンし、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ処理が停止します。  
+-   **ファイル** メニューのをクリックして**終了**です。 代わりに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントのメイン ウィンドウ、をクリックして**閉じる**です。 これらのアクションのどちらもシャット ダウンも[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスの自動ホストと Visual Studio のデバッグ処理を停止[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト用クライアントは、Visual Studio によって起動されました。  
   
--   右クリックし、 **WCF サービス ホスト**をクリックして通知領域アイコン**終了します。** これにより、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントの両方がシャットダウンし、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ処理が停止します。  
+-   右クリックし、 **WCF サービス ホスト**をクリックして通知領域アイコン**終了します。** これは、両方がシャット ダウン[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスの自動ホストと[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Visual Studio デバッグ プロセスのテスト用クライアントと停止します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

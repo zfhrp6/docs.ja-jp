@@ -1,24 +1,26 @@
 ---
-title: "トランザクション バッチ"
-ms.custom: 
+title: トランザクション バッチ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ecd328ed-332e-479c-a894-489609bcddd2
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 87d8e3e09618b214dcafb7afd82970dde54fc4fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 50596aaf5290146148ecb9636b78f7f9180c0b79
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="transacted-batching"></a>トランザクション バッチ
 このサンプルでは、メッセージ キュー (MSMQ) を使用して、トランザクション読み取りをバッチ処理する方法を示します。 トランザクション バッチは、キューを使用する通信でトランザクション読み取りのパフォーマンスを最適化するための機能です。  
@@ -114,7 +116,7 @@ ms.lasthandoff: 12/22/2017
   
 4.  データベースをリモート コンピューターで実行するには、接続文字列をデータベースが存在するコンピューターを指すように変更します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  このサンプルを実行するには、MSMQ をインストールする必要があります。さらに、SQL または SQL Express が必要です。  
   
 ## <a name="demonstrates"></a>使用例  
@@ -142,8 +144,8 @@ ms.lasthandoff: 12/22/2017
  サービス動作は、`TransactionScopeRequired` が `true` に設定された操作動作を定義します。 これにより、キューからのメッセージの取得に使用されるものと同じトランザクション スコープが、このメソッドによってアクセスされる任意のリソース マネージャにより使用されます。 この例では、基本的なデータベースを使用してメッセージに含まれる発注書情報を保存します。 さらにトランザクション スコープでは、メソッドから例外がスローされた場合にメッセージがキューに返されることも保証されます。 このサービス動作を設定しない場合、キューに置かれたチャネルはトランザクションを作成して、キューからのメッセージを読み取り、操作が失敗した場合には、ディスパッチによってメッセージが失われる前に、自動的にそのメッセージをコミットします。 最もよく見られるシナリオは、キューからのメッセージの読み込みに使用するトランザクションにサービス操作を登録することです。次のコードを参照してください。  
   
  `ReleaseServiceInstanceOnTransactionComplete` が `false` に設定されていることに注意してください。 これはバッチ処理の重要な要件です。 `ReleaseServiceInstanceOnTransactionComplete` のプロパティ `ServiceBehaviorAttribute` は、トランザクションが完了した後のサービス インスタンスの処理方法を示します。 既定では、トランザクションが完了するとサービス インスタンスは解放されます。 バッチ処理の主な特徴は、キューに置かれた多数のメッセージを読み取ってディスパッチするために単一のトランザクションを使用する点です。 そのため、サービス インスタンスが解放されると、実際にバッチ処理が行われる前にトランザクションが完了することになります。 このプロパティが `true` に設定され、トランザクション バッチ動作がエンドポイントに追加された場合、このバッチ処理の検証動作は例外をスローします。  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 // Added code to write output to the console window.  
 [ServiceBehavior(ReleaseServiceInstanceOnTransactionComplete=false,   
@@ -160,11 +162,11 @@ public class OrderProcessorService : IOrderProcessor
     }  
     …  
 }  
-```  
-  
+```
+
  `Orders` クラスは、注文処理機能をカプセル化します。 サンプルでは、このクラスは発注書情報を使用してデータベースを更新します。  
-  
-```  
+
+```csharp
 // Order Processing Logic  
 public class Orders  
 {  
@@ -234,8 +236,8 @@ public class Orders
                                      {1} ", rowsAffected, po.PONumber);  
     }  
 }  
-```  
-  
+```
+
  バッチ動作とその構成は、サービス アプリケーションの構成で指定されます。  
   
 ```xml  
@@ -292,8 +294,8 @@ public class Orders
 >  バッチ サイズの選択は、アプリケーションに依存します。 バッチ サイズが小さすぎると、必要なパフォーマンスを実現できません。 逆にバッチ サイズが大きすぎると、パフォーマンスが低下する場合があります。 たとえば、トランザクションが長期間有効でデータベースのロックを保持したり、またはトランザクションがデッドロック状態になる場合があります。この場合、バッチはロール バックされて作業がやり直しになる可能性があります。  
   
  クライアントはトランザクション スコープを作成します。 キューとの通信はトランザクションのスコープ内で実行されるため、すべてのメッセージがキューに送信されるか、またはメッセージがキューにまったく送信されないかを示す、アトミック単位として扱われます。 トランザクションは、トランザクション スコープで <xref:System.Transactions.TransactionScope.Complete%2A> を呼び出すことでコミットされます。  
-  
-```  
+
+```csharp
 //Client implementation code.  
 class Client  
 {  
@@ -340,8 +342,8 @@ class Client
         Console.ReadLine();  
     }  
 }  
-```  
-  
+```
+
  サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。 サービスがクライアントから受信したメッセージを表示できます。 どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。 キューが使用されているので、クライアントとサービスが同時に実行されている必要はありません。 クライアントを実行してシャットダウンした後にサービスを起動しても、サービスはメッセージを受信します。 メッセージがバッチ内で読み取られて処理された際には、ロール出力を表示できます。  
   
 ```  
@@ -385,4 +387,4 @@ Processing Purchase Order: ea94486b-7c86-4309-a42d-2f06c00656cd
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Batching`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

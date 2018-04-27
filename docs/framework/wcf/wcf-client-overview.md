@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 491cbf19ac3c8f1817b12c895655ca1958972a62
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 3669260d34aac0783f2ebd735c79ced91741408a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wcf-client-overview"></a>WCF クライアントの概要
 このセクションでは、クライアント アプリケーションの処理、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントの構成方法、作成方法、使用方法、およびクライアント アプリケーションをセキュリティで保護する方法について説明します。  
@@ -73,11 +73,11 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
  サービスアプリケーションから次の簡単なサービス コントラクトが生成されていることを前提に、<xref:System.ServiceModel.ClientBase%601> クラスの使用方法を説明します。  
   
 > [!NOTE]
->  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントを作成する場合、サービス参照をプロジェクトに追加すると、オブジェクトはオブジェクト ブラウザーに自動的に読み込まれます。  
+>  作成する Visual Studio を使用している場合、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]クライアント オブジェクトに読み込まれる自動的に、オブジェクト ブラウザー サービス参照をプロジェクトに追加するときにします。  
   
  [!code-csharp[C_GeneratedCodeFiles#12](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#12)]  
   
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用しない場合は、生成されたコントラクト コードを調べて <xref:System.ServiceModel.ClientBase%601> を拡張する型とサービス コントラクト インターフェイスの `ISampleService` を見つけます。 この場合、この型は次のようなコードになります。  
+ Visual Studio を使用していない場合、生成されるコントラクト コードを調べを拡張する型を見つける<xref:System.ServiceModel.ClientBase%601>とサービス コントラクト インターフェイス`ISampleService`です。 この場合、この型は次のようなコードになります。  
   
  [!code-csharp[C_GeneratedCodeFiles#14](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#14)]  
   

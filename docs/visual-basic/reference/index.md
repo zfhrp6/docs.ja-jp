@@ -12,11 +12,11 @@ ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 26cb885187cff31a085e34c60c820fe7c0bdc787
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 15d71f039223b464a3b5affb9ba7b37886b93200
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="reference-visual-basic"></a>リファレンス (Visual Basic)
 このセクションでは、Visual Basic プログラミングのさまざまな側面に関する参照情報へのリンクを提供します。  
@@ -43,10 +43,10 @@ ms.lasthandoff: 04/26/2018
   
 ## <a name="related-sections"></a>関連項目  
  [一般的なユーザー インターフェイス要素 (Visual Studio)](/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のダイアログ ボックスとウィンドウに関するトピックです。  
+ ダイアログ ボックスおよびウィンドウが Visual Studio の使用についてのトピックが含まれています。  
   
  [Visual Studio の XML ツール](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で使用可能な、さまざまな XML ツールに関するトピックへのリンクを示します。  
+ Visual Studio で使用できるさまざまなの XML ツールに関するトピックへのリンクを提供します。  
   
  [オートメーションと機能拡張のリファレンス](http://msdn.microsoft.com/library/93112562-db21-4188-9383-ed19ad79bddf)  
- 共有コンポーネントと言語固有コンポーネントの両方について、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] でのオートメーションと機能拡張に関するトピックへのリンクを示します。
+ オートメーションと拡張性を Visual Studio で、共有と言語に固有の両方のコンポーネントを説明するトピックへのリンクを提供します。

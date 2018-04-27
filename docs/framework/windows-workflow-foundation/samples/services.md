@@ -1,26 +1,27 @@
 ---
 title: Services1
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 521cdb66-98cb-4ad1-b706-370788a43485
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 924368f5de4c5698c439a6c8744a15babd62d762
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f53c3ee686c4117a621eac43ede1035a83a08e46
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="services"></a>サービス
-このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] のサービス機能を示すサンプルへのリンクが含まれています。  
+このセクションには、Windows Workflow Foundation (WF) サービスの機能を示すサンプルへのリンクが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [絶対遅延](../../../../docs/framework/windows-workflow-foundation/samples/absolute-delay.md)  
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/22/2017
  メッセージング アクティビティ (WF サービス) で使用できるユーザーの種類を示します。 サンプルのサービスは、簡単な費用承認サービスで、3 つの操作を公開します。  
   
  [永続的な二重](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
- [!INCLUDE[wf](../../../../includes/wf-md.md)] のメッセージング アクティビティを使用して、永続的な双方向メッセージ交換を設定および構成する方法を示します。  
+ 設定して、Windows Workflow Foundation (WF)、メッセージング アクティビティを使用して永続的な双方向メッセージ交換を構成する方法を示します。  
   
  [コンテンツ ベースの相関関係](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
  メッセージング アクティビティ (<xref:System.ServiceModel.Activities.Send>、<xref:System.ServiceModel.Activities.Receive>、<xref:System.ServiceModel.Activities.SendReply>、および <xref:System.ServiceModel.Activities.ReceiveReply>) を 1 つまたは複数のコンテンツ ベースの相関関係で使用する方法を示します。  
@@ -54,10 +55,10 @@ ms.lasthandoff: 12/22/2017
  永続的な遅延を使用する方法を示します。これは、遅延の間、ワークフローを永続的なデバイスに永続化する遅延のことです。  
   
  [バッファーされた受信機能](../../../../docs/framework/windows-workflow-foundation/samples/buffered-receive.md)  
- [!INCLUDE[wf](../../../../includes/wf-md.md)] のバッファーされた受信機能を設定および構成する方法を示します。  
+ 設定し、Windows Workflow Foundation (WF) でバッファーされた受信機能を構成する方法を示します。  
   
  [XAML アクティベーション](../../../../docs/framework/windows-workflow-foundation/samples/xaml-activation.md)  
  宣言型ワークフローを [!INCLUDE[iisver](../../../../includes/iisver-md.md)] でホストする方法を示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)

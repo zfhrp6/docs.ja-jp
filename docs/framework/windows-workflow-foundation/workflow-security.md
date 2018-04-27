@@ -1,29 +1,29 @@
 ---
-title: "ワークフローのセキュリティ"
-ms.custom: 
+title: ワークフローのセキュリティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-caps.latest.revision: 
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: dbb1d1efc0758410f12f2c669cca85b9f0e38406
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 90e9d5f3a2cff454ff7892877f012f8679b9ccac
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="workflow-security"></a>ワークフローのセキュリティ
-[!INCLUDE[wf](../../../includes/wf-md.md)] は、Microsoft SQL Server や [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] などの複数のさまざまなテクノロジと統合されています。 これらのテクノロジと相互作用するうえで、不適切に実行された場合にワークフローでセキュリティの問題が発生することがあります。  
+Windows Workflow Foundation (WF) は、Microsoft SQL Server など、いくつかのテクノロジと統合されて、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]です。 これらのテクノロジと相互作用するうえで、不適切に実行された場合にワークフローでセキュリティの問題が発生することがあります。  
   
 ## <a name="persistence-security-concerns"></a>永続化のセキュリティに関する注意事項  
   
@@ -41,15 +41,15 @@ ms.lasthandoff: 12/22/2017
   
 -   子アクティビティ、場所、ブックマーク、ホストの拡張機能、またはスコープを多数使用する場合、またはペイロードが非常に大きいブックマークを使用する場合、メモリが不足したり、永続化の実行中に必要以上のディスク容量が割り当てられる可能性があります。 オブジェクト レベルおよびデータベース レベルのセキュリティを使用すると、このような状態を緩和できます。  
   
--   <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> を使用する場合、インスタンス ストアをセキュリティで保護する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][SQL Server のベスト プラクティス](http://go.microsoft.com/fwlink/?LinkId=164972)です。  
+-   <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> を使用する場合、インスタンス ストアをセキュリティで保護する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [SQL Server のベスト プラクティス](http://go.microsoft.com/fwlink/?LinkId=164972)です。  
   
--   インスタンス ストアの機密情報は暗号化する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][SQL セキュリティ暗号化](http://go.microsoft.com/fwlink/?LinkId=164976)です。  
+-   インスタンス ストアの機密情報は暗号化する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [SQL セキュリティ暗号化](http://go.microsoft.com/fwlink/?LinkId=164976)です。  
   
 -   多くの場合、データベース接続文字列は構成ファイルに含まれているので、Windows レベルのセキュリティ (ACL) を使用して、構成ファイル (通常は Web.Config) が安全であるように、またログインとパスワードの情報が接続文字列に含まれないようにする必要があります。 Windows 認証をデータベースと Web サーバー間で代わりに使用する必要があります。  
   
 ## <a name="considerations-for-workflowservicehost"></a>WorkflowServiceHost に関する考慮事項  
   
--   ワークフローで使用されている [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のエンドポイントは、セキュリティで保護される必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][WCF セキュリティの概要](http://go.microsoft.com/fwlink/?LinkID=164975)です。  
+-   ワークフローで使用されている [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のエンドポイントは、セキュリティで保護される必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF セキュリティの概要](http://go.microsoft.com/fwlink/?LinkID=164975)です。  
   
 -   <xref:System.ServiceModel.ServiceAuthorizationManager> を使用して、ホスト レベルの認証を実装できます。 参照してください[操作方法: サービスのカスタム承認マネージャーを作成する](http://go.microsoft.com/fwlink/?LinkId=192228)詳細についてはします。 これは、次のサンプル」でも例示されて:[ワークフロー サービスのセキュリティ保護する](../../../docs/framework/windows-workflow-foundation/samples/securing-workflow-services.md)です。  
   

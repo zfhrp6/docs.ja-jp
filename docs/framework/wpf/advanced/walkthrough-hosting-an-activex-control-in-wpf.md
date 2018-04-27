@@ -1,12 +1,13 @@
 ---
-title: "チュートリアル: WPF での ActiveX コントロールのホスト"
-ms.custom: 
+title: 'チュートリアル: WPF での ActiveX コントロールのホスト'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - ActiveX controls [WPF interoperability]
 - hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b0e85c715db30c6e577980376d25d56238e2835a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: fc4f577da04fb8ed15bae3c0497b35803a46f08f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>チュートリアル: WPF での ActiveX コントロールのホスト
 ブラウザーでの強化された操作を有効にするを使用することができます[!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)]コントロールで、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-ベースのアプリケーションです。 このチュートリアルでは、ホストする方法、[!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)]上のコントロールとして、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ。  
@@ -42,7 +44,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)]コンピューターにインストールされている場所[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]がインストールされています。  
+-   [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] Visual Studio がインストールされているコンピューターにインストールします。  
   
 -   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]。  
   
@@ -71,7 +73,7 @@ ms.lasthandoff: 01/19/2018
 9. すべての参照の名前を変更するメッセージが表示されたら、クリックして**はい**です。  
   
 ## <a name="creating-the-activex-control"></a>ActiveX コントロールを作成します。  
- [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]自動的に生成、<xref:System.Windows.Forms.AxHost>のラッパー クラス、[!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)]デザイン サーフェイスにコントロールを追加する場合を制御します。 次の手順では、AxInterop.WMPLib.dll をという名前のマネージ アセンブリを作成します。  
+ [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] 自動的に生成、<xref:System.Windows.Forms.AxHost>のラッパー クラス、[!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)]デザイン サーフェイスにコントロールを追加する場合を制御します。 次の手順では、AxInterop.WMPLib.dll をという名前のマネージ アセンブリを作成します。  
   
 #### <a name="to-create-the-activex-control"></a>ActiveX コントロールを作成するには  
   
@@ -116,7 +118,7 @@ ms.lasthandoff: 01/19/2018
   
 10. F5 キーを押してアプリケーションをビルドし、実行します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [WPF デザイナー](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  

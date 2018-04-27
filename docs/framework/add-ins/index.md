@@ -26,11 +26,11 @@ ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4d288d321063512f91ad94b417bb1a6bf38c9ef9
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 2e31605f428f4e1dc58ee3332977f14dfd394489
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="add-ins-and-extensibility"></a>アドインおよび拡張機能
 <a name="top"></a> アドインには、ホスト アプリケーションのための拡張機能またはサービスが用意されています。 開発者は、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のプログラミング モデルを使用してアドインを開発し、ホスト アプリケーションでそれらをアクティブ化できます。 こうした機能は、このモデルで、ホストとアドインの間に通信パイプラインを構築することによって実現します。 このモデルは、 <xref:System.AddIn>、 <xref:System.AddIn.Hosting>、 <xref:System.AddIn.Pipeline>、 <xref:System.AddIn.Contract> の各名前空間の型を使用することによって実装されます。  
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/01/2018
   
  次の図に、そのパイプラインを示します。  
   
- ![追加 (& a) #45; パイプライン モデル。] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
+ ![追加&#45;パイプライン モデル。] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
 アドイン パイプライン  
   
  これらのセグメントのアセンブリが、同じアプリケーション ドメインに含まれている必要はありません。 専用の新規アプリケーション ドメイン、既存のアプリケーション ドメイン、さらにはホストのアプリケーション ドメインにも、アドインを読み込むことができます。 同じアプリケーション ドメインに複数のアドインを読み込むことができます。これにより、リソースとセキュリティ コンテキストを他のアドインと共有できます。  
@@ -116,7 +116,7 @@ ms.lasthandoff: 02/01/2018
   
 |タイトル|説明|  
 |-----------|-----------------|  
-|[Pipeline Development](../../../docs/framework/add-ins/pipeline-development.md)|ホスト アプリケーションからアドインへのセグメントの通信パイプラインについて説明します。 チュートリアルのトピックでは、コード例を示して、パイプラインの構築方法と、 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]のパイプラインへのセグメントの配置方法について説明しています。|  
+|[Pipeline Development](../../../docs/framework/add-ins/pipeline-development.md)|ホスト アプリケーションからアドインへのセグメントの通信パイプラインについて説明します。 パイプラインを作成する方法と Visual Studio でパイプラインにセグメントを展開する方法について説明するチュートリアルのトピックでのコード例を示します。|  
 |[アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)|セキュリティ、信頼性、バージョン管理、およびアセンブリのための分離の境界を提供するアプリケーション ドメイン間の関係について説明します。|  
   
  [ページのトップへ](#top)  

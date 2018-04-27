@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d40b59faa4d0f50e59daaa71da6127da367f008b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b8b3e3006072855673c37786ffb763fcd610e40c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Windows Communication Foundation サンプルのビルド
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Visual Studio 2010 を使用してまたはを使用して、サンプルをビルドすることができます、 **msbuild**コマンドラインからコマンド。 ここでは、両方の手順について説明します。  
@@ -39,9 +39,9 @@ ms.lasthandoff: 04/26/2018
   
 ### <a name="to-build-the-sample-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドするには  
   
-1.  [!INCLUDE[wv](../../../../includes/wv-md.md)]、[!INCLUDE[lserver](../../../../includes/lserver-md.md)]、Windows 7、または Windows Server 2008 R2 を使用し、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を実行する場合は、より高いレベルのアクセス許可を使用して [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] を実行する必要があります。 これを行うには、[スタート] メニューのアイコンを右クリックし、をクリックして**管理者として実行**です。  
+1.  使用している場合[!INCLUDE[wv](../../../../includes/wv-md.md)]、 [!INCLUDE[lserver](../../../../includes/lserver-md.md)]、Windows 7、または Windows Server 2008 R2、および実行[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]、引き上げられたアクセス許可で Visual Studio を実行する必要があります。 これを行うには、[スタート] メニューのアイコンを右クリックし、をクリックして**管理者として実行**です。  
   
-2.  **ファイル**Visual Studio で、メニューをクリックして**開く**、順にクリックして**プロジェクト/ソリューション**です。 サンプルをインストールしたディレクトリの下の言語固有のサブディレクトリに移動し、.sln ファイルのアイコンをダブルクリックして、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] でソリューションを開きます。  
+2.  **ファイル**Visual Studio で、メニューをクリックして**開く**、順にクリックして**プロジェクト/ソリューション**です。 サンプルをインストールしたディレクトリの言語固有のサブディレクトリに移動し、Visual Studio でソリューションを開く .sln ファイルのアイコンをダブルクリックします。  
   
 3.  **ビルド**メニューの **ソリューションのリビルド**です。 クライアント プログラムが client\bin にビルドされ、サービス プログラムが service\bin にビルドされます。 サービスが IIS によってホストされている場合は、サービス プログラム ファイルがさらに servicemodelsamples ディレクトリと、その \bin サブディレクトリにコピーされます。  
   

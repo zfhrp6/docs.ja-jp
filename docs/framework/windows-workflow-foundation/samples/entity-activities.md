@@ -1,35 +1,36 @@
 ---
-title: "エンティティ アクティビティ"
-ms.custom: 
+title: エンティティ アクティビティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c04f7413-7fb8-40c6-819e-dc92b145b62e
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c507c3da7f4583bf6ffb7b869cecbf0bfd305077
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 81f8b1852b939d7ceb8b9afae4435ca12239b880
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="entity-activities"></a>エンティティ アクティビティ
-このサンプルでは、ADO.NET Entity Framework と [!INCLUDE[wf2](../../../../includes/wf2-md.md)] を使用してデータ アクセスを簡素化する方法を示します。  
+このサンプルでは、Windows Workflow Foundation と ADO.NET Entity Framework を使用して、データ アクセスを簡素化する方法を示します。  
   
- ADO.NET Entity Framework を使用すると、開発者は、ドメイン固有のオブジェクト、プロパティ、およびリレーションシップ (Customers、Orders、Order Details、およびこれらのエンティティ間のリレーションシップなど) の形式でデータを扱うことができます。 ADO.NET Entity Framework では、この機能を実現するために、リレーショナル ストレージ スキーマに対して直接プログラムを作成するのではなく、概念アプリケーション モデルに対してプログラムを作成できる抽象化レベルを提供します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ADO.NET Entity Framework を参照してください[ADO.NET Entity Framework](http://go.microsoft.com/fwlink/?LinkId=165549)です。  
+ ADO.NET Entity Framework を使用すると、開発者は、ドメイン固有のオブジェクト、プロパティ、およびリレーションシップ (Customers、Orders、Order Details、およびこれらのエンティティ間のリレーションシップなど) の形式でデータを扱うことができます。 ADO.NET Entity Framework では、この機能を実現するために、リレーショナル ストレージ スキーマに対して直接プログラムを作成するのではなく、概念アプリケーション モデルに対してプログラムを作成できる抽象化レベルを提供します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ADO.NET Entity Framework を参照してください[ADO.NET Entity Framework](http://go.microsoft.com/fwlink/?LinkId=165549)です。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
  このサンプルでは、`Northwind` データベースを使用します。また、`Northwind` データベースを作成および削除するためのスクリプトが用意されています (Setup.cmd と Cleanup.cmd)。 このサンプルのプロジェクトには、`Northwind` データベースに基づく Entity Data Model が含まれています。 このモデルは、プロジェクトに含まれている `Northwind.edmx` ファイルを開くことで見つかります。 これは、ADO.NET Entity Framework を使用してアクセスできるオブジェクトの形状を定義するモデルです。  
   
  このサンプルには、次のアクティビティがあります。  
   
--   `EntitySQLQuery`: `EntitySQLQuery` アクティビティを使用すると、Entity SQL クエリ文字列に基づいてデータベースからオブジェクトを取得できます。 Entity SQL はストレージに依存しない SQL と似たクエリ言語です。この言語では、概念モデルに基づいて、またモデルまたはドメインの一部であるエンティティに基づいて、クエリを指定できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Entity SQL 言語を参照してください[Entity SQL 言語](http://go.microsoft.com/fwlink/?LinkId=165646)します。  
+-   `EntitySQLQuery`: `EntitySQLQuery` アクティビティを使用すると、Entity SQL クエリ文字列に基づいてデータベースからオブジェクトを取得できます。 Entity SQL はストレージに依存しない SQL と似たクエリ言語です。この言語では、概念モデルに基づいて、またモデルまたはドメインの一部であるエンティティに基づいて、クエリを指定できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Entity SQL 言語を参照してください[Entity SQL 言語](http://go.microsoft.com/fwlink/?LinkId=165646)します。  
   
 -   `EntityLinqQuery`: このアクティビティを使用すると、LINQ クエリまたは LINQ 述語に基づいてデータベースからオブジェクトを取得できます。  
   

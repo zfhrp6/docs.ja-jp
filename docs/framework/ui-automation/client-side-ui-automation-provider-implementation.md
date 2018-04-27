@@ -1,28 +1,30 @@
 ---
-title: "クライアント側 UI オートメーション プロバイダーの実装"
-ms.custom: 
+title: クライアント側 UI オートメーション プロバイダーの実装
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - UI Automation, client-side provider implementation
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 50335994fab424b3100c91a202a7ea53643db551
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 09f54098c34d835c04a18b16dc5e33c7ebed5edb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>クライアント側 UI オートメーション プロバイダーの実装
 > [!NOTE]
@@ -34,9 +36,9 @@ ms.lasthandoff: 12/22/2017
   
  ただし、 [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] や [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] に含まれているコントロールなどの比較的古いコントロールは、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]を直接サポートしていません。 これらのコントロールは、代わりにクライアント プロセス内のプロバイダーによって処理され、プロセス間通信を使用して、たとえば、コントロール間でのウィンドウ メッセージを監視することで、コントロールに関する情報を取得します。 このようなクライアント側プロバイダーは、プロキシと呼ばれることがあります。  
   
- [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] には、 [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] および [!INCLUDE[TLA2#tla_winforms](../../../includes/tla2sharptla-winforms-md.md)] の標準のコントロール用のプロバイダーが用意されています。 さらに、サーバー側プロバイダーやプロキシで処理されないコントロールでも、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] が実装されているコントロールに対しては、代替プロバイダーが [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] の部分的なサポートを提供します。 これらすべてのプロバイダーは、自動的に読み込まれ、クライアント アプリケーションから使用できるようになります。  
+ [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] 標準のプロバイダーが用意されて[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]し、Windows フォームを制御します。 さらに、サーバー側プロバイダーやプロキシで処理されないコントロールでも、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] が実装されているコントロールに対しては、代替プロバイダーが [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] の部分的なサポートを提供します。 これらすべてのプロバイダーは、自動的に読み込まれ、クライアント アプリケーションから使用できるようになります。  
   
- サポートの詳細については[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]と[!INCLUDE[TLA2#tla_winforms](../../../includes/tla2sharptla-winforms-md.md)]コントロールを参照してください[標準コントロールの UI オートメーションのサポート](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md)です。  
+ サポートの詳細については[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]と Windows フォーム コントロールの表示[標準コントロールの UI オートメーションのサポート](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md)です。  
   
  アプリケーションが他のクライアント側プロバイダーを登録することもできます。  
   
@@ -60,6 +62,6 @@ ms.lasthandoff: 12/22/2017
   
  最後の 2 つのパラメーターは省略できます。 クライアントでは、異なるアプリケーションに対して異なるプロバイダーを使用する必要がある場合、ターゲット アプリケーションのイメージ名を指定することができます。 たとえば、クライアントは、Multiple View パターンをサポートする既知のアプリケーションの [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] リスト ビュー コントロールに対して、あるプロバイダーを使用し、そのパターンをサポートしない別の既知のアプリケーションの同様のコントロールに対して別のプロバイダーを使用できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クライアント側 UI オートメーション プロバイダーの作成](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
  [クライアント アプリケーションに UI オートメーション プロバイダーを実装する](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)

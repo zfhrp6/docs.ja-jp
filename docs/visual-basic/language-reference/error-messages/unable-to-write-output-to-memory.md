@@ -16,11 +16,11 @@ ms.assetid: 23996dca-250f-4320-8211-1560e90172df
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3f27fcf3bd1f80b5daf501609c2cd157c209924a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 5314702192dd4536f1d49c3ac8b26214d06b786b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="unable-to-write-output-to-memory"></a>出力をメモリに書き込めません。
 出力をメモリに書き込むときに問題が発生しました。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 04/26/2018
   
 1.  プログラムをもう一度コンパイルし、エラーがまだ発生するかどうか確認します。  
   
-2.  エラーが引き続き発生する場合は、作業内容を保存し、 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を再起動します。  
+2.  エラーが引き続き発生する場合は、作業内容を保存し、Visual Studio を再起動します。  
   
 3.  エラーが再発する場合は、Visual Basic を再インストールします。  
   

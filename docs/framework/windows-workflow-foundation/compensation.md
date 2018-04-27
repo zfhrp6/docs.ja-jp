@@ -1,32 +1,33 @@
 ---
-title: "補正"
-ms.custom: 
+title: 補正
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 722e9766-48d7-456c-9496-d7c5c8f0fa76
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7dd56b41b7b661b58446219d426be1a19edba059
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 861e0c9eb4e9afa5f9924160efed428d565bac4e
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="compensation"></a>補正
-[!INCLUDE[wf](../../../includes/wf-md.md)] の補正は、エラーが発生した場合に、前に完了した作業を (アプリケーションで定義されるロジックに応じて) 取り消したり補正したりできる機構です。 ここでは、ワークフローで補正を使用する方法について説明します。  
+補正 Windows Workflow Foundation (WF) 以前で完了した作業したりできる (次のアプリケーションで定義されているロジック) 補正メカニズムは、その後のエラーが発生しました。 ここでは、ワークフローで補正を使用する方法について説明します。  
   
 ## <a name="compensation-vs-transactions"></a>補正とトランザクション  
  トランザクションを使用することで、複数の操作を 1 つの作業単位にまとめることができます。 アプリケーションでトランザクションを使用すると、トランザクションのプロセスでエラーが発生した場合、トランザクション内で実行されたすべての変更を中止 (ロールバック) できます。 ただし、作業が長時間実行されている場合は、トランザクションの使用が適切でないことがあります。 たとえば、旅行計画用アプリケーションはワークフローとして実装されます。 このワークフローの手順は、フライトの予約、マネージャーによる承認の待機、およびチケットの支払いで構成されていることがあります。 このプロセスには数日かかる場合があり、フライトの予約と支払いの手順を同じトランザクションに参加させるのは実用的ではありません。 このようなシナリオでは、処理の後半でエラーが発生した場合、補正を使用してワークフローの予約の手順を取り消すことができます。  
   
 > [!NOTE]
->  このトピックでは、ワーク フローの補正について説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]ワークフローでトランザクションを参照してください[トランザクション](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md)と<xref:System.Activities.Statements.TransactionScope>です。 トランザクションの[!INCLUDE[crabout](../../../includes/crabout-md.md)]については、「<xref:System.Transactions?displayProperty=nameWithType>」と「<xref:System.Transactions.Transaction?displayProperty=nameWithType>」を参照してください。  
+>  このトピックでは、ワーク フローの補正について説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ワークフローでトランザクションを参照してください[トランザクション](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md)と<xref:System.Activities.Statements.TransactionScope>です。 トランザクションの[!INCLUDE[crabout](../../../includes/crabout-md.md)]については、「<xref:System.Transactions?displayProperty=nameWithType>」と「<xref:System.Transactions.Transaction?displayProperty=nameWithType>」を参照してください。  
   
 ## <a name="using-compensableactivity"></a>CompensableActivity の使用  
  <xref:System.Activities.Statements.CompensableActivity> は、[!INCLUDE[wf1](../../../includes/wf1-md.md)] の中心的な補正アクティビティです。 補正が必要な可能性がある作業を実行するアクティビティは、すべて <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> に配置されます。 この例では、航空券を購入する予約手順を <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> に配置し、予約の取り消しを <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> に配置します。 ワークフロー内の <xref:System.Activities.Statements.CompensableActivity> の直後には、マネージャーの承認を待ち、航空券の購入手順を完了するという 2 つのアクティビティがあります。 <xref:System.Activities.Statements.CompensableActivity> が正常に完了した後に、エラー条件によってワークフローが取り消された場合、<xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> ハンドラー内のアクティビティがスケジュールされ、航空券は取り消されます。  
@@ -176,7 +177,7 @@ Activity wf = new Sequence()
 **ワークフロー未処理の例外。**   
 **System.applicationexception: ワークフローの条件をシミュレートされたエラーです。**   
 **CancelCreditCard: クレジット_カードへの課金を取り消します。**   
-**ワークフローの状態で正常に完了しました: 取り消されました。**  [!INCLUDE[crabout](../../../includes/crabout-md.md)]キャンセルを参照してください[キャンセル](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md)です。  
+**ワークフローの状態で正常に完了しました: 取り消されました。**  [!INCLUDE[crabout](../../../includes/crabout-md.md)] キャンセルを参照してください[キャンセル](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md)です。  
   
 ### <a name="explicit-compensation-using-the-compensate-activity"></a>Compensate アクティビティを使用する明示的な補正  
  前のセクションでは、暗黙的な補正について説明しました。 暗黙的な補正は単純なシナリオには適していますが、補正処理のスケジュールに関して、より明示的な制御が必要な場合は、<xref:System.Activities.Statements.Compensate> アクティビティを使用できます。 <xref:System.Activities.Statements.Compensate> アクティビティを使用して補正プロセスを開始するには、補正が望ましい <xref:System.Activities.Statements.CompensationToken> の <xref:System.Activities.Statements.CompensableActivity> を使用します。 <xref:System.Activities.Statements.Compensate> アクティビティは、完了した <xref:System.Activities.Statements.CompensableActivity> で、まだ確認または補正されていない場合に補正を開始するときに使用できます。 たとえば、<xref:System.Activities.Statements.Compensate> アクティビティは <xref:System.Activities.Statements.TryCatch.Catches%2A> アクティビティの <xref:System.Activities.Statements.TryCatch> セクションで使用できます。また、<xref:System.Activities.Statements.CompensableActivity> が完了した後の任意のタイミングで使用できます。 この例では、<xref:System.Activities.Statements.Compensate> アクティビティを <xref:System.Activities.Statements.TryCatch.Catches%2A> アクティビティの <xref:System.Activities.Statements.TryCatch> プロパティに使用し、<xref:System.Activities.Statements.CompensableActivity> のアクションを反転します。  
@@ -332,7 +333,7 @@ Activity wf = new Sequence()
 ## <a name="nesting-compensation-activities"></a>補正アクティビティの入れ子化  
  <xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> セクションに配置できます。 <xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで処理されない場合があります。 親の <xref:System.Activities.Statements.CompensableActivity> が取り消されたとき、確認されたとき、または補正されたとき、正常に完了していてまだ確認または補正されていないすべての子の補正可能なアクティビティを、親が取り消し、確認、または補正を完了する前に、確認または補正されるようにするのが親のそのアクティビティの役割ですです。 補正が明示的にモデル化されていない場合、親の <xref:System.Activities.Statements.CompensableActivity> は、親が取り消しまたは補正のシグナルを受け取ったとき、子の補正可能なアクティビティを暗黙的に補正します。 親は、確認通知を受け取ると、暗黙的に子の補正可能なアクティビティを確認します。 取り消し、確認、または補正を処理するロジックが親の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで明示的にモデル化されている場合、明示的に処理されなかった子は暗黙的に確認されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Activities.Statements.CompensableActivity>  
  <xref:System.Activities.Statements.Compensate>  
  <xref:System.Activities.Statements.Confirm>  

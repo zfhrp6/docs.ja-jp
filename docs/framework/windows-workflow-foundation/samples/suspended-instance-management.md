@@ -1,23 +1,24 @@
 ---
-title: "中断されたインスタンスの管理"
-ms.custom: 
+title: 中断されたインスタンスの管理
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f5ca3faa-ba1f-4857-b92c-d927e4b29598
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6e04f1e2f334993975b2c4261efdc28ba318dfa3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5f5073e9de217637141d7e3c9d70bb6a0b7a9cd0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="suspended-instance-management"></a>中断されたインスタンスの管理
 このサンプルでは、中断されているワークフロー インスタンスを管理する方法を示します。  <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> の既定のアクションは `AbandonAndSuspend` です。 つまり、既定では、<xref:System.ServiceModel.WorkflowServiceHost> でホストされるワークフロー インスタンスからスローされた未処理の例外により、インスタンスがメモリから破棄され、インスタンスの永続バージョンが中断状態としてマークされることになります。 中断されたワークフロー インスタンスは、中断が解除されるまで実行できません。  
@@ -25,7 +26,7 @@ ms.lasthandoff: 12/22/2017
  このサンプルでは、コマンド ライン ユーティリティを実装して、中断されたインスタンスについてクエリを実行する方法、およびユーザーがインスタンスを再開または終了できるようにする方法を示します。 このサンプルでは、ワークフロー サービスから例外が意図的にスローされ、中断状態になります。 その後、コマンド ライン ユーティリティを使用してインスタンスについてクエリを実行し、さらに、インスタンスを再開または終了できます。  
   
 ## <a name="demonstrates"></a>使用例  
- <xref:System.ServiceModel.WorkflowServiceHost> の <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> および <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> を使用する [!INCLUDE[wf](../../../../includes/wf-md.md)]。  
+ <xref:System.ServiceModel.WorkflowServiceHost> <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>と<xref:System.ServiceModel.Activities.WorkflowControlEndpoint>の Windows Workflow Foundation (WF) です。  
   
 ## <a name="discussion"></a>説明  
  このサンプルに実装されているコマンド ライン ユーティリティは、[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] に用意されている SQL インスタンス ストアの実装に固有のものです。 インスタンス ストアのカスタム実装がある場合は、サンプルの `WorkflowInstanceCommand` の実装を、使用しているインスタンス ストアに固有の実装に置き換えることで、このユーティリティを調整できます。  

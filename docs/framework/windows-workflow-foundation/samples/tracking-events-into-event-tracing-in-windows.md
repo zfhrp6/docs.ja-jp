@@ -1,31 +1,32 @@
 ---
-title: "Windows のイベント トレースへの追跡イベント"
-ms.custom: 
+title: Windows のイベント トレースへの追跡イベント
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6798494e442b2e7633461fb821c56130a2af2508
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1a1038f848563c106ee1cac441b8a247e161e268
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Windows のイベント トレースへの追跡イベント
-このサンプルでは、ワークフロー サービスで [!INCLUDE[wf](../../../../includes/wf-md.md)] 追跡を有効にし、Event Tracing for Windows (ETW) で追跡イベントを出力する方法を示します。 ワークフロー追跡レコードを ETW に出力するために、このサンプルでは ETW 追跡参加要素 (<xref:System.Activities.Tracking.EtwTrackingParticipant>) を使用します。  
+このサンプルでは、Windows Workflow Foundation (WF) ワークフロー サービスの追跡を有効にして、イベント トレース for Windows (ETW) で追跡イベントを出力する方法を示します。 ワークフロー追跡レコードを ETW に出力するために、このサンプルでは ETW 追跡参加要素 (<xref:System.Activities.Tracking.EtwTrackingParticipant>) を使用します。  
   
  このサンプルのワークフローでは、要求を受け取り、入力データの逆数を入力変数に割り当てて、クライアントに逆数を返します。 入力データが 0 の場合、処理されない 0 による除算の例外が発生し、ワークフローが中止されます。 追跡を有効にすると、エラー追跡レコードが ETW に出力され、後でエラーをトラブルシューティングする際に役立ちます。 ETW 追跡参加要素は、追跡レコードを定期受信するように追跡プロファイルで構成されています。 追跡プロファイルは、Web.config ファイルで定義され、構成パラメーターとして ETW 追跡参加要素に渡されます。 ETW 追跡参加要素は、ワークフロー サービスの Web.config ファイルで構成され、サービス動作としてサービスに適用されます。 このサンプルでは、イベント ログの追跡イベントをイベント ビューアーを使用して確認します。  
   
 ## <a name="workflow-tracking-details"></a>ワークフロー追跡の詳細  
- [!INCLUDE[wf2](../../../../includes/wf2-md.md)] には、ワークフロー インスタンスの実行を追跡できる追跡インフラストラクチャが用意されています。 追跡ランタイムは、ワークフロー ライフサイクルに関連するイベント、ワークフロー アクティビティのイベント、およびカスタム イベントを出力するワークフロー インスタンスを作成します。 次の表で、追跡インフラストラクチャの主要コンポーネントの詳細を説明します。  
+ Windows Workflow Foundation では、ワークフロー インスタンスの実行を追跡できる追跡インフラストラクチャを提供します。 追跡ランタイムは、ワークフロー ライフサイクルに関連するイベント、ワークフロー アクティビティのイベント、およびカスタム イベントを出力するワークフロー インスタンスを作成します。 次の表で、追跡インフラストラクチャの主要コンポーネントの詳細を説明します。  
   
 |コンポーネント|説明|  
 |---------------|-----------------|  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  ソリューションを実行するには、F5 キーを押します。  
   
-     既定では、サービスはポート 53797 (http://localhost:53797/SampleWorkflowService.xamlx) をリッスンします。  
+     既定では、サービスがリッスンしているポート 53797 (http://localhost:53797/SampleWorkflowService.xamlx)です。  
   
 4.  [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] を使用して、WCF テスト クライアントを開きます。  
   
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/22/2017
   
 5.  WCF テスト クライアントで、次のように選択します。**サービスの追加**から、**ファイル**メニュー。  
   
-     入力ボックスにエンドポイントのアドレスを追加します。 既定値は http://localhost:53797/SampleWorkflowService.xamlx です。  
+     入力ボックスにエンドポイントのアドレスを追加します。 既定値は、http://localhost:53797/SampleWorkflowService.xamlx です。  
   
 6.  イベント ビューアー アプリケーションを開きます。  
   
@@ -159,5 +160,5 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\EtwTracking`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

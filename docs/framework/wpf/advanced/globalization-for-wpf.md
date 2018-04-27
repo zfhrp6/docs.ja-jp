@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8bf63c59c0948dd8414232a52fc12fafa0d13aa1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 909461811907c1eb3f494b29294db45dbbe8b01d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="globalization-for-wpf"></a>WPF のグローバリゼーション
 このトピックの内容を記述する際に注意する必要がありますのある問題が導入されています[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]グローバル市場向けアプリケーション。 グローバリゼーションのプログラミング要素がで定義されている[!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)]で`System.Globalization`です。  
@@ -180,7 +180,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="using_clickonce"></a>   
 ## <a name="using-clickonce-with-localized-applications"></a>ローカライズされたアプリケーションで ClickOnce を使用する  
- ClickOnce は、新しい Windows フォーム展開テクノロジが付属している[!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)]です。 アプリケーションをインストールしたり、Web アプリケーションをアップグレードしたりできます。 ClickOnce で展開されたアプリケーションがローカライズされると、ローカライズされたカルチャでのみ表示できます。 たとえば、配置済みのアプリケーションが日本語にローカライズされている場合のみ表示する日本語で[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]英語ではなく[!INCLUDE[TLA2#tla_win](../../../../includes/tla2sharptla-win-md.md)]です。 これは、問題の英語バージョンを実行する日本語のユーザーの一般的なシナリオになっているため[!INCLUDE[TLA2#tla_win](../../../../includes/tla2sharptla-win-md.md)]です。  
+ ClickOnce は、新しい Windows フォーム展開テクノロジが付属している[!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)]です。 アプリケーションをインストールしたり、Web アプリケーションをアップグレードしたりできます。 ClickOnce で展開されたアプリケーションがローカライズされると、ローカライズされたカルチャでのみ表示できます。 たとえば、配置済みのアプリケーションが日本語にローカライズされている場合のみ表示する日本語で[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]英語版の Windows ではなくです。 英語版の Windows を実行する日本語のユーザーの一般的なシナリオになっているために、これは、問題です。  
   
  この問題の解決策は、非依存言語フォールバック属性を設定することです。 アプリケーション開発者はメイン アセンブリからリソースを任意で削除し、特定のカルチャに対応するサテライト アセンブリでそのリソースを見つけられるように指定できます。 このプロセスで使用するを制御する、<xref:System.Resources.NeutralResourcesLanguageAttribute>です。 コンス トラクター、<xref:System.Resources.NeutralResourcesLanguageAttribute>クラスを受け取る 1 つ、2 つの署名には、<xref:System.Resources.UltimateResourceFallbackLocation>場所を指定するパラメーターを<xref:System.Resources.ResourceManager>フォールバック リソースを抽出する必要があります: メイン アセンブリまたはサテライト アセンブリ。 この属性を使用する方法の例を次に示します。 コードがによって、最終フォールバック位置の<xref:System.Resources.ResourceManager>"de"ディレクトリのサブディレクトリに、現在実行中のアセンブリのリソースを検索します。  
   

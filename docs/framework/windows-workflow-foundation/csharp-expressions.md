@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ea613d21cf7c8064938b94df3826e40caeecf3c3
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 17528db182676ae69694c4e416ee10bff1ae6ef2
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="c-expressions"></a>C# の式
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、[!INCLUDE[wf](../../../includes/wf-md.md)] で C# 式がサポートされています。 [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] で作成された、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] を対象とする新しい C# ワークフロー プロジェクトでは C# 式が使用され、Visual Basic ワークフロー プロジェクトでは Visual Basic 式が使用されます。 Visual Basic 式を使用する既存の [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] ワークフロー プロジェクトは、プロジェクトの言語に関係なく [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] に移行することができ、サポートされています。 ここでは、[!INCLUDE[wf1](../../../includes/wf1-md.md)] での C# 式の概要について説明します。  
+以降で[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、c# 式には、Windows Workflow Foundation (WF) ではサポートされています。 [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] で作成された、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] を対象とする新しい C# ワークフロー プロジェクトでは C# 式が使用され、Visual Basic ワークフロー プロジェクトでは Visual Basic 式が使用されます。 Visual Basic 式を使用する既存の [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] ワークフロー プロジェクトは、プロジェクトの言語に関係なく [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] に移行することができ、サポートされています。 ここでは、[!INCLUDE[wf1](../../../includes/wf1-md.md)] での C# 式の概要について説明します。  
   
 ## <a name="using-c-expressions-in-workflows"></a>ワークフローでの C# 式の使用  
   
@@ -40,7 +40,7 @@ ms.lasthandoff: 04/26/2018
 -   [XAMLX ワークフロー サービスで c# 式の使用](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md#WFServices)  
   
 ###  <a name="WFDesigner"></a> ワークフロー デザイナーで c# 式の使用  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、[!INCLUDE[wf](../../../includes/wf-md.md)] で C# 式がサポートされています。 [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] で作成された、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] を対象とする C# ワークフロー プロジェクトでは C# 式が使用されるのに対し、Visual Basic ワークフロー プロジェクトでは Visual Basic 式が使用されます。 目的の c# の式を指定するラベルの付いたボックスに入力**c# 式を入力**です。 このラベルは、プロパティ ウィンドウ (デザイナーでアクティビティを選択した場合) またはワークフロー デザイナーのアクティビティに表示されます。 次の例では、2 つの `WriteLine` アクティビティが `Sequence` の中で `NoPersistScope` 内に含まれています。  
+ 以降で[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、c# 式には、Windows Workflow Foundation (WF) ではサポートされています。 [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] で作成された、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] を対象とする C# ワークフロー プロジェクトでは C# 式が使用されるのに対し、Visual Basic ワークフロー プロジェクトでは Visual Basic 式が使用されます。 目的の c# の式を指定するラベルの付いたボックスに入力**c# 式を入力**です。 このラベルは、プロパティ ウィンドウ (デザイナーでアクティビティを選択した場合) またはワークフロー デザイナーのアクティビティに表示されます。 次の例では、2 つの `WriteLine` アクティビティが `Sequence` の中で `NoPersistScope` 内に含まれています。  
   
  ![自動的に作成された sequence アクティビティ](../../../docs/framework/windows-workflow-foundation/media/autosurround2.png "AutoSurround2")  
   

@@ -1,23 +1,24 @@
 ---
 title: External RuleSet Toolkit
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7fbac6bf8be169aca8ad61c69b8d024f44928d8b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 40e28bb2b17e511a1b8953ccc8ff9bdf4f0f7392
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="external-ruleset-toolkit"></a>External RuleSet Toolkit
 通常、ワークフロー アプリケーション内でルールが使用される場合は、そのルールはアセンブリの一部です。 場合によっては、ワークフロー アセンブリのリビルドや配置を行わずに RuleSet を更新できるように、RuleSet をアセンブリとは別に管理することもあります。 このサンプルでは、RuleSet をデータベース内で管理および編集し、実行時にそれらの RuleSet にワークフローからアクセスできるようにしています。 その結果、実行中のワークフロー インスタンスに、RuleSet への変更を自動的に組み込むことができます。  
@@ -67,9 +68,9 @@ ms.lasthandoff: 12/22/2017
   
  図 3: RuleSet エディタ  
   
- これは、Windows Workflow Foundation [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] アドインの一部であるエディタ ダイアログのホストを変更したものです。 そのため、Intellisense サポートを含めて、同等の機能が用意されています。 ツール内で RuleSet に関連付けられているターゲットの種類 (ワークフローなど) に対して作成されるため、ルールクリックすると**参照**ツールのメイン ダイアログ ボックスで、 **Workflow/type Selector**図 4 に示すように、ダイアログが表示されます。  
+ これは、Windows Workflow Foundation の Visual Studio アドインの一部であるエディタ ダイアログの再ホストです。 そのため、Intellisense サポートを含めて、同等の機能が用意されています。 ツール内で RuleSet に関連付けられているターゲットの種類 (ワークフローなど) に対して作成されるため、ルールクリックすると**参照**ツールのメイン ダイアログ ボックスで、 **Workflow/type Selector**図 4 に示すように、ダイアログが表示されます。  
   
- ![ワークフローである (、&) #47 です。選択範囲を入力](../../../../docs/framework/windows-workflow-foundation/samples/media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")  
+ ![ワークフロー&#47;選択範囲を入力](../../../../docs/framework/windows-workflow-foundation/samples/media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")  
   
  図 4: UI-Workflow/Type Selector  
   
@@ -83,7 +84,7 @@ ms.lasthandoff: 12/22/2017
   
  図 5: Validation Errors  
   
- **データ** メニューのツールには、インポートおよび Ruleset をエクスポートすることができます。 クリックすると、**インポート**ファイルの選択ダイアログが表示されたら、.rules ファイルを選択できます。 このファイルが [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] で最初に作成されているかどうかはわかりません。 .rules ファイルは、条件のコレクションと RuleSet のコレクションを含む、シリアル化された `RuleDefinitions` インスタンスを保持します。 このツールでは条件のコレクションは使用されませんが、`RuleDefinitions` 環境とのやり取りのために [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] .rules 形式が使用されます。  
+ **データ** メニューのツールには、インポートおよび Ruleset をエクスポートすることができます。 クリックすると、**インポート**ファイルの選択ダイアログが表示されたら、.rules ファイルを選択できます。 これは、最初に Visual Studio で作成されたファイルではない可能性がありますもかまいません。 .rules ファイルは、条件のコレクションと RuleSet のコレクションを含む、シリアル化された `RuleDefinitions` インスタンスを保持します。 ツールは、条件のコレクションを使用しませんを使用して、 `RuleDefinitions` .rules 形式では、Visual Studio 環境の対話を可能にします。  
   
  .Rules ファイルを選択した後、 **RuleSet Selector** (図 6 を参照してください) ダイアログが表示されます。 このダイアログ ボックスを使用して、インポートするファイルから RuleSet を選択できます (既定では、すべての RuleSet が指定されます)。 WF プロジェクト内の RuleSet のバージョンはアセンブリのバージョンと同じであるため、.rules ファイル内の RuleSet にはバージョン番号がありません。 インポート処理中に、ツールを自動的に割り当てます、次へ 使用可能なメジャー バージョン番号 (これはインポート後に変更できます)。割り当てられたバージョン番号を確認することができます、 **RuleSet Selector**  ボックスの一覧です。  
   
@@ -141,7 +142,7 @@ ms.lasthandoff: 12/22/2017
   
 9. アプリケーション構成ファイルがワークフロー プロジェクトに追加され、サービスが使用するデータベース接続文字列が指定されます。 この接続文字列は、RuleSet テーブルを含むデータベースを指す、RuleSet ツールが使用する接続文字列と同一である必要があります。  
   
-10. これで、`RuleSetToolkitUsageSample` プロジェクトを他のワークフロー コンソール アプリケーションと同様に実行できるようになります。 [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] 内で F5 キーまたは Ctrl + F5 キーを押すか、直接 RuleSetToolkitUsageSample.exe ファイルを実行します。  
+10. これで、`RuleSetToolkitUsageSample` プロジェクトを他のワークフロー コンソール アプリケーションと同様に実行できるようになります。 F5 キーまたは Visual Studio 内で ctrl キーを押しながら f5 キーを押すか、直接 RuleSetToolkitUsageSample.exe ファイルを実行します。  
   
     > [!NOTE]
     >  RuleSet ツールは使用方法サンプルのアセンブリを読み込んでいるため、使用方法サンプルを再コンパイルするには RuleSet ツールを閉じる必要があります。

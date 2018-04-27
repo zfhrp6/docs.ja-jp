@@ -1,27 +1,29 @@
 ---
-title: "UI オートメーションによる標準コントロールのサポート"
-ms.custom: 
+title: UI オートメーションによる標準コントロールのサポート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - controls, UI Automation support for
 - UI Automation, support for standard controls
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: f7529c68e96f93ebbba9fc5e750e09331bda9699
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: af46a984f1b4c2577daee120752590ff18b9d1d8
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>UI オートメーションによる標準コントロールのサポート
 > [!NOTE]
@@ -99,15 +101,15 @@ ms.lasthandoff: 12/22/2017
 |SysDateTimePick32|カスタム|  
 |SysMonthCal32|予定表|  
 |MS_WINNOTE|ヒント|  
-|VBBubble|Tooltip|  
+|VBBubble|ヒント|  
 |ScrollBar (スタンドアロン コントロールとして使用される場合)|スライダー|  
 |SuperGrid|カスタム|  
   
 <a name="Windows_Forms_Controls"></a>   
 ## <a name="windows-forms-controls"></a>Windows フォーム コントロール  
- [!INCLUDE[TLA2#tla_winforms](../../../includes/tla2sharptla-winforms-md.md)] コントロールは、UIAutomationClientsideProviders.dll のクライアント側プロバイダーによって [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] に公開されています。 このアセンブリは、UI オートメーション クライアント アプリケーションで使用するために、自動的に登録されます。  
+ Windows フォーム コントロールに公開される[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]UIAutomationClientsideProviders.dll のクライアント側プロバイダーによってです。 このアセンブリは、UI オートメーション クライアント アプリケーションで使用するために、自動的に登録されます。  
   
- 通常、 [!INCLUDE[TLA2#tla_winforms](../../../includes/tla2sharptla-winforms-md.md)] の一般的なコントロールのマネージ ラッパーである [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] コントロールは、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]によってサポートされます。 次のコントロールがサポートされています。  
+ 通常、Windows フォーム コントロールのマネージ ラッパー[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]コモン コントロールでサポートされる[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]です。 次のコントロールがサポートされています。  
   
 |クラス名|  
 |----------------|  
@@ -121,7 +123,7 @@ ms.lasthandoff: 12/22/2017
 |GroupBox|  
 |HscrollBar|  
 |ImageList|  
-|ラベル|  
+|group1|  
 |ListBox|  
 |ListView|  
 |MainMenu/ContextMenu|  
@@ -178,5 +180,5 @@ ms.lasthandoff: 12/22/2017
 |RaftingContainer|  
 |StatusStrip|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI オートメーション コントロール型](../../../docs/framework/ui-automation/ui-automation-control-types.md)

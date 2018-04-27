@@ -1,5 +1,5 @@
 ---
-title: -doc
+title: -ドキュメント
 ms.date: 03/10/2018
 ms.prod: .net
 ms.suite: ''
@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0948b9ef0675541ca595bb297e01e62c9d79a181
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: e7dc75a0600c9694c4a20f028c810c6aca54eeb6
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="-doc"></a>-doc
+# <a name="-doc"></a>-ドキュメント
 ドキュメント コメントを XML ファイルに出力します。  
   
 ## <a name="syntax"></a>構文  
@@ -46,7 +46,7 @@ ms.lasthandoff: 03/22/2018
   
 -   メンバーのフィールドなど、[イベント](../../../visual-basic/language-reference/statements/event-statement.md)、[プロパティ](../../../visual-basic/language-reference/statements/property-statement.md)、[関数](../../../visual-basic/language-reference/statements/function-statement.md)、または[サブルーチン](../../../visual-basic/language-reference/statements/sub-statement.md)です。  
   
- 生成された XML ファイルを使用して、 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] [IntelliSense](/visualstudio/ide/using-intellisense)機能をサポートするアセンブリと同じである XML ファイルのファイル名を使用します。 XML ファイルが設定されて、アセンブリと同じディレクトリ内でアセンブリが参照されている場合を確認してください、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]プロジェクト、.xml ファイルが見つかると同様です。 XML ドキュメント ファイルは IntelliSense コード プロジェクトによって参照されるプロジェクトまたはプロジェクト内で作業するために必要ではありません。  
+ Visual Studio で生成された XML ファイルを使用する[IntelliSense](/visualstudio/ide/using-intellisense)機能をサポートするアセンブリと同じである XML ファイルのファイル名を使用します。 XML ファイルが、アセンブリと同じディレクトリにアセンブリが、Visual Studio プロジェクトで参照されている場合、.xml ファイルが見つかるも確認してください。 XML ドキュメント ファイルは IntelliSense コード プロジェクトによって参照されるプロジェクトまたはプロジェクト内で作業するために必要ではありません。  
   
  コンパイルする場合を除き、 `/target:module`、XML ファイルには、タグが含まれています。`<assembly></assembly>`です。 これらのタグは、コンパイルの出力ファイルのアセンブリ マニフェストを含むファイルの名前を指定します。  
   

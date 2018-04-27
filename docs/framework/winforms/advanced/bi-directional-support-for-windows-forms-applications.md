@@ -1,8 +1,9 @@
 ---
-title: "Windows フォーム アプリケーションの双方向サポート"
+title: Windows フォーム アプリケーションの双方向サポート
 ms.date: 09/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-winforms
+ms.technology:
+- dotnet-winforms
 ms.topic: article
 helpviewer_keywords:
 - globalization [Windows Forms], bi-directional support in Windows
@@ -13,15 +14,16 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a8ae0e958c842c2f3cf3fbb788cad1cde6e6cc2b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d670fedb2fe693a871de8f0147b81b97b4958853
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Windows フォーム アプリケーションの双方向サポート
-[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] を使用して、アラビア語やヘブライ語などの双方向 (右から左) の言語をサポートする Windows ベースのアプリケーションを作成できます。 これには、標準的なフォーム、ダイアログ ボックス、MDI フォームや、これらのフォームで操作できるすべてのコントロール、まり、<xref:System.Windows.Forms.Control> 名前空間のすべてのオブジェクトが含まれます。  
+Visual Studio を使用して、アラビア語やヘブライ語などの双方向 (右から左に) 言語をサポートする Windows ベースのアプリケーションを作成することができます。 これには、標準的なフォーム、ダイアログ ボックス、MDI フォームや、これらのフォームで操作できるすべてのコントロール、まり、<xref:System.Windows.Forms.Control> 名前空間のすべてのオブジェクトが含まれます。  
   
 ## <a name="culture-support"></a>カルチャのサポート  
  カルチャと UI カルチャの設定は、アプリケーションが日付、時刻、通貨、およびその他の情報をどのように操作するかを決定します。 双方向言語のカルチャおよび UI カルチャのサポートは、その他の言語と同じです。   「[グローバルな Windows フォームおよび Web フォームにおけるカルチャ固有のクラス](http://msdn.microsoft.com/library/94ye9x8c\(v=vs.110\))」または「[グローバルな Windows フォームおよび Web フォームにおけるカルチャ固有のクラス](http://msdn.microsoft.com/library/94ye9x8c\(v=vs.120\))」も参照してください。  
@@ -121,6 +123,6 @@ ms.lasthandoff: 12/22/2017
   
  一部のコントロールはシールされています。 そのため、そこから新しいコントロールを派生できません。 これには、<xref:System.Windows.Forms.ImageList> コントロールや <xref:System.Windows.Forms.ProgressBar> コントロールが含まれます。  
   
-## <a name="see-also"></a>参照  
- [ASP.NET Web アプリケーションの双方向サポート](http://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
+## <a name="see-also"></a>関連項目  
+ [ASP.NET Web アプリケーションに対する双方向サポート](http://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
  [Windows フォームのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)

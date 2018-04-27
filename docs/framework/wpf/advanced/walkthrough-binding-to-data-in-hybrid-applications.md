@@ -1,12 +1,13 @@
 ---
-title: "チュートリアル : ハイブリッド アプリケーションでのデータへのバインディング"
-ms.custom: 
+title: 'チュートリアル : ハイブリッド アプリケーションでのデータへのバインディング'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-caps.latest.revision: "39"
+caps.latest.revision: 39
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c1348f3a57dd04d58298c9746b74a7c3a1baf30c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: b8afe4732363ec61d73db13e9b190381cbd8f29d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>チュートリアル : ハイブリッド アプリケーションでのデータへのバインディング
 使用しているかどうかをコントロールにデータ ソースのバインドは、基になるデータへのアクセス権を持つユーザーを提供するために不可欠な[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]または[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 このチュートリアルでは、両方を格納するハイブリッド アプリケーションのデータ バインディングを使用するどの[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]と[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コントロール。  
@@ -90,7 +92,7 @@ ms.lasthandoff: 01/19/2018
      [!code-xaml[WPFWithWFAndDatabinding#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#3)]  
   
 ## <a name="specifying-the-form-layout"></a>フォーム レイアウトの指定  
- フォームのレイアウトは、次の 3 つの行と 3 つの列を含むグリッドによって定義されます。 <xref:System.Windows.Controls.Label>コントロールは、Customers テーブル内の各列の識別に提供されます。  
+ フォームのレイアウトは、次の 3 つの行と 3 つの列を含むグリッドによって定義されます。 <xref:System.Windows.Controls.Label> コントロールは、Customers テーブル内の各列の識別に提供されます。  
   
 #### <a name="to-set-up-the-grid-layout"></a>グリッド レイアウトを設定するには  
   
@@ -127,7 +129,7 @@ ms.lasthandoff: 01/19/2018
      [!code-xaml[WPFWithWFAndDatabinding#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#7)]  
   
 ## <a name="adding-the-data-source-to-the-project"></a>データ ソースをプロジェクトに追加します。  
- [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]プロジェクトにデータ ソースを簡単に追加することができます。 このプロシージャは、プロジェクトに厳密に型指定されたデータ セットを追加します。 いくつか他のサポートなどのクラスを選択したテーブルの各テーブルのアダプターも追加されます。  
+ Visual Studio プロジェクトにデータ ソースを簡単に追加できます。 このプロシージャは、プロジェクトに厳密に型指定されたデータ セットを追加します。 いくつか他のサポートなどのクラスを選択したテーブルの各テーブルのアダプターも追加されます。  
   
 #### <a name="to-add-the-data-source"></a>データ ソースを追加するには  
   
@@ -184,7 +186,7 @@ ms.lasthandoff: 01/19/2018
   
 10. F5 キーを押してアプリケーションをビルドし、実行します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [WPF デザイナー](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  

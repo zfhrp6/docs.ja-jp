@@ -1,26 +1,27 @@
 ---
-title: "トランザクション キュー"
-ms.custom: 
+title: トランザクション キュー
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b1b011dd-5e0b-482c-9bb0-9d8727038f14
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa475ac31287cebe173df255380b1f34d9af2567
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 628e91589ad32a2646316401c7b2ddb31b13eace
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="transacted-queues"></a>トランザクション キュー
-このサンプルでは、キューとトランザクションを [!INCLUDE[wf](../../../../includes/wf-md.md)] に統合し、信頼性があり、拡張性の高いサービスを作成する方法を示します。 A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope`を使用してトランザクション内でキューにメッセージを送信するクライアント ワークフローで使用される、<xref:System.ServiceModel.NetMsmqBinding>です。 <xref:System.ServiceModel.Activities.TransactedReceiveScope> は、キューからメッセージを受信して同じトランザクション内でワークフローの状態を更新するためにサーバーで使用されます。  
+このサンプルでは、キューおよびトランザクションの Windows Workflow Foundation (WF) 信頼性が高く、スケーラブルなサービスを作成するを統合する方法を示します。 A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope`を使用してトランザクション内でキューにメッセージを送信するクライアント ワークフローで使用される、<xref:System.ServiceModel.NetMsmqBinding>です。 <xref:System.ServiceModel.Activities.TransactedReceiveScope> は、キューからメッセージを受信して同じトランザクション内でワークフローの状態を更新するためにサーバーで使用されます。  
   
 ## <a name="demonstrates"></a>使用例  
  <xref:System.Activities.Statements.TransactionScope>、<xref:System.ServiceModel.Activities.TransactedReceiveScope>、<xref:System.ServiceModel.NetMsmqBinding>、<xref:System.ServiceModel.Activities.Receive>、およびコンテンツ ベースの相関関係。  

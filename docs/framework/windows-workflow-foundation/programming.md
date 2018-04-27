@@ -1,37 +1,38 @@
 ---
-title: "Windows Workflow Foundation プログラミングの新機能"
-ms.custom: 
+title: Windows Workflow Foundation プログラミングの新機能
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Workflow Foundation [WF], programming
 - programming [WF]
 - WF [WF], programming
 ms.assetid: f62354e2-6a2b-4e8c-a4bc-533fb96267a4
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7ad763512a4f39f2d0b2e2f03b052de5b8dcc031
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0b704357d914f72049d0639c402bf2ae64975d00
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-workflow-foundation-programming"></a>Windows Workflow Foundation プログラミングの新機能
-このセクションには、[!INCLUDE[wf](../../../includes/wf-md.md)] の熟練したプログラマになるうえで理解する必要がある一連の入門トピックが含まれます。  
+このセクションには、一連入門トピックに習熟して Windows Workflow Foundation (WF) プログラマになることを理解しておく必要にはが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ワークフローの設計](../../../docs/framework/windows-workflow-foundation/designing-workflows.md)  
  ワークフローの開発で使用するフロー制御パラダイムについて説明します。  
   
  [アクティビティの使用と作成](../../../docs/framework/windows-workflow-foundation/using-and-creating-activities.md)  
- [!INCLUDE[wf](../../../includes/wf-md.md)] で使用できる、システムによって提供されるアクティビティについて説明します。  
+ Windows Workflow Foundation (WF) で使用できるシステム標準アクティビティについて説明するトピックです。  
   
  [Windows Workflow Foundation のデータ モデル](../../../docs/framework/windows-workflow-foundation/data-model.md)  
  [!INCLUDE[wf1](../../../includes/wf1-md.md)] の変数、引数、および式について説明します。  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/22/2017
  ワークフロー データを自動または手動で永続化したり、メモリからワークフローをアンロードするためのオプションについて説明します。  
   
  [移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)  
- 前のバージョンの [!INCLUDE[wf](../../../includes/wf-md.md)] からワークフローを移行する方法について説明します。  
+ 以前のバージョンの Windows Workflow Foundation (WF) ワークフローを移行する方法を説明するトピックです。  
   
  [ワークフローの追跡とトレース](../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
  ワークフローの追跡とトレース、およびワークフロー アプリケーションを監視するためにこれらの機能を使用する方法について説明します。  
@@ -64,4 +65,4 @@ ms.lasthandoff: 12/22/2017
  SQL および [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] を使用する場合に、ワークフローのセキュリティを維持する方法について説明します。  
   
  [Windows Workflow Foundation 4 のパフォーマンス](../../../docs/framework/windows-workflow-foundation/performance.md)  
- [!INCLUDE[wf2](../../../includes/wf2-md.md)] 4 のパフォーマンスについて説明し、WF の以前のバージョンと比較します。
+ Windows Workflow Foundation 4 のパフォーマンスについて説明し、WF の以前のバージョンを比較します。

@@ -1,29 +1,30 @@
 ---
-title: "永続的な二重"
-ms.custom: 
+title: 永続的な二重
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4e76d1a1-f3d8-4a0f-8746-4a322cdff6eb
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b1298f150709b48f18de654be2ab17adfdcbf42a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 50d0ac9efae8e6d795455a63d793b2e84407b987
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="durable-duplex"></a>永続的な二重
-このサンプルでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] のメッセージング アクティビティを使用して、永続的な双方向メッセージ交換を設定および構成する方法を示します。 永続的な双方向メッセージ交換は、長期間行われる双方向メッセージ交換です。 メッセージ交換の有効期間は、通信チャネルの有効期間およびサービス インスタンスのメモリ内有効期間よりも長い場合があります。  
+このサンプルを設定して、Windows Workflow Foundation (WF)、メッセージング アクティビティを使用して永続的な双方向メッセージ交換を構成する方法を示します。 永続的な双方向メッセージ交換は、長期間行われる双方向メッセージ交換です。 メッセージ交換の有効期間は、通信チャネルの有効期間およびサービス インスタンスのメモリ内有効期間よりも長い場合があります。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
- このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して実装された 2 つの [!INCLUDE[wf2](../../../../includes/wf2-md.md)] サービスで、永続的な双方向メッセージ交換を構成します。 永続的な双方向メッセージ交換が MSMQ 経由で送信され、関連するを使用して 2 つの一方向のメッセージから構成される[.NET コンテキスト交換](http://go.microsoft.com/fwlink/?LinkID=166059)です。 これらのメッセージは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティと <xref:System.ServiceModel.Activities.Receive> メッセージング アクティビティを使用して送信されます。 .NET コンテキスト交換は、送信メッセージに対してコールバック アドレスを指定するために使用します。 どちらのサービスも Windows プロセス アクティブ化サービス (WAS) を使用してホストされ、サービス インスタンスの永続化を有効にするように構成されます。  
+ このサンプルでは 2 つ[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]Windows Workflow Foundation を使用して実装されているサービスは、永続的な双方向メッセージ交換が構成されています。 永続的な双方向メッセージ交換が MSMQ 経由で送信され、関連するを使用して 2 つの一方向のメッセージから構成される[.NET コンテキスト交換](http://go.microsoft.com/fwlink/?LinkID=166059)です。 これらのメッセージは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティと <xref:System.ServiceModel.Activities.Receive> メッセージング アクティビティを使用して送信されます。 .NET コンテキスト交換は、送信メッセージに対してコールバック アドレスを指定するために使用します。 どちらのサービスも Windows プロセス アクティブ化サービス (WAS) を使用してホストされ、サービス インスタンスの永続化を有効にするように構成されます。  
   
  1 つ目のサービス (Service1.xamlx) は、処理を実行する送信サービス (Service2.xamlx) に要求を送信します。 処理が完了したら、Service2.xamlx は、処理が完了したことを示す通知を Service1.xamlx に送り返します。 ワークフロー コンソール アプリケーションによって、サービスがリッスンするキューが設定され、Service1.xamlx をアクティブ化するために最初の開始メッセージが送信されます。 Service1.xamlx は、要求した処理が完了したことを示す通知を Service2.xamlx から受け取ったら、結果を XML ファイルに保存します。 コールバック メッセージを待機している間、Service1.xamlx は既定の <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> を使用してインスタンスの状態を永続化します。 Service2.xamlx は、Service1.xamlx によって要求された処理を完了する一環としてインスタンスの状態を永続化します。  
   
@@ -154,7 +155,7 @@ ms.lasthandoff: 12/22/2017
   
 4.  サンプルを実行します。  
   
-    1.  http://localhost/private/durableduplex/service1.xamlx および http://localhost/private/durableduplex/service2.xamlx を参照し、両方のサービスが実行されていることを確認します。  
+    1.  参照http://localhost/private/durableduplex/service1.xamlxとhttp://localhost/private/durableduplex/service2.xamlxを両方のサービスが実行されていることを確認します。  
   
     2.  F5 キーを押して DurableDuplexClient を実行します。  
   

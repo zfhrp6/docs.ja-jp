@@ -1,13 +1,13 @@
 ---
-title: "方法 : ユーザー インターフェイスを持たないコントロールを Windows フォームに追加する"
-ms.custom: 
+title: '方法 : ユーザー インターフェイスを持たないコントロールを Windows フォームに追加する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-winforms
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,17 +22,17 @@ helpviewer_keywords:
 - Windows Forms controls, nonvisual
 - nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
-caps.latest.revision: 
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3abbf931cff9ad459e8c9221f91430ecccefa9cc
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e900c1c34f69531a14cfa11803ef5a6afb4783c6
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>方法 : ユーザー インターフェイスを持たないコントロールを Windows フォームに追加する
 非ビジュアル コントロール (またはコンポーネント) は、アプリケーションに機能を提供します。 異なり、他のコントロールのコンポーネント、ユーザーにユーザー インターフェイスを提供しないので、Windows フォーム デザイナー画面に表示する必要はありません。 コンポーネントがフォームに追加されると、Windows フォーム デザイナーは、すべてのコンポーネントが表示されるフォームの下部にあるサイズ変更可能なトレイを表示します。 コントロールがコンポーネント トレイに追加されると、コンポーネントを選択し、フォーム上の他のコントロールのように、そのプロパティを設定することができます。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/19/2018
   
      コンポーネントがコンポーネント トレイに表示されます。  
   
- さらに、コンポーネントは、実行時にフォームに追加できます。 これは、コンポーネントにはユーザー インターフェイスを持つコントロールとは異なり、ビジュアルの式があるないために特に一般的なシナリオです。 次の例で、<xref:System.Windows.Forms.Timer>実行時にコンポーネントを追加します。 (なお[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]異なるタイマーの数が含まれています。 この場合、を使用して Windows フォーム<xref:System.Windows.Forms.Timer>コンポーネントです。 別のタイマーの詳細については[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]を参照してください[サーバー ベースのタイマーの概要](http://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc))。  
+ さらに、コンポーネントは、実行時にフォームに追加できます。 これは、コンポーネントにはユーザー インターフェイスを持つコントロールとは異なり、ビジュアルの式があるないために特に一般的なシナリオです。 次の例で、<xref:System.Windows.Forms.Timer>実行時にコンポーネントを追加します。 (Visual Studio には、異なるタイマーの数が含まれています。 この場合は、を使用して Windows フォーム<xref:System.Windows.Forms.Timer>コンポーネントです。 Visual Studio で異なるタイマーの詳細については、次を参照してください[サーバー ベースのタイマーの概要](http://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc)。)。  
   
 > [!CAUTION]
 >  コンポーネントには、コンポーネントを効果的に機能するために設定する必要があるコントロール固有プロパティが多くの場合があります。 場合、<xref:System.Windows.Forms.Timer>下のコンポーネントを設定する、`Interval`プロパティです。 プロジェクトにあるプロパティを設定する、そのコンポーネントに必要なコンポーネントを追加するときにことを確認します。  
@@ -92,7 +92,7 @@ ms.lasthandoff: 01/19/2018
     > [!IMPORTANT]
     >  悪意のあるユーザー コントロールを参照することで、ローカル コンピューターがネットワーク経由のセキュリティ リスクを公開する可能性があります。 誤ってそれをプロジェクトに追加した後に、有害なカスタム コントロールを作成する悪意のあるユーザーの場合は問題にならなければのみとなります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
  [方法: Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  
  [方法: Windows フォームに ActiveX コントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  

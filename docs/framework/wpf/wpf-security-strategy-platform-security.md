@@ -1,12 +1,13 @@
 ---
-title: "WPF のセキュリティ方針 - プラットフォーム セキュリティ"
-ms.custom: 
+title: WPF のセキュリティ方針 - プラットフォーム セキュリティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -24,16 +25,17 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b40a4f1ba28559ee35dff9866539476e55cbd0fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c3c1654bd63d59bf6588b1dc18593ef7a33f37c0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="wpf-security-strategy---platform-security"></a>WPF のセキュリティ方針 - プラットフォーム セキュリティ
 [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] は、さまざまなセキュリティ サービスを提供する一方で、基になるプラットフォーム (オペレーティング システム、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]、[!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)] など) のセキュリティ機能も活用します。 これらの層を組み合わせることで、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] に強力な多重防御のセキュリティ モデルが提供されます。このセキュリティ モデルでは、次の図に示すように、単一障害点の回避を試みます。  
@@ -46,11 +48,11 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Operating_System_Security"></a>   
 ## <a name="operating-system-security"></a>オペレーティング システムのセキュリティ  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] が必要とするオペレーティング システムの最小レベルは [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] です。 [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] の中核には、[!INCLUDE[TLA2#tla_win](../../../includes/tla2sharptla-win-md.md)] で構築されたセキュリティ機能など、すべての [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションのセキュリティ基盤を形成する複数のセキュリティ機能があります。 [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] には、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] のセキュリティ機能が搭載され、それをさらに拡張しています。 このトピックでは、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] にとって重要なセキュリティ機能の一式、および [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] がそれらを統合してさらに多重防御を行う方法について説明します。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] が必要とするオペレーティング システムの最小レベルは [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] です。 中核を成す[!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)]でビルドされたものも含めて、すべての Windows アプリケーションのセキュリティの基盤を形成するいくつかのセキュリティ機能を提供[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]です。 [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] には、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] のセキュリティ機能が搭載され、それをさらに拡張しています。 このトピックでは、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] にとって重要なセキュリティ機能の一式、および [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] がそれらを統合してさらに多重防御を行う方法について説明します。  
   
 <a name="Microsoft_Windows_XP_Service_Pack_2__SP2_"></a>   
 ### <a name="microsoft-windows-xp-service-pack-2-sp2"></a>Microsoft Windows XP Service Pack 2 (SP2)  
- [!INCLUDE[TLA2#tla_win](../../../includes/tla2sharptla-win-md.md)] の総括と強化に加えて、このトピックでは、[!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] にある次の 3 つの主要機能についても説明します。  
+ 次の 3 つの主要機能があるだけでなく、一般のレビューと Windows の強化、[!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)]このトピックの内容について説明します。  
   
 -   /GS のコンパイル  
   
@@ -73,7 +75,7 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] の [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] ユーザーは、「最小限の特権によるユーザー アクセス」、コードの整合性チェック、および特権の分離など、オペレーティング システムのさらなるセキュリティ機能強化の恩恵を受けられます。  
   
 #### <a name="user-account-control-uac"></a>ユーザー アカウント制御 [UAC]  
- 現在のところ、[!INCLUDE[TLA2#tla_win](../../../includes/tla2sharptla-win-md.md)] ユーザーは、管理者特権で実行する傾向があります。多くのアプリケーションで、インストールや実行、またはその両方に管理者特権が必要となるためです。 既定のアプリケーションの設定をレジストリに書き込めることが、その一例です。  
+ 今日では、Windows ユーザーは、多くのアプリケーションの必要なインストールの実行、またはその両方のために、管理者特権で実行する傾向があります。 既定のアプリケーションの設定をレジストリに書き込めることが、その一例です。  
   
  管理者特権で実行することの本当の意味は、管理者特権を付与されているプロセスからアプリケーションを実行することです。 これによるセキュリティへの影響は、管理者特権で実行するプロセスを乗っ取る悪意のあるコードが、重要なシステム リソースへのアクセスなど、これらの権限を自動的に継承することです。  
   
@@ -174,18 +176,18 @@ ms.lasthandoff: 12/22/2017
   
  そのためには、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] が昇格した特権を受け取る一方、それらの特権がホスト アプリケーション ドメインのインターネット ゾーンのアクセス許可セットによって制御されないようにする必要があります。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]これを使用して、 **Assert**アクセス許可のメソッドです。 次のコードは、その方法を示しています。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] これを使用して、 **Assert**アクセス許可のメソッドです。 次のコードは、その方法を示しています。  
   
  [!code-csharp[WPFPlatformSecuritySnippets#Permission](../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
  [!code-vb[WPFPlatformSecuritySnippets#Permission](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
   
  **Assert**基本的に必要な無制限のアクセス許可を防止[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]からインターネットによって制限されるゾーンのアクセス許可、[!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)]です。  
   
- プラットフォームの観点から[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]を使用する担当**Assert**の不適切な使用に正しく; **Assert**特権を昇格する悪意のあるコードを有効にする可能性があります。 そのため、のみを呼び出すし、さらに重要なは**Assert** 、必要なときの制限はそのまま保持することを確認するとします。 たとえば、セキュリティで保護されたコードでは、ランダムなファイルを開くことはできませんが、フォントは使用できます。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]サンド ボックス化されたアプリケーションを呼び出すことによってフォント機能を使用できます**Assert**、および[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]サンド ボックス化されたアプリケーションに代わってそれらのフォントを含むファイルを読み取る。  
+ プラットフォームの観点から[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]を使用する担当**Assert**の不適切な使用に正しく; **Assert**特権を昇格する悪意のあるコードを有効にする可能性があります。 そのため、のみを呼び出すし、さらに重要なは**Assert** 、必要なときの制限はそのまま保持することを確認するとします。 たとえば、セキュリティで保護されたコードでは、ランダムなファイルを開くことはできませんが、フォントは使用できます。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] サンド ボックス化されたアプリケーションを呼び出すことによってフォント機能を使用できます**Assert**、および[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]サンド ボックス化されたアプリケーションに代わってそれらのフォントを含むファイルを読み取る。  
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce 配置  
- [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)]含まれている包括的な配置テクノロジは、[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]と連携および統合[!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)](を参照してください[ClickOnce の配置の概要](http://msdn.microsoft.com/library/142dbbz4.aspx)詳細な情報の)。 スタンドアロンの [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションは、[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] を使用して配置できます。一方、ブラウザーでホストされるアプリケーションは [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] で配置する必要があります。  
+ [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] 含まれている包括的な配置テクノロジは、[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]と連携および統合[!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)](を参照してください[ClickOnce の配置の概要](http://msdn.microsoft.com/library/142dbbz4.aspx)詳細な情報の)。 スタンドアロンの [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションは、[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] を使用して配置できます。一方、ブラウザーでホストされるアプリケーションは [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] で配置する必要があります。  
   
  [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] を使用して配置されたアプリケーションには、[!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)] の上に追加のセキュリティ層が設けられます。基本的に、[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] の配置済みのアプリケーションは、必要なアクセス許可を要求します。 これらのアプリケーションが、アプリケーションの配置元ゾーンのアクセス許可セット数を超えていない場合、これらのアプリケーションには必要なアクセス許可のみが付与されます。 アクセス許可セット数を必要な数のみに減らすことで、起動ゾーンのアクセス許可セットが提供するアクセス許可数を下回る場合でも、アプリケーションがアクセスできるリソースの数が最小限まで削減されます。 その結果、アプリケーションが乗っ取られた場合、クライアント コンピューターの損傷の可能性が低減します。  
   
@@ -211,7 +213,7 @@ ms.lasthandoff: 12/22/2017
   
  場合によっては、信頼できない Web サイトで [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] のインストールのなりすましをしたり、ユーザーがキャンセルしていても [!INCLUDE[TLA#tla_actx](../../../includes/tlasharptla-actx-md.md)] のインストールのダイアログ ボックスを繰り返し表示したりしてユーザーを騙そうとします。 これらの方法によって、大多数のユーザーが騙されて不適切な判断を行い、スパイウェア アプリケーションのインストールにつながる可能性があります。  
   
- [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] には、ユーザーによる開始の概念にまつわるこのような問題を軽減するいくつかの機能があります。 [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]検出と呼ばれる、操作の前に、リンクまたはページの要素、ユーザーがクリックしたときに*開始に使用するユーザー*、され、同様のアクションは、代わりにトリガーされたときに、ページのスクリプトでは異なる扱われます。 例として、[!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]が組み込まれており、**ポップアップ ブロック**ユーザーが、ページのポップアップを作成する前にボタンをクリックしたときを検出します。 これにより、[!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] は何の問題もないポップアップを許可する一方、ユーザーが要求も希望もしていないポップアップを防ぎます。 ブロックされたポップアップは、新しい トラップ**情報バー**、により、ユーザーは手動でブロックをオーバーライドし、ポップアップの表示にします。  
+ [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] には、ユーザーによる開始の概念にまつわるこのような問題を軽減するいくつかの機能があります。 [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] 検出と呼ばれる、操作の前に、リンクまたはページの要素、ユーザーがクリックしたときに*開始に使用するユーザー*、され、同様のアクションは、代わりにトリガーされたときに、ページのスクリプトでは異なる扱われます。 例として、[!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]が組み込まれており、**ポップアップ ブロック**ユーザーが、ページのポップアップを作成する前にボタンをクリックしたときを検出します。 これにより、[!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] は何の問題もないポップアップを許可する一方、ユーザーが要求も希望もしていないポップアップを防ぎます。 ブロックされたポップアップは、新しい トラップ**情報バー**、により、ユーザーは手動でブロックをオーバーライドし、ポップアップの表示にします。  
   
  同じユーザー実行のロジックにも適用**開く**/**保存**セキュリティ プロンプトです。 [!INCLUDE[TLA2#tla_actx](../../../includes/tla2sharptla-actx-md.md)] のインストールのダイアログ ボックスは、以前インストールされたコントロールからのアップグレードを表す場合を除いて、情報バーにトラップされます。 これらの対策を組み合わせると、より安全かつ制御されたユーザー エクスペリエンスがユーザーに提供されます。ユーザーを攻撃して不要または悪意のあるソフトウェアをインストールさせるサイトからユーザーが保護されるためです。  
   
@@ -219,7 +221,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[TLA2#tla_ie7](../../../includes/tla2sharptla-ie7-md.md)] は、継続的なセキュリティへの取り組みの一環として、[!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] のセキュリティ機能を強化しています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows XP SP2 では、Microsoft Internet Explorer 6 でのセキュリティについて理解します。](http://www.microsoft.com/downloads/details.aspx?FamilyId=E550F940-37A0-4541-B5E2-704AB386C3ED&displaylang=en)  
  [概要と保護モードの Internet Explorer での作業](http://msdn.microsoft.com/library/bb250462.aspx)  
  [Windows XP Service Pack 3](http://www.microsoft.com/windows/products/windowsxp/sp3/default.mspx)  

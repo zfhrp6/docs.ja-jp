@@ -8,20 +8,20 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 56a82682-73c2-4b91-a206-4d8bb12c561b
-caps.latest.revision: ''
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f1d4b3f319d86dd463dabc8b71be7c76c7fef41f
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 32aab8ae875158fed62c70cbc2d7506ba6c8d3c5
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tracking-using-a-text-file"></a>テキスト ファイルを使用した追跡
-このサンプルでは、カスタムの追跡参加要素を作成して [!INCLUDE[wf](../../../../includes/wf-md.md)] で追跡を拡張する方法を示します。 追跡参加要素は、出力された追跡レコードをランタイムから受け取る .NET Framework クラスです。 追跡参加要素を作成して、シナリオに必要な出力先に追跡イベントを転送することができます。 たとえば、ETW (Event Tracing for Windows) 追跡参加要素は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の一部として提供されています。 このサンプルの追跡参加要素は、レコードを XML 形式でテキスト ファイルに書き込みます。  
+このサンプルでは、カスタム追跡参加要素を作成することで、Windows Workflow Foundation (WF) の追跡を拡張する方法を示します。 追跡参加要素は、出力された追跡レコードをランタイムから受け取る .NET Framework クラスです。 追跡参加要素を作成して、シナリオに必要な出力先に追跡イベントを転送することができます。 たとえば、ETW (Event Tracing for Windows) 追跡参加要素は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の一部として提供されています。 このサンプルの追跡参加要素は、レコードを XML 形式でテキスト ファイルに書き込みます。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
  追跡参加要素の有用性と信頼性を最適化するには、いくつかの追加手順を完了して追跡参加要素をランタイムに適切に接続する必要があります。 ベスト プラクティスに準拠する追跡参加要素を作成するためにこのサンプルで使用するクラスを次の表に示します。  
@@ -66,7 +66,7 @@ ms.lasthandoff: 03/23/2018
   
 5.  ブラウザーで、表示、 **StockPriceService**ページで、ローカル サービスの wsdl アドレスが含まれています。 このアドレスをコピーします。  
   
-     ローカル サービスの wsdl アドレスは、http://localhost:53797/StockPriceService.xamlx?wsdl などになります。  
+     ローカル サービスの wsdl アドレスの例はhttp://localhost:53797/StockPriceService.xamlx?wsdlします。  
   
 6.  [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] を使用して、[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] フォルダー (既定のインストール フォルダーは %SystemDrive%\Program Files\Microsoft Visual Studio 10.0) に移動します。 Common7\IDE\ サブフォルダーを見つけます。  
   
@@ -80,9 +80,9 @@ ms.lasthandoff: 03/23/2018
   
 11. WCF テスト クライアントを使用してサービスをテストします。  
   
-    1.  WCF テスト クライアントでダブルクリック**GetStockPrice()**下にある、 **IStockPriceService**ノード。  
+    1.  WCF テスト クライアントでダブルクリック**GetStockPrice()** 下にある、 **IStockPriceService**ノード。  
   
-         **GetStockPrice()**メソッドは、1 つのパラメーターと共に右ペインに表示されます。  
+         **GetStockPrice()** メソッドは、1 つのパラメーターと共に右ペインに表示されます。  
   
     2.  パラメーターの値として「Contoso」と入力します。  
   

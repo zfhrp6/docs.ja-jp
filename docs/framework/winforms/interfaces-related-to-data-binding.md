@@ -1,12 +1,13 @@
 ---
-title: "データ連結に関連するインターフェイス"
-ms.custom: 
+title: データ連結に関連するインターフェイス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - data [Windows Forms], data-binding interfaces
@@ -19,29 +20,30 @@ helpviewer_keywords:
 - data binding [Windows Forms], interfaces
 - IDataErrorInfo interface [Windows Forms], Windows Forms data binding
 ms.assetid: 14e49a2e-3e46-47ca-b491-70d546333277
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a0e48ddc6f74d3c4e030bc953ac4f853660a00d5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5278ccd34e556c33e4bc5c9f460573b399f265be
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="interfaces-related-to-data-binding"></a>データ連結に関連するインターフェイス
 [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] では、アプリケーションのバインドのニーズや使用するデータに合わせてさまざまなデータ構造を作成できます。 Windows フォームでデータを提供または使用するための独自のクラスを作成することもできます。 これらのオブジェクトは、基本的なデータ バインディングから、デザイン時サポートの提供、エラー チェック、変更通知、データ自体に加えられた変更の構造化されたロールバックのサポートに至るまで、さまざまなレベルの機能を提供することができ、複雑さに対応できます。  
   
 ## <a name="consumers-of-data-binding-interfaces"></a>データ バインディング インターフェイスのコンシューマー  
- 以下のセクションでは、インターフェイス オブジェクトの 2 つのグループについて説明します。 1 つ目のグループでは、データ ソース作成者がデータ ソースに実装するインターフェイスを示します。 これらのインターフェイスは、データ ソース コンシューマーが使用するように設計されています。ほとんどの場合、データ ソース コンシューマーは、Windows フォーム コントロールまたはコンポーネントです。 2 つ目のグループでは、コンポーネント作成者向けに設計されたインターフェイスを示します。 コンポーネント作成者は、Windows フォーム データ バインディング エンジンが使用する、データ バインディングをサポートするコンポーネントを作成するときにこれらのインターフェイスを使用します。 フォームに関連付けられたクラス内でこれらのインターフェイスを実装することで、データ バインディングを実現できます。各ケースは、データの操作を可能にするインターフェイスを実装するクラスを示しています。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] の Rapid Application Development (RAD) データ デザイン エクスペリエンス ツールでは、この機能を既に活用しています。  
+ 以下のセクションでは、インターフェイス オブジェクトの 2 つのグループについて説明します。 1 つ目のグループでは、データ ソース作成者がデータ ソースに実装するインターフェイスを示します。 これらのインターフェイスは、データ ソース コンシューマーが使用するように設計されています。ほとんどの場合、データ ソース コンシューマーは、Windows フォーム コントロールまたはコンポーネントです。 2 つ目のグループでは、コンポーネント作成者向けに設計されたインターフェイスを示します。 コンポーネント作成者は、Windows フォーム データ バインディング エンジンが使用する、データ バインディングをサポートするコンポーネントを作成するときにこれらのインターフェイスを使用します。 フォームに関連付けられたクラス内でこれらのインターフェイスを実装することで、データ バインディングを実現できます。各ケースは、データの操作を可能にするインターフェイスを実装するクラスを示しています。 Visual Studio アプリケーションの迅速な development (RAD) データ デザイン エクスペリエンスのツールでは、この機能のこと既に利用します。  
   
 ### <a name="interfaces-for-implementation-by-data-source-authors"></a>データ ソース作成者が実装するインターフェイス  
  以下のインターフェイスは、Windows フォーム コントロールで使用するように設計されています。  
   
 -   <xref:System.Collections.IList> インターフェイス  
   
-     実装するクラス、<xref:System.Collections.IList>インターフェイス可能性があります、 <xref:System.Array>、 <xref:System.Collections.ArrayList>、または<xref:System.Collections.CollectionBase>です。 これらの型の項目のインデックス付きのリストは、<xref:System.Object>です。 インデックスの最初の項目によって型が決定されるため、これらのリストには同種の型が含まれている必要があります。 <xref:System.Collections.IList>実行時にのみバインドできるようになります。  
+     実装するクラス、<xref:System.Collections.IList>インターフェイス可能性があります、 <xref:System.Array>、 <xref:System.Collections.ArrayList>、または<xref:System.Collections.CollectionBase>です。 これらの型の項目のインデックス付きのリストは、<xref:System.Object>です。 インデックスの最初の項目によって型が決定されるため、これらのリストには同種の型が含まれている必要があります。 <xref:System.Collections.IList> 実行時にのみバインドできるようになります。  
   
     > [!NOTE]
     >  Windows フォームでバインディング用のビジネス オブジェクトの一覧を作成する場合は、使用を検討する必要があります、<xref:System.ComponentModel.BindingList%601>です。 <xref:System.ComponentModel.BindingList%601>双方向の Windows フォーム データ バインディングに必要なプライマリ インターフェイスを実装する拡張可能なクラスです。  
@@ -111,7 +113,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.ComponentModel.IListSource> インターフェイス  
   
-     実装するクラス、<xref:System.ComponentModel.IListSource>インターフェイス非リスト オブジェクトのリストに基づくバインドを有効にします。 <xref:System.ComponentModel.IListSource.GetList%2A>メソッドの<xref:System.ComponentModel.IListSource>から継承しないオブジェクトからバインド可能な一覧を返すために使用<xref:System.Collections.IList>です。 <xref:System.ComponentModel.IListSource>によって使用される、<xref:System.Data.DataSet>クラスです。  
+     実装するクラス、<xref:System.ComponentModel.IListSource>インターフェイス非リスト オブジェクトのリストに基づくバインドを有効にします。 <xref:System.ComponentModel.IListSource.GetList%2A>メソッドの<xref:System.ComponentModel.IListSource>から継承しないオブジェクトからバインド可能な一覧を返すために使用<xref:System.Collections.IList>です。 <xref:System.ComponentModel.IListSource> によって使用される、<xref:System.Data.DataSet>クラスです。  
   
 -   <xref:System.ComponentModel.IRaiseItemChangedEvents> インターフェイス  
   
@@ -124,17 +126,17 @@ ms.lasthandoff: 12/22/2017
   
      実装するコンポーネント、<xref:System.ComponentModel.ISupportInitialize>インターフェイスは、プロパティを設定し、相互に依存するプロパティの初期化中のバッチの最適化の利点があります。 <xref:System.ComponentModel.ISupportInitialize> 2 つのメソッドが含まれています。  
   
-    -   <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A>オブジェクト初期化の開始を通知します。  
+    -   <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> オブジェクト初期化の開始を通知します。  
   
-    -   <xref:System.ComponentModel.ISupportInitialize.EndInit%2A>そのオブジェクトの初期化が完了を通知します。  
+    -   <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> そのオブジェクトの初期化が完了を通知します。  
   
 -   <xref:System.ComponentModel.ISupportInitializeNotification> インターフェイス  
   
      実装するコンポーネント、<xref:System.ComponentModel.ISupportInitializeNotification>インターフェイスも実装して、<xref:System.ComponentModel.ISupportInitialize>インターフェイスです。 このインターフェイスを使用すると、その他の通知<xref:System.ComponentModel.ISupportInitialize>コンポーネント初期化が完了しました。 <xref:System.ComponentModel.ISupportInitializeNotification>インターフェイスには、2 つのメンバーが含まれています。  
   
-    -   <xref:System.ComponentModel.ISupportInitializeNotification.IsInitialized%2A>返します、`boolean`コンポーネントが初期化されているかどうかを示す値。  
+    -   <xref:System.ComponentModel.ISupportInitializeNotification.IsInitialized%2A> 返します、`boolean`コンポーネントが初期化されているかどうかを示す値。  
   
-    -   <xref:System.ComponentModel.ISupportInitializeNotification.Initialized>発生したときに<xref:System.ComponentModel.ISupportInitialize.EndInit%2A>と呼びます。  
+    -   <xref:System.ComponentModel.ISupportInitializeNotification.Initialized> 発生したときに<xref:System.ComponentModel.ISupportInitialize.EndInit%2A>と呼びます。  
   
 -   <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイス  
   
@@ -160,7 +162,7 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  継承するクラスを<xref:System.Windows.Forms.Control>管理バインドを使用して自動的にその<xref:System.Windows.Forms.Control.BindingContext%2A>プロパティを実装する必要があります。 その場合、<xref:System.Windows.Forms.ICurrencyManagerProvider>非常にまれです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
  [方法: Windows フォームに単純バインド コントロールを作成する](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
  [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)

@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e5ad91fa70a743b7135648cb10c7c519e3559bdb
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 5f1c7449372ad012280b360c09017a15733fb95b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>構成ファイルを使用してサービスを構成する方法
 構成ファイルを使用して [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを構成すると、デザイン時ではなく配置時にエンドポイントとサービス動作のデータを指定できるという柔軟性が生まれます。 ここでは使用可能な主要な技術について説明します。  
@@ -37,9 +37,9 @@ ms.lasthandoff: 04/26/2018
 ## <a name="systemconfiguration-webconfig-and-appconfig"></a>System.Configuration: Web.config と App.config  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]の System.Configuration 構成システムを使用します。  
   
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]でサービスを構成するとき、Web.config ファイルまたは App.config ファイルのいずれかを使用して、設定を指定します。 選択する構成ファイル名は、サービスに選択したホスト環境によって異なります。 サービスのホストに IIS を使用している場合は、Web.config ファイルを使用します。 他のホスト環境を使用している場合、App.config ファイルを使用します。  
+ を Visual Studio でサービスを構成する場合は、Web.config ファイルまたは App.config ファイルを使用して、設定を指定します。 選択する構成ファイル名は、サービスに選択したホスト環境によって異なります。 サービスのホストに IIS を使用している場合は、Web.config ファイルを使用します。 他のホスト環境を使用している場合、App.config ファイルを使用します。  
   
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]では、App.config という名前のファイルを使用して、最終の構成ファイルを作成します。 構成で実際に使用される最終的な名前は、アセンブリ名によって異なります。 たとえば、アセンブリ名が "Cohowinery.exe" の場合、最終の構成ファイルの名前は "Cohowinery.exe.config" になります。 ただし、変更する必要があるのは App.config ファイルだけです。 このファイルで行った変更は、コンパイル時に自動的に最終のアプリケーション構成ファイルに反映されます。  
+ Visual Studio では、App.config という名前のファイルを使用して、最終的な構成ファイルを作成します。 構成で実際に使用される最終的な名前は、アセンブリ名によって異なります。 たとえば、アセンブリ名が "Cohowinery.exe" の場合、最終の構成ファイルの名前は "Cohowinery.exe.config" になります。 ただし、変更する必要があるのは App.config ファイルだけです。 このファイルで行った変更は、コンパイル時に自動的に最終のアプリケーション構成ファイルに反映されます。  
   
  App.config ファイルを使用しているとき、アプリケーションが開始され、構成が適用されると、構成システムは App.config ファイルを Machine.config ファイルの内容とマージします。 このしくみによって、Machine.config ファイルにはコンピューター全体の設定を定義できます。 App.config ファイルは、Machine.config ファイルの設定をオーバーライドするために使用できます。また、Machine.config ファイルにある設定をロックしてこの設定が使用されるようにすることもできます。 Web.config の場合、構成システムは、アプリケーション ディレクトリまでのすべてのディレクトリにある Web.config ファイルを、適用される構成にマージします。 構成と設定の優先順位[!INCLUDE[crabout](../../../includes/crabout-md.md)] 、 <xref:System.Configuration> 名前空間のトピックを参照してください。  
   

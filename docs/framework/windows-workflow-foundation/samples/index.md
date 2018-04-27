@@ -10,29 +10,29 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 193f8ce60d8675832955b0e153af7f61b28d2707
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a1fb5f7ab268397b75f6d3e2c5c784c1a586c93c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-workflow-wf-samples"></a>Windows Workflow (WF) のサンプル
-これらのサンプルでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] のさまざまな特性について説明します。  
+これらのサンプルでは、に関するさまざまな Windows Workflow Foundation (WF) の命令を提供します。  
   
 このサンプルは、[Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=150780) からダウンロードできます。  
   
 > [!NOTE]
->  これらの例では [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] と [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] で作成されていますが、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] と [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] とに互換性があります。 [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] の [!INCLUDE[wf2](../../../../includes/wf2-md.md)] の追加の例は、[「Code MSDN」](http://aka.ms/WF45Samples) にあります。
+>  これらの例では [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] と [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] で作成されていますが、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] と [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] とに互換性があります。 Windows Workflow Foundation での他のサンプル[!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]にある [コード MSDN](http://aka.ms/WF45Samples)です。
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [アプリケーション](../../../../docs/framework/windows-workflow-foundation/samples/application.md)  
  ワークフロー アプリケーションに関連するサンプルが用意されています。  
   
  [基本](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
- [!INCLUDE[wf](../../../../includes/wf-md.md)] の基本的な機能を示すサンプルが用意されています。  
+ 基本的な Windows Workflow Foundation (WF) 機能を示すサンプルを提供します。  
   
  [シナリオ](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)  
- [!INCLUDE[wf](../../../../includes/wf-md.md)] のシナリオの例が用意されています。  
+ Windows Workflow Foundation (WF) シナリオの例を提供します。  
   
  このセクションに含まれているサンプルでは、C# 3.0 の新機能を利用します。 C# 3.0 の新機能に精通していない場合、その詳細については、[「C# 3.0 の概要」](http://go.microsoft.com/fwlink/?LinkId=193972) を参照してください。  
   

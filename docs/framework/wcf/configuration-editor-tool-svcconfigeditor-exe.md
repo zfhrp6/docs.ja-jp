@@ -1,12 +1,13 @@
 ---
-title: "構成エディター ツール (SvcConfigEditor.exe)"
-ms.custom: 
+title: 構成エディター ツール (SvcConfigEditor.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - configuration files, creating
@@ -14,16 +15,17 @@ helpviewer_keywords:
 - Configuration file
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-caps.latest.revision: "45"
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e21dacd5f01ba956ba78456b8e325d0b7e767df7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1531c68bdbb3b28436d0701536ef274f34513b19
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>構成エディター ツール (SvcConfigEditor.exe)
 管理者と開発者は、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス構成エディター (SvcConfigEditor.exe) のグラフィカル ユーザー インターフェイスを使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの構成設定を作成および変更できます。 このツールを使用すると、XML 構成ファイルを直接編集せずに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のバインディング、動作、サービス、および診断の設定を管理できます。  
@@ -119,10 +121,10 @@ ms.lasthandoff: 12/22/2017
   
 3.  ダイアログ ボックスにベース アドレスの URI を入力します。  
   
-4.  **[OK]**をクリックします。  
+4.  **[OK]** をクリックします。  
   
 > [!NOTE]
->  値を編集することはできません[ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)このツール内です。 この要素を追加または変更するには、テキスト エディターまたは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用する必要があります。  
+>  値を編集することはできません[ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)このツール内です。 この要素を追加または変更するには、テキスト エディターまたは Visual Studio を使用する必要があります。  
   
 ### <a name="client"></a>クライアント  
  **クライアント**ノードが、構成ファイルのすべてのクライアント エンドポイントを表示します。 サブ要素に、ツリー内の各サブ ノードが対応して、<`client`> 構成ファイル内の要素。  
@@ -196,11 +198,11 @@ ms.lasthandoff: 12/22/2017
   
 1.  拡張要素を追加するバインディングを選択します。  
   
-2.  **[追加]**をクリックします。  
+2.  **[追加]** をクリックします。  
   
 3.  使用できる拡張一覧から、追加するバインディング要素拡張を選択します。 複数の項目を選択するには、Ctrl キーを同時に押します。  
   
-4.  **[追加]**をクリックします。  
+4.  **[追加]** をクリックします。  
   
 #### <a name="adjusting-the-extension-position-in-a-custom-binding"></a>カスタム バインドの拡張位置の調整  
  カスタム バインディングは、スタックを形成するバインディング要素のコレクションです。 スタックの各バインド要素には、独自の構成設定があります。 カスタム バインディング内のバインディング要素拡張の順序は、スタック内のそれらの位置を示します。 スタック最上位の要素が最初に適用されます。 順序を変更するには  
@@ -299,11 +301,11 @@ ms.lasthandoff: 12/22/2017
   
 2.  編集する動作を選択します。  
   
-3.  **[追加]**をクリックします。  
+3.  **[追加]** をクリックします。  
   
 4.  使用できる拡張一覧から、追加する動作要素拡張を選択します。  
   
-5.  **[追加]**をクリックします。  
+5.  **[追加]** をクリックします。  
   
 ##### <a name="adjusting-the-extension-position-in-a-behavior"></a>動作の拡張位置の調整  
  動作は、スタックを形成する要素のコレクションです。 スタックの各要素には、独自の構成があります。 動作内の動作要素拡張の順序は、スタック内のそれらの位置を示します。 スタック最上位の要素が最初に適用されます。 順序を変更するには  
@@ -347,7 +349,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  名前と種類を入力します。  
   
-3.  **[OK]**をクリックします。  
+3.  **[OK]** をクリックします。  
   
 4.  拡張は、エディターの適切な場所に表示されるようになります。 たとえば、動作要素拡張を追加すると、使用できる拡張一覧に表示されます。  
   

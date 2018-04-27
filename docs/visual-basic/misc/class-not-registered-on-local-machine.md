@@ -1,30 +1,30 @@
 ---
-title: "クラスがローカル コンピューターに登録されていません"
+title: クラスがローカル コンピューターに登録されていません
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
 - devlang-visual-basic
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - vbrID463
 ms.assetid: 40c4c622-41d8-4005-9303-c30abe0707bb
-caps.latest.revision: 
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 307d36d52cb66c431fd4d482132fa13af9a2903d
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: eace2324777cf1cb1ba277c0877bb1242d138d02
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="class-not-registered-on-local-machine"></a>クラスがローカル コンピューターに登録されていません
-このエラーは通常、ファイルが破損している場合に発生します。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]の再インストールが必要なことがあります。  
+このエラーは通常、ファイルが破損している場合に発生します。 Visual Studio を再インストールする必要があります。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を再インストールします。  
+-   Visual Studio を再インストールしてください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エラーの種類](../../visual-basic/programming-guide/language-features/error-types.md)  
 

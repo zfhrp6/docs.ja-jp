@@ -1,24 +1,26 @@
 ---
-title: "メッセージ相関"
-ms.custom: 
+title: メッセージ相関
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 95336c55b2c3e83e2bd68bb653bbaacc446d8934
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 52dd8d66a4a28b515ebfaee88c4383889839fff0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="message-correlation"></a>メッセージ相関
 このサンプルでは、メッセージ キュー (MSMQ) アプリケーションで MSMQ メッセージを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに送信する方法と、要求または応答のシナリオで、メッセージを送信側のアプリケーションと受信側のアプリケーション間で相互に関連付ける方法を示します。 このサンプルでは、msmqIntegrationBinding バインディングを使用します。 この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。 k  
@@ -28,8 +30,8 @@ ms.lasthandoff: 12/22/2017
  `IOrderProcessor` サービス コントラクトは、キューでの使用に適した一方向サービス操作を定義します。 MSMQ メッセージには Action ヘッダーがないので、さまざまな MSMQ メッセージを操作コントラクトに自動的にマッピングすることはできません。 したがってこの場合、存在する操作コントラクトは 1 つだけです。 サービス内に複数の操作コントラクトを定義する場合は、ディスパッチする操作コントラクトを決定するために使用できる、MSMQ メッセージ内のヘッダー (ラベルや correlationID など) に関する情報をアプリケーションで提供する必要があります。 これに示されている、[カスタム Demux](../../../../docs/framework/wcf/samples/custom-demux.md)です。  
   
  さらに、MSMQ メッセージには、操作コントラクトの別のパラメータにマッピングされるヘッダーに関する情報は含まれません。 したがって、操作コントラクトに存在するパラメータは 1 つだけです。 型のパラメーターが<!--zz <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601>`MsmqMessage<T>`-->、`System.ServiceModel.MSMQIntegration.MsmqMessage`基になる MSMQ メッセージが含まれています。 `MsmqMessage<T>` クラスの型 "T" は、シリアル化されて MSMQ メッセージ本文に含まれているデータを表します。 このサンプルでは、`PurchaseOrder` 型がシリアル化されて MSMQ メッセージ本文になっています。  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 [ServiceKnownType(typeof(PurchaseOrder))]  
 public interface IOrderProcessor  
@@ -37,11 +39,11 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, Action = "*")]  
     void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg);  
 }  
-```  
-  
+```
+
  このサービス操作は発注書を処理し、サービス コンソール ウィンドウにその発注書の内容と状態を表示します。 <xref:System.ServiceModel.OperationBehaviorAttribute> はこの操作を構成してキューを伴うトランザクションに登録し、操作が返されたときにトランザクションに完了とマークします。 `PurchaseOrder` には、サービスで処理する必要のある発注の詳細が含まれています。  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 public class OrderProcessorService : IOrderProcessor  
 {  
@@ -74,13 +76,13 @@ public class OrderProcessorService : IOrderProcessor
         client.Close();  
     }  
 }  
-```  
-  
+```
+
  サービスは、MSMQ メッセージをキューに送信するためにカスタム クライアント `OrderResponseClient` を使用します。 メッセージを受信して処理するアプリケーションが MSMQ アプリケーションであり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションではないので、2 つのアプリケーション間で暗黙のサービス コントラクトはありません。 したがって、このシナリオでは Svcutil.exe ツールを使用してプロキシを作成することはできません。  
   
  カスタム プロキシは基本的に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングを使用してメッセージを送信するすべての `msmqIntegrationBinding` アプリケーションで同じです。 他のプロキシと異なり、サービス操作の範囲は含まれません。 メッセージ送信操作のみです。  
-  
-```  
+
+```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderResponse  
 {  
@@ -108,11 +110,11 @@ public partial class OrderResponseClient : System.ServiceModel.ClientBase<IOrder
         base.Channel.SendOrderResponse(msg);  
     }  
 }  
-```  
-  
+```
+
  サービスは自己ホスト型です。 MSMQ 統合トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。 手動で作成することもコードで作成することもできます。 このサンプルでは、キューの存在を確認して、必要な場合は作成するための <xref:System.Messaging> コードがサービスに含まれています。 キュー名は構成ファイルから読み込まれます。  
-  
-```  
+
+```csharp
 public static void Main()  
 {  
        // Get the MSMQ queue name from application settings in configuration.  
@@ -134,7 +136,7 @@ public static void Main()
             serviceHost.Close();  
       }  
 }  
-```  
+```
   
  発注要求が送信される MSMQ キューは、構成ファイルの appSettings セクションで指定されます。 クライアントおよびサービスのエンドポイントは、構成ファイルの system.serviceModel セクションで定義されます。 どちらも `msmqIntegrationbinding` バインディングを指定します。  
   
@@ -176,8 +178,8 @@ public static void Main()
 ```  
   
  クライアント アプリケーションは <xref:System.Messaging> を使用して、非揮発性メッセージとトランザクション メッセージをキューに送信します。 メッセージの本文には発注書が含まれます。  
-  
-```  
+
+```csharp
 static void PlaceOrder()  
 {  
     //Connect to the queue  
@@ -219,8 +221,8 @@ static void PlaceOrder()
     orderMessageID = msg.Id;  
     Console.WriteLine("Placed the order, waiting for response...");  
 }  
-```  
-  
+```
+
  発注の応答を受信する MSMQ キューは、構成ファイルの appSettings セクションで指定されます。次のサンプル構成を参照してください。  
   
 > [!NOTE]
@@ -233,8 +235,8 @@ static void PlaceOrder()
 ```  
   
  クライアント アプリケーションは、サービスに送信する発注要求メッセージの `messageID` を保存し、サービスからの応答を待機します。 応答がキューに到着すると、クライアントは発注メッセージの `correlationID` プロパティを使用して、送信した発注メッセージと応答を関連付けます。このプロパティには、クライアントが最初にサービスに送信した発注メッセージの `messageID` が含まれています。  
-  
-```  
+
+```csharp
 static void DisplayOrderStatus()  
 {  
     MessageQueue orderResponseQueue = new   
@@ -273,8 +275,8 @@ static void DisplayOrderStatus()
     }  
   }  
 }  
-```  
-  
+```
+
  サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。 サービスがクライアントからメッセージを受信し、クライアントに応答を返信するアクティビティを参照できます。 クライアントでは、サービスから受信した応答が表示されます。 どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。  
   
 > [!NOTE]
@@ -323,6 +325,6 @@ static void DisplayOrderStatus()
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=94968)

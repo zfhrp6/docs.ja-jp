@@ -1,27 +1,29 @@
 ---
-title: "パフォーマンスの最適化 : データ バインド"
-ms.custom: 
+title: 'パフォーマンスの最適化 : データ バインド'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - binding data [WPF], performance
 - data binding [WPF], performance
 ms.assetid: 1506a35d-c009-43db-9f1e-4e230ad5be73
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c420748a9361655eeb2df33ce8426d9f167d3414
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4b21089ea3f3aef8a934c78187b30f2576b8d39b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="optimizing-performance-data-binding"></a>パフォーマンスの最適化 : データ バインド
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] データ バインディングは、アプリケーションがデータを提示し、データと対話するための簡単で一貫性のある方法を提供します。 要素は、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトおよび [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] の形式のさまざまなデータ ソースのデータにバインドできます。  
@@ -34,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="how-data-binding-references-are-resolved"></a>データ バインディングの参照が解決されるしくみ  
  データ バインディングのパフォーマンスの問題に入る前に、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のデータ バインディング エンジンがバインディングのオブジェクト参照をどのように解決するのかを説明します。  
   
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のデータ バインディングでは、任意の [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトをソースとして使用して、 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトのプロパティ、サブプロパティ、インデクサーにバインドできます。 いずれかを使用してバインドの参照が解決[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]リフレクションまたは<xref:System.ComponentModel.ICustomTypeDescriptor>です。 次に、バインディングのオブジェクト参照を解決するための 3 つの方法について説明します。  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のデータ バインディングでは、任意の [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトをソースとして使用して、 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトのプロパティ、サブプロパティ、インデクサーにバインドできます。 いずれかの Microsoft .NET Framework リフレクションを使用してバインドの参照が解決または<xref:System.ComponentModel.ICustomTypeDescriptor>です。 次に、バインディングのオブジェクト参照を解決するための 3 つの方法について説明します。  
   
  1 つ目は、リフレクションを使用する方法です。 ここで、<xref:System.Reflection.PropertyInfo>オブジェクトがプロパティの属性を検出するために使用し、プロパティのメタデータへのアクセスを提供します。 使用する場合、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイス、データ バインディング エンジンには、このインターフェイスを使用してプロパティ値にアクセスします。 <xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスは、オブジェクトには静的なプロパティ セットにない場合に特に便利です。  
   
@@ -51,7 +53,7 @@ ms.lasthandoff: 12/22/2017
 |**TextBlock の Text プロパティのバインド先**|**バインディング時間 (ミリ秒)**|**レンダリング時間 -- バインディングを含む (ミリ秒)**|  
 |--------------------------------------------------|-----------------------------|--------------------------------------------------|  
 |[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトのプロパティ|115|314|  
-|プロパティに、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]を実装するオブジェクト<xref:System.ComponentModel.INotifyPropertyChanged>|115|305|  
+|プロパティに、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]を実装するオブジェクト <xref:System.ComponentModel.INotifyPropertyChanged>|115|305|  
 |<xref:System.Windows.DependencyProperty>の<xref:System.Windows.DependencyObject>です。|90|263|  
   
 <a name="Binding_to_Large_CLR_Objects"></a>   
@@ -74,7 +76,7 @@ ms.lasthandoff: 12/22/2017
 |**ItemsSource のデータ バインディングのバインド先**|**1 項目の更新時間 (ミリ秒)**|  
 |--------------------------------------|---------------------------------------|  
 |[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] <xref:System.Collections.Generic.List%601>オブジェクト|1656|  
-|に、<xref:System.Collections.ObjectModel.ObservableCollection%601>|20|  
+|に、 <xref:System.Collections.ObjectModel.ObservableCollection%601>|20|  
   
 <a name="Binding_IList_to_ItemsControl_not_IEnumerable"></a>   
 ## <a name="bind-ilist-to-itemscontrol-not-ienumerable"></a>IEnumerable ではなく IList を ItemsControl にバインドする  
@@ -84,7 +86,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="do-not-convert-clr-objects-to-xml-just-for-data-binding"></a>データ バインディングのためだけに CLR オブジェクトを XML に変換しない  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] コンテンツへのデータ バインディングが可能です。ただし、[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] コンテンツへのデータ バインディングは、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトへのデータ バインディングに比べて低速です。 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] オブジェクトのデータをデータ バインディングのためだけに XML に変換しないでください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
  [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  

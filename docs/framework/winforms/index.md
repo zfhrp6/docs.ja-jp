@@ -20,14 +20,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4b38cbe1bab4c3d2bf0c6ee518dd26df4ff440dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5949bebe91767539c230ba166f9389f09dc2392b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-forms"></a>Windows フォーム
-フォームはアプリケーションの基本単位であるため、機能とデザインにある程度の配慮を与えることが重要です。 フォームは、最終的には開発者がユーザー インターフェイスを作成するコントロールとデータを操作するコードを拡張する白紙状態です。 そのために、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] はコード作成を支援する統合開発環境 (IDE) や、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] を使用して作成された豊富なコントロール セットを提供します。 これらのコントロールの機能をコードに補完することにより、必要なソリューションを簡単に素早く開発できます。  
+フォームはアプリケーションの基本単位であるため、機能とデザインにある程度の配慮を与えることが重要です。 フォームは、最終的には開発者がユーザー インターフェイスを作成するコントロールとデータを操作するコードを拡張する白紙状態です。 そのために、Visual Studio は、統合開発環境 (IDE)、コードを作成しやすくだけでなく豊富なコントロールを使用して作成された設定、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]です。 これらのコントロールの機能をコードに補完することにより、必要なソリューションを簡単に素早く開発できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Windows フォームについて](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  

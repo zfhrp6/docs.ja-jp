@@ -13,17 +13,17 @@ ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: aaa7fbd679eceea53a673646173dc14dc4f209bc
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 230229203029740b82e706fe2aa7ff8ee06c486a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Windows フォーム アプリケーションの基礎 (Visual Basic)
 Visual Basic の重要な部分は、ユーザーのコンピューターでローカルに実行する Windows フォーム アプリケーションを作成する機能です。 Visual Studio を使用して、Windows フォームを使用して、アプリケーションとユーザー インターフェイスを作成することができます。 Windows フォーム アプリケーションからのクラスをベースに構築、<xref:System.Windows.Forms>名前空間。  
   
 ## <a name="designing-windows-forms-applications"></a>設計の Windows フォーム アプリケーション  
- Windows フォームと Windows サービス アプリケーションを作成することができます[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]です。 詳細については、次のトピックを参照してください。  
+ Visual Studio では、Windows フォームや Windows サービス アプリケーションを作成できます。 詳細については、次のトピックを参照してください。  
   
 -   [Windows フォームの概要](../../../framework/winforms/getting-started-with-windows-forms.md)です。 作成し、Windows フォームをプログラミングする方法についてを説明します。  
    
@@ -32,7 +32,7 @@ Visual Basic の重要な部分は、ユーザーのコンピューターでロ�
 -   [Windows サービス アプリケーション](../../../framework/windows-services/index.md)です。 Windows サービスを作成する方法を説明するトピックを一覧表示します。  
   
 ## <a name="building-rich-interactive-user-interfaces"></a>リッチで対話型のユーザー インターフェイスの構築  
- Windows フォームのスマート クライアント コンポーネントは、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、読み取りと書き込み、ファイル システムなど、アプリケーションの一般的なタスクを有効にするマネージ ライブラリのセット。 などの開発環境を使用して[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、ネットワーク経由でをリモート コンピューターで情報を表示したり、ユーザーから入力を要求、通信する Windows フォーム アプリケーションを作成することができます。  
+ Windows フォームのスマート クライアント コンポーネントは、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、読み取りと書き込み、ファイル システムなど、アプリケーションの一般的なタスクを有効にするマネージ ライブラリのセット。 Visual Studio などの開発環境を使用して、作成情報を表示したり、ユーザーから入力を要求、通信する Windows フォーム アプリケーションをリモート コンピューターで、ネットワーク経由でします。  
   
  Windows フォームでは、フォームは、ユーザーに情報を表示しているビジュアル サーフェイスです。 通常、Windows フォーム アプリケーションをビルドするには、コントロールをフォームに配置し、マウスのクリックやキーの押下などのユーザー アクションへの応答を開発します。 "*コントロール*" は、データを表示したりデータ入力を受け入れたりする独立したユーザー インターフェイス (UI) 要素です。  
   
@@ -44,7 +44,7 @@ Visual Basic の重要な部分は、ユーザーのコンピューターでロ�
   
  Windows フォームには、Microsoft Office のようなハイエンド アプリケーションの機能をエミュレートする豊富な UI コントロールが用意されています。 使用して、<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.MenuStrip>コントロール、ツールバーとメニュー テキストとイメージを含む、サブメニューを表示および他のコントロールのテキスト ボックスやコンボ ボックスなどのホストを作成できます。  
   
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]ドラッグ アンド ドロップのフォーム デザイナーで、Windows フォーム アプリケーションに簡単に作成できます: だけをカーソルでコントロールを選択し、フォームの希望の位置に配置します。 デザイナーは、グリッド線や「スナップ線」などのツールを提供するコントロールの調整が備わっており、簡単にします。 かどうかを使用して[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]またはコンパイル、コマンドラインで使用することができます、 <xref:System.Windows.Forms.FlowLayoutPanel>、<xref:System.Windows.Forms.TableLayoutPanel>と<xref:System.Windows.Forms.SplitContainer>高度なを作成するコントロールが最小限の時間と労力でレイアウトを形成します。  
+ Visual Studio のドラッグ アンド ドロップのフォーム デザイナー、Windows フォーム アプリケーションを簡単に作成できます: だけをカーソルでコントロールを選択し、フォームの希望の位置に配置します。 デザイナーは、グリッド線や「スナップ線」などのツールを提供するコントロールの調整が備わっており、簡単にします。 Visual Studio を使用した場合、またはコマンドラインでコンパイルするかどうかは、使用して、 <xref:System.Windows.Forms.FlowLayoutPanel>、<xref:System.Windows.Forms.TableLayoutPanel>と<xref:System.Windows.Forms.SplitContainer>コントロールを作成、高度なフォームを最小限の時間と労力のレイアウトです。  
   
 ### <a name="custom-ui-elements"></a>カスタムの UI 要素  
  最後に、独自のカスタム UI 要素を作成する必要がある場合、<xref:System.Drawing>名前空間には、すべての線、円、およびその他の図形をフォーム上に直接表示する必要があります。 クラスが含まれています。  
@@ -53,7 +53,7 @@ Visual Basic の重要な部分は、ユーザーのコンピューターでロ�
   
 |終了|解決方法については、|  
 |--------|---------|  
-|使用して新しい Windows フォーム アプリケーションを作成します。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|Visual Studio で新しい Windows フォーム アプリケーションを作成します。|[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
 |フォーム上のコントロールを使用します。|[方法: Windows フォームにコントロールを追加する](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
 |使用してグラフィックスを作成します。 <xref:System.Drawing>|[グラフィックス プログラミングについて](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |カスタム コントロールを作成します。|[方法: UserControl クラスを継承する](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
@@ -67,7 +67,7 @@ Visual Basic の重要な部分は、ユーザーのコンピューターでロ�
  プロジェクトのデータベース、Web サービス、およびオブジェクトなどのデータ ソースを表示するデータ ソース ウィンドウを使用して簡単にデータ バインド コントロールを作成することができます。 このウィンドウからプロジェクトのフォームに項目をドラッグして、データ バインド コントロールを作成できます。 また、[データ ソース] ウィンドウから既存のコントロールにオブジェクトをドラッグして、データに既存のコントロールをバインドすることもできます。  
   
 ### <a name="settings"></a>設定  
- 別の種類のデータ バインド Windows フォームで管理できるは、設定です。 ほとんどのスマート クライアント アプリケーションは必要があります、フォームの前回のサイズなど、実行時状態に関する情報を保持し、保存されたファイルの既定の場所などのユーザー設定のデータを保持します。 アプリケーション設定機能クライアント コンピューターに両方の種類の設定を保存する簡単な方法を提供することによってこれらの要件に対応します。 いずれかを使用して 1 回定義[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]またはコード エディターでは、これらの設定を XML として永続化され、自動的に実行時にメモリに読み込まです。  
+ 別の種類のデータ バインド Windows フォームで管理できるは、設定です。 ほとんどのスマート クライアント アプリケーションは必要があります、フォームの前回のサイズなど、実行時状態に関する情報を保持し、保存されたファイルの既定の場所などのユーザー設定のデータを保持します。 アプリケーション設定機能クライアント コンピューターに両方の種類の設定を保存する簡単な方法を提供することによってこれらの要件に対応します。 Visual Studio またはコード エディターを使用して定義されると、これらの設定は XML として永続化され、自動的に実行時にメモリに読み込まです。  
   
  これらの機能の使用に関する詳細な手順については、次のヘルプ トピックを参照してください。  
   
@@ -78,7 +78,7 @@ Visual Basic の重要な部分は、ユーザーのコンピューターでロ�
 |データ ソース ウィンドウを使用します。|[チュートリアル: Windows フォームでのデータの表示](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>クライアント コンピューターにアプリケーションを配置する  
- アプリケーションを記述したとする必要がありますに送信するユーザーをインストールして、独自のクライアント コンピューターで実行できるようにします。 使用して、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]テクノロジ、内からアプリケーションを配置できる[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]して数回のクリックを使用して、Web 上のアプリケーションを指す URL をユーザーに提供します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] すべての要素と、アプリケーション内の依存関係を管理し、クライアント コンピューターで、アプリケーションが正しくインストールされていることを確認します。  
+ アプリケーションを記述したとする必要がありますに送信するユーザーをインストールして、独自のクライアント コンピューターで実行できるようにします。 使用して、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]テクノロジ、数回のクリックを使用して、Visual Studio 内からアプリケーションを配置して、Web 上のアプリケーションを指す URL をユーザーに提供します。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] すべての要素と、アプリケーション内の依存関係を管理し、クライアント コンピューターで、アプリケーションが正しくインストールされていることを確認します。  
   
  [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] アプリケーションは、ユーザーがネットワークに接続されている場合にのみ実行するか、オンラインとオフラインの両方で実行するかを構成することができます。 アプリケーションがオフラインの操作をサポートするように指定するときに[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]のユーザーのアプリケーションへのリンクを追加**開始**] メニューの [できるように、ユーザーを使用すると、URL を使用しても開くことができます。  
   

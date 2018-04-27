@@ -1,12 +1,13 @@
 ---
-title: "WPF アプリケーションのパフォーマンスの最適化"
-ms.custom: 
+title: WPF アプリケーションのパフォーマンスの最適化
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - application rendering [WPF], performance
@@ -14,19 +15,20 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: ac8c6aa3-3c68-4a24-9827-3b6c829c1ebf
-caps.latest.revision: "45"
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 385bcb8678b11e1cb8f84ae509b1f1b6777665d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d2de2d4009cb29c5e9cbdace0d69c220f95a54e1
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="optimizing-wpf-application-performance"></a>WPF アプリケーションのパフォーマンスの最適化
-このセクションの目的は、参照用として[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーション開発者が、アプリケーションのパフォーマンスを向上させる方法を探しています。 ユーザーが初めて使用する開発者の場合、[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]と[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、おく必要があります最初に自分で両方のプラットフォームです。 このセクションでは、両方の実用的な知識を前提としていてが既に実行して、アプリケーションを十分に把握するプログラマにとって書き込まれます。  
+このセクションの目的は、参照用として[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーション開発者が、アプリケーションのパフォーマンスを向上させる方法を探しています。 新しい Microsoft .NET Framework には、開発者がいるかどうかと[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、おく必要があります最初に自分で両方のプラットフォームです。 このセクションでは、両方の実用的な知識を前提としていてが既に実行して、アプリケーションを十分に把握するプログラマにとって書き込まれます。  
   
 > [!NOTE]
 >  このセクションで提供されるパフォーマンス データがに基づいて[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]RAM および ATI Radeon 9700、512 で 2.8 GHz PC で実行されるアプリケーション グラフィックス カードです。  
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
  [アプリケーションの起動時間](../../../../docs/framework/wpf/advanced/application-startup-time.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.RenderOptions>  
  <xref:System.Windows.Media.RenderCapability>  
  [グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)  

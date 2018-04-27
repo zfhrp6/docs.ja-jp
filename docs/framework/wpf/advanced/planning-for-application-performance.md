@@ -1,27 +1,29 @@
 ---
-title: "アプリケーション パフォーマンスの計画"
-ms.custom: 
+title: アプリケーション パフォーマンスの計画
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: c91bd0c5-a193-46ff-9da1-eb7a3a76a3b3
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6bdb140d90de02fa817c55a05f40e57fcd0d636c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 15130ac57b0df2ab1632ad8ec31ae5e350afdfec
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="planning-for-application-performance"></a>アプリケーション パフォーマンスの計画
 パフォーマンスの目標を達成できるは、どの程度する戦略を作成するパフォーマンスによって異なります。 計画は、任意の製品の開発の最初のステージです。 このトピックでは、良好なパフォーマンスの戦略を開発するためのいくつかの非常に単純な規則について説明します。  
@@ -36,14 +38,14 @@ ms.lasthandoff: 12/22/2017
  測定、調査、アプリケーションの開発サイクル中に再設定/修正のサイクルを常に維持します。 開発サイクルの終わりに、最初から、信頼性の高い安定した環境でアプリケーションのパフォーマンスを測定する必要があります。 外部の要因によって変動を避ける必要があります。 たとえば、パフォーマンスをテストするときにウイルス対策ソフトウェアや SMS などの任意の自動更新を無効にする、パフォーマンスに影響しないようにの順序でテスト結果必要があります。 アプリケーションのパフォーマンスを測定するしたら、最大の機能強化の原因となる変更を識別します。 アプリケーションを変更した後は、もう一度、サイクルを開始します。  
   
 ## <a name="make-performance-tuning-an-iterative-process"></a>パフォーマンス チューニングを反復処理  
- 使用して各機能の相対的なコストを把握する必要があります。 リフレクションの使用例、[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]は通常、パフォーマンス、慎重に使用するためのコンピューティング リソースの観点から負荷がかかります。 ありません、リフレクションの使用を避けるためにのみ必要がある、アプリケーションのパフォーマンス要件を使用する機能のパフォーマンスに対する要求とのバランスをとるように注意してくださかった。  
+ 使用して各機能の相対的なコストを把握する必要があります。 たとえば、Microsoft .NET Framework でリフレクションを使用は通常、パフォーマンス、コンピューティング リソースの観点から処理を要する、慎重に使用するためです。 ありません、リフレクションの使用を避けるためにのみ必要がある、アプリケーションのパフォーマンス要件を使用する機能のパフォーマンスに対する要求とのバランスをとるように注意してくださかった。  
   
 ## <a name="build-towards-graphical-richness"></a>豊かなグラフィックスを作り上げてください。  
  キーの手法を実現するスケーラブルなアプローチを作成するため[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]豊かなグラフィックスと複雑さを作り上げてには、アプリケーションのパフォーマンスです。 常に最低のパフォーマンス負荷の高いリソースを使用して、シナリオの目標を達成すると開始します。 これらの目標を達成すると、機能を使用して複数のパフォーマンス負荷の高い常にシナリオの目標を念頭を豊かなグラフィックス ビルドします。 ただし、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]非常に豊富なプラットフォームは、非常に多彩なグラフィック機能を提供します。 考えずパフォーマンス負荷の高い機能を使用すると、アプリケーション全体のパフォーマンスに悪影響を与えることができます。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コントロールは、広く使用されているカスタマイズの場合、コントロールの動作を変更しない中に、表示されるようにすることでは本質的に拡張できます。 活用してスタイル、データ テンプレート、およびコントロール テンプレートを作成し、カスタマイズ可能な増分進化[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]パフォーマンス要件に適合します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コントロールは、広く使用されているカスタマイズの場合、コントロールの動作を変更しない中に、表示されるようにすることでは本質的に拡張できます。 活用してスタイル、データ テンプレート、およびコントロール テンプレートを作成し、カスタマイズ可能な増分進化[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]パフォーマンス要件に適合します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
  [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  

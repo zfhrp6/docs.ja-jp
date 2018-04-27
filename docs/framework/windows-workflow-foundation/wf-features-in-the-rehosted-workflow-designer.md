@@ -14,17 +14,17 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 999c18f20264a71cf73bbd5afd352ad3104a03e8
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a11a1cddbb5b65bf174cabe7774ad62791657f54
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート
-[!INCLUDE[wf](../../../includes/wf-md.md)] の [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] には、ワークフロー デザイナー エクスペリエンスの拡張機能を含む、多くの新機能が導入されています。 このトピックでは、このような新機能のうち、再ホストされたデザイナーでサポートされている機能と現時点ではサポートされていない機能について詳しく説明します。  
+Windows Workflow Foundation (WF) で[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]ワークフロー デザイナー エクスペリエンスにいくつかの拡張機能など、多くの新機能が導入されました。 このトピックでは、このような新機能のうち、再ホストされたデザイナーでサポートされている機能と現時点ではサポートされていない機能について詳しく説明します。  
   
 > [!NOTE]
->  新しいすべての一覧については[!INCLUDE[wf](../../../includes/wf-md.md)]で導入された機能[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]を含めているデザイナーのホスト変更に関連する、次を参照してください。 [.NET 4.5 での Windows Workflow Foundation の新](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md)です。  
+>  導入された新しい Windows Workflow Foundation (WF) 機能のすべての一覧については[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]を含めているデザイナーのホスト変更に関連する、次を参照してください。 [.NET 4.5 での Windows Workflow Foundation の新](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md)です。  
   
 ## <a name="activities"></a>アクティビティ  
  組み込みのアクティビティ ライブラリには、既存のアクティビティ用の新しいアクティビティと新しい機能が含まれています。 これらの新しいアクティビティはすべて、再ホストされたデザイナーでサポートされています。 これらの新しいアクティビティの詳細については、次を参照してください。、[アクティビティ](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_NewActivities)のセクション[.NET 4.5 での Windows Workflow Foundation の新](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md)です。  

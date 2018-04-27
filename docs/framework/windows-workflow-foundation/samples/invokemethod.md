@@ -1,23 +1,24 @@
 ---
 title: InvokeMethod
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 04988eb3-65f8-456d-b1bd-509f5d05a57c
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b90ebec929b310442cde2be8d96386e016a9bbb4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f988f206fbd84b7b7d47fb3bd540420601ba30c9
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="invokemethod"></a>InvokeMethod
 このサンプルでは、<xref:System.Activities.Statements.InvokeMethod> アクティビティを使用してクラスのメソッドを呼び出すさまざまな方法を示します。  
@@ -52,7 +53,7 @@ ms.lasthandoff: 12/22/2017
 12. オブジェクトのインスタンスから値を取得します。  
   
 ## <a name="to-use-this-sample"></a>このサンプルを使用するには  
- このサンプルには、2 つのバージョンが用意されています。 このサンプルの第 1 のバージョンでは、<xref:System.Activities.Statements.InvokeMethod> プログラミング モデルを使用して、C# コードから [!INCLUDE[wf](../../../../includes/wf-md.md)] を使用する方法を示します。これは、CodedWorkflow\CS フォルダーにあります。 第 2 のバージョンでは、XAML で <xref:System.Activities.Statements.InvokeMethod> を使用する方法を示します。これは、DesignerWorkflow\CS フォルダーにあります。  
+ このサンプルには、2 つのバージョンが用意されています。 このサンプルの最初のバージョンは、の使用法を示しています<xref:System.Activities.Statements.InvokeMethod>c# コードから Windows Workflow Foundation (WF) のプログラミング モデルを使用して、Codedworkflow \cs フォルダーにあります。 第 2 のバージョンでは、XAML で <xref:System.Activities.Statements.InvokeMethod> を使用する方法を示します。これは、DesignerWorkflow\CS フォルダーにあります。  
   
 #### <a name="to-run-the-coded-workflow-sample"></a>コード化されたワークフロー サンプルを実行するには  
   

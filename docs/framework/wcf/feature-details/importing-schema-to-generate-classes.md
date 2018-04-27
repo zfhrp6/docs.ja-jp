@@ -22,11 +22,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7fc755ff7f1b6c583a1e9aa1bc209495563812f0
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 43eaa4ffe562cf1dde5abd7e7540125dcf383732
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="importing-schema-to-generate-classes"></a>クラスを作成するためのスキーマのインポート
 スキーマを読み込んで、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で使用可能なクラスを生成するには、<xref:System.Runtime.Serialization.XsdDataContractImporter> クラスを使用します。 ここでは、生成時に指定できる各種のオプションについて解説します。  
@@ -154,7 +154,7 @@ ms.lasthandoff: 04/26/2018
  `ReferencedTypes`プロパティに対応して、 **/reference** Svcutil.exe ツールの操作の特定のモードに切り替えます。  
   
 > [!NOTE]
->  Svcutil.exe を使用する場合または (で[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)])、**サービス参照の追加**MsCorLib.dll に型のすべてのツールが自動的に参照します。  
+>  Svcutil.exe を使用する場合または (Visual Studio)、**サービス参照の追加**MsCorLib.dll に型のすべてのツールが自動的に参照します。  
   
 #### <a name="import-options-importing-non-datacontract-schema-as-ixmlserializable-types"></a>インポート オプション : 非データ コントラクト スキーマを IXmlSerializable 型としてインポート  
  <xref:System.Runtime.Serialization.XsdDataContractImporter> は、どのようなスキーマでもインポートできるわけではありません。 未対応のスキーマ構造 (たとえば XML 属性) をインポートしようとすると例外が発生します。 ただし <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> プロパティを `true` に設定すると、対応可能なスキーマの範囲が広がります。 `true` に設定すると、<xref:System.Runtime.Serialization.XsdDataContractImporter> は、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装した型を生成します。 そのため、これらの型の XML 表現に直接アクセスできるようになります。  

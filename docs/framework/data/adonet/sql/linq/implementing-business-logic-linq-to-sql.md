@@ -1,27 +1,29 @@
 ---
-title: "ビジネス ロジックの実装 (LINQ to SQL)"
-ms.custom: 
+title: ビジネス ロジックの実装 (LINQ to SQL)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d905f34c29fbd8a15cb8225a4a547490a5c14efd
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: f519162818739d04cbe66b107911a0e0c30d93bc
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>ビジネス ロジックの実装 (LINQ to SQL)
 このトピックの「ビジネス ロジック」とは、データベースでデータを挿入、更新、または削除される前にデータに適用されるカスタム規則または検証テストのことです。 ビジネス ロジックは、「ビジネス ルール」または「ドメイン ロジック」とも呼ばれます。 n 層アプリケーションでは、通常、論理層として設計されるため、プレゼンテーション層やデータ アクセス層から独立して変更できます。 データベースのデータを更新、挿入、または削除する前または後に、データ アクセス層によってビジネス ロジックを呼び出すことができます。  
@@ -166,7 +168,7 @@ public string CustomerID
 }  
 ```  
   
- クラスの開発者が作成する部分で、メソッドの実装定義を記述します。 [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)]を入力した後、`partial`クラスの他の部分にメソッド定義の IntelliSense が表示されます。  
+ クラスの開発者が作成する部分で、メソッドの実装定義を記述します。 入力した後、Visual Studio で`partial`クラスの他の部分にメソッド定義の IntelliSense が表示されます。  
   
 ```vb  
 Partial Public Class Customer  
@@ -194,7 +196,7 @@ partial class Customer
   
  [チュートリアル: エンティティ クラスへの検証の追加](http://msdn.microsoft.com/library/85b06a02-b2e3-4534-95b8-d077c8d4c1d7)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [部分クラスと部分メソッド](~/docs/csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)  
  [部分メソッド](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)  
  [Visual Studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  

@@ -16,14 +16,14 @@ ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
 caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f1ccf08ba58fa6af60bd8ffd7cba79b205dc0f3d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 20239045426e466ba58427bb9794ea7e55b3aa4c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>方法: コマンド ライン コンパイラを起動する (Visual Basic)
-コマンド ラインで、MS-DOS のプロンプトとも呼ばれるにその実行可能ファイルの名前を入力して、コマンド ライン コンパイラを呼び出すことができます。 既定の Windows コマンド プロンプトからコンパイルする場合は、実行可能ファイルへの完全修飾パスを入力する必要があります。 この既定の動作をオーバーライドするを使用するか、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]コマンド プロンプト、または、PATH 環境変数を変更します。 コンパイラの名前を入力するだけで任意のディレクトリからコンパイルを両方ができます。  
+コマンド ラインで、MS-DOS のプロンプトとも呼ばれるにその実行可能ファイルの名前を入力して、コマンド ライン コンパイラを呼び出すことができます。 既定の Windows コマンド プロンプトからコンパイルする場合は、実行可能ファイルへの完全修飾パスを入力する必要があります。 この既定の動作を上書きするには、Visual Studio コマンド プロンプトを使用するか、PATH 環境変数を変更することができます。 コンパイラの名前を入力するだけで任意のディレクトリからコンパイルを両方ができます。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -31,9 +31,9 @@ ms.lasthandoff: 04/26/2018
   
 1.  Microsoft Visual Studio プログラム グループ内の Visual Studio Tools プログラム フォルダーを開きます。  
   
-2.  使用することができます、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]コマンド プロンプトを Visual Studio がインストールされている場合、コンピューター上の任意のディレクトリから、コンパイラにアクセスします。  
+2.  Visual Studio がインストールされている場合、コンピューター上の任意のディレクトリから、コンパイラにアクセスする Visual Studio コマンド プロンプトを使用することができます。  
   
-3.  呼び出す、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]コマンド プロンプトです。  
+3.  Visual Studio コマンド プロンプトを起動します。  
   
 4.  コマンドラインで「 `vbc.exe` *sourceFileName*し、ENTER キーを押します。  
   

@@ -1,24 +1,26 @@
 ---
-title: "移行に関する注意事項 (Entity Framework)"
-ms.custom: 
+title: 移行に関する注意事項 (Entity Framework)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8e4c1b06e5a3a7717b99379fd9bca2c5a8a14a6a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c31d7d481d5016b8f2d440f8a727e5bfcf66717c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="migration-considerations-entity-framework"></a>移行に関する注意事項 (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework には、既存のアプリケーションにとっていくつかの利点があります。 特に重要な利点の 1 つが、概念モデルを使用して、アプリケーションで使用するデータ構造をデータ ソースのスキーマから分離できることです。 これにより、ストレージ モデルやデータ ソース自体の将来の変更が容易になり、その変更を補うための変更をアプリケーションに加える必要がなくなります。 使用する利点の詳細についての[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]を参照してください[Entity Framework の概要](../../../../../docs/framework/data/adonet/ef/overview.md)と[Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md)です。  
@@ -44,7 +46,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  アプリケーションをアップグレードします。  
   
-     以前のバージョンを使用して作成されたプロジェクト[!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)]と[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]を使用してにアップグレードする必要があります[!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)]SP1 および[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]version 3.5 SP1 以降をします。  
+     Visual Studio の以前のバージョンを使用して作成されたプロジェクトと[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]を使用してにアップグレードする必要があります[!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)]SP1 および[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]version 3.5 SP1 以降をします。  
   
 2.  モデルおよびマッピングを定義します。  
   
@@ -59,15 +61,15 @@ ms.lasthandoff: 01/19/2018
   
      [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] で概念モデルに対してクエリを実行する際には特殊な形式の接続文字列を使用します。 この接続文字列は、モデル ファイルとマッピング ファイルに関する情報とデータ ソースへの接続に関する情報をカプセル化したものです。 詳細については、次を参照してください。[する方法: 接続文字列を定義](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md)です。  
   
-4.  [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] プロジェクトを構成します。  
+4.  Visual Studio プロジェクトを構成します。  
   
-     [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] アセンブリへの参照とモデル ファイルおよびマッピング ファイルを [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] プロジェクトに追加する必要があります。 これらのマッピング ファイルをプロジェクトに追加することで、接続文字列で指定された場所にアプリケーションと共に配置されるようにすることができます。 詳細については、次を参照してください。[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)です。  
+     参照[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]アセンブリと、モデルとマッピング ファイルは、Visual Studio プロジェクトに追加する必要があります。 これらのマッピング ファイルをプロジェクトに追加することで、接続文字列で指定された場所にアプリケーションと共に配置されるようにすることができます。 詳細については、次を参照してください。[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)です。  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>既存のオブジェクトを含むアプリケーションの注意点  
  [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4 以降では、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は POCO ("plain old" CLR object、永続化非依存オブジェクトとも呼ばれます) をサポートしています。 ほとんどの場合、既存のオブジェクトを少し変更すれば [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] で使用できます。 詳細については、次を参照してください。 [POCO エンティティの操作](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。 アプリケーションを移行することも、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]し、Entity Framework ツールによって生成されるデータ クラスを使用します。 詳細については、次を参照してください。[する方法: Entity Data Model ウィザードを使用して](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d)です。  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>ADO.NET プロバイダーを使用するアプリケーションの注意点  
- [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]SqlClient などのプロバイダーを使用すると、表形式のデータを返すためのデータ ソースをクエリできます。 データを読み込むことも、[!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]データセット。 以下は、既存の [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] プロバイダーを使用するアプリケーションをアップグレードする場合の注意点です。  
+ [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] SqlClient などのプロバイダーを使用すると、表形式のデータを返すためのデータ ソースをクエリできます。 データを読み込むことも、[!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]データセット。 以下は、既存の [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] プロバイダーを使用するアプリケーションをアップグレードする場合の注意点です。  
   
  データ リーダーを使用して表形式のデータを表示している場合  
  実行することを検討、 [!INCLUDE[esql](../../../../../includes/esql-md.md)] EntityClient プロバイダーを使用して、返された列挙クエリ<xref:System.Data.EntityClient.EntityDataReader>オブジェクト。 この方法を使用するのは、データ リーダーを使用して表形式のデータを表示するアプリケーションで、データをオブジェクトに具体化したり、変更を追跡したり、更新を行ったりするための [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] の機能が不要である場合だけにしてください。 データ ソースを更新する既存のデータ アクセス コードも引き続き使用できますが、<xref:System.Data.EntityClient.EntityConnection.StoreConnection%2A> の <xref:System.Data.EntityClient.EntityConnection> プロパティから既存の接続にアクセスできます。 詳細については、次を参照してください。 [Entity Framework の EntityClient プロバイダー](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)です。  
@@ -104,8 +106,8 @@ ms.lasthandoff: 01/19/2018
  アプリケーションで XML データのクエリ機能が必要な場合も、LINQ to XML を使用して LINQ クエリを活用することができます。 詳細については、次を参照してください。 [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)です。  
   
  状態を保持するアプリケーション  
- [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Web アプリケーションは、Web ページまたはユーザー セッションの状態を維持頻繁にする必要があります。 内のオブジェクト、<xref:System.Data.Objects.ObjectContext>インスタンスまたはサーバーで、セッション状態のクライアント ビュー ステートに格納し、後で取得して新しいオブジェクト コンテキストに再アタッチします。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+ [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] Web アプリケーションは、Web ページまたはユーザー セッションの状態を維持頻繁にする必要があります。 内のオブジェクト、<xref:System.Data.Objects.ObjectContext>インスタンスまたはサーバーで、セッション状態のクライアント ビュー ステートに格納し、後で取得して新しいオブジェクト コンテキストに再アタッチします。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
  [Entity Framework の用語](../../../../../docs/framework/data/adonet/ef/terminology.md)

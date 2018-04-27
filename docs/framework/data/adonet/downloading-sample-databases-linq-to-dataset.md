@@ -1,24 +1,26 @@
 ---
-title: "サンプル データベースのダウンロード (LINQ to DataSet)"
-ms.custom: 
+title: サンプル データベースのダウンロード (LINQ to DataSet)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-ado
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb42a7af-d410-4b7f-b4a8-13c72ce6fd09
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c8c1c2dabb13393764ca8b1fd9c1a717b9e2527e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8e19e51ecf4868d0d49e26b4aafd7e8b3840992d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="downloading-sample-databases-linq-to-dataset"></a>サンプル データベースのダウンロード (LINQ to DataSet)
 サンプルおよびチュートリアルでは、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]ドキュメントは、AdventureWorks サンプル データベースを使用します。 この製品は、Microsoft のダウンロード サイトから無償でダウンロードできます。 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] のドキュメントで取り上げられているサンプルおよびチュートリアルでは、データ ストアとして SQL Server が使用されています。 SQL Server の代わりに、無償で提供されている SQL Server Express Edition をデータ ストアとして使用することもできます。  
@@ -39,7 +41,7 @@ ms.lasthandoff: 01/17/2018
   
 1.  AdventureWorks データベースまたは AdventureWorksDW データベースを削除します。  
   
-2.  **プログラム追加と削除**[ **AdventureWorksDB**または**[adventureworksbi]** ] をクリック**削除**です。  
+2.  **プログラム追加と削除**[ **AdventureWorksDB**または **[adventureworksbi]** ] をクリック**削除**です。  
   
 #### <a name="to-remove-an-adventureworks-sample-database-previously-installed-using-setup"></a>過去にセットアップ プログラムを使用してインストールした AdventureWorks サンプル データベースを削除するには  
   
@@ -47,7 +49,7 @@ ms.lasthandoff: 01/17/2018
   
 2.  **プログラム追加と削除****[Microsoft SQL Server 2005]** をクリック**変更**です。  
   
-3.  **コンポーネントの選択****[ワークステーション コンポーネント]** をクリックし、 **[次へ]**です。  
+3.  **コンポーネントの選択****[ワークステーション コンポーネント]** をクリックし、 **[次へ]** です。  
   
 4.  **、SQL Server インストール ウィザードへようこそ**をクリックして**次**です。  
   
@@ -57,7 +59,7 @@ ms.lasthandoff: 01/17/2018
   
 7.  **機能の選択**、展開、**マニュアル、サンプル、およびサンプル データベース**ノード。  
   
-8.  選択**サンプル コードおよびアプリケーション**です。 展開**サンプル データベース**、削除して、選択するには、サンプル データベースを選択して**全体の機能は使用できません**です。 **[次へ]**をクリックします。  
+8.  選択**サンプル コードおよびアプリケーション**です。 展開**サンプル データベース**、削除して、選択するには、サンプル データベースを選択して**全体の機能は使用できません**です。 **[次へ]** をクリックします。  
   
 9. をクリックして**インストール**と、インストール ウィザードを終了します。  
   
@@ -74,7 +76,7 @@ ms.lasthandoff: 01/17/2018
      これらのファイルが異なるドライブまたはディレクトリにインストールされている場合は、パスを適宜修正してから、`sp_attach_db` ストアド プロシージャを実行してください。  
   
 ## <a name="downloading-sql-server-express-edition"></a>SQL Server Express Edition のダウンロード  
- サンプルおよびチュートリアルでは、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]セクションはデータ ストアとして SQL Server 2005 を使用しますが、代わりに SQL Server Express Edition を使用するように変更できます。 SQL Server Express Edition は無料で入手でき、アプリケーションと共に再配布できます。 Professional Edition 以上の [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] には、SQL Server Express Edition が付属しています。  
+ サンプルおよびチュートリアルでは、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]セクションはデータ ストアとして SQL Server 2005 を使用しますが、代わりに SQL Server Express Edition を使用するように変更できます。 SQL Server Express Edition は無料で入手でき、アプリケーションと共に再配布できます。 Visual Studio を使用している場合は、Pro 以上のエディションの SQL Server Express Edition が含まれています。  
   
 #### <a name="to-download-and-install-sql-server-express-edition"></a>SQL Server Express Edition をダウンロードおよびインストールするには  
   
@@ -84,5 +86,5 @@ ms.lasthandoff: 01/17/2018
   
 3.  Web サイトに記載されているインストールの指示に従います。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)

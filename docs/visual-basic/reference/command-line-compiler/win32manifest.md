@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 79b51117197f28cec21671eea4dd7b7f2f1cc306
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 901ea984a8e8e90329953a8936e68f2fc07f8847
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
 プロジェクトのポータブル実行可能 (PE) ファイルに埋め込まれる、ユーザー定義の Win32 アプリケーション マニフェスト ファイルを識別します。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/22/2018
   
 2.  要求実行レベルが指定されていないカスタム マニフェストを提供している。  
   
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] は、既定の .manifest ファイルを作成し、それを実行可能ファイルと一緒にデバッグ ディレクトリとリリースディレクトリに保存します。 表示またはをクリックして既定のアプリケーション マニフェスト ファイルを編集することができます**UAC 設定の表示**上、**アプリケーション**プロジェクト デザイナーのタブです。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+ Visual Studio では、既定のマニフェスト ファイルを作成し、実行可能ファイルと一緒にデバッグとリリースのディレクトリに格納します。 表示またはをクリックして既定のアプリケーション マニフェスト ファイルを編集することができます**UAC 設定の表示**上、**アプリケーション**プロジェクト デザイナーのタブです。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
   
  使用できる、アプリケーション マニフェストまたは Win32 リソース ファイルの一部としてカスタム ビルド後のステップとしてを使用して、`-nowin32manifest`オプション。 アプリケーションを Windows Vista でファイルまたはレジストリの仮想化の対象にする場合は、これと同じオプションを使用します。 これにより、コンパイラからの作成と、PE ファイルの既定のマニフェストを埋め込むことができなくなります。  
   

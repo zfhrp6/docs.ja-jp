@@ -20,21 +20,21 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 48295a187870340948b045a64b852f1e6fdc1a65
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: dfa5eb8ec1e4f9f2eeeb142670b92d5ec35ab6cf
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>方法: .NET Framework 3.0 がインストールされているかどうかを確認する
-管理者は展開する前に[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]アプリケーション システムでは、する必要がありますまずことを確認したこと、[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]ランタイムが存在します。 このトピックで記述されたスクリプトは、HTML または JavaScript を決定する管理者が使用できるのかどうか[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]は、システムに存在します。  
+管理者は、システム上の Microsoft .NET Framework アプリケーションを展開したりする前にする必要がありますまずことを確認した .NET Framework ランタイムが存在します。 このトピックで HTML または JavaScript で記述されたスクリプトは、.NET Framework は、システムに存在するかどうかを決定する管理者を使用できることです。  
   
 > [!NOTE]
 >  配置、および Microsoft .NET Framework の検出がの説明を参照してインストールする方法についての詳細、[を展開する Microsoft .NET Framework バージョン 3.0](http://go.microsoft.com/fwlink/?LinkId=96739)です。  
   
 <a name="content_expiration"></a>   
 ## <a name="detect-the-net-clr-user-agent-string"></a>".NET CLR"ユーザー エージェント文字列を検出します。  
- ときに[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]がインストールされている、MSI バージョン番号と".NET CLR"文字列に追加 UserAgent です。 次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。 スクリプトを決定する UserAgent 文字列を検索するかどうか[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]がインストールされているし、検索の結果のステータス メッセージを表示します。  
+ .NET Framework がインストールされている場合、MSI は、".NET CLR"とバージョン番号を UserAgent 文字列に追加します。 次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。 スクリプトは、.NET Framework がインストールされているし、検索の結果のステータス メッセージを表示するかどうかを判断する UserAgent 文字列を検索します。  
   
 ```  
 <HTML>  

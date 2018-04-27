@@ -1,12 +1,13 @@
 ---
-title: "チュートリアル: Windows フォーム DataGridView コントロールの 2 つを使用してマスター/詳細フォームを作成します。"
-ms.custom: 
+title: 'チュートリアル: Windows フォーム DataGridView コントロールの 2 つを使用してマスター/詳細フォームを作成します。'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - master-details lists [Windows Forms], displaying on Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: c5fa29e8-47f7-4691-829b-0e697a691f36
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: af6f1bcb172543b372cbca52f54b675b6baf87d2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e5c3dfc547fe775b38ad4c2e658755268f791502
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-creating-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>チュートリアル : Windows フォームの 2 つの DataGridView コントロールを使用したマスター/詳細形式のフォームの作成
 使用するための最も一般的なシナリオの 1 つ、<xref:System.Windows.Forms.DataGridView>コントロールは、*マスター/詳細*フォーム、2 つのデータベース テーブル間の親/子リレーションシップが表示されます。 詳細テーブルが、対応する子データの更新をマスター テーブルの行を選択します。  
@@ -44,7 +46,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-a-masterdetail-form"></a>マスター/詳細フォームを作成するには  
   
-1.  派生するクラスを作成する<xref:System.Windows.Forms.Form>は 2 つと<xref:System.Windows.Forms.DataGridView>コントロールと 2 つ<xref:System.Windows.Forms.BindingSource>コンポーネントです。 次のコードは、基本的な形式の初期化を提供し、含まれています、`Main`メソッドです。 使用する場合、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]デザイナー、フォームを作成するには、できますが、デザイナーの生成されたコードを使用して、このコードではなくは変数の宣言には、ここに表示される名前を使用することを確認します。  
+1.  派生するクラスを作成する<xref:System.Windows.Forms.Form>は 2 つと<xref:System.Windows.Forms.DataGridView>コントロールと 2 つ<xref:System.Windows.Forms.BindingSource>コンポーネントです。 次のコードは、基本的な形式の初期化を提供し、含まれています、`Main`メソッドです。 フォームを作成する、Visual Studio デザイナーを使用する場合は、このコードの代わりに、デザイナーの生成されたコードを使用しますが、変数の宣言には、ここに表示される名前を使用してください。  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMasterDetails#01](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/CS/masterdetails.cs#01)]
      [!code-vb[System.Windows.Forms.DataGridViewMasterDetails#01](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/VB/masterdetails.vb#01)]  
@@ -86,7 +88,7 @@ ms.lasthandoff: 12/22/2017
   
 -   セルの外観をカスタマイズします。 詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールのセルの外観をカスタマイズ](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)と[する方法: Windows フォーム DataGridView コントロールの既定のセル スタイルの設定](../../../../docs/framework/winforms/controls/how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.BindingSource>  
  [Windows フォーム DataGridView コントロールでのデータの表示](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  

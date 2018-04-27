@@ -1,24 +1,26 @@
 ---
-title: "配信不能キュー"
-ms.custom: 
+title: 配信不能キュー
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-caps.latest.revision: "35"
+caps.latest.revision: 35
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 09a41abc8bc9fc3469ba35d7c7cfbe85d05ca174
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9892579633103f1e7a6612c09865c91c559df34c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dead-letter-queues"></a>配信不能キュー
 このサンプルでは、配信できなかったメッセージの処理方法を示します。 基にして、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)サンプルです。 このサンプルでは、`netMsmqBinding` バインディングを使用します。 サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。  
@@ -50,21 +52,21 @@ ms.lasthandoff: 12/22/2017
  クライアント アプリケーションは、配信不能キューからメッセージを読み取った後で、そのメッセージの再送信を試みるか、元のメッセージが配信不能となった原因のエラーを解消してメッセージを送信します。 このサンプルでは、クライアントはエラー メッセージを表示します。  
   
  サービス コントラクトは `IOrderProcessor` です。次のサンプル コードを参照してください。  
-  
-```  
+
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
     [OperationContract(IsOneWay = true)]  
     void SubmitPurchaseOrder(PurchaseOrder po);  
 }  
-```  
-  
+```
+
  サービスのコード サンプルでは、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)です。  
   
  サービスとの通信はトランザクションのスコープ内で実行されます。 サービスはキューからメッセージを読み取って操作を実行し、操作の結果を表示します。 このアプリケーションでは、配信不能メッセージ用の配信不能キューも作成します。  
-  
-```  
+
+```csharp
 //The service contract is defined in generatedClient.cs, generated from the service by the svcutil tool.  
   
 //Client implementation code.  
@@ -117,8 +119,8 @@ class Client
         Console.ReadLine();  
     }  
 }  
-```  
-  
+```
+
  クライアントの構成では、メッセージがサービスに到達するまでの時間が短く設定されています。 指定された時間内にメッセージを送信できなかった場合は、メッセージが有効期限切れとなり、配信不能キューに移動します。  
   
 > [!NOTE]
@@ -163,8 +165,8 @@ class Client
 >  配信不能キューはクライアント キューであり、クライアントのキュー マネージャに対してローカルです。  
   
  配信不能メッセージ サービスの実装の中で、メッセージの配信に失敗した原因を調べて修正処理を実行します。 メッセージ配信失敗の原因は、<xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure%2A> と <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryStatus%2A> の 2 つの列挙体に記録されます。 <xref:System.ServiceModel.Channels.MsmqMessageProperty> は <xref:System.ServiceModel.OperationContext> から取得できます。次のサンプル コードを参照してください。  
-  
-```  
+
+```csharp
 public void SubmitPurchaseOrder(PurchaseOrder po)  
 {  
     Console.WriteLine("Submitting purchase order did not succed ", po);  
@@ -176,15 +178,15 @@ public void SubmitPurchaseOrder(PurchaseOrder po)
     Console.WriteLine("Message Delivery Failure: {0}",   
                                                mqProp.DeliveryFailure);  
     Console.WriteLine();  
-    ….  
-}  
-```  
-  
+    …  
+}
+```
+
  配信不能キューの中のメッセージは、メッセージを処理するサービス宛てのメッセージです。 そのため、配信不能メッセージ サービスがキューからメッセージを読み取ったときに、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のチャネル レイヤによってエンドポイントの不一致が検出され、メッセージはディスパッチされません。 この場合、メッセージの宛先は注文処理サービスですが、受信するのは配信不能メッセージ サービスです。 別のエンドポイント宛てのメッセージを受信するには、どのアドレスにも一致するアドレス フィルタを `ServiceBehavior` で指定します。 これは、配信不能キューから読み取ったメッセージを正常に処理するために必要です。  
   
  このサンプルでは、配信失敗の原因がメッセージのタイムアウトならば、配信不能メッセージ サービスはメッセージを再送信します。他の原因の場合は、配信エラーを表示します。次のサンプル コードを参照してください。  
-  
-```  
+
+```csharp
 // Service class that implements the service contract.  
 // Added code to write output to the console window.  
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single, ConcurrencyMode=ConcurrencyMode.Single, AddressFilterMode=AddressFilterMode.Any)]  
@@ -237,8 +239,8 @@ public class PurchaseOrderDLQService : IOrderProcessor
         }  
     }  
 }   
-```  
-  
+```
+
  配信不能メッセージ用の構成を次のサンプルに示します。  
   
 ```xml  
@@ -372,4 +374,4 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\DeadLetter`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

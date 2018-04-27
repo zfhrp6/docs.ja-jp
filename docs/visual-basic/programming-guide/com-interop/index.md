@@ -15,11 +15,11 @@ ms.assetid: 3ffd1bdf-1b8d-47f5-87eb-75b659f64294
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f3f9d7fb51198041356cfc68d49cc703dfdf78b5
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a2c418855cd2e79c31301705706ff1b98f119a97
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="com-interop-visual-basic"></a>COM 相互運用 (Visual Basic)
 コンポーネント オブジェクト モデル (COM) では、オブジェクトがその機能を他のコンポーネントに公開し、アプリケーションをホストすることを許可します。 今日のソフトウェアのほとんどに、COM オブジェクトが含まれています。 .NET アセンブリは新しいアプリケーションに最適ですが、時には COM オブジェクトを使用する必要があります。 このセクションを作成して、Visual Basic で COM オブジェクトの使用に関連した問題について説明します。  
@@ -32,7 +32,7 @@ ms.lasthandoff: 04/26/2018
  タイプ ライブラリがある COM オブジェクトへの参照を追加する方法を説明します。  
   
  [方法 : ActiveX コントロールを操作する](../../../visual-basic/programming-guide/com-interop/how-to-work-with-activex-controls.md)  
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] ツールボックスに機能を追加するために、既存の ActiveX コントロールを使用する方法を示します。  
+ 既存の ActiveX コントロールを使用して、Visual Studio ツールボックスに機能を追加する方法を示します。  
   
  [チュートリアル : Windows API の呼び出し](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
  Windows オペレーティング システムの一部である API を呼び出すプロセスの手順を示します。  

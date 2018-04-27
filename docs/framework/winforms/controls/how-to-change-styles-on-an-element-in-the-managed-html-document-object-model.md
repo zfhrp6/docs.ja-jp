@@ -1,13 +1,13 @@
 ---
-title: "方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する"
-ms.custom: 
+title: '方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-winforms
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - managed HTML DOM [Windows Forms], changing styles on elements
 ms.assetid: 154e8d9f-3e2d-4e8b-a6f3-c85a070e9cc1
-caps.latest.revision: 
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3726ccdebf310d831fb0d7ea21fab011293f6d99
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e833a15e33d0baf80f0078b26758137e7908a8fd
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a>方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する
-Html 形式でスタイルを使用すると、ドキュメントとその要素の外観を制御します。 <xref:System.Windows.Forms.HtmlDocument>および<xref:System.Windows.Forms.HtmlElement>サポート<xref:System.Windows.Forms.HtmlElement.Style%2A>次の形式のスタイルの文字列を使用するプロパティ。  
+Html 形式でスタイルを使用すると、ドキュメントとその要素の外観を制御します。 <xref:System.Windows.Forms.HtmlDocument> および<xref:System.Windows.Forms.HtmlElement>サポート<xref:System.Windows.Forms.HtmlElement.Style%2A>次の形式のスタイルの文字列を使用するプロパティ。  
   
  `name1:value1;...;nameN:valueN;`  
   
@@ -75,7 +75,7 @@ Html 形式でスタイルを使用すると、ドキュメントとその要素
 6.  プロジェクトのコード ファイルに次のコードを追加します。  
   
     > [!IMPORTANT]
-    >  いることを確認、`webBrowser1_DocumentCompleted`のリスナーとしてイベント ハンドラーが構成されている、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>イベント。 [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]をダブルクリックして、<xref:System.Windows.Forms.WebBrowser>制御以外の場合は、テキスト エディターで、リスナーをプログラムで構成します。  
+    >  いることを確認、`webBrowser1_DocumentCompleted`のリスナーとしてイベント ハンドラーが構成されている、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>イベント。 Visual Studio でのダブルクリック、<xref:System.Windows.Forms.WebBrowser>制御以外の場合は、テキスト エディターで、リスナーをプログラムで構成します。  
   
      [!code-csharp[ManagedDOMStyles#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/Form1.cs#2)]
      [!code-vb[ManagedDOMStyles#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/Form1.vb#2)]  
@@ -88,5 +88,5 @@ Html 形式でスタイルを使用すると、ドキュメントとその要素
  [!code-csharp[ManagedDOMStyles#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/StyleGenerator.cs#1)]
  [!code-vb[ManagedDOMStyles#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/StyleGenerator.vb#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.HtmlElement>

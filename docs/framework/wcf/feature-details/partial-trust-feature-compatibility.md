@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 72282c62ad23ec825eab7054ab1909d07a062b45
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 20cb6c1cd7a3b06b57bce02d5c3caacc7e2e42b7
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="partial-trust-feature-compatibility"></a>部分信頼機能の互換性
 部分信頼環境で実行される場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でサポートされる機能は、限られたサブセットになります。 部分信頼でサポートされる機能は、「 [Supported Deployment Scenarios](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) 」のトピックで説明される特定のシナリオを念頭にデザインされています。  
@@ -154,7 +154,7 @@ ms.lasthandoff: 04/26/2018
 >  トレース ファイルが重複したエラーでいっぱいになるのを防ぐために、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では最初のセキュリティ エラーの後でリソースまたはアクションのトレースを無効にします。 リソースへのアクセスまたはアクションの実行が初めて行われようとしたとき、例外トレースはリソース アクセスの各失敗に対して、1 回だけ行われます。  
   
 ## <a name="wcf-service-host"></a>WCF サービス ホスト  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス ホストは、部分信頼をサポートしません。 部分信頼において [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを使用する場合は、サービスをビルドするために [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] にある [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] サービス ライブラリ プロジェクト テンプレートを使用しないでください。 代わりに、 [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] 部分信頼がサポートされている Web サーバーでサービスをホストできる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス Web サイト テンプレートを選択して、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に新しい Web サイトを作成します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス ホストは、部分信頼をサポートしません。 使用する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]部分的な信頼でサービスを使用しない、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスをビルドする Visual Studio でサービス ライブラリ プロジェクト テンプレート。 代わりを選択して Visual Studio で新しい Web サイトを作成、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス Web サイト テンプレートは、Web サーバーでサービスをホストできる[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]部分的な信頼がサポートされています。  
   
 ## <a name="other-limitations"></a>他の制約  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は通常、ホスト アプリケーションによってもたらされるセキュリティ上の考慮事項によって制限されます。 たとえば、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が XAML ブラウザー アプリケーション (XBAP) でホストされている場合は、「 [Windows Presentation Foundation 部分信頼セキュリティ](http://go.microsoft.com/fwlink/?LinkId=89138)」で説明されているように、XBAP の制限に従うことになります。  

@@ -1,26 +1,27 @@
 ---
-title: "コントラクト優先ワークフロー サービスの開発"
-ms.custom: 
+title: コントラクト優先ワークフロー サービスの開発
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e5dbaa7b-005f-4330-848d-58ac4f42f093
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bdafa52219dc7a275ceb64e24e8ecd91f0ec8068
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4bc0c8fafd80651114d85d2d6b06c57dec6199b5
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="contract-first-workflow-service-development"></a>コントラクト優先ワークフロー サービスの開発
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降の [!INCLUDE[wf](../../../includes/wf-md.md)] では、コントラクト優先ワークフローの開発という形で、Web サービスとワークフローの統合が向上しています。 コントラクト優先ワークフローの開発ツールでは、コードのコントラクトを先に設計できます。 その後、ツールボックス内に、コントラクト内の操作用のアクティビティ テンプレートが自動的に生成されます。 このトピックでは、ワークフロー サービスのアクティビティおよびプロパティをサービス コントラクトの属性にマップする方法の概要について説明します。 コントラクト優先ワークフロー サービスを作成する例については、次を参照してください。[する方法: 既存のサービス コントラクトを使用するワークフロー サービスを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)です。  
+以降で[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、Windows Workflow Foundation (WF) 機能のコントラクト優先ワークフローの開発という形で web サービスとワークフローの間の統合が向上しています。 コントラクト優先ワークフローの開発ツールでは、コードのコントラクトを先に設計できます。 その後、ツールボックス内に、コントラクト内の操作用のアクティビティ テンプレートが自動的に生成されます。 このトピックでは、ワークフロー サービスのアクティビティおよびプロパティをサービス コントラクトの属性にマップする方法の概要について説明します。 コントラクト優先ワークフロー サービスを作成する例については、次を参照してください。[する方法: 既存のサービス コントラクトを使用するワークフロー サービスを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)です。  
   
 ## <a name="in-this-topic"></a>このトピックの内容  
   
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/22/2017
   
     -   [構成済みのメッセージング アクティビティの生成](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md#ActivityGeneration)  
   
-##  <a name="MappingAttributes"></a>ワークフロー属性へのサービス コントラクト属性のマッピング  
+##  <a name="MappingAttributes"></a> ワークフロー属性へのサービス コントラクト属性のマッピング  
  次のセクションにある表では、さまざまな WCF 属性およびプロパティを示し、それらをコントラクト優先ワークフローのメッセージング アクティビティおよびプロパティにマップする方法について説明します。  
   
 -   [サービス コントラクト属性](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md#ServiceContract)  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
 -   [エラー コントラクト属性](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md#FaultContract)  
   
-###  <a name="ServiceContract"></a>サービス コントラクト属性  
+###  <a name="ServiceContract"></a> サービス コントラクト属性  
   
 |プロパティ名|サポート状況|説明|WF の検証|  
 |-------------------|---------------|-----------------|-------------------|  
@@ -70,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
  ここにサブセクションの本文を挿入します。  
   
-###  <a name="OperationContract"></a>操作コントラクト属性  
+###  <a name="OperationContract"></a> 操作コントラクト属性  
   
 |プロパティ名|サポート状況|説明|WF の検証|  
 |-------------------|---------------|-----------------|-------------------|  
@@ -85,7 +86,7 @@ ms.lasthandoff: 12/22/2017
 |ReplyAction|はい|操作の応答メッセージの SOAP アクションの値を取得または設定します。|SendReply.Action が一致している必要があります。|  
 |TypeId|Ｘ|派生クラスで実装すると、この属性の一意の識別子を取得します  (属性から継承)。|(なし)|  
   
-###  <a name="MessageContract"></a>メッセージ コントラクト属性  
+###  <a name="MessageContract"></a> メッセージ コントラクト属性  
   
 |プロパティ名|サポート状況|説明|WF の検証|  
 |-------------------|---------------|-----------------|-------------------|  
@@ -96,7 +97,7 @@ ms.lasthandoff: 12/22/2017
 |WrapperName|はい|メッセージ本文のラッパー要素の名前を取得または設定します。|検証なし (Receive.Content と SendReply.Content がメッセージ コントラクト型と一致している必要があります)。|  
 |WrapperNamespace|Ｘ|メッセージ本文のラッパー要素の名前空間を取得または設定します。|(なし)|  
   
-###  <a name="DataContract"></a>データ コントラクト属性  
+###  <a name="DataContract"></a> データ コントラクト属性  
   
 |プロパティ名|サポート状況|説明|WF の検証|  
 |-------------------|---------------|-----------------|-------------------|  
@@ -105,7 +106,7 @@ ms.lasthandoff: 12/22/2017
 |Namespace|はい|型のデータ コントラクトの名前空間を取得または設定します。|検証なし (Receive.Content と SendReply.Content がメッセージ コントラクト型と一致している必要があります)。|  
 |TypeId|Ｘ|派生クラスで実装すると、この属性の一意の識別子を取得します  (属性から継承)。|(なし)|  
   
-###  <a name="FaultContract"></a>エラー コントラクト属性  
+###  <a name="FaultContract"></a> エラー コントラクト属性  
   
 |プロパティ名|サポート状況|説明|WF の検証|  
 |-------------------|---------------|-----------------|-------------------|  
@@ -117,19 +118,19 @@ ms.lasthandoff: 12/22/2017
 |ProtectionLevel|Ｘ|SOAP エラーがバインドに要求する保護レベルを指定します。|(なし)|  
 |TypeId|Ｘ|派生クラスで実装すると、この属性の一意の識別子を取得します  (属性から継承)。|(なし)|  
   
-##  <a name="AdditionalSupport"></a>その他のサポートと実装情報  
+##  <a name="AdditionalSupport"></a> その他のサポートと実装情報  
   
 -   [サポートされていないサービス コントラクト機能](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md#UnsupportedFeatures)  
   
 -   [構成済みのメッセージング アクティビティの生成](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md#ActivityGeneration)  
   
-###  <a name="UnsupportedFeatures"></a>サポートされていないサービス コントラクト機能  
+###  <a name="UnsupportedFeatures"></a> サポートされていないサービス コントラクト機能  
   
 -   コントラクトでの TPL (タスク並列ライブラリ) タスクの使用はサポートされていません。  
   
 -   サービス コントラクトの継承はサポートされていません。  
   
-###  <a name="ActivityGeneration"></a>構成済みのメッセージング アクティビティの生成  
+###  <a name="ActivityGeneration"></a> 構成済みのメッセージング アクティビティの生成  
  コントラクト優先ワークフロー サービスを使用する場合に事前構成されたメッセージ アクティビティの生成をサポートするために、2 つのパブリック静的メソッドが <xref:System.ServiceModel.Activities.Receive> アクティビティと <xref:System.ServiceModel.Activities.SendReply> アクティビティに追加されています。  
   
 -   <xref:System.ServiceModel.Activities.Receive.FromOperationDescription%2A?displayProperty=nameWithType>  

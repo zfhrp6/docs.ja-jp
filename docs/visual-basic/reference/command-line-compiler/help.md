@@ -16,11 +16,11 @@ helpviewer_keywords:
 ms.assetid: eb984aa5-ac98-4d0b-a0d2-24238d7bc8dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4d56312743d70ed0d2f361c27d027a726562dc73
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 59b89d91cd81f735b44e030f72288f6b9a4d2b79
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="-help---visual-basic"></a>-help, -? (Visual Basic)
 コンパイラ オプションを出力します。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 03/22/2018
  コンパイル時にこのオプションを追加する場合は、出力ファイルは作成されませんされ、コンパイルは行われません。  
   
 > [!NOTE]
->  `-help`オプションは内から使用できません、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]開発環境は、コマンドラインからコンパイルするときにのみ使用します。  
+>  `-help`オプションは、Visual Studio 開発環境からは利用できません; は、コマンドラインからコンパイルするときにのみ使用します。  
   
 ## <a name="example"></a>例  
  次のコードでは、コマンドラインからヘルプを表示します。  

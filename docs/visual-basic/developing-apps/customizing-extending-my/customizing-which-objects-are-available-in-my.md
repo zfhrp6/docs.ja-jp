@@ -1,24 +1,25 @@
 ---
-title: "My で利用可能なオブジェクトのカスタマイズ (Visual Basic)"
+title: My で利用可能なオブジェクトのカスタマイズ (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 ms.assetid: 4e8279c2-ed5b-4681-8903-8a6671874000
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: e5f5be7481ee102074fe1236b91110ee6b1d2944
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 669641a2b6ecbf988f6cad68acf52c5561b32515
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>My で利用可能なオブジェクトのカスタマイズ (Visual Basic)
-このトピックでは、これを制御する方法について説明`My`するには、プロジェクトのオブジェクトが有効になって`_MYTYPE`条件付きコンパイル定数。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境 (IDE) の保持、`_MYTYPE`プロジェクトとプロジェクトの種類の同期の条件付きコンパイル定数。  
+このトピックでは、これを制御する方法について説明`My`するには、プロジェクトのオブジェクトが有効になって`_MYTYPE`条件付きコンパイル定数。 Visual Studio 統合開発環境 (IDE) の保持、`_MYTYPE`プロジェクトとプロジェクトの種類の同期の条件付きコンパイル定数。  
   
 ## <a name="predefined-mytype-values"></a>定義済み _MYTYPE 値  
  使用する必要があります、`/define`コンパイラ オプションを設定する、`_MYTYPE`条件付きコンパイル定数。 独自の値を指定するときに、`_MYTYPE`定数、文字列値で囲みますバック スラッシュ/引用符 (\\") のシーケンス。 たとえば、次のように使用する可能性があります。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
 |Web|"Web"|  
 |Web コントロール ライブラリ|"WebControl"|  
 |Windows アプリケーション|"WindowsForms"|  
-|カスタムの開始時に、Windows アプリケーション`Sub Main`|"WindowsFormsWithCustomSubMain"|  
+|カスタムの開始時に、Windows アプリケーション `Sub Main`|"WindowsFormsWithCustomSubMain"|  
 |Windows コントロール ライブラリ|"Windows"|  
 |Windows サービス|"Console"|  
 |Empty|"Empty"|  
@@ -49,14 +50,14 @@ ms.lasthandoff: 11/21/2017
   
 |_MYTYPE|_MYAPPLICATIONTYPE|_MYCOMPUTERTYPE|_MYFORMS|_MYUSERTYPE|_MYWEBSERVICES|  
 |--------------|-------------------------|----------------------|---------------|------------------|---------------------|  
-|"Console"|"Console"|"Windows"|未定義|"Windows"|TRUE|  
+|"Console"|"Console"|"Windows"|未定義|"Windows"|true|  
 |"Custom"|未定義|未定義|未定義|未定義|未定義|  
 |"Empty"|未定義|未定義|未定義|未定義|未定義|  
-|"Web"|未定義|"Web"|FALSE|"Web"|FALSE|  
-|"WebControl"|未定義|"Web"|FALSE|"Web"|TRUE|  
+|"Web"|未定義|"Web"|false|"Web"|false|  
+|"WebControl"|未定義|"Web"|false|"Web"|true|  
 |"Windows"または""|"Windows"|"Windows"|未定義|"Windows"|TRUE|  
-|"WindowsForms"|"WindowsForms"|"Windows"|TRUE|"Windows"|TRUE|  
-|"WindowsFormsWithCustomSubMain"|"Console"|"Windows"|TRUE|"Windows"|TRUE|  
+|"WindowsForms"|"WindowsForms"|"Windows"|true|"Windows"|true|  
+|"WindowsFormsWithCustomSubMain"|"Console"|"Windows"|true|"Windows"|true|  
   
  既定では、未定義の条件付きコンパイル定数を解決する`FALSE`です。 既定の動作を上書きするようにプロジェクトをコンパイルするときに、未定義の定数の値を指定できます。  
   

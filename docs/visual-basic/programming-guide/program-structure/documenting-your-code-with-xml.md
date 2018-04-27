@@ -16,11 +16,11 @@ ms.assetid: a0d35dc7-c5f9-4d74-92ff-a1c6f28d5235
 caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 645dd4a8a9d1c78fd54f0f31ad0efd772b671d39
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: d132fa514008d072158a0e6bedaff511c55b18c0
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="documenting-your-code-with-xml-visual-basic"></a>XML の使用によるコードのドキュメントの作成 (Visual Basic)
 Visual basic では XML を使用してコードを文書化することができます。  
@@ -40,7 +40,7 @@ Visual basic では XML を使用してコードを文書化することがで�
   
     -   `cref` 属性は任意のタグにアタッチでき、コード要素への参照を提供します。 コンパイラでは、このコード要素が存在することを確認します。 検証に失敗した場合、コンパイラは警告を発行します。 コンパイラではいずれかのことも考慮`Imports`ステートメントで示される型を探すときに、`cref`属性。  
   
-    -   \<概要 > タグを使用してでは、IntelliSense によって[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]型またはメンバーに関する追加情報を表示します。  
+    -   \<概要 > タグを型またはメンバーに関する追加情報を表示する Visual Studio での IntelliSense によって使用されます。  
   
 ## <a name="related-sections"></a>関連項目  
  ドキュメント コメントで、XML ファイルを作成する方法の詳細については、次のトピックを参照してください。  

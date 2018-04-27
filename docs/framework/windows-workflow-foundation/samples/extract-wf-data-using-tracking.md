@@ -1,29 +1,30 @@
 ---
-title: "追跡を使用した WF データの抽出"
-ms.custom: 
+title: 追跡を使用した WF データの抽出
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e30c68f5-8c6a-495a-bd20-667a4364c68e
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4d6c269dc9c8b5a0050cfc3ffcefc3160b07c897
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 44e49aa0c9b3b9b53b921fe90838875ab34b7772
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="extract-wf-data-using-tracking"></a>追跡を使用した WF データの抽出
 このサンプルでは、ワークフロー追跡を使用して、アクティビティからワークフロー変数と引数を抽出する方法を示します。 また、追跡レコードへの注釈の追加、およびカスタム追跡レコード内のデータ ペイロードの抽出の例も示します。 このサンプルでは、ワークフローからデータを抽出するために Event Tracing for Windows (ETW) 追跡参加要素を使用します。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
- [!INCLUDE[wf](../../../../includes/wf-md.md)] には、ワークフロー インスタンスの実行を視覚的に示す追跡機能が用意されています。 追跡ランタイムでは、ワークフローの実行中にワークフロー追跡レコードが出力されます。 このワークフロー追跡レコードと共に、ワークフロー インスタンス内のデータをワークフローから抽出することができます。 追跡レコードから抽出できるデータの種類の詳細を以下に示します。  
+ Windows Workflow Foundation (WF) は、ワークフロー インスタンスの実行を把握するための追跡を提供します。 追跡ランタイムでは、ワークフローの実行中にワークフロー追跡レコードが出力されます。 このワークフロー追跡レコードと共に、ワークフロー インスタンス内のデータをワークフローから抽出することができます。 追跡レコードから抽出できるデータの種類の詳細を以下に示します。  
   
 1.  アクティビティ内のワークフロー変数とアクティビティの実行時の追跡レコード。  
   
@@ -165,5 +166,5 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\ExtractWfData`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

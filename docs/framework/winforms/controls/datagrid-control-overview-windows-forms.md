@@ -1,13 +1,13 @@
 ---
-title: "DataGrid コントロールの概要 (Windows フォーム)"
-ms.custom: 
+title: DataGrid コントロールの概要 (Windows フォーム)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-winforms
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - DataGrid
@@ -28,17 +28,17 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-caps.latest.revision: 
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 10220efc0bb77ddcc7f0f9fa0e3f2793a032a1bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd74ed0e31fff211f0197ad27f297f9fbecf5cab
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid コントロールの概要 (Windows フォーム)
 > [!NOTE]
@@ -103,7 +103,7 @@ ms.lasthandoff: 12/22/2017
 |複数の関連テーブル。|グリッドに、テーブルを選択するツリー ビューを表示でき、グリッドに親テーブルを表示するよう指定することもできます。 親テーブル内のレコードでは、ユーザーが関連する子の行に移動できます。|  
   
 > [!NOTE]
->  データセットのテーブルは、<xref:System.Data.DataRelation> を使用して関連付けられます。  [HYPERLINK "http://msdn.microsoft.com/library/dbwcse3d(v=vs.110)" 「データセットのリレーションシップ」](http://msdn.microsoft.com/library/dbwcse3d\(v=vs.110\))または[「データセットのリレーションシップ」](http://msdn.microsoft.com/library/dbwcse3d\(v=vs.120\))も参照してください。  
+>  データセットのテーブルは、<xref:System.Data.DataRelation> を使用して関連付けられます。  参照してください[ハイパーリンク"http://msdn.microsoft.com/library/dbwcse3d(v=vs.110)"データセットのリレーションシップ](http://msdn.microsoft.com/library/dbwcse3d\(v=vs.110\))または[データセットのリレーションシップ](http://msdn.microsoft.com/library/dbwcse3d\(v=vs.120\))です。  
   
  <xref:System.Windows.Forms.DataGrid> コントロールがテーブルに表示され、<xref:System.Windows.Forms.DataGrid.AllowSorting%2A> プロパティが `true` に設定される場合、データは列ヘッダーをクリックして再度並べ替えることができます。 ユーザーは行の追加やセルの編集も実行できます。  
   
@@ -137,7 +137,7 @@ DataGrid コントロールに含まれるオブジェクトを次の図に示�
   
  列のスタイルは、表のスタイルがデータ テーブルに関連するのと同じように、データセット内の列に関連します。 各テーブルに一度に 1 つの表のスタイルのみ定義できるように、各列も、特定のテーブルのスタイルで一度に 1 つの列のスタイルのみ定義できます。 このリレーションシップは、列の <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> プロパティで定義されます。  
   
- 列のスタイルを追加せずにテーブルのスタイルを作成した場合は、フォームおよびグリッドが実行時に作成されるときに、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] が既定の列のスタイルを追加します。 ただし、テーブルのスタイルを作成して列のスタイルを追加している場合、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] は列のスタイルを作成しません。 また、列のスタイルを定義し、マッピングの名前に割り当てて、グリッドに表示する列を持つようにする必要があります。  
+ を列のスタイルを追加せず、テーブルのスタイルを作成した Visual Studio は、フォームおよびグリッドが実行時に作成されるときに、既定の列スタイルを追加します。 ただし、テーブルのスタイルを作成して、列のスタイルを追加する、Visual Studio は列スタイルは作成されません。 また、列のスタイルを定義し、マッピングの名前に割り当てて、グリッドに表示する列を持つようにする必要があります。  
   
  列のスタイルに列を割り当てることでデータ グリッドに含まれる列を指定し、列に割り当てられた列のスタイルがないため、グリッドに表示されていないデータセットのデータの列を含めることができます。 ただし、データセットにデータ列が含まれているため、表示されていないデータをプログラムで編集できます。  
   
@@ -152,7 +152,7 @@ DataGrid コントロールに含まれるオブジェクトを次の図に示�
 ## <a name="events"></a>イベント  
  <xref:System.Windows.Forms.Control.MouseDown>、<xref:System.Windows.Forms.Control.Enter>、および <xref:System.Windows.Forms.DataGrid.Scroll> などの一般的なコントロール イベントのほかに、<xref:System.Windows.Forms.DataGrid> コントロールはグリッド内の編集と移動に関連付けられたイベントをサポートします。 <xref:System.Windows.Forms.DataGrid.CurrentCell%2A> プロパティは、どのセルが選択されるか決定します。 <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> イベントは、ユーザーが新しいセルに移動するときに発生します。 ユーザーが親子のリレーションを使用して新しいテーブルに移動するときに、<xref:System.Windows.Forms.DataGrid.Navigate> イベントが発生します。 <xref:System.Windows.Forms.DataGrid.BackButtonClick> イベントは、ユーザーが子テーブルを表示している場合にユーザーが [戻る] ボタンをクリックすると発生し、<xref:System.Windows.Forms.DataGrid.ShowParentDetailsButtonClick> イベントは、親行の表示/非表示のアイコンをクリックすると発生します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
  [方法: データ ソースに Windows フォーム DataGrid コントロールをバインドする](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
  [方法: Windows フォーム DataGrid コントロールにテーブルと列を追加する](../../../../docs/framework/winforms/controls/how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)  

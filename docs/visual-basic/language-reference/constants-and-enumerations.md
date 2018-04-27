@@ -13,11 +13,11 @@ ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: da42d58190e8069154cd8383cf0a87e0b19f5ae4
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bffbb8dabdd2463633c9d2ca8de3ef120850be3f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>定数と列挙型 (Visual Basic)
 Visual Basic では、定義済みの定数と開発者の列挙体の数を指定します。 定数は、アプリケーションの実行全体で一定の値を格納します。 一連の関連する定数を操作する場合や、定数値に名前を関連付ける場合は、列挙型を使うと便利です。  
@@ -31,7 +31,7 @@ Visual Basic では、定義済みの定数と開発者の列挙体の数を指�
 |---|---|  
 |`CONFIG`|現在の設定に対応する文字列、**アクティブ ソリューション構成**ボックスに、 **Configuration Manager**です。|  
 |`DEBUG`|A`Boolean`で設定できる値、**プロジェクト プロパティ** ダイアログ ボックス。 既定では、プロジェクトのデバッグ構成を定義します`DEBUG`です。 ときに`DEBUG`が定義されている<xref:System.Diagnostics.Debug>クラスのメソッドへの出力を生成する、**出力**ウィンドウです。 定義されていない場合<xref:System.Diagnostics.Debug>クラス メソッドはコンパイルされず、デバッグ出力は生成されません。|  
-|`TARGET`|出力の種類のプロジェクトまたはコマンドラインの設定を表す文字列 **/target**オプション。 使用できる値`TARGET`は。<br /><br /> -Windows アプリケーションの"winexe"です。<br />コンソール アプリケーション用には、"exe"です。<br />クラス ライブラリには、"library"です。<br />-モジュールの「モジュール」です。<br />- **/Target**オプションを設定することがあります、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境です。 詳細については、次を参照してください。 [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md)です。|  
+|`TARGET`|出力の種類のプロジェクトまたはコマンドラインの設定を表す文字列 **/target**オプション。 使用できる値`TARGET`は。<br /><br /> -Windows アプリケーションの"winexe"です。<br />コンソール アプリケーション用には、"exe"です。<br />クラス ライブラリには、"library"です。<br />-モジュールの「モジュール」です。<br />- **/Target**オプションは、Visual Studio 統合開発環境で設定することがあります。 詳細については、次を参照してください。 [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md)です。|  
 |`TRACE`|A`Boolean`で設定できる値、**プロジェクト プロパティ** ダイアログ ボックス。 既定では、プロジェクトのすべての構成を定義する`TRACE`です。 ときに`TRACE`が定義されている<xref:System.Diagnostics.Trace>クラスのメソッドへの出力を生成する、**出力**ウィンドウです。 定義されていない場合<xref:System.Diagnostics.Trace>クラスのメソッドはコンパイルされず、いいえ`Trace`出力が生成されます。|  
 |`VBC_VER`|Visual Basic バージョンを表す数値*メジャー*.*マイナー*形式です。 バージョン番号[!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]8.0 がします。|  
   

@@ -1,26 +1,27 @@
 ---
-title: "SQL 追跡"
-ms.custom: 
+title: SQL 追跡
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6bd8fbe1a29793778d93eeca64b185079d706f3e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2eeb5cf57e6efac77de4a76fe8131189273d5438
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="sql-tracking"></a>SQL 追跡
-このサンプルでは、カスタム SQL 追跡参加要素を作成し、追跡レコードを SQL データベースに書き込む方法を示します。 [!INCLUDE[wf](../../../../includes/wf-md.md)] には、ワークフロー インスタンスの実行を視覚的に示すワークフロー追跡機能が用意されています。 追跡ランタイムでは、ワークフローの実行中にワークフロー追跡レコードが出力されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ワークフロー追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。  
+このサンプルでは、カスタム SQL 追跡参加要素を作成し、追跡レコードを SQL データベースに書き込む方法を示します。 Windows Workflow Foundation (WF) ワークフローをワークフロー インスタンスの実行時に視覚的に追跡を提供します。 追跡ランタイムでは、ワークフローの実行中にワークフロー追跡レコードが出力されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ワークフロー追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。  
   
 #### <a name="to-use-this-sample"></a>このサンプルを使用するには  
   
@@ -43,7 +44,7 @@ ms.lasthandoff: 12/22/2017
   
 7.  ブラウザーに、[StockPriceService] ページが表示され、ローカル サービスの WSDL アドレスが示されます。 このアドレスをコピーします。  
   
-     ローカル サービスの WSDL アドレスは、http://localhost:65193/StockPriceService.xamlx?wsdl などになります。  
+     ローカル サービスの WSDL アドレスの例はhttp://localhost:65193/StockPriceService.xamlx?wsdlします。  
   
 8.  [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] を使用して、WCF テスト クライアント (WcfTestClient.exe) を実行します。 このテスト クライアントは Microsoft Visual Studio 10.0\Common7\IDE ディレクトリにあります。  
   
@@ -51,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 10. WCF テスト クライアントでダブルクリックして**GetStockPrice**です。 開き、`GetStockPrice`操作を 1 つのパラメーター値の型を受け取る`Contoso` をクリック**Invoke**です。  
   
-11. 出力された追跡レコードが SQL データベースに書き込まれます。 追跡レコードを表示するには、SQL Management Studio で TrackingSample データベースを開き、テーブルに移動します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]SQL Server Management Studio を参照してください[SQL Server Management Studio の概要](http://go.microsoft.com/fwlink/?LinkId=165645)です。 SQL Server 2008 Management Studio Express をダウンロードできる[ここ](http://go.microsoft.com/fwlink/?LinkId=180520)です。 テーブルで選択クエリを実行すると、それぞれのテーブルに格納されている追跡レコード内のデータが表示されます。  
+11. 出力された追跡レコードが SQL データベースに書き込まれます。 追跡レコードを表示するには、SQL Management Studio で TrackingSample データベースを開き、テーブルに移動します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] SQL Server Management Studio を参照してください[SQL Server Management Studio の概要](http://go.microsoft.com/fwlink/?LinkId=165645)です。 SQL Server 2008 Management Studio Express をダウンロードできる[ここ](http://go.microsoft.com/fwlink/?LinkId=180520)です。 テーブルで選択クエリを実行すると、それぞれのテーブルに格納されている追跡レコード内のデータが表示されます。  
   
 #### <a name="to-uninstall-the-sample"></a>サンプルをアンインストールするには  
   
@@ -69,5 +70,5 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

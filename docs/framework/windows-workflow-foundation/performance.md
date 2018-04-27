@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 94eca5c2aad919fe46fa75626954e10bb68f1110
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b34a0118c9223e8d09bf56de39e3fea1b115688f
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Windows Workflow Foundation 4 のパフォーマンス
 Dustin Metzgar  
@@ -27,7 +27,7 @@ Dustin Metzgar
   
  Microsoft Corporation、2010 年 9 月  
   
- Microsoft [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] には [!INCLUDE[wf](../../../includes/wf-md.md)] のメジャー リビジョンが含まれ、パフォーマンスに多大な投資をしています。  この新しいリビジョンでは、.NET Framework 3.0 および [!INCLUDE[wf1](../../../includes/wf1-md.md)] の一部として提供されている [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] の以前のバージョンからデザインが大幅に変更されています。 プログラミング モデル、ランタイム、およびパフォーマンスと操作性が大幅に向上するツールの基本機能に基づいて再設計されています。 このトピックでは、これらのリビジョンの重要なパフォーマンス上の特徴を説明し、以前のバージョンと比較します。  
+ Microsoft[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]パフォーマンスに多大な投資の Windows Workflow Foundation (WF) のメジャー リビジョンが含まれています。  この新しいリビジョンでは、.NET Framework 3.0 および [!INCLUDE[wf1](../../../includes/wf1-md.md)] の一部として提供されている [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] の以前のバージョンからデザインが大幅に変更されています。 プログラミング モデル、ランタイム、およびパフォーマンスと操作性が大幅に向上するツールの基本機能に基づいて再設計されています。 このトピックでは、これらのリビジョンの重要なパフォーマンス上の特徴を説明し、以前のバージョンと比較します。  
   
  WF3 と WF4 を比較すると、個々のワークフロー コンポーネントのパフォーマンスが桁違いに向上しています。  これにより、手動コーディングの [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスとのギャップが微小になります。  WF4 でワークフローの待機時間は大幅に短縮されました。  永続化のパフォーマンスは 2.5 ～ 3.0 倍向上しています。  ワークフロー追跡による状態監視のオーバーヘッドも格段に短縮されました。  これらの要因はアプリケーション内で WF4 に移行する、または WF4 を導入する理由として説得力があります。  
   
@@ -192,7 +192,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  前のセクション「コンポーネント レベルのパフォーマンス比較」で示すようには、WF3 と WF4 のオーバーヘッドが大幅に削減がありました。  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスは手動でコーディングした [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにほぼ匹敵するパフォーマンスを実現し、[!INCLUDE[wf1](../../../includes/wf1-md.md)] ランタイムのあらゆる利点を備えています。  このテスト シナリオでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスと WF4 の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスを比較します。  
   
 ### <a name="online-store-service"></a>オンライン ストア サービス  
- [!INCLUDE[wf2](../../../includes/wf2-md.md)] の特徴の 1 つは、複数のサービスを使用してプロセスを作成できることです。  この例として、2 つのサービスの呼び出しを調整して発注するオンライン ストア サービスがあります。  まず、注文検証サービスを使用して注文を検証します。  次に、ウェアハウス サービスを使用して注文を受け付けます。  
+ Windows Workflow Foundation の強みの 1 つは、いくつかのサービスを使用してプロセスを作成する機能です。  この例として、2 つのサービスの呼び出しを調整して発注するオンライン ストア サービスがあります。  まず、注文検証サービスを使用して注文を検証します。  次に、ウェアハウス サービスを使用して注文を受け付けます。  
   
  注文検証サービスとウェアハウス サービスの 2 つのバックエンド サービスは両方のテストで不変です。  変更する部分は、調整を行うオンライン ストア サービスです。  1 つのケースでは、サービスを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとして手動でコーディングします。  もう 1 つのケースでは、サービスを WF4 の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスとして記述します。 追跡や永続化などの [!INCLUDE[wf1](../../../includes/wf1-md.md)] 固有の機能はこのテストでは無効にします。  
   
@@ -448,7 +448,7 @@ public class Workflow1 : Activity
  状態監視はスループットに約 3% の影響をもたらしています。  基本プロファイルのコストは約 8% です。  
   
 ## <a name="interop"></a>Interop  
- WF4 では [!INCLUDE[wf1](../../../includes/wf1-md.md)] をほぼ全面的に変更しているため、WF3 のワークフローおよびアクティビティは WF4 とは直接互換性がありません。  採用して多くの顧客[!INCLUDE[wf2](../../../includes/wf2-md.md)]早い段階が社内またはサード パーティ製のワークフロー定義とカスタム アクティビティ WF3 用です。  WF4 への移行を簡素化するには、Interop アクティビティを使用する方法があります。この方法により WF4 ワークフロー内から WF3 アクティビティを実行できます。  <xref:System.Activities.Statements.Interop> アクティビティは必要な場合にのみ使用することをお勧めします。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] wf4 への移行、 [WF4 の移行のガイドライン](http://go.microsoft.com/fwlink/?LinkID=153313)です。  
+ WF4 では [!INCLUDE[wf1](../../../includes/wf1-md.md)] をほぼ全面的に変更しているため、WF3 のワークフローおよびアクティビティは WF4 とは直接互換性がありません。  Windows Workflow Foundation を早期採用して多くのお客様には、WF3 の社内またはサード パーティ製のワークフロー定義とカスタム アクティビティがあります。  WF4 への移行を簡素化するには、Interop アクティビティを使用する方法があります。この方法により WF4 ワークフロー内から WF3 アクティビティを実行できます。  <xref:System.Activities.Statements.Interop> アクティビティは必要な場合にのみ使用することをお勧めします。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] wf4 への移行、 [WF4 の移行のガイドライン](http://go.microsoft.com/fwlink/?LinkID=153313)です。  
   
 ### <a name="environment-setup"></a>環境の設定  
  ![ワークフロー パフォーマンス テスト環境](../../../docs/framework/windows-workflow-foundation/media/wfperfenvironment.gif "WFPerfEnvironment")  

@@ -1,13 +1,13 @@
 ---
-title: "添付プロパティの概要"
-ms.custom: 
+title: 添付プロパティの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-caps.latest.revision: 
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2d1d0eb55e75cd450d55b69aadca9c60e157eb09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ceba94d80ca66ab228804ffff2a5b8f89a68d7c4
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="attached-properties-overview"></a>添付プロパティの概要
 添付プロパティは、XAML によって定義された概念です。 添付プロパティは、任意のオブジェクトに設定可能なグローバル プロパティの型として使用されることを意図しています。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では通常、添付プロパティは従来のプロパティ "ラッパー" を含まない依存関係プロパティの特殊な形式として定義されています。  
@@ -67,7 +67,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="an-example-of-a-parent-defined-attached-property"></a>親定義の添付プロパティの例  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] が添付プロパティを定義する最も一般的なシナリオは、親要素が子要素のコレクションをサポートし、さらに動作の詳細が子要素ごとにレポートされるような動作を実装する場合です。  
   
- <xref:System.Windows.Controls.DockPanel>定義、<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>添付プロパティ、および<xref:System.Windows.Controls.DockPanel>、レンダリング ロジックの一部として、クラス レベルのコードを持つ (具体的には、<xref:System.Windows.Controls.DockPanel.MeasureOverride%2A>と<xref:System.Windows.Controls.DockPanel.ArrangeOverride%2A>)。 A<xref:System.Windows.Controls.DockPanel>が常にインスタンスを確認するかどうかの値を設定その直接の子要素が<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>です。 設定されている場合は、その値が、その子要素に適用されるレンダリング ロジックの入力になります。 入れ子になった<xref:System.Windows.Controls.DockPanel>各インスタンスは、独自の直接の子要素のコレクションを扱うが実装に固有の動作は方法<xref:System.Windows.Controls.DockPanel>プロセス<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>値。 直接の親以外の要素に影響を与える添付プロパティを所有することは、理論上は可能です。 場合、<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>を持たない要素で添付プロパティを設定<xref:System.Windows.Controls.DockPanel>が、エラーなし、または例外に対して操作を実行する親要素が発生します。 単につまり、グローバル プロパティの値が設定されたが、現在を持たない<xref:System.Windows.Controls.DockPanel>情報を利用できる親。  
+ <xref:System.Windows.Controls.DockPanel> 定義、<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>添付プロパティ、および<xref:System.Windows.Controls.DockPanel>、レンダリング ロジックの一部として、クラス レベルのコードを持つ (具体的には、<xref:System.Windows.Controls.DockPanel.MeasureOverride%2A>と<xref:System.Windows.Controls.DockPanel.ArrangeOverride%2A>)。 A<xref:System.Windows.Controls.DockPanel>が常にインスタンスを確認するかどうかの値を設定その直接の子要素が<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>です。 設定されている場合は、その値が、その子要素に適用されるレンダリング ロジックの入力になります。 入れ子になった<xref:System.Windows.Controls.DockPanel>各インスタンスは、独自の直接の子要素のコレクションを扱うが実装に固有の動作は方法<xref:System.Windows.Controls.DockPanel>プロセス<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>値。 直接の親以外の要素に影響を与える添付プロパティを所有することは、理論上は可能です。 場合、<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>を持たない要素で添付プロパティを設定<xref:System.Windows.Controls.DockPanel>が、エラーなし、または例外に対して操作を実行する親要素が発生します。 単につまり、グローバル プロパティの値が設定されたが、現在を持たない<xref:System.Windows.Controls.DockPanel>情報を利用できる親。  
   
 <a name="attached_properties_code"></a>   
 ## <a name="attached-properties-in-code"></a>コードの添付プロパティ  
@@ -106,7 +106,7 @@ ms.lasthandoff: 12/22/2017
  依存関係プロパティとして宣言することにより、添付プロパティを定義、 `public` `static` `readonly`型のフィールド<xref:System.Windows.DependencyProperty>です。 戻り値を使用して、このフィールドを定義する、<xref:System.Windows.DependencyProperty.RegisterAttached%2A>メソッドです。 識別フィールドとそれが表すプロパティの名前付けに関して確立されている [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のパターンに従うには、`Property` の文字列が付加され、フィールド名が添付プロパティ名と一致している必要があります。 添付プロパティのプロバイダーは、添付プロパティのアクセサーとして `Get`*PropertyName* および `Set`*PropertyName* の静的メソッドを指定する必要があります。これを行わないと、プロパティ システムが添付プロパティを使用できません。  
   
 > [!NOTE]
->  添付プロパティの Get アクセサーを省略すると、プロパティのデータ バインディングが [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] や Expression Blend などのデザイン ツールで動作しません。  
+>  添付プロパティの get アクセサーを省略すると、データ バインディング プロパティでは Visual Studio や Expression Blend などのデザイン ツールでは機能しません。  
   
 #### <a name="the-get-accessor"></a>Get アクセサー  
  `Get`*PropertyName* アクセサーのシグネチャは次の形式にする必要があります。  
@@ -151,7 +151,7 @@ ms.lasthandoff: 12/22/2017
   
 -   プロパティは添付プロパティとしても依存関係プロパティとしても登録できますが、"ラッパー" 実装は公開したままにすることができます。 この場合、プロパティをその要素に設定することも、XAML の添付プロパティの構文を使用して任意の要素に設定することもできます。 標準と接続の両方の使用状況を適切なシナリオのプロパティの例は<xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.DependencyProperty>  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  

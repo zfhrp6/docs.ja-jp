@@ -18,14 +18,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 06ee3a1e62320aef3b1a67afe5610b13a95de375
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 1006b32d7a265c94753081eab7b2bd279ed3dbdf
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="extending-windows-workflow-foundation"></a>Windows Workflow Foundation の拡張
-次のセクションでは、[!INCLUDE[wf](../../../includes/wf-md.md)] の外部の再ホストされた環境でカスタム アクティビティとデザイナーを使用して [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を拡張する方法について説明します。  
+次のセクションでは、外部の再ホストされた環境でカスタム アクティビティとデザイナーを使用して Windows Workflow Foundation (WF) を拡張する方法をについて説明します[!INCLUDE[vs2010](../../../includes/vs2010-md.md)]です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)  

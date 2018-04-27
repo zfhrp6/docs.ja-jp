@@ -26,11 +26,11 @@ ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f3ff175a0f8d152febf2d50c294d401b12285fc7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 1fae8215543c50484dc5ea7fc24f292ba84e2699
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>相互運用性のトラブルシューティング (Visual Basic)
 マネージ コードと COM の相互運用するときに、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、1 つ以上の次の一般的な問題が発生する可能性があります。  
@@ -107,7 +107,7 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
  例外オブジェクトの内容を確認するには、エラーの説明、HRESULT、および COM エラーのソースなどの情報が表示されます。  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor10"></a> ActiveX コントロールに関する問題  
- Visual Basic 6.0 で動作するほとんどの ActiveX コントロールは、Visual Basic .NET で問題なく動作します。 主な例外は、コンテナーのコントロール、またはその他のコントロールを視覚的に格納しているコントロールです。 正常に動作しない古いコントロールの例をいくつか[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]次に示します。  
+ Visual Basic 6.0 で動作するほとんどの ActiveX コントロールは、Visual Basic .NET で問題なく動作します。 主な例外は、コンテナーのコントロール、またはその他のコントロールを視覚的に格納しているコントロールです。 Visual Studio で正常に動作しない古いコントロールの例をいくつかは次のとおりです。  
   
 -   Microsoft フォーム 2.0 フレーム コントロール  
   
@@ -115,7 +115,7 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
   
 -   Sheridan タブ コントロール  
   
- サポートされていない ActiveX コントロールの問題のいくつかの回避策のみがあります。 既存のコントロールを移行する[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]元のソース コードを所有している場合。 それ以外の場合、更新、ソフトウェア ベンダーに確認することができます。置換するコントロールの NET と互換性のあるバージョンには、ActiveX コントロールがサポートされていません。  
+ サポートされていない ActiveX コントロールの問題のいくつかの回避策のみがあります。 元のソース コードを所有している場合は、Visual Studio に既存のコントロールを移行できます。 それ以外の場合、更新、ソフトウェア ベンダーに確認することができます。置換するコントロールの NET と互換性のあるバージョンには、ActiveX コントロールがサポートされていません。  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor11"></a> コントロールの ByRef の読み取り専用プロパティの引き渡し  
  Visual Basic .NET 場合がありますを発生させます"エラー 0x800A017F CTL_E_SETNOTSUPPORTED"などの COM エラーを渡す場合`ReadOnly`として、一部の古い ActiveX コントロールのプロパティ`ByRef`他のプロシージャのパラメーターです。 Visual Basic 6.0 からプロシージャ呼び出しでは、エラーは発生せず、パラメーターとして扱われます値で渡すと同様です。 Visual Basic .NET のエラー メッセージは、プロパティを持たないプロパティを変更しようとしていることを示す`Set`プロシージャです。  
