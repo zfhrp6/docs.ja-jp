@@ -1,36 +1,33 @@
 ---
-title: "クエリ式 (F#)"
-description: "F# のプログラミング言語での linq クエリ式のサポートについて説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: クエリ式 (F#)
+description: F# のプログラミング言語での linq クエリ式のサポートについて説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 35df2d80-e6d2-4873-b2de-9b45b9e9e650
-ms.openlocfilehash: 20ea7ef820dd295497ed996ce10e5a594d021f7e
-ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.openlocfilehash: 81b81d25b8c0d8656dedffd2f8ec7a8297ef7191
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2017
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="query-expressions"></a><span data-ttu-id="75a89-104">クエリ式</span><span class="sxs-lookup"><span data-stu-id="75a89-104">Query Expressions</span></span>
+# <a name="query-expressions"></a><span data-ttu-id="6fe4a-103">クエリ式</span><span class="sxs-lookup"><span data-stu-id="6fe4a-103">Query Expressions</span></span>
 
 > [!NOTE]
-<span data-ttu-id="75a89-105">この記事の API リファレンスのリンクをクリックすると MSDN に移動します。</span><span class="sxs-lookup"><span data-stu-id="75a89-105">The API reference links in this article will take you to MSDN.</span></span>  <span data-ttu-id="75a89-106">docs.microsoft.com API リファレンスは完全ではありません。</span><span class="sxs-lookup"><span data-stu-id="75a89-106">The docs.microsoft.com API reference is not complete.</span></span>
+<span data-ttu-id="6fe4a-104">この記事の API リファレンスのリンクをクリックすると MSDN に移動します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-104">The API reference links in this article will take you to MSDN.</span></span>  <span data-ttu-id="6fe4a-105">docs.microsoft.com API リファレンスは完全ではありません。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-105">The docs.microsoft.com API reference is not complete.</span></span>
 
-<span data-ttu-id="75a89-107">クエリ式では、データ ソースをクエリし、目的の形式でデータを有効にします。</span><span class="sxs-lookup"><span data-stu-id="75a89-107">Query expressions enable you to query a data source and put the data in a desired form.</span></span> <span data-ttu-id="75a89-108">クエリ式は、f# での LINQ のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="75a89-108">Query expressions provide support for LINQ in F#.</span></span>
+<span data-ttu-id="6fe4a-106">クエリ式では、データ ソースをクエリし、目的の形式でデータを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-106">Query expressions enable you to query a data source and put the data in a desired form.</span></span> <span data-ttu-id="6fe4a-107">クエリ式は、f# での LINQ のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-107">Query expressions provide support for LINQ in F#.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="75a89-109">構文</span><span class="sxs-lookup"><span data-stu-id="75a89-109">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="6fe4a-108">構文</span><span class="sxs-lookup"><span data-stu-id="6fe4a-108">Syntax</span></span>
 
 ```fsharp
 query { expression }
 ```
 
-## <a name="remarks"></a><span data-ttu-id="75a89-110">コメント</span><span class="sxs-lookup"><span data-stu-id="75a89-110">Remarks</span></span>
-<span data-ttu-id="75a89-111">クエリ式は、シーケンス式に似たコンピュテーション式の種類です。</span><span class="sxs-lookup"><span data-stu-id="75a89-111">Query expressions are a type of computation expression similar to sequence expressions.</span></span> <span data-ttu-id="75a89-112">シーケンス式内のコードを提供することでシーケンスを指定すると同様、クエリ式内のコードを提供することで一連のデータを指定します。</span><span class="sxs-lookup"><span data-stu-id="75a89-112">Just as you specify a sequence by providing code in a sequence expression, you specify a set of data by providing code in a query expression.</span></span> <span data-ttu-id="75a89-113">式では、シーケンス、`yield`キーワードは、結果のシーケンスの一部として返されるデータを識別します。</span><span class="sxs-lookup"><span data-stu-id="75a89-113">In a sequence expression, the `yield` keyword identifies data to be returned as part of the resulting sequence.</span></span> <span data-ttu-id="75a89-114">クエリ式の`select`キーワードが同じ機能を実行します。</span><span class="sxs-lookup"><span data-stu-id="75a89-114">In query expressions, the `select` keyword performs the same function.</span></span> <span data-ttu-id="75a89-115">加え、`select`キーワード、f# もサポートしていますが、SQL SELECT ステートメントの各部分と同様のクエリ演算子の数。</span><span class="sxs-lookup"><span data-stu-id="75a89-115">In addition to the `select` keyword, F# also supports a number of query operators that are much like the parts of a SQL SELECT statement.</span></span> <span data-ttu-id="75a89-116">Northwind OData ソースに接続するコードとの簡単なクエリ式の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="75a89-116">Here is an example of a simple query expression, along with code that connects to the Northwind OData source.</span></span>
+## <a name="remarks"></a><span data-ttu-id="6fe4a-109">コメント</span><span class="sxs-lookup"><span data-stu-id="6fe4a-109">Remarks</span></span>
+<span data-ttu-id="6fe4a-110">クエリ式は、シーケンス式に似たコンピュテーション式の種類です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-110">Query expressions are a type of computation expression similar to sequence expressions.</span></span> <span data-ttu-id="6fe4a-111">シーケンス式内のコードを提供することでシーケンスを指定すると同様、クエリ式内のコードを提供することで一連のデータを指定します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-111">Just as you specify a sequence by providing code in a sequence expression, you specify a set of data by providing code in a query expression.</span></span> <span data-ttu-id="6fe4a-112">式では、シーケンス、`yield`キーワードは、結果のシーケンスの一部として返されるデータを識別します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-112">In a sequence expression, the `yield` keyword identifies data to be returned as part of the resulting sequence.</span></span> <span data-ttu-id="6fe4a-113">クエリ式の`select`キーワードが同じ機能を実行します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-113">In query expressions, the `select` keyword performs the same function.</span></span> <span data-ttu-id="6fe4a-114">加え、`select`キーワード、f# もサポートしていますが、SQL SELECT ステートメントの各部分と同様のクエリ演算子の数。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-114">In addition to the `select` keyword, F# also supports a number of query operators that are much like the parts of a SQL SELECT statement.</span></span> <span data-ttu-id="6fe4a-115">Northwind OData ソースに接続するコードとの簡単なクエリ式の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-115">Here is an example of a simple query expression, along with code that connects to the Northwind OData source.</span></span>
 
 ```fsharp
 // Use the OData type provider to create types that can be used to access the Northwind database.
@@ -52,23 +49,23 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-<span data-ttu-id="75a89-117">前のコード例では、クエリ式は、中かっこ内がします。</span><span class="sxs-lookup"><span data-stu-id="75a89-117">In the previous code example, the query expression is in curly braces.</span></span> <span data-ttu-id="75a89-118">式内のコードの意味は、クエリの結果に、データベース内の Customers テーブルのすべての顧客を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-118">The meaning of the code in the expression is, return every customer in the Customers table in the database in the query results.</span></span> <span data-ttu-id="75a89-119">クエリ式を実装する型を返す<xref:System.Linq.IQueryable%601>と<xref:System.Collections.Generic.IEnumerable%601>を使用して反復できるようにし、 [Seq モジュール](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)例として示します。</span><span class="sxs-lookup"><span data-stu-id="75a89-119">Query expressions return a type that implements <xref:System.Linq.IQueryable%601> and <xref:System.Collections.Generic.IEnumerable%601>, and so they can be iterated using the [Seq module](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) as the example shows.</span></span>
+<span data-ttu-id="6fe4a-116">前のコード例では、クエリ式は、中かっこ内がします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-116">In the previous code example, the query expression is in curly braces.</span></span> <span data-ttu-id="6fe4a-117">式内のコードの意味は、クエリの結果に、データベース内の Customers テーブルのすべての顧客を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-117">The meaning of the code in the expression is, return every customer in the Customers table in the database in the query results.</span></span> <span data-ttu-id="6fe4a-118">クエリ式を実装する型を返す<xref:System.Linq.IQueryable%601>と<xref:System.Collections.Generic.IEnumerable%601>を使用して反復できるようにし、 [Seq モジュール](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)例として示します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-118">Query expressions return a type that implements <xref:System.Linq.IQueryable%601> and <xref:System.Collections.Generic.IEnumerable%601>, and so they can be iterated using the [Seq module](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) as the example shows.</span></span>
 
-<span data-ttu-id="75a89-120">すべての計算式の型は、ビルダー クラスから作成されています。</span><span class="sxs-lookup"><span data-stu-id="75a89-120">Every computation expression type is built from a builder class.</span></span> <span data-ttu-id="75a89-121">クエリ コンピュテーション式のビルダー クラスは`QueryBuilder`します。</span><span class="sxs-lookup"><span data-stu-id="75a89-121">The builder class for the query computation expression is `QueryBuilder`.</span></span> <span data-ttu-id="75a89-122">詳細については、次を参照してください。[コンピュテーション式](computation-expressions.md)と[Linq.QueryBuilder クラス](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)です。</span><span class="sxs-lookup"><span data-stu-id="75a89-122">For more information, see [Computation Expressions](computation-expressions.md) and [Linq.QueryBuilder Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).</span></span>
+<span data-ttu-id="6fe4a-119">すべての計算式の型は、ビルダー クラスから作成されています。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-119">Every computation expression type is built from a builder class.</span></span> <span data-ttu-id="6fe4a-120">クエリ コンピュテーション式のビルダー クラスは`QueryBuilder`します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-120">The builder class for the query computation expression is `QueryBuilder`.</span></span> <span data-ttu-id="6fe4a-121">詳細については、次を参照してください。[コンピュテーション式](computation-expressions.md)と[Linq.QueryBuilder クラス](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-121">For more information, see [Computation Expressions](computation-expressions.md) and [Linq.QueryBuilder Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).</span></span>
 
 
-## <a name="query-operators"></a><span data-ttu-id="75a89-123">クエリ演算子</span><span class="sxs-lookup"><span data-stu-id="75a89-123">Query Operators</span></span>
-<span data-ttu-id="75a89-124">クエリ演算子では、返されるレコードに条件を配置するように、クエリの詳細を指定することを有効にするか、結果の並べ替え順序を指定します。</span><span class="sxs-lookup"><span data-stu-id="75a89-124">Query operators enable you to specify the details of the query, such as to put criteria on records to be returned, or specify the sorting order of results.</span></span> <span data-ttu-id="75a89-125">クエリのソースは、クエリ演算子をサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="75a89-125">The query source must support the query operator.</span></span> <span data-ttu-id="75a89-126">場合は、サポートされていないクエリ演算子を使用しようとすると`System.NotSupportedException`がスローされます。</span><span class="sxs-lookup"><span data-stu-id="75a89-126">If you attempt to use an unsupported query operator, `System.NotSupportedException` will be thrown.</span></span>
+## <a name="query-operators"></a><span data-ttu-id="6fe4a-122">クエリ演算子</span><span class="sxs-lookup"><span data-stu-id="6fe4a-122">Query Operators</span></span>
+<span data-ttu-id="6fe4a-123">クエリ演算子では、返されるレコードに条件を配置するように、クエリの詳細を指定することを有効にするか、結果の並べ替え順序を指定します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-123">Query operators enable you to specify the details of the query, such as to put criteria on records to be returned, or specify the sorting order of results.</span></span> <span data-ttu-id="6fe4a-124">クエリのソースは、クエリ演算子をサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-124">The query source must support the query operator.</span></span> <span data-ttu-id="6fe4a-125">場合は、サポートされていないクエリ演算子を使用しようとすると`System.NotSupportedException`がスローされます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-125">If you attempt to use an unsupported query operator, `System.NotSupportedException` will be thrown.</span></span>
 
-<span data-ttu-id="75a89-127">クエリ式では、SQL に変換できる式のみを許可します。</span><span class="sxs-lookup"><span data-stu-id="75a89-127">Only expressions that can be translated to SQL are allowed in query expressions.</span></span> <span data-ttu-id="75a89-128">たとえば、関数呼び出しはでは許可されません、式を使用するときに、`where`クエリ演算子です。</span><span class="sxs-lookup"><span data-stu-id="75a89-128">For example, no function calls are allowed in the expressions when you use the `where` query operator.</span></span>
+<span data-ttu-id="6fe4a-126">クエリ式では、SQL に変換できる式のみを許可します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-126">Only expressions that can be translated to SQL are allowed in query expressions.</span></span> <span data-ttu-id="6fe4a-127">たとえば、関数呼び出しはでは許可されません、式を使用するときに、`where`クエリ演算子です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-127">For example, no function calls are allowed in the expressions when you use the `where` query operator.</span></span>
 
-<span data-ttu-id="75a89-129">表 1 は、使用可能なクエリ演算子を示します。</span><span class="sxs-lookup"><span data-stu-id="75a89-129">Table 1 shows available query operators.</span></span> <span data-ttu-id="75a89-130">さらに、SQL クエリおよび、等価 f# クエリ式はこのトピックの後半を比較し、Table2 を参照してください。</span><span class="sxs-lookup"><span data-stu-id="75a89-130">In addition, see Table2, which compares SQL queries and the equivalent F# query expressions later in this topic.</span></span> <span data-ttu-id="75a89-131">一部のクエリ演算子は、一部の型プロバイダーでサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="75a89-131">Some query operators aren't supported by some type providers.</span></span> <span data-ttu-id="75a89-132">具体的には、OData 型プロバイダーは、OData の制限のため、サポートされるクエリ演算子に制限されます。</span><span class="sxs-lookup"><span data-stu-id="75a89-132">In particular, the OData type provider is limited in the query operators that it supports due to limitations in OData.</span></span> <span data-ttu-id="75a89-133">詳細については、次を参照してください。 [ODataService 型プロバイダー (f#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e)です。</span><span class="sxs-lookup"><span data-stu-id="75a89-133">For more information, see [ODataService Type Provider (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).</span></span>
+<span data-ttu-id="6fe4a-128">表 1 は、使用可能なクエリ演算子を示します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-128">Table 1 shows available query operators.</span></span> <span data-ttu-id="6fe4a-129">さらに、SQL クエリおよび、等価 f# クエリ式はこのトピックの後半を比較し、Table2 を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-129">In addition, see Table2, which compares SQL queries and the equivalent F# query expressions later in this topic.</span></span> <span data-ttu-id="6fe4a-130">一部のクエリ演算子は、一部の型プロバイダーでサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-130">Some query operators aren't supported by some type providers.</span></span> <span data-ttu-id="6fe4a-131">具体的には、OData 型プロバイダーは、OData の制限のため、サポートされるクエリ演算子に制限されます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-131">In particular, the OData type provider is limited in the query operators that it supports due to limitations in OData.</span></span> <span data-ttu-id="6fe4a-132">詳細については、次を参照してください。 [ODataService 型プロバイダー (f#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e)です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-132">For more information, see [ODataService Type Provider (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).</span></span>
 
-<span data-ttu-id="75a89-134">このテーブルには、次の形式でデータベースが前提とします。</span><span class="sxs-lookup"><span data-stu-id="75a89-134">This table assumes a database in the following form:</span></span>
+<span data-ttu-id="6fe4a-133">このテーブルには、次の形式でデータベースが前提とします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-133">This table assumes a database in the following form:</span></span>
 
 ![サンプル データベースのダイアグラム](../media/StudentCourseDB.png)
 
-<span data-ttu-id="75a89-136">次の表に、コードには、次のデータベース接続のコードも前提としています。</span><span class="sxs-lookup"><span data-stu-id="75a89-136">The code in the tables that follow also assumes the following database connection code.</span></span> <span data-ttu-id="75a89-137">プロジェクトには、System.Data、System.Data.Linq、FSharp.Data.TypeProviders アセンブリへの参照を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="75a89-137">Projects should add references to System.Data,  System.Data.Linq, and FSharp.Data.TypeProviders assemblies.</span></span> <span data-ttu-id="75a89-138">このデータベースを作成するコードは、このトピックの最後に記載されています。</span><span class="sxs-lookup"><span data-stu-id="75a89-138">The code that creates this database is included at the end of this topic.</span></span>
+<span data-ttu-id="6fe4a-135">次の表に、コードには、次のデータベース接続のコードも前提としています。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-135">The code in the tables that follow also assumes the following database connection code.</span></span> <span data-ttu-id="6fe4a-136">プロジェクトには、System.Data、System.Data.Linq、FSharp.Data.TypeProviders アセンブリへの参照を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-136">Projects should add references to System.Data,  System.Data.Linq, and FSharp.Data.TypeProviders assemblies.</span></span> <span data-ttu-id="6fe4a-137">このデータベースを作成するコードは、このトピックの最後に記載されています。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-137">The code that creates this database is included at the end of this topic.</span></span>
 
 ```fsharp
 open System
@@ -85,16 +82,16 @@ let db = schema.GetDataContext()
 let data = [ 1; 5; 7; 11; 18; 21]
 ```
 
-### <a name="table-1-query-operators"></a><span data-ttu-id="75a89-139">表 1.</span><span class="sxs-lookup"><span data-stu-id="75a89-139">Table 1.</span></span> <span data-ttu-id="75a89-140">クエリ演算子</span><span class="sxs-lookup"><span data-stu-id="75a89-140">Query Operators</span></span>
+### <a name="table-1-query-operators"></a><span data-ttu-id="6fe4a-138">表 1.</span><span class="sxs-lookup"><span data-stu-id="6fe4a-138">Table 1.</span></span> <span data-ttu-id="6fe4a-139">クエリ演算子</span><span class="sxs-lookup"><span data-stu-id="6fe4a-139">Query Operators</span></span>
 
 <table style="width:100%">
   <tr>
-    <th><span data-ttu-id="75a89-141">演算子</span><span class="sxs-lookup"><span data-stu-id="75a89-141">Operator</span></span></th>
-    <th><span data-ttu-id="75a89-142">説明</span><span class="sxs-lookup"><span data-stu-id="75a89-142">Description</span></span></th>
+    <th><span data-ttu-id="6fe4a-140">演算子</span><span class="sxs-lookup"><span data-stu-id="6fe4a-140">Operator</span></span></th>
+    <th><span data-ttu-id="6fe4a-141">説明</span><span class="sxs-lookup"><span data-stu-id="6fe4a-141">Description</span></span></th>
   </tr>
   <tr>
   <td><code>contains</code></td>
-<td><span data-ttu-id="75a89-143">選択した要素が、指定された要素を含めるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="75a89-143">Determines whether the selected elements include a specified element.</span></span><br/><br/>
+<td><span data-ttu-id="6fe4a-142">選択した要素が、指定された要素を含めるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-142">Determines whether the selected elements include a specified element.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -108,7 +105,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 
 <tr>
-  <td><code>count</code></td><td><span data-ttu-id="75a89-144">選択した要素の数を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-144">Returns the number of selected elements.</span></span><br/><br/>
+  <td><code>count</code></td><td><span data-ttu-id="6fe4a-143">選択した要素の数を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-143">Returns the number of selected elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -118,7 +115,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>last</code></td><td><span data-ttu-id="75a89-145">これまで選択されているものの最後の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-145">Selects the last element of those selected so far.</span></span><br/><br/>
+<td><code>last</code></td><td><span data-ttu-id="6fe4a-144">これまで選択されているものの最後の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-144">Selects the last element of those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -127,7 +124,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>lastOrDefault</code></td><td><span data-ttu-id="75a89-146">要素が存在しない場合は、これまで選択されているものまたは既定値の最後の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-146">Selects the last element of those selected so far, or a default value if no element is found.</span></span><br/><br/>
+<td><code>lastOrDefault</code></td><td><span data-ttu-id="6fe4a-145">要素が存在しない場合は、これまで選択されているものまたは既定値の最後の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-145">Selects the last element of those selected so far, or a default value if no element is found.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -137,7 +134,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exactlyOne</code></td><td><span data-ttu-id="75a89-147">これまで選択されている、特定の 1 つの要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-147">Selects the single, specific element selected so far.</span></span> <span data-ttu-id="75a89-148">複数の要素が存在する場合は、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="75a89-148">If multiple elements are present, an exception is thrown.</span></span><br/><br/>
+<td><code>exactlyOne</code></td><td><span data-ttu-id="6fe4a-146">これまで選択されている、特定の 1 つの要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-146">Selects the single, specific element selected so far.</span></span> <span data-ttu-id="6fe4a-147">複数の要素が存在する場合は、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-147">If multiple elements are present, an exception is thrown.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -148,7 +145,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exactlyOneOrDefault</code></td><td><span data-ttu-id="75a89-149">その要素が見つからない場合は、これまで選択されているものまたは既定値の 1 つの特定の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-149">Selects the single, specific element of those selected so far, or a default value if that element is not found.</span></span><br/><br/>
+<td><code>exactlyOneOrDefault</code></td><td><span data-ttu-id="6fe4a-148">その要素が見つからない場合は、これまで選択されているものまたは既定値の 1 つの特定の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-148">Selects the single, specific element of those selected so far, or a default value if that element is not found.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -159,7 +156,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>headOrDefault</code></td><td><span data-ttu-id="75a89-150">シーケンスに要素が含まれていない場合は、これまで選択されているものまたは既定値の最初の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-150">Selects the first element of those selected so far, or a default value if the sequence contains no elements.</span></span><br/><br/>
+<td><code>headOrDefault</code></td><td><span data-ttu-id="6fe4a-149">シーケンスに要素が含まれていない場合は、これまで選択されているものまたは既定値の最初の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-149">Selects the first element of those selected so far, or a default value if the sequence contains no elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -169,7 +166,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>select</code></td><td><span data-ttu-id="75a89-151">これまで選択されている要素の各を射影します。</span><span class="sxs-lookup"><span data-stu-id="75a89-151">Projects each of the elements selected so far.</span></span><br/><br/>
+<td><code>select</code></td><td><span data-ttu-id="6fe4a-150">これまで選択されている要素の各を射影します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-150">Projects each of the elements selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -178,7 +175,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>where</code></td><td><span data-ttu-id="75a89-152">指定した述語に基づく要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-152">Selects elements based on a specified predicate.</span></span><br/><br/>
+<td><code>where</code></td><td><span data-ttu-id="6fe4a-151">指定した述語に基づく要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-151">Selects elements based on a specified predicate.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -188,7 +185,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>minBy</code></td><td><span data-ttu-id="75a89-153">これまで選択されている各要素の値を選択し、結果の最小値を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-153">Selects a value for each element selected so far and returns the minimum resulting value.</span></span><br/><br/>
+<td><code>minBy</code></td><td><span data-ttu-id="6fe4a-152">これまで選択されている各要素の値を選択し、結果の最小値を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-152">Selects a value for each element selected so far and returns the minimum resulting value.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -197,7 +194,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>maxBy</code></td><td><span data-ttu-id="75a89-154">これまで選択されている各要素の値を選択し、結果の最大値を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-154">Selects a value for each element selected so far and returns the maximum resulting value.</span></span><br/><br/>
+<td><code>maxBy</code></td><td><span data-ttu-id="6fe4a-153">これまで選択されている各要素の値を選択し、結果の最大値を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-153">Selects a value for each element selected so far and returns the maximum resulting value.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -206,7 +203,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupBy</code></td><td><span data-ttu-id="75a89-155">指定されたキー セレクターに応じてこれまで選択要素をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="75a89-155">Groups the elements selected so far according to a specified key selector.</span></span><br/><br/>
+<td><code>groupBy</code></td><td><span data-ttu-id="6fe4a-154">指定されたキー セレクターに応じてこれまで選択要素をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-154">Groups the elements selected so far according to a specified key selector.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -216,7 +213,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortBy</code></td><td><span data-ttu-id="75a89-156">指定された並べ替えキーで昇順にこれまで選択要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="75a89-156">Sorts the elements selected so far in ascending order by the given sorting key.</span></span><br/><br/>
+<td><code>sortBy</code></td><td><span data-ttu-id="6fe4a-155">指定された並べ替えキーで昇順にこれまで選択要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-155">Sorts the elements selected so far in ascending order by the given sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -226,7 +223,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByDescending</code></td><td><span data-ttu-id="75a89-157">指定された並べ替えキー、降順でこれまで選択した要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="75a89-157">Sorts the elements selected so far in descending order by the given sorting key.</span></span><br/><br/>
+<td><code>sortByDescending</code></td><td><span data-ttu-id="6fe4a-156">指定された並べ替えキー、降順でこれまで選択した要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-156">Sorts the elements selected so far in descending order by the given sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -236,7 +233,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenBy</code></td><td><span data-ttu-id="75a89-158">指定された並べ替えキーで昇順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="75a89-158">Performs a subsequent ordering of the elements selected so far in ascending order by the given sorting key.</span></span> <span data-ttu-id="75a89-159">この演算子は、後でのみ使用可能性があります、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>です。</span><span class="sxs-lookup"><span data-stu-id="75a89-159">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
+<td><code>thenBy</code></td><td><span data-ttu-id="6fe4a-157">指定された並べ替えキーで昇順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-157">Performs a subsequent ordering of the elements selected so far in ascending order by the given sorting key.</span></span> <span data-ttu-id="6fe4a-158">この演算子は、後でのみ使用可能性があります、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-158">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -248,7 +245,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByDescending</code></td><td><span data-ttu-id="75a89-160">指定された並べ替えキーによって降順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="75a89-160">Performs a subsequent ordering of the elements selected so far in descending order by the given sorting key.</span></span> <span data-ttu-id="75a89-161">この演算子は、後でのみ使用可能性があります、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>です。</span><span class="sxs-lookup"><span data-stu-id="75a89-161">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
+<td><code>thenByDescending</code></td><td><span data-ttu-id="6fe4a-159">指定された並べ替えキーによって降順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-159">Performs a subsequent ordering of the elements selected so far in descending order by the given sorting key.</span></span> <span data-ttu-id="6fe4a-160">この演算子は、後でのみ使用可能性があります、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-160">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -260,7 +257,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupValBy</code></td><td><span data-ttu-id="75a89-162">これまで選択されている各要素の値を選択し、指定したキーによって、要素をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="75a89-162">Selects a value for each element selected so far and groups the elements by the given key.</span></span><br/><br/>
+<td><code>groupValBy</code></td><td><span data-ttu-id="6fe4a-161">これまで選択されている各要素の値を選択し、指定したキーによって、要素をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-161">Selects a value for each element selected so far and groups the elements by the given key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -270,7 +267,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>join</code></td><td><span data-ttu-id="75a89-163">一致するキーに基づいて選択した値の 2 つのセットを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="75a89-163">Correlates two sets of selected values based on matching keys.</span></span> <span data-ttu-id="75a89-164">結合式サインイン = の周囲のキーの順序は重要です。</span><span class="sxs-lookup"><span data-stu-id="75a89-164">Note that the order of the keys around the = sign in a join expression is significant.</span></span> <span data-ttu-id="75a89-165">すべての結合後の行を分割する場合に、<code>-&gt;</code>シンボル、インデント解除する必要がインデントには、少なくとも枝葉、キーワードと同じ<code>for</code>です。</span><span class="sxs-lookup"><span data-stu-id="75a89-165">In all joins, if the line is split after the <code>-&gt;</code> symbol, the indentation must be indented at least as far as the keyword <code>for</code>.</span></span><br/><br/>
+<td><code>join</code></td><td><span data-ttu-id="6fe4a-162">一致するキーに基づいて選択した値の 2 つのセットを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-162">Correlates two sets of selected values based on matching keys.</span></span> <span data-ttu-id="6fe4a-163">結合式サインイン = の周囲のキーの順序は重要です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-163">Note that the order of the keys around the = sign in a join expression is significant.</span></span> <span data-ttu-id="6fe4a-164">すべての結合後の行を分割する場合に、<code>-&gt;</code>シンボル、インデント解除する必要がインデントには、少なくとも枝葉、キーワードと同じ<code>for</code>です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-164">In all joins, if the line is split after the <code>-&gt;</code> symbol, the indentation must be indented at least as far as the keyword <code>for</code>.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -281,7 +278,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupJoin</code></td><td><span data-ttu-id="75a89-166">一致するキーに基づいて選択した値の 2 つのセットを関連付ける結果をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="75a89-166">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="75a89-167">結合式サインイン = の周囲のキーの順序は重要です。</span><span class="sxs-lookup"><span data-stu-id="75a89-167">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
+<td><code>groupJoin</code></td><td><span data-ttu-id="6fe4a-165">一致するキーに基づいて選択した値の 2 つのセットを関連付ける結果をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-165">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="6fe4a-166">結合式サインイン = の周囲のキーの順序は重要です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-166">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -295,7 +292,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>leftOuterJoin</code></td><td><span data-ttu-id="75a89-168">一致するキーに基づいて選択した値の 2 つのセットを関連付ける結果をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="75a89-168">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="75a89-169">任意のグループが空の場合は、1 つの既定値を持つグループが使用されます。</span><span class="sxs-lookup"><span data-stu-id="75a89-169">If any group is empty, a group with a single default value is used instead.</span></span> <span data-ttu-id="75a89-170">結合式サインイン = の周囲のキーの順序は重要です。</span><span class="sxs-lookup"><span data-stu-id="75a89-170">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
+<td><code>leftOuterJoin</code></td><td><span data-ttu-id="6fe4a-167">一致するキーに基づいて選択した値の 2 つのセットを関連付ける結果をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-167">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="6fe4a-168">任意のグループが空の場合は、1 つの既定値を持つグループが使用されます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-168">If any group is empty, a group with a single default value is used instead.</span></span> <span data-ttu-id="6fe4a-169">結合式サインイン = の周囲のキーの順序は重要です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-169">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -307,7 +304,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sumByNullable</code></td><td><span data-ttu-id="75a89-171">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の合計を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-171">Selects a nullable value for each element selected so far and returns the sum of these values.</span></span> <span data-ttu-id="75a89-172">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="75a89-172">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>sumByNullable</code></td><td><span data-ttu-id="6fe4a-170">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の合計を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-170">Selects a nullable value for each element selected so far and returns the sum of these values.</span></span> <span data-ttu-id="6fe4a-171">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-171">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -316,7 +313,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>minByNullable</code></td><td><span data-ttu-id="75a89-173">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の最小値を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-173">Selects a nullable value for each element selected so far and returns the minimum of these values.</span></span> <span data-ttu-id="75a89-174">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="75a89-174">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>minByNullable</code></td><td><span data-ttu-id="6fe4a-172">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の最小値を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-172">Selects a nullable value for each element selected so far and returns the minimum of these values.</span></span> <span data-ttu-id="6fe4a-173">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-173">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -325,7 +322,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>maxByNullable</code></td><td><span data-ttu-id="75a89-175">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の最大値を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-175">Selects a nullable value for each element selected so far and returns the maximum of these values.</span></span> <span data-ttu-id="75a89-176">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="75a89-176">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>maxByNullable</code></td><td><span data-ttu-id="6fe4a-174">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の最大値を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-174">Selects a nullable value for each element selected so far and returns the maximum of these values.</span></span> <span data-ttu-id="6fe4a-175">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-175">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -334,7 +331,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>averageByNullable</code></td><td><span data-ttu-id="75a89-177">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の平均値を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-177">Selects a nullable value for each element selected so far and returns the average of these values.</span></span> <span data-ttu-id="75a89-178">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="75a89-178">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>averageByNullable</code></td><td><span data-ttu-id="6fe4a-176">これまで選択されている各要素に対して、null 許容値を選択し、これらの値の平均値を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-176">Selects a nullable value for each element selected so far and returns the average of these values.</span></span> <span data-ttu-id="6fe4a-177">存在する場合 null 許容値を持たないは無視されます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-177">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -343,7 +340,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>averageBy</code></td><td><span data-ttu-id="75a89-179">これまで選択されている各要素の値を選択し、これらの値の平均値を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-179">Selects a value for each element selected so far and returns the average of these values.</span></span><br/><br/>
+<td><code>averageBy</code></td><td><span data-ttu-id="6fe4a-178">これまで選択されている各要素の値を選択し、これらの値の平均値を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-178">Selects a value for each element selected so far and returns the average of these values.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -352,7 +349,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>distinct</code></td><td><span data-ttu-id="75a89-180">これまで選択した要素から個別の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-180">Selects distinct elements from the elements selected so far.</span></span><br/><br/>
+<td><code>distinct</code></td><td><span data-ttu-id="6fe4a-179">これまで選択した要素から個別の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-179">Selects distinct elements from the elements selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -363,7 +360,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exists</code></td><td><span data-ttu-id="75a89-181">これまで選択されている任意の要素が条件を満たすかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="75a89-181">Determines whether any element selected so far satisfies a condition.</span></span><br/><br/>
+<td><code>exists</code></td><td><span data-ttu-id="6fe4a-180">これまで選択されている任意の要素が条件を満たすかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-180">Determines whether any element selected so far satisfies a condition.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -376,7 +373,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>find</code></td><td><span data-ttu-id="75a89-182">これまで選択されている指定の条件を満たす最初の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-182">Selects the first element selected so far that satisfies a specified condition.</span></span><br/><br/>
+<td><code>find</code></td><td><span data-ttu-id="6fe4a-181">これまで選択されている指定の条件を満たす最初の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-181">Selects the first element selected so far that satisfies a specified condition.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -385,7 +382,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>all</code></td><td><span data-ttu-id="75a89-183">これまで選択されているすべての要素が条件を満たすかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="75a89-183">Determines whether all elements selected so far satisfy a condition.</span></span><br/><br/>
+<td><code>all</code></td><td><span data-ttu-id="6fe4a-182">これまで選択されているすべての要素が条件を満たすかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-182">Determines whether all elements selected so far satisfy a condition.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -394,7 +391,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>head</code></td><td><span data-ttu-id="75a89-184">これまで選択されているものから最初の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-184">Selects the first element from those selected so far.</span></span><br/><br/>
+<td><code>head</code></td><td><span data-ttu-id="6fe4a-183">これまで選択されているものから最初の要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-183">Selects the first element from those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -403,7 +400,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>nth</code></td><td><span data-ttu-id="75a89-185">これまでに、選択したの間で指定したインデックス位置にある要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-185">Selects the element at a specified index amongst those selected so far.</span></span><br/><br/>
+<td><code>nth</code></td><td><span data-ttu-id="6fe4a-184">これまでに、選択したの間で指定したインデックス位置にある要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-184">Selects the element at a specified index amongst those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for numbers in data do
@@ -412,7 +409,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>skip</code></td><td><span data-ttu-id="75a89-186">これまで選択されている要素の指定した数をバイパスし、残りの要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-186">Bypasses a specified number of the elements selected so far and then selects the remaining elements.</span></span><br/><br/>
+<td><code>skip</code></td><td><span data-ttu-id="6fe4a-185">これまで選択されている要素の指定した数をバイパスし、残りの要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-185">Bypasses a specified number of the elements selected so far and then selects the remaining elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -421,7 +418,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>skipWhile</code></td><td><span data-ttu-id="75a89-187">指定した条件が true であり、残りの要素を選択し、限りは、シーケンス内の要素をバイパスします。</span><span class="sxs-lookup"><span data-stu-id="75a89-187">Bypasses elements in a sequence as long as a specified condition is true and then selects the remaining elements.</span></span><br/><br/>
+<td><code>skipWhile</code></td><td><span data-ttu-id="6fe4a-186">指定した条件が true であり、残りの要素を選択し、限りは、シーケンス内の要素をバイパスします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-186">Bypasses elements in a sequence as long as a specified condition is true and then selects the remaining elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -431,7 +428,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sumBy</code></td><td><span data-ttu-id="75a89-188">これまで選択されている各要素の値を選択し、これらの値の合計を返します。</span><span class="sxs-lookup"><span data-stu-id="75a89-188">Selects a value for each element selected so far and returns the sum of these values.</span></span><br/><br/>
+<td><code>sumBy</code></td><td><span data-ttu-id="6fe4a-187">これまで選択されている各要素の値を選択し、これらの値の合計を返します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-187">Selects a value for each element selected so far and returns the sum of these values.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -440,7 +437,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>take</code></td><td><span data-ttu-id="75a89-189">これまでに、選択したから、指定した数の連続する要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-189">Selects a specified number of contiguous elements from those selected so far.</span></span><br/><br/>
+<td><code>take</code></td><td><span data-ttu-id="6fe4a-188">これまでに、選択したから、指定した数の連続する要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-188">Selects a specified number of contiguous elements from those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -450,7 +447,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>takeWhile</code></td><td><span data-ttu-id="75a89-190">として指定された条件が true の場合と、残りの要素をスキップし、シーケンスから要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-190">Selects elements from a sequence as long as a specified condition is true, and then skips the remaining elements.</span></span><br/><br/>
+<td><code>takeWhile</code></td><td><span data-ttu-id="6fe4a-189">として指定された条件が true の場合と、残りの要素をスキップし、シーケンスから要素を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-189">Selects elements from a sequence as long as a specified condition is true, and then skips the remaining elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -459,7 +456,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByNullable</code></td><td><span data-ttu-id="75a89-191">指定された null 許容の並べ替えキーで昇順にこれまで選択要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="75a89-191">Sorts the elements selected so far in ascending order by the given nullable sorting key.</span></span><br/><br/>
+<td><code>sortByNullable</code></td><td><span data-ttu-id="6fe4a-190">指定された null 許容の並べ替えキーで昇順にこれまで選択要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-190">Sorts the elements selected so far in ascending order by the given nullable sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -469,7 +466,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByNullableDescending</code></td><td><span data-ttu-id="75a89-192">指定された null 許容の並べ替えキー、降順でこれまで選択した要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="75a89-192">Sorts the elements selected so far in descending order by the given nullable sorting key.</span></span><br/><br/>
+<td><code>sortByNullableDescending</code></td><td><span data-ttu-id="6fe4a-191">指定された null 許容の並べ替えキー、降順でこれまで選択した要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-191">Sorts the elements selected so far in descending order by the given nullable sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -479,7 +476,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullable</code></td><td><span data-ttu-id="75a89-193">指定された null 許容の並べ替えキーで昇順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="75a89-193">Performs a subsequent ordering of the elements selected so far in ascending order by the given nullable sorting key.</span></span> <span data-ttu-id="75a89-194">この演算子の直後にのみ使用できます、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>、null 許容変化形です。</span><span class="sxs-lookup"><span data-stu-id="75a89-194">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
+<td><code>thenByNullable</code></td><td><span data-ttu-id="6fe4a-192">指定された null 許容の並べ替えキーで昇順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-192">Performs a subsequent ordering of the elements selected so far in ascending order by the given nullable sorting key.</span></span> <span data-ttu-id="6fe4a-193">この演算子の直後にのみ使用できます、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>、null 許容変化形です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-193">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -490,7 +487,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullableDescending</code></td><td><span data-ttu-id="75a89-195">指定された null 許容の並べ替えキーによって降順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="75a89-195">Performs a subsequent ordering of the elements selected so far in descending order by the given nullable sorting key.</span></span> <span data-ttu-id="75a89-196">この演算子の直後にのみ使用できます、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>、null 許容変化形です。</span><span class="sxs-lookup"><span data-stu-id="75a89-196">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
+<td><code>thenByNullableDescending</code></td><td><span data-ttu-id="6fe4a-194">指定された null 許容の並べ替えキーによって降順にこれまで選択した要素の後続の並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-194">Performs a subsequent ordering of the elements selected so far in descending order by the given nullable sorting key.</span></span> <span data-ttu-id="6fe4a-195">この演算子の直後にのみ使用できます、 <code>sortBy</code>、 <code>sortByDescending</code>、 <code>thenBy</code>、または<code>thenByDescending</code>、null 許容変化形です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-195">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -503,20 +500,20 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </td></tr>
 </table>
 
-## <a name="comparison-of-transact-sql-and-f-query-expressions"></a><span data-ttu-id="75a89-197">Transact-SQL と F# のクエリ式の比較</span><span class="sxs-lookup"><span data-stu-id="75a89-197">Comparison of Transact-SQL and F# Query Expressions</span></span>
-<span data-ttu-id="75a89-198">次の表は、f# でいくつかの一般的な TRANSACT-SQL クエリおよびそれに対応を示します。</span><span class="sxs-lookup"><span data-stu-id="75a89-198">The following table shows some common Transact-SQL queries and their equivalents in F#.</span></span> <span data-ttu-id="75a89-199">このテーブル内のコードでは、前の表と、型プロバイダーを設定する場合は、同じ初期コードと同じデータベースも前提としています。</span><span class="sxs-lookup"><span data-stu-id="75a89-199">The code in this table also assumes the same database as the previous table and the same initial code to set up the type provider.</span></span>
+## <a name="comparison-of-transact-sql-and-f-query-expressions"></a><span data-ttu-id="6fe4a-196">Transact-SQL と F# のクエリ式の比較</span><span class="sxs-lookup"><span data-stu-id="6fe4a-196">Comparison of Transact-SQL and F# Query Expressions</span></span>
+<span data-ttu-id="6fe4a-197">次の表は、f# でいくつかの一般的な TRANSACT-SQL クエリおよびそれに対応を示します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-197">The following table shows some common Transact-SQL queries and their equivalents in F#.</span></span> <span data-ttu-id="6fe4a-198">このテーブル内のコードでは、前の表と、型プロバイダーを設定する場合は、同じ初期コードと同じデータベースも前提としています。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-198">The code in this table also assumes the same database as the previous table and the same initial code to set up the type provider.</span></span>
 
 
-### <a name="table-2-transact-sql-and-f-query-expressions"></a><span data-ttu-id="75a89-200">表 2 です。</span><span class="sxs-lookup"><span data-stu-id="75a89-200">Table 2.</span></span> <span data-ttu-id="75a89-201">Transact-SQL と F# のクエリ式</span><span class="sxs-lookup"><span data-stu-id="75a89-201">Transact-SQL and F# Query Expressions</span></span>
+### <a name="table-2-transact-sql-and-f-query-expressions"></a><span data-ttu-id="6fe4a-199">表 2 です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-199">Table 2.</span></span> <span data-ttu-id="6fe4a-200">Transact-SQL と F# のクエリ式</span><span class="sxs-lookup"><span data-stu-id="6fe4a-200">Transact-SQL and F# Query Expressions</span></span>
 
 
 <table style="width:100%">
   <tr>
-    <th><span data-ttu-id="75a89-202">Transact SQL (いない大文字小文字を区別)</span><span class="sxs-lookup"><span data-stu-id="75a89-202">Transact-SQL (not case sensitive)</span></span></th>
-    <th><span data-ttu-id="75a89-203">F# クエリ式 (大文字小文字を区別)</span><span class="sxs-lookup"><span data-stu-id="75a89-203">F# Query Expression (case sensitive)</span></span></th>
+    <th><span data-ttu-id="6fe4a-201">Transact SQL (いない大文字小文字を区別)</span><span class="sxs-lookup"><span data-stu-id="6fe4a-201">Transact-SQL (not case sensitive)</span></span></th>
+    <th><span data-ttu-id="6fe4a-202">F# クエリ式 (大文字小文字を区別)</span><span class="sxs-lookup"><span data-stu-id="6fe4a-202">F# Query Expression (case sensitive)</span></span></th>
   </tr>
 <tr><td>
-<span data-ttu-id="75a89-204">テーブルからすべてのフィールドを選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-204">Select all fields from table.</span></span></br>
+<span data-ttu-id="6fe4a-203">テーブルからすべてのフィールドを選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-203">Select all fields from table.</span></span></br>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 </code></pre>
@@ -531,7 +528,7 @@ query {
 
 </td></tr>
 <tr><td>
-<span data-ttu-id="75a89-205">テーブル内のレコードをカウントします。</span><span class="sxs-lookup"><span data-stu-id="75a89-205">Count records in a table.</span></span><br/>
+<span data-ttu-id="6fe4a-204">テーブル内のレコードをカウントします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-204">Count records in a table.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 </code></pre>
@@ -570,7 +567,7 @@ query {
 </code></pre>
 
 </td></tr><tr>
-<td><span data-ttu-id="75a89-206">グループ化</span><span class="sxs-lookup"><span data-stu-id="75a89-206">Grouping</span></span><br/>
+<td><span data-ttu-id="6fe4a-205">グループ化</span><span class="sxs-lookup"><span data-stu-id="6fe4a-205">Grouping</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ) FROM Student
 GROUP BY Student.Age
@@ -592,7 +589,7 @@ query {
 }
 </code></pre>
 </td></tr><tr><td>
-<span data-ttu-id="75a89-207">条件でグループ化します。</span><span class="sxs-lookup"><span data-stu-id="75a89-207">Grouping with condition.</span></span><br/>
+<span data-ttu-id="6fe4a-206">条件でグループ化します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-206">Grouping with condition.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * )
 FROM Student
@@ -612,7 +609,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="75a89-208">カウントの条件を含むグループ化します。</span><span class="sxs-lookup"><span data-stu-id="75a89-208">Grouping with count condition.</span></span><br/>
+<span data-ttu-id="6fe4a-207">カウントの条件を含むグループ化します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-207">Grouping with count condition.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * )
 FROM Student
@@ -633,7 +630,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="75a89-209">グループ化は、カウント、および集計します。</span><span class="sxs-lookup"><span data-stu-id="75a89-209">Grouping, counting, and summing.</span></span><br/>
+<span data-ttu-id="6fe4a-208">グループ化は、カウント、および集計します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-208">Grouping, counting, and summing.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ), SUM(Student.Age) as total
 FROM Student
@@ -656,7 +653,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="75a89-210">グループ化、カウント、および数によって順序付けします。</span><span class="sxs-lookup"><span data-stu-id="75a89-210">Grouping, counting, and ordering by count.</span></span><br/>
+<span data-ttu-id="6fe4a-209">グループ化、カウント、および数によって順序付けします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-209">Grouping, counting, and ordering by count.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ) as myCount
 FROM Student
@@ -679,8 +676,8 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-211">
-<code>IN</code>指定された値のセット</span><span class="sxs-lookup"><span data-stu-id="75a89-211">
+</td></tr><tr><td><span data-ttu-id="6fe4a-210">
+<code>IN</code> 指定された値のセット</span><span class="sxs-lookup"><span data-stu-id="6fe4a-210">
 <code>IN</code> a set of specified values</span></span><br/>
 
 <pre><code class="lang-sql">SELECT *
@@ -703,8 +700,8 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-212">
-<code>LIKE</code> および <code>TOP</code>。</span><span class="sxs-lookup"><span data-stu-id="75a89-212">
+</td></tr><tr><td><span data-ttu-id="6fe4a-211">
+<code>LIKE</code> および <code>TOP</code>。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-211">
 <code>LIKE</code> and <code>TOP</code>.</span></span><br/>
 
 <pre><code class="lang-sql">-- '_e%' matches strings where the second character is 'e'
@@ -722,8 +719,8 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-213">
-<code>LIKE</code>パターンを持つセットと一致します。</span><span class="sxs-lookup"><span data-stu-id="75a89-213">
+</td></tr><tr><td><span data-ttu-id="6fe4a-212">
+<code>LIKE</code> パターンを持つセットと一致します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-212">
 <code>LIKE</code> with pattern match set.</span></span><br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
@@ -740,8 +737,8 @@ WHERE Student.Name LIKE '[abc]%'
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-214">
-<code>LIKE</code>で除外パターンを設定します。</span><span class="sxs-lookup"><span data-stu-id="75a89-214">
+</td></tr><tr><td><span data-ttu-id="6fe4a-213">
+<code>LIKE</code> で除外パターンを設定します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-213">
 <code>LIKE</code> with set exclusion pattern.</span></span><br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
@@ -760,8 +757,8 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-215">
-<code>LIKE</code>1 つのフィールドでは、別のフィールドを選択します。</span><span class="sxs-lookup"><span data-stu-id="75a89-215">
+</td></tr><tr><td><span data-ttu-id="6fe4a-214">
+<code>LIKE</code> 1 つのフィールドでは、別のフィールドを選択します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-214">
 <code>LIKE</code> on one field, but select a different field.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
@@ -777,7 +774,7 @@ WHERE Student.Name LIKE '[^abc]%'
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-216"><code>LIKE</code>、部分文字列検索を使用します。</span><span class="sxs-lookup"><span data-stu-id="75a89-216"><code>LIKE</code>, with substring search.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-215"><code>LIKE</code>、部分文字列検索を使用します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-215"><code>LIKE</code>, with substring search.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Name like '%A%'
@@ -794,7 +791,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="75a89-217">単純な<code>JOIN</code>2 つのテーブルにします。</span><span class="sxs-lookup"><span data-stu-id="75a89-217">Simple <code>JOIN</code> with two tables.</span></span><br/>
+<span data-ttu-id="6fe4a-216">単純な<code>JOIN</code>2 つのテーブルにします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-216">Simple <code>JOIN</code> with two tables.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 JOIN CourseSelection
@@ -812,7 +809,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-218"><code>LEFT JOIN</code>2 つのテーブルです。</span><span class="sxs-lookup"><span data-stu-id="75a89-218"><code>LEFT JOIN</code> with two tables.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-217"><code>LEFT JOIN</code> 2 つのテーブルです。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-217"><code>LEFT JOIN</code> with two tables.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -831,7 +828,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-219"><code>JOIN</code>と<code>COUNT</code></span><span class="sxs-lookup"><span data-stu-id="75a89-219"><code>JOIN</code> with <code>COUNT</code></span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-218"><code>JOIN</code> と <code>COUNT</code></span><span class="sxs-lookup"><span data-stu-id="6fe4a-218"><code>JOIN</code> with <code>COUNT</code></span></span><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -865,7 +862,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-220">個別のカウント。</span><span class="sxs-lookup"><span data-stu-id="75a89-220">Distinct count.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-219">個別のカウント。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-219">Distinct count.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT DISTINCT COUNT(StudentID) FROM CourseSelection
 </code></pre>
@@ -914,7 +911,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-221"><code>OR</code>順序付けと</span><span class="sxs-lookup"><span data-stu-id="75a89-221"><code>OR</code> with ordering</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-220"><code>OR</code> 順序付けと</span><span class="sxs-lookup"><span data-stu-id="6fe4a-220"><code>OR</code> with ordering</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -932,7 +929,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-222"><code>TOP</code>、 <code>OR</code>、と順序付けします。</span><span class="sxs-lookup"><span data-stu-id="75a89-222"><code>TOP</code>, <code>OR</code>, and ordering.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-221"><code>TOP</code>、 <code>OR</code>、と順序付けします。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-221"><code>TOP</code>, <code>OR</code>, and ordering.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT TOP 2 student.Name FROM Student
 WHERE Student.Age = 11 OR Student.Age = 12
@@ -954,7 +951,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-223"><code>UNION</code>2 つのクエリ。</span><span class="sxs-lookup"><span data-stu-id="75a89-223"><code>UNION</code> of two queries.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-222"><code>UNION</code> 2 つのクエリ。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-222"><code>UNION</code> of two queries.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 UNION
@@ -979,7 +976,7 @@ let query2 =
 query2.Union (query1)
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-224">2 つのクエリの交差部分です。</span><span class="sxs-lookup"><span data-stu-id="75a89-224">Intersection of two queries.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-223">2 つのクエリの交差部分です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-223">Intersection of two queries.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 INTERSECT
@@ -1003,7 +1000,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-225"><code>CASE</code>条件です。</span><span class="sxs-lookup"><span data-stu-id="75a89-225"><code>CASE</code> condition.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-224"><code>CASE</code> 条件です。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-224"><code>CASE</code> condition.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -1025,7 +1022,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-226">複数の場合。</span><span class="sxs-lookup"><span data-stu-id="75a89-226">Multiple cases.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-225">複数の場合。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-225">Multiple cases.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.StudentID,
 CASE Student.Age
@@ -1051,7 +1048,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-227">複数のテーブル。</span><span class="sxs-lookup"><span data-stu-id="75a89-227">Multiple tables.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-226">複数のテーブル。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-226">Multiple tables.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student, Course
 </code></pre>
@@ -1066,7 +1063,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-228">複数の結合します。</span><span class="sxs-lookup"><span data-stu-id="75a89-228">Multiple joins.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-227">複数の結合します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-227">Multiple joins.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Name, Course.CourseName
 FROM Student
@@ -1089,7 +1086,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="75a89-229">複数の左外部結合します。</span><span class="sxs-lookup"><span data-stu-id="75a89-229">Multiple left outer joins.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="6fe4a-228">複数の左外部結合します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-228">Multiple left outer joins.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Name, Course.CourseName
 FROM Student
@@ -1116,7 +1113,7 @@ query {
 
 </td></tr></table>
 
-<span data-ttu-id="75a89-230">次のコードは、これらの例のサンプル データベースの作成に使用できます。</span><span class="sxs-lookup"><span data-stu-id="75a89-230">The following code can be used to create the sample database for these examples.</span></span>
+<span data-ttu-id="6fe4a-229">次のコードは、これらの例のサンプル データベースの作成に使用できます。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-229">The following code can be used to create the sample database for these examples.</span></span>
 
 <pre><code class="lang-sql">SET ANSI_NULLS ON
 GO
@@ -1238,7 +1235,7 @@ INSERT INTO CourseSelection (ID, StudentID, CourseID)
 VALUES(15, 7, 3);
 </code></pre>
 
-<span data-ttu-id="75a89-231">次のコードには、このトピックに表示するサンプル コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="75a89-231">The following code contains  the sample code that appears in this topic.</span></span>
+<span data-ttu-id="6fe4a-230">次のコードには、このトピックに表示するサンプル コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-230">The following code contains  the sample code that appears in this topic.</span></span>
 
 ```fsharp
 #if INTERACTIVE
@@ -1874,7 +1871,7 @@ query {
 |> Seq.iter (fun (studentName, courseName) -> printfn "%s %s" studentName courseName)
 ```
 
-<span data-ttu-id="75a89-232">F# Interactive でこのコードを実行すると、完全な出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="75a89-232">And here is the full output when this code is run in F# Interactive.</span></span>
+<span data-ttu-id="6fe4a-231">F# Interactive でこのコードを実行すると、完全な出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="6fe4a-231">And here is the full output when this code is run in F# Interactive.</span></span>
 
 ```
 --> Referenced 'C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\FSharp.Data.TypeProviders.dll'
@@ -2438,9 +2435,9 @@ module Queries2 = begin
 end
 ```
 
-## <a name="see-also"></a><span data-ttu-id="75a89-233">関連項目</span><span class="sxs-lookup"><span data-stu-id="75a89-233">See Also</span></span>
-[<span data-ttu-id="75a89-234">F# 言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="75a89-234">F# Language Reference</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="6fe4a-232">関連項目</span><span class="sxs-lookup"><span data-stu-id="6fe4a-232">See Also</span></span>
+[<span data-ttu-id="6fe4a-233">F# 言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="6fe4a-233">F# Language Reference</span></span>](index.md)
 
-[<span data-ttu-id="75a89-235">Linq.QueryBuilder クラス</span><span class="sxs-lookup"><span data-stu-id="75a89-235">Linq.QueryBuilder Class</span></span>](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+[<span data-ttu-id="6fe4a-234">Linq.QueryBuilder クラス</span><span class="sxs-lookup"><span data-stu-id="6fe4a-234">Linq.QueryBuilder Class</span></span>](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
 
-[<span data-ttu-id="75a89-236">コンピュテーション式</span><span class="sxs-lookup"><span data-stu-id="75a89-236">Computation Expressions</span></span>](Computation-Expressions.md)
+[<span data-ttu-id="6fe4a-235">コンピュテーション式</span><span class="sxs-lookup"><span data-stu-id="6fe4a-235">Computation Expressions</span></span>](Computation-Expressions.md)
